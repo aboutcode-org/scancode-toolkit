@@ -1,0 +1,54 @@
+{
+  "files": [
+    {
+      "path": "additional_license_plugin_test.txt",
+      "type": "file",
+      "licenses": [
+        {
+          "key": "example-installed-1",
+          "score": 100.0,
+          "name": "Example Installed License 1",
+          "short_name": "Example Installed License 1",
+          "category": "Permissive",
+          "is_exception": false,
+          "is_unknown": false,
+          "owner": "NexB",
+          "homepage_url": null,
+          "text_url": null,
+          "reference_url": null,
+          "scancode_text_url": null,
+          "scancode_data_url": null,
+          "spdx_license_key": "scancode-example-installed1",
+          "spdx_url": "https://spdx.org/licenses/scancode-example-installed1",
+          "start_line": 1,
+          "end_line": 1,
+          "matched_rule": {
+            "identifier": "example-installed-1.LICENSE",
+            "license_expression": "example-installed-1",
+            "licenses": [
+              "example-installed-1"
+            ],
+            "referenced_filenames": [],
+            "is_license_text": true,
+            "is_license_notice": false,
+            "is_license_reference": false,
+            "is_license_tag": false,
+            "is_license_intro": false,
+            "has_unknown": false,
+            "matcher": "1-hash",
+            "rule_length": 11,
+            "matched_length": 11,
+            "match_coverage": 100.0,
+            "rule_relevance": 100,
+            "is_builtin": false
+          }
+        }
+      ],
+      "license_expressions": [
+        "example-installed-1"
+      ],
+      "percentage_of_license_text": 100.0,
+      "scan_errors": []
+    }
+  ]
+}

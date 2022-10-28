@@ -1,0 +1,94 @@
+{
+  "files": [
+    {
+      "path": "additional_license_directory_test.txt",
+      "type": "file",
+      "licenses": [
+        {
+          "key": "example1",
+          "score": 100.0,
+          "name": "Example External License 1",
+          "short_name": "Example External License 1",
+          "category": "Permissive",
+          "is_exception": false,
+          "is_unknown": false,
+          "owner": "NexB",
+          "homepage_url": null,
+          "text_url": null,
+          "reference_url": null,
+          "scancode_text_url": null,
+          "scancode_data_url": null,
+          "spdx_license_key": "scancode-example1",
+          "spdx_url": "https://spdx.org/licenses/scancode-example1",
+          "start_line": 1,
+          "end_line": 1,
+          "matched_rule": {
+            "identifier": "example1.LICENSE",
+            "license_expression": "example1",
+            "licenses": [
+              "example1"
+            ],
+            "referenced_filenames": [],
+            "is_license_text": true,
+            "is_license_notice": false,
+            "is_license_reference": false,
+            "is_license_tag": false,
+            "is_license_intro": false,
+            "has_unknown": false,
+            "matcher": "2-aho",
+            "rule_length": 9,
+            "matched_length": 9,
+            "match_coverage": 100.0,
+            "rule_relevance": 100,
+            "is_builtin": false
+          }
+        },
+        {
+          "key": "example2",
+          "score": 100.0,
+          "name": "Example External License 2",
+          "short_name": "Example External License 2",
+          "category": "Permissive",
+          "is_exception": false,
+          "is_unknown": false,
+          "owner": "NexB",
+          "homepage_url": null,
+          "text_url": null,
+          "reference_url": null,
+          "scancode_text_url": null,
+          "scancode_data_url": null,
+          "spdx_license_key": "scancode-example2",
+          "spdx_url": "https://spdx.org/licenses/scancode-example2",
+          "start_line": 1,
+          "end_line": 5,
+          "matched_rule": {
+            "identifier": "example2.LICENSE",
+            "license_expression": "example2",
+            "licenses": [
+              "example2"
+            ],
+            "referenced_filenames": [],
+            "is_license_text": true,
+            "is_license_notice": false,
+            "is_license_reference": false,
+            "is_license_tag": false,
+            "is_license_intro": false,
+            "has_unknown": false,
+            "matcher": "2-aho",
+            "rule_length": 69,
+            "matched_length": 69,
+            "match_coverage": 100.0,
+            "rule_relevance": 100,
+            "is_builtin": false
+          }
+        }
+      ],
+      "license_expressions": [
+        "example1",
+        "example2"
+      ],
+      "percentage_of_license_text": 95.12,
+      "scan_errors": []
+    }
+  ]
+}

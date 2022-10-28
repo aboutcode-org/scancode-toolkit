@@ -1,0 +1,61 @@
+{
+  "files": [
+    {
+      "path": "scan",
+      "type": "directory",
+      "licenses": [],
+      "license_expressions": [],
+      "percentage_of_license_text": 0,
+      "scan_errors": []
+    },
+    {
+      "path": "scan/apache-1.0.txt",
+      "type": "file",
+      "licenses": [
+        {
+          "key": "apache-1.0",
+          "score": 100.0,
+          "name": "Apache License 1.0",
+          "short_name": "Apache 1.0",
+          "category": "Permissive",
+          "is_exception": false,
+          "is_unknown": false,
+          "owner": "Apache Software Foundation",
+          "homepage_url": "http://www.apache.org/licenses/",
+          "text_url": "http://www.apache.org/licenses/LICENSE-1.0",
+          "reference_url": "https://example.com/urn:apache-1.0",
+          "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-1.0.LICENSE",
+          "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-1.0.yml",
+          "spdx_license_key": "Apache-1.0",
+          "spdx_url": "https://spdx.org/licenses/Apache-1.0",
+          "start_line": 4,
+          "end_line": 54,
+          "matched_rule": {
+            "identifier": "apache-1.0.LICENSE",
+            "license_expression": "apache-1.0",
+            "licenses": [
+              "apache-1.0"
+            ],
+            "referenced_filenames": [],
+            "is_license_text": true,
+            "is_license_notice": false,
+            "is_license_reference": false,
+            "is_license_tag": false,
+            "is_license_intro": false,
+            "has_unknown": false,
+            "matcher": "2-aho",
+            "rule_length": 368,
+            "matched_length": 368,
+            "match_coverage": 100.0,
+            "rule_relevance": 100
+          }
+        }
+      ],
+      "license_expressions": [
+        "apache-1.0"
+      ],
+      "percentage_of_license_text": 97.61,
+      "scan_errors": []
+    }
+  ]
+}

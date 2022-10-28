@@ -1,7 +1,7 @@
 key: anu-license
 short_name: ANU License
 name: Australian National University License
-
+spdx_license_key: LicenseRef-scancode-anu-license
 category: Permissive
 owner: ANU Data Mining Group
 other_urls:
