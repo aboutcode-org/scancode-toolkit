@@ -5,6 +5,7 @@
   "category": "Copyleft Limited",
   "owner": "PyInstaller Project",
   "homepage_url": "https://github.com/pyinstaller/pyinstaller/blob/develop/COPYING.txt",
+  "is_builtin": true,
   "is_exception": true,
   "spdx_license_key": "Bootloader-exception",
   "other_urls": [

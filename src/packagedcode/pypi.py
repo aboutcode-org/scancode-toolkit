@@ -1609,7 +1609,7 @@ def get_setup_py_args(location, include_not_parsable=False):
     return parse_setup_py(location)
 
 
-def get_pypi_urls(name, version):
+def get_pypi_urls(name, version, **kwargs):
     """
     Return a mapping of computed Pypi URLs for this package
     """

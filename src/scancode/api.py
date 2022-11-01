@@ -250,11 +250,16 @@ def _licenses_data_from_match(
         result['is_unknown'] = lic.is_unknown
         result['owner'] = lic.owner
         result['homepage_url'] = lic.homepage_url
-        result['text_url'] = lic.text_urls[0] if lic.text_urls else ''
-        result['reference_url'] = license_url_template.format(lic.key)
-        result['scancode_text_url'] = SCANCODE_LICENSE_TEXT_URL.format(lic.key)
-        result['scancode_data_url'] = SCANCODE_LICENSE_DATA_URL.format(lic.key)
-
+        result['text_url'] = lic.text_urls[0] if lic.text_urls else None
+        # if the license is not builtin these should all be empty
+        if lic.is_builtin:
+            result['reference_url'] = license_url_template.format(lic.key)
+            result['scancode_text_url'] = SCANCODE_LICENSE_TEXT_URL.format(lic.key)
+            result['scancode_data_url'] = SCANCODE_LICENSE_DATA_URL.format(lic.key)
+        else:
+            result['reference_url'] = None
+            result['scancode_text_url'] = None
+            result['scancode_data_url'] = None
         spdx_key = lic.spdx_license_key
         result['spdx_license_key'] = spdx_key
 
@@ -266,7 +271,7 @@ def _licenses_data_from_match(
                 spdx_key = lic.spdx_license_key.rstrip('+')
                 spdx_url = SPDX_LICENSE_URL.format(spdx_key)
         else:
-            spdx_url = ''
+            spdx_url = None
         result['spdx_url'] = spdx_url
         result['start_line'] = match.start_line
         result['end_line'] = match.end_line
@@ -286,7 +291,6 @@ def _licenses_data_from_match(
         matched_rule['matched_length'] = match.len()
         matched_rule['match_coverage'] = match.coverage()
         matched_rule['rule_relevance'] = match.rule.relevance
-        # FIXME: for sanity this should always be included?????
         if include_text:
             result['matched_text'] = matched_text
     return detected_licenses

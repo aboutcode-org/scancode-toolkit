@@ -5,6 +5,7 @@ name: Bootloader Distribution Exception to GPL 2.0 or later
 category: Copyleft Limited
 owner: PyInstaller Project
 homepage_url: https://github.com/pyinstaller/pyinstaller/blob/develop/COPYING.txt
+is_builtin: yes
 is_exception: yes
 spdx_license_key: Bootloader-exception
 other_urls:

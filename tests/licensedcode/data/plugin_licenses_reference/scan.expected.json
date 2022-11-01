@@ -66,6 +66,7 @@
       "owner": "Apache Software Foundation",
       "homepage_url": "http://www.apache.org/licenses/",
       "notes": "Per SPDX.org, this version was released January 2004 This license is OSI\ncertified\n",
+      "is_builtin": true,
       "spdx_license_key": "Apache-2.0",
       "other_spdx_license_keys": [
         "LicenseRef-Apache",
@@ -92,6 +93,7 @@
       "owner": "Perl Foundation",
       "homepage_url": "http://www.perlfoundation.org/",
       "notes": "Per SPDX.org, this version was released 2006 This license is OSI\ncertifified.\n",
+      "is_builtin": true,
       "spdx_license_key": "Artistic-2.0",
       "osi_license_key": "Artistic-2.0",
       "text_urls": [
@@ -116,6 +118,7 @@
       "owner": "Regents of the University of California",
       "homepage_url": "http://www.opensource.org/licenses/BSD-2-Clause",
       "notes": "Per SPDX.org, this license is OSI certified.",
+      "is_builtin": true,
       "spdx_license_key": "BSD-2-Clause",
       "other_spdx_license_keys": [
         "BSD-2-Clause-NetBSD",
@@ -140,6 +143,7 @@
       "owner": "MIT",
       "homepage_url": "http://opensource.org/licenses/mit-license.php",
       "notes": "Per SPDX.org, this license is OSI certified.",
+      "is_builtin": true,
       "spdx_license_key": "MIT",
       "text_urls": [
         "http://opensource.org/licenses/mit-license.php"

@@ -8595,7 +8595,7 @@
           "is_unknown": false,
           "owner": "Dmitriy Anisimkov",
           "homepage_url": null,
-          "text_url": "",
+          "text_url": null,
           "reference_url": "https://scancode-licensedb.aboutcode.org/ada-linking-exception",
           "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/ada-linking-exception.LICENSE",
           "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/ada-linking-exception.yml",

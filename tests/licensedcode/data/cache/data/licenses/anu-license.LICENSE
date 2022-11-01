@@ -1,5 +1,6 @@
 ---
 key: anu-license
+spdx_license_key: licenseref-scancode-anu-license
 short_name: ANU License
 name: Australian National University License
 category: Permissive

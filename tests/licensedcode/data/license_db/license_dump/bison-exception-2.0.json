@@ -4,6 +4,7 @@
   "name": "Bison exception to GPL 2.0 or later",
   "category": "Copyleft Limited",
   "owner": "Free Software Foundation (FSF)",
+  "is_builtin": true,
   "is_exception": true,
   "spdx_license_key": "LicenseRef-scancode-bison-exception-2.0",
   "faq_url": "http://www.gnu.org/software/bison/manual/bison.html#Conditions",

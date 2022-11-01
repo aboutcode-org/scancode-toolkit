@@ -9,6 +9,7 @@ notes: |
     The link http://www.bittorrent.com/license/ is dead, so there is no live
     text containing the license terms except at
     http://web.archive.org/web/20090609222926/http://www.bittorrent.com/legal/bittorrent-open-source-license
+is_builtin: yes
 spdx_license_key: BitTorrent-1.1
 text_urls:
     - http://www.bittorrent.com/legal/bittorrent-open-source-license

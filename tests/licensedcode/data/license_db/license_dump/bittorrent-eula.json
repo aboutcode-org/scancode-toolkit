@@ -5,6 +5,7 @@
   "category": "Proprietary Free",
   "owner": "BitTorrent, Inc.",
   "homepage_url": "http://www.bittorrent.com/legal/eula",
+  "is_builtin": true,
   "spdx_license_key": "LicenseRef-scancode-bittorrent-eula",
   "ignorable_urls": [
     "http://www.bittorrent.com/legal/eula",
