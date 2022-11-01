@@ -5,7 +5,7 @@ short_name: GPL 2.0 with Library exception
 name: GPL 2.0 with Library exception
 category: Copyleft Limited
 owner: Grammatica
-notes: |-
+notes: |
     this classpath exception notice was last used in older versions of
     grammatica and is no longer relevant. Use the classpath-exception-2.0
     instead.

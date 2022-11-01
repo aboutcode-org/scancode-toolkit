@@ -15,7 +15,6 @@ ignorable_urls:
     - http://www.analysisandsolutions.com/
 ---
 
-
 SIMPLE PUBLIC LICENSE                        VERSION 1.1   2003-01-21
 
 Copyright (c) The Analysis and Solutions Company
@@ -27,11 +26,11 @@ without fee or royalty is hereby granted, provided that you include
 the following on ALL copies of the software and documentation or
 portions thereof, including modifications, that you make:
 
-a.  The full text of this license in a location viewable to users
-of the redistributed or derivative work.
+    a.  The full text of this license in a location viewable to users
+    of the redistributed or derivative work.
 
-b.  Notice of any changes or modifications to the files,
-including the date changes were made.
+    b.  Notice of any changes or modifications to the files,
+    including the date changes were made.
 
 2.  The name, servicemarks and trademarks of the copyright holders
 may NOT be used in advertising or publicity pertaining to the

@@ -22,7 +22,6 @@ ignorable_emails:
     - info@fieldtracks.org
 ---
 
-
 Civilian Open Source License (COSLi)
 -------------------------------------------------------------------------------
 
@@ -35,43 +34,43 @@ modification, are permitted provided that the following conditions
 are met:
 
 1. The software must not be used for millitary purposes. This includes:
-(i) use in the context of military operations (i.e. trainings, maneuvers,
-combat), (ii) use by armed forces, private military companies and
-intelligence services and (iii) use in cooperation with such
-organisations. Please contact info@fieldtracks.org for:
-- A written permission in dual-use situations.
-- Clarification for a specific application, organisation or
-use-case.
-- Re-licensing for inclusion in other OpenSource projects (i.e. GPL
-based ones).
+   (i) use in the context of military operations (i.e. trainings, maneuvers,
+   combat), (ii) use by armed forces, private military companies and
+   intelligence services and (iii) use in cooperation with such
+   organisations. Please contact info@fieldtracks.org for:
+   - A written permission in dual-use situations.
+   - Clarification for a specific application, organisation or
+     use-case.
+   - Re-licensing for inclusion in other OpenSource projects (i.e. GPL
+     based ones).
 
 2. Redistributions of source code must retain the above copyright
-notice, this list of conditions, this restriction on military usage
-and the following disclaimer.
+   notice, this list of conditions, this restriction on military usage
+   and the following disclaimer.
 
 3. Redistributions in binary form must reproduce the above copyright
-notice, this list of conditions, this restriction on military usage
-and the following disclaimer in the documentation and/or other
-materials provided with the distribution.
+   notice, this list of conditions, this restriction on military usage
+   and the following disclaimer in the documentation and/or other
+   materials provided with the distribution.
 
 4. All advertising materials mentioning features or use of this
-software must display the following acknowledgment:
-"This product includes software developed by the fieldtracks Project
-(https://www.fieldtracks.org/)"
+   software must display the following acknowledgment:
+   "This product includes software developed by the fieldtracks Project
+   (https://www.fieldtracks.org/)"
 
 5. The name "Fieldtracks" must not be used to
-endorse or promote products derived from this software without
-prior written permission. For written permission, please contact
-info@fieldtracks.org.
+   endorse or promote products derived from this software without
+   prior written permission. For written permission, please contact
+   info@fieldtracks.org.
 
 6. Products derived from this software may not be called "Fieldtracks"
-nor may "Fieldtracks" appear in their names without prior written
-permission of the Fieldtracks Project.
+   nor may "Fieldtracks" appear in their names without prior written
+   permission of the Fieldtracks Project.
 
 7. Redistributions of any form whatsoever must retain the restriction on
-military usage and following acknowledgment:
-"This product includes software developed by the Fieldtracks Project
-(https://fieldtracks.org/) - military use is forbidden"
+   military usage and following acknowledgment:
+   "This product includes software developed by the Fieldtracks Project
+   (https://fieldtracks.org/) - military use is forbidden"
 
 THIS SOFTWARE IS PROVIDED BY THE Fieldtracks PROJECT ``AS IS'' AND ANY
 EXPRESSED OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE

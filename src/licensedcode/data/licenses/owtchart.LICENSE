@@ -27,7 +27,6 @@ ignorable_emails:
     - koblas@netcom.com
 ---
 
-
 OWTChart License
 
 Copyright and License Terms
@@ -78,7 +77,7 @@ Institutes of Health.
 Portions copyright 1996, 1997, 1998, by Boutell.Com, Inc. GIF
 decompression code copyright 1990, 1991, 1993, by David Koblas
 (koblas@netcom.com). Non-LZW-based GIF compression code copyright 1998,
-by Hutchison Avenue Software Corporation.
+by Hutchison Avenue Software Corporation. 
 
 Permission has been granted to copy and distribute gd in any context,
 including a commercial application, provided that this notice is present

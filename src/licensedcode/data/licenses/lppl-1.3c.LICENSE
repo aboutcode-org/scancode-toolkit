@@ -23,15 +23,14 @@ ignorable_urls:
     - http://www.latex-project.org/lppl.txt
 ---
 
-
 The LaTeX Project Public License
 =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 
 LPPL Version 1.3c  2008-05-04
 
 Copyright 1999 2002-2008 LaTeX3 Project
-Everyone is allowed to distribute verbatim copies of this
-license document, but modification of it is not allowed.
+    Everyone is allowed to distribute verbatim copies of this
+    license document, but modification of it is not allowed.
 
 
 PREAMBLE
@@ -42,8 +41,8 @@ which the LaTeX kernel and the base LaTeX packages are distributed.
 
 You may use this license for any work of which you hold the copyright
 and which you wish to distribute.  This license may be particularly
-suitable if your work is TeX-related (such as a LaTeX package), but
-it is written in such a way that you can use it even if your work is
+suitable if your work is TeX-related (such as a LaTeX package), but 
+it is written in such a way that you can use it even if your work is 
 unrelated to TeX.
 
 The section `WHETHER AND HOW TO DISTRIBUTE WORKS UNDER THIS LICENSE',
@@ -68,54 +67,54 @@ DEFINITIONS
 
 In this license document the following terms are used:
 
-`Work'
-Any work being distributed under this License.
+   `Work'
+    Any work being distributed under this License.
+    
+   `Derived Work'
+    Any work that under any applicable law is derived from the Work.
 
-`Derived Work'
-Any work that under any applicable law is derived from the Work.
+   `Modification' 
+    Any procedure that produces a Derived Work under any applicable
+    law -- for example, the production of a file containing an
+    original file associated with the Work or a significant portion of
+    such a file, either verbatim or with modifications and/or
+    translated into another language.
 
-`Modification'
-Any procedure that produces a Derived Work under any applicable
-law -- for example, the production of a file containing an
-original file associated with the Work or a significant portion of
-such a file, either verbatim or with modifications and/or
-translated into another language.
+   `Modify'
+    To apply any procedure that produces a Derived Work under any
+    applicable law.
+    
+   `Distribution'
+    Making copies of the Work available from one person to another, in
+    whole or in part.  Distribution includes (but is not limited to)
+    making any electronic components of the Work accessible by
+    file transfer protocols such as FTP or HTTP or by shared file
+    systems such as Sun's Network File System (NFS).
 
-`Modify'
-To apply any procedure that produces a Derived Work under any
-applicable law.
+   `Compiled Work'
+    A version of the Work that has been processed into a form where it
+    is directly usable on a computer system.  This processing may
+    include using installation facilities provided by the Work,
+    transformations of the Work, copying of components of the Work, or
+    other activities.  Note that modification of any installation
+    facilities provided by the Work constitutes modification of the Work.
 
-`Distribution'
-Making copies of the Work available from one person to another, in
-whole or in part.  Distribution includes (but is not limited to)
-making any electronic components of the Work accessible by
-file transfer protocols such as FTP or HTTP or by shared file
-systems such as Sun's Network File System (NFS).
+   `Current Maintainer'
+    A person or persons nominated as such within the Work.  If there is
+    no such explicit nomination then it is the `Copyright Holder' under
+    any applicable law.
 
-`Compiled Work'
-A version of the Work that has been processed into a form where it
-is directly usable on a computer system.  This processing may
-include using installation facilities provided by the Work,
-transformations of the Work, copying of components of the Work, or
-other activities.  Note that modification of any installation
-facilities provided by the Work constitutes modification of the Work.
+   `Base Interpreter' 
+    A program or process that is normally needed for running or
+    interpreting a part or the whole of the Work.    
 
-`Current Maintainer'
-A person or persons nominated as such within the Work.  If there is
-no such explicit nomination then it is the `Copyright Holder' under
-any applicable law.
-
-`Base Interpreter'
-A program or process that is normally needed for running or
-interpreting a part or the whole of the Work.
-
-A Base Interpreter may depend on external components but these
-are not considered part of the Base Interpreter provided that each
-external component clearly identifies itself whenever it is used
-interactively.  Unless explicitly specified when applying the
-license to the Work, the only applicable Base Interpreter is a
-`LaTeX-Format' or in the case of files belonging to the
-`LaTeX-format' a program implementing the `TeX language'.
+    A Base Interpreter may depend on external components but these
+    are not considered part of the Base Interpreter provided that each
+    external component clearly identifies itself whenever it is used
+    interactively.  Unless explicitly specified when applying the
+    license to the Work, the only applicable Base Interpreter is a
+    `LaTeX-Format' or in the case of files belonging to the 
+    `LaTeX-format' a program implementing the `TeX language'.
 
 
 
@@ -155,43 +154,43 @@ the Derived Work.
 distribute a Derived Work provided the following conditions are met
 for every component of the Work unless that component clearly states
 in the copyright notice that it is exempt from that condition.  Only
-the Current Maintainer is allowed to add such statements of exemption
-to a component of the Work.
+the Current Maintainer is allowed to add such statements of exemption 
+to a component of the Work. 
 
-a. If a component of this Derived Work can be a direct replacement
-for a component of the Work when that component is used with the
-Base Interpreter, then, wherever this component of the Work
-identifies itself to the user when used interactively with that
-Base Interpreter, the replacement component of this Derived Work
-clearly and unambiguously identifies itself as a modified version
-of this component to the user when used interactively with that
-Base Interpreter.
+  a. If a component of this Derived Work can be a direct replacement
+     for a component of the Work when that component is used with the
+     Base Interpreter, then, wherever this component of the Work
+     identifies itself to the user when used interactively with that
+     Base Interpreter, the replacement component of this Derived Work
+     clearly and unambiguously identifies itself as a modified version
+     of this component to the user when used interactively with that
+     Base Interpreter.
+     
+  b. Every component of the Derived Work contains prominent notices
+     detailing the nature of the changes to that component, or a
+     prominent reference to another file that is distributed as part
+     of the Derived Work and that contains a complete and accurate log
+     of the changes.
+  
+  c. No information in the Derived Work implies that any persons,
+     including (but not limited to) the authors of the original version
+     of the Work, provide any support, including (but not limited to)
+     the reporting and handling of errors, to recipients of the
+     Derived Work unless those persons have stated explicitly that
+     they do provide such support for the Derived Work.
 
-b. Every component of the Derived Work contains prominent notices
-detailing the nature of the changes to that component, or a
-prominent reference to another file that is distributed as part
-of the Derived Work and that contains a complete and accurate log
-of the changes.
+  d. You distribute at least one of the following with the Derived Work:
 
-c. No information in the Derived Work implies that any persons,
-including (but not limited to) the authors of the original version
-of the Work, provide any support, including (but not limited to)
-the reporting and handling of errors, to recipients of the
-Derived Work unless those persons have stated explicitly that
-they do provide such support for the Derived Work.
+       1. A complete, unmodified copy of the Work; 
+          if your distribution of a modified component is made by
+          offering access to copy the modified component from a
+          designated place, then offering equivalent access to copy
+          the Work from the same or some similar place meets this
+          condition, even though third parties are not compelled to
+          copy the Work along with the modified component;
 
-d. You distribute at least one of the following with the Derived Work:
-
-1. A complete, unmodified copy of the Work;
-if your distribution of a modified component is made by
-offering access to copy the modified component from a
-designated place, then offering equivalent access to copy
-the Work from the same or some similar place meets this
-condition, even though third parties are not compelled to
-copy the Work along with the modified component;
-
-2. Information that is sufficient to obtain a complete,
-unmodified copy of the Work.
+       2. Information that is sufficient to obtain a complete,
+          unmodified copy of the Work.
 
 7.  If you are not the Current Maintainer of the Work, you may
 distribute a Compiled Work generated from a Derived Work, as long as
@@ -209,16 +208,16 @@ format, where the Work or that Derived Work (in whole or in part) is
 then produced by applying some process to that format, does not relax or
 nullify any sections of this license as they pertain to the results of
 applying that process.
-
+     
 10. a. A Derived Work may be distributed under a different license
-provided that license itself honors the conditions listed in
-Clause 6 above, in regard to the Work, though it does not have
-to honor the rest of the conditions in this license.
-
-b. If a Derived Work is distributed under a different license, that
-Derived Work must provide sufficient documentation as part of
-itself to allow each recipient of that Derived Work to honor the
-restrictions in Clause 6 above, concerning changes from the Work.
+       provided that license itself honors the conditions listed in
+       Clause 6 above, in regard to the Work, though it does not have
+       to honor the rest of the conditions in this license.
+      
+    b. If a Derived Work is distributed under a different license, that
+       Derived Work must provide sufficient documentation as part of
+       itself to allow each recipient of that Derived Work to honor the 
+       restrictions in Clause 6 above, concerning changes from the Work.
 
 11. This license places no restrictions on works that are unrelated to
 the Work, nor does this license place any restrictions on aggregating
@@ -277,41 +276,41 @@ any existing Current Maintainer to take over this role.
 If the Work is unmaintained, you can become the Current Maintainer of
 the Work through the following steps:
 
-1.  Make a reasonable attempt to trace the Current Maintainer (and
-the Copyright Holder, if the two differ) through the means of
-an Internet or similar search.
+ 1.  Make a reasonable attempt to trace the Current Maintainer (and
+     the Copyright Holder, if the two differ) through the means of
+     an Internet or similar search.
 
-2.  If this search is successful, then enquire whether the Work
-is still maintained.
+ 2.  If this search is successful, then enquire whether the Work
+     is still maintained.
 
-a. If it is being maintained, then ask the Current Maintainer
-to update their communication data within one month.
+  a. If it is being maintained, then ask the Current Maintainer
+     to update their communication data within one month.
+     
+  b. If the search is unsuccessful or no action to resume active
+     maintenance is taken by the Current Maintainer, then announce
+     within the pertinent community your intention to take over
+     maintenance.  (If the Work is a LaTeX work, this could be
+     done, for example, by posting to comp.text.tex.)
 
-b. If the search is unsuccessful or no action to resume active
-maintenance is taken by the Current Maintainer, then announce
-within the pertinent community your intention to take over
-maintenance.  (If the Work is a LaTeX work, this could be
-done, for example, by posting to comp.text.tex.)
-
-3a. If the Current Maintainer is reachable and agrees to pass
-maintenance of the Work to you, then this takes effect
-immediately upon announcement.
-
-b. If the Current Maintainer is not reachable and the Copyright
-Holder agrees that maintenance of the Work be passed to you,
-then this takes effect immediately upon announcement.
-
-4.  If you make an `intention announcement' as described in 2b. above
-and after three months your intention is challenged neither by
-the Current Maintainer nor by the Copyright Holder nor by other
-people, then you may arrange for the Work to be changed so as
-to name you as the (new) Current Maintainer.
-
-5.  If the previously unreachable Current Maintainer becomes
-reachable once more within three months of a change completed
-under the terms of 3b) or 4), then that Current Maintainer must
-become or remain the Current Maintainer upon request provided
-they then update their communication data within one month.
+ 3a. If the Current Maintainer is reachable and agrees to pass
+     maintenance of the Work to you, then this takes effect
+     immediately upon announcement.
+     
+  b. If the Current Maintainer is not reachable and the Copyright
+     Holder agrees that maintenance of the Work be passed to you,
+     then this takes effect immediately upon announcement.  
+    
+ 4.  If you make an `intention announcement' as described in 2b. above
+     and after three months your intention is challenged neither by
+     the Current Maintainer nor by the Copyright Holder nor by other
+     people, then you may arrange for the Work to be changed so as
+     to name you as the (new) Current Maintainer.
+     
+ 5.  If the previously unreachable Current Maintainer becomes
+     reachable once more within three months of a change completed
+     under the terms of 3b) or 4), then that Current Maintainer must
+     become or remain the Current Maintainer upon request provided
+     they then update their communication data within one month.
 
 A change in the Current Maintainer does not, of itself, alter the fact
 that the Work is distributed under the LPPL license.
@@ -377,23 +376,23 @@ component is constrained by the conditions in this license.
 
 Here is an example of such a notice and statement:
 
-%% pig.dtx
-%% Copyright 2005 M. Y. Name
-%
-% This work may be distributed and/or modified under the
-% conditions of the LaTeX Project Public License, either version 1.3
-% of this license or (at your option) any later version.
-% The latest version of this license is in
-%   http://www.latex-project.org/lppl.txt
-% and version 1.3 or later is part of all distributions of LaTeX
-% version 2005/12/01 or later.
-%
-% This work has the LPPL maintenance status `maintained'.
-%
-% The Current Maintainer of this work is M. Y. Name.
-%
-% This work consists of the files pig.dtx and pig.ins
-% and the derived file pig.sty.
+  %% pig.dtx
+  %% Copyright 2005 M. Y. Name
+  %
+  % This work may be distributed and/or modified under the
+  % conditions of the LaTeX Project Public License, either version 1.3
+  % of this license or (at your option) any later version.
+  % The latest version of this license is in
+  %   http://www.latex-project.org/lppl.txt
+  % and version 1.3 or later is part of all distributions of LaTeX
+  % version 2005/12/01 or later.
+  %
+  % This work has the LPPL maintenance status `maintained'.
+  % 
+  % The Current Maintainer of this work is M. Y. Name.
+  %
+  % This work consists of the files pig.dtx and pig.ins
+  % and the derived file pig.sty.
 
 Given such a notice and statement in a file, the conditions
 given in this license document would apply, with the `Work' referring
@@ -403,7 +402,7 @@ referring to any `LaTeX-Format', and both `Copyright Holder' and
 `Current Maintainer' referring to the person `M. Y. Name'.
 
 If you do not want the Maintenance section of LPPL to apply to your
-Work, change `maintained' above into `author-maintained'.
+Work, change `maintained' above into `author-maintained'.  
 However, we recommend that you use `maintained', as the Maintenance
 section was added in order to ensure that your Work remains useful to
 the community even when you can no longer maintain and support it
@@ -423,19 +422,19 @@ completely different task), then clauses 6b and 6d shall not apply.
 Important Recommendations
 -------------------------
 
-Defining What Constitutes the Work
+ Defining What Constitutes the Work
 
-The LPPL requires that distributions of the Work contain all the
-files of the Work.  It is therefore important that you provide a
-way for the licensee to determine which files constitute the Work.
-This could, for example, be achieved by explicitly listing all the
-files of the Work near the copyright notice of each file or by
-using a line such as:
+   The LPPL requires that distributions of the Work contain all the
+   files of the Work.  It is therefore important that you provide a
+   way for the licensee to determine which files constitute the Work.
+   This could, for example, be achieved by explicitly listing all the
+   files of the Work near the copyright notice of each file or by
+   using a line such as:
 
-% This work consists of all files listed in manifest.txt.
-
-in that place.  In the absence of an unequivocal list it might be
-impossible for the licensee to determine what is considered by you
-to comprise the Work and, in such a case, the licensee would be
-entitled to make reasonable conjectures as to which files comprise
-the Work.
+    % This work consists of all files listed in manifest.txt.
+   
+   in that place.  In the absence of an unequivocal list it might be
+   impossible for the licensee to determine what is considered by you
+   to comprise the Work and, in such a case, the licensee would be
+   entitled to make reasonable conjectures as to which files comprise
+   the Work.

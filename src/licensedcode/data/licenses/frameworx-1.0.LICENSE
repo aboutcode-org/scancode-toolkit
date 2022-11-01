@@ -25,7 +25,6 @@ ignorable_urls:
     - http://www.frameworx.com/
 ---
 
-
 THE FRAMEWORX OPEN LICENSE 1.0
 This License Agreement, The Frameworx Open License 1.0, has been entered into between The Frameworx Company and you, the licensee hereunder, effective as of Your acceptance of the Frameworx Code Base or an Downstream Distribution (each as defined below).
 AGREEMENT BACKGROUND
@@ -59,17 +58,17 @@ The Frameworx Company and You have agreed as follows:
 
 (c)     All Downstream Distributions shall:
 
-(i)            include all portions and elements of the Frameworx Code Base required to build the Source Code of such Downstream Distribution into a fully functional machine-executable system, or additional build scripts or comparable software necessary and sufficient for such purposes;
+                               (i)            include all portions and elements of the Frameworx Code Base required to build the Source Code of such Downstream Distribution into a fully functional machine-executable system, or additional build scripts or comparable software necessary and sufficient for such purposes;
 
-(ii)            include, in each file containing any portion or element of the Frameworx Code Base, the following identifying legend: This file contains software that has been made available under The Frameworx Open License 1.0. Use and distribution hereof are subject to the restrictions set forth therein.
+                             (ii)            include, in each file containing any portion or element of the Frameworx Code Base, the following identifying legend: This file contains software that has been made available under The Frameworx Open License 1.0. Use and distribution hereof are subject to the restrictions set forth therein.
 
-(iii)            include all other copyright notices, authorship credits, warranty disclaimers (including that provided in Section 6 below), legends, documentation, annotations and comments contained in the Frameworx Code Base as provided to You hereunder;
+                            (iii)            include all other copyright notices, authorship credits, warranty disclaimers (including that provided in Section 6 below), legends, documentation, annotations and comments contained in the Frameworx Code Base as provided to You hereunder;
 
-(iv)            contain an unaltered copy of the html file named frameworx_community_invitation.html included within the Frameworx Code Base that acknowledges new users and provides them with information on the Frameworx Code Base community;
+                            (iv)            contain an unaltered copy of the html file named frameworx_community_invitation.html included within the Frameworx Code Base that acknowledges new users and provides them with information on the Frameworx Code Base community;
 
-(v)            contain an unaltered copy of the text file named the_frameworx_license.txt included within the Frameworx Code Base that includes a text copy of the form of this License Agreement; and
+                              (v)            contain an unaltered copy of the text file named the_frameworx_license.txt included within the Frameworx Code Base that includes a text copy of the form of this License Agreement; and
 
-(vi)            prominently display to any viewer or user of the Source Code of such Open Downstream Distribution, in the place and manner normally used for such displays, the following legend:
+                            (vi)            prominently display to any viewer or user of the Source Code of such Open Downstream Distribution, in the place and manner normally used for such displays, the following legend:
 
 Source code licensed under from The Frameworx Company is contained herein, and such source code has been obtained either under The Frameworx Open License, or another license granted by The Frameworx Company. Use and distribution hereof is subject to the restrictions provided in the relevant such license and to the copyrights of the licensor thereunder. A copy of The Frameworx Open License is provided in a file named the_frameworx_license.txt and included herein, and may also be available for inspection at http://www.frameworx.com.
 

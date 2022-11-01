@@ -18,7 +18,6 @@ ignorable_urls:
     - http://www.sgi.com/software/opensource/glx/license.html
 ---
 
-
 GLX PUBLIC LICENSE Version 1.0 2/11/99 License
 
 Subject to any third party claims, Silicon Graphics, Inc. ("SGI") hereby
@@ -33,29 +32,29 @@ ing:
 
 1. Definitions.
 
-(a) "Original Software" means source code of computer software code
-which is described in Exhibit A as Original Software.
+     (a) "Original Software" means source code of computer software code
+     which is described in Exhibit A as Original Software.
 
-(b) "Modifications" means any addition to or deletion from the sub-
-stance or structure of either the Original Software or any previous
-Modifications. When Subject Software is released as a series of
-files, a Modification means (i) any addition to or deletion from
-the contents of a file containing Original Software or previous
-Modifications and (ii) any new file that contains any part of the
-Original Code or previous Modifications.
+     (b) "Modifications" means any addition to or deletion from the sub-
+     stance or structure of either the Original Software or any previous
+     Modifications. When Subject Software is released as a series of
+     files, a Modification means (i) any addition to or deletion from
+     the contents of a file containing Original Software or previous
+     Modifications and (ii) any new file that contains any part of the
+     Original Code or previous Modifications.
 
-(c) "Subject Software" means the Original Software or Modifications
-or the combination of the Original Software and Modifications, or
-portions of any of the foregoing.
+     (c) "Subject Software" means the Original Software or Modifications
+     or the combination of the Original Software and Modifications, or
+     portions of any of the foregoing.
 
-(d) "Recipient" means an individual or a legal entity exercising
-rights under, and complying with all of the terms of, this License.
-For legal entities, "Recipient" includes any entity which controls,
-is controlled by, or is under common control with Recipient. For
-purposes of this definition, "control" of an entity means (a) the
-power, direct or indirect, to direct or manage such entity, or (b)
-ownership of fifty percent (50%) or more of the outstanding shares
-or beneficial ownership of such entity.
+     (d) "Recipient" means an individual or a legal entity exercising
+     rights under, and complying with all of the terms of, this License.
+     For legal entities, "Recipient" includes any entity which controls,
+     is controlled by, or is under common control with Recipient. For
+     purposes of this definition, "control" of an entity means (a) the
+     power, direct or indirect, to direct or manage such entity, or (b)
+     ownership of fifty percent (50%) or more of the outstanding shares
+     or beneficial ownership of such entity.
 
 2. Redistribution of Source Code Subject to These Terms. Redistributions of
 Subject Software in source code form must retain the notice set forth in

@@ -16,6 +16,7 @@ ignorable_urls:
 ---
 
 
+
 MICROSOFT SOFTWARE LICENSE TERMS
 
 MICROSOFT .NET LIBRARY
@@ -25,7 +26,7 @@ These license terms are an agreement between you and Microsoft Corporation (or b
 If you comply with these license terms, you have the rights below.
 1. INSTALLATION AND USE RIGHTS.
 
-You may install and use any number of copies of the software to develop and test your applications.
+You may install and use any number of copies of the software to develop and test your applications. 
 2. THIRD PARTY COMPONENTS. The software may include third party components with separate legal notices or governed by other agreements, as may be described in the ThirdPartyNotices file(s) accompanying the software.
 3. ADDITIONAL LICENSING REQUIREMENTS AND/OR USE RIGHTS.
 a. DISTRIBUTABLE CODE. The software is comprised of Distributable Code. “Distributable Code” is code that you are permitted to distribute in applications you develop if you comply with the terms below.
@@ -60,7 +61,7 @@ b. Processing of Personal Data. To the extent Microsoft is a processor or subpro
 . use the software in any way that is against the law; or
 
 . share, publish, rent or lease the software, provide the software as a stand-alone offering for others to use, or transfer the software or this agreement to any third party.
-6. Export Restrictions. You must comply with all domestic and international export laws and regulations that apply to the software, which include restrictions on destinations, end users, and end use. For further information on export restrictions, visit www.microsoft.com/exporting.
+6. Export Restrictions. You must comply with all domestic and international export laws and regulations that apply to the software, which include restrictions on destinations, end users, and end use. For further information on export restrictions, visit www.microsoft.com/exporting. 
 7. SUPPORT SERVICES. Because this software is “as is,” we may not provide support services for it.
 8. Entire Agreement. This agreement, and the terms for supplements, updates, Internet-based services and support services that you use, are the entire agreement for the software and support services.
 9. Applicable Law. If you acquired the software in the United States, Washington law applies to interpretation of and claims for breach of this agreement, and the laws of the state where you live apply to all other claims. If you acquired the software in any other country, its laws apply.

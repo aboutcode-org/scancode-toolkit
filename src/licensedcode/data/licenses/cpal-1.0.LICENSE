@@ -16,7 +16,6 @@ other_urls:
     - https://opensource.org/licenses/CPAL-1.0
 ---
 
-
 Common Public Attribution License Version 1.0 (CPAL)
 1.	"Definitions"
 1.0.1	"Commercial Use" means distribution or otherwise making the Covered Code available to a third party.
@@ -121,8 +120,8 @@ If you wish to allow use of your version of this file only under the terms of th
 
 
 EXHIBIT B. Attribution Information
-Attribution Copyright Notice:
-Attribution Phrase (not exceeding 10 words):
-Attribution URL:
+Attribution Copyright Notice:  
+Attribution Phrase (not exceeding 10 words):  
+Attribution URL:  
 Graphic Image as provided in the Covered Code, if any.
 Display of Attribution Information is [required/not required] in Larger Works which are defined in the CPAL as a work which combines Covered Code or portions thereof with code not governed by the terms of the CPAL.

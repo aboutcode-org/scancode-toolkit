@@ -21,18 +21,17 @@ other_urls:
     - https://opensource.org/licenses/EFL-2.0
 ---
 
-
 Eiffel Forum License, version 2
 
-1. Permission is hereby granted to use, copy, modify and/or
-distribute this package, provided that:
-* copyright notices are retained unchanged,
-* any distribution of this package, whether modified or not,
-includes this license text.
-2. Permission is hereby also granted to distribute binary programs
-which depend on this package. If the binary program depends on a
-modified version of this package, you are encouraged to publicly
-release the modified version of this package.
+   1. Permission is hereby granted to use, copy, modify and/or
+      distribute this package, provided that:
+          * copyright notices are retained unchanged,
+          * any distribution of this package, whether modified or not,
+      includes this license text.
+   2. Permission is hereby also granted to distribute binary programs
+      which depend on this package. If the binary program depends on a
+      modified version of this package, you are encouraged to publicly
+      release the modified version of this package.
 
 ***********************
 

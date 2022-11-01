@@ -18,7 +18,6 @@ ignorable_urls:
     - http://cuaoffice.sourceforge.net/
 ---
 
-
 CUA Office Public License Version 1.0
 1. Definitions.
 
@@ -467,8 +466,8 @@ under the License.
 The Original Code is  .
 
 The Initial Developer of the Original Code is  .
-Portions created by   are Copyright (C)
-. All Rights Reserved.
+Portions created by   are Copyright (C)  
+ . All Rights Reserved.
 
 Contributor(s):  .
 

@@ -21,12 +21,11 @@ ignorable_authors:
     - the University of Cambridge
 ---
 
-
 General Public Licence for the software known as MSNTP
 ------------------------------------------------------
 
-(c) Copyright, N.M. Maclaren, 1996, 1997, 2000
-(c) Copyright, University of Cambridge, 1996, 1997, 2000
+          (c) Copyright, N.M. Maclaren, 1996, 1997, 2000
+          (c) Copyright, University of Cambridge, 1996, 1997, 2000
 
 Free use of MSNTP in source and binary forms is permitted, provided that this
 entire licence is duplicated in all copies, and that any documentation,
@@ -40,12 +39,12 @@ The Author and the University of Cambridge retain the copyright and all other
 legal rights to the software and make it available non-exclusively.  All users
 must ensure that the software in all its derivations carries a copyright notice
 in the form:
-(c) Copyright N.M. Maclaren,
-(c) Copyright University of Cambridge.
+          (c) Copyright N.M. Maclaren,
+          (c) Copyright University of Cambridge.
 
 
 
-NO WARRANTY
+                           NO WARRANTY
 
 Because the MSNTP software is licensed free of charge, the Author and the
 University of Cambridge provide absolutely no warranty, either expressed or
@@ -61,7 +60,7 @@ any losses whatsoever, including but not limited to lost profits, lost monies,
 lost or corrupted data, or other special, incidental or consequential losses
 that may arise out of the use or inability to use the MSNTP software.
 
-COPYING POLICY
+                         COPYING POLICY
 
 Permission is hereby granted for copying and distribution of copies of the
 MSNTP source and binary files, and of any part thereof, subject to the
