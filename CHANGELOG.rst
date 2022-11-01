@@ -53,15 +53,30 @@ License detection:
   detected license only once. This data can contain the reference license text
   as an option.
 
-- We can now detect licenses using custom license texts and license rules.
-  These can be provided as a one off in a directory or packaged as a plugin
-  for consistent reuse and deployment.
-
 - There is a new "scancode-reindex-licenses" command that replace the
   "scancode --reindex-licenses" command line option which has been
   removed. This new command supports simpler reindexing using custom
   license texts and license rules contributed by plugins or stored in an
-  additional directory. 
+  additional directory. The "--reindex-licenses-for-all-languages" CLI option
+  is also moved to the "scancode-reindex-licenses" command as an option
+  "--all-languages".
+
+- We can now detect licenses using custom license texts and license rules.
+  These can be provided as a one off in a directory or packaged as a plugin
+  for consistent reuse and deployment. There is an option "--additional-directory"
+  with the "scancode-reindex-licenses" command and also a new "--only-builtin"
+  option to only use the builtin licenses to build the cache.
+
+- Scancode LICENSE and RULE files now also contain their data as YAML frontmatter,
+  which previously used to be in their respective YAML files. This reduces number of
+  files in those directories, 'rules' and 'licenses' to half. Git line history is
+  preserved for the files.
+
+- A new command line option "--get-license-data" is added to dump license data in
+  JSON, YAML and HTML formats, and also generates a local index and a static website
+  to view the data. This will essentially be an API/way to get scancode license data
+  as opposed to just reading the files. 
+
 
 Package detection:
 ~~~~~~~~~~~~~~~~~~~~~
