@@ -1,5 +1,0 @@
-license_expression: otn-dev-dist
-is_license_notice: yes
-ignorable_urls:
-    - http://otn.oracle.com/docs
-    - http://www.oracle.com/products/export/index.html?content.html

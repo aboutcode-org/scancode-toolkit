@@ -1,3 +1,9 @@
+---
+license_expression: bsd-new
+is_license_notice: yes
+relevance: 100
+---
+
     One component of the ssh source code is under a 3-clause BSD license,
     held by the University of California, since we pulled these parts from
     original Berkeley code.

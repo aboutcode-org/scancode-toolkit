@@ -1,3 +1,11 @@
+---
+license_expression: shl-0.51
+is_license_text: yes
+relevance: 100
+ignorable_urls:
+    - http://www.apache.org/licenses/LICENSE-2.0
+---
+
 SOLDERPAD HARDWARE LICENSE version 0.51
 This license is based closely on the Apache License Version 2.0, but is not
 approved or endorsed by the Apache Foundation. A copy of the non-modified Apache

@@ -1,1 +1,9 @@
+---
+license_expression: isc
+is_license_reference: yes
+relevance: 100
+ignorable_urls:
+    - https://isc.org/copyright.html
+---
+
 https://isc.org/copyright.html

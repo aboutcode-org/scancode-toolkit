@@ -1,3 +1,9 @@
+---
+license_expression: gpl-2.0 WITH openvpn-openssl-exception
+is_license_notice: yes
+relevance: 100
+---
+
 OpenVPN is distributed under the GPL license version 2 (see Below). Special
 exception for linking OpenVPN with OpenSSL:
 

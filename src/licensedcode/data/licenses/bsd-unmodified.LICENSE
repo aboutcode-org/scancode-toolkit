@@ -1,3 +1,16 @@
+---
+key: bsd-unmodified
+short_name: BSD Unmodified
+name: BSD Simplified with Unmodified requirement
+category: Permissive
+owner: Unspecified
+notes: |
+    Contains this extra word unmodified in "the above copyright notice unmodified"
+    when compared with a bsd-simplified. Found in the newlib C library
+spdx_license_key: LicenseRef-scancode-bsd-unmodified
+minimum_coverage: 95
+---
+
 Redistribution and use in source and binary forms, with or without
 modification, are permitted provided that the following conditions
 are met:

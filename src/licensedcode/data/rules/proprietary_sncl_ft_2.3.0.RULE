@@ -1,3 +1,8 @@
+---
+license_expression: proprietary-license
+is_license_text: yes
+---
+
 Simple Non Code License (SNCL)
 
 Version 2.3.0
@@ -34,4 +39,3 @@ The data, source code or text under this license is therefore called the object.
 	4.1. The licensor shall not be bound by any additional or different terms or conditions communicated by the licensee unless expressly agreed.
 	4.2. The licensor has the right to edit at any time the content of this license, however, its effects will not be retroactive.
 	4.3. Any modification made by the licensor shall not affect the already published versions of the object, only the future ones.
-

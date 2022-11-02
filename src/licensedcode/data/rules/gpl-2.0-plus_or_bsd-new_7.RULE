@@ -1,3 +1,9 @@
+---
+license_expression: gpl-2.0-plus OR bsd-new
+is_license_notice: yes
+minimum_coverage: 95
+---
+
 This code is dual-licensed under both GPLv2 and 3-clause BSD. What follows is
 the license notice for both respectively.
 

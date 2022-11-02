@@ -1,1 +1,9 @@
+---
+license_expression: bsd-new
+is_license_reference: yes
+relevance: 100
+referenced_filenames:
+    - LICENSE
+---
+
 Licensed under the 3-clause BSD license. See the LICENSE file.

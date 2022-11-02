@@ -1,3 +1,14 @@
+---
+key: okl
+short_name: OKL license
+name: OKL license
+category: Copyleft
+owner: General Dynamics
+homepage_url: https://gdmissionsystems.com/cyber/products/trusted-computing-cross-domain/microvisor-products/
+spdx_license_key: LicenseRef-scancode-okl
+minimum_coverage: 80
+---
+
 1. Redistribution and use of (Software) in source and binary
 forms, with or without modification, are permitted provided that the
 following conditions are met:

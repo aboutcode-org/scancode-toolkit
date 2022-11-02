@@ -1,3 +1,10 @@
+---
+license_expression: gpl-2.0 WITH broadcom-linking-exception-2.0 OR commercial-license
+is_license_notice: yes
+ignorable_urls:
+    - http://www.broadcom.com/licenses/GPLv2.php
+---
+
 <:label-BRCM:2008:DUAL/GPL:standard    
  
  Unless you and Broadcom execute a separate written software license

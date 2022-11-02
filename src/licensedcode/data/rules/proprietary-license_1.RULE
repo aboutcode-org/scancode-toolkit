@@ -1,3 +1,8 @@
+---
+license_expression: proprietary-license
+is_license_notice: yes
+---
+
 Citation Requirements
 You are required to cite our papers in any publications that use this code. 
 The primary citation corresponding to this software is [1]. The papers that 

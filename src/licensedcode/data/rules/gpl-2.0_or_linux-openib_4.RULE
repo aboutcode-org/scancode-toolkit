@@ -1,3 +1,12 @@
+---
+license_expression: gpl-2.0 OR linux-openib
+is_license_notice: yes
+relevance: 98
+referenced_filenames:
+    - COPYING
+notes: openib
+---
+
 This software is waitailable to you under a choice of one of two
 licenses.  You may choose to be licensed under the terms of the GNU
 General Public License (GPL) Version 2, waitailable from the file

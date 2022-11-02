@@ -1,3 +1,13 @@
+---
+license_expression: apache-2.0 OR mpl-1.1
+is_license_notice: yes
+relevance: 100
+minimum_coverage: 80
+ignorable_urls:
+    - http://www.rabbitmq.com/mpl.html
+    - https://www.apache.org/licenses/LICENSE-2.0
+---
+
 This source code is dual-licensed under the Apache License, version
 2.0, and the Mozilla Public License, version 1.1.
 

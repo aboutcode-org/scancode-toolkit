@@ -1,1 +1,9 @@
+---
+license_expression: mit
+is_license_notice: yes
+relevance: 100
+ignorable_urls:
+    - http://en.wikipedia.org/wiki/MIT_License
+---
+
 Licensed under the MIT (http://en.wikipedia.org/wiki/MIT_License) license.

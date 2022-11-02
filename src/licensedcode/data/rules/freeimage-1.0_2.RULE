@@ -1,3 +1,11 @@
+---
+license_expression: freeimage-1.0
+is_license_notice: yes
+relevance: 100
+minimum_coverage: 90
+notes: https://github.com/WinMerge/freeimage/blob/f8c084fbf8917223c4925fe23f5621229724c58d/Source/FreeImage/FreeImageC.c
+---
+
 // This file is part of FreeImage 3
 //
 // COVERED CODE IS PROVIDED UNDER THIS LICENSE ON AN "AS IS" BASIS, WITHOUT WARRANTY

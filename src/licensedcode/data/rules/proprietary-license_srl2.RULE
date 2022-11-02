@@ -1,4 +1,12 @@
+---
+license_expression: proprietary-license
+is_license_notice: yes
+referenced_filenames:
+    - LICENSE.rst
+ignorable_urls:
+    - http://www.steinwurf.com/licensing
+---
+
 // Distributed under the "STEINWURF RESEARCH LICENSE 1.0".
 // See accompanying file LICENSE.rst or
 // http://www.steinwurf.com/licensing
-

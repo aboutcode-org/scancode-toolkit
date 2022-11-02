@@ -1,3 +1,21 @@
+---
+key: xfree86-1.1
+short_name: XFree86 License 1.1
+name: XFree86 License 1.1
+category: Permissive
+owner: XFree86 Project, Inc
+homepage_url: http://www.xfree86.org/current/LICENSE4.html
+spdx_license_key: XFree86-1.1
+text_urls:
+    - http://www.xfree86.org/current/LICENSE4.html
+faq_url: http://www.xfree86.org/current/LICENSE4.html
+minimum_coverage: 70
+ignorable_authors:
+    - The XFree86 Project, Inc (http://www.xfree86.org/)
+ignorable_urls:
+    - http://www.xfree86.org/
+---
+
 Permission is hereby granted, free of charge, to any person obtaining a copy of
 this software and associated documentation files (the "Software"), to deal in
 the Software without restriction, including without limitation the rights to

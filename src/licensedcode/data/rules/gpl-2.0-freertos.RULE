@@ -1,3 +1,8 @@
+---
+license_expression: gpl-2.0-plus WITH freertos-exception-2.0
+is_license_notice: yes
+---
+
 The FreeRTOS source code is licensed by a modified GNU General Public License - the modification taking the form of an exception.
 
 The exception permits the source code of applications that use FreeRTOS solely through the API published on this website to remain closed source, thus permitting the use of FreeRTOS in commercial applications without necessitating that the whole application be open sourced. The exception can only be used if you wish to combine FreeRTOS with a proprietary product and you comply with the terms stated in the exception itself.

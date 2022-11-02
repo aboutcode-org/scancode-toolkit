@@ -1,3 +1,12 @@
+---
+license_expression: mit OR lgpl-2.0-plus
+is_license_notice: yes
+relevance: 100
+ignorable_urls:
+    - http://opensource.org/licenses/MIT
+    - https://www.gnu.org/licenses/lgpl.html
+---
+
 You can choose any one of those:
 
 The MIT License (MIT):

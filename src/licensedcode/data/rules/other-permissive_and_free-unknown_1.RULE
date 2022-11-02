@@ -1,3 +1,10 @@
+---
+license_expression: other-permissive AND free-unknown
+is_license_notice: yes
+relevance: 100
+notes: This derived from a BSD license, possibly stripped down from any license grant.
+---
+
 Redistributions must reproduce the above copyright notice, this list of
 conditions and the following disclaimer in the documentation and/or other
 materials provided with the distribution.

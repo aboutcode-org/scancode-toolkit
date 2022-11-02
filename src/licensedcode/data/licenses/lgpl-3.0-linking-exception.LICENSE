@@ -1,3 +1,21 @@
+---
+key: lgpl-3.0-linking-exception
+short_name: LGPL-3.0 Linking Exception
+name: LGPL-3.0 Linking Exception
+category: Copyleft Limited
+owner: Free Software Foundation (FSF)
+homepage_url: https://spdx.org/licenses/LGPL-3.0-linking-exception.html
+is_exception: yes
+spdx_license_key: LGPL-3.0-linking-exception
+other_spdx_license_keys:
+    - LicenseRef-scancode-lgpl-3-plus-linking
+    - LicenseRef-scancode-linking-exception-lgpl-3.0
+other_urls:
+    - https://raw.githubusercontent.com/go-xmlpath/xmlpath/v2/LICENSE
+    - https://github.com/goamz/goamz/blob/master/LICENSE
+    - https://github.com/juju/errors/blob/master/LICENSE
+---
+
 As a special exception to the GNU Lesser General Public License version 3
 ("LGPL3"), the copyright holders of this Library give you permission to convey
 to a third party a Combined Work that links statically or dynamically to this

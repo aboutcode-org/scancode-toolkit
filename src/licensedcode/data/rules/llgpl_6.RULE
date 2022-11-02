@@ -1,4 +1,11 @@
+---
+license_expression: llgpl
+is_license_notice: yes
+relevance: 100
+ignorable_urls:
+    - http://opensource.franz.com/preamble.html
+---
+
 ;;;; You are granted the rights to distribute and use this software
 ;;;; as governed by the terms of the Lisp Lesser General Public License
 ;;;; (http://opensource.franz.com/preamble.html), also known as the LLGPL.
-

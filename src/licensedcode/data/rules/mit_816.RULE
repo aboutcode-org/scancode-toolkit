@@ -1,2 +1,12 @@
+---
+license_expression: mit
+is_license_notice: yes
+relevance: 100
+referenced_filenames:
+    - license.txt
+ignorable_urls:
+    - http://www.opensource.org/licenses/mit-license.php
+---
+
 // Distributed under the MIT/X11 software license, see the accompanying
 // file license.txt or http://www.opensource.org/licenses/mit-license.php.

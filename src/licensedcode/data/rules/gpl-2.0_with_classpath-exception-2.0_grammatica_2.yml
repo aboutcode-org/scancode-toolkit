@@ -1,6 +1,0 @@
-license_expression: gpl-2.0 WITH classpath-exception-2.0
-is_license_notice: yes
-minimum_coverage: 90
-referenced_filenames:
-    - LICENSE-GPL.txt
-notes: always used with the GPL 2.0

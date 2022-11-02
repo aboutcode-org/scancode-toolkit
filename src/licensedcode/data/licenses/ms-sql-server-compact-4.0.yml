@@ -1,9 +1,0 @@
-key: ms-sql-server-compact-4.0
-short_name: MS SQL Server Compact 4.0 License
-name: Microsoft SQL Server Compact 4.0 License
-category: Proprietary Free
-owner: Microsoft
-homepage_url: http://www.microsoft.com/web/webpi/eula/SQLCE_EULA_ENU.rtf
-spdx_license_key: LicenseRef-scancode-ms-sql-server-compact-4.0
-ignorable_urls:
-    - http://www.microsoft.com/exporting

@@ -1,3 +1,10 @@
+---
+license_expression: sash OR gpl-1.0-plus
+is_license_notice: yes
+relevance: 100
+minimum_coverage: 95
+---
+
 *  Permission is granted to use, distribute, or modify this source,
  *  provided that this copyright notice remains intact.
  *  Permission to distribute sash derived code under GPL has been granted.

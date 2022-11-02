@@ -1,1 +1,9 @@
+---
+license_expression: bahyph
+is_license_reference: yes
+relevance: 100
+ignorable_urls:
+    - https://licenses.nuget.org/Bahyph
+---
+
 https://licenses.nuget.org/Bahyph

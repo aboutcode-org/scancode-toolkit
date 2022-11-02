@@ -1,1 +1,9 @@
+---
+license_expression: apache-2.0
+is_license_tag: yes
+relevance: 100
+ignorable_urls:
+    - http://github.com/json4s/json4s/raw/HEAD/LICENSE
+---
+
 License: ASL  (http://github.com/json4s/json4s/raw/HEAD/LICENSE

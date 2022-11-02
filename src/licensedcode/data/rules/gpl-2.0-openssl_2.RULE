@@ -1,3 +1,13 @@
+---
+license_expression: openssl-exception-gpl-2.0
+is_license_notice: yes
+ignorable_authors:
+    - the OpenSSL Project
+ignorable_urls:
+    - http://people.gnome.org/~markmc/openssl-and-the-gpl.html
+    - http://www.openssl.org/
+---
+
 The OpenSSL License is not compatible with the GPL, since it contains the following two clauses:
 
    * 3. All advertising materials mentioning features or use of this

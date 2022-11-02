@@ -1,3 +1,14 @@
+---
+license_expression: bsd-top AND gpl-2.0-plus AND free-unknown
+is_license_notice: yes
+relevance: 85
+minimum_coverage: 70
+notes: this is a franken license composed of parts of a bsd-top and parts of a gpl notice from
+    http://reviser.osdn.jp/Excel_Reviser/_reviser.php.html
+ignorable_urls:
+    - https://www.gnu.org/licenses/gpl.html
+---
+
 Redistribution and use in source, with or without modification, are permitted provided that the following conditions are met:
 
     Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer, without modification, immediately at the beginning of the file.

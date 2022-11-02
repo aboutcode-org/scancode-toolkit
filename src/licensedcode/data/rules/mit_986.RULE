@@ -1,2 +1,10 @@
+---
+license_expression: mit
+is_license_notice: yes
+relevance: 100
+ignorable_urls:
+    - https://github.com/blob/master/LICENSE
+---
+
 ## License
  is licensed under the [MIT License](https://github.com/blob/master/LICENSE).

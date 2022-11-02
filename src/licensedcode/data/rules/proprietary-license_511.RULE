@@ -1,3 +1,12 @@
+---
+license_expression: proprietary-license
+is_license_notice: yes
+relevance: 100
+notes: new proprietary notice at https://github.com/mapbox/mapbox-gl-js/blob/main/LICENSE.txt
+ignorable_urls:
+    - https://www.mapbox.com/legal/tos
+---
+
 Mapbox gl-js version 2.0 or higher (“Mapbox Web SDK”) must be used according to
 the Mapbox Terms of Service. This license allows developers with a current active
 Mapbox account to use and modify the Mapbox Web SDK. Developers may modify the

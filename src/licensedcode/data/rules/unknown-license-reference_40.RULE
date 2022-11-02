@@ -1,1 +1,10 @@
+---
+license_expression: unknown-license-reference
+is_license_reference: yes
+relevance: 90
+minimum_coverage: 95
+referenced_filenames:
+    - main.c
+---
+
 See copyright notice in main.c

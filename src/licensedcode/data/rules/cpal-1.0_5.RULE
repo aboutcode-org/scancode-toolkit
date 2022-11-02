@@ -1,3 +1,11 @@
+---
+license_expression: cpal-1.0
+is_license_tag: yes
+relevance: 100
+ignorable_urls:
+    - http://www.mulesoft.com/CPAL
+---
+
     <licenses>
         <license>
             <name>CPAL v1.0</name>

@@ -1,3 +1,12 @@
+---
+key: apple-excl
+short_name: Apple Example Code License
+name: Apple Example Code License
+category: Permissive
+owner: Apple
+spdx_license_key: LicenseRef-scancode-apple-excl
+---
+
 Disclaimer: IMPORTANT:  This Apple software is supplied to you by Apple Inc.
 ("Apple") in consideration of your agreement to the following terms, and your
 use, installation, modification or redistribution of this Apple software

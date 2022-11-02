@@ -1,3 +1,11 @@
+---
+license_expression: mpl-2.0
+is_license_text: yes
+relevance: 99
+ignorable_urls:
+    - http://mozilla.org/MPL/2.0
+---
+
 Mozilla Public License Version 2.0 
 ================================== 
 
@@ -364,4 +372,4 @@ means having the right to grant, to the maximum extent possible,
       file in a relevant directory) where a recipient would be likely to look 
   for such a notice. 
 
-  You may add additional accurate notices of copyright ownership. 
+  You may add additional accurate notices of copyright ownership.

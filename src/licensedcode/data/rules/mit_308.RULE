@@ -1,3 +1,11 @@
+---
+license_expression: mit
+is_license_notice: yes
+relevance: 100
+referenced_filenames:
+    - COPYING
+---
+
   This is free software; you can redistribute it and/or modify it
   under the terms of the License (based on the MIT/X license) contained
   in the file COPYING that comes with this distribution.

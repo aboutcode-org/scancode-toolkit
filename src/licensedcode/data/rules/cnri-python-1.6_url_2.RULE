@@ -1,1 +1,9 @@
+---
+license_expression: cnri-python-1.6
+is_license_reference: yes
+relevance: 95
+ignorable_urls:
+    - https://spdx.org/licenses/cnri-python.html
+---
+
 https://spdx.org/licenses/cnri-python.html

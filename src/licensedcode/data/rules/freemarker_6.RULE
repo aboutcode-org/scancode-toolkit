@@ -1,1 +1,8 @@
+---
+license_expression: freemarker
+is_license_reference: yes
+is_continuous: yes
+relevance: 100
+---
+
 {{BSD License for FreeMarker}}

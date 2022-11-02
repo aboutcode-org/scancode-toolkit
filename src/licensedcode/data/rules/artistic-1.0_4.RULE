@@ -1,3 +1,11 @@
+---
+license_expression: artistic-1.0
+is_license_text: yes
+notes: License text without warranty disclaimer
+ignorable_urls:
+    - http://ftp.uu.net/
+---
+
 Preamble
 
 The intent of this document is to state the conditions under which a Package may be copied, such that the Copyright Holder maintains some semblance of artistic control over the development of the package, while giving the users of the package the right to use and distribute the Package in a more-or-less customary fashion, plus the right to make reasonable modifications.

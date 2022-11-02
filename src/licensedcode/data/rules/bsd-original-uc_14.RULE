@@ -1,3 +1,13 @@
+---
+license_expression: bsd-original-uc
+is_license_notice: yes
+ignorable_authors:
+    - UC Berkeley and its contributors
+    - the University of California, Berkeley and its contributors
+ignorable_urls:
+    - ftp://ftp.cs.berkeley.edu/pub/4bsd/README.Impt.License.Change
+---
+
 NOTE: The copyright of UC Berkeley's Berkeley Software Distribution ("BSD") source has been updated. The copyright addendum may be found at ftp://ftp.cs.berkeley.edu/pub/4bsd/README.Impt.License.Change and is included below.
 
 July 22, 1999

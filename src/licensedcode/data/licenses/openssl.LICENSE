@@ -1,3 +1,27 @@
+---
+key: openssl
+short_name: OpenSSL License
+name: OpenSSL License
+category: Permissive
+owner: OpenSSL
+homepage_url: http://openssl.org/source/license.html
+notes: |
+    This is the OpenSSL license proper, without the SSLEay part. The SPDX
+    OpenSSL identifier does not apply here. Instead it matches the openssl-
+    ssleay license.
+spdx_license_key: LicenseRef-scancode-openssl
+faq_url: http://www.openssl.org/support/faq.html
+other_urls:
+    - http://www.openssl.org/source/license.html
+minimum_coverage: 70
+ignorable_authors:
+    - the OpenSSL Project
+ignorable_urls:
+    - http://www.openssl.org/
+ignorable_emails:
+    - licensing@OpenSSL.org
+---
+
 Redistribution and use in source and binary forms, with or without
 modification, are permitted provided that the following conditions
 are met:

@@ -1,3 +1,13 @@
+---
+key: google-tos-2013
+short_name: Google TOS 2013
+name: Google Terms of Service 2013
+category: Proprietary Free
+owner: Google
+homepage_url: http://www.google.com/intl/en/policies/terms/
+spdx_license_key: LicenseRef-scancode-google-tos-2013
+---
+
 Google Terms of Service
 
 Last modified: November 11, 2013 (view archived versions)

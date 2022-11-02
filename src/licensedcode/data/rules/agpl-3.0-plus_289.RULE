@@ -1,2 +1,9 @@
+---
+license_expression: agpl-3.0-plus
+is_license_notice: yes
+ignorable_urls:
+    - https://gnu.org/licenses/agpl.html
+---
+
 License {{AGPLv3+}}: GNU {{Affero GPL version 3 or later}} <https://gnu.org/licenses/agpl.html>;.
 This is free software: you are free to change and redistribute it. There is NO WARRANTY, to the extent permitted by law.

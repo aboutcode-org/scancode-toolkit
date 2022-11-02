@@ -1,3 +1,11 @@
+---
+license_expression: gpl-2.0-plus
+is_license_notice: yes
+relevance: 100
+ignorable_urls:
+    - https://www.gnu.org/licenses/
+---
+
  This code was developed from version of the drivers,
  released by corp. under the GPL
  

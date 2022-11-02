@@ -1,3 +1,10 @@
+---
+license_expression: other-permissive
+is_license_text: yes
+relevance: 100
+notes: Seen in FreeBSD bmake
+---
+
 This file is provided in the hope that it will
 be of use.  There is absolutely NO WARRANTY.
 Permission to copy, redistribute or otherwise

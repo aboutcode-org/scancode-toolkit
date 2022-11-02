@@ -1,1 +1,9 @@
+---
+license_expression: lgpl-2.1-plus
+is_license_tag: yes
+relevance: 100
+ignorable_urls:
+    - http://www.tinymce.com/license
+---
+
 License: http://www.tinymce.com/license

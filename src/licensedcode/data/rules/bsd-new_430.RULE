@@ -1,2 +1,10 @@
+---
+license_expression: bsd-new
+is_license_notice: yes
+relevance: 100
+ignorable_urls:
+    - https://cmake.org/licensing
+---
+
 
  Distributed under the OSI-approved BSD 3-Clause License.  See https://cmake.org/licensing for details.

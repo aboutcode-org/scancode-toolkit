@@ -1,3 +1,19 @@
+---
+key: oracle-devtools-vsnet-dev
+short_name: Oracle DevTools for Visual Studio .NET Development
+name: Oracle Developer Tools for Visual Studio .NET Development License
+category: Proprietary Free
+owner: Oracle Corporation
+homepage_url: http://www.oracle.com/technetwork/licenses/odt-lic-152011.html
+spdx_license_key: LicenseRef-scancode-oracle-devtools-vsnet-dev
+minimum_coverage: 50
+ignorable_authors:
+    - the OTN Program
+ignorable_urls:
+    - http://www.oracle.com/products/export
+    - http://www.oracle.com/products/export/index.html?content.html
+---
+
 Oracle Technology Network 
 Oracle Developer Tools for Visual Studio .NET Development License Terms
  

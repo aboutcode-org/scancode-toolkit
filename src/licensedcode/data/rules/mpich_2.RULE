@@ -1,3 +1,10 @@
+---
+license_expression: mpich
+is_license_text: yes
+relevance: 100
+minimum_coverage: 95
+---
+
 COPYRIGHT
 
 The following is a notice of limited availability of the code, and disclaimer

@@ -1,3 +1,19 @@
+---
+license_expression: ofl-1.1
+is_license_notice: yes
+ignorable_urls:
+    - http://abattis.org/cantarell
+    - http://en.wikipedia.org/wiki/Android_(operating_system)
+    - http://en.wikipedia.org/wiki/HTC_Dream
+    - http://fontforge.sf.net/
+    - http://live.gnome.org/CantarellFonts
+    - http://openfontlibrary.org/wiki/Web_font_linking_with_@font-face
+    - http://scripts.sil.org/OFL
+    - http://www.gnu.org/licenses/gpl.html
+    - http://www.google.com/webfonts
+    - http://www.typedesign.reading.ac.uk/
+---
+
 The fonts were initially published on the 6th of July 2009 on
 Dave Crossland's foundry website [6] under the terms of the GNU
 General Public License version 3. [7] In May 2010 the fonts were 
@@ -18,4 +34,3 @@ Dave Crossland, 21st March 2011
 [8]: http://www.google.com/webfonts
 [9]: http://scripts.sil.org/OFL
 [10]: http://live.gnome.org/CantarellFonts
-    

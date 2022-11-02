@@ -1,3 +1,21 @@
+---
+key: info-zip-2001-01
+short_name: Info-Zip License 2001-01
+name: Info-Zip License 2001-01
+category: Permissive
+owner: info-zip
+homepage_url: http://www.info-zip.org/
+spdx_license_key: LicenseRef-scancode-info-zip-2001-01
+text_urls:
+    - http://web.archive.org/web/20020221003207/http://www.info-zip.org/doc/LICENSE
+ignorable_copyrights:
+    - Copyright (c) 1990-2001 Info-ZIP.
+ignorable_holders:
+    - Info-ZIP
+ignorable_urls:
+    - ftp://ftp.info-zip.org/pub/infozip/license.html
+---
+
 This is version 2001-Jan-27 of the Info-ZIP copyright and license.
 The definitive version of this document should be available at
 ftp://ftp.info-zip.org/pub/infozip/license.html indefinitely.

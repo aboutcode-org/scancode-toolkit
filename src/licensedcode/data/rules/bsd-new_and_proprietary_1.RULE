@@ -1,3 +1,8 @@
+---
+license_expression: bsd-new AND proprietary-license
+is_license_notice: yes
+---
+
 Permission is
 granted to distribute this document without any alteration under the
 terms of the HSQLDB license. You are not allowed to distribute or

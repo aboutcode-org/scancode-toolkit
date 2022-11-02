@@ -1,3 +1,9 @@
+---
+license_expression: proprietary-license
+is_license_text: yes
+notes: https://github.com/kokolanako/gruppe03-largescale-project/blob/c4f3ed1f292e8bd80c8562ca0903f2301c68285b/src/main/test/FileHandlerTest.java#L4
+---
+
 * Modification, redistribution and use in source and binary
  * forms, with or without modification, are not permitted
  * without prior written approval by the copyright holder.

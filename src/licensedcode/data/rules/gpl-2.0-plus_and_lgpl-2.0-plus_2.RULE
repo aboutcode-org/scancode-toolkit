@@ -1,3 +1,9 @@
+---
+license_expression: gpl-2.0-plus AND lgpl-2.0-plus
+is_license_notice: yes
+minimum_coverage: 95
+---
+
 * Note that this file is NOT licensed under the Academic Free License,
  * as it is based on linc-cleanup-sockets which is LGPL.
  *

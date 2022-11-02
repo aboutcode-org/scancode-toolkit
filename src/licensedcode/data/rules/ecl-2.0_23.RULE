@@ -1,1 +1,9 @@
+---
+license_expression: ecl-2.0
+is_license_reference: yes
+relevance: 100
+ignorable_urls:
+    - https://spdx.org/licenses/ECL-2.0
+---
+
 {{ECL-2.0}} https://spdx.org/licenses/ECL-2.0

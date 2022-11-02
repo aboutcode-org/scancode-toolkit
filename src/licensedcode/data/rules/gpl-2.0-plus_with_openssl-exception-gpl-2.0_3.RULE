@@ -1,3 +1,11 @@
+---
+license_expression: gpl-2.0-plus WITH openssl-exception-gpl-2.0
+is_license_notice: yes
+ignorable_urls:
+    - http://www.gnu.org/licenses/gpl.html
+    - http://www.openssl.org/
+---
+
 is licensed under the GNU General Public License version 2
 or later. The text of the GNU General Public License can be viewed at
 http://www.gnu.org/licenses/gpl.html

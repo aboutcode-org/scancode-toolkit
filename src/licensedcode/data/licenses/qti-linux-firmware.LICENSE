@@ -1,3 +1,13 @@
+---
+key: qti-linux-firmware
+short_name: QTI Linux Firmware
+name: QTI Linux Firmware
+category: Proprietary Free
+owner: Qualcomm
+homepage_url: https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/tree/LICENSE.qcom
+spdx_license_key: LicenseRef-scancode-qti-linux-firmware
+---
+
 PLEASE READ THIS LICENSE AGREEMENT ("AGREEMENT") CAREFULLY.  THIS AGREEMENT IS
 A BINDING LEGAL AGREEMENT ENTERED INTO BY AND BETWEEN YOU (OR IF YOU ARE
 ENTERING INTO THIS AGREEMENT ON BEHALF OF AN ENTITY, THEN THE ENTITY THAT YOU

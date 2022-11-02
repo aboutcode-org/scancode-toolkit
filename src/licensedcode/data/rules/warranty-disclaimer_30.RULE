@@ -1,3 +1,10 @@
+---
+license_expression: warranty-disclaimer
+is_license_text: yes
+relevance: 100
+notes: a bare Microsoft disclaimer with no explicit grant of license
+---
+
 THIS CODE IS PROVIDED *AS IS* WITHOUT WARRANTY OF
 ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING ANY
 IMPLIED WARRANTIES OF FITNESS FOR A PARTICULAR

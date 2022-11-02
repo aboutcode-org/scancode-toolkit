@@ -1,3 +1,10 @@
+---
+license_expression: public-domain
+is_license_notice: yes
+relevance: 90
+notes: Seen in https://altushost-swe.dl.sourceforge.net/project/wordlist/speller/2020.12.07/hunspell-en_US-2020.12.07.zip
+---
+
 There were many many sources in total, but any text marked
   "copyright" was avoided. Locally-written documentation was one
   source. An earlier version of the list resided in a filespace called

@@ -1,3 +1,12 @@
+---
+key: intel-osl-1993
+short_name: Intel OSL 1993
+name: Intel Open Source License 1993
+category: Permissive
+owner: Intel Corporation
+spdx_license_key: LicenseRef-scancode-intel-osl-1993
+---
+
 Intel hereby grants you permission to copy, modify, and distribute this
 software and its documentation.  Intel grants this permission provided
 that the above copyright notice appears in all copies and that both the

@@ -1,3 +1,11 @@
+---
+license_expression: lgpl-2.0-plus
+is_license_notice: yes
+relevance: 100
+minimum_coverage: 95
+notes: Seen in libguestfs
+---
+
 (NB: I modified the original GPL boilerplate here to LGPLv2+.  This
    is because of the weird way that gnulib uses licenses, where the
    real license is covered in the modules/X file.  The real license

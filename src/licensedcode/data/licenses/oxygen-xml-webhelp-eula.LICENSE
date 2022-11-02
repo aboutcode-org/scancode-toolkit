@@ -1,3 +1,20 @@
+---
+key: oxygen-xml-webhelp-eula
+short_name: Oxygen XML WebHelp EULA
+name: Oxygen XML WebHelp End-User License Agreement
+category: Commercial
+owner: Syncro Soft
+homepage_url: https://www.oxygenxml.com/eula_webhelp.html
+spdx_license_key: LicenseRef-scancode-oxygen-xml-webhelp-eula
+ignorable_urls:
+    - http://www.oxygenxml.com/
+    - http://www.oxygenxml.com/privacy_policy.html
+    - http://www.oxygenxml.com/support.html
+    - http://www.oxygenxml.com/thirdparty/index.html
+ignorable_emails:
+    - support@oxygenxml.com
+---
+
 Oxygen XML WebHelp license
 
 IMPORTANT:THIS SOFTWARE END USER LICENSE AGREEMENT ("EULA") IS A LEGAL AGREEMENT BETWEEN YOU (EITHER AN INDIVIDUAL OR, IF PURCHASED OR OTHERWISE ACQUIRED BY OR FOR AN ENTITY, A SINGLE LEGAL ENTITY) AND SYNCRO. READ IT CAREFULLY BEFORE COMPLETING THE INSTALLATION PROCESS AND USING THIS SOFTWARE. IT PROVIDES A LICENSE TO USE THIS SOFTWARE AND CONTAINS WARRANTY INFORMATION AND LIABILITY DISCLAIMERS. BY DOWNLOADING OR INSTALLING THE SOFTWARE YOU ARE INDICATING YOUR ASSENT TO THE TERMS OF THIS LICENSE. IF YOU DO NOT AGREE TO ALL OF THE FOLLOWING TERMS, DO NOT DOWNLOAD OR INSTALL THE SOFTWARE OR DISCONTINUE USE IMMEDIATELY AND DESTROY ALL COPIES IN YOUR POSSESSION. YOU ALSO ACCEPT AND ASSENT TO THE SYNCRO PRIVACY POLICY LOCATED AT http://www.oxygenxml.com/privacy_policy.html AND YOU AGREE TO RECEIVE NOTICES FROM SYNCRO ELECTRONICALLY.

@@ -1,3 +1,10 @@
+---
+license_expression: unicode
+is_license_notice: yes
+ignorable_urls:
+    - http://www.unicode.org/copyright.html#License
+---
+
 The data in `unicode_tables/` is licensed under the Unicode
 License Agreement
 ([LICENSE-UNICODE](http://www.unicode.org/copyright.html#License)).

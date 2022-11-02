@@ -1,3 +1,13 @@
+---
+license_expression: intel-acpi OR intel-bsd OR gpl-2.0
+is_license_notice: yes
+relevance: 100
+ignorable_copyrights:
+    - Copyright (c) 1999 - 2021, Intel Corp.
+ignorable_holders:
+    - Intel Corp.
+---
+
 * 1. Copyright Notice
  *
  * Some or all of this work - Copyright (c) 1999 - 2021, Intel Corp.

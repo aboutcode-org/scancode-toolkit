@@ -1,3 +1,15 @@
+---
+key: public-domain-disclaimer
+short_name: Public Domain Disclaimer
+name: Public Domain Disclaimer
+category: Public Domain
+owner: Unspecified
+notes: this is used also as a placeholder for similar public domain dedications texts and notices
+    that come with an additional warranty disclaimer
+is_generic: yes
+spdx_license_key: LicenseRef-scancode-public-domain-disclaimer
+---
+
 This code is hereby placed in the public domain.
 
 THIS SOFTWARE IS PROVIDED BY THE AUTHORS ''AS IS'' AND ANY EXPRESS

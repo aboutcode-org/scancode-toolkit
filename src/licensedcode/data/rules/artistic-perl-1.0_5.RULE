@@ -1,2 +1,9 @@
+---
+license_expression: artistic-perl-1.0
+is_license_notice: yes
+relevance: 100
+notes: Seen in FreeBSD
+---
+
 This software may be distributed under the terms of Larry Wall's 
 Artistic license, a copy of which is included in this distribution.

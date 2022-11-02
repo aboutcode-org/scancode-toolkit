@@ -1,7 +1,0 @@
-license_expression: gpl-2.0-plus AND proprietary-license
-is_license_notice: yes
-minimum_coverage: 50
-ignorable_copyrights:
-    - (c) Copyright Xilinx Inc., Systems Engineering Group
-ignorable_holders:
-    - Xilinx Inc., Systems Engineering Group

@@ -1,3 +1,21 @@
+---
+key: smail-gpl
+short_name: SMAIL GPL
+name: SMAIL General Public License
+category: Copyleft
+owner: SMAIL Project
+homepage_url: https://gitweb.gentoo.org/repo/gentoo.git/plain/licenses/SMAIL
+spdx_license_key: LicenseRef-scancode-smail-gpl
+text_urls:
+    - https://gitweb.gentoo.org/repo/gentoo.git/plain/licenses/SMAIL
+ignorable_copyrights:
+    - Copyright (c) 1988 Landon Curt Noll & Ronald S. Karr
+    - Copyright (c) 1992 Ronald S. Karr
+ignorable_holders:
+    - Landon Curt Noll & Ronald S. Karr
+    - Ronald S. Karr
+---
+
 		     SMAIL GENERAL PUBLIC LICENSE
 		       (Clarified 11 Feb 1988)
 

@@ -1,3 +1,12 @@
+---
+key: sunpro
+short_name: SunPro Attribution License
+name: SunPro Attribution License
+category: Permissive
+owner: Oracle (Sun)
+spdx_license_key: LicenseRef-scancode-sunpro
+---
+
 Developed at SunPro, a Sun Microsystems, Inc. business.
 
 Permission to use, copy, modify, and distribute this

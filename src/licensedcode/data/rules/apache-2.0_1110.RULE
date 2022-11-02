@@ -1,2 +1,8 @@
+---
+license_expression: apache-2.0
+is_license_notice: yes
+notes: Contributions are already covered by the Apache license.
+---
+
 License
 The software is provided under {{Apache-2.0}}. Contributions to this project are accepted under the same license.

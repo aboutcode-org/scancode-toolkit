@@ -1,3 +1,11 @@
+---
+license_expression: bsd-new AND afpl-9.0
+is_license_notice: yes
+relevance: 100
+ignorable_urls:
+    - http://www.artifex.com/downloads/doc/Public.htm
+---
+
  * The following license terms for the "XMLParser library from Business-Insight" apply to projects
  * that are in some way related to
  * the "mcpat project", including applications
@@ -7,4 +15,3 @@
  * code under the Aladdin Free Public License (AFPL)
  * See the file "AFPL-license.txt" for more informations about the AFPL license.
  * (see http://www.artifex.com/downloads/doc/Public.htm for detailed AFPL terms)
- 

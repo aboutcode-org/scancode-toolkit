@@ -1,3 +1,14 @@
+---
+license_expression: cc-pd
+is_license_tag: yes
+relevance: 100
+ignorable_urls:
+    - http://creativecommons.org/licenses/publicdomain/
+    - http://creativecommons.org/ns#DerivativeWorks
+    - http://creativecommons.org/ns#Distribution
+    - http://creativecommons.org/ns#Reproduction
+---
+
 <cc:License
 rdf:about="http://creativecommons.org/licenses/publicdomain/">
 <cc:permits

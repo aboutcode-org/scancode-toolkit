@@ -1,3 +1,14 @@
+---
+key: dbad
+short_name: dbad
+name: Dont Be A Dick Public License
+category: Proprietary Free
+owner: Unspecified
+homepage_url: https://dbad-license.org
+notes: From https://github.com/ErikMcClure/bad-licenses
+spdx_license_key: LicenseRef-scancode-dbad
+---
+
 Everyone is permitted to copy and distribute verbatim or modified copies of this license document.
 
 

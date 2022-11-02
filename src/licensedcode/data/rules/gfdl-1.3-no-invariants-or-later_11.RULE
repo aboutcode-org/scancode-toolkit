@@ -1,1 +1,8 @@
+---
+license_expression: gfdl-1.3-no-invariants-or-later
+is_license_reference: yes
+ignorable_urls:
+    - https://spdx.org/licenses/GFDL-1.3-no-invariants-or-later
+---
+
 {{GFDL-1.3-no-invariants-or-later}} https://spdx.org/licenses/GFDL-1.3-no-invariants-or-later

@@ -1,2 +1,7 @@
+---
+is_false_positive: yes
+notes: see in Linux Kernel sources for gpl kernel symbols  related code or documentation
+---
+
 A module with a non-GPL license has been loaded, this
 includes modules with no license.

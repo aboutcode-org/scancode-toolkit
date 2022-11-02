@@ -1,2 +1,9 @@
+---
+license_expression: gpl-2.0
+is_license_notice: yes
+minimum_coverage: 100
+notes: linux extension under the same license as linux therefore gpl2
+---
+
 This is an extension to the Linux operating system, and is covered by the
 same Gnu Public License that covers that work.

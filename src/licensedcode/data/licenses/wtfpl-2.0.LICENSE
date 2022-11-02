@@ -1,3 +1,22 @@
+---
+key: wtfpl-2.0
+short_name: WTFPL 2.0
+name: WTFPL 2.0
+category: Public Domain
+owner: Sam Hocevar
+homepage_url: http://sam.zoy.org/wtfpl/
+spdx_license_key: WTFPL
+text_urls:
+    - http://sam.zoy.org/wtfpl/COPYING
+other_urls:
+    - http://fedoraproject.org/wiki/Licensing/WTFPL
+    - http://www.wtfpl.net/about/
+ignorable_copyrights:
+    - Copyright (c) 2004 Sam Hocevar
+ignorable_holders:
+    - Sam Hocevar
+---
+
 DO WHAT THE FUCK YOU WANT TO PUBLIC LICENSE
                     Version 2, December 2004
 

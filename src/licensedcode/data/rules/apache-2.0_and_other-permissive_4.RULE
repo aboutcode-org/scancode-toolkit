@@ -1,3 +1,9 @@
+---
+license_expression: apache-2.0 AND other-permissive
+is_license_notice: yes
+minimum_coverage: 100
+---
+
 Apache Tomcat includes a number of subcomponents with separate copyright notices
 and license terms. Your use of the source code for the these subcomponents is
 subject to the terms and conditions of the following licenses.

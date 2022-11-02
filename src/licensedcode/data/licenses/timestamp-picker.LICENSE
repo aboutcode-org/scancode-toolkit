@@ -1,3 +1,12 @@
+---
+key: timestamp-picker
+short_name: Timestamp Picker License
+name: Timestamp Picker License
+category: Permissive
+owner: Unspecified
+spdx_license_key: LicenseRef-scancode-timestamp-picker
+---
+
 Permission given to use this script in any kind of applications if header lines
 are left unchanged. Feel free to contact the author for feature requests and/or
 donations.

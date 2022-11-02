@@ -1,3 +1,13 @@
+---
+license_expression: intel-acpi
+is_license_text: yes
+relevance: 100
+ignorable_copyrights:
+    - Copyright (c) 1999 - Intel Corp.
+ignorable_holders:
+    - Intel Corp.
+---
+
 1. Copyright Notice
 
 Some or all of this work - Copyright (c) 1999 - Intel Corp.

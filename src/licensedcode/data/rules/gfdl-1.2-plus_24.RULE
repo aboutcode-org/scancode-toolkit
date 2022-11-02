@@ -1,3 +1,11 @@
+---
+license_expression: gfdl-1.2-plus
+is_license_reference: yes
+relevance: 100
+referenced_filenames:
+    - /usr/share/common-licenses/GFDL-1.2
+---
+
 
  On Debian GNU/Linux systems the full text of the GNU Free Documentation License
  version 1.2 can be found in the file

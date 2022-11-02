@@ -1,2 +1,11 @@
+---
+license_expression: php-3.01
+is_license_text: yes
+relevance: 99
+minimum_coverage: 70
+ignorable_urls:
+    - http://www.php.net/
+---
+
 Part of this code includes code from the PHP project which
 is freely available from http://www.php.net

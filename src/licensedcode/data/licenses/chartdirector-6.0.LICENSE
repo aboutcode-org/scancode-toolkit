@@ -1,3 +1,23 @@
+---
+key: chartdirector-6.0
+short_name: ChartDirector 6.0 License Agreement
+name: ChartDirector 6.0 License Agreement
+category: Proprietary Free
+owner: Advanced Software Engineering Ltd.
+homepage_url: http://www.advsofteng.com/doc/cdcomdoc/license.htm
+spdx_license_key: LicenseRef-scancode-chartdirector-6.0
+other_urls:
+    - http://www.advsofteng.com/
+ignorable_copyrights:
+    - (c) 2015 Advanced Software Engineering Limited
+ignorable_holders:
+    - Advanced Software Engineering Limited
+ignorable_authors:
+    - using code from the Independent JPEG Group and the FreeType team
+ignorable_urls:
+    - http://www.advsofteng.com/
+---
+
 ChartDirector 6.0 (ASP/COM/VB Edition)
 License Agreement
 You should carefully read the following terms and conditions before using the ChartDirector software. Your use of the ChartDirector software indicates your acceptance of this license agreement. Do not use the ChartDirector software if you do not agree with this license agreement.

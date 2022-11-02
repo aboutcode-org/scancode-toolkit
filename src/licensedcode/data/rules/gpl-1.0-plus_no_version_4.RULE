@@ -1,3 +1,10 @@
+---
+license_expression: gpl-1.0-plus
+is_license_notice: yes
+referenced_filenames:
+    - COPYING
+---
+
 This software may be used and distributed according to the terms of
 the GNU General Public License (GPL), incorporated herein by reference.
 Drivers based on or derived from this code fall under the GPL and must

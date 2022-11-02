@@ -1,3 +1,15 @@
+---
+license_expression: gpl-2.0 AND unknown
+is_license_text: yes
+relevance: 95
+minimum_coverage: 95
+notes: this is a modified GPL text
+ignorable_copyrights:
+    - copyrighted by the Free Software Foundation
+ignorable_holders:
+    - the Free Software Foundation
+---
+
 GNU GPL 2.0
 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA
 Everyone is permitted to copy and distribute verbatim copies of this license document, but changing it is not allowed.
@@ -39,4 +51,3 @@ This section is intended to make thoroughly clear what is believed to be a conse
 9. The Free Software Foundation may publish revised and/or new versions of the General Public License from time to time. Such new versions will be similar in spirit to the present version, but may differ in detail to address new problems or concerns.
 Each version is given a distinguishing version number. If the Program specifies a version number of this License which applies to it and "any later version", you have the option of following the terms and conditions either of that version or of any later version published by the Free Software Foundation. If the Program does not specify a version number of this License, you may choose any version ever published by the Free Software Foundation.
 10. If you wish to incorporate parts of the Program into other free programs whose distribution conditions are different, write to the author to ask for permission. For software which is copyrighted by the Free Software Foundation, write to the Free Software Foundation; we sometimes make exceptions for this. Our decision will be guided by the two goals of preserving the free status of all derivatives of our free software and of promoting the sharing and reuse of software generally.
-

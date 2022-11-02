@@ -1,3 +1,15 @@
+---
+key: netapp-sdk-aug2020
+short_name: NetApp SDK License Agreement rev. Aug2020
+name: NetApp Manageability SDK License Agreement rev. Aug2020
+category: Proprietary Free
+owner: NetApp
+homepage_url: https://mysupport.netapp.com/documentation/productlibrary/index.html?productID=60427
+spdx_license_key: LicenseRef-scancode-netapp-sdk-aug2020
+ignorable_urls:
+    - https://mysupport.netapp.com/documentation/productlibrary/index.html?productID=60427
+---
+
 NETAPP MANAGEABILITY SDK LICENSE AGREEMENT
 
 This NetApp Manageability SDK License Agreement (“License”) is entered into between you (as an individual and/or on behalf of the company by which you are employed) (“You”, “Your” or “Licensee”) and NetApp, Inc., located at 1395 Crossman Avenue, Sunnyvale, California 94089 (“NetApp”), and provides the terms under which NetApp licenses the NetApp Manageability SDK (“SDK”) to You.

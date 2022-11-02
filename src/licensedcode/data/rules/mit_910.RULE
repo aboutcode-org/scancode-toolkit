@@ -1,1 +1,9 @@
+---
+license_expression: mit
+is_license_notice: yes
+relevance: 100
+ignorable_urls:
+    - https://choosealicense.com/licenses/mit
+---
+
 is made available under the [MIT License](https://choosealicense.com/licenses/mit/).

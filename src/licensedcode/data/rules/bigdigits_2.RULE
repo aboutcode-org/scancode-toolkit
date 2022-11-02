@@ -1,3 +1,18 @@
+---
+license_expression: bigdigits
+is_license_text: yes
+ignorable_copyrights:
+    - copyright (c) 2001-11 D.I. Management Services Pty Limited
+    - copyright (c) 2001-11 by D.I. Management Services Pty Limited <www.di-mgt.com.au>
+ignorable_holders:
+    - D.I. Management Services Pty Limited
+ignorable_authors:
+    - David Ireland
+ignorable_urls:
+    - http://www.di-mgt.com.au/
+    - http://www.di-mgt.com.au/bigdigits.html
+---
+
 /******************** COPYRIGHT AND LICENCE NOTICE ********************
 This source code is part of the BIGDIGITS multiple-precision
 arithmetic library Version 2.3 originally written by David Ireland,

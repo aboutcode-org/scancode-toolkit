@@ -1,3 +1,10 @@
+---
+license_expression: other-permissive
+is_license_text: yes
+relevance: 100
+notes: Seen in Perl Text::Tabs https://github.com/kbmbo/react/blob/6700d5e0bf93afee8e4ac806c94dec491770d629/usr/share/perl5/core_perl/Text/Tabs.pm#L188
+---
+
 This module may be modified, used, copied, and redistributed at your own risk.
  Although allowed by the preceding license, please do not publicly
  redistribute modified versions of this code with the name "Text::Tabs"

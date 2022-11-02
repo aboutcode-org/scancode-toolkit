@@ -1,3 +1,18 @@
+---
+key: dhtmlab-public
+short_name: dhtmlab Public License
+name: Dynamic HTML Lab Public License
+category: Permissive
+owner: DHTML Lab
+spdx_license_key: LicenseRef-scancode-dhtmlab-public
+ignorable_copyrights:
+    - Copyright (c) 2000 internet.com Corp.
+ignorable_holders:
+    - internet.com Corp.
+ignorable_urls:
+    - http://www.dhtmlab.com/
+---
+
 Copyright (c) 2000 internet.com Corp. All Rights Reserved.
 Originally published and documented at http://www.dhtmlab.com/
 You may use this code on a public Web site only if this entire

@@ -1,6 +1,0 @@
-license_expression: epl-1.0 OR lgpl-2.1
-is_license_tag: yes
-minimum_coverage: 80
-ignorable_urls:
-    - http://www.eclipse.org/legal/epl-v10.html
-    - http://www.gnu.org/licenses/old-licenses/lgpl-2.1.html

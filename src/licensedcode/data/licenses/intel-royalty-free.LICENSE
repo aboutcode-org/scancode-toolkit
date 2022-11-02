@@ -1,3 +1,15 @@
+---
+key: intel-royalty-free
+short_name: Intel Royalty Free License
+name: Intel Royalty Free License
+category: Permissive
+owner: Intel Corporation
+spdx_license_key: LicenseRef-scancode-intel-royalty-free
+minimum_coverage: 60
+ignorable_authors:
+    - Intel Corporation
+---
+
 This program has been developed by Intel Corporation.
 You have Intel's permission to incorporate this code
 into your product, royalty free.  Intel has various

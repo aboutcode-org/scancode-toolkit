@@ -1,3 +1,9 @@
+---
+license_expression: gpl-2.0-plus
+is_license_notice: yes
+relevance: 100
+---
+
 Main License (everything except docs):
 
     This package is free software; you can redistribute it and/or modify

@@ -1,3 +1,16 @@
+---
+key: gpl-2.0-plus-ada
+is_deprecated: yes
+short_name: GPL 2.0 or later with Ada exception
+name: GPL 2.0 or later with Ada exception
+category: Copyleft Limited
+owner: Dmitriy Anisimkov
+is_exception: yes
+other_urls:
+    - http://ada-ru.org/
+    - http://zlib-ada.sourceforge.net/
+---
+
 This library is free software; you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
 the Free Software Foundation; either version 2 of the License, or (at

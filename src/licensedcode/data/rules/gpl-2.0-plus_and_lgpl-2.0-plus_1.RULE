@@ -1,1 +1,9 @@
+---
+license_expression: gpl-2.0-plus AND lgpl-2.0-plus
+is_license_notice: yes
+relevance: 100
+referenced_filenames:
+    - README
+---
+
 The data files are licensed under LGPLv2+, see the README file. License: GPLv2+ and LGPLv2+.

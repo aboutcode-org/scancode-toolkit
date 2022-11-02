@@ -1,3 +1,8 @@
+---
+license_expression: openssl-exception-gpl-2.0
+is_license_text: yes
+---
+
 In addition, as a special exception, the copyright holders listed above give
 permission to link the code of its release of  with the OpenSSL project's
 "OpenSSL" library (or modified versions of the "OpenSSL" library that use the

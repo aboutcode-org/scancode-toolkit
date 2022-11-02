@@ -1,3 +1,15 @@
+---
+key: x11-acer
+short_name: X11-Style (Acer)
+name: X11-Style (Acer)
+category: Permissive
+owner: Acer Labs
+homepage_url: https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/tree/LICENCE.Abilis
+spdx_license_key: LicenseRef-scancode-x11-acer
+other_urls:
+    - https://tracxn.com/d/companies/abilis.com
+---
+
 Permission to use, copy, modify, and/or distribute this software for
 any purpose with or without fee is hereby granted, provided that the
 above copyright notice and this permission notice appear in all

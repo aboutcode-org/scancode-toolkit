@@ -1,3 +1,8 @@
+---
+license_expression: historical
+is_license_text: yes
+---
+
 Medusa was once distributed under a 'free for non-commercial use'
 license, but in May of 2000 Sam Rushing changed the license to be
 identical to the standard Python license at the time.  The standard

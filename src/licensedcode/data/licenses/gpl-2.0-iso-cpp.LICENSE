@@ -1,3 +1,17 @@
+---
+key: gpl-2.0-iso-cpp
+is_deprecated: yes
+short_name: GPL 2.0 with ISO C++ Library exception
+name: GPL 2.0 with ISO C++ Library exception
+category: Copyleft Limited
+owner: Free Software Foundation (FSF)
+homepage_url: http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
+is_exception: yes
+text_urls:
+    - http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
+notes: replaced by mif-exception
+---
+
 This file is part of the GNU ISO C++ Library. This library is free
 software; you can redistribute it and/or modify it under the terms of
 the GNU General Public License as published by the Free Software

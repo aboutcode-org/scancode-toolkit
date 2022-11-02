@@ -1,3 +1,11 @@
+---
+license_expression: mpl-1.1 OR lgpl-2.1-plus
+is_license_reference: yes
+relevance: 100
+minimum_coverage: 99
+notes: javassist license choice
+---
+
 Alternatively, the contents of this file may be used under the terms of
   the GNU Lesser General Public License Version 2.1 or later (the "LGPL"),
   in which case the provisions of the LGPL are applicable instead

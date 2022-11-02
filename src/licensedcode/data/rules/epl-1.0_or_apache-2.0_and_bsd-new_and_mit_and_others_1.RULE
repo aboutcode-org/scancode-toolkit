@@ -1,3 +1,13 @@
+---
+license_expression: (epl-1.0 OR apache-2.0) AND bsd-new AND mit AND bsd-new AND gpl-3.0-plus
+    WITH autoconf-simple-exception
+is_license_notice: yes
+minimum_coverage: 80
+ignorable_urls:
+    - http://www.eclipse.org/legal/epl-v10.html
+    - https://www.apache.org/licenses/
+---
+
 This program and the accompanying materials are licensed under
 the terms of the Eclipse Public License v1.0 and Apache v2.0 License which
 are reproduced below  subject to the following notices:

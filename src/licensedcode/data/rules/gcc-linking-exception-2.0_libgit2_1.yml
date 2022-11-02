@@ -1,4 +1,0 @@
-license_expression: gpl-1.0-plus WITH gcc-linking-exception-2.0
-is_license_notice: yes
-notes: Seen in libgit2. Even though this exception has been typically used with GPLv2 there
-    is no version referenced in the notice

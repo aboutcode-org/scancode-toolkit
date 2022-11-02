@@ -1,3 +1,8 @@
+---
+license_expression: lgpl-2.1-plus AND gpl-3.0-plus AND (lgpl-3.0-plus AND gpl-2.0-plus)
+is_license_notice: yes
+---
+
 License: The main library is licensed under GNU Lesser
 General Public License (LGPL) version 2.1+, Gnutls Extra (which is currently
 just the openssl wrapper library), build system, testsuite and commandline

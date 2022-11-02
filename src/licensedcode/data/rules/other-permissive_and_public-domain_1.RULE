@@ -1,3 +1,10 @@
+---
+license_expression: other-permissive AND public-domain
+is_license_notice: yes
+relevance: 100
+notes: in GNU Nettle
+---
+
 A few of the individual files are licensed under
 more permissive terms, or in the public domain.  To find the current
 status of particular files, you have to read the copyright notices at

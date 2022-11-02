@@ -1,3 +1,11 @@
+---
+license_expression: lgpl-2.1-plus
+is_license_tag: yes
+relevance: 100
+referenced_filenames:
+    - /usr/share/common-licenses/LGPL-2.1
+---
+
 License: LGPL-2.1+
 
  On Debian systems, the text of the LGPL-2.1 can be found in

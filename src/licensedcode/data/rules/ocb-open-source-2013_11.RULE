@@ -1,3 +1,11 @@
+---
+license_expression: ocb-open-source-2013
+is_license_notice: yes
+ignorable_urls:
+    - http://web.cs.ucdavis.edu/~rogaway/ocb/license.htm
+    - http://web.cs.ucdavis.edu/~rogaway/ocb/license1.pdf
+---
+
 OCB is covered by several patents but may be used freely by most
   software.  See http://web.cs.ucdavis.edu/~rogaway/ocb/license.htm .
   In particular license 1 is suitable for Libgcrypt: See

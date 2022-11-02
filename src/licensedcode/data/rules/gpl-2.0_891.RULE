@@ -1,3 +1,14 @@
+---
+license_expression: gpl-2.0
+is_license_notice: yes
+relevance: 100
+minimum_coverage: 97
+referenced_filenames:
+    - COPYING
+ignorable_urls:
+    - http://www.obj-sys.com/open/license.html
+---
+
 * This software is furnished under an open source license and may be 
  * used and copied only in accordance with the terms of this license. 
  * The text of the license may generally be found in the root 

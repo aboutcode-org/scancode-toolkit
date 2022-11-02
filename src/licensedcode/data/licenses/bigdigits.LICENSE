@@ -1,3 +1,33 @@
+---
+key: bigdigits
+short_name: BigDigits License
+name: BigDigits License
+category: Permissive
+owner: DI Management Services
+homepage_url: http://www.di-mgt.com.au/
+notes: |
+    As of version 2.5 (October 2015) we have re-issued this source code under
+    the Mozilla Public License, v. 2.0. We have no objection whatsoever to
+    developers using this code in commercial software or as part of an open
+    source project provided the MPL licence remains unchanged in our source
+    code modules. For reference, here is the old copyright and licence notice
+    for version 2.4 (April 2013) and earlier.
+spdx_license_key: LicenseRef-scancode-bigdigits
+text_urls:
+    - http://www.di-mgt.com.au/bigdigitsCopyright.txt
+    - https://web-beta.archive.org/web/20151013165906/http://www.di-mgt.com.au/bigdigitsCopyright.txt
+ignorable_copyrights:
+    - copyright (c) 2001-11 D.I. Management Services Pty Limited
+    - copyright (c) 2001-11 by D.I. Management Services Pty Limited <www.di-mgt.com.au>
+ignorable_holders:
+    - D.I. Management Services Pty Limited
+ignorable_authors:
+    - David Ireland
+ignorable_urls:
+    - http://www.di-mgt.com.au/
+    - http://www.di-mgt.com.au/bigdigits.html
+---
+
 BigDigits License 
 
 This source code is part of the BIGDIGITS multiple-precision arithmetic

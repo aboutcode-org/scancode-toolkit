@@ -1,3 +1,13 @@
+---
+key: damail
+short_name: DAMAIL
+name: Don't Ask Me About It License
+category: Permissive
+owner: Noah Slater
+homepage_url: https://github.com/nslater/DAMAIL
+spdx_license_key: LicenseRef-scancode-damail
+---
+
 The Don't Ask Me About It License
 Full License Text
 

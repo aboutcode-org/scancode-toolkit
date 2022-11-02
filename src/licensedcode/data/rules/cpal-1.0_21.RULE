@@ -1,3 +1,10 @@
+---
+license_expression: cpal-1.0
+is_license_notice: yes
+ignorable_urls:
+    - http://opensource.org/licenses/cpal_1.0
+---
+
 # ***** BEGIN LICENSE BLOCK *****
 # Version: CPAL 1.0
 #

@@ -1,3 +1,14 @@
+---
+key: apache-2.0-linking-exception
+short_name: Apache 2.0 with Linking Exception
+name: Apache 2.0 with Linking Exception
+category: Permissive
+owner: compuphase
+homepage_url: https://github.com/compuphase/minIni/blob/master/LICENSE
+is_exception: yes
+is_deprecated: yes
+---
+
 EXCEPTION TO THE APACHE 2.0 LICENSE
 
 As a special exception to the Apache License 2.0 (and referring to the

@@ -1,3 +1,9 @@
+---
+license_expression: gpl-1.0-plus
+is_license_notice: yes
+relevance: 100
+---
+
 The C# Compiler is released under the terms of the GNU GPL.
 
 On Debian GNU/Linux systems, the complete text of the GNU General Public

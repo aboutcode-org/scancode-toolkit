@@ -1,2 +1,8 @@
+---
+license_expression: apache-2.0
+is_license_notice: yes
+relevance: 100
+---
+
 This package and the Debian packaging is licensed under the Apache License,
 see `/usr/share/common-licenses/Apache-2.0'.

@@ -1,3 +1,15 @@
+---
+license_expression: bzip2-libbzip-2010
+is_license_text: yes
+relevance: 100
+ignorable_copyrights:
+    - copyright (c) 1996-2006 Julian R Seward
+ignorable_holders:
+    - Julian R Seward
+ignorable_emails:
+    - jseward@bzip.org
+---
+
     This program, "bzip2", the associated library "libbzip2", and all
     documentation, are copyright (C) 1996-2006 Julian R Seward.  All
     rights reserved.
@@ -76,4 +88,4 @@
        To the best of my knowledge, bzip2/libbzip2 does not use any 
        patented algorithms.  However, I do not have the resources 
        to carry out a patent search.  Therefore I cannot give any 
-       guarantee of the above statement.  
+       guarantee of the above statement.

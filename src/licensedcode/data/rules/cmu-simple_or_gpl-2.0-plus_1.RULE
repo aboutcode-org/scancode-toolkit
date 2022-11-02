@@ -1,3 +1,11 @@
+---
+license_expression: cmu-simple OR gpl-2.0-plus
+is_license_notice: yes
+relevance: 100
+ignorable_urls:
+    - https://www.gnu.org/licenses/
+---
+
 License:
 Permission to use, copy, modify, and distribute this software and its
 documentation is hereby granted, provided that the above copyright
@@ -20,4 +28,3 @@ in which case the provisions of the GPL apply INSTEAD OF those given above.
 
   You should have received a copy of the GNU General Public License
   along with this program; if not, see <https://www.gnu.org/licenses/>.
-

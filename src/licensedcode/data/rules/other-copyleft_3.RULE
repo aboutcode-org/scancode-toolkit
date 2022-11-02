@@ -1,3 +1,8 @@
+---
+license_expression: other-copyleft
+is_license_text: yes
+---
+
 Linking The SQLRelay Server statically or dynamically with other modules is
 making a combined work based on The SQLRelay Server. Thus, the terms and
 conditions of the GNU General Public License cover the whole combination.

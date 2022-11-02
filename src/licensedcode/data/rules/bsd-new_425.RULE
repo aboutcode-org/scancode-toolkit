@@ -1,3 +1,9 @@
+---
+license_expression: bsd-new
+is_license_text: yes
+minimum_coverage: 95
+---
+
 # This file contains code that was {{originally under the following license}}:
 #
 # Redistribution and use in source and binary forms, with or without

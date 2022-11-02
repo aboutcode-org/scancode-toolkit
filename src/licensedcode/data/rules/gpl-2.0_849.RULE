@@ -1,2 +1,10 @@
+---
+license_expression: gpl-2.0
+is_license_notice: yes
+relevance: 100
+referenced_filenames:
+    - LICENSE
+---
+
 This is free software, licensed under the GNU General Public License v2.
 See /LICENSE for more information.

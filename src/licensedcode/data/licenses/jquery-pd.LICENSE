@@ -1,3 +1,13 @@
+---
+key: jquery-pd
+short_name: jQuery-Tools-PD
+name: jQuery Tools Public Domain License
+category: Public Domain
+owner: jQuery Project
+homepage_url: https://jquerytools.github.io/release-notes/
+spdx_license_key: LicenseRef-scancode-jquery-pd
+---
+
 jQuery Public Domain License
 
 NO COPYRIGHTS OR LICENSES. DO WHAT YOU LIKE.  This is the new jQuery Tools license. Copyrights and patents are evil. They block the natural progress of development. We all know it: if people start sharing instead of owning the world would be a better place. Today money is king. This results in closed systems and poor quality and in many cases people are even seriously exploited. For businessmen nothing is enough.

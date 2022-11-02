@@ -1,5 +1,0 @@
-license_expression: lgpl-2.1-plus
-is_license_notice: yes
-minimum_coverage: 98
-ignorable_urls:
-    - http://hg.openjdk.java.net/jdk8u/jdk8u/jdk/file/tip/src/share/native/sun/security/ec/impl

@@ -1,3 +1,13 @@
+---
+license_expression: openldap-2.7
+is_license_text: yes
+minimum_coverage: 70
+ignorable_copyrights:
+    - Copyright 1999-2001 The OpenLDAP Foundation, Redwood City, California, USA.
+ignorable_holders:
+    - The OpenLDAP Foundation, Redwood City, California, USA.
+---
+
 The OpenLDAP Public License 
 Version 2.7  date, 7 September 2001  
 
@@ -44,4 +54,4 @@ OpenLDAP is a registered trademark of the OpenLDAP Foundation.
 
  Copyright 1999-2001 The OpenLDAP Foundation, Redwood City, 
 California, USA.   All Rights Reserved. Permission to copy and 
-distribute verbatim copies of this document is granted. 
+distribute verbatim copies of this document is granted.

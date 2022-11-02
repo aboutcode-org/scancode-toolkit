@@ -1,1 +1,9 @@
+---
+license_expression: gpl-3.0-plus
+is_license_notice: yes
+relevance: 100
+ignorable_urls:
+    - http://www.gnu.org/licenses/gpl
+---
+
 .. _GNU GPL version 3 (or above) License: http://www.gnu.org/licenses/gpl

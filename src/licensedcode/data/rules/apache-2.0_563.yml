@@ -1,6 +1,0 @@
-license_expression: apache-2.0
-is_license_reference: yes
-relevance: 80
-notes: most DDcode is Apache-2.0-licensed
-ignorable_urls:
-    - https://www.datadoghq.com/

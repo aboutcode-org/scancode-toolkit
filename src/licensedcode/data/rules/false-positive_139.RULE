@@ -1,1 +1,6 @@
+---
+is_false_positive: yes
+notes: Comment in ebpf in github.com/cilium/ebpf/
+---
+
 uint32 gpl_compatible           uint32

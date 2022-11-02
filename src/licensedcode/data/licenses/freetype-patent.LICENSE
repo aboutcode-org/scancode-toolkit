@@ -1,3 +1,16 @@
+---
+key: freetype-patent
+short_name: FreeType Patent Grant
+name: FreeType Patent Grant
+category: Patent License
+owner: FreeType Project
+homepage_url: https://www.freetype.org/
+notes: This patent grant clause is similat to Apache-2.0 section 3 and is sometimes seen used
+    alone with the freetype license.
+spdx_license_key: LicenseRef-scancode-freetype-patent
+minimum_coverage: 70
+---
+
 Additionally, subject to the terms and conditions of the */
 FreeType Project License, each contributor to the Work hereby grants 
 to any individual or legal entity exercising permissions granted by  
@@ -14,4 +27,4 @@ submitted.  If You institute patent litigation against any entity
 the Work or a contribution incorporated within the Work constitutes  
 direct or contributory patent infringement, then any patent licenses 
 granted to You under this License for that Work shall terminate as of
-the date such litigation is filed. 
+the date such litigation is filed.

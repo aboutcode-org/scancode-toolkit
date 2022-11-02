@@ -1,3 +1,15 @@
+---
+key: squeak
+short_name: Apple Squeak License
+name: Apple Squeak License
+category: Proprietary Free
+owner: Apple
+homepage_url: http://squeak.org/SqueakLicense/
+spdx_license_key: LicenseRef-scancode-squeak
+text_urls:
+    - https://squeak.org/SqueakLicense/
+---
+
 Apple Computer, Inc. Software License
 
 PLEASE READ THIS SOFTWARE LICENSE AGREEMENT "LICENSE" CAREFULLY BEFORE DOWNLOADING THIS SOFTWARE. BY DOWNLOADING THIS SOFTWARE YOU ARE AGREEING TO BE BOUND BY THE TERMS OF THIS LICENSE. IF YOU DO NOT AGREE TO THE TERMS OF THIS LICENSE, DO NOT DOWNLOAD.

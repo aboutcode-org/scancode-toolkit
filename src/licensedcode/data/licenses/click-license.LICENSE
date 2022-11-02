@@ -1,3 +1,14 @@
+---
+key: click-license
+short_name: Click License
+name: Click License
+category: Permissive
+owner: Unspecified
+homepage_url: https://changelogs.ubuntu.com/changelogs/pool/main/t/t1utils/t1utils_1.39-2/copyright
+spdx_license_key: LicenseRef-scancode-click-license
+minimum_coverage: 80
+---
+
 Permission is hereby granted, free of charge, to any person obtaining a
 copy of this software and associated documentation files (the "Software"),
 to deal in the Software without restriction, including without limitation

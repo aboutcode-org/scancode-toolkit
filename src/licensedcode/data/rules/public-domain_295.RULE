@@ -1,3 +1,10 @@
+---
+license_expression: public-domain
+is_license_text: yes
+relevance: 100
+minimum_coverage: 80
+---
+
 THIS CODE IS SPECIFICALLY EXEMPTED FROM THE NCURSES PACKAGE COPYRIGHT.
 You may freely copy it for use as a template for your own field types.
 If you develop a field type that might be of general use, please send

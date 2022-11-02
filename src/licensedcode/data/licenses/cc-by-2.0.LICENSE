@@ -1,3 +1,19 @@
+---
+key: cc-by-2.0
+short_name: CC-BY-2.0
+name: Creative Commons Attribution License 2.0
+category: Permissive
+owner: Creative Commons
+homepage_url: http://creativecommons.org/licenses/by/2.0/
+spdx_license_key: CC-BY-2.0
+text_urls:
+    - http://creativecommons.org/licenses/by/2.0/legalcode
+other_urls:
+    - https://creativecommons.org/licenses/by/2.0/legalcode
+ignorable_urls:
+    - http://creativecommons.org/
+---
+
 Attribution 2.0
 
 CREATIVE COMMONS CORPORATION IS NOT A LAW FIRM AND DOES NOT PROVIDE LEGAL SERVICES. DISTRIBUTION OF THIS LICENSE DOES NOT CREATE AN ATTORNEY-CLIENT RELATIONSHIP. CREATIVE COMMONS PROVIDES THIS INFORMATION ON AN "AS-IS" BASIS. CREATIVE COMMONS MAKES NO WARRANTIES REGARDING THE INFORMATION PROVIDED, AND DISCLAIMS LIABILITY FOR DAMAGES RESULTING FROM ITS USE.

@@ -1,3 +1,8 @@
+---
+license_expression: apache-2.0
+is_license_notice: yes
+---
+
 The  project is licensed under the Apache License, Version 2.0. All new code 
 created for contribution to the project is licensed under the Apache license. The 
 project may contain files under different licenses in the event code was borrowed 

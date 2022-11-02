@@ -1,3 +1,9 @@
+---
+license_expression: (gpl-2.0-plus OR bsd-simplified) AND ocb-open-source-2013
+is_license_notice: yes
+relevance: 100
+---
+
 The BSD license is (almost?) strictly more permissive, but the
 additionally licensing under the GPL allows us to use OCB 2.0 code
 royalty-free (at least, if OCB 2.0's creator Phil Rogaway has anything

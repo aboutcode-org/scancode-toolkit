@@ -1,1 +1,6 @@
+---
+is_false_positive: yes
+notes: found in NTP docs
+---
+
 Workaround for public domain NTP version

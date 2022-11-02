@@ -1,3 +1,22 @@
+---
+key: hippocratic-3.0
+short_name: Hippocratic License v3.0
+name: Hippocratic License v3.0
+category: Free Restricted
+owner: Ethical Source
+homepage_url: https://firstdonoharm.dev/
+spdx_license_key: LicenseRef-scancode-Hippocratic-3.0
+text_urls:
+    - https://firstdonoharm.dev/version/3/0/license/license.txt
+    - https://firstdonoharm.dev/version/3/0/license/license.md
+    - https://firstdonoharm.dev/version/3/0/license/
+faq_url: https://www.un.org/en/universal-declaration-human-rights/
+ignorable_urls:
+    - https://bdsmovement.net/
+    - https://bdsmovement.net/get-involved/what-to-boycott
+    - https://wsr-network.org/what-is-wsr/statement-of-principles
+---
+
 HIPPOCRATIC LICENSE
 
 Version 3.0, October 2021
@@ -230,4 +249,3 @@ This section explains when a Licensee must notify others of the License.
 8.8.  Entire License: This is the entire License between the Licensor and Licensee with respect to the claims released herein and that the consideration stated herein is the only consideration or compensation to be paid or exchanged between them for this License. This License cannot be modified or amended except in a writing signed by Licensor and Licensee.
 
 8.9.  Successors and Assigns: This License shall be binding upon and inure to the benefit of the Licensor’s and Licensee’s respective heirs, successors, and assigns.
-

@@ -1,3 +1,11 @@
+---
+license_expression: gpl-2.0 WITH generic-exception
+is_license_notice: yes
+relevance: 99
+referenced_filenames:
+    - COPYING.OpenSSL
+---
+
 In addition, as a special exception, the copyright holder
 gives permission to link the code of this program with
 any version of the OpenSSL library which is distributed

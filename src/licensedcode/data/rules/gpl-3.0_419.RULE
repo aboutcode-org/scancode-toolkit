@@ -1,2 +1,9 @@
+---
+license_expression: gpl-3.0
+is_license_reference: yes
+referenced_filenames:
+    - /usr/share/common-licenses/GPL-3
+---
+
 On Debian systems a full copy of the GPL 3 can be found at
  /usr/share/common-licenses/GPL-3

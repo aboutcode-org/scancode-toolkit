@@ -1,1 +1,6 @@
+---
+is_false_positive: yes
+notes: A mention of a license and not a license
+---
+
 e.g. 'Apache Version 2.0'

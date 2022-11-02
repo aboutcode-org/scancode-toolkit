@@ -1,3 +1,19 @@
+---
+key: cc-by-nc-nd-3.0
+short_name: CC-BY-NC-ND-3.0
+name: Creative Commons Attribution Non-Commercial No Derivatives License 3.0
+category: Source-available
+owner: Creative Commons
+homepage_url: http://creativecommons.org/licenses/by-nc-nd/3.0/
+spdx_license_key: CC-BY-NC-ND-3.0
+text_urls:
+    - http://creativecommons.org/licenses/by-nc-nd/3.0/legalcode
+other_urls:
+    - https://creativecommons.org/licenses/by-nc-nd/3.0/legalcode
+ignorable_urls:
+    - https://creativecommons.org/
+---
+
 Creative Commons Legal Code
 
 Attribution-NonCommercial-NoDerivs 3.0 Unported

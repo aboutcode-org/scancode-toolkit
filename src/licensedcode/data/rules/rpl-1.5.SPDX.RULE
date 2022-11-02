@@ -1,3 +1,14 @@
+---
+license_expression: rpl-1.5
+is_license_text: yes
+minimum_coverage: 10
+notes: license text as published by SPDX
+ignorable_copyrights:
+    - Copyright (c) 2001-2007 Technical Pursuit Inc.
+ignorable_holders:
+    - Technical Pursuit Inc.
+---
+
 Reciprocal Public License 1.5 (RPL1.5)
 
 Reciprocal Public License (RPL)

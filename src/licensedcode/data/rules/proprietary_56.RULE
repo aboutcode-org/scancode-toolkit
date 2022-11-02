@@ -1,3 +1,12 @@
+---
+license_expression: proprietary-license
+is_license_notice: yes
+notes: |
+    This is an extra clause inserted by Palantir in an Apache license
+    See https://github.com/palantir/blueprint/blob/826380132bcef856425a1cf88e379f19081c179a/LICENSE#L176
+    and this ticket for more details https://github.com/palantir/blueprint/issues/2602
+---
+
    10. The name, trade names, trademarks, service marks, or product 
        names of Palantir Technologies Inc. (“Palantir”) or any of its 
        Contributors may not be used to endorse or promote products derived 

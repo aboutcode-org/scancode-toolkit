@@ -1,3 +1,12 @@
+---
+license_expression: gpl-1.0-plus OR other-copyleft
+is_license_notice: yes
+minimum_coverage: 80
+notes: a rare license found in older OpenSSL with a choice of GPL
+ignorable_authors:
+    - Bodo Moeller
+---
+
 This is free software; you can redistributed and/or modify it
 unter the terms of either
 -  the GNU General Public License as published by the

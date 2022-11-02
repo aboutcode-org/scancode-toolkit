@@ -1,2 +1,8 @@
+---
+license_expression: bsd-simplified OR gpl-2.0
+is_license_notice: yes
+relevance: 99
+---
+
 SJCL is open. You can use, modify and redistribute it under a BSD
 license or under the GNU GPL, version 2.0.

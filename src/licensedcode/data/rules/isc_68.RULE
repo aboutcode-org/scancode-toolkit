@@ -1,3 +1,11 @@
+---
+license_expression: isc
+is_license_notice: yes
+relevance: 100
+ignorable_urls:
+    - https://www.isc.org/downloads/software-support-policy/isc-license/
+---
+
 licensed under the ISC License, ( the "License");
 you may not use this file except in compliance with the License.
 You may obtain a copy of the License at

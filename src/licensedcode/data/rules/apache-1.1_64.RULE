@@ -1,1 +1,9 @@
-http://cvs.sourceforge.net/viewcvs.py/*checkout*/p6spy/p6spy/license.txt?rev=HEAD", 
+---
+license_expression: apache-1.1
+is_license_reference: yes
+relevance: 100
+ignorable_urls:
+    - http://cvs.sourceforge.net/viewcvs.py/*checkout*/p6spy/p6spy/license.txt?rev=HEAD
+---
+
+http://cvs.sourceforge.net/viewcvs.py/*checkout*/p6spy/p6spy/license.txt?rev=HEAD",

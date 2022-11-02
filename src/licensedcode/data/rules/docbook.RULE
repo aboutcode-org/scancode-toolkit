@@ -1,3 +1,9 @@
+---
+license_expression: docbook
+is_license_text: yes
+minimum_coverage: 70
+---
+
 License and warranty for most parts of the package: MIT/X Consortium License
 
   Permission is hereby granted, free of charge, to any person obtaining a copy

@@ -1,3 +1,10 @@
+---
+license_expression: oracle-openjdk-classpath-exception-2.0
+is_license_notice: yes
+referenced_filenames:
+    - License
+---
+
 "CLASSPATH" EXCEPTION TO THE GPL VERSION 2
 
 Certain source files distributed by Sun Microsystems, Inc. are subject

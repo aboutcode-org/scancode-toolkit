@@ -1,1 +1,9 @@
+---
+license_expression: mit
+is_license_tag: yes
+relevance: 100
+ignorable_urls:
+    - http://en.wikipedia.org/wiki/MIT_License
+---
+
 MIT License: http://en.wikipedia.org/wiki/MIT_License

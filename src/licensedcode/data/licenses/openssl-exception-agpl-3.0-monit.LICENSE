@@ -1,3 +1,16 @@
+---
+key: openssl-exception-agpl-3.0-monit
+short_name: OpenSSL exception to AGPL 3.0 - Monit style
+name: OpenSSL exception to AGPL 3.0 - Monit style
+category: Copyleft
+owner: Tildeslash
+notes: Similar to openssl-exception-agpl-3.0 but cannot be removed.
+is_exception: yes
+spdx_license_key: LicenseRef-scancode-openssl-exception-agpl3.0monit
+other_spdx_license_keys:
+    - LicenseRef-scancode-openssl-exception-agpl-3.0-monit
+---
+
  * In addition, as a special exception, the copyright holders give
  * permission to link the code of portions of this program with the
  * OpenSSL library under certain conditions as described in each

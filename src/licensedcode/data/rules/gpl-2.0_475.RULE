@@ -1,3 +1,9 @@
+---
+license_expression: gpl-2.0
+is_license_notice: yes
+notes: gpl2 because this is derived from a Linux driver
+---
+
 Adapted from a Linux driver which was written by 
 
 This software may be used and distributed according to the terms

@@ -1,3 +1,19 @@
+---
+license_expression: w3c-docs-19990405
+is_license_text: yes
+relevance: 100
+ignorable_copyrights:
+    - Copyright (c) World Wide Web Consortium, (Massachusetts Institute of Technology, Institut
+        National de Recherche en Informatique et en Automatique, Keio University)
+ignorable_holders:
+    - World Wide Web Consortium, (Massachusetts Institute of Technology, Institut National de
+        Recherche en Informatique et en Automatique, Keio University)
+ignorable_urls:
+    - http://www.w3.org/Consortium/Legal/
+ignorable_emails:
+    - site-policy@w3.org
+---
+
 Public documents on the W3C site are provided by the copyright holders under
 the following license. The software or Document Type Definitions (DTDs)
 associated with W3C specifications are governed by the Software Notice. By

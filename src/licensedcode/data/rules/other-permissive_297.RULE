@@ -1,2 +1,9 @@
+---
+license_expression: other-permissive
+is_license_notice: yes
+ignorable_urls:
+    - http://owl.apotheon.org/
+---
+
 This software may be distributed under the terms of the Open Works License.
 See http://owl.apotheon.org for license details.

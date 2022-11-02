@@ -1,3 +1,11 @@
+---
+license_expression: public-domain OR cc0-1.0
+is_license_notice: yes
+ignorable_urls:
+    - http://labs.creativecommons.org/licenses/zero-waive/1.0/us/legalcode
+    - https://www.w3.org/Style/CSS/Test/Fonts/Ahem/COPYING
+---
+
  License for the Ahem font embedded below is from:
  https://www.w3.org/Style/CSS/Test/Fonts/Ahem/COPYING
 

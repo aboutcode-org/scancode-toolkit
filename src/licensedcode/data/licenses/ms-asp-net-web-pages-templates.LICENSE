@@ -1,3 +1,18 @@
+---
+key: ms-asp-net-web-pages-templates
+short_name: MS ASP.NET Web Pages Templates License
+name: Microsoft ASP.NET Web Pages Templates License
+category: Proprietary Free
+owner: Microsoft
+homepage_url: http://www.microsoft.com/web/webpi/eula/webpages_2_eula_enu.htm
+spdx_license_key: LicenseRef-scancode-ms-asp-net-web-pages-templates
+other_urls:
+    - http://go.microsoft.com/fwlink/?LinkId=210218
+    - https://www.microsoft.com/web/webpi/eula/ASPNET-Web-Pages-Template-License.rtf
+ignorable_urls:
+    - http://www.microsoft.com/exporting
+---
+
 MICROSOFT SOFTWARE LICENSE TERMS
 MICROSOFT ASP .NET WEB PAGES TEMPLATES
 These license terms are an agreement between Microsoft Corporation (or based on where you live, one of its affiliates) and you. Please read them. They apply to the software named above, which includes the media on which you received it, if any. The terms also apply to any Microsoft

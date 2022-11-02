@@ -1,5 +1,9 @@
+---
+license_expression: lgpl-2.0-plus WITH wxwindows-exception-3.1
+is_license_notice: yes
+---
+
 library source code is distributed under the wxWindows Library
 Licence.
 In essence it's the GNU Library General Public Licence (LGPL) version with
 a static linking exception.
-

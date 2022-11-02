@@ -1,2 +1,8 @@
+---
+license_expression: lgpl-2.1-plus
+is_license_reference: yes
+relevance: 95
+---
+
 The pre-built opencv_ffmpeg*.dll is:
 * LGPL library, not BSD libraries.

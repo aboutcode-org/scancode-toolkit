@@ -1,3 +1,10 @@
+---
+license_expression: bsd-simplified OR gpl-2.0
+is_license_notice: yes
+relevance: 100
+minimum_coverage: 80
+---
+
 Dual licensed under BSD license and GPLv2.
 
 Redistribution and use in source and binary forms, with or without

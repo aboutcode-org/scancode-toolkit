@@ -1,3 +1,15 @@
+---
+license_expression: gpl-2.0 OR commercial-license
+is_license_notice: yes
+minimum_coverage: 90
+ignorable_copyrights:
+    - Copyright (c) Broadcom Corporation
+ignorable_holders:
+    - Broadcom Corporation
+ignorable_urls:
+    - http://www.broadcom.com/licenses/GPLv2.php
+---
+
  <:copyright-BRCM:2007:DUAL/GPL:standard
  
     Copyright (c)  Broadcom Corporation
@@ -16,4 +28,3 @@
  A copy of the GPL is available at http://www.broadcom.com/licenses/GPLv2.php, or by
  writing to the Free Software Foundation, Inc., 59 Temple Place - Suite 330,
  Boston, MA 02111-1307, USA.
- 

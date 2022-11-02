@@ -1,1 +1,9 @@
+---
+license_expression: mit
+is_license_notice: yes
+relevance: 100
+ignorable_urls:
+    - http://mit-license.org/
+---
+
 is distributed under [MIT license](http://mit-license.org/).

@@ -1,3 +1,15 @@
+---
+license_expression: nrl
+is_license_text: yes
+relevance: 100
+ignorable_copyrights:
+    - copyright by The Regents of the University of California
+ignorable_holders:
+    - The Regents of the University of California
+ignorable_authors:
+    - the University of California, Berkeley and its contributors
+---
+
 COPYRIGHT NOTICE
 
 All of the documentation and software included in this software

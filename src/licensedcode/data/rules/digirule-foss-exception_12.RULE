@@ -1,1 +1,9 @@
+---
+license_expression: digirule-foss-exception
+is_license_reference: yes
+relevance: 100
+ignorable_urls:
+    - https://spdx.org/licenses/DigiRule-FOSS-exception
+---
+
 LICENSE {{DigiRule-FOSS-exception}} https://spdx.org/licenses/DigiRule-FOSS-exception

@@ -1,1 +1,9 @@
+---
+license_expression: bsd-new
+is_license_reference: yes
+relevance: 99
+ignorable_urls:
+    - https://opensource.org/licenses/bsd-license.html
+---
+
 https://opensource.org/licenses/bsd-license.html

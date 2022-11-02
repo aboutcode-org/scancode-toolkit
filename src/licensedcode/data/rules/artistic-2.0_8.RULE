@@ -1,3 +1,11 @@
+---
+license_expression: artistic-2.0
+is_license_text: yes
+notes: License text without warranty disclaimer
+ignorable_authors:
+    - The Perl Foundation
+---
+
 Everyone is permitted to copy and distribute verbatim copies of this license document, but changing it is not allowed.
 Preamble
 

@@ -1,2 +1,9 @@
+---
+license_expression: lgpl-2.1-plus
+is_license_notice: yes
+ignorable_urls:
+    - http://creativecommons.org/licenses/LGPL/2.1/
+---
+
 This is licensed under the GNU LGPL, version 2.1 or later.
 For details, see: http://creativecommons.org/licenses/LGPL/2.1/

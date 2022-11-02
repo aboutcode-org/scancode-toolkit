@@ -1,8 +1,0 @@
-license_expression: tcl
-is_license_text: yes
-ignorable_copyrights:
-    - copyrighted by the Regents of the University of California, Sun Microsystems, Inc., Scriptics
-        Corporation, ActiveState Corporation
-ignorable_holders:
-    - the Regents of the University of California, Sun Microsystems, Inc., Scriptics Corporation,
-        ActiveState Corporation

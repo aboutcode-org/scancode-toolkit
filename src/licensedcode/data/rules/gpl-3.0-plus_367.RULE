@@ -1,1 +1,9 @@
+---
+license_expression: gpl-3.0-plus
+is_license_notice: yes
+relevance: 100
+referenced_filenames:
+    - LICENSE
+---
+
 The code in this project is licensed under GPLv3+. The full licensing text can be found in the LICENSE file

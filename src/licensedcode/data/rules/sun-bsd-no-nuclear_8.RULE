@@ -1,1 +1,9 @@
+---
+license_expression: sun-bsd-no-nuclear
+is_license_reference: yes
+relevance: 100
+ignorable_urls:
+    - https://licenses.nuget.org/BSD-3-Clause-No-Nuclear-License
+---
+
 https://licenses.nuget.org/BSD-3-Clause-No-Nuclear-License

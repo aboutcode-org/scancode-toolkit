@@ -1,3 +1,14 @@
+---
+key: ms-refl
+short_name: MS Reference License
+name: Microsoft Reference License
+category: Proprietary Free
+owner: Microsoft
+homepage_url: http://www.microsoft.com/resources/sharedsource/licensingbasics/referencelicense.mspx
+notes: duplicate of ms-rsl
+is_deprecated: yes
+---
+
 This license governs use of the accompanying software. If you use the software, you accept this license. If you do not accept the license, do not use the software.
 
 1. Definitions

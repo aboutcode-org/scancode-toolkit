@@ -1,3 +1,14 @@
+---
+license_expression: bsd-new OR gpl-2.0
+is_license_notice: yes
+relevance: 99
+referenced_filenames:
+    - LICENSE
+    - COPYING
+ignorable_urls:
+    - https://github.com/facebook/zstd
+---
+
 This source code is licensed under both the BSD-style license (found in the
 LICENSE file in the root directory of https://github.com/facebook/zstd) and
 the GPLv2 (found in the COPYING file in the root directory of

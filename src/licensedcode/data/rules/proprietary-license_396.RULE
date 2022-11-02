@@ -1,2 +1,10 @@
+---
+license_expression: proprietary-license
+is_license_notice: yes
+relevance: 100
+minimum_coverage: 90
+notes: https://github.com/jcs/endless/
+---
+
 Redistribution of this project in binary form, with or without modification,
 is NOT permitted without the explicit written permission

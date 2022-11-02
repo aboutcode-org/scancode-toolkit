@@ -1,3 +1,9 @@
+---
+license_expression: mit AND other-permissive
+is_license_notice: yes
+notes: https://github.com/ziglang/zig/tree/c10fdde5a64a46bc514500e97b8c87d19f86e431
+---
+
 This project redistributes code from other projects, some of which have other 
 licenses besides MIT. Such licenses are generally similar to the MIT license 
 for practical purposes.

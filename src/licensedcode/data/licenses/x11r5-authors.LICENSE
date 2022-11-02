@@ -1,3 +1,15 @@
+---
+key: x11r5-authors
+is_deprecated: yes
+short_name: X11-R5 Authors
+name: X11-R5 Authors
+category: Permissive
+owner: XFree86 Project, Inc
+other_urls:
+    - http://pypi.python.org/packages/source/C/Cheetah/Cheetah-2.4.4.tar.gz
+minimum_coverage: 80
+---
+
 Permission to use, copy, modify, and distribute this software for any purpose
 and without fee is hereby granted, provided that the above copyright notice
 appear in all copies and that both that copyright notice and this permission

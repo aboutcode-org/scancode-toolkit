@@ -1,3 +1,10 @@
+---
+license_expression: bsla-no-advert
+is_license_text: yes
+relevance: 100
+notes: See https://github.com/mirror/newlib-cygwin/commit/9042d0ce65533a26fc3264206db5828d5692332c#
+---
+
 # Redistribution and use in source and binary forms are permitted
 # provided that the above copyright notice and this paragraph are
 # duplicated in all such forms and that any documentation,

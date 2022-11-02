@@ -1,3 +1,11 @@
+---
+license_expression: cpal-1.0
+is_license_notice: yes
+relevance: 100
+ignorable_urls:
+    - http://www.opensource.org/licenses/cpal_1.0
+---
+
 LICENSE:
 
  uses the Common Public Attribution License Version 1.0 (CPAL) http://www.opensource.org/licenses/cpal_1.0.

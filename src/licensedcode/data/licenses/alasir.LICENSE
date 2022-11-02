@@ -1,3 +1,13 @@
+---
+key: alasir
+short_name: Alasir Licence
+name: The Alasir Licence
+category: Proprietary Free
+owner: Alasir
+homepage_url: http://alasir.com/licence/TAL.txt
+spdx_license_key: LicenseRef-scancode-alasir
+---
+
 The Alasir Licence
 
     This is a free software. It's provided as-is and carries absolutely no

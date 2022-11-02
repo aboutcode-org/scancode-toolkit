@@ -1,3 +1,18 @@
+---
+license_expression: sugarcrm-1.1.3
+is_license_text: yes
+minimum_coverage: 95
+ignorable_copyrights:
+    - Copyright (c) 2004 SugarCRM, Inc.
+ignorable_holders:
+    - SugarCRM, Inc.
+ignorable_urls:
+    - http://www.mozilla.org/MPL/MPL-1.1.html
+    - http://www.sugarcrm.com/
+    - http://www.sugarcrm.com/SPL
+    - http://www.sugarforge.org/
+---
+
 {{SUGARCRM PUBLIC LICENSE}} Applies to Sugar Open Source Edition v1 through v4.
 Please note that these releases are no longer supported or distributed.
 

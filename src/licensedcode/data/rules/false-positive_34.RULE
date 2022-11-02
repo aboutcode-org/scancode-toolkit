@@ -1,3 +1,8 @@
+---
+is_false_positive: yes
+notes: https://android.googlesource.com/platform/external/dng_sdk/+/refs/heads/master/Android.bp
+---
+
 // Added automatically by a large-scale-change that took the approach of
 // 'apply every license found to every target'. While this makes sure we respect
 // every license restriction, it may not be entirely correct.

@@ -1,3 +1,21 @@
+---
+key: ms-windows-sdk-win7-net-4
+short_name: MS Windows SDK Windows7 .NET Framework 4
+name: Microsoft Windows SDK for Windows 7 and .NET Framework 4
+category: Proprietary Free
+owner: Microsoft
+spdx_license_key: LicenseRef-scancode-ms-windows-sdk-win7-net-4
+ignorable_copyrights:
+    - Copyright (c) 2006 Microsoft Corporation
+ignorable_holders:
+    - Microsoft Corporation
+ignorable_urls:
+    - http://go.microsoft.com/fwlink/?LinkID=185267&clcid=0x409
+    - http://go.microsoft.com/fwlink/?LinkID=185268&clcid=0x409
+    - http://www.microsoft.com/exporting
+    - http://www.microsoft.com/licensing/userights
+---
+
 MICROSOFT SOFTWARE LICENSE TERMS
 MICROSOFT WINDOWS SOFTWARE DEVELOPMENT KIT FOR WINDOWS 7 and .NET FRAMEWORK 4
 These license terms are an agreement between Microsoft Corporation (or based on where you live, one of its affiliates) and you.  Please read them.  They apply to the software named above, which includes the media on which you received it, if any.  The terms also apply to any Microsoft

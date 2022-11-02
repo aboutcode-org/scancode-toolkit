@@ -1,3 +1,16 @@
+---
+key: other-copyleft
+short_name: Other Copyleft Licenses
+name: Other Copyleft Licenses
+category: Copyleft
+owner: nexB
+notes: |
+    this is a catch all and ellipsis to deal with some cases when a large
+    number of ancillary yet similar licenses may be reported as one.
+is_generic: yes
+spdx_license_key: LicenseRef-scancode-other-copyleft
+---
+
 This component contains third-party subcomponents licensed under
 one or more copyleft licenses in the style of GPL, LGPL, MPL or EPL.
 The license obligations of these subcomponents may apply when a subcomponent

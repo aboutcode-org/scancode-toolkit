@@ -1,1 +1,8 @@
+---
+license_expression: pycrypto
+is_license_reference: yes
+relevance: 100
+minimum_coverage: 100
+---
+
 Python Cryptography Toolkit license

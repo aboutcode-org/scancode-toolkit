@@ -1,3 +1,9 @@
+---
+license_expression: ruby
+is_license_text: yes
+notes: from http://curb.rubyforge.org/files/LICENSE.html
+---
+
 is free software licensed under the following terms:
 
   1. You may make and give away verbatim copies of the source form of the

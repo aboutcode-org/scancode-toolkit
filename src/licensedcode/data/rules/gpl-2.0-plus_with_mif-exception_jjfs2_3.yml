@@ -1,7 +1,0 @@
-license_expression: gpl-2.0-plus WITH mif-exception
-is_license_notice: yes
-relevance: 99
-minimum_coverage: 100
-referenced_filenames:
-    - LICENCE
-notes: seen in U-Boot and the kernel. The LICENCE file is a clear gpl + exception notice

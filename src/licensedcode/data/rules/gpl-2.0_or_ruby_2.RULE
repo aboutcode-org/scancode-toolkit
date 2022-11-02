@@ -1,3 +1,17 @@
+---
+license_expression: ruby OR gpl-2.0
+is_license_text: yes
+relevance: 97
+referenced_filenames:
+    - GPL
+notes: Seen in https://github.com/evanphx/json/blob/82ed5b724fb36dcba884cdb2251d953580c9de56/COPYING
+    with common extra text in 4.
+ignorable_authors:
+    - Yukihiro Matsumoto <matz@netlab.co.jp>
+ignorable_emails:
+    - matz@netlab.co.jp
+---
+
 Ruby is copyrighted free software by Yukihiro Matsumoto <matz@netlab.co.jp>.
 You can redistribute it and/or modify it under either the terms of the GPL
 (see GPL file), or the conditions below:

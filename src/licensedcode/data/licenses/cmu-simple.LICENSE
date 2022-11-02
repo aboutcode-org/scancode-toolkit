@@ -1,3 +1,14 @@
+---
+key: cmu-simple
+short_name: CMU Simple License
+name: Carnegie Mellon Simple License
+category: Permissive
+owner: Carnegie Mellon University
+notes: This is a simplified variant of license with a text otherwise borrowed from the cmu-template
+    license
+spdx_license_key: LicenseRef-scancode-cmu-simple
+---
+
 Permission to use, copy, modify, and distribute this software and its
 documentation is hereby granted, provided that the above copyright
 notice appears in all copies.  This software is provided without any

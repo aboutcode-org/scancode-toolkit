@@ -1,8 +1,0 @@
-license_expression: dom4j
-is_license_notice: yes
-notes: This is the old "Castor" license from http://www.castor.org/license.txt which is essentially
-    a dom4j
-ignorable_urls:
-    - http://www.exolab.org/
-ignorable_emails:
-    - info@exolab.org

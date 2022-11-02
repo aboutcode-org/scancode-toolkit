@@ -1,3 +1,15 @@
+---
+key: hxd
+short_name: HxD License
+name: HxD License
+category: Proprietary Free
+owner: mh-nexus
+homepage_url: https://mh-nexus.de/en/hxd/license.php
+spdx_license_key: LicenseRef-scancode-hxd
+ignorable_urls:
+    - http://mh-nexus.de/hxd
+---
+
 Permission is granted to anyone to use this Software free of charge for any purpose, including commercial applications, and to redistribute it, provided that the warranty disclaimer is accepted and the following conditions are met:
 
 All redistributions must keep the original package intact. No file may be removed or modified. Especially you must retain all copyright notices that are currently in place, and this license without modification.

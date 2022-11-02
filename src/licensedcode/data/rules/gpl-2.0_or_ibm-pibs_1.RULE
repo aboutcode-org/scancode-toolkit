@@ -1,3 +1,13 @@
+---
+license_expression: gpl-2.0 OR ibm-pibs
+is_license_notice: yes
+relevance: 100
+ignorable_copyrights:
+    - COPYRIGHT I B M CORPORATION 1995
+ignorable_holders:
+    - I B M CORPORATION
+---
+
 This source code is dual-licensed.  You may use it under the terms of the
 GNU General Public License version 2, or under the license below.
 

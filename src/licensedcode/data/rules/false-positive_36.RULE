@@ -1,3 +1,8 @@
+---
+is_false_positive: yes
+notes: https://android.googlesource.com/platform/external/dng_sdk/+/refs/heads/master/fuzzer/Android.bp
+---
+
 // A large-scale-change added 'default_applicable_licenses' to import
     // all of the 'license_kinds' from "external_dng_sdk_license"
     // to get the below license kinds:

@@ -1,3 +1,20 @@
+---
+key: array-input-method-pl
+short_name: Array Input Method Public License
+name: Array Input Method Public License
+category: Permissive
+owner: Ming-Te Liao
+homepage_url: https://fedoraproject.org/wiki/Licensing/Array
+spdx_license_key: LicenseRef-scancode-array-input-method-pl
+faq_url: https://fedoraproject.org/wiki/Licensing/Array#License_Notes
+ignorable_copyrights:
+    - copyright holder of Array Input Method
+ignorable_holders:
+    - Array Input Method
+ignorable_authors:
+    - Array Input
+---
+
 Array Input Method Public License
 
 1. OBJECTS

@@ -1,3 +1,17 @@
+---
+key: lgpl-2.1-nokia-qt
+is_deprecated: yes
+short_name: LGPL 2.1 with Nokia Qt Exception
+name: LGPL 2.1 with Nokia Qt Exception
+category: Copyleft Limited
+owner: Nokia
+is_exception: yes
+text_urls:
+    - https://www.keepassx.org/dev/projects/keepassx/repository/revisions/b8dfb9cc4d5133e0f09cd7533d15a4f1c19a40f2/entry/LICENSE.NOKIA-LGPL-EXCEPTION
+other_urls:
+    - http://www.gnu.org/licenses/old-licenses/lgpl-2.1.html
+---
+
 This library is free software; you can redistribute it and/or modify it under
 the terms of the GNU Lesser General Public License as published by the Free
 Software Foundation; either version 2.1 of the License, or (at your option) any

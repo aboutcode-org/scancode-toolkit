@@ -1,1 +1,9 @@
+---
+license_expression: artistic-1.0-cl8
+is_license_reference: yes
+relevance: 100
+ignorable_urls:
+    - https://licenses.nuget.org/Artistic-1.0-cl8
+---
+
 https://licenses.nuget.org/Artistic-1.0-cl8

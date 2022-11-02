@@ -1,3 +1,13 @@
+---
+license_expression: proprietary-license
+is_license_text: yes
+ignorable_urls:
+    - http://greensock.com/club/
+    - http://www.greensock.com/
+    - http://www.greensock.com/club
+    - http://www.greensock.com/licensing/
+---
+
 LEGALESE:
 
 This is a legal agreement between you (either an individual or a single entity) and GreenSock, Inc. ("GREENSOCK") for the proprietary GreenSock code known as TweenLite, TweenMax, TweenNano, TimelineLite, TimelineMax, and other copyrighted code that is available for download at http://www.greensock.com (this code and documentation, as well as any updates which may at GREENSOCK's sole discretion be provided to you from time to time, are referred to in this Agreement as "PROGRAM"). By downloading, copying, or otherwise using the PROGRAM, you agree to the terms and conditions of this Agreement. If you do not agree to the terms and conditions of this Agreement, please do not download or use the PROGRAM.

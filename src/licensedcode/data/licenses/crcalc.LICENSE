@@ -1,3 +1,18 @@
+---
+key: crcalc
+short_name: CRCalc license
+name: CRCalc license
+category: Permissive
+owner: SGI - Silicon Graphics
+homepage_url: http://www.hboehm.info/crcalc/COPYRIGHT.txt
+notes: this is included in Android and is a rather unique text
+spdx_license_key: LicenseRef-scancode-crcalc
+text_urls:
+    - http://www.hboehm.info/crcalc/COPYRIGHT.txt
+    - http://www.hboehm.info/new_crcalc/COPYRIGHT.txt
+minimum_coverage: 80
+---
+
 Permission is granted free of charge to copy, modify, use and distribute
 this software provided you include the entirety of this notice in all
 copies made.

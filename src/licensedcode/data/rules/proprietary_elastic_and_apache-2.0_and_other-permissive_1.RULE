@@ -1,3 +1,8 @@
+---
+license_expression: proprietary-license AND apache-2.0 AND other-permissive
+is_license_notice: yes
+---
+
 Source code in this repository is variously licensed under the Apache License
 Version 2.0, an Apache compatible license, or the Elastic License. Outside of
 the "x-pack" folder, source code in a given file is licensed under the Apache

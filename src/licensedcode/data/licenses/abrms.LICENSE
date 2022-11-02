@@ -1,3 +1,13 @@
+---
+key: abrms
+short_name: ABRMS
+name: Anyone But Richard Stallman License
+category: Proprietary Free
+owner: Unspecified
+notes: From https://github.com/ErikMcClure/bad-licenses
+spdx_license_key: LicenseRef-scancode-abrms
+---
+
 The "Anyone But Richard M Stallman" license
 Do anything you want with this program, with the exceptions listed below under "EXCEPTIONS".
 

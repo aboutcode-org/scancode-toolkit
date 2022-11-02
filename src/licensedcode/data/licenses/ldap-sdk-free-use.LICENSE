@@ -1,3 +1,13 @@
+---
+key: ldap-sdk-free-use
+short_name: UnboundID LDAP SDK Free Use License
+name: UnboundID LDAP SDK Free Use License
+category: Permissive
+owner: Ping Identity
+homepage_url: https://github.com/UnboundID/ldapsdk/blob/master/LICENSE-UnboundID-LDAPSDK.txt
+spdx_license_key: LicenseRef-scancode-ldap-sdk-free-use
+---
+
 UnboundID LDAP SDK Free Use License
 
 THIS IS AN AGREEMENT BETWEEN YOU ("YOU") AND UNBOUNDID CORP. ("UNBOUNDID")

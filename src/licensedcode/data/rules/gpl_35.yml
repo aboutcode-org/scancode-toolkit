@@ -1,6 +1,0 @@
-license_expression: gpl-1.0-plus
-is_license_notice: yes
-minimum_coverage: 99
-notes: rare gpl 1,2,3 or later
-ignorable_urls:
-    - http://www.gnu.org/licenses/

@@ -1,3 +1,12 @@
+---
+key: idt-notice
+short_name: IDT License Notice
+name: IDT License Notice
+category: Permissive
+owner: Wind River Systems
+spdx_license_key: LicenseRef-scancode-idt-notice
+---
+
 This source code has been made available to you by IDT on an AS-IS
 basis. Anyone receiving this source is licensed under IDT copyrights
 to use it in any way he or she deems fit, including copying it,

@@ -1,1 +1,8 @@
+---
+license_expression: other-permissive
+is_license_text: yes
+relevance: 100
+notes: OpenSSL patches in libtelnet/sslapp.c
+---
+
 You can do whatever you like with these patches except pretend that you wrote them.

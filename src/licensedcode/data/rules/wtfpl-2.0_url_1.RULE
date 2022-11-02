@@ -1,1 +1,9 @@
+---
+license_expression: wtfpl-2.0
+is_license_reference: yes
+relevance: 95
+ignorable_urls:
+    - https://spdx.org/licenses/wtfpl
+---
+
 https://spdx.org/licenses/wtfpl

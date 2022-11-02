@@ -1,1 +1,9 @@
+---
+license_expression: aml
+is_license_reference: yes
+relevance: 100
+ignorable_urls:
+    - https://licenses.nuget.org/AML
+---
+
 https://licenses.nuget.org/AML

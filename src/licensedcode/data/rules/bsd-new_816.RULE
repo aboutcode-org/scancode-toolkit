@@ -1,2 +1,8 @@
-is licensed under the BSD license. Other software included in this distribution is provided under other licenses, as set forth below.
+---
+license_expression: bsd-new
+is_license_notice: yes
+relevance: 95
+minimum_coverage: 95
+---
 
+is licensed under the BSD license. Other software included in this distribution is provided under other licenses, as set forth below.

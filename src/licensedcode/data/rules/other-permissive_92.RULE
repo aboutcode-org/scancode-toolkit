@@ -1,3 +1,9 @@
+---
+license_expression: other-permissive
+is_license_notice: yes
+notes: typically for GPL but this can vary and be various versions
+---
+
  All rights are reserved by the author, with the following exceptions:
  Permission is granted to freely reproduce and distribute this software,
  possibly in exchange for a fee, provided that this copyright notice appears

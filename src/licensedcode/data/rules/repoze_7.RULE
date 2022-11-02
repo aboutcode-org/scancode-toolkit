@@ -1,3 +1,11 @@
+---
+license_expression: repoze
+is_license_notice: yes
+relevance: 100
+ignorable_urls:
+    - http://www.repoze.org/LICENSE.txt
+---
+
 # This software is subject to the provisions of the BSD-like license at
 # http://www.repoze.org/LICENSE.txt. A copy of the license should accompany
 # this distribution. THIS SOFTWARE IS PROVIDED "AS IS" AND ANY AND ALL

@@ -1,3 +1,12 @@
+---
+license_expression: sun-java-web-services-dev-pack-1.6
+is_license_text: yes
+minimum_coverage: 60
+ignorable_urls:
+    - http://www.java.sun.com/jdk/index.html
+    - http://www.sun.com/policies/trademarks
+---
+
 JAVA WEB SERVICES DEVELOPER PACK, VERSION 1.6
 Sun Microsystems Inc. Software License Agreement
 
@@ -336,4 +345,3 @@ infringement of any intellectual property right.
 
 For inquiries please contact: Sun Microsystems, Inc. 4150 Network 
 Circle, Santa Clara, California 95054.
-

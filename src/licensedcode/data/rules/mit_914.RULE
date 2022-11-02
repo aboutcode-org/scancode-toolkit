@@ -1,3 +1,11 @@
+---
+license_expression: mit
+is_license_text: yes
+relevance: 100
+notes: Uses "The above copyright notice as well as this permission notice" rather than "The
+    above copyright notice and this permission notice" in the standdard MIT. Seen in https://github.com/microsoft/ailab/blob/3bfc475eef00232fce655d94199cc20c7a53d573/LICENSE
+---
+
 Permission is hereby granted, free of charge, to any person obtaining a copy
     of this software and associated documentation files (the "Software"), to deal
     in the Software without restriction, including without limitation the rights

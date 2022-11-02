@@ -1,1 +1,9 @@
+---
+license_expression: bsd-simplified
+is_license_reference: yes
+relevance: 100
+ignorable_urls:
+    - https://opensource.org/licenses/bsd-license.php
+---
+
 BSD 2-Clause License (https://opensource.org/licenses/bsd-license.php)

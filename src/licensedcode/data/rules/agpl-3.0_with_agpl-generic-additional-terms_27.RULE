@@ -1,3 +1,11 @@
+---
+license_expression: agpl-3.0 WITH agpl-generic-additional-terms
+is_license_notice: yes
+notes: Seen in https://raw.githubusercontent.com/translate5/translate5/develop/plugin-exception.txt
+ignorable_urls:
+    - http://www.translate5.net/license.txt
+---
+
 License Exception for Development of plug-ins for translate5 - Version 1.1, March 30th, 2017
 
 ====================

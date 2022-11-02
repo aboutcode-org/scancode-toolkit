@@ -1,0 +1,13 @@
+about_resource: spectre-0.5.9.min.css
+name: spectre.css
+version: 0.5.9
+download_url: https://github.com/picturepan2/spectre/archive/v0.5.9.zip
+description: 'Spectre.css: A lightweight, responsive and modern CSS framework'
+homepage_url: http://picturepan2.github.io/spectre
+license_expression: mit
+attribute: yes
+package_url: pkg:npm/spectre.css@0.5.9
+licenses:
+  - key: mit
+    name: MIT License
+    file: mit.LICENSE

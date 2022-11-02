@@ -1,2 +1,13 @@
+---
+license_expression: gpl-1.0-plus
+is_license_notice: yes
+relevance: 100
+minimum_coverage: 80
+referenced_filenames:
+    - COPYING
+ignorable_urls:
+    - https://www.gnu.org/
+---
+
 This program is part of the GNU project (https://www.gnu.org).
 See the file COPYING for licensing information.

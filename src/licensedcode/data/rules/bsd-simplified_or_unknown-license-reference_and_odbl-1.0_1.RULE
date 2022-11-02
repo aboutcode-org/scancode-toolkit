@@ -1,3 +1,13 @@
+---
+license_expression: (bsd-simplified OR unknown-license-reference) AND odbl-1.0
+is_license_notice: yes
+relevance: 95
+referenced_filenames:
+    - LEGAL
+ignorable_urls:
+    - http://opendatacommons.org/licenses/odbl/
+---
+
 License
 
 Data is Free Software. You can call it Open Source too. Whatever you prefer.

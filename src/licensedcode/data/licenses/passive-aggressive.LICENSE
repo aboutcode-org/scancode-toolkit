@@ -1,3 +1,13 @@
+---
+key: passive-aggressive
+short_name: Passive-Aggressive License
+name: Passive-Aggressive License
+category: Proprietary Free
+owner: Unspecified
+notes: From https://github.com/ErikMcClure/bad-licenses
+spdx_license_key: LicenseRef-scancode-passive-aggressive
+---
+
 Permission is hereby given to the user, with free of charge, to any person obtaining a copy of this software and its all associated documentation files, to deal in the software without restriction, including without limitation the rights to copy, modify, merge, publish, distribute, sublicense, and/orsell copies of the Software, but NOT including the right to run, execute or use the Software or any executable binaries built from the source code.
 
 The above copyright notice and this permission notice shall be included in all

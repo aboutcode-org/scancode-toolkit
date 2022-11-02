@@ -1,3 +1,15 @@
+---
+key: tigra-calendar-4.0
+short_name: Tigra Calendar 4.0 License
+name: Tigra Calendar v4.0 License
+category: Permissive
+owner: Softcomplex
+homepage_url: http://www.javascript-calendar.com/docs/#license
+spdx_license_key: LicenseRef-scancode-tigra-calendar-4.0
+ignorable_urls:
+    - http://www.javascript-calendar.com/docs/#license
+---
+
 Tigra Calendar v4.0 License 
 http://www.javascript-calendar.com/docs/#license
 

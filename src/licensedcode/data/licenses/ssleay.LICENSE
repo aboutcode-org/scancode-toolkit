@@ -1,3 +1,24 @@
+---
+key: ssleay
+short_name: Original SSLeay License
+name: Original SSLeay License
+category: Permissive
+owner: OpenSSL
+homepage_url: http://www.openssl.org/source/license.html
+spdx_license_key: LicenseRef-scancode-ssleay
+text_urls:
+    - http://www.openssl.org/source/license.html
+ignorable_copyrights:
+    - holder is Tim Hudson (tjh@cryptsoft.com)
+ignorable_holders:
+    - Tim Hudson
+ignorable_authors:
+    - Eric Young (eay@cryptsoft.com)
+ignorable_emails:
+    - eay@cryptsoft.com
+    - tjh@cryptsoft.com
+---
+
 This package is an SSL implementation written by Eric Young (eay@cryptsoft.com).
 The implementation was written so as to conform with Netscapes SSL.
 

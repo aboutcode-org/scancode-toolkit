@@ -1,3 +1,21 @@
+---
+license_expression: jetty
+is_license_text: yes
+ignorable_copyrights:
+    - Copyright (c) Mort Bay Consulting Pty. Ltd. (Australia) and others
+    - copyright Sun Microsystems Inc.
+    - copyright holders. Definitions 95 Jetty
+ignorable_holders:
+    - Definitions Jetty
+    - Mort Bay Consulting Pty. Ltd. (Australia) and others
+    - Sun Microsystems Inc.
+ignorable_urls:
+    - http://ftp.uu.net/
+    - http://jetty.mortbay.org/
+    - http://www.opensource.com/
+    - http://www.opensource.org/
+---
+
 Jetty License
 $Revision: 3.7 $
 Preamble:
@@ -36,4 +54,3 @@ c) Make other arrangements with the Copyright Holder.
 14. This license shall be read under the laws of Australia. 
 The End
 This license was derived from the Artistic license published on http://www.opensource.com
-

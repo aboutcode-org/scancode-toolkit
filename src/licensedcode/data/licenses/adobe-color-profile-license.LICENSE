@@ -1,3 +1,13 @@
+---
+key: adobe-color-profile-license
+short_name: Adobe Color Profile License agreement
+name: Adobe Color Profile License agreement
+category: Proprietary Free
+owner: Adobe Systems
+homepage_url: https://www.adobe.com/support/downloads/iccprofiles/icc_eula_win_end.html
+spdx_license_key: LicenseRef-scancode-adobe-color-profile-license
+---
+
 Color Profile License agreement
 
 NOTICE TO USER: PLEASE READ THIS CONTRACT CAREFULLY. BY USING ALL OR ANY PORTION OF THE SOFTWARE, YOU ACCEPT ALL THE TERMS AND CONDITIONS OF THIS AGREEMENT. IF YOU DO NOT AGREE WITH THE TERMS OF THIS AGREEMENT, DO NOT USE THE SOFTWARE.

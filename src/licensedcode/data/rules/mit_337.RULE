@@ -1,2 +1,10 @@
+---
+license_expression: mit
+is_license_reference: yes
+relevance: 100
+ignorable_urls:
+    - http://www.opensource.org/licenses/mit-license.php
+---
+
 This is the http://www.opensource.org/licenses/mit-license.php MIT Software License
 which is OSI-certified, and GPL-compatible.

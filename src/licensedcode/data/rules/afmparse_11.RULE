@@ -1,1 +1,9 @@
+---
+license_expression: afmparse
+is_license_reference: yes
+relevance: 100
+ignorable_urls:
+    - https://spdx.org/licenses/Afmparse
+---
+
 LICENSE {{Afmparse}} https://spdx.org/licenses/Afmparse

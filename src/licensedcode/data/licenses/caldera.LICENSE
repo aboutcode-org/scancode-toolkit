@@ -1,3 +1,17 @@
+---
+key: caldera
+short_name: Caldera License
+name: Caldera License
+category: Permissive
+owner: Caldera
+homepage_url: http://www.lemis.com/grog/UNIX/ancient-source-all.pdf
+spdx_license_key: Caldera
+ignorable_copyrights:
+    - Copyright (c) Caldera International Inc.
+ignorable_holders:
+    - Caldera International Inc.
+---
+
 Caldera International, Inc. hereby grants a fee free license that includes the
 rights use, modify and distribute this named source code, including creating
 derived binary products created from the source code. The source code for which

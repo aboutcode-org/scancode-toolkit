@@ -1,3 +1,17 @@
+---
+key: llgpl
+short_name: LLGPL
+name: Lisp Lesser General Public License (LLPGL)
+category: Copyleft Limited
+owner: Franz Inc
+homepage_url: http://opensource.franz.com/preamble.html
+spdx_license_key: LicenseRef-scancode-llgpl
+faq_url: http://opensource.franz.com/
+other_urls:
+    - http://www.gnu.org/licenses/lgpl-2.1.txt
+    - https://github.com/franzinc
+---
+
 The concept of the GNU Lesser General Public License version 2.1
 ("LGPL") has been adopted to govern the use and distribution of above-
 mentioned application. However, the LGPL uses terminology that is more

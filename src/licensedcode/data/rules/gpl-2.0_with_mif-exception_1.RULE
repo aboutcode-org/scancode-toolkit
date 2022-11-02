@@ -1,3 +1,10 @@
+---
+license_expression: gpl-2.0 WITH mif-exception
+is_license_notice: yes
+relevance: 100
+minimum_coverage: 90
+---
+
 This file is part of Threading Building Blocks. Threading Building Blocks is free software;
     you can redistribute it and/or modify it under the terms of the GNU General Public License
     version 2  as  published  by  the  Free Software Foundation.  Threading Building Blocks is

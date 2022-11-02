@@ -1,9 +1,0 @@
-license_expression: apache-1.1
-is_license_notice: yes
-notes: Cactus Apache 1.1 variant with some old Apache Group reference
-ignorable_authors:
-    - the Apache Software Foundation http://www.apache.org
-ignorable_urls:
-    - http://www.apache.org/
-ignorable_emails:
-    - apache@apache.org

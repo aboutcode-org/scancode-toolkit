@@ -1,9 +1,0 @@
-key: gpl-2.0-oracle-mysql-foss
-is_deprecated: yes
-short_name: GPL 2.0 with Oracle MySQL FOSS exception
-name: GPL 2.0 with Oracle MySQL FOSS exception
-category: Copyleft
-owner: Oracle Corporation
-homepage_url: http://www.mysql.com/about/legal/licensing/foss-exception.html
-is_exception: yes
-notes: replaced by oracle-mysql-foss-exception-2.0

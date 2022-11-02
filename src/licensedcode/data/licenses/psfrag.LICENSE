@@ -1,3 +1,16 @@
+---
+key: psfrag
+short_name: psfrag License
+name: psfrag License
+category: Permissive
+owner: Craig Barratt
+homepage_url: https://fedoraproject.org/wiki/Licensing/psfrag
+notes: |
+    Per Fedora, this license is considered Free, but GPL-incompatible only when
+    used for TeX files. In all other use cases, this may not be true.
+spdx_license_key: psfrag
+---
+
 This system is distributed in the hope that it will be useful, but WITHOUT ANY
 WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR
 A PARTICULAR PURPOSE. Don't come complaining to us if you modify this file and

@@ -1,3 +1,10 @@
+---
+license_expression: gpl-2.0
+is_license_notice: yes
+ignorable_urls:
+    - http://opensource.org/licenses/gpl-license.php
+---
+
 provides this source code under the GPL v2 License.
 The GPL v2 license is available at
 http://opensource.org/licenses/gpl-license.php.

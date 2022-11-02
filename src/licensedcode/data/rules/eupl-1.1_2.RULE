@@ -1,3 +1,10 @@
+---
+license_expression: eupl-1.1
+is_license_notice: yes
+ignorable_urls:
+    - http://ec.europa.eu/idabc/eupl
+---
+
 //  Licensed under the EUPL, Version 1.1 or - as soon they will be approved by
 //  the European Commission - subsequent versions of the EUPL (the "Licence");
 //  You may not use this work except in compliance with the Licence.

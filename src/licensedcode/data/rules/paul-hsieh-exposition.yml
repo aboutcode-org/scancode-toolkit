@@ -1,6 +1,0 @@
-license_expression: paul-hsieh-exposition
-is_license_notice: yes
-notes: This is the notice that appears in the source files to identify the license. The actual
-    text of the license is at the URL indicated in the notice.
-ignorable_urls:
-    - http://www.azillionmonkeys.com/qed/weblicense.html

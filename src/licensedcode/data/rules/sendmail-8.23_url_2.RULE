@@ -1,1 +1,9 @@
+---
+license_expression: sendmail-8.23
+is_license_reference: yes
+relevance: 95
+ignorable_urls:
+    - https://spdx.org/licenses/sendmail-8.23.html
+---
+
 https://spdx.org/licenses/sendmail-8.23.html

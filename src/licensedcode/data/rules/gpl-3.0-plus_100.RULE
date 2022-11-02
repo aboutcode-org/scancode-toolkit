@@ -1,3 +1,11 @@
+---
+license_expression: gpl-3.0-plus
+is_license_notice: yes
+minimum_coverage: 90
+ignorable_urls:
+    - https://www.gnu.org/licenses/gpl-3.0.en.html
+---
+
 
 THIS SOFTWARE IS PROVIDED "AS IS", WITHOUT ANY WARRANTY WHATSOEVER.
 

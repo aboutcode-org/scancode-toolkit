@@ -1,3 +1,9 @@
+---
+license_expression: mit
+is_license_text: yes
+relevance: 100
+---
+
 This copyright NOTICE applies to all files in this directory and ../../include/mach.h.
 If you take substantial code from this software to use in
 other programs, you must somehow include with it an appropriate

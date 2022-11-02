@@ -1,3 +1,12 @@
+---
+license_expression: bsd-new
+is_license_notice: yes
+relevance: 100
+minimum_coverage: 96
+ignorable_urls:
+    - http://www.opensource.org/licenses/bsd-license
+---
+
 Released to public domain under terms of the BSD Simplified license.
 
 Redistribution and use in source and binary forms, with or without

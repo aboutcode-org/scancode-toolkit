@@ -1,9 +1,0 @@
-license_expression: sgi-freeb-2.0
-is_license_text: yes
-minimum_coverage: 80
-ignorable_copyrights:
-    - Copyright (c) dates of first publication Silicon Graphics, Inc.
-ignorable_holders:
-    - dates of first publication Silicon Graphics, Inc.
-ignorable_urls:
-    - http://oss.sgi.com/projects/FreeB/

@@ -1,7 +1,0 @@
-license_expression: gpl-2.0 AND proprietary-license
-is_license_notice: yes
-notes: GPL 2.0 with ozone db conflicting advertizing-proprietary-license like terms. See http://www.ozone-db.org/noframes/home/license.html
-ignorable_authors:
-    - the Ozone Database Project (http://www.ozone-db.org/)
-ignorable_urls:
-    - http://www.ozone-db.org/

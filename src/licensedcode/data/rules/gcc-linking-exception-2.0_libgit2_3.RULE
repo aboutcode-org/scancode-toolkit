@@ -1,3 +1,10 @@
+---
+license_expression: gpl-2.0 WITH gcc-linking-exception-2.0
+is_license_notice: yes
+referenced_filenames:
+    - COPYING
+---
+
     LINKING EXCEPTION
     In addition to the permissions in the GNU General Public License,
     the authors give you unlimited permission to link the compiled

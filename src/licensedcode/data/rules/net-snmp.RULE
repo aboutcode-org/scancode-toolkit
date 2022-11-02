@@ -1,1 +1,9 @@
+---
+license_expression: net-snmp
+is_license_reference: yes
+relevance: 100
+ignorable_urls:
+    - http://net-snmp.sourceforge.net/about/license.html
+---
+
 http://net-snmp.sourceforge.net/about/license.html

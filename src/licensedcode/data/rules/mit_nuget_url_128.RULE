@@ -1,1 +1,9 @@
+---
+license_expression: mit
+is_license_reference: yes
+relevance: 90
+ignorable_urls:
+    - https://github.com/coapp-packages/libffi/blob/master/LICENSE
+---
+
 https://github.com/coapp-packages/libffi/blob/master/LICENSE

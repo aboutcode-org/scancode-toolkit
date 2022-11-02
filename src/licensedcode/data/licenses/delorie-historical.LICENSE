@@ -1,7 +1,17 @@
+---
+key: delorie-historical
+short_name: Delorie Historical License
+name: Delorie Historical License
+category: Permissive
+owner: DJ Delorie
+notes: this is a short historical permissive license seen in the newlib C library. This is close
+    to a bsla text.
+spdx_license_key: LicenseRef-scancode-delorie-historical
+---
+
 Redistribution, modification, and use in source and binary forms is permitted
 provided that the above copyright notice and following paragraph are
 duplicated in all such forms.
 
 This file is distributed WITHOUT ANY WARRANTY; without even the implied
 warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
-

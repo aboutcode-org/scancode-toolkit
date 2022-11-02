@@ -1,1 +1,6 @@
+---
+is_false_positive: yes
+notes: device GPIOS references
+---
+
 SLP(gpl2-0

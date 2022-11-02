@@ -1,8 +1,0 @@
-key: lgpl-2.1-nokia-qt-1.0
-short_name: Nokia Qt LGPL Exception 1.0
-name: Nokia Qt LGPL Exception v1.0
-category: Copyleft Limited
-is_exception: yes
-is_deprecated: yes
-owner: Nokia
-notes: Replaced by qt-company-exception-lgpl-2.1

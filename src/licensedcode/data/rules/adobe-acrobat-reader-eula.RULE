@@ -1,3 +1,10 @@
+---
+license_expression: adobe-acrobat-reader-eula
+is_license_text: yes
+ignorable_urls:
+    - http://www.adobe.com/
+---
+
 Adobe Acrobat Reader EULA
 ADOBE
 

@@ -1,9 +1,0 @@
-key: rsa-cryptoki
-short_name: RSA Cryptoki License
-name: RSA Cryptoki License
-category: Permissive
-owner: RSA (the Security Division of EMC)
-homepage_url: http://www.rsa.com/rsalabs/node.asp?id=2133
-spdx_license_key: LicenseRef-scancode-rsa-cryptoki
-text_urls:
-    - http://www.rsa.com/rsalabs/node.asp?id=2133

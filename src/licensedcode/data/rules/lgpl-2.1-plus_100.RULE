@@ -1,3 +1,12 @@
+---
+license_expression: lgpl-2.1-plus
+is_license_notice: yes
+relevance: 100
+minimum_coverage: 70
+referenced_filenames:
+    - /usr/share/common-licenses/LGPL-2.1
+---
+
  is free software; you can redistribute it and/or modify it under the
 terms of the GNU Lesser General Public License as published by the Free
 Software Foundation; either version 2.1 of the License, or (at your option)
@@ -13,4 +22,4 @@ along with ; if not, write to the Free Software Foundation, Inc.,
 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
 
 On Debian GNU/Linux systems, the complete text of the Lesser GNU General
-Public License can be found in `/usr/share/common-licenses/LGPL'. 
+Public License can be found in `/usr/share/common-licenses/LGPL'.

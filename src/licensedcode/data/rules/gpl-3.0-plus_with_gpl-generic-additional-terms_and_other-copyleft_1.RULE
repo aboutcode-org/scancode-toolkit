@@ -1,3 +1,9 @@
+---
+license_expression: gpl-3.0-plus WITH gpl-generic-additional-terms AND other-copyleft
+is_license_notice: yes
+relevance: 100
+---
+
 License
 The code is released under the GPLv3 or later, except for ThreadPool.h, cl2.hpp,
 half.hpp and the eigen and clblast_level3 subdirs, which have specific licenses

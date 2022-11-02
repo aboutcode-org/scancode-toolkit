@@ -1,3 +1,13 @@
+---
+key: can-ogl-toronto-1.0
+short_name: OGL Toronto 1.0
+name: Open Government Licence Toronto 1.0
+category: Permissive
+owner: Toronto Government
+homepage_url: https://www.toronto.ca/city-government/data-research-maps/open-data/open-data-licence/
+spdx_license_key: LicenseRef-scancode-can-ogl-toronto-1.0
+---
+
 Open Government Licence – Toronto
 
 This licence is based on version 1.0 of the Open Government Licence – Ontario, which was developed through public consultation and a collaborative effort by the provincial and federal government. The only substantive changes in this licence are to replace direct references to the Province of Ontario with the City of Toronto and the inclusion of a provision for the Ontario Personal Health Information Protection Act, 2004.

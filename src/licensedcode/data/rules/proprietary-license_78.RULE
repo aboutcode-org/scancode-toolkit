@@ -1,3 +1,15 @@
+---
+license_expression: proprietary-license
+is_license_text: yes
+relevance: 100
+ignorable_copyrights:
+    - copyrighted by Jordan Russell
+ignorable_holders:
+    - Jordan Russell
+ignorable_urls:
+    - http://www.jrsoftware.org/tb2kreg.php
+---
+
 
 "Author" herein refers to Jordan Russell (the creator of the Toolbar2000
 components).

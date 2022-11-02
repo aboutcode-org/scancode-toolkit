@@ -1,3 +1,21 @@
+---
+key: libgeotiff
+short_name: libgeoTiff License
+name: libgeoTiff License
+category: Permissive
+owner: GeoTIFF
+homepage_url: http://trac.osgeo.org/geotiff/browser/tags/libgeotiff-1.4.0/LICENSE
+notes: composite
+spdx_license_key: LicenseRef-scancode-libgeotiff
+minimum_coverage: 80
+ignorable_copyrights:
+    - Copyright (c) 1999, Frank Warmerdam
+    - copyright (c) 1995 Niles D. Ritter
+ignorable_holders:
+    - Frank Warmerdam
+    - Niles D. Ritter
+---
+
 libgeotiff Licensing
 ====================
 

@@ -1,3 +1,11 @@
+---
+license_expression: openjdk-exception
+is_license_notice: yes
+ignorable_urls:
+    - http://openjdk.java.net/legal/exception-modules-2007-05-08.html
+    - http://www.gnu.org/copyleft/gpl.html
+---
+
 OpenJDK Assembly Exception
 
 The OpenJDK source code made available by Sun at openjdk.java.net and

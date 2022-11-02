@@ -1,3 +1,15 @@
+---
+key: pftijah-1.1
+short_name: PfTijah Public License 1.1
+name: PfTijah Public License v1.1
+category: Copyleft Limited
+owner: University of Twente
+homepage_url: http://dbappl.cs.utwente.nl/Legal/PfTijah-1.1.html
+spdx_license_key: LicenseRef-scancode-pftijah-1.1
+ignorable_urls:
+    - http://dbappl.cs.utwente.nl/Legal/PfTijah-1.1.html
+---
+
 PfTijah Public License Version 1.1
 
 This License is a derivative of the MonetDB Public License Version 1.1, where the difference is that all references to "MonetDB" and "CWI" have been changed to "PfTijah" and "University of Twente"

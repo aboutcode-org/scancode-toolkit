@@ -1,5 +1,0 @@
-license_expression: isc
-is_license_text: yes
-relevance: 98
-minimum_coverage: 95
-notes: this is mostly the same as the ISC but there is one sentence removed see https://github.com/j256/ormlite-core/blob/master/LICENSE.txt

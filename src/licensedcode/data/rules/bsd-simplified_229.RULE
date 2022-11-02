@@ -1,1 +1,9 @@
+---
+license_expression: bsd-simplified
+is_license_tag: yes
+relevance: 100
+ignorable_urls:
+    - http://opensource.org/licenses/BSD-2-Clause
+---
+
 * @license   http://opensource.org/licenses/BSD-2-Clause BSD-2

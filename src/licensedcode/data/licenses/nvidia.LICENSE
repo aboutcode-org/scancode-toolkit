@@ -1,3 +1,19 @@
+---
+key: nvidia
+short_name: NVIDIA License
+name: NVIDIA License
+category: Permissive
+owner: NVIDIA
+homepage_url: http://www.xfree86.org/3.3.6/COPYRIGHT2.html#7
+spdx_license_key: LicenseRef-scancode-nvidia
+text_urls:
+    - http://www.xfree86.org/3.3.6/COPYRIGHT2.html#7
+ignorable_copyrights:
+    - Copyright (c) 1996-1998 NVIDIA, Corp.
+ignorable_holders:
+    - NVIDIA, Corp.
+---
+
 NOTICE TO USER: The source code is copyrighted under U.S. and international laws. NVIDIA, Corp. of Sunnyvale, California owns the copyright and as design patents pending on the design and interface of the NV chips. 
 Users and possessors of this source code are hereby granted a nonexclusive, royalty-free copyright and design patent license to use this code in individual and commercial software.
 

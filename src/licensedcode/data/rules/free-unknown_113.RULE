@@ -1,3 +1,12 @@
+---
+license_expression: free-unknown
+is_license_notice: yes
+relevance: 100
+notes: this is a generic CC notie that there is a license
+ignorable_urls:
+    - https://creativecommons.org/
+---
+
 Creative Commons Notice
 
 Creative Commons is not a party to this License, and makes no warranty whatsoever in connection with the Work. Creative Commons will not be liable to You or any party on any legal theory for any damages whatsoever, including without limitation any general, special, incidental or consequential damages arising in connection to this license. Notwithstanding the foregoing two (2) sentences, if Creative Commons has expressly identified itself as the Licensor hereunder, it shall have all rights and obligations of Licensor.

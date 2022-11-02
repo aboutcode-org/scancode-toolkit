@@ -1,1 +1,9 @@
+---
+license_expression: x11-xconsortium
+is_license_reference: yes
+relevance: 100
+ignorable_urls:
+    - https://spdx.org/licenses/X11
+---
+
 LICENSE {{X11}} https://spdx.org/licenses/X11

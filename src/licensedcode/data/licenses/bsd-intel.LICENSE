@@ -1,3 +1,12 @@
+---
+key: bsd-intel
+short_name: BSD Intel License
+name: BSD Intel License
+category: Permissive
+owner: Intel Corporation
+is_deprecated: yes
+---
+
 Redistribution and use in source and binary forms, with or without modification,
 are permitted provided that the following conditions are met:
 

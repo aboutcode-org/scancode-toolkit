@@ -1,3 +1,24 @@
+---
+key: commons-clause
+short_name: Commons Clause
+name: Commons Clause License Condition v1.0
+category: Source-available
+owner: FOSSA
+homepage_url: https://commonsclause.com/
+notes: This extra condition restricts selling and commercial usage. The Commons Clause is a
+    License Condition drafted by Heather Meeker and contributed by FOSSA.
+is_exception: yes
+spdx_license_key: LicenseRef-scancode-commons-clause
+text_urls:
+    - https://commonsclause.com/
+faq_url: https://commonsclause.com/#faq
+other_urls:
+    - https://github.com/fossas/commons-clause
+    - https://github.com/neo4j/neo4j/blob/3.5/packaging/LICENSE.txt
+    - https://leveljournal.com/source-available-licensing
+    - https://redislabs.com/community/licences/
+---
+
 "Commons Clause" License Condition v1.0
 
 The Software is provided to you by the Licensor under the License, as defined below, subject to the following condition.

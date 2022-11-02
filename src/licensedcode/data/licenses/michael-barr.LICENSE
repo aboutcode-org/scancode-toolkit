@@ -1,3 +1,12 @@
+---
+key: michael-barr
+short_name: Michael Barr License
+name: Michael Barr License
+category: Permissive
+owner: Michael Barr
+spdx_license_key: LicenseRef-scancode-michael-barr
+---
+
 This software is placed into the public domain and may be used for any purpose.
 However, this notice must not be changed or removed and no warranty is either
 expressed or implied by its publication or distribution.

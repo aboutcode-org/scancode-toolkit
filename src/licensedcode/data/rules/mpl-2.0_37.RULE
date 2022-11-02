@@ -1,1 +1,9 @@
+---
+license_expression: mpl-2.0
+is_license_tag: yes
+relevance: 100
+ignorable_urls:
+    - http://www.mozilla.org/MPL/2.0/index.txt
+---
+
 License: MPL  (http://www.mozilla.org/MPL/2.0/index.txt

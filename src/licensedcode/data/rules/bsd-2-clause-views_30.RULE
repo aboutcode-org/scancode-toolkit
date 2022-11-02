@@ -1,3 +1,10 @@
+---
+license_expression: bsd-2-clause-views
+is_license_notice: yes
+ignorable_urls:
+    - https://www.freebsd.org/copyright/freebsd-license.html
+---
+
 License Terms:
 Permission is hereby granted to use this software freely under the terms of
 the free bsd license: https://www.freebsd.org/copyright/freebsd-license.html

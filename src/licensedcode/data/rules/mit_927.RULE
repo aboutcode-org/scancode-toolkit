@@ -1,3 +1,12 @@
+---
+license_expression: mit
+is_license_notice: yes
+relevance: 100
+ignorable_urls:
+    - https://en.wikipedia.org/wiki/MIT_License
+    - https://opensource.org/licenses/MIT
+---
+
 This project is licensed under terms of the MIT License - 
 https://opensource.org/licenses/MIT
 

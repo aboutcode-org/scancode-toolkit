@@ -1,6 +1,0 @@
-license_expression: bsd-new
-is_license_reference: yes
-relevance: 100
-notes: Found in Jcraft POMs
-ignorable_urls:
-    - http://www.jcraft.com/jsch/LICENSE.txt

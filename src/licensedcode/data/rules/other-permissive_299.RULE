@@ -1,3 +1,9 @@
+---
+license_expression: other-permissive
+is_license_text: yes
+notes: https://fedoraproject.org/wiki/Licensing:BSD?rd=Licensing/BSD#xvt_variant
+---
+
 *  Redistribution and use in source code and/or executable forms, with
  *  or without modification, are permitted provided that the following
  *  condition is met:

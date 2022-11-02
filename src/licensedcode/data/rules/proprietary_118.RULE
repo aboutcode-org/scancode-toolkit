@@ -1,3 +1,8 @@
+---
+license_expression: proprietary-license
+is_license_text: yes
+---
+
 CNRI Digital Object Repository License Agreement
 
 1. This CNRI Digital Object Repository License Agreement ("Agreement") is between Corporation for National Research Initiatives ("CNRI"), having an office at 1895 Preston White Drive, Reston, VA 20191, and the Individual or Organization ("Licensee") that has installed or otherwise used the CNRI Digital Object Repository software, together with its associated documentation ("Software"). Licensee shall be deemed to have entered into, signed and agreed to be bound by the terms and conditions of the Agreement upon such installation or other use.
@@ -12,5 +17,4 @@ CNRI Digital Object Repository License Agreement
 
 6. The Agreement will automatically terminate upon a material breach of its terms and conditions. Nothing in the Agreement shall be deemed to create any relationship of agency, partnership, or joint venture between CNRI and Licensee. The Agreement does not grant permission to use CNRI trademarks or trade name in a trademark sense to endorse or promote products or services of Licensee, or any third party.
 
-7. The Agreement shall be governed by United States federal law, and, to the extent such federal law does not apply, by the law of the Commonwealth of Virginia, excluding Virginia's conflict of law provisions. Notwithstanding the foregoing, with regard to derivative works based on the Software that incorporate non-separable material that was previously distributed under the GNU General Public License, the law of the Commonwealth of Virginia shall govern the Agreement only as to issues arising under or with respect to Paragraphs 4, 5, and 7 of this Agreement. 
-    
+7. The Agreement shall be governed by United States federal law, and, to the extent such federal law does not apply, by the law of the Commonwealth of Virginia, excluding Virginia's conflict of law provisions. Notwithstanding the foregoing, with regard to derivative works based on the Software that incorporate non-separable material that was previously distributed under the GNU General Public License, the law of the Commonwealth of Virginia shall govern the Agreement only as to issues arising under or with respect to Paragraphs 4, 5, and 7 of this Agreement.

@@ -1,2 +1,9 @@
+---
+license_expression: gpl-2.0
+is_license_notice: yes
+referenced_filenames:
+    - COPYING
+---
+
 This code is licenced under the GPL version 2 as described
 in the COPYING file that acompanies the Linux Kernel.

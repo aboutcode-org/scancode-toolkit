@@ -1,3 +1,18 @@
+---
+key: cc-by-3.0-igo
+short_name: Creative Commons Attribution 3.0 IGO
+name: Creative Commons Attribution 3.0 IGO
+category: Permissive
+owner: Creative Commons
+homepage_url: https://creativecommons.org/licenses/by/3.0/igo
+spdx_license_key: CC-BY-3.0-IGO
+text_urls:
+    - https://creativecommons.org/licenses/by/3.0/igo/legalcode
+minimum_coverage: 50
+ignorable_urls:
+    - https://creativecommons.org/
+---
+
 Creative Commons Attribution 3.0 IGO
 
 CREATIVE COMMONS CORPORATION IS NOT A LAW FIRM AND DOES NOT PROVIDE LEGAL SERVICES. DISTRIBUTION OF THIS LICENSE DOES NOT CREATE AN ATTORNEY-CLIENT RELATIONSHIP. CREATIVE COMMONS PROVIDES THIS INFORMATION ON AN "AS-IS" BASIS. CREATIVE COMMONS MAKES NO WARRANTIES REGARDING THE INFORMATION PROVIDED, AND DISCLAIMS LIABILITY FOR DAMAGES RESULTING FROM ITS USE. THE LICENSOR IS NOT NECESSARILY AN INTERGOVERNMENTAL ORGANIZATION (IGO), AS DEFINED IN THE LICENSE BELOW. 

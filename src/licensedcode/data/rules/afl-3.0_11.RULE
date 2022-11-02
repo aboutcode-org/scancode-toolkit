@@ -1,3 +1,15 @@
+---
+license_expression: afl-3.0
+is_license_text: yes
+relevance: 99
+ignorable_copyrights:
+    - Copyright (c) 2005 Lawrence Rosen
+ignorable_holders:
+    - Lawrence Rosen
+ignorable_urls:
+    - https://opensource.org/licenses/AFL-3.0
+---
+
 Licensed under the [Academic Free License](https://opensource.org/licenses/AFL-3.0) version 3.0
 1) Grant of Copyright License. Licensor grants You a worldwide, royalty-free, non-exclusive, sublicensable license, for the 
 duration of the copyright, to do the following:

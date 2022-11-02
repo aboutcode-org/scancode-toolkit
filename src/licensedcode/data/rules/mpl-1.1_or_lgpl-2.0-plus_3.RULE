@@ -1,3 +1,11 @@
+---
+license_expression: mpl-1.1 OR lgpl-2.1-plus
+is_license_notice: yes
+ignorable_urls:
+    - http://www.gnu.org/copyleft
+    - http://www.mozilla.org/MPL
+---
+
 License Agreement 
 
 This plugin is subject to the Mozilla Public License Version 1.1 (the "License"); 
@@ -12,4 +20,4 @@ of the LGPL at www.gnu.org/copyleft.
 
 Software distributed under the License is distributed on an "AS IS" basis, 
 WITHOUT WARRANTY OF ANY KIND, either express or implied. See the License 
-for the specific language governing rights and limitations under the License. 
+for the specific language governing rights and limitations under the License.

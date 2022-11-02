@@ -1,3 +1,9 @@
+---
+license_expression: proprietary-license
+is_license_text: yes
+notes: Based on the MIT with material and problematic changes. https://github.com/lennhy/newsmap-webapp2/blob/6ac07f5c5495fbcb4f8700af417511c3271b587a/LICENSE
+---
+
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
 in the Software with restriction, including with limitation the rights

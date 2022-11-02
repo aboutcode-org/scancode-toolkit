@@ -1,3 +1,16 @@
+---
+key: bsd-axis-nomod
+short_name: BSD-Axis without modification
+name: BSD-Axis without modification
+category: Permissive
+owner: Unspecified
+notes: This is a variant composed of clause 1 and 3 of a BSD-Modified found in the Linux kernel
+    And this extra variant has the words "without modification" added at the end of clause 1
+    either with or without a comma
+spdx_license_key: LicenseRef-scancode-bsd-axis-nomod
+minimum_coverage: 95
+---
+
 Redistribution and use in source and binary forms, with or without
 modification, are permitted provided that the following conditions
 are met:
@@ -21,4 +34,4 @@ SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
 HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT,
 STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING
 IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
-POSSIBILITY OF SUCH DAMAGE. 
+POSSIBILITY OF SUCH DAMAGE.

@@ -1,3 +1,14 @@
+---
+key: gpl-2.0-lmbench
+is_deprecated: yes
+short_name: GPL 2.0 with LMBench exception
+name: GPL 2.0 with LMBench exception
+category: Copyleft
+owner: Larry McVoy
+homepage_url: http://lmbench.sourceforge.net/
+is_exception: yes
+---
+
 Distributed under the FSF GPL with additional restriction that results may be
 published only if
 (1) the benchmark is unmodified, and

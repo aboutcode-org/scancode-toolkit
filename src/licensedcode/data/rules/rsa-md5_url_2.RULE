@@ -1,1 +1,9 @@
+---
+license_expression: rsa-md5
+is_license_reference: yes
+relevance: 95
+ignorable_urls:
+    - https://spdx.org/licenses/rsa-md.html
+---
+
 https://spdx.org/licenses/rsa-md.html

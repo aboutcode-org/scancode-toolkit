@@ -1,1 +1,9 @@
+---
+license_expression: mit
+is_license_reference: yes
+relevance: 99
+ignorable_urls:
+    - http://underscorejs.org/LICENSE
+---
+
 http://underscorejs.org/LICENSE

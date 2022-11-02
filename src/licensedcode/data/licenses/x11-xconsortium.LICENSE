@@ -1,3 +1,18 @@
+---
+key: x11-xconsortium
+short_name: X11-Style (X Consortium)
+name: X11-Style (X Consortium)
+category: Permissive
+owner: X Consortium
+homepage_url: http://www.xfree86.org/current/LICENSE5.html
+spdx_license_key: X11
+text_urls:
+    - http://www.xfree86.org/current/LICENSE5.html
+other_urls:
+    - http://www.xfree86.org/3.3.6/COPYRIGHT2.html#3
+minimum_coverage: 80
+---
+
 Permission is hereby granted, free of charge, to any person obtaining a copy of
 this software and associated documentation files (the "Software"), to deal in
 the Software without restriction, including without limitation the rights to

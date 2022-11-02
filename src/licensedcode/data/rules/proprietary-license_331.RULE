@@ -1,3 +1,9 @@
+---
+license_expression: proprietary-license
+is_license_text: yes
+relevance: 100
+---
+
 TERRATEC grants permission to use and redistribute these firmware
  files for use with TERRATEC devices, but not as part of the Linux
  kernel or in any other form which would require these files themselves

@@ -1,2 +1,7 @@
+---
+is_false_positive: yes
+notes: Seen in https://github.com/shinnn/spdx-license-ids/tree/bebc9a4ca38d67f94cd42e9beceaca2c7e647cfb
+---
+
 deprecated');
 //=> ['AGPL-3.0', 'eCos-2.0', 'GFDL-1.1', 'GFDL-1.2', 'GFDL-1.3', 'GPL-1.0', ...]

@@ -1,3 +1,16 @@
+---
+key: esri-devkit
+short_name: Esri Developer Kit License
+name: Esri Developer Kit License
+category: Proprietary Free
+owner: Esri
+spdx_license_key: LicenseRef-scancode-esri-devkit
+ignorable_copyrights:
+    - Copyright 2006 ESRI
+ignorable_holders:
+    - ESRI
+---
+
 Copyright 2006 ESRI
 
 All rights reserved under the copyright laws of the United States

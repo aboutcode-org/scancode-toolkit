@@ -1,3 +1,13 @@
+---
+license_expression: cc0-1.0
+is_license_notice: yes
+relevance: 100
+referenced_filenames:
+    - /usr/share/common-licenses/CC0-1.0
+ignorable_urls:
+    - https://creativecommons.org/publicdomain/zero/1.0/
+---
+
 To the extent possible under law, the author(s) have dedicated all copyright
  and related and neighboring rights to this software to the public domain
  worldwide. This software is distributed without any warranty.

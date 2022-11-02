@@ -1,3 +1,10 @@
+---
+license_expression: osf-1990
+is_license_text: yes
+notes: The HP Variant license identified at https://fedoraproject.org/wiki/Licensing:MIT?rd=Licensing/MIT#HP_Variant
+    is actually an instance of osf-1990
+---
+
  * To anyone who acknowledges that this file is provided
  * "AS IS" without any express or implied warranty:
  * permission to use, copy, modify, and distribute this
@@ -9,4 +16,3 @@
  * without specific, written prior permission.  
  *    makes no representations about the
  * suitability of this software for any purpose.
-

@@ -1,3 +1,11 @@
+---
+license_expression: cc0-1.0 OR mit
+is_license_notice: yes
+minimum_coverage: 90
+ignorable_urls:
+    - https://creativecommons.org/publicdomain/zero/1.0
+---
+
 This code is dual-licensed under CC0 and the MIT license. You can choose which one you want to use.
 
 ## CC0

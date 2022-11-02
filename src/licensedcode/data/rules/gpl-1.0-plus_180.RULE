@@ -1,3 +1,12 @@
+---
+license_expression: gpl-1.0-plus
+is_license_notice: yes
+relevance: 100
+minimum_coverage: 20
+ignorable_urls:
+    - http://www.gnu.org/licenses/gpl.html
+---
+
 You may redistribute copies of it under the terms of
 the GNU General Public License <http://www.gnu.org/licenses/gpl.html>.
 There is NO WARRANTY, to the extent permitted by law.

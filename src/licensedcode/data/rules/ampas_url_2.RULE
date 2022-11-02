@@ -1,1 +1,9 @@
+---
+license_expression: ampas
+is_license_reference: yes
+relevance: 95
+ignorable_urls:
+    - https://spdx.org/licenses/ampas.html
+---
+
 https://spdx.org/licenses/ampas.html

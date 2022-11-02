@@ -1,3 +1,20 @@
+---
+key: motosoto-0.9.1
+short_name: Motosoto 0.9.1
+name: Motosoto Open Source License v0.9.1
+category: Copyleft
+owner: OSI - Open Source Initiative
+homepage_url: http://opensource.org/licenses/motosoto.php
+notes: Per SPDX.org, this license is OSI certified.
+spdx_license_key: Motosoto
+text_urls:
+    - http://opensource.org/licenses/motosoto.php
+osi_url: http://opensource.org/licenses/motosoto.php
+other_urls:
+    - http://www.opensource.org/licenses/Motosoto
+    - https://opensource.org/licenses/Motosoto
+---
+
 MOTOSOTO OPEN SOURCE LICENSE - Version 0.9.1
 
 This Motosoto Open Source License (the "License") applies to "Community Portal Server" and related software products as well as any updatesor maintenance releases of that software ("Motosoto Products") that are distributed by Motosoto.Com B.V. ("Licensor"). Any Motosoto Product licensed pursuant to this License is a "Licensed Product." Licensed Product, in its entirety, is protected by Dutch copyright law. This License identifies the terms under which you may use, copy, distribute or modify Licensed Product and has been submitted to the Open Software Initiative (OSI) for approval.

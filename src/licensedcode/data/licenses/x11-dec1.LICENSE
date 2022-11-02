@@ -1,3 +1,16 @@
+---
+key: x11-dec1
+short_name: X11-Style (DEC 1)
+name: X11-Style (DEC 1)
+category: Permissive
+owner: DEC - Digital Equipment Corporation
+homepage_url: http://www.xfree86.org/current/LICENSE5.html
+spdx_license_key: LicenseRef-scancode-x11-dec1
+text_urls:
+    - http://www.xfree86.org/current/LICENSE5.html
+minimum_coverage: 80
+---
+
 Permission to use, copy, modify, and distribute this software and its
 documentation for any purpose and without fee is hereby granted, provided that
 the above copyright notice appear in all copies and that both that copyright

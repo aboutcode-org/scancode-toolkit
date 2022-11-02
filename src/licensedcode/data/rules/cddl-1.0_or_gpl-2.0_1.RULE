@@ -1,3 +1,10 @@
+---
+license_expression: cddl-1.0 OR gpl-2.0
+is_license_notice: yes
+ignorable_urls:
+    - http://www.opensource.org/licenses/cddl1.php
+---
+
  which is
 distributed under the GlassFish Dual License, which means CodeModel is
 subject to the terms of either the GNU General Public License Version 2 only

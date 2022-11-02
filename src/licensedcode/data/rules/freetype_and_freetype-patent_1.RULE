@@ -1,3 +1,10 @@
+---
+license_expression: freetype AND freetype-patent
+is_license_notice: yes
+referenced_filenames:
+    - LICENSE.TXT
+---
+
 /*  This software, and all works of authorship, whether in source or       */
 /*  object code form as indicated by the copyright notice(s) included      */
 /*  herein (collectively, the "Work") is made available, and may only be   */

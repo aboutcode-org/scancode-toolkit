@@ -1,3 +1,9 @@
+---
+license_expression: gpl-2.0 AND mit-old-style-no-advert
+is_license_notice: yes
+relevance: 100
+---
+
 license
 socat is distributed under the terms of the GNU GPLv2;
 except for install-sh, which is copyright MIT, with its own license;

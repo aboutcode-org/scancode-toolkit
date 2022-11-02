@@ -1,3 +1,17 @@
+---
+key: hdf5
+short_name: HDF5License
+name: HDF5 License
+category: Permissive
+owner: The HDF Group
+homepage_url: https://bitbucket.hdfgroup.org/projects/HDFFV/repos/hdf5/browse/COPYING?raw
+spdx_license_key: LicenseRef-scancode-hdf5
+standard_notice: "This file is part of HDF5.  The full HDF5 copyright notice, including   \n\
+    terms governing use, modification, and redistribution, is contained in  \nthe COPYING file,\
+    \ which can be found at the root of the source code     \ndistribution tree, or in https://support.hdfgroup.org/ftp/HDF5/releases.\n\
+    If you do not have access to either file, you may request a copy from   \nhelp@hdfgroup.org. "
+---
+
 Redistribution and use in source and binary forms, with or without 
 modification, are permitted for any purpose (including commercial purposes) 
 provided that the following conditions are met:
@@ -19,4 +33,3 @@ THIS SOFTWARE IS PROVIDED BY THE HDF GROUP AND THE CONTRIBUTORS
 "AS IS" WITH NO WARRANTY OF ANY KIND, EITHER EXPRESSED OR IMPLIED. IN NO EVENT SHALL THE HDF GROUP OR THE CONTRIBUTORS BE LIABLE FOR ANY DAMAGES SUFFERED BY THE USERS ARISING OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  
 You are under no obligation whatsoever to provide any bug fixes, patches, or upgrades to the features, functionality or performance of the source code ("Enhancements") to anyone; however, if you choose to make your Enhancements available either publicly, or directly to The HDF Group, without imposing a separate written license agreement for such Enhancements, then you hereby grant the following license: a non-exclusive, royalty-free perpetual license to install, use, modify, prepare derivative works, incorporate into other computer software, distribute, and sublicense such enhancements or derivative works thereof, in binary and source code form.
-

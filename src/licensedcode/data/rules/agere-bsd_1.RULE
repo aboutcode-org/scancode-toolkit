@@ -1,3 +1,10 @@
+---
+license_expression: agere-bsd
+is_license_text: yes
+relevance: 100
+minimum_coverage: 80
+---
+
 This software is provided subject to the following terms and conditions,
  which you should read carefully before using the software.  Using this
  software indicates your acceptance of these terms and conditions.  If you do

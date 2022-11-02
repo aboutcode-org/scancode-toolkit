@@ -1,3 +1,13 @@
+---
+license_expression: x11-lucent OR lucent-pl-1.02
+is_license_notice: yes
+notes: from https://9fans.github.io/usr/local/plan9/unix/NOTICE.utf
+ignorable_urls:
+    - http://plan9.bell-labs.com/plan9dist/license.html
+ignorable_emails:
+    - rsc@swtch.com
+---
+
  * Permission to use, copy, modify, and distribute this software for any
  * purpose without fee is hereby granted, provided that this entire notice
  * is included in all copies of any software which is or includes a copy

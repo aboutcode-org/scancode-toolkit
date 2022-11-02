@@ -1,3 +1,13 @@
+---
+license_expression: gpl-2.0-plus WITH mif-exception
+is_license_notice: yes
+relevance: 99
+minimum_coverage: 100
+referenced_filenames:
+    - LICENCE
+notes: seen in U-Boot and the kernel. The LICENCE file is a clear gpl + exception notice
+---
+
 JFFS2 is free software; you can redistribute it and/or modify it under
 the terms of the GNU General Public License as published by the Free
 Software Foundation; either version 2 or (at your option) any later 

@@ -1,1 +1,9 @@
+---
+license_expression: ms-lpl
+is_license_reference: yes
+relevance: 100
+ignorable_urls:
+    - http://msdn.microsoft.com/en-us/cc300389.aspx#P
+---
+
 http://msdn.microsoft.com/en-us/cc300389.aspx#P

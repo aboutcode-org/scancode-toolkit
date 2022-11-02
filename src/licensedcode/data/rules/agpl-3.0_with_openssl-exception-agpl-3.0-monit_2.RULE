@@ -1,3 +1,10 @@
+---
+license_expression: agpl-3.0 WITH openssl-exception-agpl-3.0-monit
+is_license_notice: yes
+relevance: 100
+notes: Seen in monit at https://bitbucket.org/tildeslash/monit
+---
+
 * In addition, as a special exception, the copyright holders give
  * permission to link the code of portions of this program with the
  * OpenSSL library under certain conditions as described in each

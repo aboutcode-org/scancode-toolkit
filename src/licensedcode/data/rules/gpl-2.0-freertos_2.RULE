@@ -1,3 +1,10 @@
+---
+license_expression: gpl-2.0-plus WITH freertos-exception-2.0
+is_license_notice: yes
+ignorable_urls:
+    - http://www.freertos.org/
+---
+
 The FreeRTOS.org source code is licensed by the modified GNU General Public 
 License (GPL) text provided below.  The FreeRTOS download also includes 
 demo application source code, some of which is provided by third parties 

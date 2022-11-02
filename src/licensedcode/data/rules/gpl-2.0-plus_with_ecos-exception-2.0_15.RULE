@@ -1,3 +1,8 @@
+---
+license_expression: gpl-2.0-plus WITH ecos-exception-2.0
+is_license_notice: yes
+---
+
 eCos is distributed under the GPL
 license with an exception which permits proprietary application code
 to be linked with eCos without itself being

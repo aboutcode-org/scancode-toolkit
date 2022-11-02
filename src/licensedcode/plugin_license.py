@@ -21,6 +21,7 @@ from plugincode.scan import ScanPlugin
 from plugincode.scan import scan_impl
 
 from scancode.api import SCANCODE_LICENSEDB_URL
+from licensedcode.license_db import dump_license_data
 
 TRACE = os.environ.get('SCANCODE_DEBUG_LICENSE_PLUGIN', False)
 

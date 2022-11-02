@@ -1,2 +1,8 @@
+---
+license_expression: bsd-new
+is_license_notice: yes
+notes: Debian BSD license
+---
+
 licensed with the standard 3-clause BSD license. On Debian GNU/Linux
 systems, this license can be found in `/usr/share/common-licenses/BSD'.

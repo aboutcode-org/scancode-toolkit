@@ -1,3 +1,12 @@
+---
+license_expression: lgpl-2.1 OR lgpl-3.0
+is_license_notice: yes
+relevance: 100
+notes: see https://community.kde.org/Policies/Licensing_Policy
+ignorable_urls:
+    - https://www.gnu.org/licenses/
+---
+
 This library is free software; you can redistribute it and/or
 modify it under the terms of the GNU Lesser General Public
 License as published by the Free Software Foundation; either

@@ -1,7 +1,0 @@
-license_expression: commonj-timer
-is_license_text: yes
-notes: Original text
-ignorable_urls:
-    - http://dev2dev.bea.com/technologies/commonj/index.jsp
-    - http://dev2dev.bea.com/wlplatform/commonj/twm.html
-    - http://www.ibm.com/developerworks/library/j-commonj-sdowmt/

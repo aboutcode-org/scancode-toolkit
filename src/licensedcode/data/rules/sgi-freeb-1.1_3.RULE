@@ -1,3 +1,10 @@
+---
+license_expression: sgi-freeb-1.1
+is_license_notice: yes
+ignorable_urls:
+    - http://oss.sgi.com/projects/FreeB
+---
+
 License Applicability. Except to the extent portions of this file are
 made subject to an alternative license as permitted in the SGI Free
 Software License B, Version 1.1 (the "License"), the contents of this
@@ -14,4 +21,4 @@ DISCLAIMED, INCLUDING, WITHOUT LIMITATION, ANY IMPLIED WARRANTIES AND
 CONDITIONS OF MERCHANTABILITY, SATISFACTORY QUALITY, FITNESS FOR A
 PARTICULAR PURPOSE, AND NON-INFRINGEMENT.
 
-Original Code. The Original Code is: 
+Original Code. The Original Code is:

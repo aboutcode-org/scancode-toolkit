@@ -1,3 +1,11 @@
+---
+license_expression: cpl-1.0 AND other-permissive
+is_license_notice: yes
+ignorable_urls:
+    - http://eclipse.org/aspectj
+    - http://www.eclipse.org/legal/epl-v10.html
+---
+
 This sample code is made available under the Common Public "
 License version 1.0 available at "
 "http://www.eclipse.org/legal/epl-v10.html\">"

@@ -1,3 +1,12 @@
+---
+license_expression: mpl-1.1
+is_license_text: yes
+minimum_coverage: 10
+notes: license text as published by SPDX
+ignorable_urls:
+    - http://www.mozilla.org/MPL/
+---
+
 Mozilla Public License Version 1.1
 
 1. Definitions.

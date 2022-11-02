@@ -1,3 +1,10 @@
+---
+license_expression: gpl-2.0 WITH font-exception-gpl
+is_license_notice: yes
+minimum_coverage: 10
+notes: license text as published by SPDX
+---
+
 insert GPL v2 text here
 
 Font Exception

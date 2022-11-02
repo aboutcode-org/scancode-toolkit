@@ -1,3 +1,10 @@
+---
+license_expression: apsl-2.0
+is_license_text: yes
+ignorable_urls:
+    - http://www.apple.com/legal/guidelinesfor3rdparties.html
+---
+
 Please read this License carefully before downloading this software.  By downloading or using this software, you are agreeing to be bound by the terms of this License.  If you do not or cannot agree to the terms of this License, please do not download or use the software.
 
 Apple Note:  In January 2007, Apple changed its corporate name from "Apple Computer, Inc." to "Apple Inc."  This change has been reflected below and copyright years updated, but no other changes have been made to the APSL 2.0.

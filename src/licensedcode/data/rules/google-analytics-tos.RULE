@@ -1,3 +1,13 @@
+---
+license_expression: google-analytics-tos
+is_license_text: yes
+notes: Google tos in HTML
+ignorable_urls:
+    - http://support.google.com/analytics/bin/answer.py?hl=en&topic=2611283&answer=2700409
+    - http://www.google.com/analytics
+    - http://www.google.com/privacy.html
+---
+
   GOOGLE ANALYTICS TERMS OF SERVICE
 
 
@@ -347,4 +357,3 @@ partnership relationship, but is one of independent contractors. This Agreement 
 binding upon and inure to the benefit of the respective successors and assigns of the parties
 hereto. The following sections of this Agreement will survive any termination thereof: 1, 4,
 5, 6 (except the last two sentences), 7, 8, 9, 10, 11, 12, 14, and 16.
- 

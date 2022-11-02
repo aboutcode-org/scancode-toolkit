@@ -1,3 +1,17 @@
+---
+key: gpl-2.0-freertos
+is_deprecated: yes
+notes: replaced by freertos-exception-2.0
+short_name: GPL 2.0 with FreeRTOS exception
+name: GPL 2.0 with FreeRTOS exception
+category: Copyleft Limited
+owner: FreeRTOS
+homepage_url: http://www.freertos.org/a00114.html
+is_exception: yes
+text_urls:
+    - http://www.freertos.org/
+---
+
 The FreeRTOS source code is licensed by a modified GNU General Public License - the
 modification taking the form of an exception.
 

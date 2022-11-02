@@ -1,3 +1,11 @@
+---
+license_expression: ruby OR gpl-2.0 OR gpl-3.0
+is_license_notice: yes
+referenced_filenames:
+    - GPLv2
+    - GPLv3
+---
+
 Licensing terms follow:
 
 You can redistribute Prawn and/or modify it under either the terms of the GPLv2

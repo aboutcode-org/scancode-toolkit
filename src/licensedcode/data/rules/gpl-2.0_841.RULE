@@ -1,3 +1,12 @@
+---
+license_expression: gpl-2.0
+is_license_tag: yes
+relevance: 100
+minimum_coverage: 70
+ignorable_urls:
+    - http://www.gnu.org/licenses/old-licenses/gpl-2.0.txt
+---
+
 <licenses>
         <license>
             <name>GNU General Public License Version 2</name>

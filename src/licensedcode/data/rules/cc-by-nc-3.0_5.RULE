@@ -1,3 +1,10 @@
+---
+license_expression: cc-by-nc-3.0
+is_license_notice: yes
+ignorable_urls:
+    - http://creativecommons.org/licenses/by-nc/3.0
+---
+
 Redistribution and use in source and binary forms,
  * with or without modification, are permitted under the terms of the license
  * 'Creative Commons Attribution-NonCommercial 3.0' which can be found at

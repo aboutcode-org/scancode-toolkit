@@ -1,3 +1,16 @@
+---
+key: powervr-tools-software-eula
+short_name: PowerVR Tools Software EULA
+name: PowerVR Tools Software End User License Agreement
+category: Proprietary Free
+owner: Imagination
+homepage_url: https://www.imgtec.com/developers/powervr-sdk-tools/powervr-tools-software-eula/
+spdx_license_key: LicenseRef-scancode-powervr-tools-software-eula
+standard_notice: |
+    PLEASE READ THIS AGREEMENT CAREFULLY. BY USING ANY PORTION OF THE POWERVR
+    TOOLS SOFTWARE YOU WILL BE LEGALLY BOUND TO THESE TERMS.
+---
+
 Imagination Technologies Limited ("Imagination") provides this Software subject to the terms of this Agreement. If you do not agree with any of these terms, then do not install or otherwise use the Software.
 
 Definitions

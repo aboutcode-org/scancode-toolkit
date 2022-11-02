@@ -1,3 +1,10 @@
+---
+license_expression: other-copyleft
+is_license_text: yes
+notes: See https://groups.csail.mit.edu/mac/ftpdir/scheme-7.4/license.html some variant are
+    more permissive
+---
+
 Permission to copy and modify this software, to redistribute either the original software or a modified version, and to use this software for any purpose is granted, subject to the following restrictions and understandings.
 
     Any copy made of this software must include this copyright notice in full.

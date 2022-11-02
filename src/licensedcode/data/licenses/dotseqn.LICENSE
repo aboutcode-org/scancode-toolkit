@@ -1,3 +1,13 @@
+---
+key: dotseqn
+short_name: Dotseqn License
+name: Dotseqn License
+category: Permissive
+owner: Donald Arsenau
+homepage_url: https://fedoraproject.org/wiki/Licensing/Dotseqn
+spdx_license_key: Dotseqn
+---
+
 This file may be freely transmitted and reproduced, but it may not be changed unless the name is changed also (except that you may freely change the paper-size option for \documentclass).
 
 This notice must be left intact.

@@ -1,3 +1,9 @@
+---
+license_expression: openssl-exception-gpl-2.0
+is_license_text: yes
+relevance: 100
+---
+
 In addition, as a special exception, the author of this
 program gives permission to link the code of its
 release with the OpenSSL project's "OpenSSL" library (or

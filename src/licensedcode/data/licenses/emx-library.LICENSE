@@ -1,3 +1,15 @@
+---
+key: emx-library
+short_name: EMX Library License
+name: EMX Library License
+category: Permissive
+owner: Unspecified
+spdx_license_key: LicenseRef-scancode-emx-library
+faq_url: http://web.lemoyne.edu/courseinformation/emtex/emx/doc/COPYING.EMX
+other_urls:
+    - http://web.lemoyne.edu/courseinformation/emtex/emx/doc/COPYING.EMX
+---
+
 The emx libraries are not distributed under the GPL.  Linking an
 application with the emx libraries does not cause the executable
 to be covered by the GNU General Public License.  You are allowed

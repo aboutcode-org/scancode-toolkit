@@ -1,3 +1,23 @@
+---
+key: google-analytics-tos
+short_name: Google Analytics Terms of Service
+name: Google Analytics Terms of Service
+category: Proprietary Free
+owner: Google
+homepage_url: http://www.google.com/analytics/terms/us.html
+spdx_license_key: LicenseRef-scancode-google-analytics-tos
+text_urls:
+    - http://www.google.com/analytics/terms/us.html
+other_urls:
+    - http://support.google.com/analytics/bin/answer.py?hl=en&topic=2611283&answer=2700409
+    - http://www.google.com/analytics
+    - http://www.google.com/privacy.html
+ignorable_urls:
+    - http://support.google.com/analytics/bin/answer.py?hl=en&topic=2611283&answer=2700409
+    - http://www.google.com/analytics
+    - http://www.google.com/privacy.html
+---
+
 GOOGLE ANALYTICS TERMS OF SERVICE
 
 These Google Analytics Terms of Service (this "Agreement") are entered into by Google Inc. ("Google") and the entity executing this Agreement ("You"). This Agreement governs Your use of the standard Google Analytics (the "Service"). BY CLICKING THE "I ACCEPT" BUTTON, COMPLETING THE REGISTRATION PROCESS, OR USING THE SERVICE, YOU ACKNOWLEDGE THAT YOU HAVE REVIEWED AND ACCEPT THIS AGREEMENT AND ARE AUTHORIZED TO ACT ON BEHALF OF, AND BIND TO THIS AGREEMENT, THE OWNER OF THIS ACCOUNT. In consideration of the foregoing, the parties agree as follows:

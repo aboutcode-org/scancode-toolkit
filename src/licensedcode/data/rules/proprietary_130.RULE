@@ -1,3 +1,11 @@
+---
+license_expression: proprietary-license
+is_license_text: yes
+relevance: 100
+minimum_coverage: 95
+notes: See https://savannah.nongnu.org/bugs/index.php?33409
+---
+
 % Permission is granted to copy and distribute this file in modified
 % or unmodified form, for noncommercial use, provided (a) this copyright
 % notice is preserved, (b) no attempt is made to restrict redistribution

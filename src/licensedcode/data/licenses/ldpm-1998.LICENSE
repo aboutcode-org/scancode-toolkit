@@ -1,3 +1,13 @@
+---
+key: ldpm-1998
+short_name: LDPM-1998
+name: Linux Documentation Project Manifesto Template License 1998-09-21
+category: Copyleft
+owner: Linux Documentation Project
+homepage_url: http://www.ibiblio.org/gferg/ldp_old/LDP-Manifesto.html
+spdx_license_key: LicenseRef-scancode-ldpm-1998
+---
+
 This is the Linux Documentation Project ``Manifesto''
 Last Revision 21 September 1998, by Michael K. Johnson 
 
@@ -13,4 +23,4 @@ This manual may be reproduced and distributed in whole or in part, without fee, 
 
 Exceptions to these rules may be granted for academic purposes: Write to the author and ask. These restrictions are here to protect us as authors, not to restrict you as learners and educators.
 
-All source code in this document is placed under the GNU General Public License, available via anonymous FTP from prep.ai.mit.edu:/pub/gnu/COPYING. 
+All source code in this document is placed under the GNU General Public License, available via anonymous FTP from prep.ai.mit.edu:/pub/gnu/COPYING.

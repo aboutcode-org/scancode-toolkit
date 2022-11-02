@@ -1,3 +1,14 @@
+---
+license_expression: apache-2.0
+is_license_notice: yes
+relevance: 100
+referenced_filenames:
+    - LICENSE.txt
+    - NOTICE.tx
+ignorable_urls:
+    - http://www.apache.org/licenses/LICENSE-2.0
+---
+
 distributed under the
 [Apache License, Version 2.0](http://www.apache.org/licenses/LICENSE-2.0),
 see LICENSE.txt and NOTICE.txt for more information.

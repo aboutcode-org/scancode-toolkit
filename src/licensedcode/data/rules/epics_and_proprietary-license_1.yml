@@ -1,4 +1,0 @@
-license_expression: epics AND proprietary-license
-is_license_text: yes
-ignorable_urls:
-    - http://www.aps.anl.gov/epics/license/verify.php

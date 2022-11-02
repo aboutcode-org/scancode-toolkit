@@ -1,3 +1,14 @@
+---
+key: x11-hanson
+short_name: X11-Style (David R. Hanson)
+name: X11-Style (David R. Hanson)
+category: Permissive
+owner: David R. Hanson
+homepage_url: http://www.research.microsoft.com/~drh/
+spdx_license_key: LicenseRef-scancode-x11-hanson
+minimum_coverage: 80
+---
+
 Permission to use, copy, modify, and distribute this software for any
 purpose, subject to the provisions described below, without fee is
 hereby granted, provided that this entire notice is included in all

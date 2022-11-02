@@ -1,8 +1,0 @@
-key: bsd-export
-short_name: BSD-Export
-name: BSD-Export
-category: Permissive
-owner: Cavium
-spdx_license_key: LicenseRef-scancode-bsd-export
-text_urls:
-    - https://download.juniper.net/disclosure/attributions/junos/10.4R1.9/disclosures.txt

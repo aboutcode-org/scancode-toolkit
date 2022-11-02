@@ -1,2 +1,9 @@
+---
+license_expression: lgpl-3.0
+is_license_reference: yes
+referenced_filenames:
+    - /usr/share/common-licenses/LGPL-3
+---
+
 On Debian systems, the complete text of the GNU General Public License
 can be found at '/usr/share/common-licenses/LGPL-3'.

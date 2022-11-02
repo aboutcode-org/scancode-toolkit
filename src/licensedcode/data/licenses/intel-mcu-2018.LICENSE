@@ -1,3 +1,13 @@
+---
+key: intel-mcu-2018
+short_name: Intel MCU path license 2018
+name: Intel MCU path license 2018
+category: Proprietary Free
+owner: Intel Corporation
+homepage_url: https://01.org/mcu-path-license-2018
+spdx_license_key: LicenseRef-scancode-intel-mcu-2018
+---
+
 Redistribution.
 
 Redistribution and use in binary form, without modification, are permitted, provided that the following conditions are met:

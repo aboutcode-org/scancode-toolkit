@@ -1,3 +1,16 @@
+---
+key: unicode-data-software
+short_name: Unicode - Data Files and Software
+name: Unicode License Agreement - Data Files and Software
+category: Permissive
+owner: Unicode Consortium
+homepage_url: http://unicode.org/
+text_urls:
+    - http://unicode.org/copyright.html
+is_deprecated: yes
+notes: this is a duplicate of the unicode license
+---
+
 Distributed under the Terms of Use in http://www.unicode.org/copyright.html.
 
 Permission is hereby granted, free of charge, to any person obtaining a

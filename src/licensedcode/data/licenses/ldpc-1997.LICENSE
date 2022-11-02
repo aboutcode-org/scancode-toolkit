@@ -1,3 +1,17 @@
+---
+key: ldpc-1997
+short_name: LDPC-1997
+name: Linux Documentation Project Copying License 1997-01-06
+category: Copyleft
+owner: Linux Documentation Project
+homepage_url: https://web.archive.org/web/19990202103614/http://metalab.unc.edu/LDP/COPYRIGHT.html
+spdx_license_key: LicenseRef-scancode-ldpc-1997
+text_urls:
+    - http://linuxmafia.com/faq/Licensing_and_Law/ldpc-license-1997-01-06.html
+ignorable_emails:
+    - mdw@metalab.unc.edu
+---
+
 Linux Documentation Project Copying License
 Last modified 6 January 1997
 
@@ -30,4 +44,4 @@ We do not require to be paid royalties for any profit earned from selling LDP ma
 
 We would like to be informed of any plans to publish or distribute LDP manuals, just so we know how they're becoming available. If you are publishing or planning to publish any LDP manuals, please send email to Matt Welsh (email mdw@metalab.unc.edu).
 
-We encourage Linux software distributors to distribute the LDP manuals (such as the Installation and Getting Started Guide) with their software. The LDP manuals are intended to be used as the "official" Linux documentation, and we'd like to see mail-order distributors bundling the LDP manuals with the software. As the LDP manuals mature, hopefully they will fulfill this goal more adequately. 
+We encourage Linux software distributors to distribute the LDP manuals (such as the Installation and Getting Started Guide) with their software. The LDP manuals are intended to be used as the "official" Linux documentation, and we'd like to see mail-order distributors bundling the LDP manuals with the software. As the LDP manuals mature, hopefully they will fulfill this goal more adequately.

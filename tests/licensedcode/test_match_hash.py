@@ -26,7 +26,7 @@ class TestHashMatch(FileBasedTesting):
         rule_dir = self.get_test_loc('hash/rules')
         rules = list(models.load_rules(rule_dir))
         idx = index.LicenseIndex(rules)
-        query_doc = self.get_test_loc('hash/rules/lgpl-2.0-plus_23.RULE')
+        query_doc = self.get_test_loc('hash/old_rules/lgpl-2.0-plus_23.RULE')
 
         matches = idx.match(query_doc)
         assert len(matches) == 1

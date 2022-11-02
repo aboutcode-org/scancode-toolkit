@@ -1,3 +1,13 @@
+---
+license_expression: nvidia
+is_license_notice: yes
+minimum_coverage: 90
+ignorable_copyrights:
+    - Copyright 1993-1999 NVIDIA, Corporation
+ignorable_holders:
+    - NVIDIA, Corporation
+---
+
  |*     NOTICE TO USER:   The source code  is copyrighted under  U.S. and     *|
  |*     international laws.  Users and possessors of this source code are     *|
  |*     hereby granted a nonexclusive,  royalty-free copyright license to     *|
@@ -37,4 +47,4 @@
   * GPL licensing note -- nVidia is allowing a liberal interpretation of
   * the documentation restriction above, to merely say that this nVidia's
   * copyright and disclaimer should be included with all code derived
-  * from this source. 
+  * from this source.

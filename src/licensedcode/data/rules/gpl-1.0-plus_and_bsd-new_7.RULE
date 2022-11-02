@@ -1,3 +1,12 @@
+---
+license_expression: gpl-1.0-plus AND bsd-new
+is_license_notice: yes
+minimum_coverage: 80
+referenced_filenames:
+    - COPYING
+notes: found in the Linux kernel
+---
+
 This file is subject to the terms and conditions of the GNU General Public
 License. See the file "COPYING" in the main directory of this archive
 for more details.

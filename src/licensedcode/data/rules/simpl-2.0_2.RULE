@@ -1,3 +1,10 @@
+---
+license_expression: simpl-2.0
+is_license_reference: yes
+ignorable_urls:
+    - http://opensource.org/licenses/SimPL-2.0
+---
+
                                 Preamble
 
 This Simple Public License 2.0 (SimPL-2.0 for short) is a plain language implementation of GPL 2.0.  The words are different, but the goal is the same - to guarantee for all users the freedom to share and change software.  If anyone wonders about the meaning of the SimPL, they should interpret it as consistent with GPL 2.0. Original text available on the web: http://opensource.org/licenses/SimPL-2.0.
@@ -30,4 +37,4 @@ The SimPL continues perpetually, except that your license rights end automatical
     You do not abide by the "give back to the community" terms (your licensees get to keep their rights if they abide);
     Anyone prevents you from distributing the software under the terms of the SimPL.
 
-If you have questions, please contact  regarding the license or use of this for industrial purposes. 
+If you have questions, please contact  regarding the license or use of this for industrial purposes.

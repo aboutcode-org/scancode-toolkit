@@ -1,3 +1,9 @@
+---
+license_expression: gpl-2.0 WITH classpath-exception-2.0
+is_license_notice: yes
+relevance: 99
+---
+
 Linking this library statically or dynamically with other modules is
     making a combined work based on this library.  Thus, the terms and
     conditions of the GNU General Public License version 2 cover the whole

@@ -1,3 +1,20 @@
+---
+key: verisign
+short_name: VeriSign License
+name: VeriSign License
+category: Proprietary Free
+owner: VeriSign, Inc.
+spdx_license_key: LicenseRef-scancode-verisign
+other_urls:
+    - http://www.verisign.com/repository/CPS
+ignorable_copyrights:
+    - Copyright 1995 VeriSign, Inc.
+ignorable_holders:
+    - VeriSign, Inc.
+ignorable_urls:
+    - http://www.verisign.com/repository/CPS
+---
+
 VERISIGN, INC. LICENSE AGREEMENT
 
 IMPORTANT - READ CAREFULLY BEFORE DOWNLOADING OR INSTALLING

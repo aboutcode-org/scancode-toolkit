@@ -1,2 +1,7 @@
+---
+is_false_positive: yes
+notes: not a license, but a list of licenses in code
+---
+
 // Should be `Apache-2.0`.
   parse('Apache 2')

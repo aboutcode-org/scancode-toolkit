@@ -1,3 +1,15 @@
+---
+key: bsd-simplified-source
+short_name: BSD-Simplified source
+name: BSD-Simplified source
+category: Permissive
+owner: Unspecified
+notes: |
+    a very simplified bsd variant mentioning only source and without disclaimer.
+    Found in the Linux kernel
+spdx_license_key: LicenseRef-scancode-bsd-simplified-source
+---
+
 Redistribution and use in source and binary forms, with or without
 modification, are permitted provided that redistributions of source
 code retain the above copyright notice and this comment without

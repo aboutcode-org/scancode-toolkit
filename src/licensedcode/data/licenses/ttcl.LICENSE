@@ -1,3 +1,18 @@
+---
+key: ttcl
+short_name: Talis Community License
+name: The Talis Community License
+category: Permissive
+owner: Open Knowledge Foundation
+homepage_url: https://opendefinition.org/licenses/tcl/
+spdx_license_key: LicenseRef-scancode-ttcl
+text_urls:
+    - https://web.archive.org/web/20130923083859/http://tdnarchive.capita-libraries.co.uk/tcl
+faq_url: https://opendefinition.org/licenses/tcl/
+ignorable_urls:
+    - http://tdnarchive.capita-libraries.co.uk/tcl
+---
+
 The Talis Community Licence is intended to guarantee your freedom to use, share and modify data and to preserve the availability and accessibility of such data for the wider community.
 
 Definitions

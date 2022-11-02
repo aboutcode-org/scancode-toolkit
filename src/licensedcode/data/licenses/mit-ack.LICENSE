@@ -1,3 +1,15 @@
+---
+key: mit-ack
+short_name: MIT Acknowledgment License
+name: MIT Acknowledgment License
+category: Permissive
+owner: Unspecified
+homepage_url: https://fedoraproject.org/wiki/Licensing:MIT?rd=Licensing/MIT#feh
+spdx_license_key: MIT-feh
+other_urls:
+    - https://fedoraproject.org/wiki/Licensing/MIT#feh
+---
+
 Permission is hereby granted, free of charge, to any person obtaining a copy of this
 software and associated documentation files (the "Software"), to deal in the Software
 without restriction, including without limitation the rights to use, copy, modify,

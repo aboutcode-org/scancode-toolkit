@@ -1,3 +1,8 @@
+---
+license_expression: apache-1.0 AND public-domain
+is_license_reference: yes
+---
+
 ====================================================================
 Copyright (c)  <year> The Apache Group.  All rights reserved.
 
@@ -52,4 +57,3 @@ are met:
  Supercomputing Applications, University of Illinois, Urbana-Champaign.
  For more information on the Apache Group and the Apache HTTP server
  project, please see <http://www.apache.org/>.
- 

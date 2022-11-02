@@ -1,3 +1,12 @@
+---
+license_expression: proprietary-license
+is_license_text: yes
+ignorable_copyrights:
+    - Copyright (c) 2018, 1-sim.aero
+ignorable_holders:
+    - 1-sim.aero
+---
+
 Redistribution in source and binary forms, with or without modification, are not permitted.
 The use of this code in course or binary form is permitted under the following conditions:
 1.  The copyright holders have been notified of the use of SASL in a commercial project, 

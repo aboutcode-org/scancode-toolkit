@@ -1,3 +1,20 @@
+---
+key: gpl-2.0-classpath
+is_deprecated: yes
+short_name: GPL 2.0 with classpath exception
+name: GPL 2.0 with classpath exception
+category: Copyleft Limited
+owner: Free Software Foundation (FSF)
+homepage_url: http://www.gnu.org/software/classpath/
+notes: This is an obsolete license replaced by the classpath-exception-2.0
+is_exception: yes
+spdx_license_key: GPL-2.0-with-classpath-exception
+text_urls:
+    - http://www.gnu.org/software/classpath/license.html
+other_urls:
+    - http://en.wikipedia.org/wiki/GPL_linking_exception
+---
+
 This library is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 2, or (at your option) any later version.
 
 This library is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details.

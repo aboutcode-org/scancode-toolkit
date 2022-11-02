@@ -1,8 +1,0 @@
-license_expression: ruby OR gpl-2.0
-is_license_text: yes
-referenced_filenames:
-    - COPYING.txt
-ignorable_authors:
-    - Yukihiro Matsumoto <matz@netlab.co.jp>
-ignorable_emails:
-    - matz@netlab.co.jp

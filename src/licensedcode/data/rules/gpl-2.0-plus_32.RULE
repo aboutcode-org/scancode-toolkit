@@ -1,3 +1,11 @@
+---
+license_expression: gpl-2.0-plus
+is_license_notice: yes
+referenced_filenames:
+    - COPYING
+notes: GPL 2 or later Debian notice for keyring
+---
+
 Everything else in the package is covered by the GNU GPL.
 
 

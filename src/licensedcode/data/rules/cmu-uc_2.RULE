@@ -1,3 +1,11 @@
+---
+license_expression: cmu-uc
+is_license_text: yes
+relevance: 99
+referenced_filenames:
+    - COPYING
+---
+
 Portions of this file are subject to the following copyright(s).  See
 the Net-SNMP's COPYING file for more details and other copyrights
 that may apply:

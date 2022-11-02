@@ -1,2 +1,10 @@
+---
+license_expression: lgpl-2.0-plus OR gpl-1.0-plus
+is_license_notice: yes
+minimum_coverage: 100
+referenced_filenames:
+    - /usr/share/common-licenses/GPL
+---
+
 is covered either by the LGPL, or
 under the GNU General Public License /usr/share/common-licenses/GPL.

@@ -1,3 +1,11 @@
+---
+license_expression: agpl-3.0 WITH agpl-generic-additional-terms
+is_license_notice: yes
+relevance: 100
+referenced_filenames:
+    - LICENSE_EXCEPTION
+---
+
 License
 
 Django JSONStore is an Open Source project licensed under the terms of the AGPL license - The GNU Affero General Public License v3.0 with the Additional Permissions described in LICENSE_EXCEPTION

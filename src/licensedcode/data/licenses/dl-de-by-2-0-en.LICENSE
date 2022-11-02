@@ -1,3 +1,17 @@
+---
+key: dl-de-by-2-0-en
+short_name: dl-de/by-2-0-en
+name: Data licence Germany - attribution - Version 2 - English
+category: Permissive
+owner: govdata.de
+homepage_url: http://www.govdata.de/dl-de/by-2-0
+spdx_license_key: LicenseRef-scancode-dl-de-by-2-0-en
+other_urls:
+    - https://www.dcat-ap.de/def/licenses/
+ignorable_urls:
+    - http://www.govdata.de/dl-de/by-2-0
+---
+
 DL-DE->BY-2.0
 
 Data licence Germany – attribution – version 2.0

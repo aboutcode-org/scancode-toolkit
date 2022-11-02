@@ -1,2 +1,13 @@
+---
+license_expression: mit
+is_license_notice: yes
+relevance: 100
+notes: Seen in json-cpp
+ignorable_copyrights:
+    - Copyright (c) Authors
+ignorable_holders:
+    - Authors
+---
+
 In jurisdictions which do not recognize Public Domain property (e.g. Germany as of
 2010), this software is Copyright (c) Authors, and is released under the terms of the MIT License (see below)

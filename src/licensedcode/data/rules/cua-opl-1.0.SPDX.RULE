@@ -1,3 +1,12 @@
+---
+license_expression: cua-opl-1.0
+is_license_text: yes
+minimum_coverage: 10
+notes: license text as published by SPDX
+ignorable_urls:
+    - http://cuaoffice.sourceforge.net/
+---
+
 CUA Office Public License Version 1.0
 (plain text)
 1. Definitions.

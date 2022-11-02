@@ -1,3 +1,11 @@
+---
+license_expression: gpl-3.0 AND other-permissive
+is_license_notice: yes
+relevance: 100
+ignorable_urls:
+    - https://www.gnu.org/licenses
+---
+
 # GNU General Public License v3.0
 #
 # Permissions of this strong copyleft license are conditioned on making available

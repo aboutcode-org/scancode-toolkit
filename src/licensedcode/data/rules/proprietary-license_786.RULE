@@ -1,3 +1,9 @@
+---
+license_expression: proprietary-license
+is_license_notice: yes
+notes: Seen in FFmpeg
+---
+
 CONFIG_NONFREE
      printf(
      "This version of %s has nonfree parts compiled in.\n"

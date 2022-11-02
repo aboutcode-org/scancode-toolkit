@@ -1,3 +1,12 @@
+---
+license_expression: mpl-1.1 OR x11
+is_license_notice: yes
+referenced_filenames:
+    - MITX.txt
+    - MPL-1.1.txt
+notes: old cURL 7.5.2 notices
+---
+
 Everyone is permitted to copy and distribute verbatim copies of this license
 document, but changing it is not allowed.
 

@@ -1,3 +1,14 @@
+---
+license_expression: gpl-2.0-plus OR lgpl-2.1-plus OR mpl-1.1
+is_license_notice: yes
+relevance: 100
+referenced_filenames:
+    - COPYING.GPL
+    - COPYING.LGPL
+    - COPYING.MPL
+notes: http://cgit.freedesktop.org/libreoffice/dictionaries/tree/
+---
+
 Pyphen is released under the GPL 2.0+/LGPL 2.1+/MPL 1.1 tri-license.
 See COPYING.GPL, COPYING.LGPL and COPYING.MPL for more details.
 

@@ -1,3 +1,13 @@
+---
+key: visual-idiot
+short_name: Visual Idiot
+name: Visual Idiot License
+category: Permissive
+owner: visualidiot.com
+homepage_url: https://web.archive.org/web/20120502165504/http://licence.visualidiot.com/
+spdx_license_key: LicenseRef-scancode-visual-idiot
+---
+
 By attaching this document to the given files (the “work”),
 you, the licensee, are hereby granted free usage in both
 personal and commerical environments, without any

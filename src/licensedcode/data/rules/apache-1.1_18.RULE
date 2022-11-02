@@ -1,3 +1,18 @@
+---
+license_expression: apache-1.1
+is_license_notice: yes
+ignorable_copyrights:
+    - Copyright (c) The International Cooperation for the Integration of Processes in Prepress,
+        Press and Postpress (CIP4)
+ignorable_holders:
+    - The International Cooperation for the Integration of Processes in Prepress, Press and
+        Postpress (CIP4)
+ignorable_urls:
+    - http://www.cip4.org/
+ignorable_emails:
+    - info@cip4.org
+---
+
 * The CIP4 Software License, Version 1.0
 *
 *
@@ -56,5 +71,4 @@
 * This software consists of voluntary contributions made by many
 * individuals on behalf of the The International Cooperation for the Integration 
 * of Processes in Prepress, Press and Postpress and was
-* originally based on software 
- 
+* originally based on software

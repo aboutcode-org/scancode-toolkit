@@ -1,3 +1,14 @@
+---
+key: nxp-microcontroller-proprietary
+short_name: NXP Microcontroller Proprietary
+name: NXP Microcontroller Proprietary
+category: Proprietary Free
+owner: NXP
+spdx_license_key: LicenseRef-scancode-nxp-microctl-proprietary
+other_spdx_license_keys:
+    - LicenseRef-scancode-nxp-microcontroller-proprietary
+---
+
 Software that is described herein is for illustrative purposes only
 which provides customers with programming information regarding the
 products. This software is supplied ""AS IS"" without any warranties.

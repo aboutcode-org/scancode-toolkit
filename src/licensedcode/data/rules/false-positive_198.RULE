@@ -1,2 +1,8 @@
+---
+is_false_positive: yes
+notes: Curl doc on licensing where nothing should be detected. This is a discussion on licensing
+    which is interesting but not a license notice or statement.
+---
+
 
 assert.equal(correct('Apache 2'), 'Apache-2.0')
