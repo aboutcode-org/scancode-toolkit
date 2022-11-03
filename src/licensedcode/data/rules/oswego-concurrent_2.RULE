@@ -1,3 +1,12 @@
+---
+license_expression: oswego-concurrent
+is_license_text: yes
+ignorable_copyrights:
+    - Copyright (c) 1994-2000 Sun Microsystems, Inc.
+ignorable_holders:
+    - Sun Microsystems, Inc.
+---
+
 Public Domain concurrent 1.3.4
 
 All classes are released to the public domain and may be used for any purpose whatsoever without permission or acknowledgment. Portions of the CopyOnWriteArrayList and ConcurrentReaderHashMap classes are adapted from Sun JDK source code. These are copyright of Sun Microsystems, Inc, and are used with their kind permission, as described in this license. (presented below)

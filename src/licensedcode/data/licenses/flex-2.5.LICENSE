@@ -1,3 +1,18 @@
+---
+key: flex-2.5
+short_name: Flex 2.5
+name: Flex License v2.5
+category: Permissive
+owner: Regents of the University of California
+homepage_url: http://www.cs.princeton.edu/~appel/modern/c/software/flex/flex.html
+spdx_license_key: LicenseRef-scancode-flex-2.5
+text_urls:
+    - http://www.cs.cmu.edu/afs/cs/project/ai-repository-9/ai/areas/nlp/parsing/flex/copying.txt
+minimum_coverage: 80
+ignorable_authors:
+    - the University of California, Berkeley and its contributors
+---
+
 The United States Government has rights in this work pursuant to contract no. DE-
 AC03-76SF00098 between the United States Department of Energy and the University of
 California.

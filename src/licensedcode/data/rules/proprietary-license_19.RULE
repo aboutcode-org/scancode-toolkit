@@ -1,1 +1,9 @@
+---
+license_expression: proprietary-license
+is_license_reference: yes
+relevance: 100
+ignorable_urls:
+    - http://license.syn.co.in/
+---
+
 http://license.syn.co.in/

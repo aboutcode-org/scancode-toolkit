@@ -1,1 +1,8 @@
+---
+license_expression: gpl-3.0-plus
+is_license_notice: yes
+referenced_filenames:
+    - COPYING
+---
+
  is licenced under the terms of the GNU General Public Licence (version 3 or later). Please see the file COPYING for details.

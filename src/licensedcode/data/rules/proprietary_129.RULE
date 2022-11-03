@@ -1,3 +1,11 @@
+---
+license_expression: proprietary-license
+is_license_text: yes
+relevance: 100
+minimum_coverage: 95
+notes: See https://www.teeworlds.com/forum/viewtopic.php?id=957 and https://fedoraproject.org/wiki/Licensing:Teeworlds?rd=Licensing/Teeworlds
+---
+
 This software is provided 'as-is', without any express or implied
 warranty.  In no event will the authors be held liable for any damages
 arising from the use of this software.

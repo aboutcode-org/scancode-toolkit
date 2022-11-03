@@ -1,3 +1,10 @@
+---
+license_expression: other-permissive
+is_license_text: yes
+relevance: 100
+notes: https://www.lua.org/versions.html#3.1 And http://www.lua.org/license.html
+---
+
 Permission is hereby granted, without written agreement
 and without license or royalty fees, to use, copy, modify,
 translate, and distribute this software and its documentation

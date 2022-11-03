@@ -1,4 +1,0 @@
-license_expression: mit
-is_license_text: yes
-relevance: 100
-notes: See fix at https://github.com/florianl/go-tc/pull/18 The "to" in "to use" is missing

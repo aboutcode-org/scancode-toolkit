@@ -1,3 +1,13 @@
+---
+key: amazon-redshift-jdbc
+short_name: Amazon Redshift JDBC Driver License Agreement
+name: Amazon Redshift JDBC Driver License Agreement
+category: Proprietary Free
+owner: Amazon Web Services
+homepage_url: https://s3.amazonaws.com/redshift-downloads/drivers/Amazon+Redshift+JDBC+Driver+License+Agreement.pdf
+spdx_license_key: LicenseRef-scancode-amazon-redshift-jdbc
+---
+
 Amazon Redshift JDBC Driver License Agreement
 
 THIS IS AN AGREEMENT BETWEEN YOU AND AMAZON WEB SERVICES, INC. (WITH ITS AFFILIATES, "AWS" OR "WE")

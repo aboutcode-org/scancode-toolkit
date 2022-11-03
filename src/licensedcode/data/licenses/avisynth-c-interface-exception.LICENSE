@@ -1,3 +1,14 @@
+---
+key: avisynth-c-interface-exception
+short_name: Avisynth C Interface Exception
+name: Avisynth C Interface Exception
+category: Copyleft Limited
+owner: Kevin Atkinson
+homepage_url: http://www.kevina.org/avisynth_c/readme.txt
+is_exception: yes
+spdx_license_key: LicenseRef-scancode-avisynth-c-exception
+---
+
 As a special exception, I give you permission to link to the Avisynth
 C interface with independent modules that communicate with the
 Avisynth C interface solely through the interfaces defined in

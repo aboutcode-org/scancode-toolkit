@@ -1,2 +1,10 @@
+---
+license_expression: mpl-2.0
+is_license_notice: yes
+relevance: 95
+referenced_filenames:
+    - LICENSE.txt
+---
+
 * The software in this package is published under the terms of the MPL license a copy of which has
  * been included with this distribution in the LICENSE.txt file.

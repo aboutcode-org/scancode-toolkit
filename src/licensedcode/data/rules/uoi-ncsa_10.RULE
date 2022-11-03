@@ -1,2 +1,11 @@
+---
+license_expression: uoi-ncsa
+is_license_notice: yes
+relevance: 100
+minimum_coverage: 90
+referenced_filenames:
+    - LICENSE.txt
+---
+
 Compiler-RT is open source software. You may freely distribute it under the
 terms of the license agreement found in LICENSE.txt.

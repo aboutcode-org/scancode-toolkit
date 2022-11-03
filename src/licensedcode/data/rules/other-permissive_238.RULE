@@ -1,3 +1,12 @@
+---
+license_expression: other-permissive
+is_license_text: yes
+relevance: 100
+notes: Seen in FreeBSD ipfilter
+ignorable_authors:
+    - the contributors
+---
+
 Redistribution and use in source and binary forms are permitted
 provided that this notice is preserved and due credit is given
 to the original author and the contributors.

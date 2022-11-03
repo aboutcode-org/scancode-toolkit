@@ -1,3 +1,9 @@
+---
+license_expression: proprietary-license
+is_license_text: yes
+notes: Based on the MIT with material and problematic changes. https://github.com/smk78/thincarb/blob/9d3ce615b10405ccc6fa6063b0d2e0f51f41d100/LICENSE.txt
+---
+
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to use, 
 copy, modify, merge, publish, distribute, and/or sublicense, but not sell, 

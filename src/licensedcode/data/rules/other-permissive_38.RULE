@@ -1,3 +1,9 @@
+---
+license_expression: other-permissive
+is_license_text: yes
+notes: from nagios xi licenses/
+---
+
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software to use, copy, modify, distribute, sublicense, and/or sell
 copies of the software, and to permit persons to whom the software is furnished

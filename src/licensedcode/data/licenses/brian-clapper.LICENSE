@@ -1,3 +1,17 @@
+---
+key: brian-clapper
+short_name: Brian Clapper License
+name: Brian Clapper License
+category: Permissive
+owner: clapper.org
+homepage_url: http://software.clapper.org/poll/index.html
+spdx_license_key: LicenseRef-scancode-brian-clapper
+ignorable_authors:
+    - Brian M. Clapper <bmc@clapper.org>
+ignorable_emails:
+    - bmc@clapper.org
+---
+
 Redistribution and use in source and binary forms are
 permitted provided that: (1) source distributions retain
 this entire copyright notice and comment; (2) modifications

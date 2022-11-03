@@ -1,3 +1,10 @@
+---
+license_expression: gpl-2.0
+is_license_notice: yes
+ignorable_urls:
+    - http://www.fsf.org/
+---
+
 All source code in this file is licensed under the following license except
 where indicated.
 

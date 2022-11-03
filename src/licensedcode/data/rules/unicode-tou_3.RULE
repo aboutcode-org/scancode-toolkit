@@ -1,3 +1,13 @@
+---
+license_expression: unicode-tou
+is_license_text: yes
+minimum_coverage: 60
+ignorable_copyrights:
+    - Copyright (c) 1991-2016 Unicode, Inc.
+ignorable_holders:
+    - Unicode, Inc.
+---
+
 A. Unicode Copyright.
 
     Copyright © 1991-2016 Unicode, Inc. All rights reserved.
@@ -30,4 +40,3 @@ F. Miscellaneous.
     Taxes. The user agrees to pay any taxes arising from access to this website or use of the information herein, except for those based on Unicode’s net income.
     Severability.  If any provision of this Agreement is declared invalid or unenforceable, the remaining provisions of this Agreement shall remain in effect.
     Entire Agreement. This Agreement constitutes the entire agreement between the parties.
-

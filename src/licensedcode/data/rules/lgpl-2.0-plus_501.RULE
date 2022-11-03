@@ -1,3 +1,13 @@
+---
+license_expression: lgpl-2.0-plus
+is_license_notice: yes
+relevance: 100
+referenced_filenames:
+    - /usr/share/common-licenses/LGPL-2
+ignorable_urls:
+    - https://www.gnu.org/
+---
+
 Covered under GNU LibraryGeneral Public License. More about Library GPL can be found 
 at https://www.gnu.org/ (or) in file named LGPL-2 under 
 /usr/share/common-licenses/ directory and is also stated as below.

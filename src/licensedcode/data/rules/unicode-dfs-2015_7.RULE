@@ -1,1 +1,10 @@
+---
+license_expression: unicode-dfs-2015
+is_license_tag: yes
+is_continuous: yes
+relevance: 100
+minimum_coverage: 100
+notes: Rule based on an SPDX license identifier and name
+---
+
 license: Unicode License Agreement - Data Files and Software (2015)

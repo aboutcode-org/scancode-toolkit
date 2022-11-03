@@ -1,1 +1,9 @@
+---
+license_expression: osl-2.1
+is_license_reference: yes
+relevance: 95
+ignorable_urls:
+    - https://spdx.org/licenses/osl-2.1.html
+---
+
 https://spdx.org/licenses/osl-2.1.html

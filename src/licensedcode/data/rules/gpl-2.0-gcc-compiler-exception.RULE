@@ -1,3 +1,8 @@
+---
+license_expression: gcc-compiler-exception-2.0
+is_license_text: yes
+---
+
   As a special exception, if you link this file with files compiled
   with a GNU compiler to produce an executable, this does not cause
   the resulting executable to be covered by the GNU General Public

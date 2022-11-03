@@ -1,3 +1,14 @@
+---
+key: wrox-download
+short_name: Wrox Download Terms and Conditions
+name: Wrox Download Terms and Conditions
+category: Source-available
+owner: Wiley
+homepage_url: http://web.archive.org/web/20030421055623/http://wrox.com/dynamic/books/download-info.aspx?ISBN=1861004257&email=&mode=#terms
+spdx_license_key: LicenseRef-scancode-wrox-download
+minimum_coverage: 30
+---
+
 While we try to make it as open as possible, for commercial reasons we do have to assert a few simple Terms and Conditions. By downloading the code you signify that you agree with these. They are:
 
 Wrox Press, the authors and distributors cannot be held responsible for any loss, damage or other claim caused by using the executable code or other files.

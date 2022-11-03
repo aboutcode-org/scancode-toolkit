@@ -1,3 +1,16 @@
+---
+key: jmagnetic
+short_name: JMagnetic License
+name: JMagnetic License
+category: Proprietary Free
+owner: Stefan Meier
+spdx_license_key: LicenseRef-scancode-jmagnetic
+ignorable_copyrights:
+    - copyright (c) 1998-99, Stefan Meier
+ignorable_holders:
+    - Stefan Meier
+---
+
 JMAGNETIC Licence Agreement
 
 This is a legal agreement between you and Stefan Meier covering your use of JMagnetic. Be sure to read the following agreement before using the software. IF YOU DO NOT AGREE TO THE TERMS OF THIS AGREEMENT, DO NOT USE THE SOFTWARE AND DESTROY ALL COPIES OF IT.

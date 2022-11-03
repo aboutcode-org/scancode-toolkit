@@ -1,3 +1,10 @@
+---
+license_expression: wifi-alliance
+is_license_text: yes
+ignorable_authors:
+    - permission from Wi-Fi Alliance
+---
+
 License is granted only to Wi-Fi Alliance members and designated  Wi-Fi
 contractors and, unless otherwise expressly authorized in writing by the
 Wi-Fi Alliance, is limited for use solely in testing Wi-Fi equipment in

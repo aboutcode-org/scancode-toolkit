@@ -1,1 +1,6 @@
+---
+is_false_positive: yes
+notes: not a license tag
+---
+
 #define GPL5

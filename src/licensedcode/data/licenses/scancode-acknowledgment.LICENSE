@@ -1,3 +1,16 @@
+---
+key: scancode-acknowledgment
+short_name: ScanCode acknowledgment
+name: ScanCode generated data acknowledgment
+category: Permissive
+owner: nexB
+homepage_url: https://github.com/nexB/scancode-toolkit/
+spdx_license_key: LicenseRef-scancode-scancode-acknowledgment
+minimum_coverage: 95
+ignorable_urls:
+    - https://github.com/nexB/scancode-toolkit/
+---
+
 Generated with ScanCode and provided on an "AS IS" BASIS, WITHOUT WARRANTIES
 OR CONDITIONS OF ANY KIND, either express or implied. No content created from
 ScanCode should be considered or used as legal advice. Consult an Attorney

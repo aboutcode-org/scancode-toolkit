@@ -1,3 +1,13 @@
+---
+key: aes-128-3.0
+short_name: AES-128 3.0 License
+name: AES-128 v3.0 License
+category: Public Domain
+owner: Unspecified
+spdx_license_key: LicenseRef-scancode-aes-128-3.0
+minimum_coverage: 90
+---
+
 All code contained in this distributed is placed in the public domain.
 ============================================================= 
 Disclaimer:
@@ -12,4 +22,4 @@ BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
 WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE 
 OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, 
 EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-============================================================= 
+=============================================================

@@ -1,3 +1,11 @@
+---
+license_expression: gpl-2.0 OR anu-license
+is_license_notice: yes
+minimum_coverage: 75
+referenced_filenames:
+    - ../../COPYING
+---
+
 Distribute under the terms of the GPLv2 (see ../../COPYING) or under 
 the following terms.
 
@@ -17,4 +25,3 @@ IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
 PURPOSE.  THE SOFTWARE PROVIDED HEREUNDER IS ON AN "AS IS" BASIS, AND
 RED HAT HAS NO OBLIGATION TO PROVIDE MAINTENANCE, SUPPORT, UPDATES,
 ENHANCEMENTS, OR MODIFICATIONS.
-

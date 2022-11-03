@@ -1,3 +1,12 @@
+---
+key: bsd-simplified-darwin
+short_name: BSD Simplified Darwin
+name: BSD Simplified Darwin
+category: Permissive
+owner: Ian Darwin
+spdx_license_key: LicenseRef-scancode-bsd-simplified-darwin
+---
+
 This software is not subject to any export provision of the United States
 Department of Commerce, and may be exported to any country or planet.
 

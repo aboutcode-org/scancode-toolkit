@@ -1,1 +1,9 @@
+---
+license_expression: dvipdfm
+is_license_reference: yes
+relevance: 100
+ignorable_urls:
+    - https://spdx.org/licenses/dvipdfm
+---
+
 {{dvipdfm}} https://spdx.org/licenses/dvipdfm

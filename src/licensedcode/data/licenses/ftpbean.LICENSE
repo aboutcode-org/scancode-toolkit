@@ -1,3 +1,21 @@
+---
+key: ftpbean
+short_name: FtpBean License
+name: FtpBean License
+category: Proprietary Free
+owner: Calvin Tai
+homepage_url: http://www.geocities.com/SiliconValley/Code/9129/javabean/ftpbean
+spdx_license_key: LicenseRef-scancode-ftpbean
+ignorable_copyrights:
+    - Copyright 1999 Calvin Tai
+ignorable_holders:
+    - Calvin Tai
+ignorable_urls:
+    - http://www.geocities.com/SiliconValley/Code/9129/javabean/ftpbean
+ignorable_emails:
+    - citidancer@hongkong.com
+---
+
 FtpBean                      Version 1.4.2
 Copyright 1999 Calvin Tai
 E-mail: citidancer@hongkong.com

@@ -1,1 +1,6 @@
+---
+is_false_positive: yes
+notes: Seen in smartmontools binary as a reference to "General Purpose Logging"
+---
+
 GPL GPL,SL

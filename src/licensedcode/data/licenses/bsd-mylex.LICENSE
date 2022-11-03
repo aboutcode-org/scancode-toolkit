@@ -1,3 +1,17 @@
+---
+key: bsd-mylex
+short_name: BSD-Mylex
+name: BSD-Mylex
+category: Permissive
+owner: Mylex
+notes: found in the Linux kernel for the Flashpoint code
+spdx_license_key: LicenseRef-scancode-bsd-mylex
+ignorable_copyrights:
+    - Copyright 1995-1996 by Mylex Corporation
+ignorable_holders:
+    - Mylex Corporation
+---
+
 Redistribution and use in source and binary forms, with or without
 modification, are permitted provided that the following conditions are
 met:

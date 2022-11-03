@@ -1,3 +1,26 @@
+---
+key: ace-tao
+short_name: ACE TAO License
+name: ACE TAO License
+category: Permissive
+owner: Douglas Schmidt
+homepage_url: http://www.cs.wustl.edu/~schmidt/
+spdx_license_key: DOC
+text_urls:
+    - http://www.cs.wustl.edu/~schmidt/ACE-copying.html
+other_urls:
+    - https://www.dre.vanderbilt.edu/~schmidt/ACE-copying.html
+minimum_coverage: 30
+ignorable_copyrights:
+    - copyrighted by Douglas C. Schmidt and his research group at Washington University, University
+        of California, Irvine, and Vanderbilt University, Copyright (c) 1993-2009
+ignorable_holders:
+    - Douglas C. Schmidt and his research group at Washington University, University of California,
+        Irvine, and Vanderbilt University
+ignorable_authors:
+    - the DOC Group at the Institute for Software Integrated Systems (ISIS) and the Center
+---
+
 Copyright and Licensing Information for ACE(TM), TAO(TM), CIAO(TM), and CoSMIC(TM)
 
 ACE(TM),TAO(TM),CIAO(TM),andCoSMIC(TM) (henceforth referred to as "DOC software") are copyrighted by Douglas C. Schmidt and his research group at Washington University, University of California, Irvine, and Vanderbilt University, Copyright (c) 1993-2009, all rights reserved. Since DOC software is open-source, freely available software, you are free to use, modify, copy, and distribute--perpetually and irrevocably--the DOC software source code and object code produced from the source, as well as copy and distribute modified versions of this software. You must, however, include this copyright statement along with any code built using DOC software that you release. No copyright statement needs to be provided if you just ship binary executables of your software products.

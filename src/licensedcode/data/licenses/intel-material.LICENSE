@@ -1,3 +1,12 @@
+---
+key: intel-material
+short_name: Intel Material License
+name: Intel Material License
+category: Commercial
+owner: Intel Corporation
+spdx_license_key: LicenseRef-scancode-intel-material
+---
+
 The source code, information and material ("Material") contained herein is
 owned by Intel Corporation or its suppliers or licensors, and title to such
 Material remains with Intel Corporation or its suppliers or licensors.

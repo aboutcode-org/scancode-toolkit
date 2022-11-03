@@ -1,3 +1,11 @@
+---
+license_expression: proprietary-license
+is_license_text: yes
+relevance: 100
+ignorable_emails:
+    - innovation@isis.ox.ac.uk
+---
+
 The Software remains the property of the University of Oxford ("the
 University").
 

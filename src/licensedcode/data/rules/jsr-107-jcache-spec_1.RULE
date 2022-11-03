@@ -1,3 +1,17 @@
+---
+license_expression: jsr-107-jcache-spec
+is_license_text: yes
+relevance: 95
+minimum_coverage: 30
+notes: this is for a slightly diffreent version of the sp3c license
+ignorable_copyrights:
+    - Copyright 2014 Oracle America, Inc. and Greg Luck
+ignorable_holders:
+    - Oracle America, Inc. and Greg Luck
+ignorable_urls:
+    - http://www.jcp.org/
+---
+
 
 JSR-000107 JCache - JavaTM Temporary Caching API Final Release for Evaluation
 
@@ -34,4 +48,3 @@ If you provide Specification Leads with any comments or suggestions concerning t
 GOVERNING LAW
 
 Any action relating to or arising out of this Agreement will be governed by California law and controlling U.S. federal law. The U.N. Convention for the International Sale of Goods and the choice of law rules of any jurisdiction will not apply.
-

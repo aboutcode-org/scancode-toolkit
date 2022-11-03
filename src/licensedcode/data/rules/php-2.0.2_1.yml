@@ -1,6 +1,0 @@
-license_expression: php-2.0.2
-is_license_notice: yes
-ignorable_urls:
-    - http://www.php.net/license/2_02.txt
-ignorable_emails:
-    - license@php.net

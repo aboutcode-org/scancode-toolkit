@@ -1,3 +1,10 @@
+---
+license_expression: openjdk-exception
+is_license_notice: yes
+ignorable_urls:
+    - http://openjdk.java.net/legal/exception-modules-2007-05-08.html
+---
+
     Linking this OpenJDK Code statically or dynamically with other code
     is making a combined work based on this library.  Thus, the terms
     and conditions of GPL2 cover the whole combination.

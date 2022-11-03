@@ -1,0 +1,19 @@
+---
+key: test-apache-2.0
+short_name: Apache 2.0
+name: Apache License 2.0
+category: Permissive
+owner: Apache Software Foundation
+homepage_url: http://www.apache.org/licenses/
+spdx_license_key: Apache-2.0
+text_urls:
+    - http://www.apache.org/licenses/LICENSE-2.0
+osi_url: http://opensource.org/licenses/apache2.0.php
+faq_url: http://www.apache.org/foundation/licence-FAQ.html
+---
+
+Apache License
+Version 2.0, January 2004
+http://www.apache.org/licenses/
+
+   TERMS AND CONDITIONS FOR USE, REPRODUCTION, AND DISTRIBUTION

@@ -1,3 +1,11 @@
+---
+license_expression: proprietary-license
+is_license_text: yes
+relevance: 100
+notes: https://molspin.eu/license This is a bsd-original-like but the "Every use" clause is
+    rather impractical hence the initial qualification as proprietary-license
+---
+
 Redistribution and use in source and binary forms, with or without modification,
 are permitted provided that the following conditions are met:
 

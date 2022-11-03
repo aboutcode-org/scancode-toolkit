@@ -1,3 +1,13 @@
+---
+key: scintilla
+short_name: Scintilla License
+name: Scintilla License
+category: Permissive
+owner: Scintilla Project
+homepage_url: https://www.scintilla.org/License.txt
+spdx_license_key: LicenseRef-scancode-scintilla
+---
+
 Permission to use, copy, modify, and distribute this software and its
 documentation for any purpose and without fee is hereby granted,
 provided that the above copyright notice appear in all copies and that

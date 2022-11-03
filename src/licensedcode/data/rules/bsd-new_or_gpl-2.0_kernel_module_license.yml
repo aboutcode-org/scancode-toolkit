@@ -1,6 +1,0 @@
-license_expression: bsd-new OR gpl-2.0
-is_license_tag: yes
-relevance: 100
-minimum_coverage: 100
-notes: This is an LKM MODULE_license macro with Dual BSD/GPL as defined in and documented in
-    the kernel module.h

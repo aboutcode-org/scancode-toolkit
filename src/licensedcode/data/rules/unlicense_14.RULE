@@ -1,3 +1,11 @@
+---
+license_expression: unlicense
+is_license_text: yes
+relevance: 100
+ignorable_urls:
+    - https://unlicense.org/
+---
+
 This is free and unencumbered software released into the public domain.
 
 Anyone is free to copy, modify, publish, use, compile, sell, or

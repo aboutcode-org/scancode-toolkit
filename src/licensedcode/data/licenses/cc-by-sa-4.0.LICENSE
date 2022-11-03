@@ -1,3 +1,17 @@
+---
+key: cc-by-sa-4.0
+short_name: CC-BY-SA-4.0
+name: Creative Commons Attribution-ShareAlike 4.0 International Public License
+category: Copyleft Limited
+owner: Creative Commons
+homepage_url: http://creativecommons.org/licenses/by-sa/4.0/
+spdx_license_key: CC-BY-SA-4.0
+text_urls:
+    - http://creativecommons.org/licenses/by-sa/4.0/legalcode
+other_urls:
+    - https://creativecommons.org/licenses/by-sa/4.0/legalcode
+---
+
 Attribution-ShareAlike 4.0 International
 
 =======================================================================

@@ -1,1 +1,7 @@
+---
+license_expression: bsd-new AND apache-2.0
+is_license_notice: yes
+relevance: 100
+---
+
 Please read the LICENSE.BSD file that governs go and LICENSE.APACHE

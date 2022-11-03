@@ -1,3 +1,21 @@
+---
+key: bitstream
+short_name: Bitstream Vera Font License
+name: Bitstream Vera Font License
+category: Permissive
+owner: Bitstream
+homepage_url: http://www.gnome.org/fonts/#Final_Bitstream_Vera_Fonts
+spdx_license_key: Bitstream-Vera
+other_spdx_license_keys:
+    - LicenseRef-scancode-bitstream
+text_urls:
+    - http://www.gnome.org/fonts/#Final_Bitstream_Vera_Fonts
+other_urls:
+    - https://docubrain.com/sites/default/files/licenses/bitstream-vera.html
+    - https://web.archive.org/web/20080207013128/http://www.gnome.org/fonts/
+minimum_coverage: 50
+---
+
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of the fonts accompanying this license ("Fonts") and associated
 documentation files (the "Font Software"), to reproduce and distribute

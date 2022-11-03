@@ -1,3 +1,9 @@
+---
+license_expression: gpl-2.0 WITH dune-exception
+is_license_notice: yes
+relevance: 100
+---
+
 The DUNE library and headers are licensed under version 2 of the GNU General Public License (see below), with a special exception for linking and compiling against DUNE, the so-called "runtime exception." The license is intended to be similar to the GNU Lesser General Public License, which by itself isn't suitable for a template library.
 
 The exact wording of the exception reads as follows:

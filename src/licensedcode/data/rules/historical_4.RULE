@@ -1,3 +1,10 @@
+---
+license_expression: historical
+is_license_text: yes
+minimum_coverage: 90
+notes: this is a weird notice with double disclaimer
+---
+
 Permission to use, copy, modify, and distribute this software and its
 documentation for any purpose and without fee is hereby granted,
 provided that the above copyright notice appear in all copies and that

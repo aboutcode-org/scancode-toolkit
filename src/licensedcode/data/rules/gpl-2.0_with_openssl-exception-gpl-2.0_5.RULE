@@ -1,3 +1,9 @@
+---
+license_expression: gpl-2.0 WITH openssl-exception-gpl-2.0
+is_license_notice: yes
+relevance: 100
+---
+
 In addition, as a special exception,  give
 permission to link the code of with the
 OpenSSL library under certain conditions as described in each

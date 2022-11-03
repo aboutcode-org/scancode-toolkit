@@ -1,1 +1,10 @@
+---
+license_expression: lgpl-2.1
+is_license_reference: yes
+relevance: 100
+notes: http://creativecommons.org/images/public/cc-LGPL
+ignorable_urls:
+    - http://creativecommons.org/images/public/cc-LGPL
+---
+
 http://creativecommons.org/images/public/cc-LGPL

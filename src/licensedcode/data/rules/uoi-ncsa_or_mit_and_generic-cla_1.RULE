@@ -1,3 +1,9 @@
+---
+license_expression: (uoi-ncsa OR mit) AND generic-cla
+is_license_notice: yes
+relevance: 100
+---
+
 The software contained in this directory tree is dual licensed under both the
 University of Illinois "BSD-Like" license and the MIT license.  As a user of
 this code you may choose to use it under either license.  As a contributor,

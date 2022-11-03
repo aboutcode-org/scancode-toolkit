@@ -1,9 +1,0 @@
-license_expression: gpl-2.0 AND proprietary-license
-is_license_notice: yes
-minimum_coverage: 80
-ignorable_copyrights:
-    - copyrighted by Red Hat and others
-ignorable_holders:
-    - Red Hat and others
-ignorable_urls:
-    - http://fedoraproject.org/wiki/Legal

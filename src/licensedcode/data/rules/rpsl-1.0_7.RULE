@@ -1,3 +1,20 @@
+---
+license_expression: rpsl-1.0
+is_license_text: yes
+notes: rpsl 1.0 text
+ignorable_copyrights:
+    - Copyright (c) 1995-2002 RealNetworks, Inc. and/or its licensors
+    - Copyright (c) RealNetworks, Inc., 1995-2002
+ignorable_holders:
+    - RealNetworks, Inc.
+    - RealNetworks, Inc. and/or its licensors
+ignorable_urls:
+    - http://www.realnetworks.com/info/helixlogo.html
+    - https://www.helixcommunity.org/content/complicense
+    - https://www.helixcommunity.org/content/rcsl
+    - https://www.helixcommunity.org/content/rpsl
+---
+
 RealNetworks Public Source License Version 1.0 (Rev. Date October 28, 2002)
  1. General Definitions. This License applies to any program or other work which RealNetworks, Inc., or any other entity that elects to use this license, ("Licensor")
  makes publicly available and which contains a notice placed by Licensor identifying such program or work as "Original Code" and stating that it is subject to the terms of this RealNetworks Public Source License version 1.0 (or subsequent version thereof)
@@ -77,4 +94,4 @@ RealNetworks Public Source License Version 1.0 (Rev. Date October 28, 2002)
  * Mozilla Public License 1.1 (MPL)
  * Nokia Open Source License * Open Group Test Suite License * Python Software Foundation License * Ricoh Source Code Public License * Sun Industry Standards Source License (SISSL)
  * Sun Public License * University of Illinois/NCSA Open Source License * Vovida Software License v. 1.0 * W3C License * X.Net License * Zope Public License * zlib/libpng license (1)
- Note: because this license contains certain reciprocal licensing terms that purport to extend to independently developed code, You may be prohibited under the terms of this otherwise compatible license from using code licensed under its terms with Covered Code because Covered Code may only be licensed under the RealNetworks Public Source License. Any attempt to apply non RPSL license terms, including without limitation the GPL, to Covered Code is expressly forbidden. You are responsible for ensuring that Your use of Compatible Source Licensed code does not violate either the RPSL or the Compatible Source License. The latest version of this list can be found at: https://www.helixcommunity.org/content/complicense EXHIBIT C RealNetworks' Trademark policy. RealNetworks defines the following trademarks collectively as "Licensor Trademarks": "RealNetworks", "RealPlayer", "RealJukebox", "RealSystem", "RealAudio", "RealVideo", "RealOne Player", "RealMedia", "Helix" or any other trademarks or trade names belonging to RealNetworks. RealNetworks "Licensor Trademark Policy" forbids any use of Licensor Trademarks except as permitted by and in strict compliance at all times with RealNetworks' third party trademark usage guidelines which are posted at http://www.realnetworks.com/info/helixlogo.html. 
+ Note: because this license contains certain reciprocal licensing terms that purport to extend to independently developed code, You may be prohibited under the terms of this otherwise compatible license from using code licensed under its terms with Covered Code because Covered Code may only be licensed under the RealNetworks Public Source License. Any attempt to apply non RPSL license terms, including without limitation the GPL, to Covered Code is expressly forbidden. You are responsible for ensuring that Your use of Compatible Source Licensed code does not violate either the RPSL or the Compatible Source License. The latest version of this list can be found at: https://www.helixcommunity.org/content/complicense EXHIBIT C RealNetworks' Trademark policy. RealNetworks defines the following trademarks collectively as "Licensor Trademarks": "RealNetworks", "RealPlayer", "RealJukebox", "RealSystem", "RealAudio", "RealVideo", "RealOne Player", "RealMedia", "Helix" or any other trademarks or trade names belonging to RealNetworks. RealNetworks "Licensor Trademark Policy" forbids any use of Licensor Trademarks except as permitted by and in strict compliance at all times with RealNetworks' third party trademark usage guidelines which are posted at http://www.realnetworks.com/info/helixlogo.html.

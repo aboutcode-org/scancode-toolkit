@@ -1,1 +1,10 @@
+---
+license_expression: bsd-new
+is_license_reference: yes
+relevance: 99
+referenced_filenames:
+    - docs/LICENSE
+notes: very short mention
+---
+
 License: BSD (see docs/LICENSE for details)

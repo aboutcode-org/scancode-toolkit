@@ -1,3 +1,15 @@
+---
+key: karl-peterson
+short_name: Karl Peterson License
+name: Karl Peterson License
+category: Free Restricted
+owner: Karl Peterson
+homepage_url: http://www.mvps.org/vb
+spdx_license_key: LicenseRef-scancode-karl-peterson
+other_urls:
+    - http://www.mvps.org/vb
+---
+
 You are free to use this code within your own applications, but you
 are expressly forbidden from selling or otherwise distributing this
 source code without prior written consent.

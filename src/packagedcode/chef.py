@@ -55,7 +55,7 @@ def chef_api_url(name, version):
     return name and version and f'https://supermarket.chef.io/api/v1/cookbooks/{name}/versions/{version}'
 
 
-def get_urls(name, version):
+def get_urls(name, version, **kwargs):
     """
     Return a mapping of URLs given a name and version.
     """

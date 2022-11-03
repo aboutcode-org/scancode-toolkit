@@ -1,1 +1,9 @@
+---
+license_expression: ms-pl
+is_license_reference: yes
+relevance: 90
+ignorable_urls:
+    - http://wp7contrib.codeplex.com/license
+---
+
 http://wp7contrib.codeplex.com/license

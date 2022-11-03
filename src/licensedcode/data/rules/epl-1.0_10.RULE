@@ -1,3 +1,11 @@
+---
+license_expression: epl-1.0
+is_license_notice: yes
+relevance: 100
+ignorable_urls:
+    - http://www.eclipse.org/
+---
+
 Java compilation software for JSP pages is provided by Eclipse, 
 which is open source software.  The original software and 
 related information is available at

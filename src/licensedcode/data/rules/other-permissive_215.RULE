@@ -1,3 +1,11 @@
+---
+license_expression: other-permissive
+is_license_text: yes
+relevance: 100
+notes: Seen in libtar 1.2.x and in older versions of cmake such as in https://github.com/Kitware/CMake/blob/v2.4.8/Utilities/cmtar/compat/gethostname.c
+    This is a cross-over of an mit-old-style with a warranty disclaimer from a modern MIT license.
+---
+
 * Permission to use, copy, modify, distribute, and sell this software
  * and its documentation for any purpose is hereby granted without fee,
  * provided that the above copyright notice appear in all copies and

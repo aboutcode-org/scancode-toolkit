@@ -1,3 +1,20 @@
+---
+key: otn-early-adopter-2018
+short_name: OTN Early Adopter 2018
+name: OTN Early Adopter Development License 2018
+category: Proprietary Free
+owner: Oracle Corporation
+homepage_url: https://www.oracle.com/downloads/licenses/solaris-ea-license.html
+spdx_license_key: LicenseRef-scancode-otn-early-adopter-2018
+other_urls:
+    - https://www.theregister.com/2022/03/04/solaris_common_build_environments_free/
+ignorable_urls:
+    - http://www.oracle.com/goto/opensourcecode
+    - http://www.oracle.com/legal/privacy/privacy-policy.html
+    - https://docs.oracle.com/en/
+    - https://oss.oracle.com/sources/
+---
+
 Oracle Technology Network Early Adopter License Agreement for Oracle Solaris
 
 Oracle is willing to authorize Your access to Oracle Solaris pre-GA software under this License Agreement (“Agreement”) only upon the condition that You accept that this Agreement governs Your use of the pre-GA Oracle Solaris and any updated versions of such pre-GA software. By selecting the “Accept License Agreement” button or box (or the equivalent) or installing or using the Programs You indicate Your acceptance of this Agreement and Your agreement, as an authorized representative of Your company or organization (if being acquired for use by an entity) or as an individual, to comply with the license terms that apply to the software that You wish to download and access. If You are not willing to be bound by this Agreement, do not select the “Accept License Agreement” button or box (or the equivalent) and do not download or access the software.

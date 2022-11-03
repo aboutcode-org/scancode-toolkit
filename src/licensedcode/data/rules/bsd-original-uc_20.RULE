@@ -1,3 +1,12 @@
+---
+license_expression: bsd-original-uc
+is_license_text: yes
+relevance: 100
+minimum_coverage: 90
+ignorable_authors:
+    - the Computer Systems Engineering Group at Lawrence Berkeley Laboratory
+---
+
  Redistribution and use in source and binary forms, with or without
  modification, are permitted provided that the following conditions
  are met:

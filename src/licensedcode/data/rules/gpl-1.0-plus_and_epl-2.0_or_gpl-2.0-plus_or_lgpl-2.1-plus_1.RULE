@@ -1,3 +1,11 @@
+---
+license_expression: gpl-1.0-plus AND (epl-2.0 OR gpl-2.0-plus OR lgpl-2.1-plus)
+is_license_notice: yes
+relevance: 100
+referenced_filenames:
+    - COPYING
+---
+
  * The output this tool generates is subject to our tri-license (GPL,LGPL,
  * and EPL), but this source file itself is released only under the terms
  * of the GPL.

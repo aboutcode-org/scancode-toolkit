@@ -1,3 +1,10 @@
+---
+license_expression: apsl-1.1
+is_license_notice: yes
+ignorable_urls:
+    - http://www.apple.com/publicsource
+---
+
 This file contains Original Code and/or Modifications of
 Original Code as defined in and that are subject to the Apple Public
 Source License Version 1.1 (the "License").  You may not use this file

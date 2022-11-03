@@ -1,3 +1,9 @@
+---
+license_expression: python
+is_license_notice: yes
+relevance: 100
+---
+
 The python-ldap package is distributed under Python-style license.
 
 Standard disclaimer:

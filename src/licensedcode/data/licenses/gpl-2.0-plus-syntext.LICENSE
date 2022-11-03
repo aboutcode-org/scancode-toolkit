@@ -1,3 +1,14 @@
+---
+key: gpl-2.0-plus-syntext
+is_deprecated: yes
+short_name: GPL 2.0 or GPL 3.0 with Syntext Serna exception
+name: GPL 2.0 or GPL 3.0 with Syntext Serna exception
+category: Copyleft Limited
+owner: Syntext
+homepage_url: https://github.com/ydirson/serna-free/blob/master/GPL_EXCEPTION.txt
+is_exception: yes
+---
+
 Syntext, Inc. GPL License Exception for Syntext Serna Free Edition 
 
                       Version 1.0

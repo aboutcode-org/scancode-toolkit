@@ -1,3 +1,10 @@
+---
+license_expression: linux-openib
+is_license_text: yes
+minimum_coverage: 80
+notes: openib
+---
+
                      OpenIB.org BSD license (MIT variant)
 
 Redistribution and use in source and binary forms, with or without

@@ -1,3 +1,17 @@
+---
+key: gpl-2.0-openjdk
+is_deprecated: yes
+short_name: GPL 2.0 with OpenJDK Classpath exception
+name: GPL 2.0 with OpenJDK Classpath exception
+category: Copyleft Limited
+owner: Oracle (Sun)
+notes: |
+    use a GPL with the openjdk-exception or with the classpath-exception-2.0
+    instead
+is_exception: yes
+faq_url: http://openjdk.java.net/legal/exception-modules-2007-05-08.html
+---
+
 This library is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 2, or (at your option) any later version.
 
 This library is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details.

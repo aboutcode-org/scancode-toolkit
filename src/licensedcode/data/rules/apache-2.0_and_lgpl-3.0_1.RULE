@@ -1,3 +1,12 @@
+---
+license_expression: apache-2.0 AND lgpl-3.0
+is_license_notice: yes
+relevance: 100
+referenced_filenames:
+    - COPYING.LGPL
+    - COPYING.ASL2
+---
+
 distributed pursuant to the terms of two different licenses.
 The user interface (located in ui/ in this distribution) is governed by
 the Apache License version 2.0.  The rest of this distribution is

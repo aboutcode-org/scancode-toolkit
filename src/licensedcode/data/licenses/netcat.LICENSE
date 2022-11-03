@@ -1,3 +1,15 @@
+---
+key: netcat
+short_name: Netcat License
+name: Netcat License
+category: Permissive
+owner: Netcat Project
+homepage_url: http://nc110.sourceforge.net/
+spdx_license_key: LicenseRef-scancode-netcat
+ignorable_emails:
+    - nc110-devel@lists.sourceforge.net
+---
+
 Netcat is entirely my own creation, although plenty of other code was used as
 examples.  It is freely given away to the Internet community in the hope that
 it will be useful, with no restrictions except giving credit where it is due.

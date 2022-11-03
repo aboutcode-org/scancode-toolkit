@@ -1,2 +1,8 @@
+---
+license_expression: ruby OR lgpl-2.0-plus
+is_license_notice: yes
+relevance: 100
+---
+
 #  You may redistribute it and/or modify it under the same
 #  license terms as Ruby or LGPL.

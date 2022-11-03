@@ -1,3 +1,18 @@
+---
+key: dynamic-drive-tou
+short_name: Dynamic Drive TOU
+name: Dynamic Drive Terms of Use
+category: Permissive
+owner: DynamicDrive
+spdx_license_key: LicenseRef-scancode-dynamic-drive-tou
+ignorable_copyrights:
+    - (c) Dynamic Drive (http://www.dynamicdrive.com)
+ignorable_holders:
+    - Dynamic Drive
+ignorable_urls:
+    - http://www.dynamicdrive.com/
+---
+
 Dynamic Drive DHTML scripts- Terms of Use
 
 Unless indicated otherwise by the credit, all scripts on this site are original

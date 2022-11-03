@@ -1,3 +1,11 @@
+---
+license_expression: apsl-2.0
+is_license_text: yes
+ignorable_urls:
+    - http://www.apple.com/legal/guidelinesfor3rdparties.html
+    - http://www.opensource.apple.com/apsl/
+---
+
 APPLE PUBLIC SOURCE LICENSE
 Version 2.0 -  August 6, 2003
 
@@ -105,4 +113,4 @@ distributed on an 'AS IS' basis, WITHOUT WARRANTY OF ANY KIND, EITHER
 EXPRESS OR IMPLIED, AND    HEREBY DISCLAIMS ALL SUCH WARRANTIES, 
 INCLUDING WITHOUT LIMITATION, ANY WARRANTIES OF MERCHANTABILITY, 
 FITNESS FOR A PARTICULAR PURPOSE, QUIET ENJOYMENT OR NON-INFRINGEMENT.  
-Please see the License for the specific language governing rights and limitations under the License." 
+Please see the License for the specific language governing rights and limitations under the License."

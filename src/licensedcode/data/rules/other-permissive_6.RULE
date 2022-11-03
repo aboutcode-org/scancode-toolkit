@@ -1,3 +1,9 @@
+---
+license_expression: other-permissive
+is_license_reference: yes
+notes: an apache-2.0 license moified with an extra section 10
+---
+
 This project is made available under a **modified version of the Apache-2.0 license**.
 The only modification is an additional section (paragraph 10) in which we ask
 that you do not pass off any derivative products as Palantir’s products, given

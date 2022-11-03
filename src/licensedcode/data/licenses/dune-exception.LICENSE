@@ -1,3 +1,16 @@
+---
+key: dune-exception
+short_name: DUNE exception to the GPL
+name: DUNE exception to the GPL
+category: Copyleft Limited
+owner: DUNE Project
+homepage_url: https://dune-project.org/about/license/
+is_exception: yes
+spdx_license_key: LicenseRef-scancode-dune-exception
+text_urls:
+    - https://github.com/dune-project/dune-common/blob/master/LICENSE.md
+---
+
 As a special exception, you may use the DUNE source files as part of a software
 library or application without restriction. Specifically, if other files
 instantiate templates or use macros or inline functions from one or more of the

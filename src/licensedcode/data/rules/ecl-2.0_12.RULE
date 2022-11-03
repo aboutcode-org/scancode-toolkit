@@ -1,3 +1,11 @@
+---
+license_expression: ecl-2.0
+is_license_notice: yes
+minimum_coverage: 70
+ignorable_urls:
+    - https://www.apache.org/licenses/LICENSE-2.0
+---
+
 The Educational Community License version 2.0 ("ECL") consists of the Apache 2.0 
 license, modified to change the scope of the patent grant in section 3 to be 
 specific to the needs of the education communities using this license. The 
@@ -161,4 +169,4 @@ obligations, You may act only on Your own behalf and on Your sole
 responsibility, not on behalf of any other Contributor, and only if You agree to 
 indemnify, defend, and hold each Contributor harmless for any liability incurred 
 by, or claims asserted against, such Contributor by reason of your accepting any 
-such warranty or additional liability. 
+such warranty or additional liability.

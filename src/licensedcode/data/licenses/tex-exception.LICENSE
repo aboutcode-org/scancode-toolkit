@@ -1,3 +1,13 @@
+---
+key: tex-exception
+short_name: TeX exception to GPL 3.0
+name: TeX exception to GPL 3.0
+category: Copyleft Limited
+owner: Unspecified
+is_exception: yes
+spdx_license_key: LicenseRef-scancode-tex-exception
+---
+
 As a special exception, when this file is read by TeX when processing
 a Texinfo source document, you may use the result without
 restriction. This Exception is an additional permission under section 7

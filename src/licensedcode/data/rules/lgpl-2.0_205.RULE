@@ -1,3 +1,9 @@
+---
+license_expression: lgpl-2.0
+is_license_notice: yes
+notes: https://github.com/libigl/libigl/blob/21acee15fe4451e828b52bedcdba53b79d846376/include/igl/copyleft/marching_cubes_tables.h
+---
+
 *                                License                                    *
  *                                                                           *
  *  This library is free software; you can redistribute it and/or modify it  *

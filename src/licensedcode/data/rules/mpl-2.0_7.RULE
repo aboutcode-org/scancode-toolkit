@@ -1,3 +1,10 @@
+---
+license_expression: mpl-2.0
+is_license_notice: yes
+ignorable_urls:
+    - http://mozilla.org/MPL/2.0
+---
+
 /***** BEGIN LICENSE BLOCK *****
  *
  * This Source Code Form is subject to the terms of the Mozilla Public

@@ -1,3 +1,11 @@
+---
+license_expression: commercial-license
+is_license_notice: yes
+relevance: 100
+ignorable_emails:
+    - dworkin@hippolytos.cd.chalmers.se
+---
+
 As long as you don't use DGD commercially, you can treat it as free
 software.  Commercial use is defined as making money using DGD, e.g.
 a mud that charges players for playing or for certain privileges (even

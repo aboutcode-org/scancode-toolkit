@@ -1,3 +1,10 @@
+---
+license_expression: other-copyleft
+is_license_notice: yes
+relevance: 100
+notes: This is a rare BSD-looking MPL-like license originally seen at https://git.wark.io/lib/textutil-go
+---
+
 Redistribution and use in source and binary forms, with or without
 modification, are permitted provided that the following conditions are
 met:

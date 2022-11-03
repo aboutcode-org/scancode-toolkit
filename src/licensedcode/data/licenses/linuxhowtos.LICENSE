@@ -1,3 +1,14 @@
+---
+key: linuxhowtos
+short_name: linuxhowtos License
+name: linuxhowtos License
+category: Permissive
+owner: Linux Foundation
+homepage_url: http://www.linuxhowtos.org/category17/
+spdx_license_key: LicenseRef-scancode-linuxhowtos
+minimum_coverage: 80
+---
+
 All howtos and documents on this site are provided "AS IS," with no
 express or implied warranties. Use the information on this site at your
 own risk.

@@ -1,3 +1,29 @@
+---
+key: openpbs-2.3
+short_name: OpenPBS 2.3
+name: OpenPBS Software License v2.3
+category: Copyleft Limited
+owner: Fedora
+homepage_url: http://fedoraproject.org/wiki/Licensing/OpenPBS
+spdx_license_key: LicenseRef-scancode-openpbs-2.3
+text_urls:
+    - http://fedoraproject.org/wiki/Licensing/OpenPBS
+other_urls:
+    - www.OpenPBS.org
+ignorable_copyrights:
+    - Copyright (c) 1999-2000 Veridian Information Solutions, Inc.
+ignorable_holders:
+    - Veridian Information Solutions, Inc.
+ignorable_authors:
+    - NASA Ames Research Center, Lawrence Livermore National Laboratory, and Veridian Information
+        Solutions, Inc.
+ignorable_urls:
+    - http://www.openpbs.org/
+    - http://www.openpbs.org/credit.html
+ignorable_emails:
+    - sales@OpenPBS.org
+---
+
 OpenPBS (Portable Batch System) v2.3 Software License
 
 Copyright (c) 1999-2000 Veridian Information Solutions, Inc.

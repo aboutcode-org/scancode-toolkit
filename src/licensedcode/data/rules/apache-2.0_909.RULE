@@ -1,3 +1,11 @@
+---
+license_expression: apache-2.0
+is_license_notice: yes
+relevance: 100
+ignorable_urls:
+    - https://www.apache.org/licenses/LICENSE-2.0
+---
+
 This is licensed under the
 Apache (Software) License, version 2.0 ("the License").
 See the License for details about distribution rights, and the

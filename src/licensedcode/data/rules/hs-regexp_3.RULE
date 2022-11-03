@@ -1,3 +1,9 @@
+---
+license_expression: hs-regexp
+is_license_notice: yes
+minimum_coverage: 80
+---
+
 Permission is granted to anyone to use this software for any purpose on
 any computer system, and to alter it and redistribute it, subject
 to the following restrictions:

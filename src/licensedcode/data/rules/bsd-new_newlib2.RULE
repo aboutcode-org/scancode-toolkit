@@ -1,3 +1,10 @@
+---
+license_expression: bsd-new
+is_license_notice: yes
+ignorable_urls:
+    - http://www.opensource.org/licenses
+---
+
 This copyrighted material is made available to anyone wishing to use,
 modify, copy, or redistribute it subject to the terms and conditions
 of the BSD License.   This program is distributed in the hope that 

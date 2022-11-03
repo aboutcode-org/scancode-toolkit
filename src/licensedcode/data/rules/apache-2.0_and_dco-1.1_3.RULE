@@ -1,2 +1,10 @@
+---
+license_expression: apache-2.0 AND dco-1.1
+is_license_notice: yes
+referenced_filenames:
+    - LICENSE
+    - DCO1.1.txt
+---
+
 This project uses [the Apache 2.0 license](./LICENSE). 
 Contribution to this project requires the [DCO 1.1](./DCO1.1.txt) process to be followed.

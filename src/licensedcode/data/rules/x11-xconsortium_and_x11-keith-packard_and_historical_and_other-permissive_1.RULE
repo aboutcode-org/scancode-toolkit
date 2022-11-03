@@ -1,1 +1,9 @@
+---
+license_expression: x11-xconsortium AND x11-keith-packard AND historical AND other-permissive
+is_license_text: yes
+relevance: 100
+minimum_coverage: 100
+notes: in x11
+---
+
 The following licenses are 'legacy' - usually MIT/X11 licenses

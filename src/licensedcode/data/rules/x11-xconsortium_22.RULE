@@ -1,2 +1,10 @@
+---
+license_expression: x11-xconsortium
+is_license_notice: yes
+relevance: 99
+referenced_filenames:
+    - build/install-sh
+---
+
 This product includes software developed under the X Consortium License
 see: build/install-sh

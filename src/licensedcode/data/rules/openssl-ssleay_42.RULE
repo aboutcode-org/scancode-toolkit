@@ -1,3 +1,11 @@
+---
+license_expression: openssl-ssleay
+is_license_notice: yes
+relevance: 100
+ignorable_emails:
+    - openssl-core@openssl.org
+---
+
 OpenSSL License:
 
   The OpenSSL toolkit stays under a dual license, i.e. both the conditions of

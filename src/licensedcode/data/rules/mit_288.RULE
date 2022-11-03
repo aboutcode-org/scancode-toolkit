@@ -1,1 +1,9 @@
+---
+license_expression: mit
+is_license_reference: yes
+relevance: 90
+ignorable_urls:
+    - https://github.com/surgeforward/Surge-SlickGrid-Extensions/blob/master/Surge.SlickGrid.Extensions-license.txt
+---
+
 https://github.com/surgeforward/Surge-SlickGrid-Extensions/blob/master/Surge.SlickGrid.Extensions-license.txt

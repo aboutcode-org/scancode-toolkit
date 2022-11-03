@@ -1,3 +1,16 @@
+---
+key: sglib
+short_name: Sglib License
+name: Sglib License
+category: Permissive
+owner: Unspecified
+spdx_license_key: LicenseRef-scancode-sglib
+other_urls:
+    - http://www.xref-tech.com/sglib/
+ignorable_urls:
+    - http://www.opensource.org/
+---
+
 Basically, I only care that you do not remove the Copyright notice from the
 source code when using Sglib.
 

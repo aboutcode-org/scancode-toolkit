@@ -1,3 +1,13 @@
+---
+key: bruno-podetti
+short_name: Bruno Podetti License
+name: Bruno Podetti License
+category: Permissive
+owner: Bruno Podetti
+homepage_url: http://www.codeproject.com/Articles/2354/Owner-Drawn-Menu-with-Icons-Titles-and-Shading
+spdx_license_key: LicenseRef-scancode-bruno-podetti
+---
+
 You are free to use/modify this code but leave this header intact.
 This class is public domain so you are free to use it any of your 
 applications (Freeware, Shareware, Commercial). 

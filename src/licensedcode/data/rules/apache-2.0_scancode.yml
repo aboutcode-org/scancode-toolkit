@@ -1,5 +1,0 @@
-license_expression: apache-2.0
-is_license_notice: yes
-minimum_coverage: 95
-ignorable_urls:
-    - http://apache.org/licenses/LICENSE-2.0

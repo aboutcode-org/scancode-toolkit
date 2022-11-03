@@ -1,3 +1,17 @@
+---
+license_expression: zlib-acknowledgement
+is_license_notice: yes
+minimum_coverage: 60
+notes: license text as published by SPDX for nunit-v2
+ignorable_copyrights:
+    - Copyright (c) 2000-2004 Philip A. Craig
+    - Portions Copyright (c) 2002-2004 James W. Newkirk, Michael C. Two, Alexei A. Vorontsov,
+        Charlie Poole
+ignorable_holders:
+    - James W. Newkirk, Michael C. Two, Alexei A. Vorontsov, Charlie Poole
+    - Philip A. Craig
+---
+
 This software is provided 'as-is', without any express or implied warranty. In no event will the authors be held liable for any damages arising from the use of this software.
 
 Permission is granted to anyone to use this software for any purpose, including commercial applications, and to alter it and redistribute it freely, subject to the following restrictions:

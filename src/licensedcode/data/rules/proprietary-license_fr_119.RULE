@@ -1,3 +1,12 @@
+---
+license_expression: proprietary-license
+language: fr
+is_license_text: yes
+relevance: 100
+ignorable_urls:
+    - http://www.sun.com/patents
+---
+
 Sun Microsystems, Inc. a les droits de proprie'te' intellectuels
 relatants a` la technologie incorpore'e dans le produit qui est de'crit
 dans ce document. En particulier, et sans la limitation, ces droits de

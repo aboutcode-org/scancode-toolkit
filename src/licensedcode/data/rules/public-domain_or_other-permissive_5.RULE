@@ -1,3 +1,12 @@
+---
+license_expression: public-domain OR other-permissive
+is_license_notice: yes
+ignorable_authors:
+    - Alexander Peslyak
+ignorable_urls:
+    - http://openwall.info/wiki/people/solar/software/public-domain-source-code/md5
+---
+
  Homepage:
  http://openwall.info/wiki/people/solar/software/public-domain-source-code/md5
 
@@ -16,4 +25,3 @@
  There's ABSOLUTELY NO WARRANTY, express or implied.
 
  (This is a heavily cut-down "BSD license".)
- 

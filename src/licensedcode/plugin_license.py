@@ -7,18 +7,18 @@
 # See https://aboutcode.org for more information about nexB OSS projects.
 #
 
-
 import logging
 import os
 from functools import partial
 
 import attr
-from commoncode.cliutils import MISC_GROUP
+import license_expression
 from commoncode.cliutils import PluggableCommandLineOption
 from commoncode.cliutils import SCAN_GROUP
 from commoncode.cliutils import SCAN_OPTIONS_GROUP
 from plugincode.scan import ScanPlugin
 from plugincode.scan import scan_impl
+from license_expression import Licensing
 from licensedcode.cache import build_spdx_license_expression, get_cache
 from licensedcode.detection import DetectionCategory
 from licensedcode.detection import find_referenced_resource
@@ -38,51 +38,13 @@ def logger_debug(*args):
 
 logger = logging.getLogger(__name__)
 
-
 if TRACE:
     import sys
-
     logging.basicConfig(stream=sys.stdout)
     logger.setLevel(logging.DEBUG)
 
     def logger_debug(*args):
         return logger.debug(' '.join(isinstance(a, str) and a or repr(a) for a in args))
-
-
-def reindex_licenses(ctx, param, value):
-    """
-    Rebuild and cache the license index
-    """
-    if not value or ctx.resilient_parsing:
-        return
-
-    # TODO: check for temp file configuration and use that for the cache!!!
-    import click
-
-    from licensedcode.cache import get_index
-    click.echo('Rebuilding the license index...')
-    get_index(force=True)
-    click.echo('Done.')
-    ctx.exit(0)
-
-
-def reindex_licenses_all_languages(ctx, param, value):
-    """
-    EXPERIMENTAL: Rebuild and cache the license index including all languages
-    and not only English.
-    """
-    if not value or ctx.resilient_parsing:
-        return
-
-    # TODO: check for temp file configuration and use that for the cache!!!
-    import click
-
-    from licensedcode.cache import get_index
-    click.echo('Rebuilding the license index for all languages...')
-    get_index(force=True, index_all_languages=True)
-    click.echo('Done.')
-    ctx.exit(0)
-
 
 @scan_impl
 class LicenseScanner(ScanPlugin):
@@ -137,25 +99,7 @@ class LicenseScanner(ScanPlugin):
             help='Set the template URL used for the license reference URLs. '
                  'Curly braces ({}) are replaced by the license key.',
             help_group=SCAN_OPTIONS_GROUP,
-        ),
-
-        PluggableCommandLineOption(
-            ('--reindex-licenses',),
-            is_flag=True, is_eager=True,
-            callback=reindex_licenses,
-            help='Rebuild the license index and exit.',
-            help_group=MISC_GROUP,
-        ),
-
-        PluggableCommandLineOption(
-            ('--reindex-licenses-for-all-languages',),
-            is_flag=True, is_eager=True,
-            callback=reindex_licenses_all_languages,
-            help='[EXPERIMENTAL] Rebuild the license index including texts all '
-                 'languages (and not only English) and exit.',
-            help_group=MISC_GROUP,
         )
-
     ]
 
     def is_enabled(self, license, **kwargs):  # NOQA
@@ -193,9 +137,31 @@ class LicenseScanner(ScanPlugin):
 
         This is an EXPERIMENTAL feature for now.
         """
-        if codebase.has_single_resource:
+        from licensedcode import cache
+        cche = cache.get_cache()
+        cle = codebase.get_or_create_current_header()
+        licenses = cache.get_licenses_db()
+        has_additional_licenses = False
+
+        if cche.additional_license_directory:
+            cle.extra_data['additional_license_directory'] = cche.additional_license_directory
+            has_additional_licenses = True
+        if cche.additional_license_plugins:
+            cle.extra_data['additional_license_plugins'] = cche.additional_license_plugins
+            has_additional_licenses = True
+
+        if TRACE and has_additional_licenses:
+            logger_debug(
+                f'add_referenced_filenames_license_matches: additional_licenses',
+                f'has_additional_licenses: {has_additional_licenses}\n',
+                f'additional_license_directory: {cche.additional_license_directory}\n',
+                f'additional_license_plugins : {cche.additional_license_plugins}'
+            )
+
+        if codebase.has_single_resource and not codebase.root.is_file:
             return
 
+        modified = False
         for resource in codebase.walk(topdown=False):
             # follow license references to other files
             if TRACE:
@@ -203,14 +169,45 @@ class LicenseScanner(ScanPlugin):
 
             modified = add_referenced_license_matches_for_detections(resource, codebase)
 
+            if has_additional_licenses and resource.is_file and resource.license_detections:
+                add_builtin_license_flag(resource, licenses)
+
             if TRACE and modified:
                 license_expressions_after = list(resource.license_expressions)
                 logger_debug(
-                    f'add_referenced_filenames_matches: Modfied:',
+                    f'add_referenced_filenames_license_matches: Modfied:',
                     f'{resource.path} with license_expressions:\n'
                     f'before: {license_expressions_before}\n'
                     f'after : {license_expressions_after}'
                 )
+
+
+def add_builtin_license_flag(resource, licenses):
+    """
+    Add a `is_builtin` flag to each license rule data mapping if there are
+    additional licenses present in the cache, either through an additional
+    license directory or additional license plugins.
+    """
+    for detection in resource.license_detections:
+        for match in detection["matches"]:
+            add_builtin_value(license_match=match, licenses=licenses)
+
+
+def add_builtin_value(license_match, licenses):
+    license_expression = license_match['license_expression']
+    license_keys = Licensing().license_keys(
+        license_expression,
+        unique=True,
+        simple=True,
+    )
+
+    if all([
+        licenses.get(license_key).is_builtin
+        for license_key in license_keys
+    ]):
+        license_match['is_builtin'] = True
+    else:
+        license_match['is_builtin'] = False
 
 
 def add_referenced_license_matches_for_detections(resource, codebase):

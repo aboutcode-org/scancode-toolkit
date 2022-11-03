@@ -1,2 +1,11 @@
+---
+license_expression: ijg
+is_license_reference: yes
+relevance: 100
+minimum_coverage: 90
+referenced_filenames:
+    - README
+---
+
 This file is part of the Independent JPEG Group's software.
 For conditions of distribution and use, see the accompanying README file.

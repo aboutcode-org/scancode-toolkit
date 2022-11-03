@@ -1,3 +1,17 @@
+---
+key: shl-2.1
+short_name: Solderpad Hardware License v2.1
+name: Solderpad Hardware License v2.1
+category: Permissive
+owner: SolderPad
+homepage_url: https://solderpad.org/licenses/SHL-2.1/
+is_exception: yes
+spdx_license_key: SHL-2.1
+ignorable_urls:
+    - http://apache.org/licenses/LICENSE-2.0
+    - https://solderpad.org/licenses/SHL-2.1/
+---
+
 Solderpad Hardware License v2.1
 
 This license operates as a wraparound license to the Apache License Version 2.0 (the “Apache License”) and incorporates the terms and conditions of the Apache License (which can be found here: http://apache.org/licenses/LICENSE-2.0), with the following additions and modifications. It must be read in conjunction with the Apache License. Section 1 below modifies definitions and terminology in the Apache License and Section 2 below replaces Section 2 of the Apache License. The Appendix replaces the Appendix in the Apache License. You may, at your option, choose to treat any Work released under this license as released under the Apache License (thus ignoring all sections written below entirely).

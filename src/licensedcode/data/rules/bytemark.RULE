@@ -1,3 +1,9 @@
+---
+license_expression: bytemark
+is_license_notice: yes
+minimum_coverage: 10
+---
+
 ** The source, executable, and documentation files that comprise
 ** the BYTEmark benchmarks are made available on an "as is" basis.
 ** This means that we at BYTE Magazine have made every reasonable

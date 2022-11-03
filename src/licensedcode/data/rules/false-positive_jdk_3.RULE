@@ -1,1 +1,6 @@
+---
+is_false_positive: yes
+notes: Seen in the openjdk
+---
+
 Unless otherwise noted in the JavaDocs for those methods

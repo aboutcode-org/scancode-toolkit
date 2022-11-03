@@ -1,2 +1,10 @@
+---
+license_expression: gpl-1.0-plus
+is_license_notice: yes
+relevance: 100
+ignorable_urls:
+    - https://www.gnu.org/copyleft/gpl.html
+---
+
 It is released under the General Public Licence, available here:
 https://www.gnu.org/copyleft/gpl.html

@@ -1,3 +1,11 @@
+---
+license_expression: gpl-2.0 OR proprietary-license
+is_license_notice: yes
+minimum_coverage: 50
+ignorable_urls:
+    - http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
+---
+
 Unless you and  execute a separate written software license
 agreement governing use of this software, this software is licensed to you
 under the terms of the GNU General Public License version 2, available

@@ -1,1 +1,11 @@
+---
+license_expression: bsd-new
+is_license_notice: yes
+relevance: 95
+referenced_filenames:
+    - Copyright.txt
+ignorable_urls:
+    - http://www.cmake.org/HTML/Copyright.html
+---
+
 # See Copyright.txt or http://www.cmake.org/HTML/Copyright.html for details.

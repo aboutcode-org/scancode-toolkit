@@ -1,3 +1,12 @@
+---
+license_expression: other-permissive
+is_license_text: yes
+relevance: 100
+notes: Rare Intel notice, derived from X11-like licenses. Seen in Michael E. Kounavis and Frank
+    L. Berry document titled "A Systematic Approach to Building High Performance, Software-based,
+    CRC Generators"
+---
+
 THIS DOCUMENT IS PROVIDED "AS IS" WITH NO WARRANTIES WHATSOEVER, INCLUDING ANY
 WARRANTY OF MERCHANTABILITY, NONINFRINGEMENT, FITNESS FOR ANY PARTICULAR
 PURPOSE, OR ANY WARRANTY OTHERWISE ARISING OUT OF ANY PROPOSAL, SPECIFICATION OR

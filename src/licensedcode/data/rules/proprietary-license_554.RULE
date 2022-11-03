@@ -1,3 +1,19 @@
+---
+license_expression: proprietary-license
+is_license_text: yes
+relevance: 100
+minimum_coverage: 80
+ignorable_copyrights:
+    - (c) 2015-2020 Progress
+ignorable_holders:
+    - Progress
+ignorable_urls:
+    - http://getfiddler.com/
+    - http://www.telerik.com/purchase/fiddler
+    - http://www.telerik.com/purchase/license-agreement/fiddler-enterprise-support
+    - https://www.progress.com/legal/privacy-policy
+---
+
 Progress Telerik Fiddler Web Debugger 
 (Last Updated April 9, 2020)
 The following terms and conditions govern the use of Progress Telerik Fiddler Web Debugger (the “Software”).  By using any of the Software and/or any updates to it, you indicate your acceptance of these terms. If you do not accept these terms, do not install or use the software.

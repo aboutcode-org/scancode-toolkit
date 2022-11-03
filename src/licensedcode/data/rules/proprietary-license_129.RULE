@@ -1,3 +1,11 @@
+---
+license_expression: proprietary-license
+is_license_text: yes
+relevance: 100
+minimum_coverage: 95
+notes: not open source because of the usage limitations
+---
+
 ESPRSSIF MIT License
 
 Permission is hereby granted for use on ESPRESSIF SYSTEMS ESP8266 only, in which case,

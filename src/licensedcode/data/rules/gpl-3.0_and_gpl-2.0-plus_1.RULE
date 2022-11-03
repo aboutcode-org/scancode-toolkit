@@ -1,3 +1,11 @@
+---
+license_expression: gpl-3.0 AND gpl-2.0-plus
+is_license_notice: yes
+minimum_coverage: 80
+ignorable_urls:
+    - http://www.gnu.org/licenses/
+---
+
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of version 3 of the GNU General Public
  * License as published by the Free Software Foundation.
@@ -11,4 +19,4 @@
  * along with this program; if not, see <http://www.gnu.org/licenses/>
  *
  * Parts of this file based on code from , licensed as
- * GPL version 2 or later 
+ * GPL version 2 or later

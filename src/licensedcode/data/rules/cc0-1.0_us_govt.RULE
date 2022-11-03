@@ -1,3 +1,11 @@
+---
+license_expression: cc0-1.0
+is_license_notice: yes
+ignorable_urls:
+    - https://github.com/iadgov/Connectivity-Tester
+    - https://github.com/iadgov/Connectivity-Tester/archive/master.zip
+---
+
 SPDXVersion: SPDX-2.1
 DataLicense: CC0-1.0
 SPDXID: SPDXRef-LICENSE

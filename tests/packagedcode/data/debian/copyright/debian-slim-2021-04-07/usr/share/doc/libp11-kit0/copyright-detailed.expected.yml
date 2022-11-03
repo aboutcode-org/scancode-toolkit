@@ -369,7 +369,8 @@ other_license_detections:
         matcher: 1-hash
         license_expression: bsd-new
         rule_identifier: bsd-new_1043.RULE
-        referenced_filenames: -package
+        referenced_filenames:
+          - package
         is_license_text: no
         is_license_notice: yes
         is_license_reference: no

@@ -1,3 +1,14 @@
+---
+license_expression: lgpl-2.1
+is_license_notice: yes
+relevance: 100
+referenced_filenames:
+    - /usr/share/common-licenses/LGPL-2.1
+notes: the GPL reference is incorrect
+ignorable_urls:
+    - http://www.gnu.org/licenses/
+---
+
 This library is free software: you can redistribute it and/or
  modify it under the terms of the GNU Lesser General Public License
  in version 2.1 as published by the Free Software Foundation.

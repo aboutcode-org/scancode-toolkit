@@ -1,3 +1,16 @@
+---
+key: greg-roelofs
+short_name: Greg Roelofs License
+name: Greg Roelofs License
+category: Permissive
+owner: Unspecified
+spdx_license_key: LicenseRef-scancode-greg-roelofs
+other_urls:
+    - https://www.oreilly.com/library/view/png-the-definitive/9781565925427/
+ignorable_authors:
+    - Greg Roelofs and contributors
+---
+
  This software is provided "as is," without warranty of any kind,
  express or implied.  In no event shall the author or contributors
  be held liable for any damages arising in any way from the use of

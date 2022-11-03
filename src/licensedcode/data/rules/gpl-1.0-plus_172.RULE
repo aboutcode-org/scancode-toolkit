@@ -1,1 +1,10 @@
+---
+license_expression: gpl-1.0-plus
+is_license_notice: yes
+relevance: 100
+ignorable_urls:
+    - http://www.gnu.org/licenses/licenses.html#GPL
+    - http://www.gnu.org/philosophy/free-sw.html
+---
+
 covered by the [GNU GPL](http://www.gnu.org/licenses/licenses.html#GPL), a popular license that is both a [free software](http://www.gnu.org/philosophy/free-sw.html) license and also approved by the OSI as an Open Source license.

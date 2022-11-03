@@ -1,3 +1,15 @@
+---
+license_expression: (cpl-1.0 OR gpl-1.0-plus OR lgpl-2.0-plus) AND ruby
+is_license_notice: yes
+minimum_coverage: 10
+referenced_filenames:
+    - COPYING.CPL
+    - COPYING.GPL
+    - COPYING.LGPL
+    - LICENSE.RUBY
+notes: JRuby  triple licenses
+---
+
 JRuby is released under a tri CPL/GPL/LGPL license. You can use it,
 redistribute it and/or modify it under the terms of the:
 
@@ -8,4 +20,4 @@ redistribute it and/or modify it under the terms of the:
 Some additional libraries distributed with JRuby are not covered by
 JRuby's licence. See the licence files for the respective libraries in
 the 'lib' directory for more information and also LICENSE.RUBY for most
-files found in 
+files found in

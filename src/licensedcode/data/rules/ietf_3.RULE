@@ -1,3 +1,13 @@
+---
+license_expression: ietf
+is_license_notice: yes
+notes: IETF license text, with typos
+ignorable_copyrights:
+    - Copyright (c) The Internet Society
+ignorable_holders:
+    - The Internet Society
+---
+
    Full Copyright Statement
 
    Copyright (C) The Internet Society .  All Rights Reserved.
@@ -24,4 +34,3 @@
    NOT LIMITED TO ANY WARRANTY THAT THE USE OF THE INFORMATION HEREIN
    WILL NOT INFRINGE ANY RIGHTS OR ANY IMPLIED WARRANTIES OF
    MERCHANTABILITY OR FITNESS FOR A PARTICULAR PURPOSE.
-

@@ -1,3 +1,27 @@
+---
+key: freemarker
+short_name: FreeMarker License
+name: FreeMarker License
+category: Permissive
+owner: freemarker.org
+homepage_url: http://freemarker.org/LICENSE.txt
+spdx_license_key: LicenseRef-scancode-freemarker
+text_urls:
+    - http://freemarker.org/LICENSE.txt
+    - http://freemarker.org/docs/app_license.html
+ignorable_copyrights:
+    - Copyright (c) 2003 The Visigoth Software Society
+ignorable_holders:
+    - The Visigoth Software Society
+ignorable_authors:
+    - the Visigoth Software Society (http://www.visigoths.org/)
+ignorable_urls:
+    - http://www.apache.org/licenses/LICENSE-2.0
+    - http://www.visigoths.org/
+ignorable_emails:
+    - visigoths@visigoths.org
+---
+
 FreeMarker License
 
 FreeMarker 1.x was released under the LGPL license. Later, by community

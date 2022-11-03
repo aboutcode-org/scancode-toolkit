@@ -1,3 +1,11 @@
+---
+license_expression: zveno-research
+is_license_text: yes
+notes: zveno-research
+ignorable_urls:
+    - http://www.zveno.com/
+---
+
 http://www.zveno.com/
 
 Zveno makes this software available free of charge for any purpose.

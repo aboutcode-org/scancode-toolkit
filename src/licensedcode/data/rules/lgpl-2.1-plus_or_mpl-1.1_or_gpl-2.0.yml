@@ -1,7 +1,0 @@
-license_expression: lgpl-2.1-plus OR mpl-1.1 OR gpl-2.0
-is_license_notice: yes
-minimum_coverage: 80
-notes: Mozilla tri license
-ignorable_urls:
-    - http://www.fsf.org/copyleft/gpl.html
-    - http://www.mozilla.org/MPL/

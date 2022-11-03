@@ -1,1 +1,9 @@
+---
+license_expression: freebsd-boot
+is_license_reference: yes
+relevance: 100
+ignorable_urls:
+    - https://casper.berkeley.edu/svn/trunk/roach/sw/uboot/common/cmd_elf.c
+---
+
 https://casper.berkeley.edu/svn/trunk/roach/sw/uboot/common/cmd_elf.c

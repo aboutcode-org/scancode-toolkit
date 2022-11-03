@@ -1,3 +1,12 @@
+---
+key: apple-mfi-license
+short_name: Apple MFi License
+name: Apple MFi License
+category: Proprietary Free
+owner: Apple
+spdx_license_key: LicenseRef-scancode-apple-mfi-license
+---
+
 Disclaimer: IMPORTANT: This Apple software is supplied to you, by Apple Inc. ("Apple"), in your
 capacity as a current, and in good standing, Licensee in the MFi Licensing Program. Use of this
 Apple software is governed by and subject to the terms and conditions of your MFi License,

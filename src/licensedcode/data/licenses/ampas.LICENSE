@@ -1,3 +1,15 @@
+---
+key: ampas
+short_name: AMPAS BSD-Style License
+name: Academy of Motion Picture Arts and Sciences BSD-Style
+category: Permissive
+owner: AMPAS
+homepage_url: https://fedoraproject.org/wiki/Licensing/BSD#AMPASBSD
+spdx_license_key: AMPAS
+text_urls:
+    - https://fedoraproject.org/wiki/Licensing/BSD#AMPASBSD
+---
+
 A world-wide, royalty-free, non-exclusive right to distribute, copy, modify, create derivatives, and use, in source and binary forms, is hereby granted, subject to acceptance of this license. Performance of any of the aforementioned acts indicates acceptance to be bound by the following terms and conditions:
 
      * Redistributions of source code must retain the above copyright notice, this list of conditions and the Disclaimer of Warranty.

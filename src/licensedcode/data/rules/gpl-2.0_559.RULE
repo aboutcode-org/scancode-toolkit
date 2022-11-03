@@ -1,1 +1,9 @@
+---
+license_expression: gpl-2.0
+is_license_reference: yes
+relevance: 100
+referenced_filenames:
+    - COPYING
+---
+
 COPYING              [GNU General Public License Version 2]

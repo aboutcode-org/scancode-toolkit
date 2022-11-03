@@ -1,3 +1,9 @@
+---
+license_expression: gpl-3.0 AND cc0-1.0
+is_license_notice: yes
+relevance: 100
+---
+
 licensed as follows:
     GPLv3 or later for the tool itself.
     CC0 for code templates and generated code inside bundles.

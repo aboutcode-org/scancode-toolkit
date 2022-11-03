@@ -1,3 +1,10 @@
+---
+license_expression: ssleay
+is_license_text: yes
+ignorable_authors:
+    - Eric Young
+---
+
 #  * This file is part of an SSL implementation written
 #  * by Eric Young (eay@…).
 #  * The implementation was written so as to conform with Netscapes SSL

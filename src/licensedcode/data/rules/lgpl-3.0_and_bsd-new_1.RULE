@@ -1,3 +1,9 @@
+---
+license_expression: lgpl-3.0 AND bsd-new
+is_license_notice: yes
+relevance: 100
+---
+
 The 'core' of  (located in /core) is licensed under LGPLv3.
 This just means that if you make any changes to how that code works,
 you must release those changes under the LGPL.

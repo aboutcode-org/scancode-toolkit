@@ -1,3 +1,10 @@
+---
+license_expression: proprietary-license
+is_license_text: yes
+relevance: 100
+notes: https://github.com/sharkparty/fractals/blob/2d4bb35661acd3804fdf263b7fb929ea364601d9/LICENSE.md#L8
+---
+
 Permission is hereby granted, free of charge, to any person obtaining a copy of
 this software and associated documentation files (collectively, the "Software"),
 to copy, modify, merge, publish, distribute, sublicense, and/or sell copies of

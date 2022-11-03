@@ -1,2 +1,9 @@
+---
+license_expression: ofl-1.1
+is_license_notice: yes
+ignorable_urls:
+    - https://opensource.org/licenses/OFL-1.1
+---
+
 This project bundles the following dependencies under SIL OFL 1.1 license (https://opensource.org/licenses/OFL-1.1).
 See bundled license files for details.

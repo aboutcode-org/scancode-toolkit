@@ -1,3 +1,14 @@
+---
+license_expression: bsd-new AND lgpl-2.1 AND gpl-2.0 AND gfdl-1.2
+is_license_notice: yes
+relevance: 100
+referenced_filenames:
+    - COPYING.Xiph
+    - COPYING.LGPL
+    - COPYING.GPL
+    - COPYING.FDL
+---
+
 This file is part the FLAC project.  FLAC is comprised of several
  components distributed under different licenses.  The codec libraries
  are distributed under Xiph.Org's BSD-like license (see the file

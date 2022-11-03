@@ -46,13 +46,48 @@ License detection:
   matches in a larger license detecion. This remove a larger number of false
   positive or ambiguous license detections.
 
-
 - The data structure of the JSON output has changed for licenses. We now
   return match details once for each matched license expression rather than
   once for each license in a matched expression. There is a new top-level
   "license_references" attribute that contains the data details for each
   detected license only once. This data can contain the reference license text
   as an option.
+
+- There is a new "scancode-reindex-licenses" command that replace the
+  "scancode --reindex-licenses" command line option which has been
+  removed. This new command supports simpler reindexing using custom
+  license texts and license rules contributed by plugins or stored in an
+  additional directory. The "--reindex-licenses-for-all-languages" CLI option
+  is also moved to the "scancode-reindex-licenses" command as an option
+  "--all-languages".
+
+- We can now detect licenses using custom license texts and license rules.
+  These can be provided as a one off in a directory or packaged as a plugin
+  for consistent reuse and deployment. There is an option "--additional-directory"
+  with the "scancode-reindex-licenses" command and also a new "--only-builtin"
+  option to only use the builtin licenses to build the cache.
+
+- Scancode LICENSE and RULE files now also contain their data as YAML frontmatter,
+  which previously used to be in their respective YAML files. This reduces number of
+  files in those directories, 'rules' and 'licenses' to half. Git line history is
+  preserved for the files.
+
+- A new command line option "--get-license-data" is added to dump license data in
+  JSON, YAML and HTML formats, and also generates a local index and a static website
+  to view the data. This will essentially be an API/way to get scancode license data
+  as opposed to just reading the files. 
+
+
+Package detection:
+~~~~~~~~~~~~~~~~~~~~~
+
+- Code for parsing a Maven POM, npm package.json, freebsd manifest and haxelib
+  JSON have been separated into two functions: one that creates a PackageData
+  object from the parsed Resource, and another that calls the previous function
+  and yields the PackageData. This was done such that we can use the package
+  manifest data parsing code outside of the scancode-toolkit context in other
+  libraries.
+
 
 v31.2.1 - 2022-10-05
 ----------------------------------

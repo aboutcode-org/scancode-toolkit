@@ -1,3 +1,11 @@
+---
+license_expression: gpl-1.0-plus AND lgpl-2.0-plus
+is_license_notice: yes
+relevance: 90
+minimum_coverage: 90
+notes: dual licensed of gpl and lgpl but not fully conclusive
+---
+
 This file can can be used in projects which are not available under
 the GNU General Public License or the GNU Library General Public
 License but which still want to provide support for the GNU gettext

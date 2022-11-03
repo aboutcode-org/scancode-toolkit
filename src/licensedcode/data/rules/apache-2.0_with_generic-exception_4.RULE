@@ -1,3 +1,12 @@
+---
+license_expression: apache-2.0 WITH generic-exception
+is_license_notice: yes
+referenced_filenames:
+    - LICENSE
+    - NOTICE
+notes: https://github.com/michaelrsweet/lprint/blob/6e2eea1b9a40da6176814eb00c9497f1e092b110/DOCUMENTATION.md#L7
+---
+
 licensed under the Apache License Version 2.0 with an (optional) exception to
 allow linking against GPL2/LGPL2 software (like older versions of CUPS), so it
 can be used freely in any project you'd like.

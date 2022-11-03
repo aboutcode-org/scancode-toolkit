@@ -167,7 +167,7 @@ class BaseNpmHandler(models.DatafileHandler):
                     yield subchild
 
 
-def get_urls(namespace, name, version):
+def get_urls(namespace, name, version, **kwargs):
     return dict(
         repository_homepage_url=npm_homepage_url(namespace, name, registry='https://www.npmjs.com/package'),
         repository_download_url=npm_download_url(namespace, name, version, registry='https://registry.npmjs.org'),
@@ -184,13 +184,10 @@ class NpmPackageJsonHandler(BaseNpmHandler):
     documentation_url = 'https://docs.npmjs.com/cli/v8/configuring-npm/package-json'
 
     @classmethod
-    def parse(cls, location):
-        with io.open(location, encoding='utf-8') as loc:
-            package_data = json.load(loc)
-
-        name = package_data.get('name')
-        version = package_data.get('version')
-        homepage_url = package_data.get('homepage', '')
+    def _parse(cls, json_data):
+        name = json_data.get('name')
+        version = json_data.get('version')
+        homepage_url = json_data.get('homepage', '')
 
         # a package.json without name and version can be a private package
 
@@ -209,11 +206,11 @@ class NpmPackageJsonHandler(BaseNpmHandler):
             namespace=namespace or None,
             name=name,
             version=version or None,
-            description=package_data.get('description', '').strip() or None,
+            description=json_data.get('description', '').strip() or None,
             homepage_url=homepage_url,
             **urls,
         )
-        vcs_revision = package_data.get('gitHead') or None
+        vcs_revision = json_data.get('gitHead') or None
 
         # mapping of top level package.json items to a function accepting as
         # arguments the package.json element value and returning an iterable of (key,
@@ -235,7 +232,7 @@ class NpmPackageJsonHandler(BaseNpmHandler):
         ]
 
         for source, func in field_mappers:
-            value = package_data.get(source) or None
+            value = json_data.get(source) or None
             if value:
                 if isinstance(value, str):
                     value = value.strip()
@@ -247,8 +244,8 @@ class NpmPackageJsonHandler(BaseNpmHandler):
             package.download_url = npm_download_url(package.namespace, package.name, package.version)
 
         # licenses are a tad special with many different data structures
-        lic = package_data.get('license')
-        lics = package_data.get('licenses')
+        lic = json_data.get('license')
+        lics = json_data.get('licenses')
         package = licenses_mapper(lic, lics, package)
 
         package.populate_license_fields()
@@ -256,7 +253,14 @@ class NpmPackageJsonHandler(BaseNpmHandler):
         if TRACE:
             logger_debug(f'NpmPackageJsonHandler: parse: package: {package.to_dict()}')
 
-        yield package
+        return package
+
+    @classmethod
+    def parse(cls, location):
+        with io.open(location, encoding='utf-8') as loc:
+            json_data = json.load(loc)
+
+        yield cls._parse(json_data)
 
 class BaseNpmLockHandler(BaseNpmHandler):
 

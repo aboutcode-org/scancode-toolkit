@@ -1,0 +1,11 @@
+---
+key: xxd
+short_name: xxd License
+name: xxd License
+category: Permissive
+owner: Juergen Weigert
+homepage_url: https://github.com/unixdj/xxd/blob/master/README
+other_spdx_license_keys:
+    - Foo
+    - Bar
+---

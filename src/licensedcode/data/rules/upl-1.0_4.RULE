@@ -1,3 +1,11 @@
+---
+license_expression: upl-1.0
+is_license_text: yes
+minimum_coverage: 90
+ignorable_urls:
+    - http://www.oracle.com/
+---
+
 The Universal Permissive License (UPL), Version 1.0
 
 Subject to the condition set forth below, permission is hereby granted to

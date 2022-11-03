@@ -1,3 +1,8 @@
+---
+license_expression: xilinx-2016
+is_license_notice: yes
+---
+
 * Use of the Software is limited solely to applications:
 * (a) running on a Xilinx device, or (b) that interact
 * with a Xilinx device through a bus or interconnect.

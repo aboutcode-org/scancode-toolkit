@@ -1,3 +1,13 @@
+---
+license_expression: proprietary-license
+is_license_notice: yes
+relevance: 100
+ignorable_urls:
+    - http://www.phoenix.com/en/Privacy+Policy/default.htm
+    - https://www.gnu.org/copyleft/gpl.html
+    - https://www.gnu.org/copyleft/lesser.html
+---
+
 
 PHOENIX TECHNOLOGIES LTD. 
 
@@ -134,7 +144,3 @@ WARRANTY DISCLAIMER.  ALL THIRD PARTY APPLICATIONS BUNDLED WITH THE SOFTWARE OR 
 
 
 HS EULA v.2., 4-7-09
-
-
-
-	

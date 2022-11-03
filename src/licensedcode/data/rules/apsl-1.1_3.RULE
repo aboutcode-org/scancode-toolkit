@@ -1,3 +1,10 @@
+---
+license_expression: apsl-1.1
+is_license_notice: yes
+ignorable_urls:
+    - http://www.apple.com/publicsource
+---
+
 @APPLE_LICENSE_HEADER_START@
 
 The contents of this file constitute Original Code as defined in and

@@ -1,3 +1,25 @@
+---
+key: openpub
+short_name: Open Publication License 1.0
+name: Open Publication License v1.0
+category: Permissive
+owner: OpenContent
+homepage_url: http://opencontent.org/openpub/
+spdx_license_key: OPUBL-1.0
+other_spdx_license_keys:
+    - LicenseRef-scancode-openpub
+text_urls:
+    - https://opencontent.org/openpub/
+other_urls:
+    - http://works.opencontent.org/
+    - http://www.opencontent.org/openpub/
+    - https://opencontent.org/openpub/
+    - https://www.ctan.org/license/opl
+    - https://www.debian.org/opl
+ignorable_urls:
+    - http://www.opencontent.org/openpub
+---
+
 Open Publication License
 v1.0, 8 June 1999
 

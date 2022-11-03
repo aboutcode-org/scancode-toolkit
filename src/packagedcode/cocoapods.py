@@ -421,7 +421,7 @@ class PodspecJsonHandler(models.DatafileHandler):
         )
 
 
-def get_urls(name=None, version=None, homepage_url=None, vcs_url=None):
+def get_urls(name=None, version=None, homepage_url=None, vcs_url=None, **kwargs):
     """
     Return a mapping of podspec URLS.
     """

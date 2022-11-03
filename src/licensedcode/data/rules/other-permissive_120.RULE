@@ -1,3 +1,10 @@
+---
+license_expression: other-permissive
+is_license_text: yes
+relevance: 100
+notes: a permissive variant of the MIT Scheme licensing
+---
+
 ;Permission to copy this software, to modify it, to redistribute it,
 ;to distribute modified versions, and to use it for any purpose is
 ;granted, subject to the following restrictions and understandings.

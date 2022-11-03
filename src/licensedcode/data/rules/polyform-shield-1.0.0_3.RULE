@@ -1,1 +1,9 @@
+---
+license_expression: polyform-shield-1.0.0
+is_license_reference: yes
+relevance: 100
+ignorable_urls:
+    - https://polyformproject.org/licenses/shield/1.0.0
+---
+
 [Polyform Shield](https://polyformproject.org/licenses/shield/1.0.0/)

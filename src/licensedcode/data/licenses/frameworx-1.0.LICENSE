@@ -1,3 +1,30 @@
+---
+key: frameworx-1.0
+short_name: Frameworx 1.0
+name: Frameworx Open License v1.0
+category: Copyleft Limited
+owner: Frameworx Company
+homepage_url: http://opensource.org/licenses/frameworx.php
+notes: |
+    Per SPDX.org, this license is OSI certified. The url included in the
+    license does not work. (15/10/10)
+spdx_license_key: Frameworx-1.0
+text_urls:
+    - http://opensource.org/licenses/frameworx.php
+osi_url: http://opensource.org/licenses/frameworx.php
+other_urls:
+    - http://www.opensource.org/licenses/Frameworx-1.0
+    - https://opensource.org/licenses/Frameworx-1.0
+ignorable_copyrights:
+    - (c) THE FRAMEWORX COMPANY 2003
+ignorable_holders:
+    - THE FRAMEWORX COMPANY
+ignorable_authors:
+    - The Frameworx Company
+ignorable_urls:
+    - http://www.frameworx.com/
+---
+
 THE FRAMEWORX OPEN LICENSE 1.0
 This License Agreement, The Frameworx Open License 1.0, has been entered into between The Frameworx Company and you, the licensee hereunder, effective as of Your acceptance of the Frameworx Code Base or an Downstream Distribution (each as defined below).
 AGREEMENT BACKGROUND

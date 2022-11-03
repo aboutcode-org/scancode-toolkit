@@ -1,3 +1,12 @@
+---
+license_expression: proprietary-license
+is_license_text: yes
+ignorable_copyrights:
+    - Copyright 1988, 1989 Adobe Systems Incorporated
+ignorable_holders:
+    - Adobe Systems Incorporated
+---
+
 LICENSE AGREEMENT FOR THE IBM DEVICE DRIVER KIT FOR OS/2
 
 This is a legal agreement between you (either an individual or an entity) and the IBM Corporation for the purpose of developing device drivers for OS/2*.
@@ -72,4 +81,4 @@ You are responsible for payment of any taxes, including personal property taxes,
 
 If you acquire the Product in the United States, this agreement is controlled by the substantive laws governing contracts made and entirely performed in the State of New York. If you acquire the Product in Canada, this agreement is governed by the laws of the Province of Ontario. Otherwise, this agreement is governed by the laws of the country in which you acquired the Product. However, United States patent and copyright law shall apply in all cases.
 
-The export of this Product is restricted by U.S. export regulations, and you agree to do everything necessary to comply with these regulations. 
+The export of this Product is restricted by U.S. export regulations, and you agree to do everything necessary to comply with these regulations.

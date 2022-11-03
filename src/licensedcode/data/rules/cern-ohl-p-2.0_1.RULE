@@ -1,3 +1,13 @@
+---
+license_expression: cern-ohl-p-2.0
+is_license_text: yes
+notes: From https://ohwr.org/cern_ohl_p_v2.txt
+ignorable_copyrights:
+    - copyright CERN 2020
+ignorable_holders:
+    - CERN
+---
+
 CERN Open Hardware Licence Version 2 - Permissive
 
 

@@ -1,1 +1,10 @@
+---
+license_expression: unlicense
+is_license_notice: yes
+relevance: 100
+minimum_coverage: 90
+ignorable_urls:
+    - http://www.unlicense.org/
+---
+
 All rights reversed http://www.unlicense.org

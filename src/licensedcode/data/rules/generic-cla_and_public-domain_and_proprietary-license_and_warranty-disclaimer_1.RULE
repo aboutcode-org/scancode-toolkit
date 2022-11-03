@@ -1,3 +1,11 @@
+---
+license_expression: generic-cla AND public-domain AND proprietary-license AND warranty-disclaimer
+is_license_notice: yes
+ignorable_urls:
+    - http://osvdb.org/
+    - http://www.osvdb.org/osvdb_license
+---
+
 If you submit code or data to the ruby-advisory-db that is copyrighted by yourself, upon submission you hereby agree to release it into the {{public domain}}.
 
 However, not all of the ruby-advisory-db can be considered public domain. The ruby-advisory-db may contain some information {{copyrighted by the Open Source Vulnerability Database (http://osvdb.org)}}. If you use ruby-advisory-db data to build a product or a service, it is your responsibility to familiarize yourself with the terms of their license: http://www.osvdb.org/osvdb_license

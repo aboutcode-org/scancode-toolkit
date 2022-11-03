@@ -147,13 +147,14 @@ def test_license_option_reports_license_texts_diag_long_lines():
 
 @pytest.mark.scanslow
 def test_reindex_licenses_works():
-    run_scan_click(['--reindex-licenses-for-all-languages'])
-    run_scan_click(['--reindex-licenses'])
+    from licensedcode.cache import get_index
+    get_index(force=True)
+    get_index(force=True, index_all_languages=True)
 
 
 @pytest.mark.scanslow
 def test_scan_license_with_url_template():
-    test_dir = test_env.get_test_loc('plugin_license/license_url', copy=True)
+    test_dir = test_env.get_test_loc('plugin_license/license_url/scan/', copy=True)
     result_file = test_env.get_temp_file('json')
     args = [
         '--license',
@@ -161,7 +162,7 @@ def test_scan_license_with_url_template():
         '--json-pp', result_file,
         test_dir,
     ]
-    test_loc = test_env.get_test_loc('plugin_license/license_url.expected.json')
+    test_loc = test_env.get_test_loc('plugin_license/license_url/license_url.expected.json')
     run_scan_click(args)
     check_json_scan(test_loc, result_file, regen=REGEN_TEST_FIXTURES)
 

@@ -1,3 +1,11 @@
+---
+license_expression: unknown
+is_license_notice: yes
+notes: Seen in the kernel
+ignorable_authors:
+    - Intel Corporation. Intel
+---
+
 Attempts were made, unsuccessfully, to contact the original
 author of this code (Michael Morrow, Intel).  Below is the original
 copyright notice.

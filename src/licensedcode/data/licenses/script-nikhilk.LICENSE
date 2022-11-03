@@ -1,3 +1,18 @@
+---
+key: script-nikhilk
+short_name: Script# License
+name: Script# License
+category: Proprietary Free
+owner: ScriptSharp
+homepage_url: http://projects.nikhilk.net/Content/Projects/ScriptSharp/ScriptSharp.pdf
+spdx_license_key: LicenseRef-scancode-script-nikhilk
+text_urls:
+    - http://projects.nikhilk.net/Content/Projects/ScriptSharp/ScriptSharp.pdf
+other_urls:
+    - http://www.amazon.com/exec/obidos/ASIN/0735615829/nikhilkothari-20
+    - http://www.nikhilk.net/About.aspx
+---
+
 End User License Agreement for Script# 
 IT IS IMPORTANT THAT YOU CAREFULLY READ THIS NOTICE BEFORE INSTALLING THIS PRODUCT. BY INSTALLING, OR OTHERWISE USING THIS SOFTWARE, YOU AGREE TO BE BOUND BY THE TERMS OF THIS LICENSE AGREEMENT (THE "AGREEMENT") WHICH CONSTITUTES A LEGALLY BINDING CONTRACT BETWEEN THE LICENSOR (PROJECTS.NIKHILK.NET, HEREAFTER "WE", OR "US") AND THE LICENSEE (EITHER AN INDIVIDUAL OR ENTITY, HEREAFTER "YOU"). 
 THIS AGREEMENT 

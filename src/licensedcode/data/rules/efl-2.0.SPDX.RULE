@@ -1,3 +1,10 @@
+---
+license_expression: efl-2.0
+is_license_text: yes
+minimum_coverage: 10
+notes: license text as published by SPDX
+---
+
 Eiffel Forum License, version 2
 
 Permission is hereby granted to use, copy, modify and/or distribute this package, provided that:

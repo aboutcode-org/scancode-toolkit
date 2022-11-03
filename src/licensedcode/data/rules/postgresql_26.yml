@@ -1,4 +1,0 @@
-license_expression: postgresql
-is_license_text: yes
-relevance: 95
-notes: Seen in pgadmin. Relevance discounted becasue it is not verbatim the upstream postgresql

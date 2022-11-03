@@ -1,1 +1,9 @@
+---
+license_expression: proprietary-license
+is_license_notice: yes
+relevance: 100
+ignorable_urls:
+    - http://osvdb.org/
+---
+
 copyrighted by the Open Source Vulnerability Database (http://osvdb.org)

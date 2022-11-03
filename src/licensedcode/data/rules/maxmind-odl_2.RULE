@@ -1,1 +1,9 @@
+---
+license_expression: maxmind-odl
+is_license_notice: yes
+relevance: 100
+ignorable_urls:
+    - http://maxmind.com/
+---
+
 This product includes GeoLite data created by MaxMind, available from http://maxmind.com/

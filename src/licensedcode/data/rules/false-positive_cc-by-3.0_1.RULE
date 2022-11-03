@@ -1,3 +1,8 @@
+---
+is_false_positive: yes
+notes: comments about licenses, not a license
+---
+
 Using Creative Commons Public Licenses
 Creative Commons public licenses provide a standard set of terms and
 conditions that creators and other rights holders may use to share

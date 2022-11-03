@@ -1,7 +1,0 @@
-license_expression: ruby OR bsd-simplified
-is_license_text: yes
-notes: Changed dual license terms to ruby or gpl v2 to ruby or bsd on 2019-09-15 https://raw.githubusercontent.com/ruby/ruby/2cd6800fd8437b1f862f3f5c44db877159271d17/COPYING
-ignorable_authors:
-    - Yukihiro Matsumoto <matz@netlab.jp>
-ignorable_emails:
-    - matz@netlab.jp

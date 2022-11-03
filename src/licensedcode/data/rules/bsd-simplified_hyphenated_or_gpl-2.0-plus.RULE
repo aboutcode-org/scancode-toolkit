@@ -1,3 +1,9 @@
+---
+license_expression: bsd-simplified AND (bsd-simplified OR gpl-2.0-plus)
+is_license_notice: yes
+minimum_coverage: 99
+---
+
 
 Redistribution and use in source and binary forms, with or without modifica-
 tion, are permitted provided that the following conditions are met:

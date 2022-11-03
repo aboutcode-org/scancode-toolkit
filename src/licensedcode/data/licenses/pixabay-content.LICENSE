@@ -1,3 +1,13 @@
+---
+key: pixabay-content
+short_name: Pixabay Content License
+name: Pixabay Content License
+category: Free Restricted
+owner: Pixabay
+homepage_url: https://pixabay.com/service/terms/#license
+spdx_license_key: LicenseRef-scancode-pixabay-content
+---
+
 License for Content – Pixabay License
 
 Content on Pixabay is made available to you on the following terms ("Pixabay License"). Under the Pixabay License you are granted an irrevocable, worldwide, non-exclusive and royalty free right to use, download, copy, modify or adapt the Content for commercial or non-commercial purposes. Attribution of the photographer, videographer, musician or Pixabay is not required but is always appreciated.

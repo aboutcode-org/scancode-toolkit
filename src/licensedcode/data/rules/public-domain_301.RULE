@@ -1,2 +1,9 @@
+---
+license_expression: public-domain
+is_license_reference: yes
+relevance: 100
+minimum_coverage: 90
+---
+
 The public-domain time zone database contains code and data that represent the
 history of local time for many representative locations around the globe.

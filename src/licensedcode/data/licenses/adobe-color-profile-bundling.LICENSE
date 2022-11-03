@@ -1,3 +1,16 @@
+---
+key: adobe-color-profile-bundling
+short_name: Adobe Color Profile Bundling agreement
+name: Adobe Color Profile Bundling agreement
+category: Proprietary Free
+owner: Adobe Systems
+homepage_url: https://www.adobe.com/support/downloads/iccprofiles/icc_eula_win_dist.html
+spdx_license_key: LicenseRef-scancode-adobe-color-profile-bundling
+ignorable_urls:
+    - http://partners.adobe.com/
+    - http://www.adobe.com/
+---
+
 ADOBE SYSTEMS INCORPORATED COLOR PROFILE BUNDLING AGREEMENT
 
 NOTICE TO USER: PLEASE READ THIS CONTRACT CAREFULLY. BY USING ALL OR ANY PORTION OF THE SOFTWARE YOU ACCEPT ALL THE TERMS AND CONDITIONS OF THIS AGREEMENT. YOU AGREE THAT THIS AGREEMENT IS ENFORCEABLE LIKE ANY WRITTEN NEGOTIATED AGREEMENT SIGNED BY YOU. IF YOU DO NOT AGREE WITH THE TERMS OF THIS AGREEMENT, DO NOT USE THE SOFTWARE.

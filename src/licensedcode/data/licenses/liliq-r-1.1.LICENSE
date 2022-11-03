@@ -1,3 +1,18 @@
+---
+key: liliq-r-1.1
+language: fr
+short_name: LiLiQ-R-1.1
+name: Licence Libre du Québec – Réciprocité version 1.
+category: Copyleft Limited
+owner: Quebec
+homepage_url: https://opensource.org/licenses/LiLiQ-R-1.1
+spdx_license_key: LiLiQ-R-1.1
+osi_url: https://opensource.org/licenses/LiLiQ-R-1.1
+other_urls:
+    - http://opensource.org/licenses/LiLiQ-R-1.1
+    - https://www.forge.gouv.qc.ca/participez/licence-logicielle/licence-libre-du-quebec-liliq-en-francais/licence-libre-du-quebec-reciprocite-liliq-r-v1-1/
+---
+
 Licence Libre du Québec – Réciprocité (LiLiQ-R)
 Version 1.1
 

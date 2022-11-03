@@ -1,2 +1,10 @@
+---
+license_expression: lgpl-2.1-plus
+is_license_notice: yes
+relevance: 100
+ignorable_urls:
+    - http://www.tinymce.com/license
+---
+
 Released under LGPL License.
 License: http://www.tinymce.com/license

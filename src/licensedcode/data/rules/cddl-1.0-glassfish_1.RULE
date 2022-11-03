@@ -1,3 +1,10 @@
+---
+license_expression: cddl-1.0
+is_license_notice: yes
+ignorable_urls:
+    - https://glassfish.dev.java.net/public/CDDLv1.0.html
+---
+
 /*
  * The contents of this file are subject to the terms
  * of the Common Development and Distribution License

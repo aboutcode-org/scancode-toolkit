@@ -1,3 +1,16 @@
+---
+key: 996-icu-1.0
+short_name: Anti 996 License 1.0
+name: Anti 996 License Version 1.0 (Draft)
+category: Free Restricted
+owner: 996icu
+homepage_url: https://github.com/996icu/996.ICU
+notes: this is based on the still draft text as of 2019-04-17
+spdx_license_key: LicenseRef-scancode-996-icu-1.0
+text_urls:
+    - https://github.com/996icu/996.ICU/blob/dd185162b9d56b629e52c5726995cd7505326b06/LICENSE
+---
+
 "Anti 996" License Version 1.0 (Draft)
 
 Permission is hereby granted to any individual or legal entity

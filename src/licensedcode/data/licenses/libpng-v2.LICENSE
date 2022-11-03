@@ -1,3 +1,26 @@
+---
+key: libpng-v2
+short_name: LIbpng License v2
+name: PNG Reference Library License version 2
+category: Permissive
+owner: libpng
+homepage_url: http://www.libpng.org/pub/png/src/libpng-LICENSE.txt
+spdx_license_key: libpng-2.0
+minimum_coverage: 70
+ignorable_copyrights:
+    - Copyright (c) 1995-1996 Guy Eric Schalnat, Group 42, Inc.
+    - Copyright (c) 1995-2018 The PNG Reference Library Authors
+    - Copyright (c) 1996-1997 Andreas Dilger
+    - Copyright (c) 2000-2002, 2004, 2006-2018 Glenn Randers-Pehrson
+    - Copyright (c) 2018 Cosmin Truta
+ignorable_holders:
+    - Andreas Dilger
+    - Cosmin Truta
+    - Glenn Randers-Pehrson
+    - Guy Eric Schalnat, Group 42, Inc.
+    - The PNG Reference Library Authors
+---
+
 COPYRIGHT NOTICE, DISCLAIMER, and LICENSE
 =========================================
 
@@ -34,4 +57,3 @@ subject to the following restrictions:
 
  3. This Copyright notice may not be removed or altered from any
     source or altered source distribution.
-

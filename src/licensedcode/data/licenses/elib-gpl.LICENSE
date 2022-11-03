@@ -1,3 +1,20 @@
+---
+key: elib-gpl
+short_name: GPL-Elib
+name: GNU Elib General Public License
+category: Copyleft
+owner: Free Software Foundation (FSF)
+homepage_url: http://www.math.utah.edu/docs/info/elib_1.html
+spdx_license_key: LicenseRef-scancode-elib-gpl
+text_urls:
+    - http://www.math.utah.edu/docs/info/elib_1.html#SEC1
+faq_url: http://www.math.utah.edu/docs/info/elib_3.html
+ignorable_copyrights:
+    - Copyright (c) 1992 Free Software Foundation
+ignorable_holders:
+    - Free Software Foundation
+---
+
 GNU ELIB GENERAL PUBLIC LICENSE
 
 The license agreements of most software companies keep you at the mercy of those companies. By contrast, our general public license is intended to give everyone the right to share GNU Elib. To make sure that you get the rights we want you to have, we need to make restrictions that forbid anyone to deny you these rights or to ask you to surrender the rights. Hence this license agreement.

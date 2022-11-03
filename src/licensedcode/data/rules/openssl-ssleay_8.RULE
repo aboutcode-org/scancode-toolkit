@@ -1,1 +1,7 @@
+---
+license_expression: openssl-ssleay
+is_license_reference: yes
+relevance: 100
+---
+
  _BOTH_ the OpenSSL license _AND_ the SSLeay license apply

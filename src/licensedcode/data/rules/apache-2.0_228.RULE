@@ -1,3 +1,10 @@
+---
+license_expression: apache-2.0
+is_license_tag: yes
+relevance: 100
+minimum_coverage: 100
+---
+
 The license is the standard wording from the Apache license, but with
                 Greg Luck as copyright
                 owner.

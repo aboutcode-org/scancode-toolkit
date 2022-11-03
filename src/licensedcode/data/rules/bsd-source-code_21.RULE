@@ -1,3 +1,13 @@
+---
+license_expression: bsd-source-code
+is_license_text: yes
+minimum_coverage: 95
+ignorable_copyrights:
+    - Copyright (c) Deusty, LLC
+ignorable_holders:
+    - Deusty, LLC
+---
+
 // Software License Agreement {{(BSD License)}}
 
 Copyright (c) {{Deusty, LLC}}

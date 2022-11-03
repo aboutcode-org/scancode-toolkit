@@ -1,3 +1,9 @@
+---
+license_expression: bsd-original
+is_license_text: yes
+notes: https://github.com/mariokonrad/bitset/blob/8f95b8ab45a41e5bbe652979ec55427e6317a58a/LICENSE
+---
+
 Redistribution and use in source and binary forms, with or without
 modification, are permitted provided that the following conditions are met:
 1. Redistributions of source code must retain the above copyright

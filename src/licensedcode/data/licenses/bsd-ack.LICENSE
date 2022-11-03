@@ -1,3 +1,18 @@
+---
+key: bsd-ack
+short_name: BSD Acknowledgment License
+name: BSD Acknowledgment License
+category: Permissive
+owner: Universidad de Palermo
+homepage_url: https://fedoraproject.org/wiki/Licensing/BSD_with_Attribution
+spdx_license_key: BSD-3-Clause-Attribution
+minimum_coverage: 90
+ignorable_authors:
+    - the Universidad de Palermo, Argentina (http://www.palermo.edu/)
+ignorable_urls:
+    - http://www.palermo.edu/
+---
+
 Redistribution and use in source and binary forms, with or without modification,
 are permitted provided that the following conditions are met:
 

@@ -1,3 +1,11 @@
+---
+license_expression: apache-2.0
+is_license_text: yes
+notes: truncated text
+ignorable_urls:
+    - http://www.apache.org/licenses/
+---
+
 Apache License
                            Version 2.0, January 2004
                         http://www.apache.org/licenses/

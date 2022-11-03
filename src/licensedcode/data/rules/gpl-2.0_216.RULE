@@ -1,3 +1,9 @@
+---
+license_expression: gpl-2.0
+is_license_notice: yes
+relevance: 100
+notes: the Linux reference makes this a v2 license mention
+---
+
   This driver is a part of the linux kernel, and is thus distributed
   under the GNU General Public License.
-

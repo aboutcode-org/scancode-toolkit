@@ -1,3 +1,12 @@
+---
+license_expression: unknown
+is_license_notice: yes
+referenced_filenames:
+    - COPYING
+notes: Seen in Intel e100 GPL-licensed linux driver... but here there is no license stated and
+    when the Intel ref is not there, we cannot conclude to a license.
+---
+
 This software program is released under the terms of a license agreement
 between you ('Licensee') and . Do not use or load this software or any
 associated materials (collectively, the 'Software') until you have carefully

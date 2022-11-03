@@ -1,2 +1,10 @@
+---
+license_expression: mpl-1.1
+is_license_notice: yes
+relevance: 100
+ignorable_urls:
+    - http://www.mozilla.org/MPL/MPL-1.1.html
+---
+
 The modified versions of these files are distributed under the MPL v 1.1
 ( http://www.mozilla.org/MPL/MPL-1.1.html )

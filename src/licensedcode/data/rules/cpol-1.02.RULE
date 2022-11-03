@@ -1,1 +1,9 @@
+---
+license_expression: cpol-1.02
+is_license_reference: yes
+relevance: 100
+ignorable_urls:
+    - http://www.codeproject.com/info/cpol10.aspx
+---
+
 http://www.codeproject.com/info/cpol10.aspx

@@ -1,3 +1,14 @@
+---
+license_expression: apache-2.0
+is_license_notice: yes
+relevance: 100
+minimum_coverage: 90
+referenced_filenames:
+    - /usr/share/common-licenses/Apache-2.0
+ignorable_urls:
+    - https://www.apache.org/licenses/LICENSE-2.0
+---
+
 Licensed to the Apache Software Foundation (ASF) under one or more
  contributor license agreements.  See the NOTICE file distributed with
  this work for additional information regarding copyright ownership.

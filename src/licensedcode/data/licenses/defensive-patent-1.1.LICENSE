@@ -1,3 +1,17 @@
+---
+key: defensive-patent-1.1
+short_name: Defensive Patent License v1.1
+name: Defensive Patent License v1.1
+category: Copyleft
+owner: DPL
+homepage_url: https://www.defensivepatentlicense.org/
+spdx_license_key: LicenseRef-scancode-defensive-patent-1.1
+text_urls:
+    - https://www.defensivepatentlicense.org/license
+ignorable_urls:
+    - http://www.defensivepatentlicense.org/content/frequently-asked-questions#how-can-I-start
+---
+
 PREFACE
 The Defensive Patent License (DPL) is a free, copyleft-style license for patents.
 

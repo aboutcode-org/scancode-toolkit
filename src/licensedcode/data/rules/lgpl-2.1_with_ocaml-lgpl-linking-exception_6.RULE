@@ -1,3 +1,8 @@
+---
+license_expression: lgpl-2.1 WITH ocaml-lgpl-linking-exception
+is_license_notice: yes
+---
+
 The Library is distributed under the terms of the GNU Lesser General
 Public License version 2.1 (included below).
 

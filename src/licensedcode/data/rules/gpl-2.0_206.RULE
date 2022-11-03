@@ -1,3 +1,10 @@
+---
+license_expression: gpl-2.0
+is_license_notice: yes
+ignorable_urls:
+    - http://www.gnu.org/licenses/gpl-2.0.txt
+---
+
 GPL HEADER START
 
 DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.

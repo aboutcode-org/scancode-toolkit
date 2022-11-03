@@ -1,3 +1,11 @@
+---
+license_expression: bsd-3-clause-jtag
+is_license_text: yes
+relevance: 99
+minimum_coverage: 75
+notes: Minor differences with bsd-3-clause-jtag
+---
+
 Redistribution and use in source and binary forms, with or without
 modification, are permitted provided that the following conditions are met:
 1. Redistributions of source code must retain the above copyright

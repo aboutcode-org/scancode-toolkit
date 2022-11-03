@@ -1,3 +1,10 @@
+---
+license_expression: dco-1.1
+is_license_text: yes
+ignorable_emails:
+    - random@developer.org
+---
+
 Developer Certificate of Origin:
 --------------------------------
 

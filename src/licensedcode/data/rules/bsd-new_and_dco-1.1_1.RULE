@@ -1,3 +1,11 @@
+---
+license_expression: bsd-new AND dco-1.1
+is_license_notice: yes
+relevance: 100
+ignorable_urls:
+    - http://developercertificate.org/
+---
+
 This software is distributed under a permissive open source license to
 allow it to be used in any projects, whether open source or proprietary.
 Contributions to the project are welcome and it is important to maintain

@@ -1,3 +1,9 @@
+---
+license_expression: gpl-2.0 WITH generic-exception
+is_license_notice: yes
+relevance: 100
+---
+
 licensed under version 2 of the GNU GPL.
 As copyright holder, I give permission for vsftpd to be linked to the OpenSSL
 libraries. This includes permission for  binaries to be distributed

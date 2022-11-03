@@ -1,3 +1,9 @@
+---
+license_expression: proprietary-license
+is_license_text: yes
+notes: https://github.com/neuromancer/avp/blob/master/LICENSE
+---
+
 is provided as is with no warranty for its suitability for use. You may not
 use this source code in full or in part for commercial purposes. Any use must
 include a clearly visible credit to  as the creators and owners, and

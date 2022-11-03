@@ -1,6 +1,0 @@
-license_expression: oracle-bcl-javaee
-is_license_text: yes
-ignorable_urls:
-    - http://www.oracle.com/products/export
-    - http://www.oracle.com/technetwork/java/javaee/documentation/index.html
-    - http://www.oracle.com/us/legal/third-party-trademarks/index.html

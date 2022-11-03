@@ -1,1 +1,9 @@
+---
+license_expression: mit
+is_license_notice: yes
+relevance: 100
+ignorable_urls:
+    - http://opensource.org/licenses/MIT
+---
+
 is an open source project by  that is licensed under [MIT](http://opensource.org/licenses/MIT)

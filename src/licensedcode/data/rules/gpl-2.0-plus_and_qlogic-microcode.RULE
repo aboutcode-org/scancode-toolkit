@@ -1,3 +1,9 @@
+---
+license_expression: gpl-2.0-plus AND qlogic-microcode
+is_license_notice: yes
+minimum_coverage: 20
+---
+
 This program includes a device driver for Linux 2.6 that may be
 distributed with QLogic hardware specific firmware binary file.
 You may modify and redistribute the device driver code under the

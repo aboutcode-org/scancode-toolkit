@@ -1,1 +1,6 @@
+---
+is_false_positive: yes
+notes: Not license, only a symbol about optional GPL compilation in FreeBSD sys/modules/bwn
+---
+
 option to opt-in to the GPL'd 802.

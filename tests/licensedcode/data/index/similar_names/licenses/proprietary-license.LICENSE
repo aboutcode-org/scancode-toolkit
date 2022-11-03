@@ -1,3 +1,12 @@
+---
+key: proprietary-license
+short_name: Proprietary License
+name: Proprietary License
+category: Proprietary Free
+owner: Unspecified
+notes: replaces the proprietary key
+---
+
 This component is normally licensed under a proprietary license agreement with 
 a supplier that has terms and conditions that restrict the use of the code, 
 but may not require payment to the supplier.

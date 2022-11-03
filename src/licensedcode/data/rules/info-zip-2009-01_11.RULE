@@ -1,3 +1,14 @@
+---
+license_expression: info-zip-2009-01
+is_license_notice: yes
+relevance: 100
+referenced_filenames:
+    - LICENSE
+    - zip.h
+ignorable_urls:
+    - ftp://ftp.info-zip.org/pub/infozip/license.html
+---
+
 See the accompanying file LICENSE, version 2000-Apr-09 or later
   (the contents of which are also included in zip.h) for terms of use.
   If, for some reason, all these files are missing, the Info-ZIP license

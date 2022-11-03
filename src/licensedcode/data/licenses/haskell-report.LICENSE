@@ -1,3 +1,13 @@
+---
+key: haskell-report
+short_name: Haskell Report License
+name: Haskell Language Report License
+category: Permissive
+owner: Simon Marlow
+homepage_url: https://fedoraproject.org/wiki/Licensing/Haskell_Language_Report_License
+spdx_license_key: HaskellReport
+---
+
 The authors intend this Report to belong to the entire Haskell community, and
 so we grant permission to copy and distribute it for any purpose, provided that
 it is reproduced in its entirety, including this Notice.  Modified versions of

@@ -1,3 +1,17 @@
+---
+key: cc-by-3.0-nl
+language: nl
+short_name: Creative Commons Attribution 3.0 Netherlands
+name: Creative Commons Attribution 3.0 Netherlands
+category: Permissive
+owner: Creative Commons
+spdx_license_key: CC-BY-3.0-NL
+other_urls:
+    - https://creativecommons.org/licenses/by/3.0/nl/legalcode
+ignorable_urls:
+    - https://creativecommons.org/
+---
+
 Creative Commons Naamsvermelding 3.0
 
  CREATIVE COMMONS CORPORATION IS GEEN ADVOCATENPRAKTIJK EN VERLEENT GEEN JURIDISCHE DIENSTEN. DE VERSPREIDING VAN DEZE LICENTIE ROEPT GEEN JURIDISCHE RELATIE MET CREATIVE COMMONS IN HET LEVEN. CREATIVE COMMONS VERSPREIDT DEZE INFORMATIE 'AS-IS'. CREATIVE COMMONS STAAT NIET IN VOOR DE INHOUD VAN DE VERSTREKTE INFORMATIE EN SLUIT ALLE AANSPRAKELIJKHEID UIT VOOR ENIGERLEI SCHADE VOORTVLOEIEND UIT HET GEBRUIK VAN DEZE INFORMATIE INDIEN EN VOORZOVER DE WET NIET ANDERS BEPAALT.

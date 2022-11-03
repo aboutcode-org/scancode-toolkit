@@ -1,0 +1,12 @@
+---
+license_expression: other-permissive
+is_license_notice: yes
+minimum_coverage: 50
+notes: Seen in gettext
+---
+
+This file is distributed under the same license as the  package
+Permission is granted to freely copy and distribute
+this file and modified versions, provided that this
+header is not removed and modified versions are marked
+as such.

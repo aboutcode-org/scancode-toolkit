@@ -1,3 +1,14 @@
+---
+license_expression: ecl-2.0
+is_license_text: yes
+minimum_coverage: 70
+notes: license text as published by SPDX
+ignorable_urls:
+    - http://www.apache.org/licenses/LICENSE-2.0
+    - http://www.osedu.org/licenses/
+    - http://www.osedu.org/licenses/ECL-2.0
+---
+
 Educational Community License, Version 2.0
 
 Educational Community License

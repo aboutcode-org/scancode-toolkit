@@ -1,1 +1,9 @@
+---
+license_expression: rpl-1.5
+is_license_reference: yes
+relevance: 100
+ignorable_urls:
+    - https://spdx.org/licenses/RPL-1.5
+---
+
 LICENSE {{RPL-1.5}} https://spdx.org/licenses/RPL-1.5

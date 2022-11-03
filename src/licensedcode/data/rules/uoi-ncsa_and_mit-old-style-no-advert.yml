@@ -1,7 +1,0 @@
-license_expression: uoi-ncsa AND mit-old-style-no-advert
-is_license_notice: yes
-minimum_coverage: 80
-ignorable_copyrights:
-    - Copyright 1991 by the Massachusetts Institute of Technology
-ignorable_holders:
-    - the Massachusetts Institute of Technology

@@ -1,7 +1,0 @@
-license_expression: ijg
-is_license_notice: yes
-relevance: 100
-minimum_coverage: 99
-referenced_filenames:
-    - README.ijg
-notes: in libjpeg-turbo

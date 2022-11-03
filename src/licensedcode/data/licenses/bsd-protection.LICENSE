@@ -1,3 +1,15 @@
+---
+key: bsd-protection
+short_name: BSD Protection License
+name: BSD Protection License
+category: Copyleft
+owner: FreeBSD
+homepage_url: https://fedoraproject.org/wiki/Licensing/BSD_Protection_License
+spdx_license_key: BSD-Protection
+text_urls:
+    - https://fedoraproject.org/wiki/Licensing/BSD_Protection_License
+---
+
 BSD Protection License
 February 2002
 

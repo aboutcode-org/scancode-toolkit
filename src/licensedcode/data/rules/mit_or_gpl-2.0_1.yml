@@ -1,6 +1,0 @@
-license_expression: mit OR gpl-2.0
-is_license_tag: yes
-relevance: 100
-minimum_coverage: 100
-notes: from the linux kernel and in this context module.h states that GPL measn GPL 2.0 only
-    See https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/include/linux/module.h?h=v4.20-rc7#n180

@@ -1,3 +1,13 @@
+---
+key: st-bsd-restricted
+short_name: STMicro BSD Restricted
+name: STMicro BSD Restricted
+category: Free Restricted
+owner: STMicroelectronics
+homepage_url: https://www.st.com/
+spdx_license_key: LicenseRef-scancode-st-bsd-restricted
+---
+
 Redistribution and use in source and binary forms, with or without 
 modification, are permitted, provided that the following conditions are met:
 

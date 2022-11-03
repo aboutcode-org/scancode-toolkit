@@ -1,3 +1,14 @@
+---
+license_expression: lgpl-2.1
+is_license_text: yes
+ignorable_copyrights:
+    - Copyright (c) 1991, 1999 Free Software Foundation, Inc.
+    - copyrighted by the Free Software Foundation
+ignorable_holders:
+    - Free Software Foundation, Inc.
+    - the Free Software Foundation
+---
+
 GNU Lesser General Public License
 Version 2.1, February 1999
 Copyright (C) 1991, 1999 Free Software Foundation, Inc. 20 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA Everyone is permitted to copy and distribute verbatim copies of this license document, but changing it is not allowed.
@@ -85,4 +96,3 @@ Yoyodyne, Inc., hereby disclaims all copyright interest in the library `Frob' (a
 signature of Ty Coon, 1 April 1990
 Ty Coon, President of Vice
 That's all there is to it!
-

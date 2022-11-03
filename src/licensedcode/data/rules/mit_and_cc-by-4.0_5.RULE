@@ -1,2 +1,11 @@
+---
+license_expression: mit AND cc-by-4.0
+is_license_notice: yes
+relevance: 100
+ignorable_urls:
+    - https://creativecommons.org/licenses/by/4.0/
+    - https://opensource.org/licenses/MIT
+---
+
 Code licensed under the MIT License: https://opensource.org/licenses/MIT
 Graphics licensed under CC-BY 4.0: https://creativecommons.org/licenses/by/4.0/

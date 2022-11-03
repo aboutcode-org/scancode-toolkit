@@ -1,3 +1,19 @@
+---
+license_expression: jdom
+is_license_text: yes
+ignorable_authors:
+    - Brett McLaughlin <brett@jdom.org> and Jason Hunter <jhunter@jdom.org>
+    - the JDOM Project (http://www.jdom.org/)
+ignorable_urls:
+    - http://www.jdom.org/
+    - http://www.jdom.org/images/logos
+ignorable_emails:
+    - brett@jdom.org
+    - jhunter@jdom.org
+    - license@jdom.org
+    - pm@jdom.org
+---
+
 Redistribution and use in source and binary forms, with or without
 modification, are permitted provided that the following conditions
 are met:

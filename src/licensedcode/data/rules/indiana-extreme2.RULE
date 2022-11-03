@@ -1,3 +1,17 @@
+---
+license_expression: indiana-extreme
+is_license_text: yes
+minimum_coverage: 85
+ignorable_copyrights:
+    - Copyright (c) 2002 Extreme! Lab, Indiana University
+ignorable_holders:
+    - Extreme! Lab, Indiana University
+ignorable_authors:
+    - the Indiana University Extreme! Lab (http://www.extreme.indiana.edu/)
+ignorable_urls:
+    - http://www.extreme.indiana.edu/
+---
+
 Indiana University Extreme! Lab Software License 
 Version 1.1.1 
 Copyright (c) 2002 Extreme! Lab, Indiana University. All rights reserved. 
@@ -30,4 +44,4 @@ LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
 PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF 
 LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE 
 OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF 
-ADVISED OF THE POSSIBILITY OF SUCH DAMAGE. 
+ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.

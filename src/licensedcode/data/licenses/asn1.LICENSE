@@ -1,3 +1,36 @@
+---
+key: asn1
+short_name: ASN.1 Object Dumping Code License
+name: ASN.1 Object Dumping Code License
+category: Permissive
+owner: ASN.1 Project
+spdx_license_key: LicenseRef-scancode-asn1
+ignorable_copyrights:
+    - copyright Peter Gutmann <pgut001@cs.auckland.ac.nz>
+ignorable_holders:
+    - Peter Gutmann
+ignorable_authors:
+    - David Kemp <dpkemp@missi.ncsc.mil>
+ignorable_urls:
+    - http://www.cs.auckland.ac.nz/~pgut001/dumpasn1.c
+    - http://www.cs.auckland.ac.nz/~pgut001/dumpasn1.cfg
+ignorable_emails:
+    - Tor.Rustad@bbs.no
+    - bcouillard@chrysalis-its.com
+    - chris.ridd@isode.com
+    - d.boyce@isode.com
+    - dpkemp@missi.ncsc.mil
+    - geoff@raas.co.nz
+    - h.b.furuseth@usit.uio.no
+    - hamrick@rsa.com
+    - hans-olof.hermansson@postnet.se
+    - john.hughes@entegrity.com
+    - jsweeny@us.ibm.com
+    - kjetil.barvik@bbs.no
+    - pgut001@cs.auckland.ac.nz
+    - ronald@trustpoint.com
+---
+
 ASN.1 Object Dumping Code License
 
 ASN.1 object dumping code, copyright Peter Gutmann <pgut001@cs.auckland.ac.nz>, based on ASN.1 dump program by David Kemp <dpkemp@missi.ncsc.mil>, with contributions from various people including Matthew Hamrick <hamrick@rsa.com>, Bruno Couillard <bcouillard@chrysalis-its.com>, Hallvard Furuseth <h.b.furuseth@usit.uio.no>, Geoff Thorpe <geoff@raas.co.nz>, David Boyce <d.boyce@isode.com>, John Hughes <john.hughes@entegrity.com>, Life is hard, and then you die <ronald@trustpoint.com>, Hans-Olof Hermansson <hans-olof.hermansson@postnet.se>, Tor Rustad <Tor.Rustad@bbs.no>, Kjetil Barvik <kjetil.barvik@bbs.no>, James Sweeny <jsweeny@us.ibm.com>, Chris Ridd <chris.ridd@isode.com>, and several other people whose names I've misplaced (a number of those email addresses probably no longer work, since this code has been around for awhile).

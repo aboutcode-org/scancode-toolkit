@@ -1,3 +1,13 @@
+---
+key: linum
+short_name: Linum Software License
+name: Linum Software License
+category: Permissive
+owner: Linum Software GmbH
+is_deprecated: yes
+notes: replaced by identical philippe-de-muyter license
+---
+
  * This program is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.

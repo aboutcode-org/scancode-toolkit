@@ -1,3 +1,13 @@
+---
+key: tizen-sdk
+short_name: Tizen SDK License
+name: Tizen SDK License
+category: Proprietary Free
+owner: Samsung
+homepage_url: https://developer.tizen.org/tizen-sdk-license-agreement
+spdx_license_key: LicenseRef-scancode-tizen-sdk
+---
+
 Tizen SDK License Agreement
 TIZEN SOFTWARE DEVELOPMENT KIT ("SDK") LICENSE AGREEMENT
 

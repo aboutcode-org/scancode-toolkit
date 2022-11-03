@@ -1,3 +1,15 @@
+---
+key: monetdb-1.1
+short_name: MonetDB 1.1
+name: MonetDB Public License Version 1.1
+category: Copyleft Limited
+owner: MonetDB
+homepage_url: http://www.monetdb.org/Legal/MonetDBLicense
+spdx_license_key: LicenseRef-scancode-monetdb-1.1
+ignorable_urls:
+    - http://www.monetdb.org/Legal/MonetDBLicense
+---
+
 MonetDB Public License Version 1.1
 This License is a derivative of the Mozilla Public License (MPL) Version 1.1, where the difference is that all references to "Mozilla" and "Netscape" have been changed to "MonetDB", and that the License has been made subject to the laws of The Netherlands.
 

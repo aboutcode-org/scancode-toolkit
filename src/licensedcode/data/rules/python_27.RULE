@@ -1,1 +1,9 @@
+---
+license_expression: python
+is_license_reference: yes
+relevance: 90
+ignorable_urls:
+    - https://www.python-ldap.org/
+---
+
 See https://www.python-ldap.org/ for details.

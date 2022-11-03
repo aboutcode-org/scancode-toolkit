@@ -1,3 +1,13 @@
+---
+license_expression: public-domain
+is_license_text: yes
+minimum_coverage: 90
+notes: Public domain, gnu chess
+ignorable_emails:
+    - cracraft@earthlink.net
+    - simon@wretched.demon.co.uk
+---
+
 This opening book is in the public domain. It was put together and
 cleaned up by  Stuart Cracraft <cracraft@earthlink.net>  and  Simon
 Waters <simon@wretched.demon.co.uk> . Stuart wrote the following in

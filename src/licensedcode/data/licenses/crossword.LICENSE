@@ -1,3 +1,17 @@
+---
+key: crossword
+short_name: Crossword License
+name: Crossword License
+category: Permissive
+owner: Gerd Neugebauer
+homepage_url: https://fedoraproject.org/wiki/Licensing/Crossword
+spdx_license_key: Crossword
+ignorable_copyrights:
+    - Copyright (c) 1995-2009 Gerd Neugebauer
+ignorable_holders:
+    - Gerd Neugebauer
+---
+
 Copyright (C) 1995-2009 Gerd Neugebauer
   
 cwpuzzle.dtx is distributed in the hope that it will be useful, but WITHOUT ANY

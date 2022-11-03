@@ -1,3 +1,12 @@
+---
+license_expression: lgpl-2.0-plus OR bsd-new
+is_license_notice: yes
+relevance: 100
+minimum_coverage: 80
+ignorable_urls:
+    - https://www.gnu.org/licenses/old-licenses/lgpl-2.0.html
+---
+
  is a copyrighted work.  This header file is not encumbered
  by  licensing, but is provided under the licensing terms chosen
  by the genshellopt author or copyright holder.   is

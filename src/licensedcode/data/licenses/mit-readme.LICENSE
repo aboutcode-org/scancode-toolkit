@@ -1,3 +1,12 @@
+---
+key: mit-readme
+short_name: MIT README License
+name: MIT README License
+category: Permissive
+owner: Unspecified
+spdx_license_key: LicenseRef-scancode-mit-readme
+---
+
 Permission is hereby granted, free of charge, to any person obtaining a
 copy of this software and the associated README documentation file (the
 "Software"), to deal in the Software without restriction, including

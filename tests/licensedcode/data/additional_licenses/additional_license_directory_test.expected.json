@@ -1,0 +1,97 @@
+{
+  "files": [
+    {
+      "path": "additional_license_directory_test.txt",
+      "type": "file",
+      "detected_license_expression": "example1 AND example2",
+      "detected_license_expression_spdx": "scancode-example1 AND scancode-example2",
+      "license_detections": [
+        {
+          "license_expression": "example1 AND example2",
+          "detection_rules": [
+            "not-combined"
+          ],
+          "matches": [
+            {
+              "score": 100.0,
+              "start_line": 1,
+              "end_line": 1,
+              "matched_length": 9,
+              "match_coverage": 100.0,
+              "matcher": "2-aho",
+              "license_expression": "example1",
+              "rule_identifier": "example1.LICENSE",
+              "referenced_filenames": [],
+              "is_license_text": true,
+              "is_license_notice": false,
+              "is_license_reference": false,
+              "is_license_tag": false,
+              "is_license_intro": false,
+              "rule_length": 9,
+              "rule_relevance": 100,
+              "licenses": [
+                {
+                  "key": "example1",
+                  "name": "Example External License 1",
+                  "short_name": "Example External License 1",
+                  "category": "Permissive",
+                  "is_exception": false,
+                  "is_unknown": false,
+                  "owner": "NexB",
+                  "homepage_url": null,
+                  "text_url": "",
+                  "reference_url": "https://scancode-licensedb.aboutcode.org/example1",
+                  "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/example1.LICENSE",
+                  "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/example1.yml",
+                  "spdx_license_key": "scancode-example1",
+                  "spdx_url": "https://spdx.org/licenses/scancode-example1"
+                }
+              ],
+              "is_builtin": false
+            },
+            {
+              "score": 100.0,
+              "start_line": 1,
+              "end_line": 5,
+              "matched_length": 69,
+              "match_coverage": 100.0,
+              "matcher": "2-aho",
+              "license_expression": "example2",
+              "rule_identifier": "example2.LICENSE",
+              "referenced_filenames": [],
+              "is_license_text": true,
+              "is_license_notice": false,
+              "is_license_reference": false,
+              "is_license_tag": false,
+              "is_license_intro": false,
+              "rule_length": 69,
+              "rule_relevance": 100,
+              "licenses": [
+                {
+                  "key": "example2",
+                  "name": "Example External License 2",
+                  "short_name": "Example External License 2",
+                  "category": "Permissive",
+                  "is_exception": false,
+                  "is_unknown": false,
+                  "owner": "NexB",
+                  "homepage_url": null,
+                  "text_url": "",
+                  "reference_url": "https://scancode-licensedb.aboutcode.org/example2",
+                  "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/example2.LICENSE",
+                  "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/example2.yml",
+                  "spdx_license_key": "scancode-example2",
+                  "spdx_url": "https://spdx.org/licenses/scancode-example2"
+                }
+              ],
+              "is_builtin": false
+            }
+          ]
+        }
+      ],
+      "license_clues": [],
+      "percentage_of_license_text": 95.12,
+      "scan_errors": []
+    }
+  ]
+}

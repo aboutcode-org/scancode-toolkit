@@ -1,1 +1,9 @@
+---
+license_expression: mit-old-style
+is_license_reference: yes
+relevance: 99
+ignorable_urls:
+    - http://fedoraproject.org/wiki/Licensing:MIT#Old_Style
+---
+
 http://fedoraproject.org/wiki/Licensing:MIT#Old_Style

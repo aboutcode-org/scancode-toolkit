@@ -1,1 +1,6 @@
+---
+is_false_positive: yes
+notes: eigen doc
+---
+
 We allow this as a special exception to the general rule

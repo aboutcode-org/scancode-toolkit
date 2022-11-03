@@ -1,3 +1,12 @@
+---
+key: msj-sample-code
+short_name: MS Systems Journal Sample Code License
+name: Microsoft Systems Journal Sample Code License
+category: Permissive
+owner: Microsoft
+spdx_license_key: LicenseRef-scancode-msj-sample-code
+---
+
 Microsoft grants to you a royalty-free right to use and modify the source code version and to reproduce and distribute the object code version of the sample code, icons, cursors, and bitmaps provided within the Sample Code bin/folder on the SOFTWARE ("Sample Code") provided that you:
 
 distribute the Sample Code only in conjunction with and as a part of your software product that adds primary and significant functionality to the sample code;

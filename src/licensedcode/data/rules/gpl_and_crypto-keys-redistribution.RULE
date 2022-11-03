@@ -1,3 +1,9 @@
+---
+license_expression: gpl-1.0-plus AND crypto-keys-redistribution
+is_license_notice: yes
+minimum_coverage: 90
+---
+
 Redistributable under terms of the GNU General Public License
 
 For the avoidance of doubt the "preferred form" of this code is one which

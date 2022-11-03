@@ -1,1 +1,7 @@
+---
+license_expression: lgpl-2.1 WITH libwebsockets-exception
+is_license_notice: yes
+relevance: 100
+---
+
 this version is under LGPL2.1 + SLE like the rest of lws since he explicitly allows sublicensing

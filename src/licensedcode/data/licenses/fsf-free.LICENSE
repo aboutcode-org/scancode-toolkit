@@ -1,2 +1,14 @@
+---
+key: fsf-free
+short_name: FSF Free Software License
+name: Free Software Foundation - Free Software License
+category: Public Domain
+owner: Free Software Foundation (FSF)
+homepage_url: http://www.fsf.org/licensing/licenses/
+spdx_license_key: FSFUL
+text_urls:
+    - https://fedoraproject.org/wiki/Licensing/FSF_Unlimited_License
+---
+
 This configure script is free software; the Free Software Foundation gives
 unlimited permission to copy, distribute and modify it.

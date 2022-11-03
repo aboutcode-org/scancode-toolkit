@@ -1,3 +1,12 @@
+---
+license_expression: sendmail
+is_license_text: yes
+ignorable_copyrights:
+    - Copyright (c) 1998-2004 Sendmail, Inc.
+ignorable_holders:
+    - Sendmail, Inc.
+---
+
                    SENDMAIL OPEN SOURCE LICENSE
 
 The following license terms and conditions apply to this open source

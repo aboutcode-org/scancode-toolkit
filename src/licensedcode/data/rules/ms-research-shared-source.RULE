@@ -1,1 +1,9 @@
+---
+license_expression: ms-research-shared-source
+is_license_reference: yes
+relevance: 100
+ignorable_urls:
+    - http://research.microsoft.com/downloads
+---
+
 http://research.microsoft.com/downloads

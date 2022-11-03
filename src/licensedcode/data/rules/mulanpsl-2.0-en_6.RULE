@@ -1,3 +1,11 @@
+---
+license_expression: mulanpsl-2.0-en
+is_license_notice: yes
+relevance: 100
+ignorable_urls:
+    - http://license.coscl.org.cn/MulanPSL2
+---
+
 is licensed under Mulan PSL v2.
 // You can use this software according to the terms and conditions of the Mulan PSL v2.
 // You may obtain a copy of Mulan PSL v2 at:

@@ -1,1 +1,6 @@
+---
+is_false_positive: yes
+notes: Seen in openzfs
+---
+
 function is marked GPL-only and cannot be used

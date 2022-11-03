@@ -1,3 +1,8 @@
+---
+is_false_positive: yes
+notes: seen in the Linux Kernel sources (kernel symbols related code or docs)
+---
+
                 strcmp(license, "GPL") == 0
                 || strcmp(license, "GPL v2") == 0
                 || strcmp(license, "GPL and additional rights") == 0
@@ -5,4 +10,3 @@
                 || strcmp(license, "Dual MIT/GPL") == 0
                 || strcmp(license, "Dual MPL/GPL") == 0);
 }
-

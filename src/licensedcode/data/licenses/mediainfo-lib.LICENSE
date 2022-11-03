@@ -1,3 +1,20 @@
+---
+key: mediainfo-lib
+short_name: MediaInfo(Lib) License
+name: MediaInfo(Lib) License
+category: Permissive
+owner: MediaArea.net SARL
+homepage_url: http://mediainfo.sourceforge.net/en
+notes: this is a combo of BSD-like terms and LGPL 3 terms
+spdx_license_key: LicenseRef-scancode-mediainfo-lib
+text_urls:
+    - http://mediainfo.sourceforge.net/en
+ignorable_copyrights:
+    - Copyright 2002-2010 MediaArea.net SARL.
+ignorable_holders:
+    - MediaArea.net SARL.
+---
+
 MediaInfo(Lib) License
 
 Version 1.1, 3 January 2010

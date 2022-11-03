@@ -1,9 +1,0 @@
-license_expression: lgpl-3.0-plus
-is_license_notice: yes
-notes: LGPL text with some weird characters
-ignorable_copyrights:
-    - Copyright (c) 2007 Free Software Foundation, Inc. <http://fsf.org/>
-ignorable_holders:
-    - Free Software Foundation, Inc.
-ignorable_urls:
-    - http://fsf.org/

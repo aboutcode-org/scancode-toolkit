@@ -1,3 +1,14 @@
+---
+license_expression: openssl-ssleay
+is_license_notice: yes
+relevance: 100
+minimum_coverage: 80
+ignorable_authors:
+    - Andy Polyakov <appro@fy.chalmers.se> for the OpenSSL project
+ignorable_emails:
+    - appro@fy.chalmers.se
+---
+
 // Written by Andy Polyakov <appro@fy.chalmers.se> for the OpenSSL
 // project. Rights for redistribution and usage in source and binary
 // forms are granted according to the OpenSSL license.

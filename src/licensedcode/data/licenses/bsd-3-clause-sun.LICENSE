@@ -1,3 +1,15 @@
+---
+key: bsd-3-clause-sun
+short_name: BSD 3-Clause Sun
+name: BSD 3-Clause Sun
+category: Permissive
+owner: Oracle (Sun)
+notes: This is the same as the bsd-3-clause-no-nuclear-warranty but without the nuclear related
+    terms. Rare and not exactly the same as a plain bsd.
+spdx_license_key: LicenseRef-scancode-bsd-3-clause-sun
+minimum_coverage: 90
+---
+
 Redistribution and use in source and binary forms, with or without
 modification, are permitted provided that the following conditions are met:
 

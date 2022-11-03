@@ -1,3 +1,22 @@
+---
+key: amazon-sl
+short_name: Amazon Software License
+name: Amazon Software License
+category: Proprietary Free
+owner: Amazon Web Services
+homepage_url: http://aws.amazon.com/asl/
+spdx_license_key: LicenseRef-.amazon.com.-AmznSL-1.0
+other_spdx_license_keys:
+    - LicenseRef-scancode-amazon-sl
+text_urls:
+    - http://aws.amazon.com/asl/
+    - https://github.com/aws/aws-sdk-android/blob/master/LICENSE.AMAZON.txt
+ignorable_copyrights:
+    - (c) 2008 Amazon.com, Inc. or its affiliates
+ignorable_holders:
+    - Amazon.com, Inc. or its affiliates
+---
+
 Amazon Software License
 
 This Amazon Software License ("License") governs your use, reproduction, and distribution of the accompanying software as specified below.

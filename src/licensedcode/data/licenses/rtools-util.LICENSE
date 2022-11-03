@@ -1,3 +1,14 @@
+---
+key: rtools-util
+short_name: RTools.Util License
+name: RTools.Util License
+category: Permissive
+owner: Ryan Seghers
+spdx_license_key: LicenseRef-scancode-rtools-util
+other_urls:
+    - http://www.codeproject.com/Articles/3143/RTools-Util-C-Library
+---
+
 This software is provided AS IS. No warranty is granted, 
 neither expressed nor implied. USE THIS SOFTWARE AT YOUR OWN RISK.
 NO REPRESENTATION OF MERCHANTABILITY or FITNESS FOR ANY 

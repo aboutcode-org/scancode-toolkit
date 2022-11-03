@@ -1,2 +1,10 @@
+---
+license_expression: gpl-2.0
+is_license_notice: yes
+relevance: 100
+ignorable_urls:
+    - https://www.gnu.org/licenses/
+---
+
 Distributed under the terms of the GNU General Public License version 2 (GPLv2)
 The full text of the GPLv2 is available at: https://www.gnu.org/licenses/

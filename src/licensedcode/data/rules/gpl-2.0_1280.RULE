@@ -1,3 +1,14 @@
+---
+license_expression: gpl-2.0
+is_license_notice: yes
+relevance: 100
+referenced_filenames:
+    - LICENSE
+ignorable_urls:
+    - https://www.gnu.org/licenses/gpl-faq.html
+    - https://www.gnu.org/licenses/old-licenses/gpl-2.0.html
+---
+
 license
 BusyBox is licensed under the GNU General Public License, version 2
 
@@ -22,4 +33,4 @@ distribute the source code to that GPL-licensed software.  If you distribute
 BusyBox without making the source code to the version you distribute available,
 you violate the license terms, and thus infringe on the copyrights of BusyBox.
 This requirement applies whether or not you modified BusyBox; either way the
-license terms still apply to you. 
+license terms still apply to you.

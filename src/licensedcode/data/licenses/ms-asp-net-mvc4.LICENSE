@@ -1,3 +1,15 @@
+---
+key: ms-asp-net-mvc4
+short_name: MS ASP.NET MVC4
+name: Microsoft ASP.NET MVC 4 License
+category: Proprietary Free
+owner: Microsoft
+homepage_url: http://www.microsoft.com/web/webpi/eula/mvc_4_eula_enu.htm
+spdx_license_key: LicenseRef-scancode-ms-asp-net-mvc4
+ignorable_urls:
+    - http://www.microsoft.com/exporting
+---
+
 MICROSOFT SOFTWARE LICENSE TERMS
 MICROSOFT ASP.NET MODEL VIEW CONTROLLER 4
 These license terms are an agreement between Microsoft Corporation (or based on where you live, one of its affiliates) and you. Please read them. They apply to the software named above, which includes the media on which you received it, if any. The terms also apply to any Microsoft

@@ -1,3 +1,17 @@
+---
+key: gareth-mccaughan
+short_name: Gareth McCaughan License
+name: Gareth McCaughan License
+category: Permissive
+owner: Gareth McCaughan
+homepage_url: https://github.com/tonyg/pi-nothing/blob/master/disarm/disarm-0.11.c
+spdx_license_key: LicenseRef-scancode-gareth-mccaughan
+other_urls:
+    - http://web.ukonline.co.uk/g.mccaughan/g/software.html
+ignorable_urls:
+    - http://web.ukonline.co.uk/g.mccaughan/g/software.html
+---
+
 This file may be distributed and used freely provided:
 1. You do not distribute any version that lacks this
    copyright notice (exactly as it appears here, extending

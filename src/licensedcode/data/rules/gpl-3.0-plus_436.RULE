@@ -1,3 +1,12 @@
+---
+license_expression: gpl-3.0-plus
+is_license_notice: yes
+relevance: 100
+minimum_coverage: 75
+ignorable_urls:
+    - https://www.gnu.org/licenses/
+---
+
     ("GPL3-fr"
      t
      "Ce programme est un logiciel libre ; vous pouvez le redistribuer ou le"

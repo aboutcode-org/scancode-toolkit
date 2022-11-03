@@ -1,3 +1,13 @@
+---
+key: nice
+short_name: Nice License
+name: Nice License
+category: Permissive
+owner: Unspecified
+notes: From https://github.com/ErikMcClure/bad-licenses
+spdx_license_key: LicenseRef-scancode-nice
+---
+
 Permission to use, copy, modify, and/or distribute this software for any purpose with or
 without fee is hereby granted.
 

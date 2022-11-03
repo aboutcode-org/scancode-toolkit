@@ -1,3 +1,11 @@
+---
+license_expression: proprietary-license
+is_license_text: yes
+notes: Based on the MIT with material and problematic changes. https://raw.githubusercontent.com/shendurelab/MIPGEN/4d6c342bbf30db99754509935d11bbb9b19c335e/LICENSE.txt
+ignorable_emails:
+    - license@uw.edu
+---
+
 Permission is hereby granted, to You to use, copy, modify, merge the MIPgen software and associated documentation files (the "Software") for the use in Your non-commercial academic and research activities. This includes electronic distribution for the use of client software, but only within Your organization. You may not otherwise distribute the Software, including any modified versions. You may not sublicense any rights under this license and You may not sell copies of the software.
 The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
  

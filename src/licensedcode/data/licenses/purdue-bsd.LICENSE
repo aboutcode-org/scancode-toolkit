@@ -1,3 +1,14 @@
+---
+key: purdue-bsd
+short_name: Purdue BSD-Style License
+name: Purdue BSD-Style License
+category: Permissive
+owner: Purdue Research Foundation
+notes: this is very similar to the hs-regexp license
+spdx_license_key: LicenseRef-scancode-purdue-bsd
+minimum_coverage: 70
+---
+
 This software is not subject to any license of the American Telephone
 and Telegraph Company or the Regents of the University of California.
 

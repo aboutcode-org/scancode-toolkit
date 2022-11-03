@@ -1,3 +1,10 @@
+---
+license_expression: proprietary-license
+is_license_notice: yes
+ignorable_urls:
+    - http://greensock.com/club/
+---
+
 Greensock : Standard "No Charge" GreenSock License
 
 PLAIN ENGLISH SUMMARY:

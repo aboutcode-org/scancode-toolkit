@@ -1,8 +1,0 @@
-license_expression: bsd-3-clause-no-nuclear-warranty
-is_license_text: yes
-relevance: 99
-minimum_coverage: 95
-ignorable_copyrights:
-    - copyrighted by SUN
-ignorable_holders:
-    - SUN

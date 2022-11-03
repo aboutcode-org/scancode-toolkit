@@ -1,3 +1,17 @@
+---
+key: ibm-developerworks-community-download
+short_name: IBM developerWorks Community Download Agreement
+name: IBM developerWorks Community Download of Content Agreement
+category: Proprietary Free
+owner: IBM
+homepage_url: https://www.ibm.com/developerworks/community/terms/download?lang=en
+spdx_license_key: LicenseRef-scancode-ibm-developerworks-community
+other_spdx_license_keys:
+    - LicenseRef-scancode-ibm-developerworks-community-download
+ignorable_urls:
+    - http://www.ibm.com/developerworks/exchange
+---
+
 Download of Content Agreement
 The following are terms of a legal downloader agreement (the "Agreement") regarding Your download of Content (as defined below) from this Website. IBM may change these terms of use and other requirements and guidelines for use of this Website at its sole discretion. This Website may contain other proprietary notices and copyright information (http://www.ibm.com/developerworks/exchange), the terms of which must be observed and followed. Any use of the Content in violation of this Agreement is strictly prohibited.
 

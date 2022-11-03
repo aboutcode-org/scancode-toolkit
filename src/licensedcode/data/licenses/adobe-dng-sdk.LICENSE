@@ -1,3 +1,18 @@
+---
+key: adobe-dng-sdk
+short_name: Adobe DNG SDK License Agreement
+name: Adobe DNG SDK License Agreement
+category: Proprietary Free
+owner: Adobe Systems
+homepage_url: https://www.adobe.com/support/downloads/dng/dng_sdk.html
+spdx_license_key: LicenseRef-scancode-adobe-dng-sdk
+text_urls:
+    - https://www.adobe.com/support/downloads/dng/dng_sdk_eula_mac.html
+ignorable_urls:
+    - http://www.adobe.com/
+    - http://www.adobe.com/products/dng/license.html
+---
+
 DNG SDK License Agreement
 
 NOTICE TO USER:

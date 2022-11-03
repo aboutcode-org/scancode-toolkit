@@ -1,3 +1,11 @@
+---
+license_expression: vhfpl-1.1
+is_license_notice: yes
+relevance: 100
+referenced_filenames:
+    - LICENSE
+---
+
 * This library is free software; you can redistribute it and/or
  * modify it under the terms of the vhf Public License as
  * published by the vhf interservice GmbH. Among other things,

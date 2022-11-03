@@ -1,1 +1,9 @@
+---
+license_expression: isc
+is_license_notice: yes
+relevance: 100
+ignorable_urls:
+    - http://copyfree.org/
+---
+
  is licensed under the [copyfree](http://copyfree.org) ISC License.

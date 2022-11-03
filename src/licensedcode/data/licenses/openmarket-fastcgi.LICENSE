@@ -1,3 +1,19 @@
+---
+key: openmarket-fastcgi
+short_name: FastCGI License for Spec Implementation
+name: FastCGI License for Spec Implementation
+category: Permissive
+owner: OpenMarket
+homepage_url: http://www.fastcgi.com/drupal/node/8
+spdx_license_key: LicenseRef-scancode-openmarket-fastcgi
+text_urls:
+    - http://www.fastcgi.com/drupal/node/8
+ignorable_copyrights:
+    - copyrighted by Open Market, Inc 'Open Market
+ignorable_holders:
+    - Open Market, Inc 'Open Market
+---
+
 OpenMarket FastCGI
 
 This FastCGI application library source and object code (the "Software") and its documentation (the "Documentation") are copyrighted by Open Market, Inc ("Open Market"). The following terms apply to all files associated with the Software and Documentation unless explicitly disclaimed in individual files.

@@ -1,3 +1,10 @@
+---
+license_expression: lgpl-2.1-plus
+is_license_notice: yes
+referenced_filenames:
+    - COPYING.LIB
+---
+
 The overall license for is the {{GNU Lesser General Public
 License, version 2.1 (or, at your option, any later version)}}; see
 the file COPYING.LIB for the full terms of this license.

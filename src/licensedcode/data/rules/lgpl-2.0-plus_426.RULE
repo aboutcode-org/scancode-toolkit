@@ -1,2 +1,10 @@
+---
+license_expression: lgpl-2.0-plus
+is_license_notice: yes
+relevance: 100
+referenced_filenames:
+    - COPYING
+---
+
 You can Freely distribute this program under the GNU Library General Public
 License. See the file "COPYING" for the exact licensing terms.

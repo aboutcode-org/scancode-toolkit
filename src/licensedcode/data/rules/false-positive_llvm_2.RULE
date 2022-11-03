@@ -1,1 +1,6 @@
+---
+is_false_positive: yes
+notes: seen in LLVM sources and docs
+---
+
 Allow linking of LLVM with GPLv3 binutils code

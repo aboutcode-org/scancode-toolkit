@@ -1,3 +1,12 @@
+---
+key: zeusbench
+short_name: ZeusBench notice
+name: ZeusBench notice
+category: Permissive
+owner: Unspecified
+spdx_license_key: LicenseRef-scancode-zeusbench
+---
+
 This program may be used and copied freely providing this copyright notice
 is not removed.
 

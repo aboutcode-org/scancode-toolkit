@@ -1,3 +1,15 @@
+---
+license_expression: vim
+is_license_text: yes
+minimum_coverage: 50
+notes: license text as published by SPDX
+ignorable_urls:
+    - http://www.vim.org/
+ignorable_emails:
+    - Bram@vim.org
+    - maintainer@vim.org
+---
+
 VIM LICENSE
 
 I) There are no restrictions on distributing unmodified copies of Vim except that they must include this license text. You can also distribute unmodified parts of Vim, likewise unrestricted except that they must include this license text. You are also allowed to include executables that you made from the unmodified Vim sources, plus your own usage examples and Vim scripts.

@@ -1,3 +1,15 @@
+---
+license_expression: afl-3.0
+is_license_notice: yes
+relevance: 100
+referenced_filenames:
+    - LICENSE_AFL.txt
+ignorable_urls:
+    - http://opensource.org/licenses/afl-3.0.php
+ignorable_emails:
+    - license@magentocommerce.com
+---
+
 * NOTICE OF LICENSE
  *
  * This source file is subject to the Academic Free License (AFL 3.0)

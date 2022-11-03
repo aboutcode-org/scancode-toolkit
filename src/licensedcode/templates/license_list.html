@@ -1,0 +1,120 @@
+{% extends "base.html" %}
+
+{% block title %}LicenseDB{% endblock %}
+
+{% block extrahead %}
+  <link rel="stylesheet" href="static/datatables/jquery.dataTables-1.10.22.min.css">
+  <script src="static/datatables/jquery.dataTables-1.10.22.min.js"></script>
+{% endblock %}
+
+{% block content %}
+  <div class="container">
+    <div class="loading loading-lg" style="margin-top:50px;"></div>
+    <table class="display" style="visibility: hidden;">
+      <thead>
+        <tr>
+          <th>Key</th>
+          <th>Short name</th>
+          <th>SPDX identifier</th>
+          <th>
+            <div class="popover popover-top">
+              <a class="help_text" href="#popovers">Category</a>
+              <div class="popover-container" style="font-weight: normal;">
+                <div class="card">
+                  <div class="card-body">
+                    <a href="help.html#license-categories">Click here for help</a> about categories.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </th>
+          <th>Links</th>
+        </tr>
+      </thead>
+      <tbody>
+      {% for key, license in licenses.items() %}
+        <tr>
+          <td>
+            <a href="{{ key }}.html">{{ key }}</a>
+            {% if license.is_deprecated %}<span class="text-warning">[Deprecated]</span>{% endif %}
+            <span class="d-none">{% if license.is_deprecated %}deprecated{% else %}active{% endif %}</span>
+          </td>
+          <td>{{ license.short_name }}</td>
+          <td>
+            {% if license.spdx_license_key %}
+              {% if "LicenseRef" in license.spdx_license_key %}
+                {{ license.spdx_license_key }}
+              {% else %}
+                <a href="https://spdx.org/licenses/{{ license.spdx_license_key }}.html">{{ license.spdx_license_key }}</a>
+              {% endif %}
+            {% else %}
+              -
+            {% endif %}
+          </td>
+          <td>
+            <a href="?search={{ license.category }}" style="color: inherit !important;">{{ license.category }}</a>
+          </td>
+          <td style="white-space: nowrap;">
+            <a href="{{ key }}.yml">yml</a> -
+            <a href="{{ key }}.json">json</a> -
+            <a href="{{ key }}.LICENSE">text</a>
+          </td>
+        </tr>
+      {% endfor %}
+      </tbody>
+    </table>
+  </div>
+{% endblock %}
+
+{% block scripts %}
+  <script>
+    $(document).ready(function() {
+      let table = $("table")
+      .on("init.dt", function() {
+        $(".loading").remove();
+      })
+      .DataTable({
+        "paging": false,
+        "ordering": true,
+        "info": true,
+        "infoCallback": function(settings, start, end, max, total, pre) {
+          let show_active_link = ' (<a id="toggle-deprecated" href="#">show deprecated</a>)';
+          let show_deprecated_link = ' (<a id="toggle-deprecated" href="#">show deprecated</a>)';
+          return pre.replace(/entries/g, "licenses") + show_deprecated_link;
+        },
+        // Display "info" on top
+        "sDom": '<"top"<"actions">lfpi<"clear">><"clear">rt<"bottom">',
+        // Hide deprecated rows by default using the search on the first column
+        "searchCols": [
+          {"search": "active"},
+        ]
+      });
+
+      $("#toggle-deprecated").on("click", function(event) {
+        event.preventDefault();
+        table.search("deprecated").column(0).search("").draw();
+      });
+
+      let url_params = new URLSearchParams(window.location.search);
+
+      // https://datatables.net/reference/api/search()
+      let searchbox = $("#searchbox");
+      searchbox.on("keyup", function() {
+        table.search(this.value).draw();
+
+        // Inject the search value in the browser href
+        if (history.replaceState) {
+          url_params.set('search', this.value);
+          let href = window.location.pathname + "?" + url_params.toString();
+          history.replaceState({}, null, href);
+        }
+      });
+
+      let search = url_params.get('search');
+      if (search) {
+        searchbox.val(search);
+        searchbox.keyup();
+      }
+    });
+  </script>
+{% endblock %}

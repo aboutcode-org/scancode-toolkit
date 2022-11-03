@@ -1,3 +1,20 @@
+---
+key: ipa-font
+short_name: IPA Font License 1.0
+name: IPA Font License Agreement v1.0
+category: Copyleft Limited
+owner: OSI - Open Source Initiative
+homepage_url: http://opensource.org/licenses/ipafont.html
+notes: Per SPDX.org, this license is OSI certified.
+spdx_license_key: IPA
+text_urls:
+    - http://opensource.org/licenses/ipafont.html
+osi_url: http://opensource.org/licenses/ipafont.html
+other_urls:
+    - http://www.opensource.org/licenses/IPA
+    - https://opensource.org/licenses/IPA
+---
+
 IPA Font License Agreement v1.0 
  
 The Licensor provides the Licensed Program (as defined in Article 1 below) under the terms of this license agreement ("Agreement").  Any use, reproduction or distribution of the Licensed Program, or any exercise of rights under this Agreement by a Recipient (as defined in Article 1 below) constitutes the Recipient's acceptance of this Agreement.

@@ -1,3 +1,10 @@
+---
+license_expression: other-permissive
+is_license_text: yes
+ignorable_emails:
+    - permission@sei.cmu.edu
+---
+
 BSD (SEI)
 
 Redistribution and use in source and binary forms, with or without

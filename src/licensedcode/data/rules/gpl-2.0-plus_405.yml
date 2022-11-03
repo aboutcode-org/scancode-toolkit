@@ -1,7 +1,0 @@
-license_expression: gpl-2.0-plus
-is_license_notice: yes
-relevance: 100
-minimum_coverage: 99
-notes: the license pointed to by the url is a GPL 2.0 or later
-ignorable_urls:
-    - http://www.gelato.unsw.edu.au/archives/linux-ia64/0104/1405.html

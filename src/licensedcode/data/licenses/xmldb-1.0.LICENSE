@@ -1,3 +1,28 @@
+---
+key: xmldb-1.0
+short_name: XML:DB Initiative Software License 1.0
+name: XML:DB Initiative Software License 1.0
+category: Permissive
+owner: XMLDB
+homepage_url: http://xmldb-org.sourceforge.net/index.html
+spdx_license_key: LicenseRef-scancode-xmldb-1.0
+text_urls:
+    - http://xmldb-org.sourceforge.net/legal.html
+faq_url: http://xmldb-org.sourceforge.net/faqs.html
+other_urls:
+    - http://www.xmldb.org/
+ignorable_copyrights:
+    - Copyright (c) 2000-2003 The XML:DB Initiative
+ignorable_holders:
+    - The XML:DB Initiative
+ignorable_authors:
+    - the XML:DB Initiative (http://www.xmldb.org/)
+ignorable_urls:
+    - http://www.xmldb.org/
+ignorable_emails:
+    - info@xmldb.org
+---
+
 The XML:DB Initiative Software License, Version 1.0 
  
   Copyright (c) 2000-2003 The XML:DB Initiative.  All rights reserved. 

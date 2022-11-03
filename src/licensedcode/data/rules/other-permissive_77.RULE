@@ -1,3 +1,10 @@
+---
+license_expression: other-permissive
+is_license_text: yes
+relevance: 100
+notes: seen in hdf5
+---
+
  * Permission is granted to use this file in whole or in
  * part for any purpose, educational, recreational or commercial,
  * provided that this copyright notice is retained unchanged.

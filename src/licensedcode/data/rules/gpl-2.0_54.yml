@@ -1,7 +1,0 @@
-license_expression: gpl-2.0
-is_license_notice: yes
-notes: GPL from linux, debian style
-ignorable_copyrights:
-    - copyrighted by Linus Torvalds and others
-ignorable_holders:
-    - Linus Torvalds and others

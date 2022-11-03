@@ -1,3 +1,13 @@
+---
+key: san-francisco-font
+short_name: San Francisco Font License
+name: Apple San Francisco Font License
+category: Proprietary Free
+owner: Apple
+homepage_url: https://sf.abarba.me/LICENSE.pdf
+spdx_license_key: LicenseRef-scancode-san-francisco-font
+---
+
 APPLE INC.
 LICENSE AGREEMENT FOR THE APPLE SAN FRANCISCO FONT
 For iOS, OS X and tvOS application uses only

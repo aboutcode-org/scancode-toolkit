@@ -1,1 +1,9 @@
+---
+license_expression: bsd-new
+is_license_tag: yes
+relevance: 100
+ignorable_urls:
+    - http://www.debian.org/misc/bsd.license
+---
+
 license   http://www.debian.org/misc/bsd.license  BSD License (3 Clause)

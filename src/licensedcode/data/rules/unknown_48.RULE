@@ -1,1 +1,9 @@
+---
+license_expression: free-unknown
+is_license_reference: yes
+relevance: 70
+ignorable_urls:
+    - http://creativecommons.org/ns#Distribution
+---
+
 resource="http://creativecommons.org/ns#Distribution" />

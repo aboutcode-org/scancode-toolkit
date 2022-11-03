@@ -1,3 +1,9 @@
+---
+license_expression: proprietary-license
+is_license_text: yes
+notes: Based on the MIT with material and problematic changes. https://github.com/cuio/Elysium/blob/487d26318803988350e2397b424b597da9cb14e4/COPYING#L2
+---
+
 Permission is hereby not granted to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
 in the Software with restriction, including limitation of rights

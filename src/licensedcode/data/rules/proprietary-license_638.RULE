@@ -1,3 +1,9 @@
+---
+license_expression: proprietary-license
+is_license_text: yes
+notes: Based on the MIT with material and problematic changes. https://github.com/tariqultais/MR.Blood/blob/de6e96b98dbdefb1f8847080c368bd51bb92e397/LICENCE
+---
+
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this Web software and associated documentation files (the "Web Application"), to deal
 in the Web Software without restriction, including without limitation the rights

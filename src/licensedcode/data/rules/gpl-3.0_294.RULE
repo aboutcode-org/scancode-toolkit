@@ -1,2 +1,10 @@
+---
+license_expression: gpl-3.0
+is_license_notice: yes
+relevance: 100
+ignorable_urls:
+    - http://www.gnu.org/licenses/gpl.html
+---
+
 This software is distributed under the terms of the GNU General Public
      License v3, dated 2007/06/29 (see http://www.gnu.org/licenses/gpl.html).

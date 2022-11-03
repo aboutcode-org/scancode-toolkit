@@ -1,3 +1,12 @@
+---
+license_expression: proprietary-license
+is_license_text: yes
+ignorable_copyrights:
+    - copyrighted by BISS GmbH.
+ignorable_holders:
+    - BISS GmbH.
+---
+
 BISS AWT International License Agreement
 1. LICENSE GRANT
 
@@ -41,4 +50,4 @@ Chaukenweg 12
 D-26388 Wilhelmshaven
 Germany
 
-BISS AWT International License Agreement February 1st, 1997 
+BISS AWT International License Agreement February 1st, 1997

@@ -1,3 +1,8 @@
+---
+license_expression: ruby OR gpl-2.0 OR gpl-3.0
+is_license_notice: yes
+---
+
 is copyrighted free software produced by  along with 
 community contributions.  See git log for authorship information.
 
@@ -54,5 +59,3 @@ or GPLv3 (see GPLv2 and GPLv3 files), or the conditions below:
      IMPLIED WARRANTIES, INCLUDING, WITHOUT LIMITATION, THE IMPLIED
      WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
      PURPOSE.
-
-

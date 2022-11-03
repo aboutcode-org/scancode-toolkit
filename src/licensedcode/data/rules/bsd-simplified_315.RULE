@@ -1,3 +1,11 @@
+---
+license_expression: bsd-simplified
+is_license_notice: yes
+relevance: 100
+referenced_filenames:
+    - LICENSE
+---
+
 ### License
 
 available under the Simplified BSD License; see LICENSE for the full text.

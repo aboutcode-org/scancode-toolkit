@@ -1,9 +1,0 @@
-license_expression: apache-1.1
-is_license_notice: yes
-notes: Viola system apache 1.1 template
-ignorable_authors:
-    - Viola Systems (http://www.violasystems.com/)
-ignorable_urls:
-    - http://www.violasystems.com/
-ignorable_emails:
-    - opentcp@opentcp.org

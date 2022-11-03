@@ -1,3 +1,21 @@
+---
+key: lbnl-bsd
+short_name: LBNL BSD Variant
+name: Lawrence Berkeley National Labs BSD variant license
+category: Permissive
+owner: Regents of the University of California
+homepage_url: https://fedoraproject.org/wiki/Licensing:LBNLBSD?rd=Licensing/LBNLBSD
+spdx_license_key: BSD-3-Clause-LBNL
+other_urls:
+    - https://fedoraproject.org/wiki/Licensing/LBNLBSD
+minimum_coverage: 90
+ignorable_copyrights:
+    - Copyright (c) 2003, The Regents of the University of California, through Lawrence Berkeley
+        National Laboratory
+ignorable_holders:
+    - The Regents of the University of California, through Lawrence Berkeley National Laboratory
+---
+
 Copyright (c) 2003, The Regents of the University of California, through
 Lawrence Berkeley National Laboratory (subject to receipt of any required
 approvals from the U.S. Dept. of Energy). All rights reserved. 

@@ -1,2 +1,9 @@
+---
+license_expression: mit
+is_license_notice: yes
+referenced_filenames:
+    - doc/otp-base-license.txt
+---
+
 Portions of the following files are licensed under the MIT License:
 Please see {{doc/otp-base-license.txt}} for the full terms of this license.

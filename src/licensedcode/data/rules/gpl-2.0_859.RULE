@@ -1,3 +1,10 @@
+---
+license_expression: gpl-2.0
+is_license_notice: yes
+relevance: 99
+notes: there are some uncommon entire program references
+---
+
 This software may be used and distributed according to the terms of
 the GNU General Public License (GPL) version 2, incorporated herein by
 reference. Drivers based on or derived from this code fall under the GPL

@@ -1,1 +1,9 @@
+---
+license_expression: ruby
+is_license_reference: yes
+relevance: 100
+referenced_filenames:
+    - LICENSE.RUBY
+---
+
 see LICENSE.RUBY for most files found in lib/ruby/stdlib

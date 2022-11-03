@@ -1,3 +1,15 @@
+---
+key: rsa-cryptoki
+short_name: RSA Cryptoki License
+name: RSA Cryptoki License
+category: Permissive
+owner: RSA (the Security Division of EMC)
+homepage_url: http://www.rsa.com/rsalabs/node.asp?id=2133
+spdx_license_key: LicenseRef-scancode-rsa-cryptoki
+text_urls:
+    - http://www.rsa.com/rsalabs/node.asp?id=2133
+---
+
 DISCLAIMER
 Regarding the header / include files:
 License to copy and use this software is granted provided that it is identified as "RSA Security Inc. PKCS #11 Cryptographic Token Interface (Cryptoki)" in all material mentioning or referencing this software or this function.

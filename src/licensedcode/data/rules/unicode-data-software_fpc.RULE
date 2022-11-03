@@ -1,3 +1,11 @@
+---
+license_expression: unicode
+is_license_notice: yes
+relevance: 99
+minimum_coverage: 60
+notes: some shortened variant with a different disclaimer
+---
+
 Permission is hereby granted, free of charge, to any person 
 obtaining a copy of the Unicode data files and any associated 
 documentation (the "Data Files") or Unicode software and any 

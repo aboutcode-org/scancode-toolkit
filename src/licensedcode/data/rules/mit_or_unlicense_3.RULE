@@ -1,1 +1,9 @@
+---
+license_expression: mit OR unlicense
+is_license_notice: yes
+relevance: 100
+ignorable_urls:
+    - http://unlicense.org/
+---
+
 Dual-licensed under MIT or the [UNLICENSE](http://unlicense.org).

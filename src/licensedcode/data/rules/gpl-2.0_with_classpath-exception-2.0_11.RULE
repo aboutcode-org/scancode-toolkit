@@ -1,3 +1,12 @@
+---
+license_expression: gpl-2.0 WITH classpath-exception-2.0
+is_license_notice: yes
+referenced_filenames:
+    - LICENSE
+ignorable_urls:
+    - http://www.oracle.com/
+---
+
  * This code is free software; you can redistribute it and/or modify it
  * under the terms of the GNU General Public License version 2 only, as
  * published by the Free Software Foundation.  Oracle designates this

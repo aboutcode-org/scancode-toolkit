@@ -1,3 +1,8 @@
+---
+license_expression: proprietary-license
+is_license_notice: yes
+---
+
 Details pertaining to the 
  * coordinate system have been release in the public domain (see references above).
  * This code is an independent implementation of the SCH coordinate system

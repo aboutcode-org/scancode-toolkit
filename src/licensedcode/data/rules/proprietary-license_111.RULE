@@ -1,3 +1,13 @@
+---
+license_expression: proprietary-license
+is_license_text: yes
+relevance: 100
+ignorable_copyrights:
+    - (c) Department of Natural Resources Canada
+ignorable_holders:
+    - Department of Natural Resources Canada
+---
+
 GEOGRATIS LICENCE AGREEMENT FOR UNRESTRICTED USE OF DIGITAL DATA
 
 This is a legal agreement between you ("Licensee") and Her Majesty the Queen in Right of Canada ("Canada"), as represented by the Minister of Natural Resources Canada. BY ACCESSING, DOWNLOADING, PRINTING OR USING THE DATA, INFORMATION AND MATERIALS BEING PROVIDED WITH, OR ACCESSIBLE PURSUANT TO THIS AGREEMENT, YOU ARE AGREEING TO BE BOUND BY THE TERMS OF THIS AGREEMENT. IF YOU DO NOT AGREE TO THE TERMS OF THIS AGREEMENT, YOU MUST IMMEDIATELY DISPOSE OF ANY SUCH DATA, INFORMATION, MATERIALS AND ANY DERIVED PRODUCTS.

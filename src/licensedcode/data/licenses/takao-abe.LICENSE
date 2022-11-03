@@ -1,3 +1,12 @@
+---
+key: takao-abe
+short_name: Takao Abe License
+name: Takao Abe License
+category: Permissive
+owner: Unspecified
+spdx_license_key: LicenseRef-scancode-takao-abe
+---
+
 Permission to use, copy, modify, and distribute this software   
 and its documentation for any purpose is hereby granted         
 without fee, provided that the following conditions are met:    

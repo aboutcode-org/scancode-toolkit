@@ -1,3 +1,12 @@
+---
+license_expression: zend-2.0
+is_license_notice: yes
+ignorable_urls:
+    - http://www.zend.com/license/2_00.txt
+ignorable_emails:
+    - license@zend.com
+---
+
    | This source file is subject to version 2.00 of the Zend license,     |
    | that is bundled with this package in the file LICENSE, and is        |
    | available through the world-wide-web at the following url:           |

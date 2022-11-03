@@ -1,3 +1,11 @@
+---
+license_expression: bsd-new
+is_license_reference: yes
+relevance: 100
+ignorable_urls:
+    - http://www.xfree86.org/3.3.6/COPYRIGHT2.html
+---
+
 This is free software. It is licensed for use, modification and
 redistribution under the terms of the
 Modified (3 clause) Berkeley Software Distribution License

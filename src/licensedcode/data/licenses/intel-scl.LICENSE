@@ -1,3 +1,14 @@
+---
+key: intel-scl
+short_name: Intel Source Code License Agreement
+name: Intel Source Code License Agreement
+category: Proprietary Free
+owner: Intel Corporation
+spdx_license_key: LicenseRef-scancode-intel-scl
+other_urls:
+    - http://software.intel.com/en-us/articles/intel-64-architecture-processor-topology-enumeration
+---
+
 Intel Source Code License Agreement
 
 This license governs use of the accompanying software. By installing or copying all or any part of the software components in this package, you ("you" or "Licensee") agree to the terms of this agreement.  Do not install or copy the software until you have carefully read and agreed to the following terms and conditions.  If you do not agree to the terms of this agreement, promptly return the software to Intel Corporation ("Intel").

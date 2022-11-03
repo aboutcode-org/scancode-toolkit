@@ -1,3 +1,8 @@
+---
+license_expression: bsd-new
+is_license_text: yes
+---
+
   BSD:
   The BSD license applies to all files in the directory 
 
@@ -24,4 +29,3 @@
   STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING
   IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
   POSSIBILITY OF SUCH DAMAGE.
-

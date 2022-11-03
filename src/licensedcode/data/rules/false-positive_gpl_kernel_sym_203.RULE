@@ -1,3 +1,8 @@
+---
+is_false_positive: yes
+notes: seen in the Linux Kernel sources (kernel symbols related code or docs)
+---
+
 "EXPORT_SYMBOL",            .export = export_plain },
 "EXPORT_UNUSED_SYMBOL",     .export = export_unused },
 "EXPORT_SYMBOL_GPL",        .export = export_gpl },

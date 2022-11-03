@@ -1,3 +1,11 @@
+---
+license_expression: cygwin-exception-2.0
+is_license_notice: yes
+relevance: 95
+ignorable_urls:
+    - http://www.opensource.org/docs/osd/
+---
+
 1. Linking Exception.
 
 As a special exception to GPLv2, Red Hat grants you permission to link

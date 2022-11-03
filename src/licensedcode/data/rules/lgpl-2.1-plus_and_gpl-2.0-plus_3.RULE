@@ -1,3 +1,8 @@
+---
+license_expression: lgpl-2.1-plus AND gpl-2.0-plus
+is_license_notice: yes
+---
+
 Most of the package is licensed under the GNU Lesser General Public
 License (LGPL) version 2.1 (or later), except for helper and debugging
 binaries. See below for details. The documentation is licensed under

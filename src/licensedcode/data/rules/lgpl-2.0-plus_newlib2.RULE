@@ -1,3 +1,10 @@
+---
+license_expression: lgpl-2.0-plus
+is_license_notice: yes
+minimum_coverage: 93
+notes: seen in newlib
+---
+
 LGPL License 
 
 This program is free software; you can redistribute it and/or

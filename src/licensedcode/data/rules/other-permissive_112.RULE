@@ -1,3 +1,11 @@
+---
+license_expression: other-permissive
+is_license_text: yes
+relevance: 100
+notes: a rare bsd-like making extensive references to the documentation with a sudden death
+    condition
+---
+
 The copyright holders hereby grant to any person obtaining a copy of this software (the "Software") and/or its associated documentation files (the Documentation), the perpetual, irrevocable (except in the case of breach of this license) no-cost, royalty free, sublicensable rights to use, copy, modify, merge, publish, display, publicly perform, distribute, and/or sell copies of the Software and the Documentation, together or separately, and to permit persons to whom the Software and/or Documentation is furnished to do so, subject to the following conditions:
 
 . Redistributions of the Software in source code must retain the above copyright notice, this list of conditions and the following disclaimers.

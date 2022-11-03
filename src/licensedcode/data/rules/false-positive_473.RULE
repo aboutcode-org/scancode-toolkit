@@ -1,2 +1,7 @@
+---
+is_false_positive: yes
+notes: comments about licensing
+---
+
 If submitting code from LGPL sources, please consider changing the
 license to GPL (see section 3 of the LGPL).

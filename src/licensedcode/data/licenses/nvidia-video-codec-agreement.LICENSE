@@ -1,3 +1,13 @@
+---
+key: nvidia-video-codec-agreement
+short_name: NVIDIA Video Codec SDK Agreement
+name: NVIDIA Video Codec SDK Agreement
+category: Proprietary Free
+owner: NVIDIA
+homepage_url: https://developer.nvidia.com/nvidia-video-codec-sdk-license-agreement
+spdx_license_key: LicenseRef-scancode-nvidia-video-codec-agreement
+---
+
 NVIDIA VIDEO CODEC SDK LICENSE AGREEMENT (“Agreement”)
 
 BY DOWNLOADING, INSTALLING OR USING THE SOFTWARE AND OTHER AVAILABLE MATERIALS, YOU (“LICENSEE”) AGREE TO BE BOUND BY THE FOLLOWING TERMS AND CONDITIONS OF THIS AGREEMENT.  If Licensee does not agree to the terms and condition of this Agreement, THEN do not downLOAD, INSTALL OR USE the SOFTWARE AND MATERIALS.

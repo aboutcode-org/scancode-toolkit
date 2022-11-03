@@ -1,3 +1,12 @@
+---
+license_expression: sendmail
+is_license_notice: yes
+relevance: 100
+minimum_coverage: 90
+referenced_filenames:
+    - LICENSE
+---
+
 By using this file, you agree to the terms and conditions set
 forth in the LICENSE file which can be found at the top level of
 the sendmail distribution.

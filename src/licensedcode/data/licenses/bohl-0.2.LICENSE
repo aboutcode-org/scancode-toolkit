@@ -1,3 +1,20 @@
+---
+key: bohl-0.2
+short_name: BOHL-0.2
+name: The Balloon Open Hardware License v0.2
+category: Permissive
+owner: iTechnic
+spdx_license_key: LicenseRef-scancode-bohl-0.2
+text_urls:
+    - https://web.archive.org/web/20140426215620/http://www.balloonboard.org/docs/Balloon_License_0v2.pdf
+ignorable_copyrights:
+    - Copyright (c) 2006 2007 iTechnic Ltd
+ignorable_holders:
+    - iTechnic Ltd
+ignorable_urls:
+    - http://www.balloonboard.org/
+---
+
 The Balloon Open Hardware License (BOHL)
 Version 0.2 For Discussion
 The Text of this License is Copyright (c) 2006 2007 iTechnic Ltd
@@ -37,4 +54,4 @@ The purpose of this license is to protect the designers of the hardware from any
 resulting from its design, manufacture, distribution or use. 
 It is also the purpose of this license to ensure that the design remains Open in the sense detailed
 in the license and that manufacturers, distributors, and users are obliged to adhere to the Open
-principles of the design and to protect their rights to access the design as specified in the license. 
+principles of the design and to protect their rights to access the design as specified in the license.

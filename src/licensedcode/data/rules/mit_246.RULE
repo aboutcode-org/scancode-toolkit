@@ -1,2 +1,10 @@
+---
+license_expression: mit
+is_license_notice: yes
+relevance: 100
+ignorable_urls:
+    - http://www.opensource.org/licenses/mit-license.php
+---
+
 You are free to use this code under the MIT license: 
 http://www.opensource.org/licenses/mit-license.php

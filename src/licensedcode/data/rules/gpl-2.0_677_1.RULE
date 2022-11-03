@@ -1,3 +1,14 @@
+---
+license_expression: gpl-2.0
+is_license_notice: yes
+relevance: 100
+referenced_filenames:
+    - LICENSE
+ignorable_urls:
+    - http://www.sun.com/
+    - http://www.sun.com/software/products/lustre/docs/GPLv2.pdf
+---
+
 GPL HEADER START
 
 DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.

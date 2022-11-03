@@ -1,3 +1,11 @@
+---
+license_expression: bsd-new
+is_license_notice: yes
+minimum_coverage: 95
+referenced_filenames:
+    - COPYING
+---
+
  * THIS FILE IS PART OF THE MOZILLA NPAPI SDK BASIC PLUGIN SAMPLE
  * SOURCE CODE. USE, DISTRIBUTION AND REPRODUCTION OF THIS SOURCE
  * IS GOVERNED BY A BSD-STYLE SOURCE LICENSE INCLUDED WITH THIS

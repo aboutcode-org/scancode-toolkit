@@ -1,3 +1,9 @@
+---
+license_expression: unknown
+is_license_notice: yes
+minimum_coverage: 100
+---
+
 This copyright does however _not_ include the ELF hash() function
 which I currently don't know which licence or copyright it
 has. Please inform me if you know.

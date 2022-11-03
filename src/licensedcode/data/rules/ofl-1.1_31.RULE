@@ -1,1 +1,9 @@
+---
+license_expression: ofl-1.1
+is_license_notice: yes
+relevance: 100
+ignorable_urls:
+    - http://scripts.sil.org/
+---
+
 Font Software is licensed under the SIL Open Font License, Version 1.1. This Font Software is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the SIL Open Font License for the specific language, permissions and limitations governing your use of this Font Software.http://scripts.sil.org/

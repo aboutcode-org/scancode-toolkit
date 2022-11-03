@@ -1,1 +1,9 @@
+---
+license_expression: ofl-1.1-no-rfn
+is_license_reference: yes
+relevance: 100
+ignorable_urls:
+    - https://spdx.org/licenses/OFL-1.1-no-RFN
+---
+
 {{OFL-1.1-no-RFN}} https://spdx.org/licenses/OFL-1.1-no-RFN

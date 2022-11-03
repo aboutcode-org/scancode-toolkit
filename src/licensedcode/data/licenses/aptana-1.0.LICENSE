@@ -1,3 +1,15 @@
+---
+key: aptana-1.0
+short_name: Aptana 1.0
+name: Aptana Public License 1.0
+category: Copyleft Limited
+owner: Appcelerator
+homepage_url: http://aptana.com/legal/apl/
+spdx_license_key: LicenseRef-scancode-aptana-1.0
+text_urls:
+    - http://aptana.com/legal/apl/
+---
+
 Aptana Public License - 1.0
 
 THE PROGRAM (AS DEFINED BELOW) IS PROVIDED UNDER THE TERMS OF THIS APTANA PUBLIC LICENSE ("LICENSE"). THE PROGRAM IS PROTECTED BY COPYRIGHT AND/OR OTHER APPLICABLE LAW. BY EXERCISING ANY RIGHTS TO THE PROGRAM PROVIDED HERE, YOU ACCEPT AND AGREE TO BE BOUND BY THE TERMS OF THIS LICENSE.

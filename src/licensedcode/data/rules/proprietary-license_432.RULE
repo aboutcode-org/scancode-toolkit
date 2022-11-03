@@ -1,3 +1,11 @@
+---
+license_expression: proprietary-license
+is_license_text: yes
+relevance: 100
+ignorable_authors:
+    - W. Metzenthen
+---
+
 * This copyright notice covers the redistribution and use of the
  * FPU emulator developed by W. Metzenthen. It covers only its use
  * in the 386BSD, FreeBSD and NetBSD operating systems. Any other

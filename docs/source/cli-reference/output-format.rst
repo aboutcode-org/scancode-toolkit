@@ -183,7 +183,7 @@ following options.
               "text_url": "http://fedoraproject.org/wiki/Licensing:MIT#Old_Style",
               "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:mit-old-style",
               "spdx_license_key": null,
-              "spdx_url": "",
+              "spdx_url": null,
               "start_line": 9,
               "end_line": 15,
               "matched_rule": {
@@ -493,6 +493,13 @@ Comparing Different ``json`` Output Formats
 --------------
 
     ScanCode can publish results in the useful ``.csv`` format.
+
+    .. note::
+
+        This option is deprecated and will be replaced by new CSV and tabular
+        output formats in the next ScanCode release. Visit
+        https://github.com/nexB/scancode-toolkit/issues/3043
+        for details and to provide inputs and feedback.
 
     The following code performs a scan on the samples directory, and publishes the results in
     ``csv`` format::

@@ -1,3 +1,16 @@
+---
+key: ibm-as-is
+short_name: IBM AS-IS License
+name: IBM AS-IS License
+category: Permissive
+owner: IBM
+spdx_license_key: LicenseRef-scancode-ibm-as-is
+ignorable_copyrights:
+    - COPYRIGHT I B M CORPORATION 2000
+ignorable_holders:
+    - I B M CORPORATION
+---
+
 This source and object code has been made available to you by IBM on an
 AS-IS basis.
 

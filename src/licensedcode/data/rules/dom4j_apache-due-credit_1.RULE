@@ -1,3 +1,14 @@
+---
+license_expression: dom4j
+is_license_notice: yes
+notes: This is the old "Castor" license from http://www.castor.org/license.txt which is essentially
+    a dom4j
+ignorable_urls:
+    - http://www.exolab.org/
+ignorable_emails:
+    - info@exolab.org
+---
+
 Redistribution and use of this software and associated documentation
 ("Software"), with or without modification, are permitted provided
 that the following conditions are met:

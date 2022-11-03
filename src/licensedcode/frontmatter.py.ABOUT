@@ -1,0 +1,19 @@
+about_resource: frontmatter.py
+name: python-frontmatter
+version: 1.0.0
+download_url: https://files.pythonhosted.org/packages/dd/17/0614eb78820bd9243ffd1f57c8bd4a86debd644f5a2cef720e07309d307a/python-frontmatter-1.0.0.tar.gz
+description: |
+  Parse and manage posts with YAML (or other) frontmatter
+  This is a small package to load and parse files (or just text) with YAML (or JSON, TOML or other) front matter.
+  [PyPI](https://img.shields.io/pypi/v/python-frontmatter.svg)](https://pypi.org/project/python-frontmatter/)
+  [Documentation](https://python-frontmatter.readthedocs.io/en/latest/)**
+homepage_url: https://github.com/eyeseast/python-frontmatter
+package_url: pkg:pypi/python-frontmatter@1.0.0
+license_expression: mit
+attribute: yes
+checksum_md5: 3718ee8fa3b0d4e5b262c9895ef44b81
+checksum_sha1: 60914691e82016a206347e1eb8ddd20174a818d1
+licenses:
+  - key: mit
+    name: MIT License
+    file: frontmatter.py.LICENSE

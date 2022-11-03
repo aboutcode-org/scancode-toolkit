@@ -1,3 +1,11 @@
+---
+license_expression: other-permissive
+is_license_text: yes
+notes: Seen in http://katana.nongnu.org/ BSD-like
+ignorable_authors:
+    - Dartmouth College
+---
+
 Any redistribution must include copyright notice attribution to Dartmouth College as well as the Warranty Disclaimer below, as well as this list of conditions in any related documentation and, if feasible, on the redistributed software; Any redistribution must include the acknowledgment, "This product includes software developed by Dartmouth College," in any related documentation and, if feasible, in the redistributed software; and The names "Dartmouth" and "Dartmouth College" may not be used to endorse or promote products derived from this software.
 
 WARRANTY DISCLAIMER

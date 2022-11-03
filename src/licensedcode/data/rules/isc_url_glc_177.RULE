@@ -1,1 +1,9 @@
+---
+license_expression: isc
+is_license_reference: yes
+relevance: 100
+ignorable_urls:
+    - https://www.opensource.org/licenses/isc
+---
+
 https://www.opensource.org/licenses/isc

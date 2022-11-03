@@ -283,7 +283,7 @@ class TestQueryWithSingleRun(IndexTesting):
         rule_dir = self.get_test_loc('query/rtos_exact/')
         from licensedcode.models import load_rules
         idx = index.LicenseIndex(load_rules(rule_dir))
-        query_loc = self.get_test_loc('query/rtos_exact/gpl-2.0-freertos.RULE')
+        query_loc = self.get_test_loc('query/old_rtos_exact/gpl-2.0-freertos.RULE')
 
         index_text_tokens = [idx.tokens_by_tid[t] for t in idx.tids_by_rid[0]]
 

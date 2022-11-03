@@ -1,3 +1,11 @@
+---
+license_expression: mpl-2.0
+is_license_notice: yes
+minimum_coverage: 30
+ignorable_urls:
+    - http://mozilla.org/MPL/2.0
+---
+
 * Code is MPL licensed:
 This Source Code Form is subject to the terms of the Mozilla Public
 License, v. 2.0. If a copy of the MPL was not distributed with this file,

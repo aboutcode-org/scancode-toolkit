@@ -1,3 +1,12 @@
+---
+license_expression: public-domain OR mit
+is_license_notice: yes
+relevance: 100
+notes: Seen in json-cpp
+ignorable_urls:
+    - http://en.wikipedia.org/wiki/MIT_License
+---
+
 In jurisdictions which recognize Public Domain property, the user of this
 software may choose to accept it either as 1) Public Domain, 2) under the
 conditions of the MIT License (see below), or 3) under the terms of dual

@@ -1,3 +1,23 @@
+---
+key: bsl-1.1
+short_name: Business Source License 1.1
+name: Business Source License 1.1
+category: Source-available
+owner: MariaDB
+homepage_url: https://mariadb.com/bsl11/
+spdx_license_key: BUSL-1.1
+other_spdx_license_keys:
+    - LicenseRef-scancode-bsl-1.1
+faq_url: https://mariadb.com/bsl-faq-mariadb/
+other_urls:
+    - https://mariadb.com/bsl-faq-adopting/
+    - https://mariadb.com/products/mariadb-enterprise
+ignorable_copyrights:
+    - copyright (c) 2017 MariaDB Corporation Ab
+ignorable_holders:
+    - MariaDB Corporation Ab
+---
+
 Business Source License 1.1
 
 License text copyright © 2017 MariaDB Corporation Ab, All Rights Reserved.

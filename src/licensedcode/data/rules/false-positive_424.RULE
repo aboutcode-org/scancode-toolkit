@@ -1,2 +1,6 @@
-//Linux, HCF-light based, MSF source code in Public Domain
+---
+is_false_positive: yes
+notes: commentary about a license.
+---
 
+//Linux, HCF-light based, MSF source code in Public Domain

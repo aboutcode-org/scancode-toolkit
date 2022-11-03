@@ -1,6 +1,0 @@
-license_expression: lgpl-2.0-plus
-is_license_notice: yes
-referenced_filenames:
-    - COPYING.LIB
-    - COPYING.LIother.m_
-notes: there is a likely typo in the referenced filename

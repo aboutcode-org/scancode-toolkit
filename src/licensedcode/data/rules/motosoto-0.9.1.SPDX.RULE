@@ -1,3 +1,10 @@
+---
+license_expression: motosoto-0.9.1
+is_license_notice: yes
+minimum_coverage: 10
+notes: license text as published by SPDX
+---
+
 MOTOSOTO OPEN SOURCE LICENSE - Version 0.9.1
 This Motosoto Open Source License (the "License") applies to "Community
 Portal Server" and related software products as well as any updatesor

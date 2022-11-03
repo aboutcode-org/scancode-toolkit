@@ -1,3 +1,23 @@
+---
+key: cockroachdb-use-grant-for-bsl-1.1
+short_name: CockroachDB Use Grant for BSL 1.1
+name: CockroachDB Additional Use Grant for BSL 1.1
+category: Source-available
+owner: Cockroachlabs
+homepage_url: https://github.com/cockroachdb/cockroach/blob/8acfe8ffd0028ce1d81a9b1148f7e9ba2673bf95/licenses/BSL.txt
+is_exception: yes
+spdx_license_key: LicenseRef-scancode-cockroachdb-use-grant-bsl-1.1
+other_spdx_license_keys:
+    - LicenseRef-scancode-cockroachdb-use-grant-for-bsl-1.1
+faq_url: https://www.cockroachlabs.com/blog/oss-relicensing-cockroachdb/
+ignorable_copyrights:
+    - (c) 2019 Cockroach Labs, Inc.
+ignorable_holders:
+    - Cockroach Labs, Inc.
+ignorable_urls:
+    - https://cockroachlabs.com/
+---
+
 Parameters
 Licensor:             Cockroach Labs, Inc.
 Licensed Work:        CockroachDB 19.2

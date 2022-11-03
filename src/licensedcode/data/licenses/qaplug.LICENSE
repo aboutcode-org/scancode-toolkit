@@ -1,3 +1,13 @@
+---
+key: qaplug
+short_name: QAPlug License
+name: QAPlug License
+category: Proprietary Free
+owner: SolDevelo
+homepage_url: http://qaplug.com/about/license-agreement/
+spdx_license_key: LicenseRef-scancode-qaplug
+---
+
 END USER LICENSE AGREEMENT
 
 SolDevelo ("Licensor") will license the software application ("Software") to the User ("Licensee"), upon the condition that Licensee accept all of the Terms and Conditions of this End User License Agreement ("Agreement").

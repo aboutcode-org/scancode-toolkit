@@ -1,1 +1,9 @@
+---
+license_expression: bsd-new
+is_license_notice: yes
+relevance: 100
+ignorable_urls:
+    - http://hsqldb.org/
+---
+
 can be distributed and used according to HSQLDB License see http://hsqldb.org

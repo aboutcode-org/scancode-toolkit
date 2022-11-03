@@ -1,3 +1,14 @@
+---
+license_expression: apache-2.0 AND dco-1.1
+is_license_notice: yes
+relevance: 100
+minimum_coverage: 70
+referenced_filenames:
+    - LICENSE
+    - DCO.md
+    - CONTRIBUTING.md
+---
+
 ## Contributing
 The project can only accept contributions which are licensed under the [Apache License 2.0](LICENSE) and are signed according to the 
 [Developer's Certificate of Origin](DCO.md). For further information please see our [Contribution Guidelines](CONTRIBUTING.md

@@ -60,8 +60,6 @@ def get_rules_from_rule_names(rule_names, temp_dir):
     for rule_name in rule_names:
         rule_path = rules_data_dir + '/' + rule_name
         shutil.copy(rule_path, temp_dir)
-        data_path = rule_path.replace('.RULE', '.yml')
-        shutil.copy(data_path, temp_dir)
 
     return load_rules(temp_dir)
 

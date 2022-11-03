@@ -1,1 +1,11 @@
-@copyright GNU General Public License. 
+---
+license_expression: gpl-1.0-plus
+is_license_tag: yes
+relevance: 100
+ignorable_copyrights:
+    - copyright GNU General
+ignorable_holders:
+    - GNU General
+---
+
+@copyright GNU General Public License.

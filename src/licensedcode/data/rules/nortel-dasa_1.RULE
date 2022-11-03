@@ -1,3 +1,13 @@
+---
+license_expression: nortel-dasa
+is_license_text: yes
+relevance: 100
+ignorable_emails:
+    - frank@comsys.dofn.de
+ignorable_authors:
+    - F.Schnekenbuehl <frank@comsys.dofn.de>
+---
+
 Created by F.Schnekenbuehl <frank@comsys.dofn.de> from clk_rcc8000.c
 Nortel DASA Network Systems GmbH, Department: ND250
 A Joint venture of Daimler-Benz Aerospace and Nortel

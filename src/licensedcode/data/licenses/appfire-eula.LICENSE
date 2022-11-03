@@ -1,3 +1,24 @@
+---
+key: appfire-eula
+short_name: Appfire EULA
+name: Appfire EULA
+category: Proprietary Free
+owner: Appfire
+homepage_url: http://appfire.com/eula
+spdx_license_key: LicenseRef-scancode-appfire-eula
+ignorable_urls:
+    - https://bobswift.atlassian.net/
+    - https://bobswift.atlassian.net/wiki/questions
+    - https://marketplace.atlassian.com/
+    - https://wittified.atlassian.net/
+    - https://wittified.atlassian.net/wiki/questions
+    - https://www.atlassian.com/licensing/marketplace/termsofuse
+ignorable_emails:
+    - legal@appfire.com
+    - operations@appfire.com
+    - unsubscribe@appfire.com
+---
+
 Appfire EULA
 IMPORTANT! BE SURE TO CAREFULLY READ AND UNDERSTAND ALL OF THE RIGHTS AND RESTRICTIONS SET FORTH IN THIS END USER LICENSE AGREEMENT (“EULA”). YOU ARE NOT AUTHORIZED TO USE THIS SOFTWARE UNLESS AND UNTIL YOU ACCEPT THE TERMS OF THIS EULA.
 

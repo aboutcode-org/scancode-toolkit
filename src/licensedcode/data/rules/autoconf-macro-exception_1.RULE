@@ -1,3 +1,8 @@
+---
+license_expression: autoconf-macro-exception
+is_license_notice: yes
+---
+
 As a special exception, the you may copy, distribute and modify the
 configure scripts that are the output of Autoconf when processing
 the Macro.  You need not follow the terms of the GNU General Public

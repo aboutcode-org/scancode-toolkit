@@ -1,3 +1,14 @@
+---
+license_expression: lppl-1.3c
+is_license_text: yes
+ignorable_copyrights:
+    - Copyright 1999 2002-2006 LaTeX3 Project
+ignorable_holders:
+    - LaTeX3 Project
+ignorable_urls:
+    - http://www.latex-project.org/lppl.txt
+---
+
 lppl (LaTeX Project Public License)
 
 The LaTeX Project Public License
@@ -415,4 +426,3 @@ Important Recommendations
    to comprise the Work and, in such a case, the licensee would be
    entitled to make reasonable conjectures as to which files comprise
    the Work.
-

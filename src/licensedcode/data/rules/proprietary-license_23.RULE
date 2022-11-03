@@ -1,1 +1,9 @@
+---
+license_expression: proprietary-license
+is_license_reference: yes
+relevance: 100
+ignorable_urls:
+    - https://developer.decibel.net/csharp-sdk#terms
+---
+
 https://developer.decibel.net/csharp-sdk#terms

@@ -1,1 +1,9 @@
+---
+license_expression: mpl-2.0
+is_license_notice: yes
+relevance: 100
+ignorable_urls:
+    - http://mozilla.org/MPL/2.0
+---
+
 licensed under the MPL 2.0 (http://mozilla.org/MPL/2.0/)

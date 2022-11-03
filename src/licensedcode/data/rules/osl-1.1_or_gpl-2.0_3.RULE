@@ -1,3 +1,12 @@
+---
+license_expression: osl-1.1 OR gpl-2.0
+is_license_notice: yes
+referenced_filenames:
+    - COPYING
+ignorable_urls:
+    - http://www.opensource.org/licenses/osl-1.1.txt
+---
+
  (OSL/GPL code release authorized by Jalil Fadavi).
 + *
 + *  The contents of this file are subject to the Open

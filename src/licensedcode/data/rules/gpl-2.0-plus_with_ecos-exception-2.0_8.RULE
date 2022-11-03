@@ -1,3 +1,10 @@
+---
+license_expression: gpl-2.0-plus WITH ecos-exception-2.0
+is_license_notice: yes
+minimum_coverage: 10
+notes: license text as published by SPDX, minus copyright
+---
+
  ####ECOSGPLCOPYRIGHTBEGIN####                                            
 // -------------------------------------------                              
 // This file is part of eCos, the Embedded Configurable Operating System.   
@@ -27,4 +34,4 @@
 // This exception does not invalidate any other reasons why a work based    
 // on this file might be covered by the GNU General Public License.         
 // -------------------------------------------                              
-// ####ECOSGPLCOPYRIGHTEND####                                      
+// ####ECOSGPLCOPYRIGHTEND####

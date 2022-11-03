@@ -1,3 +1,10 @@
+---
+license_expression: qpl-1.0
+is_license_notice: yes
+ignorable_urls:
+    - http://www.opensource.org/licenses/qtpl.php
+---
+
 This software may be distributed under the terms of the Q Public
 License version 1.0. A copy of the license can be found with this
 software or at http://www.opensource.org/licenses/qtpl.php

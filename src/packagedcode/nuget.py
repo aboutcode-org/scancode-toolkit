@@ -18,7 +18,7 @@ Handle NuGet packages and their manifests.
 # TODO: add dependencies
 
 
-def get_urls(name, version):
+def get_urls(name, version, **kwargs):
     return dict(
         repository_homepage_url=f'https://www.nuget.org/packages/{name}/{version}',
         repository_download_url=f'https://www.nuget.org/api/v2/package/{name}/{version}',

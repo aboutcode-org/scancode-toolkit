@@ -1,3 +1,11 @@
+---
+license_expression: oracle-mysql-foss-exception-2.0
+is_license_text: yes
+relevance: 99
+minimum_coverage: 80
+notes: license list missing
+---
+
 Oracle's FOSS License Exception Terms and Conditions
 
 1. Definitions. "Derivative Work" means a derivative work, as defined

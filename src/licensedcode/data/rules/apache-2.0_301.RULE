@@ -1,3 +1,14 @@
+---
+license_expression: apache-2.0
+is_license_notice: yes
+relevance: 100
+minimum_coverage: 95
+referenced_filenames:
+    - NOTICE
+ignorable_urls:
+    - http://www.apache.org/licenses/LICENSE-2.0
+---
+
   Licensed to Accellera Systems Initiative Inc. (Accellera) under one or
   more contributor license agreements.  See the NOTICE file distributed
   with this work for additional information regarding copyright ownership.

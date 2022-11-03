@@ -1,1 +1,9 @@
+---
+license_expression: mit-old-style-no-advert
+is_license_reference: yes
+relevance: 100
+ignorable_urls:
+    - http://opensource.org/licenses/ntp-license.php
+---
+
   <http://opensource.org/licenses/ntp-license.php>

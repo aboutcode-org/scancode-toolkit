@@ -1,1 +1,9 @@
+---
+license_expression: apache-2.0
+is_license_notice: yes
+relevance: 100
+referenced_filenames:
+    - LICENSE
+---
+
 Permission to modify and redistribute is granted under the terms of the Apache 2.0 license. See the LICENSE file for the full license.

@@ -1,3 +1,12 @@
+---
+license_expression: ms-net-library-2018-11
+is_license_text: yes
+ignorable_urls:
+    - http://go.microsoft.com/?linkid=9840733
+    - http://www.microsoft.com/exporting
+    - https://go.microsoft.com/fwlink/?LinkID=824704
+---
+
 MICROSOFT .NET LIBRARY
 
 These license terms are an agreement between Microsoft Corporation
@@ -108,5 +117,3 @@ Elle s'applique également, même si Microsoft connaissait ou devrait connaître
  
 
 EFFET JURIDIQUE. Le présent contrat décrit certains droits juridiques. Vous pourriez avoir d'autres droits prévus par les lois de votre pays. Le présent contrat ne modifie pas les droits que vous confèrent les lois de votre pays si celles-ci ne le permettent pas.
-
- 
