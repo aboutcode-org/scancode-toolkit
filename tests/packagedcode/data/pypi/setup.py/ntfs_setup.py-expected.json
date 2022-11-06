@@ -46,7 +46,7 @@
     "license_detections": [
       {
         "license_expression": "bsd-new",
-        "detection_rules": [
+        "detection_log": [
           "not-combined"
         ],
         "matches": [
@@ -91,7 +91,7 @@
       },
       {
         "license_expression": "bsd-new",
-        "detection_rules": [
+        "detection_log": [
           "not-combined"
         ],
         "matches": [

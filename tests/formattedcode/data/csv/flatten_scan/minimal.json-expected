@@ -23,7 +23,7 @@
     {
         "path": "srp/srp_lib.c",
         "license_expression": "openssl",
-        "detection_rules": "not-combined",
+        "detection_log": "not-combined",
         "license_match__license_expression": "openssl",
         "license_match__score": "100.00",
         "license_match__short_name": "OpenSSL License",
@@ -61,7 +61,7 @@
     {
         "path": "srp/srp_vfy.c",
         "license_expression": "openssl",
-        "detection_rules": "not-combined",
+        "detection_log": "not-combined",
         "license_match__license_expression": "openssl",
         "license_match__score": "100.00",
         "license_match__short_name": "OpenSSL License",

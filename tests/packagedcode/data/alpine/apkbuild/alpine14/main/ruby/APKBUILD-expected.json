@@ -26,7 +26,7 @@
   "license_detections": [
     {
       "license_expression": "ruby AND bsd-simplified AND mit",
-      "detection_rules": [
+      "detection_log": [
         "not-combined"
       ],
       "matches": [

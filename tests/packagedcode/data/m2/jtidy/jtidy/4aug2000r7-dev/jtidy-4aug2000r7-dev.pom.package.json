@@ -34,7 +34,7 @@
   "license_detections": [
     {
       "license_expression": "tidy",
-      "detection_rules": [
+      "detection_log": [
         "not-combined"
       ],
       "matches": [

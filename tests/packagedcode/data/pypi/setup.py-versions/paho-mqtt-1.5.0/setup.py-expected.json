@@ -52,7 +52,7 @@
     "license_detections": [
       {
         "license_expression": "epl-1.0 AND bsd-new",
-        "detection_rules": [
+        "detection_log": [
           "not-combined"
         ],
         "matches": [
@@ -134,7 +134,7 @@
       },
       {
         "license_expression": "free-unknown",
-        "detection_rules": [],
+        "detection_log": [],
         "matches": [
           {
             "score": 100.0,

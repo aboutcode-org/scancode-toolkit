@@ -42,7 +42,7 @@
     "license_detections": [
       {
         "license_expression": "ms-net-library",
-        "detection_rules": [
+        "detection_log": [
           "not-combined"
         ],
         "matches": [

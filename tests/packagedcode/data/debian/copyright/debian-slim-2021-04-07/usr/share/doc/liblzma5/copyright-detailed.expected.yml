@@ -62,7 +62,7 @@ other_license_detections:
   - license_expression: public-domain AND lgpl-2.1-plus AND gpl-2.0-plus AND (public-domain
       AND gpl-2.0-plus AND gpl-3.0-plus) AND (other-permissive AND other-copyleft) AND public-domain-disclaimer
       AND (lgpl-2.1 AND gpl-2.0 AND gpl-3.0)
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -618,7 +618,7 @@ other_license_detections:
             spdx_license_key: LicenseRef-scancode-public-domain
             spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/public-domain.LICENSE
   - license_expression: public-domain
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -656,7 +656,7 @@ other_license_detections:
             spdx_license_key: LicenseRef-scancode-public-domain
             spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/public-domain.LICENSE
   - license_expression: public-domain
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '55.0'
@@ -692,7 +692,7 @@ other_license_detections:
             spdx_license_key: LicenseRef-scancode-public-domain
             spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/public-domain.LICENSE
   - license_expression: public-domain
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -730,7 +730,7 @@ other_license_detections:
             spdx_license_key: LicenseRef-scancode-public-domain
             spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/public-domain.LICENSE
   - license_expression: public-domain
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -766,7 +766,7 @@ other_license_detections:
             spdx_license_key: LicenseRef-scancode-public-domain
             spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/public-domain.LICENSE
   - license_expression: public-domain
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -802,7 +802,7 @@ other_license_detections:
             spdx_license_key: LicenseRef-scancode-public-domain
             spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/public-domain.LICENSE
   - license_expression: public-domain
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -838,7 +838,7 @@ other_license_detections:
             spdx_license_key: LicenseRef-scancode-public-domain
             spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/public-domain.LICENSE
   - license_expression: public-domain
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -876,7 +876,7 @@ other_license_detections:
             spdx_license_key: LicenseRef-scancode-public-domain
             spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/public-domain.LICENSE
   - license_expression: public-domain
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -912,7 +912,7 @@ other_license_detections:
             spdx_license_key: LicenseRef-scancode-public-domain
             spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/public-domain.LICENSE
   - license_expression: public-domain
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -948,7 +948,7 @@ other_license_detections:
             spdx_license_key: LicenseRef-scancode-public-domain
             spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/public-domain.LICENSE
   - license_expression: public-domain AND fsf-unlimited AND autoconf-exception-2.0 AND gpl-2.0
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -1095,7 +1095,7 @@ other_license_detections:
             spdx_license_key: GPL-2.0-only
             spdx_url: https://spdx.org/licenses/GPL-2.0-only
   - license_expression: lgpl-2.1-plus AND (lgpl-2.0 AND lgpl-2.1)
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -1188,7 +1188,7 @@ other_license_detections:
             spdx_license_key: LGPL-2.1-only
             spdx_url: https://spdx.org/licenses/LGPL-2.1-only
   - license_expression: other-copyleft
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '90.0'
@@ -1226,7 +1226,7 @@ other_license_detections:
             spdx_license_key: LicenseRef-scancode-other-copyleft
             spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/other-copyleft.LICENSE
   - license_expression: public-domain
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -1264,7 +1264,7 @@ other_license_detections:
             spdx_license_key: LicenseRef-scancode-public-domain
             spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/public-domain.LICENSE
   - license_expression: lgpl-2.1-plus
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -1349,7 +1349,7 @@ other_license_detections:
             spdx_license_key: LGPL-2.1-or-later
             spdx_url: https://spdx.org/licenses/LGPL-2.1-or-later
   - license_expression: gpl-2.0
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -1430,7 +1430,7 @@ other_license_detections:
             spdx_license_key: GPL-2.0-only
             spdx_url: https://spdx.org/licenses/GPL-2.0-only
   - license_expression: gpl-2.0-plus
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -1515,7 +1515,7 @@ other_license_detections:
             spdx_license_key: GPL-2.0-or-later
             spdx_url: https://spdx.org/licenses/GPL-2.0-or-later
   - license_expression: gpl-3.0-plus WITH autoconf-macro-exception
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -1594,7 +1594,7 @@ other_license_detections:
             spdx_license_key: LicenseRef-scancode-autoconf-macro-exception
             spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/autoconf-macro-exception.LICENSE
   - license_expression: fsf-unlimited
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -1633,7 +1633,7 @@ other_license_detections:
             spdx_license_key: FSFULLR
             spdx_url: https://spdx.org/licenses/FSFULLR
   - license_expression: fsf-ap
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -1673,7 +1673,7 @@ other_license_detections:
             spdx_license_key: FSFAP
             spdx_url: https://spdx.org/licenses/FSFAP
   - license_expression: public-domain
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -1709,7 +1709,7 @@ other_license_detections:
             spdx_license_key: LicenseRef-scancode-public-domain
             spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/public-domain.LICENSE
   - license_expression: public-domain
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -1779,7 +1779,7 @@ other_license_detections:
             spdx_license_key: LicenseRef-scancode-public-domain
             spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/public-domain.LICENSE
   - license_expression: public-domain
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'

@@ -8,7 +8,7 @@ other_license_expression_spdx: bzip2-1.0.6 AND (GPL-2.0-only AND GPL-2.0-only)
 license_detections: []
 other_license_detections:
   - license_expression: bzip2-libbzip-2010
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -74,7 +74,7 @@ other_license_detections:
             spdx_license_key: bzip2-1.0.6
             spdx_url: https://spdx.org/licenses/bzip2-1.0.6
   - license_expression: gpl-2.0
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'

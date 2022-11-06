@@ -16,7 +16,7 @@ other_license_expression:
 other_license_expression_spdx:
 license_detections:
   - license_expression: stmicroelectronics-linux-firmware
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '96.74'
@@ -88,7 +88,7 @@ license_detections:
             spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/stmicroelectronics-linux-firmware.LICENSE
   - license_expression: clear-bsd AND isc AND bsd-no-mod AND gpl-2.0-plus WITH ecos-exception-2.0
       AND mit
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '99.15'
@@ -367,7 +367,7 @@ license_detections:
             spdx_license_key: MIT
             spdx_url: https://spdx.org/licenses/MIT
   - license_expression: qca-linux-firmware
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'

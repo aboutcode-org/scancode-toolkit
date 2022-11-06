@@ -35,7 +35,7 @@
     "license_detections": [
       {
         "license_expression": "bsd-simplified-darwin",
-        "detection_rules": [
+        "detection_log": [
           "not-combined"
         ],
         "matches": [

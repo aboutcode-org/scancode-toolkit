@@ -16,7 +16,7 @@ other_license_expression_spdx: MIT AND MIT AND BSD-3-Clause AND LicenseRef-scanc
 license_detections: []
 other_license_detections:
   - license_expression: bsd-new
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '99.53'
@@ -72,7 +72,7 @@ other_license_detections:
             spdx_license_key: BSD-3-Clause
             spdx_url: https://spdx.org/licenses/BSD-3-Clause
   - license_expression: mit
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -128,7 +128,7 @@ other_license_detections:
             spdx_license_key: MIT
             spdx_url: https://spdx.org/licenses/MIT
   - license_expression: gpl-2.0-plus
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -212,7 +212,7 @@ other_license_detections:
             spdx_license_key: GPL-2.0-or-later
             spdx_url: https://spdx.org/licenses/GPL-2.0-or-later
   - license_expression: warranty-disclaimer
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'

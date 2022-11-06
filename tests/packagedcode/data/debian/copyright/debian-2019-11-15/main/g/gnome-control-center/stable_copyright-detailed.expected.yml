@@ -17,7 +17,7 @@ other_license_expression_spdx: (GPL-2.0-or-later AND GPL-2.0-or-later AND GPL-2.
 license_detections: []
 other_license_detections:
   - license_expression: gpl-2.0-plus AND gpl-2.0
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -129,7 +129,7 @@ other_license_detections:
             spdx_license_key: GPL-2.0-only
             spdx_url: https://spdx.org/licenses/GPL-2.0-only
   - license_expression: mit
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -182,7 +182,7 @@ other_license_detections:
             spdx_license_key: MIT
             spdx_url: https://spdx.org/licenses/MIT
   - license_expression: lgpl-2.0-plus AND lgpl-2.1
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -294,7 +294,7 @@ other_license_detections:
             spdx_license_key: LGPL-2.1-only
             spdx_url: https://spdx.org/licenses/LGPL-2.1-only
   - license_expression: lgpl-2.1-plus AND lgpl-2.1
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'

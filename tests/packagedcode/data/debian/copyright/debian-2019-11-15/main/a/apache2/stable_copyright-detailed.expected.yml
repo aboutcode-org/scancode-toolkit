@@ -46,7 +46,7 @@ other_license_expression_spdx: (Apache-2.0 AND Apache-2.0) AND ((Apache-2.0 AND 
 license_detections: []
 other_license_detections:
   - license_expression: apache-2.0
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -132,7 +132,7 @@ other_license_detections:
             spdx_license_key: Apache-2.0
             spdx_url: https://spdx.org/licenses/Apache-2.0
   - license_expression: zeusbench
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -178,7 +178,7 @@ other_license_detections:
             spdx_license_key: LicenseRef-scancode-zeusbench
             spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/zeusbench.LICENSE
   - license_expression: bsd-new
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -239,7 +239,7 @@ other_license_detections:
             spdx_license_key: BSD-3-Clause
             spdx_url: https://spdx.org/licenses/BSD-3-Clause
   - license_expression: x11-keith-packard AND historical
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -337,7 +337,7 @@ other_license_detections:
             spdx_license_key: HPND
             spdx_url: https://spdx.org/licenses/HPND
   - license_expression: gpl-3.0-plus
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -419,7 +419,7 @@ other_license_detections:
             spdx_license_key: GPL-3.0-or-later
             spdx_url: https://spdx.org/licenses/GPL-3.0-or-later
   - license_expression: gpl-2.0-plus
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -500,7 +500,7 @@ other_license_detections:
             spdx_license_key: GPL-2.0-or-later
             spdx_url: https://spdx.org/licenses/GPL-2.0-or-later
   - license_expression: public-domain
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -569,7 +569,7 @@ other_license_detections:
             spdx_license_key: LicenseRef-scancode-public-domain
             spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/public-domain.LICENSE
   - license_expression: bsd-simplified-darwin
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -629,7 +629,7 @@ other_license_detections:
             spdx_license_key: LicenseRef-scancode-bsd-simplified-darwin
             spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-simplified-darwin.LICENSE
   - license_expression: apache-2.0 AND hs-regexp
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -720,7 +720,7 @@ other_license_detections:
             spdx_license_key: Spencer-94
             spdx_url: https://spdx.org/licenses/Spencer-94
   - license_expression: bsd-unchanged
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -778,7 +778,7 @@ other_license_detections:
             spdx_license_key: LicenseRef-scancode-bsd-unchanged
             spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-unchanged.LICENSE
   - license_expression: bsd-new
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -839,7 +839,7 @@ other_license_detections:
             spdx_license_key: BSD-3-Clause
             spdx_url: https://spdx.org/licenses/BSD-3-Clause
   - license_expression: bison-exception-2.2
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -887,7 +887,7 @@ other_license_detections:
             spdx_license_key: Bison-exception-2.2
             spdx_url: https://spdx.org/licenses/Bison-exception-2.2
   - license_expression: mit
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'

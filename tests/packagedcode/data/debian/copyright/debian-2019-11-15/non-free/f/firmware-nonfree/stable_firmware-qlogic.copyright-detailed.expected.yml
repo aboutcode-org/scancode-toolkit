@@ -13,7 +13,7 @@ other_license_expression:
 other_license_expression_spdx:
 license_detections:
   - license_expression: bsd-new
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -69,7 +69,7 @@ license_detections:
             spdx_license_key: BSD-3-Clause
             spdx_url: https://spdx.org/licenses/BSD-3-Clause
   - license_expression: linux-openib
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -126,7 +126,7 @@ license_detections:
             spdx_license_key: Linux-OpenIB
             spdx_url: https://spdx.org/licenses/Linux-OpenIB
   - license_expression: qlogic-microcode
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -198,7 +198,7 @@ license_detections:
             spdx_license_key: LicenseRef-scancode-qlogic-microcode
             spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/qlogic-microcode.LICENSE
   - license_expression: other-permissive AND proprietary-license
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -276,7 +276,7 @@ license_detections:
             spdx_license_key: LicenseRef-scancode-proprietary-license
             spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/proprietary-license.LICENSE
   - license_expression: other-permissive
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'

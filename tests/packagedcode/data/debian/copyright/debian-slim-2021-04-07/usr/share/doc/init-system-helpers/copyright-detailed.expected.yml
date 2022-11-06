@@ -15,7 +15,7 @@ other_license_expression_spdx: BSD-3-Clause AND BSD-3-Clause AND (GPL-2.0-or-lat
 license_detections: []
 other_license_detections:
   - license_expression: gpl-2.0-plus
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -100,7 +100,7 @@ other_license_detections:
             spdx_license_key: GPL-2.0-or-later
             spdx_url: https://spdx.org/licenses/GPL-2.0-or-later
   - license_expression: bsd-new
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'

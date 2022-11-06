@@ -9,7 +9,7 @@ other_license_expression_spdx: MIT AND MIT
 license_detections: []
 other_license_detections:
   - license_expression: mit
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'

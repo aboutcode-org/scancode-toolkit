@@ -332,7 +332,7 @@
       "license_detections": [
         {
           "license_expression": "mpl-2.0",
-          "detection_rules": [
+          "detection_log": [
             "not-combined"
           ],
           "matches": [
@@ -438,7 +438,7 @@
       "license_detections": [
         {
           "license_expression": "mit OR apache-2.0",
-          "detection_rules": [
+          "detection_log": [
             "not-combined"
           ],
           "matches": [
@@ -828,7 +828,7 @@
           "license_detections": [
             {
               "license_expression": "mpl-2.0",
-              "detection_rules": [
+              "detection_log": [
                 "not-combined"
               ],
               "matches": [
@@ -947,7 +947,7 @@
           "license_detections": [
             {
               "license_expression": "mit OR apache-2.0",
-              "detection_rules": [
+              "detection_log": [
                 "not-combined"
               ],
               "matches": [

@@ -12,7 +12,7 @@ other_license_expression:
 other_license_expression_spdx:
 license_detections:
   - license_expression: openldap-2.8
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -142,7 +142,7 @@ license_detections:
             spdx_license_key: OLDAP-2.8
             spdx_url: https://spdx.org/licenses/OLDAP-2.8
   - license_expression: mit
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -195,7 +195,7 @@ license_detections:
             spdx_license_key: MIT
             spdx_url: https://spdx.org/licenses/MIT
   - license_expression: fsf-unlimited-no-warranty
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -239,7 +239,7 @@ license_detections:
             spdx_license_key: LicenseRef-scancode-fsf-unlimited-no-warranty
             spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/fsf-unlimited-no-warranty.LICENSE
   - license_expression: hs-regexp
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '95.0'
@@ -292,7 +292,7 @@ license_detections:
             spdx_license_key: Spencer-94
             spdx_url: https://spdx.org/licenses/Spencer-94
   - license_expression: ibm-dhcp
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -348,7 +348,7 @@ license_detections:
             spdx_license_key: LicenseRef-scancode-ibm-dhcp
             spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/ibm-dhcp.LICENSE
   - license_expression: ietf
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -402,7 +402,7 @@ license_detections:
             spdx_license_key: LicenseRef-scancode-ietf
             spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/ietf.LICENSE
   - license_expression: isc
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -450,7 +450,7 @@ license_detections:
             spdx_license_key: ISC
             spdx_url: https://spdx.org/licenses/ISC
   - license_expression: other-permissive
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -489,7 +489,7 @@ license_detections:
             spdx_license_key: LicenseRef-scancode-other-permissive
             spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/other-permissive.LICENSE
   - license_expression: other-permissive
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -529,7 +529,7 @@ license_detections:
             spdx_license_key: LicenseRef-scancode-other-permissive
             spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/other-permissive.LICENSE
   - license_expression: mit-old-style-no-advert
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -574,7 +574,7 @@ license_detections:
             spdx_license_key: NTP
             spdx_url: https://spdx.org/licenses/NTP
   - license_expression: other-permissive
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -612,7 +612,7 @@ license_detections:
             spdx_license_key: LicenseRef-scancode-other-permissive
             spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/other-permissive.LICENSE
   - license_expression: hs-regexp
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '95.0'
@@ -664,7 +664,7 @@ license_detections:
             spdx_license_key: Spencer-94
             spdx_url: https://spdx.org/licenses/Spencer-94
   - license_expression: openldap-2.8
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -705,7 +705,7 @@ license_detections:
             spdx_license_key: OLDAP-2.8
             spdx_url: https://spdx.org/licenses/OLDAP-2.8
   - license_expression: bsla AND bsd-original-uc
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -786,7 +786,7 @@ license_detections:
             spdx_license_key: BSD-4-Clause-UC
             spdx_url: https://spdx.org/licenses/BSD-4-Clause-UC
   - license_expression: bsd-original-uc
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -885,7 +885,7 @@ license_detections:
             spdx_license_key: BSD-4-Clause-UC
             spdx_url: https://spdx.org/licenses/BSD-4-Clause-UC
   - license_expression: bsd-original-uc-1986
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '99.0'

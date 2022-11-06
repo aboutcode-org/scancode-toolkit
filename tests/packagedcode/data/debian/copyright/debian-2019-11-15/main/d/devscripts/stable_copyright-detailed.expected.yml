@@ -159,7 +159,7 @@ other_license_expression_spdx: (GPL-2.0-or-later AND GPL-2.0-or-later AND GPL-2.
 license_detections: []
 other_license_detections:
   - license_expression: artistic-perl-1.0
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '99.0'
@@ -233,7 +233,7 @@ other_license_detections:
             spdx_license_key: Artistic-1.0-Perl
             spdx_url: https://spdx.org/licenses/Artistic-1.0-Perl
   - license_expression: artistic-2.0
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '99.93'
@@ -458,7 +458,7 @@ other_license_detections:
             spdx_license_key: Artistic-2.0
             spdx_url: https://spdx.org/licenses/Artistic-2.0
   - license_expression: gpl-1.0-plus AND gpl-1.0
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -629,7 +629,7 @@ other_license_detections:
             spdx_license_key: GPL-1.0-only
             spdx_url: https://spdx.org/licenses/GPL-1.0-only
   - license_expression: gpl-2.0
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -735,7 +735,7 @@ other_license_detections:
             spdx_license_key: GPL-2.0-only
             spdx_url: https://spdx.org/licenses/GPL-2.0-only
   - license_expression: gpl-2.0-plus AND gpl-2.0
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -842,7 +842,7 @@ other_license_detections:
             spdx_license_key: GPL-2.0-only
             spdx_url: https://spdx.org/licenses/GPL-2.0-only
   - license_expression: gpl-3.0 AND gpl-1.0-plus
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -980,7 +980,7 @@ other_license_detections:
             spdx_license_key: GPL-3.0-only
             spdx_url: https://spdx.org/licenses/GPL-3.0-only
   - license_expression: gpl-3.0-plus AND gpl-3.0
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -1119,7 +1119,7 @@ other_license_detections:
             spdx_license_key: GPL-3.0-only
             spdx_url: https://spdx.org/licenses/GPL-3.0-only
   - license_expression: isc
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -1166,7 +1166,7 @@ other_license_detections:
             spdx_license_key: ISC
             spdx_url: https://spdx.org/licenses/ISC
   - license_expression: public-domain-disclaimer
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'

@@ -41,7 +41,7 @@ other_license_expression_spdx: (BSD-3-Clause AND LicenseRef-scancode-google-pate
 license_detections: []
 other_license_detections:
   - license_expression: other-permissive
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -79,7 +79,7 @@ other_license_detections:
             spdx_license_key: LicenseRef-scancode-other-permissive
             spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/other-permissive.LICENSE
   - license_expression: bsd-new
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -140,7 +140,7 @@ other_license_detections:
             spdx_license_key: BSD-3-Clause
             spdx_url: https://spdx.org/licenses/BSD-3-Clause
   - license_expression: bsd-new AND google-patent-license-golang
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -247,7 +247,7 @@ other_license_detections:
             spdx_license_key: LicenseRef-scancode-google-patent-license-golang
             spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/google-patent-license-golang.LICENSE
   - license_expression: apache-2.0
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -330,7 +330,7 @@ other_license_detections:
             spdx_license_key: Apache-2.0
             spdx_url: https://spdx.org/licenses/Apache-2.0
   - license_expression: mit
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -383,7 +383,7 @@ other_license_detections:
             spdx_license_key: MIT
             spdx_url: https://spdx.org/licenses/MIT
   - license_expression: bsd-simplified
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -439,7 +439,7 @@ other_license_detections:
             spdx_license_key: BSD-2-Clause
             spdx_url: https://spdx.org/licenses/BSD-2-Clause
   - license_expression: mpeg-ssg
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -494,7 +494,7 @@ other_license_detections:
             spdx_license_key: LicenseRef-scancode-mpeg-ssg
             spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mpeg-ssg.LICENSE
   - license_expression: cc-by-3.0
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '97.85'
@@ -857,7 +857,7 @@ other_license_detections:
             spdx_license_key: CC-BY-3.0
             spdx_url: https://spdx.org/licenses/CC-BY-3.0
   - license_expression: bsd-2-clause-views
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '98.1'
@@ -917,7 +917,7 @@ other_license_detections:
             spdx_license_key: BSD-2-Clause-Views
             spdx_url: https://spdx.org/licenses/BSD-2-Clause-Views
   - license_expression: sunpro
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -957,7 +957,7 @@ other_license_detections:
             spdx_license_key: LicenseRef-scancode-sunpro
             spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/sunpro.LICENSE
   - license_expression: cc-by-3.0
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'

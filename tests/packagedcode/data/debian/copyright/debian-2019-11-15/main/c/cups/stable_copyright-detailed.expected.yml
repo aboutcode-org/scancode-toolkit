@@ -14,7 +14,7 @@ other_license_expression_spdx: LicenseRef-scancode-cups AND LicenseRef-scancode-
 license_detections: []
 other_license_detections:
   - license_expression: bsd-simplified
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -73,7 +73,7 @@ other_license_detections:
             spdx_license_key: BSD-2-Clause
             spdx_url: https://spdx.org/licenses/BSD-2-Clause
   - license_expression: cups
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -167,7 +167,7 @@ other_license_detections:
             spdx_license_key: LicenseRef-scancode-cups
             spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/cups.LICENSE
   - license_expression: cups
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -261,7 +261,7 @@ other_license_detections:
             spdx_license_key: LicenseRef-scancode-cups
             spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/cups.LICENSE
   - license_expression: zlib
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'

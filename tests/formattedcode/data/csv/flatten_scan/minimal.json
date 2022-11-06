@@ -30,7 +30,7 @@
       "license_detections": [
         {
           "license_expression": "openssl",
-          "detection_rules": [
+          "detection_log": [
             "not-combined"
           ],
           "matches": [
@@ -83,7 +83,7 @@
       "license_detections": [
         {
           "license_expression": "openssl",
-          "detection_rules": [
+          "detection_log": [
             "not-combined"
           ],
           "matches": [

@@ -5,7 +5,7 @@ other_license_expression:
 other_license_expression_spdx:
 license_detections:
   - license_expression: bsd-new
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '97.18'
@@ -64,7 +64,7 @@ license_detections:
             spdx_license_key: BSD-3-Clause
             spdx_url: https://spdx.org/licenses/BSD-3-Clause
   - license_expression: tcp-wrappers
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -107,7 +107,7 @@ license_detections:
             spdx_license_key: TCP-wrappers
             spdx_url: https://spdx.org/licenses/TCP-wrappers
   - license_expression: gpl-2.0-plus
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'

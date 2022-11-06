@@ -56,7 +56,7 @@ other_license_expression:
 other_license_expression_spdx:
 license_detections:
   - license_expression: 3com-microcode
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -120,7 +120,7 @@ license_detections:
             spdx_license_key: LicenseRef-scancode-3com-microcode
             spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/3com-microcode.LICENSE
   - license_expression: bsd-simplified-source
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -160,7 +160,7 @@ license_detections:
             spdx_license_key: LicenseRef-scancode-bsd-simplified-source
             spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-simplified-source.LICENSE
   - license_expression: agere-bsd
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -233,7 +233,7 @@ license_detections:
             spdx_license_key: LicenseRef-scancode-agere-bsd
             spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/agere-bsd.LICENSE
   - license_expression: x11-acer
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -282,7 +282,7 @@ license_detections:
             spdx_license_key: LicenseRef-scancode-x11-acer
             spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/x11-acer.LICENSE
   - license_expression: ctl-linux-firmware
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -362,7 +362,7 @@ license_detections:
             spdx_license_key: LicenseRef-scancode-ctl-linux-firmware
             spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/ctl-linux-firmware.LICENSE
   - license_expression: other-permissive
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -401,7 +401,7 @@ license_detections:
             spdx_license_key: LicenseRef-scancode-other-permissive
             spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/other-permissive.LICENSE
   - license_expression: linux-openib
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -458,7 +458,7 @@ license_detections:
             spdx_license_key: Linux-OpenIB
             spdx_url: https://spdx.org/licenses/Linux-OpenIB
   - license_expression: proprietary-license
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -518,7 +518,7 @@ license_detections:
             spdx_license_key: LicenseRef-scancode-proprietary-license
             spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/proprietary-license.LICENSE
   - license_expression: bsd-simplified-source
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -558,7 +558,7 @@ license_detections:
             spdx_license_key: LicenseRef-scancode-bsd-simplified-source
             spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-simplified-source.LICENSE
   - license_expression: proprietary-license
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -606,7 +606,7 @@ license_detections:
             spdx_license_key: LicenseRef-scancode-proprietary-license
             spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/proprietary-license.LICENSE
   - license_expression: isc
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -655,7 +655,7 @@ license_detections:
             spdx_license_key: ISC
             spdx_url: https://spdx.org/licenses/ISC
   - license_expression: isc
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -704,7 +704,7 @@ license_detections:
             spdx_license_key: ISC
             spdx_url: https://spdx.org/licenses/ISC
   - license_expression: proprietary-license
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -748,7 +748,7 @@ license_detections:
             spdx_license_key: LicenseRef-scancode-proprietary-license
             spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/proprietary-license.LICENSE
   - license_expression: bsd-new
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -808,7 +808,7 @@ license_detections:
             spdx_license_key: BSD-3-Clause
             spdx_url: https://spdx.org/licenses/BSD-3-Clause
   - license_expression: isc
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -856,7 +856,7 @@ license_detections:
             spdx_license_key: ISC
             spdx_url: https://spdx.org/licenses/ISC
   - license_expression: proprietary-license
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -899,7 +899,7 @@ license_detections:
             spdx_license_key: LicenseRef-scancode-proprietary-license
             spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/proprietary-license.LICENSE
   - license_expression: proprietary-license
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -945,7 +945,7 @@ license_detections:
             spdx_license_key: LicenseRef-scancode-proprietary-license
             spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/proprietary-license.LICENSE
   - license_expression: intel
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '95.0'
@@ -1015,7 +1015,7 @@ license_detections:
             spdx_license_key: LicenseRef-scancode-intel
             spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/intel.LICENSE
   - license_expression: nxp-firmware-patent
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -1095,7 +1095,7 @@ license_detections:
             spdx_license_key: LicenseRef-scancode-nxp-firmware-patent
             spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/nxp-firmware-patent.LICENSE
   - license_expression: bsd-original
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -1157,7 +1157,7 @@ license_detections:
             spdx_license_key: BSD-4-Clause
             spdx_url: https://spdx.org/licenses/BSD-4-Clause
   - license_expression: mit
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '98.77'
@@ -1210,7 +1210,7 @@ license_detections:
             spdx_license_key: MIT
             spdx_url: https://spdx.org/licenses/MIT
   - license_expression: moxa-linux-firmware
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -1262,7 +1262,7 @@ license_detections:
             spdx_license_key: LicenseRef-scancode-moxa-linux-firmware
             spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/moxa-linux-firmware.LICENSE
   - license_expression: ralink-firmware
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -1334,7 +1334,7 @@ license_detections:
             spdx_license_key: LicenseRef-scancode-ralink-firmware
             spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/ralink-firmware.LICENSE
   - license_expression: proprietary-license
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -1370,7 +1370,7 @@ license_detections:
             spdx_license_key: LicenseRef-scancode-proprietary-license
             spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/proprietary-license.LICENSE
   - license_expression: proprietary-license
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -1533,7 +1533,7 @@ license_detections:
             spdx_license_key: LicenseRef-scancode-proprietary-license
             spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/proprietary-license.LICENSE
   - license_expression: proprietary-license
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -1607,7 +1607,7 @@ license_detections:
             spdx_license_key: LicenseRef-scancode-proprietary-license
             spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/proprietary-license.LICENSE
   - license_expression: proprietary-license
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -1651,7 +1651,7 @@ license_detections:
             spdx_license_key: LicenseRef-scancode-proprietary-license
             spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/proprietary-license.LICENSE
   - license_expression: ralink-firmware
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -1723,7 +1723,7 @@ license_detections:
             spdx_license_key: LicenseRef-scancode-ralink-firmware
             spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/ralink-firmware.LICENSE
   - license_expression: other-permissive
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -1762,7 +1762,7 @@ license_detections:
             spdx_license_key: LicenseRef-scancode-other-permissive
             spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/other-permissive.LICENSE
   - license_expression: other-permissive
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -1801,7 +1801,7 @@ license_detections:
             spdx_license_key: LicenseRef-scancode-other-permissive
             spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/other-permissive.LICENSE
   - license_expression: bsd-new AND proprietary-license
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -1884,7 +1884,7 @@ license_detections:
             spdx_license_key: LicenseRef-scancode-proprietary-license
             spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/proprietary-license.LICENSE
   - license_expression: proprietary-license
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -1927,7 +1927,7 @@ license_detections:
             spdx_license_key: LicenseRef-scancode-proprietary-license
             spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/proprietary-license.LICENSE
   - license_expression: intel
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'

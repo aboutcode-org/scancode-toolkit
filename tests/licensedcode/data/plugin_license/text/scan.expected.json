@@ -8,7 +8,7 @@
       "license_detections": [
         {
           "license_expression": "gpl-2.0 WITH linux-syscall-exception-gpl OR linux-openib",
-          "detection_rules": [
+          "detection_log": [
             "not-combined"
           ],
           "matches": [
@@ -96,7 +96,7 @@
       "license_detections": [
         {
           "license_expression": "fsf-ap",
-          "detection_rules": [
+          "detection_log": [
             "not-combined"
           ],
           "matches": [

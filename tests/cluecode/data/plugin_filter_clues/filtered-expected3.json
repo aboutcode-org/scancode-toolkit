@@ -24,7 +24,7 @@
       "license_detections": [
         {
           "license_expression": "pcre",
-          "detection_rules": [
+          "detection_log": [
             "not-combined"
           ],
           "matches": [

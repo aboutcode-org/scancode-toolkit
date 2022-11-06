@@ -336,7 +336,7 @@
       "license_detections": [
         {
           "license_expression": "lgpl-2.1-plus",
-          "detection_rules": [
+          "detection_log": [
             "not-combined"
           ],
           "matches": [
@@ -430,7 +430,7 @@
       "license_detections": [
         {
           "license_expression": "cc-by-2.5",
-          "detection_rules": [
+          "detection_log": [
             "not-combined"
           ],
           "matches": [
@@ -530,7 +530,7 @@
       "license_detections": [
         {
           "license_expression": "lgpl-2.1-plus",
-          "detection_rules": [
+          "detection_log": [
             "not-combined"
           ],
           "matches": [
@@ -710,7 +710,7 @@
       "license_detections": [
         {
           "license_expression": "lgpl-2.1-plus",
-          "detection_rules": [
+          "detection_log": [
             "not-combined"
           ],
           "matches": [
@@ -921,7 +921,7 @@
       "license_detections": [
         {
           "license_expression": "zlib",
-          "detection_rules": [
+          "detection_log": [
             "unknown-reference-to-local-file"
           ],
           "matches": [
@@ -1053,7 +1053,7 @@
       "license_detections": [
         {
           "license_expression": "zlib",
-          "detection_rules": [
+          "detection_log": [
             "not-combined"
           ],
           "matches": [
@@ -1147,7 +1147,7 @@
       "license_detections": [
         {
           "license_expression": "zlib",
-          "detection_rules": [
+          "detection_log": [
             "unknown-reference-to-local-file"
           ],
           "matches": [
@@ -1279,7 +1279,7 @@
       "license_detections": [
         {
           "license_expression": "cc0-1.0",
-          "detection_rules": [
+          "detection_log": [
             "not-combined"
           ],
           "matches": [
@@ -1361,7 +1361,7 @@
       "license_detections": [
         {
           "license_expression": "artistic-2.0",
-          "detection_rules": [
+          "detection_log": [
             "not-combined"
           ],
           "matches": [
@@ -1523,7 +1523,7 @@
       "license_detections": [
         {
           "license_expression": "gpl-2.0-plus WITH ada-linking-exception",
-          "detection_rules": [
+          "detection_log": [
             "not-combined"
           ],
           "matches": [
@@ -1633,7 +1633,7 @@
       "license_detections": [
         {
           "license_expression": "zlib",
-          "detection_rules": [
+          "detection_log": [
             "unknown-reference-to-local-file"
           ],
           "matches": [
@@ -1765,7 +1765,7 @@
       "license_detections": [
         {
           "license_expression": "zlib",
-          "detection_rules": [
+          "detection_log": [
             "unknown-reference-to-local-file"
           ],
           "matches": [
@@ -1897,7 +1897,7 @@
       "license_detections": [
         {
           "license_expression": "zlib",
-          "detection_rules": [
+          "detection_log": [
             "unknown-reference-to-local-file"
           ],
           "matches": [
@@ -2115,7 +2115,7 @@
       "license_detections": [
         {
           "license_expression": "boost-1.0",
-          "detection_rules": [
+          "detection_log": [
             "not-combined"
           ],
           "matches": [
@@ -2248,7 +2248,7 @@
       "license_detections": [
         {
           "license_expression": "zlib",
-          "detection_rules": [
+          "detection_log": [
             "not-combined"
           ],
           "matches": [
@@ -2385,7 +2385,7 @@
       "license_detections": [
         {
           "license_expression": "zlib",
-          "detection_rules": [
+          "detection_log": [
             "not-combined"
           ],
           "matches": [
@@ -2481,7 +2481,7 @@
       "license_detections": [
         {
           "license_expression": "zlib",
-          "detection_rules": [
+          "detection_log": [
             "not-combined"
           ],
           "matches": [
@@ -2614,7 +2614,7 @@
       "license_detections": [
         {
           "license_expression": "mit-old-style",
-          "detection_rules": [
+          "detection_log": [
             "not-combined"
           ],
           "matches": [
@@ -2708,7 +2708,7 @@
       "license_detections": [
         {
           "license_expression": "zlib",
-          "detection_rules": [
+          "detection_log": [
             "not-combined"
           ],
           "matches": [
@@ -2802,7 +2802,7 @@
       "license_detections": [
         {
           "license_expression": "zlib",
-          "detection_rules": [
+          "detection_log": [
             "unknown-reference-to-local-file"
           ],
           "matches": [
@@ -2934,7 +2934,7 @@
       "license_detections": [
         {
           "license_expression": "zlib",
-          "detection_rules": [
+          "detection_log": [
             "unknown-reference-to-local-file"
           ],
           "matches": [

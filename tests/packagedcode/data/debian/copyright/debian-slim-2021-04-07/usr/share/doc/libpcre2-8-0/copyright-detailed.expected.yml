@@ -6,7 +6,7 @@ other_license_expression:
 other_license_expression_spdx:
 license_detections:
   - license_expression: pcre
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -45,7 +45,7 @@ license_detections:
             spdx_license_key: LicenseRef-scancode-pcre
             spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/pcre.LICENSE
   - license_expression: bsd-new AND public-domain
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -113,7 +113,7 @@ license_detections:
             spdx_license_key: LicenseRef-scancode-public-domain
             spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/public-domain.LICENSE
   - license_expression: bsd-new
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '99.0'

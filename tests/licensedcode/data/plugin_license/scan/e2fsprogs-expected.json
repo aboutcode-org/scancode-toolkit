@@ -55,7 +55,7 @@
       "license_detections": [
         {
           "license_expression": "gpl-2.0 AND patent-disclaimer",
-          "detection_rules": [
+          "detection_log": [
             "not-combined"
           ],
           "matches": [

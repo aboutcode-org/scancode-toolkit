@@ -37,7 +37,7 @@
       "license_detections": [
         {
           "license_expression": "unknown",
-          "detection_rules": [
+          "detection_log": [
             "undetected-license"
           ],
           "matches": [
@@ -144,7 +144,7 @@
           "license_detections": [
             {
               "license_expression": "unknown",
-              "detection_rules": [
+              "detection_log": [
                 "undetected-license"
               ],
               "matches": [

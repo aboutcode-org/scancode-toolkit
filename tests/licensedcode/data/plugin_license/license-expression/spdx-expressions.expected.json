@@ -8,7 +8,7 @@
       "license_detections": [
         {
           "license_expression": "zlib AND apache-2.0",
-          "detection_rules": [
+          "detection_log": [
             "not-combined"
           ],
           "matches": [

@@ -739,7 +739,7 @@ other_license_expression_spdx: ((GPL-1.0-or-later AND GPL-1.0-only) OR (Artistic
 license_detections: []
 other_license_detections:
   - license_expression: lgpl-2.1
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -809,7 +809,7 @@ other_license_detections:
             spdx_license_key: LGPL-2.1-only
             spdx_url: https://spdx.org/licenses/LGPL-2.1-only
   - license_expression: gpl-1.0-plus AND gpl-1.0
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -879,7 +879,7 @@ other_license_detections:
             spdx_license_key: GPL-1.0-only
             spdx_url: https://spdx.org/licenses/GPL-1.0-only
   - license_expression: gpl-2.0-plus AND gpl-2.0
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -950,7 +950,7 @@ other_license_detections:
             spdx_license_key: GPL-2.0-only
             spdx_url: https://spdx.org/licenses/GPL-2.0-only
   - license_expression: artistic-perl-1.0
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '99.0'
@@ -1020,7 +1020,7 @@ other_license_detections:
             spdx_license_key: Artistic-1.0-Perl
             spdx_url: https://spdx.org/licenses/Artistic-1.0-Perl
   - license_expression: artistic-2.0
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -1238,7 +1238,7 @@ other_license_detections:
             spdx_license_key: Artistic-2.0
             spdx_url: https://spdx.org/licenses/Artistic-2.0
   - license_expression: bzip2-libbzip-2010
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -1304,7 +1304,7 @@ other_license_detections:
             spdx_license_key: bzip2-1.0.6
             spdx_url: https://spdx.org/licenses/bzip2-1.0.6
   - license_expression: zlib
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -1355,7 +1355,7 @@ other_license_detections:
             spdx_license_key: Zlib
             spdx_url: https://spdx.org/licenses/Zlib
   - license_expression: mit
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -1408,7 +1408,7 @@ other_license_detections:
             spdx_license_key: MIT
             spdx_url: https://spdx.org/licenses/MIT
   - license_expression: bsd-new
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -1467,7 +1467,7 @@ other_license_detections:
             spdx_license_key: BSD-3-Clause
             spdx_url: https://spdx.org/licenses/BSD-3-Clause
   - license_expression: bsd-original
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '98.25'
@@ -1530,7 +1530,7 @@ other_license_detections:
             spdx_license_key: BSD-4-Clause
             spdx_url: https://spdx.org/licenses/BSD-4-Clause
   - license_expression: unicode-dfs-2015
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '99.57'
@@ -1621,7 +1621,7 @@ other_license_detections:
             spdx_license_key: Unicode-DFS-2015
             spdx_url: https://spdx.org/licenses/Unicode-DFS-2015
   - license_expression: bsd-new
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -1680,7 +1680,7 @@ other_license_detections:
             spdx_license_key: BSD-3-Clause
             spdx_url: https://spdx.org/licenses/BSD-3-Clause
   - license_expression: bsd-new
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -1739,7 +1739,7 @@ other_license_detections:
             spdx_license_key: BSD-3-Clause
             spdx_url: https://spdx.org/licenses/BSD-3-Clause
   - license_expression: regexp
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -1788,7 +1788,7 @@ other_license_detections:
             spdx_license_key: Spencer-86
             spdx_url: https://spdx.org/licenses/Spencer-86
   - license_expression: other-permissive
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -1829,7 +1829,7 @@ other_license_detections:
             spdx_license_key: LicenseRef-scancode-other-permissive
             spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/other-permissive.LICENSE
   - license_expression: other-copyleft
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -1868,7 +1868,7 @@ other_license_detections:
             spdx_license_key: LicenseRef-scancode-other-copyleft
             spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/other-copyleft.LICENSE
   - license_expression: other-copyleft
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '90.0'
@@ -1906,7 +1906,7 @@ other_license_detections:
             spdx_license_key: LicenseRef-scancode-other-copyleft
             spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/other-copyleft.LICENSE
   - license_expression: public-domain
-    detection_rules: []
+    detection_log: []
     matches:
       - score: '100.0'
         start_line: 2569
@@ -2037,7 +2037,7 @@ other_license_detections:
             spdx_license_key: LicenseRef-scancode-public-domain
             spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/public-domain.LICENSE
   - license_expression: gpl-3.0-plus WITH bison-exception-2.2
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -2112,7 +2112,7 @@ other_license_detections:
             spdx_license_key: Bison-exception-2.2
             spdx_url: https://spdx.org/licenses/Bison-exception-2.2
   - license_expression: paul-hsieh-derivative
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -2164,7 +2164,7 @@ other_license_detections:
             spdx_license_key: LicenseRef-scancode-paul-hsieh-derivative
             spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/paul-hsieh-derivative.LICENSE
   - license_expression: bsd-x11
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '99.0'
@@ -2226,7 +2226,7 @@ other_license_detections:
             spdx_license_key: LicenseRef-scancode-bsd-x11
             spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-x11.LICENSE
   - license_expression: cc0-1.0
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -2414,7 +2414,7 @@ other_license_detections:
             spdx_license_key: CC0-1.0
             spdx_url: https://spdx.org/licenses/CC0-1.0
   - license_expression: fsf-ap
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -2454,7 +2454,7 @@ other_license_detections:
             spdx_license_key: FSFAP
             spdx_url: https://spdx.org/licenses/FSFAP
   - license_expression: artistic-dist-1.0
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -2615,7 +2615,7 @@ other_license_detections:
             spdx_license_key: LicenseRef-scancode-artistic-1988-1.0
             spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/artistic-dist-1.0.LICENSE
   - license_expression: gpl-1.0-plus OR artistic-perl-1.0
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -2673,7 +2673,7 @@ other_license_detections:
             spdx_license_key: Artistic-1.0-Perl
             spdx_url: https://spdx.org/licenses/Artistic-1.0-Perl
   - license_expression: gpl-1.0-plus OR artistic-perl-1.0
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -2723,7 +2723,7 @@ other_license_detections:
             spdx_license_key: Artistic-1.0-Perl
             spdx_url: https://spdx.org/licenses/Artistic-1.0-Perl
   - license_expression: gpl-1.0-plus OR artistic-perl-1.0
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -2773,7 +2773,7 @@ other_license_detections:
             spdx_license_key: Artistic-1.0-Perl
             spdx_url: https://spdx.org/licenses/Artistic-1.0-Perl
   - license_expression: gpl-1.0-plus OR artistic-perl-1.0
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -2823,7 +2823,7 @@ other_license_detections:
             spdx_license_key: Artistic-1.0-Perl
             spdx_url: https://spdx.org/licenses/Artistic-1.0-Perl
   - license_expression: gpl-1.0-plus OR artistic-perl-1.0
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -2873,7 +2873,7 @@ other_license_detections:
             spdx_license_key: Artistic-1.0-Perl
             spdx_url: https://spdx.org/licenses/Artistic-1.0-Perl
   - license_expression: gpl-1.0-plus OR artistic-perl-1.0
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -2923,7 +2923,7 @@ other_license_detections:
             spdx_license_key: Artistic-1.0-Perl
             spdx_url: https://spdx.org/licenses/Artistic-1.0-Perl
   - license_expression: artistic-perl-1.0 OR gpl-1.0-plus
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -2976,7 +2976,7 @@ other_license_detections:
             spdx_license_key: GPL-1.0-or-later
             spdx_url: https://spdx.org/licenses/GPL-1.0-or-later
   - license_expression: gpl-1.0-plus OR artistic-perl-1.0
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -3028,7 +3028,7 @@ other_license_detections:
             spdx_license_key: Artistic-1.0-Perl
             spdx_url: https://spdx.org/licenses/Artistic-1.0-Perl
   - license_expression: unicode
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -3064,7 +3064,7 @@ other_license_detections:
             spdx_license_key: LicenseRef-scancode-unicode
             spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/unicode.LICENSE
   - license_expression: artistic-perl-1.0 OR gpl-1.0-plus
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -3117,7 +3117,7 @@ other_license_detections:
             spdx_license_key: GPL-1.0-or-later
             spdx_url: https://spdx.org/licenses/GPL-1.0-or-later
   - license_expression: artistic-perl-1.0 OR gpl-1.0-plus
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -3169,7 +3169,7 @@ other_license_detections:
             spdx_license_key: GPL-1.0-or-later
             spdx_url: https://spdx.org/licenses/GPL-1.0-or-later
   - license_expression: artistic-perl-1.0 OR gpl-1.0-plus
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -3221,7 +3221,7 @@ other_license_detections:
             spdx_license_key: GPL-1.0-or-later
             spdx_url: https://spdx.org/licenses/GPL-1.0-or-later
   - license_expression: artistic-perl-1.0 OR gpl-1.0-plus
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -3271,7 +3271,7 @@ other_license_detections:
             spdx_license_key: GPL-1.0-or-later
             spdx_url: https://spdx.org/licenses/GPL-1.0-or-later
   - license_expression: artistic-perl-1.0 OR gpl-1.0-plus
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '90.91'
@@ -3321,7 +3321,7 @@ other_license_detections:
             spdx_license_key: GPL-1.0-or-later
             spdx_url: https://spdx.org/licenses/GPL-1.0-or-later
   - license_expression: artistic-perl-1.0 OR gpl-1.0-plus
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '91.67'
@@ -3371,7 +3371,7 @@ other_license_detections:
             spdx_license_key: GPL-1.0-or-later
             spdx_url: https://spdx.org/licenses/GPL-1.0-or-later
   - license_expression: artistic-perl-1.0 OR gpl-1.0-plus
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -3423,7 +3423,7 @@ other_license_detections:
             spdx_license_key: GPL-1.0-or-later
             spdx_url: https://spdx.org/licenses/GPL-1.0-or-later
   - license_expression: artistic-perl-1.0 OR gpl-1.0-plus
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -3476,7 +3476,7 @@ other_license_detections:
             spdx_license_key: GPL-1.0-or-later
             spdx_url: https://spdx.org/licenses/GPL-1.0-or-later
   - license_expression: gpl-1.0-plus OR artistic-perl-1.0
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -3528,7 +3528,7 @@ other_license_detections:
             spdx_license_key: Artistic-1.0-Perl
             spdx_url: https://spdx.org/licenses/Artistic-1.0-Perl
   - license_expression: artistic-perl-1.0 OR gpl-1.0-plus
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -3581,7 +3581,7 @@ other_license_detections:
             spdx_license_key: GPL-1.0-or-later
             spdx_url: https://spdx.org/licenses/GPL-1.0-or-later
   - license_expression: gpl-1.0-plus OR artistic-1.0
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -3633,7 +3633,7 @@ other_license_detections:
             spdx_license_key: Artistic-1.0
             spdx_url: https://spdx.org/licenses/Artistic-1.0
   - license_expression: artistic-perl-1.0 OR gpl-1.0-plus
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -3686,7 +3686,7 @@ other_license_detections:
             spdx_license_key: GPL-1.0-or-later
             spdx_url: https://spdx.org/licenses/GPL-1.0-or-later
   - license_expression: artistic-perl-1.0 OR gpl-1.0-plus
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -3739,7 +3739,7 @@ other_license_detections:
             spdx_license_key: GPL-1.0-or-later
             spdx_url: https://spdx.org/licenses/GPL-1.0-or-later
   - license_expression: gpl-1.0-plus OR artistic-perl-1.0
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -3789,7 +3789,7 @@ other_license_detections:
             spdx_license_key: Artistic-1.0-Perl
             spdx_url: https://spdx.org/licenses/Artistic-1.0-Perl
   - license_expression: artistic-perl-1.0 OR gpl-1.0-plus
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -3841,7 +3841,7 @@ other_license_detections:
             spdx_license_key: GPL-1.0-or-later
             spdx_url: https://spdx.org/licenses/GPL-1.0-or-later
   - license_expression: gpl-1.0-plus OR artistic-perl-1.0
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -3891,7 +3891,7 @@ other_license_detections:
             spdx_license_key: Artistic-1.0-Perl
             spdx_url: https://spdx.org/licenses/Artistic-1.0-Perl
   - license_expression: gpl-1.0-plus OR artistic-perl-1.0
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -3943,7 +3943,7 @@ other_license_detections:
             spdx_license_key: Artistic-1.0-Perl
             spdx_url: https://spdx.org/licenses/Artistic-1.0-Perl
   - license_expression: gpl-1.0-plus OR artistic-perl-1.0
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -3996,7 +3996,7 @@ other_license_detections:
             spdx_license_key: Artistic-1.0-Perl
             spdx_url: https://spdx.org/licenses/Artistic-1.0-Perl
   - license_expression: gpl-1.0-plus OR artistic-perl-1.0
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -4048,7 +4048,7 @@ other_license_detections:
             spdx_license_key: Artistic-1.0-Perl
             spdx_url: https://spdx.org/licenses/Artistic-1.0-Perl
   - license_expression: gpl-1.0-plus OR artistic-perl-1.0
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -4106,7 +4106,7 @@ other_license_detections:
             spdx_license_key: Artistic-1.0-Perl
             spdx_url: https://spdx.org/licenses/Artistic-1.0-Perl
   - license_expression: artistic-perl-1.0 OR gpl-1.0-plus
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -4158,7 +4158,7 @@ other_license_detections:
             spdx_license_key: GPL-1.0-or-later
             spdx_url: https://spdx.org/licenses/GPL-1.0-or-later
   - license_expression: artistic-perl-1.0 OR gpl-1.0-plus
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -4210,7 +4210,7 @@ other_license_detections:
             spdx_license_key: GPL-1.0-or-later
             spdx_url: https://spdx.org/licenses/GPL-1.0-or-later
   - license_expression: artistic-perl-1.0 OR gpl-1.0-plus
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -4262,7 +4262,7 @@ other_license_detections:
             spdx_license_key: GPL-1.0-or-later
             spdx_url: https://spdx.org/licenses/GPL-1.0-or-later
   - license_expression: artistic-perl-1.0 OR gpl-1.0-plus
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -4314,7 +4314,7 @@ other_license_detections:
             spdx_license_key: GPL-1.0-or-later
             spdx_url: https://spdx.org/licenses/GPL-1.0-or-later
   - license_expression: gpl-1.0-plus OR artistic-perl-1.0
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -4364,7 +4364,7 @@ other_license_detections:
             spdx_license_key: Artistic-1.0-Perl
             spdx_url: https://spdx.org/licenses/Artistic-1.0-Perl
   - license_expression: gpl-1.0-plus OR artistic-1.0
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -4416,7 +4416,7 @@ other_license_detections:
             spdx_license_key: Artistic-1.0
             spdx_url: https://spdx.org/licenses/Artistic-1.0
   - license_expression: gpl-1.0-plus OR artistic-1.0
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -4468,7 +4468,7 @@ other_license_detections:
             spdx_license_key: Artistic-1.0
             spdx_url: https://spdx.org/licenses/Artistic-1.0
   - license_expression: gpl-1.0-plus OR artistic-1.0
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -4520,7 +4520,7 @@ other_license_detections:
             spdx_license_key: Artistic-1.0
             spdx_url: https://spdx.org/licenses/Artistic-1.0
   - license_expression: gpl-1.0-plus OR artistic-1.0
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -4572,7 +4572,7 @@ other_license_detections:
             spdx_license_key: Artistic-1.0
             spdx_url: https://spdx.org/licenses/Artistic-1.0
   - license_expression: artistic-perl-1.0 OR gpl-1.0-plus
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -4624,7 +4624,7 @@ other_license_detections:
             spdx_license_key: GPL-1.0-or-later
             spdx_url: https://spdx.org/licenses/GPL-1.0-or-later
   - license_expression: artistic-perl-1.0 OR gpl-1.0-plus
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -4676,7 +4676,7 @@ other_license_detections:
             spdx_license_key: GPL-1.0-or-later
             spdx_url: https://spdx.org/licenses/GPL-1.0-or-later
   - license_expression: artistic-perl-1.0 OR gpl-1.0-plus
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -4728,7 +4728,7 @@ other_license_detections:
             spdx_license_key: GPL-1.0-or-later
             spdx_url: https://spdx.org/licenses/GPL-1.0-or-later
   - license_expression: artistic-perl-1.0 OR gpl-1.0-plus
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -4780,7 +4780,7 @@ other_license_detections:
             spdx_license_key: GPL-1.0-or-later
             spdx_url: https://spdx.org/licenses/GPL-1.0-or-later
   - license_expression: artistic-perl-1.0 OR gpl-1.0-plus
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -4832,7 +4832,7 @@ other_license_detections:
             spdx_license_key: GPL-1.0-or-later
             spdx_url: https://spdx.org/licenses/GPL-1.0-or-later
   - license_expression: artistic-perl-1.0 OR gpl-1.0-plus
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -4884,7 +4884,7 @@ other_license_detections:
             spdx_license_key: GPL-1.0-or-later
             spdx_url: https://spdx.org/licenses/GPL-1.0-or-later
   - license_expression: artistic-perl-1.0 OR gpl-1.0-plus
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -4936,7 +4936,7 @@ other_license_detections:
             spdx_license_key: GPL-1.0-or-later
             spdx_url: https://spdx.org/licenses/GPL-1.0-or-later
   - license_expression: artistic-2.0
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -4974,7 +4974,7 @@ other_license_detections:
             spdx_license_key: Artistic-2.0
             spdx_url: https://spdx.org/licenses/Artistic-2.0
   - license_expression: artistic-perl-1.0 OR gpl-1.0-plus
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -5026,7 +5026,7 @@ other_license_detections:
             spdx_license_key: GPL-1.0-or-later
             spdx_url: https://spdx.org/licenses/GPL-1.0-or-later
   - license_expression: gpl-1.0-plus OR artistic-1.0
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -5078,7 +5078,7 @@ other_license_detections:
             spdx_license_key: Artistic-1.0
             spdx_url: https://spdx.org/licenses/Artistic-1.0
   - license_expression: gpl-1.0-plus OR artistic-perl-1.0
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -5138,7 +5138,7 @@ other_license_detections:
             spdx_license_key: Artistic-1.0-Perl
             spdx_url: https://spdx.org/licenses/Artistic-1.0-Perl
   - license_expression: artistic-perl-1.0 OR gpl-1.0-plus
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -5190,7 +5190,7 @@ other_license_detections:
             spdx_license_key: GPL-1.0-or-later
             spdx_url: https://spdx.org/licenses/GPL-1.0-or-later
   - license_expression: artistic-perl-1.0 OR gpl-1.0-plus
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -5242,7 +5242,7 @@ other_license_detections:
             spdx_license_key: GPL-1.0-or-later
             spdx_url: https://spdx.org/licenses/GPL-1.0-or-later
   - license_expression: artistic-perl-1.0 OR gpl-1.0-plus
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -5294,7 +5294,7 @@ other_license_detections:
             spdx_license_key: GPL-1.0-or-later
             spdx_url: https://spdx.org/licenses/GPL-1.0-or-later
   - license_expression: artistic-perl-1.0 OR gpl-1.0-plus
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -5346,7 +5346,7 @@ other_license_detections:
             spdx_license_key: GPL-1.0-or-later
             spdx_url: https://spdx.org/licenses/GPL-1.0-or-later
   - license_expression: gpl-1.0-plus OR artistic-1.0
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -5398,7 +5398,7 @@ other_license_detections:
             spdx_license_key: Artistic-1.0
             spdx_url: https://spdx.org/licenses/Artistic-1.0
   - license_expression: artistic-perl-1.0 OR gpl-1.0-plus
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -5450,7 +5450,7 @@ other_license_detections:
             spdx_license_key: GPL-1.0-or-later
             spdx_url: https://spdx.org/licenses/GPL-1.0-or-later
   - license_expression: artistic-perl-1.0 OR gpl-2.0-plus
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -5505,7 +5505,7 @@ other_license_detections:
             spdx_license_key: GPL-2.0-or-later
             spdx_url: https://spdx.org/licenses/GPL-2.0-or-later
   - license_expression: gpl-1.0-plus OR artistic-1.0
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -5557,7 +5557,7 @@ other_license_detections:
             spdx_license_key: Artistic-1.0
             spdx_url: https://spdx.org/licenses/Artistic-1.0
   - license_expression: artistic-perl-1.0 OR gpl-1.0-plus
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -5609,7 +5609,7 @@ other_license_detections:
             spdx_license_key: GPL-1.0-or-later
             spdx_url: https://spdx.org/licenses/GPL-1.0-or-later
   - license_expression: artistic-perl-1.0 OR gpl-1.0-plus
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -5661,7 +5661,7 @@ other_license_detections:
             spdx_license_key: GPL-1.0-or-later
             spdx_url: https://spdx.org/licenses/GPL-1.0-or-later
   - license_expression: artistic-perl-1.0 OR gpl-1.0-plus
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -5713,7 +5713,7 @@ other_license_detections:
             spdx_license_key: GPL-1.0-or-later
             spdx_url: https://spdx.org/licenses/GPL-1.0-or-later
   - license_expression: artistic-perl-1.0 OR gpl-1.0-plus
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -5765,7 +5765,7 @@ other_license_detections:
             spdx_license_key: GPL-1.0-or-later
             spdx_url: https://spdx.org/licenses/GPL-1.0-or-later
   - license_expression: artistic-perl-1.0 OR gpl-1.0-plus
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -5817,7 +5817,7 @@ other_license_detections:
             spdx_license_key: GPL-1.0-or-later
             spdx_url: https://spdx.org/licenses/GPL-1.0-or-later
   - license_expression: gpl-1.0-plus OR artistic-perl-1.0
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -5870,7 +5870,7 @@ other_license_detections:
             spdx_license_key: Artistic-1.0-Perl
             spdx_url: https://spdx.org/licenses/Artistic-1.0-Perl
   - license_expression: artistic-perl-1.0 OR gpl-1.0-plus
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -5922,7 +5922,7 @@ other_license_detections:
             spdx_license_key: GPL-1.0-or-later
             spdx_url: https://spdx.org/licenses/GPL-1.0-or-later
   - license_expression: artistic-perl-1.0 OR gpl-1.0-plus
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -5974,7 +5974,7 @@ other_license_detections:
             spdx_license_key: GPL-1.0-or-later
             spdx_url: https://spdx.org/licenses/GPL-1.0-or-later
   - license_expression: artistic-perl-1.0 OR gpl-1.0-plus
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -6026,7 +6026,7 @@ other_license_detections:
             spdx_license_key: GPL-1.0-or-later
             spdx_url: https://spdx.org/licenses/GPL-1.0-or-later
   - license_expression: artistic-perl-1.0 OR gpl-1.0-plus
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -6078,7 +6078,7 @@ other_license_detections:
             spdx_license_key: GPL-1.0-or-later
             spdx_url: https://spdx.org/licenses/GPL-1.0-or-later
   - license_expression: mit OR gpl-1.0-plus OR artistic-perl-1.0
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -6145,7 +6145,7 @@ other_license_detections:
             spdx_license_key: Artistic-1.0-Perl
             spdx_url: https://spdx.org/licenses/Artistic-1.0-Perl
   - license_expression: mit OR artistic-perl-1.0 OR gpl-1.0-plus
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '99.0'
@@ -6211,7 +6211,7 @@ other_license_detections:
             spdx_license_key: GPL-1.0-or-later
             spdx_url: https://spdx.org/licenses/GPL-1.0-or-later
   - license_expression: artistic-perl-1.0 OR gpl-1.0-plus
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -6263,7 +6263,7 @@ other_license_detections:
             spdx_license_key: GPL-1.0-or-later
             spdx_url: https://spdx.org/licenses/GPL-1.0-or-later
   - license_expression: gpl-1.0-plus OR artistic-perl-1.0
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -6318,7 +6318,7 @@ other_license_detections:
             spdx_license_key: Artistic-1.0-Perl
             spdx_url: https://spdx.org/licenses/Artistic-1.0-Perl
   - license_expression: artistic-perl-1.0 OR gpl-1.0-plus
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -6370,7 +6370,7 @@ other_license_detections:
             spdx_license_key: GPL-1.0-or-later
             spdx_url: https://spdx.org/licenses/GPL-1.0-or-later
   - license_expression: (artistic-perl-1.0 OR gpl-1.0-plus) AND historical
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -6464,7 +6464,7 @@ other_license_detections:
             spdx_license_key: HPND
             spdx_url: https://spdx.org/licenses/HPND
   - license_expression: artistic-perl-1.0 OR gpl-1.0-plus
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -6516,7 +6516,7 @@ other_license_detections:
             spdx_license_key: GPL-1.0-or-later
             spdx_url: https://spdx.org/licenses/GPL-1.0-or-later
   - license_expression: gpl-1.0-plus OR artistic-perl-1.0
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -6568,7 +6568,7 @@ other_license_detections:
             spdx_license_key: Artistic-1.0-Perl
             spdx_url: https://spdx.org/licenses/Artistic-1.0-Perl
   - license_expression: gpl-1.0-plus OR artistic-perl-1.0
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -6618,7 +6618,7 @@ other_license_detections:
             spdx_license_key: Artistic-1.0-Perl
             spdx_url: https://spdx.org/licenses/Artistic-1.0-Perl
   - license_expression: gpl-1.0-plus OR artistic-1.0
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -6670,7 +6670,7 @@ other_license_detections:
             spdx_license_key: Artistic-1.0
             spdx_url: https://spdx.org/licenses/Artistic-1.0
   - license_expression: artistic-perl-1.0 OR gpl-1.0-plus
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -6722,7 +6722,7 @@ other_license_detections:
             spdx_license_key: GPL-1.0-or-later
             spdx_url: https://spdx.org/licenses/GPL-1.0-or-later
   - license_expression: gpl-1.0-plus OR artistic-1.0
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -6774,7 +6774,7 @@ other_license_detections:
             spdx_license_key: Artistic-1.0
             spdx_url: https://spdx.org/licenses/Artistic-1.0
   - license_expression: gpl-1.0-plus OR artistic-perl-1.0
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -6827,7 +6827,7 @@ other_license_detections:
             spdx_license_key: Artistic-1.0-Perl
             spdx_url: https://spdx.org/licenses/Artistic-1.0-Perl
   - license_expression: artistic-perl-1.0 OR gpl-1.0-plus
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -6879,7 +6879,7 @@ other_license_detections:
             spdx_license_key: GPL-1.0-or-later
             spdx_url: https://spdx.org/licenses/GPL-1.0-or-later
   - license_expression: gpl-1.0-plus OR artistic-perl-1.0
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -6931,7 +6931,7 @@ other_license_detections:
             spdx_license_key: Artistic-1.0-Perl
             spdx_url: https://spdx.org/licenses/Artistic-1.0-Perl
   - license_expression: gpl-1.0-plus OR artistic-perl-1.0
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -6983,7 +6983,7 @@ other_license_detections:
             spdx_license_key: Artistic-1.0-Perl
             spdx_url: https://spdx.org/licenses/Artistic-1.0-Perl
   - license_expression: gpl-1.0-plus OR artistic-perl-1.0
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -7035,7 +7035,7 @@ other_license_detections:
             spdx_license_key: Artistic-1.0-Perl
             spdx_url: https://spdx.org/licenses/Artistic-1.0-Perl
   - license_expression: gpl-1.0-plus OR artistic-perl-1.0
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -7087,7 +7087,7 @@ other_license_detections:
             spdx_license_key: Artistic-1.0-Perl
             spdx_url: https://spdx.org/licenses/Artistic-1.0-Perl
   - license_expression: artistic-perl-1.0 OR gpl-1.0-plus
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -7139,7 +7139,7 @@ other_license_detections:
             spdx_license_key: GPL-1.0-or-later
             spdx_url: https://spdx.org/licenses/GPL-1.0-or-later
   - license_expression: gpl-1.0-plus OR artistic-perl-1.0
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -7192,7 +7192,7 @@ other_license_detections:
             spdx_license_key: Artistic-1.0-Perl
             spdx_url: https://spdx.org/licenses/Artistic-1.0-Perl
   - license_expression: artistic-perl-1.0 OR gpl-1.0-plus
-    detection_rules: []
+    detection_log: []
     matches:
       - score: '56.14'
         start_line: 908
@@ -7243,7 +7243,7 @@ other_license_detections:
             spdx_license_key: GPL-1.0-or-later
             spdx_url: https://spdx.org/licenses/GPL-1.0-or-later
   - license_expression: artistic-perl-1.0 OR gpl-1.0-plus
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -7295,7 +7295,7 @@ other_license_detections:
             spdx_license_key: GPL-1.0-or-later
             spdx_url: https://spdx.org/licenses/GPL-1.0-or-later
   - license_expression: artistic-perl-1.0 OR gpl-1.0-plus
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -7347,7 +7347,7 @@ other_license_detections:
             spdx_license_key: GPL-1.0-or-later
             spdx_url: https://spdx.org/licenses/GPL-1.0-or-later
   - license_expression: artistic-perl-1.0 AND public-domain AND (artistic-2.0 AND public-domain-disclaimer)
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -7474,7 +7474,7 @@ other_license_detections:
             spdx_license_key: LicenseRef-scancode-public-domain-disclaimer
             spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/public-domain-disclaimer.LICENSE
   - license_expression: gpl-1.0-plus OR artistic-perl-1.0
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -7527,7 +7527,7 @@ other_license_detections:
             spdx_license_key: Artistic-1.0-Perl
             spdx_url: https://spdx.org/licenses/Artistic-1.0-Perl
   - license_expression: artistic-perl-1.0 OR gpl-1.0-plus
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -7579,7 +7579,7 @@ other_license_detections:
             spdx_license_key: GPL-1.0-or-later
             spdx_url: https://spdx.org/licenses/GPL-1.0-or-later
   - license_expression: artistic-perl-1.0 OR gpl-1.0-plus
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -7631,7 +7631,7 @@ other_license_detections:
             spdx_license_key: GPL-1.0-or-later
             spdx_url: https://spdx.org/licenses/GPL-1.0-or-later
   - license_expression: gpl-1.0-plus OR artistic-perl-1.0
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -7683,7 +7683,7 @@ other_license_detections:
             spdx_license_key: Artistic-1.0-Perl
             spdx_url: https://spdx.org/licenses/Artistic-1.0-Perl
   - license_expression: gpl-1.0-plus OR artistic-perl-1.0
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -7735,7 +7735,7 @@ other_license_detections:
             spdx_license_key: Artistic-1.0-Perl
             spdx_url: https://spdx.org/licenses/Artistic-1.0-Perl
   - license_expression: artistic-perl-1.0 OR gpl-1.0-plus
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -7787,7 +7787,7 @@ other_license_detections:
             spdx_license_key: GPL-1.0-or-later
             spdx_url: https://spdx.org/licenses/GPL-1.0-or-later
   - license_expression: artistic-perl-1.0 OR gpl-1.0-plus
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -7839,7 +7839,7 @@ other_license_detections:
             spdx_license_key: GPL-1.0-or-later
             spdx_url: https://spdx.org/licenses/GPL-1.0-or-later
   - license_expression: artistic-perl-1.0 OR gpl-1.0-plus
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -7891,7 +7891,7 @@ other_license_detections:
             spdx_license_key: GPL-1.0-or-later
             spdx_url: https://spdx.org/licenses/GPL-1.0-or-later
   - license_expression: artistic-perl-1.0 OR gpl-1.0-plus
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -7943,7 +7943,7 @@ other_license_detections:
             spdx_license_key: GPL-1.0-or-later
             spdx_url: https://spdx.org/licenses/GPL-1.0-or-later
   - license_expression: artistic-perl-1.0 OR gpl-1.0-plus
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -7995,7 +7995,7 @@ other_license_detections:
             spdx_license_key: GPL-1.0-or-later
             spdx_url: https://spdx.org/licenses/GPL-1.0-or-later
   - license_expression: artistic-perl-1.0 OR gpl-1.0-plus
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -8047,7 +8047,7 @@ other_license_detections:
             spdx_license_key: GPL-1.0-or-later
             spdx_url: https://spdx.org/licenses/GPL-1.0-or-later
   - license_expression: artistic-perl-1.0 OR gpl-1.0-plus
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -8099,7 +8099,7 @@ other_license_detections:
             spdx_license_key: GPL-1.0-or-later
             spdx_url: https://spdx.org/licenses/GPL-1.0-or-later
   - license_expression: (gpl-1.0-plus OR artistic-perl-1.0) AND public-domain
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -8188,7 +8188,7 @@ other_license_detections:
             spdx_license_key: LicenseRef-scancode-public-domain
             spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/public-domain.LICENSE
   - license_expression: artistic-perl-1.0 OR gpl-1.0-plus
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -8240,7 +8240,7 @@ other_license_detections:
             spdx_license_key: GPL-1.0-or-later
             spdx_url: https://spdx.org/licenses/GPL-1.0-or-later
   - license_expression: artistic-perl-1.0 OR gpl-1.0-plus
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -8292,7 +8292,7 @@ other_license_detections:
             spdx_license_key: GPL-1.0-or-later
             spdx_url: https://spdx.org/licenses/GPL-1.0-or-later
   - license_expression: cc0-1.0
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -8331,7 +8331,7 @@ other_license_detections:
             spdx_license_key: CC0-1.0
             spdx_url: https://spdx.org/licenses/CC0-1.0
   - license_expression: gpl-1.0-plus OR artistic-perl-1.0
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -8383,7 +8383,7 @@ other_license_detections:
             spdx_license_key: Artistic-1.0-Perl
             spdx_url: https://spdx.org/licenses/Artistic-1.0-Perl
   - license_expression: gpl-1.0-plus OR artistic-perl-1.0
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '99.0'
@@ -8437,7 +8437,7 @@ other_license_detections:
             spdx_license_key: Artistic-1.0-Perl
             spdx_url: https://spdx.org/licenses/Artistic-1.0-Perl
   - license_expression: artistic-perl-1.0 OR gpl-2.0-plus
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -8494,7 +8494,7 @@ other_license_detections:
             spdx_license_key: GPL-2.0-or-later
             spdx_url: https://spdx.org/licenses/GPL-2.0-or-later
   - license_expression: gpl-1.0-plus OR artistic-perl-1.0
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -8549,7 +8549,7 @@ other_license_detections:
             spdx_license_key: Artistic-1.0-Perl
             spdx_url: https://spdx.org/licenses/Artistic-1.0-Perl
   - license_expression: gpl-1.0-plus OR artistic-1.0
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -8601,7 +8601,7 @@ other_license_detections:
             spdx_license_key: Artistic-1.0
             spdx_url: https://spdx.org/licenses/Artistic-1.0
   - license_expression: gpl-1.0-plus OR artistic-perl-1.0
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -8653,7 +8653,7 @@ other_license_detections:
             spdx_license_key: Artistic-1.0-Perl
             spdx_url: https://spdx.org/licenses/Artistic-1.0-Perl
   - license_expression: bsd-new AND (gpl-1.0-plus OR artistic-perl-1.0)
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '99.0'
@@ -8737,7 +8737,7 @@ other_license_detections:
             spdx_license_key: Artistic-1.0-Perl
             spdx_url: https://spdx.org/licenses/Artistic-1.0-Perl
   - license_expression: artistic-perl-1.0 OR gpl-1.0-plus
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -8789,7 +8789,7 @@ other_license_detections:
             spdx_license_key: GPL-1.0-or-later
             spdx_url: https://spdx.org/licenses/GPL-1.0-or-later
   - license_expression: unicode
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -8825,7 +8825,7 @@ other_license_detections:
             spdx_license_key: LicenseRef-scancode-unicode
             spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/unicode.LICENSE
   - license_expression: artistic-perl-1.0 OR gpl-1.0-plus
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -8877,7 +8877,7 @@ other_license_detections:
             spdx_license_key: GPL-1.0-or-later
             spdx_url: https://spdx.org/licenses/GPL-1.0-or-later
   - license_expression: gpl-1.0-plus OR artistic-perl-1.0
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -8932,7 +8932,7 @@ other_license_detections:
             spdx_license_key: Artistic-1.0-Perl
             spdx_url: https://spdx.org/licenses/Artistic-1.0-Perl
   - license_expression: gpl-1.0-plus OR artistic-perl-1.0
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -8984,7 +8984,7 @@ other_license_detections:
             spdx_license_key: Artistic-1.0-Perl
             spdx_url: https://spdx.org/licenses/Artistic-1.0-Perl
   - license_expression: artistic-perl-1.0 OR gpl-1.0-plus
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '99.0'
@@ -9036,7 +9036,7 @@ other_license_detections:
             spdx_license_key: GPL-1.0-or-later
             spdx_url: https://spdx.org/licenses/GPL-1.0-or-later
   - license_expression: artistic-perl-1.0 OR gpl-1.0-plus
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -9088,7 +9088,7 @@ other_license_detections:
             spdx_license_key: GPL-1.0-or-later
             spdx_url: https://spdx.org/licenses/GPL-1.0-or-later
   - license_expression: gpl-1.0-plus OR artistic-perl-1.0
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -9140,7 +9140,7 @@ other_license_detections:
             spdx_license_key: Artistic-1.0-Perl
             spdx_url: https://spdx.org/licenses/Artistic-1.0-Perl
   - license_expression: artistic-perl-1.0 OR gpl-1.0-plus
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -9192,7 +9192,7 @@ other_license_detections:
             spdx_license_key: GPL-1.0-or-later
             spdx_url: https://spdx.org/licenses/GPL-1.0-or-later
   - license_expression: artistic-perl-1.0 OR gpl-1.0-plus
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -9244,7 +9244,7 @@ other_license_detections:
             spdx_license_key: GPL-1.0-or-later
             spdx_url: https://spdx.org/licenses/GPL-1.0-or-later
   - license_expression: (artistic-perl-1.0 OR gpl-1.0-plus) AND (gpl-1.0-plus OR artistic-perl-1.0)
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -9344,7 +9344,7 @@ other_license_detections:
             spdx_license_key: Artistic-1.0-Perl
             spdx_url: https://spdx.org/licenses/Artistic-1.0-Perl
   - license_expression: gpl-1.0-plus OR artistic-perl-1.0
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -9396,7 +9396,7 @@ other_license_detections:
             spdx_license_key: Artistic-1.0-Perl
             spdx_url: https://spdx.org/licenses/Artistic-1.0-Perl
   - license_expression: gpl-1.0-plus OR artistic-1.0
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -9448,7 +9448,7 @@ other_license_detections:
             spdx_license_key: Artistic-1.0
             spdx_url: https://spdx.org/licenses/Artistic-1.0
   - license_expression: artistic-perl-1.0 OR gpl-1.0-plus
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -9500,7 +9500,7 @@ other_license_detections:
             spdx_license_key: GPL-1.0-or-later
             spdx_url: https://spdx.org/licenses/GPL-1.0-or-later
   - license_expression: artistic-perl-1.0 OR gpl-1.0-plus
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -9552,7 +9552,7 @@ other_license_detections:
             spdx_license_key: GPL-1.0-or-later
             spdx_url: https://spdx.org/licenses/GPL-1.0-or-later
   - license_expression: artistic-perl-1.0 OR gpl-1.0-plus
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -9604,7 +9604,7 @@ other_license_detections:
             spdx_license_key: GPL-1.0-or-later
             spdx_url: https://spdx.org/licenses/GPL-1.0-or-later
   - license_expression: artistic-perl-1.0 OR gpl-1.0-plus
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -9705,7 +9705,7 @@ other_license_detections:
             spdx_license_key: GPL-1.0-or-later
             spdx_url: https://spdx.org/licenses/GPL-1.0-or-later
   - license_expression: gpl-1.0-plus OR artistic-perl-1.0
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -9755,7 +9755,7 @@ other_license_detections:
             spdx_license_key: Artistic-1.0-Perl
             spdx_url: https://spdx.org/licenses/Artistic-1.0-Perl
   - license_expression: artistic-perl-1.0 OR gpl-1.0-plus
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -9807,7 +9807,7 @@ other_license_detections:
             spdx_license_key: GPL-1.0-or-later
             spdx_url: https://spdx.org/licenses/GPL-1.0-or-later
   - license_expression: gpl-1.0-plus OR artistic-perl-1.0
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -9857,7 +9857,7 @@ other_license_detections:
             spdx_license_key: Artistic-1.0-Perl
             spdx_url: https://spdx.org/licenses/Artistic-1.0-Perl
   - license_expression: gpl-1.0-plus OR artistic-perl-1.0
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -9909,7 +9909,7 @@ other_license_detections:
             spdx_license_key: Artistic-1.0-Perl
             spdx_url: https://spdx.org/licenses/Artistic-1.0-Perl
   - license_expression: gpl-1.0-plus OR artistic-perl-1.0
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -9959,7 +9959,7 @@ other_license_detections:
             spdx_license_key: Artistic-1.0-Perl
             spdx_url: https://spdx.org/licenses/Artistic-1.0-Perl
   - license_expression: artistic-perl-1.0 OR gpl-1.0-plus
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -10011,7 +10011,7 @@ other_license_detections:
             spdx_license_key: GPL-1.0-or-later
             spdx_url: https://spdx.org/licenses/GPL-1.0-or-later
   - license_expression: gpl-1.0-plus OR artistic-perl-1.0
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -10063,7 +10063,7 @@ other_license_detections:
             spdx_license_key: Artistic-1.0-Perl
             spdx_url: https://spdx.org/licenses/Artistic-1.0-Perl
   - license_expression: artistic-perl-1.0 OR gpl-1.0-plus
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -10115,7 +10115,7 @@ other_license_detections:
             spdx_license_key: GPL-1.0-or-later
             spdx_url: https://spdx.org/licenses/GPL-1.0-or-later
   - license_expression: (artistic-perl-1.0 OR gpl-1.0-plus) AND bsd-new
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -10186,7 +10186,7 @@ other_license_detections:
             spdx_license_key: BSD-3-Clause
             spdx_url: https://spdx.org/licenses/BSD-3-Clause
   - license_expression: artistic-perl-1.0 OR gpl-1.0-plus
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -10238,7 +10238,7 @@ other_license_detections:
             spdx_license_key: GPL-1.0-or-later
             spdx_url: https://spdx.org/licenses/GPL-1.0-or-later
   - license_expression: artistic-perl-1.0 OR gpl-1.0-plus
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -10290,7 +10290,7 @@ other_license_detections:
             spdx_license_key: GPL-1.0-or-later
             spdx_url: https://spdx.org/licenses/GPL-1.0-or-later
   - license_expression: gpl-1.0-plus OR artistic-perl-1.0
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -10342,7 +10342,7 @@ other_license_detections:
             spdx_license_key: Artistic-1.0-Perl
             spdx_url: https://spdx.org/licenses/Artistic-1.0-Perl
   - license_expression: gpl-1.0-plus OR artistic-perl-1.0
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -10394,7 +10394,7 @@ other_license_detections:
             spdx_license_key: Artistic-1.0-Perl
             spdx_url: https://spdx.org/licenses/Artistic-1.0-Perl
   - license_expression: gpl-1.0-plus OR artistic-perl-1.0
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -10446,7 +10446,7 @@ other_license_detections:
             spdx_license_key: Artistic-1.0-Perl
             spdx_url: https://spdx.org/licenses/Artistic-1.0-Perl
   - license_expression: artistic-perl-1.0 OR gpl-1.0-plus
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -10499,7 +10499,7 @@ other_license_detections:
             spdx_license_key: GPL-1.0-or-later
             spdx_url: https://spdx.org/licenses/GPL-1.0-or-later
   - license_expression: artistic-perl-1.0 OR gpl-1.0-plus
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -10552,7 +10552,7 @@ other_license_detections:
             spdx_license_key: GPL-1.0-or-later
             spdx_url: https://spdx.org/licenses/GPL-1.0-or-later
   - license_expression: artistic-perl-1.0 OR gpl-1.0-plus
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -10604,7 +10604,7 @@ other_license_detections:
             spdx_license_key: GPL-1.0-or-later
             spdx_url: https://spdx.org/licenses/GPL-1.0-or-later
   - license_expression: artistic-perl-1.0 OR gpl-1.0-plus
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -10656,7 +10656,7 @@ other_license_detections:
             spdx_license_key: GPL-1.0-or-later
             spdx_url: https://spdx.org/licenses/GPL-1.0-or-later
   - license_expression: artistic-perl-1.0 OR gpl-1.0-plus
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -10709,7 +10709,7 @@ other_license_detections:
             spdx_license_key: GPL-1.0-or-later
             spdx_url: https://spdx.org/licenses/GPL-1.0-or-later
   - license_expression: artistic-perl-1.0 OR gpl-1.0-plus
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '95.0'
@@ -10761,7 +10761,7 @@ other_license_detections:
             spdx_license_key: GPL-1.0-or-later
             spdx_url: https://spdx.org/licenses/GPL-1.0-or-later
   - license_expression: artistic-perl-1.0 OR gpl-1.0-plus
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -10814,7 +10814,7 @@ other_license_detections:
             spdx_license_key: GPL-1.0-or-later
             spdx_url: https://spdx.org/licenses/GPL-1.0-or-later
   - license_expression: artistic-perl-1.0 OR gpl-1.0-plus
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -10866,7 +10866,7 @@ other_license_detections:
             spdx_license_key: GPL-1.0-or-later
             spdx_url: https://spdx.org/licenses/GPL-1.0-or-later
   - license_expression: artistic-perl-1.0 OR gpl-1.0-plus
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -10918,7 +10918,7 @@ other_license_detections:
             spdx_license_key: GPL-1.0-or-later
             spdx_url: https://spdx.org/licenses/GPL-1.0-or-later
   - license_expression: artistic-perl-1.0 OR gpl-1.0-plus
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '95.0'
@@ -10971,7 +10971,7 @@ other_license_detections:
             spdx_license_key: GPL-1.0-or-later
             spdx_url: https://spdx.org/licenses/GPL-1.0-or-later
   - license_expression: artistic-perl-1.0 OR gpl-1.0-plus
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '95.0'
@@ -11022,7 +11022,7 @@ other_license_detections:
             spdx_license_key: GPL-1.0-or-later
             spdx_url: https://spdx.org/licenses/GPL-1.0-or-later
   - license_expression: artistic-perl-1.0 OR gpl-1.0-plus
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -11075,7 +11075,7 @@ other_license_detections:
             spdx_license_key: GPL-1.0-or-later
             spdx_url: https://spdx.org/licenses/GPL-1.0-or-later
   - license_expression: gpl-1.0-plus OR artistic-perl-1.0
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -11128,7 +11128,7 @@ other_license_detections:
             spdx_license_key: Artistic-1.0-Perl
             spdx_url: https://spdx.org/licenses/Artistic-1.0-Perl
   - license_expression: artistic-perl-1.0 OR gpl-1.0-plus
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -11180,7 +11180,7 @@ other_license_detections:
             spdx_license_key: GPL-1.0-or-later
             spdx_url: https://spdx.org/licenses/GPL-1.0-or-later
   - license_expression: artistic-1.0
-    detection_rules: []
+    detection_log: []
     matches:
       - score: '90.0'
         start_line: 1687
@@ -11215,7 +11215,7 @@ other_license_detections:
             spdx_license_key: Artistic-1.0
             spdx_url: https://spdx.org/licenses/Artistic-1.0
   - license_expression: artistic-perl-1.0 OR gpl-1.0-plus
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '95.0'
@@ -11267,7 +11267,7 @@ other_license_detections:
             spdx_license_key: GPL-1.0-or-later
             spdx_url: https://spdx.org/licenses/GPL-1.0-or-later
   - license_expression: artistic-perl-1.0 OR gpl-1.0-plus
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '95.0'
@@ -11367,7 +11367,7 @@ other_license_detections:
             spdx_license_key: GPL-1.0-or-later
             spdx_url: https://spdx.org/licenses/GPL-1.0-or-later
   - license_expression: gpl-1.0-plus OR artistic-perl-1.0
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -11420,7 +11420,7 @@ other_license_detections:
             spdx_license_key: Artistic-1.0-Perl
             spdx_url: https://spdx.org/licenses/Artistic-1.0-Perl
   - license_expression: artistic-perl-1.0 OR gpl-1.0-plus
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -11472,7 +11472,7 @@ other_license_detections:
             spdx_license_key: GPL-1.0-or-later
             spdx_url: https://spdx.org/licenses/GPL-1.0-or-later
   - license_expression: artistic-perl-1.0 OR gpl-1.0-plus
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -11525,7 +11525,7 @@ other_license_detections:
             spdx_license_key: GPL-1.0-or-later
             spdx_url: https://spdx.org/licenses/GPL-1.0-or-later
   - license_expression: artistic-perl-1.0
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '99.0'
@@ -11561,7 +11561,7 @@ other_license_detections:
             spdx_license_key: Artistic-1.0-Perl
             spdx_url: https://spdx.org/licenses/Artistic-1.0-Perl
   - license_expression: artistic-perl-1.0 OR gpl-1.0-plus
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '95.0'
@@ -11613,7 +11613,7 @@ other_license_detections:
             spdx_license_key: GPL-1.0-or-later
             spdx_url: https://spdx.org/licenses/GPL-1.0-or-later
   - license_expression: artistic-perl-1.0 OR gpl-1.0-plus
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -11666,7 +11666,7 @@ other_license_detections:
             spdx_license_key: GPL-1.0-or-later
             spdx_url: https://spdx.org/licenses/GPL-1.0-or-later
   - license_expression: artistic-perl-1.0 OR gpl-1.0-plus
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -11718,7 +11718,7 @@ other_license_detections:
             spdx_license_key: GPL-1.0-or-later
             spdx_url: https://spdx.org/licenses/GPL-1.0-or-later
   - license_expression: artistic-perl-1.0 OR gpl-1.0-plus
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -11770,7 +11770,7 @@ other_license_detections:
             spdx_license_key: GPL-1.0-or-later
             spdx_url: https://spdx.org/licenses/GPL-1.0-or-later
   - license_expression: gpl-1.0-plus OR artistic-perl-1.0
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -11820,7 +11820,7 @@ other_license_detections:
             spdx_license_key: Artistic-1.0-Perl
             spdx_url: https://spdx.org/licenses/Artistic-1.0-Perl
   - license_expression: gpl-1.0-plus OR artistic-perl-1.0
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -11872,7 +11872,7 @@ other_license_detections:
             spdx_license_key: Artistic-1.0-Perl
             spdx_url: https://spdx.org/licenses/Artistic-1.0-Perl
   - license_expression: (gpl-1.0-plus OR artistic-perl-1.0) AND public-domain
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -11961,7 +11961,7 @@ other_license_detections:
             spdx_license_key: LicenseRef-scancode-public-domain
             spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/public-domain.LICENSE
   - license_expression: artistic-2.0 AND public-domain-disclaimer
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -12014,7 +12014,7 @@ other_license_detections:
             spdx_license_key: LicenseRef-scancode-public-domain-disclaimer
             spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/public-domain-disclaimer.LICENSE
   - license_expression: gpl-1.0-plus OR artistic-perl-1.0
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -12064,7 +12064,7 @@ other_license_detections:
             spdx_license_key: Artistic-1.0-Perl
             spdx_url: https://spdx.org/licenses/Artistic-1.0-Perl
   - license_expression: gpl-1.0-plus OR artistic-perl-1.0
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -12114,7 +12114,7 @@ other_license_detections:
             spdx_license_key: Artistic-1.0-Perl
             spdx_url: https://spdx.org/licenses/Artistic-1.0-Perl
   - license_expression: gpl-1.0-plus OR artistic-perl-1.0
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -12164,7 +12164,7 @@ other_license_detections:
             spdx_license_key: Artistic-1.0-Perl
             spdx_url: https://spdx.org/licenses/Artistic-1.0-Perl
   - license_expression: (gpl-1.0-plus OR artistic-perl-1.0) AND public-domain
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -12253,7 +12253,7 @@ other_license_detections:
             spdx_license_key: LicenseRef-scancode-public-domain
             spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/public-domain.LICENSE
   - license_expression: artistic-perl-1.0 OR gpl-1.0-plus
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -12305,7 +12305,7 @@ other_license_detections:
             spdx_license_key: GPL-1.0-or-later
             spdx_url: https://spdx.org/licenses/GPL-1.0-or-later
   - license_expression: (gpl-1.0-plus OR artistic-perl-1.0) AND public-domain
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -12394,7 +12394,7 @@ other_license_detections:
             spdx_license_key: LicenseRef-scancode-public-domain
             spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/public-domain.LICENSE
   - license_expression: gpl-1.0-plus OR artistic-perl-1.0
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -12444,7 +12444,7 @@ other_license_detections:
             spdx_license_key: Artistic-1.0-Perl
             spdx_url: https://spdx.org/licenses/Artistic-1.0-Perl
   - license_expression: gpl-1.0-plus OR artistic-perl-1.0
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -12494,7 +12494,7 @@ other_license_detections:
             spdx_license_key: Artistic-1.0-Perl
             spdx_url: https://spdx.org/licenses/Artistic-1.0-Perl
   - license_expression: gpl-1.0-plus OR artistic-perl-1.0
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -12544,7 +12544,7 @@ other_license_detections:
             spdx_license_key: Artistic-1.0-Perl
             spdx_url: https://spdx.org/licenses/Artistic-1.0-Perl
   - license_expression: artistic-perl-1.0 OR gpl-1.0-plus
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -12596,7 +12596,7 @@ other_license_detections:
             spdx_license_key: GPL-1.0-or-later
             spdx_url: https://spdx.org/licenses/GPL-1.0-or-later
   - license_expression: artistic-perl-1.0 OR artistic-dist-1.0 OR gpl-1.0-plus
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -12676,7 +12676,7 @@ other_license_detections:
             spdx_license_key: GPL-1.0-or-later
             spdx_url: https://spdx.org/licenses/GPL-1.0-or-later
   - license_expression: artistic-dist-1.0
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -12715,7 +12715,7 @@ other_license_detections:
             spdx_license_key: LicenseRef-scancode-artistic-1988-1.0
             spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/artistic-dist-1.0.LICENSE
   - license_expression: artistic-dist-1.0 OR gpl-1.0-plus
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -12790,7 +12790,7 @@ other_license_detections:
             spdx_license_key: GPL-1.0-or-later
             spdx_url: https://spdx.org/licenses/GPL-1.0-or-later
   - license_expression: (gpl-1.0-plus OR artistic-perl-1.0) AND mit
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -12880,7 +12880,7 @@ other_license_detections:
             spdx_license_key: MIT
             spdx_url: https://spdx.org/licenses/MIT
   - license_expression: artistic-perl-1.0 OR gpl-1.0-plus
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '95.0'

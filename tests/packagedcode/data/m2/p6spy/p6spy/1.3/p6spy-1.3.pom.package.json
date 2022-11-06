@@ -62,7 +62,7 @@
   "license_detections": [
     {
       "license_expression": "apache-1.1",
-      "detection_rules": [
+      "detection_log": [
         "not-combined"
       ],
       "matches": [
@@ -107,7 +107,7 @@
     },
     {
       "license_expression": "apache-1.1",
-      "detection_rules": [
+      "detection_log": [
         "not-combined"
       ],
       "matches": [

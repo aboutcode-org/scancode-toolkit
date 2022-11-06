@@ -7,7 +7,7 @@ other_license_expression:
 other_license_expression_spdx:
 license_detections:
   - license_expression: other-permissive
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -46,7 +46,7 @@ license_detections:
             spdx_license_key: LicenseRef-scancode-other-permissive
             spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/other-permissive.LICENSE
   - license_expression: intel
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '93.72'

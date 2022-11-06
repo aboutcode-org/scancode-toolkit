@@ -10,7 +10,7 @@
       "license_detections": [
         {
           "license_expression": "gpl-3.0",
-          "detection_rules": [
+          "detection_log": [
             "not-combined"
           ],
           "matches": [
@@ -92,7 +92,7 @@
       "license_detections": [
         {
           "license_expression": "gpl-3.0 AND unknown-license-reference AND gpl-3.0-plus",
-          "detection_rules": [
+          "detection_log": [
             "not-combined"
           ],
           "matches": [
@@ -226,7 +226,7 @@
       "license_detections": [
         {
           "license_expression": "gpl-3.0-plus",
-          "detection_rules": [
+          "detection_log": [
             "not-combined"
           ],
           "matches": [
@@ -296,7 +296,7 @@
       "license_detections": [
         {
           "license_expression": "gpl-3.0",
-          "detection_rules": [
+          "detection_log": [
             "unknown-reference-in-file-to-nonexistent-package"
           ],
           "matches": [
@@ -627,7 +627,7 @@
       "license_detections": [
         {
           "license_expression": "gpl-3.0",
-          "detection_rules": [
+          "detection_log": [
             "unknown-reference-in-file-to-nonexistent-package"
           ],
           "matches": [
@@ -948,7 +948,7 @@
           "license_detections": [
             {
               "license_expression": "gpl-3.0",
-              "detection_rules": [
+              "detection_log": [
                 "not-combined"
               ],
               "matches": [

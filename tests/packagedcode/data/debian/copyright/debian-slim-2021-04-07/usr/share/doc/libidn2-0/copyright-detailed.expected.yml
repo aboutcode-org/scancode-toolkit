@@ -20,7 +20,7 @@ other_license_expression_spdx: (GPL-3.0-or-later AND GPL-3.0-or-later) AND ((LGP
 license_detections: []
 other_license_detections:
   - license_expression: gpl-3.0-plus
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -104,7 +104,7 @@ other_license_detections:
             spdx_license_key: GPL-3.0-or-later
             spdx_url: https://spdx.org/licenses/GPL-3.0-or-later
   - license_expression: gpl-2.0-plus
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -188,7 +188,7 @@ other_license_detections:
             spdx_license_key: GPL-2.0-or-later
             spdx_url: https://spdx.org/licenses/GPL-2.0-or-later
   - license_expression: lgpl-3.0-plus
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -272,7 +272,7 @@ other_license_detections:
             spdx_license_key: LGPL-3.0-or-later
             spdx_url: https://spdx.org/licenses/LGPL-3.0-or-later
   - license_expression: unicode
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'

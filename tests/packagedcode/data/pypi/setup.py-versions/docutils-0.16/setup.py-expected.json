@@ -85,7 +85,7 @@
     "license_detections": [
       {
         "license_expression": "public-domain AND python AND bsd-simplified AND gpl-3.0",
-        "detection_rules": [
+        "detection_log": [
           "not-combined"
         ],
         "matches": [
@@ -180,7 +180,7 @@
       },
       {
         "license_expression": "public-domain AND python AND bsd-new AND gpl-1.0-plus",
-        "detection_rules": [
+        "detection_log": [
           "not-combined"
         ],
         "matches": [

@@ -55,7 +55,7 @@
     "license_detections": [
       {
         "license_expression": "apache-2.0 AND cc-by-4.0 AND other-permissive AND other-copyleft",
-        "detection_rules": [
+        "detection_log": [
           "not-combined"
         ],
         "matches": [

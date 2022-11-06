@@ -1,7 +1,7 @@
 [
   {
     "license_expression": "epl-2.0",
-    "detection_rules": [
+    "detection_log": [
       "unknown-intro-followed-by-match"
     ],
     "matches": [

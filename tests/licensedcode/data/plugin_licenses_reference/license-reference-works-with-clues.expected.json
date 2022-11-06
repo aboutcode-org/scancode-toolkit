@@ -566,7 +566,7 @@
       "license_detections": [
         {
           "license_expression": "python",
-          "detection_rules": [
+          "detection_log": [
             "not-combined"
           ],
           "matches": [
@@ -584,7 +584,7 @@
         },
         {
           "license_expression": "other-copyleft AND gpl-1.0-plus",
-          "detection_rules": [
+          "detection_log": [
             "not-combined"
           ],
           "matches": [
@@ -672,7 +672,7 @@
         },
         {
           "license_expression": "python AND python-cwi",
-          "detection_rules": [
+          "detection_log": [
             "not-combined"
           ],
           "matches": [
@@ -700,7 +700,7 @@
         },
         {
           "license_expression": "bzip2-libbzip-2010",
-          "detection_rules": [
+          "detection_log": [
             "unknown-intro-followed-by-match"
           ],
           "matches": [
@@ -728,7 +728,7 @@
         },
         {
           "license_expression": "sleepycat",
-          "detection_rules": [
+          "detection_log": [
             "unknown-intro-followed-by-match"
           ],
           "matches": [
@@ -756,7 +756,7 @@
         },
         {
           "license_expression": "bsd-new",
-          "detection_rules": [
+          "detection_log": [
             "not-combined"
           ],
           "matches": [
@@ -774,7 +774,7 @@
         },
         {
           "license_expression": "bsd-new",
-          "detection_rules": [
+          "detection_log": [
             "not-combined"
           ],
           "matches": [
@@ -792,7 +792,7 @@
         },
         {
           "license_expression": "openssl-ssleay",
-          "detection_rules": [
+          "detection_log": [
             "unknown-intro-followed-by-match"
           ],
           "matches": [
@@ -830,7 +830,7 @@
         },
         {
           "license_expression": "openssl",
-          "detection_rules": [
+          "detection_log": [
             "not-combined"
           ],
           "matches": [
@@ -848,7 +848,7 @@
         },
         {
           "license_expression": "ssleay-windows",
-          "detection_rules": [
+          "detection_log": [
             "not-combined"
           ],
           "matches": [
@@ -866,7 +866,7 @@
         },
         {
           "license_expression": "tcl",
-          "detection_rules": [
+          "detection_log": [
             "unknown-intro-followed-by-match"
           ],
           "matches": [
@@ -894,7 +894,7 @@
         },
         {
           "license_expression": "tcl",
-          "detection_rules": [
+          "detection_log": [
             "unknown-intro-followed-by-match"
           ],
           "matches": [

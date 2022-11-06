@@ -228,7 +228,7 @@ def get_license_detection_references(license_detections_by_path):
     Get LicenseDetection data for references from a mapping of path:[LicenseDetection],
     i.e. path and a list of LicenseDetection at that path.
 
-    Also removes `matches` and `detection_rules` from each LicenseDetection mapping
+    Also removes `matches` and `detection_log` from each LicenseDetection mapping
     and only keeps a LicenseExpression string and an computed identifier per detection,
     as this LicenseDetection data is referenced at top-level by the identifier.
     """
@@ -239,7 +239,7 @@ def get_license_detection_references(license_detections_by_path):
         for detection in detections:
             detection_obj = LicenseDetection(**detection)
             _matches = detection.pop('matches')
-            _reasons = detection.pop('detection_rules')
+            _detection_log = detection.pop('detection_log')
             detection_obj.file_region = detection_obj.get_file_region(path=path)
             detection["id"] = detection_obj.identifier
 

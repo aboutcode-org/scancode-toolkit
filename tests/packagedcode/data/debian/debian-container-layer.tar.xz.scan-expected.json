@@ -41,7 +41,7 @@
       "license_detections": [
         {
           "license_expression": "x11-fsf",
-          "detection_rules": [
+          "detection_log": [
             "not-combined"
           ],
           "matches": [
@@ -86,7 +86,7 @@
         },
         {
           "license_expression": "x11-xconsortium",
-          "detection_rules": [
+          "detection_log": [
             "not-combined"
           ],
           "matches": [
@@ -131,7 +131,7 @@
         },
         {
           "license_expression": "bsd-new",
-          "detection_rules": [
+          "detection_log": [
             "not-combined"
           ],
           "matches": [
@@ -176,7 +176,7 @@
         },
         {
           "license_expression": "x11-fsf",
-          "detection_rules": [
+          "detection_log": [
             "not-combined"
           ],
           "matches": [
@@ -325,7 +325,7 @@
       "license_detections": [
         {
           "license_expression": "lgpl-2.1-plus AND lgpl-2.1",
-          "detection_rules": [
+          "detection_log": [
             "from-package-file"
           ],
           "matches": [
@@ -524,7 +524,7 @@
       "other_license_detections": [
         {
           "license_expression": "lgpl-2.1-plus AND lgpl-2.1",
-          "detection_rules": [
+          "detection_log": [
             "not-combined"
           ],
           "matches": [
@@ -771,7 +771,7 @@
           "license_detections": [
             {
               "license_expression": "x11-fsf",
-              "detection_rules": [
+              "detection_log": [
                 "not-combined"
               ],
               "matches": [
@@ -816,7 +816,7 @@
             },
             {
               "license_expression": "x11-xconsortium",
-              "detection_rules": [
+              "detection_log": [
                 "not-combined"
               ],
               "matches": [
@@ -861,7 +861,7 @@
             },
             {
               "license_expression": "bsd-new",
-              "detection_rules": [
+              "detection_log": [
                 "not-combined"
               ],
               "matches": [
@@ -906,7 +906,7 @@
             },
             {
               "license_expression": "x11-fsf",
-              "detection_rules": [
+              "detection_log": [
                 "not-combined"
               ],
               "matches": [
@@ -1010,7 +1010,7 @@
           "license_detections": [
             {
               "license_expression": "lgpl-2.1-plus AND lgpl-2.1",
-              "detection_rules": [
+              "detection_log": [
                 "from-package-file"
               ],
               "matches": [
@@ -1209,7 +1209,7 @@
           "other_license_detections": [
             {
               "license_expression": "lgpl-2.1-plus AND lgpl-2.1",
-              "detection_rules": [
+              "detection_log": [
                 "not-combined"
               ],
               "matches": [

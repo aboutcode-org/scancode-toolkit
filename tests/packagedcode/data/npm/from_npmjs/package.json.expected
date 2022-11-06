@@ -2210,7 +2210,7 @@
     "license_detections": [
       {
         "license_expression": "artistic-2.0",
-        "detection_rules": [
+        "detection_log": [
           "not-combined"
         ],
         "matches": [

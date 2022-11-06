@@ -198,7 +198,7 @@
       "license_detections": [
         {
           "license_expression": "unknown-license-reference",
-          "detection_rules": [],
+          "detection_log": [],
           "matches": [
             {
               "score": 80.0,
@@ -320,7 +320,7 @@
           "license_detections": [
             {
               "license_expression": "unknown-license-reference",
-              "detection_rules": [],
+              "detection_log": [],
               "matches": [
                 {
                   "score": 80.0,

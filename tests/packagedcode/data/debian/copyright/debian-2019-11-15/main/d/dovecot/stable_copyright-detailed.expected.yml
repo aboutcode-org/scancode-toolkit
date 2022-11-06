@@ -45,7 +45,7 @@ other_license_expression_spdx: (LGPL-2.1-only AND LGPL-2.1-or-later AND LGPL-2.1
 license_detections: []
 other_license_detections:
   - license_expression: beerware
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -85,7 +85,7 @@ other_license_detections:
             spdx_license_key: Beerware
             spdx_url: https://spdx.org/licenses/Beerware
   - license_expression: public-domain
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -123,7 +123,7 @@ other_license_detections:
             spdx_license_key: LicenseRef-scancode-public-domain
             spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/public-domain.LICENSE
   - license_expression: mit
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -176,7 +176,7 @@ other_license_detections:
             spdx_license_key: MIT
             spdx_url: https://spdx.org/licenses/MIT
   - license_expression: lgpl-2.1 AND lgpl-2.1-plus
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -322,7 +322,7 @@ other_license_detections:
             spdx_license_key: LGPL-2.1-only
             spdx_url: https://spdx.org/licenses/LGPL-2.1-only
   - license_expression: apache-2.0
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -405,7 +405,7 @@ other_license_detections:
             spdx_license_key: Apache-2.0
             spdx_url: https://spdx.org/licenses/Apache-2.0
   - license_expression: bsd-new
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -464,7 +464,7 @@ other_license_detections:
             spdx_license_key: BSD-3-Clause
             spdx_url: https://spdx.org/licenses/BSD-3-Clause
   - license_expression: bsd-simplified
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -520,7 +520,7 @@ other_license_detections:
             spdx_license_key: BSD-2-Clause
             spdx_url: https://spdx.org/licenses/BSD-2-Clause
   - license_expression: gpl-2.0-plus AND gpl-2.0
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -666,7 +666,7 @@ other_license_detections:
             spdx_license_key: GPL-2.0-only
             spdx_url: https://spdx.org/licenses/GPL-2.0-only
   - license_expression: unicode
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'

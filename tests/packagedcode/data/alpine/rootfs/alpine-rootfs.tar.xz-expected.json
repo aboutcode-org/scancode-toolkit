@@ -110,7 +110,7 @@
       "license_detections": [
         {
           "license_expression": "mit",
-          "detection_rules": [
+          "detection_log": [
             "not-combined"
           ],
           "matches": [
@@ -225,7 +225,7 @@
       "license_detections": [
         {
           "license_expression": "gpl-2.0",
-          "detection_rules": [
+          "detection_log": [
             "not-combined"
           ],
           "matches": [
@@ -340,7 +340,7 @@
       "license_detections": [
         {
           "license_expression": "gpl-2.0",
-          "detection_rules": [
+          "detection_log": [
             "not-combined"
           ],
           "matches": [
@@ -482,7 +482,7 @@
       "license_detections": [
         {
           "license_expression": "mit",
-          "detection_rules": [
+          "detection_log": [
             "not-combined"
           ],
           "matches": [
@@ -759,7 +759,7 @@
       "license_detections": [
         {
           "license_expression": "mpl-2.0 AND mit",
-          "detection_rules": [
+          "detection_log": [
             "not-combined"
           ],
           "matches": [
@@ -890,7 +890,7 @@
       "license_detections": [
         {
           "license_expression": "openssl-ssleay",
-          "detection_rules": [
+          "detection_log": [
             "not-combined"
           ],
           "matches": [
@@ -1032,7 +1032,7 @@
       "license_detections": [
         {
           "license_expression": "openssl-ssleay",
-          "detection_rules": [
+          "detection_log": [
             "not-combined"
           ],
           "matches": [
@@ -1147,7 +1147,7 @@
       "license_detections": [
         {
           "license_expression": "isc AND (bsd-new OR mit)",
-          "detection_rules": [
+          "detection_log": [
             "not-combined"
           ],
           "matches": [
@@ -1294,7 +1294,7 @@
       "license_detections": [
         {
           "license_expression": "gpl-2.0",
-          "detection_rules": [
+          "detection_log": [
             "not-combined"
           ],
           "matches": [
@@ -1397,7 +1397,7 @@
       "license_detections": [
         {
           "license_expression": "zlib",
-          "detection_rules": [
+          "detection_log": [
             "not-combined"
           ],
           "matches": [
@@ -1512,7 +1512,7 @@
       "license_detections": [
         {
           "license_expression": "gpl-2.0",
-          "detection_rules": [
+          "detection_log": [
             "not-combined"
           ],
           "matches": [
@@ -1615,7 +1615,7 @@
       "license_detections": [
         {
           "license_expression": "gpl-2.0",
-          "detection_rules": [
+          "detection_log": [
             "not-combined"
           ],
           "matches": [
@@ -1718,7 +1718,7 @@
       "license_detections": [
         {
           "license_expression": "mit AND bsd-new AND gpl-2.0-plus",
-          "detection_rules": [
+          "detection_log": [
             "not-combined"
           ],
           "matches": [
@@ -1853,7 +1853,7 @@
       "license_detections": [
         {
           "license_expression": "bsd-simplified AND bsd-new",
-          "detection_rules": [
+          "detection_log": [
             "not-combined"
           ],
           "matches": [
@@ -2603,7 +2603,7 @@
           "license_detections": [
             {
               "license_expression": "mit",
-              "detection_rules": [
+              "detection_log": [
                 "not-combined"
               ],
               "matches": [
@@ -2721,7 +2721,7 @@
           "license_detections": [
             {
               "license_expression": "gpl-2.0",
-              "detection_rules": [
+              "detection_log": [
                 "not-combined"
               ],
               "matches": [
@@ -2884,7 +2884,7 @@
           "license_detections": [
             {
               "license_expression": "gpl-2.0",
-              "detection_rules": [
+              "detection_log": [
                 "not-combined"
               ],
               "matches": [
@@ -3236,7 +3236,7 @@
           "license_detections": [
             {
               "license_expression": "mit",
-              "detection_rules": [
+              "detection_log": [
                 "not-combined"
               ],
               "matches": [
@@ -3705,7 +3705,7 @@
           "license_detections": [
             {
               "license_expression": "mpl-2.0 AND mit",
-              "detection_rules": [
+              "detection_log": [
                 "not-combined"
               ],
               "matches": [
@@ -3839,7 +3839,7 @@
           "license_detections": [
             {
               "license_expression": "openssl-ssleay",
-              "detection_rules": [
+              "detection_log": [
                 "not-combined"
               ],
               "matches": [
@@ -4038,7 +4038,7 @@
           "license_detections": [
             {
               "license_expression": "openssl-ssleay",
-              "detection_rules": [
+              "detection_log": [
                 "not-combined"
               ],
               "matches": [
@@ -4156,7 +4156,7 @@
           "license_detections": [
             {
               "license_expression": "isc AND (bsd-new OR mit)",
-              "detection_rules": [
+              "detection_log": [
                 "not-combined"
               ],
               "matches": [
@@ -4317,7 +4317,7 @@
           "license_detections": [
             {
               "license_expression": "gpl-2.0",
-              "detection_rules": [
+              "detection_log": [
                 "not-combined"
               ],
               "matches": [
@@ -4426,7 +4426,7 @@
           "license_detections": [
             {
               "license_expression": "zlib",
-              "detection_rules": [
+              "detection_log": [
                 "not-combined"
               ],
               "matches": [
@@ -4544,7 +4544,7 @@
           "license_detections": [
             {
               "license_expression": "gpl-2.0",
-              "detection_rules": [
+              "detection_log": [
                 "not-combined"
               ],
               "matches": [
@@ -4683,7 +4683,7 @@
           "license_detections": [
             {
               "license_expression": "gpl-2.0",
-              "detection_rules": [
+              "detection_log": [
                 "not-combined"
               ],
               "matches": [
@@ -4792,7 +4792,7 @@
           "license_detections": [
             {
               "license_expression": "mit AND bsd-new AND gpl-2.0-plus",
-              "detection_rules": [
+              "detection_log": [
                 "not-combined"
               ],
               "matches": [
@@ -4980,7 +4980,7 @@
           "license_detections": [
             {
               "license_expression": "bsd-simplified AND bsd-new",
-              "detection_rules": [
+              "detection_log": [
                 "not-combined"
               ],
               "matches": [

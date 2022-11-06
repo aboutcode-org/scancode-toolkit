@@ -80,7 +80,7 @@
       "license_detections": [
         {
           "license_expression": "bsd-new",
-          "detection_rules": [
+          "detection_log": [
             "from-package-file"
           ],
           "matches": [
@@ -194,7 +194,7 @@
           "license_detections": [
             {
               "license_expression": "bsd-new",
-              "detection_rules": [
+              "detection_log": [
                 "from-package-file"
               ],
               "matches": [

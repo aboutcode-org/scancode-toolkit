@@ -11,7 +11,7 @@ other_license_expression_spdx: Zlib AND Zlib AND Zlib AND Zlib
 license_detections: []
 other_license_detections:
   - license_expression: zlib
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'

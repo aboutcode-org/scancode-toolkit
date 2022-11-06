@@ -42,7 +42,7 @@
       "license_detections": [
         {
           "license_expression": "artistic-2.0 OR mit",
-          "detection_rules": [
+          "detection_log": [
             "not-combined"
           ],
           "matches": [
@@ -270,7 +270,7 @@
       "license_detections": [
         {
           "license_expression": "apache-2.0 AND (mit OR bsd-simplified)",
-          "detection_rules": [
+          "detection_log": [
             "not-combined"
           ],
           "matches": [
@@ -313,7 +313,7 @@
       "license_detections": [
         {
           "license_expression": "artistic-2.0",
-          "detection_rules": [
+          "detection_log": [
             "not-combined"
           ],
           "matches": [
@@ -374,7 +374,7 @@
           "license_detections": [
             {
               "license_expression": "artistic-2.0 OR mit",
-              "detection_rules": [
+              "detection_log": [
                 "not-combined"
               ],
               "matches": [

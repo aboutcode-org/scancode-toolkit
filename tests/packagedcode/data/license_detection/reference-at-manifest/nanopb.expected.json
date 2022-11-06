@@ -37,7 +37,7 @@
       "license_detections": [
         {
           "license_expression": "zlib",
-          "detection_rules": [
+          "detection_log": [
             "package-unknown-reference-to-local-file"
           ],
           "matches": [
@@ -149,7 +149,7 @@
       "license_detections": [
         {
           "license_expression": "zlib",
-          "detection_rules": [
+          "detection_log": [
             "not-combined"
           ],
           "matches": [
@@ -207,7 +207,7 @@
       "license_detections": [
         {
           "license_expression": "zlib",
-          "detection_rules": [
+          "detection_log": [
             "unknown-reference-to-local-file"
           ],
           "matches": [
@@ -329,7 +329,7 @@
           "license_detections": [
             {
               "license_expression": "zlib",
-              "detection_rules": [
+              "detection_log": [
                 "package-unknown-reference-to-local-file"
               ],
               "matches": [

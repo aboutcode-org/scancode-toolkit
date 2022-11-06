@@ -18,7 +18,7 @@ other_license_expression_spdx: (BSD-3-Clause AND (GPL-2.0-only AND GPL-2.0-only)
 license_detections: []
 other_license_detections:
   - license_expression: zlib
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -69,7 +69,7 @@ other_license_detections:
             spdx_license_key: Zlib
             spdx_url: https://spdx.org/licenses/Zlib
   - license_expression: mit
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -124,7 +124,7 @@ other_license_detections:
             spdx_license_key: MIT
             spdx_url: https://spdx.org/licenses/MIT
   - license_expression: gpl-2.0
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -208,7 +208,7 @@ other_license_detections:
             spdx_license_key: GPL-2.0-only
             spdx_url: https://spdx.org/licenses/GPL-2.0-only
   - license_expression: bsd-new
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '99.52'

@@ -8,7 +8,7 @@
       "license_detections": [
         {
           "license_expression": "example-installed-1 AND example-installed-2 AND example1 AND example2 AND apache-2.0",
-          "detection_rules": [
+          "detection_log": [
             "not-combined"
           ],
           "matches": [

@@ -30,7 +30,7 @@ other_license_expression_spdx: (GPL-2.0-only AND GPL-2.0-only) AND CC-BY-SA-3.0 
 license_detections: []
 other_license_detections:
   - license_expression: gpl-2.0
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -113,7 +113,7 @@ other_license_detections:
             spdx_license_key: GPL-2.0-only
             spdx_url: https://spdx.org/licenses/GPL-2.0-only
   - license_expression: lgpl-2.1-plus AND lgpl-2.0-plus AND lgpl-2.1
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -255,7 +255,7 @@ other_license_detections:
             spdx_license_key: LGPL-2.1-only
             spdx_url: https://spdx.org/licenses/LGPL-2.1-only
   - license_expression: boost-1.0
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -314,7 +314,7 @@ other_license_detections:
             spdx_license_key: BSL-1.0
             spdx_url: https://spdx.org/licenses/BSL-1.0
   - license_expression: bsd-new
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -365,7 +365,7 @@ other_license_detections:
             spdx_license_key: BSD-3-Clause
             spdx_url: https://spdx.org/licenses/BSD-3-Clause
   - license_expression: apache-2.0
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -436,7 +436,7 @@ other_license_detections:
             spdx_license_key: Apache-2.0
             spdx_url: https://spdx.org/licenses/Apache-2.0
   - license_expression: cc-by-sa-3.0
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '99.82'
@@ -848,7 +848,7 @@ other_license_detections:
             spdx_license_key: CC-BY-SA-3.0
             spdx_url: https://spdx.org/licenses/CC-BY-SA-3.0
   - license_expression: bitstream
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -998,7 +998,7 @@ other_license_detections:
             spdx_license_key: Bitstream-Vera
             spdx_url: https://spdx.org/licenses/Bitstream-Vera
   - license_expression: cc-by-sa-3.0 AND gpl-2.0
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'

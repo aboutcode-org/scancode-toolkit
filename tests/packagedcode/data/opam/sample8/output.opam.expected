@@ -49,7 +49,7 @@
     "license_detections": [
       {
         "license_expression": "lgpl-3.0 WITH ocaml-lgpl-linking-exception",
-        "detection_rules": [
+        "detection_log": [
           "not-combined"
         ],
         "matches": [

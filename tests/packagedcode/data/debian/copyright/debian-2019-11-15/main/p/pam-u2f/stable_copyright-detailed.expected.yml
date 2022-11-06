@@ -20,7 +20,7 @@ other_license_expression_spdx: BSD-2-Clause AND BSD-2-Clause AND (GPL-2.0-or-lat
 license_detections: []
 other_license_detections:
   - license_expression: fsf-unlimited
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -59,7 +59,7 @@ other_license_detections:
             spdx_license_key: FSFULLR
             spdx_url: https://spdx.org/licenses/FSFULLR
   - license_expression: gpl-2.0-plus WITH libtool-exception-2.0
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -122,7 +122,7 @@ other_license_detections:
             spdx_license_key: Libtool-exception
             spdx_url: https://spdx.org/licenses/Libtool-exception
   - license_expression: gpl-2.0-plus
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -198,7 +198,7 @@ other_license_detections:
             spdx_license_key: GPL-2.0-or-later
             spdx_url: https://spdx.org/licenses/GPL-2.0-or-later
   - license_expression: gpl-3.0-plus
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -274,7 +274,7 @@ other_license_detections:
             spdx_license_key: GPL-3.0-or-later
             spdx_url: https://spdx.org/licenses/GPL-3.0-or-later
   - license_expression: bsd-simplified
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'

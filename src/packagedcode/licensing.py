@@ -114,13 +114,13 @@ def add_referenced_license_matches_for_package(resource, codebase, no_licenses):
             if not detection_modified:
                 continue
 
-            reasons, license_expression = get_detected_license_expression(
+            detection_log, license_expression = get_detected_license_expression(
                 matches=matches,
                 analysis=DetectionCategory.PACKAGE_UNKNOWN_FILE_REFERENCE_LOCAL.value,
                 post_scan=True,
             )
             detection["license_expression"] = str(license_expression)
-            detection["detection_rules"] = reasons
+            detection["detection_log"] = detection_log
 
         if modified:
             license_expressions = [
@@ -211,18 +211,18 @@ def add_referenced_license_detection_from_package(resource, codebase, no_license
                     modified = True
                     detection_modified = True
                     matches.extend(pkg_detection["matches"])
-                    analysis=DetectionCategory.UNKNOWN_REFERENCE_IN_FILE_TO_PACKAGE.value
+                    analysis = DetectionCategory.UNKNOWN_REFERENCE_IN_FILE_TO_PACKAGE.value
 
         if not detection_modified:
             continue
 
-        reasons, license_expression = get_detected_license_expression(
+        detection_log, license_expression = get_detected_license_expression(
             matches=matches,
             analysis=analysis,
             post_scan=True,
         )
         detection["license_expression"] = str(license_expression)
-        detection["detection_rules"] = reasons
+        detection["detection_log"] = detection_log
 
     if modified:
 

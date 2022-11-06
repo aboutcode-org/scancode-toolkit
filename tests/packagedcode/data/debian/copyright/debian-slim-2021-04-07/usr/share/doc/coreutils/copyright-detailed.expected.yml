@@ -9,7 +9,7 @@ other_license_expression:
 other_license_expression_spdx:
 license_detections:
   - license_expression: gpl-3.0-plus
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '81.1'
@@ -65,7 +65,7 @@ license_detections:
             spdx_license_key: GPL-3.0-or-later
             spdx_url: https://spdx.org/licenses/GPL-3.0-or-later
   - license_expression: bsd-new
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -124,7 +124,7 @@ license_detections:
             spdx_license_key: BSD-3-Clause
             spdx_url: https://spdx.org/licenses/BSD-3-Clause
   - license_expression: gpl-3.0-plus
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -172,7 +172,7 @@ license_detections:
             spdx_license_key: GPL-3.0-or-later
             spdx_url: https://spdx.org/licenses/GPL-3.0-or-later
   - license_expression: bsd-new
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -231,7 +231,7 @@ license_detections:
             spdx_license_key: BSD-3-Clause
             spdx_url: https://spdx.org/licenses/BSD-3-Clause
   - license_expression: gpl-3.0-plus
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -279,7 +279,7 @@ license_detections:
             spdx_license_key: GPL-3.0-or-later
             spdx_url: https://spdx.org/licenses/GPL-3.0-or-later
   - license_expression: gpl-3.0-plus
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -328,7 +328,7 @@ license_detections:
             spdx_license_key: GPL-3.0-or-later
             spdx_url: https://spdx.org/licenses/GPL-3.0-or-later
   - license_expression: isc
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -376,7 +376,7 @@ license_detections:
             spdx_license_key: ISC
             spdx_url: https://spdx.org/licenses/ISC
   - license_expression: fsf-unlimited
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -415,7 +415,7 @@ license_detections:
             spdx_license_key: FSFULLR
             spdx_url: https://spdx.org/licenses/FSFULLR
   - license_expression: gpl-3.0-plus
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '75.18'
@@ -518,7 +518,7 @@ license_detections:
             spdx_license_key: GPL-3.0-or-later
             spdx_url: https://spdx.org/licenses/GPL-3.0-or-later
   - license_expression: gpl-3.0-plus
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -566,7 +566,7 @@ license_detections:
             spdx_license_key: GPL-3.0-or-later
             spdx_url: https://spdx.org/licenses/GPL-3.0-or-later
   - license_expression: gpl-3.0-plus
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -614,7 +614,7 @@ license_detections:
             spdx_license_key: GPL-3.0-or-later
             spdx_url: https://spdx.org/licenses/GPL-3.0-or-later
   - license_expression: gfdl-1.2-plus
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -656,7 +656,7 @@ license_detections:
             spdx_license_key: GFDL-1.2-or-later
             spdx_url: https://spdx.org/licenses/GFDL-1.2-or-later
   - license_expression: gpl-3.0-plus
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'

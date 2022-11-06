@@ -16,7 +16,7 @@ other_license_expression:
 other_license_expression_spdx:
 license_detections:
   - license_expression: intel
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -88,7 +88,7 @@ license_detections:
             spdx_license_key: LicenseRef-scancode-intel
             spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/intel.LICENSE
   - license_expression: intel
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '95.0'
@@ -161,7 +161,7 @@ license_detections:
   - license_expression: intel AND (bsd-new AND other-permissive AND other-copyleft) AND bsd-new
       AND x11-lucent AND standard-ml-nj AND amd-historical AND sunpro AND osf-1990 AND nilsson-historical
       AND newlib-historical AND bsd-simplified AND x11-hanson AND delorie-historical AND intel-osl-1993
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '95.0'

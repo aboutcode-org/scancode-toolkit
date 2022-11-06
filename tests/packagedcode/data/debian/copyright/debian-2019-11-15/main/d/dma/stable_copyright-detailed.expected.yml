@@ -19,7 +19,7 @@ other_license_expression_spdx: BSD-3-Clause AND BSD-3-Clause AND BSD-3-Clause AN
 license_detections: []
 other_license_detections:
   - license_expression: bsd-new
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '90.0'
@@ -68,7 +68,7 @@ other_license_detections:
             spdx_license_key: BSD-3-Clause
             spdx_url: https://spdx.org/licenses/BSD-3-Clause
   - license_expression: isc
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -115,7 +115,7 @@ other_license_detections:
             spdx_license_key: ISC
             spdx_url: https://spdx.org/licenses/ISC
   - license_expression: bsd-simplified
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'

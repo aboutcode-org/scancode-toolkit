@@ -451,7 +451,7 @@
       "license_detections": [
         {
           "license_expression": "apache-2.0",
-          "detection_rules": [
+          "detection_log": [
             "not-combined"
           ],
           "matches": [
@@ -554,7 +554,7 @@
       "license_detections": [
         {
           "license_expression": "apache-2.0",
-          "detection_rules": [
+          "detection_log": [
             "from-package-file"
           ],
           "matches": [
@@ -688,7 +688,7 @@
       "license_detections": [
         {
           "license_expression": "python",
-          "detection_rules": [
+          "detection_log": [
             "not-combined"
           ],
           "matches": [
@@ -787,7 +787,7 @@
       "license_detections": [
         {
           "license_expression": "apache-2.0",
-          "detection_rules": [
+          "detection_log": [
             "not-combined"
           ],
           "matches": [
@@ -1157,7 +1157,7 @@
       "license_detections": [
         {
           "license_expression": "apache-2.0",
-          "detection_rules": [
+          "detection_log": [
             "not-combined"
           ],
           "matches": [
@@ -1252,7 +1252,7 @@
       "license_detections": [
         {
           "license_expression": "apache-2.0",
-          "detection_rules": [
+          "detection_log": [
             "not-combined"
           ],
           "matches": [
@@ -1349,7 +1349,7 @@
           "license_detections": [
             {
               "license_expression": "apache-2.0",
-              "detection_rules": [
+              "detection_log": [
                 "not-combined"
               ],
               "matches": [
@@ -1467,7 +1467,7 @@
       "license_detections": [
         {
           "license_expression": "apache-2.0",
-          "detection_rules": [
+          "detection_log": [
             "from-package-file"
           ],
           "matches": [
@@ -1592,7 +1592,7 @@
           "license_detections": [
             {
               "license_expression": "apache-2.0",
-              "detection_rules": [
+              "detection_log": [
                 "from-package-file"
               ],
               "matches": [
@@ -1787,7 +1787,7 @@
       "license_detections": [
         {
           "license_expression": "apache-2.0",
-          "detection_rules": [
+          "detection_log": [
             "not-combined"
           ],
           "matches": [
@@ -1967,7 +1967,7 @@
           "license_detections": [
             {
               "license_expression": "apache-2.0",
-              "detection_rules": [
+              "detection_log": [
                 "not-combined"
               ],
               "matches": [
@@ -2011,7 +2011,7 @@
             },
             {
               "license_expression": "apache-2.0",
-              "detection_rules": [
+              "detection_log": [
                 "not-combined"
               ],
               "matches": [
@@ -2091,7 +2091,7 @@
             },
             {
               "license_expression": "apache-2.0",
-              "detection_rules": [
+              "detection_log": [
                 "not-combined"
               ],
               "matches": [
@@ -2185,7 +2185,7 @@
       "license_detections": [
         {
           "license_expression": "apache-2.0",
-          "detection_rules": [
+          "detection_log": [
             "not-combined"
           ],
           "matches": [
@@ -2329,7 +2329,7 @@
           "license_detections": [
             {
               "license_expression": "apache-2.0",
-              "detection_rules": [
+              "detection_log": [
                 "not-combined"
               ],
               "matches": [
@@ -2373,7 +2373,7 @@
             },
             {
               "license_expression": "apache-2.0",
-              "detection_rules": [
+              "detection_log": [
                 "not-combined"
               ],
               "matches": [
@@ -2453,7 +2453,7 @@
             },
             {
               "license_expression": "apache-2.0",
-              "detection_rules": [
+              "detection_log": [
                 "not-combined"
               ],
               "matches": [
@@ -2579,7 +2579,7 @@
           "license_detections": [
             {
               "license_expression": "apache-2.0",
-              "detection_rules": [
+              "detection_log": [
                 "not-combined"
               ],
               "matches": [
@@ -2623,7 +2623,7 @@
             },
             {
               "license_expression": "apache-2.0",
-              "detection_rules": [
+              "detection_log": [
                 "not-combined"
               ],
               "matches": [
@@ -2703,7 +2703,7 @@
             },
             {
               "license_expression": "apache-2.0",
-              "detection_rules": [
+              "detection_log": [
                 "not-combined"
               ],
               "matches": [
@@ -3113,7 +3113,7 @@
       "license_detections": [
         {
           "license_expression": "apache-2.0",
-          "detection_rules": [
+          "detection_log": [
             "not-combined"
           ],
           "matches": [
@@ -3157,7 +3157,7 @@
         },
         {
           "license_expression": "apache-2.0",
-          "detection_rules": [
+          "detection_log": [
             "not-combined"
           ],
           "matches": [
@@ -3296,7 +3296,7 @@
           "license_detections": [
             {
               "license_expression": "apache-2.0",
-              "detection_rules": [
+              "detection_log": [
                 "not-combined"
               ],
               "matches": [
@@ -3340,7 +3340,7 @@
             },
             {
               "license_expression": "apache-2.0",
-              "detection_rules": [
+              "detection_log": [
                 "not-combined"
               ],
               "matches": [
@@ -3420,7 +3420,7 @@
             },
             {
               "license_expression": "apache-2.0",
-              "detection_rules": [
+              "detection_log": [
                 "not-combined"
               ],
               "matches": [
@@ -3592,7 +3592,7 @@
       "license_detections": [
         {
           "license_expression": "apache-2.0",
-          "detection_rules": [
+          "detection_log": [
             "not-combined"
           ],
           "matches": [
@@ -3740,7 +3740,7 @@
       "license_detections": [
         {
           "license_expression": "apache-2.0",
-          "detection_rules": [
+          "detection_log": [
             "not-combined"
           ],
           "matches": [
@@ -3888,7 +3888,7 @@
       "license_detections": [
         {
           "license_expression": "apache-2.0",
-          "detection_rules": [
+          "detection_log": [
             "not-combined"
           ],
           "matches": [
@@ -4056,7 +4056,7 @@
       "license_detections": [
         {
           "license_expression": "apache-2.0",
-          "detection_rules": [
+          "detection_log": [
             "not-combined"
           ],
           "matches": [
@@ -4204,7 +4204,7 @@
       "license_detections": [
         {
           "license_expression": "apache-2.0",
-          "detection_rules": [
+          "detection_log": [
             "not-combined"
           ],
           "matches": [
@@ -4357,7 +4357,7 @@
       "license_detections": [
         {
           "license_expression": "apache-2.0",
-          "detection_rules": [
+          "detection_log": [
             "not-combined"
           ],
           "matches": [
@@ -4505,7 +4505,7 @@
       "license_detections": [
         {
           "license_expression": "apache-2.0 AND agpl-3.0",
-          "detection_rules": [
+          "detection_log": [
             "not-combined"
           ],
           "matches": [
@@ -4691,7 +4691,7 @@
       "license_detections": [
         {
           "license_expression": "apache-2.0",
-          "detection_rules": [
+          "detection_log": [
             "not-combined"
           ],
           "matches": [
@@ -4839,7 +4839,7 @@
       "license_detections": [
         {
           "license_expression": "python",
-          "detection_rules": [
+          "detection_log": [
             "not-combined"
           ],
           "matches": [
@@ -4936,7 +4936,7 @@
           "license_detections": [
             {
               "license_expression": "python",
-              "detection_rules": [
+              "detection_log": [
                 "not-combined"
               ],
               "matches": [
@@ -5048,7 +5048,7 @@
       "license_detections": [
         {
           "license_expression": "python",
-          "detection_rules": [
+          "detection_log": [
             "not-combined"
           ],
           "matches": [
@@ -5157,7 +5157,7 @@
       "license_detections": [
         {
           "license_expression": "apache-2.0",
-          "detection_rules": [
+          "detection_log": [
             "not-combined"
           ],
           "matches": [
@@ -5305,7 +5305,7 @@
       "license_detections": [
         {
           "license_expression": "apache-2.0",
-          "detection_rules": [
+          "detection_log": [
             "not-combined"
           ],
           "matches": [
@@ -5453,7 +5453,7 @@
       "license_detections": [
         {
           "license_expression": "apache-2.0",
-          "detection_rules": [
+          "detection_log": [
             "not-combined"
           ],
           "matches": [
@@ -5758,7 +5758,7 @@
       "license_detections": [
         {
           "license_expression": "apache-2.0 AND python",
-          "detection_rules": [
+          "detection_log": [
             "not-combined"
           ],
           "matches": [
@@ -5891,7 +5891,7 @@
           "license_detections": [
             {
               "license_expression": "apache-2.0",
-              "detection_rules": [
+              "detection_log": [
                 "not-combined"
               ],
               "matches": [
@@ -6008,7 +6008,7 @@
       "license_detections": [
         {
           "license_expression": "apache-2.0",
-          "detection_rules": [
+          "detection_log": [
             "not-combined"
           ],
           "matches": [
@@ -6088,7 +6088,7 @@
         },
         {
           "license_expression": "public-domain",
-          "detection_rules": [
+          "detection_log": [
             "not-combined"
           ],
           "matches": [
@@ -6210,7 +6210,7 @@
       "license_detections": [
         {
           "license_expression": "apache-2.0",
-          "detection_rules": [
+          "detection_log": [
             "not-combined"
           ],
           "matches": [
@@ -6358,7 +6358,7 @@
       "license_detections": [
         {
           "license_expression": "apache-2.0",
-          "detection_rules": [
+          "detection_log": [
             "not-combined"
           ],
           "matches": [
@@ -6506,7 +6506,7 @@
       "license_detections": [
         {
           "license_expression": "apache-2.0",
-          "detection_rules": [
+          "detection_log": [
             "not-combined"
           ],
           "matches": [
@@ -6674,7 +6674,7 @@
       "license_detections": [
         {
           "license_expression": "python",
-          "detection_rules": [
+          "detection_log": [
             "not-combined"
           ],
           "matches": [
@@ -6718,7 +6718,7 @@
         },
         {
           "license_expression": "other-copyleft AND gpl-1.0-plus",
-          "detection_rules": [
+          "detection_log": [
             "not-combined"
           ],
           "matches": [
@@ -7014,7 +7014,7 @@
         },
         {
           "license_expression": "python AND python-cwi AND unknown-license-reference",
-          "detection_rules": [
+          "detection_log": [
             "not-combined"
           ],
           "matches": [
@@ -7130,7 +7130,7 @@
         },
         {
           "license_expression": "bzip2-libbzip-2010",
-          "detection_rules": [
+          "detection_log": [
             "not-combined"
           ],
           "matches": [
@@ -7174,7 +7174,7 @@
         },
         {
           "license_expression": "sleepycat",
-          "detection_rules": [
+          "detection_log": [
             "not-combined"
           ],
           "matches": [
@@ -7218,7 +7218,7 @@
         },
         {
           "license_expression": "bsd-new",
-          "detection_rules": [
+          "detection_log": [
             "not-combined"
           ],
           "matches": [
@@ -7262,7 +7262,7 @@
         },
         {
           "license_expression": "openssl-ssleay",
-          "detection_rules": [
+          "detection_log": [
             "not-combined"
           ],
           "matches": [
@@ -7342,7 +7342,7 @@
         },
         {
           "license_expression": "openssl",
-          "detection_rules": [
+          "detection_log": [
             "not-combined"
           ],
           "matches": [
@@ -7386,7 +7386,7 @@
         },
         {
           "license_expression": "ssleay-windows AND tcl",
-          "detection_rules": [
+          "detection_log": [
             "unknown-intro-followed-by-match"
           ],
           "matches": [
@@ -7984,7 +7984,7 @@
       "license_detections": [
         {
           "license_expression": "apache-2.0",
-          "detection_rules": [
+          "detection_log": [
             "not-combined"
           ],
           "matches": [
@@ -8137,7 +8137,7 @@
       "license_detections": [
         {
           "license_expression": "apache-2.0",
-          "detection_rules": [
+          "detection_log": [
             "not-combined"
           ],
           "matches": [
@@ -8295,7 +8295,7 @@
       "license_detections": [
         {
           "license_expression": "apache-2.0",
-          "detection_rules": [
+          "detection_log": [
             "not-combined"
           ],
           "matches": [
@@ -8443,7 +8443,7 @@
       "license_detections": [
         {
           "license_expression": "apache-2.0 AND agpl-3.0",
-          "detection_rules": [
+          "detection_log": [
             "not-combined"
           ],
           "matches": [
@@ -8639,7 +8639,7 @@
       "license_detections": [
         {
           "license_expression": "apache-2.0",
-          "detection_rules": [
+          "detection_log": [
             "not-combined"
           ],
           "matches": [
@@ -8787,7 +8787,7 @@
       "license_detections": [
         {
           "license_expression": "apache-2.0",
-          "detection_rules": [
+          "detection_log": [
             "not-combined"
           ],
           "matches": [
@@ -8867,7 +8867,7 @@
         },
         {
           "license_expression": "apache-2.0",
-          "detection_rules": [
+          "detection_log": [
             "not-combined"
           ],
           "matches": [
@@ -8989,7 +8989,7 @@
       "license_detections": [
         {
           "license_expression": "apache-2.0",
-          "detection_rules": [
+          "detection_log": [
             "not-combined"
           ],
           "matches": [
@@ -9179,7 +9179,7 @@
       "license_detections": [
         {
           "license_expression": "jboss-eula",
-          "detection_rules": [
+          "detection_log": [
             "not-combined"
           ],
           "matches": [
@@ -9299,7 +9299,7 @@
       "license_detections": [
         {
           "license_expression": "lgpl-2.1",
-          "detection_rules": [
+          "detection_log": [
             "not-combined"
           ],
           "matches": [
@@ -9440,7 +9440,7 @@
       "license_detections": [
         {
           "license_expression": "apache-1.1",
-          "detection_rules": [
+          "detection_log": [
             "not-combined"
           ],
           "matches": [
@@ -9552,7 +9552,7 @@
       "license_detections": [
         {
           "license_expression": "apache-2.0",
-          "detection_rules": [
+          "detection_log": [
             "not-combined"
           ],
           "matches": [
@@ -9645,7 +9645,7 @@
       "license_detections": [
         {
           "license_expression": "mit",
-          "detection_rules": [
+          "detection_log": [
             "not-combined"
           ],
           "matches": [
@@ -9745,7 +9745,7 @@
       "license_detections": [
         {
           "license_expression": "cpl-1.0",
-          "detection_rules": [
+          "detection_log": [
             "not-combined"
           ],
           "matches": [
@@ -9827,7 +9827,7 @@
       "license_detections": [
         {
           "license_expression": "lgpl-2.1",
-          "detection_rules": [
+          "detection_log": [
             "not-combined"
           ],
           "matches": [
@@ -9968,7 +9968,7 @@
       "license_detections": [
         {
           "license_expression": "lgpl-2.1-plus",
-          "detection_rules": [
+          "detection_log": [
             "not-combined"
           ],
           "matches": [
@@ -10080,7 +10080,7 @@
       "license_detections": [
         {
           "license_expression": "cc-by-2.5",
-          "detection_rules": [
+          "detection_log": [
             "not-combined"
           ],
           "matches": [
@@ -10191,7 +10191,7 @@
       "license_detections": [
         {
           "license_expression": "lgpl-2.1-plus",
-          "detection_rules": [
+          "detection_log": [
             "not-combined"
           ],
           "matches": [
@@ -10389,7 +10389,7 @@
       "license_detections": [
         {
           "license_expression": "lgpl-2.1-plus",
-          "detection_rules": [
+          "detection_log": [
             "not-combined"
           ],
           "matches": [
@@ -10489,7 +10489,7 @@
       "license_detections": [
         {
           "license_expression": "public-domain",
-          "detection_rules": [
+          "detection_log": [
             "not-combined"
           ],
           "matches": [
@@ -10533,7 +10533,7 @@
         },
         {
           "license_expression": "public-domain-disclaimer",
-          "detection_rules": [
+          "detection_log": [
             "not-combined"
           ],
           "matches": [
@@ -10685,7 +10685,7 @@
       "license_detections": [
         {
           "license_expression": "zlib",
-          "detection_rules": [
+          "detection_log": [
             "unknown-reference-to-local-file"
           ],
           "matches": [
@@ -10817,7 +10817,7 @@
       "license_detections": [
         {
           "license_expression": "zlib",
-          "detection_rules": [
+          "detection_log": [
             "unknown-reference-to-local-file"
           ],
           "matches": [
@@ -10971,7 +10971,7 @@
       "license_detections": [
         {
           "license_expression": "zlib",
-          "detection_rules": [
+          "detection_log": [
             "unknown-reference-to-local-file"
           ],
           "matches": [
@@ -11053,7 +11053,7 @@
         },
         {
           "license_expression": "zlib",
-          "detection_rules": [
+          "detection_log": [
             "not-combined"
           ],
           "matches": [
@@ -11147,7 +11147,7 @@
       "license_detections": [
         {
           "license_expression": "zlib",
-          "detection_rules": [
+          "detection_log": [
             "not-combined"
           ],
           "matches": [
@@ -11258,7 +11258,7 @@
       "license_detections": [
         {
           "license_expression": "zlib",
-          "detection_rules": [
+          "detection_log": [
             "unknown-reference-to-local-file"
           ],
           "matches": [
@@ -11390,7 +11390,7 @@
       "license_detections": [
         {
           "license_expression": "zlib",
-          "detection_rules": [
+          "detection_log": [
             "unknown-reference-to-local-file"
           ],
           "matches": [
@@ -11559,7 +11559,7 @@
       "license_detections": [
         {
           "license_expression": "gpl-2.0-plus WITH ada-linking-exception",
-          "detection_rules": [
+          "detection_log": [
             "not-combined"
           ],
           "matches": [
@@ -11755,7 +11755,7 @@
       "license_detections": [
         {
           "license_expression": "boost-1.0",
-          "detection_rules": [
+          "detection_log": [
             "unknown-reference-to-local-file"
           ],
           "matches": [
@@ -11893,7 +11893,7 @@
       "license_detections": [
         {
           "license_expression": "boost-1.0",
-          "detection_rules": [
+          "detection_log": [
             "not-combined"
           ],
           "matches": [
@@ -11975,7 +11975,7 @@
       "license_detections": [
         {
           "license_expression": "boost-1.0",
-          "detection_rules": [
+          "detection_log": [
             "unknown-reference-to-local-file"
           ],
           "matches": [
@@ -12057,7 +12057,7 @@
         },
         {
           "license_expression": "boost-1.0",
-          "detection_rules": [
+          "detection_log": [
             "unknown-reference-to-local-file"
           ],
           "matches": [
@@ -12232,7 +12232,7 @@
       "license_detections": [
         {
           "license_expression": "zlib",
-          "detection_rules": [
+          "detection_log": [
             "not-combined"
           ],
           "matches": [
@@ -12400,7 +12400,7 @@
       "license_detections": [
         {
           "license_expression": "zlib",
-          "detection_rules": [
+          "detection_log": [
             "not-combined"
           ],
           "matches": [
@@ -12496,7 +12496,7 @@
       "license_detections": [
         {
           "license_expression": "zlib",
-          "detection_rules": [
+          "detection_log": [
             "not-combined"
           ],
           "matches": [
@@ -12629,7 +12629,7 @@
       "license_detections": [
         {
           "license_expression": "mit-old-style",
-          "detection_rules": [
+          "detection_log": [
             "not-combined"
           ],
           "matches": [

@@ -26,7 +26,7 @@
   "license_detections": [
     {
       "license_expression": "kde-accepted-gpl AND kde-accepted-lgpl AND cc0-1.0",
-      "detection_rules": [
+      "detection_log": [
         "not-combined"
       ],
       "matches": [

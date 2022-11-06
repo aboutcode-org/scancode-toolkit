@@ -9,7 +9,7 @@ other_license_expression_spdx: Sendmail AND Sendmail
 license_detections: []
 other_license_detections:
   - license_expression: sendmail
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '97.65'

@@ -60,7 +60,7 @@ class TestRpmBasics(FileBasedTesting):
             ('declared_license_expression', 'lgpl-2.0-plus'),
             ('declared_license_expression_spdx', 'LGPL-2.0-or-later'),
             ('license_detections',
-               [{'detection_rules': ['not-combined'],
+               [{'detection_log': ['not-combined'],
                  'license_expression': 'lgpl-2.0-plus',
                  'matches': [{'end_line': 1,
                               'is_license_intro': False,

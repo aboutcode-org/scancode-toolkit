@@ -7,7 +7,7 @@ other_license_expression:
 other_license_expression_spdx:
 license_detections:
   - license_expression: mit
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '97.67'
@@ -61,7 +61,7 @@ license_detections:
             spdx_license_key: MIT
             spdx_url: https://spdx.org/licenses/MIT
   - license_expression: amd-linux-firmware
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'

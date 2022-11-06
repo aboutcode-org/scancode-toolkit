@@ -5189,7 +5189,7 @@
           "license_detections": [
             {
               "license_expression": "gpl-2.0-plus",
-              "detection_rules": [
+              "detection_log": [
                 "not-combined"
               ],
               "matches": [
@@ -5234,7 +5234,7 @@
             },
             {
               "license_expression": "gpl-2.0-plus AND free-unknown",
-              "detection_rules": [
+              "detection_log": [
                 "not-combined"
               ],
               "matches": [
@@ -5318,7 +5318,7 @@
             },
             {
               "license_expression": "gpl-2.0-plus",
-              "detection_rules": [
+              "detection_log": [
                 "not-combined"
               ],
               "matches": [
@@ -5363,7 +5363,7 @@
             },
             {
               "license_expression": "gpl-2.0-plus",
-              "detection_rules": [
+              "detection_log": [
                 "not-combined"
               ],
               "matches": [
@@ -5408,7 +5408,7 @@
             },
             {
               "license_expression": "bsd-new",
-              "detection_rules": [
+              "detection_log": [
                 "not-combined"
               ],
               "matches": [
@@ -5453,7 +5453,7 @@
             },
             {
               "license_expression": "gpl-2.0-plus",
-              "detection_rules": [
+              "detection_log": [
                 "not-combined"
               ],
               "matches": [
@@ -5498,7 +5498,7 @@
             },
             {
               "license_expression": "gpl-2.0-plus",
-              "detection_rules": [
+              "detection_log": [
                 "not-combined"
               ],
               "matches": [
@@ -5543,7 +5543,7 @@
             },
             {
               "license_expression": "gpl-2.0-plus",
-              "detection_rules": [
+              "detection_log": [
                 "not-combined"
               ],
               "matches": [
@@ -5588,7 +5588,7 @@
             },
             {
               "license_expression": "gpl-2.0-plus",
-              "detection_rules": [
+              "detection_log": [
                 "not-combined"
               ],
               "matches": [
@@ -5633,7 +5633,7 @@
             },
             {
               "license_expression": "gpl-2.0-plus",
-              "detection_rules": [
+              "detection_log": [
                 "not-combined"
               ],
               "matches": [
@@ -5678,7 +5678,7 @@
             },
             {
               "license_expression": "gpl-2.0-plus",
-              "detection_rules": [
+              "detection_log": [
                 "not-combined"
               ],
               "matches": [
@@ -5723,7 +5723,7 @@
             },
             {
               "license_expression": "apache-2.0 AND gpl-2.0-plus AND free-unknown",
-              "detection_rules": [
+              "detection_log": [
                 "not-combined"
               ],
               "matches": [
@@ -5844,7 +5844,7 @@
             },
             {
               "license_expression": "lgpl-3.0-plus",
-              "detection_rules": [
+              "detection_log": [
                 "not-combined"
               ],
               "matches": [
@@ -5889,7 +5889,7 @@
             },
             {
               "license_expression": "bsd-original",
-              "detection_rules": [
+              "detection_log": [
                 "not-combined"
               ],
               "matches": [
@@ -5934,7 +5934,7 @@
             },
             {
               "license_expression": "gpl-2.0-plus AND gpl-3.0-plus AND lgpl-2.1-plus AND lgpl-3.0-plus AND bsd-new AND bsd-original AND mit AND public-domain AND other-permissive",
-              "detection_rules": [
+              "detection_log": [
                 "not-combined"
               ],
               "matches": [
@@ -6764,7 +6764,7 @@
             },
             {
               "license_expression": "gpl-2.0-plus",
-              "detection_rules": [
+              "detection_log": [
                 "not-combined"
               ],
               "matches": [
@@ -6809,7 +6809,7 @@
             },
             {
               "license_expression": "gpl-2.0-plus",
-              "detection_rules": [
+              "detection_log": [
                 "not-combined"
               ],
               "matches": [
@@ -6854,7 +6854,7 @@
             },
             {
               "license_expression": "gpl-2.0-plus",
-              "detection_rules": [
+              "detection_log": [
                 "not-combined"
               ],
               "matches": [
@@ -6899,7 +6899,7 @@
             },
             {
               "license_expression": "gpl-2.0-plus",
-              "detection_rules": [
+              "detection_log": [
                 "not-combined"
               ],
               "matches": [
@@ -6944,7 +6944,7 @@
             },
             {
               "license_expression": "gpl-2.0-plus",
-              "detection_rules": [
+              "detection_log": [
                 "not-combined"
               ],
               "matches": [
@@ -6989,7 +6989,7 @@
             },
             {
               "license_expression": "gpl-2.0-plus",
-              "detection_rules": [
+              "detection_log": [
                 "not-combined"
               ],
               "matches": [
@@ -7034,7 +7034,7 @@
             },
             {
               "license_expression": "bsd-simplified",
-              "detection_rules": [
+              "detection_log": [
                 "not-combined"
               ],
               "matches": [
@@ -7079,7 +7079,7 @@
             },
             {
               "license_expression": "gpl-2.0-plus",
-              "detection_rules": [
+              "detection_log": [
                 "not-combined"
               ],
               "matches": [
@@ -7124,7 +7124,7 @@
             },
             {
               "license_expression": "gpl-2.0-plus",
-              "detection_rules": [
+              "detection_log": [
                 "not-combined"
               ],
               "matches": [
@@ -7169,7 +7169,7 @@
             },
             {
               "license_expression": "gpl-2.0-plus",
-              "detection_rules": [
+              "detection_log": [
                 "not-combined"
               ],
               "matches": [
@@ -7214,7 +7214,7 @@
             },
             {
               "license_expression": "gpl-2.0-plus",
-              "detection_rules": [
+              "detection_log": [
                 "not-combined"
               ],
               "matches": [
@@ -7259,7 +7259,7 @@
             },
             {
               "license_expression": "gpl-2.0-plus",
-              "detection_rules": [
+              "detection_log": [
                 "not-combined"
               ],
               "matches": [
@@ -7304,7 +7304,7 @@
             },
             {
               "license_expression": "gpl-2.0-plus",
-              "detection_rules": [
+              "detection_log": [
                 "not-combined"
               ],
               "matches": [
@@ -7349,7 +7349,7 @@
             },
             {
               "license_expression": "gpl-2.0-plus",
-              "detection_rules": [
+              "detection_log": [
                 "not-combined"
               ],
               "matches": [
@@ -7394,7 +7394,7 @@
             },
             {
               "license_expression": "gpl-2.0-plus",
-              "detection_rules": [
+              "detection_log": [
                 "not-combined"
               ],
               "matches": [
@@ -7439,7 +7439,7 @@
             },
             {
               "license_expression": "gpl-2.0-plus",
-              "detection_rules": [
+              "detection_log": [
                 "not-combined"
               ],
               "matches": [
@@ -7484,7 +7484,7 @@
             },
             {
               "license_expression": "gpl-2.0-plus",
-              "detection_rules": [
+              "detection_log": [
                 "not-combined"
               ],
               "matches": [
@@ -7529,7 +7529,7 @@
             },
             {
               "license_expression": "gpl-2.0-plus",
-              "detection_rules": [
+              "detection_log": [
                 "not-combined"
               ],
               "matches": [
@@ -7574,7 +7574,7 @@
             },
             {
               "license_expression": "gpl-2.0-plus",
-              "detection_rules": [
+              "detection_log": [
                 "not-combined"
               ],
               "matches": [
@@ -7619,7 +7619,7 @@
             },
             {
               "license_expression": "gpl-2.0-plus",
-              "detection_rules": [
+              "detection_log": [
                 "not-combined"
               ],
               "matches": [
@@ -7664,7 +7664,7 @@
             },
             {
               "license_expression": "gpl-2.0-plus",
-              "detection_rules": [
+              "detection_log": [
                 "not-combined"
               ],
               "matches": [
@@ -7709,7 +7709,7 @@
             },
             {
               "license_expression": "gpl-2.0-plus",
-              "detection_rules": [
+              "detection_log": [
                 "not-combined"
               ],
               "matches": [
@@ -7754,7 +7754,7 @@
             },
             {
               "license_expression": "gpl-2.0-plus",
-              "detection_rules": [
+              "detection_log": [
                 "not-combined"
               ],
               "matches": [
@@ -12184,7 +12184,7 @@
       "license_detections": [
         {
           "license_expression": "gpl-2.0-plus",
-          "detection_rules": [
+          "detection_log": [
             "not-combined"
           ],
           "matches": [
@@ -12229,7 +12229,7 @@
         },
         {
           "license_expression": "gpl-2.0-plus AND free-unknown",
-          "detection_rules": [
+          "detection_log": [
             "not-combined"
           ],
           "matches": [
@@ -12313,7 +12313,7 @@
         },
         {
           "license_expression": "gpl-2.0-plus",
-          "detection_rules": [
+          "detection_log": [
             "not-combined"
           ],
           "matches": [
@@ -12358,7 +12358,7 @@
         },
         {
           "license_expression": "gpl-2.0-plus",
-          "detection_rules": [
+          "detection_log": [
             "not-combined"
           ],
           "matches": [
@@ -12403,7 +12403,7 @@
         },
         {
           "license_expression": "bsd-new",
-          "detection_rules": [
+          "detection_log": [
             "not-combined"
           ],
           "matches": [
@@ -12448,7 +12448,7 @@
         },
         {
           "license_expression": "gpl-2.0-plus",
-          "detection_rules": [
+          "detection_log": [
             "not-combined"
           ],
           "matches": [
@@ -12493,7 +12493,7 @@
         },
         {
           "license_expression": "gpl-2.0-plus",
-          "detection_rules": [
+          "detection_log": [
             "not-combined"
           ],
           "matches": [
@@ -12538,7 +12538,7 @@
         },
         {
           "license_expression": "gpl-2.0-plus",
-          "detection_rules": [
+          "detection_log": [
             "not-combined"
           ],
           "matches": [
@@ -12583,7 +12583,7 @@
         },
         {
           "license_expression": "gpl-2.0-plus",
-          "detection_rules": [
+          "detection_log": [
             "not-combined"
           ],
           "matches": [
@@ -12628,7 +12628,7 @@
         },
         {
           "license_expression": "gpl-2.0-plus",
-          "detection_rules": [
+          "detection_log": [
             "not-combined"
           ],
           "matches": [
@@ -12673,7 +12673,7 @@
         },
         {
           "license_expression": "gpl-2.0-plus",
-          "detection_rules": [
+          "detection_log": [
             "not-combined"
           ],
           "matches": [
@@ -12718,7 +12718,7 @@
         },
         {
           "license_expression": "apache-2.0 AND gpl-2.0-plus AND free-unknown",
-          "detection_rules": [
+          "detection_log": [
             "not-combined"
           ],
           "matches": [
@@ -12839,7 +12839,7 @@
         },
         {
           "license_expression": "lgpl-3.0-plus",
-          "detection_rules": [
+          "detection_log": [
             "not-combined"
           ],
           "matches": [
@@ -12884,7 +12884,7 @@
         },
         {
           "license_expression": "bsd-original",
-          "detection_rules": [
+          "detection_log": [
             "not-combined"
           ],
           "matches": [
@@ -12929,7 +12929,7 @@
         },
         {
           "license_expression": "gpl-2.0-plus AND gpl-3.0-plus AND lgpl-2.1-plus AND lgpl-3.0-plus AND bsd-new AND bsd-original AND mit AND public-domain AND other-permissive",
-          "detection_rules": [
+          "detection_log": [
             "not-combined"
           ],
           "matches": [
@@ -14502,7 +14502,7 @@
       "license_detections": [
         {
           "license_expression": "gpl-2.0-plus",
-          "detection_rules": [
+          "detection_log": [
             "not-combined"
           ],
           "matches": [
@@ -14547,7 +14547,7 @@
         },
         {
           "license_expression": "gpl-2.0-plus",
-          "detection_rules": [
+          "detection_log": [
             "not-combined"
           ],
           "matches": [
@@ -14592,7 +14592,7 @@
         },
         {
           "license_expression": "gpl-2.0-plus",
-          "detection_rules": [
+          "detection_log": [
             "not-combined"
           ],
           "matches": [
@@ -14637,7 +14637,7 @@
         },
         {
           "license_expression": "gpl-2.0-plus",
-          "detection_rules": [
+          "detection_log": [
             "not-combined"
           ],
           "matches": [
@@ -14682,7 +14682,7 @@
         },
         {
           "license_expression": "gpl-2.0-plus",
-          "detection_rules": [
+          "detection_log": [
             "not-combined"
           ],
           "matches": [
@@ -14727,7 +14727,7 @@
         },
         {
           "license_expression": "gpl-2.0-plus",
-          "detection_rules": [
+          "detection_log": [
             "not-combined"
           ],
           "matches": [
@@ -14772,7 +14772,7 @@
         },
         {
           "license_expression": "bsd-simplified",
-          "detection_rules": [
+          "detection_log": [
             "not-combined"
           ],
           "matches": [
@@ -14817,7 +14817,7 @@
         },
         {
           "license_expression": "gpl-2.0-plus",
-          "detection_rules": [
+          "detection_log": [
             "not-combined"
           ],
           "matches": [
@@ -14862,7 +14862,7 @@
         },
         {
           "license_expression": "gpl-2.0-plus",
-          "detection_rules": [
+          "detection_log": [
             "not-combined"
           ],
           "matches": [
@@ -14907,7 +14907,7 @@
         },
         {
           "license_expression": "gpl-2.0-plus",
-          "detection_rules": [
+          "detection_log": [
             "not-combined"
           ],
           "matches": [
@@ -14952,7 +14952,7 @@
         },
         {
           "license_expression": "gpl-2.0-plus",
-          "detection_rules": [
+          "detection_log": [
             "not-combined"
           ],
           "matches": [
@@ -14997,7 +14997,7 @@
         },
         {
           "license_expression": "gpl-2.0-plus",
-          "detection_rules": [
+          "detection_log": [
             "not-combined"
           ],
           "matches": [
@@ -15042,7 +15042,7 @@
         },
         {
           "license_expression": "gpl-2.0-plus",
-          "detection_rules": [
+          "detection_log": [
             "not-combined"
           ],
           "matches": [
@@ -15087,7 +15087,7 @@
         },
         {
           "license_expression": "gpl-2.0-plus",
-          "detection_rules": [
+          "detection_log": [
             "not-combined"
           ],
           "matches": [
@@ -15132,7 +15132,7 @@
         },
         {
           "license_expression": "gpl-2.0-plus",
-          "detection_rules": [
+          "detection_log": [
             "not-combined"
           ],
           "matches": [
@@ -15177,7 +15177,7 @@
         },
         {
           "license_expression": "gpl-2.0-plus",
-          "detection_rules": [
+          "detection_log": [
             "not-combined"
           ],
           "matches": [
@@ -15222,7 +15222,7 @@
         },
         {
           "license_expression": "gpl-2.0-plus",
-          "detection_rules": [
+          "detection_log": [
             "not-combined"
           ],
           "matches": [
@@ -15267,7 +15267,7 @@
         },
         {
           "license_expression": "gpl-2.0-plus",
-          "detection_rules": [
+          "detection_log": [
             "not-combined"
           ],
           "matches": [
@@ -15312,7 +15312,7 @@
         },
         {
           "license_expression": "gpl-2.0-plus",
-          "detection_rules": [
+          "detection_log": [
             "not-combined"
           ],
           "matches": [
@@ -15357,7 +15357,7 @@
         },
         {
           "license_expression": "gpl-2.0-plus",
-          "detection_rules": [
+          "detection_log": [
             "not-combined"
           ],
           "matches": [
@@ -15402,7 +15402,7 @@
         },
         {
           "license_expression": "gpl-2.0-plus",
-          "detection_rules": [
+          "detection_log": [
             "not-combined"
           ],
           "matches": [
@@ -15447,7 +15447,7 @@
         },
         {
           "license_expression": "gpl-2.0-plus",
-          "detection_rules": [
+          "detection_log": [
             "not-combined"
           ],
           "matches": [
@@ -15492,7 +15492,7 @@
         },
         {
           "license_expression": "gpl-2.0-plus",
-          "detection_rules": [
+          "detection_log": [
             "not-combined"
           ],
           "matches": [
@@ -15985,7 +15985,7 @@
       "license_detections": [
         {
           "license_expression": "free-unknown",
-          "detection_rules": [
+          "detection_log": [
             "not-combined"
           ],
           "matches": [
@@ -16145,7 +16145,7 @@
       "license_detections": [
         {
           "license_expression": "free-unknown",
-          "detection_rules": [
+          "detection_log": [
             "not-combined"
           ],
           "matches": [

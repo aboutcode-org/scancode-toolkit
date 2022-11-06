@@ -8,7 +8,7 @@
       "license_detections": [
         {
           "license_expression": "mit",
-          "detection_rules": [
+          "detection_log": [
             "not-combined"
           ],
           "matches": [
@@ -101,7 +101,7 @@
       "license_detections": [
         {
           "license_expression": "mit",
-          "detection_rules": [
+          "detection_log": [
             "not-combined"
           ],
           "matches": [
@@ -157,7 +157,7 @@
       "license_detections": [
         {
           "license_expression": "mit",
-          "detection_rules": [
+          "detection_log": [
             "unknown-reference-to-local-file"
           ],
           "matches": [
@@ -289,7 +289,7 @@
       "license_detections": [
         {
           "license_expression": "mit",
-          "detection_rules": [
+          "detection_log": [
             "unknown-reference-to-local-file"
           ],
           "matches": [
@@ -421,7 +421,7 @@
       "license_detections": [
         {
           "license_expression": "mit",
-          "detection_rules": [
+          "detection_log": [
             "unknown-reference-to-local-file"
           ],
           "matches": [
@@ -553,7 +553,7 @@
       "license_detections": [
         {
           "license_expression": "mit",
-          "detection_rules": [
+          "detection_log": [
             "not-combined"
           ],
           "matches": [
@@ -609,7 +609,7 @@
       "license_detections": [
         {
           "license_expression": "mit",
-          "detection_rules": [
+          "detection_log": [
             "not-combined"
           ],
           "matches": [
@@ -665,7 +665,7 @@
       "license_detections": [
         {
           "license_expression": "mit",
-          "detection_rules": [
+          "detection_log": [
             "unknown-reference-to-local-file"
           ],
           "matches": [
@@ -807,7 +807,7 @@
       "license_detections": [
         {
           "license_expression": "mit",
-          "detection_rules": [
+          "detection_log": [
             "unknown-reference-to-local-file"
           ],
           "matches": [

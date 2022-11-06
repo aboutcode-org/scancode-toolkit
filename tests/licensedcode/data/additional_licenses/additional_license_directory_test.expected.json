@@ -8,7 +8,7 @@
       "license_detections": [
         {
           "license_expression": "example1 AND example2",
-          "detection_rules": [
+          "detection_log": [
             "not-combined"
           ],
           "matches": [

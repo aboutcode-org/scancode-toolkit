@@ -14,7 +14,7 @@ other_license_expression:
 other_license_expression_spdx:
 license_detections:
   - license_expression: qti-linux-firmware
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -256,7 +256,7 @@ license_detections:
             spdx_license_key: LicenseRef-scancode-qti-linux-firmware
             spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/qti-linux-firmware.LICENSE
   - license_expression: proprietary-license
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '44.44'
@@ -296,7 +296,7 @@ license_detections:
             spdx_license_key: LicenseRef-scancode-proprietary-license
             spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/proprietary-license.LICENSE
   - license_expression: openssl-ssleay
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -369,7 +369,7 @@ license_detections:
             spdx_license_key: OpenSSL
             spdx_url: https://spdx.org/licenses/OpenSSL
   - license_expression: openssl
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -453,7 +453,7 @@ license_detections:
             spdx_license_key: LicenseRef-scancode-openssl
             spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/openssl.LICENSE
   - license_expression: ssleay-windows
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -541,7 +541,7 @@ license_detections:
             spdx_license_key: LicenseRef-scancode-ssleay-windows
             spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/ssleay-windows.LICENSE
   - license_expression: zlib
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -578,7 +578,7 @@ license_detections:
             spdx_license_key: Zlib
             spdx_url: https://spdx.org/licenses/Zlib
   - license_expression: zlib
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -631,7 +631,7 @@ license_detections:
             spdx_license_key: Zlib
             spdx_url: https://spdx.org/licenses/Zlib
   - license_expression: public-domain
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -670,7 +670,7 @@ license_detections:
             spdx_license_key: LicenseRef-scancode-public-domain
             spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/public-domain.LICENSE
   - license_expression: bsd-new
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -729,7 +729,7 @@ license_detections:
             spdx_license_key: BSD-3-Clause
             spdx_url: https://spdx.org/licenses/BSD-3-Clause
   - license_expression: gary-s-brown
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -767,7 +767,7 @@ license_detections:
             spdx_license_key: LicenseRef-scancode-gary-s-brown
             spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gary-s-brown.LICENSE
   - license_expression: other-permissive
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -809,7 +809,7 @@ license_detections:
             spdx_license_key: LicenseRef-scancode-other-permissive
             spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/other-permissive.LICENSE
   - license_expression: public-domain-disclaimer
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -854,7 +854,7 @@ license_detections:
             spdx_license_key: LicenseRef-scancode-public-domain-disclaimer
             spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/public-domain-disclaimer.LICENSE
   - license_expression: public-domain-disclaimer
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -906,7 +906,7 @@ license_detections:
             spdx_license_key: LicenseRef-scancode-public-domain-disclaimer
             spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/public-domain-disclaimer.LICENSE
   - license_expression: gpl-2.0 OR bsd-new
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -966,7 +966,7 @@ license_detections:
             spdx_license_key: BSD-3-Clause
             spdx_url: https://spdx.org/licenses/BSD-3-Clause
   - license_expression: gpl-2.0 OR bsd-new
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -1026,7 +1026,7 @@ license_detections:
             spdx_license_key: BSD-3-Clause
             spdx_url: https://spdx.org/licenses/BSD-3-Clause
   - license_expression: bsd-new
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -1085,7 +1085,7 @@ license_detections:
             spdx_license_key: BSD-3-Clause
             spdx_url: https://spdx.org/licenses/BSD-3-Clause
   - license_expression: bsd-new
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -1178,7 +1178,7 @@ license_detections:
             spdx_license_key: BSD-3-Clause
             spdx_url: https://spdx.org/licenses/BSD-3-Clause
   - license_expression: bsd-new
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -1235,7 +1235,7 @@ license_detections:
             spdx_license_key: BSD-3-Clause
             spdx_url: https://spdx.org/licenses/BSD-3-Clause
   - license_expression: isc
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'

@@ -40,7 +40,7 @@ other_license_expression:
 other_license_expression_spdx:
 license_detections:
   - license_expression: bsd-new
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -102,7 +102,7 @@ license_detections:
             spdx_license_key: BSD-3-Clause
             spdx_url: https://spdx.org/licenses/BSD-3-Clause
   - license_expression: gpl-2.0-plus WITH autoconf-simple-exception-2.0
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -173,7 +173,7 @@ license_detections:
             spdx_license_key: LicenseRef-scancode-autoconf-simple-exception-2.0
             spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/autoconf-simple-exception-2.0.LICENSE
   - license_expression: gpl-2.0-plus WITH libtool-exception-2.0
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -244,7 +244,7 @@ license_detections:
             spdx_license_key: Libtool-exception
             spdx_url: https://spdx.org/licenses/Libtool-exception
   - license_expression: gpl-3.0-plus WITH autoconf-simple-exception
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -317,7 +317,7 @@ license_detections:
             spdx_license_key: LicenseRef-scancode-autoconf-simple-exception
             spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/autoconf-simple-exception.LICENSE
   - license_expression: lgpl-2.1
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -400,7 +400,7 @@ license_detections:
             spdx_license_key: LGPL-2.1-only
             spdx_url: https://spdx.org/licenses/LGPL-2.1-only
   - license_expression: lgpl-2.1-plus
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -485,7 +485,7 @@ license_detections:
             spdx_license_key: LGPL-2.1-or-later
             spdx_url: https://spdx.org/licenses/LGPL-2.1-or-later
   - license_expression: x11-xconsortium
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -542,7 +542,7 @@ license_detections:
             spdx_license_key: X11
             spdx_url: https://spdx.org/licenses/X11
   - license_expression: fsf-unlimited
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -581,7 +581,7 @@ license_detections:
             spdx_license_key: FSFULLR
             spdx_url: https://spdx.org/licenses/FSFULLR
   - license_expression: fsf-unlimited-no-warranty
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -625,7 +625,7 @@ license_detections:
             spdx_license_key: LicenseRef-scancode-fsf-unlimited-no-warranty
             spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/fsf-unlimited-no-warranty.LICENSE
   - license_expression: fsf-free
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -663,7 +663,7 @@ license_detections:
             spdx_license_key: FSFUL
             spdx_url: https://spdx.org/licenses/FSFUL
   - license_expression: fsf-ap
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -703,7 +703,7 @@ license_detections:
             spdx_license_key: FSFAP
             spdx_url: https://spdx.org/licenses/FSFAP
   - license_expression: fsf-unlimited-no-warranty
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'

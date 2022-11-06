@@ -3670,7 +3670,7 @@
       "license_detections": [
         {
           "license_expression": "apache-2.0",
-          "detection_rules": [
+          "detection_log": [
             "from-package-file"
           ],
           "matches": [
@@ -3812,7 +3812,7 @@
       "license_detections": [
         {
           "license_expression": "apache-2.0",
-          "detection_rules": [
+          "detection_log": [
             "from-package-file"
           ],
           "matches": [
@@ -3907,7 +3907,7 @@
       "license_detections": [
         {
           "license_expression": "apache-2.0",
-          "detection_rules": [
+          "detection_log": [
             "from-package-file"
           ],
           "matches": [
@@ -4002,7 +4002,7 @@
       "license_detections": [
         {
           "license_expression": "public-domain",
-          "detection_rules": [
+          "detection_log": [
             "not-combined"
           ],
           "matches": [
@@ -4047,7 +4047,7 @@
         },
         {
           "license_expression": "gpl-1.0-plus",
-          "detection_rules": [
+          "detection_log": [
             "not-combined"
           ],
           "matches": [
@@ -4585,7 +4585,7 @@
       "license_detections": [
         {
           "license_expression": "apache-2.0",
-          "detection_rules": [
+          "detection_log": [
             "not-combined"
           ],
           "matches": [
@@ -4837,7 +4837,7 @@
       "license_detections": [
         {
           "license_expression": "mit",
-          "detection_rules": [
+          "detection_log": [
             "not-combined"
           ],
           "matches": [
@@ -5032,7 +5032,7 @@
       "license_detections": [
         {
           "license_expression": "epl-1.0",
-          "detection_rules": [
+          "detection_log": [
             "not-combined"
           ],
           "matches": [
@@ -5077,7 +5077,7 @@
         },
         {
           "license_expression": "epl-1.0",
-          "detection_rules": [
+          "detection_log": [
             "not-combined"
           ],
           "matches": [
@@ -5170,7 +5170,7 @@
       "license_detections": [
         {
           "license_expression": "apache-2.0",
-          "detection_rules": [
+          "detection_log": [
             "from-package-file"
           ],
           "matches": [
@@ -5349,7 +5349,7 @@
       "license_detections": [
         {
           "license_expression": "lgpl-2.0-plus",
-          "detection_rules": [
+          "detection_log": [
             "not-combined"
           ],
           "matches": [
@@ -5394,7 +5394,7 @@
         },
         {
           "license_expression": "lgpl-2.1-plus",
-          "detection_rules": [
+          "detection_log": [
             "not-combined"
           ],
           "matches": [
@@ -5495,7 +5495,7 @@
       "license_detections": [
         {
           "license_expression": "apache-2.0",
-          "detection_rules": [
+          "detection_log": [
             "not-combined"
           ],
           "matches": [
@@ -5540,7 +5540,7 @@
         },
         {
           "license_expression": "apache-2.0",
-          "detection_rules": [
+          "detection_log": [
             "not-combined"
           ],
           "matches": [
@@ -5633,7 +5633,7 @@
       "license_detections": [
         {
           "license_expression": "lgpl-2.0-plus",
-          "detection_rules": [
+          "detection_log": [
             "not-combined"
           ],
           "matches": [
@@ -5678,7 +5678,7 @@
         },
         {
           "license_expression": "lgpl-2.0-plus",
-          "detection_rules": [
+          "detection_log": [
             "not-combined"
           ],
           "matches": [
@@ -5950,7 +5950,7 @@
       "license_detections": [
         {
           "license_expression": "apache-2.0",
-          "detection_rules": [
+          "detection_log": [
             "from-package-file"
           ],
           "matches": [
@@ -6161,7 +6161,7 @@
       "license_detections": [
         {
           "license_expression": "apache-2.0",
-          "detection_rules": [
+          "detection_log": [
             "from-package-file"
           ],
           "matches": [
@@ -6264,7 +6264,7 @@
       "license_detections": [
         {
           "license_expression": "apache-2.0",
-          "detection_rules": [
+          "detection_log": [
             "not-combined"
           ],
           "matches": [
@@ -6309,7 +6309,7 @@
         },
         {
           "license_expression": "apache-2.0",
-          "detection_rules": [
+          "detection_log": [
             "not-combined"
           ],
           "matches": [
@@ -6410,7 +6410,7 @@
       "license_detections": [
         {
           "license_expression": "apache-2.0",
-          "detection_rules": [
+          "detection_log": [
             "not-combined"
           ],
           "matches": [
@@ -6455,7 +6455,7 @@
         },
         {
           "license_expression": "apache-2.0",
-          "detection_rules": [
+          "detection_log": [
             "not-combined"
           ],
           "matches": [
@@ -6556,7 +6556,7 @@
       "license_detections": [
         {
           "license_expression": "apache-2.0",
-          "detection_rules": [
+          "detection_log": [
             "not-combined"
           ],
           "matches": [
@@ -6601,7 +6601,7 @@
         },
         {
           "license_expression": "apache-2.0",
-          "detection_rules": [
+          "detection_log": [
             "not-combined"
           ],
           "matches": [
@@ -6890,7 +6890,7 @@
       "license_detections": [
         {
           "license_expression": "apache-2.0",
-          "detection_rules": [
+          "detection_log": [
             "from-package-file"
           ],
           "matches": [
@@ -6998,7 +6998,7 @@
           "license_detections": [
             {
               "license_expression": "apache-2.0",
-              "detection_rules": [
+              "detection_log": [
                 "from-package-file"
               ],
               "matches": [
@@ -7317,7 +7317,7 @@
           "license_detections": [
             {
               "license_expression": "apache-2.0",
-              "detection_rules": [
+              "detection_log": [
                 "from-package-file"
               ],
               "matches": [
@@ -7476,7 +7476,7 @@
           "license_detections": [
             {
               "license_expression": "apache-2.0",
-              "detection_rules": [
+              "detection_log": [
                 "from-package-file"
               ],
               "matches": [
@@ -7625,7 +7625,7 @@
           "license_detections": [
             {
               "license_expression": "public-domain",
-              "detection_rules": [
+              "detection_log": [
                 "not-combined"
               ],
               "matches": [
@@ -7670,7 +7670,7 @@
             },
             {
               "license_expression": "gpl-1.0-plus",
-              "detection_rules": [
+              "detection_log": [
                 "not-combined"
               ],
               "matches": [
@@ -8361,7 +8361,7 @@
           "license_detections": [
             {
               "license_expression": "apache-2.0",
-              "detection_rules": [
+              "detection_log": [
                 "not-combined"
               ],
               "matches": [
@@ -8954,7 +8954,7 @@
           "license_detections": [
             {
               "license_expression": "mit",
-              "detection_rules": [
+              "detection_log": [
                 "not-combined"
               ],
               "matches": [
@@ -9471,7 +9471,7 @@
           "license_detections": [
             {
               "license_expression": "epl-1.0",
-              "detection_rules": [
+              "detection_log": [
                 "not-combined"
               ],
               "matches": [
@@ -9516,7 +9516,7 @@
             },
             {
               "license_expression": "epl-1.0",
-              "detection_rules": [
+              "detection_log": [
                 "not-combined"
               ],
               "matches": [
@@ -9723,7 +9723,7 @@
           "license_detections": [
             {
               "license_expression": "apache-2.0",
-              "detection_rules": [
+              "detection_log": [
                 "from-package-file"
               ],
               "matches": [
@@ -10020,7 +10020,7 @@
           "license_detections": [
             {
               "license_expression": "lgpl-2.0-plus",
-              "detection_rules": [
+              "detection_log": [
                 "not-combined"
               ],
               "matches": [
@@ -10065,7 +10065,7 @@
             },
             {
               "license_expression": "lgpl-2.1-plus",
-              "detection_rules": [
+              "detection_log": [
                 "not-combined"
               ],
               "matches": [
@@ -10240,7 +10240,7 @@
           "license_detections": [
             {
               "license_expression": "apache-2.0",
-              "detection_rules": [
+              "detection_log": [
                 "not-combined"
               ],
               "matches": [
@@ -10285,7 +10285,7 @@
             },
             {
               "license_expression": "apache-2.0",
-              "detection_rules": [
+              "detection_log": [
                 "not-combined"
               ],
               "matches": [
@@ -10472,7 +10472,7 @@
           "license_detections": [
             {
               "license_expression": "lgpl-2.0-plus",
-              "detection_rules": [
+              "detection_log": [
                 "not-combined"
               ],
               "matches": [
@@ -10517,7 +10517,7 @@
             },
             {
               "license_expression": "lgpl-2.0-plus",
-              "detection_rules": [
+              "detection_log": [
                 "not-combined"
               ],
               "matches": [
@@ -10980,7 +10980,7 @@
           "license_detections": [
             {
               "license_expression": "apache-2.0",
-              "detection_rules": [
+              "detection_log": [
                 "from-package-file"
               ],
               "matches": [
@@ -11763,7 +11763,7 @@
           "license_detections": [
             {
               "license_expression": "apache-2.0",
-              "detection_rules": [
+              "detection_log": [
                 "from-package-file"
               ],
               "matches": [
@@ -11910,7 +11910,7 @@
           "license_detections": [
             {
               "license_expression": "apache-2.0",
-              "detection_rules": [
+              "detection_log": [
                 "not-combined"
               ],
               "matches": [
@@ -11955,7 +11955,7 @@
             },
             {
               "license_expression": "apache-2.0",
-              "detection_rules": [
+              "detection_log": [
                 "not-combined"
               ],
               "matches": [
@@ -12740,7 +12740,7 @@
           "license_detections": [
             {
               "license_expression": "apache-2.0",
-              "detection_rules": [
+              "detection_log": [
                 "not-combined"
               ],
               "matches": [
@@ -12785,7 +12785,7 @@
             },
             {
               "license_expression": "apache-2.0",
-              "detection_rules": [
+              "detection_log": [
                 "not-combined"
               ],
               "matches": [
@@ -13080,7 +13080,7 @@
           "license_detections": [
             {
               "license_expression": "apache-2.0",
-              "detection_rules": [
+              "detection_log": [
                 "not-combined"
               ],
               "matches": [
@@ -13125,7 +13125,7 @@
             },
             {
               "license_expression": "apache-2.0",
-              "detection_rules": [
+              "detection_log": [
                 "not-combined"
               ],
               "matches": [
@@ -13862,7 +13862,7 @@
           "license_detections": [
             {
               "license_expression": "apache-2.0",
-              "detection_rules": [
+              "detection_log": [
                 "from-package-file"
               ],
               "matches": [

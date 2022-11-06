@@ -15,7 +15,7 @@ other_license_expression_spdx: Zlib AND Zlib AND (LGPL-2.0-or-later AND LGPL-2.1
 license_detections: []
 other_license_detections:
   - license_expression: unlicense
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -73,7 +73,7 @@ other_license_detections:
             spdx_license_key: Unlicense
             spdx_url: https://spdx.org/licenses/Unlicense
   - license_expression: zlib
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -124,7 +124,7 @@ other_license_detections:
             spdx_license_key: Zlib
             spdx_url: https://spdx.org/licenses/Zlib
   - license_expression: lgpl-2.0-plus AND lgpl-2.1-plus
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'

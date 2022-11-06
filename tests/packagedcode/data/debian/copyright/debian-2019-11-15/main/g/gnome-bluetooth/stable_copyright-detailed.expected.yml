@@ -15,7 +15,7 @@ other_license_expression_spdx: (LGPL-2.1-or-later AND LGPL-2.1-or-later) AND (GP
 license_detections: []
 other_license_detections:
   - license_expression: gpl-2.0-plus
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -99,7 +99,7 @@ other_license_detections:
             spdx_license_key: GPL-2.0-or-later
             spdx_url: https://spdx.org/licenses/GPL-2.0-or-later
   - license_expression: lgpl-2.1-plus
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'

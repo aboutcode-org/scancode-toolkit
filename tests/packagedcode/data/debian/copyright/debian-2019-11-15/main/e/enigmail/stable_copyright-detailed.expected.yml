@@ -18,7 +18,7 @@ other_license_expression_spdx: (MPL-2.0 AND MPL-2.0) AND (MPL-2.0 AND MPL-2.0) A
 license_detections: []
 other_license_detections:
   - license_expression: mpl-2.0
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -459,7 +459,7 @@ other_license_detections:
             spdx_license_key: MPL-2.0
             spdx_url: https://spdx.org/licenses/MPL-2.0
   - license_expression: bsd-2-clause-views
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -523,7 +523,7 @@ other_license_detections:
             spdx_license_key: BSD-2-Clause-Views
             spdx_url: https://spdx.org/licenses/BSD-2-Clause-Views
   - license_expression: bsd-new
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '99.04'
@@ -584,7 +584,7 @@ other_license_detections:
             spdx_license_key: BSD-3-Clause
             spdx_url: https://spdx.org/licenses/BSD-3-Clause
   - license_expression: cc0-1.0
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'

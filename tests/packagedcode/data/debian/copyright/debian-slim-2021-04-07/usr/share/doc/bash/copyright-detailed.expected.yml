@@ -10,7 +10,7 @@ other_license_expression:
 other_license_expression_spdx:
 license_detections:
   - license_expression: gpl-3.0-plus AND bash-exception-gpl AND gpl-1.0-plus
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -132,7 +132,7 @@ license_detections:
             spdx_license_key: GPL-1.0-or-later
             spdx_url: https://spdx.org/licenses/GPL-1.0-or-later
   - license_expression: other-permissive
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -173,7 +173,7 @@ license_detections:
             spdx_license_key: LicenseRef-scancode-other-permissive
             spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/other-permissive.LICENSE
   - license_expression: gfdl-1.3-plus
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -219,7 +219,7 @@ license_detections:
             spdx_license_key: GFDL-1.3-or-later
             spdx_url: https://spdx.org/licenses/GFDL-1.3-or-later
   - license_expression: gfdl-1.3-plus
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -261,7 +261,7 @@ license_detections:
             spdx_license_key: GFDL-1.3-or-later
             spdx_url: https://spdx.org/licenses/GFDL-1.3-or-later
   - license_expression: other-permissive AND latex2e
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -346,7 +346,7 @@ license_detections:
             spdx_license_key: Latex2e
             spdx_url: https://spdx.org/licenses/Latex2e
   - license_expression: latex2e
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '99.0'
@@ -399,7 +399,7 @@ license_detections:
             spdx_license_key: Latex2e
             spdx_url: https://spdx.org/licenses/Latex2e
   - license_expression: gfdl-1.3-plus
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -441,7 +441,7 @@ license_detections:
             spdx_license_key: GFDL-1.3-or-later
             spdx_url: https://spdx.org/licenses/GFDL-1.3-or-later
   - license_expression: latex2e
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '99.0'
@@ -494,7 +494,7 @@ license_detections:
             spdx_license_key: Latex2e
             spdx_url: https://spdx.org/licenses/Latex2e
   - license_expression: bsd-original-uc AND historical
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -604,7 +604,7 @@ license_detections:
             spdx_license_key: HPND
             spdx_url: https://spdx.org/licenses/HPND
   - license_expression: other-permissive
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'

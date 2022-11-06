@@ -30,7 +30,7 @@ other_license_expression_spdx: (LGPL-2.1-or-later AND LGPL-2.1-or-later) AND (LG
 license_detections: []
 other_license_detections:
   - license_expression: fsf-unlimited-no-warranty
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -73,7 +73,7 @@ other_license_detections:
             spdx_license_key: LicenseRef-scancode-fsf-unlimited-no-warranty
             spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/fsf-unlimited-no-warranty.LICENSE
   - license_expression: lgpl-2.1-plus
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -158,7 +158,7 @@ other_license_detections:
             spdx_license_key: LGPL-2.1-or-later
             spdx_url: https://spdx.org/licenses/LGPL-2.1-or-later
   - license_expression: gpl-3.0-plus
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -242,7 +242,7 @@ other_license_detections:
             spdx_license_key: GPL-3.0-or-later
             spdx_url: https://spdx.org/licenses/GPL-3.0-or-later
   - license_expression: bsd-new
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'

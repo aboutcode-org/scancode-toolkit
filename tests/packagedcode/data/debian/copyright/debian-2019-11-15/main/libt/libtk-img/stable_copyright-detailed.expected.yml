@@ -10,7 +10,7 @@ other_license_expression_spdx: TCL AND LicenseRef-scancode-pngsuite
 license_detections: []
 other_license_detections:
   - license_expression: tcl
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '98.8'
@@ -87,7 +87,7 @@ other_license_detections:
             spdx_license_key: TCL
             spdx_url: https://spdx.org/licenses/TCL
   - license_expression: pngsuite
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'

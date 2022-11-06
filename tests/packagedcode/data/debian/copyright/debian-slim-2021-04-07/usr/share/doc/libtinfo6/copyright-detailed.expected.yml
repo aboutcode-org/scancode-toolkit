@@ -12,7 +12,7 @@ other_license_expression_spdx: X11-distribute-modifications-variant AND X11 AND 
 license_detections: []
 other_license_detections:
   - license_expression: x11-fsf
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -71,7 +71,7 @@ other_license_detections:
             spdx_license_key: X11-distribute-modifications-variant
             spdx_url: https://spdx.org/licenses/X11-distribute-modifications-variant
   - license_expression: x11-xconsortium
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -128,7 +128,7 @@ other_license_detections:
             spdx_license_key: X11
             spdx_url: https://spdx.org/licenses/X11
   - license_expression: bsd-new
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'

@@ -49,7 +49,7 @@
       "license_detections": [
         {
           "license_expression": "bsd-new",
-          "detection_rules": [
+          "detection_log": [
             "not-combined"
           ],
           "matches": [
@@ -124,7 +124,7 @@
       "license_detections": [
         {
           "license_expression": "bsd-new",
-          "detection_rules": [
+          "detection_log": [
             "not-combined"
           ],
           "matches": [
@@ -219,7 +219,7 @@
           "license_detections": [
             {
               "license_expression": "bsd-new",
-              "detection_rules": [
+              "detection_log": [
                 "not-combined"
               ],
               "matches": [
@@ -294,7 +294,7 @@
       "license_detections": [
         {
           "license_expression": "bsd-new",
-          "detection_rules": [
+          "detection_log": [
             "unknown-reference-in-file-to-package"
           ],
           "matches": [

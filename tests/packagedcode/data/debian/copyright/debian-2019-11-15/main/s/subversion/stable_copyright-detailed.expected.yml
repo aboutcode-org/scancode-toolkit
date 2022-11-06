@@ -32,7 +32,7 @@ other_license_expression_spdx: (Apache-2.0 AND Apache-2.0) AND (BSD-3-Clause OR 
 license_detections: []
 other_license_detections:
   - license_expression: markus-kuhn-license
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -71,7 +71,7 @@ other_license_detections:
             spdx_license_key: LicenseRef-scancode-markus-kuhn-license
             spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/markus-kuhn-license.LICENSE
   - license_expression: other-permissive
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -109,7 +109,7 @@ other_license_detections:
             spdx_license_key: LicenseRef-scancode-other-permissive
             spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/other-permissive.LICENSE
   - license_expression: gpl-2.0-plus AND gpl-2.0
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -180,7 +180,7 @@ other_license_detections:
             spdx_license_key: GPL-2.0-only
             spdx_url: https://spdx.org/licenses/GPL-2.0-only
   - license_expression: gpl-3.0-plus AND gpl-3.0
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -251,7 +251,7 @@ other_license_detections:
             spdx_license_key: GPL-3.0-only
             spdx_url: https://spdx.org/licenses/GPL-3.0-only
   - license_expression: apache-2.0
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -336,7 +336,7 @@ other_license_detections:
             spdx_license_key: Apache-2.0
             spdx_url: https://spdx.org/licenses/Apache-2.0
   - license_expression: bsd-new
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -397,7 +397,7 @@ other_license_detections:
             spdx_license_key: BSD-3-Clause
             spdx_url: https://spdx.org/licenses/BSD-3-Clause
   - license_expression: bsd-simplified
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -453,7 +453,7 @@ other_license_detections:
             spdx_license_key: BSD-2-Clause
             spdx_url: https://spdx.org/licenses/BSD-2-Clause
   - license_expression: mit
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -506,7 +506,7 @@ other_license_detections:
             spdx_license_key: MIT
             spdx_url: https://spdx.org/licenses/MIT
   - license_expression: unicode
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -574,7 +574,7 @@ other_license_detections:
             spdx_license_key: LicenseRef-scancode-unicode
             spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/unicode.LICENSE
   - license_expression: afl-3.0
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'

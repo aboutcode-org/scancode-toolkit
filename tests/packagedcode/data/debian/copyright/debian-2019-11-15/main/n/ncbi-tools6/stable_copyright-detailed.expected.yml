@@ -39,7 +39,7 @@ other_license_expression_spdx: (LicenseRef-scancode-public-domain AND LicenseRef
 license_detections: []
 other_license_detections:
   - license_expression: public-domain AND us-govt-public-domain
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -126,7 +126,7 @@ other_license_detections:
             spdx_license_key: LicenseRef-scancode-us-govt-public-domain
             spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/us-govt-public-domain.LICENSE
   - license_expression: boost-1.0
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -183,7 +183,7 @@ other_license_detections:
             spdx_license_key: BSL-1.0
             spdx_url: https://spdx.org/licenses/BSL-1.0
   - license_expression: mit
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -236,7 +236,7 @@ other_license_detections:
             spdx_license_key: MIT
             spdx_url: https://spdx.org/licenses/MIT
   - license_expression: mit-with-modification-obligations AND proprietary-license
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -327,7 +327,7 @@ other_license_detections:
             spdx_license_key: LicenseRef-scancode-proprietary-license
             spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/proprietary-license.LICENSE
   - license_expression: public-domain
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -370,7 +370,7 @@ other_license_detections:
             spdx_license_key: LicenseRef-scancode-public-domain
             spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/public-domain.LICENSE
   - license_expression: flex-2.5
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -419,7 +419,7 @@ other_license_detections:
             spdx_license_key: LicenseRef-scancode-flex-2.5
             spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/flex-2.5.LICENSE
   - license_expression: gpl-2.0-plus
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'

@@ -7,7 +7,7 @@ other_license_expression:
 other_license_expression_spdx:
 license_detections:
   - license_expression: gpl-2.0 AND lgpl-2.0 AND bsd-new AND mit-old-style-no-advert
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '99.02'
@@ -95,7 +95,7 @@ license_detections:
             spdx_license_key: NTP
             spdx_url: https://spdx.org/licenses/NTP
   - license_expression: ntp-0 AND bsd-new
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'

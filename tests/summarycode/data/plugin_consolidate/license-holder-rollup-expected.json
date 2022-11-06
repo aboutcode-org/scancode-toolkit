@@ -184,7 +184,7 @@
       "license_detections": [
         {
           "license_expression": "gpl-1.0-plus AND gpl-2.0",
-          "detection_rules": [
+          "detection_log": [
             "not-combined"
           ],
           "matches": [
@@ -386,7 +386,7 @@
       "license_detections": [
         {
           "license_expression": "gpl-1.0-plus AND gpl-2.0",
-          "detection_rules": [
+          "detection_log": [
             "not-combined"
           ],
           "matches": [
@@ -553,7 +553,7 @@
       "license_detections": [
         {
           "license_expression": "apache-2.0",
-          "detection_rules": [
+          "detection_log": [
             "unknown-intro-followed-by-match"
           ],
           "matches": [

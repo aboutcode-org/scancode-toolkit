@@ -13,7 +13,7 @@ other_license_expression_spdx: (LGPL-2.1-only AND LGPL-2.1-only) AND (LGPL-2.1-o
 license_detections: []
 other_license_detections:
   - license_expression: lgpl-2.1
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'

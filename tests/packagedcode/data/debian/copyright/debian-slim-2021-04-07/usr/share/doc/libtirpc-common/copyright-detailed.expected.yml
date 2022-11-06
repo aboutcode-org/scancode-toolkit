@@ -59,7 +59,7 @@ other_license_expression_spdx: BSD-3-Clause AND (GPL-2.0-only AND GPL-2.0-only) 
 license_detections: []
 other_license_detections:
   - license_expression: other-permissive AND free-unknown
-    detection_rules: []
+    detection_log: []
     matches:
       - score: '20.0'
         start_line: 105
@@ -108,7 +108,7 @@ other_license_detections:
             spdx_license_key: LicenseRef-scancode-free-unknown
             spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/free-unknown.LICENSE
   - license_expression: fsf-ap
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -148,7 +148,7 @@ other_license_detections:
             spdx_license_key: FSFAP
             spdx_url: https://spdx.org/licenses/FSFAP
   - license_expression: bsd-new
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -206,7 +206,7 @@ other_license_detections:
             spdx_license_key: BSD-3-Clause
             spdx_url: https://spdx.org/licenses/BSD-3-Clause
   - license_expression: bsd-simplified
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -262,7 +262,7 @@ other_license_detections:
             spdx_license_key: BSD-2-Clause
             spdx_url: https://spdx.org/licenses/BSD-2-Clause
   - license_expression: bsd-original
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -324,7 +324,7 @@ other_license_detections:
             spdx_license_key: BSD-4-Clause
             spdx_url: https://spdx.org/licenses/BSD-4-Clause
   - license_expression: lgpl-2.1-plus
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -401,7 +401,7 @@ other_license_detections:
             spdx_license_key: LGPL-2.1-or-later
             spdx_url: https://spdx.org/licenses/LGPL-2.1-or-later
   - license_expression: gpl-2.0
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'

@@ -5,7 +5,7 @@ other_license_expression:
 other_license_expression_spdx:
 license_detections:
   - license_expression: broadcom-proprietary
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'

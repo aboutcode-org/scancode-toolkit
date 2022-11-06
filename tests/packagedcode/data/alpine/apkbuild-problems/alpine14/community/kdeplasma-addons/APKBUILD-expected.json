@@ -26,7 +26,7 @@
   "license_detections": [
     {
       "license_expression": "lgpl-2.0 AND gpl-2.0-plus",
-      "detection_rules": [
+      "detection_log": [
         "not-combined"
       ],
       "matches": [

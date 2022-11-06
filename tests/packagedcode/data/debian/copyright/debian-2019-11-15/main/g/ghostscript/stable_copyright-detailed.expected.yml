@@ -89,7 +89,7 @@ other_license_expression:
 other_license_expression_spdx:
 license_detections:
   - license_expression: agpl-3.0 WITH ps-or-pdf-font-exception-20170817
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -145,7 +145,7 @@ license_detections:
             spdx_license_key: PS-or-PDF-font-exception-20170817
             spdx_url: https://spdx.org/licenses/PS-or-PDF-font-exception-20170817
   - license_expression: sunsoft
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '95.0'
@@ -186,7 +186,7 @@ license_detections:
             spdx_license_key: LicenseRef-scancode-sunsoft
             spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/sunsoft.LICENSE
   - license_expression: public-domain
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -227,7 +227,7 @@ license_detections:
             spdx_license_key: LicenseRef-scancode-public-domain
             spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/public-domain.LICENSE
   - license_expression: other-permissive
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -267,7 +267,7 @@ license_detections:
             spdx_license_key: LicenseRef-scancode-other-permissive
             spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/other-permissive.LICENSE
   - license_expression: gpl-1.0-plus
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -303,7 +303,7 @@ license_detections:
             spdx_license_key: GPL-1.0-or-later
             spdx_url: https://spdx.org/licenses/GPL-1.0-or-later
   - license_expression: agpl-3.0
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -1189,7 +1189,7 @@ license_detections:
             spdx_license_key: AGPL-3.0-only
             spdx_url: https://spdx.org/licenses/AGPL-3.0-only
   - license_expression: fsf-free
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -1228,7 +1228,7 @@ license_detections:
             spdx_license_key: FSFUL
             spdx_url: https://spdx.org/licenses/FSFUL
   - license_expression: mit
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -1287,7 +1287,7 @@ license_detections:
             spdx_license_key: MIT
             spdx_url: https://spdx.org/licenses/MIT
   - license_expression: mit
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -1346,7 +1346,7 @@ license_detections:
             spdx_license_key: MIT
             spdx_url: https://spdx.org/licenses/MIT
   - license_expression: other-permissive
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -1399,7 +1399,7 @@ license_detections:
             spdx_license_key: LicenseRef-scancode-other-permissive
             spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/other-permissive.LICENSE
   - license_expression: x11-opengroup
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '99.0'
@@ -1455,7 +1455,7 @@ license_detections:
             spdx_license_key: MIT-open-group
             spdx_url: https://spdx.org/licenses/MIT-open-group
   - license_expression: ghostpdl-permissive
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -1496,7 +1496,7 @@ license_detections:
             spdx_license_key: LicenseRef-scancode-ghostpdl-permissive
             spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/ghostpdl-permissive.LICENSE
   - license_expression: x11-lucent-variant
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -1544,7 +1544,7 @@ license_detections:
             spdx_license_key: LicenseRef-scancode-x11-lucent-variant
             spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/x11-lucent-variant.LICENSE
   - license_expression: bsd-new
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -1612,7 +1612,7 @@ license_detections:
             spdx_license_key: BSD-3-Clause
             spdx_url: https://spdx.org/licenses/BSD-3-Clause
   - license_expression: bsd-new
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -1685,7 +1685,7 @@ license_detections:
             spdx_license_key: BSD-3-Clause
             spdx_url: https://spdx.org/licenses/BSD-3-Clause
   - license_expression: freetype
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -1901,7 +1901,7 @@ license_detections:
             spdx_license_key: FTL
             spdx_url: https://spdx.org/licenses/FTL
   - license_expression: zlib
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -1957,7 +1957,7 @@ license_detections:
             spdx_license_key: Zlib
             spdx_url: https://spdx.org/licenses/Zlib
   - license_expression: isc
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -2008,7 +2008,7 @@ license_detections:
             spdx_license_key: ISC
             spdx_url: https://spdx.org/licenses/ISC
   - license_expression: agpl-3.0 AND agpl-3.0-plus
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -2076,7 +2076,7 @@ license_detections:
             spdx_license_key: AGPL-3.0-or-later
             spdx_url: https://spdx.org/licenses/AGPL-3.0-or-later
   - license_expression: agpl-3.0-plus
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -2117,7 +2117,7 @@ license_detections:
             spdx_license_key: AGPL-3.0-or-later
             spdx_url: https://spdx.org/licenses/AGPL-3.0-or-later
   - license_expression: agpl-3.0-plus
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '90.0'
@@ -2153,7 +2153,7 @@ license_detections:
             spdx_license_key: AGPL-3.0-or-later
             spdx_url: https://spdx.org/licenses/AGPL-3.0-or-later
   - license_expression: agpl-3.0 AND agpl-3.0-plus
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -2221,7 +2221,7 @@ license_detections:
             spdx_license_key: AGPL-3.0-or-later
             spdx_url: https://spdx.org/licenses/AGPL-3.0-or-later
   - license_expression: agpl-3.0-plus
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -2262,7 +2262,7 @@ license_detections:
             spdx_license_key: AGPL-3.0-or-later
             spdx_url: https://spdx.org/licenses/AGPL-3.0-or-later
   - license_expression: lgpl-2.1
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -2301,7 +2301,7 @@ license_detections:
             spdx_license_key: LGPL-2.1-only
             spdx_url: https://spdx.org/licenses/LGPL-2.1-only
   - license_expression: freetype
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -2344,7 +2344,7 @@ license_detections:
             spdx_license_key: FTL
             spdx_url: https://spdx.org/licenses/FTL
   - license_expression: gpl-1.0-plus
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -2389,7 +2389,7 @@ license_detections:
             spdx_license_key: GPL-1.0-or-later
             spdx_url: https://spdx.org/licenses/GPL-1.0-or-later
   - license_expression: ghostscript-1988
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -2434,7 +2434,7 @@ license_detections:
             spdx_license_key: LicenseRef-scancode-ghostscript-1988
             spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/ghostscript-1988.LICENSE
   - license_expression: agpl-3.0-plus
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -2475,7 +2475,7 @@ license_detections:
             spdx_license_key: AGPL-3.0-or-later
             spdx_url: https://spdx.org/licenses/AGPL-3.0-or-later
   - license_expression: gpl-1.0-plus
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -2520,7 +2520,7 @@ license_detections:
             spdx_license_key: GPL-1.0-or-later
             spdx_url: https://spdx.org/licenses/GPL-1.0-or-later
   - license_expression: gpl-1.0-plus
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -2565,7 +2565,7 @@ license_detections:
             spdx_license_key: GPL-1.0-or-later
             spdx_url: https://spdx.org/licenses/GPL-1.0-or-later
   - license_expression: gpl-1.0-plus
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -2613,7 +2613,7 @@ license_detections:
             spdx_license_key: GPL-1.0-or-later
             spdx_url: https://spdx.org/licenses/GPL-1.0-or-later
   - license_expression: gpl-1.0-plus
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -2649,7 +2649,7 @@ license_detections:
             spdx_license_key: GPL-1.0-or-later
             spdx_url: https://spdx.org/licenses/GPL-1.0-or-later
   - license_expression: gpl-1.0-plus OR cups
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '99.0'
@@ -2709,7 +2709,7 @@ license_detections:
             spdx_license_key: LicenseRef-scancode-cups
             spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/cups.LICENSE
   - license_expression: gpl-2.0-plus
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -2749,7 +2749,7 @@ license_detections:
             spdx_license_key: GPL-2.0-or-later
             spdx_url: https://spdx.org/licenses/GPL-2.0-or-later
   - license_expression: apache-2.0
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -2796,7 +2796,7 @@ license_detections:
             spdx_license_key: Apache-2.0
             spdx_url: https://spdx.org/licenses/Apache-2.0
   - license_expression: apache-2.0
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -2836,7 +2836,7 @@ license_detections:
             spdx_license_key: Apache-2.0
             spdx_url: https://spdx.org/licenses/Apache-2.0
   - license_expression: agpl-3.0 AND agpl-3.0-plus
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -2904,7 +2904,7 @@ license_detections:
             spdx_license_key: AGPL-3.0-or-later
             spdx_url: https://spdx.org/licenses/AGPL-3.0-or-later
   - license_expression: afpl-9.0
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '90.0'
@@ -2940,7 +2940,7 @@ license_detections:
             spdx_license_key: LicenseRef-scancode-afpl-9.0
             spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/afpl-9.0.LICENSE
   - license_expression: gpl-2.0-plus
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -2981,7 +2981,7 @@ license_detections:
             spdx_license_key: GPL-2.0-or-later
             spdx_url: https://spdx.org/licenses/GPL-2.0-or-later
   - license_expression: gpl-2.0-plus
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -3022,7 +3022,7 @@ license_detections:
             spdx_license_key: GPL-2.0-or-later
             spdx_url: https://spdx.org/licenses/GPL-2.0-or-later
   - license_expression: gpl-2.0-plus
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -3063,7 +3063,7 @@ license_detections:
             spdx_license_key: GPL-2.0-or-later
             spdx_url: https://spdx.org/licenses/GPL-2.0-or-later
   - license_expression: gpl-2.0-plus
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -3104,7 +3104,7 @@ license_detections:
             spdx_license_key: GPL-2.0-or-later
             spdx_url: https://spdx.org/licenses/GPL-2.0-or-later
   - license_expression: gpl-2.0-plus
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -3145,7 +3145,7 @@ license_detections:
             spdx_license_key: GPL-2.0-or-later
             spdx_url: https://spdx.org/licenses/GPL-2.0-or-later
   - license_expression: gpl-2.0-plus
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -3186,7 +3186,7 @@ license_detections:
             spdx_license_key: GPL-2.0-or-later
             spdx_url: https://spdx.org/licenses/GPL-2.0-or-later
   - license_expression: gpl-1.0-plus
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -3231,7 +3231,7 @@ license_detections:
             spdx_license_key: GPL-1.0-or-later
             spdx_url: https://spdx.org/licenses/GPL-1.0-or-later
   - license_expression: gpl-3.0-plus
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'

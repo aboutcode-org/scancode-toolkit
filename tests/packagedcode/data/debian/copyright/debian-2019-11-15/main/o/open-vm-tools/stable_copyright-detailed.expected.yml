@@ -21,7 +21,7 @@ other_license_expression_spdx: (LGPL-2.1-only AND LGPL-2.0-or-later) AND (GPL-2.
 license_detections: []
 other_license_detections:
   - license_expression: bsd-new
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -74,7 +74,7 @@ other_license_detections:
             spdx_license_key: BSD-3-Clause
             spdx_url: https://spdx.org/licenses/BSD-3-Clause
   - license_expression: gpl-2.0
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -188,7 +188,7 @@ other_license_detections:
             spdx_license_key: GPL-2.0-only
             spdx_url: https://spdx.org/licenses/GPL-2.0-only
   - license_expression: gpl-2.0-plus
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -272,7 +272,7 @@ other_license_detections:
             spdx_license_key: GPL-2.0-or-later
             spdx_url: https://spdx.org/licenses/GPL-2.0-or-later
   - license_expression: lgpl-2.1 AND lgpl-2.0-plus
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -355,7 +355,7 @@ other_license_detections:
             spdx_license_key: LGPL-2.0-or-later
             spdx_url: https://spdx.org/licenses/LGPL-2.0-or-later
   - license_expression: isc AND ibm-dhcp
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -453,7 +453,7 @@ other_license_detections:
             spdx_license_key: LicenseRef-scancode-ibm-dhcp
             spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/ibm-dhcp.LICENSE
   - license_expression: xfree86-1.0
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'

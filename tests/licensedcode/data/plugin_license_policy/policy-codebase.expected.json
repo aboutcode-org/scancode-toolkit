@@ -87,7 +87,7 @@
       "license_detections": [
         {
           "license_expression": "broadcom-commercial",
-          "detection_rules": [
+          "detection_log": [
             "not-combined"
           ],
           "matches": [
@@ -168,7 +168,7 @@
       "license_detections": [
         {
           "license_expression": "bsd-1988",
-          "detection_rules": [
+          "detection_log": [
             "not-combined"
           ],
           "matches": [
@@ -249,7 +249,7 @@
       "license_detections": [
         {
           "license_expression": "esri-devkit",
-          "detection_rules": [
+          "detection_log": [
             "not-combined"
           ],
           "matches": [
@@ -330,7 +330,7 @@
       "license_detections": [
         {
           "license_expression": "oracle-java-ee-sdk-2010",
-          "detection_rules": [
+          "detection_log": [
             "not-combined"
           ],
           "matches": [
@@ -411,7 +411,7 @@
       "license_detections": [
         {
           "license_expression": "rh-eula",
-          "detection_rules": [
+          "detection_log": [
             "not-combined"
           ],
           "matches": [

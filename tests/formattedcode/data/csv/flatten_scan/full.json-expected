@@ -244,7 +244,7 @@
     {
         "path": "samples/commoncode/apache-2.0.LICENSE",
         "license_expression": "apache-2.0",
-        "detection_rules": "not-combined",
+        "detection_log": "not-combined",
         "license_match__score": "100.00",
         "start_line": 1,
         "end_line": 201,
@@ -306,7 +306,7 @@
     {
         "path": "samples/commoncode/commoncode.ABOUT",
         "license_expression": "apache-2.0",
-        "detection_rules": "not-combined",
+        "detection_log": "not-combined",
         "license_match__score": "100.00",
         "start_line": 11,
         "end_line": 11,
@@ -373,7 +373,7 @@
         "package__copyright": "copyright (c) nexB. Inc. and others",
         "package__declared_license_expression": "apache-2.0",
         "package__declared_license_expression_spdx": "Apache-2.0",
-        "package__license_detections": "[{'license_expression': 'apache-2.0', 'detection_rules': ['not-combined'], 'matches': [{'score': 100.0, 'start_line': 1, 'end_line': 1, 'matched_length': 3, 'match_coverage': 100.0, 'matcher': '1-hash', 'license_expression': 'apache-2.0', 'rule_identifier': 'spdx_license_id_apache-2.0_for_apache-2.0.RULE', 'referenced_filenames': [], 'is_license_text': False, 'is_license_notice': False, 'is_license_reference': True, 'is_license_tag': False, 'is_license_intro': False, 'rule_length': 3, 'rule_relevance': 100, 'matched_text': 'apache-2.0', 'licenses': [{'key': 'apache-2.0', 'name': 'Apache License 2.0', 'short_name': 'Apache 2.0', 'category': 'Permissive', 'is_exception': False, 'is_unknown': False, 'owner': 'Apache Software Foundation', 'homepage_url': 'http://www.apache.org/licenses/', 'text_url': 'http://www.apache.org/licenses/LICENSE-2.0', 'reference_url': 'https://scancode-licensedb.aboutcode.org/apache-2.0', 'scancode_text_url': 'https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.LICENSE', 'scancode_data_url': 'https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.yml', 'spdx_license_key': 'Apache-2.0', 'spdx_url': 'https://spdx.org/licenses/Apache-2.0'}]}]}]",
+        "package__license_detections": "[{'license_expression': 'apache-2.0', 'detection_log': ['not-combined'], 'matches': [{'score': 100.0, 'start_line': 1, 'end_line': 1, 'matched_length': 3, 'match_coverage': 100.0, 'matcher': '1-hash', 'license_expression': 'apache-2.0', 'rule_identifier': 'spdx_license_id_apache-2.0_for_apache-2.0.RULE', 'referenced_filenames': [], 'is_license_text': False, 'is_license_notice': False, 'is_license_reference': True, 'is_license_tag': False, 'is_license_intro': False, 'rule_length': 3, 'rule_relevance': 100, 'matched_text': 'apache-2.0', 'licenses': [{'key': 'apache-2.0', 'name': 'Apache License 2.0', 'short_name': 'Apache 2.0', 'category': 'Permissive', 'is_exception': False, 'is_unknown': False, 'owner': 'Apache Software Foundation', 'homepage_url': 'http://www.apache.org/licenses/', 'text_url': 'http://www.apache.org/licenses/LICENSE-2.0', 'reference_url': 'https://scancode-licensedb.aboutcode.org/apache-2.0', 'scancode_text_url': 'https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.LICENSE', 'scancode_data_url': 'https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.yml', 'spdx_license_key': 'Apache-2.0', 'spdx_url': 'https://spdx.org/licenses/Apache-2.0'}]}]}]",
         "package__other_license_expression": "",
         "package__other_license_expression_spdx": "",
         "package__other_license_detections": "",
@@ -418,7 +418,7 @@
     {
         "path": "samples/commoncode/configure",
         "license_expression": "apache-2.0",
-        "detection_rules": "from-package-file",
+        "detection_log": "from-package-file",
         "license_match__score": "100.00",
         "start_line": 4,
         "end_line": 4,
@@ -440,7 +440,7 @@
     {
         "path": "samples/commoncode/configure",
         "license_expression": "apache-2.0",
-        "detection_rules": "from-package-file",
+        "detection_log": "from-package-file",
         "license_match__score": "100.00",
         "start_line": 5,
         "end_line": 5,
@@ -525,7 +525,7 @@
         "package__copyright": "",
         "package__declared_license_expression": "apache-2.0",
         "package__declared_license_expression_spdx": "Apache-2.0",
-        "package__license_detections": "[{'license_expression': 'apache-2.0', 'detection_rules': ['from-package-file'], 'matches': [{'score': 100.0, 'start_line': 4, 'end_line': 4, 'matched_length': 6, 'match_coverage': 100.0, 'matcher': '1-spdx-id', 'license_expression': 'apache-2.0', 'rule_identifier': 'spdx-license-identifier: apache-2.0', 'referenced_filenames': [], 'is_license_text': False, 'is_license_notice': False, 'is_license_reference': False, 'is_license_tag': True, 'is_license_intro': False, 'rule_length': 6, 'rule_relevance': 100, 'licenses': [{'key': 'apache-2.0', 'name': 'Apache License 2.0', 'short_name': 'Apache 2.0', 'category': 'Permissive', 'is_exception': False, 'is_unknown': False, 'owner': 'Apache Software Foundation', 'homepage_url': 'http://www.apache.org/licenses/', 'text_url': 'http://www.apache.org/licenses/LICENSE-2.0', 'reference_url': 'https://scancode-licensedb.aboutcode.org/apache-2.0', 'scancode_text_url': 'https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.LICENSE', 'scancode_data_url': 'https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.yml', 'spdx_license_key': 'Apache-2.0', 'spdx_url': 'https://spdx.org/licenses/Apache-2.0'}]}, {'score': 100.0, 'start_line': 5, 'end_line': 5, 'matched_length': 8, 'match_coverage': 100.0, 'matcher': '2-aho', 'license_expression': 'apache-2.0', 'rule_identifier': 'apache-2.0_25.RULE', 'referenced_filenames': [], 'is_license_text': False, 'is_license_notice': False, 'is_license_reference': True, 'is_license_tag': False, 'is_license_intro': False, 'rule_length': 8, 'rule_relevance': 100, 'licenses': [{'key': 'apache-2.0', 'name': 'Apache License 2.0', 'short_name': 'Apache 2.0', 'category': 'Permissive', 'is_exception': False, 'is_unknown': False, 'owner': 'Apache Software Foundation', 'homepage_url': 'http://www.apache.org/licenses/', 'text_url': 'http://www.apache.org/licenses/LICENSE-2.0', 'reference_url': 'https://scancode-licensedb.aboutcode.org/apache-2.0', 'scancode_text_url': 'https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.LICENSE', 'scancode_data_url': 'https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.yml', 'spdx_license_key': 'Apache-2.0', 'spdx_url': 'https://spdx.org/licenses/Apache-2.0'}]}]}]",
+        "package__license_detections": "[{'license_expression': 'apache-2.0', 'detection_log': ['from-package-file'], 'matches': [{'score': 100.0, 'start_line': 4, 'end_line': 4, 'matched_length': 6, 'match_coverage': 100.0, 'matcher': '1-spdx-id', 'license_expression': 'apache-2.0', 'rule_identifier': 'spdx-license-identifier: apache-2.0', 'referenced_filenames': [], 'is_license_text': False, 'is_license_notice': False, 'is_license_reference': False, 'is_license_tag': True, 'is_license_intro': False, 'rule_length': 6, 'rule_relevance': 100, 'licenses': [{'key': 'apache-2.0', 'name': 'Apache License 2.0', 'short_name': 'Apache 2.0', 'category': 'Permissive', 'is_exception': False, 'is_unknown': False, 'owner': 'Apache Software Foundation', 'homepage_url': 'http://www.apache.org/licenses/', 'text_url': 'http://www.apache.org/licenses/LICENSE-2.0', 'reference_url': 'https://scancode-licensedb.aboutcode.org/apache-2.0', 'scancode_text_url': 'https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.LICENSE', 'scancode_data_url': 'https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.yml', 'spdx_license_key': 'Apache-2.0', 'spdx_url': 'https://spdx.org/licenses/Apache-2.0'}]}, {'score': 100.0, 'start_line': 5, 'end_line': 5, 'matched_length': 8, 'match_coverage': 100.0, 'matcher': '2-aho', 'license_expression': 'apache-2.0', 'rule_identifier': 'apache-2.0_25.RULE', 'referenced_filenames': [], 'is_license_text': False, 'is_license_notice': False, 'is_license_reference': True, 'is_license_tag': False, 'is_license_intro': False, 'rule_length': 8, 'rule_relevance': 100, 'licenses': [{'key': 'apache-2.0', 'name': 'Apache License 2.0', 'short_name': 'Apache 2.0', 'category': 'Permissive', 'is_exception': False, 'is_unknown': False, 'owner': 'Apache Software Foundation', 'homepage_url': 'http://www.apache.org/licenses/', 'text_url': 'http://www.apache.org/licenses/LICENSE-2.0', 'reference_url': 'https://scancode-licensedb.aboutcode.org/apache-2.0', 'scancode_text_url': 'https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.LICENSE', 'scancode_data_url': 'https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.yml', 'spdx_license_key': 'Apache-2.0', 'spdx_url': 'https://spdx.org/licenses/Apache-2.0'}]}]}]",
         "package__other_license_expression": "",
         "package__other_license_expression_spdx": "",
         "package__other_license_detections": "",
@@ -598,7 +598,7 @@
     {
         "path": "samples/commoncode/NOTICE",
         "license_expression": "apache-2.0",
-        "detection_rules": "not-combined",
+        "detection_log": "not-combined",
         "license_match__score": "100.00",
         "start_line": 3,
         "end_line": 3,
@@ -620,7 +620,7 @@
     {
         "path": "samples/commoncode/NOTICE",
         "license_expression": "apache-2.0",
-        "detection_rules": "not-combined",
+        "detection_log": "not-combined",
         "license_match__score": "100.00",
         "start_line": 4,
         "end_line": 4,
@@ -721,7 +721,7 @@
         "package__copyright": "",
         "package__declared_license_expression": "apache-2.0",
         "package__declared_license_expression_spdx": "Apache-2.0",
-        "package__license_detections": "[{'license_expression': 'apache-2.0', 'detection_rules': ['not-combined'], 'matches': [{'score': 100.0, 'start_line': 1, 'end_line': 201, 'matched_length': 1584, 'match_coverage': 100.0, 'matcher': '1-hash', 'license_expression': 'apache-2.0', 'rule_identifier': 'apache-2.0.LICENSE', 'referenced_filenames': [], 'is_license_text': True, 'is_license_notice': False, 'is_license_reference': False, 'is_license_tag': False, 'is_license_intro': False, 'rule_length': 1584, 'rule_relevance': 100, 'licenses': [{'key': 'apache-2.0', 'name': 'Apache License 2.0', 'short_name': 'Apache 2.0', 'category': 'Permissive', 'is_exception': False, 'is_unknown': False, 'owner': 'Apache Software Foundation', 'homepage_url': 'http://www.apache.org/licenses/', 'text_url': 'http://www.apache.org/licenses/LICENSE-2.0', 'reference_url': 'https://scancode-licensedb.aboutcode.org/apache-2.0', 'scancode_text_url': 'https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.LICENSE', 'scancode_data_url': 'https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.yml', 'spdx_license_key': 'Apache-2.0', 'spdx_url': 'https://spdx.org/licenses/Apache-2.0'}]}]}, {'license_expression': 'apache-2.0', 'detection_rules': ['not-combined'], 'matches': [{'score': 100.0, 'start_line': 3, 'end_line': 3, 'matched_length': 6, 'match_coverage': 100.0, 'matcher': '1-spdx-id', 'license_expression': 'apache-2.0', 'rule_identifier': 'spdx-license-identifier: apache-2.0', 'referenced_filenames': [], 'is_license_text': False, 'is_license_notice': False, 'is_license_reference': False, 'is_license_tag': True, 'is_license_intro': False, 'rule_length': 6, 'rule_relevance': 100, 'licenses': [{'key': 'apache-2.0', 'name': 'Apache License 2.0', 'short_name': 'Apache 2.0', 'category': 'Permissive', 'is_exception': False, 'is_unknown': False, 'owner': 'Apache Software Foundation', 'homepage_url': 'http://www.apache.org/licenses/', 'text_url': 'http://www.apache.org/licenses/LICENSE-2.0', 'reference_url': 'https://scancode-licensedb.aboutcode.org/apache-2.0', 'scancode_text_url': 'https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.LICENSE', 'scancode_data_url': 'https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.yml', 'spdx_license_key': 'Apache-2.0', 'spdx_url': 'https://spdx.org/licenses/Apache-2.0'}]}, {'score': 100.0, 'start_line': 4, 'end_line': 4, 'matched_length': 8, 'match_coverage': 100.0, 'matcher': '2-aho', 'license_expression': 'apache-2.0', 'rule_identifier': 'apache-2.0_25.RULE', 'referenced_filenames': [], 'is_license_text': False, 'is_license_notice': False, 'is_license_reference': True, 'is_license_tag': False, 'is_license_intro': False, 'rule_length': 8, 'rule_relevance': 100, 'licenses': [{'key': 'apache-2.0', 'name': 'Apache License 2.0', 'short_name': 'Apache 2.0', 'category': 'Permissive', 'is_exception': False, 'is_unknown': False, 'owner': 'Apache Software Foundation', 'homepage_url': 'http://www.apache.org/licenses/', 'text_url': 'http://www.apache.org/licenses/LICENSE-2.0', 'reference_url': 'https://scancode-licensedb.aboutcode.org/apache-2.0', 'scancode_text_url': 'https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.LICENSE', 'scancode_data_url': 'https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.yml', 'spdx_license_key': 'Apache-2.0', 'spdx_url': 'https://spdx.org/licenses/Apache-2.0'}]}]}, {'license_expression': 'apache-2.0', 'detection_rules': ['not-combined'], 'matches': [{'score': 100.0, 'start_line': 4, 'end_line': 4, 'matched_length': 4, 'match_coverage': 100.0, 'matcher': '2-aho', 'license_expression': 'apache-2.0', 'rule_identifier': 'apache-2.0_65.RULE', 'referenced_filenames': [], 'is_license_text': False, 'is_license_notice': False, 'is_license_reference': False, 'is_license_tag': True, 'is_license_intro': False, 'rule_length': 4, 'rule_relevance': 100, 'licenses': [{'key': 'apache-2.0', 'name': 'Apache License 2.0', 'short_name': 'Apache 2.0', 'category': 'Permissive', 'is_exception': False, 'is_unknown': False, 'owner': 'Apache Software Foundation', 'homepage_url': 'http://www.apache.org/licenses/', 'text_url': 'http://www.apache.org/licenses/LICENSE-2.0', 'reference_url': 'https://scancode-licensedb.aboutcode.org/apache-2.0', 'scancode_text_url': 'https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.LICENSE', 'scancode_data_url': 'https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.yml', 'spdx_license_key': 'Apache-2.0', 'spdx_url': 'https://spdx.org/licenses/Apache-2.0'}]}]}]",
+        "package__license_detections": "[{'license_expression': 'apache-2.0', 'detection_log': ['not-combined'], 'matches': [{'score': 100.0, 'start_line': 1, 'end_line': 201, 'matched_length': 1584, 'match_coverage': 100.0, 'matcher': '1-hash', 'license_expression': 'apache-2.0', 'rule_identifier': 'apache-2.0.LICENSE', 'referenced_filenames': [], 'is_license_text': True, 'is_license_notice': False, 'is_license_reference': False, 'is_license_tag': False, 'is_license_intro': False, 'rule_length': 1584, 'rule_relevance': 100, 'licenses': [{'key': 'apache-2.0', 'name': 'Apache License 2.0', 'short_name': 'Apache 2.0', 'category': 'Permissive', 'is_exception': False, 'is_unknown': False, 'owner': 'Apache Software Foundation', 'homepage_url': 'http://www.apache.org/licenses/', 'text_url': 'http://www.apache.org/licenses/LICENSE-2.0', 'reference_url': 'https://scancode-licensedb.aboutcode.org/apache-2.0', 'scancode_text_url': 'https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.LICENSE', 'scancode_data_url': 'https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.yml', 'spdx_license_key': 'Apache-2.0', 'spdx_url': 'https://spdx.org/licenses/Apache-2.0'}]}]}, {'license_expression': 'apache-2.0', 'detection_log': ['not-combined'], 'matches': [{'score': 100.0, 'start_line': 3, 'end_line': 3, 'matched_length': 6, 'match_coverage': 100.0, 'matcher': '1-spdx-id', 'license_expression': 'apache-2.0', 'rule_identifier': 'spdx-license-identifier: apache-2.0', 'referenced_filenames': [], 'is_license_text': False, 'is_license_notice': False, 'is_license_reference': False, 'is_license_tag': True, 'is_license_intro': False, 'rule_length': 6, 'rule_relevance': 100, 'licenses': [{'key': 'apache-2.0', 'name': 'Apache License 2.0', 'short_name': 'Apache 2.0', 'category': 'Permissive', 'is_exception': False, 'is_unknown': False, 'owner': 'Apache Software Foundation', 'homepage_url': 'http://www.apache.org/licenses/', 'text_url': 'http://www.apache.org/licenses/LICENSE-2.0', 'reference_url': 'https://scancode-licensedb.aboutcode.org/apache-2.0', 'scancode_text_url': 'https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.LICENSE', 'scancode_data_url': 'https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.yml', 'spdx_license_key': 'Apache-2.0', 'spdx_url': 'https://spdx.org/licenses/Apache-2.0'}]}, {'score': 100.0, 'start_line': 4, 'end_line': 4, 'matched_length': 8, 'match_coverage': 100.0, 'matcher': '2-aho', 'license_expression': 'apache-2.0', 'rule_identifier': 'apache-2.0_25.RULE', 'referenced_filenames': [], 'is_license_text': False, 'is_license_notice': False, 'is_license_reference': True, 'is_license_tag': False, 'is_license_intro': False, 'rule_length': 8, 'rule_relevance': 100, 'licenses': [{'key': 'apache-2.0', 'name': 'Apache License 2.0', 'short_name': 'Apache 2.0', 'category': 'Permissive', 'is_exception': False, 'is_unknown': False, 'owner': 'Apache Software Foundation', 'homepage_url': 'http://www.apache.org/licenses/', 'text_url': 'http://www.apache.org/licenses/LICENSE-2.0', 'reference_url': 'https://scancode-licensedb.aboutcode.org/apache-2.0', 'scancode_text_url': 'https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.LICENSE', 'scancode_data_url': 'https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.yml', 'spdx_license_key': 'Apache-2.0', 'spdx_url': 'https://spdx.org/licenses/Apache-2.0'}]}]}, {'license_expression': 'apache-2.0', 'detection_log': ['not-combined'], 'matches': [{'score': 100.0, 'start_line': 4, 'end_line': 4, 'matched_length': 4, 'match_coverage': 100.0, 'matcher': '2-aho', 'license_expression': 'apache-2.0', 'rule_identifier': 'apache-2.0_65.RULE', 'referenced_filenames': [], 'is_license_text': False, 'is_license_notice': False, 'is_license_reference': False, 'is_license_tag': True, 'is_license_intro': False, 'rule_length': 4, 'rule_relevance': 100, 'licenses': [{'key': 'apache-2.0', 'name': 'Apache License 2.0', 'short_name': 'Apache 2.0', 'category': 'Permissive', 'is_exception': False, 'is_unknown': False, 'owner': 'Apache Software Foundation', 'homepage_url': 'http://www.apache.org/licenses/', 'text_url': 'http://www.apache.org/licenses/LICENSE-2.0', 'reference_url': 'https://scancode-licensedb.aboutcode.org/apache-2.0', 'scancode_text_url': 'https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.LICENSE', 'scancode_data_url': 'https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.yml', 'spdx_license_key': 'Apache-2.0', 'spdx_url': 'https://spdx.org/licenses/Apache-2.0'}]}]}]",
         "package__other_license_expression": "",
         "package__other_license_expression_spdx": "",
         "package__other_license_detections": "",
@@ -766,7 +766,7 @@
     {
         "path": "samples/commoncode/README.rst",
         "license_expression": "apache-2.0",
-        "detection_rules": "not-combined",
+        "detection_log": "not-combined",
         "license_match__score": "100.00",
         "start_line": 4,
         "end_line": 4,
@@ -867,7 +867,7 @@
         "package__copyright": "",
         "package__declared_license_expression": "apache-2.0",
         "package__declared_license_expression_spdx": "Apache-2.0",
-        "package__license_detections": "[{'license_expression': 'apache-2.0', 'detection_rules': ['not-combined'], 'matches': [{'score': 100.0, 'start_line': 1, 'end_line': 201, 'matched_length': 1584, 'match_coverage': 100.0, 'matcher': '1-hash', 'license_expression': 'apache-2.0', 'rule_identifier': 'apache-2.0.LICENSE', 'referenced_filenames': [], 'is_license_text': True, 'is_license_notice': False, 'is_license_reference': False, 'is_license_tag': False, 'is_license_intro': False, 'rule_length': 1584, 'rule_relevance': 100, 'licenses': [{'key': 'apache-2.0', 'name': 'Apache License 2.0', 'short_name': 'Apache 2.0', 'category': 'Permissive', 'is_exception': False, 'is_unknown': False, 'owner': 'Apache Software Foundation', 'homepage_url': 'http://www.apache.org/licenses/', 'text_url': 'http://www.apache.org/licenses/LICENSE-2.0', 'reference_url': 'https://scancode-licensedb.aboutcode.org/apache-2.0', 'scancode_text_url': 'https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.LICENSE', 'scancode_data_url': 'https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.yml', 'spdx_license_key': 'Apache-2.0', 'spdx_url': 'https://spdx.org/licenses/Apache-2.0'}]}]}, {'license_expression': 'apache-2.0', 'detection_rules': ['not-combined'], 'matches': [{'score': 100.0, 'start_line': 3, 'end_line': 3, 'matched_length': 6, 'match_coverage': 100.0, 'matcher': '1-spdx-id', 'license_expression': 'apache-2.0', 'rule_identifier': 'spdx-license-identifier: apache-2.0', 'referenced_filenames': [], 'is_license_text': False, 'is_license_notice': False, 'is_license_reference': False, 'is_license_tag': True, 'is_license_intro': False, 'rule_length': 6, 'rule_relevance': 100, 'licenses': [{'key': 'apache-2.0', 'name': 'Apache License 2.0', 'short_name': 'Apache 2.0', 'category': 'Permissive', 'is_exception': False, 'is_unknown': False, 'owner': 'Apache Software Foundation', 'homepage_url': 'http://www.apache.org/licenses/', 'text_url': 'http://www.apache.org/licenses/LICENSE-2.0', 'reference_url': 'https://scancode-licensedb.aboutcode.org/apache-2.0', 'scancode_text_url': 'https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.LICENSE', 'scancode_data_url': 'https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.yml', 'spdx_license_key': 'Apache-2.0', 'spdx_url': 'https://spdx.org/licenses/Apache-2.0'}]}, {'score': 100.0, 'start_line': 4, 'end_line': 4, 'matched_length': 8, 'match_coverage': 100.0, 'matcher': '2-aho', 'license_expression': 'apache-2.0', 'rule_identifier': 'apache-2.0_25.RULE', 'referenced_filenames': [], 'is_license_text': False, 'is_license_notice': False, 'is_license_reference': True, 'is_license_tag': False, 'is_license_intro': False, 'rule_length': 8, 'rule_relevance': 100, 'licenses': [{'key': 'apache-2.0', 'name': 'Apache License 2.0', 'short_name': 'Apache 2.0', 'category': 'Permissive', 'is_exception': False, 'is_unknown': False, 'owner': 'Apache Software Foundation', 'homepage_url': 'http://www.apache.org/licenses/', 'text_url': 'http://www.apache.org/licenses/LICENSE-2.0', 'reference_url': 'https://scancode-licensedb.aboutcode.org/apache-2.0', 'scancode_text_url': 'https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.LICENSE', 'scancode_data_url': 'https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.yml', 'spdx_license_key': 'Apache-2.0', 'spdx_url': 'https://spdx.org/licenses/Apache-2.0'}]}]}, {'license_expression': 'apache-2.0', 'detection_rules': ['not-combined'], 'matches': [{'score': 100.0, 'start_line': 4, 'end_line': 4, 'matched_length': 4, 'match_coverage': 100.0, 'matcher': '2-aho', 'license_expression': 'apache-2.0', 'rule_identifier': 'apache-2.0_65.RULE', 'referenced_filenames': [], 'is_license_text': False, 'is_license_notice': False, 'is_license_reference': False, 'is_license_tag': True, 'is_license_intro': False, 'rule_length': 4, 'rule_relevance': 100, 'licenses': [{'key': 'apache-2.0', 'name': 'Apache License 2.0', 'short_name': 'Apache 2.0', 'category': 'Permissive', 'is_exception': False, 'is_unknown': False, 'owner': 'Apache Software Foundation', 'homepage_url': 'http://www.apache.org/licenses/', 'text_url': 'http://www.apache.org/licenses/LICENSE-2.0', 'reference_url': 'https://scancode-licensedb.aboutcode.org/apache-2.0', 'scancode_text_url': 'https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.LICENSE', 'scancode_data_url': 'https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.yml', 'spdx_license_key': 'Apache-2.0', 'spdx_url': 'https://spdx.org/licenses/Apache-2.0'}]}]}]",
+        "package__license_detections": "[{'license_expression': 'apache-2.0', 'detection_log': ['not-combined'], 'matches': [{'score': 100.0, 'start_line': 1, 'end_line': 201, 'matched_length': 1584, 'match_coverage': 100.0, 'matcher': '1-hash', 'license_expression': 'apache-2.0', 'rule_identifier': 'apache-2.0.LICENSE', 'referenced_filenames': [], 'is_license_text': True, 'is_license_notice': False, 'is_license_reference': False, 'is_license_tag': False, 'is_license_intro': False, 'rule_length': 1584, 'rule_relevance': 100, 'licenses': [{'key': 'apache-2.0', 'name': 'Apache License 2.0', 'short_name': 'Apache 2.0', 'category': 'Permissive', 'is_exception': False, 'is_unknown': False, 'owner': 'Apache Software Foundation', 'homepage_url': 'http://www.apache.org/licenses/', 'text_url': 'http://www.apache.org/licenses/LICENSE-2.0', 'reference_url': 'https://scancode-licensedb.aboutcode.org/apache-2.0', 'scancode_text_url': 'https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.LICENSE', 'scancode_data_url': 'https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.yml', 'spdx_license_key': 'Apache-2.0', 'spdx_url': 'https://spdx.org/licenses/Apache-2.0'}]}]}, {'license_expression': 'apache-2.0', 'detection_log': ['not-combined'], 'matches': [{'score': 100.0, 'start_line': 3, 'end_line': 3, 'matched_length': 6, 'match_coverage': 100.0, 'matcher': '1-spdx-id', 'license_expression': 'apache-2.0', 'rule_identifier': 'spdx-license-identifier: apache-2.0', 'referenced_filenames': [], 'is_license_text': False, 'is_license_notice': False, 'is_license_reference': False, 'is_license_tag': True, 'is_license_intro': False, 'rule_length': 6, 'rule_relevance': 100, 'licenses': [{'key': 'apache-2.0', 'name': 'Apache License 2.0', 'short_name': 'Apache 2.0', 'category': 'Permissive', 'is_exception': False, 'is_unknown': False, 'owner': 'Apache Software Foundation', 'homepage_url': 'http://www.apache.org/licenses/', 'text_url': 'http://www.apache.org/licenses/LICENSE-2.0', 'reference_url': 'https://scancode-licensedb.aboutcode.org/apache-2.0', 'scancode_text_url': 'https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.LICENSE', 'scancode_data_url': 'https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.yml', 'spdx_license_key': 'Apache-2.0', 'spdx_url': 'https://spdx.org/licenses/Apache-2.0'}]}, {'score': 100.0, 'start_line': 4, 'end_line': 4, 'matched_length': 8, 'match_coverage': 100.0, 'matcher': '2-aho', 'license_expression': 'apache-2.0', 'rule_identifier': 'apache-2.0_25.RULE', 'referenced_filenames': [], 'is_license_text': False, 'is_license_notice': False, 'is_license_reference': True, 'is_license_tag': False, 'is_license_intro': False, 'rule_length': 8, 'rule_relevance': 100, 'licenses': [{'key': 'apache-2.0', 'name': 'Apache License 2.0', 'short_name': 'Apache 2.0', 'category': 'Permissive', 'is_exception': False, 'is_unknown': False, 'owner': 'Apache Software Foundation', 'homepage_url': 'http://www.apache.org/licenses/', 'text_url': 'http://www.apache.org/licenses/LICENSE-2.0', 'reference_url': 'https://scancode-licensedb.aboutcode.org/apache-2.0', 'scancode_text_url': 'https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.LICENSE', 'scancode_data_url': 'https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.yml', 'spdx_license_key': 'Apache-2.0', 'spdx_url': 'https://spdx.org/licenses/Apache-2.0'}]}]}, {'license_expression': 'apache-2.0', 'detection_log': ['not-combined'], 'matches': [{'score': 100.0, 'start_line': 4, 'end_line': 4, 'matched_length': 4, 'match_coverage': 100.0, 'matcher': '2-aho', 'license_expression': 'apache-2.0', 'rule_identifier': 'apache-2.0_65.RULE', 'referenced_filenames': [], 'is_license_text': False, 'is_license_notice': False, 'is_license_reference': False, 'is_license_tag': True, 'is_license_intro': False, 'rule_length': 4, 'rule_relevance': 100, 'licenses': [{'key': 'apache-2.0', 'name': 'Apache License 2.0', 'short_name': 'Apache 2.0', 'category': 'Permissive', 'is_exception': False, 'is_unknown': False, 'owner': 'Apache Software Foundation', 'homepage_url': 'http://www.apache.org/licenses/', 'text_url': 'http://www.apache.org/licenses/LICENSE-2.0', 'reference_url': 'https://scancode-licensedb.aboutcode.org/apache-2.0', 'scancode_text_url': 'https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.LICENSE', 'scancode_data_url': 'https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.yml', 'spdx_license_key': 'Apache-2.0', 'spdx_url': 'https://spdx.org/licenses/Apache-2.0'}]}]}]",
         "package__other_license_expression": "",
         "package__other_license_expression_spdx": "",
         "package__other_license_detections": "",
@@ -933,7 +933,7 @@
         "package__copyright": "",
         "package__declared_license_expression": "apache-2.0",
         "package__declared_license_expression_spdx": "Apache-2.0",
-        "package__license_detections": "[{'license_expression': 'apache-2.0', 'detection_rules': ['not-combined'], 'matches': [{'score': 100.0, 'start_line': 1, 'end_line': 201, 'matched_length': 1584, 'match_coverage': 100.0, 'matcher': '1-hash', 'license_expression': 'apache-2.0', 'rule_identifier': 'apache-2.0.LICENSE', 'referenced_filenames': [], 'is_license_text': True, 'is_license_notice': False, 'is_license_reference': False, 'is_license_tag': False, 'is_license_intro': False, 'rule_length': 1584, 'rule_relevance': 100, 'licenses': [{'key': 'apache-2.0', 'name': 'Apache License 2.0', 'short_name': 'Apache 2.0', 'category': 'Permissive', 'is_exception': False, 'is_unknown': False, 'owner': 'Apache Software Foundation', 'homepage_url': 'http://www.apache.org/licenses/', 'text_url': 'http://www.apache.org/licenses/LICENSE-2.0', 'reference_url': 'https://scancode-licensedb.aboutcode.org/apache-2.0', 'scancode_text_url': 'https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.LICENSE', 'scancode_data_url': 'https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.yml', 'spdx_license_key': 'Apache-2.0', 'spdx_url': 'https://spdx.org/licenses/Apache-2.0'}]}]}, {'license_expression': 'apache-2.0', 'detection_rules': ['not-combined'], 'matches': [{'score': 100.0, 'start_line': 3, 'end_line': 3, 'matched_length': 6, 'match_coverage': 100.0, 'matcher': '1-spdx-id', 'license_expression': 'apache-2.0', 'rule_identifier': 'spdx-license-identifier: apache-2.0', 'referenced_filenames': [], 'is_license_text': False, 'is_license_notice': False, 'is_license_reference': False, 'is_license_tag': True, 'is_license_intro': False, 'rule_length': 6, 'rule_relevance': 100, 'licenses': [{'key': 'apache-2.0', 'name': 'Apache License 2.0', 'short_name': 'Apache 2.0', 'category': 'Permissive', 'is_exception': False, 'is_unknown': False, 'owner': 'Apache Software Foundation', 'homepage_url': 'http://www.apache.org/licenses/', 'text_url': 'http://www.apache.org/licenses/LICENSE-2.0', 'reference_url': 'https://scancode-licensedb.aboutcode.org/apache-2.0', 'scancode_text_url': 'https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.LICENSE', 'scancode_data_url': 'https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.yml', 'spdx_license_key': 'Apache-2.0', 'spdx_url': 'https://spdx.org/licenses/Apache-2.0'}]}, {'score': 100.0, 'start_line': 4, 'end_line': 4, 'matched_length': 8, 'match_coverage': 100.0, 'matcher': '2-aho', 'license_expression': 'apache-2.0', 'rule_identifier': 'apache-2.0_25.RULE', 'referenced_filenames': [], 'is_license_text': False, 'is_license_notice': False, 'is_license_reference': True, 'is_license_tag': False, 'is_license_intro': False, 'rule_length': 8, 'rule_relevance': 100, 'licenses': [{'key': 'apache-2.0', 'name': 'Apache License 2.0', 'short_name': 'Apache 2.0', 'category': 'Permissive', 'is_exception': False, 'is_unknown': False, 'owner': 'Apache Software Foundation', 'homepage_url': 'http://www.apache.org/licenses/', 'text_url': 'http://www.apache.org/licenses/LICENSE-2.0', 'reference_url': 'https://scancode-licensedb.aboutcode.org/apache-2.0', 'scancode_text_url': 'https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.LICENSE', 'scancode_data_url': 'https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.yml', 'spdx_license_key': 'Apache-2.0', 'spdx_url': 'https://spdx.org/licenses/Apache-2.0'}]}]}, {'license_expression': 'apache-2.0', 'detection_rules': ['not-combined'], 'matches': [{'score': 100.0, 'start_line': 4, 'end_line': 4, 'matched_length': 4, 'match_coverage': 100.0, 'matcher': '2-aho', 'license_expression': 'apache-2.0', 'rule_identifier': 'apache-2.0_65.RULE', 'referenced_filenames': [], 'is_license_text': False, 'is_license_notice': False, 'is_license_reference': False, 'is_license_tag': True, 'is_license_intro': False, 'rule_length': 4, 'rule_relevance': 100, 'licenses': [{'key': 'apache-2.0', 'name': 'Apache License 2.0', 'short_name': 'Apache 2.0', 'category': 'Permissive', 'is_exception': False, 'is_unknown': False, 'owner': 'Apache Software Foundation', 'homepage_url': 'http://www.apache.org/licenses/', 'text_url': 'http://www.apache.org/licenses/LICENSE-2.0', 'reference_url': 'https://scancode-licensedb.aboutcode.org/apache-2.0', 'scancode_text_url': 'https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.LICENSE', 'scancode_data_url': 'https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.yml', 'spdx_license_key': 'Apache-2.0', 'spdx_url': 'https://spdx.org/licenses/Apache-2.0'}]}]}]",
+        "package__license_detections": "[{'license_expression': 'apache-2.0', 'detection_log': ['not-combined'], 'matches': [{'score': 100.0, 'start_line': 1, 'end_line': 201, 'matched_length': 1584, 'match_coverage': 100.0, 'matcher': '1-hash', 'license_expression': 'apache-2.0', 'rule_identifier': 'apache-2.0.LICENSE', 'referenced_filenames': [], 'is_license_text': True, 'is_license_notice': False, 'is_license_reference': False, 'is_license_tag': False, 'is_license_intro': False, 'rule_length': 1584, 'rule_relevance': 100, 'licenses': [{'key': 'apache-2.0', 'name': 'Apache License 2.0', 'short_name': 'Apache 2.0', 'category': 'Permissive', 'is_exception': False, 'is_unknown': False, 'owner': 'Apache Software Foundation', 'homepage_url': 'http://www.apache.org/licenses/', 'text_url': 'http://www.apache.org/licenses/LICENSE-2.0', 'reference_url': 'https://scancode-licensedb.aboutcode.org/apache-2.0', 'scancode_text_url': 'https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.LICENSE', 'scancode_data_url': 'https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.yml', 'spdx_license_key': 'Apache-2.0', 'spdx_url': 'https://spdx.org/licenses/Apache-2.0'}]}]}, {'license_expression': 'apache-2.0', 'detection_log': ['not-combined'], 'matches': [{'score': 100.0, 'start_line': 3, 'end_line': 3, 'matched_length': 6, 'match_coverage': 100.0, 'matcher': '1-spdx-id', 'license_expression': 'apache-2.0', 'rule_identifier': 'spdx-license-identifier: apache-2.0', 'referenced_filenames': [], 'is_license_text': False, 'is_license_notice': False, 'is_license_reference': False, 'is_license_tag': True, 'is_license_intro': False, 'rule_length': 6, 'rule_relevance': 100, 'licenses': [{'key': 'apache-2.0', 'name': 'Apache License 2.0', 'short_name': 'Apache 2.0', 'category': 'Permissive', 'is_exception': False, 'is_unknown': False, 'owner': 'Apache Software Foundation', 'homepage_url': 'http://www.apache.org/licenses/', 'text_url': 'http://www.apache.org/licenses/LICENSE-2.0', 'reference_url': 'https://scancode-licensedb.aboutcode.org/apache-2.0', 'scancode_text_url': 'https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.LICENSE', 'scancode_data_url': 'https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.yml', 'spdx_license_key': 'Apache-2.0', 'spdx_url': 'https://spdx.org/licenses/Apache-2.0'}]}, {'score': 100.0, 'start_line': 4, 'end_line': 4, 'matched_length': 8, 'match_coverage': 100.0, 'matcher': '2-aho', 'license_expression': 'apache-2.0', 'rule_identifier': 'apache-2.0_25.RULE', 'referenced_filenames': [], 'is_license_text': False, 'is_license_notice': False, 'is_license_reference': True, 'is_license_tag': False, 'is_license_intro': False, 'rule_length': 8, 'rule_relevance': 100, 'licenses': [{'key': 'apache-2.0', 'name': 'Apache License 2.0', 'short_name': 'Apache 2.0', 'category': 'Permissive', 'is_exception': False, 'is_unknown': False, 'owner': 'Apache Software Foundation', 'homepage_url': 'http://www.apache.org/licenses/', 'text_url': 'http://www.apache.org/licenses/LICENSE-2.0', 'reference_url': 'https://scancode-licensedb.aboutcode.org/apache-2.0', 'scancode_text_url': 'https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.LICENSE', 'scancode_data_url': 'https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.yml', 'spdx_license_key': 'Apache-2.0', 'spdx_url': 'https://spdx.org/licenses/Apache-2.0'}]}]}, {'license_expression': 'apache-2.0', 'detection_log': ['not-combined'], 'matches': [{'score': 100.0, 'start_line': 4, 'end_line': 4, 'matched_length': 4, 'match_coverage': 100.0, 'matcher': '2-aho', 'license_expression': 'apache-2.0', 'rule_identifier': 'apache-2.0_65.RULE', 'referenced_filenames': [], 'is_license_text': False, 'is_license_notice': False, 'is_license_reference': False, 'is_license_tag': True, 'is_license_intro': False, 'rule_length': 4, 'rule_relevance': 100, 'licenses': [{'key': 'apache-2.0', 'name': 'Apache License 2.0', 'short_name': 'Apache 2.0', 'category': 'Permissive', 'is_exception': False, 'is_unknown': False, 'owner': 'Apache Software Foundation', 'homepage_url': 'http://www.apache.org/licenses/', 'text_url': 'http://www.apache.org/licenses/LICENSE-2.0', 'reference_url': 'https://scancode-licensedb.aboutcode.org/apache-2.0', 'scancode_text_url': 'https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.LICENSE', 'scancode_data_url': 'https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.yml', 'spdx_license_key': 'Apache-2.0', 'spdx_url': 'https://spdx.org/licenses/Apache-2.0'}]}]}]",
         "package__other_license_expression": "",
         "package__other_license_expression_spdx": "",
         "package__other_license_detections": "",
@@ -978,7 +978,7 @@
     {
         "path": "samples/commoncode/setup.cfg",
         "license_expression": "apache-2.0",
-        "detection_rules": "not-combined",
+        "detection_log": "not-combined",
         "license_match__score": "100.00",
         "start_line": 3,
         "end_line": 3,
@@ -1000,7 +1000,7 @@
     {
         "path": "samples/commoncode/setup.cfg",
         "license_expression": "apache-2.0",
-        "detection_rules": "not-combined",
+        "detection_log": "not-combined",
         "license_match__score": "100.00",
         "start_line": 12,
         "end_line": 12,
@@ -1095,7 +1095,7 @@
         "package__copyright": "",
         "package__declared_license_expression": "apache-2.0",
         "package__declared_license_expression_spdx": "Apache-2.0",
-        "package__license_detections": "[{'license_expression': 'apache-2.0', 'detection_rules': ['not-combined'], 'matches': [{'score': 100.0, 'start_line': 1, 'end_line': 201, 'matched_length': 1584, 'match_coverage': 100.0, 'matcher': '1-hash', 'license_expression': 'apache-2.0', 'rule_identifier': 'apache-2.0.LICENSE', 'referenced_filenames': [], 'is_license_text': True, 'is_license_notice': False, 'is_license_reference': False, 'is_license_tag': False, 'is_license_intro': False, 'rule_length': 1584, 'rule_relevance': 100, 'licenses': [{'key': 'apache-2.0', 'name': 'Apache License 2.0', 'short_name': 'Apache 2.0', 'category': 'Permissive', 'is_exception': False, 'is_unknown': False, 'owner': 'Apache Software Foundation', 'homepage_url': 'http://www.apache.org/licenses/', 'text_url': 'http://www.apache.org/licenses/LICENSE-2.0', 'reference_url': 'https://scancode-licensedb.aboutcode.org/apache-2.0', 'scancode_text_url': 'https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.LICENSE', 'scancode_data_url': 'https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.yml', 'spdx_license_key': 'Apache-2.0', 'spdx_url': 'https://spdx.org/licenses/Apache-2.0'}]}]}, {'license_expression': 'apache-2.0', 'detection_rules': ['not-combined'], 'matches': [{'score': 100.0, 'start_line': 3, 'end_line': 3, 'matched_length': 6, 'match_coverage': 100.0, 'matcher': '1-spdx-id', 'license_expression': 'apache-2.0', 'rule_identifier': 'spdx-license-identifier: apache-2.0', 'referenced_filenames': [], 'is_license_text': False, 'is_license_notice': False, 'is_license_reference': False, 'is_license_tag': True, 'is_license_intro': False, 'rule_length': 6, 'rule_relevance': 100, 'licenses': [{'key': 'apache-2.0', 'name': 'Apache License 2.0', 'short_name': 'Apache 2.0', 'category': 'Permissive', 'is_exception': False, 'is_unknown': False, 'owner': 'Apache Software Foundation', 'homepage_url': 'http://www.apache.org/licenses/', 'text_url': 'http://www.apache.org/licenses/LICENSE-2.0', 'reference_url': 'https://scancode-licensedb.aboutcode.org/apache-2.0', 'scancode_text_url': 'https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.LICENSE', 'scancode_data_url': 'https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.yml', 'spdx_license_key': 'Apache-2.0', 'spdx_url': 'https://spdx.org/licenses/Apache-2.0'}]}, {'score': 100.0, 'start_line': 4, 'end_line': 4, 'matched_length': 8, 'match_coverage': 100.0, 'matcher': '2-aho', 'license_expression': 'apache-2.0', 'rule_identifier': 'apache-2.0_25.RULE', 'referenced_filenames': [], 'is_license_text': False, 'is_license_notice': False, 'is_license_reference': True, 'is_license_tag': False, 'is_license_intro': False, 'rule_length': 8, 'rule_relevance': 100, 'licenses': [{'key': 'apache-2.0', 'name': 'Apache License 2.0', 'short_name': 'Apache 2.0', 'category': 'Permissive', 'is_exception': False, 'is_unknown': False, 'owner': 'Apache Software Foundation', 'homepage_url': 'http://www.apache.org/licenses/', 'text_url': 'http://www.apache.org/licenses/LICENSE-2.0', 'reference_url': 'https://scancode-licensedb.aboutcode.org/apache-2.0', 'scancode_text_url': 'https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.LICENSE', 'scancode_data_url': 'https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.yml', 'spdx_license_key': 'Apache-2.0', 'spdx_url': 'https://spdx.org/licenses/Apache-2.0'}]}]}, {'license_expression': 'apache-2.0', 'detection_rules': ['not-combined'], 'matches': [{'score': 100.0, 'start_line': 4, 'end_line': 4, 'matched_length': 4, 'match_coverage': 100.0, 'matcher': '2-aho', 'license_expression': 'apache-2.0', 'rule_identifier': 'apache-2.0_65.RULE', 'referenced_filenames': [], 'is_license_text': False, 'is_license_notice': False, 'is_license_reference': False, 'is_license_tag': True, 'is_license_intro': False, 'rule_length': 4, 'rule_relevance': 100, 'licenses': [{'key': 'apache-2.0', 'name': 'Apache License 2.0', 'short_name': 'Apache 2.0', 'category': 'Permissive', 'is_exception': False, 'is_unknown': False, 'owner': 'Apache Software Foundation', 'homepage_url': 'http://www.apache.org/licenses/', 'text_url': 'http://www.apache.org/licenses/LICENSE-2.0', 'reference_url': 'https://scancode-licensedb.aboutcode.org/apache-2.0', 'scancode_text_url': 'https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.LICENSE', 'scancode_data_url': 'https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.yml', 'spdx_license_key': 'Apache-2.0', 'spdx_url': 'https://spdx.org/licenses/Apache-2.0'}]}]}]",
+        "package__license_detections": "[{'license_expression': 'apache-2.0', 'detection_log': ['not-combined'], 'matches': [{'score': 100.0, 'start_line': 1, 'end_line': 201, 'matched_length': 1584, 'match_coverage': 100.0, 'matcher': '1-hash', 'license_expression': 'apache-2.0', 'rule_identifier': 'apache-2.0.LICENSE', 'referenced_filenames': [], 'is_license_text': True, 'is_license_notice': False, 'is_license_reference': False, 'is_license_tag': False, 'is_license_intro': False, 'rule_length': 1584, 'rule_relevance': 100, 'licenses': [{'key': 'apache-2.0', 'name': 'Apache License 2.0', 'short_name': 'Apache 2.0', 'category': 'Permissive', 'is_exception': False, 'is_unknown': False, 'owner': 'Apache Software Foundation', 'homepage_url': 'http://www.apache.org/licenses/', 'text_url': 'http://www.apache.org/licenses/LICENSE-2.0', 'reference_url': 'https://scancode-licensedb.aboutcode.org/apache-2.0', 'scancode_text_url': 'https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.LICENSE', 'scancode_data_url': 'https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.yml', 'spdx_license_key': 'Apache-2.0', 'spdx_url': 'https://spdx.org/licenses/Apache-2.0'}]}]}, {'license_expression': 'apache-2.0', 'detection_log': ['not-combined'], 'matches': [{'score': 100.0, 'start_line': 3, 'end_line': 3, 'matched_length': 6, 'match_coverage': 100.0, 'matcher': '1-spdx-id', 'license_expression': 'apache-2.0', 'rule_identifier': 'spdx-license-identifier: apache-2.0', 'referenced_filenames': [], 'is_license_text': False, 'is_license_notice': False, 'is_license_reference': False, 'is_license_tag': True, 'is_license_intro': False, 'rule_length': 6, 'rule_relevance': 100, 'licenses': [{'key': 'apache-2.0', 'name': 'Apache License 2.0', 'short_name': 'Apache 2.0', 'category': 'Permissive', 'is_exception': False, 'is_unknown': False, 'owner': 'Apache Software Foundation', 'homepage_url': 'http://www.apache.org/licenses/', 'text_url': 'http://www.apache.org/licenses/LICENSE-2.0', 'reference_url': 'https://scancode-licensedb.aboutcode.org/apache-2.0', 'scancode_text_url': 'https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.LICENSE', 'scancode_data_url': 'https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.yml', 'spdx_license_key': 'Apache-2.0', 'spdx_url': 'https://spdx.org/licenses/Apache-2.0'}]}, {'score': 100.0, 'start_line': 4, 'end_line': 4, 'matched_length': 8, 'match_coverage': 100.0, 'matcher': '2-aho', 'license_expression': 'apache-2.0', 'rule_identifier': 'apache-2.0_25.RULE', 'referenced_filenames': [], 'is_license_text': False, 'is_license_notice': False, 'is_license_reference': True, 'is_license_tag': False, 'is_license_intro': False, 'rule_length': 8, 'rule_relevance': 100, 'licenses': [{'key': 'apache-2.0', 'name': 'Apache License 2.0', 'short_name': 'Apache 2.0', 'category': 'Permissive', 'is_exception': False, 'is_unknown': False, 'owner': 'Apache Software Foundation', 'homepage_url': 'http://www.apache.org/licenses/', 'text_url': 'http://www.apache.org/licenses/LICENSE-2.0', 'reference_url': 'https://scancode-licensedb.aboutcode.org/apache-2.0', 'scancode_text_url': 'https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.LICENSE', 'scancode_data_url': 'https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.yml', 'spdx_license_key': 'Apache-2.0', 'spdx_url': 'https://spdx.org/licenses/Apache-2.0'}]}]}, {'license_expression': 'apache-2.0', 'detection_log': ['not-combined'], 'matches': [{'score': 100.0, 'start_line': 4, 'end_line': 4, 'matched_length': 4, 'match_coverage': 100.0, 'matcher': '2-aho', 'license_expression': 'apache-2.0', 'rule_identifier': 'apache-2.0_65.RULE', 'referenced_filenames': [], 'is_license_text': False, 'is_license_notice': False, 'is_license_reference': False, 'is_license_tag': True, 'is_license_intro': False, 'rule_length': 4, 'rule_relevance': 100, 'licenses': [{'key': 'apache-2.0', 'name': 'Apache License 2.0', 'short_name': 'Apache 2.0', 'category': 'Permissive', 'is_exception': False, 'is_unknown': False, 'owner': 'Apache Software Foundation', 'homepage_url': 'http://www.apache.org/licenses/', 'text_url': 'http://www.apache.org/licenses/LICENSE-2.0', 'reference_url': 'https://scancode-licensedb.aboutcode.org/apache-2.0', 'scancode_text_url': 'https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.LICENSE', 'scancode_data_url': 'https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.yml', 'spdx_license_key': 'Apache-2.0', 'spdx_url': 'https://spdx.org/licenses/Apache-2.0'}]}]}]",
         "package__other_license_expression": "",
         "package__other_license_expression_spdx": "",
         "package__other_license_detections": "",
@@ -1196,7 +1196,7 @@
     {
         "path": "samples/commoncode/src/commoncode/__init__.py",
         "license_expression": "apache-2.0",
-        "detection_rules": "not-combined",
+        "detection_log": "not-combined",
         "license_match__score": "100.00",
         "start_line": 3,
         "end_line": 3,
@@ -1218,7 +1218,7 @@
     {
         "path": "samples/commoncode/src/commoncode/__init__.py",
         "license_expression": "apache-2.0",
-        "detection_rules": "not-combined",
+        "detection_log": "not-combined",
         "license_match__score": "100.00",
         "start_line": 4,
         "end_line": 4,
@@ -1298,7 +1298,7 @@
     {
         "path": "samples/commoncode/src/commoncode/archive.py",
         "license_expression": "apache-2.0",
-        "detection_rules": "not-combined",
+        "detection_log": "not-combined",
         "license_match__score": "100.00",
         "start_line": 3,
         "end_line": 3,
@@ -1320,7 +1320,7 @@
     {
         "path": "samples/commoncode/src/commoncode/archive.py",
         "license_expression": "apache-2.0",
-        "detection_rules": "not-combined",
+        "detection_log": "not-combined",
         "license_match__score": "100.00",
         "start_line": 4,
         "end_line": 4,
@@ -1400,7 +1400,7 @@
     {
         "path": "samples/commoncode/src/commoncode/cliutils.py",
         "license_expression": "apache-2.0",
-        "detection_rules": "not-combined",
+        "detection_log": "not-combined",
         "license_match__score": "100.00",
         "start_line": 3,
         "end_line": 3,
@@ -1422,7 +1422,7 @@
     {
         "path": "samples/commoncode/src/commoncode/cliutils.py",
         "license_expression": "apache-2.0",
-        "detection_rules": "not-combined",
+        "detection_log": "not-combined",
         "license_match__score": "100.00",
         "start_line": 4,
         "end_line": 4,
@@ -1526,7 +1526,7 @@
     {
         "path": "samples/commoncode/src/commoncode/codec.py",
         "license_expression": "apache-2.0",
-        "detection_rules": "not-combined",
+        "detection_log": "not-combined",
         "license_match__score": "100.00",
         "start_line": 3,
         "end_line": 3,
@@ -1548,7 +1548,7 @@
     {
         "path": "samples/commoncode/src/commoncode/codec.py",
         "license_expression": "apache-2.0",
-        "detection_rules": "not-combined",
+        "detection_log": "not-combined",
         "license_match__score": "100.00",
         "start_line": 4,
         "end_line": 4,
@@ -1628,7 +1628,7 @@
     {
         "path": "samples/commoncode/src/commoncode/command.py",
         "license_expression": "apache-2.0",
-        "detection_rules": "not-combined",
+        "detection_log": "not-combined",
         "license_match__score": "100.00",
         "start_line": 3,
         "end_line": 3,
@@ -1650,7 +1650,7 @@
     {
         "path": "samples/commoncode/src/commoncode/command.py",
         "license_expression": "apache-2.0",
-        "detection_rules": "not-combined",
+        "detection_log": "not-combined",
         "license_match__score": "100.00",
         "start_line": 4,
         "end_line": 4,
@@ -1736,7 +1736,7 @@
     {
         "path": "samples/commoncode/src/commoncode/compat.py",
         "license_expression": "apache-2.0",
-        "detection_rules": "not-combined",
+        "detection_log": "not-combined",
         "license_match__score": "100.00",
         "start_line": 3,
         "end_line": 3,
@@ -1758,7 +1758,7 @@
     {
         "path": "samples/commoncode/src/commoncode/compat.py",
         "license_expression": "apache-2.0",
-        "detection_rules": "not-combined",
+        "detection_log": "not-combined",
         "license_match__score": "100.00",
         "start_line": 4,
         "end_line": 4,
@@ -1838,7 +1838,7 @@
     {
         "path": "samples/commoncode/src/commoncode/datautils.py",
         "license_expression": "apache-2.0 AND agpl-3.0",
-        "detection_rules": "not-combined",
+        "detection_log": "not-combined",
         "license_match__score": "100.00",
         "start_line": 3,
         "end_line": 3,
@@ -1860,7 +1860,7 @@
     {
         "path": "samples/commoncode/src/commoncode/datautils.py",
         "license_expression": "apache-2.0 AND agpl-3.0",
-        "detection_rules": "not-combined",
+        "detection_log": "not-combined",
         "license_match__score": "100.00",
         "start_line": 4,
         "end_line": 4,
@@ -1882,7 +1882,7 @@
     {
         "path": "samples/commoncode/src/commoncode/datautils.py",
         "license_expression": "apache-2.0 AND agpl-3.0",
-        "detection_rules": "not-combined",
+        "detection_log": "not-combined",
         "license_match__score": "12.12",
         "start_line": 4,
         "end_line": 4,
@@ -1964,7 +1964,7 @@
     {
         "path": "samples/commoncode/src/commoncode/date.py",
         "license_expression": "apache-2.0",
-        "detection_rules": "not-combined",
+        "detection_log": "not-combined",
         "license_match__score": "100.00",
         "start_line": 3,
         "end_line": 3,
@@ -1986,7 +1986,7 @@
     {
         "path": "samples/commoncode/src/commoncode/date.py",
         "license_expression": "apache-2.0",
-        "detection_rules": "not-combined",
+        "detection_log": "not-combined",
         "license_match__score": "100.00",
         "start_line": 4,
         "end_line": 4,
@@ -2066,7 +2066,7 @@
     {
         "path": "samples/commoncode/src/commoncode/dict_utils.ABOUT",
         "license_expression": "python",
-        "detection_rules": "not-combined",
+        "detection_log": "not-combined",
         "license_match__score": "100.00",
         "start_line": 9,
         "end_line": 9,
@@ -2127,7 +2127,7 @@
         "package__copyright": "Copyright (c) 2013 Raymond Hettinger",
         "package__declared_license_expression": "python",
         "package__declared_license_expression_spdx": "Python-2.0",
-        "package__license_detections": "[{'license_expression': 'python', 'detection_rules': ['not-combined'], 'matches': [{'score': 100.0, 'start_line': 1, 'end_line': 1, 'matched_length': 2, 'match_coverage': 100.0, 'matcher': '1-hash', 'license_expression': 'python', 'rule_identifier': 'python_13.RULE', 'referenced_filenames': [], 'is_license_text': False, 'is_license_notice': False, 'is_license_reference': False, 'is_license_tag': True, 'is_license_intro': False, 'rule_length': 2, 'rule_relevance': 100, 'matched_text': 'license python', 'licenses': [{'key': 'python', 'name': 'Python Software Foundation License v2', 'short_name': 'Python License 2.0', 'category': 'Permissive', 'is_exception': False, 'is_unknown': False, 'owner': 'Python Software Foundation (PSF)', 'homepage_url': 'http://docs.python.org/license.html', 'text_url': 'http://spdx.org/licenses/Python-2.0', 'reference_url': 'https://scancode-licensedb.aboutcode.org/python', 'scancode_text_url': 'https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/python.LICENSE', 'scancode_data_url': 'https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/python.yml', 'spdx_license_key': 'Python-2.0', 'spdx_url': 'https://spdx.org/licenses/Python-2.0'}]}]}]",
+        "package__license_detections": "[{'license_expression': 'python', 'detection_log': ['not-combined'], 'matches': [{'score': 100.0, 'start_line': 1, 'end_line': 1, 'matched_length': 2, 'match_coverage': 100.0, 'matcher': '1-hash', 'license_expression': 'python', 'rule_identifier': 'python_13.RULE', 'referenced_filenames': [], 'is_license_text': False, 'is_license_notice': False, 'is_license_reference': False, 'is_license_tag': True, 'is_license_intro': False, 'rule_length': 2, 'rule_relevance': 100, 'matched_text': 'license python', 'licenses': [{'key': 'python', 'name': 'Python Software Foundation License v2', 'short_name': 'Python License 2.0', 'category': 'Permissive', 'is_exception': False, 'is_unknown': False, 'owner': 'Python Software Foundation (PSF)', 'homepage_url': 'http://docs.python.org/license.html', 'text_url': 'http://spdx.org/licenses/Python-2.0', 'reference_url': 'https://scancode-licensedb.aboutcode.org/python', 'scancode_text_url': 'https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/python.LICENSE', 'scancode_data_url': 'https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/python.yml', 'spdx_license_key': 'Python-2.0', 'spdx_url': 'https://spdx.org/licenses/Python-2.0'}]}]}]",
         "package__other_license_expression": "",
         "package__other_license_expression_spdx": "",
         "package__other_license_detections": "",
@@ -2172,7 +2172,7 @@
     {
         "path": "samples/commoncode/src/commoncode/dict_utils.py",
         "license_expression": "python",
-        "detection_rules": "not-combined",
+        "detection_log": "not-combined",
         "license_match__score": "100.00",
         "start_line": 3,
         "end_line": 3,
@@ -2246,7 +2246,7 @@
     {
         "path": "samples/commoncode/src/commoncode/fetch.py",
         "license_expression": "apache-2.0",
-        "detection_rules": "not-combined",
+        "detection_log": "not-combined",
         "license_match__score": "100.00",
         "start_line": 3,
         "end_line": 3,
@@ -2268,7 +2268,7 @@
     {
         "path": "samples/commoncode/src/commoncode/fetch.py",
         "license_expression": "apache-2.0",
-        "detection_rules": "not-combined",
+        "detection_log": "not-combined",
         "license_match__score": "100.00",
         "start_line": 4,
         "end_line": 4,
@@ -2348,7 +2348,7 @@
     {
         "path": "samples/commoncode/src/commoncode/fileset.py",
         "license_expression": "apache-2.0",
-        "detection_rules": "not-combined",
+        "detection_log": "not-combined",
         "license_match__score": "100.00",
         "start_line": 3,
         "end_line": 3,
@@ -2370,7 +2370,7 @@
     {
         "path": "samples/commoncode/src/commoncode/fileset.py",
         "license_expression": "apache-2.0",
-        "detection_rules": "not-combined",
+        "detection_log": "not-combined",
         "license_match__score": "100.00",
         "start_line": 4,
         "end_line": 4,
@@ -2450,7 +2450,7 @@
     {
         "path": "samples/commoncode/src/commoncode/filetype.py",
         "license_expression": "apache-2.0",
-        "detection_rules": "not-combined",
+        "detection_log": "not-combined",
         "license_match__score": "100.00",
         "start_line": 3,
         "end_line": 3,
@@ -2472,7 +2472,7 @@
     {
         "path": "samples/commoncode/src/commoncode/filetype.py",
         "license_expression": "apache-2.0",
-        "detection_rules": "not-combined",
+        "detection_log": "not-combined",
         "license_match__score": "100.00",
         "start_line": 4,
         "end_line": 4,
@@ -2610,7 +2610,7 @@
     {
         "path": "samples/commoncode/src/commoncode/fileutils.py.ABOUT",
         "license_expression": "apache-2.0 AND python",
-        "detection_rules": "not-combined",
+        "detection_log": "not-combined",
         "license_match__score": "100.00",
         "start_line": 13,
         "end_line": 13,
@@ -2632,7 +2632,7 @@
     {
         "path": "samples/commoncode/src/commoncode/fileutils.py.ABOUT",
         "license_expression": "apache-2.0 AND python",
-        "detection_rules": "not-combined",
+        "detection_log": "not-combined",
         "license_match__score": "100.00",
         "start_line": 17,
         "end_line": 17,
@@ -2699,7 +2699,7 @@
         "package__copyright": "Copyright (c) Python Software Foundation and others",
         "package__declared_license_expression": "apache-2.0",
         "package__declared_license_expression_spdx": "Apache-2.0",
-        "package__license_detections": "[{'license_expression': 'apache-2.0', 'detection_rules': ['not-combined'], 'matches': [{'score': 100.0, 'start_line': 1, 'end_line': 1, 'matched_length': 3, 'match_coverage': 100.0, 'matcher': '2-aho', 'license_expression': 'apache-2.0', 'rule_identifier': 'spdx_license_id_apache-2.0_for_apache-2.0.RULE', 'referenced_filenames': [], 'is_license_text': False, 'is_license_notice': False, 'is_license_reference': True, 'is_license_tag': False, 'is_license_intro': False, 'rule_length': 3, 'rule_relevance': 100, 'matched_text': 'apache-2.0', 'licenses': [{'key': 'apache-2.0', 'name': 'Apache License 2.0', 'short_name': 'Apache 2.0', 'category': 'Permissive', 'is_exception': False, 'is_unknown': False, 'owner': 'Apache Software Foundation', 'homepage_url': 'http://www.apache.org/licenses/', 'text_url': 'http://www.apache.org/licenses/LICENSE-2.0', 'reference_url': 'https://scancode-licensedb.aboutcode.org/apache-2.0', 'scancode_text_url': 'https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.LICENSE', 'scancode_data_url': 'https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.yml', 'spdx_license_key': 'Apache-2.0', 'spdx_url': 'https://spdx.org/licenses/Apache-2.0'}]}]}]",
+        "package__license_detections": "[{'license_expression': 'apache-2.0', 'detection_log': ['not-combined'], 'matches': [{'score': 100.0, 'start_line': 1, 'end_line': 1, 'matched_length': 3, 'match_coverage': 100.0, 'matcher': '2-aho', 'license_expression': 'apache-2.0', 'rule_identifier': 'spdx_license_id_apache-2.0_for_apache-2.0.RULE', 'referenced_filenames': [], 'is_license_text': False, 'is_license_notice': False, 'is_license_reference': True, 'is_license_tag': False, 'is_license_intro': False, 'rule_length': 3, 'rule_relevance': 100, 'matched_text': 'apache-2.0', 'licenses': [{'key': 'apache-2.0', 'name': 'Apache License 2.0', 'short_name': 'Apache 2.0', 'category': 'Permissive', 'is_exception': False, 'is_unknown': False, 'owner': 'Apache Software Foundation', 'homepage_url': 'http://www.apache.org/licenses/', 'text_url': 'http://www.apache.org/licenses/LICENSE-2.0', 'reference_url': 'https://scancode-licensedb.aboutcode.org/apache-2.0', 'scancode_text_url': 'https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.LICENSE', 'scancode_data_url': 'https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.yml', 'spdx_license_key': 'Apache-2.0', 'spdx_url': 'https://spdx.org/licenses/Apache-2.0'}]}]}]",
         "package__other_license_expression": "",
         "package__other_license_expression_spdx": "",
         "package__other_license_detections": "",
@@ -2744,7 +2744,7 @@
     {
         "path": "samples/commoncode/src/commoncode/functional.py",
         "license_expression": "apache-2.0",
-        "detection_rules": "not-combined",
+        "detection_log": "not-combined",
         "license_match__score": "100.00",
         "start_line": 3,
         "end_line": 3,
@@ -2766,7 +2766,7 @@
     {
         "path": "samples/commoncode/src/commoncode/functional.py",
         "license_expression": "apache-2.0",
-        "detection_rules": "not-combined",
+        "detection_log": "not-combined",
         "license_match__score": "100.00",
         "start_line": 4,
         "end_line": 4,
@@ -2788,7 +2788,7 @@
     {
         "path": "samples/commoncode/src/commoncode/functional.py",
         "license_expression": "public-domain",
-        "detection_rules": "not-combined",
+        "detection_log": "not-combined",
         "license_match__score": "100.00",
         "start_line": 34,
         "end_line": 34,
@@ -2880,7 +2880,7 @@
     {
         "path": "samples/commoncode/src/commoncode/hash.py",
         "license_expression": "apache-2.0",
-        "detection_rules": "not-combined",
+        "detection_log": "not-combined",
         "license_match__score": "100.00",
         "start_line": 3,
         "end_line": 3,
@@ -2902,7 +2902,7 @@
     {
         "path": "samples/commoncode/src/commoncode/hash.py",
         "license_expression": "apache-2.0",
-        "detection_rules": "not-combined",
+        "detection_log": "not-combined",
         "license_match__score": "100.00",
         "start_line": 4,
         "end_line": 4,
@@ -2982,7 +2982,7 @@
     {
         "path": "samples/commoncode/src/commoncode/ignore.py",
         "license_expression": "apache-2.0",
-        "detection_rules": "not-combined",
+        "detection_log": "not-combined",
         "license_match__score": "100.00",
         "start_line": 3,
         "end_line": 3,
@@ -3004,7 +3004,7 @@
     {
         "path": "samples/commoncode/src/commoncode/ignore.py",
         "license_expression": "apache-2.0",
-        "detection_rules": "not-combined",
+        "detection_log": "not-combined",
         "license_match__score": "100.00",
         "start_line": 4,
         "end_line": 4,
@@ -3084,7 +3084,7 @@
     {
         "path": "samples/commoncode/src/commoncode/paths.py",
         "license_expression": "apache-2.0",
-        "detection_rules": "not-combined",
+        "detection_log": "not-combined",
         "license_match__score": "100.00",
         "start_line": 3,
         "end_line": 3,
@@ -3106,7 +3106,7 @@
     {
         "path": "samples/commoncode/src/commoncode/paths.py",
         "license_expression": "apache-2.0",
-        "detection_rules": "not-combined",
+        "detection_log": "not-combined",
         "license_match__score": "100.00",
         "start_line": 4,
         "end_line": 4,
@@ -3210,7 +3210,7 @@
     {
         "path": "samples/commoncode/src/commoncode/python.LICENSE",
         "license_expression": "python",
-        "detection_rules": "not-combined",
+        "detection_log": "not-combined",
         "license_match__score": "100.00",
         "start_line": 23,
         "end_line": 26,
@@ -3232,7 +3232,7 @@
     {
         "path": "samples/commoncode/src/commoncode/python.LICENSE",
         "license_expression": "other-copyleft AND gpl-1.0-plus",
-        "detection_rules": "not-combined",
+        "detection_log": "not-combined",
         "license_match__score": "80.00",
         "start_line": 62,
         "end_line": 62,
@@ -3254,7 +3254,7 @@
     {
         "path": "samples/commoncode/src/commoncode/python.LICENSE",
         "license_expression": "other-copyleft AND gpl-1.0-plus",
-        "detection_rules": "not-combined",
+        "detection_log": "not-combined",
         "license_match__score": "100.00",
         "start_line": 62,
         "end_line": 63,
@@ -3276,7 +3276,7 @@
     {
         "path": "samples/commoncode/src/commoncode/python.LICENSE",
         "license_expression": "other-copyleft AND gpl-1.0-plus",
-        "detection_rules": "not-combined",
+        "detection_log": "not-combined",
         "license_match__score": "85.00",
         "start_line": 63,
         "end_line": 63,
@@ -3298,7 +3298,7 @@
     {
         "path": "samples/commoncode/src/commoncode/python.LICENSE",
         "license_expression": "other-copyleft AND gpl-1.0-plus",
-        "detection_rules": "not-combined",
+        "detection_log": "not-combined",
         "license_match__score": "85.00",
         "start_line": 64,
         "end_line": 65,
@@ -3320,7 +3320,7 @@
     {
         "path": "samples/commoncode/src/commoncode/python.LICENSE",
         "license_expression": "other-copyleft AND gpl-1.0-plus",
-        "detection_rules": "not-combined",
+        "detection_log": "not-combined",
         "license_match__score": "80.00",
         "start_line": 65,
         "end_line": 65,
@@ -3342,7 +3342,7 @@
     {
         "path": "samples/commoncode/src/commoncode/python.LICENSE",
         "license_expression": "other-copyleft AND gpl-1.0-plus",
-        "detection_rules": "not-combined",
+        "detection_log": "not-combined",
         "license_match__score": "100.00",
         "start_line": 66,
         "end_line": 66,
@@ -3364,7 +3364,7 @@
     {
         "path": "samples/commoncode/src/commoncode/python.LICENSE",
         "license_expression": "other-copyleft AND gpl-1.0-plus",
-        "detection_rules": "not-combined",
+        "detection_log": "not-combined",
         "license_match__score": "80.00",
         "start_line": 68,
         "end_line": 68,
@@ -3386,7 +3386,7 @@
     {
         "path": "samples/commoncode/src/commoncode/python.LICENSE",
         "license_expression": "other-copyleft AND gpl-1.0-plus",
-        "detection_rules": "not-combined",
+        "detection_log": "not-combined",
         "license_match__score": "85.00",
         "start_line": 71,
         "end_line": 71,
@@ -3408,7 +3408,7 @@
     {
         "path": "samples/commoncode/src/commoncode/python.LICENSE",
         "license_expression": "python AND python-cwi AND unknown-license-reference",
-        "detection_rules": "not-combined",
+        "detection_log": "not-combined",
         "license_match__score": "90.52",
         "start_line": 77,
         "end_line": 255,
@@ -3430,7 +3430,7 @@
     {
         "path": "samples/commoncode/src/commoncode/python.LICENSE",
         "license_expression": "python AND python-cwi AND unknown-license-reference",
-        "detection_rules": "not-combined",
+        "detection_log": "not-combined",
         "license_match__score": "100.00",
         "start_line": 257,
         "end_line": 272,
@@ -3452,7 +3452,7 @@
     {
         "path": "samples/commoncode/src/commoncode/python.LICENSE",
         "license_expression": "python AND python-cwi AND unknown-license-reference",
-        "detection_rules": "not-combined",
+        "detection_log": "not-combined",
         "license_match__score": "100.00",
         "start_line": 274,
         "end_line": 274,
@@ -3474,7 +3474,7 @@
     {
         "path": "samples/commoncode/src/commoncode/python.LICENSE",
         "license_expression": "bzip2-libbzip-2010",
-        "detection_rules": "not-combined",
+        "detection_log": "not-combined",
         "license_match__score": "100.00",
         "start_line": 281,
         "end_line": 310,
@@ -3496,7 +3496,7 @@
     {
         "path": "samples/commoncode/src/commoncode/python.LICENSE",
         "license_expression": "sleepycat",
-        "detection_rules": "not-combined",
+        "detection_log": "not-combined",
         "license_match__score": "100.00",
         "start_line": 334,
         "end_line": 351,
@@ -3518,7 +3518,7 @@
     {
         "path": "samples/commoncode/src/commoncode/python.LICENSE",
         "license_expression": "bsd-new",
-        "detection_rules": "not-combined",
+        "detection_log": "not-combined",
         "license_match__score": "100.00",
         "start_line": 369,
         "end_line": 391,
@@ -3540,7 +3540,7 @@
     {
         "path": "samples/commoncode/src/commoncode/python.LICENSE",
         "license_expression": "openssl-ssleay",
-        "detection_rules": "not-combined",
+        "detection_log": "not-combined",
         "license_match__score": "100.00",
         "start_line": 428,
         "end_line": 432,
@@ -3562,7 +3562,7 @@
     {
         "path": "samples/commoncode/src/commoncode/python.LICENSE",
         "license_expression": "openssl-ssleay",
-        "detection_rules": "not-combined",
+        "detection_log": "not-combined",
         "license_match__score": "100.00",
         "start_line": 434,
         "end_line": 434,
@@ -3584,7 +3584,7 @@
     {
         "path": "samples/commoncode/src/commoncode/python.LICENSE",
         "license_expression": "openssl",
-        "detection_rules": "not-combined",
+        "detection_log": "not-combined",
         "license_match__score": "100.00",
         "start_line": 440,
         "end_line": 487,
@@ -3606,7 +3606,7 @@
     {
         "path": "samples/commoncode/src/commoncode/python.LICENSE",
         "license_expression": "ssleay-windows AND tcl",
-        "detection_rules": "unknown-intro-followed-by-match",
+        "detection_log": "unknown-intro-followed-by-match",
         "license_match__score": "100.00",
         "start_line": 497,
         "end_line": 548,
@@ -3628,7 +3628,7 @@
     {
         "path": "samples/commoncode/src/commoncode/python.LICENSE",
         "license_expression": "ssleay-windows AND tcl",
-        "detection_rules": "unknown-intro-followed-by-match",
+        "detection_log": "unknown-intro-followed-by-match",
         "license_match__score": "100.00",
         "start_line": 552,
         "end_line": 552,
@@ -3650,7 +3650,7 @@
     {
         "path": "samples/commoncode/src/commoncode/python.LICENSE",
         "license_expression": "ssleay-windows AND tcl",
-        "detection_rules": "unknown-intro-followed-by-match",
+        "detection_log": "unknown-intro-followed-by-match",
         "license_match__score": "100.00",
         "start_line": 554,
         "end_line": 593,
@@ -3672,7 +3672,7 @@
     {
         "path": "samples/commoncode/src/commoncode/python.LICENSE",
         "license_expression": "ssleay-windows AND tcl",
-        "detection_rules": "unknown-intro-followed-by-match",
+        "detection_log": "unknown-intro-followed-by-match",
         "license_match__score": "100.00",
         "start_line": 595,
         "end_line": 595,
@@ -3694,7 +3694,7 @@
     {
         "path": "samples/commoncode/src/commoncode/python.LICENSE",
         "license_expression": "ssleay-windows AND tcl",
-        "detection_rules": "unknown-intro-followed-by-match",
+        "detection_log": "unknown-intro-followed-by-match",
         "license_match__score": "100.00",
         "start_line": 597,
         "end_line": 635,
@@ -4008,7 +4008,7 @@
     {
         "path": "samples/commoncode/src/commoncode/resource.py",
         "license_expression": "apache-2.0",
-        "detection_rules": "not-combined",
+        "detection_log": "not-combined",
         "license_match__score": "100.00",
         "start_line": 3,
         "end_line": 3,
@@ -4030,7 +4030,7 @@
     {
         "path": "samples/commoncode/src/commoncode/resource.py",
         "license_expression": "apache-2.0",
-        "detection_rules": "not-combined",
+        "detection_log": "not-combined",
         "license_match__score": "100.00",
         "start_line": 4,
         "end_line": 4,
@@ -4116,7 +4116,7 @@
     {
         "path": "samples/commoncode/src/commoncode/system.py",
         "license_expression": "apache-2.0",
-        "detection_rules": "not-combined",
+        "detection_log": "not-combined",
         "license_match__score": "100.00",
         "start_line": 3,
         "end_line": 3,
@@ -4138,7 +4138,7 @@
     {
         "path": "samples/commoncode/src/commoncode/system.py",
         "license_expression": "apache-2.0",
-        "detection_rules": "not-combined",
+        "detection_log": "not-combined",
         "license_match__score": "100.00",
         "start_line": 4,
         "end_line": 4,
@@ -4230,7 +4230,7 @@
     {
         "path": "samples/commoncode/src/commoncode/testcase.py",
         "license_expression": "apache-2.0",
-        "detection_rules": "not-combined",
+        "detection_log": "not-combined",
         "license_match__score": "100.00",
         "start_line": 3,
         "end_line": 3,
@@ -4252,7 +4252,7 @@
     {
         "path": "samples/commoncode/src/commoncode/testcase.py",
         "license_expression": "apache-2.0",
-        "detection_rules": "not-combined",
+        "detection_log": "not-combined",
         "license_match__score": "100.00",
         "start_line": 4,
         "end_line": 4,
@@ -4332,7 +4332,7 @@
     {
         "path": "samples/commoncode/src/commoncode/text.py",
         "license_expression": "apache-2.0 AND agpl-3.0",
-        "detection_rules": "not-combined",
+        "detection_log": "not-combined",
         "license_match__score": "100.00",
         "start_line": 4,
         "end_line": 4,
@@ -4354,7 +4354,7 @@
     {
         "path": "samples/commoncode/src/commoncode/text.py",
         "license_expression": "apache-2.0 AND agpl-3.0",
-        "detection_rules": "not-combined",
+        "detection_log": "not-combined",
         "license_match__score": "100.00",
         "start_line": 5,
         "end_line": 5,
@@ -4376,7 +4376,7 @@
     {
         "path": "samples/commoncode/src/commoncode/text.py",
         "license_expression": "apache-2.0 AND agpl-3.0",
-        "detection_rules": "not-combined",
+        "detection_log": "not-combined",
         "license_match__score": "12.12",
         "start_line": 5,
         "end_line": 5,
@@ -4470,7 +4470,7 @@
     {
         "path": "samples/commoncode/src/commoncode/timeutils.py",
         "license_expression": "apache-2.0",
-        "detection_rules": "not-combined",
+        "detection_log": "not-combined",
         "license_match__score": "100.00",
         "start_line": 3,
         "end_line": 3,
@@ -4492,7 +4492,7 @@
     {
         "path": "samples/commoncode/src/commoncode/timeutils.py",
         "license_expression": "apache-2.0",
-        "detection_rules": "not-combined",
+        "detection_log": "not-combined",
         "license_match__score": "100.00",
         "start_line": 4,
         "end_line": 4,
@@ -4572,7 +4572,7 @@
     {
         "path": "samples/commoncode/src/commoncode/urn.py",
         "license_expression": "apache-2.0",
-        "detection_rules": "not-combined",
+        "detection_log": "not-combined",
         "license_match__score": "100.00",
         "start_line": 3,
         "end_line": 3,
@@ -4594,7 +4594,7 @@
     {
         "path": "samples/commoncode/src/commoncode/urn.py",
         "license_expression": "apache-2.0",
-        "detection_rules": "not-combined",
+        "detection_log": "not-combined",
         "license_match__score": "100.00",
         "start_line": 4,
         "end_line": 4,
@@ -4616,7 +4616,7 @@
     {
         "path": "samples/commoncode/src/commoncode/urn.py",
         "license_expression": "apache-2.0",
-        "detection_rules": "not-combined",
+        "detection_log": "not-combined",
         "license_match__score": "100.00",
         "start_line": 50,
         "end_line": 50,
@@ -4708,7 +4708,7 @@
     {
         "path": "samples/commoncode/src/commoncode/version.py",
         "license_expression": "apache-2.0",
-        "detection_rules": "not-combined",
+        "detection_log": "not-combined",
         "license_match__score": "100.00",
         "start_line": 3,
         "end_line": 3,
@@ -4730,7 +4730,7 @@
     {
         "path": "samples/commoncode/src/commoncode/version.py",
         "license_expression": "apache-2.0",
-        "detection_rules": "not-combined",
+        "detection_log": "not-combined",
         "license_match__score": "100.00",
         "start_line": 4,
         "end_line": 4,
@@ -4844,7 +4844,7 @@
     {
         "path": "samples/JGroups/EULA",
         "license_expression": "jboss-eula",
-        "detection_rules": "not-combined",
+        "detection_log": "not-combined",
         "license_match__score": "100.00",
         "start_line": 3,
         "end_line": 108,
@@ -4936,7 +4936,7 @@
     {
         "path": "samples/JGroups/LICENSE",
         "license_expression": "lgpl-2.1",
-        "detection_rules": "not-combined",
+        "detection_log": "not-combined",
         "license_match__score": "100.00",
         "start_line": 1,
         "end_line": 502,
@@ -5038,7 +5038,7 @@
     {
         "path": "samples/JGroups/licenses/apache-1.1.txt",
         "license_expression": "apache-1.1",
-        "detection_rules": "not-combined",
+        "detection_log": "not-combined",
         "license_match__score": "100.00",
         "start_line": 2,
         "end_line": 56,
@@ -5118,7 +5118,7 @@
     {
         "path": "samples/JGroups/licenses/apache-2.0.txt",
         "license_expression": "apache-2.0",
-        "detection_rules": "not-combined",
+        "detection_log": "not-combined",
         "license_match__score": "100.00",
         "start_line": 2,
         "end_line": 202,
@@ -5180,7 +5180,7 @@
     {
         "path": "samples/JGroups/licenses/bouncycastle.txt",
         "license_expression": "mit",
-        "detection_rules": "not-combined",
+        "detection_log": "not-combined",
         "license_match__score": "100.00",
         "start_line": 7,
         "end_line": 18,
@@ -5248,7 +5248,7 @@
     {
         "path": "samples/JGroups/licenses/cpl-1.0.txt",
         "license_expression": "cpl-1.0",
-        "detection_rules": "not-combined",
+        "detection_log": "not-combined",
         "license_match__score": "99.94",
         "start_line": 1,
         "end_line": 212,
@@ -5298,7 +5298,7 @@
     {
         "path": "samples/JGroups/licenses/lgpl.txt",
         "license_expression": "lgpl-2.1",
-        "detection_rules": "not-combined",
+        "detection_log": "not-combined",
         "license_match__score": "100.00",
         "start_line": 1,
         "end_line": 502,
@@ -5400,7 +5400,7 @@
     {
         "path": "samples/JGroups/src/FixedMembershipToken.java",
         "license_expression": "lgpl-2.1-plus",
-        "detection_rules": "not-combined",
+        "detection_log": "not-combined",
         "license_match__score": "100.00",
         "start_line": 7,
         "end_line": 20,
@@ -5480,7 +5480,7 @@
     {
         "path": "samples/JGroups/src/GuardedBy.java",
         "license_expression": "cc-by-2.5",
-        "detection_rules": "not-combined",
+        "detection_log": "not-combined",
         "license_match__score": "100.00",
         "start_line": 10,
         "end_line": 11,
@@ -5560,7 +5560,7 @@
     {
         "path": "samples/JGroups/src/ImmutableReference.java",
         "license_expression": "lgpl-2.1-plus",
-        "detection_rules": "not-combined",
+        "detection_log": "not-combined",
         "license_match__score": "100.00",
         "start_line": 7,
         "end_line": 20,
@@ -5708,7 +5708,7 @@
     {
         "path": "samples/JGroups/src/RouterStubManager.java",
         "license_expression": "lgpl-2.1-plus",
-        "detection_rules": "not-combined",
+        "detection_log": "not-combined",
         "license_match__score": "100.00",
         "start_line": 7,
         "end_line": 20,
@@ -5776,7 +5776,7 @@
     {
         "path": "samples/JGroups/src/S3_PING.java",
         "license_expression": "public-domain",
-        "detection_rules": "not-combined",
+        "detection_log": "not-combined",
         "license_match__score": "70.00",
         "start_line": 1649,
         "end_line": 1649,
@@ -5798,7 +5798,7 @@
     {
         "path": "samples/JGroups/src/S3_PING.java",
         "license_expression": "public-domain-disclaimer",
-        "detection_rules": "not-combined",
+        "detection_log": "not-combined",
         "license_match__score": "100.00",
         "start_line": 1692,
         "end_line": 1694,
@@ -5912,7 +5912,7 @@
     {
         "path": "samples/zlib/adler32.c",
         "license_expression": "zlib",
-        "detection_rules": "unknown-reference-to-local-file",
+        "detection_log": "unknown-reference-to-local-file",
         "license_match__score": "100.00",
         "start_line": 3,
         "end_line": 3,
@@ -5936,7 +5936,7 @@
     {
         "path": "samples/zlib/adler32.c",
         "license_expression": "zlib",
-        "detection_rules": "unknown-reference-to-local-file",
+        "detection_log": "unknown-reference-to-local-file",
         "license_match__score": "100.00",
         "start_line": 6,
         "end_line": 23,
@@ -5998,7 +5998,7 @@
     {
         "path": "samples/zlib/deflate.c",
         "license_expression": "zlib",
-        "detection_rules": "unknown-reference-to-local-file",
+        "detection_log": "unknown-reference-to-local-file",
         "license_match__score": "100.00",
         "start_line": 3,
         "end_line": 3,
@@ -6022,7 +6022,7 @@
     {
         "path": "samples/zlib/deflate.c",
         "license_expression": "zlib",
-        "detection_rules": "unknown-reference-to-local-file",
+        "detection_log": "unknown-reference-to-local-file",
         "license_match__score": "100.00",
         "start_line": 6,
         "end_line": 23,
@@ -6108,7 +6108,7 @@
     {
         "path": "samples/zlib/deflate.h",
         "license_expression": "zlib",
-        "detection_rules": "unknown-reference-to-local-file",
+        "detection_log": "unknown-reference-to-local-file",
         "license_match__score": "100.00",
         "start_line": 3,
         "end_line": 3,
@@ -6132,7 +6132,7 @@
     {
         "path": "samples/zlib/deflate.h",
         "license_expression": "zlib",
-        "detection_rules": "unknown-reference-to-local-file",
+        "detection_log": "unknown-reference-to-local-file",
         "license_match__score": "100.00",
         "start_line": 6,
         "end_line": 23,
@@ -6154,7 +6154,7 @@
     {
         "path": "samples/zlib/deflate.h",
         "license_expression": "zlib",
-        "detection_rules": "not-combined",
+        "detection_log": "not-combined",
         "license_match__score": "100.00",
         "start_line": 93,
         "end_line": 94,
@@ -6216,7 +6216,7 @@
     {
         "path": "samples/zlib/zlib.h",
         "license_expression": "zlib",
-        "detection_rules": "not-combined",
+        "detection_log": "not-combined",
         "license_match__score": "100.00",
         "start_line": 6,
         "end_line": 23,
@@ -6296,7 +6296,7 @@
     {
         "path": "samples/zlib/zutil.c",
         "license_expression": "zlib",
-        "detection_rules": "unknown-reference-to-local-file",
+        "detection_log": "unknown-reference-to-local-file",
         "license_match__score": "100.00",
         "start_line": 3,
         "end_line": 3,
@@ -6320,7 +6320,7 @@
     {
         "path": "samples/zlib/zutil.c",
         "license_expression": "zlib",
-        "detection_rules": "unknown-reference-to-local-file",
+        "detection_log": "unknown-reference-to-local-file",
         "license_match__score": "100.00",
         "start_line": 6,
         "end_line": 23,
@@ -6382,7 +6382,7 @@
     {
         "path": "samples/zlib/zutil.h",
         "license_expression": "zlib",
-        "detection_rules": "unknown-reference-to-local-file",
+        "detection_log": "unknown-reference-to-local-file",
         "license_match__score": "100.00",
         "start_line": 3,
         "end_line": 3,
@@ -6406,7 +6406,7 @@
     {
         "path": "samples/zlib/zutil.h",
         "license_expression": "zlib",
-        "detection_rules": "unknown-reference-to-local-file",
+        "detection_log": "unknown-reference-to-local-file",
         "license_match__score": "100.00",
         "start_line": 6,
         "end_line": 23,
@@ -6496,7 +6496,7 @@
     {
         "path": "samples/zlib/ada/zlib.ads",
         "license_expression": "gpl-2.0-plus WITH ada-linking-exception",
-        "detection_rules": "not-combined",
+        "detection_log": "not-combined",
         "license_match__score": "100.00",
         "start_line": 6,
         "end_line": 25,
@@ -6626,7 +6626,7 @@
     {
         "path": "samples/zlib/dotzlib/ChecksumImpl.cs",
         "license_expression": "boost-1.0",
-        "detection_rules": "unknown-reference-to-local-file",
+        "detection_log": "unknown-reference-to-local-file",
         "license_match__score": "100.00",
         "start_line": 4,
         "end_line": 5,
@@ -6650,7 +6650,7 @@
     {
         "path": "samples/zlib/dotzlib/ChecksumImpl.cs",
         "license_expression": "boost-1.0",
-        "detection_rules": "unknown-reference-to-local-file",
+        "detection_log": "unknown-reference-to-local-file",
         "license_match__score": "100.00",
         "start_line": 1,
         "end_line": 23,
@@ -6718,7 +6718,7 @@
     {
         "path": "samples/zlib/dotzlib/LICENSE_1_0.txt",
         "license_expression": "boost-1.0",
-        "detection_rules": "not-combined",
+        "detection_log": "not-combined",
         "license_match__score": "100.00",
         "start_line": 1,
         "end_line": 23,
@@ -6768,7 +6768,7 @@
     {
         "path": "samples/zlib/dotzlib/readme.txt",
         "license_expression": "boost-1.0",
-        "detection_rules": "unknown-reference-to-local-file",
+        "detection_log": "unknown-reference-to-local-file",
         "license_match__score": "100.00",
         "start_line": 10,
         "end_line": 10,
@@ -6792,7 +6792,7 @@
     {
         "path": "samples/zlib/dotzlib/readme.txt",
         "license_expression": "boost-1.0",
-        "detection_rules": "unknown-reference-to-local-file",
+        "detection_log": "unknown-reference-to-local-file",
         "license_match__score": "100.00",
         "start_line": 1,
         "end_line": 23,
@@ -6814,7 +6814,7 @@
     {
         "path": "samples/zlib/dotzlib/readme.txt",
         "license_expression": "boost-1.0",
-        "detection_rules": "unknown-reference-to-local-file",
+        "detection_log": "unknown-reference-to-local-file",
         "license_match__score": "100.00",
         "start_line": 57,
         "end_line": 58,
@@ -6838,7 +6838,7 @@
     {
         "path": "samples/zlib/dotzlib/readme.txt",
         "license_expression": "boost-1.0",
-        "detection_rules": "unknown-reference-to-local-file",
+        "detection_log": "unknown-reference-to-local-file",
         "license_match__score": "100.00",
         "start_line": 1,
         "end_line": 23,
@@ -6934,7 +6934,7 @@
     {
         "path": "samples/zlib/gcc_gvmat64/gvmat64.S",
         "license_expression": "zlib",
-        "detection_rules": "not-combined",
+        "detection_log": "not-combined",
         "license_match__score": "100.00",
         "start_line": 17,
         "end_line": 31,
@@ -7066,7 +7066,7 @@
     {
         "path": "samples/zlib/infback9/infback9.c",
         "license_expression": "zlib",
-        "detection_rules": "not-combined",
+        "detection_log": "not-combined",
         "license_match__score": "100.00",
         "start_line": 3,
         "end_line": 3,
@@ -7130,7 +7130,7 @@
     {
         "path": "samples/zlib/infback9/infback9.h",
         "license_expression": "zlib",
-        "detection_rules": "not-combined",
+        "detection_log": "not-combined",
         "license_match__score": "100.00",
         "start_line": 3,
         "end_line": 3,
@@ -7222,7 +7222,7 @@
     {
         "path": "samples/zlib/iostream2/zstream.h",
         "license_expression": "mit-old-style",
-        "detection_rules": "not-combined",
+        "detection_log": "not-combined",
         "license_match__score": "100.00",
         "start_line": 9,
         "end_line": 15,

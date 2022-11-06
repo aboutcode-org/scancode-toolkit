@@ -54,7 +54,7 @@
       "license_detections": [
         {
           "license_expression": "apache-1.0",
-          "detection_rules": [
+          "detection_log": [
             "not-combined"
           ],
           "matches": [
@@ -130,7 +130,7 @@
       "license_detections": [
         {
           "license_expression": "apache-1.0",
-          "detection_rules": [
+          "detection_log": [
             "not-combined"
           ],
           "matches": [
@@ -206,7 +206,7 @@
       "license_detections": [
         {
           "license_expression": "ja-sig",
-          "detection_rules": [
+          "detection_log": [
             "not-combined"
           ],
           "matches": [
@@ -251,7 +251,7 @@
         },
         {
           "license_expression": "apache-2.0",
-          "detection_rules": [
+          "detection_log": [
             "not-combined"
           ],
           "matches": [
@@ -329,7 +329,7 @@
       "license_detections": [
         {
           "license_expression": "gpl-2.0 WITH linux-syscall-exception-gpl OR linux-openib",
-          "detection_rules": [
+          "detection_log": [
             "not-combined"
           ],
           "matches": [
@@ -437,7 +437,7 @@
       "license_detections": [
         {
           "license_expression": "ja-sig",
-          "detection_rules": [
+          "detection_log": [
             "not-combined"
           ],
           "matches": [
@@ -482,7 +482,7 @@
         },
         {
           "license_expression": "apache-2.0",
-          "detection_rules": [
+          "detection_log": [
             "not-combined"
           ],
           "matches": [

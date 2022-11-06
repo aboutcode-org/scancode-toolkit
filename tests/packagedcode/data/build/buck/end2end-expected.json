@@ -74,7 +74,7 @@
       "license_detections": [
         {
           "license_expression": "apache-2.0",
-          "detection_rules": [
+          "detection_log": [
             "not-combined"
           ],
           "matches": [
@@ -274,7 +274,7 @@
           "license_detections": [
             {
               "license_expression": "apache-2.0",
-              "detection_rules": [
+              "detection_log": [
                 "from-package-sibling-file"
               ],
               "matches": [

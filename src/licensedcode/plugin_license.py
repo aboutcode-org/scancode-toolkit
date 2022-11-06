@@ -252,13 +252,13 @@ def add_referenced_license_matches_for_detections(resource, codebase):
         if not detection_modified:
             continue
 
-        reasons, license_expression = get_detected_license_expression(
+        detection_log, license_expression = get_detected_license_expression(
             matches=matches,
             analysis=DetectionCategory.UNKNOWN_FILE_REFERENCE_LOCAL.value,
             post_scan=True,
         )
         detection["license_expression"] = str(license_expression)
-        detection["detection_rules"] = reasons
+        detection["detection_log"] = detection_log
 
     if modified:
         license_expressions = [

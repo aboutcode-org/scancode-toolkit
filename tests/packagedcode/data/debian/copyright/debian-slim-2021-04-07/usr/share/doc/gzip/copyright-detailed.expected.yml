@@ -15,7 +15,7 @@ other_license_expression_spdx: (GPL-3.0-or-later AND GPL-3.0-or-later) AND (GPL-
 license_detections: []
 other_license_detections:
   - license_expression: gpl-3.0-plus
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -99,7 +99,7 @@ other_license_detections:
             spdx_license_key: GPL-3.0-or-later
             spdx_url: https://spdx.org/licenses/GPL-3.0-or-later
   - license_expression: gfdl-1.3-plus
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -144,7 +144,7 @@ other_license_detections:
             spdx_license_key: GFDL-1.3-or-later
             spdx_url: https://spdx.org/licenses/GFDL-1.3-or-later
   - license_expression: latex2e
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '85.0'

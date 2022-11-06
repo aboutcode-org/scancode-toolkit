@@ -27,7 +27,7 @@ other_license_expression_spdx: (LGPL-2.1-or-later AND LGPL-2.1-or-later) AND (CC
 license_detections: []
 other_license_detections:
   - license_expression: public-domain-disclaimer
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -65,7 +65,7 @@ other_license_detections:
             spdx_license_key: LicenseRef-scancode-public-domain-disclaimer
             spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/public-domain-disclaimer.LICENSE
   - license_expression: mit
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -118,7 +118,7 @@ other_license_detections:
             spdx_license_key: MIT
             spdx_url: https://spdx.org/licenses/MIT
   - license_expression: gpl-2.0
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -203,7 +203,7 @@ other_license_detections:
             spdx_license_key: GPL-2.0-only
             spdx_url: https://spdx.org/licenses/GPL-2.0-only
   - license_expression: gpl-2.0 WITH linux-syscall-exception-gpl
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -283,7 +283,7 @@ other_license_detections:
             spdx_license_key: Linux-syscall-note
             spdx_url: https://spdx.org/licenses/Linux-syscall-note
   - license_expression: gpl-2.0-plus
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -368,7 +368,7 @@ other_license_detections:
             spdx_license_key: GPL-2.0-or-later
             spdx_url: https://spdx.org/licenses/GPL-2.0-or-later
   - license_expression: lgpl-2.1-plus
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -453,7 +453,7 @@ other_license_detections:
             spdx_license_key: LGPL-2.1-or-later
             spdx_url: https://spdx.org/licenses/LGPL-2.1-or-later
   - license_expression: cc0-1.0
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'

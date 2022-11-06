@@ -8,7 +8,7 @@
       "license_detections": [
         {
           "license_expression": "wtfpl-2.0 AND mit",
-          "detection_rules": [
+          "detection_log": [
             "unknown-intro-followed-by-match"
           ],
           "matches": [

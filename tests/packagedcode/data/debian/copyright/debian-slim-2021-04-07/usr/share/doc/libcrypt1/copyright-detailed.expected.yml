@@ -18,7 +18,7 @@ other_license_expression:
 other_license_expression_spdx:
 license_detections:
   - license_expression: lgpl-2.1-plus
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '97.06'
@@ -58,7 +58,7 @@ license_detections:
             spdx_license_key: LGPL-2.1-or-later
             spdx_url: https://spdx.org/licenses/LGPL-2.1-or-later
   - license_expression: lgpl-2.1-plus AND bsd-new AND public-domain AND bsd-zero AND bsd-simplified
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -350,7 +350,7 @@ license_detections:
             spdx_license_key: BSD-2-Clause
             spdx_url: https://spdx.org/licenses/BSD-2-Clause
   - license_expression: bsd-zero
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -386,7 +386,7 @@ license_detections:
             spdx_license_key: 0BSD
             spdx_url: https://spdx.org/licenses/0BSD
   - license_expression: bsd-zero AND bsd-simplified AND public-domain AND bsd-new
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -679,7 +679,7 @@ license_detections:
             spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/public-domain.LICENSE
   - license_expression: gpl-3.0-plus WITH autoconf-exception-3.0 AND bsd-zero AND fsf-ap AND
       gpl-2.0-plus WITH autoconf-simple-exception-2.0 AND free-unknown
-    detection_rules: []
+    detection_log: []
     matches:
       - score: '99.0'
         start_line: 98

@@ -31,7 +31,7 @@ other_license_expression_spdx: (LGPL-2.0-or-later AND LGPL-2.0-or-later) AND Lic
 license_detections: []
 other_license_detections:
   - license_expression: other-permissive
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -70,7 +70,7 @@ other_license_detections:
             spdx_license_key: LicenseRef-scancode-other-permissive
             spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/other-permissive.LICENSE
   - license_expression: x11
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -133,7 +133,7 @@ other_license_detections:
             spdx_license_key: ICU
             spdx_url: https://spdx.org/licenses/ICU
   - license_expression: lgpl-2.0-plus
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -214,7 +214,7 @@ other_license_detections:
             spdx_license_key: LGPL-2.0-or-later
             spdx_url: https://spdx.org/licenses/LGPL-2.0-or-later
   - license_expression: tcl
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -289,7 +289,7 @@ other_license_detections:
             spdx_license_key: TCL
             spdx_url: https://spdx.org/licenses/TCL
   - license_expression: unicode
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'

@@ -48,7 +48,7 @@
   "license_detections": [
     {
       "license_expression": "lgpl-2.1",
-      "detection_rules": [
+      "detection_log": [
         "not-combined"
       ],
       "matches": [
@@ -93,7 +93,7 @@
     },
     {
       "license_expression": "lgpl-2.0-plus",
-      "detection_rules": [
+      "detection_log": [
         "not-combined"
       ],
       "matches": [
@@ -138,7 +138,7 @@
     },
     {
       "license_expression": "lgpl-2.1",
-      "detection_rules": [
+      "detection_log": [
         "not-combined"
       ],
       "matches": [

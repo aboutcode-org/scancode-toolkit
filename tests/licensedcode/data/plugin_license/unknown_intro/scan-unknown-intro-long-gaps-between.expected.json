@@ -8,7 +8,7 @@
       "license_detections": [
         {
           "license_expression": "x11-lucent",
-          "detection_rules": [
+          "detection_log": [
             "unknown-intro-followed-by-match"
           ],
           "matches": [
@@ -90,7 +90,7 @@
         },
         {
           "license_expression": "bzip2-libbzip-2010",
-          "detection_rules": [
+          "detection_log": [
             "unknown-intro-followed-by-match"
           ],
           "matches": [

@@ -26,7 +26,7 @@
   "license_detections": [
     {
       "license_expression": "gpl-2.0",
-      "detection_rules": [
+      "detection_log": [
         "not-combined"
       ],
       "matches": [
@@ -71,7 +71,7 @@
     },
     {
       "license_expression": "gpl-1.0-plus",
-      "detection_rules": [
+      "detection_log": [
         "not-combined"
       ],
       "matches": [
@@ -116,7 +116,7 @@
     },
     {
       "license_expression": "gpl-2.0 WITH mysql-linking-exception-2018",
-      "detection_rules": [
+      "detection_log": [
         "not-combined"
       ],
       "matches": [

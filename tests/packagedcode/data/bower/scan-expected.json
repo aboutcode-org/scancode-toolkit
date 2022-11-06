@@ -91,7 +91,7 @@
       "license_detections": [
         {
           "license_expression": "mit",
-          "detection_rules": [
+          "detection_log": [
             "not-combined"
           ],
           "matches": [
@@ -136,7 +136,7 @@
         },
         {
           "license_expression": "apache-2.0",
-          "detection_rules": [
+          "detection_log": [
             "not-combined"
           ],
           "matches": [
@@ -181,7 +181,7 @@
         },
         {
           "license_expression": "bsd-new",
-          "detection_rules": [
+          "detection_log": [
             "not-combined"
           ],
           "matches": [
@@ -304,7 +304,7 @@
           "license_detections": [
             {
               "license_expression": "mit",
-              "detection_rules": [
+              "detection_log": [
                 "not-combined"
               ],
               "matches": [
@@ -349,7 +349,7 @@
             },
             {
               "license_expression": "apache-2.0",
-              "detection_rules": [
+              "detection_log": [
                 "not-combined"
               ],
               "matches": [
@@ -394,7 +394,7 @@
             },
             {
               "license_expression": "bsd-new",
-              "detection_rules": [
+              "detection_log": [
                 "not-combined"
               ],
               "matches": [

@@ -87,7 +87,7 @@
       "license_detections": [
         {
           "license_expression": "jetty",
-          "detection_rules": [
+          "detection_log": [
             "not-combined"
           ],
           "matches": [

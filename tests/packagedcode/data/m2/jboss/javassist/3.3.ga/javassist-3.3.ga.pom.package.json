@@ -34,7 +34,7 @@
   "license_detections": [
     {
       "license_expression": "mpl-1.1",
-      "detection_rules": [
+      "detection_log": [
         "not-combined"
       ],
       "matches": [
@@ -79,7 +79,7 @@
     },
     {
       "license_expression": "mpl-1.1 OR lgpl-2.1-plus",
-      "detection_rules": [
+      "detection_log": [
         "not-combined"
       ],
       "matches": [
@@ -140,7 +140,7 @@
     },
     {
       "license_expression": "mpl-1.1 OR lgpl-2.1-plus",
-      "detection_rules": [
+      "detection_log": [
         "not-combined"
       ],
       "matches": [

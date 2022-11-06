@@ -70,7 +70,7 @@
       "license_detections": [
         {
           "license_expression": "mit",
-          "detection_rules": [
+          "detection_log": [
             "from-package-file"
           ],
           "matches": [
@@ -216,7 +216,7 @@
           "license_detections": [
             {
               "license_expression": "mit",
-              "detection_rules": [
+              "detection_log": [
                 "from-package-file"
               ],
               "matches": [

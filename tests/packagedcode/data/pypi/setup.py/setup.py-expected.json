@@ -46,7 +46,7 @@
     "license_detections": [
       {
         "license_expression": "(apache-2.0 AND scancode-acknowledgment) AND cc0-1.0",
-        "detection_rules": [
+        "detection_log": [
           "not-combined"
         ],
         "matches": [
@@ -144,7 +144,7 @@
       },
       {
         "license_expression": null,
-        "detection_rules": [],
+        "detection_log": [],
         "matches": [
           {
             "score": 95.0,

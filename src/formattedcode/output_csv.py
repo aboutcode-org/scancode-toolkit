@@ -146,13 +146,13 @@ def flatten_scan(scan, headers):
 
         for detection in scanned_file.get('license_detections', []):
             license_expression = detection["license_expression"]
-            detection_rules = detection["detection_rules"]
-            detection_rules = '\n'.join(detection_rules)
+            detection_log = detection["detection_log"]
+            detection_log = '\n'.join(detection_log)
             license_matches = detection["matches"]
             for match in license_matches:
                 lic = dict(path=path)
                 lic["license_expression"] = license_expression
-                lic["detection_rules"] = detection_rules
+                lic["detection_log"] = detection_log
 
                 for k, val in match.items():
                     # do not include matched text for now.

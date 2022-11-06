@@ -10,7 +10,7 @@ other_license_expression_spdx: (GPL-3.0-or-later AND GPL-3.0-or-later) AND (GPL-
 license_detections: []
 other_license_detections:
   - license_expression: gpl-3.0-plus
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'

@@ -15,7 +15,7 @@ other_license_expression_spdx: LicenseRef-scancode-mit-xfig AND (GPL-2.0-or-late
 license_detections: []
 other_license_detections:
   - license_expression: mit-xfig
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -59,7 +59,7 @@ other_license_detections:
             spdx_license_key: LicenseRef-scancode-mit-xfig
             spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit-xfig.LICENSE
   - license_expression: gpl-2.0-plus AND (gpl-2.0 OR gpl-3.0)
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -158,7 +158,7 @@ other_license_detections:
             spdx_license_key: GPL-3.0-only
             spdx_url: https://spdx.org/licenses/GPL-3.0-only
   - license_expression: mit-old-style-no-advert
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -203,7 +203,7 @@ other_license_detections:
             spdx_license_key: NTP
             spdx_url: https://spdx.org/licenses/NTP
   - license_expression: gpl-3.0 AND gpl-3.0-plus
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'

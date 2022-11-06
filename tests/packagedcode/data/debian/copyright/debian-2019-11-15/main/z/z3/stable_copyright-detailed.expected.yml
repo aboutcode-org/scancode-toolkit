@@ -8,7 +8,7 @@ other_license_expression_spdx: MIT AND (GPL-2.0-or-later AND GPL-2.0-or-later)
 license_detections: []
 other_license_detections:
   - license_expression: mit
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
@@ -61,7 +61,7 @@ other_license_detections:
             spdx_license_key: MIT
             spdx_url: https://spdx.org/licenses/MIT
   - license_expression: gpl-2.0-plus
-    detection_rules:
+    detection_log:
       - not-combined
     matches:
       - score: '100.0'
