@@ -75,9 +75,109 @@
       "code_view_url": null,
       "vcs_url": null,
       "copyright": null,
-      "declared_license_expression": "bsd-new",
-      "declared_license_expression_spdx": "BSD-3-Clause",
+      "declared_license_expression": "(bsd-new AND (bsd-new AND bsd-simplified)) AND bsd-new",
+      "declared_license_expression_spdx": "(BSD-3-Clause AND (BSD-3-Clause AND BSD-2-Clause)) AND BSD-3-Clause",
       "license_detections": [
+        {
+          "license_expression": "bsd-new AND (bsd-new AND bsd-simplified)",
+          "detection_log": [
+            "license-clues",
+            "not-license-clues-as-more-detections-present",
+            "from-package-file"
+          ],
+          "matches": [
+            {
+              "score": 11.36,
+              "start_line": 13,
+              "end_line": 14,
+              "matched_length": 5,
+              "match_coverage": 11.36,
+              "matcher": "3-seq",
+              "license_expression": "bsd-new",
+              "rule_identifier": "bsd-new_537.RULE",
+              "referenced_filenames": [],
+              "is_license_text": false,
+              "is_license_notice": true,
+              "is_license_reference": false,
+              "is_license_tag": false,
+              "is_license_intro": false,
+              "rule_length": 44,
+              "rule_relevance": 100,
+              "matched_text": "license = BSD-3-Clause\nlicense_files = LICENSE.rst",
+              "licenses": [
+                {
+                  "key": "bsd-new",
+                  "name": "BSD-3-Clause",
+                  "short_name": "BSD-3-Clause",
+                  "category": "Permissive",
+                  "is_exception": false,
+                  "is_unknown": false,
+                  "owner": "Regents of the University of California",
+                  "homepage_url": "http://www.opensource.org/licenses/BSD-3-Clause",
+                  "text_url": "http://www.opensource.org/licenses/BSD-3-Clause",
+                  "reference_url": "https://scancode-licensedb.aboutcode.org/bsd-new",
+                  "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-new.LICENSE",
+                  "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-new.yml",
+                  "spdx_license_key": "BSD-3-Clause",
+                  "spdx_url": "https://spdx.org/licenses/BSD-3-Clause"
+                }
+              ]
+            },
+            {
+              "score": 13.16,
+              "start_line": 13,
+              "end_line": 15,
+              "matched_length": 5,
+              "match_coverage": 13.16,
+              "matcher": "3-seq",
+              "license_expression": "bsd-new AND bsd-simplified",
+              "rule_identifier": "bsd-new_and_bsd-simplified_1.RULE",
+              "referenced_filenames": [],
+              "is_license_text": false,
+              "is_license_notice": true,
+              "is_license_reference": false,
+              "is_license_tag": false,
+              "is_license_intro": false,
+              "rule_length": 38,
+              "rule_relevance": 100,
+              "matched_text": "license = BSD-3-Clause\nlicense_files = LICENSE.rst\nauthor = Armin Ronacher",
+              "licenses": [
+                {
+                  "key": "bsd-new",
+                  "name": "BSD-3-Clause",
+                  "short_name": "BSD-3-Clause",
+                  "category": "Permissive",
+                  "is_exception": false,
+                  "is_unknown": false,
+                  "owner": "Regents of the University of California",
+                  "homepage_url": "http://www.opensource.org/licenses/BSD-3-Clause",
+                  "text_url": "http://www.opensource.org/licenses/BSD-3-Clause",
+                  "reference_url": "https://scancode-licensedb.aboutcode.org/bsd-new",
+                  "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-new.LICENSE",
+                  "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-new.yml",
+                  "spdx_license_key": "BSD-3-Clause",
+                  "spdx_url": "https://spdx.org/licenses/BSD-3-Clause"
+                },
+                {
+                  "key": "bsd-simplified",
+                  "name": "BSD-2-Clause",
+                  "short_name": "BSD-2-Clause",
+                  "category": "Permissive",
+                  "is_exception": false,
+                  "is_unknown": false,
+                  "owner": "Regents of the University of California",
+                  "homepage_url": "http://www.opensource.org/licenses/BSD-2-Clause",
+                  "text_url": "http://opensource.org/licenses/bsd-license.php",
+                  "reference_url": "https://scancode-licensedb.aboutcode.org/bsd-simplified",
+                  "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-simplified.LICENSE",
+                  "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-simplified.yml",
+                  "spdx_license_key": "BSD-2-Clause",
+                  "spdx_url": "https://spdx.org/licenses/BSD-2-Clause"
+                }
+              ]
+            }
+          ]
+        },
         {
           "license_expression": "bsd-new",
           "detection_log": [
@@ -189,9 +289,109 @@
           "code_view_url": null,
           "vcs_url": null,
           "copyright": null,
-          "declared_license_expression": "bsd-new",
-          "declared_license_expression_spdx": "BSD-3-Clause",
+          "declared_license_expression": "(bsd-new AND (bsd-new AND bsd-simplified)) AND bsd-new",
+          "declared_license_expression_spdx": "(BSD-3-Clause AND (BSD-3-Clause AND BSD-2-Clause)) AND BSD-3-Clause",
           "license_detections": [
+            {
+              "license_expression": "bsd-new AND (bsd-new AND bsd-simplified)",
+              "detection_log": [
+                "license-clues",
+                "not-license-clues-as-more-detections-present",
+                "from-package-file"
+              ],
+              "matches": [
+                {
+                  "score": 11.36,
+                  "start_line": 13,
+                  "end_line": 14,
+                  "matched_length": 5,
+                  "match_coverage": 11.36,
+                  "matcher": "3-seq",
+                  "license_expression": "bsd-new",
+                  "rule_identifier": "bsd-new_537.RULE",
+                  "referenced_filenames": [],
+                  "is_license_text": false,
+                  "is_license_notice": true,
+                  "is_license_reference": false,
+                  "is_license_tag": false,
+                  "is_license_intro": false,
+                  "rule_length": 44,
+                  "rule_relevance": 100,
+                  "matched_text": "license = BSD-3-Clause\nlicense_files = LICENSE.rst",
+                  "licenses": [
+                    {
+                      "key": "bsd-new",
+                      "name": "BSD-3-Clause",
+                      "short_name": "BSD-3-Clause",
+                      "category": "Permissive",
+                      "is_exception": false,
+                      "is_unknown": false,
+                      "owner": "Regents of the University of California",
+                      "homepage_url": "http://www.opensource.org/licenses/BSD-3-Clause",
+                      "text_url": "http://www.opensource.org/licenses/BSD-3-Clause",
+                      "reference_url": "https://scancode-licensedb.aboutcode.org/bsd-new",
+                      "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-new.LICENSE",
+                      "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-new.yml",
+                      "spdx_license_key": "BSD-3-Clause",
+                      "spdx_url": "https://spdx.org/licenses/BSD-3-Clause"
+                    }
+                  ]
+                },
+                {
+                  "score": 13.16,
+                  "start_line": 13,
+                  "end_line": 15,
+                  "matched_length": 5,
+                  "match_coverage": 13.16,
+                  "matcher": "3-seq",
+                  "license_expression": "bsd-new AND bsd-simplified",
+                  "rule_identifier": "bsd-new_and_bsd-simplified_1.RULE",
+                  "referenced_filenames": [],
+                  "is_license_text": false,
+                  "is_license_notice": true,
+                  "is_license_reference": false,
+                  "is_license_tag": false,
+                  "is_license_intro": false,
+                  "rule_length": 38,
+                  "rule_relevance": 100,
+                  "matched_text": "license = BSD-3-Clause\nlicense_files = LICENSE.rst\nauthor = Armin Ronacher",
+                  "licenses": [
+                    {
+                      "key": "bsd-new",
+                      "name": "BSD-3-Clause",
+                      "short_name": "BSD-3-Clause",
+                      "category": "Permissive",
+                      "is_exception": false,
+                      "is_unknown": false,
+                      "owner": "Regents of the University of California",
+                      "homepage_url": "http://www.opensource.org/licenses/BSD-3-Clause",
+                      "text_url": "http://www.opensource.org/licenses/BSD-3-Clause",
+                      "reference_url": "https://scancode-licensedb.aboutcode.org/bsd-new",
+                      "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-new.LICENSE",
+                      "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-new.yml",
+                      "spdx_license_key": "BSD-3-Clause",
+                      "spdx_url": "https://spdx.org/licenses/BSD-3-Clause"
+                    },
+                    {
+                      "key": "bsd-simplified",
+                      "name": "BSD-2-Clause",
+                      "short_name": "BSD-2-Clause",
+                      "category": "Permissive",
+                      "is_exception": false,
+                      "is_unknown": false,
+                      "owner": "Regents of the University of California",
+                      "homepage_url": "http://www.opensource.org/licenses/BSD-2-Clause",
+                      "text_url": "http://opensource.org/licenses/bsd-license.php",
+                      "reference_url": "https://scancode-licensedb.aboutcode.org/bsd-simplified",
+                      "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-simplified.LICENSE",
+                      "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-simplified.yml",
+                      "spdx_license_key": "BSD-2-Clause",
+                      "spdx_url": "https://spdx.org/licenses/BSD-2-Clause"
+                    }
+                  ]
+                }
+              ]
+            },
             {
               "license_expression": "bsd-new",
               "detection_log": [

@@ -134,7 +134,9 @@
       },
       {
         "license_expression": "free-unknown",
-        "detection_log": [],
+        "detection_log": [
+          "unknown-match"
+        ],
         "matches": [
           {
             "score": 100.0,

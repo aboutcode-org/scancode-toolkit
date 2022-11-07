@@ -950,11 +950,12 @@ class StructuredCopyrightProcessor(DebianDetector):
             if not license_matches:
                 continue
 
-            detection = LicenseDetection.from_matches(
-                license_matches
+            detection_objects.append(
+                LicenseDetection.from_matches(
+                    matches=license_matches,
+                    package_license=True,
+                )
             )
-
-            detection_objects.append(detection)
 
         detections_mapping, _expression = get_mapping_and_expression_from_detections(
             license_detections=detection_objects,

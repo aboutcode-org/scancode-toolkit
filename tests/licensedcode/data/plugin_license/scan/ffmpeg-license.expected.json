@@ -3,8 +3,8 @@
     {
       "path": "ffmpeg-LICENSE.md",
       "type": "file",
-      "detected_license_expression": "(lgpl-2.1-plus AND other-permissive AND gpl-2.0-plus) AND (lgpl-3.0 AND lgpl-3.0-plus AND (lgpl-3.0 AND gpl-3.0)) AND (ijg AND mit) AND gpl-1.0-plus AND (gpl-2.0 AND apache-2.0 AND lgpl-3.0-plus) AND (gpl-2.0 AND lgpl-2.0-plus AND proprietary-license)",
-      "detected_license_expression_spdx": "(LGPL-2.1-or-later AND LicenseRef-scancode-other-permissive AND GPL-2.0-or-later) AND (LGPL-3.0-only AND LGPL-3.0-or-later AND (LGPL-3.0-only AND GPL-3.0-only)) AND (IJG AND MIT) AND GPL-1.0-or-later AND (GPL-2.0-only AND Apache-2.0 AND LGPL-3.0-or-later) AND (GPL-2.0-only AND LGPL-2.0-or-later AND LicenseRef-scancode-proprietary-license)",
+      "detected_license_expression": "(lgpl-2.1-plus AND other-permissive AND gpl-2.0-plus) AND gpl-1.0-plus AND (lgpl-3.0 AND lgpl-3.0-plus AND (lgpl-3.0 AND gpl-3.0)) AND (ijg AND mit) AND (gpl-2.0 AND apache-2.0 AND lgpl-3.0-plus) AND (gpl-2.0 AND lgpl-2.0-plus AND proprietary-license)",
+      "detected_license_expression_spdx": "(LGPL-2.1-or-later AND LicenseRef-scancode-other-permissive AND GPL-2.0-or-later) AND GPL-1.0-or-later AND (LGPL-3.0-only AND LGPL-3.0-or-later AND (LGPL-3.0-only AND GPL-3.0-only)) AND (IJG AND MIT) AND (GPL-2.0-only AND Apache-2.0 AND LGPL-3.0-or-later) AND (GPL-2.0-only AND LGPL-2.0-or-later AND LicenseRef-scancode-proprietary-license)",
       "license_detections": [
         {
           "license_expression": "lgpl-2.1-plus AND other-permissive AND gpl-2.0-plus",
@@ -81,6 +81,52 @@
                   "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-2.0-plus.yml",
                   "spdx_license_key": "GPL-2.0-or-later",
                   "spdx_url": "https://spdx.org/licenses/GPL-2.0-or-later"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "license_expression": "gpl-1.0-plus",
+          "detection_log": [
+            "possible-false-positive",
+            "not-license-clues-as-more-detections-present"
+          ],
+          "matches": [
+            {
+              "score": 50.0,
+              "start_line": 18,
+              "end_line": 18,
+              "matched_length": 1,
+              "match_coverage": 100.0,
+              "matcher": "2-aho",
+              "license_expression": "gpl-1.0-plus",
+              "rule_identifier": "gpl_bare_word_only.RULE",
+              "referenced_filenames": [],
+              "is_license_text": false,
+              "is_license_notice": false,
+              "is_license_reference": true,
+              "is_license_tag": false,
+              "is_license_intro": false,
+              "rule_length": 1,
+              "rule_relevance": 50,
+              "matched_text": "  libavcodec/x86/flac_dsp_gpl.asm",
+              "licenses": [
+                {
+                  "key": "gpl-1.0-plus",
+                  "name": "GNU General Public License 1.0 or later",
+                  "short_name": "GPL 1.0 or later",
+                  "category": "Copyleft",
+                  "is_exception": false,
+                  "is_unknown": false,
+                  "owner": "Free Software Foundation (FSF)",
+                  "homepage_url": "http://www.gnu.org/licenses/old-licenses/gpl-1.0-standalone.html",
+                  "text_url": "http://www.gnu.org/licenses/old-licenses/gpl-1.0-standalone.html",
+                  "reference_url": "https://scancode-licensedb.aboutcode.org/gpl-1.0-plus",
+                  "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-1.0-plus.LICENSE",
+                  "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-1.0-plus.yml",
+                  "spdx_license_key": "GPL-1.0-or-later",
+                  "spdx_url": "https://spdx.org/licenses/GPL-1.0-or-later"
                 }
               ]
             }
@@ -664,45 +710,7 @@
           ]
         }
       ],
-      "license_clues": [
-        {
-          "score": 50.0,
-          "start_line": 18,
-          "end_line": 18,
-          "matched_length": 1,
-          "match_coverage": 100.0,
-          "matcher": "2-aho",
-          "license_expression": "gpl-1.0-plus",
-          "rule_identifier": "gpl_bare_word_only.RULE",
-          "referenced_filenames": [],
-          "is_license_text": false,
-          "is_license_notice": false,
-          "is_license_reference": true,
-          "is_license_tag": false,
-          "is_license_intro": false,
-          "rule_length": 1,
-          "rule_relevance": 50,
-          "matched_text": "  libavcodec/x86/flac_dsp_gpl.asm",
-          "licenses": [
-            {
-              "key": "gpl-1.0-plus",
-              "name": "GNU General Public License 1.0 or later",
-              "short_name": "GPL 1.0 or later",
-              "category": "Copyleft",
-              "is_exception": false,
-              "is_unknown": false,
-              "owner": "Free Software Foundation (FSF)",
-              "homepage_url": "http://www.gnu.org/licenses/old-licenses/gpl-1.0-standalone.html",
-              "text_url": "http://www.gnu.org/licenses/old-licenses/gpl-1.0-standalone.html",
-              "reference_url": "https://scancode-licensedb.aboutcode.org/gpl-1.0-plus",
-              "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-1.0-plus.LICENSE",
-              "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-1.0-plus.yml",
-              "spdx_license_key": "GPL-1.0-or-later",
-              "spdx_url": "https://spdx.org/licenses/GPL-1.0-or-later"
-            }
-          ]
-        }
-      ],
+      "license_clues": [],
       "percentage_of_license_text": 34.96,
       "scan_errors": []
     }

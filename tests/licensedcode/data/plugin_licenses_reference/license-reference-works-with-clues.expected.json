@@ -25,6 +25,31 @@
       "text": "Redistribution and use in source and binary forms, with or without modification,\nare permitted provided that the following conditions are met:\n\nRedistributions of source code must retain the above copyright notice, this list\nof conditions and the following disclaimer.\n\nRedistributions in binary form must reproduce the above copyright notice, this\nlist of conditions and the following disclaimer in the documentation and/or\nother materials provided with the distribution.\n\nNeither the name of the ORGANIZATION nor the names of its contributors may be\nused to endorse or promote products derived from this software without specific\nprior written permission.\n\nTHIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS\n\"AS IS\" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO,\nTHE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE\nARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS\nBE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR\nCONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE\nGOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)\nHOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT\nLIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF\nTHE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE."
     },
     {
+      "key": "bsd-simplified",
+      "short_name": "BSD-2-Clause",
+      "name": "BSD-2-Clause",
+      "category": "Permissive",
+      "owner": "Regents of the University of California",
+      "homepage_url": "http://www.opensource.org/licenses/BSD-2-Clause",
+      "notes": "Per SPDX.org, this license is OSI certified.",
+      "is_builtin": true,
+      "spdx_license_key": "BSD-2-Clause",
+      "other_spdx_license_keys": [
+        "BSD-2-Clause-NetBSD",
+        "BSD-2"
+      ],
+      "text_urls": [
+        "http://opensource.org/licenses/bsd-license.php"
+      ],
+      "osi_url": "http://opensource.org/licenses/bsd-license.php",
+      "other_urls": [
+        "http://spdx.org/licenses/BSD-2-Clause",
+        "http://www.freebsd.org/copyright/copyright.html",
+        "https://opensource.org/licenses/BSD-2-Clause"
+      ],
+      "text": "Redistribution and use in source and binary forms, with or without modification,\nare permitted provided that the following conditions are met:\n\nRedistributions of source code must retain the above copyright notice, this list\nof conditions and the following disclaimer.\n\nRedistributions in binary form must reproduce the above copyright notice, this\nlist of conditions and the following disclaimer in the documentation and/or\nother materials provided with the distribution.\n\nTHIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS \"AS IS\" AND\nANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED\nWARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE\nDISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR\nANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES\n(INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;\nLOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON\nANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT\n(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS\nSOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE."
+    },
+    {
       "key": "bzip2-libbzip-2010",
       "short_name": "bzip2 License 2010",
       "name": "bzip2 License 2010",
@@ -401,6 +426,19 @@
       "matched_text": " * Redistribution and use in source and binary forms, with or without\n * modification, are permitted provided that the following conditions\n * are met:\n * 1. Redistributions of source code must retain the above copyright\n *    notice, this list of conditions and the following disclaimer.\n * 2. Redistributions in binary form must reproduce the above copyright\n *    notice, this list of conditions and the following disclaimer in the\n *    documentation and/or other materials provided with the distribution.\n * 3. Redistributions in any form must be accompanied by information on\n *    how to obtain complete source code for the DB software and any\n *    accompanying software that uses the DB software.  The source code\n *    must either be included in the distribution or be available for no\n *    more than the cost of distribution plus a nominal fee, and must be\n *    freely redistributable under reasonable conditions.  For an\n *    executable file, complete source code means the source code for all\n *    modules it contains.  It does not include source code for modules or\n *    files that typically accompany the major components of the operating\n *    system on which the executable file runs."
     },
     {
+      "license_expression": "bsd-simplified",
+      "rule_identifier": "bsd-simplified_242.RULE",
+      "referenced_filenames": [],
+      "is_license_text": true,
+      "is_license_notice": false,
+      "is_license_reference": false,
+      "is_license_tag": false,
+      "is_license_intro": false,
+      "rule_length": 175,
+      "rule_relevance": 100,
+      "matched_text": " * CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF\n * SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS\n * INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN\n * CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)\n * ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF\n * THE POSSIBILITY OF SUCH DAMAGE."
+    },
+    {
       "license_expression": "bsd-new",
       "rule_identifier": "bsd-new_19.RULE",
       "referenced_filenames": [],
@@ -542,27 +580,14 @@
       "rule_length": 341,
       "rule_relevance": 100,
       "matched_text": "This software is copyrighted by the Regents of the University of\nCalifornia, Sun Microsystems, Inc., and other parties.  The following\nterms apply to all files associated with the software unless explicitly\ndisclaimed in individual files.\n\nThe authors hereby grant permission to use, copy, modify, distribute,\nand license this software and its documentation for any purpose, provided\nthat existing copyright notices are retained in all copies and that this\nnotice is included verbatim in any distributions. No written agreement,\nlicense, or royalty fee is required for any of the authorized uses.\nModifications to this software may be copyrighted by their authors\nand need not follow the licensing terms described here, provided that\nthe new terms are clearly indicated on the first page of each file where\nthey apply.\n\nIN NO EVENT SHALL THE AUTHORS OR DISTRIBUTORS BE LIABLE TO ANY PARTY\nFOR DIRECT, INDIRECT, SPECIAL, INCIDENTAL, OR CONSEQUENTIAL DAMAGES\nARISING OUT OF THE USE OF THIS SOFTWARE, ITS DOCUMENTATION, OR ANY\nDERIVATIVES THEREOF, EVEN IF THE AUTHORS HAVE BEEN ADVISED OF THE\nPOSSIBILITY OF SUCH DAMAGE.\n\nTHE AUTHORS AND DISTRIBUTORS SPECIFICALLY DISCLAIM ANY WARRANTIES,\nINCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE, AND NON-INFRINGEMENT.  THIS SOFTWARE\nIS PROVIDED ON AN \"AS IS\" BASIS, AND THE AUTHORS AND DISTRIBUTORS HAVE\nNO OBLIGATION TO PROVIDE MAINTENANCE, SUPPORT, UPDATES, ENHANCEMENTS, OR\nMODIFICATIONS.\n\nGOVERNMENT USE: If you are acquiring this software on behalf of the\nU.S. government, the Government shall have only \"Restricted Rights\"\nin the software and related documentation as defined in the Federal \nAcquisition Regulations (FARs) in Clause 52.227.19 (c) (2).  If you\nare acquiring the software on behalf of the Department of Defense, the\nsoftware shall be classified as \"Commercial Computer Software\" and the\nGovernment shall have only \"Restricted Rights\" as defined in Clause\n252.227-7013 (c) (1) of DFARs.  Notwithstanding the foregoing, the\nauthors grant the U.S. Government and others acting in its behalf\npermission to use and distribute the software in accordance with the\nterms specified in this license."
-    },
-    {
-      "license_expression": "bsd-simplified",
-      "rule_identifier": "bsd-simplified_242.RULE",
-      "referenced_filenames": [],
-      "is_license_text": true,
-      "is_license_notice": false,
-      "is_license_reference": false,
-      "is_license_tag": false,
-      "is_license_intro": false,
-      "rule_length": 175,
-      "rule_relevance": 100,
-      "matched_text": " * CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF\n * SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS\n * INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN\n * CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)\n * ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF\n * THE POSSIBILITY OF SUCH DAMAGE."
     }
   ],
   "files": [
     {
       "path": "python.LICENSE",
       "type": "file",
-      "detected_license_expression": "python AND (other-copyleft AND gpl-1.0-plus) AND (python AND python-cwi) AND bzip2-libbzip-2010 AND sleepycat AND bsd-new AND openssl-ssleay AND openssl AND ssleay-windows AND tcl",
-      "detected_license_expression_spdx": "Python-2.0 AND (LicenseRef-scancode-other-copyleft AND GPL-1.0-or-later) AND (Python-2.0 AND LicenseRef-scancode-python-cwi) AND bzip2-1.0.6 AND Sleepycat AND BSD-3-Clause AND OpenSSL AND LicenseRef-scancode-openssl AND LicenseRef-scancode-ssleay-windows AND TCL",
+      "detected_license_expression": "python AND (other-copyleft AND gpl-1.0-plus) AND (python AND python-cwi) AND bzip2-libbzip-2010 AND sleepycat AND bsd-simplified AND bsd-new AND openssl-ssleay AND openssl AND ssleay-windows AND tcl",
+      "detected_license_expression_spdx": "Python-2.0 AND (LicenseRef-scancode-other-copyleft AND GPL-1.0-or-later) AND (Python-2.0 AND LicenseRef-scancode-python-cwi) AND bzip2-1.0.6 AND Sleepycat AND BSD-2-Clause AND BSD-3-Clause AND OpenSSL AND LicenseRef-scancode-openssl AND LicenseRef-scancode-ssleay-windows AND TCL",
       "license_detections": [
         {
           "license_expression": "python",
@@ -755,6 +780,25 @@
           ]
         },
         {
+          "license_expression": "bsd-simplified",
+          "detection_log": [
+            "license-clues",
+            "not-license-clues-as-more-detections-present"
+          ],
+          "matches": [
+            {
+              "score": 33.71,
+              "start_line": 358,
+              "end_line": 363,
+              "matched_length": 59,
+              "match_coverage": 33.71,
+              "matcher": "3-seq",
+              "license_expression": "bsd-simplified",
+              "rule_identifier": "bsd-simplified_242.RULE"
+            }
+          ]
+        },
+        {
           "license_expression": "bsd-new",
           "detection_log": [
             "not-combined"
@@ -921,18 +965,7 @@
           ]
         }
       ],
-      "license_clues": [
-        {
-          "score": 33.71,
-          "start_line": 358,
-          "end_line": 363,
-          "matched_length": 59,
-          "match_coverage": 33.71,
-          "matcher": "3-seq",
-          "license_expression": "bsd-simplified",
-          "rule_identifier": "bsd-simplified_242.RULE"
-        }
-      ],
+      "license_clues": [],
       "percentage_of_license_text": 83.64,
       "scan_errors": []
     }

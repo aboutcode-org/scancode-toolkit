@@ -902,7 +902,8 @@ other_license_detections:
             spdx_license_key: LGPL-2.0-only
             spdx_url: https://spdx.org/licenses/LGPL-2.0-only
   - license_expression: bsd-new
-    detection_log: []
+    detection_log:
+      - license-clues
     matches:
       - score: '53.47'
         start_line: 925
@@ -1201,7 +1202,8 @@ other_license_detections:
             spdx_license_key: Artistic-1.0-Perl
             spdx_url: https://spdx.org/licenses/Artistic-1.0-Perl
   - license_expression: public-domain
-    detection_log: []
+    detection_log:
+      - not-combined
     matches:
       - score: '100.0'
         start_line: 1091
