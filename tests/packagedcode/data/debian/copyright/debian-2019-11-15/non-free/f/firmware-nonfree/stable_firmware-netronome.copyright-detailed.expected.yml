@@ -16,6 +16,7 @@ license_detections:
         matcher: 2-aho
         license_expression: netronome-firmware
         rule_identifier: netronome-firmware.LICENSE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/netronome-firmware.LICENSE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -99,8 +100,7 @@ license_detections:
             homepage_url: https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/tree/LICENCE.Netronome
             text_url:
             reference_url: https://scancode-licensedb.aboutcode.org/netronome-firmware
-            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/netronome-firmware.LICENSE
-            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/netronome-firmware.yml
+            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/netronome-firmware.LICENSE
             spdx_license_key: LicenseRef-scancode-netronome-firmware
             spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/netronome-firmware.LICENSE
 other_license_detections: []

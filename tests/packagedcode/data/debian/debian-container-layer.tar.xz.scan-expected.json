@@ -54,6 +54,7 @@
               "matcher": "2-aho",
               "license_expression": "x11-fsf",
               "rule_identifier": "x11-fsf.LICENSE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/x11-fsf.LICENSE",
               "referenced_filenames": [],
               "is_license_text": true,
               "is_license_notice": false,
@@ -75,8 +76,7 @@
                   "homepage_url": null,
                   "text_url": "",
                   "reference_url": "https://scancode-licensedb.aboutcode.org/x11-fsf",
-                  "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/x11-fsf.LICENSE",
-                  "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/x11-fsf.yml",
+                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/x11-fsf.LICENSE",
                   "spdx_license_key": "X11-distribute-modifications-variant",
                   "spdx_url": "https://spdx.org/licenses/X11-distribute-modifications-variant"
                 }
@@ -99,6 +99,7 @@
               "matcher": "2-aho",
               "license_expression": "x11-xconsortium",
               "rule_identifier": "x11-xconsortium_2.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/x11-xconsortium_2.RULE",
               "referenced_filenames": [],
               "is_license_text": true,
               "is_license_notice": false,
@@ -120,8 +121,7 @@
                   "homepage_url": "http://www.xfree86.org/current/LICENSE5.html",
                   "text_url": "http://www.xfree86.org/current/LICENSE5.html",
                   "reference_url": "https://scancode-licensedb.aboutcode.org/x11-xconsortium",
-                  "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/x11-xconsortium.LICENSE",
-                  "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/x11-xconsortium.yml",
+                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/x11-xconsortium.LICENSE",
                   "spdx_license_key": "X11",
                   "spdx_url": "https://spdx.org/licenses/X11"
                 }
@@ -144,6 +144,7 @@
               "matcher": "2-aho",
               "license_expression": "bsd-new",
               "rule_identifier": "bsd-new_19.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_19.RULE",
               "referenced_filenames": [],
               "is_license_text": true,
               "is_license_notice": false,
@@ -165,8 +166,7 @@
                   "homepage_url": "http://www.opensource.org/licenses/BSD-3-Clause",
                   "text_url": "http://www.opensource.org/licenses/BSD-3-Clause",
                   "reference_url": "https://scancode-licensedb.aboutcode.org/bsd-new",
-                  "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-new.LICENSE",
-                  "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-new.yml",
+                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-new.LICENSE",
                   "spdx_license_key": "BSD-3-Clause",
                   "spdx_url": "https://spdx.org/licenses/BSD-3-Clause"
                 }
@@ -189,6 +189,7 @@
               "matcher": "2-aho",
               "license_expression": "x11-fsf",
               "rule_identifier": "x11-fsf_7.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/x11-fsf_7.RULE",
               "referenced_filenames": [],
               "is_license_text": true,
               "is_license_notice": false,
@@ -210,8 +211,7 @@
                   "homepage_url": null,
                   "text_url": "",
                   "reference_url": "https://scancode-licensedb.aboutcode.org/x11-fsf",
-                  "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/x11-fsf.LICENSE",
-                  "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/x11-fsf.yml",
+                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/x11-fsf.LICENSE",
                   "spdx_license_key": "X11-distribute-modifications-variant",
                   "spdx_url": "https://spdx.org/licenses/X11-distribute-modifications-variant"
                 }
@@ -338,6 +338,7 @@
               "matcher": "2-aho",
               "license_expression": "lgpl-2.1-plus",
               "rule_identifier": "lgpl-2.1-plus_108.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_108.RULE",
               "referenced_filenames": [],
               "is_license_text": false,
               "is_license_notice": false,
@@ -359,8 +360,7 @@
                   "homepage_url": "http://www.gnu.org/licenses/old-licenses/lgpl-2.1-standalone.html",
                   "text_url": "http://www.gnu.org/licenses/old-licenses/lgpl-2.1-standalone.html",
                   "reference_url": "https://scancode-licensedb.aboutcode.org/lgpl-2.1-plus",
-                  "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/lgpl-2.1-plus.LICENSE",
-                  "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/lgpl-2.1-plus.yml",
+                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/lgpl-2.1-plus.LICENSE",
                   "spdx_license_key": "LGPL-2.1-or-later",
                   "spdx_url": "https://spdx.org/licenses/LGPL-2.1-or-later"
                 }
@@ -375,6 +375,7 @@
               "matcher": "2-aho",
               "license_expression": "lgpl-2.1-plus",
               "rule_identifier": "lgpl-2.1-plus_108.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_108.RULE",
               "referenced_filenames": [],
               "is_license_text": false,
               "is_license_notice": false,
@@ -396,8 +397,7 @@
                   "homepage_url": "http://www.gnu.org/licenses/old-licenses/lgpl-2.1-standalone.html",
                   "text_url": "http://www.gnu.org/licenses/old-licenses/lgpl-2.1-standalone.html",
                   "reference_url": "https://scancode-licensedb.aboutcode.org/lgpl-2.1-plus",
-                  "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/lgpl-2.1-plus.LICENSE",
-                  "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/lgpl-2.1-plus.yml",
+                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/lgpl-2.1-plus.LICENSE",
                   "spdx_license_key": "LGPL-2.1-or-later",
                   "spdx_url": "https://spdx.org/licenses/LGPL-2.1-or-later"
                 }
@@ -412,6 +412,7 @@
               "matcher": "2-aho",
               "license_expression": "lgpl-2.1-plus",
               "rule_identifier": "lgpl-2.1-plus_108.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_108.RULE",
               "referenced_filenames": [],
               "is_license_text": false,
               "is_license_notice": false,
@@ -433,8 +434,7 @@
                   "homepage_url": "http://www.gnu.org/licenses/old-licenses/lgpl-2.1-standalone.html",
                   "text_url": "http://www.gnu.org/licenses/old-licenses/lgpl-2.1-standalone.html",
                   "reference_url": "https://scancode-licensedb.aboutcode.org/lgpl-2.1-plus",
-                  "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/lgpl-2.1-plus.LICENSE",
-                  "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/lgpl-2.1-plus.yml",
+                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/lgpl-2.1-plus.LICENSE",
                   "spdx_license_key": "LGPL-2.1-or-later",
                   "spdx_url": "https://spdx.org/licenses/LGPL-2.1-or-later"
                 }
@@ -449,6 +449,7 @@
               "matcher": "2-aho",
               "license_expression": "lgpl-2.1-plus",
               "rule_identifier": "lgpl-2.1-plus_93.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_93.RULE",
               "referenced_filenames": [],
               "is_license_text": false,
               "is_license_notice": true,
@@ -470,8 +471,7 @@
                   "homepage_url": "http://www.gnu.org/licenses/old-licenses/lgpl-2.1-standalone.html",
                   "text_url": "http://www.gnu.org/licenses/old-licenses/lgpl-2.1-standalone.html",
                   "reference_url": "https://scancode-licensedb.aboutcode.org/lgpl-2.1-plus",
-                  "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/lgpl-2.1-plus.LICENSE",
-                  "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/lgpl-2.1-plus.yml",
+                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/lgpl-2.1-plus.LICENSE",
                   "spdx_license_key": "LGPL-2.1-or-later",
                   "spdx_url": "https://spdx.org/licenses/LGPL-2.1-or-later"
                 }
@@ -486,6 +486,7 @@
               "matcher": "2-aho",
               "license_expression": "lgpl-2.1",
               "rule_identifier": "lgpl-2.1_314.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1_314.RULE",
               "referenced_filenames": [
                 "/usr/share/common-licenses/LGPL-2.1"
               ],
@@ -509,8 +510,7 @@
                   "homepage_url": "http://www.gnu.org/licenses/lgpl-2.1.html",
                   "text_url": "http://www.gnu.org/licenses/lgpl-2.1.txt",
                   "reference_url": "https://scancode-licensedb.aboutcode.org/lgpl-2.1",
-                  "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/lgpl-2.1.LICENSE",
-                  "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/lgpl-2.1.yml",
+                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/lgpl-2.1.LICENSE",
                   "spdx_license_key": "LGPL-2.1-only",
                   "spdx_url": "https://spdx.org/licenses/LGPL-2.1-only"
                 }
@@ -537,6 +537,7 @@
               "matcher": "1-hash",
               "license_expression": "lgpl-2.1-plus",
               "rule_identifier": "lgpl-2.1-plus_108.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_108.RULE",
               "referenced_filenames": [],
               "is_license_text": false,
               "is_license_notice": false,
@@ -558,8 +559,7 @@
                   "homepage_url": "http://www.gnu.org/licenses/old-licenses/lgpl-2.1-standalone.html",
                   "text_url": "http://www.gnu.org/licenses/old-licenses/lgpl-2.1-standalone.html",
                   "reference_url": "https://scancode-licensedb.aboutcode.org/lgpl-2.1-plus",
-                  "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/lgpl-2.1-plus.LICENSE",
-                  "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/lgpl-2.1-plus.yml",
+                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/lgpl-2.1-plus.LICENSE",
                   "spdx_license_key": "LGPL-2.1-or-later",
                   "spdx_url": "https://spdx.org/licenses/LGPL-2.1-or-later"
                 }
@@ -574,6 +574,7 @@
               "matcher": "2-aho",
               "license_expression": "lgpl-2.1-plus",
               "rule_identifier": "lgpl-2.1-plus_93.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_93.RULE",
               "referenced_filenames": [],
               "is_license_text": false,
               "is_license_notice": true,
@@ -595,8 +596,7 @@
                   "homepage_url": "http://www.gnu.org/licenses/old-licenses/lgpl-2.1-standalone.html",
                   "text_url": "http://www.gnu.org/licenses/old-licenses/lgpl-2.1-standalone.html",
                   "reference_url": "https://scancode-licensedb.aboutcode.org/lgpl-2.1-plus",
-                  "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/lgpl-2.1-plus.LICENSE",
-                  "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/lgpl-2.1-plus.yml",
+                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/lgpl-2.1-plus.LICENSE",
                   "spdx_license_key": "LGPL-2.1-or-later",
                   "spdx_url": "https://spdx.org/licenses/LGPL-2.1-or-later"
                 }
@@ -611,6 +611,7 @@
               "matcher": "2-aho",
               "license_expression": "lgpl-2.1",
               "rule_identifier": "lgpl-2.1_314.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1_314.RULE",
               "referenced_filenames": [
                 "/usr/share/common-licenses/LGPL-2.1"
               ],
@@ -634,8 +635,7 @@
                   "homepage_url": "http://www.gnu.org/licenses/lgpl-2.1.html",
                   "text_url": "http://www.gnu.org/licenses/lgpl-2.1.txt",
                   "reference_url": "https://scancode-licensedb.aboutcode.org/lgpl-2.1",
-                  "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/lgpl-2.1.LICENSE",
-                  "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/lgpl-2.1.yml",
+                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/lgpl-2.1.LICENSE",
                   "spdx_license_key": "LGPL-2.1-only",
                   "spdx_url": "https://spdx.org/licenses/LGPL-2.1-only"
                 }
@@ -784,6 +784,7 @@
                   "matcher": "2-aho",
                   "license_expression": "x11-fsf",
                   "rule_identifier": "x11-fsf.LICENSE",
+                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/x11-fsf.LICENSE",
                   "referenced_filenames": [],
                   "is_license_text": true,
                   "is_license_notice": false,
@@ -805,8 +806,7 @@
                       "homepage_url": null,
                       "text_url": "",
                       "reference_url": "https://scancode-licensedb.aboutcode.org/x11-fsf",
-                      "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/x11-fsf.LICENSE",
-                      "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/x11-fsf.yml",
+                      "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/x11-fsf.LICENSE",
                       "spdx_license_key": "X11-distribute-modifications-variant",
                       "spdx_url": "https://spdx.org/licenses/X11-distribute-modifications-variant"
                     }
@@ -829,6 +829,7 @@
                   "matcher": "2-aho",
                   "license_expression": "x11-xconsortium",
                   "rule_identifier": "x11-xconsortium_2.RULE",
+                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/x11-xconsortium_2.RULE",
                   "referenced_filenames": [],
                   "is_license_text": true,
                   "is_license_notice": false,
@@ -850,8 +851,7 @@
                       "homepage_url": "http://www.xfree86.org/current/LICENSE5.html",
                       "text_url": "http://www.xfree86.org/current/LICENSE5.html",
                       "reference_url": "https://scancode-licensedb.aboutcode.org/x11-xconsortium",
-                      "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/x11-xconsortium.LICENSE",
-                      "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/x11-xconsortium.yml",
+                      "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/x11-xconsortium.LICENSE",
                       "spdx_license_key": "X11",
                       "spdx_url": "https://spdx.org/licenses/X11"
                     }
@@ -874,6 +874,7 @@
                   "matcher": "2-aho",
                   "license_expression": "bsd-new",
                   "rule_identifier": "bsd-new_19.RULE",
+                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_19.RULE",
                   "referenced_filenames": [],
                   "is_license_text": true,
                   "is_license_notice": false,
@@ -895,8 +896,7 @@
                       "homepage_url": "http://www.opensource.org/licenses/BSD-3-Clause",
                       "text_url": "http://www.opensource.org/licenses/BSD-3-Clause",
                       "reference_url": "https://scancode-licensedb.aboutcode.org/bsd-new",
-                      "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-new.LICENSE",
-                      "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-new.yml",
+                      "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-new.LICENSE",
                       "spdx_license_key": "BSD-3-Clause",
                       "spdx_url": "https://spdx.org/licenses/BSD-3-Clause"
                     }
@@ -919,6 +919,7 @@
                   "matcher": "2-aho",
                   "license_expression": "x11-fsf",
                   "rule_identifier": "x11-fsf_7.RULE",
+                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/x11-fsf_7.RULE",
                   "referenced_filenames": [],
                   "is_license_text": true,
                   "is_license_notice": false,
@@ -940,8 +941,7 @@
                       "homepage_url": null,
                       "text_url": "",
                       "reference_url": "https://scancode-licensedb.aboutcode.org/x11-fsf",
-                      "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/x11-fsf.LICENSE",
-                      "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/x11-fsf.yml",
+                      "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/x11-fsf.LICENSE",
                       "spdx_license_key": "X11-distribute-modifications-variant",
                       "spdx_url": "https://spdx.org/licenses/X11-distribute-modifications-variant"
                     }
@@ -1023,6 +1023,7 @@
                   "matcher": "2-aho",
                   "license_expression": "lgpl-2.1-plus",
                   "rule_identifier": "lgpl-2.1-plus_108.RULE",
+                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_108.RULE",
                   "referenced_filenames": [],
                   "is_license_text": false,
                   "is_license_notice": false,
@@ -1044,8 +1045,7 @@
                       "homepage_url": "http://www.gnu.org/licenses/old-licenses/lgpl-2.1-standalone.html",
                       "text_url": "http://www.gnu.org/licenses/old-licenses/lgpl-2.1-standalone.html",
                       "reference_url": "https://scancode-licensedb.aboutcode.org/lgpl-2.1-plus",
-                      "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/lgpl-2.1-plus.LICENSE",
-                      "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/lgpl-2.1-plus.yml",
+                      "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/lgpl-2.1-plus.LICENSE",
                       "spdx_license_key": "LGPL-2.1-or-later",
                       "spdx_url": "https://spdx.org/licenses/LGPL-2.1-or-later"
                     }
@@ -1060,6 +1060,7 @@
                   "matcher": "2-aho",
                   "license_expression": "lgpl-2.1-plus",
                   "rule_identifier": "lgpl-2.1-plus_108.RULE",
+                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_108.RULE",
                   "referenced_filenames": [],
                   "is_license_text": false,
                   "is_license_notice": false,
@@ -1081,8 +1082,7 @@
                       "homepage_url": "http://www.gnu.org/licenses/old-licenses/lgpl-2.1-standalone.html",
                       "text_url": "http://www.gnu.org/licenses/old-licenses/lgpl-2.1-standalone.html",
                       "reference_url": "https://scancode-licensedb.aboutcode.org/lgpl-2.1-plus",
-                      "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/lgpl-2.1-plus.LICENSE",
-                      "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/lgpl-2.1-plus.yml",
+                      "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/lgpl-2.1-plus.LICENSE",
                       "spdx_license_key": "LGPL-2.1-or-later",
                       "spdx_url": "https://spdx.org/licenses/LGPL-2.1-or-later"
                     }
@@ -1097,6 +1097,7 @@
                   "matcher": "2-aho",
                   "license_expression": "lgpl-2.1-plus",
                   "rule_identifier": "lgpl-2.1-plus_108.RULE",
+                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_108.RULE",
                   "referenced_filenames": [],
                   "is_license_text": false,
                   "is_license_notice": false,
@@ -1118,8 +1119,7 @@
                       "homepage_url": "http://www.gnu.org/licenses/old-licenses/lgpl-2.1-standalone.html",
                       "text_url": "http://www.gnu.org/licenses/old-licenses/lgpl-2.1-standalone.html",
                       "reference_url": "https://scancode-licensedb.aboutcode.org/lgpl-2.1-plus",
-                      "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/lgpl-2.1-plus.LICENSE",
-                      "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/lgpl-2.1-plus.yml",
+                      "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/lgpl-2.1-plus.LICENSE",
                       "spdx_license_key": "LGPL-2.1-or-later",
                       "spdx_url": "https://spdx.org/licenses/LGPL-2.1-or-later"
                     }
@@ -1134,6 +1134,7 @@
                   "matcher": "2-aho",
                   "license_expression": "lgpl-2.1-plus",
                   "rule_identifier": "lgpl-2.1-plus_93.RULE",
+                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_93.RULE",
                   "referenced_filenames": [],
                   "is_license_text": false,
                   "is_license_notice": true,
@@ -1155,8 +1156,7 @@
                       "homepage_url": "http://www.gnu.org/licenses/old-licenses/lgpl-2.1-standalone.html",
                       "text_url": "http://www.gnu.org/licenses/old-licenses/lgpl-2.1-standalone.html",
                       "reference_url": "https://scancode-licensedb.aboutcode.org/lgpl-2.1-plus",
-                      "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/lgpl-2.1-plus.LICENSE",
-                      "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/lgpl-2.1-plus.yml",
+                      "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/lgpl-2.1-plus.LICENSE",
                       "spdx_license_key": "LGPL-2.1-or-later",
                       "spdx_url": "https://spdx.org/licenses/LGPL-2.1-or-later"
                     }
@@ -1171,6 +1171,7 @@
                   "matcher": "2-aho",
                   "license_expression": "lgpl-2.1",
                   "rule_identifier": "lgpl-2.1_314.RULE",
+                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1_314.RULE",
                   "referenced_filenames": [
                     "/usr/share/common-licenses/LGPL-2.1"
                   ],
@@ -1194,8 +1195,7 @@
                       "homepage_url": "http://www.gnu.org/licenses/lgpl-2.1.html",
                       "text_url": "http://www.gnu.org/licenses/lgpl-2.1.txt",
                       "reference_url": "https://scancode-licensedb.aboutcode.org/lgpl-2.1",
-                      "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/lgpl-2.1.LICENSE",
-                      "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/lgpl-2.1.yml",
+                      "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/lgpl-2.1.LICENSE",
                       "spdx_license_key": "LGPL-2.1-only",
                       "spdx_url": "https://spdx.org/licenses/LGPL-2.1-only"
                     }
@@ -1222,6 +1222,7 @@
                   "matcher": "1-hash",
                   "license_expression": "lgpl-2.1-plus",
                   "rule_identifier": "lgpl-2.1-plus_108.RULE",
+                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_108.RULE",
                   "referenced_filenames": [],
                   "is_license_text": false,
                   "is_license_notice": false,
@@ -1243,8 +1244,7 @@
                       "homepage_url": "http://www.gnu.org/licenses/old-licenses/lgpl-2.1-standalone.html",
                       "text_url": "http://www.gnu.org/licenses/old-licenses/lgpl-2.1-standalone.html",
                       "reference_url": "https://scancode-licensedb.aboutcode.org/lgpl-2.1-plus",
-                      "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/lgpl-2.1-plus.LICENSE",
-                      "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/lgpl-2.1-plus.yml",
+                      "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/lgpl-2.1-plus.LICENSE",
                       "spdx_license_key": "LGPL-2.1-or-later",
                       "spdx_url": "https://spdx.org/licenses/LGPL-2.1-or-later"
                     }
@@ -1259,6 +1259,7 @@
                   "matcher": "2-aho",
                   "license_expression": "lgpl-2.1-plus",
                   "rule_identifier": "lgpl-2.1-plus_93.RULE",
+                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_93.RULE",
                   "referenced_filenames": [],
                   "is_license_text": false,
                   "is_license_notice": true,
@@ -1280,8 +1281,7 @@
                       "homepage_url": "http://www.gnu.org/licenses/old-licenses/lgpl-2.1-standalone.html",
                       "text_url": "http://www.gnu.org/licenses/old-licenses/lgpl-2.1-standalone.html",
                       "reference_url": "https://scancode-licensedb.aboutcode.org/lgpl-2.1-plus",
-                      "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/lgpl-2.1-plus.LICENSE",
-                      "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/lgpl-2.1-plus.yml",
+                      "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/lgpl-2.1-plus.LICENSE",
                       "spdx_license_key": "LGPL-2.1-or-later",
                       "spdx_url": "https://spdx.org/licenses/LGPL-2.1-or-later"
                     }
@@ -1296,6 +1296,7 @@
                   "matcher": "2-aho",
                   "license_expression": "lgpl-2.1",
                   "rule_identifier": "lgpl-2.1_314.RULE",
+                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1_314.RULE",
                   "referenced_filenames": [
                     "/usr/share/common-licenses/LGPL-2.1"
                   ],
@@ -1319,8 +1320,7 @@
                       "homepage_url": "http://www.gnu.org/licenses/lgpl-2.1.html",
                       "text_url": "http://www.gnu.org/licenses/lgpl-2.1.txt",
                       "reference_url": "https://scancode-licensedb.aboutcode.org/lgpl-2.1",
-                      "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/lgpl-2.1.LICENSE",
-                      "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/lgpl-2.1.yml",
+                      "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/lgpl-2.1.LICENSE",
                       "spdx_license_key": "LGPL-2.1-only",
                       "spdx_url": "https://spdx.org/licenses/LGPL-2.1-only"
                     }

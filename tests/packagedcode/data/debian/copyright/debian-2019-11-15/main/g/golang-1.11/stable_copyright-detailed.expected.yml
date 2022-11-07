@@ -52,6 +52,7 @@ other_license_detections:
         matcher: 1-hash
         license_expression: other-permissive
         rule_identifier: other-permissive_292.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/other-permissive_292.RULE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -74,8 +75,7 @@ other_license_detections:
             homepage_url:
             text_url:
             reference_url: https://scancode-licensedb.aboutcode.org/other-permissive
-            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/other-permissive.LICENSE
-            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/other-permissive.yml
+            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/other-permissive.LICENSE
             spdx_license_key: LicenseRef-scancode-other-permissive
             spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/other-permissive.LICENSE
   - license_expression: bsd-new
@@ -90,6 +90,7 @@ other_license_detections:
         matcher: 1-hash
         license_expression: bsd-new
         rule_identifier: bsd-new_166.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_166.RULE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -135,8 +136,7 @@ other_license_detections:
             homepage_url: http://www.opensource.org/licenses/BSD-3-Clause
             text_url: http://www.opensource.org/licenses/BSD-3-Clause
             reference_url: https://scancode-licensedb.aboutcode.org/bsd-new
-            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-new.LICENSE
-            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-new.yml
+            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-new.LICENSE
             spdx_license_key: BSD-3-Clause
             spdx_url: https://spdx.org/licenses/BSD-3-Clause
   - license_expression: bsd-new AND google-patent-license-golang
@@ -151,6 +151,7 @@ other_license_detections:
         matcher: 2-aho
         license_expression: bsd-new
         rule_identifier: bsd-new_166.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_166.RULE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -196,8 +197,7 @@ other_license_detections:
             homepage_url: http://www.opensource.org/licenses/BSD-3-Clause
             text_url: http://www.opensource.org/licenses/BSD-3-Clause
             reference_url: https://scancode-licensedb.aboutcode.org/bsd-new
-            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-new.LICENSE
-            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-new.yml
+            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-new.LICENSE
             spdx_license_key: BSD-3-Clause
             spdx_url: https://spdx.org/licenses/BSD-3-Clause
       - score: '95.0'
@@ -208,6 +208,7 @@ other_license_detections:
         matcher: 2-aho
         license_expression: google-patent-license-golang
         rule_identifier: google-patent-license-golang_1.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/google-patent-license-golang_1.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: yes
@@ -242,8 +243,7 @@ other_license_detections:
             homepage_url: https://golang.org/PATENTS
             text_url:
             reference_url: https://scancode-licensedb.aboutcode.org/google-patent-license-golang
-            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/google-patent-license-golang.LICENSE
-            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/google-patent-license-golang.yml
+            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/google-patent-license-golang.LICENSE
             spdx_license_key: LicenseRef-scancode-google-patent-license-golang
             spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/google-patent-license-golang.LICENSE
   - license_expression: apache-2.0
@@ -258,6 +258,7 @@ other_license_detections:
         matcher: 1-hash
         license_expression: apache-2.0
         rule_identifier: apache-2.0_65.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_65.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: no
@@ -278,8 +279,7 @@ other_license_detections:
             homepage_url: http://www.apache.org/licenses/
             text_url: http://www.apache.org/licenses/LICENSE-2.0
             reference_url: https://scancode-licensedb.aboutcode.org/apache-2.0
-            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.LICENSE
-            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.yml
+            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.LICENSE
             spdx_license_key: Apache-2.0
             spdx_url: https://spdx.org/licenses/Apache-2.0
       - score: '100.0'
@@ -290,6 +290,7 @@ other_license_detections:
         matcher: 1-hash
         license_expression: apache-2.0
         rule_identifier: apache-2.0_1019.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_1019.RULE
         referenced_filenames:
           - /usr/share/common-licenses/Apache-2.0
         is_license_text: no
@@ -325,8 +326,7 @@ other_license_detections:
             homepage_url: http://www.apache.org/licenses/
             text_url: http://www.apache.org/licenses/LICENSE-2.0
             reference_url: https://scancode-licensedb.aboutcode.org/apache-2.0
-            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.LICENSE
-            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.yml
+            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.LICENSE
             spdx_license_key: Apache-2.0
             spdx_url: https://spdx.org/licenses/Apache-2.0
   - license_expression: mit
@@ -341,6 +341,7 @@ other_license_detections:
         matcher: 1-hash
         license_expression: mit
         rule_identifier: mit.LICENSE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -378,8 +379,7 @@ other_license_detections:
             homepage_url: http://opensource.org/licenses/mit-license.php
             text_url: http://opensource.org/licenses/mit-license.php
             reference_url: https://scancode-licensedb.aboutcode.org/mit
-            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE
-            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.yml
+            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE
             spdx_license_key: MIT
             spdx_url: https://spdx.org/licenses/MIT
   - license_expression: bsd-simplified
@@ -394,6 +394,7 @@ other_license_detections:
         matcher: 2-aho
         license_expression: bsd-simplified
         rule_identifier: bsd-simplified_27.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-simplified_27.RULE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -434,8 +435,7 @@ other_license_detections:
             homepage_url: http://www.opensource.org/licenses/BSD-2-Clause
             text_url: http://opensource.org/licenses/bsd-license.php
             reference_url: https://scancode-licensedb.aboutcode.org/bsd-simplified
-            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-simplified.LICENSE
-            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-simplified.yml
+            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-simplified.LICENSE
             spdx_license_key: BSD-2-Clause
             spdx_url: https://spdx.org/licenses/BSD-2-Clause
   - license_expression: mpeg-ssg
@@ -450,6 +450,7 @@ other_license_detections:
         matcher: 1-hash
         license_expression: mpeg-ssg
         rule_identifier: mpeg-ssg_1.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mpeg-ssg_1.RULE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -489,8 +490,7 @@ other_license_detections:
             homepage_url: http://www.mpeg.org/MPEG/video/mssg-free-mpeg-software.html
             text_url:
             reference_url: https://scancode-licensedb.aboutcode.org/mpeg-ssg
-            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mpeg-ssg.LICENSE
-            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mpeg-ssg.yml
+            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mpeg-ssg.LICENSE
             spdx_license_key: LicenseRef-scancode-mpeg-ssg
             spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mpeg-ssg.LICENSE
   - license_expression: cc-by-3.0
@@ -505,6 +505,7 @@ other_license_detections:
         matcher: 3-seq
         license_expression: cc-by-3.0
         rule_identifier: cc-by-3.0_102.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/cc-by-3.0_102.RULE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -852,8 +853,7 @@ other_license_detections:
             homepage_url: http://creativecommons.org/licenses/by/3.0/
             text_url: http://creativecommons.org/licenses/by/3.0/legalcode
             reference_url: https://scancode-licensedb.aboutcode.org/cc-by-3.0
-            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/cc-by-3.0.LICENSE
-            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/cc-by-3.0.yml
+            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/cc-by-3.0.LICENSE
             spdx_license_key: CC-BY-3.0
             spdx_url: https://spdx.org/licenses/CC-BY-3.0
   - license_expression: bsd-2-clause-views
@@ -868,6 +868,7 @@ other_license_detections:
         matcher: 1-hash
         license_expression: bsd-2-clause-views
         rule_identifier: bsd-2-clause-views_11.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-2-clause-views_11.RULE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -912,8 +913,7 @@ other_license_detections:
             homepage_url: https://www.freebsd.org/copyright/freebsd-license.html
             text_url: https://github.com/protegeproject/protege/blob/master/license.txt
             reference_url: https://scancode-licensedb.aboutcode.org/bsd-2-clause-views
-            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-2-clause-views.LICENSE
-            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-2-clause-views.yml
+            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-2-clause-views.LICENSE
             spdx_license_key: BSD-2-Clause-Views
             spdx_url: https://spdx.org/licenses/BSD-2-Clause-Views
   - license_expression: sunpro
@@ -928,6 +928,7 @@ other_license_detections:
         matcher: 2-aho
         license_expression: sunpro
         rule_identifier: sunpro.LICENSE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/sunpro.LICENSE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -952,8 +953,7 @@ other_license_detections:
             homepage_url:
             text_url:
             reference_url: https://scancode-licensedb.aboutcode.org/sunpro
-            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/sunpro.LICENSE
-            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/sunpro.yml
+            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/sunpro.LICENSE
             spdx_license_key: LicenseRef-scancode-sunpro
             spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/sunpro.LICENSE
   - license_expression: cc-by-3.0
@@ -968,6 +968,7 @@ other_license_detections:
         matcher: 2-aho
         license_expression: cc-by-3.0
         rule_identifier: cc-by-3.0_111.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/cc-by-3.0_111.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: yes
@@ -991,8 +992,7 @@ other_license_detections:
             homepage_url: http://creativecommons.org/licenses/by/3.0/
             text_url: http://creativecommons.org/licenses/by/3.0/legalcode
             reference_url: https://scancode-licensedb.aboutcode.org/cc-by-3.0
-            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/cc-by-3.0.LICENSE
-            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/cc-by-3.0.yml
+            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/cc-by-3.0.LICENSE
             spdx_license_key: CC-BY-3.0
             spdx_url: https://spdx.org/licenses/CC-BY-3.0
 copyright: |

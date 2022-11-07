@@ -52,6 +52,7 @@ license_detections:
         matcher: 2-aho
         license_expression: gpl-3.0-plus WITH gcc-exception-3.1
         rule_identifier: gpl-3.0-plus_with_gcc-exception-3.1_21.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0-plus_with_gcc-exception-3.1_21.RULE
         referenced_filenames:
           - /usr/share/common-licenses/GPL-3
         is_license_text: no
@@ -90,8 +91,7 @@ license_detections:
             homepage_url: http://www.gnu.org/licenses/gpl-3.0-standalone.html
             text_url: http://www.gnu.org/licenses/gpl-3.0-standalone.html
             reference_url: https://scancode-licensedb.aboutcode.org/gpl-3.0-plus
-            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-3.0-plus.LICENSE
-            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-3.0-plus.yml
+            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-3.0-plus.LICENSE
             spdx_license_key: GPL-3.0-or-later
             spdx_url: https://spdx.org/licenses/GPL-3.0-or-later
           - key: gcc-exception-3.1
@@ -104,8 +104,7 @@ license_detections:
             homepage_url: http://www.gnu.org/licenses/gcc-exception-3.1.html
             text_url: http://www.gnu.org/licenses/gcc-exception-3.1.html
             reference_url: https://scancode-licensedb.aboutcode.org/gcc-exception-3.1
-            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gcc-exception-3.1.LICENSE
-            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gcc-exception-3.1.yml
+            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gcc-exception-3.1.LICENSE
             spdx_license_key: GCC-exception-3.1
             spdx_url: https://spdx.org/licenses/GCC-exception-3.1
       - score: '100.0'
@@ -116,6 +115,7 @@ license_detections:
         matcher: 2-aho
         license_expression: gpl-3.0-plus WITH gcc-exception-3.1
         rule_identifier: gpl-3.0-plus_with_gcc-exception-3.1_18.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0-plus_with_gcc-exception-3.1_18.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: yes
@@ -139,8 +139,7 @@ license_detections:
             homepage_url: http://www.gnu.org/licenses/gpl-3.0-standalone.html
             text_url: http://www.gnu.org/licenses/gpl-3.0-standalone.html
             reference_url: https://scancode-licensedb.aboutcode.org/gpl-3.0-plus
-            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-3.0-plus.LICENSE
-            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-3.0-plus.yml
+            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-3.0-plus.LICENSE
             spdx_license_key: GPL-3.0-or-later
             spdx_url: https://spdx.org/licenses/GPL-3.0-or-later
           - key: gcc-exception-3.1
@@ -153,8 +152,7 @@ license_detections:
             homepage_url: http://www.gnu.org/licenses/gcc-exception-3.1.html
             text_url: http://www.gnu.org/licenses/gcc-exception-3.1.html
             reference_url: https://scancode-licensedb.aboutcode.org/gcc-exception-3.1
-            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gcc-exception-3.1.LICENSE
-            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gcc-exception-3.1.yml
+            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gcc-exception-3.1.LICENSE
             spdx_license_key: GCC-exception-3.1
             spdx_url: https://spdx.org/licenses/GCC-exception-3.1
   - license_expression: bsd-new
@@ -169,6 +167,7 @@ license_detections:
         matcher: 2-aho
         license_expression: bsd-new
         rule_identifier: bsd-new_98.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_98.RULE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -205,8 +204,7 @@ license_detections:
             homepage_url: http://www.opensource.org/licenses/BSD-3-Clause
             text_url: http://www.opensource.org/licenses/BSD-3-Clause
             reference_url: https://scancode-licensedb.aboutcode.org/bsd-new
-            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-new.LICENSE
-            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-new.yml
+            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-new.LICENSE
             spdx_license_key: BSD-3-Clause
             spdx_url: https://spdx.org/licenses/BSD-3-Clause
   - license_expression: uoi-ncsa AND mit
@@ -221,6 +219,7 @@ license_detections:
         matcher: 2-aho
         license_expression: uoi-ncsa
         rule_identifier: uoi-ncsa_9.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/uoi-ncsa_9.RULE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -267,8 +266,7 @@ license_detections:
             homepage_url: http://www.otm.illinois.edu/faculty/forms/opensource.asp
             text_url: http://www.otm.illinois.edu/faculty/forms/opensource.asp
             reference_url: https://scancode-licensedb.aboutcode.org/uoi-ncsa
-            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/uoi-ncsa.LICENSE
-            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/uoi-ncsa.yml
+            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/uoi-ncsa.LICENSE
             spdx_license_key: NCSA
             spdx_url: https://spdx.org/licenses/NCSA
       - score: '100.0'
@@ -279,6 +277,7 @@ license_detections:
         matcher: 2-aho
         license_expression: mit
         rule_identifier: mit.LICENSE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -316,8 +315,7 @@ license_detections:
             homepage_url: http://opensource.org/licenses/mit-license.php
             text_url: http://opensource.org/licenses/mit-license.php
             reference_url: https://scancode-licensedb.aboutcode.org/mit
-            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE
-            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.yml
+            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE
             spdx_license_key: MIT
             spdx_url: https://spdx.org/licenses/MIT
   - license_expression: mit AND gfdl-1.2 AND gcc-exception-3.1
@@ -332,6 +330,7 @@ license_detections:
         matcher: 2-aho
         license_expression: mit
         rule_identifier: mit_1083.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_1083.RULE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -370,8 +369,7 @@ license_detections:
             homepage_url: http://opensource.org/licenses/mit-license.php
             text_url: http://opensource.org/licenses/mit-license.php
             reference_url: https://scancode-licensedb.aboutcode.org/mit
-            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE
-            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.yml
+            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE
             spdx_license_key: MIT
             spdx_url: https://spdx.org/licenses/MIT
       - score: '100.0'
@@ -382,6 +380,7 @@ license_detections:
         matcher: 2-aho
         license_expression: gfdl-1.2
         rule_identifier: gfdl-1.2_7.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gfdl-1.2_7.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: yes
@@ -405,8 +404,7 @@ license_detections:
             homepage_url: http://www.gnu.org/licenses/old-licenses/fdl-1.2.txt
             text_url: http://www.gnu.org/licenses/fdl-1.2.txt
             reference_url: https://scancode-licensedb.aboutcode.org/gfdl-1.2
-            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gfdl-1.2.LICENSE
-            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gfdl-1.2.yml
+            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gfdl-1.2.LICENSE
             spdx_license_key: GFDL-1.2-only
             spdx_url: https://spdx.org/licenses/GFDL-1.2-only
       - score: '100.0'
@@ -417,6 +415,7 @@ license_detections:
         matcher: 2-aho
         license_expression: gcc-exception-3.1
         rule_identifier: gcc-exception-3.1.LICENSE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gcc-exception-3.1.LICENSE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -509,8 +508,7 @@ license_detections:
             homepage_url: http://www.gnu.org/licenses/gcc-exception-3.1.html
             text_url: http://www.gnu.org/licenses/gcc-exception-3.1.html
             reference_url: https://scancode-licensedb.aboutcode.org/gcc-exception-3.1
-            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gcc-exception-3.1.LICENSE
-            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gcc-exception-3.1.yml
+            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gcc-exception-3.1.LICENSE
             spdx_license_key: GCC-exception-3.1
             spdx_url: https://spdx.org/licenses/GCC-exception-3.1
   - license_expression: lgpl-2.0-plus
@@ -525,6 +523,7 @@ license_detections:
         matcher: 2-aho
         license_expression: lgpl-2.0-plus
         rule_identifier: lgpl-2.0-plus_469.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0-plus_469.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: yes
@@ -555,8 +554,7 @@ license_detections:
             homepage_url: http://www.gnu.org/licenses/old-licenses/lgpl-2.0.html
             text_url: http://www.gnu.org/licenses/old-licenses/lgpl-2.0-standalone.html
             reference_url: https://scancode-licensedb.aboutcode.org/lgpl-2.0-plus
-            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/lgpl-2.0-plus.LICENSE
-            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/lgpl-2.0-plus.yml
+            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/lgpl-2.0-plus.LICENSE
             spdx_license_key: LGPL-2.0-or-later
             spdx_url: https://spdx.org/licenses/LGPL-2.0-or-later
   - license_expression: lgpl-2.1-plus
@@ -571,6 +569,7 @@ license_detections:
         matcher: 2-aho
         license_expression: lgpl-2.1-plus
         rule_identifier: lgpl-2.1-plus_34.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_34.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: yes
@@ -600,8 +599,7 @@ license_detections:
             homepage_url: http://www.gnu.org/licenses/old-licenses/lgpl-2.1-standalone.html
             text_url: http://www.gnu.org/licenses/old-licenses/lgpl-2.1-standalone.html
             reference_url: https://scancode-licensedb.aboutcode.org/lgpl-2.1-plus
-            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/lgpl-2.1-plus.LICENSE
-            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/lgpl-2.1-plus.yml
+            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/lgpl-2.1-plus.LICENSE
             spdx_license_key: LGPL-2.1-or-later
             spdx_url: https://spdx.org/licenses/LGPL-2.1-or-later
   - license_expression: lgpl-2.1-plus
@@ -616,6 +614,7 @@ license_detections:
         matcher: 2-aho
         license_expression: lgpl-2.1-plus
         rule_identifier: lgpl-2.1-plus_34.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_34.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: yes
@@ -645,8 +644,7 @@ license_detections:
             homepage_url: http://www.gnu.org/licenses/old-licenses/lgpl-2.1-standalone.html
             text_url: http://www.gnu.org/licenses/old-licenses/lgpl-2.1-standalone.html
             reference_url: https://scancode-licensedb.aboutcode.org/lgpl-2.1-plus
-            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/lgpl-2.1-plus.LICENSE
-            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/lgpl-2.1-plus.yml
+            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/lgpl-2.1-plus.LICENSE
             spdx_license_key: LGPL-2.1-or-later
             spdx_url: https://spdx.org/licenses/LGPL-2.1-or-later
   - license_expression: lgpl-2.1-plus
@@ -661,6 +659,7 @@ license_detections:
         matcher: 2-aho
         license_expression: lgpl-2.1-plus
         rule_identifier: lgpl-2.1-plus_327.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_327.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: yes
@@ -690,8 +689,7 @@ license_detections:
             homepage_url: http://www.gnu.org/licenses/old-licenses/lgpl-2.1-standalone.html
             text_url: http://www.gnu.org/licenses/old-licenses/lgpl-2.1-standalone.html
             reference_url: https://scancode-licensedb.aboutcode.org/lgpl-2.1-plus
-            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/lgpl-2.1-plus.LICENSE
-            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/lgpl-2.1-plus.yml
+            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/lgpl-2.1-plus.LICENSE
             spdx_license_key: LGPL-2.1-or-later
             spdx_url: https://spdx.org/licenses/LGPL-2.1-or-later
   - license_expression: public-domain
@@ -706,6 +704,7 @@ license_detections:
         matcher: 2-aho
         license_expression: public-domain
         rule_identifier: public-domain_bare_words.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/public-domain_bare_words.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: no
@@ -726,8 +725,7 @@ license_detections:
             homepage_url: http://www.linfo.org/publicdomain.html
             text_url:
             reference_url: https://scancode-licensedb.aboutcode.org/public-domain
-            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/public-domain.LICENSE
-            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/public-domain.yml
+            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/public-domain.LICENSE
             spdx_license_key: LicenseRef-scancode-public-domain
             spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/public-domain.LICENSE
   - license_expression: lgpl-2.1-plus
@@ -742,6 +740,7 @@ license_detections:
         matcher: 2-aho
         license_expression: lgpl-2.1-plus
         rule_identifier: lgpl-2.1-plus_327.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_327.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: yes
@@ -771,8 +770,7 @@ license_detections:
             homepage_url: http://www.gnu.org/licenses/old-licenses/lgpl-2.1-standalone.html
             text_url: http://www.gnu.org/licenses/old-licenses/lgpl-2.1-standalone.html
             reference_url: https://scancode-licensedb.aboutcode.org/lgpl-2.1-plus
-            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/lgpl-2.1-plus.LICENSE
-            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/lgpl-2.1-plus.yml
+            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/lgpl-2.1-plus.LICENSE
             spdx_license_key: LGPL-2.1-or-later
             spdx_url: https://spdx.org/licenses/LGPL-2.1-or-later
   - license_expression: lgpl-2.1-plus
@@ -787,6 +785,7 @@ license_detections:
         matcher: 2-aho
         license_expression: lgpl-2.1-plus
         rule_identifier: lgpl-2.1-plus_34.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_34.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: yes
@@ -816,8 +815,7 @@ license_detections:
             homepage_url: http://www.gnu.org/licenses/old-licenses/lgpl-2.1-standalone.html
             text_url: http://www.gnu.org/licenses/old-licenses/lgpl-2.1-standalone.html
             reference_url: https://scancode-licensedb.aboutcode.org/lgpl-2.1-plus
-            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/lgpl-2.1-plus.LICENSE
-            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/lgpl-2.1-plus.yml
+            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/lgpl-2.1-plus.LICENSE
             spdx_license_key: LGPL-2.1-or-later
             spdx_url: https://spdx.org/licenses/LGPL-2.1-or-later
   - license_expression: sunpro
@@ -832,6 +830,7 @@ license_detections:
         matcher: 2-aho
         license_expression: sunpro
         rule_identifier: sunpro.LICENSE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/sunpro.LICENSE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -856,8 +855,7 @@ license_detections:
             homepage_url:
             text_url:
             reference_url: https://scancode-licensedb.aboutcode.org/sunpro
-            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/sunpro.LICENSE
-            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/sunpro.yml
+            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/sunpro.LICENSE
             spdx_license_key: LicenseRef-scancode-sunpro
             spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/sunpro.LICENSE
   - license_expression: bsd-new
@@ -872,6 +870,7 @@ license_detections:
         matcher: 2-aho
         license_expression: bsd-new
         rule_identifier: bsd-new_166.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_166.RULE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -917,8 +916,7 @@ license_detections:
             homepage_url: http://www.opensource.org/licenses/BSD-3-Clause
             text_url: http://www.opensource.org/licenses/BSD-3-Clause
             reference_url: https://scancode-licensedb.aboutcode.org/bsd-new
-            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-new.LICENSE
-            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-new.yml
+            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-new.LICENSE
             spdx_license_key: BSD-3-Clause
             spdx_url: https://spdx.org/licenses/BSD-3-Clause
   - license_expression: gpl-2.0-plus
@@ -933,6 +931,7 @@ license_detections:
         matcher: 2-aho
         license_expression: gpl-2.0-plus
         rule_identifier: gpl-2.0-plus_812.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_812.RULE
         referenced_filenames:
           - /usr/share/common-licenses/GPL-2
         is_license_text: no
@@ -962,8 +961,7 @@ license_detections:
             homepage_url: http://www.gnu.org/licenses/old-licenses/gpl-2.0-standalone.html
             text_url: http://www.gnu.org/licenses/old-licenses/gpl-2.0-standalone.html
             reference_url: https://scancode-licensedb.aboutcode.org/gpl-2.0-plus
-            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-2.0-plus.LICENSE
-            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-2.0-plus.yml
+            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-2.0-plus.LICENSE
             spdx_license_key: GPL-2.0-or-later
             spdx_url: https://spdx.org/licenses/GPL-2.0-or-later
   - license_expression: artistic-perl-1.0 OR gpl-1.0
@@ -978,6 +976,7 @@ license_detections:
         matcher: 2-aho
         license_expression: artistic-perl-1.0 OR gpl-1.0
         rule_identifier: artistic-perl-1.0_or_gpl-1.0_2.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/artistic-perl-1.0_or_gpl-1.0_2.RULE
         referenced_filenames:
           - /usr/share/common-licenses/Artistic
           - /usr/share/coomon-licenses/GPL
@@ -1006,8 +1005,7 @@ license_detections:
             homepage_url: http://dev.perl.org/licenses/artistic.html
             text_url: http://dev.perl.org/licenses/artistic.html
             reference_url: https://scancode-licensedb.aboutcode.org/artistic-perl-1.0
-            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/artistic-perl-1.0.LICENSE
-            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/artistic-perl-1.0.yml
+            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/artistic-perl-1.0.LICENSE
             spdx_license_key: Artistic-1.0-Perl
             spdx_url: https://spdx.org/licenses/Artistic-1.0-Perl
           - key: gpl-1.0
@@ -1020,8 +1018,7 @@ license_detections:
             homepage_url: http://www.gnu.org/licenses/gpl-1.0.html
             text_url: http://www.gnu.org/licenses/gpl-1.0.txt
             reference_url: https://scancode-licensedb.aboutcode.org/gpl-1.0
-            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-1.0.LICENSE
-            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-1.0.yml
+            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-1.0.LICENSE
             spdx_license_key: GPL-1.0-only
             spdx_url: https://spdx.org/licenses/GPL-1.0-only
   - license_expression: zlib
@@ -1036,6 +1033,7 @@ license_detections:
         matcher: 2-aho
         license_expression: zlib
         rule_identifier: zlib.LICENSE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/zlib.LICENSE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -1071,8 +1069,7 @@ license_detections:
             homepage_url: http://www.zlib.net/
             text_url: http://www.gzip.org/zlib/zlib_license.html
             reference_url: https://scancode-licensedb.aboutcode.org/zlib
-            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/zlib.LICENSE
-            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/zlib.yml
+            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/zlib.LICENSE
             spdx_license_key: Zlib
             spdx_url: https://spdx.org/licenses/Zlib
   - license_expression: d-zlib
@@ -1087,6 +1084,7 @@ license_detections:
         matcher: 2-aho
         license_expression: d-zlib
         rule_identifier: d-zlib.LICENSE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/d-zlib.LICENSE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -1124,8 +1122,7 @@ license_detections:
             homepage_url:
             text_url:
             reference_url: https://scancode-licensedb.aboutcode.org/d-zlib
-            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/d-zlib.LICENSE
-            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/d-zlib.yml
+            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/d-zlib.LICENSE
             spdx_license_key: LicenseRef-scancode-d-zlib
             spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/d-zlib.LICENSE
   - license_expression: mit
@@ -1140,6 +1137,7 @@ license_detections:
         matcher: 2-aho
         license_expression: mit
         rule_identifier: mit.LICENSE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -1178,8 +1176,7 @@ license_detections:
             homepage_url: http://opensource.org/licenses/mit-license.php
             text_url: http://opensource.org/licenses/mit-license.php
             reference_url: https://scancode-licensedb.aboutcode.org/mit
-            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE
-            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.yml
+            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE
             spdx_license_key: MIT
             spdx_url: https://spdx.org/licenses/MIT
   - license_expression: gpl-3.0-plus WITH gcc-exception-3.1
@@ -1194,6 +1191,7 @@ license_detections:
         matcher: 2-aho
         license_expression: gpl-3.0-plus WITH gcc-exception-3.1
         rule_identifier: gpl-3.0-plus_with_gcc-exception-3.1_10.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0-plus_with_gcc-exception-3.1_10.RULE
         referenced_filenames:
           - COPYING3
           - COPYING.RUNTIME
@@ -1234,8 +1232,7 @@ license_detections:
             homepage_url: http://www.gnu.org/licenses/gpl-3.0-standalone.html
             text_url: http://www.gnu.org/licenses/gpl-3.0-standalone.html
             reference_url: https://scancode-licensedb.aboutcode.org/gpl-3.0-plus
-            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-3.0-plus.LICENSE
-            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-3.0-plus.yml
+            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-3.0-plus.LICENSE
             spdx_license_key: GPL-3.0-or-later
             spdx_url: https://spdx.org/licenses/GPL-3.0-or-later
           - key: gcc-exception-3.1
@@ -1248,8 +1245,7 @@ license_detections:
             homepage_url: http://www.gnu.org/licenses/gcc-exception-3.1.html
             text_url: http://www.gnu.org/licenses/gcc-exception-3.1.html
             reference_url: https://scancode-licensedb.aboutcode.org/gcc-exception-3.1
-            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gcc-exception-3.1.LICENSE
-            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gcc-exception-3.1.yml
+            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gcc-exception-3.1.LICENSE
             spdx_license_key: GCC-exception-3.1
             spdx_url: https://spdx.org/licenses/GCC-exception-3.1
   - license_expression: gpl-3.0-plus
@@ -1264,6 +1260,7 @@ license_detections:
         matcher: 2-aho
         license_expression: gpl-3.0-plus
         rule_identifier: gpl-3.0-plus_397.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0-plus_397.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: yes
@@ -1293,8 +1290,7 @@ license_detections:
             homepage_url: http://www.gnu.org/licenses/gpl-3.0-standalone.html
             text_url: http://www.gnu.org/licenses/gpl-3.0-standalone.html
             reference_url: https://scancode-licensedb.aboutcode.org/gpl-3.0-plus
-            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-3.0-plus.LICENSE
-            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-3.0-plus.yml
+            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-3.0-plus.LICENSE
             spdx_license_key: GPL-3.0-or-later
             spdx_url: https://spdx.org/licenses/GPL-3.0-or-later
   - license_expression: gfdl-1.3-plus
@@ -1309,6 +1305,7 @@ license_detections:
         matcher: 2-aho
         license_expression: gfdl-1.3-plus
         rule_identifier: gfdl-1.3-plus_4.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gfdl-1.3-plus_4.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: yes
@@ -1333,8 +1330,7 @@ license_detections:
             homepage_url: http://www.gnu.org/licenses/fdl-1.3.txt
             text_url: http://www.gnu.org/licenses/fdl-1.3.txt
             reference_url: https://scancode-licensedb.aboutcode.org/gfdl-1.3-plus
-            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gfdl-1.3-plus.LICENSE
-            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gfdl-1.3-plus.yml
+            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gfdl-1.3-plus.LICENSE
             spdx_license_key: GFDL-1.3-or-later
             spdx_url: https://spdx.org/licenses/GFDL-1.3-or-later
   - license_expression: lgpl-2.1-plus WITH gcc-exception-3.1 AND gpl-3.0-plus WITH gcc-exception-3.1
@@ -1349,6 +1345,7 @@ license_detections:
         matcher: 2-aho
         license_expression: lgpl-2.1-plus WITH gcc-exception-3.1
         rule_identifier: lgpl-2.1-plus_with_gcc-exception-3.1_1.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_with_gcc-exception-3.1_1.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: yes
@@ -1382,8 +1379,7 @@ license_detections:
             homepage_url: http://www.gnu.org/licenses/old-licenses/lgpl-2.1-standalone.html
             text_url: http://www.gnu.org/licenses/old-licenses/lgpl-2.1-standalone.html
             reference_url: https://scancode-licensedb.aboutcode.org/lgpl-2.1-plus
-            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/lgpl-2.1-plus.LICENSE
-            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/lgpl-2.1-plus.yml
+            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/lgpl-2.1-plus.LICENSE
             spdx_license_key: LGPL-2.1-or-later
             spdx_url: https://spdx.org/licenses/LGPL-2.1-or-later
           - key: gcc-exception-3.1
@@ -1396,8 +1392,7 @@ license_detections:
             homepage_url: http://www.gnu.org/licenses/gcc-exception-3.1.html
             text_url: http://www.gnu.org/licenses/gcc-exception-3.1.html
             reference_url: https://scancode-licensedb.aboutcode.org/gcc-exception-3.1
-            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gcc-exception-3.1.LICENSE
-            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gcc-exception-3.1.yml
+            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gcc-exception-3.1.LICENSE
             spdx_license_key: GCC-exception-3.1
             spdx_url: https://spdx.org/licenses/GCC-exception-3.1
       - score: '100.0'
@@ -1408,6 +1403,7 @@ license_detections:
         matcher: 2-aho
         license_expression: gpl-3.0-plus WITH gcc-exception-3.1
         rule_identifier: gpl-3.0-plus_with_gcc-exception-3.1_41.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0-plus_with_gcc-exception-3.1_41.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: yes
@@ -1430,8 +1426,7 @@ license_detections:
             homepage_url: http://www.gnu.org/licenses/gpl-3.0-standalone.html
             text_url: http://www.gnu.org/licenses/gpl-3.0-standalone.html
             reference_url: https://scancode-licensedb.aboutcode.org/gpl-3.0-plus
-            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-3.0-plus.LICENSE
-            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-3.0-plus.yml
+            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-3.0-plus.LICENSE
             spdx_license_key: GPL-3.0-or-later
             spdx_url: https://spdx.org/licenses/GPL-3.0-or-later
           - key: gcc-exception-3.1
@@ -1444,8 +1439,7 @@ license_detections:
             homepage_url: http://www.gnu.org/licenses/gcc-exception-3.1.html
             text_url: http://www.gnu.org/licenses/gcc-exception-3.1.html
             reference_url: https://scancode-licensedb.aboutcode.org/gcc-exception-3.1
-            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gcc-exception-3.1.LICENSE
-            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gcc-exception-3.1.yml
+            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gcc-exception-3.1.LICENSE
             spdx_license_key: GCC-exception-3.1
             spdx_url: https://spdx.org/licenses/GCC-exception-3.1
   - license_expression: (gpl-3.0 AND lgpl-2.1 AND lgpl-3.0) AND (lgpl-2.0 AND gpl-3.0) AND gpl-3.0-plus
@@ -1461,6 +1455,7 @@ license_detections:
         matcher: 2-aho
         license_expression: gpl-3.0 AND lgpl-2.1 AND lgpl-3.0
         rule_identifier: gpl-3.0_and_lgpl-2.1_and_lgpl-3.0_1.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0_and_lgpl-2.1_and_lgpl-3.0_1.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: yes
@@ -1481,8 +1476,7 @@ license_detections:
             homepage_url: http://www.gnu.org/licenses/gpl-3.0.html
             text_url: http://www.gnu.org/licenses/gpl-3.0-standalone.html
             reference_url: https://scancode-licensedb.aboutcode.org/gpl-3.0
-            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-3.0.LICENSE
-            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-3.0.yml
+            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-3.0.LICENSE
             spdx_license_key: GPL-3.0-only
             spdx_url: https://spdx.org/licenses/GPL-3.0-only
           - key: lgpl-2.1
@@ -1495,8 +1489,7 @@ license_detections:
             homepage_url: http://www.gnu.org/licenses/lgpl-2.1.html
             text_url: http://www.gnu.org/licenses/lgpl-2.1.txt
             reference_url: https://scancode-licensedb.aboutcode.org/lgpl-2.1
-            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/lgpl-2.1.LICENSE
-            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/lgpl-2.1.yml
+            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/lgpl-2.1.LICENSE
             spdx_license_key: LGPL-2.1-only
             spdx_url: https://spdx.org/licenses/LGPL-2.1-only
           - key: lgpl-3.0
@@ -1509,8 +1502,7 @@ license_detections:
             homepage_url: http://www.gnu.org/licenses/lgpl-3.0.html
             text_url: http://www.gnu.org/licenses/lgpl-3.0-standalone.html
             reference_url: https://scancode-licensedb.aboutcode.org/lgpl-3.0
-            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/lgpl-3.0.LICENSE
-            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/lgpl-3.0.yml
+            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/lgpl-3.0.LICENSE
             spdx_license_key: LGPL-3.0-only
             spdx_url: https://spdx.org/licenses/LGPL-3.0-only
       - score: '100.0'
@@ -1521,6 +1513,7 @@ license_detections:
         matcher: 2-aho
         license_expression: gpl-3.0 AND lgpl-2.1 AND lgpl-3.0
         rule_identifier: gpl-3.0_and_lgpl-2.1_and_lgpl-3.0_1.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0_and_lgpl-2.1_and_lgpl-3.0_1.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: yes
@@ -1541,8 +1534,7 @@ license_detections:
             homepage_url: http://www.gnu.org/licenses/gpl-3.0.html
             text_url: http://www.gnu.org/licenses/gpl-3.0-standalone.html
             reference_url: https://scancode-licensedb.aboutcode.org/gpl-3.0
-            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-3.0.LICENSE
-            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-3.0.yml
+            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-3.0.LICENSE
             spdx_license_key: GPL-3.0-only
             spdx_url: https://spdx.org/licenses/GPL-3.0-only
           - key: lgpl-2.1
@@ -1555,8 +1547,7 @@ license_detections:
             homepage_url: http://www.gnu.org/licenses/lgpl-2.1.html
             text_url: http://www.gnu.org/licenses/lgpl-2.1.txt
             reference_url: https://scancode-licensedb.aboutcode.org/lgpl-2.1
-            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/lgpl-2.1.LICENSE
-            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/lgpl-2.1.yml
+            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/lgpl-2.1.LICENSE
             spdx_license_key: LGPL-2.1-only
             spdx_url: https://spdx.org/licenses/LGPL-2.1-only
           - key: lgpl-3.0
@@ -1569,8 +1560,7 @@ license_detections:
             homepage_url: http://www.gnu.org/licenses/lgpl-3.0.html
             text_url: http://www.gnu.org/licenses/lgpl-3.0-standalone.html
             reference_url: https://scancode-licensedb.aboutcode.org/lgpl-3.0
-            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/lgpl-3.0.LICENSE
-            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/lgpl-3.0.yml
+            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/lgpl-3.0.LICENSE
             spdx_license_key: LGPL-3.0-only
             spdx_url: https://spdx.org/licenses/LGPL-3.0-only
       - score: '100.0'
@@ -1581,6 +1571,7 @@ license_detections:
         matcher: 2-aho
         license_expression: lgpl-2.0 AND gpl-3.0
         rule_identifier: lgpl-2.0_and_gpl-3.0_1.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0_and_gpl-3.0_1.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: yes
@@ -1601,8 +1592,7 @@ license_detections:
             homepage_url: http://www.gnu.org/licenses/old-licenses/lgpl-2.0.html
             text_url: http://www.gnu.org/licenses/lgpl-2.0.html
             reference_url: https://scancode-licensedb.aboutcode.org/lgpl-2.0
-            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/lgpl-2.0.LICENSE
-            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/lgpl-2.0.yml
+            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/lgpl-2.0.LICENSE
             spdx_license_key: LGPL-2.0-only
             spdx_url: https://spdx.org/licenses/LGPL-2.0-only
           - key: gpl-3.0
@@ -1615,8 +1605,7 @@ license_detections:
             homepage_url: http://www.gnu.org/licenses/gpl-3.0.html
             text_url: http://www.gnu.org/licenses/gpl-3.0-standalone.html
             reference_url: https://scancode-licensedb.aboutcode.org/gpl-3.0
-            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-3.0.LICENSE
-            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-3.0.yml
+            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-3.0.LICENSE
             spdx_license_key: GPL-3.0-only
             spdx_url: https://spdx.org/licenses/GPL-3.0-only
       - score: '100.0'
@@ -1627,6 +1616,7 @@ license_detections:
         matcher: 2-aho
         license_expression: gpl-3.0-plus
         rule_identifier: gpl-3.0-plus_89.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0-plus_89.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: no
@@ -1647,8 +1637,7 @@ license_detections:
             homepage_url: http://www.gnu.org/licenses/gpl-3.0-standalone.html
             text_url: http://www.gnu.org/licenses/gpl-3.0-standalone.html
             reference_url: https://scancode-licensedb.aboutcode.org/gpl-3.0-plus
-            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-3.0-plus.LICENSE
-            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-3.0-plus.yml
+            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-3.0-plus.LICENSE
             spdx_license_key: GPL-3.0-or-later
             spdx_url: https://spdx.org/licenses/GPL-3.0-or-later
       - score: '100.0'
@@ -1659,6 +1648,7 @@ license_detections:
         matcher: 2-aho
         license_expression: gnu-emacs-gpl-1988
         rule_identifier: gnu-emacs-gpl-1988_1.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gnu-emacs-gpl-1988_1.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: yes
@@ -1686,8 +1676,7 @@ license_detections:
             homepage_url: https://www.free-soft.org/gpl_history/emacs_gpl.html
             text_url: https://www.cs.bham.ac.uk/research/projects/poplog/emacs/COPYING
             reference_url: https://scancode-licensedb.aboutcode.org/gnu-emacs-gpl-1988
-            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gnu-emacs-gpl-1988.LICENSE
-            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gnu-emacs-gpl-1988.yml
+            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gnu-emacs-gpl-1988.LICENSE
             spdx_license_key: LicenseRef-scancode-gnu-emacs-gpl-1988
             spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gnu-emacs-gpl-1988.LICENSE
       - score: '100.0'
@@ -1698,6 +1687,7 @@ license_detections:
         matcher: 2-aho
         license_expression: gpl-3.0 AND lgpl-2.1
         rule_identifier: gpl-3.0_and_lgpl-2.1_2.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0_and_lgpl-2.1_2.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: yes
@@ -1718,8 +1708,7 @@ license_detections:
             homepage_url: http://www.gnu.org/licenses/gpl-3.0.html
             text_url: http://www.gnu.org/licenses/gpl-3.0-standalone.html
             reference_url: https://scancode-licensedb.aboutcode.org/gpl-3.0
-            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-3.0.LICENSE
-            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-3.0.yml
+            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-3.0.LICENSE
             spdx_license_key: GPL-3.0-only
             spdx_url: https://spdx.org/licenses/GPL-3.0-only
           - key: lgpl-2.1
@@ -1732,8 +1721,7 @@ license_detections:
             homepage_url: http://www.gnu.org/licenses/lgpl-2.1.html
             text_url: http://www.gnu.org/licenses/lgpl-2.1.txt
             reference_url: https://scancode-licensedb.aboutcode.org/lgpl-2.1
-            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/lgpl-2.1.LICENSE
-            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/lgpl-2.1.yml
+            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/lgpl-2.1.LICENSE
             spdx_license_key: LGPL-2.1-only
             spdx_url: https://spdx.org/licenses/LGPL-2.1-only
       - score: '100.0'
@@ -1744,6 +1732,7 @@ license_detections:
         matcher: 2-aho
         license_expression: gpl-2.0-plus AND gpl-3.0-plus
         rule_identifier: gpl-2.0-plus_and_gpl-3.0-plus_3.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_and_gpl-3.0-plus_3.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: yes
@@ -1764,8 +1753,7 @@ license_detections:
             homepage_url: http://www.gnu.org/licenses/old-licenses/gpl-2.0-standalone.html
             text_url: http://www.gnu.org/licenses/old-licenses/gpl-2.0-standalone.html
             reference_url: https://scancode-licensedb.aboutcode.org/gpl-2.0-plus
-            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-2.0-plus.LICENSE
-            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-2.0-plus.yml
+            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-2.0-plus.LICENSE
             spdx_license_key: GPL-2.0-or-later
             spdx_url: https://spdx.org/licenses/GPL-2.0-or-later
           - key: gpl-3.0-plus
@@ -1778,8 +1766,7 @@ license_detections:
             homepage_url: http://www.gnu.org/licenses/gpl-3.0-standalone.html
             text_url: http://www.gnu.org/licenses/gpl-3.0-standalone.html
             reference_url: https://scancode-licensedb.aboutcode.org/gpl-3.0-plus
-            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-3.0-plus.LICENSE
-            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-3.0-plus.yml
+            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-3.0-plus.LICENSE
             spdx_license_key: GPL-3.0-or-later
             spdx_url: https://spdx.org/licenses/GPL-3.0-or-later
   - license_expression: lgpl-2.1-plus WITH gcc-exception-3.1
@@ -1794,6 +1781,7 @@ license_detections:
         matcher: 2-aho
         license_expression: lgpl-2.1-plus WITH gcc-exception-3.1
         rule_identifier: lgpl-2.1-plus_with_gcc-exception-3.1_1.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_with_gcc-exception-3.1_1.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: yes
@@ -1827,8 +1815,7 @@ license_detections:
             homepage_url: http://www.gnu.org/licenses/old-licenses/lgpl-2.1-standalone.html
             text_url: http://www.gnu.org/licenses/old-licenses/lgpl-2.1-standalone.html
             reference_url: https://scancode-licensedb.aboutcode.org/lgpl-2.1-plus
-            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/lgpl-2.1-plus.LICENSE
-            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/lgpl-2.1-plus.yml
+            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/lgpl-2.1-plus.LICENSE
             spdx_license_key: LGPL-2.1-or-later
             spdx_url: https://spdx.org/licenses/LGPL-2.1-or-later
           - key: gcc-exception-3.1
@@ -1841,8 +1828,7 @@ license_detections:
             homepage_url: http://www.gnu.org/licenses/gcc-exception-3.1.html
             text_url: http://www.gnu.org/licenses/gcc-exception-3.1.html
             reference_url: https://scancode-licensedb.aboutcode.org/gcc-exception-3.1
-            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gcc-exception-3.1.LICENSE
-            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gcc-exception-3.1.yml
+            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gcc-exception-3.1.LICENSE
             spdx_license_key: GCC-exception-3.1
             spdx_url: https://spdx.org/licenses/GCC-exception-3.1
   - license_expression: lgpl-2.0-plus AND gpl-1.0-plus
@@ -1857,6 +1843,7 @@ license_detections:
         matcher: 2-aho
         license_expression: lgpl-2.0-plus AND gpl-1.0-plus
         rule_identifier: lgpl-2.0-plus_and_gpl-1.0-plus_2.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0-plus_and_gpl-1.0-plus_2.RULE
         referenced_filenames:
           - /usr/share/common-licenses/LGPL
           - /usr/share/common-licenses/GPL
@@ -1886,8 +1873,7 @@ license_detections:
             homepage_url: http://www.gnu.org/licenses/old-licenses/lgpl-2.0.html
             text_url: http://www.gnu.org/licenses/old-licenses/lgpl-2.0-standalone.html
             reference_url: https://scancode-licensedb.aboutcode.org/lgpl-2.0-plus
-            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/lgpl-2.0-plus.LICENSE
-            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/lgpl-2.0-plus.yml
+            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/lgpl-2.0-plus.LICENSE
             spdx_license_key: LGPL-2.0-or-later
             spdx_url: https://spdx.org/licenses/LGPL-2.0-or-later
           - key: gpl-1.0-plus
@@ -1900,8 +1886,7 @@ license_detections:
             homepage_url: http://www.gnu.org/licenses/old-licenses/gpl-1.0-standalone.html
             text_url: http://www.gnu.org/licenses/old-licenses/gpl-1.0-standalone.html
             reference_url: https://scancode-licensedb.aboutcode.org/gpl-1.0-plus
-            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-1.0-plus.LICENSE
-            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-1.0-plus.yml
+            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-1.0-plus.LICENSE
             spdx_license_key: GPL-1.0-or-later
             spdx_url: https://spdx.org/licenses/GPL-1.0-or-later
   - license_expression: bsla-no-advert
@@ -1916,6 +1901,7 @@ license_detections:
         matcher: 2-aho
         license_expression: bsla-no-advert
         rule_identifier: bsla-no-advert.LICENSE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsla-no-advert.LICENSE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -1944,8 +1930,7 @@ license_detections:
             homepage_url:
             text_url:
             reference_url: https://scancode-licensedb.aboutcode.org/bsla-no-advert
-            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsla-no-advert.LICENSE
-            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsla-no-advert.yml
+            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsla-no-advert.LICENSE
             spdx_license_key: LicenseRef-scancode-bsla-no-advert
             spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsla-no-advert.LICENSE
   - license_expression: bsla
@@ -1960,6 +1945,7 @@ license_detections:
         matcher: 2-aho
         license_expression: bsla
         rule_identifier: bsla.LICENSE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsla.LICENSE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -1991,8 +1977,7 @@ license_detections:
             homepage_url:
             text_url:
             reference_url: https://scancode-licensedb.aboutcode.org/bsla
-            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsla.LICENSE
-            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsla.yml
+            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsla.LICENSE
             spdx_license_key: LicenseRef-scancode-bsla
             spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsla.LICENSE
   - license_expression: bsd-original-uc
@@ -2007,6 +1992,7 @@ license_detections:
         matcher: 2-aho
         license_expression: bsd-original-uc
         rule_identifier: bsd-original-uc_3.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-original-uc_3.RULE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -2054,8 +2040,7 @@ license_detections:
             homepage_url: ftp://ftp.cs.berkeley.edu/pub/4bsd/README.Impt.License.Change
             text_url: http://www.xfree86.org/3.3.6/COPYRIGHT2.html
             reference_url: https://scancode-licensedb.aboutcode.org/bsd-original-uc
-            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-original-uc.LICENSE
-            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-original-uc.yml
+            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-original-uc.LICENSE
             spdx_license_key: BSD-4-Clause-UC
             spdx_url: https://spdx.org/licenses/BSD-4-Clause-UC
   - license_expression: bsd-new
@@ -2070,6 +2055,7 @@ license_detections:
         matcher: 2-aho
         license_expression: bsd-new
         rule_identifier: bsd-new_19.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_19.RULE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -2113,8 +2099,7 @@ license_detections:
             homepage_url: http://www.opensource.org/licenses/BSD-3-Clause
             text_url: http://www.opensource.org/licenses/BSD-3-Clause
             reference_url: https://scancode-licensedb.aboutcode.org/bsd-new
-            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-new.LICENSE
-            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-new.yml
+            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-new.LICENSE
             spdx_license_key: BSD-3-Clause
             spdx_url: https://spdx.org/licenses/BSD-3-Clause
   - license_expression: bsd-original-uc
@@ -2129,6 +2114,7 @@ license_detections:
         matcher: 2-aho
         license_expression: bsd-original-uc
         rule_identifier: bsd-original-uc_3.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-original-uc_3.RULE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -2176,8 +2162,7 @@ license_detections:
             homepage_url: ftp://ftp.cs.berkeley.edu/pub/4bsd/README.Impt.License.Change
             text_url: http://www.xfree86.org/3.3.6/COPYRIGHT2.html
             reference_url: https://scancode-licensedb.aboutcode.org/bsd-original-uc
-            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-original-uc.LICENSE
-            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-original-uc.yml
+            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-original-uc.LICENSE
             spdx_license_key: BSD-4-Clause-UC
             spdx_url: https://spdx.org/licenses/BSD-4-Clause-UC
   - license_expression: flex-2.5
@@ -2192,6 +2177,7 @@ license_detections:
         matcher: 2-aho
         license_expression: flex-2.5
         rule_identifier: flex-2.5_6.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/flex-2.5_6.RULE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -2225,8 +2211,7 @@ license_detections:
             homepage_url: http://www.cs.princeton.edu/~appel/modern/c/software/flex/flex.html
             text_url: http://www.cs.cmu.edu/afs/cs/project/ai-repository-9/ai/areas/nlp/parsing/flex/copying.txt
             reference_url: https://scancode-licensedb.aboutcode.org/flex-2.5
-            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/flex-2.5.LICENSE
-            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/flex-2.5.yml
+            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/flex-2.5.LICENSE
             spdx_license_key: LicenseRef-scancode-flex-2.5
             spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/flex-2.5.LICENSE
   - license_expression: bsd-original-uc
@@ -2241,6 +2226,7 @@ license_detections:
         matcher: 2-aho
         license_expression: bsd-original-uc
         rule_identifier: bsd-original-uc.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-original-uc.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: no
@@ -2261,8 +2247,7 @@ license_detections:
             homepage_url: ftp://ftp.cs.berkeley.edu/pub/4bsd/README.Impt.License.Change
             text_url: http://www.xfree86.org/3.3.6/COPYRIGHT2.html
             reference_url: https://scancode-licensedb.aboutcode.org/bsd-original-uc
-            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-original-uc.LICENSE
-            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-original-uc.yml
+            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-original-uc.LICENSE
             spdx_license_key: BSD-4-Clause-UC
             spdx_url: https://spdx.org/licenses/BSD-4-Clause-UC
   - license_expression: gpl-3.0 AND gpl-2.0 AND lgpl-3.0-plus WITH cygwin-exception-lgpl-3.0-plus
@@ -2279,6 +2264,7 @@ license_detections:
         license_expression: gpl-3.0 AND gpl-2.0 AND lgpl-3.0-plus WITH cygwin-exception-lgpl-3.0-plus
           AND other-copyleft AND other-permissive
         rule_identifier: gpl-3.0_and_gpl-2.0_and_lgpl-3.0-plus_and_other-copyleft_and_other-permissive_1.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0_and_gpl-2.0_and_lgpl-3.0-plus_and_other-copyleft_and_other-permissive_1.RULE
         referenced_filenames:
           - CYGWIN_LICENSE
         is_license_text: no
@@ -2303,8 +2289,7 @@ license_detections:
             homepage_url: http://www.gnu.org/licenses/gpl-3.0.html
             text_url: http://www.gnu.org/licenses/gpl-3.0-standalone.html
             reference_url: https://scancode-licensedb.aboutcode.org/gpl-3.0
-            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-3.0.LICENSE
-            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-3.0.yml
+            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-3.0.LICENSE
             spdx_license_key: GPL-3.0-only
             spdx_url: https://spdx.org/licenses/GPL-3.0-only
           - key: gpl-2.0
@@ -2317,8 +2302,7 @@ license_detections:
             homepage_url: http://www.gnu.org/licenses/gpl-2.0.html
             text_url: http://www.gnu.org/licenses/gpl-2.0.txt
             reference_url: https://scancode-licensedb.aboutcode.org/gpl-2.0
-            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-2.0.LICENSE
-            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-2.0.yml
+            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-2.0.LICENSE
             spdx_license_key: GPL-2.0-only
             spdx_url: https://spdx.org/licenses/GPL-2.0-only
           - key: lgpl-3.0-plus
@@ -2331,8 +2315,7 @@ license_detections:
             homepage_url: http://www.gnu.org/licenses/lgpl-3.0-standalone.html
             text_url: http://www.gnu.org/licenses/lgpl-3.0-standalone.html
             reference_url: https://scancode-licensedb.aboutcode.org/lgpl-3.0-plus
-            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/lgpl-3.0-plus.LICENSE
-            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/lgpl-3.0-plus.yml
+            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/lgpl-3.0-plus.LICENSE
             spdx_license_key: LGPL-3.0-or-later
             spdx_url: https://spdx.org/licenses/LGPL-3.0-or-later
           - key: cygwin-exception-lgpl-3.0-plus
@@ -2345,8 +2328,7 @@ license_detections:
             homepage_url: https://cygwin.com/licensing.html
             text_url:
             reference_url: https://scancode-licensedb.aboutcode.org/cygwin-exception-lgpl-3.0-plus
-            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/cygwin-exception-lgpl-3.0-plus.LICENSE
-            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/cygwin-exception-lgpl-3.0-plus.yml
+            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/cygwin-exception-lgpl-3.0-plus.LICENSE
             spdx_license_key: LicenseRef-scancode-cygwin-exception-lgpl-3.0-plus
             spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/cygwin-exception-lgpl-3.0-plus.LICENSE
           - key: other-copyleft
@@ -2359,8 +2341,7 @@ license_detections:
             homepage_url:
             text_url:
             reference_url: https://scancode-licensedb.aboutcode.org/other-copyleft
-            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/other-copyleft.LICENSE
-            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/other-copyleft.yml
+            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/other-copyleft.LICENSE
             spdx_license_key: LicenseRef-scancode-other-copyleft
             spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/other-copyleft.LICENSE
           - key: other-permissive
@@ -2373,8 +2354,7 @@ license_detections:
             homepage_url:
             text_url:
             reference_url: https://scancode-licensedb.aboutcode.org/other-permissive
-            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/other-permissive.LICENSE
-            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/other-permissive.yml
+            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/other-permissive.LICENSE
             spdx_license_key: LicenseRef-scancode-other-permissive
             spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/other-permissive.LICENSE
   - license_expression: x11-lucent
@@ -2389,6 +2369,7 @@ license_detections:
         matcher: 2-aho
         license_expression: x11-lucent
         rule_identifier: x11-lucent.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/x11-lucent.RULE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -2419,8 +2400,7 @@ license_detections:
             homepage_url:
             text_url:
             reference_url: https://scancode-licensedb.aboutcode.org/x11-lucent
-            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/x11-lucent.LICENSE
-            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/x11-lucent.yml
+            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/x11-lucent.LICENSE
             spdx_license_key: LicenseRef-scancode-x11-lucent
             spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/x11-lucent.LICENSE
   - license_expression: amd-historical
@@ -2435,6 +2415,7 @@ license_detections:
         matcher: 2-aho
         license_expression: amd-historical
         rule_identifier: amd-historical_1.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/amd-historical_1.RULE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -2467,8 +2448,7 @@ license_detections:
             homepage_url:
             text_url:
             reference_url: https://scancode-licensedb.aboutcode.org/amd-historical
-            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/amd-historical.LICENSE
-            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/amd-historical.yml
+            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/amd-historical.LICENSE
             spdx_license_key: LicenseRef-scancode-amd-historical
             spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/amd-historical.LICENSE
   - license_expression: sunpro
@@ -2483,6 +2463,7 @@ license_detections:
         matcher: 2-aho
         license_expression: sunpro
         rule_identifier: sunpro.LICENSE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/sunpro.LICENSE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -2505,8 +2486,7 @@ license_detections:
             homepage_url:
             text_url:
             reference_url: https://scancode-licensedb.aboutcode.org/sunpro
-            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/sunpro.LICENSE
-            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/sunpro.yml
+            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/sunpro.LICENSE
             spdx_license_key: LicenseRef-scancode-sunpro
             spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/sunpro.LICENSE
   - license_expression: osf-1990
@@ -2521,6 +2501,7 @@ license_detections:
         matcher: 2-aho
         license_expression: osf-1990
         rule_identifier: osf-1990_3.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/osf-1990_3.RULE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -2551,8 +2532,7 @@ license_detections:
             homepage_url: https://fedoraproject.org/wiki/Licensing:MIT?rd=Licensing/MIT#HP_Variant
             text_url: https://fedoraproject.org/wiki/Licensing:MIT?rd=Licensing/MIT#HP_Variant
             reference_url: https://scancode-licensedb.aboutcode.org/osf-1990
-            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/osf-1990.LICENSE
-            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/osf-1990.yml
+            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/osf-1990.LICENSE
             spdx_license_key: LicenseRef-scancode-osf-1990
             spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/osf-1990.LICENSE
   - license_expression: nilsson-historical
@@ -2567,6 +2547,7 @@ license_detections:
         matcher: 2-aho
         license_expression: nilsson-historical
         rule_identifier: nilsson-historical.LICENSE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/nilsson-historical.LICENSE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -2595,8 +2576,7 @@ license_detections:
             homepage_url:
             text_url:
             reference_url: https://scancode-licensedb.aboutcode.org/nilsson-historical
-            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/nilsson-historical.LICENSE
-            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/nilsson-historical.yml
+            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/nilsson-historical.LICENSE
             spdx_license_key: LicenseRef-scancode-nilsson-historical
             spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/nilsson-historical.LICENSE
   - license_expression: newlib-historical
@@ -2611,6 +2591,7 @@ license_detections:
         matcher: 2-aho
         license_expression: newlib-historical
         rule_identifier: newlib-historical.LICENSE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/newlib-historical.LICENSE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -2640,8 +2621,7 @@ license_detections:
             homepage_url:
             text_url:
             reference_url: https://scancode-licensedb.aboutcode.org/newlib-historical
-            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/newlib-historical.LICENSE
-            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/newlib-historical.yml
+            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/newlib-historical.LICENSE
             spdx_license_key: LicenseRef-scancode-newlib-historical
             spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/newlib-historical.LICENSE
   - license_expression: bsd-new
@@ -2656,6 +2636,7 @@ license_detections:
         matcher: 2-aho
         license_expression: bsd-new
         rule_identifier: bsd-new_98.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_98.RULE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -2697,8 +2678,7 @@ license_detections:
             homepage_url: http://www.opensource.org/licenses/BSD-3-Clause
             text_url: http://www.opensource.org/licenses/BSD-3-Clause
             reference_url: https://scancode-licensedb.aboutcode.org/bsd-new
-            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-new.LICENSE
-            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-new.yml
+            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-new.LICENSE
             spdx_license_key: BSD-3-Clause
             spdx_url: https://spdx.org/licenses/BSD-3-Clause
   - license_expression: amd-historical
@@ -2713,6 +2693,7 @@ license_detections:
         matcher: 2-aho
         license_expression: amd-historical
         rule_identifier: amd-historical4.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/amd-historical4.RULE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -2740,8 +2721,7 @@ license_detections:
             homepage_url:
             text_url:
             reference_url: https://scancode-licensedb.aboutcode.org/amd-historical
-            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/amd-historical.LICENSE
-            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/amd-historical.yml
+            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/amd-historical.LICENSE
             spdx_license_key: LicenseRef-scancode-amd-historical
             spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/amd-historical.LICENSE
   - license_expression: bsd-new
@@ -2756,6 +2736,7 @@ license_detections:
         matcher: 2-aho
         license_expression: bsd-new
         rule_identifier: bsd-new_933.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_933.RULE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -2802,8 +2783,7 @@ license_detections:
             homepage_url: http://www.opensource.org/licenses/BSD-3-Clause
             text_url: http://www.opensource.org/licenses/BSD-3-Clause
             reference_url: https://scancode-licensedb.aboutcode.org/bsd-new
-            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-new.LICENSE
-            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-new.yml
+            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-new.LICENSE
             spdx_license_key: BSD-3-Clause
             spdx_url: https://spdx.org/licenses/BSD-3-Clause
   - license_expression: bsd-simplified
@@ -2818,6 +2798,7 @@ license_detections:
         matcher: 2-aho
         license_expression: bsd-simplified
         rule_identifier: bsd-simplified_27.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-simplified_27.RULE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -2858,8 +2839,7 @@ license_detections:
             homepage_url: http://www.opensource.org/licenses/BSD-2-Clause
             text_url: http://opensource.org/licenses/bsd-license.php
             reference_url: https://scancode-licensedb.aboutcode.org/bsd-simplified
-            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-simplified.LICENSE
-            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-simplified.yml
+            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-simplified.LICENSE
             spdx_license_key: BSD-2-Clause
             spdx_url: https://spdx.org/licenses/BSD-2-Clause
   - license_expression: bsd-simplified
@@ -2874,6 +2854,7 @@ license_detections:
         matcher: 2-aho
         license_expression: bsd-simplified
         rule_identifier: bsd-simplified_newlib3.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-simplified_newlib3.RULE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -2914,8 +2895,7 @@ license_detections:
             homepage_url: http://www.opensource.org/licenses/BSD-2-Clause
             text_url: http://opensource.org/licenses/bsd-license.php
             reference_url: https://scancode-licensedb.aboutcode.org/bsd-simplified
-            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-simplified.LICENSE
-            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-simplified.yml
+            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-simplified.LICENSE
             spdx_license_key: BSD-2-Clause
             spdx_url: https://spdx.org/licenses/BSD-2-Clause
   - license_expression: bsd-simplified
@@ -2930,6 +2910,7 @@ license_detections:
         matcher: 2-aho
         license_expression: bsd-simplified
         rule_identifier: bsd-simplified_27.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-simplified_27.RULE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -2970,8 +2951,7 @@ license_detections:
             homepage_url: http://www.opensource.org/licenses/BSD-2-Clause
             text_url: http://opensource.org/licenses/bsd-license.php
             reference_url: https://scancode-licensedb.aboutcode.org/bsd-simplified
-            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-simplified.LICENSE
-            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-simplified.yml
+            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-simplified.LICENSE
             spdx_license_key: BSD-2-Clause
             spdx_url: https://spdx.org/licenses/BSD-2-Clause
   - license_expression: x11-hanson
@@ -2986,6 +2966,7 @@ license_detections:
         matcher: 2-aho
         license_expression: x11-hanson
         rule_identifier: x11-hanson2.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/x11-hanson2.RULE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -3016,8 +2997,7 @@ license_detections:
             homepage_url: http://www.research.microsoft.com/~drh/
             text_url:
             reference_url: https://scancode-licensedb.aboutcode.org/x11-hanson
-            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/x11-hanson.LICENSE
-            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/x11-hanson.yml
+            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/x11-hanson.LICENSE
             spdx_license_key: LicenseRef-scancode-x11-hanson
             spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/x11-hanson.LICENSE
   - license_expression: bsd-simplified
@@ -3032,6 +3012,7 @@ license_detections:
         matcher: 2-aho
         license_expression: bsd-simplified
         rule_identifier: bsd-simplified_27.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-simplified_27.RULE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -3072,8 +3053,7 @@ license_detections:
             homepage_url: http://www.opensource.org/licenses/BSD-2-Clause
             text_url: http://opensource.org/licenses/bsd-license.php
             reference_url: https://scancode-licensedb.aboutcode.org/bsd-simplified
-            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-simplified.LICENSE
-            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-simplified.yml
+            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-simplified.LICENSE
             spdx_license_key: BSD-2-Clause
             spdx_url: https://spdx.org/licenses/BSD-2-Clause
   - license_expression: bsd-new
@@ -3088,6 +3068,7 @@ license_detections:
         matcher: 2-aho
         license_expression: bsd-new
         rule_identifier: bsd-new_76.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_76.RULE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -3129,8 +3110,7 @@ license_detections:
             homepage_url: http://www.opensource.org/licenses/BSD-3-Clause
             text_url: http://www.opensource.org/licenses/BSD-3-Clause
             reference_url: https://scancode-licensedb.aboutcode.org/bsd-new
-            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-new.LICENSE
-            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-new.yml
+            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-new.LICENSE
             spdx_license_key: BSD-3-Clause
             spdx_url: https://spdx.org/licenses/BSD-3-Clause
   - license_expression: lgpl-2.0-plus
@@ -3145,6 +3125,7 @@ license_detections:
         matcher: 2-aho
         license_expression: lgpl-2.0-plus
         rule_identifier: lgpl_39.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl_39.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: no
@@ -3165,8 +3146,7 @@ license_detections:
             homepage_url: http://www.gnu.org/licenses/old-licenses/lgpl-2.0.html
             text_url: http://www.gnu.org/licenses/old-licenses/lgpl-2.0-standalone.html
             reference_url: https://scancode-licensedb.aboutcode.org/lgpl-2.0-plus
-            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/lgpl-2.0-plus.LICENSE
-            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/lgpl-2.0-plus.yml
+            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/lgpl-2.0-plus.LICENSE
             spdx_license_key: LGPL-2.0-or-later
             spdx_url: https://spdx.org/licenses/LGPL-2.0-or-later
   - license_expression: lgpl-2.1-plus AND lgpl-2.0-plus
@@ -3181,6 +3161,7 @@ license_detections:
         matcher: 2-aho
         license_expression: lgpl-2.1-plus
         rule_identifier: lgpl-2.1-plus_12.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_12.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: yes
@@ -3215,8 +3196,7 @@ license_detections:
             homepage_url: http://www.gnu.org/licenses/old-licenses/lgpl-2.1-standalone.html
             text_url: http://www.gnu.org/licenses/old-licenses/lgpl-2.1-standalone.html
             reference_url: https://scancode-licensedb.aboutcode.org/lgpl-2.1-plus
-            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/lgpl-2.1-plus.LICENSE
-            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/lgpl-2.1-plus.yml
+            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/lgpl-2.1-plus.LICENSE
             spdx_license_key: LGPL-2.1-or-later
             spdx_url: https://spdx.org/licenses/LGPL-2.1-or-later
       - score: '99.0'
@@ -3227,6 +3207,7 @@ license_detections:
         matcher: 2-aho
         license_expression: lgpl-2.0-plus
         rule_identifier: lgpl_33.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl_33.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: no
@@ -3247,8 +3228,7 @@ license_detections:
             homepage_url: http://www.gnu.org/licenses/old-licenses/lgpl-2.0.html
             text_url: http://www.gnu.org/licenses/old-licenses/lgpl-2.0-standalone.html
             reference_url: https://scancode-licensedb.aboutcode.org/lgpl-2.0-plus
-            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/lgpl-2.0-plus.LICENSE
-            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/lgpl-2.0-plus.yml
+            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/lgpl-2.0-plus.LICENSE
             spdx_license_key: LGPL-2.0-or-later
             spdx_url: https://spdx.org/licenses/LGPL-2.0-or-later
       - score: '100.0'
@@ -3259,6 +3239,7 @@ license_detections:
         matcher: 2-aho
         license_expression: lgpl-2.0-plus
         rule_identifier: lgpl-2.0-plus_339.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0-plus_339.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: yes
@@ -3285,8 +3266,7 @@ license_detections:
             homepage_url: http://www.gnu.org/licenses/old-licenses/lgpl-2.0.html
             text_url: http://www.gnu.org/licenses/old-licenses/lgpl-2.0-standalone.html
             reference_url: https://scancode-licensedb.aboutcode.org/lgpl-2.0-plus
-            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/lgpl-2.0-plus.LICENSE
-            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/lgpl-2.0-plus.yml
+            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/lgpl-2.0-plus.LICENSE
             spdx_license_key: LGPL-2.0-or-later
             spdx_url: https://spdx.org/licenses/LGPL-2.0-or-later
   - license_expression: intel-osl-1993
@@ -3301,6 +3281,7 @@ license_detections:
         matcher: 2-aho
         license_expression: intel-osl-1993
         rule_identifier: intel-osl-1993.LICENSE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/intel-osl-1993.LICENSE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -3344,8 +3325,7 @@ license_detections:
             homepage_url:
             text_url:
             reference_url: https://scancode-licensedb.aboutcode.org/intel-osl-1993
-            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/intel-osl-1993.LICENSE
-            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/intel-osl-1993.yml
+            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/intel-osl-1993.LICENSE
             spdx_license_key: LicenseRef-scancode-intel-osl-1993
             spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/intel-osl-1993.LICENSE
   - license_expression: osf-1990
@@ -3360,6 +3340,7 @@ license_detections:
         matcher: 2-aho
         license_expression: osf-1990
         rule_identifier: osf-1990_3.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/osf-1990_3.RULE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -3390,8 +3371,7 @@ license_detections:
             homepage_url: https://fedoraproject.org/wiki/Licensing:MIT?rd=Licensing/MIT#HP_Variant
             text_url: https://fedoraproject.org/wiki/Licensing:MIT?rd=Licensing/MIT#HP_Variant
             reference_url: https://scancode-licensedb.aboutcode.org/osf-1990
-            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/osf-1990.LICENSE
-            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/osf-1990.yml
+            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/osf-1990.LICENSE
             spdx_license_key: LicenseRef-scancode-osf-1990
             spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/osf-1990.LICENSE
   - license_expression: hs-regexp
@@ -3406,6 +3386,7 @@ license_detections:
         matcher: 2-aho
         license_expression: hs-regexp
         rule_identifier: hs-regexp.LICENSE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/hs-regexp.LICENSE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -3445,8 +3426,7 @@ license_detections:
             homepage_url: https://github.com/garyhouston/regex/blob/master/COPYRIGHT
             text_url: http://search.cpan.org/~knok/File-MMagic-1.12/MMagic.pm
             reference_url: https://scancode-licensedb.aboutcode.org/hs-regexp
-            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/hs-regexp.LICENSE
-            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/hs-regexp.yml
+            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/hs-regexp.LICENSE
             spdx_license_key: Spencer-94
             spdx_url: https://spdx.org/licenses/Spencer-94
   - license_expression: bsd-simplified
@@ -3461,6 +3441,7 @@ license_detections:
         matcher: 2-aho
         license_expression: bsd-simplified
         rule_identifier: bsd-simplified_27.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-simplified_27.RULE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -3501,8 +3482,7 @@ license_detections:
             homepage_url: http://www.opensource.org/licenses/BSD-2-Clause
             text_url: http://opensource.org/licenses/bsd-license.php
             reference_url: https://scancode-licensedb.aboutcode.org/bsd-simplified
-            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-simplified.LICENSE
-            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-simplified.yml
+            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-simplified.LICENSE
             spdx_license_key: BSD-2-Clause
             spdx_url: https://spdx.org/licenses/BSD-2-Clause
   - license_expression: bsd-simplified
@@ -3517,6 +3497,7 @@ license_detections:
         matcher: 2-aho
         license_expression: bsd-simplified
         rule_identifier: bsd-simplified_27.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-simplified_27.RULE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -3557,8 +3538,7 @@ license_detections:
             homepage_url: http://www.opensource.org/licenses/BSD-2-Clause
             text_url: http://opensource.org/licenses/bsd-license.php
             reference_url: https://scancode-licensedb.aboutcode.org/bsd-simplified
-            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-simplified.LICENSE
-            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-simplified.yml
+            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-simplified.LICENSE
             spdx_license_key: BSD-2-Clause
             spdx_url: https://spdx.org/licenses/BSD-2-Clause
   - license_expression: bsd-simplified
@@ -3573,6 +3553,7 @@ license_detections:
         matcher: 2-aho
         license_expression: bsd-simplified
         rule_identifier: bsd-simplified_27.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-simplified_27.RULE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -3613,8 +3594,7 @@ license_detections:
             homepage_url: http://www.opensource.org/licenses/BSD-2-Clause
             text_url: http://opensource.org/licenses/bsd-license.php
             reference_url: https://scancode-licensedb.aboutcode.org/bsd-simplified
-            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-simplified.LICENSE
-            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-simplified.yml
+            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-simplified.LICENSE
             spdx_license_key: BSD-2-Clause
             spdx_url: https://spdx.org/licenses/BSD-2-Clause
   - license_expression: bsd-new
@@ -3629,6 +3609,7 @@ license_detections:
         matcher: 2-aho
         license_expression: bsd-new
         rule_identifier: bsd-new_983.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_983.RULE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -3666,8 +3647,7 @@ license_detections:
             homepage_url: http://www.opensource.org/licenses/BSD-3-Clause
             text_url: http://www.opensource.org/licenses/BSD-3-Clause
             reference_url: https://scancode-licensedb.aboutcode.org/bsd-new
-            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-new.LICENSE
-            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-new.yml
+            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-new.LICENSE
             spdx_license_key: BSD-3-Clause
             spdx_url: https://spdx.org/licenses/BSD-3-Clause
   - license_expression: unicode
@@ -3682,6 +3662,7 @@ license_detections:
         matcher: 2-aho
         license_expression: unicode
         rule_identifier: unicode_6.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/unicode_6.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: yes
@@ -3720,8 +3701,7 @@ license_detections:
             homepage_url: http://unicode.org/
             text_url: http://unicode.org/copyright.html
             reference_url: https://scancode-licensedb.aboutcode.org/unicode
-            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/unicode.LICENSE
-            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/unicode.yml
+            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/unicode.LICENSE
             spdx_license_key: LicenseRef-scancode-unicode
             spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/unicode.LICENSE
       - score: '100.0'
@@ -3732,6 +3712,7 @@ license_detections:
         matcher: 2-aho
         license_expression: unicode
         rule_identifier: unicode_17.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/unicode_17.RULE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -3783,8 +3764,7 @@ license_detections:
             homepage_url: http://unicode.org/
             text_url: http://unicode.org/copyright.html
             reference_url: https://scancode-licensedb.aboutcode.org/unicode
-            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/unicode.LICENSE
-            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/unicode.yml
+            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/unicode.LICENSE
             spdx_license_key: LicenseRef-scancode-unicode
             spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/unicode.LICENSE
   - license_expression: lgpl-2.1-plus
@@ -3799,6 +3779,7 @@ license_detections:
         matcher: 2-aho
         license_expression: lgpl-2.1-plus
         rule_identifier: lgpl-2.1-plus_284.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_284.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: yes
@@ -3832,8 +3813,7 @@ license_detections:
             homepage_url: http://www.gnu.org/licenses/old-licenses/lgpl-2.1-standalone.html
             text_url: http://www.gnu.org/licenses/old-licenses/lgpl-2.1-standalone.html
             reference_url: https://scancode-licensedb.aboutcode.org/lgpl-2.1-plus
-            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/lgpl-2.1-plus.LICENSE
-            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/lgpl-2.1-plus.yml
+            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/lgpl-2.1-plus.LICENSE
             spdx_license_key: LGPL-2.1-or-later
             spdx_url: https://spdx.org/licenses/LGPL-2.1-or-later
 other_license_detections: []

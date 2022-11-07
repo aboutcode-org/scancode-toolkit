@@ -39,6 +39,7 @@
           "matcher": "1-hash",
           "license_expression": "gpl-2.0",
           "rule_identifier": "gpl-2.0_660.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0_660.RULE",
           "referenced_filenames": [],
           "is_license_text": false,
           "is_license_notice": false,
@@ -60,8 +61,7 @@
               "homepage_url": "http://www.gnu.org/licenses/gpl-2.0.html",
               "text_url": "http://www.gnu.org/licenses/gpl-2.0.txt",
               "reference_url": "https://scancode-licensedb.aboutcode.org/gpl-2.0",
-              "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-2.0.LICENSE",
-              "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-2.0.yml",
+              "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-2.0.LICENSE",
               "spdx_license_key": "GPL-2.0-only",
               "spdx_url": "https://spdx.org/licenses/GPL-2.0-only"
             }
@@ -84,6 +84,7 @@
           "matcher": "1-hash",
           "license_expression": "gpl-1.0-plus",
           "rule_identifier": "gpl-1.0-plus_48.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-1.0-plus_48.RULE",
           "referenced_filenames": [],
           "is_license_text": false,
           "is_license_notice": false,
@@ -105,8 +106,7 @@
               "homepage_url": "http://www.gnu.org/licenses/old-licenses/gpl-1.0-standalone.html",
               "text_url": "http://www.gnu.org/licenses/old-licenses/gpl-1.0-standalone.html",
               "reference_url": "https://scancode-licensedb.aboutcode.org/gpl-1.0-plus",
-              "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-1.0-plus.LICENSE",
-              "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-1.0-plus.yml",
+              "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-1.0-plus.LICENSE",
               "spdx_license_key": "GPL-1.0-or-later",
               "spdx_url": "https://spdx.org/licenses/GPL-1.0-or-later"
             }
@@ -129,6 +129,7 @@
           "matcher": "1-hash",
           "license_expression": "gpl-2.0 WITH mysql-linking-exception-2018",
           "rule_identifier": "gpl-2.0_with_mysql-linking-exception-2018_4.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0_with_mysql-linking-exception-2018_4.RULE",
           "referenced_filenames": [
             "EXCEPTIONS-CONNECTOR-J"
           ],
@@ -152,8 +153,7 @@
               "homepage_url": "http://www.gnu.org/licenses/gpl-2.0.html",
               "text_url": "http://www.gnu.org/licenses/gpl-2.0.txt",
               "reference_url": "https://scancode-licensedb.aboutcode.org/gpl-2.0",
-              "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-2.0.LICENSE",
-              "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-2.0.yml",
+              "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-2.0.LICENSE",
               "spdx_license_key": "GPL-2.0-only",
               "spdx_url": "https://spdx.org/licenses/GPL-2.0-only"
             },
@@ -168,8 +168,7 @@
               "homepage_url": "https://raw.githubusercontent.com/mysql/mysql-server/8.0/include/mysql.h",
               "text_url": "",
               "reference_url": "https://scancode-licensedb.aboutcode.org/mysql-linking-exception-2018",
-              "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mysql-linking-exception-2018.LICENSE",
-              "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mysql-linking-exception-2018.yml",
+              "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mysql-linking-exception-2018.LICENSE",
               "spdx_license_key": "LicenseRef-scancode-mysql-linking-exception-2018",
               "spdx_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mysql-linking-exception-2018.LICENSE"
             }

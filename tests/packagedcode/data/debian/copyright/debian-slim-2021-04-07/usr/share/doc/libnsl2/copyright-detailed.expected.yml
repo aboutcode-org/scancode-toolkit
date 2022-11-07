@@ -51,6 +51,7 @@ license_detections:
         matcher: 1-hash
         license_expression: bsd-new
         rule_identifier: bsd-new_591.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_591.RULE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -97,8 +98,7 @@ license_detections:
             homepage_url: http://www.opensource.org/licenses/BSD-3-Clause
             text_url: http://www.opensource.org/licenses/BSD-3-Clause
             reference_url: https://scancode-licensedb.aboutcode.org/bsd-new
-            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-new.LICENSE
-            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-new.yml
+            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-new.LICENSE
             spdx_license_key: BSD-3-Clause
             spdx_url: https://spdx.org/licenses/BSD-3-Clause
   - license_expression: gpl-2.0-plus WITH autoconf-simple-exception-2.0
@@ -113,6 +113,7 @@ license_detections:
         matcher: 1-hash
         license_expression: gpl-2.0-plus WITH autoconf-simple-exception-2.0
         rule_identifier: gpl-2.0-plus_with_autoconf-simple-exception-2.0_16.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_with_autoconf-simple-exception-2.0_16.RULE
         referenced_filenames:
           - /usr/share/common-licenses/GPL-2
         is_license_text: no
@@ -154,8 +155,7 @@ license_detections:
             homepage_url: http://www.gnu.org/licenses/old-licenses/gpl-2.0-standalone.html
             text_url: http://www.gnu.org/licenses/old-licenses/gpl-2.0-standalone.html
             reference_url: https://scancode-licensedb.aboutcode.org/gpl-2.0-plus
-            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-2.0-plus.LICENSE
-            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-2.0-plus.yml
+            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-2.0-plus.LICENSE
             spdx_license_key: GPL-2.0-or-later
             spdx_url: https://spdx.org/licenses/GPL-2.0-or-later
           - key: autoconf-simple-exception-2.0
@@ -168,8 +168,7 @@ license_detections:
             homepage_url: https://git.savannah.gnu.org/gitweb/?p=config.git;a=blob;f=config.guess;h=a7448442748cc6f98a066d2d1051fad3b043761a;hb=HEAD
             text_url:
             reference_url: https://scancode-licensedb.aboutcode.org/autoconf-simple-exception-2.0
-            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/autoconf-simple-exception-2.0.LICENSE
-            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/autoconf-simple-exception-2.0.yml
+            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/autoconf-simple-exception-2.0.LICENSE
             spdx_license_key: LicenseRef-scancode-autoconf-simple-exception-2.0
             spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/autoconf-simple-exception-2.0.LICENSE
   - license_expression: gpl-2.0-plus WITH libtool-exception-2.0
@@ -184,6 +183,7 @@ license_detections:
         matcher: 1-hash
         license_expression: gpl-2.0-plus WITH libtool-exception-2.0
         rule_identifier: gpl-2.0-plus_with_libtool-exception-2.0_17.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_with_libtool-exception-2.0_17.RULE
         referenced_filenames:
           - /usr/share/common-licenses/GPL-2
         is_license_text: no
@@ -225,8 +225,7 @@ license_detections:
             homepage_url: http://www.gnu.org/licenses/old-licenses/gpl-2.0-standalone.html
             text_url: http://www.gnu.org/licenses/old-licenses/gpl-2.0-standalone.html
             reference_url: https://scancode-licensedb.aboutcode.org/gpl-2.0-plus
-            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-2.0-plus.LICENSE
-            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-2.0-plus.yml
+            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-2.0-plus.LICENSE
             spdx_license_key: GPL-2.0-or-later
             spdx_url: https://spdx.org/licenses/GPL-2.0-or-later
           - key: libtool-exception-2.0
@@ -239,8 +238,7 @@ license_detections:
             homepage_url: http://git.savannah.gnu.org/cgit/libtool.git/tree/m4/libtool.m4
             text_url:
             reference_url: https://scancode-licensedb.aboutcode.org/libtool-exception-2.0
-            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/libtool-exception-2.0.LICENSE
-            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/libtool-exception-2.0.yml
+            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/libtool-exception-2.0.LICENSE
             spdx_license_key: Libtool-exception
             spdx_url: https://spdx.org/licenses/Libtool-exception
   - license_expression: gpl-3.0-plus WITH autoconf-simple-exception
@@ -255,6 +253,7 @@ license_detections:
         matcher: 1-hash
         license_expression: gpl-3.0-plus WITH autoconf-simple-exception
         rule_identifier: gpl-3.0-plus_with_autoconf-simple-exception_6.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0-plus_with_autoconf-simple-exception_6.RULE
         referenced_filenames:
           - /usr/share/common-licenses/GPL-3
         is_license_text: no
@@ -298,8 +297,7 @@ license_detections:
             homepage_url: http://www.gnu.org/licenses/gpl-3.0-standalone.html
             text_url: http://www.gnu.org/licenses/gpl-3.0-standalone.html
             reference_url: https://scancode-licensedb.aboutcode.org/gpl-3.0-plus
-            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-3.0-plus.LICENSE
-            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-3.0-plus.yml
+            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-3.0-plus.LICENSE
             spdx_license_key: GPL-3.0-or-later
             spdx_url: https://spdx.org/licenses/GPL-3.0-or-later
           - key: autoconf-simple-exception
@@ -312,8 +310,7 @@ license_detections:
             homepage_url: https://git.savannah.gnu.org/gitweb/?p=config.git;a=blob;f=config.guess;h=a7448442748cc6f98a066d2d1051fad3b043761a;hb=HEAD
             text_url:
             reference_url: https://scancode-licensedb.aboutcode.org/autoconf-simple-exception
-            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/autoconf-simple-exception.LICENSE
-            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/autoconf-simple-exception.yml
+            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/autoconf-simple-exception.LICENSE
             spdx_license_key: LicenseRef-scancode-autoconf-simple-exception
             spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/autoconf-simple-exception.LICENSE
   - license_expression: lgpl-2.1
@@ -328,6 +325,7 @@ license_detections:
         matcher: 1-hash
         license_expression: lgpl-2.1
         rule_identifier: lgpl-2.1_38.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1_38.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: no
@@ -348,8 +346,7 @@ license_detections:
             homepage_url: http://www.gnu.org/licenses/lgpl-2.1.html
             text_url: http://www.gnu.org/licenses/lgpl-2.1.txt
             reference_url: https://scancode-licensedb.aboutcode.org/lgpl-2.1
-            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/lgpl-2.1.LICENSE
-            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/lgpl-2.1.yml
+            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/lgpl-2.1.LICENSE
             spdx_license_key: LGPL-2.1-only
             spdx_url: https://spdx.org/licenses/LGPL-2.1-only
       - score: '100.0'
@@ -360,6 +357,7 @@ license_detections:
         matcher: 1-hash
         license_expression: lgpl-2.1
         rule_identifier: lgpl-2.1_369.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1_369.RULE
         referenced_filenames:
           - /usr/share/common-licenses/LGPL-2.1
         is_license_text: no
@@ -395,8 +393,7 @@ license_detections:
             homepage_url: http://www.gnu.org/licenses/lgpl-2.1.html
             text_url: http://www.gnu.org/licenses/lgpl-2.1.txt
             reference_url: https://scancode-licensedb.aboutcode.org/lgpl-2.1
-            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/lgpl-2.1.LICENSE
-            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/lgpl-2.1.yml
+            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/lgpl-2.1.LICENSE
             spdx_license_key: LGPL-2.1-only
             spdx_url: https://spdx.org/licenses/LGPL-2.1-only
   - license_expression: lgpl-2.1-plus
@@ -411,6 +408,7 @@ license_detections:
         matcher: 1-hash
         license_expression: lgpl-2.1-plus
         rule_identifier: lgpl-2.1-plus_108.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_108.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: no
@@ -431,8 +429,7 @@ license_detections:
             homepage_url: http://www.gnu.org/licenses/old-licenses/lgpl-2.1-standalone.html
             text_url: http://www.gnu.org/licenses/old-licenses/lgpl-2.1-standalone.html
             reference_url: https://scancode-licensedb.aboutcode.org/lgpl-2.1-plus
-            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/lgpl-2.1-plus.LICENSE
-            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/lgpl-2.1-plus.yml
+            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/lgpl-2.1-plus.LICENSE
             spdx_license_key: LGPL-2.1-or-later
             spdx_url: https://spdx.org/licenses/LGPL-2.1-or-later
       - score: '100.0'
@@ -443,6 +440,7 @@ license_detections:
         matcher: 1-hash
         license_expression: lgpl-2.1-plus
         rule_identifier: lgpl-2.1-plus_387.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_387.RULE
         referenced_filenames:
           - /usr/share/common-licenses/LGPL-2.1
         is_license_text: no
@@ -480,8 +478,7 @@ license_detections:
             homepage_url: http://www.gnu.org/licenses/old-licenses/lgpl-2.1-standalone.html
             text_url: http://www.gnu.org/licenses/old-licenses/lgpl-2.1-standalone.html
             reference_url: https://scancode-licensedb.aboutcode.org/lgpl-2.1-plus
-            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/lgpl-2.1-plus.LICENSE
-            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/lgpl-2.1-plus.yml
+            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/lgpl-2.1-plus.LICENSE
             spdx_license_key: LGPL-2.1-or-later
             spdx_url: https://spdx.org/licenses/LGPL-2.1-or-later
   - license_expression: x11-xconsortium
@@ -496,6 +493,7 @@ license_detections:
         matcher: 1-hash
         license_expression: x11-xconsortium
         rule_identifier: x11-xconsortium_2.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/x11-xconsortium_2.RULE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -537,8 +535,7 @@ license_detections:
             homepage_url: http://www.xfree86.org/current/LICENSE5.html
             text_url: http://www.xfree86.org/current/LICENSE5.html
             reference_url: https://scancode-licensedb.aboutcode.org/x11-xconsortium
-            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/x11-xconsortium.LICENSE
-            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/x11-xconsortium.yml
+            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/x11-xconsortium.LICENSE
             spdx_license_key: X11
             spdx_url: https://spdx.org/licenses/X11
   - license_expression: fsf-unlimited
@@ -553,6 +550,7 @@ license_detections:
         matcher: 1-hash
         license_expression: fsf-unlimited
         rule_identifier: fsf-unlimited.LICENSE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/fsf-unlimited.LICENSE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -576,8 +574,7 @@ license_detections:
             homepage_url: https://fedoraproject.org/wiki/Licensing/FSF_Unlimited_License#License_Retention_Variant
             text_url:
             reference_url: https://scancode-licensedb.aboutcode.org/fsf-unlimited
-            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/fsf-unlimited.LICENSE
-            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/fsf-unlimited.yml
+            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/fsf-unlimited.LICENSE
             spdx_license_key: FSFULLR
             spdx_url: https://spdx.org/licenses/FSFULLR
   - license_expression: fsf-unlimited-no-warranty
@@ -592,6 +589,7 @@ license_detections:
         matcher: 1-hash
         license_expression: fsf-unlimited-no-warranty
         rule_identifier: fsf-unlimited-no-warranty.LICENSE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/fsf-unlimited-no-warranty.LICENSE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -620,8 +618,7 @@ license_detections:
             homepage_url: http://www.fsf.org/licensing/licenses/
             text_url: http://www.fsf.org/licensing/licenses/
             reference_url: https://scancode-licensedb.aboutcode.org/fsf-unlimited-no-warranty
-            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/fsf-unlimited-no-warranty.LICENSE
-            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/fsf-unlimited-no-warranty.yml
+            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/fsf-unlimited-no-warranty.LICENSE
             spdx_license_key: LicenseRef-scancode-fsf-unlimited-no-warranty
             spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/fsf-unlimited-no-warranty.LICENSE
   - license_expression: fsf-free
@@ -636,6 +633,7 @@ license_detections:
         matcher: 1-hash
         license_expression: fsf-free
         rule_identifier: fsf-free.LICENSE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/fsf-free.LICENSE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -658,8 +656,7 @@ license_detections:
             homepage_url: http://www.fsf.org/licensing/licenses/
             text_url: https://fedoraproject.org/wiki/Licensing/FSF_Unlimited_License
             reference_url: https://scancode-licensedb.aboutcode.org/fsf-free
-            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/fsf-free.LICENSE
-            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/fsf-free.yml
+            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/fsf-free.LICENSE
             spdx_license_key: FSFUL
             spdx_url: https://spdx.org/licenses/FSFUL
   - license_expression: fsf-ap
@@ -674,6 +671,7 @@ license_detections:
         matcher: 1-hash
         license_expression: fsf-ap
         rule_identifier: fsf-ap.LICENSE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/fsf-ap.LICENSE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -698,8 +696,7 @@ license_detections:
             homepage_url: http://www.gnu.org/prep/maintain/html_node/License-Notices-for-Other-Files.html
             text_url:
             reference_url: https://scancode-licensedb.aboutcode.org/fsf-ap
-            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/fsf-ap.LICENSE
-            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/fsf-ap.yml
+            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/fsf-ap.LICENSE
             spdx_license_key: FSFAP
             spdx_url: https://spdx.org/licenses/FSFAP
   - license_expression: fsf-unlimited-no-warranty
@@ -714,6 +711,7 @@ license_detections:
         matcher: 1-hash
         license_expression: fsf-unlimited-no-warranty
         rule_identifier: fsf-unlimited-no-warranty_2.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/fsf-unlimited-no-warranty_2.RULE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -742,8 +740,7 @@ license_detections:
             homepage_url: http://www.fsf.org/licensing/licenses/
             text_url: http://www.fsf.org/licensing/licenses/
             reference_url: https://scancode-licensedb.aboutcode.org/fsf-unlimited-no-warranty
-            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/fsf-unlimited-no-warranty.LICENSE
-            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/fsf-unlimited-no-warranty.yml
+            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/fsf-unlimited-no-warranty.LICENSE
             spdx_license_key: LicenseRef-scancode-fsf-unlimited-no-warranty
             spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/fsf-unlimited-no-warranty.LICENSE
 other_license_detections: []

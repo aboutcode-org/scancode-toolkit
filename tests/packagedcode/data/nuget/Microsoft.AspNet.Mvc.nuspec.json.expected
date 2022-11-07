@@ -55,6 +55,7 @@
             "matcher": "1-hash",
             "license_expression": "ms-net-library",
             "rule_identifier": "ms-net-library_1.RULE",
+            "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/ms-net-library_1.RULE",
             "referenced_filenames": [],
             "is_license_text": false,
             "is_license_notice": false,
@@ -76,8 +77,7 @@
                 "homepage_url": "http://www.microsoft.com/web/webpi/eula/net_library_eula_enu.htm",
                 "text_url": "",
                 "reference_url": "https://scancode-licensedb.aboutcode.org/ms-net-library",
-                "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/ms-net-library.LICENSE",
-                "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/ms-net-library.yml",
+                "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/ms-net-library.LICENSE",
                 "spdx_license_key": "LicenseRef-scancode-ms-net-library",
                 "spdx_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/ms-net-library.LICENSE"
               }

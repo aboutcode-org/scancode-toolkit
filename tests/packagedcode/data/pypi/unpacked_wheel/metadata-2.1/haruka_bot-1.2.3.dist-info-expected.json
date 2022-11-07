@@ -57,6 +57,7 @@
             "matcher": "1-hash",
             "license_expression": "agpl-3.0-plus",
             "rule_identifier": "spdx_license_id_agpl-3.0-or-later_for_agpl-3.0-plus.RULE",
+            "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/spdx_license_id_agpl-3.0-or-later_for_agpl-3.0-plus.RULE",
             "referenced_filenames": [],
             "is_license_text": false,
             "is_license_notice": false,
@@ -78,8 +79,7 @@
                 "homepage_url": "http://www.gnu.org/licenses/agpl-3.0.html",
                 "text_url": "http://www.gnu.org/licenses/agpl.txt",
                 "reference_url": "https://scancode-licensedb.aboutcode.org/agpl-3.0-plus",
-                "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/agpl-3.0-plus.LICENSE",
-                "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/agpl-3.0-plus.yml",
+                "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/agpl-3.0-plus.LICENSE",
                 "spdx_license_key": "AGPL-3.0-or-later",
                 "spdx_url": "https://spdx.org/licenses/AGPL-3.0-or-later"
               }
@@ -102,6 +102,7 @@
             "matcher": "1-hash",
             "license_expression": "agpl-3.0-plus",
             "rule_identifier": "pypi_gnu_affero_general_public_license_v3_or_later.RULE",
+            "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/pypi_gnu_affero_general_public_license_v3_or_later.RULE",
             "referenced_filenames": [],
             "is_license_text": false,
             "is_license_notice": false,
@@ -123,8 +124,7 @@
                 "homepage_url": "http://www.gnu.org/licenses/agpl-3.0.html",
                 "text_url": "http://www.gnu.org/licenses/agpl.txt",
                 "reference_url": "https://scancode-licensedb.aboutcode.org/agpl-3.0-plus",
-                "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/agpl-3.0-plus.LICENSE",
-                "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/agpl-3.0-plus.yml",
+                "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/agpl-3.0-plus.LICENSE",
                 "spdx_license_key": "AGPL-3.0-or-later",
                 "spdx_url": "https://spdx.org/licenses/AGPL-3.0-or-later"
               }

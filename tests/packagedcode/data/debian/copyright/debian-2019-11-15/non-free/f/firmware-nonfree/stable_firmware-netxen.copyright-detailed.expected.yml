@@ -16,6 +16,7 @@ license_detections:
         matcher: 2-aho
         license_expression: qlogic-firmware
         rule_identifier: qlogic-firmware.LICENSE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/qlogic-firmware.LICENSE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -54,8 +55,7 @@ license_detections:
             homepage_url: https://github.com/wkennington/linux-firmware/blob/master/LICENCE.qla2xxx
             text_url: https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/tree/LICENCE.qla2xxx
             reference_url: https://scancode-licensedb.aboutcode.org/qlogic-firmware
-            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/qlogic-firmware.LICENSE
-            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/qlogic-firmware.yml
+            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/qlogic-firmware.LICENSE
             spdx_license_key: LicenseRef-scancode-qlogic-firmware
             spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/qlogic-firmware.LICENSE
 other_license_detections: []

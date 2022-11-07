@@ -27,6 +27,7 @@ license_detections:
         matcher: 3-seq
         license_expression: stmicroelectronics-linux-firmware
         rule_identifier: stmicroelectronics-linux-firmware.LICENSE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/stmicroelectronics-linux-firmware.LICENSE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -82,8 +83,7 @@ license_detections:
             homepage_url: https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/tree/LICENCE.cw1200
             text_url: https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/tree/LICENCE.tda7706-firmware.txt
             reference_url: https://scancode-licensedb.aboutcode.org/stmicroelectronics-linux-firmware
-            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/stmicroelectronics-linux-firmware.LICENSE
-            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/stmicroelectronics-linux-firmware.yml
+            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/stmicroelectronics-linux-firmware.LICENSE
             spdx_license_key: LicenseRef-scancode-stmicro-linux-firmware
             spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/stmicroelectronics-linux-firmware.LICENSE
   - license_expression: clear-bsd AND isc AND bsd-no-mod AND gpl-2.0-plus WITH ecos-exception-2.0
@@ -99,6 +99,7 @@ license_detections:
         matcher: 3-seq
         license_expression: clear-bsd
         rule_identifier: clear-bsd_3.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/clear-bsd_3.RULE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -148,8 +149,7 @@ license_detections:
             homepage_url: http://labs.metacarta.com/license-explanation.html
             text_url: http://labs.metacarta.com/license-explanation.html#license
             reference_url: https://scancode-licensedb.aboutcode.org/clear-bsd
-            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/clear-bsd.LICENSE
-            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/clear-bsd.yml
+            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/clear-bsd.LICENSE
             spdx_license_key: BSD-3-Clause-Clear
             spdx_url: https://spdx.org/licenses/BSD-3-Clause-Clear
       - score: '100.0'
@@ -160,6 +160,7 @@ license_detections:
         matcher: 2-aho
         license_expression: isc
         rule_identifier: isc.LICENSE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/isc.LICENSE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -191,8 +192,7 @@ license_detections:
             homepage_url: https://www.isc.org/licenses/
             text_url: http://fedoraproject.org/wiki/Licensing:MIT#Old_Style_with_legal_disclaimer_2
             reference_url: https://scancode-licensedb.aboutcode.org/isc
-            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/isc.LICENSE
-            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/isc.yml
+            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/isc.LICENSE
             spdx_license_key: ISC
             spdx_url: https://spdx.org/licenses/ISC
       - score: '100.0'
@@ -203,6 +203,7 @@ license_detections:
         matcher: 2-aho
         license_expression: bsd-no-mod
         rule_identifier: bsd-no-mod.LICENSE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-no-mod.LICENSE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -253,8 +254,7 @@ license_detections:
             homepage_url: http://www.madwifi.org/
             text_url: http://wiki.freespire.org/index.php/Madwifi_License_Agreement
             reference_url: https://scancode-licensedb.aboutcode.org/bsd-no-mod
-            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-no-mod.LICENSE
-            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-no-mod.yml
+            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-no-mod.LICENSE
             spdx_license_key: LicenseRef-scancode-bsd-no-mod
             spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-no-mod.LICENSE
       - score: '100.0'
@@ -265,6 +265,7 @@ license_detections:
         matcher: 2-aho
         license_expression: gpl-2.0-plus WITH ecos-exception-2.0
         rule_identifier: gpl-2.0-plus_with_ecos-exception-2.0_25.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_with_ecos-exception-2.0_25.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: yes
@@ -298,8 +299,7 @@ license_detections:
             homepage_url: http://www.gnu.org/licenses/old-licenses/gpl-2.0-standalone.html
             text_url: http://www.gnu.org/licenses/old-licenses/gpl-2.0-standalone.html
             reference_url: https://scancode-licensedb.aboutcode.org/gpl-2.0-plus
-            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-2.0-plus.LICENSE
-            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-2.0-plus.yml
+            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-2.0-plus.LICENSE
             spdx_license_key: GPL-2.0-or-later
             spdx_url: https://spdx.org/licenses/GPL-2.0-or-later
           - key: ecos-exception-2.0
@@ -312,8 +312,7 @@ license_detections:
             homepage_url: http://ecos.sourceware.org/ecos-license/
             text_url: http://www.fsf.org/licensing/licenses/ecos-license.html
             reference_url: https://scancode-licensedb.aboutcode.org/ecos-exception-2.0
-            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/ecos-exception-2.0.LICENSE
-            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/ecos-exception-2.0.yml
+            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/ecos-exception-2.0.LICENSE
             spdx_license_key: eCos-exception-2.0
             spdx_url: https://spdx.org/licenses/eCos-exception-2.0
       - score: '100.0'
@@ -324,6 +323,7 @@ license_detections:
         matcher: 2-aho
         license_expression: mit
         rule_identifier: mit.LICENSE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -362,8 +362,7 @@ license_detections:
             homepage_url: http://opensource.org/licenses/mit-license.php
             text_url: http://opensource.org/licenses/mit-license.php
             reference_url: https://scancode-licensedb.aboutcode.org/mit
-            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE
-            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.yml
+            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE
             spdx_license_key: MIT
             spdx_url: https://spdx.org/licenses/MIT
   - license_expression: qca-linux-firmware
@@ -378,6 +377,7 @@ license_detections:
         matcher: 2-aho
         license_expression: qca-linux-firmware
         rule_identifier: qca-linux-firmware.LICENSE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/qca-linux-firmware.LICENSE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -442,8 +442,7 @@ license_detections:
             homepage_url: https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/tree/LICENSE.QualcommAtheros_ath10k
             text_url: https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/tree/LICENSE.QualcommAtheros_ar3k
             reference_url: https://scancode-licensedb.aboutcode.org/qca-linux-firmware
-            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/qca-linux-firmware.LICENSE
-            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/qca-linux-firmware.yml
+            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/qca-linux-firmware.LICENSE
             spdx_license_key: LicenseRef-scancode-qca-linux-firmware
             spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/qca-linux-firmware.LICENSE
 other_license_detections: []

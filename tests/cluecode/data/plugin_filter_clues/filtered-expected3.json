@@ -37,6 +37,7 @@
               "matcher": "1-hash",
               "license_expression": "pcre",
               "rule_identifier": "pcre.LICENSE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/pcre.LICENSE",
               "referenced_filenames": [],
               "is_license_text": true,
               "is_license_notice": false,
@@ -57,8 +58,7 @@
                   "homepage_url": "http://www.pcre.org/licence.txt",
                   "text_url": "http://www.pcre.org/licence.txt",
                   "reference_url": "https://scancode-licensedb.aboutcode.org/pcre",
-                  "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/pcre.LICENSE",
-                  "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/pcre.yml",
+                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/pcre.LICENSE",
                   "spdx_license_key": "LicenseRef-scancode-pcre",
                   "spdx_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/pcre.LICENSE"
                 }

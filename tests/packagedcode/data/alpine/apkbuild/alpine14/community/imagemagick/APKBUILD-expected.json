@@ -39,6 +39,7 @@
           "matcher": "1-spdx-id",
           "license_expression": "imagemagick",
           "rule_identifier": "spdx-license-identifier: imagemagick",
+          "rule_url": null,
           "referenced_filenames": [],
           "is_license_text": false,
           "is_license_notice": false,
@@ -60,8 +61,7 @@
               "homepage_url": "http://www.imagemagick.org/script/license.php",
               "text_url": "http://www.imagemagick.org/script/license.php",
               "reference_url": "https://scancode-licensedb.aboutcode.org/imagemagick",
-              "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/imagemagick.LICENSE",
-              "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/imagemagick.yml",
+              "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/imagemagick.LICENSE",
               "spdx_license_key": "ImageMagick",
               "spdx_url": "https://spdx.org/licenses/ImageMagick"
             }

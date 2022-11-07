@@ -62,6 +62,7 @@
             "matcher": "1-hash",
             "license_expression": "mpl-2.0",
             "rule_identifier": "spdx_license_id_mpl-2.0_for_mpl-2.0.RULE",
+            "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/spdx_license_id_mpl-2.0_for_mpl-2.0.RULE",
             "referenced_filenames": [],
             "is_license_text": false,
             "is_license_notice": false,
@@ -83,8 +84,7 @@
                 "homepage_url": "http://mpl.mozilla.org/2012/01/03/announcing-mpl-2-0/",
                 "text_url": "http://www.mozilla.com/MPL/2.0/",
                 "reference_url": "https://scancode-licensedb.aboutcode.org/mpl-2.0",
-                "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mpl-2.0.LICENSE",
-                "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mpl-2.0.yml",
+                "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mpl-2.0.LICENSE",
                 "spdx_license_key": "MPL-2.0",
                 "spdx_url": "https://spdx.org/licenses/MPL-2.0"
               }

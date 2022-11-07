@@ -54,7 +54,8 @@
               "match_coverage": 100.0,
               "matcher": "1-spdx-id",
               "license_expression": "artistic-2.0 OR mit",
-              "rule_identifier": "spdx-license-identifier: artistic-2.0 OR mit"
+              "rule_identifier": "spdx-license-identifier: artistic-2.0 OR mit",
+              "rule_url": null
             }
           ]
         }
@@ -282,7 +283,8 @@
               "match_coverage": 100.0,
               "matcher": "2-aho",
               "license_expression": "apache-2.0",
-              "rule_identifier": "apache-2.0_2.RULE"
+              "rule_identifier": "apache-2.0_2.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_2.RULE"
             },
             {
               "score": 100.0,
@@ -292,7 +294,8 @@
               "match_coverage": 100.0,
               "matcher": "1-spdx-id",
               "license_expression": "mit OR bsd-simplified",
-              "rule_identifier": "spdx-license-identifier: mit OR bsd-simplified"
+              "rule_identifier": "spdx-license-identifier: mit OR bsd-simplified",
+              "rule_url": null
             }
           ]
         }
@@ -325,7 +328,8 @@
               "match_coverage": 100.0,
               "matcher": "2-aho",
               "license_expression": "artistic-2.0",
-              "rule_identifier": "artistic-2.0_46.RULE"
+              "rule_identifier": "artistic-2.0_46.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/artistic-2.0_46.RULE"
             }
           ]
         }
@@ -386,7 +390,8 @@
                   "match_coverage": 100.0,
                   "matcher": "1-spdx-id",
                   "license_expression": "artistic-2.0 OR mit",
-                  "rule_identifier": "spdx-license-identifier: artistic-2.0 OR mit"
+                  "rule_identifier": "spdx-license-identifier: artistic-2.0 OR mit",
+                  "rule_url": null
                 }
               ]
             }

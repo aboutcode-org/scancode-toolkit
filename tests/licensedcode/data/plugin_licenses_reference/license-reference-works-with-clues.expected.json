@@ -603,7 +603,8 @@
               "match_coverage": 100.0,
               "matcher": "2-aho",
               "license_expression": "python",
-              "rule_identifier": "python_not_not-a-license_269.RULE"
+              "rule_identifier": "python_not_not-a-license_269.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/python_not_not-a-license_269.RULE"
             }
           ]
         },
@@ -621,7 +622,8 @@
               "match_coverage": 100.0,
               "matcher": "2-aho",
               "license_expression": "other-copyleft",
-              "rule_identifier": "other-copyleft_24.RULE"
+              "rule_identifier": "other-copyleft_24.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/other-copyleft_24.RULE"
             },
             {
               "score": 100.0,
@@ -631,7 +633,8 @@
               "match_coverage": 100.0,
               "matcher": "2-aho",
               "license_expression": "gpl-1.0-plus",
-              "rule_identifier": "gpl-1.0-plus_200.RULE"
+              "rule_identifier": "gpl-1.0-plus_200.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-1.0-plus_200.RULE"
             },
             {
               "score": 85.0,
@@ -641,7 +644,8 @@
               "match_coverage": 100.0,
               "matcher": "2-aho",
               "license_expression": "gpl-1.0-plus",
-              "rule_identifier": "gpl-1.0-plus_351.RULE"
+              "rule_identifier": "gpl-1.0-plus_351.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-1.0-plus_351.RULE"
             },
             {
               "score": 85.0,
@@ -651,7 +655,8 @@
               "match_coverage": 100.0,
               "matcher": "2-aho",
               "license_expression": "gpl-1.0-plus",
-              "rule_identifier": "gpl-1.0-plus_351.RULE"
+              "rule_identifier": "gpl-1.0-plus_351.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-1.0-plus_351.RULE"
             },
             {
               "score": 80.0,
@@ -661,7 +666,8 @@
               "match_coverage": 100.0,
               "matcher": "2-aho",
               "license_expression": "other-copyleft",
-              "rule_identifier": "other-copyleft_24.RULE"
+              "rule_identifier": "other-copyleft_24.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/other-copyleft_24.RULE"
             },
             {
               "score": 100.0,
@@ -671,7 +677,8 @@
               "match_coverage": 100.0,
               "matcher": "2-aho",
               "license_expression": "gpl-1.0-plus",
-              "rule_identifier": "gpl_194.RULE"
+              "rule_identifier": "gpl_194.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl_194.RULE"
             },
             {
               "score": 80.0,
@@ -681,7 +688,8 @@
               "match_coverage": 100.0,
               "matcher": "2-aho",
               "license_expression": "other-copyleft",
-              "rule_identifier": "other-copyleft_24.RULE"
+              "rule_identifier": "other-copyleft_24.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/other-copyleft_24.RULE"
             },
             {
               "score": 85.0,
@@ -691,7 +699,8 @@
               "match_coverage": 100.0,
               "matcher": "2-aho",
               "license_expression": "gpl-1.0-plus",
-              "rule_identifier": "gpl-1.0-plus_351.RULE"
+              "rule_identifier": "gpl-1.0-plus_351.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-1.0-plus_351.RULE"
             }
           ]
         },
@@ -709,7 +718,8 @@
               "match_coverage": 90.52,
               "matcher": "3-seq",
               "license_expression": "python",
-              "rule_identifier": "python_2019.RULE"
+              "rule_identifier": "python_2019.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/python_2019.RULE"
             },
             {
               "score": 100.0,
@@ -719,7 +729,8 @@
               "match_coverage": 100.0,
               "matcher": "2-aho",
               "license_expression": "python-cwi",
-              "rule_identifier": "python-cwi.LICENSE"
+              "rule_identifier": "python-cwi.LICENSE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/python-cwi.LICENSE"
             }
           ]
         },
@@ -737,7 +748,8 @@
               "match_coverage": 100.0,
               "matcher": "2-aho",
               "license_expression": "unknown-license-reference",
-              "rule_identifier": "license-intro_50.RULE"
+              "rule_identifier": "license-intro_50.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/license-intro_50.RULE"
             },
             {
               "score": 100.0,
@@ -747,7 +759,8 @@
               "match_coverage": 100.0,
               "matcher": "2-aho",
               "license_expression": "bzip2-libbzip-2010",
-              "rule_identifier": "bzip2-libbzip-2010.LICENSE"
+              "rule_identifier": "bzip2-libbzip-2010.LICENSE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bzip2-libbzip-2010.LICENSE"
             }
           ]
         },
@@ -765,7 +778,8 @@
               "match_coverage": 100.0,
               "matcher": "2-aho",
               "license_expression": "unknown-license-reference",
-              "rule_identifier": "license-intro_50.RULE"
+              "rule_identifier": "license-intro_50.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/license-intro_50.RULE"
             },
             {
               "score": 100.0,
@@ -775,7 +789,8 @@
               "match_coverage": 100.0,
               "matcher": "2-aho",
               "license_expression": "sleepycat",
-              "rule_identifier": "sleepycat_5.RULE"
+              "rule_identifier": "sleepycat_5.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/sleepycat_5.RULE"
             }
           ]
         },
@@ -794,7 +809,8 @@
               "match_coverage": 33.71,
               "matcher": "3-seq",
               "license_expression": "bsd-simplified",
-              "rule_identifier": "bsd-simplified_242.RULE"
+              "rule_identifier": "bsd-simplified_242.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-simplified_242.RULE"
             }
           ]
         },
@@ -812,7 +828,8 @@
               "match_coverage": 100.0,
               "matcher": "2-aho",
               "license_expression": "bsd-new",
-              "rule_identifier": "bsd-new_19.RULE"
+              "rule_identifier": "bsd-new_19.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_19.RULE"
             }
           ]
         },
@@ -830,7 +847,8 @@
               "match_coverage": 100.0,
               "matcher": "2-aho",
               "license_expression": "bsd-new",
-              "rule_identifier": "bsd-new_943.RULE"
+              "rule_identifier": "bsd-new_943.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_943.RULE"
             }
           ]
         },
@@ -848,7 +866,8 @@
               "match_coverage": 100.0,
               "matcher": "2-aho",
               "license_expression": "unknown-license-reference",
-              "rule_identifier": "license-intro_50.RULE"
+              "rule_identifier": "license-intro_50.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/license-intro_50.RULE"
             },
             {
               "score": 100.0,
@@ -858,7 +877,8 @@
               "match_coverage": 100.0,
               "matcher": "2-aho",
               "license_expression": "openssl-ssleay",
-              "rule_identifier": "openssl-ssleay_43.RULE"
+              "rule_identifier": "openssl-ssleay_43.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/openssl-ssleay_43.RULE"
             },
             {
               "score": 100.0,
@@ -868,7 +888,8 @@
               "match_coverage": 100.0,
               "matcher": "2-aho",
               "license_expression": "openssl-ssleay",
-              "rule_identifier": "openssl-ssleay_2.RULE"
+              "rule_identifier": "openssl-ssleay_2.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/openssl-ssleay_2.RULE"
             }
           ]
         },
@@ -886,7 +907,8 @@
               "match_coverage": 100.0,
               "matcher": "2-aho",
               "license_expression": "openssl",
-              "rule_identifier": "openssl_1.RULE"
+              "rule_identifier": "openssl_1.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/openssl_1.RULE"
             }
           ]
         },
@@ -904,7 +926,8 @@
               "match_coverage": 100.0,
               "matcher": "2-aho",
               "license_expression": "ssleay-windows",
-              "rule_identifier": "ssleay-windows.LICENSE"
+              "rule_identifier": "ssleay-windows.LICENSE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/ssleay-windows.LICENSE"
             }
           ]
         },
@@ -922,7 +945,8 @@
               "match_coverage": 100.0,
               "matcher": "2-aho",
               "license_expression": "unknown-license-reference",
-              "rule_identifier": "license-intro_50.RULE"
+              "rule_identifier": "license-intro_50.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/license-intro_50.RULE"
             },
             {
               "score": 100.0,
@@ -932,7 +956,8 @@
               "match_coverage": 100.0,
               "matcher": "2-aho",
               "license_expression": "tcl",
-              "rule_identifier": "tcl.LICENSE"
+              "rule_identifier": "tcl.LICENSE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/tcl.LICENSE"
             }
           ]
         },
@@ -950,7 +975,8 @@
               "match_coverage": 100.0,
               "matcher": "2-aho",
               "license_expression": "unknown-license-reference",
-              "rule_identifier": "license-intro_50.RULE"
+              "rule_identifier": "license-intro_50.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/license-intro_50.RULE"
             },
             {
               "score": 100.0,
@@ -960,7 +986,8 @@
               "match_coverage": 100.0,
               "matcher": "2-aho",
               "license_expression": "tcl",
-              "rule_identifier": "tcl_14.RULE"
+              "rule_identifier": "tcl_14.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/tcl_14.RULE"
             }
           ]
         }

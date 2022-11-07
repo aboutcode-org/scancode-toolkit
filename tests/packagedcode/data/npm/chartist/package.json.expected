@@ -53,6 +53,7 @@
             "matcher": "1-spdx-id",
             "license_expression": "mit OR wtfpl-2.0",
             "rule_identifier": "spdx-license-identifier: mit OR wtfpl-2.0",
+            "rule_url": null,
             "referenced_filenames": [],
             "is_license_text": false,
             "is_license_notice": false,
@@ -74,8 +75,7 @@
                 "homepage_url": "http://opensource.org/licenses/mit-license.php",
                 "text_url": "http://opensource.org/licenses/mit-license.php",
                 "reference_url": "https://scancode-licensedb.aboutcode.org/mit",
-                "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE",
-                "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.yml",
+                "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE",
                 "spdx_license_key": "MIT",
                 "spdx_url": "https://spdx.org/licenses/MIT"
               },
@@ -90,8 +90,7 @@
                 "homepage_url": "http://sam.zoy.org/wtfpl/",
                 "text_url": "http://sam.zoy.org/wtfpl/COPYING",
                 "reference_url": "https://scancode-licensedb.aboutcode.org/wtfpl-2.0",
-                "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/wtfpl-2.0.LICENSE",
-                "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/wtfpl-2.0.yml",
+                "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/wtfpl-2.0.LICENSE",
                 "spdx_license_key": "WTFPL",
                 "spdx_url": "https://spdx.org/licenses/WTFPL"
               }
@@ -114,6 +113,7 @@
             "matcher": "1-hash",
             "license_expression": "wtfpl-2.0",
             "rule_identifier": "spdx_license_id_wtfpl_for_wtfpl-2.0.RULE",
+            "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/spdx_license_id_wtfpl_for_wtfpl-2.0.RULE",
             "referenced_filenames": [],
             "is_license_text": false,
             "is_license_notice": false,
@@ -135,8 +135,7 @@
                 "homepage_url": "http://sam.zoy.org/wtfpl/",
                 "text_url": "http://sam.zoy.org/wtfpl/COPYING",
                 "reference_url": "https://scancode-licensedb.aboutcode.org/wtfpl-2.0",
-                "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/wtfpl-2.0.LICENSE",
-                "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/wtfpl-2.0.yml",
+                "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/wtfpl-2.0.LICENSE",
                 "spdx_license_key": "WTFPL",
                 "spdx_url": "https://spdx.org/licenses/WTFPL"
               }
@@ -159,6 +158,7 @@
             "matcher": "2-aho",
             "license_expression": "wtfpl-2.0",
             "rule_identifier": "wtfpl-2.0_33.RULE",
+            "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/wtfpl-2.0_33.RULE",
             "referenced_filenames": [
               "LICENSE-WTFPL"
             ],
@@ -182,8 +182,7 @@
                 "homepage_url": "http://sam.zoy.org/wtfpl/",
                 "text_url": "http://sam.zoy.org/wtfpl/COPYING",
                 "reference_url": "https://scancode-licensedb.aboutcode.org/wtfpl-2.0",
-                "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/wtfpl-2.0.LICENSE",
-                "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/wtfpl-2.0.yml",
+                "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/wtfpl-2.0.LICENSE",
                 "spdx_license_key": "WTFPL",
                 "spdx_url": "https://spdx.org/licenses/WTFPL"
               }
@@ -206,6 +205,7 @@
             "matcher": "1-spdx-id",
             "license_expression": "mit",
             "rule_identifier": "spdx-license-identifier: mit",
+            "rule_url": null,
             "referenced_filenames": [],
             "is_license_text": false,
             "is_license_notice": false,
@@ -227,8 +227,7 @@
                 "homepage_url": "http://opensource.org/licenses/mit-license.php",
                 "text_url": "http://opensource.org/licenses/mit-license.php",
                 "reference_url": "https://scancode-licensedb.aboutcode.org/mit",
-                "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE",
-                "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.yml",
+                "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE",
                 "spdx_license_key": "MIT",
                 "spdx_url": "https://spdx.org/licenses/MIT"
               }
@@ -251,6 +250,7 @@
             "matcher": "2-aho",
             "license_expression": "mit",
             "rule_identifier": "mit_30.RULE",
+            "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_30.RULE",
             "referenced_filenames": [],
             "is_license_text": false,
             "is_license_notice": false,
@@ -272,8 +272,7 @@
                 "homepage_url": "http://opensource.org/licenses/mit-license.php",
                 "text_url": "http://opensource.org/licenses/mit-license.php",
                 "reference_url": "https://scancode-licensedb.aboutcode.org/mit",
-                "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE",
-                "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.yml",
+                "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE",
                 "spdx_license_key": "MIT",
                 "spdx_url": "https://spdx.org/licenses/MIT"
               }

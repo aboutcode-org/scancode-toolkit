@@ -67,6 +67,7 @@
               "matcher": "2-aho",
               "license_expression": "apache-1.0",
               "rule_identifier": "apache-1.0.LICENSE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-1.0.LICENSE",
               "referenced_filenames": [],
               "is_license_text": true,
               "is_license_notice": false,
@@ -88,8 +89,7 @@
                   "homepage_url": "http://www.apache.org/licenses/",
                   "text_url": "http://www.apache.org/licenses/LICENSE-1.0",
                   "reference_url": "https://scancode-licensedb.aboutcode.org/apache-1.0",
-                  "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-1.0.LICENSE",
-                  "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-1.0.yml",
+                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-1.0.LICENSE",
                   "spdx_license_key": "Apache-1.0",
                   "spdx_url": "https://spdx.org/licenses/Apache-1.0"
                 }
@@ -143,6 +143,7 @@
               "matcher": "2-aho",
               "license_expression": "apache-1.0",
               "rule_identifier": "apache-1.0.LICENSE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-1.0.LICENSE",
               "referenced_filenames": [],
               "is_license_text": true,
               "is_license_notice": false,
@@ -164,8 +165,7 @@
                   "homepage_url": "http://www.apache.org/licenses/",
                   "text_url": "http://www.apache.org/licenses/LICENSE-1.0",
                   "reference_url": "https://scancode-licensedb.aboutcode.org/apache-1.0",
-                  "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-1.0.LICENSE",
-                  "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-1.0.yml",
+                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-1.0.LICENSE",
                   "spdx_license_key": "Apache-1.0",
                   "spdx_url": "https://spdx.org/licenses/Apache-1.0"
                 }
@@ -219,6 +219,7 @@
               "matcher": "2-aho",
               "license_expression": "ja-sig",
               "rule_identifier": "ja-sig.LICENSE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/ja-sig.LICENSE",
               "referenced_filenames": [],
               "is_license_text": true,
               "is_license_notice": false,
@@ -240,8 +241,7 @@
                   "homepage_url": "http://web.archive.org/web/20040402030132/http://uportal.org/license.html",
                   "text_url": "",
                   "reference_url": "https://scancode-licensedb.aboutcode.org/ja-sig",
-                  "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/ja-sig.LICENSE",
-                  "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/ja-sig.yml",
+                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/ja-sig.LICENSE",
                   "spdx_license_key": "LicenseRef-scancode-ja-sig",
                   "spdx_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/ja-sig.LICENSE"
                 }
@@ -264,6 +264,7 @@
               "matcher": "2-aho",
               "license_expression": "apache-2.0",
               "rule_identifier": "apache-2.0_2.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_2.RULE",
               "referenced_filenames": [
                 "NOTICE"
               ],
@@ -287,8 +288,7 @@
                   "homepage_url": "http://www.apache.org/licenses/",
                   "text_url": "http://www.apache.org/licenses/LICENSE-2.0",
                   "reference_url": "https://scancode-licensedb.aboutcode.org/apache-2.0",
-                  "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.LICENSE",
-                  "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.yml",
+                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.LICENSE",
                   "spdx_license_key": "Apache-2.0",
                   "spdx_url": "https://spdx.org/licenses/Apache-2.0"
                 }
@@ -342,6 +342,7 @@
               "matcher": "1-spdx-id",
               "license_expression": "gpl-2.0 WITH linux-syscall-exception-gpl OR linux-openib",
               "rule_identifier": "spdx-license-identifier: gpl-2.0 WITH linux-syscall-exception-gpl OR linux-openib",
+              "rule_url": null,
               "referenced_filenames": [],
               "is_license_text": false,
               "is_license_notice": false,
@@ -363,8 +364,7 @@
                   "homepage_url": "http://www.gnu.org/licenses/gpl-2.0.html",
                   "text_url": "http://www.gnu.org/licenses/gpl-2.0.txt",
                   "reference_url": "https://scancode-licensedb.aboutcode.org/gpl-2.0",
-                  "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-2.0.LICENSE",
-                  "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-2.0.yml",
+                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-2.0.LICENSE",
                   "spdx_license_key": "GPL-2.0-only",
                   "spdx_url": "https://spdx.org/licenses/GPL-2.0-only"
                 },
@@ -379,8 +379,7 @@
                   "homepage_url": null,
                   "text_url": "",
                   "reference_url": "https://scancode-licensedb.aboutcode.org/linux-syscall-exception-gpl",
-                  "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/linux-syscall-exception-gpl.LICENSE",
-                  "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/linux-syscall-exception-gpl.yml",
+                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/linux-syscall-exception-gpl.LICENSE",
                   "spdx_license_key": "Linux-syscall-note",
                   "spdx_url": "https://spdx.org/licenses/Linux-syscall-note"
                 },
@@ -395,8 +394,7 @@
                   "homepage_url": "https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/drivers/infiniband/core/sa.h",
                   "text_url": "https://github.com/ofiwg/libfabric/blob/master/contrib/buildrpm/README",
                   "reference_url": "https://scancode-licensedb.aboutcode.org/linux-openib",
-                  "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/linux-openib.LICENSE",
-                  "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/linux-openib.yml",
+                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/linux-openib.LICENSE",
                   "spdx_license_key": "Linux-OpenIB",
                   "spdx_url": "https://spdx.org/licenses/Linux-OpenIB"
                 }
@@ -450,6 +448,7 @@
               "matcher": "2-aho",
               "license_expression": "ja-sig",
               "rule_identifier": "ja-sig.LICENSE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/ja-sig.LICENSE",
               "referenced_filenames": [],
               "is_license_text": true,
               "is_license_notice": false,
@@ -471,8 +470,7 @@
                   "homepage_url": "http://web.archive.org/web/20040402030132/http://uportal.org/license.html",
                   "text_url": "",
                   "reference_url": "https://scancode-licensedb.aboutcode.org/ja-sig",
-                  "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/ja-sig.LICENSE",
-                  "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/ja-sig.yml",
+                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/ja-sig.LICENSE",
                   "spdx_license_key": "LicenseRef-scancode-ja-sig",
                   "spdx_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/ja-sig.LICENSE"
                 }
@@ -495,6 +493,7 @@
               "matcher": "2-aho",
               "license_expression": "apache-2.0",
               "rule_identifier": "apache-2.0_2.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_2.RULE",
               "referenced_filenames": [
                 "NOTICE"
               ],
@@ -518,8 +517,7 @@
                   "homepage_url": "http://www.apache.org/licenses/",
                   "text_url": "http://www.apache.org/licenses/LICENSE-2.0",
                   "reference_url": "https://scancode-licensedb.aboutcode.org/apache-2.0",
-                  "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.LICENSE",
-                  "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.yml",
+                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.LICENSE",
                   "spdx_license_key": "Apache-2.0",
                   "spdx_url": "https://spdx.org/licenses/Apache-2.0"
                 }

@@ -39,6 +39,7 @@
           "matcher": "1-hash",
           "license_expression": "cddl-1.0",
           "rule_identifier": "spdx_license_id_cddl-1.0_for_cddl-1.0.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/spdx_license_id_cddl-1.0_for_cddl-1.0.RULE",
           "referenced_filenames": [],
           "is_license_text": false,
           "is_license_notice": false,
@@ -60,8 +61,7 @@
               "homepage_url": "http://www.sun.com/cddl/",
               "text_url": "http://www.opensolaris.org/os/licensing/cddllicense.txt",
               "reference_url": "https://scancode-licensedb.aboutcode.org/cddl-1.0",
-              "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/cddl-1.0.LICENSE",
-              "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/cddl-1.0.yml",
+              "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/cddl-1.0.LICENSE",
               "spdx_license_key": "CDDL-1.0",
               "spdx_url": "https://spdx.org/licenses/CDDL-1.0"
             }
@@ -84,6 +84,7 @@
           "matcher": "1-hash",
           "license_expression": "cddl-1.0",
           "rule_identifier": "cddl-1.0_6.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/cddl-1.0_6.RULE",
           "referenced_filenames": [],
           "is_license_text": false,
           "is_license_notice": false,
@@ -105,8 +106,7 @@
               "homepage_url": "http://www.sun.com/cddl/",
               "text_url": "http://www.opensolaris.org/os/licensing/cddllicense.txt",
               "reference_url": "https://scancode-licensedb.aboutcode.org/cddl-1.0",
-              "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/cddl-1.0.LICENSE",
-              "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/cddl-1.0.yml",
+              "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/cddl-1.0.LICENSE",
               "spdx_license_key": "CDDL-1.0",
               "spdx_url": "https://spdx.org/licenses/CDDL-1.0"
             }

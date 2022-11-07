@@ -21,6 +21,7 @@ other_license_detections:
         matcher: 3-seq
         license_expression: tcl
         rule_identifier: tcl_3.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/tcl_3.RULE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -82,8 +83,7 @@ other_license_detections:
             homepage_url: http://www.tcl.tk/software/tcltk/license.html
             text_url: http://www.tcl.tk/software/tcltk/license.html
             reference_url: https://scancode-licensedb.aboutcode.org/tcl
-            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/tcl.LICENSE
-            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/tcl.yml
+            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/tcl.LICENSE
             spdx_license_key: TCL
             spdx_url: https://spdx.org/licenses/TCL
   - license_expression: pngsuite
@@ -98,6 +98,7 @@ other_license_detections:
         matcher: 1-hash
         license_expression: pngsuite
         rule_identifier: pngsuite.LICENSE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/pngsuite.LICENSE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -120,8 +121,7 @@ other_license_detections:
             homepage_url:
             text_url:
             reference_url: https://scancode-licensedb.aboutcode.org/pngsuite
-            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/pngsuite.LICENSE
-            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/pngsuite.yml
+            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/pngsuite.LICENSE
             spdx_license_key: LicenseRef-scancode-pngsuite
             spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/pngsuite.LICENSE
 copyright: |

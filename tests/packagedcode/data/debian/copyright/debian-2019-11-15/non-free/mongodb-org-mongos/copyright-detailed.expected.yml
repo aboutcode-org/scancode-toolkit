@@ -16,6 +16,7 @@ license_detections:
         matcher: 2-aho
         license_expression: mongodb-sspl-1.0
         rule_identifier: mongodb-sspl-1.0_9.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mongodb-sspl-1.0_9.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: yes
@@ -42,8 +43,7 @@ license_detections:
             homepage_url: https://www.mongodb.com/licensing/server-side-public-license
             text_url:
             reference_url: https://scancode-licensedb.aboutcode.org/mongodb-sspl-1.0
-            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mongodb-sspl-1.0.LICENSE
-            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mongodb-sspl-1.0.yml
+            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mongodb-sspl-1.0.LICENSE
             spdx_license_key: SSPL-1.0
             spdx_url: https://spdx.org/licenses/SSPL-1.0
 other_license_detections: []

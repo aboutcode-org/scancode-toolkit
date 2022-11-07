@@ -55,6 +55,7 @@
               "matcher": "1-spdx-id",
               "license_expression": "artistic-2.0 OR mit",
               "rule_identifier": "spdx-license-identifier: artistic-2.0 OR mit",
+              "rule_url": null,
               "referenced_filenames": [],
               "is_license_text": false,
               "is_license_notice": false,
@@ -76,8 +77,7 @@
                   "homepage_url": "http://www.perlfoundation.org/",
                   "text_url": "https://www.perlfoundation.org/artistic_license_2_0",
                   "reference_url": "https://scancode-licensedb.aboutcode.org/artistic-2.0",
-                  "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/artistic-2.0.LICENSE",
-                  "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/artistic-2.0.yml",
+                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/artistic-2.0.LICENSE",
                   "spdx_license_key": "Artistic-2.0",
                   "spdx_url": "https://spdx.org/licenses/Artistic-2.0"
                 },
@@ -92,8 +92,7 @@
                   "homepage_url": "http://opensource.org/licenses/mit-license.php",
                   "text_url": "http://opensource.org/licenses/mit-license.php",
                   "reference_url": "https://scancode-licensedb.aboutcode.org/mit",
-                  "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE",
-                  "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.yml",
+                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE",
                   "spdx_license_key": "MIT",
                   "spdx_url": "https://spdx.org/licenses/MIT"
                 }
@@ -156,6 +155,7 @@
               "matcher": "2-aho",
               "license_expression": "apache-2.0",
               "rule_identifier": "apache-2.0_2.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_2.RULE",
               "referenced_filenames": [
                 "NOTICE"
               ],
@@ -178,8 +178,7 @@
                   "homepage_url": "http://www.apache.org/licenses/",
                   "text_url": "http://www.apache.org/licenses/LICENSE-2.0",
                   "reference_url": "https://scancode-licensedb.aboutcode.org/apache-2.0",
-                  "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.LICENSE",
-                  "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.yml",
+                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.LICENSE",
                   "spdx_license_key": "Apache-2.0",
                   "spdx_url": "https://spdx.org/licenses/Apache-2.0"
                 }
@@ -194,6 +193,7 @@
               "matcher": "1-spdx-id",
               "license_expression": "mit OR bsd-simplified",
               "rule_identifier": "spdx-license-identifier: mit OR bsd-simplified",
+              "rule_url": null,
               "referenced_filenames": [],
               "is_license_text": false,
               "is_license_notice": false,
@@ -214,8 +214,7 @@
                   "homepage_url": "http://opensource.org/licenses/mit-license.php",
                   "text_url": "http://opensource.org/licenses/mit-license.php",
                   "reference_url": "https://scancode-licensedb.aboutcode.org/mit",
-                  "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE",
-                  "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.yml",
+                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE",
                   "spdx_license_key": "MIT",
                   "spdx_url": "https://spdx.org/licenses/MIT"
                 },
@@ -230,8 +229,7 @@
                   "homepage_url": "http://www.opensource.org/licenses/BSD-2-Clause",
                   "text_url": "http://opensource.org/licenses/bsd-license.php",
                   "reference_url": "https://scancode-licensedb.aboutcode.org/bsd-simplified",
-                  "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-simplified.LICENSE",
-                  "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-simplified.yml",
+                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-simplified.LICENSE",
                   "spdx_license_key": "BSD-2-Clause",
                   "spdx_url": "https://spdx.org/licenses/BSD-2-Clause"
                 }
@@ -269,6 +267,7 @@
               "matcher": "2-aho",
               "license_expression": "artistic-2.0",
               "rule_identifier": "artistic-2.0_46.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/artistic-2.0_46.RULE",
               "referenced_filenames": [],
               "is_license_text": false,
               "is_license_notice": false,
@@ -289,8 +288,7 @@
                   "homepage_url": "http://www.perlfoundation.org/",
                   "text_url": "https://www.perlfoundation.org/artistic_license_2_0",
                   "reference_url": "https://scancode-licensedb.aboutcode.org/artistic-2.0",
-                  "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/artistic-2.0.LICENSE",
-                  "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/artistic-2.0.yml",
+                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/artistic-2.0.LICENSE",
                   "spdx_license_key": "Artistic-2.0",
                   "spdx_url": "https://spdx.org/licenses/Artistic-2.0"
                 }
@@ -356,6 +354,7 @@
                   "matcher": "1-spdx-id",
                   "license_expression": "artistic-2.0 OR mit",
                   "rule_identifier": "spdx-license-identifier: artistic-2.0 OR mit",
+                  "rule_url": null,
                   "referenced_filenames": [],
                   "is_license_text": false,
                   "is_license_notice": false,
@@ -377,8 +376,7 @@
                       "homepage_url": "http://www.perlfoundation.org/",
                       "text_url": "https://www.perlfoundation.org/artistic_license_2_0",
                       "reference_url": "https://scancode-licensedb.aboutcode.org/artistic-2.0",
-                      "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/artistic-2.0.LICENSE",
-                      "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/artistic-2.0.yml",
+                      "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/artistic-2.0.LICENSE",
                       "spdx_license_key": "Artistic-2.0",
                       "spdx_url": "https://spdx.org/licenses/Artistic-2.0"
                     },
@@ -393,8 +391,7 @@
                       "homepage_url": "http://opensource.org/licenses/mit-license.php",
                       "text_url": "http://opensource.org/licenses/mit-license.php",
                       "reference_url": "https://scancode-licensedb.aboutcode.org/mit",
-                      "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE",
-                      "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.yml",
+                      "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE",
                       "spdx_license_key": "MIT",
                       "spdx_url": "https://spdx.org/licenses/MIT"
                     }

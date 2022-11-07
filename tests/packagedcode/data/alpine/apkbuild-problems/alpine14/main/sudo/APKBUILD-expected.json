@@ -39,6 +39,7 @@
           "matcher": "1-spdx-id",
           "license_expression": "unknown-license-reference AND isc",
           "rule_identifier": "spdx-license-identifier: unknown-license-reference AND isc",
+          "rule_url": null,
           "referenced_filenames": [],
           "is_license_text": false,
           "is_license_notice": false,
@@ -60,8 +61,7 @@
               "homepage_url": null,
               "text_url": "",
               "reference_url": "https://scancode-licensedb.aboutcode.org/unknown-license-reference",
-              "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/unknown-license-reference.LICENSE",
-              "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/unknown-license-reference.yml",
+              "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/unknown-license-reference.LICENSE",
               "spdx_license_key": "LicenseRef-scancode-unknown-license-reference",
               "spdx_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/unknown-license-reference.LICENSE"
             },
@@ -76,8 +76,7 @@
               "homepage_url": "https://www.isc.org/licenses/",
               "text_url": "http://fedoraproject.org/wiki/Licensing:MIT#Old_Style_with_legal_disclaimer_2",
               "reference_url": "https://scancode-licensedb.aboutcode.org/isc",
-              "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/isc.LICENSE",
-              "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/isc.yml",
+              "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/isc.LICENSE",
               "spdx_license_key": "ISC",
               "spdx_url": "https://spdx.org/licenses/ISC"
             }

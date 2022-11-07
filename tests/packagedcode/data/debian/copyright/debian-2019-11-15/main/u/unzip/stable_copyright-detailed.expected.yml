@@ -16,6 +16,7 @@ license_detections:
         matcher: 2-aho
         license_expression: info-zip-2009-01
         rule_identifier: info-zip-2009-01_12.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/info-zip-2009-01_12.RULE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -98,8 +99,7 @@ license_detections:
             homepage_url: http://www.info-zip.org/
             text_url: ftp://ftp.info-zip.org/pub/infozip/license.html
             reference_url: https://scancode-licensedb.aboutcode.org/info-zip-2009-01
-            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/info-zip-2009-01.LICENSE
-            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/info-zip-2009-01.yml
+            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/info-zip-2009-01.LICENSE
             spdx_license_key: LicenseRef-scancode-info-zip-2009-01
             spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/info-zip-2009-01.LICENSE
 other_license_detections: []

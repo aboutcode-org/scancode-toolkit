@@ -37,6 +37,7 @@
               "matcher": "2-aho",
               "license_expression": "pygres-2.2",
               "rule_identifier": "pygres-2.2_2.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/pygres-2.2_2.RULE",
               "referenced_filenames": [],
               "is_license_text": true,
               "is_license_notice": false,
@@ -57,8 +58,7 @@
                   "homepage_url": null,
                   "text_url": "http://shell.vex.net/viewvc.cgi/pygresql/trunk/module/pgmodule.c?view=markup&pathrev=431",
                   "reference_url": "https://scancode-licensedb.aboutcode.org/pygres-2.2",
-                  "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/pygres-2.2.LICENSE",
-                  "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/pygres-2.2.yml",
+                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/pygres-2.2.LICENSE",
                   "spdx_license_key": "LicenseRef-scancode-pygres-2.2",
                   "spdx_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/pygres-2.2.LICENSE"
                 }

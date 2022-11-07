@@ -39,6 +39,7 @@
           "matcher": "1-hash",
           "license_expression": "unicode-dfs-2015",
           "rule_identifier": "spdx_license_id_unicode-dfs-2015_for_unicode-dfs-2015.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/spdx_license_id_unicode-dfs-2015_for_unicode-dfs-2015.RULE",
           "referenced_filenames": [],
           "is_license_text": false,
           "is_license_notice": false,
@@ -60,8 +61,7 @@
               "homepage_url": "https://web.archive.org/web/20151224134844/http://unicode.org/copyright.html",
               "text_url": "",
               "reference_url": "https://scancode-licensedb.aboutcode.org/unicode-dfs-2015",
-              "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/unicode-dfs-2015.LICENSE",
-              "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/unicode-dfs-2015.yml",
+              "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/unicode-dfs-2015.LICENSE",
               "spdx_license_key": "Unicode-DFS-2015",
               "spdx_url": "https://spdx.org/licenses/Unicode-DFS-2015"
             }

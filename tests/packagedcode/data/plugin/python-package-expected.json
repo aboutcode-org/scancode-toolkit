@@ -364,6 +364,7 @@
               "matcher": "1-hash",
               "license_expression": "bsd-simplified",
               "rule_identifier": "bsd-simplified_150.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-simplified_150.RULE",
               "referenced_filenames": [],
               "is_license_text": false,
               "is_license_notice": false,
@@ -385,8 +386,7 @@
                   "homepage_url": "http://www.opensource.org/licenses/BSD-2-Clause",
                   "text_url": "http://opensource.org/licenses/bsd-license.php",
                   "reference_url": "https://scancode-licensedb.aboutcode.org/bsd-simplified",
-                  "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-simplified.LICENSE",
-                  "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-simplified.yml",
+                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-simplified.LICENSE",
                   "spdx_license_key": "BSD-2-Clause",
                   "spdx_url": "https://spdx.org/licenses/BSD-2-Clause"
                 }
@@ -471,6 +471,7 @@
               "matcher": "1-spdx-id",
               "license_expression": "mit",
               "rule_identifier": "spdx-license-identifier: mit",
+              "rule_url": null,
               "referenced_filenames": [],
               "is_license_text": false,
               "is_license_notice": false,
@@ -492,8 +493,7 @@
                   "homepage_url": "http://opensource.org/licenses/mit-license.php",
                   "text_url": "http://opensource.org/licenses/mit-license.php",
                   "reference_url": "https://scancode-licensedb.aboutcode.org/mit",
-                  "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE",
-                  "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.yml",
+                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE",
                   "spdx_license_key": "MIT",
                   "spdx_url": "https://spdx.org/licenses/MIT"
                 }
@@ -516,6 +516,7 @@
               "matcher": "1-hash",
               "license_expression": "mit",
               "rule_identifier": "pypi_mit_license.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/pypi_mit_license.RULE",
               "referenced_filenames": [],
               "is_license_text": false,
               "is_license_notice": false,
@@ -537,8 +538,7 @@
                   "homepage_url": "http://opensource.org/licenses/mit-license.php",
                   "text_url": "http://opensource.org/licenses/mit-license.php",
                   "reference_url": "https://scancode-licensedb.aboutcode.org/mit",
-                  "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE",
-                  "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.yml",
+                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE",
                   "spdx_license_key": "MIT",
                   "spdx_url": "https://spdx.org/licenses/MIT"
                 }
@@ -607,6 +607,7 @@
               "matcher": "1-spdx-id",
               "license_expression": "mit",
               "rule_identifier": "spdx-license-identifier: mit",
+              "rule_url": null,
               "referenced_filenames": [],
               "is_license_text": false,
               "is_license_notice": false,
@@ -628,8 +629,7 @@
                   "homepage_url": "http://opensource.org/licenses/mit-license.php",
                   "text_url": "http://opensource.org/licenses/mit-license.php",
                   "reference_url": "https://scancode-licensedb.aboutcode.org/mit",
-                  "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE",
-                  "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.yml",
+                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE",
                   "spdx_license_key": "MIT",
                   "spdx_url": "https://spdx.org/licenses/MIT"
                 }
@@ -712,6 +712,7 @@
               "matcher": "1-spdx-id",
               "license_expression": "mit",
               "rule_identifier": "spdx-license-identifier: mit",
+              "rule_url": null,
               "referenced_filenames": [],
               "is_license_text": false,
               "is_license_notice": false,
@@ -733,8 +734,7 @@
                   "homepage_url": "http://opensource.org/licenses/mit-license.php",
                   "text_url": "http://opensource.org/licenses/mit-license.php",
                   "reference_url": "https://scancode-licensedb.aboutcode.org/mit",
-                  "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE",
-                  "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.yml",
+                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE",
                   "spdx_license_key": "MIT",
                   "spdx_url": "https://spdx.org/licenses/MIT"
                 }
@@ -757,6 +757,7 @@
               "matcher": "1-hash",
               "license_expression": "mit",
               "rule_identifier": "pypi_mit_license.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/pypi_mit_license.RULE",
               "referenced_filenames": [],
               "is_license_text": false,
               "is_license_notice": false,
@@ -778,8 +779,7 @@
                   "homepage_url": "http://opensource.org/licenses/mit-license.php",
                   "text_url": "http://opensource.org/licenses/mit-license.php",
                   "reference_url": "https://scancode-licensedb.aboutcode.org/mit",
-                  "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE",
-                  "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.yml",
+                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE",
                   "spdx_license_key": "MIT",
                   "spdx_url": "https://spdx.org/licenses/MIT"
                 }
@@ -856,6 +856,7 @@
               "matcher": "1-hash",
               "license_expression": "bsd-new",
               "rule_identifier": "bsd-new_89.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_89.RULE",
               "referenced_filenames": [],
               "is_license_text": false,
               "is_license_notice": false,
@@ -877,8 +878,7 @@
                   "homepage_url": "http://www.opensource.org/licenses/BSD-3-Clause",
                   "text_url": "http://www.opensource.org/licenses/BSD-3-Clause",
                   "reference_url": "https://scancode-licensedb.aboutcode.org/bsd-new",
-                  "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-new.LICENSE",
-                  "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-new.yml",
+                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-new.LICENSE",
                   "spdx_license_key": "BSD-3-Clause",
                   "spdx_url": "https://spdx.org/licenses/BSD-3-Clause"
                 }
@@ -988,6 +988,7 @@
                   "matcher": "1-spdx-id",
                   "license_expression": "mit",
                   "rule_identifier": "spdx-license-identifier: mit",
+                  "rule_url": null,
                   "referenced_filenames": [],
                   "is_license_text": false,
                   "is_license_notice": false,
@@ -1009,8 +1010,7 @@
                       "homepage_url": "http://opensource.org/licenses/mit-license.php",
                       "text_url": "http://opensource.org/licenses/mit-license.php",
                       "reference_url": "https://scancode-licensedb.aboutcode.org/mit",
-                      "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE",
-                      "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.yml",
+                      "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE",
                       "spdx_license_key": "MIT",
                       "spdx_url": "https://spdx.org/licenses/MIT"
                     }
@@ -1033,6 +1033,7 @@
                   "matcher": "1-hash",
                   "license_expression": "mit",
                   "rule_identifier": "pypi_mit_license.RULE",
+                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/pypi_mit_license.RULE",
                   "referenced_filenames": [],
                   "is_license_text": false,
                   "is_license_notice": false,
@@ -1054,8 +1055,7 @@
                       "homepage_url": "http://opensource.org/licenses/mit-license.php",
                       "text_url": "http://opensource.org/licenses/mit-license.php",
                       "reference_url": "https://scancode-licensedb.aboutcode.org/mit",
-                      "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE",
-                      "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.yml",
+                      "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE",
                       "spdx_license_key": "MIT",
                       "spdx_url": "https://spdx.org/licenses/MIT"
                     }
@@ -1130,6 +1130,7 @@
                   "matcher": "1-spdx-id",
                   "license_expression": "mit",
                   "rule_identifier": "spdx-license-identifier: mit",
+                  "rule_url": null,
                   "referenced_filenames": [],
                   "is_license_text": false,
                   "is_license_notice": false,
@@ -1151,8 +1152,7 @@
                       "homepage_url": "http://opensource.org/licenses/mit-license.php",
                       "text_url": "http://opensource.org/licenses/mit-license.php",
                       "reference_url": "https://scancode-licensedb.aboutcode.org/mit",
-                      "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE",
-                      "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.yml",
+                      "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE",
                       "spdx_license_key": "MIT",
                       "spdx_url": "https://spdx.org/licenses/MIT"
                     }
@@ -1242,6 +1242,7 @@
                   "matcher": "1-hash",
                   "license_expression": "bsd-new",
                   "rule_identifier": "bsd-new_89.RULE",
+                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_89.RULE",
                   "referenced_filenames": [],
                   "is_license_text": false,
                   "is_license_notice": false,
@@ -1263,8 +1264,7 @@
                       "homepage_url": "http://www.opensource.org/licenses/BSD-3-Clause",
                       "text_url": "http://www.opensource.org/licenses/BSD-3-Clause",
                       "reference_url": "https://scancode-licensedb.aboutcode.org/bsd-new",
-                      "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-new.LICENSE",
-                      "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-new.yml",
+                      "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-new.LICENSE",
                       "spdx_license_key": "BSD-3-Clause",
                       "spdx_url": "https://spdx.org/licenses/BSD-3-Clause"
                     }
@@ -1354,6 +1354,7 @@
                   "matcher": "1-hash",
                   "license_expression": "bsd-simplified",
                   "rule_identifier": "bsd-simplified_150.RULE",
+                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-simplified_150.RULE",
                   "referenced_filenames": [],
                   "is_license_text": false,
                   "is_license_notice": false,
@@ -1375,8 +1376,7 @@
                       "homepage_url": "http://www.opensource.org/licenses/BSD-2-Clause",
                       "text_url": "http://opensource.org/licenses/bsd-license.php",
                       "reference_url": "https://scancode-licensedb.aboutcode.org/bsd-simplified",
-                      "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-simplified.LICENSE",
-                      "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-simplified.yml",
+                      "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-simplified.LICENSE",
                       "spdx_license_key": "BSD-2-Clause",
                       "spdx_url": "https://spdx.org/licenses/BSD-2-Clause"
                     }
@@ -1694,6 +1694,7 @@
                   "matcher": "1-spdx-id",
                   "license_expression": "mit",
                   "rule_identifier": "spdx-license-identifier: mit",
+                  "rule_url": null,
                   "referenced_filenames": [],
                   "is_license_text": false,
                   "is_license_notice": false,
@@ -1715,8 +1716,7 @@
                       "homepage_url": "http://opensource.org/licenses/mit-license.php",
                       "text_url": "http://opensource.org/licenses/mit-license.php",
                       "reference_url": "https://scancode-licensedb.aboutcode.org/mit",
-                      "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE",
-                      "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.yml",
+                      "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE",
                       "spdx_license_key": "MIT",
                       "spdx_url": "https://spdx.org/licenses/MIT"
                     }
@@ -1739,6 +1739,7 @@
                   "matcher": "1-hash",
                   "license_expression": "mit",
                   "rule_identifier": "pypi_mit_license.RULE",
+                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/pypi_mit_license.RULE",
                   "referenced_filenames": [],
                   "is_license_text": false,
                   "is_license_notice": false,
@@ -1760,8 +1761,7 @@
                       "homepage_url": "http://opensource.org/licenses/mit-license.php",
                       "text_url": "http://opensource.org/licenses/mit-license.php",
                       "reference_url": "https://scancode-licensedb.aboutcode.org/mit",
-                      "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE",
-                      "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.yml",
+                      "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE",
                       "spdx_license_key": "MIT",
                       "spdx_url": "https://spdx.org/licenses/MIT"
                     }

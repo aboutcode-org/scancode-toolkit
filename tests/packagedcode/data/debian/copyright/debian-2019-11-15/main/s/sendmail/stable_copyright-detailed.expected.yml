@@ -20,6 +20,7 @@ other_license_detections:
         matcher: 3-seq
         license_expression: sendmail
         rule_identifier: sendmail-2014.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/sendmail-2014.RULE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -121,8 +122,7 @@ other_license_detections:
             homepage_url: http://www.sendmail.com/
             text_url: http://www.sendmail.com/pdfs/open_source/sendmail_license.pdf
             reference_url: https://scancode-licensedb.aboutcode.org/sendmail
-            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/sendmail.LICENSE
-            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/sendmail.yml
+            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/sendmail.LICENSE
             spdx_license_key: Sendmail
             spdx_url: https://spdx.org/licenses/Sendmail
 copyright: |

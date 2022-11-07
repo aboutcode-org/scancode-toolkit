@@ -42,6 +42,7 @@
             "matcher": "1-spdx-id",
             "license_expression": "mit",
             "rule_identifier": "spdx-license-identifier: mit",
+            "rule_url": null,
             "referenced_filenames": [],
             "is_license_text": false,
             "is_license_notice": false,
@@ -63,8 +64,7 @@
                 "homepage_url": "http://opensource.org/licenses/mit-license.php",
                 "text_url": "http://opensource.org/licenses/mit-license.php",
                 "reference_url": "https://scancode-licensedb.aboutcode.org/mit",
-                "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE",
-                "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.yml",
+                "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE",
                 "spdx_license_key": "MIT",
                 "spdx_url": "https://spdx.org/licenses/MIT"
               }
@@ -168,6 +168,7 @@
             "matcher": "1-hash",
             "license_expression": "gpl-2.0",
             "rule_identifier": "gpl-2.0_bare_single_word.RULE",
+            "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0_bare_single_word.RULE",
             "referenced_filenames": [],
             "is_license_text": false,
             "is_license_notice": false,
@@ -189,8 +190,7 @@
                 "homepage_url": "http://www.gnu.org/licenses/gpl-2.0.html",
                 "text_url": "http://www.gnu.org/licenses/gpl-2.0.txt",
                 "reference_url": "https://scancode-licensedb.aboutcode.org/gpl-2.0",
-                "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-2.0.LICENSE",
-                "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-2.0.yml",
+                "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-2.0.LICENSE",
                 "spdx_license_key": "GPL-2.0-only",
                 "spdx_url": "https://spdx.org/licenses/GPL-2.0-only"
               }
@@ -285,6 +285,7 @@
             "matcher": "1-hash",
             "license_expression": "gpl-2.0-plus",
             "rule_identifier": "gpl-2.0-plus_bare_single_word.RULE",
+            "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_bare_single_word.RULE",
             "referenced_filenames": [],
             "is_license_text": false,
             "is_license_notice": false,
@@ -306,8 +307,7 @@
                 "homepage_url": "http://www.gnu.org/licenses/old-licenses/gpl-2.0-standalone.html",
                 "text_url": "http://www.gnu.org/licenses/old-licenses/gpl-2.0-standalone.html",
                 "reference_url": "https://scancode-licensedb.aboutcode.org/gpl-2.0-plus",
-                "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-2.0-plus.LICENSE",
-                "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-2.0-plus.yml",
+                "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-2.0-plus.LICENSE",
                 "spdx_license_key": "GPL-2.0-or-later",
                 "spdx_url": "https://spdx.org/licenses/GPL-2.0-or-later"
               }

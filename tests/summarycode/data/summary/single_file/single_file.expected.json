@@ -13,7 +13,7 @@
       "ambiguous_compound_licensing": false
     },
     "declared_holder": "Mort Bay Consulting Pty. Ltd. (Australia) and others, Sun Microsystems",
-    "primary_language": "",
+    "primary_language": null,
     "other_license_expressions": [
       {
         "value": null,
@@ -100,6 +100,7 @@
               "matcher": "1-hash",
               "license_expression": "jetty",
               "rule_identifier": "jetty.LICENSE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/jetty.LICENSE",
               "referenced_filenames": [],
               "is_license_text": true,
               "is_license_notice": false,
@@ -120,8 +121,7 @@
                   "homepage_url": "http://www.tinyos.net/tinyos-1.x/tools/java/jars/JETTY-LICENSE.txt",
                   "text_url": "http://svn.apache.org/repos/asf/forrest/trunk/tools/jetty/jetty-4.2.19.jar.license.html",
                   "reference_url": "https://scancode-licensedb.aboutcode.org/jetty",
-                  "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/jetty.LICENSE",
-                  "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/jetty.yml",
+                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/jetty.LICENSE",
                   "spdx_license_key": "LicenseRef-scancode-jetty",
                   "spdx_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/jetty.LICENSE"
                 }

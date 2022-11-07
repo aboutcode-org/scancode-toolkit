@@ -16,6 +16,7 @@ license_detections:
         matcher: 2-aho
         license_expression: x11-xconsortium-veillard
         rule_identifier: x11-xconsortium-veillard.LICENSE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/x11-xconsortium-veillard.LICENSE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -56,8 +57,7 @@ license_detections:
             homepage_url:
             text_url:
             reference_url: https://scancode-licensedb.aboutcode.org/x11-xconsortium-veillard
-            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/x11-xconsortium-veillard.LICENSE
-            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/x11-xconsortium-veillard.yml
+            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/x11-xconsortium-veillard.LICENSE
             spdx_license_key: LicenseRef-scancode-x11-xconsortium-veillard
             spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/x11-xconsortium-veillard.LICENSE
   - license_expression: x11-xconsortium
@@ -72,6 +72,7 @@ license_detections:
         matcher: 2-aho
         license_expression: x11-xconsortium
         rule_identifier: x11-xconsortium_4.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/x11-xconsortium_4.RULE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -112,8 +113,7 @@ license_detections:
             homepage_url: http://www.xfree86.org/current/LICENSE5.html
             text_url: http://www.xfree86.org/current/LICENSE5.html
             reference_url: https://scancode-licensedb.aboutcode.org/x11-xconsortium
-            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/x11-xconsortium.LICENSE
-            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/x11-xconsortium.yml
+            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/x11-xconsortium.LICENSE
             spdx_license_key: X11
             spdx_url: https://spdx.org/licenses/X11
 other_license_detections: []

@@ -47,6 +47,7 @@
           "matcher": "2-aho",
           "license_expression": "tidy",
           "rule_identifier": "tidy_2.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/tidy_2.RULE",
           "referenced_filenames": [],
           "is_license_text": false,
           "is_license_notice": false,
@@ -68,8 +69,7 @@
               "homepage_url": "https://github.com/htacg/tidy-html5/blob/next/README/LICENSE.md",
               "text_url": "",
               "reference_url": "https://scancode-licensedb.aboutcode.org/tidy",
-              "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/tidy.LICENSE",
-              "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/tidy.yml",
+              "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/tidy.LICENSE",
               "spdx_license_key": "HTMLTIDY",
               "spdx_url": "https://spdx.org/licenses/HTMLTIDY"
             }

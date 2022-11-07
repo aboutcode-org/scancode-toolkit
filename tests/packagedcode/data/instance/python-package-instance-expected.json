@@ -95,6 +95,7 @@
               "matcher": "3-seq",
               "license_expression": "bsd-new",
               "rule_identifier": "bsd-new_537.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_537.RULE",
               "referenced_filenames": [],
               "is_license_text": false,
               "is_license_notice": true,
@@ -116,8 +117,7 @@
                   "homepage_url": "http://www.opensource.org/licenses/BSD-3-Clause",
                   "text_url": "http://www.opensource.org/licenses/BSD-3-Clause",
                   "reference_url": "https://scancode-licensedb.aboutcode.org/bsd-new",
-                  "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-new.LICENSE",
-                  "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-new.yml",
+                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-new.LICENSE",
                   "spdx_license_key": "BSD-3-Clause",
                   "spdx_url": "https://spdx.org/licenses/BSD-3-Clause"
                 }
@@ -132,6 +132,7 @@
               "matcher": "3-seq",
               "license_expression": "bsd-new AND bsd-simplified",
               "rule_identifier": "bsd-new_and_bsd-simplified_1.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_and_bsd-simplified_1.RULE",
               "referenced_filenames": [],
               "is_license_text": false,
               "is_license_notice": true,
@@ -153,8 +154,7 @@
                   "homepage_url": "http://www.opensource.org/licenses/BSD-3-Clause",
                   "text_url": "http://www.opensource.org/licenses/BSD-3-Clause",
                   "reference_url": "https://scancode-licensedb.aboutcode.org/bsd-new",
-                  "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-new.LICENSE",
-                  "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-new.yml",
+                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-new.LICENSE",
                   "spdx_license_key": "BSD-3-Clause",
                   "spdx_url": "https://spdx.org/licenses/BSD-3-Clause"
                 },
@@ -169,8 +169,7 @@
                   "homepage_url": "http://www.opensource.org/licenses/BSD-2-Clause",
                   "text_url": "http://opensource.org/licenses/bsd-license.php",
                   "reference_url": "https://scancode-licensedb.aboutcode.org/bsd-simplified",
-                  "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-simplified.LICENSE",
-                  "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-simplified.yml",
+                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-simplified.LICENSE",
                   "spdx_license_key": "BSD-2-Clause",
                   "spdx_url": "https://spdx.org/licenses/BSD-2-Clause"
                 }
@@ -193,6 +192,7 @@
               "matcher": "2-aho",
               "license_expression": "bsd-new",
               "rule_identifier": "pypi_bsd_license.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/pypi_bsd_license.RULE",
               "referenced_filenames": [],
               "is_license_text": false,
               "is_license_notice": false,
@@ -214,8 +214,7 @@
                   "homepage_url": "http://www.opensource.org/licenses/BSD-3-Clause",
                   "text_url": "http://www.opensource.org/licenses/BSD-3-Clause",
                   "reference_url": "https://scancode-licensedb.aboutcode.org/bsd-new",
-                  "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-new.LICENSE",
-                  "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-new.yml",
+                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-new.LICENSE",
                   "spdx_license_key": "BSD-3-Clause",
                   "spdx_url": "https://spdx.org/licenses/BSD-3-Clause"
                 }
@@ -309,6 +308,7 @@
                   "matcher": "3-seq",
                   "license_expression": "bsd-new",
                   "rule_identifier": "bsd-new_537.RULE",
+                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_537.RULE",
                   "referenced_filenames": [],
                   "is_license_text": false,
                   "is_license_notice": true,
@@ -330,8 +330,7 @@
                       "homepage_url": "http://www.opensource.org/licenses/BSD-3-Clause",
                       "text_url": "http://www.opensource.org/licenses/BSD-3-Clause",
                       "reference_url": "https://scancode-licensedb.aboutcode.org/bsd-new",
-                      "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-new.LICENSE",
-                      "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-new.yml",
+                      "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-new.LICENSE",
                       "spdx_license_key": "BSD-3-Clause",
                       "spdx_url": "https://spdx.org/licenses/BSD-3-Clause"
                     }
@@ -346,6 +345,7 @@
                   "matcher": "3-seq",
                   "license_expression": "bsd-new AND bsd-simplified",
                   "rule_identifier": "bsd-new_and_bsd-simplified_1.RULE",
+                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_and_bsd-simplified_1.RULE",
                   "referenced_filenames": [],
                   "is_license_text": false,
                   "is_license_notice": true,
@@ -367,8 +367,7 @@
                       "homepage_url": "http://www.opensource.org/licenses/BSD-3-Clause",
                       "text_url": "http://www.opensource.org/licenses/BSD-3-Clause",
                       "reference_url": "https://scancode-licensedb.aboutcode.org/bsd-new",
-                      "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-new.LICENSE",
-                      "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-new.yml",
+                      "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-new.LICENSE",
                       "spdx_license_key": "BSD-3-Clause",
                       "spdx_url": "https://spdx.org/licenses/BSD-3-Clause"
                     },
@@ -383,8 +382,7 @@
                       "homepage_url": "http://www.opensource.org/licenses/BSD-2-Clause",
                       "text_url": "http://opensource.org/licenses/bsd-license.php",
                       "reference_url": "https://scancode-licensedb.aboutcode.org/bsd-simplified",
-                      "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-simplified.LICENSE",
-                      "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-simplified.yml",
+                      "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-simplified.LICENSE",
                       "spdx_license_key": "BSD-2-Clause",
                       "spdx_url": "https://spdx.org/licenses/BSD-2-Clause"
                     }
@@ -407,6 +405,7 @@
                   "matcher": "2-aho",
                   "license_expression": "bsd-new",
                   "rule_identifier": "pypi_bsd_license.RULE",
+                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/pypi_bsd_license.RULE",
                   "referenced_filenames": [],
                   "is_license_text": false,
                   "is_license_notice": false,
@@ -428,8 +427,7 @@
                       "homepage_url": "http://www.opensource.org/licenses/BSD-3-Clause",
                       "text_url": "http://www.opensource.org/licenses/BSD-3-Clause",
                       "reference_url": "https://scancode-licensedb.aboutcode.org/bsd-new",
-                      "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-new.LICENSE",
-                      "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-new.yml",
+                      "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-new.LICENSE",
                       "spdx_license_key": "BSD-3-Clause",
                       "spdx_url": "https://spdx.org/licenses/BSD-3-Clause"
                     }

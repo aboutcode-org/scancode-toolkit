@@ -39,6 +39,7 @@
           "matcher": "1-spdx-id",
           "license_expression": "kde-accepted-lgpl AND kfqf-accepted-gpl",
           "rule_identifier": "spdx-license-identifier: kde-accepted-lgpl AND kfqf-accepted-gpl",
+          "rule_url": null,
           "referenced_filenames": [],
           "is_license_text": false,
           "is_license_notice": false,
@@ -60,8 +61,7 @@
               "homepage_url": "https://github.com/KDE/kate/blob/master/LICENSES/LicenseRef-KDE-Accepted-LGPL.txt",
               "text_url": "",
               "reference_url": "https://scancode-licensedb.aboutcode.org/kde-accepted-lgpl",
-              "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/kde-accepted-lgpl.LICENSE",
-              "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/kde-accepted-lgpl.yml",
+              "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/kde-accepted-lgpl.LICENSE",
               "spdx_license_key": "LicenseRef-scancode-kde-accepted-lgpl",
               "spdx_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/kde-accepted-lgpl.LICENSE"
             },
@@ -76,8 +76,7 @@
               "homepage_url": "https://github.com/KDE/licensedigger/blob/master/licensetexts/LicenseRef-KFQF-Accepted-GPL.txt",
               "text_url": "",
               "reference_url": "https://scancode-licensedb.aboutcode.org/kfqf-accepted-gpl",
-              "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/kfqf-accepted-gpl.LICENSE",
-              "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/kfqf-accepted-gpl.yml",
+              "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/kfqf-accepted-gpl.LICENSE",
               "spdx_license_key": "LicenseRef-scancode-kfqf-accepted-gpl",
               "spdx_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/kfqf-accepted-gpl.LICENSE"
             }

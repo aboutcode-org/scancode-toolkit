@@ -16,6 +16,7 @@ license_detections:
         matcher: 2-aho
         license_expression: cavium-linux-firmware
         rule_identifier: cavium-linux-firmware.LICENSE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/cavium-linux-firmware.LICENSE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -93,8 +94,7 @@ license_detections:
             homepage_url: https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/tree/LICENCE.cavium
             text_url:
             reference_url: https://scancode-licensedb.aboutcode.org/cavium-linux-firmware
-            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/cavium-linux-firmware.LICENSE
-            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/cavium-linux-firmware.yml
+            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/cavium-linux-firmware.LICENSE
             spdx_license_key: LicenseRef-scancode-cavium-linux-firmware
             spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/cavium-linux-firmware.LICENSE
 other_license_detections: []

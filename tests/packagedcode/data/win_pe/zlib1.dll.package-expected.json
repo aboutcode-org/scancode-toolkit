@@ -48,6 +48,7 @@
             "matcher": "1-hash",
             "license_expression": "zlib",
             "rule_identifier": "zlib_24.RULE",
+            "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/zlib_24.RULE",
             "referenced_filenames": [],
             "is_license_text": false,
             "is_license_notice": false,
@@ -69,8 +70,7 @@
                 "homepage_url": "http://www.zlib.net/",
                 "text_url": "http://www.gzip.org/zlib/zlib_license.html",
                 "reference_url": "https://scancode-licensedb.aboutcode.org/zlib",
-                "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/zlib.LICENSE",
-                "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/zlib.yml",
+                "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/zlib.LICENSE",
                 "spdx_license_key": "Zlib",
                 "spdx_url": "https://spdx.org/licenses/Zlib"
               }
@@ -93,6 +93,7 @@
             "matcher": "2-aho",
             "license_expression": "zlib",
             "rule_identifier": "zlib_17.RULE",
+            "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/zlib_17.RULE",
             "referenced_filenames": [],
             "is_license_text": true,
             "is_license_notice": false,
@@ -114,8 +115,7 @@
                 "homepage_url": "http://www.zlib.net/",
                 "text_url": "http://www.gzip.org/zlib/zlib_license.html",
                 "reference_url": "https://scancode-licensedb.aboutcode.org/zlib",
-                "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/zlib.LICENSE",
-                "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/zlib.yml",
+                "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/zlib.LICENSE",
                 "spdx_license_key": "Zlib",
                 "spdx_url": "https://spdx.org/licenses/Zlib"
               }

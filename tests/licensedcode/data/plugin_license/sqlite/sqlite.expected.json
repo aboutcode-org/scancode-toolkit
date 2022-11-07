@@ -31,6 +31,7 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
               "referenced_filenames": [],
               "is_license_text": true,
               "is_license_notice": false,
@@ -52,8 +53,7 @@
                   "homepage_url": "https://sqlite.org/src/artifact/df5091916dbb40e6",
                   "text_url": "",
                   "reference_url": "https://scancode-licensedb.aboutcode.org/blessing",
-                  "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-                  "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.yml",
+                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
                   "spdx_license_key": "blessing",
                   "spdx_url": "https://spdx.org/licenses/blessing"
                 }
@@ -76,6 +76,7 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
               "referenced_filenames": [],
               "is_license_text": true,
               "is_license_notice": false,
@@ -97,8 +98,7 @@
                   "homepage_url": "https://sqlite.org/src/artifact/df5091916dbb40e6",
                   "text_url": "",
                   "reference_url": "https://scancode-licensedb.aboutcode.org/blessing",
-                  "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-                  "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.yml",
+                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
                   "spdx_license_key": "blessing",
                   "spdx_url": "https://spdx.org/licenses/blessing"
                 }
@@ -121,6 +121,7 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
               "referenced_filenames": [],
               "is_license_text": true,
               "is_license_notice": false,
@@ -142,8 +143,7 @@
                   "homepage_url": "https://sqlite.org/src/artifact/df5091916dbb40e6",
                   "text_url": "",
                   "reference_url": "https://scancode-licensedb.aboutcode.org/blessing",
-                  "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-                  "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.yml",
+                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
                   "spdx_license_key": "blessing",
                   "spdx_url": "https://spdx.org/licenses/blessing"
                 }
@@ -166,6 +166,7 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
               "referenced_filenames": [],
               "is_license_text": true,
               "is_license_notice": false,
@@ -187,8 +188,7 @@
                   "homepage_url": "https://sqlite.org/src/artifact/df5091916dbb40e6",
                   "text_url": "",
                   "reference_url": "https://scancode-licensedb.aboutcode.org/blessing",
-                  "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-                  "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.yml",
+                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
                   "spdx_license_key": "blessing",
                   "spdx_url": "https://spdx.org/licenses/blessing"
                 }
@@ -211,6 +211,7 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
               "referenced_filenames": [],
               "is_license_text": true,
               "is_license_notice": false,
@@ -232,8 +233,7 @@
                   "homepage_url": "https://sqlite.org/src/artifact/df5091916dbb40e6",
                   "text_url": "",
                   "reference_url": "https://scancode-licensedb.aboutcode.org/blessing",
-                  "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-                  "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.yml",
+                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
                   "spdx_license_key": "blessing",
                   "spdx_url": "https://spdx.org/licenses/blessing"
                 }
@@ -256,6 +256,7 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
               "referenced_filenames": [],
               "is_license_text": true,
               "is_license_notice": false,
@@ -277,8 +278,7 @@
                   "homepage_url": "https://sqlite.org/src/artifact/df5091916dbb40e6",
                   "text_url": "",
                   "reference_url": "https://scancode-licensedb.aboutcode.org/blessing",
-                  "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-                  "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.yml",
+                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
                   "spdx_license_key": "blessing",
                   "spdx_url": "https://spdx.org/licenses/blessing"
                 }
@@ -301,6 +301,7 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
               "referenced_filenames": [],
               "is_license_text": true,
               "is_license_notice": false,
@@ -322,8 +323,7 @@
                   "homepage_url": "https://sqlite.org/src/artifact/df5091916dbb40e6",
                   "text_url": "",
                   "reference_url": "https://scancode-licensedb.aboutcode.org/blessing",
-                  "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-                  "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.yml",
+                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
                   "spdx_license_key": "blessing",
                   "spdx_url": "https://spdx.org/licenses/blessing"
                 }
@@ -346,6 +346,7 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
               "referenced_filenames": [],
               "is_license_text": true,
               "is_license_notice": false,
@@ -367,8 +368,7 @@
                   "homepage_url": "https://sqlite.org/src/artifact/df5091916dbb40e6",
                   "text_url": "",
                   "reference_url": "https://scancode-licensedb.aboutcode.org/blessing",
-                  "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-                  "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.yml",
+                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
                   "spdx_license_key": "blessing",
                   "spdx_url": "https://spdx.org/licenses/blessing"
                 }
@@ -391,6 +391,7 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
               "referenced_filenames": [],
               "is_license_text": true,
               "is_license_notice": false,
@@ -412,8 +413,7 @@
                   "homepage_url": "https://sqlite.org/src/artifact/df5091916dbb40e6",
                   "text_url": "",
                   "reference_url": "https://scancode-licensedb.aboutcode.org/blessing",
-                  "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-                  "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.yml",
+                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
                   "spdx_license_key": "blessing",
                   "spdx_url": "https://spdx.org/licenses/blessing"
                 }
@@ -436,6 +436,7 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
               "referenced_filenames": [],
               "is_license_text": true,
               "is_license_notice": false,
@@ -457,8 +458,7 @@
                   "homepage_url": "https://sqlite.org/src/artifact/df5091916dbb40e6",
                   "text_url": "",
                   "reference_url": "https://scancode-licensedb.aboutcode.org/blessing",
-                  "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-                  "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.yml",
+                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
                   "spdx_license_key": "blessing",
                   "spdx_url": "https://spdx.org/licenses/blessing"
                 }
@@ -481,6 +481,7 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
               "referenced_filenames": [],
               "is_license_text": true,
               "is_license_notice": false,
@@ -502,8 +503,7 @@
                   "homepage_url": "https://sqlite.org/src/artifact/df5091916dbb40e6",
                   "text_url": "",
                   "reference_url": "https://scancode-licensedb.aboutcode.org/blessing",
-                  "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-                  "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.yml",
+                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
                   "spdx_license_key": "blessing",
                   "spdx_url": "https://spdx.org/licenses/blessing"
                 }
@@ -526,6 +526,7 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
               "referenced_filenames": [],
               "is_license_text": true,
               "is_license_notice": false,
@@ -547,8 +548,7 @@
                   "homepage_url": "https://sqlite.org/src/artifact/df5091916dbb40e6",
                   "text_url": "",
                   "reference_url": "https://scancode-licensedb.aboutcode.org/blessing",
-                  "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-                  "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.yml",
+                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
                   "spdx_license_key": "blessing",
                   "spdx_url": "https://spdx.org/licenses/blessing"
                 }
@@ -571,6 +571,7 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
               "referenced_filenames": [],
               "is_license_text": true,
               "is_license_notice": false,
@@ -592,8 +593,7 @@
                   "homepage_url": "https://sqlite.org/src/artifact/df5091916dbb40e6",
                   "text_url": "",
                   "reference_url": "https://scancode-licensedb.aboutcode.org/blessing",
-                  "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-                  "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.yml",
+                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
                   "spdx_license_key": "blessing",
                   "spdx_url": "https://spdx.org/licenses/blessing"
                 }
@@ -616,6 +616,7 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
               "referenced_filenames": [],
               "is_license_text": true,
               "is_license_notice": false,
@@ -637,8 +638,7 @@
                   "homepage_url": "https://sqlite.org/src/artifact/df5091916dbb40e6",
                   "text_url": "",
                   "reference_url": "https://scancode-licensedb.aboutcode.org/blessing",
-                  "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-                  "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.yml",
+                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
                   "spdx_license_key": "blessing",
                   "spdx_url": "https://spdx.org/licenses/blessing"
                 }
@@ -661,6 +661,7 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
               "referenced_filenames": [],
               "is_license_text": true,
               "is_license_notice": false,
@@ -682,8 +683,7 @@
                   "homepage_url": "https://sqlite.org/src/artifact/df5091916dbb40e6",
                   "text_url": "",
                   "reference_url": "https://scancode-licensedb.aboutcode.org/blessing",
-                  "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-                  "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.yml",
+                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
                   "spdx_license_key": "blessing",
                   "spdx_url": "https://spdx.org/licenses/blessing"
                 }
@@ -706,6 +706,7 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
               "referenced_filenames": [],
               "is_license_text": true,
               "is_license_notice": false,
@@ -727,8 +728,7 @@
                   "homepage_url": "https://sqlite.org/src/artifact/df5091916dbb40e6",
                   "text_url": "",
                   "reference_url": "https://scancode-licensedb.aboutcode.org/blessing",
-                  "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-                  "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.yml",
+                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
                   "spdx_license_key": "blessing",
                   "spdx_url": "https://spdx.org/licenses/blessing"
                 }
@@ -751,6 +751,7 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
               "referenced_filenames": [],
               "is_license_text": true,
               "is_license_notice": false,
@@ -772,8 +773,7 @@
                   "homepage_url": "https://sqlite.org/src/artifact/df5091916dbb40e6",
                   "text_url": "",
                   "reference_url": "https://scancode-licensedb.aboutcode.org/blessing",
-                  "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-                  "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.yml",
+                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
                   "spdx_license_key": "blessing",
                   "spdx_url": "https://spdx.org/licenses/blessing"
                 }
@@ -796,6 +796,7 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
               "referenced_filenames": [],
               "is_license_text": true,
               "is_license_notice": false,
@@ -817,8 +818,7 @@
                   "homepage_url": "https://sqlite.org/src/artifact/df5091916dbb40e6",
                   "text_url": "",
                   "reference_url": "https://scancode-licensedb.aboutcode.org/blessing",
-                  "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-                  "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.yml",
+                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
                   "spdx_license_key": "blessing",
                   "spdx_url": "https://spdx.org/licenses/blessing"
                 }
@@ -841,6 +841,7 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
               "referenced_filenames": [],
               "is_license_text": true,
               "is_license_notice": false,
@@ -862,8 +863,7 @@
                   "homepage_url": "https://sqlite.org/src/artifact/df5091916dbb40e6",
                   "text_url": "",
                   "reference_url": "https://scancode-licensedb.aboutcode.org/blessing",
-                  "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-                  "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.yml",
+                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
                   "spdx_license_key": "blessing",
                   "spdx_url": "https://spdx.org/licenses/blessing"
                 }
@@ -886,6 +886,7 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
               "referenced_filenames": [],
               "is_license_text": true,
               "is_license_notice": false,
@@ -907,8 +908,7 @@
                   "homepage_url": "https://sqlite.org/src/artifact/df5091916dbb40e6",
                   "text_url": "",
                   "reference_url": "https://scancode-licensedb.aboutcode.org/blessing",
-                  "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-                  "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.yml",
+                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
                   "spdx_license_key": "blessing",
                   "spdx_url": "https://spdx.org/licenses/blessing"
                 }
@@ -931,6 +931,7 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
               "referenced_filenames": [],
               "is_license_text": true,
               "is_license_notice": false,
@@ -952,8 +953,7 @@
                   "homepage_url": "https://sqlite.org/src/artifact/df5091916dbb40e6",
                   "text_url": "",
                   "reference_url": "https://scancode-licensedb.aboutcode.org/blessing",
-                  "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-                  "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.yml",
+                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
                   "spdx_license_key": "blessing",
                   "spdx_url": "https://spdx.org/licenses/blessing"
                 }
@@ -976,6 +976,7 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
               "referenced_filenames": [],
               "is_license_text": true,
               "is_license_notice": false,
@@ -997,8 +998,7 @@
                   "homepage_url": "https://sqlite.org/src/artifact/df5091916dbb40e6",
                   "text_url": "",
                   "reference_url": "https://scancode-licensedb.aboutcode.org/blessing",
-                  "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-                  "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.yml",
+                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
                   "spdx_license_key": "blessing",
                   "spdx_url": "https://spdx.org/licenses/blessing"
                 }
@@ -1021,6 +1021,7 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
               "referenced_filenames": [],
               "is_license_text": true,
               "is_license_notice": false,
@@ -1042,8 +1043,7 @@
                   "homepage_url": "https://sqlite.org/src/artifact/df5091916dbb40e6",
                   "text_url": "",
                   "reference_url": "https://scancode-licensedb.aboutcode.org/blessing",
-                  "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-                  "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.yml",
+                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
                   "spdx_license_key": "blessing",
                   "spdx_url": "https://spdx.org/licenses/blessing"
                 }
@@ -1066,6 +1066,7 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
               "referenced_filenames": [],
               "is_license_text": true,
               "is_license_notice": false,
@@ -1087,8 +1088,7 @@
                   "homepage_url": "https://sqlite.org/src/artifact/df5091916dbb40e6",
                   "text_url": "",
                   "reference_url": "https://scancode-licensedb.aboutcode.org/blessing",
-                  "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-                  "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.yml",
+                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
                   "spdx_license_key": "blessing",
                   "spdx_url": "https://spdx.org/licenses/blessing"
                 }
@@ -1111,6 +1111,7 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
               "referenced_filenames": [],
               "is_license_text": true,
               "is_license_notice": false,
@@ -1132,8 +1133,7 @@
                   "homepage_url": "https://sqlite.org/src/artifact/df5091916dbb40e6",
                   "text_url": "",
                   "reference_url": "https://scancode-licensedb.aboutcode.org/blessing",
-                  "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-                  "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.yml",
+                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
                   "spdx_license_key": "blessing",
                   "spdx_url": "https://spdx.org/licenses/blessing"
                 }
@@ -1156,6 +1156,7 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
               "referenced_filenames": [],
               "is_license_text": true,
               "is_license_notice": false,
@@ -1177,8 +1178,7 @@
                   "homepage_url": "https://sqlite.org/src/artifact/df5091916dbb40e6",
                   "text_url": "",
                   "reference_url": "https://scancode-licensedb.aboutcode.org/blessing",
-                  "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-                  "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.yml",
+                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
                   "spdx_license_key": "blessing",
                   "spdx_url": "https://spdx.org/licenses/blessing"
                 }
@@ -1201,6 +1201,7 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
               "referenced_filenames": [],
               "is_license_text": true,
               "is_license_notice": false,
@@ -1222,8 +1223,7 @@
                   "homepage_url": "https://sqlite.org/src/artifact/df5091916dbb40e6",
                   "text_url": "",
                   "reference_url": "https://scancode-licensedb.aboutcode.org/blessing",
-                  "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-                  "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.yml",
+                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
                   "spdx_license_key": "blessing",
                   "spdx_url": "https://spdx.org/licenses/blessing"
                 }
@@ -1246,6 +1246,7 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
               "referenced_filenames": [],
               "is_license_text": true,
               "is_license_notice": false,
@@ -1267,8 +1268,7 @@
                   "homepage_url": "https://sqlite.org/src/artifact/df5091916dbb40e6",
                   "text_url": "",
                   "reference_url": "https://scancode-licensedb.aboutcode.org/blessing",
-                  "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-                  "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.yml",
+                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
                   "spdx_license_key": "blessing",
                   "spdx_url": "https://spdx.org/licenses/blessing"
                 }
@@ -1291,6 +1291,7 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
               "referenced_filenames": [],
               "is_license_text": true,
               "is_license_notice": false,
@@ -1312,8 +1313,7 @@
                   "homepage_url": "https://sqlite.org/src/artifact/df5091916dbb40e6",
                   "text_url": "",
                   "reference_url": "https://scancode-licensedb.aboutcode.org/blessing",
-                  "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-                  "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.yml",
+                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
                   "spdx_license_key": "blessing",
                   "spdx_url": "https://spdx.org/licenses/blessing"
                 }
@@ -1336,6 +1336,7 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
               "referenced_filenames": [],
               "is_license_text": true,
               "is_license_notice": false,
@@ -1357,8 +1358,7 @@
                   "homepage_url": "https://sqlite.org/src/artifact/df5091916dbb40e6",
                   "text_url": "",
                   "reference_url": "https://scancode-licensedb.aboutcode.org/blessing",
-                  "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-                  "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.yml",
+                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
                   "spdx_license_key": "blessing",
                   "spdx_url": "https://spdx.org/licenses/blessing"
                 }
@@ -1381,6 +1381,7 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
               "referenced_filenames": [],
               "is_license_text": true,
               "is_license_notice": false,
@@ -1402,8 +1403,7 @@
                   "homepage_url": "https://sqlite.org/src/artifact/df5091916dbb40e6",
                   "text_url": "",
                   "reference_url": "https://scancode-licensedb.aboutcode.org/blessing",
-                  "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-                  "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.yml",
+                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
                   "spdx_license_key": "blessing",
                   "spdx_url": "https://spdx.org/licenses/blessing"
                 }
@@ -1426,6 +1426,7 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
               "referenced_filenames": [],
               "is_license_text": true,
               "is_license_notice": false,
@@ -1447,8 +1448,7 @@
                   "homepage_url": "https://sqlite.org/src/artifact/df5091916dbb40e6",
                   "text_url": "",
                   "reference_url": "https://scancode-licensedb.aboutcode.org/blessing",
-                  "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-                  "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.yml",
+                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
                   "spdx_license_key": "blessing",
                   "spdx_url": "https://spdx.org/licenses/blessing"
                 }
@@ -1471,6 +1471,7 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
               "referenced_filenames": [],
               "is_license_text": true,
               "is_license_notice": false,
@@ -1492,8 +1493,7 @@
                   "homepage_url": "https://sqlite.org/src/artifact/df5091916dbb40e6",
                   "text_url": "",
                   "reference_url": "https://scancode-licensedb.aboutcode.org/blessing",
-                  "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-                  "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.yml",
+                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
                   "spdx_license_key": "blessing",
                   "spdx_url": "https://spdx.org/licenses/blessing"
                 }
@@ -1516,6 +1516,7 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
               "referenced_filenames": [],
               "is_license_text": true,
               "is_license_notice": false,
@@ -1537,8 +1538,7 @@
                   "homepage_url": "https://sqlite.org/src/artifact/df5091916dbb40e6",
                   "text_url": "",
                   "reference_url": "https://scancode-licensedb.aboutcode.org/blessing",
-                  "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-                  "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.yml",
+                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
                   "spdx_license_key": "blessing",
                   "spdx_url": "https://spdx.org/licenses/blessing"
                 }
@@ -1561,6 +1561,7 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
               "referenced_filenames": [],
               "is_license_text": true,
               "is_license_notice": false,
@@ -1582,8 +1583,7 @@
                   "homepage_url": "https://sqlite.org/src/artifact/df5091916dbb40e6",
                   "text_url": "",
                   "reference_url": "https://scancode-licensedb.aboutcode.org/blessing",
-                  "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-                  "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.yml",
+                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
                   "spdx_license_key": "blessing",
                   "spdx_url": "https://spdx.org/licenses/blessing"
                 }
@@ -1606,6 +1606,7 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
               "referenced_filenames": [],
               "is_license_text": true,
               "is_license_notice": false,
@@ -1627,8 +1628,7 @@
                   "homepage_url": "https://sqlite.org/src/artifact/df5091916dbb40e6",
                   "text_url": "",
                   "reference_url": "https://scancode-licensedb.aboutcode.org/blessing",
-                  "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-                  "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.yml",
+                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
                   "spdx_license_key": "blessing",
                   "spdx_url": "https://spdx.org/licenses/blessing"
                 }
@@ -1651,6 +1651,7 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
               "referenced_filenames": [],
               "is_license_text": true,
               "is_license_notice": false,
@@ -1672,8 +1673,7 @@
                   "homepage_url": "https://sqlite.org/src/artifact/df5091916dbb40e6",
                   "text_url": "",
                   "reference_url": "https://scancode-licensedb.aboutcode.org/blessing",
-                  "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-                  "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.yml",
+                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
                   "spdx_license_key": "blessing",
                   "spdx_url": "https://spdx.org/licenses/blessing"
                 }
@@ -1696,6 +1696,7 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
               "referenced_filenames": [],
               "is_license_text": true,
               "is_license_notice": false,
@@ -1717,8 +1718,7 @@
                   "homepage_url": "https://sqlite.org/src/artifact/df5091916dbb40e6",
                   "text_url": "",
                   "reference_url": "https://scancode-licensedb.aboutcode.org/blessing",
-                  "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-                  "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.yml",
+                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
                   "spdx_license_key": "blessing",
                   "spdx_url": "https://spdx.org/licenses/blessing"
                 }
@@ -1741,6 +1741,7 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
               "referenced_filenames": [],
               "is_license_text": true,
               "is_license_notice": false,
@@ -1762,8 +1763,7 @@
                   "homepage_url": "https://sqlite.org/src/artifact/df5091916dbb40e6",
                   "text_url": "",
                   "reference_url": "https://scancode-licensedb.aboutcode.org/blessing",
-                  "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-                  "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.yml",
+                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
                   "spdx_license_key": "blessing",
                   "spdx_url": "https://spdx.org/licenses/blessing"
                 }
@@ -1786,6 +1786,7 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
               "referenced_filenames": [],
               "is_license_text": true,
               "is_license_notice": false,
@@ -1807,8 +1808,7 @@
                   "homepage_url": "https://sqlite.org/src/artifact/df5091916dbb40e6",
                   "text_url": "",
                   "reference_url": "https://scancode-licensedb.aboutcode.org/blessing",
-                  "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-                  "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.yml",
+                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
                   "spdx_license_key": "blessing",
                   "spdx_url": "https://spdx.org/licenses/blessing"
                 }
@@ -1831,6 +1831,7 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
               "referenced_filenames": [],
               "is_license_text": true,
               "is_license_notice": false,
@@ -1852,8 +1853,7 @@
                   "homepage_url": "https://sqlite.org/src/artifact/df5091916dbb40e6",
                   "text_url": "",
                   "reference_url": "https://scancode-licensedb.aboutcode.org/blessing",
-                  "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-                  "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.yml",
+                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
                   "spdx_license_key": "blessing",
                   "spdx_url": "https://spdx.org/licenses/blessing"
                 }
@@ -1876,6 +1876,7 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
               "referenced_filenames": [],
               "is_license_text": true,
               "is_license_notice": false,
@@ -1897,8 +1898,7 @@
                   "homepage_url": "https://sqlite.org/src/artifact/df5091916dbb40e6",
                   "text_url": "",
                   "reference_url": "https://scancode-licensedb.aboutcode.org/blessing",
-                  "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-                  "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.yml",
+                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
                   "spdx_license_key": "blessing",
                   "spdx_url": "https://spdx.org/licenses/blessing"
                 }
@@ -1921,6 +1921,7 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
               "referenced_filenames": [],
               "is_license_text": true,
               "is_license_notice": false,
@@ -1942,8 +1943,7 @@
                   "homepage_url": "https://sqlite.org/src/artifact/df5091916dbb40e6",
                   "text_url": "",
                   "reference_url": "https://scancode-licensedb.aboutcode.org/blessing",
-                  "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-                  "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.yml",
+                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
                   "spdx_license_key": "blessing",
                   "spdx_url": "https://spdx.org/licenses/blessing"
                 }
@@ -1966,6 +1966,7 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
               "referenced_filenames": [],
               "is_license_text": true,
               "is_license_notice": false,
@@ -1987,8 +1988,7 @@
                   "homepage_url": "https://sqlite.org/src/artifact/df5091916dbb40e6",
                   "text_url": "",
                   "reference_url": "https://scancode-licensedb.aboutcode.org/blessing",
-                  "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-                  "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.yml",
+                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
                   "spdx_license_key": "blessing",
                   "spdx_url": "https://spdx.org/licenses/blessing"
                 }
@@ -2011,6 +2011,7 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
               "referenced_filenames": [],
               "is_license_text": true,
               "is_license_notice": false,
@@ -2032,8 +2033,7 @@
                   "homepage_url": "https://sqlite.org/src/artifact/df5091916dbb40e6",
                   "text_url": "",
                   "reference_url": "https://scancode-licensedb.aboutcode.org/blessing",
-                  "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-                  "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.yml",
+                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
                   "spdx_license_key": "blessing",
                   "spdx_url": "https://spdx.org/licenses/blessing"
                 }
@@ -2056,6 +2056,7 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
               "referenced_filenames": [],
               "is_license_text": true,
               "is_license_notice": false,
@@ -2077,8 +2078,7 @@
                   "homepage_url": "https://sqlite.org/src/artifact/df5091916dbb40e6",
                   "text_url": "",
                   "reference_url": "https://scancode-licensedb.aboutcode.org/blessing",
-                  "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-                  "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.yml",
+                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
                   "spdx_license_key": "blessing",
                   "spdx_url": "https://spdx.org/licenses/blessing"
                 }
@@ -2101,6 +2101,7 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
               "referenced_filenames": [],
               "is_license_text": true,
               "is_license_notice": false,
@@ -2122,8 +2123,7 @@
                   "homepage_url": "https://sqlite.org/src/artifact/df5091916dbb40e6",
                   "text_url": "",
                   "reference_url": "https://scancode-licensedb.aboutcode.org/blessing",
-                  "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-                  "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.yml",
+                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
                   "spdx_license_key": "blessing",
                   "spdx_url": "https://spdx.org/licenses/blessing"
                 }
@@ -2146,6 +2146,7 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
               "referenced_filenames": [],
               "is_license_text": true,
               "is_license_notice": false,
@@ -2167,8 +2168,7 @@
                   "homepage_url": "https://sqlite.org/src/artifact/df5091916dbb40e6",
                   "text_url": "",
                   "reference_url": "https://scancode-licensedb.aboutcode.org/blessing",
-                  "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-                  "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.yml",
+                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
                   "spdx_license_key": "blessing",
                   "spdx_url": "https://spdx.org/licenses/blessing"
                 }
@@ -2191,6 +2191,7 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
               "referenced_filenames": [],
               "is_license_text": true,
               "is_license_notice": false,
@@ -2212,8 +2213,7 @@
                   "homepage_url": "https://sqlite.org/src/artifact/df5091916dbb40e6",
                   "text_url": "",
                   "reference_url": "https://scancode-licensedb.aboutcode.org/blessing",
-                  "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-                  "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.yml",
+                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
                   "spdx_license_key": "blessing",
                   "spdx_url": "https://spdx.org/licenses/blessing"
                 }
@@ -2236,6 +2236,7 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
               "referenced_filenames": [],
               "is_license_text": true,
               "is_license_notice": false,
@@ -2257,8 +2258,7 @@
                   "homepage_url": "https://sqlite.org/src/artifact/df5091916dbb40e6",
                   "text_url": "",
                   "reference_url": "https://scancode-licensedb.aboutcode.org/blessing",
-                  "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-                  "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.yml",
+                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
                   "spdx_license_key": "blessing",
                   "spdx_url": "https://spdx.org/licenses/blessing"
                 }
@@ -2281,6 +2281,7 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
               "referenced_filenames": [],
               "is_license_text": true,
               "is_license_notice": false,
@@ -2302,8 +2303,7 @@
                   "homepage_url": "https://sqlite.org/src/artifact/df5091916dbb40e6",
                   "text_url": "",
                   "reference_url": "https://scancode-licensedb.aboutcode.org/blessing",
-                  "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-                  "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.yml",
+                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
                   "spdx_license_key": "blessing",
                   "spdx_url": "https://spdx.org/licenses/blessing"
                 }
@@ -2326,6 +2326,7 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
               "referenced_filenames": [],
               "is_license_text": true,
               "is_license_notice": false,
@@ -2347,8 +2348,7 @@
                   "homepage_url": "https://sqlite.org/src/artifact/df5091916dbb40e6",
                   "text_url": "",
                   "reference_url": "https://scancode-licensedb.aboutcode.org/blessing",
-                  "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-                  "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.yml",
+                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
                   "spdx_license_key": "blessing",
                   "spdx_url": "https://spdx.org/licenses/blessing"
                 }
@@ -2371,6 +2371,7 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
               "referenced_filenames": [],
               "is_license_text": true,
               "is_license_notice": false,
@@ -2392,8 +2393,7 @@
                   "homepage_url": "https://sqlite.org/src/artifact/df5091916dbb40e6",
                   "text_url": "",
                   "reference_url": "https://scancode-licensedb.aboutcode.org/blessing",
-                  "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-                  "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.yml",
+                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
                   "spdx_license_key": "blessing",
                   "spdx_url": "https://spdx.org/licenses/blessing"
                 }
@@ -2416,6 +2416,7 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
               "referenced_filenames": [],
               "is_license_text": true,
               "is_license_notice": false,
@@ -2437,8 +2438,7 @@
                   "homepage_url": "https://sqlite.org/src/artifact/df5091916dbb40e6",
                   "text_url": "",
                   "reference_url": "https://scancode-licensedb.aboutcode.org/blessing",
-                  "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-                  "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.yml",
+                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
                   "spdx_license_key": "blessing",
                   "spdx_url": "https://spdx.org/licenses/blessing"
                 }
@@ -2461,6 +2461,7 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
               "referenced_filenames": [],
               "is_license_text": true,
               "is_license_notice": false,
@@ -2482,8 +2483,7 @@
                   "homepage_url": "https://sqlite.org/src/artifact/df5091916dbb40e6",
                   "text_url": "",
                   "reference_url": "https://scancode-licensedb.aboutcode.org/blessing",
-                  "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-                  "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.yml",
+                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
                   "spdx_license_key": "blessing",
                   "spdx_url": "https://spdx.org/licenses/blessing"
                 }
@@ -2506,6 +2506,7 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
               "referenced_filenames": [],
               "is_license_text": true,
               "is_license_notice": false,
@@ -2527,8 +2528,7 @@
                   "homepage_url": "https://sqlite.org/src/artifact/df5091916dbb40e6",
                   "text_url": "",
                   "reference_url": "https://scancode-licensedb.aboutcode.org/blessing",
-                  "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-                  "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.yml",
+                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
                   "spdx_license_key": "blessing",
                   "spdx_url": "https://spdx.org/licenses/blessing"
                 }
@@ -2551,6 +2551,7 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
               "referenced_filenames": [],
               "is_license_text": true,
               "is_license_notice": false,
@@ -2572,8 +2573,7 @@
                   "homepage_url": "https://sqlite.org/src/artifact/df5091916dbb40e6",
                   "text_url": "",
                   "reference_url": "https://scancode-licensedb.aboutcode.org/blessing",
-                  "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-                  "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.yml",
+                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
                   "spdx_license_key": "blessing",
                   "spdx_url": "https://spdx.org/licenses/blessing"
                 }
@@ -2596,6 +2596,7 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
               "referenced_filenames": [],
               "is_license_text": true,
               "is_license_notice": false,
@@ -2617,8 +2618,7 @@
                   "homepage_url": "https://sqlite.org/src/artifact/df5091916dbb40e6",
                   "text_url": "",
                   "reference_url": "https://scancode-licensedb.aboutcode.org/blessing",
-                  "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-                  "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.yml",
+                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
                   "spdx_license_key": "blessing",
                   "spdx_url": "https://spdx.org/licenses/blessing"
                 }
@@ -2641,6 +2641,7 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
               "referenced_filenames": [],
               "is_license_text": true,
               "is_license_notice": false,
@@ -2662,8 +2663,7 @@
                   "homepage_url": "https://sqlite.org/src/artifact/df5091916dbb40e6",
                   "text_url": "",
                   "reference_url": "https://scancode-licensedb.aboutcode.org/blessing",
-                  "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-                  "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.yml",
+                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
                   "spdx_license_key": "blessing",
                   "spdx_url": "https://spdx.org/licenses/blessing"
                 }
@@ -2686,6 +2686,7 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
               "referenced_filenames": [],
               "is_license_text": true,
               "is_license_notice": false,
@@ -2707,8 +2708,7 @@
                   "homepage_url": "https://sqlite.org/src/artifact/df5091916dbb40e6",
                   "text_url": "",
                   "reference_url": "https://scancode-licensedb.aboutcode.org/blessing",
-                  "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-                  "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.yml",
+                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
                   "spdx_license_key": "blessing",
                   "spdx_url": "https://spdx.org/licenses/blessing"
                 }
@@ -2731,6 +2731,7 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
               "referenced_filenames": [],
               "is_license_text": true,
               "is_license_notice": false,
@@ -2752,8 +2753,7 @@
                   "homepage_url": "https://sqlite.org/src/artifact/df5091916dbb40e6",
                   "text_url": "",
                   "reference_url": "https://scancode-licensedb.aboutcode.org/blessing",
-                  "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-                  "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.yml",
+                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
                   "spdx_license_key": "blessing",
                   "spdx_url": "https://spdx.org/licenses/blessing"
                 }
@@ -2776,6 +2776,7 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
               "referenced_filenames": [],
               "is_license_text": true,
               "is_license_notice": false,
@@ -2797,8 +2798,7 @@
                   "homepage_url": "https://sqlite.org/src/artifact/df5091916dbb40e6",
                   "text_url": "",
                   "reference_url": "https://scancode-licensedb.aboutcode.org/blessing",
-                  "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-                  "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.yml",
+                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
                   "spdx_license_key": "blessing",
                   "spdx_url": "https://spdx.org/licenses/blessing"
                 }
@@ -2821,6 +2821,7 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
               "referenced_filenames": [],
               "is_license_text": true,
               "is_license_notice": false,
@@ -2842,8 +2843,7 @@
                   "homepage_url": "https://sqlite.org/src/artifact/df5091916dbb40e6",
                   "text_url": "",
                   "reference_url": "https://scancode-licensedb.aboutcode.org/blessing",
-                  "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-                  "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.yml",
+                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
                   "spdx_license_key": "blessing",
                   "spdx_url": "https://spdx.org/licenses/blessing"
                 }
@@ -2866,6 +2866,7 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
               "referenced_filenames": [],
               "is_license_text": true,
               "is_license_notice": false,
@@ -2887,8 +2888,7 @@
                   "homepage_url": "https://sqlite.org/src/artifact/df5091916dbb40e6",
                   "text_url": "",
                   "reference_url": "https://scancode-licensedb.aboutcode.org/blessing",
-                  "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-                  "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.yml",
+                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
                   "spdx_license_key": "blessing",
                   "spdx_url": "https://spdx.org/licenses/blessing"
                 }
@@ -2911,6 +2911,7 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
               "referenced_filenames": [],
               "is_license_text": true,
               "is_license_notice": false,
@@ -2932,8 +2933,7 @@
                   "homepage_url": "https://sqlite.org/src/artifact/df5091916dbb40e6",
                   "text_url": "",
                   "reference_url": "https://scancode-licensedb.aboutcode.org/blessing",
-                  "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-                  "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.yml",
+                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
                   "spdx_license_key": "blessing",
                   "spdx_url": "https://spdx.org/licenses/blessing"
                 }
@@ -2956,6 +2956,7 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
               "referenced_filenames": [],
               "is_license_text": true,
               "is_license_notice": false,
@@ -2977,8 +2978,7 @@
                   "homepage_url": "https://sqlite.org/src/artifact/df5091916dbb40e6",
                   "text_url": "",
                   "reference_url": "https://scancode-licensedb.aboutcode.org/blessing",
-                  "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-                  "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.yml",
+                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
                   "spdx_license_key": "blessing",
                   "spdx_url": "https://spdx.org/licenses/blessing"
                 }
@@ -3001,6 +3001,7 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
               "referenced_filenames": [],
               "is_license_text": true,
               "is_license_notice": false,
@@ -3022,8 +3023,7 @@
                   "homepage_url": "https://sqlite.org/src/artifact/df5091916dbb40e6",
                   "text_url": "",
                   "reference_url": "https://scancode-licensedb.aboutcode.org/blessing",
-                  "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-                  "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.yml",
+                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
                   "spdx_license_key": "blessing",
                   "spdx_url": "https://spdx.org/licenses/blessing"
                 }
@@ -3046,6 +3046,7 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
               "referenced_filenames": [],
               "is_license_text": true,
               "is_license_notice": false,
@@ -3067,8 +3068,7 @@
                   "homepage_url": "https://sqlite.org/src/artifact/df5091916dbb40e6",
                   "text_url": "",
                   "reference_url": "https://scancode-licensedb.aboutcode.org/blessing",
-                  "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-                  "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.yml",
+                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
                   "spdx_license_key": "blessing",
                   "spdx_url": "https://spdx.org/licenses/blessing"
                 }
@@ -3091,6 +3091,7 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
               "referenced_filenames": [],
               "is_license_text": true,
               "is_license_notice": false,
@@ -3112,8 +3113,7 @@
                   "homepage_url": "https://sqlite.org/src/artifact/df5091916dbb40e6",
                   "text_url": "",
                   "reference_url": "https://scancode-licensedb.aboutcode.org/blessing",
-                  "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-                  "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.yml",
+                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
                   "spdx_license_key": "blessing",
                   "spdx_url": "https://spdx.org/licenses/blessing"
                 }
@@ -3136,6 +3136,7 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
               "referenced_filenames": [],
               "is_license_text": true,
               "is_license_notice": false,
@@ -3157,8 +3158,7 @@
                   "homepage_url": "https://sqlite.org/src/artifact/df5091916dbb40e6",
                   "text_url": "",
                   "reference_url": "https://scancode-licensedb.aboutcode.org/blessing",
-                  "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-                  "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.yml",
+                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
                   "spdx_license_key": "blessing",
                   "spdx_url": "https://spdx.org/licenses/blessing"
                 }
@@ -3181,6 +3181,7 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
               "referenced_filenames": [],
               "is_license_text": true,
               "is_license_notice": false,
@@ -3202,8 +3203,7 @@
                   "homepage_url": "https://sqlite.org/src/artifact/df5091916dbb40e6",
                   "text_url": "",
                   "reference_url": "https://scancode-licensedb.aboutcode.org/blessing",
-                  "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-                  "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.yml",
+                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
                   "spdx_license_key": "blessing",
                   "spdx_url": "https://spdx.org/licenses/blessing"
                 }
@@ -3226,6 +3226,7 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
               "referenced_filenames": [],
               "is_license_text": true,
               "is_license_notice": false,
@@ -3247,8 +3248,7 @@
                   "homepage_url": "https://sqlite.org/src/artifact/df5091916dbb40e6",
                   "text_url": "",
                   "reference_url": "https://scancode-licensedb.aboutcode.org/blessing",
-                  "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-                  "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.yml",
+                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
                   "spdx_license_key": "blessing",
                   "spdx_url": "https://spdx.org/licenses/blessing"
                 }
@@ -3271,6 +3271,7 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
               "referenced_filenames": [],
               "is_license_text": true,
               "is_license_notice": false,
@@ -3292,8 +3293,7 @@
                   "homepage_url": "https://sqlite.org/src/artifact/df5091916dbb40e6",
                   "text_url": "",
                   "reference_url": "https://scancode-licensedb.aboutcode.org/blessing",
-                  "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-                  "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.yml",
+                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
                   "spdx_license_key": "blessing",
                   "spdx_url": "https://spdx.org/licenses/blessing"
                 }
@@ -3316,6 +3316,7 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
               "referenced_filenames": [],
               "is_license_text": true,
               "is_license_notice": false,
@@ -3337,8 +3338,7 @@
                   "homepage_url": "https://sqlite.org/src/artifact/df5091916dbb40e6",
                   "text_url": "",
                   "reference_url": "https://scancode-licensedb.aboutcode.org/blessing",
-                  "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-                  "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.yml",
+                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
                   "spdx_license_key": "blessing",
                   "spdx_url": "https://spdx.org/licenses/blessing"
                 }
@@ -3361,6 +3361,7 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
               "referenced_filenames": [],
               "is_license_text": true,
               "is_license_notice": false,
@@ -3382,8 +3383,7 @@
                   "homepage_url": "https://sqlite.org/src/artifact/df5091916dbb40e6",
                   "text_url": "",
                   "reference_url": "https://scancode-licensedb.aboutcode.org/blessing",
-                  "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-                  "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.yml",
+                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
                   "spdx_license_key": "blessing",
                   "spdx_url": "https://spdx.org/licenses/blessing"
                 }
@@ -3406,6 +3406,7 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
               "referenced_filenames": [],
               "is_license_text": true,
               "is_license_notice": false,
@@ -3427,8 +3428,7 @@
                   "homepage_url": "https://sqlite.org/src/artifact/df5091916dbb40e6",
                   "text_url": "",
                   "reference_url": "https://scancode-licensedb.aboutcode.org/blessing",
-                  "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-                  "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.yml",
+                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
                   "spdx_license_key": "blessing",
                   "spdx_url": "https://spdx.org/licenses/blessing"
                 }
@@ -3451,6 +3451,7 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
               "referenced_filenames": [],
               "is_license_text": true,
               "is_license_notice": false,
@@ -3472,8 +3473,7 @@
                   "homepage_url": "https://sqlite.org/src/artifact/df5091916dbb40e6",
                   "text_url": "",
                   "reference_url": "https://scancode-licensedb.aboutcode.org/blessing",
-                  "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-                  "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.yml",
+                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
                   "spdx_license_key": "blessing",
                   "spdx_url": "https://spdx.org/licenses/blessing"
                 }
@@ -3496,6 +3496,7 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
               "referenced_filenames": [],
               "is_license_text": true,
               "is_license_notice": false,
@@ -3517,8 +3518,7 @@
                   "homepage_url": "https://sqlite.org/src/artifact/df5091916dbb40e6",
                   "text_url": "",
                   "reference_url": "https://scancode-licensedb.aboutcode.org/blessing",
-                  "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-                  "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.yml",
+                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
                   "spdx_license_key": "blessing",
                   "spdx_url": "https://spdx.org/licenses/blessing"
                 }
@@ -3541,6 +3541,7 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
               "referenced_filenames": [],
               "is_license_text": true,
               "is_license_notice": false,
@@ -3562,8 +3563,7 @@
                   "homepage_url": "https://sqlite.org/src/artifact/df5091916dbb40e6",
                   "text_url": "",
                   "reference_url": "https://scancode-licensedb.aboutcode.org/blessing",
-                  "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-                  "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.yml",
+                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
                   "spdx_license_key": "blessing",
                   "spdx_url": "https://spdx.org/licenses/blessing"
                 }
@@ -3586,6 +3586,7 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
               "referenced_filenames": [],
               "is_license_text": true,
               "is_license_notice": false,
@@ -3607,8 +3608,7 @@
                   "homepage_url": "https://sqlite.org/src/artifact/df5091916dbb40e6",
                   "text_url": "",
                   "reference_url": "https://scancode-licensedb.aboutcode.org/blessing",
-                  "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-                  "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.yml",
+                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
                   "spdx_license_key": "blessing",
                   "spdx_url": "https://spdx.org/licenses/blessing"
                 }
@@ -3631,6 +3631,7 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
               "referenced_filenames": [],
               "is_license_text": true,
               "is_license_notice": false,
@@ -3652,8 +3653,7 @@
                   "homepage_url": "https://sqlite.org/src/artifact/df5091916dbb40e6",
                   "text_url": "",
                   "reference_url": "https://scancode-licensedb.aboutcode.org/blessing",
-                  "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-                  "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.yml",
+                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
                   "spdx_license_key": "blessing",
                   "spdx_url": "https://spdx.org/licenses/blessing"
                 }
@@ -3676,6 +3676,7 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
               "referenced_filenames": [],
               "is_license_text": true,
               "is_license_notice": false,
@@ -3697,8 +3698,7 @@
                   "homepage_url": "https://sqlite.org/src/artifact/df5091916dbb40e6",
                   "text_url": "",
                   "reference_url": "https://scancode-licensedb.aboutcode.org/blessing",
-                  "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-                  "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.yml",
+                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
                   "spdx_license_key": "blessing",
                   "spdx_url": "https://spdx.org/licenses/blessing"
                 }
@@ -3721,6 +3721,7 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
               "referenced_filenames": [],
               "is_license_text": true,
               "is_license_notice": false,
@@ -3742,8 +3743,7 @@
                   "homepage_url": "https://sqlite.org/src/artifact/df5091916dbb40e6",
                   "text_url": "",
                   "reference_url": "https://scancode-licensedb.aboutcode.org/blessing",
-                  "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-                  "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.yml",
+                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
                   "spdx_license_key": "blessing",
                   "spdx_url": "https://spdx.org/licenses/blessing"
                 }
@@ -3766,6 +3766,7 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
               "referenced_filenames": [],
               "is_license_text": true,
               "is_license_notice": false,
@@ -3787,8 +3788,7 @@
                   "homepage_url": "https://sqlite.org/src/artifact/df5091916dbb40e6",
                   "text_url": "",
                   "reference_url": "https://scancode-licensedb.aboutcode.org/blessing",
-                  "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-                  "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.yml",
+                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
                   "spdx_license_key": "blessing",
                   "spdx_url": "https://spdx.org/licenses/blessing"
                 }
@@ -3811,6 +3811,7 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
               "referenced_filenames": [],
               "is_license_text": true,
               "is_license_notice": false,
@@ -3832,8 +3833,7 @@
                   "homepage_url": "https://sqlite.org/src/artifact/df5091916dbb40e6",
                   "text_url": "",
                   "reference_url": "https://scancode-licensedb.aboutcode.org/blessing",
-                  "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-                  "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.yml",
+                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
                   "spdx_license_key": "blessing",
                   "spdx_url": "https://spdx.org/licenses/blessing"
                 }
@@ -3856,6 +3856,7 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
               "referenced_filenames": [],
               "is_license_text": true,
               "is_license_notice": false,
@@ -3877,8 +3878,7 @@
                   "homepage_url": "https://sqlite.org/src/artifact/df5091916dbb40e6",
                   "text_url": "",
                   "reference_url": "https://scancode-licensedb.aboutcode.org/blessing",
-                  "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-                  "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.yml",
+                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
                   "spdx_license_key": "blessing",
                   "spdx_url": "https://spdx.org/licenses/blessing"
                 }
@@ -3901,6 +3901,7 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
               "referenced_filenames": [],
               "is_license_text": true,
               "is_license_notice": false,
@@ -3922,8 +3923,7 @@
                   "homepage_url": "https://sqlite.org/src/artifact/df5091916dbb40e6",
                   "text_url": "",
                   "reference_url": "https://scancode-licensedb.aboutcode.org/blessing",
-                  "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-                  "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.yml",
+                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
                   "spdx_license_key": "blessing",
                   "spdx_url": "https://spdx.org/licenses/blessing"
                 }
@@ -3946,6 +3946,7 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
               "referenced_filenames": [],
               "is_license_text": true,
               "is_license_notice": false,
@@ -3967,8 +3968,7 @@
                   "homepage_url": "https://sqlite.org/src/artifact/df5091916dbb40e6",
                   "text_url": "",
                   "reference_url": "https://scancode-licensedb.aboutcode.org/blessing",
-                  "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-                  "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.yml",
+                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
                   "spdx_license_key": "blessing",
                   "spdx_url": "https://spdx.org/licenses/blessing"
                 }
@@ -3991,6 +3991,7 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
               "referenced_filenames": [],
               "is_license_text": true,
               "is_license_notice": false,
@@ -4012,8 +4013,7 @@
                   "homepage_url": "https://sqlite.org/src/artifact/df5091916dbb40e6",
                   "text_url": "",
                   "reference_url": "https://scancode-licensedb.aboutcode.org/blessing",
-                  "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-                  "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.yml",
+                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
                   "spdx_license_key": "blessing",
                   "spdx_url": "https://spdx.org/licenses/blessing"
                 }
@@ -4036,6 +4036,7 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
               "referenced_filenames": [],
               "is_license_text": true,
               "is_license_notice": false,
@@ -4057,8 +4058,7 @@
                   "homepage_url": "https://sqlite.org/src/artifact/df5091916dbb40e6",
                   "text_url": "",
                   "reference_url": "https://scancode-licensedb.aboutcode.org/blessing",
-                  "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-                  "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.yml",
+                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
                   "spdx_license_key": "blessing",
                   "spdx_url": "https://spdx.org/licenses/blessing"
                 }
@@ -4081,6 +4081,7 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
               "referenced_filenames": [],
               "is_license_text": true,
               "is_license_notice": false,
@@ -4102,8 +4103,7 @@
                   "homepage_url": "https://sqlite.org/src/artifact/df5091916dbb40e6",
                   "text_url": "",
                   "reference_url": "https://scancode-licensedb.aboutcode.org/blessing",
-                  "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-                  "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.yml",
+                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
                   "spdx_license_key": "blessing",
                   "spdx_url": "https://spdx.org/licenses/blessing"
                 }
@@ -4126,6 +4126,7 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
               "referenced_filenames": [],
               "is_license_text": true,
               "is_license_notice": false,
@@ -4147,8 +4148,7 @@
                   "homepage_url": "https://sqlite.org/src/artifact/df5091916dbb40e6",
                   "text_url": "",
                   "reference_url": "https://scancode-licensedb.aboutcode.org/blessing",
-                  "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-                  "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.yml",
+                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
                   "spdx_license_key": "blessing",
                   "spdx_url": "https://spdx.org/licenses/blessing"
                 }
@@ -4171,6 +4171,7 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
               "referenced_filenames": [],
               "is_license_text": true,
               "is_license_notice": false,
@@ -4192,8 +4193,7 @@
                   "homepage_url": "https://sqlite.org/src/artifact/df5091916dbb40e6",
                   "text_url": "",
                   "reference_url": "https://scancode-licensedb.aboutcode.org/blessing",
-                  "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-                  "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.yml",
+                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
                   "spdx_license_key": "blessing",
                   "spdx_url": "https://spdx.org/licenses/blessing"
                 }
@@ -4216,6 +4216,7 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
               "referenced_filenames": [],
               "is_license_text": true,
               "is_license_notice": false,
@@ -4237,8 +4238,7 @@
                   "homepage_url": "https://sqlite.org/src/artifact/df5091916dbb40e6",
                   "text_url": "",
                   "reference_url": "https://scancode-licensedb.aboutcode.org/blessing",
-                  "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-                  "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.yml",
+                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
                   "spdx_license_key": "blessing",
                   "spdx_url": "https://spdx.org/licenses/blessing"
                 }
@@ -4261,6 +4261,7 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
               "referenced_filenames": [],
               "is_license_text": true,
               "is_license_notice": false,
@@ -4282,8 +4283,7 @@
                   "homepage_url": "https://sqlite.org/src/artifact/df5091916dbb40e6",
                   "text_url": "",
                   "reference_url": "https://scancode-licensedb.aboutcode.org/blessing",
-                  "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-                  "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.yml",
+                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
                   "spdx_license_key": "blessing",
                   "spdx_url": "https://spdx.org/licenses/blessing"
                 }
@@ -4306,6 +4306,7 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
               "referenced_filenames": [],
               "is_license_text": true,
               "is_license_notice": false,
@@ -4327,8 +4328,7 @@
                   "homepage_url": "https://sqlite.org/src/artifact/df5091916dbb40e6",
                   "text_url": "",
                   "reference_url": "https://scancode-licensedb.aboutcode.org/blessing",
-                  "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-                  "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.yml",
+                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
                   "spdx_license_key": "blessing",
                   "spdx_url": "https://spdx.org/licenses/blessing"
                 }
@@ -4351,6 +4351,7 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
               "referenced_filenames": [],
               "is_license_text": true,
               "is_license_notice": false,
@@ -4372,8 +4373,7 @@
                   "homepage_url": "https://sqlite.org/src/artifact/df5091916dbb40e6",
                   "text_url": "",
                   "reference_url": "https://scancode-licensedb.aboutcode.org/blessing",
-                  "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-                  "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.yml",
+                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
                   "spdx_license_key": "blessing",
                   "spdx_url": "https://spdx.org/licenses/blessing"
                 }
@@ -4396,6 +4396,7 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
               "referenced_filenames": [],
               "is_license_text": true,
               "is_license_notice": false,
@@ -4417,8 +4418,7 @@
                   "homepage_url": "https://sqlite.org/src/artifact/df5091916dbb40e6",
                   "text_url": "",
                   "reference_url": "https://scancode-licensedb.aboutcode.org/blessing",
-                  "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-                  "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.yml",
+                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
                   "spdx_license_key": "blessing",
                   "spdx_url": "https://spdx.org/licenses/blessing"
                 }
@@ -4441,6 +4441,7 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
               "referenced_filenames": [],
               "is_license_text": true,
               "is_license_notice": false,
@@ -4462,8 +4463,7 @@
                   "homepage_url": "https://sqlite.org/src/artifact/df5091916dbb40e6",
                   "text_url": "",
                   "reference_url": "https://scancode-licensedb.aboutcode.org/blessing",
-                  "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-                  "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.yml",
+                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
                   "spdx_license_key": "blessing",
                   "spdx_url": "https://spdx.org/licenses/blessing"
                 }
@@ -4486,6 +4486,7 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
               "referenced_filenames": [],
               "is_license_text": true,
               "is_license_notice": false,
@@ -4507,8 +4508,7 @@
                   "homepage_url": "https://sqlite.org/src/artifact/df5091916dbb40e6",
                   "text_url": "",
                   "reference_url": "https://scancode-licensedb.aboutcode.org/blessing",
-                  "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-                  "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.yml",
+                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
                   "spdx_license_key": "blessing",
                   "spdx_url": "https://spdx.org/licenses/blessing"
                 }
@@ -4531,6 +4531,7 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
               "referenced_filenames": [],
               "is_license_text": true,
               "is_license_notice": false,
@@ -4552,8 +4553,7 @@
                   "homepage_url": "https://sqlite.org/src/artifact/df5091916dbb40e6",
                   "text_url": "",
                   "reference_url": "https://scancode-licensedb.aboutcode.org/blessing",
-                  "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-                  "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.yml",
+                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
                   "spdx_license_key": "blessing",
                   "spdx_url": "https://spdx.org/licenses/blessing"
                 }
@@ -4576,6 +4576,7 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
               "referenced_filenames": [],
               "is_license_text": true,
               "is_license_notice": false,
@@ -4597,8 +4598,7 @@
                   "homepage_url": "https://sqlite.org/src/artifact/df5091916dbb40e6",
                   "text_url": "",
                   "reference_url": "https://scancode-licensedb.aboutcode.org/blessing",
-                  "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-                  "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.yml",
+                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
                   "spdx_license_key": "blessing",
                   "spdx_url": "https://spdx.org/licenses/blessing"
                 }
@@ -4621,6 +4621,7 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
               "referenced_filenames": [],
               "is_license_text": true,
               "is_license_notice": false,
@@ -4642,8 +4643,7 @@
                   "homepage_url": "https://sqlite.org/src/artifact/df5091916dbb40e6",
                   "text_url": "",
                   "reference_url": "https://scancode-licensedb.aboutcode.org/blessing",
-                  "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-                  "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.yml",
+                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
                   "spdx_license_key": "blessing",
                   "spdx_url": "https://spdx.org/licenses/blessing"
                 }
@@ -4666,6 +4666,7 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
               "referenced_filenames": [],
               "is_license_text": true,
               "is_license_notice": false,
@@ -4687,8 +4688,7 @@
                   "homepage_url": "https://sqlite.org/src/artifact/df5091916dbb40e6",
                   "text_url": "",
                   "reference_url": "https://scancode-licensedb.aboutcode.org/blessing",
-                  "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-                  "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.yml",
+                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
                   "spdx_license_key": "blessing",
                   "spdx_url": "https://spdx.org/licenses/blessing"
                 }
@@ -4711,6 +4711,7 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
               "referenced_filenames": [],
               "is_license_text": true,
               "is_license_notice": false,
@@ -4732,8 +4733,7 @@
                   "homepage_url": "https://sqlite.org/src/artifact/df5091916dbb40e6",
                   "text_url": "",
                   "reference_url": "https://scancode-licensedb.aboutcode.org/blessing",
-                  "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-                  "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.yml",
+                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
                   "spdx_license_key": "blessing",
                   "spdx_url": "https://spdx.org/licenses/blessing"
                 }
@@ -4756,6 +4756,7 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
               "referenced_filenames": [],
               "is_license_text": true,
               "is_license_notice": false,
@@ -4777,8 +4778,7 @@
                   "homepage_url": "https://sqlite.org/src/artifact/df5091916dbb40e6",
                   "text_url": "",
                   "reference_url": "https://scancode-licensedb.aboutcode.org/blessing",
-                  "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-                  "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.yml",
+                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
                   "spdx_license_key": "blessing",
                   "spdx_url": "https://spdx.org/licenses/blessing"
                 }
@@ -4801,6 +4801,7 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
               "referenced_filenames": [],
               "is_license_text": true,
               "is_license_notice": false,
@@ -4822,8 +4823,7 @@
                   "homepage_url": "https://sqlite.org/src/artifact/df5091916dbb40e6",
                   "text_url": "",
                   "reference_url": "https://scancode-licensedb.aboutcode.org/blessing",
-                  "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-                  "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.yml",
+                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
                   "spdx_license_key": "blessing",
                   "spdx_url": "https://spdx.org/licenses/blessing"
                 }
@@ -4846,6 +4846,7 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
               "referenced_filenames": [],
               "is_license_text": true,
               "is_license_notice": false,
@@ -4867,8 +4868,7 @@
                   "homepage_url": "https://sqlite.org/src/artifact/df5091916dbb40e6",
                   "text_url": "",
                   "reference_url": "https://scancode-licensedb.aboutcode.org/blessing",
-                  "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-                  "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.yml",
+                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
                   "spdx_license_key": "blessing",
                   "spdx_url": "https://spdx.org/licenses/blessing"
                 }
@@ -4891,6 +4891,7 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
               "referenced_filenames": [],
               "is_license_text": true,
               "is_license_notice": false,
@@ -4912,8 +4913,7 @@
                   "homepage_url": "https://sqlite.org/src/artifact/df5091916dbb40e6",
                   "text_url": "",
                   "reference_url": "https://scancode-licensedb.aboutcode.org/blessing",
-                  "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-                  "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.yml",
+                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
                   "spdx_license_key": "blessing",
                   "spdx_url": "https://spdx.org/licenses/blessing"
                 }
@@ -4936,6 +4936,7 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
               "referenced_filenames": [],
               "is_license_text": true,
               "is_license_notice": false,
@@ -4957,8 +4958,7 @@
                   "homepage_url": "https://sqlite.org/src/artifact/df5091916dbb40e6",
                   "text_url": "",
                   "reference_url": "https://scancode-licensedb.aboutcode.org/blessing",
-                  "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-                  "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.yml",
+                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
                   "spdx_license_key": "blessing",
                   "spdx_url": "https://spdx.org/licenses/blessing"
                 }
@@ -4981,6 +4981,7 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
               "referenced_filenames": [],
               "is_license_text": true,
               "is_license_notice": false,
@@ -5002,8 +5003,7 @@
                   "homepage_url": "https://sqlite.org/src/artifact/df5091916dbb40e6",
                   "text_url": "",
                   "reference_url": "https://scancode-licensedb.aboutcode.org/blessing",
-                  "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-                  "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.yml",
+                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
                   "spdx_license_key": "blessing",
                   "spdx_url": "https://spdx.org/licenses/blessing"
                 }
@@ -5026,6 +5026,7 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
               "referenced_filenames": [],
               "is_license_text": true,
               "is_license_notice": false,
@@ -5047,8 +5048,7 @@
                   "homepage_url": "https://sqlite.org/src/artifact/df5091916dbb40e6",
                   "text_url": "",
                   "reference_url": "https://scancode-licensedb.aboutcode.org/blessing",
-                  "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-                  "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.yml",
+                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
                   "spdx_license_key": "blessing",
                   "spdx_url": "https://spdx.org/licenses/blessing"
                 }
@@ -5071,6 +5071,7 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
               "referenced_filenames": [],
               "is_license_text": true,
               "is_license_notice": false,
@@ -5092,8 +5093,7 @@
                   "homepage_url": "https://sqlite.org/src/artifact/df5091916dbb40e6",
                   "text_url": "",
                   "reference_url": "https://scancode-licensedb.aboutcode.org/blessing",
-                  "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-                  "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.yml",
+                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
                   "spdx_license_key": "blessing",
                   "spdx_url": "https://spdx.org/licenses/blessing"
                 }
@@ -5116,6 +5116,7 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
               "referenced_filenames": [],
               "is_license_text": true,
               "is_license_notice": false,
@@ -5137,8 +5138,7 @@
                   "homepage_url": "https://sqlite.org/src/artifact/df5091916dbb40e6",
                   "text_url": "",
                   "reference_url": "https://scancode-licensedb.aboutcode.org/blessing",
-                  "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-                  "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.yml",
+                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
                   "spdx_license_key": "blessing",
                   "spdx_url": "https://spdx.org/licenses/blessing"
                 }
@@ -5161,6 +5161,7 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
               "referenced_filenames": [],
               "is_license_text": true,
               "is_license_notice": false,
@@ -5182,8 +5183,7 @@
                   "homepage_url": "https://sqlite.org/src/artifact/df5091916dbb40e6",
                   "text_url": "",
                   "reference_url": "https://scancode-licensedb.aboutcode.org/blessing",
-                  "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-                  "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.yml",
+                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
                   "spdx_license_key": "blessing",
                   "spdx_url": "https://spdx.org/licenses/blessing"
                 }
@@ -5206,6 +5206,7 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
               "referenced_filenames": [],
               "is_license_text": true,
               "is_license_notice": false,
@@ -5227,8 +5228,7 @@
                   "homepage_url": "https://sqlite.org/src/artifact/df5091916dbb40e6",
                   "text_url": "",
                   "reference_url": "https://scancode-licensedb.aboutcode.org/blessing",
-                  "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-                  "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.yml",
+                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
                   "spdx_license_key": "blessing",
                   "spdx_url": "https://spdx.org/licenses/blessing"
                 }
@@ -5251,6 +5251,7 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
               "referenced_filenames": [],
               "is_license_text": true,
               "is_license_notice": false,
@@ -5272,8 +5273,7 @@
                   "homepage_url": "https://sqlite.org/src/artifact/df5091916dbb40e6",
                   "text_url": "",
                   "reference_url": "https://scancode-licensedb.aboutcode.org/blessing",
-                  "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-                  "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.yml",
+                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
                   "spdx_license_key": "blessing",
                   "spdx_url": "https://spdx.org/licenses/blessing"
                 }
@@ -5296,6 +5296,7 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
               "referenced_filenames": [],
               "is_license_text": true,
               "is_license_notice": false,
@@ -5317,8 +5318,7 @@
                   "homepage_url": "https://sqlite.org/src/artifact/df5091916dbb40e6",
                   "text_url": "",
                   "reference_url": "https://scancode-licensedb.aboutcode.org/blessing",
-                  "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-                  "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.yml",
+                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
                   "spdx_license_key": "blessing",
                   "spdx_url": "https://spdx.org/licenses/blessing"
                 }
@@ -5341,6 +5341,7 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
               "referenced_filenames": [],
               "is_license_text": true,
               "is_license_notice": false,
@@ -5362,8 +5363,7 @@
                   "homepage_url": "https://sqlite.org/src/artifact/df5091916dbb40e6",
                   "text_url": "",
                   "reference_url": "https://scancode-licensedb.aboutcode.org/blessing",
-                  "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-                  "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.yml",
+                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
                   "spdx_license_key": "blessing",
                   "spdx_url": "https://spdx.org/licenses/blessing"
                 }
@@ -5386,6 +5386,7 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
               "referenced_filenames": [],
               "is_license_text": true,
               "is_license_notice": false,
@@ -5407,8 +5408,7 @@
                   "homepage_url": "https://sqlite.org/src/artifact/df5091916dbb40e6",
                   "text_url": "",
                   "reference_url": "https://scancode-licensedb.aboutcode.org/blessing",
-                  "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-                  "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.yml",
+                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
                   "spdx_license_key": "blessing",
                   "spdx_url": "https://spdx.org/licenses/blessing"
                 }
@@ -5431,6 +5431,7 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
               "referenced_filenames": [],
               "is_license_text": true,
               "is_license_notice": false,
@@ -5452,8 +5453,7 @@
                   "homepage_url": "https://sqlite.org/src/artifact/df5091916dbb40e6",
                   "text_url": "",
                   "reference_url": "https://scancode-licensedb.aboutcode.org/blessing",
-                  "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-                  "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.yml",
+                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
                   "spdx_license_key": "blessing",
                   "spdx_url": "https://spdx.org/licenses/blessing"
                 }
@@ -5476,6 +5476,7 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
               "referenced_filenames": [],
               "is_license_text": true,
               "is_license_notice": false,
@@ -5497,8 +5498,7 @@
                   "homepage_url": "https://sqlite.org/src/artifact/df5091916dbb40e6",
                   "text_url": "",
                   "reference_url": "https://scancode-licensedb.aboutcode.org/blessing",
-                  "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-                  "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.yml",
+                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
                   "spdx_license_key": "blessing",
                   "spdx_url": "https://spdx.org/licenses/blessing"
                 }
@@ -5521,6 +5521,7 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
               "referenced_filenames": [],
               "is_license_text": true,
               "is_license_notice": false,
@@ -5542,8 +5543,7 @@
                   "homepage_url": "https://sqlite.org/src/artifact/df5091916dbb40e6",
                   "text_url": "",
                   "reference_url": "https://scancode-licensedb.aboutcode.org/blessing",
-                  "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-                  "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.yml",
+                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
                   "spdx_license_key": "blessing",
                   "spdx_url": "https://spdx.org/licenses/blessing"
                 }
@@ -5566,6 +5566,7 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
               "referenced_filenames": [],
               "is_license_text": true,
               "is_license_notice": false,
@@ -5587,8 +5588,7 @@
                   "homepage_url": "https://sqlite.org/src/artifact/df5091916dbb40e6",
                   "text_url": "",
                   "reference_url": "https://scancode-licensedb.aboutcode.org/blessing",
-                  "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-                  "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.yml",
+                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
                   "spdx_license_key": "blessing",
                   "spdx_url": "https://spdx.org/licenses/blessing"
                 }
@@ -5611,6 +5611,7 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
               "referenced_filenames": [],
               "is_license_text": true,
               "is_license_notice": false,
@@ -5632,8 +5633,7 @@
                   "homepage_url": "https://sqlite.org/src/artifact/df5091916dbb40e6",
                   "text_url": "",
                   "reference_url": "https://scancode-licensedb.aboutcode.org/blessing",
-                  "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-                  "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.yml",
+                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
                   "spdx_license_key": "blessing",
                   "spdx_url": "https://spdx.org/licenses/blessing"
                 }
@@ -5656,6 +5656,7 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
               "referenced_filenames": [],
               "is_license_text": true,
               "is_license_notice": false,
@@ -5677,8 +5678,7 @@
                   "homepage_url": "https://sqlite.org/src/artifact/df5091916dbb40e6",
                   "text_url": "",
                   "reference_url": "https://scancode-licensedb.aboutcode.org/blessing",
-                  "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-                  "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.yml",
+                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
                   "spdx_license_key": "blessing",
                   "spdx_url": "https://spdx.org/licenses/blessing"
                 }
@@ -5701,6 +5701,7 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
               "referenced_filenames": [],
               "is_license_text": true,
               "is_license_notice": false,
@@ -5722,8 +5723,7 @@
                   "homepage_url": "https://sqlite.org/src/artifact/df5091916dbb40e6",
                   "text_url": "",
                   "reference_url": "https://scancode-licensedb.aboutcode.org/blessing",
-                  "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-                  "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.yml",
+                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
                   "spdx_license_key": "blessing",
                   "spdx_url": "https://spdx.org/licenses/blessing"
                 }
@@ -5746,6 +5746,7 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
               "referenced_filenames": [],
               "is_license_text": true,
               "is_license_notice": false,
@@ -5767,8 +5768,7 @@
                   "homepage_url": "https://sqlite.org/src/artifact/df5091916dbb40e6",
                   "text_url": "",
                   "reference_url": "https://scancode-licensedb.aboutcode.org/blessing",
-                  "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-                  "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.yml",
+                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
                   "spdx_license_key": "blessing",
                   "spdx_url": "https://spdx.org/licenses/blessing"
                 }
@@ -5791,6 +5791,7 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
               "referenced_filenames": [],
               "is_license_text": true,
               "is_license_notice": false,
@@ -5812,8 +5813,7 @@
                   "homepage_url": "https://sqlite.org/src/artifact/df5091916dbb40e6",
                   "text_url": "",
                   "reference_url": "https://scancode-licensedb.aboutcode.org/blessing",
-                  "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-                  "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.yml",
+                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
                   "spdx_license_key": "blessing",
                   "spdx_url": "https://spdx.org/licenses/blessing"
                 }
@@ -5836,6 +5836,7 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
               "referenced_filenames": [],
               "is_license_text": true,
               "is_license_notice": false,
@@ -5857,8 +5858,7 @@
                   "homepage_url": "https://sqlite.org/src/artifact/df5091916dbb40e6",
                   "text_url": "",
                   "reference_url": "https://scancode-licensedb.aboutcode.org/blessing",
-                  "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-                  "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.yml",
+                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
                   "spdx_license_key": "blessing",
                   "spdx_url": "https://spdx.org/licenses/blessing"
                 }
@@ -5881,6 +5881,7 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
               "referenced_filenames": [],
               "is_license_text": true,
               "is_license_notice": false,
@@ -5902,8 +5903,7 @@
                   "homepage_url": "https://sqlite.org/src/artifact/df5091916dbb40e6",
                   "text_url": "",
                   "reference_url": "https://scancode-licensedb.aboutcode.org/blessing",
-                  "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-                  "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.yml",
+                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
                   "spdx_license_key": "blessing",
                   "spdx_url": "https://spdx.org/licenses/blessing"
                 }
@@ -5926,6 +5926,7 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
               "referenced_filenames": [],
               "is_license_text": true,
               "is_license_notice": false,
@@ -5947,8 +5948,7 @@
                   "homepage_url": "https://sqlite.org/src/artifact/df5091916dbb40e6",
                   "text_url": "",
                   "reference_url": "https://scancode-licensedb.aboutcode.org/blessing",
-                  "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-                  "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.yml",
+                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
                   "spdx_license_key": "blessing",
                   "spdx_url": "https://spdx.org/licenses/blessing"
                 }
@@ -5971,6 +5971,7 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
               "referenced_filenames": [],
               "is_license_text": true,
               "is_license_notice": false,
@@ -5992,8 +5993,7 @@
                   "homepage_url": "https://sqlite.org/src/artifact/df5091916dbb40e6",
                   "text_url": "",
                   "reference_url": "https://scancode-licensedb.aboutcode.org/blessing",
-                  "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-                  "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.yml",
+                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
                   "spdx_license_key": "blessing",
                   "spdx_url": "https://spdx.org/licenses/blessing"
                 }
@@ -6016,6 +6016,7 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
               "referenced_filenames": [],
               "is_license_text": true,
               "is_license_notice": false,
@@ -6037,8 +6038,7 @@
                   "homepage_url": "https://sqlite.org/src/artifact/df5091916dbb40e6",
                   "text_url": "",
                   "reference_url": "https://scancode-licensedb.aboutcode.org/blessing",
-                  "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-                  "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.yml",
+                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
                   "spdx_license_key": "blessing",
                   "spdx_url": "https://spdx.org/licenses/blessing"
                 }
@@ -6061,6 +6061,7 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
               "referenced_filenames": [],
               "is_license_text": true,
               "is_license_notice": false,
@@ -6082,8 +6083,7 @@
                   "homepage_url": "https://sqlite.org/src/artifact/df5091916dbb40e6",
                   "text_url": "",
                   "reference_url": "https://scancode-licensedb.aboutcode.org/blessing",
-                  "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-                  "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.yml",
+                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
                   "spdx_license_key": "blessing",
                   "spdx_url": "https://spdx.org/licenses/blessing"
                 }
@@ -6106,6 +6106,7 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
               "referenced_filenames": [],
               "is_license_text": true,
               "is_license_notice": false,
@@ -6127,8 +6128,7 @@
                   "homepage_url": "https://sqlite.org/src/artifact/df5091916dbb40e6",
                   "text_url": "",
                   "reference_url": "https://scancode-licensedb.aboutcode.org/blessing",
-                  "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-                  "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.yml",
+                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
                   "spdx_license_key": "blessing",
                   "spdx_url": "https://spdx.org/licenses/blessing"
                 }

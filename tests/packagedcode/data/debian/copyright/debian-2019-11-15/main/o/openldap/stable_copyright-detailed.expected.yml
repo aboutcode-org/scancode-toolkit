@@ -23,6 +23,7 @@ license_detections:
         matcher: 2-aho
         license_expression: openldap-2.8
         rule_identifier: openldap-2.8_21.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/openldap-2.8_21.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: yes
@@ -64,8 +65,7 @@ license_detections:
             homepage_url: http://www.openldap.org/software/release/license.html
             text_url: http://www.openldap.org/software/release/license.html
             reference_url: https://scancode-licensedb.aboutcode.org/openldap-2.8
-            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/openldap-2.8.LICENSE
-            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/openldap-2.8.yml
+            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/openldap-2.8.LICENSE
             spdx_license_key: OLDAP-2.8
             spdx_url: https://spdx.org/licenses/OLDAP-2.8
       - score: '100.0'
@@ -76,6 +76,7 @@ license_detections:
         matcher: 2-aho
         license_expression: openldap-2.8
         rule_identifier: openldap-2.8_16.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/openldap-2.8_16.RULE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -137,8 +138,7 @@ license_detections:
             homepage_url: http://www.openldap.org/software/release/license.html
             text_url: http://www.openldap.org/software/release/license.html
             reference_url: https://scancode-licensedb.aboutcode.org/openldap-2.8
-            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/openldap-2.8.LICENSE
-            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/openldap-2.8.yml
+            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/openldap-2.8.LICENSE
             spdx_license_key: OLDAP-2.8
             spdx_url: https://spdx.org/licenses/OLDAP-2.8
   - license_expression: mit
@@ -153,6 +153,7 @@ license_detections:
         matcher: 2-aho
         license_expression: mit
         rule_identifier: mit_483.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_483.RULE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -190,8 +191,7 @@ license_detections:
             homepage_url: http://opensource.org/licenses/mit-license.php
             text_url: http://opensource.org/licenses/mit-license.php
             reference_url: https://scancode-licensedb.aboutcode.org/mit
-            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE
-            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.yml
+            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE
             spdx_license_key: MIT
             spdx_url: https://spdx.org/licenses/MIT
   - license_expression: fsf-unlimited-no-warranty
@@ -206,6 +206,7 @@ license_detections:
         matcher: 2-aho
         license_expression: fsf-unlimited-no-warranty
         rule_identifier: fsf-unlimited-no-warranty_2.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/fsf-unlimited-no-warranty_2.RULE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -234,8 +235,7 @@ license_detections:
             homepage_url: http://www.fsf.org/licensing/licenses/
             text_url: http://www.fsf.org/licensing/licenses/
             reference_url: https://scancode-licensedb.aboutcode.org/fsf-unlimited-no-warranty
-            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/fsf-unlimited-no-warranty.LICENSE
-            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/fsf-unlimited-no-warranty.yml
+            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/fsf-unlimited-no-warranty.LICENSE
             spdx_license_key: LicenseRef-scancode-fsf-unlimited-no-warranty
             spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/fsf-unlimited-no-warranty.LICENSE
   - license_expression: hs-regexp
@@ -250,6 +250,7 @@ license_detections:
         matcher: 2-aho
         license_expression: hs-regexp
         rule_identifier: hs-regexp_5.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/hs-regexp_5.RULE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -287,8 +288,7 @@ license_detections:
             homepage_url: https://github.com/garyhouston/regex/blob/master/COPYRIGHT
             text_url: http://search.cpan.org/~knok/File-MMagic-1.12/MMagic.pm
             reference_url: https://scancode-licensedb.aboutcode.org/hs-regexp
-            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/hs-regexp.LICENSE
-            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/hs-regexp.yml
+            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/hs-regexp.LICENSE
             spdx_license_key: Spencer-94
             spdx_url: https://spdx.org/licenses/Spencer-94
   - license_expression: ibm-dhcp
@@ -303,6 +303,7 @@ license_detections:
         matcher: 2-aho
         license_expression: ibm-dhcp
         rule_identifier: ibm-dhcp.LICENSE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/ibm-dhcp.LICENSE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -343,8 +344,7 @@ license_detections:
             homepage_url:
             text_url:
             reference_url: https://scancode-licensedb.aboutcode.org/ibm-dhcp
-            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/ibm-dhcp.LICENSE
-            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/ibm-dhcp.yml
+            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/ibm-dhcp.LICENSE
             spdx_license_key: LicenseRef-scancode-ibm-dhcp
             spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/ibm-dhcp.LICENSE
   - license_expression: ietf
@@ -359,6 +359,7 @@ license_detections:
         matcher: 2-aho
         license_expression: ietf
         rule_identifier: ietf_5.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/ietf_5.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: yes
@@ -397,8 +398,7 @@ license_detections:
             homepage_url: http://www.ietf.org/
             text_url:
             reference_url: https://scancode-licensedb.aboutcode.org/ietf
-            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/ietf.LICENSE
-            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/ietf.yml
+            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/ietf.LICENSE
             spdx_license_key: LicenseRef-scancode-ietf
             spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/ietf.LICENSE
   - license_expression: isc
@@ -413,6 +413,7 @@ license_detections:
         matcher: 2-aho
         license_expression: isc
         rule_identifier: isc_9.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/isc_9.RULE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -445,8 +446,7 @@ license_detections:
             homepage_url: https://www.isc.org/licenses/
             text_url: http://fedoraproject.org/wiki/Licensing:MIT#Old_Style_with_legal_disclaimer_2
             reference_url: https://scancode-licensedb.aboutcode.org/isc
-            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/isc.LICENSE
-            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/isc.yml
+            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/isc.LICENSE
             spdx_license_key: ISC
             spdx_url: https://spdx.org/licenses/ISC
   - license_expression: other-permissive
@@ -461,6 +461,7 @@ license_detections:
         matcher: 2-aho
         license_expression: other-permissive
         rule_identifier: other-permissive_203.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/other-permissive_203.RULE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -484,8 +485,7 @@ license_detections:
             homepage_url:
             text_url:
             reference_url: https://scancode-licensedb.aboutcode.org/other-permissive
-            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/other-permissive.LICENSE
-            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/other-permissive.yml
+            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/other-permissive.LICENSE
             spdx_license_key: LicenseRef-scancode-other-permissive
             spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/other-permissive.LICENSE
   - license_expression: other-permissive
@@ -500,6 +500,7 @@ license_detections:
         matcher: 2-aho
         license_expression: other-permissive
         rule_identifier: other-permissive_200.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/other-permissive_200.RULE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -524,8 +525,7 @@ license_detections:
             homepage_url:
             text_url:
             reference_url: https://scancode-licensedb.aboutcode.org/other-permissive
-            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/other-permissive.LICENSE
-            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/other-permissive.yml
+            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/other-permissive.LICENSE
             spdx_license_key: LicenseRef-scancode-other-permissive
             spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/other-permissive.LICENSE
   - license_expression: mit-old-style-no-advert
@@ -540,6 +540,7 @@ license_detections:
         matcher: 2-aho
         license_expression: mit-old-style-no-advert
         rule_identifier: mit-old-style-no-advert_3.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit-old-style-no-advert_3.RULE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -569,8 +570,7 @@ license_detections:
             homepage_url: http://fedoraproject.org/wiki/Licensing:MIT#Old_Style_.28no_advertising_without_permission.29
             text_url:
             reference_url: https://scancode-licensedb.aboutcode.org/mit-old-style-no-advert
-            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit-old-style-no-advert.LICENSE
-            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit-old-style-no-advert.yml
+            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit-old-style-no-advert.LICENSE
             spdx_license_key: NTP
             spdx_url: https://spdx.org/licenses/NTP
   - license_expression: other-permissive
@@ -585,6 +585,7 @@ license_detections:
         matcher: 2-aho
         license_expression: other-permissive
         rule_identifier: other-permissive_199.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/other-permissive_199.RULE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -607,8 +608,7 @@ license_detections:
             homepage_url:
             text_url:
             reference_url: https://scancode-licensedb.aboutcode.org/other-permissive
-            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/other-permissive.LICENSE
-            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/other-permissive.yml
+            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/other-permissive.LICENSE
             spdx_license_key: LicenseRef-scancode-other-permissive
             spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/other-permissive.LICENSE
   - license_expression: hs-regexp
@@ -623,6 +623,7 @@ license_detections:
         matcher: 2-aho
         license_expression: hs-regexp
         rule_identifier: hs-regexp_5.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/hs-regexp_5.RULE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -659,8 +660,7 @@ license_detections:
             homepage_url: https://github.com/garyhouston/regex/blob/master/COPYRIGHT
             text_url: http://search.cpan.org/~knok/File-MMagic-1.12/MMagic.pm
             reference_url: https://scancode-licensedb.aboutcode.org/hs-regexp
-            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/hs-regexp.LICENSE
-            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/hs-regexp.yml
+            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/hs-regexp.LICENSE
             spdx_license_key: Spencer-94
             spdx_url: https://spdx.org/licenses/Spencer-94
   - license_expression: openldap-2.8
@@ -675,6 +675,7 @@ license_detections:
         matcher: 2-aho
         license_expression: openldap-2.8
         rule_identifier: openldap-2.8_15.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/openldap-2.8_15.RULE
         referenced_filenames:
           - LICENSE
         is_license_text: no
@@ -700,8 +701,7 @@ license_detections:
             homepage_url: http://www.openldap.org/software/release/license.html
             text_url: http://www.openldap.org/software/release/license.html
             reference_url: https://scancode-licensedb.aboutcode.org/openldap-2.8
-            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/openldap-2.8.LICENSE
-            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/openldap-2.8.yml
+            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/openldap-2.8.LICENSE
             spdx_license_key: OLDAP-2.8
             spdx_url: https://spdx.org/licenses/OLDAP-2.8
   - license_expression: bsla AND bsd-original-uc
@@ -716,6 +716,7 @@ license_detections:
         matcher: 2-aho
         license_expression: bsla
         rule_identifier: bsla_3.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsla_3.RULE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -747,8 +748,7 @@ license_detections:
             homepage_url:
             text_url:
             reference_url: https://scancode-licensedb.aboutcode.org/bsla
-            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsla.LICENSE
-            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsla.yml
+            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsla.LICENSE
             spdx_license_key: LicenseRef-scancode-bsla
             spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsla.LICENSE
       - score: '100.0'
@@ -759,6 +759,7 @@ license_detections:
         matcher: 2-aho
         license_expression: bsd-original-uc
         rule_identifier: bsd-original-uc_25.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-original-uc_25.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: no
@@ -781,8 +782,7 @@ license_detections:
             homepage_url: ftp://ftp.cs.berkeley.edu/pub/4bsd/README.Impt.License.Change
             text_url: http://www.xfree86.org/3.3.6/COPYRIGHT2.html
             reference_url: https://scancode-licensedb.aboutcode.org/bsd-original-uc
-            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-original-uc.LICENSE
-            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-original-uc.yml
+            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-original-uc.LICENSE
             spdx_license_key: BSD-4-Clause-UC
             spdx_url: https://spdx.org/licenses/BSD-4-Clause-UC
   - license_expression: bsd-original-uc
@@ -797,6 +797,7 @@ license_detections:
         matcher: 2-aho
         license_expression: bsd-original-uc
         rule_identifier: bsd-original-uc_3.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-original-uc_3.RULE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -844,8 +845,7 @@ license_detections:
             homepage_url: ftp://ftp.cs.berkeley.edu/pub/4bsd/README.Impt.License.Change
             text_url: http://www.xfree86.org/3.3.6/COPYRIGHT2.html
             reference_url: https://scancode-licensedb.aboutcode.org/bsd-original-uc
-            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-original-uc.LICENSE
-            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-original-uc.yml
+            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-original-uc.LICENSE
             spdx_license_key: BSD-4-Clause-UC
             spdx_url: https://spdx.org/licenses/BSD-4-Clause-UC
       - score: '100.0'
@@ -856,6 +856,7 @@ license_detections:
         matcher: 2-aho
         license_expression: bsd-original-uc
         rule_identifier: bsd-original-uc_24.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-original-uc_24.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: no
@@ -880,8 +881,7 @@ license_detections:
             homepage_url: ftp://ftp.cs.berkeley.edu/pub/4bsd/README.Impt.License.Change
             text_url: http://www.xfree86.org/3.3.6/COPYRIGHT2.html
             reference_url: https://scancode-licensedb.aboutcode.org/bsd-original-uc
-            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-original-uc.LICENSE
-            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-original-uc.yml
+            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-original-uc.LICENSE
             spdx_license_key: BSD-4-Clause-UC
             spdx_url: https://spdx.org/licenses/BSD-4-Clause-UC
   - license_expression: bsd-original-uc-1986
@@ -896,6 +896,7 @@ license_detections:
         matcher: 2-aho
         license_expression: bsd-original-uc-1986
         rule_identifier: bsd-original-uc-1986_3.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-original-uc-1986_3.RULE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -922,8 +923,7 @@ license_detections:
             homepage_url:
             text_url:
             reference_url: https://scancode-licensedb.aboutcode.org/bsd-original-uc-1986
-            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-original-uc-1986.LICENSE
-            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-original-uc-1986.yml
+            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-original-uc-1986.LICENSE
             spdx_license_key: LicenseRef-scancode-bsd-original-uc-1986
             spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-original-uc-1986.LICENSE
 other_license_detections: []

@@ -21,6 +21,7 @@ license_detections:
         matcher: 2-aho
         license_expression: gpl-3.0-plus
         rule_identifier: gpl-3.0-plus_289.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0-plus_289.RULE
         referenced_filenames:
           - /usr/share/common-licenses/GPL-3
         is_license_text: no
@@ -56,8 +57,7 @@ license_detections:
             homepage_url: http://www.gnu.org/licenses/gpl-3.0-standalone.html
             text_url: http://www.gnu.org/licenses/gpl-3.0-standalone.html
             reference_url: https://scancode-licensedb.aboutcode.org/gpl-3.0-plus
-            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-3.0-plus.LICENSE
-            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-3.0-plus.yml
+            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-3.0-plus.LICENSE
             spdx_license_key: GPL-3.0-or-later
             spdx_url: https://spdx.org/licenses/GPL-3.0-or-later
       - score: '100.0'
@@ -68,6 +68,7 @@ license_detections:
         matcher: 2-aho
         license_expression: bash-exception-gpl
         rule_identifier: bash-exception-gpl.LICENSE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bash-exception-gpl.LICENSE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -95,8 +96,7 @@ license_detections:
             homepage_url:
             text_url: https://git.savannah.gnu.org/cgit/bash.git/plain/COPYING?h=bash-3.0-rc1&id=dd9e6dfa23d0dae4888f11fb8c6a27bc36d1b283
             reference_url: https://scancode-licensedb.aboutcode.org/bash-exception-gpl
-            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bash-exception-gpl.LICENSE
-            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bash-exception-gpl.yml
+            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bash-exception-gpl.LICENSE
             spdx_license_key: LicenseRef-scancode-bash-exception-gpl-2.0
             spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bash-exception-gpl.LICENSE
       - score: '100.0'
@@ -107,6 +107,7 @@ license_detections:
         matcher: 2-aho
         license_expression: gpl-1.0-plus
         rule_identifier: gpl_72.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl_72.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: no
@@ -127,8 +128,7 @@ license_detections:
             homepage_url: http://www.gnu.org/licenses/old-licenses/gpl-1.0-standalone.html
             text_url: http://www.gnu.org/licenses/old-licenses/gpl-1.0-standalone.html
             reference_url: https://scancode-licensedb.aboutcode.org/gpl-1.0-plus
-            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-1.0-plus.LICENSE
-            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-1.0-plus.yml
+            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-1.0-plus.LICENSE
             spdx_license_key: GPL-1.0-or-later
             spdx_url: https://spdx.org/licenses/GPL-1.0-or-later
   - license_expression: other-permissive
@@ -143,6 +143,7 @@ license_detections:
         matcher: 2-aho
         license_expression: other-permissive
         rule_identifier: other-permissive_207.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/other-permissive_207.RULE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -168,8 +169,7 @@ license_detections:
             homepage_url:
             text_url:
             reference_url: https://scancode-licensedb.aboutcode.org/other-permissive
-            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/other-permissive.LICENSE
-            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/other-permissive.yml
+            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/other-permissive.LICENSE
             spdx_license_key: LicenseRef-scancode-other-permissive
             spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/other-permissive.LICENSE
   - license_expression: gfdl-1.3-plus
@@ -184,6 +184,7 @@ license_detections:
         matcher: 2-aho
         license_expression: gfdl-1.3-plus
         rule_identifier: gfdl-1.3-plus_22.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gfdl-1.3-plus_22.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: yes
@@ -214,8 +215,7 @@ license_detections:
             homepage_url: http://www.gnu.org/licenses/fdl-1.3.txt
             text_url: http://www.gnu.org/licenses/fdl-1.3.txt
             reference_url: https://scancode-licensedb.aboutcode.org/gfdl-1.3-plus
-            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gfdl-1.3-plus.LICENSE
-            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gfdl-1.3-plus.yml
+            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gfdl-1.3-plus.LICENSE
             spdx_license_key: GFDL-1.3-or-later
             spdx_url: https://spdx.org/licenses/GFDL-1.3-or-later
   - license_expression: gfdl-1.3-plus
@@ -230,6 +230,7 @@ license_detections:
         matcher: 2-aho
         license_expression: gfdl-1.3-plus
         rule_identifier: gfdl-1.3-plus.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gfdl-1.3-plus.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: yes
@@ -256,8 +257,7 @@ license_detections:
             homepage_url: http://www.gnu.org/licenses/fdl-1.3.txt
             text_url: http://www.gnu.org/licenses/fdl-1.3.txt
             reference_url: https://scancode-licensedb.aboutcode.org/gfdl-1.3-plus
-            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gfdl-1.3-plus.LICENSE
-            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gfdl-1.3-plus.yml
+            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gfdl-1.3-plus.LICENSE
             spdx_license_key: GFDL-1.3-or-later
             spdx_url: https://spdx.org/licenses/GFDL-1.3-or-later
   - license_expression: other-permissive AND latex2e
@@ -272,6 +272,7 @@ license_detections:
         matcher: 2-aho
         license_expression: other-permissive
         rule_identifier: other-permissive_206.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/other-permissive_206.RULE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -295,8 +296,7 @@ license_detections:
             homepage_url:
             text_url:
             reference_url: https://scancode-licensedb.aboutcode.org/other-permissive
-            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/other-permissive.LICENSE
-            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/other-permissive.yml
+            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/other-permissive.LICENSE
             spdx_license_key: LicenseRef-scancode-other-permissive
             spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/other-permissive.LICENSE
       - score: '99.0'
@@ -307,6 +307,7 @@ license_detections:
         matcher: 2-aho
         license_expression: latex2e
         rule_identifier: latex2e_7.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/latex2e_7.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: yes
@@ -341,8 +342,7 @@ license_detections:
             homepage_url: https://fedoraproject.org/wiki/Licensing/Latex2e
             text_url:
             reference_url: https://scancode-licensedb.aboutcode.org/latex2e
-            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/latex2e.LICENSE
-            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/latex2e.yml
+            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/latex2e.LICENSE
             spdx_license_key: Latex2e
             spdx_url: https://spdx.org/licenses/Latex2e
   - license_expression: latex2e
@@ -357,6 +357,7 @@ license_detections:
         matcher: 2-aho
         license_expression: latex2e
         rule_identifier: latex2e_3.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/latex2e_3.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: yes
@@ -394,8 +395,7 @@ license_detections:
             homepage_url: https://fedoraproject.org/wiki/Licensing/Latex2e
             text_url:
             reference_url: https://scancode-licensedb.aboutcode.org/latex2e
-            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/latex2e.LICENSE
-            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/latex2e.yml
+            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/latex2e.LICENSE
             spdx_license_key: Latex2e
             spdx_url: https://spdx.org/licenses/Latex2e
   - license_expression: gfdl-1.3-plus
@@ -410,6 +410,7 @@ license_detections:
         matcher: 2-aho
         license_expression: gfdl-1.3-plus
         rule_identifier: gfdl-1.3-plus.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gfdl-1.3-plus.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: yes
@@ -436,8 +437,7 @@ license_detections:
             homepage_url: http://www.gnu.org/licenses/fdl-1.3.txt
             text_url: http://www.gnu.org/licenses/fdl-1.3.txt
             reference_url: https://scancode-licensedb.aboutcode.org/gfdl-1.3-plus
-            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gfdl-1.3-plus.LICENSE
-            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gfdl-1.3-plus.yml
+            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gfdl-1.3-plus.LICENSE
             spdx_license_key: GFDL-1.3-or-later
             spdx_url: https://spdx.org/licenses/GFDL-1.3-or-later
   - license_expression: latex2e
@@ -452,6 +452,7 @@ license_detections:
         matcher: 2-aho
         license_expression: latex2e
         rule_identifier: latex2e_2.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/latex2e_2.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: yes
@@ -489,8 +490,7 @@ license_detections:
             homepage_url: https://fedoraproject.org/wiki/Licensing/Latex2e
             text_url:
             reference_url: https://scancode-licensedb.aboutcode.org/latex2e
-            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/latex2e.LICENSE
-            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/latex2e.yml
+            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/latex2e.LICENSE
             spdx_license_key: Latex2e
             spdx_url: https://spdx.org/licenses/Latex2e
   - license_expression: bsd-original-uc AND historical
@@ -505,6 +505,7 @@ license_detections:
         matcher: 2-aho
         license_expression: bsd-original-uc
         rule_identifier: bsd-original-uc_3.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-original-uc_3.RULE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -552,8 +553,7 @@ license_detections:
             homepage_url: ftp://ftp.cs.berkeley.edu/pub/4bsd/README.Impt.License.Change
             text_url: http://www.xfree86.org/3.3.6/COPYRIGHT2.html
             reference_url: https://scancode-licensedb.aboutcode.org/bsd-original-uc
-            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-original-uc.LICENSE
-            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-original-uc.yml
+            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-original-uc.LICENSE
             spdx_license_key: BSD-4-Clause-UC
             spdx_url: https://spdx.org/licenses/BSD-4-Clause-UC
       - score: '100.0'
@@ -564,6 +564,7 @@ license_detections:
         matcher: 2-aho
         license_expression: historical
         rule_identifier: historical_10.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/historical_10.RULE
         referenced_filenames: []
         is_license_text: no
         is_license_notice: yes
@@ -599,8 +600,7 @@ license_detections:
             homepage_url: http://www.opensource.org/licenses/historical.php
             text_url: http://www.opensource.org/licenses/historical.php
             reference_url: https://scancode-licensedb.aboutcode.org/historical
-            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/historical.LICENSE
-            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/historical.yml
+            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/historical.LICENSE
             spdx_license_key: HPND
             spdx_url: https://spdx.org/licenses/HPND
   - license_expression: other-permissive
@@ -615,6 +615,7 @@ license_detections:
         matcher: 2-aho
         license_expression: other-permissive
         rule_identifier: other-permissive_291.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/other-permissive_291.RULE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -639,8 +640,7 @@ license_detections:
             homepage_url:
             text_url:
             reference_url: https://scancode-licensedb.aboutcode.org/other-permissive
-            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/other-permissive.LICENSE
-            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/other-permissive.yml
+            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/other-permissive.LICENSE
             spdx_license_key: LicenseRef-scancode-other-permissive
             spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/other-permissive.LICENSE
 other_license_detections: []

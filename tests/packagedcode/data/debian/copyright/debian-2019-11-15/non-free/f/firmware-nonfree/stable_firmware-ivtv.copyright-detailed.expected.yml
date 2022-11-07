@@ -16,6 +16,7 @@ license_detections:
         matcher: 2-aho
         license_expression: hauppauge-firmware-oem
         rule_identifier: hauppauge-firmware-oem.LICENSE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/hauppauge-firmware-oem.LICENSE
         referenced_filenames: []
         is_license_text: yes
         is_license_notice: no
@@ -185,8 +186,7 @@ license_detections:
             homepage_url: https://lists.debian.org/debian-devel/2007/02/msg00498.html
             text_url:
             reference_url: https://scancode-licensedb.aboutcode.org/hauppauge-firmware-oem
-            scancode_text_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/hauppauge-firmware-oem.LICENSE
-            scancode_data_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/hauppauge-firmware-oem.yml
+            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/hauppauge-firmware-oem.LICENSE
             spdx_license_key: LicenseRef-scancode-hauppauge-firmware-oem
             spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/hauppauge-firmware-oem.LICENSE
 other_license_detections: []

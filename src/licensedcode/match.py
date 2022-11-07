@@ -777,9 +777,10 @@ class LicenseMatch(object):
                 else:
                     matched_text = self.matched_text(whole_lines=False, highlight=False)
 
-        SCANCODE_BASE_URL = 'https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses'
-        SCANCODE_LICENSE_TEXT_URL = SCANCODE_BASE_URL + '/{}.LICENSE'
-        SCANCODE_LICENSE_DATA_URL = SCANCODE_BASE_URL + '/{}.yml'
+        SCANCODE_DATA_BASE_URL = 'https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data'
+        SCANCODE_LICENSE_URL = SCANCODE_DATA_BASE_URL + '/licenses/{}.LICENSE'
+        SCANCODE_LICENSE_RULE_URL = SCANCODE_DATA_BASE_URL + '/licenses/{}'
+        SCANCODE_RULE_URL = SCANCODE_DATA_BASE_URL + '/rules/{}'
 
         result = {}
 
@@ -794,6 +795,13 @@ class LicenseMatch(object):
         # LicenseDB Level Information (Rule that was matched)
         result['license_expression'] = self.rule.license_expression
         result['rule_identifier'] = self.rule.identifier
+        if self.matcher == "1-spdx-id":
+            result['rule_url'] = None
+        elif self.rule.is_from_license:
+            result['rule_url'] = SCANCODE_LICENSE_RULE_URL.format(self.rule.identifier)
+        else:
+            result['rule_url'] = SCANCODE_RULE_URL.format(self.rule.identifier)
+
         result['referenced_filenames'] = self.rule.referenced_filenames
         result['is_license_text'] = self.rule.is_license_text
         result['is_license_notice'] = self.rule.is_license_notice
@@ -823,8 +831,7 @@ class LicenseMatch(object):
             detected_license['homepage_url'] = lic.homepage_url
             detected_license['text_url'] = lic.text_urls[0] if lic.text_urls else ''
             detected_license['reference_url'] = license_url_template.format(lic.key)
-            detected_license['scancode_text_url'] = SCANCODE_LICENSE_TEXT_URL.format(lic.key)
-            detected_license['scancode_data_url'] = SCANCODE_LICENSE_DATA_URL.format(lic.key)
+            detected_license['scancode_url'] = SCANCODE_LICENSE_URL.format(lic.key)
 
             spdx_key = lic.spdx_license_key
             detected_license['spdx_license_key'] = spdx_key
@@ -832,13 +839,13 @@ class LicenseMatch(object):
             if spdx_key:
                 is_license_ref = spdx_key.lower().startswith('licenseref-')
                 if is_license_ref:
-                    spdx_url = SCANCODE_LICENSE_TEXT_URL.format(lic.key)
+                    spdx_url = SCANCODE_LICENSE_URL.format(lic.key)
                 else:
                     # TODO: Is this replacing spdx_key???
                     spdx_key = lic.spdx_license_key.rstrip('+')
                     spdx_url = spdx_license_url.format(spdx_key)
             else:
-                spdx_url = ''
+                spdx_url = None
             detected_license['spdx_url'] = spdx_url
 
         return result
