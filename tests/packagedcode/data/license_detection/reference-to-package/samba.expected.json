@@ -195,7 +195,7 @@
         {
           "license_expression": "gpl-2.0-plus AND free-unknown AND gpl-1.0-plus",
           "detection_log": [
-            "not-combined"
+            "unknown-match"
           ],
           "matches": [
             {
@@ -966,7 +966,7 @@
         {
           "license_expression": "gpl-2.0-plus AND free-unknown AND gpl-1.0-plus",
           "detection_log": [
-            "not-combined"
+            "unknown-match"
           ],
           "matches": [
             {
@@ -1711,7 +1711,7 @@
             {
               "license_expression": "gpl-2.0-plus AND free-unknown AND gpl-1.0-plus",
               "detection_log": [
-                "not-combined"
+                "unknown-match"
               ],
               "matches": [
                 {
@@ -2468,7 +2468,7 @@
             {
               "license_expression": "gpl-2.0-plus AND free-unknown AND gpl-1.0-plus",
               "detection_log": [
-                "not-combined"
+                "unknown-match"
               ],
               "matches": [
                 {

@@ -784,7 +784,6 @@ def get_detected_license_expression(matches, analysis, post_scan=False):
             logger_debug(f'analysis {DetectionCategory.UNKNOWN_MATCH.value}')
         matches_for_expression = matches
         detection_log.append(DetectionRule.UNKNOWN_MATCH.value)
-        return detection_log, combined_expression
 
     elif analysis == DetectionCategory.LICENSE_CLUES.value:
         if TRACE_ANALYSIS:
@@ -970,6 +969,11 @@ def analyze_detection(license_matches, package_license=False):
     elif is_correct_detection(license_matches):
         return DetectionCategory.PERFECT_DETECTION.value
 
+    # Case where even though the matches have perfect coverage, they have
+    # matches with `unknown` rule identifiers
+    elif has_unknown_matches(license_matches):
+        return DetectionCategory.UNKNOWN_MATCH.value
+    
     elif is_license_clues(license_matches):
         return DetectionCategory.LICENSE_CLUES.value
 
@@ -983,11 +987,6 @@ def analyze_detection(license_matches, package_license=False):
     # Case where at least one of the match have extra words
     elif has_extra_words(license_matches):
         return DetectionCategory.EXTRA_WORDS.value
-
-    # Case where even though the matches have perfect coverage, they have
-    # matches with `unknown` rule identifiers
-    elif has_unknown_matches(license_matches):
-        return DetectionCategory.UNKNOWN_MATCH.value
 
     # Cases where Match Coverage is a perfect 100 for all matches
     else:
