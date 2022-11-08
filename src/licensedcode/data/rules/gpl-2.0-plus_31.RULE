@@ -4,7 +4,7 @@ is_license_reference: yes
 relevance: 80
 minimum_coverage: 100
 referenced_filenames:
-    - package
+    - INHERIT_LICENSE_FROM_PACKAGE
 notes: In 2006 Pychess used the GPL 2.0. It became GPL 3.0 in 2011
 ---
 

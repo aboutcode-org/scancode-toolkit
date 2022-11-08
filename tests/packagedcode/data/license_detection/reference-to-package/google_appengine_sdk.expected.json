@@ -491,7 +491,7 @@
               "rule_identifier": "free-unknown-package_3.RULE",
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/free-unknown-package_3.RULE",
               "referenced_filenames": [
-                "package"
+                "INHERIT_LICENSE_FROM_PACKAGE"
               ],
               "is_license_text": false,
               "is_license_notice": false,
@@ -590,7 +590,7 @@
               "rule_identifier": "free-unknown-package_3.RULE",
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/free-unknown-package_3.RULE",
               "referenced_filenames": [
-                "package"
+                "INHERIT_LICENSE_FROM_PACKAGE"
               ],
               "is_license_text": false,
               "is_license_notice": false,
@@ -713,7 +713,7 @@
               "rule_identifier": "free-unknown-package_2.RULE",
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/free-unknown-package_2.RULE",
               "referenced_filenames": [
-                "package"
+                "INHERIT_LICENSE_FROM_PACKAGE"
               ],
               "is_license_text": false,
               "is_license_notice": false,
@@ -812,7 +812,7 @@
               "rule_identifier": "free-unknown-package_2.RULE",
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/free-unknown-package_2.RULE",
               "referenced_filenames": [
-                "package"
+                "INHERIT_LICENSE_FROM_PACKAGE"
               ],
               "is_license_text": false,
               "is_license_notice": false,
@@ -911,7 +911,7 @@
               "rule_identifier": "free-unknown-package_3.RULE",
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/free-unknown-package_3.RULE",
               "referenced_filenames": [
-                "package"
+                "INHERIT_LICENSE_FROM_PACKAGE"
               ],
               "is_license_text": false,
               "is_license_notice": false,
@@ -1717,7 +1717,7 @@
               "rule_identifier": "free-unknown-package_3.RULE",
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/free-unknown-package_3.RULE",
               "referenced_filenames": [
-                "package"
+                "INHERIT_LICENSE_FROM_PACKAGE"
               ],
               "is_license_text": false,
               "is_license_notice": false,
@@ -1840,7 +1840,7 @@
               "rule_identifier": "free-unknown-package_3.RULE",
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/free-unknown-package_3.RULE",
               "referenced_filenames": [
-                "package"
+                "INHERIT_LICENSE_FROM_PACKAGE"
               ],
               "is_license_text": false,
               "is_license_notice": false,

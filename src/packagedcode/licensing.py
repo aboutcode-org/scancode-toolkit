@@ -173,7 +173,7 @@ def add_referenced_license_detection_from_package(resource, codebase, no_license
             continue
 
         has_reference_to_package = any([
-            'package' in referenced_filename
+            'INHERIT_LICENSE_FROM_PACKAGE' in referenced_filename
             for referenced_filename in referenced_filenames
         ])
 

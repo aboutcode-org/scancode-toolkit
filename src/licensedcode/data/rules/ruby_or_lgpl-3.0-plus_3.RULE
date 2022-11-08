@@ -4,7 +4,7 @@ is_license_notice: yes
 relevance: 90
 minimum_coverage: 100
 referenced_filenames:
-    - package
+    - INHERIT_LICENSE_FROM_PACKAGE
 notes: this is found mostly in Ruby gettext
 ---
 

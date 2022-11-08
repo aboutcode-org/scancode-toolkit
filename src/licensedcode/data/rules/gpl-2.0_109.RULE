@@ -4,7 +4,7 @@ is_license_reference: yes
 relevance: 100
 minimum_coverage: 100
 referenced_filenames:
-    - package
+    - INHERIT_LICENSE_FROM_PACKAGE
 notes: cpufrequtils is gpl-2.0 only
 ---
 
