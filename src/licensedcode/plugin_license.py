@@ -99,7 +99,14 @@ class LicenseScanner(ScanPlugin):
             help='Set the template URL used for the license reference URLs. '
                  'Curly braces ({}) are replaced by the license key.',
             help_group=SCAN_OPTIONS_GROUP,
-        )
+        ),
+        PluggableCommandLineOption(
+            ('--unknown-licenses',),
+            is_flag=True,
+            required_options=['license'],
+            help='[EXPERIMENTAL] Detect unknown licenses. ',
+            help_group=SCAN_OPTIONS_GROUP,
+        ),
     ]
 
     def is_enabled(self, license, **kwargs):  # NOQA
@@ -119,6 +126,7 @@ class LicenseScanner(ScanPlugin):
         license_text=False,
         license_text_diagnostics=False,
         license_url_template=SCANCODE_LICENSEDB_URL,
+        unknown_licenses=False,
         **kwargs
     ):
 
@@ -128,6 +136,7 @@ class LicenseScanner(ScanPlugin):
             include_text=license_text,
             license_text_diagnostics=license_text_diagnostics,
             license_url_template=license_url_template,
+            unknown_licenses=unknown_licenses,
         )
 
     def process_codebase(self, codebase, **kwargs):

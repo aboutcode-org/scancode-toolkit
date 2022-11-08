@@ -36,6 +36,7 @@ Options:
                                  0 for no limit.  [default: 50]
     --max-url INT                Report only up to INT urls found in a file. Use 0
                                  for no limit.  [default: 50]
+    --unknown-licenses           [EXPERIMENTAL] Detect unknown licenses.
 
   output formats:
     --json FILE             Write scan output as compact JSON to FILE.

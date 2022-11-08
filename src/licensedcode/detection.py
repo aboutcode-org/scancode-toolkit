@@ -1212,6 +1212,7 @@ def detect_licenses(
     deadline=sys.maxsize,
     as_expression=False,
     package_license=False,
+    unknown_licenses=False,
     **kwargs
 ):
     """
@@ -1231,6 +1232,7 @@ def detect_licenses(
             min_score=min_score,
             deadline=deadline,
             as_expression=as_expression,
+            unknown_licenses=unknown_licenses,
             **kwargs,
         )
     elif query_string:
@@ -1239,6 +1241,7 @@ def detect_licenses(
             min_score=min_score,
             deadline=deadline,
             as_expression=as_expression,
+            unknown_licenses=unknown_licenses,
             **kwargs,
         )
     else:

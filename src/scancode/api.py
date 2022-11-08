@@ -152,6 +152,7 @@ def get_licenses(
     include_text=False,
     license_text_diagnostics=False,
     deadline=sys.maxsize,
+    unknown_licenses=False,
     **kwargs,
 ):
     """
@@ -189,6 +190,7 @@ def get_licenses(
         location=location,
         min_score=min_score,
         deadline=deadline,
+        unknown_licenses=unknown_licenses,
         **kwargs,
     )
 
