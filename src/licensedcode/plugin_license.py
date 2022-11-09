@@ -12,7 +12,6 @@ import os
 from functools import partial
 
 import attr
-import license_expression
 from commoncode.cliutils import PluggableCommandLineOption
 from commoncode.cliutils import SCAN_GROUP
 from commoncode.cliutils import SCAN_OPTIONS_GROUP
@@ -141,10 +140,8 @@ class LicenseScanner(ScanPlugin):
 
     def process_codebase(self, codebase, **kwargs):
         """
-        Post process the codebase to further detect unknown licenses and follow
-        license references to other files.
-
-        This is an EXPERIMENTAL feature for now.
+        Post-processing to follow license references to other files and add
+        `is_builtin` flags to licenses, if applicable.
         """
         from licensedcode import cache
         cche = cache.get_cache()
@@ -203,6 +200,10 @@ def add_builtin_license_flag(resource, licenses):
 
 
 def add_builtin_value(license_match, licenses):
+    """
+    Add `is_builtin` flags and the corresponding values for each
+    license rule data mapping.
+    """
     license_expression = license_match['license_expression']
     license_keys = Licensing().license_keys(
         license_expression,

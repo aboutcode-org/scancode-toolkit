@@ -229,7 +229,7 @@ other_license_detections:
         rule_identifier: free-unknown-package_4.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/free-unknown-package_4.RULE
         referenced_filenames:
-          - package
+          - INHERIT_LICENSE_FROM_PACKAGE
         is_license_text: no
         is_license_notice: no
         is_license_reference: yes
@@ -371,7 +371,7 @@ other_license_detections:
         rule_identifier: bsd-new_1043.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_1043.RULE
         referenced_filenames:
-          - package
+          - INHERIT_LICENSE_FROM_PACKAGE
         is_license_text: no
         is_license_notice: yes
         is_license_reference: no

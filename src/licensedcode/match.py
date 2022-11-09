@@ -762,7 +762,7 @@ class LicenseMatch(object):
         whole_lines=True,
     ):
         """
-        Return a list of "matches" scan data built from a license match.
+        Return a "result" scan data built from a LicenseMatch object.
         """
         from licensedcode import cache
         licenses = cache.get_licenses_db()

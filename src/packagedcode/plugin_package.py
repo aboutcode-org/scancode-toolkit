@@ -160,6 +160,9 @@ class PackageScanner(ScanPlugin):
         Populate the ``codebase`` top level ``packages`` and ``dependencies``
         with package and dependency instances, assembling parsed package data
         from one or more datafiles as needed.
+
+        Also perform additional package license detection that depends on either
+        file license detection or the package detections.
         """
         no_licenses = False
 
