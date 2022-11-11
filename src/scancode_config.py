@@ -84,7 +84,7 @@ __release_date__ = datetime.datetime(2022, 10, 5)
 
 # See https://github.com/nexB/scancode-toolkit/issues/2653 for more information
 # on the data format version
-__output_format_version__ = '2.0.0'
+__output_format_version__ = '3.0.0'
 
 #
 spdx_license_list_version = '3.17'
