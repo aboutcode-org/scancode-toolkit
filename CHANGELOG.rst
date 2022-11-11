@@ -2,75 +2,86 @@ Changelog
 =========
 
 
-v32.0.0 (next next, roadmap)
+
+v33.0.0 (next next, roadmap)
 ----------------------------
 
-Important API changes:
-~~~~~~~~~~~~~~~~~~~~~~
-
-- The data structure of the JSON output has changed for licenses at resource level:
-
-  - We now return ``license_detections`` information at the manifest file-level
-  rather than ``licenses``. This three data attributes: ``license_expression``,
-  ``detection_log`` and ``matches``. Here ``matches`` is similar to previous
-  ``licenses`` with some additional changes.
-
-  - A new attribute ``license_clues`` was added, which has license matches same
-    as the ``matches`` field in ``license_detections``. This has license matches
-    which are mere clues and not proper detections.
-
-  - The ``license_expressions`` field was removed, which was a list of license
-    expressions and it was replaced with ``detected_license_expression`` which
-    was a single license expression. Similarly ``spdx_license_expressions`` was
-    removed and replaced by ``detected_license_expression_spdx``.
-  
-  - See `license updates doc <https://scancode-toolkit.readthedocs.io/en/latest/explanations/license-detection-reference.html#change-in-license-data-format-resource>`_
-    for examples and more details.
-
-- Similarly the data structure of license fields in "package_data" has also
-  changed, along with codebase level ``packages`` data:
-
-  - There's a ``license_detections`` field with the detections, same as the
-    resource ``license_detections``, and there's also ``other_license_detections``.
-    Here ``license_detections`` has the detections for the primary/declared
-    licenses, and the rest of the secondary detecions are at
-    ``other_license_detections``.
-
-  - The ``license_expression`` field has been dropped, and instead we have
-    ``declared_license_expression`` and ``other_license_expression`` fields
-    with their SPDX counterparts: ``declared_license_expression_spdx`` and
-    ``other_license_expression_spdx``.
-
-  - The ``declared_license`` field also has been renamed to ``extracted_license_statement``,
-    and previously this ``declared_license`` field could be a list, a dict or a string, but
-    now ``extracted_license_statement`` is always a string.
-
-    See `license updates doc <https://scancode-toolkit.readthedocs.io/en/latest/explanations/license-detection-reference.html#comparision-before-after-license-references>`_
-    for examples and more details.
-
-- Additionally the ``--get-license-data`` option would add two codebase level attributes:
-  ``license_references`` and ``rule_references`` which are lists of license and rules
-  respectively. This also removes the corresponding fields from ``matches`` in
-  ``license_detections`` as they are referenced in these two codebase level fields. See
-  `license updates doc <https://scancode-toolkit.readthedocs.io/en/latest/explanations/license-detection-reference.html#change-in-license-data-format-package>`_
-  for examples and more details.
-
-- The data structure of License matches has also changed: we had ``key`` i.e.
-  a license key for each match, but now we have ``license_expression`` instead and
-  we have a flat data structure instead of the ``matched_rule`` inside of ``matches``.
-  Now we also have a ``licenses`` list with data for all the licenses present in the
-  license expression.
-  See `license updates doc <https://scancode-toolkit.readthedocs.io/en/latest/explanations/license-detection-reference.html#licensematch-result-data>`_
-  for examples and more details.
-
-
-Package detection:
-~~~~~~~~~~~~~~~~~~
 
 - We now support new package manifest formats:
 
   - OpenWRT packages.
   - Yocto/BitBake .bb recipes.
+
+
+
+v32.0.0 (next)
+----------------------------
+
+Important API changes:
+~~~~~~~~~~~~~~~~~~~~~~
+
+The data structure of the JSON output has changed for file-level licenses:
+
+- We now return ``license_detections`` information at the manifest file-level
+  rather than ``licenses``. This has three data attributes: ``license_expression``,
+  ``detection_log`` and ``matches``. Here the ``matches`` attribute is similar
+  to previous ``licenses`` with some additional changes.
+
+- We added a new file-level attribute for``license_clues`` with license
+  matches that is the same as the ``matches`` field in ``license_detections``. 
+  This has license matches that are mere clues and not proper conclusive
+  license detections.
+
+- We removed the ``license_expressions`` field and replaced this list of
+  license expressions with a single license expression attribute named
+  ``detected_license_expression``. Similarly removed and replaced the 
+  ``spdx_license_expressions`` list with  ``detected_license_expression_spdx``.
+
+- See `license updates documentation <https://scancode-toolkit.readthedocs.io/en/latest/explanations/license-detection-reference.html#change-in-license-data-format-resource>`_
+  for examples and details.
+
+Similarly, we updated the JSON data structure for license attributes for packages
+both at the file-level ``package_data`` and at the codebase level ``packages``:
+
+- We renamed the ``declared_license`` attribute to ``extracted_license_statement``.
+  This field is always a string now, encoded as YAML; before it could be a list,
+  an object/mapping or a string.
+
+- We added new ``license_detections`` and ``other_license_detections``
+  attributes. The ``license_detections`` attribute tracks detections for the
+  primary, top-level licensing of the package; we track other secondary
+  license detections in ``other_license_detections``.
+
+- We replaced the ``license_expression`` attribute by two new attributes:
+  ``declared_license_expression`` and ``other_license_expression`` with their
+  SPDX counterparts: ``declared_license_expression_spdx`` and
+  ``other_license_expression_spdx``. The meaning for declared vs. other is the
+  same as for license vs. other license
+
+  See `license updates documentation <https://scancode-toolkit.readthedocs.io/en/latest/explanations/license-detection-reference.html#comparision-before-after-license-references>`_
+  for examples and details.
+
+- There is a new ``--get-license-data`` command line option. This adds two
+  codebase-level attributes: ``license_references`` and ``rule_references``
+  that are respectively a list of licenses and a list of rules objects. These
+  objects have hold one scan-wide copy of license metadata and license text.
+  We removed the now redundant license attributes from ``license_detections matches``.
+  See the `license updates documentation <https://scancode-toolkit.readthedocs.io/en/latest/explanations/license-detection-reference.html#change-in-license-data-format-package>`_
+  for examples and details.
+
+- We updated how we report license matches. Previously we were reporting a
+  license ``key`` for each license detected in the license expression of a match
+  leading to repetion and data duplication. We now return one match for each
+  detected ``license_expression``. The license match data structure is now a flat
+  and simpler list of attributes and we no longer nest a ``matched_rule``
+  attribute inside each ``match``. We added abew ``licenses`` attribute listing
+  all the license keys present in the matched license expression.
+  See `license updates documentation <https://scancode-toolkit.readthedocs.io/en/latest/explanations/license-detection-reference.html#licensematch-result-data>`_
+  for examples and details.
+
+
+Package detection:
+~~~~~~~~~~~~~~~~~~
 
 - Update ``GemfileLockParser`` to track the gem which the Gemfile.lock is for,
   which we assign to the new ``GemfileLockParser.primary_gem`` field. Update
@@ -96,6 +107,7 @@ Package detection:
   https://github.com/package-url/purl-spec/blob/master/PURL-TYPES.rst#cocoapods
 
   https://github.com/nexB/scancode-toolkit/issues/3081
+
 
 License detection:
 ~~~~~~~~~~~~~~~~~~~
