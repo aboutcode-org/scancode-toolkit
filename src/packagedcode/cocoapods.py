@@ -16,8 +16,6 @@ import saneyaml
 from packageurl import PackageURL
 
 from packagedcode import models
-from packagedcode.licensing import get_license_matches
-from packagedcode.licensing import get_license_expression_from_matches
 from packagedcode import spec
 from packagedcode import utils
 
@@ -213,10 +211,7 @@ class PodspecHandler(BasePodHandler):
         name = podspec.get('name')
         version = podspec.get('version')
         homepage_url = podspec.get('homepage')
-        declared_license = podspec.get('license')
-        license_expression = None
-        if declared_license:
-            license_expression = models.compute_normalized_license(declared_license)
+        extracted_license_statement = podspec.get('license')
         summary = podspec.get('summary')
         description = podspec.get('description')
         description = utils.build_description(
@@ -255,8 +250,7 @@ class PodspecHandler(BasePodHandler):
             # FIXME: a source should be a PURL, not a list of URLs
             # source_packages=vcs_url.split('\n'),
             description=description,
-            declared_license=declared_license,
-            license_expression=license_expression,
+            extracted_license_statement=extracted_license_statement,
             homepage_url=homepage_url,
             parties=parties,
             **urls,
@@ -354,9 +348,9 @@ class PodspecJsonHandler(models.DatafileHandler):
 
         lic = data.get('license')
         if isinstance(lic, dict):
-            declared_license = ' '.join(list(lic.values()))
+            extracted_license_statement = ' '.join(list(lic.values()))
         else:
-            declared_license = lic
+            extracted_license_statement = lic
 
         source = data.get('source')
         vcs_url = None
@@ -374,12 +368,6 @@ class PodspecJsonHandler(models.DatafileHandler):
                 vcs_url = source
 
         authors = data.get('authors') or {}
-
-        license_matches = get_license_matches(query_string=declared_license)
-        if not license_matches:
-            license_expression = 'unknown'
-        else:
-            license_expression = get_license_expression_from_matches(license_matches)
 
         if summary and not description.startswith(summary):
             desc = [summary]
@@ -424,8 +412,7 @@ class PodspecJsonHandler(models.DatafileHandler):
             name=name,
             version=version,
             description=description,
-            declared_license=declared_license,
-            license_expression=license_expression,
+            extracted_license_statement=extracted_license_statement,
             parties=parties,
             vcs_url=vcs_url,
             homepage_url=homepage_url,

@@ -19,49 +19,55 @@
       "is_media": false,
       "is_source": false,
       "is_script": false,
-      "licenses": [
+      "detected_license_expression": "pygres-2.2",
+      "detected_license_expression_spdx": "LicenseRef-scancode-pygres-2.2",
+      "license_detections": [
         {
-          "key": "pygres-2.2",
-          "score": 100.0,
-          "name": "PyGres License v2.2",
-          "short_name": "PyGres License 2.2",
-          "category": "Permissive",
-          "is_exception": false,
-          "is_unknown": false,
-          "owner": "Unspecified",
-          "homepage_url": null,
-          "text_url": "http://shell.vex.net/viewvc.cgi/pygresql/trunk/module/pgmodule.c?view=markup&pathrev=431",
-          "reference_url": "https://scancode-licensedb.aboutcode.org/pygres-2.2",
-          "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/pygres-2.2.LICENSE",
-          "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/pygres-2.2.yml",
-          "spdx_license_key": "LicenseRef-scancode-pygres-2.2",
-          "spdx_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/pygres-2.2.LICENSE",
-          "start_line": 7,
-          "end_line": 22,
-          "matched_rule": {
-            "identifier": "pygres-2.2_2.RULE",
-            "license_expression": "pygres-2.2",
-            "licenses": [
-              "pygres-2.2"
-            ],
-            "referenced_filenames": [],
-            "is_license_text": true,
-            "is_license_notice": false,
-            "is_license_reference": false,
-            "is_license_tag": false,
-            "is_license_intro": false,
-            "has_unknown": false,
-            "matcher": "2-aho",
-            "rule_length": 145,
-            "matched_length": 145,
-            "match_coverage": 100.0,
-            "rule_relevance": 100
-          }
+          "license_expression": "pygres-2.2",
+          "detection_log": [
+            "not-combined"
+          ],
+          "matches": [
+            {
+              "score": 100.0,
+              "start_line": 7,
+              "end_line": 22,
+              "matched_length": 145,
+              "match_coverage": 100.0,
+              "matcher": "2-aho",
+              "license_expression": "pygres-2.2",
+              "rule_identifier": "pygres-2.2_2.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/pygres-2.2_2.RULE",
+              "referenced_filenames": [],
+              "is_license_text": true,
+              "is_license_notice": false,
+              "is_license_reference": false,
+              "is_license_tag": false,
+              "is_license_intro": false,
+              "rule_length": 145,
+              "rule_relevance": 100,
+              "licenses": [
+                {
+                  "key": "pygres-2.2",
+                  "name": "PyGres License v2.2",
+                  "short_name": "PyGres License 2.2",
+                  "category": "Permissive",
+                  "is_exception": false,
+                  "is_unknown": false,
+                  "owner": "Unspecified",
+                  "homepage_url": null,
+                  "text_url": "http://shell.vex.net/viewvc.cgi/pygresql/trunk/module/pgmodule.c?view=markup&pathrev=431",
+                  "reference_url": "https://scancode-licensedb.aboutcode.org/pygres-2.2",
+                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/pygres-2.2.LICENSE",
+                  "spdx_license_key": "LicenseRef-scancode-pygres-2.2",
+                  "spdx_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/pygres-2.2.LICENSE"
+                }
+              ]
+            }
+          ]
         }
       ],
-      "license_expressions": [
-        "pygres-2.2"
-      ],
+      "license_clues": [],
       "percentage_of_license_text": 69.38,
       "copyrights": [
         {

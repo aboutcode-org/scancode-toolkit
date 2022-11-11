@@ -35,8 +35,8 @@ PACKAGE_FIELD_BY_README_FIELD = {
     'url': 'homepage_url',
     'project url': 'homepage_url',
 
-    'licence': 'declared_license',
-    'license': 'declared_license',
+    'licence': 'extracted_license_statement',
+    'license': 'extracted_license_statement',
 }
 
 
@@ -101,7 +101,5 @@ def build_package(readme_manifest):
             continue
         setattr(package, package_key, value)
 
-    if not package.license_expression and package.declared_license:
-        package.license_expression = models.compute_normalized_license(package.declared_license)
-
+    package.populate_license_fields()
     return package

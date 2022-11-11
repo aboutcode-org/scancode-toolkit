@@ -3,180 +3,140 @@
     {
       "path": "apache-1.0.txt",
       "type": "file",
-      "licenses": [
+      "detected_license_expression": "apache-1.0",
+      "detected_license_expression_spdx": "Apache-1.0",
+      "license_detections": [
         {
-          "key": "apache-1.0",
-          "score": 100.0,
-          "name": "Apache License 1.0",
-          "short_name": "Apache 1.0",
-          "category": "Permissive",
-          "is_exception": false,
-          "is_unknown": false,
-          "owner": "Apache Software Foundation",
-          "homepage_url": "http://www.apache.org/licenses/",
-          "text_url": "http://www.apache.org/licenses/LICENSE-1.0",
-          "reference_url": "https://scancode-licensedb.aboutcode.org/apache-1.0",
-          "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-1.0.LICENSE",
-          "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-1.0.yml",
-          "spdx_license_key": "Apache-1.0",
-          "spdx_url": "https://spdx.org/licenses/Apache-1.0",
-          "start_line": 4,
-          "end_line": 54,
-          "matched_rule": {
-            "identifier": "apache-1.0.LICENSE",
-            "license_expression": "apache-1.0",
-            "licenses": [
-              "apache-1.0"
-            ],
-            "referenced_filenames": [],
-            "is_license_text": true,
-            "is_license_notice": false,
-            "is_license_reference": false,
-            "is_license_tag": false,
-            "is_license_intro": false,
-            "has_unknown": false,
-            "matcher": "2-aho",
-            "rule_length": 368,
-            "matched_length": 368,
-            "match_coverage": 100.0,
-            "rule_relevance": 100
-          }
+          "license_expression": "apache-1.0",
+          "detection_log": [
+            "not-combined"
+          ],
+          "matches": [
+            {
+              "score": 100.0,
+              "start_line": 4,
+              "end_line": 54,
+              "matched_length": 368,
+              "match_coverage": 100.0,
+              "matcher": "2-aho",
+              "license_expression": "apache-1.0",
+              "rule_identifier": "apache-1.0.LICENSE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-1.0.LICENSE",
+              "referenced_filenames": [],
+              "is_license_text": true,
+              "is_license_notice": false,
+              "is_license_reference": false,
+              "is_license_tag": false,
+              "is_license_intro": false,
+              "rule_length": 368,
+              "rule_relevance": 100,
+              "licenses": [
+                {
+                  "key": "apache-1.0",
+                  "name": "Apache License 1.0",
+                  "short_name": "Apache 1.0",
+                  "category": "Permissive",
+                  "is_exception": false,
+                  "is_unknown": false,
+                  "owner": "Apache Software Foundation",
+                  "homepage_url": "http://www.apache.org/licenses/",
+                  "text_url": "http://www.apache.org/licenses/LICENSE-1.0",
+                  "reference_url": "https://scancode-licensedb.aboutcode.org/apache-1.0",
+                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-1.0.LICENSE",
+                  "spdx_license_key": "Apache-1.0",
+                  "spdx_url": "https://spdx.org/licenses/Apache-1.0"
+                }
+              ]
+            }
+          ]
         }
       ],
-      "license_expressions": [
-        "apache-1.0"
-      ],
+      "license_clues": [],
       "percentage_of_license_text": 97.61,
       "scan_errors": []
     },
     {
       "path": "gpl-2.0_with_linux-syscall-note_or_linux-openib_SPDX.RULE",
       "type": "file",
-      "licenses": [
+      "detected_license_expression": "gpl-2.0 WITH linux-syscall-exception-gpl OR linux-openib",
+      "detected_license_expression_spdx": "GPL-2.0-only WITH Linux-syscall-note OR Linux-OpenIB",
+      "license_detections": [
         {
-          "key": "gpl-2.0",
-          "score": 100.0,
-          "name": "GNU General Public License 2.0",
-          "short_name": "GPL 2.0",
-          "category": "Copyleft",
-          "is_exception": false,
-          "is_unknown": false,
-          "owner": "Free Software Foundation (FSF)",
-          "homepage_url": "http://www.gnu.org/licenses/gpl-2.0.html",
-          "text_url": "http://www.gnu.org/licenses/gpl-2.0.txt",
-          "reference_url": "https://scancode-licensedb.aboutcode.org/gpl-2.0",
-          "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-2.0.LICENSE",
-          "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-2.0.yml",
-          "spdx_license_key": "GPL-2.0-only",
-          "spdx_url": "https://spdx.org/licenses/GPL-2.0-only",
-          "start_line": 1,
-          "end_line": 1,
-          "matched_rule": {
-            "identifier": "spdx-license-identifier: gpl-2.0 WITH linux-syscall-exception-gpl OR linux-openib",
-            "license_expression": "gpl-2.0 WITH linux-syscall-exception-gpl OR linux-openib",
-            "licenses": [
-              "gpl-2.0",
-              "linux-syscall-exception-gpl",
-              "linux-openib"
-            ],
-            "referenced_filenames": [],
-            "is_license_text": false,
-            "is_license_notice": false,
-            "is_license_reference": false,
-            "is_license_tag": true,
-            "is_license_intro": false,
-            "has_unknown": false,
-            "matcher": "1-spdx-id",
-            "rule_length": 13,
-            "matched_length": 13,
-            "match_coverage": 100.0,
-            "rule_relevance": 100
-          }
-        },
-        {
-          "key": "linux-syscall-exception-gpl",
-          "score": 100.0,
-          "name": "Linux Syscall Exception to GPL",
-          "short_name": "Linux Syscall Exception to GPL",
-          "category": "Copyleft Limited",
-          "is_exception": true,
-          "is_unknown": false,
-          "owner": "Linux Foundation",
-          "homepage_url": null,
-          "text_url": null,
-          "reference_url": "https://scancode-licensedb.aboutcode.org/linux-syscall-exception-gpl",
-          "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/linux-syscall-exception-gpl.LICENSE",
-          "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/linux-syscall-exception-gpl.yml",
-          "spdx_license_key": "Linux-syscall-note",
-          "spdx_url": "https://spdx.org/licenses/Linux-syscall-note",
-          "start_line": 1,
-          "end_line": 1,
-          "matched_rule": {
-            "identifier": "spdx-license-identifier: gpl-2.0 WITH linux-syscall-exception-gpl OR linux-openib",
-            "license_expression": "gpl-2.0 WITH linux-syscall-exception-gpl OR linux-openib",
-            "licenses": [
-              "gpl-2.0",
-              "linux-syscall-exception-gpl",
-              "linux-openib"
-            ],
-            "referenced_filenames": [],
-            "is_license_text": false,
-            "is_license_notice": false,
-            "is_license_reference": false,
-            "is_license_tag": true,
-            "is_license_intro": false,
-            "has_unknown": false,
-            "matcher": "1-spdx-id",
-            "rule_length": 13,
-            "matched_length": 13,
-            "match_coverage": 100.0,
-            "rule_relevance": 100
-          }
-        },
-        {
-          "key": "linux-openib",
-          "score": 100.0,
-          "name": "Linux-OpenIB",
-          "short_name": "Linux-OpenIB",
-          "category": "Permissive",
-          "is_exception": false,
-          "is_unknown": false,
-          "owner": "Linux Foundation",
-          "homepage_url": "https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/drivers/infiniband/core/sa.h",
-          "text_url": "https://github.com/ofiwg/libfabric/blob/master/contrib/buildrpm/README",
-          "reference_url": "https://scancode-licensedb.aboutcode.org/linux-openib",
-          "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/linux-openib.LICENSE",
-          "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/linux-openib.yml",
-          "spdx_license_key": "Linux-OpenIB",
-          "spdx_url": "https://spdx.org/licenses/Linux-OpenIB",
-          "start_line": 1,
-          "end_line": 1,
-          "matched_rule": {
-            "identifier": "spdx-license-identifier: gpl-2.0 WITH linux-syscall-exception-gpl OR linux-openib",
-            "license_expression": "gpl-2.0 WITH linux-syscall-exception-gpl OR linux-openib",
-            "licenses": [
-              "gpl-2.0",
-              "linux-syscall-exception-gpl",
-              "linux-openib"
-            ],
-            "referenced_filenames": [],
-            "is_license_text": false,
-            "is_license_notice": false,
-            "is_license_reference": false,
-            "is_license_tag": true,
-            "is_license_intro": false,
-            "has_unknown": false,
-            "matcher": "1-spdx-id",
-            "rule_length": 13,
-            "matched_length": 13,
-            "match_coverage": 100.0,
-            "rule_relevance": 100
-          }
+          "license_expression": "gpl-2.0 WITH linux-syscall-exception-gpl OR linux-openib",
+          "detection_log": [
+            "not-combined"
+          ],
+          "matches": [
+            {
+              "score": 100.0,
+              "start_line": 1,
+              "end_line": 1,
+              "matched_length": 13,
+              "match_coverage": 100.0,
+              "matcher": "1-spdx-id",
+              "license_expression": "gpl-2.0 WITH linux-syscall-exception-gpl OR linux-openib",
+              "rule_identifier": "spdx-license-identifier: gpl-2.0 WITH linux-syscall-exception-gpl OR linux-openib",
+              "rule_url": null,
+              "referenced_filenames": [],
+              "is_license_text": false,
+              "is_license_notice": false,
+              "is_license_reference": false,
+              "is_license_tag": true,
+              "is_license_intro": false,
+              "rule_length": 13,
+              "rule_relevance": 100,
+              "licenses": [
+                {
+                  "key": "gpl-2.0",
+                  "name": "GNU General Public License 2.0",
+                  "short_name": "GPL 2.0",
+                  "category": "Copyleft",
+                  "is_exception": false,
+                  "is_unknown": false,
+                  "owner": "Free Software Foundation (FSF)",
+                  "homepage_url": "http://www.gnu.org/licenses/gpl-2.0.html",
+                  "text_url": "http://www.gnu.org/licenses/gpl-2.0.txt",
+                  "reference_url": "https://scancode-licensedb.aboutcode.org/gpl-2.0",
+                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-2.0.LICENSE",
+                  "spdx_license_key": "GPL-2.0-only",
+                  "spdx_url": "https://spdx.org/licenses/GPL-2.0-only"
+                },
+                {
+                  "key": "linux-syscall-exception-gpl",
+                  "name": "Linux Syscall Exception to GPL",
+                  "short_name": "Linux Syscall Exception to GPL",
+                  "category": "Copyleft Limited",
+                  "is_exception": true,
+                  "is_unknown": false,
+                  "owner": "Linux Foundation",
+                  "homepage_url": null,
+                  "text_url": "",
+                  "reference_url": "https://scancode-licensedb.aboutcode.org/linux-syscall-exception-gpl",
+                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/linux-syscall-exception-gpl.LICENSE",
+                  "spdx_license_key": "Linux-syscall-note",
+                  "spdx_url": "https://spdx.org/licenses/Linux-syscall-note"
+                },
+                {
+                  "key": "linux-openib",
+                  "name": "Linux-OpenIB",
+                  "short_name": "Linux-OpenIB",
+                  "category": "Permissive",
+                  "is_exception": false,
+                  "is_unknown": false,
+                  "owner": "Linux Foundation",
+                  "homepage_url": "https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/drivers/infiniband/core/sa.h",
+                  "text_url": "https://github.com/ofiwg/libfabric/blob/master/contrib/buildrpm/README",
+                  "reference_url": "https://scancode-licensedb.aboutcode.org/linux-openib",
+                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/linux-openib.LICENSE",
+                  "spdx_license_key": "Linux-OpenIB",
+                  "spdx_url": "https://spdx.org/licenses/Linux-OpenIB"
+                }
+              ]
+            }
+          ]
         }
       ],
-      "license_expressions": [
-        "gpl-2.0 WITH linux-syscall-exception-gpl OR linux-openib"
-      ],
+      "license_clues": [],
       "percentage_of_license_text": 100.0,
       "scan_errors": []
     }

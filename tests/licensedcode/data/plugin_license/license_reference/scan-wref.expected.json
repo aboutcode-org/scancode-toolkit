@@ -3,52 +3,58 @@
     {
       "path": "license-notice.txt",
       "type": "file",
-      "licenses": [
+      "detected_license_expression": "unknown-license-reference",
+      "detected_license_expression_spdx": "LicenseRef-scancode-unknown-license-reference",
+      "license_detections": [
         {
-          "key": "unknown-license-reference",
-          "score": 100.0,
-          "name": "Unknown License file reference",
-          "short_name": "Unknown License reference",
-          "category": "Unstated License",
-          "is_exception": false,
-          "is_unknown": true,
-          "owner": "Unspecified",
-          "homepage_url": null,
-          "text_url": null,
-          "reference_url": "https://scancode-licensedb.aboutcode.org/unknown-license-reference",
-          "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/unknown-license-reference.LICENSE",
-          "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/unknown-license-reference.yml",
-          "spdx_license_key": "LicenseRef-scancode-unknown-license-reference",
-          "spdx_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/unknown-license-reference.LICENSE",
-          "start_line": 34,
-          "end_line": 34,
-          "matched_rule": {
-            "identifier": "unknown-license-reference_25.RULE",
-            "license_expression": "unknown-license-reference",
-            "licenses": [
-              "unknown-license-reference"
-            ],
-            "referenced_filenames": [
-              "LICENSE"
-            ],
-            "is_license_text": false,
-            "is_license_notice": false,
-            "is_license_reference": false,
-            "is_license_tag": true,
-            "is_license_intro": false,
-            "has_unknown": true,
-            "matcher": "2-aho",
-            "rule_length": 5,
-            "matched_length": 5,
-            "match_coverage": 100.0,
-            "rule_relevance": 100
-          },
-          "matched_text": "license\": \"SEE LICENSE IN LICENSE."
+          "license_expression": "unknown-license-reference",
+          "detection_log": [
+            "not-combined"
+          ],
+          "matches": [
+            {
+              "score": 100.0,
+              "start_line": 34,
+              "end_line": 34,
+              "matched_length": 5,
+              "match_coverage": 100.0,
+              "matcher": "2-aho",
+              "license_expression": "unknown-license-reference",
+              "rule_identifier": "unknown-license-reference_25.RULE",
+              "referenced_filenames": [
+                "LICENSE"
+              ],
+              "is_license_text": false,
+              "is_license_notice": false,
+              "is_license_reference": false,
+              "is_license_tag": true,
+              "is_license_intro": false,
+              "rule_length": 5,
+              "rule_relevance": 100,
+              "matched_text": "license\": \"SEE LICENSE IN LICENSE.",
+              "licenses": [
+                {
+                  "key": "unknown-license-reference",
+                  "name": "Unknown License file reference",
+                  "short_name": "Unknown License reference",
+                  "category": "Unstated License",
+                  "is_exception": false,
+                  "is_unknown": true,
+                  "owner": "Unspecified",
+                  "homepage_url": null,
+                  "text_url": "",
+                  "reference_url": "https://scancode-licensedb.aboutcode.org/unknown-license-reference",
+                  "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/unknown-license-reference.LICENSE",
+                  "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/unknown-license-reference.yml",
+                  "spdx_license_key": "LicenseRef-scancode-unknown-license-reference",
+                  "spdx_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/unknown-license-reference.LICENSE"
+                }
+              ]
+            }
+          ]
         }
       ],
-      "license_expressions": [
-        "unknown-license-reference"
-      ],
+      "license_clues": [],
       "percentage_of_license_text": 0.2,
       "scan_errors": []
     }

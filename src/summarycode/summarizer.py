@@ -81,7 +81,7 @@ class ScanSummary(PostScanPlugin):
 
         # Get tallies
         tallies = compute_codebase_tallies(codebase, keep_details=False, **kwargs)
-        license_expressions_tallies = tallies.get('license_expressions') or []
+        license_expressions_tallies = tallies.get('detected_license_expression') or []
         holders_tallies = tallies.get('holders') or []
         programming_language_tallies = tallies.get('programming_language') or []
 
@@ -231,7 +231,7 @@ def get_origin_info_from_top_level_packages(top_level_packages, codebase):
     ]
     key_file_packages = [p for p in top_level_packages if is_key_package(p, codebase)]
     for package in key_file_packages:
-        license_expression = package.license_expression
+        license_expression = package.declared_license_expression
         if license_expression:
             license_expressions.append(license_expression)
 

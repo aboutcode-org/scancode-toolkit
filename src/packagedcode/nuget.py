@@ -93,7 +93,17 @@ class NugetNuspecHandler(models.DatafileHandler):
 
         urls = get_urls(name, version)
 
-        package_data = models.PackageData(
+        extracted_license_statement = None
+        # See https://docs.microsoft.com/en-us/nuget/reference/nuspec#license
+        # This is a SPDX license expression
+        if 'license' in nuspec:
+            extracted_license_statement = nuspec.get('license')
+            # TODO: try to convert to normal license expression
+        # Deprecated and not a license expression, just a URL
+        elif 'licenseUrl' in nuspec:
+            extracted_license_statement = nuspec.get('licenseUrl')
+
+        yield models.PackageData(
             datasource_id=cls.datasource_id,
             type=cls.default_package_type,
             name=name,
@@ -101,14 +111,8 @@ class NugetNuspecHandler(models.DatafileHandler):
             description=description or None,
             homepage_url=nuspec.get('projectUrl') or None,
             parties=parties,
-            # FIXME: license has evolved and is now SPDX...
-            declared_license=nuspec.get('licenseUrl') or None,
+            extracted_license_statement=extracted_license_statement,
             copyright=nuspec.get('copyright') or None,
             vcs_url=vcs_url,
             **urls,
         )
-
-        if not package_data.license_expression and package_data.declared_license:
-            package_data.license_expression = cls.compute_normalized_license(package_data)
-
-        yield package_data

@@ -7,19 +7,42 @@
 # See https://aboutcode.org for more information about nexB OSS projects.
 #
 
+import os
+import logging
 import ast
 from collections import defaultdict
 
 from commoncode import fileutils
 
+from licensedcode.tokenize import query_tokenizer
+from licensedcode.detection import detect_licenses
+from licensedcode.detection import get_unknown_license_detection
 from packagedcode import models
-from packagedcode.utils import combine_expressions
-from scancode.api import get_licenses
+from packagedcode.licensing import get_mapping_and_expression_from_detections
 
 """
 Detect as Packages common build tools and environment such as Make, Autotools,
 Buck, Bazel, Pants, etc.
 """
+
+TRACE = os.environ.get('SCANCODE_DEBUG_PACKAGE', False)
+
+
+def logger_debug(*args):
+    pass
+
+
+logger = logging.getLogger(__name__)
+
+if TRACE:
+    import sys
+    logging.basicConfig(stream=sys.stdout)
+    logger.setLevel(logging.DEBUG)
+
+    def logger_debug(*args):
+        return logger.debug(
+            ' '.join(isinstance(a, str) and a or repr(a) for a in args)
+        )
 
 
 class AutotoolsConfigureHandler(models.DatafileHandler):
@@ -90,9 +113,12 @@ class BaseStarlarkManifestHandler(models.DatafileHandler):
                 datafile_path=datafile_path,
             )
 
-            if not package.license_expression:
-                package.license_expression = compute_normalized_license(
-                    package=package,
+            if TRACE:
+                logger_debug(f"build: assemble: package_data: {package_data.to_dict()}")
+
+            package.license_detections, package.declared_license_expression = \
+                get_license_detections_and_expression(
+                    package=package_data,
                     resource=resource,
                     codebase=codebase,
                 )
@@ -160,12 +186,17 @@ class BaseStarlarkManifestHandler(models.DatafileHandler):
 
                     license_files = args.get('licenses')
 
-                    yield models.PackageData(
+                    if TRACE:
+                        logger_debug(f"build: parse: license_files: {license_files}")
+
+                    package_data = models.PackageData(
                         datasource_id=cls.datasource_id,
                         type=cls.default_package_type,
                         name=name,
-                        declared_license=license_files,
                     )
+
+                    package_data.extracted_license_statement = license_files
+                    yield package_data
 
         else:
             # If we don't find anything in the pkgdata file, we yield a Package
@@ -202,30 +233,54 @@ def walk_build(resource, codebase, skip_name):
                 yield subchild
 
 
-def compute_normalized_license(package, resource, codebase):
+def get_license_detections_and_expression(package, resource, codebase):
     """
     Return a normalized license expression string detected from a list of
     declared license items.
     """
-    declared_licenses = package.declared_license
-    if not declared_licenses:
-        return
+    license_detections = []
 
+    declared_licenses = package.extracted_license_statement
+    if not declared_licenses:
+        return license_detections, None
+
+    if not isinstance(declared_licenses, str):
+        declared_licenses = repr(declared_licenses)
+
+    declared_licenses = list(query_tokenizer(declared_licenses))
     declared_licenses = set(declared_licenses)
 
-    license_expressions = []
+    if TRACE:
+        logger_debug(
+            f"build: get_license_detections_and_expression:"
+            f"declared_licenses: {declared_licenses}"
+        )
+        logger_debug(
+            f"build: get_license_detections_and_expression:"
+            f"type(declared_licenses): {type(declared_licenses)}"
+        )
 
     parent = resource.parent(codebase)
     # FIXME: we should be able to get the path relatively to the ABOUT file resource
     for child in parent.children(codebase):
-        if child.name in declared_licenses:
-            licenses = get_licenses(child.location)
-            if not licenses:
-                license_expressions.append('unknown')
-            else:
-                license_expressions.extend(licenses.get('license_expressions', []))
+        if child.name.lower() in declared_licenses:
+            detections = detect_licenses(location=child.location)
+            if TRACE:
+                logger_debug(
+                    f"build: get_license_detections_and_expression:"
+                    f"detections: {detections}"
+                )
 
-    return combine_expressions(license_expressions)
+            if not detections:
+                license_detections.append(
+                    get_unknown_license_detection(declared_licenses)
+                )
+            else:
+                license_detections.extend(detections)
+
+    return get_mapping_and_expression_from_detections(
+        license_detections=license_detections
+    )
 
 
 class BazelBuildHandler(BaseStarlarkManifestHandler):
@@ -329,7 +384,7 @@ class BuckMetadataBzlHandler(BaseStarlarkManifestHandler):
                 type=metadata_fields.get('upstream_type', cls.default_package_type),
                 name=metadata_fields.get('name'),
                 version=metadata_fields.get('version'),
-                declared_license=metadata_fields.get('licenses', []),
+                extracted_license_statement=metadata_fields.get('licenses', []),
                 parties=parties,
                 homepage_url=metadata_fields.get('upstream_address', ''),
                 # TODO: Store 'upstream_hash` somewhere
@@ -352,7 +407,7 @@ class BuckMetadataBzlHandler(BaseStarlarkManifestHandler):
                 type=metadata_fields.get('package_type', cls.default_package_type),
                 name=metadata_fields.get('name'),
                 version=metadata_fields.get('version'),
-                declared_license=metadata_fields.get('license_expression', ''),
+                extracted_license_statement=metadata_fields.get('license_expression', ''),
                 parties=parties,
                 homepage_url=metadata_fields.get('homepage_url', ''),
                 download_url=metadata_fields.get('download_url', ''),
@@ -360,24 +415,6 @@ class BuckMetadataBzlHandler(BaseStarlarkManifestHandler):
                 sha1=metadata_fields.get('download_archive_sha1', ''),
                 extra_data=dict(vcs_commit_hash=metadata_fields.get('vcs_commit_hash', ''))
             )
-
-    @classmethod
-    def compute_normalized_license(cls, package):
-        declared_license = package.declared_license
-        if not declared_license:
-            return
-
-        if isinstance(declared_license, (list, tuple,)):
-            detected_licenses = [
-                models.compute_normalized_license(declared)
-                for declared in declared_license
-            ]
-
-            if detected_licenses:
-                return combine_expressions(detected_licenses)
-
-        if isinstance(declared_license, str):
-            return models.compute_normalized_license(declared_license)
 
     @classmethod
     def assign_package_to_resources(cls, package, resource, codebase, package_adder):

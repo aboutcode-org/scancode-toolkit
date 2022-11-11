@@ -1,6 +1,7 @@
 ---
 license_expression: other-permissive
 is_license_notice: yes
+minimum_coverage: 50
 notes: Seen in gettext
 ---
 

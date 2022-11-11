@@ -30,12 +30,59 @@
     "code_view_url": null,
     "vcs_url": null,
     "copyright": "\u00a9 2005 Free Software Foundation <www.fsf.org>",
-    "license_expression": "gpl-1.0-plus",
-    "declared_license": {
-      "LegalCopyright": "\u00a9 2005 Free Software Foundation <www.fsf.org>",
-      "LegalTrademarks": "GNU\u00ae, GetText\u00ae, libintl3\u00ae",
-      "License": "This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License;see www.gnu.org/copyleft/gpl.html."
-    },
+    "declared_license_expression": "gpl-1.0-plus",
+    "declared_license_expression_spdx": "GPL-1.0-or-later",
+    "license_detections": [
+      {
+        "license_expression": "gpl-1.0-plus",
+        "detection_log": [
+          "not-combined"
+        ],
+        "matches": [
+          {
+            "score": 100.0,
+            "start_line": 1,
+            "end_line": 1,
+            "matched_length": 29,
+            "match_coverage": 100.0,
+            "matcher": "1-hash",
+            "license_expression": "gpl-1.0-plus",
+            "rule_identifier": "gpl-1.0-plus_569.RULE",
+            "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-1.0-plus_569.RULE",
+            "referenced_filenames": [],
+            "is_license_text": false,
+            "is_license_notice": true,
+            "is_license_reference": false,
+            "is_license_tag": false,
+            "is_license_intro": false,
+            "rule_length": 29,
+            "rule_relevance": 100,
+            "matched_text": "This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License;see www.gnu.org/copyleft/gpl.html.",
+            "licenses": [
+              {
+                "key": "gpl-1.0-plus",
+                "name": "GNU General Public License 1.0 or later",
+                "short_name": "GPL 1.0 or later",
+                "category": "Copyleft",
+                "is_exception": false,
+                "is_unknown": false,
+                "owner": "Free Software Foundation (FSF)",
+                "homepage_url": "http://www.gnu.org/licenses/old-licenses/gpl-1.0-standalone.html",
+                "text_url": "http://www.gnu.org/licenses/old-licenses/gpl-1.0-standalone.html",
+                "reference_url": "https://scancode-licensedb.aboutcode.org/gpl-1.0-plus",
+                "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-1.0-plus.LICENSE",
+                "spdx_license_key": "GPL-1.0-or-later",
+                "spdx_url": "https://spdx.org/licenses/GPL-1.0-or-later"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "other_license_expression": null,
+    "other_license_expression_spdx": null,
+    "other_license_detections": [],
+    "extracted_license_statement": "{'LegalCopyright': '\u00a9 2005 Free Software Foundation <www.fsf.org>', 'LegalTrademarks': 'GNU\u00ae, GetText\u00ae, libintl3\u00ae', 'License': 'This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License;see www.gnu.org/copyleft/gpl.html.'}",
     "notice_text": null,
     "source_packages": [],
     "file_references": [],

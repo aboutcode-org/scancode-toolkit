@@ -12,7 +12,7 @@ import os
 from packagedcode import build_gradle
 from packages_test_utils import build_tests
 from packages_test_utils import PackageTester
-from packages_test_utils import compute_and_set_license_expression
+from packages_test_utils import populate_license_fields
 from scancode.cli_test_utils import check_json_scan
 from scancode.cli_test_utils import run_scan_click
 from scancode_config import REGEN_TEST_FIXTURES
@@ -35,7 +35,7 @@ def check_gradle_parse(location):
     packages_data = build_gradle.BuildGradleHandler.parse(location)
     results = []
     for package_data in packages_data:
-        compute_and_set_license_expression(package_data)
+        populate_license_fields(package_data)
         results.append(package_data.to_dict())
     return results
 

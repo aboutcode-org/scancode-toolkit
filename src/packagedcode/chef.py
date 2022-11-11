@@ -190,7 +190,7 @@ class ChefMetadataJsonHandler(BaseChefMetadataHandler):
         """
         with io.open(location, encoding='utf-8') as loc:
             package_data = json.load(loc)
-        return build_package(package_data, datasource_id=cls.datasource_id)
+        yield build_package(package_data, datasource_id=cls.datasource_id)
 
 
 class ChefMetadataRbHandler(BaseChefMetadataHandler):
@@ -213,7 +213,7 @@ class ChefMetadataRbHandler(BaseChefMetadataHandler):
             ChefMetadataFormatter()
         )
         package_data = json.loads(formatted_file_contents)
-        return build_package(package_data, datasource_id=cls.datasource_id)
+        yield build_package(package_data, datasource_id=cls.datasource_id)
 
 
 def build_package(package_data, datasource_id):
@@ -239,12 +239,10 @@ def build_package(package_data, datasource_id):
     # TODO: combine descriptions as done elsewhere
     description = package_data.get('description', '') or package_data.get('long_description', '')
     lic = package_data.get('license', '')
-    declared_license = None
-    license_expression = None
+    extracted_license_statement = None
     if lic:
-        declared_license=lic.strip()
-        if declared_license:
-            license_expression = models.compute_normalized_license(declared_license)
+        extracted_license_statement=lic.strip()
+
     code_view_url = package_data.get('source_url', '')
     bug_tracking_url = package_data.get('issues_url', '')
 
@@ -263,15 +261,14 @@ def build_package(package_data, datasource_id):
             )
         )
 
-    yield models.PackageData(
+    return models.PackageData(
         datasource_id=datasource_id,
         type=ChefMetadataJsonHandler.default_package_type,
         name=name,
         version=version,
         parties=parties,
         description=description.strip() or None,
-        declared_license=declared_license,
-        license_expression=license_expression,
+        extracted_license_statement=extracted_license_statement,
         code_view_url=code_view_url.strip() or None,
         bug_tracking_url=bug_tracking_url.strip() or None,
         dependencies=dependencies,

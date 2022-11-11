@@ -232,8 +232,7 @@ def make_test(license_test, unknown_detection=False, regen=REGEN_TEST_FIXTURES):
 
             for match in matches:
                 qtext, itext = get_texts(match)
-                rule_text_file = match.rule.text_file()
-                rule_data_file = match.rule.data_file()
+                rule_file = match.rule.rule_file()
                 results_failure_trace.extend(['',
                     '======= MATCH ====', repr(match),
                     '======= Matched Query Text for:',
@@ -246,8 +245,7 @@ def make_test(license_test, unknown_detection=False, regen=REGEN_TEST_FIXTURES):
                 results_failure_trace.append(qtext)
                 results_failure_trace.extend(['',
                     '======= Matched Rule Text for:',
-                    f'file://{rule_text_file}',
-                    f'file://{rule_data_file}',
+                    f'file://{rule_file}',
                     '',
                     itext,
                 ])

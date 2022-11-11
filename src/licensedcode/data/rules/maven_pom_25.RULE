@@ -2,6 +2,8 @@
 license_expression: unknown
 is_license_reference: yes
 relevance: 100
+referenced_filenames:
+    - LICENSE.txt
 ---
 
 License: Specification License  (LICENSE.txt)

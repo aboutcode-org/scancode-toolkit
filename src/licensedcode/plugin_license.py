@@ -9,21 +9,26 @@
 
 import logging
 import os
-import posixpath
 from functools import partial
 
 import attr
 from commoncode.cliutils import PluggableCommandLineOption
-from commoncode.cliutils import SCAN_OPTIONS_GROUP
 from commoncode.cliutils import SCAN_GROUP
-from commoncode.resource import clean_path
+from commoncode.cliutils import SCAN_OPTIONS_GROUP
 from plugincode.scan import ScanPlugin
 from plugincode.scan import scan_impl
-
+from license_expression import Licensing
+from licensedcode.cache import build_spdx_license_expression, get_cache
+from licensedcode.detection import DetectionCategory
+from licensedcode.detection import find_referenced_resource
+from licensedcode.detection import get_detected_license_expression
+from licensedcode.detection import get_matches_from_detection_mappings
+from licensedcode.detection import get_referenced_filenames
+from licensedcode.detection import SCANCODE_LICENSEDB_URL
+from packagedcode.utils import combine_expressions
 from scancode.api import SCANCODE_LICENSEDB_URL
-from licensedcode.license_db import dump_license_data
 
-TRACE = os.environ.get('SCANCODE_DEBUG_LICENSE_PLUGIN', False)
+TRACE = os.environ.get('SCANCODE_DEBUG_PLUGIN_LICENSE', False)
 
 
 def logger_debug(*args):
@@ -47,8 +52,10 @@ class LicenseScanner(ScanPlugin):
     """
 
     resource_attributes = dict([
-        ('licenses', attr.ib(default=attr.Factory(list))),
-        ('license_expressions', attr.ib(default=attr.Factory(list))),
+        ('detected_license_expression', attr.ib(default=None)),
+        ('detected_license_expression_spdx', attr.ib(default=None)),
+        ('license_detections', attr.ib(default=attr.Factory(list))),
+        ('license_clues', attr.ib(default=attr.Factory(list))),
         ('percentage_of_license_text', attr.ib(default=0)),
     ])
 
@@ -92,13 +99,11 @@ class LicenseScanner(ScanPlugin):
                  'Curly braces ({}) are replaced by the license key.',
             help_group=SCAN_OPTIONS_GROUP,
         ),
-
         PluggableCommandLineOption(
             ('--unknown-licenses',),
             is_flag=True,
             required_options=['license'],
-            help='[EXPERIMENTAL] Detect unknown licenses and follow license '
-                 'references such as "See license in file COPYING".',
+            help='[EXPERIMENTAL] Detect unknown licenses. ',
             help_group=SCAN_OPTIONS_GROUP,
         ),
     ]
@@ -133,12 +138,10 @@ class LicenseScanner(ScanPlugin):
             unknown_licenses=unknown_licenses,
         )
 
-    def process_codebase(self, codebase, unknown_licenses, **kwargs):
+    def process_codebase(self, codebase, **kwargs):
         """
-        Post process the codebase to further detect unknown licenses and follow
-        license references to other files.
-
-        This is an EXPERIMENTAL feature for now.
+        Post-processing to follow license references to other files and add
+        `is_builtin` flags to licenses, if applicable.
         """
         from licensedcode import cache
         cche = cache.get_cache()
@@ -170,10 +173,9 @@ class LicenseScanner(ScanPlugin):
             if TRACE:
                 license_expressions_before = list(resource.license_expressions)
 
-            if unknown_licenses:
-                modified = add_referenced_filenames_license_matches(resource, codebase)
+            modified = add_referenced_license_matches_for_detections(resource, codebase)
 
-            if has_additional_licenses and resource.is_file and resource.licenses:
+            if has_additional_licenses and resource.is_file and resource.license_detections:
                 add_builtin_license_flag(resource, licenses)
 
             if TRACE and modified:
@@ -192,20 +194,33 @@ def add_builtin_license_flag(resource, licenses):
     additional licenses present in the cache, either through an additional
     license directory or additional license plugins.
     """
-    for match in resource.licenses:
-        add_builtin_value(license_match=match, licenses=licenses)
+    for detection in resource.license_detections:
+        for match in detection["matches"]:
+            add_builtin_value(license_match=match, licenses=licenses)
 
 
 def add_builtin_value(license_match, licenses):
-    license_key = license_match['key']
-    lic = licenses.get(license_key)
-    if lic.is_builtin:
-        license_match['matched_rule']['is_builtin'] = True
+    """
+    Add `is_builtin` flags and the corresponding values for each
+    license rule data mapping.
+    """
+    license_expression = license_match['license_expression']
+    license_keys = Licensing().license_keys(
+        license_expression,
+        unique=True,
+        simple=True,
+    )
+
+    if all([
+        licenses.get(license_key).is_builtin
+        for license_key in license_keys
+    ]):
+        license_match['is_builtin'] = True
     else:
-        license_match['matched_rule']['is_builtin'] = False
+        license_match['is_builtin'] = False
 
 
-def add_referenced_filenames_license_matches(resource, codebase):
+def add_referenced_license_matches_for_detections(resource, codebase):
     """
     Return an updated ``resource`` saving it in place, after adding new license
     matches (licenses and license_expressions) following their Rule
@@ -215,65 +230,61 @@ def add_referenced_filenames_license_matches(resource, codebase):
     if not resource.is_file:
         return
 
-    license_matches = resource.licenses
-    if not license_matches:
+    license_detections = resource.license_detections
+    if not license_detections:
         return
-
-    license_expressions = resource.license_expressions
 
     modified = False
 
-    for referenced_filename in get_referenced_filenames(license_matches):
-        referenced_resource = find_referenced_resource(
-            referenced_filename=referenced_filename,
-            resource=resource,
-            codebase=codebase,
-        )
+    for detection in license_detections:
+        detection_modified = False
+        matches = detection["matches"]
+        referenced_filenames = get_referenced_filenames(matches)
+        if not referenced_filenames:
+            continue 
+        
+        for referenced_filename in referenced_filenames:
+            referenced_resource = find_referenced_resource(
+                referenced_filename=referenced_filename,
+                resource=resource,
+                codebase=codebase,
+            )
 
-        if referenced_resource and referenced_resource.licenses:
-            modified = True
-            # TODO: we should hint that these matches were defererenced from
-            # following a referenced filename
-            license_matches.extend(referenced_resource.licenses)
-            license_expressions.extend(referenced_resource.license_expressions)
+            if referenced_resource and referenced_resource.license_detections:
+                modified = True
+                detection_modified = True
+                matches.extend(
+                    get_matches_from_detection_mappings(
+                        license_detections=referenced_resource.license_detections
+                    )
+                )
+
+        if not detection_modified:
+            continue
+
+        detection_log, license_expression = get_detected_license_expression(
+            matches=matches,
+            analysis=DetectionCategory.UNKNOWN_FILE_REFERENCE_LOCAL.value,
+            post_scan=True,
+        )
+        detection["license_expression"] = str(license_expression)
+        detection["detection_log"] = detection_log
 
     if modified:
+        license_expressions = [
+            detection["license_expression"]
+            for detection in resource.license_detections
+        ]
+        resource.detected_license_expression = combine_expressions(
+            expressions=license_expressions,
+            relation='AND',
+            unique=True,
+        )
+
+        resource.detected_license_expression_spdx = str(build_spdx_license_expression(
+            license_expression=resource.detected_license_expression,
+            licensing=get_cache().licensing,
+        ))
+
         codebase.save_resource(resource)
-        return resource
-
-
-def get_referenced_filenames(license_matches):
-    """
-    Return a list of unique referenced filenames found in the rules of a list of
-    ``license_matches``
-    """
-    unique_filenames = []
-    for license_match in license_matches:
-        for filename in license_match['matched_rule']['referenced_filenames']:
-            if filename not in unique_filenames:
-                unique_filenames.append(filename)
-
-    return unique_filenames
-
-
-def find_referenced_resource(referenced_filename, resource, codebase, **kwargs):
-    """
-    Return a Resource matching the ``referenced_filename`` path or filename
-    given a ``resource`` in ``codebase``. Return None if the
-    ``referenced_filename`` cannot be found in the same directory as the base
-    ``resource``. ``referenced_filename`` is the path or filename referenced in
-    a LicenseMatch of ``resource``,
-    """
-    if not resource:
-        return
-
-    parent_path = resource.parent_path()
-    if not parent_path:
-        return
-
-    # this can be a path or a plain name
-    referenced_filename = clean_path(referenced_filename)
-    path = posixpath.join(parent_path, referenced_filename)
-    resource = codebase.get_resource(path=path)
-    if resource:
         return resource

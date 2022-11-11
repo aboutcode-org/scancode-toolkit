@@ -4,7 +4,7 @@
   "name": "org.fusesource.leveldbjni.leveldbjni-all",
   "version": "1.8.0",
   "description": "leveldbjni-all\nAn uber jar which contains all the leveldbjni platform libraries and dependencies",
-  "declared_license": "http://www.opensource.org/licenses/BSD-3-Clause",
+  "extracted_license_statement": "http://www.opensource.org/licenses/BSD-3-Clause",
   "copyright": null,
   "homepage_url": null,
   "documentation_url": "http://fusesource.com/",

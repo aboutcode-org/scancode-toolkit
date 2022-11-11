@@ -8,11 +8,15 @@
 #
 
 import attr
+from collections import Counter
+
 from commoncode.cliutils import PluggableCommandLineOption
 from commoncode.cliutils import POST_SCAN_GROUP
 from license_expression import Licensing
 from plugincode.post_scan import PostScanPlugin
 from plugincode.post_scan import post_scan_impl
+
+from licensedcode.detection import LicenseDetection
 
 # Set to True to enable debug tracing
 TRACE = False
@@ -39,7 +43,10 @@ class LicensesReference(PostScanPlugin):
     """
     Add a reference list of all licenses data and text.
     """
-    codebase_attributes = dict(licenses_reference=attr.ib(default=attr.Factory(list)))
+    codebase_attributes = dict(
+        license_references=attr.ib(default=attr.Factory(list)),
+        rule_references=attr.ib(default=attr.Factory(list))
+    )
 
     sort_order = 500
 
@@ -55,30 +62,242 @@ class LicensesReference(PostScanPlugin):
         return licenses_reference
 
     def process_codebase(self, codebase, licenses_reference, **kwargs):
-        from licensedcode.cache import get_licenses_db
-        licensing = Licensing()
+        """
+        Get unique License and Rule data from all license detections in a codebase-level
+        list and only refer to them in the resource level detections. 
+        """
+        licexps = []
+        rules_data = []
 
-        license_keys = set()
+        if hasattr(codebase.attributes, 'packages'):
+            codebase_packages = codebase.attributes.packages
+            for pkg in codebase_packages:
+                rules_data.extend(
+                    get_license_rules_reference_data(
+                        license_detections=pkg['license_detections']
+                    )
+                )
+                licexps.append(pkg['declared_license_expression'])
 
         for resource in codebase.walk():
-            licexps = getattr(resource, 'license_expressions', []) or []
-            for expression in licexps:
-                if expression:
-                    license_keys.update(licensing.license_keys(expression))
 
-        packages = getattr(codebase, 'packages', []) or []
-        for package in packages:
-            # FXIME: license_expression attribute name is changing soon
-            expression = package.get('license_expression')
-            if expression:
-                license_keys.update(licensing.license_keys(expression))
+            # Get license_expressions from both package and license detections
+            license_licexp = getattr(resource, 'detected_license_expression')
+            if license_licexp:
+                licexps.append(license_licexp)
+            package_data = getattr(resource, 'package_data', []) or []
+            package_licexps = [
+                pkg['declared_license_expression']
+                for pkg in package_data
+            ]
+            licexps.extend(package_licexps)
 
-                resource.save(codebase)
+            # Get license matches from both package and license detections
+            package_license_detections = []
+            for pkg in package_data:
+                if not pkg['license_detections']:
+                    continue
 
-        db = get_licenses_db()
-        for key in sorted(license_keys):
-            license_details = db[key].to_dict(
-                include_ignorables=False,
-                include_text=True,
+                package_license_detections.extend(pkg['license_detections'])
+
+            rules_data.extend(
+                get_license_rules_reference_data(license_detections=package_license_detections)
             )
-            codebase.attributes.licenses_reference.append(license_details)
+
+            license_detections = getattr(resource, 'license_detections', []) or []
+            license_clues = getattr(resource, 'license_clues', []) or []
+            rules_data.extend(
+                get_license_rules_reference_data(
+                    license_detections=license_detections,
+                    license_clues=license_clues,
+                )
+            )
+
+            codebase.save_resource(resource)
+
+        license_references = get_license_references(license_expressions=licexps)
+        codebase.attributes.license_references.extend(license_references)
+
+        rule_references = get_unique_rule_references(rules_data=rules_data)
+        codebase.attributes.rule_references.extend(rule_references)
+
+
+def get_license_references(license_expressions, licensing=Licensing()):
+    """
+    Get a list of unique License data from a list of `license_expression` strings.
+    """
+    from licensedcode.cache import get_licenses_db
+
+    license_keys = set()
+    license_references = []
+
+    for expression in license_expressions:
+        if expression:
+            license_keys.update(licensing.license_keys(expression))
+
+    db = get_licenses_db()
+    for key in sorted(license_keys):
+        license_references.append(
+            db[key].to_dict(include_ignorables=False, include_text=True)
+        )
+
+    return license_references
+
+
+def get_unique_rule_references(rules_data):
+    """
+    Get a list of unique Rule data from a list of Rule data.
+    """
+    rule_identifiers = set()
+    rules_references = []
+
+    for rule_data in rules_data:
+
+        rule_identifier = rule_data['rule_identifier']
+        if rule_identifier not in rule_identifiers:
+            rule_identifiers.update(rule_identifier)
+            rules_references.append(rule_data)
+
+    return rules_references
+
+
+def get_license_rules_reference_data(license_detections, license_clues=None):
+    """
+    Get Rule data for references from a list of LicenseDetections.
+
+    Also removes this data from the list of LicenseMatch in detections,
+    apart from the `rule_identifier` as this data is referenced at top-level
+    by this attribute.
+    """
+    rule_identifiers = set()
+    rules_reference_data = []
+
+    if license_detections:
+
+        for detection in license_detections:
+            if not detection:
+                continue
+
+            for match in detection['matches']:
+
+                rule_identifier = match['rule_identifier']
+                ref_data = get_reference_data(match)
+
+                if rule_identifier not in rule_identifiers:
+                    rule_identifiers.update(rule_identifier)
+                    rules_reference_data.append(ref_data)
+    
+    if license_clues:
+
+        for match in license_clues:
+
+            rule_identifier = match['rule_identifier']
+            ref_data = get_reference_data(match)
+
+            if rule_identifier not in rule_identifiers:
+                rule_identifiers.update(rule_identifier)
+                rules_reference_data.append(ref_data)
+
+    return rules_reference_data
+
+
+def get_reference_data(match):
+
+    ref_data = {}
+    ref_data['license_expression'] = match['license_expression']
+    ref_data['rule_identifier'] = match['rule_identifier']
+    ref_data['referenced_filenames'] = match.pop('referenced_filenames')
+    ref_data['is_license_text'] = match.pop('is_license_text')
+    ref_data['is_license_notice'] = match.pop('is_license_notice')
+    ref_data['is_license_reference'] = match.pop('is_license_reference')
+    ref_data['is_license_tag'] = match.pop('is_license_tag')
+    ref_data['is_license_intro'] = match.pop('is_license_intro')
+    ref_data['rule_length'] = match.pop('rule_length')
+    ref_data['rule_relevance'] = match.pop('rule_relevance')
+
+    if 'matched_text' in match:
+        ref_data['matched_text'] = match.pop('matched_text')
+
+    _ = match.pop('licenses')
+
+    return ref_data
+
+
+def get_license_detection_references(license_detections_by_path):
+    """
+    Get LicenseDetection data for references from a mapping of path:[LicenseDetection],
+    i.e. path and a list of LicenseDetection at that path.
+
+    Also removes `matches` and `detection_log` from each LicenseDetection mapping
+    and only keeps a LicenseExpression string and an computed identifier per detection,
+    as this LicenseDetection data is referenced at top-level by the identifier.
+    """
+    detection_objects = []
+
+    for path, detections in license_detections_by_path.items():
+
+        for detection in detections:
+            detection_obj = LicenseDetection(**detection)
+            _matches = detection.pop('matches')
+            _detection_log = detection.pop('detection_log')
+            detection_obj.file_region = detection_obj.get_file_region(path=path)
+            detection["id"] = detection_obj.identifier
+
+            detection_objects.append(detection_obj)
+
+    detection_references = UniqueDetection.get_unique_detections(detection_objects)
+    return detection_references
+
+
+@attr.s
+class UniqueDetection:
+    """
+    An unique License Detection.
+    """
+    unique_identifier = attr.ib(type=int)
+    license_detection = attr.ib()
+    files = attr.ib(factory=list)
+
+    @classmethod
+    def get_unique_detections(cls, license_detections):
+        """
+        Get all unique license detections from a list of
+        LicenseDetections.
+        """
+        identifiers = get_identifiers(license_detections)
+        unique_detection_counts = dict(Counter(identifiers))
+
+        unique_license_detections = []
+        for detection_identifier in unique_detection_counts.keys():
+            file_regions = (
+                detection.file_region
+                for detection in license_detections
+                if detection_identifier == detection.identifier
+            )
+            all_detections = (
+                detection
+                for detection in license_detections
+                if detection_identifier == detection.identifier
+            )
+
+            detection = next(all_detections)
+            unique_license_detections.append(
+                cls(
+                    files=list(file_regions),
+                    license_detection=attr.asdict(detection),
+                    unique_identifier=detection.identifier,
+                )
+            )
+
+        return unique_license_detections
+
+
+def get_identifiers(license_detections):
+    """
+    Get identifiers for all license detections.
+    """
+    identifiers = (
+        detection.identifier
+        for detection in license_detections
+    )
+    return identifiers

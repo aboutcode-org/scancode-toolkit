@@ -2,7 +2,9 @@
 license_expression: apache-2.0
 is_license_notice: yes
 relevance: 100
+referenced_filenames:
+    - LICENSE
 ---
 
-License
-This software is licensed under the Apache License, version 2 ("ALv2").
+# Li`cense
+  released under the Apache 2.0 license. See the [LICENSE](LICENSE) file for details.

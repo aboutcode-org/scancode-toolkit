@@ -3,7 +3,9 @@ license_expression: gpl-2.0-plus
 is_license_notice: yes
 relevance: 100
 minimum_coverage: 100
+referenced_filenames:
+    - INHERIT_LICENSE_FROM_PACKAGE
 ---
 
 GNU GPL:
-This file is distributed under the same license as the dialog package.
+This file is distributed under the same license as the {{dialog}} package.

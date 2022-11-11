@@ -16,6 +16,7 @@ from commoncode.cliutils import OUTPUT_GROUP
 from formattedcode import FileOptionType
 from plugincode.output import output_impl
 from plugincode.output import OutputPlugin
+from licensedcode.detection import get_matches_from_detection_mappings
 
 from scancode import notice
 
@@ -138,15 +139,13 @@ def build_license(scanned_file):
     `scanned_file` or None if no license is detected.
     """
     # TODO: filter based on license scores and/or add warnings and or detailed comments with that info
-    license_expressions = scanned_file.get('license_expressions', [])
-    if not license_expressions:
-        return
-
     # TODO: use either Debian license symbols or SPDX
     # TODO: convert license expression to Debian style of expressions
-    expression = str(combine_expressions(license_expressions, unique=False))
+    expression = scanned_file.get('detected_license_expression', None)
+    if not expression:
+        return
 
-    licenses = scanned_file.get('licenses', [])
+    licenses = scanned_file.get('license_detections', [])
     text = '\n'.join(get_texts(licenses))
     return f'{expression}\n{text}'
 
@@ -179,8 +178,8 @@ def get_texts(detected_licenses):
 
     # set of (start line, end line, matched_rule identifier)
     seen = set()
-    for lic in detected_licenses:
-        key = lic['start_line'], lic['end_line'], lic['matched_rule']['identifier']
+    for lic in get_matches_from_detection_mappings(detected_licenses):
+        key = lic['start_line'], lic['end_line'], lic['rule_identifier']
         if key not in seen:
             yield lic['matched_text']
             seen.add(key)

@@ -4,7 +4,7 @@
   "name": "Undertow WebSockets JSR356 implementations",
   "version": "2.0.14.Final",
   "description": "",
-  "declared_license": null,
+  "extracted_license_statement": null,
   "copyright": null,
   "homepage_url": "http://www.jboss.org/undertow-parent/undertow-websockets-jsr",
   "documentation_url": null,
