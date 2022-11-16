@@ -120,6 +120,9 @@ Installation as an Application: Downloading Releases
 
     ScanCode app archives come with packaged with all required dependencies except
     for Python that has to be downloaded and installed separately.
+    On more recent versions of Ubuntu, you'll have to install Python 3.8 manually.
+    One possibility to do so is to use Deadsnakes' PPA:
+          sudo apt update && sudo apt upgrade && sudo add-apt-repository ppa:deadsnakes/ppa -y && sudo apt install python3.8 python3.8-distutils
 
 
 
