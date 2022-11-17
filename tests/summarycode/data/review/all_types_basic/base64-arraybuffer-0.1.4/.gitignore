@@ -1,0 +1,6 @@
+/nbproject
+node_modules/
+*.idea
+*.iml
+test/
+npm-debug.log

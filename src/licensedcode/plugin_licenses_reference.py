@@ -61,7 +61,7 @@ class LicensesReference(PostScanPlugin):
     def is_enabled(self, licenses_reference, **kwargs):
         return licenses_reference
 
-    def process_codebase(self, codebase, licenses_reference, **kwargs):
+    def process_codebase(self, codebase, **kwargs):
         """
         Get unique License and Rule data from all license detections in a codebase-level
         list and only refer to them in the resource level detections. 
@@ -221,83 +221,3 @@ def get_reference_data(match):
     _ = match.pop('licenses')
 
     return ref_data
-
-
-def get_license_detection_references(license_detections_by_path):
-    """
-    Get LicenseDetection data for references from a mapping of path:[LicenseDetection],
-    i.e. path and a list of LicenseDetection at that path.
-
-    Also removes `matches` and `detection_log` from each LicenseDetection mapping
-    and only keeps a LicenseExpression string and an computed identifier per detection,
-    as this LicenseDetection data is referenced at top-level by the identifier.
-    """
-    detection_objects = []
-
-    for path, detections in license_detections_by_path.items():
-
-        for detection in detections:
-            detection_obj = LicenseDetection(**detection)
-            _matches = detection.pop('matches')
-            _detection_log = detection.pop('detection_log')
-            detection_obj.file_region = detection_obj.get_file_region(path=path)
-            detection["id"] = detection_obj.identifier
-
-            detection_objects.append(detection_obj)
-
-    detection_references = UniqueDetection.get_unique_detections(detection_objects)
-    return detection_references
-
-
-@attr.s
-class UniqueDetection:
-    """
-    An unique License Detection.
-    """
-    unique_identifier = attr.ib(type=int)
-    license_detection = attr.ib()
-    files = attr.ib(factory=list)
-
-    @classmethod
-    def get_unique_detections(cls, license_detections):
-        """
-        Get all unique license detections from a list of
-        LicenseDetections.
-        """
-        identifiers = get_identifiers(license_detections)
-        unique_detection_counts = dict(Counter(identifiers))
-
-        unique_license_detections = []
-        for detection_identifier in unique_detection_counts.keys():
-            file_regions = (
-                detection.file_region
-                for detection in license_detections
-                if detection_identifier == detection.identifier
-            )
-            all_detections = (
-                detection
-                for detection in license_detections
-                if detection_identifier == detection.identifier
-            )
-
-            detection = next(all_detections)
-            unique_license_detections.append(
-                cls(
-                    files=list(file_regions),
-                    license_detection=attr.asdict(detection),
-                    unique_identifier=detection.identifier,
-                )
-            )
-
-        return unique_license_detections
-
-
-def get_identifiers(license_detections):
-    """
-    Get identifiers for all license detections.
-    """
-    identifiers = (
-        detection.identifier
-        for detection in license_detections
-    )
-    return identifiers

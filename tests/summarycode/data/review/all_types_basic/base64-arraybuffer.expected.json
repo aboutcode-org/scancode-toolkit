@@ -1,0 +1,1154 @@
+{
+  "dependencies": [
+    {
+      "purl": "pkg:npm/grunt",
+      "extracted_requirement": "^0.4.5",
+      "scope": "devDependencies",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": false,
+      "resolved_package": {},
+      "extra_data": {},
+      "dependency_uid": "pkg:npm/grunt?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:npm/base64-arraybuffer@0.1.4?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "base64-arraybuffer-0.1.4/package.json",
+      "datasource_id": "npm_package_json"
+    },
+    {
+      "purl": "pkg:npm/grunt-cli",
+      "extracted_requirement": "^0.1.13",
+      "scope": "devDependencies",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": false,
+      "resolved_package": {},
+      "extra_data": {},
+      "dependency_uid": "pkg:npm/grunt-cli?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:npm/base64-arraybuffer@0.1.4?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "base64-arraybuffer-0.1.4/package.json",
+      "datasource_id": "npm_package_json"
+    },
+    {
+      "purl": "pkg:npm/grunt-contrib-jshint",
+      "extracted_requirement": "^0.11.2",
+      "scope": "devDependencies",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": false,
+      "resolved_package": {},
+      "extra_data": {},
+      "dependency_uid": "pkg:npm/grunt-contrib-jshint?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:npm/base64-arraybuffer@0.1.4?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "base64-arraybuffer-0.1.4/package.json",
+      "datasource_id": "npm_package_json"
+    },
+    {
+      "purl": "pkg:npm/grunt-contrib-nodeunit",
+      "extracted_requirement": "^0.4.1",
+      "scope": "devDependencies",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": false,
+      "resolved_package": {},
+      "extra_data": {},
+      "dependency_uid": "pkg:npm/grunt-contrib-nodeunit?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:npm/base64-arraybuffer@0.1.4?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "base64-arraybuffer-0.1.4/package.json",
+      "datasource_id": "npm_package_json"
+    },
+    {
+      "purl": "pkg:npm/grunt-contrib-watch",
+      "extracted_requirement": "^0.6.1",
+      "scope": "devDependencies",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": false,
+      "resolved_package": {},
+      "extra_data": {},
+      "dependency_uid": "pkg:npm/grunt-contrib-watch?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:npm/base64-arraybuffer@0.1.4?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "base64-arraybuffer-0.1.4/package.json",
+      "datasource_id": "npm_package_json"
+    }
+  ],
+  "packages": [
+    {
+      "type": "npm",
+      "namespace": null,
+      "name": "base64-arraybuffer",
+      "version": "0.1.4",
+      "qualifiers": {},
+      "subpath": null,
+      "primary_language": "JavaScript",
+      "description": "Encode/decode base64 data into ArrayBuffers",
+      "release_date": null,
+      "parties": [
+        {
+          "type": "person",
+          "role": "author",
+          "name": "Niklas von Hertzen",
+          "email": "niklasvh@gmail.com",
+          "url": "http://hertzen.com"
+        }
+      ],
+      "keywords": [],
+      "homepage_url": "https://github.com/niklasvh/base64-arraybuffer",
+      "download_url": "https://registry.npmjs.org/base64-arraybuffer/-/base64-arraybuffer-0.1.4.tgz",
+      "size": null,
+      "sha1": null,
+      "md5": null,
+      "sha256": null,
+      "sha512": null,
+      "bug_tracking_url": "https://github.com/niklasvh/base64-arraybuffer/issues",
+      "code_view_url": null,
+      "vcs_url": "git+https://github.com/niklasvh/base64-arraybuffer",
+      "copyright": null,
+      "declared_license_expression": "mit",
+      "declared_license_expression_spdx": "MIT",
+      "license_detections": [
+        {
+          "license_expression": "mit",
+          "detection_log": [
+            "not-combined"
+          ],
+          "matches": [
+            {
+              "score": 100.0,
+              "start_line": 1,
+              "end_line": 1,
+              "matched_length": 1,
+              "match_coverage": 100.0,
+              "matcher": "1-spdx-id",
+              "license_expression": "mit",
+              "rule_identifier": "spdx-license-identifier: mit",
+              "rule_url": null,
+              "referenced_filenames": [],
+              "is_license_text": false,
+              "is_license_notice": false,
+              "is_license_reference": false,
+              "is_license_tag": true,
+              "is_license_intro": false,
+              "rule_length": 1,
+              "rule_relevance": 100,
+              "matched_text": "MIT",
+              "licenses": [
+                {
+                  "key": "mit",
+                  "name": "MIT License",
+                  "short_name": "MIT License",
+                  "category": "Permissive",
+                  "is_exception": false,
+                  "is_unknown": false,
+                  "owner": "MIT",
+                  "homepage_url": "http://opensource.org/licenses/mit-license.php",
+                  "text_url": "http://opensource.org/licenses/mit-license.php",
+                  "reference_url": "https://scancode-licensedb.aboutcode.org/mit",
+                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE",
+                  "spdx_license_key": "MIT",
+                  "spdx_url": "https://spdx.org/licenses/MIT"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "license_expression": "mit",
+          "detection_log": [
+            "not-combined"
+          ],
+          "matches": [
+            {
+              "score": 100.0,
+              "start_line": 1,
+              "end_line": 1,
+              "matched_length": 2,
+              "match_coverage": 100.0,
+              "matcher": "2-aho",
+              "license_expression": "mit",
+              "rule_identifier": "mit_30.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_30.RULE",
+              "referenced_filenames": [],
+              "is_license_text": false,
+              "is_license_notice": false,
+              "is_license_reference": false,
+              "is_license_tag": true,
+              "is_license_intro": false,
+              "rule_length": 2,
+              "rule_relevance": 100,
+              "matched_text": "https://github.com/niklasvh/base64-arraybuffer/blob/master/LICENSE-MIT",
+              "licenses": [
+                {
+                  "key": "mit",
+                  "name": "MIT License",
+                  "short_name": "MIT License",
+                  "category": "Permissive",
+                  "is_exception": false,
+                  "is_unknown": false,
+                  "owner": "MIT",
+                  "homepage_url": "http://opensource.org/licenses/mit-license.php",
+                  "text_url": "http://opensource.org/licenses/mit-license.php",
+                  "reference_url": "https://scancode-licensedb.aboutcode.org/mit",
+                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE",
+                  "spdx_license_key": "MIT",
+                  "spdx_url": "https://spdx.org/licenses/MIT"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "other_license_expression": null,
+      "other_license_expression_spdx": null,
+      "other_license_detections": [],
+      "extracted_license_statement": "[{'type': 'MIT', 'url': 'https://github.com/niklasvh/base64-arraybuffer/blob/master/LICENSE-MIT'}]",
+      "notice_text": null,
+      "source_packages": [],
+      "extra_data": {},
+      "repository_homepage_url": "https://www.npmjs.com/package/base64-arraybuffer",
+      "repository_download_url": "https://registry.npmjs.org/base64-arraybuffer/-/base64-arraybuffer-0.1.4.tgz",
+      "api_data_url": "https://registry.npmjs.org/base64-arraybuffer/0.1.4",
+      "package_uid": "pkg:npm/base64-arraybuffer@0.1.4?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_paths": [
+        "base64-arraybuffer-0.1.4/package.json"
+      ],
+      "datasource_ids": [
+        "npm_package_json"
+      ],
+      "purl": "pkg:npm/base64-arraybuffer@0.1.4"
+    }
+  ],
+  "review": [
+    {
+      "licenses": [
+        {
+          "detection_id": "license#1",
+          "detection": {
+            "license_expression": null,
+            "detection_log": [
+              "license-clues"
+            ],
+            "matches": [
+              {
+                "score": 11.9,
+                "start_line": 18,
+                "end_line": 20,
+                "matched_length": 5,
+                "match_coverage": 11.9,
+                "matcher": "3-seq",
+                "license_expression": "apache-2.0 AND proprietary-license",
+                "rule_identifier": "apache-2.0_and_proprietary-license_5.RULE",
+                "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_and_proprietary-license_5.RULE",
+                "referenced_filenames": [],
+                "is_license_text": false,
+                "is_license_notice": true,
+                "is_license_reference": false,
+                "is_license_tag": false,
+                "is_license_intro": false,
+                "rule_length": 42,
+                "rule_relevance": 100,
+                "licenses": [
+                  {
+                    "key": "apache-2.0",
+                    "name": "Apache License 2.0",
+                    "short_name": "Apache 2.0",
+                    "category": "Permissive",
+                    "is_exception": false,
+                    "is_unknown": false,
+                    "owner": "Apache Software Foundation",
+                    "homepage_url": "http://www.apache.org/licenses/",
+                    "text_url": "http://www.apache.org/licenses/LICENSE-2.0",
+                    "reference_url": "https://scancode-licensedb.aboutcode.org/apache-2.0",
+                    "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.LICENSE",
+                    "spdx_license_key": "Apache-2.0",
+                    "spdx_url": "https://spdx.org/licenses/Apache-2.0"
+                  },
+                  {
+                    "key": "proprietary-license",
+                    "name": "Proprietary License",
+                    "short_name": "Proprietary License",
+                    "category": "Commercial",
+                    "is_exception": false,
+                    "is_unknown": false,
+                    "owner": "Unspecified",
+                    "homepage_url": null,
+                    "text_url": "",
+                    "reference_url": "https://scancode-licensedb.aboutcode.org/proprietary-license",
+                    "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/proprietary-license.LICENSE",
+                    "spdx_license_key": "LicenseRef-scancode-proprietary-license",
+                    "spdx_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/proprietary-license.LICENSE"
+                  }
+                ]
+              }
+            ]
+          },
+          "review_comments": [
+            "License clues were detected which are not proper license detections but likely has some clues about licenses, which needs review."
+          ]
+        }
+      ],
+      "packages": []
+    }
+  ],
+  "files": [
+    {
+      "path": "base64-arraybuffer-0.1.4",
+      "type": "directory",
+      "name": "base64-arraybuffer-0.1.4",
+      "base_name": "base64-arraybuffer-0.1.4",
+      "extension": "",
+      "size": 0,
+      "sha1": null,
+      "md5": null,
+      "sha256": null,
+      "mime_type": null,
+      "file_type": null,
+      "programming_language": null,
+      "is_binary": false,
+      "is_text": false,
+      "is_archive": false,
+      "is_media": false,
+      "is_source": false,
+      "is_script": false,
+      "detected_license_expression": null,
+      "detected_license_expression_spdx": null,
+      "license_detections": [],
+      "license_clues": [],
+      "percentage_of_license_text": 0,
+      "copyrights": [],
+      "holders": [],
+      "authors": [],
+      "package_data": [],
+      "for_packages": [],
+      "for_reviews": [],
+      "files_count": 8,
+      "dirs_count": 2,
+      "size_count": 8336,
+      "scan_errors": []
+    },
+    {
+      "path": "base64-arraybuffer-0.1.4/.npmignore",
+      "type": "file",
+      "name": ".npmignore",
+      "base_name": ".npmignore",
+      "extension": "",
+      "size": 35,
+      "sha1": "de4a0dded8947ec9808a6d23aceddcb205f9f957",
+      "md5": "e9c3fb3867fddd2f012f39ac11949339",
+      "sha256": "3800ebe410db7921c40dd59bf083fd6d94d99fb7392f48ba9eb8146d5d81f706",
+      "mime_type": "text/plain",
+      "file_type": "ASCII text",
+      "programming_language": null,
+      "is_binary": false,
+      "is_text": true,
+      "is_archive": false,
+      "is_media": false,
+      "is_source": false,
+      "is_script": false,
+      "detected_license_expression": null,
+      "detected_license_expression_spdx": null,
+      "license_detections": [],
+      "license_clues": [],
+      "percentage_of_license_text": 0,
+      "copyrights": [],
+      "holders": [],
+      "authors": [],
+      "package_data": [],
+      "for_packages": [
+        "pkg:npm/base64-arraybuffer@0.1.4?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
+      "for_reviews": [],
+      "files_count": 0,
+      "dirs_count": 0,
+      "size_count": 0,
+      "scan_errors": []
+    },
+    {
+      "path": "base64-arraybuffer-0.1.4/.travis.yml",
+      "type": "file",
+      "name": ".travis.yml",
+      "base_name": ".travis",
+      "extension": ".yml",
+      "size": 472,
+      "sha1": "b885a00a6aedb794a59f6f43438ba6c2dda4d007",
+      "md5": "3bc41a5875cf56a1dc3433ecb7af312f",
+      "sha256": "78662cc81d7f242849fc8b334dd6b1b3f801d291a95d0be5e65d22a68c5f3c10",
+      "mime_type": "text/plain",
+      "file_type": "ASCII text",
+      "programming_language": null,
+      "is_binary": false,
+      "is_text": true,
+      "is_archive": false,
+      "is_media": false,
+      "is_source": false,
+      "is_script": false,
+      "detected_license_expression": null,
+      "detected_license_expression_spdx": null,
+      "license_detections": [],
+      "license_clues": [],
+      "percentage_of_license_text": 0,
+      "copyrights": [],
+      "holders": [],
+      "authors": [],
+      "package_data": [],
+      "for_packages": [
+        "pkg:npm/base64-arraybuffer@0.1.4?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
+      "for_reviews": [],
+      "files_count": 0,
+      "dirs_count": 0,
+      "size_count": 0,
+      "scan_errors": []
+    },
+    {
+      "path": "base64-arraybuffer-0.1.4/Gruntfile.js",
+      "type": "file",
+      "name": "Gruntfile.js",
+      "base_name": "Gruntfile",
+      "extension": ".js",
+      "size": 929,
+      "sha1": "482e43235e1089cde7d34023355c17e7e6e9d357",
+      "md5": "9d1833e4391a5a0ee74cdfec6ff6091b",
+      "sha256": "0b60471087145071c6fa664f1dae986bf630be8c08d4191616c32323f0287a49",
+      "mime_type": "text/plain",
+      "file_type": "ASCII text",
+      "programming_language": "JavaScript",
+      "is_binary": false,
+      "is_text": true,
+      "is_archive": false,
+      "is_media": false,
+      "is_source": true,
+      "is_script": false,
+      "detected_license_expression": null,
+      "detected_license_expression_spdx": null,
+      "license_detections": [],
+      "license_clues": [],
+      "percentage_of_license_text": 0,
+      "copyrights": [],
+      "holders": [],
+      "authors": [],
+      "package_data": [],
+      "for_packages": [
+        "pkg:npm/base64-arraybuffer@0.1.4?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
+      "for_reviews": [],
+      "files_count": 0,
+      "dirs_count": 0,
+      "size_count": 0,
+      "scan_errors": []
+    },
+    {
+      "path": "base64-arraybuffer-0.1.4/LICENSE-MIT",
+      "type": "file",
+      "name": "LICENSE-MIT",
+      "base_name": "LICENSE-MIT",
+      "extension": "",
+      "size": 1062,
+      "sha1": "340c75c043b1010ee4cdedbbba0178bd2c5b8437",
+      "md5": "7e6019c14540d23cd5ed7337b94782b0",
+      "sha256": "f3eca6ff762533fa5a77caf954a143e48afa204668cf97dce758c45a9e006be3",
+      "mime_type": "text/plain",
+      "file_type": "ASCII text",
+      "programming_language": null,
+      "is_binary": false,
+      "is_text": true,
+      "is_archive": false,
+      "is_media": false,
+      "is_source": false,
+      "is_script": false,
+      "detected_license_expression": "mit",
+      "detected_license_expression_spdx": "MIT",
+      "license_detections": [
+        {
+          "license_expression": "mit",
+          "detection_log": [
+            "not-combined"
+          ],
+          "matches": [
+            {
+              "score": 100.0,
+              "start_line": 3,
+              "end_line": 22,
+              "matched_length": 161,
+              "match_coverage": 100.0,
+              "matcher": "2-aho",
+              "license_expression": "mit",
+              "rule_identifier": "mit.LICENSE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE",
+              "referenced_filenames": [],
+              "is_license_text": true,
+              "is_license_notice": false,
+              "is_license_reference": false,
+              "is_license_tag": false,
+              "is_license_intro": false,
+              "rule_length": 161,
+              "rule_relevance": 100,
+              "licenses": [
+                {
+                  "key": "mit",
+                  "name": "MIT License",
+                  "short_name": "MIT License",
+                  "category": "Permissive",
+                  "is_exception": false,
+                  "is_unknown": false,
+                  "owner": "MIT",
+                  "homepage_url": "http://opensource.org/licenses/mit-license.php",
+                  "text_url": "http://opensource.org/licenses/mit-license.php",
+                  "reference_url": "https://scancode-licensedb.aboutcode.org/mit",
+                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE",
+                  "spdx_license_key": "MIT",
+                  "spdx_url": "https://spdx.org/licenses/MIT"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "license_clues": [],
+      "percentage_of_license_text": 96.41,
+      "copyrights": [
+        {
+          "copyright": "Copyright (c) 2012 Niklas von Hertzen",
+          "start_line": 1,
+          "end_line": 1
+        }
+      ],
+      "holders": [
+        {
+          "holder": "Niklas von Hertzen",
+          "start_line": 1,
+          "end_line": 1
+        }
+      ],
+      "authors": [],
+      "package_data": [],
+      "for_packages": [
+        "pkg:npm/base64-arraybuffer@0.1.4?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
+      "for_reviews": [],
+      "files_count": 0,
+      "dirs_count": 0,
+      "size_count": 0,
+      "scan_errors": []
+    },
+    {
+      "path": "base64-arraybuffer-0.1.4/README.md",
+      "type": "file",
+      "name": "README.md",
+      "base_name": "README",
+      "extension": ".md",
+      "size": 792,
+      "sha1": "440c548985b2f38e06657211d630afbfa4e567bf",
+      "md5": "13686c8ce711f4d6266e80febf7a44ae",
+      "sha256": "401541346e1b7e238a757e6707f9f6e02907e17b84af9f3337f392eba8b9107d",
+      "mime_type": "text/plain",
+      "file_type": "ASCII text",
+      "programming_language": null,
+      "is_binary": false,
+      "is_text": true,
+      "is_archive": false,
+      "is_media": false,
+      "is_source": false,
+      "is_script": false,
+      "detected_license_expression": null,
+      "detected_license_expression_spdx": null,
+      "license_detections": [],
+      "license_clues": [
+        {
+          "score": 11.9,
+          "start_line": 18,
+          "end_line": 20,
+          "matched_length": 5,
+          "match_coverage": 11.9,
+          "matcher": "3-seq",
+          "license_expression": "apache-2.0 AND proprietary-license",
+          "rule_identifier": "apache-2.0_and_proprietary-license_5.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_and_proprietary-license_5.RULE",
+          "referenced_filenames": [],
+          "is_license_text": false,
+          "is_license_notice": true,
+          "is_license_reference": false,
+          "is_license_tag": false,
+          "is_license_intro": false,
+          "rule_length": 42,
+          "rule_relevance": 100,
+          "licenses": [
+            {
+              "key": "apache-2.0",
+              "name": "Apache License 2.0",
+              "short_name": "Apache 2.0",
+              "category": "Permissive",
+              "is_exception": false,
+              "is_unknown": false,
+              "owner": "Apache Software Foundation",
+              "homepage_url": "http://www.apache.org/licenses/",
+              "text_url": "http://www.apache.org/licenses/LICENSE-2.0",
+              "reference_url": "https://scancode-licensedb.aboutcode.org/apache-2.0",
+              "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.LICENSE",
+              "spdx_license_key": "Apache-2.0",
+              "spdx_url": "https://spdx.org/licenses/Apache-2.0"
+            },
+            {
+              "key": "proprietary-license",
+              "name": "Proprietary License",
+              "short_name": "Proprietary License",
+              "category": "Commercial",
+              "is_exception": false,
+              "is_unknown": false,
+              "owner": "Unspecified",
+              "homepage_url": null,
+              "text_url": "",
+              "reference_url": "https://scancode-licensedb.aboutcode.org/proprietary-license",
+              "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/proprietary-license.LICENSE",
+              "spdx_license_key": "LicenseRef-scancode-proprietary-license",
+              "spdx_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/proprietary-license.LICENSE"
+            }
+          ]
+        }
+      ],
+      "percentage_of_license_text": 4.72,
+      "copyrights": [
+        {
+          "copyright": "Copyright (c) 2012 Niklas von Hertzen",
+          "start_line": 19,
+          "end_line": 19
+        }
+      ],
+      "holders": [
+        {
+          "holder": "Niklas von Hertzen",
+          "start_line": 19,
+          "end_line": 19
+        }
+      ],
+      "authors": [],
+      "package_data": [],
+      "for_packages": [
+        "pkg:npm/base64-arraybuffer@0.1.4?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
+      "for_reviews": [
+        "license#1"
+      ],
+      "files_count": 0,
+      "dirs_count": 0,
+      "size_count": 0,
+      "scan_errors": []
+    },
+    {
+      "path": "base64-arraybuffer-0.1.4/lib",
+      "type": "directory",
+      "name": "lib",
+      "base_name": "lib",
+      "extension": "",
+      "size": 0,
+      "sha1": null,
+      "md5": null,
+      "sha256": null,
+      "mime_type": null,
+      "file_type": null,
+      "programming_language": null,
+      "is_binary": false,
+      "is_text": false,
+      "is_archive": false,
+      "is_media": false,
+      "is_source": false,
+      "is_script": false,
+      "detected_license_expression": null,
+      "detected_license_expression_spdx": null,
+      "license_detections": [],
+      "license_clues": [],
+      "percentage_of_license_text": 0,
+      "copyrights": [],
+      "holders": [],
+      "authors": [],
+      "package_data": [],
+      "for_packages": [
+        "pkg:npm/base64-arraybuffer@0.1.4?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
+      "for_reviews": [],
+      "files_count": 1,
+      "dirs_count": 0,
+      "size_count": 1704,
+      "scan_errors": []
+    },
+    {
+      "path": "base64-arraybuffer-0.1.4/lib/base64-arraybuffer.js",
+      "type": "file",
+      "name": "base64-arraybuffer.js",
+      "base_name": "base64-arraybuffer",
+      "extension": ".js",
+      "size": 1704,
+      "sha1": "e93ee468a164b81c8b8d1de4866085966a67e136",
+      "md5": "b1d19531a9b7fceff2e3215bff5722f9",
+      "sha256": "756e9c9e4b63048c99e9bbfdbd1a76ce5ad3193cecf94a4232ced8fdf1732607",
+      "mime_type": "text/plain",
+      "file_type": "ASCII text",
+      "programming_language": "JavaScript",
+      "is_binary": false,
+      "is_text": true,
+      "is_archive": false,
+      "is_media": false,
+      "is_source": true,
+      "is_script": false,
+      "detected_license_expression": "mit",
+      "detected_license_expression_spdx": "MIT",
+      "license_detections": [
+        {
+          "license_expression": "mit",
+          "detection_log": [
+            "not-combined"
+          ],
+          "matches": [
+            {
+              "score": 100.0,
+              "start_line": 6,
+              "end_line": 6,
+              "matched_length": 5,
+              "match_coverage": 100.0,
+              "matcher": "2-aho",
+              "license_expression": "mit",
+              "rule_identifier": "mit_12.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_12.RULE",
+              "referenced_filenames": [],
+              "is_license_text": false,
+              "is_license_notice": true,
+              "is_license_reference": false,
+              "is_license_tag": false,
+              "is_license_intro": false,
+              "rule_length": 5,
+              "rule_relevance": 100,
+              "licenses": [
+                {
+                  "key": "mit",
+                  "name": "MIT License",
+                  "short_name": "MIT License",
+                  "category": "Permissive",
+                  "is_exception": false,
+                  "is_unknown": false,
+                  "owner": "MIT",
+                  "homepage_url": "http://opensource.org/licenses/mit-license.php",
+                  "text_url": "http://opensource.org/licenses/mit-license.php",
+                  "reference_url": "https://scancode-licensedb.aboutcode.org/mit",
+                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE",
+                  "spdx_license_key": "MIT",
+                  "spdx_url": "https://spdx.org/licenses/MIT"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "license_clues": [],
+      "percentage_of_license_text": 2.62,
+      "copyrights": [
+        {
+          "copyright": "Copyright (c) 2012 Niklas von Hertzen",
+          "start_line": 5,
+          "end_line": 5
+        }
+      ],
+      "holders": [
+        {
+          "holder": "Niklas von Hertzen",
+          "start_line": 5,
+          "end_line": 5
+        }
+      ],
+      "authors": [],
+      "package_data": [],
+      "for_packages": [
+        "pkg:npm/base64-arraybuffer@0.1.4?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
+      "for_reviews": [],
+      "files_count": 0,
+      "dirs_count": 0,
+      "size_count": 0,
+      "scan_errors": []
+    },
+    {
+      "path": "base64-arraybuffer-0.1.4/package.json",
+      "type": "file",
+      "name": "package.json",
+      "base_name": "package",
+      "extension": ".json",
+      "size": 971,
+      "sha1": "1853ae06931a67b3eb8bb76c801ac258966ff74e",
+      "md5": "27fb799cad01c2225da7881703735a6a",
+      "sha256": "c137a784510ece7d3b9b1d4de59c55a0594b1ed51b30c9581e8279cb705b0286",
+      "mime_type": "application/json",
+      "file_type": "JSON data",
+      "programming_language": null,
+      "is_binary": false,
+      "is_text": true,
+      "is_archive": false,
+      "is_media": false,
+      "is_source": false,
+      "is_script": false,
+      "detected_license_expression": "mit",
+      "detected_license_expression_spdx": "MIT",
+      "license_detections": [
+        {
+          "license_expression": "mit",
+          "detection_log": [
+            "not-combined"
+          ],
+          "matches": [
+            {
+              "score": 100.0,
+              "start_line": 18,
+              "end_line": 20,
+              "matched_length": 3,
+              "match_coverage": 100.0,
+              "matcher": "2-aho",
+              "license_expression": "mit",
+              "rule_identifier": "mit_272.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_272.RULE",
+              "referenced_filenames": [],
+              "is_license_text": false,
+              "is_license_notice": false,
+              "is_license_reference": false,
+              "is_license_tag": true,
+              "is_license_intro": false,
+              "rule_length": 3,
+              "rule_relevance": 100,
+              "licenses": [
+                {
+                  "key": "mit",
+                  "name": "MIT License",
+                  "short_name": "MIT License",
+                  "category": "Permissive",
+                  "is_exception": false,
+                  "is_unknown": false,
+                  "owner": "MIT",
+                  "homepage_url": "http://opensource.org/licenses/mit-license.php",
+                  "text_url": "http://opensource.org/licenses/mit-license.php",
+                  "reference_url": "https://scancode-licensedb.aboutcode.org/mit",
+                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE",
+                  "spdx_license_key": "MIT",
+                  "spdx_url": "https://spdx.org/licenses/MIT"
+                }
+              ]
+            },
+            {
+              "score": 100.0,
+              "start_line": 21,
+              "end_line": 21,
+              "matched_length": 2,
+              "match_coverage": 100.0,
+              "matcher": "2-aho",
+              "license_expression": "mit",
+              "rule_identifier": "mit_30.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_30.RULE",
+              "referenced_filenames": [],
+              "is_license_text": false,
+              "is_license_notice": false,
+              "is_license_reference": false,
+              "is_license_tag": true,
+              "is_license_intro": false,
+              "rule_length": 2,
+              "rule_relevance": 100,
+              "licenses": [
+                {
+                  "key": "mit",
+                  "name": "MIT License",
+                  "short_name": "MIT License",
+                  "category": "Permissive",
+                  "is_exception": false,
+                  "is_unknown": false,
+                  "owner": "MIT",
+                  "homepage_url": "http://opensource.org/licenses/mit-license.php",
+                  "text_url": "http://opensource.org/licenses/mit-license.php",
+                  "reference_url": "https://scancode-licensedb.aboutcode.org/mit",
+                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE",
+                  "spdx_license_key": "MIT",
+                  "spdx_url": "https://spdx.org/licenses/MIT"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "license_clues": [],
+      "percentage_of_license_text": 4.59,
+      "copyrights": [],
+      "holders": [],
+      "authors": [],
+      "package_data": [
+        {
+          "type": "npm",
+          "namespace": null,
+          "name": "base64-arraybuffer",
+          "version": "0.1.4",
+          "qualifiers": {},
+          "subpath": null,
+          "primary_language": "JavaScript",
+          "description": "Encode/decode base64 data into ArrayBuffers",
+          "release_date": null,
+          "parties": [
+            {
+              "type": "person",
+              "role": "author",
+              "name": "Niklas von Hertzen",
+              "email": "niklasvh@gmail.com",
+              "url": "http://hertzen.com"
+            }
+          ],
+          "keywords": [],
+          "homepage_url": "https://github.com/niklasvh/base64-arraybuffer",
+          "download_url": "https://registry.npmjs.org/base64-arraybuffer/-/base64-arraybuffer-0.1.4.tgz",
+          "size": null,
+          "sha1": null,
+          "md5": null,
+          "sha256": null,
+          "sha512": null,
+          "bug_tracking_url": "https://github.com/niklasvh/base64-arraybuffer/issues",
+          "code_view_url": null,
+          "vcs_url": "git+https://github.com/niklasvh/base64-arraybuffer",
+          "copyright": null,
+          "declared_license_expression": "mit",
+          "declared_license_expression_spdx": "MIT",
+          "license_detections": [
+            {
+              "license_expression": "mit",
+              "detection_log": [
+                "not-combined",
+                "package-license"
+              ],
+              "matches": [
+                {
+                  "score": 100.0,
+                  "start_line": 1,
+                  "end_line": 1,
+                  "matched_length": 1,
+                  "match_coverage": 100.0,
+                  "matcher": "1-spdx-id",
+                  "license_expression": "mit",
+                  "rule_identifier": "spdx-license-identifier: mit",
+                  "rule_url": null,
+                  "referenced_filenames": [],
+                  "is_license_text": false,
+                  "is_license_notice": false,
+                  "is_license_reference": false,
+                  "is_license_tag": true,
+                  "is_license_intro": false,
+                  "rule_length": 1,
+                  "rule_relevance": 100,
+                  "matched_text": "MIT",
+                  "licenses": [
+                    {
+                      "key": "mit",
+                      "name": "MIT License",
+                      "short_name": "MIT License",
+                      "category": "Permissive",
+                      "is_exception": false,
+                      "is_unknown": false,
+                      "owner": "MIT",
+                      "homepage_url": "http://opensource.org/licenses/mit-license.php",
+                      "text_url": "http://opensource.org/licenses/mit-license.php",
+                      "reference_url": "https://scancode-licensedb.aboutcode.org/mit",
+                      "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE",
+                      "spdx_license_key": "MIT",
+                      "spdx_url": "https://spdx.org/licenses/MIT"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "license_expression": "mit",
+              "detection_log": [
+                "not-combined",
+                "package-license"
+              ],
+              "matches": [
+                {
+                  "score": 100.0,
+                  "start_line": 1,
+                  "end_line": 1,
+                  "matched_length": 2,
+                  "match_coverage": 100.0,
+                  "matcher": "2-aho",
+                  "license_expression": "mit",
+                  "rule_identifier": "mit_30.RULE",
+                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_30.RULE",
+                  "referenced_filenames": [],
+                  "is_license_text": false,
+                  "is_license_notice": false,
+                  "is_license_reference": false,
+                  "is_license_tag": true,
+                  "is_license_intro": false,
+                  "rule_length": 2,
+                  "rule_relevance": 100,
+                  "matched_text": "https://github.com/niklasvh/base64-arraybuffer/blob/master/LICENSE-MIT",
+                  "licenses": [
+                    {
+                      "key": "mit",
+                      "name": "MIT License",
+                      "short_name": "MIT License",
+                      "category": "Permissive",
+                      "is_exception": false,
+                      "is_unknown": false,
+                      "owner": "MIT",
+                      "homepage_url": "http://opensource.org/licenses/mit-license.php",
+                      "text_url": "http://opensource.org/licenses/mit-license.php",
+                      "reference_url": "https://scancode-licensedb.aboutcode.org/mit",
+                      "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE",
+                      "spdx_license_key": "MIT",
+                      "spdx_url": "https://spdx.org/licenses/MIT"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "other_license_expression": null,
+          "other_license_expression_spdx": null,
+          "other_license_detections": [],
+          "extracted_license_statement": "[{'type': 'MIT', 'url': 'https://github.com/niklasvh/base64-arraybuffer/blob/master/LICENSE-MIT'}]",
+          "notice_text": null,
+          "source_packages": [],
+          "file_references": [],
+          "extra_data": {},
+          "dependencies": [
+            {
+              "purl": "pkg:npm/grunt",
+              "extracted_requirement": "^0.4.5",
+              "scope": "devDependencies",
+              "is_runtime": false,
+              "is_optional": true,
+              "is_resolved": false,
+              "resolved_package": {},
+              "extra_data": {}
+            },
+            {
+              "purl": "pkg:npm/grunt-cli",
+              "extracted_requirement": "^0.1.13",
+              "scope": "devDependencies",
+              "is_runtime": false,
+              "is_optional": true,
+              "is_resolved": false,
+              "resolved_package": {},
+              "extra_data": {}
+            },
+            {
+              "purl": "pkg:npm/grunt-contrib-jshint",
+              "extracted_requirement": "^0.11.2",
+              "scope": "devDependencies",
+              "is_runtime": false,
+              "is_optional": true,
+              "is_resolved": false,
+              "resolved_package": {},
+              "extra_data": {}
+            },
+            {
+              "purl": "pkg:npm/grunt-contrib-nodeunit",
+              "extracted_requirement": "^0.4.1",
+              "scope": "devDependencies",
+              "is_runtime": false,
+              "is_optional": true,
+              "is_resolved": false,
+              "resolved_package": {},
+              "extra_data": {}
+            },
+            {
+              "purl": "pkg:npm/grunt-contrib-watch",
+              "extracted_requirement": "^0.6.1",
+              "scope": "devDependencies",
+              "is_runtime": false,
+              "is_optional": true,
+              "is_resolved": false,
+              "resolved_package": {},
+              "extra_data": {}
+            }
+          ],
+          "repository_homepage_url": "https://www.npmjs.com/package/base64-arraybuffer",
+          "repository_download_url": "https://registry.npmjs.org/base64-arraybuffer/-/base64-arraybuffer-0.1.4.tgz",
+          "api_data_url": "https://registry.npmjs.org/base64-arraybuffer/0.1.4",
+          "datasource_id": "npm_package_json",
+          "purl": "pkg:npm/base64-arraybuffer@0.1.4"
+        }
+      ],
+      "for_packages": [
+        "pkg:npm/base64-arraybuffer@0.1.4?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
+      "for_reviews": [],
+      "files_count": 0,
+      "dirs_count": 0,
+      "size_count": 0,
+      "scan_errors": []
+    },
+    {
+      "path": "base64-arraybuffer-0.1.4/test",
+      "type": "directory",
+      "name": "test",
+      "base_name": "test",
+      "extension": "",
+      "size": 0,
+      "sha1": null,
+      "md5": null,
+      "sha256": null,
+      "mime_type": null,
+      "file_type": null,
+      "programming_language": null,
+      "is_binary": false,
+      "is_text": false,
+      "is_archive": false,
+      "is_media": false,
+      "is_source": false,
+      "is_script": false,
+      "detected_license_expression": null,
+      "detected_license_expression_spdx": null,
+      "license_detections": [],
+      "license_clues": [],
+      "percentage_of_license_text": 0,
+      "copyrights": [],
+      "holders": [],
+      "authors": [],
+      "package_data": [],
+      "for_packages": [
+        "pkg:npm/base64-arraybuffer@0.1.4?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
+      "for_reviews": [],
+      "files_count": 1,
+      "dirs_count": 0,
+      "size_count": 2371,
+      "scan_errors": []
+    },
+    {
+      "path": "base64-arraybuffer-0.1.4/test/base64-arraybuffer_test.js",
+      "type": "file",
+      "name": "base64-arraybuffer_test.js",
+      "base_name": "base64-arraybuffer_test",
+      "extension": ".js",
+      "size": 2371,
+      "sha1": "8bb41b3f72165c1db58a99cdf9ef4ffc1d254647",
+      "md5": "b07cac542597d792fba1f375cecdabf9",
+      "sha256": "7962e31b162b5eec0084a0bba1de5c7d79c1b3e2c5be39afb24ddcf0ff82c7df",
+      "mime_type": "text/plain",
+      "file_type": "ASCII text",
+      "programming_language": "JavaScript",
+      "is_binary": false,
+      "is_text": true,
+      "is_archive": false,
+      "is_media": false,
+      "is_source": true,
+      "is_script": false,
+      "detected_license_expression": null,
+      "detected_license_expression_spdx": null,
+      "license_detections": [],
+      "license_clues": [],
+      "percentage_of_license_text": 0,
+      "copyrights": [],
+      "holders": [],
+      "authors": [],
+      "package_data": [],
+      "for_packages": [
+        "pkg:npm/base64-arraybuffer@0.1.4?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
+      "for_reviews": [],
+      "files_count": 0,
+      "dirs_count": 0,
+      "size_count": 0,
+      "scan_errors": []
+    }
+  ]
+}

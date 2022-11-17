@@ -170,7 +170,7 @@ class Consolidator(PostScanPlugin):
         # TODO: Have a "catch-all" Component for the things that we haven't grouped
         consolidations = []
         root = codebase.root
-        if hasattr(root, 'packages') and hasattr(root, 'copyrights') and hasattr(root, 'license_detections'):
+        if hasattr(root, 'package_data') and hasattr(root, 'copyrights') and hasattr(root, 'license_detections'):
             consolidations.extend(get_consolidated_packages(codebase))
         if hasattr(root, 'copyrights') and hasattr(root, 'license_detections'):
             consolidations.extend(get_holders_consolidated_components(codebase))
