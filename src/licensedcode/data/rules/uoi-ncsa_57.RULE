@@ -2,6 +2,10 @@
 license_expression: uoi-ncsa
 is_license_notice: yes
 relevance: 100
+ignorable_copyrights:
+  - Copyright (c) 2004 eXtensible Systems, Inc.
+ignorable_holders:
+  - eXtensible Systems, Inc.
 ---
 
 LLVM System Interface Library
