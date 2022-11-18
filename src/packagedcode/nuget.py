@@ -27,6 +27,29 @@ def get_dependencies(nuspec):
     dependencies = []
     try:
         if "dependencies" in nuspec:
+            if "group" in nuspec["dependencies"]:
+                for group in nuspec["dependencies"]["group"]:
+                    if "dependency" in group:
+                        for dependency in group["dependency"]:
+                            #dependencies.append(dependency)
+                            dpurl = models.PackageURL(
+                            type='nuget',
+                            namespace=None,
+                            name=dependency.get("@id"),
+                            version=dependency.get("@version"),
+                            qualifiers=None
+                        )
+                            dep_pack = models.DependentPackage(
+                            purl=str(dpurl),
+                            extracted_requirement=dependency.get("@version"),
+                            scope="dependency",
+                            is_runtime=False,
+                            is_optional=False,
+                            is_resolved=True,
+                        )
+
+                            dependencies.append(dep_pack)
+                            
             if "dependency" in nuspec.get("dependencies"):
                 if "@id" and "@version" in nuspec.get("dependencies").get("dependency"):
                     dpurl = models.PackageURL(

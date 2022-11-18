@@ -37,64 +37,24 @@
     "code_view_url": null,
     "vcs_url": null,
     "copyright": null,
-    "declared_license_expression": "mit",
-    "declared_license_expression_spdx": "MIT",
-    "license_detections": [
-      {
-        "license_expression": "mit",
-        "detection_log": [
-          "not-combined"
-        ],
-        "matches": [
-          {
-            "score": 80.0,
-            "start_line": 1,
-            "end_line": 1,
-            "matched_length": 4,
-            "match_coverage": 100.0,
-            "matcher": "1-hash",
-            "license_expression": "mit",
-            "rule_identifier": "mit_jquery_url.RULE",
-            "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_jquery_url.RULE",
-            "referenced_filenames": [],
-            "is_license_text": false,
-            "is_license_notice": false,
-            "is_license_reference": true,
-            "is_license_tag": false,
-            "is_license_intro": false,
-            "rule_length": 4,
-            "rule_relevance": 80,
-            "matched_text": "http://jquery.org/license",
-            "licenses": [
-              {
-                "key": "mit",
-                "name": "MIT License",
-                "short_name": "MIT License",
-                "category": "Permissive",
-                "is_exception": false,
-                "is_unknown": false,
-                "owner": "MIT",
-                "homepage_url": "http://opensource.org/licenses/mit-license.php",
-                "text_url": "http://opensource.org/licenses/mit-license.php",
-                "reference_url": "https://scancode-licensedb.aboutcode.org/mit",
-                "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE",
-                "spdx_license_key": "MIT",
-                "spdx_url": "https://spdx.org/licenses/MIT"
-              }
-            ]
-          }
-        ]
-      }
-    ],
-    "other_license_expression": null,
-    "other_license_expression_spdx": null,
-    "other_license_detections": [],
-    "extracted_license_statement": "http://jquery.org/license",
+    "license_expression": "mit",
+    "declared_license": "http://jquery.org/license",
     "notice_text": null,
     "source_packages": [],
     "file_references": [],
     "extra_data": {},
-    "dependencies": [],
+    "dependencies": [
+      {
+              "purl": "pkg:nuget/jQuery@1.6.4",
+              "extracted_requirement": "1.6.4",
+              "scope": "dependency",
+              "is_runtime": false,
+              "is_optional": false,
+              "is_resolved": true,
+              "resolved_package": {},
+              "extra_data": {}
+        }
+    ],
     "repository_homepage_url": "https://www.nuget.org/packages/jQuery.UI.Combined/1.11.4",
     "repository_download_url": "https://www.nuget.org/api/v2/package/jQuery.UI.Combined/1.11.4",
     "api_data_url": "https://api.nuget.org/v3/registration3/jquery.ui.combined/1.11.4.json",
