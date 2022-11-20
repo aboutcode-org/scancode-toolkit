@@ -8,7 +8,6 @@
 #
 
 import attr
-from collections import Counter
 
 from commoncode.cliutils import PluggableCommandLineOption
 from commoncode.cliutils import POST_SCAN_GROUP
@@ -17,6 +16,7 @@ from plugincode.post_scan import PostScanPlugin
 from plugincode.post_scan import post_scan_impl
 
 from licensedcode.detection import LicenseDetection
+from licensedcode.detection import UniqueDetection
 
 # Set to True to enable debug tracing
 TRACE = False
@@ -247,57 +247,3 @@ def get_license_detection_references(license_detections_by_path):
 
     detection_references = UniqueDetection.get_unique_detections(detection_objects)
     return detection_references
-
-
-@attr.s
-class UniqueDetection:
-    """
-    An unique License Detection.
-    """
-    unique_identifier = attr.ib(type=int)
-    license_detection = attr.ib()
-    files = attr.ib(factory=list)
-
-    @classmethod
-    def get_unique_detections(cls, license_detections):
-        """
-        Get all unique license detections from a list of
-        LicenseDetections.
-        """
-        identifiers = get_identifiers(license_detections)
-        unique_detection_counts = dict(Counter(identifiers))
-
-        unique_license_detections = []
-        for detection_identifier in unique_detection_counts.keys():
-            file_regions = (
-                detection.file_region
-                for detection in license_detections
-                if detection_identifier == detection.identifier
-            )
-            all_detections = (
-                detection
-                for detection in license_detections
-                if detection_identifier == detection.identifier
-            )
-
-            detection = next(all_detections)
-            unique_license_detections.append(
-                cls(
-                    files=list(file_regions),
-                    license_detection=attr.asdict(detection),
-                    unique_identifier=detection.identifier,
-                )
-            )
-
-        return unique_license_detections
-
-
-def get_identifiers(license_detections):
-    """
-    Get identifiers for all license detections.
-    """
-    identifiers = (
-        detection.identifier
-        for detection in license_detections
-    )
-    return identifiers

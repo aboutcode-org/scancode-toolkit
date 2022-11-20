@@ -11,7 +11,10 @@ import posixpath
 import sys
 import os
 import logging
+import hashlib
+import uuid
 from enum import Enum
+from collections import Counter
 
 import attr
 from license_expression import combine_expressions
@@ -23,6 +26,7 @@ from licensedcode.cache import get_cache
 from licensedcode.match import LicenseMatch
 from licensedcode.match import set_matched_lines
 from licensedcode.models import Rule
+from licensedcode.models import BasicRule
 from licensedcode.models import compute_relevance
 from licensedcode.spans import Span
 from licensedcode.tokenize import query_tokenizer
@@ -263,24 +267,39 @@ class LicenseDetection:
         """
         data = []
         for match in self.matches:
-            tokenized_matched_text = tuple(query_tokenizer(match['matched_text']))
-            identifier = (
-                match['rule_identifier'],
-                match['match_coverage'],
-                tokenized_matched_text,
-            )
+            if isinstance(match, dict):
+                tokenized_matched_text = tuple(query_tokenizer(match['matched_text']))
+                identifier = (
+                    match['rule_identifier'],
+                    match['score'],
+                    tokenized_matched_text,
+                )
+            else:
+                tokenized_matched_text = tuple(query_tokenizer(match.matched_text))
+                identifier = (
+                    match.identifier,
+                    match.score(),
+                    tokenized_matched_text,
+                )
             data.append(identifier)
 
-        # Return a positive hash value for the tuple
-        return tuple(data).__hash__() % ((sys.maxsize + 1) * 2)
-    
+        # Return a uuid generated from the contents of the matches
+        identifier_string = repr(tuple(data))
+        md_hash = hashlib.md5()
+        md_hash.update(identifier_string.encode('utf-8'))
+        return str(uuid.UUID(md_hash.hexdigest()))
+
     def get_start_end_line(self):
         """
         Returns start and end line for a license detection issue, from the
         license match(es).
         """
-        start_line = min([match['start_line'] for match in self.matches])
-        end_line = max([match['end_line'] for match in self.matches])
+        if isinstance(self.matches[0], dict): 
+            start_line = min([match['start_line'] for match in self.matches])
+            end_line = max([match['end_line'] for match in self.matches])
+        else:
+            start_line = min([match.start_line for match in self.matches])
+            end_line = max([match.end_line for match in self.matches])
         return start_line, end_line
 
     def rules_length(self):
@@ -430,6 +449,222 @@ class LicenseDetection:
         detection["matches"] = data_matches
 
         return detection
+
+
+
+@attr.s
+class LicenseDetectionFromResult(LicenseDetection):
+    """
+    A LicenseDetection object that is created from a LicenseDetection
+    mapping, i.e. results mappings. The LicenseMatch objects in the
+    `matches` will be LicenseMatchFromResult objects too, as these are
+    created from data mappings and don't have the input text/spans
+    available.
+    """
+
+    @classmethod
+    def from_license_detection_mapping(cls, license_detection_mapping, file_path):
+
+        matches_from_results = matches_from_license_match_mappings(
+            license_match_mappings=license_detection_mapping["matches"]
+        )
+
+        detection = cls(
+            license_expression=license_detection_mapping["license_expression"],
+            detection_log=license_detection_mapping["detection_log"],
+            matches=matches_from_results,
+            file_region=None,
+        )
+        detection.file_region = detection.get_file_region(path=file_path)
+        return detection
+
+
+def detections_from_license_detection_mappings(license_detection_mappings, file_path):
+
+    license_detections = []
+
+    for license_detection_mapping in license_detection_mappings:
+        license_detections.append(
+            LicenseDetectionFromResult.from_license_detection_mapping(
+                license_detection_mapping=license_detection_mapping,
+                file_path=file_path,
+            )
+        )
+
+    return license_detections
+
+
+@attr.s
+class LicenseMatchFromResult(LicenseMatch):
+
+    match_score = attr.ib(
+        default=None,
+        metadata=dict(
+            help='License Detection Score')
+    )
+
+    matched_length = attr.ib(
+        default=None,
+        metadata=dict(
+            help='License match length')
+    )
+
+    match_coverage = attr.ib(
+        default=None,
+        metadata=dict(
+            help='License match coverage')
+    )
+
+    text = attr.ib(
+        default=None,
+        metadata=dict(
+            help='Text which was matched')
+    )
+
+    def score(self):
+        return self.match_score
+    
+    def len(self):
+        return self.matched_length
+    
+    def coverage(self):
+        return self.match_coverage
+
+    @property
+    def matched_text(self):
+        return self.text
+    
+    @property
+    def identifier(self):
+        return self.rule.identifier
+
+    @classmethod
+    def from_license_match_mapping(cls, license_match_mapping):
+
+        rule = RuleFromResult.from_license_match_mapping(
+            license_match_mapping=license_match_mapping,
+        )
+
+        if "matched_text" in license_match_mapping:
+            matched_text = license_match_mapping["matched_text"]
+        else:
+            matched_text = None
+
+        return cls(
+            start_line=license_match_mapping["start_line"],
+            end_line=license_match_mapping["end_line"],
+            match_score=license_match_mapping["score"],
+            matched_length=license_match_mapping["matched_length"],
+            match_coverage=license_match_mapping["match_coverage"],
+            matcher=license_match_mapping["matcher"],
+            text=matched_text,
+            rule=rule,
+            qspan=None,
+            ispan=None,
+        )
+
+
+@attr.s
+class RuleFromResult(BasicRule):
+
+    @classmethod
+    def from_license_match_mapping(cls, license_match_mapping):
+        return cls(
+            license_expression=license_match_mapping["license_expression"],
+            identifier=license_match_mapping["rule_identifier"],
+            referenced_filenames=license_match_mapping["referenced_filenames"],
+            is_license_text=license_match_mapping["is_license_text"],
+            is_license_notice=license_match_mapping["is_license_notice"],
+            is_license_reference=license_match_mapping["is_license_reference"],
+            is_license_tag=license_match_mapping["is_license_tag"],
+            is_license_intro=license_match_mapping["is_license_intro"],
+            length=license_match_mapping["rule_length"],
+            relevance=license_match_mapping["rule_relevance"],
+        )
+
+def matches_from_license_match_mappings(license_match_mappings):
+
+    license_matches = []
+
+    for license_match_mapping in license_match_mappings:
+        license_matches.append(
+            LicenseMatchFromResult.from_license_match_mapping(
+                license_match_mapping=license_match_mapping
+            )
+        )
+
+    return license_matches
+
+
+@attr.s
+class UniqueDetection:
+    """
+    An unique License Detection.
+    """
+    identifier = attr.ib(default=None)
+    license_expression = attr.ib(default=None)
+    occurance_count = attr.ib(default=None)
+    detection_log = attr.ib(default=attr.Factory(list))
+    matches = attr.ib(default=attr.Factory(list))
+    files = attr.ib(factory=list)
+
+    @classmethod
+    def get_unique_detections(cls, license_detections):
+        """
+        Get all unique license detections from a list of
+        LicenseDetections.
+        """
+        identifiers = get_identifiers(license_detections)
+        unique_detection_counts = dict(Counter(identifiers))
+
+        unique_license_detections = []
+        for detection_identifier in unique_detection_counts.keys():
+            file_regions = (
+                detection.file_region
+                for detection in license_detections
+                if detection_identifier == detection.identifier
+            )
+            all_detections = (
+                detection
+                for detection in license_detections
+                if detection_identifier == detection.identifier
+            )
+
+            detection = next(all_detections)
+            detection_mapping = detection.to_dict()
+            files = list(file_regions)
+            unique_license_detections.append(
+                cls(
+                    identifier=detection.identifier,
+                    license_expression=detection_mapping["license_expression"],
+                    detection_log=detection_mapping["detection_log"],
+                    matches=detection_mapping["matches"],
+                    occurance_count=len(files),
+                    files=files,
+                )
+            )
+
+        return unique_license_detections
+    
+    def to_dict(self):
+        def dict_fields(attr, value):
+            if attr.name == 'files':
+                return False
+
+            return True
+
+        return attr.asdict(self, filter=dict_fields, dict_factory=dict)
+
+
+def get_identifiers(license_detections):
+    """
+    Get identifiers for all license detections.
+    """
+    identifiers = (
+        detection.identifier
+        for detection in license_detections
+    )
+    return identifiers
 
 
 def get_detections_from_mappings(detection_mappings):
