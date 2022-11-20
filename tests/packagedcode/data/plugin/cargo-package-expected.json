@@ -101,6 +101,8 @@
       "purl": "pkg:cargo/clap@2.32.0"
     }
   ],
+  "license_references": [],
+  "rule_references": [],
   "files": [
     {
       "path": "Cargo.toml",

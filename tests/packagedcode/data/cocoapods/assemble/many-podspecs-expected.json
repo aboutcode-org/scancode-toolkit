@@ -709,6 +709,8 @@
       "purl": "pkg:cocoapods/AWSPredictionsPlugin@%24AMPLIFY_VERSION"
     }
   ],
+  "license_references": [],
+  "rule_references": [],
   "files": [
     {
       "path": "many-podspecs",

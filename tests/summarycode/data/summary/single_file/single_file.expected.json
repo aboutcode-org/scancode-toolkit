@@ -1,4 +1,27 @@
 {
+  "licenses": [
+    {
+      "identifier": "427d039d-8476-c119-f150-af365b19c42b",
+      "license_expression": "jetty",
+      "occurance_count": 1,
+      "detection_log": [
+        "not-combined"
+      ],
+      "matches": [
+        {
+          "score": 100.0,
+          "start_line": 1,
+          "end_line": 132,
+          "matched_length": 996,
+          "match_coverage": 100.0,
+          "matcher": "1-hash",
+          "license_expression": "jetty",
+          "rule_identifier": "jetty.LICENSE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/jetty.LICENSE"
+        }
+      ]
+    }
+  ],
   "dependencies": [],
   "packages": [],
   "summary": {
@@ -23,6 +46,38 @@
     "other_holders": [],
     "other_languages": []
   },
+  "license_references": [
+    {
+      "key": "jetty",
+      "short_name": "Jetty License",
+      "name": "Jetty License",
+      "category": "Permissive",
+      "owner": "Jetty Project",
+      "homepage_url": "http://www.tinyos.net/tinyos-1.x/tools/java/jars/JETTY-LICENSE.txt",
+      "is_builtin": true,
+      "spdx_license_key": "LicenseRef-scancode-jetty",
+      "text_urls": [
+        "http://svn.apache.org/repos/asf/forrest/trunk/tools/jetty/jetty-4.2.19.jar.license.html",
+        "http://www.tinyos.net/tinyos-1.x/tools/java/jars/JETTY-LICENSE.txt"
+      ],
+      "faq_url": "http://en.wikipedia.org/wiki/Jetty_(web_server)",
+      "text": "Jetty License\n$Revision: 584 $\n\nPreamble:\nThe intent of this document is to state the conditions under which the Jetty\nPackage may be copied, such that the Copyright Holder maintains some semblance\nof control over the development of the package, while giving the users of the\npackage the right to use, distribute and make reasonable modifications to the\nPackage in accordance with the goals and ideals of the Open Source concept as\ndescribed at http://www.opensource.org.\n\nIt is the intent of this license to allow commercial usage of the Jetty package,\nso long as the source code is distributed or suitable visible credit given or\nother arrangements made with the copyright holders.\n\nDefinitions:\n* \"Jetty\" refers to the collection of Java classes that are distributed as a\nHTTP server with servlet capabilities and associated utilities.\n\n* \"Package\" refers to the collection of files distributed by the Copyright\nHolder, and derivatives of that collection of files created through textual\nmodification.\n\n* \"Standard Version\" refers to such a Package if it has not been modified,\nor has been modified in accordance with the wishes of the Copyright Holder.\n\n* \"Copyright Holder\" is whoever is named in the copyright or copyrights for\nthe package.  Mort Bay Consulting Pty. Ltd. (Australia) is the \"Copyright Holder\" for\nthe Jetty package.\n\n* \"You\" is you, if you're thinking about copying or distributing this\nPackage.\n\n* \"Reasonable copying fee\" is whatever you can justify on the basis of media\ncost, duplication charges, time of people involved, and so on. (You will not be\nrequired to justify it to the Copyright Holder, but only to the computing\ncommunity at large as a market that must bear the fee.)\n\n* \"Freely Available\" means that no fee is charged for the item itself,\nthough there may be fees involved in handling the item. It also means that\nrecipients of the item may redistribute it under the same conditions they\nreceived it.\n\n0. The Jetty Package is Copyright (c) Mort Bay Consulting Pty. Ltd. (Australia)\nand others. Individual files in this package may contain additional copyright\nnotices. The javax.servlet packages are copyright Sun Microsystems Inc.\n\n1. The Standard Version of the Jetty package is available from\nhttp://jetty.mortbay.org.\n\n2. You may make and distribute verbatim copies of the source form of the\nStandard Version of this Package without restriction, provided that you include\nthis license and all of the original copyright notices and associated\ndisclaimers.\n\n3. You may make and distribute verbatim copies of the compiled form of the\nStandard Version of this Package without restriction, provided that you include\nthis license.\n\n4. You may apply bug fixes, portability fixes and other modifications derived\nfrom the Public Domain or from the Copyright Holder. A Package modified in such\na way shall still be considered the Standard Version.\n\n5. You may otherwise modify your copy of this Package in any way, provided that\nyou insert a prominent notice in each changed file stating how and when you\nchanged that file, and provided that you do at least ONE of the following:\n\na) Place your modifications in the Public Domain or otherwise make them\nFreely Available, such as by posting said modifications to Usenet or an\nequivalent medium, or placing the modifications on a major archive site such as\nftp.uu.net, or by allowing the Copyright Holder to include your modifications in\nthe Standard Version of the Package.\n\nb) Use the modified Package only within your corporation or organization.\n\nc) Rename any non-standard classes so the names do not conflict with\nstandard classes, which must also be provided, and provide a separate manual\npage for each non-standard class that clearly documents how it differs from the\nStandard Version.\n\nd) Make other arrangements with the Copyright Holder.\n\n6. You may distribute modifications or subsets of this Package in source code or\ncompiled form, provided that you do at least ONE of the following:\n\na) Distribute this license and all original copyright messages, together\nwith instructions (in the about dialog, manual page or equivalent) on where to\nget the complete Standard Version.\n\nb) Accompany the distribution with the machine-readable source of the\nPackage with your modifications. The modified package must include this license\nand all of the original copyright notices and associated disclaimers, together\nwith instructions on where to get the complete Standard Version.\n\nc) Make other arrangements with the Copyright Holder.\n\n7. You may charge a reasonable copying fee for any distribution of this Package.\nYou may charge any fee you choose for support of this Package. You may not\ncharge a fee for this Package itself. However, you may distribute this Package\nin aggregate with other (possibly commercial) programs as part of a larger\n(possibly commercial) software distribution provided that you meet the other\ndistribution requirements of this license.\n\n8. Input to or the output produced from the programs of this Package do not\nautomatically fall under the copyright of this Package, but belong to whomever\ngenerated them, and may be sold commercially, and may be aggregated with this\nPackage.\n\n9. Any program subroutines supplied by you and linked into this Package shall\nnot be considered part of this Package.\n\n10. The name of the Copyright Holder may not be used to endorse or promote\nproducts derived from this software without specific prior written permission.\n\n11. This license may change with each release of a Standard Version of the\nPackage. You may choose to use the license associated with version you are using\nor the license of the latest Standard Version.\n\n12. THIS PACKAGE IS PROVIDED \"AS IS\" AND WITHOUT ANY EXPRESS OR IMPLIED\nWARRANTIES, INCLUDING, WITHOUT LIMITATION, THE IMPLIED WARRANTIES OF\nMERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.\n\n13. If any superior law implies a warranty, the sole remedy under such shall be,\nat the Copyright Holders option either\na) return of any price paid or\nb) use or reasonable endeavours to repair or replace the software.\n\n14. This license shall be read under the laws of Australia.\n\nThe End\nThis license was derived from the Artistic license published on\nhttp://www.opensource.com"
+    }
+  ],
+  "rule_references": [
+    {
+      "license_expression": "jetty",
+      "rule_identifier": "jetty.LICENSE",
+      "referenced_filenames": [],
+      "is_license_text": true,
+      "is_license_notice": false,
+      "is_license_reference": false,
+      "is_license_tag": false,
+      "is_license_intro": false,
+      "rule_length": 996,
+      "rule_relevance": 100
+    }
+  ],
   "files": [
     {
       "path": "codebase",
@@ -48,6 +103,7 @@
       "license_detections": [],
       "license_clues": [],
       "percentage_of_license_text": 0,
+      "for_licenses": [],
       "copyrights": [],
       "holders": [],
       "authors": [],
@@ -100,38 +156,16 @@
               "matcher": "1-hash",
               "license_expression": "jetty",
               "rule_identifier": "jetty.LICENSE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/jetty.LICENSE",
-              "referenced_filenames": [],
-              "is_license_text": true,
-              "is_license_notice": false,
-              "is_license_reference": false,
-              "is_license_tag": false,
-              "is_license_intro": false,
-              "rule_length": 996,
-              "rule_relevance": 100,
-              "licenses": [
-                {
-                  "key": "jetty",
-                  "name": "Jetty License",
-                  "short_name": "Jetty License",
-                  "category": "Permissive",
-                  "is_exception": false,
-                  "is_unknown": false,
-                  "owner": "Jetty Project",
-                  "homepage_url": "http://www.tinyos.net/tinyos-1.x/tools/java/jars/JETTY-LICENSE.txt",
-                  "text_url": "http://svn.apache.org/repos/asf/forrest/trunk/tools/jetty/jetty-4.2.19.jar.license.html",
-                  "reference_url": "https://scancode-licensedb.aboutcode.org/jetty",
-                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/jetty.LICENSE",
-                  "spdx_license_key": "LicenseRef-scancode-jetty",
-                  "spdx_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/jetty.LICENSE"
-                }
-              ]
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/jetty.LICENSE"
             }
           ]
         }
       ],
       "license_clues": [],
       "percentage_of_license_text": 100.0,
+      "for_licenses": [
+        "427d039d-8476-c119-f150-af365b19c42b"
+      ],
       "copyrights": [
         {
           "copyright": "Copyright (c) Mort Bay Consulting Pty. Ltd. (Australia) and others",

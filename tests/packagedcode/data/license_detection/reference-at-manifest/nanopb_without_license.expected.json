@@ -140,6 +140,8 @@
       "purl": "pkg:cocoapods/nanopb@1.30905.0"
     }
   ],
+  "license_references": [],
+  "rule_references": [],
   "files": [
     {
       "path": "LICENSE.txt",

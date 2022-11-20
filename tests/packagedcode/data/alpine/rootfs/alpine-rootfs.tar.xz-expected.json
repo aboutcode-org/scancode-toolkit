@@ -1929,6 +1929,8 @@
       "purl": "pkg:alpine/libc-utils@0.7.2-r3?arch=x86_64"
     }
   ],
+  "license_references": [],
+  "rule_references": [],
   "files": [
     {
       "path": "alpine-rootfs",

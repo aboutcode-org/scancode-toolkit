@@ -1154,6 +1154,8 @@
     }
   ],
   "tallies": {},
+  "license_references": [],
+  "rule_references": [],
   "files": [
     {
       "path": "scan",

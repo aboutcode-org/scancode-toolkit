@@ -755,6 +755,8 @@
       "purl": "pkg:pypi/celery@5.2.7"
     }
   ],
+  "license_references": [],
+  "rule_references": [],
   "files": [
     {
       "path": "celery",

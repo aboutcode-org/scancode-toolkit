@@ -243,6 +243,8 @@
       "purl": "pkg:cocoapods/Differentiator@4.0.1"
     }
   ],
+  "license_references": [],
+  "rule_references": [],
   "files": [
     {
       "path": "multiple-podspec",

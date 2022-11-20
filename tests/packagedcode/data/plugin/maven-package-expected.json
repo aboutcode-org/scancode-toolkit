@@ -6956,6 +6956,8 @@
       "purl": "pkg:maven/au.com.acegi/xml-format-maven-plugin@3.0.6"
     }
   ],
+  "license_references": [],
+  "rule_references": [],
   "files": [
     {
       "path": "activemq-camel",

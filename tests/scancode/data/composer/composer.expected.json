@@ -214,6 +214,8 @@
       "purl": "pkg:composer/laravel/laravel"
     }
   ],
+  "license_references": [],
+  "rule_references": [],
   "files": [
     {
       "path": "composer.json",

@@ -95,6 +95,8 @@
       "purl": "pkg:rpm/alfandega@2.0-1.7.3"
     }
   ],
+  "license_references": [],
+  "rule_references": [],
   "files": [
     {
       "path": "alfandega-2.0-1.7.3.noarch.rpm",

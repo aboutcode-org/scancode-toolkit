@@ -209,6 +209,8 @@
       "purl": "pkg:pypi/daglib@0.6.0"
     }
   ],
+  "license_references": [],
+  "rule_references": [],
   "files": [
     {
       "path": "daglib_wheel_extracted",

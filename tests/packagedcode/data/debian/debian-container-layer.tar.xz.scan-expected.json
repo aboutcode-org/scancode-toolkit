@@ -689,6 +689,8 @@
       "purl": "pkg:deb/libndp0@1.4-2ubuntu0.16.04.1?architecture=amd64"
     }
   ],
+  "license_references": [],
+  "rule_references": [],
   "files": [
     {
       "path": "debian-container-layer.tar.xz",

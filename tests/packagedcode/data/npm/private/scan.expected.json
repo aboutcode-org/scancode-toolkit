@@ -16,6 +16,8 @@
     }
   ],
   "packages": [],
+  "license_references": [],
+  "rule_references": [],
   "files": [
     {
       "path": "package.json",

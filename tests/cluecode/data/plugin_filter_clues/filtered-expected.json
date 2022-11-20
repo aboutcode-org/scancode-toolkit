@@ -17,34 +17,46 @@
           "matcher": "3-seq",
           "license_expression": "apache-1.1",
           "rule_identifier": "apache-1.1_63.RULE",
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-1.1_63.RULE",
-          "referenced_filenames": [],
-          "is_license_text": true,
-          "is_license_notice": false,
-          "is_license_reference": false,
-          "is_license_tag": false,
-          "is_license_intro": false,
-          "rule_length": 367,
-          "rule_relevance": 100,
-          "licenses": [
-            {
-              "key": "apache-1.1",
-              "name": "Apache License 1.1",
-              "short_name": "Apache 1.1",
-              "category": "Permissive",
-              "is_exception": false,
-              "is_unknown": false,
-              "owner": "Apache Software Foundation",
-              "homepage_url": "http://www.apache.org/licenses/",
-              "text_url": "http://apache.org/licenses/LICENSE-1.1",
-              "reference_url": "https://scancode-licensedb.aboutcode.org/apache-1.1",
-              "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-1.1.LICENSE",
-              "spdx_license_key": "Apache-1.1",
-              "spdx_url": "https://spdx.org/licenses/Apache-1.1"
-            }
-          ]
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-1.1_63.RULE"
         }
       ]
+    }
+  ],
+  "license_references": [
+    {
+      "key": "apache-1.1",
+      "short_name": "Apache 1.1",
+      "name": "Apache License 1.1",
+      "category": "Permissive",
+      "owner": "Apache Software Foundation",
+      "homepage_url": "http://www.apache.org/licenses/",
+      "notes": "Per SPDX.org, this license is OSI certified. This license has been\nsuperseded by Apache 2.0\n",
+      "is_builtin": true,
+      "spdx_license_key": "Apache-1.1",
+      "osi_license_key": "Apache-1.1",
+      "text_urls": [
+        "http://apache.org/licenses/LICENSE-1.1"
+      ],
+      "faq_url": "http://www.apache.org/foundation/license-faq.html",
+      "other_urls": [
+        "http://opensource.org/licenses/Apache-1.1",
+        "https://opensource.org/licenses/Apache-1.1"
+      ],
+      "text": "The Apache Software License, Version 1.1\n\nCopyright (c) 2000 The Apache Software Foundation.  All rights\nreserved.\n\nRedistribution and use in source and binary forms, with or without\nmodification, are permitted provided that the following conditions\nare met:\n\n1. Redistributions of source code must retain the above copyright\nnotice, this list of conditions and the following disclaimer.\n\n2. Redistributions in binary form must reproduce the above copyright\nnotice, this list of conditions and the following disclaimer in\nthe documentation and/or other materials provided with the\ndistribution.\n\n3. The end-user documentation included with the redistribution,\nif any, must include the following acknowledgment:\n\"This product includes software developed by the\nApache Software Foundation (http://www.apache.org/).\"\nAlternately, this acknowledgment may appear in the software itself,\nif and wherever such third-party acknowledgments normally appear.\n\n4. The names \"Apache\" and \"Apache Software Foundation\" must\nnot be used to endorse or promote products derived from this\nsoftware without prior written permission. For written\npermission, please contact apache@apache.org.\n\n5. Products derived from this software may not be called \"Apache\",\nnor may \"Apache\" appear in their name, without prior written\npermission of the Apache Software Foundation.\n\nTHIS SOFTWARE IS PROVIDED ``AS IS'' AND ANY EXPRESSED OR IMPLIED\nWARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES\nOF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE\nDISCLAIMED.  IN NO EVENT SHALL THE APACHE SOFTWARE FOUNDATION OR\nITS CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,\nSPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT\nLIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF\nUSE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND\nON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,\nOR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT\nOF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF\nSUCH DAMAGE."
+    }
+  ],
+  "rule_references": [
+    {
+      "license_expression": "apache-1.1",
+      "rule_identifier": "apache-1.1_63.RULE",
+      "referenced_filenames": [],
+      "is_license_text": true,
+      "is_license_notice": false,
+      "is_license_reference": false,
+      "is_license_tag": false,
+      "is_license_intro": false,
+      "rule_length": 367,
+      "rule_relevance": 100
     }
   ],
   "files": [
@@ -85,32 +97,7 @@
               "matcher": "3-seq",
               "license_expression": "apache-1.1",
               "rule_identifier": "apache-1.1_63.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-1.1_63.RULE",
-              "referenced_filenames": [],
-              "is_license_text": true,
-              "is_license_notice": false,
-              "is_license_reference": false,
-              "is_license_tag": false,
-              "is_license_intro": false,
-              "rule_length": 367,
-              "rule_relevance": 100,
-              "licenses": [
-                {
-                  "key": "apache-1.1",
-                  "name": "Apache License 1.1",
-                  "short_name": "Apache 1.1",
-                  "category": "Permissive",
-                  "is_exception": false,
-                  "is_unknown": false,
-                  "owner": "Apache Software Foundation",
-                  "homepage_url": "http://www.apache.org/licenses/",
-                  "text_url": "http://apache.org/licenses/LICENSE-1.1",
-                  "reference_url": "https://scancode-licensedb.aboutcode.org/apache-1.1",
-                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-1.1.LICENSE",
-                  "spdx_license_key": "Apache-1.1",
-                  "spdx_url": "https://spdx.org/licenses/Apache-1.1"
-                }
-              ]
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-1.1_63.RULE"
             }
           ]
         }

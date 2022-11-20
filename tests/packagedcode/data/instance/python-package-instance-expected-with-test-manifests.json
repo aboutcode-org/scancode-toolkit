@@ -113,6 +113,8 @@
       "purl": "pkg:pypi/setuptools@58.2.0"
     }
   ],
+  "license_references": [],
+  "rule_references": [],
   "files": [
     {
       "path": "LICENSE",

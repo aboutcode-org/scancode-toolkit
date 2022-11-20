@@ -148,6 +148,8 @@
       "purl": "pkg:bower/blue-leaf"
     }
   ],
+  "license_references": [],
+  "rule_references": [],
   "files": [
     {
       "path": "bower.json",

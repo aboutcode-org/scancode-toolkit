@@ -108,6 +108,8 @@
       "purl": "pkg:nuget/Castle.Core@4.2.1"
     }
   ],
+  "license_references": [],
+  "rule_references": [],
   "files": [
     {
       "path": "Castle.Core.nuspec",

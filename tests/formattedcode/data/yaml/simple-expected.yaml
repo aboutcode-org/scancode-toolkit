@@ -30,6 +30,8 @@ headers:
 licenses: []
 dependencies: []
 packages: []
+license_references: []
+rule_references: []
 files:
   - path: simple
     type: directory

@@ -517,6 +517,8 @@
       "purl": "pkg:cargo/daachorse@0.4.1"
     }
   ],
+  "license_references": [],
+  "rule_references": [],
   "files": [
     {
       "path": "scan",

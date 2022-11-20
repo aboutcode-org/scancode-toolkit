@@ -1,6 +1,9 @@
 {
+  "licenses": [],
   "dependencies": [],
   "packages": [],
+  "license_references": [],
+  "rule_references": [],
   "files": [
     {
       "path": "copy1.c",
@@ -26,6 +29,7 @@
       "license_detections": [],
       "license_clues": [],
       "percentage_of_license_text": 0,
+      "for_licenses": [],
       "copyrights": [
         {
           "copyright": "Copyright (c) 2000 ACME, Inc.",
@@ -72,6 +76,7 @@
       "license_detections": [],
       "license_clues": [],
       "percentage_of_license_text": 0,
+      "for_licenses": [],
       "copyrights": [
         {
           "copyright": "Copyright (c) 2000 ACME, Inc.",
@@ -118,6 +123,7 @@
       "license_detections": [],
       "license_clues": [],
       "percentage_of_license_text": 0,
+      "for_licenses": [],
       "copyrights": [
         {
           "copyright": "Copyright (c) 2000 ACME, Inc.",
@@ -164,6 +170,7 @@
       "license_detections": [],
       "license_clues": [],
       "percentage_of_license_text": 0,
+      "for_licenses": [],
       "copyrights": [],
       "holders": [],
       "authors": [],
@@ -198,6 +205,7 @@
       "license_detections": [],
       "license_clues": [],
       "percentage_of_license_text": 0,
+      "for_licenses": [],
       "copyrights": [
         {
           "copyright": "Copyright (c) 2000 ACME, Inc.",
@@ -244,6 +252,7 @@
       "license_detections": [],
       "license_clues": [],
       "percentage_of_license_text": 0,
+      "for_licenses": [],
       "copyrights": [
         {
           "copyright": "Copyright (c) 2000 ACME, Inc.",
@@ -290,6 +299,7 @@
       "license_detections": [],
       "license_clues": [],
       "percentage_of_license_text": 0,
+      "for_licenses": [],
       "copyrights": [
         {
           "copyright": "Copyright (c) 2000 ACME, Inc.",
@@ -336,6 +346,7 @@
       "license_detections": [],
       "license_clues": [],
       "percentage_of_license_text": 0,
+      "for_licenses": [],
       "copyrights": [
         {
           "copyright": "Copyright (c) 2000 ACME, Inc.",

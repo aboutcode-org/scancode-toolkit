@@ -1,4 +1,6 @@
 {
+  "license_references": [],
+  "rule_references": [],
   "files": [
     {
       "path": "non_unicode",

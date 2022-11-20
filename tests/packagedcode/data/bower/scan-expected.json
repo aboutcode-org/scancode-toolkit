@@ -245,6 +245,8 @@
       "purl": "pkg:bower/John%20Doe"
     }
   ],
+  "license_references": [],
+  "rule_references": [],
   "files": [
     {
       "path": "scan",

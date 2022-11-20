@@ -305,6 +305,8 @@
       "purl": "pkg:gem/m2r@2.1.0"
     }
   ],
+  "license_references": [],
+  "rule_references": [],
   "files": [
     {
       "path": "m2r-2.1.0.gem",

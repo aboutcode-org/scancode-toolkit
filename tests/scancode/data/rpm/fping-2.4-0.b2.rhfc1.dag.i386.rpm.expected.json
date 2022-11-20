@@ -103,6 +103,8 @@
       "purl": "pkg:rpm/fping@2.4-0.b2.rhfc1.dag"
     }
   ],
+  "license_references": [],
+  "rule_references": [],
   "files": [
     {
       "path": "fping-2.4-0.b2.rhfc1.dag.i386.rpm",

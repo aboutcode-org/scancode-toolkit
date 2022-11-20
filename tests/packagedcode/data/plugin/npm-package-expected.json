@@ -171,6 +171,8 @@
       "purl": "pkg:npm/cookie-signature@1.0.3"
     }
   ],
+  "license_references": [],
+  "rule_references": [],
   "files": [
     {
       "path": "package.json",

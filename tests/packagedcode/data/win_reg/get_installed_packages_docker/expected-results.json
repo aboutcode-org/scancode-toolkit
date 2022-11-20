@@ -108,6 +108,8 @@
       "purl": "pkg:windows-program/Test2@0.0.1"
     }
   ],
+  "license_references": [],
+  "rule_references": [],
   "files": [
     {
       "path": "layer",

@@ -262,6 +262,8 @@
       "purl": "pkg:conda/requests-kerberos@0.8.0"
     }
   ],
+  "license_references": [],
+  "rule_references": [],
   "files": [
     {
       "path": "info",

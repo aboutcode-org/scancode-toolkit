@@ -162,6 +162,8 @@
       "purl": "pkg:pypi/pip@22.0.4"
     }
   ],
+  "license_references": [],
+  "rule_references": [],
   "files": [
     {
       "path": "AUTHORS.txt",

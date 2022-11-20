@@ -243,6 +243,8 @@
       "purl": "pkg:pypi/click@attr:%20click.__version__"
     }
   ],
+  "license_references": [],
+  "rule_references": [],
   "files": [
     {
       "path": "MANIFEST.in",

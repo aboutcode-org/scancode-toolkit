@@ -212,6 +212,8 @@
       "purl": "pkg:about/appdirs@1.4.3"
     }
   ],
+  "license_references": [],
+  "rule_references": [],
   "files": [
     {
       "path": "apipkg-1.4-py2.py3-none-any.whl",
