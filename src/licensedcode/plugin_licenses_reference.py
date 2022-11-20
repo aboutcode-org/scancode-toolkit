@@ -51,17 +51,18 @@ class LicensesReference(PostScanPlugin):
     sort_order = 500
 
     options = [
-        PluggableCommandLineOption(('--licenses-reference',),
-            is_flag=True, default=False,
+        PluggableCommandLineOption(('--no-licenses-reference',),
+            is_flag=True,
+            default=True,
             help='Include a reference of all the licenses referenced in this '
                  'scan with the data details and full texts.',
             help_group=POST_SCAN_GROUP)
     ]
 
-    def is_enabled(self, licenses_reference, **kwargs):
-        return licenses_reference
+    def is_enabled(self, no_licenses_reference, **kwargs):
+        return no_licenses_reference
 
-    def process_codebase(self, codebase, licenses_reference, **kwargs):
+    def process_codebase(self, codebase, no_licenses_reference, **kwargs):
         """
         Get unique License and Rule data from all license detections in a codebase-level
         list and only refer to them in the resource level detections. 
@@ -69,7 +70,14 @@ class LicensesReference(PostScanPlugin):
         licexps = []
         rules_data = []
 
+        if not hasattr(codebase.attributes, 'licenses'):
+            return
+
+        has_packages = False
         if hasattr(codebase.attributes, 'packages'):
+            has_packages = True
+
+        if has_packages:
             codebase_packages = codebase.attributes.packages
             for pkg in codebase_packages:
                 rules_data.extend(
@@ -78,6 +86,15 @@ class LicensesReference(PostScanPlugin):
                     )
                 )
                 licexps.append(pkg['declared_license_expression'])
+        
+        # This license rules reference data is duplicate as `licenses` is a
+        # top level summary of all unique license detections but this function
+        # is called as the side effect is removing the reference attributes
+        # from license matches
+        try:
+            _discard = get_license_rules_reference_data(codebase.attributes.licenses)
+        except KeyError:
+            pass
 
         for resource in codebase.walk():
 
@@ -85,33 +102,42 @@ class LicensesReference(PostScanPlugin):
             license_licexp = getattr(resource, 'detected_license_expression')
             if license_licexp:
                 licexps.append(license_licexp)
-            package_data = getattr(resource, 'package_data', []) or []
-            package_licexps = [
-                pkg['declared_license_expression']
-                for pkg in package_data
-            ]
-            licexps.extend(package_licexps)
+            
+            if has_packages:
+                package_data = getattr(resource, 'package_data', []) or []
+                package_licexps = [
+                    pkg['declared_license_expression']
+                    for pkg in package_data
+                ]
+                licexps.extend(package_licexps)
 
-            # Get license matches from both package and license detections
-            package_license_detections = []
-            for pkg in package_data:
-                if not pkg['license_detections']:
-                    continue
+                # Get license matches from both package and license detections
+                package_license_detections = []
+                for pkg in package_data:
+                    if not pkg['license_detections']:
+                        continue
 
-                package_license_detections.extend(pkg['license_detections'])
+                    package_license_detections.extend(pkg['license_detections'])
 
-            rules_data.extend(
-                get_license_rules_reference_data(license_detections=package_license_detections)
-            )
+                try:
+                    rules_data.extend(
+                        get_license_rules_reference_data(license_detections=package_license_detections)
+                    )
+                except KeyError:
+                    pass
 
             license_detections = getattr(resource, 'license_detections', []) or []
             license_clues = getattr(resource, 'license_clues', []) or []
-            rules_data.extend(
-                get_license_rules_reference_data(
-                    license_detections=license_detections,
-                    license_clues=license_clues,
+
+            try:
+                rules_data.extend(
+                    get_license_rules_reference_data(
+                        license_detections=license_detections,
+                        license_clues=license_clues,
+                    )
                 )
-            )
+            except KeyError:
+                pass
 
             codebase.save_resource(resource)
 
@@ -121,6 +147,12 @@ class LicensesReference(PostScanPlugin):
         rule_references = get_unique_rule_references(rules_data=rules_data)
         codebase.attributes.rule_references.extend(rule_references)
 
+
+def get_matched_text_from_reference_data(codebase, rule_identifier):
+    for rule_reference_data in codebase.attributes.rule_references:
+        if rule_reference_data["rule_identifier"] == rule_identifier:
+            matched_text = getattr(rule_reference_data, "matched_text", None) or None
+            return matched_text
 
 def get_license_references(license_expressions, licensing=Licensing()):
     """
