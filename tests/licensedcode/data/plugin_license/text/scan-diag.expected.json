@@ -1,4 +1,128 @@
 {
+  "licenses": [
+    {
+      "identifier": "041f32d1-6cb1-f9fa-a580-14f3958007f0",
+      "license_expression": "gpl-2.0 WITH linux-syscall-exception-gpl OR linux-openib",
+      "occurance_count": 1,
+      "detection_log": [
+        "not-combined"
+      ],
+      "matches": [
+        {
+          "score": 100.0,
+          "start_line": 1,
+          "end_line": 1,
+          "matched_length": 13,
+          "match_coverage": 100.0,
+          "matcher": "1-spdx-id",
+          "license_expression": "gpl-2.0 WITH linux-syscall-exception-gpl OR linux-openib",
+          "rule_identifier": "spdx-license-identifier: gpl-2.0 WITH linux-syscall-exception-gpl OR linux-openib",
+          "rule_url": null,
+          "referenced_filenames": [],
+          "is_license_text": false,
+          "is_license_notice": false,
+          "is_license_reference": false,
+          "is_license_tag": true,
+          "is_license_intro": false,
+          "rule_length": 13,
+          "rule_relevance": 100,
+          "licenses": [
+            {
+              "key": "gpl-2.0",
+              "name": "GNU General Public License 2.0",
+              "short_name": "GPL 2.0",
+              "category": "Copyleft",
+              "is_exception": false,
+              "is_unknown": false,
+              "owner": "Free Software Foundation (FSF)",
+              "homepage_url": "http://www.gnu.org/licenses/gpl-2.0.html",
+              "text_url": "http://www.gnu.org/licenses/gpl-2.0.txt",
+              "reference_url": "https://scancode-licensedb.aboutcode.org/gpl-2.0",
+              "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-2.0.LICENSE",
+              "spdx_license_key": "GPL-2.0-only",
+              "spdx_url": "https://spdx.org/licenses/GPL-2.0-only"
+            },
+            {
+              "key": "linux-syscall-exception-gpl",
+              "name": "Linux Syscall Exception to GPL",
+              "short_name": "Linux Syscall Exception to GPL",
+              "category": "Copyleft Limited",
+              "is_exception": true,
+              "is_unknown": false,
+              "owner": "Linux Foundation",
+              "homepage_url": null,
+              "text_url": "",
+              "reference_url": "https://scancode-licensedb.aboutcode.org/linux-syscall-exception-gpl",
+              "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/linux-syscall-exception-gpl.LICENSE",
+              "spdx_license_key": "Linux-syscall-note",
+              "spdx_url": "https://spdx.org/licenses/Linux-syscall-note"
+            },
+            {
+              "key": "linux-openib",
+              "name": "Linux-OpenIB",
+              "short_name": "Linux-OpenIB",
+              "category": "Permissive",
+              "is_exception": false,
+              "is_unknown": false,
+              "owner": "Linux Foundation",
+              "homepage_url": "https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/drivers/infiniband/core/sa.h",
+              "text_url": "https://github.com/ofiwg/libfabric/blob/master/contrib/buildrpm/README",
+              "reference_url": "https://scancode-licensedb.aboutcode.org/linux-openib",
+              "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/linux-openib.LICENSE",
+              "spdx_license_key": "Linux-OpenIB",
+              "spdx_url": "https://spdx.org/licenses/Linux-OpenIB"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "identifier": "6dc1f0cf-64b7-5ad7-e5a7-e5ccd044d866",
+      "license_expression": "fsf-ap",
+      "occurance_count": 1,
+      "detection_log": [
+        "not-combined"
+      ],
+      "matches": [
+        {
+          "score": 91.43,
+          "start_line": 1,
+          "end_line": 3,
+          "matched_length": 32,
+          "match_coverage": 91.43,
+          "matcher": "3-seq",
+          "license_expression": "fsf-ap",
+          "rule_identifier": "fsf-ap.LICENSE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/fsf-ap.LICENSE",
+          "referenced_filenames": [],
+          "is_license_text": true,
+          "is_license_notice": false,
+          "is_license_reference": false,
+          "is_license_tag": false,
+          "is_license_intro": false,
+          "rule_length": 35,
+          "rule_relevance": 100,
+          "licenses": [
+            {
+              "key": "fsf-ap",
+              "name": "FSF All Permissive License",
+              "short_name": "FSF All Permissive License",
+              "category": "Permissive",
+              "is_exception": false,
+              "is_unknown": false,
+              "owner": "Free Software Foundation (FSF)",
+              "homepage_url": "http://www.gnu.org/prep/maintain/html_node/License-Notices-for-Other-Files.html",
+              "text_url": "",
+              "reference_url": "https://scancode-licensedb.aboutcode.org/fsf-ap",
+              "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/fsf-ap.LICENSE",
+              "spdx_license_key": "FSFAP",
+              "spdx_url": "https://spdx.org/licenses/FSFAP"
+            }
+          ]
+        }
+      ]
+    }
+  ],
   "files": [
     {
       "path": "gpl-2.0_with_linux-syscall-note_or_linux-openib_SPDX.RULE",
@@ -84,6 +208,9 @@
       ],
       "license_clues": [],
       "percentage_of_license_text": 100.0,
+      "for_licenses": [
+        "041f32d1-6cb1-f9fa-a580-14f3958007f0"
+      ],
       "scan_errors": []
     },
     {
@@ -140,6 +267,9 @@
       ],
       "license_clues": [],
       "percentage_of_license_text": 91.43,
+      "for_licenses": [
+        "6dc1f0cf-64b7-5ad7-e5a7-e5ccd044d866"
+      ],
       "scan_errors": []
     }
   ]

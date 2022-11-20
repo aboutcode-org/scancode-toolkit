@@ -1,4 +1,148 @@
 {
+  "licenses": [
+    {
+      "identifier": "cb2d1ad5-873d-6301-d317-22a999e29333",
+      "license_expression": "unknown-license-reference",
+      "occurance_count": 2,
+      "detection_log": [
+        "not-combined"
+      ],
+      "matches": [
+        {
+          "score": 100.0,
+          "start_line": 9,
+          "end_line": 9,
+          "matched_length": 8,
+          "match_coverage": 100.0,
+          "matcher": "2-aho",
+          "license_expression": "unknown-license-reference",
+          "rule_identifier": "unknown-license-reference_30.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/unknown-license-reference_30.RULE",
+          "referenced_filenames": [
+            "Copyright"
+          ],
+          "is_license_text": false,
+          "is_license_notice": false,
+          "is_license_reference": true,
+          "is_license_tag": false,
+          "is_license_intro": false,
+          "rule_length": 8,
+          "rule_relevance": 100,
+          "licenses": [
+            {
+              "key": "unknown-license-reference",
+              "name": "Unknown License file reference",
+              "short_name": "Unknown License reference",
+              "category": "Unstated License",
+              "is_exception": false,
+              "is_unknown": true,
+              "owner": "Unspecified",
+              "homepage_url": null,
+              "text_url": "",
+              "reference_url": "https://scancode-licensedb.aboutcode.org/unknown-license-reference",
+              "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/unknown-license-reference.LICENSE",
+              "spdx_license_key": "LicenseRef-scancode-unknown-license-reference",
+              "spdx_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/unknown-license-reference.LICENSE"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "identifier": "f8587161-833d-692c-3d76-0d68eb040d40",
+      "license_expression": "x11-xconsortium-veillard",
+      "occurance_count": 1,
+      "detection_log": [
+        "not-combined"
+      ],
+      "matches": [
+        {
+          "score": 100.0,
+          "start_line": 7,
+          "end_line": 26,
+          "matched_length": 199,
+          "match_coverage": 100.0,
+          "matcher": "2-aho",
+          "license_expression": "x11-xconsortium-veillard",
+          "rule_identifier": "x11-xconsortium-veillard.LICENSE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/x11-xconsortium-veillard.LICENSE",
+          "referenced_filenames": [],
+          "is_license_text": true,
+          "is_license_notice": false,
+          "is_license_reference": false,
+          "is_license_tag": false,
+          "is_license_intro": false,
+          "rule_length": 199,
+          "rule_relevance": 100,
+          "licenses": [
+            {
+              "key": "x11-xconsortium-veillard",
+              "name": "X11-Style (X Consortium Veillard)",
+              "short_name": "X11-Style (X Consortium Veillard)",
+              "category": "Permissive",
+              "is_exception": false,
+              "is_unknown": false,
+              "owner": "Daniel Veillard",
+              "homepage_url": null,
+              "text_url": "",
+              "reference_url": "https://scancode-licensedb.aboutcode.org/x11-xconsortium-veillard",
+              "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/x11-xconsortium-veillard.LICENSE",
+              "spdx_license_key": "LicenseRef-scancode-x11-xconsortium-veillard",
+              "spdx_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/x11-xconsortium-veillard.LICENSE"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "identifier": "0fca325a-cfc9-3067-2426-a2e81f63954e",
+      "license_expression": "unknown-license-reference",
+      "occurance_count": 1,
+      "detection_log": [
+        "not-combined"
+      ],
+      "matches": [
+        {
+          "score": 100.0,
+          "start_line": 13,
+          "end_line": 13,
+          "matched_length": 9,
+          "match_coverage": 100.0,
+          "matcher": "2-aho",
+          "license_expression": "unknown-license-reference",
+          "rule_identifier": "unknown-license-reference_108.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/unknown-license-reference_108.RULE",
+          "referenced_filenames": [
+            "Copyright"
+          ],
+          "is_license_text": false,
+          "is_license_notice": false,
+          "is_license_reference": true,
+          "is_license_tag": false,
+          "is_license_intro": false,
+          "rule_length": 9,
+          "rule_relevance": 100,
+          "licenses": [
+            {
+              "key": "unknown-license-reference",
+              "name": "Unknown License file reference",
+              "short_name": "Unknown License reference",
+              "category": "Unstated License",
+              "is_exception": false,
+              "is_unknown": true,
+              "owner": "Unspecified",
+              "homepage_url": null,
+              "text_url": "",
+              "reference_url": "https://scancode-licensedb.aboutcode.org/unknown-license-reference",
+              "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/unknown-license-reference.LICENSE",
+              "spdx_license_key": "LicenseRef-scancode-unknown-license-reference",
+              "spdx_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/unknown-license-reference.LICENSE"
+            }
+          ]
+        }
+      ]
+    }
+  ],
   "files": [
     {
       "path": "Copyright",
@@ -54,6 +198,9 @@
       ],
       "license_clues": [],
       "percentage_of_license_text": 81.89,
+      "for_licenses": [
+        "f8587161-833d-692c-3d76-0d68eb040d40"
+      ],
       "scan_errors": []
     },
     {
@@ -149,6 +296,9 @@
       ],
       "license_clues": [],
       "percentage_of_license_text": 1.32,
+      "for_licenses": [
+        "cb2d1ad5-873d-6301-d317-22a999e29333"
+      ],
       "scan_errors": []
     },
     {
@@ -244,6 +394,9 @@
       ],
       "license_clues": [],
       "percentage_of_license_text": 0.1,
+      "for_licenses": [
+        "cb2d1ad5-873d-6301-d317-22a999e29333"
+      ],
       "scan_errors": []
     },
     {
@@ -254,6 +407,7 @@
       "license_detections": [],
       "license_clues": [],
       "percentage_of_license_text": 0,
+      "for_licenses": [],
       "scan_errors": []
     },
     {
@@ -264,6 +418,7 @@
       "license_detections": [],
       "license_clues": [],
       "percentage_of_license_text": 0,
+      "for_licenses": [],
       "scan_errors": []
     },
     {
@@ -359,6 +514,9 @@
       ],
       "license_clues": [],
       "percentage_of_license_text": 2.47,
+      "for_licenses": [
+        "0fca325a-cfc9-3067-2426-a2e81f63954e"
+      ],
       "scan_errors": []
     }
   ]

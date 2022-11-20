@@ -1,4 +1,52 @@
 {
+  "licenses": [
+    {
+      "identifier": "614261e5-1086-6652-1076-f1a96238a5c3",
+      "license_expression": "bsd-new",
+      "occurance_count": 1,
+      "detection_log": [
+        "not-combined"
+      ],
+      "matches": [
+        {
+          "score": 100.0,
+          "start_line": 3,
+          "end_line": 28,
+          "matched_length": 212,
+          "match_coverage": 100.0,
+          "matcher": "2-aho",
+          "license_expression": "bsd-new",
+          "rule_identifier": "bsd-new_166.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_166.RULE",
+          "referenced_filenames": [],
+          "is_license_text": true,
+          "is_license_notice": false,
+          "is_license_reference": false,
+          "is_license_tag": false,
+          "is_license_intro": false,
+          "rule_length": 212,
+          "rule_relevance": 100,
+          "licenses": [
+            {
+              "key": "bsd-new",
+              "name": "BSD-3-Clause",
+              "short_name": "BSD-3-Clause",
+              "category": "Permissive",
+              "is_exception": false,
+              "is_unknown": false,
+              "owner": "Regents of the University of California",
+              "homepage_url": "http://www.opensource.org/licenses/BSD-3-Clause",
+              "text_url": "http://www.opensource.org/licenses/BSD-3-Clause",
+              "reference_url": "https://scancode-licensedb.aboutcode.org/bsd-new",
+              "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-new.LICENSE",
+              "spdx_license_key": "BSD-3-Clause",
+              "spdx_url": "https://spdx.org/licenses/BSD-3-Clause"
+            }
+          ]
+        }
+      ]
+    }
+  ],
   "dependencies": [
     {
       "purl": "pkg:pubspec/pedantic",
@@ -191,6 +239,9 @@
       ],
       "license_clues": [],
       "percentage_of_license_text": 96.8,
+      "for_licenses": [
+        "614261e5-1086-6652-1076-f1a96238a5c3"
+      ],
       "package_data": [],
       "for_packages": [],
       "scan_errors": []
@@ -203,6 +254,7 @@
       "license_detections": [],
       "license_clues": [],
       "percentage_of_license_text": 0,
+      "for_licenses": [],
       "package_data": [
         {
           "type": "dart",

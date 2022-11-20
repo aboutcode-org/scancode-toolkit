@@ -1,4 +1,52 @@
 {
+  "licenses": [
+    {
+      "identifier": "7b7e2330-4841-998b-3287-06b5bc6e5a90",
+      "license_expression": "pygres-2.2",
+      "occurance_count": 1,
+      "detection_log": [
+        "not-combined"
+      ],
+      "matches": [
+        {
+          "score": 100.0,
+          "start_line": 7,
+          "end_line": 22,
+          "matched_length": 145,
+          "match_coverage": 100.0,
+          "matcher": "2-aho",
+          "license_expression": "pygres-2.2",
+          "rule_identifier": "pygres-2.2_2.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/pygres-2.2_2.RULE",
+          "referenced_filenames": [],
+          "is_license_text": true,
+          "is_license_notice": false,
+          "is_license_reference": false,
+          "is_license_tag": false,
+          "is_license_intro": false,
+          "rule_length": 145,
+          "rule_relevance": 100,
+          "licenses": [
+            {
+              "key": "pygres-2.2",
+              "name": "PyGres License v2.2",
+              "short_name": "PyGres License 2.2",
+              "category": "Permissive",
+              "is_exception": false,
+              "is_unknown": false,
+              "owner": "Unspecified",
+              "homepage_url": null,
+              "text_url": "http://shell.vex.net/viewvc.cgi/pygresql/trunk/module/pgmodule.c?view=markup&pathrev=431",
+              "reference_url": "https://scancode-licensedb.aboutcode.org/pygres-2.2",
+              "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/pygres-2.2.LICENSE",
+              "spdx_license_key": "LicenseRef-scancode-pygres-2.2",
+              "spdx_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/pygres-2.2.LICENSE"
+            }
+          ]
+        }
+      ]
+    }
+  ],
   "files": [
     {
       "path": "LICENSE2",
@@ -69,6 +117,9 @@
       ],
       "license_clues": [],
       "percentage_of_license_text": 69.38,
+      "for_licenses": [
+        "7b7e2330-4841-998b-3287-06b5bc6e5a90"
+      ],
       "copyrights": [
         {
           "copyright": "Copyright (c) 1996, Pascal Andre (andre@avia.ecp.fr)",

@@ -1,4 +1,190 @@
 {
+  "licenses": [
+    {
+      "identifier": "0c954d0c-44a8-826f-8a0e-c82112725467",
+      "license_expression": "apache-2.0",
+      "occurance_count": 4,
+      "detection_log": [
+        "not-combined"
+      ],
+      "matches": [
+        {
+          "score": 100.0,
+          "start_line": 2,
+          "end_line": 2,
+          "matched_length": 3,
+          "match_coverage": 100.0,
+          "matcher": "2-aho",
+          "license_expression": "apache-2.0",
+          "rule_identifier": "spdx_license_id_apache-2.0_for_apache-2.0.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/spdx_license_id_apache-2.0_for_apache-2.0.RULE",
+          "referenced_filenames": [],
+          "is_license_text": false,
+          "is_license_notice": false,
+          "is_license_reference": true,
+          "is_license_tag": false,
+          "is_license_intro": false,
+          "rule_length": 3,
+          "rule_relevance": 100,
+          "licenses": [
+            {
+              "key": "apache-2.0",
+              "name": "Apache License 2.0",
+              "short_name": "Apache 2.0",
+              "category": "Permissive",
+              "is_exception": false,
+              "is_unknown": false,
+              "owner": "Apache Software Foundation",
+              "homepage_url": "http://www.apache.org/licenses/",
+              "text_url": "http://www.apache.org/licenses/LICENSE-2.0",
+              "reference_url": "https://scancode-licensedb.aboutcode.org/apache-2.0",
+              "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.LICENSE",
+              "spdx_license_key": "Apache-2.0",
+              "spdx_url": "https://spdx.org/licenses/Apache-2.0"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "identifier": "f6292b57-ba6c-0a53-2660-505e6745bffa",
+      "license_expression": "lgpl-2.0",
+      "occurance_count": 1,
+      "detection_log": [
+        "not-combined"
+      ],
+      "matches": [
+        {
+          "score": 80.0,
+          "start_line": 2,
+          "end_line": 2,
+          "matched_length": 3,
+          "match_coverage": 100.0,
+          "matcher": "2-aho",
+          "license_expression": "lgpl-2.0",
+          "rule_identifier": "lgpl-2.0_bare_id.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0_bare_id.RULE",
+          "referenced_filenames": [],
+          "is_license_text": false,
+          "is_license_notice": false,
+          "is_license_reference": false,
+          "is_license_tag": true,
+          "is_license_intro": false,
+          "rule_length": 3,
+          "rule_relevance": 80,
+          "licenses": [
+            {
+              "key": "lgpl-2.0",
+              "name": "GNU Library General Public License 2.0",
+              "short_name": "LGPL 2.0",
+              "category": "Copyleft Limited",
+              "is_exception": false,
+              "is_unknown": false,
+              "owner": "Free Software Foundation (FSF)",
+              "homepage_url": "http://www.gnu.org/licenses/old-licenses/lgpl-2.0.html",
+              "text_url": "http://www.gnu.org/licenses/lgpl-2.0.html",
+              "reference_url": "https://scancode-licensedb.aboutcode.org/lgpl-2.0",
+              "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/lgpl-2.0.LICENSE",
+              "spdx_license_key": "LGPL-2.0-only",
+              "spdx_url": "https://spdx.org/licenses/LGPL-2.0-only"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "identifier": "c6739b12-3643-1e85-cc14-1864411bf945",
+      "license_expression": "apache-2.0",
+      "occurance_count": 1,
+      "detection_log": [
+        "not-combined"
+      ],
+      "matches": [
+        {
+          "score": 100.0,
+          "start_line": 5,
+          "end_line": 5,
+          "matched_length": 4,
+          "match_coverage": 100.0,
+          "matcher": "2-aho",
+          "license_expression": "apache-2.0",
+          "rule_identifier": "apache-2.0_65.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_65.RULE",
+          "referenced_filenames": [],
+          "is_license_text": false,
+          "is_license_notice": false,
+          "is_license_reference": false,
+          "is_license_tag": true,
+          "is_license_intro": false,
+          "rule_length": 4,
+          "rule_relevance": 100,
+          "licenses": [
+            {
+              "key": "apache-2.0",
+              "name": "Apache License 2.0",
+              "short_name": "Apache 2.0",
+              "category": "Permissive",
+              "is_exception": false,
+              "is_unknown": false,
+              "owner": "Apache Software Foundation",
+              "homepage_url": "http://www.apache.org/licenses/",
+              "text_url": "http://www.apache.org/licenses/LICENSE-2.0",
+              "reference_url": "https://scancode-licensedb.aboutcode.org/apache-2.0",
+              "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.LICENSE",
+              "spdx_license_key": "Apache-2.0",
+              "spdx_url": "https://spdx.org/licenses/Apache-2.0"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "identifier": "b6b96096-114f-387a-cbbd-855af62441b0",
+      "license_expression": "gpl-2.0",
+      "occurance_count": 1,
+      "detection_log": [
+        "not-combined"
+      ],
+      "matches": [
+        {
+          "score": 100.0,
+          "start_line": 2,
+          "end_line": 2,
+          "matched_length": 9,
+          "match_coverage": 100.0,
+          "matcher": "2-aho",
+          "license_expression": "gpl-2.0",
+          "rule_identifier": "gpl-2.0_1336.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0_1336.RULE",
+          "referenced_filenames": [],
+          "is_license_text": false,
+          "is_license_notice": true,
+          "is_license_reference": false,
+          "is_license_tag": false,
+          "is_license_intro": false,
+          "rule_length": 9,
+          "rule_relevance": 100,
+          "licenses": [
+            {
+              "key": "gpl-2.0",
+              "name": "GNU General Public License 2.0",
+              "short_name": "GPL 2.0",
+              "category": "Copyleft",
+              "is_exception": false,
+              "is_unknown": false,
+              "owner": "Free Software Foundation (FSF)",
+              "homepage_url": "http://www.gnu.org/licenses/gpl-2.0.html",
+              "text_url": "http://www.gnu.org/licenses/gpl-2.0.txt",
+              "reference_url": "https://scancode-licensedb.aboutcode.org/gpl-2.0",
+              "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-2.0.LICENSE",
+              "spdx_license_key": "GPL-2.0-only",
+              "spdx_url": "https://spdx.org/licenses/GPL-2.0-only"
+            }
+          ]
+        }
+      ]
+    }
+  ],
   "dependencies": [],
   "packages": [
     {
@@ -230,6 +416,7 @@
       "license_detections": [],
       "license_clues": [],
       "percentage_of_license_text": 0,
+      "for_licenses": [],
       "copyrights": [],
       "holders": [],
       "authors": [],
@@ -265,6 +452,7 @@
       "license_detections": [],
       "license_clues": [],
       "percentage_of_license_text": 0,
+      "for_licenses": [],
       "copyrights": [],
       "holders": [],
       "authors": [],
@@ -300,6 +488,7 @@
       "license_detections": [],
       "license_clues": [],
       "percentage_of_license_text": 0,
+      "for_licenses": [],
       "copyrights": [],
       "holders": [],
       "authors": [],
@@ -379,6 +568,7 @@
       "license_detections": [],
       "license_clues": [],
       "percentage_of_license_text": 0,
+      "for_licenses": [],
       "copyrights": [],
       "holders": [],
       "authors": [],
@@ -462,6 +652,9 @@
       ],
       "license_clues": [],
       "percentage_of_license_text": 33.33,
+      "for_licenses": [
+        "0c954d0c-44a8-826f-8a0e-c82112725467"
+      ],
       "copyrights": [
         {
           "copyright": "Copyright (c) The Apache Software Foundation",
@@ -556,6 +749,9 @@
       ],
       "license_clues": [],
       "percentage_of_license_text": 33.33,
+      "for_licenses": [
+        "0c954d0c-44a8-826f-8a0e-c82112725467"
+      ],
       "copyrights": [
         {
           "copyright": "Copyright (c) The Apache Software Foundation",
@@ -650,6 +846,9 @@
       ],
       "license_clues": [],
       "percentage_of_license_text": 33.33,
+      "for_licenses": [
+        "0c954d0c-44a8-826f-8a0e-c82112725467"
+      ],
       "copyrights": [
         {
           "copyright": "Copyright (c) The Apache Software Foundation",
@@ -744,6 +943,9 @@
       ],
       "license_clues": [],
       "percentage_of_license_text": 42.86,
+      "for_licenses": [
+        "f6292b57-ba6c-0a53-2660-505e6745bffa"
+      ],
       "copyrights": [
         {
           "copyright": "Copyright (c) nexB, Inc.",
@@ -793,6 +995,7 @@
       "license_detections": [],
       "license_clues": [],
       "percentage_of_license_text": 0,
+      "for_licenses": [],
       "copyrights": [],
       "holders": [],
       "authors": [],
@@ -876,6 +1079,9 @@
       ],
       "license_clues": [],
       "percentage_of_license_text": 22.22,
+      "for_licenses": [
+        "c6739b12-3643-1e85-cc14-1864411bf945"
+      ],
       "copyrights": [
         {
           "copyright": "Copyright (c) The Apache Software",
@@ -1060,6 +1266,9 @@
       ],
       "license_clues": [],
       "percentage_of_license_text": 33.33,
+      "for_licenses": [
+        "0c954d0c-44a8-826f-8a0e-c82112725467"
+      ],
       "copyrights": [
         {
           "copyright": "Copyright (c) The Apache Software Foundation",
@@ -1154,6 +1363,9 @@
       ],
       "license_clues": [],
       "percentage_of_license_text": 64.29,
+      "for_licenses": [
+        "b6b96096-114f-387a-cbbd-855af62441b0"
+      ],
       "copyrights": [
         {
           "copyright": "copyright (c) 2017 IBM Corp.",

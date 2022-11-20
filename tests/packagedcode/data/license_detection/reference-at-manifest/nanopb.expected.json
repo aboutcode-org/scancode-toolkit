@@ -1,4 +1,100 @@
 {
+  "licenses": [
+    {
+      "identifier": "fb544817-ac13-5bb2-e219-0e3bba38b9bf",
+      "license_expression": "zlib",
+      "occurance_count": 1,
+      "detection_log": [
+        "not-combined"
+      ],
+      "matches": [
+        {
+          "score": 100.0,
+          "start_line": 3,
+          "end_line": 20,
+          "matched_length": 132,
+          "match_coverage": 100.0,
+          "matcher": "2-aho",
+          "license_expression": "zlib",
+          "rule_identifier": "zlib.LICENSE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/zlib.LICENSE",
+          "referenced_filenames": [],
+          "is_license_text": true,
+          "is_license_notice": false,
+          "is_license_reference": false,
+          "is_license_tag": false,
+          "is_license_intro": false,
+          "rule_length": 132,
+          "rule_relevance": 100,
+          "licenses": [
+            {
+              "key": "zlib",
+              "name": "ZLIB License",
+              "short_name": "ZLIB License",
+              "category": "Permissive",
+              "is_exception": false,
+              "is_unknown": false,
+              "owner": "zlib",
+              "homepage_url": "http://www.zlib.net/",
+              "text_url": "http://www.gzip.org/zlib/zlib_license.html",
+              "reference_url": "https://scancode-licensedb.aboutcode.org/zlib",
+              "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/zlib.LICENSE",
+              "spdx_license_key": "Zlib",
+              "spdx_url": "https://spdx.org/licenses/Zlib"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "identifier": "750cc90c-1587-3743-f22a-e2ff2e95e077",
+      "license_expression": "zlib",
+      "occurance_count": 2,
+      "detection_log": [
+        "not-combined"
+      ],
+      "matches": [
+        {
+          "score": 100.0,
+          "start_line": 14,
+          "end_line": 14,
+          "matched_length": 5,
+          "match_coverage": 100.0,
+          "matcher": "2-aho",
+          "license_expression": "zlib",
+          "rule_identifier": "zlib_in_manifest.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/zlib_in_manifest.RULE",
+          "referenced_filenames": [
+            "LICENSE.txt"
+          ],
+          "is_license_text": false,
+          "is_license_notice": false,
+          "is_license_reference": true,
+          "is_license_tag": false,
+          "is_license_intro": false,
+          "rule_length": 5,
+          "rule_relevance": 100,
+          "licenses": [
+            {
+              "key": "zlib",
+              "name": "ZLIB License",
+              "short_name": "ZLIB License",
+              "category": "Permissive",
+              "is_exception": false,
+              "is_unknown": false,
+              "owner": "zlib",
+              "homepage_url": "http://www.zlib.net/",
+              "text_url": "http://www.gzip.org/zlib/zlib_license.html",
+              "reference_url": "https://scancode-licensedb.aboutcode.org/zlib",
+              "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/zlib.LICENSE",
+              "spdx_license_key": "Zlib",
+              "spdx_url": "https://spdx.org/licenses/Zlib"
+            }
+          ]
+        }
+      ]
+    }
+  ],
   "dependencies": [],
   "packages": [
     {
@@ -195,6 +291,9 @@
       ],
       "license_clues": [],
       "percentage_of_license_text": 92.31,
+      "for_licenses": [
+        "fb544817-ac13-5bb2-e219-0e3bba38b9bf"
+      ],
       "package_data": [],
       "for_packages": [],
       "scan_errors": []
@@ -292,6 +391,10 @@
       ],
       "license_clues": [],
       "percentage_of_license_text": 2.49,
+      "for_licenses": [
+        "750cc90c-1587-3743-f22a-e2ff2e95e077",
+        "750cc90c-1587-3743-f22a-e2ff2e95e077"
+      ],
       "package_data": [
         {
           "type": "cocoapods",

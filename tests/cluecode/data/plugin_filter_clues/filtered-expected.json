@@ -1,4 +1,52 @@
 {
+  "licenses": [
+    {
+      "identifier": "81b019ea-ed6c-17e3-1cfc-fad8557f8cac",
+      "license_expression": "apache-1.1",
+      "occurance_count": 1,
+      "detection_log": [
+        "not-combined"
+      ],
+      "matches": [
+        {
+          "score": 96.07,
+          "start_line": 7,
+          "end_line": 70,
+          "matched_length": 367,
+          "match_coverage": 100.0,
+          "matcher": "3-seq",
+          "license_expression": "apache-1.1",
+          "rule_identifier": "apache-1.1_63.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-1.1_63.RULE",
+          "referenced_filenames": [],
+          "is_license_text": true,
+          "is_license_notice": false,
+          "is_license_reference": false,
+          "is_license_tag": false,
+          "is_license_intro": false,
+          "rule_length": 367,
+          "rule_relevance": 100,
+          "licenses": [
+            {
+              "key": "apache-1.1",
+              "name": "Apache License 1.1",
+              "short_name": "Apache 1.1",
+              "category": "Permissive",
+              "is_exception": false,
+              "is_unknown": false,
+              "owner": "Apache Software Foundation",
+              "homepage_url": "http://www.apache.org/licenses/",
+              "text_url": "http://apache.org/licenses/LICENSE-1.1",
+              "reference_url": "https://scancode-licensedb.aboutcode.org/apache-1.1",
+              "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-1.1.LICENSE",
+              "spdx_license_key": "Apache-1.1",
+              "spdx_url": "https://spdx.org/licenses/Apache-1.1"
+            }
+          ]
+        }
+      ]
+    }
+  ],
   "files": [
     {
       "path": "LICENSE",
@@ -69,6 +117,9 @@
       ],
       "license_clues": [],
       "percentage_of_license_text": 92.44,
+      "for_licenses": [
+        "81b019ea-ed6c-17e3-1cfc-fad8557f8cac"
+      ],
       "copyrights": [
         {
           "copyright": "Copyright (c) The Eclipse Foundation https://eclipse.org",

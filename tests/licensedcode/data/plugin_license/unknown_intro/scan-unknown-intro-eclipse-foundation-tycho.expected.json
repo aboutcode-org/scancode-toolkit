@@ -1,4 +1,1478 @@
 {
+  "licenses": [
+    {
+      "identifier": "1867eafe-a258-cbb4-408f-2bd33d02ee23",
+      "license_expression": "epl-1.0",
+      "occurance_count": 2,
+      "detection_log": [
+        "not-combined"
+      ],
+      "matches": [
+        {
+          "score": 99.34,
+          "start_line": 12,
+          "end_line": 25,
+          "matched_length": 150,
+          "match_coverage": 99.34,
+          "matcher": "3-seq",
+          "license_expression": "epl-1.0",
+          "rule_identifier": "epl-1.0_3.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/epl-1.0_3.RULE",
+          "referenced_filenames": [],
+          "is_license_text": false,
+          "is_license_notice": true,
+          "is_license_reference": false,
+          "is_license_tag": false,
+          "is_license_intro": false,
+          "rule_length": 151,
+          "rule_relevance": 100,
+          "licenses": [
+            {
+              "key": "epl-1.0",
+              "name": "Eclipse Public License 1.0",
+              "short_name": "EPL 1.0",
+              "category": "Copyleft Limited",
+              "is_exception": false,
+              "is_unknown": false,
+              "owner": "Eclipse Foundation",
+              "homepage_url": "http://www.eclipse.org/legal/epl-v10.html",
+              "text_url": "http://www.eclipse.org/legal/epl-v10.html",
+              "reference_url": "https://scancode-licensedb.aboutcode.org/epl-1.0",
+              "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/epl-1.0.LICENSE",
+              "spdx_license_key": "EPL-1.0",
+              "spdx_url": "https://spdx.org/licenses/EPL-1.0"
+            }
+          ]
+        },
+        {
+          "score": 100.0,
+          "start_line": 17,
+          "end_line": 17,
+          "matched_length": 8,
+          "match_coverage": 100.0,
+          "matcher": "2-aho",
+          "license_expression": "epl-1.0",
+          "rule_identifier": "epl-1.0_7.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/epl-1.0_7.RULE",
+          "referenced_filenames": [],
+          "is_license_text": false,
+          "is_license_notice": false,
+          "is_license_reference": true,
+          "is_license_tag": false,
+          "is_license_intro": false,
+          "rule_length": 8,
+          "rule_relevance": 100,
+          "licenses": [
+            {
+              "key": "epl-1.0",
+              "name": "Eclipse Public License 1.0",
+              "short_name": "EPL 1.0",
+              "category": "Copyleft Limited",
+              "is_exception": false,
+              "is_unknown": false,
+              "owner": "Eclipse Foundation",
+              "homepage_url": "http://www.eclipse.org/legal/epl-v10.html",
+              "text_url": "http://www.eclipse.org/legal/epl-v10.html",
+              "reference_url": "https://scancode-licensedb.aboutcode.org/epl-1.0",
+              "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/epl-1.0.LICENSE",
+              "spdx_license_key": "EPL-1.0",
+              "spdx_url": "https://spdx.org/licenses/EPL-1.0"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "identifier": "b414489c-d2f7-2207-9e37-ea197f00d317",
+      "license_expression": "apache-2.0",
+      "occurance_count": 2,
+      "detection_log": [
+        "not-combined"
+      ],
+      "matches": [
+        {
+          "score": 95.0,
+          "start_line": 37,
+          "end_line": 37,
+          "matched_length": 14,
+          "match_coverage": 100.0,
+          "matcher": "2-aho",
+          "license_expression": "apache-2.0",
+          "rule_identifier": "apache_no-version_1.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache_no-version_1.RULE",
+          "referenced_filenames": [],
+          "is_license_text": false,
+          "is_license_notice": false,
+          "is_license_reference": true,
+          "is_license_tag": false,
+          "is_license_intro": false,
+          "rule_length": 14,
+          "rule_relevance": 95,
+          "licenses": [
+            {
+              "key": "apache-2.0",
+              "name": "Apache License 2.0",
+              "short_name": "Apache 2.0",
+              "category": "Permissive",
+              "is_exception": false,
+              "is_unknown": false,
+              "owner": "Apache Software Foundation",
+              "homepage_url": "http://www.apache.org/licenses/",
+              "text_url": "http://www.apache.org/licenses/LICENSE-2.0",
+              "reference_url": "https://scancode-licensedb.aboutcode.org/apache-2.0",
+              "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.LICENSE",
+              "spdx_license_key": "Apache-2.0",
+              "spdx_url": "https://spdx.org/licenses/Apache-2.0"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "identifier": "53c14ef2-2b41-3f63-1dbb-e3a1efbd1e8d",
+      "license_expression": "apache-2.0",
+      "occurance_count": 1,
+      "detection_log": [
+        "unknown-intro-followed-by-match"
+      ],
+      "matches": [
+        {
+          "score": 100.0,
+          "start_line": 44,
+          "end_line": 44,
+          "matched_length": 6,
+          "match_coverage": 100.0,
+          "matcher": "2-aho",
+          "license_expression": "unknown-license-reference",
+          "rule_identifier": "license-intro_35.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/license-intro_35.RULE",
+          "referenced_filenames": [],
+          "is_license_text": false,
+          "is_license_notice": false,
+          "is_license_reference": false,
+          "is_license_tag": false,
+          "is_license_intro": true,
+          "rule_length": 6,
+          "rule_relevance": 100,
+          "licenses": [
+            {
+              "key": "unknown-license-reference",
+              "name": "Unknown License file reference",
+              "short_name": "Unknown License reference",
+              "category": "Unstated License",
+              "is_exception": false,
+              "is_unknown": true,
+              "owner": "Unspecified",
+              "homepage_url": null,
+              "text_url": "",
+              "reference_url": "https://scancode-licensedb.aboutcode.org/unknown-license-reference",
+              "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/unknown-license-reference.LICENSE",
+              "spdx_license_key": "LicenseRef-scancode-unknown-license-reference",
+              "spdx_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/unknown-license-reference.LICENSE"
+            }
+          ]
+        },
+        {
+          "score": 100.0,
+          "start_line": 44,
+          "end_line": 44,
+          "matched_length": 5,
+          "match_coverage": 100.0,
+          "matcher": "2-aho",
+          "license_expression": "apache-2.0",
+          "rule_identifier": "apache-2.0_322.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_322.RULE",
+          "referenced_filenames": [],
+          "is_license_text": false,
+          "is_license_notice": false,
+          "is_license_reference": false,
+          "is_license_tag": true,
+          "is_license_intro": false,
+          "rule_length": 5,
+          "rule_relevance": 100,
+          "licenses": [
+            {
+              "key": "apache-2.0",
+              "name": "Apache License 2.0",
+              "short_name": "Apache 2.0",
+              "category": "Permissive",
+              "is_exception": false,
+              "is_unknown": false,
+              "owner": "Apache Software Foundation",
+              "homepage_url": "http://www.apache.org/licenses/",
+              "text_url": "http://www.apache.org/licenses/LICENSE-2.0",
+              "reference_url": "https://scancode-licensedb.aboutcode.org/apache-2.0",
+              "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.LICENSE",
+              "spdx_license_key": "Apache-2.0",
+              "spdx_url": "https://spdx.org/licenses/Apache-2.0"
+            }
+          ]
+        },
+        {
+          "score": 39.47,
+          "start_line": 45,
+          "end_line": 45,
+          "matched_length": 15,
+          "match_coverage": 39.47,
+          "matcher": "3-seq",
+          "license_expression": "apache-2.0",
+          "rule_identifier": "apache-2.0_1112.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_1112.RULE",
+          "referenced_filenames": [],
+          "is_license_text": false,
+          "is_license_notice": true,
+          "is_license_reference": false,
+          "is_license_tag": false,
+          "is_license_intro": false,
+          "rule_length": 38,
+          "rule_relevance": 100,
+          "licenses": [
+            {
+              "key": "apache-2.0",
+              "name": "Apache License 2.0",
+              "short_name": "Apache 2.0",
+              "category": "Permissive",
+              "is_exception": false,
+              "is_unknown": false,
+              "owner": "Apache Software Foundation",
+              "homepage_url": "http://www.apache.org/licenses/",
+              "text_url": "http://www.apache.org/licenses/LICENSE-2.0",
+              "reference_url": "https://scancode-licensedb.aboutcode.org/apache-2.0",
+              "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.LICENSE",
+              "spdx_license_key": "Apache-2.0",
+              "spdx_url": "https://spdx.org/licenses/Apache-2.0"
+            }
+          ]
+        },
+        {
+          "score": 40.0,
+          "start_line": 45,
+          "end_line": 45,
+          "matched_length": 14,
+          "match_coverage": 40.0,
+          "matcher": "3-seq",
+          "license_expression": "apache-2.0",
+          "rule_identifier": "apache-2.0_842.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_842.RULE",
+          "referenced_filenames": [],
+          "is_license_text": false,
+          "is_license_notice": true,
+          "is_license_reference": false,
+          "is_license_tag": false,
+          "is_license_intro": false,
+          "rule_length": 35,
+          "rule_relevance": 100,
+          "licenses": [
+            {
+              "key": "apache-2.0",
+              "name": "Apache License 2.0",
+              "short_name": "Apache 2.0",
+              "category": "Permissive",
+              "is_exception": false,
+              "is_unknown": false,
+              "owner": "Apache Software Foundation",
+              "homepage_url": "http://www.apache.org/licenses/",
+              "text_url": "http://www.apache.org/licenses/LICENSE-2.0",
+              "reference_url": "https://scancode-licensedb.aboutcode.org/apache-2.0",
+              "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.LICENSE",
+              "spdx_license_key": "Apache-2.0",
+              "spdx_url": "https://spdx.org/licenses/Apache-2.0"
+            }
+          ]
+        },
+        {
+          "score": 33.85,
+          "start_line": 45,
+          "end_line": 47,
+          "matched_length": 22,
+          "match_coverage": 33.85,
+          "matcher": "3-seq",
+          "license_expression": "apache-2.0",
+          "rule_identifier": "apache-2.0_689.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_689.RULE",
+          "referenced_filenames": [
+            "LICENSE-2.0.txt",
+            "NOTICE.TXT"
+          ],
+          "is_license_text": false,
+          "is_license_notice": true,
+          "is_license_reference": false,
+          "is_license_tag": false,
+          "is_license_intro": false,
+          "rule_length": 65,
+          "rule_relevance": 100,
+          "licenses": [
+            {
+              "key": "apache-2.0",
+              "name": "Apache License 2.0",
+              "short_name": "Apache 2.0",
+              "category": "Permissive",
+              "is_exception": false,
+              "is_unknown": false,
+              "owner": "Apache Software Foundation",
+              "homepage_url": "http://www.apache.org/licenses/",
+              "text_url": "http://www.apache.org/licenses/LICENSE-2.0",
+              "reference_url": "https://scancode-licensedb.aboutcode.org/apache-2.0",
+              "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.LICENSE",
+              "spdx_license_key": "Apache-2.0",
+              "spdx_url": "https://spdx.org/licenses/Apache-2.0"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "identifier": "b109c41b-dc8b-5301-5c83-09b7b64f5059",
+      "license_expression": "apache-2.0",
+      "occurance_count": 1,
+      "detection_log": [
+        "unknown-intro-followed-by-match"
+      ],
+      "matches": [
+        {
+          "score": 100.0,
+          "start_line": 44,
+          "end_line": 44,
+          "matched_length": 6,
+          "match_coverage": 100.0,
+          "matcher": "2-aho",
+          "license_expression": "unknown-license-reference",
+          "rule_identifier": "license-intro_35.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/license-intro_35.RULE",
+          "referenced_filenames": [],
+          "is_license_text": false,
+          "is_license_notice": false,
+          "is_license_reference": false,
+          "is_license_tag": false,
+          "is_license_intro": true,
+          "rule_length": 6,
+          "rule_relevance": 100,
+          "licenses": [
+            {
+              "key": "unknown-license-reference",
+              "name": "Unknown License file reference",
+              "short_name": "Unknown License reference",
+              "category": "Unstated License",
+              "is_exception": false,
+              "is_unknown": true,
+              "owner": "Unspecified",
+              "homepage_url": null,
+              "text_url": "",
+              "reference_url": "https://scancode-licensedb.aboutcode.org/unknown-license-reference",
+              "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/unknown-license-reference.LICENSE",
+              "spdx_license_key": "LicenseRef-scancode-unknown-license-reference",
+              "spdx_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/unknown-license-reference.LICENSE"
+            }
+          ]
+        },
+        {
+          "score": 100.0,
+          "start_line": 44,
+          "end_line": 44,
+          "matched_length": 5,
+          "match_coverage": 100.0,
+          "matcher": "2-aho",
+          "license_expression": "apache-2.0",
+          "rule_identifier": "apache-2.0_322.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_322.RULE",
+          "referenced_filenames": [],
+          "is_license_text": false,
+          "is_license_notice": false,
+          "is_license_reference": false,
+          "is_license_tag": true,
+          "is_license_intro": false,
+          "rule_length": 5,
+          "rule_relevance": 100,
+          "licenses": [
+            {
+              "key": "apache-2.0",
+              "name": "Apache License 2.0",
+              "short_name": "Apache 2.0",
+              "category": "Permissive",
+              "is_exception": false,
+              "is_unknown": false,
+              "owner": "Apache Software Foundation",
+              "homepage_url": "http://www.apache.org/licenses/",
+              "text_url": "http://www.apache.org/licenses/LICENSE-2.0",
+              "reference_url": "https://scancode-licensedb.aboutcode.org/apache-2.0",
+              "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.LICENSE",
+              "spdx_license_key": "Apache-2.0",
+              "spdx_url": "https://spdx.org/licenses/Apache-2.0"
+            }
+          ]
+        },
+        {
+          "score": 39.47,
+          "start_line": 45,
+          "end_line": 45,
+          "matched_length": 15,
+          "match_coverage": 39.47,
+          "matcher": "3-seq",
+          "license_expression": "apache-2.0",
+          "rule_identifier": "apache-2.0_1112.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_1112.RULE",
+          "referenced_filenames": [],
+          "is_license_text": false,
+          "is_license_notice": true,
+          "is_license_reference": false,
+          "is_license_tag": false,
+          "is_license_intro": false,
+          "rule_length": 38,
+          "rule_relevance": 100,
+          "licenses": [
+            {
+              "key": "apache-2.0",
+              "name": "Apache License 2.0",
+              "short_name": "Apache 2.0",
+              "category": "Permissive",
+              "is_exception": false,
+              "is_unknown": false,
+              "owner": "Apache Software Foundation",
+              "homepage_url": "http://www.apache.org/licenses/",
+              "text_url": "http://www.apache.org/licenses/LICENSE-2.0",
+              "reference_url": "https://scancode-licensedb.aboutcode.org/apache-2.0",
+              "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.LICENSE",
+              "spdx_license_key": "Apache-2.0",
+              "spdx_url": "https://spdx.org/licenses/Apache-2.0"
+            }
+          ]
+        },
+        {
+          "score": 40.0,
+          "start_line": 45,
+          "end_line": 45,
+          "matched_length": 14,
+          "match_coverage": 40.0,
+          "matcher": "3-seq",
+          "license_expression": "apache-2.0",
+          "rule_identifier": "apache-2.0_842.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_842.RULE",
+          "referenced_filenames": [],
+          "is_license_text": false,
+          "is_license_notice": true,
+          "is_license_reference": false,
+          "is_license_tag": false,
+          "is_license_intro": false,
+          "rule_length": 35,
+          "rule_relevance": 100,
+          "licenses": [
+            {
+              "key": "apache-2.0",
+              "name": "Apache License 2.0",
+              "short_name": "Apache 2.0",
+              "category": "Permissive",
+              "is_exception": false,
+              "is_unknown": false,
+              "owner": "Apache Software Foundation",
+              "homepage_url": "http://www.apache.org/licenses/",
+              "text_url": "http://www.apache.org/licenses/LICENSE-2.0",
+              "reference_url": "https://scancode-licensedb.aboutcode.org/apache-2.0",
+              "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.LICENSE",
+              "spdx_license_key": "Apache-2.0",
+              "spdx_url": "https://spdx.org/licenses/Apache-2.0"
+            }
+          ]
+        },
+        {
+          "score": 100.0,
+          "start_line": 47,
+          "end_line": 47,
+          "matched_length": 6,
+          "match_coverage": 100.0,
+          "matcher": "2-aho",
+          "license_expression": "apache-2.0",
+          "rule_identifier": "apache-2.0_182.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_182.RULE",
+          "referenced_filenames": [],
+          "is_license_text": false,
+          "is_license_notice": false,
+          "is_license_reference": true,
+          "is_license_tag": false,
+          "is_license_intro": false,
+          "rule_length": 6,
+          "rule_relevance": 100,
+          "licenses": [
+            {
+              "key": "apache-2.0",
+              "name": "Apache License 2.0",
+              "short_name": "Apache 2.0",
+              "category": "Permissive",
+              "is_exception": false,
+              "is_unknown": false,
+              "owner": "Apache Software Foundation",
+              "homepage_url": "http://www.apache.org/licenses/",
+              "text_url": "http://www.apache.org/licenses/LICENSE-2.0",
+              "reference_url": "https://scancode-licensedb.aboutcode.org/apache-2.0",
+              "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.LICENSE",
+              "spdx_license_key": "Apache-2.0",
+              "spdx_url": "https://spdx.org/licenses/Apache-2.0"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "identifier": "85fd4f2f-af55-4aed-03d9-86d8c06bef05",
+      "license_expression": "apache-2.0",
+      "occurance_count": 1,
+      "detection_log": [
+        "unknown-intro-followed-by-match"
+      ],
+      "matches": [
+        {
+          "score": 100.0,
+          "start_line": 53,
+          "end_line": 53,
+          "matched_length": 6,
+          "match_coverage": 100.0,
+          "matcher": "2-aho",
+          "license_expression": "unknown-license-reference",
+          "rule_identifier": "license-intro_35.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/license-intro_35.RULE",
+          "referenced_filenames": [],
+          "is_license_text": false,
+          "is_license_notice": false,
+          "is_license_reference": false,
+          "is_license_tag": false,
+          "is_license_intro": true,
+          "rule_length": 6,
+          "rule_relevance": 100,
+          "licenses": [
+            {
+              "key": "unknown-license-reference",
+              "name": "Unknown License file reference",
+              "short_name": "Unknown License reference",
+              "category": "Unstated License",
+              "is_exception": false,
+              "is_unknown": true,
+              "owner": "Unspecified",
+              "homepage_url": null,
+              "text_url": "",
+              "reference_url": "https://scancode-licensedb.aboutcode.org/unknown-license-reference",
+              "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/unknown-license-reference.LICENSE",
+              "spdx_license_key": "LicenseRef-scancode-unknown-license-reference",
+              "spdx_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/unknown-license-reference.LICENSE"
+            }
+          ]
+        },
+        {
+          "score": 100.0,
+          "start_line": 53,
+          "end_line": 53,
+          "matched_length": 5,
+          "match_coverage": 100.0,
+          "matcher": "2-aho",
+          "license_expression": "apache-2.0",
+          "rule_identifier": "apache-2.0_322.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_322.RULE",
+          "referenced_filenames": [],
+          "is_license_text": false,
+          "is_license_notice": false,
+          "is_license_reference": false,
+          "is_license_tag": true,
+          "is_license_intro": false,
+          "rule_length": 5,
+          "rule_relevance": 100,
+          "licenses": [
+            {
+              "key": "apache-2.0",
+              "name": "Apache License 2.0",
+              "short_name": "Apache 2.0",
+              "category": "Permissive",
+              "is_exception": false,
+              "is_unknown": false,
+              "owner": "Apache Software Foundation",
+              "homepage_url": "http://www.apache.org/licenses/",
+              "text_url": "http://www.apache.org/licenses/LICENSE-2.0",
+              "reference_url": "https://scancode-licensedb.aboutcode.org/apache-2.0",
+              "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.LICENSE",
+              "spdx_license_key": "Apache-2.0",
+              "spdx_url": "https://spdx.org/licenses/Apache-2.0"
+            }
+          ]
+        },
+        {
+          "score": 42.11,
+          "start_line": 53,
+          "end_line": 54,
+          "matched_length": 16,
+          "match_coverage": 42.11,
+          "matcher": "3-seq",
+          "license_expression": "apache-2.0",
+          "rule_identifier": "apache-2.0_1112.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_1112.RULE",
+          "referenced_filenames": [],
+          "is_license_text": false,
+          "is_license_notice": true,
+          "is_license_reference": false,
+          "is_license_tag": false,
+          "is_license_intro": false,
+          "rule_length": 38,
+          "rule_relevance": 100,
+          "licenses": [
+            {
+              "key": "apache-2.0",
+              "name": "Apache License 2.0",
+              "short_name": "Apache 2.0",
+              "category": "Permissive",
+              "is_exception": false,
+              "is_unknown": false,
+              "owner": "Apache Software Foundation",
+              "homepage_url": "http://www.apache.org/licenses/",
+              "text_url": "http://www.apache.org/licenses/LICENSE-2.0",
+              "reference_url": "https://scancode-licensedb.aboutcode.org/apache-2.0",
+              "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.LICENSE",
+              "spdx_license_key": "Apache-2.0",
+              "spdx_url": "https://spdx.org/licenses/Apache-2.0"
+            }
+          ]
+        },
+        {
+          "score": 100.0,
+          "start_line": 54,
+          "end_line": 54,
+          "matched_length": 9,
+          "match_coverage": 100.0,
+          "matcher": "2-aho",
+          "license_expression": "apache-2.0",
+          "rule_identifier": "apache-2.0_20.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_20.RULE",
+          "referenced_filenames": [],
+          "is_license_text": false,
+          "is_license_notice": false,
+          "is_license_reference": true,
+          "is_license_tag": false,
+          "is_license_intro": false,
+          "rule_length": 9,
+          "rule_relevance": 100,
+          "licenses": [
+            {
+              "key": "apache-2.0",
+              "name": "Apache License 2.0",
+              "short_name": "Apache 2.0",
+              "category": "Permissive",
+              "is_exception": false,
+              "is_unknown": false,
+              "owner": "Apache Software Foundation",
+              "homepage_url": "http://www.apache.org/licenses/",
+              "text_url": "http://www.apache.org/licenses/LICENSE-2.0",
+              "reference_url": "https://scancode-licensedb.aboutcode.org/apache-2.0",
+              "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.LICENSE",
+              "spdx_license_key": "Apache-2.0",
+              "spdx_url": "https://spdx.org/licenses/Apache-2.0"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "identifier": "185ee88a-b361-c631-330a-31ef36f48039",
+      "license_expression": "apache-2.0",
+      "occurance_count": 2,
+      "detection_log": [
+        "not-combined"
+      ],
+      "matches": [
+        {
+          "score": 92.68,
+          "start_line": 59,
+          "end_line": 60,
+          "matched_length": 38,
+          "match_coverage": 100.0,
+          "matcher": "3-seq",
+          "license_expression": "apache-2.0",
+          "rule_identifier": "apache-2.0_1112.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_1112.RULE",
+          "referenced_filenames": [],
+          "is_license_text": false,
+          "is_license_notice": true,
+          "is_license_reference": false,
+          "is_license_tag": false,
+          "is_license_intro": false,
+          "rule_length": 38,
+          "rule_relevance": 100,
+          "licenses": [
+            {
+              "key": "apache-2.0",
+              "name": "Apache License 2.0",
+              "short_name": "Apache 2.0",
+              "category": "Permissive",
+              "is_exception": false,
+              "is_unknown": false,
+              "owner": "Apache Software Foundation",
+              "homepage_url": "http://www.apache.org/licenses/",
+              "text_url": "http://www.apache.org/licenses/LICENSE-2.0",
+              "reference_url": "https://scancode-licensedb.aboutcode.org/apache-2.0",
+              "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.LICENSE",
+              "spdx_license_key": "Apache-2.0",
+              "spdx_url": "https://spdx.org/licenses/Apache-2.0"
+            }
+          ]
+        },
+        {
+          "score": 48.57,
+          "start_line": 59,
+          "end_line": 60,
+          "matched_length": 17,
+          "match_coverage": 48.57,
+          "matcher": "3-seq",
+          "license_expression": "apache-2.0",
+          "rule_identifier": "apache-2.0_842.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_842.RULE",
+          "referenced_filenames": [],
+          "is_license_text": false,
+          "is_license_notice": true,
+          "is_license_reference": false,
+          "is_license_tag": false,
+          "is_license_intro": false,
+          "rule_length": 35,
+          "rule_relevance": 100,
+          "licenses": [
+            {
+              "key": "apache-2.0",
+              "name": "Apache License 2.0",
+              "short_name": "Apache 2.0",
+              "category": "Permissive",
+              "is_exception": false,
+              "is_unknown": false,
+              "owner": "Apache Software Foundation",
+              "homepage_url": "http://www.apache.org/licenses/",
+              "text_url": "http://www.apache.org/licenses/LICENSE-2.0",
+              "reference_url": "https://scancode-licensedb.aboutcode.org/apache-2.0",
+              "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.LICENSE",
+              "spdx_license_key": "Apache-2.0",
+              "spdx_url": "https://spdx.org/licenses/Apache-2.0"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "identifier": "f1d35b57-fc37-e01b-67c0-ff901ec607b2",
+      "license_expression": "(epl-2.0 OR apache-2.0) AND apache-2.0 AND epl-2.0",
+      "occurance_count": 1,
+      "detection_log": [
+        "unknown-intro-followed-by-match"
+      ],
+      "matches": [
+        {
+          "score": 100.0,
+          "start_line": 71,
+          "end_line": 71,
+          "matched_length": 6,
+          "match_coverage": 100.0,
+          "matcher": "2-aho",
+          "license_expression": "unknown-license-reference",
+          "rule_identifier": "license-intro_35.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/license-intro_35.RULE",
+          "referenced_filenames": [],
+          "is_license_text": false,
+          "is_license_notice": false,
+          "is_license_reference": false,
+          "is_license_tag": false,
+          "is_license_intro": true,
+          "rule_length": 6,
+          "rule_relevance": 100,
+          "licenses": [
+            {
+              "key": "unknown-license-reference",
+              "name": "Unknown License file reference",
+              "short_name": "Unknown License reference",
+              "category": "Unstated License",
+              "is_exception": false,
+              "is_unknown": true,
+              "owner": "Unspecified",
+              "homepage_url": null,
+              "text_url": "",
+              "reference_url": "https://scancode-licensedb.aboutcode.org/unknown-license-reference",
+              "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/unknown-license-reference.LICENSE",
+              "spdx_license_key": "LicenseRef-scancode-unknown-license-reference",
+              "spdx_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/unknown-license-reference.LICENSE"
+            }
+          ]
+        },
+        {
+          "score": 28.0,
+          "start_line": 71,
+          "end_line": 72,
+          "matched_length": 14,
+          "match_coverage": 28.0,
+          "matcher": "3-seq",
+          "license_expression": "epl-2.0 OR apache-2.0",
+          "rule_identifier": "epl-2.0_or_apache-2.0_2.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/epl-2.0_or_apache-2.0_2.RULE",
+          "referenced_filenames": [],
+          "is_license_text": false,
+          "is_license_notice": true,
+          "is_license_reference": false,
+          "is_license_tag": false,
+          "is_license_intro": false,
+          "rule_length": 50,
+          "rule_relevance": 100,
+          "licenses": [
+            {
+              "key": "epl-2.0",
+              "name": "Eclipse Public License 2.0",
+              "short_name": "EPL 2.0",
+              "category": "Copyleft Limited",
+              "is_exception": false,
+              "is_unknown": false,
+              "owner": "Eclipse Foundation",
+              "homepage_url": "https://www.eclipse.org/legal/epl-2.0/",
+              "text_url": "https://www.eclipse.org/org/documents/epl-2.0/EPL-2.0.txt",
+              "reference_url": "https://scancode-licensedb.aboutcode.org/epl-2.0",
+              "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/epl-2.0.LICENSE",
+              "spdx_license_key": "EPL-2.0",
+              "spdx_url": "https://spdx.org/licenses/EPL-2.0"
+            },
+            {
+              "key": "apache-2.0",
+              "name": "Apache License 2.0",
+              "short_name": "Apache 2.0",
+              "category": "Permissive",
+              "is_exception": false,
+              "is_unknown": false,
+              "owner": "Apache Software Foundation",
+              "homepage_url": "http://www.apache.org/licenses/",
+              "text_url": "http://www.apache.org/licenses/LICENSE-2.0",
+              "reference_url": "https://scancode-licensedb.aboutcode.org/apache-2.0",
+              "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.LICENSE",
+              "spdx_license_key": "Apache-2.0",
+              "spdx_url": "https://spdx.org/licenses/Apache-2.0"
+            }
+          ]
+        },
+        {
+          "score": 36.84,
+          "start_line": 71,
+          "end_line": 72,
+          "matched_length": 14,
+          "match_coverage": 36.84,
+          "matcher": "3-seq",
+          "license_expression": "apache-2.0",
+          "rule_identifier": "apache-2.0_1112.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_1112.RULE",
+          "referenced_filenames": [],
+          "is_license_text": false,
+          "is_license_notice": true,
+          "is_license_reference": false,
+          "is_license_tag": false,
+          "is_license_intro": false,
+          "rule_length": 38,
+          "rule_relevance": 100,
+          "licenses": [
+            {
+              "key": "apache-2.0",
+              "name": "Apache License 2.0",
+              "short_name": "Apache 2.0",
+              "category": "Permissive",
+              "is_exception": false,
+              "is_unknown": false,
+              "owner": "Apache Software Foundation",
+              "homepage_url": "http://www.apache.org/licenses/",
+              "text_url": "http://www.apache.org/licenses/LICENSE-2.0",
+              "reference_url": "https://scancode-licensedb.aboutcode.org/apache-2.0",
+              "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.LICENSE",
+              "spdx_license_key": "Apache-2.0",
+              "spdx_url": "https://spdx.org/licenses/Apache-2.0"
+            }
+          ]
+        },
+        {
+          "score": 30.43,
+          "start_line": 72,
+          "end_line": 72,
+          "matched_length": 21,
+          "match_coverage": 30.43,
+          "matcher": "3-seq",
+          "license_expression": "epl-2.0",
+          "rule_identifier": "epl-2.0_4.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/epl-2.0_4.RULE",
+          "referenced_filenames": [],
+          "is_license_text": false,
+          "is_license_notice": true,
+          "is_license_reference": false,
+          "is_license_tag": false,
+          "is_license_intro": false,
+          "rule_length": 69,
+          "rule_relevance": 100,
+          "licenses": [
+            {
+              "key": "epl-2.0",
+              "name": "Eclipse Public License 2.0",
+              "short_name": "EPL 2.0",
+              "category": "Copyleft Limited",
+              "is_exception": false,
+              "is_unknown": false,
+              "owner": "Eclipse Foundation",
+              "homepage_url": "https://www.eclipse.org/legal/epl-2.0/",
+              "text_url": "https://www.eclipse.org/org/documents/epl-2.0/EPL-2.0.txt",
+              "reference_url": "https://scancode-licensedb.aboutcode.org/epl-2.0",
+              "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/epl-2.0.LICENSE",
+              "spdx_license_key": "EPL-2.0",
+              "spdx_url": "https://spdx.org/licenses/EPL-2.0"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "identifier": "7e99df1e-faa6-aea3-5280-d3a36ed87c16",
+      "license_expression": "epl-1.0",
+      "occurance_count": 2,
+      "detection_log": [
+        "not-combined"
+      ],
+      "matches": [
+        {
+          "score": 96.69,
+          "start_line": 12,
+          "end_line": 25,
+          "matched_length": 146,
+          "match_coverage": 96.69,
+          "matcher": "3-seq",
+          "license_expression": "epl-1.0",
+          "rule_identifier": "epl-1.0_3.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/epl-1.0_3.RULE",
+          "referenced_filenames": [],
+          "is_license_text": false,
+          "is_license_notice": true,
+          "is_license_reference": false,
+          "is_license_tag": false,
+          "is_license_intro": false,
+          "rule_length": 151,
+          "rule_relevance": 100,
+          "licenses": [
+            {
+              "key": "epl-1.0",
+              "name": "Eclipse Public License 1.0",
+              "short_name": "EPL 1.0",
+              "category": "Copyleft Limited",
+              "is_exception": false,
+              "is_unknown": false,
+              "owner": "Eclipse Foundation",
+              "homepage_url": "http://www.eclipse.org/legal/epl-v10.html",
+              "text_url": "http://www.eclipse.org/legal/epl-v10.html",
+              "reference_url": "https://scancode-licensedb.aboutcode.org/epl-1.0",
+              "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/epl-1.0.LICENSE",
+              "spdx_license_key": "EPL-1.0",
+              "spdx_url": "https://spdx.org/licenses/EPL-1.0"
+            }
+          ]
+        },
+        {
+          "score": 100.0,
+          "start_line": 17,
+          "end_line": 17,
+          "matched_length": 8,
+          "match_coverage": 100.0,
+          "matcher": "2-aho",
+          "license_expression": "epl-1.0",
+          "rule_identifier": "epl-1.0_7.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/epl-1.0_7.RULE",
+          "referenced_filenames": [],
+          "is_license_text": false,
+          "is_license_notice": false,
+          "is_license_reference": true,
+          "is_license_tag": false,
+          "is_license_intro": false,
+          "rule_length": 8,
+          "rule_relevance": 100,
+          "licenses": [
+            {
+              "key": "epl-1.0",
+              "name": "Eclipse Public License 1.0",
+              "short_name": "EPL 1.0",
+              "category": "Copyleft Limited",
+              "is_exception": false,
+              "is_unknown": false,
+              "owner": "Eclipse Foundation",
+              "homepage_url": "http://www.eclipse.org/legal/epl-v10.html",
+              "text_url": "http://www.eclipse.org/legal/epl-v10.html",
+              "reference_url": "https://scancode-licensedb.aboutcode.org/epl-1.0",
+              "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/epl-1.0.LICENSE",
+              "spdx_license_key": "EPL-1.0",
+              "spdx_url": "https://spdx.org/licenses/EPL-1.0"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "identifier": "5502d99b-f332-cf59-5e87-59714bf42486",
+      "license_expression": "cpl-1.0",
+      "occurance_count": 1,
+      "detection_log": [
+        "unknown-intro-followed-by-match"
+      ],
+      "matches": [
+        {
+          "score": 100.0,
+          "start_line": 40,
+          "end_line": 40,
+          "matched_length": 6,
+          "match_coverage": 100.0,
+          "matcher": "2-aho",
+          "license_expression": "unknown-license-reference",
+          "rule_identifier": "license-intro_35.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/license-intro_35.RULE",
+          "referenced_filenames": [],
+          "is_license_text": false,
+          "is_license_notice": false,
+          "is_license_reference": false,
+          "is_license_tag": false,
+          "is_license_intro": true,
+          "rule_length": 6,
+          "rule_relevance": 100,
+          "licenses": [
+            {
+              "key": "unknown-license-reference",
+              "name": "Unknown License file reference",
+              "short_name": "Unknown License reference",
+              "category": "Unstated License",
+              "is_exception": false,
+              "is_unknown": true,
+              "owner": "Unspecified",
+              "homepage_url": null,
+              "text_url": "",
+              "reference_url": "https://scancode-licensedb.aboutcode.org/unknown-license-reference",
+              "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/unknown-license-reference.LICENSE",
+              "spdx_license_key": "LicenseRef-scancode-unknown-license-reference",
+              "spdx_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/unknown-license-reference.LICENSE"
+            }
+          ]
+        },
+        {
+          "score": 100.0,
+          "start_line": 41,
+          "end_line": 41,
+          "matched_length": 6,
+          "match_coverage": 100.0,
+          "matcher": "2-aho",
+          "license_expression": "cpl-1.0",
+          "rule_identifier": "cpl-1.0_5.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/cpl-1.0_5.RULE",
+          "referenced_filenames": [],
+          "is_license_text": false,
+          "is_license_notice": false,
+          "is_license_reference": true,
+          "is_license_tag": false,
+          "is_license_intro": false,
+          "rule_length": 6,
+          "rule_relevance": 100,
+          "licenses": [
+            {
+              "key": "cpl-1.0",
+              "name": "Common Public License 1.0",
+              "short_name": "CPL 1.0",
+              "category": "Copyleft Limited",
+              "is_exception": false,
+              "is_unknown": false,
+              "owner": "IBM",
+              "homepage_url": "http://www.eclipse.org/legal/cpl-v10.html",
+              "text_url": "http://www.eclipse.org/legal/cpl-v10.html",
+              "reference_url": "https://scancode-licensedb.aboutcode.org/cpl-1.0",
+              "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/cpl-1.0.LICENSE",
+              "spdx_license_key": "CPL-1.0",
+              "spdx_url": "https://spdx.org/licenses/CPL-1.0"
+            }
+          ]
+        },
+        {
+          "score": 75.0,
+          "start_line": 41,
+          "end_line": 41,
+          "matched_length": 18,
+          "match_coverage": 75.0,
+          "matcher": "3-seq",
+          "license_expression": "cpl-1.0",
+          "rule_identifier": "cpl-1.0_14.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/cpl-1.0_14.RULE",
+          "referenced_filenames": [],
+          "is_license_text": false,
+          "is_license_notice": true,
+          "is_license_reference": false,
+          "is_license_tag": false,
+          "is_license_intro": false,
+          "rule_length": 24,
+          "rule_relevance": 100,
+          "licenses": [
+            {
+              "key": "cpl-1.0",
+              "name": "Common Public License 1.0",
+              "short_name": "CPL 1.0",
+              "category": "Copyleft Limited",
+              "is_exception": false,
+              "is_unknown": false,
+              "owner": "IBM",
+              "homepage_url": "http://www.eclipse.org/legal/cpl-v10.html",
+              "text_url": "http://www.eclipse.org/legal/cpl-v10.html",
+              "reference_url": "https://scancode-licensedb.aboutcode.org/cpl-1.0",
+              "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/cpl-1.0.LICENSE",
+              "spdx_license_key": "CPL-1.0",
+              "spdx_url": "https://spdx.org/licenses/CPL-1.0"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "identifier": "f76d24d8-c42a-51a2-5be0-b1bee6618afc",
+      "license_expression": "bsd-new",
+      "occurance_count": 1,
+      "detection_log": [
+        "unknown-intro-followed-by-match"
+      ],
+      "matches": [
+        {
+          "score": 100.0,
+          "start_line": 53,
+          "end_line": 53,
+          "matched_length": 6,
+          "match_coverage": 100.0,
+          "matcher": "2-aho",
+          "license_expression": "unknown-license-reference",
+          "rule_identifier": "license-intro_35.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/license-intro_35.RULE",
+          "referenced_filenames": [],
+          "is_license_text": false,
+          "is_license_notice": false,
+          "is_license_reference": false,
+          "is_license_tag": false,
+          "is_license_intro": true,
+          "rule_length": 6,
+          "rule_relevance": 100,
+          "licenses": [
+            {
+              "key": "unknown-license-reference",
+              "name": "Unknown License file reference",
+              "short_name": "Unknown License reference",
+              "category": "Unstated License",
+              "is_exception": false,
+              "is_unknown": true,
+              "owner": "Unspecified",
+              "homepage_url": null,
+              "text_url": "",
+              "reference_url": "https://scancode-licensedb.aboutcode.org/unknown-license-reference",
+              "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/unknown-license-reference.LICENSE",
+              "spdx_license_key": "LicenseRef-scancode-unknown-license-reference",
+              "spdx_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/unknown-license-reference.LICENSE"
+            }
+          ]
+        },
+        {
+          "score": 100.0,
+          "start_line": 53,
+          "end_line": 54,
+          "matched_length": 4,
+          "match_coverage": 100.0,
+          "matcher": "2-aho",
+          "license_expression": "bsd-new",
+          "rule_identifier": "bsd-new_119.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_119.RULE",
+          "referenced_filenames": [],
+          "is_license_text": false,
+          "is_license_notice": false,
+          "is_license_reference": true,
+          "is_license_tag": false,
+          "is_license_intro": false,
+          "rule_length": 4,
+          "rule_relevance": 100,
+          "licenses": [
+            {
+              "key": "bsd-new",
+              "name": "BSD-3-Clause",
+              "short_name": "BSD-3-Clause",
+              "category": "Permissive",
+              "is_exception": false,
+              "is_unknown": false,
+              "owner": "Regents of the University of California",
+              "homepage_url": "http://www.opensource.org/licenses/BSD-3-Clause",
+              "text_url": "http://www.opensource.org/licenses/BSD-3-Clause",
+              "reference_url": "https://scancode-licensedb.aboutcode.org/bsd-new",
+              "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-new.LICENSE",
+              "spdx_license_key": "BSD-3-Clause",
+              "spdx_url": "https://spdx.org/licenses/BSD-3-Clause"
+            }
+          ]
+        },
+        {
+          "score": 100.0,
+          "start_line": 57,
+          "end_line": 59,
+          "matched_length": 4,
+          "match_coverage": 100.0,
+          "matcher": "2-aho",
+          "license_expression": "bsd-new",
+          "rule_identifier": "bsd-new_103.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_103.RULE",
+          "referenced_filenames": [],
+          "is_license_text": false,
+          "is_license_notice": false,
+          "is_license_reference": true,
+          "is_license_tag": false,
+          "is_license_intro": false,
+          "rule_length": 4,
+          "rule_relevance": 100,
+          "licenses": [
+            {
+              "key": "bsd-new",
+              "name": "BSD-3-Clause",
+              "short_name": "BSD-3-Clause",
+              "category": "Permissive",
+              "is_exception": false,
+              "is_unknown": false,
+              "owner": "Regents of the University of California",
+              "homepage_url": "http://www.opensource.org/licenses/BSD-3-Clause",
+              "text_url": "http://www.opensource.org/licenses/BSD-3-Clause",
+              "reference_url": "https://scancode-licensedb.aboutcode.org/bsd-new",
+              "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-new.LICENSE",
+              "spdx_license_key": "BSD-3-Clause",
+              "spdx_url": "https://spdx.org/licenses/BSD-3-Clause"
+            }
+          ]
+        },
+        {
+          "score": 99.0,
+          "start_line": 57,
+          "end_line": 59,
+          "matched_length": 3,
+          "match_coverage": 100.0,
+          "matcher": "2-aho",
+          "license_expression": "bsd-new",
+          "rule_identifier": "bsd-new_172.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_172.RULE",
+          "referenced_filenames": [],
+          "is_license_text": false,
+          "is_license_notice": false,
+          "is_license_reference": true,
+          "is_license_tag": false,
+          "is_license_intro": false,
+          "rule_length": 3,
+          "rule_relevance": 99,
+          "licenses": [
+            {
+              "key": "bsd-new",
+              "name": "BSD-3-Clause",
+              "short_name": "BSD-3-Clause",
+              "category": "Permissive",
+              "is_exception": false,
+              "is_unknown": false,
+              "owner": "Regents of the University of California",
+              "homepage_url": "http://www.opensource.org/licenses/BSD-3-Clause",
+              "text_url": "http://www.opensource.org/licenses/BSD-3-Clause",
+              "reference_url": "https://scancode-licensedb.aboutcode.org/bsd-new",
+              "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-new.LICENSE",
+              "spdx_license_key": "BSD-3-Clause",
+              "spdx_url": "https://spdx.org/licenses/BSD-3-Clause"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "identifier": "fe8a2ed4-ca73-5e9c-1a4c-974a245a78b2",
+      "license_expression": "bsd-new",
+      "occurance_count": 1,
+      "detection_log": [
+        "not-combined"
+      ],
+      "matches": [
+        {
+          "score": 100.0,
+          "start_line": 64,
+          "end_line": 85,
+          "matched_length": 211,
+          "match_coverage": 100.0,
+          "matcher": "2-aho",
+          "license_expression": "bsd-new",
+          "rule_identifier": "bsd-new_860.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_860.RULE",
+          "referenced_filenames": [],
+          "is_license_text": true,
+          "is_license_notice": false,
+          "is_license_reference": false,
+          "is_license_tag": false,
+          "is_license_intro": false,
+          "rule_length": 211,
+          "rule_relevance": 100,
+          "licenses": [
+            {
+              "key": "bsd-new",
+              "name": "BSD-3-Clause",
+              "short_name": "BSD-3-Clause",
+              "category": "Permissive",
+              "is_exception": false,
+              "is_unknown": false,
+              "owner": "Regents of the University of California",
+              "homepage_url": "http://www.opensource.org/licenses/BSD-3-Clause",
+              "text_url": "http://www.opensource.org/licenses/BSD-3-Clause",
+              "reference_url": "https://scancode-licensedb.aboutcode.org/bsd-new",
+              "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-new.LICENSE",
+              "spdx_license_key": "BSD-3-Clause",
+              "spdx_url": "https://spdx.org/licenses/BSD-3-Clause"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "identifier": "f0e5933e-cc7c-4c33-eb43-c0d66389bf17",
+      "license_expression": "cpl-1.0",
+      "occurance_count": 1,
+      "detection_log": [
+        "unknown-intro-followed-by-match"
+      ],
+      "matches": [
+        {
+          "score": 100.0,
+          "start_line": 39,
+          "end_line": 39,
+          "matched_length": 6,
+          "match_coverage": 100.0,
+          "matcher": "2-aho",
+          "license_expression": "unknown-license-reference",
+          "rule_identifier": "license-intro_35.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/license-intro_35.RULE",
+          "referenced_filenames": [],
+          "is_license_text": false,
+          "is_license_notice": false,
+          "is_license_reference": false,
+          "is_license_tag": false,
+          "is_license_intro": true,
+          "rule_length": 6,
+          "rule_relevance": 100,
+          "licenses": [
+            {
+              "key": "unknown-license-reference",
+              "name": "Unknown License file reference",
+              "short_name": "Unknown License reference",
+              "category": "Unstated License",
+              "is_exception": false,
+              "is_unknown": true,
+              "owner": "Unspecified",
+              "homepage_url": null,
+              "text_url": "",
+              "reference_url": "https://scancode-licensedb.aboutcode.org/unknown-license-reference",
+              "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/unknown-license-reference.LICENSE",
+              "spdx_license_key": "LicenseRef-scancode-unknown-license-reference",
+              "spdx_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/unknown-license-reference.LICENSE"
+            }
+          ]
+        },
+        {
+          "score": 100.0,
+          "start_line": 40,
+          "end_line": 40,
+          "matched_length": 6,
+          "match_coverage": 100.0,
+          "matcher": "2-aho",
+          "license_expression": "cpl-1.0",
+          "rule_identifier": "cpl-1.0_5.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/cpl-1.0_5.RULE",
+          "referenced_filenames": [],
+          "is_license_text": false,
+          "is_license_notice": false,
+          "is_license_reference": true,
+          "is_license_tag": false,
+          "is_license_intro": false,
+          "rule_length": 6,
+          "rule_relevance": 100,
+          "licenses": [
+            {
+              "key": "cpl-1.0",
+              "name": "Common Public License 1.0",
+              "short_name": "CPL 1.0",
+              "category": "Copyleft Limited",
+              "is_exception": false,
+              "is_unknown": false,
+              "owner": "IBM",
+              "homepage_url": "http://www.eclipse.org/legal/cpl-v10.html",
+              "text_url": "http://www.eclipse.org/legal/cpl-v10.html",
+              "reference_url": "https://scancode-licensedb.aboutcode.org/cpl-1.0",
+              "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/cpl-1.0.LICENSE",
+              "spdx_license_key": "CPL-1.0",
+              "spdx_url": "https://spdx.org/licenses/CPL-1.0"
+            }
+          ]
+        },
+        {
+          "score": 75.0,
+          "start_line": 40,
+          "end_line": 40,
+          "matched_length": 18,
+          "match_coverage": 75.0,
+          "matcher": "3-seq",
+          "license_expression": "cpl-1.0",
+          "rule_identifier": "cpl-1.0_14.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/cpl-1.0_14.RULE",
+          "referenced_filenames": [],
+          "is_license_text": false,
+          "is_license_notice": true,
+          "is_license_reference": false,
+          "is_license_tag": false,
+          "is_license_intro": false,
+          "rule_length": 24,
+          "rule_relevance": 100,
+          "licenses": [
+            {
+              "key": "cpl-1.0",
+              "name": "Common Public License 1.0",
+              "short_name": "CPL 1.0",
+              "category": "Copyleft Limited",
+              "is_exception": false,
+              "is_unknown": false,
+              "owner": "IBM",
+              "homepage_url": "http://www.eclipse.org/legal/cpl-v10.html",
+              "text_url": "http://www.eclipse.org/legal/cpl-v10.html",
+              "reference_url": "https://scancode-licensedb.aboutcode.org/cpl-1.0",
+              "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/cpl-1.0.LICENSE",
+              "spdx_license_key": "CPL-1.0",
+              "spdx_url": "https://spdx.org/licenses/CPL-1.0"
+            }
+          ]
+        },
+        {
+          "score": 100.0,
+          "start_line": 41,
+          "end_line": 41,
+          "matched_length": 3,
+          "match_coverage": 100.0,
+          "matcher": "2-aho",
+          "license_expression": "cpl-1.0",
+          "rule_identifier": "cpl-1.0_24.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/cpl-1.0_24.RULE",
+          "referenced_filenames": [
+            "cpl-v10.html"
+          ],
+          "is_license_text": false,
+          "is_license_notice": false,
+          "is_license_reference": true,
+          "is_license_tag": false,
+          "is_license_intro": false,
+          "rule_length": 3,
+          "rule_relevance": 100,
+          "licenses": [
+            {
+              "key": "cpl-1.0",
+              "name": "Common Public License 1.0",
+              "short_name": "CPL 1.0",
+              "category": "Copyleft Limited",
+              "is_exception": false,
+              "is_unknown": false,
+              "owner": "IBM",
+              "homepage_url": "http://www.eclipse.org/legal/cpl-v10.html",
+              "text_url": "http://www.eclipse.org/legal/cpl-v10.html",
+              "reference_url": "https://scancode-licensedb.aboutcode.org/cpl-1.0",
+              "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/cpl-1.0.LICENSE",
+              "spdx_license_key": "CPL-1.0",
+              "spdx_url": "https://spdx.org/licenses/CPL-1.0"
+            }
+          ]
+        }
+      ]
+    }
+  ],
   "files": [
     {
       "path": "about_1.html",
@@ -332,6 +1806,11 @@
       ],
       "license_clues": [],
       "percentage_of_license_text": 52.82,
+      "for_licenses": [
+        "1867eafe-a258-cbb4-408f-2bd33d02ee23",
+        "b414489c-d2f7-2207-9e37-ea197f00d317",
+        "53c14ef2-2b41-3f63-1dbb-e3a1efbd1e8d"
+      ],
       "scan_errors": []
     },
     {
@@ -1154,6 +2633,15 @@
       ],
       "license_clues": [],
       "percentage_of_license_text": 42.91,
+      "for_licenses": [
+        "1867eafe-a258-cbb4-408f-2bd33d02ee23",
+        "b414489c-d2f7-2207-9e37-ea197f00d317",
+        "b109c41b-dc8b-5301-5c83-09b7b64f5059",
+        "85fd4f2f-af55-4aed-03d9-86d8c06bef05",
+        "185ee88a-b361-c631-330a-31ef36f48039",
+        "185ee88a-b361-c631-330a-31ef36f48039",
+        "f1d35b57-fc37-e01b-67c0-ff901ec607b2"
+      ],
       "scan_errors": []
     },
     {
@@ -1567,6 +3055,12 @@
       ],
       "license_clues": [],
       "percentage_of_license_text": 50.37,
+      "for_licenses": [
+        "7e99df1e-faa6-aea3-5280-d3a36ed87c16",
+        "5502d99b-f332-cf59-5e87-59714bf42486",
+        "f76d24d8-c42a-51a2-5be0-b1bee6618afc",
+        "fe8a2ed4-ca73-5e9c-1a4c-974a245a78b2"
+      ],
       "scan_errors": []
     },
     {
@@ -1818,6 +3312,10 @@
       ],
       "license_clues": [],
       "percentage_of_license_text": 47.22,
+      "for_licenses": [
+        "7e99df1e-faa6-aea3-5280-d3a36ed87c16",
+        "f0e5933e-cc7c-4c33-eb43-c0d66389bf17"
+      ],
       "scan_errors": []
     }
   ]

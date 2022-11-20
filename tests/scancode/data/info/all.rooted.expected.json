@@ -1,4 +1,116 @@
 {
+  "licenses": [
+    {
+      "identifier": "20ee927b-fbe0-31a5-1f33-595dd1b2fd13",
+      "license_expression": "gpl-2.0 OR bsd-new",
+      "occurance_count": 1,
+      "detection_log": [
+        "not-combined"
+      ],
+      "matches": [
+        {
+          "score": 100.0,
+          "start_line": 5,
+          "end_line": 12,
+          "matched_length": 50,
+          "match_coverage": 100.0,
+          "matcher": "2-aho",
+          "license_expression": "gpl-2.0 OR bsd-new",
+          "rule_identifier": "gpl-2.0_or_bsd-new_aes_1.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0_or_bsd-new_aes_1.RULE",
+          "referenced_filenames": [
+            "COPYING",
+            "README"
+          ],
+          "is_license_text": false,
+          "is_license_notice": true,
+          "is_license_reference": false,
+          "is_license_tag": false,
+          "is_license_intro": false,
+          "rule_length": 50,
+          "rule_relevance": 100,
+          "licenses": [
+            {
+              "key": "gpl-2.0",
+              "name": "GNU General Public License 2.0",
+              "short_name": "GPL 2.0",
+              "category": "Copyleft",
+              "is_exception": false,
+              "is_unknown": false,
+              "owner": "Free Software Foundation (FSF)",
+              "homepage_url": "http://www.gnu.org/licenses/gpl-2.0.html",
+              "text_url": "http://www.gnu.org/licenses/gpl-2.0.txt",
+              "reference_url": "https://scancode-licensedb.aboutcode.org/gpl-2.0",
+              "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-2.0.LICENSE",
+              "spdx_license_key": "GPL-2.0-only",
+              "spdx_url": "https://spdx.org/licenses/GPL-2.0-only"
+            },
+            {
+              "key": "bsd-new",
+              "name": "BSD-3-Clause",
+              "short_name": "BSD-3-Clause",
+              "category": "Permissive",
+              "is_exception": false,
+              "is_unknown": false,
+              "owner": "Regents of the University of California",
+              "homepage_url": "http://www.opensource.org/licenses/BSD-3-Clause",
+              "text_url": "http://www.opensource.org/licenses/BSD-3-Clause",
+              "reference_url": "https://scancode-licensedb.aboutcode.org/bsd-new",
+              "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-new.LICENSE",
+              "spdx_license_key": "BSD-3-Clause",
+              "spdx_url": "https://spdx.org/licenses/BSD-3-Clause"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "identifier": "b17bc21b-d4a2-9db7-7cef-3d352cc60928",
+      "license_expression": "bsd-original-uc",
+      "occurance_count": 1,
+      "detection_log": [
+        "not-combined"
+      ],
+      "matches": [
+        {
+          "score": 100.0,
+          "start_line": 25,
+          "end_line": 51,
+          "matched_length": 243,
+          "match_coverage": 100.0,
+          "matcher": "2-aho",
+          "license_expression": "bsd-original-uc",
+          "rule_identifier": "bsd-original-uc_3.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-original-uc_3.RULE",
+          "referenced_filenames": [],
+          "is_license_text": true,
+          "is_license_notice": false,
+          "is_license_reference": false,
+          "is_license_tag": false,
+          "is_license_intro": false,
+          "rule_length": 243,
+          "rule_relevance": 100,
+          "licenses": [
+            {
+              "key": "bsd-original-uc",
+              "name": "BSD-Original-UC",
+              "short_name": "BSD-Original-UC",
+              "category": "Permissive",
+              "is_exception": false,
+              "is_unknown": false,
+              "owner": "Regents of the University of California",
+              "homepage_url": "ftp://ftp.cs.berkeley.edu/pub/4bsd/README.Impt.License.Change",
+              "text_url": "http://www.xfree86.org/3.3.6/COPYRIGHT2.html",
+              "reference_url": "https://scancode-licensedb.aboutcode.org/bsd-original-uc",
+              "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-original-uc.LICENSE",
+              "spdx_license_key": "BSD-4-Clause-UC",
+              "spdx_url": "https://spdx.org/licenses/BSD-4-Clause-UC"
+            }
+          ]
+        }
+      ]
+    }
+  ],
   "files": [
     {
       "path": "basic.tgz",
@@ -8,6 +120,7 @@
       "license_detections": [],
       "license_clues": [],
       "percentage_of_license_text": 0,
+      "for_licenses": [],
       "copyrights": [],
       "holders": [],
       "authors": [],
@@ -23,6 +136,7 @@
       "license_detections": [],
       "license_clues": [],
       "percentage_of_license_text": 0,
+      "for_licenses": [],
       "copyrights": [],
       "holders": [],
       "authors": [],
@@ -38,6 +152,7 @@
       "license_detections": [],
       "license_clues": [],
       "percentage_of_license_text": 0,
+      "for_licenses": [],
       "copyrights": [],
       "holders": [],
       "authors": [],
@@ -53,6 +168,7 @@
       "license_detections": [],
       "license_clues": [],
       "percentage_of_license_text": 0,
+      "for_licenses": [],
       "copyrights": [],
       "holders": [],
       "authors": [],
@@ -68,6 +184,7 @@
       "license_detections": [],
       "license_clues": [],
       "percentage_of_license_text": 0,
+      "for_licenses": [],
       "copyrights": [],
       "holders": [],
       "authors": [],
@@ -83,6 +200,7 @@
       "license_detections": [],
       "license_clues": [],
       "percentage_of_license_text": 0,
+      "for_licenses": [],
       "copyrights": [],
       "holders": [],
       "authors": [],
@@ -98,6 +216,7 @@
       "license_detections": [],
       "license_clues": [],
       "percentage_of_license_text": 0,
+      "for_licenses": [],
       "copyrights": [],
       "holders": [],
       "authors": [],
@@ -113,6 +232,7 @@
       "license_detections": [],
       "license_clues": [],
       "percentage_of_license_text": 0,
+      "for_licenses": [],
       "copyrights": [],
       "holders": [],
       "authors": [],
@@ -128,6 +248,7 @@
       "license_detections": [],
       "license_clues": [],
       "percentage_of_license_text": 0,
+      "for_licenses": [],
       "copyrights": [],
       "holders": [],
       "authors": [],
@@ -188,6 +309,9 @@
       ],
       "license_clues": [],
       "percentage_of_license_text": 4.82,
+      "for_licenses": [
+        "b17bc21b-d4a2-9db7-7cef-3d352cc60928"
+      ],
       "copyrights": [
         {
           "copyright": "Copyright (c) 1993 The Regents of the University of California",
@@ -233,6 +357,7 @@
       "license_detections": [],
       "license_clues": [],
       "percentage_of_license_text": 0,
+      "for_licenses": [],
       "copyrights": [],
       "holders": [],
       "authors": [],
@@ -317,6 +442,9 @@
       ],
       "license_clues": [],
       "percentage_of_license_text": 19.01,
+      "for_licenses": [
+        "20ee927b-fbe0-31a5-1f33-595dd1b2fd13"
+      ],
       "copyrights": [
         {
           "copyright": "Copyright (c) 2006, Jouni Malinen <j@w1.fi>",

@@ -1,4 +1,52 @@
 {
+  "licenses": [
+    {
+      "identifier": "e60e2912-9996-f235-207c-8ce2b9e55eb9",
+      "license_expression": "mit",
+      "occurance_count": 4,
+      "detection_log": [
+        "not-combined"
+      ],
+      "matches": [
+        {
+          "score": 100.0,
+          "start_line": 3,
+          "end_line": 7,
+          "matched_length": 161,
+          "match_coverage": 100.0,
+          "matcher": "2-aho",
+          "license_expression": "mit",
+          "rule_identifier": "mit.LICENSE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit.LICENSE",
+          "referenced_filenames": [],
+          "is_license_text": true,
+          "is_license_notice": false,
+          "is_license_reference": false,
+          "is_license_tag": false,
+          "is_license_intro": false,
+          "rule_length": 161,
+          "rule_relevance": 100,
+          "licenses": [
+            {
+              "key": "mit",
+              "name": "MIT License",
+              "short_name": "MIT License",
+              "category": "Permissive",
+              "is_exception": false,
+              "is_unknown": false,
+              "owner": "MIT",
+              "homepage_url": "http://opensource.org/licenses/mit-license.php",
+              "text_url": "http://opensource.org/licenses/mit-license.php",
+              "reference_url": "https://scancode-licensedb.aboutcode.org/mit",
+              "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE",
+              "spdx_license_key": "MIT",
+              "spdx_url": "https://spdx.org/licenses/MIT"
+            }
+          ]
+        }
+      ]
+    }
+  ],
   "dependencies": [],
   "packages": [],
   "consolidated_components": [
@@ -61,6 +109,7 @@
       "license_detections": [],
       "license_clues": [],
       "percentage_of_license_text": 0,
+      "for_licenses": [],
       "copyrights": [],
       "holders": [],
       "authors": [],
@@ -143,6 +192,9 @@
       ],
       "license_clues": [],
       "percentage_of_license_text": 97.58,
+      "for_licenses": [
+        "e60e2912-9996-f235-207c-8ce2b9e55eb9"
+      ],
       "copyrights": [
         {
           "copyright": "Copyright (c) IBM Corp.",
@@ -237,6 +289,9 @@
       ],
       "license_clues": [],
       "percentage_of_license_text": 97.58,
+      "for_licenses": [
+        "e60e2912-9996-f235-207c-8ce2b9e55eb9"
+      ],
       "copyrights": [
         {
           "copyright": "Copyright (c) IBM Corp.",
@@ -331,6 +386,9 @@
       ],
       "license_clues": [],
       "percentage_of_license_text": 97.58,
+      "for_licenses": [
+        "e60e2912-9996-f235-207c-8ce2b9e55eb9"
+      ],
       "copyrights": [
         {
           "copyright": "Copyright (c) IBM Corp.",
@@ -380,6 +438,7 @@
       "license_detections": [],
       "license_clues": [],
       "percentage_of_license_text": 0,
+      "for_licenses": [],
       "copyrights": [],
       "holders": [],
       "authors": [],
@@ -462,6 +521,9 @@
       ],
       "license_clues": [],
       "percentage_of_license_text": 97.58,
+      "for_licenses": [
+        "e60e2912-9996-f235-207c-8ce2b9e55eb9"
+      ],
       "copyrights": [
         {
           "copyright": "Copyright (c) Omega Corp.",

@@ -1,4 +1,732 @@
 {
+  "licenses": [
+    {
+      "identifier": "bd8d31df-3dc9-daa6-b885-dc10671b4103",
+      "license_expression": "gpl-3.0",
+      "occurance_count": 1,
+      "detection_log": [
+        "not-combined"
+      ],
+      "matches": [
+        {
+          "score": 100.0,
+          "start_line": 2,
+          "end_line": 675,
+          "matched_length": 5514,
+          "match_coverage": 100.0,
+          "matcher": "1-hash",
+          "license_expression": "gpl-3.0",
+          "rule_identifier": "gpl-3.0_204.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0_204.RULE",
+          "referenced_filenames": [],
+          "is_license_text": true,
+          "is_license_notice": false,
+          "is_license_reference": false,
+          "is_license_tag": false,
+          "is_license_intro": false,
+          "rule_length": 5514,
+          "rule_relevance": 100,
+          "licenses": [
+            {
+              "key": "gpl-3.0",
+              "name": "GNU General Public License 3.0",
+              "short_name": "GPL 3.0",
+              "category": "Copyleft",
+              "is_exception": false,
+              "is_unknown": false,
+              "owner": "Free Software Foundation (FSF)",
+              "homepage_url": "http://www.gnu.org/licenses/gpl-3.0.html",
+              "text_url": "http://www.gnu.org/licenses/gpl-3.0-standalone.html",
+              "reference_url": "https://scancode-licensedb.aboutcode.org/gpl-3.0",
+              "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-3.0.LICENSE",
+              "spdx_license_key": "GPL-3.0-only",
+              "spdx_url": "https://spdx.org/licenses/GPL-3.0-only"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "identifier": "f70c823f-c2d0-5369-e1d2-3cc1103e518b",
+      "license_expression": "gpl-3.0-plus",
+      "occurance_count": 1,
+      "detection_log": [
+        "not-combined"
+      ],
+      "matches": [
+        {
+          "score": 100.0,
+          "start_line": 10,
+          "end_line": 21,
+          "matched_length": 102,
+          "match_coverage": 100.0,
+          "matcher": "2-aho",
+          "license_expression": "gpl-3.0-plus",
+          "rule_identifier": "gpl-3.0-plus_290.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0-plus_290.RULE",
+          "referenced_filenames": [],
+          "is_license_text": false,
+          "is_license_notice": true,
+          "is_license_reference": false,
+          "is_license_tag": false,
+          "is_license_intro": false,
+          "rule_length": 102,
+          "rule_relevance": 100,
+          "licenses": [
+            {
+              "key": "gpl-3.0-plus",
+              "name": "GNU General Public License 3.0 or later",
+              "short_name": "GPL 3.0 or later",
+              "category": "Copyleft",
+              "is_exception": false,
+              "is_unknown": false,
+              "owner": "Free Software Foundation (FSF)",
+              "homepage_url": "http://www.gnu.org/licenses/gpl-3.0-standalone.html",
+              "text_url": "http://www.gnu.org/licenses/gpl-3.0-standalone.html",
+              "reference_url": "https://scancode-licensedb.aboutcode.org/gpl-3.0-plus",
+              "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-3.0-plus.LICENSE",
+              "spdx_license_key": "GPL-3.0-or-later",
+              "spdx_url": "https://spdx.org/licenses/GPL-3.0-or-later"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "identifier": "056056b0-c2ee-9b4e-8b7e-72a75e700069",
+      "license_expression": "gpl-3.0 AND unknown-license-reference AND gpl-3.0-plus",
+      "occurance_count": 1,
+      "detection_log": [
+        "not-combined"
+      ],
+      "matches": [
+        {
+          "score": 100.0,
+          "start_line": 13,
+          "end_line": 13,
+          "matched_length": 2,
+          "match_coverage": 100.0,
+          "matcher": "2-aho",
+          "license_expression": "gpl-3.0",
+          "rule_identifier": "gpl-3.0_203.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0_203.RULE",
+          "referenced_filenames": [],
+          "is_license_text": false,
+          "is_license_notice": false,
+          "is_license_reference": false,
+          "is_license_tag": true,
+          "is_license_intro": false,
+          "rule_length": 2,
+          "rule_relevance": 100,
+          "licenses": [
+            {
+              "key": "gpl-3.0",
+              "name": "GNU General Public License 3.0",
+              "short_name": "GPL 3.0",
+              "category": "Copyleft",
+              "is_exception": false,
+              "is_unknown": false,
+              "owner": "Free Software Foundation (FSF)",
+              "homepage_url": "http://www.gnu.org/licenses/gpl-3.0.html",
+              "text_url": "http://www.gnu.org/licenses/gpl-3.0-standalone.html",
+              "reference_url": "https://scancode-licensedb.aboutcode.org/gpl-3.0",
+              "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-3.0.LICENSE",
+              "spdx_license_key": "GPL-3.0-only",
+              "spdx_url": "https://spdx.org/licenses/GPL-3.0-only"
+            }
+          ]
+        },
+        {
+          "score": 100.0,
+          "start_line": 13,
+          "end_line": 13,
+          "matched_length": 6,
+          "match_coverage": 100.0,
+          "matcher": "2-aho",
+          "license_expression": "unknown-license-reference",
+          "rule_identifier": "unknown-license-reference_367.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/unknown-license-reference_367.RULE",
+          "referenced_filenames": [
+            "LICENSE"
+          ],
+          "is_license_text": false,
+          "is_license_notice": false,
+          "is_license_reference": true,
+          "is_license_tag": false,
+          "is_license_intro": false,
+          "rule_length": 6,
+          "rule_relevance": 100,
+          "licenses": [
+            {
+              "key": "unknown-license-reference",
+              "name": "Unknown License file reference",
+              "short_name": "Unknown License reference",
+              "category": "Unstated License",
+              "is_exception": false,
+              "is_unknown": true,
+              "owner": "Unspecified",
+              "homepage_url": null,
+              "text_url": "",
+              "reference_url": "https://scancode-licensedb.aboutcode.org/unknown-license-reference",
+              "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/unknown-license-reference.LICENSE",
+              "spdx_license_key": "LicenseRef-scancode-unknown-license-reference",
+              "spdx_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/unknown-license-reference.LICENSE"
+            }
+          ]
+        },
+        {
+          "score": 100.0,
+          "start_line": 14,
+          "end_line": 25,
+          "matched_length": 102,
+          "match_coverage": 100.0,
+          "matcher": "2-aho",
+          "license_expression": "gpl-3.0-plus",
+          "rule_identifier": "gpl-3.0-plus_290.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0-plus_290.RULE",
+          "referenced_filenames": [],
+          "is_license_text": false,
+          "is_license_notice": true,
+          "is_license_reference": false,
+          "is_license_tag": false,
+          "is_license_intro": false,
+          "rule_length": 102,
+          "rule_relevance": 100,
+          "licenses": [
+            {
+              "key": "gpl-3.0-plus",
+              "name": "GNU General Public License 3.0 or later",
+              "short_name": "GPL 3.0 or later",
+              "category": "Copyleft",
+              "is_exception": false,
+              "is_unknown": false,
+              "owner": "Free Software Foundation (FSF)",
+              "homepage_url": "http://www.gnu.org/licenses/gpl-3.0-standalone.html",
+              "text_url": "http://www.gnu.org/licenses/gpl-3.0-standalone.html",
+              "reference_url": "https://scancode-licensedb.aboutcode.org/gpl-3.0-plus",
+              "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-3.0-plus.LICENSE",
+              "spdx_license_key": "GPL-3.0-or-later",
+              "spdx_url": "https://spdx.org/licenses/GPL-3.0-or-later"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "identifier": "2c2fcd34-f0d6-5fe4-5457-c8ec02aae688",
+      "license_expression": "free-unknown",
+      "occurance_count": 1,
+      "detection_log": [
+        "not-combined"
+      ],
+      "matches": [
+        {
+          "score": 100.0,
+          "start_line": 3,
+          "end_line": 3,
+          "matched_length": 12,
+          "match_coverage": 100.0,
+          "matcher": "2-aho",
+          "license_expression": "free-unknown",
+          "rule_identifier": "free-unknown-package_2.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/free-unknown-package_2.RULE",
+          "referenced_filenames": [
+            "INHERIT_LICENSE_FROM_PACKAGE"
+          ],
+          "is_license_text": false,
+          "is_license_notice": false,
+          "is_license_reference": true,
+          "is_license_tag": false,
+          "is_license_intro": false,
+          "rule_length": 12,
+          "rule_relevance": 100,
+          "licenses": [
+            {
+              "key": "free-unknown",
+              "name": "Free unknown license detected but not recognized",
+              "short_name": "Free unknown",
+              "category": "Unstated License",
+              "is_exception": false,
+              "is_unknown": true,
+              "owner": "Unspecified",
+              "homepage_url": null,
+              "text_url": "",
+              "reference_url": "https://scancode-licensedb.aboutcode.org/free-unknown",
+              "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/free-unknown.LICENSE",
+              "spdx_license_key": "LicenseRef-scancode-free-unknown",
+              "spdx_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/free-unknown.LICENSE"
+            }
+          ]
+        },
+        {
+          "score": 100.0,
+          "start_line": 7,
+          "end_line": 7,
+          "matched_length": 12,
+          "match_coverage": 100.0,
+          "matcher": "2-aho",
+          "license_expression": "free-unknown",
+          "rule_identifier": "free-unknown-package_2.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/free-unknown-package_2.RULE",
+          "referenced_filenames": [
+            "INHERIT_LICENSE_FROM_PACKAGE"
+          ],
+          "is_license_text": false,
+          "is_license_notice": false,
+          "is_license_reference": true,
+          "is_license_tag": false,
+          "is_license_intro": false,
+          "rule_length": 12,
+          "rule_relevance": 100,
+          "licenses": [
+            {
+              "key": "free-unknown",
+              "name": "Free unknown license detected but not recognized",
+              "short_name": "Free unknown",
+              "category": "Unstated License",
+              "is_exception": false,
+              "is_unknown": true,
+              "owner": "Unspecified",
+              "homepage_url": null,
+              "text_url": "",
+              "reference_url": "https://scancode-licensedb.aboutcode.org/free-unknown",
+              "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/free-unknown.LICENSE",
+              "spdx_license_key": "LicenseRef-scancode-free-unknown",
+              "spdx_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/free-unknown.LICENSE"
+            }
+          ]
+        },
+        {
+          "score": 100.0,
+          "start_line": 11,
+          "end_line": 11,
+          "matched_length": 12,
+          "match_coverage": 100.0,
+          "matcher": "2-aho",
+          "license_expression": "free-unknown",
+          "rule_identifier": "free-unknown-package_2.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/free-unknown-package_2.RULE",
+          "referenced_filenames": [
+            "INHERIT_LICENSE_FROM_PACKAGE"
+          ],
+          "is_license_text": false,
+          "is_license_notice": false,
+          "is_license_reference": true,
+          "is_license_tag": false,
+          "is_license_intro": false,
+          "rule_length": 12,
+          "rule_relevance": 100,
+          "licenses": [
+            {
+              "key": "free-unknown",
+              "name": "Free unknown license detected but not recognized",
+              "short_name": "Free unknown",
+              "category": "Unstated License",
+              "is_exception": false,
+              "is_unknown": true,
+              "owner": "Unspecified",
+              "homepage_url": null,
+              "text_url": "",
+              "reference_url": "https://scancode-licensedb.aboutcode.org/free-unknown",
+              "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/free-unknown.LICENSE",
+              "spdx_license_key": "LicenseRef-scancode-free-unknown",
+              "spdx_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/free-unknown.LICENSE"
+            }
+          ]
+        },
+        {
+          "score": 100.0,
+          "start_line": 15,
+          "end_line": 15,
+          "matched_length": 12,
+          "match_coverage": 100.0,
+          "matcher": "2-aho",
+          "license_expression": "free-unknown",
+          "rule_identifier": "free-unknown-package_2.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/free-unknown-package_2.RULE",
+          "referenced_filenames": [
+            "INHERIT_LICENSE_FROM_PACKAGE"
+          ],
+          "is_license_text": false,
+          "is_license_notice": false,
+          "is_license_reference": true,
+          "is_license_tag": false,
+          "is_license_intro": false,
+          "rule_length": 12,
+          "rule_relevance": 100,
+          "licenses": [
+            {
+              "key": "free-unknown",
+              "name": "Free unknown license detected but not recognized",
+              "short_name": "Free unknown",
+              "category": "Unstated License",
+              "is_exception": false,
+              "is_unknown": true,
+              "owner": "Unspecified",
+              "homepage_url": null,
+              "text_url": "",
+              "reference_url": "https://scancode-licensedb.aboutcode.org/free-unknown",
+              "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/free-unknown.LICENSE",
+              "spdx_license_key": "LicenseRef-scancode-free-unknown",
+              "spdx_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/free-unknown.LICENSE"
+            }
+          ]
+        },
+        {
+          "score": 100.0,
+          "start_line": 19,
+          "end_line": 19,
+          "matched_length": 12,
+          "match_coverage": 100.0,
+          "matcher": "2-aho",
+          "license_expression": "free-unknown",
+          "rule_identifier": "free-unknown-package_2.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/free-unknown-package_2.RULE",
+          "referenced_filenames": [
+            "INHERIT_LICENSE_FROM_PACKAGE"
+          ],
+          "is_license_text": false,
+          "is_license_notice": false,
+          "is_license_reference": true,
+          "is_license_tag": false,
+          "is_license_intro": false,
+          "rule_length": 12,
+          "rule_relevance": 100,
+          "licenses": [
+            {
+              "key": "free-unknown",
+              "name": "Free unknown license detected but not recognized",
+              "short_name": "Free unknown",
+              "category": "Unstated License",
+              "is_exception": false,
+              "is_unknown": true,
+              "owner": "Unspecified",
+              "homepage_url": null,
+              "text_url": "",
+              "reference_url": "https://scancode-licensedb.aboutcode.org/free-unknown",
+              "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/free-unknown.LICENSE",
+              "spdx_license_key": "LicenseRef-scancode-free-unknown",
+              "spdx_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/free-unknown.LICENSE"
+            }
+          ]
+        },
+        {
+          "score": 100.0,
+          "start_line": 23,
+          "end_line": 23,
+          "matched_length": 12,
+          "match_coverage": 100.0,
+          "matcher": "2-aho",
+          "license_expression": "free-unknown",
+          "rule_identifier": "free-unknown-package_2.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/free-unknown-package_2.RULE",
+          "referenced_filenames": [
+            "INHERIT_LICENSE_FROM_PACKAGE"
+          ],
+          "is_license_text": false,
+          "is_license_notice": false,
+          "is_license_reference": true,
+          "is_license_tag": false,
+          "is_license_intro": false,
+          "rule_length": 12,
+          "rule_relevance": 100,
+          "licenses": [
+            {
+              "key": "free-unknown",
+              "name": "Free unknown license detected but not recognized",
+              "short_name": "Free unknown",
+              "category": "Unstated License",
+              "is_exception": false,
+              "is_unknown": true,
+              "owner": "Unspecified",
+              "homepage_url": null,
+              "text_url": "",
+              "reference_url": "https://scancode-licensedb.aboutcode.org/free-unknown",
+              "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/free-unknown.LICENSE",
+              "spdx_license_key": "LicenseRef-scancode-free-unknown",
+              "spdx_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/free-unknown.LICENSE"
+            }
+          ]
+        },
+        {
+          "score": 100.0,
+          "start_line": 27,
+          "end_line": 27,
+          "matched_length": 12,
+          "match_coverage": 100.0,
+          "matcher": "2-aho",
+          "license_expression": "free-unknown",
+          "rule_identifier": "free-unknown-package_2.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/free-unknown-package_2.RULE",
+          "referenced_filenames": [
+            "INHERIT_LICENSE_FROM_PACKAGE"
+          ],
+          "is_license_text": false,
+          "is_license_notice": false,
+          "is_license_reference": true,
+          "is_license_tag": false,
+          "is_license_intro": false,
+          "rule_length": 12,
+          "rule_relevance": 100,
+          "licenses": [
+            {
+              "key": "free-unknown",
+              "name": "Free unknown license detected but not recognized",
+              "short_name": "Free unknown",
+              "category": "Unstated License",
+              "is_exception": false,
+              "is_unknown": true,
+              "owner": "Unspecified",
+              "homepage_url": null,
+              "text_url": "",
+              "reference_url": "https://scancode-licensedb.aboutcode.org/free-unknown",
+              "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/free-unknown.LICENSE",
+              "spdx_license_key": "LicenseRef-scancode-free-unknown",
+              "spdx_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/free-unknown.LICENSE"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "identifier": "76225990-e8f5-ab08-5ffe-299da9d287e6",
+      "license_expression": "free-unknown",
+      "occurance_count": 1,
+      "detection_log": [
+        "not-combined"
+      ],
+      "matches": [
+        {
+          "score": 100.0,
+          "start_line": 3,
+          "end_line": 3,
+          "matched_length": 12,
+          "match_coverage": 100.0,
+          "matcher": "2-aho",
+          "license_expression": "free-unknown",
+          "rule_identifier": "free-unknown-package_2.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/free-unknown-package_2.RULE",
+          "referenced_filenames": [
+            "INHERIT_LICENSE_FROM_PACKAGE"
+          ],
+          "is_license_text": false,
+          "is_license_notice": false,
+          "is_license_reference": true,
+          "is_license_tag": false,
+          "is_license_intro": false,
+          "rule_length": 12,
+          "rule_relevance": 100,
+          "licenses": [
+            {
+              "key": "free-unknown",
+              "name": "Free unknown license detected but not recognized",
+              "short_name": "Free unknown",
+              "category": "Unstated License",
+              "is_exception": false,
+              "is_unknown": true,
+              "owner": "Unspecified",
+              "homepage_url": null,
+              "text_url": "",
+              "reference_url": "https://scancode-licensedb.aboutcode.org/free-unknown",
+              "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/free-unknown.LICENSE",
+              "spdx_license_key": "LicenseRef-scancode-free-unknown",
+              "spdx_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/free-unknown.LICENSE"
+            }
+          ]
+        },
+        {
+          "score": 100.0,
+          "start_line": 7,
+          "end_line": 7,
+          "matched_length": 12,
+          "match_coverage": 100.0,
+          "matcher": "2-aho",
+          "license_expression": "free-unknown",
+          "rule_identifier": "free-unknown-package_2.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/free-unknown-package_2.RULE",
+          "referenced_filenames": [
+            "INHERIT_LICENSE_FROM_PACKAGE"
+          ],
+          "is_license_text": false,
+          "is_license_notice": false,
+          "is_license_reference": true,
+          "is_license_tag": false,
+          "is_license_intro": false,
+          "rule_length": 12,
+          "rule_relevance": 100,
+          "licenses": [
+            {
+              "key": "free-unknown",
+              "name": "Free unknown license detected but not recognized",
+              "short_name": "Free unknown",
+              "category": "Unstated License",
+              "is_exception": false,
+              "is_unknown": true,
+              "owner": "Unspecified",
+              "homepage_url": null,
+              "text_url": "",
+              "reference_url": "https://scancode-licensedb.aboutcode.org/free-unknown",
+              "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/free-unknown.LICENSE",
+              "spdx_license_key": "LicenseRef-scancode-free-unknown",
+              "spdx_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/free-unknown.LICENSE"
+            }
+          ]
+        },
+        {
+          "score": 100.0,
+          "start_line": 11,
+          "end_line": 11,
+          "matched_length": 12,
+          "match_coverage": 100.0,
+          "matcher": "2-aho",
+          "license_expression": "free-unknown",
+          "rule_identifier": "free-unknown-package_2.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/free-unknown-package_2.RULE",
+          "referenced_filenames": [
+            "INHERIT_LICENSE_FROM_PACKAGE"
+          ],
+          "is_license_text": false,
+          "is_license_notice": false,
+          "is_license_reference": true,
+          "is_license_tag": false,
+          "is_license_intro": false,
+          "rule_length": 12,
+          "rule_relevance": 100,
+          "licenses": [
+            {
+              "key": "free-unknown",
+              "name": "Free unknown license detected but not recognized",
+              "short_name": "Free unknown",
+              "category": "Unstated License",
+              "is_exception": false,
+              "is_unknown": true,
+              "owner": "Unspecified",
+              "homepage_url": null,
+              "text_url": "",
+              "reference_url": "https://scancode-licensedb.aboutcode.org/free-unknown",
+              "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/free-unknown.LICENSE",
+              "spdx_license_key": "LicenseRef-scancode-free-unknown",
+              "spdx_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/free-unknown.LICENSE"
+            }
+          ]
+        },
+        {
+          "score": 100.0,
+          "start_line": 15,
+          "end_line": 15,
+          "matched_length": 12,
+          "match_coverage": 100.0,
+          "matcher": "2-aho",
+          "license_expression": "free-unknown",
+          "rule_identifier": "free-unknown-package_2.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/free-unknown-package_2.RULE",
+          "referenced_filenames": [
+            "INHERIT_LICENSE_FROM_PACKAGE"
+          ],
+          "is_license_text": false,
+          "is_license_notice": false,
+          "is_license_reference": true,
+          "is_license_tag": false,
+          "is_license_intro": false,
+          "rule_length": 12,
+          "rule_relevance": 100,
+          "licenses": [
+            {
+              "key": "free-unknown",
+              "name": "Free unknown license detected but not recognized",
+              "short_name": "Free unknown",
+              "category": "Unstated License",
+              "is_exception": false,
+              "is_unknown": true,
+              "owner": "Unspecified",
+              "homepage_url": null,
+              "text_url": "",
+              "reference_url": "https://scancode-licensedb.aboutcode.org/free-unknown",
+              "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/free-unknown.LICENSE",
+              "spdx_license_key": "LicenseRef-scancode-free-unknown",
+              "spdx_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/free-unknown.LICENSE"
+            }
+          ]
+        },
+        {
+          "score": 100.0,
+          "start_line": 19,
+          "end_line": 19,
+          "matched_length": 12,
+          "match_coverage": 100.0,
+          "matcher": "2-aho",
+          "license_expression": "free-unknown",
+          "rule_identifier": "free-unknown-package_2.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/free-unknown-package_2.RULE",
+          "referenced_filenames": [
+            "INHERIT_LICENSE_FROM_PACKAGE"
+          ],
+          "is_license_text": false,
+          "is_license_notice": false,
+          "is_license_reference": true,
+          "is_license_tag": false,
+          "is_license_intro": false,
+          "rule_length": 12,
+          "rule_relevance": 100,
+          "licenses": [
+            {
+              "key": "free-unknown",
+              "name": "Free unknown license detected but not recognized",
+              "short_name": "Free unknown",
+              "category": "Unstated License",
+              "is_exception": false,
+              "is_unknown": true,
+              "owner": "Unspecified",
+              "homepage_url": null,
+              "text_url": "",
+              "reference_url": "https://scancode-licensedb.aboutcode.org/free-unknown",
+              "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/free-unknown.LICENSE",
+              "spdx_license_key": "LicenseRef-scancode-free-unknown",
+              "spdx_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/free-unknown.LICENSE"
+            }
+          ]
+        },
+        {
+          "score": 100.0,
+          "start_line": 23,
+          "end_line": 23,
+          "matched_length": 12,
+          "match_coverage": 100.0,
+          "matcher": "2-aho",
+          "license_expression": "free-unknown",
+          "rule_identifier": "free-unknown-package_2.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/free-unknown-package_2.RULE",
+          "referenced_filenames": [
+            "INHERIT_LICENSE_FROM_PACKAGE"
+          ],
+          "is_license_text": false,
+          "is_license_notice": false,
+          "is_license_reference": true,
+          "is_license_tag": false,
+          "is_license_intro": false,
+          "rule_length": 12,
+          "rule_relevance": 100,
+          "licenses": [
+            {
+              "key": "free-unknown",
+              "name": "Free unknown license detected but not recognized",
+              "short_name": "Free unknown",
+              "category": "Unstated License",
+              "is_exception": false,
+              "is_unknown": true,
+              "owner": "Unspecified",
+              "homepage_url": null,
+              "text_url": "",
+              "reference_url": "https://scancode-licensedb.aboutcode.org/free-unknown",
+              "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/free-unknown.LICENSE",
+              "spdx_license_key": "LicenseRef-scancode-free-unknown",
+              "spdx_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/free-unknown.LICENSE"
+            }
+          ]
+        }
+      ]
+    }
+  ],
   "dependencies": [],
   "packages": [],
   "files": [
@@ -56,6 +784,9 @@
       ],
       "license_clues": [],
       "percentage_of_license_text": 100.0,
+      "for_licenses": [
+        "bd8d31df-3dc9-daa6-b885-dc10671b4103"
+      ],
       "package_data": [],
       "for_packages": [],
       "scan_errors": []
@@ -68,6 +799,7 @@
       "license_detections": [],
       "license_clues": [],
       "percentage_of_license_text": 0,
+      "for_licenses": [],
       "package_data": [],
       "for_packages": [],
       "scan_errors": []
@@ -80,6 +812,7 @@
       "license_detections": [],
       "license_clues": [],
       "percentage_of_license_text": 0,
+      "for_licenses": [],
       "package_data": [],
       "for_packages": [],
       "scan_errors": []
@@ -214,6 +947,9 @@
       ],
       "license_clues": [],
       "percentage_of_license_text": 19.1,
+      "for_licenses": [
+        "056056b0-c2ee-9b4e-8b7e-72a75e700069"
+      ],
       "package_data": [],
       "for_packages": [],
       "scan_errors": []
@@ -272,6 +1008,9 @@
       ],
       "license_clues": [],
       "percentage_of_license_text": 10.56,
+      "for_licenses": [
+        "f70c823f-c2d0-5369-e1d2-3cc1103e518b"
+      ],
       "package_data": [],
       "for_packages": [],
       "scan_errors": []
@@ -284,6 +1023,7 @@
       "license_detections": [],
       "license_clues": [],
       "percentage_of_license_text": 0,
+      "for_licenses": [],
       "package_data": [],
       "for_packages": [],
       "scan_errors": []
@@ -615,6 +1355,9 @@
       ],
       "license_clues": [],
       "percentage_of_license_text": 11.8,
+      "for_licenses": [
+        "2c2fcd34-f0d6-5fe4-5457-c8ec02aae688"
+      ],
       "package_data": [],
       "for_packages": [],
       "scan_errors": []
@@ -907,6 +1650,9 @@
       ],
       "license_clues": [],
       "percentage_of_license_text": 12.24,
+      "for_licenses": [
+        "76225990-e8f5-ab08-5ffe-299da9d287e6"
+      ],
       "package_data": [],
       "for_packages": [],
       "scan_errors": []
@@ -919,6 +1665,7 @@
       "license_detections": [],
       "license_clues": [],
       "percentage_of_license_text": 0,
+      "for_licenses": [],
       "package_data": [
         {
           "type": "pypi",

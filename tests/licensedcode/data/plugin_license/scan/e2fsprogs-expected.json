@@ -1,4 +1,113 @@
 {
+  "licenses": [
+    {
+      "identifier": "c356b4b4-d67f-a20e-2b27-6b846b248f17",
+      "license_expression": null,
+      "occurance_count": 1,
+      "detection_log": [
+        "license-clues"
+      ],
+      "matches": [
+        {
+          "score": 14.39,
+          "start_line": 19,
+          "end_line": 20,
+          "matched_length": 20,
+          "match_coverage": 14.39,
+          "matcher": "3-seq",
+          "license_expression": "lgpl-2.0-plus",
+          "rule_identifier": "lgpl-2.0-plus_65.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0-plus_65.RULE",
+          "referenced_filenames": [],
+          "is_license_text": false,
+          "is_license_notice": true,
+          "is_license_reference": false,
+          "is_license_tag": false,
+          "is_license_intro": false,
+          "rule_length": 139,
+          "rule_relevance": 100,
+          "licenses": [
+            {
+              "key": "lgpl-2.0-plus",
+              "name": "GNU Library General Public License 2.0 or later",
+              "short_name": "LGPL 2.0 or later",
+              "category": "Copyleft Limited",
+              "is_exception": false,
+              "is_unknown": false,
+              "owner": "Free Software Foundation (FSF)",
+              "homepage_url": "http://www.gnu.org/licenses/old-licenses/lgpl-2.0.html",
+              "text_url": "http://www.gnu.org/licenses/old-licenses/lgpl-2.0-standalone.html",
+              "reference_url": "https://scancode-licensedb.aboutcode.org/lgpl-2.0-plus",
+              "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/lgpl-2.0-plus.LICENSE",
+              "spdx_license_key": "LGPL-2.0-or-later",
+              "spdx_url": "https://spdx.org/licenses/LGPL-2.0-or-later"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "identifier": "7a8b2654-e2b3-da24-ce96-d08ca2d4d8c3",
+      "license_expression": "gpl-2.0 AND patent-disclaimer",
+      "occurance_count": 1,
+      "detection_log": [
+        "not-combined"
+      ],
+      "matches": [
+        {
+          "score": 100.0,
+          "start_line": 4,
+          "end_line": 30,
+          "matched_length": 185,
+          "match_coverage": 100.0,
+          "matcher": "2-aho",
+          "license_expression": "gpl-2.0 AND patent-disclaimer",
+          "rule_identifier": "gpl-2.0_and_patent-disclaimer_3.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0_and_patent-disclaimer_3.RULE",
+          "referenced_filenames": [],
+          "is_license_text": false,
+          "is_license_notice": true,
+          "is_license_reference": false,
+          "is_license_tag": false,
+          "is_license_intro": false,
+          "rule_length": 185,
+          "rule_relevance": 100,
+          "licenses": [
+            {
+              "key": "gpl-2.0",
+              "name": "GNU General Public License 2.0",
+              "short_name": "GPL 2.0",
+              "category": "Copyleft",
+              "is_exception": false,
+              "is_unknown": false,
+              "owner": "Free Software Foundation (FSF)",
+              "homepage_url": "http://www.gnu.org/licenses/gpl-2.0.html",
+              "text_url": "http://www.gnu.org/licenses/gpl-2.0.txt",
+              "reference_url": "https://scancode-licensedb.aboutcode.org/gpl-2.0",
+              "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-2.0.LICENSE",
+              "spdx_license_key": "GPL-2.0-only",
+              "spdx_url": "https://spdx.org/licenses/GPL-2.0-only"
+            },
+            {
+              "key": "patent-disclaimer",
+              "name": "Generic patent disclaimer",
+              "short_name": "Generic patent disclaimer",
+              "category": "Permissive",
+              "is_exception": false,
+              "is_unknown": false,
+              "owner": "Unspecified",
+              "homepage_url": null,
+              "text_url": "",
+              "reference_url": "https://scancode-licensedb.aboutcode.org/patent-disclaimer",
+              "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/patent-disclaimer.LICENSE",
+              "spdx_license_key": "LicenseRef-scancode-patent-disclaimer",
+              "spdx_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/patent-disclaimer.LICENSE"
+            }
+          ]
+        }
+      ]
+    }
+  ],
   "files": [
     {
       "path": "e2fsprogs-copyright",
@@ -45,6 +154,9 @@
         }
       ],
       "percentage_of_license_text": 22.73,
+      "for_licenses": [
+        "c356b4b4-d67f-a20e-2b27-6b846b248f17"
+      ],
       "scan_errors": []
     },
     {
@@ -115,6 +227,9 @@
       ],
       "license_clues": [],
       "percentage_of_license_text": 95.36,
+      "for_licenses": [
+        "7a8b2654-e2b3-da24-ce96-d08ca2d4d8c3"
+      ],
       "scan_errors": []
     }
   ]

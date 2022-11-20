@@ -1,4 +1,1109 @@
 {
+  "licenses": [
+    {
+      "identifier": "f9a5ba7d-9d66-5878-a0bd-1afe42fe0bd9",
+      "license_expression": "python",
+      "detection_log": [
+        "not-combined"
+      ],
+      "matches": [
+        {
+          "score": 100.0,
+          "start_line": 23,
+          "end_line": 26,
+          "matched_length": 35,
+          "match_coverage": 100.0,
+          "matcher": "2-aho",
+          "license_expression": "python",
+          "rule_identifier": "python_not_not-a-license_269.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/python_not_not-a-license_269.RULE",
+          "referenced_filenames": [],
+          "is_license_text": false,
+          "is_license_notice": false,
+          "is_license_reference": true,
+          "is_license_tag": false,
+          "is_license_intro": false,
+          "rule_length": 35,
+          "rule_relevance": 100,
+          "licenses": [
+            {
+              "key": "python",
+              "name": "Python Software Foundation License v2",
+              "short_name": "Python License 2.0",
+              "category": "Permissive",
+              "is_exception": false,
+              "is_unknown": false,
+              "owner": "Python Software Foundation (PSF)",
+              "homepage_url": "http://docs.python.org/license.html",
+              "text_url": "http://spdx.org/licenses/Python-2.0",
+              "reference_url": "https://scancode-licensedb.aboutcode.org/python",
+              "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/python.LICENSE",
+              "spdx_license_key": "Python-2.0",
+              "spdx_url": "https://spdx.org/licenses/Python-2.0"
+            }
+          ]
+        }
+      ],
+      "occurance_count": 1
+    },
+    {
+      "identifier": "a9ef94dc-a60e-21b6-82b8-77454e7751c0",
+      "license_expression": "other-copyleft AND gpl-1.0-plus",
+      "detection_log": [
+        "not-combined"
+      ],
+      "matches": [
+        {
+          "score": 80.0,
+          "start_line": 62,
+          "end_line": 62,
+          "matched_length": 2,
+          "match_coverage": 100.0,
+          "matcher": "2-aho",
+          "license_expression": "other-copyleft",
+          "rule_identifier": "other-copyleft_24.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/other-copyleft_24.RULE",
+          "referenced_filenames": [],
+          "is_license_text": false,
+          "is_license_notice": false,
+          "is_license_reference": true,
+          "is_license_tag": false,
+          "is_license_intro": false,
+          "rule_length": 2,
+          "rule_relevance": 80,
+          "licenses": [
+            {
+              "key": "other-copyleft",
+              "name": "Other Copyleft Licenses",
+              "short_name": "Other Copyleft Licenses",
+              "category": "Copyleft",
+              "is_exception": false,
+              "is_unknown": false,
+              "owner": "nexB",
+              "homepage_url": null,
+              "text_url": "",
+              "reference_url": "https://scancode-licensedb.aboutcode.org/other-copyleft",
+              "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/other-copyleft.LICENSE",
+              "spdx_license_key": "LicenseRef-scancode-other-copyleft",
+              "spdx_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/other-copyleft.LICENSE"
+            }
+          ]
+        },
+        {
+          "score": 100.0,
+          "start_line": 62,
+          "end_line": 63,
+          "matched_length": 3,
+          "match_coverage": 100.0,
+          "matcher": "2-aho",
+          "license_expression": "gpl-1.0-plus",
+          "rule_identifier": "gpl-1.0-plus_200.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-1.0-plus_200.RULE",
+          "referenced_filenames": [],
+          "is_license_text": false,
+          "is_license_notice": true,
+          "is_license_reference": false,
+          "is_license_tag": false,
+          "is_license_intro": false,
+          "rule_length": 3,
+          "rule_relevance": 100,
+          "licenses": [
+            {
+              "key": "gpl-1.0-plus",
+              "name": "GNU General Public License 1.0 or later",
+              "short_name": "GPL 1.0 or later",
+              "category": "Copyleft",
+              "is_exception": false,
+              "is_unknown": false,
+              "owner": "Free Software Foundation (FSF)",
+              "homepage_url": "http://www.gnu.org/licenses/old-licenses/gpl-1.0-standalone.html",
+              "text_url": "http://www.gnu.org/licenses/old-licenses/gpl-1.0-standalone.html",
+              "reference_url": "https://scancode-licensedb.aboutcode.org/gpl-1.0-plus",
+              "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-1.0-plus.LICENSE",
+              "spdx_license_key": "GPL-1.0-or-later",
+              "spdx_url": "https://spdx.org/licenses/GPL-1.0-or-later"
+            }
+          ]
+        },
+        {
+          "score": 85.0,
+          "start_line": 63,
+          "end_line": 63,
+          "matched_length": 2,
+          "match_coverage": 100.0,
+          "matcher": "2-aho",
+          "license_expression": "gpl-1.0-plus",
+          "rule_identifier": "gpl-1.0-plus_351.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-1.0-plus_351.RULE",
+          "referenced_filenames": [],
+          "is_license_text": false,
+          "is_license_notice": false,
+          "is_license_reference": true,
+          "is_license_tag": false,
+          "is_license_intro": false,
+          "rule_length": 2,
+          "rule_relevance": 85,
+          "licenses": [
+            {
+              "key": "gpl-1.0-plus",
+              "name": "GNU General Public License 1.0 or later",
+              "short_name": "GPL 1.0 or later",
+              "category": "Copyleft",
+              "is_exception": false,
+              "is_unknown": false,
+              "owner": "Free Software Foundation (FSF)",
+              "homepage_url": "http://www.gnu.org/licenses/old-licenses/gpl-1.0-standalone.html",
+              "text_url": "http://www.gnu.org/licenses/old-licenses/gpl-1.0-standalone.html",
+              "reference_url": "https://scancode-licensedb.aboutcode.org/gpl-1.0-plus",
+              "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-1.0-plus.LICENSE",
+              "spdx_license_key": "GPL-1.0-or-later",
+              "spdx_url": "https://spdx.org/licenses/GPL-1.0-or-later"
+            }
+          ]
+        },
+        {
+          "score": 85.0,
+          "start_line": 64,
+          "end_line": 65,
+          "matched_length": 2,
+          "match_coverage": 100.0,
+          "matcher": "2-aho",
+          "license_expression": "gpl-1.0-plus",
+          "rule_identifier": "gpl-1.0-plus_351.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-1.0-plus_351.RULE",
+          "referenced_filenames": [],
+          "is_license_text": false,
+          "is_license_notice": false,
+          "is_license_reference": true,
+          "is_license_tag": false,
+          "is_license_intro": false,
+          "rule_length": 2,
+          "rule_relevance": 85,
+          "licenses": [
+            {
+              "key": "gpl-1.0-plus",
+              "name": "GNU General Public License 1.0 or later",
+              "short_name": "GPL 1.0 or later",
+              "category": "Copyleft",
+              "is_exception": false,
+              "is_unknown": false,
+              "owner": "Free Software Foundation (FSF)",
+              "homepage_url": "http://www.gnu.org/licenses/old-licenses/gpl-1.0-standalone.html",
+              "text_url": "http://www.gnu.org/licenses/old-licenses/gpl-1.0-standalone.html",
+              "reference_url": "https://scancode-licensedb.aboutcode.org/gpl-1.0-plus",
+              "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-1.0-plus.LICENSE",
+              "spdx_license_key": "GPL-1.0-or-later",
+              "spdx_url": "https://spdx.org/licenses/GPL-1.0-or-later"
+            }
+          ]
+        },
+        {
+          "score": 80.0,
+          "start_line": 65,
+          "end_line": 65,
+          "matched_length": 2,
+          "match_coverage": 100.0,
+          "matcher": "2-aho",
+          "license_expression": "other-copyleft",
+          "rule_identifier": "other-copyleft_24.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/other-copyleft_24.RULE",
+          "referenced_filenames": [],
+          "is_license_text": false,
+          "is_license_notice": false,
+          "is_license_reference": true,
+          "is_license_tag": false,
+          "is_license_intro": false,
+          "rule_length": 2,
+          "rule_relevance": 80,
+          "licenses": [
+            {
+              "key": "other-copyleft",
+              "name": "Other Copyleft Licenses",
+              "short_name": "Other Copyleft Licenses",
+              "category": "Copyleft",
+              "is_exception": false,
+              "is_unknown": false,
+              "owner": "nexB",
+              "homepage_url": null,
+              "text_url": "",
+              "reference_url": "https://scancode-licensedb.aboutcode.org/other-copyleft",
+              "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/other-copyleft.LICENSE",
+              "spdx_license_key": "LicenseRef-scancode-other-copyleft",
+              "spdx_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/other-copyleft.LICENSE"
+            }
+          ]
+        },
+        {
+          "score": 100.0,
+          "start_line": 66,
+          "end_line": 66,
+          "matched_length": 4,
+          "match_coverage": 100.0,
+          "matcher": "2-aho",
+          "license_expression": "gpl-1.0-plus",
+          "rule_identifier": "gpl_194.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl_194.RULE",
+          "referenced_filenames": [],
+          "is_license_text": false,
+          "is_license_notice": false,
+          "is_license_reference": true,
+          "is_license_tag": false,
+          "is_license_intro": false,
+          "rule_length": 4,
+          "rule_relevance": 100,
+          "licenses": [
+            {
+              "key": "gpl-1.0-plus",
+              "name": "GNU General Public License 1.0 or later",
+              "short_name": "GPL 1.0 or later",
+              "category": "Copyleft",
+              "is_exception": false,
+              "is_unknown": false,
+              "owner": "Free Software Foundation (FSF)",
+              "homepage_url": "http://www.gnu.org/licenses/old-licenses/gpl-1.0-standalone.html",
+              "text_url": "http://www.gnu.org/licenses/old-licenses/gpl-1.0-standalone.html",
+              "reference_url": "https://scancode-licensedb.aboutcode.org/gpl-1.0-plus",
+              "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-1.0-plus.LICENSE",
+              "spdx_license_key": "GPL-1.0-or-later",
+              "spdx_url": "https://spdx.org/licenses/GPL-1.0-or-later"
+            }
+          ]
+        },
+        {
+          "score": 80.0,
+          "start_line": 68,
+          "end_line": 68,
+          "matched_length": 2,
+          "match_coverage": 100.0,
+          "matcher": "2-aho",
+          "license_expression": "other-copyleft",
+          "rule_identifier": "other-copyleft_24.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/other-copyleft_24.RULE",
+          "referenced_filenames": [],
+          "is_license_text": false,
+          "is_license_notice": false,
+          "is_license_reference": true,
+          "is_license_tag": false,
+          "is_license_intro": false,
+          "rule_length": 2,
+          "rule_relevance": 80,
+          "licenses": [
+            {
+              "key": "other-copyleft",
+              "name": "Other Copyleft Licenses",
+              "short_name": "Other Copyleft Licenses",
+              "category": "Copyleft",
+              "is_exception": false,
+              "is_unknown": false,
+              "owner": "nexB",
+              "homepage_url": null,
+              "text_url": "",
+              "reference_url": "https://scancode-licensedb.aboutcode.org/other-copyleft",
+              "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/other-copyleft.LICENSE",
+              "spdx_license_key": "LicenseRef-scancode-other-copyleft",
+              "spdx_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/other-copyleft.LICENSE"
+            }
+          ]
+        },
+        {
+          "score": 85.0,
+          "start_line": 71,
+          "end_line": 71,
+          "matched_length": 2,
+          "match_coverage": 100.0,
+          "matcher": "2-aho",
+          "license_expression": "gpl-1.0-plus",
+          "rule_identifier": "gpl-1.0-plus_351.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-1.0-plus_351.RULE",
+          "referenced_filenames": [],
+          "is_license_text": false,
+          "is_license_notice": false,
+          "is_license_reference": true,
+          "is_license_tag": false,
+          "is_license_intro": false,
+          "rule_length": 2,
+          "rule_relevance": 85,
+          "licenses": [
+            {
+              "key": "gpl-1.0-plus",
+              "name": "GNU General Public License 1.0 or later",
+              "short_name": "GPL 1.0 or later",
+              "category": "Copyleft",
+              "is_exception": false,
+              "is_unknown": false,
+              "owner": "Free Software Foundation (FSF)",
+              "homepage_url": "http://www.gnu.org/licenses/old-licenses/gpl-1.0-standalone.html",
+              "text_url": "http://www.gnu.org/licenses/old-licenses/gpl-1.0-standalone.html",
+              "reference_url": "https://scancode-licensedb.aboutcode.org/gpl-1.0-plus",
+              "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-1.0-plus.LICENSE",
+              "spdx_license_key": "GPL-1.0-or-later",
+              "spdx_url": "https://spdx.org/licenses/GPL-1.0-or-later"
+            }
+          ]
+        }
+      ],
+      "occurance_count": 1
+    },
+    {
+      "identifier": "3136274a-0a35-5bea-9531-6e328486ea3b",
+      "license_expression": "python AND python-cwi",
+      "detection_log": [
+        "not-combined"
+      ],
+      "matches": [
+        {
+          "score": 90.52,
+          "start_line": 77,
+          "end_line": 255,
+          "matched_length": 1385,
+          "match_coverage": 90.52,
+          "matcher": "3-seq",
+          "license_expression": "python",
+          "rule_identifier": "python_2019.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/python_2019.RULE",
+          "referenced_filenames": [],
+          "is_license_text": true,
+          "is_license_notice": false,
+          "is_license_reference": false,
+          "is_license_tag": false,
+          "is_license_intro": false,
+          "rule_length": 1530,
+          "rule_relevance": 100,
+          "licenses": [
+            {
+              "key": "python",
+              "name": "Python Software Foundation License v2",
+              "short_name": "Python License 2.0",
+              "category": "Permissive",
+              "is_exception": false,
+              "is_unknown": false,
+              "owner": "Python Software Foundation (PSF)",
+              "homepage_url": "http://docs.python.org/license.html",
+              "text_url": "http://spdx.org/licenses/Python-2.0",
+              "reference_url": "https://scancode-licensedb.aboutcode.org/python",
+              "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/python.LICENSE",
+              "spdx_license_key": "Python-2.0",
+              "spdx_url": "https://spdx.org/licenses/Python-2.0"
+            }
+          ]
+        },
+        {
+          "score": 100.0,
+          "start_line": 257,
+          "end_line": 272,
+          "matched_length": 145,
+          "match_coverage": 100.0,
+          "matcher": "2-aho",
+          "license_expression": "python-cwi",
+          "rule_identifier": "python-cwi.LICENSE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/python-cwi.LICENSE",
+          "referenced_filenames": [],
+          "is_license_text": true,
+          "is_license_notice": false,
+          "is_license_reference": false,
+          "is_license_tag": false,
+          "is_license_intro": false,
+          "rule_length": 145,
+          "rule_relevance": 100,
+          "licenses": [
+            {
+              "key": "python-cwi",
+              "name": "Python CWI License Agreement",
+              "short_name": "Python CWI License",
+              "category": "Permissive",
+              "is_exception": false,
+              "is_unknown": false,
+              "owner": "Python Software Foundation (PSF)",
+              "homepage_url": "http://docs.python.org/license.html",
+              "text_url": "",
+              "reference_url": "https://scancode-licensedb.aboutcode.org/python-cwi",
+              "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/python-cwi.LICENSE",
+              "spdx_license_key": "LicenseRef-scancode-python-cwi",
+              "spdx_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/python-cwi.LICENSE"
+            }
+          ]
+        }
+      ],
+      "occurance_count": 1
+    },
+    {
+      "identifier": "4854df4f-b9f8-1a96-92bd-44873ee7c7c5",
+      "license_expression": "bzip2-libbzip-2010",
+      "detection_log": [
+        "unknown-intro-followed-by-match"
+      ],
+      "matches": [
+        {
+          "score": 100.0,
+          "start_line": 274,
+          "end_line": 274,
+          "matched_length": 6,
+          "match_coverage": 100.0,
+          "matcher": "2-aho",
+          "license_expression": "unknown-license-reference",
+          "rule_identifier": "license-intro_50.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/license-intro_50.RULE",
+          "referenced_filenames": [],
+          "is_license_text": false,
+          "is_license_notice": false,
+          "is_license_reference": false,
+          "is_license_tag": false,
+          "is_license_intro": true,
+          "rule_length": 6,
+          "rule_relevance": 100,
+          "licenses": [
+            {
+              "key": "unknown-license-reference",
+              "name": "Unknown License file reference",
+              "short_name": "Unknown License reference",
+              "category": "Unstated License",
+              "is_exception": false,
+              "is_unknown": true,
+              "owner": "Unspecified",
+              "homepage_url": null,
+              "text_url": "",
+              "reference_url": "https://scancode-licensedb.aboutcode.org/unknown-license-reference",
+              "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/unknown-license-reference.LICENSE",
+              "spdx_license_key": "LicenseRef-scancode-unknown-license-reference",
+              "spdx_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/unknown-license-reference.LICENSE"
+            }
+          ]
+        },
+        {
+          "score": 100.0,
+          "start_line": 281,
+          "end_line": 310,
+          "matched_length": 233,
+          "match_coverage": 100.0,
+          "matcher": "2-aho",
+          "license_expression": "bzip2-libbzip-2010",
+          "rule_identifier": "bzip2-libbzip-2010.LICENSE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bzip2-libbzip-2010.LICENSE",
+          "referenced_filenames": [],
+          "is_license_text": true,
+          "is_license_notice": false,
+          "is_license_reference": false,
+          "is_license_tag": false,
+          "is_license_intro": false,
+          "rule_length": 233,
+          "rule_relevance": 100,
+          "licenses": [
+            {
+              "key": "bzip2-libbzip-2010",
+              "name": "bzip2 License 2010",
+              "short_name": "bzip2 License 2010",
+              "category": "Permissive",
+              "is_exception": false,
+              "is_unknown": false,
+              "owner": "bzip",
+              "homepage_url": "https://github.com/asimonov-im/bzip2/blob/master/LICENSE",
+              "text_url": "",
+              "reference_url": "https://scancode-licensedb.aboutcode.org/bzip2-libbzip-2010",
+              "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bzip2-libbzip-2010.LICENSE",
+              "spdx_license_key": "bzip2-1.0.6",
+              "spdx_url": "https://spdx.org/licenses/bzip2-1.0.6"
+            }
+          ]
+        }
+      ],
+      "occurance_count": 1
+    },
+    {
+      "identifier": "82c2d26c-feb1-2257-3b27-0e92e4721958",
+      "license_expression": "sleepycat",
+      "detection_log": [
+        "unknown-intro-followed-by-match"
+      ],
+      "matches": [
+        {
+          "score": 100.0,
+          "start_line": 317,
+          "end_line": 317,
+          "matched_length": 6,
+          "match_coverage": 100.0,
+          "matcher": "2-aho",
+          "license_expression": "unknown-license-reference",
+          "rule_identifier": "license-intro_50.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/license-intro_50.RULE",
+          "referenced_filenames": [],
+          "is_license_text": false,
+          "is_license_notice": false,
+          "is_license_reference": false,
+          "is_license_tag": false,
+          "is_license_intro": true,
+          "rule_length": 6,
+          "rule_relevance": 100,
+          "licenses": [
+            {
+              "key": "unknown-license-reference",
+              "name": "Unknown License file reference",
+              "short_name": "Unknown License reference",
+              "category": "Unstated License",
+              "is_exception": false,
+              "is_unknown": true,
+              "owner": "Unspecified",
+              "homepage_url": null,
+              "text_url": "",
+              "reference_url": "https://scancode-licensedb.aboutcode.org/unknown-license-reference",
+              "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/unknown-license-reference.LICENSE",
+              "spdx_license_key": "LicenseRef-scancode-unknown-license-reference",
+              "spdx_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/unknown-license-reference.LICENSE"
+            }
+          ]
+        },
+        {
+          "score": 100.0,
+          "start_line": 334,
+          "end_line": 351,
+          "matched_length": 174,
+          "match_coverage": 100.0,
+          "matcher": "2-aho",
+          "license_expression": "sleepycat",
+          "rule_identifier": "sleepycat_5.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/sleepycat_5.RULE",
+          "referenced_filenames": [],
+          "is_license_text": false,
+          "is_license_notice": true,
+          "is_license_reference": false,
+          "is_license_tag": false,
+          "is_license_intro": false,
+          "rule_length": 174,
+          "rule_relevance": 100,
+          "licenses": [
+            {
+              "key": "sleepycat",
+              "name": "Sleepycat License (Berkeley Database License)",
+              "short_name": "Sleepycat License",
+              "category": "Copyleft",
+              "is_exception": false,
+              "is_unknown": false,
+              "owner": "Oracle Corporation",
+              "homepage_url": "http://opensource.org/licenses/sleepycat.html",
+              "text_url": "http://www.oracle.com/technology/software/products/berkeley-db/htdocs/oslicense.html",
+              "reference_url": "https://scancode-licensedb.aboutcode.org/sleepycat",
+              "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/sleepycat.LICENSE",
+              "spdx_license_key": "Sleepycat",
+              "spdx_url": "https://spdx.org/licenses/Sleepycat"
+            }
+          ]
+        }
+      ],
+      "occurance_count": 1
+    },
+    {
+      "identifier": "d90f717a-d127-c345-d8a9-dc828c2be7e6",
+      "license_expression": "bsd-simplified",
+      "detection_log": [
+        "license-clues",
+        "not-license-clues-as-more-detections-present"
+      ],
+      "matches": [
+        {
+          "score": 33.71,
+          "start_line": 358,
+          "end_line": 363,
+          "matched_length": 59,
+          "match_coverage": 33.71,
+          "matcher": "3-seq",
+          "license_expression": "bsd-simplified",
+          "rule_identifier": "bsd-simplified_242.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-simplified_242.RULE",
+          "referenced_filenames": [],
+          "is_license_text": true,
+          "is_license_notice": false,
+          "is_license_reference": false,
+          "is_license_tag": false,
+          "is_license_intro": false,
+          "rule_length": 175,
+          "rule_relevance": 100,
+          "licenses": [
+            {
+              "key": "bsd-simplified",
+              "name": "BSD-2-Clause",
+              "short_name": "BSD-2-Clause",
+              "category": "Permissive",
+              "is_exception": false,
+              "is_unknown": false,
+              "owner": "Regents of the University of California",
+              "homepage_url": "http://www.opensource.org/licenses/BSD-2-Clause",
+              "text_url": "http://opensource.org/licenses/bsd-license.php",
+              "reference_url": "https://scancode-licensedb.aboutcode.org/bsd-simplified",
+              "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-simplified.LICENSE",
+              "spdx_license_key": "BSD-2-Clause",
+              "spdx_url": "https://spdx.org/licenses/BSD-2-Clause"
+            }
+          ]
+        }
+      ],
+      "occurance_count": 1
+    },
+    {
+      "identifier": "e65e2324-d4b0-5ad8-3314-a798683d13e3",
+      "license_expression": "bsd-new",
+      "detection_log": [
+        "not-combined"
+      ],
+      "matches": [
+        {
+          "score": 100.0,
+          "start_line": 369,
+          "end_line": 391,
+          "matched_length": 213,
+          "match_coverage": 100.0,
+          "matcher": "2-aho",
+          "license_expression": "bsd-new",
+          "rule_identifier": "bsd-new_19.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_19.RULE",
+          "referenced_filenames": [],
+          "is_license_text": true,
+          "is_license_notice": false,
+          "is_license_reference": false,
+          "is_license_tag": false,
+          "is_license_intro": false,
+          "rule_length": 213,
+          "rule_relevance": 100,
+          "licenses": [
+            {
+              "key": "bsd-new",
+              "name": "BSD-3-Clause",
+              "short_name": "BSD-3-Clause",
+              "category": "Permissive",
+              "is_exception": false,
+              "is_unknown": false,
+              "owner": "Regents of the University of California",
+              "homepage_url": "http://www.opensource.org/licenses/BSD-3-Clause",
+              "text_url": "http://www.opensource.org/licenses/BSD-3-Clause",
+              "reference_url": "https://scancode-licensedb.aboutcode.org/bsd-new",
+              "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-new.LICENSE",
+              "spdx_license_key": "BSD-3-Clause",
+              "spdx_url": "https://spdx.org/licenses/BSD-3-Clause"
+            }
+          ]
+        }
+      ],
+      "occurance_count": 1
+    },
+    {
+      "identifier": "4c57e726-e851-a66a-1dbe-d6106bcb4751",
+      "license_expression": "bsd-new",
+      "detection_log": [
+        "not-combined"
+      ],
+      "matches": [
+        {
+          "score": 100.0,
+          "start_line": 397,
+          "end_line": 419,
+          "matched_length": 213,
+          "match_coverage": 100.0,
+          "matcher": "2-aho",
+          "license_expression": "bsd-new",
+          "rule_identifier": "bsd-new_943.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_943.RULE",
+          "referenced_filenames": [],
+          "is_license_text": true,
+          "is_license_notice": false,
+          "is_license_reference": false,
+          "is_license_tag": false,
+          "is_license_intro": false,
+          "rule_length": 213,
+          "rule_relevance": 100,
+          "licenses": [
+            {
+              "key": "bsd-new",
+              "name": "BSD-3-Clause",
+              "short_name": "BSD-3-Clause",
+              "category": "Permissive",
+              "is_exception": false,
+              "is_unknown": false,
+              "owner": "Regents of the University of California",
+              "homepage_url": "http://www.opensource.org/licenses/BSD-3-Clause",
+              "text_url": "http://www.opensource.org/licenses/BSD-3-Clause",
+              "reference_url": "https://scancode-licensedb.aboutcode.org/bsd-new",
+              "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-new.LICENSE",
+              "spdx_license_key": "BSD-3-Clause",
+              "spdx_url": "https://spdx.org/licenses/BSD-3-Clause"
+            }
+          ]
+        }
+      ],
+      "occurance_count": 1
+    },
+    {
+      "identifier": "7a0dc499-dddd-4bf1-2d0d-9a84c910b0bc",
+      "license_expression": "openssl-ssleay",
+      "detection_log": [
+        "unknown-intro-followed-by-match"
+      ],
+      "matches": [
+        {
+          "score": 100.0,
+          "start_line": 422,
+          "end_line": 422,
+          "matched_length": 6,
+          "match_coverage": 100.0,
+          "matcher": "2-aho",
+          "license_expression": "unknown-license-reference",
+          "rule_identifier": "license-intro_50.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/license-intro_50.RULE",
+          "referenced_filenames": [],
+          "is_license_text": false,
+          "is_license_notice": false,
+          "is_license_reference": false,
+          "is_license_tag": false,
+          "is_license_intro": true,
+          "rule_length": 6,
+          "rule_relevance": 100,
+          "licenses": [
+            {
+              "key": "unknown-license-reference",
+              "name": "Unknown License file reference",
+              "short_name": "Unknown License reference",
+              "category": "Unstated License",
+              "is_exception": false,
+              "is_unknown": true,
+              "owner": "Unspecified",
+              "homepage_url": null,
+              "text_url": "",
+              "reference_url": "https://scancode-licensedb.aboutcode.org/unknown-license-reference",
+              "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/unknown-license-reference.LICENSE",
+              "spdx_license_key": "LicenseRef-scancode-unknown-license-reference",
+              "spdx_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/unknown-license-reference.LICENSE"
+            }
+          ]
+        },
+        {
+          "score": 100.0,
+          "start_line": 428,
+          "end_line": 432,
+          "matched_length": 56,
+          "match_coverage": 100.0,
+          "matcher": "2-aho",
+          "license_expression": "openssl-ssleay",
+          "rule_identifier": "openssl-ssleay_43.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/openssl-ssleay_43.RULE",
+          "referenced_filenames": [],
+          "is_license_text": false,
+          "is_license_notice": true,
+          "is_license_reference": false,
+          "is_license_tag": false,
+          "is_license_intro": false,
+          "rule_length": 56,
+          "rule_relevance": 100,
+          "licenses": [
+            {
+              "key": "openssl-ssleay",
+              "name": "OpenSSL/SSLeay License",
+              "short_name": "OpenSSL/SSLeay License",
+              "category": "Permissive",
+              "is_exception": false,
+              "is_unknown": false,
+              "owner": "OpenSSL",
+              "homepage_url": "http://www.openssl.org/source/license.html",
+              "text_url": "http://www.openssl.org/source/license.html",
+              "reference_url": "https://scancode-licensedb.aboutcode.org/openssl-ssleay",
+              "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/openssl-ssleay.LICENSE",
+              "spdx_license_key": "OpenSSL",
+              "spdx_url": "https://spdx.org/licenses/OpenSSL"
+            }
+          ]
+        },
+        {
+          "score": 100.0,
+          "start_line": 434,
+          "end_line": 434,
+          "matched_length": 2,
+          "match_coverage": 100.0,
+          "matcher": "2-aho",
+          "license_expression": "openssl-ssleay",
+          "rule_identifier": "openssl-ssleay_2.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/openssl-ssleay_2.RULE",
+          "referenced_filenames": [],
+          "is_license_text": false,
+          "is_license_notice": false,
+          "is_license_reference": true,
+          "is_license_tag": false,
+          "is_license_intro": false,
+          "rule_length": 2,
+          "rule_relevance": 100,
+          "licenses": [
+            {
+              "key": "openssl-ssleay",
+              "name": "OpenSSL/SSLeay License",
+              "short_name": "OpenSSL/SSLeay License",
+              "category": "Permissive",
+              "is_exception": false,
+              "is_unknown": false,
+              "owner": "OpenSSL",
+              "homepage_url": "http://www.openssl.org/source/license.html",
+              "text_url": "http://www.openssl.org/source/license.html",
+              "reference_url": "https://scancode-licensedb.aboutcode.org/openssl-ssleay",
+              "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/openssl-ssleay.LICENSE",
+              "spdx_license_key": "OpenSSL",
+              "spdx_url": "https://spdx.org/licenses/OpenSSL"
+            }
+          ]
+        }
+      ],
+      "occurance_count": 1
+    },
+    {
+      "identifier": "dacfdecf-b752-23a6-37ba-f98e7d93554a",
+      "license_expression": "openssl",
+      "detection_log": [
+        "not-combined"
+      ],
+      "matches": [
+        {
+          "score": 100.0,
+          "start_line": 440,
+          "end_line": 487,
+          "matched_length": 332,
+          "match_coverage": 100.0,
+          "matcher": "2-aho",
+          "license_expression": "openssl",
+          "rule_identifier": "openssl_1.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/openssl_1.RULE",
+          "referenced_filenames": [],
+          "is_license_text": true,
+          "is_license_notice": false,
+          "is_license_reference": false,
+          "is_license_tag": false,
+          "is_license_intro": false,
+          "rule_length": 332,
+          "rule_relevance": 100,
+          "licenses": [
+            {
+              "key": "openssl",
+              "name": "OpenSSL License",
+              "short_name": "OpenSSL License",
+              "category": "Permissive",
+              "is_exception": false,
+              "is_unknown": false,
+              "owner": "OpenSSL",
+              "homepage_url": "http://openssl.org/source/license.html",
+              "text_url": "",
+              "reference_url": "https://scancode-licensedb.aboutcode.org/openssl",
+              "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/openssl.LICENSE",
+              "spdx_license_key": "LicenseRef-scancode-openssl",
+              "spdx_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/openssl.LICENSE"
+            }
+          ]
+        }
+      ],
+      "occurance_count": 1
+    },
+    {
+      "identifier": "50e05b6f-8602-75e7-7568-c3b4e72fec38",
+      "license_expression": "ssleay-windows",
+      "detection_log": [
+        "not-combined"
+      ],
+      "matches": [
+        {
+          "score": 100.0,
+          "start_line": 497,
+          "end_line": 548,
+          "matched_length": 453,
+          "match_coverage": 100.0,
+          "matcher": "2-aho",
+          "license_expression": "ssleay-windows",
+          "rule_identifier": "ssleay-windows.LICENSE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/ssleay-windows.LICENSE",
+          "referenced_filenames": [],
+          "is_license_text": true,
+          "is_license_notice": false,
+          "is_license_reference": false,
+          "is_license_tag": false,
+          "is_license_intro": false,
+          "rule_length": 453,
+          "rule_relevance": 100,
+          "licenses": [
+            {
+              "key": "ssleay-windows",
+              "name": "Original SSLeay License with Windows Clause",
+              "short_name": "Original SSLeay License with Windows Clause",
+              "category": "Permissive",
+              "is_exception": false,
+              "is_unknown": false,
+              "owner": "OpenSSL",
+              "homepage_url": "https://www.openssl.org/source/license.html",
+              "text_url": "http://www.openssl.org/source/license.html",
+              "reference_url": "https://scancode-licensedb.aboutcode.org/ssleay-windows",
+              "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/ssleay-windows.LICENSE",
+              "spdx_license_key": "LicenseRef-scancode-ssleay-windows",
+              "spdx_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/ssleay-windows.LICENSE"
+            }
+          ]
+        }
+      ],
+      "occurance_count": 1
+    },
+    {
+      "identifier": "d352cc42-40ca-8f87-931e-725ee0a85c3e",
+      "license_expression": "tcl",
+      "detection_log": [
+        "unknown-intro-followed-by-match"
+      ],
+      "matches": [
+        {
+          "score": 100.0,
+          "start_line": 552,
+          "end_line": 552,
+          "matched_length": 6,
+          "match_coverage": 100.0,
+          "matcher": "2-aho",
+          "license_expression": "unknown-license-reference",
+          "rule_identifier": "license-intro_50.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/license-intro_50.RULE",
+          "referenced_filenames": [],
+          "is_license_text": false,
+          "is_license_notice": false,
+          "is_license_reference": false,
+          "is_license_tag": false,
+          "is_license_intro": true,
+          "rule_length": 6,
+          "rule_relevance": 100,
+          "licenses": [
+            {
+              "key": "unknown-license-reference",
+              "name": "Unknown License file reference",
+              "short_name": "Unknown License reference",
+              "category": "Unstated License",
+              "is_exception": false,
+              "is_unknown": true,
+              "owner": "Unspecified",
+              "homepage_url": null,
+              "text_url": "",
+              "reference_url": "https://scancode-licensedb.aboutcode.org/unknown-license-reference",
+              "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/unknown-license-reference.LICENSE",
+              "spdx_license_key": "LicenseRef-scancode-unknown-license-reference",
+              "spdx_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/unknown-license-reference.LICENSE"
+            }
+          ]
+        },
+        {
+          "score": 100.0,
+          "start_line": 554,
+          "end_line": 593,
+          "matched_length": 345,
+          "match_coverage": 100.0,
+          "matcher": "2-aho",
+          "license_expression": "tcl",
+          "rule_identifier": "tcl.LICENSE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/tcl.LICENSE",
+          "referenced_filenames": [],
+          "is_license_text": true,
+          "is_license_notice": false,
+          "is_license_reference": false,
+          "is_license_tag": false,
+          "is_license_intro": false,
+          "rule_length": 345,
+          "rule_relevance": 100,
+          "licenses": [
+            {
+              "key": "tcl",
+              "name": "TCL/TK License",
+              "short_name": "TCL/TK License",
+              "category": "Permissive",
+              "is_exception": false,
+              "is_unknown": false,
+              "owner": "Tcl Developer Xchange",
+              "homepage_url": "http://www.tcl.tk/software/tcltk/license.html",
+              "text_url": "http://www.tcl.tk/software/tcltk/license.html",
+              "reference_url": "https://scancode-licensedb.aboutcode.org/tcl",
+              "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/tcl.LICENSE",
+              "spdx_license_key": "TCL",
+              "spdx_url": "https://spdx.org/licenses/TCL"
+            }
+          ]
+        }
+      ],
+      "occurance_count": 1
+    },
+    {
+      "identifier": "e49b63d5-028c-f39c-035e-68c9e6c60e34",
+      "license_expression": "tcl",
+      "detection_log": [
+        "unknown-intro-followed-by-match"
+      ],
+      "matches": [
+        {
+          "score": 100.0,
+          "start_line": 595,
+          "end_line": 595,
+          "matched_length": 6,
+          "match_coverage": 100.0,
+          "matcher": "2-aho",
+          "license_expression": "unknown-license-reference",
+          "rule_identifier": "license-intro_50.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/license-intro_50.RULE",
+          "referenced_filenames": [],
+          "is_license_text": false,
+          "is_license_notice": false,
+          "is_license_reference": false,
+          "is_license_tag": false,
+          "is_license_intro": true,
+          "rule_length": 6,
+          "rule_relevance": 100,
+          "licenses": [
+            {
+              "key": "unknown-license-reference",
+              "name": "Unknown License file reference",
+              "short_name": "Unknown License reference",
+              "category": "Unstated License",
+              "is_exception": false,
+              "is_unknown": true,
+              "owner": "Unspecified",
+              "homepage_url": null,
+              "text_url": "",
+              "reference_url": "https://scancode-licensedb.aboutcode.org/unknown-license-reference",
+              "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/unknown-license-reference.LICENSE",
+              "spdx_license_key": "LicenseRef-scancode-unknown-license-reference",
+              "spdx_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/unknown-license-reference.LICENSE"
+            }
+          ]
+        },
+        {
+          "score": 100.0,
+          "start_line": 597,
+          "end_line": 635,
+          "matched_length": 341,
+          "match_coverage": 100.0,
+          "matcher": "2-aho",
+          "license_expression": "tcl",
+          "rule_identifier": "tcl_14.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/tcl_14.RULE",
+          "referenced_filenames": [],
+          "is_license_text": true,
+          "is_license_notice": false,
+          "is_license_reference": false,
+          "is_license_tag": false,
+          "is_license_intro": false,
+          "rule_length": 341,
+          "rule_relevance": 100,
+          "licenses": [
+            {
+              "key": "tcl",
+              "name": "TCL/TK License",
+              "short_name": "TCL/TK License",
+              "category": "Permissive",
+              "is_exception": false,
+              "is_unknown": false,
+              "owner": "Tcl Developer Xchange",
+              "homepage_url": "http://www.tcl.tk/software/tcltk/license.html",
+              "text_url": "http://www.tcl.tk/software/tcltk/license.html",
+              "reference_url": "https://scancode-licensedb.aboutcode.org/tcl",
+              "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/tcl.LICENSE",
+              "spdx_license_key": "TCL",
+              "spdx_url": "https://spdx.org/licenses/TCL"
+            }
+          ]
+        }
+      ],
+      "occurance_count": 1
+    }
+  ],
   "license_references": [
     {
       "key": "bsd-new",
@@ -994,6 +2099,21 @@
       ],
       "license_clues": [],
       "percentage_of_license_text": 83.64,
+      "for_licenses": [
+        "f9a5ba7d-9d66-5878-a0bd-1afe42fe0bd9",
+        "a9ef94dc-a60e-21b6-82b8-77454e7751c0",
+        "3136274a-0a35-5bea-9531-6e328486ea3b",
+        "4854df4f-b9f8-1a96-92bd-44873ee7c7c5",
+        "82c2d26c-feb1-2257-3b27-0e92e4721958",
+        "d90f717a-d127-c345-d8a9-dc828c2be7e6",
+        "e65e2324-d4b0-5ad8-3314-a798683d13e3",
+        "4c57e726-e851-a66a-1dbe-d6106bcb4751",
+        "7a0dc499-dddd-4bf1-2d0d-9a84c910b0bc",
+        "dacfdecf-b752-23a6-37ba-f98e7d93554a",
+        "50e05b6f-8602-75e7-7568-c3b4e72fec38",
+        "d352cc42-40ca-8f87-931e-725ee0a85c3e",
+        "e49b63d5-028c-f39c-035e-68c9e6c60e34"
+      ],
       "scan_errors": []
     }
   ]
