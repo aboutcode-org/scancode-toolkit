@@ -223,7 +223,6 @@ class TestMavenMisc(BaseMavenCase):
         self.check_parse_to_package(test_file, regen=REGEN_TEST_FIXTURES)
 
 
-
 class TestPomProperties(testcase.FileBasedTesting):
     test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
 
