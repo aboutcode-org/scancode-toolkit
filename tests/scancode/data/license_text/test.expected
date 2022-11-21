@@ -3,50 +3,56 @@
     {
       "path": "test.txt",
       "type": "file",
-      "licenses": [
+      "detected_license_expression": "lgpl-2.1",
+      "detected_license_expression_spdx": "LGPL-2.1-only",
+      "license_detections": [
         {
-          "key": "lgpl-2.1",
-          "score": 100.0,
-          "name": "GNU Lesser General Public License 2.1",
-          "short_name": "LGPL 2.1",
-          "category": "Copyleft Limited",
-          "is_exception": false,
-          "is_unknown": false,
-          "owner": "Free Software Foundation (FSF)",
-          "homepage_url": "http://www.gnu.org/licenses/lgpl-2.1.html",
-          "text_url": "http://www.gnu.org/licenses/lgpl-2.1.txt",
-          "reference_url": "https://scancode-licensedb.aboutcode.org/lgpl-2.1",
-          "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/lgpl-2.1.LICENSE",
-          "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/lgpl-2.1.yml",
-          "spdx_license_key": "LGPL-2.1-only",
-          "spdx_url": "https://spdx.org/licenses/LGPL-2.1-only",
-          "start_line": 1,
-          "end_line": 1,
-          "matched_rule": {
-            "identifier": "lgpl-2.1_38.RULE",
-            "license_expression": "lgpl-2.1",
-            "licenses": [
-              "lgpl-2.1"
-            ],
-            "referenced_filenames": [],
-            "is_license_text": false,
-            "is_license_notice": false,
-            "is_license_reference": false,
-            "is_license_tag": true,
-            "is_license_intro": false,
-            "has_unknown": false,
-            "matcher": "2-aho",
-            "rule_length": 4,
-            "matched_length": 4,
-            "match_coverage": 100.0,
-            "rule_relevance": 100
-          },
-          "matched_text": "foo bar this that license: LGPL-2.1 bar"
+          "license_expression": "lgpl-2.1",
+          "detection_log": [
+            "not-combined"
+          ],
+          "matches": [
+            {
+              "score": 100.0,
+              "start_line": 1,
+              "end_line": 1,
+              "matched_length": 4,
+              "match_coverage": 100.0,
+              "matcher": "2-aho",
+              "license_expression": "lgpl-2.1",
+              "rule_identifier": "lgpl-2.1_38.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1_38.RULE",
+              "referenced_filenames": [],
+              "is_license_text": false,
+              "is_license_notice": false,
+              "is_license_reference": false,
+              "is_license_tag": true,
+              "is_license_intro": false,
+              "rule_length": 4,
+              "rule_relevance": 100,
+              "matched_text": "foo bar this that license: LGPL-2.1 bar",
+              "licenses": [
+                {
+                  "key": "lgpl-2.1",
+                  "name": "GNU Lesser General Public License 2.1",
+                  "short_name": "LGPL 2.1",
+                  "category": "Copyleft Limited",
+                  "is_exception": false,
+                  "is_unknown": false,
+                  "owner": "Free Software Foundation (FSF)",
+                  "homepage_url": "http://www.gnu.org/licenses/lgpl-2.1.html",
+                  "text_url": "http://www.gnu.org/licenses/lgpl-2.1.txt",
+                  "reference_url": "https://scancode-licensedb.aboutcode.org/lgpl-2.1",
+                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/lgpl-2.1.LICENSE",
+                  "spdx_license_key": "LGPL-2.1-only",
+                  "spdx_url": "https://spdx.org/licenses/LGPL-2.1-only"
+                }
+              ]
+            }
+          ]
         }
       ],
-      "license_expressions": [
-        "lgpl-2.1"
-      ],
+      "license_clues": [],
       "percentage_of_license_text": 44.44,
       "scan_errors": []
     }

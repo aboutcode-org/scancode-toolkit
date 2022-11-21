@@ -1,3 +1,11 @@
+---
+license_expression: tpl-1.0
+is_license_text: yes
+notes: Seen at http://terracotta.org/legal/terracotta-public-license AND  http://terracotta.org/legal/changes-from-the-mpl
+ignorable_urls:
+    - http://www.terracotta.org/TPL
+---
+
 1. Definitions
 
 1.1. "Contributor" means each individual or entity that creates or contributes to the creation of Modifications.

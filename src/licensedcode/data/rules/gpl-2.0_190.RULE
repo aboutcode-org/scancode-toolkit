@@ -1,3 +1,14 @@
+---
+license_expression: gpl-2.0
+is_license_notice: yes
+relevance: 90
+minimum_coverage: 100
+referenced_filenames:
+    - COPYING
+notes: Intel e100 GPL-licensed linux driver... if this is matched exactly only Seen in the linux
+    kernel docs.
+---
+
 This software program is released under the terms of a license agreement
 between you ('Licensee') and Intel. Do not use or load this software or any
 associated materials (collectively, the 'Software') until you have carefully

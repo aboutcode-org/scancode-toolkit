@@ -1,1 +1,9 @@
+---
+license_expression: bsd-ack
+is_license_reference: yes
+relevance: 100
+ignorable_urls:
+    - https://spdx.org/licenses/BSD-3-Clause-Attribution
+---
+
 {{BSD-3-Clause-Attribution}} https://spdx.org/licenses/BSD-3-Clause-Attribution

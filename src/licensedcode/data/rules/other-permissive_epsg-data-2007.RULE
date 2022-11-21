@@ -1,3 +1,8 @@
+---
+license_expression: other-permissive
+is_license_text: yes
+---
+
 Use of the Data
 
 The user assumes the entire risk as to the accuracy and the use of this data. The data may be used, copied and distributed subject to the following conditions:
@@ -12,4 +17,4 @@ As given in EPSG dataset
 Permitted change for vendors / users to adopt
 (detailed permissions omitted)
 
-No data that has been modified other than as permitted in these terms and conditions shall be described as or attributed to the EPSG dataset. 
+No data that has been modified other than as permitted in these terms and conditions shall be described as or attributed to the EPSG dataset.

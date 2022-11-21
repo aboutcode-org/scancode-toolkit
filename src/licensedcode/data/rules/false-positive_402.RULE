@@ -1,0 +1,7 @@
+---
+is_false_positive: yes
+notes: code about license, not a license
+---
+
+theLicense = "GNU Lesser General Public License (LGPL) version 2.1"
+or the GNU Lesser General Public License (LGPL) version 3";

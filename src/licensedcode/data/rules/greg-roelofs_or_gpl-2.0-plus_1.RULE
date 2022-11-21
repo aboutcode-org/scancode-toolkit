@@ -1,3 +1,11 @@
+---
+license_expression: greg-roelofs OR gpl-2.0-plus
+is_license_notice: yes
+relevance: 100
+ignorable_authors:
+    - Greg Roelofs and contributors
+---
+
 This software is provided "as is," without warranty of any kind,
 express or implied.  In no event shall the author or contributors
 be held liable for any damages arising in any way from the use of

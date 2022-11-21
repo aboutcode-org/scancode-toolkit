@@ -1,3 +1,13 @@
+---
+key: google-patent-license-webrtc
+short_name: Google Patent License for WebRTC
+name: Google Patent License for WebRTC
+category: Patent License
+owner: Google
+homepage_url: https://webrtc.org/license/additional-ip-grant/
+spdx_license_key: LicenseRef-scancode-google-patent-license-webrtc
+---
+
 Additional IP Rights Grant (Patents)
 
 "This implementation" means the copyrightable works distributed by

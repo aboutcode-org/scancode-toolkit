@@ -1,3 +1,10 @@
+---
+license_expression: cecill-2.1
+is_license_text: yes
+ignorable_urls:
+    - http://www.cecill.info/index.en.html
+---
+
 Cea Cnrs Inria Logiciel Libre License, version 2.1 (CECILL-2.1)
 [OSI Approved License]
 This license is also available in French from the CeCILL website.

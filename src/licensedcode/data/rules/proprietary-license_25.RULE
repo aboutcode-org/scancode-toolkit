@@ -1,1 +1,9 @@
+---
+license_expression: proprietary-license
+is_license_reference: yes
+relevance: 100
+ignorable_urls:
+    - https://github.com/PeterWaher/IoTGateway#license
+---
+
 https://github.com/PeterWaher/IoTGateway#license

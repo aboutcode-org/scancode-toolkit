@@ -1,2 +1,10 @@
+---
+license_expression: gpl-1.0-plus
+is_license_reference: yes
+relevance: 100
+referenced_filenames:
+    - /usr/share/common-licenses/GPL-1
+---
+
 On Debian GNU/Linux systems, the complete text of the GNU General Public
  License Version 1 can be found in "/usr/share/common-licenses/GPL-1".

@@ -1,3 +1,12 @@
+---
+key: cmu-mit
+short_name: CMU MIT-style
+name: Carnegie Mellon UC Regents MIT-style License
+category: Permissive
+owner: Carnegie Mellon University
+spdx_license_key: LicenseRef-scancode-cmu-mit
+---
+
 Permission to use, copy, modify, and distribute this software and
 its documentation is hereby granted (including for commercial or
 for-profit use), provided that both the copyright notice and this

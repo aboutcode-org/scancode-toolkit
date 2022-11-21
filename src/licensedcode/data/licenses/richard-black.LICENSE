@@ -1,1 +1,15 @@
+---
+key: richard-black
+short_name: Richard Black License
+name: Richard Black License
+category: Permissive
+owner: Richard Black
+homepage_url: https://www.cl.cam.ac.uk/research/srg/projects/fairisle/bluebook/21/crc/node6.html
+spdx_license_key: LicenseRef-scancode-richard-black
+ignorable_copyrights:
+    - copyright 1993 Richard Black
+ignorable_holders:
+    - Richard Black
+---
+
 This code is copyright 1993 Richard Black. All rights are reserved. You may use this code only if it includes a statement to that effect.

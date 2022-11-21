@@ -1,2 +1,8 @@
+---
+license_expression: gpl-2.0-plus
+is_license_notice: yes
+relevance: 95
+---
+
 The following files have no copyright/license but are assumed to be under the same
 conditions than the rest of the majority of the source code (GPLv2+):

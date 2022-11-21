@@ -1,3 +1,10 @@
+---
+license_expression: freetype
+is_license_notice: yes
+referenced_filenames:
+    - LICENSE.TXT
+---
+
 /*  This file may only be used,                                            */
 /*  modified, and distributed under the terms of the FreeType project      */
 /*  license, LICENSE.TXT.  By continuing to use, modify, or distribute     */

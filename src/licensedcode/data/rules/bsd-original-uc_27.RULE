@@ -1,3 +1,12 @@
+---
+license_expression: bsd-original-uc
+is_license_text: yes
+relevance: 100
+notes: seen in old sendmail notices
+ignorable_authors:
+    - the University of California, Berkeley and its contributors
+---
+
 (b) Redistribution and use in source and binary forms, with or without
 modification, are permitted provided that the following conditions
 are met:

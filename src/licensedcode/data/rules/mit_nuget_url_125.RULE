@@ -1,1 +1,9 @@
+---
+license_expression: mit
+is_license_reference: yes
+relevance: 90
+ignorable_urls:
+    - https://github.com/CheetahJS/CheetahJS/blob/master/LICENSE
+---
+
 https://github.com/CheetahJS/CheetahJS/blob/master/LICENSE

@@ -1,2 +1,10 @@
+---
+license_expression: gpl-3.0
+is_license_notice: yes
+relevance: 100
+ignorable_urls:
+    - https://www.gnu.org/copyleft/gpl.html
+---
+
 library is released under the
 <a href="https://www.gnu.org/copyleft/gpl.html">GNU General Public License, version 3 (GPLv3)

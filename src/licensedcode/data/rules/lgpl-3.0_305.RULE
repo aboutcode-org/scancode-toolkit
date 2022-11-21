@@ -1,0 +1,13 @@
+---
+license_expression: lgpl-3.0
+is_license_tag: yes
+relevance: 100
+referenced_filenames:
+    - lgpl3-license.txt
+notes: https://github.com/translate5/ZfExtended/blob/c18f8771dff7e6df94dad43f883e5bea4c18cac6/Worker/Abstract.php
+ignorable_urls:
+    - https://www.gnu.org/licenses/lgpl-3.0.txt
+---
+
+@license    GNU LESSER GENERAL PUBLIC LICENSE version 3
+             https://www.gnu.org/licenses/lgpl-3.0.txt

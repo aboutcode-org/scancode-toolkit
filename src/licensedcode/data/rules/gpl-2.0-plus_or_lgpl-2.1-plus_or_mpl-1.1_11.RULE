@@ -1,3 +1,13 @@
+---
+license_expression: gpl-2.0-plus OR lgpl-2.1-plus OR mpl-1.1
+is_license_notice: yes
+relevance: 100
+ignorable_urls:
+    - http://www.mozilla.org/MPL/MPL-1.1.html
+    - https://www.gnu.org/licenses/gpl.html
+    - https://www.gnu.org/licenses/lgpl.html
+---
+
 Licensed under the terms of any of the following licenses at your choice:
 
 *   GNU General Public License Version 2 or later (the "GPL"):

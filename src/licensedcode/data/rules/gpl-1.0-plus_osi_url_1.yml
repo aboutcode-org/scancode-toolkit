@@ -1,7 +1,0 @@
-license_expression: gpl-1.0-plus
-is_license_reference: yes
-relevance: 90
-notes: there is no specific GPL version attached to this URL hence the version that is returned
-    (meaning effectively any version)
-ignorable_urls:
-    - http://opensource.org/licenses/gpl-license.php

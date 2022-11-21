@@ -1,3 +1,11 @@
+---
+license_expression: bsd-original
+is_license_text: yes
+relevance: 100
+ignorable_authors:
+    - the University of Illinois at Urbana and their contributors
+---
+
 Redistribution and use in source and binary forms, with or without
 modification, are permitted provided that the following conditions
 are met:

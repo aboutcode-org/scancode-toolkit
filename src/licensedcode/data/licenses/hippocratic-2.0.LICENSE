@@ -1,3 +1,23 @@
+---
+key: hippocratic-2.0
+short_name: Hippocratic License 2.0
+name: Hippocratic License v2.0
+category: Free Restricted
+owner: Ethical Source
+homepage_url: https://firstdonoharm.dev/
+spdx_license_key: LicenseRef-scancode-hippocratic-2.0
+text_urls:
+    - https://firstdonoharm.dev/version/2/0/license.md
+    - https://firstdonoharm.dev/version/2/0/license.html
+other_urls:
+    - https://www.un.org/en/universal-declaration-human-rights/
+ignorable_urls:
+    - https://ethicalsource.dev/
+    - https://firstdonoharm.dev/
+    - https://www.un.org/en/universal-declaration-human-rights
+    - https://www.unglobalcompact.org/what-is-gc/mission/principles
+---
+
 Hippocratic License Version 2.0.  
 
 Licensor hereby grants permission by this license ("License"), free of charge, to any person or entity (the "Licensee") obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:

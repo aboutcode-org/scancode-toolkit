@@ -1,1 +1,9 @@
+---
+license_expression: lgpl-2.1-plus
+is_license_tag: yes
+relevance: 100
+ignorable_urls:
+    - http://www.opensource.org/licenses/lgpl-license.php
+---
+
 License: LGPL, v2.1 or later  (http://www.opensource.org/licenses/lgpl-license.php)

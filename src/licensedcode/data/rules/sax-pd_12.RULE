@@ -1,3 +1,9 @@
+---
+license_expression: sax-pd
+is_license_notice: yes
+relevance: 100
+---
+
 SAX drivers.
  *
 This module, both source code and documentation, is in the

@@ -1,3 +1,16 @@
+---
+key: lilo
+short_name: LILO License
+name: LILO License
+category: Permissive
+owner: Unspecified
+homepage_url: http://www.ingate.com/files/422/fwmanual-en/xx12671.html
+spdx_license_key: LicenseRef-scancode-lilo
+text_urls:
+    - http://www.ingate.com/files/422/fwmanual-en/xx12671.html
+    - https://launchpad.net/ubuntu/oneiric/+source/rxtx/+copyright
+---
+
 Redistribution and use in source and binary forms of parts of or the whole original
 or derived work are permitted provided that the original work is properly attributed
 to the author. The name of the author may not be used to endorse or promote products

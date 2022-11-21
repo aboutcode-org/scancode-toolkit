@@ -1,3 +1,16 @@
+---
+key: mgopen-font-license
+short_name: MgOpen Font License
+name: MgOpen Font License
+category: Permissive
+owner: MgOpen
+homepage_url: http://pub.ellak.gr/fonts/mgopen/index.en.html
+spdx_license_key: LicenseRef-scancode-mgopen-font-license
+text_urls:
+    - http://pub.ellak.gr/fonts/mgopen/index.en.html#license
+faq_url: http://pub.ellak.gr/fonts/mgopen/index.en.html#faq
+---
+
 Permission is hereby granted, free of charge, to any person obtaining a copy of the fonts accompanying this license ("Fonts") and associated documentation files (the "Font Software"), to reproduce and distribute the Font Software, including without limitation the rights to use, copy, merge, publish, distribute, and/or sell copies of the Font Software, and to permit persons to whom the Font Software is furnished to do so, subject to the following conditions:
 
 The above copyright and this permission notice shall be included in all copies of one or more of the Font Software typefaces.

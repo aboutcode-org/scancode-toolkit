@@ -1,3 +1,8 @@
+---
+license_expression: artistic-dist-1.0 OR gpl-1.0-plus
+is_license_notice: yes
+---
+
 dist is distributed under a modified version of the Perl Artistic License.
   Clause 7 of this modified license as contained in dist-3.0-pl60 provides:
  .

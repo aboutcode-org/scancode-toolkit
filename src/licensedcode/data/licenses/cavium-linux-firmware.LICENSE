@@ -1,3 +1,15 @@
+---
+key: cavium-linux-firmware
+short_name: Cavium Linux Firmware License
+name: Cavium Linux Firmware License
+category: Proprietary Free
+owner: Cavium
+homepage_url: https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/tree/LICENCE.cavium
+spdx_license_key: LicenseRef-scancode-cavium-linux-firmware
+other_urls:
+    - https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/tree/LICENCE.cavium_liquidio
+---
+
 Software License Agreement
 
 ANY USE, REPRODUCTION, OR DISTRIBUTION OF THE ACCOMPANYING BINARY SOFTWARE

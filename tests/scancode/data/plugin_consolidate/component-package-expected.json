@@ -740,10 +740,10 @@
           "is_unknown": true,
           "owner": "Unspecified",
           "homepage_url": null,
-          "text_url": "",
+          "text_url": null,
           "reference_url": "https://scancode-licensedb.aboutcode.org/unknown",
           "spdx_license_key": null,
-          "spdx_url": "",
+          "spdx_url": null,
           "start_line": 2,
           "end_line": 2,
           "matched_rule": {

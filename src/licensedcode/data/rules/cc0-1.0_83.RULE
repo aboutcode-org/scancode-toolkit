@@ -1,3 +1,11 @@
+---
+license_expression: cc0-1.0
+is_license_notice: yes
+relevance: 100
+ignorable_urls:
+    - https://creativecommons.org/publicdomain/zero/1.0/
+---
+
 Copyright and related rights for sample code are waived via CC0. Sample
 code is defined as all source code contained within the demos directory.
 CC0: https://creativecommons.org/publicdomain/zero/1.0/

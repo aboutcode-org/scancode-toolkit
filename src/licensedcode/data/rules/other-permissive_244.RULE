@@ -1,3 +1,10 @@
+---
+license_expression: other-permissive
+is_license_text: yes
+relevance: 100
+notes: Seen in sendmail contrib
+---
+
 Permission to use, copy, modify and distribute without charge this
 software, documentation, etc. is granted, provided that this
 comment and the author's name is retained.  The author nor Motorola assume any

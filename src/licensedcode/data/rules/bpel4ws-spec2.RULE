@@ -1,3 +1,8 @@
+---
+license_expression: bpel4ws-spec
+is_license_notice: yes
+---
+
 BEA, IBM, Microsoft, SAP AG and Siebel Systems (collectively, the "Authors") agree to grant 
 you a royalty-free license, under reasonable, non-discriminatory terms and conditions, to patents 
 that they deem necessary to implement the Business Process Execution Language for Web Services 

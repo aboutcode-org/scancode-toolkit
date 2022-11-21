@@ -1,6 +1,0 @@
-license_expression: proprietary-license
-is_license_notice: yes
-ignorable_urls:
-    - http://developer.apple.com/firewire/platform
-    - http://developer.apple.com/mkt/swl/agreements.html#firewire
-    - http://www.1394la.com/

@@ -1,3 +1,10 @@
+---
+license_expression: bsd-new
+is_license_notice: yes
+referenced_filenames:
+    - COPYING.txt
+---
+
 #  Distributed under the terms of the {{Modified BSD License}}.
 #
 #  The full license is in the file {{COPYING.txt}}, distributed with this software.

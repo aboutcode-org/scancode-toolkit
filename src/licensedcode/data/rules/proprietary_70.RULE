@@ -1,3 +1,9 @@
+---
+license_expression: proprietary-license
+is_license_notice: yes
+minimum_coverage: 50
+---
+
 
 License agreement
 for @NAME@ @VERSION@ @STATUS@ and included software applications
@@ -70,5 +76,3 @@ DEVELOPER. does not demand reports on using the Distribution from owners of a co
 Copyright for Applications that are part of the Distribution, including exclusive right to allow use of applications, is subject to applicable copyright law, including applicable international agreements on copyright. Users are solely responsible for observation of national legislation while using Applications that are part of the Distribution.
 
 DEVELOPER. hope that Applications that are part of the Distribution will will be useful, but does not give any warranty for their fitness for any particular purpose or their quality (including absence of errors or standards conformity) and is not in charge for any possible damage, direct or implied, that is result of using these Applications.
-
-

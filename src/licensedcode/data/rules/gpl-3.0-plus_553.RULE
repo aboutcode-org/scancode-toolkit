@@ -1,3 +1,13 @@
+---
+license_expression: gpl-3.0-plus
+is_license_notice: yes
+relevance: 99
+minimum_coverage: 98
+notes: confusing reference to the LGPL in a GPL notice
+ignorable_urls:
+    - https://www.gnu.org/licenses/
+---
+
 This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
     the Free Software Foundation, either version 3 of the License, or

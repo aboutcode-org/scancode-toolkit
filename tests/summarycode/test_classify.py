@@ -17,7 +17,7 @@ from scancode.cli_test_utils import run_scan_click
 from scancode.cli_test_utils import check_json_scan
 from scancode_config import REGEN_TEST_FIXTURES
 from summarycode.classify import set_classification_flags
-from summarycode.classify import FileClassifier
+from summarycode.classify_plugin import FileClassifier
 
 
 class TestClassify(FileDrivenTesting):

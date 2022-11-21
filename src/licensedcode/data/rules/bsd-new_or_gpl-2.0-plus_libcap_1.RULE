@@ -1,3 +1,10 @@
+---
+license_expression: bsd-new OR gpl-2.0-plus
+is_license_notice: yes
+relevance: 95
+notes: formerly libcap license and not 100% a bsd-new
+---
+
 Unless otherwise *explicitly* stated, the following text describes the
 licensed conditions under which the contents of this libcap release
 may be used and distributed:

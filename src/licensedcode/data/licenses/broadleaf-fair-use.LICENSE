@@ -1,3 +1,15 @@
+---
+key: broadleaf-fair-use
+short_name: Broadleaf Fair Use License Agreement v1.0
+name: Broadleaf Fair Use License Agreement v1.0
+category: Proprietary Free
+owner: Broadleaf
+homepage_url: http://license.broadleafcommerce.org/fair_use_license-1.0.txt
+spdx_license_key: LicenseRef-scancode-broadleaf-fair-use
+ignorable_urls:
+    - http://www.broadleafcommerce.com/license/commercial
+---
+
 Broadleaf Fair Use License Agreement - Version 1.0
 
 BY USING THE SOFTWARE, YOU (EITHER AN INDIVIDUAL OR A SINGLE ENTITY) AGREE THAT THIS COMMUNITY FAIR USE LICENSE AGREEMENT ("AGREEMENT") IS ENFORCEABLE LIKE ANY WRITTEN CONTRACT SIGNED BY YOU.  IF YOU DO NOT AGREE TO ALL THE TERMS OF THIS AGREEMENT, DO NOT USE THE SOFTWARE. THE SOFTWARE YOU HAVE RECEIVED WITH OR SUBJECT TO THIS LICENSE IS THE SOFTWARE FOR COMMUNITY USE ("COMMUNITY SOFTWARE") AND IS SUBJECT TO VERY SPECIFIC LIMITATIONS BELOW.  IF YOU EXCEED SUCH LIMITATIONS, THEN YOU WILL BE IMMEDIATELY REQUIRED TO PURCHASE A PAID PRODUCT AND LICENSE FEES WILL BE DUE FOR ANY PERIOD OF SUCH PAST USE IN VIOLATION HEREOF.

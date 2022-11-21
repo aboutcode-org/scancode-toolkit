@@ -1,2 +1,8 @@
+---
+license_expression: gpl-1.0-plus
+is_license_notice: yes
+notes: Debian notice
+---
+
 Distributed on the terms of the GNU General Public License which can
 be found in the file /usr/share/common-licenses/GPL on Debian systems.

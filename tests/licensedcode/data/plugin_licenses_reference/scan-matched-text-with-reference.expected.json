@@ -1,0 +1,421 @@
+{
+  "dependencies": [],
+  "packages": [
+    {
+      "type": "npm",
+      "namespace": null,
+      "name": "npm",
+      "version": "2.13.5",
+      "qualifiers": {},
+      "subpath": null,
+      "primary_language": "JavaScript",
+      "description": "a package manager for JavaScript",
+      "release_date": null,
+      "parties": [
+        {
+          "type": "person",
+          "role": "author",
+          "name": "Isaac Z. Schlueter",
+          "email": "i@izs.me",
+          "url": "http://blog.izs.me"
+        }
+      ],
+      "keywords": [
+        "package manager",
+        "modules",
+        "install",
+        "package.json"
+      ],
+      "homepage_url": "https://docs.npmjs.com/",
+      "download_url": "https://registry.npmjs.org/npm/-/npm-2.13.5.tgz",
+      "size": null,
+      "sha1": "a124386bce4a90506f28ad4b1d1a804a17baaf32",
+      "md5": null,
+      "sha256": null,
+      "sha512": null,
+      "bug_tracking_url": "http://github.com/npm/npm/issues",
+      "code_view_url": null,
+      "vcs_url": "git+https://github.com/npm/npm.git",
+      "copyright": null,
+      "declared_license_expression": "artistic-2.0 OR mit",
+      "declared_license_expression_spdx": "Artistic-2.0 OR MIT",
+      "license_detections": [
+        {
+          "license_expression": "artistic-2.0 OR mit",
+          "detection_log": [
+            "not-combined"
+          ],
+          "matches": [
+            {
+              "score": 100.0,
+              "start_line": 1,
+              "end_line": 1,
+              "matched_length": 5,
+              "match_coverage": 100.0,
+              "matcher": "1-spdx-id",
+              "license_expression": "artistic-2.0 OR mit",
+              "rule_identifier": "spdx-license-identifier: artistic-2.0 OR mit",
+              "rule_url": null
+            }
+          ]
+        }
+      ],
+      "other_license_expression": null,
+      "other_license_expression_spdx": null,
+      "other_license_detections": [],
+      "extracted_license_statement": "['Artistic-2.0 OR MIT']",
+      "notice_text": null,
+      "source_packages": [],
+      "extra_data": {},
+      "repository_homepage_url": "https://www.npmjs.com/package/npm",
+      "repository_download_url": "https://registry.npmjs.org/npm/-/npm-2.13.5.tgz",
+      "api_data_url": "https://registry.npmjs.org/npm/2.13.5",
+      "package_uid": "pkg:npm/npm@2.13.5?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_paths": [
+        "scan/package.json"
+      ],
+      "datasource_ids": [
+        "npm_package_json"
+      ],
+      "purl": "pkg:npm/npm@2.13.5"
+    }
+  ],
+  "license_references": [
+    {
+      "key": "apache-2.0",
+      "short_name": "Apache 2.0",
+      "name": "Apache License 2.0",
+      "category": "Permissive",
+      "owner": "Apache Software Foundation",
+      "homepage_url": "http://www.apache.org/licenses/",
+      "notes": "Per SPDX.org, this version was released January 2004 This license is OSI\ncertified\n",
+      "is_builtin": true,
+      "spdx_license_key": "Apache-2.0",
+      "other_spdx_license_keys": [
+        "LicenseRef-Apache",
+        "LicenseRef-Apache-2.0"
+      ],
+      "osi_license_key": "Apache-2.0",
+      "text_urls": [
+        "http://www.apache.org/licenses/LICENSE-2.0"
+      ],
+      "osi_url": "http://opensource.org/licenses/apache2.0.php",
+      "faq_url": "http://www.apache.org/foundation/licence-FAQ.html",
+      "other_urls": [
+        "http://www.opensource.org/licenses/Apache-2.0",
+        "https://opensource.org/licenses/Apache-2.0",
+        "https://www.apache.org/licenses/LICENSE-2.0"
+      ],
+      "text": "Apache License\nVersion 2.0, January 2004\nhttp://www.apache.org/licenses/\n\nTERMS AND CONDITIONS FOR USE, REPRODUCTION, AND DISTRIBUTION\n\n1. Definitions.\n\n\"License\" shall mean the terms and conditions for use, reproduction,\nand distribution as defined by Sections 1 through 9 of this document.\n\n\"Licensor\" shall mean the copyright owner or entity authorized by\nthe copyright owner that is granting the License.\n\n\"Legal Entity\" shall mean the union of the acting entity and all\nother entities that control, are controlled by, or are under common\ncontrol with that entity. For the purposes of this definition,\n\"control\" means (i) the power, direct or indirect, to cause the\ndirection or management of such entity, whether by contract or\notherwise, or (ii) ownership of fifty percent (50%) or more of the\noutstanding shares, or (iii) beneficial ownership of such entity.\n\n\"You\" (or \"Your\") shall mean an individual or Legal Entity\nexercising permissions granted by this License.\n\n\"Source\" form shall mean the preferred form for making modifications,\nincluding but not limited to software source code, documentation\nsource, and configuration files.\n\n\"Object\" form shall mean any form resulting from mechanical\ntransformation or translation of a Source form, including but\nnot limited to compiled object code, generated documentation,\nand conversions to other media types.\n\n\"Work\" shall mean the work of authorship, whether in Source or\nObject form, made available under the License, as indicated by a\ncopyright notice that is included in or attached to the work\n(an example is provided in the Appendix below).\n\n\"Derivative Works\" shall mean any work, whether in Source or Object\nform, that is based on (or derived from) the Work and for which the\neditorial revisions, annotations, elaborations, or other modifications\nrepresent, as a whole, an original work of authorship. For the purposes\nof this License, Derivative Works shall not include works that remain\nseparable from, or merely link (or bind by name) to the interfaces of,\nthe Work and Derivative Works thereof.\n\n\"Contribution\" shall mean any work of authorship, including\nthe original version of the Work and any modifications or additions\nto that Work or Derivative Works thereof, that is intentionally\nsubmitted to Licensor for inclusion in the Work by the copyright owner\nor by an individual or Legal Entity authorized to submit on behalf of\nthe copyright owner. For the purposes of this definition, \"submitted\"\nmeans any form of electronic, verbal, or written communication sent\nto the Licensor or its representatives, including but not limited to\ncommunication on electronic mailing lists, source code control systems,\nand issue tracking systems that are managed by, or on behalf of, the\nLicensor for the purpose of discussing and improving the Work, but\nexcluding communication that is conspicuously marked or otherwise\ndesignated in writing by the copyright owner as \"Not a Contribution.\"\n\n\"Contributor\" shall mean Licensor and any individual or Legal Entity\non behalf of whom a Contribution has been received by Licensor and\nsubsequently incorporated within the Work.\n\n2. Grant of Copyright License. Subject to the terms and conditions of\nthis License, each Contributor hereby grants to You a perpetual,\nworldwide, non-exclusive, no-charge, royalty-free, irrevocable\ncopyright license to reproduce, prepare Derivative Works of,\npublicly display, publicly perform, sublicense, and distribute the\nWork and such Derivative Works in Source or Object form.\n\n3. Grant of Patent License. Subject to the terms and conditions of\nthis License, each Contributor hereby grants to You a perpetual,\nworldwide, non-exclusive, no-charge, royalty-free, irrevocable\n(except as stated in this section) patent license to make, have made,\nuse, offer to sell, sell, import, and otherwise transfer the Work,\nwhere such license applies only to those patent claims licensable\nby such Contributor that are necessarily infringed by their\nContribution(s) alone or by combination of their Contribution(s)\nwith the Work to which such Contribution(s) was submitted. If You\ninstitute patent litigation against any entity (including a\ncross-claim or counterclaim in a lawsuit) alleging that the Work\nor a Contribution incorporated within the Work constitutes direct\nor contributory patent infringement, then any patent licenses\ngranted to You under this License for that Work shall terminate\nas of the date such litigation is filed.\n\n4. Redistribution. You may reproduce and distribute copies of the\nWork or Derivative Works thereof in any medium, with or without\nmodifications, and in Source or Object form, provided that You\nmeet the following conditions:\n\n(a) You must give any other recipients of the Work or\nDerivative Works a copy of this License; and\n\n(b) You must cause any modified files to carry prominent notices\nstating that You changed the files; and\n\n(c) You must retain, in the Source form of any Derivative Works\nthat You distribute, all copyright, patent, trademark, and\nattribution notices from the Source form of the Work,\nexcluding those notices that do not pertain to any part of\nthe Derivative Works; and\n\n(d) If the Work includes a \"NOTICE\" text file as part of its\ndistribution, then any Derivative Works that You distribute must\ninclude a readable copy of the attribution notices contained\nwithin such NOTICE file, excluding those notices that do not\npertain to any part of the Derivative Works, in at least one\nof the following places: within a NOTICE text file distributed\nas part of the Derivative Works; within the Source form or\ndocumentation, if provided along with the Derivative Works; or,\nwithin a display generated by the Derivative Works, if and\nwherever such third-party notices normally appear. The contents\nof the NOTICE file are for informational purposes only and\ndo not modify the License. You may add Your own attribution\nnotices within Derivative Works that You distribute, alongside\nor as an addendum to the NOTICE text from the Work, provided\nthat such additional attribution notices cannot be construed\nas modifying the License.\n\nYou may add Your own copyright statement to Your modifications and\nmay provide additional or different license terms and conditions\nfor use, reproduction, or distribution of Your modifications, or\nfor any such Derivative Works as a whole, provided Your use,\nreproduction, and distribution of the Work otherwise complies with\nthe conditions stated in this License.\n\n5. Submission of Contributions. Unless You explicitly state otherwise,\nany Contribution intentionally submitted for inclusion in the Work\nby You to the Licensor shall be under the terms and conditions of\nthis License, without any additional terms or conditions.\nNotwithstanding the above, nothing herein shall supersede or modify\nthe terms of any separate license agreement you may have executed\nwith Licensor regarding such Contributions.\n\n6. Trademarks. This License does not grant permission to use the trade\nnames, trademarks, service marks, or product names of the Licensor,\nexcept as required for reasonable and customary use in describing the\norigin of the Work and reproducing the content of the NOTICE file.\n\n7. Disclaimer of Warranty. Unless required by applicable law or\nagreed to in writing, Licensor provides the Work (and each\nContributor provides its Contributions) on an \"AS IS\" BASIS,\nWITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or\nimplied, including, without limitation, any warranties or conditions\nof TITLE, NON-INFRINGEMENT, MERCHANTABILITY, or FITNESS FOR A\nPARTICULAR PURPOSE. You are solely responsible for determining the\nappropriateness of using or redistributing the Work and assume any\nrisks associated with Your exercise of permissions under this License.\n\n8. Limitation of Liability. In no event and under no legal theory,\nwhether in tort (including negligence), contract, or otherwise,\nunless required by applicable law (such as deliberate and grossly\nnegligent acts) or agreed to in writing, shall any Contributor be\nliable to You for damages, including any direct, indirect, special,\nincidental, or consequential damages of any character arising as a\nresult of this License or out of the use or inability to use the\nWork (including but not limited to damages for loss of goodwill,\nwork stoppage, computer failure or malfunction, or any and all\nother commercial damages or losses), even if such Contributor\nhas been advised of the possibility of such damages.\n\n9. Accepting Warranty or Additional Liability. While redistributing\nthe Work or Derivative Works thereof, You may choose to offer,\nand charge a fee for, acceptance of support, warranty, indemnity,\nor other liability obligations and/or rights consistent with this\nLicense. However, in accepting such obligations, You may act only\non Your own behalf and on Your sole responsibility, not on behalf\nof any other Contributor, and only if You agree to indemnify,\ndefend, and hold each Contributor harmless for any liability\nincurred by, or claims asserted against, such Contributor by reason\nof your accepting any such warranty or additional liability.\n\nEND OF TERMS AND CONDITIONS\n\nAPPENDIX: How to apply the Apache License to your work.\n\nTo apply the Apache License to your work, attach the following\nboilerplate notice, with the fields enclosed by brackets \"[]\"\nreplaced with your own identifying information. (Don't include\nthe brackets!)  The text should be enclosed in the appropriate\ncomment syntax for the file format. We also recommend that a\nfile or class name and description of purpose be included on the\nsame \"printed page\" as the copyright notice for easier\nidentification within third-party archives.\n\nCopyright [yyyy] [name of copyright owner]\n\nLicensed under the Apache License, Version 2.0 (the \"License\");\nyou may not use this file except in compliance with the License.\nYou may obtain a copy of the License at\n\nhttp://www.apache.org/licenses/LICENSE-2.0\n\nUnless required by applicable law or agreed to in writing, software\ndistributed under the License is distributed on an \"AS IS\" BASIS,\nWITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\nSee the License for the specific language governing permissions and\nlimitations under the License."
+    },
+    {
+      "key": "artistic-2.0",
+      "short_name": "Artistic 2.0",
+      "name": "Artistic License 2.0",
+      "category": "Copyleft Limited",
+      "owner": "Perl Foundation",
+      "homepage_url": "http://www.perlfoundation.org/",
+      "notes": "Per SPDX.org, this version was released 2006 This license is OSI\ncertifified.\n",
+      "is_builtin": true,
+      "spdx_license_key": "Artistic-2.0",
+      "osi_license_key": "Artistic-2.0",
+      "text_urls": [
+        "https://www.perlfoundation.org/artistic_license_2_0",
+        "https://www.perlfoundation.org/attachment/legal/artistic-2_0.txt"
+      ],
+      "osi_url": "https://www.opensource.org/licenses/artistic-license-2.0.php",
+      "faq_url": "https://www.perlfoundation.org/artistic-2-0-notes",
+      "other_urls": [
+        "http://www.perlfoundation.org/artistic_license_2_0",
+        "https://opensource.org/licenses/artistic-license-2.0",
+        "https://www.opensource.org/licenses/artistic-license-2.0",
+        "https://www.perlfoundation.org/artistic-license-20.html"
+      ],
+      "text": "The Artistic License 2.0\n\nCopyright (c) 2000-2006, The Perl Foundation.\n\nEveryone is permitted to copy and distribute verbatim copies\nof this license document, but changing it is not allowed.\n\nPreamble\n\nThis license establishes the terms under which a given free software\nPackage may be copied, modified, distributed, and/or redistributed.\nThe intent is that the Copyright Holder maintains some artistic\ncontrol over the development of that Package while still keeping the\nPackage available as open source and free software.\n\nYou are always permitted to make arrangements wholly outside of this\nlicense directly with the Copyright Holder of a given Package.  If the\nterms of this license do not permit the full use that you propose to\nmake of the Package, you should contact the Copyright Holder and seek\na different licensing arrangement.\n\nDefinitions\n\n\"Copyright Holder\" means the individual(s) or organization(s)\nnamed in the copyright notice for the entire Package.\n\n\"Contributor\" means any party that has contributed code or other\nmaterial to the Package, in accordance with the Copyright Holder's\nprocedures.\n\n\"You\" and \"your\" means any person who would like to copy,\ndistribute, or modify the Package.\n\n\"Package\" means the collection of files distributed by the\nCopyright Holder, and derivatives of that collection and/or of\nthose files. A given Package may consist of either the Standard\nVersion, or a Modified Version.\n\n\"Distribute\" means providing a copy of the Package or making it\naccessible to anyone else, or in the case of a company or\norganization, to others outside of your company or organization.\n\n\"Distributor Fee\" means any fee that you charge for Distributing\nthis Package or providing support for this Package to another\nparty.  It does not mean licensing fees.\n\n\"Standard Version\" refers to the Package if it has not been\nmodified, or has been modified only in ways explicitly requested\nby the Copyright Holder.\n\n\"Modified Version\" means the Package, if it has been changed, and\nsuch changes were not explicitly requested by the Copyright\nHolder.\n\n\"Original License\" means this Artistic License as Distributed with\nthe Standard Version of the Package, in its current version or as\nit may be modified by The Perl Foundation in the future.\n\n\"Source\" form means the source code, documentation source, and\nconfiguration files for the Package.\n\n\"Compiled\" form means the compiled bytecode, object code, binary,\nor any other form resulting from mechanical transformation or\ntranslation of the Source form.\n\n\nPermission for Use and Modification Without Distribution\n\n(1)  You are permitted to use the Standard Version and create and use\nModified Versions for any purpose without restriction, provided that\nyou do not Distribute the Modified Version.\n\n\nPermissions for Redistribution of the Standard Version\n\n(2)  You may Distribute verbatim copies of the Source form of the\nStandard Version of this Package in any medium without restriction,\neither gratis or for a Distributor Fee, provided that you duplicate\nall of the original copyright notices and associated disclaimers.  At\nyour discretion, such verbatim copies may or may not include a\nCompiled form of the Package.\n\n(3)  You may apply any bug fixes, portability changes, and other\nmodifications made available from the Copyright Holder.  The resulting\nPackage will still be considered the Standard Version, and as such\nwill be subject to the Original License.\n\n\nDistribution of Modified Versions of the Package as Source\n\n(4)  You may Distribute your Modified Version as Source (either gratis\nor for a Distributor Fee, and with or without a Compiled form of the\nModified Version) provided that you clearly document how it differs\nfrom the Standard Version, including, but not limited to, documenting\nany non-standard features, executables, or modules, and provided that\nyou do at least ONE of the following:\n\n(a)  make the Modified Version available to the Copyright Holder\nof the Standard Version, under the Original License, so that the\nCopyright Holder may include your modifications in the Standard\nVersion.\n\n(b)  ensure that installation of your Modified Version does not\nprevent the user installing or running the Standard Version. In\naddition, the Modified Version must bear a name that is different\nfrom the name of the Standard Version.\n\n(c)  allow anyone who receives a copy of the Modified Version to\nmake the Source form of the Modified Version available to others\nunder\n\n(i)  the Original License or\n\n(ii)  a license that permits the licensee to freely copy,\nmodify and redistribute the Modified Version using the same\nlicensing terms that apply to the copy that the licensee\nreceived, and requires that the Source form of the Modified\nVersion, and of any works derived from it, be made freely\navailable in that license fees are prohibited but Distributor\nFees are allowed.\n\n\nDistribution of Compiled Forms of the Standard Version\nor Modified Versions without the Source\n\n(5)  You may Distribute Compiled forms of the Standard Version without\nthe Source, provided that you include complete instructions on how to\nget the Source of the Standard Version.  Such instructions must be\nvalid at the time of your distribution.  If these instructions, at any\ntime while you are carrying out such distribution, become invalid, you\nmust provide new instructions on demand or cease further distribution.\nIf you provide valid instructions or cease distribution within thirty\ndays after you become aware that the instructions are invalid, then\nyou do not forfeit any of your rights under this license.\n\n(6)  You may Distribute a Modified Version in Compiled form without\nthe Source, provided that you comply with Section 4 with respect to\nthe Source of the Modified Version.\n\n\nAggregating or Linking the Package\n\n(7)  You may aggregate the Package (either the Standard Version or\nModified Version) with other packages and Distribute the resulting\naggregation provided that you do not charge a licensing fee for the\nPackage.  Distributor Fees are permitted, and licensing fees for other\ncomponents in the aggregation are permitted. The terms of this license\napply to the use and Distribution of the Standard or Modified Versions\nas included in the aggregation.\n\n(8) You are permitted to link Modified and Standard Versions with\nother works, to embed the Package in a larger work of your own, or to\nbuild stand-alone binary or bytecode versions of applications that\ninclude the Package, and Distribute the result without restriction,\nprovided the result does not expose a direct interface to the Package.\n\n\nItems That are Not Considered Part of a Modified Version\n\n(9) Works (including, but not limited to, modules and scripts) that\nmerely extend or make use of the Package, do not, by themselves, cause\nthe Package to be a Modified Version.  In addition, such works are not\nconsidered parts of the Package itself, and are not subject to the\nterms of this license.\n\n\nGeneral Provisions\n\n(10)  Any use, modification, and distribution of the Standard or\nModified Versions is governed by this Artistic License. By using,\nmodifying or distributing the Package, you accept this license. Do not\nuse, modify, or distribute the Package, if you do not accept this\nlicense.\n\n(11)  If your Modified Version has been derived from a Modified\nVersion made by someone other than you, you are nevertheless required\nto ensure that your Modified Version complies with the requirements of\nthis license.\n\n(12)  This license does not grant you the right to use any trademark,\nservice mark, tradename, or logo of the Copyright Holder.\n\n(13)  This license includes the non-exclusive, worldwide,\nfree-of-charge patent license to make, have made, use, offer to sell,\nsell, import and otherwise transfer the Package with respect to any\npatent claims licensable by the Copyright Holder that are necessarily\ninfringed by the Package. If you institute patent litigation\n(including a cross-claim or counterclaim) against any party alleging\nthat the Package constitutes direct or contributory patent\ninfringement, then this Artistic License to you shall terminate on the\ndate that such litigation is filed.\n\n(14)  Disclaimer of Warranty:\nTHE PACKAGE IS PROVIDED BY THE COPYRIGHT HOLDER AND CONTRIBUTORS \"AS\nIS' AND WITHOUT ANY EXPRESS OR IMPLIED WARRANTIES. THE IMPLIED\nWARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, OR\nNON-INFRINGEMENT ARE DISCLAIMED TO THE EXTENT PERMITTED BY YOUR LOCAL\nLAW. UNLESS REQUIRED BY LAW, NO COPYRIGHT HOLDER OR CONTRIBUTOR WILL\nBE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, OR CONSEQUENTIAL\nDAMAGES ARISING IN ANY WAY OUT OF THE USE OF THE PACKAGE, EVEN IF\nADVISED OF THE POSSIBILITY OF SUCH DAMAGE."
+    },
+    {
+      "key": "bsd-simplified",
+      "short_name": "BSD-2-Clause",
+      "name": "BSD-2-Clause",
+      "category": "Permissive",
+      "owner": "Regents of the University of California",
+      "homepage_url": "http://www.opensource.org/licenses/BSD-2-Clause",
+      "notes": "Per SPDX.org, this license is OSI certified.",
+      "is_builtin": true,
+      "spdx_license_key": "BSD-2-Clause",
+      "other_spdx_license_keys": [
+        "BSD-2-Clause-NetBSD",
+        "BSD-2"
+      ],
+      "text_urls": [
+        "http://opensource.org/licenses/bsd-license.php"
+      ],
+      "osi_url": "http://opensource.org/licenses/bsd-license.php",
+      "other_urls": [
+        "http://spdx.org/licenses/BSD-2-Clause",
+        "http://www.freebsd.org/copyright/copyright.html",
+        "https://opensource.org/licenses/BSD-2-Clause"
+      ],
+      "text": "Redistribution and use in source and binary forms, with or without modification,\nare permitted provided that the following conditions are met:\n\nRedistributions of source code must retain the above copyright notice, this list\nof conditions and the following disclaimer.\n\nRedistributions in binary form must reproduce the above copyright notice, this\nlist of conditions and the following disclaimer in the documentation and/or\nother materials provided with the distribution.\n\nTHIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS \"AS IS\" AND\nANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED\nWARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE\nDISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR\nANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES\n(INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;\nLOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON\nANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT\n(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS\nSOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE."
+    },
+    {
+      "key": "mit",
+      "short_name": "MIT License",
+      "name": "MIT License",
+      "category": "Permissive",
+      "owner": "MIT",
+      "homepage_url": "http://opensource.org/licenses/mit-license.php",
+      "notes": "Per SPDX.org, this license is OSI certified.",
+      "is_builtin": true,
+      "spdx_license_key": "MIT",
+      "text_urls": [
+        "http://opensource.org/licenses/mit-license.php"
+      ],
+      "osi_url": "http://www.opensource.org/licenses/MIT",
+      "faq_url": "https://ieeexplore.ieee.org/document/9263265",
+      "other_urls": [
+        "https://opensource.com/article/18/3/patent-grant-mit-license",
+        "https://opensource.com/article/19/4/history-mit-license",
+        "https://opensource.org/licenses/MIT"
+      ],
+      "text": "Permission is hereby granted, free of charge, to any person obtaining\na copy of this software and associated documentation files (the\n\"Software\"), to deal in the Software without restriction, including\nwithout limitation the rights to use, copy, modify, merge, publish,\ndistribute, sublicense, and/or sell copies of the Software, and to\npermit persons to whom the Software is furnished to do so, subject to\nthe following conditions:\n\nThe above copyright notice and this permission notice shall be\nincluded in all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND,\nEXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF\nMERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.\nIN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY\nCLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,\nTORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE\nSOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE."
+    }
+  ],
+  "rule_references": [
+    {
+      "license_expression": "artistic-2.0 OR mit",
+      "rule_identifier": "spdx-license-identifier: artistic-2.0 OR mit",
+      "referenced_filenames": [],
+      "is_license_text": false,
+      "is_license_notice": false,
+      "is_license_reference": false,
+      "is_license_tag": true,
+      "is_license_intro": false,
+      "rule_length": 5,
+      "rule_relevance": 100,
+      "matched_text": "Artistic-2.0 OR MIT"
+    },
+    {
+      "license_expression": "apache-2.0",
+      "rule_identifier": "apache-2.0_2.RULE",
+      "referenced_filenames": [
+        "NOTICE"
+      ],
+      "is_license_text": false,
+      "is_license_notice": true,
+      "is_license_reference": false,
+      "is_license_tag": false,
+      "is_license_intro": false,
+      "rule_length": 119,
+      "rule_relevance": 100,
+      "matched_text": " * Licensed to the Apache Software Foundation (ASF) under one or more\n * contributor license agreements.  See the NOTICE file distributed with\n * this work for additional information regarding copyright ownership.\n * The ASF licenses this file to You under the Apache License, Version 2.0\n * (the \"License\"); you may not use this file except in compliance with\n * the License.  You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License."
+    },
+    {
+      "license_expression": "mit OR bsd-simplified",
+      "rule_identifier": "spdx-license-identifier: mit OR bsd-simplified",
+      "referenced_filenames": [],
+      "is_license_text": false,
+      "is_license_notice": false,
+      "is_license_reference": false,
+      "is_license_tag": true,
+      "is_license_intro": false,
+      "rule_length": 8,
+      "rule_relevance": 100,
+      "matched_text": "SPDX-License-Identifier: MIT or BSD-2-Clause"
+    },
+    {
+      "license_expression": "artistic-2.0 OR mit",
+      "rule_identifier": "spdx-license-identifier: artistic-2.0 OR mit",
+      "referenced_filenames": [],
+      "is_license_text": false,
+      "is_license_notice": false,
+      "is_license_reference": false,
+      "is_license_tag": true,
+      "is_license_intro": false,
+      "rule_length": 5,
+      "rule_relevance": 100,
+      "matched_text": "Artistic-2.0 OR MIT"
+    },
+    {
+      "license_expression": "artistic-2.0",
+      "rule_identifier": "artistic-2.0_46.RULE",
+      "referenced_filenames": [],
+      "is_license_text": false,
+      "is_license_notice": false,
+      "is_license_reference": false,
+      "is_license_tag": true,
+      "is_license_intro": false,
+      "rule_length": 4,
+      "rule_relevance": 100,
+      "matched_text": "  \"license\": \"Artistic-2.0 OR MIT\","
+    }
+  ],
+  "files": [
+    {
+      "path": "scan",
+      "type": "directory",
+      "detected_license_expression": null,
+      "detected_license_expression_spdx": null,
+      "license_detections": [],
+      "license_clues": [],
+      "percentage_of_license_text": 0,
+      "package_data": [],
+      "for_packages": [],
+      "scan_errors": []
+    },
+    {
+      "path": "scan/copyr.java",
+      "type": "file",
+      "detected_license_expression": "apache-2.0 AND (mit OR bsd-simplified)",
+      "detected_license_expression_spdx": "Apache-2.0 AND (MIT OR BSD-2-Clause)",
+      "license_detections": [
+        {
+          "license_expression": "apache-2.0 AND (mit OR bsd-simplified)",
+          "detection_log": [
+            "not-combined"
+          ],
+          "matches": [
+            {
+              "score": 100.0,
+              "start_line": 3,
+              "end_line": 16,
+              "matched_length": 119,
+              "match_coverage": 100.0,
+              "matcher": "2-aho",
+              "license_expression": "apache-2.0",
+              "rule_identifier": "apache-2.0_2.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_2.RULE"
+            },
+            {
+              "score": 100.0,
+              "start_line": 19,
+              "end_line": 19,
+              "matched_length": 8,
+              "match_coverage": 100.0,
+              "matcher": "1-spdx-id",
+              "license_expression": "mit OR bsd-simplified",
+              "rule_identifier": "spdx-license-identifier: mit OR bsd-simplified",
+              "rule_url": null
+            }
+          ]
+        }
+      ],
+      "license_clues": [],
+      "percentage_of_license_text": 100.0,
+      "package_data": [],
+      "for_packages": [
+        "pkg:npm/npm@2.13.5?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
+      "scan_errors": []
+    },
+    {
+      "path": "scan/package.json",
+      "type": "file",
+      "detected_license_expression": "artistic-2.0",
+      "detected_license_expression_spdx": "Artistic-2.0",
+      "license_detections": [
+        {
+          "license_expression": "artistic-2.0",
+          "detection_log": [
+            "not-combined"
+          ],
+          "matches": [
+            {
+              "score": 100.0,
+              "start_line": 28,
+              "end_line": 28,
+              "matched_length": 4,
+              "match_coverage": 100.0,
+              "matcher": "2-aho",
+              "license_expression": "artistic-2.0",
+              "rule_identifier": "artistic-2.0_46.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/artistic-2.0_46.RULE"
+            }
+          ]
+        }
+      ],
+      "license_clues": [],
+      "percentage_of_license_text": 5.0,
+      "package_data": [
+        {
+          "type": "npm",
+          "namespace": null,
+          "name": "npm",
+          "version": "2.13.5",
+          "qualifiers": {},
+          "subpath": null,
+          "primary_language": "JavaScript",
+          "description": "a package manager for JavaScript",
+          "release_date": null,
+          "parties": [
+            {
+              "type": "person",
+              "role": "author",
+              "name": "Isaac Z. Schlueter",
+              "email": "i@izs.me",
+              "url": "http://blog.izs.me"
+            }
+          ],
+          "keywords": [
+            "package manager",
+            "modules",
+            "install",
+            "package.json"
+          ],
+          "homepage_url": "https://docs.npmjs.com/",
+          "download_url": "https://registry.npmjs.org/npm/-/npm-2.13.5.tgz",
+          "size": null,
+          "sha1": "a124386bce4a90506f28ad4b1d1a804a17baaf32",
+          "md5": null,
+          "sha256": null,
+          "sha512": null,
+          "bug_tracking_url": "http://github.com/npm/npm/issues",
+          "code_view_url": null,
+          "vcs_url": "git+https://github.com/npm/npm.git",
+          "copyright": null,
+          "declared_license_expression": "artistic-2.0 OR mit",
+          "declared_license_expression_spdx": "Artistic-2.0 OR MIT",
+          "license_detections": [
+            {
+              "license_expression": "artistic-2.0 OR mit",
+              "detection_log": [
+                "not-combined"
+              ],
+              "matches": [
+                {
+                  "score": 100.0,
+                  "start_line": 1,
+                  "end_line": 1,
+                  "matched_length": 5,
+                  "match_coverage": 100.0,
+                  "matcher": "1-spdx-id",
+                  "license_expression": "artistic-2.0 OR mit",
+                  "rule_identifier": "spdx-license-identifier: artistic-2.0 OR mit",
+                  "rule_url": null
+                }
+              ]
+            }
+          ],
+          "other_license_expression": null,
+          "other_license_expression_spdx": null,
+          "other_license_detections": [],
+          "extracted_license_statement": "['Artistic-2.0 OR MIT']",
+          "notice_text": null,
+          "source_packages": [],
+          "file_references": [],
+          "extra_data": {},
+          "dependencies": [],
+          "repository_homepage_url": "https://www.npmjs.com/package/npm",
+          "repository_download_url": "https://registry.npmjs.org/npm/-/npm-2.13.5.tgz",
+          "api_data_url": "https://registry.npmjs.org/npm/2.13.5",
+          "datasource_id": "npm_package_json",
+          "purl": "pkg:npm/npm@2.13.5"
+        }
+      ],
+      "for_packages": [
+        "pkg:npm/npm@2.13.5?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
+      "scan_errors": []
+    }
+  ]
+}

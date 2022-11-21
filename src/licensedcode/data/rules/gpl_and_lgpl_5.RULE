@@ -1,3 +1,8 @@
+---
+license_expression: gpl-1.0-plus AND lgpl-2.0-plus
+is_license_notice: yes
+---
+
 All source code located in this directory may fall under GPL or LGPL license.  
  OpenSIPStack  core library does not rely on any of the code/library found in 
 this directory.  If an application uses any of the library found here, the 

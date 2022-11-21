@@ -1,3 +1,11 @@
+---
+license_expression: apache-2.0
+is_license_notice: yes
+relevance: 100
+ignorable_urls:
+    - https://www.apache.org/licenses/LICENSE-2.0
+---
+
 The majority of the source code in the  project is licensed
 under the terms of the Apache License, Version 2.0, available from:
   {{ https://www.apache.org/licenses/LICENSE-2.0 }}

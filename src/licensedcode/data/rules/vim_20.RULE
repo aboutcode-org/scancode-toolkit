@@ -1,1 +1,9 @@
+---
+license_expression: vim
+is_license_notice: yes
+relevance: 100
+ignorable_urls:
+    - http://www.vim.org/about.php
+---
+
 Same as Vim License: http://www.vim.org/about.php

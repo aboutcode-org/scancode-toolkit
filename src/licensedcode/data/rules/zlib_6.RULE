@@ -1,3 +1,11 @@
+---
+license_expression: zlib
+is_license_notice: yes
+notes: Zlib with german translation by Wolfgang Ehrhardt Found in copying_we.tx in http://www.wolfgang-ehrhardt.de/aes_2013-01-07.zip
+    It is not clear if the Greman translation is exactly the same as the zlib license but the
+    file contains both side by side
+---
+
 Bedingungen fuer Nutzung und Weitergabe
 
 Die Software (Quellcodes und Binaerdateien) wird ohne jegliche Zusagen
@@ -20,4 +28,3 @@ werden eingehalten:
 
 3. Die Bedingungen ueber die Nutzung/Weitergabe duerfen nicht entfernt oder
    geaendert werden.
-

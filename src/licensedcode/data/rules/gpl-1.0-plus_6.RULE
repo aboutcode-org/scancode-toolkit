@@ -1,3 +1,11 @@
+---
+license_expression: gpl-1.0-plus
+is_license_notice: yes
+minimum_coverage: 90
+referenced_filenames:
+    - COPYING
+---
+
 GDB, GAS, and the GNU binutils are free software; you can redistribute
 them and/or modify them under the terms of the GNU General Public
 License as published by the Free Software Foundation; either version

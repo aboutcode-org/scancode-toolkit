@@ -1,1 +1,9 @@
+---
+license_expression: ipa-font
+is_license_reference: yes
+relevance: 100
+ignorable_urls:
+    - https://www.opensource.org/licenses/ipa
+---
+
 https://www.opensource.org/licenses/ipa

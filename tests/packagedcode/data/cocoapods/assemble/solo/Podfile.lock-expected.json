@@ -1,7 +1,7 @@
 {
   "dependencies": [
     {
-      "purl": "pkg:pods/boost@1.76.0",
+      "purl": "pkg:cocoapods/boost@1.76.0",
       "extracted_requirement": "1.76.0",
       "scope": "requires",
       "is_runtime": false,
@@ -9,13 +9,13 @@
       "is_resolved": true,
       "resolved_package": {},
       "extra_data": {},
-      "dependency_uid": "pkg:pods/boost@1.76.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "dependency_uid": "pkg:cocoapods/boost@1.76.0?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": null,
       "datafile_path": "Podfile.lock",
       "datasource_id": "cocoapods_podfile_lock"
     },
     {
-      "purl": "pkg:pods/Yoga@1.14.0",
+      "purl": "pkg:cocoapods/Yoga@1.14.0",
       "extracted_requirement": "1.14.0",
       "scope": "requires",
       "is_runtime": false,
@@ -23,13 +23,13 @@
       "is_resolved": true,
       "resolved_package": {},
       "extra_data": {},
-      "dependency_uid": "pkg:pods/Yoga@1.14.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "dependency_uid": "pkg:cocoapods/Yoga@1.14.0?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": null,
       "datafile_path": "Podfile.lock",
       "datasource_id": "cocoapods_podfile_lock"
     },
     {
-      "purl": "pkg:pods/YogaKit@1.18.1",
+      "purl": "pkg:cocoapods/YogaKit@1.18.1",
       "extracted_requirement": "1.18.1",
       "scope": "requires",
       "is_runtime": false,
@@ -37,7 +37,7 @@
       "is_resolved": true,
       "resolved_package": {},
       "extra_data": {},
-      "dependency_uid": "pkg:pods/YogaKit@1.18.1?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "dependency_uid": "pkg:cocoapods/YogaKit@1.18.1?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": null,
       "datafile_path": "Podfile.lock",
       "datasource_id": "cocoapods_podfile_lock"
@@ -50,7 +50,7 @@
       "type": "file",
       "package_data": [
         {
-          "type": "pods",
+          "type": "cocoapods",
           "namespace": null,
           "name": null,
           "version": null,
@@ -72,15 +72,20 @@
           "code_view_url": null,
           "vcs_url": null,
           "copyright": null,
-          "license_expression": null,
-          "declared_license": null,
+          "declared_license_expression": null,
+          "declared_license_expression_spdx": null,
+          "license_detections": [],
+          "other_license_expression": null,
+          "other_license_expression_spdx": null,
+          "other_license_detections": [],
+          "extracted_license_statement": null,
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
           "extra_data": {},
           "dependencies": [
             {
-              "purl": "pkg:pods/boost@1.76.0",
+              "purl": "pkg:cocoapods/boost@1.76.0",
               "extracted_requirement": "1.76.0",
               "scope": "requires",
               "is_runtime": false,
@@ -90,7 +95,7 @@
               "extra_data": {}
             },
             {
-              "purl": "pkg:pods/Yoga@1.14.0",
+              "purl": "pkg:cocoapods/Yoga@1.14.0",
               "extracted_requirement": "1.14.0",
               "scope": "requires",
               "is_runtime": false,
@@ -100,7 +105,7 @@
               "extra_data": {}
             },
             {
-              "purl": "pkg:pods/YogaKit@1.18.1",
+              "purl": "pkg:cocoapods/YogaKit@1.18.1",
               "extracted_requirement": "1.18.1",
               "scope": "requires",
               "is_runtime": false,

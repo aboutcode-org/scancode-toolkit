@@ -1,3 +1,10 @@
+---
+license_expression: tatu-ylonen
+is_license_text: yes
+ignorable_urls:
+    - http://www.cs.hut.fi/crypto
+---
+
 This file is part of the OpenSSH software.
 
 The licences which components of this software fall under are as
@@ -70,4 +77,3 @@ OpenSSH contains no GPL code.
     YOU OR THIRD PARTIES OR A FAILURE OF THE PROGRAM TO OPERATE WITH ANY OTHER
     PROGRAMS), EVEN IF SUCH HOLDER OR OTHER PARTY HAS BEEN ADVISED OF THE
     POSSIBILITY OF SUCH DAMAGES.
-

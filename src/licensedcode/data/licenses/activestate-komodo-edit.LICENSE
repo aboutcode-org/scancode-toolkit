@@ -1,3 +1,19 @@
+---
+key: activestate-komodo-edit
+short_name: ActiveState Komodo Edit EULA
+name: ActiveState Komodo Edit EULA
+category: Proprietary Free
+owner: ActiveState Software, Inc.
+homepage_url: http://www.activestate.com/komodo-edit/license-agreement
+spdx_license_key: LicenseRef-scancode-activestate-komodo-edit
+other_urls:
+    - https://www.mozilla.org/en-US/MPL/1.1/
+ignorable_urls:
+    - http://www.activestate.com/
+ignorable_emails:
+    - license@activestate.com
+---
+
 ACTIVESTATE® KOMODO® EDIT LICENSE AGREEMENT
 
 Please read carefully: THIS IS A LICENSE AND NOT AN AGREEMENT FOR SALE. By using and installing ActiveState's Software or, where applicable, choosing the "I ACCEPT..." option at the end of the License you indicate that you have read, understood, and accepted the terms and conditions of the License. IF YOU DO NOT AGREE WITH THE TERMS AND CONDITIONS, YOU SHOULD NOT ATTEMPT TO INSTALL THE SOFTWARE. If the Software is already downloaded or installed, you should promptly cease using the Software in any manner and destroy all copies of the Software in your possession. You, the user, assume all responsibility for the selection of the Software to achieve your intended results and for the installation, use and results obtained from the Software. If you have any questions concerning this, you may contact ActiveState  via license@activestate.com.

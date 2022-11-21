@@ -40,7 +40,13 @@
         "package__bug_tracking_url": "https://github.com/visionmedia/node-cookie-signature/issues",
         "package__code_view_url": "",
         "package__copyright": "",
-        "package__license_expression": "",
+        "package__declared_license_expression": "",
+        "package__declared_license_expression_spdx": "",
+        "package__license_detections": "",
+        "package__other_license_expression": "",
+        "package__other_license_expression_spdx": "",
+        "package__other_license_detections": "",
+        "package__extracted_license_statement": "",
         "package__notice_text": ""
     }
 ]

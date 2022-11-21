@@ -1,3 +1,13 @@
+---
+license_expression: openldap-1.2
+is_license_text: yes
+minimum_coverage: 70
+ignorable_copyrights:
+    - Copyright 1998, The OpenLDAP Foundation
+ignorable_holders:
+    - The OpenLDAP Foundation
+---
+
 The OpenLDAP Public License 
 
 Version 1.2, 1 September 1998 
@@ -126,4 +136,4 @@ written permission.
 
 9. THIS PACKAGE IS PROVIDED "AS IS" AND WITHOUT ANY EXPRESS OR 
 IMPLIED WARRANTIES, INCLUDING, WITHOUT LIMITATION, THE IMPLIED 
-WARRANTIES OF MERCHANTIBILITY AND FITNESS FOR A PARTICULAR PURPOSE. 
+WARRANTIES OF MERCHANTIBILITY AND FITNESS FOR A PARTICULAR PURPOSE.

@@ -1,3 +1,11 @@
+---
+license_expression: unknown
+is_license_notice: yes
+notes: Seen in the kernel
+ignorable_authors:
+    - Intel Corporation. Intel
+---
+
 This software has been developed by Intel Corporation.
 Intel specifically disclaims all warranties, express or
 implied, and all liability, including consequential and

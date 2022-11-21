@@ -1,3 +1,15 @@
+---
+key: x11-stanford
+short_name: X11-Style (Stanford University)
+name: X11-Style (Stanford University)
+category: Permissive
+owner: Stanford University
+homepage_url: https://github.com/mininet/openflow/blob/master/COPYING
+notes: this is mostly similar to the x11-xconsortium license
+spdx_license_key: LicenseRef-scancode-x11-stanford
+minimum_coverage: 80
+---
+
 We are making the specification and associated documentation
 (Software) available for public use and benefit with the expectation
 that others will use, modify and enhance the Software and contribute

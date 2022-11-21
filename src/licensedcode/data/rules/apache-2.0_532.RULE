@@ -1,3 +1,11 @@
+---
+license_expression: apache-2.0
+is_license_notice: yes
+relevance: 100
+ignorable_urls:
+    - http://www.apache.org/
+---
+
 This product includes software developed at The Apache Software Foundation
 (http://www.apache.org/).
 This product includes software from the Spring Framework, under the Apache

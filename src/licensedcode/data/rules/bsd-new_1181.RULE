@@ -1,1 +1,9 @@
+---
+license_expression: bsd-new
+is_license_notice: yes
+relevance: 95
+referenced_filenames:
+    - LICENSE
+---
+
 This project is BSD licensed. See LICENSE for more information.

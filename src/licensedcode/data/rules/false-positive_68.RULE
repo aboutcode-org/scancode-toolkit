@@ -1,1 +1,6 @@
+---
+is_false_positive: yes
+notes: Seen in gitlab's proprietary license-finder changelog
+---
+
 Fix normalization for GPL2 with Classpath exception

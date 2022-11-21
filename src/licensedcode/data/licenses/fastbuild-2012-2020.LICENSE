@@ -1,3 +1,19 @@
+---
+key: fastbuild-2012-2020
+short_name: FASTBuild License 2012-2020
+name: FASTBuild License 2012-2020
+category: Permissive
+owner: fastbuild.org
+homepage_url: https://www.fastbuild.org/docs/license.html
+spdx_license_key: LicenseRef-scancode-fastbuild-2012-2020
+minimum_coverage: 80
+standard_notice: Copyright (c) 2012-2020 Franta Fulin
+ignorable_copyrights:
+    - (c) 2012-2020 Franta Fulin
+ignorable_holders:
+    - Franta Fulin
+---
+
 This software is provided 'as-is', without any express or implied warranty. In no event will the authors be held liable for any damages arising from the use of this software.
 
 Permission is granted to anyone to use this software for any purpose, including commercial applications, and to alter it and redistribute it freely, subject to the following restrictions:

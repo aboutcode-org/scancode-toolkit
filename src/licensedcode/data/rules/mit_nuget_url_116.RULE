@@ -1,1 +1,9 @@
+---
+license_expression: mit
+is_license_reference: yes
+relevance: 90
+ignorable_urls:
+    - https://github.com/Aragas/Aragas.Network-2/blob/master/LICENSE
+---
+
 https://github.com/Aragas/Aragas.Network-2/blob/master/LICENSE

@@ -1,2 +1,10 @@
+---
+license_expression: mit
+is_license_notice: yes
+relevance: 90
+ignorable_urls:
+    - http://opensource.org/licenses/mit-license.php
+---
+
     The distribution is licensed under the MIT License (http://opensource.org/licenses/mit-license.php).
 mozilla

@@ -1,1 +1,9 @@
+---
+license_expression: zlib
+is_license_reference: yes
+relevance: 100
+ignorable_urls:
+    - http://choosealicense.com/licenses/zlib
+---
+
 http://choosealicense.com/licenses/zlib

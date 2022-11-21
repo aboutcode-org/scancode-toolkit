@@ -1,3 +1,9 @@
+---
+license_expression: free-unknown
+is_license_notice: yes
+notes: found in older OpenSSL versions in openssl-1.1.0h/ms/tlhelp32.h
+---
+
         This file is part of a free library for the Win32 API.
 
         This library is distributed in the hope that it will be useful,

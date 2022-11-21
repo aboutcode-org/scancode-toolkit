@@ -1,2 +1,9 @@
+---
+license_expression: x11-xconsortium
+is_license_reference: yes
+relevance: 95
+minimum_coverage: 95
+---
+
 Shamelessly ripped out from the X11 distribution
 Thanks for the nice licence.

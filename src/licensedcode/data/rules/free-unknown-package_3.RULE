@@ -1,0 +1,11 @@
+---
+license_expression: free-unknown
+is_license_reference: yes
+is_continuous: yes
+relevance: 100
+minimum_coverage: 100
+referenced_filenames:
+    - INHERIT_LICENSE_FROM_PACKAGE
+---
+
+This file is distributed under the same license as the DJANGO package.

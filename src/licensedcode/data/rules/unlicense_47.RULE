@@ -1,1 +1,11 @@
+---
+license_expression: unlicense
+is_license_reference: yes
+is_continuous: yes
+relevance: 100
+minimum_coverage: 100
+ignorable_urls:
+    - http://unlicense.org/
+---
+
 'Unlicense (see http://unlicense.org/)': 'Unlicense',

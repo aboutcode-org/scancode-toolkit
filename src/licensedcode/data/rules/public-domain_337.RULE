@@ -1,3 +1,10 @@
+---
+license_expression: public-domain
+is_license_text: yes
+relevance: 100
+minimum_coverage: 80
+---
+
 This is a plain C recursive-descent translation of an old
 public-domain YACC grammar that has been used for parsing dates in
 very many open-source projects.

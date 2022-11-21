@@ -1,2 +1,13 @@
+---
+license_expression: gpl-2.0 OR gpl-3.0 OR apache-2.0
+is_license_notice: yes
+relevance: 100
+referenced_filenames:
+    - COPYING
+    - COPYING3
+    - APACHE-2.0.txt
+notes: seen in xpdf
+---
+
 This package includes the text of all three licenses: COPYING for GPL
 v2, COPYING3 for GPL v3, APACHE-2.0.txt for Apache v2.

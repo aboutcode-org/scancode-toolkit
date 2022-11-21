@@ -1,1 +1,9 @@
+---
+license_expression: mit
+is_license_notice: yes
+relevance: 100
+ignorable_urls:
+    - https://opensource.org/licenses/MIT
+---
+
 This Project is fully Open Source [MIT](https://opensource.org/licenses/MIT) licensed.

@@ -1,3 +1,8 @@
+---
+license_expression: lzma-cpl-exception
+is_license_notice: yes
+---
+
 Igor Pavlov and Amir Szekely, the authors of the LZMA compression module for
 NSIS, expressly permit you to statically or dynamically link your code (or bind
 by name) to the files from the LZMA compression module for NSIS without

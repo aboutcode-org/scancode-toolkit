@@ -1,3 +1,11 @@
+---
+license_expression: gpl-3.0
+is_license_notice: yes
+relevance: 100
+ignorable_urls:
+    - http://www.gnu.org/licenses/
+---
+
 mq_perf_tests is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
 the Free Software Foundation, version 3.
@@ -8,4 +16,3 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
 For the full text of the license, see <http://www.gnu.org/licenses/>.
-

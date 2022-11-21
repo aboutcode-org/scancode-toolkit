@@ -1,3 +1,12 @@
+---
+license_expression: proprietary-license
+is_license_text: yes
+ignorable_copyrights:
+    - Copyright (c) HANDSONCODE Sp
+ignorable_holders:
+    - HANDSONCODE Sp
+---
+
 HANDSONTABLE
 NON-COMMERCIAL LICENSE
 Version 1.0 last updated February 19, 2019

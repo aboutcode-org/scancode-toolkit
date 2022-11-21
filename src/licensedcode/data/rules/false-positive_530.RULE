@@ -1,1 +1,6 @@
+---
+is_false_positive: yes
+notes: https://github.com/Embedfire/ebf_6ull_linux/blob/master/Documentation/sound/oss/README.OSS
+---
+
 to implement a freeware driver

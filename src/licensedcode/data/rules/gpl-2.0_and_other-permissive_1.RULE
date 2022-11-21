@@ -1,3 +1,11 @@
+---
+license_expression: gpl-2.0 AND other-permissive
+is_license_notice: yes
+relevance: 100
+minimum_coverage: 80
+notes: this other-permissive may be a bsd-original or a bsd-new dependending on versions
+---
+
 Red Hat grants you permission to distribute Cygwin with the following
 files, which are not considered part of Cygwin and are not governed by
 GPLv2, in source or binary form.

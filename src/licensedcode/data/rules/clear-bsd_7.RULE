@@ -1,1 +1,9 @@
+---
+license_expression: clear-bsd
+is_license_reference: yes
+relevance: 100
+ignorable_urls:
+    - http://choosealicense.com/licenses/bsd-3-clause-clear
+---
+
 http://choosealicense.com/licenses/bsd-3-clause-clear

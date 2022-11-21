@@ -1,1 +1,6 @@
+---
+is_false_positive: yes
+notes: see in Linux Kernel sources for gpl kernel symbols  related code or documentation
+---
+
 Update GPL headers

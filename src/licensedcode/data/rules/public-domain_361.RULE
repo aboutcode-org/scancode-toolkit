@@ -1,3 +1,25 @@
+---
+license_expression: public-domain
+is_license_notice: yes
+ignorable_copyrights:
+    - copyright 1992 by Eric Haines, erich@eye.com
+ignorable_holders:
+    - Eric Haines
+ignorable_authors:
+    - Craig Milo Rogers, Rogers@ISI.Edu
+    - Rob McCool
+ignorable_emails:
+    - Rogers@ISI.Edu
+    - cloos@jhcloos.com
+    - erich@eye.com
+    - jsbell@acs.ucalgary.ca
+    - kevinh@pulua.hcc.hawaii.edu
+    - mark@ukweb.com
+    - nate@tripod.com
+    - randy@zyzzyva.com
+    - robm@ncsa.uiuc.edu
+---
+
  This imagemap module started as a port of the original imagemap.c
  written by Rob McCool (11/13/93 robm@ncsa.uiuc.edu).
  This version includes the mapping algorithms found in version 1.3
@@ -31,5 +53,3 @@
  Map format and menu concept courtesy Joshua Bell, jsbell@acs.ucalgary.ca.
  .
  Mark Cox, mark@ukweb.com, Allow relative URLs even when no base specified
-
-

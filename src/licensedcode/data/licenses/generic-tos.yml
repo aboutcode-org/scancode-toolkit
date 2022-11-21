@@ -1,9 +1,0 @@
-key: generic-tos
-short_name: Generic ToS
-name: Generic Terms of Service
-category: Unstated License
-owner: Unspecified
-is_generic: yes
-spdx_license_key: LicenseRef-scancode-generic-tos
-notes: This is a generic license for Terms of Service such as privacy terms and and other
-    ToS-like agreements found in software that are not directly licenses.

@@ -1,0 +1,13 @@
+---
+license_expression: apache-2.0 AND (lgpl-3.0 OR gpl-3.0)
+is_license_notice: yes
+ignorable_urls:
+    - http://www.apache.org/licenses/LICENSE-2.0
+---
+
+libraries are under the Apache License 2.0
+(see @url{http://www.apache.org/licenses/LICENSE-2.0} for details), which is
+incompatible to the LGPL version 2.1 and GPL version 2. You have to
+upgrade FFmpeg's license to LGPL version 3 (or if you have enabled
+GPL components, GPL version 3) by passing @code{--enable-version3} to configure in
+order to use it.

@@ -1,3 +1,10 @@
+---
+license_expression: gpl-2.0-plus
+is_license_notice: yes
+referenced_filenames:
+    - LICENSE.txt
+---
+
 For the full software distribution and modifications made under the GNU General
 Public License version 2:
 

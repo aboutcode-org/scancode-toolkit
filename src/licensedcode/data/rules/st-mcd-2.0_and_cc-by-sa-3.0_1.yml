@@ -1,6 +1,0 @@
-license_expression: st-mcd-2.0 AND cc-by-sa-3.0
-is_license_notice: yes
-notes: see https://github.com/baoshi/HX8352C-GPIO-emWin/blob/c10276cce3ce9317cc2e034a3239a4d388aaf207/inc/LCDConf.h#L20
-ignorable_urls:
-    - http://creativecommons.org/licenses/by-sa/3.0
-    - http://www.st.com/software_license_agreement_liberty_v2

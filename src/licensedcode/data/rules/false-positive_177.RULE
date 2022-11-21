@@ -1,3 +1,8 @@
+---
+is_false_positive: yes
+notes: comments about licensing
+---
+
 One implication of this ownership structure is that any attempt to change
 the licensing of the kernel is doomed to almost certain failure.  There are
 few practical scenarios where the agreement of all copyright holders could

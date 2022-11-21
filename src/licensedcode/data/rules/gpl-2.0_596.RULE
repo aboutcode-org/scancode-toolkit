@@ -1,3 +1,10 @@
+---
+license_expression: gpl-2.0
+is_license_notice: yes
+referenced_filenames:
+    - COPYING
+---
+
  This software is licensed under the GNU General License Version 2,
  June 1991 as shown in the file COPYING in the top-level directory of this
  source tree.

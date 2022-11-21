@@ -1,3 +1,13 @@
+---
+license_expression: lgpl-2.0-plus WITH libtool-exception-2.0
+is_license_notice: yes
+relevance: 99
+referenced_filenames:
+    - COPYING.LIB
+ignorable_urls:
+    - http://www.gnu.org/licenses/lgpl.html
+---
+
 uses this LGPLv2 (or later) license:
 
 GNU Libltdl is free software; you can redistribute it and/or 

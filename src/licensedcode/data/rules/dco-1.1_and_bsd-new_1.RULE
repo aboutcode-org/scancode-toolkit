@@ -1,3 +1,9 @@
+---
+license_expression: dco-1.1 AND bsd-new
+is_license_notice: yes
+relevance: 100
+---
+
 the project used an extended version of the DCO
 that included the identical items (a) through (d) from DCO 1.1 and an
 additional item (e):

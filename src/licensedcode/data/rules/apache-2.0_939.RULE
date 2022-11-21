@@ -1,3 +1,13 @@
+---
+license_expression: apache-2.0
+is_license_notice: yes
+relevance: 99
+minimum_coverage: 85
+notes: Seen in https://github.com/SparkPost/gosparkpost/blob/5b781faf9f19ed7dbcb7f604c83dec1d0bb9087b/LICENSE
+ignorable_urls:
+    - http://www.apache.org/licenses/LICENSE-2.0.html
+---
+
 Licensed under the Apache License, Version 2.0 (the "License").
 You may not use this software except in compliance with the License.
 

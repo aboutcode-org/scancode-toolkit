@@ -13,8 +13,6 @@ import sys
 from collections import namedtuple
 from pathlib import Path
 
-from license_expression import Licensing
-
 from packagedcode import models
 from packagedcode import nevra
 from packagedcode.pyrpm import RPM
@@ -141,11 +139,6 @@ class BaseRpmInstalledDatabaseHandler(models.DatafileHandler):
         return package_data
 
     @classmethod
-    def compute_normalized_license(cls, package):
-        _declared, detected = detect_declared_license(package.declared_license)
-        return detected
-
-    @classmethod
     def assemble(cls, package_data, resource, codebase, package_adder):
         # get the root resource of the rootfs
         # take the 1st pattern as a reference
@@ -184,10 +177,6 @@ class BaseRpmInstalledDatabaseHandler(models.DatafileHandler):
 
         package.namespace = namespace
 
-        # detect license
-        _declared, detected = detect_declared_license(package.declared_license)
-        package.license_expression = detected
-
         # tag files from refs
         resources = []
         missing_file_references = []
@@ -201,7 +190,6 @@ class BaseRpmInstalledDatabaseHandler(models.DatafileHandler):
                 if package_uid:
                     # path is found and processed: remove it, so we can check if we
                     # found all of them
-                    package_adder(package_uid, res, codebase)
                     resources.append(res)
 
         # if we have left over file references, add these to extra data
@@ -224,7 +212,9 @@ class BaseRpmInstalledDatabaseHandler(models.DatafileHandler):
                     dep.namespace = namespace
                 yield dep
 
-        yield from resources
+        for resource in resources:
+            package_adder(package_uid, resource, codebase)
+            yield resource
 
 
 # TODO: add dependencies!!!
@@ -281,11 +271,6 @@ class RpmArchiveHandler(models.DatafileHandler):
     default_package_namespace = 'TBD'
     description = 'RPM package archive'
     documentation_url = 'https://en.wikipedia.org/wiki/RPM_Package_Manager'
-
-    @classmethod
-    def compute_normalized_license(cls, package):
-        _declared, detected = detect_declared_license(package.declared_license)
-        return detected
 
     @classmethod
     def parse(cls, location):
@@ -360,7 +345,7 @@ class RpmArchiveHandler(models.DatafileHandler):
                 description=description or None,
                 homepage_url=rpm_tags.url or None,
                 parties=parties,
-                declared_license=rpm_tags.license or None,
+                extracted_license_statement=rpm_tags.license or None,
                 source_packages=source_packages,
             )
             logger_debug('recognize: data to create a package:\n', data)
@@ -374,7 +359,7 @@ class RpmArchiveHandler(models.DatafileHandler):
             description=description or None,
             homepage_url=rpm_tags.url or None,
             parties=parties,
-            declared_license=rpm_tags.license or None,
+            extracted_license_statement=rpm_tags.license or None,
             source_packages=source_packages,
         )
 
@@ -382,82 +367,6 @@ class RpmArchiveHandler(models.DatafileHandler):
             logger_debug('recognize: created package:\n', package)
 
         yield package
-
-############################################################################
-# FIXME: this license detection code is mostly copied from debian_copyright.py and alpine.py
-# See https://github.com/rpminspect/rpminspect-data-fedora/blob/master/licenses/fedora.json for some mapping
-############################################################################
-
-
-def detect_declared_license(declared):
-    """
-    Return a tuple of (declared license, detected license expression) from a
-    declared license. Both can be None.
-    """
-    declared = normalize_and_cleanup_declared_license(declared)
-    if not declared:
-        return None, None
-
-    # apply multiple license detection in sequence
-    detected = detect_using_name_mapping(declared)
-    if detected:
-        return declared, detected
-
-    # cases of using a comma are for an AND
-    normalized_declared = declared.replace(',', ' and ')
-    detected = models.compute_normalized_license(normalized_declared)
-    return declared, detected
-
-
-def normalize_and_cleanup_declared_license(declared):
-    """
-    Return a cleaned and normalized declared license.
-    """
-    if declared:
-        # normalize spaces
-        declared = ' '.join(declared.split())
-        return declared
-
-
-def detect_using_name_mapping(declared, licensing=Licensing()):
-    """
-    Return a license expression detected from a `declared` license string.
-    """
-    # TODO: use RPM symbology
-    declared = declared.lower()
-    detected = get_declared_to_detected().get(declared)
-    if detected:
-        return str(licensing.parse(detected, simple=True))
-
-
-_DECLARED_TO_DETECTED = None
-
-
-def get_declared_to_detected(data_file=None):
-    """
-    Return a mapping of declared to detected license expression cached and
-    loaded from a tab-separated text file, all lowercase, normalized for spaces.
-
-    This data file is from license keys used in RPMs files and should be
-    derived from a large collection of RPMs files.
-    """
-    global _DECLARED_TO_DETECTED
-    if _DECLARED_TO_DETECTED is not None:
-        return _DECLARED_TO_DETECTED
-
-    _DECLARED_TO_DETECTED = {}
-    if not data_file:
-        data_file = os.path.join(os.path.dirname(__file__), 'rpm_licenses.txt')
-    with open(data_file) as df:
-        for line in df:
-            line = line.strip()
-            if not line or line.startswith('#'):
-                continue
-            decl, _, detect = line.partition('\t')
-            if detect and detect.strip():
-                decl = decl.strip()
-                _DECLARED_TO_DETECTED[decl] = detect
-    return _DECLARED_TO_DETECTED
 
 
 ALGO_BY_ID = {

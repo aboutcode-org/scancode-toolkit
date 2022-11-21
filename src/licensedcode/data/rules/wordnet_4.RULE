@@ -1,3 +1,14 @@
+---
+license_expression: wordnet
+is_license_text: yes
+relevance: 100
+notes: Seen in https://altushost-swe.dl.sourceforge.net/project/wordlist/speller/2020.12.07/hunspell-en_US-2020.12.07.zip
+ignorable_copyrights:
+    - Copyright 1997 by Princeton University
+ignorable_holders:
+    - Princeton University
+---
+
 This software and database is being provided to you, the LICENSEE,
   by Princeton University under the following license.  By obtaining,
   using and/or copying this software and database, you agree that you

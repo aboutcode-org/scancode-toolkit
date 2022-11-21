@@ -1,0 +1,9 @@
+---
+license_expression: proprietary-license
+is_license_notice: yes
+relevance: 100
+referenced_filenames:
+    - DESIGN_LICENSE.txt
+---
+
+MIT with restriction to distribute](DESIGN_LICENSE.txt) license.

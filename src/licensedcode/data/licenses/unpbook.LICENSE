@@ -1,3 +1,13 @@
+---
+key: unpbook
+short_name: UNIX Network Programming Book License
+name: UNIX Network Programming Book License
+category: Permissive
+owner: UNIX Network Programming Book Authors
+homepage_url: http://www.unixnetworkprogramming.com/src.html
+spdx_license_key: LicenseRef-scancode-unpbook
+---
+
 Permission to use or modify this software for educational or
 for commercial purposes, and without fee, is hereby granted,
 provided that the above copyright notice appears in connection

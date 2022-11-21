@@ -1,3 +1,8 @@
+---
+license_expression: gpl-2.0-plus WITH autoconf-simple-exception-2.0
+is_license_notice: yes
+---
+
 GPL-2+ with Autoconf exception
  As a special exception to the GNU General Public License, if you
  distribute this file as part of a program that contains a

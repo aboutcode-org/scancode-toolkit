@@ -1,1 +1,9 @@
+---
+license_expression: gpl-3.0
+is_license_reference: yes
+relevance: 100
+referenced_filenames:
+    - COPYING.GPLv3
+---
+
 COPYING.GPLv3: GNU General Public License version 3

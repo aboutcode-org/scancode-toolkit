@@ -1,3 +1,12 @@
+---
+license_expression: gfdl-1.1-plus
+is_license_notice: yes
+relevance: 100
+minimum_coverage: 90
+referenced_filenames:
+    - COPYING.DOC
+---
+
 This document is released under the terms of the @acronym{GNU} Free
 Documentation License as published by the Free Software Foundation;
 either version 1.1, or (at your option) any later version.

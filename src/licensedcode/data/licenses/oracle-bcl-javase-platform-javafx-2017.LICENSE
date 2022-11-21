@@ -1,3 +1,26 @@
+---
+key: oracle-bcl-javase-platform-javafx-2017
+short_name: Oracle BCL for Java SE and JavaFX 2017 Restricted
+name: Oracle BCL for Java SE Platform Products and JavaFX 2017 Restricted
+category: Proprietary Free
+owner: Oracle Corporation
+homepage_url: http://www.oracle.com/technetwork/java/javase/terms/license/index.html
+spdx_license_key: LicenseRef-scancode-oracle-bcl-java-platform-2017
+other_spdx_license_keys:
+    - LicenseRef-scancode-oracle-bcl-javase-platform-javafx-2017
+faq_url: https://www.oracle.com/technetwork/java/javase/documentation/index.html
+other_urls:
+    - https://www.oracle.com/technetwork/java/javase/terms/products/index.html
+ignorable_copyrights:
+    - Copyright YEAR Oracle America, Inc.
+ignorable_holders:
+    - Oracle America, Inc.
+ignorable_urls:
+    - http://www.oracle.com/technetwork/java/javase/documentation/index.html
+    - http://www.oracle.com/us/legal/third-party-trademarks/index.html
+    - http://www.oracle.com/us/products/export
+---
+
 Oracle Binary Code License Agreement for the Java SE Platform Products and JavaFX
 
 ORACLE AMERICA, INC. ("ORACLE"), FOR AND ON BEHALF OF ITSELF AND ITS SUBSIDIARIES AND AFFILIATES UNDER COMMON CONTROL, IS WILLING TO LICENSE THE SOFTWARE TO YOU ONLY UPON THE CONDITION THAT YOU ACCEPT ALL OF THE TERMS CONTAINED IN THIS BINARY CODE LICENSE AGREEMENT AND SUPPLEMENTAL LICENSE TERMS (COLLECTIVELY "AGREEMENT"). PLEASE READ THE AGREEMENT CAREFULLY. BY SELECTING THE "ACCEPT LICENSE AGREEMENT" (OR THE EQUIVALENT) BUTTON AND/OR BY USING THE SOFTWARE YOU ACKNOWLEDGE THAT YOU HAVE READ THE TERMS AND AGREE TO THEM. IF YOU ARE AGREEING TO THESE TERMS ON BEHALF OF A COMPANY OR OTHER LEGAL ENTITY, YOU REPRESENT THAT YOU HAVE THE LEGAL AUTHORITY TO BIND THE LEGAL ENTITY TO THESE TERMS. IF YOU DO NOT HAVE SUCH AUTHORITY, OR IF YOU DO NOT WISH TO BE BOUND BY THE TERMS, THEN SELECT THE "DECLINE LICENSE AGREEMENT" (OR THE EQUIVALENT) BUTTON AND YOU MUST NOT USE THE SOFTWARE ON THIS SITE OR ANY OTHER MEDIA ON WHICH THE SOFTWARE IS CONTAINED.

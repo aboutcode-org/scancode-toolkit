@@ -1,0 +1,97 @@
+{
+  "files": [
+    {
+      "path": "README.md",
+      "type": "file",
+      "detected_license_expression": "epl-2.0",
+      "detected_license_expression_spdx": "EPL-2.0",
+      "license_detections": [
+        {
+          "license_expression": "epl-2.0",
+          "detection_log": [
+            "not-combined"
+          ],
+          "matches": [
+            {
+              "score": 100.0,
+              "start_line": 4,
+              "end_line": 6,
+              "matched_length": 31,
+              "match_coverage": 100.0,
+              "matcher": "2-aho",
+              "license_expression": "epl-2.0",
+              "rule_identifier": "epl-2.0_56.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/epl-2.0_56.RULE",
+              "referenced_filenames": [],
+              "is_license_text": false,
+              "is_license_notice": true,
+              "is_license_reference": false,
+              "is_license_tag": false,
+              "is_license_intro": false,
+              "rule_length": 31,
+              "rule_relevance": 100,
+              "matched_text": "This program and the accompanying materials are made\n * available under the terms of the Eclipse Public License 2.0\n * which is available at https://www.eclipse.org/legal/epl-2.0/",
+              "licenses": [
+                {
+                  "key": "epl-2.0",
+                  "name": "Eclipse Public License 2.0",
+                  "short_name": "EPL 2.0",
+                  "category": "Copyleft Limited",
+                  "is_exception": false,
+                  "is_unknown": false,
+                  "owner": "Eclipse Foundation",
+                  "homepage_url": "https://www.eclipse.org/legal/epl-2.0/",
+                  "text_url": "https://www.eclipse.org/org/documents/epl-2.0/EPL-2.0.txt",
+                  "reference_url": "https://scancode-licensedb.aboutcode.org/epl-2.0",
+                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/epl-2.0.LICENSE",
+                  "spdx_license_key": "EPL-2.0",
+                  "spdx_url": "https://spdx.org/licenses/EPL-2.0"
+                }
+              ]
+            },
+            {
+              "score": 100.0,
+              "start_line": 8,
+              "end_line": 8,
+              "matched_length": 6,
+              "match_coverage": 100.0,
+              "matcher": "1-spdx-id",
+              "license_expression": "epl-2.0",
+              "rule_identifier": "spdx-license-identifier: epl-2.0",
+              "rule_url": null,
+              "referenced_filenames": [],
+              "is_license_text": false,
+              "is_license_notice": false,
+              "is_license_reference": false,
+              "is_license_tag": true,
+              "is_license_intro": false,
+              "rule_length": 6,
+              "rule_relevance": 100,
+              "matched_text": "SPDX-License-Identifier: EPL-2.0",
+              "licenses": [
+                {
+                  "key": "epl-2.0",
+                  "name": "Eclipse Public License 2.0",
+                  "short_name": "EPL 2.0",
+                  "category": "Copyleft Limited",
+                  "is_exception": false,
+                  "is_unknown": false,
+                  "owner": "Eclipse Foundation",
+                  "homepage_url": "https://www.eclipse.org/legal/epl-2.0/",
+                  "text_url": "https://www.eclipse.org/org/documents/epl-2.0/EPL-2.0.txt",
+                  "reference_url": "https://scancode-licensedb.aboutcode.org/epl-2.0",
+                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/epl-2.0.LICENSE",
+                  "spdx_license_key": "EPL-2.0",
+                  "spdx_url": "https://spdx.org/licenses/EPL-2.0"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "license_clues": [],
+      "percentage_of_license_text": 86.05,
+      "scan_errors": []
+    }
+  ]
+}

@@ -1,3 +1,10 @@
+---
+license_expression: bsd-simplified OR gpl-2.0
+is_license_notice: yes
+relevance: 99
+minimum_coverage: 85
+---
+
 Redistribution and use in source and binary forms, with or without
 modification, are permitted provided that the following conditions
 are met:
@@ -26,4 +33,4 @@ OF SUCH DAMAGE.
 
 The views and conclusions contained in the software and documentation
 are those of the authors and should not be interpreted as representing
-official policies, either expressed or implied, of 
+official policies, either expressed or implied, of

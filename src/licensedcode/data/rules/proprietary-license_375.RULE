@@ -1,3 +1,14 @@
+---
+license_expression: proprietary-license
+is_license_notice: yes
+relevance: 100
+notes: see https://www.opus-codec.org/license/
+ignorable_urls:
+    - https://datatracker.ietf.org/ipr/1524/
+    - https://datatracker.ietf.org/ipr/1526/
+    - https://datatracker.ietf.org/ipr/1914/
+---
+
 Opus is subject to the royalty-free patent licenses which are 
  specified at: 
  

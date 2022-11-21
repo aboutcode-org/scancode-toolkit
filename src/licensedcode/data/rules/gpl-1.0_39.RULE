@@ -1,3 +1,13 @@
+---
+license_expression: gpl-1.0
+is_license_text: yes
+relevance: 100
+ignorable_copyrights:
+    - Copyright (c) 1989 Free Software Foundation, Inc.
+ignorable_holders:
+    - Free Software Foundation, Inc.
+---
+
 GNU GENERAL PUBLIC LICENSE
 
              Version 1, February 1989

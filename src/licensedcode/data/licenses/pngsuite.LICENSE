@@ -1,2 +1,11 @@
+---
+key: pngsuite
+short_name: PngSuite License
+name: PngSuite License
+category: Permissive
+owner: Unspecified
+spdx_license_key: LicenseRef-scancode-pngsuite
+---
+
 Permission to use, copy, modify and distribute these images for any
 purpose and without fee is hereby granted.

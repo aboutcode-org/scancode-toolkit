@@ -1,3 +1,12 @@
+---
+license_expression: gpl-2.0 OR apache-2.0
+is_license_notice: yes
+referenced_filenames:
+    - COPYING
+    - LICENSE.Apache
+notes: seen in RocksDB
+---
+
 #  This source code is licensed under both the Apache 2.0 license (found in the
 #  LICENSE file in the root directory of this source tree) and the GPLv2 (found
 #  in the COPYING file in the root directory of this source tree).

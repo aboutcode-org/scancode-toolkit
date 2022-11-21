@@ -1,3 +1,19 @@
+---
+key: ms-asp-net-ajax-supplemental-terms
+short_name: MS Supplemental License - ASP.NET 2.0 AJAX EXT
+name: Microsoft Software Supplemental License - ASP.NET 2.0 AJAX EXTENSIONS
+category: Proprietary Free
+owner: Microsoft
+spdx_license_key: LicenseRef-scancode-ms-asp-net-ajax-supp-terms
+other_spdx_license_keys:
+    - LicenseRef-scancode-ms-asp-net-ajax-supplemental-terms
+faq_url: http://go.microsoft.com/fwlink/?LinkID=66406&clcid=0x409
+other_urls:
+    - www.support.microsoft.com/common/international.aspx
+ignorable_urls:
+    - http://www.support.microsoft.com/common/international.aspx
+---
+
 MICROSOFT SOFTWARE SUPPLEMENT LICENSE TERMS
 MICROSOFT ASP.NET 2.0 AJAX EXTENSIONS
 Microsoft Corporation (or based on where you live, one of its affiliates) licenses this supplement to you.  If you are licensed to use Microsoft Windows operating system software (the "software"), you may use this supplement.  You may not use it if you do not have a license for the software.  You may use a copy of this supplement with each validly licensed copy of the software.

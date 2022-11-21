@@ -1,1 +1,9 @@
+---
+license_expression: free-unknown
+is_license_notice: yes
+relevance: 90
+ignorable_urls:
+    - http://www.opensource.org/
+---
+
     The distribution is licensed under a license that is not approved by www.opensource.org but that allows distribution without restrictions.

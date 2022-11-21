@@ -1,3 +1,14 @@
+---
+license_expression: gpl-2.0-plus OR php-3.0
+is_license_notice: yes
+relevance: 100
+minimum_coverage: 60
+referenced_filenames:
+    - LICENSE
+ignorable_emails:
+    - core@php.net
+---
+
 This program is free software; you can redistribute it and/or modify 
 it under the terms of one of the following licenses:                 
                                                                      
@@ -15,4 +26,4 @@ GNU General Public License for more details.
                                                                      
 You should have received a copy of both licenses referred to here.   
 If you did not, or have any questions about PHP licensing, please    
-contact core@php.net.                                                
+contact core@php.net.

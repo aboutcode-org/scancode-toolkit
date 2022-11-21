@@ -1,3 +1,10 @@
+---
+license_expression: other-permissive
+is_license_text: yes
+relevance: 100
+notes: Seen in https://altushost-swe.dl.sourceforge.net/project/wordlist/speller/2020.12.07/hunspell-en_US-2020.12.07.zip
+---
+
 The ENABLE master word list, WORD.LST, is herewith formally released
   into the Public Domain. Anyone is free to use it or distribute it in
   any manner they see fit. No fee or registration is required for its

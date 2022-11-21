@@ -1,2 +1,10 @@
+---
+license_expression: unknown-license-reference
+is_license_reference: yes
+relevance: 100
+referenced_filenames:
+    - LICENSE
+---
+
    Please read the different LICENSE files present in the root directory of
    this distribution.

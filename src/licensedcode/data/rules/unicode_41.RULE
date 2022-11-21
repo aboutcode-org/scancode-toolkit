@@ -1,3 +1,14 @@
+---
+license_expression: unicode
+is_license_notice: yes
+relevance: 100
+ignorable_urls:
+    - http://www.unicode.org/Public
+    - http://www.unicode.org/cldr/data
+    - http://www.unicode.org/cldr/data/
+    - http://www.unicode.org/reports
+---
+
 UNICODE, INC. LICENSE AGREEMENT - DATA FILES AND SOFTWARE
 
 Unicode Data Files include all data files under the directories

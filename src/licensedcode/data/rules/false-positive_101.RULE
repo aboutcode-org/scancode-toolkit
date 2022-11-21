@@ -1,3 +1,8 @@
+---
+is_false_positive: yes
+notes: this is the email of the PCRE author and is also part of its license
+---
+
 Written by:  Philip Hazel
 ph10 cam.ac.uk
 University of Cambridge Computing Service

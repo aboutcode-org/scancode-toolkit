@@ -1,1 +1,12 @@
+---
+license_expression: mit
+is_license_notice: yes
+relevance: 100
+minimum_coverage: 90
+referenced_filenames:
+    - LICENSE
+ignorable_urls:
+    - https://angular.io/license
+---
+
 Use of this source code is governed by an MIT-style license that can be  * found in the LICENSE file at https://angular.io/license

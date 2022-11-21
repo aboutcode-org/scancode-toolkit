@@ -1,3 +1,13 @@
+---
+key: x11-lucent
+short_name: X11-Style (Lucent)
+name: X11-Style (Lucent)
+category: Permissive
+owner: Alcatel-Lucent
+spdx_license_key: LicenseRef-scancode-x11-lucent
+minimum_coverage: 80
+---
+
 Permission to use, copy, modify, and distribute this software for any
 purpose without fee is hereby granted, provided that this entire notice
 is included in all copies of any software which is or includes a copy

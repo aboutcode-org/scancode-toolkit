@@ -1,3 +1,10 @@
+---
+license_expression: uoi-ncsa OR mit
+is_license_notice: yes
+referenced_filenames:
+    - LICENSE.TXT
+---
+
  The source code is disjunctively dual licensed
  (NCSA OR MIT). It is used by this project under the terms of the NCSA
  license (also known as the University of Illinois/NCSA Open Source License),

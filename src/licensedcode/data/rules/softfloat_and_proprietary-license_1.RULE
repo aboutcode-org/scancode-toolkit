@@ -1,3 +1,10 @@
+---
+license_expression: softfloat AND proprietary-license
+is_license_text: yes
+ignorable_authors:
+    - me, John R. Hauser
+---
+
 Use of any of this software is governed by the terms of the license below:
 
 SoftFloat was written by me, John R. Hauser. This work was made possible in 
@@ -20,4 +27,4 @@ SOFTWARE.
 
 Derivative works are acceptable, even for commercial purposes, provided 
 that the minimal documentation requirements stated in the source code are 
-satisfied. 
+satisfied.

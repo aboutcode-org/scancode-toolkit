@@ -1,3 +1,12 @@
+---
+key: red-hat-trademarks
+short_name: Red Hat Trademarks License
+name: Red Hat Trademarks License
+category: Proprietary Free
+owner: Red Hat
+spdx_license_key: LicenseRef-scancode-red-hat-trademarks
+---
+
 Red Hat®, Red Hat Enterprise Linux, and the Shadowman logo, either
 separately or in combination, are hereinafter referred to as "Red Hat
 Trademarks" and are trademarks of Red Hat, Inc., registered in the

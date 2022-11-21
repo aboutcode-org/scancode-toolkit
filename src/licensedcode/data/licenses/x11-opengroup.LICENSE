@@ -1,3 +1,23 @@
+---
+key: x11-opengroup
+short_name: X11-Style (Open Group)
+name: X11-Style (Open Group)
+category: Permissive
+owner: Open Group
+homepage_url: http://www.xfree86.org/current/LICENSE5.html
+spdx_license_key: MIT-open-group
+other_spdx_license_keys:
+    - LicenseRef-scancode-x11-opengroup
+text_urls:
+    - http://www.xfree86.org/current/LICENSE5.html
+other_urls:
+    - https://gitlab.freedesktop.org/xorg/app/iceauth/-/blob/master/COPYING
+    - https://gitlab.freedesktop.org/xorg/app/xvinfo/-/blob/master/COPYING
+    - https://gitlab.freedesktop.org/xorg/app/xsetroot/-/blob/master/COPYING
+    - https://gitlab.freedesktop.org/xorg/app/xauth/-/blob/master/COPYING
+minimum_coverage: 80
+---
+
 Permission to use, copy, modify, distribute, and sell this software and
 its documentation for any purpose is hereby granted without fee,
 provided that the above copyright notice appear in all copies and that

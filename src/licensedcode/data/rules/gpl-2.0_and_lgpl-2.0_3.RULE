@@ -1,3 +1,11 @@
+---
+license_expression: gpl-2.0 AND lgpl-2.0
+is_license_notice: yes
+relevance: 95
+minimum_coverage: 90
+notes: we have conflicting lesser and v2 LGPL references
+---
+
 This product contains certain code packages that are licensed pursuant
 to the terms of the GNU General Public License ("GPL") and/or the GNU
 Lesser General Public License ("LGPL"). The software packages that are

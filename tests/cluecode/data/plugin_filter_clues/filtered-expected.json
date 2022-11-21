@@ -19,49 +19,55 @@
       "is_media": false,
       "is_source": false,
       "is_script": false,
-      "licenses": [
+      "detected_license_expression": "apache-1.1",
+      "detected_license_expression_spdx": "Apache-1.1",
+      "license_detections": [
         {
-          "key": "apache-1.1",
-          "score": 96.07,
-          "name": "Apache License 1.1",
-          "short_name": "Apache 1.1",
-          "category": "Permissive",
-          "is_exception": false,
-          "is_unknown": false,
-          "owner": "Apache Software Foundation",
-          "homepage_url": "http://www.apache.org/licenses/",
-          "text_url": "http://apache.org/licenses/LICENSE-1.1",
-          "reference_url": "https://scancode-licensedb.aboutcode.org/apache-1.1",
-          "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-1.1.LICENSE",
-          "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-1.1.yml",
-          "spdx_license_key": "Apache-1.1",
-          "spdx_url": "https://spdx.org/licenses/Apache-1.1",
-          "start_line": 7,
-          "end_line": 70,
-          "matched_rule": {
-            "identifier": "apache-1.1_63.RULE",
-            "license_expression": "apache-1.1",
-            "licenses": [
-              "apache-1.1"
-            ],
-            "referenced_filenames": [],
-            "is_license_text": true,
-            "is_license_notice": false,
-            "is_license_reference": false,
-            "is_license_tag": false,
-            "is_license_intro": false,
-            "has_unknown": false,
-            "matcher": "3-seq",
-            "rule_length": 367,
-            "matched_length": 367,
-            "match_coverage": 100.0,
-            "rule_relevance": 100
-          }
+          "license_expression": "apache-1.1",
+          "detection_log": [
+            "not-combined"
+          ],
+          "matches": [
+            {
+              "score": 96.07,
+              "start_line": 7,
+              "end_line": 70,
+              "matched_length": 367,
+              "match_coverage": 100.0,
+              "matcher": "3-seq",
+              "license_expression": "apache-1.1",
+              "rule_identifier": "apache-1.1_63.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-1.1_63.RULE",
+              "referenced_filenames": [],
+              "is_license_text": true,
+              "is_license_notice": false,
+              "is_license_reference": false,
+              "is_license_tag": false,
+              "is_license_intro": false,
+              "rule_length": 367,
+              "rule_relevance": 100,
+              "licenses": [
+                {
+                  "key": "apache-1.1",
+                  "name": "Apache License 1.1",
+                  "short_name": "Apache 1.1",
+                  "category": "Permissive",
+                  "is_exception": false,
+                  "is_unknown": false,
+                  "owner": "Apache Software Foundation",
+                  "homepage_url": "http://www.apache.org/licenses/",
+                  "text_url": "http://apache.org/licenses/LICENSE-1.1",
+                  "reference_url": "https://scancode-licensedb.aboutcode.org/apache-1.1",
+                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-1.1.LICENSE",
+                  "spdx_license_key": "Apache-1.1",
+                  "spdx_url": "https://spdx.org/licenses/Apache-1.1"
+                }
+              ]
+            }
+          ]
         }
       ],
-      "license_expressions": [
-        "apache-1.1"
-      ],
+      "license_clues": [],
       "percentage_of_license_text": 92.44,
       "copyrights": [
         {
@@ -70,9 +76,19 @@
           "end_line": 3
         },
         {
+          "copyright": "Copyright (c) The Apache Software Foundation",
+          "start_line": 14,
+          "end_line": 14
+        },
+        {
           "copyright": "Copyright (c) The Eclipse Foundation https://eclipse.org",
           "start_line": 41,
           "end_line": 42
+        },
+        {
+          "copyright": "copyright (c) 1999, International Business Machines, Inc., http://www.ibm.com",
+          "start_line": 67,
+          "end_line": 68
         }
       ],
       "holders": [
@@ -82,9 +98,19 @@
           "end_line": 2
         },
         {
+          "holder": "The Apache Software Foundation",
+          "start_line": 14,
+          "end_line": 14
+        },
+        {
           "holder": "The Eclipse Foundation",
           "start_line": 41,
           "end_line": 41
+        },
+        {
+          "holder": "International Business Machines, Inc.",
+          "start_line": 67,
+          "end_line": 68
         }
       ],
       "authors": [
@@ -92,6 +118,11 @@
           "author": "John Doe",
           "start_line": 5,
           "end_line": 5
+        },
+        {
+          "author": "the Apache Software Foundation (http://www.apache.org/)",
+          "start_line": 31,
+          "end_line": 32
         },
         {
           "author": "John Doe",
@@ -104,6 +135,11 @@
           "email": "foo@eclipse.org",
           "start_line": 4,
           "end_line": 4
+        },
+        {
+          "email": "apache@apache.org",
+          "start_line": 39,
+          "end_line": 39
         }
       ],
       "urls": [],

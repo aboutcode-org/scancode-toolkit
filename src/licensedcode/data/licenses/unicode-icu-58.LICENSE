@@ -1,3 +1,54 @@
+---
+key: unicode-icu-58
+short_name: ICU License 58 and later
+name: ICU License 58 and later
+category: Permissive
+owner: Unicode Consortium
+homepage_url: https://www.open-xchange.com/fileadmin/user_upload/images/portfolio/license/ICU_License.pdf
+notes: composite
+spdx_license_key: LicenseRef-scancode-unicode-icu-58
+minimum_coverage: 80
+ignorable_copyrights:
+    - (c) 1999 TaBE Project
+    - Copyright (c) 1991-2016 Unicode, Inc.
+    - Copyright (c) 1995-2016 International Business Machines Corporation and others
+    - Copyright (c) 1999 Computer Systems and Communication Lab, Institute of Information Science,
+        Academia Sinica
+    - Copyright (c) 1999 Pai-Hsiang Hsiao
+    - Copyright (c) 2006-2008, Google Inc.
+    - Copyright (c) 2013 Brian Eugene Wilson, Robert Martin Campbell
+    - Copyright (c) 2013 International Business Machines Corporation and others
+    - Copyright (c) 2013, LeRoy Benjamin Sharon
+    - Copyright (c) 2014 International Business Machines Corporation and others
+    - Copyright 1996 Chih-Hao Tsai Beckman Institute, University of Illinois c-tsai4@uiuc.edu
+        http://casper.beckman.uiuc.edu/~c-tsai4
+    - Copyright 2000, 2001, 2002, 2003 Nara Institute of Science and Technology
+    - Copyright 2006-2011, the V8 project authors
+ignorable_holders:
+    - Brian Eugene Wilson, Robert Martin Campbell
+    - Chih-Hao Tsai Beckman Institute, University of Illinois
+    - Computer Systems and Communication Lab, Institute of Information Science, Academia Sinica
+    - Google Inc.
+    - International Business Machines Corporation and others
+    - LeRoy Benjamin Sharon
+    - Nara Institute of Science and Technology
+    - Pai-Hsiang Hsiao
+    - TaBE Project
+    - Unicode, Inc.
+    - the V8 project authors
+ignorable_urls:
+    - http://casper.beckman.uiuc.edu/~c-tsai4
+    - http://chasen.aist-nara.ac.jp/chasen/distribution.html
+    - http://code.google.com/p/lao-dictionary/
+    - http://lao-dictionary.googlecode.com/git/Lao-Dictionary-LICENSE.txt
+    - http://lao-dictionary.googlecode.com/git/Lao-Dictionary.txt
+    - http://opensource.org/licenses/bsd-license.php
+    - http://www.unicode.org/copyright.html
+    - https://sourceforge.net/project/?group_id=1519
+ignorable_emails:
+    - c-tsai4@uiuc.edu
+---
+
 COPYRIGHT AND PERMISSION NOTICE (ICU 58 and later)
 
 Copyright © 1991-2016 Unicode, Inc. All rights reserved.

@@ -1,0 +1,6 @@
+---
+is_false_positive: yes
+notes: code about license, not a license
+---
+
+cout << "You are licensed to use this software under the terms of" << endl

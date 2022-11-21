@@ -22,9 +22,9 @@
           "system_environment": {
             "operating_system": "linux",
             "cpu_architecture": "64",
-            "platform": "Linux-5.10.102.1-microsoft-standard-WSL2-x86_64-with-glibc2.35",
-            "platform_version": "#1 SMP Wed Mar 2 00:30:59 UTC 2022",
-            "python_version": "3.10.5 (main, Jul 30 2022, 03:32:13) [GCC 11.2.0]"
+            "platform": "Linux-5.14.0-1054-oem-x86_64-with-glibc2.29",
+            "platform_version": "#61-Ubuntu SMP Fri Oct 14 13:05:50 UTC 2022",
+            "python_version": "3.8.10 (default, Jun 22 2022, 20:18:18) \n[GCC 9.4.0]"
           },
           "spdx_license_list_version": "3.17",
           "files_count": 26
@@ -34,7 +34,7 @@
   },
   {
     "tallies": {
-      "license_expressions": [
+      "detected_license_expression": [
         {
           "value": "zlib",
           "count": 12
@@ -42,6 +42,10 @@
         {
           "value": "lgpl-2.1-plus",
           "count": 3
+        },
+        {
+          "value": null,
+          "count": 1
         },
         {
           "value": "artistic-2.0",
@@ -212,7 +216,7 @@
   },
   {
     "tallies_of_key_files": {
-      "license_expressions": [
+      "detected_license_expression": [
         {
           "value": "artistic-2.0",
           "count": 1
@@ -254,8 +258,10 @@
         "is_media": false,
         "is_source": false,
         "is_script": false,
-        "licenses": [],
-        "license_expressions": [],
+        "detected_license_expression": null,
+        "detected_license_expression_spdx": null,
+        "license_detections": [],
+        "license_clues": [],
         "percentage_of_license_text": 0,
         "copyrights": [],
         "holders": [],
@@ -293,49 +299,55 @@
         "is_media": false,
         "is_source": false,
         "is_script": false,
-        "licenses": [
+        "detected_license_expression": "cc0-1.0",
+        "detected_license_expression_spdx": "CC0-1.0",
+        "license_detections": [
           {
-            "key": "cc0-1.0",
-            "score": 99.69,
-            "name": "Creative Commons CC0 1.0 Universal",
-            "short_name": "CC0-1.0",
-            "category": "Public Domain",
-            "is_exception": false,
-            "is_unknown": false,
-            "owner": "Creative Commons",
-            "homepage_url": "http://creativecommons.org/publicdomain/zero/1.0/",
-            "text_url": "http://creativecommons.org/publicdomain/zero/1.0/legalcode",
-            "reference_url": "https://scancode-licensedb.aboutcode.org/cc0-1.0",
-            "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/cc0-1.0.LICENSE",
-            "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/cc0-1.0.yml",
-            "spdx_license_key": "CC0-1.0",
-            "spdx_url": "https://spdx.org/licenses/CC0-1.0",
-            "start_line": 1,
-            "end_line": 98,
-            "matched_rule": {
-              "identifier": "cc0-1.0_155.RULE",
-              "license_expression": "cc0-1.0",
-              "licenses": [
-                "cc0-1.0"
-              ],
-              "referenced_filenames": [],
-              "is_license_text": true,
-              "is_license_notice": false,
-              "is_license_reference": false,
-              "is_license_tag": false,
-              "is_license_intro": false,
-              "has_unknown": false,
-              "matcher": "3-seq",
-              "rule_length": 981,
-              "matched_length": 978,
-              "match_coverage": 99.69,
-              "rule_relevance": 100
-            }
+            "license_expression": "cc0-1.0",
+            "detection_log": [
+              "not-combined"
+            ],
+            "matches": [
+              {
+                "score": 99.69,
+                "start_line": 1,
+                "end_line": 98,
+                "matched_length": 978,
+                "match_coverage": 99.69,
+                "matcher": "3-seq",
+                "license_expression": "cc0-1.0",
+                "rule_identifier": "cc0-1.0_155.RULE",
+                "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/cc0-1.0_155.RULE",
+                "referenced_filenames": [],
+                "is_license_text": true,
+                "is_license_notice": false,
+                "is_license_reference": false,
+                "is_license_tag": false,
+                "is_license_intro": false,
+                "rule_length": 981,
+                "rule_relevance": 100,
+                "licenses": [
+                  {
+                    "key": "cc0-1.0",
+                    "name": "Creative Commons CC0 1.0 Universal",
+                    "short_name": "CC0-1.0",
+                    "category": "Public Domain",
+                    "is_exception": false,
+                    "is_unknown": false,
+                    "owner": "Creative Commons",
+                    "homepage_url": "http://creativecommons.org/publicdomain/zero/1.0/",
+                    "text_url": "http://creativecommons.org/publicdomain/zero/1.0/legalcode",
+                    "reference_url": "https://scancode-licensedb.aboutcode.org/cc0-1.0",
+                    "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/cc0-1.0.LICENSE",
+                    "spdx_license_key": "CC0-1.0",
+                    "spdx_url": "https://spdx.org/licenses/CC0-1.0"
+                  }
+                ]
+              }
+            ]
           }
         ],
-        "license_expressions": [
-          "cc0-1.0"
-        ],
+        "license_clues": [],
         "percentage_of_license_text": 100.0,
         "copyrights": [],
         "holders": [],
@@ -373,49 +385,55 @@
         "is_media": false,
         "is_source": false,
         "is_script": false,
-        "licenses": [
+        "detected_license_expression": "artistic-2.0",
+        "detected_license_expression_spdx": "Artistic-2.0",
+        "license_detections": [
           {
-            "key": "artistic-2.0",
-            "score": 100.0,
-            "name": "Artistic License 2.0",
-            "short_name": "Artistic 2.0",
-            "category": "Copyleft Limited",
-            "is_exception": false,
-            "is_unknown": false,
-            "owner": "Perl Foundation",
-            "homepage_url": "http://www.perlfoundation.org/",
-            "text_url": "https://www.perlfoundation.org/artistic_license_2_0",
-            "reference_url": "https://scancode-licensedb.aboutcode.org/artistic-2.0",
-            "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/artistic-2.0.LICENSE",
-            "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/artistic-2.0.yml",
-            "spdx_license_key": "Artistic-2.0",
-            "spdx_url": "https://spdx.org/licenses/Artistic-2.0",
-            "start_line": 198,
-            "end_line": 198,
-            "matched_rule": {
-              "identifier": "artistic-2.0_46.RULE",
-              "license_expression": "artistic-2.0",
-              "licenses": [
-                "artistic-2.0"
-              ],
-              "referenced_filenames": [],
-              "is_license_text": false,
-              "is_license_notice": false,
-              "is_license_reference": false,
-              "is_license_tag": true,
-              "is_license_intro": false,
-              "has_unknown": false,
-              "matcher": "2-aho",
-              "rule_length": 4,
-              "matched_length": 4,
-              "match_coverage": 100.0,
-              "rule_relevance": 100
-            }
+            "license_expression": "artistic-2.0",
+            "detection_log": [
+              "not-combined"
+            ],
+            "matches": [
+              {
+                "score": 100.0,
+                "start_line": 198,
+                "end_line": 198,
+                "matched_length": 4,
+                "match_coverage": 100.0,
+                "matcher": "2-aho",
+                "license_expression": "artistic-2.0",
+                "rule_identifier": "artistic-2.0_46.RULE",
+                "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/artistic-2.0_46.RULE",
+                "referenced_filenames": [],
+                "is_license_text": false,
+                "is_license_notice": false,
+                "is_license_reference": false,
+                "is_license_tag": true,
+                "is_license_intro": false,
+                "rule_length": 4,
+                "rule_relevance": 100,
+                "licenses": [
+                  {
+                    "key": "artistic-2.0",
+                    "name": "Artistic License 2.0",
+                    "short_name": "Artistic 2.0",
+                    "category": "Copyleft Limited",
+                    "is_exception": false,
+                    "is_unknown": false,
+                    "owner": "Perl Foundation",
+                    "homepage_url": "http://www.perlfoundation.org/",
+                    "text_url": "https://www.perlfoundation.org/artistic_license_2_0",
+                    "reference_url": "https://scancode-licensedb.aboutcode.org/artistic-2.0",
+                    "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/artistic-2.0.LICENSE",
+                    "spdx_license_key": "Artistic-2.0",
+                    "spdx_url": "https://spdx.org/licenses/Artistic-2.0"
+                  }
+                ]
+              }
+            ]
           }
         ],
-        "license_expressions": [
-          "artistic-2.0"
-        ],
+        "license_clues": [],
         "percentage_of_license_text": 0.1,
         "copyrights": [],
         "holders": [],
@@ -459,8 +477,10 @@
         "is_media": false,
         "is_source": false,
         "is_script": false,
-        "licenses": [],
-        "license_expressions": [],
+        "detected_license_expression": null,
+        "detected_license_expression_spdx": null,
+        "license_detections": [],
+        "license_clues": [],
         "percentage_of_license_text": 0,
         "copyrights": [],
         "holders": [],
@@ -498,8 +518,10 @@
         "is_media": false,
         "is_source": false,
         "is_script": false,
-        "licenses": [],
-        "license_expressions": [],
+        "detected_license_expression": null,
+        "detected_license_expression_spdx": null,
+        "license_detections": [],
+        "license_clues": [],
         "percentage_of_license_text": 0,
         "copyrights": [],
         "holders": [],
@@ -537,51 +559,93 @@
         "is_media": false,
         "is_source": true,
         "is_script": false,
-        "licenses": [
+        "detected_license_expression": "zlib",
+        "detected_license_expression_spdx": "Zlib",
+        "license_detections": [
           {
-            "key": "zlib",
-            "score": 100.0,
-            "name": "ZLIB License",
-            "short_name": "ZLIB License",
-            "category": "Permissive",
-            "is_exception": false,
-            "is_unknown": false,
-            "owner": "zlib",
-            "homepage_url": "http://www.zlib.net/",
-            "text_url": "http://www.gzip.org/zlib/zlib_license.html",
-            "reference_url": "https://scancode-licensedb.aboutcode.org/zlib",
-            "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/zlib.LICENSE",
-            "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/zlib.yml",
-            "spdx_license_key": "Zlib",
-            "spdx_url": "https://spdx.org/licenses/Zlib",
-            "start_line": 3,
-            "end_line": 3,
-            "matched_rule": {
-              "identifier": "zlib_5.RULE",
-              "license_expression": "zlib",
-              "licenses": [
-                "zlib"
-              ],
-              "referenced_filenames": [
-                "zlib.h"
-              ],
-              "is_license_text": false,
-              "is_license_notice": false,
-              "is_license_reference": true,
-              "is_license_tag": false,
-              "is_license_intro": false,
-              "has_unknown": false,
-              "matcher": "2-aho",
-              "rule_length": 12,
-              "matched_length": 12,
-              "match_coverage": 100.0,
-              "rule_relevance": 100
-            }
+            "license_expression": "zlib",
+            "detection_log": [
+              "unknown-reference-to-local-file"
+            ],
+            "matches": [
+              {
+                "score": 100.0,
+                "start_line": 3,
+                "end_line": 3,
+                "matched_length": 12,
+                "match_coverage": 100.0,
+                "matcher": "2-aho",
+                "license_expression": "zlib",
+                "rule_identifier": "zlib_5.RULE",
+                "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/zlib_5.RULE",
+                "referenced_filenames": [
+                  "zlib.h"
+                ],
+                "is_license_text": false,
+                "is_license_notice": false,
+                "is_license_reference": true,
+                "is_license_tag": false,
+                "is_license_intro": false,
+                "rule_length": 12,
+                "rule_relevance": 100,
+                "licenses": [
+                  {
+                    "key": "zlib",
+                    "name": "ZLIB License",
+                    "short_name": "ZLIB License",
+                    "category": "Permissive",
+                    "is_exception": false,
+                    "is_unknown": false,
+                    "owner": "zlib",
+                    "homepage_url": "http://www.zlib.net/",
+                    "text_url": "http://www.gzip.org/zlib/zlib_license.html",
+                    "reference_url": "https://scancode-licensedb.aboutcode.org/zlib",
+                    "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/zlib.LICENSE",
+                    "spdx_license_key": "Zlib",
+                    "spdx_url": "https://spdx.org/licenses/Zlib"
+                  }
+                ]
+              },
+              {
+                "score": 100.0,
+                "start_line": 6,
+                "end_line": 23,
+                "matched_length": 144,
+                "match_coverage": 100.0,
+                "matcher": "2-aho",
+                "license_expression": "zlib",
+                "rule_identifier": "zlib_17.RULE",
+                "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/zlib_17.RULE",
+                "referenced_filenames": [],
+                "is_license_text": true,
+                "is_license_notice": false,
+                "is_license_reference": false,
+                "is_license_tag": false,
+                "is_license_intro": false,
+                "rule_length": 144,
+                "rule_relevance": 100,
+                "licenses": [
+                  {
+                    "key": "zlib",
+                    "name": "ZLIB License",
+                    "short_name": "ZLIB License",
+                    "category": "Permissive",
+                    "is_exception": false,
+                    "is_unknown": false,
+                    "owner": "zlib",
+                    "homepage_url": "http://www.zlib.net/",
+                    "text_url": "http://www.gzip.org/zlib/zlib_license.html",
+                    "reference_url": "https://scancode-licensedb.aboutcode.org/zlib",
+                    "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/zlib.LICENSE",
+                    "spdx_license_key": "Zlib",
+                    "spdx_url": "https://spdx.org/licenses/Zlib"
+                  }
+                ]
+              }
+            ]
           }
         ],
-        "license_expressions": [
-          "zlib"
-        ],
+        "license_clues": [],
         "percentage_of_license_text": 42.86,
         "copyrights": [
           {
@@ -631,49 +695,55 @@
         "is_media": false,
         "is_source": true,
         "is_script": false,
-        "licenses": [
+        "detected_license_expression": "zlib",
+        "detected_license_expression_spdx": "Zlib",
+        "license_detections": [
           {
-            "key": "zlib",
-            "score": 100.0,
-            "name": "ZLIB License",
-            "short_name": "ZLIB License",
-            "category": "Permissive",
-            "is_exception": false,
-            "is_unknown": false,
-            "owner": "zlib",
-            "homepage_url": "http://www.zlib.net/",
-            "text_url": "http://www.gzip.org/zlib/zlib_license.html",
-            "reference_url": "https://scancode-licensedb.aboutcode.org/zlib",
-            "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/zlib.LICENSE",
-            "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/zlib.yml",
-            "spdx_license_key": "Zlib",
-            "spdx_url": "https://spdx.org/licenses/Zlib",
-            "start_line": 6,
-            "end_line": 23,
-            "matched_rule": {
-              "identifier": "zlib_17.RULE",
-              "license_expression": "zlib",
-              "licenses": [
-                "zlib"
-              ],
-              "referenced_filenames": [],
-              "is_license_text": true,
-              "is_license_notice": false,
-              "is_license_reference": false,
-              "is_license_tag": false,
-              "is_license_intro": false,
-              "has_unknown": false,
-              "matcher": "2-aho",
-              "rule_length": 144,
-              "matched_length": 144,
-              "match_coverage": 100.0,
-              "rule_relevance": 100
-            }
+            "license_expression": "zlib",
+            "detection_log": [
+              "not-combined"
+            ],
+            "matches": [
+              {
+                "score": 100.0,
+                "start_line": 6,
+                "end_line": 23,
+                "matched_length": 144,
+                "match_coverage": 100.0,
+                "matcher": "2-aho",
+                "license_expression": "zlib",
+                "rule_identifier": "zlib_17.RULE",
+                "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/zlib_17.RULE",
+                "referenced_filenames": [],
+                "is_license_text": true,
+                "is_license_notice": false,
+                "is_license_reference": false,
+                "is_license_tag": false,
+                "is_license_intro": false,
+                "rule_length": 144,
+                "rule_relevance": 100,
+                "licenses": [
+                  {
+                    "key": "zlib",
+                    "name": "ZLIB License",
+                    "short_name": "ZLIB License",
+                    "category": "Permissive",
+                    "is_exception": false,
+                    "is_unknown": false,
+                    "owner": "zlib",
+                    "homepage_url": "http://www.zlib.net/",
+                    "text_url": "http://www.gzip.org/zlib/zlib_license.html",
+                    "reference_url": "https://scancode-licensedb.aboutcode.org/zlib",
+                    "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/zlib.LICENSE",
+                    "spdx_license_key": "Zlib",
+                    "spdx_url": "https://spdx.org/licenses/Zlib"
+                  }
+                ]
+              }
+            ]
           }
         ],
-        "license_expressions": [
-          "zlib"
-        ],
+        "license_clues": [],
         "percentage_of_license_text": 69.57,
         "copyrights": [
           {
@@ -723,51 +793,93 @@
         "is_media": false,
         "is_source": true,
         "is_script": false,
-        "licenses": [
+        "detected_license_expression": "zlib",
+        "detected_license_expression_spdx": "Zlib",
+        "license_detections": [
           {
-            "key": "zlib",
-            "score": 100.0,
-            "name": "ZLIB License",
-            "short_name": "ZLIB License",
-            "category": "Permissive",
-            "is_exception": false,
-            "is_unknown": false,
-            "owner": "zlib",
-            "homepage_url": "http://www.zlib.net/",
-            "text_url": "http://www.gzip.org/zlib/zlib_license.html",
-            "reference_url": "https://scancode-licensedb.aboutcode.org/zlib",
-            "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/zlib.LICENSE",
-            "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/zlib.yml",
-            "spdx_license_key": "Zlib",
-            "spdx_url": "https://spdx.org/licenses/Zlib",
-            "start_line": 3,
-            "end_line": 3,
-            "matched_rule": {
-              "identifier": "zlib_5.RULE",
-              "license_expression": "zlib",
-              "licenses": [
-                "zlib"
-              ],
-              "referenced_filenames": [
-                "zlib.h"
-              ],
-              "is_license_text": false,
-              "is_license_notice": false,
-              "is_license_reference": true,
-              "is_license_tag": false,
-              "is_license_intro": false,
-              "has_unknown": false,
-              "matcher": "2-aho",
-              "rule_length": 12,
-              "matched_length": 12,
-              "match_coverage": 100.0,
-              "rule_relevance": 100
-            }
+            "license_expression": "zlib",
+            "detection_log": [
+              "unknown-reference-to-local-file"
+            ],
+            "matches": [
+              {
+                "score": 100.0,
+                "start_line": 3,
+                "end_line": 3,
+                "matched_length": 12,
+                "match_coverage": 100.0,
+                "matcher": "2-aho",
+                "license_expression": "zlib",
+                "rule_identifier": "zlib_5.RULE",
+                "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/zlib_5.RULE",
+                "referenced_filenames": [
+                  "zlib.h"
+                ],
+                "is_license_text": false,
+                "is_license_notice": false,
+                "is_license_reference": true,
+                "is_license_tag": false,
+                "is_license_intro": false,
+                "rule_length": 12,
+                "rule_relevance": 100,
+                "licenses": [
+                  {
+                    "key": "zlib",
+                    "name": "ZLIB License",
+                    "short_name": "ZLIB License",
+                    "category": "Permissive",
+                    "is_exception": false,
+                    "is_unknown": false,
+                    "owner": "zlib",
+                    "homepage_url": "http://www.zlib.net/",
+                    "text_url": "http://www.gzip.org/zlib/zlib_license.html",
+                    "reference_url": "https://scancode-licensedb.aboutcode.org/zlib",
+                    "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/zlib.LICENSE",
+                    "spdx_license_key": "Zlib",
+                    "spdx_url": "https://spdx.org/licenses/Zlib"
+                  }
+                ]
+              },
+              {
+                "score": 100.0,
+                "start_line": 6,
+                "end_line": 23,
+                "matched_length": 144,
+                "match_coverage": 100.0,
+                "matcher": "2-aho",
+                "license_expression": "zlib",
+                "rule_identifier": "zlib_17.RULE",
+                "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/zlib_17.RULE",
+                "referenced_filenames": [],
+                "is_license_text": true,
+                "is_license_notice": false,
+                "is_license_reference": false,
+                "is_license_tag": false,
+                "is_license_intro": false,
+                "rule_length": 144,
+                "rule_relevance": 100,
+                "licenses": [
+                  {
+                    "key": "zlib",
+                    "name": "ZLIB License",
+                    "short_name": "ZLIB License",
+                    "category": "Permissive",
+                    "is_exception": false,
+                    "is_unknown": false,
+                    "owner": "zlib",
+                    "homepage_url": "http://www.zlib.net/",
+                    "text_url": "http://www.gzip.org/zlib/zlib_license.html",
+                    "reference_url": "https://scancode-licensedb.aboutcode.org/zlib",
+                    "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/zlib.LICENSE",
+                    "spdx_license_key": "Zlib",
+                    "spdx_url": "https://spdx.org/licenses/Zlib"
+                  }
+                ]
+              }
+            ]
           }
         ],
-        "license_expressions": [
-          "zlib"
-        ],
+        "license_clues": [],
         "percentage_of_license_text": 20.34,
         "copyrights": [
           {
@@ -817,8 +929,10 @@
         "is_media": false,
         "is_source": false,
         "is_script": false,
-        "licenses": [],
-        "license_expressions": [],
+        "detected_license_expression": null,
+        "detected_license_expression_spdx": null,
+        "license_detections": [],
+        "license_clues": [],
         "percentage_of_license_text": 0,
         "copyrights": [],
         "holders": [],
@@ -856,8 +970,10 @@
         "is_media": false,
         "is_source": false,
         "is_script": false,
-        "licenses": [],
-        "license_expressions": [],
+        "detected_license_expression": null,
+        "detected_license_expression_spdx": null,
+        "license_detections": [],
+        "license_clues": [],
         "percentage_of_license_text": 0,
         "copyrights": [],
         "holders": [],
@@ -895,49 +1011,55 @@
         "is_media": false,
         "is_source": true,
         "is_script": false,
-        "licenses": [
+        "detected_license_expression": "lgpl-2.1-plus",
+        "detected_license_expression_spdx": "LGPL-2.1-or-later",
+        "license_detections": [
           {
-            "key": "lgpl-2.1-plus",
-            "score": 100.0,
-            "name": "GNU Lesser General Public License 2.1 or later",
-            "short_name": "LGPL 2.1 or later",
-            "category": "Copyleft Limited",
-            "is_exception": false,
-            "is_unknown": false,
-            "owner": "Free Software Foundation (FSF)",
-            "homepage_url": "http://www.gnu.org/licenses/old-licenses/lgpl-2.1-standalone.html",
-            "text_url": "http://www.gnu.org/licenses/old-licenses/lgpl-2.1-standalone.html",
-            "reference_url": "https://scancode-licensedb.aboutcode.org/lgpl-2.1-plus",
-            "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/lgpl-2.1-plus.LICENSE",
-            "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/lgpl-2.1-plus.yml",
-            "spdx_license_key": "LGPL-2.1-or-later",
-            "spdx_url": "https://spdx.org/licenses/LGPL-2.1-or-later",
-            "start_line": 7,
-            "end_line": 20,
-            "matched_rule": {
-              "identifier": "lgpl-2.1-plus_59.RULE",
-              "license_expression": "lgpl-2.1-plus",
-              "licenses": [
-                "lgpl-2.1-plus"
-              ],
-              "referenced_filenames": [],
-              "is_license_text": false,
-              "is_license_notice": true,
-              "is_license_reference": false,
-              "is_license_tag": false,
-              "is_license_intro": false,
-              "has_unknown": false,
-              "matcher": "2-aho",
-              "rule_length": 125,
-              "matched_length": 125,
-              "match_coverage": 100.0,
-              "rule_relevance": 100
-            }
+            "license_expression": "lgpl-2.1-plus",
+            "detection_log": [
+              "not-combined"
+            ],
+            "matches": [
+              {
+                "score": 100.0,
+                "start_line": 7,
+                "end_line": 20,
+                "matched_length": 125,
+                "match_coverage": 100.0,
+                "matcher": "2-aho",
+                "license_expression": "lgpl-2.1-plus",
+                "rule_identifier": "lgpl-2.1-plus_59.RULE",
+                "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_59.RULE",
+                "referenced_filenames": [],
+                "is_license_text": false,
+                "is_license_notice": true,
+                "is_license_reference": false,
+                "is_license_tag": false,
+                "is_license_intro": false,
+                "rule_length": 125,
+                "rule_relevance": 100,
+                "licenses": [
+                  {
+                    "key": "lgpl-2.1-plus",
+                    "name": "GNU Lesser General Public License 2.1 or later",
+                    "short_name": "LGPL 2.1 or later",
+                    "category": "Copyleft Limited",
+                    "is_exception": false,
+                    "is_unknown": false,
+                    "owner": "Free Software Foundation (FSF)",
+                    "homepage_url": "http://www.gnu.org/licenses/old-licenses/lgpl-2.1-standalone.html",
+                    "text_url": "http://www.gnu.org/licenses/old-licenses/lgpl-2.1-standalone.html",
+                    "reference_url": "https://scancode-licensedb.aboutcode.org/lgpl-2.1-plus",
+                    "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/lgpl-2.1-plus.LICENSE",
+                    "spdx_license_key": "LGPL-2.1-or-later",
+                    "spdx_url": "https://spdx.org/licenses/LGPL-2.1-or-later"
+                  }
+                ]
+              }
+            ]
           }
         ],
-        "license_expressions": [
-          "lgpl-2.1-plus"
-        ],
+        "license_clues": [],
         "percentage_of_license_text": 79.62,
         "copyrights": [
           {
@@ -987,49 +1109,55 @@
         "is_media": false,
         "is_source": true,
         "is_script": false,
-        "licenses": [
+        "detected_license_expression": "cc-by-2.5",
+        "detected_license_expression_spdx": "CC-BY-2.5",
+        "license_detections": [
           {
-            "key": "cc-by-2.5",
-            "score": 100.0,
-            "name": "Creative Commons Attribution License 2.5",
-            "short_name": "CC-BY-2.5",
-            "category": "Permissive",
-            "is_exception": false,
-            "is_unknown": false,
-            "owner": "Creative Commons",
-            "homepage_url": "http://creativecommons.org/licenses/by/2.5/",
-            "text_url": "http://creativecommons.org/licenses/by/2.5/legalcode",
-            "reference_url": "https://scancode-licensedb.aboutcode.org/cc-by-2.5",
-            "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/cc-by-2.5.LICENSE",
-            "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/cc-by-2.5.yml",
-            "spdx_license_key": "CC-BY-2.5",
-            "spdx_url": "https://spdx.org/licenses/CC-BY-2.5",
-            "start_line": 4,
-            "end_line": 5,
-            "matched_rule": {
-              "identifier": "cc-by-2.5_4.RULE",
-              "license_expression": "cc-by-2.5",
-              "licenses": [
-                "cc-by-2.5"
-              ],
-              "referenced_filenames": [],
-              "is_license_text": false,
-              "is_license_notice": true,
-              "is_license_reference": false,
-              "is_license_tag": false,
-              "is_license_intro": false,
-              "has_unknown": false,
-              "matcher": "2-aho",
-              "rule_length": 14,
-              "matched_length": 14,
-              "match_coverage": 100.0,
-              "rule_relevance": 100
-            }
+            "license_expression": "cc-by-2.5",
+            "detection_log": [
+              "not-combined"
+            ],
+            "matches": [
+              {
+                "score": 100.0,
+                "start_line": 4,
+                "end_line": 5,
+                "matched_length": 14,
+                "match_coverage": 100.0,
+                "matcher": "2-aho",
+                "license_expression": "cc-by-2.5",
+                "rule_identifier": "cc-by-2.5_4.RULE",
+                "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/cc-by-2.5_4.RULE",
+                "referenced_filenames": [],
+                "is_license_text": false,
+                "is_license_notice": true,
+                "is_license_reference": false,
+                "is_license_tag": false,
+                "is_license_intro": false,
+                "rule_length": 14,
+                "rule_relevance": 100,
+                "licenses": [
+                  {
+                    "key": "cc-by-2.5",
+                    "name": "Creative Commons Attribution License 2.5",
+                    "short_name": "CC-BY-2.5",
+                    "category": "Permissive",
+                    "is_exception": false,
+                    "is_unknown": false,
+                    "owner": "Creative Commons",
+                    "homepage_url": "http://creativecommons.org/licenses/by/2.5/",
+                    "text_url": "http://creativecommons.org/licenses/by/2.5/legalcode",
+                    "reference_url": "https://scancode-licensedb.aboutcode.org/cc-by-2.5",
+                    "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/cc-by-2.5.LICENSE",
+                    "spdx_license_key": "CC-BY-2.5",
+                    "spdx_url": "https://spdx.org/licenses/CC-BY-2.5"
+                  }
+                ]
+              }
+            ]
           }
         ],
-        "license_expressions": [
-          "cc-by-2.5"
-        ],
+        "license_clues": [],
         "percentage_of_license_text": 19.72,
         "copyrights": [
           {
@@ -1085,49 +1213,55 @@
         "is_media": false,
         "is_source": true,
         "is_script": false,
-        "licenses": [
+        "detected_license_expression": "lgpl-2.1-plus",
+        "detected_license_expression_spdx": "LGPL-2.1-or-later",
+        "license_detections": [
           {
-            "key": "lgpl-2.1-plus",
-            "score": 100.0,
-            "name": "GNU Lesser General Public License 2.1 or later",
-            "short_name": "LGPL 2.1 or later",
-            "category": "Copyleft Limited",
-            "is_exception": false,
-            "is_unknown": false,
-            "owner": "Free Software Foundation (FSF)",
-            "homepage_url": "http://www.gnu.org/licenses/old-licenses/lgpl-2.1-standalone.html",
-            "text_url": "http://www.gnu.org/licenses/old-licenses/lgpl-2.1-standalone.html",
-            "reference_url": "https://scancode-licensedb.aboutcode.org/lgpl-2.1-plus",
-            "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/lgpl-2.1-plus.LICENSE",
-            "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/lgpl-2.1-plus.yml",
-            "spdx_license_key": "LGPL-2.1-or-later",
-            "spdx_url": "https://spdx.org/licenses/LGPL-2.1-or-later",
-            "start_line": 7,
-            "end_line": 20,
-            "matched_rule": {
-              "identifier": "lgpl-2.1-plus_59.RULE",
-              "license_expression": "lgpl-2.1-plus",
-              "licenses": [
-                "lgpl-2.1-plus"
-              ],
-              "referenced_filenames": [],
-              "is_license_text": false,
-              "is_license_notice": true,
-              "is_license_reference": false,
-              "is_license_tag": false,
-              "is_license_intro": false,
-              "has_unknown": false,
-              "matcher": "2-aho",
-              "rule_length": 125,
-              "matched_length": 125,
-              "match_coverage": 100.0,
-              "rule_relevance": 100
-            }
+            "license_expression": "lgpl-2.1-plus",
+            "detection_log": [
+              "not-combined"
+            ],
+            "matches": [
+              {
+                "score": 100.0,
+                "start_line": 7,
+                "end_line": 20,
+                "matched_length": 125,
+                "match_coverage": 100.0,
+                "matcher": "2-aho",
+                "license_expression": "lgpl-2.1-plus",
+                "rule_identifier": "lgpl-2.1-plus_59.RULE",
+                "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_59.RULE",
+                "referenced_filenames": [],
+                "is_license_text": false,
+                "is_license_notice": true,
+                "is_license_reference": false,
+                "is_license_tag": false,
+                "is_license_intro": false,
+                "rule_length": 125,
+                "rule_relevance": 100,
+                "licenses": [
+                  {
+                    "key": "lgpl-2.1-plus",
+                    "name": "GNU Lesser General Public License 2.1 or later",
+                    "short_name": "LGPL 2.1 or later",
+                    "category": "Copyleft Limited",
+                    "is_exception": false,
+                    "is_unknown": false,
+                    "owner": "Free Software Foundation (FSF)",
+                    "homepage_url": "http://www.gnu.org/licenses/old-licenses/lgpl-2.1-standalone.html",
+                    "text_url": "http://www.gnu.org/licenses/old-licenses/lgpl-2.1-standalone.html",
+                    "reference_url": "https://scancode-licensedb.aboutcode.org/lgpl-2.1-plus",
+                    "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/lgpl-2.1-plus.LICENSE",
+                    "spdx_license_key": "LGPL-2.1-or-later",
+                    "spdx_url": "https://spdx.org/licenses/LGPL-2.1-or-later"
+                  }
+                ]
+              }
+            ]
           }
         ],
-        "license_expressions": [
-          "lgpl-2.1-plus"
-        ],
+        "license_clues": [],
         "percentage_of_license_text": 78.62,
         "copyrights": [
           {
@@ -1177,8 +1311,10 @@
         "is_media": false,
         "is_source": true,
         "is_script": false,
-        "licenses": [],
-        "license_expressions": [],
+        "detected_license_expression": null,
+        "detected_license_expression_spdx": null,
+        "license_detections": [],
+        "license_clues": [],
         "percentage_of_license_text": 0,
         "copyrights": [],
         "holders": [],
@@ -1222,8 +1358,10 @@
         "is_media": false,
         "is_source": true,
         "is_script": false,
-        "licenses": [],
-        "license_expressions": [],
+        "detected_license_expression": null,
+        "detected_license_expression_spdx": null,
+        "license_detections": [],
+        "license_clues": [],
         "percentage_of_license_text": 0,
         "copyrights": [],
         "holders": [],
@@ -1267,49 +1405,55 @@
         "is_media": false,
         "is_source": true,
         "is_script": false,
-        "licenses": [
+        "detected_license_expression": "lgpl-2.1-plus",
+        "detected_license_expression_spdx": "LGPL-2.1-or-later",
+        "license_detections": [
           {
-            "key": "lgpl-2.1-plus",
-            "score": 100.0,
-            "name": "GNU Lesser General Public License 2.1 or later",
-            "short_name": "LGPL 2.1 or later",
-            "category": "Copyleft Limited",
-            "is_exception": false,
-            "is_unknown": false,
-            "owner": "Free Software Foundation (FSF)",
-            "homepage_url": "http://www.gnu.org/licenses/old-licenses/lgpl-2.1-standalone.html",
-            "text_url": "http://www.gnu.org/licenses/old-licenses/lgpl-2.1-standalone.html",
-            "reference_url": "https://scancode-licensedb.aboutcode.org/lgpl-2.1-plus",
-            "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/lgpl-2.1-plus.LICENSE",
-            "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/lgpl-2.1-plus.yml",
-            "spdx_license_key": "LGPL-2.1-or-later",
-            "spdx_url": "https://spdx.org/licenses/LGPL-2.1-or-later",
-            "start_line": 7,
-            "end_line": 20,
-            "matched_rule": {
-              "identifier": "lgpl-2.1-plus_59.RULE",
-              "license_expression": "lgpl-2.1-plus",
-              "licenses": [
-                "lgpl-2.1-plus"
-              ],
-              "referenced_filenames": [],
-              "is_license_text": false,
-              "is_license_notice": true,
-              "is_license_reference": false,
-              "is_license_tag": false,
-              "is_license_intro": false,
-              "has_unknown": false,
-              "matcher": "2-aho",
-              "rule_length": 125,
-              "matched_length": 125,
-              "match_coverage": 100.0,
-              "rule_relevance": 100
-            }
+            "license_expression": "lgpl-2.1-plus",
+            "detection_log": [
+              "not-combined"
+            ],
+            "matches": [
+              {
+                "score": 100.0,
+                "start_line": 7,
+                "end_line": 20,
+                "matched_length": 125,
+                "match_coverage": 100.0,
+                "matcher": "2-aho",
+                "license_expression": "lgpl-2.1-plus",
+                "rule_identifier": "lgpl-2.1-plus_59.RULE",
+                "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_59.RULE",
+                "referenced_filenames": [],
+                "is_license_text": false,
+                "is_license_notice": true,
+                "is_license_reference": false,
+                "is_license_tag": false,
+                "is_license_intro": false,
+                "rule_length": 125,
+                "rule_relevance": 100,
+                "licenses": [
+                  {
+                    "key": "lgpl-2.1-plus",
+                    "name": "GNU Lesser General Public License 2.1 or later",
+                    "short_name": "LGPL 2.1 or later",
+                    "category": "Copyleft Limited",
+                    "is_exception": false,
+                    "is_unknown": false,
+                    "owner": "Free Software Foundation (FSF)",
+                    "homepage_url": "http://www.gnu.org/licenses/old-licenses/lgpl-2.1-standalone.html",
+                    "text_url": "http://www.gnu.org/licenses/old-licenses/lgpl-2.1-standalone.html",
+                    "reference_url": "https://scancode-licensedb.aboutcode.org/lgpl-2.1-plus",
+                    "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/lgpl-2.1-plus.LICENSE",
+                    "spdx_license_key": "LGPL-2.1-or-later",
+                    "spdx_url": "https://spdx.org/licenses/LGPL-2.1-or-later"
+                  }
+                ]
+              }
+            ]
           }
         ],
-        "license_expressions": [
-          "lgpl-2.1-plus"
-        ],
+        "license_clues": [],
         "percentage_of_license_text": 78.12,
         "copyrights": [
           {
@@ -1359,8 +1503,10 @@
         "is_media": false,
         "is_source": true,
         "is_script": false,
-        "licenses": [],
-        "license_expressions": [],
+        "detected_license_expression": null,
+        "detected_license_expression_spdx": null,
+        "license_detections": [],
+        "license_clues": [],
         "percentage_of_license_text": 0,
         "copyrights": [],
         "holders": [],
@@ -1404,8 +1550,10 @@
         "is_media": false,
         "is_source": false,
         "is_script": false,
-        "licenses": [],
-        "license_expressions": [],
+        "detected_license_expression": null,
+        "detected_license_expression_spdx": null,
+        "license_detections": [],
+        "license_clues": [],
         "percentage_of_license_text": 0,
         "copyrights": [],
         "holders": [],
@@ -1443,51 +1591,93 @@
         "is_media": false,
         "is_source": true,
         "is_script": false,
-        "licenses": [
+        "detected_license_expression": "zlib",
+        "detected_license_expression_spdx": "Zlib",
+        "license_detections": [
           {
-            "key": "zlib",
-            "score": 100.0,
-            "name": "ZLIB License",
-            "short_name": "ZLIB License",
-            "category": "Permissive",
-            "is_exception": false,
-            "is_unknown": false,
-            "owner": "zlib",
-            "homepage_url": "http://www.zlib.net/",
-            "text_url": "http://www.gzip.org/zlib/zlib_license.html",
-            "reference_url": "https://scancode-licensedb.aboutcode.org/zlib",
-            "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/zlib.LICENSE",
-            "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/zlib.yml",
-            "spdx_license_key": "Zlib",
-            "spdx_url": "https://spdx.org/licenses/Zlib",
-            "start_line": 3,
-            "end_line": 3,
-            "matched_rule": {
-              "identifier": "zlib_5.RULE",
-              "license_expression": "zlib",
-              "licenses": [
-                "zlib"
-              ],
-              "referenced_filenames": [
-                "zlib.h"
-              ],
-              "is_license_text": false,
-              "is_license_notice": false,
-              "is_license_reference": true,
-              "is_license_tag": false,
-              "is_license_intro": false,
-              "has_unknown": false,
-              "matcher": "2-aho",
-              "rule_length": 12,
-              "matched_length": 12,
-              "match_coverage": 100.0,
-              "rule_relevance": 100
-            }
+            "license_expression": "zlib",
+            "detection_log": [
+              "unknown-reference-to-local-file"
+            ],
+            "matches": [
+              {
+                "score": 100.0,
+                "start_line": 3,
+                "end_line": 3,
+                "matched_length": 12,
+                "match_coverage": 100.0,
+                "matcher": "2-aho",
+                "license_expression": "zlib",
+                "rule_identifier": "zlib_5.RULE",
+                "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/zlib_5.RULE",
+                "referenced_filenames": [
+                  "zlib.h"
+                ],
+                "is_license_text": false,
+                "is_license_notice": false,
+                "is_license_reference": true,
+                "is_license_tag": false,
+                "is_license_intro": false,
+                "rule_length": 12,
+                "rule_relevance": 100,
+                "licenses": [
+                  {
+                    "key": "zlib",
+                    "name": "ZLIB License",
+                    "short_name": "ZLIB License",
+                    "category": "Permissive",
+                    "is_exception": false,
+                    "is_unknown": false,
+                    "owner": "zlib",
+                    "homepage_url": "http://www.zlib.net/",
+                    "text_url": "http://www.gzip.org/zlib/zlib_license.html",
+                    "reference_url": "https://scancode-licensedb.aboutcode.org/zlib",
+                    "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/zlib.LICENSE",
+                    "spdx_license_key": "Zlib",
+                    "spdx_url": "https://spdx.org/licenses/Zlib"
+                  }
+                ]
+              },
+              {
+                "score": 100.0,
+                "start_line": 6,
+                "end_line": 23,
+                "matched_length": 144,
+                "match_coverage": 100.0,
+                "matcher": "2-aho",
+                "license_expression": "zlib",
+                "rule_identifier": "zlib_17.RULE",
+                "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/zlib_17.RULE",
+                "referenced_filenames": [],
+                "is_license_text": true,
+                "is_license_notice": false,
+                "is_license_reference": false,
+                "is_license_tag": false,
+                "is_license_intro": false,
+                "rule_length": 144,
+                "rule_relevance": 100,
+                "licenses": [
+                  {
+                    "key": "zlib",
+                    "name": "ZLIB License",
+                    "short_name": "ZLIB License",
+                    "category": "Permissive",
+                    "is_exception": false,
+                    "is_unknown": false,
+                    "owner": "zlib",
+                    "homepage_url": "http://www.zlib.net/",
+                    "text_url": "http://www.gzip.org/zlib/zlib_license.html",
+                    "reference_url": "https://scancode-licensedb.aboutcode.org/zlib",
+                    "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/zlib.LICENSE",
+                    "spdx_license_key": "Zlib",
+                    "spdx_url": "https://spdx.org/licenses/Zlib"
+                  }
+                ]
+              }
+            ]
           }
         ],
-        "license_expressions": [
-          "zlib"
-        ],
+        "license_clues": [],
         "percentage_of_license_text": 42.86,
         "copyrights": [
           {
@@ -1537,51 +1727,93 @@
         "is_media": false,
         "is_source": true,
         "is_script": false,
-        "licenses": [
+        "detected_license_expression": "zlib",
+        "detected_license_expression_spdx": "Zlib",
+        "license_detections": [
           {
-            "key": "zlib",
-            "score": 100.0,
-            "name": "ZLIB License",
-            "short_name": "ZLIB License",
-            "category": "Permissive",
-            "is_exception": false,
-            "is_unknown": false,
-            "owner": "zlib",
-            "homepage_url": "http://www.zlib.net/",
-            "text_url": "http://www.gzip.org/zlib/zlib_license.html",
-            "reference_url": "https://scancode-licensedb.aboutcode.org/zlib",
-            "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/zlib.LICENSE",
-            "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/zlib.yml",
-            "spdx_license_key": "Zlib",
-            "spdx_url": "https://spdx.org/licenses/Zlib",
-            "start_line": 3,
-            "end_line": 3,
-            "matched_rule": {
-              "identifier": "zlib_5.RULE",
-              "license_expression": "zlib",
-              "licenses": [
-                "zlib"
-              ],
-              "referenced_filenames": [
-                "zlib.h"
-              ],
-              "is_license_text": false,
-              "is_license_notice": false,
-              "is_license_reference": true,
-              "is_license_tag": false,
-              "is_license_intro": false,
-              "has_unknown": false,
-              "matcher": "2-aho",
-              "rule_length": 12,
-              "matched_length": 12,
-              "match_coverage": 100.0,
-              "rule_relevance": 100
-            }
+            "license_expression": "zlib",
+            "detection_log": [
+              "unknown-reference-to-local-file"
+            ],
+            "matches": [
+              {
+                "score": 100.0,
+                "start_line": 3,
+                "end_line": 3,
+                "matched_length": 12,
+                "match_coverage": 100.0,
+                "matcher": "2-aho",
+                "license_expression": "zlib",
+                "rule_identifier": "zlib_5.RULE",
+                "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/zlib_5.RULE",
+                "referenced_filenames": [
+                  "zlib.h"
+                ],
+                "is_license_text": false,
+                "is_license_notice": false,
+                "is_license_reference": true,
+                "is_license_tag": false,
+                "is_license_intro": false,
+                "rule_length": 12,
+                "rule_relevance": 100,
+                "licenses": [
+                  {
+                    "key": "zlib",
+                    "name": "ZLIB License",
+                    "short_name": "ZLIB License",
+                    "category": "Permissive",
+                    "is_exception": false,
+                    "is_unknown": false,
+                    "owner": "zlib",
+                    "homepage_url": "http://www.zlib.net/",
+                    "text_url": "http://www.gzip.org/zlib/zlib_license.html",
+                    "reference_url": "https://scancode-licensedb.aboutcode.org/zlib",
+                    "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/zlib.LICENSE",
+                    "spdx_license_key": "Zlib",
+                    "spdx_url": "https://spdx.org/licenses/Zlib"
+                  }
+                ]
+              },
+              {
+                "score": 100.0,
+                "start_line": 6,
+                "end_line": 23,
+                "matched_length": 144,
+                "match_coverage": 100.0,
+                "matcher": "2-aho",
+                "license_expression": "zlib",
+                "rule_identifier": "zlib_17.RULE",
+                "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/zlib_17.RULE",
+                "referenced_filenames": [],
+                "is_license_text": true,
+                "is_license_notice": false,
+                "is_license_reference": false,
+                "is_license_tag": false,
+                "is_license_intro": false,
+                "rule_length": 144,
+                "rule_relevance": 100,
+                "licenses": [
+                  {
+                    "key": "zlib",
+                    "name": "ZLIB License",
+                    "short_name": "ZLIB License",
+                    "category": "Permissive",
+                    "is_exception": false,
+                    "is_unknown": false,
+                    "owner": "zlib",
+                    "homepage_url": "http://www.zlib.net/",
+                    "text_url": "http://www.gzip.org/zlib/zlib_license.html",
+                    "reference_url": "https://scancode-licensedb.aboutcode.org/zlib",
+                    "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/zlib.LICENSE",
+                    "spdx_license_key": "Zlib",
+                    "spdx_url": "https://spdx.org/licenses/Zlib"
+                  }
+                ]
+              }
+            ]
           }
         ],
-        "license_expressions": [
-          "zlib"
-        ],
+        "license_clues": [],
         "percentage_of_license_text": 40.0,
         "copyrights": [
           {
@@ -1631,51 +1863,93 @@
         "is_media": false,
         "is_source": true,
         "is_script": false,
-        "licenses": [
+        "detected_license_expression": "zlib",
+        "detected_license_expression_spdx": "Zlib",
+        "license_detections": [
           {
-            "key": "zlib",
-            "score": 100.0,
-            "name": "ZLIB License",
-            "short_name": "ZLIB License",
-            "category": "Permissive",
-            "is_exception": false,
-            "is_unknown": false,
-            "owner": "zlib",
-            "homepage_url": "http://www.zlib.net/",
-            "text_url": "http://www.gzip.org/zlib/zlib_license.html",
-            "reference_url": "https://scancode-licensedb.aboutcode.org/zlib",
-            "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/zlib.LICENSE",
-            "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/zlib.yml",
-            "spdx_license_key": "Zlib",
-            "spdx_url": "https://spdx.org/licenses/Zlib",
-            "start_line": 3,
-            "end_line": 3,
-            "matched_rule": {
-              "identifier": "zlib_5.RULE",
-              "license_expression": "zlib",
-              "licenses": [
-                "zlib"
-              ],
-              "referenced_filenames": [
-                "zlib.h"
-              ],
-              "is_license_text": false,
-              "is_license_notice": false,
-              "is_license_reference": true,
-              "is_license_tag": false,
-              "is_license_intro": false,
-              "has_unknown": false,
-              "matcher": "2-aho",
-              "rule_length": 12,
-              "matched_length": 12,
-              "match_coverage": 100.0,
-              "rule_relevance": 100
-            }
+            "license_expression": "zlib",
+            "detection_log": [
+              "unknown-reference-to-local-file"
+            ],
+            "matches": [
+              {
+                "score": 100.0,
+                "start_line": 3,
+                "end_line": 3,
+                "matched_length": 12,
+                "match_coverage": 100.0,
+                "matcher": "2-aho",
+                "license_expression": "zlib",
+                "rule_identifier": "zlib_5.RULE",
+                "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/zlib_5.RULE",
+                "referenced_filenames": [
+                  "zlib.h"
+                ],
+                "is_license_text": false,
+                "is_license_notice": false,
+                "is_license_reference": true,
+                "is_license_tag": false,
+                "is_license_intro": false,
+                "rule_length": 12,
+                "rule_relevance": 100,
+                "licenses": [
+                  {
+                    "key": "zlib",
+                    "name": "ZLIB License",
+                    "short_name": "ZLIB License",
+                    "category": "Permissive",
+                    "is_exception": false,
+                    "is_unknown": false,
+                    "owner": "zlib",
+                    "homepage_url": "http://www.zlib.net/",
+                    "text_url": "http://www.gzip.org/zlib/zlib_license.html",
+                    "reference_url": "https://scancode-licensedb.aboutcode.org/zlib",
+                    "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/zlib.LICENSE",
+                    "spdx_license_key": "Zlib",
+                    "spdx_url": "https://spdx.org/licenses/Zlib"
+                  }
+                ]
+              },
+              {
+                "score": 100.0,
+                "start_line": 6,
+                "end_line": 23,
+                "matched_length": 144,
+                "match_coverage": 100.0,
+                "matcher": "2-aho",
+                "license_expression": "zlib",
+                "rule_identifier": "zlib_17.RULE",
+                "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/zlib_17.RULE",
+                "referenced_filenames": [],
+                "is_license_text": true,
+                "is_license_notice": false,
+                "is_license_reference": false,
+                "is_license_tag": false,
+                "is_license_intro": false,
+                "rule_length": 144,
+                "rule_relevance": 100,
+                "licenses": [
+                  {
+                    "key": "zlib",
+                    "name": "ZLIB License",
+                    "short_name": "ZLIB License",
+                    "category": "Permissive",
+                    "is_exception": false,
+                    "is_unknown": false,
+                    "owner": "zlib",
+                    "homepage_url": "http://www.zlib.net/",
+                    "text_url": "http://www.gzip.org/zlib/zlib_license.html",
+                    "reference_url": "https://scancode-licensedb.aboutcode.org/zlib",
+                    "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/zlib.LICENSE",
+                    "spdx_license_key": "Zlib",
+                    "spdx_url": "https://spdx.org/licenses/Zlib"
+                  }
+                ]
+              }
+            ]
           }
         ],
-        "license_expressions": [
-          "zlib"
-        ],
+        "license_clues": [],
         "percentage_of_license_text": 50.0,
         "copyrights": [
           {
@@ -1725,49 +1999,55 @@
         "is_media": false,
         "is_source": true,
         "is_script": false,
-        "licenses": [
+        "detected_license_expression": "zlib",
+        "detected_license_expression_spdx": "Zlib",
+        "license_detections": [
           {
-            "key": "zlib",
-            "score": 100.0,
-            "name": "ZLIB License",
-            "short_name": "ZLIB License",
-            "category": "Permissive",
-            "is_exception": false,
-            "is_unknown": false,
-            "owner": "zlib",
-            "homepage_url": "http://www.zlib.net/",
-            "text_url": "http://www.gzip.org/zlib/zlib_license.html",
-            "reference_url": "https://scancode-licensedb.aboutcode.org/zlib",
-            "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/zlib.LICENSE",
-            "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/zlib.yml",
-            "spdx_license_key": "Zlib",
-            "spdx_url": "https://spdx.org/licenses/Zlib",
-            "start_line": 6,
-            "end_line": 23,
-            "matched_rule": {
-              "identifier": "zlib_17.RULE",
-              "license_expression": "zlib",
-              "licenses": [
-                "zlib"
-              ],
-              "referenced_filenames": [],
-              "is_license_text": true,
-              "is_license_notice": false,
-              "is_license_reference": false,
-              "is_license_tag": false,
-              "is_license_intro": false,
-              "has_unknown": false,
-              "matcher": "2-aho",
-              "rule_length": 144,
-              "matched_length": 144,
-              "match_coverage": 100.0,
-              "rule_relevance": 100
-            }
+            "license_expression": "zlib",
+            "detection_log": [
+              "not-combined"
+            ],
+            "matches": [
+              {
+                "score": 100.0,
+                "start_line": 6,
+                "end_line": 23,
+                "matched_length": 144,
+                "match_coverage": 100.0,
+                "matcher": "2-aho",
+                "license_expression": "zlib",
+                "rule_identifier": "zlib_17.RULE",
+                "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/zlib_17.RULE",
+                "referenced_filenames": [],
+                "is_license_text": true,
+                "is_license_notice": false,
+                "is_license_reference": false,
+                "is_license_tag": false,
+                "is_license_intro": false,
+                "rule_length": 144,
+                "rule_relevance": 100,
+                "licenses": [
+                  {
+                    "key": "zlib",
+                    "name": "ZLIB License",
+                    "short_name": "ZLIB License",
+                    "category": "Permissive",
+                    "is_exception": false,
+                    "is_unknown": false,
+                    "owner": "zlib",
+                    "homepage_url": "http://www.zlib.net/",
+                    "text_url": "http://www.gzip.org/zlib/zlib_license.html",
+                    "reference_url": "https://scancode-licensedb.aboutcode.org/zlib",
+                    "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/zlib.LICENSE",
+                    "spdx_license_key": "Zlib",
+                    "spdx_url": "https://spdx.org/licenses/Zlib"
+                  }
+                ]
+              }
+            ]
           }
         ],
-        "license_expressions": [
-          "zlib"
-        ],
+        "license_clues": [],
         "percentage_of_license_text": 84.21,
         "copyrights": [
           {
@@ -1817,51 +2097,93 @@
         "is_media": false,
         "is_source": true,
         "is_script": false,
-        "licenses": [
+        "detected_license_expression": "zlib",
+        "detected_license_expression_spdx": "Zlib",
+        "license_detections": [
           {
-            "key": "zlib",
-            "score": 100.0,
-            "name": "ZLIB License",
-            "short_name": "ZLIB License",
-            "category": "Permissive",
-            "is_exception": false,
-            "is_unknown": false,
-            "owner": "zlib",
-            "homepage_url": "http://www.zlib.net/",
-            "text_url": "http://www.gzip.org/zlib/zlib_license.html",
-            "reference_url": "https://scancode-licensedb.aboutcode.org/zlib",
-            "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/zlib.LICENSE",
-            "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/zlib.yml",
-            "spdx_license_key": "Zlib",
-            "spdx_url": "https://spdx.org/licenses/Zlib",
-            "start_line": 3,
-            "end_line": 3,
-            "matched_rule": {
-              "identifier": "zlib_5.RULE",
-              "license_expression": "zlib",
-              "licenses": [
-                "zlib"
-              ],
-              "referenced_filenames": [
-                "zlib.h"
-              ],
-              "is_license_text": false,
-              "is_license_notice": false,
-              "is_license_reference": true,
-              "is_license_tag": false,
-              "is_license_intro": false,
-              "has_unknown": false,
-              "matcher": "2-aho",
-              "rule_length": 12,
-              "matched_length": 12,
-              "match_coverage": 100.0,
-              "rule_relevance": 100
-            }
+            "license_expression": "zlib",
+            "detection_log": [
+              "unknown-reference-to-local-file"
+            ],
+            "matches": [
+              {
+                "score": 100.0,
+                "start_line": 3,
+                "end_line": 3,
+                "matched_length": 12,
+                "match_coverage": 100.0,
+                "matcher": "2-aho",
+                "license_expression": "zlib",
+                "rule_identifier": "zlib_5.RULE",
+                "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/zlib_5.RULE",
+                "referenced_filenames": [
+                  "zlib.h"
+                ],
+                "is_license_text": false,
+                "is_license_notice": false,
+                "is_license_reference": true,
+                "is_license_tag": false,
+                "is_license_intro": false,
+                "rule_length": 12,
+                "rule_relevance": 100,
+                "licenses": [
+                  {
+                    "key": "zlib",
+                    "name": "ZLIB License",
+                    "short_name": "ZLIB License",
+                    "category": "Permissive",
+                    "is_exception": false,
+                    "is_unknown": false,
+                    "owner": "zlib",
+                    "homepage_url": "http://www.zlib.net/",
+                    "text_url": "http://www.gzip.org/zlib/zlib_license.html",
+                    "reference_url": "https://scancode-licensedb.aboutcode.org/zlib",
+                    "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/zlib.LICENSE",
+                    "spdx_license_key": "Zlib",
+                    "spdx_url": "https://spdx.org/licenses/Zlib"
+                  }
+                ]
+              },
+              {
+                "score": 100.0,
+                "start_line": 6,
+                "end_line": 23,
+                "matched_length": 144,
+                "match_coverage": 100.0,
+                "matcher": "2-aho",
+                "license_expression": "zlib",
+                "rule_identifier": "zlib_17.RULE",
+                "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/zlib_17.RULE",
+                "referenced_filenames": [],
+                "is_license_text": true,
+                "is_license_notice": false,
+                "is_license_reference": false,
+                "is_license_tag": false,
+                "is_license_intro": false,
+                "rule_length": 144,
+                "rule_relevance": 100,
+                "licenses": [
+                  {
+                    "key": "zlib",
+                    "name": "ZLIB License",
+                    "short_name": "ZLIB License",
+                    "category": "Permissive",
+                    "is_exception": false,
+                    "is_unknown": false,
+                    "owner": "zlib",
+                    "homepage_url": "http://www.zlib.net/",
+                    "text_url": "http://www.gzip.org/zlib/zlib_license.html",
+                    "reference_url": "https://scancode-licensedb.aboutcode.org/zlib",
+                    "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/zlib.LICENSE",
+                    "spdx_license_key": "Zlib",
+                    "spdx_url": "https://spdx.org/licenses/Zlib"
+                  }
+                ]
+              }
+            ]
           }
         ],
-        "license_expressions": [
-          "zlib"
-        ],
+        "license_clues": [],
         "percentage_of_license_text": 37.5,
         "copyrights": [
           {
@@ -1911,51 +2233,93 @@
         "is_media": false,
         "is_source": true,
         "is_script": false,
-        "licenses": [
+        "detected_license_expression": "zlib",
+        "detected_license_expression_spdx": "Zlib",
+        "license_detections": [
           {
-            "key": "zlib",
-            "score": 100.0,
-            "name": "ZLIB License",
-            "short_name": "ZLIB License",
-            "category": "Permissive",
-            "is_exception": false,
-            "is_unknown": false,
-            "owner": "zlib",
-            "homepage_url": "http://www.zlib.net/",
-            "text_url": "http://www.gzip.org/zlib/zlib_license.html",
-            "reference_url": "https://scancode-licensedb.aboutcode.org/zlib",
-            "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/zlib.LICENSE",
-            "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/zlib.yml",
-            "spdx_license_key": "Zlib",
-            "spdx_url": "https://spdx.org/licenses/Zlib",
-            "start_line": 3,
-            "end_line": 3,
-            "matched_rule": {
-              "identifier": "zlib_5.RULE",
-              "license_expression": "zlib",
-              "licenses": [
-                "zlib"
-              ],
-              "referenced_filenames": [
-                "zlib.h"
-              ],
-              "is_license_text": false,
-              "is_license_notice": false,
-              "is_license_reference": true,
-              "is_license_tag": false,
-              "is_license_intro": false,
-              "has_unknown": false,
-              "matcher": "2-aho",
-              "rule_length": 12,
-              "matched_length": 12,
-              "match_coverage": 100.0,
-              "rule_relevance": 100
-            }
+            "license_expression": "zlib",
+            "detection_log": [
+              "unknown-reference-to-local-file"
+            ],
+            "matches": [
+              {
+                "score": 100.0,
+                "start_line": 3,
+                "end_line": 3,
+                "matched_length": 12,
+                "match_coverage": 100.0,
+                "matcher": "2-aho",
+                "license_expression": "zlib",
+                "rule_identifier": "zlib_5.RULE",
+                "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/zlib_5.RULE",
+                "referenced_filenames": [
+                  "zlib.h"
+                ],
+                "is_license_text": false,
+                "is_license_notice": false,
+                "is_license_reference": true,
+                "is_license_tag": false,
+                "is_license_intro": false,
+                "rule_length": 12,
+                "rule_relevance": 100,
+                "licenses": [
+                  {
+                    "key": "zlib",
+                    "name": "ZLIB License",
+                    "short_name": "ZLIB License",
+                    "category": "Permissive",
+                    "is_exception": false,
+                    "is_unknown": false,
+                    "owner": "zlib",
+                    "homepage_url": "http://www.zlib.net/",
+                    "text_url": "http://www.gzip.org/zlib/zlib_license.html",
+                    "reference_url": "https://scancode-licensedb.aboutcode.org/zlib",
+                    "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/zlib.LICENSE",
+                    "spdx_license_key": "Zlib",
+                    "spdx_url": "https://spdx.org/licenses/Zlib"
+                  }
+                ]
+              },
+              {
+                "score": 100.0,
+                "start_line": 6,
+                "end_line": 23,
+                "matched_length": 144,
+                "match_coverage": 100.0,
+                "matcher": "2-aho",
+                "license_expression": "zlib",
+                "rule_identifier": "zlib_17.RULE",
+                "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/zlib_17.RULE",
+                "referenced_filenames": [],
+                "is_license_text": true,
+                "is_license_notice": false,
+                "is_license_reference": false,
+                "is_license_tag": false,
+                "is_license_intro": false,
+                "rule_length": 144,
+                "rule_relevance": 100,
+                "licenses": [
+                  {
+                    "key": "zlib",
+                    "name": "ZLIB License",
+                    "short_name": "ZLIB License",
+                    "category": "Permissive",
+                    "is_exception": false,
+                    "is_unknown": false,
+                    "owner": "zlib",
+                    "homepage_url": "http://www.zlib.net/",
+                    "text_url": "http://www.gzip.org/zlib/zlib_license.html",
+                    "reference_url": "https://scancode-licensedb.aboutcode.org/zlib",
+                    "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/zlib.LICENSE",
+                    "spdx_license_key": "Zlib",
+                    "spdx_url": "https://spdx.org/licenses/Zlib"
+                  }
+                ]
+              }
+            ]
           }
         ],
-        "license_expressions": [
-          "zlib"
-        ],
+        "license_clues": [],
         "percentage_of_license_text": 20.34,
         "copyrights": [
           {
@@ -2005,8 +2369,10 @@
         "is_media": false,
         "is_source": false,
         "is_script": false,
-        "licenses": [],
-        "license_expressions": [],
+        "detected_license_expression": null,
+        "detected_license_expression_spdx": null,
+        "license_detections": [],
+        "license_clues": [],
         "percentage_of_license_text": 0,
         "copyrights": [],
         "holders": [],
@@ -2044,89 +2410,70 @@
         "is_media": false,
         "is_source": false,
         "is_script": false,
-        "licenses": [
+        "detected_license_expression": "gpl-2.0-plus WITH ada-linking-exception",
+        "detected_license_expression_spdx": "GPL-2.0-or-later WITH LicenseRef-scancode-ada-linking-exception",
+        "license_detections": [
           {
-            "key": "gpl-2.0-plus",
-            "score": 100.0,
-            "name": "GNU General Public License 2.0 or later",
-            "short_name": "GPL 2.0 or later",
-            "category": "Copyleft",
-            "is_exception": false,
-            "is_unknown": false,
-            "owner": "Free Software Foundation (FSF)",
-            "homepage_url": "http://www.gnu.org/licenses/old-licenses/gpl-2.0-standalone.html",
-            "text_url": "http://www.gnu.org/licenses/old-licenses/gpl-2.0-standalone.html",
-            "reference_url": "https://scancode-licensedb.aboutcode.org/gpl-2.0-plus",
-            "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-2.0-plus.LICENSE",
-            "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-2.0-plus.yml",
-            "spdx_license_key": "GPL-2.0-or-later",
-            "spdx_url": "https://spdx.org/licenses/GPL-2.0-or-later",
-            "start_line": 6,
-            "end_line": 25,
-            "matched_rule": {
-              "identifier": "gpl-2.0-plus_with_ada-linking-exception_1.RULE",
-              "license_expression": "gpl-2.0-plus WITH ada-linking-exception",
-              "licenses": [
-                "gpl-2.0-plus",
-                "ada-linking-exception"
-              ],
-              "referenced_filenames": [],
-              "is_license_text": false,
-              "is_license_notice": true,
-              "is_license_reference": false,
-              "is_license_tag": false,
-              "is_license_intro": false,
-              "has_unknown": false,
-              "matcher": "2-aho",
-              "rule_length": 176,
-              "matched_length": 176,
-              "match_coverage": 100.0,
-              "rule_relevance": 100
-            }
-          },
-          {
-            "key": "ada-linking-exception",
-            "score": 100.0,
-            "name": "Ada linking exception to GPL 2.0 or later",
-            "short_name": "Ada linking exception to GPL 2.0 or later",
-            "category": "Copyleft Limited",
-            "is_exception": true,
-            "is_unknown": false,
-            "owner": "Dmitriy Anisimkov",
-            "homepage_url": null,
-            "text_url": "",
-            "reference_url": "https://scancode-licensedb.aboutcode.org/ada-linking-exception",
-            "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/ada-linking-exception.LICENSE",
-            "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/ada-linking-exception.yml",
-            "spdx_license_key": "LicenseRef-scancode-ada-linking-exception",
-            "spdx_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/ada-linking-exception.LICENSE",
-            "start_line": 6,
-            "end_line": 25,
-            "matched_rule": {
-              "identifier": "gpl-2.0-plus_with_ada-linking-exception_1.RULE",
-              "license_expression": "gpl-2.0-plus WITH ada-linking-exception",
-              "licenses": [
-                "gpl-2.0-plus",
-                "ada-linking-exception"
-              ],
-              "referenced_filenames": [],
-              "is_license_text": false,
-              "is_license_notice": true,
-              "is_license_reference": false,
-              "is_license_tag": false,
-              "is_license_intro": false,
-              "has_unknown": false,
-              "matcher": "2-aho",
-              "rule_length": 176,
-              "matched_length": 176,
-              "match_coverage": 100.0,
-              "rule_relevance": 100
-            }
+            "license_expression": "gpl-2.0-plus WITH ada-linking-exception",
+            "detection_log": [
+              "not-combined"
+            ],
+            "matches": [
+              {
+                "score": 100.0,
+                "start_line": 6,
+                "end_line": 25,
+                "matched_length": 176,
+                "match_coverage": 100.0,
+                "matcher": "2-aho",
+                "license_expression": "gpl-2.0-plus WITH ada-linking-exception",
+                "rule_identifier": "gpl-2.0-plus_with_ada-linking-exception_1.RULE",
+                "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_with_ada-linking-exception_1.RULE",
+                "referenced_filenames": [],
+                "is_license_text": false,
+                "is_license_notice": true,
+                "is_license_reference": false,
+                "is_license_tag": false,
+                "is_license_intro": false,
+                "rule_length": 176,
+                "rule_relevance": 100,
+                "licenses": [
+                  {
+                    "key": "gpl-2.0-plus",
+                    "name": "GNU General Public License 2.0 or later",
+                    "short_name": "GPL 2.0 or later",
+                    "category": "Copyleft",
+                    "is_exception": false,
+                    "is_unknown": false,
+                    "owner": "Free Software Foundation (FSF)",
+                    "homepage_url": "http://www.gnu.org/licenses/old-licenses/gpl-2.0-standalone.html",
+                    "text_url": "http://www.gnu.org/licenses/old-licenses/gpl-2.0-standalone.html",
+                    "reference_url": "https://scancode-licensedb.aboutcode.org/gpl-2.0-plus",
+                    "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-2.0-plus.LICENSE",
+                    "spdx_license_key": "GPL-2.0-or-later",
+                    "spdx_url": "https://spdx.org/licenses/GPL-2.0-or-later"
+                  },
+                  {
+                    "key": "ada-linking-exception",
+                    "name": "Ada linking exception to GPL 2.0 or later",
+                    "short_name": "Ada linking exception to GPL 2.0 or later",
+                    "category": "Copyleft Limited",
+                    "is_exception": true,
+                    "is_unknown": false,
+                    "owner": "Dmitriy Anisimkov",
+                    "homepage_url": null,
+                    "text_url": "",
+                    "reference_url": "https://scancode-licensedb.aboutcode.org/ada-linking-exception",
+                    "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/ada-linking-exception.LICENSE",
+                    "spdx_license_key": "LicenseRef-scancode-ada-linking-exception",
+                    "spdx_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/ada-linking-exception.LICENSE"
+                  }
+                ]
+              }
+            ]
           }
         ],
-        "license_expressions": [
-          "gpl-2.0-plus WITH ada-linking-exception"
-        ],
+        "license_clues": [],
         "percentage_of_license_text": 94.12,
         "copyrights": [
           {
@@ -2176,8 +2523,10 @@
         "is_media": false,
         "is_source": false,
         "is_script": false,
-        "licenses": [],
-        "license_expressions": [],
+        "detected_license_expression": null,
+        "detected_license_expression_spdx": null,
+        "license_detections": [],
+        "license_clues": [],
         "percentage_of_license_text": 0,
         "copyrights": [],
         "holders": [],
@@ -2215,8 +2564,10 @@
         "is_media": false,
         "is_source": true,
         "is_script": false,
-        "licenses": [],
-        "license_expressions": [],
+        "detected_license_expression": null,
+        "detected_license_expression_spdx": null,
+        "license_detections": [],
+        "license_clues": [],
         "percentage_of_license_text": 0,
         "copyrights": [
           {
@@ -2266,51 +2617,57 @@
         "is_media": false,
         "is_source": true,
         "is_script": false,
-        "licenses": [
+        "detected_license_expression": "boost-1.0",
+        "detected_license_expression_spdx": "BSL-1.0",
+        "license_detections": [
           {
-            "key": "boost-1.0",
-            "score": 100.0,
-            "name": "Boost Software License 1.0",
-            "short_name": "Boost 1.0",
-            "category": "Permissive",
-            "is_exception": false,
-            "is_unknown": false,
-            "owner": "Boost",
-            "homepage_url": "http://www.boost.org/users/license.html",
-            "text_url": "http://www.boost.org/LICENSE_1_0.txt",
-            "reference_url": "https://scancode-licensedb.aboutcode.org/boost-1.0",
-            "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/boost-1.0.LICENSE",
-            "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/boost-1.0.yml",
-            "spdx_license_key": "BSL-1.0",
-            "spdx_url": "https://spdx.org/licenses/BSL-1.0",
-            "start_line": 4,
-            "end_line": 5,
-            "matched_rule": {
-              "identifier": "boost-1.0_21.RULE",
-              "license_expression": "boost-1.0",
-              "licenses": [
-                "boost-1.0"
-              ],
-              "referenced_filenames": [
-                "LICENSE_1_0.txt"
-              ],
-              "is_license_text": false,
-              "is_license_notice": true,
-              "is_license_reference": false,
-              "is_license_tag": false,
-              "is_license_intro": false,
-              "has_unknown": false,
-              "matcher": "2-aho",
-              "rule_length": 32,
-              "matched_length": 32,
-              "match_coverage": 100.0,
-              "rule_relevance": 100
-            }
+            "license_expression": "boost-1.0",
+            "detection_log": [
+              "not-combined"
+            ],
+            "matches": [
+              {
+                "score": 100.0,
+                "start_line": 4,
+                "end_line": 5,
+                "matched_length": 32,
+                "match_coverage": 100.0,
+                "matcher": "2-aho",
+                "license_expression": "boost-1.0",
+                "rule_identifier": "boost-1.0_21.RULE",
+                "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/boost-1.0_21.RULE",
+                "referenced_filenames": [
+                  "LICENSE_1_0.txt"
+                ],
+                "is_license_text": false,
+                "is_license_notice": true,
+                "is_license_reference": false,
+                "is_license_tag": false,
+                "is_license_intro": false,
+                "rule_length": 32,
+                "rule_relevance": 100,
+                "licenses": [
+                  {
+                    "key": "boost-1.0",
+                    "name": "Boost Software License 1.0",
+                    "short_name": "Boost 1.0",
+                    "category": "Permissive",
+                    "is_exception": false,
+                    "is_unknown": false,
+                    "owner": "Boost",
+                    "homepage_url": "http://www.boost.org/users/license.html",
+                    "text_url": "http://www.boost.org/LICENSE_1_0.txt",
+                    "reference_url": "https://scancode-licensedb.aboutcode.org/boost-1.0",
+                    "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/boost-1.0.LICENSE",
+                    "spdx_license_key": "BSL-1.0",
+                    "spdx_url": "https://spdx.org/licenses/BSL-1.0"
+                  }
+                ]
+              }
+            ]
           }
         ],
-        "license_expressions": [
-          "boost-1.0"
-        ],
+        "license_clues": [],
         "percentage_of_license_text": 88.89,
         "copyrights": [
           {
@@ -2360,8 +2717,10 @@
         "is_media": false,
         "is_source": false,
         "is_script": false,
-        "licenses": [],
-        "license_expressions": [],
+        "detected_license_expression": null,
+        "detected_license_expression_spdx": null,
+        "license_detections": [],
+        "license_clues": [],
         "percentage_of_license_text": 0,
         "copyrights": [],
         "holders": [],
@@ -2399,49 +2758,55 @@
         "is_media": false,
         "is_source": true,
         "is_script": false,
-        "licenses": [
+        "detected_license_expression": "zlib",
+        "detected_license_expression_spdx": "Zlib",
+        "license_detections": [
           {
-            "key": "zlib",
-            "score": 100.0,
-            "name": "ZLIB License",
-            "short_name": "ZLIB License",
-            "category": "Permissive",
-            "is_exception": false,
-            "is_unknown": false,
-            "owner": "zlib",
-            "homepage_url": "http://www.zlib.net/",
-            "text_url": "http://www.gzip.org/zlib/zlib_license.html",
-            "reference_url": "https://scancode-licensedb.aboutcode.org/zlib",
-            "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/zlib.LICENSE",
-            "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/zlib.yml",
-            "spdx_license_key": "Zlib",
-            "spdx_url": "https://spdx.org/licenses/Zlib",
-            "start_line": 17,
-            "end_line": 31,
-            "matched_rule": {
-              "identifier": "zlib.LICENSE",
-              "license_expression": "zlib",
-              "licenses": [
-                "zlib"
-              ],
-              "referenced_filenames": [],
-              "is_license_text": true,
-              "is_license_notice": false,
-              "is_license_reference": false,
-              "is_license_tag": false,
-              "is_license_intro": false,
-              "has_unknown": false,
-              "matcher": "2-aho",
-              "rule_length": 132,
-              "matched_length": 132,
-              "match_coverage": 100.0,
-              "rule_relevance": 100
-            }
+            "license_expression": "zlib",
+            "detection_log": [
+              "not-combined"
+            ],
+            "matches": [
+              {
+                "score": 100.0,
+                "start_line": 17,
+                "end_line": 31,
+                "matched_length": 132,
+                "match_coverage": 100.0,
+                "matcher": "2-aho",
+                "license_expression": "zlib",
+                "rule_identifier": "zlib.LICENSE",
+                "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/zlib.LICENSE",
+                "referenced_filenames": [],
+                "is_license_text": true,
+                "is_license_notice": false,
+                "is_license_reference": false,
+                "is_license_tag": false,
+                "is_license_intro": false,
+                "rule_length": 132,
+                "rule_relevance": 100,
+                "licenses": [
+                  {
+                    "key": "zlib",
+                    "name": "ZLIB License",
+                    "short_name": "ZLIB License",
+                    "category": "Permissive",
+                    "is_exception": false,
+                    "is_unknown": false,
+                    "owner": "zlib",
+                    "homepage_url": "http://www.zlib.net/",
+                    "text_url": "http://www.gzip.org/zlib/zlib_license.html",
+                    "reference_url": "https://scancode-licensedb.aboutcode.org/zlib",
+                    "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/zlib.LICENSE",
+                    "spdx_license_key": "Zlib",
+                    "spdx_url": "https://spdx.org/licenses/Zlib"
+                  }
+                ]
+              }
+            ]
           }
         ],
-        "license_expressions": [
-          "zlib"
-        ],
+        "license_clues": [],
         "percentage_of_license_text": 50.0,
         "copyrights": [
           {
@@ -2497,8 +2862,10 @@
         "is_media": false,
         "is_source": false,
         "is_script": false,
-        "licenses": [],
-        "license_expressions": [],
+        "detected_license_expression": null,
+        "detected_license_expression_spdx": null,
+        "license_detections": [],
+        "license_clues": [],
         "percentage_of_license_text": 0,
         "copyrights": [],
         "holders": [],
@@ -2536,51 +2903,57 @@
         "is_media": false,
         "is_source": true,
         "is_script": false,
-        "licenses": [
+        "detected_license_expression": "zlib",
+        "detected_license_expression_spdx": "Zlib",
+        "license_detections": [
           {
-            "key": "zlib",
-            "score": 100.0,
-            "name": "ZLIB License",
-            "short_name": "ZLIB License",
-            "category": "Permissive",
-            "is_exception": false,
-            "is_unknown": false,
-            "owner": "zlib",
-            "homepage_url": "http://www.zlib.net/",
-            "text_url": "http://www.gzip.org/zlib/zlib_license.html",
-            "reference_url": "https://scancode-licensedb.aboutcode.org/zlib",
-            "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/zlib.LICENSE",
-            "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/zlib.yml",
-            "spdx_license_key": "Zlib",
-            "spdx_url": "https://spdx.org/licenses/Zlib",
-            "start_line": 3,
-            "end_line": 3,
-            "matched_rule": {
-              "identifier": "zlib_5.RULE",
-              "license_expression": "zlib",
-              "licenses": [
-                "zlib"
-              ],
-              "referenced_filenames": [
-                "zlib.h"
-              ],
-              "is_license_text": false,
-              "is_license_notice": false,
-              "is_license_reference": true,
-              "is_license_tag": false,
-              "is_license_intro": false,
-              "has_unknown": false,
-              "matcher": "2-aho",
-              "rule_length": 12,
-              "matched_length": 12,
-              "match_coverage": 100.0,
-              "rule_relevance": 100
-            }
+            "license_expression": "zlib",
+            "detection_log": [
+              "not-combined"
+            ],
+            "matches": [
+              {
+                "score": 100.0,
+                "start_line": 3,
+                "end_line": 3,
+                "matched_length": 12,
+                "match_coverage": 100.0,
+                "matcher": "2-aho",
+                "license_expression": "zlib",
+                "rule_identifier": "zlib_5.RULE",
+                "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/zlib_5.RULE",
+                "referenced_filenames": [
+                  "zlib.h"
+                ],
+                "is_license_text": false,
+                "is_license_notice": false,
+                "is_license_reference": true,
+                "is_license_tag": false,
+                "is_license_intro": false,
+                "rule_length": 12,
+                "rule_relevance": 100,
+                "licenses": [
+                  {
+                    "key": "zlib",
+                    "name": "ZLIB License",
+                    "short_name": "ZLIB License",
+                    "category": "Permissive",
+                    "is_exception": false,
+                    "is_unknown": false,
+                    "owner": "zlib",
+                    "homepage_url": "http://www.zlib.net/",
+                    "text_url": "http://www.gzip.org/zlib/zlib_license.html",
+                    "reference_url": "https://scancode-licensedb.aboutcode.org/zlib",
+                    "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/zlib.LICENSE",
+                    "spdx_license_key": "Zlib",
+                    "spdx_url": "https://spdx.org/licenses/Zlib"
+                  }
+                ]
+              }
+            ]
           }
         ],
-        "license_expressions": [
-          "zlib"
-        ],
+        "license_clues": [],
         "percentage_of_license_text": 44.44,
         "copyrights": [
           {
@@ -2630,51 +3003,57 @@
         "is_media": false,
         "is_source": true,
         "is_script": false,
-        "licenses": [
+        "detected_license_expression": "zlib",
+        "detected_license_expression_spdx": "Zlib",
+        "license_detections": [
           {
-            "key": "zlib",
-            "score": 100.0,
-            "name": "ZLIB License",
-            "short_name": "ZLIB License",
-            "category": "Permissive",
-            "is_exception": false,
-            "is_unknown": false,
-            "owner": "zlib",
-            "homepage_url": "http://www.zlib.net/",
-            "text_url": "http://www.gzip.org/zlib/zlib_license.html",
-            "reference_url": "https://scancode-licensedb.aboutcode.org/zlib",
-            "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/zlib.LICENSE",
-            "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/zlib.yml",
-            "spdx_license_key": "Zlib",
-            "spdx_url": "https://spdx.org/licenses/Zlib",
-            "start_line": 3,
-            "end_line": 3,
-            "matched_rule": {
-              "identifier": "zlib_5.RULE",
-              "license_expression": "zlib",
-              "licenses": [
-                "zlib"
-              ],
-              "referenced_filenames": [
-                "zlib.h"
-              ],
-              "is_license_text": false,
-              "is_license_notice": false,
-              "is_license_reference": true,
-              "is_license_tag": false,
-              "is_license_intro": false,
-              "has_unknown": false,
-              "matcher": "2-aho",
-              "rule_length": 12,
-              "matched_length": 12,
-              "match_coverage": 100.0,
-              "rule_relevance": 100
-            }
+            "license_expression": "zlib",
+            "detection_log": [
+              "not-combined"
+            ],
+            "matches": [
+              {
+                "score": 100.0,
+                "start_line": 3,
+                "end_line": 3,
+                "matched_length": 12,
+                "match_coverage": 100.0,
+                "matcher": "2-aho",
+                "license_expression": "zlib",
+                "rule_identifier": "zlib_5.RULE",
+                "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/zlib_5.RULE",
+                "referenced_filenames": [
+                  "zlib.h"
+                ],
+                "is_license_text": false,
+                "is_license_notice": false,
+                "is_license_reference": true,
+                "is_license_tag": false,
+                "is_license_intro": false,
+                "rule_length": 12,
+                "rule_relevance": 100,
+                "licenses": [
+                  {
+                    "key": "zlib",
+                    "name": "ZLIB License",
+                    "short_name": "ZLIB License",
+                    "category": "Permissive",
+                    "is_exception": false,
+                    "is_unknown": false,
+                    "owner": "zlib",
+                    "homepage_url": "http://www.zlib.net/",
+                    "text_url": "http://www.gzip.org/zlib/zlib_license.html",
+                    "reference_url": "https://scancode-licensedb.aboutcode.org/zlib",
+                    "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/zlib.LICENSE",
+                    "spdx_license_key": "Zlib",
+                    "spdx_url": "https://spdx.org/licenses/Zlib"
+                  }
+                ]
+              }
+            ]
           }
         ],
-        "license_expressions": [
-          "zlib"
-        ],
+        "license_clues": [],
         "percentage_of_license_text": 50.0,
         "copyrights": [
           {
@@ -2724,8 +3103,10 @@
         "is_media": false,
         "is_source": false,
         "is_script": false,
-        "licenses": [],
-        "license_expressions": [],
+        "detected_license_expression": null,
+        "detected_license_expression_spdx": null,
+        "license_detections": [],
+        "license_clues": [],
         "percentage_of_license_text": 0,
         "copyrights": [],
         "holders": [],
@@ -2763,49 +3144,55 @@
         "is_media": false,
         "is_source": true,
         "is_script": false,
-        "licenses": [
+        "detected_license_expression": "mit-old-style",
+        "detected_license_expression_spdx": "LicenseRef-scancode-mit-old-style",
+        "license_detections": [
           {
-            "key": "mit-old-style",
-            "score": 100.0,
-            "name": "MIT Old Style",
-            "short_name": "MIT Old Style",
-            "category": "Permissive",
-            "is_exception": false,
-            "is_unknown": false,
-            "owner": "MIT",
-            "homepage_url": "http://fedoraproject.org/wiki/Licensing:MIT#Old_Style",
-            "text_url": "http://fedoraproject.org/wiki/Licensing:MIT#Old_Style",
-            "reference_url": "https://scancode-licensedb.aboutcode.org/mit-old-style",
-            "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit-old-style.LICENSE",
-            "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit-old-style.yml",
-            "spdx_license_key": "LicenseRef-scancode-mit-old-style",
-            "spdx_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit-old-style.LICENSE",
-            "start_line": 9,
-            "end_line": 15,
-            "matched_rule": {
-              "identifier": "mit-old-style_cmr-no_1.RULE",
-              "license_expression": "mit-old-style",
-              "licenses": [
-                "mit-old-style"
-              ],
-              "referenced_filenames": [],
-              "is_license_text": true,
-              "is_license_notice": false,
-              "is_license_reference": false,
-              "is_license_tag": false,
-              "is_license_intro": false,
-              "has_unknown": false,
-              "matcher": "2-aho",
-              "rule_length": 71,
-              "matched_length": 71,
-              "match_coverage": 100.0,
-              "rule_relevance": 100
-            }
+            "license_expression": "mit-old-style",
+            "detection_log": [
+              "not-combined"
+            ],
+            "matches": [
+              {
+                "score": 100.0,
+                "start_line": 9,
+                "end_line": 15,
+                "matched_length": 71,
+                "match_coverage": 100.0,
+                "matcher": "2-aho",
+                "license_expression": "mit-old-style",
+                "rule_identifier": "mit-old-style_cmr-no_1.RULE",
+                "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit-old-style_cmr-no_1.RULE",
+                "referenced_filenames": [],
+                "is_license_text": true,
+                "is_license_notice": false,
+                "is_license_reference": false,
+                "is_license_tag": false,
+                "is_license_intro": false,
+                "rule_length": 71,
+                "rule_relevance": 100,
+                "licenses": [
+                  {
+                    "key": "mit-old-style",
+                    "name": "MIT Old Style",
+                    "short_name": "MIT Old Style",
+                    "category": "Permissive",
+                    "is_exception": false,
+                    "is_unknown": false,
+                    "owner": "MIT",
+                    "homepage_url": "http://fedoraproject.org/wiki/Licensing:MIT#Old_Style",
+                    "text_url": "http://fedoraproject.org/wiki/Licensing:MIT#Old_Style",
+                    "reference_url": "https://scancode-licensedb.aboutcode.org/mit-old-style",
+                    "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit-old-style.LICENSE",
+                    "spdx_license_key": "LicenseRef-scancode-mit-old-style",
+                    "spdx_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit-old-style.LICENSE"
+                  }
+                ]
+              }
+            ]
           }
         ],
-        "license_expressions": [
-          "mit-old-style"
-        ],
+        "license_clues": [],
         "percentage_of_license_text": 79.78,
         "copyrights": [
           {

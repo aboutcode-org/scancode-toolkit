@@ -76,8 +76,7 @@ class AboutFileHandler(models.DatafileHandler):
         download_url = package_data.get('download_url')
         copyright_statement = package_data.get('copyright')
 
-        license_expression = package_data.get('license_expression')
-        declared_license = license_expression
+        declared_license_expression = package_data.get('license_expression')
 
         owner = package_data.get('owner')
         if not isinstance(owner, str):
@@ -97,8 +96,7 @@ class AboutFileHandler(models.DatafileHandler):
             namespace=package_ns,
             name=name,
             version=version,
-            declared_license=declared_license,
-            license_expression=license_expression,
+            extracted_license_statement=declared_license_expression,
             copyright=copyright_statement,
             parties=parties,
             homepage_url=homepage_url,
@@ -118,16 +116,15 @@ class AboutFileHandler(models.DatafileHandler):
                 package_data=package_data,
                 datafile_path=datafile_path,
             )
-            package_uid = package.package_uid
 
+            package.populate_license_fields()
+
+            yield package
+
+            package_uid = package.package_uid
             # NOTE: we do not attach files to the Package level. Instead we
             # update `for_package` in the file
             package_adder(package_uid, resource, codebase)
-
-            if not package.license_expression:
-                package.license_expression = cls.compute_normalized_license(package)
-
-            yield package
 
             if resource.has_parent() and package_data.file_references:
                 parent_resource = resource.parent(codebase)

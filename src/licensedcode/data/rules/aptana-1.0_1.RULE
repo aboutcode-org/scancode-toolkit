@@ -1,3 +1,10 @@
+---
+license_expression: aptana-1.0
+is_license_text: yes
+ignorable_emails:
+    - license@aptana.com
+---
+
 Aptana Public License 1.0
 The Aptana Public License is designed to allow you the freedom to use Aptana products without restriction, except for redistribution. We at Aptana want you to not only use Aptana for web development, but also freely share scripts, snippets, websites and other items with friends and coworkers, and to encourage others to use and adopt Aptana as well. However, we require that you do not redistribute Aptana Studio itself. If you are interested in redistributing Aptana or have a question, please contact us at license@aptana.com.
 Please view the Frequently Asked Questions if you have additional questions not answered here.

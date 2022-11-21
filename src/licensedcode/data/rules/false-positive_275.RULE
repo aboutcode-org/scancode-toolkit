@@ -1,0 +1,10 @@
+---
+is_false_positive: yes
+notes: a list of filenames, not a license notice
+---
+
+DEBUG
+formats.txt
+FTL.TXT
+GPL.TXT
+INSTALL

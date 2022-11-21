@@ -1,1 +1,9 @@
+---
+license_expression: blueoak-1.0.0
+is_license_reference: yes
+relevance: 100
+ignorable_urls:
+    - https://spdx.org/licenses/BlueOak-1.0.0
+---
+
 LICENSE {{BlueOak-1.0.0}} https://spdx.org/licenses/BlueOak-1.0.0

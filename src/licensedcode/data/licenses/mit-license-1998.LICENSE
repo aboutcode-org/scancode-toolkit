@@ -1,3 +1,12 @@
+---
+key: mit-license-1998
+short_name: MIT License 1998
+name: MIT License 1998
+category: Permissive
+owner: MIT
+spdx_license_key: LicenseRef-scancode-mit-license-1998
+---
+
 Permission to use, copy, modify and distribute this software and its
 documentation for any purpose and without fee is hereby granted,
 provided that both the above copyright notice and this permission

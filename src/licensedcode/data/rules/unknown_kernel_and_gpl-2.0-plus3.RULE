@@ -1,1 +1,8 @@
-Licence: Allegedly GPLv2+, but no source visible. 
+---
+license_expression: unknown AND gpl-2.0-plus
+is_license_reference: yes
+relevance: 100
+notes: Seen in the kernel
+---
+
+Licence: Allegedly GPLv2+, but no source visible.

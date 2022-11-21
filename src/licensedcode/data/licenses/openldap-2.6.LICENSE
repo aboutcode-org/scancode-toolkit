@@ -1,3 +1,21 @@
+---
+key: openldap-2.6
+short_name: OpenLDAP Public License 2.6
+name: OpenLDAP Public License 2.6
+category: Permissive
+owner: OpenLDAP Foundation
+homepage_url: http://www.openldap.org/devel/gitweb.cgi?p=openldap.git;a=blob;f=LICENSE;hb=1cae062821881f41b73012ba816434897abf4205
+notes: Per SPDX.org, this license was released 14 June 2001.
+spdx_license_key: OLDAP-2.6
+text_urls:
+    - http://www.openldap.org/devel/gitweb.cgi?p=openldap.git;a=blob;f=LICENSE;hb=1cae062821881f41b73012ba816434897abf4205
+minimum_coverage: 70
+ignorable_copyrights:
+    - Copyright 1999-2001 The OpenLDAP Foundation, Redwood City, California, USA.
+ignorable_holders:
+    - The OpenLDAP Foundation, Redwood City, California, USA.
+---
+
 The OpenLDAP Public License 
 Version 2.6, 14 June 2001 
 

@@ -1,3 +1,11 @@
+---
+license_expression: w3c OR html5
+is_license_notice: yes
+relevance: 100
+ignorable_urls:
+    - http://www.w3.org/Consortium/Legal/2002/copyright-software-20021231.html
+---
+
 Use and distribution of this code are permitted under the terms of
      either of the following two licences:
 

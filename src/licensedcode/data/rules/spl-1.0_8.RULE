@@ -1,3 +1,10 @@
+---
+license_expression: spl-1.0
+is_license_text: yes
+ignorable_urls:
+    - http://www.sun.com/
+---
+
 License: SPL
  SUN PUBLIC LICENSE Version 1.0 
  
@@ -469,4 +476,4 @@ License: SPL
     [NOTE: The text of this Exhibit A may differ slightly from the text of 
     the notices in the Source Code files of the Original Code. You should 
     use the text of this Exhibit A rather than the text found in the 
-    Original Code Source Code for Your Modifications.] 
+    Original Code Source Code for Your Modifications.]

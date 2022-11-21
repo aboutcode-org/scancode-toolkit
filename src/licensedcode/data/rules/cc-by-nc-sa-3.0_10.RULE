@@ -1,3 +1,10 @@
+---
+license_expression: cc-by-nc-sa-3.0
+is_license_notice: yes
+ignorable_urls:
+    - http://creativecommons.org/licenses/by-nc-sa/3.0/
+---
+
 /*  is not free software; you can redistribute it and/or modify it under
  * the terms of the Creative Commons Attribution-NonCommercial-ShareAlike 3.0
  * Unported as published by the Creative Commons organization.

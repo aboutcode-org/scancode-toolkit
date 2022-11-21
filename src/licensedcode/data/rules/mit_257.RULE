@@ -1,3 +1,11 @@
+---
+license_expression: mit
+is_license_tag: yes
+relevance: 100
+referenced_filenames:
+    - LICENSE
+---
+
 ## License
 
 The MIT License (MIT). Read [LICENSE](LICENSE).

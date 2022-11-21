@@ -1,3 +1,10 @@
+---
+license_expression: proprietary-license
+is_license_notice: yes
+ignorable_urls:
+    - http://www.confluent.io/confluent-community-license
+---
+
   ~ Licensed under the Confluent Community License; you may not use this file
   ~ except in compliance with the License.  You may obtain a copy of the License at
   ~

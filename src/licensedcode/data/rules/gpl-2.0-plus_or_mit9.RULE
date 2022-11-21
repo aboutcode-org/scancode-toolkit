@@ -1,3 +1,8 @@
+---
+license_expression: gpl-2.0-plus OR mit
+is_license_notice: yes
+---
+
 This program is free software; you can redistribute it and/or
 modify it under the terms of the GNU General Public License as
 published by the Free Software Foundation; either version 2 of the
@@ -15,4 +20,3 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
 
 As an alternative, at your option, you may use this file under the
 following terms, known as the "MIT license":
-

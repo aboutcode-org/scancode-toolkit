@@ -1,3 +1,15 @@
+---
+license_expression: proprietary-license
+is_license_text: yes
+minimum_coverage: 80
+ignorable_copyrights:
+    - Copyright 2000 Wizards of the Coast, Inc 'Wizards
+    - Copyright 2000, Wizards of the Coast, Inc.
+ignorable_holders:
+    - Wizards of the Coast, Inc 'Wizards
+    - Wizards of the Coast, Inc.
+---
+
 OPEN GAME LICENSE Version 1.0a
 
 The following text is the property of Wizards of the Coast, Inc. and is Copyright 2000 Wizards of the Coast, Inc ("Wizards"). All Rights Reserved.
@@ -32,4 +44,3 @@ The following text is the property of Wizards of the Coast, Inc. and is Copyrigh
 
 15 COPYRIGHT NOTICE
 Open Game License v 1.0 Copyright 2000, Wizards of the Coast, Inc.
-

@@ -1,0 +1,8 @@
+---
+license_expression: proprietary-license AND (lgpl-2.1 OR gpl-2.0)
+is_license_notice: yes
+---
+
+The Fraunhofer AAC library is licensed under a license incompatible to the GPL
+and is not known to be compatible to the LGPL. Therefore, you have to pass
+@code{--enable-nonfree} to configure to use it.

@@ -1,3 +1,12 @@
+---
+license_expression: lgpl-3.0-plus WITH independent-module-linking-exception AND free-unknown
+is_license_notice: yes
+relevance: 100
+minimum_coverage: 80
+ignorable_urls:
+    - https://www.gnu.org/licenses/
+---
+
                          LICENSE TERMS
 
 Please carefully read the license terms below. If you do not accept the terms,
@@ -48,4 +57,3 @@ statement from your version.
 Some files included with   may be licensed under other terms or made
 available for use without requiring a license. Where applicable, such terms are
 noted in the file to which they apply.
-

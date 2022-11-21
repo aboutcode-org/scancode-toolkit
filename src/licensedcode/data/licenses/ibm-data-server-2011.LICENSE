@@ -1,3 +1,21 @@
+---
+key: ibm-data-server-2011
+short_name: IBM Data Server License 2011
+name: IBM Data Server License 2011
+category: Commercial
+owner: IBM
+homepage_url: https://www.nuget.org/packages/IBM.Data.DB2.Core/3.1.0.500/License
+spdx_license_key: LicenseRef-scancode-ibm-data-server-2011
+other_urls:
+    - https://www.ibm.com/docs/en/workload-automation/9.5.0?topic=SSGSPN_9.5.0/notices_distagentzos.html
+    - https://www.ibm.com/support/pages/sites/default/files/inline-files/Z125-3301-14.pdf
+    - https://www.ibm.com/support/knowledgecenter/en/STVRB7_3.4.0/Z125-3301-14.pdf
+ignorable_urls:
+    - http://www.ibm.com/software/sla
+    - http://www.ibm.com/software/support
+    - http://www.ibm.com/softwarepolicies
+---
+
 LICENSE INFORMATION
 
 The Programs listed below are licensed under the following License Information terms and conditions in addition to the Program license terms previously agreed to by Client and IBM. If Client does not have previously agreed to license terms in effect for the Program, the International Program License Agreement (Z125-3301-14) applies.

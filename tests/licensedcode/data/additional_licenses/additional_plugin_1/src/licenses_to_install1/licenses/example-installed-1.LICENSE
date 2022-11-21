@@ -1,0 +1,10 @@
+---
+key: example-installed-1
+short_name: Example Installed License 1
+name: Example Installed License 1
+category: Permissive
+owner: NexB
+spdx_license_key: scancode-example-installed1
+---
+
+This is a test license that must be installed into ScanCode Toolkit.

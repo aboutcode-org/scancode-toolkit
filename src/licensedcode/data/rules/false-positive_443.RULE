@@ -1,3 +1,8 @@
+---
+is_false_positive: yes
+notes: comments about licensing
+---
+
 That code can be re-used in a
 GPL bootloader, and as the author of that code, I would be happy
 to discuss possible free licensing to any vendor who wishes to

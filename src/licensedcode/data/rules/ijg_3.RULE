@@ -1,3 +1,12 @@
+---
+license_expression: ijg
+is_license_notice: yes
+ignorable_copyrights:
+    - Copyright property of CompuServe Incorporated
+ignorable_holders:
+    - CompuServe Incorporated
+---
+
 This software is based in part on the work of the
 Independent JPEG Group.  The Graphics Interchange Format is the
-Copyright property of CompuServe Incorporated. 
+Copyright property of CompuServe Incorporated.

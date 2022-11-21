@@ -1,3 +1,18 @@
+---
+key: free-fork
+short_name: Free-Fork License
+name: University of Washington Free-Fork License
+category: Copyleft Limited
+owner: University of Washington IT
+spdx_license_key: LicenseRef-scancode-free-fork
+ignorable_copyrights:
+    - Copyright 1988-2002 University of Washington
+ignorable_holders:
+    - University of Washington
+ignorable_emails:
+    - imap-license@cac.washington.edu
+---
+
 University of Washington's Free-Fork License
 
 University of Washington IMAP toolkit

@@ -1,3 +1,24 @@
+---
+key: zpl-2.0
+short_name: ZPL 2.0
+name: Zope Public License 2.0
+category: Permissive
+owner: Zope Community
+homepage_url: http://www.zope.org/Resources/License/
+notes: Per SPDX.org, this license is OSI certified
+spdx_license_key: ZPL-2.0
+osi_license_key: ZPL-2.0
+text_urls:
+    - http://www.zope.org/Resources/License/
+other_urls:
+    - http://old.zope.org/Resources/License/ZPL-2.0
+    - http://opensource.org/licenses/ZPL-2.0
+    - http://www.zope.com/Marks
+    - https://opensource.org/licenses/ZPL-2.0
+ignorable_urls:
+    - http://www.zope.com/Marks
+---
+
 This license has been certified as open source. It has also been designated as
 GPL compatible by the Free Software Foundation (FSF).
 

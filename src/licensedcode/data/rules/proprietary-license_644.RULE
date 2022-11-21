@@ -1,3 +1,14 @@
+---
+license_expression: proprietary-license
+is_license_text: yes
+minimum_coverage: 90
+notes: This is the license of the version of Linux 0.0.1 http://ftp.funet.fi/pub/linux/historical/kernel/old-versions/RELNOTES-0.01
+ignorable_copyrights:
+    - (c) 1991 Linus Torvalds
+ignorable_holders:
+    - Linus Torvalds
+---
+
 This kernel is (C) 1991 Linus Torvalds, but all or part of it may be
 redistributed provided you do the following:
 

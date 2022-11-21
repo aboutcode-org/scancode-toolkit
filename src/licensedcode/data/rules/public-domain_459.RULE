@@ -1,0 +1,13 @@
+---
+license_expression: public-domain
+is_license_text: yes
+minimum_coverage: 80
+notes: seen in FFmpeg compat/getopt.c
+---
+
+* Subject: {{public domain}} AT&T getopt source
+  * Here's something you've all been waiting for:  the AT&T {{public domain}}
+  * source for getopt(3).  It is the code which was given out at the 1985
+  * UNIFORUM conference in Dallas.  I obtained it by electronic mail
+  * directly from AT&T.  The people there assure me that it is indeed
+  * {{in the public domain.}}

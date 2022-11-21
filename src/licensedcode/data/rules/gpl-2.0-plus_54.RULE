@@ -1,3 +1,10 @@
+---
+license_expression: gpl-2.0-plus AND lgpl-2.1-plus
+is_license_notice: yes
+relevance: 95
+notes: there are some confusing references to both LGPL and GPL
+---
+
 * This is free software; you can redistribute it and/or modify it under the    *
 * terms of the GNU General Public License as published by the Free Software    *
 * Foundation; either version 2 of the License, or (at your option) any later   *

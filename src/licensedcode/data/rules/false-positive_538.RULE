@@ -1,1 +1,6 @@
+---
+is_false_positive: yes
+notes: See in vala project generator
+---
+
 strdup ("/usr/share/common-licenses/GPL-2")

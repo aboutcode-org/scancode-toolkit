@@ -1,3 +1,15 @@
+---
+key: sencha-commercial
+short_name: Sencha Commercial License 1.1
+name: Sencha Commercial License v1.1
+category: Commercial
+owner: Sencha
+homepage_url: http://www.sencha.com/legal/sencha-commercial-software-license-agreement/
+spdx_license_key: LicenseRef-scancode-sencha-commercial
+ignorable_urls:
+    - http://www.gnu.org/copyleft/gpl.html
+---
+
 Sencha Commercial License
 Sencha Commercial Software License Agreement: Ext JS, Sencha GXT, and/or Sencha Touch Charts
 Version 1.11

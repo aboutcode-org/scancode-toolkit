@@ -1,3 +1,10 @@
+---
+license_expression: proprietary-license
+is_license_text: yes
+relevance: 100
+notes: see https://www.opus-codec.org/license/
+---
+
 1. Patent Terms.
 
 1.1. Specification License. Subject to all the terms and conditions of this Agreement, I, on behalf of myself and my successors in interest and assigns, hereby grant you a non-sublicensable, perpetual, worldwide, non-exclusive, no-charge, royalty-free, irrevocable license to my Necessary Decoder Claims for your Specification Implementation.

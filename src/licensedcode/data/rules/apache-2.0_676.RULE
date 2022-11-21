@@ -1,3 +1,13 @@
+---
+license_expression: apache-2.0
+is_license_notice: yes
+relevance: 100
+referenced_filenames:
+    - APPENDIX
+ignorable_urls:
+    - http://www.apache.org/licenses/LICENSE-2.0.txt
+---
+
 The default license for  search engine is the Apache
 License, Version 2.0 (ALv2). The license text can be found at
 http://www.apache.org/licenses/LICENSE-2.0.txt and it is reproduced below.

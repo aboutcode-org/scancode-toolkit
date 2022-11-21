@@ -1,3 +1,11 @@
+---
+license_expression: proprietary-license
+is_license_text: yes
+relevance: 100
+ignorable_authors:
+    - Sun Microsystems, Inc.
+---
+
 This product or document is protected by copyright and distributed
 under licenses restricting its use, copying, distribution, and
 decompilation.  No part of this product or documentation may be

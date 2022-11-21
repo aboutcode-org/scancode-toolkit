@@ -1,3 +1,10 @@
+---
+license_expression: other-permissive
+is_license_text: yes
+relevance: 100
+notes: https://blitiri.com.ar/p/bola/ and https://github.com/albertito/libfiu/blob/20ea5e85ec63e3dedd6904e103fb2e56b46840cf/LICENSE
+---
+
 I don't like licenses, because I don't like having to worry about all this
  legal stuff just for a simple piece of software I don't really mind anyone
  using. But I also believe that it's important that people share and give back;

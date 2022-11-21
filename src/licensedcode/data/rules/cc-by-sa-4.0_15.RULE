@@ -1,3 +1,11 @@
+---
+license_expression: cc-by-sa-4.0
+is_license_notice: yes
+relevance: 100
+ignorable_urls:
+    - https://creativecommons.org/licenses/by-sa/4.0
+---
+
 This Meteor Code of Conduct is licensed under the 
 [Creative Commons Attribution-ShareAlike 4.0 International](https://creativecommons.org/licenses/by-sa/4.0/) 
 license.

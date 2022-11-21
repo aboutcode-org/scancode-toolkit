@@ -1,1 +1,8 @@
+---
+license_expression: apache-2.0
+is_license_notice: yes
+referenced_filenames:
+    - LICENSE
+---
+
  is licensed under the terms of the Apache 2.0 license, the full version of which can be found in the LICENSE file included in the distribution.

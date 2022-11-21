@@ -1,3 +1,23 @@
+---
+key: minpack
+short_name: Minpack Copyright Notice
+name: Minpack Copyright Notice
+category: Permissive
+owner: University of Chicago
+homepage_url: http://www.netlib.org/minpack/disclaimer
+spdx_license_key: Minpack
+other_spdx_license_keys:
+    - LicenseRef-scancode-minpack
+text_urls:
+    - http://www.netlib.org/minpack/disclaimer
+other_urls:
+    - https://gitlab.com/libeigen/eigen/-/blob/master/COPYING.MINPACK
+ignorable_authors:
+    - the University of Chicago
+---
+
+Minpack Copyright Notice (1999) University of Chicago.  All rights reserved
+
 Redistribution and use in source and binary forms, with or
 without modification, are permitted provided that the
 following conditions are met:

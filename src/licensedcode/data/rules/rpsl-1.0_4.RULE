@@ -1,3 +1,20 @@
+---
+license_expression: rpsl-1.0
+is_license_text: yes
+notes: rpsl from osi
+ignorable_copyrights:
+    - Copyright (c) 1995-2002 RealNetworks, Inc. and/or its licensors
+    - Copyright (c) RealNetworks, Inc., 1995-2002
+ignorable_holders:
+    - RealNetworks, Inc.
+    - RealNetworks, Inc. and/or its licensors
+ignorable_urls:
+    - http://www.realnetworks.com/info/helixlogo.html
+    - https://www.helixcommunity.org/content/complicense
+    - https://www.helixcommunity.org/content/rcsl
+    - https://www.helixcommunity.org/content/rpsl
+---
+
 RealNetworks Public Source License Version 1.0
 
 1. General Definitions. This License applies to any program or other work which RealNetworks, Inc., or any other entity that elects to use this license, ("Licensor") makes publicly available and which contains a notice placed by Licensor identifying such program or work as "Original Code" and stating that it is subject to the terms of this RealNetworks Public Source License version 1.0 (or subsequent version thereof) ("License"). You are not required to accept this License. However, nothing else grants You permission to use, copy, modify or distribute the software or its derivative works. These actions are prohibited by law if You do not accept this License. Therefore, by modifying, copying or distributing the software (or any work based on the software), You indicate your acceptance of this License to do so, and all its terms and conditions. In addition, you agree to the terms of this License by clicking the Accept button or downloading the software. As used in this License:

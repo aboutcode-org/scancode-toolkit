@@ -1,0 +1,10 @@
+---
+key: example1
+short_name: Example External License 1
+name: Example External License 1
+category: Permissive
+owner: NexB
+spdx_license_key: scancode-example1
+---
+
+The quick brown fox jumps over the lazy dog.

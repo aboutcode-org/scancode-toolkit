@@ -1,3 +1,11 @@
+---
+license_expression: itu-t
+is_license_text: yes
+relevance: 100
+ignorable_authors:
+    - the User's Group
+---
+
 Terms and conditions
 
 B.1 This License Agreement applies to any module or other work related to the ITU-T Software Tool Library, 

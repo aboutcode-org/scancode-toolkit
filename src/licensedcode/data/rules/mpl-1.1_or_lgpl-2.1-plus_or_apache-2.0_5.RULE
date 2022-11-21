@@ -1,3 +1,8 @@
+---
+license_expression: mpl-1.1 OR lgpl-2.1-plus OR apache-2.0
+is_license_notice: yes
+---
+
 Alternatively, the contents of this software may be used under the
 terms of the GNU Lesser General Public License Version 2.1 or later
 (the "LGPL"), or the Apache License Version 2.0 (the "AL"),
@@ -9,4 +14,3 @@ your decision by deleting the provisions above and replace them with
 the notice and other provisions required by the LGPL or the AL. If you do not
 delete the provisions above, a recipient may use your version of this
 software under the terms of any one of the MPL, the LGPL or the AL.
-

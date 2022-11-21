@@ -1,0 +1,20 @@
+---
+license_expression: commercial-license OR lgpl-2.1 OR gpl-3.0
+is_license_notice: yes
+---
+
+" Qt is available under three different licensing options designed "
+"to accommodate the needs of our various users. "
+" Qt licensed under our commercial license agreement is appropriate "
+"for development of proprietary/commercial software where you do not "
+"want to share any source code with third parties or otherwise cannot "
+"comply with the terms of the GNU LGPL version 2.1 or GNU GPL version "
+"3.0. "
+" Qt licensed under the GNU LGPL version 2.1 is appropriate for the "
+"development of Qt applications provided you can comply with the terms "
+"and conditions of the GNU LGPL version 2.1. "
+" Qt licensed under the GNU General Public License version 3.0 is "
+"appropriate for the development of Qt applications where you wish to "
+"use such applications in combination with software subject to the "
+"terms of the GNU GPL version 3.0 or where you are otherwise willing "
+"to comply with the terms of the GNU GPL version 3.0. "

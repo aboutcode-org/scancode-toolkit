@@ -1,3 +1,10 @@
+---
+license_expression: cc-by-2.5
+is_license_reference: yes
+ignorable_urls:
+    - http://creativecommons.org/licenses/by/2.5/
+---
+
  * This code is freely usable for all purposes.
  *
  * This work is licensed under the Creative Commons Attribution2.5 License.

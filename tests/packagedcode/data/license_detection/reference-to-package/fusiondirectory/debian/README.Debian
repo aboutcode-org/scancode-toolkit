@@ -1,0 +1,76 @@
+FusionDirectory 1.3.x for Debian
+================================
+
+Configure FusionDirectory
+=========================
+
+By default you can point your favorite browser to the FusionDirectory setup by
+using this URL:
+
+http://your.server.address/fusiondirectory
+
+Follow the instructions on the screen.
+
+Security related information
+==============================
+
+(a) Cleartext passwords in fusiondirectory.conf
+
+FusionDirectory is running as the www-data user. This makes it possible for other
+web applications (well, this is the rule for almost every web application
+that stores information somewhere around) to read the fusiondirectory.conf file, which
+may contain vital information about your LDAP service.
+
+To make it harder to extract these passwords, they get encrypted by a
+master password only readable by the FusionDirectory location.
+
+You can simply migrate old existing passwords by typing:
+
+# a2enmod headers
+# fusiondirectory-setup --encrypt-passwords
+# /etc/init.d/apache2 reload
+
+If this is not enough for you (exploitable PHP code may make it possible to
+read the webservers memory), you can simply create another webserver instance
+running as a different user on different port for FusionDirectory exclusively. Or use
+apache2-mpm-itk and assign a different user to a virtual host.
+
+(b) Cleartext passwords and other sensitive data stored in LDAP
+
+Some FusionDirectory plugins, such as the Dovecot and the Cyrus IMAP plugins, store
+their service master passwords in LDAP without encryption. If using these plugins,
+make sure that your LDAP data is properly protected via slapd ACLs.
+
+If your system is affected can be checked via
+
+```
+$ ldapsearch -x | egrep 'fd(Dovecot|Cyrus)Password:'
+
+fdDovecotPassword: <some-password>
+fdCyrusPassword: <some-password>
+```
+Furthermore, there might be a lot more sensitive data stored in the LDAP database managed
+by FusionDirectory.
+
+Please harden your LDAP service before exposing LDAP data managed by
+FusionDirectory to your local network. Especially the slapd / OpenLDAP
+default settings as shipped on a standard Debian system provide
+insufficient security when managing the LDAP data via FusionDirectory.
+
+If you need further information on optimal slapd service ACL
+configuration, please consult FusionDirectory upstream:
+https://lists.fusiondirectory.org/wws/info/users
+
+
+Further information
+===================
+
+To improve this piece of software, please report all kind of errors using the bug tracker
+on https://gitlab.fusiondirectory.org/fusiondirectory/
+
+Documentation: http://documentation.fusiondirectory.org/
+Mailinglist:   http://lists.fusiondirectory.org/
+Irc:           #fusiondirectory on freenode
+
+---
+The FusionDirectory project <contact@fusiondirectory.org>

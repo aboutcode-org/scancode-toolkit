@@ -1,3 +1,13 @@
+---
+license_expression: bsd-new OR gpl-2.0
+is_license_notice: yes
+relevance: 100
+minimum_coverage: 80
+ignorable_urls:
+    - http://opensource.org/licenses/BSD-3-Clause
+    - https://www.gnu.org/licenses/gpl-2.0.html
+---
+
 This file is licensed under the terms of the 3-clause
 BSD License (http://opensource.org/licenses/BSD-3-Clause)
 or the GNU GPL-2.0 (https://www.gnu.org/licenses/gpl-2.0.html),

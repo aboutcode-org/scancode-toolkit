@@ -12,6 +12,9 @@ All "Post-Scan" Options
                          copyright holder and return those groupings
                          as a list of consolidated packages and a list
                          of consolidated components.
+                         The --consolidate option will be deprecated in
+                         a future version of scancode-toolkit as top level
+                         packages now provide a improved consolidated data.
 
                          Sub-Option of - ``--copyright``, ``--license`` and
                          ``--packages``.
@@ -20,9 +23,11 @@ All "Post-Scan" Options
                          contained in detected licenses, copyright
                          texts and notices.
 
---is-license-text        Set the "is_license_text" flag to true for
-                         files that contain mostly license texts and
-                         notices (e.g. over 90% of the content).
+--is-license-text        [DEPRECATED] Set the "is_license_text" flag
+                         to true for files that contain mostly license
+                         texts and notices (e.g. over 90% of the content).
+                         This is now built-in in the --license-text option
+                         with a "percentage_of_license_text" attribute.
 
                          Sub-Option of - ``--info`` and ``--license-text``.
 

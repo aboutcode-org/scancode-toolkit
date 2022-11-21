@@ -36,9 +36,7 @@ Options:
                                  0 for no limit.  [default: 50]
     --max-url INT                Report only up to INT urls found in a file. Use 0
                                  for no limit.  [default: 50]
-    --unknown-licenses           [EXPERIMENTAL] Detect unknown licenses and follow
-                                 license references such as "See license in file
-                                 COPYING".
+    --unknown-licenses           [EXPERIMENTAL] Detect unknown licenses.
 
   output formats:
     --json FILE             Write scan output as compact JSON to FILE.
@@ -156,13 +154,6 @@ Options:
                              Descend at most INTEGER levels of directories below
                              and including the starting directory. Use 0 for no
                              scan depth limit.
-
-  miscellaneous:
-    --reindex-licenses              Rebuild the license index and exit.
-    --reindex-licenses-for-all-languages
-                                    [EXPERIMENTAL] Rebuild the license index
-                                    including texts all languages (and not only
-                                    English) and exit.
 
   documentation:
     -h, --help       Show this message and exit.

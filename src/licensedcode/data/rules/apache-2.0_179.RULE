@@ -1,3 +1,11 @@
+---
+license_expression: apache-2.0
+is_license_notice: yes
+relevance: 100
+referenced_filenames:
+    - LICENSE
+---
+
 ## License
 
 This project is under Apache v2 License. See the [LICENSE](LICENSE) file for the full license text.

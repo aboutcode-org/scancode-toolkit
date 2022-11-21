@@ -1,3 +1,9 @@
+---
+license_expression: x11
+is_license_text: yes
+notes: a weirdly hyphenated X11 license text
+---
+
 Permission is hereby granted, free of charge, to any person obtaining a 
 copy of this software and associated documentation files (the "Soft- 
 ware"), to deal in the Software without restriction, including without 
@@ -21,4 +27,4 @@ MANCE OF THIS SOFTWARE.
 Except as contained in this notice, the name of a copyright holder shall 
 not be used in advertising or otherwise to promote the sale, use or 
 other dealings in this Software without prior written authorization of 
-the copyright holder. 
+the copyright holder.

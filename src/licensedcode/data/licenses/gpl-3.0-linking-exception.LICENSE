@@ -1,3 +1,14 @@
+---
+key: gpl-3.0-linking-exception
+short_name: GPL-3.0 Linking Exception
+name: GPL-3.0 Linking Exception
+category: Copyleft Limited
+owner: Free Software Foundation (FSF)
+homepage_url: https://www.gnu.org/licenses/gpl-faq.en.html#GPLIncompatibleLibs
+is_exception: yes
+spdx_license_key: GPL-3.0-linking-exception
+---
+
 Additional permission under GNU GPL version 3 section 7
 
 If you modify this Program, or any covered work, by linking or combining it with [name of library] (or a modified version of that library), containing parts covered by the terms of [name of library's license], the licensors of this Program grant you additional permission to convey the resulting work.

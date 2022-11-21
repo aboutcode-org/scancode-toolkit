@@ -1,3 +1,12 @@
+---
+license_expression: python
+is_license_reference: yes
+minimum_coverage: 99
+notes: this is an historical note found in Python licenses history blurb
+ignorable_urls:
+    - https://www.opensource.org/
+---
+
 All Python releases are Open Source (see https://www.opensource.org for
 the Open Source Definition).  Historically, most, but not all, Python
 releases have also been GPL-compatible; the table below summarizes

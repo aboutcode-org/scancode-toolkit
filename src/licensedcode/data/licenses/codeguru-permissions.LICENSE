@@ -1,3 +1,15 @@
+---
+key: codeguru-permissions
+short_name: CodeGuru Permissions
+name: CodeGuru Permissions
+category: Permissive
+owner: CodeGuru
+homepage_url: http://www.codeguru.com/submission-guidelines.php#permission
+spdx_license_key: LicenseRef-scancode-codeguru-permissions
+text_urls:
+    - http://www.codeguru.com/submission-guidelines.php#permission
+---
+
 Permissions
 
 As you know, this site is a valuable resource for the developer community.

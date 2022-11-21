@@ -1,3 +1,13 @@
+---
+license_expression: gpl-2.0-plus WITH ecos-exception-2.0
+is_license_notice: yes
+relevance: 100
+minimum_coverage: 50
+ignorable_urls:
+    - https://www.gnu.org/copyleft/gpl.html
+    - https://www.gnu.org/philosophy/license-list.html
+---
+
 As of May 2002, eCos is released
 under a modified version of the well known  "https://www.gnu.org/copyleft/gpl.html">GNU General Public License
 (GPL), now making it an  https://www.gnu.org/philosophy/license-list.html" official

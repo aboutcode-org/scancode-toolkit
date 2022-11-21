@@ -1,3 +1,22 @@
+---
+key: attribution
+short_name: AAL
+name: Attribution Assurance License
+category: Permissive
+owner: Unspecified
+homepage_url: http://opensource.org/licenses/attribution.php
+notes: |
+    Per SPDX.org, this version was released 2002 This license is OSI
+    certifified.
+spdx_license_key: AAL
+text_urls:
+    - http://opensource.org/licenses/attribution.php
+osi_url: http://opensource.org/licenses/attribution.php
+other_urls:
+    - http://www.opensource.org/licenses/attribution
+    - https://opensource.org/licenses/attribution
+---
+
 PROFESSIONAL IDENTIFICATION * URL
 "PROMOTIONAL SLOGAN FOR AUTHOR'S PROFESSIONAL PRACTICE"
 

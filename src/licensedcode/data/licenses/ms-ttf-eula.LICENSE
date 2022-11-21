@@ -1,3 +1,12 @@
+---
+key: ms-ttf-eula
+short_name: MS TrueType Fonts EULA
+name: Microsoft TrueType Fonts EULA
+category: Commercial
+owner: Microsoft
+spdx_license_key: LicenseRef-scancode-ms-ttf-eula
+---
+
 Microsoft TrueType Fonts 
 END-USER LICENSE AGREEMENT FOR MICROSOFT SOFTWARE 
 ---------------------------------------------------

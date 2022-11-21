@@ -1,2 +1,9 @@
+---
+license_expression: minpack
+is_license_notice: yes
+referenced_filenames:
+    - CopyrightMINPACK.txt
+---
+
  This Source Code Form is subject to the terms of the Minpack license
  (a BSD-like license) described in the campaigned CopyrightMINPACK.txt file.

@@ -1,3 +1,11 @@
+---
+license_expression: drl-1.0
+is_license_text: yes
+relevance: 99
+minimum_coverage: 99
+notes: legacy minor modification.
+---
+
 # Detection Rule License (DRL) 1.0
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this rule set and associated documentation files (the "Rules"), to deal in the Rules without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Rules, and to permit persons to whom the Rules are furnished to do so, subject to the following conditions:

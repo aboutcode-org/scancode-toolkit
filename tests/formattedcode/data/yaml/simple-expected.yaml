@@ -22,9 +22,9 @@ headers:
       system_environment:
         operating_system: linux
         cpu_architecture: 64
-        platform: Linux-5.10.102.1-microsoft-standard-WSL2-x86_64-with-glibc2.35
-        platform_version: '#1 SMP Wed Mar 2 00:30:59 UTC 2022'
-        python_version: 3.10.5 (main, Jul 30 2022, 03:32:13) [GCC 11.2.0]
+        platform: Linux-5.14.0-1045-oem-x86_64-with-glibc2.29
+        platform_version: '#51-Ubuntu SMP Mon Jul 4 06:41:22 UTC 2022'
+        python_version: "3.8.10 (default, Jun 22 2022, 20:18:18) \n[GCC 9.4.0]"
       spdx_license_list_version: '3.17'
       files_count: 1
 dependencies: []
@@ -48,8 +48,10 @@ files:
     is_media: no
     is_source: no
     is_script: no
-    licenses: []
-    license_expressions: []
+    detected_license_expression:
+    detected_license_expression_spdx:
+    license_detections: []
+    license_clues: []
     percentage_of_license_text: '0'
     copyrights: []
     holders: []
@@ -78,8 +80,10 @@ files:
     is_media: no
     is_source: yes
     is_script: no
-    licenses: []
-    license_expressions: []
+    detected_license_expression:
+    detected_license_expression_spdx:
+    license_detections: []
+    license_clues: []
     percentage_of_license_text: '0'
     copyrights:
       - copyright: Copyright (c) 2000 ACME, Inc.

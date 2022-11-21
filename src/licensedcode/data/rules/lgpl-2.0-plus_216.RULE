@@ -1,3 +1,9 @@
+---
+license_expression: lgpl-2.0-plus
+is_license_notice: yes
+relevance: 99
+---
+
 Of course you have to respect the GNU Library General Public
 License which covers the use of the GNU `gettext' library.  This means
 in particular that even non-free programs can use `libintl' as a shared

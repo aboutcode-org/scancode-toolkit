@@ -1,3 +1,12 @@
+---
+key: broadcom-standard-terms
+short_name: Broadcom Standard Terms
+name: Broadcom Standard Terms
+category: Commercial
+owner: Broadcom
+spdx_license_key: LicenseRef-scancode-broadcom-standard-terms
+---
+
 This program is the proprietary software of Broadcom Corporation and/or
 its licensors, and may only be used, duplicated, modified or distributed
 pursuant to the terms and conditions of a separate, written license

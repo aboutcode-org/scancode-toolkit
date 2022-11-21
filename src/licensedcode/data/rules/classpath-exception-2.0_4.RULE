@@ -1,3 +1,9 @@
+---
+license_expression: classpath-exception-2.0
+is_license_notice: yes
+notes: Oracle GPL cpe
+---
+
 "CLASSPATH" EXCEPTION TO THE GPL VERSION 2
 
 Certain source files distributed by Oracle are subject to the following

@@ -1,3 +1,13 @@
+---
+license_expression: proprietary-license
+is_license_text: yes
+relevance: 100
+ignorable_copyrights:
+    - copyright laws
+ignorable_holders:
+    - laws
+---
+
 Software License Agreement
 
 The software supplied herewith by Microchip Technology Incorporated
@@ -31,4 +41,4 @@ BE LIABLE FOR ANY INCIDENTAL, SPECIAL, INDIRECT OR CONSEQUENTIAL DAMAGES,
 LOST PROFITS OR LOST DATA, HARM TO YOUR EQUIPMENT, COST OF PROCUREMENT
 OF SUBSTITUTE GOODS, TECHNOLOGY OR SERVICES, ANY CLAIMS BY THIRD PARTIES
 (INCLUDING BUT NOT LIMITED TO ANY DEFENSE THEREOF), ANY CLAIMS FOR 
-INDEMNITY OR CONTRIBUTION, OR OTHER SIMILAR COSTS. 
+INDEMNITY OR CONTRIBUTION, OR OTHER SIMILAR COSTS.

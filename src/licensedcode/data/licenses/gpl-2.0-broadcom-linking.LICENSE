@@ -1,3 +1,14 @@
+---
+key: gpl-2.0-broadcom-linking
+is_deprecated: yes
+short_name: GPL 2.0 with Broadcom Linking Exception
+name: GPL 2.0 with Broadcom Linking Exception
+category: Copyleft Limited
+owner: Broadcom
+notes: replaced by broadcom-linking-exception-2.0
+is_exception: yes
+---
+
 Unless you and Broadcom execute a separate written software license
 agreement governing use of this software, this software is licensed to
 you under the terms of the GNU General Public License version 2 (the

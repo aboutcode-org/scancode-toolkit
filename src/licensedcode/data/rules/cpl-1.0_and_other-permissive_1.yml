@@ -1,5 +1,0 @@
-license_expression: cpl-1.0 AND other-permissive
-is_license_notice: yes
-ignorable_urls:
-    - http://eclipse.org/aspectj
-    - http://www.eclipse.org/legal/epl-v10.html

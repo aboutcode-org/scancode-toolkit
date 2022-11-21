@@ -1,3 +1,16 @@
+---
+key: apple-mpeg-4
+short_name: Apple MPEG-4 License
+name: Apple MPEG-4 License
+category: Free Restricted
+owner: Apple
+spdx_license_key: LicenseRef-scancode-apple-mpeg-4
+ignorable_copyrights:
+    - Copyright (c) 1999
+ignorable_authors:
+    - Apple Computer, Inc.
+---
+
 This software module was originally developed by Apple Computer, Inc. in the
 course of development of MPEG-4. This software module is an implementation of
 a part of one or more MPEG-4 tools as specified by MPEG-4. ISO/IEC gives users

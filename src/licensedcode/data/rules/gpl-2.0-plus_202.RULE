@@ -1,3 +1,12 @@
+---
+license_expression: gpl-2.0-plus
+is_license_notice: yes
+relevance: 99
+notes: this contains an extra comment about radio frequencies laws which does not change the
+    GPL. "Please note that the GPL allows you to use the driver, NOT the radio. In order to
+    use the radio, you need a license from the communications authority of your country."
+---
+
 This program is free software; you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
 the Free Software Foundation; either version 2 of the License, or

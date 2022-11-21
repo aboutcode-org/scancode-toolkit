@@ -1,3 +1,10 @@
+---
+license_expression: openssh
+is_license_text: yes
+ignorable_urls:
+    - http://www.cs.hut.fi/crypto
+---
+
      * As far as I am concerned, the code I have written for this software
      * can be used freely for any purpose.  Any derived versions of this
      * software must be clearly marked as such, and if the derived work is

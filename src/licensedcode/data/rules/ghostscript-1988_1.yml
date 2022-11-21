@@ -1,8 +1,0 @@
-license_expression: ghostscript-1988
-is_license_text: yes
-ignorable_copyrights:
-    - Copyright (c) 1988 Richard M. Stallman
-    - Copyright (c) 1989 Aladdin Enterprises
-ignorable_holders:
-    - Aladdin Enterprises
-    - Richard M. Stallman

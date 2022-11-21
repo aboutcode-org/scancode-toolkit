@@ -1,3 +1,8 @@
+---
+is_false_positive: yes
+notes: not a license
+---
+
 if ([
     'GPL-1.0', 'LGPL-1.0', 'AGPL-1.0',
     'GPL-2.0', 'LGPL-2.0', 'AGPL-2.0',

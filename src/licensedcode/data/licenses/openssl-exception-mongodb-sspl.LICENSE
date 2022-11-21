@@ -1,3 +1,13 @@
+---
+key: openssl-exception-mongodb-sspl
+short_name: OpenSSL exception to SSPL
+name: OpenSSL exception to the Server Side Public License
+category: Copyleft
+owner: MongoDB
+is_exception: yes
+spdx_license_key: LicenseRef-scancode-openssl-exception-mongodb-sspl
+---
+
 As a special exception, the copyright holders give permission to link the
 code of portions of this program with the OpenSSL library under certain
 conditions as described in each individual source file and distribute

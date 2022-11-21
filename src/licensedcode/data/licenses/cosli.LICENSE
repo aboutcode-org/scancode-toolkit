@@ -1,3 +1,27 @@
+---
+key: cosli
+short_name: COSLi
+name: Civilian Open Source License
+category: Free Restricted
+owner: Fieldtracks
+homepage_url: https://cosli.eu/
+spdx_license_key: LicenseRef-scancode-cosli
+ignorable_copyrights:
+    - Copyright (c) 2017-2019 The Fieldtracks Project
+    - Copyright (c) The OpenSSL Project
+ignorable_holders:
+    - The Fieldtracks Project
+    - The OpenSSL Project
+ignorable_authors:
+    - the Fieldtracks Project (https://fieldtracks.org/)
+    - the fieldtracks Project (https://www.fieldtracks.org/)
+ignorable_urls:
+    - https://fieldtracks.org/
+    - https://www.fieldtracks.org/
+ignorable_emails:
+    - info@fieldtracks.org
+---
+
 Civilian Open Source License (COSLi)
 -------------------------------------------------------------------------------
 
@@ -60,4 +84,3 @@ HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT,
 STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
 ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED
 OF THE POSSIBILITY OF SUCH DAMAGE. MILITARY USAGE IS FORBIDDEN.
-

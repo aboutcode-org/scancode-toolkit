@@ -1,3 +1,11 @@
+---
+license_expression: cc-by-1.0
+is_license_text: yes
+ignorable_urls:
+    - http://creativecommons.org/
+    - http://creativecommons.org/licenses/by/1.0/
+---
+
 Creative Commons
 Creative Commons Legal Code
 Link to summary of this license: http://creativecommons.org/licenses/by/1.0/
@@ -63,4 +71,3 @@ Creative Commons is not a party to this License, and makes no warranty whatsoeve
 Except for the limited purpose of indicating to the public that the Work is licensed under the CCPL, neither party will use the trademark "Creative Commons" or any related trademark or logo of Creative Commons without the prior written consent of Creative Commons. Any permitted use will be in compliance with Creative Commons' then-current trademark usage guidelines, as may be published on its website or otherwise made available upon request from time to time.
 
 Creative Commons may be contacted at http://creativecommons.org/.
-

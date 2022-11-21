@@ -1,3 +1,11 @@
+---
+license_expression: mit AND apache-2.0
+is_license_notice: yes
+relevance: 100
+referenced_filenames:
+    - LICENSE
+---
+
 ## License
 
 The MIT License (MIT) + Apache 2.0. Read [LICENSE](LICENSE).

@@ -1,3 +1,10 @@
+---
+license_expression: gpl-2.0-plus WITH libtool-exception-2.0
+is_license_notice: yes
+ignorable_urls:
+    - http://www.gnu.org/licenses/
+---
+
 This is free software; see the source for copying conditions.  There is NO
 warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 

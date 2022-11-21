@@ -1,3 +1,10 @@
+---
+license_expression: gpl-2.0
+is_license_text: yes
+relevance: 100
+notes: from https://raw.githubusercontent.com/pombredanne/gpl-history/v1.0/allvers/linux.COPYING.4
+---
+
 The Linux Kernel is provided under:
 
     SPDX-License-Identifier: GPL-2.0 WITH Linux-syscall-note

@@ -1,3 +1,11 @@
+---
+license_expression: mpl-1.1
+is_license_text: yes
+notes: another MPL variant
+ignorable_urls:
+    - http://www.mozilla.org/MPL/
+---
+
 licensed under the Mozilla Public License 1.1
 Authors and Copyright are as described below:
 

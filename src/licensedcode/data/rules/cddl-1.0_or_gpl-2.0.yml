@@ -1,5 +1,0 @@
-license_expression: cddl-1.0 OR gpl-2.0
-is_license_tag: yes
-relevance: 100
-notes: we report gpl 2.0 here as there is no known combo of cddl-1.0 and other gpl versions
-    in the wild

@@ -1,3 +1,9 @@
+---
+license_expression: gpl-2.0 WITH bison-exception-2.2
+is_license_notice: yes
+minimum_coverage: 99
+---
+
 insert GPL v2 text here
 
 Bison Exception

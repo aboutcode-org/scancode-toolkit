@@ -1,3 +1,17 @@
+---
+license_expression: openpub AND free-unknown
+is_license_text: yes
+relevance: 85
+notes: modified
+ignorable_authors:
+    - the GNU Foundation
+ignorable_urls:
+    - http://works.opencontent.org/
+    - http://www.opencontent.org/openpub
+ignorable_emails:
+    - opal@opencontent.org
+---
+
 {License Terms}
 
     {General Terms}
@@ -166,4 +180,3 @@ restrictive than the Open Publication license.
 If you have questions about the Open Publication License, please contact
 TBD, and/or the Open Publication Authors' List at opal@opencontent.org,
 via email.
-

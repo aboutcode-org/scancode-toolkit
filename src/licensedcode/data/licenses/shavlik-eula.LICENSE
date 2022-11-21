@@ -1,3 +1,15 @@
+---
+key: shavlik-eula
+short_name: Shavlik Technologies EULA
+name: Shavlik Technologies EULA
+category: Commercial
+owner: Shavlik Technologies
+homepage_url: http://www.shavlik.com/
+spdx_license_key: LicenseRef-scancode-shavlik-eula
+ignorable_emails:
+    - info@shavlik.com
+---
+
 Shavlik Technologies, LLC
 END USER LICENSE AGREEMENT
 CAREFULLY READ THE FOLLOWING TERMS AND CONDITIONS BEFORE LOADING THE SOFTWARE. THIS 

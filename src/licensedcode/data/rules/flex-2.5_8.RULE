@@ -1,3 +1,10 @@
+---
+license_expression: flex-2.5
+is_license_text: yes
+relevance: 100
+minimum_coverage: 90
+---
+
 This file is part of flex. */
 
 Redistribution and use in source and binary forms, with or without */

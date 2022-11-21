@@ -1,3 +1,25 @@
+---
+key: statewizard
+short_name: StateWizard License
+name: StateWizard License Agreement
+category: Copyleft Limited
+owner: Unspecified
+homepage_url: http://web.archive.org/web/20090319003049/http://www.intelliwizard.com/license.htm
+notes: |
+    This license is a tad complex making references to LGPL, commercial and
+    something that looks like a BSD license. Later version of the same home
+    page has references to the GPL instead of the LGPL. The original site is no
+    longer onlilne.
+spdx_license_key: LicenseRef-scancode-statewizard
+ignorable_authors:
+    - the IntelliWizard Project
+    - the Intelliwizard Project
+ignorable_urls:
+    - http://www.intelliwizard.com/
+ignorable_emails:
+    - info@intelliwizard.com
+---
+
 Redistribution and use of the StateWizard Engine in source and binary forms,
 with or without modification, are permitted provided that the following
 conditions are met:

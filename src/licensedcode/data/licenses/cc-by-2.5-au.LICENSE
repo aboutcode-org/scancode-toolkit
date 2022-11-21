@@ -1,3 +1,17 @@
+---
+key: cc-by-2.5-au
+short_name: Creative Commons Attribution 2.5 Australia
+name: Creative Commons Attribution 2.5 Australia
+category: Permissive
+owner: Creative Commons
+homepage_url: http://creativecommons.org/licenses/by/2.5/au/
+spdx_license_key: CC-BY-2.5-AU
+other_urls:
+    - https://creativecommons.org/licenses/by/2.5/au/legalcode
+ignorable_urls:
+    - https://creativecommons.org/
+---
+
 Creative Commons Attribution 2.5 Australia
 
 CREATIVE COMMONS CORPORATION IS NOT A LAW FIRM AND DOES NOT PROVIDE LEGAL SERVICES. DISTRIBUTION OF THIS LICENCE DOES NOT CREATE AN ATTORNEY-CLIENT RELATIONSHIP. CREATIVE COMMONS PROVIDES THIS INFORMATION ON AN "AS-IS" BASIS. CREATIVE COMMONS MAKES NO WARRANTIES REGARDING THE INFORMATION PROVIDED, AND DISCLAIMS LIABILITY FOR DAMAGES RESULTING FROM ITS USE.

@@ -1,3 +1,11 @@
+---
+license_expression: gpl-2.0 OR bsd-simplified
+is_license_notice: yes
+minimum_coverage: 85
+ignorable_urls:
+    - http://www.opensource.org/licenses/bsd-license.php
+---
+
  * BSD 2-Clause License (http://www.opensource.org/licenses/bsd-license.php)
  *
  * Redistribution and use in source and binary forms, with or without

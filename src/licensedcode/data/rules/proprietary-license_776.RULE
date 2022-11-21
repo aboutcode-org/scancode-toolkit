@@ -1,0 +1,20 @@
+---
+license_expression: proprietary-license
+is_license_text: yes
+notes: Seen in https://raw.githubusercontent.com/macos-fuse-t/fuse-t/main/License.txt
+---
+
+The binary distribution of is licensed under the following terms:
+
+- Free for non-commercial use under the following conditions:
+    1.  Redistributions of source code must retain the above copyright notice, 
+        this list of conditions and the following disclaimer.
+    2.  Redistributions in binary form must reproduce the above copyright notice,
+        this list of conditions and the following disclaimer in the documentation
+        and/or other materials provided with the distribution.
+    3.  Neither the name of the copyright holder nor the names of its
+        contributors may be used to endorse or promote products derived from
+        this software without specific prior written permission.
+
+- For commercial use or/and bundling with commercial software
+    •    The software vendor has to obtain a commercial license from the authors

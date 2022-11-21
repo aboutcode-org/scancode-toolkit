@@ -1,3 +1,14 @@
+---
+key: tso-license
+short_name: Theodore Ts'o license
+name: Theodore Ts'o license
+category: Permissive
+owner: Theodore Ts'o
+notes: this license is used in e2fsprogs and is rather unique. The disclaimer is mostly based
+    on a truncated BSD license disclaimer
+spdx_license_key: LicenseRef-scancode-tso-license
+---
+
 Permission to use this file is granted for any purposes, as long as
 this copyright statement is kept intact and the author is not held
 liable for any damages resulting from the use of this program.
@@ -11,4 +22,3 @@ PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS;
 OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, 
 WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR
 OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE.
-

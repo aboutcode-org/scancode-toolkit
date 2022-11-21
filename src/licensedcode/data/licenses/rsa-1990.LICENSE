@@ -1,3 +1,15 @@
+---
+key: rsa-1990
+short_name: RSA 1990
+name: RSA Data Security Notice 1990
+category: Permissive
+owner: RSA (the Security Division of EMC)
+spdx_license_key: LicenseRef-scancode-rsa-1990
+text_urls:
+    - http://svn.apache.org/repos/asf/apr/apr/trunk/test/testmd4.c
+    - http://www.opensource.apple.com/source/libmd/libmd-3/mddriver.c?txt
+---
+
 RSA Data Security, Inc. makes no representations concerning either
 the merchantability of this software or the suitability of this
 software for any particular purpose. It is provided "as is"

@@ -1,3 +1,12 @@
+---
+license_expression: commercial-license OR bsd-new
+is_license_text: yes
+minimum_coverage: 80
+ignorable_urls:
+    - https://www.qt.io/contact-us
+    - https://www.qt.io/terms-conditions
+---
+
 ** $QT_BEGIN_LICENSE:BSD$
 ** Commercial License Usage
 ** Licensees holding valid commercial Qt licenses may use this file in

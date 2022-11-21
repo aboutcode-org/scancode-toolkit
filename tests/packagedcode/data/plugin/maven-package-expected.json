@@ -3665,8 +3665,61 @@
       "code_view_url": null,
       "vcs_url": null,
       "copyright": null,
-      "license_expression": null,
-      "declared_license": null,
+      "declared_license_expression": "apache-2.0",
+      "declared_license_expression_spdx": "Apache-2.0",
+      "license_detections": [
+        {
+          "license_expression": "apache-2.0",
+          "detection_log": [
+            "from-package-file"
+          ],
+          "matches": [
+            {
+              "score": 100.0,
+              "start_line": 3,
+              "end_line": 16,
+              "matched_length": 119,
+              "match_coverage": 100.0,
+              "matcher": "2-aho",
+              "license_expression": "apache-2.0",
+              "rule_identifier": "apache-2.0_2.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_2.RULE",
+              "referenced_filenames": [
+                "NOTICE"
+              ],
+              "is_license_text": false,
+              "is_license_notice": true,
+              "is_license_reference": false,
+              "is_license_tag": false,
+              "is_license_intro": false,
+              "rule_length": 119,
+              "rule_relevance": 100,
+              "matched_text": "  Licensed to the Apache Software Foundation (ASF) under one or more\n  contributor license agreements.  See the NOTICE file distributed with\n  this work for additional information regarding copyright ownership.\n  The ASF licenses this file to You under the Apache License, Version 2.0\n  (the \"License\"); you may not use this file except in compliance with\n  the License.  You may obtain a copy of the License at\n  \n  http://www.apache.org/licenses/LICENSE-2.0\n  \n  Unless required by applicable law or agreed to in writing, software\n  distributed under the License is distributed on an \"AS IS\" BASIS,\n  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n  See the License for the specific language governing permissions and\n  limitations under the License.",
+              "licenses": [
+                {
+                  "key": "apache-2.0",
+                  "name": "Apache License 2.0",
+                  "short_name": "Apache 2.0",
+                  "category": "Permissive",
+                  "is_exception": false,
+                  "is_unknown": false,
+                  "owner": "Apache Software Foundation",
+                  "homepage_url": "http://www.apache.org/licenses/",
+                  "text_url": "http://www.apache.org/licenses/LICENSE-2.0",
+                  "reference_url": "https://scancode-licensedb.aboutcode.org/apache-2.0",
+                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.LICENSE",
+                  "spdx_license_key": "Apache-2.0",
+                  "spdx_url": "https://spdx.org/licenses/Apache-2.0"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "other_license_expression": null,
+      "other_license_expression_spdx": null,
+      "other_license_detections": [],
+      "extracted_license_statement": null,
       "notice_text": null,
       "source_packages": [
         "pkg:maven/org.apache.activemq/activemq-camel@5.4.2?classifier=sources"
@@ -3707,8 +3760,13 @@
       "code_view_url": null,
       "vcs_url": null,
       "copyright": null,
-      "license_expression": null,
-      "declared_license": null,
+      "declared_license_expression": null,
+      "declared_license_expression_spdx": null,
+      "license_detections": [],
+      "other_license_expression": null,
+      "other_license_expression_spdx": null,
+      "other_license_detections": [],
+      "extracted_license_statement": null,
       "notice_text": null,
       "source_packages": [
         "pkg:maven/adarwin/adarwin@1.0?classifier=sources"
@@ -3749,8 +3807,61 @@
       "code_view_url": null,
       "vcs_url": null,
       "copyright": null,
-      "license_expression": null,
-      "declared_license": null,
+      "declared_license_expression": "apache-2.0",
+      "declared_license_expression_spdx": "Apache-2.0",
+      "license_detections": [
+        {
+          "license_expression": "apache-2.0",
+          "detection_log": [
+            "from-package-file"
+          ],
+          "matches": [
+            {
+              "score": 100.0,
+              "start_line": 3,
+              "end_line": 16,
+              "matched_length": 119,
+              "match_coverage": 100.0,
+              "matcher": "2-aho",
+              "license_expression": "apache-2.0",
+              "rule_identifier": "apache-2.0_2.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_2.RULE",
+              "referenced_filenames": [
+                "NOTICE"
+              ],
+              "is_license_text": false,
+              "is_license_notice": true,
+              "is_license_reference": false,
+              "is_license_tag": false,
+              "is_license_intro": false,
+              "rule_length": 119,
+              "rule_relevance": 100,
+              "matched_text": "   Licensed to the Apache Software Foundation (ASF) under one or more\r\n   contributor license agreements.  See the NOTICE file distributed with\r\n   this work for additional information regarding copyright ownership.\r\n   The ASF licenses this file to You under the Apache License, Version 2.0\r\n   (the \"License\"); you may not use this file except in compliance with\r\n   the License.  You may obtain a copy of the License at\r\n\r\n       http://www.apache.org/licenses/LICENSE-2.0\r\n\r\n   Unless required by applicable law or agreed to in writing, software\r\n   distributed under the License is distributed on an \"AS IS\" BASIS,\r\n   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\r\n   See the License for the specific language governing permissions and\r\n   limitations under the License.",
+              "licenses": [
+                {
+                  "key": "apache-2.0",
+                  "name": "Apache License 2.0",
+                  "short_name": "Apache 2.0",
+                  "category": "Permissive",
+                  "is_exception": false,
+                  "is_unknown": false,
+                  "owner": "Apache Software Foundation",
+                  "homepage_url": "http://www.apache.org/licenses/",
+                  "text_url": "http://www.apache.org/licenses/LICENSE-2.0",
+                  "reference_url": "https://scancode-licensedb.aboutcode.org/apache-2.0",
+                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.LICENSE",
+                  "spdx_license_key": "Apache-2.0",
+                  "spdx_url": "https://spdx.org/licenses/Apache-2.0"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "other_license_expression": null,
+      "other_license_expression_spdx": null,
+      "other_license_detections": [],
+      "extracted_license_statement": null,
       "notice_text": null,
       "source_packages": [
         "pkg:maven/org.apache.ant/ant-jai@1.7.0?classifier=sources"
@@ -3791,8 +3902,61 @@
       "code_view_url": null,
       "vcs_url": null,
       "copyright": null,
-      "license_expression": null,
-      "declared_license": null,
+      "declared_license_expression": "apache-2.0",
+      "declared_license_expression_spdx": "Apache-2.0",
+      "license_detections": [
+        {
+          "license_expression": "apache-2.0",
+          "detection_log": [
+            "from-package-file"
+          ],
+          "matches": [
+            {
+              "score": 100.0,
+              "start_line": 3,
+              "end_line": 16,
+              "matched_length": 119,
+              "match_coverage": 100.0,
+              "matcher": "2-aho",
+              "license_expression": "apache-2.0",
+              "rule_identifier": "apache-2.0_2.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_2.RULE",
+              "referenced_filenames": [
+                "NOTICE"
+              ],
+              "is_license_text": false,
+              "is_license_notice": true,
+              "is_license_reference": false,
+              "is_license_tag": false,
+              "is_license_intro": false,
+              "rule_length": 119,
+              "rule_relevance": 100,
+              "matched_text": "   Licensed to the Apache Software Foundation (ASF) under one or more\r\n   contributor license agreements.  See the NOTICE file distributed with\r\n   this work for additional information regarding copyright ownership.\r\n   The ASF licenses this file to You under the Apache License, Version 2.0\r\n   (the \"License\"); you may not use this file except in compliance with\r\n   the License.  You may obtain a copy of the License at\r\n\r\n       http://www.apache.org/licenses/LICENSE-2.0\r\n\r\n   Unless required by applicable law or agreed to in writing, software\r\n   distributed under the License is distributed on an \"AS IS\" BASIS,\r\n   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\r\n   See the License for the specific language governing permissions and\r\n   limitations under the License.",
+              "licenses": [
+                {
+                  "key": "apache-2.0",
+                  "name": "Apache License 2.0",
+                  "short_name": "Apache 2.0",
+                  "category": "Permissive",
+                  "is_exception": false,
+                  "is_unknown": false,
+                  "owner": "Apache Software Foundation",
+                  "homepage_url": "http://www.apache.org/licenses/",
+                  "text_url": "http://www.apache.org/licenses/LICENSE-2.0",
+                  "reference_url": "https://scancode-licensedb.aboutcode.org/apache-2.0",
+                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.LICENSE",
+                  "spdx_license_key": "Apache-2.0",
+                  "spdx_url": "https://spdx.org/licenses/Apache-2.0"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "other_license_expression": null,
+      "other_license_expression_spdx": null,
+      "other_license_detections": [],
+      "extracted_license_statement": null,
       "notice_text": null,
       "source_packages": [
         "pkg:maven/org.apache.ant/ant-jsch@1.7.0?classifier=sources"
@@ -3833,21 +3997,104 @@
       "code_view_url": null,
       "vcs_url": null,
       "copyright": null,
-      "license_expression": "(public-domain AND gpl-1.0-plus) AND unknown",
-      "declared_license": [
+      "declared_license_expression": "public-domain AND gpl-1.0-plus",
+      "declared_license_expression_spdx": "LicenseRef-scancode-public-domain AND GPL-1.0-or-later",
+      "license_detections": [
         {
-          "name": "Public Domain",
-          "url": null,
-          "comments": null,
-          "distribution": null
+          "license_expression": "public-domain",
+          "detection_log": [
+            "not-combined"
+          ],
+          "matches": [
+            {
+              "score": 70.0,
+              "start_line": 1,
+              "end_line": 1,
+              "matched_length": 2,
+              "match_coverage": 100.0,
+              "matcher": "1-hash",
+              "license_expression": "public-domain",
+              "rule_identifier": "public-domain_bare_words.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/public-domain_bare_words.RULE",
+              "referenced_filenames": [],
+              "is_license_text": false,
+              "is_license_notice": false,
+              "is_license_reference": true,
+              "is_license_tag": false,
+              "is_license_intro": false,
+              "rule_length": 2,
+              "rule_relevance": 70,
+              "matched_text": "Public Domain",
+              "licenses": [
+                {
+                  "key": "public-domain",
+                  "name": "Public Domain",
+                  "short_name": "Public Domain",
+                  "category": "Public Domain",
+                  "is_exception": false,
+                  "is_unknown": false,
+                  "owner": "Unspecified",
+                  "homepage_url": "http://www.linfo.org/publicdomain.html",
+                  "text_url": "",
+                  "reference_url": "https://scancode-licensedb.aboutcode.org/public-domain",
+                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/public-domain.LICENSE",
+                  "spdx_license_key": "LicenseRef-scancode-public-domain",
+                  "spdx_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/public-domain.LICENSE"
+                }
+              ]
+            }
+          ]
         },
         {
-          "name": "GPL",
-          "url": "http://nexb.com",
-          "comments": null,
-          "distribution": null
+          "license_expression": "gpl-1.0-plus",
+          "detection_log": [
+            "not-combined"
+          ],
+          "matches": [
+            {
+              "score": 50.0,
+              "start_line": 1,
+              "end_line": 1,
+              "matched_length": 1,
+              "match_coverage": 100.0,
+              "matcher": "1-hash",
+              "license_expression": "gpl-1.0-plus",
+              "rule_identifier": "gpl_bare_word_only.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl_bare_word_only.RULE",
+              "referenced_filenames": [],
+              "is_license_text": false,
+              "is_license_notice": false,
+              "is_license_reference": true,
+              "is_license_tag": false,
+              "is_license_intro": false,
+              "rule_length": 1,
+              "rule_relevance": 50,
+              "matched_text": "GPL",
+              "licenses": [
+                {
+                  "key": "gpl-1.0-plus",
+                  "name": "GNU General Public License 1.0 or later",
+                  "short_name": "GPL 1.0 or later",
+                  "category": "Copyleft",
+                  "is_exception": false,
+                  "is_unknown": false,
+                  "owner": "Free Software Foundation (FSF)",
+                  "homepage_url": "http://www.gnu.org/licenses/old-licenses/gpl-1.0-standalone.html",
+                  "text_url": "http://www.gnu.org/licenses/old-licenses/gpl-1.0-standalone.html",
+                  "reference_url": "https://scancode-licensedb.aboutcode.org/gpl-1.0-plus",
+                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-1.0-plus.LICENSE",
+                  "spdx_license_key": "GPL-1.0-or-later",
+                  "spdx_url": "https://spdx.org/licenses/GPL-1.0-or-later"
+                }
+              ]
+            }
+          ]
         }
       ],
+      "other_license_expression": null,
+      "other_license_expression_spdx": null,
+      "other_license_detections": [],
+      "extracted_license_statement": "[{'name': 'Public Domain', 'url': None, 'comments': None, 'distribution': None}, {'name': 'GPL', 'url': 'http://nexb.com', 'comments': None, 'distribution': None}]",
       "notice_text": null,
       "source_packages": [
         "pkg:maven/aopalliance/aopalliance@1.0?classifier=sources"
@@ -3888,8 +4135,13 @@
       "code_view_url": null,
       "vcs_url": null,
       "copyright": null,
-      "license_expression": null,
-      "declared_license": null,
+      "declared_license_expression": null,
+      "declared_license_expression_spdx": null,
+      "license_detections": [],
+      "other_license_expression": null,
+      "other_license_expression_spdx": null,
+      "other_license_detections": [],
+      "extracted_license_statement": null,
       "notice_text": null,
       "source_packages": [
         "pkg:maven/bcel/bcel@5.1?classifier=sources"
@@ -3959,8 +4211,13 @@
       "code_view_url": "http://cvs.classworlds.codehaus.org/",
       "vcs_url": "cvs+pserver:anonymous@cvs.codehaus.org:/scm/cvspublic/:classworlds",
       "copyright": null,
-      "license_expression": null,
-      "declared_license": null,
+      "declared_license_expression": null,
+      "declared_license_expression_spdx": null,
+      "license_detections": [],
+      "other_license_expression": null,
+      "other_license_expression_spdx": null,
+      "other_license_detections": [],
+      "extracted_license_statement": null,
       "notice_text": null,
       "source_packages": [
         "pkg:maven/classworlds/classworlds@1.1-alpha-2?classifier=sources"
@@ -4051,8 +4308,13 @@
       "code_view_url": null,
       "vcs_url": null,
       "copyright": null,
-      "license_expression": null,
-      "declared_license": null,
+      "declared_license_expression": null,
+      "declared_license_expression_spdx": null,
+      "license_detections": [],
+      "other_license_expression": null,
+      "other_license_expression_spdx": null,
+      "other_license_detections": [],
+      "extracted_license_statement": null,
       "notice_text": null,
       "source_packages": [
         "pkg:maven/commons-fileupload/commons-fileupload@1.0?classifier=sources"
@@ -4318,15 +4580,59 @@
       "code_view_url": "http://svn.apache.org/viewcvs.cgi",
       "vcs_url": "svn+http://svn.apache.org/repos/asf/jakarta/commons/proper/validator/trunk",
       "copyright": null,
-      "license_expression": "(apache-2.0 AND apache-2.0) AND unknown",
-      "declared_license": [
+      "declared_license_expression": "apache-2.0",
+      "declared_license_expression_spdx": "Apache-2.0",
+      "license_detections": [
         {
-          "name": "The Apache Software License, Version 2.0",
-          "url": "/LICENSE.txt",
-          "comments": null,
-          "distribution": null
+          "license_expression": "apache-2.0",
+          "detection_log": [
+            "not-combined"
+          ],
+          "matches": [
+            {
+              "score": 100.0,
+              "start_line": 1,
+              "end_line": 1,
+              "matched_length": 7,
+              "match_coverage": 100.0,
+              "matcher": "1-hash",
+              "license_expression": "apache-2.0",
+              "rule_identifier": "apache-2.0_5.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_5.RULE",
+              "referenced_filenames": [],
+              "is_license_text": false,
+              "is_license_notice": false,
+              "is_license_reference": true,
+              "is_license_tag": false,
+              "is_license_intro": false,
+              "rule_length": 7,
+              "rule_relevance": 100,
+              "matched_text": "The Apache Software License, Version 2.0",
+              "licenses": [
+                {
+                  "key": "apache-2.0",
+                  "name": "Apache License 2.0",
+                  "short_name": "Apache 2.0",
+                  "category": "Permissive",
+                  "is_exception": false,
+                  "is_unknown": false,
+                  "owner": "Apache Software Foundation",
+                  "homepage_url": "http://www.apache.org/licenses/",
+                  "text_url": "http://www.apache.org/licenses/LICENSE-2.0",
+                  "reference_url": "https://scancode-licensedb.aboutcode.org/apache-2.0",
+                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.LICENSE",
+                  "spdx_license_key": "Apache-2.0",
+                  "spdx_url": "https://spdx.org/licenses/Apache-2.0"
+                }
+              ]
+            }
+          ]
         }
       ],
+      "other_license_expression": null,
+      "other_license_expression_spdx": null,
+      "other_license_detections": [],
+      "extracted_license_statement": "[{'name': 'The Apache Software License, Version 2.0', 'url': '/LICENSE.txt', 'comments': None, 'distribution': None}]",
       "notice_text": null,
       "source_packages": [
         "pkg:maven/commons-validator/commons-validator@1.2.0?classifier=sources"
@@ -4367,8 +4673,13 @@
       "code_view_url": null,
       "vcs_url": null,
       "copyright": null,
-      "license_expression": null,
-      "declared_license": null,
+      "declared_license_expression": null,
+      "declared_license_expression_spdx": null,
+      "license_detections": [],
+      "other_license_expression": null,
+      "other_license_expression_spdx": null,
+      "other_license_detections": [],
+      "extracted_license_statement": null,
       "notice_text": null,
       "source_packages": [
         "pkg:maven/org.dbwebx/tools@0.0.1.SNAPSHOT?classifier=sources"
@@ -4445,8 +4756,13 @@
       "code_view_url": "http://cvs.sourceforge.net/viewcvs.py/easyconf/",
       "vcs_url": "cvs+pserver:anonymous@cvs.sourceforge.net:/cvsroot/easyconf:easyconf",
       "copyright": null,
-      "license_expression": null,
-      "declared_license": null,
+      "declared_license_expression": null,
+      "declared_license_expression_spdx": null,
+      "license_detections": [],
+      "other_license_expression": null,
+      "other_license_expression_spdx": null,
+      "other_license_detections": [],
+      "extracted_license_statement": null,
       "notice_text": null,
       "source_packages": [
         "pkg:maven/easyconf/easyconf@0.9.0?classifier=sources"
@@ -4516,15 +4832,59 @@
       "code_view_url": "https://svn.codehaus.org/mojo/tags/findbugs-maven-plugin-1.1.1",
       "vcs_url": "svn+https://svn.codehaus.org/mojo/tags/findbugs-maven-plugin-1.1.1",
       "copyright": null,
-      "license_expression": "unknown",
-      "declared_license": [
+      "declared_license_expression": "mit",
+      "declared_license_expression_spdx": "MIT",
+      "license_detections": [
         {
-          "name": "MIT",
-          "url": "LICENSE.txt",
-          "comments": null,
-          "distribution": "repo"
+          "license_expression": "mit",
+          "detection_log": [
+            "not-combined"
+          ],
+          "matches": [
+            {
+              "score": 100.0,
+              "start_line": 1,
+              "end_line": 1,
+              "matched_length": 1,
+              "match_coverage": 100.0,
+              "matcher": "1-spdx-id",
+              "license_expression": "mit",
+              "rule_identifier": "spdx-license-identifier: mit",
+              "rule_url": null,
+              "referenced_filenames": [],
+              "is_license_text": false,
+              "is_license_notice": false,
+              "is_license_reference": false,
+              "is_license_tag": true,
+              "is_license_intro": false,
+              "rule_length": 1,
+              "rule_relevance": 100,
+              "matched_text": "MIT",
+              "licenses": [
+                {
+                  "key": "mit",
+                  "name": "MIT License",
+                  "short_name": "MIT License",
+                  "category": "Permissive",
+                  "is_exception": false,
+                  "is_unknown": false,
+                  "owner": "MIT",
+                  "homepage_url": "http://opensource.org/licenses/mit-license.php",
+                  "text_url": "http://opensource.org/licenses/mit-license.php",
+                  "reference_url": "https://scancode-licensedb.aboutcode.org/mit",
+                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE",
+                  "spdx_license_key": "MIT",
+                  "spdx_url": "https://spdx.org/licenses/MIT"
+                }
+              ]
+            }
+          ]
         }
       ],
+      "other_license_expression": null,
+      "other_license_expression_spdx": null,
+      "other_license_detections": [],
+      "extracted_license_statement": "[{'name': 'MIT', 'url': 'LICENSE.txt', 'comments': None, 'distribution': 'repo'}]",
       "notice_text": null,
       "source_packages": [
         "pkg:maven/org.codehaus.mojo/findbugs-maven-plugin@1.1.1?classifier=sources"
@@ -4565,8 +4925,13 @@
       "code_view_url": null,
       "vcs_url": null,
       "copyright": null,
-      "license_expression": null,
-      "declared_license": null,
+      "declared_license_expression": null,
+      "declared_license_expression_spdx": null,
+      "license_detections": [],
+      "other_license_expression": null,
+      "other_license_expression_spdx": null,
+      "other_license_detections": [],
+      "extracted_license_statement": null,
       "notice_text": null,
       "source_packages": [
         "pkg:maven/com.adobe.ac.samples.lcds/flex_app@1.0-SNAPSHOT?classifier=sources"
@@ -4607,8 +4972,13 @@
       "code_view_url": null,
       "vcs_url": null,
       "copyright": null,
-      "license_expression": null,
-      "declared_license": null,
+      "declared_license_expression": null,
+      "declared_license_expression_spdx": null,
+      "license_detections": [],
+      "other_license_expression": null,
+      "other_license_expression_spdx": null,
+      "other_license_detections": [],
+      "extracted_license_statement": null,
       "notice_text": null,
       "source_packages": [
         "pkg:maven/com.adobe.ac.samples.bash/bash_flex_app@1.0?classifier=sources"
@@ -4657,15 +5027,104 @@
       "code_view_url": "https://github.com/jode/baz-bar-parent/tree/master",
       "vcs_url": "git://github.com/jode/baz-bar-parent.git",
       "copyright": null,
-      "license_expression": "(epl-1.0 AND bsd-new) AND unknown",
-      "declared_license": [
+      "declared_license_expression": "epl-1.0",
+      "declared_license_expression_spdx": "EPL-1.0",
+      "license_detections": [
         {
-          "name": "Eclipse Public License - v 1.0",
-          "url": "http://www.eclipse.org/legal/epl-v10.html",
-          "comments": null,
-          "distribution": null
+          "license_expression": "epl-1.0",
+          "detection_log": [
+            "not-combined"
+          ],
+          "matches": [
+            {
+              "score": 100.0,
+              "start_line": 1,
+              "end_line": 1,
+              "matched_length": 6,
+              "match_coverage": 100.0,
+              "matcher": "1-hash",
+              "license_expression": "epl-1.0",
+              "rule_identifier": "epl-1.0_4.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/epl-1.0_4.RULE",
+              "referenced_filenames": [],
+              "is_license_text": false,
+              "is_license_notice": false,
+              "is_license_reference": true,
+              "is_license_tag": false,
+              "is_license_intro": false,
+              "rule_length": 6,
+              "rule_relevance": 100,
+              "matched_text": "Eclipse Public License - v 1.0",
+              "licenses": [
+                {
+                  "key": "epl-1.0",
+                  "name": "Eclipse Public License 1.0",
+                  "short_name": "EPL 1.0",
+                  "category": "Copyleft Limited",
+                  "is_exception": false,
+                  "is_unknown": false,
+                  "owner": "Eclipse Foundation",
+                  "homepage_url": "http://www.eclipse.org/legal/epl-v10.html",
+                  "text_url": "http://www.eclipse.org/legal/epl-v10.html",
+                  "reference_url": "https://scancode-licensedb.aboutcode.org/epl-1.0",
+                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/epl-1.0.LICENSE",
+                  "spdx_license_key": "EPL-1.0",
+                  "spdx_url": "https://spdx.org/licenses/EPL-1.0"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "license_expression": "epl-1.0",
+          "detection_log": [
+            "not-combined"
+          ],
+          "matches": [
+            {
+              "score": 100.0,
+              "start_line": 1,
+              "end_line": 1,
+              "matched_length": 8,
+              "match_coverage": 100.0,
+              "matcher": "1-hash",
+              "license_expression": "epl-1.0",
+              "rule_identifier": "epl-1.0.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/epl-1.0.RULE",
+              "referenced_filenames": [],
+              "is_license_text": false,
+              "is_license_notice": false,
+              "is_license_reference": true,
+              "is_license_tag": false,
+              "is_license_intro": false,
+              "rule_length": 8,
+              "rule_relevance": 100,
+              "matched_text": "http://www.eclipse.org/legal/epl-v10.html",
+              "licenses": [
+                {
+                  "key": "epl-1.0",
+                  "name": "Eclipse Public License 1.0",
+                  "short_name": "EPL 1.0",
+                  "category": "Copyleft Limited",
+                  "is_exception": false,
+                  "is_unknown": false,
+                  "owner": "Eclipse Foundation",
+                  "homepage_url": "http://www.eclipse.org/legal/epl-v10.html",
+                  "text_url": "http://www.eclipse.org/legal/epl-v10.html",
+                  "reference_url": "https://scancode-licensedb.aboutcode.org/epl-1.0",
+                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/epl-1.0.LICENSE",
+                  "spdx_license_key": "EPL-1.0",
+                  "spdx_url": "https://spdx.org/licenses/EPL-1.0"
+                }
+              ]
+            }
+          ]
         }
       ],
+      "other_license_expression": null,
+      "other_license_expression_spdx": null,
+      "other_license_detections": [],
+      "extracted_license_statement": "[{'name': 'Eclipse Public License - v 1.0', 'url': 'http://www.eclipse.org/legal/epl-v10.html', 'comments': None, 'distribution': None}]",
       "notice_text": null,
       "source_packages": [
         "pkg:maven/com.myco.foo.bar.baz/baz-bar-parent@1.0?classifier=sources"
@@ -4706,8 +5165,61 @@
       "code_view_url": null,
       "vcs_url": null,
       "copyright": null,
-      "license_expression": null,
-      "declared_license": null,
+      "declared_license_expression": "apache-2.0",
+      "declared_license_expression_spdx": "Apache-2.0",
+      "license_detections": [
+        {
+          "license_expression": "apache-2.0",
+          "detection_log": [
+            "from-package-file"
+          ],
+          "matches": [
+            {
+              "score": 100.0,
+              "start_line": 6,
+              "end_line": 19,
+              "matched_length": 119,
+              "match_coverage": 100.0,
+              "matcher": "2-aho",
+              "license_expression": "apache-2.0",
+              "rule_identifier": "apache-2.0_2.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_2.RULE",
+              "referenced_filenames": [
+                "NOTICE"
+              ],
+              "is_license_text": false,
+              "is_license_notice": true,
+              "is_license_reference": false,
+              "is_license_tag": false,
+              "is_license_intro": false,
+              "rule_length": 119,
+              "rule_relevance": 100,
+              "matched_text": "        Licensed to the Apache Software Foundation (ASF) under one or more\r\n        contributor license agreements.  See the NOTICE file distributed with\r\n        this work for additional information regarding copyright ownership.\r\n        The ASF licenses this file to You under the Apache License, Version 2.0\r\n        (the \"License\"); you may not use this file except in compliance with\r\n        the License.  You may obtain a copy of the License at\r\n\r\n           http://www.apache.org/licenses/LICENSE-2.0\r\n\r\n        Unless required by applicable law or agreed to in writing, software\r\n        distributed under the License is distributed on an \"AS IS\" BASIS,\r\n        WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\r\n        See the License for the specific language governing permissions and\r\n        limitations under the License.",
+              "licenses": [
+                {
+                  "key": "apache-2.0",
+                  "name": "Apache License 2.0",
+                  "short_name": "Apache 2.0",
+                  "category": "Permissive",
+                  "is_exception": false,
+                  "is_unknown": false,
+                  "owner": "Apache Software Foundation",
+                  "homepage_url": "http://www.apache.org/licenses/",
+                  "text_url": "http://www.apache.org/licenses/LICENSE-2.0",
+                  "reference_url": "https://scancode-licensedb.aboutcode.org/apache-2.0",
+                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.LICENSE",
+                  "spdx_license_key": "Apache-2.0",
+                  "spdx_url": "https://spdx.org/licenses/Apache-2.0"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "other_license_expression": null,
+      "other_license_expression_spdx": null,
+      "other_license_detections": [],
+      "extracted_license_statement": null,
       "notice_text": null,
       "source_packages": [
         "pkg:maven/org.apache.geronimo.bundles/axis@1.4_1-SNAPSHOT?classifier=sources"
@@ -4777,8 +5289,13 @@
       "code_view_url": null,
       "vcs_url": "cvs+ext:idegaweb@code.idega.com:/idega/cvs:com.idega.block.addon/com.idega.block.contract/",
       "copyright": null,
-      "license_expression": null,
-      "declared_license": null,
+      "declared_license_expression": null,
+      "declared_license_expression_spdx": null,
+      "license_detections": [],
+      "other_license_expression": null,
+      "other_license_expression_spdx": null,
+      "other_license_detections": [],
+      "extracted_license_statement": null,
       "notice_text": null,
       "source_packages": [
         "pkg:maven/com.idega.block.addon/com.idega.block.contract@4.1.3-SNAPSHOT?classifier=sources"
@@ -4827,15 +5344,104 @@
       "code_view_url": "https://jrecordbind.dev.java.net/source/browse/jrecordbind/",
       "vcs_url": "svn+https://jrecordbind.dev.java.net/svn/jrecordbind/trunk/",
       "copyright": null,
-      "license_expression": "((lgpl-2.1 OR apache-2.0) AND lgpl-2.1-plus) AND unknown",
-      "declared_license": [
+      "declared_license_expression": "lgpl-2.0-plus AND lgpl-2.1-plus",
+      "declared_license_expression_spdx": "LGPL-2.0-or-later AND LGPL-2.1-or-later",
+      "license_detections": [
         {
-          "name": "LGPL",
-          "url": "http://www.gnu.org/copyleft/lesser.html",
-          "comments": null,
-          "distribution": "repo"
+          "license_expression": "lgpl-2.0-plus",
+          "detection_log": [
+            "not-combined"
+          ],
+          "matches": [
+            {
+              "score": 75.0,
+              "start_line": 1,
+              "end_line": 1,
+              "matched_length": 1,
+              "match_coverage": 100.0,
+              "matcher": "1-hash",
+              "license_expression": "lgpl-2.0-plus",
+              "rule_identifier": "lgpl_bare_single_word.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl_bare_single_word.RULE",
+              "referenced_filenames": [],
+              "is_license_text": false,
+              "is_license_notice": false,
+              "is_license_reference": true,
+              "is_license_tag": false,
+              "is_license_intro": false,
+              "rule_length": 1,
+              "rule_relevance": 75,
+              "matched_text": "LGPL",
+              "licenses": [
+                {
+                  "key": "lgpl-2.0-plus",
+                  "name": "GNU Library General Public License 2.0 or later",
+                  "short_name": "LGPL 2.0 or later",
+                  "category": "Copyleft Limited",
+                  "is_exception": false,
+                  "is_unknown": false,
+                  "owner": "Free Software Foundation (FSF)",
+                  "homepage_url": "http://www.gnu.org/licenses/old-licenses/lgpl-2.0.html",
+                  "text_url": "http://www.gnu.org/licenses/old-licenses/lgpl-2.0-standalone.html",
+                  "reference_url": "https://scancode-licensedb.aboutcode.org/lgpl-2.0-plus",
+                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/lgpl-2.0-plus.LICENSE",
+                  "spdx_license_key": "LGPL-2.0-or-later",
+                  "spdx_url": "https://spdx.org/licenses/LGPL-2.0-or-later"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "license_expression": "lgpl-2.1-plus",
+          "detection_log": [
+            "not-combined"
+          ],
+          "matches": [
+            {
+              "score": 100.0,
+              "start_line": 1,
+              "end_line": 1,
+              "matched_length": 7,
+              "match_coverage": 100.0,
+              "matcher": "1-hash",
+              "license_expression": "lgpl-2.1-plus",
+              "rule_identifier": "lgpl_7.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl_7.RULE",
+              "referenced_filenames": [],
+              "is_license_text": false,
+              "is_license_notice": false,
+              "is_license_reference": true,
+              "is_license_tag": false,
+              "is_license_intro": false,
+              "rule_length": 7,
+              "rule_relevance": 100,
+              "matched_text": "http://www.gnu.org/copyleft/lesser.html",
+              "licenses": [
+                {
+                  "key": "lgpl-2.1-plus",
+                  "name": "GNU Lesser General Public License 2.1 or later",
+                  "short_name": "LGPL 2.1 or later",
+                  "category": "Copyleft Limited",
+                  "is_exception": false,
+                  "is_unknown": false,
+                  "owner": "Free Software Foundation (FSF)",
+                  "homepage_url": "http://www.gnu.org/licenses/old-licenses/lgpl-2.1-standalone.html",
+                  "text_url": "http://www.gnu.org/licenses/old-licenses/lgpl-2.1-standalone.html",
+                  "reference_url": "https://scancode-licensedb.aboutcode.org/lgpl-2.1-plus",
+                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/lgpl-2.1-plus.LICENSE",
+                  "spdx_license_key": "LGPL-2.1-or-later",
+                  "spdx_url": "https://spdx.org/licenses/LGPL-2.1-or-later"
+                }
+              ]
+            }
+          ]
         }
       ],
+      "other_license_expression": null,
+      "other_license_expression_spdx": null,
+      "other_license_detections": [],
+      "extracted_license_statement": "[{'name': 'LGPL', 'url': 'http://www.gnu.org/copyleft/lesser.html', 'comments': None, 'distribution': 'repo'}]",
       "notice_text": null,
       "source_packages": [
         "pkg:maven/it.assist.jrecordbind/jrecordbind%24%7BartifactId.ext%7D@2.3.4?classifier=sources"
@@ -4884,15 +5490,104 @@
       "code_view_url": "http://svn.apache.org/viewcvs.cgi/logging/log4j/tags/v1_2_15_rc6",
       "vcs_url": "svn+http://svn.apache.org/repos/asf/logging/log4j/tags/v1_2_15_rc6",
       "copyright": null,
-      "license_expression": "apache-2.0 AND unknown",
-      "declared_license": [
+      "declared_license_expression": "apache-2.0",
+      "declared_license_expression_spdx": "Apache-2.0",
+      "license_detections": [
         {
-          "name": "The Apache Software License, Version 2.0",
-          "url": "http://www.apache.org/licenses/LICENSE-2.0.txt",
-          "comments": null,
-          "distribution": "repo"
+          "license_expression": "apache-2.0",
+          "detection_log": [
+            "not-combined"
+          ],
+          "matches": [
+            {
+              "score": 100.0,
+              "start_line": 1,
+              "end_line": 1,
+              "matched_length": 7,
+              "match_coverage": 100.0,
+              "matcher": "1-hash",
+              "license_expression": "apache-2.0",
+              "rule_identifier": "apache-2.0_5.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_5.RULE",
+              "referenced_filenames": [],
+              "is_license_text": false,
+              "is_license_notice": false,
+              "is_license_reference": true,
+              "is_license_tag": false,
+              "is_license_intro": false,
+              "rule_length": 7,
+              "rule_relevance": 100,
+              "matched_text": "The Apache Software License, Version 2.0",
+              "licenses": [
+                {
+                  "key": "apache-2.0",
+                  "name": "Apache License 2.0",
+                  "short_name": "Apache 2.0",
+                  "category": "Permissive",
+                  "is_exception": false,
+                  "is_unknown": false,
+                  "owner": "Apache Software Foundation",
+                  "homepage_url": "http://www.apache.org/licenses/",
+                  "text_url": "http://www.apache.org/licenses/LICENSE-2.0",
+                  "reference_url": "https://scancode-licensedb.aboutcode.org/apache-2.0",
+                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.LICENSE",
+                  "spdx_license_key": "Apache-2.0",
+                  "spdx_url": "https://spdx.org/licenses/Apache-2.0"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "license_expression": "apache-2.0",
+          "detection_log": [
+            "not-combined"
+          ],
+          "matches": [
+            {
+              "score": 80.0,
+              "start_line": 1,
+              "end_line": 1,
+              "matched_length": 9,
+              "match_coverage": 100.0,
+              "matcher": "1-hash",
+              "license_expression": "apache-2.0",
+              "rule_identifier": "apache-2.0_42.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_42.RULE",
+              "referenced_filenames": [],
+              "is_license_text": false,
+              "is_license_notice": false,
+              "is_license_reference": true,
+              "is_license_tag": false,
+              "is_license_intro": false,
+              "rule_length": 9,
+              "rule_relevance": 80,
+              "matched_text": "http://www.apache.org/licenses/LICENSE-2.0.txt",
+              "licenses": [
+                {
+                  "key": "apache-2.0",
+                  "name": "Apache License 2.0",
+                  "short_name": "Apache 2.0",
+                  "category": "Permissive",
+                  "is_exception": false,
+                  "is_unknown": false,
+                  "owner": "Apache Software Foundation",
+                  "homepage_url": "http://www.apache.org/licenses/",
+                  "text_url": "http://www.apache.org/licenses/LICENSE-2.0",
+                  "reference_url": "https://scancode-licensedb.aboutcode.org/apache-2.0",
+                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.LICENSE",
+                  "spdx_license_key": "Apache-2.0",
+                  "spdx_url": "https://spdx.org/licenses/Apache-2.0"
+                }
+              ]
+            }
+          ]
         }
       ],
+      "other_license_expression": null,
+      "other_license_expression_spdx": null,
+      "other_license_detections": [],
+      "extracted_license_statement": "[{'name': 'The Apache Software License, Version 2.0', 'url': 'http://www.apache.org/licenses/LICENSE-2.0.txt', 'comments': None, 'distribution': 'repo'}]",
       "notice_text": null,
       "source_packages": [
         "pkg:maven/log4j/log4j@1.2.15?classifier=sources"
@@ -4933,15 +5628,104 @@
       "code_view_url": "http://svn.qos.ch/viewcvs/logback/access/trunk/",
       "vcs_url": "http://svn.qos.ch/repos/logback/access/trunk/",
       "copyright": null,
-      "license_expression": "lgpl-2.1-plus AND unknown",
-      "declared_license": [
+      "declared_license_expression": "lgpl-2.0-plus",
+      "declared_license_expression_spdx": "LGPL-2.0-or-later",
+      "license_detections": [
         {
-          "name": "GNU Lesser General Public License",
-          "url": "http://www.gnu.org/licenses/lgpl.html",
-          "comments": null,
-          "distribution": null
+          "license_expression": "lgpl-2.0-plus",
+          "detection_log": [
+            "not-combined"
+          ],
+          "matches": [
+            {
+              "score": 100.0,
+              "start_line": 1,
+              "end_line": 1,
+              "matched_length": 5,
+              "match_coverage": 100.0,
+              "matcher": "1-hash",
+              "license_expression": "lgpl-2.0-plus",
+              "rule_identifier": "lgpl-2.0-plus_87.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0-plus_87.RULE",
+              "referenced_filenames": [],
+              "is_license_text": false,
+              "is_license_notice": false,
+              "is_license_reference": true,
+              "is_license_tag": false,
+              "is_license_intro": false,
+              "rule_length": 5,
+              "rule_relevance": 100,
+              "matched_text": "GNU Lesser General Public License",
+              "licenses": [
+                {
+                  "key": "lgpl-2.0-plus",
+                  "name": "GNU Library General Public License 2.0 or later",
+                  "short_name": "LGPL 2.0 or later",
+                  "category": "Copyleft Limited",
+                  "is_exception": false,
+                  "is_unknown": false,
+                  "owner": "Free Software Foundation (FSF)",
+                  "homepage_url": "http://www.gnu.org/licenses/old-licenses/lgpl-2.0.html",
+                  "text_url": "http://www.gnu.org/licenses/old-licenses/lgpl-2.0-standalone.html",
+                  "reference_url": "https://scancode-licensedb.aboutcode.org/lgpl-2.0-plus",
+                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/lgpl-2.0-plus.LICENSE",
+                  "spdx_license_key": "LGPL-2.0-or-later",
+                  "spdx_url": "https://spdx.org/licenses/LGPL-2.0-or-later"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "license_expression": "lgpl-2.0-plus",
+          "detection_log": [
+            "not-combined"
+          ],
+          "matches": [
+            {
+              "score": 100.0,
+              "start_line": 1,
+              "end_line": 1,
+              "matched_length": 7,
+              "match_coverage": 100.0,
+              "matcher": "1-hash",
+              "license_expression": "lgpl-2.0-plus",
+              "rule_identifier": "lgpl_3.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl_3.RULE",
+              "referenced_filenames": [],
+              "is_license_text": false,
+              "is_license_notice": false,
+              "is_license_reference": true,
+              "is_license_tag": false,
+              "is_license_intro": false,
+              "rule_length": 7,
+              "rule_relevance": 100,
+              "matched_text": "http://www.gnu.org/licenses/lgpl.html",
+              "licenses": [
+                {
+                  "key": "lgpl-2.0-plus",
+                  "name": "GNU Library General Public License 2.0 or later",
+                  "short_name": "LGPL 2.0 or later",
+                  "category": "Copyleft Limited",
+                  "is_exception": false,
+                  "is_unknown": false,
+                  "owner": "Free Software Foundation (FSF)",
+                  "homepage_url": "http://www.gnu.org/licenses/old-licenses/lgpl-2.0.html",
+                  "text_url": "http://www.gnu.org/licenses/old-licenses/lgpl-2.0-standalone.html",
+                  "reference_url": "https://scancode-licensedb.aboutcode.org/lgpl-2.0-plus",
+                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/lgpl-2.0-plus.LICENSE",
+                  "spdx_license_key": "LGPL-2.0-or-later",
+                  "spdx_url": "https://spdx.org/licenses/LGPL-2.0-or-later"
+                }
+              ]
+            }
+          ]
         }
       ],
+      "other_license_expression": null,
+      "other_license_expression_spdx": null,
+      "other_license_detections": [],
+      "extracted_license_statement": "[{'name': 'GNU Lesser General Public License', 'url': 'http://www.gnu.org/licenses/lgpl.html', 'comments': None, 'distribution': None}]",
       "notice_text": null,
       "source_packages": [
         "pkg:maven/ch.qos.logback/logback-access@0.2.5?classifier=sources"
@@ -5067,8 +5851,13 @@
       "code_view_url": null,
       "vcs_url": "svn://svn.codehaus.org/plexus/scm/trunk/plexus-components/plexus-interactivity/plexus-interactivity-api",
       "copyright": null,
-      "license_expression": null,
-      "declared_license": null,
+      "declared_license_expression": null,
+      "declared_license_expression_spdx": null,
+      "license_detections": [],
+      "other_license_expression": null,
+      "other_license_expression_spdx": null,
+      "other_license_detections": [],
+      "extracted_license_statement": null,
       "notice_text": null,
       "source_packages": [
         "pkg:maven/org.codehaus.plexus/plexus-interactivity-api@1.0-alpha-4?classifier=sources"
@@ -5109,8 +5898,13 @@
       "code_view_url": null,
       "vcs_url": null,
       "copyright": null,
-      "license_expression": null,
-      "declared_license": null,
+      "declared_license_expression": null,
+      "declared_license_expression_spdx": null,
+      "license_detections": [],
+      "other_license_expression": null,
+      "other_license_expression_spdx": null,
+      "other_license_detections": [],
+      "extracted_license_statement": null,
       "notice_text": null,
       "source_packages": [
         "pkg:maven/ur.urwerk.test.modules/main@1.0.0-SNAPSHOT?classifier=sources"
@@ -5151,8 +5945,61 @@
       "code_view_url": null,
       "vcs_url": null,
       "copyright": null,
-      "license_expression": null,
-      "declared_license": null,
+      "declared_license_expression": "apache-2.0",
+      "declared_license_expression_spdx": "Apache-2.0",
+      "license_detections": [
+        {
+          "license_expression": "apache-2.0",
+          "detection_log": [
+            "from-package-file"
+          ],
+          "matches": [
+            {
+              "score": 100.0,
+              "start_line": 6,
+              "end_line": 19,
+              "matched_length": 119,
+              "match_coverage": 100.0,
+              "matcher": "2-aho",
+              "license_expression": "apache-2.0",
+              "rule_identifier": "apache-2.0_2.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_2.RULE",
+              "referenced_filenames": [
+                "NOTICE"
+              ],
+              "is_license_text": false,
+              "is_license_notice": true,
+              "is_license_reference": false,
+              "is_license_tag": false,
+              "is_license_intro": false,
+              "rule_length": 119,
+              "rule_relevance": 100,
+              "matched_text": "        Licensed to the Apache Software Foundation (ASF) under one or more\n        contributor license agreements.  See the NOTICE file distributed with\n        this work for additional information regarding copyright ownership.\n        The ASF licenses this file to You under the Apache License, Version 2.0\n        (the \"License\"); you may not use this file except in compliance with\n        the License.  You may obtain a copy of the License at\n\n           http://www.apache.org/licenses/LICENSE-2.0\n\n        Unless required by applicable law or agreed to in writing, software\n        distributed under the License is distributed on an \"AS IS\" BASIS,\n        WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n        See the License for the specific language governing permissions and\n        limitations under the License.",
+              "licenses": [
+                {
+                  "key": "apache-2.0",
+                  "name": "Apache License 2.0",
+                  "short_name": "Apache 2.0",
+                  "category": "Permissive",
+                  "is_exception": false,
+                  "is_unknown": false,
+                  "owner": "Apache Software Foundation",
+                  "homepage_url": "http://www.apache.org/licenses/",
+                  "text_url": "http://www.apache.org/licenses/LICENSE-2.0",
+                  "reference_url": "https://scancode-licensedb.aboutcode.org/apache-2.0",
+                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.LICENSE",
+                  "spdx_license_key": "Apache-2.0",
+                  "spdx_url": "https://spdx.org/licenses/Apache-2.0"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "other_license_expression": null,
+      "other_license_expression_spdx": null,
+      "other_license_detections": [],
+      "extracted_license_statement": null,
       "notice_text": null,
       "source_packages": [
         "pkg:maven/org.apache.geronimo.bundles/axis@1.4_1-SNAPSHOT?classifier=sources"
@@ -5193,8 +6040,13 @@
       "code_view_url": null,
       "vcs_url": null,
       "copyright": null,
-      "license_expression": null,
-      "declared_license": null,
+      "declared_license_expression": null,
+      "declared_license_expression_spdx": null,
+      "license_detections": [],
+      "other_license_expression": null,
+      "other_license_expression_spdx": null,
+      "other_license_detections": [],
+      "extracted_license_statement": null,
       "notice_text": null,
       "source_packages": [
         "pkg:maven/org.modeler/modeler@0.1?classifier=sources"
@@ -5257,8 +6109,13 @@
       "code_view_url": "http://code.google.com/p/seam-maven-refimpl/source/browse/#svn/trunk",
       "vcs_url": "svn+http://seam-maven-refimpl.googlecode.com/svn/trunk",
       "copyright": null,
-      "license_expression": null,
-      "declared_license": null,
+      "declared_license_expression": null,
+      "declared_license_expression_spdx": null,
+      "license_detections": [],
+      "other_license_expression": null,
+      "other_license_expression_spdx": null,
+      "other_license_detections": [],
+      "extracted_license_statement": null,
       "notice_text": null,
       "source_packages": [
         "pkg:maven/no.knowit.seam/root@2.2.0-SNAPSHOT?classifier=sources"
@@ -5299,8 +6156,61 @@
       "code_view_url": "http://svn.apache.org/viewvc/geronimo/specs/tags/1_3/",
       "vcs_url": "svn+http://svn.apache.org/repos/asf/geronimo/specs/tags/1_3",
       "copyright": null,
-      "license_expression": null,
-      "declared_license": null,
+      "declared_license_expression": "apache-2.0",
+      "declared_license_expression_spdx": "Apache-2.0",
+      "license_detections": [
+        {
+          "license_expression": "apache-2.0",
+          "detection_log": [
+            "from-package-file"
+          ],
+          "matches": [
+            {
+              "score": 100.0,
+              "start_line": 5,
+              "end_line": 20,
+              "matched_length": 119,
+              "match_coverage": 100.0,
+              "matcher": "2-aho",
+              "license_expression": "apache-2.0",
+              "rule_identifier": "apache-2.0_2.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_2.RULE",
+              "referenced_filenames": [
+                "NOTICE"
+              ],
+              "is_license_text": false,
+              "is_license_notice": true,
+              "is_license_reference": false,
+              "is_license_tag": false,
+              "is_license_intro": false,
+              "rule_length": 119,
+              "rule_relevance": 100,
+              "matched_text": "\t    Licensed to the Apache Software Foundation (ASF) under one\n\t    or more contributor license agreements.  See the NOTICE file\n\t    distributed with this work for additional information\n\t    regarding copyright ownership.  The ASF licenses this file\n\t    to you under the Apache License, Version 2.0 (the\n\t    \"License\"); you may not use this file except in compliance\n\t    with the License.  You may obtain a copy of the License at\n\n\t     http://www.apache.org/licenses/LICENSE-2.0\n\n\t    Unless required by applicable law or agreed to in writing,\n\t    software distributed under the License is distributed on an\n\t    \"AS IS\" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY\n\t    KIND, either express or implied.  See the License for the\n\t    specific language governing permissions and limitations\n\t    under the License.",
+              "licenses": [
+                {
+                  "key": "apache-2.0",
+                  "name": "Apache License 2.0",
+                  "short_name": "Apache 2.0",
+                  "category": "Permissive",
+                  "is_exception": false,
+                  "is_unknown": false,
+                  "owner": "Apache Software Foundation",
+                  "homepage_url": "http://www.apache.org/licenses/",
+                  "text_url": "http://www.apache.org/licenses/LICENSE-2.0",
+                  "reference_url": "https://scancode-licensedb.aboutcode.org/apache-2.0",
+                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.LICENSE",
+                  "spdx_license_key": "Apache-2.0",
+                  "spdx_url": "https://spdx.org/licenses/Apache-2.0"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "other_license_expression": null,
+      "other_license_expression_spdx": null,
+      "other_license_detections": [],
+      "extracted_license_statement": null,
       "notice_text": null,
       "source_packages": [
         "pkg:maven/org.apache.geronimo.specs/specs@1.3?classifier=sources"
@@ -5349,15 +6259,104 @@
       "code_view_url": "http://springframework.cvs.sourceforge.net/springframework/",
       "vcs_url": "cvs+pserver:anonymous:@springframework.cvs.sourceforge.net:/cvsroot/springframework/spring",
       "copyright": null,
-      "license_expression": "apache-2.0 AND unknown",
-      "declared_license": [
+      "declared_license_expression": "apache-2.0",
+      "declared_license_expression_spdx": "Apache-2.0",
+      "license_detections": [
         {
-          "name": "The Apache Software License, Version 2.0",
-          "url": "http://www.apache.org/licenses/LICENSE-2.0.txt",
-          "comments": null,
-          "distribution": "repo"
+          "license_expression": "apache-2.0",
+          "detection_log": [
+            "not-combined"
+          ],
+          "matches": [
+            {
+              "score": 100.0,
+              "start_line": 1,
+              "end_line": 1,
+              "matched_length": 7,
+              "match_coverage": 100.0,
+              "matcher": "1-hash",
+              "license_expression": "apache-2.0",
+              "rule_identifier": "apache-2.0_5.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_5.RULE",
+              "referenced_filenames": [],
+              "is_license_text": false,
+              "is_license_notice": false,
+              "is_license_reference": true,
+              "is_license_tag": false,
+              "is_license_intro": false,
+              "rule_length": 7,
+              "rule_relevance": 100,
+              "matched_text": "The Apache Software License, Version 2.0",
+              "licenses": [
+                {
+                  "key": "apache-2.0",
+                  "name": "Apache License 2.0",
+                  "short_name": "Apache 2.0",
+                  "category": "Permissive",
+                  "is_exception": false,
+                  "is_unknown": false,
+                  "owner": "Apache Software Foundation",
+                  "homepage_url": "http://www.apache.org/licenses/",
+                  "text_url": "http://www.apache.org/licenses/LICENSE-2.0",
+                  "reference_url": "https://scancode-licensedb.aboutcode.org/apache-2.0",
+                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.LICENSE",
+                  "spdx_license_key": "Apache-2.0",
+                  "spdx_url": "https://spdx.org/licenses/Apache-2.0"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "license_expression": "apache-2.0",
+          "detection_log": [
+            "not-combined"
+          ],
+          "matches": [
+            {
+              "score": 80.0,
+              "start_line": 1,
+              "end_line": 1,
+              "matched_length": 9,
+              "match_coverage": 100.0,
+              "matcher": "1-hash",
+              "license_expression": "apache-2.0",
+              "rule_identifier": "apache-2.0_42.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_42.RULE",
+              "referenced_filenames": [],
+              "is_license_text": false,
+              "is_license_notice": false,
+              "is_license_reference": true,
+              "is_license_tag": false,
+              "is_license_intro": false,
+              "rule_length": 9,
+              "rule_relevance": 80,
+              "matched_text": "http://www.apache.org/licenses/LICENSE-2.0.txt",
+              "licenses": [
+                {
+                  "key": "apache-2.0",
+                  "name": "Apache License 2.0",
+                  "short_name": "Apache 2.0",
+                  "category": "Permissive",
+                  "is_exception": false,
+                  "is_unknown": false,
+                  "owner": "Apache Software Foundation",
+                  "homepage_url": "http://www.apache.org/licenses/",
+                  "text_url": "http://www.apache.org/licenses/LICENSE-2.0",
+                  "reference_url": "https://scancode-licensedb.aboutcode.org/apache-2.0",
+                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.LICENSE",
+                  "spdx_license_key": "Apache-2.0",
+                  "spdx_url": "https://spdx.org/licenses/Apache-2.0"
+                }
+              ]
+            }
+          ]
         }
       ],
+      "other_license_expression": null,
+      "other_license_expression_spdx": null,
+      "other_license_detections": [],
+      "extracted_license_statement": "[{'name': 'The Apache Software License, Version 2.0', 'url': 'http://www.apache.org/licenses/LICENSE-2.0.txt', 'comments': None, 'distribution': 'repo'}]",
       "notice_text": null,
       "source_packages": [
         "pkg:maven/org.springframework/spring@2.5.4?classifier=sources"
@@ -5406,15 +6405,104 @@
       "code_view_url": "http://springframework.cvs.sourceforge.net/springframework/",
       "vcs_url": "cvs+pserver:anonymous:@springframework.cvs.sourceforge.net:/cvsroot/springframework/spring",
       "copyright": null,
-      "license_expression": "apache-2.0 AND unknown",
-      "declared_license": [
+      "declared_license_expression": "apache-2.0",
+      "declared_license_expression_spdx": "Apache-2.0",
+      "license_detections": [
         {
-          "name": "The Apache Software License, Version 2.0",
-          "url": "http://www.apache.org/licenses/LICENSE-2.0.txt",
-          "comments": null,
-          "distribution": "repo"
+          "license_expression": "apache-2.0",
+          "detection_log": [
+            "not-combined"
+          ],
+          "matches": [
+            {
+              "score": 100.0,
+              "start_line": 1,
+              "end_line": 1,
+              "matched_length": 7,
+              "match_coverage": 100.0,
+              "matcher": "1-hash",
+              "license_expression": "apache-2.0",
+              "rule_identifier": "apache-2.0_5.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_5.RULE",
+              "referenced_filenames": [],
+              "is_license_text": false,
+              "is_license_notice": false,
+              "is_license_reference": true,
+              "is_license_tag": false,
+              "is_license_intro": false,
+              "rule_length": 7,
+              "rule_relevance": 100,
+              "matched_text": "The Apache Software License, Version 2.0",
+              "licenses": [
+                {
+                  "key": "apache-2.0",
+                  "name": "Apache License 2.0",
+                  "short_name": "Apache 2.0",
+                  "category": "Permissive",
+                  "is_exception": false,
+                  "is_unknown": false,
+                  "owner": "Apache Software Foundation",
+                  "homepage_url": "http://www.apache.org/licenses/",
+                  "text_url": "http://www.apache.org/licenses/LICENSE-2.0",
+                  "reference_url": "https://scancode-licensedb.aboutcode.org/apache-2.0",
+                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.LICENSE",
+                  "spdx_license_key": "Apache-2.0",
+                  "spdx_url": "https://spdx.org/licenses/Apache-2.0"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "license_expression": "apache-2.0",
+          "detection_log": [
+            "not-combined"
+          ],
+          "matches": [
+            {
+              "score": 80.0,
+              "start_line": 1,
+              "end_line": 1,
+              "matched_length": 9,
+              "match_coverage": 100.0,
+              "matcher": "1-hash",
+              "license_expression": "apache-2.0",
+              "rule_identifier": "apache-2.0_42.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_42.RULE",
+              "referenced_filenames": [],
+              "is_license_text": false,
+              "is_license_notice": false,
+              "is_license_reference": true,
+              "is_license_tag": false,
+              "is_license_intro": false,
+              "rule_length": 9,
+              "rule_relevance": 80,
+              "matched_text": "http://www.apache.org/licenses/LICENSE-2.0.txt",
+              "licenses": [
+                {
+                  "key": "apache-2.0",
+                  "name": "Apache License 2.0",
+                  "short_name": "Apache 2.0",
+                  "category": "Permissive",
+                  "is_exception": false,
+                  "is_unknown": false,
+                  "owner": "Apache Software Foundation",
+                  "homepage_url": "http://www.apache.org/licenses/",
+                  "text_url": "http://www.apache.org/licenses/LICENSE-2.0",
+                  "reference_url": "https://scancode-licensedb.aboutcode.org/apache-2.0",
+                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.LICENSE",
+                  "spdx_license_key": "Apache-2.0",
+                  "spdx_url": "https://spdx.org/licenses/Apache-2.0"
+                }
+              ]
+            }
+          ]
         }
       ],
+      "other_license_expression": null,
+      "other_license_expression_spdx": null,
+      "other_license_detections": [],
+      "extracted_license_statement": "[{'name': 'The Apache Software License, Version 2.0', 'url': 'http://www.apache.org/licenses/LICENSE-2.0.txt', 'comments': None, 'distribution': 'repo'}]",
       "notice_text": null,
       "source_packages": [
         "pkg:maven/org.springframework/spring-orm@2.5.3?classifier=sources"
@@ -5463,15 +6551,104 @@
       "code_view_url": "http://springframework.cvs.sourceforge.net/springframework/",
       "vcs_url": "cvs+pserver:anonymous:@springframework.cvs.sourceforge.net:/cvsroot/springframework/spring",
       "copyright": null,
-      "license_expression": "apache-2.0 AND unknown",
-      "declared_license": [
+      "declared_license_expression": "apache-2.0",
+      "declared_license_expression_spdx": "Apache-2.0",
+      "license_detections": [
         {
-          "name": "The Apache Software License, Version 2.0",
-          "url": "http://www.apache.org/licenses/LICENSE-2.0.txt",
-          "comments": null,
-          "distribution": "repo"
+          "license_expression": "apache-2.0",
+          "detection_log": [
+            "not-combined"
+          ],
+          "matches": [
+            {
+              "score": 100.0,
+              "start_line": 1,
+              "end_line": 1,
+              "matched_length": 7,
+              "match_coverage": 100.0,
+              "matcher": "1-hash",
+              "license_expression": "apache-2.0",
+              "rule_identifier": "apache-2.0_5.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_5.RULE",
+              "referenced_filenames": [],
+              "is_license_text": false,
+              "is_license_notice": false,
+              "is_license_reference": true,
+              "is_license_tag": false,
+              "is_license_intro": false,
+              "rule_length": 7,
+              "rule_relevance": 100,
+              "matched_text": "The Apache Software License, Version 2.0",
+              "licenses": [
+                {
+                  "key": "apache-2.0",
+                  "name": "Apache License 2.0",
+                  "short_name": "Apache 2.0",
+                  "category": "Permissive",
+                  "is_exception": false,
+                  "is_unknown": false,
+                  "owner": "Apache Software Foundation",
+                  "homepage_url": "http://www.apache.org/licenses/",
+                  "text_url": "http://www.apache.org/licenses/LICENSE-2.0",
+                  "reference_url": "https://scancode-licensedb.aboutcode.org/apache-2.0",
+                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.LICENSE",
+                  "spdx_license_key": "Apache-2.0",
+                  "spdx_url": "https://spdx.org/licenses/Apache-2.0"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "license_expression": "apache-2.0",
+          "detection_log": [
+            "not-combined"
+          ],
+          "matches": [
+            {
+              "score": 80.0,
+              "start_line": 1,
+              "end_line": 1,
+              "matched_length": 9,
+              "match_coverage": 100.0,
+              "matcher": "1-hash",
+              "license_expression": "apache-2.0",
+              "rule_identifier": "apache-2.0_42.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_42.RULE",
+              "referenced_filenames": [],
+              "is_license_text": false,
+              "is_license_notice": false,
+              "is_license_reference": true,
+              "is_license_tag": false,
+              "is_license_intro": false,
+              "rule_length": 9,
+              "rule_relevance": 80,
+              "matched_text": "http://www.apache.org/licenses/LICENSE-2.0.txt",
+              "licenses": [
+                {
+                  "key": "apache-2.0",
+                  "name": "Apache License 2.0",
+                  "short_name": "Apache 2.0",
+                  "category": "Permissive",
+                  "is_exception": false,
+                  "is_unknown": false,
+                  "owner": "Apache Software Foundation",
+                  "homepage_url": "http://www.apache.org/licenses/",
+                  "text_url": "http://www.apache.org/licenses/LICENSE-2.0",
+                  "reference_url": "https://scancode-licensedb.aboutcode.org/apache-2.0",
+                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.LICENSE",
+                  "spdx_license_key": "Apache-2.0",
+                  "spdx_url": "https://spdx.org/licenses/Apache-2.0"
+                }
+              ]
+            }
+          ]
         }
       ],
+      "other_license_expression": null,
+      "other_license_expression_spdx": null,
+      "other_license_detections": [],
+      "extracted_license_statement": "[{'name': 'The Apache Software License, Version 2.0', 'url': 'http://www.apache.org/licenses/LICENSE-2.0.txt', 'comments': None, 'distribution': 'repo'}]",
       "notice_text": null,
       "source_packages": [
         "pkg:maven/org.springframework/spring-webmvc@2.5.3?classifier=sources"
@@ -5520,8 +6697,13 @@
       "code_view_url": "https://hudson.dev.java.net/source/browse/hudson/tags/startup-trigger-plugin-0.1",
       "vcs_url": "svn+https://guest@svn.dev.java.net/svn/hudson/tags/startup-trigger-plugin-0.1",
       "copyright": null,
-      "license_expression": null,
-      "declared_license": null,
+      "declared_license_expression": null,
+      "declared_license_expression_spdx": null,
+      "license_detections": [],
+      "other_license_expression": null,
+      "other_license_expression_spdx": null,
+      "other_license_detections": [],
+      "extracted_license_statement": null,
       "notice_text": null,
       "source_packages": [
         "pkg:maven/org.jvnet.hudson.plugins/startup-trigger-plugin@0.1?classifier=sources"
@@ -5562,8 +6744,13 @@
       "code_view_url": null,
       "vcs_url": null,
       "copyright": null,
-      "license_expression": null,
-      "declared_license": null,
+      "declared_license_expression": null,
+      "declared_license_expression_spdx": null,
+      "license_detections": [],
+      "other_license_expression": null,
+      "other_license_expression_spdx": null,
+      "other_license_detections": [],
+      "extracted_license_statement": null,
       "notice_text": null,
       "source_packages": [
         "pkg:maven/de.fzj.unicore.rcp/eclipseSequencePlugin@0.0.1-SNAPSHOT?classifier=sources"
@@ -5604,8 +6791,13 @@
       "code_view_url": null,
       "vcs_url": null,
       "copyright": null,
-      "license_expression": null,
-      "declared_license": null,
+      "declared_license_expression": null,
+      "declared_license_expression_spdx": null,
+      "license_detections": [],
+      "other_license_expression": null,
+      "other_license_expression_spdx": null,
+      "other_license_detections": [],
+      "extracted_license_statement": null,
       "notice_text": null,
       "source_packages": [
         "pkg:maven/ur.urwerk.test/ur.urwerk.test.module-y@1.0.0?classifier=sources"
@@ -5646,8 +6838,13 @@
       "code_view_url": null,
       "vcs_url": null,
       "copyright": null,
-      "license_expression": null,
-      "declared_license": null,
+      "declared_license_expression": null,
+      "declared_license_expression_spdx": null,
+      "license_detections": [],
+      "other_license_expression": null,
+      "other_license_expression_spdx": null,
+      "other_license_detections": [],
+      "extracted_license_statement": null,
       "notice_text": null,
       "source_packages": [
         "pkg:maven/org.webreformatter.wrappers/com.google.gwt.query@0.1.5.SNAPSHOT?classifier=sources"
@@ -5688,8 +6885,59 @@
       "code_view_url": "https://github.com/acegi/xml-format-maven-plugin.git",
       "vcs_url": "git+https://github.com/acegi/xml-format-maven-plugin.git",
       "copyright": null,
-      "license_expression": null,
-      "declared_license": null,
+      "declared_license_expression": "apache-2.0",
+      "declared_license_expression_spdx": "Apache-2.0",
+      "license_detections": [
+        {
+          "license_expression": "apache-2.0",
+          "detection_log": [
+            "from-package-file"
+          ],
+          "matches": [
+            {
+              "score": 75.0,
+              "start_line": 33,
+              "end_line": 33,
+              "matched_length": 3,
+              "match_coverage": 100.0,
+              "matcher": "2-aho",
+              "license_expression": "apache-2.0",
+              "rule_identifier": "apache-2.0_94.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_94.RULE",
+              "referenced_filenames": [],
+              "is_license_text": false,
+              "is_license_notice": false,
+              "is_license_reference": true,
+              "is_license_tag": false,
+              "is_license_intro": false,
+              "rule_length": 3,
+              "rule_relevance": 100,
+              "matched_text": "    <license.licenseName>apache_v2</license.licenseName>",
+              "licenses": [
+                {
+                  "key": "apache-2.0",
+                  "name": "Apache License 2.0",
+                  "short_name": "Apache 2.0",
+                  "category": "Permissive",
+                  "is_exception": false,
+                  "is_unknown": false,
+                  "owner": "Apache Software Foundation",
+                  "homepage_url": "http://www.apache.org/licenses/",
+                  "text_url": "http://www.apache.org/licenses/LICENSE-2.0",
+                  "reference_url": "https://scancode-licensedb.aboutcode.org/apache-2.0",
+                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.LICENSE",
+                  "spdx_license_key": "Apache-2.0",
+                  "spdx_url": "https://spdx.org/licenses/Apache-2.0"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "other_license_expression": null,
+      "other_license_expression_spdx": null,
+      "other_license_detections": [],
+      "extracted_license_statement": null,
       "notice_text": null,
       "source_packages": [
         "pkg:maven/au.com.acegi/xml-format-maven-plugin@3.0.6?classifier=sources"
@@ -5745,8 +6993,61 @@
           "code_view_url": null,
           "vcs_url": null,
           "copyright": null,
-          "license_expression": null,
-          "declared_license": null,
+          "declared_license_expression": "apache-2.0",
+          "declared_license_expression_spdx": "Apache-2.0",
+          "license_detections": [
+            {
+              "license_expression": "apache-2.0",
+              "detection_log": [
+                "from-package-file"
+              ],
+              "matches": [
+                {
+                  "score": 100.0,
+                  "start_line": 3,
+                  "end_line": 16,
+                  "matched_length": 119,
+                  "match_coverage": 100.0,
+                  "matcher": "2-aho",
+                  "license_expression": "apache-2.0",
+                  "rule_identifier": "apache-2.0_2.RULE",
+                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_2.RULE",
+                  "referenced_filenames": [
+                    "NOTICE"
+                  ],
+                  "is_license_text": false,
+                  "is_license_notice": true,
+                  "is_license_reference": false,
+                  "is_license_tag": false,
+                  "is_license_intro": false,
+                  "rule_length": 119,
+                  "rule_relevance": 100,
+                  "matched_text": "  Licensed to the Apache Software Foundation (ASF) under one or more\n  contributor license agreements.  See the NOTICE file distributed with\n  this work for additional information regarding copyright ownership.\n  The ASF licenses this file to You under the Apache License, Version 2.0\n  (the \"License\"); you may not use this file except in compliance with\n  the License.  You may obtain a copy of the License at\n  \n  http://www.apache.org/licenses/LICENSE-2.0\n  \n  Unless required by applicable law or agreed to in writing, software\n  distributed under the License is distributed on an \"AS IS\" BASIS,\n  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n  See the License for the specific language governing permissions and\n  limitations under the License.",
+                  "licenses": [
+                    {
+                      "key": "apache-2.0",
+                      "name": "Apache License 2.0",
+                      "short_name": "Apache 2.0",
+                      "category": "Permissive",
+                      "is_exception": false,
+                      "is_unknown": false,
+                      "owner": "Apache Software Foundation",
+                      "homepage_url": "http://www.apache.org/licenses/",
+                      "text_url": "http://www.apache.org/licenses/LICENSE-2.0",
+                      "reference_url": "https://scancode-licensedb.aboutcode.org/apache-2.0",
+                      "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.LICENSE",
+                      "spdx_license_key": "Apache-2.0",
+                      "spdx_url": "https://spdx.org/licenses/Apache-2.0"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "other_license_expression": null,
+          "other_license_expression_spdx": null,
+          "other_license_detections": [],
+          "extracted_license_statement": null,
           "notice_text": null,
           "source_packages": [
             "pkg:maven/org.apache.activemq/activemq-camel@5.4.2?classifier=sources"
@@ -5931,8 +7232,13 @@
           "code_view_url": null,
           "vcs_url": null,
           "copyright": null,
-          "license_expression": null,
-          "declared_license": null,
+          "declared_license_expression": null,
+          "declared_license_expression_spdx": null,
+          "license_detections": [],
+          "other_license_expression": null,
+          "other_license_expression_spdx": null,
+          "other_license_detections": [],
+          "extracted_license_statement": null,
           "notice_text": null,
           "source_packages": [
             "pkg:maven/adarwin/adarwin@1.0?classifier=sources"
@@ -6006,8 +7312,61 @@
           "code_view_url": null,
           "vcs_url": null,
           "copyright": null,
-          "license_expression": null,
-          "declared_license": null,
+          "declared_license_expression": "apache-2.0",
+          "declared_license_expression_spdx": "Apache-2.0",
+          "license_detections": [
+            {
+              "license_expression": "apache-2.0",
+              "detection_log": [
+                "from-package-file"
+              ],
+              "matches": [
+                {
+                  "score": 100.0,
+                  "start_line": 3,
+                  "end_line": 16,
+                  "matched_length": 119,
+                  "match_coverage": 100.0,
+                  "matcher": "2-aho",
+                  "license_expression": "apache-2.0",
+                  "rule_identifier": "apache-2.0_2.RULE",
+                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_2.RULE",
+                  "referenced_filenames": [
+                    "NOTICE"
+                  ],
+                  "is_license_text": false,
+                  "is_license_notice": true,
+                  "is_license_reference": false,
+                  "is_license_tag": false,
+                  "is_license_intro": false,
+                  "rule_length": 119,
+                  "rule_relevance": 100,
+                  "matched_text": "   Licensed to the Apache Software Foundation (ASF) under one or more\r\n   contributor license agreements.  See the NOTICE file distributed with\r\n   this work for additional information regarding copyright ownership.\r\n   The ASF licenses this file to You under the Apache License, Version 2.0\r\n   (the \"License\"); you may not use this file except in compliance with\r\n   the License.  You may obtain a copy of the License at\r\n\r\n       http://www.apache.org/licenses/LICENSE-2.0\r\n\r\n   Unless required by applicable law or agreed to in writing, software\r\n   distributed under the License is distributed on an \"AS IS\" BASIS,\r\n   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\r\n   See the License for the specific language governing permissions and\r\n   limitations under the License.",
+                  "licenses": [
+                    {
+                      "key": "apache-2.0",
+                      "name": "Apache License 2.0",
+                      "short_name": "Apache 2.0",
+                      "category": "Permissive",
+                      "is_exception": false,
+                      "is_unknown": false,
+                      "owner": "Apache Software Foundation",
+                      "homepage_url": "http://www.apache.org/licenses/",
+                      "text_url": "http://www.apache.org/licenses/LICENSE-2.0",
+                      "reference_url": "https://scancode-licensedb.aboutcode.org/apache-2.0",
+                      "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.LICENSE",
+                      "spdx_license_key": "Apache-2.0",
+                      "spdx_url": "https://spdx.org/licenses/Apache-2.0"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "other_license_expression": null,
+          "other_license_expression_spdx": null,
+          "other_license_detections": [],
+          "extracted_license_statement": null,
           "notice_text": null,
           "source_packages": [
             "pkg:maven/org.apache.ant/ant-jai@1.7.0?classifier=sources"
@@ -6112,8 +7471,61 @@
           "code_view_url": null,
           "vcs_url": null,
           "copyright": null,
-          "license_expression": null,
-          "declared_license": null,
+          "declared_license_expression": "apache-2.0",
+          "declared_license_expression_spdx": "Apache-2.0",
+          "license_detections": [
+            {
+              "license_expression": "apache-2.0",
+              "detection_log": [
+                "from-package-file"
+              ],
+              "matches": [
+                {
+                  "score": 100.0,
+                  "start_line": 3,
+                  "end_line": 16,
+                  "matched_length": 119,
+                  "match_coverage": 100.0,
+                  "matcher": "2-aho",
+                  "license_expression": "apache-2.0",
+                  "rule_identifier": "apache-2.0_2.RULE",
+                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_2.RULE",
+                  "referenced_filenames": [
+                    "NOTICE"
+                  ],
+                  "is_license_text": false,
+                  "is_license_notice": true,
+                  "is_license_reference": false,
+                  "is_license_tag": false,
+                  "is_license_intro": false,
+                  "rule_length": 119,
+                  "rule_relevance": 100,
+                  "matched_text": "   Licensed to the Apache Software Foundation (ASF) under one or more\r\n   contributor license agreements.  See the NOTICE file distributed with\r\n   this work for additional information regarding copyright ownership.\r\n   The ASF licenses this file to You under the Apache License, Version 2.0\r\n   (the \"License\"); you may not use this file except in compliance with\r\n   the License.  You may obtain a copy of the License at\r\n\r\n       http://www.apache.org/licenses/LICENSE-2.0\r\n\r\n   Unless required by applicable law or agreed to in writing, software\r\n   distributed under the License is distributed on an \"AS IS\" BASIS,\r\n   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\r\n   See the License for the specific language governing permissions and\r\n   limitations under the License.",
+                  "licenses": [
+                    {
+                      "key": "apache-2.0",
+                      "name": "Apache License 2.0",
+                      "short_name": "Apache 2.0",
+                      "category": "Permissive",
+                      "is_exception": false,
+                      "is_unknown": false,
+                      "owner": "Apache Software Foundation",
+                      "homepage_url": "http://www.apache.org/licenses/",
+                      "text_url": "http://www.apache.org/licenses/LICENSE-2.0",
+                      "reference_url": "https://scancode-licensedb.aboutcode.org/apache-2.0",
+                      "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.LICENSE",
+                      "spdx_license_key": "Apache-2.0",
+                      "spdx_url": "https://spdx.org/licenses/Apache-2.0"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "other_license_expression": null,
+          "other_license_expression_spdx": null,
+          "other_license_detections": [],
+          "extracted_license_statement": null,
           "notice_text": null,
           "source_packages": [
             "pkg:maven/org.apache.ant/ant-jsch@1.7.0?classifier=sources"
@@ -6208,21 +7620,104 @@
           "code_view_url": null,
           "vcs_url": null,
           "copyright": null,
-          "license_expression": "(public-domain AND gpl-1.0-plus) AND unknown",
-          "declared_license": [
+          "declared_license_expression": "public-domain AND gpl-1.0-plus",
+          "declared_license_expression_spdx": "LicenseRef-scancode-public-domain AND GPL-1.0-or-later",
+          "license_detections": [
             {
-              "name": "Public Domain",
-              "url": null,
-              "comments": null,
-              "distribution": null
+              "license_expression": "public-domain",
+              "detection_log": [
+                "not-combined"
+              ],
+              "matches": [
+                {
+                  "score": 70.0,
+                  "start_line": 1,
+                  "end_line": 1,
+                  "matched_length": 2,
+                  "match_coverage": 100.0,
+                  "matcher": "1-hash",
+                  "license_expression": "public-domain",
+                  "rule_identifier": "public-domain_bare_words.RULE",
+                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/public-domain_bare_words.RULE",
+                  "referenced_filenames": [],
+                  "is_license_text": false,
+                  "is_license_notice": false,
+                  "is_license_reference": true,
+                  "is_license_tag": false,
+                  "is_license_intro": false,
+                  "rule_length": 2,
+                  "rule_relevance": 70,
+                  "matched_text": "Public Domain",
+                  "licenses": [
+                    {
+                      "key": "public-domain",
+                      "name": "Public Domain",
+                      "short_name": "Public Domain",
+                      "category": "Public Domain",
+                      "is_exception": false,
+                      "is_unknown": false,
+                      "owner": "Unspecified",
+                      "homepage_url": "http://www.linfo.org/publicdomain.html",
+                      "text_url": "",
+                      "reference_url": "https://scancode-licensedb.aboutcode.org/public-domain",
+                      "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/public-domain.LICENSE",
+                      "spdx_license_key": "LicenseRef-scancode-public-domain",
+                      "spdx_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/public-domain.LICENSE"
+                    }
+                  ]
+                }
+              ]
             },
             {
-              "name": "GPL",
-              "url": "http://nexb.com",
-              "comments": null,
-              "distribution": null
+              "license_expression": "gpl-1.0-plus",
+              "detection_log": [
+                "not-combined"
+              ],
+              "matches": [
+                {
+                  "score": 50.0,
+                  "start_line": 1,
+                  "end_line": 1,
+                  "matched_length": 1,
+                  "match_coverage": 100.0,
+                  "matcher": "1-hash",
+                  "license_expression": "gpl-1.0-plus",
+                  "rule_identifier": "gpl_bare_word_only.RULE",
+                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl_bare_word_only.RULE",
+                  "referenced_filenames": [],
+                  "is_license_text": false,
+                  "is_license_notice": false,
+                  "is_license_reference": true,
+                  "is_license_tag": false,
+                  "is_license_intro": false,
+                  "rule_length": 1,
+                  "rule_relevance": 50,
+                  "matched_text": "GPL",
+                  "licenses": [
+                    {
+                      "key": "gpl-1.0-plus",
+                      "name": "GNU General Public License 1.0 or later",
+                      "short_name": "GPL 1.0 or later",
+                      "category": "Copyleft",
+                      "is_exception": false,
+                      "is_unknown": false,
+                      "owner": "Free Software Foundation (FSF)",
+                      "homepage_url": "http://www.gnu.org/licenses/old-licenses/gpl-1.0-standalone.html",
+                      "text_url": "http://www.gnu.org/licenses/old-licenses/gpl-1.0-standalone.html",
+                      "reference_url": "https://scancode-licensedb.aboutcode.org/gpl-1.0-plus",
+                      "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-1.0-plus.LICENSE",
+                      "spdx_license_key": "GPL-1.0-or-later",
+                      "spdx_url": "https://spdx.org/licenses/GPL-1.0-or-later"
+                    }
+                  ]
+                }
+              ]
             }
           ],
+          "other_license_expression": null,
+          "other_license_expression_spdx": null,
+          "other_license_detections": [],
+          "extracted_license_statement": "[{'name': 'Public Domain', 'url': None, 'comments': None, 'distribution': None}, {'name': 'GPL', 'url': 'http://nexb.com', 'comments': None, 'distribution': None}]",
           "notice_text": null,
           "source_packages": [
             "pkg:maven/aopalliance/aopalliance@1.0?classifier=sources"
@@ -6296,8 +7791,13 @@
           "code_view_url": null,
           "vcs_url": null,
           "copyright": null,
-          "license_expression": null,
-          "declared_license": null,
+          "declared_license_expression": null,
+          "declared_license_expression_spdx": null,
+          "license_detections": [],
+          "other_license_expression": null,
+          "other_license_expression_spdx": null,
+          "other_license_detections": [],
+          "extracted_license_statement": null,
           "notice_text": null,
           "source_packages": [
             "pkg:maven/bcel/bcel@5.1?classifier=sources"
@@ -6400,8 +7900,13 @@
           "code_view_url": "http://cvs.classworlds.codehaus.org/",
           "vcs_url": "cvs+pserver:anonymous@cvs.codehaus.org:/scm/cvspublic/:classworlds",
           "copyright": null,
-          "license_expression": null,
-          "declared_license": null,
+          "declared_license_expression": null,
+          "declared_license_expression_spdx": null,
+          "license_detections": [],
+          "other_license_expression": null,
+          "other_license_expression_spdx": null,
+          "other_license_detections": [],
+          "extracted_license_statement": null,
           "notice_text": null,
           "source_packages": [
             "pkg:maven/classworlds/classworlds@1.1-alpha-2?classifier=sources"
@@ -6525,8 +8030,13 @@
           "code_view_url": null,
           "vcs_url": null,
           "copyright": null,
-          "license_expression": null,
-          "declared_license": null,
+          "declared_license_expression": null,
+          "declared_license_expression_spdx": null,
+          "license_detections": [],
+          "other_license_expression": null,
+          "other_license_expression_spdx": null,
+          "other_license_detections": [],
+          "extracted_license_statement": null,
           "notice_text": null,
           "source_packages": [
             "pkg:maven/commons-fileupload/commons-fileupload@1.0?classifier=sources"
@@ -6846,15 +8356,59 @@
           "code_view_url": "http://svn.apache.org/viewcvs.cgi",
           "vcs_url": "svn+http://svn.apache.org/repos/asf/jakarta/commons/proper/validator/trunk",
           "copyright": null,
-          "license_expression": "(apache-2.0 AND apache-2.0) AND unknown",
-          "declared_license": [
+          "declared_license_expression": "apache-2.0",
+          "declared_license_expression_spdx": "Apache-2.0",
+          "license_detections": [
             {
-              "name": "The Apache Software License, Version 2.0",
-              "url": "/LICENSE.txt",
-              "comments": null,
-              "distribution": null
+              "license_expression": "apache-2.0",
+              "detection_log": [
+                "not-combined"
+              ],
+              "matches": [
+                {
+                  "score": 100.0,
+                  "start_line": 1,
+                  "end_line": 1,
+                  "matched_length": 7,
+                  "match_coverage": 100.0,
+                  "matcher": "1-hash",
+                  "license_expression": "apache-2.0",
+                  "rule_identifier": "apache-2.0_5.RULE",
+                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_5.RULE",
+                  "referenced_filenames": [],
+                  "is_license_text": false,
+                  "is_license_notice": false,
+                  "is_license_reference": true,
+                  "is_license_tag": false,
+                  "is_license_intro": false,
+                  "rule_length": 7,
+                  "rule_relevance": 100,
+                  "matched_text": "The Apache Software License, Version 2.0",
+                  "licenses": [
+                    {
+                      "key": "apache-2.0",
+                      "name": "Apache License 2.0",
+                      "short_name": "Apache 2.0",
+                      "category": "Permissive",
+                      "is_exception": false,
+                      "is_unknown": false,
+                      "owner": "Apache Software Foundation",
+                      "homepage_url": "http://www.apache.org/licenses/",
+                      "text_url": "http://www.apache.org/licenses/LICENSE-2.0",
+                      "reference_url": "https://scancode-licensedb.aboutcode.org/apache-2.0",
+                      "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.LICENSE",
+                      "spdx_license_key": "Apache-2.0",
+                      "spdx_url": "https://spdx.org/licenses/Apache-2.0"
+                    }
+                  ]
+                }
+              ]
             }
           ],
+          "other_license_expression": null,
+          "other_license_expression_spdx": null,
+          "other_license_detections": [],
+          "extracted_license_statement": "[{'name': 'The Apache Software License, Version 2.0', 'url': '/LICENSE.txt', 'comments': None, 'distribution': None}]",
           "notice_text": null,
           "source_packages": [
             "pkg:maven/commons-validator/commons-validator@1.2.0?classifier=sources"
@@ -6989,8 +8543,13 @@
           "code_view_url": null,
           "vcs_url": null,
           "copyright": null,
-          "license_expression": null,
-          "declared_license": null,
+          "declared_license_expression": null,
+          "declared_license_expression_spdx": null,
+          "license_detections": [],
+          "other_license_expression": null,
+          "other_license_expression_spdx": null,
+          "other_license_detections": [],
+          "extracted_license_statement": null,
           "notice_text": null,
           "source_packages": [
             "pkg:maven/org.dbwebx/tools@0.0.1.SNAPSHOT?classifier=sources"
@@ -7100,8 +8659,13 @@
           "code_view_url": "http://cvs.sourceforge.net/viewcvs.py/easyconf/",
           "vcs_url": "cvs+pserver:anonymous@cvs.sourceforge.net:/cvsroot/easyconf:easyconf",
           "copyright": null,
-          "license_expression": null,
-          "declared_license": null,
+          "declared_license_expression": null,
+          "declared_license_expression_spdx": null,
+          "license_detections": [],
+          "other_license_expression": null,
+          "other_license_expression_spdx": null,
+          "other_license_detections": [],
+          "extracted_license_statement": null,
           "notice_text": null,
           "source_packages": [
             "pkg:maven/easyconf/easyconf@0.9.0?classifier=sources"
@@ -7385,15 +8949,59 @@
           "code_view_url": "https://svn.codehaus.org/mojo/tags/findbugs-maven-plugin-1.1.1",
           "vcs_url": "svn+https://svn.codehaus.org/mojo/tags/findbugs-maven-plugin-1.1.1",
           "copyright": null,
-          "license_expression": "unknown",
-          "declared_license": [
+          "declared_license_expression": "mit",
+          "declared_license_expression_spdx": "MIT",
+          "license_detections": [
             {
-              "name": "MIT",
-              "url": "LICENSE.txt",
-              "comments": null,
-              "distribution": "repo"
+              "license_expression": "mit",
+              "detection_log": [
+                "not-combined"
+              ],
+              "matches": [
+                {
+                  "score": 100.0,
+                  "start_line": 1,
+                  "end_line": 1,
+                  "matched_length": 1,
+                  "match_coverage": 100.0,
+                  "matcher": "1-spdx-id",
+                  "license_expression": "mit",
+                  "rule_identifier": "spdx-license-identifier: mit",
+                  "rule_url": null,
+                  "referenced_filenames": [],
+                  "is_license_text": false,
+                  "is_license_notice": false,
+                  "is_license_reference": false,
+                  "is_license_tag": true,
+                  "is_license_intro": false,
+                  "rule_length": 1,
+                  "rule_relevance": 100,
+                  "matched_text": "MIT",
+                  "licenses": [
+                    {
+                      "key": "mit",
+                      "name": "MIT License",
+                      "short_name": "MIT License",
+                      "category": "Permissive",
+                      "is_exception": false,
+                      "is_unknown": false,
+                      "owner": "MIT",
+                      "homepage_url": "http://opensource.org/licenses/mit-license.php",
+                      "text_url": "http://opensource.org/licenses/mit-license.php",
+                      "reference_url": "https://scancode-licensedb.aboutcode.org/mit",
+                      "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE",
+                      "spdx_license_key": "MIT",
+                      "spdx_url": "https://spdx.org/licenses/MIT"
+                    }
+                  ]
+                }
+              ]
             }
           ],
+          "other_license_expression": null,
+          "other_license_expression_spdx": null,
+          "other_license_detections": [],
+          "extracted_license_statement": "[{'name': 'MIT', 'url': 'LICENSE.txt', 'comments': None, 'distribution': 'repo'}]",
           "notice_text": null,
           "source_packages": [
             "pkg:maven/org.codehaus.mojo/findbugs-maven-plugin@1.1.1?classifier=sources"
@@ -7518,8 +9126,13 @@
           "code_view_url": null,
           "vcs_url": null,
           "copyright": null,
-          "license_expression": null,
-          "declared_license": null,
+          "declared_license_expression": null,
+          "declared_license_expression_spdx": null,
+          "license_detections": [],
+          "other_license_expression": null,
+          "other_license_expression_spdx": null,
+          "other_license_detections": [],
+          "extracted_license_statement": null,
           "notice_text": null,
           "source_packages": [
             "pkg:maven/com.adobe.ac.samples.lcds/flex_app@1.0-SNAPSHOT?classifier=sources"
@@ -7694,8 +9307,13 @@
           "code_view_url": null,
           "vcs_url": null,
           "copyright": null,
-          "license_expression": null,
-          "declared_license": null,
+          "declared_license_expression": null,
+          "declared_license_expression_spdx": null,
+          "license_detections": [],
+          "other_license_expression": null,
+          "other_license_expression_spdx": null,
+          "other_license_detections": [],
+          "extracted_license_statement": null,
           "notice_text": null,
           "source_packages": [
             "pkg:maven/com.adobe.ac.samples.bash/bash_flex_app@1.0?classifier=sources"
@@ -7848,15 +9466,104 @@
           "code_view_url": "https://github.com/jode/baz-bar-parent/tree/master",
           "vcs_url": "git://github.com/jode/baz-bar-parent.git",
           "copyright": null,
-          "license_expression": "(epl-1.0 AND bsd-new) AND unknown",
-          "declared_license": [
+          "declared_license_expression": "epl-1.0",
+          "declared_license_expression_spdx": "EPL-1.0",
+          "license_detections": [
             {
-              "name": "Eclipse Public License - v 1.0",
-              "url": "http://www.eclipse.org/legal/epl-v10.html",
-              "comments": null,
-              "distribution": null
+              "license_expression": "epl-1.0",
+              "detection_log": [
+                "not-combined"
+              ],
+              "matches": [
+                {
+                  "score": 100.0,
+                  "start_line": 1,
+                  "end_line": 1,
+                  "matched_length": 6,
+                  "match_coverage": 100.0,
+                  "matcher": "1-hash",
+                  "license_expression": "epl-1.0",
+                  "rule_identifier": "epl-1.0_4.RULE",
+                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/epl-1.0_4.RULE",
+                  "referenced_filenames": [],
+                  "is_license_text": false,
+                  "is_license_notice": false,
+                  "is_license_reference": true,
+                  "is_license_tag": false,
+                  "is_license_intro": false,
+                  "rule_length": 6,
+                  "rule_relevance": 100,
+                  "matched_text": "Eclipse Public License - v 1.0",
+                  "licenses": [
+                    {
+                      "key": "epl-1.0",
+                      "name": "Eclipse Public License 1.0",
+                      "short_name": "EPL 1.0",
+                      "category": "Copyleft Limited",
+                      "is_exception": false,
+                      "is_unknown": false,
+                      "owner": "Eclipse Foundation",
+                      "homepage_url": "http://www.eclipse.org/legal/epl-v10.html",
+                      "text_url": "http://www.eclipse.org/legal/epl-v10.html",
+                      "reference_url": "https://scancode-licensedb.aboutcode.org/epl-1.0",
+                      "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/epl-1.0.LICENSE",
+                      "spdx_license_key": "EPL-1.0",
+                      "spdx_url": "https://spdx.org/licenses/EPL-1.0"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "license_expression": "epl-1.0",
+              "detection_log": [
+                "not-combined"
+              ],
+              "matches": [
+                {
+                  "score": 100.0,
+                  "start_line": 1,
+                  "end_line": 1,
+                  "matched_length": 8,
+                  "match_coverage": 100.0,
+                  "matcher": "1-hash",
+                  "license_expression": "epl-1.0",
+                  "rule_identifier": "epl-1.0.RULE",
+                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/epl-1.0.RULE",
+                  "referenced_filenames": [],
+                  "is_license_text": false,
+                  "is_license_notice": false,
+                  "is_license_reference": true,
+                  "is_license_tag": false,
+                  "is_license_intro": false,
+                  "rule_length": 8,
+                  "rule_relevance": 100,
+                  "matched_text": "http://www.eclipse.org/legal/epl-v10.html",
+                  "licenses": [
+                    {
+                      "key": "epl-1.0",
+                      "name": "Eclipse Public License 1.0",
+                      "short_name": "EPL 1.0",
+                      "category": "Copyleft Limited",
+                      "is_exception": false,
+                      "is_unknown": false,
+                      "owner": "Eclipse Foundation",
+                      "homepage_url": "http://www.eclipse.org/legal/epl-v10.html",
+                      "text_url": "http://www.eclipse.org/legal/epl-v10.html",
+                      "reference_url": "https://scancode-licensedb.aboutcode.org/epl-1.0",
+                      "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/epl-1.0.LICENSE",
+                      "spdx_license_key": "EPL-1.0",
+                      "spdx_url": "https://spdx.org/licenses/EPL-1.0"
+                    }
+                  ]
+                }
+              ]
             }
           ],
+          "other_license_expression": null,
+          "other_license_expression_spdx": null,
+          "other_license_detections": [],
+          "extracted_license_statement": "[{'name': 'Eclipse Public License - v 1.0', 'url': 'http://www.eclipse.org/legal/epl-v10.html', 'comments': None, 'distribution': None}]",
           "notice_text": null,
           "source_packages": [
             "pkg:maven/com.myco.foo.bar.baz/baz-bar-parent@1.0?classifier=sources"
@@ -8011,8 +9718,61 @@
           "code_view_url": null,
           "vcs_url": null,
           "copyright": null,
-          "license_expression": null,
-          "declared_license": null,
+          "declared_license_expression": "apache-2.0",
+          "declared_license_expression_spdx": "Apache-2.0",
+          "license_detections": [
+            {
+              "license_expression": "apache-2.0",
+              "detection_log": [
+                "from-package-file"
+              ],
+              "matches": [
+                {
+                  "score": 100.0,
+                  "start_line": 6,
+                  "end_line": 19,
+                  "matched_length": 119,
+                  "match_coverage": 100.0,
+                  "matcher": "2-aho",
+                  "license_expression": "apache-2.0",
+                  "rule_identifier": "apache-2.0_2.RULE",
+                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_2.RULE",
+                  "referenced_filenames": [
+                    "NOTICE"
+                  ],
+                  "is_license_text": false,
+                  "is_license_notice": true,
+                  "is_license_reference": false,
+                  "is_license_tag": false,
+                  "is_license_intro": false,
+                  "rule_length": 119,
+                  "rule_relevance": 100,
+                  "matched_text": "        Licensed to the Apache Software Foundation (ASF) under one or more\r\n        contributor license agreements.  See the NOTICE file distributed with\r\n        this work for additional information regarding copyright ownership.\r\n        The ASF licenses this file to You under the Apache License, Version 2.0\r\n        (the \"License\"); you may not use this file except in compliance with\r\n        the License.  You may obtain a copy of the License at\r\n\r\n           http://www.apache.org/licenses/LICENSE-2.0\r\n\r\n        Unless required by applicable law or agreed to in writing, software\r\n        distributed under the License is distributed on an \"AS IS\" BASIS,\r\n        WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\r\n        See the License for the specific language governing permissions and\r\n        limitations under the License.",
+                  "licenses": [
+                    {
+                      "key": "apache-2.0",
+                      "name": "Apache License 2.0",
+                      "short_name": "Apache 2.0",
+                      "category": "Permissive",
+                      "is_exception": false,
+                      "is_unknown": false,
+                      "owner": "Apache Software Foundation",
+                      "homepage_url": "http://www.apache.org/licenses/",
+                      "text_url": "http://www.apache.org/licenses/LICENSE-2.0",
+                      "reference_url": "https://scancode-licensedb.aboutcode.org/apache-2.0",
+                      "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.LICENSE",
+                      "spdx_license_key": "Apache-2.0",
+                      "spdx_url": "https://spdx.org/licenses/Apache-2.0"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "other_license_expression": null,
+          "other_license_expression_spdx": null,
+          "other_license_detections": [],
+          "extracted_license_statement": null,
           "notice_text": null,
           "source_packages": [
             "pkg:maven/org.apache.geronimo.bundles/axis@1.4_1-SNAPSHOT?classifier=sources"
@@ -8126,8 +9886,13 @@
           "code_view_url": null,
           "vcs_url": "cvs+ext:idegaweb@code.idega.com:/idega/cvs:com.idega.block.addon/com.idega.block.contract/",
           "copyright": null,
-          "license_expression": null,
-          "declared_license": null,
+          "declared_license_expression": null,
+          "declared_license_expression_spdx": null,
+          "license_detections": [],
+          "other_license_expression": null,
+          "other_license_expression_spdx": null,
+          "other_license_detections": [],
+          "extracted_license_statement": null,
           "notice_text": null,
           "source_packages": [
             "pkg:maven/com.idega.block.addon/com.idega.block.contract@4.1.3-SNAPSHOT?classifier=sources"
@@ -8250,15 +10015,104 @@
           "code_view_url": "https://jrecordbind.dev.java.net/source/browse/jrecordbind/",
           "vcs_url": "svn+https://jrecordbind.dev.java.net/svn/jrecordbind/trunk/",
           "copyright": null,
-          "license_expression": "((lgpl-2.1 OR apache-2.0) AND lgpl-2.1-plus) AND unknown",
-          "declared_license": [
+          "declared_license_expression": "lgpl-2.0-plus AND lgpl-2.1-plus",
+          "declared_license_expression_spdx": "LGPL-2.0-or-later AND LGPL-2.1-or-later",
+          "license_detections": [
             {
-              "name": "LGPL",
-              "url": "http://www.gnu.org/copyleft/lesser.html",
-              "comments": null,
-              "distribution": "repo"
+              "license_expression": "lgpl-2.0-plus",
+              "detection_log": [
+                "not-combined"
+              ],
+              "matches": [
+                {
+                  "score": 75.0,
+                  "start_line": 1,
+                  "end_line": 1,
+                  "matched_length": 1,
+                  "match_coverage": 100.0,
+                  "matcher": "1-hash",
+                  "license_expression": "lgpl-2.0-plus",
+                  "rule_identifier": "lgpl_bare_single_word.RULE",
+                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl_bare_single_word.RULE",
+                  "referenced_filenames": [],
+                  "is_license_text": false,
+                  "is_license_notice": false,
+                  "is_license_reference": true,
+                  "is_license_tag": false,
+                  "is_license_intro": false,
+                  "rule_length": 1,
+                  "rule_relevance": 75,
+                  "matched_text": "LGPL",
+                  "licenses": [
+                    {
+                      "key": "lgpl-2.0-plus",
+                      "name": "GNU Library General Public License 2.0 or later",
+                      "short_name": "LGPL 2.0 or later",
+                      "category": "Copyleft Limited",
+                      "is_exception": false,
+                      "is_unknown": false,
+                      "owner": "Free Software Foundation (FSF)",
+                      "homepage_url": "http://www.gnu.org/licenses/old-licenses/lgpl-2.0.html",
+                      "text_url": "http://www.gnu.org/licenses/old-licenses/lgpl-2.0-standalone.html",
+                      "reference_url": "https://scancode-licensedb.aboutcode.org/lgpl-2.0-plus",
+                      "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/lgpl-2.0-plus.LICENSE",
+                      "spdx_license_key": "LGPL-2.0-or-later",
+                      "spdx_url": "https://spdx.org/licenses/LGPL-2.0-or-later"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "license_expression": "lgpl-2.1-plus",
+              "detection_log": [
+                "not-combined"
+              ],
+              "matches": [
+                {
+                  "score": 100.0,
+                  "start_line": 1,
+                  "end_line": 1,
+                  "matched_length": 7,
+                  "match_coverage": 100.0,
+                  "matcher": "1-hash",
+                  "license_expression": "lgpl-2.1-plus",
+                  "rule_identifier": "lgpl_7.RULE",
+                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl_7.RULE",
+                  "referenced_filenames": [],
+                  "is_license_text": false,
+                  "is_license_notice": false,
+                  "is_license_reference": true,
+                  "is_license_tag": false,
+                  "is_license_intro": false,
+                  "rule_length": 7,
+                  "rule_relevance": 100,
+                  "matched_text": "http://www.gnu.org/copyleft/lesser.html",
+                  "licenses": [
+                    {
+                      "key": "lgpl-2.1-plus",
+                      "name": "GNU Lesser General Public License 2.1 or later",
+                      "short_name": "LGPL 2.1 or later",
+                      "category": "Copyleft Limited",
+                      "is_exception": false,
+                      "is_unknown": false,
+                      "owner": "Free Software Foundation (FSF)",
+                      "homepage_url": "http://www.gnu.org/licenses/old-licenses/lgpl-2.1-standalone.html",
+                      "text_url": "http://www.gnu.org/licenses/old-licenses/lgpl-2.1-standalone.html",
+                      "reference_url": "https://scancode-licensedb.aboutcode.org/lgpl-2.1-plus",
+                      "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/lgpl-2.1-plus.LICENSE",
+                      "spdx_license_key": "LGPL-2.1-or-later",
+                      "spdx_url": "https://spdx.org/licenses/LGPL-2.1-or-later"
+                    }
+                  ]
+                }
+              ]
             }
           ],
+          "other_license_expression": null,
+          "other_license_expression_spdx": null,
+          "other_license_detections": [],
+          "extracted_license_statement": "[{'name': 'LGPL', 'url': 'http://www.gnu.org/copyleft/lesser.html', 'comments': None, 'distribution': 'repo'}]",
           "notice_text": null,
           "source_packages": [
             "pkg:maven/it.assist.jrecordbind/jrecordbind%24%7BartifactId.ext%7D@2.3.4?classifier=sources"
@@ -8381,15 +10235,104 @@
           "code_view_url": "http://svn.apache.org/viewcvs.cgi/logging/log4j/tags/v1_2_15_rc6",
           "vcs_url": "svn+http://svn.apache.org/repos/asf/logging/log4j/tags/v1_2_15_rc6",
           "copyright": null,
-          "license_expression": "apache-2.0 AND unknown",
-          "declared_license": [
+          "declared_license_expression": "apache-2.0",
+          "declared_license_expression_spdx": "Apache-2.0",
+          "license_detections": [
             {
-              "name": "The Apache Software License, Version 2.0",
-              "url": "http://www.apache.org/licenses/LICENSE-2.0.txt",
-              "comments": null,
-              "distribution": "repo"
+              "license_expression": "apache-2.0",
+              "detection_log": [
+                "not-combined"
+              ],
+              "matches": [
+                {
+                  "score": 100.0,
+                  "start_line": 1,
+                  "end_line": 1,
+                  "matched_length": 7,
+                  "match_coverage": 100.0,
+                  "matcher": "1-hash",
+                  "license_expression": "apache-2.0",
+                  "rule_identifier": "apache-2.0_5.RULE",
+                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_5.RULE",
+                  "referenced_filenames": [],
+                  "is_license_text": false,
+                  "is_license_notice": false,
+                  "is_license_reference": true,
+                  "is_license_tag": false,
+                  "is_license_intro": false,
+                  "rule_length": 7,
+                  "rule_relevance": 100,
+                  "matched_text": "The Apache Software License, Version 2.0",
+                  "licenses": [
+                    {
+                      "key": "apache-2.0",
+                      "name": "Apache License 2.0",
+                      "short_name": "Apache 2.0",
+                      "category": "Permissive",
+                      "is_exception": false,
+                      "is_unknown": false,
+                      "owner": "Apache Software Foundation",
+                      "homepage_url": "http://www.apache.org/licenses/",
+                      "text_url": "http://www.apache.org/licenses/LICENSE-2.0",
+                      "reference_url": "https://scancode-licensedb.aboutcode.org/apache-2.0",
+                      "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.LICENSE",
+                      "spdx_license_key": "Apache-2.0",
+                      "spdx_url": "https://spdx.org/licenses/Apache-2.0"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "license_expression": "apache-2.0",
+              "detection_log": [
+                "not-combined"
+              ],
+              "matches": [
+                {
+                  "score": 80.0,
+                  "start_line": 1,
+                  "end_line": 1,
+                  "matched_length": 9,
+                  "match_coverage": 100.0,
+                  "matcher": "1-hash",
+                  "license_expression": "apache-2.0",
+                  "rule_identifier": "apache-2.0_42.RULE",
+                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_42.RULE",
+                  "referenced_filenames": [],
+                  "is_license_text": false,
+                  "is_license_notice": false,
+                  "is_license_reference": true,
+                  "is_license_tag": false,
+                  "is_license_intro": false,
+                  "rule_length": 9,
+                  "rule_relevance": 80,
+                  "matched_text": "http://www.apache.org/licenses/LICENSE-2.0.txt",
+                  "licenses": [
+                    {
+                      "key": "apache-2.0",
+                      "name": "Apache License 2.0",
+                      "short_name": "Apache 2.0",
+                      "category": "Permissive",
+                      "is_exception": false,
+                      "is_unknown": false,
+                      "owner": "Apache Software Foundation",
+                      "homepage_url": "http://www.apache.org/licenses/",
+                      "text_url": "http://www.apache.org/licenses/LICENSE-2.0",
+                      "reference_url": "https://scancode-licensedb.aboutcode.org/apache-2.0",
+                      "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.LICENSE",
+                      "spdx_license_key": "Apache-2.0",
+                      "spdx_url": "https://spdx.org/licenses/Apache-2.0"
+                    }
+                  ]
+                }
+              ]
             }
           ],
+          "other_license_expression": null,
+          "other_license_expression_spdx": null,
+          "other_license_detections": [],
+          "extracted_license_statement": "[{'name': 'The Apache Software License, Version 2.0', 'url': 'http://www.apache.org/licenses/LICENSE-2.0.txt', 'comments': None, 'distribution': 'repo'}]",
           "notice_text": null,
           "source_packages": [
             "pkg:maven/log4j/log4j@1.2.15?classifier=sources"
@@ -8524,15 +10467,104 @@
           "code_view_url": "http://svn.qos.ch/viewcvs/logback/access/trunk/",
           "vcs_url": "http://svn.qos.ch/repos/logback/access/trunk/",
           "copyright": null,
-          "license_expression": "lgpl-2.1-plus AND unknown",
-          "declared_license": [
+          "declared_license_expression": "lgpl-2.0-plus",
+          "declared_license_expression_spdx": "LGPL-2.0-or-later",
+          "license_detections": [
             {
-              "name": "GNU Lesser General Public License",
-              "url": "http://www.gnu.org/licenses/lgpl.html",
-              "comments": null,
-              "distribution": null
+              "license_expression": "lgpl-2.0-plus",
+              "detection_log": [
+                "not-combined"
+              ],
+              "matches": [
+                {
+                  "score": 100.0,
+                  "start_line": 1,
+                  "end_line": 1,
+                  "matched_length": 5,
+                  "match_coverage": 100.0,
+                  "matcher": "1-hash",
+                  "license_expression": "lgpl-2.0-plus",
+                  "rule_identifier": "lgpl-2.0-plus_87.RULE",
+                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0-plus_87.RULE",
+                  "referenced_filenames": [],
+                  "is_license_text": false,
+                  "is_license_notice": false,
+                  "is_license_reference": true,
+                  "is_license_tag": false,
+                  "is_license_intro": false,
+                  "rule_length": 5,
+                  "rule_relevance": 100,
+                  "matched_text": "GNU Lesser General Public License",
+                  "licenses": [
+                    {
+                      "key": "lgpl-2.0-plus",
+                      "name": "GNU Library General Public License 2.0 or later",
+                      "short_name": "LGPL 2.0 or later",
+                      "category": "Copyleft Limited",
+                      "is_exception": false,
+                      "is_unknown": false,
+                      "owner": "Free Software Foundation (FSF)",
+                      "homepage_url": "http://www.gnu.org/licenses/old-licenses/lgpl-2.0.html",
+                      "text_url": "http://www.gnu.org/licenses/old-licenses/lgpl-2.0-standalone.html",
+                      "reference_url": "https://scancode-licensedb.aboutcode.org/lgpl-2.0-plus",
+                      "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/lgpl-2.0-plus.LICENSE",
+                      "spdx_license_key": "LGPL-2.0-or-later",
+                      "spdx_url": "https://spdx.org/licenses/LGPL-2.0-or-later"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "license_expression": "lgpl-2.0-plus",
+              "detection_log": [
+                "not-combined"
+              ],
+              "matches": [
+                {
+                  "score": 100.0,
+                  "start_line": 1,
+                  "end_line": 1,
+                  "matched_length": 7,
+                  "match_coverage": 100.0,
+                  "matcher": "1-hash",
+                  "license_expression": "lgpl-2.0-plus",
+                  "rule_identifier": "lgpl_3.RULE",
+                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl_3.RULE",
+                  "referenced_filenames": [],
+                  "is_license_text": false,
+                  "is_license_notice": false,
+                  "is_license_reference": true,
+                  "is_license_tag": false,
+                  "is_license_intro": false,
+                  "rule_length": 7,
+                  "rule_relevance": 100,
+                  "matched_text": "http://www.gnu.org/licenses/lgpl.html",
+                  "licenses": [
+                    {
+                      "key": "lgpl-2.0-plus",
+                      "name": "GNU Library General Public License 2.0 or later",
+                      "short_name": "LGPL 2.0 or later",
+                      "category": "Copyleft Limited",
+                      "is_exception": false,
+                      "is_unknown": false,
+                      "owner": "Free Software Foundation (FSF)",
+                      "homepage_url": "http://www.gnu.org/licenses/old-licenses/lgpl-2.0.html",
+                      "text_url": "http://www.gnu.org/licenses/old-licenses/lgpl-2.0-standalone.html",
+                      "reference_url": "https://scancode-licensedb.aboutcode.org/lgpl-2.0-plus",
+                      "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/lgpl-2.0-plus.LICENSE",
+                      "spdx_license_key": "LGPL-2.0-or-later",
+                      "spdx_url": "https://spdx.org/licenses/LGPL-2.0-or-later"
+                    }
+                  ]
+                }
+              ]
             }
           ],
+          "other_license_expression": null,
+          "other_license_expression_spdx": null,
+          "other_license_detections": [],
+          "extracted_license_statement": "[{'name': 'GNU Lesser General Public License', 'url': 'http://www.gnu.org/licenses/lgpl.html', 'comments': None, 'distribution': None}]",
           "notice_text": null,
           "source_packages": [
             "pkg:maven/ch.qos.logback/logback-access@0.2.5?classifier=sources"
@@ -8742,8 +10774,13 @@
           "code_view_url": null,
           "vcs_url": "svn://svn.codehaus.org/plexus/scm/trunk/plexus-components/plexus-interactivity/plexus-interactivity-api",
           "copyright": null,
-          "license_expression": null,
-          "declared_license": null,
+          "declared_license_expression": null,
+          "declared_license_expression_spdx": null,
+          "license_detections": [],
+          "other_license_expression": null,
+          "other_license_expression_spdx": null,
+          "other_license_detections": [],
+          "extracted_license_statement": null,
           "notice_text": null,
           "source_packages": [
             "pkg:maven/org.codehaus.plexus/plexus-interactivity-api@1.0-alpha-4?classifier=sources"
@@ -8858,8 +10895,13 @@
           "code_view_url": null,
           "vcs_url": null,
           "copyright": null,
-          "license_expression": null,
-          "declared_license": null,
+          "declared_license_expression": null,
+          "declared_license_expression_spdx": null,
+          "license_detections": [],
+          "other_license_expression": null,
+          "other_license_expression_spdx": null,
+          "other_license_detections": [],
+          "extracted_license_statement": null,
           "notice_text": null,
           "source_packages": [
             "pkg:maven/ur.urwerk.test.modules/main@1.0.0-SNAPSHOT?classifier=sources"
@@ -8933,8 +10975,61 @@
           "code_view_url": null,
           "vcs_url": null,
           "copyright": null,
-          "license_expression": null,
-          "declared_license": null,
+          "declared_license_expression": "apache-2.0",
+          "declared_license_expression_spdx": "Apache-2.0",
+          "license_detections": [
+            {
+              "license_expression": "apache-2.0",
+              "detection_log": [
+                "from-package-file"
+              ],
+              "matches": [
+                {
+                  "score": 100.0,
+                  "start_line": 6,
+                  "end_line": 19,
+                  "matched_length": 119,
+                  "match_coverage": 100.0,
+                  "matcher": "2-aho",
+                  "license_expression": "apache-2.0",
+                  "rule_identifier": "apache-2.0_2.RULE",
+                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_2.RULE",
+                  "referenced_filenames": [
+                    "NOTICE"
+                  ],
+                  "is_license_text": false,
+                  "is_license_notice": true,
+                  "is_license_reference": false,
+                  "is_license_tag": false,
+                  "is_license_intro": false,
+                  "rule_length": 119,
+                  "rule_relevance": 100,
+                  "matched_text": "        Licensed to the Apache Software Foundation (ASF) under one or more\n        contributor license agreements.  See the NOTICE file distributed with\n        this work for additional information regarding copyright ownership.\n        The ASF licenses this file to You under the Apache License, Version 2.0\n        (the \"License\"); you may not use this file except in compliance with\n        the License.  You may obtain a copy of the License at\n\n           http://www.apache.org/licenses/LICENSE-2.0\n\n        Unless required by applicable law or agreed to in writing, software\n        distributed under the License is distributed on an \"AS IS\" BASIS,\n        WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n        See the License for the specific language governing permissions and\n        limitations under the License.",
+                  "licenses": [
+                    {
+                      "key": "apache-2.0",
+                      "name": "Apache License 2.0",
+                      "short_name": "Apache 2.0",
+                      "category": "Permissive",
+                      "is_exception": false,
+                      "is_unknown": false,
+                      "owner": "Apache Software Foundation",
+                      "homepage_url": "http://www.apache.org/licenses/",
+                      "text_url": "http://www.apache.org/licenses/LICENSE-2.0",
+                      "reference_url": "https://scancode-licensedb.aboutcode.org/apache-2.0",
+                      "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.LICENSE",
+                      "spdx_license_key": "Apache-2.0",
+                      "spdx_url": "https://spdx.org/licenses/Apache-2.0"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "other_license_expression": null,
+          "other_license_expression_spdx": null,
+          "other_license_detections": [],
+          "extracted_license_statement": null,
           "notice_text": null,
           "source_packages": [
             "pkg:maven/org.apache.geronimo.bundles/axis@1.4_1-SNAPSHOT?classifier=sources"
@@ -9019,8 +11114,13 @@
           "code_view_url": null,
           "vcs_url": null,
           "copyright": null,
-          "license_expression": null,
-          "declared_license": null,
+          "declared_license_expression": null,
+          "declared_license_expression_spdx": null,
+          "license_detections": [],
+          "other_license_expression": null,
+          "other_license_expression_spdx": null,
+          "other_license_detections": [],
+          "extracted_license_statement": null,
           "notice_text": null,
           "source_packages": [
             "pkg:maven/org.modeler/modeler@0.1?classifier=sources"
@@ -9207,8 +11307,13 @@
           "code_view_url": "http://code.google.com/p/seam-maven-refimpl/source/browse/#svn/trunk",
           "vcs_url": "svn+http://seam-maven-refimpl.googlecode.com/svn/trunk",
           "copyright": null,
-          "license_expression": null,
-          "declared_license": null,
+          "declared_license_expression": null,
+          "declared_license_expression_spdx": null,
+          "license_detections": [],
+          "other_license_expression": null,
+          "other_license_expression_spdx": null,
+          "other_license_detections": [],
+          "extracted_license_statement": null,
           "notice_text": null,
           "source_packages": [
             "pkg:maven/no.knowit.seam/root@2.2.0-SNAPSHOT?classifier=sources"
@@ -9653,8 +11758,61 @@
           "code_view_url": "http://svn.apache.org/viewvc/geronimo/specs/tags/1_3/",
           "vcs_url": "svn+http://svn.apache.org/repos/asf/geronimo/specs/tags/1_3",
           "copyright": null,
-          "license_expression": null,
-          "declared_license": null,
+          "declared_license_expression": "apache-2.0",
+          "declared_license_expression_spdx": "Apache-2.0",
+          "license_detections": [
+            {
+              "license_expression": "apache-2.0",
+              "detection_log": [
+                "from-package-file"
+              ],
+              "matches": [
+                {
+                  "score": 100.0,
+                  "start_line": 5,
+                  "end_line": 20,
+                  "matched_length": 119,
+                  "match_coverage": 100.0,
+                  "matcher": "2-aho",
+                  "license_expression": "apache-2.0",
+                  "rule_identifier": "apache-2.0_2.RULE",
+                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_2.RULE",
+                  "referenced_filenames": [
+                    "NOTICE"
+                  ],
+                  "is_license_text": false,
+                  "is_license_notice": true,
+                  "is_license_reference": false,
+                  "is_license_tag": false,
+                  "is_license_intro": false,
+                  "rule_length": 119,
+                  "rule_relevance": 100,
+                  "matched_text": "\t    Licensed to the Apache Software Foundation (ASF) under one\n\t    or more contributor license agreements.  See the NOTICE file\n\t    distributed with this work for additional information\n\t    regarding copyright ownership.  The ASF licenses this file\n\t    to you under the Apache License, Version 2.0 (the\n\t    \"License\"); you may not use this file except in compliance\n\t    with the License.  You may obtain a copy of the License at\n\n\t     http://www.apache.org/licenses/LICENSE-2.0\n\n\t    Unless required by applicable law or agreed to in writing,\n\t    software distributed under the License is distributed on an\n\t    \"AS IS\" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY\n\t    KIND, either express or implied.  See the License for the\n\t    specific language governing permissions and limitations\n\t    under the License.",
+                  "licenses": [
+                    {
+                      "key": "apache-2.0",
+                      "name": "Apache License 2.0",
+                      "short_name": "Apache 2.0",
+                      "category": "Permissive",
+                      "is_exception": false,
+                      "is_unknown": false,
+                      "owner": "Apache Software Foundation",
+                      "homepage_url": "http://www.apache.org/licenses/",
+                      "text_url": "http://www.apache.org/licenses/LICENSE-2.0",
+                      "reference_url": "https://scancode-licensedb.aboutcode.org/apache-2.0",
+                      "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.LICENSE",
+                      "spdx_license_key": "Apache-2.0",
+                      "spdx_url": "https://spdx.org/licenses/Apache-2.0"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "other_license_expression": null,
+          "other_license_expression_spdx": null,
+          "other_license_detections": [],
+          "extracted_license_statement": null,
           "notice_text": null,
           "source_packages": [
             "pkg:maven/org.apache.geronimo.specs/specs@1.3?classifier=sources"
@@ -9747,15 +11905,104 @@
           "code_view_url": "http://springframework.cvs.sourceforge.net/springframework/",
           "vcs_url": "cvs+pserver:anonymous:@springframework.cvs.sourceforge.net:/cvsroot/springframework/spring",
           "copyright": null,
-          "license_expression": "apache-2.0 AND unknown",
-          "declared_license": [
+          "declared_license_expression": "apache-2.0",
+          "declared_license_expression_spdx": "Apache-2.0",
+          "license_detections": [
             {
-              "name": "The Apache Software License, Version 2.0",
-              "url": "http://www.apache.org/licenses/LICENSE-2.0.txt",
-              "comments": null,
-              "distribution": "repo"
+              "license_expression": "apache-2.0",
+              "detection_log": [
+                "not-combined"
+              ],
+              "matches": [
+                {
+                  "score": 100.0,
+                  "start_line": 1,
+                  "end_line": 1,
+                  "matched_length": 7,
+                  "match_coverage": 100.0,
+                  "matcher": "1-hash",
+                  "license_expression": "apache-2.0",
+                  "rule_identifier": "apache-2.0_5.RULE",
+                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_5.RULE",
+                  "referenced_filenames": [],
+                  "is_license_text": false,
+                  "is_license_notice": false,
+                  "is_license_reference": true,
+                  "is_license_tag": false,
+                  "is_license_intro": false,
+                  "rule_length": 7,
+                  "rule_relevance": 100,
+                  "matched_text": "The Apache Software License, Version 2.0",
+                  "licenses": [
+                    {
+                      "key": "apache-2.0",
+                      "name": "Apache License 2.0",
+                      "short_name": "Apache 2.0",
+                      "category": "Permissive",
+                      "is_exception": false,
+                      "is_unknown": false,
+                      "owner": "Apache Software Foundation",
+                      "homepage_url": "http://www.apache.org/licenses/",
+                      "text_url": "http://www.apache.org/licenses/LICENSE-2.0",
+                      "reference_url": "https://scancode-licensedb.aboutcode.org/apache-2.0",
+                      "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.LICENSE",
+                      "spdx_license_key": "Apache-2.0",
+                      "spdx_url": "https://spdx.org/licenses/Apache-2.0"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "license_expression": "apache-2.0",
+              "detection_log": [
+                "not-combined"
+              ],
+              "matches": [
+                {
+                  "score": 80.0,
+                  "start_line": 1,
+                  "end_line": 1,
+                  "matched_length": 9,
+                  "match_coverage": 100.0,
+                  "matcher": "1-hash",
+                  "license_expression": "apache-2.0",
+                  "rule_identifier": "apache-2.0_42.RULE",
+                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_42.RULE",
+                  "referenced_filenames": [],
+                  "is_license_text": false,
+                  "is_license_notice": false,
+                  "is_license_reference": true,
+                  "is_license_tag": false,
+                  "is_license_intro": false,
+                  "rule_length": 9,
+                  "rule_relevance": 80,
+                  "matched_text": "http://www.apache.org/licenses/LICENSE-2.0.txt",
+                  "licenses": [
+                    {
+                      "key": "apache-2.0",
+                      "name": "Apache License 2.0",
+                      "short_name": "Apache 2.0",
+                      "category": "Permissive",
+                      "is_exception": false,
+                      "is_unknown": false,
+                      "owner": "Apache Software Foundation",
+                      "homepage_url": "http://www.apache.org/licenses/",
+                      "text_url": "http://www.apache.org/licenses/LICENSE-2.0",
+                      "reference_url": "https://scancode-licensedb.aboutcode.org/apache-2.0",
+                      "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.LICENSE",
+                      "spdx_license_key": "Apache-2.0",
+                      "spdx_url": "https://spdx.org/licenses/Apache-2.0"
+                    }
+                  ]
+                }
+              ]
             }
           ],
+          "other_license_expression": null,
+          "other_license_expression_spdx": null,
+          "other_license_detections": [],
+          "extracted_license_statement": "[{'name': 'The Apache Software License, Version 2.0', 'url': 'http://www.apache.org/licenses/LICENSE-2.0.txt', 'comments': None, 'distribution': 'repo'}]",
           "notice_text": null,
           "source_packages": [
             "pkg:maven/org.springframework/spring@2.5.4?classifier=sources"
@@ -10488,15 +12735,104 @@
           "code_view_url": "http://springframework.cvs.sourceforge.net/springframework/",
           "vcs_url": "cvs+pserver:anonymous:@springframework.cvs.sourceforge.net:/cvsroot/springframework/spring",
           "copyright": null,
-          "license_expression": "apache-2.0 AND unknown",
-          "declared_license": [
+          "declared_license_expression": "apache-2.0",
+          "declared_license_expression_spdx": "Apache-2.0",
+          "license_detections": [
             {
-              "name": "The Apache Software License, Version 2.0",
-              "url": "http://www.apache.org/licenses/LICENSE-2.0.txt",
-              "comments": null,
-              "distribution": "repo"
+              "license_expression": "apache-2.0",
+              "detection_log": [
+                "not-combined"
+              ],
+              "matches": [
+                {
+                  "score": 100.0,
+                  "start_line": 1,
+                  "end_line": 1,
+                  "matched_length": 7,
+                  "match_coverage": 100.0,
+                  "matcher": "1-hash",
+                  "license_expression": "apache-2.0",
+                  "rule_identifier": "apache-2.0_5.RULE",
+                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_5.RULE",
+                  "referenced_filenames": [],
+                  "is_license_text": false,
+                  "is_license_notice": false,
+                  "is_license_reference": true,
+                  "is_license_tag": false,
+                  "is_license_intro": false,
+                  "rule_length": 7,
+                  "rule_relevance": 100,
+                  "matched_text": "The Apache Software License, Version 2.0",
+                  "licenses": [
+                    {
+                      "key": "apache-2.0",
+                      "name": "Apache License 2.0",
+                      "short_name": "Apache 2.0",
+                      "category": "Permissive",
+                      "is_exception": false,
+                      "is_unknown": false,
+                      "owner": "Apache Software Foundation",
+                      "homepage_url": "http://www.apache.org/licenses/",
+                      "text_url": "http://www.apache.org/licenses/LICENSE-2.0",
+                      "reference_url": "https://scancode-licensedb.aboutcode.org/apache-2.0",
+                      "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.LICENSE",
+                      "spdx_license_key": "Apache-2.0",
+                      "spdx_url": "https://spdx.org/licenses/Apache-2.0"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "license_expression": "apache-2.0",
+              "detection_log": [
+                "not-combined"
+              ],
+              "matches": [
+                {
+                  "score": 80.0,
+                  "start_line": 1,
+                  "end_line": 1,
+                  "matched_length": 9,
+                  "match_coverage": 100.0,
+                  "matcher": "1-hash",
+                  "license_expression": "apache-2.0",
+                  "rule_identifier": "apache-2.0_42.RULE",
+                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_42.RULE",
+                  "referenced_filenames": [],
+                  "is_license_text": false,
+                  "is_license_notice": false,
+                  "is_license_reference": true,
+                  "is_license_tag": false,
+                  "is_license_intro": false,
+                  "rule_length": 9,
+                  "rule_relevance": 80,
+                  "matched_text": "http://www.apache.org/licenses/LICENSE-2.0.txt",
+                  "licenses": [
+                    {
+                      "key": "apache-2.0",
+                      "name": "Apache License 2.0",
+                      "short_name": "Apache 2.0",
+                      "category": "Permissive",
+                      "is_exception": false,
+                      "is_unknown": false,
+                      "owner": "Apache Software Foundation",
+                      "homepage_url": "http://www.apache.org/licenses/",
+                      "text_url": "http://www.apache.org/licenses/LICENSE-2.0",
+                      "reference_url": "https://scancode-licensedb.aboutcode.org/apache-2.0",
+                      "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.LICENSE",
+                      "spdx_license_key": "Apache-2.0",
+                      "spdx_url": "https://spdx.org/licenses/Apache-2.0"
+                    }
+                  ]
+                }
+              ]
             }
           ],
+          "other_license_expression": null,
+          "other_license_expression_spdx": null,
+          "other_license_detections": [],
+          "extracted_license_statement": "[{'name': 'The Apache Software License, Version 2.0', 'url': 'http://www.apache.org/licenses/LICENSE-2.0.txt', 'comments': None, 'distribution': 'repo'}]",
           "notice_text": null,
           "source_packages": [
             "pkg:maven/org.springframework/spring-orm@2.5.3?classifier=sources"
@@ -10739,15 +13075,104 @@
           "code_view_url": "http://springframework.cvs.sourceforge.net/springframework/",
           "vcs_url": "cvs+pserver:anonymous:@springframework.cvs.sourceforge.net:/cvsroot/springframework/spring",
           "copyright": null,
-          "license_expression": "apache-2.0 AND unknown",
-          "declared_license": [
+          "declared_license_expression": "apache-2.0",
+          "declared_license_expression_spdx": "Apache-2.0",
+          "license_detections": [
             {
-              "name": "The Apache Software License, Version 2.0",
-              "url": "http://www.apache.org/licenses/LICENSE-2.0.txt",
-              "comments": null,
-              "distribution": "repo"
+              "license_expression": "apache-2.0",
+              "detection_log": [
+                "not-combined"
+              ],
+              "matches": [
+                {
+                  "score": 100.0,
+                  "start_line": 1,
+                  "end_line": 1,
+                  "matched_length": 7,
+                  "match_coverage": 100.0,
+                  "matcher": "1-hash",
+                  "license_expression": "apache-2.0",
+                  "rule_identifier": "apache-2.0_5.RULE",
+                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_5.RULE",
+                  "referenced_filenames": [],
+                  "is_license_text": false,
+                  "is_license_notice": false,
+                  "is_license_reference": true,
+                  "is_license_tag": false,
+                  "is_license_intro": false,
+                  "rule_length": 7,
+                  "rule_relevance": 100,
+                  "matched_text": "The Apache Software License, Version 2.0",
+                  "licenses": [
+                    {
+                      "key": "apache-2.0",
+                      "name": "Apache License 2.0",
+                      "short_name": "Apache 2.0",
+                      "category": "Permissive",
+                      "is_exception": false,
+                      "is_unknown": false,
+                      "owner": "Apache Software Foundation",
+                      "homepage_url": "http://www.apache.org/licenses/",
+                      "text_url": "http://www.apache.org/licenses/LICENSE-2.0",
+                      "reference_url": "https://scancode-licensedb.aboutcode.org/apache-2.0",
+                      "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.LICENSE",
+                      "spdx_license_key": "Apache-2.0",
+                      "spdx_url": "https://spdx.org/licenses/Apache-2.0"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "license_expression": "apache-2.0",
+              "detection_log": [
+                "not-combined"
+              ],
+              "matches": [
+                {
+                  "score": 80.0,
+                  "start_line": 1,
+                  "end_line": 1,
+                  "matched_length": 9,
+                  "match_coverage": 100.0,
+                  "matcher": "1-hash",
+                  "license_expression": "apache-2.0",
+                  "rule_identifier": "apache-2.0_42.RULE",
+                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_42.RULE",
+                  "referenced_filenames": [],
+                  "is_license_text": false,
+                  "is_license_notice": false,
+                  "is_license_reference": true,
+                  "is_license_tag": false,
+                  "is_license_intro": false,
+                  "rule_length": 9,
+                  "rule_relevance": 80,
+                  "matched_text": "http://www.apache.org/licenses/LICENSE-2.0.txt",
+                  "licenses": [
+                    {
+                      "key": "apache-2.0",
+                      "name": "Apache License 2.0",
+                      "short_name": "Apache 2.0",
+                      "category": "Permissive",
+                      "is_exception": false,
+                      "is_unknown": false,
+                      "owner": "Apache Software Foundation",
+                      "homepage_url": "http://www.apache.org/licenses/",
+                      "text_url": "http://www.apache.org/licenses/LICENSE-2.0",
+                      "reference_url": "https://scancode-licensedb.aboutcode.org/apache-2.0",
+                      "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.LICENSE",
+                      "spdx_license_key": "Apache-2.0",
+                      "spdx_url": "https://spdx.org/licenses/Apache-2.0"
+                    }
+                  ]
+                }
+              ]
             }
           ],
+          "other_license_expression": null,
+          "other_license_expression_spdx": null,
+          "other_license_detections": [],
+          "extracted_license_statement": "[{'name': 'The Apache Software License, Version 2.0', 'url': 'http://www.apache.org/licenses/LICENSE-2.0.txt', 'comments': None, 'distribution': 'repo'}]",
           "notice_text": null,
           "source_packages": [
             "pkg:maven/org.springframework/spring-webmvc@2.5.3?classifier=sources"
@@ -11050,8 +13475,13 @@
           "code_view_url": "https://hudson.dev.java.net/source/browse/hudson/tags/startup-trigger-plugin-0.1",
           "vcs_url": "svn+https://guest@svn.dev.java.net/svn/hudson/tags/startup-trigger-plugin-0.1",
           "copyright": null,
-          "license_expression": null,
-          "declared_license": null,
+          "declared_license_expression": null,
+          "declared_license_expression_spdx": null,
+          "license_detections": [],
+          "other_license_expression": null,
+          "other_license_expression_spdx": null,
+          "other_license_detections": [],
+          "extracted_license_statement": null,
           "notice_text": null,
           "source_packages": [
             "pkg:maven/org.jvnet.hudson.plugins/startup-trigger-plugin@0.1?classifier=sources"
@@ -11136,8 +13566,13 @@
           "code_view_url": null,
           "vcs_url": null,
           "copyright": null,
-          "license_expression": null,
-          "declared_license": null,
+          "declared_license_expression": null,
+          "declared_license_expression_spdx": null,
+          "license_detections": [],
+          "other_license_expression": null,
+          "other_license_expression_spdx": null,
+          "other_license_detections": [],
+          "extracted_license_statement": null,
           "notice_text": null,
           "source_packages": [
             "pkg:maven/de.fzj.unicore.rcp/eclipseSequencePlugin@0.0.1-SNAPSHOT?classifier=sources"
@@ -11262,8 +13697,13 @@
           "code_view_url": null,
           "vcs_url": null,
           "copyright": null,
-          "license_expression": null,
-          "declared_license": null,
+          "declared_license_expression": null,
+          "declared_license_expression_spdx": null,
+          "license_detections": [],
+          "other_license_expression": null,
+          "other_license_expression_spdx": null,
+          "other_license_detections": [],
+          "extracted_license_statement": null,
           "notice_text": null,
           "source_packages": [
             "pkg:maven/ur.urwerk.test/ur.urwerk.test.module-y@1.0.0?classifier=sources"
@@ -11337,8 +13777,13 @@
           "code_view_url": null,
           "vcs_url": null,
           "copyright": null,
-          "license_expression": null,
-          "declared_license": null,
+          "declared_license_expression": null,
+          "declared_license_expression_spdx": null,
+          "license_detections": [],
+          "other_license_expression": null,
+          "other_license_expression_spdx": null,
+          "other_license_detections": [],
+          "extracted_license_statement": null,
           "notice_text": null,
           "source_packages": [
             "pkg:maven/org.webreformatter.wrappers/com.google.gwt.query@0.1.5.SNAPSHOT?classifier=sources"
@@ -11412,8 +13857,59 @@
           "code_view_url": "https://github.com/acegi/xml-format-maven-plugin.git",
           "vcs_url": "git+https://github.com/acegi/xml-format-maven-plugin.git",
           "copyright": null,
-          "license_expression": null,
-          "declared_license": null,
+          "declared_license_expression": "apache-2.0",
+          "declared_license_expression_spdx": "Apache-2.0",
+          "license_detections": [
+            {
+              "license_expression": "apache-2.0",
+              "detection_log": [
+                "from-package-file"
+              ],
+              "matches": [
+                {
+                  "score": 75.0,
+                  "start_line": 33,
+                  "end_line": 33,
+                  "matched_length": 3,
+                  "match_coverage": 100.0,
+                  "matcher": "2-aho",
+                  "license_expression": "apache-2.0",
+                  "rule_identifier": "apache-2.0_94.RULE",
+                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_94.RULE",
+                  "referenced_filenames": [],
+                  "is_license_text": false,
+                  "is_license_notice": false,
+                  "is_license_reference": true,
+                  "is_license_tag": false,
+                  "is_license_intro": false,
+                  "rule_length": 3,
+                  "rule_relevance": 100,
+                  "matched_text": "    <license.licenseName>apache_v2</license.licenseName>",
+                  "licenses": [
+                    {
+                      "key": "apache-2.0",
+                      "name": "Apache License 2.0",
+                      "short_name": "Apache 2.0",
+                      "category": "Permissive",
+                      "is_exception": false,
+                      "is_unknown": false,
+                      "owner": "Apache Software Foundation",
+                      "homepage_url": "http://www.apache.org/licenses/",
+                      "text_url": "http://www.apache.org/licenses/LICENSE-2.0",
+                      "reference_url": "https://scancode-licensedb.aboutcode.org/apache-2.0",
+                      "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.LICENSE",
+                      "spdx_license_key": "Apache-2.0",
+                      "spdx_url": "https://spdx.org/licenses/Apache-2.0"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "other_license_expression": null,
+          "other_license_expression_spdx": null,
+          "other_license_detections": [],
+          "extracted_license_statement": null,
           "notice_text": null,
           "source_packages": [
             "pkg:maven/au.com.acegi/xml-format-maven-plugin@3.0.6?classifier=sources"

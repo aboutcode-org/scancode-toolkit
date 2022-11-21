@@ -1,0 +1,9 @@
+---
+license_expression: mit AND apache-2.0
+is_license_notice: yes
+referenced_filenames:
+    - LICENSE
+---
+
+package is licensed under the MIT and Apache License 2.0 licenses.
+Please see the LICENSE file for details.

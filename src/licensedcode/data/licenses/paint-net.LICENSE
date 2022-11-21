@@ -1,3 +1,18 @@
+---
+key: paint-net
+short_name: Paint.NET License
+name: Paint.NET License
+category: Proprietary Free
+owner: dotPDN
+homepage_url: http://www.getpaint.net/license.html
+spdx_license_key: LicenseRef-scancode-paint-net
+ignorable_urls:
+    - http://www.everaldo.com/crystal
+    - http://www.getpaint.net/donate.html
+    - http://www.gnu.org/copyleft/lesser.html
+    - http://www.oxygen-icons.org/
+---
+
 Paint.NET is free for use in any environment, including but not necessarily limited to: personal, academic, commercial, government, business, non-profit, and for-profit. "Free" in the preceding sentence means that there is no cost or charge associated with the installation and use of Paint.NET. Donations are always appreciated, of course! http://www.getpaint.net/donate.html 
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software (the "Software"), to use the Software without restriction, including the rights to use, copy, publish, and distribute the Software, and to permit persons to whom the Software is furnished to do so.

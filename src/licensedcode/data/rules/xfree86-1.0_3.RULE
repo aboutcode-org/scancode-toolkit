@@ -1,3 +1,9 @@
+---
+license_expression: xfree86-1.0
+is_license_text: yes
+minimum_coverage: 60
+---
+
 Permission is hereby granted, free of charge, to any person obtaining a copy of
 this software and associated documentation files (""), to deal in
  without restriction, including without limitation the rights to

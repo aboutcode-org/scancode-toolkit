@@ -1,2 +1,10 @@
+---
+license_expression: lgpl-2.0-plus
+is_license_notice: yes
+relevance: 95
+referenced_filenames:
+    - license.txt
+---
+
 is a free software distributed under the GNU LGPL.
 Read license.txt for more information.

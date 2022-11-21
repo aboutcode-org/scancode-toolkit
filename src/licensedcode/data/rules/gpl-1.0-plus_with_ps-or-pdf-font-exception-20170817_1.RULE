@@ -1,3 +1,11 @@
+---
+license_expression: gpl-1.0-plus WITH ps-or-pdf-font-exception-20170817
+is_license_notice: yes
+relevance: 100
+referenced_filenames:
+    - COPYING
+---
+
 % See the file COPYING (GNU General Public License) for license conditions.
 % As a special exception, permission is granted to include this font
 % program in a Postscript or PDF file that consists of a document that

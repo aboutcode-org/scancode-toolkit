@@ -1,1 +1,9 @@
-This file is distributed under the same license as the Puppet automation framework package.
+---
+license_expression: apache-2.0
+is_license_notice: yes
+relevance: 100
+referenced_filenames:
+    - INHERIT_LICENSE_FROM_PACKAGE
+---
+
+This file is distributed under the same license as the {{Puppet}} {{automation}} framework package.

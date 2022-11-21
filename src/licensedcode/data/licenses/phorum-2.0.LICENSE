@@ -1,3 +1,31 @@
+---
+key: phorum-2.0
+short_name: Phorum License 2.0
+name: Phorum License 2.0
+category: Permissive
+owner: Phorum
+homepage_url: http://www.phorum.org/license.txt
+spdx_license_key: LicenseRef-scancode-phorum-2.0
+text_urls:
+    - http://www.phorum.org/license.txt
+other_urls:
+    - http://phorum.org/
+minimum_coverage: 80
+ignorable_copyrights:
+    - Copyright (c) 2001 The Phorum Development Team
+    - copyright (c) 2000 The Apache Software Foundation
+ignorable_holders:
+    - The Apache Software Foundation
+    - The Phorum Development Team
+ignorable_authors:
+    - the Phorum Development Team (http://phorum.org/)
+ignorable_urls:
+    - http://phorum.org/
+    - http://www.apache.org/
+ignorable_emails:
+    - core@phorum.org
+---
+
 The Phorum License 2.0.
 
 Copyright (c) 2001 The Phorum Development Team.  All rights

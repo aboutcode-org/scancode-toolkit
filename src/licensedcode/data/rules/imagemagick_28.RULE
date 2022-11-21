@@ -1,3 +1,11 @@
+---
+license_expression: imagemagick
+is_license_text: yes
+minimum_coverage: 80
+ignorable_urls:
+    - http://www.imagemagick.org/script/license.php
+---
+
 1. Definitions.
 
 License shall mean the terms and conditions for use, reproduction, and distribution as defined by Sections 1 through 9 of this document.

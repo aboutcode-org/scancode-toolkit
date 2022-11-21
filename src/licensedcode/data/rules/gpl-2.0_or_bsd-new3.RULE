@@ -1,3 +1,12 @@
+---
+license_expression: gpl-2.0 OR bsd-new
+is_license_notice: yes
+minimum_coverage: 85
+ignorable_urls:
+    - http://datatables.net/license_bsd
+    - http://datatables.net/license_gpl2
+---
+
 This source file is free software, under either the GPL v2 license or a
 BSD style license, available at:
   http://datatables.net/license_gpl2

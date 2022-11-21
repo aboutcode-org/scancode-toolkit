@@ -1,3 +1,12 @@
+---
+license_expression: (apache-2.0 OR mit) AND generic-cla
+is_license_notice: yes
+relevance: 100
+ignorable_urls:
+    - https://choosealicense.com/licenses/apache/
+    - https://choosealicense.com/licenses/mit/
+---
+
 Licensed under either of
 
 - {{Apache License, Version 2.0}} (LICENSE.apache or <https://choosealicense.com/licenses/apache/>)

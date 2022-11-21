@@ -1,3 +1,17 @@
+---
+license_expression: gpl-2.0 WITH trolltech-gpl-exception-1.2
+is_license_notice: yes
+referenced_filenames:
+    - LICENSE.GPL
+    - GPL_EXCEPTION.txt
+ignorable_urls:
+    - http://trolltech.com/products/qt/licenses/licensing/licensingoverview
+    - http://trolltech.com/products/qt/licenses/licensing/opensource/
+    - http://www.trolltech.com/products/qt/gplexception/
+ignorable_emails:
+    - sales@trolltech.com
+---
+
 ** This file may be used under the terms of the GNU General Public
 ** License version 2.0 as published by the Free Software Foundation
 ** and appearing in the file LICENSE.GPL included in the packaging of

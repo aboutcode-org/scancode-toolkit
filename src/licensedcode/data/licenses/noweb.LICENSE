@@ -1,3 +1,15 @@
+---
+key: noweb
+short_name: Noweb License
+name: Noweb License
+category: Copyleft Limited
+owner: Norman Ramsey
+homepage_url: https://fedoraproject.org/wiki/Licensing:Noweb?rd=Licensing/Noweb
+spdx_license_key: Noweb
+other_urls:
+    - https://fedoraproject.org/wiki/Licensing/Noweb
+---
+
 Noweb is protected by copyright.  It is not public-domain
 software or shareware, and it is not protected by a ``copyleft''
 agreement like the one used by the Free Software Foundation.

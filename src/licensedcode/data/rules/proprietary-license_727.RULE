@@ -1,2 +1,10 @@
+---
+license_expression: proprietary-license
+is_license_reference: yes
+relevance: 100
+ignorable_urls:
+    - https://licensezero.com/licenses/private
+---
+
 the [License Zero Private License]
 (https://licensezero.com/licenses/private).

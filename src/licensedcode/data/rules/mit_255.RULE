@@ -1,3 +1,11 @@
+---
+license_expression: mit
+is_license_tag: yes
+relevance: 100
+referenced_filenames:
+    - LICENSE.txt
+---
+
 Released under the [MIT License].
 
 [MIT License]: LICENSE.txt

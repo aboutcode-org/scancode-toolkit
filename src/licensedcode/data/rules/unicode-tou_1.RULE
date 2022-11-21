@@ -1,2 +1,10 @@
+---
+license_expression: unicode
+is_license_notice: yes
+relevance: 100
+ignorable_urls:
+    - http://www.unicode.org/copyright.html
+---
+
 Distributed under the Terms of Use
 # in http://www.unicode.org/copyright.html.

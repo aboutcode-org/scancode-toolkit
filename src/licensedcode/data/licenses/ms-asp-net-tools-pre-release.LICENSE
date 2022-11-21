@@ -1,3 +1,16 @@
+---
+key: ms-asp-net-tools-pre-release
+short_name: MS ASP.NET Tools Pre-Release License
+name: Microsoft ASP.NET Tools Pre-Release License
+category: Proprietary Free
+owner: Microsoft
+homepage_url: http://www.microsoft.com/web/webpi/eula/aspnetcomponent_enu.htm
+spdx_license_key: LicenseRef-scancode-ms-asp-net-tools-pre-release
+ignorable_urls:
+    - http://go.microsoft.com/fwlink/?LinkId=296594
+    - http://www.microsoft.com/exporting
+---
+
 MICROSOFT PRE-RELEASE SOFTWARE LICENSE TERMS
 MICROSOFT ASP.NET TOOLS
  

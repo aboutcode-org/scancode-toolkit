@@ -41,14 +41,226 @@
     "code_view_url": null,
     "vcs_url": null,
     "copyright": null,
-    "license_expression": "(((apache-2.0 AND scancode-acknowledgment) AND cc0-1.0) AND unknown) AND apache-2.0 AND (free-unknown AND cc0-1.0)",
-    "declared_license": {
-      "license": "Apache-2.0 with ScanCode acknowledgment and CC0-1.0 and others",
-      "classifiers": [
-        "License :: OSI Approved :: Apache Software License",
-        "License :: OSI Approved :: CC0"
-      ]
-    },
+    "declared_license_expression": "(apache-2.0 AND scancode-acknowledgment) AND cc0-1.0 AND apache-2.0 AND free-unknown",
+    "declared_license_expression_spdx": "(Apache-2.0 AND LicenseRef-scancode-scancode-acknowledgment) AND CC0-1.0 AND Apache-2.0 AND LicenseRef-scancode-free-unknown",
+    "license_detections": [
+      {
+        "license_expression": "(apache-2.0 AND scancode-acknowledgment) AND cc0-1.0",
+        "detection_log": [
+          "not-combined"
+        ],
+        "matches": [
+          {
+            "score": 100.0,
+            "start_line": 1,
+            "end_line": 1,
+            "matched_length": 6,
+            "match_coverage": 100.0,
+            "matcher": "2-aho",
+            "license_expression": "apache-2.0 AND scancode-acknowledgment",
+            "rule_identifier": "apache-2.0_and_scancode-acknowledgment_5.RULE",
+            "referenced_filenames": [],
+            "is_license_text": false,
+            "is_license_notice": false,
+            "is_license_reference": false,
+            "is_license_tag": true,
+            "is_license_intro": false,
+            "rule_length": 6,
+            "rule_relevance": 100,
+            "matched_text": "Apache-2.0 with ScanCode acknowledgment and CC0-1.0 and others",
+            "licenses": [
+              {
+                "key": "apache-2.0",
+                "name": "Apache License 2.0",
+                "short_name": "Apache 2.0",
+                "category": "Permissive",
+                "is_exception": false,
+                "is_unknown": false,
+                "owner": "Apache Software Foundation",
+                "homepage_url": "http://www.apache.org/licenses/",
+                "text_url": "http://www.apache.org/licenses/LICENSE-2.0",
+                "reference_url": "https://scancode-licensedb.aboutcode.org/apache-2.0",
+                "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.LICENSE",
+                "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.yml",
+                "spdx_license_key": "Apache-2.0",
+                "spdx_url": "https://spdx.org/licenses/Apache-2.0"
+              },
+              {
+                "key": "scancode-acknowledgment",
+                "name": "ScanCode generated data acknowledgment",
+                "short_name": "ScanCode acknowledgment",
+                "category": "Permissive",
+                "is_exception": false,
+                "is_unknown": false,
+                "owner": "nexB",
+                "homepage_url": "https://github.com/nexB/scancode-toolkit/",
+                "text_url": "",
+                "reference_url": "https://scancode-licensedb.aboutcode.org/scancode-acknowledgment",
+                "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/scancode-acknowledgment.LICENSE",
+                "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/scancode-acknowledgment.yml",
+                "spdx_license_key": "LicenseRef-scancode-scancode-acknowledgment",
+                "spdx_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/scancode-acknowledgment.LICENSE"
+              }
+            ]
+          },
+          {
+            "score": 95.0,
+            "start_line": 1,
+            "end_line": 1,
+            "matched_length": 3,
+            "match_coverage": 100.0,
+            "matcher": "2-aho",
+            "license_expression": "cc0-1.0",
+            "rule_identifier": "spdx_license_id_cc0-1.0_for_cc0-1.0.RULE",
+            "referenced_filenames": [],
+            "is_license_text": false,
+            "is_license_notice": false,
+            "is_license_reference": true,
+            "is_license_tag": false,
+            "is_license_intro": false,
+            "rule_length": 3,
+            "rule_relevance": 95,
+            "matched_text": "Apache-2.0 with ScanCode acknowledgment and CC0-1.0 and others",
+            "licenses": [
+              {
+                "key": "cc0-1.0",
+                "name": "Creative Commons CC0 1.0 Universal",
+                "short_name": "CC0-1.0",
+                "category": "Public Domain",
+                "is_exception": false,
+                "is_unknown": false,
+                "owner": "Creative Commons",
+                "homepage_url": "http://creativecommons.org/publicdomain/zero/1.0/",
+                "text_url": "http://creativecommons.org/publicdomain/zero/1.0/legalcode",
+                "reference_url": "https://scancode-licensedb.aboutcode.org/cc0-1.0",
+                "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/cc0-1.0.LICENSE",
+                "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/cc0-1.0.yml",
+                "spdx_license_key": "CC0-1.0",
+                "spdx_url": "https://spdx.org/licenses/CC0-1.0"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "license_expression": null,
+        "detection_log": [],
+        "matches": [
+          {
+            "score": 95.0,
+            "start_line": 1,
+            "end_line": 1,
+            "matched_length": 6,
+            "match_coverage": 100.0,
+            "matcher": "2-aho",
+            "license_expression": "apache-2.0",
+            "rule_identifier": "pypi_apache_no-version.RULE",
+            "referenced_filenames": [],
+            "is_license_text": false,
+            "is_license_notice": false,
+            "is_license_reference": false,
+            "is_license_tag": true,
+            "is_license_intro": false,
+            "rule_length": 6,
+            "rule_relevance": 95,
+            "matched_text": "['License :: OSI Approved :: Apache Software License', 'License :: OSI Approved :: CC0']",
+            "licenses": [
+              {
+                "key": "apache-2.0",
+                "name": "Apache License 2.0",
+                "short_name": "Apache 2.0",
+                "category": "Permissive",
+                "is_exception": false,
+                "is_unknown": false,
+                "owner": "Apache Software Foundation",
+                "homepage_url": "http://www.apache.org/licenses/",
+                "text_url": "http://www.apache.org/licenses/LICENSE-2.0",
+                "reference_url": "https://scancode-licensedb.aboutcode.org/apache-2.0",
+                "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.LICENSE",
+                "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.yml",
+                "spdx_license_key": "Apache-2.0",
+                "spdx_url": "https://spdx.org/licenses/Apache-2.0"
+              }
+            ]
+          },
+          {
+            "score": 100.0,
+            "start_line": 1,
+            "end_line": 1,
+            "matched_length": 3,
+            "match_coverage": 100.0,
+            "matcher": "2-aho",
+            "license_expression": "free-unknown",
+            "rule_identifier": "pypi_osi_approved.RULE",
+            "referenced_filenames": [],
+            "is_license_text": false,
+            "is_license_notice": false,
+            "is_license_reference": false,
+            "is_license_tag": true,
+            "is_license_intro": false,
+            "rule_length": 3,
+            "rule_relevance": 100,
+            "matched_text": "['License :: OSI Approved :: Apache Software License', 'License :: OSI Approved :: CC0']",
+            "licenses": [
+              {
+                "key": "free-unknown",
+                "name": "Free unknown license detected but not recognized",
+                "short_name": "Free unknown",
+                "category": "Unstated License",
+                "is_exception": false,
+                "is_unknown": true,
+                "owner": "Unspecified",
+                "homepage_url": null,
+                "text_url": "",
+                "reference_url": "https://scancode-licensedb.aboutcode.org/free-unknown",
+                "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/free-unknown.LICENSE",
+                "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/free-unknown.yml",
+                "spdx_license_key": "LicenseRef-scancode-free-unknown",
+                "spdx_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/free-unknown.LICENSE"
+              }
+            ]
+          },
+          {
+            "score": 100.0,
+            "start_line": 1,
+            "end_line": 1,
+            "matched_length": 1,
+            "match_coverage": 100.0,
+            "matcher": "2-aho",
+            "license_expression": "cc0-1.0",
+            "rule_identifier": "cc0-1.0_176.RULE",
+            "referenced_filenames": [],
+            "is_license_text": false,
+            "is_license_notice": false,
+            "is_license_reference": true,
+            "is_license_tag": false,
+            "is_license_intro": false,
+            "rule_length": 1,
+            "rule_relevance": 100,
+            "matched_text": "['License :: OSI Approved :: Apache Software License', 'License :: OSI Approved :: CC0']",
+            "licenses": [
+              {
+                "key": "cc0-1.0",
+                "name": "Creative Commons CC0 1.0 Universal",
+                "short_name": "CC0-1.0",
+                "category": "Public Domain",
+                "is_exception": false,
+                "is_unknown": false,
+                "owner": "Creative Commons",
+                "homepage_url": "http://creativecommons.org/publicdomain/zero/1.0/",
+                "text_url": "http://creativecommons.org/publicdomain/zero/1.0/legalcode",
+                "reference_url": "https://scancode-licensedb.aboutcode.org/cc0-1.0",
+                "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/cc0-1.0.LICENSE",
+                "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/cc0-1.0.yml",
+                "spdx_license_key": "CC0-1.0",
+                "spdx_url": "https://spdx.org/licenses/CC0-1.0"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "extracted_license_statement": "{'license': 'Apache-2.0 with ScanCode acknowledgment and CC0-1.0 and others', 'classifiers': ['License :: OSI Approved :: Apache Software License', 'License :: OSI Approved :: CC0']}",
     "notice_text": null,
     "source_packages": [],
     "file_references": [],
@@ -56,7 +268,7 @@
     "dependencies": [
       {
         "purl": "pkg:pypi/py2-ipaddress",
-        "extracted_requirement": "py2-ipaddress<3.0,>=2.0",
+        "extracted_requirement": "<3.0,>=2.0",
         "scope": "install",
         "is_runtime": true,
         "is_optional": false,
@@ -65,7 +277,7 @@
       },
       {
         "purl": "pkg:pypi/url",
-        "extracted_requirement": "url>=0.1.4",
+        "extracted_requirement": ">=0.1.4",
         "scope": "install",
         "is_runtime": true,
         "is_optional": false,
@@ -74,7 +286,7 @@
       },
       {
         "purl": "pkg:pypi/publicsuffix2",
-        "extracted_requirement": "publicsuffix2",
+        "extracted_requirement": null,
         "scope": "install",
         "is_runtime": true,
         "is_optional": false,
@@ -83,7 +295,7 @@
       },
       {
         "purl": "pkg:pypi/nltk",
-        "extracted_requirement": "nltk<3.0.0,>=2.0b4",
+        "extracted_requirement": "<3.0.0,>=2.0b4",
         "scope": "install",
         "is_runtime": true,
         "is_optional": false,
@@ -92,7 +304,7 @@
       },
       {
         "purl": "pkg:pypi/patch",
-        "extracted_requirement": "patch<1.15,>=1.14.2",
+        "extracted_requirement": "<1.15,>=1.14.2",
         "scope": "install",
         "is_runtime": true,
         "is_optional": false,
@@ -101,7 +313,7 @@
       },
       {
         "purl": "pkg:pypi/bz2file",
-        "extracted_requirement": "bz2file>=0.98",
+        "extracted_requirement": ">=0.98",
         "scope": "install",
         "is_runtime": true,
         "is_optional": false,
@@ -110,7 +322,7 @@
       },
       {
         "purl": "pkg:pypi/pyyaml",
-        "extracted_requirement": "PyYAML<4.0,>=3.0",
+        "extracted_requirement": "<4.0,>=3.0",
         "scope": "install",
         "is_runtime": true,
         "is_optional": false,
@@ -119,7 +331,7 @@
       },
       {
         "purl": "pkg:pypi/beautifulsoup",
-        "extracted_requirement": "Beautifulsoup<4.0.0,>=3.2.0",
+        "extracted_requirement": "<4.0.0,>=3.2.0",
         "scope": "install",
         "is_runtime": true,
         "is_optional": false,
@@ -128,7 +340,7 @@
       },
       {
         "purl": "pkg:pypi/beautifulsoup4",
-        "extracted_requirement": "Beautifulsoup4<5.0.0,>=4.3.0",
+        "extracted_requirement": "<5.0.0,>=4.3.0",
         "scope": "install",
         "is_runtime": true,
         "is_optional": false,
@@ -137,7 +349,7 @@
       },
       {
         "purl": "pkg:pypi/html5lib",
-        "extracted_requirement": "html5lib",
+        "extracted_requirement": null,
         "scope": "install",
         "is_runtime": true,
         "is_optional": false,
@@ -146,7 +358,7 @@
       },
       {
         "purl": "pkg:pypi/six",
-        "extracted_requirement": "six",
+        "extracted_requirement": null,
         "scope": "install",
         "is_runtime": true,
         "is_optional": false,
@@ -155,7 +367,7 @@
       },
       {
         "purl": "pkg:pypi/pygments",
-        "extracted_requirement": "pygments<3.0.0,>=2.0.0",
+        "extracted_requirement": "<3.0.0,>=2.0.0",
         "scope": "install",
         "is_runtime": true,
         "is_optional": false,
@@ -164,7 +376,7 @@
       },
       {
         "purl": "pkg:pypi/pdfminer",
-        "extracted_requirement": "pdfminer>=20140328",
+        "extracted_requirement": ">=20140328",
         "scope": "install",
         "is_runtime": true,
         "is_optional": false,
@@ -173,7 +385,7 @@
       },
       {
         "purl": "pkg:pypi/chardet",
-        "extracted_requirement": "chardet<3.0.0,>=2.1.1",
+        "extracted_requirement": "<3.0.0,>=2.1.1",
         "scope": "install",
         "is_runtime": true,
         "is_optional": false,
@@ -182,7 +394,7 @@
       },
       {
         "purl": "pkg:pypi/binaryornot",
-        "extracted_requirement": "binaryornot>=0.4.0",
+        "extracted_requirement": ">=0.4.0",
         "scope": "install",
         "is_runtime": true,
         "is_optional": false,
@@ -191,7 +403,7 @@
       },
       {
         "purl": "pkg:pypi/click",
-        "extracted_requirement": "click<5.0.0,>=4.0.0",
+        "extracted_requirement": "<5.0.0,>=4.0.0",
         "scope": "install",
         "is_runtime": true,
         "is_optional": false,
@@ -200,7 +412,7 @@
       },
       {
         "purl": "pkg:pypi/jinja2",
-        "extracted_requirement": "jinja2<3.0.0,>=2.7.0",
+        "extracted_requirement": "<3.0.0,>=2.7.0",
         "scope": "install",
         "is_runtime": true,
         "is_optional": false,
@@ -209,7 +421,7 @@
       },
       {
         "purl": "pkg:pypi/markupsafe",
-        "extracted_requirement": "MarkupSafe>=0.23",
+        "extracted_requirement": ">=0.23",
         "scope": "install",
         "is_runtime": true,
         "is_optional": false,
@@ -218,7 +430,7 @@
       },
       {
         "purl": "pkg:pypi/colorama",
-        "extracted_requirement": "colorama",
+        "extracted_requirement": null,
         "scope": "install",
         "is_runtime": true,
         "is_optional": false,
@@ -227,7 +439,7 @@
       },
       {
         "purl": "pkg:pypi/about-code-tool",
-        "extracted_requirement": "about-code-tool>=0.9.0",
+        "extracted_requirement": ">=0.9.0",
         "scope": "install",
         "is_runtime": true,
         "is_optional": false,
@@ -236,7 +448,7 @@
       },
       {
         "purl": "pkg:pypi/requests",
-        "extracted_requirement": "requests<3.0.0,>=2.7.0",
+        "extracted_requirement": "<3.0.0,>=2.7.0",
         "scope": "install",
         "is_runtime": true,
         "is_optional": false,

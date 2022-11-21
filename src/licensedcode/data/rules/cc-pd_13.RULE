@@ -1,3 +1,11 @@
+---
+license_expression: cc-pd
+is_license_notice: yes
+relevance: 100
+ignorable_urls:
+    - http://creativecommons.org/licenses/publicdomain/
+---
+
 # This work is hereby released into the Public Domain. To view a copy of
 # the public domain dedication, visit
 # http://creativecommons.org/licenses/publicdomain/ or send a letter to

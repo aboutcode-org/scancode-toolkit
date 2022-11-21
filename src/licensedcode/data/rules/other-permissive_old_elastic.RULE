@@ -1,3 +1,16 @@
+---
+license_expression: other-permissive
+is_license_text: yes
+notes: from http://www.elasticworld.org/license.html
+ignorable_copyrights:
+    - Copyright (c) 1997-1999 Marco Pantaleoni
+    - Copyright (c) 1999 Marco Pantaleoni
+ignorable_holders:
+    - Marco Pantaleoni
+ignorable_urls:
+    - http://www.elasticworld.org/license.html
+---
+
 http://www.elasticworld.org/license.html
 
                            elastiC License
@@ -69,4 +82,3 @@ unless explicitly disclaimed in individual files.
 
   The Author  reserves the right  to change any  of the terms  of this
   elastiC License for future releases of the Software.
-

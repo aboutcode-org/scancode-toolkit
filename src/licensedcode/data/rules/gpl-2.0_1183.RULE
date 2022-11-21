@@ -1,3 +1,12 @@
+---
+license_expression: gpl-2.0
+is_license_notice: yes
+relevance: 100
+referenced_filenames:
+    - /usr/share/common-licenses/GPL-1
+notes: incorrect reference to GPL-1.0 text
+---
+
 This package is free software; you can redistribute it and/or modify
  it under the terms of the GNU General Public License version 2,
  as published by the Free Software Foundation.

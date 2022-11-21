@@ -1,0 +1,4 @@
+
+https://licenses.nuget.org/Zlib
+
+SPDX-License-Identifier: Apache-2.0

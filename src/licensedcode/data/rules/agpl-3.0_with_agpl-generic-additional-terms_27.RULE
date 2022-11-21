@@ -1,0 +1,63 @@
+---
+license_expression: agpl-3.0 WITH agpl-generic-additional-terms
+is_license_notice: yes
+notes: Seen in https://raw.githubusercontent.com/translate5/translate5/develop/plugin-exception.txt
+ignorable_urls:
+    - http://www.translate5.net/license.txt
+---
+
+License Exception for Development of plug-ins for translate5 - Version 1.1, March 30th, 2017
+
+====================
+Attention
+====================
+This Exception does not grant usage or distribution of translate5 or any translate5 component under a license other than the AGPL and cannot be applied to end-user applications. 
+
+====================
+Terms and Conditions
+====================
+=====================
+Definitions
+=====================
+Terms used, but not defined, herein shall have the meaning provided in the AGPL.
+“Code” means source code for translate5 or translate5 plug-in*.
+“Modification” means a visual change or enhancement made to the code or a part of it by means of modifying the functionality or visual appearance of translate5.
+
+*“plug-in” means code which uses the translate5 plug-in mechanisms as documented for translate5 at confluence.translate5.net.
+
+=====================
+Additional Grants
+=====================
+As a special exception to the terms and conditions of version 3.0 of the AGPL:
+
+You are free to distribute or use a plug-in licensed under GNU GENERAL PUBLIC LICENSE Version 3, as long as:
+
+- Your plug-in does not contain any code or modified code of translate5.
+
+- You do not distribute translate5, as a whole or in part, with your plug-in. You have to include instructions for developers using your plug-in explaining how to obtain translate5.
+
+- You include PROMINENT notice in EVERY location you display the license information for your plug-in that it uses translate5, that translate5 is distributed under the terms of the AGPL v3 and you must include a link to http://www.translate5.net/license.txt
+
+- Your plug-in can reasonably be considered to be adding to or modifying functionality of translate5 and does not constitute an independent and separate application in itself.
+
+For translate5 plug-in source code released under GNU GENERAL PUBLIC LICENSE Version 3 the AGPL license states in chapter 13:
+
+***** quote from AGPLv3 chapter 13 *****
+    Notwithstanding any other provision of this License, if you modify the Program, your modified version must prominently offer all users interacting with it remotely through a computer network (if your version supports such interaction) an opportunity to receive the Corresponding Source of your version by providing access to the Corresponding Source from a network server at no charge, through some standard or customary means of facilitating copying of software. This Corresponding Source shall include the Corresponding Source for any work covered by version 3 of the GNU General Public License that is incorporated pursuant to the following paragraph.
+
+    Notwithstanding any other provision of this License, you have permission to link or combine any covered work with a work licensed under version 3 of the GNU General Public License into a single combined work, and to convey the resulting work. The terms of this License will continue to apply to the part which is the covered work, but the work with which it is combined will remain governed by version 3 of the GNU General Public License.
+***** end of quote from AGPLv3 chapter 13 *****
+
+As an exception to chapter 13 of AGPLv3 you are free to use a translate5 plug-in licensed under GNU GENERAL PUBLIC LICENSE Version 3 (GPLv3) with translate5, even if you do NOT offer the users interacting with it or with translate5 remotely through a computer network an opportunity to receive the Corresponding Source of your version of the plug-in. For translate5 itself and all plug-ins that are licensed under AGPLv3 you still have to follow all obligations of AGPLv3.
+
+=====================
+Applicability
+=====================
+This exception applies to translate5 1.0 or later released under the AGPL that contains a conspicuous notice saying that plug-ins built for translate5 by using the translate5 plug-in mechanisms may be distributed under the terms of this exception and that translate5 is subject to the terms of the AGPL v3.
+
+This exception can in no way be considered to grant rights to use or distribute translate5 under any license other than the AGPL v3.
+
+=====================
+Termination
+=====================
+If you fail to comply with any of the terms in this exception then all rights granted to you herein are void and your rights immediately revert back to those granted in the AGPL v3.

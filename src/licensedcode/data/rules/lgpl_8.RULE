@@ -1,3 +1,10 @@
+---
+license_expression: lgpl-2.0-plus
+is_license_reference: yes
+relevance: 100
+notes: LGPL exception
+---
+
 With the exception of
   
 which is released under the LGPL, see /usr/share/common-licenses/LGPL

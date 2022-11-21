@@ -1,3 +1,13 @@
+---
+license_expression: cpl-1.0 OR gpl-2.0-plus OR lgpl-2.1-plus
+is_license_notice: yes
+relevance: 90
+notes: a conflicted license with reference to the CPL and EPL (likely a mistake from EPL 2.0)
+    seen in JRuby
+ignorable_urls:
+    - http://www.eclipse.org/legal/cpl-v10.html
+---
+
 # Version: EPL 2.0/GPL 2.0/LGPL 2.1
 #
 # The contents of this file are subject to the Common Public

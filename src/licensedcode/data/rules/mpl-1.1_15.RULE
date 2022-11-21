@@ -1,3 +1,9 @@
+---
+license_expression: mpl-1.1
+is_license_text: yes
+notes: MPL 1.1 alternative
+---
+
 Mozilla Public License Version 1.1
 1. Definitions.
 1.0.1. "Commercial Use" 
@@ -120,4 +126,4 @@ This License represents the complete agreement concerning subject matter hereof.
 As between Initial Developer and the Contributors, each party is responsible for claims and damages arising, directly or indirectly, out of its utilization of rights under this License and You agree to work with Initial Developer and Contributors to distribute such responsibility on an equitable basis. Nothing herein is intended or shall be deemed to constitute any admission of liability. 
 
 13. Multiple-licensed code
-Initial Developer may designate portions of the Covered Code as "Multiple-Licensed". "Multiple-Licensed" means that the Initial Developer permits you to utilize portions of the Covered Code under Your choice of the MPL or the alternative licenses, if any, specified by the Initial Developer in the file described in Exhibit A. 
+Initial Developer may designate portions of the Covered Code as "Multiple-Licensed". "Multiple-Licensed" means that the Initial Developer permits you to utilize portions of the Covered Code under Your choice of the MPL or the alternative licenses, if any, specified by the Initial Developer in the file described in Exhibit A.

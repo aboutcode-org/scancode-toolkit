@@ -1,3 +1,20 @@
+---
+key: simpl-1.1
+short_name: SimPL 1.1
+name: Simple Public License Version 1.1
+category: Permissive
+owner: Analysis and Solutions Company
+homepage_url: http://www.analysisandsolutions.com/software/license.htm
+spdx_license_key: LicenseRef-scancode-simpl-1.1
+minimum_coverage: 80
+ignorable_copyrights:
+    - Copyright (c) The Analysis and Solutions Company http://www.analysisandsolutions.com
+ignorable_holders:
+    - The Analysis and Solutions Company
+ignorable_urls:
+    - http://www.analysisandsolutions.com/
+---
+
 SIMPLE PUBLIC LICENSE                        VERSION 1.1   2003-01-21
 
 Copyright (c) The Analysis and Solutions Company

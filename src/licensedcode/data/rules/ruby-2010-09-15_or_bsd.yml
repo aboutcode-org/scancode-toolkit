@@ -1,6 +1,0 @@
-license_expression: ruby OR bsd-simplified
-is_license_text: yes
-ignorable_authors:
-    - Yukihiro Matsumoto <matz@netlab.jp>
-ignorable_emails:
-    - matz@netlab.jp

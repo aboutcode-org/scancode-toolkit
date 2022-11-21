@@ -1,0 +1,52 @@
+---
+key: gpl-2.0-independent-module-linking
+is_deprecated: yes
+short_name: GPL 2.0 with Independent Module Linking exception
+name: GPL 2.0 with Independent Module Linking exception
+category: Copyleft Limited
+owner: ICSharpCode
+homepage_url: http://icsharpcode.github.io/SharpZipLib/
+notes: this is a classpath exception
+is_exception: yes
+---
+
+This library is free software; you can redistribute it and/or modify it
+under the terms of the GNU General Public License as published by the
+Free Software Foundation; either version 2, or (at your option) any
+later version.
+
+This library is distributed in the hope that it will be useful, but
+WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+General Public License for more details.
+
+You should have received a copy of the GNU General Public License along
+with this library; see the file COPYING.  If not, write to the Free
+Software Foundation, 51 Franklin Street, Fifth Floor, Boston, MA
+02110-1301, USA.
+
+The library is released under the GPL with the following exception:
+
+Linking this library statically or dynamically with other modules is
+making a combined work based on this library. Thus, the terms and
+conditions of the GNU General Public License cover the whole
+combination.
+
+As a special exception, the copyright holders of this library give you
+permission to link this library with independent modules to produce an
+executable, regardless of the license terms of these independent
+modules, and to copy and distribute the resulting executable under terms
+of your choice, provided that you also meet, for each linked independent
+module, the terms and conditions of the license of that module. An
+independent module is a module which is not derived from or based on
+this library. If you modify this library, you may extend this exception
+to your version of the library, but you are not obligated to do so. If
+you do not wish to do so, delete this exception statement from your
+version.
+
+Note The exception is changed to reflect the latest GNU Classpath
+exception. Older versions of #ziplib did have another exception, but the
+new one is clearer and it doesn't break compatibility with the old one.
+
+Bottom line In plain English this means you can use this library in
+commercial closed-source applications.

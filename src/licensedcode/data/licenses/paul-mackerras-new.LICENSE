@@ -1,3 +1,13 @@
+---
+key: paul-mackerras-new
+short_name: Paul Mackerras New License
+name: Paul Mackerras New License
+category: Permissive
+owner: Paul Mackerras
+notes: this is a paul-mackerras without advert
+spdx_license_key: LicenseRef-scancode-paul-mackerras-new
+---
+
 Redistribution and use in source and binary forms, with or without
 modification, are permitted provided that the following conditions
 are met:

@@ -1,1 +1,9 @@
+---
+license_expression: zlib
+is_license_notice: yes
+relevance: 100
+referenced_filenames:
+    - gzlog.h
+---
+
 For conditions of distribution and use, see copyright notice in gzlog.h

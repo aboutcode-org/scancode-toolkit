@@ -1,3 +1,13 @@
+---
+license_expression: apache-2.0
+is_license_notice: yes
+relevance: 100
+referenced_filenames:
+    - NOTICE
+ignorable_urls:
+    - http://www.apache.org/licenses/LICENSE-2.0
+---
+
 Licensed by  SAS under one or more
 contributor license agreements.  See the NOTICE file distributed with
 this work for additional information regarding copyright ownership.

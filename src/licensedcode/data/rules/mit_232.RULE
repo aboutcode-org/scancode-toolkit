@@ -1,1 +1,9 @@
+---
+license_expression: mit
+is_license_tag: yes
+relevance: 90
+ignorable_urls:
+    - http://opensource.org/licenses/MIT
+---
+
 License: BSD-style  (http://opensource.org/licenses/MIT

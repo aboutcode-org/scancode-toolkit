@@ -1,3 +1,12 @@
+---
+license_expression: nokos-1.0a
+is_license_reference: yes
+ignorable_copyrights:
+    - Copyright (c) Nokia and others
+ignorable_holders:
+    - Nokia and others
+---
+
  1. DEFINITIONS.
 
 "Affiliates" of a party shall mean an entity

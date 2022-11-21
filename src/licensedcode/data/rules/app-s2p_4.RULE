@@ -1,1 +1,9 @@
+---
+license_expression: app-s2p
+is_license_reference: yes
+relevance: 100
+ignorable_urls:
+    - https://spdx.org/licenses/App-s2p
+---
+
 {{App-s2p}} https://spdx.org/licenses/App-s2p

@@ -1,1 +1,9 @@
+---
+license_expression: bsd-new
+is_license_tag: yes
+relevance: 100
+ignorable_urls:
+    - http://antlr.org/license.html
+---
+
 License: BSD licence  (http://antlr.org/license.html)

@@ -1,3 +1,8 @@
+---
+is_false_positive: yes
+notes: comments about licensing
+---
+
 LICENSING
 
 Code is contributed to the Linux kernel under a number of licenses, but all

@@ -1,0 +1,6 @@
+---
+is_false_positive: yes
+notes: code about license, not a license
+---
+
+theLicense += "\nor the GNU General Public License (GPL) version 3";

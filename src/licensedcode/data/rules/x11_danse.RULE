@@ -1,3 +1,9 @@
+---
+license_expression: x11
+is_license_text: yes
+notes: x11 Danse notice
+---
+
 Permission is hereby granted, free of charge, to any person obtaining a copy 
 of this software and associated documentation files (the “Software”), to deal in 
 the Software without restriction, including without limitation the rights to use, 
@@ -21,4 +27,4 @@ SOFTWARE.
 
 Except as contained in this notice, the name of a copyright holder shall not be 
 used in advertising or otherwise to promote the sale, use or other dealings in this 
-Software without prior written authorization of the copyright holder. 
+Software without prior written authorization of the copyright holder.

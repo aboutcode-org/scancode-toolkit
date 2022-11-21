@@ -1,3 +1,13 @@
+---
+key: egrappler
+short_name: eGrappler License
+name: eGrappler License
+category: Commercial
+owner: eGrappler
+homepage_url: https://www.egrappler.com/license
+spdx_license_key: LicenseRef-scancode-egrappler
+---
+
 All files at egrappler.com are free for personal and commercial use.
 However, you cannot redistribute, sale, re-upload these files. 
 Do not offer download links at your site without written consent of the author.

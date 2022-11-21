@@ -1,6 +1,6 @@
 [
   {
-    "type": "pods",
+    "type": "cocoapods",
     "namespace": null,
     "name": "kmmWebSocket",
     "version": "1.0.1",
@@ -30,8 +30,61 @@
     "code_view_url": "Not Published/tree/1.0.1",
     "vcs_url": "Not Published",
     "copyright": null,
-    "license_expression": "mit AND unknown",
-    "declared_license": ":type = MIT, :file = LICENSE",
+    "declared_license_expression": "mit",
+    "declared_license_expression_spdx": "MIT",
+    "license_detections": [
+      {
+        "license_expression": "mit",
+        "detection_log": [
+          "not-combined"
+        ],
+        "matches": [
+          {
+            "score": 100.0,
+            "start_line": 1,
+            "end_line": 1,
+            "matched_length": 4,
+            "match_coverage": 100.0,
+            "matcher": "1-hash",
+            "license_expression": "mit",
+            "rule_identifier": "mit_in_manifest.RULE",
+            "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_in_manifest.RULE",
+            "referenced_filenames": [
+              "LICENSE"
+            ],
+            "is_license_text": false,
+            "is_license_notice": false,
+            "is_license_reference": true,
+            "is_license_tag": false,
+            "is_license_intro": false,
+            "rule_length": 4,
+            "rule_relevance": 100,
+            "matched_text": ":type = MIT, :file = LICENSE",
+            "licenses": [
+              {
+                "key": "mit",
+                "name": "MIT License",
+                "short_name": "MIT License",
+                "category": "Permissive",
+                "is_exception": false,
+                "is_unknown": false,
+                "owner": "MIT",
+                "homepage_url": "http://opensource.org/licenses/mit-license.php",
+                "text_url": "http://opensource.org/licenses/mit-license.php",
+                "reference_url": "https://scancode-licensedb.aboutcode.org/mit",
+                "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE",
+                "spdx_license_key": "MIT",
+                "spdx_url": "https://spdx.org/licenses/MIT"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "other_license_expression": null,
+    "other_license_expression_spdx": null,
+    "other_license_detections": [],
+    "extracted_license_statement": ":type = MIT, :file = LICENSE",
     "notice_text": null,
     "source_packages": [],
     "file_references": [],
@@ -41,6 +94,6 @@
     "repository_download_url": "Not Published/archive/refs/tags/1.0.1.zip",
     "api_data_url": "https://raw.githubusercontent.com/CocoaPods/Specs/blob/master/Specs/2/3/c/kmmWebSocket/1.0.1/kmmWebSocket.podspec.json",
     "datasource_id": "cocoapods_podspec",
-    "purl": "pkg:pods/kmmWebSocket@1.0.1"
+    "purl": "pkg:cocoapods/kmmWebSocket@1.0.1"
   }
 ]

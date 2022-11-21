@@ -1,3 +1,13 @@
+---
+license_expression: w3c-software-doc-20150513
+is_license_text: yes
+relevance: 99
+ignorable_copyrights:
+    - Copyright (c) YEAR W3C(r) MIT, ERCIM, Keio
+ignorable_holders:
+    - W3C(r) MIT, ERCIM, Keio
+---
+
 W3C Software and Document Notice and License
 
 This work is being provided by the copyright holders under the following license.

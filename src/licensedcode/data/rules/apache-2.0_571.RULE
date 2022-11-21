@@ -1,3 +1,11 @@
+---
+license_expression: apache-2.0
+is_license_tag: yes
+relevance: 100
+ignorable_urls:
+    - http://repository.jboss.org/licenses/apache-2.0.txt
+---
+
 <licenses>
         <license>
             <name>{{Apache License 2.0}}</name>

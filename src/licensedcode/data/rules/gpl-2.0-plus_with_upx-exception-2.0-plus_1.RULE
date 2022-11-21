@@ -1,3 +1,19 @@
+---
+license_expression: gpl-2.0-plus WITH upx-exception-2.0-plus
+is_license_notice: yes
+minimum_coverage: 60
+referenced_filenames:
+    - COPYING
+ignorable_copyrights:
+    - Copyright (c) 1996-2000 Laszlo Molnar
+    - Copyright (c) 1996-2000 Markus Franz Xaver Johannes Oberhumer
+    - Copyright (c) 1996-2000 Markus Franz Xaver Johannes Oberhumer UPX
+ignorable_holders:
+    - Laszlo Molnar
+    - Markus Franz Xaver Johannes Oberhumer
+    - Markus Franz Xaver Johannes Oberhumer UPX
+---
+
 
 PLEASE CAREFULLY READ THIS LICENSE AGREEMENT, ESPECIALLY IF YOU PLAN
 TO MODIFY THE UPX SOURCE CODE OR USE A MODIFIED UPX VERSION.
@@ -98,4 +114,3 @@ ANNOTATIONS
   - We want to actively support manufacturers of virus scanners and
     similar security software. Please contact us if you would like to
     incorporate parts of UPX or UCL into such a product.
-

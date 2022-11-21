@@ -1,3 +1,12 @@
+---
+license_expression: proprietary-license
+is_license_notice: yes
+relevance: 100
+ignorable_urls:
+    - http://www.vbulletin.com/
+    - http://www.vbulletin.com/license.html
+---
+
 || # This file may not be redistributed in whole or significant part. # ||
 || # ---------------- VBULLETIN IS NOT FREE SOFTWARE ---------------- # ||
 || # http://www.vbulletin.com | http://www.vbulletin.com/license.html # ||

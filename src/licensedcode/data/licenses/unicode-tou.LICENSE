@@ -1,3 +1,17 @@
+---
+key: unicode-tou
+short_name: Unicode Terms of Use
+name: Unicode Terms of Use
+category: Proprietary Free
+owner: Unicode Consortium
+homepage_url: http://www.unicode.org/copyright.html
+spdx_license_key: Unicode-TOU
+ignorable_copyrights:
+    - Copyright (c) Unicode, Inc.
+ignorable_holders:
+    - Unicode, Inc.
+---
+
 Unicode Terms of Use
 
 For the general privacy policy governing access to this site, see the

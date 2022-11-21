@@ -20,19 +20,10 @@ from licensedcode.models import InvalidRule
 from licensedcode.models import Rule
 from licensedcode.models import rules_data_dir
 from licensedcode.spans import Span
-from scancode_config import REGEN_TEST_FIXTURES
+from scancode.cli_test_utils import check_json
 
 TEST_DATA_DIR = os.path.join(os.path.dirname(__file__), 'data')
 
-
-def check_json(expected, results, regen=REGEN_TEST_FIXTURES):
-    if regen:
-        mode = 'w'
-        with open(expected, mode) as ex:
-            json.dump(results, ex, indent=2, separators=(',', ': '))
-    with open(expected) as ex:
-        expected = json.load(ex)
-    assert results == expected
 
 
 def as_sorted_mapping_seq(licenses):
@@ -90,7 +81,7 @@ class TestLicense(FileBasedTesting):
 
     def test_validate_license_library_can_return_errors(self):
         test_dir = self.get_test_loc('models/validate')
-        lics = models.load_licenses(test_dir)
+        lics = models.load_licenses(test_dir, check_consistency=False)
         errors, warnings, infos = models.License.validate(
             lics,
             no_dupe_urls=True,
@@ -143,20 +134,27 @@ class TestLicense(FileBasedTesting):
         }
         assert infos == expected_infos
 
-    def test_load_licenses_fails_if_directory_contains_orphaned_files(self):
-        test_dir = self.get_test_loc('models/orphaned_licenses')
+    def test_load_licenses_fails_if_file_contains_empty_yaml_frontmatter(self):
+        test_dir = self.get_test_loc('models/licenses_without_frontmatter')
         try:
             list(models.load_licenses(test_dir))
             self.fail('Exception not raised')
         except Exception as e:
-            assert 'Some License files are orphaned in' in str(e)
+            assert 'Cannot load License with empty YAML frontmatter' in str(e)
 
-    def test_license_text_file_and_data_file_are_computed_correctly(self):
+    def test_load_licenses_fails_if_file_contains_empty_text(self):
+        test_dir = self.get_test_loc('models/licenses_without_text')
+        try:
+            list(models.load_licenses(test_dir))
+            self.fail('Exception not raised')
+        except Exception as e:
+            assert 'only deprecated, generic or unknown licenses can exist without text' in str(e)
+
+    def test_license_file_is_computed_correctly(self):
         licenses_data_dir = self.get_test_loc('models/data_text_files/licenses')
         licenses = models.load_licenses(licenses_data_dir)
         lic = licenses['gpl-1.0']
-        assert lic.text_file(licenses_data_dir=licenses_data_dir).startswith(licenses_data_dir)
-        assert lic.data_file(licenses_data_dir=licenses_data_dir).startswith(licenses_data_dir)
+        assert lic.license_file(licenses_data_dir=licenses_data_dir).startswith(licenses_data_dir)
 
     def test_rule_from_license_have_text_file_and_data_file_are_computed_correctly(self):
         licenses_data_dir = self.get_test_loc('models/data_text_files/licenses')
@@ -164,12 +162,7 @@ class TestLicense(FileBasedTesting):
         lic = licenses['gpl-1.0']
         rule = models.build_rule_from_license(license_obj=lic)
 
-        assert rule.text_file(
-            licenses_data_dir=licenses_data_dir,
-            rules_data_dir=None,
-        ).startswith(licenses_data_dir)
-
-        assert rule.data_file(
+        assert rule.rule_file(
             licenses_data_dir=licenses_data_dir,
             rules_data_dir=None,
         ).startswith(licenses_data_dir)
@@ -510,20 +503,19 @@ class TestRule(FileBasedTesting):
         assert rule.relevance == 0
 
     def test_rule_must_have_text(self):
-        data_file = self.get_test_loc('models/rule_no_text/mit.yml')
+        rule_file = self.get_test_loc('models/rule_no_text/mit.RULE')
         try:
-            Rule.from_files(data_file=data_file, text_file=None)
+            Rule.from_file(rule_file=rule_file)
             self.fail('Exception not raised.')
         except InvalidRule as  e:
-            assert str(e).startswith('Cannot load rule without its corresponding text_file and data file')
+            assert 'Cannot load rule with empty text' in str(e)
 
     def test_rule_cannot_contain_extra_unknown_attributes(self):
-        data_file = self.get_test_loc('models/rule_with_extra_attributes/sun-bcl.yml')
-        text_file = self.get_test_loc('models/rule_with_extra_attributes/sun-bcl.RULE')
+        rule_file = self.get_test_loc('models/rule_with_extra_attributes/sun-bcl.RULE')
 
         expected = 'data file has unknown attributes: license_expressionnotuce'
         try:
-            Rule.from_files(data_file=data_file, text_file=text_file)
+            Rule.from_file(rule_file=rule_file)
             self.fail('Exception not raised.')
         except Exception as  e:
             assert expected in str(e)
@@ -579,8 +571,7 @@ class TestRule(FileBasedTesting):
         rule_dir = self.get_test_loc('models/data_text_files/rules')
         rules = list(models.load_rules(rule_dir))
         rule = rules[0]
-        assert rule.text_file(rules_data_dir=rule_dir).startswith(rule_dir)
-        assert rule.data_file(rules_data_dir=rule_dir).startswith(rule_dir)
+        assert rule.rule_file(rules_data_dir=rule_dir).startswith(rule_dir)
 
 
 class TestGetKeyPhrases(TestCaseClass):

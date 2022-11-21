@@ -1,3 +1,12 @@
+---
+key: chris-stoy
+short_name: Chris Stoy Attribution License
+name: Chris Stoy Attribution License
+category: Permissive
+owner: Chris Stoy
+spdx_license_key: LicenseRef-scancode-chris-stoy
+---
+
 You are free to use this code in all commercial and non-commercial applications
 as long as this copyright message is left intact.
 Use this code at your own risk.  I take no responsibility if it should fail to

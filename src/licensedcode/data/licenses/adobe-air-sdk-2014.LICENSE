@@ -1,3 +1,22 @@
+---
+key: adobe-air-sdk-2014
+short_name: Adobe Air SDK EULA - 2014
+name: Adobe Air SDK EULA - 2014
+category: Proprietary Free
+owner: Adobe Systems
+homepage_url: http://www.adobe.com/products/air/sdk-eula.html
+spdx_license_key: LicenseRef-scancode-adobe-air-sdk-2014
+other_urls:
+    - www.adobe.com/go/redistributeairsdk
+    - http://www.adobe.com/products/air/sdk-agreement.html
+ignorable_urls:
+    - http://www.adobe.com/go/air_developer_privacy
+    - http://www.adobe.com/go/redistributeairsdk
+    - http://www.adobe.com/go/thirdparty
+    - http://www.adobe.com/products/air/crosspromotion-program-agreement.html
+    - http://www.mpegla.com/
+---
+
 Adobe AIR SDK - Warranty disclaimer and license agreement
 ADOBE SYSTEMS INCORPORATED
 SDK LICENSE AGREEMENT

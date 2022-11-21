@@ -1,1 +1,9 @@
+---
+license_expression: mit
+is_license_notice: yes
+relevance: 100
+ignorable_urls:
+    - http://www.opensource.org/licenses/mit-license.php
+---
+
 under MIT License: http://www.opensource.org/licenses/mit-license.php

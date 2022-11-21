@@ -1,3 +1,10 @@
+---
+license_expression: commercial-license
+is_license_text: yes
+ignorable_emails:
+    - support@fontspring.com
+---
+
 The Fontspring Webfont End User License Agreement
 Version 1.7.0 - February 26, 2017
 
@@ -57,4 +64,4 @@ This EULA, in conjunction with the invoice (“Invoice”) that accompanies each
 12.  Modification
 The Parties may modify or amend this EULA in writing.
 
-13. Waiver. The waiver of one breach or default hereunder shall not constitute the waiver of any subsequent breach or default. 
+13. Waiver. The waiver of one breach or default hereunder shall not constitute the waiver of any subsequent breach or default.

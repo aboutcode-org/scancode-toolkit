@@ -1,6 +1,0 @@
-license_expression: osl-1.1 OR gpl-2.0
-is_license_notice: yes
-referenced_filenames:
-    - COPYING
-ignorable_urls:
-    - http://fedoraproject.org/wiki/Licensing:OSL1.1

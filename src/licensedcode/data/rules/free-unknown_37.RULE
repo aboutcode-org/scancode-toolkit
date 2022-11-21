@@ -1,3 +1,8 @@
+---
+license_expression: free-unknown
+is_license_notice: yes
+---
+
 Licence:
  * Firmware is:
  *      Derived from proprietary unpublished source code,
@@ -5,4 +10,3 @@ Licence:
  *      Permission is hereby granted for the distribution of this firmware
  *      data in hexadecimal or equivalent format, provided this copyright
  *      notice is accompanying it.
-

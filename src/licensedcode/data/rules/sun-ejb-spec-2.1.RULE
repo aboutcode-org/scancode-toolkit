@@ -1,3 +1,9 @@
+---
+license_expression: sun-ejb-spec-2.1
+is_license_text: yes
+minimum_coverage: 60
+---
+
 Sun Microsystems, Inc. ("Sun") hereby grants you a fully-paid, non-exclusive, 
 non-transferable, worldwide, limited license (without the right to sublicense), 
 under the Sun's applicable intellectual property rights to view, download, use 
@@ -105,4 +111,4 @@ grant Sun a perpetual, non-exclusive, worldwide, fully paid-up, irrevocable
 license, with the right to sublicense through multiple levels of sublicensees, 
 to incorporate, disclose, and use without limitation the Feedback for any 
 purpose related to the Specification and future versions, implementations, and 
-test suites thereof. 
+test suites thereof.

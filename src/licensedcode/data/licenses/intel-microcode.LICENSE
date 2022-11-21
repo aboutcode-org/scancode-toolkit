@@ -1,3 +1,14 @@
+---
+key: intel-microcode
+short_name: Intel Microcode License
+name: Intel Microcode License
+category: Proprietary Free
+owner: Intel Corporation
+spdx_license_key: LicenseRef-scancode-intel-microcode
+other_urls:
+    - https://downloadmirror.intel.com/28039/eng/microcode-20180807.tgz
+---
+
 SOFTWARE LICENSE AGREEMENT
 
 DO NOT DOWNLOAD, INSTALL, ACCESS, COPY, OR USE ANY PORTION OF THE SOFTWARE 

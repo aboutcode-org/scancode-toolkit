@@ -1,3 +1,12 @@
+---
+license_expression: sgi-fslb-1.0
+is_license_reference: yes
+ignorable_authors:
+    - Silicon Graphics, Inc.
+ignorable_urls:
+    - http://oss.sgi.com/projects/FreeB
+---
+
 SGI FREE SOFTWARE LICENSE B (Version 1.0 [1/25/2000])
 
 1. Definitions.

@@ -1,3 +1,19 @@
+---
+key: confluent-community-1.0
+short_name: Confluent Community License 1.0
+name: Confluent Community License 1.0
+category: Source-available
+owner: Confluent, Inc.
+homepage_url: https://www.confluent.io/confluent-community-license
+spdx_license_key: LicenseRef-scancode-confluent-community-1.0
+faq_url: https://www.confluent.io/confluent-community-license-faq
+other_urls:
+    - https://www.confluent.io/blog/license-changes-confluent-platform
+    - https://www.confluent.io/blog/developers-guide-confluent-community-license
+ignorable_urls:
+    - http://www.confluent.io/confluent-community-license
+---
+
 Confluent Community License Version 1.0
 
 This Confluent Community License Agreement Version 1.0 (the “Agreement”) sets forth the terms on which Confluent, Inc. (“Confluent”) makes available certain software made available by Confluent under this Agreement (the “Software”).  BY INSTALLING, DOWNLOADING, ACCESSING, USING OR DISTRIBUTING ANY OF THE SOFTWARE, YOU AGREE TO THE TERMS AND CONDITIONS OF THIS AGREEMENT. IF YOU DO NOT AGREE TO SUCH TERMS AND CONDITIONS, YOU MUST NOT USE THE SOFTWARE.  IF YOU ARE RECEIVING THE SOFTWARE ON BEHALF OF A LEGAL ENTITY, YOU REPRESENT AND WARRANT THAT YOU HAVE THE ACTUAL AUTHORITY TO AGREE TO THE TERMS AND CONDITIONS OF THIS AGREEMENT ON BEHALF OF SUCH ENTITY. “Licensee” means you, an individual, or the entity on whose behalf you are receiving the Software.

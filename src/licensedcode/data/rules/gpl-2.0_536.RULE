@@ -1,3 +1,17 @@
+---
+license_expression: gpl-2.0
+is_license_notice: yes
+minimum_coverage: 95
+notes: this was a choice but the notice measn the GPL was selected
+ignorable_authors:
+    - Andy Polyakov <appro@openssl.org> for the OpenSSL project
+ignorable_urls:
+    - http://www.openssl.org/~appro/cryptogams
+    - https://www.openssl.org/~appro/cryptogams/
+ignorable_emails:
+    - appro@openssl.org
+---
+
 This code is taken from CRYPTOGAMs[1] and is included here using the option
 in the license to distribute the code under the GPL. Therefore this program
 is free software; you can redistribute it and/or modify it under the terms of

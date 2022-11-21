@@ -1,3 +1,19 @@
+---
+key: dtree
+short_name: Dtree License
+name: Dtree License
+category: Permissive
+owner: Unspecified
+homepage_url: http://destroydrop.com/javascripts/tree/
+spdx_license_key: LicenseRef-scancode-dtree
+other_urls:
+    - http://destroydrop.com/javascripts/tree/
+ignorable_copyrights:
+    - Copyright (c) 2002-2003 Geir Landr
+ignorable_holders:
+    - Geir Landr
+---
+
 Copyright (c) 2002-2003 Geir Landr
 
 This script can be used freely as long as all copyright messages are intact.

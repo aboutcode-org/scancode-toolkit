@@ -1,3 +1,19 @@
+---
+key: divx-open-1.0
+short_name: DivX Open License 1.0
+name: DivX Open License v1.0
+category: Copyleft Limited
+owner: DivX, LLC
+spdx_license_key: LicenseRef-scancode-divx-open-1.0
+minimum_coverage: 30
+ignorable_copyrights:
+    - Copyright (c) 2001 Project Mayo
+ignorable_holders:
+    - Project Mayo
+ignorable_authors:
+    - Project Mayo
+---
+
 DivX Open License
 ================= 
 Version 1.0

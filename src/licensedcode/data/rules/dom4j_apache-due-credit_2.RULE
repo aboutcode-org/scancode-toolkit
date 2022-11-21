@@ -1,3 +1,12 @@
+---
+license_expression: dom4j
+is_license_text: yes
+ignorable_urls:
+    - http://groovy.codehaus.org/
+ignorable_emails:
+    - info@codehaus.org
+---
+
  Redistribution and use of this software and associated documentation
  ("Software"), with or without modification, are permitted provided
  that the following conditions are met:

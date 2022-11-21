@@ -1,3 +1,11 @@
+---
+license_expression: gpl-2.0-plus
+is_license_notice: yes
+relevance: 100
+ignorable_urls:
+    - https://wordpress.org/about/license/
+---
+
 WordPress is Free and open source software, built by a distributed community of mostly volunteer developers from around the world. 
 WordPress comes with some awesome, worldview-changing rights courtesy of its license the GPL. https://wordpress.org/about/license/
 You have the freedom to run the program, for any purpose.

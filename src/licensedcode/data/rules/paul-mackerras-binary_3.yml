@@ -1,7 +1,0 @@
-license_expression: paul-mackerras-binary
-is_license_text: yes
-minimum_coverage: 95
-ignorable_authors:
-    - Tommi Komulainen Tommi.Komulainen@iki.fi
-ignorable_emails:
-    - Tommi.Komulainen@iki.fi

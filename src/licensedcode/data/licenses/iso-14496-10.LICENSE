@@ -1,3 +1,12 @@
+---
+key: iso-14496-10
+short_name: ISO 14496-10
+name: ISO 14496-10
+category: Permissive
+owner: ISO - International Organization for Standardization
+spdx_license_key: LicenseRef-scancode-iso-14496-10
+---
+
 Software Copyright Licensing Disclaimer
 
 This software module was originally developed by contributors to the

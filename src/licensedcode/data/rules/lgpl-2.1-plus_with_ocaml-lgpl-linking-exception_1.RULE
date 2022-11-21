@@ -1,3 +1,9 @@
+---
+license_expression: lgpl-2.1-plus WITH ocaml-lgpl-linking-exception
+is_license_notice: yes
+relevance: 99
+---
+
 This Software is distributed under the terms of the GNU Lesser
 General Public License version 2.1 (included below), or (at your
 option) any later version.

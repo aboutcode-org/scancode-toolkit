@@ -1,3 +1,18 @@
+---
+key: lgpl-2.1-plus-linking
+is_deprecated: yes
+short_name: LGPL 2.1 or later with Linking exception
+name: LGPL 2.1 or later with Linking exception
+category: Copyleft Limited
+owner: Free Software Foundation (FSF)
+notes: replaced by linking-exception-2.1-plus
+is_exception: yes
+text_urls:
+    - http://sources.redhat.com/git/gitweb.cgi?p=glibc.git;a=blob;f=libio/libio.h
+other_urls:
+    - http://sources.redhat.com/git/gitweb.cgi?p=glibc.git;a=blob;f=libio/libio.h
+---
+
 As a special exception, if you link the code in this file with files compiled
 with a GNU compiler to produce an executable, that does not cause the resulting
 executable to be covered by the GNU Lesser General Public License. This

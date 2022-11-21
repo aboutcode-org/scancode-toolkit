@@ -1,3 +1,9 @@
+---
+license_expression: generic-cla
+is_license_notice: yes
+notes: Seen in pybind11
+---
+
 You are under no obligation whatsoever to provide any bug fixes, patches, or
 upgrades to the features, functionality or performance of the source code
 ("Enhancements") to anyone; however, if you choose to make your Enhancements

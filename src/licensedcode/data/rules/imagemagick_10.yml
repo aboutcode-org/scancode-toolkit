@@ -1,9 +1,0 @@
-license_expression: imagemagick
-is_license_text: yes
-minimum_coverage: 70
-ignorable_copyrights:
-    - Copyright ImageMagick Studio LLC
-ignorable_holders:
-    - ImageMagick Studio LLC
-ignorable_urls:
-    - https://www.imagemagick.org/script/license.php

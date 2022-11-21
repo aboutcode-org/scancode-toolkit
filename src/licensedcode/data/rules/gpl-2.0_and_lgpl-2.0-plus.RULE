@@ -1,3 +1,15 @@
+---
+license_expression: gpl-2.0 AND lgpl-2.0-plus AND gpl-2.0-plus
+is_license_notice: yes
+minimum_coverage: 60
+referenced_filenames:
+    - /usr/share/common-licenses/GPL-2
+    - /usr/share/common-licenses/LGPL-2
+    - /usr/share/common-licenses/GPL
+    - /usr/share/common-licenses/LGPL-3
+    - COPYING.LIB
+---
+
 License:
 The licence for translations is the same as that of the application or
 library from which they come.  The lowest common denominator is GNU

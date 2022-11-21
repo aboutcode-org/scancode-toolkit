@@ -1,3 +1,11 @@
+---
+license_expression: bsd-simplified AND gpl-2.0
+is_license_notice: yes
+referenced_filenames:
+    - COPYING
+    - LICENSE
+---
+
 This repository uses 2 different licenses :
 - all files in the `lib` directory use a {{BSD 2-Clause}} license
 - all other files use a {{GPLv2}} license, unless explicitly stated otherwise

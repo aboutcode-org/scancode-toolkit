@@ -1,3 +1,25 @@
+---
+key: ngpl
+short_name: Nethack General Public License
+name: Nethack General Public License
+category: Copyleft Limited
+owner: NetHack
+homepage_url: http://www.nethack.org/common/license.html
+notes: Per SPDX.org, this license is OSI certified.
+spdx_license_key: NGPL
+text_urls:
+    - http://www.nethack.org/common/license.html
+other_urls:
+    - http://www.opensource.org/licenses/NGPL
+    - https://opensource.org/licenses/NGPL
+ignorable_copyrights:
+    - Copyright (c) 1989 M. Stephenson
+    - copyright 1988 Richard M. Stallman
+ignorable_holders:
+    - M. Stephenson
+    - Richard M. Stallman
+---
+
 Nethack General Public License
 Copyright (c) 1989 M. Stephenson
 (Based on the BISON general public license, copyright 1988 Richard M. Stallman)

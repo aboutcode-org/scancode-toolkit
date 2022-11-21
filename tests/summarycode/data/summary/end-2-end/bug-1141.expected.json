@@ -16,6 +16,10 @@
     "primary_language": "C",
     "other_license_expressions": [
       {
+        "value": null,
+        "count": 1
+      },
+      {
         "value": "gpl-2.0-plus",
         "count": 1
       }
@@ -52,8 +56,10 @@
       "is_media": false,
       "is_source": false,
       "is_script": false,
-      "licenses": [],
-      "license_expressions": [],
+      "detected_license_expression": null,
+      "detected_license_expression_spdx": null,
+      "license_detections": [],
+      "license_clues": [],
       "percentage_of_license_text": 0,
       "copyrights": [],
       "holders": [],
@@ -89,8 +95,10 @@
       "is_media": false,
       "is_source": false,
       "is_script": false,
-      "licenses": [],
-      "license_expressions": [],
+      "detected_license_expression": null,
+      "detected_license_expression_spdx": null,
+      "license_detections": [],
+      "license_clues": [],
       "percentage_of_license_text": 0,
       "copyrights": [],
       "holders": [],
@@ -126,8 +134,10 @@
       "is_media": false,
       "is_source": false,
       "is_script": false,
-      "licenses": [],
-      "license_expressions": [],
+      "detected_license_expression": null,
+      "detected_license_expression_spdx": null,
+      "license_detections": [],
+      "license_clues": [],
       "percentage_of_license_text": 0,
       "copyrights": [],
       "holders": [],
@@ -163,8 +173,10 @@
       "is_media": false,
       "is_source": false,
       "is_script": false,
-      "licenses": [],
-      "license_expressions": [],
+      "detected_license_expression": null,
+      "detected_license_expression_spdx": null,
+      "license_detections": [],
+      "license_clues": [],
       "percentage_of_license_text": 0,
       "copyrights": [],
       "holders": [],
@@ -200,49 +212,55 @@
       "is_media": false,
       "is_source": false,
       "is_script": false,
-      "licenses": [
+      "detected_license_expression": "gpl-3.0-plus",
+      "detected_license_expression_spdx": "GPL-3.0-or-later",
+      "license_detections": [
         {
-          "key": "gpl-3.0-plus",
-          "score": 100.0,
-          "name": "GNU General Public License 3.0 or later",
-          "short_name": "GPL 3.0 or later",
-          "category": "Copyleft",
-          "is_exception": false,
-          "is_unknown": false,
-          "owner": "Free Software Foundation (FSF)",
-          "homepage_url": "http://www.gnu.org/licenses/gpl-3.0-standalone.html",
-          "text_url": "http://www.gnu.org/licenses/gpl-3.0-standalone.html",
-          "reference_url": "https://scancode-licensedb.aboutcode.org/gpl-3.0-plus",
-          "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-3.0-plus.LICENSE",
-          "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-3.0-plus.yml",
-          "spdx_license_key": "GPL-3.0-or-later",
-          "spdx_url": "https://spdx.org/licenses/GPL-3.0-or-later",
-          "start_line": 1,
-          "end_line": 12,
-          "matched_rule": {
-            "identifier": "gpl-3.0-plus_290.RULE",
-            "license_expression": "gpl-3.0-plus",
-            "licenses": [
-              "gpl-3.0-plus"
-            ],
-            "referenced_filenames": [],
-            "is_license_text": false,
-            "is_license_notice": true,
-            "is_license_reference": false,
-            "is_license_tag": false,
-            "is_license_intro": false,
-            "has_unknown": false,
-            "matcher": "1-hash",
-            "rule_length": 102,
-            "matched_length": 102,
-            "match_coverage": 100.0,
-            "rule_relevance": 100
-          }
+          "license_expression": "gpl-3.0-plus",
+          "detection_log": [
+            "not-combined"
+          ],
+          "matches": [
+            {
+              "score": 100.0,
+              "start_line": 1,
+              "end_line": 12,
+              "matched_length": 102,
+              "match_coverage": 100.0,
+              "matcher": "1-hash",
+              "license_expression": "gpl-3.0-plus",
+              "rule_identifier": "gpl-3.0-plus_290.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0-plus_290.RULE",
+              "referenced_filenames": [],
+              "is_license_text": false,
+              "is_license_notice": true,
+              "is_license_reference": false,
+              "is_license_tag": false,
+              "is_license_intro": false,
+              "rule_length": 102,
+              "rule_relevance": 100,
+              "licenses": [
+                {
+                  "key": "gpl-3.0-plus",
+                  "name": "GNU General Public License 3.0 or later",
+                  "short_name": "GPL 3.0 or later",
+                  "category": "Copyleft",
+                  "is_exception": false,
+                  "is_unknown": false,
+                  "owner": "Free Software Foundation (FSF)",
+                  "homepage_url": "http://www.gnu.org/licenses/gpl-3.0-standalone.html",
+                  "text_url": "http://www.gnu.org/licenses/gpl-3.0-standalone.html",
+                  "reference_url": "https://scancode-licensedb.aboutcode.org/gpl-3.0-plus",
+                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-3.0-plus.LICENSE",
+                  "spdx_license_key": "GPL-3.0-or-later",
+                  "spdx_url": "https://spdx.org/licenses/GPL-3.0-or-later"
+                }
+              ]
+            }
+          ]
         }
       ],
-      "license_expressions": [
-        "gpl-3.0-plus"
-      ],
+      "license_clues": [],
       "percentage_of_license_text": 100.0,
       "copyrights": [],
       "holders": [],
@@ -278,8 +296,10 @@
       "is_media": false,
       "is_source": false,
       "is_script": false,
-      "licenses": [],
-      "license_expressions": [],
+      "detected_license_expression": null,
+      "detected_license_expression_spdx": null,
+      "license_detections": [],
+      "license_clues": [],
       "percentage_of_license_text": 0,
       "copyrights": [],
       "holders": [],
@@ -315,8 +335,10 @@
       "is_media": false,
       "is_source": false,
       "is_script": false,
-      "licenses": [],
-      "license_expressions": [],
+      "detected_license_expression": null,
+      "detected_license_expression_spdx": null,
+      "license_detections": [],
+      "license_clues": [],
       "percentage_of_license_text": 0,
       "copyrights": [],
       "holders": [],
@@ -352,8 +374,10 @@
       "is_media": false,
       "is_source": false,
       "is_script": false,
-      "licenses": [],
-      "license_expressions": [],
+      "detected_license_expression": null,
+      "detected_license_expression_spdx": null,
+      "license_detections": [],
+      "license_clues": [],
       "percentage_of_license_text": 0,
       "copyrights": [],
       "holders": [],
@@ -389,8 +413,10 @@
       "is_media": false,
       "is_source": false,
       "is_script": false,
-      "licenses": [],
-      "license_expressions": [],
+      "detected_license_expression": null,
+      "detected_license_expression_spdx": null,
+      "license_detections": [],
+      "license_clues": [],
       "percentage_of_license_text": 0,
       "copyrights": [],
       "holders": [],
@@ -426,49 +452,55 @@
       "is_media": false,
       "is_source": true,
       "is_script": false,
-      "licenses": [
+      "detected_license_expression": "gpl-2.0-plus",
+      "detected_license_expression_spdx": "GPL-2.0-or-later",
+      "license_detections": [
         {
-          "key": "gpl-2.0-plus",
-          "score": 100.0,
-          "name": "GNU General Public License 2.0 or later",
-          "short_name": "GPL 2.0 or later",
-          "category": "Copyleft",
-          "is_exception": false,
-          "is_unknown": false,
-          "owner": "Free Software Foundation (FSF)",
-          "homepage_url": "http://www.gnu.org/licenses/old-licenses/gpl-2.0-standalone.html",
-          "text_url": "http://www.gnu.org/licenses/old-licenses/gpl-2.0-standalone.html",
-          "reference_url": "https://scancode-licensedb.aboutcode.org/gpl-2.0-plus",
-          "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-2.0-plus.LICENSE",
-          "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-2.0-plus.yml",
-          "spdx_license_key": "GPL-2.0-or-later",
-          "spdx_url": "https://spdx.org/licenses/GPL-2.0-or-later",
-          "start_line": 8,
-          "end_line": 19,
-          "matched_rule": {
-            "identifier": "gpl-2.0-plus_119.RULE",
-            "license_expression": "gpl-2.0-plus",
-            "licenses": [
-              "gpl-2.0-plus"
-            ],
-            "referenced_filenames": [],
-            "is_license_text": false,
-            "is_license_notice": true,
-            "is_license_reference": false,
-            "is_license_tag": false,
-            "is_license_intro": false,
-            "has_unknown": false,
-            "matcher": "2-aho",
-            "rule_length": 102,
-            "matched_length": 102,
-            "match_coverage": 100.0,
-            "rule_relevance": 100
-          }
+          "license_expression": "gpl-2.0-plus",
+          "detection_log": [
+            "not-combined"
+          ],
+          "matches": [
+            {
+              "score": 100.0,
+              "start_line": 8,
+              "end_line": 19,
+              "matched_length": 102,
+              "match_coverage": 100.0,
+              "matcher": "2-aho",
+              "license_expression": "gpl-2.0-plus",
+              "rule_identifier": "gpl-2.0-plus_119.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_119.RULE",
+              "referenced_filenames": [],
+              "is_license_text": false,
+              "is_license_notice": true,
+              "is_license_reference": false,
+              "is_license_tag": false,
+              "is_license_intro": false,
+              "rule_length": 102,
+              "rule_relevance": 100,
+              "licenses": [
+                {
+                  "key": "gpl-2.0-plus",
+                  "name": "GNU General Public License 2.0 or later",
+                  "short_name": "GPL 2.0 or later",
+                  "category": "Copyleft",
+                  "is_exception": false,
+                  "is_unknown": false,
+                  "owner": "Free Software Foundation (FSF)",
+                  "homepage_url": "http://www.gnu.org/licenses/old-licenses/gpl-2.0-standalone.html",
+                  "text_url": "http://www.gnu.org/licenses/old-licenses/gpl-2.0-standalone.html",
+                  "reference_url": "https://scancode-licensedb.aboutcode.org/gpl-2.0-plus",
+                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-2.0-plus.LICENSE",
+                  "spdx_license_key": "GPL-2.0-or-later",
+                  "spdx_url": "https://spdx.org/licenses/GPL-2.0-or-later"
+                }
+              ]
+            }
+          ]
         }
       ],
-      "license_expressions": [
-        "gpl-2.0-plus"
-      ],
+      "license_clues": [],
       "percentage_of_license_text": 80.95,
       "copyrights": [
         {
@@ -516,8 +548,10 @@
       "is_media": false,
       "is_source": true,
       "is_script": false,
-      "licenses": [],
-      "license_expressions": [],
+      "detected_license_expression": null,
+      "detected_license_expression_spdx": null,
+      "license_detections": [],
+      "license_clues": [],
       "percentage_of_license_text": 0,
       "copyrights": [
         {

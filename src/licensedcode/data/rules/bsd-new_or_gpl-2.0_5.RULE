@@ -1,3 +1,9 @@
+---
+license_expression: bsd-new OR gpl-2.0
+is_license_notice: yes
+minimum_coverage: 90
+---
+
 Use of this source code is governed by a BSD-style license that can be
 found in the LICENSE file.
 

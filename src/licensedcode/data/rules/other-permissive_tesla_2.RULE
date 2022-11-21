@@ -1,3 +1,12 @@
+---
+license_expression: other-permissive
+is_license_text: yes
+ignorable_copyrights:
+    - copyright holders, authors, and contributors
+ignorable_holders:
+    - authors, and contributors
+---
+
 # Copyfree Open Innovation License
 
 This is version 0.3 of the Copyfree Open Innovation License.

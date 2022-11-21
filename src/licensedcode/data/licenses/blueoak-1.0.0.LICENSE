@@ -1,3 +1,17 @@
+---
+key: blueoak-1.0.0
+short_name: Blue Oak Model License 1.0.0
+name: Blue Oak Model License 1.0.0
+category: Permissive
+owner: Blue Oak Council
+homepage_url: https://blueoakcouncil.org/license/1.0.0
+spdx_license_key: BlueOak-1.0.0
+other_urls:
+    - https://blueoakcouncil.org/license/1.0.0
+ignorable_urls:
+    - https://blueoakcouncil.org/license/1.0.0
+---
+
 # Blue Oak Model License
 
 Version 1.0.0

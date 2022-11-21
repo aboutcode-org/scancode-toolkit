@@ -1,1 +1,9 @@
+---
+license_expression: mit
+is_license_reference: yes
+relevance: 90
+ignorable_urls:
+    - http://raw.githubusercontent.com/rebus-org/Rebus/master/LICENSE
+---
+
 http://raw.githubusercontent.com/rebus-org/Rebus/master/LICENSE

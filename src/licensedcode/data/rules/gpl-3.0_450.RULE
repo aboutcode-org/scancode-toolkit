@@ -1,3 +1,18 @@
+---
+license_expression: gpl-3.0
+is_license_text: yes
+relevance: 100
+notes: a damaged gpl 3 text
+ignorable_copyrights:
+    - Copyright 2007 Free Software Foundation, Inc. http://fsf.org/' http://fsf.org
+ignorable_holders:
+    - Free Software Foundation, Inc.
+ignorable_urls:
+    - http://fsf.org/
+    - https://www.gnu.org/licenses/
+    - https://www.gnu.org/philosophy/why-not-lgpl.html
+---
+
    GNU  General Public License version 3
    
     Version 3, 29 June 2007
@@ -737,5 +752,3 @@ under certain conditions; type " show c " for details.
     proprietary applications with the library.  If this is what you want to do,
     use the  GNU  Lesser General Public License instead of this
     License.  But first, please read  https://www.gnu.org/philosophy/why-not-lgpl.html">https://www.gnu.org/philosophy/why-not-lgpl.html .
-   
- 

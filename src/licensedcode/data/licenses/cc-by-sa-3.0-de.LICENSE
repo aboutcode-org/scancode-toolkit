@@ -1,3 +1,18 @@
+---
+key: cc-by-sa-3.0-de
+language: de
+short_name: CC-BY-SA-3.0-DE
+name: Creative Commons Attribution Share Alike 3.0 Germany
+category: Copyleft Limited
+owner: Creative Commons
+spdx_license_key: CC-BY-SA-3.0-DE
+other_urls:
+    - https://creativecommons.org/licenses/by-sa/3.0/de/legalcode
+ignorable_urls:
+    - https://creativecommons.org/
+    - https://creativecommons.org/compatiblelicenses
+---
+
 Creative Commons Namensnennung - Weitergabe unter gleichen Bedingungen 3.0 Deutschland
 
   CREATIVE COMMONS IST KEINE RECHTSANWALTSKANZLEI UND LEISTET KEINE RECHTSBERATUNG. DIE BEREITSTELLUNG DIESER LIZENZ FÜHRT ZU KEINEM MANDATSVERHÄLTNIS. CREATIVE COMMONS STELLT DIESE INFORMATIONEN OHNE GEWÄHR ZUR VERFÜGUNG. CREATIVE COMMONS ÜBERNIMMT KEINE GEWÄHRLEISTUNG FÜR DIE GELIEFERTEN INFORMATIONEN UND SCHLIEßT DIE HAFTUNG FÜR SCHÄDEN AUS, DIE SICH AUS DEREN GEBRAUCH ERGEBEN.

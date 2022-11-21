@@ -1,6 +1,0 @@
-license_expression: zend-2.0
-is_license_notice: yes
-ignorable_urls:
-    - http://www.zend.com/license/2_00.txt
-ignorable_emails:
-    - license@zend.com

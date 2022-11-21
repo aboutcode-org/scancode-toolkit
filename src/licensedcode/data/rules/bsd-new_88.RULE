@@ -1,3 +1,9 @@
+---
+license_expression: bsd-new
+is_license_notice: yes
+minimum_coverage: 99
+---
+
 * All code incorporated from 4.4 BSD is distributed under the following
   license:
       

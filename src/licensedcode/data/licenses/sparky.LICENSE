@@ -1,3 +1,21 @@
+---
+key: sparky
+short_name: Sparky License
+name: Sparky License
+category: Permissive
+owner: Regents of the University of California
+homepage_url: http://www.cgl.ucsf.edu/home/sparky/
+spdx_license_key: LicenseRef-scancode-sparky
+text_urls:
+    - http://www.cgl.ucsf.edu/home/sparky/sparky-license.html
+ignorable_copyrights:
+    - Copyright (c) 2009, The Regents of the University of California
+ignorable_holders:
+    - The Regents of the University of California
+ignorable_authors:
+    - the UCSF Resource
+---
+
 Copyright, License, and Disclaimer
 
 The following copyright, license and disclaimer applies to the distributed

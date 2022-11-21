@@ -1,3 +1,12 @@
+---
+license_expression: cc-by-sa-3.0
+is_license_notice: yes
+relevance: 90
+notes: this is for the Germany variant that we do not track yet as its own license
+ignorable_urls:
+    - http://creativecommons.org/licenses/by-sa/3.0/de
+---
+
 % This LaTeX-File is licensed under the Creative Commons Attribution-ShareAlike
 % 3.0 Germany License (http://creativecommons.org/licenses/by-sa/3.0/de/): Feel
 % free 'to share (to copy, distribute and transmit)' or 'to remix (to adapt)'

@@ -3,14 +3,71 @@
 Add A Post-Scan Plugin
 ======================
 
+Scan plugins in ``scancode-toolkit``
+------------------------------------
+
+A lot of scancode features are built-in plugins which are present with scancode-toolkit source code
+and are usually enabled via the different scancode-toolkit CLI options and are grouped by the types
+of plugins.
+
+Here are the major types of plugins:
+
+1. Pre-scan plugins (`scancode_pre_scan` in entry points)
+
+   These plugins are run before the main scanning steps and are usually
+   filtering of input files, or file classification steps, on whose results
+   the main scan plugins depend on. The base plugin class to be extended is ``PreScanPlugin`` at
+   `/src/plugincode/pre_scan.py <https://github.com/nexB/plugincode/blob/main/src/plugincode/pre_scan.py>`_.
+
+2. Scan plugins (`scancode_scan` in entry points)
+
+   The are the scancode plugins which does the file scanning for useful
+   information like license, copyrights, packages and others. These are
+   run on multiprocessing for speed as they are done on a per-file basis,
+   but there can also be post-processing steps on these which are run afterwards
+   and have access to all the per-file scan results. The base plugin class to be extended is
+   ``ScanPlugin`` at `/src/plugincode/scan.py <https://github.com/nexB/plugincode/blob/main/src/plugincode/scan.py>`_.
+
+3. Post-scan plugins (`scancode_post_scan` in entry points)
+
+   These are mainly data processing, summerizing and reporting plugins which
+   depend on all the results for the scan plugins. These add new codebase level
+   or file-level attributes, and even removes/modifies data as required
+   for consolidation or summarization. The base plugin class to be extended is ``PostScanPlugin``
+   at `/src/plugincode/post_scan.py <https://github.com/nexB/plugincode/blob/main/src/plugincode/post_scan.py>`_.
+
+4. Output plugins (`scancode_output` in entry points)
+
+   Supported output options in scancode-toolkit are all plugins and
+   these can also be multiple output options selected. These convert, process
+   and writes the data in the specific file format as the output of the scanning
+   procedures. The base plugin class to be extended is ``OutputPlugin`` at
+   `/src/plugincode/output.py <https://github.com/nexB/plugincode/blob/main/src/plugincode/output.py>`_.
+
+5. Output Filter Plugins (`scancode_output_filter` in entry points)
+
+   There are also output filter plugins which apply filters to the outputs
+   and is modified. These filters can be based on whether resources had any
+   detections, ignorables present in licenses and others.
+   The base plugin class to be extended is ``OutputFilterPlugin`` at
+   `/src/plugincode/output_filter.py <https://github.com/nexB/plugincode/blob/main/src/plugincode/output_filter.py>`_.
+
+6. Location Provider Plugins
+
+   These plugins provide pre-built binary libraries and utilities and their locations which
+   are packaged to be used in scancode-toolkit. The base plugin class to be extended is
+   ``LocationProviderPlugin`` at `/src/plugincode/location_provider.py <https://github.com/nexB/plugincode/blob/main/src/plugincode/location_provider.py>`_.
+
+
 Built-In vs. Optional Installation
 ----------------------------------
 
 Built-In
 ^^^^^^^^
 
-Some post-scan plugins are installed when ScanCode itself is installed, e.g., the
-:ref:`license_policy_plugin`, whose code is located here::
+Some post-scan plugins are installed when ScanCode itself is installed, and they are specified at
+``[options.entry_points]`` in the `setup.cfg <https://github.com/nexB/scancode-toolkit/blob/develop/setup.cfg>`_ file.
+For example, the :ref:`license_policy_plugin` is a built-in plugin, whose code is located here::
 
     https://github.com/nexB/scancode-toolkit/blob/develop/src/licensedcode/plugin_license_policy.py
 
@@ -23,7 +80,7 @@ Optional
 ScanCode is also designed to use post-scan plugins that must be installed separately from the
 installation of ScanCode. The code for this sort of plugin is located here::
 
-    https://github.com/nexB/scancode-toolkit/tree/develop/plugins/
+    https://github.com/nexB/scancode-plugins
 
 This wiki page will focus on optional post-scan plugins.
 
@@ -45,18 +102,17 @@ We'll start by creating three folders:
 1. Top-level folder -- ``/scancode-hello/``
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-- In the ``/scancode-toolkit/plugins/`` directory, add a folder with a relevant name, e.g.,
-  ``scancode-hello``. This folder will hold all of your plugin code.
+- In the ``scancode-plugins`` repository, in the ``misc`` directory, add a folder with
+  a relevant name, e.g., ``scancode-hello``. This folder will hold all of your plugin code.
 
 - Inside the ``/scancode-hello/`` folder you'll need to add a folder named ``src`` and 7 files.
-
-1. ``/src/`` -- This folder will contain your primary Python code and is discussed in more detail
-   in the following section.
+  ``/src/`` -- This folder will contain your primary Python code and is discussed in more detail
+  in the following section.
 
 The 7 Files are:
 
 1. ``.gitignore`` -- See, e.g.,
-   `/plugins/scancode-ignore-binaries/.gitignore <https://github.com/nexB/scancode-toolkit/blob/develop/plugins/scancode-ignore-binaries/.gitignore>`_
+   `/scancode-ignore-binaries/.gitignore <https://github.com/nexB/scancode-plugins/blob/main/misc/scancode-ignore-binaries/.gitignore>`_
 
 ::
 
@@ -64,7 +120,7 @@ The 7 Files are:
     /dist/
 
 2. ``apache-2.0.LICENSE`` -- See, e.g.,
-   `/plugins/scancode-ignore-binaries/apache-2.0.LICENSE <https://github.com/nexB/scancode-toolkit/blob/develop/plugins/scancode-ignore-binaries/apache-2.0.LICENSE>`_
+   `/scancode-ignore-binaries/apache-2.0.LICENSE <https://github.com/nexB/scancode-plugins/blob/main/misc/scancode-ignore-binaries/apache-2.0.LICENSE>`_
 
 3. ``MANIFEST.in``
 
@@ -83,7 +139,7 @@ The 7 Files are:
     global-exclude *.py[co] __pycache__ *.*~
 
 4. ``NOTICE`` -- See, e.g.,
-   `/plugins/scancode-ignore-binaries/NOTICE <https://github.com/nexB/scancode-toolkit/blob/develop/plugins/scancode-ignore-binaries/NOTICE>`__
+   `/scancode-ignore-binaries/NOTICE <https://github.com/nexB/scancode-plugins/blob/main/misc/scancode-ignore-binaries/NOTICE>`__
 
 5. ``README.md``
 
@@ -129,7 +185,7 @@ The 7 Files are:
         long_description=desc,
         author='nexB',
         author_email='info@aboutcode.org',
-        url='https://github.com/nexB/scancode-toolkit/plugins/scancode-categories',
+        url='https://github.com/nexB/scancode-plugins/blob/main/misc/scancode-hello/',
         packages=find_packages('src'),
         package_dir={'': 'src'},
         py_modules=[splitext(basename(path))[0] for path in glob('src/*.py')],
@@ -201,11 +257,11 @@ Create a ``PostScanPlugin`` class
 """""""""""""""""""""""""""""""""
 
 The ``PostScanPlugin`` class
-`PostScanPlugin code <https://github.com/nexB/scancode-toolkit/blob/develop/src/plugincode/post_scan.py>`_)
+`PostScanPlugin code <https://github.com/nexB/plugincode/blob/main/src/plugincode/post_scan.py>`_)
 inherits from the ``CodebasePlugin`` class (see
-`CodebasePlugin code <https://github.com/nexB/scancode-toolkit/blob/794d7acf78480823084def703b5d61ade12efdf2/src/plugincode/__init__.py#L139-L150>`_),
+`CodebasePlugin code <https://github.com/nexB/plugincode/blob/main/src/plugincode/__init__.py>`_),
 which inherits from the ``BasePlugin`` class (see
-`BasePlugin code <https://github.com/nexB/scancode-toolkit/blob/794d7acf78480823084def703b5d61ade12efdf2/src/plugincode/__init__.py#L38-L136>`_).
+`BasePlugin code <https://github.com/nexB/plugincode/blob/main/src/plugincode/__init__.py>`_).
 
 ::
 

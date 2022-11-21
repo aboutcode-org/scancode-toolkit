@@ -1,3 +1,16 @@
+---
+license_expression: apache-1.1
+is_license_text: yes
+notes: Apache 1.1, opensymphony variant
+ignorable_authors:
+    - the OpenSymphony Group (http://www.opensymphony.com/)
+ignorable_urls:
+    - http://www.apache.org/LICENSE.txt
+    - http://www.opensymphony.com/
+ignorable_emails:
+    - license@opensymphony.com
+---
+
 The OpenSymphony Software License, Version 1.1
 
 (this license is derived and fully compatible with the Apache Software License -

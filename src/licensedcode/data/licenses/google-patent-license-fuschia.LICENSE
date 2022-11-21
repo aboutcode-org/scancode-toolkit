@@ -1,3 +1,15 @@
+---
+key: google-patent-license-fuschia
+short_name: Google Patent License for Fuschia
+name: Google Patent License for Fuschia
+category: Patent License
+owner: Google
+homepage_url: https://github.com/flutter/flutter/blob/master/PATENTS
+faq_url: https://en.wikipedia.org/wiki/Google_Fuchsia
+is_deprecated: yes
+notes: there was a typo in the license name and key and this is now replaced by google-patent-license-fuchsia
+---
+
 Additional IP Rights Grant (Patents)
 "This implementation" means the copyrightable works distributed by
 Google as part of the Fuchsia project.

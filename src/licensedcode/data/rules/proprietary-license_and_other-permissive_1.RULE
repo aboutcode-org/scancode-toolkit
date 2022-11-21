@@ -1,3 +1,16 @@
+---
+license_expression: proprietary-license AND other-permissive
+is_license_text: yes
+relevance: 100
+notes: Older w3c IPR text
+ignorable_copyrights:
+    - Copyright (c) 1994-2002 W3C
+ignorable_holders:
+    - W3C
+ignorable_emails:
+    - site-policy@w3.org
+---
+
 W3C (R) Intellectual Rights Notice and Legal Disclaimers
 
 This page includes notices and disclaimers related to:

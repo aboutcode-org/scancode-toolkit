@@ -1,3 +1,18 @@
+---
+license_expression: fftpack-2004
+is_license_text: yes
+relevance: 100
+ignorable_copyrights:
+    - Copyright (c) 2004 the University Corporation for Atmospheric Research 'UCAR
+ignorable_holders:
+    - the University Corporation for Atmospheric Research 'UCAR
+ignorable_authors:
+    - NCAR's Computational and Information Systems Laboratory, UCAR, www.cisl.ucar.edu
+ignorable_urls:
+    - http://www.cisl.ucar.edu/
+    - http://www.cisl.ucar.edu/css/software/fftpack5/ftpk.html
+---
+
 As confirmed by the NCAR fftpack software curators, the following
 FFTPACKv5 license applies to FFTPACKv4 sources. My changes are
 released under the same terms.

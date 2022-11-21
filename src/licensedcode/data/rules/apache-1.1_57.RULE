@@ -1,3 +1,13 @@
+---
+license_expression: apache-1.1
+is_license_text: yes
+relevance: 99
+ignorable_authors:
+    - Daisuke Okajima and Kohsuke Kawaguchi (http://relaxngcc.sf.net/)
+ignorable_urls:
+    - http://relaxngcc.sf.net/
+---
+
 Redistribution and use in source and binary forms, with or without
 modification, are permitted provided that the following conditions are met:
 

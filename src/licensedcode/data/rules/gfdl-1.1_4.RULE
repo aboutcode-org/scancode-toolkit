@@ -1,3 +1,9 @@
+---
+license_expression: gfdl-1.1
+is_license_notice: yes
+minimum_coverage: 60
+---
+
 This document is distributed under the terms of the GNU Free
 Documentation License, version 1.1.  That license is described in the
 sources for this manual page, but it is not displayed here in order to

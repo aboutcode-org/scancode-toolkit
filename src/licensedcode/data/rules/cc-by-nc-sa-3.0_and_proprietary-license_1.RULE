@@ -1,3 +1,10 @@
+---
+license_expression: cc-by-nc-sa-3.0 AND proprietary-license
+is_license_notice: yes
+ignorable_urls:
+    - http://creativecommons.org/licenses/by-nc
+---
+
 //  This software has been licensed to Inc. for
 //  use in educational, training, and for promotional and 
 //  demonstration purposes. All rights are otherwise retained

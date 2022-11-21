@@ -394,29 +394,31 @@ class TestNpm(PackageTester):
 test_data = [
     (['MIT'], 'mit'),
     (['(MIT OR Apache-2.0)'], 'mit OR apache-2.0'),
-    (['MIT', 'Apache2'], 'mit AND unknown'),
+    (['MIT', 'Apache2'], 'mit AND apache-2.0'),
     ([{'type': 'MIT', 'url': 'https://github.com/jonschlinkert/repeat-element/blob/master/LICENSE'}], 'mit'),
     ([{'type': 'Freeware', 'url': 'https://github.com/foor/bar'}], 'unknown-license-reference'),
-    ([{'type': 'patent grant', 'url': 'Freeware'}], 'unknown'),
+    ([{'type': 'patent grant', 'url': 'Freeware'}], 'unknown AND unknown-license-reference'),
 
     ([{'type': 'GPLv2', 'url': 'https://example.com/licenses/GPLv2'},
       {'type': 'MIT', 'url': 'https://example.com/licenses/MIT'}, ],
-     '(gpl-2.0 AND (gpl-2.0 AND unknown)) AND (mit AND (mit AND unknown))'),
+     'gpl-2.0 AND mit'),
 
     ([{'type': 'GPLv2', 'url': 'http://www.gnu.org/licenses/gpl-2.0.html'},
       {'type': 'MIT', 'url': 'https://example.com/licenses/MIT'}, ],
-     'gpl-2.0 AND (mit AND (mit AND unknown))'),
+     'gpl-2.0 AND mit'),
 
     # FIXME: we should follow the LICENSE file
     (['SEE LICENSE IN LICENSE'], 'unknown-license-reference'),
-    (['For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-oss-license.'], 'unknown-license-reference AND unknown'),
-    (['See License in ./LICENSE file'], 'unknown-license-reference AND unknown'),
+    (['For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-oss-license.'], 'unknown-license-reference'),
+    (['See License in ./LICENSE file'], 'unknown-license-reference'),
 ]
 
 
 @pytest.mark.parametrize('declared_license,expected_expression', test_data)
-def test_compute_normalized_license_from_declared(declared_license, expected_expression):
-    result = npm.compute_normalized_license(declared_license)
+def test_get_license_detections_from_declared(declared_license, expected_expression):
+    from packagedcode.licensing import get_license_detections_and_expression
+
+    _detections, result = get_license_detections_and_expression(declared_license)
     assert result == expected_expression
 
 

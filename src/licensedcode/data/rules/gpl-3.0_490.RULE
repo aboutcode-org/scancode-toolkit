@@ -1,1 +1,10 @@
+---
+license_expression: gpl-3.0
+is_license_notice: yes
+relevance: 100
+notes: Seen in Signal library
+ignorable_urls:
+    - http://www.gnu.org/licenses/gpl-3.0.html
+---
+
 Licensed under the GPLv3: http://www.gnu.org/licenses/gpl-3.0.html

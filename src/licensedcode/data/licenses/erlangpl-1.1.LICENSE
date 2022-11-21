@@ -1,3 +1,21 @@
+---
+key: erlangpl-1.1
+short_name: Erlang Public License 1.1
+name: Erlang Public License v1.1
+category: Copyleft
+owner: Erlang
+homepage_url: http://www.erlang.org/EPLICENSE
+spdx_license_key: ErlPL-1.1
+text_urls:
+    - http://www.erlang.org/EPLICENSE
+ignorable_copyrights:
+    - Copyright 1999, Ericsson Utvecklings AB.
+ignorable_holders:
+    - Ericsson Utvecklings AB.
+ignorable_urls:
+    - http://www.erlang.org/
+---
+
 ERLANG PUBLIC LICENSE
 Version 1.1
 

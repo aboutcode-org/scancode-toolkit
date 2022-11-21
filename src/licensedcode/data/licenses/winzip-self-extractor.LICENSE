@@ -1,3 +1,13 @@
+---
+key: winzip-self-extractor
+short_name: WinZip Self-Extractor License
+name: WinZip Self-Extractor License
+category: Commercial
+owner: WinZip Computing LLC.
+homepage_url: http://kb.winzip.com/kb/entry/31/
+spdx_license_key: LicenseRef-scancode-winzip-self-extractor
+---
+
 License requirements to distribute self-extracting Zip files
 
 If you are using a registered copy of WinZip Self-Extractor, you do not need any

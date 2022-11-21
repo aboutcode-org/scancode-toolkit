@@ -1,3 +1,18 @@
+---
+license_expression: dom4j
+is_license_text: yes
+minimum_coverage: 10
+notes: license text as published by SPDX
+ignorable_copyrights:
+    - Copyright 2002 (c) The Codehaus
+ignorable_holders:
+    - The Codehaus
+ignorable_urls:
+    - http://classworlds.codehaus.org/
+ignorable_emails:
+    - bob@codehaus.org
+---
+
 $Id: LICENSE.txt 3117 2006-04-07 15:49:12Z jvanzyl $
 Copyright 2002 (C) The Codehaus. All Rights Reserved.
 

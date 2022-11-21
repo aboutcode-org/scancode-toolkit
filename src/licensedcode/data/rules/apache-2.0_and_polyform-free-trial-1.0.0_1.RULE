@@ -1,3 +1,9 @@
+---
+license_expression: apache-2.0 AND polyform-free-trial-1.0.0
+is_license_notice: yes
+relevance: 100
+---
+
 License
 
 Source code in this repository is variously licensed under the Apache License 2.0 and the Polyform Free Trial License 1.0.0. A copy of each license can be found in the licenses directory.

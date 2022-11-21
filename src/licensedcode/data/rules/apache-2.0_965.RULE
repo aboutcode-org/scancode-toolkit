@@ -1,1 +1,8 @@
+---
+license_expression: apache-2.0
+is_license_notice: yes
+relevance: 100
+notes: opencv switched from BSD to Apache
+---
+
 <cc:license rdf:resource="OpenCV License" />

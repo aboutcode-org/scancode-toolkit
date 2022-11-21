@@ -753,6 +753,103 @@ class LicenseMatch(object):
             _usecache=_usecache
         )).rstrip()
 
+    def get_mapping(
+        self,
+        license_url_template,
+        spdx_license_url,
+        include_text=False,
+        license_text_diagnostics=False,
+        whole_lines=True,
+    ):
+        """
+        Return a "result" scan data built from a LicenseMatch object.
+        """
+        from licensedcode import cache
+        licenses = cache.get_licenses_db()
+
+        matched_text = None
+        if include_text:
+            if license_text_diagnostics:
+                matched_text = self.matched_text(whole_lines=False, highlight=True)
+            else:
+                if whole_lines:
+                    matched_text = self.matched_text(whole_lines=True, highlight=False)
+                else:
+                    matched_text = self.matched_text(whole_lines=False, highlight=False)
+
+        SCANCODE_DATA_BASE_URL = 'https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data'
+        SCANCODE_LICENSE_URL = SCANCODE_DATA_BASE_URL + '/licenses/{}.LICENSE'
+        SCANCODE_LICENSE_RULE_URL = SCANCODE_DATA_BASE_URL + '/licenses/{}'
+        SCANCODE_RULE_URL = SCANCODE_DATA_BASE_URL + '/rules/{}'
+
+        result = {}
+
+        # Detection Level Information
+        result['score'] = self.score()
+        result['start_line'] = self.start_line
+        result['end_line'] = self.end_line
+        result['matched_length'] = self.len()
+        result['match_coverage'] = self.coverage()
+        result['matcher'] = self.matcher
+
+        # LicenseDB Level Information (Rule that was matched)
+        result['license_expression'] = self.rule.license_expression
+        result['rule_identifier'] = self.rule.identifier
+        if self.matcher == "1-spdx-id":
+            result['rule_url'] = None
+        elif self.rule.is_from_license:
+            result['rule_url'] = SCANCODE_LICENSE_RULE_URL.format(self.rule.identifier)
+        else:
+            result['rule_url'] = SCANCODE_RULE_URL.format(self.rule.identifier)
+
+        result['referenced_filenames'] = self.rule.referenced_filenames
+        result['is_license_text'] = self.rule.is_license_text
+        result['is_license_notice'] = self.rule.is_license_notice
+        result['is_license_reference'] = self.rule.is_license_reference
+        result['is_license_tag'] = self.rule.is_license_tag
+        result['is_license_intro'] = self.rule.is_license_intro
+        result['rule_length'] = self.rule.length
+        result['rule_relevance'] = self.rule.relevance
+        if include_text:
+            result['matched_text'] = matched_text
+
+        # License Level Information (Individual licenses that this rule refers to)
+        result['licenses'] = detected_licenses = []
+        for license_key in self.rule.license_keys():
+            detected_license = {}
+            detected_licenses.append(detected_license)
+
+            lic = licenses.get(license_key)
+
+            detected_license['key'] = lic.key
+            detected_license['name'] = lic.name
+            detected_license['short_name'] = lic.short_name
+            detected_license['category'] = lic.category
+            detected_license['is_exception'] = lic.is_exception
+            detected_license['is_unknown'] = lic.is_unknown
+            detected_license['owner'] = lic.owner
+            detected_license['homepage_url'] = lic.homepage_url
+            detected_license['text_url'] = lic.text_urls[0] if lic.text_urls else ''
+            detected_license['reference_url'] = license_url_template.format(lic.key)
+            detected_license['scancode_url'] = SCANCODE_LICENSE_URL.format(lic.key)
+
+            spdx_key = lic.spdx_license_key
+            detected_license['spdx_license_key'] = spdx_key
+
+            if spdx_key:
+                is_license_ref = spdx_key.lower().startswith('licenseref-')
+                if is_license_ref:
+                    spdx_url = SCANCODE_LICENSE_URL.format(lic.key)
+                else:
+                    # TODO: Is this replacing spdx_key???
+                    spdx_key = lic.spdx_license_key.rstrip('+')
+                    spdx_url = spdx_license_url.format(spdx_key)
+            else:
+                spdx_url = None
+            detected_license['spdx_url'] = spdx_url
+
+        return result
+
     def get_highlighted_text(self, trace=TRACE_HIGHLIGHTED_TEXT):
         """
         Return HTML representing the full text of the original scanned file
@@ -1793,12 +1890,16 @@ def filter_invalid_matches_to_single_word_gibberish(
                     'rule_text:', repr(rule_text)
                 )
 
-            if rule.relevance >= 75:
+            if rule.relevance >= 80:
                 max_diff = 1
             else:
                 max_diff = 0
 
-            if is_invalid_short_match(matched_text, rule_text, max_diff=max_diff):
+            if not is_valid_short_match(
+                matched_text=matched_text,
+                rule_text=rule_text,
+                max_diff=max_diff,
+            ):
                 if trace:
                     logger_debug('    ==> DISCARDING INVALID GIBBERISH:', match)
                 discarded_append(match)
@@ -1881,106 +1982,148 @@ def filter_short_matches_scattered_on_too_many_lines(
     return kept, discarded
 
 
-def is_invalid_short_match(
+def is_valid_short_match(
     matched_text,
     rule_text,
     max_diff=0,
     trace=TRACE_FILTER_SINGLE_WORD_GIBBERISH,
 ):
     """
-    Return True if the ``matched_text`` given a ``rule_text`` is invalid.
-    ``max_diff`` is the maximum length difference between these two texts
-    considered as OK.
+    Return True if the match with ``matched_text`` is a valid short match given
+    a ``rule_text``.
+    ``max_diff`` is the maximum number of character differences between these
+    two texts that is considered as acceptable.
 
     For example:
-    >>> is_invalid_short_match("gpl", "GPL")
-    False
-    >>> is_invalid_short_match("Gpl", "GPL")
-    False
-    >>> is_invalid_short_match("gPl", "GPL")
+    >>> is_valid_short_match("gpl", "GPL")
     True
-    >>> is_invalid_short_match("GPL[", "GPL")
+    >>> is_valid_short_match("Gpl", "GPL")
     True
-    >>> is_invalid_short_match("~gpl", "GPL")
-    True
-    >>> is_invalid_short_match("GPL", "gpl")
+    >>> is_valid_short_match("gPl", "GPL")
     False
-    >>> is_invalid_short_match("Gpl+", "gpl+")
+    >>> is_valid_short_match("GPL[", "GPL")
     False
-    >>> is_invalid_short_match("~gpl", "GPL", max_diff=0)
-    True
-    >>> is_invalid_short_match("~gpl", "GPL", max_diff=1)
+    >>> is_valid_short_match("~gpl", "GPL")
     False
-    >>> is_invalid_short_match("ALv2@", "ALv2", max_diff=1)
+    >>> is_valid_short_match("GPL", "gpl")
+    True
+    >>> is_valid_short_match("Gpl+", "gpl+")
+    True
+    >>> is_valid_short_match("~gpl", "GPL", max_diff=0)
     False
-    >>> is_invalid_short_match("aLv2@", "ALv2", max_diff=1)
+    >>> is_valid_short_match("~gpl", "GPL", max_diff=1)
     True
-    >>> is_invalid_short_match("alv2@", "ALv2", max_diff=1)
+    >>> is_valid_short_match("ALv2@", "ALv2", max_diff=1)
+    True
+    >>> is_valid_short_match("aLv2@", "ALv2", max_diff=1)
     False
-    >>> is_invalid_short_match("gpl) &", "GPL")
+    >>> is_valid_short_match("alv2@", "ALv2", max_diff=1)
     True
-    >>> is_invalid_short_match("GPLv2(", "GPLv2")
+    >>> is_valid_short_match("GPLv2@", "GPLv2")
     True
+    >>> is_valid_short_match("LGPL2@", "LGPL2")
+    True
+    >>> is_valid_short_match("gpl) &", "GPL")
+    False
+    >>> is_valid_short_match("GPLv2(", "GPLv2")
+    True
+    >>> is_valid_short_match("GPLv2", "GPLv2")
+    True
+    >>> is_valid_short_match("GPLV2+", "GPLv2+")
+    True
+    >>> is_valid_short_match("gplv2+", "GPLv2+")
+    True
+    >>> is_valid_short_match("LGPLV2+", "LGPLv2+")
+    True
+    >>> is_valid_short_match("LgplV2+", "LGPLv2+")
+    True
+    >>> is_valid_short_match("Cc0(", "CC0")
+    False
+    >>> is_valid_short_match("CC0", "CC0")
+    True
+    >>> is_valid_short_match("Cc0", "CC0")
+    True
+    >>> is_valid_short_match("COPYINGv3", "COPYINGV3")
+    True
+    >>> is_valid_short_match("MpL2", "MPL2")
+    False
+    >>> is_valid_short_match('WJa2!n"n#n$n;F#Cc0(n', "CC0")
+    False
+
     """
     if trace:
         logger_debug(
-            '==> is_invalid_short_match:',
+            '==> is_valid_short_match:',
             'matched_text:', repr(matched_text),
             'rule_text:', repr(rule_text),
             'max_diff:', max_diff,
         )
 
     if matched_text == rule_text:
-        return False
+        return True
+
+    # For long enough rules (length in characters), we consider all matches to
+    # be correct
+    len_rule_text = len(rule_text)
+    if len_rule_text >= 5:
+        return True
 
     # Length differences help decide that this is invalid as the extra chars
     # will be punctuation by construction
-    diff = len(matched_text) - len(rule_text)
+    diff = len(matched_text) - len_rule_text
 
     if diff and diff != max_diff:
         if trace:
             logger_debug(
-                '    ==> is_invalid_short_match:', 'diff:', diff,
+                '    ==> is_valid_short_match:', 'diff:', diff,
                 'max_diff:', max_diff)
 
-        return True
+        return False
 
     if rule_text.endswith('+'):
         matched_text = matched_text.rstrip('+')
         rule_text = rule_text.rstrip('+')
 
     # Same length, do we have mixed case? or title case?
-    # same case and title case are OK, mixed case not OK.
+    # All of same case and title case are OK, mixed case not OK.
     is_title_case = matched_text.istitle()
 
     if is_title_case:
         if trace:
             logger_debug(
-                '    ==> is_invalid_short_match:',
+                '    ==> is_valid_short_match:',
                 'is_title_case:', 'matched_text:', matched_text)
 
-        return False
+        return True
 
-    contains_rule = rule_text in matched_text
-
-    is_same_case = (
+    is_same_case_for_all_chars = (
         matched_text.lower() == matched_text
         or matched_text.upper() == matched_text
     )
 
-    if is_same_case or contains_rule:
+    if is_same_case_for_all_chars:
         if trace:
             logger_debug(
-                '    ==> is_invalid_short_match:',
-                'not is_same_case or contains_rule:',
+                '    ==> is_valid_short_match:',
+                'is_same_case_for_all_chars:',
                 'matched_text:', matched_text, 'rule_text:', rule_text)
 
-        return False
+        return True
+
+    matched_text_contains_full_rule_text = rule_text in matched_text
+    if matched_text_contains_full_rule_text:
+        if trace:
+            logger_debug(
+                '    ==> is_valid_short_match:',
+                'matched_text_contains_full_rule_text:',
+                'matched_text:', matched_text, 'rule_text:', rule_text)
+
+        return True
 
     if trace:
-        logger_debug('    ==> is_invalid_short_match:', 'INVALID', matched_text)
+        logger_debug('    ==> is_valid_short_match:', 'INVALID', matched_text)
 
-    return True
+    return False
 
 
 def filter_false_positive_matches(
@@ -2023,12 +2166,14 @@ def filter_matches_missing_key_phrases(
     rule.
     A key phrase must be matched exactly without gaps or unknown words.
 
-    A rule with "is_continuous" set to True is the same as if it's whole text
+    A rule with "is_continuous" set to True is the same as if its whole text
     was defined as a keyphrase and is processed here too.
     """
-    # never discard a solo match
+    # never discard a solo match, unless matched to "is_continuous" rule
     if len(matches) == 1:
-        return matches, []
+        rule = matches[0]
+        if not rule.is_continuous:
+            return matches, []
 
     kept = []
     kept_append = kept.append
@@ -2512,7 +2657,7 @@ def is_candidate_false_positive(
     """
     is_candidate = (
         # only tags or refs,
-        (match.rule.is_license_reference or match.rule.is_license_tag)
+        (match.rule.is_license_reference or match.rule.is_license_tag or match.rule.is_license_intro)
         # but not tags that are SPDX license identifiers
         and not match.matcher == '1-spdx-id'
         # exact matches only

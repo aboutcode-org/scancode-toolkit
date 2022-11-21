@@ -1,3 +1,14 @@
+---
+license_expression: (mit OR apache-2.0) AND other-permissive
+is_license_notice: yes
+relevance: 99
+minimum_coverage: 90
+ignorable_urls:
+    - http://opensource.org/licenses/MIT
+    - https://thanks.rust-lang.org/
+    - https://www.apache.org/licenses/LICENSE-2.0
+---
+
 Copyrights in the Rust project are retained by their contributors. No
 copyright assignment is required to contribute to the Rust project.
 

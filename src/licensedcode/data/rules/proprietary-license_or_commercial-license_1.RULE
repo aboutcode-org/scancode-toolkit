@@ -1,3 +1,12 @@
+---
+license_expression: proprietary-license OR commercial-license
+is_license_notice: yes
+relevance: 100
+ignorable_urls:
+    - http://dryicons.com/
+    - http://dryicons.com/terms/#free-license
+---
+
 Licensing
 
 The usage of DryIcons' work (icons, icon sets and graphics) is limited to the terms of the "Free License" and "Commercial License" use.

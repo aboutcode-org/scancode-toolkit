@@ -1,3 +1,9 @@
+---
+license_expression: gpl-3.0 OR apache-2.0
+is_license_notice: yes
+notes: found in https://github.com/nexB/scancode-toolkit/issues/508 cloudinit
+---
+
 Alternatively, this program may be used under the terms of the Apache License,
 Version 2.0, in which case the provisions of that license are applicable
 instead of those above.  If you wish to allow use of your version of this

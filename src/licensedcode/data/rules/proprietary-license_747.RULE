@@ -1,0 +1,9 @@
+---
+license_expression: proprietary-license
+is_license_notice: yes
+---
+
+is licensed under MIT, with a special restriction: 
+you may not sell itself as a SaaS service. Meaning, you can and should run your
+own commercial/paid services behind but you can't sell  itself as a service to
+become the next etc. For details, see the LICENSE file.

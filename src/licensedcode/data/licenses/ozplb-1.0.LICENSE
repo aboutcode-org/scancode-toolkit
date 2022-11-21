@@ -1,3 +1,25 @@
+---
+key: ozplb-1.0
+short_name: OZPLB 1.0
+name: Australian Public Licence B Version 1.0
+category: Permissive
+owner: ERTOS
+homepage_url: http://www.ok-labs.com/licenses#ozplb
+spdx_license_key: LicenseRef-scancode-ozplb-1.0
+text_urls:
+    - http://www.ok-labs.com/licenses#ozplb
+other_urls:
+    - http://www.ertos.nicta.com.au
+ignorable_copyrights:
+    - Copyright (c) 2006, National ICT Australia, Ltd
+ignorable_holders:
+    - National ICT Australia, Ltd
+ignorable_authors:
+    - Embedded, Real-time and Operating Systems Program (ERTOS) National ICT Australia http://www.ertos.nicta.com.au
+ignorable_urls:
+    - http://www.ertos.nicta.com.au/
+---
+
 Australian Public Licence B Version 1-0
     OZPLB Licence
 

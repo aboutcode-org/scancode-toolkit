@@ -1,3 +1,15 @@
+---
+key: wthpl-1.0
+short_name: WTHPL 1.0
+name: DO WHAT THE HELL YOU WANT TO PUBLIC LICENSE 1.0
+category: Public Domain
+owner: Fabrício Matté
+homepage_url: https://github.com/UltCombo/WTHPL
+notes: a fork of the WTFPL
+spdx_license_key: LicenseRef-scancode-wthpl-1.0
+minimum_coverage: 50
+---
+
             DO WHAT THE HELL YOU WANT TO PUBLIC LICENSE
                     Version 1.0.0, October 2014
 

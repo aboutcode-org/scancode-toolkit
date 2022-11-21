@@ -1,8 +1,0 @@
-key: commercial-license
-short_name: Commercial License
-name: Commercial License
-category: Commercial
-owner: Unspecified
-is_generic: yes
-notes: this is a generic commercial license
-spdx_license_key: LicenseRef-scancode-commercial-license

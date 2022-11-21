@@ -1,8 +1,0 @@
-license_expression: artistic-1.0
-is_license_text: yes
-relevance: 95
-notes: this is a rare variant of the artistic 1.0 with extra woring in Clause 7 "7. C subroutines
-    supplied by you and linked into this Package in order to emulate subroutines and variables
-    of the language defined by this Package shall not be considered part of this Package, but
-    are the equivalent of input as in Paragraph 6, provided these subroutines do not change
-    the language in any way that would cause it to fail the regression tests for the language."

@@ -1,3 +1,16 @@
+---
+key: ms-iis-container-images-eula-2020
+short_name: MS IIS Container Images EULA 2020
+name: Microsoft IIS Container Images EULA 202
+category: Proprietary Free
+owner: Microsoft
+homepage_url: https://hub.docker.com/_/microsoft-windows-servercore-iis
+spdx_license_key: LicenseRef-scancode-ms-iis-container-eula-2020
+other_spdx_license_keys:
+    - LicenseRef-scancode-ms-iis-container-images-eula-2020
+faq_url: https://github.com/microsoft/containerregistry/blob/master/legal/Container-Images-Legal-Notice.md
+---
+
 MICROSOFT SOFTWARE SUPPLEMENTAL LICENSE TERMS
 CONTAINER OS IMAGE
 

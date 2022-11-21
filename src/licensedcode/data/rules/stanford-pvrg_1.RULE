@@ -1,3 +1,10 @@
+---
+license_expression: stanford-pvrg
+is_license_reference: yes
+ignorable_authors:
+    - Stanford University
+---
+
 * PUBLIC DOMAIN LICENSE: Stanford University Portable Video Research
  * Group. If you use this software, you agree to the following: This
  * program package is purely experimental, and is licensed "as is".

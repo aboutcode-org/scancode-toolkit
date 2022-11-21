@@ -1,3 +1,14 @@
+---
+license_expression: gpl-3.0-plus WITH gcc-exception-3.1
+is_license_notice: yes
+minimum_coverage: 90
+referenced_filenames:
+    - COPYING3
+    - COPYING.RUNTIME
+ignorable_urls:
+    - http://www.gnu.org/licenses/
+---
+
 
 Under Section 7 of GPL version 3, you are granted additional
 permissions described in the GCC Runtime Library Exception, version
@@ -7,4 +18,3 @@ You should have received a copy of the GNU General Public License and
 a copy of the GCC Runtime Library Exception along with this program;
 see the files COPYING3 and COPYING.RUNTIME respectively.  If not, see
 <http://www.gnu.org/licenses/>.
-

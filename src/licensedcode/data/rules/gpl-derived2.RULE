@@ -1,1 +1,10 @@
+---
+license_expression: gpl-2.0
+is_license_reference: yes
+relevance: 100
+minimum_coverage: 100
+referenced_filenames:
+    - linux/arch/arm/kernel/fiq.c
+---
+
 Derived from code originally in linux/arch/arm/kernel/fiq.c

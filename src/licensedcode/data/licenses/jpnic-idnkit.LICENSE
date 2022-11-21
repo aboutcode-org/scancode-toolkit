@@ -1,3 +1,22 @@
+---
+key: jpnic-idnkit
+short_name: JPNIC idnkit License
+name: JPNIC idnkit License
+category: Permissive
+owner: JPNIC
+homepage_url: https://www.nic.ad.jp/ja/idn/idnkit/download/
+spdx_license_key: JPNIC
+text_urls:
+    - https://dev.w3.org/libwww/modules/idn/LICENSE.txt
+other_urls:
+    - https://gitlab.isc.org/isc-projects/bind9/blob/master/COPYRIGHT#L366
+    - https://jprs.co.jp/idn/
+ignorable_copyrights:
+    - Copyright (c) 2000-2002 Japan Network Information Center
+ignorable_holders:
+    - Japan Network Information Center
+---
+
 By using this file, you agree to the terms and conditions set forth bellow.
 
                         LICENSE TERMS AND CONDITIONS 
@@ -36,4 +55,3 @@ Chiyoda-ku, Tokyo 101-0047, Japan.
    WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR
    OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
    ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.
-

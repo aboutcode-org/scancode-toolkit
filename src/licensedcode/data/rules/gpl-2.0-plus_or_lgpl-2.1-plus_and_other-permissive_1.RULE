@@ -1,3 +1,12 @@
+---
+license_expression: (gpl-2.0-plus OR lgpl-2.1-plus) AND other-permissive
+is_license_notice: yes
+relevance: 100
+referenced_filenames:
+    - LICENSE.GPL
+    - LICENSE.LGPL
+---
+
 Most source files are LGPLv2.1+ or GPLv2+, but some files are available under
 more liberal licenses, such as BSD, MIT, ISC, and possibly others. Look at the
 copyright header of each source file, and grep the sources for "Copyright" if

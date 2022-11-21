@@ -1,3 +1,10 @@
+---
+license_expression: bsd-new
+is_license_notice: yes
+ignorable_urls:
+    - http://trustee.ietf.org/license-info
+---
+
  Redistribution and use in source and binary forms, with or
  without modification, is permitted pursuant to, and subject
  to the license terms contained in, the Simplified BSD License

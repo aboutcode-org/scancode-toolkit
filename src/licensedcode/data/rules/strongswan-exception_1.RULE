@@ -1,3 +1,8 @@
+---
+license_expression: strongswan-exception
+is_license_text: yes
+---
+
 In addition, as a special exception, the copyright holders of strongSwan give
 you permission to combine strongSwan with free software programs or libraries
 that are released under the GNU LGPL and with code included in the standard

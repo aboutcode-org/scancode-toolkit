@@ -1,6 +1,0 @@
-license_expression: apache-2.0
-is_license_text: yes
-notes: uses https instead of http
-ignorable_urls:
-    - https://www.apache.org/licenses/
-    - https://www.apache.org/licenses/LICENSE-2.0

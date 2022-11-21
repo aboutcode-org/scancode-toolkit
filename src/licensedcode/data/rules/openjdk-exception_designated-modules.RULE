@@ -1,3 +1,8 @@
+---
+license_expression: openjdk-exception
+is_license_notice: yes
+---
+
 OpenJDK Designated Exception Modules
 
 8 May 2007
@@ -23,4 +28,3 @@ Exception Modules:
     openjdk.java.net, openjdk.dev.java.net, or download.java.net under
     an open source license other than GPL, and your derivatives thereof
     that are in compliance with the applicable open source license.
-

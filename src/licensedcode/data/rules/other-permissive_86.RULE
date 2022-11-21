@@ -1,3 +1,12 @@
+---
+license_expression: other-permissive
+is_license_text: yes
+relevance: 100
+notes: Per Fedora an MIT-like license aka. PetSC variant
+ignorable_emails:
+    - petsc-maint@mcs.anl.gov
+---
+
 This program discloses material protectable under copyright laws of the United States. Permission to copy and 
 modify this software and its documentation is hereby granted, provided that this notice is retained thereon 
 and on all copies or modifications. The University of Chicago makes no representations as to the suitability 

@@ -2620,6 +2620,9 @@ grammar = """
     # author (Panagiotis Tsirigotis)
     AUTHOR: {<AUTH>  <NNP><NNP>+} #author Foo Bar
 
+    # Author: Tim (xtimor@gmail.com)
+    AUTHOR: {<AUTH>  <NNP>+ <EMAIL>+} #Author Foo joe@email.com
+
 
 #######################################
 # Mixed AUTHOR and COPYRIGHT

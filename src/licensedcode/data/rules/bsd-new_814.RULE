@@ -1,3 +1,12 @@
+---
+license_expression: bsd-new
+is_license_notice: yes
+relevance: 99
+minimum_coverage: 95
+notes: See https://github.com/Addepar/ember-table/blob/70d09600c0032f19cad1f62c050cde2d993e8365/LICENSE.md
+    This is a kinda truncated BSD-new
+---
+
 1. Redistributions of source code must retain the above copyright notice, this
 list of conditions and the following disclaimer.
 

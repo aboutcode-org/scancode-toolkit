@@ -1,2 +1,9 @@
+---
+license_expression: gpl-3.0
+is_license_reference: yes
+ignorable_urls:
+    - http://www.gnu.org/licenses/gpl-3.0.html
+---
+
 General Public License (GPL) Version 3
 Details of these licenses can be found at: www.gnu.org/licenses/gpl-3.0.html

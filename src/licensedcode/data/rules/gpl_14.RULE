@@ -1,3 +1,9 @@
+---
+license_expression: gpl-1.0-plus
+is_license_notice: yes
+notes: gpl in wpa supplicant variant2
+---
+
 please note that these
 # libraries are licensed under GPL and as such, BSD license may not apply for
 # the resulting binary.

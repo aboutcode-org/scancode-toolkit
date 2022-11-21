@@ -1,3 +1,10 @@
+---
+license_expression: proprietary-license
+is_license_text: yes
+ignorable_urls:
+    - http://www.intel.com/design/literature.htm
+---
+
 By using this document, in addition to any agreements you have with Intel, you accept the terms set forth below.
 
 You may not use or facilitate the use of this document in connection with any infringement or other legal analysis concerning Intel products described herein. You agree to grant Intel a non-exclusive, royalty-free license to any patent claim thereafter drafted which includes subject matter disclosed herein.

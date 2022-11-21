@@ -1,3 +1,11 @@
+---
+license_expression: dco-1.1 AND cc-by-sa-4.0 AND mit
+is_license_notice: yes
+minimum_coverage: 90
+ignorable_urls:
+    - https://gitlab.com/gitlab-org/dco/blob/master/README.md
+---
+
 ## {{Developer Certificate of Origin + License}}
 
 By contributing to GitLab B.V., You accept and agree to the following terms and

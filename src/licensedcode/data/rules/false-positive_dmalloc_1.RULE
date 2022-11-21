@@ -1,3 +1,8 @@
+---
+is_false_positive: yes
+notes: Seen in config files for Busybox
+---
+
 This enables compiling with dmalloc ( http://dmalloc.com/ )
 which is an excellent public domain mem leak and malloc problem
 detector.

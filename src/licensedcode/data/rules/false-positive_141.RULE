@@ -1,1 +1,6 @@
+---
+is_false_positive: yes
+notes: not a license statement
+---
+
 License        *License     `json:"license,omitempty"`

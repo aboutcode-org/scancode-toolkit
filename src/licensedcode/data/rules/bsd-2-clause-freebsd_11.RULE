@@ -1,3 +1,9 @@
+---
+license_expression: bsd-2-clause-views
+is_license_text: yes
+minimum_coverage: 95
+---
+
 BSD 2-Clause License (a.k.a Simplified or FreeBSD License)
 
 Redistribution and use in source and binary forms, with or without

@@ -1,3 +1,11 @@
+---
+license_expression: generic-exception
+is_license_notice: yes
+relevance: 100
+minimum_coverage: 98
+notes: This is an exception found in Tahoe-LAFS with the TGPPL or the GPL
+---
+
 This work also comes with the added permission that you may combine it with a
 work licensed under the Python Software Foundation License (any version) and
 distribute the resulting combined work, as long as you follow the

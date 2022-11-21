@@ -1,3 +1,15 @@
+---
+license_expression: gpl-2.0 OR bsd-new
+is_license_notice: yes
+minimum_coverage: 85
+referenced_filenames:
+    - LICENSE.GPL
+ignorable_copyrights:
+    - Copyright (c) Corporation
+ignorable_holders:
+    - Corporation
+---
+
  * This file is provided under a dual BSD/GPLv2 license.  When using or
  * redistributing this file, you may do so under either license.
  *

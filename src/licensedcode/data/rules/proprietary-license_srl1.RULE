@@ -1,3 +1,12 @@
+---
+license_expression: proprietary-license
+is_license_text: yes
+ignorable_copyrights:
+    - Copyright (c) Steinwurf ApS and its licensors. 2011-2012
+ignorable_holders:
+    - Steinwurf ApS and its licensors
+---
+
 STEINWURF RESEARCH LICENSE
 ==========================
 
@@ -51,4 +60,3 @@ IV. GENERAL TERMS
 4. License and Copyright Notices
 
  The above copyright notice and License notice must be included in all copies or substantial portions of the Software.
-

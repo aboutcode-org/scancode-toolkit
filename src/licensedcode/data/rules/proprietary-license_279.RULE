@@ -1,3 +1,16 @@
+---
+license_expression: proprietary-license
+is_license_text: yes
+relevance: 100
+minimum_coverage: 40
+ignorable_urls:
+    - http://www.spikesource.com/privacy-policy
+    - http://www.spikesource.com/terms-of-service
+ignorable_emails:
+    - dmca@spikesource.com
+    - legal@spikesource.com
+---
+
 Terms of Service
 IN THESE TERMS AND CONDITIONS, "WE," "US," "ITS" AND "OUR" REFER TO SPIKESOURCE, INC. ("SpikeSource"), AND "YOU" AND "YOUR" REFER TO YOU. Before using SpikeSource.com and developer.spikesource.com, please read this agreement relating to your use of these Websites carefully.
 

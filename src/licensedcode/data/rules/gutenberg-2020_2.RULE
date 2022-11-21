@@ -1,3 +1,10 @@
+---
+license_expression: gutenberg-2020
+is_license_notice: yes
+ignorable_urls:
+    - http://www.gutenberg.org/
+---
+
 This code bundles book text files used for testing purposes which contain
 the following header:
 

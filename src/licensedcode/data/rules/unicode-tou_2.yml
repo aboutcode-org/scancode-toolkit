@@ -1,7 +1,0 @@
-license_expression: unicode-tou
-is_license_text: yes
-minimum_coverage: 60
-ignorable_copyrights:
-    - Copyright (c) Unicode, Inc.
-ignorable_holders:
-    - Unicode, Inc.
