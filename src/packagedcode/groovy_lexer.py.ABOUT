@@ -6,7 +6,8 @@ download_url: https://raw.githubusercontent.com/pygments/pygments/c81e97c3c28149
 homepage_url: http://pygments.org/
 license_expression: bsd-simplified
 name: groovy_lexer.py
-notice_file: bashlex.py.NOTICE
+notice_file: pygments.NOTICE
 package_url: pkg:generic/groovy_lexer.py
 primary_language: Python
-notes: this is a Groovy lexer derived from Pygments
+notes: this is a derived and heavily modified Pygments Groovy lexer
+ See pygments.AUTHORS
