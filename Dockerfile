@@ -37,11 +37,10 @@ WORKDIR /scancode-toolkit
 # Copy sources into docker container
 COPY . /scancode-toolkit
 
-# Initial configuration
-RUN ./configure
-
-# Run scancode-reindex-licenses to build the base license index
-RUN ./venv/bin/scancode-reindex-licenses
+# Initial configuration using ./configure, scancode-reindex-licenses to build
+# the base license index
+RUN ./configure \
+ && ./venv/bin/scancode-reindex-licenses
 
 # Add scancode to path
 ENV PATH=/scancode-toolkit:$PATH
