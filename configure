@@ -116,7 +116,7 @@ _canonicalize_file_path() {
 CFG_BIN="$( realpath "${BASH_SOURCE[0]}" )"
 CFG_ROOT_DIR="$( cd "$( dirname "${CFG_BIN}" )" && pwd )"
 
-CFG_BIN_DIR=$CFG_ROOT_DIR/$VIRTUALENV_DIR/bin
+CFG_BIN_DIR=$CFG_ROOT_DIR/$VIRTUALENV_DIR/local/bin
 
 # force relaunching under X86-64 architecture on macOS M1/ARM 
 if [[ $OSTYPE == 'darwin'* && $(uname -m) == 'arm64' && $(sysctl -in sysctl.proc_translated) == 0 ]]; then
@@ -172,7 +172,7 @@ VIRTUALENV_PYZ_URL=https://bootstrap.pypa.io/virtualenv.pyz
 ################################
 # Current directory where this script lives
 CFG_ROOT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-CFG_BIN_DIR=$CFG_ROOT_DIR/$VIRTUALENV_DIR/bin
+CFG_BIN_DIR=$CFG_ROOT_DIR/$VIRTUALENV_DIR/local/bin
 
 
 ################################
