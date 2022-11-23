@@ -116,7 +116,10 @@ _canonicalize_file_path() {
 CFG_BIN="$( realpath "${BASH_SOURCE[0]}" )"
 CFG_ROOT_DIR="$( cd "$( dirname "${CFG_BIN}" )" && pwd )"
 
-CFG_BIN_DIR=$CFG_ROOT_DIR/$VIRTUALENV_DIR/local/bin
+# On some environments, the bin directory may lie inside the local directory.
+# In those cases, CFG_BIN_DIR will be assigned $CFG_LOCAL_BIN_DIR.
+CFG_BIN_DIR=$CFG_ROOT_DIR/$VIRTUALENV_DIR/bin
+CFG_LOCAL_BIN_DIR=$CFG_ROOT_DIR/$VIRTUALENV_DIR/local/bin
 
 # force relaunching under X86-64 architecture on macOS M1/ARM 
 if [[ $OSTYPE == 'darwin'* && $(uname -m) == 'arm64' && $(sysctl -in sysctl.proc_translated) == 0 ]]; then
@@ -172,7 +175,8 @@ VIRTUALENV_PYZ_URL=https://bootstrap.pypa.io/virtualenv.pyz
 ################################
 # Current directory where this script lives
 CFG_ROOT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-CFG_BIN_DIR=$CFG_ROOT_DIR/$VIRTUALENV_DIR/local/bin
+CFG_BIN_DIR=$CFG_ROOT_DIR/$VIRTUALENV_DIR/bin
+CFG_LOCAL_BIN_DIR=$CFG_ROOT_DIR/$VIRTUALENV_DIR/local/bin
 
 
 ################################
@@ -218,7 +222,7 @@ create_virtualenv() {
     # included either by default. The virtualenv.pyz app cures all these issues.
 
     VENV_DIR="$1"
-    if [ ! -f "$CFG_BIN_DIR/python" ]; then
+    if [[ ! -f "$CFG_BIN_DIR/python" && ! -f "$CFG_LOCAL_BIN_DIR/python" ]]; then
 
         mkdir -p "$CFG_ROOT_DIR/$VENV_DIR"
 
@@ -236,6 +240,10 @@ create_virtualenv() {
             --no-vcs-ignore \
             $CFG_QUIET \
             "$CFG_ROOT_DIR/$VENV_DIR"
+    fi
+
+    if [[ ! -f "$CFG_BIN_DIR/python" && -f "$CFG_LOCAL_BIN_DIR/python" ]]; then
+        CFG_BIN_DIR=$CFG_LOCAL_BIN_DIR
     fi
 }
 
