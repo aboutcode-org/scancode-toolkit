@@ -7,6 +7,27 @@
 
 jobs:
 
+
+################################################################################
+# Tests building with docker
+################################################################################
+
+
+- job: test_build_and_scan_with_docker
+  steps:
+    - task: Docker@2
+      displayName: Check that building using Docker succeeds
+      inputs:
+        command: 'build'
+        Dockerfile: '**/Dockerfile'
+        tags: |
+          'scancode-toolkit'
+          'scancode-toolkit:$(Build.BuildId)'
+    - script: |
+        docker scan scancode-toolkit:$(Build.BuildId)
+      displayName: 'Scan image'
+
+
 ################################################################################
 # These jobs are using VMs and Azure-provided Pythons 3.8
 ################################################################################
