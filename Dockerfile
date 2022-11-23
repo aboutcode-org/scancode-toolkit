@@ -17,19 +17,19 @@ ENV PYTHONDONTWRITEBYTECODE 1
 # OS requirements as per
 # https://scancode-toolkit.readthedocs.io/en/latest/getting-started/install.html
 RUN apt-get update \
- && apt-get install -y --no-install-recommends \
-       bzip2 \
-       xz-utils \
-       zlib1g \
-       libxml2-dev \
-       libxslt1-dev \
-       libgomp1 \
-       libsqlite3-0 \
-       libgcrypt20 \
-       libpopt0 \
-       libzstd1 \
- && apt-get clean \
- && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+      && apt-get install -y --no-install-recommends \
+      bzip2 \
+      xz-utils \
+      zlib1g \
+      libxml2-dev \
+      libxslt1-dev \
+      libgomp1 \
+      libsqlite3-0 \
+      libgcrypt20 \
+      libpopt0 \
+      libzstd1 \
+      && apt-get clean \
+      && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 # Create directory for scancode sources
 WORKDIR /scancode-toolkit
@@ -37,9 +37,11 @@ WORKDIR /scancode-toolkit
 # Copy sources into docker container
 COPY . /scancode-toolkit
 
-# Run scancode-reindex-licenses once for initial configuration and to create
-# the base license index
-RUN ./scancode-reindex-licenses
+# Initial configuration
+RUN ./configure
+
+# Run scancode-reindex-licenses to build the base license index
+RUN ./venv/bin/scancode-reindex-licenses
 
 # Add scancode to path
 ENV PATH=/scancode-toolkit:$PATH
