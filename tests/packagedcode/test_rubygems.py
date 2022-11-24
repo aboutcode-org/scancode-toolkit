@@ -51,7 +51,7 @@ class TestGemspecHandler(PackageTesterBase):
     @pytest.mark.parametrize("test_path", gemspecs)
     def test_parse_gemspec(self, test_path, regen=REGEN_TEST_FIXTURES):
         test_file = self.get_test_loc(test_path)
-        expected_loc = f'{test_file}.expected.json'
+        expected_loc = f'{test_file}-expected.json'
         packages = rubygems.GemspecHandler.parse(test_file)
         self.check_packages_data(packages, expected_loc, must_exist=False, regen=regen)
 
