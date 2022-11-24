@@ -1,0 +1,125 @@
+[
+  {
+    "type": "gem",
+    "namespace": null,
+    "name": "trilogy",
+    "version": "Trilogy::VERSION",
+    "qualifiers": {},
+    "subpath": null,
+    "primary_language": "Ruby",
+    "description": "A friendly MySQL-compatible library for Ruby, binding to libtrilogy",
+    "release_date": null,
+    "parties": [
+      {
+        "type": "person",
+        "role": "author",
+        "name": "GitHub Engineering",
+        "email": null,
+        "url": null
+      },
+      {
+        "type": "person",
+        "role": "author",
+        "name": null,
+        "email": "opensource+trilogy@github.com",
+        "url": null
+      }
+    ],
+    "keywords": [],
+    "homepage_url": "https://github.com/github/trilogy",
+    "download_url": "https://rubygems.org/downloads/trilogy-Trilogy::VERSION.gem",
+    "size": null,
+    "sha1": null,
+    "md5": null,
+    "sha256": null,
+    "sha512": null,
+    "bug_tracking_url": null,
+    "code_view_url": null,
+    "vcs_url": null,
+    "copyright": null,
+    "declared_license_expression": "mit",
+    "declared_license_expression_spdx": "MIT",
+    "license_detections": [
+      {
+        "license_expression": "mit",
+        "detection_log": [
+          "not-combined"
+        ],
+        "matches": [
+          {
+            "score": 100.0,
+            "start_line": 1,
+            "end_line": 1,
+            "matched_length": 1,
+            "match_coverage": 100.0,
+            "matcher": "1-spdx-id",
+            "license_expression": "mit",
+            "rule_identifier": "spdx-license-identifier: mit",
+            "rule_url": null,
+            "referenced_filenames": [],
+            "is_license_text": false,
+            "is_license_notice": false,
+            "is_license_reference": false,
+            "is_license_tag": true,
+            "is_license_intro": false,
+            "rule_length": 1,
+            "rule_relevance": 100,
+            "matched_text": "MIT",
+            "licenses": [
+              {
+                "key": "mit",
+                "name": "MIT License",
+                "short_name": "MIT License",
+                "category": "Permissive",
+                "is_exception": false,
+                "is_unknown": false,
+                "owner": "MIT",
+                "homepage_url": "http://opensource.org/licenses/mit-license.php",
+                "text_url": "http://opensource.org/licenses/mit-license.php",
+                "reference_url": "https://scancode-licensedb.aboutcode.org/mit",
+                "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE",
+                "spdx_license_key": "MIT",
+                "spdx_url": "https://spdx.org/licenses/MIT"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "other_license_expression": null,
+    "other_license_expression_spdx": null,
+    "other_license_detections": [],
+    "extracted_license_statement": "MIT",
+    "notice_text": null,
+    "source_packages": [],
+    "file_references": [],
+    "extra_data": {},
+    "dependencies": [
+      {
+        "purl": "pkg:gem/rake-compiler",
+        "extracted_requirement": "~> 1.0",
+        "scope": "development",
+        "is_runtime": false,
+        "is_optional": true,
+        "is_resolved": false,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:gem/minitest",
+        "extracted_requirement": "~> 5.5",
+        "scope": "development",
+        "is_runtime": false,
+        "is_optional": true,
+        "is_resolved": false,
+        "resolved_package": {},
+        "extra_data": {}
+      }
+    ],
+    "repository_homepage_url": "https://rubygems.org/gems/trilogy/versions/Trilogy::VERSION",
+    "repository_download_url": "https://rubygems.org/downloads/trilogy-Trilogy::VERSION.gem",
+    "api_data_url": "https://rubygems.org/api/v2/rubygems/trilogy/versions/Trilogy::VERSION.json",
+    "datasource_id": "gemspec",
+    "purl": "pkg:gem/trilogy@Trilogy::VERSION"
+  }
+]

@@ -17,68 +17,27 @@ from packages_test_utils import PackageTester
 from scancode_config import REGEN_TEST_FIXTURES
 from scancode.cli_test_utils import check_json_scan
 from scancode.cli_test_utils import run_scan_click
+from packagedcode.cocoapods import PodfileHandler
 
 
-class TestCocoaPodspec(PackageTester):
+class TestCocoapod(PackageTester):
     test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
 
     def test_cocoapods_can_detect_podspec(self):
         test_file = self.get_test_loc('cocoapods/podspec/BadgeHub.podspec')
         assert PodspecHandler.is_datafile(test_file)
 
-    def test_cocoapods_can_parse_BadgeHub(self):
-        test_file = self.get_test_loc('cocoapods/podspec/BadgeHub.podspec')
-        expected_loc = self.get_test_loc('cocoapods/podspec/BadgeHub.podspec.expected.json')
-        packages = PodspecHandler.parse(test_file)
-        self.check_packages_data(packages, expected_loc, regen=REGEN_TEST_FIXTURES)
+    def test_cocoapods_can_detect_podfile_lock(self):
+        test_file = self.get_test_loc('cocoapods/podfile.lock/braintree_ios_Podfile.lock')
+        assert PodfileLockHandler.is_datafile(test_file)
 
-    def test_cocoapods_can_parse_flutter_paytabs_bridge(self):
-        test_file = self.get_test_loc('cocoapods/podspec/flutter_paytabs_bridge.podspec')
-        expected_loc = self.get_test_loc('cocoapods/podspec/flutter_paytabs_bridge.podspec.expected.json')
-        packages = PodspecHandler.parse(test_file)
-        self.check_packages_data(packages, expected_loc, regen=REGEN_TEST_FIXTURES)
+    def test_cocoapods_can_detect_podfile(self):
+        test_file = self.get_test_loc('cocoapods/podfile/Podfile')
+        assert PodfileHandler.is_datafile(test_file)
 
-    def test_cocoapods_can_parse_kmmWebSocket(self):
-        test_file = self.get_test_loc('cocoapods/podspec/kmmWebSocket.podspec')
-        expected_loc = self.get_test_loc('cocoapods/podspec/kmmWebSocket.podspec.expected.json')
-        packages = PodspecHandler.parse(test_file)
-        self.check_packages_data(packages, expected_loc, regen=REGEN_TEST_FIXTURES)
-
-    def test_cocoapods_can_parse_LoadingShimmer(self):
-        test_file = self.get_test_loc('cocoapods/podspec/LoadingShimmer.podspec')
-        expected_loc = self.get_test_loc('cocoapods/podspec/LoadingShimmer.podspec.expected.json', must_exist=False)
-        packages = PodspecHandler.parse(test_file)
-        self.check_packages_data(packages, expected_loc, regen=REGEN_TEST_FIXTURES)
-
-    def test_cocoapods_can_parse_nanopb(self):
-        test_file = self.get_test_loc('cocoapods/podspec/nanopb.podspec')
-        expected_loc = self.get_test_loc('cocoapods/podspec/nanopb.podspec.expected.json', must_exist=False)
-        packages = PodspecHandler.parse(test_file)
-        self.check_packages_data(packages, expected_loc, regen=REGEN_TEST_FIXTURES)
-
-    def test_cocoapods_can_parse_PayTabsSDK(self):
-        test_file = self.get_test_loc('cocoapods/podspec/PayTabsSDK.podspec')
-        expected_loc = self.get_test_loc('cocoapods/podspec/PayTabsSDK.podspec.expected.json', must_exist=False)
-        packages = PodspecHandler.parse(test_file)
-        self.check_packages_data(packages, expected_loc, regen=REGEN_TEST_FIXTURES)
-
-    def test_cocoapods_can_parse_RxDataSources(self):
-        test_file = self.get_test_loc('cocoapods/podspec/RxDataSources.podspec')
-        expected_loc = self.get_test_loc('cocoapods/podspec/RxDataSources.podspec.expected.json')
-        packages = PodspecHandler.parse(test_file)
-        self.check_packages_data(packages, expected_loc, regen=REGEN_TEST_FIXTURES)
-
-    def test_cocoapods_can_parse_Starscream(self):
-        test_file = self.get_test_loc('cocoapods/podspec/Starscream.podspec')
-        expected_loc = self.get_test_loc('cocoapods/podspec/Starscream.podspec.expected.json')
-        packages = PodspecHandler.parse(test_file)
-        self.check_packages_data(packages, expected_loc, regen=REGEN_TEST_FIXTURES)
-
-    def test_cocoapods_can_parse_SwiftLib(self):
-        test_file = self.get_test_loc('cocoapods/podspec/SwiftLib.podspec')
-        expected_loc = self.get_test_loc('cocoapods/podspec/SwiftLib.podspec.expected.json')
-        packages = PodspecHandler.parse(test_file)
-        self.check_packages_data(packages, expected_loc, regen=REGEN_TEST_FIXTURES)
+    def test_cocoapods_can_detect_podspec_json(self):
+        test_file = self.get_test_loc('cocoapods/podspec.json/FirebaseAnalytics.podspec.json')
+        assert PodspecJsonHandler.is_datafile(test_file)
 
     def test_get_urls(self):
         result = get_urls(name=None, version=None, homepage_url=None, vcs_url=None)
@@ -126,31 +85,93 @@ class TestCocoaPodspec(PackageTester):
         }
         assert expected == result
 
+    def test_cocoapods_can_parse_BadgeHub(self):
+        test_file = self.get_test_loc('cocoapods/podspec/BadgeHub.podspec')
+        expected_loc = self.get_test_loc('cocoapods/podspec/BadgeHub.podspec-expected.json')
+        packages = PodspecHandler.parse(test_file)
+        self.check_packages_data(packages, expected_loc, regen=REGEN_TEST_FIXTURES)
+
+    def test_cocoapods_can_parse_flutter_paytabs_bridge(self):
+        test_file = self.get_test_loc('cocoapods/podspec/flutter_paytabs_bridge.podspec')
+        expected_loc = self.get_test_loc('cocoapods/podspec/flutter_paytabs_bridge.podspec-expected.json')
+        packages = PodspecHandler.parse(test_file)
+        self.check_packages_data(packages, expected_loc, regen=REGEN_TEST_FIXTURES)
+
+    def test_cocoapods_can_parse_kmmWebSocket(self):
+        test_file = self.get_test_loc('cocoapods/podspec/kmmWebSocket.podspec')
+        expected_loc = self.get_test_loc('cocoapods/podspec/kmmWebSocket.podspec-expected.json')
+        packages = PodspecHandler.parse(test_file)
+        self.check_packages_data(packages, expected_loc, regen=REGEN_TEST_FIXTURES)
+
+    def test_cocoapods_can_parse_LoadingShimmer(self):
+        test_file = self.get_test_loc('cocoapods/podspec/LoadingShimmer.podspec')
+        expected_loc = self.get_test_loc('cocoapods/podspec/LoadingShimmer.podspec-expected.json', must_exist=False)
+        packages = PodspecHandler.parse(test_file)
+        self.check_packages_data(packages, expected_loc, regen=REGEN_TEST_FIXTURES)
+
+    def test_cocoapods_can_parse_nanopb(self):
+        test_file = self.get_test_loc('cocoapods/podspec/nanopb.podspec')
+        expected_loc = self.get_test_loc('cocoapods/podspec/nanopb.podspec-expected.json', must_exist=False)
+        packages = PodspecHandler.parse(test_file)
+        self.check_packages_data(packages, expected_loc, regen=REGEN_TEST_FIXTURES)
+
+    def test_cocoapods_can_parse_PayTabsSDK(self):
+        test_file = self.get_test_loc('cocoapods/podspec/PayTabsSDK.podspec')
+        expected_loc = self.get_test_loc('cocoapods/podspec/PayTabsSDK.podspec-expected.json', must_exist=False)
+        packages = PodspecHandler.parse(test_file)
+        self.check_packages_data(packages, expected_loc, regen=REGEN_TEST_FIXTURES)
+
+    def test_cocoapods_can_parse_RxDataSources(self):
+        test_file = self.get_test_loc('cocoapods/podspec/RxDataSources.podspec')
+        expected_loc = self.get_test_loc('cocoapods/podspec/RxDataSources.podspec-expected.json')
+        packages = PodspecHandler.parse(test_file)
+        self.check_packages_data(packages, expected_loc, regen=REGEN_TEST_FIXTURES)
+
+    def test_cocoapods_can_parse_Starscream(self):
+        test_file = self.get_test_loc('cocoapods/podspec/Starscream.podspec')
+        expected_loc = self.get_test_loc('cocoapods/podspec/Starscream.podspec-expected.json')
+        packages = PodspecHandler.parse(test_file)
+        self.check_packages_data(packages, expected_loc, regen=REGEN_TEST_FIXTURES)
+
+    def test_cocoapods_can_parse_SwiftLib(self):
+        test_file = self.get_test_loc('cocoapods/podspec/SwiftLib.podspec')
+        expected_loc = self.get_test_loc('cocoapods/podspec/SwiftLib.podspec-expected.json')
+        packages = PodspecHandler.parse(test_file)
+        self.check_packages_data(packages, expected_loc, regen=REGEN_TEST_FIXTURES)
+
+    def test_cocoapods_can_parse_Artsy(self):
+        test_file = self.get_test_loc('cocoapods/podspec/Artsy+UIFonts.podspec')
+        expected_loc = self.get_test_loc('cocoapods/podspec/Artsy+UIFonts.podspec-expected.json')
+        packages = PodspecHandler.parse(test_file)
+        self.check_packages_data(packages, expected_loc, regen=REGEN_TEST_FIXTURES)
+
 
 class TestCocoaPodspecJson(PackageTester):
     test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
 
-    def test_cocoapods_can_detect_podspec_json(self):
+    def test_cocoapods_can_parse_FirebaseAnalytics_podspec_dot_json(self):
         test_file = self.get_test_loc('cocoapods/podspec.json/FirebaseAnalytics.podspec.json')
-        assert PodspecJsonHandler.is_datafile(test_file)
-
-    def test_cocoapods_can_parse_FirebaseAnalytics(self):
-        test_file = self.get_test_loc('cocoapods/podspec.json/FirebaseAnalytics.podspec.json')
-        expected_loc = self.get_test_loc('cocoapods/podspec.json/FirebaseAnalytics.podspec.json.expected.json')
+        expected_loc = self.get_test_loc('cocoapods/podspec.json/FirebaseAnalytics.podspec.json-expected.json')
         packages = PodspecJsonHandler.parse(test_file)
+        self.check_packages_data(packages, expected_loc, regen=REGEN_TEST_FIXTURES)
+
+
+class TestCocoaPodfile(PackageTester):
+    test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
+
+    def test_cocoapods_can_parse_braintree_ios(self):
+        test_file = self.get_test_loc('cocoapods/podfile/Podfile')
+        expected_loc = self.get_test_loc('cocoapods/podfile/Podfile-expected.json', must_exist=False)
+        packages = PodfileHandler.parse(test_file)
         self.check_packages_data(packages, expected_loc, regen=REGEN_TEST_FIXTURES)
 
 
 class TestCocoaPodfileLock(PackageTester):
     test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
 
-    def test_cocoapods_can_detect_podfile_lock(self):
-        test_file = self.get_test_loc('cocoapods/podfile.lock/braintree_ios_Podfile.lock')
-        assert PodfileLockHandler.is_datafile(test_file)
-
     def test_cocoapods_can_parse_braintree_ios(self):
         test_file = self.get_test_loc('cocoapods/podfile.lock/braintree_ios_Podfile.lock')
-        expected_loc = self.get_test_loc('cocoapods/podfile.lock/braintree_ios_Podfile.lock.expected.json')
+        expected_loc = self.get_test_loc('cocoapods/podfile.lock/braintree_ios_Podfile.lock-expected.json')
         packages = PodfileLockHandler.parse(test_file)
         self.check_packages_data(packages, expected_loc, regen=REGEN_TEST_FIXTURES)
 

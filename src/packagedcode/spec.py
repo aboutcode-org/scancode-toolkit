@@ -9,7 +9,7 @@
 
 import re
 
-from gemfileparser import GemfileParser
+from gemfileparser2 import GemfileParser
 
 from packagedcode import models
 from packageurl import PackageURL
@@ -196,9 +196,12 @@ def get_dependent_packages(lines, location, package_type):
     dependencies = LinesBasedGemfileParser(lines=lines, filepath=location).parse()
 
     for key in dependencies:
+        
         depends = dependencies.get(key, []) or []
         for dep in depends:
-            flags = flags_by_scope.get(key, 'runtime')
+            if key not in flags_by_scope:
+                key = 'runtime'
+            flags = flags_by_scope[key]
 
             yield models.DependentPackage(
                 purl=PackageURL(type=package_type, name=dep.name).to_string(),

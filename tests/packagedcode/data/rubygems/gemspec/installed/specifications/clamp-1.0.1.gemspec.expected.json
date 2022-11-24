@@ -1,0 +1,58 @@
+[
+  {
+    "type": "gem",
+    "namespace": null,
+    "name": "clamp",
+    "version": "1.0.1",
+    "qualifiers": {},
+    "subpath": null,
+    "primary_language": "Ruby",
+    "description": "a minimal framework for command-line utilities\nClamp provides an object-model for command-line utilities.\\nIt handles parsing of command-line options, and generation of usage help.\\n",
+    "release_date": null,
+    "parties": [
+      {
+        "type": "person",
+        "role": "author",
+        "name": "Mike Williams",
+        "email": null,
+        "url": null
+      },
+      {
+        "type": "person",
+        "role": "author",
+        "name": null,
+        "email": "mdub@dogbiscuit.org",
+        "url": null
+      }
+    ],
+    "keywords": [],
+    "homepage_url": "http://github.com/mdub/clamp",
+    "download_url": "https://rubygems.org/downloads/clamp-1.0.1.gem",
+    "size": null,
+    "sha1": null,
+    "md5": null,
+    "sha256": null,
+    "sha512": null,
+    "bug_tracking_url": null,
+    "code_view_url": null,
+    "vcs_url": null,
+    "copyright": null,
+    "declared_license_expression": null,
+    "declared_license_expression_spdx": null,
+    "license_detections": [],
+    "other_license_expression": null,
+    "other_license_expression_spdx": null,
+    "other_license_detections": [],
+    "extracted_license_statement": null,
+    "notice_text": null,
+    "source_packages": [],
+    "file_references": [],
+    "extra_data": {},
+    "dependencies": [],
+    "repository_homepage_url": "https://rubygems.org/gems/clamp/versions/1.0.1",
+    "repository_download_url": "https://rubygems.org/downloads/clamp-1.0.1.gem",
+    "api_data_url": "https://rubygems.org/api/v2/rubygems/clamp/versions/1.0.1.json",
+    "datasource_id": "gemspec",
+    "purl": "pkg:gem/clamp@1.0.1"
+  }
+]

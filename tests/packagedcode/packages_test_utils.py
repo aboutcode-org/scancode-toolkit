@@ -9,17 +9,23 @@
 
 import json
 import os
+from pathlib import Path
 
 import saneyaml
-
 from commoncode import testcase
 from commoncode import text
+
 from scancode.cli_test_utils import purl_with_fake_uuid
 
 from scancode_config import REGEN_TEST_FIXTURES
 
 
-class PackageTester(testcase.FileBasedTesting):
+class PackageTesterBase(testcase.FileDrivenTesting):
+    """
+    This class does not extend TestCase from unitttest and can be reused
+    anywhere, including with methid-level pytest parametrize decorators.
+    """
+
     test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
 
     def check_package_data(
@@ -74,6 +80,21 @@ class PackageTester(testcase.FileBasedTesting):
             expected_loc=expected_loc,
             regen=regen,
         )
+
+
+class PackageTester(PackageTesterBase, testcase.TestCaseClass):
+    """
+    A package tester that is also a TestCase
+    """
+    pass
+
+
+def get_test_file_paths(base_dir, pattern):
+    """
+    Return a list of test file paths under ``base_dir`` Path matching the glob
+    ``pattern``. This used to collect lists of test files.
+    """
+    return (str(p.relative_to(base_dir)) for p in Path(base_dir).glob(pattern))
 
 
 def populate_license_fields(package_data):

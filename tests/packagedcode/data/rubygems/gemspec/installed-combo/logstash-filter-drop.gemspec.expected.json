@@ -1,0 +1,79 @@
+[
+  {
+    "type": "gem",
+    "namespace": null,
+    "name": "logstash-filter-drop",
+    "version": "3.0.5",
+    "qualifiers": {},
+    "subpath": null,
+    "primary_language": "Ruby",
+    "description": "Drops all events\nThis gem is a Logstash plugin required to be installed on top of the Logstash core pipeline using $LS_HOME/bin/logstash-plugin install gemname. This gem is not a stand-alone program",
+    "release_date": null,
+    "parties": [
+      {
+        "type": "person",
+        "role": "author",
+        "name": "Elastic",
+        "email": null,
+        "url": null
+      },
+      {
+        "type": "person",
+        "role": "author",
+        "name": null,
+        "email": "info@elastic.co",
+        "url": null
+      }
+    ],
+    "keywords": [],
+    "homepage_url": "http://www.elastic.co/guide/en/logstash/current/index.html",
+    "download_url": "https://rubygems.org/downloads/logstash-filter-drop-3.0.5.gem",
+    "size": null,
+    "sha1": null,
+    "md5": null,
+    "sha256": null,
+    "sha512": null,
+    "bug_tracking_url": null,
+    "code_view_url": null,
+    "vcs_url": null,
+    "copyright": null,
+    "declared_license_expression": null,
+    "declared_license_expression_spdx": null,
+    "license_detections": [],
+    "other_license_expression": null,
+    "other_license_expression_spdx": null,
+    "other_license_detections": [],
+    "extracted_license_statement": null,
+    "notice_text": null,
+    "source_packages": [],
+    "file_references": [],
+    "extra_data": {},
+    "dependencies": [
+      {
+        "purl": "pkg:gem/logstash-devutils",
+        "extracted_requirement": "",
+        "scope": "development",
+        "is_runtime": false,
+        "is_optional": true,
+        "is_resolved": false,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:gem/logstash-core-plugin-api",
+        "extracted_requirement": ">= 1.60, <= 2.99",
+        "scope": "runtime",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {},
+        "extra_data": {}
+      }
+    ],
+    "repository_homepage_url": "https://rubygems.org/gems/logstash-filter-drop/versions/3.0.5",
+    "repository_download_url": "https://rubygems.org/downloads/logstash-filter-drop-3.0.5.gem",
+    "api_data_url": "https://rubygems.org/api/v2/rubygems/logstash-filter-drop/versions/3.0.5.json",
+    "datasource_id": "gemspec",
+    "purl": "pkg:gem/logstash-filter-drop@3.0.5"
+  }
+]

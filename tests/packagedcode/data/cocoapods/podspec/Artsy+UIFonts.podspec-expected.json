@@ -1,0 +1,97 @@
+[
+  {
+    "type": "cocoapods",
+    "namespace": null,
+    "name": "Artsy+UIFonts",
+    "version": "3.3.4",
+    "qualifiers": {},
+    "subpath": null,
+    "primary_language": "Objective-C",
+    "description": "The open source fonts for Artsy apps + UIFont categories.",
+    "release_date": null,
+    "parties": [
+      {
+        "type": "person",
+        "role": "author",
+        "name": "Orta ",
+        "email": "orta@artsymail.com",
+        "url": null
+      }
+    ],
+    "keywords": [],
+    "homepage_url": "https://github.com/artsy/Artsy-OSSUIFonts",
+    "download_url": null,
+    "size": null,
+    "sha1": null,
+    "md5": null,
+    "sha256": null,
+    "sha512": null,
+    "bug_tracking_url": "https://github.com/artsy/Artsy-OSSUIFonts/issues/",
+    "code_view_url": "https://github.com/artsy/Artsy-OSSUIFonts/tree/3.3.4",
+    "vcs_url": "https://github.com/artsy/Artsy-OSSUIFonts.git",
+    "copyright": null,
+    "declared_license_expression": "unknown",
+    "declared_license_expression_spdx": "LicenseRef-scancode-unknown",
+    "license_detections": [
+      {
+        "license_expression": "unknown",
+        "detection_log": [
+          "undetected-license"
+        ],
+        "matches": [
+          {
+            "score": 100.0,
+            "start_line": 1,
+            "end_line": 1,
+            "matched_length": 8,
+            "match_coverage": 100.0,
+            "matcher": "5-undetected",
+            "license_expression": "unknown",
+            "rule_identifier": "package-manifest-unknown",
+            "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/package-manifest-unknown",
+            "referenced_filenames": [],
+            "is_license_text": false,
+            "is_license_notice": false,
+            "is_license_reference": false,
+            "is_license_tag": true,
+            "is_license_intro": false,
+            "rule_length": 8,
+            "rule_relevance": 100,
+            "matched_text": "license Code is MIT, then custom font licenses.",
+            "licenses": [
+              {
+                "key": "unknown",
+                "name": "Unknown license detected but not recognized",
+                "short_name": "unknown",
+                "category": "Unstated License",
+                "is_exception": false,
+                "is_unknown": true,
+                "owner": "Unspecified",
+                "homepage_url": null,
+                "text_url": "",
+                "reference_url": "https://scancode-licensedb.aboutcode.org/unknown",
+                "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/unknown.LICENSE",
+                "spdx_license_key": "LicenseRef-scancode-unknown",
+                "spdx_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/unknown.LICENSE"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "other_license_expression": null,
+    "other_license_expression_spdx": null,
+    "other_license_detections": [],
+    "extracted_license_statement": "Code is MIT, then custom font licenses.",
+    "notice_text": null,
+    "source_packages": [],
+    "file_references": [],
+    "extra_data": {},
+    "dependencies": [],
+    "repository_homepage_url": "https://cocoapods.org/pods/Artsy+UIFonts",
+    "repository_download_url": "https://github.com/artsy/Artsy-OSSUIFonts/archive/refs/tags/3.3.4.zip",
+    "api_data_url": "https://raw.githubusercontent.com/CocoaPods/Specs/blob/master/Specs/6/6/0/Artsy+UIFonts/3.3.4/Artsy+UIFonts.podspec.json",
+    "datasource_id": "cocoapods_podspec",
+    "purl": "pkg:cocoapods/Artsy%2BUIFonts@3.3.4"
+  }
+]
