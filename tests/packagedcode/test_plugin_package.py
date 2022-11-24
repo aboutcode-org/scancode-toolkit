@@ -135,6 +135,13 @@ class TestPlugins(PackageTester):
         run_scan_click(['--package', '--strip-root', '--processes', '-1', test_dir, '--json', result_file])
         check_json_scan(expected_file, result_file, remove_uuid=True, regen=REGEN_TEST_FIXTURES)
 
+    def test_package_command_scan_cran_r_package(self):
+        test_dir = self.get_test_loc('cran/package')
+        result_file = self.get_temp_file('json')
+        expected_file = self.get_test_loc('plugin/cran-package-expected.json')
+        run_scan_click(['--package', '--strip-root', '--processes', '-1', test_dir, '--json', result_file])
+        check_json_scan(expected_file, result_file, remove_uuid=True, regen=REGEN_TEST_FIXTURES)
+
     def test_package_command_scan_win_pe(self):
         test_dir = self.get_test_loc('win_pe/file.exe')
         result_file = self.get_temp_file('json')
