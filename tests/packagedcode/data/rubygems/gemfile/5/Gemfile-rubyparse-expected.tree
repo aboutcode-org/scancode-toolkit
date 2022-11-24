@@ -1,0 +1,84 @@
+  (label='ROOT', children=(
+    (NAME (label='KEYWORD-ATTRIBUTE-SOURCE', value='source'))
+    (label='TEXT-WHITESPACE', value=' ')
+        (label='STRING', children=(
+      (label='LITERAL-STRING-DOUBLE-QUOTE', value='"')
+      (label='LITERAL-STRING-VALUE', value='https://rubygems.org')
+      (label='LITERAL-STRING-DOUBLE-QUOTE', value='"')
+    ))
+    (label='TEXT-WHITESPACE-NEWLINE', value='\n\n')
+        (label='GEM', children=(
+      (label='KEYWORD-GEM', value='gem')
+      (label='TEXT-WHITESPACE', value=' ')
+            (label='STRING-LIST', children=(
+                (label='STRING', children=(
+          (label='LITERAL-STRING-SINGLE-QUOTE', value="'")
+          (label='LITERAL-STRING-VALUE', value='github-pages')
+          (label='LITERAL-STRING-SINGLE-QUOTE', value="'")
+        ))
+        (label='PUNCTUATION-COMMA', value=',')
+        (label='TEXT-WHITESPACE', value=' ')
+                (label='STRING', children=(
+          (label='LITERAL-STRING-SINGLE-QUOTE', value="'")
+          (label='LITERAL-STRING-VALUE', value='~> 219')
+          (label='LITERAL-STRING-SINGLE-QUOTE', value="'")
+        ))
+        (label='PUNCTUATION-COMMA', value=',')
+      ))
+    ))
+    (label='TEXT-WHITESPACE', value=' ')
+    (NAME (label='KEYWORD-ATTRIBUTE-GROUP', value='group'))
+    (label='PUNCTUATION-COLON', value=':')
+    (label='TEXT-WHITESPACE', value=' ')
+    (label='LITERAL-STRING-SYMBOL', value=':jekyll_plugins')
+    (label='TEXT-WHITESPACE-NEWLINE', value='\n')
+        (label='GEM', children=(
+      (label='KEYWORD-GEM', value='gem')
+      (label='TEXT-WHITESPACE', value=' ')
+            (label='STRING', children=(
+        (label='LITERAL-STRING-SINGLE-QUOTE', value="'")
+        (label='LITERAL-STRING-VALUE', value='html-proofer')
+        (label='LITERAL-STRING-SINGLE-QUOTE', value="'")
+      ))
+    ))
+    (label='TEXT-WHITESPACE-NEWLINE', value='\n')
+        (label='GEM', children=(
+      (label='KEYWORD-GEM', value='gem')
+      (label='TEXT-WHITESPACE', value=' ')
+            (label='STRING-LIST', children=(
+                (label='STRING', children=(
+          (label='LITERAL-STRING-SINGLE-QUOTE', value="'")
+          (label='LITERAL-STRING-VALUE', value='rack-contrib')
+          (label='LITERAL-STRING-SINGLE-QUOTE', value="'")
+        ))
+        (label='PUNCTUATION-COMMA', value=',')
+        (label='TEXT-WHITESPACE', value=' ')
+                (label='STRING', children=(
+          (label='LITERAL-STRING-SINGLE-QUOTE', value="'")
+          (label='LITERAL-STRING-VALUE', value='~> 1.1.0')
+          (label='LITERAL-STRING-SINGLE-QUOTE', value="'")
+        ))
+      ))
+    ))
+    (label='TEXT-WHITESPACE-NEWLINE', value='\n')
+        (label='GEM', children=(
+      (label='KEYWORD-GEM', value='gem')
+      (label='TEXT-WHITESPACE', value=' ')
+            (label='STRING', children=(
+        (label='LITERAL-STRING-SINGLE-QUOTE', value="'")
+        (label='LITERAL-STRING-VALUE', value='rake')
+        (label='LITERAL-STRING-SINGLE-QUOTE', value="'")
+      ))
+    ))
+    (label='TEXT-WHITESPACE-NEWLINE', value='\n')
+        (label='GEM', children=(
+      (label='KEYWORD-GEM', value='gem')
+      (label='TEXT-WHITESPACE', value=' ')
+            (label='STRING', children=(
+        (label='LITERAL-STRING-SINGLE-QUOTE', value="'")
+        (label='LITERAL-STRING-VALUE', value='jekyll-octicons')
+        (label='LITERAL-STRING-SINGLE-QUOTE', value="'")
+      ))
+    ))
+    (label='TEXT-WHITESPACE-NEWLINE', value='\n')
+  ))

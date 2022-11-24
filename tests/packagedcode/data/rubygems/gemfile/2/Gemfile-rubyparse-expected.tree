@@ -1,0 +1,233 @@
+  (label='ROOT', children=(
+    (NAME (label='KEYWORD-ATTRIBUTE-SOURCE', value='source'))
+    (label='TEXT-WHITESPACE', value=' ')
+        (label='STRING', children=(
+      (label='LITERAL-STRING-DOUBLE-QUOTE', value='"')
+      (label='LITERAL-STRING-VALUE', value='http://rubygems.org')
+      (label='LITERAL-STRING-DOUBLE-QUOTE', value='"')
+    ))
+    (label='TEXT-WHITESPACE-NEWLINE', value='\n\n')
+        (label='GEM', children=(
+      (label='KEYWORD-GEM', value='gem')
+      (label='TEXT-WHITESPACE', value=' ')
+            (label='STRING-LIST', children=(
+                (label='STRING', children=(
+          (label='LITERAL-STRING-DOUBLE-QUOTE', value='"')
+          (label='LITERAL-STRING-VALUE', value='actionmailer')
+          (label='LITERAL-STRING-DOUBLE-QUOTE', value='"')
+        ))
+        (label='PUNCTUATION-COMMA', value=',')
+        (label='TEXT-WHITESPACE', value=' ')
+                (label='STRING', children=(
+          (label='LITERAL-STRING-DOUBLE-QUOTE', value='"')
+          (label='LITERAL-STRING-VALUE', value='~> 2.3.11')
+          (label='LITERAL-STRING-DOUBLE-QUOTE', value='"')
+        ))
+      ))
+    ))
+    (label='TEXT-WHITESPACE-NEWLINE', value='\n')
+        (label='GEM', children=(
+      (label='KEYWORD-GEM', value='gem')
+      (label='TEXT-WHITESPACE', value=' ')
+            (label='STRING-LIST', children=(
+                (label='STRING', children=(
+          (label='LITERAL-STRING-DOUBLE-QUOTE', value='"')
+          (label='LITERAL-STRING-VALUE', value='actionmailer_extensions')
+          (label='LITERAL-STRING-DOUBLE-QUOTE', value='"')
+        ))
+        (label='PUNCTUATION-COMMA', value=',')
+        (label='TEXT-WHITESPACE', value=' ')
+                (label='STRING', children=(
+          (label='LITERAL-STRING-DOUBLE-QUOTE', value='"')
+          (label='LITERAL-STRING-VALUE', value='0.4.4')
+          (label='LITERAL-STRING-DOUBLE-QUOTE', value='"')
+        ))
+      ))
+    ))
+    (label='TEXT-WHITESPACE-NEWLINE', value='\n')
+        (label='GEM', children=(
+      (label='KEYWORD-GEM', value='gem')
+      (label='TEXT-WHITESPACE', value=' ')
+            (label='STRING-LIST', children=(
+                (label='STRING', children=(
+          (label='LITERAL-STRING-DOUBLE-QUOTE', value='"')
+          (label='LITERAL-STRING-VALUE', value='activesupport')
+          (label='LITERAL-STRING-DOUBLE-QUOTE', value='"')
+        ))
+        (label='PUNCTUATION-COMMA', value=',')
+        (label='TEXT-WHITESPACE', value=' ')
+                (label='STRING', children=(
+          (label='LITERAL-STRING-DOUBLE-QUOTE', value='"')
+          (label='LITERAL-STRING-VALUE', value='~> 2.3.11')
+          (label='LITERAL-STRING-DOUBLE-QUOTE', value='"')
+        ))
+      ))
+    ))
+    (label='TEXT-WHITESPACE-NEWLINE', value='\n')
+        (label='GEM', children=(
+      (label='KEYWORD-GEM', value='gem')
+      (label='TEXT-WHITESPACE', value=' ')
+            (label='STRING-LIST', children=(
+                (label='STRING', children=(
+          (label='LITERAL-STRING-DOUBLE-QUOTE', value='"')
+          (label='LITERAL-STRING-VALUE', value='httpclient')
+          (label='LITERAL-STRING-DOUBLE-QUOTE', value='"')
+        ))
+        (label='PUNCTUATION-COMMA', value=',')
+        (label='TEXT-WHITESPACE', value=' ')
+                (label='STRING', children=(
+          (label='LITERAL-STRING-DOUBLE-QUOTE', value='"')
+          (label='LITERAL-STRING-VALUE', value='>= 2.1.7')
+          (label='LITERAL-STRING-DOUBLE-QUOTE', value='"')
+        ))
+      ))
+    ))
+    (label='TEXT-WHITESPACE-NEWLINE', value='\n')
+        (label='GEM', children=(
+      (label='KEYWORD-GEM', value='gem')
+      (label='TEXT-WHITESPACE', value=' ')
+            (label='STRING-LIST', children=(
+                (label='STRING', children=(
+          (label='LITERAL-STRING-DOUBLE-QUOTE', value='"')
+          (label='LITERAL-STRING-VALUE', value='jruby-openssl')
+          (label='LITERAL-STRING-DOUBLE-QUOTE', value='"')
+        ))
+        (label='PUNCTUATION-COMMA', value=',')
+        (label='TEXT-WHITESPACE', value=' ')
+                (label='STRING', children=(
+          (label='LITERAL-STRING-DOUBLE-QUOTE', value='"')
+          (label='LITERAL-STRING-VALUE', value='0.7.3')
+          (label='LITERAL-STRING-DOUBLE-QUOTE', value='"')
+        ))
+      ))
+    ))
+    (label='TEXT-WHITESPACE-NEWLINE', value='\n')
+        (label='GEM', children=(
+      (label='KEYWORD-GEM', value='gem')
+      (label='TEXT-WHITESPACE', value=' ')
+            (label='STRING', children=(
+        (label='LITERAL-STRING-DOUBLE-QUOTE', value='"')
+        (label='LITERAL-STRING-VALUE', value='json_pure')
+        (label='LITERAL-STRING-DOUBLE-QUOTE', value='"')
+      ))
+    ))
+    (label='TEXT-WHITESPACE-NEWLINE', value='\n')
+        (label='GEM', children=(
+      (label='KEYWORD-GEM', value='gem')
+      (label='TEXT-WHITESPACE', value=' ')
+            (label='STRING-LIST', children=(
+                (label='STRING', children=(
+          (label='LITERAL-STRING-DOUBLE-QUOTE', value='"')
+          (label='LITERAL-STRING-VALUE', value='ntlm-http')
+          (label='LITERAL-STRING-DOUBLE-QUOTE', value='"')
+        ))
+        (label='PUNCTUATION-COMMA', value=',')
+        (label='TEXT-WHITESPACE', value=' ')
+                (label='STRING', children=(
+          (label='LITERAL-STRING-DOUBLE-QUOTE', value='"')
+          (label='LITERAL-STRING-VALUE', value='>= 0.1.3')
+          (label='LITERAL-STRING-DOUBLE-QUOTE', value='"')
+        ))
+      ))
+    ))
+    (label='TEXT-WHITESPACE-NEWLINE', value='\n')
+        (label='GEM', children=(
+      (label='KEYWORD-GEM', value='gem')
+      (label='TEXT-WHITESPACE', value=' ')
+            (label='STRING-LIST', children=(
+                (label='STRING', children=(
+          (label='LITERAL-STRING-DOUBLE-QUOTE', value='"')
+          (label='LITERAL-STRING-VALUE', value='rews')
+          (label='LITERAL-STRING-DOUBLE-QUOTE', value='"')
+        ))
+        (label='PUNCTUATION-COMMA', value=',')
+        (label='TEXT-WHITESPACE', value=' ')
+                (label='STRING', children=(
+          (label='LITERAL-STRING-DOUBLE-QUOTE', value='"')
+          (label='LITERAL-STRING-VALUE', value='>= 0.5.1')
+          (label='LITERAL-STRING-DOUBLE-QUOTE', value='"')
+        ))
+      ))
+    ))
+    (label='TEXT-WHITESPACE-NEWLINE', value='\n')
+        (label='GEM', children=(
+      (label='KEYWORD-GEM', value='gem')
+      (label='TEXT-WHITESPACE', value=' ')
+            (label='STRING', children=(
+        (label='LITERAL-STRING-DOUBLE-QUOTE', value='"')
+        (label='LITERAL-STRING-VALUE', value='rfc822_util')
+        (label='LITERAL-STRING-DOUBLE-QUOTE', value='"')
+      ))
+    ))
+    (label='TEXT-WHITESPACE-NEWLINE', value='\n')
+        (label='GEM', children=(
+      (label='KEYWORD-GEM', value='gem')
+      (label='TEXT-WHITESPACE', value=' ')
+            (label='STRING', children=(
+        (label='LITERAL-STRING-DOUBLE-QUOTE', value='"')
+        (label='LITERAL-STRING-VALUE', value='sonar_connector')
+        (label='LITERAL-STRING-DOUBLE-QUOTE', value='"')
+      ))
+    ))
+    (label='TEXT-WHITESPACE-NEWLINE', value='\n')
+        (label='GEM', children=(
+      (label='KEYWORD-GEM', value='gem')
+      (label='TEXT-WHITESPACE', value=' ')
+            (label='STRING', children=(
+        (label='LITERAL-STRING-DOUBLE-QUOTE', value='"')
+        (label='LITERAL-STRING-VALUE', value='sonar_exchange_pull_connector')
+        (label='LITERAL-STRING-DOUBLE-QUOTE', value='"')
+      ))
+    ))
+    (label='TEXT-WHITESPACE-NEWLINE', value='\n')
+        (label='GEM', children=(
+      (label='KEYWORD-GEM', value='gem')
+      (label='TEXT-WHITESPACE', value=' ')
+            (label='STRING', children=(
+        (label='LITERAL-STRING-DOUBLE-QUOTE', value='"')
+        (label='LITERAL-STRING-VALUE', value='sonar_ews_pull_connector')
+        (label='LITERAL-STRING-DOUBLE-QUOTE', value='"')
+      ))
+    ))
+    (label='TEXT-WHITESPACE-NEWLINE', value='\n')
+        (label='GEM', children=(
+      (label='KEYWORD-GEM', value='gem')
+      (label='TEXT-WHITESPACE', value=' ')
+            (label='STRING', children=(
+        (label='LITERAL-STRING-DOUBLE-QUOTE', value='"')
+        (label='LITERAL-STRING-VALUE', value='sonar_imap_pull_connector')
+        (label='LITERAL-STRING-DOUBLE-QUOTE', value='"')
+      ))
+    ))
+    (label='TEXT-WHITESPACE-NEWLINE', value='\n')
+        (label='GEM', children=(
+      (label='KEYWORD-GEM', value='gem')
+      (label='TEXT-WHITESPACE', value=' ')
+            (label='STRING', children=(
+        (label='LITERAL-STRING-DOUBLE-QUOTE', value='"')
+        (label='LITERAL-STRING-VALUE', value='sonar_push_connector')
+        (label='LITERAL-STRING-DOUBLE-QUOTE', value='"')
+      ))
+    ))
+    (label='TEXT-WHITESPACE-NEWLINE', value='\n')
+        (label='GEM', children=(
+      (label='KEYWORD-GEM', value='gem')
+      (label='TEXT-WHITESPACE', value=' ')
+            (label='STRING', children=(
+        (label='LITERAL-STRING-DOUBLE-QUOTE', value='"')
+        (label='LITERAL-STRING-VALUE', value='sonar_rexchange')
+        (label='LITERAL-STRING-DOUBLE-QUOTE', value='"')
+      ))
+    ))
+    (label='TEXT-WHITESPACE-NEWLINE', value='\n')
+        (label='GEM', children=(
+      (label='KEYWORD-GEM', value='gem')
+      (label='TEXT-WHITESPACE', value=' ')
+            (label='STRING', children=(
+        (label='LITERAL-STRING-DOUBLE-QUOTE', value='"')
+        (label='LITERAL-STRING-VALUE', value='uuidtools')
+        (label='LITERAL-STRING-DOUBLE-QUOTE', value='"')
+      ))
+    ))
+    (label='TEXT-WHITESPACE-NEWLINE', value='\n\n')
+  ))

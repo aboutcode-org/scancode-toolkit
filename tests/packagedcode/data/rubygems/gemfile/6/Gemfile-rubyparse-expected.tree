@@ -1,0 +1,12 @@
+  (label='ROOT', children=(
+    (NAME (label='KEYWORD-ATTRIBUTE-SOURCE', value='source'))
+    (label='TEXT-WHITESPACE', value=' ')
+        (label='STRING', children=(
+      (label='LITERAL-STRING-DOUBLE-QUOTE', value='"')
+      (label='LITERAL-STRING-VALUE', value='https://rubygems.org')
+      (label='LITERAL-STRING-DOUBLE-QUOTE', value='"')
+    ))
+    (label='TEXT-WHITESPACE-NEWLINE', value='\n\n')
+    (label='KEYWORD-GEMSPEC', value='gemspec')
+    (label='TEXT-WHITESPACE-NEWLINE', value='\n')
+  ))
