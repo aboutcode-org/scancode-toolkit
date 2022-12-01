@@ -1840,6 +1840,8 @@ class VirtualCodebase(Codebase):
         ##########################################################
         for attr_name in self.codebase_attributes:
             value = scan_data.get(attr_name)
+            if value == None:
+                continue
             setattr(self.attributes, attr_name, value)
 
         ##########################################################
