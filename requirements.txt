@@ -64,7 +64,7 @@ requests==2.28.1
 saneyaml==0.6.0
 six==1.16.0
 soupsieve==2.3.2.post1
-spdx-tools==0.7.0a3
+spdx-tools==0.7.0rc0
 text-unidecode==1.3
 toml==0.10.2
 typecode==30.0.0
