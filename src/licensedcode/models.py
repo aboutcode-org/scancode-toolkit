@@ -107,9 +107,8 @@ CATEGORIES = FOSS_CATEGORIES | OTHER_CATEGORIES
 @attr.s(slots=True)
 class License:
     """
-    A license consists of these files, where <key> is the license key:
-        - <key>.yml : the license data in YAML
-        - <key>.LICENSE: the license text
+    A license consists of the following file, where <key> is the license key:
+        - <key>.LICENSE: the license text and the license data in YAML frontmatter
 
     A License object is identified by a unique `key` and its data stored in the
     `src_dir` directory. Key is a lower-case unique ascii string.
@@ -379,7 +378,7 @@ class License:
         newl.update(oldl)
         return newl
 
-    def to_dict(self, include_ignorables=True, include_text=False):
+    def to_dict(self, include_ignorables=True, include_text=False, include_builtin=True):
         """
         Return an ordered mapping of license data (excluding text, unless
         ``include_text`` is True). Fields with empty values are not included.
@@ -400,6 +399,9 @@ class License:
                 return False
 
             if attr.name == 'minimum_coverage' and value == 100:
+                return False
+
+            if not include_builtin and attr.name == 'is_builtin':
                 return False
 
             if not include_ignorables and  attr.name.startswith('ignorable_'):
@@ -432,8 +434,8 @@ class License:
             with io.open(location, 'wb') as of:
                 of.write(byte_string)
 
-        metadata = self.to_dict()
-        content = self.text.encode('utf-8')
+        metadata = self.to_dict(include_builtin=False)
+        content = self.text
         rule_post = FrontmatterPost(content=content, handler=SaneYAMLHandler(), **metadata)
         output_string = dumps_frontmatter(post=rule_post)
 
@@ -2087,7 +2089,7 @@ class Rule(BasicRule):
         rule_file = self.rule_file(rules_data_dir=rules_data_dir)
 
         metadata = self.to_dict()
-        content = self.text.encode('utf-8')
+        content = self.text
         rule_post = FrontmatterPost(content=content, handler=SaneYAMLHandler(), **metadata)
         output_string = dumps_frontmatter(post=rule_post)
         write(rule_file, output_string.encode('utf-8'))

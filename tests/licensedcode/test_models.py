@@ -26,12 +26,12 @@ TEST_DATA_DIR = os.path.join(os.path.dirname(__file__), 'data')
 
 
 
-def as_sorted_mapping_seq(licenses):
+def as_sorted_mapping_seq(licenses, include_text=False):
     """
     Given a `licenses` iterator of to_dict()'able objects, return a sorted list
     of these.
     """
-    return sorted((l.to_dict() for l in licenses), key=lambda x: tuple(x.items()))
+    return sorted((l.to_dict(include_text=include_text) for l in licenses), key=lambda x: tuple(x.items()))
 
 
 class TestLicense(FileBasedTesting):
@@ -55,6 +55,19 @@ class TestLicense(FileBasedTesting):
         results = as_sorted_mapping_seq(lics.values())
         expected = self.get_test_loc('models/licenses.dump.expected.json')
         check_json(expected, results)
+
+    def test_dump_license_file(self):
+        test_dir = self.get_test_loc('models/licenses', copy=True)
+        test_dir_dump = self.get_test_loc('models/license_file_dump')
+        lics = models.load_licenses(licenses_data_dir=test_dir, with_deprecated=True)
+        lic_example = lics["apache-2.0"]
+        lic_example.dump(licenses_data_dir=test_dir_dump)
+        lics_from_dump = models.load_licenses(licenses_data_dir=test_dir_dump, with_deprecated=True)
+        lic_example_from_dump = lics_from_dump["apache-2.0"]
+        # Note: one license is obsolete and not loaded. Other are various exception/version cases
+        before_dump = as_sorted_mapping_seq(licenses=[lic_example], include_text=True)
+        after_dump = as_sorted_mapping_seq(licenses=[lic_example_from_dump], include_text=True)
+        assert before_dump == after_dump
 
     def test_License_text(self):
         test_dir = self.get_test_loc('models/licenses')
@@ -234,6 +247,19 @@ class TestRule(FileBasedTesting):
         results = as_sorted_mapping_seq(rules)
         expected = self.get_test_loc('models/rules.expected.json')
         check_json(expected, results)
+
+    def test_dump_rule_file(self):
+        test_dir = self.get_test_loc('models/rules', copy=True)
+        test_dir_dump = self.get_test_loc('models/rule_file_dump')
+        rules = list(models.load_rules(test_dir))
+        rule_example = rules.pop()
+        rule_example.dump(rules_data_dir=test_dir_dump)
+        rule_from_dump = list(models.load_rules(test_dir_dump))
+        rule_example_from_dump = rule_from_dump.pop()
+        # Note: one license is obsolete and not loaded. Other are various exception/version cases
+        before_dump = as_sorted_mapping_seq(licenses=[rule_example], include_text=True)
+        after_dump = as_sorted_mapping_seq(licenses=[rule_example_from_dump], include_text=True)
+        assert before_dump == after_dump
 
     def test_spdxrule(self):
         rule = models.SpdxRule(
