@@ -137,13 +137,8 @@ output:
 
 
 def get_opts(options):
-    try:
-        return ' '.join(options)
-    except:
-        try:
-            return b' '.join(options)
-        except:
-            return b' '.join(map(repr, options))
+    opts = [o if isinstance(o, str) else repr(o) for o in options]
+    return ' '.join(opts)
 
 
 WINDOWS_CI_TIMEOUT = '222.2'

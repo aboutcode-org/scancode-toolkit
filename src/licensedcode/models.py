@@ -425,20 +425,13 @@ class License:
          - the license data as YAML frontmatter
          - the license text
         """
-
-        def write(location, byte_string):
-            # we write as binary because rules and licenses texts and data are
-            # UTF-8-encoded bytes
-            with io.open(location, 'wb') as of:
-                of.write(byte_string)
-
         metadata = self.to_dict()
-        content = self.text.encode('utf-8')
+        content = self.text
         rule_post = FrontmatterPost(content=content, handler=SaneYAMLHandler(), **metadata)
-        output_string = dumps_frontmatter(post=rule_post)
-
+        output = dumps_frontmatter(post=rule_post)
         license_file = self.license_file(licenses_data_dir=licenses_data_dir)
-        write(license_file, output_string.encode('utf-8'))
+        with open(license_file, 'w') as of:
+            of.write(output)
 
     def load(self, license_file, check_consistency=True):
         """
@@ -2078,19 +2071,14 @@ class Rule(BasicRule):
         if self.is_from_license or self.is_synthetic:
             return
 
-        def write(location, byte_string):
-            # we write as binary because rules and licenses texts and data are
-            # UTF-8-encoded bytes
-            with io.open(location, 'wb') as of:
-                of.write(byte_string)
-
         rule_file = self.rule_file(rules_data_dir=rules_data_dir)
 
         metadata = self.to_dict()
-        content = self.text.encode('utf-8')
+        content = self.text
         rule_post = FrontmatterPost(content=content, handler=SaneYAMLHandler(), **metadata)
-        output_string = dumps_frontmatter(post=rule_post)
-        write(rule_file, output_string.encode('utf-8'))
+        output = dumps_frontmatter(post=rule_post)
+        with open(rule_file, 'w') as of:
+            of.write(output)
 
     def load(self, rule_file, with_checks=True):
         """
