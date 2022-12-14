@@ -14,7 +14,7 @@ ignorable_emails:
     - guido@sienanet.it
 ---
 
- File lacks copyright and licensing, but contains the comment
+File lacks copyright and licensing, but contains the comment
  "Conversion routines derived from code by guido@sienanet.it" which
  might be interpreted as a copyright holder not granting a license.
  More likely, however, the header file is considered non-copyrightable

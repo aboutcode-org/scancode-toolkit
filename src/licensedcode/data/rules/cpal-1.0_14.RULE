@@ -6,7 +6,7 @@ ignorable_urls:
     - http://www.opensource.org/licenses/cpal_1.0
 ---
 
-    <licenses>
+<licenses>
         <license>
             <name>CPAL</name>
             <url>http://www.opensource.org/licenses/cpal_1.0</url>

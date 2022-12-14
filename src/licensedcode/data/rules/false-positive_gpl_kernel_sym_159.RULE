@@ -3,4 +3,4 @@ is_false_positive: yes
 notes: seen in the Linux Kernel sources (kernel symbols related code or docs)
 ---
 
- please contact gpl-info
+please contact gpl-info

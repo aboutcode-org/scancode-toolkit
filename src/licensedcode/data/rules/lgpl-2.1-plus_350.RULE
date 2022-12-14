@@ -6,7 +6,7 @@ ignorable_urls:
     - https://www.gnu.org/
 ---
 
-      GNU LGPL information
+GNU LGPL information
       --------------------
 
         This library is free software; you can redistribute it and/or

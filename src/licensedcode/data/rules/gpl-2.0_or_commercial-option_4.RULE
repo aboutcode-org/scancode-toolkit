@@ -10,7 +10,7 @@ ignorable_urls:
     - http://www.broadcom.com/licenses/GPLv2.php
 ---
 
- <:copyright-BRCM:2007:DUAL/GPL:standard
+<:copyright-BRCM:2007:DUAL/GPL:standard
  
     Copyright (c)  Broadcom Corporation
     All Rights Reserved

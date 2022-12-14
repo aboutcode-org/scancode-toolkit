@@ -3,7 +3,7 @@ license_expression: w3c-software-19980720
 is_license_reference: yes
 ---
 
-      The DOM bindings are published under the W3C Software Copyright Notice
+The DOM bindings are published under the W3C Software Copyright Notice
       and License. The software license requires "Notice of any changes or
       modifications to the W3C files, including the date changes were made."
       Consequently, modified versions of the DOM bindings must document that

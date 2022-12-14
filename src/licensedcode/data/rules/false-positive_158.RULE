@@ -4,6 +4,5 @@ notes: See in https://github.com/jslicense/spdx-correct.js/tree/ae4124a26e862181
     which is a license-related tool
 ---
 
-
- // e.g. 'GPL-2.0', 'GPL-3.0'
+// e.g. 'GPL-2.0', 'GPL-3.0'
 function

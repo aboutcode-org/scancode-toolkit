@@ -9,7 +9,7 @@ ignorable_urls:
     - http://www.gnu.org/software/classpath/license.html
 ---
 
- * Licensed either under the Apache License, Version 2.0, or (at your option)
+* Licensed either under the Apache License, Version 2.0, or (at your option)
  * under the terms of the GNU General Public License as published by
  * the Free Software Foundation (subject to the "Classpath" exception),
  * either version 2, or any later version (collectively, the "License");

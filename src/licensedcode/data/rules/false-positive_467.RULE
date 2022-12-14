@@ -3,7 +3,7 @@ is_false_positive: yes
 notes: comments about licensing
 ---
 
- When the prompt appears:
+When the prompt appears:
 
  GNU gdb frv-031024
  Copyright 2003 Free Software Foundation, Inc.

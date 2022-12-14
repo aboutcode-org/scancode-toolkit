@@ -6,9 +6,7 @@ ignorable_urls:
     - https://www.gnu.org/licenses/
 ---
 
-
-
- * This library is free software; you can redistribute it and/or modify
+* This library is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public Licence (version 3.1
  * with the Runtime Library Exception) as published by the
  * Free Software Foundation.

@@ -8,6 +8,6 @@ ignorable_emails:
     - tjh@cryptsoft.com
 ---
 
- * 4. If you include any Windows specific code (or a derivative thereof) from
+* 4. If you include any Windows specific code (or a derivative thereof) from
  *    the apps directory (application code) you must include an acknowledgement:
  *    "This product includes software written by Tim Hudson (tjh@cryptsoft.com)"

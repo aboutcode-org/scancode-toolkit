@@ -3,7 +3,7 @@ license_expression: llgpl
 is_license_notice: yes
 ---
 
-    ("LLGPL"
+("LLGPL"
      t
 
      "This library is licenced under the Lisp Lesser General Public"

@@ -6,5 +6,5 @@ ignorable_urls:
     - http://cvs.sourceforge.net/viewcvs.py/*checkout*/p6spy/p6spy/license.txt?rev=HEAD
 ---
 
-      "name": "The P6Spy Software License, Version 1.1", name
+"name": "The P6Spy Software License, Version 1.1", name
       "url": "http://cvs.sourceforge.net/viewcvs.py/*checkout*/p6spy/p6spy/license.txt?rev=HEAD", url

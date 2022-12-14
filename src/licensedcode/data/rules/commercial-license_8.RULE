@@ -6,5 +6,5 @@ ignorable_urls:
     - http://assets.nagios.com/licenses/nagios_software_license.txt
 ---
 
-        License:
+License:
             Nagios Software License <http://assets.nagios.com/licenses/nagios_software_license.txt>

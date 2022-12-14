@@ -7,5 +7,4 @@ ignorable_urls:
     - http://spdx.org/licenses/GPL-2.0
 ---
 
-
 * @license GPL-2.0+ <http://spdx.org/licenses/GPL-2.0+>

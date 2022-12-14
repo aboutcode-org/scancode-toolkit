@@ -7,7 +7,6 @@ ignorable_urls:
     - https://www.gnu.org/copyleft/gpl.html
 ---
 
-
 OpenJDK Assembly Exception
 
 The OpenJDK source code made available by Sun at openjdk.java.net and

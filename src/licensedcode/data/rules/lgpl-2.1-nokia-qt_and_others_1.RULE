@@ -12,7 +12,7 @@ ignorable_emails:
     - qt-info@nokia.com
 ---
 
-  ** $QT_BEGIN_LICENSE:LGPL$
+** $QT_BEGIN_LICENSE:LGPL$
   ** Commercial Usage
   ** Licensees holding valid Qt Commercial licenses may use this file in
   ** accordance with the Qt Commercial License Agreement provided with the

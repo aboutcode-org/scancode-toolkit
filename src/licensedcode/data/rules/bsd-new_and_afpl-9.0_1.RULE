@@ -6,7 +6,7 @@ ignorable_urls:
     - http://www.artifex.com/downloads/doc/Public.htm
 ---
 
- * The following license terms for the "XMLParser library from Business-Insight" apply to projects
+* The following license terms for the "XMLParser library from Business-Insight" apply to projects
  * that are in some way related to
  * the "mcpat project", including applications
  * using "mcpat project" and tools developed

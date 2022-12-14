@@ -4,5 +4,4 @@ notes: See in https://github.com/jslicense/spdx-correct.js/tree/ae4124a26e862181
     which is a license-related tool
 ---
 
-
- } else if (['GPL-3.0', 'LGPL-3.0', 'AGPL-3.0'].
+} else if (['GPL-3.0', 'LGPL-3.0', 'AGPL-3.0'].

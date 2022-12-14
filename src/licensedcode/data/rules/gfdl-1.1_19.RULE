@@ -7,7 +7,7 @@ ignorable_urls:
     - https://www.gnu.org/copyleft/gpl.html
 ---
 
-     If your document contains nontrivial examples of program code,
+If your document contains nontrivial examples of program code,
      we recommend releasing these examples in parallel under your
      choice of free software license, such as the <ulink type="http"
      url="https://www.gnu.org/copyleft/gpl.html"> GNU General Public

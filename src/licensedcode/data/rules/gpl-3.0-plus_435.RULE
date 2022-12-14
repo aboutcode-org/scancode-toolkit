@@ -7,7 +7,7 @@ ignorable_urls:
     - https://www.gnu.org/licenses/
 ---
 
-   This file belongs to a GNU package released under GPL 3 license.
+This file belongs to a GNU package released under GPL 3 license.
  
    This program is free software; you can redistribute it and/or modify
    it under the terms of the GNU General Public License as published by

@@ -9,8 +9,7 @@ ignorable_urls:
     - http://www.wu-ftpd.org/license.html
 ---
 
-
-    WU-FTPD SOFTWARE LICENSE
+WU-FTPD SOFTWARE LICENSE
 
     Use, modification, or redistribution (including distribution of any modified or derived work) in any form, or on any medium, is permitted only if all the following conditions are met:
 
