@@ -89,6 +89,7 @@ FOSS_CATEGORIES = set([
     'Patent License',
     'Permissive',
     'Public Domain',
+    'CLA',
 ])
 
 OTHER_CATEGORIES = set([
