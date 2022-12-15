@@ -13,25 +13,62 @@ import codecs
 import saneyaml
 import re
 
-from frontmatter import detect_format
-from frontmatter import handlers
-from frontmatter import Post as FrontmatterPost
-from frontmatter.default_handlers import BaseHandler
-from frontmatter.util import u
 
-from licensedcode.tokenize import query_lines
+DEFAULT_POST_TEMPLATE = """\
+{start_delimiter}
+{metadata}
+{end_delimiter}
+
+{content}
+"""
 
 
-
-class SaneYAMLHandler(BaseHandler):
+class SaneYAMLHandler:
     """
     Load and export YAML metadata. .
 
-    This is similar to the frontmatter.default_handlers.YAMLHandler but
-    is using nexB/saneyaml instead of pyyaml.
+    This is similar to the original frontmatter.default_handlers.YAMLHandler
+    but is using nexB/saneyaml instead of pyyaml.
     """
     FM_BOUNDARY = re.compile(r"^-{3,}\s*$", re.MULTILINE)
     START_DELIMITER = END_DELIMITER = "---"
+
+    def __init__(self):
+        self.FM_BOUNDARY = self.FM_BOUNDARY
+        self.START_DELIMITER = self.START_DELIMITER
+        self.END_DELIMITER = self.END_DELIMITER
+
+    def detect(self, text):
+        """
+        Decide whether this handler can parse the given ``text``,
+        and return True or False.
+        """
+        if self.FM_BOUNDARY.match(text):
+            return True
+        return False
+
+    def split(self, text):
+        """
+        Split text into frontmatter and content
+        """
+        _, fm, content = self.FM_BOUNDARY.split(text, 2)
+        return fm, content
+
+    def format(self, content, metadata, **kwargs):
+        """
+        Turn a post into a string, used in ``frontmatter.dumps``
+        """
+        start_delimiter = kwargs.pop("start_delimiter", self.START_DELIMITER)
+        end_delimiter = kwargs.pop("end_delimiter", self.END_DELIMITER)
+
+        metadata = self.export(metadata, **kwargs)
+
+        return DEFAULT_POST_TEMPLATE.format(
+            metadata=metadata,
+            content=content,
+            start_delimiter=start_delimiter,
+            end_delimiter=end_delimiter,
+        ).strip()
 
     def load(self, fm, **kwargs):
         """
@@ -44,41 +81,33 @@ class SaneYAMLHandler(BaseHandler):
         Export metadata as YAML.
         """
         metadata = saneyaml.dump(metadata, indent=4, encoding='utf-8', **kwargs).strip()
-        return u(metadata)  # ensure unicode
+        return return_unicode(metadata)  # ensure unicode
 
 
-def get_rule_text(location=None, text=None):
-    """
-    Return the rule ``text`` prepared for indexing.
-    ###############
-    # IMPORTANT: we use the same process as used to load query text for symmetry
-    ###############
-    """
-    numbered_lines = query_lines(location=location, query_string=text, plain_text=True)
-    return '\n'.join(l.strip() for _, l in numbered_lines)
+def return_unicode(text, encoding="utf-8"):
+    "Return unicode text, no matter what"
+
+    if isinstance(text, bytes):
+        text = text.decode(encoding)
+
+    # it's already unicode
+    text = text.replace("\r\n", "\n")
+    return text
 
 
-def parse_frontmatter(text, encoding="utf-8", handler=None, **defaults):
+def parse_frontmatter(text, encoding="utf-8", handler=SaneYAMLHandler(), **defaults):
     """
     Parse text with frontmatter, return metadata and content.
     Pass in optional metadata defaults as keyword args.
 
     If frontmatter is not found, returns an empty metadata dictionary
     (or defaults) and original text content.
-
-    This is similar to the frontmatter.parse but is using `get_rule_text`
-    to use the same process as loading quary text for symmetry.
     """
     # ensure unicode first
-    text = u(text, encoding).strip()
+    text = return_unicode(text, encoding)
 
     # metadata starts with defaults
     metadata = defaults.copy()
-
-    # this will only run if a handler hasn't been set higher up
-    handler = handler or detect_format(text, handlers)
-    if handler is None:
-        return metadata, text
 
     # split on the delimiters
     try:
@@ -92,31 +121,13 @@ def parse_frontmatter(text, encoding="utf-8", handler=None, **defaults):
     if isinstance(fm, dict):
         metadata.update(fm)
 
-    text = get_rule_text(text=content)
-
-    return metadata, text
+    return content, metadata
 
 
-def loads_frontmatter(text, encoding="utf-8", handler=None, **defaults):
+def load_frontmatter(fd, encoding="utf-8", **defaults):
     """
-    Parse text (binary or unicode) and return a :py:class:`post <frontmatter.Post>`.
-
-    This is similar to the frontmatter.loads but is using the `parse`
-    function defined above.
-    """
-    text = u(text, encoding)
-    handler = handler or detect_format(text, handlers)
-    metadata, content = parse_frontmatter(text, encoding, handler, **defaults)
-    return FrontmatterPost(content, handler, **metadata)
-
-
-def load_frontmatter(fd, encoding="utf-8", handler=None, **defaults):
-    """
-    Load and parse a file-like object or filename,
-    return a :py:class:`post <frontmatter.Post>`.
-
-    This is similar to the frontmatter.load but is using the `loads`
-    function defined above.
+    Load and parse a file-like object or filename, and return
+    `content` and `metadata` with the text and the frontmatter metadata.
     """
     if hasattr(fd, "read"):
         text = fd.read()
@@ -124,25 +135,13 @@ def load_frontmatter(fd, encoding="utf-8", handler=None, **defaults):
     else:
         with codecs.open(fd, "r", encoding) as f:
             text = f.read()
+    
+    text = return_unicode(text, encoding)
+    return parse_frontmatter(text, encoding, **defaults)
 
-    handler = handler or detect_format(text, handlers)
-    return loads_frontmatter(text, encoding, handler, **defaults)
 
-
-def dumps_frontmatter(post, handler=None, **kwargs):
+def dumps_frontmatter(content, metadata, handler=SaneYAMLHandler(), **kwargs):
     """
-    Serialize a :py:class:`post <frontmatter.Post>` to a string and return text.
-    This always returns unicode text, which can then be encoded.
-
-    Passing ``handler`` will change how metadata is turned into text. A handler
-    passed as an argument will override ``post.handler``, with
-    :py:class:`SaneYAMLHandler <frontmatter.SaneYAMLHandler>` used as
-    a default.
-
-    This is similar to the frontmatter.dumps but is using the `SaneYAMLHandler`
-    defined above as default instead of frontmatter.default_handlers.YAMLHandler.
+    Create a string and return the text from `content` and `metadata`.
     """
-    if handler is None:
-        handler = getattr(post, "handler", None) or SaneYAMLHandler()
-
-    return handler.format(post, **kwargs)
+    return handler.format(content, metadata, **kwargs)

@@ -33,11 +33,8 @@ from commoncode.fileutils import resource_iter
 from licensedcode import MIN_MATCH_HIGH_LENGTH
 from licensedcode import MIN_MATCH_LENGTH
 from licensedcode import SMALL_RULE
-from licensedcode.frontmatter import SaneYAMLHandler
-from licensedcode.frontmatter import FrontmatterPost
 from licensedcode.frontmatter import dumps_frontmatter
 from licensedcode.frontmatter import load_frontmatter
-from licensedcode.frontmatter import get_rule_text
 from licensedcode.languages import LANG_INFO as known_languages
 from licensedcode.spans import Span
 from licensedcode.tokenize import index_tokenizer
@@ -45,6 +42,7 @@ from licensedcode.tokenize import index_tokenizer_with_stopwords
 from licensedcode.tokenize import key_phrase_tokenizer
 from licensedcode.tokenize import KEY_PHRASE_OPEN
 from licensedcode.tokenize import KEY_PHRASE_CLOSE
+from licensedcode.tokenize import query_lines
 
 """
 Reference License and license Rule structures persisted as a combo of a YAML
@@ -427,17 +425,9 @@ class License:
          - the license data as YAML frontmatter
          - the license text
         """
-
-        def write(location, byte_string):
-            # we write as binary because rules and licenses texts and data are
-            # UTF-8-encoded bytes
-            with io.open(location, 'wb') as of:
-                of.write(byte_string)
-
         metadata = self.to_dict(include_builtin=False)
         content = self.text
-        rule_post = FrontmatterPost(content=content, handler=SaneYAMLHandler(), **metadata)
-        output = dumps_frontmatter(post=rule_post)
+        output = dumps_frontmatter(content=content, metadata=metadata)
         license_file = self.license_file(licenses_data_dir=licenses_data_dir)
         with open(license_file, 'w') as of:
             of.write(output)
@@ -449,8 +439,7 @@ class License:
         Unknown fields are ignored and not bound to the License object.
         """
         try:
-            post = load_frontmatter(license_file)
-            data = post.metadata
+            content, data = load_frontmatter(license_file)
             if check_consistency:
                 if not data:
                     raise InvalidLicense(
@@ -458,7 +447,7 @@ class License:
                         f'{self}: file://{license_file}'
                     )
 
-            if not post.content:
+            if not content:
                 if check_consistency:
                     if not any(
                         attribute in data
@@ -472,7 +461,7 @@ class License:
 
                 self.text = ''
             else:
-                self.text = post.content.lstrip("\n")
+                self.text = content.lstrip("\n")
 
             for k, v in data.items():
                 if k == 'minimum_coverage':
@@ -1041,6 +1030,17 @@ def build_rule_from_license(license_obj):
         )
         rule.setup()
         return rule
+
+
+def get_rule_text(location=None, text=None):
+    """
+    Return the rule ``text`` prepared for indexing.
+    ###############
+    # IMPORTANT: we use the same process as used to load query text for symmetry
+    ###############
+    """
+    numbered_lines = query_lines(location=location, query_string=text, plain_text=True)
+    return '\n'.join(l.strip() for _, l in numbered_lines)
 
 
 def get_all_spdx_keys(licenses_db):
@@ -2084,8 +2084,7 @@ class Rule(BasicRule):
 
         metadata = self.to_dict()
         content = self.text
-        rule_post = FrontmatterPost(content=content, handler=SaneYAMLHandler(), **metadata)
-        output = dumps_frontmatter(post=rule_post)
+        output = dumps_frontmatter(content=content, metadata=metadata)
         with open(rule_file, 'w') as of:
             of.write(output)
 
@@ -2096,15 +2095,14 @@ class Rule(BasicRule):
         Optionally check for consistency if ``with_checks`` is True.
         """
         try:
-            post = load_frontmatter(rule_file)
-            data = post.metadata
-            if not post.content:
+            content, data = load_frontmatter(rule_file)
+            if not content:
                 raise InvalidRule(
                     f'Cannot load rule with empty text: '
                     f'{self}: file://{rule_file}'
                 )
 
-            self.text = post.content.lstrip()
+            self.text = content.lstrip()
 
         except Exception as e:
             print('#############################')
