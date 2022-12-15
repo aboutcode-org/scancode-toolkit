@@ -38,13 +38,12 @@ other_license_expression: bsd-new AND fsf-unlimited-no-warranty AND fsf-unlimite
   AND bsd-new AND (x11-xconsortium AND public-domain) AND ((gpl-2.0-plus AND gpl-2.0-plus) OR
   bsd-new) AND public-domain AND bsd-new AND fsf-unlimited-no-warranty AND (gpl-2.0-plus AND
   gpl-2.0-plus)
-other_license_expression_spdx: BSD-3-Clause AND LicenseRef-scancode-fsf-unlimited-no-warranty
-  AND LicenseRef-scancode-fsf-unlimited-no-warranty AND FSFUL AND BSD-3-Clause AND BSD-3-Clause
+other_license_expression_spdx: BSD-3-Clause AND FSFULLRWD AND FSFULLRWD AND FSFUL AND BSD-3-Clause
   AND BSD-3-Clause AND BSD-3-Clause AND BSD-3-Clause AND BSD-3-Clause AND BSD-3-Clause AND BSD-3-Clause
   AND BSD-3-Clause AND BSD-3-Clause AND BSD-3-Clause AND BSD-3-Clause AND BSD-3-Clause AND BSD-3-Clause
-  AND BSD-3-Clause AND BSD-3-Clause AND (X11 AND LicenseRef-scancode-public-domain) AND ((GPL-2.0-or-later
-  AND GPL-2.0-or-later) OR BSD-3-Clause) AND LicenseRef-scancode-public-domain AND BSD-3-Clause
-  AND LicenseRef-scancode-fsf-unlimited-no-warranty AND (GPL-2.0-or-later AND GPL-2.0-or-later)
+  AND BSD-3-Clause AND BSD-3-Clause AND BSD-3-Clause AND (X11 AND LicenseRef-scancode-public-domain)
+  AND ((GPL-2.0-or-later AND GPL-2.0-or-later) OR BSD-3-Clause) AND LicenseRef-scancode-public-domain
+  AND BSD-3-Clause AND FSFULLRWD AND (GPL-2.0-or-later AND GPL-2.0-or-later)
 license_detections: []
 other_license_detections:
   - license_expression: bsd-new
@@ -186,8 +185,8 @@ other_license_detections:
             text_url: http://www.fsf.org/licensing/licenses/
             reference_url: https://scancode-licensedb.aboutcode.org/fsf-unlimited-no-warranty
             scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/fsf-unlimited-no-warranty.LICENSE
-            spdx_license_key: LicenseRef-scancode-fsf-unlimited-no-warranty
-            spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/fsf-unlimited-no-warranty.LICENSE
+            spdx_license_key: FSFULLRWD
+            spdx_url: https://spdx.org/licenses/FSFULLRWD
   - license_expression: x11-xconsortium AND public-domain
     detection_log:
       - not-combined

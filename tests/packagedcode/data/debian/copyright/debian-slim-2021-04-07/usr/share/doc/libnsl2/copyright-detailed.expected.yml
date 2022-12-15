@@ -32,10 +32,9 @@ declared_license_expression: (lgpl-2.1-plus AND lgpl-2.1-plus) AND (lgpl-2.1 AND
   libtool-exception-2.0 AND fsf-unlimited AND fsf-ap
 declared_license_expression_spdx: (LGPL-2.1-or-later AND LGPL-2.1-or-later) AND (LGPL-2.1-only
   AND LGPL-2.1-only) AND (LGPL-2.1-or-later AND LGPL-2.1-or-later) AND BSD-3-Clause AND FSFAP
-  AND LicenseRef-scancode-fsf-unlimited-no-warranty AND LicenseRef-scancode-fsf-unlimited-no-warranty
-  AND GPL-3.0-or-later WITH LicenseRef-scancode-autoconf-simple-exception AND FSFUL AND GPL-2.0-or-later
-  WITH LicenseRef-scancode-autoconf-simple-exception-2.0 AND X11 AND GPL-2.0-or-later WITH Libtool-exception
-  AND FSFULLR AND FSFAP
+  AND FSFULLRWD AND FSFULLRWD AND GPL-3.0-or-later WITH LicenseRef-scancode-autoconf-simple-exception
+  AND FSFUL AND GPL-2.0-or-later WITH LicenseRef-scancode-autoconf-simple-exception-2.0 AND
+  X11 AND GPL-2.0-or-later WITH Libtool-exception AND FSFULLR AND FSFAP
 other_license_expression:
 other_license_expression_spdx:
 license_detections:
@@ -619,8 +618,8 @@ license_detections:
             text_url: http://www.fsf.org/licensing/licenses/
             reference_url: https://scancode-licensedb.aboutcode.org/fsf-unlimited-no-warranty
             scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/fsf-unlimited-no-warranty.LICENSE
-            spdx_license_key: LicenseRef-scancode-fsf-unlimited-no-warranty
-            spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/fsf-unlimited-no-warranty.LICENSE
+            spdx_license_key: FSFULLRWD
+            spdx_url: https://spdx.org/licenses/FSFULLRWD
   - license_expression: fsf-free
     detection_log:
       - not-combined
@@ -741,8 +740,8 @@ license_detections:
             text_url: http://www.fsf.org/licensing/licenses/
             reference_url: https://scancode-licensedb.aboutcode.org/fsf-unlimited-no-warranty
             scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/fsf-unlimited-no-warranty.LICENSE
-            spdx_license_key: LicenseRef-scancode-fsf-unlimited-no-warranty
-            spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/fsf-unlimited-no-warranty.LICENSE
+            spdx_license_key: FSFULLRWD
+            spdx_url: https://spdx.org/licenses/FSFULLRWD
 other_license_detections: []
 copyright: |
   2020, Aurelien Jarno

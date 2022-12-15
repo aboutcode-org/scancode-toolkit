@@ -24,9 +24,8 @@ other_license_expression: (lgpl-2.1-plus AND lgpl-2.1-plus) AND (lgpl-2.1-plus A
 other_license_expression_spdx: (LGPL-2.1-or-later AND LGPL-2.1-or-later) AND (LGPL-2.1-or-later
   AND LGPL-2.1-or-later) AND ((LGPL-2.1-or-later AND LGPL-2.1-or-later) OR BSD-3-Clause) AND
   (LGPL-2.1-or-later AND LGPL-2.1-or-later) AND (LGPL-2.1-or-later AND LGPL-2.1-or-later) AND
-  LicenseRef-scancode-fsf-unlimited-no-warranty AND LicenseRef-scancode-fsf-unlimited-no-warranty
-  AND (LGPL-2.1-or-later AND LGPL-2.1-or-later) AND (LGPL-2.1-or-later AND LGPL-2.1-or-later)
-  AND (GPL-3.0-or-later AND GPL-3.0-or-later) AND LicenseRef-scancode-fsf-unlimited-no-warranty
+  FSFULLRWD AND FSFULLRWD AND (LGPL-2.1-or-later AND LGPL-2.1-or-later) AND (LGPL-2.1-or-later
+  AND LGPL-2.1-or-later) AND (GPL-3.0-or-later AND GPL-3.0-or-later) AND FSFULLRWD
 license_detections: []
 other_license_detections:
   - license_expression: fsf-unlimited-no-warranty
@@ -70,8 +69,8 @@ other_license_detections:
             text_url: http://www.fsf.org/licensing/licenses/
             reference_url: https://scancode-licensedb.aboutcode.org/fsf-unlimited-no-warranty
             scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/fsf-unlimited-no-warranty.LICENSE
-            spdx_license_key: LicenseRef-scancode-fsf-unlimited-no-warranty
-            spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/fsf-unlimited-no-warranty.LICENSE
+            spdx_license_key: FSFULLRWD
+            spdx_url: https://spdx.org/licenses/FSFULLRWD
   - license_expression: lgpl-2.1-plus
     detection_log:
       - not-combined

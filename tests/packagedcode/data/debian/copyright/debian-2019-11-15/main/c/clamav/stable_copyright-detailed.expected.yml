@@ -63,13 +63,12 @@ other_license_expression_spdx: (GPL-2.0-only AND GPL-2.0-only) AND GPL-2.0-only 
   LGPL-2.0-or-later AND (LGPL-2.1-only AND LGPL-2.1-only) AND ((LGPL-2.1-only AND LGPL-2.1-only)
   AND BSD-3-Clause) AND MIT AND (X11 AND LicenseRef-scancode-public-domain) AND MIT AND BSD-2-Clause
   AND BSD-2-Clause AND BSD-3-Clause AND BSD-3-Clause AND BSD-3-Clause AND Zlib AND Zlib AND
-  ISC AND FSFULLR AND FSFUL AND LicenseRef-scancode-fsf-unlimited-no-warranty AND FSFAP AND
-  FSFAP AND bzip2-1.0.6 AND LicenseRef-scancode-public-domain AND LicenseRef-scancode-public-domain
-  AND LicenseRef-scancode-public-domain AND libtiff AND (LicenseRef-scancode-public-domain AND
-  LicenseRef-scancode-public-domain) AND (Apache-2.0 AND (LicenseRef-scancode-free-unknown AND
-  Apache-2.0 WITH LicenseRef-scancode-generic-exception)) AND (LicenseRef-scancode-free-unknown
-  AND Apache-2.0 WITH LicenseRef-scancode-generic-exception) AND (GPL-3.0-or-later WITH Bison-exception-2.2
-  AND GPL-3.0-only) AND GPL-3.0-only
+  ISC AND FSFULLR AND FSFUL AND FSFULLRWD AND FSFAP AND FSFAP AND bzip2-1.0.6 AND LicenseRef-scancode-public-domain
+  AND LicenseRef-scancode-public-domain AND LicenseRef-scancode-public-domain AND libtiff AND
+  (LicenseRef-scancode-public-domain AND LicenseRef-scancode-public-domain) AND (Apache-2.0
+  AND (LicenseRef-scancode-free-unknown AND Apache-2.0 WITH LicenseRef-scancode-generic-exception))
+  AND (LicenseRef-scancode-free-unknown AND Apache-2.0 WITH LicenseRef-scancode-generic-exception)
+  AND (GPL-3.0-or-later WITH Bison-exception-2.2 AND GPL-3.0-only) AND GPL-3.0-only
 license_detections: []
 other_license_detections:
   - license_expression: gpl-2.0
@@ -875,8 +874,8 @@ other_license_detections:
             text_url: http://www.fsf.org/licensing/licenses/
             reference_url: https://scancode-licensedb.aboutcode.org/fsf-unlimited-no-warranty
             scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/fsf-unlimited-no-warranty.LICENSE
-            spdx_license_key: LicenseRef-scancode-fsf-unlimited-no-warranty
-            spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/fsf-unlimited-no-warranty.LICENSE
+            spdx_license_key: FSFULLRWD
+            spdx_url: https://spdx.org/licenses/FSFULLRWD
   - license_expression: fsf-ap
     detection_log:
       - not-combined

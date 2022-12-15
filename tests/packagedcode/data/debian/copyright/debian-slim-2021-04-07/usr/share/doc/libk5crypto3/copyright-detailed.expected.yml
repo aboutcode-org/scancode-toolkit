@@ -12,10 +12,10 @@ declared_license_expression_spdx: BSD-2-Clause AND LicenseRef-scancode-generic-e
   AND CC-BY-SA-3.0 AND LicenseRef-scancode-proprietary-license AND LicenseRef-scancode-other-permissive
   AND LicenseRef-scancode-mit-no-advert-export-control AND LicenseRef-scancode-brian-gladman-3-clause
   AND BSD-3-Clause AND MIT AND BSD-2-Clause AND MIT AND BSD-3-Clause AND BSD-3-Clause AND LicenseRef-scancode-michigan-disclaimer
-  AND LicenseRef-scancode-fsf-unlimited-no-warranty AND LicenseRef-scancode-mit-no-advert-export-control
-  AND OLDAP-2.8 AND BSD-3-Clause AND BSD-3-Clause AND BSD-3-Clause AND FreeBSD-DOC AND MIT-CMU
-  AND LicenseRef-scancode-nrl-permission AND LicenseRef-scancode-ietf-trust AND LicenseRef-scancode-mit-old-style
-  AND MIT AND BSD-2-Clause AND (LicenseRef-scancode-mit-no-advert-export-control AND LicenseRef-scancode-proprietary-license)
+  AND FSFULLRWD AND LicenseRef-scancode-mit-no-advert-export-control AND OLDAP-2.8 AND BSD-3-Clause
+  AND BSD-3-Clause AND BSD-3-Clause AND FreeBSD-DOC AND MIT-CMU AND LicenseRef-scancode-nrl-permission
+  AND LicenseRef-scancode-ietf-trust AND LicenseRef-scancode-mit-old-style AND MIT AND BSD-2-Clause
+  AND (LicenseRef-scancode-mit-no-advert-export-control AND LicenseRef-scancode-proprietary-license)
   AND BSD-4-Clause-UC AND LicenseRef-scancode-mit-no-advert-export-control AND BSD-4-Clause
   AND MIT AND ISC AND ISC AND LicenseRef-scancode-other-permissive AND BSD-3-Clause AND LicenseRef-scancode-rsa-md4
   AND RSA-MD AND LicenseRef-scancode-rsa-1990 AND LicenseRef-scancode-mit-modification-obligations
@@ -841,8 +841,8 @@ license_detections:
             text_url: http://www.fsf.org/licensing/licenses/
             reference_url: https://scancode-licensedb.aboutcode.org/fsf-unlimited-no-warranty
             scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/fsf-unlimited-no-warranty.LICENSE
-            spdx_license_key: LicenseRef-scancode-fsf-unlimited-no-warranty
-            spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/fsf-unlimited-no-warranty.LICENSE
+            spdx_license_key: FSFULLRWD
+            spdx_url: https://spdx.org/licenses/FSFULLRWD
   - license_expression: mit-no-advert-export-control
     detection_log:
       - not-combined

@@ -121,8 +121,7 @@ def make_test(license_test, regen=REGEN_TEST_FIXTURES):
             # On failure, we compare against more result data to get additional
             # failure details, including the test_file
             expected = [license_test.to_dict(), f'file://{license_test.data_file}']
-
-            assert detected == expected
+            raise Exception(expected, saneyaml.dump(_license_detections))
 
     return closure_test_function
 

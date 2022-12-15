@@ -16,17 +16,16 @@ declared_license:
   - Zlib
   - BSD-3-Clause
 declared_license_expression: gpl-2.0 WITH openssl-exception-gpl-2.0
-declared_license_expression_spdx: GPL-2.0-only WITH LicenseRef-scancode-openssl-exception-gpl-2.0
+declared_license_expression_spdx: GPL-2.0-only WITH x11vnc-openssl-exception
 other_license_expression: gpl-2.0 WITH openssl-exception-gpl-2.0 AND gpl-2.0 WITH openssl-exception-gpl-2.0
   AND (gpl-2.0 AND gpl-2.0) AND (gpl-2.0 AND gpl-2.0) AND (gpl-2.0-plus AND gpl-2.0-plus) AND
   (zlib AND (gpl-1.0-plus AND gpl-1.0-plus)) AND (gpl-1.0-plus AND zlib) AND ssleay-windows
   AND public-domain AND bsd-new AND mit-old-style-no-advert
-other_license_expression_spdx: GPL-2.0-only WITH LicenseRef-scancode-openssl-exception-gpl-2.0
-  AND GPL-2.0-only WITH LicenseRef-scancode-openssl-exception-gpl-2.0 AND (GPL-2.0-only AND
-  GPL-2.0-only) AND (GPL-2.0-only AND GPL-2.0-only) AND (GPL-2.0-or-later AND GPL-2.0-or-later)
-  AND (Zlib AND (GPL-1.0-or-later AND GPL-1.0-or-later)) AND (GPL-1.0-or-later AND Zlib) AND
-  LicenseRef-scancode-ssleay-windows AND LicenseRef-scancode-public-domain AND BSD-3-Clause
-  AND NTP
+other_license_expression_spdx: GPL-2.0-only WITH x11vnc-openssl-exception AND GPL-2.0-only WITH
+  x11vnc-openssl-exception AND (GPL-2.0-only AND GPL-2.0-only) AND (GPL-2.0-only AND GPL-2.0-only)
+  AND (GPL-2.0-or-later AND GPL-2.0-or-later) AND (Zlib AND (GPL-1.0-or-later AND GPL-1.0-or-later))
+  AND (GPL-1.0-or-later AND Zlib) AND LicenseRef-scancode-ssleay-windows AND LicenseRef-scancode-public-domain
+  AND BSD-3-Clause AND NTP
 license_detections: []
 other_license_detections:
   - license_expression: ssleay-windows
@@ -261,8 +260,8 @@ other_license_detections:
             text_url: http://www.openssl.org/source/license.html
             reference_url: https://scancode-licensedb.aboutcode.org/openssl-exception-gpl-2.0
             scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/openssl-exception-gpl-2.0.LICENSE
-            spdx_license_key: LicenseRef-scancode-openssl-exception-gpl-2.0
-            spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/openssl-exception-gpl-2.0.LICENSE
+            spdx_license_key: x11vnc-openssl-exception
+            spdx_url: https://spdx.org/licenses/x11vnc-openssl-exception
   - license_expression: gpl-2.0
     detection_log:
       - not-combined
