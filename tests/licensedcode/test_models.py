@@ -115,12 +115,12 @@ class TestLicense(FileBasedTesting):
             'foo-2.0': ['Unknown language: foobar', 'No SPDX license key'],
             'gpl-1.0': [
                 'Unknown license category: GNU Copyleft.\nUse one of these valid categories:\n'
-                'Commercial\nCopyleft\nCopyleft Limited\nFree Restricted\n'
+                'CLA\nCommercial\nCopyleft\nCopyleft Limited\nFree Restricted\n'
                 'Patent License\nPermissive\nProprietary Free\nPublic Domain\nSource-available\nUnstated License',
                 'No SPDX license key'],
             'w3c-docs-19990405': [
                 'Unknown license category: Permissive Restricted.\nUse one of these valid categories:\n'
-                'Commercial\nCopyleft\nCopyleft Limited\nFree Restricted\n'
+                'CLA\nCommercial\nCopyleft\nCopyleft Limited\nFree Restricted\n'
                 'Patent License\nPermissive\nProprietary Free\nPublic Domain\nSource-available\nUnstated License',
                 'No SPDX license key'],
         }
