@@ -1,9 +1,33 @@
 {
+  "summary": {
+    "declared_license_expression": "jetty",
+    "license_clarity_score": {
+      "score": 100,
+      "declared_license": true,
+      "identification_precision": true,
+      "has_license_text": true,
+      "declared_copyrights": true,
+      "conflicting_license_categories": false,
+      "ambiguous_compound_licensing": false
+    },
+    "declared_holder": "Mort Bay Consulting Pty. Ltd. (Australia) and others, Sun Microsystems",
+    "primary_language": null,
+    "other_license_expressions": [
+      {
+        "value": null,
+        "count": 1
+      }
+    ],
+    "other_holders": [],
+    "other_languages": []
+  },
+  "packages": [],
+  "dependencies": [],
   "license_detections": [
     {
-      "identifier": "jetty#427d039d-8476-c119-f150-af365b19c42b",
+      "identifier": "jetty-427d039d-8476-c119-f150-af365b19c42b",
       "license_expression": "jetty",
-      "occurrence_count": 1,
+      "count": 1,
       "detection_log": [
         "not-combined"
       ],
@@ -54,30 +78,6 @@
       "rule_relevance": 100
     }
   ],
-  "dependencies": [],
-  "packages": [],
-  "summary": {
-    "declared_license_expression": "jetty",
-    "license_clarity_score": {
-      "score": 100,
-      "declared_license": true,
-      "identification_precision": true,
-      "has_license_text": true,
-      "declared_copyrights": true,
-      "conflicting_license_categories": false,
-      "ambiguous_compound_licensing": false
-    },
-    "declared_holder": "Mort Bay Consulting Pty. Ltd. (Australia) and others, Sun Microsystems",
-    "primary_language": null,
-    "other_license_expressions": [
-      {
-        "value": null,
-        "count": 1
-      }
-    ],
-    "other_holders": [],
-    "other_languages": []
-  },
   "files": [
     {
       "path": "codebase",
@@ -98,6 +98,8 @@
       "is_media": false,
       "is_source": false,
       "is_script": false,
+      "package_data": [],
+      "for_packages": [],
       "detected_license_expression": null,
       "detected_license_expression_spdx": null,
       "license_detections": [],
@@ -107,8 +109,6 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "package_data": [],
-      "for_packages": [],
       "is_legal": false,
       "is_manifest": false,
       "is_readme": false,
@@ -138,6 +138,8 @@
       "is_media": false,
       "is_source": false,
       "is_script": false,
+      "package_data": [],
+      "for_packages": [],
       "detected_license_expression": "jetty",
       "detected_license_expression_spdx": "LicenseRef-scancode-jetty",
       "license_detections": [
@@ -164,7 +166,7 @@
       "license_clues": [],
       "percentage_of_license_text": 100.0,
       "for_license_detections": [
-        "jetty#427d039d-8476-c119-f150-af365b19c42b"
+        "jetty-427d039d-8476-c119-f150-af365b19c42b"
       ],
       "copyrights": [
         {
@@ -191,8 +193,6 @@
         }
       ],
       "authors": [],
-      "package_data": [],
-      "for_packages": [],
       "is_legal": true,
       "is_manifest": false,
       "is_readme": false,

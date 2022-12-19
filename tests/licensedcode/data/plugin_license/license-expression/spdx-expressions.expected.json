@@ -1,9 +1,9 @@
 {
   "license_detections": [
     {
-      "identifier": "zlib_and_apache_2_0#6a62dd92-d687-5046-a149-47edab69491d",
+      "identifier": "zlib_and_apache_2_0-6a62dd92-d687-5046-a149-47edab69491d",
       "license_expression": "zlib AND apache-2.0",
-      "occurrence_count": 1,
+      "count": 1,
       "detection_log": [
         "not-combined"
       ],
@@ -154,7 +154,7 @@
       "license_clues": [],
       "percentage_of_license_text": 90.91,
       "for_license_detections": [
-        "zlib_and_apache_2_0#6a62dd92-d687-5046-a149-47edab69491d"
+        "zlib_and_apache_2_0-6a62dd92-d687-5046-a149-47edab69491d"
       ],
       "scan_errors": []
     }

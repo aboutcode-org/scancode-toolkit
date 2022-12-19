@@ -1,9 +1,11 @@
 {
+  "packages": [],
+  "dependencies": [],
   "license_detections": [
     {
-      "identifier": "gpl_3_0#bd8d31df-3dc9-daa6-b885-dc10671b4103",
+      "identifier": "gpl_3_0-bd8d31df-3dc9-daa6-b885-dc10671b4103",
       "license_expression": "gpl-3.0",
-      "occurrence_count": 1,
+      "count": 1,
       "detection_log": [
         "not-combined"
       ],
@@ -22,9 +24,9 @@
       ]
     },
     {
-      "identifier": "gpl_3_0_plus#f70c823f-c2d0-5369-e1d2-3cc1103e518b",
+      "identifier": "gpl_3_0_plus-f70c823f-c2d0-5369-e1d2-3cc1103e518b",
       "license_expression": "gpl-3.0-plus",
-      "occurrence_count": 1,
+      "count": 1,
       "detection_log": [
         "not-combined"
       ],
@@ -43,9 +45,9 @@
       ]
     },
     {
-      "identifier": "gpl_3_0_and_unknown_license_reference_and_gpl_3_0_plus#056056b0-c2ee-9b4e-8b7e-72a75e700069",
+      "identifier": "gpl_3_0_and_unknown_license_reference_and_gpl_3_0_plus-056056b0-c2ee-9b4e-8b7e-72a75e700069",
       "license_expression": "gpl-3.0 AND unknown-license-reference AND gpl-3.0-plus",
-      "occurrence_count": 1,
+      "count": 1,
       "detection_log": [
         "not-combined"
       ],
@@ -86,11 +88,11 @@
       ]
     },
     {
-      "identifier": "free_unknown#2c2fcd34-f0d6-5fe4-5457-c8ec02aae688",
-      "license_expression": "free-unknown",
-      "occurrence_count": 1,
+      "identifier": "gpl_3_0-d468de34-bf8a-7772-fa2f-375600f5c6d3",
+      "license_expression": "gpl-3.0",
+      "count": 1,
       "detection_log": [
-        "not-combined"
+        "unknown-reference-in-file-to-nonexistent-package"
       ],
       "matches": [
         {
@@ -169,15 +171,26 @@
           "license_expression": "free-unknown",
           "rule_identifier": "free-unknown-package_2.RULE",
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/free-unknown-package_2.RULE"
+        },
+        {
+          "score": 100.0,
+          "start_line": 2,
+          "end_line": 675,
+          "matched_length": 5514,
+          "match_coverage": 100.0,
+          "matcher": "1-hash",
+          "license_expression": "gpl-3.0",
+          "rule_identifier": "gpl-3.0_204.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0_204.RULE"
         }
       ]
     },
     {
-      "identifier": "free_unknown#76225990-e8f5-ab08-5ffe-299da9d287e6",
-      "license_expression": "free-unknown",
-      "occurrence_count": 1,
+      "identifier": "gpl_3_0-5578682a-3a08-5cd3-bbcd-7d2fc3fa4cc1",
+      "license_expression": "gpl-3.0",
+      "count": 1,
       "detection_log": [
-        "not-combined"
+        "unknown-reference-in-file-to-nonexistent-package"
       ],
       "matches": [
         {
@@ -245,23 +258,22 @@
           "license_expression": "free-unknown",
           "rule_identifier": "free-unknown-package_2.RULE",
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/free-unknown-package_2.RULE"
+        },
+        {
+          "score": 100.0,
+          "start_line": 2,
+          "end_line": 675,
+          "matched_length": 5514,
+          "match_coverage": 100.0,
+          "matcher": "1-hash",
+          "license_expression": "gpl-3.0",
+          "rule_identifier": "gpl-3.0_204.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0_204.RULE"
         }
       ]
     }
   ],
   "license_references": [
-    {
-      "key": "free-unknown",
-      "short_name": "Free unknown",
-      "name": "Free unknown license detected but not recognized",
-      "category": "Unstated License",
-      "owner": "Unspecified",
-      "notes": "This case applies to software with a notice that refers in a non-specific manner to a free or open-source license, but where it is not possible to determine that specific license.",
-      "is_builtin": true,
-      "is_unknown": true,
-      "spdx_license_key": "LicenseRef-scancode-free-unknown",
-      "text": ""
-    },
     {
       "key": "gpl-3.0",
       "short_name": "GPL 3.0",
@@ -575,12 +587,12 @@
       "rule_relevance": 100
     }
   ],
-  "dependencies": [],
-  "packages": [],
   "files": [
     {
       "path": "COPYING",
       "type": "file",
+      "package_data": [],
+      "for_packages": [],
       "detected_license_expression": "gpl-3.0",
       "detected_license_expression_spdx": "GPL-3.0-only",
       "license_detections": [
@@ -608,41 +620,41 @@
       "license_clues": [],
       "percentage_of_license_text": 100.0,
       "for_license_detections": [
-        "gpl_3_0#bd8d31df-3dc9-daa6-b885-dc10671b4103"
+        "gpl_3_0-bd8d31df-3dc9-daa6-b885-dc10671b4103"
       ],
-      "package_data": [],
-      "for_packages": [],
       "scan_errors": []
     },
     {
       "path": "README.md",
       "type": "file",
+      "package_data": [],
+      "for_packages": [],
       "detected_license_expression": null,
       "detected_license_expression_spdx": null,
       "license_detections": [],
       "license_clues": [],
       "percentage_of_license_text": 0,
       "for_license_detections": [],
-      "package_data": [],
-      "for_packages": [],
       "scan_errors": []
     },
     {
       "path": "myelements",
       "type": "directory",
+      "package_data": [],
+      "for_packages": [],
       "detected_license_expression": null,
       "detected_license_expression_spdx": null,
       "license_detections": [],
       "license_clues": [],
       "percentage_of_license_text": 0,
       "for_license_detections": [],
-      "package_data": [],
-      "for_packages": [],
       "scan_errors": []
     },
     {
       "path": "myelements/callbacks.py",
       "type": "file",
+      "package_data": [],
+      "for_packages": [],
       "detected_license_expression": "gpl-3.0 AND unknown-license-reference AND gpl-3.0-plus",
       "detected_license_expression_spdx": "GPL-3.0-only AND LicenseRef-scancode-unknown-license-reference AND GPL-3.0-or-later",
       "license_detections": [
@@ -694,15 +706,15 @@
       "license_clues": [],
       "percentage_of_license_text": 19.1,
       "for_license_detections": [
-        "gpl_3_0_and_unknown_license_reference_and_gpl_3_0_plus#056056b0-c2ee-9b4e-8b7e-72a75e700069"
+        "gpl_3_0_and_unknown_license_reference_and_gpl_3_0_plus-056056b0-c2ee-9b4e-8b7e-72a75e700069"
       ],
-      "package_data": [],
-      "for_packages": [],
       "scan_errors": []
     },
     {
       "path": "physics.py",
       "type": "file",
+      "package_data": [],
+      "for_packages": [],
       "detected_license_expression": "gpl-3.0-plus",
       "detected_license_expression_spdx": "GPL-3.0-or-later",
       "license_detections": [
@@ -730,28 +742,28 @@
       "license_clues": [],
       "percentage_of_license_text": 10.56,
       "for_license_detections": [
-        "gpl_3_0_plus#f70c823f-c2d0-5369-e1d2-3cc1103e518b"
+        "gpl_3_0_plus-f70c823f-c2d0-5369-e1d2-3cc1103e518b"
       ],
-      "package_data": [],
-      "for_packages": [],
       "scan_errors": []
     },
     {
       "path": "po",
       "type": "directory",
+      "package_data": [],
+      "for_packages": [],
       "detected_license_expression": null,
       "detected_license_expression_spdx": null,
       "license_detections": [],
       "license_clues": [],
       "percentage_of_license_text": 0,
       "for_license_detections": [],
-      "package_data": [],
-      "for_packages": [],
       "scan_errors": []
     },
     {
       "path": "po/en_US.po",
       "type": "file",
+      "package_data": [],
+      "for_packages": [],
       "detected_license_expression": "gpl-3.0",
       "detected_license_expression_spdx": "GPL-3.0-only",
       "license_detections": [
@@ -863,15 +875,15 @@
       "license_clues": [],
       "percentage_of_license_text": 11.8,
       "for_license_detections": [
-        "free_unknown#2c2fcd34-f0d6-5fe4-5457-c8ec02aae688"
+        "gpl_3_0-d468de34-bf8a-7772-fa2f-375600f5c6d3"
       ],
-      "package_data": [],
-      "for_packages": [],
       "scan_errors": []
     },
     {
       "path": "po/uk.po",
       "type": "file",
+      "package_data": [],
+      "for_packages": [],
       "detected_license_expression": "gpl-3.0",
       "detected_license_expression_spdx": "GPL-3.0-only",
       "license_detections": [
@@ -971,21 +983,13 @@
       "license_clues": [],
       "percentage_of_license_text": 12.24,
       "for_license_detections": [
-        "free_unknown#76225990-e8f5-ab08-5ffe-299da9d287e6"
+        "gpl_3_0-5578682a-3a08-5cd3-bbcd-7d2fc3fa4cc1"
       ],
-      "package_data": [],
-      "for_packages": [],
       "scan_errors": []
     },
     {
       "path": "setup.py",
       "type": "file",
-      "detected_license_expression": null,
-      "detected_license_expression_spdx": null,
-      "license_detections": [],
-      "license_clues": [],
-      "percentage_of_license_text": 0,
-      "for_license_detections": [],
       "package_data": [
         {
           "type": "pypi",
@@ -1051,6 +1055,12 @@
         }
       ],
       "for_packages": [],
+      "detected_license_expression": null,
+      "detected_license_expression_spdx": null,
+      "license_detections": [],
+      "license_clues": [],
+      "percentage_of_license_text": 0,
+      "for_license_detections": [],
       "scan_errors": []
     }
   ]

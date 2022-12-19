@@ -1,9 +1,11 @@
 {
+  "packages": [],
+  "dependencies": [],
   "license_detections": [
     {
-      "identifier": "gpl_1_0_plus_and_gpl_2_0#9a723cc7-93ae-aea4-643f-e96a8f92ef96",
+      "identifier": "gpl_1_0_plus_and_gpl_2_0-9a723cc7-93ae-aea4-643f-e96a8f92ef96",
       "license_expression": "gpl-1.0-plus AND gpl-2.0",
-      "occurrence_count": 2,
+      "count": 2,
       "detection_log": [
         "not-combined"
       ],
@@ -33,9 +35,9 @@
       ]
     },
     {
-      "identifier": "apache_2_0#5b91a737-f9ce-eaa1-9284-270cc4460ee2",
+      "identifier": "apache_2_0-5b91a737-f9ce-eaa1-9284-270cc4460ee2",
       "license_expression": "apache-2.0",
-      "occurrence_count": 1,
+      "count": 1,
       "detection_log": [
         "unknown-intro-followed-by-match"
       ],
@@ -225,8 +227,6 @@
       "rule_relevance": 100
     }
   ],
-  "dependencies": [],
-  "packages": [],
   "consolidated_components": [
     {
       "type": "holders",
@@ -298,6 +298,8 @@
       "is_media": false,
       "is_source": false,
       "is_script": false,
+      "package_data": [],
+      "for_packages": [],
       "detected_license_expression": null,
       "detected_license_expression_spdx": null,
       "license_detections": [],
@@ -307,8 +309,6 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "package_data": [],
-      "for_packages": [],
       "consolidated_to": [],
       "files_count": 3,
       "dirs_count": 5,
@@ -334,6 +334,8 @@
       "is_media": false,
       "is_source": false,
       "is_script": false,
+      "package_data": [],
+      "for_packages": [],
       "detected_license_expression": null,
       "detected_license_expression_spdx": null,
       "license_detections": [],
@@ -343,8 +345,6 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "package_data": [],
-      "for_packages": [],
       "consolidated_to": [],
       "files_count": 1,
       "dirs_count": 1,
@@ -370,6 +370,8 @@
       "is_media": false,
       "is_source": false,
       "is_script": false,
+      "package_data": [],
+      "for_packages": [],
       "detected_license_expression": null,
       "detected_license_expression_spdx": null,
       "license_detections": [],
@@ -379,8 +381,6 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "package_data": [],
-      "for_packages": [],
       "consolidated_to": [
         "omegacom_1"
       ],
@@ -408,6 +408,8 @@
       "is_media": false,
       "is_source": false,
       "is_script": false,
+      "package_data": [],
+      "for_packages": [],
       "detected_license_expression": "gpl-1.0-plus AND gpl-2.0",
       "detected_license_expression_spdx": "GPL-1.0-or-later AND GPL-2.0-only",
       "license_detections": [
@@ -445,7 +447,7 @@
       "license_clues": [],
       "percentage_of_license_text": 44.44,
       "for_license_detections": [
-        "gpl_1_0_plus_and_gpl_2_0#9a723cc7-93ae-aea4-643f-e96a8f92ef96"
+        "gpl_1_0_plus_and_gpl_2_0-9a723cc7-93ae-aea4-643f-e96a8f92ef96"
       ],
       "copyrights": [
         {
@@ -462,8 +464,6 @@
         }
       ],
       "authors": [],
-      "package_data": [],
-      "for_packages": [],
       "consolidated_to": [
         "omegacom_1"
       ],
@@ -491,6 +491,8 @@
       "is_media": false,
       "is_source": false,
       "is_script": false,
+      "package_data": [],
+      "for_packages": [],
       "detected_license_expression": null,
       "detected_license_expression_spdx": null,
       "license_detections": [],
@@ -500,8 +502,6 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "package_data": [],
-      "for_packages": [],
       "consolidated_to": [],
       "files_count": 2,
       "dirs_count": 2,
@@ -527,6 +527,8 @@
       "is_media": false,
       "is_source": false,
       "is_script": false,
+      "package_data": [],
+      "for_packages": [],
       "detected_license_expression": null,
       "detected_license_expression_spdx": null,
       "license_detections": [],
@@ -536,8 +538,6 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "package_data": [],
-      "for_packages": [],
       "consolidated_to": [
         "corp_ibm_1"
       ],
@@ -565,6 +565,8 @@
       "is_media": false,
       "is_source": false,
       "is_script": false,
+      "package_data": [],
+      "for_packages": [],
       "detected_license_expression": "gpl-1.0-plus AND gpl-2.0",
       "detected_license_expression_spdx": "GPL-1.0-or-later AND GPL-2.0-only",
       "license_detections": [
@@ -602,7 +604,7 @@
       "license_clues": [],
       "percentage_of_license_text": 44.44,
       "for_license_detections": [
-        "gpl_1_0_plus_and_gpl_2_0#9a723cc7-93ae-aea4-643f-e96a8f92ef96"
+        "gpl_1_0_plus_and_gpl_2_0-9a723cc7-93ae-aea4-643f-e96a8f92ef96"
       ],
       "copyrights": [
         {
@@ -619,8 +621,6 @@
         }
       ],
       "authors": [],
-      "package_data": [],
-      "for_packages": [],
       "consolidated_to": [
         "corp_ibm_1"
       ],
@@ -648,6 +648,8 @@
       "is_media": false,
       "is_source": false,
       "is_script": false,
+      "package_data": [],
+      "for_packages": [],
       "detected_license_expression": null,
       "detected_license_expression_spdx": null,
       "license_detections": [],
@@ -657,8 +659,6 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "package_data": [],
-      "for_packages": [],
       "consolidated_to": [
         "corp_oracle_1"
       ],
@@ -686,6 +686,8 @@
       "is_media": false,
       "is_source": false,
       "is_script": false,
+      "package_data": [],
+      "for_packages": [],
       "detected_license_expression": "apache-2.0",
       "detected_license_expression_spdx": "Apache-2.0",
       "license_detections": [
@@ -723,7 +725,7 @@
       "license_clues": [],
       "percentage_of_license_text": 55.56,
       "for_license_detections": [
-        "apache_2_0#5b91a737-f9ce-eaa1-9284-270cc4460ee2"
+        "apache_2_0-5b91a737-f9ce-eaa1-9284-270cc4460ee2"
       ],
       "copyrights": [
         {
@@ -740,8 +742,6 @@
         }
       ],
       "authors": [],
-      "package_data": [],
-      "for_packages": [],
       "consolidated_to": [
         "corp_oracle_1"
       ],

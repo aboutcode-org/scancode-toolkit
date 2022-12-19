@@ -1,9 +1,11 @@
 {
+  "packages": [],
+  "dependencies": [],
   "license_detections": [
     {
-      "identifier": "mit#e60e2912-9996-f235-207c-8ce2b9e55eb9",
+      "identifier": "mit-e60e2912-9996-f235-207c-8ce2b9e55eb9",
       "license_expression": "mit",
-      "occurrence_count": 4,
+      "count": 4,
       "detection_log": [
         "not-combined"
       ],
@@ -96,8 +98,6 @@
       "rule_relevance": 100
     }
   ],
-  "dependencies": [],
-  "packages": [],
   "consolidated_components": [
     {
       "type": "holders",
@@ -153,6 +153,8 @@
       "is_media": false,
       "is_source": false,
       "is_script": false,
+      "package_data": [],
+      "for_packages": [],
       "detected_license_expression": null,
       "detected_license_expression_spdx": null,
       "license_detections": [],
@@ -162,8 +164,6 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "package_data": [],
-      "for_packages": [],
       "consolidated_to": [
         "corp_ibm_1"
       ],
@@ -191,6 +191,8 @@
       "is_media": false,
       "is_source": false,
       "is_script": false,
+      "package_data": [],
+      "for_packages": [],
       "detected_license_expression": "mit",
       "detected_license_expression_spdx": "MIT",
       "license_detections": [
@@ -217,7 +219,7 @@
       "license_clues": [],
       "percentage_of_license_text": 97.58,
       "for_license_detections": [
-        "mit#e60e2912-9996-f235-207c-8ce2b9e55eb9"
+        "mit-e60e2912-9996-f235-207c-8ce2b9e55eb9"
       ],
       "copyrights": [
         {
@@ -234,8 +236,6 @@
         }
       ],
       "authors": [],
-      "package_data": [],
-      "for_packages": [],
       "consolidated_to": [
         "corp_ibm_1"
       ],
@@ -263,6 +263,8 @@
       "is_media": false,
       "is_source": false,
       "is_script": false,
+      "package_data": [],
+      "for_packages": [],
       "detected_license_expression": "mit",
       "detected_license_expression_spdx": "MIT",
       "license_detections": [
@@ -289,7 +291,7 @@
       "license_clues": [],
       "percentage_of_license_text": 97.58,
       "for_license_detections": [
-        "mit#e60e2912-9996-f235-207c-8ce2b9e55eb9"
+        "mit-e60e2912-9996-f235-207c-8ce2b9e55eb9"
       ],
       "copyrights": [
         {
@@ -306,8 +308,6 @@
         }
       ],
       "authors": [],
-      "package_data": [],
-      "for_packages": [],
       "consolidated_to": [
         "corp_ibm_1"
       ],
@@ -335,6 +335,8 @@
       "is_media": false,
       "is_source": false,
       "is_script": false,
+      "package_data": [],
+      "for_packages": [],
       "detected_license_expression": "mit",
       "detected_license_expression_spdx": "MIT",
       "license_detections": [
@@ -361,7 +363,7 @@
       "license_clues": [],
       "percentage_of_license_text": 97.58,
       "for_license_detections": [
-        "mit#e60e2912-9996-f235-207c-8ce2b9e55eb9"
+        "mit-e60e2912-9996-f235-207c-8ce2b9e55eb9"
       ],
       "copyrights": [
         {
@@ -378,8 +380,6 @@
         }
       ],
       "authors": [],
-      "package_data": [],
-      "for_packages": [],
       "consolidated_to": [
         "corp_ibm_1"
       ],
@@ -407,6 +407,8 @@
       "is_media": false,
       "is_source": false,
       "is_script": false,
+      "package_data": [],
+      "for_packages": [],
       "detected_license_expression": null,
       "detected_license_expression_spdx": null,
       "license_detections": [],
@@ -416,8 +418,6 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "package_data": [],
-      "for_packages": [],
       "consolidated_to": [
         "corp_omega_1"
       ],
@@ -445,6 +445,8 @@
       "is_media": false,
       "is_source": false,
       "is_script": false,
+      "package_data": [],
+      "for_packages": [],
       "detected_license_expression": "mit",
       "detected_license_expression_spdx": "MIT",
       "license_detections": [
@@ -471,7 +473,7 @@
       "license_clues": [],
       "percentage_of_license_text": 97.58,
       "for_license_detections": [
-        "mit#e60e2912-9996-f235-207c-8ce2b9e55eb9"
+        "mit-e60e2912-9996-f235-207c-8ce2b9e55eb9"
       ],
       "copyrights": [
         {
@@ -488,8 +490,6 @@
         }
       ],
       "authors": [],
-      "package_data": [],
-      "for_packages": [],
       "consolidated_to": [
         "corp_omega_1"
       ],

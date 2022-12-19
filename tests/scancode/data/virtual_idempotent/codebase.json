@@ -45,7 +45,7 @@
     {
       "identifier": "eed9b405-580d-3b4c-28fd-66acb8595508",
       "license_expression": "jboss-eula",
-      "occurrence_count": 1,
+      "count": 1,
       "detection_log": [
         "not-combined"
       ],
@@ -66,7 +66,7 @@
     {
       "identifier": "f6dd3eec-ee92-36cb-d069-447bea303c02",
       "license_expression": "lgpl-2.1",
-      "occurrence_count": 2,
+      "count": 2,
       "detection_log": [
         "not-combined"
       ],
@@ -87,7 +87,7 @@
     {
       "identifier": "9efb9769-bd5d-5083-31e8-3616b2fb45b1",
       "license_expression": "apache-1.1",
-      "occurrence_count": 1,
+      "count": 1,
       "detection_log": [
         "not-combined"
       ],
@@ -108,7 +108,7 @@
     {
       "identifier": "38097a02-87ed-9e8c-2dcb-78842e1e42c0",
       "license_expression": "apache-2.0",
-      "occurrence_count": 1,
+      "count": 1,
       "detection_log": [
         "not-combined"
       ],
@@ -129,7 +129,7 @@
     {
       "identifier": "1f6881d4-dcc1-038b-f9a5-8c8c48fc4f45",
       "license_expression": "mit",
-      "occurrence_count": 1,
+      "count": 1,
       "detection_log": [
         "not-combined"
       ],
@@ -150,7 +150,7 @@
     {
       "identifier": "e94b4a5e-6c2f-2338-2bcb-9775b84aaf9c",
       "license_expression": "cpl-1.0",
-      "occurrence_count": 1,
+      "count": 1,
       "detection_log": [
         "not-combined"
       ],
@@ -171,7 +171,7 @@
     {
       "identifier": "512a55a0-6eb0-f619-44db-02f4c4f0765d",
       "license_expression": "lgpl-2.1-plus",
-      "occurrence_count": 3,
+      "count": 3,
       "detection_log": [
         "not-combined"
       ],
@@ -192,7 +192,7 @@
     {
       "identifier": "5a42c371-1b5b-60b5-5e09-9d443b5f0947",
       "license_expression": "cc-by-2.5",
-      "occurrence_count": 1,
+      "count": 1,
       "detection_log": [
         "not-combined"
       ],
@@ -213,7 +213,7 @@
     {
       "identifier": "f7b053b0-5616-3e15-9100-a1a22231c3d8",
       "license_expression": "public-domain",
-      "occurrence_count": 1,
+      "count": 1,
       "detection_log": [
         "possible-false-positive",
         "not-license-clues-as-more-detections-present"
@@ -235,7 +235,7 @@
     {
       "identifier": "0a390f49-b04d-c926-5b31-35877b9c53a7",
       "license_expression": "public-domain-disclaimer",
-      "occurrence_count": 1,
+      "count": 1,
       "detection_log": [
         "not-combined"
       ],
@@ -256,7 +256,7 @@
     {
       "identifier": "1d1a3779-8597-ca5f-0160-cc3bdecf2879",
       "license_expression": "zlib",
-      "occurrence_count": 7,
+      "count": 7,
       "detection_log": [
         "not-combined"
       ],
@@ -277,7 +277,7 @@
     {
       "identifier": "1d248a8d-7cf1-15dd-0f7c-5c63d5878bf9",
       "license_expression": "zlib",
-      "occurrence_count": 1,
+      "count": 1,
       "detection_log": [
         "not-combined"
       ],
@@ -298,7 +298,7 @@
     {
       "identifier": "86cb4577-6510-3da7-2209-45fe39d3b847",
       "license_expression": "zlib",
-      "occurrence_count": 1,
+      "count": 1,
       "detection_log": [
         "not-combined"
       ],
@@ -319,7 +319,7 @@
     {
       "identifier": "7982e625-db6d-b61d-9b0d-f82636bce009",
       "license_expression": "gpl-2.0-plus WITH ada-linking-exception",
-      "occurrence_count": 1,
+      "count": 1,
       "detection_log": [
         "not-combined"
       ],
@@ -340,7 +340,7 @@
     {
       "identifier": "f42704ae-d553-edcc-f713-502abdad26c9",
       "license_expression": "boost-1.0",
-      "occurrence_count": 2,
+      "count": 2,
       "detection_log": [
         "not-combined"
       ],
@@ -361,7 +361,7 @@
     {
       "identifier": "fb14538c-aeb9-6b1a-3380-3216dcf60509",
       "license_expression": "boost-1.0",
-      "occurrence_count": 1,
+      "count": 1,
       "detection_log": [
         "not-combined"
       ],
@@ -382,7 +382,7 @@
     {
       "identifier": "9cb57cc5-0b01-991b-a877-5827395b9b1b",
       "license_expression": "unknown-license-reference",
-      "occurrence_count": 1,
+      "count": 1,
       "detection_log": [
         "not-combined"
       ],
@@ -403,7 +403,7 @@
     {
       "identifier": "fb544817-ac13-5bb2-e219-0e3bba38b9bf",
       "license_expression": "zlib",
-      "occurrence_count": 1,
+      "count": 1,
       "detection_log": [
         "not-combined"
       ],
@@ -424,7 +424,7 @@
     {
       "identifier": "ca895ddd-4eca-8b9b-15bc-f972a6d2bde0",
       "license_expression": "mit-old-style",
-      "occurrence_count": 1,
+      "count": 1,
       "detection_log": [
         "not-combined"
       ],

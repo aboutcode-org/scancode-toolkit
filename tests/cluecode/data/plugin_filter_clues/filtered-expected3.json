@@ -1,9 +1,9 @@
 {
   "license_detections": [
     {
-      "identifier": "pcre#043db187-9376-d7a9-e89b-d027667acb34",
+      "identifier": "pcre-043db187-9376-d7a9-e89b-d027667acb34",
       "license_expression": "pcre",
-      "occurrence_count": 1,
+      "count": 1,
       "detection_log": [
         "not-combined"
       ],
@@ -98,7 +98,7 @@
       "license_clues": [],
       "percentage_of_license_text": 100.0,
       "for_license_detections": [
-        "pcre#043db187-9376-d7a9-e89b-d027667acb34"
+        "pcre-043db187-9376-d7a9-e89b-d027667acb34"
       ],
       "copyrights": [
         {

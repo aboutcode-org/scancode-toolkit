@@ -1,9 +1,9 @@
 {
   "license_detections": [
     {
-      "identifier": "epl_2_0#269715cc-0554-3f26-8832-1c4eb6145143",
+      "identifier": "epl_2_0-269715cc-0554-3f26-8832-1c4eb6145143",
       "license_expression": "epl-2.0",
-      "occurrence_count": 1,
+      "count": 1,
       "detection_log": [
         "not-combined"
       ],
@@ -123,7 +123,7 @@
       "license_clues": [],
       "percentage_of_license_text": 86.05,
       "for_license_detections": [
-        "epl_2_0#269715cc-0554-3f26-8832-1c4eb6145143"
+        "epl_2_0-269715cc-0554-3f26-8832-1c4eb6145143"
       ],
       "scan_errors": []
     }

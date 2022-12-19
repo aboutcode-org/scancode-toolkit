@@ -1,9 +1,9 @@
 {
   "license_detections": [
     {
-      "identifier": "python#f9a5ba7d-9d66-5878-a0bd-1afe42fe0bd9",
+      "identifier": "python-f9a5ba7d-9d66-5878-a0bd-1afe42fe0bd9",
       "license_expression": "python",
-      "occurrence_count": 1,
+      "count": 1,
       "detection_log": [
         "not-combined"
       ],
@@ -22,9 +22,9 @@
       ]
     },
     {
-      "identifier": "other_copyleft_and_gpl_1_0_plus#a9ef94dc-a60e-21b6-82b8-77454e7751c0",
+      "identifier": "other_copyleft_and_gpl_1_0_plus-a9ef94dc-a60e-21b6-82b8-77454e7751c0",
       "license_expression": "other-copyleft AND gpl-1.0-plus",
-      "occurrence_count": 1,
+      "count": 1,
       "detection_log": [
         "not-combined"
       ],
@@ -120,9 +120,9 @@
       ]
     },
     {
-      "identifier": "python_and_python_cwi#3136274a-0a35-5bea-9531-6e328486ea3b",
+      "identifier": "python_and_python_cwi-3136274a-0a35-5bea-9531-6e328486ea3b",
       "license_expression": "python AND python-cwi",
-      "occurrence_count": 1,
+      "count": 1,
       "detection_log": [
         "not-combined"
       ],
@@ -152,9 +152,9 @@
       ]
     },
     {
-      "identifier": "bzip2_libbzip_2010#4854df4f-b9f8-1a96-92bd-44873ee7c7c5",
+      "identifier": "bzip2_libbzip_2010-4854df4f-b9f8-1a96-92bd-44873ee7c7c5",
       "license_expression": "bzip2-libbzip-2010",
-      "occurrence_count": 1,
+      "count": 1,
       "detection_log": [
         "unknown-intro-followed-by-match"
       ],
@@ -184,9 +184,9 @@
       ]
     },
     {
-      "identifier": "sleepycat#82c2d26c-feb1-2257-3b27-0e92e4721958",
+      "identifier": "sleepycat-82c2d26c-feb1-2257-3b27-0e92e4721958",
       "license_expression": "sleepycat",
-      "occurrence_count": 1,
+      "count": 1,
       "detection_log": [
         "unknown-intro-followed-by-match"
       ],
@@ -216,9 +216,9 @@
       ]
     },
     {
-      "identifier": "bsd_simplified#d90f717a-d127-c345-d8a9-dc828c2be7e6",
+      "identifier": "bsd_simplified-d90f717a-d127-c345-d8a9-dc828c2be7e6",
       "license_expression": "bsd-simplified",
-      "occurrence_count": 1,
+      "count": 1,
       "detection_log": [
         "license-clues",
         "not-license-clues-as-more-detections-present"
@@ -238,9 +238,9 @@
       ]
     },
     {
-      "identifier": "bsd_new#e65e2324-d4b0-5ad8-3314-a798683d13e3",
+      "identifier": "bsd_new-e65e2324-d4b0-5ad8-3314-a798683d13e3",
       "license_expression": "bsd-new",
-      "occurrence_count": 1,
+      "count": 1,
       "detection_log": [
         "not-combined"
       ],
@@ -259,9 +259,9 @@
       ]
     },
     {
-      "identifier": "bsd_new#4c57e726-e851-a66a-1dbe-d6106bcb4751",
+      "identifier": "bsd_new-4c57e726-e851-a66a-1dbe-d6106bcb4751",
       "license_expression": "bsd-new",
-      "occurrence_count": 1,
+      "count": 1,
       "detection_log": [
         "not-combined"
       ],
@@ -280,9 +280,9 @@
       ]
     },
     {
-      "identifier": "openssl_ssleay#7a0dc499-dddd-4bf1-2d0d-9a84c910b0bc",
+      "identifier": "openssl_ssleay-7a0dc499-dddd-4bf1-2d0d-9a84c910b0bc",
       "license_expression": "openssl-ssleay",
-      "occurrence_count": 1,
+      "count": 1,
       "detection_log": [
         "unknown-intro-followed-by-match"
       ],
@@ -323,9 +323,9 @@
       ]
     },
     {
-      "identifier": "openssl#dacfdecf-b752-23a6-37ba-f98e7d93554a",
+      "identifier": "openssl-dacfdecf-b752-23a6-37ba-f98e7d93554a",
       "license_expression": "openssl",
-      "occurrence_count": 1,
+      "count": 1,
       "detection_log": [
         "not-combined"
       ],
@@ -344,9 +344,9 @@
       ]
     },
     {
-      "identifier": "ssleay_windows#50e05b6f-8602-75e7-7568-c3b4e72fec38",
+      "identifier": "ssleay_windows-50e05b6f-8602-75e7-7568-c3b4e72fec38",
       "license_expression": "ssleay-windows",
-      "occurrence_count": 1,
+      "count": 1,
       "detection_log": [
         "not-combined"
       ],
@@ -365,9 +365,9 @@
       ]
     },
     {
-      "identifier": "tcl#d352cc42-40ca-8f87-931e-725ee0a85c3e",
+      "identifier": "tcl-d352cc42-40ca-8f87-931e-725ee0a85c3e",
       "license_expression": "tcl",
-      "occurrence_count": 1,
+      "count": 1,
       "detection_log": [
         "unknown-intro-followed-by-match"
       ],
@@ -397,9 +397,9 @@
       ]
     },
     {
-      "identifier": "tcl#e49b63d5-028c-f39c-035e-68c9e6c60e34",
+      "identifier": "tcl-e49b63d5-028c-f39c-035e-68c9e6c60e34",
       "license_expression": "tcl",
-      "occurrence_count": 1,
+      "count": 1,
       "detection_log": [
         "unknown-intro-followed-by-match"
       ],
@@ -1425,19 +1425,19 @@
       "license_clues": [],
       "percentage_of_license_text": 83.64,
       "for_license_detections": [
-        "python#f9a5ba7d-9d66-5878-a0bd-1afe42fe0bd9",
-        "other_copyleft_and_gpl_1_0_plus#a9ef94dc-a60e-21b6-82b8-77454e7751c0",
-        "python_and_python_cwi#3136274a-0a35-5bea-9531-6e328486ea3b",
-        "bzip2_libbzip_2010#4854df4f-b9f8-1a96-92bd-44873ee7c7c5",
-        "sleepycat#82c2d26c-feb1-2257-3b27-0e92e4721958",
-        "bsd_simplified#d90f717a-d127-c345-d8a9-dc828c2be7e6",
-        "bsd_new#e65e2324-d4b0-5ad8-3314-a798683d13e3",
-        "bsd_new#4c57e726-e851-a66a-1dbe-d6106bcb4751",
-        "openssl_ssleay#7a0dc499-dddd-4bf1-2d0d-9a84c910b0bc",
-        "openssl#dacfdecf-b752-23a6-37ba-f98e7d93554a",
-        "ssleay_windows#50e05b6f-8602-75e7-7568-c3b4e72fec38",
-        "tcl#d352cc42-40ca-8f87-931e-725ee0a85c3e",
-        "tcl#e49b63d5-028c-f39c-035e-68c9e6c60e34"
+        "python-f9a5ba7d-9d66-5878-a0bd-1afe42fe0bd9",
+        "other_copyleft_and_gpl_1_0_plus-a9ef94dc-a60e-21b6-82b8-77454e7751c0",
+        "python_and_python_cwi-3136274a-0a35-5bea-9531-6e328486ea3b",
+        "bzip2_libbzip_2010-4854df4f-b9f8-1a96-92bd-44873ee7c7c5",
+        "sleepycat-82c2d26c-feb1-2257-3b27-0e92e4721958",
+        "bsd_simplified-d90f717a-d127-c345-d8a9-dc828c2be7e6",
+        "bsd_new-e65e2324-d4b0-5ad8-3314-a798683d13e3",
+        "bsd_new-4c57e726-e851-a66a-1dbe-d6106bcb4751",
+        "openssl_ssleay-7a0dc499-dddd-4bf1-2d0d-9a84c910b0bc",
+        "openssl-dacfdecf-b752-23a6-37ba-f98e7d93554a",
+        "ssleay_windows-50e05b6f-8602-75e7-7568-c3b4e72fec38",
+        "tcl-d352cc42-40ca-8f87-931e-725ee0a85c3e",
+        "tcl-e49b63d5-028c-f39c-035e-68c9e6c60e34"
       ],
       "scan_errors": []
     }

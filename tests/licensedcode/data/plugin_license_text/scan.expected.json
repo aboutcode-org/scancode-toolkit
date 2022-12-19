@@ -1,9 +1,9 @@
 {
   "license_detections": [
     {
-      "identifier": "apache_1_0#467418ea-42a8-45bb-a30e-a9fcb411f2bb",
+      "identifier": "apache_1_0-467418ea-42a8-45bb-a30e-a9fcb411f2bb",
       "license_expression": "apache-1.0",
-      "occurrence_count": 2,
+      "count": 2,
       "detection_log": [
         "not-combined"
       ],
@@ -22,9 +22,9 @@
       ]
     },
     {
-      "identifier": "ja_sig#303cd8fe-cdb4-d62a-6a7b-306e31fce477",
+      "identifier": "ja_sig-303cd8fe-cdb4-d62a-6a7b-306e31fce477",
       "license_expression": "ja-sig",
-      "occurrence_count": 2,
+      "count": 2,
       "detection_log": [
         "not-combined"
       ],
@@ -43,9 +43,9 @@
       ]
     },
     {
-      "identifier": "apache_2_0#c2a02f69-4a86-e4f0-bdc9-55915fe527db",
+      "identifier": "apache_2_0-c2a02f69-4a86-e4f0-bdc9-55915fe527db",
       "license_expression": "apache-2.0",
-      "occurrence_count": 2,
+      "count": 2,
       "detection_log": [
         "not-combined"
       ],
@@ -64,9 +64,9 @@
       ]
     },
     {
-      "identifier": "gpl_2_0_with_linux_syscall_exception_gpl_or_linux_openib#041f32d1-6cb1-f9fa-a580-14f3958007f0",
+      "identifier": "gpl_2_0_with_linux_syscall_exception_gpl_or_linux_openib-041f32d1-6cb1-f9fa-a580-14f3958007f0",
       "license_expression": "gpl-2.0 WITH linux-syscall-exception-gpl OR linux-openib",
-      "occurrence_count": 1,
+      "count": 1,
       "detection_log": [
         "not-combined"
       ],
@@ -379,7 +379,7 @@
       "license_clues": [],
       "percentage_of_license_text": 96.08,
       "for_license_detections": [
-        "apache_1_0#467418ea-42a8-45bb-a30e-a9fcb411f2bb"
+        "apache_1_0-467418ea-42a8-45bb-a30e-a9fcb411f2bb"
       ],
       "is_license_text": true,
       "files_count": 0,
@@ -433,7 +433,7 @@
       "license_clues": [],
       "percentage_of_license_text": 40.98,
       "for_license_detections": [
-        "apache_1_0#467418ea-42a8-45bb-a30e-a9fcb411f2bb"
+        "apache_1_0-467418ea-42a8-45bb-a30e-a9fcb411f2bb"
       ],
       "is_license_text": false,
       "files_count": 0,
@@ -507,8 +507,8 @@
       "license_clues": [],
       "percentage_of_license_text": 91.69,
       "for_license_detections": [
-        "ja_sig#303cd8fe-cdb4-d62a-6a7b-306e31fce477",
-        "apache_2_0#c2a02f69-4a86-e4f0-bdc9-55915fe527db"
+        "ja_sig-303cd8fe-cdb4-d62a-6a7b-306e31fce477",
+        "apache_2_0-c2a02f69-4a86-e4f0-bdc9-55915fe527db"
       ],
       "is_license_text": true,
       "files_count": 0,
@@ -562,7 +562,7 @@
       "license_clues": [],
       "percentage_of_license_text": 100.0,
       "for_license_detections": [
-        "gpl_2_0_with_linux_syscall_exception_gpl_or_linux_openib#041f32d1-6cb1-f9fa-a580-14f3958007f0"
+        "gpl_2_0_with_linux_syscall_exception_gpl_or_linux_openib-041f32d1-6cb1-f9fa-a580-14f3958007f0"
       ],
       "is_license_text": true,
       "files_count": 0,
@@ -636,8 +636,8 @@
       "license_clues": [],
       "percentage_of_license_text": 30.71,
       "for_license_detections": [
-        "ja_sig#303cd8fe-cdb4-d62a-6a7b-306e31fce477",
-        "apache_2_0#c2a02f69-4a86-e4f0-bdc9-55915fe527db"
+        "ja_sig-303cd8fe-cdb4-d62a-6a7b-306e31fce477",
+        "apache_2_0-c2a02f69-4a86-e4f0-bdc9-55915fe527db"
       ],
       "is_license_text": false,
       "files_count": 0,

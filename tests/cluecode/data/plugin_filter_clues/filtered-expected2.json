@@ -1,9 +1,9 @@
 {
   "license_detections": [
     {
-      "identifier": "pygres_2_2#7b7e2330-4841-998b-3287-06b5bc6e5a90",
+      "identifier": "pygres_2_2-7b7e2330-4841-998b-3287-06b5bc6e5a90",
       "license_expression": "pygres-2.2",
-      "occurrence_count": 1,
+      "count": 1,
       "detection_log": [
         "not-combined"
       ],
@@ -97,7 +97,7 @@
       "license_clues": [],
       "percentage_of_license_text": 69.38,
       "for_license_detections": [
-        "pygres_2_2#7b7e2330-4841-998b-3287-06b5bc6e5a90"
+        "pygres_2_2-7b7e2330-4841-998b-3287-06b5bc6e5a90"
       ],
       "copyrights": [
         {

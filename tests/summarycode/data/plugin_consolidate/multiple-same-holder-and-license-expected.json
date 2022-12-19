@@ -1,9 +1,11 @@
 {
+  "packages": [],
+  "dependencies": [],
   "license_detections": [
     {
-      "identifier": "gpl_2_0#f9043636-8ec8-6bbe-0948-64c2513e8dee",
+      "identifier": "gpl_2_0-f9043636-8ec8-6bbe-0948-64c2513e8dee",
       "license_expression": "gpl-2.0",
-      "occurrence_count": 2,
+      "count": 2,
       "detection_log": [
         "not-combined"
       ],
@@ -119,8 +121,6 @@
       "rule_relevance": 100
     }
   ],
-  "dependencies": [],
-  "packages": [],
   "consolidated_components": [
     {
       "type": "holders",
@@ -160,6 +160,8 @@
       "is_media": false,
       "is_source": false,
       "is_script": false,
+      "package_data": [],
+      "for_packages": [],
       "detected_license_expression": null,
       "detected_license_expression_spdx": null,
       "license_detections": [],
@@ -169,8 +171,6 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "package_data": [],
-      "for_packages": [],
       "consolidated_to": [
         "corp_ibm_1"
       ],
@@ -198,6 +198,8 @@
       "is_media": false,
       "is_source": false,
       "is_script": false,
+      "package_data": [],
+      "for_packages": [],
       "detected_license_expression": "gpl-2.0",
       "detected_license_expression_spdx": "GPL-2.0-only",
       "license_detections": [
@@ -235,7 +237,7 @@
       "license_clues": [],
       "percentage_of_license_text": 50.0,
       "for_license_detections": [
-        "gpl_2_0#f9043636-8ec8-6bbe-0948-64c2513e8dee"
+        "gpl_2_0-f9043636-8ec8-6bbe-0948-64c2513e8dee"
       ],
       "copyrights": [
         {
@@ -262,8 +264,6 @@
         }
       ],
       "authors": [],
-      "package_data": [],
-      "for_packages": [],
       "consolidated_to": [
         "corp_ibm_1"
       ],
@@ -291,6 +291,8 @@
       "is_media": false,
       "is_source": false,
       "is_script": false,
+      "package_data": [],
+      "for_packages": [],
       "detected_license_expression": "gpl-2.0",
       "detected_license_expression_spdx": "GPL-2.0-only",
       "license_detections": [
@@ -328,7 +330,7 @@
       "license_clues": [],
       "percentage_of_license_text": 50.0,
       "for_license_detections": [
-        "gpl_2_0#f9043636-8ec8-6bbe-0948-64c2513e8dee"
+        "gpl_2_0-f9043636-8ec8-6bbe-0948-64c2513e8dee"
       ],
       "copyrights": [
         {
@@ -355,8 +357,6 @@
         }
       ],
       "authors": [],
-      "package_data": [],
-      "for_packages": [],
       "consolidated_to": [
         "corp_ibm_1"
       ],

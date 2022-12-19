@@ -26,7 +26,7 @@ class UrlScanner(ScanPlugin):
 
     resource_attributes = dict(urls=attr.ib(default=attr.Factory(list)))
 
-    sort_order = 10
+    sort_order = 8
 
     options = [
         PluggableCommandLineOption(('-u', '--url',),

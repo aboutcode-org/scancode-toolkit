@@ -1,9 +1,9 @@
 {
   "license_detections": [
     {
-      "identifier": "unknown_license_reference#cb2d1ad5-873d-6301-d317-22a999e29333",
+      "identifier": "unknown_license_reference-cb2d1ad5-873d-6301-d317-22a999e29333",
       "license_expression": "unknown-license-reference",
-      "occurrence_count": 2,
+      "count": 2,
       "detection_log": [
         "not-combined"
       ],
@@ -22,9 +22,9 @@
       ]
     },
     {
-      "identifier": "x11_xconsortium_veillard#f8587161-833d-692c-3d76-0d68eb040d40",
+      "identifier": "x11_xconsortium_veillard-f8587161-833d-692c-3d76-0d68eb040d40",
       "license_expression": "x11-xconsortium-veillard",
-      "occurrence_count": 1,
+      "count": 1,
       "detection_log": [
         "not-combined"
       ],
@@ -43,9 +43,9 @@
       ]
     },
     {
-      "identifier": "unknown_license_reference#0fca325a-cfc9-3067-2426-a2e81f63954e",
+      "identifier": "unknown_license_reference-0fca325a-cfc9-3067-2426-a2e81f63954e",
       "license_expression": "unknown-license-reference",
-      "occurrence_count": 1,
+      "count": 1,
       "detection_log": [
         "not-combined"
       ],
@@ -168,7 +168,7 @@
       "license_clues": [],
       "percentage_of_license_text": 81.89,
       "for_license_detections": [
-        "x11_xconsortium_veillard#f8587161-833d-692c-3d76-0d68eb040d40"
+        "x11_xconsortium_veillard-f8587161-833d-692c-3d76-0d68eb040d40"
       ],
       "scan_errors": []
     },
@@ -214,7 +214,7 @@
       "license_clues": [],
       "percentage_of_license_text": 1.32,
       "for_license_detections": [
-        "unknown_license_reference#cb2d1ad5-873d-6301-d317-22a999e29333"
+        "unknown_license_reference-cb2d1ad5-873d-6301-d317-22a999e29333"
       ],
       "scan_errors": []
     },
@@ -260,7 +260,7 @@
       "license_clues": [],
       "percentage_of_license_text": 0.1,
       "for_license_detections": [
-        "unknown_license_reference#cb2d1ad5-873d-6301-d317-22a999e29333"
+        "unknown_license_reference-cb2d1ad5-873d-6301-d317-22a999e29333"
       ],
       "scan_errors": []
     },
@@ -328,7 +328,7 @@
       "license_clues": [],
       "percentage_of_license_text": 2.47,
       "for_license_detections": [
-        "unknown_license_reference#0fca325a-cfc9-3067-2426-a2e81f63954e"
+        "unknown_license_reference-0fca325a-cfc9-3067-2426-a2e81f63954e"
       ],
       "scan_errors": []
     }

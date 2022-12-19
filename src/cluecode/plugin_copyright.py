@@ -28,7 +28,7 @@ class CopyrightScanner(ScanPlugin):
         ('authors',attr.ib(default=attr.Factory(list))),
     ])
 
-    sort_order = 4
+    sort_order = 6
 
     options = [
         PluggableCommandLineOption(('-c', '--copyright',),

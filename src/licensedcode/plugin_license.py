@@ -74,7 +74,7 @@ class LicenseScanner(ScanPlugin):
         license_rule_references=attr.ib(default=attr.Factory(list))
     )
 
-    sort_order = 2
+    sort_order = 4
 
     options = [
         PluggableCommandLineOption(('-l', '--license'),

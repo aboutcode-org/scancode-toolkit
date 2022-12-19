@@ -91,10 +91,10 @@ class PackageScanner(ScanPlugin):
     """
 
     codebase_attributes = dict(
-        # a list of dependencies
-        dependencies=attr.ib(default=attr.Factory(list), repr=False),
         # a list of packages
         packages=attr.ib(default=attr.Factory(list), repr=False),
+        # a list of dependencies
+        dependencies=attr.ib(default=attr.Factory(list), repr=False),
     )
     resource_attributes = dict(
         # a list of package data
@@ -105,7 +105,7 @@ class PackageScanner(ScanPlugin):
 
     required_plugins = ['scan:licenses']
 
-    sort_order = 6
+    sort_order = 3
 
     options = [
         PluggableCommandLineOption(

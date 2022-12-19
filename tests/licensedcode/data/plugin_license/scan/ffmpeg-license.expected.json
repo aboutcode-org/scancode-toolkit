@@ -1,9 +1,9 @@
 {
   "license_detections": [
     {
-      "identifier": "lgpl_2_1_plus_and_other_permissive_and_gpl_2_0_plus#14099f19-eb98-27ed-cc72-38bbf5c0a1e7",
+      "identifier": "lgpl_2_1_plus_and_other_permissive_and_gpl_2_0_plus-14099f19-eb98-27ed-cc72-38bbf5c0a1e7",
       "license_expression": "lgpl-2.1-plus AND other-permissive AND gpl-2.0-plus",
-      "occurrence_count": 1,
+      "count": 1,
       "detection_log": [
         "not-combined"
       ],
@@ -22,9 +22,9 @@
       ]
     },
     {
-      "identifier": "gpl_1_0_plus#b16770da-ae1c-5e72-d72a-ca61d8d81ae9",
+      "identifier": "gpl_1_0_plus-b16770da-ae1c-5e72-d72a-ca61d8d81ae9",
       "license_expression": "gpl-1.0-plus",
-      "occurrence_count": 1,
+      "count": 1,
       "detection_log": [
         "possible-false-positive",
         "not-license-clues-as-more-detections-present"
@@ -44,9 +44,9 @@
       ]
     },
     {
-      "identifier": "lgpl_3_0_and_lgpl_3_0_plus_and__lgpl_3_0_and_gpl_3_0#c47094e3-d257-d183-2320-782b7720ff17",
+      "identifier": "lgpl_3_0_and_lgpl_3_0_plus_and__lgpl_3_0_and_gpl_3_0-c47094e3-d257-d183-2320-782b7720ff17",
       "license_expression": "lgpl-3.0 AND lgpl-3.0-plus AND (lgpl-3.0 AND gpl-3.0)",
-      "occurrence_count": 1,
+      "count": 1,
       "detection_log": [
         "not-combined"
       ],
@@ -87,9 +87,9 @@
       ]
     },
     {
-      "identifier": "ijg_and_mit#86d0b13f-7abd-19fb-ddb8-941d97380f00",
+      "identifier": "ijg_and_mit-86d0b13f-7abd-19fb-ddb8-941d97380f00",
       "license_expression": "ijg AND mit",
-      "occurrence_count": 1,
+      "count": 1,
       "detection_log": [
         "unknown-intro-followed-by-match"
       ],
@@ -130,9 +130,9 @@
       ]
     },
     {
-      "identifier": "gpl_1_0_plus#aeb7da71-ec9e-bc5f-52f3-4e9299af7bb1",
+      "identifier": "gpl_1_0_plus-aeb7da71-ec9e-bc5f-52f3-4e9299af7bb1",
       "license_expression": "gpl-1.0-plus",
-      "occurrence_count": 1,
+      "count": 1,
       "detection_log": [
         "not-combined"
       ],
@@ -151,9 +151,9 @@
       ]
     },
     {
-      "identifier": "gpl_2_0_and_apache_2_0_and_lgpl_3_0_plus#5f2ed903-ee9f-f370-5de1-07fbc6f1e0fd",
+      "identifier": "gpl_2_0_and_apache_2_0_and_lgpl_3_0_plus-5f2ed903-ee9f-f370-5de1-07fbc6f1e0fd",
       "license_expression": "gpl-2.0 AND apache-2.0 AND lgpl-3.0-plus",
-      "occurrence_count": 1,
+      "count": 1,
       "detection_log": [
         "not-combined"
       ],
@@ -194,9 +194,9 @@
       ]
     },
     {
-      "identifier": "gpl_2_0_and_lgpl_2_0_plus_and_proprietary_license#a54d7281-05a0-24e4-ef42-199dd7d49606",
+      "identifier": "gpl_2_0_and_lgpl_2_0_plus_and_proprietary_license-a54d7281-05a0-24e4-ef42-199dd7d49606",
       "license_expression": "gpl-2.0 AND lgpl-2.0-plus AND proprietary-license",
-      "occurrence_count": 1,
+      "count": 1,
       "detection_log": [
         "not-combined"
       ],
@@ -1019,13 +1019,13 @@
       "license_clues": [],
       "percentage_of_license_text": 34.96,
       "for_license_detections": [
-        "lgpl_2_1_plus_and_other_permissive_and_gpl_2_0_plus#14099f19-eb98-27ed-cc72-38bbf5c0a1e7",
-        "gpl_1_0_plus#b16770da-ae1c-5e72-d72a-ca61d8d81ae9",
-        "lgpl_3_0_and_lgpl_3_0_plus_and__lgpl_3_0_and_gpl_3_0#c47094e3-d257-d183-2320-782b7720ff17",
-        "ijg_and_mit#86d0b13f-7abd-19fb-ddb8-941d97380f00",
-        "gpl_1_0_plus#aeb7da71-ec9e-bc5f-52f3-4e9299af7bb1",
-        "gpl_2_0_and_apache_2_0_and_lgpl_3_0_plus#5f2ed903-ee9f-f370-5de1-07fbc6f1e0fd",
-        "gpl_2_0_and_lgpl_2_0_plus_and_proprietary_license#a54d7281-05a0-24e4-ef42-199dd7d49606"
+        "lgpl_2_1_plus_and_other_permissive_and_gpl_2_0_plus-14099f19-eb98-27ed-cc72-38bbf5c0a1e7",
+        "gpl_1_0_plus-b16770da-ae1c-5e72-d72a-ca61d8d81ae9",
+        "lgpl_3_0_and_lgpl_3_0_plus_and__lgpl_3_0_and_gpl_3_0-c47094e3-d257-d183-2320-782b7720ff17",
+        "ijg_and_mit-86d0b13f-7abd-19fb-ddb8-941d97380f00",
+        "gpl_1_0_plus-aeb7da71-ec9e-bc5f-52f3-4e9299af7bb1",
+        "gpl_2_0_and_apache_2_0_and_lgpl_3_0_plus-5f2ed903-ee9f-f370-5de1-07fbc6f1e0fd",
+        "gpl_2_0_and_lgpl_2_0_plus_and_proprietary_license-a54d7281-05a0-24e4-ef42-199dd7d49606"
       ],
       "scan_errors": []
     }

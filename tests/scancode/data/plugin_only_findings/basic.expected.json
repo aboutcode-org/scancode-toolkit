@@ -1,9 +1,11 @@
 {
+  "packages": [],
+  "dependencies": [],
   "license_detections": [
     {
-      "identifier": "gpl_2_0_or_bsd_new#20ee927b-fbe0-31a5-1f33-595dd1b2fd13",
+      "identifier": "gpl_2_0_or_bsd_new-20ee927b-fbe0-31a5-1f33-595dd1b2fd13",
       "license_expression": "gpl-2.0 OR bsd-new",
-      "occurrence_count": 1,
+      "count": 1,
       "detection_log": [
         "not-combined"
       ],
@@ -22,9 +24,9 @@
       ]
     },
     {
-      "identifier": "bsd_original_uc#b17bc21b-d4a2-9db7-7cef-3d352cc60928",
+      "identifier": "bsd_original_uc-b17bc21b-d4a2-9db7-7cef-3d352cc60928",
       "license_expression": "bsd-original-uc",
-      "occurrence_count": 1,
+      "count": 1,
       "detection_log": [
         "not-combined"
       ],
@@ -153,8 +155,6 @@
       "rule_relevance": 100
     }
   ],
-  "dependencies": [],
-  "packages": [],
   "files": [
     {
       "path": "basic.tgz/basic/dir2/subdir/bcopy.s",
@@ -175,6 +175,8 @@
       "is_media": false,
       "is_source": true,
       "is_script": false,
+      "package_data": [],
+      "for_packages": [],
       "detected_license_expression": "bsd-original-uc",
       "detected_license_expression_spdx": "BSD-4-Clause-UC",
       "license_detections": [
@@ -201,7 +203,7 @@
       "license_clues": [],
       "percentage_of_license_text": 4.82,
       "for_license_detections": [
-        "bsd_original_uc#b17bc21b-d4a2-9db7-7cef-3d352cc60928"
+        "bsd_original_uc-b17bc21b-d4a2-9db7-7cef-3d352cc60928"
       ],
       "copyrights": [
         {
@@ -224,8 +226,6 @@
           "end_line": 36
         }
       ],
-      "package_data": [],
-      "for_packages": [],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -250,6 +250,8 @@
       "is_media": false,
       "is_source": true,
       "is_script": false,
+      "package_data": [],
+      "for_packages": [],
       "detected_license_expression": "gpl-2.0 OR bsd-new",
       "detected_license_expression_spdx": "GPL-2.0-only OR BSD-3-Clause",
       "license_detections": [
@@ -276,7 +278,7 @@
       "license_clues": [],
       "percentage_of_license_text": 19.01,
       "for_license_detections": [
-        "gpl_2_0_or_bsd_new#20ee927b-fbe0-31a5-1f33-595dd1b2fd13"
+        "gpl_2_0_or_bsd_new-20ee927b-fbe0-31a5-1f33-595dd1b2fd13"
       ],
       "copyrights": [
         {
@@ -293,8 +295,6 @@
         }
       ],
       "authors": [],
-      "package_data": [],
-      "for_packages": [],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,

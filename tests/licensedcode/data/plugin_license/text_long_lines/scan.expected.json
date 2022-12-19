@@ -1,9 +1,9 @@
 {
   "license_detections": [
     {
-      "identifier": "gpl_2_0_with_linux_syscall_exception_gpl_or_linux_openib#041f32d1-6cb1-f9fa-a580-14f3958007f0",
+      "identifier": "gpl_2_0_with_linux_syscall_exception_gpl_or_linux_openib-041f32d1-6cb1-f9fa-a580-14f3958007f0",
       "license_expression": "gpl-2.0 WITH linux-syscall-exception-gpl OR linux-openib",
-      "occurrence_count": 1,
+      "count": 1,
       "detection_log": [
         "not-combined"
       ],
@@ -22,9 +22,9 @@
       ]
     },
     {
-      "identifier": "unlicense#df43f663-8e79-9294-efa7-e4438c80cfbd",
+      "identifier": "unlicense-df43f663-8e79-9294-efa7-e4438c80cfbd",
       "license_expression": "unlicense",
-      "occurrence_count": 1,
+      "count": 1,
       "detection_log": [
         "not-combined"
       ],
@@ -187,7 +187,7 @@
       "license_clues": [],
       "percentage_of_license_text": 100.0,
       "for_license_detections": [
-        "gpl_2_0_with_linux_syscall_exception_gpl_or_linux_openib#041f32d1-6cb1-f9fa-a580-14f3958007f0"
+        "gpl_2_0_with_linux_syscall_exception_gpl_or_linux_openib-041f32d1-6cb1-f9fa-a580-14f3958007f0"
       ],
       "scan_errors": []
     },
@@ -221,7 +221,7 @@
       "license_clues": [],
       "percentage_of_license_text": 5.25,
       "for_license_detections": [
-        "unlicense#df43f663-8e79-9294-efa7-e4438c80cfbd"
+        "unlicense-df43f663-8e79-9294-efa7-e4438c80cfbd"
       ],
       "scan_errors": []
     }

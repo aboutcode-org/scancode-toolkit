@@ -1,9 +1,123 @@
 {
+  "packages": [
+    {
+      "type": "buck",
+      "namespace": null,
+      "name": "demo",
+      "version": null,
+      "qualifiers": {},
+      "subpath": null,
+      "primary_language": null,
+      "description": null,
+      "release_date": null,
+      "parties": [],
+      "keywords": [],
+      "homepage_url": null,
+      "download_url": null,
+      "size": null,
+      "sha1": null,
+      "md5": null,
+      "sha256": null,
+      "sha512": null,
+      "bug_tracking_url": null,
+      "code_view_url": null,
+      "vcs_url": null,
+      "copyright": null,
+      "declared_license_expression": null,
+      "declared_license_expression_spdx": null,
+      "license_detections": [],
+      "other_license_expression": null,
+      "other_license_expression_spdx": null,
+      "other_license_detections": [],
+      "extracted_license_statement": null,
+      "notice_text": null,
+      "source_packages": [],
+      "extra_data": {},
+      "repository_homepage_url": null,
+      "repository_download_url": null,
+      "api_data_url": null,
+      "package_uid": "pkg:buck/demo?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_paths": [
+        "component-package-build/build/BUCK"
+      ],
+      "datasource_ids": [
+        "buck_file"
+      ],
+      "purl": "pkg:buck/demo"
+    },
+    {
+      "type": "npm",
+      "namespace": null,
+      "name": "test-package",
+      "version": "0.0.1",
+      "qualifiers": {},
+      "subpath": null,
+      "primary_language": "JavaScript",
+      "description": null,
+      "release_date": null,
+      "parties": [],
+      "keywords": [],
+      "homepage_url": null,
+      "download_url": "https://registry.npmjs.org/test-package/-/test-package-0.0.1.tgz",
+      "size": null,
+      "sha1": null,
+      "md5": null,
+      "sha256": null,
+      "sha512": null,
+      "bug_tracking_url": null,
+      "code_view_url": null,
+      "vcs_url": null,
+      "copyright": null,
+      "declared_license_expression": "apache-2.0",
+      "declared_license_expression_spdx": "Apache-2.0",
+      "license_detections": [
+        {
+          "license_expression": "apache-2.0",
+          "detection_log": [
+            "not-combined"
+          ],
+          "matches": [
+            {
+              "score": 100.0,
+              "start_line": 1,
+              "end_line": 1,
+              "matched_length": 3,
+              "match_coverage": 100.0,
+              "matcher": "1-hash",
+              "license_expression": "apache-2.0",
+              "rule_identifier": "spdx_license_id_apache-2.0_for_apache-2.0.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/spdx_license_id_apache-2.0_for_apache-2.0.RULE",
+              "matched_text": "apache-2.0"
+            }
+          ]
+        }
+      ],
+      "other_license_expression": null,
+      "other_license_expression_spdx": null,
+      "other_license_detections": [],
+      "extracted_license_statement": "['apache-2.0']",
+      "notice_text": null,
+      "source_packages": [],
+      "extra_data": {},
+      "repository_homepage_url": "https://www.npmjs.com/package/test-package",
+      "repository_download_url": "https://registry.npmjs.org/test-package/-/test-package-0.0.1.tgz",
+      "api_data_url": "https://registry.npmjs.org/test-package/0.0.1",
+      "package_uid": "pkg:npm/test-package@0.0.1?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_paths": [
+        "component-package-build/package/package.json"
+      ],
+      "datasource_ids": [
+        "npm_package_json"
+      ],
+      "purl": "pkg:npm/test-package@0.0.1"
+    }
+  ],
+  "dependencies": [],
   "license_detections": [
     {
-      "identifier": "apache_2_0#0c954d0c-44a8-826f-8a0e-c82112725467",
+      "identifier": "apache_2_0-0c954d0c-44a8-826f-8a0e-c82112725467",
       "license_expression": "apache-2.0",
-      "occurrence_count": 4,
+      "count": 4,
       "detection_log": [
         "not-combined"
       ],
@@ -22,9 +136,9 @@
       ]
     },
     {
-      "identifier": "lgpl_2_0#f6292b57-ba6c-0a53-2660-505e6745bffa",
+      "identifier": "lgpl_2_0-f6292b57-ba6c-0a53-2660-505e6745bffa",
       "license_expression": "lgpl-2.0",
-      "occurrence_count": 1,
+      "count": 1,
       "detection_log": [
         "not-combined"
       ],
@@ -43,9 +157,9 @@
       ]
     },
     {
-      "identifier": "apache_2_0#c6739b12-3643-1e85-cc14-1864411bf945",
+      "identifier": "apache_2_0-c6739b12-3643-1e85-cc14-1864411bf945",
       "license_expression": "apache-2.0",
-      "occurrence_count": 1,
+      "count": 1,
       "detection_log": [
         "not-combined"
       ],
@@ -64,9 +178,9 @@
       ]
     },
     {
-      "identifier": "gpl_2_0#b6b96096-114f-387a-cbbd-855af62441b0",
+      "identifier": "gpl_2_0-b6b96096-114f-387a-cbbd-855af62441b0",
       "license_expression": "gpl-2.0",
-      "occurrence_count": 1,
+      "count": 1,
       "detection_log": [
         "not-combined"
       ],
@@ -214,6 +328,18 @@
       "rule_relevance": 100
     },
     {
+      "license_expression": "apache-2.0",
+      "rule_identifier": "spdx_license_id_apache-2.0_for_apache-2.0.RULE",
+      "referenced_filenames": [],
+      "is_license_text": false,
+      "is_license_notice": false,
+      "is_license_reference": true,
+      "is_license_tag": false,
+      "is_license_intro": false,
+      "rule_length": 3,
+      "rule_relevance": 100
+    },
+    {
       "license_expression": "lgpl-2.0",
       "rule_identifier": "lgpl-2.0_bare_id.RULE",
       "referenced_filenames": [],
@@ -272,120 +398,6 @@
       "is_license_intro": false,
       "rule_length": 9,
       "rule_relevance": 100
-    }
-  ],
-  "dependencies": [],
-  "packages": [
-    {
-      "type": "buck",
-      "namespace": null,
-      "name": "demo",
-      "version": null,
-      "qualifiers": {},
-      "subpath": null,
-      "primary_language": null,
-      "description": null,
-      "release_date": null,
-      "parties": [],
-      "keywords": [],
-      "homepage_url": null,
-      "download_url": null,
-      "size": null,
-      "sha1": null,
-      "md5": null,
-      "sha256": null,
-      "sha512": null,
-      "bug_tracking_url": null,
-      "code_view_url": null,
-      "vcs_url": null,
-      "copyright": null,
-      "declared_license_expression": null,
-      "declared_license_expression_spdx": null,
-      "license_detections": [],
-      "other_license_expression": null,
-      "other_license_expression_spdx": null,
-      "other_license_detections": [],
-      "extracted_license_statement": null,
-      "notice_text": null,
-      "source_packages": [],
-      "extra_data": {},
-      "repository_homepage_url": null,
-      "repository_download_url": null,
-      "api_data_url": null,
-      "package_uid": "pkg:buck/demo?uuid=fixed-uid-done-for-testing-5642512d1758",
-      "datafile_paths": [
-        "component-package-build/build/BUCK"
-      ],
-      "datasource_ids": [
-        "buck_file"
-      ],
-      "purl": "pkg:buck/demo"
-    },
-    {
-      "type": "npm",
-      "namespace": null,
-      "name": "test-package",
-      "version": "0.0.1",
-      "qualifiers": {},
-      "subpath": null,
-      "primary_language": "JavaScript",
-      "description": null,
-      "release_date": null,
-      "parties": [],
-      "keywords": [],
-      "homepage_url": null,
-      "download_url": "https://registry.npmjs.org/test-package/-/test-package-0.0.1.tgz",
-      "size": null,
-      "sha1": null,
-      "md5": null,
-      "sha256": null,
-      "sha512": null,
-      "bug_tracking_url": null,
-      "code_view_url": null,
-      "vcs_url": null,
-      "copyright": null,
-      "declared_license_expression": "apache-2.0",
-      "declared_license_expression_spdx": "Apache-2.0",
-      "license_detections": [
-        {
-          "license_expression": "apache-2.0",
-          "detection_log": [
-            "not-combined"
-          ],
-          "matches": [
-            {
-              "score": 100.0,
-              "start_line": 1,
-              "end_line": 1,
-              "matched_length": 3,
-              "match_coverage": 100.0,
-              "matcher": "1-hash",
-              "license_expression": "apache-2.0",
-              "rule_identifier": "spdx_license_id_apache-2.0_for_apache-2.0.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/spdx_license_id_apache-2.0_for_apache-2.0.RULE",
-              "matched_text": "apache-2.0"
-            }
-          ]
-        }
-      ],
-      "other_license_expression": null,
-      "other_license_expression_spdx": null,
-      "other_license_detections": [],
-      "extracted_license_statement": "['apache-2.0']",
-      "notice_text": null,
-      "source_packages": [],
-      "extra_data": {},
-      "repository_homepage_url": "https://www.npmjs.com/package/test-package",
-      "repository_download_url": "https://registry.npmjs.org/test-package/-/test-package-0.0.1.tgz",
-      "api_data_url": "https://registry.npmjs.org/test-package/0.0.1",
-      "package_uid": "pkg:npm/test-package@0.0.1?uuid=fixed-uid-done-for-testing-5642512d1758",
-      "datafile_paths": [
-        "component-package-build/package/package.json"
-      ],
-      "datasource_ids": [
-        "npm_package_json"
-      ],
-      "purl": "pkg:npm/test-package@0.0.1"
     }
   ],
   "consolidated_components": [
@@ -475,6 +487,8 @@
       "is_media": false,
       "is_source": false,
       "is_script": false,
+      "package_data": [],
+      "for_packages": [],
       "detected_license_expression": null,
       "detected_license_expression_spdx": null,
       "license_detections": [],
@@ -484,8 +498,6 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "package_data": [],
-      "for_packages": [],
       "consolidated_to": [],
       "files_count": 8,
       "dirs_count": 3,
@@ -511,6 +523,8 @@
       "is_media": false,
       "is_source": false,
       "is_script": false,
+      "package_data": [],
+      "for_packages": [],
       "detected_license_expression": null,
       "detected_license_expression_spdx": null,
       "license_detections": [],
@@ -520,8 +534,6 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "package_data": [],
-      "for_packages": [],
       "consolidated_to": [],
       "files_count": 1,
       "dirs_count": 0,
@@ -547,15 +559,6 @@
       "is_media": false,
       "is_source": true,
       "is_script": false,
-      "detected_license_expression": null,
-      "detected_license_expression_spdx": null,
-      "license_detections": [],
-      "license_clues": [],
-      "percentage_of_license_text": 0,
-      "for_license_detections": [],
-      "copyrights": [],
-      "holders": [],
-      "authors": [],
       "package_data": [
         {
           "type": "buck",
@@ -602,6 +605,15 @@
       "for_packages": [
         "pkg:buck/demo?uuid=fixed-uid-done-for-testing-5642512d1758"
       ],
+      "detected_license_expression": null,
+      "detected_license_expression_spdx": null,
+      "license_detections": [],
+      "license_clues": [],
+      "percentage_of_license_text": 0,
+      "for_license_detections": [],
+      "copyrights": [],
+      "holders": [],
+      "authors": [],
       "consolidated_to": [],
       "files_count": 0,
       "dirs_count": 0,
@@ -627,6 +639,8 @@
       "is_media": false,
       "is_source": false,
       "is_script": false,
+      "package_data": [],
+      "for_packages": [],
       "detected_license_expression": null,
       "detected_license_expression_spdx": null,
       "license_detections": [],
@@ -636,8 +650,6 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "package_data": [],
-      "for_packages": [],
       "consolidated_to": [
         "apache_foundation_software_1",
         "inc_nexb_1"
@@ -666,6 +678,8 @@
       "is_media": false,
       "is_source": false,
       "is_script": false,
+      "package_data": [],
+      "for_packages": [],
       "detected_license_expression": "apache-2.0",
       "detected_license_expression_spdx": "Apache-2.0",
       "license_detections": [
@@ -692,7 +706,7 @@
       "license_clues": [],
       "percentage_of_license_text": 33.33,
       "for_license_detections": [
-        "apache_2_0#0c954d0c-44a8-826f-8a0e-c82112725467"
+        "apache_2_0-0c954d0c-44a8-826f-8a0e-c82112725467"
       ],
       "copyrights": [
         {
@@ -709,8 +723,6 @@
         }
       ],
       "authors": [],
-      "package_data": [],
-      "for_packages": [],
       "consolidated_to": [
         "apache_foundation_software_1"
       ],
@@ -738,6 +750,8 @@
       "is_media": false,
       "is_source": false,
       "is_script": false,
+      "package_data": [],
+      "for_packages": [],
       "detected_license_expression": "apache-2.0",
       "detected_license_expression_spdx": "Apache-2.0",
       "license_detections": [
@@ -764,7 +778,7 @@
       "license_clues": [],
       "percentage_of_license_text": 33.33,
       "for_license_detections": [
-        "apache_2_0#0c954d0c-44a8-826f-8a0e-c82112725467"
+        "apache_2_0-0c954d0c-44a8-826f-8a0e-c82112725467"
       ],
       "copyrights": [
         {
@@ -781,8 +795,6 @@
         }
       ],
       "authors": [],
-      "package_data": [],
-      "for_packages": [],
       "consolidated_to": [
         "apache_foundation_software_1"
       ],
@@ -810,6 +822,8 @@
       "is_media": false,
       "is_source": false,
       "is_script": false,
+      "package_data": [],
+      "for_packages": [],
       "detected_license_expression": "apache-2.0",
       "detected_license_expression_spdx": "Apache-2.0",
       "license_detections": [
@@ -836,7 +850,7 @@
       "license_clues": [],
       "percentage_of_license_text": 33.33,
       "for_license_detections": [
-        "apache_2_0#0c954d0c-44a8-826f-8a0e-c82112725467"
+        "apache_2_0-0c954d0c-44a8-826f-8a0e-c82112725467"
       ],
       "copyrights": [
         {
@@ -853,8 +867,6 @@
         }
       ],
       "authors": [],
-      "package_data": [],
-      "for_packages": [],
       "consolidated_to": [
         "apache_foundation_software_1"
       ],
@@ -882,6 +894,8 @@
       "is_media": false,
       "is_source": false,
       "is_script": false,
+      "package_data": [],
+      "for_packages": [],
       "detected_license_expression": "lgpl-2.0",
       "detected_license_expression_spdx": "LGPL-2.0-only",
       "license_detections": [
@@ -908,7 +922,7 @@
       "license_clues": [],
       "percentage_of_license_text": 42.86,
       "for_license_detections": [
-        "lgpl_2_0#f6292b57-ba6c-0a53-2660-505e6745bffa"
+        "lgpl_2_0-f6292b57-ba6c-0a53-2660-505e6745bffa"
       ],
       "copyrights": [
         {
@@ -925,8 +939,6 @@
         }
       ],
       "authors": [],
-      "package_data": [],
-      "for_packages": [],
       "consolidated_to": [
         "inc_nexb_1"
       ],
@@ -954,6 +966,8 @@
       "is_media": false,
       "is_source": false,
       "is_script": false,
+      "package_data": [],
+      "for_packages": [],
       "detected_license_expression": null,
       "detected_license_expression_spdx": null,
       "license_detections": [],
@@ -963,8 +977,6 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "package_data": [],
-      "for_packages": [],
       "consolidated_to": [
         "apache_software_1",
         "corp_ibm_1"
@@ -993,49 +1005,6 @@
       "is_media": false,
       "is_source": false,
       "is_script": false,
-      "detected_license_expression": "apache-2.0",
-      "detected_license_expression_spdx": "Apache-2.0",
-      "license_detections": [
-        {
-          "license_expression": "apache-2.0",
-          "detection_log": [
-            "not-combined"
-          ],
-          "matches": [
-            {
-              "score": 100.0,
-              "start_line": 5,
-              "end_line": 5,
-              "matched_length": 4,
-              "match_coverage": 100.0,
-              "matcher": "2-aho",
-              "license_expression": "apache-2.0",
-              "rule_identifier": "apache-2.0_65.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_65.RULE"
-            }
-          ]
-        }
-      ],
-      "license_clues": [],
-      "percentage_of_license_text": 22.22,
-      "for_license_detections": [
-        "apache_2_0#c6739b12-3643-1e85-cc14-1864411bf945"
-      ],
-      "copyrights": [
-        {
-          "copyright": "Copyright (c) The Apache Software",
-          "start_line": 4,
-          "end_line": 4
-        }
-      ],
-      "holders": [
-        {
-          "holder": "The Apache Software",
-          "start_line": 4,
-          "end_line": 4
-        }
-      ],
-      "authors": [],
       "package_data": [
         {
           "type": "npm",
@@ -1103,6 +1072,49 @@
       "for_packages": [
         "pkg:npm/test-package@0.0.1?uuid=fixed-uid-done-for-testing-5642512d1758"
       ],
+      "detected_license_expression": "apache-2.0",
+      "detected_license_expression_spdx": "Apache-2.0",
+      "license_detections": [
+        {
+          "license_expression": "apache-2.0",
+          "detection_log": [
+            "not-combined"
+          ],
+          "matches": [
+            {
+              "score": 100.0,
+              "start_line": 5,
+              "end_line": 5,
+              "matched_length": 4,
+              "match_coverage": 100.0,
+              "matcher": "2-aho",
+              "license_expression": "apache-2.0",
+              "rule_identifier": "apache-2.0_65.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_65.RULE"
+            }
+          ]
+        }
+      ],
+      "license_clues": [],
+      "percentage_of_license_text": 22.22,
+      "for_license_detections": [
+        "apache_2_0-c6739b12-3643-1e85-cc14-1864411bf945"
+      ],
+      "copyrights": [
+        {
+          "copyright": "Copyright (c) The Apache Software",
+          "start_line": 4,
+          "end_line": 4
+        }
+      ],
+      "holders": [
+        {
+          "holder": "The Apache Software",
+          "start_line": 4,
+          "end_line": 4
+        }
+      ],
+      "authors": [],
       "consolidated_to": [
         "apache_software_1"
       ],
@@ -1130,6 +1142,10 @@
       "is_media": false,
       "is_source": false,
       "is_script": false,
+      "package_data": [],
+      "for_packages": [
+        "pkg:npm/test-package@0.0.1?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
       "detected_license_expression": "apache-2.0",
       "detected_license_expression_spdx": "Apache-2.0",
       "license_detections": [
@@ -1156,7 +1172,7 @@
       "license_clues": [],
       "percentage_of_license_text": 33.33,
       "for_license_detections": [
-        "apache_2_0#0c954d0c-44a8-826f-8a0e-c82112725467"
+        "apache_2_0-0c954d0c-44a8-826f-8a0e-c82112725467"
       ],
       "copyrights": [
         {
@@ -1173,10 +1189,6 @@
         }
       ],
       "authors": [],
-      "package_data": [],
-      "for_packages": [
-        "pkg:npm/test-package@0.0.1?uuid=fixed-uid-done-for-testing-5642512d1758"
-      ],
       "consolidated_to": [],
       "files_count": 0,
       "dirs_count": 0,
@@ -1202,6 +1214,10 @@
       "is_media": false,
       "is_source": false,
       "is_script": false,
+      "package_data": [],
+      "for_packages": [
+        "pkg:npm/test-package@0.0.1?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
       "detected_license_expression": "gpl-2.0",
       "detected_license_expression_spdx": "GPL-2.0-only",
       "license_detections": [
@@ -1228,7 +1244,7 @@
       "license_clues": [],
       "percentage_of_license_text": 64.29,
       "for_license_detections": [
-        "gpl_2_0#b6b96096-114f-387a-cbbd-855af62441b0"
+        "gpl_2_0-b6b96096-114f-387a-cbbd-855af62441b0"
       ],
       "copyrights": [
         {
@@ -1245,10 +1261,6 @@
         }
       ],
       "authors": [],
-      "package_data": [],
-      "for_packages": [
-        "pkg:npm/test-package@0.0.1?uuid=fixed-uid-done-for-testing-5642512d1758"
-      ],
       "consolidated_to": [
         "corp_ibm_1"
       ],

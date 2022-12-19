@@ -1,9 +1,9 @@
 {
   "license_detections": [
     {
-      "identifier": "broadcom_commercial#f6c9c367-8633-e084-aa5e-3e7d8487b573",
+      "identifier": "broadcom_commercial-f6c9c367-8633-e084-aa5e-3e7d8487b573",
       "license_expression": "broadcom-commercial",
-      "occurrence_count": 1,
+      "count": 1,
       "detection_log": [
         "not-combined"
       ],
@@ -22,9 +22,9 @@
       ]
     },
     {
-      "identifier": "bsd_1988#5437b0fa-07f0-4b4c-88c8-7fec0448fcc9",
+      "identifier": "bsd_1988-5437b0fa-07f0-4b4c-88c8-7fec0448fcc9",
       "license_expression": "bsd-1988",
-      "occurrence_count": 1,
+      "count": 1,
       "detection_log": [
         "not-combined"
       ],
@@ -43,9 +43,9 @@
       ]
     },
     {
-      "identifier": "esri_devkit#7dd8a798-09b4-b787-6afc-8b359bc69b38",
+      "identifier": "esri_devkit-7dd8a798-09b4-b787-6afc-8b359bc69b38",
       "license_expression": "esri-devkit",
-      "occurrence_count": 1,
+      "count": 1,
       "detection_log": [
         "not-combined"
       ],
@@ -64,9 +64,9 @@
       ]
     },
     {
-      "identifier": "oracle_java_ee_sdk_2010#711aae83-9be3-306c-4691-0af7f33e0017",
+      "identifier": "oracle_java_ee_sdk_2010-711aae83-9be3-306c-4691-0af7f33e0017",
       "license_expression": "oracle-java-ee-sdk-2010",
-      "occurrence_count": 1,
+      "count": 1,
       "detection_log": [
         "not-combined"
       ],
@@ -85,9 +85,9 @@
       ]
     },
     {
-      "identifier": "rh_eula#02fdc73a-b185-679c-4076-be7e361b3a19",
+      "identifier": "rh_eula-02fdc73a-b185-679c-4076-be7e361b3a19",
       "license_expression": "rh-eula",
-      "occurrence_count": 1,
+      "count": 1,
       "detection_log": [
         "not-combined"
       ],
@@ -337,7 +337,7 @@
       "license_clues": [],
       "percentage_of_license_text": 84.0,
       "for_license_detections": [
-        "broadcom_commercial#f6c9c367-8633-e084-aa5e-3e7d8487b573"
+        "broadcom_commercial-f6c9c367-8633-e084-aa5e-3e7d8487b573"
       ],
       "license_policy": {
         "license_key": "broadcom-commercial",
@@ -396,7 +396,7 @@
       "license_clues": [],
       "percentage_of_license_text": 93.75,
       "for_license_detections": [
-        "bsd_1988#5437b0fa-07f0-4b4c-88c8-7fec0448fcc9"
+        "bsd_1988-5437b0fa-07f0-4b4c-88c8-7fec0448fcc9"
       ],
       "license_policy": {
         "license_key": "bsd-1988",
@@ -455,7 +455,7 @@
       "license_clues": [],
       "percentage_of_license_text": 100.0,
       "for_license_detections": [
-        "esri_devkit#7dd8a798-09b4-b787-6afc-8b359bc69b38"
+        "esri_devkit-7dd8a798-09b4-b787-6afc-8b359bc69b38"
       ],
       "license_policy": {
         "license_key": "esri-devkit",
@@ -514,7 +514,7 @@
       "license_clues": [],
       "percentage_of_license_text": 100.0,
       "for_license_detections": [
-        "oracle_java_ee_sdk_2010#711aae83-9be3-306c-4691-0af7f33e0017"
+        "oracle_java_ee_sdk_2010-711aae83-9be3-306c-4691-0af7f33e0017"
       ],
       "license_policy": {
         "license_key": "oracle-java-ee-sdk-2010",
@@ -573,7 +573,7 @@
       "license_clues": [],
       "percentage_of_license_text": 100.0,
       "for_license_detections": [
-        "rh_eula#02fdc73a-b185-679c-4076-be7e361b3a19"
+        "rh_eula-02fdc73a-b185-679c-4076-be7e361b3a19"
       ],
       "license_policy": {
         "license_key": "rh-eula",

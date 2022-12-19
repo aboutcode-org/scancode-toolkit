@@ -28,11 +28,11 @@ headers:
         python_version: "3.8.10 (default, Nov 14 2022, 12:59:47) \n[GCC 9.4.0]"
       spdx_license_list_version: '3.17'
       files_count: 7
+packages: []
+dependencies: []
 license_detections: []
 license_references: []
 license_rule_references: []
-dependencies: []
-packages: []
 files:
   - path: copy1.c
     type: file
@@ -52,6 +52,8 @@ files:
     is_media: no
     is_source: yes
     is_script: no
+    package_data: []
+    for_packages: []
     detected_license_expression:
     detected_license_expression_spdx:
     license_detections: []
@@ -67,8 +69,6 @@ files:
         start_line: 1
         end_line: 1
     authors: []
-    package_data: []
-    for_packages: []
     files_count: '0'
     dirs_count: '0'
     size_count: '0'
@@ -91,6 +91,8 @@ files:
     is_media: no
     is_source: yes
     is_script: no
+    package_data: []
+    for_packages: []
     detected_license_expression:
     detected_license_expression_spdx:
     license_detections: []
@@ -106,8 +108,6 @@ files:
         start_line: 1
         end_line: 1
     authors: []
-    package_data: []
-    for_packages: []
     files_count: '0'
     dirs_count: '0'
     size_count: '0'
@@ -130,6 +130,8 @@ files:
     is_media: no
     is_source: yes
     is_script: no
+    package_data: []
+    for_packages: []
     detected_license_expression:
     detected_license_expression_spdx:
     license_detections: []
@@ -145,8 +147,6 @@ files:
         start_line: 1
         end_line: 1
     authors: []
-    package_data: []
-    for_packages: []
     files_count: '0'
     dirs_count: '0'
     size_count: '0'
@@ -169,6 +169,8 @@ files:
     is_media: no
     is_source: no
     is_script: no
+    package_data: []
+    for_packages: []
     detected_license_expression:
     detected_license_expression_spdx:
     license_detections: []
@@ -178,8 +180,6 @@ files:
     copyrights: []
     holders: []
     authors: []
-    package_data: []
-    for_packages: []
     files_count: 4
     dirs_count: '0'
     size_count: 361
@@ -202,6 +202,8 @@ files:
     is_media: no
     is_source: yes
     is_script: no
+    package_data: []
+    for_packages: []
     detected_license_expression:
     detected_license_expression_spdx:
     license_detections: []
@@ -217,8 +219,6 @@ files:
         start_line: 1
         end_line: 1
     authors: []
-    package_data: []
-    for_packages: []
     files_count: '0'
     dirs_count: '0'
     size_count: '0'
@@ -241,6 +241,8 @@ files:
     is_media: no
     is_source: yes
     is_script: no
+    package_data: []
+    for_packages: []
     detected_license_expression:
     detected_license_expression_spdx:
     license_detections: []
@@ -256,8 +258,6 @@ files:
         start_line: 1
         end_line: 1
     authors: []
-    package_data: []
-    for_packages: []
     files_count: '0'
     dirs_count: '0'
     size_count: '0'
@@ -280,6 +280,8 @@ files:
     is_media: no
     is_source: yes
     is_script: no
+    package_data: []
+    for_packages: []
     detected_license_expression:
     detected_license_expression_spdx:
     license_detections: []
@@ -295,8 +297,6 @@ files:
         start_line: 1
         end_line: 1
     authors: []
-    package_data: []
-    for_packages: []
     files_count: '0'
     dirs_count: '0'
     size_count: '0'
@@ -319,6 +319,8 @@ files:
     is_media: no
     is_source: yes
     is_script: no
+    package_data: []
+    for_packages: []
     detected_license_expression:
     detected_license_expression_spdx:
     license_detections: []
@@ -334,8 +336,6 @@ files:
         start_line: 1
         end_line: 1
     authors: []
-    package_data: []
-    for_packages: []
     files_count: '0'
     dirs_count: '0'
     size_count: '0'

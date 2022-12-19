@@ -1,9 +1,9 @@
 {
   "license_detections": [
     {
-      "identifier": "unknown_license_reference#e7257024-d126-956a-74bb-495572281351",
+      "identifier": "unknown_license_reference-e7257024-d126-956a-74bb-495572281351",
       "license_expression": "unknown-license-reference",
-      "occurrence_count": 4,
+      "count": 4,
       "detection_log": [
         "not-combined"
       ],
@@ -22,9 +22,9 @@
       ]
     },
     {
-      "identifier": "mit#26a4c3aa-d426-9e04-08af-0c92585a1998",
+      "identifier": "mit-26a4c3aa-d426-9e04-08af-0c92585a1998",
       "license_expression": "mit",
-      "occurrence_count": 1,
+      "count": 1,
       "detection_log": [
         "not-combined"
       ],
@@ -43,9 +43,9 @@
       ]
     },
     {
-      "identifier": "mit#a103b5a9-df52-531b-ca52-7c2967858cd9",
+      "identifier": "mit-a103b5a9-df52-531b-ca52-7c2967858cd9",
       "license_expression": "mit",
-      "occurrence_count": 1,
+      "count": 1,
       "detection_log": [
         "not-combined"
       ],
@@ -75,9 +75,9 @@
       ]
     },
     {
-      "identifier": "mit#a97190f9-e182-1c66-a517-fc3368d5b248",
+      "identifier": "mit-a97190f9-e182-1c66-a517-fc3368d5b248",
       "license_expression": "mit",
-      "occurrence_count": 1,
+      "count": 1,
       "detection_log": [
         "not-combined"
       ],
@@ -96,9 +96,9 @@
       ]
     },
     {
-      "identifier": "mit#b0986273-a9c0-9bfc-a7e4-7324f777dfbe",
+      "identifier": "mit-b0986273-a9c0-9bfc-a7e4-7324f777dfbe",
       "license_expression": "mit",
-      "occurrence_count": 1,
+      "count": 1,
       "detection_log": [
         "not-combined"
       ],
@@ -117,9 +117,9 @@
       ]
     },
     {
-      "identifier": "mit#5af45262-306f-3814-a419-bcbdaadfae4d",
+      "identifier": "mit-5af45262-306f-3814-a419-bcbdaadfae4d",
       "license_expression": "mit",
-      "occurrence_count": 1,
+      "count": 1,
       "detection_log": [
         "not-combined"
       ],
@@ -337,7 +337,7 @@
       "license_clues": [],
       "percentage_of_license_text": 95.38,
       "for_license_detections": [
-        "mit#a103b5a9-df52-531b-ca52-7c2967858cd9"
+        "mit-a103b5a9-df52-531b-ca52-7c2967858cd9"
       ],
       "scan_errors": []
     },
@@ -371,7 +371,7 @@
       "license_clues": [],
       "percentage_of_license_text": 0.3,
       "for_license_detections": [
-        "mit#b0986273-a9c0-9bfc-a7e4-7324f777dfbe"
+        "mit-b0986273-a9c0-9bfc-a7e4-7324f777dfbe"
       ],
       "scan_errors": []
     },
@@ -429,7 +429,7 @@
       "license_clues": [],
       "percentage_of_license_text": 0.83,
       "for_license_detections": [
-        "unknown_license_reference#e7257024-d126-956a-74bb-495572281351"
+        "unknown_license_reference-e7257024-d126-956a-74bb-495572281351"
       ],
       "scan_errors": []
     },
@@ -487,7 +487,7 @@
       "license_clues": [],
       "percentage_of_license_text": 5.71,
       "for_license_detections": [
-        "unknown_license_reference#e7257024-d126-956a-74bb-495572281351"
+        "unknown_license_reference-e7257024-d126-956a-74bb-495572281351"
       ],
       "scan_errors": []
     },
@@ -545,7 +545,7 @@
       "license_clues": [],
       "percentage_of_license_text": 1.14,
       "for_license_detections": [
-        "unknown_license_reference#e7257024-d126-956a-74bb-495572281351"
+        "unknown_license_reference-e7257024-d126-956a-74bb-495572281351"
       ],
       "scan_errors": []
     },
@@ -579,7 +579,7 @@
       "license_clues": [],
       "percentage_of_license_text": 3.7,
       "for_license_detections": [
-        "mit#26a4c3aa-d426-9e04-08af-0c92585a1998"
+        "mit-26a4c3aa-d426-9e04-08af-0c92585a1998"
       ],
       "scan_errors": []
     },
@@ -613,7 +613,7 @@
       "license_clues": [],
       "percentage_of_license_text": 2.67,
       "for_license_detections": [
-        "mit#a97190f9-e182-1c66-a517-fc3368d5b248"
+        "mit-a97190f9-e182-1c66-a517-fc3368d5b248"
       ],
       "scan_errors": []
     },
@@ -671,7 +671,7 @@
       "license_clues": [],
       "percentage_of_license_text": 2.52,
       "for_license_detections": [
-        "mit#5af45262-306f-3814-a419-bcbdaadfae4d"
+        "mit-5af45262-306f-3814-a419-bcbdaadfae4d"
       ],
       "scan_errors": []
     },
@@ -740,7 +740,7 @@
       "license_clues": [],
       "percentage_of_license_text": 4.65,
       "for_license_detections": [
-        "unknown_license_reference#e7257024-d126-956a-74bb-495572281351"
+        "unknown_license_reference-e7257024-d126-956a-74bb-495572281351"
       ],
       "scan_errors": []
     }

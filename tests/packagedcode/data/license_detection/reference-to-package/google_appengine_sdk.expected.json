@@ -1,9 +1,192 @@
 {
+  "packages": [
+    {
+      "type": "pypi",
+      "namespace": null,
+      "name": "Django",
+      "version": null,
+      "qualifiers": {},
+      "subpath": null,
+      "primary_language": "Python",
+      "description": "A high-level Python Web framework that encourages rapid development and clean, pragmatic design.",
+      "release_date": null,
+      "parties": [
+        {
+          "type": "person",
+          "role": "author",
+          "name": "Django Software Foundation",
+          "email": "foundation@djangoproject.com",
+          "url": null
+        }
+      ],
+      "keywords": [
+        "Development Status :: 5 - Production/Stable",
+        "Environment :: Web Environment",
+        "Framework :: Django",
+        "Intended Audience :: Developers",
+        "Operating System :: OS Independent",
+        "Programming Language :: Python",
+        "Topic :: Internet :: WWW/HTTP",
+        "Topic :: Internet :: WWW/HTTP :: Dynamic Content",
+        "Topic :: Internet :: WWW/HTTP :: WSGI",
+        "Topic :: Software Development :: Libraries :: Application Frameworks",
+        "Topic :: Software Development :: Libraries :: Python Modules"
+      ],
+      "homepage_url": "http://www.djangoproject.com/",
+      "download_url": null,
+      "size": null,
+      "sha1": null,
+      "md5": null,
+      "sha256": null,
+      "sha512": null,
+      "bug_tracking_url": null,
+      "code_view_url": null,
+      "vcs_url": null,
+      "copyright": null,
+      "declared_license_expression": "bsd-new",
+      "declared_license_expression_spdx": "BSD-3-Clause",
+      "license_detections": [
+        {
+          "license_expression": "bsd-new",
+          "detection_log": [
+            "not-combined"
+          ],
+          "matches": [
+            {
+              "score": 99.0,
+              "start_line": 1,
+              "end_line": 1,
+              "matched_length": 5,
+              "match_coverage": 100.0,
+              "matcher": "1-hash",
+              "license_expression": "bsd-new",
+              "rule_identifier": "pypi_bsd_license.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/pypi_bsd_license.RULE",
+              "matched_text": "['License :: OSI Approved :: BSD License']"
+            }
+          ]
+        }
+      ],
+      "other_license_expression": null,
+      "other_license_expression_spdx": null,
+      "other_license_detections": [],
+      "extracted_license_statement": "{'classifiers': ['License :: OSI Approved :: BSD License']}",
+      "notice_text": null,
+      "source_packages": [],
+      "extra_data": {
+        "Download-URL": "http://media.djangoproject.com/releases/1.2/Django-1.2.5.tar.gz"
+      },
+      "repository_homepage_url": "https://pypi.org/project/Django",
+      "repository_download_url": null,
+      "api_data_url": "https://pypi.org/pypi/Django/json",
+      "package_uid": "pkg:pypi/django?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_paths": [
+        "django-1.2/setup.py"
+      ],
+      "datasource_ids": [
+        "pypi_setup_py"
+      ],
+      "purl": "pkg:pypi/django"
+    },
+    {
+      "type": "pypi",
+      "namespace": null,
+      "name": "Django",
+      "version": "1.3.1",
+      "qualifiers": {},
+      "subpath": null,
+      "primary_language": "Python",
+      "description": "A high-level Python Web framework that encourages rapid development and clean, pragmatic design.\nUNKNOWN",
+      "release_date": null,
+      "parties": [
+        {
+          "type": "person",
+          "role": "author",
+          "name": "Django Software Foundation",
+          "email": "foundation@djangoproject.com",
+          "url": null
+        }
+      ],
+      "keywords": [
+        "Development Status :: 5 - Production/Stable",
+        "Environment :: Web Environment",
+        "Framework :: Django",
+        "Intended Audience :: Developers",
+        "Operating System :: OS Independent",
+        "Programming Language :: Python",
+        "Programming Language :: Python :: 2.4",
+        "Programming Language :: Python :: 2.5",
+        "Programming Language :: Python :: 2.6",
+        "Programming Language :: Python :: 2.7",
+        "Topic :: Internet :: WWW/HTTP",
+        "Topic :: Internet :: WWW/HTTP :: Dynamic Content",
+        "Topic :: Internet :: WWW/HTTP :: WSGI",
+        "Topic :: Software Development :: Libraries :: Application Frameworks",
+        "Topic :: Software Development :: Libraries :: Python Modules"
+      ],
+      "homepage_url": "http://www.djangoproject.com/",
+      "download_url": null,
+      "size": null,
+      "sha1": null,
+      "md5": null,
+      "sha256": null,
+      "sha512": null,
+      "bug_tracking_url": null,
+      "code_view_url": null,
+      "vcs_url": null,
+      "copyright": null,
+      "declared_license_expression": "bsd-new",
+      "declared_license_expression_spdx": "BSD-3-Clause",
+      "license_detections": [
+        {
+          "license_expression": "bsd-new",
+          "detection_log": [
+            "not-combined"
+          ],
+          "matches": [
+            {
+              "score": 99.0,
+              "start_line": 1,
+              "end_line": 1,
+              "matched_length": 5,
+              "match_coverage": 100.0,
+              "matcher": "1-hash",
+              "license_expression": "bsd-new",
+              "rule_identifier": "pypi_bsd_license.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/pypi_bsd_license.RULE",
+              "matched_text": "['License :: OSI Approved :: BSD License']"
+            }
+          ]
+        }
+      ],
+      "other_license_expression": null,
+      "other_license_expression_spdx": null,
+      "other_license_detections": [],
+      "extracted_license_statement": "{'classifiers': ['License :: OSI Approved :: BSD License']}",
+      "notice_text": null,
+      "source_packages": [],
+      "extra_data": {
+        "Download-URL": "http://media.djangoproject.com/releases/1.3/Django-1.3.1.tar.gz"
+      },
+      "repository_homepage_url": "https://pypi.org/project/Django",
+      "repository_download_url": "https://pypi.org/packages/source/D/Django/Django-1.3.1.tar.gz",
+      "api_data_url": "https://pypi.org/pypi/Django/1.3.1/json",
+      "package_uid": "pkg:pypi/django@1.3.1?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_paths": [
+        "django-1.3/PKG-INFO"
+      ],
+      "datasource_ids": [
+        "pypi_sdist_pkginfo"
+      ],
+      "purl": "pkg:pypi/django@1.3.1"
+    }
+  ],
+  "dependencies": [],
   "license_detections": [
     {
-      "identifier": "apache_2_0_and_cc_by_nc_nd_3_0_and_other_permissive_and_proprietary_license#b485fded-3ae7-7c49-8be0-c042c4a4747f",
+      "identifier": "apache_2_0_and_cc_by_nc_nd_3_0_and_other_permissive_and_proprietary_license-b485fded-3ae7-7c49-8be0-c042c4a4747f",
       "license_expression": "apache-2.0 AND cc-by-nc-nd-3.0 AND other-permissive AND proprietary-license",
-      "occurrence_count": 2,
+      "count": 2,
       "detection_log": [
         "not-combined"
       ],
@@ -22,9 +205,9 @@
       ]
     },
     {
-      "identifier": "bsd_new#8b191dea-30ee-8738-fab1-2c6dbb5d65c2",
+      "identifier": "bsd_new-8b191dea-30ee-8738-fab1-2c6dbb5d65c2",
       "license_expression": "bsd-new",
-      "occurrence_count": 3,
+      "count": 3,
       "detection_log": [
         "not-combined"
       ],
@@ -43,11 +226,11 @@
       ]
     },
     {
-      "identifier": "free_unknown#76b09250-6936-6da3-664b-6d5d81de9c95",
-      "license_expression": "free-unknown",
-      "occurrence_count": 5,
+      "identifier": "bsd_new-160212b1-1610-6067-fa3b-f49f5e298936",
+      "license_expression": "bsd-new",
+      "count": 5,
       "detection_log": [
-        "not-combined"
+        "unknown-reference-in-file-to-package"
       ],
       "matches": [
         {
@@ -60,15 +243,26 @@
           "license_expression": "free-unknown",
           "rule_identifier": "free-unknown-package_3.RULE",
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/free-unknown-package_3.RULE"
+        },
+        {
+          "score": 99.0,
+          "start_line": 1,
+          "end_line": 1,
+          "matched_length": 5,
+          "match_coverage": 100.0,
+          "matcher": "1-hash",
+          "license_expression": "bsd-new",
+          "rule_identifier": "pypi_bsd_license.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/pypi_bsd_license.RULE"
         }
       ]
     },
     {
-      "identifier": "free_unknown#2d67622f-a7b6-912c-ca85-160b760f0d8b",
-      "license_expression": "free-unknown",
-      "occurrence_count": 2,
+      "identifier": "bsd_new-b8c1570e-67d2-5741-5f6c-4ed307fe484b",
+      "license_expression": "bsd-new",
+      "count": 2,
       "detection_log": [
-        "not-combined"
+        "unknown-reference-in-file-to-package"
       ],
       "matches": [
         {
@@ -81,13 +275,24 @@
           "license_expression": "free-unknown",
           "rule_identifier": "free-unknown-package_2.RULE",
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/free-unknown-package_2.RULE"
+        },
+        {
+          "score": 99.0,
+          "start_line": 1,
+          "end_line": 1,
+          "matched_length": 5,
+          "match_coverage": 100.0,
+          "matcher": "1-hash",
+          "license_expression": "bsd-new",
+          "rule_identifier": "pypi_bsd_license.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/pypi_bsd_license.RULE"
         }
       ]
     },
     {
-      "identifier": "bsd_new#0aac815c-f1e3-cc4b-b498-7a01e6cac393",
+      "identifier": "bsd_new-0aac815c-f1e3-cc4b-b498-7a01e6cac393",
       "license_expression": "bsd-new",
-      "occurrence_count": 1,
+      "count": 1,
       "detection_log": [
         "not-combined"
       ],
@@ -176,18 +381,6 @@
       "text": "Creative Commons Legal Code\n\nAttribution-NonCommercial-NoDerivs 3.0 Unported\n\nCREATIVE COMMONS CORPORATION IS NOT A LAW FIRM AND DOES NOT PROVIDE\nLEGAL SERVICES. DISTRIBUTION OF THIS LICENSE DOES NOT CREATE AN\nATTORNEY-CLIENT RELATIONSHIP. CREATIVE COMMONS PROVIDES THIS\nINFORMATION ON AN \"AS-IS\" BASIS. CREATIVE COMMONS MAKES NO WARRANTIES\nREGARDING THE INFORMATION PROVIDED, AND DISCLAIMS LIABILITY FOR\nDAMAGES RESULTING FROM ITS USE.\n\nLicense\n\nTHE WORK (AS DEFINED BELOW) IS PROVIDED UNDER THE TERMS OF THIS CREATIVE\nCOMMONS PUBLIC LICENSE (\"CCPL\" OR \"LICENSE\"). THE WORK IS PROTECTED BY\nCOPYRIGHT AND/OR OTHER APPLICABLE LAW. ANY USE OF THE WORK OTHER THAN AS\nAUTHORIZED UNDER THIS LICENSE OR COPYRIGHT LAW IS PROHIBITED.\n\nBY EXERCISING ANY RIGHTS TO THE WORK PROVIDED HERE, YOU ACCEPT AND AGREE\nTO BE BOUND BY THE TERMS OF THIS LICENSE. TO THE EXTENT THIS LICENSE MAY\nBE CONSIDERED TO BE A CONTRACT, THE LICENSOR GRANTS YOU THE RIGHTS\nCONTAINED HERE IN CONSIDERATION OF YOUR ACCEPTANCE OF SUCH TERMS AND\nCONDITIONS.\n\n1. Definitions\n\na. \"Adaptation\" means a work based upon the Work, or upon the Work and\nother pre-existing works, such as a translation, adaptation,\nderivative work, arrangement of music or other alterations of a\nliterary or artistic work, or phonogram or performance and includes\ncinematographic adaptations or any other form in which the Work may be\nrecast, transformed, or adapted including in any form recognizably\nderived from the original, except that a work that constitutes a\nCollection will not be considered an Adaptation for the purpose of\nthis License. For the avoidance of doubt, where the Work is a musical\nwork, performance or phonogram, the synchronization of the Work in\ntimed-relation with a moving image (\"synching\") will be considered an\nAdaptation for the purpose of this License.\nb. \"Collection\" means a collection of literary or artistic works, such as\nencyclopedias and anthologies, or performances, phonograms or\nbroadcasts, or other works or subject matter other than works listed\nin Section 1(f) below, which, by reason of the selection and\narrangement of their contents, constitute intellectual creations, in\nwhich the Work is included in its entirety in unmodified form along\nwith one or more other contributions, each constituting separate and\nindependent works in themselves, which together are assembled into a\ncollective whole. A work that constitutes a Collection will not be\nconsidered an Adaptation (as defined above) for the purposes of this\nLicense.\nc. \"Distribute\" means to make available to the public the original and\ncopies of the Work through sale or other transfer of ownership.\nd. \"Licensor\" means the individual, individuals, entity or entities that\noffer(s) the Work under the terms of this License.\ne. \"Original Author\" means, in the case of a literary or artistic work,\nthe individual, individuals, entity or entities who created the Work\nor if no individual or entity can be identified, the publisher; and in\naddition (i) in the case of a performance the actors, singers,\nmusicians, dancers, and other persons who act, sing, deliver, declaim,\nplay in, interpret or otherwise perform literary or artistic works or\nexpressions of folklore; (ii) in the case of a phonogram the producer\nbeing the person or legal entity who first fixes the sounds of a\nperformance or other sounds; and, (iii) in the case of broadcasts, the\norganization that transmits the broadcast.\nf. \"Work\" means the literary and/or artistic work offered under the terms\nof this License including without limitation any production in the\nliterary, scientific and artistic domain, whatever may be the mode or\nform of its expression including digital form, such as a book,\npamphlet and other writing; a lecture, address, sermon or other work\nof the same nature; a dramatic or dramatico-musical work; a\nchoreographic work or entertainment in dumb show; a musical\ncomposition with or without words; a cinematographic work to which are\nassimilated works expressed by a process analogous to cinematography;\na work of drawing, painting, architecture, sculpture, engraving or\nlithography; a photographic work to which are assimilated works\nexpressed by a process analogous to photography; a work of applied\nart; an illustration, map, plan, sketch or three-dimensional work\nrelative to geography, topography, architecture or science; a\nperformance; a broadcast; a phonogram; a compilation of data to the\nextent it is protected as a copyrightable work; or a work performed by\na variety or circus performer to the extent it is not otherwise\nconsidered a literary or artistic work.\ng. \"You\" means an individual or entity exercising rights under this\nLicense who has not previously violated the terms of this License with\nrespect to the Work, or who has received express permission from the\nLicensor to exercise rights under this License despite a previous\nviolation.\nh. \"Publicly Perform\" means to perform public recitations of the Work and\nto communicate to the public those public recitations, by any means or\nprocess, including by wire or wireless means or public digital\nperformances; to make available to the public Works in such a way that\nmembers of the public may access these Works from a place and at a\nplace individually chosen by them; to perform the Work to the public\nby any means or process and the communication to the public of the\nperformances of the Work, including by public digital performance; to\nbroadcast and rebroadcast the Work by any means including signs,\nsounds or images.\ni. \"Reproduce\" means to make copies of the Work by any means including\nwithout limitation by sound or visual recordings and the right of\nfixation and reproducing fixations of the Work, including storage of a\nprotected performance or phonogram in digital form or other electronic\nmedium.\n\n2. Fair Dealing Rights. Nothing in this License is intended to reduce,\nlimit, or restrict any uses free from copyright or rights arising from\nlimitations or exceptions that are provided for in connection with the\ncopyright protection under copyright law or other applicable laws.\n\n3. License Grant. Subject to the terms and conditions of this License,\nLicensor hereby grants You a worldwide, royalty-free, non-exclusive,\nperpetual (for the duration of the applicable copyright) license to\nexercise the rights in the Work as stated below:\n\na. to Reproduce the Work, to incorporate the Work into one or more\nCollections, and to Reproduce the Work as incorporated in the\nCollections; and,\nb. to Distribute and Publicly Perform the Work including as incorporated\nin Collections.\n\nThe above rights may be exercised in all media and formats whether now\nknown or hereafter devised. The above rights include the right to make\nsuch modifications as are technically necessary to exercise the rights in\nother media and formats, but otherwise you have no rights to make\nAdaptations. Subject to 8(f), all rights not expressly granted by Licensor\nare hereby reserved, including but not limited to the rights set forth in\nSection 4(d).\n\n4. Restrictions. The license granted in Section 3 above is expressly made\nsubject to and limited by the following restrictions:\n\na. You may Distribute or Publicly Perform the Work only under the terms\nof this License. You must include a copy of, or the Uniform Resource\nIdentifier (URI) for, this License with every copy of the Work You\nDistribute or Publicly Perform. You may not offer or impose any terms\non the Work that restrict the terms of this License or the ability of\nthe recipient of the Work to exercise the rights granted to that\nrecipient under the terms of the License. You may not sublicense the\nWork. You must keep intact all notices that refer to this License and\nto the disclaimer of warranties with every copy of the Work You\nDistribute or Publicly Perform. When You Distribute or Publicly\nPerform the Work, You may not impose any effective technological\nmeasures on the Work that restrict the ability of a recipient of the\nWork from You to exercise the rights granted to that recipient under\nthe terms of the License. This Section 4(a) applies to the Work as\nincorporated in a Collection, but this does not require the Collection\napart from the Work itself to be made subject to the terms of this\nLicense. If You create a Collection, upon notice from any Licensor You\nmust, to the extent practicable, remove from the Collection any credit\nas required by Section 4(c), as requested.\nb. You may not exercise any of the rights granted to You in Section 3\nabove in any manner that is primarily intended for or directed toward\ncommercial advantage or private monetary compensation. The exchange of\nthe Work for other copyrighted works by means of digital file-sharing\nor otherwise shall not be considered to be intended for or directed\ntoward commercial advantage or private monetary compensation, provided\nthere is no payment of any monetary compensation in connection with\nthe exchange of copyrighted works.\nc. If You Distribute, or Publicly Perform the Work or Collections, You\nmust, unless a request has been made pursuant to Section 4(a), keep\nintact all copyright notices for the Work and provide, reasonable to\nthe medium or means You are utilizing: (i) the name of the Original\nAuthor (or pseudonym, if applicable) if supplied, and/or if the\nOriginal Author and/or Licensor designate another party or parties\n(e.g., a sponsor institute, publishing entity, journal) for\nattribution (\"Attribution Parties\") in Licensor's copyright notice,\nterms of service or by other reasonable means, the name of such party\nor parties; (ii) the title of the Work if supplied; (iii) to the\nextent reasonably practicable, the URI, if any, that Licensor\nspecifies to be associated with the Work, unless such URI does not\nrefer to the copyright notice or licensing information for the Work.\nThe credit required by this Section 4(c) may be implemented in any\nreasonable manner; provided, however, that in the case of a\nCollection, at a minimum such credit will appear, if a credit for all\ncontributing authors of Collection appears, then as part of these\ncredits and in a manner at least as prominent as the credits for the\nother contributing authors. For the avoidance of doubt, You may only\nuse the credit required by this Section for the purpose of attribution\nin the manner set out above and, by exercising Your rights under this\nLicense, You may not implicitly or explicitly assert or imply any\nconnection with, sponsorship or endorsement by the Original Author,\nLicensor and/or Attribution Parties, as appropriate, of You or Your\nuse of the Work, without the separate, express prior written\npermission of the Original Author, Licensor and/or Attribution\nParties.\nd. For the avoidance of doubt:\n\ni. Non-waivable Compulsory License Schemes. In those jurisdictions in\nwhich the right to collect royalties through any statutory or\ncompulsory licensing scheme cannot be waived, the Licensor\nreserves the exclusive right to collect such royalties for any\nexercise by You of the rights granted under this License;\nii. Waivable Compulsory License Schemes. In those jurisdictions in\nwhich the right to collect royalties through any statutory or\ncompulsory licensing scheme can be waived, the Licensor reserves\nthe exclusive right to collect such royalties for any exercise by\nYou of the rights granted under this License if Your exercise of\nsuch rights is for a purpose or use which is otherwise than\nnoncommercial as permitted under Section 4(b) and otherwise waives\nthe right to collect royalties through any statutory or compulsory\nlicensing scheme; and,\niii. Voluntary License Schemes. The Licensor reserves the right to\ncollect royalties, whether individually or, in the event that the\nLicensor is a member of a collecting society that administers\nvoluntary licensing schemes, via that society, from any exercise\nby You of the rights granted under this License that is for a\npurpose or use which is otherwise than noncommercial as permitted\nunder Section 4(b).\ne. Except as otherwise agreed in writing by the Licensor or as may be\notherwise permitted by applicable law, if You Reproduce, Distribute or\nPublicly Perform the Work either by itself or as part of any\nCollections, You must not distort, mutilate, modify or take other\nderogatory action in relation to the Work which would be prejudicial\nto the Original Author's honor or reputation.\n\n5. Representations, Warranties and Disclaimer\n\nUNLESS OTHERWISE MUTUALLY AGREED BY THE PARTIES IN WRITING, LICENSOR\nOFFERS THE WORK AS-IS AND MAKES NO REPRESENTATIONS OR WARRANTIES OF ANY\nKIND CONCERNING THE WORK, EXPRESS, IMPLIED, STATUTORY OR OTHERWISE,\nINCLUDING, WITHOUT LIMITATION, WARRANTIES OF TITLE, MERCHANTIBILITY,\nFITNESS FOR A PARTICULAR PURPOSE, NONINFRINGEMENT, OR THE ABSENCE OF\nLATENT OR OTHER DEFECTS, ACCURACY, OR THE PRESENCE OF ABSENCE OF ERRORS,\nWHETHER OR NOT DISCOVERABLE. SOME JURISDICTIONS DO NOT ALLOW THE EXCLUSION\nOF IMPLIED WARRANTIES, SO SUCH EXCLUSION MAY NOT APPLY TO YOU.\n\n6. Limitation on Liability. EXCEPT TO THE EXTENT REQUIRED BY APPLICABLE\nLAW, IN NO EVENT WILL LICENSOR BE LIABLE TO YOU ON ANY LEGAL THEORY FOR\nANY SPECIAL, INCIDENTAL, CONSEQUENTIAL, PUNITIVE OR EXEMPLARY DAMAGES\nARISING OUT OF THIS LICENSE OR THE USE OF THE WORK, EVEN IF LICENSOR HAS\nBEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.\n\n7. Termination\n\na. This License and the rights granted hereunder will terminate\nautomatically upon any breach by You of the terms of this License.\nIndividuals or entities who have received Collections from You under\nthis License, however, will not have their licenses terminated\nprovided such individuals or entities remain in full compliance with\nthose licenses. Sections 1, 2, 5, 6, 7, and 8 will survive any\ntermination of this License.\nb. Subject to the above terms and conditions, the license granted here is\nperpetual (for the duration of the applicable copyright in the Work).\nNotwithstanding the above, Licensor reserves the right to release the\nWork under different license terms or to stop distributing the Work at\nany time; provided, however that any such election will not serve to\nwithdraw this License (or any other license that has been, or is\nrequired to be, granted under the terms of this License), and this\nLicense will continue in full force and effect unless terminated as\nstated above.\n\n8. Miscellaneous\n\na. Each time You Distribute or Publicly Perform the Work or a Collection,\nthe Licensor offers to the recipient a license to the Work on the same\nterms and conditions as the license granted to You under this License.\nb. If any provision of this License is invalid or unenforceable under\napplicable law, it shall not affect the validity or enforceability of\nthe remainder of the terms of this License, and without further action\nby the parties to this agreement, such provision shall be reformed to\nthe minimum extent necessary to make such provision valid and\nenforceable.\nc. No term or provision of this License shall be deemed waived and no\nbreach consented to unless such waiver or consent shall be in writing\nand signed by the party to be charged with such waiver or consent.\nd. This License constitutes the entire agreement between the parties with\nrespect to the Work licensed here. There are no understandings,\nagreements or representations with respect to the Work not specified\nhere. Licensor shall not be bound by any additional provisions that\nmay appear in any communication from You. This License may not be\nmodified without the mutual written agreement of the Licensor and You.\ne. The rights granted under, and the subject matter referenced, in this\nLicense were drafted utilizing the terminology of the Berne Convention\nfor the Protection of Literary and Artistic Works (as amended on\nSeptember 28, 1979), the Rome Convention of 1961, the WIPO Copyright\nTreaty of 1996, the WIPO Performances and Phonograms Treaty of 1996\nand the Universal Copyright Convention (as revised on July 24, 1971).\nThese rights and subject matter take effect in the relevant\njurisdiction in which the License terms are sought to be enforced\naccording to the corresponding provisions of the implementation of\nthose treaty provisions in the applicable national law. If the\nstandard suite of rights granted under applicable copyright law\nincludes additional rights not granted under this License, such\nadditional rights are deemed to be included in the License; this\nLicense is not intended to restrict the license of any rights under\napplicable law.\n\n\nCreative Commons Notice\n\nCreative Commons is not a party to this License, and makes no warranty\nwhatsoever in connection with the Work. Creative Commons will not be\nliable to You or any party on any legal theory for any damages\nwhatsoever, including without limitation any general, special,\nincidental or consequential damages arising in connection to this\nlicense. Notwithstanding the foregoing two (2) sentences, if Creative\nCommons has expressly identified itself as the Licensor hereunder, it\nshall have all rights and obligations of Licensor.\n\nExcept for the limited purpose of indicating to the public that the\nWork is licensed under the CCPL, Creative Commons does not authorize\nthe use by either party of the trademark \"Creative Commons\" or any\nrelated trademark or logo of Creative Commons without the prior\nwritten consent of Creative Commons. Any permitted use will be in\ncompliance with Creative Commons' then-current trademark usage\nguidelines, as may be published on its website or otherwise made\navailable upon request from time to time. For the avoidance of doubt,\nthis trademark restriction does not form part of this License.\n\nCreative Commons may be contacted at https://creativecommons.org/."
     },
     {
-      "key": "free-unknown",
-      "short_name": "Free unknown",
-      "name": "Free unknown license detected but not recognized",
-      "category": "Unstated License",
-      "owner": "Unspecified",
-      "notes": "This case applies to software with a notice that refers in a non-specific manner to a free or open-source license, but where it is not possible to determine that specific license.",
-      "is_builtin": true,
-      "is_unknown": true,
-      "spdx_license_key": "LicenseRef-scancode-free-unknown",
-      "text": ""
-    },
-    {
       "key": "other-permissive",
       "short_name": "Other Permissive Licenses",
       "name": "Other Permissive Licenses",
@@ -217,6 +410,30 @@
     }
   ],
   "license_rule_references": [
+    {
+      "license_expression": "bsd-new",
+      "rule_identifier": "pypi_bsd_license.RULE",
+      "referenced_filenames": [],
+      "is_license_text": false,
+      "is_license_notice": false,
+      "is_license_reference": false,
+      "is_license_tag": true,
+      "is_license_intro": false,
+      "rule_length": 5,
+      "rule_relevance": 99
+    },
+    {
+      "license_expression": "bsd-new",
+      "rule_identifier": "pypi_bsd_license.RULE",
+      "referenced_filenames": [],
+      "is_license_text": false,
+      "is_license_notice": false,
+      "is_license_reference": false,
+      "is_license_tag": true,
+      "is_license_intro": false,
+      "rule_length": 5,
+      "rule_relevance": 99
+    },
     {
       "license_expression": "apache-2.0 AND cc-by-nc-nd-3.0 AND other-permissive AND proprietary-license",
       "rule_identifier": "apache-2.0_and_cc-by-nc-nd-3.0_and_other-permissive_and_proprietary-license_1.RULE",
@@ -428,236 +645,57 @@
       "rule_relevance": 100
     }
   ],
-  "dependencies": [],
-  "packages": [
-    {
-      "type": "pypi",
-      "namespace": null,
-      "name": "Django",
-      "version": null,
-      "qualifiers": {},
-      "subpath": null,
-      "primary_language": "Python",
-      "description": "A high-level Python Web framework that encourages rapid development and clean, pragmatic design.",
-      "release_date": null,
-      "parties": [
-        {
-          "type": "person",
-          "role": "author",
-          "name": "Django Software Foundation",
-          "email": "foundation@djangoproject.com",
-          "url": null
-        }
-      ],
-      "keywords": [
-        "Development Status :: 5 - Production/Stable",
-        "Environment :: Web Environment",
-        "Framework :: Django",
-        "Intended Audience :: Developers",
-        "Operating System :: OS Independent",
-        "Programming Language :: Python",
-        "Topic :: Internet :: WWW/HTTP",
-        "Topic :: Internet :: WWW/HTTP :: Dynamic Content",
-        "Topic :: Internet :: WWW/HTTP :: WSGI",
-        "Topic :: Software Development :: Libraries :: Application Frameworks",
-        "Topic :: Software Development :: Libraries :: Python Modules"
-      ],
-      "homepage_url": "http://www.djangoproject.com/",
-      "download_url": null,
-      "size": null,
-      "sha1": null,
-      "md5": null,
-      "sha256": null,
-      "sha512": null,
-      "bug_tracking_url": null,
-      "code_view_url": null,
-      "vcs_url": null,
-      "copyright": null,
-      "declared_license_expression": "bsd-new",
-      "declared_license_expression_spdx": "BSD-3-Clause",
-      "license_detections": [
-        {
-          "license_expression": "bsd-new",
-          "detection_log": [
-            "not-combined"
-          ],
-          "matches": [
-            {
-              "score": 99.0,
-              "start_line": 1,
-              "end_line": 1,
-              "matched_length": 5,
-              "match_coverage": 100.0,
-              "matcher": "1-hash",
-              "license_expression": "bsd-new",
-              "rule_identifier": "pypi_bsd_license.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/pypi_bsd_license.RULE",
-              "matched_text": "['License :: OSI Approved :: BSD License']"
-            }
-          ]
-        }
-      ],
-      "other_license_expression": null,
-      "other_license_expression_spdx": null,
-      "other_license_detections": [],
-      "extracted_license_statement": "{'classifiers': ['License :: OSI Approved :: BSD License']}",
-      "notice_text": null,
-      "source_packages": [],
-      "extra_data": {
-        "Download-URL": "http://media.djangoproject.com/releases/1.2/Django-1.2.5.tar.gz"
-      },
-      "repository_homepage_url": "https://pypi.org/project/Django",
-      "repository_download_url": null,
-      "api_data_url": "https://pypi.org/pypi/Django/json",
-      "package_uid": "pkg:pypi/django?uuid=fixed-uid-done-for-testing-5642512d1758",
-      "datafile_paths": [
-        "django-1.2/setup.py"
-      ],
-      "datasource_ids": [
-        "pypi_setup_py"
-      ],
-      "purl": "pkg:pypi/django"
-    },
-    {
-      "type": "pypi",
-      "namespace": null,
-      "name": "Django",
-      "version": "1.3.1",
-      "qualifiers": {},
-      "subpath": null,
-      "primary_language": "Python",
-      "description": "A high-level Python Web framework that encourages rapid development and clean, pragmatic design.\nUNKNOWN",
-      "release_date": null,
-      "parties": [
-        {
-          "type": "person",
-          "role": "author",
-          "name": "Django Software Foundation",
-          "email": "foundation@djangoproject.com",
-          "url": null
-        }
-      ],
-      "keywords": [
-        "Development Status :: 5 - Production/Stable",
-        "Environment :: Web Environment",
-        "Framework :: Django",
-        "Intended Audience :: Developers",
-        "Operating System :: OS Independent",
-        "Programming Language :: Python",
-        "Programming Language :: Python :: 2.4",
-        "Programming Language :: Python :: 2.5",
-        "Programming Language :: Python :: 2.6",
-        "Programming Language :: Python :: 2.7",
-        "Topic :: Internet :: WWW/HTTP",
-        "Topic :: Internet :: WWW/HTTP :: Dynamic Content",
-        "Topic :: Internet :: WWW/HTTP :: WSGI",
-        "Topic :: Software Development :: Libraries :: Application Frameworks",
-        "Topic :: Software Development :: Libraries :: Python Modules"
-      ],
-      "homepage_url": "http://www.djangoproject.com/",
-      "download_url": null,
-      "size": null,
-      "sha1": null,
-      "md5": null,
-      "sha256": null,
-      "sha512": null,
-      "bug_tracking_url": null,
-      "code_view_url": null,
-      "vcs_url": null,
-      "copyright": null,
-      "declared_license_expression": "bsd-new",
-      "declared_license_expression_spdx": "BSD-3-Clause",
-      "license_detections": [
-        {
-          "license_expression": "bsd-new",
-          "detection_log": [
-            "not-combined"
-          ],
-          "matches": [
-            {
-              "score": 99.0,
-              "start_line": 1,
-              "end_line": 1,
-              "matched_length": 5,
-              "match_coverage": 100.0,
-              "matcher": "1-hash",
-              "license_expression": "bsd-new",
-              "rule_identifier": "pypi_bsd_license.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/pypi_bsd_license.RULE",
-              "matched_text": "['License :: OSI Approved :: BSD License']"
-            }
-          ]
-        }
-      ],
-      "other_license_expression": null,
-      "other_license_expression_spdx": null,
-      "other_license_detections": [],
-      "extracted_license_statement": "{'classifiers': ['License :: OSI Approved :: BSD License']}",
-      "notice_text": null,
-      "source_packages": [],
-      "extra_data": {
-        "Download-URL": "http://media.djangoproject.com/releases/1.3/Django-1.3.1.tar.gz"
-      },
-      "repository_homepage_url": "https://pypi.org/project/Django",
-      "repository_download_url": "https://pypi.org/packages/source/D/Django/Django-1.3.1.tar.gz",
-      "api_data_url": "https://pypi.org/pypi/Django/1.3.1/json",
-      "package_uid": "pkg:pypi/django@1.3.1?uuid=fixed-uid-done-for-testing-5642512d1758",
-      "datafile_paths": [
-        "django-1.3/PKG-INFO"
-      ],
-      "datasource_ids": [
-        "pypi_sdist_pkginfo"
-      ],
-      "purl": "pkg:pypi/django@1.3.1"
-    }
-  ],
   "files": [
     {
       "path": "django-1.2",
       "type": "directory",
+      "package_data": [],
+      "for_packages": [],
       "detected_license_expression": null,
       "detected_license_expression_spdx": null,
       "license_detections": [],
       "license_clues": [],
       "percentage_of_license_text": 0,
       "for_license_detections": [],
-      "package_data": [],
-      "for_packages": [],
       "scan_errors": []
     },
     {
       "path": "django-1.2/AUTHORS",
       "type": "file",
+      "package_data": [],
+      "for_packages": [
+        "pkg:pypi/django?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
       "detected_license_expression": null,
       "detected_license_expression_spdx": null,
       "license_detections": [],
       "license_clues": [],
       "percentage_of_license_text": 0,
       "for_license_detections": [],
-      "package_data": [],
-      "for_packages": [
-        "pkg:pypi/django?uuid=fixed-uid-done-for-testing-5642512d1758"
-      ],
       "scan_errors": []
     },
     {
       "path": "django-1.2/INSTALL",
       "type": "file",
+      "package_data": [],
+      "for_packages": [
+        "pkg:pypi/django?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
       "detected_license_expression": null,
       "detected_license_expression_spdx": null,
       "license_detections": [],
       "license_clues": [],
       "percentage_of_license_text": 0,
       "for_license_detections": [],
-      "package_data": [],
-      "for_packages": [
-        "pkg:pypi/django?uuid=fixed-uid-done-for-testing-5642512d1758"
-      ],
       "scan_errors": []
     },
     {
       "path": "django-1.2/MANIFEST.in",
       "type": "file",
+      "package_data": [],
+      "for_packages": [
+        "pkg:pypi/django?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
       "detected_license_expression": "apache-2.0 AND cc-by-nc-nd-3.0 AND other-permissive AND proprietary-license",
       "detected_license_expression_spdx": "Apache-2.0 AND CC-BY-NC-ND-3.0 AND LicenseRef-scancode-other-permissive AND LicenseRef-scancode-proprietary-license",
       "license_detections": [
@@ -685,112 +723,112 @@
       "license_clues": [],
       "percentage_of_license_text": 3.38,
       "for_license_detections": [
-        "apache_2_0_and_cc_by_nc_nd_3_0_and_other_permissive_and_proprietary_license#b485fded-3ae7-7c49-8be0-c042c4a4747f"
-      ],
-      "package_data": [],
-      "for_packages": [
-        "pkg:pypi/django?uuid=fixed-uid-done-for-testing-5642512d1758"
+        "apache_2_0_and_cc_by_nc_nd_3_0_and_other_permissive_and_proprietary_license-b485fded-3ae7-7c49-8be0-c042c4a4747f"
       ],
       "scan_errors": []
     },
     {
       "path": "django-1.2/METADATA",
       "type": "file",
+      "package_data": [],
+      "for_packages": [
+        "pkg:pypi/django?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
       "detected_license_expression": null,
       "detected_license_expression_spdx": null,
       "license_detections": [],
       "license_clues": [],
       "percentage_of_license_text": 0,
       "for_license_detections": [],
-      "package_data": [],
-      "for_packages": [
-        "pkg:pypi/django?uuid=fixed-uid-done-for-testing-5642512d1758"
-      ],
       "scan_errors": []
     },
     {
       "path": "django-1.2/README",
       "type": "file",
+      "package_data": [],
+      "for_packages": [
+        "pkg:pypi/django?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
       "detected_license_expression": null,
       "detected_license_expression_spdx": null,
       "license_detections": [],
       "license_clues": [],
       "percentage_of_license_text": 0,
       "for_license_detections": [],
-      "package_data": [],
-      "for_packages": [
-        "pkg:pypi/django?uuid=fixed-uid-done-for-testing-5642512d1758"
-      ],
       "scan_errors": []
     },
     {
       "path": "django-1.2/django",
       "type": "directory",
+      "package_data": [],
+      "for_packages": [],
       "detected_license_expression": null,
       "detected_license_expression_spdx": null,
       "license_detections": [],
       "license_clues": [],
       "percentage_of_license_text": 0,
       "for_license_detections": [],
-      "package_data": [],
-      "for_packages": [],
       "scan_errors": []
     },
     {
       "path": "django-1.2/django/conf",
       "type": "directory",
+      "package_data": [],
+      "for_packages": [],
       "detected_license_expression": null,
       "detected_license_expression_spdx": null,
       "license_detections": [],
       "license_clues": [],
       "percentage_of_license_text": 0,
       "for_license_detections": [],
-      "package_data": [],
-      "for_packages": [],
       "scan_errors": []
     },
     {
       "path": "django-1.2/django/conf/locale",
       "type": "directory",
+      "package_data": [],
+      "for_packages": [],
       "detected_license_expression": null,
       "detected_license_expression_spdx": null,
       "license_detections": [],
       "license_clues": [],
       "percentage_of_license_text": 0,
       "for_license_detections": [],
-      "package_data": [],
-      "for_packages": [],
       "scan_errors": []
     },
     {
       "path": "django-1.2/django/conf/locale/en",
       "type": "directory",
+      "package_data": [],
+      "for_packages": [],
       "detected_license_expression": null,
       "detected_license_expression_spdx": null,
       "license_detections": [],
       "license_clues": [],
       "percentage_of_license_text": 0,
       "for_license_detections": [],
-      "package_data": [],
-      "for_packages": [],
       "scan_errors": []
     },
     {
       "path": "django-1.2/django/conf/locale/en/LC_MESSAGES",
       "type": "directory",
+      "package_data": [],
+      "for_packages": [],
       "detected_license_expression": null,
       "detected_license_expression_spdx": null,
       "license_detections": [],
       "license_clues": [],
       "percentage_of_license_text": 0,
       "for_license_detections": [],
-      "package_data": [],
-      "for_packages": [],
       "scan_errors": []
     },
     {
       "path": "django-1.2/django/conf/locale/en/LC_MESSAGES/djangojs.po",
       "type": "file",
+      "package_data": [],
+      "for_packages": [
+        "pkg:pypi/django?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
       "detected_license_expression": "bsd-new",
       "detected_license_expression_spdx": "BSD-3-Clause",
       "license_detections": [
@@ -830,17 +868,17 @@
       "license_clues": [],
       "percentage_of_license_text": 2.15,
       "for_license_detections": [
-        "free_unknown#76b09250-6936-6da3-664b-6d5d81de9c95"
-      ],
-      "package_data": [],
-      "for_packages": [
-        "pkg:pypi/django?uuid=fixed-uid-done-for-testing-5642512d1758"
+        "bsd_new-160212b1-1610-6067-fa3b-f49f5e298936"
       ],
       "scan_errors": []
     },
     {
       "path": "django-1.2/django/conf/locale/en/formats.py",
       "type": "file",
+      "package_data": [],
+      "for_packages": [
+        "pkg:pypi/django?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
       "detected_license_expression": "bsd-new",
       "detected_license_expression_spdx": "BSD-3-Clause",
       "license_detections": [
@@ -880,43 +918,43 @@
       "license_clues": [],
       "percentage_of_license_text": 5.15,
       "for_license_detections": [
-        "free_unknown#76b09250-6936-6da3-664b-6d5d81de9c95"
-      ],
-      "package_data": [],
-      "for_packages": [
-        "pkg:pypi/django?uuid=fixed-uid-done-for-testing-5642512d1758"
+        "bsd_new-160212b1-1610-6067-fa3b-f49f5e298936"
       ],
       "scan_errors": []
     },
     {
       "path": "django-1.2/django/conf/locale/uk",
       "type": "directory",
+      "package_data": [],
+      "for_packages": [],
       "detected_license_expression": null,
       "detected_license_expression_spdx": null,
       "license_detections": [],
       "license_clues": [],
       "percentage_of_license_text": 0,
       "for_license_detections": [],
-      "package_data": [],
-      "for_packages": [],
       "scan_errors": []
     },
     {
       "path": "django-1.2/django/conf/locale/uk/LC_MESSAGES",
       "type": "directory",
+      "package_data": [],
+      "for_packages": [],
       "detected_license_expression": null,
       "detected_license_expression_spdx": null,
       "license_detections": [],
       "license_clues": [],
       "percentage_of_license_text": 0,
       "for_license_detections": [],
-      "package_data": [],
-      "for_packages": [],
       "scan_errors": []
     },
     {
       "path": "django-1.2/django/conf/locale/uk/LC_MESSAGES/django.po",
       "type": "file",
+      "package_data": [],
+      "for_packages": [
+        "pkg:pypi/django?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
       "detected_license_expression": "bsd-new",
       "detected_license_expression_spdx": "BSD-3-Clause",
       "license_detections": [
@@ -956,17 +994,17 @@
       "license_clues": [],
       "percentage_of_license_text": 0.07,
       "for_license_detections": [
-        "free_unknown#2d67622f-a7b6-912c-ca85-160b760f0d8b"
-      ],
-      "package_data": [],
-      "for_packages": [
-        "pkg:pypi/django?uuid=fixed-uid-done-for-testing-5642512d1758"
+        "bsd_new-b8c1570e-67d2-5741-5f6c-4ed307fe484b"
       ],
       "scan_errors": []
     },
     {
       "path": "django-1.2/django/conf/locale/uk/LC_MESSAGES/djangojs.po",
       "type": "file",
+      "package_data": [],
+      "for_packages": [
+        "pkg:pypi/django?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
       "detected_license_expression": "bsd-new",
       "detected_license_expression_spdx": "BSD-3-Clause",
       "license_detections": [
@@ -1006,17 +1044,17 @@
       "license_clues": [],
       "percentage_of_license_text": 2.49,
       "for_license_detections": [
-        "free_unknown#2d67622f-a7b6-912c-ca85-160b760f0d8b"
-      ],
-      "package_data": [],
-      "for_packages": [
-        "pkg:pypi/django?uuid=fixed-uid-done-for-testing-5642512d1758"
+        "bsd_new-b8c1570e-67d2-5741-5f6c-4ed307fe484b"
       ],
       "scan_errors": []
     },
     {
       "path": "django-1.2/django/conf/locale/uk/formats.py",
       "type": "file",
+      "package_data": [],
+      "for_packages": [
+        "pkg:pypi/django?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
       "detected_license_expression": "bsd-new",
       "detected_license_expression_spdx": "BSD-3-Clause",
       "license_detections": [
@@ -1056,23 +1094,13 @@
       "license_clues": [],
       "percentage_of_license_text": 17.91,
       "for_license_detections": [
-        "free_unknown#76b09250-6936-6da3-664b-6d5d81de9c95"
-      ],
-      "package_data": [],
-      "for_packages": [
-        "pkg:pypi/django?uuid=fixed-uid-done-for-testing-5642512d1758"
+        "bsd_new-160212b1-1610-6067-fa3b-f49f5e298936"
       ],
       "scan_errors": []
     },
     {
       "path": "django-1.2/setup.cfg",
       "type": "file",
-      "detected_license_expression": null,
-      "detected_license_expression_spdx": null,
-      "license_detections": [],
-      "license_clues": [],
-      "percentage_of_license_text": 0,
-      "for_license_detections": [],
       "package_data": [
         {
           "type": "pypi",
@@ -1119,40 +1147,17 @@
       "for_packages": [
         "pkg:pypi/django?uuid=fixed-uid-done-for-testing-5642512d1758"
       ],
+      "detected_license_expression": null,
+      "detected_license_expression_spdx": null,
+      "license_detections": [],
+      "license_clues": [],
+      "percentage_of_license_text": 0,
+      "for_license_detections": [],
       "scan_errors": []
     },
     {
       "path": "django-1.2/setup.py",
       "type": "file",
-      "detected_license_expression": "bsd-new",
-      "detected_license_expression_spdx": "BSD-3-Clause",
-      "license_detections": [
-        {
-          "license_expression": "bsd-new",
-          "detection_log": [
-            "not-combined"
-          ],
-          "matches": [
-            {
-              "score": 99.0,
-              "start_line": 89,
-              "end_line": 89,
-              "matched_length": 5,
-              "match_coverage": 100.0,
-              "matcher": "2-aho",
-              "license_expression": "bsd-new",
-              "rule_identifier": "pypi_bsd_license.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/pypi_bsd_license.RULE",
-              "matched_text": "License :: OSI Approved :: BSD License',"
-            }
-          ]
-        }
-      ],
-      "license_clues": [],
-      "percentage_of_license_text": 0.99,
-      "for_license_detections": [
-        "bsd_new#8b191dea-30ee-8738-fab1-2c6dbb5d65c2"
-      ],
       "package_data": [
         {
           "type": "pypi",
@@ -1242,54 +1247,87 @@
       "for_packages": [
         "pkg:pypi/django?uuid=fixed-uid-done-for-testing-5642512d1758"
       ],
+      "detected_license_expression": "bsd-new",
+      "detected_license_expression_spdx": "BSD-3-Clause",
+      "license_detections": [
+        {
+          "license_expression": "bsd-new",
+          "detection_log": [
+            "not-combined"
+          ],
+          "matches": [
+            {
+              "score": 99.0,
+              "start_line": 89,
+              "end_line": 89,
+              "matched_length": 5,
+              "match_coverage": 100.0,
+              "matcher": "2-aho",
+              "license_expression": "bsd-new",
+              "rule_identifier": "pypi_bsd_license.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/pypi_bsd_license.RULE",
+              "matched_text": "License :: OSI Approved :: BSD License',"
+            }
+          ]
+        }
+      ],
+      "license_clues": [],
+      "percentage_of_license_text": 0.99,
+      "for_license_detections": [
+        "bsd_new-8b191dea-30ee-8738-fab1-2c6dbb5d65c2"
+      ],
       "scan_errors": []
     },
     {
       "path": "django-1.3",
       "type": "directory",
+      "package_data": [],
+      "for_packages": [],
       "detected_license_expression": null,
       "detected_license_expression_spdx": null,
       "license_detections": [],
       "license_clues": [],
       "percentage_of_license_text": 0,
       "for_license_detections": [],
-      "package_data": [],
-      "for_packages": [],
       "scan_errors": []
     },
     {
       "path": "django-1.3/AUTHORS",
       "type": "file",
+      "package_data": [],
+      "for_packages": [
+        "pkg:pypi/django@1.3.1?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
       "detected_license_expression": null,
       "detected_license_expression_spdx": null,
       "license_detections": [],
       "license_clues": [],
       "percentage_of_license_text": 0,
       "for_license_detections": [],
-      "package_data": [],
-      "for_packages": [
-        "pkg:pypi/django@1.3.1?uuid=fixed-uid-done-for-testing-5642512d1758"
-      ],
       "scan_errors": []
     },
     {
       "path": "django-1.3/INSTALL",
       "type": "file",
+      "package_data": [],
+      "for_packages": [
+        "pkg:pypi/django@1.3.1?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
       "detected_license_expression": null,
       "detected_license_expression_spdx": null,
       "license_detections": [],
       "license_clues": [],
       "percentage_of_license_text": 0,
       "for_license_detections": [],
-      "package_data": [],
-      "for_packages": [
-        "pkg:pypi/django@1.3.1?uuid=fixed-uid-done-for-testing-5642512d1758"
-      ],
       "scan_errors": []
     },
     {
       "path": "django-1.3/LICENSE",
       "type": "file",
+      "package_data": [],
+      "for_packages": [
+        "pkg:pypi/django@1.3.1?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
       "detected_license_expression": "bsd-new",
       "detected_license_expression_spdx": "BSD-3-Clause",
       "license_detections": [
@@ -1317,17 +1355,17 @@
       "license_clues": [],
       "percentage_of_license_text": 95.11,
       "for_license_detections": [
-        "bsd_new#0aac815c-f1e3-cc4b-b498-7a01e6cac393"
-      ],
-      "package_data": [],
-      "for_packages": [
-        "pkg:pypi/django@1.3.1?uuid=fixed-uid-done-for-testing-5642512d1758"
+        "bsd_new-0aac815c-f1e3-cc4b-b498-7a01e6cac393"
       ],
       "scan_errors": []
     },
     {
       "path": "django-1.3/MANIFEST.in",
       "type": "file",
+      "package_data": [],
+      "for_packages": [
+        "pkg:pypi/django@1.3.1?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
       "detected_license_expression": "apache-2.0 AND cc-by-nc-nd-3.0 AND other-permissive AND proprietary-license",
       "detected_license_expression_spdx": "Apache-2.0 AND CC-BY-NC-ND-3.0 AND LicenseRef-scancode-other-permissive AND LicenseRef-scancode-proprietary-license",
       "license_detections": [
@@ -1355,61 +1393,28 @@
       "license_clues": [],
       "percentage_of_license_text": 2.73,
       "for_license_detections": [
-        "apache_2_0_and_cc_by_nc_nd_3_0_and_other_permissive_and_proprietary_license#b485fded-3ae7-7c49-8be0-c042c4a4747f"
-      ],
-      "package_data": [],
-      "for_packages": [
-        "pkg:pypi/django@1.3.1?uuid=fixed-uid-done-for-testing-5642512d1758"
+        "apache_2_0_and_cc_by_nc_nd_3_0_and_other_permissive_and_proprietary_license-b485fded-3ae7-7c49-8be0-c042c4a4747f"
       ],
       "scan_errors": []
     },
     {
       "path": "django-1.3/METADATA",
       "type": "file",
+      "package_data": [],
+      "for_packages": [
+        "pkg:pypi/django@1.3.1?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
       "detected_license_expression": null,
       "detected_license_expression_spdx": null,
       "license_detections": [],
       "license_clues": [],
       "percentage_of_license_text": 0,
       "for_license_detections": [],
-      "package_data": [],
-      "for_packages": [
-        "pkg:pypi/django@1.3.1?uuid=fixed-uid-done-for-testing-5642512d1758"
-      ],
       "scan_errors": []
     },
     {
       "path": "django-1.3/PKG-INFO",
       "type": "file",
-      "detected_license_expression": "bsd-new",
-      "detected_license_expression_spdx": "BSD-3-Clause",
-      "license_detections": [
-        {
-          "license_expression": "bsd-new",
-          "detection_log": [
-            "not-combined"
-          ],
-          "matches": [
-            {
-              "score": 99.0,
-              "start_line": 16,
-              "end_line": 16,
-              "matched_length": 5,
-              "match_coverage": 100.0,
-              "matcher": "2-aho",
-              "license_expression": "bsd-new",
-              "rule_identifier": "pypi_bsd_license.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/pypi_bsd_license.RULE",
-              "matched_text": "License :: OSI Approved :: BSD License"
-            }
-          ]
-        }
-      ],
-      "license_clues": [],
-      "percentage_of_license_text": 3.38,
-      "for_license_detections": [
-        "bsd_new#8b191dea-30ee-8738-fab1-2c6dbb5d65c2"
-      ],
       "package_data": [
         {
           "type": "pypi",
@@ -1503,104 +1508,137 @@
       "for_packages": [
         "pkg:pypi/django@1.3.1?uuid=fixed-uid-done-for-testing-5642512d1758"
       ],
+      "detected_license_expression": "bsd-new",
+      "detected_license_expression_spdx": "BSD-3-Clause",
+      "license_detections": [
+        {
+          "license_expression": "bsd-new",
+          "detection_log": [
+            "not-combined"
+          ],
+          "matches": [
+            {
+              "score": 99.0,
+              "start_line": 16,
+              "end_line": 16,
+              "matched_length": 5,
+              "match_coverage": 100.0,
+              "matcher": "2-aho",
+              "license_expression": "bsd-new",
+              "rule_identifier": "pypi_bsd_license.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/pypi_bsd_license.RULE",
+              "matched_text": "License :: OSI Approved :: BSD License"
+            }
+          ]
+        }
+      ],
+      "license_clues": [],
+      "percentage_of_license_text": 3.38,
+      "for_license_detections": [
+        "bsd_new-8b191dea-30ee-8738-fab1-2c6dbb5d65c2"
+      ],
       "scan_errors": []
     },
     {
       "path": "django-1.3/README",
       "type": "file",
+      "package_data": [],
+      "for_packages": [
+        "pkg:pypi/django@1.3.1?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
       "detected_license_expression": null,
       "detected_license_expression_spdx": null,
       "license_detections": [],
       "license_clues": [],
       "percentage_of_license_text": 0,
       "for_license_detections": [],
-      "package_data": [],
-      "for_packages": [
-        "pkg:pypi/django@1.3.1?uuid=fixed-uid-done-for-testing-5642512d1758"
-      ],
       "scan_errors": []
     },
     {
       "path": "django-1.3/django",
       "type": "directory",
+      "package_data": [],
+      "for_packages": [],
       "detected_license_expression": null,
       "detected_license_expression_spdx": null,
       "license_detections": [],
       "license_clues": [],
       "percentage_of_license_text": 0,
       "for_license_detections": [],
-      "package_data": [],
-      "for_packages": [],
       "scan_errors": []
     },
     {
       "path": "django-1.3/django/contrib",
       "type": "directory",
+      "package_data": [],
+      "for_packages": [],
       "detected_license_expression": null,
       "detected_license_expression_spdx": null,
       "license_detections": [],
       "license_clues": [],
       "percentage_of_license_text": 0,
       "for_license_detections": [],
-      "package_data": [],
-      "for_packages": [],
       "scan_errors": []
     },
     {
       "path": "django-1.3/django/contrib/messages",
       "type": "directory",
+      "package_data": [],
+      "for_packages": [],
       "detected_license_expression": null,
       "detected_license_expression_spdx": null,
       "license_detections": [],
       "license_clues": [],
       "percentage_of_license_text": 0,
       "for_license_detections": [],
-      "package_data": [],
-      "for_packages": [],
       "scan_errors": []
     },
     {
       "path": "django-1.3/django/contrib/messages/locale",
       "type": "directory",
+      "package_data": [],
+      "for_packages": [],
       "detected_license_expression": null,
       "detected_license_expression_spdx": null,
       "license_detections": [],
       "license_clues": [],
       "percentage_of_license_text": 0,
       "for_license_detections": [],
-      "package_data": [],
-      "for_packages": [],
       "scan_errors": []
     },
     {
       "path": "django-1.3/django/contrib/messages/locale/en",
       "type": "directory",
+      "package_data": [],
+      "for_packages": [],
       "detected_license_expression": null,
       "detected_license_expression_spdx": null,
       "license_detections": [],
       "license_clues": [],
       "percentage_of_license_text": 0,
       "for_license_detections": [],
-      "package_data": [],
-      "for_packages": [],
       "scan_errors": []
     },
     {
       "path": "django-1.3/django/contrib/messages/locale/en/LC_MESSAGES",
       "type": "directory",
+      "package_data": [],
+      "for_packages": [],
       "detected_license_expression": null,
       "detected_license_expression_spdx": null,
       "license_detections": [],
       "license_clues": [],
       "percentage_of_license_text": 0,
       "for_license_detections": [],
-      "package_data": [],
-      "for_packages": [],
       "scan_errors": []
     },
     {
       "path": "django-1.3/django/contrib/messages/locale/en/LC_MESSAGES/django.po",
       "type": "file",
+      "package_data": [],
+      "for_packages": [
+        "pkg:pypi/django@1.3.1?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
       "detected_license_expression": "bsd-new",
       "detected_license_expression_spdx": "BSD-3-Clause",
       "license_detections": [
@@ -1640,43 +1678,43 @@
       "license_clues": [],
       "percentage_of_license_text": 16.9,
       "for_license_detections": [
-        "free_unknown#76b09250-6936-6da3-664b-6d5d81de9c95"
-      ],
-      "package_data": [],
-      "for_packages": [
-        "pkg:pypi/django@1.3.1?uuid=fixed-uid-done-for-testing-5642512d1758"
+        "bsd_new-160212b1-1610-6067-fa3b-f49f5e298936"
       ],
       "scan_errors": []
     },
     {
       "path": "django-1.3/django/contrib/messages/locale/uk",
       "type": "directory",
+      "package_data": [],
+      "for_packages": [],
       "detected_license_expression": null,
       "detected_license_expression_spdx": null,
       "license_detections": [],
       "license_clues": [],
       "percentage_of_license_text": 0,
       "for_license_detections": [],
-      "package_data": [],
-      "for_packages": [],
       "scan_errors": []
     },
     {
       "path": "django-1.3/django/contrib/messages/locale/uk/LC_MESSAGES",
       "type": "directory",
+      "package_data": [],
+      "for_packages": [],
       "detected_license_expression": null,
       "detected_license_expression_spdx": null,
       "license_detections": [],
       "license_clues": [],
       "percentage_of_license_text": 0,
       "for_license_detections": [],
-      "package_data": [],
-      "for_packages": [],
       "scan_errors": []
     },
     {
       "path": "django-1.3/django/contrib/messages/locale/uk/LC_MESSAGES/django.po",
       "type": "file",
+      "package_data": [],
+      "for_packages": [
+        "pkg:pypi/django@1.3.1?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
       "detected_license_expression": "bsd-new",
       "detected_license_expression_spdx": "BSD-3-Clause",
       "license_detections": [
@@ -1716,23 +1754,13 @@
       "license_clues": [],
       "percentage_of_license_text": 12.12,
       "for_license_detections": [
-        "free_unknown#76b09250-6936-6da3-664b-6d5d81de9c95"
-      ],
-      "package_data": [],
-      "for_packages": [
-        "pkg:pypi/django@1.3.1?uuid=fixed-uid-done-for-testing-5642512d1758"
+        "bsd_new-160212b1-1610-6067-fa3b-f49f5e298936"
       ],
       "scan_errors": []
     },
     {
       "path": "django-1.3/setup.cfg",
       "type": "file",
-      "detected_license_expression": null,
-      "detected_license_expression_spdx": null,
-      "license_detections": [],
-      "license_clues": [],
-      "percentage_of_license_text": 0,
-      "for_license_detections": [],
       "package_data": [
         {
           "type": "pypi",
@@ -1800,40 +1828,17 @@
       "for_packages": [
         "pkg:pypi/django@1.3.1?uuid=fixed-uid-done-for-testing-5642512d1758"
       ],
+      "detected_license_expression": null,
+      "detected_license_expression_spdx": null,
+      "license_detections": [],
+      "license_clues": [],
+      "percentage_of_license_text": 0,
+      "for_license_detections": [],
       "scan_errors": []
     },
     {
       "path": "django-1.3/setup.py",
       "type": "file",
-      "detected_license_expression": "bsd-new",
-      "detected_license_expression_spdx": "BSD-3-Clause",
-      "license_detections": [
-        {
-          "license_expression": "bsd-new",
-          "detection_log": [
-            "not-combined"
-          ],
-          "matches": [
-            {
-              "score": 99.0,
-              "start_line": 89,
-              "end_line": 89,
-              "matched_length": 5,
-              "match_coverage": 100.0,
-              "matcher": "2-aho",
-              "license_expression": "bsd-new",
-              "rule_identifier": "pypi_bsd_license.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/pypi_bsd_license.RULE",
-              "matched_text": "License :: OSI Approved :: BSD License',"
-            }
-          ]
-        }
-      ],
-      "license_clues": [],
-      "percentage_of_license_text": 0.95,
-      "for_license_detections": [
-        "bsd_new#8b191dea-30ee-8738-fab1-2c6dbb5d65c2"
-      ],
       "package_data": [
         {
           "type": "pypi",
@@ -1926,6 +1931,35 @@
       ],
       "for_packages": [
         "pkg:pypi/django@1.3.1?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
+      "detected_license_expression": "bsd-new",
+      "detected_license_expression_spdx": "BSD-3-Clause",
+      "license_detections": [
+        {
+          "license_expression": "bsd-new",
+          "detection_log": [
+            "not-combined"
+          ],
+          "matches": [
+            {
+              "score": 99.0,
+              "start_line": 89,
+              "end_line": 89,
+              "matched_length": 5,
+              "match_coverage": 100.0,
+              "matcher": "2-aho",
+              "license_expression": "bsd-new",
+              "rule_identifier": "pypi_bsd_license.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/pypi_bsd_license.RULE",
+              "matched_text": "License :: OSI Approved :: BSD License',"
+            }
+          ]
+        }
+      ],
+      "license_clues": [],
+      "percentage_of_license_text": 0.95,
+      "for_license_detections": [
+        "bsd_new-8b191dea-30ee-8738-fab1-2c6dbb5d65c2"
       ],
       "scan_errors": []
     }

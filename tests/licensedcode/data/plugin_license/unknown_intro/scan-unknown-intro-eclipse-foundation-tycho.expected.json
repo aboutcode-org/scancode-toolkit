@@ -1,9 +1,9 @@
 {
   "license_detections": [
     {
-      "identifier": "epl_1_0#1867eafe-a258-cbb4-408f-2bd33d02ee23",
+      "identifier": "epl_1_0-1867eafe-a258-cbb4-408f-2bd33d02ee23",
       "license_expression": "epl-1.0",
-      "occurrence_count": 2,
+      "count": 2,
       "detection_log": [
         "not-combined"
       ],
@@ -33,9 +33,9 @@
       ]
     },
     {
-      "identifier": "apache_2_0#b414489c-d2f7-2207-9e37-ea197f00d317",
+      "identifier": "apache_2_0-b414489c-d2f7-2207-9e37-ea197f00d317",
       "license_expression": "apache-2.0",
-      "occurrence_count": 2,
+      "count": 2,
       "detection_log": [
         "not-combined"
       ],
@@ -54,9 +54,9 @@
       ]
     },
     {
-      "identifier": "apache_2_0#53c14ef2-2b41-3f63-1dbb-e3a1efbd1e8d",
+      "identifier": "apache_2_0-53c14ef2-2b41-3f63-1dbb-e3a1efbd1e8d",
       "license_expression": "apache-2.0",
-      "occurrence_count": 1,
+      "count": 1,
       "detection_log": [
         "unknown-intro-followed-by-match"
       ],
@@ -119,9 +119,9 @@
       ]
     },
     {
-      "identifier": "apache_2_0#b109c41b-dc8b-5301-5c83-09b7b64f5059",
+      "identifier": "apache_2_0-b109c41b-dc8b-5301-5c83-09b7b64f5059",
       "license_expression": "apache-2.0",
-      "occurrence_count": 1,
+      "count": 1,
       "detection_log": [
         "unknown-intro-followed-by-match"
       ],
@@ -184,9 +184,9 @@
       ]
     },
     {
-      "identifier": "apache_2_0#85fd4f2f-af55-4aed-03d9-86d8c06bef05",
+      "identifier": "apache_2_0-85fd4f2f-af55-4aed-03d9-86d8c06bef05",
       "license_expression": "apache-2.0",
-      "occurrence_count": 1,
+      "count": 1,
       "detection_log": [
         "unknown-intro-followed-by-match"
       ],
@@ -238,9 +238,9 @@
       ]
     },
     {
-      "identifier": "apache_2_0#185ee88a-b361-c631-330a-31ef36f48039",
+      "identifier": "apache_2_0-185ee88a-b361-c631-330a-31ef36f48039",
       "license_expression": "apache-2.0",
-      "occurrence_count": 2,
+      "count": 2,
       "detection_log": [
         "not-combined"
       ],
@@ -270,9 +270,9 @@
       ]
     },
     {
-      "identifier": "epl_2_0_or_apache_2_0__and_apache_2_0_and_epl_2_0#f1d35b57-fc37-e01b-67c0-ff901ec607b2",
+      "identifier": "epl_2_0_or_apache_2_0__and_apache_2_0_and_epl_2_0-f1d35b57-fc37-e01b-67c0-ff901ec607b2",
       "license_expression": "(epl-2.0 OR apache-2.0) AND apache-2.0 AND epl-2.0",
-      "occurrence_count": 1,
+      "count": 1,
       "detection_log": [
         "unknown-intro-followed-by-match"
       ],
@@ -324,9 +324,9 @@
       ]
     },
     {
-      "identifier": "epl_1_0#7e99df1e-faa6-aea3-5280-d3a36ed87c16",
+      "identifier": "epl_1_0-7e99df1e-faa6-aea3-5280-d3a36ed87c16",
       "license_expression": "epl-1.0",
-      "occurrence_count": 2,
+      "count": 2,
       "detection_log": [
         "not-combined"
       ],
@@ -356,9 +356,9 @@
       ]
     },
     {
-      "identifier": "cpl_1_0#5502d99b-f332-cf59-5e87-59714bf42486",
+      "identifier": "cpl_1_0-5502d99b-f332-cf59-5e87-59714bf42486",
       "license_expression": "cpl-1.0",
-      "occurrence_count": 1,
+      "count": 1,
       "detection_log": [
         "unknown-intro-followed-by-match"
       ],
@@ -399,9 +399,9 @@
       ]
     },
     {
-      "identifier": "bsd_new#f76d24d8-c42a-51a2-5be0-b1bee6618afc",
+      "identifier": "bsd_new-f76d24d8-c42a-51a2-5be0-b1bee6618afc",
       "license_expression": "bsd-new",
-      "occurrence_count": 1,
+      "count": 1,
       "detection_log": [
         "unknown-intro-followed-by-match"
       ],
@@ -453,9 +453,9 @@
       ]
     },
     {
-      "identifier": "bsd_new#fe8a2ed4-ca73-5e9c-1a4c-974a245a78b2",
+      "identifier": "bsd_new-fe8a2ed4-ca73-5e9c-1a4c-974a245a78b2",
       "license_expression": "bsd-new",
-      "occurrence_count": 1,
+      "count": 1,
       "detection_log": [
         "not-combined"
       ],
@@ -474,9 +474,9 @@
       ]
     },
     {
-      "identifier": "cpl_1_0#f0e5933e-cc7c-4c33-eb43-c0d66389bf17",
+      "identifier": "cpl_1_0-f0e5933e-cc7c-4c33-eb43-c0d66389bf17",
       "license_expression": "cpl-1.0",
-      "occurrence_count": 1,
+      "count": 1,
       "detection_log": [
         "unknown-intro-followed-by-match"
       ],
@@ -1314,9 +1314,9 @@
       "license_clues": [],
       "percentage_of_license_text": 52.82,
       "for_license_detections": [
-        "epl_1_0#1867eafe-a258-cbb4-408f-2bd33d02ee23",
-        "apache_2_0#b414489c-d2f7-2207-9e37-ea197f00d317",
-        "apache_2_0#53c14ef2-2b41-3f63-1dbb-e3a1efbd1e8d"
+        "epl_1_0-1867eafe-a258-cbb4-408f-2bd33d02ee23",
+        "apache_2_0-b414489c-d2f7-2207-9e37-ea197f00d317",
+        "apache_2_0-53c14ef2-2b41-3f63-1dbb-e3a1efbd1e8d"
       ],
       "scan_errors": []
     },
@@ -1626,13 +1626,13 @@
       "license_clues": [],
       "percentage_of_license_text": 42.91,
       "for_license_detections": [
-        "epl_1_0#1867eafe-a258-cbb4-408f-2bd33d02ee23",
-        "apache_2_0#b414489c-d2f7-2207-9e37-ea197f00d317",
-        "apache_2_0#b109c41b-dc8b-5301-5c83-09b7b64f5059",
-        "apache_2_0#85fd4f2f-af55-4aed-03d9-86d8c06bef05",
-        "apache_2_0#185ee88a-b361-c631-330a-31ef36f48039",
-        "apache_2_0#185ee88a-b361-c631-330a-31ef36f48039",
-        "epl_2_0_or_apache_2_0__and_apache_2_0_and_epl_2_0#f1d35b57-fc37-e01b-67c0-ff901ec607b2"
+        "epl_1_0-1867eafe-a258-cbb4-408f-2bd33d02ee23",
+        "apache_2_0-b414489c-d2f7-2207-9e37-ea197f00d317",
+        "apache_2_0-b109c41b-dc8b-5301-5c83-09b7b64f5059",
+        "apache_2_0-85fd4f2f-af55-4aed-03d9-86d8c06bef05",
+        "apache_2_0-185ee88a-b361-c631-330a-31ef36f48039",
+        "apache_2_0-185ee88a-b361-c631-330a-31ef36f48039",
+        "epl_2_0_or_apache_2_0__and_apache_2_0_and_epl_2_0-f1d35b57-fc37-e01b-67c0-ff901ec607b2"
       ],
       "scan_errors": []
     },
@@ -1798,10 +1798,10 @@
       "license_clues": [],
       "percentage_of_license_text": 50.37,
       "for_license_detections": [
-        "epl_1_0#7e99df1e-faa6-aea3-5280-d3a36ed87c16",
-        "cpl_1_0#5502d99b-f332-cf59-5e87-59714bf42486",
-        "bsd_new#f76d24d8-c42a-51a2-5be0-b1bee6618afc",
-        "bsd_new#fe8a2ed4-ca73-5e9c-1a4c-974a245a78b2"
+        "epl_1_0-7e99df1e-faa6-aea3-5280-d3a36ed87c16",
+        "cpl_1_0-5502d99b-f332-cf59-5e87-59714bf42486",
+        "bsd_new-f76d24d8-c42a-51a2-5be0-b1bee6618afc",
+        "bsd_new-fe8a2ed4-ca73-5e9c-1a4c-974a245a78b2"
       ],
       "scan_errors": []
     },
@@ -1903,8 +1903,8 @@
       "license_clues": [],
       "percentage_of_license_text": 47.22,
       "for_license_detections": [
-        "epl_1_0#7e99df1e-faa6-aea3-5280-d3a36ed87c16",
-        "cpl_1_0#f0e5933e-cc7c-4c33-eb43-c0d66389bf17"
+        "epl_1_0-7e99df1e-faa6-aea3-5280-d3a36ed87c16",
+        "cpl_1_0-f0e5933e-cc7c-4c33-eb43-c0d66389bf17"
       ],
       "scan_errors": []
     }

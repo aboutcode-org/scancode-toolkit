@@ -1,9 +1,9 @@
 {
   "license_detections": [
     {
-      "identifier": "cc0_1_0#c7a96db7-de74-527f-da8d-b573175736b4",
+      "identifier": "cc0_1_0-c7a96db7-de74-527f-da8d-b573175736b4",
       "license_expression": "cc0-1.0",
-      "occurrence_count": 1,
+      "count": 1,
       "detection_log": [
         "not-combined"
       ],
@@ -22,9 +22,9 @@
       ]
     },
     {
-      "identifier": "artistic_2_0#8755d5fd-6521-04e7-ace1-4344b99647e3",
+      "identifier": "artistic_2_0-8755d5fd-6521-04e7-ace1-4344b99647e3",
       "license_expression": "artistic-2.0",
-      "occurrence_count": 1,
+      "count": 1,
       "detection_log": [
         "not-combined"
       ],
@@ -43,9 +43,9 @@
       ]
     },
     {
-      "identifier": "zlib#9c6f31cf-0e74-9f00-c846-b76477e312c2",
+      "identifier": "zlib-9c6f31cf-0e74-9f00-c846-b76477e312c2",
       "license_expression": "zlib",
-      "occurrence_count": 9,
+      "count": 9,
       "detection_log": [
         "not-combined"
       ],
@@ -64,9 +64,9 @@
       ]
     },
     {
-      "identifier": "zlib#866b02ed-ff4b-379e-e254-8ebc15ceae23",
+      "identifier": "zlib-866b02ed-ff4b-379e-e254-8ebc15ceae23",
       "license_expression": "zlib",
-      "occurrence_count": 2,
+      "count": 2,
       "detection_log": [
         "not-combined"
       ],
@@ -85,9 +85,9 @@
       ]
     },
     {
-      "identifier": "lgpl_2_1_plus#126b3e65-1401-e7e2-8359-60042a41771c",
+      "identifier": "lgpl_2_1_plus-126b3e65-1401-e7e2-8359-60042a41771c",
       "license_expression": "lgpl-2.1-plus",
-      "occurrence_count": 3,
+      "count": 3,
       "detection_log": [
         "not-combined"
       ],
@@ -106,9 +106,9 @@
       ]
     },
     {
-      "identifier": "cc_by_2_5#26ed35f7-744b-aeec-b973-783eeb6928b4",
+      "identifier": "cc_by_2_5-26ed35f7-744b-aeec-b973-783eeb6928b4",
       "license_expression": "cc-by-2.5",
-      "occurrence_count": 1,
+      "count": 1,
       "detection_log": [
         "not-combined"
       ],
@@ -127,9 +127,9 @@
       ]
     },
     {
-      "identifier": "gpl_2_0_plus_with_ada_linking_exception#ab43ac21-eeae-978d-b391-58e77ab54a8c",
+      "identifier": "gpl_2_0_plus_with_ada_linking_exception-ab43ac21-eeae-978d-b391-58e77ab54a8c",
       "license_expression": "gpl-2.0-plus WITH ada-linking-exception",
-      "occurrence_count": 1,
+      "count": 1,
       "detection_log": [
         "not-combined"
       ],
@@ -148,9 +148,9 @@
       ]
     },
     {
-      "identifier": "boost_1_0#b015a903-1844-66d2-fd10-6e5e24a7b011",
+      "identifier": "boost_1_0-b015a903-1844-66d2-fd10-6e5e24a7b011",
       "license_expression": "boost-1.0",
-      "occurrence_count": 1,
+      "count": 1,
       "detection_log": [
         "not-combined"
       ],
@@ -169,9 +169,9 @@
       ]
     },
     {
-      "identifier": "zlib#b242753c-a31d-3db4-b77a-92bdef5c5389",
+      "identifier": "zlib-b242753c-a31d-3db4-b77a-92bdef5c5389",
       "license_expression": "zlib",
-      "occurrence_count": 1,
+      "count": 1,
       "detection_log": [
         "not-combined"
       ],
@@ -190,9 +190,9 @@
       ]
     },
     {
-      "identifier": "mit_old_style#41d50a44-94c9-224f-adc2-02743727be1a",
+      "identifier": "mit_old_style-41d50a44-94c9-224f-adc2-02743727be1a",
       "license_expression": "mit-old-style",
-      "occurrence_count": 1,
+      "count": 1,
       "detection_log": [
         "not-combined"
       ],
@@ -1032,7 +1032,7 @@
       "license_clues": [],
       "percentage_of_license_text": 79.62,
       "for_license_detections": [
-        "lgpl_2_1_plus#126b3e65-1401-e7e2-8359-60042a41771c"
+        "lgpl_2_1_plus-126b3e65-1401-e7e2-8359-60042a41771c"
       ],
       "copyrights": [
         {
@@ -1104,7 +1104,7 @@
       "license_clues": [],
       "percentage_of_license_text": 19.72,
       "for_license_detections": [
-        "cc_by_2_5#26ed35f7-744b-aeec-b973-783eeb6928b4"
+        "cc_by_2_5-26ed35f7-744b-aeec-b973-783eeb6928b4"
       ],
       "copyrights": [
         {
@@ -1182,7 +1182,7 @@
       "license_clues": [],
       "percentage_of_license_text": 78.62,
       "for_license_detections": [
-        "lgpl_2_1_plus#126b3e65-1401-e7e2-8359-60042a41771c"
+        "lgpl_2_1_plus-126b3e65-1401-e7e2-8359-60042a41771c"
       ],
       "copyrights": [
         {
@@ -1342,7 +1342,7 @@
       "license_clues": [],
       "percentage_of_license_text": 78.12,
       "for_license_detections": [
-        "lgpl_2_1_plus#126b3e65-1401-e7e2-8359-60042a41771c"
+        "lgpl_2_1_plus-126b3e65-1401-e7e2-8359-60042a41771c"
       ],
       "copyrights": [
         {
@@ -1545,7 +1545,7 @@
       "license_clues": [],
       "percentage_of_license_text": 42.86,
       "for_license_detections": [
-        "zlib#9c6f31cf-0e74-9f00-c846-b76477e312c2"
+        "zlib-9c6f31cf-0e74-9f00-c846-b76477e312c2"
       ],
       "copyrights": [
         {
@@ -1617,7 +1617,7 @@
       "license_clues": [],
       "percentage_of_license_text": 69.57,
       "for_license_detections": [
-        "zlib#866b02ed-ff4b-379e-e254-8ebc15ceae23"
+        "zlib-866b02ed-ff4b-379e-e254-8ebc15ceae23"
       ],
       "copyrights": [
         {
@@ -1700,7 +1700,7 @@
       "license_clues": [],
       "percentage_of_license_text": 20.34,
       "for_license_detections": [
-        "zlib#9c6f31cf-0e74-9f00-c846-b76477e312c2"
+        "zlib-9c6f31cf-0e74-9f00-c846-b76477e312c2"
       ],
       "copyrights": [
         {
@@ -1772,7 +1772,7 @@
       "license_clues": [],
       "percentage_of_license_text": 100.0,
       "for_license_detections": [
-        "cc0_1_0#c7a96db7-de74-527f-da8d-b573175736b4"
+        "cc0_1_0-c7a96db7-de74-527f-da8d-b573175736b4"
       ],
       "copyrights": [],
       "holders": [],
@@ -1832,7 +1832,7 @@
       "license_clues": [],
       "percentage_of_license_text": 0.1,
       "for_license_detections": [
-        "artistic_2_0#8755d5fd-6521-04e7-ace1-4344b99647e3"
+        "artistic_2_0-8755d5fd-6521-04e7-ace1-4344b99647e3"
       ],
       "copyrights": [],
       "holders": [],
@@ -1974,7 +1974,7 @@
       "license_clues": [],
       "percentage_of_license_text": 94.12,
       "for_license_detections": [
-        "gpl_2_0_plus_with_ada_linking_exception#ab43ac21-eeae-978d-b391-58e77ab54a8c"
+        "gpl_2_0_plus_with_ada_linking_exception-ab43ac21-eeae-978d-b391-58e77ab54a8c"
       ],
       "copyrights": [
         {
@@ -2057,7 +2057,7 @@
       "license_clues": [],
       "percentage_of_license_text": 42.86,
       "for_license_detections": [
-        "zlib#9c6f31cf-0e74-9f00-c846-b76477e312c2"
+        "zlib-9c6f31cf-0e74-9f00-c846-b76477e312c2"
       ],
       "copyrights": [
         {
@@ -2140,7 +2140,7 @@
       "license_clues": [],
       "percentage_of_license_text": 40.0,
       "for_license_detections": [
-        "zlib#9c6f31cf-0e74-9f00-c846-b76477e312c2"
+        "zlib-9c6f31cf-0e74-9f00-c846-b76477e312c2"
       ],
       "copyrights": [
         {
@@ -2223,7 +2223,7 @@
       "license_clues": [],
       "percentage_of_license_text": 50.0,
       "for_license_detections": [
-        "zlib#9c6f31cf-0e74-9f00-c846-b76477e312c2"
+        "zlib-9c6f31cf-0e74-9f00-c846-b76477e312c2"
       ],
       "copyrights": [
         {
@@ -2383,7 +2383,7 @@
       "license_clues": [],
       "percentage_of_license_text": 88.89,
       "for_license_detections": [
-        "boost_1_0#b015a903-1844-66d2-fd10-6e5e24a7b011"
+        "boost_1_0-b015a903-1844-66d2-fd10-6e5e24a7b011"
       ],
       "copyrights": [
         {
@@ -2493,7 +2493,7 @@
       "license_clues": [],
       "percentage_of_license_text": 50.0,
       "for_license_detections": [
-        "zlib#b242753c-a31d-3db4-b77a-92bdef5c5389"
+        "zlib-b242753c-a31d-3db4-b77a-92bdef5c5389"
       ],
       "copyrights": [
         {
@@ -2609,7 +2609,7 @@
       "license_clues": [],
       "percentage_of_license_text": 44.44,
       "for_license_detections": [
-        "zlib#9c6f31cf-0e74-9f00-c846-b76477e312c2"
+        "zlib-9c6f31cf-0e74-9f00-c846-b76477e312c2"
       ],
       "copyrights": [
         {
@@ -2681,7 +2681,7 @@
       "license_clues": [],
       "percentage_of_license_text": 50.0,
       "for_license_detections": [
-        "zlib#9c6f31cf-0e74-9f00-c846-b76477e312c2"
+        "zlib-9c6f31cf-0e74-9f00-c846-b76477e312c2"
       ],
       "copyrights": [
         {
@@ -2791,7 +2791,7 @@
       "license_clues": [],
       "percentage_of_license_text": 79.78,
       "for_license_detections": [
-        "mit_old_style#41d50a44-94c9-224f-adc2-02743727be1a"
+        "mit_old_style-41d50a44-94c9-224f-adc2-02743727be1a"
       ],
       "copyrights": [
         {
@@ -2863,7 +2863,7 @@
       "license_clues": [],
       "percentage_of_license_text": 84.21,
       "for_license_detections": [
-        "zlib#866b02ed-ff4b-379e-e254-8ebc15ceae23"
+        "zlib-866b02ed-ff4b-379e-e254-8ebc15ceae23"
       ],
       "copyrights": [
         {
@@ -2946,7 +2946,7 @@
       "license_clues": [],
       "percentage_of_license_text": 37.5,
       "for_license_detections": [
-        "zlib#9c6f31cf-0e74-9f00-c846-b76477e312c2"
+        "zlib-9c6f31cf-0e74-9f00-c846-b76477e312c2"
       ],
       "copyrights": [
         {
@@ -3029,7 +3029,7 @@
       "license_clues": [],
       "percentage_of_license_text": 20.34,
       "for_license_detections": [
-        "zlib#9c6f31cf-0e74-9f00-c846-b76477e312c2"
+        "zlib-9c6f31cf-0e74-9f00-c846-b76477e312c2"
       ],
       "copyrights": [
         {

@@ -1,9 +1,91 @@
 {
+  "packages": [
+    {
+      "type": "npm",
+      "namespace": null,
+      "name": "npm",
+      "version": "2.13.5",
+      "qualifiers": {},
+      "subpath": null,
+      "primary_language": "JavaScript",
+      "description": "a package manager for JavaScript",
+      "release_date": null,
+      "parties": [
+        {
+          "type": "person",
+          "role": "author",
+          "name": "Isaac Z. Schlueter",
+          "email": "i@izs.me",
+          "url": "http://blog.izs.me"
+        }
+      ],
+      "keywords": [
+        "package manager",
+        "modules",
+        "install",
+        "package.json"
+      ],
+      "homepage_url": "https://docs.npmjs.com/",
+      "download_url": "https://registry.npmjs.org/npm/-/npm-2.13.5.tgz",
+      "size": null,
+      "sha1": "a124386bce4a90506f28ad4b1d1a804a17baaf32",
+      "md5": null,
+      "sha256": null,
+      "sha512": null,
+      "bug_tracking_url": "http://github.com/npm/npm/issues",
+      "code_view_url": null,
+      "vcs_url": "git+https://github.com/npm/npm.git",
+      "copyright": null,
+      "declared_license_expression": "artistic-2.0 OR mit",
+      "declared_license_expression_spdx": "Artistic-2.0 OR MIT",
+      "license_detections": [
+        {
+          "license_expression": "artistic-2.0 OR mit",
+          "detection_log": [
+            "not-combined"
+          ],
+          "matches": [
+            {
+              "score": 100.0,
+              "start_line": 1,
+              "end_line": 1,
+              "matched_length": 5,
+              "match_coverage": 100.0,
+              "matcher": "1-spdx-id",
+              "license_expression": "artistic-2.0 OR mit",
+              "rule_identifier": "spdx-license-identifier: artistic-2.0 OR mit",
+              "rule_url": null,
+              "matched_text": "Artistic-2.0 OR MIT"
+            }
+          ]
+        }
+      ],
+      "other_license_expression": null,
+      "other_license_expression_spdx": null,
+      "other_license_detections": [],
+      "extracted_license_statement": "['Artistic-2.0 OR MIT']",
+      "notice_text": null,
+      "source_packages": [],
+      "extra_data": {},
+      "repository_homepage_url": "https://www.npmjs.com/package/npm",
+      "repository_download_url": "https://registry.npmjs.org/npm/-/npm-2.13.5.tgz",
+      "api_data_url": "https://registry.npmjs.org/npm/2.13.5",
+      "package_uid": "pkg:npm/npm@2.13.5?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_paths": [
+        "scan/package.json"
+      ],
+      "datasource_ids": [
+        "npm_package_json"
+      ],
+      "purl": "pkg:npm/npm@2.13.5"
+    }
+  ],
+  "dependencies": [],
   "license_detections": [
     {
-      "identifier": "apache_2_0_and__mit_or_bsd_simplified#6bc05a2e-db2d-cf02-757a-3805bbf81f2e",
+      "identifier": "apache_2_0_and__mit_or_bsd_simplified-6bc05a2e-db2d-cf02-757a-3805bbf81f2e",
       "license_expression": "apache-2.0 AND (mit OR bsd-simplified)",
-      "occurrence_count": 1,
+      "count": 1,
       "detection_log": [
         "not-combined"
       ],
@@ -33,9 +115,9 @@
       ]
     },
     {
-      "identifier": "artistic_2_0#c69ba991-eda9-d458-568a-670d821906e2",
+      "identifier": "artistic_2_0-c69ba991-eda9-d458-568a-670d821906e2",
       "license_expression": "artistic-2.0",
-      "occurrence_count": 1,
+      "count": 1,
       "detection_log": [
         "not-combined"
       ],
@@ -54,9 +136,9 @@
       ]
     },
     {
-      "identifier": "artistic_2_0_or_mit#2bc704cf-ef68-50b0-a7f0-b3a137ac7246",
+      "identifier": "artistic_2_0_or_mit-2bc704cf-ef68-50b0-a7f0-b3a137ac7246",
       "license_expression": "artistic-2.0 OR mit",
-      "occurrence_count": 1,
+      "count": 1,
       "detection_log": [
         "not-combined"
       ],
@@ -178,6 +260,18 @@
   ],
   "license_rule_references": [
     {
+      "license_expression": "artistic-2.0 OR mit",
+      "rule_identifier": "spdx-license-identifier: artistic-2.0 OR mit",
+      "referenced_filenames": [],
+      "is_license_text": false,
+      "is_license_notice": false,
+      "is_license_reference": false,
+      "is_license_tag": true,
+      "is_license_intro": false,
+      "rule_length": 5,
+      "rule_relevance": 100
+    },
+    {
       "license_expression": "apache-2.0",
       "rule_identifier": "apache-2.0_2.RULE",
       "referenced_filenames": [
@@ -228,105 +322,27 @@
       "rule_relevance": 100
     }
   ],
-  "dependencies": [],
-  "packages": [
-    {
-      "type": "npm",
-      "namespace": null,
-      "name": "npm",
-      "version": "2.13.5",
-      "qualifiers": {},
-      "subpath": null,
-      "primary_language": "JavaScript",
-      "description": "a package manager for JavaScript",
-      "release_date": null,
-      "parties": [
-        {
-          "type": "person",
-          "role": "author",
-          "name": "Isaac Z. Schlueter",
-          "email": "i@izs.me",
-          "url": "http://blog.izs.me"
-        }
-      ],
-      "keywords": [
-        "package manager",
-        "modules",
-        "install",
-        "package.json"
-      ],
-      "homepage_url": "https://docs.npmjs.com/",
-      "download_url": "https://registry.npmjs.org/npm/-/npm-2.13.5.tgz",
-      "size": null,
-      "sha1": "a124386bce4a90506f28ad4b1d1a804a17baaf32",
-      "md5": null,
-      "sha256": null,
-      "sha512": null,
-      "bug_tracking_url": "http://github.com/npm/npm/issues",
-      "code_view_url": null,
-      "vcs_url": "git+https://github.com/npm/npm.git",
-      "copyright": null,
-      "declared_license_expression": "artistic-2.0 OR mit",
-      "declared_license_expression_spdx": "Artistic-2.0 OR MIT",
-      "license_detections": [
-        {
-          "license_expression": "artistic-2.0 OR mit",
-          "detection_log": [
-            "not-combined"
-          ],
-          "matches": [
-            {
-              "score": 100.0,
-              "start_line": 1,
-              "end_line": 1,
-              "matched_length": 5,
-              "match_coverage": 100.0,
-              "matcher": "1-spdx-id",
-              "license_expression": "artistic-2.0 OR mit",
-              "rule_identifier": "spdx-license-identifier: artistic-2.0 OR mit",
-              "rule_url": null,
-              "matched_text": "Artistic-2.0 OR MIT"
-            }
-          ]
-        }
-      ],
-      "other_license_expression": null,
-      "other_license_expression_spdx": null,
-      "other_license_detections": [],
-      "extracted_license_statement": "['Artistic-2.0 OR MIT']",
-      "notice_text": null,
-      "source_packages": [],
-      "extra_data": {},
-      "repository_homepage_url": "https://www.npmjs.com/package/npm",
-      "repository_download_url": "https://registry.npmjs.org/npm/-/npm-2.13.5.tgz",
-      "api_data_url": "https://registry.npmjs.org/npm/2.13.5",
-      "package_uid": "pkg:npm/npm@2.13.5?uuid=fixed-uid-done-for-testing-5642512d1758",
-      "datafile_paths": [
-        "scan/package.json"
-      ],
-      "datasource_ids": [
-        "npm_package_json"
-      ],
-      "purl": "pkg:npm/npm@2.13.5"
-    }
-  ],
   "files": [
     {
       "path": "scan",
       "type": "directory",
+      "package_data": [],
+      "for_packages": [],
       "detected_license_expression": null,
       "detected_license_expression_spdx": null,
       "license_detections": [],
       "license_clues": [],
       "percentage_of_license_text": 0,
       "for_license_detections": [],
-      "package_data": [],
-      "for_packages": [],
       "scan_errors": []
     },
     {
       "path": "scan/copyr.java",
       "type": "file",
+      "package_data": [],
+      "for_packages": [
+        "pkg:npm/npm@2.13.5?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
       "detected_license_expression": "apache-2.0 AND (mit OR bsd-simplified)",
       "detected_license_expression_spdx": "Apache-2.0 AND (MIT OR BSD-2-Clause)",
       "license_detections": [
@@ -366,47 +382,13 @@
       "license_clues": [],
       "percentage_of_license_text": 100.0,
       "for_license_detections": [
-        "apache_2_0_and__mit_or_bsd_simplified#6bc05a2e-db2d-cf02-757a-3805bbf81f2e"
-      ],
-      "package_data": [],
-      "for_packages": [
-        "pkg:npm/npm@2.13.5?uuid=fixed-uid-done-for-testing-5642512d1758"
+        "apache_2_0_and__mit_or_bsd_simplified-6bc05a2e-db2d-cf02-757a-3805bbf81f2e"
       ],
       "scan_errors": []
     },
     {
       "path": "scan/package.json",
       "type": "file",
-      "detected_license_expression": "artistic-2.0",
-      "detected_license_expression_spdx": "Artistic-2.0",
-      "license_detections": [
-        {
-          "license_expression": "artistic-2.0",
-          "detection_log": [
-            "not-combined"
-          ],
-          "matches": [
-            {
-              "score": 100.0,
-              "start_line": 28,
-              "end_line": 28,
-              "matched_length": 4,
-              "match_coverage": 100.0,
-              "matcher": "2-aho",
-              "license_expression": "artistic-2.0",
-              "rule_identifier": "artistic-2.0_46.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/artistic-2.0_46.RULE",
-              "matched_text": "  \"license\": \"Artistic-2.0 OR MIT\","
-            }
-          ]
-        }
-      ],
-      "license_clues": [],
-      "percentage_of_license_text": 5.0,
-      "for_license_detections": [
-        "artistic_2_0#c69ba991-eda9-d458-568a-670d821906e2",
-        "artistic_2_0_or_mit#2bc704cf-ef68-50b0-a7f0-b3a137ac7246"
-      ],
       "package_data": [
         {
           "type": "npm",
@@ -486,6 +468,36 @@
       ],
       "for_packages": [
         "pkg:npm/npm@2.13.5?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
+      "detected_license_expression": "artistic-2.0",
+      "detected_license_expression_spdx": "Artistic-2.0",
+      "license_detections": [
+        {
+          "license_expression": "artistic-2.0",
+          "detection_log": [
+            "not-combined"
+          ],
+          "matches": [
+            {
+              "score": 100.0,
+              "start_line": 28,
+              "end_line": 28,
+              "matched_length": 4,
+              "match_coverage": 100.0,
+              "matcher": "2-aho",
+              "license_expression": "artistic-2.0",
+              "rule_identifier": "artistic-2.0_46.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/artistic-2.0_46.RULE",
+              "matched_text": "  \"license\": \"Artistic-2.0 OR MIT\","
+            }
+          ]
+        }
+      ],
+      "license_clues": [],
+      "percentage_of_license_text": 5.0,
+      "for_license_detections": [
+        "artistic_2_0-c69ba991-eda9-d458-568a-670d821906e2",
+        "artistic_2_0_or_mit-2bc704cf-ef68-50b0-a7f0-b3a137ac7246"
       ],
       "scan_errors": []
     }

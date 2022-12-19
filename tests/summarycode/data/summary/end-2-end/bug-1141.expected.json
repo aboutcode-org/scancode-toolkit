@@ -1,9 +1,46 @@
 {
+  "summary": {
+    "declared_license_expression": "gpl-3.0-plus",
+    "license_clarity_score": {
+      "score": 90,
+      "declared_license": true,
+      "identification_precision": true,
+      "has_license_text": true,
+      "declared_copyrights": false,
+      "conflicting_license_categories": false,
+      "ambiguous_compound_licensing": false
+    },
+    "declared_holder": "",
+    "primary_language": "C",
+    "other_license_expressions": [
+      {
+        "value": null,
+        "count": 1
+      },
+      {
+        "value": "gpl-2.0-plus",
+        "count": 1
+      }
+    ],
+    "other_holders": [
+      {
+        "value": null,
+        "count": 2
+      },
+      {
+        "value": "Members of the Gmerlin project",
+        "count": 2
+      }
+    ],
+    "other_languages": []
+  },
+  "packages": [],
+  "dependencies": [],
   "license_detections": [
     {
-      "identifier": "gpl_3_0_plus#b3d7735f-90c4-2c5b-ff2d-2fe9f092cb2f",
+      "identifier": "gpl_3_0_plus-b3d7735f-90c4-2c5b-ff2d-2fe9f092cb2f",
       "license_expression": "gpl-3.0-plus",
-      "occurrence_count": 1,
+      "count": 1,
       "detection_log": [
         "not-combined"
       ],
@@ -22,9 +59,9 @@
       ]
     },
     {
-      "identifier": "gpl_2_0_plus#e68d2a19-4f30-77b2-c51f-8f14b7a097d2",
+      "identifier": "gpl_2_0_plus-e68d2a19-4f30-77b2-c51f-8f14b7a097d2",
       "license_expression": "gpl-2.0-plus",
-      "occurrence_count": 1,
+      "count": 1,
       "detection_log": [
         "not-combined"
       ],
@@ -121,43 +158,6 @@
       "rule_relevance": 100
     }
   ],
-  "dependencies": [],
-  "packages": [],
-  "summary": {
-    "declared_license_expression": "gpl-3.0-plus",
-    "license_clarity_score": {
-      "score": 90,
-      "declared_license": true,
-      "identification_precision": true,
-      "has_license_text": true,
-      "declared_copyrights": false,
-      "conflicting_license_categories": false,
-      "ambiguous_compound_licensing": false
-    },
-    "declared_holder": "",
-    "primary_language": "C",
-    "other_license_expressions": [
-      {
-        "value": null,
-        "count": 1
-      },
-      {
-        "value": "gpl-2.0-plus",
-        "count": 1
-      }
-    ],
-    "other_holders": [
-      {
-        "value": null,
-        "count": 2
-      },
-      {
-        "value": "Members of the Gmerlin project",
-        "count": 2
-      }
-    ],
-    "other_languages": []
-  },
   "files": [
     {
       "path": "bug-1141.tar.gz",
@@ -178,6 +178,8 @@
       "is_media": false,
       "is_source": false,
       "is_script": false,
+      "package_data": [],
+      "for_packages": [],
       "detected_license_expression": null,
       "detected_license_expression_spdx": null,
       "license_detections": [],
@@ -187,8 +189,6 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "package_data": [],
-      "for_packages": [],
       "is_legal": false,
       "is_manifest": false,
       "is_readme": false,
@@ -218,6 +218,8 @@
       "is_media": false,
       "is_source": false,
       "is_script": false,
+      "package_data": [],
+      "for_packages": [],
       "detected_license_expression": null,
       "detected_license_expression_spdx": null,
       "license_detections": [],
@@ -227,8 +229,6 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "package_data": [],
-      "for_packages": [],
       "is_legal": false,
       "is_manifest": false,
       "is_readme": false,
@@ -258,6 +258,8 @@
       "is_media": false,
       "is_source": false,
       "is_script": false,
+      "package_data": [],
+      "for_packages": [],
       "detected_license_expression": null,
       "detected_license_expression_spdx": null,
       "license_detections": [],
@@ -267,8 +269,6 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "package_data": [],
-      "for_packages": [],
       "is_legal": false,
       "is_manifest": false,
       "is_readme": false,
@@ -298,6 +298,8 @@
       "is_media": false,
       "is_source": false,
       "is_script": false,
+      "package_data": [],
+      "for_packages": [],
       "detected_license_expression": null,
       "detected_license_expression_spdx": null,
       "license_detections": [],
@@ -307,8 +309,6 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "package_data": [],
-      "for_packages": [],
       "is_legal": false,
       "is_manifest": false,
       "is_readme": false,
@@ -338,6 +338,8 @@
       "is_media": false,
       "is_source": false,
       "is_script": false,
+      "package_data": [],
+      "for_packages": [],
       "detected_license_expression": "gpl-3.0-plus",
       "detected_license_expression_spdx": "GPL-3.0-or-later",
       "license_detections": [
@@ -364,13 +366,11 @@
       "license_clues": [],
       "percentage_of_license_text": 100.0,
       "for_license_detections": [
-        "gpl_3_0_plus#b3d7735f-90c4-2c5b-ff2d-2fe9f092cb2f"
+        "gpl_3_0_plus-b3d7735f-90c4-2c5b-ff2d-2fe9f092cb2f"
       ],
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "package_data": [],
-      "for_packages": [],
       "is_legal": true,
       "is_manifest": false,
       "is_readme": false,
@@ -400,6 +400,8 @@
       "is_media": false,
       "is_source": false,
       "is_script": false,
+      "package_data": [],
+      "for_packages": [],
       "detected_license_expression": null,
       "detected_license_expression_spdx": null,
       "license_detections": [],
@@ -409,8 +411,6 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "package_data": [],
-      "for_packages": [],
       "is_legal": false,
       "is_manifest": false,
       "is_readme": true,
@@ -440,6 +440,8 @@
       "is_media": false,
       "is_source": false,
       "is_script": false,
+      "package_data": [],
+      "for_packages": [],
       "detected_license_expression": null,
       "detected_license_expression_spdx": null,
       "license_detections": [],
@@ -449,8 +451,6 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "package_data": [],
-      "for_packages": [],
       "is_legal": false,
       "is_manifest": false,
       "is_readme": false,
@@ -480,6 +480,8 @@
       "is_media": false,
       "is_source": false,
       "is_script": false,
+      "package_data": [],
+      "for_packages": [],
       "detected_license_expression": null,
       "detected_license_expression_spdx": null,
       "license_detections": [],
@@ -489,8 +491,6 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "package_data": [],
-      "for_packages": [],
       "is_legal": false,
       "is_manifest": false,
       "is_readme": false,
@@ -520,6 +520,8 @@
       "is_media": false,
       "is_source": false,
       "is_script": false,
+      "package_data": [],
+      "for_packages": [],
       "detected_license_expression": null,
       "detected_license_expression_spdx": null,
       "license_detections": [],
@@ -529,8 +531,6 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "package_data": [],
-      "for_packages": [],
       "is_legal": false,
       "is_manifest": false,
       "is_readme": false,
@@ -560,6 +560,8 @@
       "is_media": false,
       "is_source": true,
       "is_script": false,
+      "package_data": [],
+      "for_packages": [],
       "detected_license_expression": "gpl-2.0-plus",
       "detected_license_expression_spdx": "GPL-2.0-or-later",
       "license_detections": [
@@ -586,7 +588,7 @@
       "license_clues": [],
       "percentage_of_license_text": 80.95,
       "for_license_detections": [
-        "gpl_2_0_plus#e68d2a19-4f30-77b2-c51f-8f14b7a097d2"
+        "gpl_2_0_plus-e68d2a19-4f30-77b2-c51f-8f14b7a097d2"
       ],
       "copyrights": [
         {
@@ -603,8 +605,6 @@
         }
       ],
       "authors": [],
-      "package_data": [],
-      "for_packages": [],
       "is_legal": false,
       "is_manifest": false,
       "is_readme": false,
@@ -634,6 +634,8 @@
       "is_media": false,
       "is_source": true,
       "is_script": false,
+      "package_data": [],
+      "for_packages": [],
       "detected_license_expression": null,
       "detected_license_expression_spdx": null,
       "license_detections": [],
@@ -655,8 +657,6 @@
         }
       ],
       "authors": [],
-      "package_data": [],
-      "for_packages": [],
       "is_legal": false,
       "is_manifest": false,
       "is_readme": false,

@@ -1,9 +1,9 @@
 {
   "license_detections": [
     {
-      "identifier": "apache_2_0#f76efb47-fed2-ece2-85a7-be5297788421",
+      "identifier": "apache_2_0-f76efb47-fed2-ece2-85a7-be5297788421",
       "license_expression": "apache-2.0",
-      "occurrence_count": 1,
+      "count": 1,
       "detection_log": [
         "not-combined"
       ],
@@ -22,9 +22,9 @@
       ]
     },
     {
-      "identifier": "unknown_license_reference#589846e0-5ae8-148c-1e24-c9a3b337f0f6",
+      "identifier": "unknown_license_reference-589846e0-5ae8-148c-1e24-c9a3b337f0f6",
       "license_expression": "unknown-license-reference",
-      "occurrence_count": 1,
+      "count": 1,
       "detection_log": [
         "not-combined"
       ],
@@ -131,7 +131,7 @@
       "license_clues": [],
       "percentage_of_license_text": 100.0,
       "for_license_detections": [
-        "apache_2_0#f76efb47-fed2-ece2-85a7-be5297788421"
+        "apache_2_0-f76efb47-fed2-ece2-85a7-be5297788421"
       ],
       "scan_errors": []
     },
@@ -177,7 +177,7 @@
       "license_clues": [],
       "percentage_of_license_text": 100.0,
       "for_license_detections": [
-        "unknown_license_reference#589846e0-5ae8-148c-1e24-c9a3b337f0f6"
+        "unknown_license_reference-589846e0-5ae8-148c-1e24-c9a3b337f0f6"
       ],
       "scan_errors": []
     }

@@ -1,9 +1,46 @@
 {
+  "summary": {
+    "declared_license_expression": "apache-2.0 AND mit",
+    "license_clarity_score": {
+      "score": 90,
+      "declared_license": true,
+      "identification_precision": true,
+      "has_license_text": true,
+      "declared_copyrights": true,
+      "conflicting_license_categories": false,
+      "ambiguous_compound_licensing": true
+    },
+    "declared_holder": "Example Corp.",
+    "primary_language": null,
+    "other_license_expressions": [
+      {
+        "value": null,
+        "count": 1
+      },
+      {
+        "value": "apache-2.0",
+        "count": 1
+      },
+      {
+        "value": "mit",
+        "count": 1
+      }
+    ],
+    "other_holders": [
+      {
+        "value": null,
+        "count": 2
+      }
+    ],
+    "other_languages": []
+  },
+  "packages": [],
+  "dependencies": [],
   "license_detections": [
     {
-      "identifier": "apache_2_0#131e3a0d-9d03-6ab8-63c7-0593eae53d6f",
+      "identifier": "apache_2_0-131e3a0d-9d03-6ab8-63c7-0593eae53d6f",
       "license_expression": "apache-2.0",
-      "occurrence_count": 1,
+      "count": 1,
       "detection_log": [
         "not-combined"
       ],
@@ -22,9 +59,9 @@
       ]
     },
     {
-      "identifier": "mit#e60e2912-9996-f235-207c-8ce2b9e55eb9",
+      "identifier": "mit-e60e2912-9996-f235-207c-8ce2b9e55eb9",
       "license_expression": "mit",
-      "occurrence_count": 1,
+      "count": 1,
       "detection_log": [
         "not-combined"
       ],
@@ -120,43 +157,6 @@
       "rule_relevance": 100
     }
   ],
-  "dependencies": [],
-  "packages": [],
-  "summary": {
-    "declared_license_expression": "apache-2.0 AND mit",
-    "license_clarity_score": {
-      "score": 90,
-      "declared_license": true,
-      "identification_precision": true,
-      "has_license_text": true,
-      "declared_copyrights": true,
-      "conflicting_license_categories": false,
-      "ambiguous_compound_licensing": true
-    },
-    "declared_holder": "Example Corp.",
-    "primary_language": null,
-    "other_license_expressions": [
-      {
-        "value": null,
-        "count": 1
-      },
-      {
-        "value": "apache-2.0",
-        "count": 1
-      },
-      {
-        "value": "mit",
-        "count": 1
-      }
-    ],
-    "other_holders": [
-      {
-        "value": null,
-        "count": 2
-      }
-    ],
-    "other_languages": []
-  },
   "files": [
     {
       "path": "ambiguous",
@@ -177,6 +177,8 @@
       "is_media": false,
       "is_source": false,
       "is_script": false,
+      "package_data": [],
+      "for_packages": [],
       "detected_license_expression": null,
       "detected_license_expression_spdx": null,
       "license_detections": [],
@@ -186,8 +188,6 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "package_data": [],
-      "for_packages": [],
       "is_legal": false,
       "is_manifest": false,
       "is_readme": false,
@@ -217,6 +217,8 @@
       "is_media": false,
       "is_source": false,
       "is_script": false,
+      "package_data": [],
+      "for_packages": [],
       "detected_license_expression": null,
       "detected_license_expression_spdx": null,
       "license_detections": [],
@@ -238,8 +240,6 @@
         }
       ],
       "authors": [],
-      "package_data": [],
-      "for_packages": [],
       "is_legal": false,
       "is_manifest": false,
       "is_readme": true,
@@ -269,6 +269,8 @@
       "is_media": false,
       "is_source": false,
       "is_script": false,
+      "package_data": [],
+      "for_packages": [],
       "detected_license_expression": "apache-2.0",
       "detected_license_expression_spdx": "Apache-2.0",
       "license_detections": [
@@ -295,13 +297,11 @@
       "license_clues": [],
       "percentage_of_license_text": 100.0,
       "for_license_detections": [
-        "apache_2_0#131e3a0d-9d03-6ab8-63c7-0593eae53d6f"
+        "apache_2_0-131e3a0d-9d03-6ab8-63c7-0593eae53d6f"
       ],
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "package_data": [],
-      "for_packages": [],
       "is_legal": true,
       "is_manifest": false,
       "is_readme": false,
@@ -331,6 +331,8 @@
       "is_media": false,
       "is_source": false,
       "is_script": false,
+      "package_data": [],
+      "for_packages": [],
       "detected_license_expression": "mit",
       "detected_license_expression_spdx": "MIT",
       "license_detections": [
@@ -357,13 +359,11 @@
       "license_clues": [],
       "percentage_of_license_text": 100.0,
       "for_license_detections": [
-        "mit#e60e2912-9996-f235-207c-8ce2b9e55eb9"
+        "mit-e60e2912-9996-f235-207c-8ce2b9e55eb9"
       ],
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "package_data": [],
-      "for_packages": [],
       "is_legal": true,
       "is_manifest": false,
       "is_readme": false,

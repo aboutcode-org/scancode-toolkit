@@ -292,7 +292,7 @@ class LicenseDetection:
     @property
     def identifier_with_expression(self):
         id_safe_expression = python_safe_name(s=str(self.license_expression))
-        return "{}#{}".format(id_safe_expression, self.identifier)
+        return "{}-{}".format(id_safe_expression, self.identifier)
 
 
     def get_start_end_line(self):
@@ -657,7 +657,7 @@ class UniqueDetection:
     """
     identifier = attr.ib(default=None)
     license_expression = attr.ib(default=None)
-    occurrence_count = attr.ib(default=None)
+    count = attr.ib(default=None)
     detection_log = attr.ib(default=attr.Factory(list))
     matches = attr.ib(default=attr.Factory(list))
     files = attr.ib(factory=list)
@@ -693,7 +693,7 @@ class UniqueDetection:
                     license_expression=detection_mapping["license_expression"],
                     detection_log=detection_mapping["detection_log"],
                     matches=detection_mapping["matches"],
-                    occurrence_count=len(files),
+                    count=len(files),
                     files=files,
                 )
             )
