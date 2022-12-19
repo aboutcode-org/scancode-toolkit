@@ -24,7 +24,6 @@ from licensedcode.detection import get_referenced_filenames
 from licensedcode.detection import find_referenced_resource
 from licensedcode.detection import detect_licenses
 from licensedcode.detection import LicenseDetectionFromResult
-from licensedcode.licenses_reference import extract_license_rules_reference_data
 from licensedcode.spans import Span
 from licensedcode import query
 
@@ -109,9 +108,6 @@ def add_referenced_license_matches_for_package(resource, codebase, no_licenses):
                 if no_licenses:
                     referenced_license_detections = get_license_detection_mappings(
                         location=referenced_resource.location
-                    )
-                    _references = extract_license_rules_reference_data(
-                        license_detections=referenced_license_detections
                     )
 
                 else:
@@ -352,9 +348,6 @@ def get_license_detections_from_sibling_file(resource, codebase, no_licenses):
                 location=sibling.location,
                 analysis=DetectionCategory.PACKAGE_ADD_FROM_SIBLING_FILE.value,
                 post_scan=True,
-            )
-            _references = extract_license_rules_reference_data(
-                license_detections=detections,
             )
             license_detections.extend(detections)
         else:
