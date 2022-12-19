@@ -907,8 +907,6 @@
       "purl": "pkg:pypi/ticketimport@0.7a"
     }
   ],
-  "license_references": [],
-  "rule_references": [],
   "files": [
     {
       "path": "Six",

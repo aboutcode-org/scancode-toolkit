@@ -58,8 +58,6 @@
     }
   ],
   "packages": [],
-  "license_references": [],
-  "rule_references": [],
   "files": [
     {
       "path": "ocaml-variants.opam",

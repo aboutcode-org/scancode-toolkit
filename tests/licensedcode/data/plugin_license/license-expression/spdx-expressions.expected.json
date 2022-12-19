@@ -1,9 +1,9 @@
 {
-  "licenses": [
+  "license_detections": [
     {
-      "identifier": "6a62dd92-d687-5046-a149-47edab69491d",
+      "identifier": "zlib_and_apache_2_0#6a62dd92-d687-5046-a149-47edab69491d",
       "license_expression": "zlib AND apache-2.0",
-      "occurance_count": 1,
+      "occurrence_count": 1,
       "detection_log": [
         "not-combined"
       ],
@@ -85,7 +85,7 @@
       "text": "This software is provided 'as-is', without any express or implied warranty. In no\nevent will the authors be held liable for any damages arising from the use of this\nsoftware.\n\nPermission is granted to anyone to use this software for any purpose, including\ncommercial applications, and to alter it and redistribute it freely, subject to\nthe following restrictions:\n\n1. The origin of this software must not be misrepresented; you must not claim that\nyou wrote the original software. If you use this software in a product, an\nacknowledgment in the product documentation would be appreciated but is not\nrequired.\n\n2. Altered source versions must be plainly marked as such, and must not be\nmisrepresented as being the original software.\n\n3. This notice may not be removed or altered from any source distribution."
     }
   ],
-  "rule_references": [
+  "license_rule_references": [
     {
       "license_expression": "zlib",
       "rule_identifier": "spdx-license-identifier: zlib",
@@ -96,8 +96,7 @@
       "is_license_tag": true,
       "is_license_intro": false,
       "rule_length": 4,
-      "rule_relevance": 100,
-      "matched_text": "https://licenses.nuget.org/Zlib"
+      "rule_relevance": 100
     },
     {
       "license_expression": "apache-2.0",
@@ -109,8 +108,7 @@
       "is_license_tag": true,
       "is_license_intro": false,
       "rule_length": 6,
-      "rule_relevance": 100,
-      "matched_text": "SPDX-License-Identifier: Apache-2.0"
+      "rule_relevance": 100
     }
   ],
   "files": [
@@ -135,7 +133,8 @@
               "matcher": "1-spdx-id",
               "license_expression": "zlib",
               "rule_identifier": "spdx-license-identifier: zlib",
-              "rule_url": null
+              "rule_url": null,
+              "matched_text": "https://licenses.nuget.org/Zlib"
             },
             {
               "score": 100.0,
@@ -146,15 +145,16 @@
               "matcher": "1-spdx-id",
               "license_expression": "apache-2.0",
               "rule_identifier": "spdx-license-identifier: apache-2.0",
-              "rule_url": null
+              "rule_url": null,
+              "matched_text": "SPDX-License-Identifier: Apache-2.0"
             }
           ]
         }
       ],
       "license_clues": [],
       "percentage_of_license_text": 90.91,
-      "for_licenses": [
-        "6a62dd92-d687-5046-a149-47edab69491d"
+      "for_license_detections": [
+        "zlib_and_apache_2_0#6a62dd92-d687-5046-a149-47edab69491d"
       ],
       "scan_errors": []
     }

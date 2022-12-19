@@ -1,9 +1,9 @@
 {
-  "licenses": [
+  "license_detections": [
     {
-      "identifier": "467418ea-42a8-45bb-a30e-a9fcb411f2bb",
+      "identifier": "apache_1_0#467418ea-42a8-45bb-a30e-a9fcb411f2bb",
       "license_expression": "apache-1.0",
-      "occurance_count": 2,
+      "occurrence_count": 2,
       "detection_log": [
         "not-combined"
       ],
@@ -22,9 +22,9 @@
       ]
     },
     {
-      "identifier": "303cd8fe-cdb4-d62a-6a7b-306e31fce477",
+      "identifier": "ja_sig#303cd8fe-cdb4-d62a-6a7b-306e31fce477",
       "license_expression": "ja-sig",
-      "occurance_count": 2,
+      "occurrence_count": 2,
       "detection_log": [
         "not-combined"
       ],
@@ -43,9 +43,9 @@
       ]
     },
     {
-      "identifier": "c2a02f69-4a86-e4f0-bdc9-55915fe527db",
+      "identifier": "apache_2_0#c2a02f69-4a86-e4f0-bdc9-55915fe527db",
       "license_expression": "apache-2.0",
-      "occurance_count": 2,
+      "occurrence_count": 2,
       "detection_log": [
         "not-combined"
       ],
@@ -64,9 +64,9 @@
       ]
     },
     {
-      "identifier": "041f32d1-6cb1-f9fa-a580-14f3958007f0",
+      "identifier": "gpl_2_0_with_linux_syscall_exception_gpl_or_linux_openib#041f32d1-6cb1-f9fa-a580-14f3958007f0",
       "license_expression": "gpl-2.0 WITH linux-syscall-exception-gpl OR linux-openib",
-      "occurance_count": 1,
+      "occurrence_count": 1,
       "detection_log": [
         "not-combined"
       ],
@@ -211,7 +211,7 @@
       "text": "NOTE! This copyright does *not* cover user programs that use kernel\nservices by normal system calls - this is merely considered normal use\nof the kernel, and does *not* fall under the heading of \"derived work\".\nAlso note that the GPL below is copyrighted by the Free Software\nFoundation, but the instance of code that it refers to (the Linux\nkernel) is copyrighted by me and others who actually wrote it.\n\nAlso note that the only valid version of the GPL as far as the kernel\nis concerned is _this_ particular version of the license (ie v2, not\nv2.2 or v3.x or whatever), unless explicitly otherwise stated.\n\nLinus Torvalds"
     }
   ],
-  "rule_references": [
+  "license_rule_references": [
     {
       "license_expression": "apache-1.0",
       "rule_identifier": "apache-1.0.LICENSE",
@@ -222,8 +222,7 @@
       "is_license_tag": false,
       "is_license_intro": false,
       "rule_length": 368,
-      "rule_relevance": 100,
-      "matched_text": "Redistribution and use in source and binary forms, with or without\r\nmodification, are permitted provided that the following conditions\r\nare met:\r\n\r\n 1. Redistributions of source code must retain the above copyright\r\n    notice, this list of conditions and the following disclaimer. \r\n \r\n 2. Redistributions in binary form must reproduce the above copyright\r\n    notice, this list of conditions and the following disclaimer in\r\n    the documentation and/or other materials provided with the\r\n    distribution.\r\n \r\n 3. All advertising materials mentioning features or use of this\r\n    software must display the following acknowledgment:\r\n    \"This product includes software developed by the Apache Group\r\n    for use in the Apache HTTP server project (http://www.apache.org/).\"\r\n \r\n 4. The names \"Apache Server\" and \"Apache Group\" must not be used to\r\n    endorse or promote products derived from this software without\r\n    prior written permission. For written permission, please contact\r\n    apache@apache.org.\r\n \r\n 5. Products derived from this software may not be called \"Apache\"\r\n    nor may \"Apache\" appear in their names without prior written\r\n    permission of the Apache Group.\r\n \r\n 6. Redistributions of any form whatsoever must retain the following\r\n    acknowledgment:\r\n    \"This product includes software developed by the Apache Group\r\n    for use in the Apache HTTP server project (http://www.apache.org/).\"\r\n \r\n THIS SOFTWARE IS PROVIDED BY THE APACHE GROUP ``AS IS'' AND ANY\r\n EXPRESSED OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE\r\n IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR\r\n PURPOSE ARE DISCLAIMED.  IN NO EVENT SHALL THE APACHE GROUP OR\r\n ITS CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,\r\n SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT\r\n NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;\r\n LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)\r\n HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT,\r\n STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)\r\n ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED\r\n OF THE POSSIBILITY OF SUCH DAMAGE.\r\n====================================================================\r\n\r\n This software consists of voluntary contributions made by many\r\n individuals on behalf of the Apache Group and was originally based\r\n on public domain software written at the National Center for\r\n Supercomputing Applications, University of Illinois, Urbana-Champaign.\r\n For more information on the Apache Group and the Apache HTTP server\r\n project, please see <http://www.apache.org/>."
+      "rule_relevance": 100
     },
     {
       "license_expression": "apache-1.0",
@@ -235,8 +234,7 @@
       "is_license_tag": false,
       "is_license_intro": false,
       "rule_length": 368,
-      "rule_relevance": 100,
-      "matched_text": "Redistribution and use in source and binary forms, with or without\r\nmodification, are permitted provided that the following conditions\r\nare met:\r\n\r\n 1. Redistributions of source code must retain the above copyright\r\n    notice, this list of conditions and the following disclaimer. \r\n \r\n 2. Redistributions in binary form must reproduce the above copyright\r\n    notice, this list of conditions and the following disclaimer in\r\n    the documentation and/or other materials provided with the\r\n    distribution.\r\n \r\n 3. All advertising materials mentioning features or use of this\r\n    software must display the following acknowledgment:\r\n    \"This product includes software developed by the Apache Group\r\n    for use in the Apache HTTP server project (http://www.apache.org/).\"\r\n \r\n 4. The names \"Apache Server\" and \"Apache Group\" must not be used to\r\n    endorse or promote products derived from this software without\r\n    prior written permission. For written permission, please contact\r\n    apache@apache.org.\r\n \r\n 5. Products derived from this software may not be called \"Apache\"\r\n    nor may \"Apache\" appear in their names without prior written\r\n    permission of the Apache Group.\r\n \r\n 6. Redistributions of any form whatsoever must retain the following\r\n    acknowledgment:\r\n    \"This product includes software developed by the Apache Group\r\n    for use in the Apache HTTP server project (http://www.apache.org/).\"\r\n \r\n THIS SOFTWARE IS PROVIDED BY THE APACHE GROUP ``AS IS'' AND ANY\r\n EXPRESSED OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE\r\n IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR\r\n PURPOSE ARE DISCLAIMED.  IN NO EVENT SHALL THE APACHE GROUP OR\r\n ITS CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,\r\n SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT\r\n NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;\r\n LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)\r\n HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT,\r\n STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)\r\n ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED\r\n OF THE POSSIBILITY OF SUCH DAMAGE.\r\n====================================================================\r\n\r\n This software consists of voluntary contributions made by many\r\n individuals on behalf of the Apache Group and was originally based\r\n on public domain software written at the National Center for\r\n Supercomputing Applications, University of Illinois, Urbana-Champaign.\r\n For more information on the Apache Group and the Apache HTTP server\r\n project, please see <http://www.apache.org/>."
+      "rule_relevance": 100
     },
     {
       "license_expression": "ja-sig",
@@ -248,8 +246,7 @@
       "is_license_tag": false,
       "is_license_intro": false,
       "rule_length": 212,
-      "rule_relevance": 100,
-      "matched_text": "Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:\n\n1. Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.\n\n2. Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.\n\n3. Redistributions of any form whatsoever must retain the following acknowledgment:\n\"This product includes software developed by the JA-SIG Collaborative (http://www.ja-sig.org/).\"\n\nThis software is provided by the JA-SIG collaborative \"as is\" and any expressed or implied warranties, including, but not limited to, the implied warranties of merchantability and fitness for a particular purpose are disclaimed. In no event shall the JA-SIG collaborative or its contributors be liable for any direct, indirect, incidental, special, exemplary, or consequential damages (including, but not limited to, procurement of substitute goods or services; loss of use, data, or profits; or business interruption) however caused and on any theory of liability,\n whether in contract, strict liability, or tort (including negligence or otherwise) arising in any way out of the use of this software, even if advised of the possibility of such damage."
+      "rule_relevance": 100
     },
     {
       "license_expression": "apache-2.0",
@@ -263,8 +260,7 @@
       "is_license_tag": false,
       "is_license_intro": false,
       "rule_length": 119,
-      "rule_relevance": 100,
-      "matched_text": "Licensed to the Apache Software Foundation (ASF) under one or more\n * contributor license agreements.  See the NOTICE file distributed with\n * this work for additional information regarding copyright ownership.\n * The ASF licenses this file to You under the Apache License, Version 2.0\n * (the \"License\"); you may not use this file except in compliance with\n * the License.  You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License."
+      "rule_relevance": 100
     },
     {
       "license_expression": "gpl-2.0 WITH linux-syscall-exception-gpl OR linux-openib",
@@ -276,8 +272,7 @@
       "is_license_tag": true,
       "is_license_intro": false,
       "rule_length": 13,
-      "rule_relevance": 100,
-      "matched_text": "SPDX-License-Identifier: ((GPL-2.0 WITH Linux-syscall-note) OR Linux-Openib) */"
+      "rule_relevance": 100
     },
     {
       "license_expression": "ja-sig",
@@ -289,8 +284,7 @@
       "is_license_tag": false,
       "is_license_intro": false,
       "rule_length": 212,
-      "rule_relevance": 100,
-      "matched_text": "Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:\n\n1. Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.\n\n2. Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.\n\n3. Redistributions of any form whatsoever must retain the following acknowledgment:\n\"This product includes software developed by the JA-SIG Collaborative (http://www.ja-sig.org/).\"\n\nThis software is provided by the JA-SIG collaborative \"as is\" and any expressed or implied warranties, including, but not limited to, the implied warranties of merchantability and fitness for a particular purpose are disclaimed. In no event shall the JA-SIG collaborative or its contributors be liable for any direct, indirect, incidental, special, exemplary, or consequential damages (including, but not limited to, procurement of substitute goods or services; loss of use, data, or profits; or business interruption) however caused and on any theory of liability,\n whether in contract, strict liability, or tort (including negligence or otherwise) arising in any way out of the use of this software, even if advised of the possibility of such damage."
+      "rule_relevance": 100
     },
     {
       "license_expression": "apache-2.0",
@@ -304,8 +298,7 @@
       "is_license_tag": false,
       "is_license_intro": false,
       "rule_length": 119,
-      "rule_relevance": 100,
-      "matched_text": "Licensed to the Apache Software Foundation (ASF) under one or more\n * contributor license agreements.  See the NOTICE file distributed with\n * this work for additional information regarding copyright ownership.\n * The ASF licenses this file to You under the Apache License, Version 2.0\n * (the \"License\"); you may not use this file except in compliance with\n * the License.  You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License."
+      "rule_relevance": 100
     }
   ],
   "files": [
@@ -333,7 +326,7 @@
       "license_detections": [],
       "license_clues": [],
       "percentage_of_license_text": 0,
-      "for_licenses": [],
+      "for_license_detections": [],
       "is_license_text": false,
       "files_count": 5,
       "dirs_count": 0,
@@ -377,15 +370,16 @@
               "matcher": "2-aho",
               "license_expression": "apache-1.0",
               "rule_identifier": "apache-1.0.LICENSE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-1.0.LICENSE"
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-1.0.LICENSE",
+              "matched_text": "Redistribution and use in source and binary forms, with or without\r\nmodification, are permitted provided that the following conditions\r\nare met:\r\n\r\n 1. Redistributions of source code must retain the above copyright\r\n    notice, this list of conditions and the following disclaimer. \r\n \r\n 2. Redistributions in binary form must reproduce the above copyright\r\n    notice, this list of conditions and the following disclaimer in\r\n    the documentation and/or other materials provided with the\r\n    distribution.\r\n \r\n 3. All advertising materials mentioning features or use of this\r\n    software must display the following acknowledgment:\r\n    \"This product includes software developed by the Apache Group\r\n    for use in the Apache HTTP server project (http://www.apache.org/).\"\r\n \r\n 4. The names \"Apache Server\" and \"Apache Group\" must not be used to\r\n    endorse or promote products derived from this software without\r\n    prior written permission. For written permission, please contact\r\n    apache@apache.org.\r\n \r\n 5. Products derived from this software may not be called \"Apache\"\r\n    nor may \"Apache\" appear in their names without prior written\r\n    permission of the Apache Group.\r\n \r\n 6. Redistributions of any form whatsoever must retain the following\r\n    acknowledgment:\r\n    \"This product includes software developed by the Apache Group\r\n    for use in the Apache HTTP server project (http://www.apache.org/).\"\r\n \r\n THIS SOFTWARE IS PROVIDED BY THE APACHE GROUP ``AS IS'' AND ANY\r\n EXPRESSED OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE\r\n IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR\r\n PURPOSE ARE DISCLAIMED.  IN NO EVENT SHALL THE APACHE GROUP OR\r\n ITS CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,\r\n SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT\r\n NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;\r\n LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)\r\n HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT,\r\n STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)\r\n ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED\r\n OF THE POSSIBILITY OF SUCH DAMAGE.\r\n====================================================================\r\n\r\n This software consists of voluntary contributions made by many\r\n individuals on behalf of the Apache Group and was originally based\r\n on public domain software written at the National Center for\r\n Supercomputing Applications, University of Illinois, Urbana-Champaign.\r\n For more information on the Apache Group and the Apache HTTP server\r\n project, please see <http://www.apache.org/>."
             }
           ]
         }
       ],
       "license_clues": [],
       "percentage_of_license_text": 96.08,
-      "for_licenses": [
-        "467418ea-42a8-45bb-a30e-a9fcb411f2bb"
+      "for_license_detections": [
+        "apache_1_0#467418ea-42a8-45bb-a30e-a9fcb411f2bb"
       ],
       "is_license_text": true,
       "files_count": 0,
@@ -430,15 +424,16 @@
               "matcher": "2-aho",
               "license_expression": "apache-1.0",
               "rule_identifier": "apache-1.0.LICENSE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-1.0.LICENSE"
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-1.0.LICENSE",
+              "matched_text": "Redistribution and use in source and binary forms, with or without\r\nmodification, are permitted provided that the following conditions\r\nare met:\r\n\r\n 1. Redistributions of source code must retain the above copyright\r\n    notice, this list of conditions and the following disclaimer. \r\n \r\n 2. Redistributions in binary form must reproduce the above copyright\r\n    notice, this list of conditions and the following disclaimer in\r\n    the documentation and/or other materials provided with the\r\n    distribution.\r\n \r\n 3. All advertising materials mentioning features or use of this\r\n    software must display the following acknowledgment:\r\n    \"This product includes software developed by the Apache Group\r\n    for use in the Apache HTTP server project (http://www.apache.org/).\"\r\n \r\n 4. The names \"Apache Server\" and \"Apache Group\" must not be used to\r\n    endorse or promote products derived from this software without\r\n    prior written permission. For written permission, please contact\r\n    apache@apache.org.\r\n \r\n 5. Products derived from this software may not be called \"Apache\"\r\n    nor may \"Apache\" appear in their names without prior written\r\n    permission of the Apache Group.\r\n \r\n 6. Redistributions of any form whatsoever must retain the following\r\n    acknowledgment:\r\n    \"This product includes software developed by the Apache Group\r\n    for use in the Apache HTTP server project (http://www.apache.org/).\"\r\n \r\n THIS SOFTWARE IS PROVIDED BY THE APACHE GROUP ``AS IS'' AND ANY\r\n EXPRESSED OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE\r\n IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR\r\n PURPOSE ARE DISCLAIMED.  IN NO EVENT SHALL THE APACHE GROUP OR\r\n ITS CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,\r\n SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT\r\n NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;\r\n LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)\r\n HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT,\r\n STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)\r\n ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED\r\n OF THE POSSIBILITY OF SUCH DAMAGE.\r\n====================================================================\r\n\r\n This software consists of voluntary contributions made by many\r\n individuals on behalf of the Apache Group and was originally based\r\n on public domain software written at the National Center for\r\n Supercomputing Applications, University of Illinois, Urbana-Champaign.\r\n For more information on the Apache Group and the Apache HTTP server\r\n project, please see <http://www.apache.org/>."
             }
           ]
         }
       ],
       "license_clues": [],
       "percentage_of_license_text": 40.98,
-      "for_licenses": [
-        "467418ea-42a8-45bb-a30e-a9fcb411f2bb"
+      "for_license_detections": [
+        "apache_1_0#467418ea-42a8-45bb-a30e-a9fcb411f2bb"
       ],
       "is_license_text": false,
       "files_count": 0,
@@ -483,7 +478,8 @@
               "matcher": "2-aho",
               "license_expression": "ja-sig",
               "rule_identifier": "ja-sig.LICENSE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/ja-sig.LICENSE"
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/ja-sig.LICENSE",
+              "matched_text": "Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:\n\n1. Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.\n\n2. Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.\n\n3. Redistributions of any form whatsoever must retain the following acknowledgment:\n\"This product includes software developed by the JA-SIG Collaborative (http://www.ja-sig.org/).\"\n\nThis software is provided by the JA-SIG collaborative \"as is\" and any expressed or implied warranties, including, but not limited to, the implied warranties of merchantability and fitness for a particular purpose are disclaimed. In no event shall the JA-SIG collaborative or its contributors be liable for any direct, indirect, incidental, special, exemplary, or consequential damages (including, but not limited to, procurement of substitute goods or services; loss of use, data, or profits; or business interruption) however caused and on any theory of liability,\n whether in contract, strict liability, or tort (including negligence or otherwise) arising in any way out of the use of this software, even if advised of the possibility of such damage."
             }
           ]
         },
@@ -502,16 +498,17 @@
               "matcher": "2-aho",
               "license_expression": "apache-2.0",
               "rule_identifier": "apache-2.0_2.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_2.RULE"
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_2.RULE",
+              "matched_text": "Licensed to the Apache Software Foundation (ASF) under one or more\n * contributor license agreements.  See the NOTICE file distributed with\n * this work for additional information regarding copyright ownership.\n * The ASF licenses this file to You under the Apache License, Version 2.0\n * (the \"License\"); you may not use this file except in compliance with\n * the License.  You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License."
             }
           ]
         }
       ],
       "license_clues": [],
       "percentage_of_license_text": 91.69,
-      "for_licenses": [
-        "303cd8fe-cdb4-d62a-6a7b-306e31fce477",
-        "c2a02f69-4a86-e4f0-bdc9-55915fe527db"
+      "for_license_detections": [
+        "ja_sig#303cd8fe-cdb4-d62a-6a7b-306e31fce477",
+        "apache_2_0#c2a02f69-4a86-e4f0-bdc9-55915fe527db"
       ],
       "is_license_text": true,
       "files_count": 0,
@@ -556,15 +553,16 @@
               "matcher": "1-spdx-id",
               "license_expression": "gpl-2.0 WITH linux-syscall-exception-gpl OR linux-openib",
               "rule_identifier": "spdx-license-identifier: gpl-2.0 WITH linux-syscall-exception-gpl OR linux-openib",
-              "rule_url": null
+              "rule_url": null,
+              "matched_text": "SPDX-License-Identifier: ((GPL-2.0 WITH Linux-syscall-note) OR Linux-Openib) */"
             }
           ]
         }
       ],
       "license_clues": [],
       "percentage_of_license_text": 100.0,
-      "for_licenses": [
-        "041f32d1-6cb1-f9fa-a580-14f3958007f0"
+      "for_license_detections": [
+        "gpl_2_0_with_linux_syscall_exception_gpl_or_linux_openib#041f32d1-6cb1-f9fa-a580-14f3958007f0"
       ],
       "is_license_text": true,
       "files_count": 0,
@@ -609,7 +607,8 @@
               "matcher": "2-aho",
               "license_expression": "ja-sig",
               "rule_identifier": "ja-sig.LICENSE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/ja-sig.LICENSE"
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/ja-sig.LICENSE",
+              "matched_text": "Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:\n\n1. Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.\n\n2. Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.\n\n3. Redistributions of any form whatsoever must retain the following acknowledgment:\n\"This product includes software developed by the JA-SIG Collaborative (http://www.ja-sig.org/).\"\n\nThis software is provided by the JA-SIG collaborative \"as is\" and any expressed or implied warranties, including, but not limited to, the implied warranties of merchantability and fitness for a particular purpose are disclaimed. In no event shall the JA-SIG collaborative or its contributors be liable for any direct, indirect, incidental, special, exemplary, or consequential damages (including, but not limited to, procurement of substitute goods or services; loss of use, data, or profits; or business interruption) however caused and on any theory of liability,\n whether in contract, strict liability, or tort (including negligence or otherwise) arising in any way out of the use of this software, even if advised of the possibility of such damage."
             }
           ]
         },
@@ -628,16 +627,17 @@
               "matcher": "2-aho",
               "license_expression": "apache-2.0",
               "rule_identifier": "apache-2.0_2.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_2.RULE"
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_2.RULE",
+              "matched_text": "Licensed to the Apache Software Foundation (ASF) under one or more\n * contributor license agreements.  See the NOTICE file distributed with\n * this work for additional information regarding copyright ownership.\n * The ASF licenses this file to You under the Apache License, Version 2.0\n * (the \"License\"); you may not use this file except in compliance with\n * the License.  You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License."
             }
           ]
         }
       ],
       "license_clues": [],
       "percentage_of_license_text": 30.71,
-      "for_licenses": [
-        "303cd8fe-cdb4-d62a-6a7b-306e31fce477",
-        "c2a02f69-4a86-e4f0-bdc9-55915fe527db"
+      "for_license_detections": [
+        "ja_sig#303cd8fe-cdb4-d62a-6a7b-306e31fce477",
+        "apache_2_0#c2a02f69-4a86-e4f0-bdc9-55915fe527db"
       ],
       "is_license_text": false,
       "files_count": 0,

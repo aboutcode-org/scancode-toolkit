@@ -1,9 +1,9 @@
 {
-  "licenses": [
+  "license_detections": [
     {
-      "identifier": "04db1ff4-743d-5e4b-c651-babe28ddd938",
+      "identifier": "wtfpl_2_0_and_mit#04db1ff4-743d-5e4b-c651-babe28ddd938",
       "license_expression": "wtfpl-2.0 AND mit",
-      "occurance_count": 1,
+      "occurrence_count": 1,
       "detection_log": [
         "unknown-intro-followed-by-match"
       ],
@@ -97,7 +97,7 @@
       "text": "DO WHAT THE FUCK YOU WANT TO PUBLIC LICENSE\nVersion 2, December 2004\n\nCopyright (C) 2004 Sam Hocevar\n14 rue de Plaisance, 75014 Paris, France\nEveryone is permitted to copy and distribute verbatim or modified\ncopies of this license document, and changing it is allowed as long\nas the name is changed.\n\nDO WHAT THE FUCK YOU WANT TO PUBLIC LICENSE\nTERMS AND CONDITIONS FOR COPYING, DISTRIBUTION AND MODIFICATION\n\n0. You just DO WHAT THE FUCK YOU WANT TO."
     }
   ],
-  "rule_references": [
+  "license_rule_references": [
     {
       "license_expression": "unknown-license-reference",
       "rule_identifier": "lead-in_unknown_30.RULE",
@@ -108,8 +108,7 @@
       "is_license_tag": false,
       "is_license_intro": true,
       "rule_length": 3,
-      "rule_relevance": 100,
-      "matched_text": "dual-licensed under [`"
+      "rule_relevance": 100
     },
     {
       "license_expression": "wtfpl-2.0",
@@ -121,8 +120,7 @@
       "is_license_tag": false,
       "is_license_intro": false,
       "rule_length": 1,
-      "rule_relevance": 50,
-      "matched_text": "WTFPL`]("
+      "rule_relevance": 50
     },
     {
       "license_expression": "wtfpl-2.0",
@@ -134,8 +132,7 @@
       "is_license_tag": false,
       "is_license_intro": false,
       "rule_length": 3,
-      "rule_relevance": 100,
-      "matched_text": "www.wtfpl.net/"
+      "rule_relevance": 100
     },
     {
       "license_expression": "mit",
@@ -147,8 +144,7 @@
       "is_license_tag": false,
       "is_license_intro": false,
       "rule_length": 6,
-      "rule_relevance": 100,
-      "matched_text": "MIT`](https://opensource.org/licenses/MIT)."
+      "rule_relevance": 100
     }
   ],
   "files": [
@@ -173,7 +169,8 @@
               "matcher": "2-aho",
               "license_expression": "unknown-license-reference",
               "rule_identifier": "lead-in_unknown_30.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lead-in_unknown_30.RULE"
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lead-in_unknown_30.RULE",
+              "matched_text": "dual-licensed under [`"
             },
             {
               "score": 50.0,
@@ -184,7 +181,8 @@
               "matcher": "2-aho",
               "license_expression": "wtfpl-2.0",
               "rule_identifier": "spdx_license_id_wtfpl_for_wtfpl-2.0.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/spdx_license_id_wtfpl_for_wtfpl-2.0.RULE"
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/spdx_license_id_wtfpl_for_wtfpl-2.0.RULE",
+              "matched_text": "WTFPL`]("
             },
             {
               "score": 100.0,
@@ -195,7 +193,8 @@
               "matcher": "2-aho",
               "license_expression": "wtfpl-2.0",
               "rule_identifier": "wtfpl-2.0_27.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/wtfpl-2.0_27.RULE"
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/wtfpl-2.0_27.RULE",
+              "matched_text": "www.wtfpl.net/"
             },
             {
               "score": 100.0,
@@ -206,15 +205,16 @@
               "matcher": "2-aho",
               "license_expression": "mit",
               "rule_identifier": "mit_64.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_64.RULE"
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_64.RULE",
+              "matched_text": "MIT`](https://opensource.org/licenses/MIT)."
             }
           ]
         }
       ],
       "license_clues": [],
       "percentage_of_license_text": 8.18,
-      "for_licenses": [
-        "04db1ff4-743d-5e4b-c651-babe28ddd938"
+      "for_license_detections": [
+        "wtfpl_2_0_and_mit#04db1ff4-743d-5e4b-c651-babe28ddd938"
       ],
       "scan_errors": []
     }

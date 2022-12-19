@@ -138,8 +138,6 @@
       "purl": "pkg:buck/bin"
     }
   ],
-  "license_references": [],
-  "rule_references": [],
   "files": [
     {
       "path": "end2end",

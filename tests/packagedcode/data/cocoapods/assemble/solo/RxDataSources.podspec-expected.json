@@ -101,8 +101,6 @@
       "purl": "pkg:cocoapods/RxDataSources@4.0.1"
     }
   ],
-  "license_references": [],
-  "rule_references": [],
   "files": [
     {
       "path": "RxDataSources.podspec",

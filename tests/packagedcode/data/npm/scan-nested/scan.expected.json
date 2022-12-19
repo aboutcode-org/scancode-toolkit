@@ -898,8 +898,6 @@
       "purl": "pkg:npm/sequelize@3.30.2"
     }
   ],
-  "license_references": [],
-  "rule_references": [],
   "files": [
     {
       "path": "scan",

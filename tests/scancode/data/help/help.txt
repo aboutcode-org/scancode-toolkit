@@ -114,8 +114,6 @@ Options:
                              contain over 90% of source files as children and
                              descendants. Count the number of source files in a
                              directory as a new source_file_counts attribute
-    --no-licenses-reference  Include a reference of all the licenses referenced in
-                             this scan with the data details and full texts.
     --summary                Summarize scans by providing declared origin
                              information and other detected origin info at the
                              codebase attribute level.

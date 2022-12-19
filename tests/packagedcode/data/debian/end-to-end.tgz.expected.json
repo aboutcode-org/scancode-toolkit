@@ -65,8 +65,6 @@
       "purl": "pkg:deb/libncurses5@6.1-1ubuntu1?architecture=amd64"
     }
   ],
-  "license_references": [],
-  "rule_references": [],
   "files": [
     {
       "path": "end-to-end.tgz",

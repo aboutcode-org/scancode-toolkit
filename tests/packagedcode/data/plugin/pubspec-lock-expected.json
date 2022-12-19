@@ -800,8 +800,6 @@
     }
   ],
   "packages": [],
-  "license_references": [],
-  "rule_references": [],
   "files": [
     {
       "path": "dart-pubspec.lock",

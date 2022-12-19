@@ -218,8 +218,6 @@
       "purl": "pkg:maven/org.activiti/activiti-image-generator@7-201802-EA"
     }
   ],
-  "license_references": [],
-  "rule_references": [],
   "files": [
     {
       "path": "extracted-jar",

@@ -24,14 +24,14 @@ headers:
         cpu_architecture: 64
         platform: Linux-5.14.0-1054-oem-x86_64-with-glibc2.29
         platform_version: '#61-Ubuntu SMP Fri Oct 14 13:05:50 UTC 2022'
-        python_version: "3.8.10 (default, Jun 22 2022, 20:18:18) \n[GCC 9.4.0]"
+        python_version: "3.8.10 (default, Nov 14 2022, 12:59:47) \n[GCC 9.4.0]"
       spdx_license_list_version: '3.17'
       files_count: 1
-licenses: []
+license_detections: []
+license_references: []
+license_rule_references: []
 dependencies: []
 packages: []
-license_references: []
-rule_references: []
 files:
   - path: simple
     type: directory
@@ -56,7 +56,7 @@ files:
     license_detections: []
     license_clues: []
     percentage_of_license_text: '0'
-    for_licenses: []
+    for_license_detections: []
     copyrights: []
     holders: []
     authors: []
@@ -89,7 +89,7 @@ files:
     license_detections: []
     license_clues: []
     percentage_of_license_text: '0'
-    for_licenses: []
+    for_license_detections: []
     copyrights:
       - copyright: Copyright (c) 2000 ACME, Inc.
         start_line: 1

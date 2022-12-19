@@ -136,8 +136,6 @@
       "purl": "pkg:dart/built_collection@5.1.1"
     }
   ],
-  "license_references": [],
-  "rule_references": [],
   "files": [
     {
       "path": "LICENSE",

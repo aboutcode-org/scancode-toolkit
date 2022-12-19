@@ -1,9 +1,9 @@
 {
-  "licenses": [
+  "license_detections": [
     {
-      "identifier": "3d4ebed6-d6ff-5d71-13d5-9ae3bb5bc485",
+      "identifier": "x11_lucent#3d4ebed6-d6ff-5d71-13d5-9ae3bb5bc485",
       "license_expression": "x11-lucent",
-      "occurance_count": 1,
+      "occurrence_count": 1,
       "detection_log": [
         "unknown-intro-followed-by-match"
       ],
@@ -33,9 +33,9 @@
       ]
     },
     {
-      "identifier": "5537c6e0-e03f-c489-9ac3-243ae2274830",
+      "identifier": "bzip2_libbzip_2010#5537c6e0-e03f-c489-9ac3-243ae2274830",
       "license_expression": "bzip2-libbzip-2010",
-      "occurance_count": 1,
+      "occurrence_count": 1,
       "detection_log": [
         "unknown-intro-followed-by-match"
       ],
@@ -98,7 +98,7 @@
       "text": "Permission to use, copy, modify, and distribute this software for any\npurpose without fee is hereby granted, provided that this entire notice\nis included in all copies of any software which is or includes a copy\nor modification of this software and in all copies of the supporting\ndocumentation for such software.\n\nTHIS SOFTWARE IS BEING PROVIDED \"AS IS\", WITHOUT ANY EXPRESS OR IMPLIED\nWARRANTY.  IN PARTICULAR, NEITHER THE AUTHOR NOR LUCENT MAKES ANY\nREPRESENTATION OR WARRANTY OF ANY KIND CONCERNING THE MERCHANTABILITY\nOF THIS SOFTWARE OR ITS FITNESS FOR ANY PARTICULAR PURPOSE."
     }
   ],
-  "rule_references": [
+  "license_rule_references": [
     {
       "license_expression": "unknown-license-reference",
       "rule_identifier": "license-intro_4.RULE",
@@ -109,8 +109,7 @@
       "is_license_tag": false,
       "is_license_intro": true,
       "rule_length": 5,
-      "rule_relevance": 100,
-      "matched_text": "licensed under the following terms:"
+      "rule_relevance": 100
     },
     {
       "license_expression": "x11-lucent",
@@ -122,8 +121,7 @@
       "is_license_tag": false,
       "is_license_intro": false,
       "rule_length": 93,
-      "rule_relevance": 100,
-      "matched_text": "Permission to use, copy, modify, and distribute this software for any purpose without\n  fee is hereby granted, provided that this entire notice is included in all copies of any\n  software which is or includes a copy or modification of this software and in all copies\n  of the supporting documentation for such software.  THIS SOFTWARE IS BEING PROVIDED \"AS\n  IS\", WITHOUT ANY EXPRESS OR IMPLIED WARRANTY.  IN PARTICULAR, NEITHER THE AUTHORS NOR\n  LUCENT TECHNOLOGIES MAKE ANY REPRESENTATION OR WARRANTY OF ANY KIND CONCERNING THE\n  MERCHANTABILITY OF THIS SOFTWARE OR ITS FITNESS FOR ANY PARTICULAR PURPOSE."
+      "rule_relevance": 100
     },
     {
       "license_expression": "unknown-license-reference",
@@ -135,8 +133,7 @@
       "is_license_tag": false,
       "is_license_intro": true,
       "rule_length": 5,
-      "rule_relevance": 100,
-      "matched_text": "licensed under the following terms:"
+      "rule_relevance": 100
     },
     {
       "license_expression": "bzip2-libbzip-2010",
@@ -148,8 +145,7 @@
       "is_license_tag": false,
       "is_license_intro": false,
       "rule_length": 233,
-      "rule_relevance": 100,
-      "matched_text": "Redistribution and use in source and binary forms, with or without\n   modification, are permitted provided that the following conditions\n   are met:\n\n   1. Redistributions of source code must retain the above copyright\n      notice, this list of conditions and the following disclaimer.\n\n   2. The origin of this software must not be misrepresented; you must\n      not claim that you wrote the original software.  If you use this\n      software in a product, an acknowledgment in the product\n      documentation would be appreciated but is not required.\n\n   3. Altered source versions must be plainly marked as such, and must\n      not be misrepresented as being the original software.\n\n   4. The name of the author may not be used to endorse or promote\n      products derived from this software without specific prior written\n      permission.\n\n   THIS SOFTWARE IS PROVIDED BY THE AUTHOR ``AS IS'' AND ANY EXPRESS\n   OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED\n   WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE\n   ARE DISCLAIMED.  IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY\n   DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL\n   DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE\n   GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS\n   INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,\n   WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING\n   NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS\n   SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE."
+      "rule_relevance": 100
     }
   ],
   "files": [
@@ -174,7 +170,8 @@
               "matcher": "2-aho",
               "license_expression": "unknown-license-reference",
               "rule_identifier": "license-intro_4.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/license-intro_4.RULE"
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/license-intro_4.RULE",
+              "matched_text": "licensed under the following terms:"
             },
             {
               "score": 100.0,
@@ -185,7 +182,8 @@
               "matcher": "2-aho",
               "license_expression": "x11-lucent",
               "rule_identifier": "x11-lucent_1.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/x11-lucent_1.RULE"
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/x11-lucent_1.RULE",
+              "matched_text": "Permission to use, copy, modify, and distribute this software for any purpose without\n  fee is hereby granted, provided that this entire notice is included in all copies of any\n  software which is or includes a copy or modification of this software and in all copies\n  of the supporting documentation for such software.  THIS SOFTWARE IS BEING PROVIDED \"AS\n  IS\", WITHOUT ANY EXPRESS OR IMPLIED WARRANTY.  IN PARTICULAR, NEITHER THE AUTHORS NOR\n  LUCENT TECHNOLOGIES MAKE ANY REPRESENTATION OR WARRANTY OF ANY KIND CONCERNING THE\n  MERCHANTABILITY OF THIS SOFTWARE OR ITS FITNESS FOR ANY PARTICULAR PURPOSE."
             }
           ]
         },
@@ -204,7 +202,8 @@
               "matcher": "2-aho",
               "license_expression": "unknown-license-reference",
               "rule_identifier": "license-intro_4.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/license-intro_4.RULE"
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/license-intro_4.RULE",
+              "matched_text": "licensed under the following terms:"
             },
             {
               "score": 100.0,
@@ -215,16 +214,17 @@
               "matcher": "2-aho",
               "license_expression": "bzip2-libbzip-2010",
               "rule_identifier": "bzip2-libbzip-2010.LICENSE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bzip2-libbzip-2010.LICENSE"
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bzip2-libbzip-2010.LICENSE",
+              "matched_text": "Redistribution and use in source and binary forms, with or without\n   modification, are permitted provided that the following conditions\n   are met:\n\n   1. Redistributions of source code must retain the above copyright\n      notice, this list of conditions and the following disclaimer.\n\n   2. The origin of this software must not be misrepresented; you must\n      not claim that you wrote the original software.  If you use this\n      software in a product, an acknowledgment in the product\n      documentation would be appreciated but is not required.\n\n   3. Altered source versions must be plainly marked as such, and must\n      not be misrepresented as being the original software.\n\n   4. The name of the author may not be used to endorse or promote\n      products derived from this software without specific prior written\n      permission.\n\n   THIS SOFTWARE IS PROVIDED BY THE AUTHOR ``AS IS'' AND ANY EXPRESS\n   OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED\n   WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE\n   ARE DISCLAIMED.  IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY\n   DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL\n   DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE\n   GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS\n   INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,\n   WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING\n   NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS\n   SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE."
             }
           ]
         }
       ],
       "license_clues": [],
       "percentage_of_license_text": 87.73,
-      "for_licenses": [
-        "3d4ebed6-d6ff-5d71-13d5-9ae3bb5bc485",
-        "5537c6e0-e03f-c489-9ac3-243ae2274830"
+      "for_license_detections": [
+        "x11_lucent#3d4ebed6-d6ff-5d71-13d5-9ae3bb5bc485",
+        "bzip2_libbzip_2010#5537c6e0-e03f-c489-9ac3-243ae2274830"
       ],
       "scan_errors": []
     }

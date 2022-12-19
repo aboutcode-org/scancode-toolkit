@@ -1,9 +1,9 @@
 {
-  "licenses": [],
+  "license_detections": [],
+  "license_references": [],
+  "license_rule_references": [],
   "dependencies": [],
   "packages": [],
-  "license_references": [],
-  "rule_references": [],
   "files": [
     {
       "path": "copy1.c",
@@ -29,7 +29,7 @@
       "license_detections": [],
       "license_clues": [],
       "percentage_of_license_text": 0,
-      "for_licenses": [],
+      "for_license_detections": [],
       "copyrights": [
         {
           "copyright": "Copyright (c) 2000 ACME, Inc.",
@@ -76,7 +76,7 @@
       "license_detections": [],
       "license_clues": [],
       "percentage_of_license_text": 0,
-      "for_licenses": [],
+      "for_license_detections": [],
       "copyrights": [
         {
           "copyright": "Copyright (c) 2000 ACME, Inc.",
@@ -123,7 +123,7 @@
       "license_detections": [],
       "license_clues": [],
       "percentage_of_license_text": 0,
-      "for_licenses": [],
+      "for_license_detections": [],
       "copyrights": [
         {
           "copyright": "Copyright (c) 2000 ACME, Inc.",
@@ -170,7 +170,7 @@
       "license_detections": [],
       "license_clues": [],
       "percentage_of_license_text": 0,
-      "for_licenses": [],
+      "for_license_detections": [],
       "copyrights": [],
       "holders": [],
       "authors": [],
@@ -205,7 +205,7 @@
       "license_detections": [],
       "license_clues": [],
       "percentage_of_license_text": 0,
-      "for_licenses": [],
+      "for_license_detections": [],
       "copyrights": [
         {
           "copyright": "Copyright (c) 2000 ACME, Inc.",
@@ -252,7 +252,7 @@
       "license_detections": [],
       "license_clues": [],
       "percentage_of_license_text": 0,
-      "for_licenses": [],
+      "for_license_detections": [],
       "copyrights": [
         {
           "copyright": "Copyright (c) 2000 ACME, Inc.",
@@ -299,7 +299,7 @@
       "license_detections": [],
       "license_clues": [],
       "percentage_of_license_text": 0,
-      "for_licenses": [],
+      "for_license_detections": [],
       "copyrights": [
         {
           "copyright": "Copyright (c) 2000 ACME, Inc.",
@@ -346,7 +346,7 @@
       "license_detections": [],
       "license_clues": [],
       "percentage_of_license_text": 0,
-      "for_licenses": [],
+      "for_license_detections": [],
       "copyrights": [
         {
           "copyright": "Copyright (c) 2000 ACME, Inc.",

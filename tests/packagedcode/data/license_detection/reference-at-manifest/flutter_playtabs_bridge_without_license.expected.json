@@ -177,8 +177,6 @@
       "purl": "pkg:cocoapods/flutter_paytabs_bridge@2.2.5"
     }
   ],
-  "license_references": [],
-  "rule_references": [],
   "files": [
     {
       "path": "LICENSE",

@@ -1,9 +1,9 @@
 {
-  "licenses": [
+  "license_detections": [
     {
-      "identifier": "c0668fcd-2d15-caa1-2e29-7df8daec68a5",
+      "identifier": "apache_1_0#c0668fcd-2d15-caa1-2e29-7df8daec68a5",
       "license_expression": "apache-1.0",
-      "occurance_count": 1,
+      "occurrence_count": 1,
       "detection_log": [
         "not-combined"
       ],
@@ -40,7 +40,7 @@
       "text": "Redistribution and use in source and binary forms, with or without\nmodification, are permitted provided that the following conditions\nare met:\n\n1. Redistributions of source code must retain the above copyright\nnotice, this list of conditions and the following disclaimer.\n\n2. Redistributions in binary form must reproduce the above copyright\nnotice, this list of conditions and the following disclaimer in\nthe documentation and/or other materials provided with the\ndistribution.\n\n3. All advertising materials mentioning features or use of this\nsoftware must display the following acknowledgment:\n\"This product includes software developed by the Apache Group\nfor use in the Apache HTTP server project (http://www.apache.org/).\"\n\n4. The names \"Apache Server\" and \"Apache Group\" must not be used to\nendorse or promote products derived from this software without\nprior written permission. For written permission, please contact\napache@apache.org.\n\n5. Products derived from this software may not be called \"Apache\"\nnor may \"Apache\" appear in their names without prior written\npermission of the Apache Group.\n\n6. Redistributions of any form whatsoever must retain the following\nacknowledgment:\n\"This product includes software developed by the Apache Group\nfor use in the Apache HTTP server project (http://www.apache.org/).\"\n\nTHIS SOFTWARE IS PROVIDED BY THE APACHE GROUP ``AS IS'' AND ANY\nEXPRESSED OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE\nIMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR\nPURPOSE ARE DISCLAIMED.  IN NO EVENT SHALL THE APACHE GROUP OR\nITS CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,\nSPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT\nNOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;\nLOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)\nHOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT,\nSTRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)\nARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED\nOF THE POSSIBILITY OF SUCH DAMAGE.\n====================================================================\n\nThis software consists of voluntary contributions made by many\nindividuals on behalf of the Apache Group and was originally based\non public domain software written at the National Center for\nSupercomputing Applications, University of Illinois, Urbana-Champaign.\nFor more information on the Apache Group and the Apache HTTP server\nproject, please see <http://www.apache.org/>."
     }
   ],
-  "rule_references": [
+  "license_rule_references": [
     {
       "license_expression": "apache-1.0",
       "rule_identifier": "apache-1.0.LICENSE",
@@ -63,7 +63,7 @@
       "license_detections": [],
       "license_clues": [],
       "percentage_of_license_text": 0,
-      "for_licenses": [],
+      "for_license_detections": [],
       "scan_errors": []
     },
     {
@@ -94,8 +94,8 @@
       ],
       "license_clues": [],
       "percentage_of_license_text": 97.61,
-      "for_licenses": [
-        "c0668fcd-2d15-caa1-2e29-7df8daec68a5"
+      "for_license_detections": [
+        "apache_1_0#c0668fcd-2d15-caa1-2e29-7df8daec68a5"
       ],
       "scan_errors": []
     }

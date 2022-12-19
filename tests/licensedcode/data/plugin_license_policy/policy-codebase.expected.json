@@ -1,9 +1,9 @@
 {
-  "licenses": [
+  "license_detections": [
     {
-      "identifier": "f6c9c367-8633-e084-aa5e-3e7d8487b573",
+      "identifier": "broadcom_commercial#f6c9c367-8633-e084-aa5e-3e7d8487b573",
       "license_expression": "broadcom-commercial",
-      "occurance_count": 1,
+      "occurrence_count": 1,
       "detection_log": [
         "not-combined"
       ],
@@ -22,9 +22,9 @@
       ]
     },
     {
-      "identifier": "5437b0fa-07f0-4b4c-88c8-7fec0448fcc9",
+      "identifier": "bsd_1988#5437b0fa-07f0-4b4c-88c8-7fec0448fcc9",
       "license_expression": "bsd-1988",
-      "occurance_count": 1,
+      "occurrence_count": 1,
       "detection_log": [
         "not-combined"
       ],
@@ -43,9 +43,9 @@
       ]
     },
     {
-      "identifier": "7dd8a798-09b4-b787-6afc-8b359bc69b38",
+      "identifier": "esri_devkit#7dd8a798-09b4-b787-6afc-8b359bc69b38",
       "license_expression": "esri-devkit",
-      "occurance_count": 1,
+      "occurrence_count": 1,
       "detection_log": [
         "not-combined"
       ],
@@ -64,9 +64,9 @@
       ]
     },
     {
-      "identifier": "711aae83-9be3-306c-4691-0af7f33e0017",
+      "identifier": "oracle_java_ee_sdk_2010#711aae83-9be3-306c-4691-0af7f33e0017",
       "license_expression": "oracle-java-ee-sdk-2010",
-      "occurance_count": 1,
+      "occurrence_count": 1,
       "detection_log": [
         "not-combined"
       ],
@@ -85,9 +85,9 @@
       ]
     },
     {
-      "identifier": "02fdc73a-b185-679c-4076-be7e361b3a19",
+      "identifier": "rh_eula#02fdc73a-b185-679c-4076-be7e361b3a19",
       "license_expression": "rh-eula",
-      "occurance_count": 1,
+      "occurrence_count": 1,
       "detection_log": [
         "not-combined"
       ],
@@ -164,7 +164,7 @@
       "text": "END USER LICENSE AGREEMENT\nRED HAT\u00ae ENTERPRISE LINUX\u00ae AND RED HAT APPLICATIONS\n\nThis end user license agreement (\"EULA\") governs the use of any of the versions\nof Red Hat Enterprise Linux, any Red Hat Applications (as set forth at\nwww.redhat.com/licenses/products), and any related updates, source code,\nappearance, structure and organization (the \"Programs\"), regardless of the\ndelivery mechanism.\n\n\n1.  License Grant.  Subject to the following terms, Red Hat, Inc. (\"Red Hat\")\ngrants to you (\"User\") a perpetual, worldwide license to the Programs\npursuant to the GNU General Public License v.2.  The Programs are either a\nmodular operating system or an application consisting of hundreds of\nsoftware components.  With the exception of certain image files identified\nin Section 2 below, the license agreement for each software component is\nlocated in the software component's source code and permits User to run,\ncopy, modify, and redistribute (subject to certain obligations in some\ncases) the software component, in both source code and binary code forms.\nThis EULA pertains solely to the Programs and does not limit User's rights\nunder, or grant User rights that supersede, the license terms of any\nparticular component.\n\n2.  Intellectual Property Rights.  The Programs and each of their components are\nowned by Red Hat and others and are protected under copyright law and under\nother laws as applicable. Title to the Programs and any component, or to any\ncopy, modification, or merged portion shall remain with the aforementioned,\nsubject to the applicable license.  The \"Red Hat\" trademark and the\n\"Shadowman\" logo are registered trademarks of Red Hat in the U.S. and other\ncountries.  This EULA does not permit User to distribute the Programs or\ntheir components using Red Hat's trademarks, regardless of whether the copy\nhas been modified.  User should read the information found at\nhttp://www.redhat.com/about/corporate/trademark/ before distributing a copy\nof the Programs.  User may make a commercial redistribution of the Programs\nonly if, (a) a separate agreement with Red Hat authorizing such commercial\nredistribution is executed or other written permission is granted by Red Hat\nor (b) User modifies any files identified as \"REDHAT-LOGOS\" to remove and\nreplace all images containing the \"Red Hat\" trademark or the \"Shadowman\"\nlogo.  Merely deleting these files may corrupt the Programs.\n\n3.  Limited Warranty.  Except as specifically stated in this Section 3, a\nseparate agreement with Red Hat, or a license for a particular component, to\nthe maximum extent permitted under applicable law, the Programs and the\ncomponents are provided and licensed \"as is\" without warranty of any kind,\nexpressed or implied, including the implied warranties of merchantability,\nnon-infringement or fitness for a particular purpose.  Red Hat warrants that\nthe media on which the Programs and the components are furnished will be\nfree from defects in materials and manufacture under normal use for a period\nof 30 days from the date of delivery to User.  Red Hat does not warrant that\nthe functions contained in the Programs will meet User's requirements or\nthat the operation of the Programs will be entirely error free, appear\nprecisely as described in the accompanying documentation, or comply with\nregulatory requirements. This warranty extends only to the party that\npurchases services pertaining to the Programs from Red Hat or a Red Hat\nauthorized distributor.\n\n4.  Limitation of Remedies and Liability. To the maximum extent permitted by\napplicable law, User's exclusive remedy under this EULA is to return any\ndefective media within 30 days of delivery along with a copy of User's\npayment receipt and Red Hat, at its option, will replace it or refund the\nmoney paid by User for the media.  To the maximum extent permitted under\napplicable law, neither Red Hat, any Red Hat authorized distributor, nor the\nlicensor of any component provided to User under this EULA will be liable to\nUser for any incidental or consequential damages, including lost profits or\nlost savings arising out of the use or inability to use the Programs or any\ncomponent, even if Red Hat, such authorized distributor or licensor has been\nadvised of the possibility of such damages.  In no event shall Red Hat's\nliability, an authorized distributor\u2019s liability or the liability of the\nlicensor of a component provided to User under this EULA exceed the amount\nthat User paid to Red Hat under this EULA during the twelve months preceding\nthe action.\n\n5.  Export Control.  As required by the laws of the United States and other\ncountries, User represents and warrants that it: (a) understands that the\nPrograms and their components may be subject to export controls under the\nU.S. Commerce Department\u2019s Export Administration Regulations (\"EAR\"); (b) is\nnot located in a prohibited destination country under the EAR or\nU.S. sanctions regulations (currently Cuba, Iran, Iraq, North Korea, Sudan\nand Syria, subject to change as posted by the United States government); (c)\nwill not export, re-export, or transfer the Programs to any prohibited\ndestination or persons or entities on the U.S. Bureau of Industry and\nSecurity Denied Parties List or Entity List, or the U.S. Office of Foreign\nAssets Control list of Specially Designated Nationals and Blocked Persons,\nor any similar lists maintained by other countries, without the necessary\nexport license(s) or authorizations(s); (d) will not use or transfer the\nPrograms for use in connection with any nuclear, chemical or biological\nweapons, missile technology, or military end-uses where prohibited by an\napplicable arms embargo, unless authorized by the relevant government agency\nby regulation or specific license; (e) understands and agrees that if it is\nin the United States and exports or transfers the Programs to eligible end\nusers, it will, to the extent required by EAR Section 740.17(e), submit\nsemi-annual reports to the Commerce Department\u2019s Bureau of Industry and\nSecurity, which include the name and address (including country) of each\ntransferee; and (f) understands that countries including the United States\nmay restrict the import, use, or export of encryption products (which may\ninclude the Programs and the components) and agrees that it shall be solely\nresponsible for compliance with any such import, use, or export\nrestrictions.\n\n6.  Third Party Programs. Red Hat may distribute third party software programs\nwith the Programs that are not part of the Programs.  These third party\nprograms are not required to run the Programs, are provided as a convenience\nto User, and are subject to their own license terms.  The license terms\neither accompany the third party software programs or can be viewed at\nhttp://www.redhat.com/licenses/thirdparty/eula.html.  If User does not agree\nto abide by the applicable license terms for the third party software\nprograms, then User may not install them.  If User wishes to install the\nthird party software programs on more than one system or transfer the third\nparty software programs to another party, then User must contact the\nlicensor of the applicable third party software programs.\n\n7.  General.  In the case of a discrepancy between the Spanish version and the\nEnglish version of this EULA, the English version shall prevail. If any\nprovision of this agreement is held to be unenforceable, that shall not\naffect the enforceability of the remaining provisions.  This agreement shall\nbe governed by the laws of the State of New York and of the United States,\nwithout regard to any conflict of laws provisions. The rights and\nobligations of the parties to this EULA shall not be governed by the United\nNations Convention on the International Sale of Goods.\n\nCopyright \u00a9 2007 Red Hat, Inc.  All rights reserved.  \"Red Hat\" and the Red Hat\n\"Shadowman\" logo are registered trademarks of Red Hat, Inc.  \"Linux\" is a\nregistered trademark of Linus Torvalds. All other trademarks are the property of\ntheir respective owners."
     }
   ],
-  "rule_references": [
+  "license_rule_references": [
     {
       "license_expression": "broadcom-commercial",
       "rule_identifier": "broadcom-commercial.LICENSE",
@@ -252,7 +252,7 @@
       "license_detections": [],
       "license_clues": [],
       "percentage_of_license_text": 0,
-      "for_licenses": [],
+      "for_license_detections": [],
       "license_policy": {},
       "files_count": 5,
       "dirs_count": 1,
@@ -284,7 +284,7 @@
       "license_detections": [],
       "license_clues": [],
       "percentage_of_license_text": 0,
-      "for_licenses": [],
+      "for_license_detections": [],
       "license_policy": {},
       "files_count": 5,
       "dirs_count": 0,
@@ -336,8 +336,8 @@
       ],
       "license_clues": [],
       "percentage_of_license_text": 84.0,
-      "for_licenses": [
-        "f6c9c367-8633-e084-aa5e-3e7d8487b573"
+      "for_license_detections": [
+        "broadcom_commercial#f6c9c367-8633-e084-aa5e-3e7d8487b573"
       ],
       "license_policy": {
         "license_key": "broadcom-commercial",
@@ -395,8 +395,8 @@
       ],
       "license_clues": [],
       "percentage_of_license_text": 93.75,
-      "for_licenses": [
-        "5437b0fa-07f0-4b4c-88c8-7fec0448fcc9"
+      "for_license_detections": [
+        "bsd_1988#5437b0fa-07f0-4b4c-88c8-7fec0448fcc9"
       ],
       "license_policy": {
         "license_key": "bsd-1988",
@@ -454,8 +454,8 @@
       ],
       "license_clues": [],
       "percentage_of_license_text": 100.0,
-      "for_licenses": [
-        "7dd8a798-09b4-b787-6afc-8b359bc69b38"
+      "for_license_detections": [
+        "esri_devkit#7dd8a798-09b4-b787-6afc-8b359bc69b38"
       ],
       "license_policy": {
         "license_key": "esri-devkit",
@@ -513,8 +513,8 @@
       ],
       "license_clues": [],
       "percentage_of_license_text": 100.0,
-      "for_licenses": [
-        "711aae83-9be3-306c-4691-0af7f33e0017"
+      "for_license_detections": [
+        "oracle_java_ee_sdk_2010#711aae83-9be3-306c-4691-0af7f33e0017"
       ],
       "license_policy": {
         "license_key": "oracle-java-ee-sdk-2010",
@@ -572,8 +572,8 @@
       ],
       "license_clues": [],
       "percentage_of_license_text": 100.0,
-      "for_licenses": [
-        "02fdc73a-b185-679c-4076-be7e361b3a19"
+      "for_license_detections": [
+        "rh_eula#02fdc73a-b185-679c-4076-be7e361b3a19"
       ],
       "license_policy": {
         "license_key": "rh-eula",

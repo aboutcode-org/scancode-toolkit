@@ -1,9 +1,9 @@
 {
-  "licenses": [
+  "license_detections": [
     {
-      "identifier": "041f32d1-6cb1-f9fa-a580-14f3958007f0",
+      "identifier": "gpl_2_0_with_linux_syscall_exception_gpl_or_linux_openib#041f32d1-6cb1-f9fa-a580-14f3958007f0",
       "license_expression": "gpl-2.0 WITH linux-syscall-exception-gpl OR linux-openib",
-      "occurance_count": 1,
+      "occurrence_count": 1,
       "detection_log": [
         "not-combined"
       ],
@@ -22,9 +22,9 @@
       ]
     },
     {
-      "identifier": "df43f663-8e79-9294-efa7-e4438c80cfbd",
+      "identifier": "unlicense#df43f663-8e79-9294-efa7-e4438c80cfbd",
       "license_expression": "unlicense",
-      "occurance_count": 1,
+      "occurrence_count": 1,
       "detection_log": [
         "not-combined"
       ],
@@ -130,7 +130,7 @@
       "text": "This is free and unencumbered software released into the public domain.\n\nAnyone is free to copy, modify, publish, use, compile, sell, or\ndistribute this software, either in source code form or as a compiled\nbinary, for any purpose, commercial or non-commercial, and by any\nmeans.\n\nIn jurisdictions that recognize copyright laws, the author or authors\nof this software dedicate any and all copyright interest in the\nsoftware to the public domain. We make this dedication for the benefit\nof the public at large and to the detriment of our heirs and\nsuccessors. We intend this dedication to be an overt act of\nrelinquishment in perpetuity of all present and future rights to this\nsoftware under copyright law.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND,\nEXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF\nMERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.\nIN NO EVENT SHALL THE AUTHORS BE LIABLE FOR ANY CLAIM, DAMAGES OR\nOTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE,\nARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR\nOTHER DEALINGS IN THE SOFTWARE.\n\nFor more information, please refer to <http://unlicense.org/>"
     }
   ],
-  "rule_references": [
+  "license_rule_references": [
     {
       "license_expression": "gpl-2.0 WITH linux-syscall-exception-gpl OR linux-openib",
       "rule_identifier": "spdx-license-identifier: gpl-2.0 WITH linux-syscall-exception-gpl OR linux-openib",
@@ -141,8 +141,7 @@
       "is_license_tag": true,
       "is_license_intro": false,
       "rule_length": 13,
-      "rule_relevance": 100,
-      "matched_text": "SPDX-License-Identifier: ((GPL-2.0 WITH Linux-syscall-note) OR Linux-Openib) */"
+      "rule_relevance": 100
     },
     {
       "license_expression": "unlicense",
@@ -154,8 +153,7 @@
       "is_license_tag": false,
       "is_license_intro": false,
       "rule_length": 198,
-      "rule_relevance": 100,
-      "matched_text": "This is free and unencumbered software released into the public domain.  *   * Anyone is free to copy, modify, publish, use, compile, sell, or  * distribute this software, either in source code form or as a compiled  * binary, for any purpose, commercial or non-commercial, and by any  * means.  *   * In jurisdictions that recognize copyright laws, the author or authors  * of this software dedicate any and all copyright interest in the  * software to the public domain. We make this dedication for the benefit  * of the public at large and to the detriment of our heirs and  * successors. We intend this dedication to be an overt act of  * relinquishment in perpetuity of all present and future rights to this  * software under copyright law.  *   * THE SOFTWARE IS PROVIDED \\\"\nAS IS\\\", WITHOUT WARRANTY OF ANY KIND,  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF  * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.  * IN NO EVENT SHALL THE AUTHORS BE LIABLE FOR ANY CLAIM, DAMAGES OR  * OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE,  * ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR  * OTHER DEALINGS IN THE SOFTWARE.  *   * For more information, please refer to <http://unlicense.org>  *   */  /*"
+      "rule_relevance": 100
     }
   ],
   "files": [
@@ -180,15 +178,16 @@
               "matcher": "1-spdx-id",
               "license_expression": "gpl-2.0 WITH linux-syscall-exception-gpl OR linux-openib",
               "rule_identifier": "spdx-license-identifier: gpl-2.0 WITH linux-syscall-exception-gpl OR linux-openib",
-              "rule_url": null
+              "rule_url": null,
+              "matched_text": "SPDX-License-Identifier: ((GPL-2.0 WITH Linux-syscall-note) OR Linux-Openib) */"
             }
           ]
         }
       ],
       "license_clues": [],
       "percentage_of_license_text": 100.0,
-      "for_licenses": [
-        "041f32d1-6cb1-f9fa-a580-14f3958007f0"
+      "for_license_detections": [
+        "gpl_2_0_with_linux_syscall_exception_gpl_or_linux_openib#041f32d1-6cb1-f9fa-a580-14f3958007f0"
       ],
       "scan_errors": []
     },
@@ -213,15 +212,16 @@
               "matcher": "2-aho",
               "license_expression": "unlicense",
               "rule_identifier": "unlicense.LICENSE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/unlicense.LICENSE"
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/unlicense.LICENSE",
+              "matched_text": "This is free and unencumbered software released into the public domain.  *   * Anyone is free to copy, modify, publish, use, compile, sell, or  * distribute this software, either in source code form or as a compiled  * binary, for any purpose, commercial or non-commercial, and by any  * means.  *   * In jurisdictions that recognize copyright laws, the author or authors  * of this software dedicate any and all copyright interest in the  * software to the public domain. We make this dedication for the benefit  * of the public at large and to the detriment of our heirs and  * successors. We intend this dedication to be an overt act of  * relinquishment in perpetuity of all present and future rights to this  * software under copyright law.  *   * THE SOFTWARE IS PROVIDED \\\"\nAS IS\\\", WITHOUT WARRANTY OF ANY KIND,  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF  * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.  * IN NO EVENT SHALL THE AUTHORS BE LIABLE FOR ANY CLAIM, DAMAGES OR  * OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE,  * ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR  * OTHER DEALINGS IN THE SOFTWARE.  *   * For more information, please refer to <http://unlicense.org>  *   */  /*"
             }
           ]
         }
       ],
       "license_clues": [],
       "percentage_of_license_text": 5.25,
-      "for_licenses": [
-        "df43f663-8e79-9294-efa7-e4438c80cfbd"
+      "for_license_detections": [
+        "unlicense#df43f663-8e79-9294-efa7-e4438c80cfbd"
       ],
       "scan_errors": []
     }

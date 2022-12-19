@@ -93,8 +93,6 @@
       "purl": "pkg:npm/test@0.1.0"
     }
   ],
-  "license_references": [],
-  "rule_references": [],
   "files": [
     {
       "path": "get_package_resources",

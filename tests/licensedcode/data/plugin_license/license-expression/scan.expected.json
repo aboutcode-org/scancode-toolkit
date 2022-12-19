@@ -1,9 +1,9 @@
 {
-  "licenses": [
+  "license_detections": [
     {
-      "identifier": "c0668fcd-2d15-caa1-2e29-7df8daec68a5",
+      "identifier": "apache_1_0#c0668fcd-2d15-caa1-2e29-7df8daec68a5",
       "license_expression": "apache-1.0",
-      "occurance_count": 1,
+      "occurrence_count": 1,
       "detection_log": [
         "not-combined"
       ],
@@ -22,9 +22,9 @@
       ]
     },
     {
-      "identifier": "51fb40ac-0b3a-03c4-2532-40ada1cb7912",
+      "identifier": "gpl_2_0_with_linux_syscall_exception_gpl_or_linux_openib#51fb40ac-0b3a-03c4-2532-40ada1cb7912",
       "license_expression": "gpl-2.0 WITH linux-syscall-exception-gpl OR linux-openib",
-      "occurance_count": 1,
+      "occurrence_count": 1,
       "detection_log": [
         "not-combined"
       ],
@@ -130,7 +130,7 @@
       "text": "NOTE! This copyright does *not* cover user programs that use kernel\nservices by normal system calls - this is merely considered normal use\nof the kernel, and does *not* fall under the heading of \"derived work\".\nAlso note that the GPL below is copyrighted by the Free Software\nFoundation, but the instance of code that it refers to (the Linux\nkernel) is copyrighted by me and others who actually wrote it.\n\nAlso note that the only valid version of the GPL as far as the kernel\nis concerned is _this_ particular version of the license (ie v2, not\nv2.2 or v3.x or whatever), unless explicitly otherwise stated.\n\nLinus Torvalds"
     }
   ],
-  "rule_references": [
+  "license_rule_references": [
     {
       "license_expression": "apache-1.0",
       "rule_identifier": "apache-1.0.LICENSE",
@@ -185,8 +185,8 @@
       ],
       "license_clues": [],
       "percentage_of_license_text": 97.61,
-      "for_licenses": [
-        "c0668fcd-2d15-caa1-2e29-7df8daec68a5"
+      "for_license_detections": [
+        "apache_1_0#c0668fcd-2d15-caa1-2e29-7df8daec68a5"
       ],
       "scan_errors": []
     },
@@ -218,8 +218,8 @@
       ],
       "license_clues": [],
       "percentage_of_license_text": 100.0,
-      "for_licenses": [
-        "51fb40ac-0b3a-03c4-2532-40ada1cb7912"
+      "for_license_detections": [
+        "gpl_2_0_with_linux_syscall_exception_gpl_or_linux_openib#51fb40ac-0b3a-03c4-2532-40ada1cb7912"
       ],
       "scan_errors": []
     }

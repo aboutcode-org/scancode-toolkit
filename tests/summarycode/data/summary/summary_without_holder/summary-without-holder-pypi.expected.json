@@ -1,9 +1,9 @@
 {
-  "licenses": [
+  "license_detections": [
     {
-      "identifier": "e60e2912-9996-f235-207c-8ce2b9e55eb9",
+      "identifier": "mit#e60e2912-9996-f235-207c-8ce2b9e55eb9",
       "license_expression": "mit",
-      "occurance_count": 1,
+      "occurrence_count": 1,
       "detection_log": [
         "not-combined"
       ],
@@ -22,9 +22,9 @@
       ]
     },
     {
-      "identifier": "ad8a216c-f324-d61f-494c-f105455d2fee",
+      "identifier": "mit#ad8a216c-f324-d61f-494c-f105455d2fee",
       "license_expression": "mit",
-      "occurance_count": 1,
+      "occurrence_count": 1,
       "detection_log": [
         "not-combined"
       ],
@@ -43,9 +43,9 @@
       ]
     },
     {
-      "identifier": "04f8db63-e6e3-94d5-ae3a-a1a5f5f6ce6e",
+      "identifier": "mit#04f8db63-e6e3-94d5-ae3a-a1a5f5f6ce6e",
       "license_expression": "mit",
-      "occurance_count": 1,
+      "occurrence_count": 1,
       "detection_log": [
         "not-combined"
       ],
@@ -64,9 +64,9 @@
       ]
     },
     {
-      "identifier": "fb844411-7214-0f1a-1e8f-45cf1b635d24",
+      "identifier": "unknown_license_reference#fb844411-7214-0f1a-1e8f-45cf1b635d24",
       "license_expression": "unknown-license-reference",
-      "occurance_count": 2,
+      "occurrence_count": 2,
       "detection_log": [
         "not-combined"
       ],
@@ -85,9 +85,9 @@
       ]
     },
     {
-      "identifier": "a545424e-6bca-63d9-1fbd-c17f2c43ab4b",
+      "identifier": "mit#a545424e-6bca-63d9-1fbd-c17f2c43ab4b",
       "license_expression": "mit",
-      "occurance_count": 1,
+      "occurrence_count": 1,
       "detection_log": [
         "not-combined"
       ],
@@ -115,6 +115,168 @@
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/pypi_mit_license.RULE"
         }
       ]
+    }
+  ],
+  "license_references": [
+    {
+      "key": "mit",
+      "short_name": "MIT License",
+      "name": "MIT License",
+      "category": "Permissive",
+      "owner": "MIT",
+      "homepage_url": "http://opensource.org/licenses/mit-license.php",
+      "notes": "Per SPDX.org, this license is OSI certified.",
+      "is_builtin": true,
+      "spdx_license_key": "MIT",
+      "text_urls": [
+        "http://opensource.org/licenses/mit-license.php"
+      ],
+      "osi_url": "http://www.opensource.org/licenses/MIT",
+      "faq_url": "https://ieeexplore.ieee.org/document/9263265",
+      "other_urls": [
+        "https://opensource.com/article/18/3/patent-grant-mit-license",
+        "https://opensource.com/article/19/4/history-mit-license",
+        "https://opensource.org/licenses/MIT"
+      ],
+      "text": "Permission is hereby granted, free of charge, to any person obtaining\na copy of this software and associated documentation files (the\n\"Software\"), to deal in the Software without restriction, including\nwithout limitation the rights to use, copy, modify, merge, publish,\ndistribute, sublicense, and/or sell copies of the Software, and to\npermit persons to whom the Software is furnished to do so, subject to\nthe following conditions:\n\nThe above copyright notice and this permission notice shall be\nincluded in all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND,\nEXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF\nMERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.\nIN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY\nCLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,\nTORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE\nSOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE."
+    }
+  ],
+  "license_rule_references": [
+    {
+      "license_expression": "mit",
+      "rule_identifier": "mit.LICENSE",
+      "referenced_filenames": [],
+      "is_license_text": true,
+      "is_license_notice": false,
+      "is_license_reference": false,
+      "is_license_tag": false,
+      "is_license_intro": false,
+      "rule_length": 161,
+      "rule_relevance": 100
+    },
+    {
+      "license_expression": "mit",
+      "rule_identifier": "spdx-license-identifier: mit",
+      "referenced_filenames": [],
+      "is_license_text": false,
+      "is_license_notice": false,
+      "is_license_reference": false,
+      "is_license_tag": true,
+      "is_license_intro": false,
+      "rule_length": 1,
+      "rule_relevance": 100
+    },
+    {
+      "license_expression": "mit",
+      "rule_identifier": "pypi_mit_license.RULE",
+      "referenced_filenames": [],
+      "is_license_text": false,
+      "is_license_notice": false,
+      "is_license_reference": false,
+      "is_license_tag": true,
+      "is_license_intro": false,
+      "rule_length": 5,
+      "rule_relevance": 100
+    },
+    {
+      "license_expression": "mit",
+      "rule_identifier": "mit_30.RULE",
+      "referenced_filenames": [],
+      "is_license_text": false,
+      "is_license_notice": false,
+      "is_license_reference": false,
+      "is_license_tag": true,
+      "is_license_intro": false,
+      "rule_length": 2,
+      "rule_relevance": 100
+    },
+    {
+      "license_expression": "mit",
+      "rule_identifier": "pypi_mit_license.RULE",
+      "referenced_filenames": [],
+      "is_license_text": false,
+      "is_license_notice": false,
+      "is_license_reference": false,
+      "is_license_tag": true,
+      "is_license_intro": false,
+      "rule_length": 5,
+      "rule_relevance": 100
+    },
+    {
+      "license_expression": "unknown-license-reference",
+      "rule_identifier": "unknown-license-reference_see_license_at_manifest_2.RULE",
+      "referenced_filenames": [
+        "LICENSE.txt"
+      ],
+      "is_license_text": false,
+      "is_license_notice": false,
+      "is_license_reference": true,
+      "is_license_tag": false,
+      "is_license_intro": false,
+      "rule_length": 4,
+      "rule_relevance": 100
+    },
+    {
+      "license_expression": "unknown-license-reference",
+      "rule_identifier": "unknown-license-reference_see_license_at_manifest_2.RULE",
+      "referenced_filenames": [
+        "LICENSE.txt"
+      ],
+      "is_license_text": false,
+      "is_license_notice": false,
+      "is_license_reference": true,
+      "is_license_tag": false,
+      "is_license_intro": false,
+      "rule_length": 4,
+      "rule_relevance": 100
+    },
+    {
+      "license_expression": "mit",
+      "rule_identifier": "spdx-license-identifier: mit",
+      "referenced_filenames": [],
+      "is_license_text": false,
+      "is_license_notice": false,
+      "is_license_reference": false,
+      "is_license_tag": true,
+      "is_license_intro": false,
+      "rule_length": 1,
+      "rule_relevance": 100
+    },
+    {
+      "license_expression": "mit",
+      "rule_identifier": "pypi_mit_license.RULE",
+      "referenced_filenames": [],
+      "is_license_text": false,
+      "is_license_notice": false,
+      "is_license_reference": false,
+      "is_license_tag": true,
+      "is_license_intro": false,
+      "rule_length": 5,
+      "rule_relevance": 100
+    },
+    {
+      "license_expression": "mit",
+      "rule_identifier": "mit_30.RULE",
+      "referenced_filenames": [],
+      "is_license_text": false,
+      "is_license_notice": false,
+      "is_license_reference": false,
+      "is_license_tag": true,
+      "is_license_intro": false,
+      "rule_length": 2,
+      "rule_relevance": 100
+    },
+    {
+      "license_expression": "mit",
+      "rule_identifier": "pypi_mit_license.RULE",
+      "referenced_filenames": [],
+      "is_license_text": false,
+      "is_license_notice": false,
+      "is_license_reference": false,
+      "is_license_tag": true,
+      "is_license_intro": false,
+      "rule_length": 5,
+      "rule_relevance": 100
     }
   ],
   "dependencies": [],
@@ -173,7 +335,8 @@
               "matcher": "1-spdx-id",
               "license_expression": "mit",
               "rule_identifier": "spdx-license-identifier: mit",
-              "rule_url": null
+              "rule_url": null,
+              "matched_text": "MIT"
             }
           ]
         },
@@ -192,7 +355,8 @@
               "matcher": "1-hash",
               "license_expression": "mit",
               "rule_identifier": "pypi_mit_license.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/pypi_mit_license.RULE"
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/pypi_mit_license.RULE",
+              "matched_text": "['License :: OSI Approved :: MIT License']"
             }
           ]
         }
@@ -242,146 +406,6 @@
     "other_holders": [],
     "other_languages": []
   },
-  "license_references": [
-    {
-      "key": "mit",
-      "short_name": "MIT License",
-      "name": "MIT License",
-      "category": "Permissive",
-      "owner": "MIT",
-      "homepage_url": "http://opensource.org/licenses/mit-license.php",
-      "notes": "Per SPDX.org, this license is OSI certified.",
-      "is_builtin": true,
-      "spdx_license_key": "MIT",
-      "text_urls": [
-        "http://opensource.org/licenses/mit-license.php"
-      ],
-      "osi_url": "http://www.opensource.org/licenses/MIT",
-      "faq_url": "https://ieeexplore.ieee.org/document/9263265",
-      "other_urls": [
-        "https://opensource.com/article/18/3/patent-grant-mit-license",
-        "https://opensource.com/article/19/4/history-mit-license",
-        "https://opensource.org/licenses/MIT"
-      ],
-      "text": "Permission is hereby granted, free of charge, to any person obtaining\na copy of this software and associated documentation files (the\n\"Software\"), to deal in the Software without restriction, including\nwithout limitation the rights to use, copy, modify, merge, publish,\ndistribute, sublicense, and/or sell copies of the Software, and to\npermit persons to whom the Software is furnished to do so, subject to\nthe following conditions:\n\nThe above copyright notice and this permission notice shall be\nincluded in all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND,\nEXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF\nMERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.\nIN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY\nCLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,\nTORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE\nSOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE."
-    }
-  ],
-  "rule_references": [
-    {
-      "license_expression": "mit",
-      "rule_identifier": "spdx-license-identifier: mit",
-      "referenced_filenames": [],
-      "is_license_text": false,
-      "is_license_notice": false,
-      "is_license_reference": false,
-      "is_license_tag": true,
-      "is_license_intro": false,
-      "rule_length": 1,
-      "rule_relevance": 100,
-      "matched_text": "MIT"
-    },
-    {
-      "license_expression": "mit",
-      "rule_identifier": "pypi_mit_license.RULE",
-      "referenced_filenames": [],
-      "is_license_text": false,
-      "is_license_notice": false,
-      "is_license_reference": false,
-      "is_license_tag": true,
-      "is_license_intro": false,
-      "rule_length": 5,
-      "rule_relevance": 100,
-      "matched_text": "['License :: OSI Approved :: MIT License']"
-    },
-    {
-      "license_expression": "mit",
-      "rule_identifier": "mit.LICENSE",
-      "referenced_filenames": [],
-      "is_license_text": true,
-      "is_license_notice": false,
-      "is_license_reference": false,
-      "is_license_tag": false,
-      "is_license_intro": false,
-      "rule_length": 161,
-      "rule_relevance": 100
-    },
-    {
-      "license_expression": "mit",
-      "rule_identifier": "spdx-license-identifier: mit",
-      "referenced_filenames": [],
-      "is_license_text": false,
-      "is_license_notice": false,
-      "is_license_reference": false,
-      "is_license_tag": true,
-      "is_license_intro": false,
-      "rule_length": 1,
-      "rule_relevance": 100,
-      "matched_text": "MIT"
-    },
-    {
-      "license_expression": "mit",
-      "rule_identifier": "pypi_mit_license.RULE",
-      "referenced_filenames": [],
-      "is_license_text": false,
-      "is_license_notice": false,
-      "is_license_reference": false,
-      "is_license_tag": true,
-      "is_license_intro": false,
-      "rule_length": 5,
-      "rule_relevance": 100,
-      "matched_text": "['License :: OSI Approved :: MIT License']"
-    },
-    {
-      "license_expression": "mit",
-      "rule_identifier": "spdx-license-identifier: mit",
-      "referenced_filenames": [],
-      "is_license_text": false,
-      "is_license_notice": false,
-      "is_license_reference": false,
-      "is_license_tag": true,
-      "is_license_intro": false,
-      "rule_length": 1,
-      "rule_relevance": 100,
-      "matched_text": "MIT"
-    },
-    {
-      "license_expression": "mit",
-      "rule_identifier": "pypi_mit_license.RULE",
-      "referenced_filenames": [],
-      "is_license_text": false,
-      "is_license_notice": false,
-      "is_license_reference": false,
-      "is_license_tag": true,
-      "is_license_intro": false,
-      "rule_length": 5,
-      "rule_relevance": 100,
-      "matched_text": "['License :: OSI Approved :: MIT License']"
-    },
-    {
-      "license_expression": "mit",
-      "rule_identifier": "mit_30.RULE",
-      "referenced_filenames": [],
-      "is_license_text": false,
-      "is_license_notice": false,
-      "is_license_reference": false,
-      "is_license_tag": true,
-      "is_license_intro": false,
-      "rule_length": 2,
-      "rule_relevance": 100
-    },
-    {
-      "license_expression": "mit",
-      "rule_identifier": "pypi_mit_license.RULE",
-      "referenced_filenames": [],
-      "is_license_text": false,
-      "is_license_notice": false,
-      "is_license_reference": false,
-      "is_license_tag": true,
-      "is_license_intro": false,
-      "rule_length": 5,
-      "rule_relevance": 100
-    }
-  ],
   "files": [
     {
       "path": "pip-22.0.4",
@@ -391,7 +415,7 @@
       "license_detections": [],
       "license_clues": [],
       "percentage_of_license_text": 0,
-      "for_licenses": [],
+      "for_license_detections": [],
       "package_data": [],
       "for_packages": [],
       "is_legal": false,
@@ -409,7 +433,7 @@
       "license_detections": [],
       "license_clues": [],
       "percentage_of_license_text": 0,
-      "for_licenses": [],
+      "for_license_detections": [],
       "package_data": [],
       "for_packages": [
         "pkg:pypi/pip@22.0.4?uuid=fixed-uid-done-for-testing-5642512d1758"
@@ -449,8 +473,8 @@
       ],
       "license_clues": [],
       "percentage_of_license_text": 93.6,
-      "for_licenses": [
-        "e60e2912-9996-f235-207c-8ce2b9e55eb9"
+      "for_license_detections": [
+        "mit#e60e2912-9996-f235-207c-8ce2b9e55eb9"
       ],
       "package_data": [],
       "for_packages": [
@@ -471,7 +495,7 @@
       "license_detections": [],
       "license_clues": [],
       "percentage_of_license_text": 0,
-      "for_licenses": [],
+      "for_license_detections": [],
       "package_data": [],
       "for_packages": [
         "pkg:pypi/pip@22.0.4?uuid=fixed-uid-done-for-testing-5642512d1758"
@@ -491,7 +515,7 @@
       "license_detections": [],
       "license_clues": [],
       "percentage_of_license_text": 0,
-      "for_licenses": [],
+      "for_license_detections": [],
       "package_data": [],
       "for_packages": [
         "pkg:pypi/pip@22.0.4?uuid=fixed-uid-done-for-testing-5642512d1758"
@@ -580,10 +604,10 @@
       ],
       "license_clues": [],
       "percentage_of_license_text": 1.86,
-      "for_licenses": [
-        "ad8a216c-f324-d61f-494c-f105455d2fee",
-        "04f8db63-e6e3-94d5-ae3a-a1a5f5f6ce6e",
-        "fb844411-7214-0f1a-1e8f-45cf1b635d24"
+      "for_license_detections": [
+        "mit#ad8a216c-f324-d61f-494c-f105455d2fee",
+        "mit#04f8db63-e6e3-94d5-ae3a-a1a5f5f6ce6e",
+        "unknown_license_reference#fb844411-7214-0f1a-1e8f-45cf1b635d24"
       ],
       "package_data": [
         {
@@ -640,7 +664,8 @@
                   "matcher": "1-spdx-id",
                   "license_expression": "mit",
                   "rule_identifier": "spdx-license-identifier: mit",
-                  "rule_url": null
+                  "rule_url": null,
+                  "matched_text": "MIT"
                 }
               ]
             },
@@ -659,7 +684,8 @@
                   "matcher": "1-hash",
                   "license_expression": "mit",
                   "rule_identifier": "pypi_mit_license.RULE",
-                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/pypi_mit_license.RULE"
+                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/pypi_mit_license.RULE",
+                  "matched_text": "['License :: OSI Approved :: MIT License']"
                 }
               ]
             }
@@ -701,7 +727,7 @@
       "license_detections": [],
       "license_clues": [],
       "percentage_of_license_text": 0,
-      "for_licenses": [],
+      "for_license_detections": [],
       "package_data": [],
       "for_packages": [
         "pkg:pypi/pip@22.0.4?uuid=fixed-uid-done-for-testing-5642512d1758"
@@ -721,7 +747,7 @@
       "license_detections": [],
       "license_clues": [],
       "percentage_of_license_text": 0,
-      "for_licenses": [],
+      "for_license_detections": [],
       "package_data": [],
       "for_packages": [],
       "is_legal": false,
@@ -739,7 +765,7 @@
       "license_detections": [],
       "license_clues": [],
       "percentage_of_license_text": 0,
-      "for_licenses": [],
+      "for_license_detections": [],
       "package_data": [
         {
           "type": "pypi",
@@ -970,7 +996,7 @@
       "license_detections": [],
       "license_clues": [],
       "percentage_of_license_text": 0,
-      "for_licenses": [],
+      "for_license_detections": [],
       "package_data": [
         {
           "type": "pypi",
@@ -1094,8 +1120,8 @@
       ],
       "license_clues": [],
       "percentage_of_license_text": 1.96,
-      "for_licenses": [
-        "fb844411-7214-0f1a-1e8f-45cf1b635d24"
+      "for_license_detections": [
+        "unknown_license_reference#fb844411-7214-0f1a-1e8f-45cf1b635d24"
       ],
       "package_data": [
         {
@@ -1231,8 +1257,8 @@
       ],
       "license_clues": [],
       "percentage_of_license_text": 2.37,
-      "for_licenses": [
-        "a545424e-6bca-63d9-1fbd-c17f2c43ab4b"
+      "for_license_detections": [
+        "mit#a545424e-6bca-63d9-1fbd-c17f2c43ab4b"
       ],
       "package_data": [
         {
@@ -1289,7 +1315,8 @@
                   "matcher": "1-spdx-id",
                   "license_expression": "mit",
                   "rule_identifier": "spdx-license-identifier: mit",
-                  "rule_url": null
+                  "rule_url": null,
+                  "matched_text": "MIT"
                 }
               ]
             },
@@ -1308,7 +1335,8 @@
                   "matcher": "1-hash",
                   "license_expression": "mit",
                   "rule_identifier": "pypi_mit_license.RULE",
-                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/pypi_mit_license.RULE"
+                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/pypi_mit_license.RULE",
+                  "matched_text": "['License :: OSI Approved :: MIT License']"
                 }
               ]
             }
@@ -1351,7 +1379,7 @@
       "license_detections": [],
       "license_clues": [],
       "percentage_of_license_text": 0,
-      "for_licenses": [],
+      "for_license_detections": [],
       "package_data": [],
       "for_packages": [],
       "is_legal": false,
@@ -1369,7 +1397,7 @@
       "license_detections": [],
       "license_clues": [],
       "percentage_of_license_text": 0,
-      "for_licenses": [],
+      "for_license_detections": [],
       "package_data": [],
       "for_packages": [],
       "is_legal": false,
@@ -1387,7 +1415,7 @@
       "license_detections": [],
       "license_clues": [],
       "percentage_of_license_text": 0,
-      "for_licenses": [],
+      "for_license_detections": [],
       "package_data": [],
       "for_packages": [
         "pkg:pypi/pip@22.0.4?uuid=fixed-uid-done-for-testing-5642512d1758"
@@ -1407,7 +1435,7 @@
       "license_detections": [],
       "license_clues": [],
       "percentage_of_license_text": 0,
-      "for_licenses": [],
+      "for_license_detections": [],
       "package_data": [],
       "for_packages": [
         "pkg:pypi/pip@22.0.4?uuid=fixed-uid-done-for-testing-5642512d1758"
@@ -1427,7 +1455,7 @@
       "license_detections": [],
       "license_clues": [],
       "percentage_of_license_text": 0,
-      "for_licenses": [],
+      "for_license_detections": [],
       "package_data": [],
       "for_packages": [
         "pkg:pypi/pip@22.0.4?uuid=fixed-uid-done-for-testing-5642512d1758"

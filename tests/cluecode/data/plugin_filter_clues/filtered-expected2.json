@@ -1,9 +1,9 @@
 {
-  "licenses": [
+  "license_detections": [
     {
-      "identifier": "7b7e2330-4841-998b-3287-06b5bc6e5a90",
+      "identifier": "pygres_2_2#7b7e2330-4841-998b-3287-06b5bc6e5a90",
       "license_expression": "pygres-2.2",
-      "occurance_count": 1,
+      "occurrence_count": 1,
       "detection_log": [
         "not-combined"
       ],
@@ -37,7 +37,7 @@
       "text": "PyGres, version 2.2 A Python interface for PostgreSQL database. Written by\nD'Arcy J.M. Cain, (darcy@druid.net).  Based heavily on code written by\nPascal Andre, andre@chimay.via.ecp.fr. Copyright (c) 1995, Pascal Andre\n(andre@via.ecp.fr).\n\nPermission to use, copy, modify, and distribute this software and its\ndocumentation for any purpose, without fee, and without a written\nagreement is hereby granted, provided that the above copyright notice and\nthis paragraph and the following two paragraphs appear in all copies or in\nany new file that contains a substantial portion of this file.\n\nIN NO EVENT SHALL THE AUTHOR BE LIABLE TO ANY PARTY FOR DIRECT, INDIRECT,\nSPECIAL, INCIDENTAL, OR CONSEQUENTIAL DAMAGES, INCLUDING LOST PROFITS,\nARISING OUT OF THE USE OF THIS SOFTWARE AND ITS DOCUMENTATION, EVEN IF THE\nAUTHOR HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.\n\nTHE AUTHOR SPECIFICALLY DISCLAIMS ANY WARRANTIES, INCLUDING, BUT NOT LIMITED\nTO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR\nPURPOSE.  THE SOFTWARE PROVIDED HEREUNDER IS ON AN \"AS IS\" BASIS, AND THE\nAUTHOR HAS NO OBLIGATIONS TO PROVIDE MAINTENANCE, SUPPORT, UPDATES,\nENHANCEMENTS, OR MODIFICATIONS.\n\nFurther modifications copyright 1997, 1998, 1999 by D'Arcy J.M. Cain\n(darcy@druid.net) subject to the same terms and conditions as above."
     }
   ],
-  "rule_references": [
+  "license_rule_references": [
     {
       "license_expression": "pygres-2.2",
       "rule_identifier": "pygres-2.2_2.RULE",
@@ -96,8 +96,8 @@
       ],
       "license_clues": [],
       "percentage_of_license_text": 69.38,
-      "for_licenses": [
-        "7b7e2330-4841-998b-3287-06b5bc6e5a90"
+      "for_license_detections": [
+        "pygres_2_2#7b7e2330-4841-998b-3287-06b5bc6e5a90"
       ],
       "copyrights": [
         {

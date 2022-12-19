@@ -105,8 +105,6 @@
       "purl": "pkg:dart/openapi@1.0.0"
     }
   ],
-  "license_references": [],
-  "rule_references": [],
   "files": [
     {
       "path": "authors-pubspec.yaml",

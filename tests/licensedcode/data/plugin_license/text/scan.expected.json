@@ -1,9 +1,9 @@
 {
-  "licenses": [
+  "license_detections": [
     {
-      "identifier": "041f32d1-6cb1-f9fa-a580-14f3958007f0",
+      "identifier": "gpl_2_0_with_linux_syscall_exception_gpl_or_linux_openib#041f32d1-6cb1-f9fa-a580-14f3958007f0",
       "license_expression": "gpl-2.0 WITH linux-syscall-exception-gpl OR linux-openib",
-      "occurance_count": 1,
+      "occurrence_count": 1,
       "detection_log": [
         "not-combined"
       ],
@@ -22,9 +22,9 @@
       ]
     },
     {
-      "identifier": "2bbf00d0-20d9-2d91-6cb6-8f28a4670a5d",
+      "identifier": "fsf_ap#2bbf00d0-20d9-2d91-6cb6-8f28a4670a5d",
       "license_expression": "fsf-ap",
-      "occurance_count": 1,
+      "occurrence_count": 1,
       "detection_log": [
         "not-combined"
       ],
@@ -133,7 +133,7 @@
       "text": "NOTE! This copyright does *not* cover user programs that use kernel\nservices by normal system calls - this is merely considered normal use\nof the kernel, and does *not* fall under the heading of \"derived work\".\nAlso note that the GPL below is copyrighted by the Free Software\nFoundation, but the instance of code that it refers to (the Linux\nkernel) is copyrighted by me and others who actually wrote it.\n\nAlso note that the only valid version of the GPL as far as the kernel\nis concerned is _this_ particular version of the license (ie v2, not\nv2.2 or v3.x or whatever), unless explicitly otherwise stated.\n\nLinus Torvalds"
     }
   ],
-  "rule_references": [
+  "license_rule_references": [
     {
       "license_expression": "gpl-2.0 WITH linux-syscall-exception-gpl OR linux-openib",
       "rule_identifier": "spdx-license-identifier: gpl-2.0 WITH linux-syscall-exception-gpl OR linux-openib",
@@ -144,8 +144,7 @@
       "is_license_tag": true,
       "is_license_intro": false,
       "rule_length": 13,
-      "rule_relevance": 100,
-      "matched_text": "SPDX-License-Identifier: ((GPL-2.0 WITH Linux-syscall-note) OR Linux-Openib) */"
+      "rule_relevance": 100
     },
     {
       "license_expression": "fsf-ap",
@@ -157,8 +156,7 @@
       "is_license_tag": false,
       "is_license_intro": false,
       "rule_length": 35,
-      "rule_relevance": 100,
-      "matched_text": "Reproduction and distribution of this file, with or without modification, are\npermitted in any medium without royalties provided the copyright notice\nand this notice are preserved. This file is offered as-is, without any warranties."
+      "rule_relevance": 100
     }
   ],
   "files": [
@@ -183,15 +181,16 @@
               "matcher": "1-spdx-id",
               "license_expression": "gpl-2.0 WITH linux-syscall-exception-gpl OR linux-openib",
               "rule_identifier": "spdx-license-identifier: gpl-2.0 WITH linux-syscall-exception-gpl OR linux-openib",
-              "rule_url": null
+              "rule_url": null,
+              "matched_text": "SPDX-License-Identifier: ((GPL-2.0 WITH Linux-syscall-note) OR Linux-Openib) */"
             }
           ]
         }
       ],
       "license_clues": [],
       "percentage_of_license_text": 100.0,
-      "for_licenses": [
-        "041f32d1-6cb1-f9fa-a580-14f3958007f0"
+      "for_license_detections": [
+        "gpl_2_0_with_linux_syscall_exception_gpl_or_linux_openib#041f32d1-6cb1-f9fa-a580-14f3958007f0"
       ],
       "scan_errors": []
     },
@@ -216,15 +215,16 @@
               "matcher": "3-seq",
               "license_expression": "fsf-ap",
               "rule_identifier": "fsf-ap.LICENSE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/fsf-ap.LICENSE"
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/fsf-ap.LICENSE",
+              "matched_text": "Reproduction and distribution of this file, with or without modification, are\npermitted in any medium without royalties provided the copyright notice\nand this notice are preserved. This file is offered as-is, without any warranties."
             }
           ]
         }
       ],
       "license_clues": [],
       "percentage_of_license_text": 91.43,
-      "for_licenses": [
-        "2bbf00d0-20d9-2d91-6cb6-8f28a4670a5d"
+      "for_license_detections": [
+        "fsf_ap#2bbf00d0-20d9-2d91-6cb6-8f28a4670a5d"
       ],
       "scan_errors": []
     }

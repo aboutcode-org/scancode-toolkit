@@ -1270,8 +1270,6 @@
       "purl": "pkg:deb/tar@1.30%2Bdfsg-7?architecture=amd64"
     }
   ],
-  "license_references": [],
-  "rule_references": [],
   "files": [
     {
       "path": "ubuntu-var-lib-dpkg",

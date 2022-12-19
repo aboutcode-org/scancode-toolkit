@@ -123,8 +123,6 @@
       "purl": "pkg:cran/codetools@0.2-16"
     }
   ],
-  "license_references": [],
-  "rule_references": [],
   "files": [
     {
       "path": "DESCRIPTION",

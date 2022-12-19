@@ -1,9 +1,9 @@
 {
-  "licenses": [
+  "license_detections": [
     {
-      "identifier": "e60e2912-9996-f235-207c-8ce2b9e55eb9",
+      "identifier": "mit#e60e2912-9996-f235-207c-8ce2b9e55eb9",
       "license_expression": "mit",
-      "occurance_count": 2,
+      "occurrence_count": 2,
       "detection_log": [
         "not-combined"
       ],
@@ -22,9 +22,9 @@
       ]
     },
     {
-      "identifier": "ad8a216c-f324-d61f-494c-f105455d2fee",
+      "identifier": "mit#ad8a216c-f324-d61f-494c-f105455d2fee",
       "license_expression": "mit",
-      "occurance_count": 1,
+      "occurrence_count": 1,
       "detection_log": [
         "not-combined"
       ],
@@ -43,9 +43,9 @@
       ]
     },
     {
-      "identifier": "751d4c34-1372-a14c-636a-47543dc16496",
+      "identifier": "gpl_2_0_plus#751d4c34-1372-a14c-636a-47543dc16496",
       "license_expression": "gpl-2.0-plus",
-      "occurance_count": 1,
+      "occurrence_count": 1,
       "detection_log": [
         "not-combined"
       ],
@@ -64,18 +64,6 @@
       ]
     }
   ],
-  "summary": {
-    "declared_license_expression": "mit",
-    "license_clarity_score": {
-      "score": 80,
-      "declared_license": true,
-      "identification_precision": true,
-      "has_license_text": true,
-      "declared_copyrights": true,
-      "conflicting_license_categories": true,
-      "ambiguous_compound_licensing": false
-    }
-  },
   "license_references": [
     {
       "key": "gpl-2.0-plus",
@@ -125,7 +113,7 @@
       "text": "Permission is hereby granted, free of charge, to any person obtaining\na copy of this software and associated documentation files (the\n\"Software\"), to deal in the Software without restriction, including\nwithout limitation the rights to use, copy, modify, merge, publish,\ndistribute, sublicense, and/or sell copies of the Software, and to\npermit persons to whom the Software is furnished to do so, subject to\nthe following conditions:\n\nThe above copyright notice and this permission notice shall be\nincluded in all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND,\nEXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF\nMERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.\nIN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY\nCLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,\nTORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE\nSOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE."
     }
   ],
-  "rule_references": [
+  "license_rule_references": [
     {
       "license_expression": "mit",
       "rule_identifier": "mit.LICENSE",
@@ -175,6 +163,18 @@
       "rule_relevance": 100
     }
   ],
+  "summary": {
+    "declared_license_expression": "mit",
+    "license_clarity_score": {
+      "score": 80,
+      "declared_license": true,
+      "identification_precision": true,
+      "has_license_text": true,
+      "declared_copyrights": true,
+      "conflicting_license_categories": true,
+      "ambiguous_compound_licensing": false
+    }
+  },
   "files": [
     {
       "path": "inconsistent_licenses_copyleft",
@@ -200,7 +200,7 @@
       "license_detections": [],
       "license_clues": [],
       "percentage_of_license_text": 0,
-      "for_licenses": [],
+      "for_license_detections": [],
       "copyrights": [],
       "holders": [],
       "authors": [],
@@ -258,8 +258,8 @@
       ],
       "license_clues": [],
       "percentage_of_license_text": 79.31,
-      "for_licenses": [
-        "e60e2912-9996-f235-207c-8ce2b9e55eb9"
+      "for_license_detections": [
+        "mit#e60e2912-9996-f235-207c-8ce2b9e55eb9"
       ],
       "copyrights": [
         {
@@ -330,8 +330,8 @@
       ],
       "license_clues": [],
       "percentage_of_license_text": 64.4,
-      "for_licenses": [
-        "e60e2912-9996-f235-207c-8ce2b9e55eb9"
+      "for_license_detections": [
+        "mit#e60e2912-9996-f235-207c-8ce2b9e55eb9"
       ],
       "copyrights": [
         {
@@ -402,8 +402,8 @@
       ],
       "license_clues": [],
       "percentage_of_license_text": 1.83,
-      "for_licenses": [
-        "ad8a216c-f324-d61f-494c-f105455d2fee"
+      "for_license_detections": [
+        "mit#ad8a216c-f324-d61f-494c-f105455d2fee"
       ],
       "copyrights": [],
       "holders": [],
@@ -468,8 +468,8 @@
       ],
       "license_clues": [],
       "percentage_of_license_text": 100.0,
-      "for_licenses": [
-        "751d4c34-1372-a14c-636a-47543dc16496"
+      "for_license_detections": [
+        "gpl_2_0_plus#751d4c34-1372-a14c-636a-47543dc16496"
       ],
       "copyrights": [],
       "holders": [],

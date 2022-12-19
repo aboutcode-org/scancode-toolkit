@@ -1,9 +1,9 @@
 {
-  "licenses": [
+  "license_detections": [
     {
-      "identifier": "b485fded-3ae7-7c49-8be0-c042c4a4747f",
+      "identifier": "apache_2_0_and_cc_by_nc_nd_3_0_and_other_permissive_and_proprietary_license#b485fded-3ae7-7c49-8be0-c042c4a4747f",
       "license_expression": "apache-2.0 AND cc-by-nc-nd-3.0 AND other-permissive AND proprietary-license",
-      "occurance_count": 2,
+      "occurrence_count": 2,
       "detection_log": [
         "not-combined"
       ],
@@ -22,9 +22,9 @@
       ]
     },
     {
-      "identifier": "8b191dea-30ee-8738-fab1-2c6dbb5d65c2",
+      "identifier": "bsd_new#8b191dea-30ee-8738-fab1-2c6dbb5d65c2",
       "license_expression": "bsd-new",
-      "occurance_count": 3,
+      "occurrence_count": 3,
       "detection_log": [
         "not-combined"
       ],
@@ -43,9 +43,9 @@
       ]
     },
     {
-      "identifier": "76b09250-6936-6da3-664b-6d5d81de9c95",
+      "identifier": "free_unknown#76b09250-6936-6da3-664b-6d5d81de9c95",
       "license_expression": "free-unknown",
-      "occurance_count": 5,
+      "occurrence_count": 5,
       "detection_log": [
         "not-combined"
       ],
@@ -64,9 +64,9 @@
       ]
     },
     {
-      "identifier": "2d67622f-a7b6-912c-ca85-160b760f0d8b",
+      "identifier": "free_unknown#2d67622f-a7b6-912c-ca85-160b760f0d8b",
       "license_expression": "free-unknown",
-      "occurance_count": 2,
+      "occurrence_count": 2,
       "detection_log": [
         "not-combined"
       ],
@@ -85,9 +85,9 @@
       ]
     },
     {
-      "identifier": "0aac815c-f1e3-cc4b-b498-7a01e6cac393",
+      "identifier": "bsd_new#0aac815c-f1e3-cc4b-b498-7a01e6cac393",
       "license_expression": "bsd-new",
-      "occurance_count": 1,
+      "occurrence_count": 1,
       "detection_log": [
         "not-combined"
       ],
@@ -104,6 +104,328 @@
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_683.RULE"
         }
       ]
+    }
+  ],
+  "license_references": [
+    {
+      "key": "apache-2.0",
+      "short_name": "Apache 2.0",
+      "name": "Apache License 2.0",
+      "category": "Permissive",
+      "owner": "Apache Software Foundation",
+      "homepage_url": "http://www.apache.org/licenses/",
+      "notes": "Per SPDX.org, this version was released January 2004 This license is OSI\ncertified\n",
+      "is_builtin": true,
+      "spdx_license_key": "Apache-2.0",
+      "other_spdx_license_keys": [
+        "LicenseRef-Apache",
+        "LicenseRef-Apache-2.0"
+      ],
+      "osi_license_key": "Apache-2.0",
+      "text_urls": [
+        "http://www.apache.org/licenses/LICENSE-2.0"
+      ],
+      "osi_url": "http://opensource.org/licenses/apache2.0.php",
+      "faq_url": "http://www.apache.org/foundation/licence-FAQ.html",
+      "other_urls": [
+        "http://www.opensource.org/licenses/Apache-2.0",
+        "https://opensource.org/licenses/Apache-2.0",
+        "https://www.apache.org/licenses/LICENSE-2.0"
+      ],
+      "text": "Apache License\nVersion 2.0, January 2004\nhttp://www.apache.org/licenses/\n\nTERMS AND CONDITIONS FOR USE, REPRODUCTION, AND DISTRIBUTION\n\n1. Definitions.\n\n\"License\" shall mean the terms and conditions for use, reproduction,\nand distribution as defined by Sections 1 through 9 of this document.\n\n\"Licensor\" shall mean the copyright owner or entity authorized by\nthe copyright owner that is granting the License.\n\n\"Legal Entity\" shall mean the union of the acting entity and all\nother entities that control, are controlled by, or are under common\ncontrol with that entity. For the purposes of this definition,\n\"control\" means (i) the power, direct or indirect, to cause the\ndirection or management of such entity, whether by contract or\notherwise, or (ii) ownership of fifty percent (50%) or more of the\noutstanding shares, or (iii) beneficial ownership of such entity.\n\n\"You\" (or \"Your\") shall mean an individual or Legal Entity\nexercising permissions granted by this License.\n\n\"Source\" form shall mean the preferred form for making modifications,\nincluding but not limited to software source code, documentation\nsource, and configuration files.\n\n\"Object\" form shall mean any form resulting from mechanical\ntransformation or translation of a Source form, including but\nnot limited to compiled object code, generated documentation,\nand conversions to other media types.\n\n\"Work\" shall mean the work of authorship, whether in Source or\nObject form, made available under the License, as indicated by a\ncopyright notice that is included in or attached to the work\n(an example is provided in the Appendix below).\n\n\"Derivative Works\" shall mean any work, whether in Source or Object\nform, that is based on (or derived from) the Work and for which the\neditorial revisions, annotations, elaborations, or other modifications\nrepresent, as a whole, an original work of authorship. For the purposes\nof this License, Derivative Works shall not include works that remain\nseparable from, or merely link (or bind by name) to the interfaces of,\nthe Work and Derivative Works thereof.\n\n\"Contribution\" shall mean any work of authorship, including\nthe original version of the Work and any modifications or additions\nto that Work or Derivative Works thereof, that is intentionally\nsubmitted to Licensor for inclusion in the Work by the copyright owner\nor by an individual or Legal Entity authorized to submit on behalf of\nthe copyright owner. For the purposes of this definition, \"submitted\"\nmeans any form of electronic, verbal, or written communication sent\nto the Licensor or its representatives, including but not limited to\ncommunication on electronic mailing lists, source code control systems,\nand issue tracking systems that are managed by, or on behalf of, the\nLicensor for the purpose of discussing and improving the Work, but\nexcluding communication that is conspicuously marked or otherwise\ndesignated in writing by the copyright owner as \"Not a Contribution.\"\n\n\"Contributor\" shall mean Licensor and any individual or Legal Entity\non behalf of whom a Contribution has been received by Licensor and\nsubsequently incorporated within the Work.\n\n2. Grant of Copyright License. Subject to the terms and conditions of\nthis License, each Contributor hereby grants to You a perpetual,\nworldwide, non-exclusive, no-charge, royalty-free, irrevocable\ncopyright license to reproduce, prepare Derivative Works of,\npublicly display, publicly perform, sublicense, and distribute the\nWork and such Derivative Works in Source or Object form.\n\n3. Grant of Patent License. Subject to the terms and conditions of\nthis License, each Contributor hereby grants to You a perpetual,\nworldwide, non-exclusive, no-charge, royalty-free, irrevocable\n(except as stated in this section) patent license to make, have made,\nuse, offer to sell, sell, import, and otherwise transfer the Work,\nwhere such license applies only to those patent claims licensable\nby such Contributor that are necessarily infringed by their\nContribution(s) alone or by combination of their Contribution(s)\nwith the Work to which such Contribution(s) was submitted. If You\ninstitute patent litigation against any entity (including a\ncross-claim or counterclaim in a lawsuit) alleging that the Work\nor a Contribution incorporated within the Work constitutes direct\nor contributory patent infringement, then any patent licenses\ngranted to You under this License for that Work shall terminate\nas of the date such litigation is filed.\n\n4. Redistribution. You may reproduce and distribute copies of the\nWork or Derivative Works thereof in any medium, with or without\nmodifications, and in Source or Object form, provided that You\nmeet the following conditions:\n\n(a) You must give any other recipients of the Work or\nDerivative Works a copy of this License; and\n\n(b) You must cause any modified files to carry prominent notices\nstating that You changed the files; and\n\n(c) You must retain, in the Source form of any Derivative Works\nthat You distribute, all copyright, patent, trademark, and\nattribution notices from the Source form of the Work,\nexcluding those notices that do not pertain to any part of\nthe Derivative Works; and\n\n(d) If the Work includes a \"NOTICE\" text file as part of its\ndistribution, then any Derivative Works that You distribute must\ninclude a readable copy of the attribution notices contained\nwithin such NOTICE file, excluding those notices that do not\npertain to any part of the Derivative Works, in at least one\nof the following places: within a NOTICE text file distributed\nas part of the Derivative Works; within the Source form or\ndocumentation, if provided along with the Derivative Works; or,\nwithin a display generated by the Derivative Works, if and\nwherever such third-party notices normally appear. The contents\nof the NOTICE file are for informational purposes only and\ndo not modify the License. You may add Your own attribution\nnotices within Derivative Works that You distribute, alongside\nor as an addendum to the NOTICE text from the Work, provided\nthat such additional attribution notices cannot be construed\nas modifying the License.\n\nYou may add Your own copyright statement to Your modifications and\nmay provide additional or different license terms and conditions\nfor use, reproduction, or distribution of Your modifications, or\nfor any such Derivative Works as a whole, provided Your use,\nreproduction, and distribution of the Work otherwise complies with\nthe conditions stated in this License.\n\n5. Submission of Contributions. Unless You explicitly state otherwise,\nany Contribution intentionally submitted for inclusion in the Work\nby You to the Licensor shall be under the terms and conditions of\nthis License, without any additional terms or conditions.\nNotwithstanding the above, nothing herein shall supersede or modify\nthe terms of any separate license agreement you may have executed\nwith Licensor regarding such Contributions.\n\n6. Trademarks. This License does not grant permission to use the trade\nnames, trademarks, service marks, or product names of the Licensor,\nexcept as required for reasonable and customary use in describing the\norigin of the Work and reproducing the content of the NOTICE file.\n\n7. Disclaimer of Warranty. Unless required by applicable law or\nagreed to in writing, Licensor provides the Work (and each\nContributor provides its Contributions) on an \"AS IS\" BASIS,\nWITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or\nimplied, including, without limitation, any warranties or conditions\nof TITLE, NON-INFRINGEMENT, MERCHANTABILITY, or FITNESS FOR A\nPARTICULAR PURPOSE. You are solely responsible for determining the\nappropriateness of using or redistributing the Work and assume any\nrisks associated with Your exercise of permissions under this License.\n\n8. Limitation of Liability. In no event and under no legal theory,\nwhether in tort (including negligence), contract, or otherwise,\nunless required by applicable law (such as deliberate and grossly\nnegligent acts) or agreed to in writing, shall any Contributor be\nliable to You for damages, including any direct, indirect, special,\nincidental, or consequential damages of any character arising as a\nresult of this License or out of the use or inability to use the\nWork (including but not limited to damages for loss of goodwill,\nwork stoppage, computer failure or malfunction, or any and all\nother commercial damages or losses), even if such Contributor\nhas been advised of the possibility of such damages.\n\n9. Accepting Warranty or Additional Liability. While redistributing\nthe Work or Derivative Works thereof, You may choose to offer,\nand charge a fee for, acceptance of support, warranty, indemnity,\nor other liability obligations and/or rights consistent with this\nLicense. However, in accepting such obligations, You may act only\non Your own behalf and on Your sole responsibility, not on behalf\nof any other Contributor, and only if You agree to indemnify,\ndefend, and hold each Contributor harmless for any liability\nincurred by, or claims asserted against, such Contributor by reason\nof your accepting any such warranty or additional liability.\n\nEND OF TERMS AND CONDITIONS\n\nAPPENDIX: How to apply the Apache License to your work.\n\nTo apply the Apache License to your work, attach the following\nboilerplate notice, with the fields enclosed by brackets \"[]\"\nreplaced with your own identifying information. (Don't include\nthe brackets!)  The text should be enclosed in the appropriate\ncomment syntax for the file format. We also recommend that a\nfile or class name and description of purpose be included on the\nsame \"printed page\" as the copyright notice for easier\nidentification within third-party archives.\n\nCopyright [yyyy] [name of copyright owner]\n\nLicensed under the Apache License, Version 2.0 (the \"License\");\nyou may not use this file except in compliance with the License.\nYou may obtain a copy of the License at\n\nhttp://www.apache.org/licenses/LICENSE-2.0\n\nUnless required by applicable law or agreed to in writing, software\ndistributed under the License is distributed on an \"AS IS\" BASIS,\nWITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\nSee the License for the specific language governing permissions and\nlimitations under the License."
+    },
+    {
+      "key": "bsd-new",
+      "short_name": "BSD-3-Clause",
+      "name": "BSD-3-Clause",
+      "category": "Permissive",
+      "owner": "Regents of the University of California",
+      "homepage_url": "http://www.opensource.org/licenses/BSD-3-Clause",
+      "notes": "Per SPDX.org, this license is OSI certified.",
+      "is_builtin": true,
+      "spdx_license_key": "BSD-3-Clause",
+      "other_spdx_license_keys": [
+        "LicenseRef-scancode-libzip"
+      ],
+      "osi_license_key": "BSD-3-Clause",
+      "text_urls": [
+        "http://www.opensource.org/licenses/BSD-3-Clause"
+      ],
+      "osi_url": "http://www.opensource.org/licenses/BSD-3-Clause",
+      "other_urls": [
+        "http://framework.zend.com/license/new-bsd",
+        "https://opensource.org/licenses/BSD-3-Clause"
+      ],
+      "text": "Redistribution and use in source and binary forms, with or without modification,\nare permitted provided that the following conditions are met:\n\nRedistributions of source code must retain the above copyright notice, this list\nof conditions and the following disclaimer.\n\nRedistributions in binary form must reproduce the above copyright notice, this\nlist of conditions and the following disclaimer in the documentation and/or\nother materials provided with the distribution.\n\nNeither the name of the ORGANIZATION nor the names of its contributors may be\nused to endorse or promote products derived from this software without specific\nprior written permission.\n\nTHIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS\n\"AS IS\" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO,\nTHE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE\nARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS\nBE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR\nCONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE\nGOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)\nHOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT\nLIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF\nTHE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE."
+    },
+    {
+      "key": "cc-by-nc-nd-3.0",
+      "short_name": "CC-BY-NC-ND-3.0",
+      "name": "Creative Commons Attribution Non-Commercial No Derivatives License 3.0",
+      "category": "Source-available",
+      "owner": "Creative Commons",
+      "homepage_url": "http://creativecommons.org/licenses/by-nc-nd/3.0/",
+      "is_builtin": true,
+      "spdx_license_key": "CC-BY-NC-ND-3.0",
+      "text_urls": [
+        "http://creativecommons.org/licenses/by-nc-nd/3.0/legalcode"
+      ],
+      "other_urls": [
+        "https://creativecommons.org/licenses/by-nc-nd/3.0/legalcode"
+      ],
+      "text": "Creative Commons Legal Code\n\nAttribution-NonCommercial-NoDerivs 3.0 Unported\n\nCREATIVE COMMONS CORPORATION IS NOT A LAW FIRM AND DOES NOT PROVIDE\nLEGAL SERVICES. DISTRIBUTION OF THIS LICENSE DOES NOT CREATE AN\nATTORNEY-CLIENT RELATIONSHIP. CREATIVE COMMONS PROVIDES THIS\nINFORMATION ON AN \"AS-IS\" BASIS. CREATIVE COMMONS MAKES NO WARRANTIES\nREGARDING THE INFORMATION PROVIDED, AND DISCLAIMS LIABILITY FOR\nDAMAGES RESULTING FROM ITS USE.\n\nLicense\n\nTHE WORK (AS DEFINED BELOW) IS PROVIDED UNDER THE TERMS OF THIS CREATIVE\nCOMMONS PUBLIC LICENSE (\"CCPL\" OR \"LICENSE\"). THE WORK IS PROTECTED BY\nCOPYRIGHT AND/OR OTHER APPLICABLE LAW. ANY USE OF THE WORK OTHER THAN AS\nAUTHORIZED UNDER THIS LICENSE OR COPYRIGHT LAW IS PROHIBITED.\n\nBY EXERCISING ANY RIGHTS TO THE WORK PROVIDED HERE, YOU ACCEPT AND AGREE\nTO BE BOUND BY THE TERMS OF THIS LICENSE. TO THE EXTENT THIS LICENSE MAY\nBE CONSIDERED TO BE A CONTRACT, THE LICENSOR GRANTS YOU THE RIGHTS\nCONTAINED HERE IN CONSIDERATION OF YOUR ACCEPTANCE OF SUCH TERMS AND\nCONDITIONS.\n\n1. Definitions\n\na. \"Adaptation\" means a work based upon the Work, or upon the Work and\nother pre-existing works, such as a translation, adaptation,\nderivative work, arrangement of music or other alterations of a\nliterary or artistic work, or phonogram or performance and includes\ncinematographic adaptations or any other form in which the Work may be\nrecast, transformed, or adapted including in any form recognizably\nderived from the original, except that a work that constitutes a\nCollection will not be considered an Adaptation for the purpose of\nthis License. For the avoidance of doubt, where the Work is a musical\nwork, performance or phonogram, the synchronization of the Work in\ntimed-relation with a moving image (\"synching\") will be considered an\nAdaptation for the purpose of this License.\nb. \"Collection\" means a collection of literary or artistic works, such as\nencyclopedias and anthologies, or performances, phonograms or\nbroadcasts, or other works or subject matter other than works listed\nin Section 1(f) below, which, by reason of the selection and\narrangement of their contents, constitute intellectual creations, in\nwhich the Work is included in its entirety in unmodified form along\nwith one or more other contributions, each constituting separate and\nindependent works in themselves, which together are assembled into a\ncollective whole. A work that constitutes a Collection will not be\nconsidered an Adaptation (as defined above) for the purposes of this\nLicense.\nc. \"Distribute\" means to make available to the public the original and\ncopies of the Work through sale or other transfer of ownership.\nd. \"Licensor\" means the individual, individuals, entity or entities that\noffer(s) the Work under the terms of this License.\ne. \"Original Author\" means, in the case of a literary or artistic work,\nthe individual, individuals, entity or entities who created the Work\nor if no individual or entity can be identified, the publisher; and in\naddition (i) in the case of a performance the actors, singers,\nmusicians, dancers, and other persons who act, sing, deliver, declaim,\nplay in, interpret or otherwise perform literary or artistic works or\nexpressions of folklore; (ii) in the case of a phonogram the producer\nbeing the person or legal entity who first fixes the sounds of a\nperformance or other sounds; and, (iii) in the case of broadcasts, the\norganization that transmits the broadcast.\nf. \"Work\" means the literary and/or artistic work offered under the terms\nof this License including without limitation any production in the\nliterary, scientific and artistic domain, whatever may be the mode or\nform of its expression including digital form, such as a book,\npamphlet and other writing; a lecture, address, sermon or other work\nof the same nature; a dramatic or dramatico-musical work; a\nchoreographic work or entertainment in dumb show; a musical\ncomposition with or without words; a cinematographic work to which are\nassimilated works expressed by a process analogous to cinematography;\na work of drawing, painting, architecture, sculpture, engraving or\nlithography; a photographic work to which are assimilated works\nexpressed by a process analogous to photography; a work of applied\nart; an illustration, map, plan, sketch or three-dimensional work\nrelative to geography, topography, architecture or science; a\nperformance; a broadcast; a phonogram; a compilation of data to the\nextent it is protected as a copyrightable work; or a work performed by\na variety or circus performer to the extent it is not otherwise\nconsidered a literary or artistic work.\ng. \"You\" means an individual or entity exercising rights under this\nLicense who has not previously violated the terms of this License with\nrespect to the Work, or who has received express permission from the\nLicensor to exercise rights under this License despite a previous\nviolation.\nh. \"Publicly Perform\" means to perform public recitations of the Work and\nto communicate to the public those public recitations, by any means or\nprocess, including by wire or wireless means or public digital\nperformances; to make available to the public Works in such a way that\nmembers of the public may access these Works from a place and at a\nplace individually chosen by them; to perform the Work to the public\nby any means or process and the communication to the public of the\nperformances of the Work, including by public digital performance; to\nbroadcast and rebroadcast the Work by any means including signs,\nsounds or images.\ni. \"Reproduce\" means to make copies of the Work by any means including\nwithout limitation by sound or visual recordings and the right of\nfixation and reproducing fixations of the Work, including storage of a\nprotected performance or phonogram in digital form or other electronic\nmedium.\n\n2. Fair Dealing Rights. Nothing in this License is intended to reduce,\nlimit, or restrict any uses free from copyright or rights arising from\nlimitations or exceptions that are provided for in connection with the\ncopyright protection under copyright law or other applicable laws.\n\n3. License Grant. Subject to the terms and conditions of this License,\nLicensor hereby grants You a worldwide, royalty-free, non-exclusive,\nperpetual (for the duration of the applicable copyright) license to\nexercise the rights in the Work as stated below:\n\na. to Reproduce the Work, to incorporate the Work into one or more\nCollections, and to Reproduce the Work as incorporated in the\nCollections; and,\nb. to Distribute and Publicly Perform the Work including as incorporated\nin Collections.\n\nThe above rights may be exercised in all media and formats whether now\nknown or hereafter devised. The above rights include the right to make\nsuch modifications as are technically necessary to exercise the rights in\nother media and formats, but otherwise you have no rights to make\nAdaptations. Subject to 8(f), all rights not expressly granted by Licensor\nare hereby reserved, including but not limited to the rights set forth in\nSection 4(d).\n\n4. Restrictions. The license granted in Section 3 above is expressly made\nsubject to and limited by the following restrictions:\n\na. You may Distribute or Publicly Perform the Work only under the terms\nof this License. You must include a copy of, or the Uniform Resource\nIdentifier (URI) for, this License with every copy of the Work You\nDistribute or Publicly Perform. You may not offer or impose any terms\non the Work that restrict the terms of this License or the ability of\nthe recipient of the Work to exercise the rights granted to that\nrecipient under the terms of the License. You may not sublicense the\nWork. You must keep intact all notices that refer to this License and\nto the disclaimer of warranties with every copy of the Work You\nDistribute or Publicly Perform. When You Distribute or Publicly\nPerform the Work, You may not impose any effective technological\nmeasures on the Work that restrict the ability of a recipient of the\nWork from You to exercise the rights granted to that recipient under\nthe terms of the License. This Section 4(a) applies to the Work as\nincorporated in a Collection, but this does not require the Collection\napart from the Work itself to be made subject to the terms of this\nLicense. If You create a Collection, upon notice from any Licensor You\nmust, to the extent practicable, remove from the Collection any credit\nas required by Section 4(c), as requested.\nb. You may not exercise any of the rights granted to You in Section 3\nabove in any manner that is primarily intended for or directed toward\ncommercial advantage or private monetary compensation. The exchange of\nthe Work for other copyrighted works by means of digital file-sharing\nor otherwise shall not be considered to be intended for or directed\ntoward commercial advantage or private monetary compensation, provided\nthere is no payment of any monetary compensation in connection with\nthe exchange of copyrighted works.\nc. If You Distribute, or Publicly Perform the Work or Collections, You\nmust, unless a request has been made pursuant to Section 4(a), keep\nintact all copyright notices for the Work and provide, reasonable to\nthe medium or means You are utilizing: (i) the name of the Original\nAuthor (or pseudonym, if applicable) if supplied, and/or if the\nOriginal Author and/or Licensor designate another party or parties\n(e.g., a sponsor institute, publishing entity, journal) for\nattribution (\"Attribution Parties\") in Licensor's copyright notice,\nterms of service or by other reasonable means, the name of such party\nor parties; (ii) the title of the Work if supplied; (iii) to the\nextent reasonably practicable, the URI, if any, that Licensor\nspecifies to be associated with the Work, unless such URI does not\nrefer to the copyright notice or licensing information for the Work.\nThe credit required by this Section 4(c) may be implemented in any\nreasonable manner; provided, however, that in the case of a\nCollection, at a minimum such credit will appear, if a credit for all\ncontributing authors of Collection appears, then as part of these\ncredits and in a manner at least as prominent as the credits for the\nother contributing authors. For the avoidance of doubt, You may only\nuse the credit required by this Section for the purpose of attribution\nin the manner set out above and, by exercising Your rights under this\nLicense, You may not implicitly or explicitly assert or imply any\nconnection with, sponsorship or endorsement by the Original Author,\nLicensor and/or Attribution Parties, as appropriate, of You or Your\nuse of the Work, without the separate, express prior written\npermission of the Original Author, Licensor and/or Attribution\nParties.\nd. For the avoidance of doubt:\n\ni. Non-waivable Compulsory License Schemes. In those jurisdictions in\nwhich the right to collect royalties through any statutory or\ncompulsory licensing scheme cannot be waived, the Licensor\nreserves the exclusive right to collect such royalties for any\nexercise by You of the rights granted under this License;\nii. Waivable Compulsory License Schemes. In those jurisdictions in\nwhich the right to collect royalties through any statutory or\ncompulsory licensing scheme can be waived, the Licensor reserves\nthe exclusive right to collect such royalties for any exercise by\nYou of the rights granted under this License if Your exercise of\nsuch rights is for a purpose or use which is otherwise than\nnoncommercial as permitted under Section 4(b) and otherwise waives\nthe right to collect royalties through any statutory or compulsory\nlicensing scheme; and,\niii. Voluntary License Schemes. The Licensor reserves the right to\ncollect royalties, whether individually or, in the event that the\nLicensor is a member of a collecting society that administers\nvoluntary licensing schemes, via that society, from any exercise\nby You of the rights granted under this License that is for a\npurpose or use which is otherwise than noncommercial as permitted\nunder Section 4(b).\ne. Except as otherwise agreed in writing by the Licensor or as may be\notherwise permitted by applicable law, if You Reproduce, Distribute or\nPublicly Perform the Work either by itself or as part of any\nCollections, You must not distort, mutilate, modify or take other\nderogatory action in relation to the Work which would be prejudicial\nto the Original Author's honor or reputation.\n\n5. Representations, Warranties and Disclaimer\n\nUNLESS OTHERWISE MUTUALLY AGREED BY THE PARTIES IN WRITING, LICENSOR\nOFFERS THE WORK AS-IS AND MAKES NO REPRESENTATIONS OR WARRANTIES OF ANY\nKIND CONCERNING THE WORK, EXPRESS, IMPLIED, STATUTORY OR OTHERWISE,\nINCLUDING, WITHOUT LIMITATION, WARRANTIES OF TITLE, MERCHANTIBILITY,\nFITNESS FOR A PARTICULAR PURPOSE, NONINFRINGEMENT, OR THE ABSENCE OF\nLATENT OR OTHER DEFECTS, ACCURACY, OR THE PRESENCE OF ABSENCE OF ERRORS,\nWHETHER OR NOT DISCOVERABLE. SOME JURISDICTIONS DO NOT ALLOW THE EXCLUSION\nOF IMPLIED WARRANTIES, SO SUCH EXCLUSION MAY NOT APPLY TO YOU.\n\n6. Limitation on Liability. EXCEPT TO THE EXTENT REQUIRED BY APPLICABLE\nLAW, IN NO EVENT WILL LICENSOR BE LIABLE TO YOU ON ANY LEGAL THEORY FOR\nANY SPECIAL, INCIDENTAL, CONSEQUENTIAL, PUNITIVE OR EXEMPLARY DAMAGES\nARISING OUT OF THIS LICENSE OR THE USE OF THE WORK, EVEN IF LICENSOR HAS\nBEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.\n\n7. Termination\n\na. This License and the rights granted hereunder will terminate\nautomatically upon any breach by You of the terms of this License.\nIndividuals or entities who have received Collections from You under\nthis License, however, will not have their licenses terminated\nprovided such individuals or entities remain in full compliance with\nthose licenses. Sections 1, 2, 5, 6, 7, and 8 will survive any\ntermination of this License.\nb. Subject to the above terms and conditions, the license granted here is\nperpetual (for the duration of the applicable copyright in the Work).\nNotwithstanding the above, Licensor reserves the right to release the\nWork under different license terms or to stop distributing the Work at\nany time; provided, however that any such election will not serve to\nwithdraw this License (or any other license that has been, or is\nrequired to be, granted under the terms of this License), and this\nLicense will continue in full force and effect unless terminated as\nstated above.\n\n8. Miscellaneous\n\na. Each time You Distribute or Publicly Perform the Work or a Collection,\nthe Licensor offers to the recipient a license to the Work on the same\nterms and conditions as the license granted to You under this License.\nb. If any provision of this License is invalid or unenforceable under\napplicable law, it shall not affect the validity or enforceability of\nthe remainder of the terms of this License, and without further action\nby the parties to this agreement, such provision shall be reformed to\nthe minimum extent necessary to make such provision valid and\nenforceable.\nc. No term or provision of this License shall be deemed waived and no\nbreach consented to unless such waiver or consent shall be in writing\nand signed by the party to be charged with such waiver or consent.\nd. This License constitutes the entire agreement between the parties with\nrespect to the Work licensed here. There are no understandings,\nagreements or representations with respect to the Work not specified\nhere. Licensor shall not be bound by any additional provisions that\nmay appear in any communication from You. This License may not be\nmodified without the mutual written agreement of the Licensor and You.\ne. The rights granted under, and the subject matter referenced, in this\nLicense were drafted utilizing the terminology of the Berne Convention\nfor the Protection of Literary and Artistic Works (as amended on\nSeptember 28, 1979), the Rome Convention of 1961, the WIPO Copyright\nTreaty of 1996, the WIPO Performances and Phonograms Treaty of 1996\nand the Universal Copyright Convention (as revised on July 24, 1971).\nThese rights and subject matter take effect in the relevant\njurisdiction in which the License terms are sought to be enforced\naccording to the corresponding provisions of the implementation of\nthose treaty provisions in the applicable national law. If the\nstandard suite of rights granted under applicable copyright law\nincludes additional rights not granted under this License, such\nadditional rights are deemed to be included in the License; this\nLicense is not intended to restrict the license of any rights under\napplicable law.\n\n\nCreative Commons Notice\n\nCreative Commons is not a party to this License, and makes no warranty\nwhatsoever in connection with the Work. Creative Commons will not be\nliable to You or any party on any legal theory for any damages\nwhatsoever, including without limitation any general, special,\nincidental or consequential damages arising in connection to this\nlicense. Notwithstanding the foregoing two (2) sentences, if Creative\nCommons has expressly identified itself as the Licensor hereunder, it\nshall have all rights and obligations of Licensor.\n\nExcept for the limited purpose of indicating to the public that the\nWork is licensed under the CCPL, Creative Commons does not authorize\nthe use by either party of the trademark \"Creative Commons\" or any\nrelated trademark or logo of Creative Commons without the prior\nwritten consent of Creative Commons. Any permitted use will be in\ncompliance with Creative Commons' then-current trademark usage\nguidelines, as may be published on its website or otherwise made\navailable upon request from time to time. For the avoidance of doubt,\nthis trademark restriction does not form part of this License.\n\nCreative Commons may be contacted at https://creativecommons.org/."
+    },
+    {
+      "key": "free-unknown",
+      "short_name": "Free unknown",
+      "name": "Free unknown license detected but not recognized",
+      "category": "Unstated License",
+      "owner": "Unspecified",
+      "notes": "This case applies to software with a notice that refers in a non-specific manner to a free or open-source license, but where it is not possible to determine that specific license.",
+      "is_builtin": true,
+      "is_unknown": true,
+      "spdx_license_key": "LicenseRef-scancode-free-unknown",
+      "text": ""
+    },
+    {
+      "key": "other-permissive",
+      "short_name": "Other Permissive Licenses",
+      "name": "Other Permissive Licenses",
+      "category": "Permissive",
+      "owner": "nexB",
+      "notes": "this is a catch all and ellipsis to deal with some cases when a large\nnumber of ancillary yet similar licenses may be reported as one.\n",
+      "is_builtin": true,
+      "is_generic": true,
+      "spdx_license_key": "LicenseRef-scancode-other-permissive",
+      "text": "This component contains multiple third-party subcomponents licensed\nunder permissive licenses in the style of MIT, BSD, X11, and/or Apache."
+    },
+    {
+      "key": "proprietary-license",
+      "short_name": "Proprietary License",
+      "name": "Proprietary License",
+      "category": "Commercial",
+      "owner": "Unspecified",
+      "notes": "replaces the proprietary key npm before 3.1 recommended this \"If you are using a license that hasn't been assigned an SPDX identifier, or if you are using a custom license, use the following valid SPDX expression \"LicenseRef-LICENSE\"",
+      "is_builtin": true,
+      "is_generic": true,
+      "spdx_license_key": "LicenseRef-scancode-proprietary-license",
+      "other_spdx_license_keys": [
+        "LicenseRef-LICENSE",
+        "LicenseRef-LICENSE.md"
+      ],
+      "text": "This component is normally licensed under a proprietary license agreement with\na supplier that has terms and conditions that restrict the use of the code,\nbut may not require payment to the supplier."
+    }
+  ],
+  "license_rule_references": [
+    {
+      "license_expression": "apache-2.0 AND cc-by-nc-nd-3.0 AND other-permissive AND proprietary-license",
+      "rule_identifier": "apache-2.0_and_cc-by-nc-nd-3.0_and_other-permissive_and_proprietary-license_1.RULE",
+      "referenced_filenames": [
+        "LICENSE.txt"
+      ],
+      "is_license_text": false,
+      "is_license_notice": true,
+      "is_license_reference": false,
+      "is_license_tag": false,
+      "is_license_intro": false,
+      "rule_length": 85,
+      "rule_relevance": 100
+    },
+    {
+      "license_expression": "bsd-new",
+      "rule_identifier": "pypi_bsd_license.RULE",
+      "referenced_filenames": [],
+      "is_license_text": false,
+      "is_license_notice": false,
+      "is_license_reference": false,
+      "is_license_tag": true,
+      "is_license_intro": false,
+      "rule_length": 5,
+      "rule_relevance": 99
+    },
+    {
+      "license_expression": "bsd-new",
+      "rule_identifier": "pypi_bsd_license.RULE",
+      "referenced_filenames": [],
+      "is_license_text": false,
+      "is_license_notice": false,
+      "is_license_reference": false,
+      "is_license_tag": true,
+      "is_license_intro": false,
+      "rule_length": 5,
+      "rule_relevance": 99
+    },
+    {
+      "license_expression": "free-unknown",
+      "rule_identifier": "free-unknown-package_3.RULE",
+      "referenced_filenames": [
+        "INHERIT_LICENSE_FROM_PACKAGE"
+      ],
+      "is_license_text": false,
+      "is_license_notice": false,
+      "is_license_reference": true,
+      "is_license_tag": false,
+      "is_license_intro": false,
+      "rule_length": 12,
+      "rule_relevance": 100
+    },
+    {
+      "license_expression": "free-unknown",
+      "rule_identifier": "free-unknown-package_3.RULE",
+      "referenced_filenames": [
+        "INHERIT_LICENSE_FROM_PACKAGE"
+      ],
+      "is_license_text": false,
+      "is_license_notice": false,
+      "is_license_reference": true,
+      "is_license_tag": false,
+      "is_license_intro": false,
+      "rule_length": 12,
+      "rule_relevance": 100
+    },
+    {
+      "license_expression": "free-unknown",
+      "rule_identifier": "free-unknown-package_3.RULE",
+      "referenced_filenames": [
+        "INHERIT_LICENSE_FROM_PACKAGE"
+      ],
+      "is_license_text": false,
+      "is_license_notice": false,
+      "is_license_reference": true,
+      "is_license_tag": false,
+      "is_license_intro": false,
+      "rule_length": 12,
+      "rule_relevance": 100
+    },
+    {
+      "license_expression": "free-unknown",
+      "rule_identifier": "free-unknown-package_2.RULE",
+      "referenced_filenames": [
+        "INHERIT_LICENSE_FROM_PACKAGE"
+      ],
+      "is_license_text": false,
+      "is_license_notice": false,
+      "is_license_reference": true,
+      "is_license_tag": false,
+      "is_license_intro": false,
+      "rule_length": 12,
+      "rule_relevance": 100
+    },
+    {
+      "license_expression": "free-unknown",
+      "rule_identifier": "free-unknown-package_2.RULE",
+      "referenced_filenames": [
+        "INHERIT_LICENSE_FROM_PACKAGE"
+      ],
+      "is_license_text": false,
+      "is_license_notice": false,
+      "is_license_reference": true,
+      "is_license_tag": false,
+      "is_license_intro": false,
+      "rule_length": 12,
+      "rule_relevance": 100
+    },
+    {
+      "license_expression": "bsd-new",
+      "rule_identifier": "bsd-new_683.RULE",
+      "referenced_filenames": [],
+      "is_license_text": true,
+      "is_license_notice": false,
+      "is_license_reference": false,
+      "is_license_tag": false,
+      "is_license_intro": false,
+      "rule_length": 214,
+      "rule_relevance": 100
+    },
+    {
+      "license_expression": "apache-2.0 AND cc-by-nc-nd-3.0 AND other-permissive AND proprietary-license",
+      "rule_identifier": "apache-2.0_and_cc-by-nc-nd-3.0_and_other-permissive_and_proprietary-license_1.RULE",
+      "referenced_filenames": [
+        "LICENSE.txt"
+      ],
+      "is_license_text": false,
+      "is_license_notice": true,
+      "is_license_reference": false,
+      "is_license_tag": false,
+      "is_license_intro": false,
+      "rule_length": 85,
+      "rule_relevance": 100
+    },
+    {
+      "license_expression": "bsd-new",
+      "rule_identifier": "pypi_bsd_license.RULE",
+      "referenced_filenames": [],
+      "is_license_text": false,
+      "is_license_notice": false,
+      "is_license_reference": false,
+      "is_license_tag": true,
+      "is_license_intro": false,
+      "rule_length": 5,
+      "rule_relevance": 99
+    },
+    {
+      "license_expression": "bsd-new",
+      "rule_identifier": "pypi_bsd_license.RULE",
+      "referenced_filenames": [],
+      "is_license_text": false,
+      "is_license_notice": false,
+      "is_license_reference": false,
+      "is_license_tag": true,
+      "is_license_intro": false,
+      "rule_length": 5,
+      "rule_relevance": 99
+    },
+    {
+      "license_expression": "bsd-new",
+      "rule_identifier": "pypi_bsd_license.RULE",
+      "referenced_filenames": [],
+      "is_license_text": false,
+      "is_license_notice": false,
+      "is_license_reference": false,
+      "is_license_tag": true,
+      "is_license_intro": false,
+      "rule_length": 5,
+      "rule_relevance": 99
+    },
+    {
+      "license_expression": "bsd-new",
+      "rule_identifier": "pypi_bsd_license.RULE",
+      "referenced_filenames": [],
+      "is_license_text": false,
+      "is_license_notice": false,
+      "is_license_reference": false,
+      "is_license_tag": true,
+      "is_license_intro": false,
+      "rule_length": 5,
+      "rule_relevance": 99
+    },
+    {
+      "license_expression": "free-unknown",
+      "rule_identifier": "free-unknown-package_3.RULE",
+      "referenced_filenames": [
+        "INHERIT_LICENSE_FROM_PACKAGE"
+      ],
+      "is_license_text": false,
+      "is_license_notice": false,
+      "is_license_reference": true,
+      "is_license_tag": false,
+      "is_license_intro": false,
+      "rule_length": 12,
+      "rule_relevance": 100
+    },
+    {
+      "license_expression": "free-unknown",
+      "rule_identifier": "free-unknown-package_3.RULE",
+      "referenced_filenames": [
+        "INHERIT_LICENSE_FROM_PACKAGE"
+      ],
+      "is_license_text": false,
+      "is_license_notice": false,
+      "is_license_reference": true,
+      "is_license_tag": false,
+      "is_license_intro": false,
+      "rule_length": 12,
+      "rule_relevance": 100
     }
   ],
   "dependencies": [],
@@ -169,7 +491,8 @@
               "matcher": "1-hash",
               "license_expression": "bsd-new",
               "rule_identifier": "pypi_bsd_license.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/pypi_bsd_license.RULE"
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/pypi_bsd_license.RULE",
+              "matched_text": "['License :: OSI Approved :: BSD License']"
             }
           ]
         }
@@ -260,7 +583,8 @@
               "matcher": "1-hash",
               "license_expression": "bsd-new",
               "rule_identifier": "pypi_bsd_license.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/pypi_bsd_license.RULE"
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/pypi_bsd_license.RULE",
+              "matched_text": "['License :: OSI Approved :: BSD License']"
             }
           ]
         }
@@ -287,253 +611,6 @@
       "purl": "pkg:pypi/django@1.3.1"
     }
   ],
-  "license_references": [
-    {
-      "key": "apache-2.0",
-      "short_name": "Apache 2.0",
-      "name": "Apache License 2.0",
-      "category": "Permissive",
-      "owner": "Apache Software Foundation",
-      "homepage_url": "http://www.apache.org/licenses/",
-      "notes": "Per SPDX.org, this version was released January 2004 This license is OSI\ncertified\n",
-      "is_builtin": true,
-      "spdx_license_key": "Apache-2.0",
-      "other_spdx_license_keys": [
-        "LicenseRef-Apache",
-        "LicenseRef-Apache-2.0"
-      ],
-      "osi_license_key": "Apache-2.0",
-      "text_urls": [
-        "http://www.apache.org/licenses/LICENSE-2.0"
-      ],
-      "osi_url": "http://opensource.org/licenses/apache2.0.php",
-      "faq_url": "http://www.apache.org/foundation/licence-FAQ.html",
-      "other_urls": [
-        "http://www.opensource.org/licenses/Apache-2.0",
-        "https://opensource.org/licenses/Apache-2.0",
-        "https://www.apache.org/licenses/LICENSE-2.0"
-      ],
-      "text": "Apache License\nVersion 2.0, January 2004\nhttp://www.apache.org/licenses/\n\nTERMS AND CONDITIONS FOR USE, REPRODUCTION, AND DISTRIBUTION\n\n1. Definitions.\n\n\"License\" shall mean the terms and conditions for use, reproduction,\nand distribution as defined by Sections 1 through 9 of this document.\n\n\"Licensor\" shall mean the copyright owner or entity authorized by\nthe copyright owner that is granting the License.\n\n\"Legal Entity\" shall mean the union of the acting entity and all\nother entities that control, are controlled by, or are under common\ncontrol with that entity. For the purposes of this definition,\n\"control\" means (i) the power, direct or indirect, to cause the\ndirection or management of such entity, whether by contract or\notherwise, or (ii) ownership of fifty percent (50%) or more of the\noutstanding shares, or (iii) beneficial ownership of such entity.\n\n\"You\" (or \"Your\") shall mean an individual or Legal Entity\nexercising permissions granted by this License.\n\n\"Source\" form shall mean the preferred form for making modifications,\nincluding but not limited to software source code, documentation\nsource, and configuration files.\n\n\"Object\" form shall mean any form resulting from mechanical\ntransformation or translation of a Source form, including but\nnot limited to compiled object code, generated documentation,\nand conversions to other media types.\n\n\"Work\" shall mean the work of authorship, whether in Source or\nObject form, made available under the License, as indicated by a\ncopyright notice that is included in or attached to the work\n(an example is provided in the Appendix below).\n\n\"Derivative Works\" shall mean any work, whether in Source or Object\nform, that is based on (or derived from) the Work and for which the\neditorial revisions, annotations, elaborations, or other modifications\nrepresent, as a whole, an original work of authorship. For the purposes\nof this License, Derivative Works shall not include works that remain\nseparable from, or merely link (or bind by name) to the interfaces of,\nthe Work and Derivative Works thereof.\n\n\"Contribution\" shall mean any work of authorship, including\nthe original version of the Work and any modifications or additions\nto that Work or Derivative Works thereof, that is intentionally\nsubmitted to Licensor for inclusion in the Work by the copyright owner\nor by an individual or Legal Entity authorized to submit on behalf of\nthe copyright owner. For the purposes of this definition, \"submitted\"\nmeans any form of electronic, verbal, or written communication sent\nto the Licensor or its representatives, including but not limited to\ncommunication on electronic mailing lists, source code control systems,\nand issue tracking systems that are managed by, or on behalf of, the\nLicensor for the purpose of discussing and improving the Work, but\nexcluding communication that is conspicuously marked or otherwise\ndesignated in writing by the copyright owner as \"Not a Contribution.\"\n\n\"Contributor\" shall mean Licensor and any individual or Legal Entity\non behalf of whom a Contribution has been received by Licensor and\nsubsequently incorporated within the Work.\n\n2. Grant of Copyright License. Subject to the terms and conditions of\nthis License, each Contributor hereby grants to You a perpetual,\nworldwide, non-exclusive, no-charge, royalty-free, irrevocable\ncopyright license to reproduce, prepare Derivative Works of,\npublicly display, publicly perform, sublicense, and distribute the\nWork and such Derivative Works in Source or Object form.\n\n3. Grant of Patent License. Subject to the terms and conditions of\nthis License, each Contributor hereby grants to You a perpetual,\nworldwide, non-exclusive, no-charge, royalty-free, irrevocable\n(except as stated in this section) patent license to make, have made,\nuse, offer to sell, sell, import, and otherwise transfer the Work,\nwhere such license applies only to those patent claims licensable\nby such Contributor that are necessarily infringed by their\nContribution(s) alone or by combination of their Contribution(s)\nwith the Work to which such Contribution(s) was submitted. If You\ninstitute patent litigation against any entity (including a\ncross-claim or counterclaim in a lawsuit) alleging that the Work\nor a Contribution incorporated within the Work constitutes direct\nor contributory patent infringement, then any patent licenses\ngranted to You under this License for that Work shall terminate\nas of the date such litigation is filed.\n\n4. Redistribution. You may reproduce and distribute copies of the\nWork or Derivative Works thereof in any medium, with or without\nmodifications, and in Source or Object form, provided that You\nmeet the following conditions:\n\n(a) You must give any other recipients of the Work or\nDerivative Works a copy of this License; and\n\n(b) You must cause any modified files to carry prominent notices\nstating that You changed the files; and\n\n(c) You must retain, in the Source form of any Derivative Works\nthat You distribute, all copyright, patent, trademark, and\nattribution notices from the Source form of the Work,\nexcluding those notices that do not pertain to any part of\nthe Derivative Works; and\n\n(d) If the Work includes a \"NOTICE\" text file as part of its\ndistribution, then any Derivative Works that You distribute must\ninclude a readable copy of the attribution notices contained\nwithin such NOTICE file, excluding those notices that do not\npertain to any part of the Derivative Works, in at least one\nof the following places: within a NOTICE text file distributed\nas part of the Derivative Works; within the Source form or\ndocumentation, if provided along with the Derivative Works; or,\nwithin a display generated by the Derivative Works, if and\nwherever such third-party notices normally appear. The contents\nof the NOTICE file are for informational purposes only and\ndo not modify the License. You may add Your own attribution\nnotices within Derivative Works that You distribute, alongside\nor as an addendum to the NOTICE text from the Work, provided\nthat such additional attribution notices cannot be construed\nas modifying the License.\n\nYou may add Your own copyright statement to Your modifications and\nmay provide additional or different license terms and conditions\nfor use, reproduction, or distribution of Your modifications, or\nfor any such Derivative Works as a whole, provided Your use,\nreproduction, and distribution of the Work otherwise complies with\nthe conditions stated in this License.\n\n5. Submission of Contributions. Unless You explicitly state otherwise,\nany Contribution intentionally submitted for inclusion in the Work\nby You to the Licensor shall be under the terms and conditions of\nthis License, without any additional terms or conditions.\nNotwithstanding the above, nothing herein shall supersede or modify\nthe terms of any separate license agreement you may have executed\nwith Licensor regarding such Contributions.\n\n6. Trademarks. This License does not grant permission to use the trade\nnames, trademarks, service marks, or product names of the Licensor,\nexcept as required for reasonable and customary use in describing the\norigin of the Work and reproducing the content of the NOTICE file.\n\n7. Disclaimer of Warranty. Unless required by applicable law or\nagreed to in writing, Licensor provides the Work (and each\nContributor provides its Contributions) on an \"AS IS\" BASIS,\nWITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or\nimplied, including, without limitation, any warranties or conditions\nof TITLE, NON-INFRINGEMENT, MERCHANTABILITY, or FITNESS FOR A\nPARTICULAR PURPOSE. You are solely responsible for determining the\nappropriateness of using or redistributing the Work and assume any\nrisks associated with Your exercise of permissions under this License.\n\n8. Limitation of Liability. In no event and under no legal theory,\nwhether in tort (including negligence), contract, or otherwise,\nunless required by applicable law (such as deliberate and grossly\nnegligent acts) or agreed to in writing, shall any Contributor be\nliable to You for damages, including any direct, indirect, special,\nincidental, or consequential damages of any character arising as a\nresult of this License or out of the use or inability to use the\nWork (including but not limited to damages for loss of goodwill,\nwork stoppage, computer failure or malfunction, or any and all\nother commercial damages or losses), even if such Contributor\nhas been advised of the possibility of such damages.\n\n9. Accepting Warranty or Additional Liability. While redistributing\nthe Work or Derivative Works thereof, You may choose to offer,\nand charge a fee for, acceptance of support, warranty, indemnity,\nor other liability obligations and/or rights consistent with this\nLicense. However, in accepting such obligations, You may act only\non Your own behalf and on Your sole responsibility, not on behalf\nof any other Contributor, and only if You agree to indemnify,\ndefend, and hold each Contributor harmless for any liability\nincurred by, or claims asserted against, such Contributor by reason\nof your accepting any such warranty or additional liability.\n\nEND OF TERMS AND CONDITIONS\n\nAPPENDIX: How to apply the Apache License to your work.\n\nTo apply the Apache License to your work, attach the following\nboilerplate notice, with the fields enclosed by brackets \"[]\"\nreplaced with your own identifying information. (Don't include\nthe brackets!)  The text should be enclosed in the appropriate\ncomment syntax for the file format. We also recommend that a\nfile or class name and description of purpose be included on the\nsame \"printed page\" as the copyright notice for easier\nidentification within third-party archives.\n\nCopyright [yyyy] [name of copyright owner]\n\nLicensed under the Apache License, Version 2.0 (the \"License\");\nyou may not use this file except in compliance with the License.\nYou may obtain a copy of the License at\n\nhttp://www.apache.org/licenses/LICENSE-2.0\n\nUnless required by applicable law or agreed to in writing, software\ndistributed under the License is distributed on an \"AS IS\" BASIS,\nWITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\nSee the License for the specific language governing permissions and\nlimitations under the License."
-    },
-    {
-      "key": "bsd-new",
-      "short_name": "BSD-3-Clause",
-      "name": "BSD-3-Clause",
-      "category": "Permissive",
-      "owner": "Regents of the University of California",
-      "homepage_url": "http://www.opensource.org/licenses/BSD-3-Clause",
-      "notes": "Per SPDX.org, this license is OSI certified.",
-      "is_builtin": true,
-      "spdx_license_key": "BSD-3-Clause",
-      "other_spdx_license_keys": [
-        "LicenseRef-scancode-libzip"
-      ],
-      "osi_license_key": "BSD-3-Clause",
-      "text_urls": [
-        "http://www.opensource.org/licenses/BSD-3-Clause"
-      ],
-      "osi_url": "http://www.opensource.org/licenses/BSD-3-Clause",
-      "other_urls": [
-        "http://framework.zend.com/license/new-bsd",
-        "https://opensource.org/licenses/BSD-3-Clause"
-      ],
-      "text": "Redistribution and use in source and binary forms, with or without modification,\nare permitted provided that the following conditions are met:\n\nRedistributions of source code must retain the above copyright notice, this list\nof conditions and the following disclaimer.\n\nRedistributions in binary form must reproduce the above copyright notice, this\nlist of conditions and the following disclaimer in the documentation and/or\nother materials provided with the distribution.\n\nNeither the name of the ORGANIZATION nor the names of its contributors may be\nused to endorse or promote products derived from this software without specific\nprior written permission.\n\nTHIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS\n\"AS IS\" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO,\nTHE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE\nARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS\nBE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR\nCONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE\nGOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)\nHOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT\nLIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF\nTHE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE."
-    },
-    {
-      "key": "cc-by-nc-nd-3.0",
-      "short_name": "CC-BY-NC-ND-3.0",
-      "name": "Creative Commons Attribution Non-Commercial No Derivatives License 3.0",
-      "category": "Source-available",
-      "owner": "Creative Commons",
-      "homepage_url": "http://creativecommons.org/licenses/by-nc-nd/3.0/",
-      "is_builtin": true,
-      "spdx_license_key": "CC-BY-NC-ND-3.0",
-      "text_urls": [
-        "http://creativecommons.org/licenses/by-nc-nd/3.0/legalcode"
-      ],
-      "other_urls": [
-        "https://creativecommons.org/licenses/by-nc-nd/3.0/legalcode"
-      ],
-      "text": "Creative Commons Legal Code\n\nAttribution-NonCommercial-NoDerivs 3.0 Unported\n\nCREATIVE COMMONS CORPORATION IS NOT A LAW FIRM AND DOES NOT PROVIDE\nLEGAL SERVICES. DISTRIBUTION OF THIS LICENSE DOES NOT CREATE AN\nATTORNEY-CLIENT RELATIONSHIP. CREATIVE COMMONS PROVIDES THIS\nINFORMATION ON AN \"AS-IS\" BASIS. CREATIVE COMMONS MAKES NO WARRANTIES\nREGARDING THE INFORMATION PROVIDED, AND DISCLAIMS LIABILITY FOR\nDAMAGES RESULTING FROM ITS USE.\n\nLicense\n\nTHE WORK (AS DEFINED BELOW) IS PROVIDED UNDER THE TERMS OF THIS CREATIVE\nCOMMONS PUBLIC LICENSE (\"CCPL\" OR \"LICENSE\"). THE WORK IS PROTECTED BY\nCOPYRIGHT AND/OR OTHER APPLICABLE LAW. ANY USE OF THE WORK OTHER THAN AS\nAUTHORIZED UNDER THIS LICENSE OR COPYRIGHT LAW IS PROHIBITED.\n\nBY EXERCISING ANY RIGHTS TO THE WORK PROVIDED HERE, YOU ACCEPT AND AGREE\nTO BE BOUND BY THE TERMS OF THIS LICENSE. TO THE EXTENT THIS LICENSE MAY\nBE CONSIDERED TO BE A CONTRACT, THE LICENSOR GRANTS YOU THE RIGHTS\nCONTAINED HERE IN CONSIDERATION OF YOUR ACCEPTANCE OF SUCH TERMS AND\nCONDITIONS.\n\n1. Definitions\n\na. \"Adaptation\" means a work based upon the Work, or upon the Work and\nother pre-existing works, such as a translation, adaptation,\nderivative work, arrangement of music or other alterations of a\nliterary or artistic work, or phonogram or performance and includes\ncinematographic adaptations or any other form in which the Work may be\nrecast, transformed, or adapted including in any form recognizably\nderived from the original, except that a work that constitutes a\nCollection will not be considered an Adaptation for the purpose of\nthis License. For the avoidance of doubt, where the Work is a musical\nwork, performance or phonogram, the synchronization of the Work in\ntimed-relation with a moving image (\"synching\") will be considered an\nAdaptation for the purpose of this License.\nb. \"Collection\" means a collection of literary or artistic works, such as\nencyclopedias and anthologies, or performances, phonograms or\nbroadcasts, or other works or subject matter other than works listed\nin Section 1(f) below, which, by reason of the selection and\narrangement of their contents, constitute intellectual creations, in\nwhich the Work is included in its entirety in unmodified form along\nwith one or more other contributions, each constituting separate and\nindependent works in themselves, which together are assembled into a\ncollective whole. A work that constitutes a Collection will not be\nconsidered an Adaptation (as defined above) for the purposes of this\nLicense.\nc. \"Distribute\" means to make available to the public the original and\ncopies of the Work through sale or other transfer of ownership.\nd. \"Licensor\" means the individual, individuals, entity or entities that\noffer(s) the Work under the terms of this License.\ne. \"Original Author\" means, in the case of a literary or artistic work,\nthe individual, individuals, entity or entities who created the Work\nor if no individual or entity can be identified, the publisher; and in\naddition (i) in the case of a performance the actors, singers,\nmusicians, dancers, and other persons who act, sing, deliver, declaim,\nplay in, interpret or otherwise perform literary or artistic works or\nexpressions of folklore; (ii) in the case of a phonogram the producer\nbeing the person or legal entity who first fixes the sounds of a\nperformance or other sounds; and, (iii) in the case of broadcasts, the\norganization that transmits the broadcast.\nf. \"Work\" means the literary and/or artistic work offered under the terms\nof this License including without limitation any production in the\nliterary, scientific and artistic domain, whatever may be the mode or\nform of its expression including digital form, such as a book,\npamphlet and other writing; a lecture, address, sermon or other work\nof the same nature; a dramatic or dramatico-musical work; a\nchoreographic work or entertainment in dumb show; a musical\ncomposition with or without words; a cinematographic work to which are\nassimilated works expressed by a process analogous to cinematography;\na work of drawing, painting, architecture, sculpture, engraving or\nlithography; a photographic work to which are assimilated works\nexpressed by a process analogous to photography; a work of applied\nart; an illustration, map, plan, sketch or three-dimensional work\nrelative to geography, topography, architecture or science; a\nperformance; a broadcast; a phonogram; a compilation of data to the\nextent it is protected as a copyrightable work; or a work performed by\na variety or circus performer to the extent it is not otherwise\nconsidered a literary or artistic work.\ng. \"You\" means an individual or entity exercising rights under this\nLicense who has not previously violated the terms of this License with\nrespect to the Work, or who has received express permission from the\nLicensor to exercise rights under this License despite a previous\nviolation.\nh. \"Publicly Perform\" means to perform public recitations of the Work and\nto communicate to the public those public recitations, by any means or\nprocess, including by wire or wireless means or public digital\nperformances; to make available to the public Works in such a way that\nmembers of the public may access these Works from a place and at a\nplace individually chosen by them; to perform the Work to the public\nby any means or process and the communication to the public of the\nperformances of the Work, including by public digital performance; to\nbroadcast and rebroadcast the Work by any means including signs,\nsounds or images.\ni. \"Reproduce\" means to make copies of the Work by any means including\nwithout limitation by sound or visual recordings and the right of\nfixation and reproducing fixations of the Work, including storage of a\nprotected performance or phonogram in digital form or other electronic\nmedium.\n\n2. Fair Dealing Rights. Nothing in this License is intended to reduce,\nlimit, or restrict any uses free from copyright or rights arising from\nlimitations or exceptions that are provided for in connection with the\ncopyright protection under copyright law or other applicable laws.\n\n3. License Grant. Subject to the terms and conditions of this License,\nLicensor hereby grants You a worldwide, royalty-free, non-exclusive,\nperpetual (for the duration of the applicable copyright) license to\nexercise the rights in the Work as stated below:\n\na. to Reproduce the Work, to incorporate the Work into one or more\nCollections, and to Reproduce the Work as incorporated in the\nCollections; and,\nb. to Distribute and Publicly Perform the Work including as incorporated\nin Collections.\n\nThe above rights may be exercised in all media and formats whether now\nknown or hereafter devised. The above rights include the right to make\nsuch modifications as are technically necessary to exercise the rights in\nother media and formats, but otherwise you have no rights to make\nAdaptations. Subject to 8(f), all rights not expressly granted by Licensor\nare hereby reserved, including but not limited to the rights set forth in\nSection 4(d).\n\n4. Restrictions. The license granted in Section 3 above is expressly made\nsubject to and limited by the following restrictions:\n\na. You may Distribute or Publicly Perform the Work only under the terms\nof this License. You must include a copy of, or the Uniform Resource\nIdentifier (URI) for, this License with every copy of the Work You\nDistribute or Publicly Perform. You may not offer or impose any terms\non the Work that restrict the terms of this License or the ability of\nthe recipient of the Work to exercise the rights granted to that\nrecipient under the terms of the License. You may not sublicense the\nWork. You must keep intact all notices that refer to this License and\nto the disclaimer of warranties with every copy of the Work You\nDistribute or Publicly Perform. When You Distribute or Publicly\nPerform the Work, You may not impose any effective technological\nmeasures on the Work that restrict the ability of a recipient of the\nWork from You to exercise the rights granted to that recipient under\nthe terms of the License. This Section 4(a) applies to the Work as\nincorporated in a Collection, but this does not require the Collection\napart from the Work itself to be made subject to the terms of this\nLicense. If You create a Collection, upon notice from any Licensor You\nmust, to the extent practicable, remove from the Collection any credit\nas required by Section 4(c), as requested.\nb. You may not exercise any of the rights granted to You in Section 3\nabove in any manner that is primarily intended for or directed toward\ncommercial advantage or private monetary compensation. The exchange of\nthe Work for other copyrighted works by means of digital file-sharing\nor otherwise shall not be considered to be intended for or directed\ntoward commercial advantage or private monetary compensation, provided\nthere is no payment of any monetary compensation in connection with\nthe exchange of copyrighted works.\nc. If You Distribute, or Publicly Perform the Work or Collections, You\nmust, unless a request has been made pursuant to Section 4(a), keep\nintact all copyright notices for the Work and provide, reasonable to\nthe medium or means You are utilizing: (i) the name of the Original\nAuthor (or pseudonym, if applicable) if supplied, and/or if the\nOriginal Author and/or Licensor designate another party or parties\n(e.g., a sponsor institute, publishing entity, journal) for\nattribution (\"Attribution Parties\") in Licensor's copyright notice,\nterms of service or by other reasonable means, the name of such party\nor parties; (ii) the title of the Work if supplied; (iii) to the\nextent reasonably practicable, the URI, if any, that Licensor\nspecifies to be associated with the Work, unless such URI does not\nrefer to the copyright notice or licensing information for the Work.\nThe credit required by this Section 4(c) may be implemented in any\nreasonable manner; provided, however, that in the case of a\nCollection, at a minimum such credit will appear, if a credit for all\ncontributing authors of Collection appears, then as part of these\ncredits and in a manner at least as prominent as the credits for the\nother contributing authors. For the avoidance of doubt, You may only\nuse the credit required by this Section for the purpose of attribution\nin the manner set out above and, by exercising Your rights under this\nLicense, You may not implicitly or explicitly assert or imply any\nconnection with, sponsorship or endorsement by the Original Author,\nLicensor and/or Attribution Parties, as appropriate, of You or Your\nuse of the Work, without the separate, express prior written\npermission of the Original Author, Licensor and/or Attribution\nParties.\nd. For the avoidance of doubt:\n\ni. Non-waivable Compulsory License Schemes. In those jurisdictions in\nwhich the right to collect royalties through any statutory or\ncompulsory licensing scheme cannot be waived, the Licensor\nreserves the exclusive right to collect such royalties for any\nexercise by You of the rights granted under this License;\nii. Waivable Compulsory License Schemes. In those jurisdictions in\nwhich the right to collect royalties through any statutory or\ncompulsory licensing scheme can be waived, the Licensor reserves\nthe exclusive right to collect such royalties for any exercise by\nYou of the rights granted under this License if Your exercise of\nsuch rights is for a purpose or use which is otherwise than\nnoncommercial as permitted under Section 4(b) and otherwise waives\nthe right to collect royalties through any statutory or compulsory\nlicensing scheme; and,\niii. Voluntary License Schemes. The Licensor reserves the right to\ncollect royalties, whether individually or, in the event that the\nLicensor is a member of a collecting society that administers\nvoluntary licensing schemes, via that society, from any exercise\nby You of the rights granted under this License that is for a\npurpose or use which is otherwise than noncommercial as permitted\nunder Section 4(b).\ne. Except as otherwise agreed in writing by the Licensor or as may be\notherwise permitted by applicable law, if You Reproduce, Distribute or\nPublicly Perform the Work either by itself or as part of any\nCollections, You must not distort, mutilate, modify or take other\nderogatory action in relation to the Work which would be prejudicial\nto the Original Author's honor or reputation.\n\n5. Representations, Warranties and Disclaimer\n\nUNLESS OTHERWISE MUTUALLY AGREED BY THE PARTIES IN WRITING, LICENSOR\nOFFERS THE WORK AS-IS AND MAKES NO REPRESENTATIONS OR WARRANTIES OF ANY\nKIND CONCERNING THE WORK, EXPRESS, IMPLIED, STATUTORY OR OTHERWISE,\nINCLUDING, WITHOUT LIMITATION, WARRANTIES OF TITLE, MERCHANTIBILITY,\nFITNESS FOR A PARTICULAR PURPOSE, NONINFRINGEMENT, OR THE ABSENCE OF\nLATENT OR OTHER DEFECTS, ACCURACY, OR THE PRESENCE OF ABSENCE OF ERRORS,\nWHETHER OR NOT DISCOVERABLE. SOME JURISDICTIONS DO NOT ALLOW THE EXCLUSION\nOF IMPLIED WARRANTIES, SO SUCH EXCLUSION MAY NOT APPLY TO YOU.\n\n6. Limitation on Liability. EXCEPT TO THE EXTENT REQUIRED BY APPLICABLE\nLAW, IN NO EVENT WILL LICENSOR BE LIABLE TO YOU ON ANY LEGAL THEORY FOR\nANY SPECIAL, INCIDENTAL, CONSEQUENTIAL, PUNITIVE OR EXEMPLARY DAMAGES\nARISING OUT OF THIS LICENSE OR THE USE OF THE WORK, EVEN IF LICENSOR HAS\nBEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.\n\n7. Termination\n\na. This License and the rights granted hereunder will terminate\nautomatically upon any breach by You of the terms of this License.\nIndividuals or entities who have received Collections from You under\nthis License, however, will not have their licenses terminated\nprovided such individuals or entities remain in full compliance with\nthose licenses. Sections 1, 2, 5, 6, 7, and 8 will survive any\ntermination of this License.\nb. Subject to the above terms and conditions, the license granted here is\nperpetual (for the duration of the applicable copyright in the Work).\nNotwithstanding the above, Licensor reserves the right to release the\nWork under different license terms or to stop distributing the Work at\nany time; provided, however that any such election will not serve to\nwithdraw this License (or any other license that has been, or is\nrequired to be, granted under the terms of this License), and this\nLicense will continue in full force and effect unless terminated as\nstated above.\n\n8. Miscellaneous\n\na. Each time You Distribute or Publicly Perform the Work or a Collection,\nthe Licensor offers to the recipient a license to the Work on the same\nterms and conditions as the license granted to You under this License.\nb. If any provision of this License is invalid or unenforceable under\napplicable law, it shall not affect the validity or enforceability of\nthe remainder of the terms of this License, and without further action\nby the parties to this agreement, such provision shall be reformed to\nthe minimum extent necessary to make such provision valid and\nenforceable.\nc. No term or provision of this License shall be deemed waived and no\nbreach consented to unless such waiver or consent shall be in writing\nand signed by the party to be charged with such waiver or consent.\nd. This License constitutes the entire agreement between the parties with\nrespect to the Work licensed here. There are no understandings,\nagreements or representations with respect to the Work not specified\nhere. Licensor shall not be bound by any additional provisions that\nmay appear in any communication from You. This License may not be\nmodified without the mutual written agreement of the Licensor and You.\ne. The rights granted under, and the subject matter referenced, in this\nLicense were drafted utilizing the terminology of the Berne Convention\nfor the Protection of Literary and Artistic Works (as amended on\nSeptember 28, 1979), the Rome Convention of 1961, the WIPO Copyright\nTreaty of 1996, the WIPO Performances and Phonograms Treaty of 1996\nand the Universal Copyright Convention (as revised on July 24, 1971).\nThese rights and subject matter take effect in the relevant\njurisdiction in which the License terms are sought to be enforced\naccording to the corresponding provisions of the implementation of\nthose treaty provisions in the applicable national law. If the\nstandard suite of rights granted under applicable copyright law\nincludes additional rights not granted under this License, such\nadditional rights are deemed to be included in the License; this\nLicense is not intended to restrict the license of any rights under\napplicable law.\n\n\nCreative Commons Notice\n\nCreative Commons is not a party to this License, and makes no warranty\nwhatsoever in connection with the Work. Creative Commons will not be\nliable to You or any party on any legal theory for any damages\nwhatsoever, including without limitation any general, special,\nincidental or consequential damages arising in connection to this\nlicense. Notwithstanding the foregoing two (2) sentences, if Creative\nCommons has expressly identified itself as the Licensor hereunder, it\nshall have all rights and obligations of Licensor.\n\nExcept for the limited purpose of indicating to the public that the\nWork is licensed under the CCPL, Creative Commons does not authorize\nthe use by either party of the trademark \"Creative Commons\" or any\nrelated trademark or logo of Creative Commons without the prior\nwritten consent of Creative Commons. Any permitted use will be in\ncompliance with Creative Commons' then-current trademark usage\nguidelines, as may be published on its website or otherwise made\navailable upon request from time to time. For the avoidance of doubt,\nthis trademark restriction does not form part of this License.\n\nCreative Commons may be contacted at https://creativecommons.org/."
-    },
-    {
-      "key": "other-permissive",
-      "short_name": "Other Permissive Licenses",
-      "name": "Other Permissive Licenses",
-      "category": "Permissive",
-      "owner": "nexB",
-      "notes": "this is a catch all and ellipsis to deal with some cases when a large\nnumber of ancillary yet similar licenses may be reported as one.\n",
-      "is_builtin": true,
-      "is_generic": true,
-      "spdx_license_key": "LicenseRef-scancode-other-permissive",
-      "text": "This component contains multiple third-party subcomponents licensed\nunder permissive licenses in the style of MIT, BSD, X11, and/or Apache."
-    },
-    {
-      "key": "proprietary-license",
-      "short_name": "Proprietary License",
-      "name": "Proprietary License",
-      "category": "Commercial",
-      "owner": "Unspecified",
-      "notes": "replaces the proprietary key npm before 3.1 recommended this \"If you are using a license that hasn't been assigned an SPDX identifier, or if you are using a custom license, use the following valid SPDX expression \"LicenseRef-LICENSE\"",
-      "is_builtin": true,
-      "is_generic": true,
-      "spdx_license_key": "LicenseRef-scancode-proprietary-license",
-      "other_spdx_license_keys": [
-        "LicenseRef-LICENSE",
-        "LicenseRef-LICENSE.md"
-      ],
-      "text": "This component is normally licensed under a proprietary license agreement with\na supplier that has terms and conditions that restrict the use of the code,\nbut may not require payment to the supplier."
-    }
-  ],
-  "rule_references": [
-    {
-      "license_expression": "bsd-new",
-      "rule_identifier": "pypi_bsd_license.RULE",
-      "referenced_filenames": [],
-      "is_license_text": false,
-      "is_license_notice": false,
-      "is_license_reference": false,
-      "is_license_tag": true,
-      "is_license_intro": false,
-      "rule_length": 5,
-      "rule_relevance": 99,
-      "matched_text": "['License :: OSI Approved :: BSD License']"
-    },
-    {
-      "license_expression": "bsd-new",
-      "rule_identifier": "pypi_bsd_license.RULE",
-      "referenced_filenames": [],
-      "is_license_text": false,
-      "is_license_notice": false,
-      "is_license_reference": false,
-      "is_license_tag": true,
-      "is_license_intro": false,
-      "rule_length": 5,
-      "rule_relevance": 99,
-      "matched_text": "['License :: OSI Approved :: BSD License']"
-    },
-    {
-      "license_expression": "apache-2.0 AND cc-by-nc-nd-3.0 AND other-permissive AND proprietary-license",
-      "rule_identifier": "apache-2.0_and_cc-by-nc-nd-3.0_and_other-permissive_and_proprietary-license_1.RULE",
-      "referenced_filenames": [
-        "LICENSE.txt"
-      ],
-      "is_license_text": false,
-      "is_license_notice": true,
-      "is_license_reference": false,
-      "is_license_tag": false,
-      "is_license_intro": false,
-      "rule_length": 85,
-      "rule_relevance": 100,
-      "matched_text": "LICENSE\n[include] [django]/[dispatch]/license.txt\n[include] [django]/[utils]/[simplejson]/LICENSE.txt"
-    },
-    {
-      "license_expression": "bsd-new",
-      "rule_identifier": "pypi_bsd_license.RULE",
-      "referenced_filenames": [],
-      "is_license_text": false,
-      "is_license_notice": false,
-      "is_license_reference": false,
-      "is_license_tag": true,
-      "is_license_intro": false,
-      "rule_length": 5,
-      "rule_relevance": 99,
-      "matched_text": "['License :: OSI Approved :: BSD License']"
-    },
-    {
-      "license_expression": "bsd-new",
-      "rule_identifier": "pypi_bsd_license.RULE",
-      "referenced_filenames": [],
-      "is_license_text": false,
-      "is_license_notice": false,
-      "is_license_reference": false,
-      "is_license_tag": true,
-      "is_license_intro": false,
-      "rule_length": 5,
-      "rule_relevance": 99,
-      "matched_text": "License :: OSI Approved :: BSD License',"
-    },
-    {
-      "license_expression": "bsd-new",
-      "rule_identifier": "bsd-new_683.RULE",
-      "referenced_filenames": [],
-      "is_license_text": true,
-      "is_license_notice": false,
-      "is_license_reference": false,
-      "is_license_tag": false,
-      "is_license_intro": false,
-      "rule_length": 214,
-      "rule_relevance": 100,
-      "matched_text": "Redistribution and use in source and binary forms, with or without modification,\nare permitted provided that the following conditions are met:\n\n    1. Redistributions of source code must retain the above copyright notice, \n       this list of conditions and the following disclaimer.\n    \n    2. Redistributions in binary form must reproduce the above copyright \n       notice, this list of conditions and the following disclaimer in the\n       documentation and/or other materials provided with the distribution.\n\n    3. Neither the name of Django nor the names of its contributors may be used\n       to endorse or promote products derived from this software without\n       specific prior written permission.\n\nTHIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS \"AS IS\" AND\nANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED\nWARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE\nDISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR\nANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES\n(INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;\nLOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON\nANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT\n(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS\nSOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE."
-    },
-    {
-      "license_expression": "apache-2.0 AND cc-by-nc-nd-3.0 AND other-permissive AND proprietary-license",
-      "rule_identifier": "apache-2.0_and_cc-by-nc-nd-3.0_and_other-permissive_and_proprietary-license_1.RULE",
-      "referenced_filenames": [
-        "LICENSE.txt"
-      ],
-      "is_license_text": false,
-      "is_license_notice": true,
-      "is_license_reference": false,
-      "is_license_tag": false,
-      "is_license_intro": false,
-      "rule_length": 85,
-      "rule_relevance": 100,
-      "matched_text": "LICENSE\n[include] [django]/[dispatch]/license.txt\n[include] [django]/[utils]/[simplejson]/LICENSE.txt"
-    },
-    {
-      "license_expression": "bsd-new",
-      "rule_identifier": "pypi_bsd_license.RULE",
-      "referenced_filenames": [],
-      "is_license_text": false,
-      "is_license_notice": false,
-      "is_license_reference": false,
-      "is_license_tag": true,
-      "is_license_intro": false,
-      "rule_length": 5,
-      "rule_relevance": 99,
-      "matched_text": "['License :: OSI Approved :: BSD License']"
-    },
-    {
-      "license_expression": "bsd-new",
-      "rule_identifier": "pypi_bsd_license.RULE",
-      "referenced_filenames": [],
-      "is_license_text": false,
-      "is_license_notice": false,
-      "is_license_reference": false,
-      "is_license_tag": true,
-      "is_license_intro": false,
-      "rule_length": 5,
-      "rule_relevance": 99,
-      "matched_text": "License :: OSI Approved :: BSD License"
-    },
-    {
-      "license_expression": "bsd-new",
-      "rule_identifier": "pypi_bsd_license.RULE",
-      "referenced_filenames": [],
-      "is_license_text": false,
-      "is_license_notice": false,
-      "is_license_reference": false,
-      "is_license_tag": true,
-      "is_license_intro": false,
-      "rule_length": 5,
-      "rule_relevance": 99,
-      "matched_text": "['License :: OSI Approved :: BSD License']"
-    },
-    {
-      "license_expression": "bsd-new",
-      "rule_identifier": "pypi_bsd_license.RULE",
-      "referenced_filenames": [],
-      "is_license_text": false,
-      "is_license_notice": false,
-      "is_license_reference": false,
-      "is_license_tag": true,
-      "is_license_intro": false,
-      "rule_length": 5,
-      "rule_relevance": 99,
-      "matched_text": "License :: OSI Approved :: BSD License',"
-    }
-  ],
   "files": [
     {
       "path": "django-1.2",
@@ -543,7 +620,7 @@
       "license_detections": [],
       "license_clues": [],
       "percentage_of_license_text": 0,
-      "for_licenses": [],
+      "for_license_detections": [],
       "package_data": [],
       "for_packages": [],
       "scan_errors": []
@@ -556,7 +633,7 @@
       "license_detections": [],
       "license_clues": [],
       "percentage_of_license_text": 0,
-      "for_licenses": [],
+      "for_license_detections": [],
       "package_data": [],
       "for_packages": [
         "pkg:pypi/django?uuid=fixed-uid-done-for-testing-5642512d1758"
@@ -571,7 +648,7 @@
       "license_detections": [],
       "license_clues": [],
       "percentage_of_license_text": 0,
-      "for_licenses": [],
+      "for_license_detections": [],
       "package_data": [],
       "for_packages": [
         "pkg:pypi/django?uuid=fixed-uid-done-for-testing-5642512d1758"
@@ -599,15 +676,16 @@
               "matcher": "3-seq",
               "license_expression": "apache-2.0 AND cc-by-nc-nd-3.0 AND other-permissive AND proprietary-license",
               "rule_identifier": "apache-2.0_and_cc-by-nc-nd-3.0_and_other-permissive_and_proprietary-license_1.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_and_cc-by-nc-nd-3.0_and_other-permissive_and_proprietary-license_1.RULE"
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_and_cc-by-nc-nd-3.0_and_other-permissive_and_proprietary-license_1.RULE",
+              "matched_text": "LICENSE\n[include] [django]/[dispatch]/license.txt\n[include] [django]/[utils]/[simplejson]/LICENSE.txt"
             }
           ]
         }
       ],
       "license_clues": [],
       "percentage_of_license_text": 3.38,
-      "for_licenses": [
-        "b485fded-3ae7-7c49-8be0-c042c4a4747f"
+      "for_license_detections": [
+        "apache_2_0_and_cc_by_nc_nd_3_0_and_other_permissive_and_proprietary_license#b485fded-3ae7-7c49-8be0-c042c4a4747f"
       ],
       "package_data": [],
       "for_packages": [
@@ -623,7 +701,7 @@
       "license_detections": [],
       "license_clues": [],
       "percentage_of_license_text": 0,
-      "for_licenses": [],
+      "for_license_detections": [],
       "package_data": [],
       "for_packages": [
         "pkg:pypi/django?uuid=fixed-uid-done-for-testing-5642512d1758"
@@ -638,7 +716,7 @@
       "license_detections": [],
       "license_clues": [],
       "percentage_of_license_text": 0,
-      "for_licenses": [],
+      "for_license_detections": [],
       "package_data": [],
       "for_packages": [
         "pkg:pypi/django?uuid=fixed-uid-done-for-testing-5642512d1758"
@@ -653,7 +731,7 @@
       "license_detections": [],
       "license_clues": [],
       "percentage_of_license_text": 0,
-      "for_licenses": [],
+      "for_license_detections": [],
       "package_data": [],
       "for_packages": [],
       "scan_errors": []
@@ -666,7 +744,7 @@
       "license_detections": [],
       "license_clues": [],
       "percentage_of_license_text": 0,
-      "for_licenses": [],
+      "for_license_detections": [],
       "package_data": [],
       "for_packages": [],
       "scan_errors": []
@@ -679,7 +757,7 @@
       "license_detections": [],
       "license_clues": [],
       "percentage_of_license_text": 0,
-      "for_licenses": [],
+      "for_license_detections": [],
       "package_data": [],
       "for_packages": [],
       "scan_errors": []
@@ -692,7 +770,7 @@
       "license_detections": [],
       "license_clues": [],
       "percentage_of_license_text": 0,
-      "for_licenses": [],
+      "for_license_detections": [],
       "package_data": [],
       "for_packages": [],
       "scan_errors": []
@@ -705,7 +783,7 @@
       "license_detections": [],
       "license_clues": [],
       "percentage_of_license_text": 0,
-      "for_licenses": [],
+      "for_license_detections": [],
       "package_data": [],
       "for_packages": [],
       "scan_errors": []
@@ -731,7 +809,8 @@
               "matcher": "2-aho",
               "license_expression": "free-unknown",
               "rule_identifier": "free-unknown-package_3.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/free-unknown-package_3.RULE"
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/free-unknown-package_3.RULE",
+              "matched_text": "This file is distributed under the same license as the Django package."
             },
             {
               "score": 99.0,
@@ -742,15 +821,16 @@
               "matcher": "1-hash",
               "license_expression": "bsd-new",
               "rule_identifier": "pypi_bsd_license.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/pypi_bsd_license.RULE"
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/pypi_bsd_license.RULE",
+              "matched_text": "['License :: OSI Approved :: BSD License']"
             }
           ]
         }
       ],
       "license_clues": [],
       "percentage_of_license_text": 2.15,
-      "for_licenses": [
-        "76b09250-6936-6da3-664b-6d5d81de9c95"
+      "for_license_detections": [
+        "free_unknown#76b09250-6936-6da3-664b-6d5d81de9c95"
       ],
       "package_data": [],
       "for_packages": [
@@ -779,7 +859,8 @@
               "matcher": "2-aho",
               "license_expression": "free-unknown",
               "rule_identifier": "free-unknown-package_3.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/free-unknown-package_3.RULE"
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/free-unknown-package_3.RULE",
+              "matched_text": "This file is distributed under the same license as the Django package."
             },
             {
               "score": 99.0,
@@ -790,15 +871,16 @@
               "matcher": "1-hash",
               "license_expression": "bsd-new",
               "rule_identifier": "pypi_bsd_license.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/pypi_bsd_license.RULE"
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/pypi_bsd_license.RULE",
+              "matched_text": "['License :: OSI Approved :: BSD License']"
             }
           ]
         }
       ],
       "license_clues": [],
       "percentage_of_license_text": 5.15,
-      "for_licenses": [
-        "76b09250-6936-6da3-664b-6d5d81de9c95"
+      "for_license_detections": [
+        "free_unknown#76b09250-6936-6da3-664b-6d5d81de9c95"
       ],
       "package_data": [],
       "for_packages": [
@@ -814,7 +896,7 @@
       "license_detections": [],
       "license_clues": [],
       "percentage_of_license_text": 0,
-      "for_licenses": [],
+      "for_license_detections": [],
       "package_data": [],
       "for_packages": [],
       "scan_errors": []
@@ -827,7 +909,7 @@
       "license_detections": [],
       "license_clues": [],
       "percentage_of_license_text": 0,
-      "for_licenses": [],
+      "for_license_detections": [],
       "package_data": [],
       "for_packages": [],
       "scan_errors": []
@@ -853,7 +935,8 @@
               "matcher": "2-aho",
               "license_expression": "free-unknown",
               "rule_identifier": "free-unknown-package_2.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/free-unknown-package_2.RULE"
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/free-unknown-package_2.RULE",
+              "matched_text": "This file is distributed under the same license as the PACKAGE package."
             },
             {
               "score": 99.0,
@@ -864,15 +947,16 @@
               "matcher": "1-hash",
               "license_expression": "bsd-new",
               "rule_identifier": "pypi_bsd_license.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/pypi_bsd_license.RULE"
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/pypi_bsd_license.RULE",
+              "matched_text": "['License :: OSI Approved :: BSD License']"
             }
           ]
         }
       ],
       "license_clues": [],
       "percentage_of_license_text": 0.07,
-      "for_licenses": [
-        "2d67622f-a7b6-912c-ca85-160b760f0d8b"
+      "for_license_detections": [
+        "free_unknown#2d67622f-a7b6-912c-ca85-160b760f0d8b"
       ],
       "package_data": [],
       "for_packages": [
@@ -901,7 +985,8 @@
               "matcher": "2-aho",
               "license_expression": "free-unknown",
               "rule_identifier": "free-unknown-package_2.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/free-unknown-package_2.RULE"
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/free-unknown-package_2.RULE",
+              "matched_text": "This file is distributed under the same license as the PACKAGE package."
             },
             {
               "score": 99.0,
@@ -912,15 +997,16 @@
               "matcher": "1-hash",
               "license_expression": "bsd-new",
               "rule_identifier": "pypi_bsd_license.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/pypi_bsd_license.RULE"
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/pypi_bsd_license.RULE",
+              "matched_text": "['License :: OSI Approved :: BSD License']"
             }
           ]
         }
       ],
       "license_clues": [],
       "percentage_of_license_text": 2.49,
-      "for_licenses": [
-        "2d67622f-a7b6-912c-ca85-160b760f0d8b"
+      "for_license_detections": [
+        "free_unknown#2d67622f-a7b6-912c-ca85-160b760f0d8b"
       ],
       "package_data": [],
       "for_packages": [
@@ -949,7 +1035,8 @@
               "matcher": "2-aho",
               "license_expression": "free-unknown",
               "rule_identifier": "free-unknown-package_3.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/free-unknown-package_3.RULE"
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/free-unknown-package_3.RULE",
+              "matched_text": "This file is distributed under the same license as the Django package."
             },
             {
               "score": 99.0,
@@ -960,15 +1047,16 @@
               "matcher": "1-hash",
               "license_expression": "bsd-new",
               "rule_identifier": "pypi_bsd_license.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/pypi_bsd_license.RULE"
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/pypi_bsd_license.RULE",
+              "matched_text": "['License :: OSI Approved :: BSD License']"
             }
           ]
         }
       ],
       "license_clues": [],
       "percentage_of_license_text": 17.91,
-      "for_licenses": [
-        "76b09250-6936-6da3-664b-6d5d81de9c95"
+      "for_license_detections": [
+        "free_unknown#76b09250-6936-6da3-664b-6d5d81de9c95"
       ],
       "package_data": [],
       "for_packages": [
@@ -984,7 +1072,7 @@
       "license_detections": [],
       "license_clues": [],
       "percentage_of_license_text": 0,
-      "for_licenses": [],
+      "for_license_detections": [],
       "package_data": [
         {
           "type": "pypi",
@@ -1054,15 +1142,16 @@
               "matcher": "2-aho",
               "license_expression": "bsd-new",
               "rule_identifier": "pypi_bsd_license.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/pypi_bsd_license.RULE"
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/pypi_bsd_license.RULE",
+              "matched_text": "License :: OSI Approved :: BSD License',"
             }
           ]
         }
       ],
       "license_clues": [],
       "percentage_of_license_text": 0.99,
-      "for_licenses": [
-        "8b191dea-30ee-8738-fab1-2c6dbb5d65c2"
+      "for_license_detections": [
+        "bsd_new#8b191dea-30ee-8738-fab1-2c6dbb5d65c2"
       ],
       "package_data": [
         {
@@ -1126,7 +1215,8 @@
                   "matcher": "1-hash",
                   "license_expression": "bsd-new",
                   "rule_identifier": "pypi_bsd_license.RULE",
-                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/pypi_bsd_license.RULE"
+                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/pypi_bsd_license.RULE",
+                  "matched_text": "['License :: OSI Approved :: BSD License']"
                 }
               ]
             }
@@ -1162,7 +1252,7 @@
       "license_detections": [],
       "license_clues": [],
       "percentage_of_license_text": 0,
-      "for_licenses": [],
+      "for_license_detections": [],
       "package_data": [],
       "for_packages": [],
       "scan_errors": []
@@ -1175,7 +1265,7 @@
       "license_detections": [],
       "license_clues": [],
       "percentage_of_license_text": 0,
-      "for_licenses": [],
+      "for_license_detections": [],
       "package_data": [],
       "for_packages": [
         "pkg:pypi/django@1.3.1?uuid=fixed-uid-done-for-testing-5642512d1758"
@@ -1190,7 +1280,7 @@
       "license_detections": [],
       "license_clues": [],
       "percentage_of_license_text": 0,
-      "for_licenses": [],
+      "for_license_detections": [],
       "package_data": [],
       "for_packages": [
         "pkg:pypi/django@1.3.1?uuid=fixed-uid-done-for-testing-5642512d1758"
@@ -1218,15 +1308,16 @@
               "matcher": "2-aho",
               "license_expression": "bsd-new",
               "rule_identifier": "bsd-new_683.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_683.RULE"
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_683.RULE",
+              "matched_text": "Redistribution and use in source and binary forms, with or without modification,\nare permitted provided that the following conditions are met:\n\n    1. Redistributions of source code must retain the above copyright notice, \n       this list of conditions and the following disclaimer.\n    \n    2. Redistributions in binary form must reproduce the above copyright \n       notice, this list of conditions and the following disclaimer in the\n       documentation and/or other materials provided with the distribution.\n\n    3. Neither the name of Django nor the names of its contributors may be used\n       to endorse or promote products derived from this software without\n       specific prior written permission.\n\nTHIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS \"AS IS\" AND\nANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED\nWARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE\nDISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR\nANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES\n(INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;\nLOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON\nANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT\n(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS\nSOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE."
             }
           ]
         }
       ],
       "license_clues": [],
       "percentage_of_license_text": 95.11,
-      "for_licenses": [
-        "0aac815c-f1e3-cc4b-b498-7a01e6cac393"
+      "for_license_detections": [
+        "bsd_new#0aac815c-f1e3-cc4b-b498-7a01e6cac393"
       ],
       "package_data": [],
       "for_packages": [
@@ -1255,15 +1346,16 @@
               "matcher": "3-seq",
               "license_expression": "apache-2.0 AND cc-by-nc-nd-3.0 AND other-permissive AND proprietary-license",
               "rule_identifier": "apache-2.0_and_cc-by-nc-nd-3.0_and_other-permissive_and_proprietary-license_1.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_and_cc-by-nc-nd-3.0_and_other-permissive_and_proprietary-license_1.RULE"
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_and_cc-by-nc-nd-3.0_and_other-permissive_and_proprietary-license_1.RULE",
+              "matched_text": "LICENSE\n[include] [django]/[dispatch]/license.txt\n[include] [django]/[utils]/[simplejson]/LICENSE.txt"
             }
           ]
         }
       ],
       "license_clues": [],
       "percentage_of_license_text": 2.73,
-      "for_licenses": [
-        "b485fded-3ae7-7c49-8be0-c042c4a4747f"
+      "for_license_detections": [
+        "apache_2_0_and_cc_by_nc_nd_3_0_and_other_permissive_and_proprietary_license#b485fded-3ae7-7c49-8be0-c042c4a4747f"
       ],
       "package_data": [],
       "for_packages": [
@@ -1279,7 +1371,7 @@
       "license_detections": [],
       "license_clues": [],
       "percentage_of_license_text": 0,
-      "for_licenses": [],
+      "for_license_detections": [],
       "package_data": [],
       "for_packages": [
         "pkg:pypi/django@1.3.1?uuid=fixed-uid-done-for-testing-5642512d1758"
@@ -1307,15 +1399,16 @@
               "matcher": "2-aho",
               "license_expression": "bsd-new",
               "rule_identifier": "pypi_bsd_license.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/pypi_bsd_license.RULE"
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/pypi_bsd_license.RULE",
+              "matched_text": "License :: OSI Approved :: BSD License"
             }
           ]
         }
       ],
       "license_clues": [],
       "percentage_of_license_text": 3.38,
-      "for_licenses": [
-        "8b191dea-30ee-8738-fab1-2c6dbb5d65c2"
+      "for_license_detections": [
+        "bsd_new#8b191dea-30ee-8738-fab1-2c6dbb5d65c2"
       ],
       "package_data": [
         {
@@ -1383,7 +1476,8 @@
                   "matcher": "1-hash",
                   "license_expression": "bsd-new",
                   "rule_identifier": "pypi_bsd_license.RULE",
-                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/pypi_bsd_license.RULE"
+                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/pypi_bsd_license.RULE",
+                  "matched_text": "['License :: OSI Approved :: BSD License']"
                 }
               ]
             }
@@ -1419,7 +1513,7 @@
       "license_detections": [],
       "license_clues": [],
       "percentage_of_license_text": 0,
-      "for_licenses": [],
+      "for_license_detections": [],
       "package_data": [],
       "for_packages": [
         "pkg:pypi/django@1.3.1?uuid=fixed-uid-done-for-testing-5642512d1758"
@@ -1434,7 +1528,7 @@
       "license_detections": [],
       "license_clues": [],
       "percentage_of_license_text": 0,
-      "for_licenses": [],
+      "for_license_detections": [],
       "package_data": [],
       "for_packages": [],
       "scan_errors": []
@@ -1447,7 +1541,7 @@
       "license_detections": [],
       "license_clues": [],
       "percentage_of_license_text": 0,
-      "for_licenses": [],
+      "for_license_detections": [],
       "package_data": [],
       "for_packages": [],
       "scan_errors": []
@@ -1460,7 +1554,7 @@
       "license_detections": [],
       "license_clues": [],
       "percentage_of_license_text": 0,
-      "for_licenses": [],
+      "for_license_detections": [],
       "package_data": [],
       "for_packages": [],
       "scan_errors": []
@@ -1473,7 +1567,7 @@
       "license_detections": [],
       "license_clues": [],
       "percentage_of_license_text": 0,
-      "for_licenses": [],
+      "for_license_detections": [],
       "package_data": [],
       "for_packages": [],
       "scan_errors": []
@@ -1486,7 +1580,7 @@
       "license_detections": [],
       "license_clues": [],
       "percentage_of_license_text": 0,
-      "for_licenses": [],
+      "for_license_detections": [],
       "package_data": [],
       "for_packages": [],
       "scan_errors": []
@@ -1499,7 +1593,7 @@
       "license_detections": [],
       "license_clues": [],
       "percentage_of_license_text": 0,
-      "for_licenses": [],
+      "for_license_detections": [],
       "package_data": [],
       "for_packages": [],
       "scan_errors": []
@@ -1525,7 +1619,8 @@
               "matcher": "2-aho",
               "license_expression": "free-unknown",
               "rule_identifier": "free-unknown-package_3.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/free-unknown-package_3.RULE"
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/free-unknown-package_3.RULE",
+              "matched_text": "This file is distributed under the same license as the Django package."
             },
             {
               "score": 99.0,
@@ -1536,15 +1631,16 @@
               "matcher": "1-hash",
               "license_expression": "bsd-new",
               "rule_identifier": "pypi_bsd_license.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/pypi_bsd_license.RULE"
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/pypi_bsd_license.RULE",
+              "matched_text": "['License :: OSI Approved :: BSD License']"
             }
           ]
         }
       ],
       "license_clues": [],
       "percentage_of_license_text": 16.9,
-      "for_licenses": [
-        "76b09250-6936-6da3-664b-6d5d81de9c95"
+      "for_license_detections": [
+        "free_unknown#76b09250-6936-6da3-664b-6d5d81de9c95"
       ],
       "package_data": [],
       "for_packages": [
@@ -1560,7 +1656,7 @@
       "license_detections": [],
       "license_clues": [],
       "percentage_of_license_text": 0,
-      "for_licenses": [],
+      "for_license_detections": [],
       "package_data": [],
       "for_packages": [],
       "scan_errors": []
@@ -1573,7 +1669,7 @@
       "license_detections": [],
       "license_clues": [],
       "percentage_of_license_text": 0,
-      "for_licenses": [],
+      "for_license_detections": [],
       "package_data": [],
       "for_packages": [],
       "scan_errors": []
@@ -1599,7 +1695,8 @@
               "matcher": "2-aho",
               "license_expression": "free-unknown",
               "rule_identifier": "free-unknown-package_3.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/free-unknown-package_3.RULE"
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/free-unknown-package_3.RULE",
+              "matched_text": "This file is distributed under the same license as the Django package."
             },
             {
               "score": 99.0,
@@ -1610,15 +1707,16 @@
               "matcher": "1-hash",
               "license_expression": "bsd-new",
               "rule_identifier": "pypi_bsd_license.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/pypi_bsd_license.RULE"
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/pypi_bsd_license.RULE",
+              "matched_text": "['License :: OSI Approved :: BSD License']"
             }
           ]
         }
       ],
       "license_clues": [],
       "percentage_of_license_text": 12.12,
-      "for_licenses": [
-        "76b09250-6936-6da3-664b-6d5d81de9c95"
+      "for_license_detections": [
+        "free_unknown#76b09250-6936-6da3-664b-6d5d81de9c95"
       ],
       "package_data": [],
       "for_packages": [
@@ -1634,7 +1732,7 @@
       "license_detections": [],
       "license_clues": [],
       "percentage_of_license_text": 0,
-      "for_licenses": [],
+      "for_license_detections": [],
       "package_data": [
         {
           "type": "pypi",
@@ -1677,7 +1775,8 @@
                   "matcher": "2-aho",
                   "license_expression": "bsd-new",
                   "rule_identifier": "bsd-new_683.RULE",
-                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_683.RULE"
+                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_683.RULE",
+                  "matched_text": "Redistribution and use in source and binary forms, with or without modification,\nare permitted provided that the following conditions are met:\n\n    1. Redistributions of source code must retain the above copyright notice, \n       this list of conditions and the following disclaimer.\n    \n    2. Redistributions in binary form must reproduce the above copyright \n       notice, this list of conditions and the following disclaimer in the\n       documentation and/or other materials provided with the distribution.\n\n    3. Neither the name of Django nor the names of its contributors may be used\n       to endorse or promote products derived from this software without\n       specific prior written permission.\n\nTHIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS \"AS IS\" AND\nANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED\nWARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE\nDISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR\nANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES\n(INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;\nLOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON\nANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT\n(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS\nSOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE."
                 }
               ]
             }
@@ -1724,15 +1823,16 @@
               "matcher": "2-aho",
               "license_expression": "bsd-new",
               "rule_identifier": "pypi_bsd_license.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/pypi_bsd_license.RULE"
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/pypi_bsd_license.RULE",
+              "matched_text": "License :: OSI Approved :: BSD License',"
             }
           ]
         }
       ],
       "license_clues": [],
       "percentage_of_license_text": 0.95,
-      "for_licenses": [
-        "8b191dea-30ee-8738-fab1-2c6dbb5d65c2"
+      "for_license_detections": [
+        "bsd_new#8b191dea-30ee-8738-fab1-2c6dbb5d65c2"
       ],
       "package_data": [
         {
@@ -1800,7 +1900,8 @@
                   "matcher": "1-hash",
                   "license_expression": "bsd-new",
                   "rule_identifier": "pypi_bsd_license.RULE",
-                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/pypi_bsd_license.RULE"
+                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/pypi_bsd_license.RULE",
+                  "matched_text": "['License :: OSI Approved :: BSD License']"
                 }
               ]
             }

@@ -212,8 +212,6 @@
       "purl": "pkg:about/appdirs@1.4.3"
     }
   ],
-  "license_references": [],
-  "rule_references": [],
   "files": [
     {
       "path": "aboutfiles",

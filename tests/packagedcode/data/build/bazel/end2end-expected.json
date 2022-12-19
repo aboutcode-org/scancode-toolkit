@@ -92,8 +92,6 @@
       "purl": "pkg:bazel/subdir2"
     }
   ],
-  "license_references": [],
-  "rule_references": [],
   "files": [
     {
       "path": "end2end",

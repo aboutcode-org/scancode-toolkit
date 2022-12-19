@@ -457,8 +457,6 @@
     }
   ],
   "consolidated_packages": [],
-  "license_references": null,
-  "rule_references": null,
   "files": [
     {
       "path": "zlib-1.2.11",

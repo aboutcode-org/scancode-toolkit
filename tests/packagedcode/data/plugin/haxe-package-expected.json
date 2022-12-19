@@ -106,8 +106,6 @@
       "purl": "pkg:haxe/hxsocketio@0.1.0"
     }
   ],
-  "license_references": [],
-  "rule_references": [],
   "files": [
     {
       "path": "haxelib.json",
