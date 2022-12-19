@@ -25,6 +25,7 @@ from plugincode.scan import ScanPlugin
 from licensedcode.cache import build_spdx_license_expression
 from licensedcode.cache import get_cache
 from licensedcode.detection import DetectionRule
+from licensedcode.licenses_reference import extract_license_rules_reference_data
 from packagedcode import get_package_handler
 from packagedcode.licensing import add_referenced_license_matches_for_package
 from packagedcode.licensing import add_referenced_license_detection_from_package
@@ -220,6 +221,9 @@ def add_license_from_file(resource, codebase, no_licenses):
 
     if no_licenses:
         license_detections_file = get_license_detection_mappings(location=resource.location)
+        _references = extract_license_rules_reference_data(
+            license_detections=license_detections_file,
+        )
     else:
         license_detections_file = resource.license_detections
 
@@ -249,7 +253,7 @@ def add_license_from_file(resource, codebase, no_licenses):
             license_expression = get_license_expression_from_detection_mappings(
                 detections=license_detections_file,
                 valid_expression=True
-            ) 
+            )
             pkg["declared_license_expression"] = license_expression
             pkg["declared_license_expression_spdx"] = str(build_spdx_license_expression(
                 license_expression=license_expression,

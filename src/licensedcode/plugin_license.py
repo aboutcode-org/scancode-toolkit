@@ -24,7 +24,6 @@ from licensedcode.detection import find_referenced_resource
 from licensedcode.detection import get_detected_license_expression
 from licensedcode.detection import get_matches_from_detection_mappings
 from licensedcode.detection import get_referenced_filenames
-from licensedcode.detection import SCANCODE_LICENSEDB_URL
 from licensedcode.detection import LicenseDetection
 from licensedcode.detection import group_matches
 from licensedcode.detection import process_detections
@@ -32,6 +31,8 @@ from licensedcode.detection import DetectionCategory
 from licensedcode.detection import detections_from_license_detection_mappings
 from licensedcode.detection import matches_from_license_match_mappings
 from licensedcode.detection import UniqueDetection
+from licensedcode.detection import LicenseDetectionFromResult
+from licensedcode.licenses_reference import populate_license_references
 from packagedcode.utils import combine_expressions
 from scancode.api import SCANCODE_LICENSEDB_URL
 
@@ -64,11 +65,13 @@ class LicenseScanner(ScanPlugin):
         ('license_detections', attr.ib(default=attr.Factory(list))),
         ('license_clues', attr.ib(default=attr.Factory(list))),
         ('percentage_of_license_text', attr.ib(default=0)),
-        ('for_licenses', attr.ib(default=attr.Factory(list))),
+        ('for_license_detections', attr.ib(default=attr.Factory(list))),
     ])
 
     codebase_attributes = dict(
-        licenses=attr.ib(default=attr.Factory(list)),
+        license_detections=attr.ib(default=attr.Factory(list)),
+        license_references=attr.ib(default=attr.Factory(list)),
+        license_rule_references=attr.ib(default=attr.Factory(list))
     )
 
     sort_order = 2
@@ -209,28 +212,30 @@ class LicenseScanner(ScanPlugin):
                     f'after : {license_expressions_after}'
                 )
 
-        populate_for_licenses_in_resources(
+        populate_for_license_detections_in_resources(
             codebase=codebase,
             detections=unique_license_detections,
         )
-        codebase.attributes.licenses.extend([
+        codebase.attributes.license_detections.extend([
             unique_detection.to_dict()
             for unique_detection in unique_license_detections
         ])
 
+        populate_license_references(codebase)
 
-def populate_for_licenses_in_resources(codebase, detections):
+
+def populate_for_license_detections_in_resources(codebase, detections):
 
     for detection in detections:
         if TRACE:
             logger_debug(
-                f'populate_for_licenses_in_resources:',
+                f'populate_for_license_detections_in_resources:',
                 f'for detection: {detection.license_expression}\n',
                 f'file paths: {detection.files}',
             )
         for file_region in detection.files:
             resource = codebase.get_resource(path=file_region.path)
-            resource.for_licenses.append(detection.identifier)
+            resource.for_license_detections.append(detection.identifier)
 
 
 def collect_license_detections(codebase):
@@ -243,7 +248,7 @@ def collect_license_detections(codebase):
 
     if hasattr(codebase.root, 'license_detections'):
         has_licenses = True
-        
+
     all_license_detections = []
 
     for resource in codebase.walk():
@@ -346,16 +351,22 @@ def add_referenced_license_matches_for_detections(resource, codebase):
     if not resource.is_file:
         return
 
-    license_detections = resource.license_detections
-    if not license_detections:
+    license_detection_mappings = resource.license_detections
+    if not license_detection_mappings:
         return
 
     modified = False
 
-    for detection in license_detections:
+    for license_detection_mapping in license_detection_mappings:
+
+        license_detection_object = LicenseDetectionFromResult.from_license_detection_mapping(
+            license_detection_mapping=license_detection_mapping,
+            file_path=resource.path,
+        )
         detection_modified = False
-        matches = detection["matches"]
-        referenced_filenames = get_referenced_filenames(matches)
+        license_match_mappings = license_detection_mapping["matches"]
+        referenced_filenames = get_referenced_filenames(license_detection_object.matches)
+
         if not referenced_filenames:
             continue 
         
@@ -369,7 +380,7 @@ def add_referenced_license_matches_for_detections(resource, codebase):
             if referenced_resource and referenced_resource.license_detections:
                 modified = True
                 detection_modified = True
-                matches.extend(
+                license_match_mappings.extend(
                     get_matches_from_detection_mappings(
                         license_detections=referenced_resource.license_detections
                     )
@@ -379,12 +390,12 @@ def add_referenced_license_matches_for_detections(resource, codebase):
             continue
 
         detection_log, license_expression = get_detected_license_expression(
-            matches=matches,
+            license_match_mappings=license_match_mappings,
             analysis=DetectionCategory.UNKNOWN_FILE_REFERENCE_LOCAL.value,
             post_scan=True,
         )
-        detection["license_expression"] = str(license_expression)
-        detection["detection_log"] = detection_log
+        license_detection_mapping["license_expression"] = str(license_expression)
+        license_detection_mapping["detection_log"] = detection_log
 
     if modified:
         license_expressions = [

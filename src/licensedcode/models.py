@@ -45,6 +45,8 @@ from licensedcode.tokenize import index_tokenizer_with_stopwords
 from licensedcode.tokenize import key_phrase_tokenizer
 from licensedcode.tokenize import KEY_PHRASE_OPEN
 from licensedcode.tokenize import KEY_PHRASE_CLOSE
+from scancode.api import SCANCODE_LICENSE_RULE_URL
+from scancode.api import SCANCODE_RULE_URL
 
 """
 Reference License and license Rule structures persisted as a combo of a YAML
@@ -1769,6 +1771,31 @@ class BasicRule:
     def get_min_high_matched_length(self, unique=False):
         return (self.min_high_matched_length_unique if unique
                 else self.min_high_matched_length)
+
+    def get_reference_data(self, matcher=None):
+
+        data = {}
+
+        data['license_expression'] = self.license_expression
+        data['rule_identifier'] = self.identifier
+        if matcher:
+            if matcher == "1-spdx-id":
+                data['rule_url'] = None
+            elif self.is_from_license:
+                data['rule_url'] = SCANCODE_LICENSE_RULE_URL.format(self.identifier)
+            else:
+                data['rule_url'] = SCANCODE_RULE_URL.format(self.identifier)
+
+        data['referenced_filenames'] = self.referenced_filenames
+        data['is_license_text'] = self.is_license_text
+        data['is_license_notice'] = self.is_license_notice
+        data['is_license_reference'] = self.is_license_reference
+        data['is_license_tag'] = self.is_license_tag
+        data['is_license_intro'] = self.is_license_intro
+        data['rule_length'] = self.length
+        data['rule_relevance'] = self.relevance
+
+        return data
 
     def to_dict(self, include_text=False):
         """
