@@ -20,52 +20,41 @@ test_env = FileDrivenTesting()
 test_env.test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
 
 
-def test_license_scans_without_no_reference():
-    test_dir = test_env.get_test_loc('plugin_licenses_reference/scan', copy=True)
-    result_file = test_env.get_temp_file('json')
-    args = ['--license', '--package', test_dir, '--json-pp', result_file, '--verbose']
-    run_scan_click(args)
-    check_json_scan(
-        test_env.get_test_loc('plugin_licenses_reference/scan-without-reference.expected.json'),
-        result_file, remove_file_date=True, remove_uuid=True, regen=REGEN_TEST_FIXTURES,
-    )
-
-
-def test_no_licenses_reference_works():
-    test_dir = test_env.get_test_loc('plugin_licenses_reference/scan', copy=True)
+def test_licenses_reference_works():
+    test_dir = test_env.get_test_loc('licenses_reference_reporting/scan', copy=True)
     result_file = test_env.get_temp_file('json')
     args = [
-        '--license', '--package', '--no-licenses-reference',
+        '--license', '--package',
         test_dir, '--json-pp', result_file, '--verbose'
     ]
     run_scan_click(args)
     check_json_scan(
-        test_env.get_test_loc('plugin_licenses_reference/scan-with-reference.expected.json'),
+        test_env.get_test_loc('licenses_reference_reporting/scan-with-reference.expected.json'),
         result_file, remove_file_date=True, remove_uuid=True, regen=REGEN_TEST_FIXTURES,
     )
 
-def test_no_licenses_reference_works_with_matched_text():
-    test_dir = test_env.get_test_loc('plugin_licenses_reference/scan', copy=True)
+def test_licenses_reference_works_with_matched_text():
+    test_dir = test_env.get_test_loc('licenses_reference_reporting/scan', copy=True)
     result_file = test_env.get_temp_file('json')
     args = [
-        '--license', '--package', '--no-licenses-reference',  '--license-text',
+        '--license', '--package',  '--license-text',
         test_dir, '--json-pp', result_file, '--verbose'
     ]
     run_scan_click(args)
     check_json_scan(
-        test_env.get_test_loc('plugin_licenses_reference/scan-matched-text-with-reference.expected.json'),
+        test_env.get_test_loc('licenses_reference_reporting/scan-matched-text-with-reference.expected.json'),
         result_file, remove_file_date=True, remove_uuid=True, regen=REGEN_TEST_FIXTURES,
     )
 
 def test_licenses_reference_works_with_license_clues():
-    test_dir = test_env.get_test_loc('plugin_licenses_reference/python.LICENSE', copy=True)
+    test_dir = test_env.get_test_loc('licenses_reference_reporting/python.LICENSE', copy=True)
     result_file = test_env.get_temp_file('json')
     args = [
-        '--license', '--no-licenses-reference',  '--license-text',
+        '--license',  '--license-text',
         test_dir, '--json-pp', result_file, '--verbose'
     ]
     run_scan_click(args)
     check_json_scan(
-        test_env.get_test_loc('plugin_licenses_reference/license-reference-works-with-clues.expected.json'),
+        test_env.get_test_loc('licenses_reference_reporting/license-reference-works-with-clues.expected.json'),
         result_file, remove_file_date=True, remove_uuid=True, regen=REGEN_TEST_FIXTURES,
     )

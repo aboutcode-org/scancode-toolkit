@@ -31,7 +31,7 @@ from commoncode.fileutils import parent_directory
 from commoncode.text import python_safe_name
 from formattedcode import FileOptionType
 from licensedcode.detection import get_matches_from_detection_mappings
-from licensedcode.plugin_licenses_reference import get_matched_text_from_reference_data
+from licensedcode.licenses_reference import get_matched_text_from_reference_data
 from plugincode.output import output_impl
 from plugincode.output import OutputPlugin
 import scancode_config

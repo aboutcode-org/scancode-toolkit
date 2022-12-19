@@ -17,7 +17,7 @@ from formattedcode import FileOptionType
 from plugincode.output import output_impl
 from plugincode.output import OutputPlugin
 from licensedcode.detection import get_matches_from_detection_mappings
-from licensedcode.plugin_licenses_reference import get_matched_text_from_reference_data
+from licensedcode.licenses_reference import get_matched_text_from_reference_data
 from scancode import notice
 
 """
