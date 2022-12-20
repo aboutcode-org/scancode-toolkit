@@ -43,6 +43,7 @@
     {
       "rule_identifier": "blessing.LICENSE",
       "license_expression": "blessing",
+      "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
       "rule_relevance": 100,
       "rule_length": 42,
       "is_license_text": true,
