@@ -1,0 +1,1388 @@
+{
+  "license_detections": [
+    {
+      "identifier": "python-f9a5ba7d-9d66-5878-a0bd-1afe42fe0bd9",
+      "license_expression": "python",
+      "count": 1,
+      "detection_log": [
+        "not-combined"
+      ],
+      "matches": [
+        {
+          "score": 100.0,
+          "start_line": 23,
+          "end_line": 26,
+          "matched_length": 35,
+          "match_coverage": 100.0,
+          "matcher": "2-aho",
+          "license_expression": "python",
+          "rule_identifier": "python_not_not-a-license_269.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/python_not_not-a-license_269.RULE"
+        }
+      ]
+    },
+    {
+      "identifier": "other_copyleft_and_gpl_1_0_plus-a9ef94dc-a60e-21b6-82b8-77454e7751c0",
+      "license_expression": "other-copyleft AND gpl-1.0-plus",
+      "count": 1,
+      "detection_log": [
+        "not-combined"
+      ],
+      "matches": [
+        {
+          "score": 80.0,
+          "start_line": 62,
+          "end_line": 62,
+          "matched_length": 2,
+          "match_coverage": 100.0,
+          "matcher": "2-aho",
+          "license_expression": "other-copyleft",
+          "rule_identifier": "other-copyleft_24.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/other-copyleft_24.RULE"
+        },
+        {
+          "score": 100.0,
+          "start_line": 62,
+          "end_line": 63,
+          "matched_length": 3,
+          "match_coverage": 100.0,
+          "matcher": "2-aho",
+          "license_expression": "gpl-1.0-plus",
+          "rule_identifier": "gpl-1.0-plus_200.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-1.0-plus_200.RULE"
+        },
+        {
+          "score": 85.0,
+          "start_line": 63,
+          "end_line": 63,
+          "matched_length": 2,
+          "match_coverage": 100.0,
+          "matcher": "2-aho",
+          "license_expression": "gpl-1.0-plus",
+          "rule_identifier": "gpl-1.0-plus_351.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-1.0-plus_351.RULE"
+        },
+        {
+          "score": 85.0,
+          "start_line": 64,
+          "end_line": 65,
+          "matched_length": 2,
+          "match_coverage": 100.0,
+          "matcher": "2-aho",
+          "license_expression": "gpl-1.0-plus",
+          "rule_identifier": "gpl-1.0-plus_351.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-1.0-plus_351.RULE"
+        },
+        {
+          "score": 80.0,
+          "start_line": 65,
+          "end_line": 65,
+          "matched_length": 2,
+          "match_coverage": 100.0,
+          "matcher": "2-aho",
+          "license_expression": "other-copyleft",
+          "rule_identifier": "other-copyleft_24.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/other-copyleft_24.RULE"
+        },
+        {
+          "score": 100.0,
+          "start_line": 66,
+          "end_line": 66,
+          "matched_length": 4,
+          "match_coverage": 100.0,
+          "matcher": "2-aho",
+          "license_expression": "gpl-1.0-plus",
+          "rule_identifier": "gpl_194.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl_194.RULE"
+        },
+        {
+          "score": 80.0,
+          "start_line": 68,
+          "end_line": 68,
+          "matched_length": 2,
+          "match_coverage": 100.0,
+          "matcher": "2-aho",
+          "license_expression": "other-copyleft",
+          "rule_identifier": "other-copyleft_24.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/other-copyleft_24.RULE"
+        },
+        {
+          "score": 85.0,
+          "start_line": 71,
+          "end_line": 71,
+          "matched_length": 2,
+          "match_coverage": 100.0,
+          "matcher": "2-aho",
+          "license_expression": "gpl-1.0-plus",
+          "rule_identifier": "gpl-1.0-plus_351.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-1.0-plus_351.RULE"
+        }
+      ]
+    },
+    {
+      "identifier": "python_and_python_cwi-3136274a-0a35-5bea-9531-6e328486ea3b",
+      "license_expression": "python AND python-cwi",
+      "count": 1,
+      "detection_log": [
+        "not-combined"
+      ],
+      "matches": [
+        {
+          "score": 90.52,
+          "start_line": 77,
+          "end_line": 255,
+          "matched_length": 1385,
+          "match_coverage": 90.52,
+          "matcher": "3-seq",
+          "license_expression": "python",
+          "rule_identifier": "python_2019.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/python_2019.RULE"
+        },
+        {
+          "score": 100.0,
+          "start_line": 257,
+          "end_line": 272,
+          "matched_length": 145,
+          "match_coverage": 100.0,
+          "matcher": "2-aho",
+          "license_expression": "python-cwi",
+          "rule_identifier": "python-cwi.LICENSE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/python-cwi.LICENSE"
+        }
+      ]
+    },
+    {
+      "identifier": "bzip2_libbzip_2010-4854df4f-b9f8-1a96-92bd-44873ee7c7c5",
+      "license_expression": "bzip2-libbzip-2010",
+      "count": 1,
+      "detection_log": [
+        "unknown-intro-followed-by-match"
+      ],
+      "matches": [
+        {
+          "score": 100.0,
+          "start_line": 274,
+          "end_line": 274,
+          "matched_length": 6,
+          "match_coverage": 100.0,
+          "matcher": "2-aho",
+          "license_expression": "unknown-license-reference",
+          "rule_identifier": "license-intro_50.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/license-intro_50.RULE"
+        },
+        {
+          "score": 100.0,
+          "start_line": 281,
+          "end_line": 310,
+          "matched_length": 233,
+          "match_coverage": 100.0,
+          "matcher": "2-aho",
+          "license_expression": "bzip2-libbzip-2010",
+          "rule_identifier": "bzip2-libbzip-2010.LICENSE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bzip2-libbzip-2010.LICENSE"
+        }
+      ]
+    },
+    {
+      "identifier": "sleepycat-82c2d26c-feb1-2257-3b27-0e92e4721958",
+      "license_expression": "sleepycat",
+      "count": 1,
+      "detection_log": [
+        "unknown-intro-followed-by-match"
+      ],
+      "matches": [
+        {
+          "score": 100.0,
+          "start_line": 317,
+          "end_line": 317,
+          "matched_length": 6,
+          "match_coverage": 100.0,
+          "matcher": "2-aho",
+          "license_expression": "unknown-license-reference",
+          "rule_identifier": "license-intro_50.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/license-intro_50.RULE"
+        },
+        {
+          "score": 100.0,
+          "start_line": 334,
+          "end_line": 351,
+          "matched_length": 174,
+          "match_coverage": 100.0,
+          "matcher": "2-aho",
+          "license_expression": "sleepycat",
+          "rule_identifier": "sleepycat_5.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/sleepycat_5.RULE"
+        }
+      ]
+    },
+    {
+      "identifier": "bsd_simplified-d90f717a-d127-c345-d8a9-dc828c2be7e6",
+      "license_expression": "bsd-simplified",
+      "count": 1,
+      "detection_log": [
+        "license-clues",
+        "not-license-clues-as-more-detections-present"
+      ],
+      "matches": [
+        {
+          "score": 33.71,
+          "start_line": 358,
+          "end_line": 363,
+          "matched_length": 59,
+          "match_coverage": 33.71,
+          "matcher": "3-seq",
+          "license_expression": "bsd-simplified",
+          "rule_identifier": "bsd-simplified_242.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-simplified_242.RULE"
+        }
+      ]
+    },
+    {
+      "identifier": "bsd_new-e65e2324-d4b0-5ad8-3314-a798683d13e3",
+      "license_expression": "bsd-new",
+      "count": 1,
+      "detection_log": [
+        "not-combined"
+      ],
+      "matches": [
+        {
+          "score": 100.0,
+          "start_line": 369,
+          "end_line": 391,
+          "matched_length": 213,
+          "match_coverage": 100.0,
+          "matcher": "2-aho",
+          "license_expression": "bsd-new",
+          "rule_identifier": "bsd-new_19.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_19.RULE"
+        }
+      ]
+    },
+    {
+      "identifier": "bsd_new-4c57e726-e851-a66a-1dbe-d6106bcb4751",
+      "license_expression": "bsd-new",
+      "count": 1,
+      "detection_log": [
+        "not-combined"
+      ],
+      "matches": [
+        {
+          "score": 100.0,
+          "start_line": 397,
+          "end_line": 419,
+          "matched_length": 213,
+          "match_coverage": 100.0,
+          "matcher": "2-aho",
+          "license_expression": "bsd-new",
+          "rule_identifier": "bsd-new_943.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_943.RULE"
+        }
+      ]
+    },
+    {
+      "identifier": "openssl_ssleay-7a0dc499-dddd-4bf1-2d0d-9a84c910b0bc",
+      "license_expression": "openssl-ssleay",
+      "count": 1,
+      "detection_log": [
+        "unknown-intro-followed-by-match"
+      ],
+      "matches": [
+        {
+          "score": 100.0,
+          "start_line": 422,
+          "end_line": 422,
+          "matched_length": 6,
+          "match_coverage": 100.0,
+          "matcher": "2-aho",
+          "license_expression": "unknown-license-reference",
+          "rule_identifier": "license-intro_50.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/license-intro_50.RULE"
+        },
+        {
+          "score": 100.0,
+          "start_line": 428,
+          "end_line": 432,
+          "matched_length": 56,
+          "match_coverage": 100.0,
+          "matcher": "2-aho",
+          "license_expression": "openssl-ssleay",
+          "rule_identifier": "openssl-ssleay_43.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/openssl-ssleay_43.RULE"
+        },
+        {
+          "score": 100.0,
+          "start_line": 434,
+          "end_line": 434,
+          "matched_length": 2,
+          "match_coverage": 100.0,
+          "matcher": "2-aho",
+          "license_expression": "openssl-ssleay",
+          "rule_identifier": "openssl-ssleay_2.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/openssl-ssleay_2.RULE"
+        }
+      ]
+    },
+    {
+      "identifier": "openssl-dacfdecf-b752-23a6-37ba-f98e7d93554a",
+      "license_expression": "openssl",
+      "count": 1,
+      "detection_log": [
+        "not-combined"
+      ],
+      "matches": [
+        {
+          "score": 100.0,
+          "start_line": 440,
+          "end_line": 487,
+          "matched_length": 332,
+          "match_coverage": 100.0,
+          "matcher": "2-aho",
+          "license_expression": "openssl",
+          "rule_identifier": "openssl_1.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/openssl_1.RULE"
+        }
+      ]
+    },
+    {
+      "identifier": "ssleay_windows-50e05b6f-8602-75e7-7568-c3b4e72fec38",
+      "license_expression": "ssleay-windows",
+      "count": 1,
+      "detection_log": [
+        "not-combined"
+      ],
+      "matches": [
+        {
+          "score": 100.0,
+          "start_line": 497,
+          "end_line": 548,
+          "matched_length": 453,
+          "match_coverage": 100.0,
+          "matcher": "2-aho",
+          "license_expression": "ssleay-windows",
+          "rule_identifier": "ssleay-windows.LICENSE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/ssleay-windows.LICENSE"
+        }
+      ]
+    },
+    {
+      "identifier": "tcl-d352cc42-40ca-8f87-931e-725ee0a85c3e",
+      "license_expression": "tcl",
+      "count": 1,
+      "detection_log": [
+        "unknown-intro-followed-by-match"
+      ],
+      "matches": [
+        {
+          "score": 100.0,
+          "start_line": 552,
+          "end_line": 552,
+          "matched_length": 6,
+          "match_coverage": 100.0,
+          "matcher": "2-aho",
+          "license_expression": "unknown-license-reference",
+          "rule_identifier": "license-intro_50.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/license-intro_50.RULE"
+        },
+        {
+          "score": 100.0,
+          "start_line": 554,
+          "end_line": 593,
+          "matched_length": 345,
+          "match_coverage": 100.0,
+          "matcher": "2-aho",
+          "license_expression": "tcl",
+          "rule_identifier": "tcl.LICENSE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/tcl.LICENSE"
+        }
+      ]
+    },
+    {
+      "identifier": "tcl-e49b63d5-028c-f39c-035e-68c9e6c60e34",
+      "license_expression": "tcl",
+      "count": 1,
+      "detection_log": [
+        "unknown-intro-followed-by-match"
+      ],
+      "matches": [
+        {
+          "score": 100.0,
+          "start_line": 595,
+          "end_line": 595,
+          "matched_length": 6,
+          "match_coverage": 100.0,
+          "matcher": "2-aho",
+          "license_expression": "unknown-license-reference",
+          "rule_identifier": "license-intro_50.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/license-intro_50.RULE"
+        },
+        {
+          "score": 100.0,
+          "start_line": 597,
+          "end_line": 635,
+          "matched_length": 341,
+          "match_coverage": 100.0,
+          "matcher": "2-aho",
+          "license_expression": "tcl",
+          "rule_identifier": "tcl_14.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/tcl_14.RULE"
+        }
+      ]
+    }
+  ],
+  "license_references": [
+    {
+      "key": "bsd-new",
+      "short_name": "BSD-3-Clause",
+      "name": "BSD-3-Clause",
+      "category": "Permissive",
+      "owner": "Regents of the University of California",
+      "homepage_url": "http://www.opensource.org/licenses/BSD-3-Clause",
+      "notes": "Per SPDX.org, this license is OSI certified.",
+      "is_builtin": true,
+      "spdx_license_key": "BSD-3-Clause",
+      "other_spdx_license_keys": [
+        "LicenseRef-scancode-libzip"
+      ],
+      "osi_license_key": "BSD-3-Clause",
+      "text_urls": [
+        "http://www.opensource.org/licenses/BSD-3-Clause"
+      ],
+      "osi_url": "http://www.opensource.org/licenses/BSD-3-Clause",
+      "other_urls": [
+        "http://framework.zend.com/license/new-bsd",
+        "https://opensource.org/licenses/BSD-3-Clause",
+        "https://www.eclipse.org/org/documents/edl-v10.php"
+      ],
+      "text": "Redistribution and use in source and binary forms, with or without modification,\nare permitted provided that the following conditions are met:\n\nRedistributions of source code must retain the above copyright notice, this list\nof conditions and the following disclaimer.\n\nRedistributions in binary form must reproduce the above copyright notice, this\nlist of conditions and the following disclaimer in the documentation and/or\nother materials provided with the distribution.\n\nNeither the name of the ORGANIZATION nor the names of its contributors may be\nused to endorse or promote products derived from this software without specific\nprior written permission.\n\nTHIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS\n\"AS IS\" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO,\nTHE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE\nARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS\nBE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR\nCONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE\nGOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)\nHOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT\nLIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF\nTHE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE."
+    },
+    {
+      "key": "bsd-simplified",
+      "short_name": "BSD-2-Clause",
+      "name": "BSD-2-Clause",
+      "category": "Permissive",
+      "owner": "Regents of the University of California",
+      "homepage_url": "http://www.opensource.org/licenses/BSD-2-Clause",
+      "notes": "Per SPDX.org, this license is OSI certified.",
+      "is_builtin": true,
+      "spdx_license_key": "BSD-2-Clause",
+      "other_spdx_license_keys": [
+        "BSD-2-Clause-NetBSD",
+        "BSD-2"
+      ],
+      "text_urls": [
+        "http://opensource.org/licenses/bsd-license.php"
+      ],
+      "osi_url": "http://opensource.org/licenses/bsd-license.php",
+      "other_urls": [
+        "http://spdx.org/licenses/BSD-2-Clause",
+        "http://www.freebsd.org/copyright/copyright.html",
+        "https://opensource.org/licenses/BSD-2-Clause"
+      ],
+      "text": "Redistribution and use in source and binary forms, with or without modification,\nare permitted provided that the following conditions are met:\n\nRedistributions of source code must retain the above copyright notice, this list\nof conditions and the following disclaimer.\n\nRedistributions in binary form must reproduce the above copyright notice, this\nlist of conditions and the following disclaimer in the documentation and/or\nother materials provided with the distribution.\n\nTHIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS \"AS IS\" AND\nANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED\nWARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE\nDISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR\nANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES\n(INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;\nLOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON\nANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT\n(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS\nSOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE."
+    },
+    {
+      "key": "bzip2-libbzip-2010",
+      "short_name": "bzip2 License 2010",
+      "name": "bzip2 License 2010",
+      "category": "Permissive",
+      "owner": "bzip",
+      "homepage_url": "https://github.com/asimonov-im/bzip2/blob/master/LICENSE",
+      "notes": "until bzip2 1.0.6 there is only one license and not two as listed in SPDX. Therefore we only track one such license.",
+      "is_builtin": true,
+      "spdx_license_key": "bzip2-1.0.6",
+      "other_spdx_license_keys": [
+        "bzip2-1.0.5"
+      ],
+      "other_urls": [
+        "http://bzip.org/1.0.5/bzip2-manual-1.0.5.html",
+        "http://www.bzip.org/",
+        "https://sourceware.org/git/?p=bzip2.git;a=blob;f=LICENSE;hb=bzip2-1.0.6"
+      ],
+      "text": "Redistribution and use in source and binary forms, with or without\nmodification, are permitted provided that the following conditions\nare met:\n\n1. Redistributions of source code must retain the above copyright\n   notice, this list of conditions and the following disclaimer.\n\n2. The origin of this software must not be misrepresented; you must\n   not claim that you wrote the original software.  If you use this\n   software in a product, an acknowledgment in the product\n   documentation would be appreciated but is not required.\n\n3. Altered source versions must be plainly marked as such, and must\n   not be misrepresented as being the original software.\n\n4. The name of the author may not be used to endorse or promote\n   products derived from this software without specific prior written\n   permission.\n\nTHIS SOFTWARE IS PROVIDED BY THE AUTHOR ``AS IS'' AND ANY EXPRESS\nOR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED\nWARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE\nARE DISCLAIMED.  IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY\nDIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL\nDAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE\nGOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS\nINTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,\nWHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING\nNEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS\nSOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE."
+    },
+    {
+      "key": "gpl-1.0-plus",
+      "short_name": "GPL 1.0 or later",
+      "name": "GNU General Public License 1.0 or later",
+      "category": "Copyleft",
+      "owner": "Free Software Foundation (FSF)",
+      "homepage_url": "http://www.gnu.org/licenses/old-licenses/gpl-1.0-standalone.html",
+      "notes": "Per SPDX.org, this license was released February 1989.",
+      "is_builtin": true,
+      "spdx_license_key": "GPL-1.0-or-later",
+      "other_spdx_license_keys": [
+        "GPL-1.0+",
+        "LicenseRef-GPL"
+      ],
+      "text_urls": [
+        "http://www.gnu.org/licenses/old-licenses/gpl-1.0-standalone.html"
+      ],
+      "other_urls": [
+        "https://www.gnu.org/licenses/old-licenses/gpl-1.0-standalone.html"
+      ],
+      "minimum_coverage": 99,
+      "text": "This program is free software; you can redistribute it and/or modify it under\nthe terms of the GNU General Public License as published by the Free Software\nFoundation; either version 1, or (at your option) any later version.\n\nThis program is distributed in the hope that it will be useful, but WITHOUT ANY\nWARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A\nPARTICULAR PURPOSE.  See the GNU General Public License for more details.\n\nYou should have received a copy of the GNU General Public License along with\nthis program; if not, write to the Free Software Foundation, Inc., 675 Mass Ave,\nCambridge, MA 02139, USA.\n\n\n                    GNU GENERAL PUBLIC LICENSE\n                     Version 1, February 1989\n\n Copyright (C) 1989 Free Software Foundation, Inc.\n                    51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA\n\n Everyone is permitted to copy and distribute verbatim copies\n of this license document, but changing it is not allowed.\n\n                            Preamble\n\n  The license agreements of most software companies try to keep users\nat the mercy of those companies.  By contrast, our General Public\nLicense is intended to guarantee your freedom to share and change free\nsoftware--to make sure the software is free for all its users.  The\nGeneral Public License applies to the Free Software Foundation's\nsoftware and to any other program whose authors commit to using it.\nYou can use it for your programs, too.\n\n  When we speak of free software, we are referring to freedom, not\nprice.  Specifically, the General Public License is designed to make\nsure that you have the freedom to give away or sell copies of free\nsoftware, that you receive source code or can get it if you want it,\nthat you can change the software or use pieces of it in new free\nprograms; and that you know you can do these things.\n\n  To protect your rights, we need to make restrictions that forbid\nanyone to deny you these rights or to ask you to surrender the rights.\nThese restrictions translate to certain responsibilities for you if you\ndistribute copies of the software, or if you modify it.\n\n  For example, if you distribute copies of a such a program, whether\ngratis or for a fee, you must give the recipients all the rights that\nyou have.  You must make sure that they, too, receive or can get the\nsource code.  And you must tell them their rights.\n\n  We protect your rights with two steps: (1) copyright the software, and\n(2) offer you this license which gives you legal permission to copy,\ndistribute and/or modify the software.\n\n  Also, for each author's protection and ours, we want to make certain\nthat everyone understands that there is no warranty for this free\nsoftware.  If the software is modified by someone else and passed on, we\nwant its recipients to know that what they have is not the original, so\nthat any problems introduced by others will not reflect on the original\nauthors' reputations.\n\n  The precise terms and conditions for copying, distribution and\nmodification follow.\n\n\n                    GNU GENERAL PUBLIC LICENSE\n   TERMS AND CONDITIONS FOR COPYING, DISTRIBUTION AND MODIFICATION\n\n  0. This License Agreement applies to any program or other work which\ncontains a notice placed by the copyright holder saying it may be\ndistributed under the terms of this General Public License.  The\n\"Program\", below, refers to any such program or work, and a \"work based\non the Program\" means either the Program or any work containing the\nProgram or a portion of it, either verbatim or with modifications.  Each\nlicensee is addressed as \"you\".\n\n  1. You may copy and distribute verbatim copies of the Program's source\ncode as you receive it, in any medium, provided that you conspicuously and\nappropriately publish on each copy an appropriate copyright notice and\ndisclaimer of warranty; keep intact all the notices that refer to this\nGeneral Public License and to the absence of any warranty; and give any\nother recipients of the Program a copy of this General Public License\nalong with the Program.  You may charge a fee for the physical act of\ntransferring a copy.\n\n  2. You may modify your copy or copies of the Program or any portion of\nit, and copy and distribute such modifications under the terms of Paragraph\n1 above, provided that you also do the following:\n\n    a) cause the modified files to carry prominent notices stating that\n    you changed the files and the date of any change; and\n\n    b) cause the whole of any work that you distribute or publish, that\n    in whole or in part contains the Program or any part thereof, either\n    with or without modifications, to be licensed at no charge to all\n    third parties under the terms of this General Public License (except\n    that you may choose to grant warranty protection to some or all\n    third parties, at your option).\n\n    c) If the modified program normally reads commands interactively when\n    run, you must cause it, when started running for such interactive use\n    in the simplest and most usual way, to print or display an\n    announcement including an appropriate copyright notice and a notice\n    that there is no warranty (or else, saying that you provide a\n    warranty) and that users may redistribute the program under these\n    conditions, and telling the user how to view a copy of this General\n    Public License.\n\n    d) You may charge a fee for the physical act of transferring a\n    copy, and you may at your option offer warranty protection in\n    exchange for a fee.\n\nMere aggregation of another independent work with the Program (or its\nderivative) on a volume of a storage or distribution medium does not bring\nthe other work under the scope of these terms.\n\n\n  3. You may copy and distribute the Program (or a portion or derivative of\nit, under Paragraph 2) in object code or executable form under the terms of\nParagraphs 1 and 2 above provided that you also do one of the following:\n\n    a) accompany it with the complete corresponding machine-readable\n    source code, which must be distributed under the terms of\n    Paragraphs 1 and 2 above; or,\n\n    b) accompany it with a written offer, valid for at least three\n    years, to give any third party free (except for a nominal charge\n    for the cost of distribution) a complete machine-readable copy of the\n    corresponding source code, to be distributed under the terms of\n    Paragraphs 1 and 2 above; or,\n\n    c) accompany it with the information you received as to where the\n    corresponding source code may be obtained.  (This alternative is\n    allowed only for noncommercial distribution and only if you\n    received the program in object code or executable form alone.)\n\nSource code for a work means the preferred form of the work for making\nmodifications to it.  For an executable file, complete source code means\nall the source code for all modules it contains; but, as a special\nexception, it need not include source code for modules which are standard\nlibraries that accompany the operating system on which the executable\nfile runs, or for standard header files or definitions files that\naccompany that operating system.\n\n  4. You may not copy, modify, sublicense, distribute or transfer the\nProgram except as expressly provided under this General Public License.\nAny attempt otherwise to copy, modify, sublicense, distribute or transfer\nthe Program is void, and will automatically terminate your rights to use\nthe Program under this License.  However, parties who have received\ncopies, or rights to use copies, from you under this General Public\nLicense will not have their licenses terminated so long as such parties\nremain in full compliance.\n\n  5. By copying, distributing or modifying the Program (or any work based\non the Program) you indicate your acceptance of this license to do so,\nand all its terms and conditions.\n\n  6. Each time you redistribute the Program (or any work based on the\nProgram), the recipient automatically receives a license from the original\nlicensor to copy, distribute or modify the Program subject to these\nterms and conditions.  You may not impose any further restrictions on the\nrecipients' exercise of the rights granted herein.\n\n\n  7. The Free Software Foundation may publish revised and/or new versions\nof the General Public License from time to time.  Such new versions will\nbe similar in spirit to the present version, but may differ in detail to\naddress new problems or concerns.\n\nEach version is given a distinguishing version number.  If the Program\nspecifies a version number of the license which applies to it and \"any\nlater version\", you have the option of following the terms and conditions\neither of that version or of any later version published by the Free\nSoftware Foundation.  If the Program does not specify a version number of\nthe license, you may choose any version ever published by the Free Software\nFoundation.\n\n  8. If you wish to incorporate parts of the Program into other free\nprograms whose distribution conditions are different, write to the author\nto ask for permission.  For software which is copyrighted by the Free\nSoftware Foundation, write to the Free Software Foundation; we sometimes\nmake exceptions for this.  Our decision will be guided by the two goals\nof preserving the free status of all derivatives of our free software and\nof promoting the sharing and reuse of software generally.\n\n                            NO WARRANTY\n\n  9. BECAUSE THE PROGRAM IS LICENSED FREE OF CHARGE, THERE IS NO WARRANTY\nFOR THE PROGRAM, TO THE EXTENT PERMITTED BY APPLICABLE LAW.  EXCEPT WHEN\nOTHERWISE STATED IN WRITING THE COPYRIGHT HOLDERS AND/OR OTHER PARTIES\nPROVIDE THE PROGRAM \"AS IS\" WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED\nOR IMPLIED, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF\nMERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.  THE ENTIRE RISK AS\nTO THE QUALITY AND PERFORMANCE OF THE PROGRAM IS WITH YOU.  SHOULD THE\nPROGRAM PROVE DEFECTIVE, YOU ASSUME THE COST OF ALL NECESSARY SERVICING,\nREPAIR OR CORRECTION.\n\n  10. IN NO EVENT UNLESS REQUIRED BY APPLICABLE LAW OR AGREED TO IN WRITING\nWILL ANY COPYRIGHT HOLDER, OR ANY OTHER PARTY WHO MAY MODIFY AND/OR\nREDISTRIBUTE THE PROGRAM AS PERMITTED ABOVE, BE LIABLE TO YOU FOR DAMAGES,\nINCLUDING ANY GENERAL, SPECIAL, INCIDENTAL OR CONSEQUENTIAL DAMAGES ARISING\nOUT OF THE USE OR INABILITY TO USE THE PROGRAM (INCLUDING BUT NOT LIMITED\nTO LOSS OF DATA OR DATA BEING RENDERED INACCURATE OR LOSSES SUSTAINED BY\nYOU OR THIRD PARTIES OR A FAILURE OF THE PROGRAM TO OPERATE WITH ANY OTHER\nPROGRAMS), EVEN IF SUCH HOLDER OR OTHER PARTY HAS BEEN ADVISED OF THE\nPOSSIBILITY OF SUCH DAMAGES.\n\n                     END OF TERMS AND CONDITIONS\n\n\n        Appendix: How to Apply These Terms to Your New Programs\n\n  If you develop a new program, and you want it to be of the greatest\npossible use to humanity, the best way to achieve this is to make it\nfree software which everyone can redistribute and change under these\nterms.\n\n  To do so, attach the following notices to the program.  It is safest to\nattach them to the start of each source file to most effectively convey\nthe exclusion of warranty; and each file should have at least the\n\"copyright\" line and a pointer to where the full notice is found.\n\n    <one line to give the program's name and a brief idea of what it does.>\n    Copyright (C) 19yy  <name of author>\n\n    This program is free software; you can redistribute it and/or modify\n    it under the terms of the GNU General Public License as published by\n    the Free Software Foundation; either version 1, or (at your option)\n    any later version.\n\n    This program is distributed in the hope that it will be useful,\n    but WITHOUT ANY WARRANTY; without even the implied warranty of\n    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the\n    GNU General Public License for more details.\n\n    You should have received a copy of the GNU General Public License\n    along with this program; if not, write to the Free Software\n    Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston MA  02110-1301 USA\n\n\nAlso add information on how to contact you by electronic and paper mail.\n\nIf the program is interactive, make it output a short notice like this\nwhen it starts in an interactive mode:\n\n    Gnomovision version 69, Copyright (C) 19xx name of author\n    Gnomovision comes with ABSOLUTELY NO WARRANTY; for details type `show w'.\n    This is free software, and you are welcome to redistribute it\n    under certain conditions; type `show c' for details.\n\nThe hypothetical commands `show w' and `show c' should show the\nappropriate parts of the General Public License.  Of course, the\ncommands you use may be called something other than `show w' and `show\nc'; they could even be mouse-clicks or menu items--whatever suits your\nprogram.\n\nYou should also get your employer (if you work as a programmer) or your\nschool, if any, to sign a \"copyright disclaimer\" for the program, if\nnecessary.  Here a sample; alter the names:\n\n  Yoyodyne, Inc., hereby disclaims all copyright interest in the\n  program `Gnomovision' (a program to direct compilers to make passes\n  at assemblers) written by James Hacker.\n\n  <signature of Ty Coon>, 1 April 1989\n  Ty Coon, President of Vice\n\nThat's all there is to it!"
+    },
+    {
+      "key": "openssl",
+      "short_name": "OpenSSL License",
+      "name": "OpenSSL License",
+      "category": "Permissive",
+      "owner": "OpenSSL",
+      "homepage_url": "http://openssl.org/source/license.html",
+      "notes": "This is the OpenSSL license proper, without the SSLEay part. The SPDX\nOpenSSL identifier does not apply here. Instead it matches the openssl-\nssleay license.\n",
+      "is_builtin": true,
+      "spdx_license_key": "LicenseRef-scancode-openssl",
+      "faq_url": "http://www.openssl.org/support/faq.html",
+      "other_urls": [
+        "http://www.openssl.org/source/license.html"
+      ],
+      "minimum_coverage": 70,
+      "text": "Redistribution and use in source and binary forms, with or without\nmodification, are permitted provided that the following conditions\nare met:\n\n1. Redistributions of source code must retain the above copyright\n   notice, this list of conditions and the following disclaimer.\n\n2. Redistributions in binary form must reproduce the above copyright\n   notice, this list of conditions and the following disclaimer in\n   the documentation and/or other materials provided with the\n   distribution.\n\n3. All advertising materials mentioning features or use of this\n   software must display the following acknowledgment:\n   \"This product includes software developed by the OpenSSL Project\n   for use in the OpenSSL Toolkit. (http://www.OpenSSL.org/)\"\n\n4. The names \"OpenSSL Toolkit\" and \"OpenSSL Project\" must not be used to\n   endorse or promote products derived from this software without\n   prior written permission. For written permission, please contact\n   licensing@OpenSSL.org.\n\n5. Products derived from this software may not be called \"OpenSSL\"\n   nor may \"OpenSSL\" appear in their names without prior written\n   permission of the OpenSSL Project.\n\n6. Redistributions of any form whatsoever must retain the following\n   acknowledgment:\n   \"This product includes software developed by the OpenSSL Project\n   for use in the OpenSSL Toolkit (http://www.OpenSSL.org/)\"\n\nTHIS SOFTWARE IS PROVIDED BY THE OpenSSL PROJECT ``AS IS'' AND ANY\nEXPRESSED OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE\nIMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR\nPURPOSE ARE DISCLAIMED.  IN NO EVENT SHALL THE OpenSSL PROJECT OR\nITS CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,\nSPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT\nNOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;\nLOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)\nHOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT,\nSTRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)\nARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED\nOF THE POSSIBILITY OF SUCH DAMAGE."
+    },
+    {
+      "key": "openssl-ssleay",
+      "short_name": "OpenSSL/SSLeay License",
+      "name": "OpenSSL/SSLeay License",
+      "category": "Permissive",
+      "owner": "OpenSSL",
+      "homepage_url": "http://www.openssl.org/source/license.html",
+      "notes": "Per SPDX.org, the OpenSSL toolkit stays under a dual license, i.e. both the\nconditions of the OpenSSL License and the original SSLeay license apply to\nthe toolkit.\n",
+      "is_builtin": true,
+      "spdx_license_key": "OpenSSL",
+      "text_urls": [
+        "http://www.openssl.org/source/license.html",
+        "https://www.openssl.org/source/license-openssl-ssleay.txt"
+      ],
+      "faq_url": "http://www.openssl.org/support/faq.html",
+      "minimum_coverage": 70,
+      "text": "LICENSE ISSUES\n  ==============\n\n  The OpenSSL toolkit stays under a dual license, i.e. both the conditions of\n  the OpenSSL License and the original SSLeay license apply to the toolkit.\n  See below for the actual license texts. Actually both licenses are BSD-style\n  Open Source licenses. In case of any license issues related to OpenSSL\n  please contact openssl-core@openssl.org.\n\n  OpenSSL License\n  ---------------\n\nRedistribution and use in source and binary forms, with or without\nmodification, are permitted provided that the following conditions\nare met:\n\n1. Redistributions of source code must retain the above copyright\n   notice, this list of conditions and the following disclaimer. \n\n2. Redistributions in binary form must reproduce the above copyright\n   notice, this list of conditions and the following disclaimer in\n   the documentation and/or other materials provided with the\n   distribution.\n\n3. All advertising materials mentioning features or use of this\n   software must display the following acknowledgment:\n   \"This product includes software developed by the OpenSSL Project\n   for use in the OpenSSL Toolkit. (http://www.openssl.org/)\"\n\n4. The names \"OpenSSL Toolkit\" and \"OpenSSL Project\" must not be used to\n   endorse or promote products derived from this software without\n   prior written permission. For written permission, please contact\n   openssl-core@openssl.org.\n\n5. Products derived from this software may not be called \"OpenSSL\"\n   nor may \"OpenSSL\" appear in their names without prior written\n   permission of the OpenSSL Project.\n\n6. Redistributions of any form whatsoever must retain the following\n   acknowledgment:\n   \"This product includes software developed by the OpenSSL Project\n   for use in the OpenSSL Toolkit (http://www.openssl.org/)\"\n\nTHIS SOFTWARE IS PROVIDED BY THE OpenSSL PROJECT ``AS IS'' AND ANY\nEXPRESSED OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE\nIMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR\nPURPOSE ARE DISCLAIMED.  IN NO EVENT SHALL THE OpenSSL PROJECT OR\nITS CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,\nSPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT\nNOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;\nLOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)\nHOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT,\nSTRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)\nARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED\nOF THE POSSIBILITY OF SUCH DAMAGE.\n\n\nThis product includes cryptographic software written by Eric Young\n(eay@cryptsoft.com).  This product includes software written by Tim\nHudson (tjh@cryptsoft.com).\n\n\n Original SSLeay License\n -----------------------\n\nCopyright (C) 1995-1998 Eric Young (eay@cryptsoft.com)\nAll rights reserved.\n\nThis package is an SSL implementation written\nby Eric Young (eay@cryptsoft.com).\nThe implementation was written so as to conform with Netscapes SSL.\n\nThis library is free for commercial and non-commercial use as long as\nthe following conditions are aheared to.  The following conditions\napply to all code found in this distribution, be it the RC4, RSA,\nlhash, DES, etc., code; not just the SSL code.  The SSL documentation\nincluded with this distribution is covered by the same copyright terms\nexcept that the holder is Tim Hudson (tjh@cryptsoft.com).\n\nCopyright remains Eric Young's, and as such any Copyright notices in\nthe code are not to be removed.\nIf this package is used in a product, Eric Young should be given attribution\nas the author of the parts of the library used.\nThis can be in the form of a textual message at program startup or\nin documentation (online or textual) provided with the package.\n\nRedistribution and use in source and binary forms, with or without\nmodification, are permitted provided that the following conditions\nare met:\n1. Redistributions of source code must retain the copyright\n   notice, this list of conditions and the following disclaimer.\n2. Redistributions in binary form must reproduce the above copyright\n   notice, this list of conditions and the following disclaimer in the\n   documentation and/or other materials provided with the distribution.\n3. All advertising materials mentioning features or use of this software\n   must display the following acknowledgement:\n   \"This product includes cryptographic software written by\n    Eric Young (eay@cryptsoft.com)\"\n   The word 'cryptographic' can be left out if the rouines from the library\n   being used are not cryptographic related :-).\n4. If you include any Windows specific code (or a derivative thereof) from \n   the apps directory (application code) you must include an acknowledgement:\n   \"This product includes software written by Tim Hudson (tjh@cryptsoft.com)\"\n\nTHIS SOFTWARE IS PROVIDED BY ERIC YOUNG ``AS IS'' AND\nANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE\nIMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE\nARE DISCLAIMED.  IN NO EVENT SHALL THE AUTHOR OR CONTRIBUTORS BE LIABLE\nFOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL\nDAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS\nOR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)\nHOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT\nLIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY\nOUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF\nSUCH DAMAGE.\n\nThe licence and distribution terms for any publically available version or\nderivative of this code cannot be changed.  i.e. this code cannot simply be\ncopied and put under another distribution licence\n[including the GNU Public Licence.]"
+    },
+    {
+      "key": "other-copyleft",
+      "short_name": "Other Copyleft Licenses",
+      "name": "Other Copyleft Licenses",
+      "category": "Copyleft",
+      "owner": "nexB",
+      "notes": "this is a catch all and ellipsis to deal with some cases when a large\nnumber of ancillary yet similar licenses may be reported as one.\n",
+      "is_builtin": true,
+      "is_generic": true,
+      "spdx_license_key": "LicenseRef-scancode-other-copyleft",
+      "text": "This component contains third-party subcomponents licensed under\none or more copyleft licenses in the style of GPL, LGPL, MPL or EPL.\nThe license obligations of these subcomponents may apply when a subcomponent\ndepending on how the subcomponent is used and/or redistributed."
+    },
+    {
+      "key": "python",
+      "short_name": "Python License 2.0",
+      "name": "Python Software Foundation License v2",
+      "category": "Permissive",
+      "owner": "Python Software Foundation (PSF)",
+      "homepage_url": "http://docs.python.org/license.html",
+      "is_builtin": true,
+      "spdx_license_key": "Python-2.0",
+      "text_urls": [
+        "http://spdx.org/licenses/Python-2.0"
+      ],
+      "osi_url": "http://www.opensource.org/licenses/Python-2.0",
+      "other_urls": [
+        "http://opensource.org/licenses/PythonSoftFoundation.php",
+        "http://www.gnu.org/licenses/license-list.html#PythonOld",
+        "https://opensource.org/licenses/Python-2.0"
+      ],
+      "text": "PYTHON SOFTWARE FOUNDATION LICENSE VERSION 2\n--------------------------------------------\n\n1. This LICENSE AGREEMENT is between the Python Software Foundation\n(\"PSF\"), and the Individual or Organization (\"Licensee\") accessing and\notherwise using this software (\"Python\") in source or binary form and\nits associated documentation.\n\n2. Subject to the terms and conditions of this License Agreement, PSF hereby\ngrants Licensee a nonexclusive, royalty-free, world-wide license to reproduce,\nanalyze, test, perform and/or display publicly, prepare derivative works,\ndistribute, and otherwise use Python alone or in any derivative version,\nprovided, however, that PSF's License Agreement and PSF's notice of copyright,\ni.e., \"Copyright (c) Python Software Foundation;\nAll Rights Reserved\" are retained in Python alone or in any derivative version\nprepared by Licensee.\n\n3. In the event Licensee prepares a derivative work that is based on\nor incorporates Python or any part thereof, and wants to make\nthe derivative work available to others as provided herein, then\nLicensee hereby agrees to include in any such work a brief summary of\nthe changes made to Python.\n\n4. PSF is making Python available to Licensee on an \"AS IS\"\nbasis.  PSF MAKES NO REPRESENTATIONS OR WARRANTIES, EXPRESS OR\nIMPLIED.  BY WAY OF EXAMPLE, BUT NOT LIMITATION, PSF MAKES NO AND\nDISCLAIMS ANY REPRESENTATION OR WARRANTY OF MERCHANTABILITY OR FITNESS\nFOR ANY PARTICULAR PURPOSE OR THAT THE USE OF PYTHON WILL NOT\nINFRINGE ANY THIRD PARTY RIGHTS.\n\n5. PSF SHALL NOT BE LIABLE TO LICENSEE OR ANY OTHER USERS OF PYTHON\nFOR ANY INCIDENTAL, SPECIAL, OR CONSEQUENTIAL DAMAGES OR LOSS AS\nA RESULT OF MODIFYING, DISTRIBUTING, OR OTHERWISE USING PYTHON,\nOR ANY DERIVATIVE THEREOF, EVEN IF ADVISED OF THE POSSIBILITY THEREOF.\n\n6. This License Agreement will automatically terminate upon a material\nbreach of its terms and conditions.\n\n7. Nothing in this License Agreement shall be deemed to create any\nrelationship of agency, partnership, or joint venture between PSF and\nLicensee.  This License Agreement does not grant permission to use PSF\ntrademarks or trade name in a trademark sense to endorse or promote\nproducts or services of Licensee, or any third party.\n\n8. By copying, installing or otherwise using Python, Licensee\nagrees to be bound by the terms and conditions of this License\nAgreement.\n\n\nBEOPEN.COM LICENSE AGREEMENT FOR PYTHON 2.0\n-------------------------------------------\n\nBEOPEN PYTHON OPEN SOURCE LICENSE AGREEMENT VERSION 1\n\n1. This LICENSE AGREEMENT is between BeOpen.com (\"BeOpen\"), having an\noffice at 160 Saratoga Avenue, Santa Clara, CA 95051, and the\nIndividual or Organization (\"Licensee\") accessing and otherwise using\nthis software in source or binary form and its associated\ndocumentation (\"the Software\").\n\n2. Subject to the terms and conditions of this BeOpen Python License\nAgreement, BeOpen hereby grants Licensee a non-exclusive,\nroyalty-free, world-wide license to reproduce, analyze, test, perform\nand/or display publicly, prepare derivative works, distribute, and\notherwise use the Software alone or in any derivative version,\nprovided, however, that the BeOpen Python License is retained in the\nSoftware, alone or in any derivative version prepared by Licensee.\n\n3. BeOpen is making the Software available to Licensee on an \"AS IS\"\nbasis.  BEOPEN MAKES NO REPRESENTATIONS OR WARRANTIES, EXPRESS OR\nIMPLIED.  BY WAY OF EXAMPLE, BUT NOT LIMITATION, BEOPEN MAKES NO AND\nDISCLAIMS ANY REPRESENTATION OR WARRANTY OF MERCHANTABILITY OR FITNESS\nFOR ANY PARTICULAR PURPOSE OR THAT THE USE OF THE SOFTWARE WILL NOT\nINFRINGE ANY THIRD PARTY RIGHTS.\n\n4. BEOPEN SHALL NOT BE LIABLE TO LICENSEE OR ANY OTHER USERS OF THE\nSOFTWARE FOR ANY INCIDENTAL, SPECIAL, OR CONSEQUENTIAL DAMAGES OR LOSS\nAS A RESULT OF USING, MODIFYING OR DISTRIBUTING THE SOFTWARE, OR ANY\nDERIVATIVE THEREOF, EVEN IF ADVISED OF THE POSSIBILITY THEREOF.\n\n5. This License Agreement will automatically terminate upon a material\nbreach of its terms and conditions.\n\n6. This License Agreement shall be governed by and interpreted in all\nrespects by the law of the State of California, excluding conflict of\nlaw provisions.  Nothing in this License Agreement shall be deemed to\ncreate any relationship of agency, partnership, or joint venture\nbetween BeOpen and Licensee.  This License Agreement does not grant\npermission to use BeOpen trademarks or trade names in a trademark\nsense to endorse or promote products or services of Licensee, or any\nthird party.  As an exception, the \"BeOpen Python\" logos available at\nhttp://www.pythonlabs.com/logos.html may be used according to the\npermissions granted on that web page.\n\n7. By copying, installing or otherwise using the software, Licensee\nagrees to be bound by the terms and conditions of this License\nAgreement.\n\n\nCNRI LICENSE AGREEMENT FOR PYTHON 1.6.1\n---------------------------------------\n\n1. This LICENSE AGREEMENT is between the Corporation for National\nResearch Initiatives, having an office at 1895 Preston White Drive,\nReston, VA 20191 (\"CNRI\"), and the Individual or Organization\n(\"Licensee\") accessing and otherwise using Python 1.6.1 software in\nsource or binary form and its associated documentation.\n\n2. Subject to the terms and conditions of this License Agreement, CNRI\nhereby grants Licensee a nonexclusive, royalty-free, world-wide\nlicense to reproduce, analyze, test, perform and/or display publicly,\nprepare derivative works, distribute, and otherwise use Python 1.6.1\nalone or in any derivative version, provided, however, that CNRI's\nLicense Agreement and CNRI's notice of copyright, i.e., \"Copyright (c)\n1995-2001 Corporation for National Research Initiatives; All Rights\nReserved\" are retained in Python 1.6.1 alone or in any derivative\nversion prepared by Licensee.  Alternately, in lieu of CNRI's License\nAgreement, Licensee may substitute the following text (omitting the\nquotes): \"Python 1.6.1 is made available subject to the terms and\nconditions in CNRI's License Agreement.  This Agreement together with\nPython 1.6.1 may be located on the Internet using the following\nunique, persistent identifier (known as a handle): 1895.22/1013.  This\nAgreement may also be obtained from a proxy server on the Internet\nusing the following URL: http://hdl.handle.net/1895.22/1013\".\n\n3. In the event Licensee prepares a derivative work that is based on\nor incorporates Python 1.6.1 or any part thereof, and wants to make\nthe derivative work available to others as provided herein, then\nLicensee hereby agrees to include in any such work a brief summary of\nthe changes made to Python 1.6.1.\n\n4. CNRI is making Python 1.6.1 available to Licensee on an \"AS IS\"\nbasis.  CNRI MAKES NO REPRESENTATIONS OR WARRANTIES, EXPRESS OR\nIMPLIED.  BY WAY OF EXAMPLE, BUT NOT LIMITATION, CNRI MAKES NO AND\nDISCLAIMS ANY REPRESENTATION OR WARRANTY OF MERCHANTABILITY OR FITNESS\nFOR ANY PARTICULAR PURPOSE OR THAT THE USE OF PYTHON 1.6.1 WILL NOT\nINFRINGE ANY THIRD PARTY RIGHTS.\n\n5. CNRI SHALL NOT BE LIABLE TO LICENSEE OR ANY OTHER USERS OF PYTHON\n1.6.1 FOR ANY INCIDENTAL, SPECIAL, OR CONSEQUENTIAL DAMAGES OR LOSS AS\nA RESULT OF MODIFYING, DISTRIBUTING, OR OTHERWISE USING PYTHON 1.6.1,\nOR ANY DERIVATIVE THEREOF, EVEN IF ADVISED OF THE POSSIBILITY THEREOF.\n\n6. This License Agreement will automatically terminate upon a material\nbreach of its terms and conditions.\n\n7. This License Agreement shall be governed by the federal\nintellectual property law of the United States, including without\nlimitation the federal copyright law, and, to the extent such\nU.S. federal law does not apply, by the law of the Commonwealth of\nVirginia, excluding Virginia's conflict of law provisions.\nNotwithstanding the foregoing, with regard to derivative works based\non Python 1.6.1 that incorporate non-separable material that was\npreviously distributed under the GNU General Public License (GPL), the\nlaw of the Commonwealth of Virginia shall govern this License\nAgreement only as to issues arising under or with respect to\nParagraphs 4, 5, and 7 of this License Agreement.  Nothing in this\nLicense Agreement shall be deemed to create any relationship of\nagency, partnership, or joint venture between CNRI and Licensee.  This\nLicense Agreement does not grant permission to use CNRI trademarks or\ntrade name in a trademark sense to endorse or promote products or\nservices of Licensee, or any third party.\n\n8. By clicking on the \"ACCEPT\" button where indicated, or by copying,\ninstalling or otherwise using Python 1.6.1, Licensee agrees to be\nbound by the terms and conditions of this License Agreement.\n\n        ACCEPT\n\n\nCWI LICENSE AGREEMENT FOR PYTHON 0.9.0 THROUGH 1.2\n--------------------------------------------------\n\nCopyright (c) 1991 - 1995, Stichting Mathematisch Centrum Amsterdam,\nThe Netherlands.  All rights reserved.\n\nPermission to use, copy, modify, and distribute this software and its\ndocumentation for any purpose and without fee is hereby granted,\nprovided that the above copyright notice appear in all copies and that\nboth that copyright notice and this permission notice appear in\nsupporting documentation, and that the name of Stichting Mathematisch\nCentrum or CWI not be used in advertising or publicity pertaining to\ndistribution of the software without specific, written prior\npermission.\n\nSTICHTING MATHEMATISCH CENTRUM DISCLAIMS ALL WARRANTIES WITH REGARD TO\nTHIS SOFTWARE, INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY AND\nFITNESS, IN NO EVENT SHALL STICHTING MATHEMATISCH CENTRUM BE LIABLE\nFOR ANY SPECIAL, INDIRECT OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES\nWHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN\nACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT\nOF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE."
+    },
+    {
+      "key": "python-cwi",
+      "short_name": "Python CWI License",
+      "name": "Python CWI License Agreement",
+      "category": "Permissive",
+      "owner": "Python Software Foundation (PSF)",
+      "homepage_url": "http://docs.python.org/license.html",
+      "notes": "This is the old license of Python as used from inception from 0.9.0 thru\n1.2 versions. This is a MIT/BSD-style license that is rather rare these\ndays but also unique. It is also found at the bottom of the current Python\nlicense text.\n",
+      "is_builtin": true,
+      "spdx_license_key": "LicenseRef-scancode-python-cwi",
+      "text": "Permission to use, copy, modify, and distribute this software and its \ndocumentation for any purpose and without fee is hereby granted, \nprovided that the above copyright notice appear in all copies and that \nboth that copyright notice and this permission notice appear in \nsupporting documentation, and that the name of Stichting Mathematisch \nCentrum or CWI not be used in advertising or publicity pertaining to \ndistribution of the software without specific, written prior \npermission. \n\nSTICHTING MATHEMATISCH CENTRUM DISCLAIMS ALL WARRANTIES WITH REGARD TO \nTHIS SOFTWARE, INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY AND \nFITNESS, IN NO EVENT SHALL STICHTING MATHEMATISCH CENTRUM BE LIABLE \nFOR ANY SPECIAL, INDIRECT OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES \nWHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN \nACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT \nOF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE."
+    },
+    {
+      "key": "sleepycat",
+      "short_name": "Sleepycat License",
+      "name": "Sleepycat License (Berkeley Database License)",
+      "category": "Copyleft",
+      "owner": "Oracle Corporation",
+      "homepage_url": "http://opensource.org/licenses/sleepycat.html",
+      "notes": "Per SPDX.org, this license is OSI certified",
+      "is_builtin": true,
+      "spdx_license_key": "Sleepycat",
+      "text_urls": [
+        "http://www.oracle.com/technology/software/products/berkeley-db/htdocs/oslicense.html"
+      ],
+      "osi_url": "http://opensource.org/licenses/sleepycat.html",
+      "faq_url": "https://docs.oracle.com/cd/E17076_05/html/license/license_db.html",
+      "other_urls": [
+        "http://www.opensource.org/licenses/Sleepycat",
+        "http://www.opensource.org/licenses/sleepycat.php",
+        "https://opensource.org/licenses/Sleepycat"
+      ],
+      "text": " Redistribution and use in source and binary forms, with or without\n modification, are permitted provided that the following conditions\n are met:\n 1. Redistributions of source code must retain the above copyright\n    notice, this list of conditions and the following disclaimer.\n 2. Redistributions in binary form must reproduce the above copyright\n    notice, this list of conditions and the following disclaimer in the\n    documentation and/or other materials provided with the distribution.\n 3. Redistributions in any form must be accompanied by information on\n    how to obtain complete source code for the DB software and any\n    accompanying software that uses the DB software.  The source code\n    must either be included in the distribution or be available for no\n    more than the cost of distribution plus a nominal fee, and must be\n    freely redistributable under reasonable conditions.  For an\n    executable file, complete source code means the source code for all\n    modules it contains.  It does not include source code for modules or\n    files that typically accompany the major components of the operating\n    system on which the executable file runs.\n\n THIS SOFTWARE IS PROVIDED BY ORACLE CORPORATION ``AS IS'' AND ANY EXPRESS\n OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED\n WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, OR\n NON-INFRINGEMENT, ARE DISCLAIMED.  IN NO EVENT SHALL ORACLE CORPORATION\n BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR\n CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF\n SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS\n INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN\n CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)\n ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF\n THE POSSIBILITY OF SUCH DAMAGE."
+    },
+    {
+      "key": "ssleay-windows",
+      "short_name": "Original SSLeay License with Windows Clause",
+      "name": "Original SSLeay License with Windows Clause",
+      "category": "Permissive",
+      "owner": "OpenSSL",
+      "homepage_url": "https://www.openssl.org/source/license.html",
+      "is_builtin": true,
+      "spdx_license_key": "LicenseRef-scancode-ssleay-windows",
+      "text_urls": [
+        "http://www.openssl.org/source/license.html"
+      ],
+      "other_urls": [
+        "http://h71000.www7.hp.com/doc/83final/ba554_90007/apcs02.html"
+      ],
+      "text": "This package is an SSL implementation written by Eric Young (eay@cryptsoft.com).\nThe implementation was written so as to conform with Netscapes SSL.\n\nThis library is free for commercial and non-commercial use as long as\nthe following conditions are aheared to.  The following conditions\napply to all code found in this distribution, be it the RC4, RSA,\nlhash, DES, etc., code; not just the SSL code.  The SSL documentation\nincluded with this distribution is covered by the same copyright terms\nexcept that the holder is Tim Hudson (tjh@cryptsoft.com).\n\nCopyright remains Eric Young's, and as such any Copyright notices in\nthe code are not to be removed.\nIf this package is used in a product, Eric Young should be given attribution\nas the author of the parts of the library used.\nThis can be in the form of a textual message at program startup or\nin documentation (online or textual) provided with the package.\n\nRedistribution and use in source and binary forms, with or without\nmodification, are permitted provided that the following conditions\nare met:\n1. Redistributions of source code must retain the copyright\n   notice, this list of conditions and the following disclaimer.\n2. Redistributions in binary form must reproduce the above copyright\n   notice, this list of conditions and the following disclaimer in the\n   documentation and/or other materials provided with the distribution.\n3. All advertising materials mentioning features or use of this software\n   must display the following acknowledgement:\n   \"This product includes cryptographic software written by\n    Eric Young (eay@cryptsoft.com)\"\n   The word 'cryptographic' can be left out if the rouines from the library\n   being used are not cryptographic related :-).\n4. If you include any Windows specific code (or a derivative thereof) from\n   the apps directory (application code) you must include an acknowledgement:\n   \"This product includes software written by Tim Hudson (tjh@cryptsoft.com)\"\n\nTHIS SOFTWARE IS PROVIDED BY ERIC YOUNG ``AS IS'' AND\nANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE\nIMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE\nARE DISCLAIMED.  IN NO EVENT SHALL THE AUTHOR OR CONTRIBUTORS BE LIABLE\nFOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL\nDAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS\nOR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)\nHOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT\nLIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY\nOUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF\nSUCH DAMAGE.\n\nThe licence and distribution terms for any publically available version or\nderivative of this code cannot be changed.  i.e. this code cannot simply be\ncopied and put under another distribution licence\n[including the GNU Public Licence.]"
+    },
+    {
+      "key": "tcl",
+      "short_name": "TCL/TK License",
+      "name": "TCL/TK License",
+      "category": "Permissive",
+      "owner": "Tcl Developer Xchange",
+      "homepage_url": "http://www.tcl.tk/software/tcltk/license.html",
+      "is_builtin": true,
+      "spdx_license_key": "TCL",
+      "text_urls": [
+        "http://www.tcl.tk/software/tcltk/license.html"
+      ],
+      "other_urls": [
+        "http://fedoraproject.org/wiki/Licensing/TCL",
+        "https://fedoraproject.org/wiki/Licensing/TCL"
+      ],
+      "text": "This software is copyrighted by the Regents of the University of\nCalifornia, Sun Microsystems, Inc., Scriptics Corporation, ActiveState\nCorporation and other parties.  The following terms apply to all files\nassociated with the software unless explicitly disclaimed in\nindividual files.\n\nThe authors hereby grant permission to use, copy, modify, distribute,\nand license this software and its documentation for any purpose, provided\nthat existing copyright notices are retained in all copies and that this\nnotice is included verbatim in any distributions. No written agreement,\nlicense, or royalty fee is required for any of the authorized uses.\nModifications to this software may be copyrighted by their authors\nand need not follow the licensing terms described here, provided that\nthe new terms are clearly indicated on the first page of each file where\nthey apply.\n\nIN NO EVENT SHALL THE AUTHORS OR DISTRIBUTORS BE LIABLE TO ANY PARTY\nFOR DIRECT, INDIRECT, SPECIAL, INCIDENTAL, OR CONSEQUENTIAL DAMAGES\nARISING OUT OF THE USE OF THIS SOFTWARE, ITS DOCUMENTATION, OR ANY\nDERIVATIVES THEREOF, EVEN IF THE AUTHORS HAVE BEEN ADVISED OF THE\nPOSSIBILITY OF SUCH DAMAGE.\n\nTHE AUTHORS AND DISTRIBUTORS SPECIFICALLY DISCLAIM ANY WARRANTIES,\nINCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF\nMERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NON-INFRINGEMENT.\nTHIS SOFTWARE IS PROVIDED ON AN \"AS IS\" BASIS, AND THE AUTHORS AND\nDISTRIBUTORS HAVE NO OBLIGATION TO PROVIDE MAINTENANCE, SUPPORT,\nUPDATES, ENHANCEMENTS, OR MODIFICATIONS.\n\nGOVERNMENT USE: If you are acquiring this software on behalf of the\nU.S. government, the Government shall have only \"Restricted Rights\"\nin the software and related documentation as defined in the Federal\nAcquisition Regulations (FARs) in Clause 52.227.19 (c) (2).  If you\nare acquiring the software on behalf of the Department of Defense, the\nsoftware shall be classified as \"Commercial Computer Software\" and the\nGovernment shall have only \"Restricted Rights\" as defined in Clause\n252.227-7013 (c) (1) of DFARs.  Notwithstanding the foregoing, the\nauthors grant the U.S. Government and others acting in its behalf\npermission to use and distribute the software in accordance with the\nterms specified in this license."
+    }
+  ],
+  "license_rule_references": [
+    {
+      "rule_identifier": "python_not_not-a-license_269.RULE",
+      "license_expression": "python",
+      "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/python_not_not-a-license_269.RULE",
+      "rule_relevance": 100,
+      "rule_length": 35,
+      "is_license_text": false,
+      "is_license_notice": false,
+      "is_license_reference": true,
+      "is_license_tag": false,
+      "is_license_intro": false,
+      "referenced_filenames": [],
+      "rule_text": "All Python releases are Open Source (see http://www.opensource.org for\nthe Open Source Definition).  Historically, most, but not all, Python\nreleases have also been GPL-compatible; the table below summarizes\nthe various releases."
+    },
+    {
+      "rule_identifier": "other-copyleft_24.RULE",
+      "license_expression": "other-copyleft",
+      "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/other-copyleft_24.RULE",
+      "rule_relevance": 80,
+      "rule_length": 2,
+      "is_license_text": false,
+      "is_license_notice": false,
+      "is_license_reference": true,
+      "is_license_tag": false,
+      "is_license_intro": false,
+      "referenced_filenames": [],
+      "rule_text": "GPL-compatible"
+    },
+    {
+      "rule_identifier": "gpl-1.0-plus_200.RULE",
+      "license_expression": "gpl-1.0-plus",
+      "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-1.0-plus_200.RULE",
+      "rule_relevance": 100,
+      "rule_length": 3,
+      "is_license_text": false,
+      "is_license_notice": true,
+      "is_license_reference": false,
+      "is_license_tag": false,
+      "is_license_intro": false,
+      "referenced_filenames": [],
+      "rule_text": "under the GPL"
+    },
+    {
+      "rule_identifier": "gpl-1.0-plus_351.RULE",
+      "license_expression": "gpl-1.0-plus",
+      "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-1.0-plus_351.RULE",
+      "rule_relevance": 85,
+      "rule_length": 2,
+      "is_license_text": false,
+      "is_license_notice": false,
+      "is_license_reference": true,
+      "is_license_tag": false,
+      "is_license_intro": false,
+      "referenced_filenames": [],
+      "rule_text": "the GPL"
+    },
+    {
+      "rule_identifier": "gpl_194.RULE",
+      "license_expression": "gpl-1.0-plus",
+      "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl_194.RULE",
+      "rule_relevance": 100,
+      "rule_length": 4,
+      "is_license_text": false,
+      "is_license_notice": false,
+      "is_license_reference": true,
+      "is_license_tag": false,
+      "is_license_intro": false,
+      "referenced_filenames": [],
+      "rule_text": "released under the GPL"
+    },
+    {
+      "rule_identifier": "python_2019.RULE",
+      "license_expression": "python",
+      "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/python_2019.RULE",
+      "rule_relevance": 100,
+      "rule_length": 1530,
+      "is_license_text": true,
+      "is_license_notice": false,
+      "is_license_reference": false,
+      "is_license_tag": false,
+      "is_license_intro": false,
+      "referenced_filenames": [],
+      "rule_text": "B. TERMS AND CONDITIONS FOR ACCESSING OR OTHERWISE USING PYTHON\n===============================================================\n\nPYTHON SOFTWARE FOUNDATION LICENSE VERSION 2\n--------------------------------------------\n\n1. This LICENSE AGREEMENT is between the Python Software Foundation\n(\"PSF\"), and the Individual or Organization (\"Licensee\") accessing and\notherwise using this software (\"Python\") in source or binary form and\nits associated documentation.\n\n2. Subject to the terms and conditions of this License Agreement, PSF hereby\ngrants Licensee a nonexclusive, royalty-free, world-wide license to reproduce,\nanalyze, test, perform and/or display publicly, prepare derivative works,\ndistribute, and otherwise use Python alone or in any derivative version,\nprovided, however, that PSF's License Agreement and PSF's notice of copyright,\ni.e., \"Copyright (c) Python Software Foundation;\nAll Rights Reserved\" are retained in Python alone or in any derivative version\nprepared by Licensee.\n\n3. In the event Licensee prepares a derivative work that is based on\nor incorporates Python or any part thereof, and wants to make\nthe derivative work available to others as provided herein, then\nLicensee hereby agrees to include in any such work a brief summary of\nthe changes made to Python.\n\n4. PSF is making Python available to Licensee on an \"AS IS\"\nbasis.  PSF MAKES NO REPRESENTATIONS OR WARRANTIES, EXPRESS OR\nIMPLIED.  BY WAY OF EXAMPLE, BUT NOT LIMITATION, PSF MAKES NO AND\nDISCLAIMS ANY REPRESENTATION OR WARRANTY OF MERCHANTABILITY OR FITNESS\nFOR ANY PARTICULAR PURPOSE OR THAT THE USE OF PYTHON WILL NOT\nINFRINGE ANY THIRD PARTY RIGHTS.\n\n5. PSF SHALL NOT BE LIABLE TO LICENSEE OR ANY OTHER USERS OF PYTHON\nFOR ANY INCIDENTAL, SPECIAL, OR CONSEQUENTIAL DAMAGES OR LOSS AS\nA RESULT OF MODIFYING, DISTRIBUTING, OR OTHERWISE USING PYTHON,\nOR ANY DERIVATIVE THEREOF, EVEN IF ADVISED OF THE POSSIBILITY THEREOF.\n\n6. This License Agreement will automatically terminate upon a material\nbreach of its terms and conditions.\n\n7. Nothing in this License Agreement shall be deemed to create any\nrelationship of agency, partnership, or joint venture between PSF and\nLicensee.  This License Agreement does not grant permission to use PSF\ntrademarks or trade name in a trademark sense to endorse or promote\nproducts or services of Licensee, or any third party.\n\n8. By copying, installing or otherwise using Python, Licensee\nagrees to be bound by the terms and conditions of this License\nAgreement.\n\n\nBEOPEN.COM LICENSE AGREEMENT FOR PYTHON 2.0\n-------------------------------------------\n\nBEOPEN PYTHON OPEN SOURCE LICENSE AGREEMENT VERSION 1\n\n1. This LICENSE AGREEMENT is between BeOpen.com (\"BeOpen\"), having an\noffice at 160 Saratoga Avenue, Santa Clara, CA 95051, and the\nIndividual or Organization (\"Licensee\") accessing and otherwise using\nthis software in source or binary form and its associated\ndocumentation (\"the Software\").\n\n2. Subject to the terms and conditions of this BeOpen Python License\nAgreement, BeOpen hereby grants Licensee a non-exclusive,\nroyalty-free, world-wide license to reproduce, analyze, test, perform\nand/or display publicly, prepare derivative works, distribute, and\notherwise use the Software alone or in any derivative version,\nprovided, however, that the BeOpen Python License is retained in the\nSoftware, alone or in any derivative version prepared by Licensee.\n\n3. BeOpen is making the Software available to Licensee on an \"AS IS\"\nbasis.  BEOPEN MAKES NO REPRESENTATIONS OR WARRANTIES, EXPRESS OR\nIMPLIED.  BY WAY OF EXAMPLE, BUT NOT LIMITATION, BEOPEN MAKES NO AND\nDISCLAIMS ANY REPRESENTATION OR WARRANTY OF MERCHANTABILITY OR FITNESS\nFOR ANY PARTICULAR PURPOSE OR THAT THE USE OF THE SOFTWARE WILL NOT\nINFRINGE ANY THIRD PARTY RIGHTS.\n\n4. BEOPEN SHALL NOT BE LIABLE TO LICENSEE OR ANY OTHER USERS OF THE\nSOFTWARE FOR ANY INCIDENTAL, SPECIAL, OR CONSEQUENTIAL DAMAGES OR LOSS\nAS A RESULT OF USING, MODIFYING OR DISTRIBUTING THE SOFTWARE, OR ANY\nDERIVATIVE THEREOF, EVEN IF ADVISED OF THE POSSIBILITY THEREOF.\n\n5. This License Agreement will automatically terminate upon a material\nbreach of its terms and conditions.\n\n6. This License Agreement shall be governed by and interpreted in all\nrespects by the law of the State of California, excluding conflict of\nlaw provisions.  Nothing in this License Agreement shall be deemed to\ncreate any relationship of agency, partnership, or joint venture\nbetween BeOpen and Licensee.  This License Agreement does not grant\npermission to use BeOpen trademarks or trade names in a trademark\nsense to endorse or promote products or services of Licensee, or any\nthird party.  As an exception, the \"BeOpen Python\" logos available at\nhttp://www.pythonlabs.com/logos.html may be used according to the\npermissions granted on that web page.\n\n7. By copying, installing or otherwise using the software, Licensee\nagrees to be bound by the terms and conditions of this License\nAgreement.\n\n\nCNRI LICENSE AGREEMENT FOR PYTHON 1.6.1\n---------------------------------------\n\n1. This LICENSE AGREEMENT is between the Corporation for National\nResearch Initiatives, having an office at 1895 Preston White Drive,\nReston, VA 20191 (\"CNRI\"), and the Individual or Organization\n(\"Licensee\") accessing and otherwise using Python 1.6.1 software in\nsource or binary form and its associated documentation.\n\n2. Subject to the terms and conditions of this License Agreement, CNRI\nhereby grants Licensee a nonexclusive, royalty-free, world-wide\nlicense to reproduce, analyze, test, perform and/or display publicly,\nprepare derivative works, distribute, and otherwise use Python 1.6.1\nalone or in any derivative version, provided, however, that CNRI's\nLicense Agreement and CNRI's notice of copyright, i.e., \"Copyright (c)\n1995-2001 Corporation for National Research Initiatives; All Rights\nReserved\" are retained in Python 1.6.1 alone or in any derivative\nversion prepared by Licensee.  Alternately, in lieu of CNRI's License\nAgreement, Licensee may substitute the following text (omitting the\nquotes): \"Python 1.6.1 is made available subject to the terms and\nconditions in CNRI's License Agreement.  This Agreement together with\nPython 1.6.1 may be located on the Internet using the following\nunique, persistent identifier (known as a handle): 1895.22/1013.  This\nAgreement may also be obtained from a proxy server on the Internet\nusing the following URL: http://hdl.handle.net/1895.22/1013\".\n\n3. In the event Licensee prepares a derivative work that is based on\nor incorporates Python 1.6.1 or any part thereof, and wants to make\nthe derivative work available to others as provided herein, then\nLicensee hereby agrees to include in any such work a brief summary of\nthe changes made to Python 1.6.1.\n\n4. CNRI is making Python 1.6.1 available to Licensee on an \"AS IS\"\nbasis.  CNRI MAKES NO REPRESENTATIONS OR WARRANTIES, EXPRESS OR\nIMPLIED.  BY WAY OF EXAMPLE, BUT NOT LIMITATION, CNRI MAKES NO AND\nDISCLAIMS ANY REPRESENTATION OR WARRANTY OF MERCHANTABILITY OR FITNESS\nFOR ANY PARTICULAR PURPOSE OR THAT THE USE OF PYTHON 1.6.1 WILL NOT\nINFRINGE ANY THIRD PARTY RIGHTS.\n\n5. CNRI SHALL NOT BE LIABLE TO LICENSEE OR ANY OTHER USERS OF PYTHON\n1.6.1 FOR ANY INCIDENTAL, SPECIAL, OR CONSEQUENTIAL DAMAGES OR LOSS AS\nA RESULT OF MODIFYING, DISTRIBUTING, OR OTHERWISE USING PYTHON 1.6.1,\nOR ANY DERIVATIVE THEREOF, EVEN IF ADVISED OF THE POSSIBILITY THEREOF.\n\n6. This License Agreement will automatically terminate upon a material\nbreach of its terms and conditions.\n\n7. This License Agreement shall be governed by the federal\nintellectual property law of the United States, including without\nlimitation the federal copyright law, and, to the extent such\nU.S. federal law does not apply, by the law of the Commonwealth of\nVirginia, excluding Virginia's conflict of law provisions.\nNotwithstanding the foregoing, with regard to derivative works based\non Python 1.6.1 that incorporate non-separable material that was\npreviously distributed under the GNU General Public License (GPL), the\nlaw of the Commonwealth of Virginia shall govern this License\nAgreement only as to issues arising under or with respect to\nParagraphs 4, 5, and 7 of this License Agreement.  Nothing in this\nLicense Agreement shall be deemed to create any relationship of\nagency, partnership, or joint venture between CNRI and Licensee.  This\nLicense Agreement does not grant permission to use CNRI trademarks or\ntrade name in a trademark sense to endorse or promote products or\nservices of Licensee, or any third party.\n\n8. By clicking on the \"ACCEPT\" button where indicated, or by copying,\ninstalling or otherwise using Python 1.6.1, Licensee agrees to be\nbound by the terms and conditions of this License Agreement.\n\n        ACCEPT\n\n\nCWI LICENSE AGREEMENT FOR PYTHON 0.9.0 THROUGH 1.2\n--------------------------------------------------\n\nCopyright (c) 1991 - 1995, Stichting Mathematisch Centrum Amsterdam,\nThe Netherlands.  All rights reserved.\n\nPermission to use, copy, modify, and distribute this software and its\ndocumentation for any purpose and without fee is hereby granted,\nprovided that the above copyright notice appear in all copies and that\nboth that copyright notice and this permission notice appear in\nsupporting documentation, and that the name of Stichting Mathematisch\nCentrum or CWI not be used in advertising or publicity pertaining to\ndistribution of the software without specific, written prior\npermission.\n\nSTICHTING MATHEMATISCH CENTRUM DISCLAIMS ALL WARRANTIES WITH REGARD TO\nTHIS SOFTWARE, INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY AND\nFITNESS, IN NO EVENT SHALL STICHTING MATHEMATISCH CENTRUM BE LIABLE\nFOR ANY SPECIAL, INDIRECT OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES\nWHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN\nACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT\nOF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE."
+    },
+    {
+      "rule_identifier": "python-cwi.LICENSE",
+      "license_expression": "python-cwi",
+      "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/python-cwi.LICENSE",
+      "rule_relevance": 100,
+      "rule_length": 145,
+      "is_license_text": true,
+      "is_license_notice": false,
+      "is_license_reference": false,
+      "is_license_tag": false,
+      "is_license_intro": false,
+      "referenced_filenames": [],
+      "rule_text": "Permission to use, copy, modify, and distribute this software and its\ndocumentation for any purpose and without fee is hereby granted,\nprovided that the above copyright notice appear in all copies and that\nboth that copyright notice and this permission notice appear in\nsupporting documentation, and that the name of Stichting Mathematisch\nCentrum or CWI not be used in advertising or publicity pertaining to\ndistribution of the software without specific, written prior\npermission.\n\nSTICHTING MATHEMATISCH CENTRUM DISCLAIMS ALL WARRANTIES WITH REGARD TO\nTHIS SOFTWARE, INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY AND\nFITNESS, IN NO EVENT SHALL STICHTING MATHEMATISCH CENTRUM BE LIABLE\nFOR ANY SPECIAL, INDIRECT OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES\nWHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN\nACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT\nOF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE."
+    },
+    {
+      "rule_identifier": "license-intro_50.RULE",
+      "license_expression": "unknown-license-reference",
+      "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/license-intro_50.RULE",
+      "rule_relevance": 100,
+      "rule_length": 6,
+      "is_license_text": false,
+      "is_license_notice": false,
+      "is_license_reference": false,
+      "is_license_tag": false,
+      "is_license_intro": true,
+      "referenced_filenames": [],
+      "rule_text": "is licensed under the following terms:"
+    },
+    {
+      "rule_identifier": "bzip2-libbzip-2010.LICENSE",
+      "license_expression": "bzip2-libbzip-2010",
+      "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bzip2-libbzip-2010.LICENSE",
+      "rule_relevance": 100,
+      "rule_length": 233,
+      "is_license_text": true,
+      "is_license_notice": false,
+      "is_license_reference": false,
+      "is_license_tag": false,
+      "is_license_intro": false,
+      "referenced_filenames": [],
+      "rule_text": "Redistribution and use in source and binary forms, with or without\nmodification, are permitted provided that the following conditions\nare met:\n\n1. Redistributions of source code must retain the above copyright\nnotice, this list of conditions and the following disclaimer.\n\n2. The origin of this software must not be misrepresented; you must\nnot claim that you wrote the original software.  If you use this\nsoftware in a product, an acknowledgment in the product\ndocumentation would be appreciated but is not required.\n\n3. Altered source versions must be plainly marked as such, and must\nnot be misrepresented as being the original software.\n\n4. The name of the author may not be used to endorse or promote\nproducts derived from this software without specific prior written\npermission.\n\nTHIS SOFTWARE IS PROVIDED BY THE AUTHOR ``AS IS'' AND ANY EXPRESS\nOR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED\nWARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE\nARE DISCLAIMED.  IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY\nDIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL\nDAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE\nGOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS\nINTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,\nWHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING\nNEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS\nSOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE."
+    },
+    {
+      "rule_identifier": "sleepycat_5.RULE",
+      "license_expression": "sleepycat",
+      "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/sleepycat_5.RULE",
+      "rule_relevance": 100,
+      "rule_length": 174,
+      "is_license_text": false,
+      "is_license_notice": true,
+      "is_license_reference": false,
+      "is_license_tag": false,
+      "is_license_intro": false,
+      "referenced_filenames": [],
+      "rule_text": "Redistribution and use in source and binary forms, with or without\nmodification, are permitted provided that the following conditions\nare met:\n1. Redistributions of source code must retain the above copyright\n   notice, this list of conditions and the following disclaimer.\n2. Redistributions in binary form must reproduce the above copyright\n   notice, this list of conditions and the following disclaimer in the\n   documentation and/or other materials provided with the distribution.\n3. Redistributions in any form must be accompanied by information on\n   how to obtain complete source code for the DB software and any\n   accompanying software that uses the DB software.  The source code\n   must either be included in the distribution or be available for no\n   more than the cost of distribution plus a nominal fee, and must be\n   freely redistributable under reasonable conditions.  For an\n   executable file, complete source code means the source code for all\n   modules it contains.  It does not include source code for modules or\n   files that typically accompany the major components of the operating\n   system on which the executable file runs."
+    },
+    {
+      "rule_identifier": "bsd-simplified_242.RULE",
+      "license_expression": "bsd-simplified",
+      "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-simplified_242.RULE",
+      "rule_relevance": 100,
+      "rule_length": 175,
+      "is_license_text": true,
+      "is_license_notice": false,
+      "is_license_reference": false,
+      "is_license_tag": false,
+      "is_license_intro": false,
+      "referenced_filenames": [],
+      "rule_text": "Redistribution and use in source and binary forms, with or without\nmodification, are permitted provided that the following conditions\nare met:\n1. Redistributions of source code must retain the above copyright\n   notice, this list of conditions and the following disclaimer.\n2. Redistributions in binary form must reproduce the above copyright\n   notice, this list of conditions and the following disclaimer in the\n   documentation and/or other materials provided with the distribution.\n\nThis software is provided by  ``as is'' and\nany express or implied warranties, including, but not limited to, the\nimplied warranties of merchantability and fitness for a particular purpose\nare disclaimed.  in no event shall  be liable\nfor any direct, indirect, incidental, special, exemplary, or consequential\ndamages (including, but not limited to, procurement of substitute goods\nor services; loss of use, data, or profits; or business interruption)\nhowever caused and on any theory of liability, whether in contract, strict\nliability, or tort (including negligence or otherwise) arising in any way\nout of the use of this software, even if advised of the possibility of\nsuch damage."
+    },
+    {
+      "rule_identifier": "bsd-new_19.RULE",
+      "license_expression": "bsd-new",
+      "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_19.RULE",
+      "rule_relevance": 100,
+      "rule_length": 213,
+      "is_license_text": true,
+      "is_license_notice": false,
+      "is_license_reference": false,
+      "is_license_tag": false,
+      "is_license_intro": false,
+      "referenced_filenames": [],
+      "rule_text": "* Redistribution and use in source and binary forms, with or without\n * modification, are permitted provided that the following conditions\n * are met:\n * 1. Redistributions of source code must retain the above copyright\n *    notice, this list of conditions and the following disclaimer.\n * 2. Redistributions in binary form must reproduce the above copyright\n *    notice, this list of conditions and the following disclaimer in the\n *    documentation and/or other materials provided with the distribution.\n * 3. Neither the name of the University nor the names of its contributors\n *    may be used to endorse or promote products derived from this software\n *    without specific prior written permission.\n *\n * THIS SOFTWARE IS PROVIDED BY THE REGENTS AND CONTRIBUTORS ``AS IS'' AND\n * ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE\n * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE\n * ARE DISCLAIMED.  IN NO EVENT SHALL THE REGENTS OR CONTRIBUTORS BE LIABLE\n * FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL\n * DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS\n * OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)\n * HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT\n * LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY\n * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF\n * SUCH DAMAGE."
+    },
+    {
+      "rule_identifier": "bsd-new_943.RULE",
+      "license_expression": "bsd-new",
+      "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_943.RULE",
+      "rule_relevance": 100,
+      "rule_length": 213,
+      "is_license_text": true,
+      "is_license_notice": false,
+      "is_license_reference": false,
+      "is_license_tag": false,
+      "is_license_intro": false,
+      "referenced_filenames": [],
+      "rule_text": "Redistribution and use in source and binary forms, with or without\nmodification, are permitted provided that the following conditions\nare met:\n1. Redistributions of source code must retain the above copyright\nnotice, this list of conditions and the following disclaimer.\n2. Redistributions in binary form must reproduce the above copyright\nnotice, this list of conditions and the following disclaimer in the\ndocumentation and/or other materials provided with the distribution.\n3. Neither the name of the University nor the names of its contributors\nmay be used to endorse or promote products derived from this software\nwithout specific prior written permission.\n\nTHIS SOFTWARE IS PROVIDED BY HARVARD AND ITS CONTRIBUTORS ``AS IS'' AND\nANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE\nIMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE\nARE DISCLAIMED.  IN NO EVENT SHALL HARVARD OR ITS CONTRIBUTORS BE LIABLE\nFOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL\nDAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS\nOR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)\nHOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT\nLIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY\nOUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF\nSUCH DAMAGE."
+    },
+    {
+      "rule_identifier": "openssl-ssleay_43.RULE",
+      "license_expression": "openssl-ssleay",
+      "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/openssl-ssleay_43.RULE",
+      "rule_relevance": 100,
+      "rule_length": 56,
+      "is_license_text": false,
+      "is_license_notice": true,
+      "is_license_reference": false,
+      "is_license_tag": false,
+      "is_license_intro": false,
+      "referenced_filenames": [],
+      "rule_text": "The OpenSSL toolkit stays under a dual license, i.e. both the conditions of\n  the OpenSSL License and the original SSLeay license apply to the toolkit.\n  See below for the actual license texts. Actually both licenses are BSD-style\n  Open Source licenses. In case of any license issues related to OpenSSL\n  please contact openssl-core@openssl.org."
+    },
+    {
+      "rule_identifier": "openssl-ssleay_2.RULE",
+      "license_expression": "openssl-ssleay",
+      "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/openssl-ssleay_2.RULE",
+      "rule_relevance": 100,
+      "rule_length": 2,
+      "is_license_text": false,
+      "is_license_notice": false,
+      "is_license_reference": true,
+      "is_license_tag": false,
+      "is_license_intro": false,
+      "referenced_filenames": [],
+      "rule_text": "OpenSSL License"
+    },
+    {
+      "rule_identifier": "openssl_1.RULE",
+      "license_expression": "openssl",
+      "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/openssl_1.RULE",
+      "rule_relevance": 100,
+      "rule_length": 332,
+      "is_license_text": true,
+      "is_license_notice": false,
+      "is_license_reference": false,
+      "is_license_tag": false,
+      "is_license_intro": false,
+      "referenced_filenames": [],
+      "rule_text": "* Redistribution and use in source and binary forms, with or without\n * modification, are permitted provided that the following conditions\n * are met:\n *\n * 1. Redistributions of source code must retain the above copyright\n *    notice, this list of conditions and the following disclaimer. \n *\n * 2. Redistributions in binary form must reproduce the above copyright\n *    notice, this list of conditions and the following disclaimer in\n *    the documentation and/or other materials provided with the\n *    distribution.\n *\n * 3. All advertising materials mentioning features or use of this\n *    software must display the following acknowledgment:\n *    \"This product includes software developed by the OpenSSL Project\n *    for use in the OpenSSL Toolkit. (http://www.openssl.org/)\"\n *\n * 4. The names \"OpenSSL Toolkit\" and \"OpenSSL Project\" must not be used to\n *    endorse or promote products derived from this software without\n *    prior written permission. For written permission, please contact\n *     openssl-core@openssl.org.\n *\n * 5. Products derived from this software may not be called \"OpenSSL\"\n *    nor may \"OpenSSL\" appear in their names without prior written\n *    permission of the OpenSSL Project.\n *\n * 6. Redistributions of any form whatsoever must retain the following\n *    acknowledgment:\n *    \"This product includes software developed by the OpenSSL Project\n *    for use in the OpenSSL Toolkit (http://www.openssl.org/)\"\n *\n * THIS SOFTWARE IS PROVIDED BY THE OpenSSL PROJECT ``AS IS'' AND ANY\n * EXPRESSED OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE\n * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR\n * PURPOSE ARE DISCLAIMED.  IN NO EVENT SHALL THE OpenSSL PROJECT OR\n * ITS CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,\n * SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT\n * NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;\n * LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)\n * HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT,\n * STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)\n * ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED\n * OF THE POSSIBILITY OF SUCH DAMAGE.\n * ====================================================================\n *\n * This product includes cryptographic software written by Eric Young\n * (eay@cryptsoft.com).  This product includes software written by Tim\n * Hudson (tjh@cryptsoft.com).\n *\n */"
+    },
+    {
+      "rule_identifier": "ssleay-windows.LICENSE",
+      "license_expression": "ssleay-windows",
+      "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/ssleay-windows.LICENSE",
+      "rule_relevance": 100,
+      "rule_length": 453,
+      "is_license_text": true,
+      "is_license_notice": false,
+      "is_license_reference": false,
+      "is_license_tag": false,
+      "is_license_intro": false,
+      "referenced_filenames": [],
+      "rule_text": "This package is an SSL implementation written by Eric Young (eay@cryptsoft.com).\nThe implementation was written so as to conform with Netscapes SSL.\n\nThis library is free for commercial and non-commercial use as long as\nthe following conditions are aheared to.  The following conditions\napply to all code found in this distribution, be it the RC4, RSA,\nlhash, DES, etc., code; not just the SSL code.  The SSL documentation\nincluded with this distribution is covered by the same copyright terms\nexcept that the holder is Tim Hudson (tjh@cryptsoft.com).\n\nCopyright remains Eric Young's, and as such any Copyright notices in\nthe code are not to be removed.\nIf this package is used in a product, Eric Young should be given attribution\nas the author of the parts of the library used.\nThis can be in the form of a textual message at program startup or\nin documentation (online or textual) provided with the package.\n\nRedistribution and use in source and binary forms, with or without\nmodification, are permitted provided that the following conditions\nare met:\n1. Redistributions of source code must retain the copyright\nnotice, this list of conditions and the following disclaimer.\n2. Redistributions in binary form must reproduce the above copyright\nnotice, this list of conditions and the following disclaimer in the\ndocumentation and/or other materials provided with the distribution.\n3. All advertising materials mentioning features or use of this software\nmust display the following acknowledgement:\n\"This product includes cryptographic software written by\nEric Young (eay@cryptsoft.com)\"\nThe word 'cryptographic' can be left out if the rouines from the library\nbeing used are not cryptographic related :-).\n4. If you include any Windows specific code (or a derivative thereof) from\nthe apps directory (application code) you must include an acknowledgement:\n\"This product includes software written by Tim Hudson (tjh@cryptsoft.com)\"\n\nTHIS SOFTWARE IS PROVIDED BY ERIC YOUNG ``AS IS'' AND\nANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE\nIMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE\nARE DISCLAIMED.  IN NO EVENT SHALL THE AUTHOR OR CONTRIBUTORS BE LIABLE\nFOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL\nDAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS\nOR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)\nHOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT\nLIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY\nOUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF\nSUCH DAMAGE.\n\nThe licence and distribution terms for any publically available version or\nderivative of this code cannot be changed.  i.e. this code cannot simply be\ncopied and put under another distribution licence\n[including the GNU Public Licence.]"
+    },
+    {
+      "rule_identifier": "tcl.LICENSE",
+      "license_expression": "tcl",
+      "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/tcl.LICENSE",
+      "rule_relevance": 100,
+      "rule_length": 345,
+      "is_license_text": true,
+      "is_license_notice": false,
+      "is_license_reference": false,
+      "is_license_tag": false,
+      "is_license_intro": false,
+      "referenced_filenames": [],
+      "rule_text": "This software is copyrighted by the Regents of the University of\nCalifornia, Sun Microsystems, Inc., Scriptics Corporation, ActiveState\nCorporation and other parties.  The following terms apply to all files\nassociated with the software unless explicitly disclaimed in\nindividual files.\n\nThe authors hereby grant permission to use, copy, modify, distribute,\nand license this software and its documentation for any purpose, provided\nthat existing copyright notices are retained in all copies and that this\nnotice is included verbatim in any distributions. No written agreement,\nlicense, or royalty fee is required for any of the authorized uses.\nModifications to this software may be copyrighted by their authors\nand need not follow the licensing terms described here, provided that\nthe new terms are clearly indicated on the first page of each file where\nthey apply.\n\nIN NO EVENT SHALL THE AUTHORS OR DISTRIBUTORS BE LIABLE TO ANY PARTY\nFOR DIRECT, INDIRECT, SPECIAL, INCIDENTAL, OR CONSEQUENTIAL DAMAGES\nARISING OUT OF THE USE OF THIS SOFTWARE, ITS DOCUMENTATION, OR ANY\nDERIVATIVES THEREOF, EVEN IF THE AUTHORS HAVE BEEN ADVISED OF THE\nPOSSIBILITY OF SUCH DAMAGE.\n\nTHE AUTHORS AND DISTRIBUTORS SPECIFICALLY DISCLAIM ANY WARRANTIES,\nINCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF\nMERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NON-INFRINGEMENT.\nTHIS SOFTWARE IS PROVIDED ON AN \"AS IS\" BASIS, AND THE AUTHORS AND\nDISTRIBUTORS HAVE NO OBLIGATION TO PROVIDE MAINTENANCE, SUPPORT,\nUPDATES, ENHANCEMENTS, OR MODIFICATIONS.\n\nGOVERNMENT USE: If you are acquiring this software on behalf of the\nU.S. government, the Government shall have only \"Restricted Rights\"\nin the software and related documentation as defined in the Federal\nAcquisition Regulations (FARs) in Clause 52.227.19 (c) (2).  If you\nare acquiring the software on behalf of the Department of Defense, the\nsoftware shall be classified as \"Commercial Computer Software\" and the\nGovernment shall have only \"Restricted Rights\" as defined in Clause\n252.227-7013 (c) (1) of DFARs.  Notwithstanding the foregoing, the\nauthors grant the U.S. Government and others acting in its behalf\npermission to use and distribute the software in accordance with the\nterms specified in this license."
+    },
+    {
+      "rule_identifier": "tcl_14.RULE",
+      "license_expression": "tcl",
+      "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/tcl_14.RULE",
+      "rule_relevance": 100,
+      "rule_length": 341,
+      "is_license_text": true,
+      "is_license_notice": false,
+      "is_license_reference": false,
+      "is_license_tag": false,
+      "is_license_intro": false,
+      "referenced_filenames": [],
+      "rule_text": "This software is copyrighted by the Regents of the University of\n California, Sun Microsystems, Inc., and other parties. The following terms\n apply to all files associated with the software unless explicitly\n disclaimed in individual files.\n\n The authors hereby grant permission to use, copy, modify, distribute,\n and license this software and its documentation for any purpose,\n provided that existing copyright notices are retained in all copies\n and that this notice is included verbatim in any distributions. No\n written agreement, license, or royalty fee is required for any of the\n authorized uses. Modifications to this software may be copyrighted by\n their authors and need not follow the licensing terms described here,\n provided that the new terms are clearly indicated on the first page\n of each file where they apply.\n\n IN NO EVENT SHALL THE AUTHORS OR DISTRIBUTORS BE LIABLE TO ANY PARTY\n FOR DIRECT, INDIRECT, SPECIAL, INCIDENTAL, OR CONSEQUENTIAL DAMAGES\n ARISING OUT OF THE USE OF THIS SOFTWARE, ITS DOCUMENTATION, OR ANY\n DERIVATIVES THEREOF, EVEN IF THE AUTHORS HAVE BEEN ADVISED OF THE\n POSSIBILITY OF SUCH DAMAGE.\n\n THE AUTHORS AND DISTRIBUTORS SPECIFICALLY DISCLAIM ANY WARRANTIES,\n INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF\n MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND\n NON-INFRINGEMENT. THIS SOFTWARE IS PROVIDED ON AN \"AS IS\" BASIS, AND\n THE AUTHORS AND DISTRIBUTORS HAVE NO OBLIGATION TO PROVIDE\n MAINTENANCE, SUPPORT, UPDATES, ENHANCEMENTS, OR MODIFICATIONS.\n\n GOVERNMENT USE: If you are acquiring this software on behalf of the\n U.S. government, the Government shall have only \"Restricted Rights\"\n in the software and related documentation as defined in the Federal\n Acquisition Regulations (FARs) in Clause 52.227.19 (c) (2). If you\n are acquiring the software on behalf of the Department of Defense,\n the software shall be classified as \"Commercial Computer Software\"\n and the Government shall have only \"Restricted Rights\" as defined in\n Clause 252.227-7013 (c) (1) of DFARs. Notwithstanding the foregoing,\n the authors grant the U.S. Government and others acting in its behalf\n permission to use and distribute the software in accordance with the\n terms specified in this license."
+    }
+  ],
+  "files": [
+    {
+      "path": "python.LICENSE",
+      "type": "file",
+      "detected_license_expression": "python AND (other-copyleft AND gpl-1.0-plus) AND (python AND python-cwi) AND bzip2-libbzip-2010 AND sleepycat AND bsd-simplified AND bsd-new AND openssl-ssleay AND openssl AND ssleay-windows AND tcl",
+      "detected_license_expression_spdx": "Python-2.0 AND (LicenseRef-scancode-other-copyleft AND GPL-1.0-or-later) AND (Python-2.0 AND LicenseRef-scancode-python-cwi) AND bzip2-1.0.6 AND Sleepycat AND BSD-2-Clause AND BSD-3-Clause AND OpenSSL AND LicenseRef-scancode-openssl AND LicenseRef-scancode-ssleay-windows AND TCL",
+      "license_detections": [
+        {
+          "license_expression": "python",
+          "detection_log": [
+            "not-combined"
+          ],
+          "matches": [
+            {
+              "score": 100.0,
+              "start_line": 23,
+              "end_line": 26,
+              "matched_length": 35,
+              "match_coverage": 100.0,
+              "matcher": "2-aho",
+              "license_expression": "python",
+              "rule_identifier": "python_not_not-a-license_269.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/python_not_not-a-license_269.RULE",
+              "matched_text": "All Python releases are Open Source (see http://www.opensource.org for\nthe Open Source Definition).  Historically, most, but not all, Python\nreleases have also been GPL-compatible; the table below summarizes\nthe various releases."
+            }
+          ]
+        },
+        {
+          "license_expression": "other-copyleft AND gpl-1.0-plus",
+          "detection_log": [
+            "not-combined"
+          ],
+          "matches": [
+            {
+              "score": 80.0,
+              "start_line": 62,
+              "end_line": 62,
+              "matched_length": 2,
+              "match_coverage": 100.0,
+              "matcher": "2-aho",
+              "license_expression": "other-copyleft",
+              "rule_identifier": "other-copyleft_24.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/other-copyleft_24.RULE",
+              "matched_text": "(1) GPL-compatible doesn't mean that we're distributing Python under"
+            },
+            {
+              "score": 100.0,
+              "start_line": 62,
+              "end_line": 63,
+              "matched_length": 3,
+              "match_coverage": 100.0,
+              "matcher": "2-aho",
+              "license_expression": "gpl-1.0-plus",
+              "rule_identifier": "gpl-1.0-plus_200.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-1.0-plus_200.RULE",
+              "matched_text": "(1) GPL-compatible doesn't mean that we're distributing Python under\n    the GPL.  All Python licenses, unlike the GPL, let you distribute"
+            },
+            {
+              "score": 85.0,
+              "start_line": 63,
+              "end_line": 63,
+              "matched_length": 2,
+              "match_coverage": 100.0,
+              "matcher": "2-aho",
+              "license_expression": "gpl-1.0-plus",
+              "rule_identifier": "gpl-1.0-plus_351.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-1.0-plus_351.RULE",
+              "matched_text": "    the GPL.  All Python licenses, unlike the GPL, let you distribute"
+            },
+            {
+              "score": 85.0,
+              "start_line": 64,
+              "end_line": 65,
+              "matched_length": 2,
+              "match_coverage": 100.0,
+              "matcher": "2-aho",
+              "license_expression": "gpl-1.0-plus",
+              "rule_identifier": "gpl-1.0-plus_351.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-1.0-plus_351.RULE",
+              "matched_text": "    a modified version without making your changes open source.  The\n    GPL-compatible licenses make it possible to combine Python with"
+            },
+            {
+              "score": 80.0,
+              "start_line": 65,
+              "end_line": 65,
+              "matched_length": 2,
+              "match_coverage": 100.0,
+              "matcher": "2-aho",
+              "license_expression": "other-copyleft",
+              "rule_identifier": "other-copyleft_24.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/other-copyleft_24.RULE",
+              "matched_text": "    GPL-compatible licenses make it possible to combine Python with"
+            },
+            {
+              "score": 100.0,
+              "start_line": 66,
+              "end_line": 66,
+              "matched_length": 4,
+              "match_coverage": 100.0,
+              "matcher": "2-aho",
+              "license_expression": "gpl-1.0-plus",
+              "rule_identifier": "gpl_194.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl_194.RULE",
+              "matched_text": "    other software that is released under the GPL; the others don't."
+            },
+            {
+              "score": 80.0,
+              "start_line": 68,
+              "end_line": 68,
+              "matched_length": 2,
+              "match_coverage": 100.0,
+              "matcher": "2-aho",
+              "license_expression": "other-copyleft",
+              "rule_identifier": "other-copyleft_24.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/other-copyleft_24.RULE",
+              "matched_text": "(2) According to Richard Stallman, 1.6.1 is not GPL-compatible,"
+            },
+            {
+              "score": 85.0,
+              "start_line": 71,
+              "end_line": 71,
+              "matched_length": 2,
+              "match_coverage": 100.0,
+              "matcher": "2-aho",
+              "license_expression": "gpl-1.0-plus",
+              "rule_identifier": "gpl-1.0-plus_351.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-1.0-plus_351.RULE",
+              "matched_text": "    is \"not incompatible\" with the GPL."
+            }
+          ]
+        },
+        {
+          "license_expression": "python AND python-cwi",
+          "detection_log": [
+            "not-combined"
+          ],
+          "matches": [
+            {
+              "score": 90.52,
+              "start_line": 77,
+              "end_line": 255,
+              "matched_length": 1385,
+              "match_coverage": 90.52,
+              "matcher": "3-seq",
+              "license_expression": "python",
+              "rule_identifier": "python_2019.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/python_2019.RULE",
+              "matched_text": "B. TERMS AND CONDITIONS FOR ACCESSING OR OTHERWISE USING PYTHON\n===============================================================\n\nPYTHON SOFTWARE FOUNDATION LICENSE VERSION 2\n--------------------------------------------\n\n1. This LICENSE AGREEMENT is between the Python Software Foundation\n(\"PSF\"), and the Individual or Organization (\"Licensee\") accessing and\notherwise using this software (\"Python\") in source or binary form and\nits associated documentation.\n\n2. Subject to the terms and conditions of this License Agreement, PSF\nhereby grants Licensee a nonexclusive, royalty-free, world-wide\nlicense to reproduce, analyze, test, perform and/or display publicly,\nprepare derivative works, distribute, and otherwise use Python\nalone or in any derivative version, provided, however, that PSF's\nLicense Agreement and PSF's notice of copyright, i.e., \"Copyright (c)\n2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008 Python Software Foundation; \nAll Rights Reserved\" are retained in Python alone or in any derivative \nversion prepared by Licensee.\n\n3. In the event Licensee prepares a derivative work that is based on\nor incorporates Python or any part thereof, and wants to make\nthe derivative work available to others as provided herein, then\nLicensee hereby agrees to include in any such work a brief summary of\nthe changes made to Python.\n\n4. PSF is making Python available to Licensee on an \"AS IS\"\nbasis.  PSF MAKES NO REPRESENTATIONS OR WARRANTIES, EXPRESS OR\nIMPLIED.  BY WAY OF EXAMPLE, BUT NOT LIMITATION, PSF MAKES NO AND\nDISCLAIMS ANY REPRESENTATION OR WARRANTY OF MERCHANTABILITY OR FITNESS\nFOR ANY PARTICULAR PURPOSE OR THAT THE USE OF PYTHON WILL NOT\nINFRINGE ANY THIRD PARTY RIGHTS.\n\n5. PSF SHALL NOT BE LIABLE TO LICENSEE OR ANY OTHER USERS OF PYTHON\nFOR ANY INCIDENTAL, SPECIAL, OR CONSEQUENTIAL DAMAGES OR LOSS AS\nA RESULT OF MODIFYING, DISTRIBUTING, OR OTHERWISE USING PYTHON,\nOR ANY DERIVATIVE THEREOF, EVEN IF ADVISED OF THE POSSIBILITY THEREOF.\n\n6. This License Agreement will automatically terminate upon a material\nbreach of its terms and conditions.\n\n7. Nothing in this License Agreement shall be deemed to create any\nrelationship of agency, partnership, or joint venture between PSF and\nLicensee.  This License Agreement does not grant permission to use PSF\ntrademarks or trade name in a trademark sense to endorse or promote\nproducts or services of Licensee, or any third party.\n\n8. By copying, installing or otherwise using Python, Licensee\nagrees to be bound by the terms and conditions of this License\nAgreement.\n\n\nBEOPEN.COM LICENSE AGREEMENT FOR PYTHON 2.0\n-------------------------------------------\n\nBEOPEN PYTHON OPEN SOURCE LICENSE AGREEMENT VERSION 1\n\n1. This LICENSE AGREEMENT is between BeOpen.com (\"BeOpen\"), having an\noffice at 160 Saratoga Avenue, Santa Clara, CA 95051, and the\nIndividual or Organization (\"Licensee\") accessing and otherwise using\nthis software in source or binary form and its associated\ndocumentation (\"the Software\").\n\n2. Subject to the terms and conditions of this BeOpen Python License\nAgreement, BeOpen hereby grants Licensee a non-exclusive,\nroyalty-free, world-wide license to reproduce, analyze, test, perform\nand/or display publicly, prepare derivative works, distribute, and\notherwise use the Software alone or in any derivative version,\nprovided, however, that the BeOpen Python License is retained in the\nSoftware, alone or in any derivative version prepared by Licensee.\n\n3. BeOpen is making the Software available to Licensee on an \"AS IS\"\nbasis.  BEOPEN MAKES NO REPRESENTATIONS OR WARRANTIES, EXPRESS OR\nIMPLIED.  BY WAY OF EXAMPLE, BUT NOT LIMITATION, BEOPEN MAKES NO AND\nDISCLAIMS ANY REPRESENTATION OR WARRANTY OF MERCHANTABILITY OR FITNESS\nFOR ANY PARTICULAR PURPOSE OR THAT THE USE OF THE SOFTWARE WILL NOT\nINFRINGE ANY THIRD PARTY RIGHTS.\n\n4. BEOPEN SHALL NOT BE LIABLE TO LICENSEE OR ANY OTHER USERS OF THE\nSOFTWARE FOR ANY INCIDENTAL, SPECIAL, OR CONSEQUENTIAL DAMAGES OR LOSS\nAS A RESULT OF USING, MODIFYING OR DISTRIBUTING THE SOFTWARE, OR ANY\nDERIVATIVE THEREOF, EVEN IF ADVISED OF THE POSSIBILITY THEREOF.\n\n5. This License Agreement will automatically terminate upon a material\nbreach of its terms and conditions.\n\n6. This License Agreement shall be governed by and interpreted in all\nrespects by the law of the State of California, excluding conflict of\nlaw provisions.  Nothing in this License Agreement shall be deemed to\ncreate any relationship of agency, partnership, or joint venture\nbetween BeOpen and Licensee.  This License Agreement does not grant\npermission to use BeOpen trademarks or trade names in a trademark\nsense to endorse or promote products or services of Licensee, or any\nthird party.  As an exception, the \"BeOpen Python\" logos available at\nhttp://www.pythonlabs.com/logos.html may be used according to the\npermissions granted on that web page.\n\n7. By copying, installing or otherwise using the software, Licensee\nagrees to be bound by the terms and conditions of this License\nAgreement.\n\n\nCNRI LICENSE AGREEMENT FOR PYTHON 1.6.1\n---------------------------------------\n\n1. This LICENSE AGREEMENT is between the Corporation for National\nResearch Initiatives, having an office at 1895 Preston White Drive,\nReston, VA 20191 (\"CNRI\"), and the Individual or Organization\n(\"Licensee\") accessing and otherwise using Python 1.6.1 software in\nsource or binary form and its associated documentation.\n\n2. Subject to the terms and conditions of this License Agreement, CNRI\nhereby grants Licensee a nonexclusive, royalty-free, world-wide\nlicense to reproduce, analyze, test, perform and/or display publicly,\nprepare derivative works, distribute, and otherwise use Python 1.6.1\nalone or in any derivative version, provided, however, that CNRI's\nLicense Agreement and CNRI's notice of copyright, i.e., \"Copyright (c)\n1995-2001 Corporation for National Research Initiatives; All Rights\nReserved\" are retained in Python 1.6.1 alone or in any derivative\nversion prepared by Licensee.  Alternately, in lieu of CNRI's License\nAgreement, Licensee may substitute the following text (omitting the\nquotes): \"Python 1.6.1 is made available subject to the terms and\nconditions in CNRI's License Agreement.  This Agreement together with\nPython 1.6.1 may be located on the Internet using the following\nunique, persistent identifier (known as a handle): 1895.22/1013.  This\nAgreement may also be obtained from a proxy server on the Internet\nusing the following URL: http://hdl.handle.net/1895.22/1013\".\n\n3. In the event Licensee prepares a derivative work that is based on\nor incorporates Python 1.6.1 or any part thereof, and wants to make\nthe derivative work available to others as provided herein, then\nLicensee hereby agrees to include in any such work a brief summary of\nthe changes made to Python 1.6.1.\n\n4. CNRI is making Python 1.6.1 available to Licensee on an \"AS IS\"\nbasis.  CNRI MAKES NO REPRESENTATIONS OR WARRANTIES, EXPRESS OR\nIMPLIED.  BY WAY OF EXAMPLE, BUT NOT LIMITATION, CNRI MAKES NO AND\nDISCLAIMS ANY REPRESENTATION OR WARRANTY OF MERCHANTABILITY OR FITNESS\nFOR ANY PARTICULAR PURPOSE OR THAT THE USE OF PYTHON 1.6.1 WILL NOT\nINFRINGE ANY THIRD PARTY RIGHTS.\n\n5. CNRI SHALL NOT BE LIABLE TO LICENSEE OR ANY OTHER USERS OF PYTHON\n1.6.1 FOR ANY INCIDENTAL, SPECIAL, OR CONSEQUENTIAL DAMAGES OR LOSS AS\nA RESULT OF MODIFYING, DISTRIBUTING, OR OTHERWISE USING PYTHON 1.6.1,\nOR ANY DERIVATIVE THEREOF, EVEN IF ADVISED OF THE POSSIBILITY THEREOF.\n\n6. This License Agreement will automatically terminate upon a material\nbreach of its terms and conditions.\n\n7. This License Agreement shall be governed by the federal\nintellectual property law of the United States, including without\nlimitation the federal copyright law, and, to the extent such\nU.S. federal law does not apply, by the law of the Commonwealth of\nVirginia, excluding Virginia's conflict of law provisions.\nNotwithstanding the foregoing, with regard to derivative works based\non Python 1.6.1 that incorporate non-separable material that was\npreviously distributed under the GNU General Public License (GPL), the\nlaw of the Commonwealth of Virginia shall govern this License\nAgreement only as to issues arising under or with respect to\nParagraphs 4, 5, and 7 of this License Agreement.  Nothing in this\nLicense Agreement shall be deemed to create any relationship of\nagency, partnership, or joint venture between CNRI and Licensee.  This\nLicense Agreement does not grant permission to use CNRI trademarks or\ntrade name in a trademark sense to endorse or promote products or\nservices of Licensee, or any third party.\n\n8. By clicking on the \"ACCEPT\" button where indicated, or by copying,\ninstalling or otherwise using Python 1.6.1, Licensee agrees to be\nbound by the terms and conditions of this License Agreement.\n\n        ACCEPT\n\n\nCWI LICENSE AGREEMENT FOR PYTHON 0.9.0 THROUGH 1.2\n--------------------------------------------------\n\nCopyright (c) 1991 - 1995, Stichting Mathematisch Centrum Amsterdam,\nThe Netherlands.  All rights reserved."
+            },
+            {
+              "score": 100.0,
+              "start_line": 257,
+              "end_line": 272,
+              "matched_length": 145,
+              "match_coverage": 100.0,
+              "matcher": "2-aho",
+              "license_expression": "python-cwi",
+              "rule_identifier": "python-cwi.LICENSE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/python-cwi.LICENSE",
+              "matched_text": "Permission to use, copy, modify, and distribute this software and its\ndocumentation for any purpose and without fee is hereby granted,\nprovided that the above copyright notice appear in all copies and that\nboth that copyright notice and this permission notice appear in\nsupporting documentation, and that the name of Stichting Mathematisch\nCentrum or CWI not be used in advertising or publicity pertaining to\ndistribution of the software without specific, written prior\npermission.\n\nSTICHTING MATHEMATISCH CENTRUM DISCLAIMS ALL WARRANTIES WITH REGARD TO\nTHIS SOFTWARE, INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY AND\nFITNESS, IN NO EVENT SHALL STICHTING MATHEMATISCH CENTRUM BE LIABLE\nFOR ANY SPECIAL, INDIRECT OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES\nWHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN\nACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT\nOF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE."
+            }
+          ]
+        },
+        {
+          "license_expression": "bzip2-libbzip-2010",
+          "detection_log": [
+            "unknown-intro-followed-by-match"
+          ],
+          "matches": [
+            {
+              "score": 100.0,
+              "start_line": 274,
+              "end_line": 274,
+              "matched_length": 6,
+              "match_coverage": 100.0,
+              "matcher": "2-aho",
+              "license_expression": "unknown-license-reference",
+              "rule_identifier": "license-intro_50.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/license-intro_50.RULE",
+              "matched_text": "This copy of Python includes a copy of bzip2, which is licensed under the following terms:"
+            },
+            {
+              "score": 100.0,
+              "start_line": 281,
+              "end_line": 310,
+              "matched_length": 233,
+              "match_coverage": 100.0,
+              "matcher": "2-aho",
+              "license_expression": "bzip2-libbzip-2010",
+              "rule_identifier": "bzip2-libbzip-2010.LICENSE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bzip2-libbzip-2010.LICENSE",
+              "matched_text": "Redistribution and use in source and binary forms, with or without\nmodification, are permitted provided that the following conditions\nare met:\n\n1. Redistributions of source code must retain the above copyright\n   notice, this list of conditions and the following disclaimer.\n\n2. The origin of this software must not be misrepresented; you must \n   not claim that you wrote the original software.  If you use this \n   software in a product, an acknowledgment in the product \n   documentation would be appreciated but is not required.\n\n3. Altered source versions must be plainly marked as such, and must\n   not be misrepresented as being the original software.\n\n4. The name of the author may not be used to endorse or promote \n   products derived from this software without specific prior written \n   permission.\n\nTHIS SOFTWARE IS PROVIDED BY THE AUTHOR ``AS IS'' AND ANY EXPRESS\nOR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED\nWARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE\nARE DISCLAIMED.  IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY\nDIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL\nDAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE\nGOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS\nINTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,\nWHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING\nNEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS\nSOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE."
+            }
+          ]
+        },
+        {
+          "license_expression": "sleepycat",
+          "detection_log": [
+            "unknown-intro-followed-by-match"
+          ],
+          "matches": [
+            {
+              "score": 100.0,
+              "start_line": 317,
+              "end_line": 317,
+              "matched_length": 6,
+              "match_coverage": 100.0,
+              "matcher": "2-aho",
+              "license_expression": "unknown-license-reference",
+              "rule_identifier": "license-intro_50.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/license-intro_50.RULE",
+              "matched_text": "This copy of Python includes a copy of db, which is licensed under the following terms:"
+            },
+            {
+              "score": 100.0,
+              "start_line": 334,
+              "end_line": 351,
+              "matched_length": 174,
+              "match_coverage": 100.0,
+              "matcher": "2-aho",
+              "license_expression": "sleepycat",
+              "rule_identifier": "sleepycat_5.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/sleepycat_5.RULE",
+              "matched_text": " * Redistribution and use in source and binary forms, with or without\n * modification, are permitted provided that the following conditions\n * are met:\n * 1. Redistributions of source code must retain the above copyright\n *    notice, this list of conditions and the following disclaimer.\n * 2. Redistributions in binary form must reproduce the above copyright\n *    notice, this list of conditions and the following disclaimer in the\n *    documentation and/or other materials provided with the distribution.\n * 3. Redistributions in any form must be accompanied by information on\n *    how to obtain complete source code for the DB software and any\n *    accompanying software that uses the DB software.  The source code\n *    must either be included in the distribution or be available for no\n *    more than the cost of distribution plus a nominal fee, and must be\n *    freely redistributable under reasonable conditions.  For an\n *    executable file, complete source code means the source code for all\n *    modules it contains.  It does not include source code for modules or\n *    files that typically accompany the major components of the operating\n *    system on which the executable file runs."
+            }
+          ]
+        },
+        {
+          "license_expression": "bsd-simplified",
+          "detection_log": [
+            "license-clues",
+            "not-license-clues-as-more-detections-present"
+          ],
+          "matches": [
+            {
+              "score": 33.71,
+              "start_line": 358,
+              "end_line": 363,
+              "matched_length": 59,
+              "match_coverage": 33.71,
+              "matcher": "3-seq",
+              "license_expression": "bsd-simplified",
+              "rule_identifier": "bsd-simplified_242.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-simplified_242.RULE",
+              "matched_text": " * CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF\n * SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS\n * INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN\n * CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)\n * ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF\n * THE POSSIBILITY OF SUCH DAMAGE."
+            }
+          ]
+        },
+        {
+          "license_expression": "bsd-new",
+          "detection_log": [
+            "not-combined"
+          ],
+          "matches": [
+            {
+              "score": 100.0,
+              "start_line": 369,
+              "end_line": 391,
+              "matched_length": 213,
+              "match_coverage": 100.0,
+              "matcher": "2-aho",
+              "license_expression": "bsd-new",
+              "rule_identifier": "bsd-new_19.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_19.RULE",
+              "matched_text": " * Redistribution and use in source and binary forms, with or without\n * modification, are permitted provided that the following conditions\n * are met:\n * 1. Redistributions of source code must retain the above copyright\n *    notice, this list of conditions and the following disclaimer.\n * 2. Redistributions in binary form must reproduce the above copyright\n *    notice, this list of conditions and the following disclaimer in the\n *    documentation and/or other materials provided with the distribution.\n * 3. Neither the name of the University nor the names of its contributors\n *    may be used to endorse or promote products derived from this software\n *    without specific prior written permission.\n *\n * THIS SOFTWARE IS PROVIDED BY THE REGENTS AND CONTRIBUTORS ``AS IS'' AND\n * ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE\n * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE\n * ARE DISCLAIMED.  IN NO EVENT SHALL THE REGENTS OR CONTRIBUTORS BE LIABLE\n * FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL\n * DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS\n * OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)\n * HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT\n * LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY\n * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF\n * SUCH DAMAGE."
+            }
+          ]
+        },
+        {
+          "license_expression": "bsd-new",
+          "detection_log": [
+            "not-combined"
+          ],
+          "matches": [
+            {
+              "score": 100.0,
+              "start_line": 397,
+              "end_line": 419,
+              "matched_length": 213,
+              "match_coverage": 100.0,
+              "matcher": "2-aho",
+              "license_expression": "bsd-new",
+              "rule_identifier": "bsd-new_943.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_943.RULE",
+              "matched_text": " * Redistribution and use in source and binary forms, with or without\n * modification, are permitted provided that the following conditions\n * are met:\n * 1. Redistributions of source code must retain the above copyright\n *    notice, this list of conditions and the following disclaimer.\n * 2. Redistributions in binary form must reproduce the above copyright\n *    notice, this list of conditions and the following disclaimer in the\n *    documentation and/or other materials provided with the distribution.\n * 3. Neither the name of the University nor the names of its contributors\n *    may be used to endorse or promote products derived from this software\n *    without specific prior written permission.\n *\n * THIS SOFTWARE IS PROVIDED BY HARVARD AND ITS CONTRIBUTORS ``AS IS'' AND\n * ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE\n * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE\n * ARE DISCLAIMED.  IN NO EVENT SHALL HARVARD OR ITS CONTRIBUTORS BE LIABLE\n * FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL\n * DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS\n * OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)\n * HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT\n * LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY\n * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF\n * SUCH DAMAGE."
+            }
+          ]
+        },
+        {
+          "license_expression": "openssl-ssleay",
+          "detection_log": [
+            "unknown-intro-followed-by-match"
+          ],
+          "matches": [
+            {
+              "score": 100.0,
+              "start_line": 422,
+              "end_line": 422,
+              "matched_length": 6,
+              "match_coverage": 100.0,
+              "matcher": "2-aho",
+              "license_expression": "unknown-license-reference",
+              "rule_identifier": "license-intro_50.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/license-intro_50.RULE",
+              "matched_text": "This copy of Python includes a copy of openssl, which is licensed under the following terms:"
+            },
+            {
+              "score": 100.0,
+              "start_line": 428,
+              "end_line": 432,
+              "matched_length": 56,
+              "match_coverage": 100.0,
+              "matcher": "2-aho",
+              "license_expression": "openssl-ssleay",
+              "rule_identifier": "openssl-ssleay_43.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/openssl-ssleay_43.RULE",
+              "matched_text": "  The OpenSSL toolkit stays under a dual license, i.e. both the conditions of\n  the OpenSSL License and the original SSLeay license apply to the toolkit.\n  See below for the actual license texts. Actually both licenses are BSD-style\n  Open Source licenses. In case of any license issues related to OpenSSL\n  please contact openssl-core@openssl.org."
+            },
+            {
+              "score": 100.0,
+              "start_line": 434,
+              "end_line": 434,
+              "matched_length": 2,
+              "match_coverage": 100.0,
+              "matcher": "2-aho",
+              "license_expression": "openssl-ssleay",
+              "rule_identifier": "openssl-ssleay_2.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/openssl-ssleay_2.RULE",
+              "matched_text": "  OpenSSL License"
+            }
+          ]
+        },
+        {
+          "license_expression": "openssl",
+          "detection_log": [
+            "not-combined"
+          ],
+          "matches": [
+            {
+              "score": 100.0,
+              "start_line": 440,
+              "end_line": 487,
+              "matched_length": 332,
+              "match_coverage": 100.0,
+              "matcher": "2-aho",
+              "license_expression": "openssl",
+              "rule_identifier": "openssl_1.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/openssl_1.RULE",
+              "matched_text": " * Redistribution and use in source and binary forms, with or without\n * modification, are permitted provided that the following conditions\n * are met:\n *\n * 1. Redistributions of source code must retain the above copyright\n *    notice, this list of conditions and the following disclaimer. \n *\n * 2. Redistributions in binary form must reproduce the above copyright\n *    notice, this list of conditions and the following disclaimer in\n *    the documentation and/or other materials provided with the\n *    distribution.\n *\n * 3. All advertising materials mentioning features or use of this\n *    software must display the following acknowledgment:\n *    \"This product includes software developed by the OpenSSL Project\n *    for use in the OpenSSL Toolkit. (http://www.openssl.org/)\"\n *\n * 4. The names \"OpenSSL Toolkit\" and \"OpenSSL Project\" must not be used to\n *    endorse or promote products derived from this software without\n *    prior written permission. For written permission, please contact\n *    openssl-core@openssl.org.\n *\n * 5. Products derived from this software may not be called \"OpenSSL\"\n *    nor may \"OpenSSL\" appear in their names without prior written\n *    permission of the OpenSSL Project.\n *\n * 6. Redistributions of any form whatsoever must retain the following\n *    acknowledgment:\n *    \"This product includes software developed by the OpenSSL Project\n *    for use in the OpenSSL Toolkit (http://www.openssl.org/)\"\n *\n * THIS SOFTWARE IS PROVIDED BY THE OpenSSL PROJECT ``AS IS'' AND ANY\n * EXPRESSED OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE\n * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR\n * PURPOSE ARE DISCLAIMED.  IN NO EVENT SHALL THE OpenSSL PROJECT OR\n * ITS CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,\n * SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT\n * NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;\n * LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)\n * HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT,\n * STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)\n * ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED\n * OF THE POSSIBILITY OF SUCH DAMAGE.\n * ====================================================================\n *\n * This product includes cryptographic software written by Eric Young\n * (eay@cryptsoft.com).  This product includes software written by Tim\n * Hudson (tjh@cryptsoft.com)."
+            }
+          ]
+        },
+        {
+          "license_expression": "ssleay-windows",
+          "detection_log": [
+            "not-combined"
+          ],
+          "matches": [
+            {
+              "score": 100.0,
+              "start_line": 497,
+              "end_line": 548,
+              "matched_length": 453,
+              "match_coverage": 100.0,
+              "matcher": "2-aho",
+              "license_expression": "ssleay-windows",
+              "rule_identifier": "ssleay-windows.LICENSE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/ssleay-windows.LICENSE",
+              "matched_text": " * This package is an SSL implementation written\n * by Eric Young (eay@cryptsoft.com).\n * The implementation was written so as to conform with Netscapes SSL.\n * \n * This library is free for commercial and non-commercial use as long as\n * the following conditions are aheared to.  The following conditions\n * apply to all code found in this distribution, be it the RC4, RSA,\n * lhash, DES, etc., code; not just the SSL code.  The SSL documentation\n * included with this distribution is covered by the same copyright terms\n * except that the holder is Tim Hudson (tjh@cryptsoft.com).\n * \n * Copyright remains Eric Young's, and as such any Copyright notices in\n * the code are not to be removed.\n * If this package is used in a product, Eric Young should be given attribution\n * as the author of the parts of the library used.\n * This can be in the form of a textual message at program startup or\n * in documentation (online or textual) provided with the package.\n * \n * Redistribution and use in source and binary forms, with or without\n * modification, are permitted provided that the following conditions\n * are met:\n * 1. Redistributions of source code must retain the copyright\n *    notice, this list of conditions and the following disclaimer.\n * 2. Redistributions in binary form must reproduce the above copyright\n *    notice, this list of conditions and the following disclaimer in the\n *    documentation and/or other materials provided with the distribution.\n * 3. All advertising materials mentioning features or use of this software\n *    must display the following acknowledgement:\n *    \"This product includes cryptographic software written by\n *     Eric Young (eay@cryptsoft.com)\"\n *    The word 'cryptographic' can be left out if the rouines from the library\n *    being used are not cryptographic related :-).\n * 4. If you include any Windows specific code (or a derivative thereof) from \n *    the apps directory (application code) you must include an acknowledgement:\n *    \"This product includes software written by Tim Hudson (tjh@cryptsoft.com)\"\n * \n * THIS SOFTWARE IS PROVIDED BY ERIC YOUNG ``AS IS'' AND\n * ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE\n * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE\n * ARE DISCLAIMED.  IN NO EVENT SHALL THE AUTHOR OR CONTRIBUTORS BE LIABLE\n * FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL\n * DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS\n * OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)\n * HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT\n * LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY\n * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF\n * SUCH DAMAGE.\n * \n * The licence and distribution terms for any publically available version or\n * derivative of this code cannot be changed.  i.e. this code cannot simply be\n * copied and put under another distribution licence\n * [including the GNU Public Licence.]"
+            }
+          ]
+        },
+        {
+          "license_expression": "tcl",
+          "detection_log": [
+            "unknown-intro-followed-by-match"
+          ],
+          "matches": [
+            {
+              "score": 100.0,
+              "start_line": 552,
+              "end_line": 552,
+              "matched_length": 6,
+              "match_coverage": 100.0,
+              "matcher": "2-aho",
+              "license_expression": "unknown-license-reference",
+              "rule_identifier": "license-intro_50.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/license-intro_50.RULE",
+              "matched_text": "This copy of Python includes a copy of tcl, which is licensed under the following terms:"
+            },
+            {
+              "score": 100.0,
+              "start_line": 554,
+              "end_line": 593,
+              "matched_length": 345,
+              "match_coverage": 100.0,
+              "matcher": "2-aho",
+              "license_expression": "tcl",
+              "rule_identifier": "tcl.LICENSE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/tcl.LICENSE",
+              "matched_text": "This software is copyrighted by the Regents of the University of\nCalifornia, Sun Microsystems, Inc., Scriptics Corporation, ActiveState\nCorporation and other parties.  The following terms apply to all files\nassociated with the software unless explicitly disclaimed in\nindividual files.\n\nThe authors hereby grant permission to use, copy, modify, distribute,\nand license this software and its documentation for any purpose, provided\nthat existing copyright notices are retained in all copies and that this\nnotice is included verbatim in any distributions. No written agreement,\nlicense, or royalty fee is required for any of the authorized uses.\nModifications to this software may be copyrighted by their authors\nand need not follow the licensing terms described here, provided that\nthe new terms are clearly indicated on the first page of each file where\nthey apply.\n\nIN NO EVENT SHALL THE AUTHORS OR DISTRIBUTORS BE LIABLE TO ANY PARTY\nFOR DIRECT, INDIRECT, SPECIAL, INCIDENTAL, OR CONSEQUENTIAL DAMAGES\nARISING OUT OF THE USE OF THIS SOFTWARE, ITS DOCUMENTATION, OR ANY\nDERIVATIVES THEREOF, EVEN IF THE AUTHORS HAVE BEEN ADVISED OF THE\nPOSSIBILITY OF SUCH DAMAGE.\n\nTHE AUTHORS AND DISTRIBUTORS SPECIFICALLY DISCLAIM ANY WARRANTIES,\nINCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE, AND NON-INFRINGEMENT.  THIS SOFTWARE\nIS PROVIDED ON AN \"AS IS\" BASIS, AND THE AUTHORS AND DISTRIBUTORS HAVE\nNO OBLIGATION TO PROVIDE MAINTENANCE, SUPPORT, UPDATES, ENHANCEMENTS, OR\nMODIFICATIONS.\n\nGOVERNMENT USE: If you are acquiring this software on behalf of the\nU.S. government, the Government shall have only \"Restricted Rights\"\nin the software and related documentation as defined in the Federal \nAcquisition Regulations (FARs) in Clause 52.227.19 (c) (2).  If you\nare acquiring the software on behalf of the Department of Defense, the\nsoftware shall be classified as \"Commercial Computer Software\" and the\nGovernment shall have only \"Restricted Rights\" as defined in Clause\n252.227-7013 (c) (1) of DFARs.  Notwithstanding the foregoing, the\nauthors grant the U.S. Government and others acting in its behalf\npermission to use and distribute the software in accordance with the\nterms specified in this license."
+            }
+          ]
+        },
+        {
+          "license_expression": "tcl",
+          "detection_log": [
+            "unknown-intro-followed-by-match"
+          ],
+          "matches": [
+            {
+              "score": 100.0,
+              "start_line": 595,
+              "end_line": 595,
+              "matched_length": 6,
+              "match_coverage": 100.0,
+              "matcher": "2-aho",
+              "license_expression": "unknown-license-reference",
+              "rule_identifier": "license-intro_50.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/license-intro_50.RULE",
+              "matched_text": "This copy of Python includes a copy of tk, which is licensed under the following terms:"
+            },
+            {
+              "score": 100.0,
+              "start_line": 597,
+              "end_line": 635,
+              "matched_length": 341,
+              "match_coverage": 100.0,
+              "matcher": "2-aho",
+              "license_expression": "tcl",
+              "rule_identifier": "tcl_14.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/tcl_14.RULE",
+              "matched_text": "This software is copyrighted by the Regents of the University of\nCalifornia, Sun Microsystems, Inc., and other parties.  The following\nterms apply to all files associated with the software unless explicitly\ndisclaimed in individual files.\n\nThe authors hereby grant permission to use, copy, modify, distribute,\nand license this software and its documentation for any purpose, provided\nthat existing copyright notices are retained in all copies and that this\nnotice is included verbatim in any distributions. No written agreement,\nlicense, or royalty fee is required for any of the authorized uses.\nModifications to this software may be copyrighted by their authors\nand need not follow the licensing terms described here, provided that\nthe new terms are clearly indicated on the first page of each file where\nthey apply.\n\nIN NO EVENT SHALL THE AUTHORS OR DISTRIBUTORS BE LIABLE TO ANY PARTY\nFOR DIRECT, INDIRECT, SPECIAL, INCIDENTAL, OR CONSEQUENTIAL DAMAGES\nARISING OUT OF THE USE OF THIS SOFTWARE, ITS DOCUMENTATION, OR ANY\nDERIVATIVES THEREOF, EVEN IF THE AUTHORS HAVE BEEN ADVISED OF THE\nPOSSIBILITY OF SUCH DAMAGE.\n\nTHE AUTHORS AND DISTRIBUTORS SPECIFICALLY DISCLAIM ANY WARRANTIES,\nINCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE, AND NON-INFRINGEMENT.  THIS SOFTWARE\nIS PROVIDED ON AN \"AS IS\" BASIS, AND THE AUTHORS AND DISTRIBUTORS HAVE\nNO OBLIGATION TO PROVIDE MAINTENANCE, SUPPORT, UPDATES, ENHANCEMENTS, OR\nMODIFICATIONS.\n\nGOVERNMENT USE: If you are acquiring this software on behalf of the\nU.S. government, the Government shall have only \"Restricted Rights\"\nin the software and related documentation as defined in the Federal \nAcquisition Regulations (FARs) in Clause 52.227.19 (c) (2).  If you\nare acquiring the software on behalf of the Department of Defense, the\nsoftware shall be classified as \"Commercial Computer Software\" and the\nGovernment shall have only \"Restricted Rights\" as defined in Clause\n252.227-7013 (c) (1) of DFARs.  Notwithstanding the foregoing, the\nauthors grant the U.S. Government and others acting in its behalf\npermission to use and distribute the software in accordance with the\nterms specified in this license."
+            }
+          ]
+        }
+      ],
+      "license_clues": [],
+      "percentage_of_license_text": 83.64,
+      "for_license_detections": [
+        "python-f9a5ba7d-9d66-5878-a0bd-1afe42fe0bd9",
+        "other_copyleft_and_gpl_1_0_plus-a9ef94dc-a60e-21b6-82b8-77454e7751c0",
+        "python_and_python_cwi-3136274a-0a35-5bea-9531-6e328486ea3b",
+        "bzip2_libbzip_2010-4854df4f-b9f8-1a96-92bd-44873ee7c7c5",
+        "sleepycat-82c2d26c-feb1-2257-3b27-0e92e4721958",
+        "bsd_simplified-d90f717a-d127-c345-d8a9-dc828c2be7e6",
+        "bsd_new-e65e2324-d4b0-5ad8-3314-a798683d13e3",
+        "bsd_new-4c57e726-e851-a66a-1dbe-d6106bcb4751",
+        "openssl_ssleay-7a0dc499-dddd-4bf1-2d0d-9a84c910b0bc",
+        "openssl-dacfdecf-b752-23a6-37ba-f98e7d93554a",
+        "ssleay_windows-50e05b6f-8602-75e7-7568-c3b4e72fec38",
+        "tcl-d352cc42-40ca-8f87-931e-725ee0a85c3e",
+        "tcl-e49b63d5-028c-f39c-035e-68c9e6c60e34"
+      ],
+      "scan_errors": []
+    }
+  ]
+}

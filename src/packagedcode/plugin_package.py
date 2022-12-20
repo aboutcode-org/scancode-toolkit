@@ -91,10 +91,10 @@ class PackageScanner(ScanPlugin):
     """
 
     codebase_attributes = dict(
-        # a list of dependencies
-        dependencies=attr.ib(default=attr.Factory(list), repr=False),
         # a list of packages
         packages=attr.ib(default=attr.Factory(list), repr=False),
+        # a list of dependencies
+        dependencies=attr.ib(default=attr.Factory(list), repr=False),
     )
     resource_attributes = dict(
         # a list of package data
@@ -105,7 +105,7 @@ class PackageScanner(ScanPlugin):
 
     required_plugins = ['scan:licenses']
 
-    sort_order = 6
+    sort_order = 3
 
     options = [
         PluggableCommandLineOption(
@@ -249,7 +249,7 @@ def add_license_from_file(resource, codebase, no_licenses):
             license_expression = get_license_expression_from_detection_mappings(
                 detections=license_detections_file,
                 valid_expression=True
-            ) 
+            )
             pkg["declared_license_expression"] = license_expression
             pkg["declared_license_expression_spdx"] = str(build_spdx_license_expression(
                 license_expression=license_expression,

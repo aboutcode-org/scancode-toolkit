@@ -22,6 +22,13 @@ from licensedcode.stopwords import STOPWORDS
 from licensedcode.tokenize import index_tokenizer
 from licensedcode.tokenize import matched_query_text_tokenizer
 
+
+from scancode.api import SPDX_LICENSE_URL
+from scancode.api import SCANCODE_LICENSEDB_URL
+from scancode.api import SCANCODE_LICENSE_URL
+from scancode.api import SCANCODE_LICENSE_RULE_URL
+from scancode.api import SCANCODE_RULE_URL
+
 """
 LicenseMatch data structure and processing.
 A key feature is merging and filtering of matches.
@@ -755,8 +762,8 @@ class LicenseMatch(object):
 
     def get_mapping(
         self,
-        license_url_template,
-        spdx_license_url,
+        license_url_template=SCANCODE_LICENSEDB_URL,
+        spdx_license_url=SPDX_LICENSE_URL,
         include_text=False,
         license_text_diagnostics=False,
         whole_lines=True,
@@ -776,11 +783,6 @@ class LicenseMatch(object):
                     matched_text = self.matched_text(whole_lines=True, highlight=False)
                 else:
                     matched_text = self.matched_text(whole_lines=False, highlight=False)
-
-        SCANCODE_DATA_BASE_URL = 'https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data'
-        SCANCODE_LICENSE_URL = SCANCODE_DATA_BASE_URL + '/licenses/{}.LICENSE'
-        SCANCODE_LICENSE_RULE_URL = SCANCODE_DATA_BASE_URL + '/licenses/{}'
-        SCANCODE_RULE_URL = SCANCODE_DATA_BASE_URL + '/rules/{}'
 
         result = {}
 

@@ -17,7 +17,7 @@ from formattedcode import FileOptionType
 from plugincode.output import output_impl
 from plugincode.output import OutputPlugin
 from licensedcode.detection import get_matches_from_detection_mappings
-
+from licensedcode.licenses_reference import get_matched_text_from_reference_data
 from scancode import notice
 
 """
@@ -106,7 +106,7 @@ def build_copyright_paragraphs(codebase, **kwargs):
         if scanned_file['type'] == 'directory':
             continue
         dfiles = scanned_file['path']
-        dlicense = build_license(scanned_file)
+        dlicense = build_license(codebase, scanned_file)
         dcopyright = build_copyright_field(scanned_file)
 
         file_para = CopyrightFilesParagraph.from_dict(dict(
@@ -132,7 +132,7 @@ def build_copyright_field(scanned_file):
     return '\n'.join(statements)
 
 
-def build_license(scanned_file):
+def build_license(codebase, scanned_file):
     """
     Return Debian-like text where the first line is the expression and the
     remaining lines are the license text from licenses detected in
@@ -146,11 +146,11 @@ def build_license(scanned_file):
         return
 
     licenses = scanned_file.get('license_detections', [])
-    text = '\n'.join(get_texts(licenses))
+    text = '\n'.join(get_texts(codebase, licenses))
     return f'{expression}\n{text}'
 
 
-def get_texts(detected_licenses):
+def get_texts(codebase, detected_licenses):
     """
     Yield license texts detected in this file.
 
@@ -179,8 +179,12 @@ def get_texts(detected_licenses):
     # set of (start line, end line, matched_rule identifier)
     seen = set()
     for lic in get_matches_from_detection_mappings(detected_licenses):
+        matched_text = get_matched_text_from_reference_data(
+            codebase=codebase,
+            rule_identifier=lic['rule_identifier']
+        )
         key = lic['start_line'], lic['end_line'], lic['rule_identifier']
         if key not in seen:
-            yield lic['matched_text']
+            if matched_text != None:
+                yield matched_text
             seen.add(key)
-

@@ -1,4 +1,88 @@
 {
+  "license_detections": [
+    {
+      "identifier": "example1_and_example2-450f710c-75c2-24fd-46e3-13bfded8d08e",
+      "license_expression": "example1 AND example2",
+      "count": 1,
+      "detection_log": [
+        "not-combined"
+      ],
+      "matches": [
+        {
+          "score": 100.0,
+          "start_line": 1,
+          "end_line": 1,
+          "matched_length": 9,
+          "match_coverage": 100.0,
+          "matcher": "2-aho",
+          "license_expression": "example1",
+          "rule_identifier": "example1.LICENSE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/example1.LICENSE"
+        },
+        {
+          "score": 100.0,
+          "start_line": 1,
+          "end_line": 5,
+          "matched_length": 69,
+          "match_coverage": 100.0,
+          "matcher": "2-aho",
+          "license_expression": "example2",
+          "rule_identifier": "example2.LICENSE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/example2.LICENSE"
+        }
+      ]
+    }
+  ],
+  "license_references": [
+    {
+      "key": "example1",
+      "short_name": "Example External License 1",
+      "name": "Example External License 1",
+      "category": "Permissive",
+      "owner": "NexB",
+      "spdx_license_key": "scancode-example1",
+      "text": "The quick brown fox jumps over the lazy dog."
+    },
+    {
+      "key": "example2",
+      "short_name": "Example External License 2",
+      "name": "Example External License 2",
+      "category": "Permissive",
+      "owner": "NexB",
+      "spdx_license_key": "scancode-example2",
+      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit,\nsed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\nUt enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi\nut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit\nin voluptate velit esse cillum dolore eu fugiat nulla pariatur.\nExcepteur sint occaecat cupidatat non proident, sunt in culpa qui officia\ndeserunt mollit anim id est laborum."
+    }
+  ],
+  "license_rule_references": [
+    {
+      "rule_identifier": "example1.LICENSE",
+      "license_expression": "example1",
+      "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/example1.LICENSE",
+      "rule_relevance": 100,
+      "rule_length": 9,
+      "is_license_text": true,
+      "is_license_notice": false,
+      "is_license_reference": false,
+      "is_license_tag": false,
+      "is_license_intro": false,
+      "referenced_filenames": [],
+      "rule_text": "The quick brown fox jumps over the lazy dog."
+    },
+    {
+      "rule_identifier": "example2.LICENSE",
+      "license_expression": "example2",
+      "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/example2.LICENSE",
+      "rule_relevance": 100,
+      "rule_length": 69,
+      "is_license_text": true,
+      "is_license_notice": false,
+      "is_license_reference": false,
+      "is_license_tag": false,
+      "is_license_intro": false,
+      "referenced_filenames": [],
+      "rule_text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit,\nsed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\nUt enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi\nut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit\nin voluptate velit esse cillum dolore eu fugiat nulla pariatur.\nExcepteur sint occaecat cupidatat non proident, sunt in culpa qui officia\ndeserunt mollit anim id est laborum."
+    }
+  ],
   "files": [
     {
       "path": "additional_license_directory_test.txt",
@@ -22,31 +106,6 @@
               "license_expression": "example1",
               "rule_identifier": "example1.LICENSE",
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/example1.LICENSE",
-              "referenced_filenames": [],
-              "is_license_text": true,
-              "is_license_notice": false,
-              "is_license_reference": false,
-              "is_license_tag": false,
-              "is_license_intro": false,
-              "rule_length": 9,
-              "rule_relevance": 100,
-              "licenses": [
-                {
-                  "key": "example1",
-                  "name": "Example External License 1",
-                  "short_name": "Example External License 1",
-                  "category": "Permissive",
-                  "is_exception": false,
-                  "is_unknown": false,
-                  "owner": "NexB",
-                  "homepage_url": null,
-                  "text_url": "",
-                  "reference_url": "https://scancode-licensedb.aboutcode.org/example1",
-                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/example1.LICENSE",
-                  "spdx_license_key": "scancode-example1",
-                  "spdx_url": "https://spdx.org/licenses/scancode-example1"
-                }
-              ],
               "is_builtin": false
             },
             {
@@ -59,31 +118,6 @@
               "license_expression": "example2",
               "rule_identifier": "example2.LICENSE",
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/example2.LICENSE",
-              "referenced_filenames": [],
-              "is_license_text": true,
-              "is_license_notice": false,
-              "is_license_reference": false,
-              "is_license_tag": false,
-              "is_license_intro": false,
-              "rule_length": 69,
-              "rule_relevance": 100,
-              "licenses": [
-                {
-                  "key": "example2",
-                  "name": "Example External License 2",
-                  "short_name": "Example External License 2",
-                  "category": "Permissive",
-                  "is_exception": false,
-                  "is_unknown": false,
-                  "owner": "NexB",
-                  "homepage_url": null,
-                  "text_url": "",
-                  "reference_url": "https://scancode-licensedb.aboutcode.org/example2",
-                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/example2.LICENSE",
-                  "spdx_license_key": "scancode-example2",
-                  "spdx_url": "https://spdx.org/licenses/scancode-example2"
-                }
-              ],
               "is_builtin": false
             }
           ]
@@ -91,6 +125,9 @@
       ],
       "license_clues": [],
       "percentage_of_license_text": 95.12,
+      "for_license_detections": [
+        "example1_and_example2-450f710c-75c2-24fd-46e3-13bfded8d08e"
+      ],
       "scan_errors": []
     }
   ]

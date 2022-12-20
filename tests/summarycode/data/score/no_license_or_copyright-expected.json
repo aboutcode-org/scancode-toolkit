@@ -1,4 +1,7 @@
 {
+  "license_detections": [],
+  "license_references": [],
+  "license_rule_references": [],
   "summary": {
     "declared_license_expression": null,
     "license_clarity_score": {
@@ -36,6 +39,7 @@
       "license_detections": [],
       "license_clues": [],
       "percentage_of_license_text": 0,
+      "for_license_detections": [],
       "copyrights": [],
       "holders": [],
       "authors": [],
@@ -73,6 +77,7 @@
       "license_detections": [],
       "license_clues": [],
       "percentage_of_license_text": 0,
+      "for_license_detections": [],
       "copyrights": [],
       "holders": [],
       "authors": [],
@@ -110,6 +115,7 @@
       "license_detections": [],
       "license_clues": [],
       "percentage_of_license_text": 0,
+      "for_license_detections": [],
       "copyrights": [],
       "holders": [],
       "authors": [],
@@ -147,6 +153,7 @@
       "license_detections": [],
       "license_clues": [],
       "percentage_of_license_text": 0,
+      "for_license_detections": [],
       "copyrights": [],
       "holders": [],
       "authors": [

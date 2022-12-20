@@ -207,17 +207,6 @@ def test_license_match_referenced_filename():
     check_json_scan(test_loc, result_file, regen=REGEN_TEST_FIXTURES)
 
 
-def test_get_referenced_filenames():
-    license_matches = [
-        {'referenced_filenames' : ['LICENSE.txt', 'COPYING']},
-        {'referenced_filenames' : ['COPYING', 'LICENSE.txt']},
-        {'referenced_filenames' : ['copying']},
-        {'referenced_filenames' : []},
-    ]
-    expected = ['LICENSE.txt', 'COPYING', 'copying']
-    assert get_referenced_filenames(license_matches) == expected
-
-
 def test_find_referenced_resource():
     # Setup: Create a new scan to use for a virtual codebase
     test_dir = test_env.get_test_loc('plugin_license/license_reference/scan/scan-ref', copy=True)

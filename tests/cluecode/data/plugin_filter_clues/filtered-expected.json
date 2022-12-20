@@ -1,4 +1,66 @@
 {
+  "license_detections": [
+    {
+      "identifier": "apache_1_1-81b019ea-ed6c-17e3-1cfc-fad8557f8cac",
+      "license_expression": "apache-1.1",
+      "count": 1,
+      "detection_log": [
+        "not-combined"
+      ],
+      "matches": [
+        {
+          "score": 96.07,
+          "start_line": 7,
+          "end_line": 70,
+          "matched_length": 367,
+          "match_coverage": 100.0,
+          "matcher": "3-seq",
+          "license_expression": "apache-1.1",
+          "rule_identifier": "apache-1.1_63.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-1.1_63.RULE"
+        }
+      ]
+    }
+  ],
+  "license_references": [
+    {
+      "key": "apache-1.1",
+      "short_name": "Apache 1.1",
+      "name": "Apache License 1.1",
+      "category": "Permissive",
+      "owner": "Apache Software Foundation",
+      "homepage_url": "http://www.apache.org/licenses/",
+      "notes": "Per SPDX.org, this license is OSI certified. This license has been\nsuperseded by Apache 2.0\n",
+      "is_builtin": true,
+      "spdx_license_key": "Apache-1.1",
+      "osi_license_key": "Apache-1.1",
+      "text_urls": [
+        "http://apache.org/licenses/LICENSE-1.1"
+      ],
+      "faq_url": "http://www.apache.org/foundation/license-faq.html",
+      "other_urls": [
+        "http://opensource.org/licenses/Apache-1.1",
+        "https://opensource.org/licenses/Apache-1.1"
+      ],
+      "text": "The Apache Software License, Version 1.1\n\nCopyright (c) 2000 The Apache Software Foundation.  All rights\nreserved.\n\nRedistribution and use in source and binary forms, with or without\nmodification, are permitted provided that the following conditions\nare met:\n\n1. Redistributions of source code must retain the above copyright\nnotice, this list of conditions and the following disclaimer.\n\n2. Redistributions in binary form must reproduce the above copyright\nnotice, this list of conditions and the following disclaimer in\nthe documentation and/or other materials provided with the\ndistribution.\n\n3. The end-user documentation included with the redistribution,\nif any, must include the following acknowledgment:\n\"This product includes software developed by the\nApache Software Foundation (http://www.apache.org/).\"\nAlternately, this acknowledgment may appear in the software itself,\nif and wherever such third-party acknowledgments normally appear.\n\n4. The names \"Apache\" and \"Apache Software Foundation\" must\nnot be used to endorse or promote products derived from this\nsoftware without prior written permission. For written\npermission, please contact apache@apache.org.\n\n5. Products derived from this software may not be called \"Apache\",\nnor may \"Apache\" appear in their name, without prior written\npermission of the Apache Software Foundation.\n\nTHIS SOFTWARE IS PROVIDED ``AS IS'' AND ANY EXPRESSED OR IMPLIED\nWARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES\nOF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE\nDISCLAIMED.  IN NO EVENT SHALL THE APACHE SOFTWARE FOUNDATION OR\nITS CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,\nSPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT\nLIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF\nUSE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND\nON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,\nOR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT\nOF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF\nSUCH DAMAGE."
+    }
+  ],
+  "license_rule_references": [
+    {
+      "rule_identifier": "apache-1.1_63.RULE",
+      "license_expression": "apache-1.1",
+      "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-1.1_63.RULE",
+      "rule_relevance": 100,
+      "rule_length": 367,
+      "is_license_text": true,
+      "is_license_notice": false,
+      "is_license_reference": false,
+      "is_license_tag": false,
+      "is_license_intro": false,
+      "referenced_filenames": [],
+      "rule_text": "is licensed under the\nApache Software License, Version 1.1, which is reproduced below.\n\n/*\n* The Apache Software License, Version 1.1\n*\n*\n* Copyright (c)  The Apache Software Foundation. All rights\n* reserved.\n*\n* Redistribution and use in source and binary forms, with or without\n* modification, are permitted provided that the following conditions\n* are met:\n*\n* 1. Redistributions of source code must retain the above copyright\n* notice, this list of conditions and the following disclaimer.\n*\n* 2. Redistributions in binary form must reproduce the above copyright\n* notice, this list of conditions and the following disclaimer in\n* the documentation and/or other materials provided with the\n* distribution.\n*\n* 3. The end-user documentation included with the redistribution,\n* if any, must include the following acknowledgment:\n* \"This product includes software developed by the\n* Apache Software Foundation (http://www.apache.org/).\"\n* Alternately, this acknowledgment may appear in the software itself,\n* if and wherever such third-party acknowledgments normally appear.\n*\n* 4. The names \"Xerces\" and \"Apache Software Foundation\" must\n* not be used to endorse or promote products derived from this\n* software without prior written permission. For written\n* permission, please contact apache@apache.org.\n*\n* 5. Products derived from this software may not be called \"Apache\",\n* nor may \"Apache\" appear in their name, without prior written\n* permission of the Apache Software Foundation.\n*\n* THIS SOFTWARE IS PROVIDED ``AS IS'' AND ANY EXPRESSED OR IMPLIED\n* WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES\n* OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE\n* DISCLAIMED. IN NO EVENT SHALL THE APACHE SOFTWARE FOUNDATION OR\n* ITS CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,\n* SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT\n* LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF\n* USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND\n* ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,\n* OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT\n* OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF\n* SUCH DAMAGE.\n* ====================================================================\n*\n* This software consists of voluntary contributions made by many\n* individuals on behalf of the Apache Software Foundation and was\n* originally based on software copyright (c) 1999, International\n* Business Machines, Inc., http://www.ibm.com. For more\n* information on the Apache Software Foundation, please see\n* <http://www.apache.org/>."
+    }
+  ],
   "files": [
     {
       "path": "LICENSE",
@@ -37,38 +99,16 @@
               "matcher": "3-seq",
               "license_expression": "apache-1.1",
               "rule_identifier": "apache-1.1_63.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-1.1_63.RULE",
-              "referenced_filenames": [],
-              "is_license_text": true,
-              "is_license_notice": false,
-              "is_license_reference": false,
-              "is_license_tag": false,
-              "is_license_intro": false,
-              "rule_length": 367,
-              "rule_relevance": 100,
-              "licenses": [
-                {
-                  "key": "apache-1.1",
-                  "name": "Apache License 1.1",
-                  "short_name": "Apache 1.1",
-                  "category": "Permissive",
-                  "is_exception": false,
-                  "is_unknown": false,
-                  "owner": "Apache Software Foundation",
-                  "homepage_url": "http://www.apache.org/licenses/",
-                  "text_url": "http://apache.org/licenses/LICENSE-1.1",
-                  "reference_url": "https://scancode-licensedb.aboutcode.org/apache-1.1",
-                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-1.1.LICENSE",
-                  "spdx_license_key": "Apache-1.1",
-                  "spdx_url": "https://spdx.org/licenses/Apache-1.1"
-                }
-              ]
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-1.1_63.RULE"
             }
           ]
         }
       ],
       "license_clues": [],
       "percentage_of_license_text": 92.44,
+      "for_license_detections": [
+        "apache_1_1-81b019ea-ed6c-17e3-1cfc-fad8557f8cac"
+      ],
       "copyrights": [
         {
           "copyright": "Copyright (c) The Eclipse Foundation https://eclipse.org",

@@ -131,6 +131,7 @@ class LicenseIndex(object):
         'digit_only_tids',
         'tokens_by_tid',
 
+        'rules_by_id',
         'rules_by_rid',
         'tids_by_rid',
 
@@ -189,6 +190,9 @@ class LicenseIndex(object):
 
         # Note: all the following are mappings-like (using lists) of
         # rid-> data are lists of data where the index is the rule id.
+
+        # mapping of rule identifiers -> rule objects 
+        self.rules_by_id = {}
 
         # maping-like of rule_id -> rule objects proper
         self.rules_by_rid = []
@@ -305,6 +309,7 @@ class LicenseIndex(object):
                 dictionary[sts] = stid
 
         self.rules_by_rid = rules_by_rid = list(rules)
+        self.rules_by_id = {r.identifier: r for r in self.rules_by_rid}
         if TRACE_INDEXING:
             for _rid, _rule in enumerate(rules_by_rid):
                 logger_debug('rules_by_rid:', _rid, _rule)

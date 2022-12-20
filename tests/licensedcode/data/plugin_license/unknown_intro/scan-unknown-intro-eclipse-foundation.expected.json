@@ -1,4 +1,89 @@
 {
+  "license_detections": [
+    {
+      "identifier": "epl_2_0-269715cc-0554-3f26-8832-1c4eb6145143",
+      "license_expression": "epl-2.0",
+      "count": 1,
+      "detection_log": [
+        "not-combined"
+      ],
+      "matches": [
+        {
+          "score": 100.0,
+          "start_line": 4,
+          "end_line": 6,
+          "matched_length": 31,
+          "match_coverage": 100.0,
+          "matcher": "2-aho",
+          "license_expression": "epl-2.0",
+          "rule_identifier": "epl-2.0_56.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/epl-2.0_56.RULE"
+        },
+        {
+          "score": 100.0,
+          "start_line": 8,
+          "end_line": 8,
+          "matched_length": 6,
+          "match_coverage": 100.0,
+          "matcher": "1-spdx-id",
+          "license_expression": "epl-2.0",
+          "rule_identifier": "spdx-license-identifier: epl-2.0",
+          "rule_url": null
+        }
+      ]
+    }
+  ],
+  "license_references": [
+    {
+      "key": "epl-2.0",
+      "short_name": "EPL 2.0",
+      "name": "Eclipse Public License 2.0",
+      "category": "Copyleft Limited",
+      "owner": "Eclipse Foundation",
+      "homepage_url": "https://www.eclipse.org/legal/epl-2.0/",
+      "is_builtin": true,
+      "spdx_license_key": "EPL-2.0",
+      "text_urls": [
+        "https://www.eclipse.org/org/documents/epl-2.0/EPL-2.0.txt"
+      ],
+      "faq_url": "http://www.eclipse.org/legal/eplfaq.php",
+      "other_urls": [
+        "https://www.eclipse.org/legal/epl-2.0",
+        "https://www.opensource.org/licenses/EPL-2.0"
+      ],
+      "text": "Eclipse Public License - v 2.0\n\nTHE ACCOMPANYING PROGRAM IS PROVIDED UNDER THE TERMS OF THIS ECLIPSE\nPUBLIC LICENSE (\"AGREEMENT\"). ANY USE, REPRODUCTION OR DISTRIBUTION\nOF THE PROGRAM CONSTITUTES RECIPIENT'S ACCEPTANCE OF THIS AGREEMENT.\n\n1. DEFINITIONS\n\n\"Contribution\" means:\n\na) in the case of the initial Contributor, the initial content\nDistributed under this Agreement, and\n\nb) in the case of each subsequent Contributor:\ni) changes to the Program, and\nii) additions to the Program;\nwhere such changes and/or additions to the Program originate from\nand are Distributed by that particular Contributor. A Contribution\n\"originates\" from a Contributor if it was added to the Program by\nsuch Contributor itself or anyone acting on such Contributor's behalf.\nContributions do not include changes or additions to the Program that\nare not Modified Works.\n\n\"Contributor\" means any person or entity that Distributes the Program.\n\n\"Licensed Patents\" mean patent claims licensable by a Contributor which\nare necessarily infringed by the use or sale of its Contribution alone\nor when combined with the Program.\n\n\"Program\" means the Contributions Distributed in accordance with this\nAgreement.\n\n\"Recipient\" means anyone who receives the Program under this Agreement\nor any Secondary License (as applicable), including Contributors.\n\n\"Derivative Works\" shall mean any work, whether in Source Code or other\nform, that is based on (or derived from) the Program and for which the\neditorial revisions, annotations, elaborations, or other modifications\nrepresent, as a whole, an original work of authorship.\n\n\"Modified Works\" shall mean any work in Source Code or other form that\nresults from an addition to, deletion from, or modification of the\ncontents of the Program, including, for purposes of clarity any new file\nin Source Code form that contains any contents of the Program. Modified\nWorks shall not include works that contain only declarations,\ninterfaces, types, classes, structures, or files of the Program solely\nin each case in order to link to, bind by name, or subclass the Program\nor Modified Works thereof.\n\n\"Distribute\" means the acts of a) distributing or b) making available\nin any manner that enables the transfer of a copy.\n\n\"Source Code\" means the form of a Program preferred for making\nmodifications, including but not limited to software source code,\ndocumentation source, and configuration files.\n\n\"Secondary License\" means either the GNU General Public License,\nVersion 2.0, or any later versions of that license, including any\nexceptions or additional permissions as identified by the initial\nContributor.\n\n2. GRANT OF RIGHTS\n\na) Subject to the terms of this Agreement, each Contributor hereby\ngrants Recipient a non-exclusive, worldwide, royalty-free copyright\nlicense to reproduce, prepare Derivative Works of, publicly display,\npublicly perform, Distribute and sublicense the Contribution of such\nContributor, if any, and such Derivative Works.\n\nb) Subject to the terms of this Agreement, each Contributor hereby\ngrants Recipient a non-exclusive, worldwide, royalty-free patent\nlicense under Licensed Patents to make, use, sell, offer to sell,\nimport and otherwise transfer the Contribution of such Contributor,\nif any, in Source Code or other form. This patent license shall\napply to the combination of the Contribution and the Program if, at\nthe time the Contribution is added by the Contributor, such addition\nof the Contribution causes such combination to be covered by the\nLicensed Patents. The patent license shall not apply to any other\ncombinations which include the Contribution. No hardware per se is\nlicensed hereunder.\n\nc) Recipient understands that although each Contributor grants the\nlicenses to its Contributions set forth herein, no assurances are\nprovided by any Contributor that the Program does not infringe the\npatent or other intellectual property rights of any other entity.\nEach Contributor disclaims any liability to Recipient for claims\nbrought by any other entity based on infringement of intellectual\nproperty rights or otherwise. As a condition to exercising the\nrights and licenses granted hereunder, each Recipient hereby\nassumes sole responsibility to secure any other intellectual\nproperty rights needed, if any. For example, if a third party\npatent license is required to allow Recipient to Distribute the\nProgram, it is Recipient's responsibility to acquire that license\nbefore distributing the Program.\n\nd) Each Contributor represents that to its knowledge it has\nsufficient copyright rights in its Contribution, if any, to grant\nthe copyright license set forth in this Agreement.\n\ne) Notwithstanding the terms of any Secondary License, no\nContributor makes additional grants to any Recipient (other than\nthose set forth in this Agreement) as a result of such Recipient's\nreceipt of the Program under the terms of a Secondary License\n(if permitted under the terms of Section 3).\n\n3. REQUIREMENTS\n\n3.1 If a Contributor Distributes the Program in any form, then:\n\na) the Program must also be made available as Source Code, in\naccordance with section 3.2, and the Contributor must accompany\nthe Program with a statement that the Source Code for the Program\nis available under this Agreement, and informs Recipients how to\nobtain it in a reasonable manner on or through a medium customarily\nused for software exchange; and\n\nb) the Contributor may Distribute the Program under a license\ndifferent than this Agreement, provided that such license:\ni) effectively disclaims on behalf of all other Contributors all\nwarranties and conditions, express and implied, including\nwarranties or conditions of title and non-infringement, and\nimplied warranties or conditions of merchantability and fitness\nfor a particular purpose;\n\nii) effectively excludes on behalf of all other Contributors all\nliability for damages, including direct, indirect, special,\nincidental and consequential damages, such as lost profits;\n\niii) does not attempt to limit or alter the recipients' rights\nin the Source Code under section 3.2; and\n\niv) requires any subsequent distribution of the Program by any\nparty to be under a license that satisfies the requirements\nof this section 3.\n\n3.2 When the Program is Distributed as Source Code:\n\na) it must be made available under this Agreement, or if the\nProgram (i) is combined with other material in a separate file or\nfiles made available under a Secondary License, and (ii) the initial\nContributor attached to the Source Code the notice described in\nExhibit A of this Agreement, then the Program may be made available\nunder the terms of such Secondary Licenses, and\n\nb) a copy of this Agreement must be included with each copy of\nthe Program.\n\n3.3 Contributors may not remove or alter any copyright, patent,\ntrademark, attribution notices, disclaimers of warranty, or limitations\nof liability (\"notices\") contained within the Program from any copy of\nthe Program which they Distribute, provided that Contributors may add\ntheir own appropriate notices.\n\n4. COMMERCIAL DISTRIBUTION\n\nCommercial distributors of software may accept certain responsibilities\nwith respect to end users, business partners and the like. While this\nlicense is intended to facilitate the commercial use of the Program,\nthe Contributor who includes the Program in a commercial product\noffering should do so in a manner which does not create potential\nliability for other Contributors. Therefore, if a Contributor includes\nthe Program in a commercial product offering, such Contributor\n(\"Commercial Contributor\") hereby agrees to defend and indemnify every\nother Contributor (\"Indemnified Contributor\") against any losses,\ndamages and costs (collectively \"Losses\") arising from claims, lawsuits\nand other legal actions brought by a third party against the Indemnified\nContributor to the extent caused by the acts or omissions of such\nCommercial Contributor in connection with its distribution of the Program\nin a commercial product offering. The obligations in this section do not\napply to any claims or Losses relating to any actual or alleged\nintellectual property infringement. In order to qualify, an Indemnified\nContributor must: a) promptly notify the Commercial Contributor in\nwriting of such claim, and b) allow the Commercial Contributor to control,\nand cooperate with the Commercial Contributor in, the defense and any\nrelated settlement negotiations. The Indemnified Contributor may\nparticipate in any such claim at its own expense.\n\nFor example, a Contributor might include the Program in a commercial\nproduct offering, Product X. That Contributor is then a Commercial\nContributor. If that Commercial Contributor then makes performance\nclaims, or offers warranties related to Product X, those performance\nclaims and warranties are such Commercial Contributor's responsibility\nalone. Under this section, the Commercial Contributor would have to\ndefend claims against the other Contributors related to those performance\nclaims and warranties, and if a court requires any other Contributor to\npay any damages as a result, the Commercial Contributor must pay\nthose damages.\n\n5. NO WARRANTY\n\nEXCEPT AS EXPRESSLY SET FORTH IN THIS AGREEMENT, AND TO THE EXTENT\nPERMITTED BY APPLICABLE LAW, THE PROGRAM IS PROVIDED ON AN \"AS IS\"\nBASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, EITHER EXPRESS OR\nIMPLIED INCLUDING, WITHOUT LIMITATION, ANY WARRANTIES OR CONDITIONS OF\nTITLE, NON-INFRINGEMENT, MERCHANTABILITY OR FITNESS FOR A PARTICULAR\nPURPOSE. Each Recipient is solely responsible for determining the\nappropriateness of using and distributing the Program and assumes all\nrisks associated with its exercise of rights under this Agreement,\nincluding but not limited to the risks and costs of program errors,\ncompliance with applicable laws, damage to or loss of data, programs\nor equipment, and unavailability or interruption of operations.\n\n6. DISCLAIMER OF LIABILITY\n\nEXCEPT AS EXPRESSLY SET FORTH IN THIS AGREEMENT, AND TO THE EXTENT\nPERMITTED BY APPLICABLE LAW, NEITHER RECIPIENT NOR ANY CONTRIBUTORS\nSHALL HAVE ANY LIABILITY FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,\nEXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING WITHOUT LIMITATION LOST\nPROFITS), HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN\nCONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)\nARISING IN ANY WAY OUT OF THE USE OR DISTRIBUTION OF THE PROGRAM OR THE\nEXERCISE OF ANY RIGHTS GRANTED HEREUNDER, EVEN IF ADVISED OF THE\nPOSSIBILITY OF SUCH DAMAGES.\n\n7. GENERAL\n\nIf any provision of this Agreement is invalid or unenforceable under\napplicable law, it shall not affect the validity or enforceability of\nthe remainder of the terms of this Agreement, and without further\naction by the parties hereto, such provision shall be reformed to the\nminimum extent necessary to make such provision valid and enforceable.\n\nIf Recipient institutes patent litigation against any entity\n(including a cross-claim or counterclaim in a lawsuit) alleging that the\nProgram itself (excluding combinations of the Program with other software\nor hardware) infringes such Recipient's patent(s), then such Recipient's\nrights granted under Section 2(b) shall terminate as of the date such\nlitigation is filed.\n\nAll Recipient's rights under this Agreement shall terminate if it\nfails to comply with any of the material terms or conditions of this\nAgreement and does not cure such failure in a reasonable period of\ntime after becoming aware of such noncompliance. If all Recipient's\nrights under this Agreement terminate, Recipient agrees to cease use\nand distribution of the Program as soon as reasonably practicable.\nHowever, Recipient's obligations under this Agreement and any licenses\ngranted by Recipient relating to the Program shall continue and survive.\n\nEveryone is permitted to copy and distribute copies of this Agreement,\nbut in order to avoid inconsistency the Agreement is copyrighted and\nmay only be modified in the following manner. The Agreement Steward\nreserves the right to publish new versions (including revisions) of\nthis Agreement from time to time. No one other than the Agreement\nSteward has the right to modify this Agreement. The Eclipse Foundation\nis the initial Agreement Steward. The Eclipse Foundation may assign the\nresponsibility to serve as the Agreement Steward to a suitable separate\nentity. Each new version of the Agreement will be given a distinguishing\nversion number. The Program (including Contributions) may always be\nDistributed subject to the version of the Agreement under which it was\nreceived. In addition, after a new version of the Agreement is published,\nContributor may elect to Distribute the Program (including its\nContributions) under the new version.\n\nExcept as expressly stated in Sections 2(a) and 2(b) above, Recipient\nreceives no rights or licenses to the intellectual property of any\nContributor under this Agreement, whether expressly, by implication,\nestoppel or otherwise. All rights in the Program not expressly granted\nunder this Agreement are reserved. Nothing in this Agreement is intended\nto be enforceable by any entity that is not a Contributor or Recipient.\nNo third-party beneficiary rights are created under this Agreement.\n\nExhibit A - Form of Secondary Licenses Notice\n\n\"This Source Code is also Distributed under one\nor more Secondary Licenses, as those terms are defined by\nthe Eclipse Public License, v. 2.0: {name license(s),version(s),\nand exceptions or additional permissions here}.\"\n\nSimply including a copy of this Agreement, including this Exhibit A\nis not sufficient to license the Source Code under Secondary Licenses.\n\nIf it is not possible or desirable to put the notice in a particular\nfile, then You may include the notice in a location (such as a LICENSE\nfile in a relevant directory) where a recipient would be likely to\nlook for such a notice.\n\nYou may add additional accurate notices of copyright ownership."
+    }
+  ],
+  "license_rule_references": [
+    {
+      "rule_identifier": "epl-2.0_56.RULE",
+      "license_expression": "epl-2.0",
+      "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/epl-2.0_56.RULE",
+      "rule_relevance": 100,
+      "rule_length": 31,
+      "is_license_text": false,
+      "is_license_notice": true,
+      "is_license_reference": false,
+      "is_license_tag": false,
+      "is_license_intro": false,
+      "referenced_filenames": [],
+      "rule_text": "* This program and the accompanying materials are made\n* available under the terms of the Eclipse Public License 2.0\n* which is available at https://www.eclipse.org/legal/epl-2.0/"
+    },
+    {
+      "rule_identifier": "spdx-license-identifier: epl-2.0",
+      "license_expression": "epl-2.0",
+      "rule_url": null,
+      "rule_relevance": 100,
+      "rule_length": 6,
+      "is_license_text": false,
+      "is_license_notice": false,
+      "is_license_reference": false,
+      "is_license_tag": true,
+      "is_license_intro": false,
+      "referenced_filenames": [],
+      "rule_text": "SPDX-License-Identifier: EPL-2.0"
+    }
+  ],
   "files": [
     {
       "path": "README.md",
@@ -22,32 +107,7 @@
               "license_expression": "epl-2.0",
               "rule_identifier": "epl-2.0_56.RULE",
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/epl-2.0_56.RULE",
-              "referenced_filenames": [],
-              "is_license_text": false,
-              "is_license_notice": true,
-              "is_license_reference": false,
-              "is_license_tag": false,
-              "is_license_intro": false,
-              "rule_length": 31,
-              "rule_relevance": 100,
-              "matched_text": "This program and the accompanying materials are made\n * available under the terms of the Eclipse Public License 2.0\n * which is available at https://www.eclipse.org/legal/epl-2.0/",
-              "licenses": [
-                {
-                  "key": "epl-2.0",
-                  "name": "Eclipse Public License 2.0",
-                  "short_name": "EPL 2.0",
-                  "category": "Copyleft Limited",
-                  "is_exception": false,
-                  "is_unknown": false,
-                  "owner": "Eclipse Foundation",
-                  "homepage_url": "https://www.eclipse.org/legal/epl-2.0/",
-                  "text_url": "https://www.eclipse.org/org/documents/epl-2.0/EPL-2.0.txt",
-                  "reference_url": "https://scancode-licensedb.aboutcode.org/epl-2.0",
-                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/epl-2.0.LICENSE",
-                  "spdx_license_key": "EPL-2.0",
-                  "spdx_url": "https://spdx.org/licenses/EPL-2.0"
-                }
-              ]
+              "matched_text": "This program and the accompanying materials are made\n * available under the terms of the Eclipse Public License 2.0\n * which is available at https://www.eclipse.org/legal/epl-2.0/"
             },
             {
               "score": 100.0,
@@ -59,38 +119,16 @@
               "license_expression": "epl-2.0",
               "rule_identifier": "spdx-license-identifier: epl-2.0",
               "rule_url": null,
-              "referenced_filenames": [],
-              "is_license_text": false,
-              "is_license_notice": false,
-              "is_license_reference": false,
-              "is_license_tag": true,
-              "is_license_intro": false,
-              "rule_length": 6,
-              "rule_relevance": 100,
-              "matched_text": "SPDX-License-Identifier: EPL-2.0",
-              "licenses": [
-                {
-                  "key": "epl-2.0",
-                  "name": "Eclipse Public License 2.0",
-                  "short_name": "EPL 2.0",
-                  "category": "Copyleft Limited",
-                  "is_exception": false,
-                  "is_unknown": false,
-                  "owner": "Eclipse Foundation",
-                  "homepage_url": "https://www.eclipse.org/legal/epl-2.0/",
-                  "text_url": "https://www.eclipse.org/org/documents/epl-2.0/EPL-2.0.txt",
-                  "reference_url": "https://scancode-licensedb.aboutcode.org/epl-2.0",
-                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/epl-2.0.LICENSE",
-                  "spdx_license_key": "EPL-2.0",
-                  "spdx_url": "https://spdx.org/licenses/EPL-2.0"
-                }
-              ]
+              "matched_text": "SPDX-License-Identifier: EPL-2.0"
             }
           ]
         }
       ],
       "license_clues": [],
       "percentage_of_license_text": 86.05,
+      "for_license_detections": [
+        "epl_2_0-269715cc-0554-3f26-8832-1c4eb6145143"
+      ],
       "scan_errors": []
     }
   ]

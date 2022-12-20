@@ -528,7 +528,7 @@ After::
         "text": "Apache License\nVersion 2.0, {Truncated text}"
       }
     ],
-    "rule_references": [
+    "license_rule_references": [
       {
         "license_expression": "apache-2.0",
         "rule_identifier": "apache-2.0_65.RULE",
