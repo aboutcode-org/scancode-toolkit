@@ -3730,300 +3730,162 @@
   ],
   "license_rule_references": [
     {
-      "license_expression": "artistic-2.0",
       "rule_identifier": "spdx_license_id_artistic-2.0_for_artistic-2.0.RULE",
-      "referenced_filenames": [],
+      "license_expression": "artistic-2.0",
+      "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/spdx_license_id_artistic-2.0_for_artistic-2.0.RULE",
+      "rule_relevance": 50,
+      "rule_length": 3,
       "is_license_text": false,
       "is_license_notice": false,
       "is_license_reference": true,
       "is_license_tag": false,
       "is_license_intro": false,
-      "rule_length": 3,
-      "rule_relevance": 50
+      "referenced_filenames": [],
+      "rule_text": "artistic-2.0"
     },
     {
-      "license_expression": "cc0-1.0",
       "rule_identifier": "cc0-1.0_155.RULE",
-      "referenced_filenames": [],
+      "license_expression": "cc0-1.0",
+      "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/cc0-1.0_155.RULE",
+      "rule_relevance": 100,
+      "rule_length": 981,
       "is_license_text": true,
       "is_license_notice": false,
       "is_license_reference": false,
       "is_license_tag": false,
       "is_license_intro": false,
-      "rule_length": 981,
-      "rule_relevance": 100
-    },
-    {
-      "license_expression": "artistic-2.0",
-      "rule_identifier": "spdx_license_id_artistic-2.0_for_artistic-2.0.RULE",
       "referenced_filenames": [],
-      "is_license_text": false,
-      "is_license_notice": false,
-      "is_license_reference": true,
-      "is_license_tag": false,
-      "is_license_intro": false,
-      "rule_length": 3,
-      "rule_relevance": 50
+      "rule_text": "Statatement of Purpose\n.\nThe laws of most jurisdictions throughout the world automatically confer\nexclusive Copyright and Related Rights (defined below) upon the creator\nand subsequent owner(s) (each and all, an \"owner\") of an original work\nof authorship and/or a database (each, a \"Work\").\n.\nCertain owners wish to permanently relinquish those rights to a Work\nfor the purpose of contributing to a commons of creative, cultural and\nscientific works (\"Commons\") that the public can reliably and without\nfear of later claims of infringement build upon, modify, incorporate in\nother works, reuse and redistribute as freely as possible in any form\nwhatsoever and for any purposes, including without limitation commercial\npurposes. These owners may contribute to the Commons to promote the ideal\nof a free culture and the further production of creative, cultural and\nscientific works, or to gain reputation or greater distribution for\ntheir Work in part through the use and efforts of others.\n.\nFor these and/or other purposes and motivations, and without any\nexpectation of additional consideration or compensation, the person\nassociating CC0 with a Work (the \"Affirmer\"), to the extent that\nhe or she is an owner of Copyright and Related Rights in the Work,\nvoluntarily elects to apply CC0 to the Work and publicly distribute\nthe Work under its terms, with knowledge of his or her Copyright and\nRelated Rights in the Work and the meaning and intended legal effect\nof CC0 on those rights.\n.\n1. Copyright and Related Rights. A Work made available under CC0 may be\nprotected by copyright and related or neighboring rights (\"Copyright\nand Related Rights\"). Copyright and Related Rights include, but are\nnot limited to, the following:\n.\nthe right to reproduce, adapt, distribute, perform, display,\ncommunicate, and translate a Work;\n.\nmoral rights retained by the original author(s) and/or performer(s);\n.\npublicity and privacy rights pertaining to a person's image or\nlikeness depicted in a Work;\n.\nrights protecting against unfair competition in regards to a Work,\nsubject to the limitations in paragraph 4(a), below;\n.\nrights protecting the extraction, dissemination, use and reuse of data in a Work;\n.\ndatabase rights (such as those arising under Directive 96/9/EC\nof the European Parliament and of the Council of 11 March 1996\non the legal protection of databases, and under any national\nimplementation thereof, including any amended or successor version\nof such directive); and\n.\nother similar, equivalent or corresponding rights throughout the world\nbased on applicable law or treaty, and any national implementations\nthereof.\n.\n2. Waiver. To the greatest extent permitted by, but not in contravention\nof, applicable law, Affirmer hereby overtly, fully, permanently,\nirrevocably and unconditionally waives, abandons, and surrenders all\nof Affirmer's Copyright and Related Rights and associated claims and\ncauses of action, whether now known or unknown (including existing\nas well as future claims and causes of action), in the Work (i) in\nall territories worldwide, (ii) for the maximum duration provided by\napplicable law or treaty (including future time extensions), (iii)\nin any current or future medium and for any number of copies, and (iv)\nfor any purpose whatsoever, including without limitation commercial,\nadvertising or promotional purposes (the \"Waiver\"). Affirmer makes the\nWaiver for the benefit of each member of the public at large and to the\ndetriment of Affirmer's heirs and successors, fully intending that such\nWaiver shall not be subject to revocation, rescission, cancellation,\ntermination, or any other legal or equitable action to disrupt the\nquiet enjoyment of the Work by the public as contemplated by Affirmer's\nexpress Statement of Purpose.\n.\n3. Public License Fallback. Should any part of the Waiver for any\nreason be judged legally invalid or ineffective under applicable law,\nthen the Waiver shall be preserved to the maximum extent permitted\ntaking into account Affirmer's express Statement of Purpose. In\naddition, to the extent the Waiver is so judged Affirmer hereby\ngrants to each affected person a royalty-free, non transferable, non\nsublicensable, non exclusive, irrevocable and unconditional license\nto exercise Affirmer's Copyright and Related Rights in the Work (i)\nin all territories worldwide, (ii) for the maximum duration provided\nby applicable law or treaty (including future time extensions), (iii)\nin any current or future medium and for any number of copies, and (iv)\nfor any purpose whatsoever, including without limitation commercial,\nadvertising or promotional purposes (the \"License\"). The License shall\nbe deemed effective as of the date CC0 was applied by Affirmer to the\nWork. Should any part of the License for any reason be judged legally\ninvalid or ineffective under applicable law, such partial invalidity\nor ineffectiveness shall not invalidate the remainder of the License,\nand in such case Affirmer hereby affirms that he or she will not (i)\nexercise any of his or her remaining Copyright and Related Rights in\nthe Work or (ii) assert any associated claims and causes of action\nwith respect to the Work, in either case contrary to Affirmer's express\nStatement of Purpose.\n.\n4. Limitations and Disclaimers.\n.\nNo trademark or patent rights held by Affirmer are waived,\nabandoned, surrendered, licensed or otherwise affected by this\ndocument.\n.\nAffirmer offers the Work as-is and makes no representations or\nwarranties of any kind concerning the Work, express, implied,\nstatutory or otherwise, including without limitation warranties\nof title, merchantability, fitness for a particular purpose, non\ninfringement, or the absence of latent or other defects, accuracy,\nor the present or absence of errors, whether or not discoverable,\nall to the greatest extent permissible under applicable law.\n.\nAffirmer disclaims responsibility for clearing rights of other\npersons that may apply to the Work or any use thereof, including\nwithout limitation any person's Copyright and Related Rights in the\nWork. Further, Affirmer disclaims responsibility for obtaining any\nnecessary consents, permissions or other rights required for any\nuse of the Work.\n.\nAffirmer understands and acknowledges that Creative Commons is not\na party to this document and has no duty or obligation with respect\nto this CC0 or use of the Work."
     },
     {
-      "license_expression": "artistic-2.0",
       "rule_identifier": "artistic-2.0_46.RULE",
-      "referenced_filenames": [],
+      "license_expression": "artistic-2.0",
+      "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/artistic-2.0_46.RULE",
+      "rule_relevance": 100,
+      "rule_length": 4,
       "is_license_text": false,
       "is_license_notice": false,
       "is_license_reference": false,
       "is_license_tag": true,
       "is_license_intro": false,
-      "rule_length": 4,
-      "rule_relevance": 100
+      "referenced_filenames": [],
+      "rule_text": "license: Artistic-2.0"
     },
     {
-      "license_expression": "zlib",
       "rule_identifier": "zlib_5.RULE",
-      "referenced_filenames": [
-        "zlib.h"
-      ],
+      "license_expression": "zlib",
+      "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/zlib_5.RULE",
+      "rule_relevance": 100,
+      "rule_length": 12,
       "is_license_text": false,
       "is_license_notice": false,
       "is_license_reference": true,
       "is_license_tag": false,
       "is_license_intro": false,
-      "rule_length": 12,
-      "rule_relevance": 100
+      "referenced_filenames": [
+        "zlib.h"
+      ],
+      "rule_text": "For conditions of distribution and use, see copyright notice in zlib.h"
     },
     {
-      "license_expression": "zlib",
       "rule_identifier": "zlib_17.RULE",
-      "referenced_filenames": [],
+      "license_expression": "zlib",
+      "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/zlib_17.RULE",
+      "rule_relevance": 100,
+      "rule_length": 144,
       "is_license_text": true,
       "is_license_notice": false,
       "is_license_reference": false,
       "is_license_tag": false,
       "is_license_intro": false,
-      "rule_length": 144,
-      "rule_relevance": 100
-    },
-    {
-      "license_expression": "zlib",
-      "rule_identifier": "zlib_5.RULE",
-      "referenced_filenames": [
-        "zlib.h"
-      ],
-      "is_license_text": false,
-      "is_license_notice": false,
-      "is_license_reference": true,
-      "is_license_tag": false,
-      "is_license_intro": false,
-      "rule_length": 12,
-      "rule_relevance": 100
-    },
-    {
-      "license_expression": "lgpl-2.1-plus",
-      "rule_identifier": "lgpl-2.1-plus_59.RULE",
       "referenced_filenames": [],
+      "rule_text": "This software is provided 'as-is', without any express or implied\nwarranty.  In no event will the authors be held liable for any damages\narising from the use of this software.\n\nPermission is granted to anyone to use this software for any purpose,\nincluding commercial applications, and to alter it and redistribute it\nfreely, subject to the following restrictions:\n\n1. The origin of this software must not be misrepresented; you must not\nclaim that you wrote the original software. If you use this software\nin a product, an acknowledgment in the product documentation would be\nappreciated but is not required.\n2. Altered source versions must be plainly marked as such, and must not be\nmisrepresented as being the original software.\n3. This notice may not be removed or altered from any source distribution.\n\nJean-loup Gailly        Mark Adler\njloup@gzip.org          madler@alumni.caltech.edu"
+    },
+    {
+      "rule_identifier": "lgpl-2.1-plus_59.RULE",
+      "license_expression": "lgpl-2.1-plus",
+      "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_59.RULE",
+      "rule_relevance": 100,
+      "rule_length": 125,
       "is_license_text": false,
       "is_license_notice": true,
       "is_license_reference": false,
       "is_license_tag": false,
       "is_license_intro": false,
-      "rule_length": 125,
-      "rule_relevance": 100
+      "referenced_filenames": [],
+      "rule_text": "This is free software; you can redistribute it and/or modify it\nunder the terms of the GNU Lesser General Public License as\npublished by the Free Software Foundation; either version 2.1 of\nthe License, or (at your option) any later version.\n\nThis software is distributed in the hope that it will be useful,\nbut WITHOUT ANY WARRANTY; without even the implied warranty of\nMERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU\nLesser General Public License for more details.\n\nYou should have received a copy of the GNU Lesser General Public\nLicense along with this software; if not, write to the Free\nSoftware Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA\n02110-1301 USA, or see the FSF site: http://www.fsf.org."
     },
     {
-      "license_expression": "cc-by-2.5",
       "rule_identifier": "cc-by-2.5_4.RULE",
-      "referenced_filenames": [],
-      "is_license_text": false,
-      "is_license_notice": true,
-      "is_license_reference": false,
-      "is_license_tag": false,
-      "is_license_intro": false,
+      "license_expression": "cc-by-2.5",
+      "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/cc-by-2.5_4.RULE",
+      "rule_relevance": 100,
       "rule_length": 14,
-      "rule_relevance": 100
-    },
-    {
-      "license_expression": "lgpl-2.1-plus",
-      "rule_identifier": "lgpl-2.1-plus_59.RULE",
-      "referenced_filenames": [],
       "is_license_text": false,
       "is_license_notice": true,
       "is_license_reference": false,
       "is_license_tag": false,
       "is_license_intro": false,
-      "rule_length": 125,
-      "rule_relevance": 100
-    },
-    {
-      "license_expression": "lgpl-2.1-plus",
-      "rule_identifier": "lgpl-2.1-plus_59.RULE",
       "referenced_filenames": [],
-      "is_license_text": false,
-      "is_license_notice": true,
-      "is_license_reference": false,
-      "is_license_tag": false,
-      "is_license_intro": false,
-      "rule_length": 125,
-      "rule_relevance": 100
+      "rule_text": "* Released under the Creative Commons Attribution License\n*   (http://creativecommons.org/licenses/by/2.5)"
     },
     {
-      "license_expression": "zlib",
-      "rule_identifier": "zlib_5.RULE",
-      "referenced_filenames": [
-        "zlib.h"
-      ],
-      "is_license_text": false,
-      "is_license_notice": false,
-      "is_license_reference": true,
-      "is_license_tag": false,
-      "is_license_intro": false,
-      "rule_length": 12,
-      "rule_relevance": 100
-    },
-    {
-      "license_expression": "zlib",
-      "rule_identifier": "zlib_17.RULE",
-      "referenced_filenames": [],
-      "is_license_text": true,
-      "is_license_notice": false,
-      "is_license_reference": false,
-      "is_license_tag": false,
-      "is_license_intro": false,
-      "rule_length": 144,
-      "rule_relevance": 100
-    },
-    {
-      "license_expression": "zlib",
-      "rule_identifier": "zlib_5.RULE",
-      "referenced_filenames": [
-        "zlib.h"
-      ],
-      "is_license_text": false,
-      "is_license_notice": false,
-      "is_license_reference": true,
-      "is_license_tag": false,
-      "is_license_intro": false,
-      "rule_length": 12,
-      "rule_relevance": 100
-    },
-    {
-      "license_expression": "zlib",
-      "rule_identifier": "zlib_5.RULE",
-      "referenced_filenames": [
-        "zlib.h"
-      ],
-      "is_license_text": false,
-      "is_license_notice": false,
-      "is_license_reference": true,
-      "is_license_tag": false,
-      "is_license_intro": false,
-      "rule_length": 12,
-      "rule_relevance": 100
-    },
-    {
-      "license_expression": "zlib",
-      "rule_identifier": "zlib_5.RULE",
-      "referenced_filenames": [
-        "zlib.h"
-      ],
-      "is_license_text": false,
-      "is_license_notice": false,
-      "is_license_reference": true,
-      "is_license_tag": false,
-      "is_license_intro": false,
-      "rule_length": 12,
-      "rule_relevance": 100
-    },
-    {
-      "license_expression": "zlib",
-      "rule_identifier": "zlib_5.RULE",
-      "referenced_filenames": [
-        "zlib.h"
-      ],
-      "is_license_text": false,
-      "is_license_notice": false,
-      "is_license_reference": true,
-      "is_license_tag": false,
-      "is_license_intro": false,
-      "rule_length": 12,
-      "rule_relevance": 100
-    },
-    {
-      "license_expression": "gpl-2.0-plus WITH ada-linking-exception",
       "rule_identifier": "gpl-2.0-plus_with_ada-linking-exception_1.RULE",
-      "referenced_filenames": [],
+      "license_expression": "gpl-2.0-plus WITH ada-linking-exception",
+      "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_with_ada-linking-exception_1.RULE",
+      "rule_relevance": 100,
+      "rule_length": 176,
       "is_license_text": false,
       "is_license_notice": true,
       "is_license_reference": false,
       "is_license_tag": false,
       "is_license_intro": false,
-      "rule_length": 176,
-      "rule_relevance": 100
+      "referenced_filenames": [],
+      "rule_text": "This library is free software; you can redistribute it and/or modify\nit under the terms of the GNU General Public License as published by\nthe Free Software Foundation; either version 2 of the License, or (at\nyour option) any later version.\n\nThis library is distributed in the hope that it will be useful, but\nWITHOUT ANY WARRANTY; without even the implied warranty of\nMERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU\nGeneral Public License for more details.\n\nYou should have received a copy of the GNU General Public License\nalong with this library; if not, write to the Free Software Foundation\nInc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.\n\nAs a special exception, if other files instantiate generics from this\nunit, or you link this unit with other files to produce an executable,\nthis  unit  does not  by itself cause  the resulting executable to be\ncovered by the GNU General Public License. This exception does not\nhowever invalidate any other reasons why the executable file  might be\ncovered by the  GNU Public License."
     },
     {
-      "license_expression": "boost-1.0",
       "rule_identifier": "boost-1.0_21.RULE",
+      "license_expression": "boost-1.0",
+      "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/boost-1.0_21.RULE",
+      "rule_relevance": 100,
+      "rule_length": 32,
+      "is_license_text": false,
+      "is_license_notice": true,
+      "is_license_reference": false,
+      "is_license_tag": false,
+      "is_license_intro": false,
       "referenced_filenames": [
         "LICENSE_1_0.txt"
       ],
-      "is_license_text": false,
-      "is_license_notice": true,
-      "is_license_reference": false,
-      "is_license_tag": false,
-      "is_license_intro": false,
-      "rule_length": 32,
-      "rule_relevance": 100
+      "rule_text": "Use, modification and distribution are subject to the Boost Software License, Version 1.0.\n(See accompanying file LICENSE_1_0.txt or copy at http://www.boost.org/LICENSE_1_0.txt)"
     },
     {
-      "license_expression": "zlib",
       "rule_identifier": "zlib.LICENSE",
-      "referenced_filenames": [],
-      "is_license_text": true,
-      "is_license_notice": false,
-      "is_license_reference": false,
-      "is_license_tag": false,
-      "is_license_intro": false,
+      "license_expression": "zlib",
+      "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/zlib.LICENSE",
+      "rule_relevance": 100,
       "rule_length": 132,
-      "rule_relevance": 100
-    },
-    {
-      "license_expression": "zlib",
-      "rule_identifier": "zlib_5.RULE",
-      "referenced_filenames": [
-        "zlib.h"
-      ],
-      "is_license_text": false,
-      "is_license_notice": false,
-      "is_license_reference": true,
-      "is_license_tag": false,
-      "is_license_intro": false,
-      "rule_length": 12,
-      "rule_relevance": 100
-    },
-    {
-      "license_expression": "zlib",
-      "rule_identifier": "zlib_5.RULE",
-      "referenced_filenames": [
-        "zlib.h"
-      ],
-      "is_license_text": false,
-      "is_license_notice": false,
-      "is_license_reference": true,
-      "is_license_tag": false,
-      "is_license_intro": false,
-      "rule_length": 12,
-      "rule_relevance": 100
-    },
-    {
-      "license_expression": "mit-old-style",
-      "rule_identifier": "mit-old-style_cmr-no_1.RULE",
-      "referenced_filenames": [],
       "is_license_text": true,
       "is_license_notice": false,
       "is_license_reference": false,
       "is_license_tag": false,
       "is_license_intro": false,
+      "referenced_filenames": [],
+      "rule_text": "This software is provided 'as-is', without any express or implied warranty. In no\nevent will the authors be held liable for any damages arising from the use of this\nsoftware.\n\nPermission is granted to anyone to use this software for any purpose, including\ncommercial applications, and to alter it and redistribute it freely, subject to\nthe following restrictions:\n\n1. The origin of this software must not be misrepresented; you must not claim that\nyou wrote the original software. If you use this software in a product, an\nacknowledgment in the product documentation would be appreciated but is not\nrequired.\n\n2. Altered source versions must be plainly marked as such, and must not be\nmisrepresented as being the original software.\n\n3. This notice may not be removed or altered from any source distribution."
+    },
+    {
+      "rule_identifier": "mit-old-style_cmr-no_1.RULE",
+      "license_expression": "mit-old-style",
+      "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit-old-style_cmr-no_1.RULE",
+      "rule_relevance": 100,
       "rule_length": 71,
-      "rule_relevance": 100
+      "is_license_text": true,
+      "is_license_notice": false,
+      "is_license_reference": false,
+      "is_license_tag": false,
+      "is_license_intro": false,
+      "referenced_filenames": [],
+      "rule_text": "Permission to use, copy, modify, distribute and sell this software\nand its documentation for any purpose is hereby granted without fee,\nprovided that the above copyright notice appear in all copies and\nthat both that copyright notice and this permission notice appear\nin supporting documentation.  Christian Michelsen Research AS\nmakes no representations about the suitability of this software for\nany purpose. It is provided \"as is\" without express or implied warranty."
     }
   ],
   "tallies": {

@@ -126,31 +126,35 @@
   ],
   "license_rule_references": [
     {
-      "license_expression": "gpl-2.0 OR bsd-new",
       "rule_identifier": "gpl-2.0_or_bsd-new_aes_1.RULE",
-      "referenced_filenames": [
-        "COPYING",
-        "README"
-      ],
+      "license_expression": "gpl-2.0 OR bsd-new",
+      "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0_or_bsd-new_aes_1.RULE",
+      "rule_relevance": 100,
+      "rule_length": 50,
       "is_license_text": false,
       "is_license_notice": true,
       "is_license_reference": false,
       "is_license_tag": false,
       "is_license_intro": false,
-      "rule_length": 50,
-      "rule_relevance": 100
+      "referenced_filenames": [
+        "COPYING",
+        "README"
+      ],
+      "rule_text": "*\n* This program is free software; you can redistribute it and/or modify\n* it under the terms of the GNU General Public License version 2 as\n* published by the Free Software Foundation.\n*\n* Alternatively, this software may be distributed under the terms of BSD\n* license.\n*\n* See README and COPYING for more details."
     },
     {
-      "license_expression": "bsd-original-uc",
       "rule_identifier": "bsd-original-uc_3.RULE",
-      "referenced_filenames": [],
+      "license_expression": "bsd-original-uc",
+      "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-original-uc_3.RULE",
+      "rule_relevance": 100,
+      "rule_length": 243,
       "is_license_text": true,
       "is_license_notice": false,
       "is_license_reference": false,
       "is_license_tag": false,
       "is_license_intro": false,
-      "rule_length": 243,
-      "rule_relevance": 100
+      "referenced_filenames": [],
+      "rule_text": "* Redistribution and use in source and binary forms, with or without\n* modification, are permitted provided that the following conditions\n* are met:\n* 1. Redistributions of source code must retain the above copyright\n*    notice, this list of conditions and the following disclaimer.\n* 2. Redistributions in binary form must reproduce the above copyright\n*    notice, this list of conditions and the following disclaimer in the\n*    documentation and/or other materials provided with the distribution.\n* 3. All advertising materials mentioning features or use of this software\n*    must display the following acknowledgement:\n*\tThis product includes software developed by the University of\n*\tCalifornia, Berkeley and its contributors.\n* 4. Neither the name of the University nor the names of its contributors\n*    may be used to endorse or promote products derived from this software\n*    without specific prior written permission.\n*\n* THIS SOFTWARE IS PROVIDED BY THE REGENTS AND CONTRIBUTORS ``AS IS'' AND\n* ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE\n* IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE\n* ARE DISCLAIMED.  IN NO EVENT SHALL THE REGENTS OR CONTRIBUTORS BE LIABLE\n* FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL\n* DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS\n* OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)\n* HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT\n* LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY\n* OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF\n* SUCH DAMAGE.\n*"
     }
   ],
   "files": [

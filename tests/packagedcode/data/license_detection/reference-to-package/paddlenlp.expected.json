@@ -575,166 +575,120 @@
   ],
   "license_rule_references": [
     {
-      "license_expression": "apache-2.0",
       "rule_identifier": "spdx_license_id_apache-2.0_for_apache-2.0.RULE",
-      "referenced_filenames": [],
+      "license_expression": "apache-2.0",
+      "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/spdx_license_id_apache-2.0_for_apache-2.0.RULE",
+      "rule_relevance": 100,
+      "rule_length": 3,
       "is_license_text": false,
       "is_license_notice": false,
       "is_license_reference": true,
       "is_license_tag": false,
       "is_license_intro": false,
-      "rule_length": 3,
-      "rule_relevance": 100
+      "referenced_filenames": [],
+      "rule_text": "apache-2.0"
     },
     {
-      "license_expression": "apache-2.0",
       "rule_identifier": "pypi_apache_no-version.RULE",
-      "referenced_filenames": [],
+      "license_expression": "apache-2.0",
+      "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/pypi_apache_no-version.RULE",
+      "rule_relevance": 95,
+      "rule_length": 6,
       "is_license_text": false,
       "is_license_notice": false,
       "is_license_reference": false,
       "is_license_tag": true,
       "is_license_intro": false,
-      "rule_length": 6,
-      "rule_relevance": 95
+      "referenced_filenames": [],
+      "rule_text": "License :: OSI Approved :: Apache Software License"
     },
     {
-      "license_expression": "apache-2.0",
       "rule_identifier": "apache-2.0_7.RULE",
-      "referenced_filenames": [],
+      "license_expression": "apache-2.0",
+      "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_7.RULE",
+      "rule_relevance": 100,
+      "rule_length": 85,
       "is_license_text": false,
       "is_license_notice": true,
       "is_license_reference": false,
       "is_license_tag": false,
       "is_license_intro": false,
-      "rule_length": 85,
-      "rule_relevance": 100
+      "referenced_filenames": [],
+      "rule_text": "# Licensed under the Apache License, Version 2.0 (the \"License\");\n# you may not use this file except in compliance with the License.\n# You may obtain a copy of the License at\n#\n#   http://www.apache.org/licenses/LICENSE-2.0\n#\n# Unless required by applicable law or agreed to in writing, software\n# distributed under the License is distributed on an \"AS IS\" BASIS,\n# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n# See the License for the specific language governing permissions and\n# limitations under the License."
     },
     {
-      "license_expression": "apache-2.0",
       "rule_identifier": "apache-2.0_164.RULE",
-      "referenced_filenames": [],
+      "license_expression": "apache-2.0",
+      "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_164.RULE",
+      "rule_relevance": 100,
+      "rule_length": 1582,
       "is_license_text": true,
       "is_license_notice": false,
       "is_license_reference": false,
       "is_license_tag": false,
       "is_license_intro": false,
-      "rule_length": 1582,
-      "rule_relevance": 100
+      "referenced_filenames": [],
+      "rule_text": "Apache License\nVersion 2.0, January 2004\nhttp://www.apache.org/licenses/\n\nTERMS AND CONDITIONS FOR USE, REPRODUCTION, AND DISTRIBUTION\n\n1. Definitions.\n\n&quot;License&quot; shall mean the terms and conditions for use, reproduction,\nand distribution as defined by Sections 1 through 9 of this document.\n\n&quot;Licensor&quot; shall mean the copyright owner or entity authorized by\nthe copyright owner that is granting the License.\n\n&quot;Legal Entity&quot; shall mean the union of the acting entity and all\nother entities that control, are controlled by, or are under common\ncontrol with that entity. For the purposes of this definition,\n&quot;control&quot; means (i) the power, direct or indirect, to cause the\ndirection or management of such entity, whether by contract or\notherwise, or (ii) ownership of fifty percent (50%) or more of the\noutstanding shares, or (iii) beneficial ownership of such entity.\n\n&quot;You&quot; (or &quot;Your&quot;) shall mean an individual or Legal Entity\nexercising permissions granted by this License.\n\n&quot;Source&quot; form shall mean the preferred form for making modifications,\nincluding but not limited to software source code, documentation\nsource, and configuration files.\n\n&quot;Object&quot; form shall mean any form resulting from mechanical\ntransformation or translation of a Source form, including but\nnot limited to compiled object code, generated documentation,\nand conversions to other media types.\n\n&quot;Work&quot; shall mean the work of authorship, whether in Source or\nObject form, made available under the License, as indicated by a\ncopyright notice that is included in or attached to the work\n(an example is provided in the Appendix below).\n\n&quot;Derivative Works&quot; shall mean any work, whether in Source or Object\nform, that is based on (or derived from) the Work and for which the\neditorial revisions, annotations, elaborations, or other modifications\nrepresent, as a whole, an original work of authorship. For the purposes\nof this License, Derivative Works shall not include works that remain\nseparable from, or merely link (or bind by name) to the interfaces of,\nthe Work and Derivative Works thereof.\n\n&quot;Contribution&quot; shall mean any work of authorship, including\nthe original version of the Work and any modifications or additions\nto that Work or Derivative Works thereof, that is intentionally\nsubmitted to Licensor for inclusion in the Work by the copyright owner\nor by an individual or Legal Entity authorized to submit on behalf of\nthe copyright owner. For the purposes of this definition, &quot;submitted&quot;\nmeans any form of electronic, verbal, or written communication sent\nto the Licensor or its representatives, including but not limited to\ncommunication on electronic mailing lists, source code control systems,\nand issue tracking systems that are managed by, or on behalf of, the\nLicensor for the purpose of discussing and improving the Work, but\nexcluding communication that is conspicuously marked or otherwise\ndesignated in writing by the copyright owner as &quot;Not a Contribution.&quot;\n\n&quot;Contributor&quot; shall mean Licensor and any individual or Legal Entity\non behalf of whom a Contribution has been received by Licensor and\nsubsequently incorporated within the Work.\n\n2. Grant of Copyright License. Subject to the terms and conditions of\nthis License, each Contributor hereby grants to You a perpetual,\nworldwide, non-exclusive, no-charge, royalty-free, irrevocable\ncopyright license to reproduce, prepare Derivative Works of,\npublicly display, publicly perform, sublicense, and distribute the\nWork and such Derivative Works in Source or Object form.\n\n3. Grant of Patent License. Subject to the terms and conditions of\nthis License, each Contributor hereby grants to You a perpetual,\nworldwide, non-exclusive, no-charge, royalty-free, irrevocable\n(except as stated in this section) patent license to make, have made,\nuse, offer to sell, sell, import, and otherwise transfer the Work,\nwhere such license applies only to those patent claims licensable\nby such Contributor that are necessarily infringed by their\nContribution(s) alone or by combination of their Contribution(s)\nwith the Work to which such Contribution(s) was submitted. If You\ninstitute patent litigation against any entity (including a\ncross-claim or counterclaim in a lawsuit) alleging that the Work\nor a Contribution incorporated within the Work constitutes direct\nor contributory patent infringement, then any patent licenses\ngranted to You under this License for that Work shall terminate\nas of the date such litigation is filed.\n\n4. Redistribution. You may reproduce and distribute copies of the\nWork or Derivative Works thereof in any medium, with or without\nmodifications, and in Source or Object form, provided that You\nmeet the following conditions:\n\n(a) You must give any other recipients of the Work or\nDerivative Works a copy of this License; and\n\n(b) You must cause any modified files to carry prominent notices\nstating that You changed the files; and\n\n(c) You must retain, in the Source form of any Derivative Works\nthat You distribute, all copyright, patent, trademark, and\nattribution notices from the Source form of the Work,\nexcluding those notices that do not pertain to any part of\nthe Derivative Works; and\n\n(d) If the Work includes a &quot;NOTICE&quot; text file as part of its\ndistribution, then any Derivative Works that You distribute must\ninclude a readable copy of the attribution notices contained\nwithin such NOTICE file, excluding those notices that do not\npertain to any part of the Derivative Works, in at least one\nof the following places: within a NOTICE text file distributed\nas part of the Derivative Works; within the Source form or\ndocumentation, if provided along with the Derivative Works; or,\nwithin a display generated by the Derivative Works, if and\nwherever such third-party notices normally appear. The contents\nof the NOTICE file are for informational purposes only and\ndo not modify the License. You may add Your own attribution\nnotices within Derivative Works that You distribute, alongside\nor as an addendum to the NOTICE text from the Work, provided\nthat such additional attribution notices cannot be construed\nas modifying the License.\n\nYou may add Your own copyright statement to Your modifications and\nmay provide additional or different license terms and conditions\nfor use, reproduction, or distribution of Your modifications, or\nfor any such Derivative Works as a whole, provided Your use,\nreproduction, and distribution of the Work otherwise complies with\nthe conditions stated in this License.\n\n5. Submission of Contributions. Unless You explicitly state otherwise,\nany Contribution intentionally submitted for inclusion in the Work\nby You to the Licensor shall be under the terms and conditions of\nthis License, without any additional terms or conditions.\nNotwithstanding the above, nothing herein shall supersede or modify\nthe terms of any separate license agreement you may have executed\nwith Licensor regarding such Contributions.\n\n6. Trademarks. This License does not grant permission to use the trade\nnames, trademarks, service marks, or product names of the Licensor,\nexcept as required for reasonable and customary use in describing the\norigin of the Work and reproducing the content of the NOTICE file.\n\n7. Disclaimer of Warranty. Unless required by applicable law or\nagreed to in writing, Licensor provides the Work (and each\nContributor provides its Contributions) on an &quot;AS IS&quot; BASIS,\nWITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or\nimplied, including, without limitation, any warranties or conditions\nof TITLE, NON-INFRINGEMENT, MERCHANTABILITY, or FITNESS FOR A\nPARTICULAR PURPOSE. You are solely responsible for determining the\nappropriateness of using or redistributing the Work and assume any\nrisks associated with Your exercise of permissions under this License.\n\n8. Limitation of Liability. In no event and under no legal theory,\nwhether in tort (including negligence), contract, or otherwise,\nunless required by applicable law (such as deliberate and grossly\nnegligent acts) or agreed to in writing, shall any Contributor be\nliable to You for damages, including any direct, indirect, special,\nincidental, or consequential damages of any character arising as a\nresult of this License or out of the use or inability to use the\nWork (including but not limited to damages for loss of goodwill,\nwork stoppage, computer failure or malfunction, or any and all\nother commercial damages or losses), even if such Contributor\nhas been advised of the possibility of such damages.\n\n9. Accepting Warranty or Additional Liability. While redistributing\nthe Work or Derivative Works thereof, You may choose to offer,\nand charge a fee for, acceptance of support, warranty, indemnity,\nor other liability obligations and/or rights consistent with this\nLicense. However, in accepting such obligations, You may act only\non Your own behalf and on Your sole responsibility, not on behalf\nof any other Contributor, and only if You agree to indemnify,\ndefend, and hold each Contributor harmless for any liability\nincurred by, or claims asserted against, such Contributor by reason\nof your accepting any such warranty or additional liability.\n\nEND OF TERMS AND CONDITIONS\n\nAPPENDIX: How to apply the Apache License to your work.\n\nTo apply the Apache License to your work, attach the following\nboilerplate notice, with the fields enclosed by brackets &quot;[]&quot;\nreplaced with your own identifying information. (Don&apos;t include\nthe brackets!)  The text should be enclosed in the appropriate\ncomment syntax for the file format. We also recommend that a\nfile or class name and description of purpose be included on the\nsame &quot;printed page&quot; as the copyright notice for easier\nidentification within third-party archives.\n\nCopyright  All Rights Reserved.\n\nLicensed under the Apache License, Version 2.0 (the &quot;License&quot;);\nyou may not use this file except in compliance with the License.\nYou may obtain a copy of the License at\n\nhttp://www.apache.org/licenses/LICENSE-2.0\n\nUnless required by applicable law or agreed to in writing, software\ndistributed under the License is distributed on an &quot;AS IS&quot; BASIS,\nWITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\nSee the License for the specific language governing permissions and\nlimitations under the License."
     },
     {
-      "license_expression": "apache-2.0",
       "rule_identifier": "apache-2.0_305.RULE",
-      "referenced_filenames": [],
+      "license_expression": "apache-2.0",
+      "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_305.RULE",
+      "rule_relevance": 100,
+      "rule_length": 3,
       "is_license_text": false,
       "is_license_notice": false,
       "is_license_reference": true,
       "is_license_tag": false,
       "is_license_intro": false,
-      "rule_length": 3,
-      "rule_relevance": 100
+      "referenced_filenames": [],
+      "rule_text": "Apache 2 license"
     },
     {
-      "license_expression": "apache-2.0",
       "rule_identifier": "apache-2.0_83.RULE",
+      "license_expression": "apache-2.0",
+      "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_83.RULE",
+      "rule_relevance": 100,
+      "rule_length": 9,
+      "is_license_text": false,
+      "is_license_notice": false,
+      "is_license_reference": true,
+      "is_license_tag": false,
+      "is_license_intro": false,
       "referenced_filenames": [
         "LICENSE"
       ],
-      "is_license_text": false,
-      "is_license_notice": false,
-      "is_license_reference": true,
-      "is_license_tag": false,
-      "is_license_intro": false,
-      "rule_length": 9,
-      "rule_relevance": 100
+      "rule_text": "is provided under the [Apache-2.0 license](LICENSE)."
     },
     {
-      "license_expression": "apache-2.0",
-      "rule_identifier": "spdx_license_id_apache-2.0_for_apache-2.0.RULE",
-      "referenced_filenames": [],
-      "is_license_text": false,
-      "is_license_notice": false,
-      "is_license_reference": true,
-      "is_license_tag": false,
-      "is_license_intro": false,
-      "rule_length": 3,
-      "rule_relevance": 100
-    },
-    {
-      "license_expression": "apache-2.0",
-      "rule_identifier": "pypi_apache_no-version.RULE",
-      "referenced_filenames": [],
-      "is_license_text": false,
-      "is_license_notice": false,
-      "is_license_reference": false,
-      "is_license_tag": true,
-      "is_license_intro": false,
-      "rule_length": 6,
-      "rule_relevance": 95
-    },
-    {
-      "license_expression": "apache-2.0",
-      "rule_identifier": "apache-2.0_7.RULE",
-      "referenced_filenames": [],
-      "is_license_text": false,
-      "is_license_notice": true,
-      "is_license_reference": false,
-      "is_license_tag": false,
-      "is_license_intro": false,
-      "rule_length": 85,
-      "rule_relevance": 100
-    },
-    {
-      "license_expression": "apache-2.0",
-      "rule_identifier": "pypi_apache_no-version.RULE",
-      "referenced_filenames": [],
-      "is_license_text": false,
-      "is_license_notice": false,
-      "is_license_reference": false,
-      "is_license_tag": true,
-      "is_license_intro": false,
-      "rule_length": 6,
-      "rule_relevance": 95
-    },
-    {
-      "license_expression": "apache-2.0",
       "rule_identifier": "apache-2.0_65.RULE",
-      "referenced_filenames": [],
+      "license_expression": "apache-2.0",
+      "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_65.RULE",
+      "rule_relevance": 100,
+      "rule_length": 4,
       "is_license_text": false,
       "is_license_notice": false,
       "is_license_reference": false,
       "is_license_tag": true,
       "is_license_intro": false,
-      "rule_length": 4,
-      "rule_relevance": 100
+      "referenced_filenames": [],
+      "rule_text": "license: Apache-2.0"
     },
     {
-      "license_expression": "free-unknown",
       "rule_identifier": "free-unknown-package_4.RULE",
-      "referenced_filenames": [
-        "INHERIT_LICENSE_FROM_PACKAGE"
-      ],
+      "license_expression": "free-unknown",
+      "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/free-unknown-package_4.RULE",
+      "rule_relevance": 100,
+      "rule_length": 10,
       "is_license_text": false,
       "is_license_notice": false,
       "is_license_reference": true,
       "is_license_tag": false,
       "is_license_intro": false,
-      "rule_length": 10,
-      "rule_relevance": 100
-    },
-    {
-      "license_expression": "free-unknown",
-      "rule_identifier": "free-unknown-package_4.RULE",
       "referenced_filenames": [
         "INHERIT_LICENSE_FROM_PACKAGE"
       ],
-      "is_license_text": false,
-      "is_license_notice": false,
-      "is_license_reference": true,
-      "is_license_tag": false,
-      "is_license_intro": false,
-      "rule_length": 10,
-      "rule_relevance": 100
+      "rule_text": "This file is distributed under the same license as the"
     }
   ],
   "files": [

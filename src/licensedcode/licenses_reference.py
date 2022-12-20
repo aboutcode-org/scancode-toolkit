@@ -11,6 +11,8 @@ import os
 import logging
 from license_expression import Licensing
 
+from licensedcode.models import get_rule_object_from_match
+
 
 TRACE_REFERENCE = os.environ.get('SCANCODE_DEBUG_LICENSE_REFERENCE', False)
 TRACE_EXTRACT = os.environ.get('SCANCODE_DEBUG_LICENSE_REFERENCE_EXTRACT', False)
@@ -208,17 +210,13 @@ def get_unique_rule_references(rules_data):
     """
     Get a list of unique Rule data from a list of Rule data.
     """
-    rule_identifiers = set()
-    rules_references = []
+    rules_references_by_identifier = {}
 
     for rule_data in rules_data:
-
         rule_identifier = rule_data['rule_identifier']
-        if rule_identifier not in rule_identifiers:
-            rule_identifiers.update(rule_identifier)
-            rules_references.append(rule_data)
+        rules_references_by_identifier[rule_identifier] = rule_data
 
-    return rules_references
+    return rules_references_by_identifier.values()
 
 
 def extract_license_rules_reference_data(license_detections=None, license_matches=None):
@@ -273,17 +271,21 @@ def extract_license_rules_reference_data(license_detections=None, license_matche
 
 def get_reference_data(match):
 
+    rule = get_rule_object_from_match(license_match_mapping=match)
+
     ref_data = {}
-    ref_data['license_expression'] = match['license_expression']
     ref_data['rule_identifier'] = match['rule_identifier']
-    ref_data['referenced_filenames'] = match.pop('referenced_filenames')
+    ref_data['license_expression'] = match['license_expression']
+    ref_data['rule_url'] = rule.rule_url
+    ref_data['rule_relevance'] = match.pop('rule_relevance')
+    ref_data['rule_length'] = match.pop('rule_length')
     ref_data['is_license_text'] = match.pop('is_license_text')
     ref_data['is_license_notice'] = match.pop('is_license_notice')
     ref_data['is_license_reference'] = match.pop('is_license_reference')
     ref_data['is_license_tag'] = match.pop('is_license_tag')
     ref_data['is_license_intro'] = match.pop('is_license_intro')
-    ref_data['rule_length'] = match.pop('rule_length')
-    ref_data['rule_relevance'] = match.pop('rule_relevance')
+    ref_data['referenced_filenames'] = match.pop('referenced_filenames')
+    ref_data['rule_text'] = rule.text
 
     _ = match.pop('licenses')
 

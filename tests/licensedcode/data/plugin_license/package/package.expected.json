@@ -180,40 +180,30 @@
   ],
   "license_rule_references": [
     {
-      "license_expression": "mit",
       "rule_identifier": "spdx-license-identifier: mit",
-      "referenced_filenames": [],
+      "license_expression": "mit",
+      "rule_relevance": 100,
+      "rule_length": 1,
       "is_license_text": false,
       "is_license_notice": false,
       "is_license_reference": false,
       "is_license_tag": true,
       "is_license_intro": false,
-      "rule_length": 1,
-      "rule_relevance": 100
-    },
-    {
-      "license_expression": "mit",
-      "rule_identifier": "spdx-license-identifier: mit",
       "referenced_filenames": [],
-      "is_license_text": false,
-      "is_license_notice": false,
-      "is_license_reference": false,
-      "is_license_tag": true,
-      "is_license_intro": false,
-      "rule_length": 1,
-      "rule_relevance": 100
+      "rule_text": "MIT"
     },
     {
-      "license_expression": "mit",
       "rule_identifier": "mit_272.RULE",
-      "referenced_filenames": [],
+      "license_expression": "mit",
+      "rule_relevance": 100,
+      "rule_length": 3,
       "is_license_text": false,
       "is_license_notice": false,
       "is_license_reference": false,
       "is_license_tag": true,
       "is_license_intro": false,
-      "rule_length": 3,
-      "rule_relevance": 100
+      "referenced_filenames": [],
+      "rule_text": "\"licenses\": [ { \"type\": \"MIT\","
     }
   ],
   "files": [

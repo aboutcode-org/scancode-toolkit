@@ -173,54 +173,34 @@
   ],
   "license_rule_references": [
     {
-      "license_expression": "bsd-new",
       "rule_identifier": "pypi_bsd_license.RULE",
-      "referenced_filenames": [],
+      "license_expression": "bsd-new",
+      "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/pypi_bsd_license.RULE",
+      "rule_relevance": 99,
+      "rule_length": 5,
       "is_license_text": false,
       "is_license_notice": false,
       "is_license_reference": false,
       "is_license_tag": true,
       "is_license_intro": false,
-      "rule_length": 5,
-      "rule_relevance": 99
+      "referenced_filenames": [],
+      "rule_text": "License :: OSI Approved :: BSD License"
     },
     {
-      "license_expression": "free-unknown",
       "rule_identifier": "free-unknown-package_1.RULE",
-      "referenced_filenames": [
-        "INHERIT_LICENSE_FROM_PACKAGE"
-      ],
+      "license_expression": "free-unknown",
+      "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/free-unknown-package_1.RULE",
+      "rule_relevance": 100,
+      "rule_length": 11,
       "is_license_text": false,
       "is_license_notice": false,
       "is_license_reference": true,
       "is_license_tag": false,
       "is_license_intro": false,
-      "rule_length": 11,
-      "rule_relevance": 100
-    },
-    {
-      "license_expression": "bsd-new",
-      "rule_identifier": "pypi_bsd_license.RULE",
-      "referenced_filenames": [],
-      "is_license_text": false,
-      "is_license_notice": false,
-      "is_license_reference": false,
-      "is_license_tag": true,
-      "is_license_intro": false,
-      "rule_length": 5,
-      "rule_relevance": 99
-    },
-    {
-      "license_expression": "bsd-new",
-      "rule_identifier": "pypi_bsd_license.RULE",
-      "referenced_filenames": [],
-      "is_license_text": false,
-      "is_license_notice": false,
-      "is_license_reference": false,
-      "is_license_tag": true,
-      "is_license_intro": false,
-      "rule_length": 5,
-      "rule_relevance": 99
+      "referenced_filenames": [
+        "INHERIT_LICENSE_FROM_PACKAGE"
+      ],
+      "rule_text": "This file is distributed under the same license as the package."
     }
   ],
   "files": [

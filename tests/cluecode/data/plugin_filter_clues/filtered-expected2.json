@@ -39,16 +39,18 @@
   ],
   "license_rule_references": [
     {
-      "license_expression": "pygres-2.2",
       "rule_identifier": "pygres-2.2_2.RULE",
-      "referenced_filenames": [],
+      "license_expression": "pygres-2.2",
+      "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/pygres-2.2_2.RULE",
+      "rule_relevance": 100,
+      "rule_length": 145,
       "is_license_text": true,
       "is_license_notice": false,
       "is_license_reference": false,
       "is_license_tag": false,
       "is_license_intro": false,
-      "rule_length": 145,
-      "rule_relevance": 100
+      "referenced_filenames": [],
+      "rule_text": "Permission to use, copy, modify, and distribute this software and its\ndocumentation for any purpose, without fee, and without a written\nagreement is hereby granted, provided that the above copyright notice and\nthis paragraph and the following two paragraphs appear in all copies or in\nany new file that contains a substantial portion of this file.\n\nIN NO EVENT SHALL THE AUTHOR BE LIABLE TO ANY PARTY FOR DIRECT, INDIRECT,\nSPECIAL, INCIDENTAL, OR CONSEQUENTIAL DAMAGES, INCLUDING LOST PROFITS,\nARISING OUT OF THE USE OF THIS SOFTWARE AND ITS DOCUMENTATION, EVEN IF THE\nAUTHOR HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.\n\nTHE AUTHOR SPECIFICALLY DISCLAIMS ANY WARRANTIES, INCLUDING, BUT NOT LIMITED\nTO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR\nPURPOSE.  THE SOFTWARE PROVIDED HEREUNDER IS ON AN \"AS IS\" BASIS, AND THE\nAUTHOR HAS NO OBLIGATIONS TO PROVIDE MAINTENANCE, SUPPORT, UPDATES,\nENHANCEMENTS, OR MODIFICATIONS."
     }
   ],
   "files": [

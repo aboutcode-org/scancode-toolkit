@@ -87,28 +87,32 @@
   ],
   "license_rule_references": [
     {
-      "license_expression": "zlib",
       "rule_identifier": "spdx-license-identifier: zlib",
-      "referenced_filenames": [],
+      "license_expression": "zlib",
+      "rule_url": null,
+      "rule_relevance": 100,
+      "rule_length": 4,
       "is_license_text": false,
       "is_license_notice": false,
       "is_license_reference": false,
       "is_license_tag": true,
       "is_license_intro": false,
-      "rule_length": 4,
-      "rule_relevance": 100
+      "referenced_filenames": [],
+      "rule_text": "https://licenses.nuget.org/Zlib"
     },
     {
-      "license_expression": "apache-2.0",
       "rule_identifier": "spdx-license-identifier: apache-2.0",
-      "referenced_filenames": [],
+      "license_expression": "apache-2.0",
+      "rule_url": null,
+      "rule_relevance": 100,
+      "rule_length": 6,
       "is_license_text": false,
       "is_license_notice": false,
       "is_license_reference": false,
       "is_license_tag": true,
       "is_license_intro": false,
-      "rule_length": 6,
-      "rule_relevance": 100
+      "referenced_filenames": [],
+      "rule_text": "SPDX-License-Identifier: Apache-2.0"
     }
   ],
   "files": [

@@ -135,28 +135,32 @@
   ],
   "license_rule_references": [
     {
-      "license_expression": "gpl-2.0 WITH linux-syscall-exception-gpl OR linux-openib",
       "rule_identifier": "spdx-license-identifier: gpl-2.0 WITH linux-syscall-exception-gpl OR linux-openib",
-      "referenced_filenames": [],
+      "license_expression": "gpl-2.0 WITH linux-syscall-exception-gpl OR linux-openib",
+      "rule_url": null,
+      "rule_relevance": 100,
+      "rule_length": 13,
       "is_license_text": false,
       "is_license_notice": false,
       "is_license_reference": false,
       "is_license_tag": true,
       "is_license_intro": false,
-      "rule_length": 13,
-      "rule_relevance": 100
+      "referenced_filenames": [],
+      "rule_text": "SPDX-License-Identifier: ((GPL-2.0 WITH Linux-syscall-note) OR Linux-Openib) */"
     },
     {
-      "license_expression": "fsf-ap",
       "rule_identifier": "fsf-ap.LICENSE",
-      "referenced_filenames": [],
+      "license_expression": "fsf-ap",
+      "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/fsf-ap.LICENSE",
+      "rule_relevance": 100,
+      "rule_length": 35,
       "is_license_text": true,
       "is_license_notice": false,
       "is_license_reference": false,
       "is_license_tag": false,
       "is_license_intro": false,
-      "rule_length": 35,
-      "rule_relevance": 100
+      "referenced_filenames": [],
+      "rule_text": "Copying and distribution of this file, with or without modification, are\npermitted in any medium without royalty provided the copyright notice\nand this notice are preserved. This file is offered as-is, without any\nwarranty."
     }
   ],
   "files": [

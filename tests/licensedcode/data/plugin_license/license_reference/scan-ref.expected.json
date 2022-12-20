@@ -69,30 +69,34 @@
   ],
   "license_rule_references": [
     {
-      "license_expression": "mit",
       "rule_identifier": "mit_66.RULE",
-      "referenced_filenames": [],
+      "license_expression": "mit",
+      "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_66.RULE",
+      "rule_relevance": 100,
+      "rule_length": 10,
       "is_license_text": false,
       "is_license_notice": true,
       "is_license_reference": false,
       "is_license_tag": false,
       "is_license_intro": false,
-      "rule_length": 10,
-      "rule_relevance": 100
+      "referenced_filenames": [],
+      "rule_text": "that is licensed under [MIT](http://opensource.org/licenses/MIT)."
     },
     {
-      "license_expression": "unknown-license-reference",
       "rule_identifier": "unknown-license-reference_25.RULE",
-      "referenced_filenames": [
-        "LICENSE"
-      ],
+      "license_expression": "unknown-license-reference",
+      "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/unknown-license-reference_25.RULE",
+      "rule_relevance": 100,
+      "rule_length": 5,
       "is_license_text": false,
       "is_license_notice": false,
       "is_license_reference": false,
       "is_license_tag": true,
       "is_license_intro": false,
-      "rule_length": 5,
-      "rule_relevance": 100
+      "referenced_filenames": [
+        "LICENSE"
+      ],
+      "rule_text": "license\": \"SEE LICENSE IN LICENSE"
     }
   ],
   "files": [

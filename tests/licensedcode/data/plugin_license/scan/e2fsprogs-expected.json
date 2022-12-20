@@ -92,28 +92,32 @@
   ],
   "license_rule_references": [
     {
-      "license_expression": "lgpl-2.0-plus",
       "rule_identifier": "lgpl-2.0-plus_65.RULE",
-      "referenced_filenames": [],
+      "license_expression": "lgpl-2.0-plus",
+      "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0-plus_65.RULE",
+      "rule_relevance": 100,
+      "rule_length": 139,
       "is_license_text": false,
       "is_license_notice": true,
       "is_license_reference": false,
       "is_license_tag": false,
       "is_license_intro": false,
-      "rule_length": 139,
-      "rule_relevance": 100
+      "referenced_filenames": [],
+      "rule_text": "** NOTE! The following LGPL license applies to the tdb\n** library. This does NOT imply that all of Samba is released\n** under the LGPL\n\nThis library is free software; you can redistribute it and/or\nmodify it under the terms of the GNU Lesser General Public\nLicense as published by the Free Software Foundation; either\nversion 2 of the License, or (at your option) any later version.\n\nThis library is distributed in the hope that it will be useful,\nbut WITHOUT ANY WARRANTY; without even the implied warranty of\nMERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU\nLesser General Public License for more details.\n\nYou should have received a copy of the GNU Lesser General Public\nLicense along with this library; if not, write to the Free Software\nFoundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301  USA"
     },
     {
-      "license_expression": "gpl-2.0 AND patent-disclaimer",
       "rule_identifier": "gpl-2.0_and_patent-disclaimer_3.RULE",
-      "referenced_filenames": [],
+      "license_expression": "gpl-2.0 AND patent-disclaimer",
+      "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0_and_patent-disclaimer_3.RULE",
+      "rule_relevance": 100,
+      "rule_length": 185,
       "is_license_text": false,
       "is_license_notice": true,
       "is_license_reference": false,
       "is_license_tag": false,
       "is_license_intro": false,
-      "rule_length": 185,
-      "rule_relevance": 100
+      "referenced_filenames": [],
+      "rule_text": "* This program is free software; you can redistribute it and/or modify it\n* under the terms of version 2 of the GNU General Public License as\n* published by the Free Software Foundation.\n*\n* This program is distributed in the hope that it would be useful, but\n* WITHOUT ANY WARRANTY; without even the implied warranty of\n* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.\n*\n* Further, this software is distributed without any warranty that it is\n* free of the rightful claim of any third person regarding infringement\n* or the like.  Any license provided herein, whether implied or\n* otherwise, applies only to this software file.  Patent licenses, if\n* any, provided herein do not apply to combinations of this program with\n* other software, or any other product whatsoever.\n*\n* You should have received a copy of the GNU General Public License along\n* with this program; if not, write the Free Software Foundation, Inc.,\n* 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.\n*\n* Contact information: Silicon Graphics, Inc., 1600 Amphitheatre Pkwy,\n* Mountain View, CA  94043, or:\n*\n* http://www.sgi.com\n*\n* For further information regarding this notice, see:\n*\n* http://oss.sgi.com/projects/GenInfo/SGIGPLNoticeExplan/"
     }
   ],
   "files": [

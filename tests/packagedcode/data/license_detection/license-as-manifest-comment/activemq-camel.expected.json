@@ -279,32 +279,20 @@
   ],
   "license_rule_references": [
     {
-      "license_expression": "apache-2.0",
       "rule_identifier": "apache-2.0_2.RULE",
-      "referenced_filenames": [
-        "NOTICE"
-      ],
+      "license_expression": "apache-2.0",
+      "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_2.RULE",
+      "rule_relevance": 100,
+      "rule_length": 119,
       "is_license_text": false,
       "is_license_notice": true,
       "is_license_reference": false,
       "is_license_tag": false,
       "is_license_intro": false,
-      "rule_length": 119,
-      "rule_relevance": 100
-    },
-    {
-      "license_expression": "apache-2.0",
-      "rule_identifier": "apache-2.0_2.RULE",
       "referenced_filenames": [
         "NOTICE"
       ],
-      "is_license_text": false,
-      "is_license_notice": true,
-      "is_license_reference": false,
-      "is_license_tag": false,
-      "is_license_intro": false,
-      "rule_length": 119,
-      "rule_relevance": 100
+      "rule_text": "Licensed to the Apache Software Foundation (ASF) under one or more contributor license agreements.  See the NOTICE file distributed with this work for additional information regarding copyright ownership.  The ASF licenses this file to you under the Apache License, Version 2.0 (the \"License\"); you may not use this file except in compliance with the License.  You may obtain a copy of the License at\n\nhttp://www.apache.org/licenses/LICENSE-2.0\n\nUnless required by applicable law or agreed to in writing, software distributed under the License is distributed on an \"AS IS\" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.  See the License for the specific language governing permissions and limitations under the License."
     }
   ],
   "files": [

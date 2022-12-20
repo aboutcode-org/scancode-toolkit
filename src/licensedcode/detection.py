@@ -26,15 +26,16 @@ from licensedcode.cache import get_index
 from licensedcode.cache import get_cache
 from licensedcode.match import LicenseMatch
 from licensedcode.match import set_matched_lines
-from licensedcode.models import Rule
+from licensedcode.models import UnDetectedRule
 from licensedcode.models import BasicRule
-from licensedcode.models import SpdxRule
 from licensedcode.models import compute_relevance
+from licensedcode.models import get_rule_object_from_match
 from licensedcode.spans import Span
 from licensedcode.tokenize import query_tokenizer
 from licensedcode.query import Query
 from licensedcode.query import LINES_THRESHOLD
 from licensedcode.licenses_reference import extract_license_rules_reference_data
+
 
 """
 LicenseDetection data structure and processing.
@@ -612,24 +613,8 @@ def matches_from_license_match_mappings(license_match_mappings):
     license_matches = []
 
     for license_match_mapping in license_match_mappings:
-        matcher = license_match_mapping["matcher"]
-        rule_identifier = license_match_mapping["rule_identifier"]
-        if matcher == "1-spdx-id":
-            rule = SpdxRule(
-                license_expression=license_match_mapping["license_expression"],
-                text=license_match_mapping.get("matched_text", None),
-                length=license_match_mapping["matched_length"],
-            )
-        elif rule_identifier == 'package-manifest-unknown':
-            rule = UnDetectedRule(
-                license_expression=license_match_mapping["license_expression"],
-                text=license_match_mapping.get("matched_text", None),
-                length=license_match_mapping["matched_length"],
-            )
-        else:
-            rule = get_index().rules_by_id[rule_identifier]
-
-        license_rule_reference = rule.get_reference_data(matcher=matcher)
+        rule = get_rule_object_from_match(license_match_mapping)
+        license_rule_reference = rule.get_reference_data()
         license_matches.append(
             LicenseMatchFromResult.from_license_match_mapping(
                 license_match_mapping=license_match_mapping,
@@ -1180,35 +1165,6 @@ def get_undetected_matches(query_string):
     matches = [match]
     set_matched_lines(matches, query.line_by_pos)
     return matches
-
-
-@attr.s(slots=True, repr=False)
-class UnDetectedRule(Rule):
-    """
-    A specialized rule object that is used for the special case of extracted
-    license statements without any valid license detection.
-
-    Since there is a license where there is a non empty extracted license
-    statement (typically found in a package manifest), if there is no license
-    detected by scancode, it would be incorrect to not point out that there
-    is a license (though undetected).
-    """
-
-    def __attrs_post_init__(self, *args, **kwargs):
-        self.identifier = 'package-manifest-' + self.license_expression
-        expression = self.licensing.parse(self.license_expression)
-        self.license_expression = expression.render()
-        self.license_expression_object = expression
-        self.is_license_tag = True
-        self.is_small = False
-        self.relevance = 100
-        self.has_stored_relevance = True
-
-    def load(self):
-        raise NotImplementedError
-
-    def dump(self):
-        raise NotImplementedError
 
 
 def get_matches_from_detections(license_detections):

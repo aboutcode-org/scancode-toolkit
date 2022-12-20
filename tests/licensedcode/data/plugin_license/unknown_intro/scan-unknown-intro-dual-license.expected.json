@@ -99,52 +99,60 @@
   ],
   "license_rule_references": [
     {
-      "license_expression": "unknown-license-reference",
       "rule_identifier": "lead-in_unknown_30.RULE",
-      "referenced_filenames": [],
+      "license_expression": "unknown-license-reference",
+      "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lead-in_unknown_30.RULE",
+      "rule_relevance": 100,
+      "rule_length": 3,
       "is_license_text": false,
       "is_license_notice": false,
       "is_license_reference": false,
       "is_license_tag": false,
       "is_license_intro": true,
-      "rule_length": 3,
-      "rule_relevance": 100
+      "referenced_filenames": [],
+      "rule_text": "Dual licensed under"
     },
     {
-      "license_expression": "wtfpl-2.0",
       "rule_identifier": "spdx_license_id_wtfpl_for_wtfpl-2.0.RULE",
-      "referenced_filenames": [],
-      "is_license_text": false,
-      "is_license_notice": false,
-      "is_license_reference": true,
-      "is_license_tag": false,
-      "is_license_intro": false,
-      "rule_length": 1,
-      "rule_relevance": 50
-    },
-    {
       "license_expression": "wtfpl-2.0",
-      "rule_identifier": "wtfpl-2.0_27.RULE",
-      "referenced_filenames": [],
+      "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/spdx_license_id_wtfpl_for_wtfpl-2.0.RULE",
+      "rule_relevance": 50,
+      "rule_length": 1,
       "is_license_text": false,
       "is_license_notice": false,
       "is_license_reference": true,
       "is_license_tag": false,
       "is_license_intro": false,
-      "rule_length": 3,
-      "rule_relevance": 100
+      "referenced_filenames": [],
+      "rule_text": "wtfpl"
     },
     {
-      "license_expression": "mit",
-      "rule_identifier": "mit_64.RULE",
-      "referenced_filenames": [],
+      "rule_identifier": "wtfpl-2.0_27.RULE",
+      "license_expression": "wtfpl-2.0",
+      "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/wtfpl-2.0_27.RULE",
+      "rule_relevance": 100,
+      "rule_length": 3,
       "is_license_text": false,
       "is_license_notice": false,
       "is_license_reference": true,
       "is_license_tag": false,
       "is_license_intro": false,
+      "referenced_filenames": [],
+      "rule_text": "www.wtfpl.net"
+    },
+    {
+      "rule_identifier": "mit_64.RULE",
+      "license_expression": "mit",
+      "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_64.RULE",
+      "rule_relevance": 100,
       "rule_length": 6,
-      "rule_relevance": 100
+      "is_license_text": false,
+      "is_license_notice": false,
+      "is_license_reference": true,
+      "is_license_tag": false,
+      "is_license_intro": false,
+      "referenced_filenames": [],
+      "rule_text": "[MIT](https://opensource.org/licenses/MIT)"
     }
   ],
   "files": [

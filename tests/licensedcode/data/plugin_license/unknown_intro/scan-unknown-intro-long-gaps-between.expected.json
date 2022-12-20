@@ -100,52 +100,46 @@
   ],
   "license_rule_references": [
     {
-      "license_expression": "unknown-license-reference",
       "rule_identifier": "license-intro_4.RULE",
-      "referenced_filenames": [],
+      "license_expression": "unknown-license-reference",
+      "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/license-intro_4.RULE",
+      "rule_relevance": 100,
+      "rule_length": 5,
       "is_license_text": false,
       "is_license_notice": false,
       "is_license_reference": false,
       "is_license_tag": false,
       "is_license_intro": true,
-      "rule_length": 5,
-      "rule_relevance": 100
+      "referenced_filenames": [],
+      "rule_text": "licensed under the following terms"
     },
     {
-      "license_expression": "x11-lucent",
       "rule_identifier": "x11-lucent_1.RULE",
-      "referenced_filenames": [],
-      "is_license_text": true,
-      "is_license_notice": false,
-      "is_license_reference": false,
-      "is_license_tag": false,
-      "is_license_intro": false,
+      "license_expression": "x11-lucent",
+      "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/x11-lucent_1.RULE",
+      "rule_relevance": 100,
       "rule_length": 93,
-      "rule_relevance": 100
-    },
-    {
-      "license_expression": "unknown-license-reference",
-      "rule_identifier": "license-intro_4.RULE",
-      "referenced_filenames": [],
-      "is_license_text": false,
-      "is_license_notice": false,
-      "is_license_reference": false,
-      "is_license_tag": false,
-      "is_license_intro": true,
-      "rule_length": 5,
-      "rule_relevance": 100
-    },
-    {
-      "license_expression": "bzip2-libbzip-2010",
-      "rule_identifier": "bzip2-libbzip-2010.LICENSE",
-      "referenced_filenames": [],
       "is_license_text": true,
       "is_license_notice": false,
       "is_license_reference": false,
       "is_license_tag": false,
       "is_license_intro": false,
+      "referenced_filenames": [],
+      "rule_text": "Permission to use, copy, modify, and distribute this software for any\npurpose without fee is hereby granted, provided that this entire notice\nis included in all copies of any software which is or includes a copy\nor modification of this software and in all copies of the supporting\ndocumentation for such software.\nTHIS SOFTWARE IS BEING PROVIDED \"AS IS\", WITHOUT ANY EXPRESS OR IMPLIED\nWARRANTY. IN PARTICULAR, NEITHER THE AUTHORS NOR LUCENT TECHNOLOGIES MAKE ANY\nREPRESENTATION OR WARRANTY OF ANY KIND CONCERNING THE MERCHANTABILITY\nOF THIS SOFTWARE OR ITS FITNESS FOR ANY PARTICULAR PURPOSE."
+    },
+    {
+      "rule_identifier": "bzip2-libbzip-2010.LICENSE",
+      "license_expression": "bzip2-libbzip-2010",
+      "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bzip2-libbzip-2010.LICENSE",
+      "rule_relevance": 100,
       "rule_length": 233,
-      "rule_relevance": 100
+      "is_license_text": true,
+      "is_license_notice": false,
+      "is_license_reference": false,
+      "is_license_tag": false,
+      "is_license_intro": false,
+      "referenced_filenames": [],
+      "rule_text": "Redistribution and use in source and binary forms, with or without\nmodification, are permitted provided that the following conditions\nare met:\n\n1. Redistributions of source code must retain the above copyright\nnotice, this list of conditions and the following disclaimer.\n\n2. The origin of this software must not be misrepresented; you must\nnot claim that you wrote the original software.  If you use this\nsoftware in a product, an acknowledgment in the product\ndocumentation would be appreciated but is not required.\n\n3. Altered source versions must be plainly marked as such, and must\nnot be misrepresented as being the original software.\n\n4. The name of the author may not be used to endorse or promote\nproducts derived from this software without specific prior written\npermission.\n\nTHIS SOFTWARE IS PROVIDED BY THE AUTHOR ``AS IS'' AND ANY EXPRESS\nOR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED\nWARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE\nARE DISCLAIMED.  IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY\nDIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL\nDAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE\nGOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS\nINTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,\nWHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING\nNEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS\nSOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE."
     }
   ],
   "files": [
