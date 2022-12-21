@@ -27,7 +27,7 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 import re
 
-from packaging.tags import (
+from packvers.tags import (
     compatible_tags,
     cpython_tags,
     generic_tags,

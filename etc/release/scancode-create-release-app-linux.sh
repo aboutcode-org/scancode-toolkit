@@ -22,21 +22,18 @@ python_dot_version=3.8
 python_version=38
 python_exe="python$python_dot_version"
 release_dir=scancode-toolkit-$(git describe --tags)
+
 rm -rf $release_dir
 mkdir -p $release_dir
 
 echo -n "$python_exe" > $release_dir/PYTHON_EXECUTABLE
 git describe --tags > $release_dir/SCANCODE_VERSION
 thirdparty_dir=$release_dir/thirdparty
+thirdparty_src_dir=$release_dir/thirdparty-src
 mkdir -p $thirdparty_dir
+mkdir -p $thirdparty_src_dir
 
-venv/bin/python etc/scripts/fetch_thirdparty.py \
-  --requirements requirements-linux.txt \
-  --requirements requirements.txt \
-  --dest $thirdparty_dir \
-  --operating-system=$operating_system \
-  --python-version=$python_version \
-  --wheels --use-cached-index
+./configure --rel
 
 venv/bin/python etc/scripts/fetch_thirdparty.py \
   --requirements requirements-native.txt \
@@ -46,11 +43,29 @@ venv/bin/python etc/scripts/fetch_thirdparty.py \
   --wheel-only extractcode-7z \
   --wheel-only extractcode-libarchive \
   --wheel-only typecode-libmagic \
+  --dest $thirdparty_src_dir \
+  --sdists \
+  --use-cached-index
+
+venv/bin/python etc/scripts/fetch_thirdparty.py \
+  --requirements requirements-linux.txt \
+  --requirements requirements.txt \
   --dest $thirdparty_dir \
-  --sdists --use-cached-index
+  --operating-system=$operating_system \
+  --python-version=$python_version \
+  --wheels \
+  --use-cached-index
+
+mv $thirdparty_src_dir/* $thirdparty_dir/
+rm -rf $thirdparty_src_dir
 
 mkdir -p $release_dir/etc
 cp -r etc/thirdparty $release_dir/etc
+
+# Build the wheel
+./configure --dev
+./scancode --reindex-licenses
+venv/bin/python setup.py --quiet bdist_wheel --python-tag cp$python_version
 
 cp -r \
   dist/scancode_*.whl \

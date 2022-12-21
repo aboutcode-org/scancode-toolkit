@@ -24,17 +24,17 @@ from typing import NamedTuple
 import dparse2
 # NOTE: we always want to use the external library rather than the built-in for now
 import importlib_metadata
-import packaging
+import packvers as packaging
 import pip_requirements_parser
 import pkginfo2
 from commoncode import fileutils
 from commoncode.fileutils import as_posixpath
 from commoncode.resource import Resource
-from packaging.specifiers import SpecifierSet
 from packageurl import PackageURL
-from packaging import markers
-from packaging.requirements import Requirement
-from packaging.utils import canonicalize_name
+from packvers.specifiers import SpecifierSet
+from packvers import markers
+from packvers.requirements import Requirement
+from packvers.utils import canonicalize_name
 
 from packagedcode import models
 from packagedcode.utils import build_description

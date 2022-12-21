@@ -8,14 +8,14 @@
 jobs:
 
 ################################################################################
-# These jobs are using VMs and Azure-provided Pythons 3.8
+# These jobs are using VMs and Azure-provided Pythons 3.10
 ################################################################################
 
     - template: etc/ci/azure-posix.yml
       parameters:
           job_name: core_tests
           image_name: ubuntu-20.04
-          python_versions: ['3.8']
+          python_versions: ['3.10']
           test_suites:
               misc_and_scancode: |
                # cli tests are launched below on all OSes
@@ -82,7 +82,7 @@ jobs:
       parameters:
           job_name: ubuntu18_cpython
           image_name: ubuntu-18.04
-          python_versions: ['3.7', '3.8', '3.9', '3.10']
+          python_versions: ['3.8', '3.9', '3.10']
           python_architecture: x64
           test_suites:
               all: venv/bin/pytest -n 2 -vvs tests/scancode/test_cli.py
@@ -91,7 +91,7 @@ jobs:
       parameters:
           job_name: ubuntu20_cpython
           image_name: ubuntu-20.04
-          python_versions: ['3.7', '3.8', '3.9', '3.10']
+          python_versions: ['3.8', '3.9', '3.10']
           python_architecture: x64
           test_suites:
               all: venv/bin/pytest -n 2 -vvs tests/scancode/test_cli.py
@@ -100,7 +100,7 @@ jobs:
       parameters:
           job_name: macos1015_cpython_1
           image_name: macos-10.15
-          python_versions: ['3.7', '3.8']
+          python_versions: ['3.8']
           python_architecture: x64
           test_suites:
               all: venv/bin/pytest -n 2 -vvs tests/scancode/test_cli.py
@@ -118,7 +118,7 @@ jobs:
       parameters:
           job_name: macos11_cpython
           image_name: macos-11
-          python_versions: ['3.7', '3.8', '3.9', '3.10']
+          python_versions: ['3.8', '3.9', '3.10']
           python_architecture: x64
           test_suites:
               all: venv/bin/pytest -n 2 -vvs tests/scancode/test_cli.py
@@ -127,7 +127,7 @@ jobs:
       parameters:
           job_name: macos12_cpython
           image_name: macos-12
-          python_versions: ['3.7', '3.8', '3.9', '3.10']
+          python_versions: ['3.8', '3.9', '3.10']
           python_architecture: x64
           test_suites:
               all: venv/bin/pytest -n 2 -vvs tests/scancode/test_cli.py
@@ -136,7 +136,7 @@ jobs:
       parameters:
           job_name: win2019_cpython_1
           image_name: windows-2019
-          python_versions: ['3.7', '3.8']
+          python_versions: ['3.8']
           python_architecture: x64
           test_suites:
               all: venv\Scripts\pytest -n 2 -vvs tests\scancode\test_cli.py
@@ -154,7 +154,7 @@ jobs:
       parameters:
           job_name: win2022_cpython_1
           image_name: windows-2022
-          python_versions: ['3.7', '3.8']
+          python_versions: ['3.8']
           python_architecture: x64
           test_suites:
               all: venv\Scripts\pytest -n 2 -vvs tests\scancode\test_cli.py
@@ -178,7 +178,7 @@ jobs:
       parameters:
           job_name: ubuntu20_test_all_supported_click_versions
           image_name: ubuntu-20.04
-          python_versions: ['3.7', '3.8', '3.9', '3.10']
+          python_versions: ['3.8', '3.9', '3.10']
           python_architecture: x64
           test_suites:
               click_versions: |
@@ -199,7 +199,7 @@ jobs:
       parameters:
           job_name: ubuntu18_cpython_latest_from_pip
           image_name: ubuntu-18.04
-          python_versions: ['3.7', '3.8', '3.9', '3.10']
+          python_versions: ['3.8', '3.9', '3.10']
           test_suites:
               all: venv/bin/pip install --upgrade-strategy eager --force-reinstall --upgrade -e .[dev] && venv/bin/pytest -n 2 -vvs tests/scancode/test_cli.py
 
@@ -207,7 +207,7 @@ jobs:
       parameters:
           job_name: ubuntu20_cpython_latest_from_pip
           image_name: ubuntu-20.04
-          python_versions: ['3.7', '3.8', '3.9', '3.10']
+          python_versions: ['3.8', '3.9', '3.10']
           test_suites:
               all: venv/bin/pip install --upgrade-strategy eager --force-reinstall --upgrade -e .[dev] && venv/bin/pytest -n 2 -vvs tests/scancode/test_cli.py
 
@@ -215,7 +215,7 @@ jobs:
       parameters:
           job_name: macos1015_cpython_latest_from_pip
           image_name: macos-10.15
-          python_versions: ['3.7', '3.8', '3.9', '3.10']
+          python_versions: ['3.8', '3.9', '3.10']
           test_suites:
               all: venv/bin/pip install --upgrade-strategy eager --force-reinstall --upgrade -e .[dev] && venv/bin/pytest -n 2 -vvs tests/scancode/test_cli.py
 
@@ -223,7 +223,7 @@ jobs:
       parameters:
           job_name: macos11_cpython_latest_from_pip
           image_name: macos-11
-          python_versions: ['3.7', '3.8', '3.9', '3.10']
+          python_versions: ['3.8', '3.9', '3.10']
           test_suites:
               all: venv/bin/pip install --upgrade-strategy eager --force-reinstall --upgrade -e .[dev] && venv/bin/pytest -n 2 -vvs tests/scancode/test_cli.py
 
@@ -231,7 +231,7 @@ jobs:
       parameters:
           job_name: macos12_cpython_latest_from_pip
           image_name: macos-12
-          python_versions: ['3.7', '3.8', '3.9', '3.10']
+          python_versions: ['3.8', '3.9', '3.10']
           test_suites:
               all: venv/bin/pip install --upgrade-strategy eager --force-reinstall --upgrade -e .[dev] && venv/bin/pytest -n 2 -vvs tests/scancode/test_cli.py
 
@@ -239,7 +239,7 @@ jobs:
       parameters:
           job_name: win2019_cpython_latest_from_pip
           image_name: windows-2019
-          python_versions: ['3.7', '3.8', '3.9', '3.10']
+          python_versions: ['3.8', '3.9', '3.10']
           test_suites:
               all: venv\Scripts\pip install --upgrade-strategy eager --force-reinstall --upgrade -e .[dev] &&  venv\Scripts\pytest -n 2 -vvs  tests\scancode\test_cli.py
 
@@ -247,7 +247,7 @@ jobs:
       parameters:
           job_name: win2022_cpython_latest_from_pip
           image_name: windows-2022
-          python_versions: ['3.7', '3.8', '3.9', '3.10']
+          python_versions: ['3.8', '3.9', '3.10']
           test_suites:
               all: venv\Scripts\pip install --upgrade-strategy eager --force-reinstall --upgrade -e .[dev] &&  venv\Scripts\pytest -n 2 -vvs  tests\scancode\test_cli.py
 

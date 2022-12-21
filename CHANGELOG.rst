@@ -54,6 +54,20 @@ License detection:
   detected license only once. This data can contain the reference license text
   as an option.
 
+
+v31.2.3 - 2022-12-24
+----------------------------------
+
+This is a minor bugfix release.
+
+There is a fix for an installation issue with the new "packaging" version 22.0.
+This is replaced by a fork named "packvers" to work around
+https://github.com/pypa/packaging/issues/530
+
+We also improved the compatibility for pre-built wheels and now build one
+wheel for each Python version to work around some Python pickle bug.
+
+
 v31.2.1 - 2022-10-05
 ----------------------------------
 
