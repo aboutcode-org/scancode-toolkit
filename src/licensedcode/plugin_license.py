@@ -16,6 +16,7 @@ from commoncode.cliutils import PluggableCommandLineOption
 from commoncode.cliutils import SCAN_GROUP
 from commoncode.cliutils import SCAN_OPTIONS_GROUP
 from plugincode.scan import ScanPlugin
+from commoncode.cliutils import MISC_GROUP
 from plugincode.scan import scan_impl
 from license_expression import Licensing
 from licensedcode.cache import build_spdx_license_expression, get_cache
@@ -33,6 +34,7 @@ from licensedcode.detection import matches_from_license_match_mappings
 from licensedcode.detection import UniqueDetection
 from licensedcode.detection import LicenseDetectionFromResult
 from licensedcode.licenses_reference import populate_license_references
+from licensedcode.license_db import dump_license_data
 from packagedcode.utils import combine_expressions
 from scancode.api import SCANCODE_LICENSEDB_URL
 
@@ -120,6 +122,16 @@ class LicenseScanner(ScanPlugin):
             required_options=['license'],
             help='[EXPERIMENTAL] Detect unknown licenses. ',
             help_group=SCAN_OPTIONS_GROUP,
+        ),
+        PluggableCommandLineOption(
+            ('--get-license-data',),
+            type=click.Path(exists=False, readable=True, file_okay=False, resolve_path=True, path_type=str),
+            metavar='DIR',
+            callback=dump_license_data,
+            help='Include this directory with additional custom licenses and license rules '
+                 'in the license detection index. Creates the directory if it does not exist. ',
+            help_group=MISC_GROUP,
+            is_eager=True,
         ),
     ]
 
