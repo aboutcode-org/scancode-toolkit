@@ -57,7 +57,13 @@ base_context = {
 }
 
 
-def generate_indexes(output_path, environment, licenses):
+base_context_test = {
+    "scancode_version": "32.0.0b1",
+    "now": "Dec 22, 2022",
+}
+
+
+def generate_indexes(output_path, environment, licenses, test=False):
     """
     Generates the license index and the static website at
     `output_path`.
@@ -66,6 +72,10 @@ def generate_indexes(output_path, environment, licenses):
     the webpage and `licenses` is a mapping with scancode license
     data.
     """
+    if test:
+        base_context_mapping = base_context_test
+    else:
+        base_context_mapping = base_context
     static_dest_dir = join(output_path, 'static')
     if not os.path.exists(static_dest_dir):
         os.makedirs(static_dest_dir)
@@ -74,7 +84,7 @@ def generate_indexes(output_path, environment, licenses):
 
     license_list_template = environment.get_template("license_list.html")
     index_html = license_list_template.render(
-        **base_context,
+        **base_context_mapping,
         licenses=licenses,
     )
     write_file(output_path, "index.html", index_html)
@@ -108,7 +118,7 @@ def generate_indexes(output_path, environment, licenses):
     )
 
 
-def generate_details(output_path, environment, licenses):
+def generate_details(output_path, environment, licenses, test=False):
     """
     Dumps data at `output_path` in JSON, YAML and HTML
     formats and also dumps the .LICENSE file with the
@@ -118,11 +128,15 @@ def generate_details(output_path, environment, licenses):
     the webpage and `licenses` is a mapping with scancode license
     data.
     """
+    if test:
+        base_context_mapping = base_context_test
+    else:
+        base_context_mapping = base_context
     license_details_template = environment.get_template("license_details.html")
     for license in licenses.values():
         license_data = license.to_dict(include_text=True)
         html = license_details_template.render(
-            **base_context,
+            **base_context_mapping,
             license=license,
             license_data=license_data,
         )
@@ -140,22 +154,27 @@ def generate_details(output_path, environment, licenses):
         license.dump(output_path)
 
 
-def generate_help(output_path, environment):
+def generate_help(output_path, environment, test=False):
     """
     Generate a help.html with help text at `output_path`.
 
     `environment` is a jinja Environment object used to generate
     the webpage.
     """
+    if test:
+        base_context_mapping = base_context_test
+    else:
+        base_context_mapping = base_context
     template = environment.get_template("help.html")
-    html = template.render(**base_context)
+    html = template.render(**base_context_mapping)
     write_file(output_path, "help.html", html)
 
 
 def generate(
     build_location,
     template_dir=TEMPLATES_DIR,
-    licenses_data_dir=licenses_data_dir
+    licenses_data_dir=licenses_data_dir,
+    test=False,
 ):
     """
     Generate a licenseDB static website and dump license data at `build_location`
@@ -176,9 +195,9 @@ def generate(
     root_path = pathlib.Path(build_location)
     root_path.mkdir(parents=False, exist_ok=True)
 
-    generate_indexes(output_path=root_path, environment=env, licenses=licenses)
-    generate_details(output_path=root_path, environment=env, licenses=licenses)
-    generate_help(output_path=root_path, environment=env)
+    generate_indexes(output_path=root_path, environment=env, licenses=licenses, test=test)
+    generate_details(output_path=root_path, environment=env, licenses=licenses, test=test)
+    generate_help(output_path=root_path, environment=env, test=test)
 
 
 def dump_license_data(ctx, param, value):
