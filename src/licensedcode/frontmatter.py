@@ -3,7 +3,8 @@
 """
 Python Frontmatter: Parse and manage posts with YAML frontmatter
 
-Based on and modified from ``python-frontmatter`` version 1.0.0.
+Based on and heavily modified/simplified from ``python-frontmatter``
+version 1.0.0, to only support nexB/saneyaml instead of pure YAML.
 
 license: mit. See frontmatter.ABOUT file for details.
 """
@@ -49,14 +50,15 @@ class SaneYAMLHandler:
 
     def split(self, text):
         """
-        Split text into frontmatter and content
+        Split text into frontmatter and content.
         """
         _, fm, content = self.FM_BOUNDARY.split(text, 2)
         return fm, content
 
     def format(self, content, metadata, **kwargs):
         """
-        Turn a post into a string, used in ``frontmatter.dumps``
+        Return string with `content` and `metadata` as YAML frontmatter,
+        used in ``frontmatter.dumps``.
         """
         start_delimiter = kwargs.pop("start_delimiter", self.START_DELIMITER)
         end_delimiter = kwargs.pop("end_delimiter", self.END_DELIMITER)
@@ -85,7 +87,9 @@ class SaneYAMLHandler:
 
 
 def return_unicode(text, encoding="utf-8"):
-    "Return unicode text, no matter what"
+    """
+    Return unicode text, no matter what.
+    """
 
     if isinstance(text, bytes):
         text = text.decode(encoding)
@@ -97,7 +101,7 @@ def return_unicode(text, encoding="utf-8"):
 
 def parse_frontmatter(text, encoding="utf-8", handler=SaneYAMLHandler(), **defaults):
     """
-    Parse text with frontmatter, return metadata and content.
+    Parse text with frontmatter, return `content` and `metadata`.
     Pass in optional metadata defaults as keyword args.
 
     If frontmatter is not found, returns an empty metadata dictionary
@@ -126,7 +130,7 @@ def parse_frontmatter(text, encoding="utf-8", handler=SaneYAMLHandler(), **defau
 
 def load_frontmatter(fd, encoding="utf-8", **defaults):
     """
-    Load and parse a file-like object or filename, and return
+    Load and parse a file-like object or filename `fd`, and return
     `content` and `metadata` with the text and the frontmatter metadata.
     """
     if hasattr(fd, "read"):

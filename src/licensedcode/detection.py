@@ -201,7 +201,8 @@ class LicenseDetection:
         If `analysis` is , `matches` are not analyzed again for
         license_expression creation.
 
-        If `post_scan` is True, this is 
+        If `post_scan` is True, this function is called outside
+        the main license detection step.
         """
         if not matches:
             return
@@ -263,7 +264,7 @@ class LicenseDetection:
     @property
     def identifier(self):
         """
-        This is an unique identifier for a license detection, based on it's underlying
+        Returns an unique identifier for a license detection, based on it's underlying
         license matches with the tokenized matched_text.
         """
         data = []
@@ -292,6 +293,10 @@ class LicenseDetection:
 
     @property
     def identifier_with_expression(self):
+        """
+        Returns an identifer for a license detection with the license expression
+        and an UUID created from the detection contents.
+        """
         id_safe_expression = python_safe_name(s=str(self.license_expression))
         return "{}-{}".format(id_safe_expression, self.identifier)
 
@@ -364,8 +369,7 @@ class LicenseDetection:
     ):
         """
         Append the ``match`` LicenseMatch to this detection and update it
-        accordingly.
-        Append the ``reason`` to the detection_log.
+        accordingly. Append the ``reason`` to the detection_log.
 
         If ``combine_license`` is True the license_expression of the ``match``
         is combined with the detection license_expression. Do not combine
@@ -458,8 +462,8 @@ class LicenseDetection:
 @attr.s
 class LicenseDetectionFromResult(LicenseDetection):
     """
-    A LicenseDetection object that is created from a LicenseDetection
-    mapping, i.e. results mappings. The LicenseMatch objects in the
+    A LicenseDetection object that is created and rehydrated from a
+    LicenseDetection mapping. The LicenseMatch objects in the
     `matches` will be LicenseMatchFromResult objects too, as these are
     created from data mappings and don't have the input text/spans
     available.
@@ -469,8 +473,12 @@ class LicenseDetectionFromResult(LicenseDetection):
     def from_license_detection_mapping(
         cls,
         license_detection_mapping,
-        file_path
+        file_path,
     ):
+        """
+        Returns a LicenseDetectionFromResult objects created from a LicenseDetection
+        mapping `license_detection_mapping`.
+        """
         matches_from_results = matches_from_license_match_mappings(
             license_match_mappings=license_detection_mapping["matches"]
         )
@@ -489,6 +497,10 @@ def detections_from_license_detection_mappings(
     license_detection_mappings,
     file_path,
 ):
+    """
+    Returns a list of LicenseDetectionFromResult objects created from a
+    list of LicenseDetection mappings: `license_detection_mappings`.
+    """
     license_detections = []
 
     for license_detection_mapping in license_detection_mappings:
@@ -504,7 +516,11 @@ def detections_from_license_detection_mappings(
 
 @attr.s
 class LicenseMatchFromResult(LicenseMatch):
-
+    """
+    A LicenseMatch object that is created and rehydrated from a
+    LicenseMatch mapping. The Rule object in here will be a
+    RuleFromResult objects too, as these are created from data mappings.
+    """
     match_score = attr.ib(
         default=None,
         metadata=dict(
@@ -548,7 +564,11 @@ class LicenseMatchFromResult(LicenseMatch):
 
     @classmethod
     def from_license_match_mapping(cls, license_match_mapping, license_rule_reference):
-
+        """
+        Create a LicenseMatchFromResult object from a LicenseMatch mappping
+        `license_match_mapping` with the help of a `license_rule_reference`
+        mapping to rehydrate data back.
+        """
         rule = RuleFromResult.from_license_match_mapping(
             license_match_mapping=license_match_mapping,
             license_rule_reference=license_rule_reference,
@@ -576,11 +596,13 @@ class LicenseMatchFromResult(LicenseMatch):
 @attr.s
 class RuleFromResult(BasicRule):
 
-    def license_keys(self, licensing=Licensing()):
-        return licensing.license_keys(self.license_expression)
-
     @classmethod
     def from_license_match_mapping(cls, license_match_mapping, license_rule_reference):
+        """
+        Create a RuleFromResult object from a LicenseMatch mappping
+        `license_match_mapping` with the help of a `license_rule_reference`
+        mapping (if not None) to rehydrate data back.
+        """
         if license_rule_reference:
             return cls(
                 license_expression=license_match_mapping["license_expression"],
@@ -610,6 +632,10 @@ class RuleFromResult(BasicRule):
 
 
 def matches_from_license_match_mappings(license_match_mappings):
+    """
+    Given a list of LicenseMatch mappings `license_match_mappings`,
+    return a list of rehydrated `LicenseMatchFromResult` objects.
+    """
     license_matches = []
 
     for license_match_mapping in license_match_mappings:
@@ -626,7 +652,11 @@ def matches_from_license_match_mappings(license_match_mappings):
 
 
 def mappings_from_license_match_objects(license_matches):
-
+    """
+    Return a list of LicenseMatch mappings from a list of 
+    LicenseMatch/LicenseMatchFromResult objects after removing
+    the reference data.
+    """
     license_match_mappings = [
         license_match.get_mapping()
         for license_match in license_matches
@@ -651,7 +681,7 @@ class UniqueDetection:
     def get_unique_detections(cls, license_detections):
         """
         Get all unique license detections from a list of
-        LicenseDetections.
+        LicenseDetection objects: `license_detections`.
         """
         identifiers = get_identifiers(license_detections)
         unique_detection_counts = dict(Counter(identifiers))

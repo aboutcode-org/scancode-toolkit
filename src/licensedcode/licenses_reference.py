@@ -35,7 +35,12 @@ if TRACE_REFERENCE or TRACE_EXTRACT:
 def populate_license_references(codebase):
     """
     Get unique License and Rule data from all license detections in a codebase-level
-    list and only refer to them in the resource level detections. 
+    list and only refer to them in the resource level detections. This does two things:
+
+    1. populates the `license_references` and `license_rule_references` attributes
+       for the `codebase`
+    2. it also removes the reference data from all the resource and package
+       license detections as a side effect.
     """
     licexps = []
     rules_data = []
@@ -138,6 +143,10 @@ def populate_license_references(codebase):
 
 
 def add_detection_to_license_references(codebase, license_detection_mappings):
+    """
+    Add references data from `license_detection_mappings` to codebase level
+    license refernces attributes.
+    """
 
     license_expressions = [
         detection["license_expression"]
@@ -152,7 +161,10 @@ def add_detection_to_license_references(codebase, license_detection_mappings):
 
 
 def add_license_references_to_codebase(codebase, license_references, rule_references):
-
+    """
+    Given the `license_references` and `rule_references` data, add it to the respective
+    `codebase` attributes if they aren't already present.
+    """
     license_references_new = []
     rule_references_new = []
 
@@ -161,10 +173,10 @@ def add_license_references_to_codebase(codebase, license_references, rule_refere
 
     for license_reference in codebase.attributes.license_references:
         license_keys.add(license_reference["key"])
-    
+
     for rule_reference in codebase.attributes.license_rule_references:
         rule_identifiers.add(rule_reference["rule_identifier"])
-    
+
     for license_reference in license_references:
         if not license_reference["key"] in license_keys:
             license_references_new.append(license_reference)
@@ -180,6 +192,7 @@ def add_license_references_to_codebase(codebase, license_references, rule_refere
 def get_license_references(license_expressions, licensing=Licensing()):
     """
     Get a list of unique License data from a list of `license_expression` strings.
+    These are added to the codebase attribute `license_references`.
     """
     from licensedcode.cache import get_licenses_db
 
@@ -214,11 +227,12 @@ def get_unique_rule_references(rules_data):
 
 def extract_license_rules_reference_data(license_detections=None, license_matches=None):
     """
-    Get Rule data for references from a list of LicenseDetections.
+    Get Rule data for references from a list of LicenseDetection mappings `license_detections`
+    and LicenseMatch mappings `license_matches`.
 
     Also removes this data from the list of LicenseMatch in detections,
-    apart from the `rule_identifier` as this data is referenced at top-level
-    by this attribute.
+    apart from the `rule_identifier` as this data is referenced at codebase-level
+    attribute `license_rule_references`.
     """
     rule_identifiers = set()
     rules_reference_data = []
@@ -263,6 +277,9 @@ def extract_license_rules_reference_data(license_detections=None, license_matche
 
 
 def get_reference_data(match):
+    """
+    Get reference data from a LicenseMatch mapping `match` after rehydrating.
+    """
 
     rule = get_rule_object_from_match(license_match_mapping=match)
 

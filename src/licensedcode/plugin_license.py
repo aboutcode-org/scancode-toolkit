@@ -12,11 +12,12 @@ import os
 from functools import partial
 
 import attr
+import click
 from commoncode.cliutils import PluggableCommandLineOption
 from commoncode.cliutils import SCAN_GROUP
 from commoncode.cliutils import SCAN_OPTIONS_GROUP
-from plugincode.scan import ScanPlugin
 from commoncode.cliutils import MISC_GROUP
+from plugincode.scan import ScanPlugin
 from plugincode.scan import scan_impl
 from license_expression import Licensing
 from licensedcode.cache import build_spdx_license_expression, get_cache
@@ -169,6 +170,9 @@ class LicenseScanner(ScanPlugin):
         """
         Post-processing to follow license references to other files and add
         `is_builtin` flags to licenses, if applicable.
+
+        Also add codebase level unique `license_detections` and license reference
+        attributes.
         """
         from licensedcode import cache
         cche = cache.get_cache()
@@ -237,7 +241,11 @@ class LicenseScanner(ScanPlugin):
 
 
 def populate_for_license_detections_in_resources(codebase, detections):
-
+    """
+    Given a `codebase` and a list of `UniqueDetection` objects `detections`,
+    populate all the resource level `for_license_detections` attributes for
+    these unique detections.
+    """
     for detection in detections:
         if TRACE:
             logger_debug(
@@ -251,7 +259,10 @@ def populate_for_license_detections_in_resources(codebase, detections):
 
 
 def collect_license_detections(codebase):
-
+    """
+    Given a `codebase` collect all LicenseDetection mappings and LicenseMatch mappings
+    and then return rehydrated LicenseDetectionFromResult objects created out of them.
+    """
     has_packages = False
     has_licenses = False
 

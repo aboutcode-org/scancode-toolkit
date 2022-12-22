@@ -58,7 +58,14 @@ base_context = {
 
 
 def generate_indexes(output_path, environment, licenses):
-    
+    """
+    Generates the license index and the static website at
+    `output_path`.
+
+    `environment` is a jinja Environment object used to generate
+    the webpage and `licenses` is a mapping with scancode license
+    data.
+    """
     static_dest_dir = join(output_path, 'static')
     if not os.path.exists(static_dest_dir):
         os.makedirs(static_dest_dir)
@@ -102,6 +109,15 @@ def generate_indexes(output_path, environment, licenses):
 
 
 def generate_details(output_path, environment, licenses):
+    """
+    Dumps data at `output_path` in JSON, YAML and HTML
+    formats and also dumps the .LICENSE file with the
+    license text and the data as YAML frontmatter.
+
+    `environment` is a jinja Environment object used to generate
+    the webpage and `licenses` is a mapping with scancode license
+    data.
+    """
     license_details_template = environment.get_template("license_details.html")
     for license in licenses.values():
         license_data = license.to_dict(include_text=True)
@@ -125,6 +141,12 @@ def generate_details(output_path, environment, licenses):
 
 
 def generate_help(output_path, environment):
+    """
+    Generate a help.html with help text at `output_path`.
+
+    `environment` is a jinja Environment object used to generate
+    the webpage.
+    """
     template = environment.get_template("help.html")
     html = template.render(**base_context)
     write_file(output_path, "help.html", html)
@@ -135,6 +157,10 @@ def generate(
     template_dir=TEMPLATES_DIR,
     licenses_data_dir=licenses_data_dir
 ):
+    """
+    Generate a licenseDB static website and dump license data at `build_location`
+    given a license directory `licenses_data_dir` using templates from `template_dir`.
+    """
 
     if not os.path.exists(build_location):
         os.makedirs(build_location)
@@ -157,8 +183,8 @@ def generate(
 
 def dump_license_data(ctx, param, value):
     """
-    Dump license data from scancode licenses to the directory passed in from 
-    command line.
+    Dump license data from scancode licenses to the directory `value`
+    passed in from command line.
 
     Dumps data in JSON, YAML and HTML formats and also dumps the .LICENSE file with
     the license text and the data as YAML frontmatter.

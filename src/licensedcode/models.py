@@ -1583,6 +1583,10 @@ class BasicRule:
 
     @property
     def rule_url(self):
+        """
+        Return a string with the permanent URL to this rule on
+        scancode-toolkit github repository.
+        """
         if 'spdx-license-identifier' in self.identifier:
             return None
         elif self.identifier == 'package-manifest-unknown':
@@ -1598,6 +1602,11 @@ class BasicRule:
         rules_data_dir=rules_data_dir,
         licenses_data_dir=licenses_data_dir,
     ):
+        """
+        Return the path to the rule file for this rule object,
+        given the `rules_data_dir` directory or `licenses_data_dir`
+        if a license rule.
+        """
         rule_file_base_name = file_base_name(self.identifier)
         rule_file_name = f'{rule_file_base_name}.RULE'
 
@@ -1789,6 +1798,10 @@ class BasicRule:
                 else self.min_high_matched_length)
 
     def get_reference_data(self):
+        """
+        Get license reference data for this Rule object.
+        Used to rehydrate license match mappings.
+        """
 
         data = {}
 
@@ -2231,6 +2244,10 @@ class Rule(BasicRule):
 
 
 def get_rule_object_from_match(license_match_mapping):
+    """
+    Return a rehydrated Rule object from a `license_match_mapping`
+    LicenseMatch mapping.
+    """
     rule_identifier = license_match_mapping["rule_identifier"]
     if 'spdx-license-identifier' in rule_identifier:
         return SpdxRule(
