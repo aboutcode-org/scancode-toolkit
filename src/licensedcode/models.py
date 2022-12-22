@@ -1587,9 +1587,11 @@ class BasicRule:
         Return a string with the permanent URL to this rule on
         scancode-toolkit github repository.
         """
-        if 'spdx-license-identifier' in self.identifier:
-            return None
-        elif self.identifier == 'package-manifest-unknown':
+        if any([
+            'spdx-license-identifier' in self.identifier,
+            'package-manifest' in self.identifier,
+            'license-detection-unknown' in self.identifier
+        ]):
             return None
         elif self.is_from_license:
             return SCANCODE_LICENSE_RULE_URL.format(self.identifier)
@@ -1883,9 +1885,6 @@ class BasicRule:
         return data
 
 
-
-
-
 def has_only_lower_license_keys(license_expression, licensing=Licensing()):
     """
     Return True if all license keys of ``license_expression`` are lowercase.
@@ -1926,6 +1925,9 @@ class Rule(BasicRule):
     """
     A detection rule object with support for data and text files.
     """
+    @property
+    def unique_id(self):
+        return self.compute_unique_id()
 
     def __attrs_post_init__(self, *args, **kwargs):
         self.setup()
@@ -2005,6 +2007,18 @@ class Rule(BasicRule):
         )
         rule.setup()
         return rule
+
+    def compute_unique_id(self):
+        """
+        Return a a unique id string based on this rule content. (Today this is
+        an MD5 checksum of the text, but that's an implementation detail)
+        """
+        if not self.text:
+            text = "None"
+        else:
+            text = self.text
+        return hashlib.md5(text.encode('utf-8')).hexdigest()
+
 
     def load_data(self, rule_file):
         """
@@ -2248,18 +2262,27 @@ def get_rule_object_from_match(license_match_mapping):
     Return a rehydrated Rule object from a `license_match_mapping`
     LicenseMatch mapping.
     """
+    license_expression=license_match_mapping["license_expression"]
+    text=license_match_mapping.get("matched_text", None)
+    length=license_match_mapping["matched_length"]
     rule_identifier = license_match_mapping["rule_identifier"]
     if 'spdx-license-identifier' in rule_identifier:
         return SpdxRule(
-            license_expression=license_match_mapping["license_expression"],
-            text=license_match_mapping.get("matched_text", None),
-            length=license_match_mapping["matched_length"],
+            license_expression=license_expression,
+            text=text,
+            length=length,
         )
-    elif rule_identifier == 'package-manifest-unknown':
+    elif 'license-detection-unknown' in rule_identifier:
+        return UnknownRule(
+            license_expression=license_expression,
+            text=text,
+            length=length,
+        )
+    elif 'package-manifest' in rule_identifier:
         return UnDetectedRule(
-            license_expression=license_match_mapping["license_expression"],
-            text=license_match_mapping.get("matched_text", None),
-            length=license_match_mapping["matched_length"],
+            license_expression=license_expression,
+            text=text,
+            length=length,
         )
     else:
         return get_index().rules_by_id[rule_identifier]
@@ -2419,7 +2442,7 @@ class SpdxRule(Rule):
     """
 
     def __attrs_post_init__(self, *args, **kwargs):
-        self.identifier = f'spdx-license-identifier: {self.license_expression}'
+        self.identifier = f'spdx-license-identifier-{self.license_expression}-{self.unique_id}'
         self.setup()
 
         if not self.license_expression:
@@ -2455,7 +2478,7 @@ class UnknownRule(Rule):
 
     def __attrs_post_init__(self, *args, **kwargs):
         # We craft a UNIQUE identifier for the matched content
-        self.identifier = f'unknown-license-detection:{self.compute_unique_id()}'
+        self.identifier = f'license-detection-unknown-{self.unique_id}'
 
         self.license_expression = UNKNOWN_LICENSE_KEY
         # note that this could be shared across rules as an optimization
@@ -2474,13 +2497,6 @@ class UnknownRule(Rule):
     def dump(self):
         raise NotImplementedError
 
-    def compute_unique_id(self):
-        """
-        Return a a unique id string based on this rule content. (Today this is
-        an MD5 checksum of the text, but that's an implementation detail)
-        """
-        return hashlib.md5(self.text.encode('utf-8')).hexdigest()
-
 
 @attr.s(slots=True, repr=False)
 class UnDetectedRule(Rule):
@@ -2495,7 +2511,7 @@ class UnDetectedRule(Rule):
     """
 
     def __attrs_post_init__(self, *args, **kwargs):
-        self.identifier = 'package-manifest-' + self.license_expression
+        self.identifier = f'package-manifest-{self.license_expression}-{self.unique_id}'
         expression = self.licensing.parse(self.license_expression)
         self.license_expression = expression.render()
         self.license_expression_object = expression
