@@ -53,7 +53,7 @@
               "match_coverage": 100.0,
               "matcher": "1-spdx-id",
               "license_expression": "artistic-2.0 OR mit",
-              "rule_identifier": "spdx-license-identifier: artistic-2.0 OR mit",
+              "rule_identifier": "spdx-license-identifier-artistic-2.0 OR mit-ae7a45be8a9def2cb13f52fd6f5dce69",
               "rule_url": null,
               "matched_text": "Artistic-2.0 OR MIT"
             }
@@ -83,7 +83,7 @@
   "dependencies": [],
   "license_detections": [
     {
-      "identifier": "apache_2_0_and__mit_or_bsd_simplified-6bc05a2e-db2d-cf02-757a-3805bbf81f2e",
+      "identifier": "apache_2_0_and__mit_or_bsd_simplified-3f15b80a-b323-ff84-3c01-1559a24c2af1",
       "license_expression": "apache-2.0 AND (mit OR bsd-simplified)",
       "count": 1,
       "detection_log": [
@@ -109,7 +109,7 @@
           "match_coverage": 100.0,
           "matcher": "1-spdx-id",
           "license_expression": "mit OR bsd-simplified",
-          "rule_identifier": "spdx-license-identifier: mit OR bsd-simplified",
+          "rule_identifier": "spdx-license-identifier-mit OR bsd-simplified-a2e025db7795bed12bedb2a9726bf283",
           "rule_url": null
         }
       ]
@@ -136,7 +136,7 @@
       ]
     },
     {
-      "identifier": "artistic_2_0_or_mit-2bc704cf-ef68-50b0-a7f0-b3a137ac7246",
+      "identifier": "artistic_2_0_or_mit-c0eb2112-a2cd-5aaa-d543-185b0984d576",
       "license_expression": "artistic-2.0 OR mit",
       "count": 1,
       "detection_log": [
@@ -151,7 +151,7 @@
           "match_coverage": 100.0,
           "matcher": "1-spdx-id",
           "license_expression": "artistic-2.0 OR mit",
-          "rule_identifier": "spdx-license-identifier: artistic-2.0 OR mit",
+          "rule_identifier": "spdx-license-identifier-artistic-2.0 OR mit-ae7a45be8a9def2cb13f52fd6f5dce69",
           "rule_url": null
         }
       ]
@@ -260,7 +260,7 @@
   ],
   "license_rule_references": [
     {
-      "rule_identifier": "spdx-license-identifier: artistic-2.0 OR mit",
+      "rule_identifier": "spdx-license-identifier-artistic-2.0 OR mit-ae7a45be8a9def2cb13f52fd6f5dce69",
       "license_expression": "artistic-2.0 OR mit",
       "rule_url": null,
       "rule_relevance": 100,
@@ -290,7 +290,7 @@
       "rule_text": "Licensed to the Apache Software Foundation (ASF) under one or more contributor license agreements.  See the NOTICE file distributed with this work for additional information regarding copyright ownership.  The ASF licenses this file to you under the Apache License, Version 2.0 (the \"License\"); you may not use this file except in compliance with the License.  You may obtain a copy of the License at\n\n http://www.apache.org/licenses/LICENSE-2.0\n\nUnless required by applicable law or agreed to in writing, software distributed under the License is distributed on an \"AS IS\" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.  See the License for the specific language governing permissions and limitations under the License."
     },
     {
-      "rule_identifier": "spdx-license-identifier: mit OR bsd-simplified",
+      "rule_identifier": "spdx-license-identifier-mit OR bsd-simplified-a2e025db7795bed12bedb2a9726bf283",
       "license_expression": "mit OR bsd-simplified",
       "rule_url": null,
       "rule_relevance": 100,
@@ -368,7 +368,7 @@
               "match_coverage": 100.0,
               "matcher": "1-spdx-id",
               "license_expression": "mit OR bsd-simplified",
-              "rule_identifier": "spdx-license-identifier: mit OR bsd-simplified",
+              "rule_identifier": "spdx-license-identifier-mit OR bsd-simplified-a2e025db7795bed12bedb2a9726bf283",
               "rule_url": null,
               "matched_text": "SPDX-License-Identifier: MIT or BSD-2-Clause"
             }
@@ -378,7 +378,7 @@
       "license_clues": [],
       "percentage_of_license_text": 100.0,
       "for_license_detections": [
-        "apache_2_0_and__mit_or_bsd_simplified-6bc05a2e-db2d-cf02-757a-3805bbf81f2e"
+        "apache_2_0_and__mit_or_bsd_simplified-3f15b80a-b323-ff84-3c01-1559a24c2af1"
       ],
       "scan_errors": []
     },
@@ -439,7 +439,7 @@
                   "match_coverage": 100.0,
                   "matcher": "1-spdx-id",
                   "license_expression": "artistic-2.0 OR mit",
-                  "rule_identifier": "spdx-license-identifier: artistic-2.0 OR mit",
+                  "rule_identifier": "spdx-license-identifier-artistic-2.0 OR mit-ae7a45be8a9def2cb13f52fd6f5dce69",
                   "rule_url": null,
                   "matched_text": "Artistic-2.0 OR MIT"
                 }
@@ -493,7 +493,7 @@
       "percentage_of_license_text": 5.0,
       "for_license_detections": [
         "artistic_2_0-c69ba991-eda9-d458-568a-670d821906e2",
-        "artistic_2_0_or_mit-2bc704cf-ef68-50b0-a7f0-b3a137ac7246"
+        "artistic_2_0_or_mit-c0eb2112-a2cd-5aaa-d543-185b0984d576"
       ],
       "scan_errors": []
     }

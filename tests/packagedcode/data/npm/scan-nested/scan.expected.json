@@ -1,4 +1,260 @@
 {
+  "packages": [
+    {
+      "type": "npm",
+      "namespace": null,
+      "name": "lodash.clonedeep",
+      "version": "4.3.2",
+      "qualifiers": {},
+      "subpath": null,
+      "primary_language": "JavaScript",
+      "description": "The lodash method `_.cloneDeep` exported as a module.",
+      "release_date": null,
+      "parties": [
+        {
+          "type": "person",
+          "role": "author",
+          "name": "John-David Dalton",
+          "email": "john.david.dalton@gmail.com",
+          "url": "http://allyoucanleet.com/"
+        },
+        {
+          "type": "person",
+          "role": "contributor",
+          "name": "John-David Dalton",
+          "email": "john.david.dalton@gmail.com",
+          "url": "http://allyoucanleet.com/"
+        },
+        {
+          "type": "person",
+          "role": "contributor",
+          "name": "Blaine Bublitz",
+          "email": "blaine.bublitz@gmail.com",
+          "url": "https://github.com/phated"
+        },
+        {
+          "type": "person",
+          "role": "contributor",
+          "name": "Mathias Bynens",
+          "email": "mathias@qiwi.be",
+          "url": "https://mathiasbynens.be/"
+        }
+      ],
+      "keywords": [
+        "lodash-modularized",
+        "clonedeep"
+      ],
+      "homepage_url": "https://lodash.com/",
+      "download_url": "https://registry.npmjs.org/lodash.clonedeep/-/lodash.clonedeep-4.3.2.tgz",
+      "size": null,
+      "sha1": null,
+      "md5": null,
+      "sha256": null,
+      "sha512": null,
+      "bug_tracking_url": null,
+      "code_view_url": null,
+      "vcs_url": "https://github.com/lodash/lodash",
+      "copyright": null,
+      "declared_license_expression": "mit",
+      "declared_license_expression_spdx": "MIT",
+      "license_detections": [
+        {
+          "license_expression": "mit",
+          "detection_log": [
+            "not-combined"
+          ],
+          "matches": [
+            {
+              "score": 100.0,
+              "start_line": 1,
+              "end_line": 1,
+              "matched_length": 1,
+              "match_coverage": 100.0,
+              "matcher": "1-spdx-id",
+              "license_expression": "mit",
+              "rule_identifier": "spdx-license-identifier-mit-7abc1a233092fc104c7af72a89c0829c",
+              "rule_url": null,
+              "referenced_filenames": [],
+              "is_license_text": false,
+              "is_license_notice": false,
+              "is_license_reference": false,
+              "is_license_tag": true,
+              "is_license_intro": false,
+              "rule_length": 1,
+              "rule_relevance": 100,
+              "matched_text": "MIT",
+              "licenses": [
+                {
+                  "key": "mit",
+                  "name": "MIT License",
+                  "short_name": "MIT License",
+                  "category": "Permissive",
+                  "is_exception": false,
+                  "is_unknown": false,
+                  "owner": "MIT",
+                  "homepage_url": "http://opensource.org/licenses/mit-license.php",
+                  "text_url": "http://opensource.org/licenses/mit-license.php",
+                  "reference_url": "https://scancode-licensedb.aboutcode.org/mit",
+                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE",
+                  "spdx_license_key": "MIT",
+                  "spdx_url": "https://spdx.org/licenses/MIT"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "other_license_expression": null,
+      "other_license_expression_spdx": null,
+      "other_license_detections": [],
+      "extracted_license_statement": "['MIT']",
+      "notice_text": null,
+      "source_packages": [],
+      "extra_data": {},
+      "repository_homepage_url": "https://www.npmjs.com/package/lodash.clonedeep",
+      "repository_download_url": "https://registry.npmjs.org/lodash.clonedeep/-/lodash.clonedeep-4.3.2.tgz",
+      "api_data_url": "https://registry.npmjs.org/lodash.clonedeep/4.3.2",
+      "package_uid": "pkg:npm/lodash.clonedeep@4.3.2?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_paths": [
+        "scan/package.json"
+      ],
+      "datasource_ids": [
+        "npm_package_json"
+      ],
+      "purl": "pkg:npm/lodash.clonedeep@4.3.2"
+    },
+    {
+      "type": "npm",
+      "namespace": null,
+      "name": "sequelize",
+      "version": "3.30.2",
+      "qualifiers": {},
+      "subpath": null,
+      "primary_language": "JavaScript",
+      "description": "Multi dialect ORM for Node.JS/io.js",
+      "release_date": null,
+      "parties": [
+        {
+          "type": "person",
+          "role": "author",
+          "name": "Sascha Depold",
+          "email": "sascha@depold.com",
+          "url": null
+        },
+        {
+          "type": "person",
+          "role": "contributor",
+          "name": "Sascha Depold",
+          "email": "sascha@depold.com",
+          "url": null
+        },
+        {
+          "type": "person",
+          "role": "contributor",
+          "name": "Jan Aagaard Meier",
+          "email": "janzeh@gmail.com\njmei@itu.dk",
+          "url": null
+        },
+        {
+          "type": "person",
+          "role": "contributor",
+          "name": "Daniel Durante",
+          "email": "me@danieldurante.com",
+          "url": null
+        },
+        {
+          "type": "person",
+          "role": "contributor",
+          "name": "Mick Hansen",
+          "email": "mick.kasper.hansen@gmail.com",
+          "url": null
+        }
+      ],
+      "keywords": [
+        "mysql",
+        "nodejs",
+        "object relational mapper"
+      ],
+      "homepage_url": null,
+      "download_url": "https://registry.npmjs.org/sequelize/-/sequelize-3.30.2.tgz",
+      "size": null,
+      "sha1": null,
+      "md5": null,
+      "sha256": null,
+      "sha512": null,
+      "bug_tracking_url": "https://github.com/sequelize/sequelize/issues",
+      "code_view_url": null,
+      "vcs_url": "git+https://github.com/sequelize/sequelize.git",
+      "copyright": null,
+      "declared_license_expression": "mit",
+      "declared_license_expression_spdx": "MIT",
+      "license_detections": [
+        {
+          "license_expression": "mit",
+          "detection_log": [
+            "not-combined"
+          ],
+          "matches": [
+            {
+              "score": 100.0,
+              "start_line": 1,
+              "end_line": 1,
+              "matched_length": 1,
+              "match_coverage": 100.0,
+              "matcher": "1-spdx-id",
+              "license_expression": "mit",
+              "rule_identifier": "spdx-license-identifier-mit-7abc1a233092fc104c7af72a89c0829c",
+              "rule_url": null,
+              "referenced_filenames": [],
+              "is_license_text": false,
+              "is_license_notice": false,
+              "is_license_reference": false,
+              "is_license_tag": true,
+              "is_license_intro": false,
+              "rule_length": 1,
+              "rule_relevance": 100,
+              "matched_text": "MIT",
+              "licenses": [
+                {
+                  "key": "mit",
+                  "name": "MIT License",
+                  "short_name": "MIT License",
+                  "category": "Permissive",
+                  "is_exception": false,
+                  "is_unknown": false,
+                  "owner": "MIT",
+                  "homepage_url": "http://opensource.org/licenses/mit-license.php",
+                  "text_url": "http://opensource.org/licenses/mit-license.php",
+                  "reference_url": "https://scancode-licensedb.aboutcode.org/mit",
+                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE",
+                  "spdx_license_key": "MIT",
+                  "spdx_url": "https://spdx.org/licenses/MIT"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "other_license_expression": null,
+      "other_license_expression_spdx": null,
+      "other_license_detections": [],
+      "extracted_license_statement": "['MIT']",
+      "notice_text": null,
+      "source_packages": [],
+      "extra_data": {},
+      "repository_homepage_url": "https://www.npmjs.com/package/sequelize",
+      "repository_download_url": "https://registry.npmjs.org/sequelize/-/sequelize-3.30.2.tgz",
+      "api_data_url": "https://registry.npmjs.org/sequelize/3.30.2",
+      "package_uid": "pkg:npm/sequelize@3.30.2?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_paths": [
+        "scan/node_modules/sequelize/package.json"
+      ],
+      "datasource_ids": [
+        "npm_package_json"
+      ],
+      "purl": "pkg:npm/sequelize@3.30.2"
+    }
+  ],
   "dependencies": [
     {
       "purl": "pkg:npm/lodash._baseclone",
@@ -642,262 +898,6 @@
       "datasource_id": "yarn_lock_v1"
     }
   ],
-  "packages": [
-    {
-      "type": "npm",
-      "namespace": null,
-      "name": "lodash.clonedeep",
-      "version": "4.3.2",
-      "qualifiers": {},
-      "subpath": null,
-      "primary_language": "JavaScript",
-      "description": "The lodash method `_.cloneDeep` exported as a module.",
-      "release_date": null,
-      "parties": [
-        {
-          "type": "person",
-          "role": "author",
-          "name": "John-David Dalton",
-          "email": "john.david.dalton@gmail.com",
-          "url": "http://allyoucanleet.com/"
-        },
-        {
-          "type": "person",
-          "role": "contributor",
-          "name": "John-David Dalton",
-          "email": "john.david.dalton@gmail.com",
-          "url": "http://allyoucanleet.com/"
-        },
-        {
-          "type": "person",
-          "role": "contributor",
-          "name": "Blaine Bublitz",
-          "email": "blaine.bublitz@gmail.com",
-          "url": "https://github.com/phated"
-        },
-        {
-          "type": "person",
-          "role": "contributor",
-          "name": "Mathias Bynens",
-          "email": "mathias@qiwi.be",
-          "url": "https://mathiasbynens.be/"
-        }
-      ],
-      "keywords": [
-        "lodash-modularized",
-        "clonedeep"
-      ],
-      "homepage_url": "https://lodash.com/",
-      "download_url": "https://registry.npmjs.org/lodash.clonedeep/-/lodash.clonedeep-4.3.2.tgz",
-      "size": null,
-      "sha1": null,
-      "md5": null,
-      "sha256": null,
-      "sha512": null,
-      "bug_tracking_url": null,
-      "code_view_url": null,
-      "vcs_url": "https://github.com/lodash/lodash",
-      "copyright": null,
-      "declared_license_expression": "mit",
-      "declared_license_expression_spdx": "MIT",
-      "license_detections": [
-        {
-          "license_expression": "mit",
-          "detection_log": [
-            "not-combined"
-          ],
-          "matches": [
-            {
-              "score": 100.0,
-              "start_line": 1,
-              "end_line": 1,
-              "matched_length": 1,
-              "match_coverage": 100.0,
-              "matcher": "1-spdx-id",
-              "license_expression": "mit",
-              "rule_identifier": "spdx-license-identifier: mit",
-              "rule_url": null,
-              "referenced_filenames": [],
-              "is_license_text": false,
-              "is_license_notice": false,
-              "is_license_reference": false,
-              "is_license_tag": true,
-              "is_license_intro": false,
-              "rule_length": 1,
-              "rule_relevance": 100,
-              "matched_text": "MIT",
-              "licenses": [
-                {
-                  "key": "mit",
-                  "name": "MIT License",
-                  "short_name": "MIT License",
-                  "category": "Permissive",
-                  "is_exception": false,
-                  "is_unknown": false,
-                  "owner": "MIT",
-                  "homepage_url": "http://opensource.org/licenses/mit-license.php",
-                  "text_url": "http://opensource.org/licenses/mit-license.php",
-                  "reference_url": "https://scancode-licensedb.aboutcode.org/mit",
-                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE",
-                  "spdx_license_key": "MIT",
-                  "spdx_url": "https://spdx.org/licenses/MIT"
-                }
-              ]
-            }
-          ]
-        }
-      ],
-      "other_license_expression": null,
-      "other_license_expression_spdx": null,
-      "other_license_detections": [],
-      "extracted_license_statement": "['MIT']",
-      "notice_text": null,
-      "source_packages": [],
-      "extra_data": {},
-      "repository_homepage_url": "https://www.npmjs.com/package/lodash.clonedeep",
-      "repository_download_url": "https://registry.npmjs.org/lodash.clonedeep/-/lodash.clonedeep-4.3.2.tgz",
-      "api_data_url": "https://registry.npmjs.org/lodash.clonedeep/4.3.2",
-      "package_uid": "pkg:npm/lodash.clonedeep@4.3.2?uuid=fixed-uid-done-for-testing-5642512d1758",
-      "datafile_paths": [
-        "scan/package.json"
-      ],
-      "datasource_ids": [
-        "npm_package_json"
-      ],
-      "purl": "pkg:npm/lodash.clonedeep@4.3.2"
-    },
-    {
-      "type": "npm",
-      "namespace": null,
-      "name": "sequelize",
-      "version": "3.30.2",
-      "qualifiers": {},
-      "subpath": null,
-      "primary_language": "JavaScript",
-      "description": "Multi dialect ORM for Node.JS/io.js",
-      "release_date": null,
-      "parties": [
-        {
-          "type": "person",
-          "role": "author",
-          "name": "Sascha Depold",
-          "email": "sascha@depold.com",
-          "url": null
-        },
-        {
-          "type": "person",
-          "role": "contributor",
-          "name": "Sascha Depold",
-          "email": "sascha@depold.com",
-          "url": null
-        },
-        {
-          "type": "person",
-          "role": "contributor",
-          "name": "Jan Aagaard Meier",
-          "email": "janzeh@gmail.com\njmei@itu.dk",
-          "url": null
-        },
-        {
-          "type": "person",
-          "role": "contributor",
-          "name": "Daniel Durante",
-          "email": "me@danieldurante.com",
-          "url": null
-        },
-        {
-          "type": "person",
-          "role": "contributor",
-          "name": "Mick Hansen",
-          "email": "mick.kasper.hansen@gmail.com",
-          "url": null
-        }
-      ],
-      "keywords": [
-        "mysql",
-        "nodejs",
-        "object relational mapper"
-      ],
-      "homepage_url": null,
-      "download_url": "https://registry.npmjs.org/sequelize/-/sequelize-3.30.2.tgz",
-      "size": null,
-      "sha1": null,
-      "md5": null,
-      "sha256": null,
-      "sha512": null,
-      "bug_tracking_url": "https://github.com/sequelize/sequelize/issues",
-      "code_view_url": null,
-      "vcs_url": "git+https://github.com/sequelize/sequelize.git",
-      "copyright": null,
-      "declared_license_expression": "mit",
-      "declared_license_expression_spdx": "MIT",
-      "license_detections": [
-        {
-          "license_expression": "mit",
-          "detection_log": [
-            "not-combined"
-          ],
-          "matches": [
-            {
-              "score": 100.0,
-              "start_line": 1,
-              "end_line": 1,
-              "matched_length": 1,
-              "match_coverage": 100.0,
-              "matcher": "1-spdx-id",
-              "license_expression": "mit",
-              "rule_identifier": "spdx-license-identifier: mit",
-              "rule_url": null,
-              "referenced_filenames": [],
-              "is_license_text": false,
-              "is_license_notice": false,
-              "is_license_reference": false,
-              "is_license_tag": true,
-              "is_license_intro": false,
-              "rule_length": 1,
-              "rule_relevance": 100,
-              "matched_text": "MIT",
-              "licenses": [
-                {
-                  "key": "mit",
-                  "name": "MIT License",
-                  "short_name": "MIT License",
-                  "category": "Permissive",
-                  "is_exception": false,
-                  "is_unknown": false,
-                  "owner": "MIT",
-                  "homepage_url": "http://opensource.org/licenses/mit-license.php",
-                  "text_url": "http://opensource.org/licenses/mit-license.php",
-                  "reference_url": "https://scancode-licensedb.aboutcode.org/mit",
-                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE",
-                  "spdx_license_key": "MIT",
-                  "spdx_url": "https://spdx.org/licenses/MIT"
-                }
-              ]
-            }
-          ]
-        }
-      ],
-      "other_license_expression": null,
-      "other_license_expression_spdx": null,
-      "other_license_detections": [],
-      "extracted_license_statement": "['MIT']",
-      "notice_text": null,
-      "source_packages": [],
-      "extra_data": {},
-      "repository_homepage_url": "https://www.npmjs.com/package/sequelize",
-      "repository_download_url": "https://registry.npmjs.org/sequelize/-/sequelize-3.30.2.tgz",
-      "api_data_url": "https://registry.npmjs.org/sequelize/3.30.2",
-      "package_uid": "pkg:npm/sequelize@3.30.2?uuid=fixed-uid-done-for-testing-5642512d1758",
-      "datafile_paths": [
-        "scan/node_modules/sequelize/package.json"
-      ],
-      "datasource_ids": [
-        "npm_package_json"
-      ],
-      "purl": "pkg:npm/sequelize@3.30.2"
-    }
-  ],
   "files": [
     {
       "path": "scan",
@@ -1182,7 +1182,7 @@
                   "match_coverage": 100.0,
                   "matcher": "1-spdx-id",
                   "license_expression": "mit",
-                  "rule_identifier": "spdx-license-identifier: mit",
+                  "rule_identifier": "spdx-license-identifier-mit-7abc1a233092fc104c7af72a89c0829c",
                   "rule_url": null,
                   "referenced_filenames": [],
                   "is_license_text": false,
@@ -1865,7 +1865,7 @@
                   "match_coverage": 100.0,
                   "matcher": "1-spdx-id",
                   "license_expression": "mit",
-                  "rule_identifier": "spdx-license-identifier: mit",
+                  "rule_identifier": "spdx-license-identifier-mit-7abc1a233092fc104c7af72a89c0829c",
                   "rule_url": null,
                   "referenced_filenames": [],
                   "is_license_text": false,

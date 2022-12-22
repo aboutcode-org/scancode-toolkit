@@ -1,6 +1,6 @@
 {
-  "dependencies": [],
   "packages": [],
+  "dependencies": [],
   "files": [
     {
       "path": "chcp.com",
@@ -54,8 +54,8 @@
                   "match_coverage": 100.0,
                   "matcher": "5-undetected",
                   "license_expression": "unknown",
-                  "rule_identifier": "package-manifest-unknown",
-                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/package-manifest-unknown",
+                  "rule_identifier": "package-manifest-unknown-57d84840216198581d771a72b9ffd482",
+                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/package-manifest-unknown-57d84840216198581d771a72b9ffd482",
                   "referenced_filenames": [],
                   "is_license_text": false,
                   "is_license_notice": false,

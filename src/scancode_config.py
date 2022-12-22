@@ -87,7 +87,7 @@ __release_date__ = datetime.datetime(2022, 10, 5)
 __output_format_version__ = '3.0.0'
 
 #
-spdx_license_list_version = '3.18'
+spdx_license_list_version = '3.19'
 
 try:
     from pkg_resources import get_distribution, DistributionNotFound

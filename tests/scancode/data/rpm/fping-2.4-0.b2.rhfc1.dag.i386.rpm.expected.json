@@ -1,5 +1,4 @@
 {
-  "dependencies": [],
   "packages": [
     {
       "type": "rpm",
@@ -49,8 +48,8 @@
               "match_coverage": 100.0,
               "matcher": "5-undetected",
               "license_expression": "unknown",
-              "rule_identifier": "package-manifest-unknown",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/package-manifest-unknown",
+              "rule_identifier": "package-manifest-unknown-a8c64024e3bb0fd126bce3f89ac74d55",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/package-manifest-unknown-a8c64024e3bb0fd126bce3f89ac74d55",
               "referenced_filenames": [],
               "is_license_text": false,
               "is_license_notice": false,
@@ -103,6 +102,7 @@
       "purl": "pkg:rpm/fping@2.4-0.b2.rhfc1.dag"
     }
   ],
+  "dependencies": [],
   "files": [
     {
       "path": "fping-2.4-0.b2.rhfc1.dag.i386.rpm",
@@ -156,8 +156,8 @@
                   "match_coverage": 100.0,
                   "matcher": "5-undetected",
                   "license_expression": "unknown",
-                  "rule_identifier": "package-manifest-unknown",
-                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/package-manifest-unknown",
+                  "rule_identifier": "package-manifest-unknown-a8c64024e3bb0fd126bce3f89ac74d55",
+                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/package-manifest-unknown-a8c64024e3bb0fd126bce3f89ac74d55",
                   "referenced_filenames": [],
                   "is_license_text": false,
                   "is_license_notice": false,

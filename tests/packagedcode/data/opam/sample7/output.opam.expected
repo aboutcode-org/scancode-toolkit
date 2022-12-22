@@ -61,7 +61,7 @@
             "match_coverage": 100.0,
             "matcher": "1-spdx-id",
             "license_expression": "lgpl-3.0 WITH ocaml-lgpl-linking-exception",
-            "rule_identifier": "spdx-license-identifier: lgpl-3.0 WITH ocaml-lgpl-linking-exception",
+            "rule_identifier": "spdx-license-identifier-lgpl-3.0 WITH ocaml-lgpl-linking-exception-930b9e76a9a450881ccd6d17f275dfae",
             "rule_url": null,
             "referenced_filenames": [],
             "is_license_text": false,

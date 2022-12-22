@@ -38,7 +38,7 @@
           "match_coverage": 100.0,
           "matcher": "1-spdx-id",
           "license_expression": "gpl-1.0-plus AND lgpl-2.0-plus",
-          "rule_identifier": "spdx-license-identifier: gpl-1.0-plus AND lgpl-2.0-plus",
+          "rule_identifier": "spdx-license-identifier-gpl-1.0-plus AND lgpl-2.0-plus-f6606539db7066f4b7c4d83b3a77ad9e",
           "rule_url": null,
           "referenced_filenames": [],
           "is_license_text": false,

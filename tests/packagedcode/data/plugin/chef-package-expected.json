@@ -1,34 +1,4 @@
 {
-  "dependencies": [
-    {
-      "purl": "pkg:chef/nodejs",
-      "extracted_requirement": null,
-      "scope": "dependencies",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": false,
-      "resolved_package": {},
-      "extra_data": {},
-      "dependency_uid": "pkg:chef/nodejs?uuid=fixed-uid-done-for-testing-5642512d1758",
-      "for_package_uid": "pkg:chef/301@0.1.0?uuid=fixed-uid-done-for-testing-5642512d1758",
-      "datafile_path": "metadata.rb",
-      "datasource_id": "chef_cookbook_metadata_rb"
-    },
-    {
-      "purl": "pkg:chef/nodejs",
-      "extracted_requirement": ">= 0.0.0",
-      "scope": "dependencies",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": false,
-      "resolved_package": {},
-      "extra_data": {},
-      "dependency_uid": "pkg:chef/nodejs?uuid=fixed-uid-done-for-testing-5642512d1758",
-      "for_package_uid": "pkg:chef/301@0.1.0?uuid=fixed-uid-done-for-testing-5642512d1758",
-      "datafile_path": "metadata.json",
-      "datasource_id": "chef_cookbook_metadata_json"
-    }
-  ],
   "packages": [
     {
       "type": "chef",
@@ -78,7 +48,7 @@
               "match_coverage": 100.0,
               "matcher": "1-spdx-id",
               "license_expression": "mit",
-              "rule_identifier": "spdx-license-identifier: mit",
+              "rule_identifier": "spdx-license-identifier-mit-7abc1a233092fc104c7af72a89c0829c",
               "rule_url": null,
               "referenced_filenames": [],
               "is_license_text": false,
@@ -130,6 +100,36 @@
         "chef_cookbook_metadata_json"
       ],
       "purl": "pkg:chef/301@0.1.0"
+    }
+  ],
+  "dependencies": [
+    {
+      "purl": "pkg:chef/nodejs",
+      "extracted_requirement": null,
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false,
+      "resolved_package": {},
+      "extra_data": {},
+      "dependency_uid": "pkg:chef/nodejs?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:chef/301@0.1.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "metadata.rb",
+      "datasource_id": "chef_cookbook_metadata_rb"
+    },
+    {
+      "purl": "pkg:chef/nodejs",
+      "extracted_requirement": ">= 0.0.0",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false,
+      "resolved_package": {},
+      "extra_data": {},
+      "dependency_uid": "pkg:chef/nodejs?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:chef/301@0.1.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "metadata.json",
+      "datasource_id": "chef_cookbook_metadata_json"
     }
   ],
   "files": [
@@ -185,7 +185,7 @@
                   "match_coverage": 100.0,
                   "matcher": "1-spdx-id",
                   "license_expression": "mit",
-                  "rule_identifier": "spdx-license-identifier: mit",
+                  "rule_identifier": "spdx-license-identifier-mit-7abc1a233092fc104c7af72a89c0829c",
                   "rule_url": null,
                   "referenced_filenames": [],
                   "is_license_text": false,
@@ -301,7 +301,7 @@
                   "match_coverage": 100.0,
                   "matcher": "1-spdx-id",
                   "license_expression": "mit",
-                  "rule_identifier": "spdx-license-identifier: mit",
+                  "rule_identifier": "spdx-license-identifier-mit-7abc1a233092fc104c7af72a89c0829c",
                   "rule_url": null,
                   "referenced_filenames": [],
                   "is_license_text": false,

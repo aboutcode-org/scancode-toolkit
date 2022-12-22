@@ -38,7 +38,7 @@
           "match_coverage": 100.0,
           "matcher": "1-spdx-id",
           "license_expression": "isc",
-          "rule_identifier": "spdx-license-identifier: isc",
+          "rule_identifier": "spdx-license-identifier-isc-351a1d2ad68bc401c305b0715268ecd7",
           "rule_url": null,
           "referenced_filenames": [],
           "is_license_text": false,

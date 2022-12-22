@@ -153,6 +153,11 @@ Options:
                              and including the starting directory. Use 0 for no
                              scan depth limit.
 
+  miscellaneous:
+    --get-license-data DIR  Include this directory with additional custom licenses
+                            and license rules in the license detection index.
+                            Creates the directory if it does not exist.
+
   documentation:
     -h, --help       Show this message and exit.
     -A, --about      Show information about ScanCode and licensing and exit.

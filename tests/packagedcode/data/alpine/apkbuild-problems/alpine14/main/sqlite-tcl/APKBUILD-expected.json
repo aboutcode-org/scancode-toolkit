@@ -38,7 +38,7 @@
           "match_coverage": 100.0,
           "matcher": "1-spdx-id",
           "license_expression": "public-domain",
-          "rule_identifier": "spdx-license-identifier: public-domain",
+          "rule_identifier": "spdx-license-identifier-public-domain-e512b8f967669026444feba1123cf577",
           "rule_url": null,
           "referenced_filenames": [],
           "is_license_text": false,

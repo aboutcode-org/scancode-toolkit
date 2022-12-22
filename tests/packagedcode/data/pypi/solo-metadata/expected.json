@@ -1,5 +1,4 @@
 {
-  "dependencies": [],
   "packages": [
     {
       "type": "pypi",
@@ -76,7 +75,7 @@
               "match_coverage": 100.0,
               "matcher": "1-spdx-id",
               "license_expression": "apache-2.0 AND cc-by-4.0 AND other-permissive AND other-copyleft",
-              "rule_identifier": "spdx-license-identifier: apache-2.0 AND cc-by-4.0 AND other-permissive AND other-copyleft",
+              "rule_identifier": "spdx-license-identifier-apache-2.0 AND cc-by-4.0 AND other-permissive AND other-copyleft-7e2bfeb45d615c04cec11a58c447c878",
               "rule_url": null,
               "referenced_filenames": [],
               "is_license_text": false,
@@ -173,6 +172,7 @@
       "purl": "pkg:pypi/scancode-toolkit@31.0.0b1"
     }
   ],
+  "dependencies": [],
   "files": [
     {
       "path": "PKG-INFO",
@@ -253,7 +253,7 @@
                   "match_coverage": 100.0,
                   "matcher": "1-spdx-id",
                   "license_expression": "apache-2.0 AND cc-by-4.0 AND other-permissive AND other-copyleft",
-                  "rule_identifier": "spdx-license-identifier: apache-2.0 AND cc-by-4.0 AND other-permissive AND other-copyleft",
+                  "rule_identifier": "spdx-license-identifier-apache-2.0 AND cc-by-4.0 AND other-permissive AND other-copyleft-7e2bfeb45d615c04cec11a58c447c878",
                   "rule_url": null,
                   "referenced_filenames": [],
                   "is_license_text": false,

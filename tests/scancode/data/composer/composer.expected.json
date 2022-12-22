@@ -1,4 +1,105 @@
 {
+  "packages": [
+    {
+      "type": "composer",
+      "namespace": "laravel",
+      "name": "laravel",
+      "version": null,
+      "qualifiers": {},
+      "subpath": null,
+      "primary_language": "PHP",
+      "description": null,
+      "release_date": null,
+      "parties": [
+        {
+          "type": "person",
+          "role": "vendor",
+          "name": "laravel",
+          "email": null,
+          "url": null
+        }
+      ],
+      "keywords": [],
+      "homepage_url": null,
+      "download_url": null,
+      "size": null,
+      "sha1": null,
+      "md5": null,
+      "sha256": null,
+      "sha512": null,
+      "bug_tracking_url": null,
+      "code_view_url": null,
+      "vcs_url": null,
+      "copyright": null,
+      "declared_license_expression": "mit",
+      "declared_license_expression_spdx": "MIT",
+      "license_detections": [
+        {
+          "license_expression": "mit",
+          "detection_log": [
+            "not-combined"
+          ],
+          "matches": [
+            {
+              "score": 100.0,
+              "start_line": 1,
+              "end_line": 1,
+              "matched_length": 1,
+              "match_coverage": 100.0,
+              "matcher": "1-spdx-id",
+              "license_expression": "mit",
+              "rule_identifier": "spdx-license-identifier-mit-7abc1a233092fc104c7af72a89c0829c",
+              "rule_url": null,
+              "referenced_filenames": [],
+              "is_license_text": false,
+              "is_license_notice": false,
+              "is_license_reference": false,
+              "is_license_tag": true,
+              "is_license_intro": false,
+              "rule_length": 1,
+              "rule_relevance": 100,
+              "matched_text": "MIT",
+              "licenses": [
+                {
+                  "key": "mit",
+                  "name": "MIT License",
+                  "short_name": "MIT License",
+                  "category": "Permissive",
+                  "is_exception": false,
+                  "is_unknown": false,
+                  "owner": "MIT",
+                  "homepage_url": "http://opensource.org/licenses/mit-license.php",
+                  "text_url": "http://opensource.org/licenses/mit-license.php",
+                  "reference_url": "https://scancode-licensedb.aboutcode.org/mit",
+                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE",
+                  "spdx_license_key": "MIT",
+                  "spdx_url": "https://spdx.org/licenses/MIT"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "other_license_expression": null,
+      "other_license_expression_spdx": null,
+      "other_license_detections": [],
+      "extracted_license_statement": "MIT",
+      "notice_text": null,
+      "source_packages": [],
+      "extra_data": {},
+      "repository_homepage_url": "https://packagist.org/packages/laravel/laravel",
+      "repository_download_url": null,
+      "api_data_url": "https://packagist.org/p/packages/laravel/laravel.json",
+      "package_uid": "pkg:composer/laravel/laravel?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_paths": [
+        "composer.json"
+      ],
+      "datasource_ids": [
+        "php_composer_json"
+      ],
+      "purl": "pkg:composer/laravel/laravel"
+    }
+  ],
   "dependencies": [
     {
       "purl": "pkg:composer/php",
@@ -113,107 +214,6 @@
       "datasource_id": "php_composer_json"
     }
   ],
-  "packages": [
-    {
-      "type": "composer",
-      "namespace": "laravel",
-      "name": "laravel",
-      "version": null,
-      "qualifiers": {},
-      "subpath": null,
-      "primary_language": "PHP",
-      "description": null,
-      "release_date": null,
-      "parties": [
-        {
-          "type": "person",
-          "role": "vendor",
-          "name": "laravel",
-          "email": null,
-          "url": null
-        }
-      ],
-      "keywords": [],
-      "homepage_url": null,
-      "download_url": null,
-      "size": null,
-      "sha1": null,
-      "md5": null,
-      "sha256": null,
-      "sha512": null,
-      "bug_tracking_url": null,
-      "code_view_url": null,
-      "vcs_url": null,
-      "copyright": null,
-      "declared_license_expression": "mit",
-      "declared_license_expression_spdx": "MIT",
-      "license_detections": [
-        {
-          "license_expression": "mit",
-          "detection_log": [
-            "not-combined"
-          ],
-          "matches": [
-            {
-              "score": 100.0,
-              "start_line": 1,
-              "end_line": 1,
-              "matched_length": 1,
-              "match_coverage": 100.0,
-              "matcher": "1-spdx-id",
-              "license_expression": "mit",
-              "rule_identifier": "spdx-license-identifier: mit",
-              "rule_url": null,
-              "referenced_filenames": [],
-              "is_license_text": false,
-              "is_license_notice": false,
-              "is_license_reference": false,
-              "is_license_tag": true,
-              "is_license_intro": false,
-              "rule_length": 1,
-              "rule_relevance": 100,
-              "matched_text": "MIT",
-              "licenses": [
-                {
-                  "key": "mit",
-                  "name": "MIT License",
-                  "short_name": "MIT License",
-                  "category": "Permissive",
-                  "is_exception": false,
-                  "is_unknown": false,
-                  "owner": "MIT",
-                  "homepage_url": "http://opensource.org/licenses/mit-license.php",
-                  "text_url": "http://opensource.org/licenses/mit-license.php",
-                  "reference_url": "https://scancode-licensedb.aboutcode.org/mit",
-                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE",
-                  "spdx_license_key": "MIT",
-                  "spdx_url": "https://spdx.org/licenses/MIT"
-                }
-              ]
-            }
-          ]
-        }
-      ],
-      "other_license_expression": null,
-      "other_license_expression_spdx": null,
-      "other_license_detections": [],
-      "extracted_license_statement": "MIT",
-      "notice_text": null,
-      "source_packages": [],
-      "extra_data": {},
-      "repository_homepage_url": "https://packagist.org/packages/laravel/laravel",
-      "repository_download_url": null,
-      "api_data_url": "https://packagist.org/p/packages/laravel/laravel.json",
-      "package_uid": "pkg:composer/laravel/laravel?uuid=fixed-uid-done-for-testing-5642512d1758",
-      "datafile_paths": [
-        "composer.json"
-      ],
-      "datasource_ids": [
-        "php_composer_json"
-      ],
-      "purl": "pkg:composer/laravel/laravel"
-    }
-  ],
   "files": [
     {
       "path": "composer.json",
@@ -267,7 +267,7 @@
                   "match_coverage": 100.0,
                   "matcher": "1-spdx-id",
                   "license_expression": "mit",
-                  "rule_identifier": "spdx-license-identifier: mit",
+                  "rule_identifier": "spdx-license-identifier-mit-7abc1a233092fc104c7af72a89c0829c",
                   "rule_url": null,
                   "referenced_filenames": [],
                   "is_license_text": false,

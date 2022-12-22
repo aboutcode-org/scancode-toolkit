@@ -1,4 +1,302 @@
 {
+  "packages": [
+    {
+      "type": "maven",
+      "namespace": "aopalliance",
+      "name": "aopalliance",
+      "version": "1.0",
+      "qualifiers": {},
+      "subpath": null,
+      "primary_language": "Java",
+      "description": "AOP alliance\nAOP Alliance",
+      "release_date": null,
+      "parties": [],
+      "keywords": [],
+      "homepage_url": "http://aopalliance.sourceforge.net",
+      "download_url": null,
+      "size": null,
+      "sha1": null,
+      "md5": null,
+      "sha256": null,
+      "sha512": null,
+      "bug_tracking_url": null,
+      "code_view_url": null,
+      "vcs_url": null,
+      "copyright": null,
+      "declared_license_expression": "public-domain",
+      "declared_license_expression_spdx": "LicenseRef-scancode-public-domain",
+      "license_detections": [
+        {
+          "license_expression": "public-domain",
+          "detection_log": [
+            "not-combined"
+          ],
+          "matches": [
+            {
+              "score": 70.0,
+              "start_line": 1,
+              "end_line": 1,
+              "matched_length": 2,
+              "match_coverage": 100.0,
+              "matcher": "1-hash",
+              "license_expression": "public-domain",
+              "rule_identifier": "public-domain_bare_words.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/public-domain_bare_words.RULE",
+              "referenced_filenames": [],
+              "is_license_text": false,
+              "is_license_notice": false,
+              "is_license_reference": true,
+              "is_license_tag": false,
+              "is_license_intro": false,
+              "rule_length": 2,
+              "rule_relevance": 70,
+              "matched_text": "Public Domain",
+              "licenses": [
+                {
+                  "key": "public-domain",
+                  "name": "Public Domain",
+                  "short_name": "Public Domain",
+                  "category": "Public Domain",
+                  "is_exception": false,
+                  "is_unknown": false,
+                  "owner": "Unspecified",
+                  "homepage_url": "http://www.linfo.org/publicdomain.html",
+                  "text_url": "",
+                  "reference_url": "https://scancode-licensedb.aboutcode.org/public-domain",
+                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/public-domain.LICENSE",
+                  "spdx_license_key": "LicenseRef-scancode-public-domain",
+                  "spdx_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/public-domain.LICENSE"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "other_license_expression": null,
+      "other_license_expression_spdx": null,
+      "other_license_detections": [],
+      "extracted_license_statement": "[{'name': 'Public Domain', 'url': None, 'comments': None, 'distribution': None}]",
+      "notice_text": null,
+      "source_packages": [
+        "pkg:maven/aopalliance/aopalliance@1.0?classifier=sources"
+      ],
+      "extra_data": {},
+      "repository_homepage_url": "https://repo1.maven.org/maven2/aopalliance/aopalliance/1.0/",
+      "repository_download_url": "https://repo1.maven.org/maven2/aopalliance/aopalliance/1.0/aopalliance-1.0.jar",
+      "api_data_url": "https://repo1.maven.org/maven2/aopalliance/aopalliance/1.0/aopalliance-1.0.pom",
+      "package_uid": "pkg:maven/aopalliance/aopalliance@1.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_paths": [
+        "scan/aopalliance/aopalliance/1.0/aopalliance-1.0.pom"
+      ],
+      "datasource_ids": [
+        "maven_pom"
+      ],
+      "purl": "pkg:maven/aopalliance/aopalliance@1.0"
+    },
+    {
+      "type": "freebsd",
+      "namespace": null,
+      "name": "dmidecode",
+      "version": "2.12",
+      "qualifiers": {
+        "arch": "freebsd:10:x86:64",
+        "origin": "sysutils/dmidecode"
+      },
+      "subpath": null,
+      "primary_language": null,
+      "description": "Dmidecode is a tool or dumping a computer's DMI (some say SMBIOS) table\ncontents in a human-readable format. The output contains a description of the\nsystem's hardware components, as well as other useful pieces of information\nsuch as serial numbers and BIOS revision.\n\nWWW: http://www.nongnu.org/dmidecode/",
+      "release_date": null,
+      "parties": [
+        {
+          "type": "person",
+          "role": "maintainer",
+          "name": null,
+          "email": "anders@FreeBSD.org",
+          "url": null
+        }
+      ],
+      "keywords": [
+        "sysutils"
+      ],
+      "homepage_url": "http://www.nongnu.org/dmidecode/",
+      "download_url": "https://pkg.freebsd.org/freebsd:10:x86:64/latest/All/dmidecode-2.12.txz",
+      "size": null,
+      "sha1": null,
+      "md5": null,
+      "sha256": null,
+      "sha512": null,
+      "bug_tracking_url": null,
+      "code_view_url": "https://svnweb.freebsd.org/ports/head/sysutils/dmidecode",
+      "vcs_url": null,
+      "copyright": null,
+      "declared_license_expression": "gpl-2.0",
+      "declared_license_expression_spdx": "GPL-2.0-only",
+      "license_detections": [
+        {
+          "license_expression": "gpl-2.0",
+          "detection_log": [
+            "not-combined"
+          ],
+          "matches": [
+            {
+              "score": 100.0,
+              "start_line": 1,
+              "end_line": 1,
+              "matched_length": 1,
+              "match_coverage": 100.0,
+              "matcher": "1-hash",
+              "license_expression": "gpl-2.0",
+              "rule_identifier": "gpl-2.0_bare_single_word.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0_bare_single_word.RULE",
+              "referenced_filenames": [],
+              "is_license_text": false,
+              "is_license_notice": false,
+              "is_license_reference": true,
+              "is_license_tag": false,
+              "is_license_intro": false,
+              "rule_length": 1,
+              "rule_relevance": 100,
+              "matched_text": "GPLv2",
+              "licenses": [
+                {
+                  "key": "gpl-2.0",
+                  "name": "GNU General Public License 2.0",
+                  "short_name": "GPL 2.0",
+                  "category": "Copyleft",
+                  "is_exception": false,
+                  "is_unknown": false,
+                  "owner": "Free Software Foundation (FSF)",
+                  "homepage_url": "http://www.gnu.org/licenses/gpl-2.0.html",
+                  "text_url": "http://www.gnu.org/licenses/gpl-2.0.txt",
+                  "reference_url": "https://scancode-licensedb.aboutcode.org/gpl-2.0",
+                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-2.0.LICENSE",
+                  "spdx_license_key": "GPL-2.0-only",
+                  "spdx_url": "https://spdx.org/licenses/GPL-2.0-only"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "other_license_expression": null,
+      "other_license_expression_spdx": null,
+      "other_license_detections": [],
+      "extracted_license_statement": "{'licenses': ['GPLv2'], 'licenselogic': 'single'}",
+      "notice_text": null,
+      "source_packages": [],
+      "extra_data": {},
+      "repository_homepage_url": null,
+      "repository_download_url": null,
+      "api_data_url": null,
+      "package_uid": "pkg:freebsd/dmidecode@2.12?arch=freebsd:10:x86:64&origin=sysutils/dmidecode&uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_paths": [
+        "scan/freebsd/basic/+COMPACT_MANIFEST"
+      ],
+      "datasource_ids": [
+        "freebsd_compact_manifest"
+      ],
+      "purl": "pkg:freebsd/dmidecode@2.12?arch=freebsd:10:x86:64&origin=sysutils/dmidecode"
+    },
+    {
+      "type": "npm",
+      "namespace": "@ionic",
+      "name": "app-scripts",
+      "version": "3.0.1-201710301651",
+      "qualifiers": {},
+      "subpath": null,
+      "primary_language": "JavaScript",
+      "description": "Scripts for Ionic Projects",
+      "release_date": null,
+      "parties": [
+        {
+          "type": "person",
+          "role": "author",
+          "name": "Ionic Team",
+          "email": "hi@ionic.io",
+          "url": "https://ionic.io"
+        }
+      ],
+      "keywords": [],
+      "homepage_url": "https://ionicframework.com/",
+      "download_url": "https://registry.npmjs.org/@ionic/app-scripts/-/app-scripts-3.0.1-201710301651.tgz",
+      "size": null,
+      "sha1": null,
+      "md5": null,
+      "sha256": null,
+      "sha512": null,
+      "bug_tracking_url": "https://github.com/ionic-team/ionic-app-scripts/issues",
+      "code_view_url": null,
+      "vcs_url": "git+https://github.com/ionic-team/ionic-app-scripts.git",
+      "copyright": null,
+      "declared_license_expression": "mit",
+      "declared_license_expression_spdx": "MIT",
+      "license_detections": [
+        {
+          "license_expression": "mit",
+          "detection_log": [
+            "not-combined"
+          ],
+          "matches": [
+            {
+              "score": 100.0,
+              "start_line": 1,
+              "end_line": 1,
+              "matched_length": 1,
+              "match_coverage": 100.0,
+              "matcher": "1-spdx-id",
+              "license_expression": "mit",
+              "rule_identifier": "spdx-license-identifier-mit-7abc1a233092fc104c7af72a89c0829c",
+              "rule_url": null,
+              "referenced_filenames": [],
+              "is_license_text": false,
+              "is_license_notice": false,
+              "is_license_reference": false,
+              "is_license_tag": true,
+              "is_license_intro": false,
+              "rule_length": 1,
+              "rule_relevance": 100,
+              "matched_text": "MIT",
+              "licenses": [
+                {
+                  "key": "mit",
+                  "name": "MIT License",
+                  "short_name": "MIT License",
+                  "category": "Permissive",
+                  "is_exception": false,
+                  "is_unknown": false,
+                  "owner": "MIT",
+                  "homepage_url": "http://opensource.org/licenses/mit-license.php",
+                  "text_url": "http://opensource.org/licenses/mit-license.php",
+                  "reference_url": "https://scancode-licensedb.aboutcode.org/mit",
+                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE",
+                  "spdx_license_key": "MIT",
+                  "spdx_url": "https://spdx.org/licenses/MIT"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "other_license_expression": null,
+      "other_license_expression_spdx": null,
+      "other_license_detections": [],
+      "extracted_license_statement": "['MIT']",
+      "notice_text": null,
+      "source_packages": [],
+      "extra_data": {},
+      "repository_homepage_url": "https://www.npmjs.com/package/@ionic/app-scripts",
+      "repository_download_url": "https://registry.npmjs.org/@ionic/app-scripts/-/app-scripts-3.0.1-201710301651.tgz",
+      "api_data_url": "https://registry.npmjs.org/@ionic%2fapp-scripts",
+      "package_uid": "pkg:npm/%40ionic/app-scripts@3.0.1-201710301651?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_paths": [
+        "scan/scoped1/package.json"
+      ],
+      "datasource_ids": [
+        "npm_package_json"
+      ],
+      "purl": "pkg:npm/%40ionic/app-scripts@3.0.1-201710301651"
+    }
+  ],
   "dependencies": [
     {
       "purl": "pkg:npm/%40angular-devkit/build-optimizer",
@@ -855,304 +1153,6 @@
       "datasource_id": "npm_package_json"
     }
   ],
-  "packages": [
-    {
-      "type": "maven",
-      "namespace": "aopalliance",
-      "name": "aopalliance",
-      "version": "1.0",
-      "qualifiers": {},
-      "subpath": null,
-      "primary_language": "Java",
-      "description": "AOP alliance\nAOP Alliance",
-      "release_date": null,
-      "parties": [],
-      "keywords": [],
-      "homepage_url": "http://aopalliance.sourceforge.net",
-      "download_url": null,
-      "size": null,
-      "sha1": null,
-      "md5": null,
-      "sha256": null,
-      "sha512": null,
-      "bug_tracking_url": null,
-      "code_view_url": null,
-      "vcs_url": null,
-      "copyright": null,
-      "declared_license_expression": "public-domain",
-      "declared_license_expression_spdx": "LicenseRef-scancode-public-domain",
-      "license_detections": [
-        {
-          "license_expression": "public-domain",
-          "detection_log": [
-            "not-combined"
-          ],
-          "matches": [
-            {
-              "score": 70.0,
-              "start_line": 1,
-              "end_line": 1,
-              "matched_length": 2,
-              "match_coverage": 100.0,
-              "matcher": "1-hash",
-              "license_expression": "public-domain",
-              "rule_identifier": "public-domain_bare_words.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/public-domain_bare_words.RULE",
-              "referenced_filenames": [],
-              "is_license_text": false,
-              "is_license_notice": false,
-              "is_license_reference": true,
-              "is_license_tag": false,
-              "is_license_intro": false,
-              "rule_length": 2,
-              "rule_relevance": 70,
-              "matched_text": "Public Domain",
-              "licenses": [
-                {
-                  "key": "public-domain",
-                  "name": "Public Domain",
-                  "short_name": "Public Domain",
-                  "category": "Public Domain",
-                  "is_exception": false,
-                  "is_unknown": false,
-                  "owner": "Unspecified",
-                  "homepage_url": "http://www.linfo.org/publicdomain.html",
-                  "text_url": "",
-                  "reference_url": "https://scancode-licensedb.aboutcode.org/public-domain",
-                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/public-domain.LICENSE",
-                  "spdx_license_key": "LicenseRef-scancode-public-domain",
-                  "spdx_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/public-domain.LICENSE"
-                }
-              ]
-            }
-          ]
-        }
-      ],
-      "other_license_expression": null,
-      "other_license_expression_spdx": null,
-      "other_license_detections": [],
-      "extracted_license_statement": "[{'name': 'Public Domain', 'url': None, 'comments': None, 'distribution': None}]",
-      "notice_text": null,
-      "source_packages": [
-        "pkg:maven/aopalliance/aopalliance@1.0?classifier=sources"
-      ],
-      "extra_data": {},
-      "repository_homepage_url": "https://repo1.maven.org/maven2/aopalliance/aopalliance/1.0/",
-      "repository_download_url": "https://repo1.maven.org/maven2/aopalliance/aopalliance/1.0/aopalliance-1.0.jar",
-      "api_data_url": "https://repo1.maven.org/maven2/aopalliance/aopalliance/1.0/aopalliance-1.0.pom",
-      "package_uid": "pkg:maven/aopalliance/aopalliance@1.0?uuid=fixed-uid-done-for-testing-5642512d1758",
-      "datafile_paths": [
-        "scan/aopalliance/aopalliance/1.0/aopalliance-1.0.pom"
-      ],
-      "datasource_ids": [
-        "maven_pom"
-      ],
-      "purl": "pkg:maven/aopalliance/aopalliance@1.0"
-    },
-    {
-      "type": "freebsd",
-      "namespace": null,
-      "name": "dmidecode",
-      "version": "2.12",
-      "qualifiers": {
-        "arch": "freebsd:10:x86:64",
-        "origin": "sysutils/dmidecode"
-      },
-      "subpath": null,
-      "primary_language": null,
-      "description": "Dmidecode is a tool or dumping a computer's DMI (some say SMBIOS) table\ncontents in a human-readable format. The output contains a description of the\nsystem's hardware components, as well as other useful pieces of information\nsuch as serial numbers and BIOS revision.\n\nWWW: http://www.nongnu.org/dmidecode/",
-      "release_date": null,
-      "parties": [
-        {
-          "type": "person",
-          "role": "maintainer",
-          "name": null,
-          "email": "anders@FreeBSD.org",
-          "url": null
-        }
-      ],
-      "keywords": [
-        "sysutils"
-      ],
-      "homepage_url": "http://www.nongnu.org/dmidecode/",
-      "download_url": "https://pkg.freebsd.org/freebsd:10:x86:64/latest/All/dmidecode-2.12.txz",
-      "size": null,
-      "sha1": null,
-      "md5": null,
-      "sha256": null,
-      "sha512": null,
-      "bug_tracking_url": null,
-      "code_view_url": "https://svnweb.freebsd.org/ports/head/sysutils/dmidecode",
-      "vcs_url": null,
-      "copyright": null,
-      "declared_license_expression": "gpl-2.0",
-      "declared_license_expression_spdx": "GPL-2.0-only",
-      "license_detections": [
-        {
-          "license_expression": "gpl-2.0",
-          "detection_log": [
-            "not-combined"
-          ],
-          "matches": [
-            {
-              "score": 100.0,
-              "start_line": 1,
-              "end_line": 1,
-              "matched_length": 1,
-              "match_coverage": 100.0,
-              "matcher": "1-hash",
-              "license_expression": "gpl-2.0",
-              "rule_identifier": "gpl-2.0_bare_single_word.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0_bare_single_word.RULE",
-              "referenced_filenames": [],
-              "is_license_text": false,
-              "is_license_notice": false,
-              "is_license_reference": true,
-              "is_license_tag": false,
-              "is_license_intro": false,
-              "rule_length": 1,
-              "rule_relevance": 100,
-              "matched_text": "GPLv2",
-              "licenses": [
-                {
-                  "key": "gpl-2.0",
-                  "name": "GNU General Public License 2.0",
-                  "short_name": "GPL 2.0",
-                  "category": "Copyleft",
-                  "is_exception": false,
-                  "is_unknown": false,
-                  "owner": "Free Software Foundation (FSF)",
-                  "homepage_url": "http://www.gnu.org/licenses/gpl-2.0.html",
-                  "text_url": "http://www.gnu.org/licenses/gpl-2.0.txt",
-                  "reference_url": "https://scancode-licensedb.aboutcode.org/gpl-2.0",
-                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-2.0.LICENSE",
-                  "spdx_license_key": "GPL-2.0-only",
-                  "spdx_url": "https://spdx.org/licenses/GPL-2.0-only"
-                }
-              ]
-            }
-          ]
-        }
-      ],
-      "other_license_expression": null,
-      "other_license_expression_spdx": null,
-      "other_license_detections": [],
-      "extracted_license_statement": "{'licenses': ['GPLv2'], 'licenselogic': 'single'}",
-      "notice_text": null,
-      "source_packages": [],
-      "extra_data": {},
-      "repository_homepage_url": null,
-      "repository_download_url": null,
-      "api_data_url": null,
-      "package_uid": "pkg:freebsd/dmidecode@2.12?arch=freebsd:10:x86:64&origin=sysutils/dmidecode&uuid=fixed-uid-done-for-testing-5642512d1758",
-      "datafile_paths": [
-        "scan/freebsd/basic/+COMPACT_MANIFEST"
-      ],
-      "datasource_ids": [
-        "freebsd_compact_manifest"
-      ],
-      "purl": "pkg:freebsd/dmidecode@2.12?arch=freebsd:10:x86:64&origin=sysutils/dmidecode"
-    },
-    {
-      "type": "npm",
-      "namespace": "@ionic",
-      "name": "app-scripts",
-      "version": "3.0.1-201710301651",
-      "qualifiers": {},
-      "subpath": null,
-      "primary_language": "JavaScript",
-      "description": "Scripts for Ionic Projects",
-      "release_date": null,
-      "parties": [
-        {
-          "type": "person",
-          "role": "author",
-          "name": "Ionic Team",
-          "email": "hi@ionic.io",
-          "url": "https://ionic.io"
-        }
-      ],
-      "keywords": [],
-      "homepage_url": "https://ionicframework.com/",
-      "download_url": "https://registry.npmjs.org/@ionic/app-scripts/-/app-scripts-3.0.1-201710301651.tgz",
-      "size": null,
-      "sha1": null,
-      "md5": null,
-      "sha256": null,
-      "sha512": null,
-      "bug_tracking_url": "https://github.com/ionic-team/ionic-app-scripts/issues",
-      "code_view_url": null,
-      "vcs_url": "git+https://github.com/ionic-team/ionic-app-scripts.git",
-      "copyright": null,
-      "declared_license_expression": "mit",
-      "declared_license_expression_spdx": "MIT",
-      "license_detections": [
-        {
-          "license_expression": "mit",
-          "detection_log": [
-            "not-combined"
-          ],
-          "matches": [
-            {
-              "score": 100.0,
-              "start_line": 1,
-              "end_line": 1,
-              "matched_length": 1,
-              "match_coverage": 100.0,
-              "matcher": "1-spdx-id",
-              "license_expression": "mit",
-              "rule_identifier": "spdx-license-identifier: mit",
-              "rule_url": null,
-              "referenced_filenames": [],
-              "is_license_text": false,
-              "is_license_notice": false,
-              "is_license_reference": false,
-              "is_license_tag": true,
-              "is_license_intro": false,
-              "rule_length": 1,
-              "rule_relevance": 100,
-              "matched_text": "MIT",
-              "licenses": [
-                {
-                  "key": "mit",
-                  "name": "MIT License",
-                  "short_name": "MIT License",
-                  "category": "Permissive",
-                  "is_exception": false,
-                  "is_unknown": false,
-                  "owner": "MIT",
-                  "homepage_url": "http://opensource.org/licenses/mit-license.php",
-                  "text_url": "http://opensource.org/licenses/mit-license.php",
-                  "reference_url": "https://scancode-licensedb.aboutcode.org/mit",
-                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE",
-                  "spdx_license_key": "MIT",
-                  "spdx_url": "https://spdx.org/licenses/MIT"
-                }
-              ]
-            }
-          ]
-        }
-      ],
-      "other_license_expression": null,
-      "other_license_expression_spdx": null,
-      "other_license_detections": [],
-      "extracted_license_statement": "['MIT']",
-      "notice_text": null,
-      "source_packages": [],
-      "extra_data": {},
-      "repository_homepage_url": "https://www.npmjs.com/package/@ionic/app-scripts",
-      "repository_download_url": "https://registry.npmjs.org/@ionic/app-scripts/-/app-scripts-3.0.1-201710301651.tgz",
-      "api_data_url": "https://registry.npmjs.org/@ionic%2fapp-scripts",
-      "package_uid": "pkg:npm/%40ionic/app-scripts@3.0.1-201710301651?uuid=fixed-uid-done-for-testing-5642512d1758",
-      "datafile_paths": [
-        "scan/scoped1/package.json"
-      ],
-      "datasource_ids": [
-        "npm_package_json"
-      ],
-      "purl": "pkg:npm/%40ionic/app-scripts@3.0.1-201710301651"
-    }
-  ],
   "tallies": {},
   "files": [
     {
@@ -1467,7 +1467,7 @@
                   "match_coverage": 100.0,
                   "matcher": "1-spdx-id",
                   "license_expression": "mit",
-                  "rule_identifier": "spdx-license-identifier: mit",
+                  "rule_identifier": "spdx-license-identifier-mit-7abc1a233092fc104c7af72a89c0829c",
                   "rule_url": null,
                   "referenced_filenames": [],
                   "is_license_text": false,

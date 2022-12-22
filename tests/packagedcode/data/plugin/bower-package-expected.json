@@ -1,48 +1,4 @@
 {
-  "dependencies": [
-    {
-      "purl": "pkg:bower/get-size",
-      "extracted_requirement": "~1.2.2",
-      "scope": "dependencies",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": false,
-      "resolved_package": {},
-      "extra_data": {},
-      "dependency_uid": "pkg:bower/get-size?uuid=fixed-uid-done-for-testing-5642512d1758",
-      "for_package_uid": "pkg:bower/blue-leaf?uuid=fixed-uid-done-for-testing-5642512d1758",
-      "datafile_path": "bower.json",
-      "datasource_id": "bower_json"
-    },
-    {
-      "purl": "pkg:bower/eventEmitter",
-      "extracted_requirement": "~4.2.11",
-      "scope": "dependencies",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": false,
-      "resolved_package": {},
-      "extra_data": {},
-      "dependency_uid": "pkg:bower/eventEmitter?uuid=fixed-uid-done-for-testing-5642512d1758",
-      "for_package_uid": "pkg:bower/blue-leaf?uuid=fixed-uid-done-for-testing-5642512d1758",
-      "datafile_path": "bower.json",
-      "datasource_id": "bower_json"
-    },
-    {
-      "purl": "pkg:bower/qunit",
-      "extracted_requirement": "~1.16.0",
-      "scope": "devDependencies",
-      "is_runtime": false,
-      "is_optional": true,
-      "is_resolved": false,
-      "resolved_package": {},
-      "extra_data": {},
-      "dependency_uid": "pkg:bower/qunit?uuid=fixed-uid-done-for-testing-5642512d1758",
-      "for_package_uid": "pkg:bower/blue-leaf?uuid=fixed-uid-done-for-testing-5642512d1758",
-      "datafile_path": "bower.json",
-      "datasource_id": "bower_json"
-    }
-  ],
   "packages": [
     {
       "type": "bower",
@@ -96,7 +52,7 @@
               "match_coverage": 100.0,
               "matcher": "1-spdx-id",
               "license_expression": "mit",
-              "rule_identifier": "spdx-license-identifier: mit",
+              "rule_identifier": "spdx-license-identifier-mit-7abc1a233092fc104c7af72a89c0829c",
               "rule_url": null,
               "referenced_filenames": [],
               "is_license_text": false,
@@ -146,6 +102,50 @@
         "bower_json"
       ],
       "purl": "pkg:bower/blue-leaf"
+    }
+  ],
+  "dependencies": [
+    {
+      "purl": "pkg:bower/get-size",
+      "extracted_requirement": "~1.2.2",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false,
+      "resolved_package": {},
+      "extra_data": {},
+      "dependency_uid": "pkg:bower/get-size?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:bower/blue-leaf?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "bower.json",
+      "datasource_id": "bower_json"
+    },
+    {
+      "purl": "pkg:bower/eventEmitter",
+      "extracted_requirement": "~4.2.11",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false,
+      "resolved_package": {},
+      "extra_data": {},
+      "dependency_uid": "pkg:bower/eventEmitter?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:bower/blue-leaf?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "bower.json",
+      "datasource_id": "bower_json"
+    },
+    {
+      "purl": "pkg:bower/qunit",
+      "extracted_requirement": "~1.16.0",
+      "scope": "devDependencies",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": false,
+      "resolved_package": {},
+      "extra_data": {},
+      "dependency_uid": "pkg:bower/qunit?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:bower/blue-leaf?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "bower.json",
+      "datasource_id": "bower_json"
     }
   ],
   "files": [
@@ -205,7 +205,7 @@
                   "match_coverage": 100.0,
                   "matcher": "1-spdx-id",
                   "license_expression": "mit",
-                  "rule_identifier": "spdx-license-identifier: mit",
+                  "rule_identifier": "spdx-license-identifier-mit-7abc1a233092fc104c7af72a89c0829c",
                   "rule_url": null,
                   "referenced_filenames": [],
                   "is_license_text": false,

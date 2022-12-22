@@ -1,5 +1,4 @@
 {
-  "dependencies": [],
   "packages": [
     {
       "type": "haxe",
@@ -54,7 +53,7 @@
               "match_coverage": 100.0,
               "matcher": "1-spdx-id",
               "license_expression": "mit",
-              "rule_identifier": "spdx-license-identifier: mit",
+              "rule_identifier": "spdx-license-identifier-mit-7abc1a233092fc104c7af72a89c0829c",
               "rule_url": null,
               "referenced_filenames": [],
               "is_license_text": false,
@@ -106,6 +105,7 @@
       "purl": "pkg:haxe/hxsocketio@0.1.0"
     }
   ],
+  "dependencies": [],
   "files": [
     {
       "path": "haxelib.json",
@@ -164,7 +164,7 @@
                   "match_coverage": 100.0,
                   "matcher": "1-spdx-id",
                   "license_expression": "mit",
-                  "rule_identifier": "spdx-license-identifier: mit",
+                  "rule_identifier": "spdx-license-identifier-mit-7abc1a233092fc104c7af72a89c0829c",
                   "rule_url": null,
                   "referenced_filenames": [],
                   "is_license_text": false,
