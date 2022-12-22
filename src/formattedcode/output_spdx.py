@@ -31,7 +31,6 @@ from commoncode.fileutils import parent_directory
 from commoncode.text import python_safe_name
 from formattedcode import FileOptionType
 from licensedcode.detection import get_matches_from_detection_mappings
-from licensedcode.licenses_reference import get_matched_text_from_reference_data
 from plugincode.output import output_impl
 from plugincode.output import OutputPlugin
 import scancode_config
@@ -294,10 +293,6 @@ def write_spdx(
                 file_license_keys = licensing.license_keys(
                     expression=file_license_expression,
                     unique=True
-                )
-                matched_text = get_matched_text_from_reference_data(
-                    codebase=codebase,
-                    rule_identifier=match["rule_identifier"],
                 )
                 for license_key in file_license_keys:
                     file_license = licenses.get(license_key)

@@ -177,13 +177,6 @@ def add_license_references_to_codebase(codebase, license_references, rule_refere
     codebase.attributes.license_rule_references.extend(rule_references_new)
 
 
-def get_matched_text_from_reference_data(codebase, rule_identifier):
-    for rule_reference_data in codebase.attributes.license_rule_references:
-        if rule_reference_data["rule_identifier"] == rule_identifier:
-            matched_text = getattr(rule_reference_data, "matched_text", None) or None
-            return matched_text
-
-
 def get_license_references(license_expressions, licensing=Licensing()):
     """
     Get a list of unique License data from a list of `license_expression` strings.
