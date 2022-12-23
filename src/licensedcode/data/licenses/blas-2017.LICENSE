@@ -1,3 +1,17 @@
+---
+key: blas-2017
+short_name: BLAS License 2017
+name: BLAS License 2017
+category: Permissive
+owner: BLAS Project
+homepage_url: http://www.netlib.org/blas/#_licensing
+spdx_license_key: LicenseRef-scancode-blas-2017
+text_urls:
+    - https://android.googlesource.com/platform/external/cblas/+/master/LICENSE
+other_urls:
+    - http://www.netlib.org/lapack/
+---
+
 The reference BLAS is a freely-available software package. It is
 available from netlib via anonymous ftp and the World Wide Web. Thus,
 it can be included in commercial software packages (and has been). We

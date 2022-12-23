@@ -1,3 +1,19 @@
+---
+key: corporate-accountability-commercial-1.1
+short_name: CC+CAL
+name: CC + Corporate Accountability Lab
+category: Proprietary Free
+owner: Corporate Accountability Lab
+homepage_url: https://legaldesign.org/cccal-license
+is_exception: yes
+spdx_license_key: LicenseRef-scancode-accountability-commercial-1.1
+other_spdx_license_keys:
+    - LicenseRef-scancode-corporate-accountability-commercial-1.1
+ignorable_urls:
+    - https://creativecommons.org/choose
+    - https://wiki.creativecommons.org/wiki/CCPlus
+---
+
 The CC+CAL Commercial Use License Agreement Legal Notice
 
 The CC+CAL Commercial Use License Agreement (the "Agreement") is intended to be used in tandem with any standard Creative Commons Public License that does not provide the public with rights to use licensed material for commercial purposes (i.e., a Creative Commons Public License that includes a NonCommercial restriction). Through this Agreement, licensors using a Creative Commons Public License grant additional permissions to the public to use the licensed material for commercial purposes subject to a Morals Clause for Safe and Environmentally Sustainable Supply Chains set forth in this Agreement. For the avoidance of doubt, this Agreement does not modify or customize any Creative Commons Public License. This Agreement is a separate and independent agreement intended to exist alongside a Creative Commons Public License, granting additional permissions not provided by the Creative Commons Public License that pertain specifically to the commercial use of licensed material and the use of licensed material to promote safe and environmentally sustainable supply chains.

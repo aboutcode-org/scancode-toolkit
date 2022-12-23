@@ -1,4 +1,14 @@
- LICENSE
+---
+license_expression: gpl-1.0-plus
+is_license_notice: yes
+minimum_coverage: 80
+referenced_filenames:
+    - COPYING
+ignorable_urls:
+    - http://www.gnu.org/licenses/licenses.html
+---
+
+LICENSE
  =====
  This software is covered by the GNU General Public License. 
  See the file COPYING for the complete text of the license.

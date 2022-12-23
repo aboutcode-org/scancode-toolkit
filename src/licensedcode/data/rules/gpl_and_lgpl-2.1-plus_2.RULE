@@ -1,3 +1,10 @@
+---
+license_expression: gpl-1.0-plus AND lgpl-2.1-plus
+is_license_notice: yes
+referenced_filenames:
+    - COPYING.LESSER
+---
+
 (this package), which is distributed under GNU General Public Licence and
  which is distributed under GNU Lesser General Public Licence.
 The license DOES NOT permit including into proprietary programs, but

@@ -1,3 +1,14 @@
+---
+key: saas-mit
+short_name: SaaS MIT License
+name: SaaS MIT License
+category: Permissive
+owner: CubesViewer
+homepage_url: https://github.com/jjmontesl/cubesviewer/blob/master/LICENSE
+spdx_license_key: LicenseRef-scancode-saas-mit
+minimum_coverage: 80
+---
+
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
 in the Software without restriction, including without limitation the rights

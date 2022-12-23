@@ -1,2 +1,11 @@
+---
+license_expression: lgpl-2.0-plus
+is_license_notice: yes
+relevance: 100
+minimum_coverage: 100
+referenced_filenames:
+    - COPYING.LGPL
+---
+
 are
 licensed under the LGPLv2+. See the file COPYING.LGPL.

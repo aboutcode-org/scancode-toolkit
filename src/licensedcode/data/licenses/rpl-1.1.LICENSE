@@ -1,3 +1,30 @@
+---
+key: rpl-1.1
+short_name: RPL 1.1
+name: Reciprocal Public License 1.1
+category: Copyleft Limited
+owner: OSI - Open Source Initiative
+homepage_url: http://opensource.org/licenses/RPL-1.1
+notes: |
+    Per SPDX.org, this license has been superseded by the Reciprocal Public
+    License, version 1.5
+spdx_license_key: RPL-1.1
+osi_license_key: RPL-1.1
+text_urls:
+    - http://opensource.org/licenses/RPL-1.1
+osi_url: http://opensource.org/licenses/RPL-1.1
+other_urls:
+    - http://www.gnu.org/licenses/license-list.html#RPL
+    - https://opensource.org/licenses/RPL-1.1
+ignorable_copyrights:
+    - Copyright (c) 1999-2002 Technical Pursuit Inc.
+    - Copyright (c) 2001-2002 Technical Pursuit Inc.
+ignorable_holders:
+    - Technical Pursuit Inc.
+ignorable_urls:
+    - http://www.technicalpursuit.com/
+---
+
 Reciprocal Public License, version 1.1 
 
 Copyright (C) 2001-2002 Technical Pursuit Inc., 

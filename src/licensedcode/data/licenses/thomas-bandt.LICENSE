@@ -1,3 +1,13 @@
+---
+key: thomas-bandt
+short_name: Thomas Bandt License
+name: Thomas Bandt License
+category: Free Restricted
+owner: Thomas Bandt
+homepage_url: https://github.com/aspnetde/UrlRewritingNet/blob/master/LICENSE
+spdx_license_key: LicenseRef-scancode-thomas-bandt
+---
+
 This Library is provided as is. No warrenty is expressed or implied.
 
 You can use these Library in free and commercial projects without a fee.

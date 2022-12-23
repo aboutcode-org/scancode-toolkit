@@ -1,3 +1,12 @@
+---
+license_expression: intel
+is_license_text: yes
+relevance: 95
+notes: intel for Atheros
+ignorable_urls:
+    - http://opensource.org/licenses
+---
+
 Redistribution.  Redistribution and use in binary form, without
 modification, are permitted provided that the following conditions are
 met:

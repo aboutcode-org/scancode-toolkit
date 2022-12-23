@@ -1,2 +1,8 @@
+---
+is_false_positive: yes
+notes: this is a table header row for historical notes found in Python licenses history blurb
+    and is not a GPL license notice
+---
+
 Release         Derived     Year        Owner       GPL-
                     from                                compatible

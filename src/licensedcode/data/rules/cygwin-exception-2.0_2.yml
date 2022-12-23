@@ -1,6 +1,0 @@
-license_expression: gpl-2.0 WITH cygwin-exception-2.0 OR commercial-license
-is_license_notice: yes
-ignorable_urls:
-    - http://www.opensource.org/docs/osd/
-    - http://www.redhat.com/about/contact/ww/
-    - http://www.redhat.com/software/cygwin

@@ -1,3 +1,16 @@
+---
+key: bsd-4-clause-shortened
+short_name: BSD-4-Clause-Shortened
+name: BSD-4-Clause-Shortened
+category: Permissive
+owner: Regents of the University of California
+spdx_license_key: BSD-4-Clause-Shortened
+other_urls:
+    - https://metadata.ftp-master.debian.org/changelogs//main/a/arpwatch/arpwatch_2.1a15-7_copyright
+ignorable_authors:
+    - the University of California, Lawrence Berkeley Laboratory and its contributors
+---
+
 Redistribution and use in source and binary forms, with or without modification,
 are permitted provided that:
 

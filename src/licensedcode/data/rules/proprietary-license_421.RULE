@@ -1,3 +1,16 @@
+---
+license_expression: proprietary-license
+is_license_text: yes
+relevance: 100
+minimum_coverage: 70
+ignorable_copyrights:
+    - copyrighted work of LSI CORPORATION
+ignorable_holders:
+    - work of LSI CORPORATION
+ignorable_authors:
+    - LSI CORPORATION
+---
+
 NOTICE SPECIFIC TO SOFTWARE AVAILABLE ON THIS WEBSITE.
 Any software that is made available to download from this server ("Software") is the copyrighted work of LSI CORPORATION and/or its suppliers. Use of the Software is governed by the terms of the end user license agreement, if any, which accompanies or is included with the Software ("License Agreement"). An end user will be unable to install any Software that is accompanied by or includes a License Agreement, unless he or she first agrees to the License Agreement terms.
 

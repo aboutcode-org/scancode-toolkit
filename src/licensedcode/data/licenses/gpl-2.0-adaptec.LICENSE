@@ -1,3 +1,14 @@
+---
+key: gpl-2.0-adaptec
+short_name: GPL 2.0 plus Adaptec conditions
+name: GPL 2.0 plus Adaptec conditions
+category: Copyleft
+owner: Adaptec
+notes: this is a combination of GPL and BSD terms
+spdx_license_key: LicenseRef-scancode-gpl-2.0-adaptec
+minimum_coverage: 90
+---
+
 You are permitted to redistribute, use and modify this README file in whole
 or in part in conjunction with redistribution of software governed by the
 General Public License, provided that the following conditions are met:

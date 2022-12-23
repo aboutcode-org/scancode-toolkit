@@ -1,3 +1,20 @@
+---
+key: crypto-keys-redistribution
+short_name: Cryptographic keys redistribution
+name: Cryptographic keys redistribution
+category: Copyleft
+owner: kernel.org
+notes: |
+    This was found as a Linux addition to the GPL in Linux 3.x in files such as
+    in drivers/scsi/aha1740.c drivers/message/i2o/i2o_scsi.c
+    drivers/ide/cs5520.c drivers/ide/ide-pci-generic.c drivers/ide/ide-io.c
+    drivers/scsi/eata_pio.c drivers/scsi/in2000.c drivers/scsi/qlogicfas.c
+    drivers/scsi/qlogicfas408.c
+spdx_license_key: LicenseRef-scancode-crypto-keys-redistribution
+text_urls:
+    - http://git.savannah.gnu.org/cgit/dmidecode.git/tree/dmidecode.c?id=ee07a1b4249560d620d05194eb8ff61b40d3ce23
+---
+
 For the avoidance of doubt the "preferred form" of this code is one which
 is in an open non patent encumbered format. Where cryptographic key signing
 forms part of the process of creating an executable the information

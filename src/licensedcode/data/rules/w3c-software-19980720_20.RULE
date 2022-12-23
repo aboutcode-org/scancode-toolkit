@@ -1,3 +1,11 @@
+---
+license_expression: w3c-software-19980720
+is_license_notice: yes
+notes: Seen in W3C's libwww
+ignorable_urls:
+    - http://www.w3.org/Consortium/Legal/
+---
+
 This program is distributed under the W3C's
  Intellectual Property License. This program is
  distributed in the hope that it will be useful, but

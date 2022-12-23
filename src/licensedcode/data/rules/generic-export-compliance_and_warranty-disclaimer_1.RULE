@@ -1,3 +1,9 @@
+---
+license_expression: generic-export-compliance AND warranty-disclaimer
+is_license_notice: yes
+relevance: 100
+---
+
 Several countries have legal enforcement for
 export/import/use of cryptographic software.  Check it before playing
 with the kit.  We do not intend to be your legalese clearing house

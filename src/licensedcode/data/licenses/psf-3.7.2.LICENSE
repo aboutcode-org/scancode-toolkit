@@ -1,3 +1,17 @@
+---
+key: psf-3.7.2
+short_name: PSF Python License 3.7.2
+name: PSF License Agreement for Python 3.7.2
+category: Permissive
+owner: Python Software Foundation (PSF)
+homepage_url: https://docs.python.org/3/license.html#psf-license-agreement-for-python-release
+spdx_license_key: LicenseRef-scancode-psf-3.7.2
+ignorable_copyrights:
+    - Copyright (c) 2001-2019 Python Software Foundation
+ignorable_holders:
+    - Python Software Foundation
+---
+
 PSF LICENSE AGREEMENT FOR PYTHON 3.7.2
 
 1. This LICENSE AGREEMENT is between the Python Software Foundation ("PSF"), and

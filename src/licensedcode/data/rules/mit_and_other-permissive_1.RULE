@@ -1,3 +1,10 @@
+---
+license_expression: mit AND other-permissive
+is_license_notice: yes
+relevance: 90
+notes: a weird MIT notice with possibly other conditions
+---
+
 The MIT license allows you to do the following things with the Source Code:
 
 - Copy and use the Source Code alone or jointly with other code for any

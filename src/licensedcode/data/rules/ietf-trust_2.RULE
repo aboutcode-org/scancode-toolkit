@@ -1,1 +1,10 @@
+---
+license_expression: ietf-trust
+is_license_reference: yes
+relevance: 100
+notes: http://trustee.ietf.org/license-info/
+ignorable_urls:
+    - http://trustee.ietf.org/license-info/
+---
+
 http://trustee.ietf.org/license-info/

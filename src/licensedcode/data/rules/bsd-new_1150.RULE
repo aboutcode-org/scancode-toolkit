@@ -1,1 +1,10 @@
+---
+license_expression: bsd-new
+is_license_tag: yes
+relevance: 95
+notes: seen in pear packages
+ignorable_urls:
+    - http://opensource.org/licenses/bsd-license.php
+---
+
 <license uri="http://opensource.org/licenses/bsd-license.php">BSD License</license>

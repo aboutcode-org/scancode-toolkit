@@ -1,4 +1,10 @@
- library itself is released under the GNU Lesser General Public 
+---
+license_expression: lgpl-2.1 AND gpl-2.0
+is_license_notice: yes
+notes: classic library lgpl and tools gpl combo
+---
+
+library itself is released under the GNU Lesser General Public 
 License, see the text of the GNU LGPL below.
 
 The executable programs in the bin, examples, and libtest directories

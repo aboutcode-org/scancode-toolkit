@@ -1,3 +1,11 @@
+---
+license_expression: proprietary-license
+is_license_text: yes
+notes: "Seen in old webmin and https://fedoraproject.org/wiki/Licensing:Webmin?rd=Licensing/Webmin\n\
+    rarely seen in the wild.\nPer Fedora: \"This is not compatible with either GPLv2 or GPLv3.\
+    \ \nThis goes much further than the patent termination provision in GPLv3. \""
+---
+
 Mutual Termination for Patent Action. The License for the use of Webmin shall
 terminate automatically and You may no longer exercise any of the rights granted
 to You by this License if:

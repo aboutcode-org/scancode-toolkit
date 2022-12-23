@@ -1,2 +1,11 @@
- * Dual licensed under the GPL (http://www.gnu.org/licenses/gpl.html)
+---
+license_expression: mit OR gpl-1.0-plus
+is_license_notice: yes
+minimum_coverage: 90
+ignorable_urls:
+    - http://www.gnu.org/licenses/gpl.html
+    - http://www.opensource.org/licenses/mit-license.php
+---
+
+* Dual licensed under the GPL (http://www.gnu.org/licenses/gpl.html)
  * and MIT (http://www.opensource.org/licenses/mit-license.php) licenses.

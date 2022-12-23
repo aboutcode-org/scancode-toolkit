@@ -1,3 +1,13 @@
+---
+key: sun-bcl-opendmk
+short_name: Sun BCL OpenDMK
+name: Sun BCL OpenDMK
+category: Proprietary Free
+owner: Oracle (Sun)
+homepage_url: https://opendmk.java.net/legal_notices/LICENSE_BINARY.txt
+spdx_license_key: LicenseRef-scancode-sun-bcl-opendmk
+---
+
 Binary License for Project OpenDMK
 
 Sun Microsystems, Inc. Binary Code License Agreement

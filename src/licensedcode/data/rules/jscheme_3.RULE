@@ -1,3 +1,16 @@
+---
+license_expression: jscheme
+is_license_text: yes
+relevance: 100
+minimum_coverage: 90
+ignorable_copyrights:
+    - Copyright by Peter Norvig
+ignorable_holders:
+    - Peter Norvig
+ignorable_emails:
+    - peter@norvig.com
+---
+
 Software License Agreement
 Copyright  by Peter Norvig. 
 Permission is granted to anyone to use this software, in source or object code

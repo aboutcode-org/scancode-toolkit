@@ -1,1 +1,9 @@
+---
+license_expression: mpl-1.1
+is_license_tag: yes
+relevance: 100
+ignorable_urls:
+    - http://www.mozilla.org/MPL/MPL-1.1.html
+---
+
 License: MPL 1.1  (http://www.mozilla.org/MPL/MPL-1.1.html

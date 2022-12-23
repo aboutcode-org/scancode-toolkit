@@ -1,3 +1,10 @@
+---
+license_expression: lgpl-2.1-plus
+is_license_notice: yes
+relevance: 100
+minimum_coverage: 95
+---
+
 The upstream license clarifies pretty well that the sources of pulseaudio are
  LGPL (please see LGPL license grant below), but that some parts will be
  effectively GPL since they rely on GPL libraries, quoting the upstream

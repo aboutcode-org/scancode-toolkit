@@ -1,3 +1,9 @@
+---
+license_expression: artistic-perl-1.0 OR gpl-1.0-plus
+is_license_notice: yes
+minimum_coverage: 15
+---
+
 License-Alias: Perl
 License: Artistic | GPL-1+
 It is assumed that debian/* files carry the same license as upstream

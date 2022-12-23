@@ -1,3 +1,9 @@
+---
+license_expression: unknown-license-reference
+is_license_intro: yes
+minimum_coverage: 80
+---
+
 subdirectory is a collection of software from several sources.
 Each file may have its own copyright/license that is embedded in the source 
 file.

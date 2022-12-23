@@ -1,3 +1,14 @@
+---
+key: unlimited-binary-linking
+is_deprecated: yes
+short_name: Unlimited Binary Linking Exception
+name: Unlimited Binary Linking Exception
+category: Permissive
+owner: nexB
+is_exception: yes
+spdx_license_key: LicenseRef-scancode-unlimited-binary-linking
+---
+
 As a special exception, you may use, copy, link, modify and distribute
 under the user's own terms, binary object code versions of works based
 on the library.

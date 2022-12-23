@@ -1,1 +1,9 @@
+---
+
+license_expression: oclc-2.0 AND baz
+language: foobar
+notes: spdx_source_url
+
+---
+
 http://www.oclc.org/research/activities/software/license/v2final.htm

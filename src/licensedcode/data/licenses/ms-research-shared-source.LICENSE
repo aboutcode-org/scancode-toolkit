@@ -1,3 +1,21 @@
+---
+key: ms-research-shared-source
+short_name: MS Research Shared Source License
+name: Microsoft Research Shared Source License
+category: Proprietary Free
+owner: Microsoft
+homepage_url: http://research.microsoft.com/downloads
+spdx_license_key: LicenseRef-scancode-ms-research-shared-source
+other_urls:
+    - http://research.microsoft.com/downloads
+ignorable_copyrights:
+    - Copyright (c) Microsoft Corporation
+ignorable_holders:
+    - Microsoft Corporation
+ignorable_urls:
+    - http://research.microsoft.com/downloads
+---
+
 Microsoft
 Research
 Shared

@@ -1,1 +1,8 @@
+---
+license_expression: cc-by-nc-sa-2.0-uk
+is_license_reference: yes
+ignorable_urls:
+    - https://spdx.org/licenses/CC-BY-NC-SA-2.0-UK
+---
+
 LICENSE {{CC-BY-NC-SA-2.0-UK}} https://spdx.org/licenses/CC-BY-NC-SA-2.0-UK

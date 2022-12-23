@@ -1,3 +1,12 @@
+---
+key: ian-kaplan
+short_name: Ian Kaplan License
+name: Ian Kaplan License
+category: Permissive
+owner: Bearcave.com
+spdx_license_key: LicenseRef-scancode-ian-kaplan
+---
+
 Use of this program, for any purpose, is granted the author,
 Ian Kaplan, as long as this copyright notice is included in
 the source code or any source code derived from this program.

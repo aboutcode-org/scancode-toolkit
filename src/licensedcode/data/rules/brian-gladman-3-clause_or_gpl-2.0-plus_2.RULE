@@ -1,4 +1,11 @@
- * Based on Dr Brian Gladman's (GPL'd) work published at
+---
+license_expression: brian-gladman-3-clause OR gpl-2.0-plus
+is_license_notice: yes
+ignorable_urls:
+    - http://fp.gladman.plus.com/cryptography_technology/index.htm
+---
+
+* Based on Dr Brian Gladman's (GPL'd) work published at
  * http://fp.gladman.plus.com/cryptography_technology/index.htm
  * See the original copyright notice below.
  *

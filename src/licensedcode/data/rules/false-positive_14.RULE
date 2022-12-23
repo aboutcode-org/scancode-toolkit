@@ -1,3 +1,8 @@
-    # Older versions of Unidecode are licensed under Artistic License;
+---
+is_false_positive: yes
+notes: comments about the older license of a third-party package
+---
+
+# Older versions of Unidecode are licensed under Artistic License;
     # assume an older version is installed.
     from unidecode import unidecode as transliterate

@@ -1,2 +1,10 @@
+---
+license_expression: bsd-new
+is_license_reference: yes
+relevance: 100
+ignorable_urls:
+    - http://developer.yahoo.net/yui/license.txt
+---
+
 Code licensed under the BSD License:
 * http://developer.yahoo.net/yui/license.txt

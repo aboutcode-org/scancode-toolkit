@@ -1,3 +1,11 @@
+---
+license_expression: proprietary-license
+is_license_text: yes
+relevance: 100
+minimum_coverage: 95
+notes: not open source because of the usage limitations
+---
+
 Permission is hereby granted for use on ESPRESSIF SYSTEMS ESP8266 only, in which case,
 it is free of charge, to any person obtaining a copy of this software and associated
 documentation files (the ¡°Software¡±), to deal in the Software without restriction,

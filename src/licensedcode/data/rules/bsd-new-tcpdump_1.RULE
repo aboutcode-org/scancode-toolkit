@@ -1,3 +1,10 @@
+---
+license_expression: bsd-new-tcpdump
+is_license_text: yes
+relevance: 100
+notes: seen in libpcap
+---
+
 Redistribution and use in source and binary forms, with or without
 modification, are permitted provided that: (1) source code distributions
 retain the above copyright notice and this paragraph in its entirety, (2)

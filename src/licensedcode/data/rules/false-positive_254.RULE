@@ -1,3 +1,8 @@
+---
+is_false_positive: yes
+notes: a comment about compatibility
+---
+
 As per http://www.gnu.org/licenses/license-list.html#GPLCompatibleLicenses,
 
 the "NCSA/University of Illinois Open Source License" is compatible

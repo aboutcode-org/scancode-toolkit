@@ -1,1 +1,9 @@
+---
+license_expression: ofl-1.1
+is_license_reference: yes
+relevance: 95
+ignorable_urls:
+    - https://spdx.org/licenses/ofl-1.1.html
+---
+
 https://spdx.org/licenses/ofl-1.1.html

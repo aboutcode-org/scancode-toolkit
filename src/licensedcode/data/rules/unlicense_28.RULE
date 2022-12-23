@@ -1,1 +1,9 @@
+---
+license_expression: unlicense
+is_license_tag: yes
+relevance: 100
+ignorable_urls:
+    - http://unlicense.org/
+---
+
 license: Public Domain <http://unlicense.org>

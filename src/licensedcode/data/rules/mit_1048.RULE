@@ -1,1 +1,11 @@
+---
+license_expression: mit
+is_license_tag: yes
+relevance: 100
+referenced_filenames:
+    - LICENSE
+ignorable_urls:
+    - http://www.opensource.org/licenses/mit-license.php
+---
+
 @license http://www.opensource.org/licenses/mit-license.php MIT (see the LICENSE file)

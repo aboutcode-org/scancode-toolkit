@@ -1,0 +1,19 @@
+---
+key: broadcom-unmodified-exception
+short_name: Broadcom Unmodified Linking Exception
+name: Broadcom Unmodified Linking Exception
+category: Copyleft Limited
+owner: Broadcom
+is_exception: yes
+spdx_license_key: LicenseRef-scancode-broadcom-unmodified-exception
+---
+
+As a special exception, the copyright holders of this software give you
+permission to link this software with independent modules, and to copy
+and distribute the resulting executable under terms of your choice,
+provided that you also meet, for each linked independent module, the
+terms and conditions of the license of that module.
+
+An independent module is a module which is not derived from this
+software.  The special exception does not apply to any modifications of
+the software.

@@ -1,3 +1,11 @@
+---
+license_expression: gpl-2.0 WITH universal-foss-exception-1.0
+is_license_notice: yes
+relevance: 100
+ignorable_urls:
+    - http://oss.oracle.com/licenses/universal-foss-exception
+---
+
 This distribution includes the MySQL C API client library
    (libmysqlclient) otherwise known as MySQL Connector/C. Without limiting
    the foregoing grant of rights under the GPLv2 and additional permission

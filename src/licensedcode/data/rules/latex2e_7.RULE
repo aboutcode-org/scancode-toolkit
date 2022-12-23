@@ -1,3 +1,10 @@
+---
+license_expression: latex2e
+is_license_notice: yes
+relevance: 99
+notes: Seen in bash doc
+---
+
 Permission is granted to process this file through TeX and print the
  results, provided the printed document carries copying permission
  notice identical to this one except for the removal of this paragraph

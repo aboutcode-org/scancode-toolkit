@@ -1,1 +1,6 @@
+---
+is_false_positive: yes
+notes: license ids in license handling code  is not a license
+---
+
 ['0BSD', 'AAL', 'ADSL', 'AFL-1.1', 'AFL-1.2', 'AFL-2.0', 'AFL-2.1', 'AFL-3.0', 'AGPL-1.0-only', ...]

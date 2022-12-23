@@ -1,3 +1,12 @@
+---
+key: vitesse-prop
+short_name: Vitesse Proprietary Notice
+name: Vitesse Proprietary Notice
+category: Proprietary Free
+owner: Vitesse Semiconductor Corporation
+spdx_license_key: LicenseRef-scancode-vitesse-prop
+---
+
  Unpublished rights reserved under the copyright laws of the United States of
  America, other countries and international treaties. Permission to use, copy,
  store and modify, the software and its source code is granted. Permission to

@@ -1,4 +1,11 @@
-    libzmq is free software; you can redistribute it and/or modify it under
+---
+license_expression: lgpl-3.0-plus WITH zeromq-exception-lgpl-3.0
+is_license_notice: yes
+ignorable_urls:
+    - http://www.gnu.org/licenses/
+---
+
+libzmq is free software; you can redistribute it and/or modify it under
     the terms of the GNU Lesser General Public License (LGPL) as published
     by the Free Software Foundation; either version 3 of the License, or
     (at your option) any later version.

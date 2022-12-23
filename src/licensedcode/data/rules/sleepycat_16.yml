@@ -1,6 +1,0 @@
-license_expression: sleepycat
-is_license_reference: yes
-relevance: 100
-minimum_coverage: 80
-ignorable_urls:
-    - http://download.oracle.com/docs/cd/E17076_02/html/license/license_db.html

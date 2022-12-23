@@ -1,3 +1,13 @@
+---
+key: linuxbios
+short_name: LinuxBIOS License
+name: LinuxBIOS License
+category: Permissive
+owner: LANL
+homepage_url: http://www.lanl.gov/index.php
+spdx_license_key: LicenseRef-scancode-linuxbios
+---
+
 This software and ancillary information (herein called SOFTWARE)
 called LinuxBIOS is made available under the terms described here.
 

@@ -1,1 +1,6 @@
+---
+is_false_positive: yes
+notes: seen in ACPI
+---
+
 ASL files to ASL+ (ASL 2.0)

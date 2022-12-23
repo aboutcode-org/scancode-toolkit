@@ -1,2 +1,9 @@
+---
+license_expression: lgpl-2.0
+is_license_reference: yes
+referenced_filenames:
+    - /usr/share/common-licenses/LGPL-2
+---
+
 On Debian systems, the full text of the GNU Lesser General Public License
  version 2 can be found in the file `/usr/share/common-licenses/LGPL-2'.

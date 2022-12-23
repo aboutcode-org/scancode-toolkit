@@ -1,1 +1,9 @@
-    The distribution is {{licensed under the Apache License, Version 2.0 (http://apache.org/licenses/LICENSE-2.0).}}
+---
+license_expression: apache-2.0
+is_license_notice: yes
+relevance: 90
+ignorable_urls:
+    - http://apache.org/licenses/LICENSE-2.0
+---
+
+The distribution is {{licensed under the Apache License, Version 2.0 (http://apache.org/licenses/LICENSE-2.0).}}

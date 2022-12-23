@@ -1,3 +1,21 @@
+---
+key: tmate
+short_name: TMate Open Source License
+name: TMate Open Source License
+category: Copyleft
+owner: SVNKit (TMate)
+homepage_url: http://svnkit.com/licensing.html
+spdx_license_key: TMate
+text_urls:
+    - http://svnkit.com/license.html
+ignorable_copyrights:
+    - Copyright (c) 2004-2009 TMate Software
+ignorable_holders:
+    - TMate Software
+ignorable_emails:
+    - support@svnkit.com
+---
+
 This license applies to all portions of TMate SVNKit library, which 
 are not externally-maintained libraries (e.g. Ganymed SSH library).
 

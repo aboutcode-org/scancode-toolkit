@@ -1,9 +1,0 @@
-license_expression: lgpl-2.0-plus WITH wxwindows-exception-3.1
-is_license_text: yes
-referenced_filenames:
-    - COPYING.LIB
-notes: wxWindows Library Licence template
-ignorable_copyrights:
-    - Copyright (c) 20 1998 Julian Smart, Robert Roebling
-ignorable_holders:
-    - Julian Smart, Robert Roebling

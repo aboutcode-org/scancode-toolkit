@@ -1,4 +1,13 @@
-  LICENSE
+---
+license_expression: brian-clapper
+is_license_notice: yes
+ignorable_authors:
+    - Brian M. Clapper <bmc@clapper.org>
+ignorable_emails:
+    - bmc@clapper.org
+---
+
+LICENSE
 
     This software is released under the following license:
 

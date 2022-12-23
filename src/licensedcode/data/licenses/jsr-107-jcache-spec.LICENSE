@@ -1,3 +1,21 @@
+---
+key: jsr-107-jcache-spec
+short_name: JSR-107 JCache Specification License
+name: JSR-107 JCache Specification License
+category: Proprietary Free
+owner: Oracle Corporation
+homepage_url: https://github.com/jsr107/jsr107spec/blob/master/LICENSE.txt
+notes: the license for the API has since changed in 2016 to Apache-2.0 after several intermediate
+    changes. See https://github.com/jsr107/jsr107spec/commits/master/LICENSE.txt for details.
+    This is an old spec license likely still current.
+spdx_license_key: LicenseRef-scancode-jsr-107-jcache-spec
+minimum_coverage: 96
+ignorable_copyrights:
+    - Copyright 2015 Oracle America, Inc. and Greg Luck
+ignorable_holders:
+    - Oracle America, Inc. and Greg Luck
+---
+
 JSR-000107 JavaTM Temporary Caching API Maintenance Release 1
 
 ORACLE AMERICA, INC. AND GREG LUCK, SPECIFICATION LEADS, ARE WILLING TO LICENSE THIS SPECIFICATION TO YOU ONLY UPON THE CONDITION THAT YOU ACCEPT ALL OF THE TERMS CONTAINED IN THIS AGREEMENT. PLEASE READ THE TERMS AND CONDITIONS OF THIS AGREEMENT CAREFULLY. BY DOWNLOADING THIS SPECIFICATION, YOU ACCEPT THE TERMS AND CONDITIONS OF THE AGREEMENT. IF YOU ARE NOT WILLING TO BE BOUND BY IT, SELECT THE "DECLINE" BUTTON AT THE BOTTOM OF THIS PAGE.

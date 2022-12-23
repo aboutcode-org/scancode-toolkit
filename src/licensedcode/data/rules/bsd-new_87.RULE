@@ -1,2 +1,10 @@
-      Berkeley Software Distribution (BSD) License</name>
+---
+license_expression: bsd-new
+is_license_notice: yes
+relevance: 100
+ignorable_urls:
+    - http://www.opensource.org/licenses/bsd-license.html
+---
+
+Berkeley Software Distribution (BSD) License</name>
       <url>http://www.opensource.org/licenses/bsd-license.html

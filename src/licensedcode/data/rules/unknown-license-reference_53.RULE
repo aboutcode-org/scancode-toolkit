@@ -1,1 +1,9 @@
+---
+license_expression: unknown-license-reference AND jam
+is_license_reference: yes
+relevance: 100
+referenced_filenames:
+    - jam.c
+---
+
 see jam.c for Copyright information.

@@ -1,3 +1,10 @@
+---
+license_expression: apache-2.0 WITH commons-clause
+is_license_notice: yes
+minimum_coverage: 50
+ignorable_urls:
+    - https://www.apache.org/licenses/LICENSE-2.0
+---
 
 Licensed under the Apache License, Version 2.0 (the "License") modified with Commons Clause
 Restriction; you may not use this file except in compliance with the License. You may obtain a

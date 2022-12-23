@@ -1,3 +1,28 @@
+---
+key: shl-0.51
+short_name: SolderPad Hardware License, Version 0.51
+name: SolderPad Hardware License, Version 0.51
+category: Permissive
+owner: SolderPad
+homepage_url: https://solderpad.org/licenses/SHL-0.51/
+spdx_license_key: SHL-0.51
+other_urls:
+    - https://solderpad.org/licenses/SHL-0.51/
+standard_notice: |
+    Copyright and related rights are
+    licensed under the Solderpad Hardware License, Version 0.51 (the
+    "License"); you may not use this file except in compliance with the
+    License. You may obtain a copy of the License at
+    http://solderpad.org/licenses/SHL-0.51. Unless required by applicable law
+    or agreed to in writing, software, hardware and materials distributed under
+    this License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+    CONDITIONS OF ANY KIND, either express or implied. See the License for the
+    specific language governing permissions and limitations under the License.
+ignorable_urls:
+    - http://solderpad.org/licenses/SHL-0.51
+    - http://www.apache.org/licenses/LICENSE-2.0
+---
+
 SOLDERPAD HARDWARE LICENSE version 0.51
 
 This license is based closely on the Apache License Version 2.0, but is not approved or endorsed by the Apache Foundation. A copy of the non-modified Apache License 2.0 can be found at http://www.apache.org/licenses/LICENSE-2.0.

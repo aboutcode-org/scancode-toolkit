@@ -19,8 +19,10 @@
       "is_media": false,
       "is_source": false,
       "is_script": false,
-      "licenses": [],
-      "license_expressions": [],
+      "detected_license_expression": null,
+      "detected_license_expression_spdx": null,
+      "license_detections": [],
+      "license_clues": [],
       "percentage_of_license_text": 0,
       "is_license_text": false,
       "files_count": 5,
@@ -47,50 +49,56 @@
       "is_media": false,
       "is_source": false,
       "is_script": false,
-      "licenses": [
+      "detected_license_expression": "apache-1.0",
+      "detected_license_expression_spdx": "Apache-1.0",
+      "license_detections": [
         {
-          "key": "apache-1.0",
-          "score": 100.0,
-          "name": "Apache License 1.0",
-          "short_name": "Apache 1.0",
-          "category": "Permissive",
-          "is_exception": false,
-          "is_unknown": false,
-          "owner": "Apache Software Foundation",
-          "homepage_url": "http://www.apache.org/licenses/",
-          "text_url": "http://www.apache.org/licenses/LICENSE-1.0",
-          "reference_url": "https://scancode-licensedb.aboutcode.org/apache-1.0",
-          "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-1.0.LICENSE",
-          "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-1.0.yml",
-          "spdx_license_key": "Apache-1.0",
-          "spdx_url": "https://spdx.org/licenses/Apache-1.0",
-          "start_line": 8,
-          "end_line": 58,
-          "matched_rule": {
-            "identifier": "apache-1.0.LICENSE",
-            "license_expression": "apache-1.0",
-            "licenses": [
-              "apache-1.0"
-            ],
-            "referenced_filenames": [],
-            "is_license_text": true,
-            "is_license_notice": false,
-            "is_license_reference": false,
-            "is_license_tag": false,
-            "is_license_intro": false,
-            "has_unknown": false,
-            "matcher": "2-aho",
-            "rule_length": 368,
-            "matched_length": 368,
-            "match_coverage": 100.0,
-            "rule_relevance": 100
-          },
-          "matched_text": "Redistribution and use in source and binary forms, with or without\r\nmodification, are permitted provided that the following conditions\r\nare met:\r\n\r\n 1. Redistributions of source code must retain the above copyright\r\n    notice, this list of conditions and the following disclaimer. \r\n \r\n 2. Redistributions in binary form must reproduce the above copyright\r\n    notice, this list of conditions and the following disclaimer in\r\n    the documentation and/or other materials provided with the\r\n    distribution.\r\n \r\n 3. All advertising materials mentioning features or use of this\r\n    software must display the following acknowledgment:\r\n    \"This product includes software developed by the Apache Group\r\n    for use in the Apache HTTP server project (http://www.apache.org/).\"\r\n \r\n 4. The names \"Apache Server\" and \"Apache Group\" must not be used to\r\n    endorse or promote products derived from this software without\r\n    prior written permission. For written permission, please contact\r\n    apache@apache.org.\r\n \r\n 5. Products derived from this software may not be called \"Apache\"\r\n    nor may \"Apache\" appear in their names without prior written\r\n    permission of the Apache Group.\r\n \r\n 6. Redistributions of any form whatsoever must retain the following\r\n    acknowledgment:\r\n    \"This product includes software developed by the Apache Group\r\n    for use in the Apache HTTP server project (http://www.apache.org/).\"\r\n \r\n THIS SOFTWARE IS PROVIDED BY THE APACHE GROUP ``AS IS'' AND ANY\r\n EXPRESSED OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE\r\n IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR\r\n PURPOSE ARE DISCLAIMED.  IN NO EVENT SHALL THE APACHE GROUP OR\r\n ITS CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,\r\n SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT\r\n NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;\r\n LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)\r\n HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT,\r\n STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)\r\n ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED\r\n OF THE POSSIBILITY OF SUCH DAMAGE.\r\n====================================================================\r\n\r\n This software consists of voluntary contributions made by many\r\n individuals on behalf of the Apache Group and was originally based\r\n on public domain software written at the National Center for\r\n Supercomputing Applications, University of Illinois, Urbana-Champaign.\r\n For more information on the Apache Group and the Apache HTTP server\r\n project, please see <http://www.apache.org/>."
+          "license_expression": "apache-1.0",
+          "detection_log": [
+            "not-combined"
+          ],
+          "matches": [
+            {
+              "score": 100.0,
+              "start_line": 8,
+              "end_line": 58,
+              "matched_length": 368,
+              "match_coverage": 100.0,
+              "matcher": "2-aho",
+              "license_expression": "apache-1.0",
+              "rule_identifier": "apache-1.0.LICENSE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-1.0.LICENSE",
+              "referenced_filenames": [],
+              "is_license_text": true,
+              "is_license_notice": false,
+              "is_license_reference": false,
+              "is_license_tag": false,
+              "is_license_intro": false,
+              "rule_length": 368,
+              "rule_relevance": 100,
+              "matched_text": "Redistribution and use in source and binary forms, with or without\r\nmodification, are permitted provided that the following conditions\r\nare met:\r\n\r\n 1. Redistributions of source code must retain the above copyright\r\n    notice, this list of conditions and the following disclaimer. \r\n \r\n 2. Redistributions in binary form must reproduce the above copyright\r\n    notice, this list of conditions and the following disclaimer in\r\n    the documentation and/or other materials provided with the\r\n    distribution.\r\n \r\n 3. All advertising materials mentioning features or use of this\r\n    software must display the following acknowledgment:\r\n    \"This product includes software developed by the Apache Group\r\n    for use in the Apache HTTP server project (http://www.apache.org/).\"\r\n \r\n 4. The names \"Apache Server\" and \"Apache Group\" must not be used to\r\n    endorse or promote products derived from this software without\r\n    prior written permission. For written permission, please contact\r\n    apache@apache.org.\r\n \r\n 5. Products derived from this software may not be called \"Apache\"\r\n    nor may \"Apache\" appear in their names without prior written\r\n    permission of the Apache Group.\r\n \r\n 6. Redistributions of any form whatsoever must retain the following\r\n    acknowledgment:\r\n    \"This product includes software developed by the Apache Group\r\n    for use in the Apache HTTP server project (http://www.apache.org/).\"\r\n \r\n THIS SOFTWARE IS PROVIDED BY THE APACHE GROUP ``AS IS'' AND ANY\r\n EXPRESSED OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE\r\n IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR\r\n PURPOSE ARE DISCLAIMED.  IN NO EVENT SHALL THE APACHE GROUP OR\r\n ITS CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,\r\n SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT\r\n NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;\r\n LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)\r\n HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT,\r\n STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)\r\n ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED\r\n OF THE POSSIBILITY OF SUCH DAMAGE.\r\n====================================================================\r\n\r\n This software consists of voluntary contributions made by many\r\n individuals on behalf of the Apache Group and was originally based\r\n on public domain software written at the National Center for\r\n Supercomputing Applications, University of Illinois, Urbana-Champaign.\r\n For more information on the Apache Group and the Apache HTTP server\r\n project, please see <http://www.apache.org/>.",
+              "licenses": [
+                {
+                  "key": "apache-1.0",
+                  "name": "Apache License 1.0",
+                  "short_name": "Apache 1.0",
+                  "category": "Permissive",
+                  "is_exception": false,
+                  "is_unknown": false,
+                  "owner": "Apache Software Foundation",
+                  "homepage_url": "http://www.apache.org/licenses/",
+                  "text_url": "http://www.apache.org/licenses/LICENSE-1.0",
+                  "reference_url": "https://scancode-licensedb.aboutcode.org/apache-1.0",
+                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-1.0.LICENSE",
+                  "spdx_license_key": "Apache-1.0",
+                  "spdx_url": "https://spdx.org/licenses/Apache-1.0"
+                }
+              ]
+            }
+          ]
         }
       ],
-      "license_expressions": [
-        "apache-1.0"
-      ],
+      "license_clues": [],
       "percentage_of_license_text": 96.08,
       "is_license_text": true,
       "files_count": 0,
@@ -117,50 +125,56 @@
       "is_media": false,
       "is_source": false,
       "is_script": false,
-      "licenses": [
+      "detected_license_expression": "apache-1.0",
+      "detected_license_expression_spdx": "Apache-1.0",
+      "license_detections": [
         {
-          "key": "apache-1.0",
-          "score": 100.0,
-          "name": "Apache License 1.0",
-          "short_name": "Apache 1.0",
-          "category": "Permissive",
-          "is_exception": false,
-          "is_unknown": false,
-          "owner": "Apache Software Foundation",
-          "homepage_url": "http://www.apache.org/licenses/",
-          "text_url": "http://www.apache.org/licenses/LICENSE-1.0",
-          "reference_url": "https://scancode-licensedb.aboutcode.org/apache-1.0",
-          "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-1.0.LICENSE",
-          "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-1.0.yml",
-          "spdx_license_key": "Apache-1.0",
-          "spdx_url": "https://spdx.org/licenses/Apache-1.0",
-          "start_line": 40,
-          "end_line": 90,
-          "matched_rule": {
-            "identifier": "apache-1.0.LICENSE",
-            "license_expression": "apache-1.0",
-            "licenses": [
-              "apache-1.0"
-            ],
-            "referenced_filenames": [],
-            "is_license_text": true,
-            "is_license_notice": false,
-            "is_license_reference": false,
-            "is_license_tag": false,
-            "is_license_intro": false,
-            "has_unknown": false,
-            "matcher": "2-aho",
-            "rule_length": 368,
-            "matched_length": 368,
-            "match_coverage": 100.0,
-            "rule_relevance": 100
-          },
-          "matched_text": "Redistribution and use in source and binary forms, with or without\r\nmodification, are permitted provided that the following conditions\r\nare met:\r\n\r\n 1. Redistributions of source code must retain the above copyright\r\n    notice, this list of conditions and the following disclaimer. \r\n \r\n 2. Redistributions in binary form must reproduce the above copyright\r\n    notice, this list of conditions and the following disclaimer in\r\n    the documentation and/or other materials provided with the\r\n    distribution.\r\n \r\n 3. All advertising materials mentioning features or use of this\r\n    software must display the following acknowledgment:\r\n    \"This product includes software developed by the Apache Group\r\n    for use in the Apache HTTP server project (http://www.apache.org/).\"\r\n \r\n 4. The names \"Apache Server\" and \"Apache Group\" must not be used to\r\n    endorse or promote products derived from this software without\r\n    prior written permission. For written permission, please contact\r\n    apache@apache.org.\r\n \r\n 5. Products derived from this software may not be called \"Apache\"\r\n    nor may \"Apache\" appear in their names without prior written\r\n    permission of the Apache Group.\r\n \r\n 6. Redistributions of any form whatsoever must retain the following\r\n    acknowledgment:\r\n    \"This product includes software developed by the Apache Group\r\n    for use in the Apache HTTP server project (http://www.apache.org/).\"\r\n \r\n THIS SOFTWARE IS PROVIDED BY THE APACHE GROUP ``AS IS'' AND ANY\r\n EXPRESSED OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE\r\n IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR\r\n PURPOSE ARE DISCLAIMED.  IN NO EVENT SHALL THE APACHE GROUP OR\r\n ITS CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,\r\n SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT\r\n NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;\r\n LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)\r\n HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT,\r\n STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)\r\n ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED\r\n OF THE POSSIBILITY OF SUCH DAMAGE.\r\n====================================================================\r\n\r\n This software consists of voluntary contributions made by many\r\n individuals on behalf of the Apache Group and was originally based\r\n on public domain software written at the National Center for\r\n Supercomputing Applications, University of Illinois, Urbana-Champaign.\r\n For more information on the Apache Group and the Apache HTTP server\r\n project, please see <http://www.apache.org/>."
+          "license_expression": "apache-1.0",
+          "detection_log": [
+            "not-combined"
+          ],
+          "matches": [
+            {
+              "score": 100.0,
+              "start_line": 40,
+              "end_line": 90,
+              "matched_length": 368,
+              "match_coverage": 100.0,
+              "matcher": "2-aho",
+              "license_expression": "apache-1.0",
+              "rule_identifier": "apache-1.0.LICENSE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-1.0.LICENSE",
+              "referenced_filenames": [],
+              "is_license_text": true,
+              "is_license_notice": false,
+              "is_license_reference": false,
+              "is_license_tag": false,
+              "is_license_intro": false,
+              "rule_length": 368,
+              "rule_relevance": 100,
+              "matched_text": "Redistribution and use in source and binary forms, with or without\r\nmodification, are permitted provided that the following conditions\r\nare met:\r\n\r\n 1. Redistributions of source code must retain the above copyright\r\n    notice, this list of conditions and the following disclaimer. \r\n \r\n 2. Redistributions in binary form must reproduce the above copyright\r\n    notice, this list of conditions and the following disclaimer in\r\n    the documentation and/or other materials provided with the\r\n    distribution.\r\n \r\n 3. All advertising materials mentioning features or use of this\r\n    software must display the following acknowledgment:\r\n    \"This product includes software developed by the Apache Group\r\n    for use in the Apache HTTP server project (http://www.apache.org/).\"\r\n \r\n 4. The names \"Apache Server\" and \"Apache Group\" must not be used to\r\n    endorse or promote products derived from this software without\r\n    prior written permission. For written permission, please contact\r\n    apache@apache.org.\r\n \r\n 5. Products derived from this software may not be called \"Apache\"\r\n    nor may \"Apache\" appear in their names without prior written\r\n    permission of the Apache Group.\r\n \r\n 6. Redistributions of any form whatsoever must retain the following\r\n    acknowledgment:\r\n    \"This product includes software developed by the Apache Group\r\n    for use in the Apache HTTP server project (http://www.apache.org/).\"\r\n \r\n THIS SOFTWARE IS PROVIDED BY THE APACHE GROUP ``AS IS'' AND ANY\r\n EXPRESSED OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE\r\n IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR\r\n PURPOSE ARE DISCLAIMED.  IN NO EVENT SHALL THE APACHE GROUP OR\r\n ITS CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,\r\n SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT\r\n NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;\r\n LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)\r\n HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT,\r\n STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)\r\n ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED\r\n OF THE POSSIBILITY OF SUCH DAMAGE.\r\n====================================================================\r\n\r\n This software consists of voluntary contributions made by many\r\n individuals on behalf of the Apache Group and was originally based\r\n on public domain software written at the National Center for\r\n Supercomputing Applications, University of Illinois, Urbana-Champaign.\r\n For more information on the Apache Group and the Apache HTTP server\r\n project, please see <http://www.apache.org/>.",
+              "licenses": [
+                {
+                  "key": "apache-1.0",
+                  "name": "Apache License 1.0",
+                  "short_name": "Apache 1.0",
+                  "category": "Permissive",
+                  "is_exception": false,
+                  "is_unknown": false,
+                  "owner": "Apache Software Foundation",
+                  "homepage_url": "http://www.apache.org/licenses/",
+                  "text_url": "http://www.apache.org/licenses/LICENSE-1.0",
+                  "reference_url": "https://scancode-licensedb.aboutcode.org/apache-1.0",
+                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-1.0.LICENSE",
+                  "spdx_license_key": "Apache-1.0",
+                  "spdx_url": "https://spdx.org/licenses/Apache-1.0"
+                }
+              ]
+            }
+          ]
         }
       ],
-      "license_expressions": [
-        "apache-1.0"
-      ],
+      "license_clues": [],
       "percentage_of_license_text": 40.98,
       "is_license_text": false,
       "files_count": 0,
@@ -187,92 +201,103 @@
       "is_media": false,
       "is_source": true,
       "is_script": false,
-      "licenses": [
+      "detected_license_expression": "ja-sig AND apache-2.0",
+      "detected_license_expression_spdx": "LicenseRef-scancode-ja-sig AND Apache-2.0",
+      "license_detections": [
         {
-          "key": "ja-sig",
-          "score": 100.0,
-          "name": "JA-SiG License",
-          "short_name": "JA-SiG License",
-          "category": "Permissive",
-          "is_exception": false,
-          "is_unknown": false,
-          "owner": "JA-SIG Collaborative",
-          "homepage_url": "http://web.archive.org/web/20040402030132/http://uportal.org/license.html",
-          "text_url": "",
-          "reference_url": "https://scancode-licensedb.aboutcode.org/ja-sig",
-          "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/ja-sig.LICENSE",
-          "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/ja-sig.yml",
-          "spdx_license_key": "LicenseRef-scancode-ja-sig",
-          "spdx_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/ja-sig.LICENSE",
-          "start_line": 4,
-          "end_line": 13,
-          "matched_rule": {
-            "identifier": "ja-sig.LICENSE",
-            "license_expression": "ja-sig",
-            "licenses": [
-              "ja-sig"
-            ],
-            "referenced_filenames": [],
-            "is_license_text": true,
-            "is_license_notice": false,
-            "is_license_reference": false,
-            "is_license_tag": false,
-            "is_license_intro": false,
-            "has_unknown": false,
-            "matcher": "2-aho",
-            "rule_length": 212,
-            "matched_length": 212,
-            "match_coverage": 100.0,
-            "rule_relevance": 100
-          },
-          "matched_text": "Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:\n\n1. Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.\n\n2. Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.\n\n3. Redistributions of any form whatsoever must retain the following acknowledgment:\n\"This product includes software developed by the JA-SIG Collaborative (http://www.ja-sig.org/).\"\n\nThis software is provided by the JA-SIG collaborative \"as is\" and any expressed or implied warranties, including, but not limited to, the implied warranties of merchantability and fitness for a particular purpose are disclaimed. In no event shall the JA-SIG collaborative or its contributors be liable for any direct, indirect, incidental, special, exemplary, or consequential damages (including, but not limited to, procurement of substitute goods or services; loss of use, data, or profits; or business interruption) however caused and on any theory of liability,\n whether in contract, strict liability, or tort (including negligence or otherwise) arising in any way out of the use of this software, even if advised of the possibility of such damage."
+          "license_expression": "ja-sig",
+          "detection_log": [
+            "not-combined"
+          ],
+          "matches": [
+            {
+              "score": 100.0,
+              "start_line": 4,
+              "end_line": 13,
+              "matched_length": 212,
+              "match_coverage": 100.0,
+              "matcher": "2-aho",
+              "license_expression": "ja-sig",
+              "rule_identifier": "ja-sig.LICENSE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/ja-sig.LICENSE",
+              "referenced_filenames": [],
+              "is_license_text": true,
+              "is_license_notice": false,
+              "is_license_reference": false,
+              "is_license_tag": false,
+              "is_license_intro": false,
+              "rule_length": 212,
+              "rule_relevance": 100,
+              "matched_text": "Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:\n\n1. Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.\n\n2. Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.\n\n3. Redistributions of any form whatsoever must retain the following acknowledgment:\n\"This product includes software developed by the JA-SIG Collaborative (http://www.ja-sig.org/).\"\n\nThis software is provided by the JA-SIG collaborative \"as is\" and any expressed or implied warranties, including, but not limited to, the implied warranties of merchantability and fitness for a particular purpose are disclaimed. In no event shall the JA-SIG collaborative or its contributors be liable for any direct, indirect, incidental, special, exemplary, or consequential damages (including, but not limited to, procurement of substitute goods or services; loss of use, data, or profits; or business interruption) however caused and on any theory of liability,\n whether in contract, strict liability, or tort (including negligence or otherwise) arising in any way out of the use of this software, even if advised of the possibility of such damage.",
+              "licenses": [
+                {
+                  "key": "ja-sig",
+                  "name": "JA-SiG License",
+                  "short_name": "JA-SiG License",
+                  "category": "Permissive",
+                  "is_exception": false,
+                  "is_unknown": false,
+                  "owner": "JA-SIG Collaborative",
+                  "homepage_url": "http://web.archive.org/web/20040402030132/http://uportal.org/license.html",
+                  "text_url": "",
+                  "reference_url": "https://scancode-licensedb.aboutcode.org/ja-sig",
+                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/ja-sig.LICENSE",
+                  "spdx_license_key": "LicenseRef-scancode-ja-sig",
+                  "spdx_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/ja-sig.LICENSE"
+                }
+              ]
+            }
+          ]
         },
         {
-          "key": "apache-2.0",
-          "score": 100.0,
-          "name": "Apache License 2.0",
-          "short_name": "Apache 2.0",
-          "category": "Permissive",
-          "is_exception": false,
-          "is_unknown": false,
-          "owner": "Apache Software Foundation",
-          "homepage_url": "http://www.apache.org/licenses/",
-          "text_url": "http://www.apache.org/licenses/LICENSE-2.0",
-          "reference_url": "https://scancode-licensedb.aboutcode.org/apache-2.0",
-          "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.LICENSE",
-          "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.yml",
-          "spdx_license_key": "Apache-2.0",
-          "spdx_url": "https://spdx.org/licenses/Apache-2.0",
-          "start_line": 18,
-          "end_line": 31,
-          "matched_rule": {
-            "identifier": "apache-2.0_2.RULE",
-            "license_expression": "apache-2.0",
-            "licenses": [
-              "apache-2.0"
-            ],
-            "referenced_filenames": [
-              "NOTICE"
-            ],
-            "is_license_text": false,
-            "is_license_notice": true,
-            "is_license_reference": false,
-            "is_license_tag": false,
-            "is_license_intro": false,
-            "has_unknown": false,
-            "matcher": "2-aho",
-            "rule_length": 119,
-            "matched_length": 119,
-            "match_coverage": 100.0,
-            "rule_relevance": 100
-          },
-          "matched_text": "Licensed to the Apache Software Foundation (ASF) under one or more\n * contributor license agreements.  See the NOTICE file distributed with\n * this work for additional information regarding copyright ownership.\n * The ASF licenses this file to You under the Apache License, Version 2.0\n * (the \"License\"); you may not use this file except in compliance with\n * the License.  You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License."
+          "license_expression": "apache-2.0",
+          "detection_log": [
+            "not-combined"
+          ],
+          "matches": [
+            {
+              "score": 100.0,
+              "start_line": 18,
+              "end_line": 31,
+              "matched_length": 119,
+              "match_coverage": 100.0,
+              "matcher": "2-aho",
+              "license_expression": "apache-2.0",
+              "rule_identifier": "apache-2.0_2.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_2.RULE",
+              "referenced_filenames": [
+                "NOTICE"
+              ],
+              "is_license_text": false,
+              "is_license_notice": true,
+              "is_license_reference": false,
+              "is_license_tag": false,
+              "is_license_intro": false,
+              "rule_length": 119,
+              "rule_relevance": 100,
+              "matched_text": "Licensed to the Apache Software Foundation (ASF) under one or more\n * contributor license agreements.  See the NOTICE file distributed with\n * this work for additional information regarding copyright ownership.\n * The ASF licenses this file to You under the Apache License, Version 2.0\n * (the \"License\"); you may not use this file except in compliance with\n * the License.  You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.",
+              "licenses": [
+                {
+                  "key": "apache-2.0",
+                  "name": "Apache License 2.0",
+                  "short_name": "Apache 2.0",
+                  "category": "Permissive",
+                  "is_exception": false,
+                  "is_unknown": false,
+                  "owner": "Apache Software Foundation",
+                  "homepage_url": "http://www.apache.org/licenses/",
+                  "text_url": "http://www.apache.org/licenses/LICENSE-2.0",
+                  "reference_url": "https://scancode-licensedb.aboutcode.org/apache-2.0",
+                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.LICENSE",
+                  "spdx_license_key": "Apache-2.0",
+                  "spdx_url": "https://spdx.org/licenses/Apache-2.0"
+                }
+              ]
+            }
+          ]
         }
       ],
-      "license_expressions": [
-        "ja-sig",
-        "apache-2.0"
-      ],
+      "license_clues": [],
       "percentage_of_license_text": 91.69,
       "is_license_text": true,
       "files_count": 0,
@@ -299,134 +324,86 @@
       "is_media": false,
       "is_source": false,
       "is_script": false,
-      "licenses": [
+      "detected_license_expression": "gpl-2.0 WITH linux-syscall-exception-gpl OR linux-openib",
+      "detected_license_expression_spdx": "GPL-2.0-only WITH Linux-syscall-note OR Linux-OpenIB",
+      "license_detections": [
         {
-          "key": "gpl-2.0",
-          "score": 100.0,
-          "name": "GNU General Public License 2.0",
-          "short_name": "GPL 2.0",
-          "category": "Copyleft",
-          "is_exception": false,
-          "is_unknown": false,
-          "owner": "Free Software Foundation (FSF)",
-          "homepage_url": "http://www.gnu.org/licenses/gpl-2.0.html",
-          "text_url": "http://www.gnu.org/licenses/gpl-2.0.txt",
-          "reference_url": "https://scancode-licensedb.aboutcode.org/gpl-2.0",
-          "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-2.0.LICENSE",
-          "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-2.0.yml",
-          "spdx_license_key": "GPL-2.0-only",
-          "spdx_url": "https://spdx.org/licenses/GPL-2.0-only",
-          "start_line": 1,
-          "end_line": 1,
-          "matched_rule": {
-            "identifier": "spdx-license-identifier: gpl-2.0 WITH linux-syscall-exception-gpl OR linux-openib",
-            "license_expression": "gpl-2.0 WITH linux-syscall-exception-gpl OR linux-openib",
-            "licenses": [
-              "gpl-2.0",
-              "linux-syscall-exception-gpl",
-              "linux-openib"
-            ],
-            "referenced_filenames": [],
-            "is_license_text": false,
-            "is_license_notice": false,
-            "is_license_reference": false,
-            "is_license_tag": true,
-            "is_license_intro": false,
-            "has_unknown": false,
-            "matcher": "1-spdx-id",
-            "rule_length": 13,
-            "matched_length": 13,
-            "match_coverage": 100.0,
-            "rule_relevance": 100
-          },
-          "matched_text": "SPDX-License-Identifier: ((GPL-2.0 WITH Linux-syscall-note) OR Linux-Openib) */"
-        },
-        {
-          "key": "linux-syscall-exception-gpl",
-          "score": 100.0,
-          "name": "Linux Syscall Exception to GPL",
-          "short_name": "Linux Syscall Exception to GPL",
-          "category": "Copyleft Limited",
-          "is_exception": true,
-          "is_unknown": false,
-          "owner": "Linux Foundation",
-          "homepage_url": null,
-          "text_url": "",
-          "reference_url": "https://scancode-licensedb.aboutcode.org/linux-syscall-exception-gpl",
-          "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/linux-syscall-exception-gpl.LICENSE",
-          "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/linux-syscall-exception-gpl.yml",
-          "spdx_license_key": "Linux-syscall-note",
-          "spdx_url": "https://spdx.org/licenses/Linux-syscall-note",
-          "start_line": 1,
-          "end_line": 1,
-          "matched_rule": {
-            "identifier": "spdx-license-identifier: gpl-2.0 WITH linux-syscall-exception-gpl OR linux-openib",
-            "license_expression": "gpl-2.0 WITH linux-syscall-exception-gpl OR linux-openib",
-            "licenses": [
-              "gpl-2.0",
-              "linux-syscall-exception-gpl",
-              "linux-openib"
-            ],
-            "referenced_filenames": [],
-            "is_license_text": false,
-            "is_license_notice": false,
-            "is_license_reference": false,
-            "is_license_tag": true,
-            "is_license_intro": false,
-            "has_unknown": false,
-            "matcher": "1-spdx-id",
-            "rule_length": 13,
-            "matched_length": 13,
-            "match_coverage": 100.0,
-            "rule_relevance": 100
-          },
-          "matched_text": "SPDX-License-Identifier: ((GPL-2.0 WITH Linux-syscall-note) OR Linux-Openib) */"
-        },
-        {
-          "key": "linux-openib",
-          "score": 100.0,
-          "name": "Linux-OpenIB",
-          "short_name": "Linux-OpenIB",
-          "category": "Permissive",
-          "is_exception": false,
-          "is_unknown": false,
-          "owner": "Linux Foundation",
-          "homepage_url": "https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/drivers/infiniband/core/sa.h",
-          "text_url": "https://github.com/ofiwg/libfabric/blob/master/contrib/buildrpm/README",
-          "reference_url": "https://scancode-licensedb.aboutcode.org/linux-openib",
-          "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/linux-openib.LICENSE",
-          "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/linux-openib.yml",
-          "spdx_license_key": "Linux-OpenIB",
-          "spdx_url": "https://spdx.org/licenses/Linux-OpenIB",
-          "start_line": 1,
-          "end_line": 1,
-          "matched_rule": {
-            "identifier": "spdx-license-identifier: gpl-2.0 WITH linux-syscall-exception-gpl OR linux-openib",
-            "license_expression": "gpl-2.0 WITH linux-syscall-exception-gpl OR linux-openib",
-            "licenses": [
-              "gpl-2.0",
-              "linux-syscall-exception-gpl",
-              "linux-openib"
-            ],
-            "referenced_filenames": [],
-            "is_license_text": false,
-            "is_license_notice": false,
-            "is_license_reference": false,
-            "is_license_tag": true,
-            "is_license_intro": false,
-            "has_unknown": false,
-            "matcher": "1-spdx-id",
-            "rule_length": 13,
-            "matched_length": 13,
-            "match_coverage": 100.0,
-            "rule_relevance": 100
-          },
-          "matched_text": "SPDX-License-Identifier: ((GPL-2.0 WITH Linux-syscall-note) OR Linux-Openib) */"
+          "license_expression": "gpl-2.0 WITH linux-syscall-exception-gpl OR linux-openib",
+          "detection_log": [
+            "not-combined"
+          ],
+          "matches": [
+            {
+              "score": 100.0,
+              "start_line": 1,
+              "end_line": 1,
+              "matched_length": 13,
+              "match_coverage": 100.0,
+              "matcher": "1-spdx-id",
+              "license_expression": "gpl-2.0 WITH linux-syscall-exception-gpl OR linux-openib",
+              "rule_identifier": "spdx-license-identifier: gpl-2.0 WITH linux-syscall-exception-gpl OR linux-openib",
+              "rule_url": null,
+              "referenced_filenames": [],
+              "is_license_text": false,
+              "is_license_notice": false,
+              "is_license_reference": false,
+              "is_license_tag": true,
+              "is_license_intro": false,
+              "rule_length": 13,
+              "rule_relevance": 100,
+              "matched_text": "SPDX-License-Identifier: ((GPL-2.0 WITH Linux-syscall-note) OR Linux-Openib) */",
+              "licenses": [
+                {
+                  "key": "gpl-2.0",
+                  "name": "GNU General Public License 2.0",
+                  "short_name": "GPL 2.0",
+                  "category": "Copyleft",
+                  "is_exception": false,
+                  "is_unknown": false,
+                  "owner": "Free Software Foundation (FSF)",
+                  "homepage_url": "http://www.gnu.org/licenses/gpl-2.0.html",
+                  "text_url": "http://www.gnu.org/licenses/gpl-2.0.txt",
+                  "reference_url": "https://scancode-licensedb.aboutcode.org/gpl-2.0",
+                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-2.0.LICENSE",
+                  "spdx_license_key": "GPL-2.0-only",
+                  "spdx_url": "https://spdx.org/licenses/GPL-2.0-only"
+                },
+                {
+                  "key": "linux-syscall-exception-gpl",
+                  "name": "Linux Syscall Exception to GPL",
+                  "short_name": "Linux Syscall Exception to GPL",
+                  "category": "Copyleft Limited",
+                  "is_exception": true,
+                  "is_unknown": false,
+                  "owner": "Linux Foundation",
+                  "homepage_url": null,
+                  "text_url": "",
+                  "reference_url": "https://scancode-licensedb.aboutcode.org/linux-syscall-exception-gpl",
+                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/linux-syscall-exception-gpl.LICENSE",
+                  "spdx_license_key": "Linux-syscall-note",
+                  "spdx_url": "https://spdx.org/licenses/Linux-syscall-note"
+                },
+                {
+                  "key": "linux-openib",
+                  "name": "Linux-OpenIB",
+                  "short_name": "Linux-OpenIB",
+                  "category": "Permissive",
+                  "is_exception": false,
+                  "is_unknown": false,
+                  "owner": "Linux Foundation",
+                  "homepage_url": "https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/drivers/infiniband/core/sa.h",
+                  "text_url": "https://github.com/ofiwg/libfabric/blob/master/contrib/buildrpm/README",
+                  "reference_url": "https://scancode-licensedb.aboutcode.org/linux-openib",
+                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/linux-openib.LICENSE",
+                  "spdx_license_key": "Linux-OpenIB",
+                  "spdx_url": "https://spdx.org/licenses/Linux-OpenIB"
+                }
+              ]
+            }
+          ]
         }
       ],
-      "license_expressions": [
-        "gpl-2.0 WITH linux-syscall-exception-gpl OR linux-openib"
-      ],
+      "license_clues": [],
       "percentage_of_license_text": 100.0,
       "is_license_text": true,
       "files_count": 0,
@@ -453,92 +430,103 @@
       "is_media": false,
       "is_source": true,
       "is_script": false,
-      "licenses": [
+      "detected_license_expression": "ja-sig AND apache-2.0",
+      "detected_license_expression_spdx": "LicenseRef-scancode-ja-sig AND Apache-2.0",
+      "license_detections": [
         {
-          "key": "ja-sig",
-          "score": 100.0,
-          "name": "JA-SiG License",
-          "short_name": "JA-SiG License",
-          "category": "Permissive",
-          "is_exception": false,
-          "is_unknown": false,
-          "owner": "JA-SIG Collaborative",
-          "homepage_url": "http://web.archive.org/web/20040402030132/http://uportal.org/license.html",
-          "text_url": "",
-          "reference_url": "https://scancode-licensedb.aboutcode.org/ja-sig",
-          "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/ja-sig.LICENSE",
-          "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/ja-sig.yml",
-          "spdx_license_key": "LicenseRef-scancode-ja-sig",
-          "spdx_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/ja-sig.LICENSE",
-          "start_line": 4,
-          "end_line": 13,
-          "matched_rule": {
-            "identifier": "ja-sig.LICENSE",
-            "license_expression": "ja-sig",
-            "licenses": [
-              "ja-sig"
-            ],
-            "referenced_filenames": [],
-            "is_license_text": true,
-            "is_license_notice": false,
-            "is_license_reference": false,
-            "is_license_tag": false,
-            "is_license_intro": false,
-            "has_unknown": false,
-            "matcher": "2-aho",
-            "rule_length": 212,
-            "matched_length": 212,
-            "match_coverage": 100.0,
-            "rule_relevance": 100
-          },
-          "matched_text": "Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:\n\n1. Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.\n\n2. Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.\n\n3. Redistributions of any form whatsoever must retain the following acknowledgment:\n\"This product includes software developed by the JA-SIG Collaborative (http://www.ja-sig.org/).\"\n\nThis software is provided by the JA-SIG collaborative \"as is\" and any expressed or implied warranties, including, but not limited to, the implied warranties of merchantability and fitness for a particular purpose are disclaimed. In no event shall the JA-SIG collaborative or its contributors be liable for any direct, indirect, incidental, special, exemplary, or consequential damages (including, but not limited to, procurement of substitute goods or services; loss of use, data, or profits; or business interruption) however caused and on any theory of liability,\n whether in contract, strict liability, or tort (including negligence or otherwise) arising in any way out of the use of this software, even if advised of the possibility of such damage."
+          "license_expression": "ja-sig",
+          "detection_log": [
+            "not-combined"
+          ],
+          "matches": [
+            {
+              "score": 100.0,
+              "start_line": 4,
+              "end_line": 13,
+              "matched_length": 212,
+              "match_coverage": 100.0,
+              "matcher": "2-aho",
+              "license_expression": "ja-sig",
+              "rule_identifier": "ja-sig.LICENSE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/ja-sig.LICENSE",
+              "referenced_filenames": [],
+              "is_license_text": true,
+              "is_license_notice": false,
+              "is_license_reference": false,
+              "is_license_tag": false,
+              "is_license_intro": false,
+              "rule_length": 212,
+              "rule_relevance": 100,
+              "matched_text": "Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:\n\n1. Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.\n\n2. Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.\n\n3. Redistributions of any form whatsoever must retain the following acknowledgment:\n\"This product includes software developed by the JA-SIG Collaborative (http://www.ja-sig.org/).\"\n\nThis software is provided by the JA-SIG collaborative \"as is\" and any expressed or implied warranties, including, but not limited to, the implied warranties of merchantability and fitness for a particular purpose are disclaimed. In no event shall the JA-SIG collaborative or its contributors be liable for any direct, indirect, incidental, special, exemplary, or consequential damages (including, but not limited to, procurement of substitute goods or services; loss of use, data, or profits; or business interruption) however caused and on any theory of liability,\n whether in contract, strict liability, or tort (including negligence or otherwise) arising in any way out of the use of this software, even if advised of the possibility of such damage.",
+              "licenses": [
+                {
+                  "key": "ja-sig",
+                  "name": "JA-SiG License",
+                  "short_name": "JA-SiG License",
+                  "category": "Permissive",
+                  "is_exception": false,
+                  "is_unknown": false,
+                  "owner": "JA-SIG Collaborative",
+                  "homepage_url": "http://web.archive.org/web/20040402030132/http://uportal.org/license.html",
+                  "text_url": "",
+                  "reference_url": "https://scancode-licensedb.aboutcode.org/ja-sig",
+                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/ja-sig.LICENSE",
+                  "spdx_license_key": "LicenseRef-scancode-ja-sig",
+                  "spdx_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/ja-sig.LICENSE"
+                }
+              ]
+            }
+          ]
         },
         {
-          "key": "apache-2.0",
-          "score": 100.0,
-          "name": "Apache License 2.0",
-          "short_name": "Apache 2.0",
-          "category": "Permissive",
-          "is_exception": false,
-          "is_unknown": false,
-          "owner": "Apache Software Foundation",
-          "homepage_url": "http://www.apache.org/licenses/",
-          "text_url": "http://www.apache.org/licenses/LICENSE-2.0",
-          "reference_url": "https://scancode-licensedb.aboutcode.org/apache-2.0",
-          "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.LICENSE",
-          "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.yml",
-          "spdx_license_key": "Apache-2.0",
-          "spdx_url": "https://spdx.org/licenses/Apache-2.0",
-          "start_line": 18,
-          "end_line": 31,
-          "matched_rule": {
-            "identifier": "apache-2.0_2.RULE",
-            "license_expression": "apache-2.0",
-            "licenses": [
-              "apache-2.0"
-            ],
-            "referenced_filenames": [
-              "NOTICE"
-            ],
-            "is_license_text": false,
-            "is_license_notice": true,
-            "is_license_reference": false,
-            "is_license_tag": false,
-            "is_license_intro": false,
-            "has_unknown": false,
-            "matcher": "2-aho",
-            "rule_length": 119,
-            "matched_length": 119,
-            "match_coverage": 100.0,
-            "rule_relevance": 100
-          },
-          "matched_text": "Licensed to the Apache Software Foundation (ASF) under one or more\n * contributor license agreements.  See the NOTICE file distributed with\n * this work for additional information regarding copyright ownership.\n * The ASF licenses this file to You under the Apache License, Version 2.0\n * (the \"License\"); you may not use this file except in compliance with\n * the License.  You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License."
+          "license_expression": "apache-2.0",
+          "detection_log": [
+            "not-combined"
+          ],
+          "matches": [
+            {
+              "score": 100.0,
+              "start_line": 18,
+              "end_line": 31,
+              "matched_length": 119,
+              "match_coverage": 100.0,
+              "matcher": "2-aho",
+              "license_expression": "apache-2.0",
+              "rule_identifier": "apache-2.0_2.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_2.RULE",
+              "referenced_filenames": [
+                "NOTICE"
+              ],
+              "is_license_text": false,
+              "is_license_notice": true,
+              "is_license_reference": false,
+              "is_license_tag": false,
+              "is_license_intro": false,
+              "rule_length": 119,
+              "rule_relevance": 100,
+              "matched_text": "Licensed to the Apache Software Foundation (ASF) under one or more\n * contributor license agreements.  See the NOTICE file distributed with\n * this work for additional information regarding copyright ownership.\n * The ASF licenses this file to You under the Apache License, Version 2.0\n * (the \"License\"); you may not use this file except in compliance with\n * the License.  You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.",
+              "licenses": [
+                {
+                  "key": "apache-2.0",
+                  "name": "Apache License 2.0",
+                  "short_name": "Apache 2.0",
+                  "category": "Permissive",
+                  "is_exception": false,
+                  "is_unknown": false,
+                  "owner": "Apache Software Foundation",
+                  "homepage_url": "http://www.apache.org/licenses/",
+                  "text_url": "http://www.apache.org/licenses/LICENSE-2.0",
+                  "reference_url": "https://scancode-licensedb.aboutcode.org/apache-2.0",
+                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.LICENSE",
+                  "spdx_license_key": "Apache-2.0",
+                  "spdx_url": "https://spdx.org/licenses/Apache-2.0"
+                }
+              ]
+            }
+          ]
         }
       ],
-      "license_expressions": [
-        "ja-sig",
-        "apache-2.0"
-      ],
+      "license_clues": [],
       "percentage_of_license_text": 30.71,
       "is_license_text": false,
       "files_count": 0,

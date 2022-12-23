@@ -1,3 +1,14 @@
+---
+key: carnegie-mellon-contributors
+short_name: Carnegie Mellon Contributors
+name: Carnegie Mellon Contributors License
+category: Permissive
+owner: Carnegie Mellon University
+spdx_license_key: LicenseRef-scancode-carnegie-mellon-contributors
+ignorable_emails:
+    - Software.Distribution@CS.CMU.EDU
+---
+
 Permission to use, copy, modify and distribute this software and its
 documentation is hereby granted, provided that both the copyright notice and
 this permission notice appear in all copies of the software, derivative works or

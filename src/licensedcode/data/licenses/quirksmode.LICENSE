@@ -1,3 +1,16 @@
+---
+key: quirksmode
+short_name: Quirksmode Copyright Notice
+name: Quirksmode Copyright Notice
+category: Permissive
+owner: Quirksmode
+homepage_url: http://www.quirksmode.org/about/copyright.html
+spdx_license_key: LicenseRef-scancode-quirksmode
+ignorable_urls:
+    - http://www.quirksmode.org/
+    - http://www.quirksmode.org/about/copyright.html
+---
+
 Quirksmode Copyright Notice
 http://www.quirksmode.org/about/copyright.html 
 

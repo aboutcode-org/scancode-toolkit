@@ -1,3 +1,10 @@
+---
+license_expression: npl-1.0
+is_license_notice: yes
+ignorable_urls:
+    - http://www.mozilla.org/NPL/
+---
+
 #  *
 #  * The contents of this file are subject to the Netscape Public License
 #  * Version 1.0 (the "NPL"); you may not use this file except in

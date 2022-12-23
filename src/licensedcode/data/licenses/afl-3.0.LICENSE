@@ -1,3 +1,28 @@
+---
+key: afl-3.0
+short_name: AFL 3.0
+name: Academic Free License 3.0
+category: Permissive
+owner: Lawrence Rosen
+homepage_url: http://opensource.org/licenses/afl-3.0.php
+notes: Per SPDX.org, this license is OSI certified.
+spdx_license_key: AFL-3.0
+osi_license_key: AFL-3.0
+text_urls:
+    - http://www.opensource.org/licenses/afl-3.0.php
+    - http://www.rosenlaw.com/AFL3.0.htm
+osi_url: http://opensource.org/licenses/afl-3.0.php
+faq_url: http://www.rosenlaw.com/OSL3.0-explained.pdf
+other_urls:
+    - http://www.gnu.org/licenses/license-list.html#AcademicFreeLicense
+    - http://www.opensource.org/licenses/afl-3.0
+    - https://opensource.org/licenses/afl-3.0
+ignorable_copyrights:
+    - Copyright (c) 2005 Lawrence Rosen
+ignorable_holders:
+    - Lawrence Rosen
+---
+
 This Academic Free License (the "License") applies to any original work of authorship (the "Original Work") whose owner (the "Licensor") has placed the following licensing notice adjacent to the copyright notice for the Original Work:
 
 Licensed under the Academic Free License version 3.0

@@ -1,3 +1,10 @@
+---
+license_expression: openjdk-exception
+is_license_notice: yes
+ignorable_urls:
+    - http://openjdk.java.net/legal/exception-modules-2007-05-08.html
+    - http://www.gnu.org/copyleft/gpl.html
+---
 
 OpenJDK Assembly Exception
 
@@ -25,4 +32,3 @@ could not provide under GPL2 (or that Sun has provided under GPL2 with the
 Classpath exception).  If you modify or add to the OpenJDK code, that new
 GPL2 code may still be combined with Designated Exception Modules if the
 new code is made subject to this exception by its copyright holder.
-

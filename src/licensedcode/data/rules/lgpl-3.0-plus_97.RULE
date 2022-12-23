@@ -1,4 +1,11 @@
- * This library is free software; you can redistribute it and/or
+---
+license_expression: lgpl-3.0-plus
+is_license_notice: yes
+ignorable_urls:
+    - http://www.gnu.org/licenses/lgpl-3.0.txt
+---
+
+* This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Lesser General Public License
  * version 3, or (at your option) any later version as published by
  * the Free Software Foundation.

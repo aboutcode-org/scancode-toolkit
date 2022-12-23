@@ -1,4 +1,13 @@
- * Licensed to the Apache Software Foundation (ASF) under one
+---
+license_expression: apache-2.0
+is_license_notice: yes
+minimum_coverage: 90
+ignorable_urls:
+    - http://www.apache.org/
+    - https://www.apache.org/licenses/LICENSE-2.0
+---
+
+* Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
  * distributed with this work for additional information
  * regarding copyright ownership.  The ASF licenses this file

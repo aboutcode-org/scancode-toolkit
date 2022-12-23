@@ -1,3 +1,10 @@
+---
+license_expression: proprietary-license
+is_license_text: yes
+ignorable_emails:
+    - support@totallyobjects.com
+---
+
 SOFTWARE LICENSE AGREEMENT
 
 IMPORTANT-READ CAREFULLY: This Totally Objects License Agreement ('SLA')is a legal agreement between you (either an individual or a single entity) and Totally Objects for the Totally Objects product identified above, which includes computer software and may include associated media, printed materials, and "online" or electronic documentation ("SOFTWARE PRODUCT"). By installing, copying, or otherwise using the SOFTWARE PRODUCT, you agree to be bound by the terms of this SLA. If you do not agree to the terms of this SLA, do not install or use the SOFTWARE PRODUCT.
@@ -32,4 +39,4 @@ In no event shall Totally Objects or its suppliers be liable for any damages wha
 
 MISCELLANEOUS This SLA is governed by the laws of the United Kingdom.
 
-Should you have any questions concerning this SLA, or if you desire to contact Totally Objects for any reason, please contact support@totallyobjects.com. 
+Should you have any questions concerning this SLA, or if you desire to contact Totally Objects for any reason, please contact support@totallyobjects.com.

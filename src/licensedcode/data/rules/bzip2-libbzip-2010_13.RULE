@@ -1,5 +1,13 @@
+---
+license_expression: bzip2-libbzip-2010
+is_license_text: yes
+relevance: 100
+minimum_coverage: 60
+referenced_filenames:
+    - COPYING
+---
 
- Notice that the above BSD-style license applies to this one file
+Notice that the above BSD-style license applies to this one file
  (memcheck.h) only.  The entire rest of Valgrind is licensed under
  the terms of the GNU General Public License, version 2.  See the
  COPYING file in the source distribution for details.

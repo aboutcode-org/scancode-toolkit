@@ -1,4 +1,15 @@
- under the terms of the GNU
+---
+license_expression: lgpl-2.1 AND gpl-2.0 AND gpl-3.0
+is_license_notice: yes
+relevance: 100
+minimum_coverage: 90
+ignorable_urls:
+    - http://www.fsf.org/licensing/licenses/info/GPLv2.html
+    - https://www.gnu.org/copyleft/gpl.html
+    - https://www.gnu.org/licenses/old-licenses/lgpl-2.1.html
+---
+
+under the terms of the GNU
 Lesser General Public License version 2.1 (Qt only) or GNU General Public License
 version 2.0 (Qt, Qtopia and Qt Extended) or version 3 (Qt only) copies of which are
 located at https://www.gnu.org/licenses/old-licenses/lgpl-2.1.html,

@@ -1,3 +1,11 @@
+---
+license_expression: apache-2.0
+is_license_notice: yes
+relevance: 100
+minimum_coverage: 80
+notes: a fragment of Apache used as-is
+---
+
 copyrighted software made available under Version 2.0 of the Apache License
 
 You must give any other recipients of the Work or Derivative Works a copy of

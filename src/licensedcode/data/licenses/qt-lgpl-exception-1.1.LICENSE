@@ -1,3 +1,16 @@
+---
+key: qt-lgpl-exception-1.1
+short_name: Qt LGPL exception 1.1
+name: Qt LGPL exception 1.1
+category: Copyleft Limited
+owner: Qt Company
+homepage_url: http://code.qt.io/cgit/qt/qtbase.git/tree/LGPL_EXCEPTION.txt
+is_exception: yes
+spdx_license_key: Qt-LGPL-exception-1.1
+other_spdx_license_keys:
+    - Nokia-Qt-exception-1.1
+---
+
 The Qt Company Qt LGPL Exception version 1.1
 
 As an additional permission to the GNU Lesser General Public License version

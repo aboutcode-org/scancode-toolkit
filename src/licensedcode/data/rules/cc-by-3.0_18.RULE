@@ -1,3 +1,11 @@
+---
+license_expression: cc-by-3.0
+is_license_notice: yes
+relevance: 100
+ignorable_urls:
+    - http://creativecommons.org/licenses/by/3.0/
+---
+
 ' Licence:
 ' Creative Commons BY: http://creativecommons.org/licenses/by/3.0/
 ' You are free to use, share, distribute or change this work, as long as you mantain a reference

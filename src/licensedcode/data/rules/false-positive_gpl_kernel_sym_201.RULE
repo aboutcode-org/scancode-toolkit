@@ -1,1 +1,6 @@
-"uses GPL-only symbol 
+---
+is_false_positive: yes
+notes: seen in the Linux Kernel sources (kernel symbols related code or docs)
+---
+
+"uses GPL-only symbol

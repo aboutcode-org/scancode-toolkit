@@ -1,3 +1,9 @@
+---
+license_expression: public-domain-disclaimer
+is_license_text: yes
+relevance: 100
+---
+
 Berkeley Yacc is distributed with no warranty whatever.  The code
 is certain to contain errors.  Neither the author nor any contributor
 takes responsibility for any consequences of its use.

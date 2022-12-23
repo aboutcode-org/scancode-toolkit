@@ -1,3 +1,15 @@
+---
+key: cooperative-non-violent-4.0
+short_name: CNVPL 4.0
+name: Cooperative Non-Violent Public License v4
+category: Proprietary Free
+owner: Thufie
+homepage_url: https://thufie.lain.haus/NPL.html
+spdx_license_key: LicenseRef-scancode-cooperative-non-violent-4.0
+ignorable_urls:
+    - https://thufie.lain.haus/NPL.html
+---
+
 COOPERATIVE NON-VIOLENT PUBLIC LICENSE v4
 
 Preamble

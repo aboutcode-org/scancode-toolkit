@@ -1,2 +1,10 @@
+---
+license_expression: bsd-new
+is_license_reference: yes
+relevance: 99
+ignorable_urls:
+    - http://creativecommons.org/licenses/BSD/
+---
+
 BSD License (BSD)
     link: http://creativecommons.org/licenses/BSD/

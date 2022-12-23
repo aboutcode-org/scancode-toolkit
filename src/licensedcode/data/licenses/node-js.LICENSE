@@ -1,3 +1,78 @@
+---
+key: node-js
+short_name: Node License
+name: Node License
+category: Permissive
+owner: Joyent
+homepage_url: https://raw.githubusercontent.com/nodejs/node/master/LICENSE
+notes: composite
+spdx_license_key: LicenseRef-scancode-node-js
+other_urls:
+    - https://nodejs.org/en/
+minimum_coverage: 70
+ignorable_copyrights:
+    - Copyright (c) 1995-2013 Jean-loup Gailly and Mark Adler
+    - Copyright (c) 1998-2011 The OpenSSL Project
+    - Copyright (c) 2000-2006, The Perl Foundation
+    - Copyright (c) 2002-2012 Igor Sysoev
+    - Copyright (c) 2007, Google Inc.
+    - Copyright (c) 2009 Google Inc.
+    - Copyright (c) 2011, Ben Noordhuis <info@bnoordhuis.nl>
+    - Copyright (c) 2011,2012 Nginx, Inc.
+    - Copyright (c) 2011-2012, Christopher Jeffrey (https://github.com/chjj/)
+    - Copyright (c) Isaac Z. Schlueter
+    - Copyright (c) by Tjarda Koster, http://jelloween.deviantart.com
+    - Copyright 1998 by the Massachusetts Institute of Technology
+    - Copyright 2006-2012, the V8 project authors
+    - Copyright 2011 Mathias Bynens <http://mathiasbynens.be/>
+    - Copyright Joyent, Inc. and other Node contributors
+    - copyright 2011 Mathias Bynens <http://mathiasbynens.be/>
+    - copyright Igor Sysoev
+    - copyright Joyent, Inc. and other Node contributors
+    - copyrighted by Apple Computer, Inc.
+    - copyrighted by Sun Microsystems Inc.
+    - copyrighted by the University of Cambridge and Google, Inc.
+ignorable_holders:
+    - Apple Computer, Inc.
+    - Ben Noordhuis
+    - Christopher Jeffrey
+    - Google Inc.
+    - Igor Sysoev
+    - Isaac Z. Schlueter
+    - Jean-loup Gailly and Mark Adler
+    - Joyent, Inc. and other Node contributors
+    - Mathias Bynens
+    - Nginx, Inc.
+    - Sun Microsystems Inc.
+    - The OpenSSL Project
+    - The Perl Foundation
+    - Tjarda Koster
+    - the Massachusetts Institute of Technology
+    - the University of Cambridge and Google, Inc.
+    - the V8 project authors
+ignorable_authors:
+    - Eric Young (eay@cryptsoft.com)
+    - Mathias Pettersson and Brian Hammond
+    - The Perl Foundation
+    - Tim Hudson (tjh@cryptsoft.com)
+    - the OpenSSL Project
+ignorable_urls:
+    - http://jelloween.deviantart.com/
+    - http://mathiasbynens.be/
+    - http://mths.be/mit
+    - http://mths.be/punycode
+    - http://www.apache.org/licenses/
+    - http://www.openssl.org/
+    - https://github.com/chjj
+ignorable_emails:
+    - eay@cryptsoft.com
+    - info@bnoordhuis.nl
+    - jloup@gzip.org
+    - madler@alumni.caltech.edu
+    - openssl-core@openssl.org
+    - tjh@cryptsoft.com
+---
+
 Node's license follows:
 
 ====

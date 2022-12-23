@@ -1,3 +1,9 @@
+---
+license_expression: lgpl-2.1-plus AND other-copyleft AND other-permissive
+is_license_reference: yes
+relevance: 100
+---
+
 This file contains the copying permission notices for various files in the
 GNU C Library distribution that have copyright owners other than the Free
 Software Foundation.  These notices all require that a copy of the notice

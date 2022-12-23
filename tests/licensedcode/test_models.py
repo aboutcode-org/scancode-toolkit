@@ -20,27 +20,18 @@ from licensedcode.models import InvalidRule
 from licensedcode.models import Rule
 from licensedcode.models import rules_data_dir
 from licensedcode.spans import Span
-from scancode_config import REGEN_TEST_FIXTURES
+from scancode.cli_test_utils import check_json
 
 TEST_DATA_DIR = os.path.join(os.path.dirname(__file__), 'data')
 
 
-def check_json(expected, results, regen=REGEN_TEST_FIXTURES):
-    if regen:
-        mode = 'w'
-        with open(expected, mode) as ex:
-            json.dump(results, ex, indent=2, separators=(',', ': '))
-    with open(expected) as ex:
-        expected = json.load(ex)
-    assert results == expected
 
-
-def as_sorted_mapping_seq(licenses):
+def as_sorted_mapping_seq(licenses, include_text=False):
     """
     Given a `licenses` iterator of to_dict()'able objects, return a sorted list
     of these.
     """
-    return sorted((l.to_dict() for l in licenses), key=lambda x: tuple(x.items()))
+    return sorted((l.to_dict(include_text=include_text) for l in licenses), key=lambda x: tuple(x.items()))
 
 
 class TestLicense(FileBasedTesting):
@@ -64,6 +55,19 @@ class TestLicense(FileBasedTesting):
         results = as_sorted_mapping_seq(lics.values())
         expected = self.get_test_loc('models/licenses.dump.expected.json')
         check_json(expected, results)
+
+    def test_dump_license_file(self):
+        test_dir = self.get_test_loc('models/licenses', copy=True)
+        test_dir_dump = self.get_test_loc('models/license_file_dump')
+        lics = models.load_licenses(licenses_data_dir=test_dir, with_deprecated=True)
+        lic_example = lics["apache-2.0"]
+        lic_example.dump(licenses_data_dir=test_dir_dump)
+        lics_from_dump = models.load_licenses(licenses_data_dir=test_dir_dump, with_deprecated=True)
+        lic_example_from_dump = lics_from_dump["apache-2.0"]
+        # Note: one license is obsolete and not loaded. Other are various exception/version cases
+        before_dump = as_sorted_mapping_seq(licenses=[lic_example], include_text=True)
+        after_dump = as_sorted_mapping_seq(licenses=[lic_example_from_dump], include_text=True)
+        assert before_dump == after_dump
 
     def test_License_text(self):
         test_dir = self.get_test_loc('models/licenses')
@@ -90,7 +94,7 @@ class TestLicense(FileBasedTesting):
 
     def test_validate_license_library_can_return_errors(self):
         test_dir = self.get_test_loc('models/validate')
-        lics = models.load_licenses(test_dir)
+        lics = models.load_licenses(test_dir, check_consistency=False)
         errors, warnings, infos = models.License.validate(
             lics,
             no_dupe_urls=True,
@@ -111,12 +115,12 @@ class TestLicense(FileBasedTesting):
             'foo-2.0': ['Unknown language: foobar', 'No SPDX license key'],
             'gpl-1.0': [
                 'Unknown license category: GNU Copyleft.\nUse one of these valid categories:\n'
-                'Commercial\nCopyleft\nCopyleft Limited\nFree Restricted\n'
+                'CLA\nCommercial\nCopyleft\nCopyleft Limited\nFree Restricted\n'
                 'Patent License\nPermissive\nProprietary Free\nPublic Domain\nSource-available\nUnstated License',
                 'No SPDX license key'],
             'w3c-docs-19990405': [
                 'Unknown license category: Permissive Restricted.\nUse one of these valid categories:\n'
-                'Commercial\nCopyleft\nCopyleft Limited\nFree Restricted\n'
+                'CLA\nCommercial\nCopyleft\nCopyleft Limited\nFree Restricted\n'
                 'Patent License\nPermissive\nProprietary Free\nPublic Domain\nSource-available\nUnstated License',
                 'No SPDX license key'],
         }
@@ -143,20 +147,27 @@ class TestLicense(FileBasedTesting):
         }
         assert infos == expected_infos
 
-    def test_load_licenses_fails_if_directory_contains_orphaned_files(self):
-        test_dir = self.get_test_loc('models/orphaned_licenses')
+    def test_load_licenses_fails_if_file_contains_empty_yaml_frontmatter(self):
+        test_dir = self.get_test_loc('models/licenses_without_frontmatter')
         try:
             list(models.load_licenses(test_dir))
             self.fail('Exception not raised')
         except Exception as e:
-            assert 'Some License files are orphaned in' in str(e)
+            assert 'Cannot load License with empty YAML frontmatter' in str(e)
 
-    def test_license_text_file_and_data_file_are_computed_correctly(self):
+    def test_load_licenses_fails_if_file_contains_empty_text(self):
+        test_dir = self.get_test_loc('models/licenses_without_text')
+        try:
+            list(models.load_licenses(test_dir))
+            self.fail('Exception not raised')
+        except Exception as e:
+            assert 'only deprecated, generic or unknown licenses can exist without text' in str(e)
+
+    def test_license_file_is_computed_correctly(self):
         licenses_data_dir = self.get_test_loc('models/data_text_files/licenses')
         licenses = models.load_licenses(licenses_data_dir)
         lic = licenses['gpl-1.0']
-        assert lic.text_file(licenses_data_dir=licenses_data_dir).startswith(licenses_data_dir)
-        assert lic.data_file(licenses_data_dir=licenses_data_dir).startswith(licenses_data_dir)
+        assert lic.license_file(licenses_data_dir=licenses_data_dir).startswith(licenses_data_dir)
 
     def test_rule_from_license_have_text_file_and_data_file_are_computed_correctly(self):
         licenses_data_dir = self.get_test_loc('models/data_text_files/licenses')
@@ -164,12 +175,7 @@ class TestLicense(FileBasedTesting):
         lic = licenses['gpl-1.0']
         rule = models.build_rule_from_license(license_obj=lic)
 
-        assert rule.text_file(
-            licenses_data_dir=licenses_data_dir,
-            rules_data_dir=None,
-        ).startswith(licenses_data_dir)
-
-        assert rule.data_file(
+        assert rule.rule_file(
             licenses_data_dir=licenses_data_dir,
             rules_data_dir=None,
         ).startswith(licenses_data_dir)
@@ -241,6 +247,19 @@ class TestRule(FileBasedTesting):
         results = as_sorted_mapping_seq(rules)
         expected = self.get_test_loc('models/rules.expected.json')
         check_json(expected, results)
+
+    def test_dump_rule_file(self):
+        test_dir = self.get_test_loc('models/rules', copy=True)
+        test_dir_dump = self.get_test_loc('models/rule_file_dump')
+        rules = list(models.load_rules(test_dir))
+        rule_example = rules.pop()
+        rule_example.dump(rules_data_dir=test_dir_dump)
+        rule_from_dump = list(models.load_rules(test_dir_dump))
+        rule_example_from_dump = rule_from_dump.pop()
+        # Note: one license is obsolete and not loaded. Other are various exception/version cases
+        before_dump = as_sorted_mapping_seq(licenses=[rule_example], include_text=True)
+        after_dump = as_sorted_mapping_seq(licenses=[rule_example_from_dump], include_text=True)
+        assert before_dump == after_dump
 
     def test_spdxrule(self):
         rule = models.SpdxRule(
@@ -510,20 +529,19 @@ class TestRule(FileBasedTesting):
         assert rule.relevance == 0
 
     def test_rule_must_have_text(self):
-        data_file = self.get_test_loc('models/rule_no_text/mit.yml')
+        rule_file = self.get_test_loc('models/rule_no_text/mit.RULE')
         try:
-            Rule.from_files(data_file=data_file, text_file=None)
+            Rule.from_file(rule_file=rule_file)
             self.fail('Exception not raised.')
         except InvalidRule as  e:
-            assert str(e).startswith('Cannot load rule without its corresponding text_file and data file')
+            assert 'Cannot load rule with empty text' in str(e)
 
     def test_rule_cannot_contain_extra_unknown_attributes(self):
-        data_file = self.get_test_loc('models/rule_with_extra_attributes/sun-bcl.yml')
-        text_file = self.get_test_loc('models/rule_with_extra_attributes/sun-bcl.RULE')
+        rule_file = self.get_test_loc('models/rule_with_extra_attributes/sun-bcl.RULE')
 
         expected = 'data file has unknown attributes: license_expressionnotuce'
         try:
-            Rule.from_files(data_file=data_file, text_file=text_file)
+            Rule.from_file(rule_file=rule_file)
             self.fail('Exception not raised.')
         except Exception as  e:
             assert expected in str(e)
@@ -579,8 +597,7 @@ class TestRule(FileBasedTesting):
         rule_dir = self.get_test_loc('models/data_text_files/rules')
         rules = list(models.load_rules(rule_dir))
         rule = rules[0]
-        assert rule.text_file(rules_data_dir=rule_dir).startswith(rule_dir)
-        assert rule.data_file(rules_data_dir=rule_dir).startswith(rule_dir)
+        assert rule.rule_file(rules_data_dir=rule_dir).startswith(rule_dir)
 
 
 class TestGetKeyPhrases(TestCaseClass):

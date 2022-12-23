@@ -3,11 +3,8 @@
     {
       "path": "apache-2.0.LICENSE",
       "type": "file",
-      "licenses": [],
-      "license_expressions": [
-        "apache-2.0",
-        "mit"
-      ],
+      "license_detections": [],
+      "declared_license_expression": "apache-2.0 AND mit",
       "scan_errors": []
     }
   ]

@@ -1,3 +1,16 @@
+---
+key: unlimited-linking-exception-gpl
+short_name: Unlimited linking exception to GPL
+name: Unlimited linking exception to GPL
+category: Copyleft
+owner: Free Software Foundation (FSF)
+notes: this is a rare variant of an LGPL exception foudn in glibc
+is_exception: yes
+spdx_license_key: LicenseRef-scancode-unlimited-link-exception-gpl
+other_spdx_license_keys:
+    - LicenseRef-scancode-unlimited-linking-exception-gpl
+---
+
 In addition to the permissions in the GNU General Public License, the
 Free Software Foundation gives you unlimited permission to link the
 compiled version of this file with other programs, and to distribute

@@ -1,2 +1,7 @@
-  This module is free software; you may redistribute it and/or
+---
+license_expression: artistic-perl-1.0 OR gpl-1.0-plus
+is_license_notice: yes
+---
+
+This module is free software; you may redistribute it and/or
   modify it under the same terms as Perl itself.

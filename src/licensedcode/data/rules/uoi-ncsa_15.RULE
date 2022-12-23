@@ -1,2 +1,11 @@
+---
+license_expression: uoi-ncsa
+is_license_reference: yes
+relevance: 100
+minimum_coverage: 99
+ignorable_urls:
+    - http://llvm.org/
+---
+
 'http://llvm.org',
 license = 'BSD',

@@ -1,3 +1,13 @@
+---
+license_expression: gpl-2.0
+is_license_notice: yes
+relevance: 100
+referenced_filenames:
+    - LICENSE
+ignorable_urls:
+    - https://deb.li/DTLicense
+---
+
 It is subject to the license terms # in the LICENSE file found in the top-level
 directory of this # distribution and at https://deb.li/DTLicense. 
 No part of Distro Tracker, # including this file, may be copied, modified,

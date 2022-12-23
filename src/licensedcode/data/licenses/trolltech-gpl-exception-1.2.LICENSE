@@ -1,3 +1,13 @@
+---
+key: trolltech-gpl-exception-1.2
+short_name: Trolltech GPL Exception 1.2
+name: Trolltech GPL Exception version v1.2
+category: Copyleft
+owner: Trolltech
+notes: Trolltech is now The Qt Company
+is_exception: yes
+spdx_license_key: LicenseRef-scancode-trolltech-gpl-exception-1.2
+---
 
 Trolltech GPL Exception version 1.2
 ===================================
@@ -89,5 +99,3 @@ the Licensed Software: You may link applications with binary pre-installed
 versions of the Licensed Software, provided that such applications have been
 developed and are deployed in ac cordance with the terms and conditions of the
 Qt Commercial License Agreement.
-
-

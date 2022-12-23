@@ -1,3 +1,14 @@
+---
+key: digia-qt-preview
+short_name: Digia Qt Preview Agreement 2.4
+name: Digia Qt Technology Preview License Agreement 2.4
+category: Commercial
+owner: Digia
+homepage_url: http://qt.digia.com/licensing
+notes: This agreement is also included in Qt open source.
+spdx_license_key: LicenseRef-scancode-digia-qt-preview
+---
+
 TECHNOLOGY PREVIEW LICENSE AGREEMENT
 
 For individuals and/or legal entities resident in the Americas (North
@@ -622,6 +633,3 @@ the Licensed Software with only those rights set forth herein. The
 Licensed Software (including related documentation) is provided to U.S.
 Government End Users: (a) only as a commercial end item; and (b) only
 pursuant to this Agreement.
-
-
-

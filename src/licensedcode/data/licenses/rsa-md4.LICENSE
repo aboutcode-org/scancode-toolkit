@@ -1,3 +1,12 @@
+---
+key: rsa-md4
+short_name: RSA-MD4 License
+name: RSA Data Security MD4
+category: Permissive
+owner: RSA (the Security Division of EMC)
+spdx_license_key: LicenseRef-scancode-rsa-md4
+---
+
 License to copy and use this software is granted provided that it
 is identified as the "RSA Data Security, Inc. MD4 Message-Digest
 Algorithm" in all material mentioning or referencing this software

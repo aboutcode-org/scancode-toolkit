@@ -1,4 +1,10 @@
- *
+---
+license_expression: gpl-2.0-plus
+is_license_notice: yes
+relevance: 100
+---
+
+*
  * The "Artistic Style" project, including all files needed to compile it,
  * is free software; you can redistribute it and/or use it and/or modify it
  * under the terms of the GNU General Public License as published 

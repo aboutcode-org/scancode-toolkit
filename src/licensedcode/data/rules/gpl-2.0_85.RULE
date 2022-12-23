@@ -1,4 +1,13 @@
- * This program is free software; you can redistribute it and/or modify
+---
+license_expression: gpl-2.0
+is_license_notice: yes
+minimum_coverage: 90
+referenced_filenames:
+    - COPYING
+    - README
+---
+
+* This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License version 2 as
  * published by the Free Software Foundation.
  *

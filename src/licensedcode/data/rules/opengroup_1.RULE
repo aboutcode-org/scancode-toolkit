@@ -1,1 +1,9 @@
+---
+license_expression: opengroup
+is_license_reference: yes
+relevance: 100
+ignorable_urls:
+    - http://www.opengroup.org/testing/downloads/The_Open_Group_TSL.txt
+---
+
 http://www.opengroup.org/testing/downloads/The_Open_Group_TSL.txt

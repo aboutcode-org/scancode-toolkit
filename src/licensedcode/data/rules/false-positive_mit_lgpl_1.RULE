@@ -1,1 +1,6 @@
+---
+is_false_positive: yes
+notes: this is a comment about a license change, not a license statement
+---
+
 changed the license from LGPL to MIT

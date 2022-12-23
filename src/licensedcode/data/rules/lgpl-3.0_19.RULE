@@ -1,5 +1,8 @@
-
+---
+license_expression: lgpl-3.0
+is_license_notice: yes
+---
 
 This software is distributed under the terms of the             # 
 GNU Lesser General Public Licence version 3 (LGPL) version 3,        #  
-copied verbatim in the file "LICENSE"     
+copied verbatim in the file "LICENSE"

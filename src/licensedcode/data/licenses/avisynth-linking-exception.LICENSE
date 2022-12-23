@@ -1,3 +1,14 @@
+---
+key: avisynth-linking-exception
+short_name: Avisynth Linking Exception
+name: Avisynth Linking Exception
+category: Copyleft Limited
+owner: AviSynth Library Project
+homepage_url: http://avisynth.nl/users/fizick/docs/english/license.htm
+is_exception: yes
+spdx_license_key: LicenseRef-scancode-avisynth-linking-exception
+---
+
 Linking Avisynth statically or dynamically with other modules is making a
 combined work based on Avisynth.  Thus, the terms and conditions of the GNU
 General Public License cover the whole combination.

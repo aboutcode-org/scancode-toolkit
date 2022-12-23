@@ -1,2 +1,10 @@
+---
+license_expression: ruby
+is_license_notice: yes
+relevance: 100
+referenced_filenames:
+    - LICENSE.RUBY
+---
+
 under the same license terms as the Ruby standard library.
    See LICENSE.RUBY

@@ -7,6 +7,7 @@
    :maxdepth: 2
 
    overview
+   license-detection-reference
 
 ..
    [ToAdd]

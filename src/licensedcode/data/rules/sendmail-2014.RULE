@@ -1,4 +1,17 @@
-                 SENDMAIL LICENSE
+---
+license_expression: sendmail
+is_license_text: yes
+ignorable_copyrights:
+    - Copyright (c) 1988, 1993 The Regents of the University of California
+    - Copyright (c) 1998-2014 Proofpoint, Inc.
+ignorable_holders:
+    - Proofpoint, Inc.
+    - The Regents of the University of California
+ignorable_emails:
+    - sendmail-license@proofpoint.com
+---
+
+SENDMAIL LICENSE
 
 The following license terms and conditions apply, unless a redistribution
 agreement or other license is obtained from Proofpoint, Inc., 892
@@ -78,4 +91,4 @@ each of the following conditions is met:
    (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
    THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.
 
-$Revision: 8.23 $, Last updated $Date: 2014-01-26 20:10:01 $, Document 139848.1 
+$Revision: 8.23 $, Last updated $Date: 2014-01-26 20:10:01 $, Document 139848.1

@@ -1,3 +1,24 @@
+---
+key: nicta-psl
+short_name: NICTA Public Software Licence 1.0
+name: NICTA Public Software Licence 1.0
+category: Permissive
+owner: NICTA
+homepage_url: http://www.opensource.apple.com/source/mDNSResponder/mDNSResponder-320.10/mDNSPosix/nss_ReadMe.txt
+spdx_license_key: NICTA-1.0
+other_spdx_license_keys:
+    - LicenseRef-scancode-nicta-psl
+text_urls:
+    - http://www.opensource.apple.com/source/mDNSResponder/mDNSResponder-320.10/mDNSPosix/nss_ReadMe.txt
+other_urls:
+    - http://www.nicta.com.au/
+    - https://opensource.apple.com/source/mDNSResponder/mDNSResponder-320.10/mDNSPosix/nss_ReadMe.txt
+ignorable_copyrights:
+    - Copyright (c) 2004 National ICT Australia Ltd
+ignorable_holders:
+    - National ICT Australia Ltd
+---
+
 NICTA Public Software Licence
 Version 1.0
 

@@ -1,3 +1,26 @@
+---
+key: w3c-software-doc-20150513
+short_name: W3C-SOFTWARE-DOC-20150513
+name: W3C Software and Document (2015-05-13)
+category: Permissive
+owner: W3C - World Wide Web Consortium
+homepage_url: https://www.w3.org/Consortium/Legal/2015/copyright-software-and-document
+notes: |
+    Previous version was http://www.w3.org/Consortium/Legal/2002/copyright-
+    software-20021231 This version makes clear that the license is applicable
+    to both software and text, by changing the name and substituting "work" for
+    instances of "software and its documentation." It moves "notice of changes
+    or modifications to the files" to the copyright notice, to make clear that
+    the license is compatible with other liberal licenses. There is also a
+    short notice version at https://www.w3.org/Consortium/Legal/2015/copyright-
+    software-short-notice.html
+spdx_license_key: W3C-20150513
+ignorable_copyrights:
+    - Copyright (c) YEAR W3C(r) MIT, ERCIM, Keio
+ignorable_holders:
+    - W3C(r) MIT, ERCIM, Keio
+---
+
 W3C Software and Document Notice and License
 
 Status: This license takes effect 13 May, 2015.

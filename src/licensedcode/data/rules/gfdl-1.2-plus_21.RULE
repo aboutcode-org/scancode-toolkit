@@ -1,4 +1,11 @@
- This manual is covered by the GNU FDL.  Permission is granted to
+---
+license_expression: gfdl-1.2-plus
+is_license_reference: yes
+referenced_filenames:
+    - /usr/share/common-licenses/GFDL-1.2
+---
+
+This manual is covered by the GNU FDL.  Permission is granted to
  copy, distribute and/or modify this document under the terms of the
  GNU Free Documentation License (FDL), either version 1.2 of the
  License, or (at your option) any later version published by the Free

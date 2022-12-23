@@ -1,1 +1,9 @@
-See COPYING for GPL terms. 
+---
+license_expression: gpl-1.0-plus
+is_license_reference: yes
+relevance: 100
+referenced_filenames:
+    - COPYING
+---
+
+See COPYING for GPL terms.

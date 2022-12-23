@@ -1,4 +1,15 @@
-          GNU LIBRARY GENERAL PUBLIC LICENSE
+---
+license_expression: lgpl-2.0
+is_license_text: yes
+ignorable_copyrights:
+    - Copyright (c) 1991 Free Software Foundation, Inc.
+    - copyrighted by the Free Software Foundation
+ignorable_holders:
+    - Free Software Foundation, Inc.
+    - the Free Software Foundation
+---
+
+GNU LIBRARY GENERAL PUBLIC LICENSE
                Version 2, June 1991
 
  Copyright (C) 1991 Free Software Foundation, Inc.

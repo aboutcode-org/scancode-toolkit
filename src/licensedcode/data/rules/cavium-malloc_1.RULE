@@ -1,1 +1,7 @@
+---
+license_expression: cavium-malloc
+is_license_notice: yes
+relevance: 100
+---
+
 License terms appear in {{Ptmalloc License .}}

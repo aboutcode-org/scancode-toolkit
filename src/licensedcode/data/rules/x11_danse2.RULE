@@ -1,3 +1,10 @@
+---
+license_expression: x11 AND other-permissive
+is_license_notice: yes
+minimum_coverage: 80
+notes: rare extra notice added to an X11 license by the Danse project
+---
+
 DANSE is the name of a software system under construction with U.S. National 
 Science Foundation funding.  All work derived from DANSE software should
 acknowledge DANSE with the following statement:

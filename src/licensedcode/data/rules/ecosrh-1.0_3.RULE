@@ -1,3 +1,15 @@
+---
+license_expression: ecosrh-1.0
+is_license_notice: yes
+relevance: 100
+ignorable_copyrights:
+    - Copyright (c) Cygnus Solutions
+ignorable_holders:
+    - Cygnus Solutions
+ignorable_urls:
+    - http://sourceware.cygnus.com/ecos
+---
+
 ###COPYRIGHTBEGIN#### */
 The contents of this file are subject to the Cygnus eCos Public License */
 Version 1.0 (the "License"); you may not use this file except in */

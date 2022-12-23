@@ -1,3 +1,13 @@
+---
+license_expression: tcl
+is_license_text: yes
+ignorable_copyrights:
+    - copyrighted by the Regents of the University of California, Sun Microsystems, Inc., Scriptics
+        Corporation
+ignorable_holders:
+    - the Regents of the University of California, Sun Microsystems, Inc., Scriptics Corporation
+---
+
 This software is copyrighted by  the Regents of the University of
 California ,  Sun Microsystems, Inc. ,  Scriptics Corporation ,
 and  other parties .  The following terms apply to all files associated

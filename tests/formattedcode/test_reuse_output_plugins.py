@@ -25,8 +25,9 @@ test_env.test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
 
 def check_plugin(plugin_class, test_file='reuse/vb.json', force_text=False):
     # this is the result of this scan:
-    # ./scancode -clip --summary --license-clarity-score --summary-key-files
-    # --classify  samples/ --json-pp vb.json -n
+    # ./scancode -clip --summary --license-clarity-score --tallies --tallies-key-files
+    # --classify  samples/ --json-pp tests/formattedcode/data/reuse/vb.json
+
     test_file = test_env.get_test_loc(test_file)
     from commoncode.resource import VirtualCodebase
 

@@ -1,3 +1,13 @@
+---
+key: cosl
+short_name: Cougaar Open Source License
+name: Cougaar Open Source License
+category: Permissive
+owner: Cougaar Software
+spdx_license_key: LicenseRef-scancode-cosl
+minimum_coverage: 80
+---
+
 Cougaar Open Source License 
 
 The Cougaar Open Source License (COSL) is a modified version of the OSI 

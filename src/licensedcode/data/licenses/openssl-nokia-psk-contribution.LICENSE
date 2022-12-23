@@ -1,3 +1,16 @@
+---
+key: openssl-nokia-psk-contribution
+short_name: Patent Disclaimer for OpenSSL
+name: Patent Disclaimer for OpenSSL
+category: Patent License
+owner: Nokia
+is_exception: yes
+spdx_license_key: LicenseRef-scancode-openssl-nokia-psk-contribution
+ignorable_authors:
+    - Mika Kousa and Pasi Eronen of Nokia Corporation
+    - Nokia Corporation
+---
+
 The portions of the attached software ("Contribution") is developed by
 Nokia Corporation and is licensed pursuant to the OpenSSL open source
 license.

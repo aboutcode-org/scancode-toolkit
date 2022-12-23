@@ -1,2 +1,10 @@
+---
+license_expression: bsd-new
+is_license_notice: yes
+relevance: 100
+ignorable_urls:
+    - https://github.com/dart-lang/stagehand/blob/master/LICENSE
+---
+
 Created from templates made available by Stagehand under a BSD-style
 [license](https://github.com/dart-lang/stagehand/blob/master/LICENSE).

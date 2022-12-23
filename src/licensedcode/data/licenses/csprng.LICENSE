@@ -1,3 +1,14 @@
+---
+key: csprng
+short_name: CSPRNG
+name: CSPRNG
+category: Permissive
+owner: Peter Gutmann
+spdx_license_key: LicenseRef-scancode-csprng
+ignorable_emails:
+    - pgut001@cs.auckland.ac.nz
+---
+
 Redistribution of the CSPRNG
 modules and use in source and binary forms, with or without modification,
 are permitted provided that the following conditions are met:

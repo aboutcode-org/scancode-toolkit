@@ -1,4 +1,12 @@
-   OpenStreetMap® is open data, licensed under the 
+---
+license_expression: odbl-1.0
+is_license_notice: yes
+relevance: 100
+ignorable_urls:
+    - https://www.openstreetmap.org/copyright
+---
+
+OpenStreetMap® is open data, licensed under the 
    Open Data Commons Open Database License (ODbL) by 
    the OpenStreetMap Foundation (OSMF).
 

@@ -1,3 +1,24 @@
+---
+license_expression: openssl-ssleay
+is_license_text: yes
+minimum_coverage: 60
+ignorable_copyrights:
+    - Copyright (c) 1995-1998 Eric Young (eay@cryptsoft.com)
+    - Copyright (c) 1998-2016 The OpenSSL Project
+ignorable_holders:
+    - Eric Young
+    - The OpenSSL Project
+ignorable_authors:
+    - Eric Young (eay@cryptsoft.com)
+    - Tim Hudson (tjh@cryptsoft.com)
+    - the OpenSSL Project
+ignorable_urls:
+    - http://www.openssl.org/
+ignorable_emails:
+    - eay@cryptsoft.com
+    - tjh@cryptsoft.com
+---
+
 The OpenSSL toolkit stays under a dual license, i.e. both the conditions of the OpenSSL License and the original SSLeay license apply to the toolkit.
 Copyright (c) 1998-2016 The OpenSSL Project. All rights reserved.
 This product includes software developed by the OpenSSL Project for use in the OpenSSL Toolkit (http://www.openssl.org/)"

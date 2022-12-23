@@ -1,3 +1,15 @@
+---
+license_expression: other-copyleft
+is_license_notice: yes
+relevance: 100
+notes: This exception-like notices is not really an exception and just allows to use GPL-licensed
+    code with other FOSS code as log as this other code is redistributed in source form too.
+    Seen in https://www.nexedi.com/jobs/NXD-License.FreeSoftware
+ignorable_urls:
+    - http://opensource.org/licenses
+    - https://www.gnu.org/licenses/license-list.en.html
+---
+
 Additional permission under GNU GPL version 3 section 7 :
 
 If you modify this Program, or any covered work, by linking or combining it with other software covered by the terms of any of the licenses classified as free software license by the Free Software Foundation

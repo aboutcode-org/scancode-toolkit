@@ -1,2 +1,11 @@
+---
+key: lcs-telegraphics
+short_name: LCS-Telegraphics License
+name: LCS-Telegraphics License
+category: Permissive
+owner: LCS-Telegraphics
+spdx_license_key: LicenseRef-scancode-lcs-telegraphics
+---
+
 The text and information contained in this file may be freely used,
 copied, or distributed without compensation or licensing restrictions.

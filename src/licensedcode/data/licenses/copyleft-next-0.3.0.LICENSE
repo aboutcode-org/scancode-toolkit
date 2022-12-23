@@ -1,3 +1,18 @@
+---
+key: copyleft-next-0.3.0
+short_name: copyleft-next 0.3.0
+name: copyleft-next 0.3.0
+category: Copyleft
+owner: Richard Fontana
+homepage_url: https://github.com/richardfontana/copyleft-next/blob/master/Releases/copyleft-next-0.3.0
+spdx_license_key: copyleft-next-0.3.0
+text_urls:
+    - https://github.com/copyleft-next/copyleft-next/blob/master/Releases/copyleft-next-0.3.0
+    - https://raw.githubusercontent.com/richardfontana/copyleft-next/master/Releases/copyleft-next-0.3.0
+ignorable_urls:
+    - https://gitorious.org/copyleft-next/
+---
+
 copyleft-next 0.3.0 ("this License")
 Release date: 2013-05-16
 

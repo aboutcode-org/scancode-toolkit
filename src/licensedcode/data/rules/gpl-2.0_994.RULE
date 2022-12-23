@@ -1,3 +1,12 @@
+---
+license_expression: gpl-2.0
+is_license_notice: yes
+relevance: 100
+notes: https://github.com/9fans/plan9port/blob/master/src/cmd/mk/NOTICE
+ignorable_urls:
+    - http://www.fsf.org/copyleft/gpl.html
+---
+
 Under a licence agreement with Lucent Technologies Inc. effective 1st March 2000,
 Vita Nuova Holdings Limited has the right to determine (within a specified scope)
 the form and content of sublicences for this software.

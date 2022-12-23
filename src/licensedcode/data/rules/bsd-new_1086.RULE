@@ -1,1 +1,9 @@
+---
+license_expression: bsd-new
+is_license_reference: yes
+is_continuous: yes
+relevance: 100
+minimum_coverage: 100
+---
+
 ['3 CLAUSE', 'BSD-3-Clause'],

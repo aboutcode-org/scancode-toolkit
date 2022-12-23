@@ -1,3 +1,11 @@
+---
+license_expression: apache-2.0
+is_license_notice: yes
+relevance: 100
+referenced_filenames:
+    - LICENSE
+---
+
 ## License
 is open source software under the [Apache License 2.0](LICENSE). Complete license and copyright information can be found in
  the source code.

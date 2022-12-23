@@ -1,3 +1,12 @@
+---
+key: bsd-original-uc-1986
+short_name: BSD-Original-UC-1986
+name: BSD-Original-UC-1986
+category: Permissive
+owner: Regents of the University of California
+spdx_license_key: LicenseRef-scancode-bsd-original-uc-1986
+---
+
 Redistribution and use in source and binary forms are permitted provided that
 this notice is preserved and that due credit is given to the University of
 California Berkeley.  The name of the University may not be used to endorse or

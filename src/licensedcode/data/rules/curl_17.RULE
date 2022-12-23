@@ -1,1 +1,9 @@
+---
+license_expression: curl
+is_license_reference: yes
+relevance: 100
+ignorable_urls:
+    - https://spdx.org/licenses/curl
+---
+
 LICENSE {{curl}} https://spdx.org/licenses/curl

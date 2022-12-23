@@ -1,4 +1,9 @@
-  * This source file is free software, under either the GPL v2 license or a
+---
+license_expression: gpl-2.0 OR bsd-new
+is_license_notice: yes
+---
+
+* This source file is free software, under either the GPL v2 license or a
  * BSD style license, as supplied with this software.
  * 
  * This source file is distributed in the hope that it will be useful, but 

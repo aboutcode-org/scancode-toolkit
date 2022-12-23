@@ -1,3 +1,11 @@
+---
+license_expression: gpl-2.0 WITH ecos-exception-2.0
+is_license_notice: yes
+relevance: 100
+referenced_filenames:
+    - COPYING.GPL
+---
+
 The software in this package is distributed under the GNU General
 Public License version 2 (with a special exception described below).
 
@@ -15,4 +23,3 @@ in accordance with section (3) of the GNU General Public License.
 
 This exception does not invalidate any other reasons why a work based
 on this file might be covered by the GNU General Public License.
-

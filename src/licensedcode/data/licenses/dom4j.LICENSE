@@ -1,3 +1,35 @@
+---
+key: dom4j
+short_name: Dom4j License
+name: Dom4j License
+category: Permissive
+owner: dom4j
+homepage_url: http://www.dom4j.org/
+notes: |
+    Per Fedora, this is an Apache 1.1 derived license. Unfortunately, clause 4
+    is too broad, making it Free but GPL-incompatible. It does also replace the
+    deprecated keys classworlds and apache-due-credit that were the same licenses.
+    Plexus Classworlds was started in 2002 and dom4j in 2000/2001 hence it has precedence.
+    Other projects such as Exolab/Intalio/Castor and JCharts have used the same license.
+    Castor is actually the first to use this but dom4j is still commonly used and castor less so.
+spdx_license_key: Plexus
+text_urls:
+    - http://www.dom4j.org/dom4j-1.6.1/license.html
+    - http://www.dom4j.org/license.html
+    - https://web.archive.org/web/20011020192734/http://www.dom4j.org/license.html
+other_urls:
+    - http://classworlds.codehaus.org/license.html
+    - http://www.castor.org/license.txt
+    - https://fedoraproject.org/wiki/Licensing/Plexus_Classworlds_License
+    - https://fedoraproject.org/wiki/Licensing:BSD?rd=Licensing/BSD#jCharts_Variant
+    - http://openorb.sourceforge.net/license.txt
+    - https://confluence.sakaiproject.org/plugins/viewsource/viewpagesrc.action?pageId=28442642
+ignorable_urls:
+    - http://www.dom4j.org/
+ignorable_emails:
+    - dom4j-info@metastuff.com
+---
+
 Redistribution and use of this software and associated documentation
 ("Software"), with or without modification, are permitted provided that the
 following conditions are met:
@@ -31,4 +63,3 @@ LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
 ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
 (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
 THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-

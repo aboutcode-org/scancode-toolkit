@@ -1,4 +1,9 @@
- LICENSE - WHAT YOU MAY, AND WHAT YOU MAY NOT
+---
+license_expression: proprietary-license
+is_license_text: yes
+---
+
+LICENSE - WHAT YOU MAY, AND WHAT YOU MAY NOT
 ===============================================
    You may:
    * Use the sourcecodes supplied for any commercial or noncommercial product.

@@ -1,3 +1,15 @@
+---
+key: peter-deutsch-document
+short_name: Peter Deutsch Document License
+name: Peter Deutsch Document License
+category: Permissive
+owner: Peter Deutsch
+homepage_url: http://www.ietf.org/rfc/rfc1952.txt
+spdx_license_key: LicenseRef-scancode-peter-deutsch-document
+text_urls:
+    - http://www.ietf.org/rfc/rfc1952.txt
+---
+
 Permission is granted to copy and distribute this document for any
 purpose and without charge, including translations into other
 languages and incorporation into compilations, provided that the

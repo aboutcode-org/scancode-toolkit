@@ -1,3 +1,23 @@
+---
+key: qpopper
+short_name: Qpopper License
+name: Qpopper License
+category: Permissive
+owner: Qualcomm
+homepage_url: http://www.eudora.com/products/unsupported/qpopper/license.html
+spdx_license_key: LicenseRef-scancode-qpopper
+text_urls:
+    - http://www.eudora.com/products/unsupported/qpopper/license.html
+ignorable_copyrights:
+    - (c) Copyright 1989-1991 The Regents of the University of California
+    - Copyright 1993-2006 QUALCOMM Incorporated
+ignorable_holders:
+    - QUALCOMM Incorporated
+    - The Regents of the University of California
+ignorable_authors:
+    - Austin Shelton
+---
+
 Qpopper(tm) is licensed by QUALCOMM Incorporated under the following
     terms and conditions.  ANY USE OF QPOPPER CONSTITUTES AGREEMENT TO
     THESE TERMS.

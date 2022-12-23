@@ -1,3 +1,13 @@
+---
+key: script-asylum
+short_name: Script Asylum License
+name: Script Asylum License
+category: Permissive
+owner: Script Asylum
+homepage_url: http://web.archive.org/web/20030720033728/http://www.scriptasylum.com/faqpage.html#p7
+spdx_license_key: LicenseRef-scancode-script-asylum
+---
+
 Use of these materials are limited to personal and commercial use as long as
 long as credits are left intact. Modification of the original material is
 permitted as long as credits for the original developer(s) are left intact and

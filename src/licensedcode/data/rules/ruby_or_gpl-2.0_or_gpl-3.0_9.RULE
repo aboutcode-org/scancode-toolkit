@@ -1,1 +1,8 @@
+---
+license_expression: ruby OR gpl-2.0 OR gpl-3.0
+is_license_notice: yes
+relevance: 100
+notes: Seen in https://github.com/asciidoctor/asciidoctor-pdf/blob/main/NOTICE.adoc
+---
+
 may be used under Matz’s original licensing terms for Ruby, the GPLv2 license, or the GPLv3 license.

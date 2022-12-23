@@ -1,3 +1,16 @@
+---
+key: nortel-dasa
+short_name: Nortel DASA License
+name: Nortel DASA License
+category: Permissive
+owner: Unspecified
+spdx_license_key: LicenseRef-scancode-nortel-dasa
+ignorable_authors:
+    - F.Schnekenbuehl <frank@comsys.dofn.de>
+ignorable_emails:
+    - frank@comsys.dofn.de
+---
+
 Nortel DASA License
 
 Created by F.Schnekenbuehl <frank@comsys.dofn.de> from clk_rcc8000.c

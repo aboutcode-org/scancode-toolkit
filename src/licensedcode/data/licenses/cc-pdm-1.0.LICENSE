@@ -1,3 +1,13 @@
+---
+key: cc-pdm-1.0
+short_name: CC-PD Mark 1.0
+name: Creative Commons Public Domain Mark 1.0
+category: Public Domain
+owner: Creative Commons
+homepage_url: https://creativecommons.org/publicdomain/mark/1.0/
+spdx_license_key: LicenseRef-scancode-cc-pdm-1.0
+faq_url: https://wiki.creativecommons.org/wiki/PDM_FAQ
+---
 
 Public Domain Mark 1.0
 No Copyright
@@ -19,4 +29,3 @@ Other Information
     Unless expressly stated otherwise, the person who identified the work makes no warranties about the work, and disclaims liability for all uses of the work, to the fullest extent permitted by applicable law.
 
     When using or citing the work, you should not imply endorsement by the author or the person who identified the work.
-

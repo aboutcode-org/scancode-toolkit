@@ -1,5 +1,0 @@
-license_expression: gpl-2.0 OR commercial-license
-is_license_notice: yes
-minimum_coverage: 90
-ignorable_urls:
-    - http://www.broadcom.com/licenses/GPLv2.php

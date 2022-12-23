@@ -1,3 +1,9 @@
+---
+license_expression: gpl-1.0-plus AND lgpl-2.0-plus AND gfdl-1.2
+is_license_notice: yes
+minimum_coverage: 80
+---
+
 All code released under the GPL, see /usr/share/common-licenses/GPL
 
 With the exception of

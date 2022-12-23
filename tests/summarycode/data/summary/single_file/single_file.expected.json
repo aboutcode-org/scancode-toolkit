@@ -13,8 +13,13 @@
       "ambiguous_compound_licensing": false
     },
     "declared_holder": "Mort Bay Consulting Pty. Ltd. (Australia) and others, Sun Microsystems",
-    "primary_language": "",
-    "other_license_expressions": [],
+    "primary_language": null,
+    "other_license_expressions": [
+      {
+        "value": null,
+        "count": 1
+      }
+    ],
     "other_holders": [],
     "other_languages": []
   },
@@ -38,8 +43,10 @@
       "is_media": false,
       "is_source": false,
       "is_script": false,
-      "licenses": [],
-      "license_expressions": [],
+      "detected_license_expression": null,
+      "detected_license_expression_spdx": null,
+      "license_detections": [],
+      "license_clues": [],
       "percentage_of_license_text": 0,
       "copyrights": [],
       "holders": [],
@@ -75,49 +82,55 @@
       "is_media": false,
       "is_source": false,
       "is_script": false,
-      "licenses": [
+      "detected_license_expression": "jetty",
+      "detected_license_expression_spdx": "LicenseRef-scancode-jetty",
+      "license_detections": [
         {
-          "key": "jetty",
-          "score": 100.0,
-          "name": "Jetty License",
-          "short_name": "Jetty License",
-          "category": "Permissive",
-          "is_exception": false,
-          "is_unknown": false,
-          "owner": "Jetty Project",
-          "homepage_url": "http://www.tinyos.net/tinyos-1.x/tools/java/jars/JETTY-LICENSE.txt",
-          "text_url": "http://svn.apache.org/repos/asf/forrest/trunk/tools/jetty/jetty-4.2.19.jar.license.html",
-          "reference_url": "https://scancode-licensedb.aboutcode.org/jetty",
-          "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/jetty.LICENSE",
-          "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/jetty.yml",
-          "spdx_license_key": "LicenseRef-scancode-jetty",
-          "spdx_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/jetty.LICENSE",
-          "start_line": 1,
-          "end_line": 132,
-          "matched_rule": {
-            "identifier": "jetty.LICENSE",
-            "license_expression": "jetty",
-            "licenses": [
-              "jetty"
-            ],
-            "referenced_filenames": [],
-            "is_license_text": true,
-            "is_license_notice": false,
-            "is_license_reference": false,
-            "is_license_tag": false,
-            "is_license_intro": false,
-            "has_unknown": false,
-            "matcher": "1-hash",
-            "rule_length": 996,
-            "matched_length": 996,
-            "match_coverage": 100.0,
-            "rule_relevance": 100
-          }
+          "license_expression": "jetty",
+          "detection_log": [
+            "not-combined"
+          ],
+          "matches": [
+            {
+              "score": 100.0,
+              "start_line": 1,
+              "end_line": 132,
+              "matched_length": 996,
+              "match_coverage": 100.0,
+              "matcher": "1-hash",
+              "license_expression": "jetty",
+              "rule_identifier": "jetty.LICENSE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/jetty.LICENSE",
+              "referenced_filenames": [],
+              "is_license_text": true,
+              "is_license_notice": false,
+              "is_license_reference": false,
+              "is_license_tag": false,
+              "is_license_intro": false,
+              "rule_length": 996,
+              "rule_relevance": 100,
+              "licenses": [
+                {
+                  "key": "jetty",
+                  "name": "Jetty License",
+                  "short_name": "Jetty License",
+                  "category": "Permissive",
+                  "is_exception": false,
+                  "is_unknown": false,
+                  "owner": "Jetty Project",
+                  "homepage_url": "http://www.tinyos.net/tinyos-1.x/tools/java/jars/JETTY-LICENSE.txt",
+                  "text_url": "http://svn.apache.org/repos/asf/forrest/trunk/tools/jetty/jetty-4.2.19.jar.license.html",
+                  "reference_url": "https://scancode-licensedb.aboutcode.org/jetty",
+                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/jetty.LICENSE",
+                  "spdx_license_key": "LicenseRef-scancode-jetty",
+                  "spdx_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/jetty.LICENSE"
+                }
+              ]
+            }
+          ]
         }
       ],
-      "license_expressions": [
-        "jetty"
-      ],
+      "license_clues": [],
       "percentage_of_license_text": 100.0,
       "copyrights": [
         {

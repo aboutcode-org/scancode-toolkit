@@ -1,0 +1,56 @@
+---
+key: skip-2014
+short_name: SKIP License 2014
+name: SKIP License 2014
+category: Copyleft Limited
+owner: KDPS
+homepage_url: http://www.kanji.org/dictionaries/skip_permission.htm
+spdx_license_key: LicenseRef-scancode-skip-2014
+text_urls:
+    - https://creativecommons.org/licenses/by-sa/4.0/legalcode
+other_urls:
+    - http://creativecommons.org/licenses/by-sa/4.0/
+ignorable_authors:
+    - Jack Halpern
+ignorable_urls:
+    - http://www.kanji.org/
+---
+
+****** SKIP - The System of Kanji Indexing by Patterns ******
+ 
+***** Introduction *****
+ 
+The System of Kanji Indexing by Patterns (SKIP) system for
+ ordering kanji was developed by Jack Halpern and used as the
+ main index for kanji in the New Japanese-English Character
+ Dictionary (Kenkyusha/NTC, 1990) and The Kodansha Kanji
+ Learner's Dictionary (Kodansha, 1999) and other dictionaries
+ published by Kanji Dictionary Publishing Society.
+ 
+The SKIP codes for the kanji not in the NJECD were compiled by
+ Jack Halpern and Martin Duerst (the remaining kanji in JIS X
+ 0208) and Jim Breen (the 5,801 kanji in JIS X 0212).
+ An overview of the SKIP system is available at this page.
+
+ ***** Conditions Of Use *****
+
+ As of December 12, 2014, the SKIP coding system and all
+ established SKIP codes have been placed under a Creative
+ Commons_Attribution-ShareAlike_4.0_International. (The full
+ License Code is here.)
+
+ As stated in that license, you may copy and redistribute the
+ SKIP coding system in any medium or format for any purpose,
+ even commercially, as long as you give appropriate credit.
+
+ Appropriate credit must clearly attribute the system and codes
+ to Jack Halpern, with a link to the website of the Kanji
+ Dictionary Publishing Society at http://www.kanji.org/. Below
+ is an example of how such an attribution may look like:
+
+      The SKIP (System of Kanji Indexing by Patterns)
+      system for ordering kanji was developed by Jack
+      Halpern (Kanji Dictionary Publishing Society at http:
+      //www.kanji.org/), and is used with his permission.
+
+ To get the latest SKIP codes, please contact us at jack[at]cjki.org.

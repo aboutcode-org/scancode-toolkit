@@ -1,3 +1,22 @@
+---
+key: historical
+short_name: Historical Permission Notice and Disclaimer
+name: Historical Permission Notice and Disclaimer
+category: Permissive
+owner: OSI - Open Source Initiative
+homepage_url: http://www.opensource.org/licenses/historical.php
+notes: |
+    Per SPDX.org, this license is OSI certified. This license has been
+    voluntarily deprecated by its author.
+spdx_license_key: HPND
+text_urls:
+    - http://www.opensource.org/licenses/historical.php
+osi_url: http://www.opensource.org/licenses/historical.php
+other_urls:
+    - http://www.opensource.org/licenses/HPND
+    - https://opensource.org/licenses/HPND
+---
+
 Permission to use, copy, modify and distribute this software and its
 documentation for any purpose and without fee is hereby granted,
 provided that the above copyright notice appear in all copies, and

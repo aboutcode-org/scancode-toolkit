@@ -1,3 +1,18 @@
+---
+key: sun-communications-api
+short_name: Sun Communications API
+name: Sun Communications API
+category: Proprietary Free
+owner: Oracle (Sun)
+spdx_license_key: LicenseRef-scancode-sun-communications-api
+ignorable_copyrights:
+    - Copyright Sun Microsystems, Inc.
+ignorable_holders:
+    - Sun Microsystems, Inc.
+ignorable_urls:
+    - http://java.sun.com/trademarks.html
+---
+
 Sun Communications API
 comm.jar Java(TM) Communications API 2.0 
 Copyright Sun Microsystems, Inc. 

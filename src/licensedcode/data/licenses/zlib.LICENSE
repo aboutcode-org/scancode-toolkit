@@ -1,3 +1,23 @@
+---
+key: zlib
+short_name: ZLIB License
+name: ZLIB License
+category: Permissive
+owner: zlib
+homepage_url: http://www.zlib.net/
+notes: Per SPDX.org, this is OSI certified
+spdx_license_key: Zlib
+text_urls:
+    - http://www.gzip.org/zlib/zlib_license.html
+osi_url: http://www.opensource.org/licenses/zlib-license.php
+faq_url: http://www.gzip.org/zlib/zlib-faq.html
+other_urls:
+    - http://www.opensource.org/licenses/Zlib
+    - http://www.zlib.net/zlib_license.html
+    - https://opensource.org/licenses/Zlib
+minimum_coverage: 50
+---
+
 This software is provided 'as-is', without any express or implied warranty. In no
 event will the authors be held liable for any damages arising from the use of this
 software.

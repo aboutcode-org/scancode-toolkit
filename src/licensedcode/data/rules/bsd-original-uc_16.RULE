@@ -1,4 +1,10 @@
- Update: The Berkeley copyright was changed, and the change
+---
+license_expression: bsd-original-uc
+is_license_reference: yes
+minimum_coverage: 90
+---
+
+Update: The Berkeley copyright was changed, and the change
  is retroactive to all "true" BSD software (ie everything
  from UCB as opposed to other peoples code that just carried
  the same license). The new copyright doesn't clash with the

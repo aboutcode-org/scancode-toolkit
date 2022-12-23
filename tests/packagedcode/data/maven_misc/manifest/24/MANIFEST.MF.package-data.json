@@ -4,7 +4,7 @@
   "name": "com.sun.mail.mailapi",
   "version": "1.6.1",
   "description": "JavaMail API (no providers)",
-  "declared_license": "https://javaee.github.io/javamail/LICENSE",
+  "extracted_license_statement": "https://javaee.github.io/javamail/LICENSE",
   "copyright": null,
   "homepage_url": null,
   "documentation_url": "http://www.oracle.com",

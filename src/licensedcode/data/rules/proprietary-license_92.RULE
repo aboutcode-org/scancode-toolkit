@@ -1,3 +1,12 @@
+---
+license_expression: proprietary-license
+is_license_text: yes
+relevance: 100
+ignorable_urls:
+    - http://www.java.net/
+    - http://www.sun.com/service/servicelist
+---
+
 Sun Microsystems, Inc. ("Sun") ENTITLEMENT for SOFTWARE
 
 Licensee/Company: Entity receiving Software.
@@ -118,4 +127,3 @@ If any provision of this Agreement is held to be unenforceable, this Agreement w
 This Agreement, including any terms contained in your Entitlement, is the entire agreement between you and Sun relating to its subject matter. It supersedes all prior or contemporaneous oral or written communications, proposals, representations and warranties and prevails over any conflicting or additional terms of any quote, order, acknowledgment, or other communication between the parties relating to its subject matter during the term of this Agreement. No modification of this Agreement will be binding, unless in writing and signed by an authorized representative of each party.
 
 Please contact Sun Microsystems, Inc. 4150 Network Circle, Santa Clara, California 95054 if you have questions.
-

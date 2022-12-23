@@ -1,3 +1,16 @@
+---
+license_expression: gpl-2.0
+is_license_text: yes
+relevance: 100
+notes: from https://raw.githubusercontent.com/pombredanne/gpl-history/v1.0/allvers/COPYING.4.html
+ignorable_copyrights:
+    - Copyright (c) 1989, 1991 Free Software Foundation, Inc.
+    - copyrighted by the Free Software Foundation
+ignorable_holders:
+    - Free Software Foundation, Inc.
+    - the Free Software Foundation
+---
+
 <h2><a name="SEC1" href="gpl.html#TOC1">GNU GENERAL PUBLIC LICENSE</a></h2>
 <p>
 Version 2, June 1991

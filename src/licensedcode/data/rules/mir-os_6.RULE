@@ -1,1 +1,9 @@
+---
+license_expression: mir-os
+is_license_reference: yes
+relevance: 100
+ignorable_urls:
+    - https://www.mirbsd.org/about.htm
+---
+
 https://www.mirbsd.org/about.htm

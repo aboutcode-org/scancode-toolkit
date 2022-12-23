@@ -1,3 +1,10 @@
+---
+license_expression: generic-cla
+is_license_notice: yes
+ignorable_urls:
+    - https://cla.developers.google.com/clas
+---
+
 ### Legal requirements
  
  In order to protect both you and ourselves, you will need to sign the

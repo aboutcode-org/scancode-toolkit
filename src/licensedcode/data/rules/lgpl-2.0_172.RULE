@@ -1,2 +1,10 @@
-      This code is licensed under the LGPLv2:
+---
+license_expression: lgpl-2.0
+is_license_notice: yes
+relevance: 100
+ignorable_urls:
+    - https://www.gnu.org/copyleft/lgpl.html
+---
+
+This code is licensed under the LGPLv2:
               LGPL (https://www.gnu.org/copyleft/lgpl.html

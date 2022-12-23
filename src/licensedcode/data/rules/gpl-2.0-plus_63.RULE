@@ -1,4 +1,11 @@
-	License:
+---
+license_expression: gpl-2.0-plus
+is_license_notice: yes
+ignorable_urls:
+    - http://www.fsf.org/licensing/licenses/gpl-faq.html#InterpreterIncompat
+---
+
+License:
 		This program is free software; you can redistribute it and/or
 		modify it under the terms of the GNU General Public License
 		as published by the Free Software Foundation; either version 2
@@ -19,4 +26,3 @@
 		You have an implicit licence to use this AddOn with these facilities
 		since that is its designated purpose as per:
 		http://www.fsf.org/licensing/licenses/gpl-faq.html#InterpreterIncompat
-

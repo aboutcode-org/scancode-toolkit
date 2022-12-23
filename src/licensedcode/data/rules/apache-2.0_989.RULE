@@ -1,2 +1,11 @@
+---
+license_expression: apache-2.0
+is_license_notice: yes
+relevance: 100
+minimum_coverage: 90
+referenced_filenames:
+    - /usr/share/common-licenses/Apache-2.0
+---
+
 On Debian GNU/Linux systems, the full text of the Apache Software License version 2 can
  be found in the file `/usr/share/common-licenses/Apache-2.0'.

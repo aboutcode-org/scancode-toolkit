@@ -1,3 +1,9 @@
+---
+license_expression: apache-2.0 AND elastic-license-2018
+is_license_notice: yes
+relevance: 100
+---
+
 The build produces two sets of binaries - one set that falls under the Elastic
 License and another set that falls under Apache License 2.0. The binaries that
 contain `-oss` in the artifact name are licensed under Apache License 2.0 and

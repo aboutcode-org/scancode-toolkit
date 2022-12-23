@@ -1,2 +1,9 @@
+---
+license_expression: bsd-simplified
+is_license_notice: yes
+relevance: 100
+minimum_coverage: 100
+---
+
 Released under the terms of the `2-Clause BSD license`_
   (`local copy <licenses/BSD-2-Clause.txt>`__).

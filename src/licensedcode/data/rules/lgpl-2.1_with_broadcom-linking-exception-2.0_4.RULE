@@ -1,3 +1,13 @@
+---
+license_expression: lgpl-2.1 WITH broadcom-linking-exception-2.0
+is_license_notice: yes
+minimum_coverage: 99
+referenced_filenames:
+    - COPYING.FPC
+    - COPYING
+notes: found in the freepascal compiler
+---
+
 This is the file COPYING.FPC, it applies to the Free Pascal Run-Time Library 
 (RTL) and packages (packages) distributed by members of the Free Pascal 
 Development Team.
@@ -22,4 +32,3 @@ If you didn't receive a copy of the file COPYING, contact:
       675 Mass Ave
       Cambridge, MA  02139
       USA
-

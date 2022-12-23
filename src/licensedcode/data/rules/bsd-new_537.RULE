@@ -1,3 +1,11 @@
+---
+license_expression: bsd-new
+is_license_notice: yes
+relevance: 100
+ignorable_urls:
+    - http://www.opensource.org/licenses/BSD-3-Clause
+---
+
 licensed under The BSD License (3 Clause, also known as
 the new BSD license).  The license is an OSI approved Open Source
 license and is GPL-compatible(1).

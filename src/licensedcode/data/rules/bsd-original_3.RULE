@@ -1,4 +1,13 @@
- * Redistribution and use in source and binary forms, with or without
+---
+license_expression: bsd-original
+is_license_text: yes
+minimum_coverage: 90
+notes: Variant of bsd-original
+ignorable_authors:
+    - the and its contributors
+---
+
+* Redistribution and use in source and binary forms, with or without
  * modification, are permitted provided that the following conditions
  * are met:
  * 

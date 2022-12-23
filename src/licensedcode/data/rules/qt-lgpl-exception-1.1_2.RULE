@@ -1,3 +1,8 @@
+---
+license_expression: qt-lgpl-exception-1.1
+is_license_text: yes
+---
+
 As an additional permission to the GNU Lesser General Public License version
 2.1, the object code form of a "work that uses the Library" may incorporate
 material from a header file that is part of the Library.  You may distribute

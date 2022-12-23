@@ -1,1 +1,8 @@
+---
+license_expression: bsd-new
+is_license_tag: yes
+relevance: 99
+notes: we picked the bsd-new out of all possible bsd licenses
+---
+
 License :: OSI-Approved Open Source :: BSD License

@@ -1,7 +1,14 @@
- * This software is licensed under the "Creative Commons 
+---
+license_expression: cc-by-nc-sa-2.0
+is_license_notice: yes
+ignorable_urls:
+    - http://creativecommons.org/licenses/by-nc-sa/2.0/
+---
+
+* This software is licensed under the "Creative Commons 
  * License (Attribution-NonCommercial-ShareAlike 2.0)" 
  * and is copyrighted by
  * 
  * Further information on this license can be found at:
  * http://creativecommons.org/licenses/by-nc-sa/2.0/
- * 
+ *

@@ -1,4 +1,11 @@
- Redistribution and use in source and binary forms, with or without
+---
+license_expression: bsd-3-clause-no-nuclear-warranty
+is_license_text: yes
+relevance: 99
+minimum_coverage: 95
+---
+
+Redistribution and use in source and binary forms, with or without
  modification, are permitted provided that the following conditions
  are met: 
  

@@ -1,4 +1,13 @@
- NUGET: BEGIN LICENSE TEXT
+---
+license_expression: ms-nuget AND mit AND mit
+is_license_notice: yes
+minimum_coverage: 93
+ignorable_urls:
+    - http://jquery.org/license
+    - http://opensource.org/licenses/MIT
+---
+
+NUGET: BEGIN LICENSE TEXT
 
  Microsoft grants you the right to use these script files for the sole
  purpose of either: (i) interacting through your browser with the Microsoft

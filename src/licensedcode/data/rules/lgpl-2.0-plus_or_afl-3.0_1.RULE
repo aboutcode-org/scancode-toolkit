@@ -1,2 +1,8 @@
+---
+license_expression: lgpl-2.0-plus OR afl-3.0
+is_license_notice: yes
+relevance: 100
+---
+
 It is dual-licensed under the terms of the GNU Lesser General Public
 License, and the Academic Free License, version 2.0.

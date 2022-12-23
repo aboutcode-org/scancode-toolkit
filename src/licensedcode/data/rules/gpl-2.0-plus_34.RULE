@@ -1,4 +1,12 @@
- | This software is subject to, and may be distributed under, the
+---
+license_expression: gpl-2.0-plus
+is_license_notice: yes
+notes: Lizartech gpl notice
+ignorable_urls:
+    - http://www.fsf.org/
+---
+
+| This software is subject to, and may be distributed under, the
  | GNU General Public License, either Version 2 of the license,
  | or (at your option) any later version. The license should have
  | accompanied the software or you may obtain a copy of the license

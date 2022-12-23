@@ -1,3 +1,8 @@
+---
+license_expression: gnu-emacs-gpl-1988
+is_license_notice: yes
+---
+
 ;; Everyone is granted permission to copy, modify and redistribute
 ;; GNU Emacs, but only under the conditions described in the
 ;; GNU Emacs General Public License.   A copy of this license is

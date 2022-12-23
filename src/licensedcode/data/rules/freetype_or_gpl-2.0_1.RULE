@@ -1,2 +1,8 @@
+---
+license_expression: freetype OR gpl-2.0
+is_license_notice: yes
+relevance: 100
+---
+
 "License": "{{Freetype Project License or GNU General Public License v2.0 only}}",
 "LicenseId": "{{FTL or GPL-2.0}}",

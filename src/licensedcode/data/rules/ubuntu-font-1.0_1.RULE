@@ -1,2 +1,9 @@
-    This Font Software is licensed under the Ubuntu Font Licence, Version
+---
+license_expression: ubuntu-font-1.0
+is_license_notice: yes
+ignorable_urls:
+    - https://launchpad.net/ubuntu-font-licence
+---
+
+This Font Software is licensed under the Ubuntu Font Licence, Version
     1.0.  https://launchpad.net/ubuntu-font-licence

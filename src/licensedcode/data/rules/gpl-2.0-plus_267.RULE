@@ -1,1 +1,9 @@
+---
+license_expression: gpl-2.0-plus
+is_license_reference: yes
+relevance: 100
+referenced_filenames:
+    - COPYING
+---
+
 is relased under the GNU General Public Licence 2.0 or later (see COPYING)

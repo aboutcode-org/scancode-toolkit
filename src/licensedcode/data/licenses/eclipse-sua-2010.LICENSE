@@ -1,3 +1,20 @@
+---
+key: eclipse-sua-2010
+short_name: Eclipse Foundation Software User Agreement 2010
+name: Eclipse Foundation Software User Agreement 2010
+category: Copyleft Limited
+owner: Eclipse Foundation
+homepage_url: https://web.archive.org/web/20100921113304/http://eclipse.org/legal/epl/notice.php
+spdx_license_key: LicenseRef-scancode-eclipse-sua-2010
+ignorable_urls:
+    - http://eclipse.org/equinox/p2/repository_packaging.html
+    - http://www.apache.org/licenses/LICENSE
+    - http://www.apache.org/licenses/LICENSE-2.0
+    - http://www.eclipse.org/legal/cpl-v10.html
+    - http://www.eclipse.org/legal/epl-v10.html
+    - http://www.mozilla.org/MPL/MPL-1.1.html
+    - http://www.opengroup.org/openmotif/supporters/metrolink/license.html
+---
 
 Eclipse Foundation Software User Agreement
 

@@ -1,3 +1,9 @@
+---
+license_expression: proprietary-license
+is_license_text: yes
+relevance: 100
+---
+
 LICENSE INFORMATION
 
 This license allows the empirical evaluation and a study of the source code in the scientific context for research purpose (e.g. during research projects). Particularly, it does not permit the application of the algorithms in a commercial context by others.

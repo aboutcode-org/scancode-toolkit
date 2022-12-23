@@ -1,3 +1,12 @@
+---
+key: can-ogl-alberta-2.1
+short_name: OGL Alberta 2.1
+name: Open Government Licence Alberta 2.1
+category: Permissive
+owner: Alberta Government
+homepage_url: https://open.alberta.ca/licence
+spdx_license_key: LicenseRef-scancode-can-ogl-alberta-2.1
+---
 
 Open Government Licence - Alberta
 
@@ -73,4 +82,3 @@ means the natural or legal person, or body of persons corporate or incorporate, 
 Versioning
 
     This is version 2.1 of the Open Government Licence – Alberta. The Information Provider may make changes to the terms of this licence from time to time and issue a new version of the licence. Your use of the Information will be governed by the terms of the licence in force as of the date you accessed the information.
-

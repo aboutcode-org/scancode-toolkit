@@ -1,1 +1,6 @@
+---
+is_false_positive: yes
+notes: seen in Kata containers
+---
+
 This SPDX licence identifier requirement

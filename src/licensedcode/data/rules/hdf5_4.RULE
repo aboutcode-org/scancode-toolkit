@@ -1,3 +1,11 @@
+---
+license_expression: hdf5
+is_license_notice: yes
+relevance: 100
+ignorable_urls:
+    - https://support.hdfgroup.org/ftp/HDF5/releases
+---
+
 $fh " * This file is part of HDF5.  The full HDF5 copyright notice, including     * ";
 $fh " * terms governing use, modification, and redistribution, is contained in    * ";
 $fh " * the COPYING file, which can be found at the root of the source code       * ";

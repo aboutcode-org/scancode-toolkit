@@ -1,3 +1,12 @@
+---
+license_expression: ijg
+is_license_text: yes
+ignorable_copyrights:
+    - copyright (c) 1994-1996, Thomas G. Lane
+ignorable_holders:
+    - Thomas G. Lane
+---
+
 The authors make NO WARRANTY or representation, either express or implied,
 with respect to this software, its quality, accuracy, merchantability, or
 fitness for a particular purpose.  This software is provided "AS IS", and

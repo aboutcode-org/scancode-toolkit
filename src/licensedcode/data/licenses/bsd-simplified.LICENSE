@@ -1,3 +1,24 @@
+---
+key: bsd-simplified
+short_name: BSD-2-Clause
+name: BSD-2-Clause
+category: Permissive
+owner: Regents of the University of California
+homepage_url: http://www.opensource.org/licenses/BSD-2-Clause
+notes: Per SPDX.org, this license is OSI certified.
+spdx_license_key: BSD-2-Clause
+other_spdx_license_keys:
+    - BSD-2-Clause-NetBSD
+    - BSD-2
+text_urls:
+    - http://opensource.org/licenses/bsd-license.php
+osi_url: http://opensource.org/licenses/bsd-license.php
+other_urls:
+    - http://spdx.org/licenses/BSD-2-Clause
+    - http://www.freebsd.org/copyright/copyright.html
+    - https://opensource.org/licenses/BSD-2-Clause
+---
+
 Redistribution and use in source and binary forms, with or without modification,
 are permitted provided that the following conditions are met:
 

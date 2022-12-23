@@ -1,3 +1,12 @@
+---
+license_expression: gpl-2.0 AND lgpl-2.0 AND bsd-new AND mit
+is_license_notice: yes
+relevance: 100
+minimum_coverage: 90
+referenced_filenames:
+    - lib/uuid/COPYING
+---
+
 This package, the EXT2 filesystem utilities, are made available under
 the GNU Public License, with the exception of the lib/uuid directory
 which is made available under a BSD-style license.  Please see

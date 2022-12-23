@@ -1,4 +1,12 @@
-  License
+---
+license_expression: gpl-2.0-plus
+is_license_notice: yes
+relevance: 100
+ignorable_urls:
+    - https://www.gnu.org/
+---
+
+License
  
  This driver is distributed under the terms of the General Public License.
  

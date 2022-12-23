@@ -1,9 +1,0 @@
-key: jide-sla
-short_name: JIDE SLA
-name: JIDE SLA
-category: Commercial
-owner: JIDE Software
-homepage_url: http://www.jidesoft.com/purchase/SLA.htm
-spdx_license_key: LicenseRef-scancode-jide-sla
-ignorable_urls:
-    - http://www.jidesoft.com/

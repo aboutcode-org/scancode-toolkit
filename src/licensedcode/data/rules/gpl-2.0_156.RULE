@@ -1,4 +1,14 @@
+---
+license_expression: gpl-2.0
+is_license_notice: yes
+relevance: 99
+minimum_coverage: 100
+referenced_filenames:
+    - COPYING
+notes: linux is GPL2.
+---
+
 WHAT IS LINUX?
 
   It is distributed under the GNU General Public License - see the
-  accompanying COPYING file for more details. 
+  accompanying COPYING file for more details.

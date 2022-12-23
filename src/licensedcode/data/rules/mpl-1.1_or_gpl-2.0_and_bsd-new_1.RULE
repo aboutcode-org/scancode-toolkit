@@ -1,2 +1,7 @@
+---
+license_expression: (mpl-1.1 OR gpl-2.0) AND bsd-new
+is_license_notice: yes
+---
+
 The Library is dually available
 under an MPL 1.1/GPL 2.0 license, with portions subject to a BSD license.

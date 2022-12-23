@@ -1,0 +1,60 @@
+{
+  "files": [
+    {
+      "path": "additional_license_plugin_test.txt",
+      "type": "file",
+      "detected_license_expression": "example-installed-1",
+      "detected_license_expression_spdx": "scancode-example-installed1",
+      "license_detections": [
+        {
+          "license_expression": "example-installed-1",
+          "detection_log": [
+            "not-combined"
+          ],
+          "matches": [
+            {
+              "score": 100.0,
+              "start_line": 1,
+              "end_line": 1,
+              "matched_length": 11,
+              "match_coverage": 100.0,
+              "matcher": "1-hash",
+              "license_expression": "example-installed-1",
+              "rule_identifier": "example-installed-1.LICENSE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/example-installed-1.LICENSE",
+              "referenced_filenames": [],
+              "is_license_text": true,
+              "is_license_notice": false,
+              "is_license_reference": false,
+              "is_license_tag": false,
+              "is_license_intro": false,
+              "rule_length": 11,
+              "rule_relevance": 100,
+              "licenses": [
+                {
+                  "key": "example-installed-1",
+                  "name": "Example Installed License 1",
+                  "short_name": "Example Installed License 1",
+                  "category": "Permissive",
+                  "is_exception": false,
+                  "is_unknown": false,
+                  "owner": "NexB",
+                  "homepage_url": null,
+                  "text_url": "",
+                  "reference_url": "https://scancode-licensedb.aboutcode.org/example-installed-1",
+                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/example-installed-1.LICENSE",
+                  "spdx_license_key": "scancode-example-installed1",
+                  "spdx_url": "https://spdx.org/licenses/scancode-example-installed1"
+                }
+              ],
+              "is_builtin": false
+            }
+          ]
+        }
+      ],
+      "license_clues": [],
+      "percentage_of_license_text": 100.0,
+      "scan_errors": []
+    }
+  ]
+}

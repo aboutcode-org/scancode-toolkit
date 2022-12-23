@@ -1,3 +1,13 @@
+---
+key: aslp
+short_name: Artop ASLP
+name: Artop Software License for Preparatory Development
+category: Free Restricted
+owner: Artop
+homepage_url: http://www.artop.org/aslp.html
+spdx_license_key: LicenseRef-scancode-aslp
+---
+
 Artop Software License for Preparatory Development (ASLP)
 THE ACCOMPANYING PROGRAM IS PROVIDED UNDER THE TERMS OF THIS ARTOP SOFTWARE LICENSE FOR PREPARATORY DEVELOPMENT (ASLP) ("LICENSE"). ANY USE, REPRODUCTION OR DISTRIBUTION OF THE PROGRAM CONSTITUTES RECIPIENT'S ACCEPTANCE OF THIS AGREEMENT.
 

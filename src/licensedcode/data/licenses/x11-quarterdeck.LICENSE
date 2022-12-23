@@ -1,3 +1,13 @@
+---
+key: x11-quarterdeck
+short_name: X11-Style (Quarterdeck)
+name: X11-Style (Quarterdeck)
+category: Permissive
+owner: Quarterdeck
+spdx_license_key: LicenseRef-scancode-x11-quarterdeck
+minimum_coverage: 80
+---
+
 Permission to use, copy, modify, distribute, and sell this software and software and its
 documentation for any purpose is hereby granted without fee, provided that the
 above copyright notice appear in all copies and that both that copyright

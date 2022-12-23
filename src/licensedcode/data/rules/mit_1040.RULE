@@ -1,3 +1,12 @@
+---
+license_expression: mit
+is_license_notice: yes
+relevance: 100
+notes: this looks like an Apache license notice Seen in https://github.com/asciidoctor/asciidoctor-pdf/blob/main/NOTICE.adoc
+ignorable_urls:
+    - http://opensource.org/licenses/MIT
+---
+
 Project licenses this product to you under the MIT License (the "License"). You may not use this product except in compliance with the License. You may obtain a copy of the License at:
 
 http://opensource.org/licenses/MIT

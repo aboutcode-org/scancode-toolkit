@@ -1,3 +1,13 @@
+---
+key: iozone
+short_name: IOzone License
+name: IOzone License
+category: Proprietary Free
+owner: William Norcott
+homepage_url: http://www.iozone.org/docs/Iozone_License.txt
+spdx_license_key: LicenseRef-scancode-iozone
+---
+
 License to freely use and distribute this software is hereby granted by the
 author, subject to the condition that this copyright notice remains intact.  The
 author retains the exclusive right to publish derivative works based on this

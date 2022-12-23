@@ -1,3 +1,22 @@
+---
+key: treeview-developer
+short_name: TreeView Developer License
+name: TreeView Developer License
+category: Proprietary Free
+owner: GubuSoft
+homepage_url: http://www.treeview.net/tv/license_dev.asp
+spdx_license_key: LicenseRef-scancode-treeview-developer
+minimum_coverage: 60
+ignorable_copyrights:
+    - Copyright (c) 2006 Conor O'Mahony (gubusoft@gubusoft.com)
+ignorable_holders:
+    - Conor O'Mahony
+ignorable_urls:
+    - http://www.treeview.net/
+ignorable_emails:
+    - gubusoft@gubusoft.com
+---
+
 TreeView License: Developer's License
 
 This License For Customer Use of GubuSoft TreeView Software ("LICENSE") is the agreement which governs use of the TreeView software by GubuSoft ("GUBUSOFT") downloadable herefrom, including computer software and associated documentation ("SOFTWARE"). By downloading, installing, copying, or otherwise using the SOFTWARE, you agree to be bound by the terms of this LICENSE. If you do not agree to the terms of this LICENSE, do not use the SOFTWARE.

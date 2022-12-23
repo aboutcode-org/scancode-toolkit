@@ -1,3 +1,12 @@
+---
+key: amd-historical
+short_name: AMD Historical License
+name: AMD Historical License
+category: Permissive
+owner: Advanced Micro Devices
+notes: this is a short historical permissive license seen in the newlib C library
+spdx_license_key: LicenseRef-scancode-amd-historical
+---
 
 This software is the property of Advanced Micro Devices, Inc  (AMD)  which
 specifically  grants the user the right to modify, use and distribute this

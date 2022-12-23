@@ -1,5 +1,0 @@
-license_expression: (mpl-1.1 OR epl-1.0) AND h2-1.0 AND proprietary-license
-is_license_notice: yes
-ignorable_urls:
-    - http://www.bungisoft.com/
-    - http://www.h2database.com/html/license.html#h2_license

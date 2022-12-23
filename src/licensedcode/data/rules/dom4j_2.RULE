@@ -1,1 +1,9 @@
+---
+license_expression: dom4j
+is_license_reference: yes
+relevance: 100
+ignorable_urls:
+    - http://www.dom4j.org/license.html
+---
+
 http://www.dom4j.org/license.html

@@ -296,7 +296,7 @@ class DebianInstalledStatusDatabaseHandler(models.DatafileHandler):
                 package_data = models.PackageData.from_dict(pkgdt)
                 if TRACE:
                     # logger_debug(f'     debian: assemble: root_walk: package_data: {package_data}')
-                    logger_debug(f'     debian: assemble: root_walk: package_data: {package_data.license_expression}')
+                    logger_debug(f'     debian: assemble: root_walk: package_data: {package_data.declared_license_expression}')
 
                 # Most debian secondary files are only specific to a name. We
                 # have a few cases where the arch is included in the lists and

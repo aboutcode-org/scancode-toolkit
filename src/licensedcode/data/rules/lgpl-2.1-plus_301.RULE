@@ -1,3 +1,11 @@
+---
+license_expression: lgpl-2.1-plus
+is_license_notice: yes
+relevance: 100
+minimum_coverage: 95
+notes: found in libdnf
+---
+
 Licensed under the GNU Lesser General Public License Version 2.1
 
 This library is free software; you can redistribute it and/or

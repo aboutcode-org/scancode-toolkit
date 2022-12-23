@@ -1,3 +1,12 @@
+---
+license_expression: gpl-2.0
+is_license_notice: yes
+referenced_filenames:
+    - COPYING
+ignorable_urls:
+    - http://www.gnu.org/licenses/
+---
+
 This driver software is distributed as is, without any warranty of any kind,
 either express or implied as further specified in the GNU Public License.
 This software may be used and distributed according to the terms of the GNU

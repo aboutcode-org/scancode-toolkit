@@ -1,1 +1,10 @@
+---
+license_expression: gpl-2.0 WITH autoconf-exception-2.0
+is_license_reference: yes
+is_continuous: yes
+relevance: 100
+minimum_coverage: 100
+notes: Rule based on an SPDX license name and/or ID
+---
+
 GPL-2.0-with-autoconf-exception GNU General Public License v2.0 w/Autoconf exception

@@ -1,3 +1,10 @@
+---
+license_expression: regexp
+is_license_text: yes
+relevance: 100
+minimum_coverage: 80
+---
+
 Not derived from licensed software.
 
 Permission is granted to anyone to use this software for any
@@ -13,4 +20,3 @@ subject to the following restrictions:
 
 3. Altered versions must be plainly marked as such, and must not
    be misrepresented as being the original software.
-  

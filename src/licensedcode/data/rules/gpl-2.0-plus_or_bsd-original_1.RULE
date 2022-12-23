@@ -1,5 +1,13 @@
+---
+license_expression: gpl-2.0-plus OR bsd-original
+is_license_notice: yes
+relevance: 100
+minimum_coverage: 80
+ignorable_authors:
+    - the University of Maryland
+---
 
- * Either license may be used.  The respective licenses are found below. 
+* Either license may be used.  The respective licenses are found below. 
  * - GPL Version 2 License -
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License

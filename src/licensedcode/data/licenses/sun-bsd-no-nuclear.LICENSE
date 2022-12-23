@@ -1,3 +1,16 @@
+---
+key: sun-bsd-no-nuclear
+short_name: Sun BSD-Style with Nuclear Restrictions
+name: Sun BSD-Style with Nuclear Restrictions
+category: Free Restricted
+owner: Oracle (Sun)
+spdx_license_key: BSD-3-Clause-No-Nuclear-License
+other_urls:
+    - http://download.oracle.com/otn-pub/java/licenses/bsd.txt?AuthParam=1467140197_43d516ce1776bd08a58235a7785be1cc
+    - https://jogamp.org/git/?p=gluegen.git;a=blob_plain;f=LICENSE.txt
+minimum_coverage: 90
+---
+
 Redistribution and use in source and binary forms, with or without
 modification, are permitted provided that the following conditions are
 met:

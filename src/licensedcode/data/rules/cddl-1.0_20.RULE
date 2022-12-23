@@ -1,3 +1,10 @@
+---
+license_expression: cddl-1.0
+is_license_notice: yes
+ignorable_urls:
+    - http://www.opensource.org/licenses/cddl1.php
+---
+
 You may obtain a copy of the "CDDL" License at
 
 http://www.opensource.org/licenses/cddl1.php

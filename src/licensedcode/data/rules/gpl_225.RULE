@@ -1,1 +1,9 @@
- * This source code is being released under the GPL.
+---
+license_expression: gpl-1.0-plus
+is_license_notice: yes
+relevance: 100
+referenced_filenames:
+    - COPYING
+---
+
+* This source code is being released under the GPL.

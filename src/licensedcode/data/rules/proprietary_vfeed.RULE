@@ -1,2 +1,9 @@
+---
+license_expression: proprietary-license
+is_license_notice: yes
+ignorable_urls:
+    - http://vfeed.io/
+---
+
 This Software includes and/or makes use of the following Third-Party Software subject to its own license:
 1. vFeed (http://vfeed.io)

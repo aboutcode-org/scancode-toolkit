@@ -1,4 +1,11 @@
+---
+license_expression: lgpl-2.1-plus
+is_license_notice: yes
+referenced_filenames:
+    - COPYING.LESSER
+    - COPYING
+---
+
 This software is distributed under the GNU Lesser General Public Licence
 as published by the Free Software Foundation. Please see the file
 COPYING.LESSER and COPYING for the exact licensing terms and conditions.
-

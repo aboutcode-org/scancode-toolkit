@@ -1,3 +1,12 @@
+---
+key: 3com-microcode
+short_name: 3Com Microcode
+name: 3Com Microcode
+category: Permissive
+owner: HP - Hewlett Packard
+notes: this is a Linux firmware BSD-like license with some weird extra terms
+spdx_license_key: LicenseRef-scancode-3com-microcode
+---
 
 Redistribution and use in source and binary forms of the 
 microcode software are permitted provided that the following conditions

@@ -1,3 +1,13 @@
+---
+key: ellis-lab
+short_name: EllisLab License
+name: EllisLab License
+category: Permissive
+owner: EllisLab
+homepage_url: http://www.codeigniter.com/docs
+spdx_license_key: LicenseRef-scancode-ellis-lab
+---
+
 This license is a legal agreement between you and {copyright-owner} for the use
 of {component} (the "Software").  By obtaining the Software you
 agree to comply with the terms and conditions of this license.

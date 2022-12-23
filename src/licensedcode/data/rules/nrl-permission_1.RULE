@@ -1,3 +1,11 @@
+---
+license_expression: nrl-permission
+is_license_text: yes
+relevance: 95
+notes: this is a slightly modified version that removes some documentation requirement. "that
+    both notices appear in supporting documentation." is no longer there
+---
+
 Permission to use, copy, modify and distribute this software and
    its documentation is hereby granted, provided that both the
    copyright notice and this permission notice appear in all copies of

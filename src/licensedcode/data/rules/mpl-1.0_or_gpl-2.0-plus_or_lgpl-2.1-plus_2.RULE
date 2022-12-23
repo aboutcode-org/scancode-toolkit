@@ -1,4 +1,12 @@
- is published under the MPL, GPL, LGPL tripple license.  
+---
+license_expression: mpl-1.0 OR gpl-2.0-plus OR lgpl-2.1-plus
+is_license_notice: yes
+notes: Opensip tri license in HTML
+ignorable_urls:
+    - http://www.mozilla.org/MPL/
+---
+
+is published under the MPL, GPL, LGPL tripple license.  
  The default active license is
 MPL.  However, because of the inherent incompatibility between MPL
 and GNU licenses, we decided to explicitly publish  using GPL

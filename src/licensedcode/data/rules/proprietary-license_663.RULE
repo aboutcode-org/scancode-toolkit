@@ -1,3 +1,10 @@
+---
+license_expression: proprietary-license
+is_license_text: yes
+ignorable_authors:
+    - MediaTek Inc.
+---
+
 This software/firmware and related documentation ("MediaTek Software") are
 protected under relevant copyright laws. The information contained herein
 is confidential and proprietary to MediaTek Inc. and/or its licensors.

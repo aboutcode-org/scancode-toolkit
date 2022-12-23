@@ -1,2 +1,9 @@
+---
+license_expression: gpl-2.0
+is_license_notice: yes
+relevance: 100
+notes: Seen in FFmpeg
+---
+
 This software is derived from the GNU GPL XviD codec
 Your software distributor has to give access to its source code

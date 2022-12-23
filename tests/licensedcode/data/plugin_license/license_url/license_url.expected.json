@@ -1,0 +1,69 @@
+{
+  "files": [
+    {
+      "path": "scan",
+      "type": "directory",
+      "detected_license_expression": null,
+      "detected_license_expression_spdx": null,
+      "license_detections": [],
+      "license_clues": [],
+      "percentage_of_license_text": 0,
+      "scan_errors": []
+    },
+    {
+      "path": "scan/apache-1.0.txt",
+      "type": "file",
+      "detected_license_expression": "apache-1.0",
+      "detected_license_expression_spdx": "Apache-1.0",
+      "license_detections": [
+        {
+          "license_expression": "apache-1.0",
+          "detection_log": [
+            "not-combined"
+          ],
+          "matches": [
+            {
+              "score": 100.0,
+              "start_line": 4,
+              "end_line": 54,
+              "matched_length": 368,
+              "match_coverage": 100.0,
+              "matcher": "2-aho",
+              "license_expression": "apache-1.0",
+              "rule_identifier": "apache-1.0.LICENSE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-1.0.LICENSE",
+              "referenced_filenames": [],
+              "is_license_text": true,
+              "is_license_notice": false,
+              "is_license_reference": false,
+              "is_license_tag": false,
+              "is_license_intro": false,
+              "rule_length": 368,
+              "rule_relevance": 100,
+              "licenses": [
+                {
+                  "key": "apache-1.0",
+                  "name": "Apache License 1.0",
+                  "short_name": "Apache 1.0",
+                  "category": "Permissive",
+                  "is_exception": false,
+                  "is_unknown": false,
+                  "owner": "Apache Software Foundation",
+                  "homepage_url": "http://www.apache.org/licenses/",
+                  "text_url": "http://www.apache.org/licenses/LICENSE-1.0",
+                  "reference_url": "https://scancode-licensedb.aboutcode.org/apache-1.0",
+                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-1.0.LICENSE",
+                  "spdx_license_key": "Apache-1.0",
+                  "spdx_url": "https://spdx.org/licenses/Apache-1.0"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "license_clues": [],
+      "percentage_of_license_text": 97.61,
+      "scan_errors": []
+    }
+  ]
+}

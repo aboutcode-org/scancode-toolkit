@@ -1,3 +1,16 @@
+---
+key: ocaml-lgpl-linking-exception
+short_name: OCaml LGPL Linking Exception
+name: OCaml LGPL Linking Exception
+category: Copyleft Limited
+owner: OCaml
+homepage_url: https://caml.inria.fr/ocaml/license.en.html
+is_exception: yes
+spdx_license_key: OCaml-LGPL-linking-exception
+other_urls:
+    - https://caml.inria.fr/ocaml/license.en.html
+---
+
 OCaml LGPL Linking Exception
 
 As a special exception to the GNU Lesser General Public License, you may link, 

@@ -1,4 +1,14 @@
- ***** BEGIN LICENSE BLOCK *****
+---
+license_expression: cpl-1.0 OR gpl-2.0-plus OR lgpl-2.1-plus
+is_license_notice: yes
+relevance: 90
+notes: a conflicted license with reference to the CPL 2.0 (likely a mistake from EPL 2.0) seen
+    in JRuby
+ignorable_urls:
+    - http://www.eclipse.org/legal/cpl-v10.html
+---
+
+***** BEGIN LICENSE BLOCK *****
  * Version: CPL 1.0/GPL 2.0/LGPL 2.1
  *
  * The contents of this file are subject to the Common Public
@@ -23,4 +33,3 @@
  * the provisions above, a recipient may use your version of this file under
  * the terms of any one of the CPL, the GPL or the LGPL.
  ***** END LICENSE BLOCK *****/
-

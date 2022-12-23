@@ -1,3 +1,10 @@
+---
+license_expression: cpol-1.02
+is_license_notice: yes
+ignorable_urls:
+    - http://www.codeproject.com/KB/static/clabel.aspx
+---
+
 This article has no explicit license attached to it but may contain usage terms
 in the article text or the download files themselves. Article and source code
 available from http://www.codeproject.com/KB/static/clabel.aspx

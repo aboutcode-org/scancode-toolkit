@@ -1,3 +1,10 @@
+---
+license_expression: ruby
+is_license_notice: yes
+relevance: 100
+referenced_filenames:
+    - RUBYS
+---
 
 This program is copyrighted free software by   You can
 redistribute it and/or modify it under the same terms of Ruby's license;

@@ -1,0 +1,10 @@
+---
+key: unknown-spdx
+short_name: unknown SPDX
+name: Unknown SPDX license detected but not recognized
+category: Unstated License
+owner: Unspecified
+notes: This applies to an invalid reference to an SPDX license identifier.
+is_unknown: yes
+spdx_license_key: LicenseRef-scancode-unknown-spdx
+---

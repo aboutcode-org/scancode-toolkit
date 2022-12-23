@@ -1,3 +1,12 @@
+---
+license_expression: proprietary-license AND gpl-2.0
+is_license_notice: yes
+relevance: 100
+minimum_coverage: 50
+ignorable_urls:
+    - https://www.gnu.org/licenses/gpl.txt
+---
+
 SOFTWARE LICENSE AGREEMENT 
 
 IMPORTANT - READ BEFORE COPYING, INSTALLING OR USING.

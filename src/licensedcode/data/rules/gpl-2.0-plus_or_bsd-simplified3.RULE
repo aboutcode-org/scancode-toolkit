@@ -1,3 +1,11 @@
+---
+license_expression: gpl-2.0-plus OR bsd-simplified
+is_license_notice: yes
+minimum_coverage: 80
+referenced_filenames:
+    - COPYING
+---
+
 This software is available to you under a choice of one of two
 licenses. You may choose to be licensed under the terms of the GNU
 General Public License (GPL) Version 2, available from the file
@@ -44,4 +52,3 @@ Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 
 HISTORY : some part of the code was base on BSD driver,
  agree to put his code under a DUAL GPL/BSD license.
-

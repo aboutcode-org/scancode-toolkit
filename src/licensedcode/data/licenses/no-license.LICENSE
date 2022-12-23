@@ -1,0 +1,10 @@
+---
+key: no-license
+short_name: No License Stated
+name: No License Stated
+category: Unstated License
+owner: Unspecified
+notes: Scanning and analysis of a software object did not find any license information at all.
+is_unknown: yes
+spdx_license_key: LicenseRef-scancode-no-license
+---

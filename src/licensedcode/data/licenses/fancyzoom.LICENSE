@@ -1,3 +1,16 @@
+---
+key: fancyzoom
+short_name: FancyZoom License
+name: FancyZoom License
+category: Proprietary Free
+owner: Cabel Sasser
+spdx_license_key: LicenseRef-scancode-fancyzoom
+other_urls:
+    - http://www.cabel.name/2008/02/fancyzoom-10.html
+ignorable_urls:
+    - http://www.fancyzoom.com/
+---
+
 Redistribution and use of this effect in source form, with or without modification,
 are permitted provided that the following conditions are met:
 

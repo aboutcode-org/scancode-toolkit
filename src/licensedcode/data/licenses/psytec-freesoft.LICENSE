@@ -1,3 +1,15 @@
+---
+key: psytec-freesoft
+short_name: Psytec Free Software License
+name: Psytec Free Software License
+category: Permissive
+owner: Psytec
+homepage_url: http://www.psytec.co.jp/freesoft/02/#L04
+spdx_license_key: LicenseRef-scancode-psytec-freesoft
+text_urls:
+    - http://www.psytec.co.jp/freesoft/02/#L04
+---
+
 (translated from the Japanese)
 About the license				
  · Distribution of this software is free. 

@@ -1,3 +1,15 @@
+---
+license_expression: ssleay
+is_license_text: yes
+ignorable_copyrights:
+    - holder is Tim Hudson (tjh@cryptsoft.com)
+ignorable_holders:
+    - Tim Hudson
+ignorable_emails:
+    - eay@cryptsoft.com
+    - tjh@cryptsoft.com
+---
+
 This library is free for commercial and non-commercial use as long as
 the following conditions are aheared to.  The following conditions
 apply to all code found in this distribution, be it the RC4, RSA,
@@ -26,4 +38,3 @@ are met:
     Eric Young (eay@cryptsoft.com)"
    The word 'cryptographic' can be left out if the rouines from the library
    being used are not cryptographic related :-).
-

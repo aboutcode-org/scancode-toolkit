@@ -1,2 +1,8 @@
- Licensed under the {{Elastic License}};
+---
+license_expression: elastic-license-2018
+is_license_notice: yes
+relevance: 100
+---
+
+Licensed under the {{Elastic License}};
  * you may not use this file except in compliance with the {{Elastic License}}.

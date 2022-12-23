@@ -1,3 +1,19 @@
+---
+key: fsf-unlimited-no-warranty
+short_name: FSF Unlimited License No Warranty
+name: FSF Unlimited License No Warranty
+category: Permissive
+owner: Free Software Foundation (FSF)
+homepage_url: http://www.fsf.org/licensing/licenses/
+spdx_license_key: FSFULLRWD
+text_urls:
+    - http://www.fsf.org/licensing/licenses/
+other_urls:
+    - https://github.com/nexB/scancode-toolkit/pull/1702
+    - https://lists.gnu.org/archive/html/autoconf/2012-04/msg00061.html
+minimum_coverage: 60
+---
+
 This file is free software; the Free Software Foundation gives
 unlimited permission to copy and/or distribute it, with or without
 modifications, as long as this notice is preserved.

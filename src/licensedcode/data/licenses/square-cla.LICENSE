@@ -1,3 +1,13 @@
+---
+key: square-cla
+short_name: Square CLA
+name: Square Inc. Individual Contributor License Agreement
+category: CLA
+owner: Square, Inc.
+homepage_url: https://docs.google.com/forms/d/e/1FAIpQLSeRVQ35-gq2vdSxD1kdh7CJwRdjmUA0EZ9gRXaWYoUeKPZEQQ/viewform?formkey=dDViT2xzUHAwRkI3X3k5Z0lQM091OGc6MQ&ndplr=1
+spdx_license_key: LicenseRef-scancode-square-cla
+---
+
 Square Inc. Individual Contributor License Agreement
 
 An Individual Contributor License Agreement (an "Agreement") is required to establish and define the intellectual property license granted in connection with Contributions (defined below) from any person or entity to Square, Inc. (“Square”) for inclusion in any of the products owned or managed by Square (the “Work”). This Agreement is for your protection as well as Square’s. This Agreement does not alter your rights to use your own Contributions for other purposes. By executing this Agreement, you accept and agree to the following terms and conditions for any past, current, or future Contributions submitted to Square. Except for the license granted herein to Square and recipients of software distributed by Square, you reserve all right, title, and interest in and to the Contributions you create.

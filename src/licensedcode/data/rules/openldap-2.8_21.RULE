@@ -1,3 +1,12 @@
+---
+license_expression: openldap-2.8
+is_license_notice: yes
+ignorable_urls:
+    - http://www.openldap.org/
+    - http://www.openldap.org/license.html
+    - http://www.umich.edu/~dirsvcs/ldap/ldap.html
+---
+
 Redistribution and use in source and binary forms, with or without
 modification, are permitted only as authorized by the OpenLDAP
 Public License.

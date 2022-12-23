@@ -1,4 +1,12 @@
- Redistribution and use in source and binary forms, with or without
+---
+license_expression: bsd-simplified
+is_license_text: yes
+minimum_coverage: 90
+notes: Found in Debian Copyright Files, note that the disclaimer is missing, but is present
+    elsewhere in the file.
+---
+
+Redistribution and use in source and binary forms, with or without
  modification, are permitted provided that the following conditions
  are met:
  1. Redistributions of source code must retain the above copyright

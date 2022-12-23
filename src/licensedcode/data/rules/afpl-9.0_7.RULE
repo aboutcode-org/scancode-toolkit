@@ -1,3 +1,11 @@
+---
+license_expression: afpl-9.0
+is_license_notice: yes
+relevance: 100
+referenced_filenames:
+    - PUBLIC
+---
+
 This program may also be distributed as part of AFPL Ghostscript, under the
 terms of the Aladdin Free Public License (the "License").
 

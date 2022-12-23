@@ -1,1 +1,7 @@
-This code is dual-licensed under both GPLv2 and 3-clause BSD. 
+---
+license_expression: gpl-2.0 OR bsd-new
+is_license_notice: yes
+relevance: 100
+---
+
+This code is dual-licensed under both GPLv2 and 3-clause BSD.

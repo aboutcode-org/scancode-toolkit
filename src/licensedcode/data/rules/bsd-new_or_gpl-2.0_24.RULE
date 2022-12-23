@@ -1,3 +1,9 @@
+---
+license_expression: bsd-new OR gpl-2.0
+is_license_notice: yes
+relevance: 100
+---
+
 "under the
 open source license indicated in the file" means that the contribution
 is licensed both under GPL v2 and modified BSD license (see below) and

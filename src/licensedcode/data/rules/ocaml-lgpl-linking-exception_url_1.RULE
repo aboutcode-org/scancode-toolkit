@@ -1,1 +1,9 @@
+---
+license_expression: ocaml-lgpl-linking-exception
+is_license_reference: yes
+relevance: 95
+ignorable_urls:
+    - https://spdx.org/licenses/ocaml-lgpl-linking-exception
+---
+
 https://spdx.org/licenses/ocaml-lgpl-linking-exception

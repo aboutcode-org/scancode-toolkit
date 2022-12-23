@@ -1,3 +1,10 @@
+---
+license_expression: proprietary-license
+is_license_notice: yes
+relevance: 100
+notes: see https://github.com/dworkin/dgd/blob/5a1a0a0c8a5d80afe13237ccb56301eaee7221ed/Copyright
+---
+
 Permission is granted to copy the source and executables made therefrom, but
 any commercial distribution or use whatsoever is not allowed.  Commercial
 distribution or use refers to any distribution or use from which any form of

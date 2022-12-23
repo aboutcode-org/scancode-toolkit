@@ -1,4 +1,13 @@
- *  Sun Public License Notice:                                               *
+---
+license_expression: spl-1.0 OR lgpl-2.1-plus
+is_license_notice: yes
+relevance: 100
+notes: this is found in Beanshell
+ignorable_urls:
+    - http://www.sun.com/
+---
+
+*  Sun Public License Notice:                                               *
  *                                                                           *
  *  The contents of this file are subject to the Sun Public License Version  *
  *  1.0 (the "License"); you may not use this file except in compliance with *

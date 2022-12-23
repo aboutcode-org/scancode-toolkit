@@ -1,3 +1,10 @@
+---
+license_expression: other-permissive
+is_license_text: yes
+relevance: 100
+notes: seen in FreeBSD
+---
+
 Redistribution, publication, translation and use, with or without
 modification, in full or in part, in any form or format of this
 document are permitted without further permission from the author.

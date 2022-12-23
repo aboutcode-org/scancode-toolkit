@@ -1,3 +1,8 @@
+---
+license_expression: nbpl-1.0
+is_license_text: yes
+---
+
 Note: 
 This license is derived from the "Artistic License" as distributed 
 with the Perl Programming Language. Its terms are different from 
@@ -111,4 +116,4 @@ products derived from this software without specific prior written permission.
 
 9. THIS PACKAGE IS PROVIDED "AS IS" AND WITHOUT ANY EXPRESS OR 
 IMPLIED WARRANTIES, INCLUDING, WITHOUT LIMITATION, THE IMPLIED 
-WARRANTIES OF MERCHANTIBILITY AND FITNESS FOR A PARTICULAR PURPOSE. 
+WARRANTIES OF MERCHANTIBILITY AND FITNESS FOR A PARTICULAR PURPOSE.

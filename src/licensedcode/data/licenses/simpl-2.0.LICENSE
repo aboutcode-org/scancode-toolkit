@@ -1,3 +1,20 @@
+---
+key: simpl-2.0
+short_name: SimPL 2.0
+name: Simple Public License Version 2.0
+category: Copyleft
+owner: OSI - Open Source Initiative
+homepage_url: http://www.opensource.org/licenses/simpl-2.0.html
+notes: Per SPDX.org, this license is OSI certified
+spdx_license_key: SimPL-2.0
+text_urls:
+    - Simple Public License
+osi_url: http://www.opensource.org/licenses/simpl-2.0.html
+other_urls:
+    - http://www.opensource.org/licenses/SimPL-2.0
+    - https://opensource.org/licenses/SimPL-2.0
+---
+
 Preamble
 This Simple Public License 2.0 (SimPL 2.0 for short) is a plain language implementation of GPL 2.0.  The words are different, but the goal is the same - to guarantee for all users the freedom to share and change software.  If anyone wonders about the meaning of the SimPL, they should interpret it as consistent with GPL 2.0.
 

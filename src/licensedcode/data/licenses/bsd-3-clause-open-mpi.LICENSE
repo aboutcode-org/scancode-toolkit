@@ -1,3 +1,16 @@
+---
+key: bsd-3-clause-open-mpi
+short_name: BSD 3-Clause Open MPI variant
+name: BSD 3-Clause Open MPI variant
+category: Permissive
+owner: Open MPI
+homepage_url: https://www.open-mpi.org/community/license.php
+spdx_license_key: BSD-3-Clause-Open-MPI
+other_urls:
+    - https://www.open-mpi.org/community/license.php
+    - http://www.netlib.org/lapack/LICENSE.txt
+---
+
 Redistribution and use in source and binary forms, with or without
 modification, are permitted provided that the following conditions are
 met:

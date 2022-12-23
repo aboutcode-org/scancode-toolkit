@@ -1,0 +1,10 @@
+jieba
+colorlog
+colorama
+seqeval
+multiprocess
+datasets>=2.0.0
+tqdm
+paddlefsl
+sentencepiece
+paddle2onnx

@@ -1,1 +1,9 @@
+---
+license_expression: php-3.01
+is_license_reference: yes
+relevance: 100
+ignorable_urls:
+    - http://www.php.net/license/3_01.txt
+---
+
 http://www.php.net/license/3_01.txt

@@ -1,3 +1,16 @@
+---
+key: ms-asp-net-mvc3
+short_name: MS ASP.NET MVC3
+name: Microsoft ASP.NET MVC 3 License
+category: Proprietary Free
+owner: Microsoft
+homepage_url: http://www.microsoft.com/web/webpi/eula/aspnetmvc3update-eula.htm
+spdx_license_key: LicenseRef-scancode-ms-asp-net-mvc3
+ignorable_urls:
+    - http://www.microsoft.com/exporting
+    - http://www.support.microsoft.com/common/international.aspx
+---
+
 This installation contains the following software, the license terms of each of which are included below:
 
 ·         Microsoft ASP.NET Model View Controller 3 Tools Update
@@ -366,4 +379,3 @@ MICROSOFT SOFTWARE LICENSE TERMS
 MICROSOFT SOFTWARE UPDATE TO VISUAL STUDIO, KB2483190
  
 PLEASE NOTE: Microsoft Corporation (or based on where you live, one of its affiliates) licenses this supplement to you. You may use it with each validly licensed copy of Microsoft Visual Studio 2010 or Microsoft Windows operating system  software (for which this supplement is applicable) (the "software"). You may not use the supplement if you do not have a license for the software. The license terms for the software apply to your use of this supplement. Microsoft provides support services for the supplement as described at www.support.microsoft.com/common/international.aspx.
-

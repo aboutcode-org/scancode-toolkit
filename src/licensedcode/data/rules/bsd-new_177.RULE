@@ -1,4 +1,9 @@
- is available for use under the following license, commonly known
+---
+license_expression: bsd-new
+is_license_text: yes
+---
+
+is available for use under the following license, commonly known
 as the 3-clause (or "modified") BSD license:
 
 Redistribution and use in source and binary forms, with or without

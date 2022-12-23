@@ -1,2 +1,10 @@
+---
+license_expression: postgresql
+is_license_notice: yes
+relevance: 100
+referenced_filenames:
+    - LICENSE
+---
+
 This program is open source, licensed under the PostgreSQL Licence.
 For license terms, see the LICENSE file.

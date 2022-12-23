@@ -1,4 +1,11 @@
- * This library is provided under the terms of the Eclipse Public License
+---
+license_expression: epl-1.0
+is_license_notice: yes
+ignorable_urls:
+    - http://www.eclipse.org/legal/epl-v10.html
+---
+
+* This library is provided under the terms of the Eclipse Public License
  * as described at http://www.eclipse.org/legal/epl-v10.html. Any use,
  * reproduction or distribution of the library constitutes recipient's
  * acceptance of this agreement.

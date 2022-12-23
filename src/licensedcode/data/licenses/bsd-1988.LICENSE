@@ -1,3 +1,16 @@
+---
+key: bsd-1988
+short_name: BSD 1988
+name: BSD 1988
+category: Permissive
+owner: Regents of the University of California
+spdx_license_key: LicenseRef-scancode-bsd-1988
+ignorable_copyrights:
+    - copyright holder and its contributors
+ignorable_holders:
+    - its contributors
+---
+
 Redistribution and use in source and binary forms are permitted provided that: 
 
 (1) source distributions retain this entire copyright notice and comment, and 

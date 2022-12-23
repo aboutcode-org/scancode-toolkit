@@ -1,8 +1,0 @@
-license_expression: vsl-1.0
-is_license_text: yes
-ignorable_copyrights:
-    - Copyright (c) 2000 Vovida Networks, Inc.
-ignorable_holders:
-    - Vovida Networks, Inc.
-ignorable_emails:
-    - vocal@vovida.org

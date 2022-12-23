@@ -1,3 +1,12 @@
+---
+license_expression: oracle-bcl-javaee
+is_license_text: yes
+ignorable_urls:
+    - http://www.oracle.com/products/export
+    - http://www.oracle.com/technetwork/java/javaee/documentation/index.html
+    - http://www.oracle.com/us/legal/third-party-trademarks/index.html
+---
+
 Oracle Binary Code License Agreement for Java EE Technologies
 
 ORACLE  AMERICA, INC. ("ORACLE"), FOR AND ON BEHALF OF ITSELF AND ITS SUBSIDIARIES AND AFFILIATES UNDER COMMON CONTROL, IS WILLING TO  LICENSE  THE SOFTWARE  TO YOU ONLY UPON THE CONDITION THAT YOU ACCEPT ALL OF THE TERMS CONTAINED IN THIS BINARY CODE LICENSE AGREEMENT AND SUPPLEMENTAL  LICENSE TERMS (COLLECTIVELY "AGREEMENT").  PLEASE READ THE AGREEMENT CAREFULLY.  BY SELECTING THE "ACCEPT LICENSE AGREEMENT" (OR THE EQUIVALENT) BUTTON AND/OR BY USING THE SOFTWARE YOU ACKNOWLEDGE THAT YOU HAVE READ THE TERMS AND AGREE TO THEM.  IF YOU ARE AGREEING TO THESE TERMS ON BEHALF OF A COMPANY OR OTHER LEGAL ENTITY, YOU REPRESENT THAT YOU HAVE THE LEGAL AUTHORITY TO BIND THE LEGAL ENTITY TO THESE TERMS.  IF YOU DO NOT HAVE SUCH AUTHORITY, OR IF YOU DO NOT WISH TO BE BOUND BY THE TERMS, THEN SELECT THE "DECLINE LICENSE AGREEMENT" (OR THE EQUIVALENT) BUTTON AND YOU MUST NOT USE THE SOFTWARE ON THIS SITE OR ANY OTHER MEDIA ON WHICH THE SOFTWARE IS CONTAINED.
@@ -44,4 +53,4 @@ F.  THIRD PARTY CODE.  Additional copyright notices and license terms applicable
 
 G.  TERMINATION FOR INFRINGEMENT.  Either party may terminate this Agreement immediately should any Software become, or in either party's opinion be likely to become, the subject of a claim of infringement of any intellectual property right.
 
-H.  INSTALLATION AND AUTO-UPDATE.  The Software's installation and auto-update processes transmit a limited amount of data to Oracle (or its service provider) about those specific processes to help Oracle understand and optimize them.  Oracle does not associate the data with personally identifiable information.  You can find more information about the data Oracle collects as a result of your Software download at   http://www.oracle.com/technetwork/java/javaee/documentation/index.html. 
+H.  INSTALLATION AND AUTO-UPDATE.  The Software's installation and auto-update processes transmit a limited amount of data to Oracle (or its service provider) about those specific processes to help Oracle understand and optimize them.  Oracle does not associate the data with personally identifiable information.  You can find more information about the data Oracle collects as a result of your Software download at   http://www.oracle.com/technetwork/java/javaee/documentation/index.html.

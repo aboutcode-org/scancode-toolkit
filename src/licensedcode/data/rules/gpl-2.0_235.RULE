@@ -1,3 +1,8 @@
- The files in kernel/ and hotplug/ are licensed under the GNU General Public
+---
+license_expression: gpl-2.0
+is_license_notice: yes
+---
+
+The files in kernel/ and hotplug/ are licensed under the GNU General Public
  License Version 2 from the Free Software Foundation.  A copy of the license
  is included in the file COPYING.

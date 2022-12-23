@@ -1,4 +1,0 @@
-license_expression: gpl-1.0-plus OR artistic-perl-1.0
-is_license_notice: yes
-ignorable_urls:
-    - https://metacpan.org/release/ExtUtils-Constant

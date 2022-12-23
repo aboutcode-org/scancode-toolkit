@@ -1,3 +1,14 @@
+---
+key: newton-king-cla
+short_name: Newton-King CLA
+name: James Newton-King CLA
+category: CLA
+owner: James Newton-King
+homepage_url: https://github.com/JamesNK/Newtonsoft.Json/blob/ce7f283b94c86341036078ed2f4e241b907b816d/CONTRIBUTING.md
+notes: this is a CLA
+spdx_license_key: LicenseRef-scancode-newton-king-cla
+---
+
 Contributor License Agreement
 
 By contributing your code to Json.NET you grant James Newton-King a non-exclusive, irrevocable, worldwide,

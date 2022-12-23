@@ -1,3 +1,12 @@
+---
+license_expression: gpl-2.0-plus AND bootloader-exception
+is_license_notice: yes
+relevance: 100
+minimum_coverage: 70
+referenced_filenames:
+    - COPYING.txt
+---
+
 Distributed under the terms of the {{GNU General Public License}} (version 2
 # or later) with exception for distributing the {{bootloader}}.
 #

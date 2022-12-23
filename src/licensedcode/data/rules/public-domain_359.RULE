@@ -1,4 +1,10 @@
- This source file is placed in the public domian.
+---
+license_expression: public-domain
+is_license_text: yes
+minimum_coverage: 95
+---
+
+This source file is placed in the public domian.
  Any resemblance to NCSA Telnet, living or dead, is purely coincidental.
  .
       National Center for Supercomputing Applications

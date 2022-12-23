@@ -1,3 +1,10 @@
+---
+license_expression: proprietary-license
+is_license_text: yes
+relevance: 100
+notes: The Python-only restriction makes this rare notice proprietary-like.
+---
+
 # Permission to use, copy, modify, and distribute this Python software
 # and its associated documentation for any purpose (subject to the
 # restriction in the following sentence) without fee is hereby granted,

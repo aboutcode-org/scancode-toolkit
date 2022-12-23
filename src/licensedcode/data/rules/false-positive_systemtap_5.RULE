@@ -1,1 +1,6 @@
+---
+is_false_positive: yes
+notes: systemtap doc on licensing
+---
+
 template match="legalnotice

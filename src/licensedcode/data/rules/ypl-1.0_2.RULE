@@ -1,3 +1,10 @@
+---
+license_expression: ypl-1.0
+is_license_notice: yes
+relevance: 100
+ignorable_urls:
+    - http://www.zimbra.com/license
+---
 
 The contents of this file are subject to the Yahoo! Public License
 Version 1.0 ("License"); you may not use this file except in

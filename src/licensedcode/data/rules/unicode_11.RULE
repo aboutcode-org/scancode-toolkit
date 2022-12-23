@@ -1,3 +1,14 @@
+---
+license_expression: unicode
+is_license_reference: yes
+ignorable_copyrights:
+    - Copyright (c) 1991-2014 Unicode, Inc.
+ignorable_holders:
+    - Unicode, Inc.
+ignorable_urls:
+    - http://www.unicode.org/copyright.html
+---
+
 Portions of the unit tests are derived from the Unicode standard, which 
 is subject to the Unicode, Inc. License Agreement:
 

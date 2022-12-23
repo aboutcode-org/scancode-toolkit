@@ -1,3 +1,20 @@
+---
+key: vim
+short_name: VIM License
+name: VIM License
+category: Copyleft
+owner: VIM
+homepage_url: http://vimdoc.sourceforge.net/htmldoc/uganda.html
+spdx_license_key: Vim
+other_urls:
+    - http://www.vim.org/docs.php
+ignorable_urls:
+    - http://www.vim.org/
+ignorable_emails:
+    - Bram@vim.org
+    - maintainer@vim.org
+---
+
 VIM LICENSE
 
 I)  There are no restrictions on distributing unmodified copies of Vim except

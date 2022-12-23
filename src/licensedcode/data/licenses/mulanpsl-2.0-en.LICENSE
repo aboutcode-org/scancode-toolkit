@@ -1,3 +1,26 @@
+---
+key: mulanpsl-2.0-en
+short_name: Mulan PSL v2.0 (En)
+name: Mulan Permissive Software License, Version 2 (English)
+category: Permissive
+owner: COSCL - China Open Source Cloud League
+homepage_url: https://license.coscl.org.cn/MulanPSL2
+notes: there is also a Chinese version of this text.
+spdx_license_key: LicenseRef-scancode-mulanpsl-2.0-en
+text_urls:
+    - https://license.coscl.org.cn/MulanPSL2
+standard_notice: |
+    [Software Name] is licensed under Mulan PSL v2.
+    You can use this software according to the terms and conditions of the Mulan PSL v2.
+    You may obtain a copy of Mulan PSL v2 at:
+         http://license.coscl.org.cn/MulanPSL2
+    THIS SOFTWARE IS PROVIDED ON AN "AS IS" BASIS, WITHOUT WARRANTIES OF ANY KIND,
+    EITHER EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO NON-INFRINGEMENT,
+    MERCHANTABILITY OR FIT FOR A PARTICULAR PURPOSE.
+    See the Mulan PSL v2 for more details.
+ignorable_urls:
+    - http://license.coscl.org.cn/MulanPSL2
+---
 
 Mulan Permissive Software License，Version 2
 
@@ -62,4 +85,3 @@ THIS SOFTWARE IS PROVIDED ON AN "AS IS" BASIS, WITHOUT WARRANTIES OF ANY KIND,
 EITHER EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO NON-INFRINGEMENT,
 MERCHANTABILITY OR FIT FOR A PARTICULAR PURPOSE.
 See the Mulan PSL v2 for more details.
-

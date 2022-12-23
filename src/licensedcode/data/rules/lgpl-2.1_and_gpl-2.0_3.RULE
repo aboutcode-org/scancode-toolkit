@@ -1,3 +1,10 @@
+---
+license_expression: lgpl-2.1 AND gpl-2.0
+is_license_notice: yes
+referenced_filenames:
+    - COPYING
+---
+
 Most components of the "" package are licensed under
 Version 2.1 of the GNU Lesser General Public License (see below).
 below.

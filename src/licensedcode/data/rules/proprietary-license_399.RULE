@@ -1,3 +1,11 @@
+---
+license_expression: proprietary-license
+is_license_text: yes
+relevance: 100
+minimum_coverage: 90
+notes: https://github.com/jcs/endless/
+---
+
 Redistribution and use in source form, with or without modification,
 and use in binary form, is permitted provided that the following conditions
 are met:

@@ -1,3 +1,10 @@
+---
+license_expression: w3c
+is_license_notice: yes
+ignorable_urls:
+    - http://www.w3.org/Consortium/Legal/copyright-software
+---
+
 This work is distributed under the W3C® Software
 License[1] in the hope that it will be useful, but WITHOUT ANY
 WARRANTY; without even the implied warranty of MERCHANTABILITY or

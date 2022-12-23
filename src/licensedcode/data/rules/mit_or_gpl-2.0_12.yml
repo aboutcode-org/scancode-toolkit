@@ -1,7 +1,0 @@
-license_expression: mit OR gpl-2.0
-is_license_notice: yes
-relevance: 99
-minimum_coverage: 99
-notes: gpl2 here, not 3 or later
-ignorable_urls:
-    - http://benalman.com/about/license/

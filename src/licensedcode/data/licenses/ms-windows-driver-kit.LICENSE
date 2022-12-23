@@ -1,3 +1,14 @@
+---
+key: ms-windows-driver-kit
+short_name: MS Windows Driver Kit License
+name: Microsoft Windows Driver Kit License
+category: Proprietary Free
+owner: Microsoft
+spdx_license_key: LicenseRef-scancode-ms-windows-driver-kit
+ignorable_urls:
+    - http://www.microsoft.com/exporting
+---
+
 MICROSOFT SOFTWARE LICENSE TERMS MICROSOFT WINDOWS DRIVER KIT
 These license terms are an agreement between Microsoft Corporation (or based on where you live, one of its affiliates) and you. Please read them. They apply to the software named above, which includes the media on which you received it, if any. The terms also apply to any Microsoft
  updates, 

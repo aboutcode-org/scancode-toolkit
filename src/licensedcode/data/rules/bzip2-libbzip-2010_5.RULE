@@ -1,4 +1,13 @@
-   This file is part of bzip2/libbzip2, a program and library for
+---
+license_expression: bzip2-libbzip-2010
+is_license_notice: yes
+relevance: 100
+referenced_filenames:
+    - LICENSE
+    - README
+---
+
+This file is part of bzip2/libbzip2, a program and library for
    lossless, block-sorting data compression.
 
    Please read the WARNING, DISCLAIMER and PATENTS sections in the 

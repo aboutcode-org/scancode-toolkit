@@ -1,3 +1,11 @@
+---
+license_expression: gpl-2.0 WITH mysql-floss-exception-2.0
+is_license_notice: yes
+ignorable_urls:
+    - http://www.gnu.org/philosophy/free-sw.html
+    - http://www.opensource.org/docs/definition.php
+---
+
 MySQL FLOSS License Exception
 
 The MySQL AB Exception for Free/Libre and Open Source Software-only Applications
@@ -111,4 +119,3 @@ this appendix is provided merely as an additional service to
 specific FLOSS projects wishing to simplify licensing information
 for their users. Compliance with one of the licenses noted under
 the "FLOSS license list" section remains a prerequisite.
-

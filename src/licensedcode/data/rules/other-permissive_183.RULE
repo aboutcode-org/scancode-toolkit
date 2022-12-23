@@ -1,3 +1,12 @@
+---
+license_expression: other-permissive
+is_license_text: yes
+relevance: 100
+notes: https://isc.tamu.edu/~lewing/linux/
+ignorable_emails:
+    - lewing@isc.tamu.edu
+---
+
 Feel free to do whatever you see fit with the images, you are
  encouraged to integrate them into other designs that fit your need.
  Permission to use and/or modify this image is granted provided you

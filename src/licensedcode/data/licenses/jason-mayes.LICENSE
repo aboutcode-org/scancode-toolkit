@@ -1,3 +1,19 @@
+---
+key: jason-mayes
+short_name: Jason Mayes License
+name: Jason Mayes License
+category: Permissive
+owner: Jason Mayes
+spdx_license_key: LicenseRef-scancode-jason-mayes
+faq_url: http://www.jasonmayes.com/projects/twitterApi/
+minimum_coverage: 90
+ignorable_authors:
+    - Jason Mayes
+ignorable_urls:
+    - http://www.jasonmayes.com/
+    - http://www.jasonmayes.com/projects/twitterApi/
+---
+
 #### Twitter Post Fetcher v10.0 ####
 Coded by Jason Mayes 2013. A present to all the developers out there.
 www.jasonmayes.com

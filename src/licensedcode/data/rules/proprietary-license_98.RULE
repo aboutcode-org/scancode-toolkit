@@ -1,4 +1,10 @@
- *  License:
+---
+license_expression: proprietary-license
+is_license_text: yes
+relevance: 100
+---
+
+*  License:
  *
  *  Redistribution  and  use  in source  and  binary forms,  with  or  without
  *  modification, are permitted provided that the following conditions are met

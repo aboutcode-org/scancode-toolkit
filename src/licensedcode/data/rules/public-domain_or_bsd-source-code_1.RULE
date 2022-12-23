@@ -1,3 +1,10 @@
+---
+license_expression: public-domain OR bsd-source-code
+is_license_notice: yes
+relevance: 100
+notes: https://github.com/robbiehanson/CocoaAsyncSocket/blob/master/LICENSE.txt
+---
+
 This library is in the public domain.
 However, not all organizations are allowed to use such a license.
 For example, Germany doesn't recognize the Public Domain and one is not allowed to use libraries under such license (or similar).

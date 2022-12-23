@@ -1,3 +1,15 @@
+---
+key: softsurfer
+short_name: softSurfer License
+name: softSurfer License
+category: Permissive
+owner: Dan Sunday
+homepage_url: http://geomalgorithms.com/a05-_intersect-1.html#Intersection%20of%202%20Planes
+spdx_license_key: LicenseRef-scancode-softsurfer
+other_urls:
+    - http://geomalgorithms.com/index.html
+---
+
 This code may be freely used and modified for any purpose
 providing that this copyright notice is included with it.
 Copyright holder makes no warranty for this code, and cannot be held

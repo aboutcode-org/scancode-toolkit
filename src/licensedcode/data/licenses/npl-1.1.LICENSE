@@ -1,3 +1,24 @@
+---
+key: npl-1.1
+short_name: NPL 1.1
+name: Netscape Public License 1.1
+category: Copyleft Limited
+owner: Mozilla
+homepage_url: http://www.mozilla.org/MPL/NPL-1.1.html
+spdx_license_key: NPL-1.1
+text_urls:
+    - http://www.mozilla.org/MPL/NPL-1.1.html
+other_urls:
+    - http://www.mozilla.org/MPL/NPL/1.1/
+    - http://www.mozilla.org/NPL/
+ignorable_copyrights:
+    - Copyright (c) 1998-1999 Netscape Communications Corporation
+ignorable_holders:
+    - Netscape Communications Corporation
+ignorable_urls:
+    - http://www.mozilla.org/NPL/
+---
+
 AMENDMENTS
 The Netscape Public License Version 1.1 ("NPL") consists of the Mozilla Public License Version 1.1 with the following Amendments, including Exhibit A-Netscape Public License.  Files identified with "Exhibit A-Netscape Public License" are governed by the Netscape Public License Version 1.1.
 

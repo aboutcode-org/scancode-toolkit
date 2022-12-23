@@ -1,3 +1,10 @@
+---
+license_expression: proprietary-license
+is_license_text: yes
+relevance: 100
+notes: See https://keypirinha.com/license.html
+---
+
 Redistribution and use in binary form, without modification, are permitted provided that the following conditions are met:
 
 Only unmodified installers and/or packages can be redistributed; redistribution of Keypirinha binaries in any other form is not permitted. Neither the name of the author nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.

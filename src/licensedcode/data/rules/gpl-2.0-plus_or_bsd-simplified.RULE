@@ -1,4 +1,10 @@
- is dual licensed: you can use it either under the terms of
+---
+license_expression: gpl-2.0-plus OR bsd-simplified
+is_license_notice: yes
+minimum_coverage: 90
+---
+
+is dual licensed: you can use it either under the terms of
 the GPL, or the BSD license, at your option.
 
  a) This library is free software; you can redistribute it and/or

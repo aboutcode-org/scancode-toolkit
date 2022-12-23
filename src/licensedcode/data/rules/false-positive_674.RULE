@@ -1,1 +1,6 @@
+---
+is_false_positive: yes
+notes: Not a license, refers to a different version of tar that this version is based on.
+---
+
 based on John Gilmore's public domain version of tar,

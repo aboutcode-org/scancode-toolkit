@@ -1,3 +1,10 @@
+---
+license_expression: other-permissive
+is_license_notice: yes
+referenced_filenames:
+    - LICENSE
+---
+
 // You should have received a copy of the License Agreement for the
 // Boost Graph Library along with the software; see the file LICENSE.
 // If not, contact Office of Research, University of Notre Dame, Notre

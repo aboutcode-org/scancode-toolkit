@@ -1,1 +1,9 @@
+---
+license_expression: unlicense
+is_license_notice: yes
+relevance: 100
+ignorable_urls:
+    - https://unlicense.org/
+---
+
 For more information, please refer to https://unlicense.org

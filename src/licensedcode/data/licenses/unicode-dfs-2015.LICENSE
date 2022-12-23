@@ -1,3 +1,25 @@
+---
+key: unicode-dfs-2015
+short_name: Unicode DFS 2015
+name: Unicode License Agreement - Data Files and Software (2015)
+category: Permissive
+owner: Unicode Consortium
+homepage_url: https://web.archive.org/web/20151224134844/http://unicode.org/copyright.html
+spdx_license_key: Unicode-DFS-2015
+other_urls:
+    - https://web.archive.org/web/20151224134844/http://unicode.org/copyright.html
+minimum_coverage: 70
+ignorable_copyrights:
+    - Copyright (c) 1991-2015 Unicode, Inc.
+ignorable_holders:
+    - Unicode, Inc.
+ignorable_urls:
+    - http://www.unicode.org/Public
+    - http://www.unicode.org/cldr/data
+    - http://www.unicode.org/copyright.html
+    - http://www.unicode.org/reports
+---
+
 UNICODE, INC. LICENSE AGREEMENT - DATA FILES AND SOFTWARE
 
 Unicode Data Files include all data files under the directories

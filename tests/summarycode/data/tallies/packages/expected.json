@@ -879,15 +879,59 @@
       "code_view_url": null,
       "vcs_url": null,
       "copyright": null,
-      "license_expression": "public-domain AND unknown",
-      "declared_license": [
+      "declared_license_expression": "public-domain",
+      "declared_license_expression_spdx": "LicenseRef-scancode-public-domain",
+      "license_detections": [
         {
-          "name": "Public Domain",
-          "url": null,
-          "comments": null,
-          "distribution": null
+          "license_expression": "public-domain",
+          "detection_log": [
+            "not-combined"
+          ],
+          "matches": [
+            {
+              "score": 70.0,
+              "start_line": 1,
+              "end_line": 1,
+              "matched_length": 2,
+              "match_coverage": 100.0,
+              "matcher": "1-hash",
+              "license_expression": "public-domain",
+              "rule_identifier": "public-domain_bare_words.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/public-domain_bare_words.RULE",
+              "referenced_filenames": [],
+              "is_license_text": false,
+              "is_license_notice": false,
+              "is_license_reference": true,
+              "is_license_tag": false,
+              "is_license_intro": false,
+              "rule_length": 2,
+              "rule_relevance": 70,
+              "matched_text": "Public Domain",
+              "licenses": [
+                {
+                  "key": "public-domain",
+                  "name": "Public Domain",
+                  "short_name": "Public Domain",
+                  "category": "Public Domain",
+                  "is_exception": false,
+                  "is_unknown": false,
+                  "owner": "Unspecified",
+                  "homepage_url": "http://www.linfo.org/publicdomain.html",
+                  "text_url": "",
+                  "reference_url": "https://scancode-licensedb.aboutcode.org/public-domain",
+                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/public-domain.LICENSE",
+                  "spdx_license_key": "LicenseRef-scancode-public-domain",
+                  "spdx_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/public-domain.LICENSE"
+                }
+              ]
+            }
+          ]
         }
       ],
+      "other_license_expression": null,
+      "other_license_expression_spdx": null,
+      "other_license_detections": [],
+      "extracted_license_statement": "[{'name': 'Public Domain', 'url': None, 'comments': None, 'distribution': None}]",
       "notice_text": null,
       "source_packages": [
         "pkg:maven/aopalliance/aopalliance@1.0?classifier=sources"
@@ -941,13 +985,59 @@
       "code_view_url": "https://svnweb.freebsd.org/ports/head/sysutils/dmidecode",
       "vcs_url": null,
       "copyright": null,
-      "license_expression": "gpl-2.0",
-      "declared_license": {
-        "licenses": [
-          "GPLv2"
-        ],
-        "licenselogic": "single"
-      },
+      "declared_license_expression": "gpl-2.0",
+      "declared_license_expression_spdx": "GPL-2.0-only",
+      "license_detections": [
+        {
+          "license_expression": "gpl-2.0",
+          "detection_log": [
+            "not-combined"
+          ],
+          "matches": [
+            {
+              "score": 100.0,
+              "start_line": 1,
+              "end_line": 1,
+              "matched_length": 1,
+              "match_coverage": 100.0,
+              "matcher": "1-hash",
+              "license_expression": "gpl-2.0",
+              "rule_identifier": "gpl-2.0_bare_single_word.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0_bare_single_word.RULE",
+              "referenced_filenames": [],
+              "is_license_text": false,
+              "is_license_notice": false,
+              "is_license_reference": true,
+              "is_license_tag": false,
+              "is_license_intro": false,
+              "rule_length": 1,
+              "rule_relevance": 100,
+              "matched_text": "GPLv2",
+              "licenses": [
+                {
+                  "key": "gpl-2.0",
+                  "name": "GNU General Public License 2.0",
+                  "short_name": "GPL 2.0",
+                  "category": "Copyleft",
+                  "is_exception": false,
+                  "is_unknown": false,
+                  "owner": "Free Software Foundation (FSF)",
+                  "homepage_url": "http://www.gnu.org/licenses/gpl-2.0.html",
+                  "text_url": "http://www.gnu.org/licenses/gpl-2.0.txt",
+                  "reference_url": "https://scancode-licensedb.aboutcode.org/gpl-2.0",
+                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-2.0.LICENSE",
+                  "spdx_license_key": "GPL-2.0-only",
+                  "spdx_url": "https://spdx.org/licenses/GPL-2.0-only"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "other_license_expression": null,
+      "other_license_expression_spdx": null,
+      "other_license_detections": [],
+      "extracted_license_statement": "{'licenses': ['GPLv2'], 'licenselogic': 'single'}",
       "notice_text": null,
       "source_packages": [],
       "extra_data": {},
@@ -994,10 +1084,59 @@
       "code_view_url": null,
       "vcs_url": "git+https://github.com/ionic-team/ionic-app-scripts.git",
       "copyright": null,
-      "license_expression": "mit",
-      "declared_license": [
-        "MIT"
+      "declared_license_expression": "mit",
+      "declared_license_expression_spdx": "MIT",
+      "license_detections": [
+        {
+          "license_expression": "mit",
+          "detection_log": [
+            "not-combined"
+          ],
+          "matches": [
+            {
+              "score": 100.0,
+              "start_line": 1,
+              "end_line": 1,
+              "matched_length": 1,
+              "match_coverage": 100.0,
+              "matcher": "1-spdx-id",
+              "license_expression": "mit",
+              "rule_identifier": "spdx-license-identifier: mit",
+              "rule_url": null,
+              "referenced_filenames": [],
+              "is_license_text": false,
+              "is_license_notice": false,
+              "is_license_reference": false,
+              "is_license_tag": true,
+              "is_license_intro": false,
+              "rule_length": 1,
+              "rule_relevance": 100,
+              "matched_text": "MIT",
+              "licenses": [
+                {
+                  "key": "mit",
+                  "name": "MIT License",
+                  "short_name": "MIT License",
+                  "category": "Permissive",
+                  "is_exception": false,
+                  "is_unknown": false,
+                  "owner": "MIT",
+                  "homepage_url": "http://opensource.org/licenses/mit-license.php",
+                  "text_url": "http://opensource.org/licenses/mit-license.php",
+                  "reference_url": "https://scancode-licensedb.aboutcode.org/mit",
+                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE",
+                  "spdx_license_key": "MIT",
+                  "spdx_url": "https://spdx.org/licenses/MIT"
+                }
+              ]
+            }
+          ]
+        }
       ],
+      "other_license_expression": null,
+      "other_license_expression_spdx": null,
+      "other_license_detections": [],
+      "extracted_license_statement": "['MIT']",
       "notice_text": null,
       "source_packages": [],
       "extra_data": {},
@@ -1073,15 +1212,59 @@
           "code_view_url": null,
           "vcs_url": null,
           "copyright": null,
-          "license_expression": "public-domain AND unknown",
-          "declared_license": [
+          "declared_license_expression": "public-domain",
+          "declared_license_expression_spdx": "LicenseRef-scancode-public-domain",
+          "license_detections": [
             {
-              "name": "Public Domain",
-              "url": null,
-              "comments": null,
-              "distribution": null
+              "license_expression": "public-domain",
+              "detection_log": [
+                "not-combined"
+              ],
+              "matches": [
+                {
+                  "score": 70.0,
+                  "start_line": 1,
+                  "end_line": 1,
+                  "matched_length": 2,
+                  "match_coverage": 100.0,
+                  "matcher": "1-hash",
+                  "license_expression": "public-domain",
+                  "rule_identifier": "public-domain_bare_words.RULE",
+                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/public-domain_bare_words.RULE",
+                  "referenced_filenames": [],
+                  "is_license_text": false,
+                  "is_license_notice": false,
+                  "is_license_reference": true,
+                  "is_license_tag": false,
+                  "is_license_intro": false,
+                  "rule_length": 2,
+                  "rule_relevance": 70,
+                  "matched_text": "Public Domain",
+                  "licenses": [
+                    {
+                      "key": "public-domain",
+                      "name": "Public Domain",
+                      "short_name": "Public Domain",
+                      "category": "Public Domain",
+                      "is_exception": false,
+                      "is_unknown": false,
+                      "owner": "Unspecified",
+                      "homepage_url": "http://www.linfo.org/publicdomain.html",
+                      "text_url": "",
+                      "reference_url": "https://scancode-licensedb.aboutcode.org/public-domain",
+                      "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/public-domain.LICENSE",
+                      "spdx_license_key": "LicenseRef-scancode-public-domain",
+                      "spdx_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/public-domain.LICENSE"
+                    }
+                  ]
+                }
+              ]
             }
           ],
+          "other_license_expression": null,
+          "other_license_expression_spdx": null,
+          "other_license_detections": [],
+          "extracted_license_statement": "[{'name': 'Public Domain', 'url': None, 'comments': None, 'distribution': None}]",
           "notice_text": null,
           "source_packages": [
             "pkg:maven/aopalliance/aopalliance@1.0?classifier=sources"
@@ -1155,13 +1338,59 @@
           "code_view_url": "https://svnweb.freebsd.org/ports/head/sysutils/dmidecode",
           "vcs_url": null,
           "copyright": null,
-          "license_expression": "gpl-2.0",
-          "declared_license": {
-            "licenses": [
-              "GPLv2"
-            ],
-            "licenselogic": "single"
-          },
+          "declared_license_expression": "gpl-2.0",
+          "declared_license_expression_spdx": "GPL-2.0-only",
+          "license_detections": [
+            {
+              "license_expression": "gpl-2.0",
+              "detection_log": [
+                "not-combined"
+              ],
+              "matches": [
+                {
+                  "score": 100.0,
+                  "start_line": 1,
+                  "end_line": 1,
+                  "matched_length": 1,
+                  "match_coverage": 100.0,
+                  "matcher": "1-hash",
+                  "license_expression": "gpl-2.0",
+                  "rule_identifier": "gpl-2.0_bare_single_word.RULE",
+                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0_bare_single_word.RULE",
+                  "referenced_filenames": [],
+                  "is_license_text": false,
+                  "is_license_notice": false,
+                  "is_license_reference": true,
+                  "is_license_tag": false,
+                  "is_license_intro": false,
+                  "rule_length": 1,
+                  "rule_relevance": 100,
+                  "matched_text": "GPLv2",
+                  "licenses": [
+                    {
+                      "key": "gpl-2.0",
+                      "name": "GNU General Public License 2.0",
+                      "short_name": "GPL 2.0",
+                      "category": "Copyleft",
+                      "is_exception": false,
+                      "is_unknown": false,
+                      "owner": "Free Software Foundation (FSF)",
+                      "homepage_url": "http://www.gnu.org/licenses/gpl-2.0.html",
+                      "text_url": "http://www.gnu.org/licenses/gpl-2.0.txt",
+                      "reference_url": "https://scancode-licensedb.aboutcode.org/gpl-2.0",
+                      "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-2.0.LICENSE",
+                      "spdx_license_key": "GPL-2.0-only",
+                      "spdx_url": "https://spdx.org/licenses/GPL-2.0-only"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "other_license_expression": null,
+          "other_license_expression_spdx": null,
+          "other_license_detections": [],
+          "extracted_license_statement": "{'licenses': ['GPLv2'], 'licenselogic': 'single'}",
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
@@ -1221,10 +1450,59 @@
           "code_view_url": null,
           "vcs_url": "git+https://github.com/ionic-team/ionic-app-scripts.git",
           "copyright": null,
-          "license_expression": "mit",
-          "declared_license": [
-            "MIT"
+          "declared_license_expression": "mit",
+          "declared_license_expression_spdx": "MIT",
+          "license_detections": [
+            {
+              "license_expression": "mit",
+              "detection_log": [
+                "not-combined"
+              ],
+              "matches": [
+                {
+                  "score": 100.0,
+                  "start_line": 1,
+                  "end_line": 1,
+                  "matched_length": 1,
+                  "match_coverage": 100.0,
+                  "matcher": "1-spdx-id",
+                  "license_expression": "mit",
+                  "rule_identifier": "spdx-license-identifier: mit",
+                  "rule_url": null,
+                  "referenced_filenames": [],
+                  "is_license_text": false,
+                  "is_license_notice": false,
+                  "is_license_reference": false,
+                  "is_license_tag": true,
+                  "is_license_intro": false,
+                  "rule_length": 1,
+                  "rule_relevance": 100,
+                  "matched_text": "MIT",
+                  "licenses": [
+                    {
+                      "key": "mit",
+                      "name": "MIT License",
+                      "short_name": "MIT License",
+                      "category": "Permissive",
+                      "is_exception": false,
+                      "is_unknown": false,
+                      "owner": "MIT",
+                      "homepage_url": "http://opensource.org/licenses/mit-license.php",
+                      "text_url": "http://opensource.org/licenses/mit-license.php",
+                      "reference_url": "https://scancode-licensedb.aboutcode.org/mit",
+                      "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE",
+                      "spdx_license_key": "MIT",
+                      "spdx_url": "https://spdx.org/licenses/MIT"
+                    }
+                  ]
+                }
+              ]
+            }
           ],
+          "other_license_expression": null,
+          "other_license_expression_spdx": null,
+          "other_license_detections": [],
+          "extracted_license_statement": "['MIT']",
           "notice_text": null,
           "source_packages": [],
           "file_references": [],

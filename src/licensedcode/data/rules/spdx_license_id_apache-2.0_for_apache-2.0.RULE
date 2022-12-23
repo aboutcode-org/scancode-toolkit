@@ -1,1 +1,9 @@
+---
+license_expression: apache-2.0
+is_license_reference: yes
+relevance: 100
+minimum_coverage: 100
+notes: Used to detect a bare SPDX license id
+---
+
 apache-2.0

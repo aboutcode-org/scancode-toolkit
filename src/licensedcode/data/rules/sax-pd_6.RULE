@@ -1,3 +1,11 @@
+---
+license_expression: sax-pd
+is_license_notice: yes
+relevance: 100
+ignorable_urls:
+    - http://www.saxproject.org/
+---
+
 This module, both source code and documentation, is in the
 Public Domain, and comes with <strong>NO WARRANTY</strong>
 See <a href='http://www.saxproject.org'>http://www.saxproject.org</a>

@@ -1,7 +1,0 @@
-key: sun-bsd-extra
-short_name: Sun BSD-Style with Additional Restrictions
-name: Sun BSD-Style with Additional Restrictions
-category: Free Restricted
-owner: Oracle (Sun)
-spdx_license_key: LicenseRef-scancode-sun-bsd-extra
-minimum_coverage: 50

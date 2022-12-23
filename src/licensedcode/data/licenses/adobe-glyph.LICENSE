@@ -1,3 +1,13 @@
+---
+key: adobe-glyph
+short_name: Adobe Glyph License
+name: Adobe Glyph License
+category: Permissive
+owner: Adobe Systems
+homepage_url: https://fedoraproject.org/wiki/Licensing/MIT#AdobeGlyph
+spdx_license_key: Adobe-Glyph
+---
+
 Permission is hereby granted, free of charge, to any person obtaining a copy of this documentation file to use, copy, publish, distribute, sublicense, and/or sell copies of the documentation, and to permit others to do the same, provided that: 
      - No modification, editing or other alteration of this document is allowed; and 
      - The above copyright notice and this permission notice shall be included in all copies of the documentation. 

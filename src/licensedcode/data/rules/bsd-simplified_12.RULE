@@ -1,1 +1,9 @@
+---
+license_expression: bsd-simplified
+is_license_reference: yes
+relevance: 99
+ignorable_urls:
+    - http://www.freebsd.org/copyright/copyright.html
+---
+
 http://www.freebsd.org/copyright/copyright.html

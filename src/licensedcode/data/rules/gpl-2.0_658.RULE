@@ -1,3 +1,10 @@
+---
+license_expression: gpl-2.0
+is_license_notice: yes
+minimum_coverage: 90
+referenced_filenames:
+    - COPYING
+---
 
 GPL LICENSE SUMMARY
 
@@ -18,4 +25,3 @@ USA
 
 The full GNU General Public License is included in this distribution
 in the file called COPYING.
-

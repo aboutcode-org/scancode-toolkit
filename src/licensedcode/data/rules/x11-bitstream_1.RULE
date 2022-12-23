@@ -1,3 +1,10 @@
+---
+license_expression: x11-bitstream
+is_license_notice: yes
+relevance: 95
+minimum_coverage: 70
+---
+
 The names "Bitstream" and "Charter" are registered trademarks of
 Bitstream, Inc. Permission to use these trademarks is hereby
 granted only in association with the images described in this file.

@@ -1,3 +1,9 @@
+---
+license_expression: other-permissive
+is_license_text: yes
+notes: Seen in http://elm-chan.org/fsw/ff/arc/ff11a.zip
+---
+
 / FatFs module is a free software that opened under license policy of
 / following conditions.
 /

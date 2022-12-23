@@ -1,3 +1,8 @@
+---
+license_expression: gpl-2.0-plus WITH ecos-exception-2.0
+is_license_notice: yes
+---
+
 These rights are
  granted to you and protected by the GNU Public License (GPL).
  An exception clause has been added to the eCos license which
@@ -8,5 +13,4 @@ These rights are
  or required to make your embedded applications or any
  additional components that you develop freely available so
  long as they are not derived from
- eCos code. 
- 
+ eCos code.

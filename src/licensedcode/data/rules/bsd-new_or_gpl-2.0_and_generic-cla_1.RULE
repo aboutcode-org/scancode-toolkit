@@ -1,3 +1,13 @@
+---
+license_expression: (bsd-new OR gpl-2.0) AND generic-cla
+is_license_notice: yes
+relevance: 100
+minimum_coverage: 100
+referenced_filenames:
+    - LICENSE
+    - COPYING
+---
+
 License
 By contributing to Zstandard, you agree that your contributions will be licensed
 under both the [LICENSE](LICENSE) file and the [COPYING](COPYING) file in the root directory of this source tree.

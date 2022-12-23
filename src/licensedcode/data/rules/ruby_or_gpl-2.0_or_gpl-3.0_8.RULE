@@ -1,3 +1,12 @@
+---
+license_expression: ruby OR gpl-2.0 OR gpl-3.0
+is_license_reference: yes
+relevance: 100
+minimum_coverage: 100
+referenced_filenames:
+    - LICENSE
+---
+
 ## Licensing
 
 Matz's terms for Ruby, GPLv2, or GPLv3. See LICENSE for details.

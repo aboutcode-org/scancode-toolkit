@@ -1,3 +1,8 @@
+---
+is_false_positive: yes
+notes: This is a discussion on licensing but not a license notice or statement.
+---
+
 Note that the readline library is distributed
 under the GPL, so any resulting binaries are not legally
 distributable.

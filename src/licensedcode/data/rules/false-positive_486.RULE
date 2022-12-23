@@ -1,2 +1,7 @@
+---
+is_false_positive: yes
+notes: not a license, just a comment about licenses
+---
+
 echo "Please replace the Apache license header comment text with:"
 echo "SPDX-License-Identifier: Apache-2.0"

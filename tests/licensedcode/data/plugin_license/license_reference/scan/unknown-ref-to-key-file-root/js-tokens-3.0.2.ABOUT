@@ -1,0 +1,8 @@
+about_resource: .
+name: js-tokens
+version: 3.0.2
+license_expression: mit
+copyright: Copyright (c) 2014, 2015, 2016, 2017 Simon Lydell
+vcs_url: git+https://github.com/lydell/js-tokens
+download_url: https://github.com/lydell/js-tokens/tree/v3.0.2
+notes: Downloaded source code archive and used for testing, after deleting some files.

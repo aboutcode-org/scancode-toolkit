@@ -1,3 +1,15 @@
+---
+license_expression: ngpl
+is_license_text: yes
+relevance: 100
+ignorable_copyrights:
+    - Copyright 1989 M. Stephenson
+    - copyright 1988 Richard M. Stallman
+ignorable_holders:
+    - M. Stephenson
+    - Richard M. Stallman
+---
+
 NETHACK GENERAL PUBLIC LICENSE
                     (Copyright 1989 M. Stephenson)
 

@@ -1,3 +1,12 @@
+---
+license_expression: softfloat-2.0
+is_license_text: yes
+ignorable_authors:
+    - John R. Hauser
+ignorable_urls:
+    - http://www.jhauser.us/arithmetic/SoftFloat-2b/SoftFloat-source.txt
+---
+
 Written by John R. Hauser.  This work was made possible in part by the
 International Computer Science Institute, located at Suite 600, 1947 Center
 Street, Berkeley, California 94704.  Funding was partially provided by the

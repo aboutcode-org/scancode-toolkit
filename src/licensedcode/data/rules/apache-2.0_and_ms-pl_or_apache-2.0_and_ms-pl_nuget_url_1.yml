@@ -1,5 +1,0 @@
-license_expression: apache-2.0 AND (ms-pl OR apache-2.0) AND ms-pl
-is_license_reference: yes
-relevance: 90
-ignorable_urls:
-    - https://github.com/fsharp/FAKE/blob/d86e9b5b8e7ebbb5a3d81c08d2e59518cf9d6da9/License.txt

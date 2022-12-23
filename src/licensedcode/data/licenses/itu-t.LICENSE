@@ -1,3 +1,14 @@
+---
+key: itu-t
+short_name: ITU-T License
+name: ITU-T License
+category: Free Restricted
+owner: ITU - International Telecommunications Union
+spdx_license_key: LicenseRef-scancode-itu-t
+ignorable_urls:
+    - http://www.itu.int/ipr
+---
+
 Software(1) License Agreement 
 
 ITU hereby grants you a worldwide, non-exclusive, free license to reproduce, modify, and use the Software for the limited purpose of implementing an ITU-T Recommendation. 

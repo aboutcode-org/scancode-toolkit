@@ -1,7 +1,0 @@
-key: unlimited-binary-linking
-short_name: Unlimited Binary Linking Exception
-name: Unlimited Binary Linking Exception
-category: Permissive
-owner: nexB
-is_exception: yes
-spdx_license_key: LicenseRef-scancode-unlimited-binary-linking

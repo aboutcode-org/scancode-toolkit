@@ -1,4 +1,11 @@
-   Some code is licensed under a MIT-style license to the following
+---
+license_expression: x11-fsf
+is_license_text: yes
+relevance: 100
+minimum_coverage: 70
+---
+
+Some code is licensed under a MIT-style license to the following
    copyright holders:
 
     * Permission is hereby granted, free of charge, to any person obtaining a  *

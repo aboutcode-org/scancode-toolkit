@@ -1,3 +1,12 @@
+---
+license_expression: gpl-2.0
+is_license_notice: yes
+referenced_filenames:
+    - README
+ignorable_emails:
+    - snort-info@snort.org
+---
+
 *****************************************************************************
 The text that follows is the GNU General Public License, Version 2 (GPL V2)
 and governs your use, modification and/or distribution of SNORT.

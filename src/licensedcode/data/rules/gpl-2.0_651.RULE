@@ -1,4 +1,15 @@
-  The GNU General Public License (GPL) Version 2, June 1991
+---
+license_expression: gpl-2.0
+is_license_text: yes
+ignorable_copyrights:
+    - Copyright (c) 1989, 1991 Free Software Foundation, Inc.
+    - copyrighted by the Free Software Foundation
+ignorable_holders:
+    - Free Software Foundation, Inc.
+    - the Free Software Foundation
+---
+
+The GNU General Public License (GPL) Version 2, June 1991
 
 
   Copyright (C) 1989, 1991 Free Software Foundation, Inc. 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA

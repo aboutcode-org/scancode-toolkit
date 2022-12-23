@@ -1,1 +1,9 @@
+---
+license_expression: gpl-1.0-plus
+is_license_reference: yes
+relevance: 100
+ignorable_urls:
+    - https://www.gnu.org/licenses/gpl.html
+---
+
 licence GNU General Public Licence see LICENCE file or https://www.gnu.org/licenses/gpl.html

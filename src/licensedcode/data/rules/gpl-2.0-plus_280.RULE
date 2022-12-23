@@ -1,3 +1,10 @@
+---
+license_expression: gpl-2.0-plus
+is_license_notice: yes
+ignorable_urls:
+    - https://www.gnu.org/licenses/gpl-2.0.html
+---
+
 Licensed under the terms of the GNU General Public License,
 version 2 or later. Derivative works and later versions of the code must be
 free software licensed under the same or a compatible license.

@@ -1,3 +1,13 @@
+---
+key: google-cla
+short_name: Google CLA
+name: Google Individual Contributor License Agreement
+category: CLA
+owner: Google
+homepage_url: https://cla.developers.google.com/about/google-individual
+spdx_license_key: LicenseRef-scancode-google-cla
+---
+
 Google Individual Contributor License Agreement
 
 In order to clarify the intellectual property license granted with Contributions from any person or entity, Google LLC ("Google") must have a Contributor License Agreement ("CLA") on file that has been signed by each Contributor, indicating agreement to the license terms below. This license is for your protection as a Contributor as well as the protection of Google; it does not change your rights to use your own Contributions for any other purpose.

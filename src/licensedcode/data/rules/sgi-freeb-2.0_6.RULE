@@ -1,3 +1,16 @@
+---
+license_expression: sgi-freeb-2.0
+is_license_text: yes
+minimum_coverage: 75
+ignorable_copyrights:
+    - Copyright (c) dates of first publication Silicon Graphics, Inc.
+ignorable_holders:
+    - dates of first publication Silicon Graphics, Inc.
+ignorable_urls:
+    - http://oss.sgi.com/projects/FreeB
+    - http://oss.sgi.com/projects/FreeB/&quot;http:/oss.sgi.com/projects/FreeB/
+---
+
 Per
 http://oss.sgi.com/projects/FreeB/, the code is covered under the SGI
 Free Software License B, version 2.0, a copy of which is included below.

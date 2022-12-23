@@ -1,3 +1,15 @@
+---
+key: ogc
+short_name: OGC Software Notice
+name: OGC Software Notice
+category: Permissive
+owner: Open Geospatial Consortium
+homepage_url: https://www.ogc.org/ogc/software
+spdx_license_key: LicenseRef-scancode-ogc
+other_urls:
+    - http://www.opengeospatial.org/ogc/legal
+---
+
 This OGC work (including software, documents, or other related items) is being
 provided by the copyright holders under the following license. By obtaining,
 using and/or copying this work, you (the licensee) agree that you have read,

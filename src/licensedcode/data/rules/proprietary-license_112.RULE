@@ -1,3 +1,11 @@
+---
+license_expression: proprietary-license
+is_license_text: yes
+relevance: 100
+ignorable_urls:
+    - http://realm.io/pricing
+---
+
 This software contains components with separate copyright and license terms.
 Your use of these components is subject to the terms and conditions of the
 following licenses.

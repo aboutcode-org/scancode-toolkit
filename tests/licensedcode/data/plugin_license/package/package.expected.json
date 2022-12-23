@@ -66,13 +66,59 @@
       "code_view_url": null,
       "vcs_url": "git+http://github.com/mscdex/busboy.git",
       "copyright": null,
-      "license_expression": "mit",
-      "declared_license": [
+      "declared_license_expression": "mit",
+      "declared_license_expression_spdx": "MIT",
+      "license_detections": [
         {
-          "type": "MIT",
-          "url": "http://github.com/mscdex/busboy/raw/master/LICENSE"
+          "license_expression": "mit",
+          "detection_log": [
+            "not-combined"
+          ],
+          "matches": [
+            {
+              "score": 100.0,
+              "start_line": 1,
+              "end_line": 1,
+              "matched_length": 1,
+              "match_coverage": 100.0,
+              "matcher": "1-spdx-id",
+              "license_expression": "mit",
+              "rule_identifier": "spdx-license-identifier: mit",
+              "rule_url": null,
+              "referenced_filenames": [],
+              "is_license_text": false,
+              "is_license_notice": false,
+              "is_license_reference": false,
+              "is_license_tag": true,
+              "is_license_intro": false,
+              "rule_length": 1,
+              "rule_relevance": 100,
+              "matched_text": "MIT",
+              "licenses": [
+                {
+                  "key": "mit",
+                  "name": "MIT License",
+                  "short_name": "MIT License",
+                  "category": "Permissive",
+                  "is_exception": false,
+                  "is_unknown": false,
+                  "owner": "MIT",
+                  "homepage_url": "http://opensource.org/licenses/mit-license.php",
+                  "text_url": "http://opensource.org/licenses/mit-license.php",
+                  "reference_url": "https://scancode-licensedb.aboutcode.org/mit",
+                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE",
+                  "spdx_license_key": "MIT",
+                  "spdx_url": "https://spdx.org/licenses/MIT"
+                }
+              ]
+            }
+          ]
         }
       ],
+      "other_license_expression": null,
+      "other_license_expression_spdx": null,
+      "other_license_detections": [],
+      "extracted_license_statement": "[{'type': 'MIT', 'url': 'http://github.com/mscdex/busboy/raw/master/LICENSE'}]",
       "notice_text": null,
       "source_packages": [],
       "extra_data": {},
@@ -93,49 +139,55 @@
     {
       "path": "package.json",
       "type": "file",
-      "licenses": [
+      "detected_license_expression": "mit",
+      "detected_license_expression_spdx": "MIT",
+      "license_detections": [
         {
-          "key": "mit",
-          "score": 100.0,
-          "name": "MIT License",
-          "short_name": "MIT License",
-          "category": "Permissive",
-          "is_exception": false,
-          "is_unknown": false,
-          "owner": "MIT",
-          "homepage_url": "http://opensource.org/licenses/mit-license.php",
-          "text_url": "http://opensource.org/licenses/mit-license.php",
-          "reference_url": "https://scancode-licensedb.aboutcode.org/mit",
-          "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE",
-          "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.yml",
-          "spdx_license_key": "MIT",
-          "spdx_url": "https://spdx.org/licenses/MIT",
-          "start_line": 15,
-          "end_line": 15,
-          "matched_rule": {
-            "identifier": "mit_272.RULE",
-            "license_expression": "mit",
-            "licenses": [
-              "mit"
-            ],
-            "referenced_filenames": [],
-            "is_license_text": false,
-            "is_license_notice": false,
-            "is_license_reference": false,
-            "is_license_tag": true,
-            "is_license_intro": false,
-            "has_unknown": false,
-            "matcher": "2-aho",
-            "rule_length": 3,
-            "matched_length": 3,
-            "match_coverage": 100.0,
-            "rule_relevance": 100
-          }
+          "license_expression": "mit",
+          "detection_log": [
+            "not-combined"
+          ],
+          "matches": [
+            {
+              "score": 100.0,
+              "start_line": 15,
+              "end_line": 15,
+              "matched_length": 3,
+              "match_coverage": 100.0,
+              "matcher": "2-aho",
+              "license_expression": "mit",
+              "rule_identifier": "mit_272.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_272.RULE",
+              "referenced_filenames": [],
+              "is_license_text": false,
+              "is_license_notice": false,
+              "is_license_reference": false,
+              "is_license_tag": true,
+              "is_license_intro": false,
+              "rule_length": 3,
+              "rule_relevance": 100,
+              "licenses": [
+                {
+                  "key": "mit",
+                  "name": "MIT License",
+                  "short_name": "MIT License",
+                  "category": "Permissive",
+                  "is_exception": false,
+                  "is_unknown": false,
+                  "owner": "MIT",
+                  "homepage_url": "http://opensource.org/licenses/mit-license.php",
+                  "text_url": "http://opensource.org/licenses/mit-license.php",
+                  "reference_url": "https://scancode-licensedb.aboutcode.org/mit",
+                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE",
+                  "spdx_license_key": "MIT",
+                  "spdx_url": "https://spdx.org/licenses/MIT"
+                }
+              ]
+            }
+          ]
         }
       ],
-      "license_expressions": [
-        "mit"
-      ],
+      "license_clues": [],
       "percentage_of_license_text": 4.05,
       "package_data": [
         {
@@ -174,13 +226,59 @@
           "code_view_url": null,
           "vcs_url": "git+http://github.com/mscdex/busboy.git",
           "copyright": null,
-          "license_expression": "mit",
-          "declared_license": [
+          "declared_license_expression": "mit",
+          "declared_license_expression_spdx": "MIT",
+          "license_detections": [
             {
-              "type": "MIT",
-              "url": "http://github.com/mscdex/busboy/raw/master/LICENSE"
+              "license_expression": "mit",
+              "detection_log": [
+                "not-combined"
+              ],
+              "matches": [
+                {
+                  "score": 100.0,
+                  "start_line": 1,
+                  "end_line": 1,
+                  "matched_length": 1,
+                  "match_coverage": 100.0,
+                  "matcher": "1-spdx-id",
+                  "license_expression": "mit",
+                  "rule_identifier": "spdx-license-identifier: mit",
+                  "rule_url": null,
+                  "referenced_filenames": [],
+                  "is_license_text": false,
+                  "is_license_notice": false,
+                  "is_license_reference": false,
+                  "is_license_tag": true,
+                  "is_license_intro": false,
+                  "rule_length": 1,
+                  "rule_relevance": 100,
+                  "matched_text": "MIT",
+                  "licenses": [
+                    {
+                      "key": "mit",
+                      "name": "MIT License",
+                      "short_name": "MIT License",
+                      "category": "Permissive",
+                      "is_exception": false,
+                      "is_unknown": false,
+                      "owner": "MIT",
+                      "homepage_url": "http://opensource.org/licenses/mit-license.php",
+                      "text_url": "http://opensource.org/licenses/mit-license.php",
+                      "reference_url": "https://scancode-licensedb.aboutcode.org/mit",
+                      "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE",
+                      "spdx_license_key": "MIT",
+                      "spdx_url": "https://spdx.org/licenses/MIT"
+                    }
+                  ]
+                }
+              ]
             }
           ],
+          "other_license_expression": null,
+          "other_license_expression_spdx": null,
+          "other_license_detections": [],
+          "extracted_license_statement": "[{'type': 'MIT', 'url': 'http://github.com/mscdex/busboy/raw/master/LICENSE'}]",
           "notice_text": null,
           "source_packages": [],
           "file_references": [],

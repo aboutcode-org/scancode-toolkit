@@ -1,3 +1,10 @@
+---
+license_expression: bsd-new WITH ecma-no-patent
+is_license_text: yes
+ignorable_urls:
+    - http://www.ecma-international.org/memento/codeofconduct.htm
+---
+
 All Software contained in this document ("Software)" is protected by copyright
 and is being made available under the "BSD License", included below. This
 Software may be subject to third party rights (rights from parties other than

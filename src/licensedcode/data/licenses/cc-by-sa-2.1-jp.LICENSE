@@ -1,3 +1,17 @@
+---
+key: cc-by-sa-2.1-jp
+language: ja
+short_name: Creative Commons Attribution Share Alike 2.1 Japan
+name: Creative Commons Attribution Share Alike 2.1 Japan
+category: Copyleft Limited
+owner: Creative Commons
+spdx_license_key: CC-BY-SA-2.1-JP
+other_urls:
+    - https://creativecommons.org/licenses/by-sa/2.1/jp/legalcode
+ignorable_urls:
+    - https://creativecommons.org/http:/www.creativecommons.jp/
+---
+
 アトリビューション—シェアアライク 2.1
 （帰属—同一条件許諾）
 クリエイティブ・コモンズ及びクリエイティブ・コモンズ・ジャパンは法律事務所ではありません。この利用許諾条項の頒布は法的アドバイスその他の法律業務を行うものではありません。クリエイティブ・コモンズ及びクリエイティブ・コモンズ・ジャパンは、この利用許諾の当事者ではなく、ここに提供する情報及び本作品に関しいかなる保証も行いません。クリエイティブ・コモンズ及びクリエイティブ・コモンズ・ジャパンは、いかなる法令に基づこうとも、あなた又はいかなる第三者の損害（この利用許諾に関連する通常損害、特別損害を含みますがこれらに限られません）について責任を負いません。

@@ -1,4 +1,14 @@
-    The contents of this file are subject to the Common Public Attribution License
+---
+license_expression: cpal-1.0 OR commercial-license
+is_license_notice: yes
+notes: https://github.com/OptimEnterprises/sxweb/blob/217711ee8107fb3bdaba10f22c894f65808ebe45/application/modules/menu/views/scripts/index/volmobile.phtml#L7
+ignorable_authors:
+    - Initial Developer
+ignorable_urls:
+    - http://opensource.org/licenses/cpal_1.0
+---
+
+The contents of this file are subject to the Common Public Attribution License
     Version 1.0 (the "License"); you may not use this file except in compliance with
     the License. You may obtain a copy of the License at
     http://opensource.org/licenses/cpal_1.0. The License is based on the Mozilla

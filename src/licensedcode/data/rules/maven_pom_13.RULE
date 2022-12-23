@@ -1,1 +1,9 @@
+---
+license_expression: cddl-1.0
+is_license_tag: yes
+relevance: 100
+ignorable_urls:
+    - http://www.opensource.org/licenses/cddl1.php
+---
+
 License: CDDL, v1.0  (http://www.opensource.org/licenses/cddl1.php)

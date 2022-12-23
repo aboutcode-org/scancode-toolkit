@@ -1,3 +1,15 @@
+---
+key: ms-nuget
+short_name: MS Nuget
+name: Microsoft Nuget License
+category: Proprietary Free
+owner: Microsoft
+notes: |
+    this notice is often found in Nuget packages added by Microsoft on top of
+    other open source Attribution licenses, such as with jQuery.
+spdx_license_key: LicenseRef-scancode-ms-nuget
+---
+
 NUGET: BEGIN LICENSE TEXT
 Microsoft grants you the right to use these script files for the sole
 purpose of either: 

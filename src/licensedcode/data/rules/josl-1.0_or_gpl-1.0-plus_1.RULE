@@ -1,3 +1,12 @@
+---
+license_expression: josl-1.0 OR gpl-1.0-plus
+is_license_notice: yes
+relevance: 100
+ignorable_urls:
+    - http://www.gnu.org/copyleft/gpl.html
+    - http://www.jabber.org/about/josl.php
+---
+
 can be used under either of two licenses.  
 
 The Jabber Open Source License (JOSL) is probably most appropriate for

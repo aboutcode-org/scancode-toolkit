@@ -1,2 +1,8 @@
+---
+license_expression: public-domain AND lgpl-2.1 WITH libwebsockets-exception
+is_license_notice: yes
+relevance: 100
+---
+
 relicensed from Public Domain to LGPL2.1+SLE,
 link to original Public Domain version

@@ -1,0 +1,15 @@
+---
+key: ooura-2001
+short_name: OOURA License 2001
+name: OOURA License 2001
+category: Permissive
+owner: OOURA
+homepage_url: https://www.kurims.kyoto-u.ac.jp/~ooura/fft.html
+spdx_license_key: LicenseRef-scancode-ooura-2001
+text_urls:
+    - https://www.kurims.kyoto-u.ac.jp/~ooura/pi_fftc6_src.tgz
+    - https://github.com/tensorflow/tensorflow/blob/master/third_party/fft2d/LICENSE
+---
+
+You may use, copy, modify this code for any purpose and 
+without fee. You may distribute this ORIGINAL package.

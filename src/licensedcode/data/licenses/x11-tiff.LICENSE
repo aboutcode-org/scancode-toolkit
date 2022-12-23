@@ -1,3 +1,15 @@
+---
+key: x11-tiff
+short_name: X11-Style (Tiff)
+name: X11-Style (Tiff)
+category: Permissive
+owner: SGI - Silicon Graphics
+spdx_license_key: libtiff
+text_urls:
+    - https://fedoraproject.org/wiki/Licensing/libtiff
+minimum_coverage: 80
+---
+
 Permission to use, copy, modify, distribute, and sell this software and its
 documentation for any purpose is hereby granted without fee, provided
 that (i) the above copyright notices and this permission notice appear in

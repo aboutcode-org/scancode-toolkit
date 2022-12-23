@@ -1,3 +1,9 @@
+---
+license_expression: gpl-1.0-plus WITH autoconf-simple-exception-2.0
+is_license_notice: yes
+minimum_coverage: 80
+---
+
 This file is free software, distributed under the terms of the GNU
 General Public License.  As a special exception to the GNU General
 Public License, this file may be distributed as part of a program

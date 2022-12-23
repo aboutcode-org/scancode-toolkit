@@ -1,3 +1,10 @@
+---
+license_expression: gpl-2.0-plus OR bsd-new
+is_license_notice: yes
+relevance: 99
+minimum_coverage: 85
+---
+
 it is dual licensed under both GPL and BSD.
 
 GPL notice:

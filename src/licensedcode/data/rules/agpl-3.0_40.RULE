@@ -1,4 +1,9 @@
- * Alternatively, the contents of this file may be used under the
+---
+license_expression: agpl-3.0
+is_license_notice: yes
+---
+
+* Alternatively, the contents of this file may be used under the
  * terms of the GNU Affero General Public License (the [AGPLv3]
  * License), in which case the provisions of [AGPLv3] License are
  * applicable instead of those above. If you wish to allow use of your

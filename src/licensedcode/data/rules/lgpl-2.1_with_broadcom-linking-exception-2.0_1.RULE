@@ -1,3 +1,11 @@
+---
+license_expression: lgpl-2.1 WITH broadcom-linking-exception-2.0
+is_license_notice: yes
+referenced_filenames:
+    - COPYING
+notes: found in the freepascal compiler
+---
+
 The source code of the Free Pascal Runtime Libraries and packages are 
 distributed under the Library GNU General Public License 
 (see the file COPYING) with the following modification:
@@ -18,4 +26,3 @@ If you didn't receive a copy of the file COPYING, contact:
       675 Mass Ave
       Cambridge, MA  02139
       USA
-

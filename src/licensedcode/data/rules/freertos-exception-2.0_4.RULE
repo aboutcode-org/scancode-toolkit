@@ -1,3 +1,8 @@
+---
+license_expression: gpl-2.0 WITH freertos-exception-2.0
+is_license_notice: yes
+---
+
 The FreeRTOS GPL exception text follows:
 
 Any FreeRTOS *source code*, whether modified or in it's original release form,
@@ -25,4 +30,3 @@ FreeRTOS may not be used for any competitive or comparative purpose, including
 the publication of any form of run time or compile time metric, without the
 express permission of Real Time Engineers Ltd. (this is the norm within the
 industry and is intended to ensure information accuracy).
-

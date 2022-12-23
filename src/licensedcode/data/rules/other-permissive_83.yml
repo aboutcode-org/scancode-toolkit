@@ -1,9 +1,0 @@
-license_expression: other-permissive
-is_license_text: yes
-relevance: 100
-minimum_coverage: 80
-notes: Per Fedora, this "Cheusov variant" of the MIT "does not give explicit permission to redistribute
-    unmodified copies, however, since it does give permission to "copy" unmodifed copies, we
-    are interpreting it that way. Also, since it does grant explicit permission to redistribute
-    modified code, we feel the intent was to grant permission to redistribute unmodified copies
-    as well. That said, this license is poorly worded, and we do not recommend its use."

@@ -1,1 +1,9 @@
+---
+license_expression: python
+is_license_reference: yes
+relevance: 100
+ignorable_urls:
+    - http://python-ldap.sourceforge.net/
+---
+
 /* See http://python-ldap.sourceforge.net for details.

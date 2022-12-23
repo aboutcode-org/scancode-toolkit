@@ -1,2 +1,8 @@
+---
+license_expression: gpl-1.0-plus OR artistic-perl-1.0
+is_license_notice: yes
+relevance: 99
+---
+
 The "Perl for Win32" source code was licensed under the same terms
  as Perl itself and contained this copyright notice:

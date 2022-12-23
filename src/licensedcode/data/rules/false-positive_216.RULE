@@ -1,3 +1,8 @@
+---
+is_false_positive: yes
+notes: Seen in e2fsprogs
+---
+
 The empty string stands for
 # the public domain; in this case the translators are expected to disclaim
 # their copyright

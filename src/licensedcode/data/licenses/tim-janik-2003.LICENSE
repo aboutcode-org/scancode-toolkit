@@ -1,3 +1,13 @@
+---
+key: tim-janik-2003
+short_name: Tim Janik License 2003
+name: Tim Janik License 2003
+category: Permissive
+owner: Tim Janik
+homepage_url: https://gnome.pages.gitlab.gnome.org/glib/coverage/glib/gbsearcharray.h.gcov.html
+spdx_license_key: LicenseRef-scancode-tim-janik-2003
+---
+
 This software is provided "as is"; redistribution and modification
 is permitted, provided that the following disclaimer is retained.
 

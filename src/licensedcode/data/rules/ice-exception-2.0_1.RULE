@@ -1,4 +1,14 @@
-    This copy of Ice is free software; you can redistribute it and/or modify
+---
+license_expression: gpl-2.0 WITH ice-exception-2.0
+is_license_notice: yes
+ignorable_urls:
+    - http://mumble.sourceforge.net/
+    - http://orca-robotics.sourceforge.net/
+    - http://www.apache.org/licenses/LICENSE-2.0.html
+    - http://www.gnu.org/licenses
+---
+
+This copy of Ice is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License version 2 as
     published by the Free Software Foundation.
     Ice is distributed in the hope that it will be useful, but WITHOUT ANY

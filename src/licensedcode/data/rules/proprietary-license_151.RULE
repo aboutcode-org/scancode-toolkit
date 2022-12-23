@@ -1,3 +1,9 @@
+---
+license_expression: proprietary-license
+is_license_text: yes
+relevance: 100
+---
+
 **Commercial Free License Agreement **
 
 The software available for download here is made available to you pursuant to this certain Commercial Free License Agreement ("**Agreement**") by and between MuleSoft, Inc. ("**MuleSoft**") and the MuleSoft customer that accepts these terms either by (A) downloading and using the Free Software (as defined below) or (B) clicking where indicated to indicate its acceptance of this Agreement ("**Customer**"). Subject to the terms below, this Agreement permits Customer to use the MuleSoft proprietary software code and related documentation MuleSoft may make available, which software is delivered at no additional cost for the purpose of facilitating the implementation of the Anypoint Platform in Customer's environment (the "**Free Software**") as described below. This Agreement shall govern Customer's initial download of the applicable Free Software, as well as any future updates to such Free Software that MuleSoft may provide from time to time at its sole discretion.

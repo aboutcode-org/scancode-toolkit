@@ -1,3 +1,9 @@
+---
+license_expression: free-unknown
+is_license_text: yes
+notes: this is a per-GPL text found in RMS regex code from circa 1985
+---
+
 This program is distributed in the hope that it will be useful,
 but without any warranty.  No author or distributor
 accepts responsibility to anyone for the consequences of using it

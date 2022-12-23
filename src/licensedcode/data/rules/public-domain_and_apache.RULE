@@ -1,3 +1,12 @@
+---
+license_expression: public-domain AND apache-2.0
+is_license_notice: yes
+minimum_coverage: 90
+ignorable_urls:
+    - http://www.apache.org/docs/LICENSE
+    - http://www.apache.org/licenses/LICENSE-2.0
+---
+
 ##  Based on `install-sh' from the X Consortium's X11R5 distribution
 ##  as of 89/12/18 which is freely available.
 # This script falls under the Apache License.

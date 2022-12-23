@@ -1,3 +1,13 @@
+---
+license_expression: sun-sissl-1.1
+is_license_text: yes
+minimum_coverage: 70
+notes: license text as published by SPDX
+ignorable_urls:
+    - http://api.openoffice.org/
+    - http://xml.openoffice.org/
+---
+
 Sun Industry Standards Source License - Version 1.1 
 
 1.0 DEFINITIONS 

@@ -1,3 +1,9 @@
+---
+license_expression: lgpl-2.1 AND gpl-2.0 AND gpl-3.0
+is_license_notice: yes
+minimum_coverage: 60
+---
+
 are licensed under the terms of the GNU Lesser General Public License
 version 2.1 (“LGPL”) and/or the GNU General Public License versions 2.0 and 3.0
-(“GPL”) 
+(“GPL”)

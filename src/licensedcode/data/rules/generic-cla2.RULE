@@ -1,3 +1,11 @@
+---
+license_expression: generic-cla
+is_license_notice: yes
+notes: Oracle CLA for OpenOffice
+ignorable_emails:
+    - Copyrightfax@sun.com
+---
+
 OpenOffice.org Open Source Project
 Joint Copyright Assignment by Contributor
 To Sun Microsystems, Inc. ("Sun")

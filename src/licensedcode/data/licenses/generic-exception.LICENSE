@@ -1,0 +1,13 @@
+---
+key: generic-exception
+short_name: Generic Exception Notice
+name: Generic Exception Notice
+category: Unstated License
+owner: Unspecified
+notes: This is a generic license exception notice where the exception text has not been named
+    and published publicly. Actual terms are most commonly related to rare, one-off extra permission
+    to the A/L/GPL licenses.
+is_exception: yes
+is_generic: yes
+spdx_license_key: LicenseRef-scancode-generic-exception
+---

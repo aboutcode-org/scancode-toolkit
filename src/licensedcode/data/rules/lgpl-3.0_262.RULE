@@ -1,4 +1,12 @@
- * This program is free software; you can redistribute it and/or
+---
+license_expression: lgpl-3.0
+is_license_notice: yes
+relevance: 100
+ignorable_urls:
+    - https://www.gnu.org/licenses/
+---
+
+* This program is free software; you can redistribute it and/or
  * modify it under the terms of version 3 of the GNU Lesser General
  * Public License as published by the Free Software Foundation.
  *

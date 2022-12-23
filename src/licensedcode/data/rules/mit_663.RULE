@@ -1,3 +1,11 @@
+---
+license_expression: mit
+is_license_notice: yes
+relevance: 100
+ignorable_urls:
+    - http://www.opensource.org/licenses/mit-license.php
+---
+
 Use, reproduction, distribution, and
 modification of this code is subject to the terms and * conditions
 of the MIT license, available at

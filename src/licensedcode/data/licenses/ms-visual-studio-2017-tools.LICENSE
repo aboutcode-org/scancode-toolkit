@@ -1,3 +1,18 @@
+---
+key: ms-visual-studio-2017-tools
+short_name: MS Visual Studio 2017 Tools
+name: Microsoft Visual Studio 2017 Tools
+category: Commercial
+owner: Microsoft
+homepage_url: https://visualstudio.microsoft.com/license-terms/mlt552233/
+spdx_license_key: LicenseRef-scancode-ms-visual-studio-2017-tools
+ignorable_urls:
+    - http://go.microsoft.com/?linkid=9840733
+    - http://www.microsoft.com/exporting
+    - https://go.microsoft.com/fwlink/?LinkID=824704
+    - https://go.microsoft.com/fwlink/?linkid=823097
+---
+
 MICROSOFT SOFTWARE LICENSE TERMS
 
 MICROSOFT VISUAL STUDIO 2017 TOOLS, ADD-ONs and EXTENSIONS
@@ -72,4 +87,4 @@ It also applies even if Microsoft knew or should have known about the possibilit
 
 limitation or exclusion may not apply to you because your country may not allow the exclusion or limitation of incidental, consequential or other damages.
 
-EULA ID: VS 2017_TOOLS_ADDONs_C++_RTW.3_ENU 
+EULA ID: VS 2017_TOOLS_ADDONs_C++_RTW.3_ENU

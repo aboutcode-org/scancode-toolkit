@@ -1,3 +1,9 @@
+---
+license_expression: proprietary-license
+is_license_text: yes
+notes: Based on the MIT with material and problematic changes. https://github.com/Son0fAnton/automated-payroll/blob/b044a7c52996e081fcc1841d31b944b9549a6b2e/LICENSE#L8
+---
+
 Permission is hereby not granted, no free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
 in the Software with restriction, including with limitation the rights

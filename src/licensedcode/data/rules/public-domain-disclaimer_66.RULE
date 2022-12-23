@@ -1,3 +1,9 @@
+---
+license_expression: public-domain-disclaimer
+is_license_notice: yes
+relevance: 100
+---
+
 Public Domain.
  These are functions for producing 32-bit hashes for hash table lookup...
  ...You can use this free for any purpose.  It's in the public domain.

@@ -1,3 +1,10 @@
+---
+license_expression: gpl-1.0-plus AND other-copyleft
+is_license_notice: yes
+minimum_coverage: 90
+notes: This is ambiguous and may be a rider on top of the GPL
+---
+
 distributed under the terms of the GNU General Public License (GPL). 
 Redistribution of this package is freely allowed, provided that the terms of the
 GPL are adhered to, including the requirement that the source code for all GPL

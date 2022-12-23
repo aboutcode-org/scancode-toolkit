@@ -1,3 +1,11 @@
+---
+license_expression: lgpl-2.1-plus WITH openssl-exception-gpl-3.0-plus
+is_license_notice: yes
+relevance: 95
+minimum_coverage: 80
+notes: This references the LGPL instead of the GPL
+---
+
 This package is free software; you can redistribute it and/or modify it
  under the terms of the GNU Lesser General Public License as published
  by the Free Software Foundation; either version 2.1 of the License, or

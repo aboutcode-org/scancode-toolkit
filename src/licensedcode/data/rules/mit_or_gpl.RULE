@@ -1,3 +1,11 @@
- is dual licensed under the MIT and GPL licenses:
+---
+license_expression: mit OR gpl-1.0-plus
+is_license_notice: yes
+ignorable_urls:
+    - http://www.gnu.org/licenses/gpl.html
+    - http://www.opensource.org/licenses/mit-license.php
+---
+
+is dual licensed under the MIT and GPL licenses:
 http://www.opensource.org/licenses/mit-license.php
 http://www.gnu.org/licenses/gpl.html

@@ -1,1 +1,10 @@
+---
+license_expression: gcc-linking-exception-2.0
+is_license_reference: yes
+is_continuous: yes
+relevance: 100
+minimum_coverage: 100
+notes: Rule based on an SPDX license identifier and name
+---
+
 GCC Runtime Library exception 2.0 GCC-exception-2.0

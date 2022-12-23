@@ -1,3 +1,22 @@
+---
+key: activestate-community
+short_name: ActiveState Community License
+name: ActiveState Community License
+category: Proprietary Free
+owner: ActiveState Software, Inc.
+spdx_license_key: LicenseRef-scancode-activestate-community
+ignorable_copyrights:
+    - Copyright (c) 1991-1995 Stichting Mathematisch Centrum, Amsterdam
+    - Copyright (c) 1995-2001 Corporation for National Research Initiatives
+    - Copyright (c) 2000 BeOpen.com
+    - Copyright (c) 2001 Python Software Foundation
+ignorable_holders:
+    - BeOpen.com
+    - Corporation for National Research Initiatives
+    - Python Software Foundation
+    - Stichting Mathematisch Centrum, Amsterdam
+---
+
 ActiveState Community License 
 Preamble:
 The intent of this document is to state the conditions under which the Package may be copied and distributed, such that ActiveState maintains control over the development and distribution of the Package, while allowing the users of the Package to use the Package in a variety of ways.

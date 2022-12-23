@@ -1,3 +1,16 @@
+---
+key: cryptopp
+short_name: Crypto++ License
+name: Crypto++ License
+category: Permissive
+owner: Wei Dai
+spdx_license_key: LicenseRef-scancode-cryptopp
+ignorable_copyrights:
+    - Copyright (c) 1995-2010 by Wei Dai
+ignorable_holders:
+    - Wei Dai
+---
+
 Compilation Copyright (c) 1995-2010 by Wei Dai. All rights reserved.
 
 This copyright applies only to this software distribution package as a

@@ -1,3 +1,19 @@
+---
+key: sun-bcl-sdk-6.0
+short_name: Sun BCL SDK 6.0
+name: Sun BCL SDK 6.0
+category: Proprietary Free
+owner: Oracle (Sun)
+spdx_license_key: LicenseRef-scancode-sun-bcl-sdk-6.0
+ignorable_copyrights:
+    - Copyright 2006, Sun Microsystems, Inc.
+ignorable_holders:
+    - Sun Microsystems, Inc.
+ignorable_urls:
+    - http://java.com/data
+    - http://www.sun.com/policies/trademarks
+---
+
 Sun Microsystems, Inc. Binary Code License Agreement 
 for the JAVA SE DEVELOPMENT KIT (JDK), VERSION 6
 

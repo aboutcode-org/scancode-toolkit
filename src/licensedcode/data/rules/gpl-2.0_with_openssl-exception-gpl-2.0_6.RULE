@@ -1,3 +1,9 @@
+---
+license_expression: gpl-2.0 WITH openssl-exception-gpl-2.0
+is_license_notice: yes
+relevance: 100
+---
+
 In addition, as a special exception, Tobias Doerffel gives permission to link
 the code of its release of iTALC with the OpenSSL project's "OpenSSL" library
 (or modified versions of the "OpenSSL" library that use the same license

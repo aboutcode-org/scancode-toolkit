@@ -1,1 +1,9 @@
+---
+license_expression: dco-1.1
+is_license_notice: yes
+relevance: 100
+referenced_filenames:
+    - DCO1.1.txt
+---
+
 Contribution to this project requires the [DCO 1.1](./DCO1.1.txt) process to be followed.

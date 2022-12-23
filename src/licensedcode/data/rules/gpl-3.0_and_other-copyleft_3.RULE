@@ -1,3 +1,12 @@
+---
+license_expression: gpl-3.0 AND other-copyleft
+is_license_notice: yes
+relevance: 90
+notes: eclipse word introdcued in some mass replacement
+ignorable_urls:
+    - http://www.gnu.org/licenses/
+---
+
 * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Eclipse Public License as published by
  * the Free Software Foundation, either version 3 of the License, or

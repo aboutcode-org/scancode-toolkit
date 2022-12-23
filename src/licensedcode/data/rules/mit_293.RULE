@@ -1,1 +1,9 @@
+---
+license_expression: mit
+is_license_reference: yes
+relevance: 90
+ignorable_urls:
+    - https://github.com/Microsoft/MSBuildSdks/raw/master/LICENSE.txt
+---
+
 https://github.com/Microsoft/MSBuildSdks/raw/master/LICENSE.txt

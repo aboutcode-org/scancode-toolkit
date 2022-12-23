@@ -1,4 +1,10 @@
- This source code is distributed under a dual license of GPL v2.0 and OpenIB
+---
+license_expression: gpl-2.0 OR bsd-simplified
+is_license_notice: yes
+minimum_coverage: 90
+---
+
+This source code is distributed under a dual license of GPL v2.0 and OpenIB
  BSD.
 
 OpenIB BSD License

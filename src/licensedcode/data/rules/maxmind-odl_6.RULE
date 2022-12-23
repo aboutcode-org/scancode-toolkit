@@ -1,3 +1,10 @@
+---
+license_expression: maxmind-odl
+is_license_text: yes
+ignorable_urls:
+    - http://maxmind.com/
+---
+
 All advertising materials and documentation mentioning features or use of
 this database must display the following acknowledgment:
 "This product includes GeoLite data created by MaxMind, available from

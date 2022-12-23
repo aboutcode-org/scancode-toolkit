@@ -1,3 +1,11 @@
+---
+license_expression: ibmpl-1.0
+is_license_notice: yes
+relevance: 100
+ignorable_urls:
+    - http://www.opensource.org/licenses/
+---
+
 distributed under the IBM Public
    License (IPL). The IPL is an approved open source license (see
    http://www.opensource.org/licenses/ for a list). It grants similar

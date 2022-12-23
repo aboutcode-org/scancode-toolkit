@@ -1,1 +1,9 @@
+---
+license_expression: afl-3.0
+is_license_tag: yes
+relevance: 100
+ignorable_urls:
+    - http://opensource.org/licenses/afl-3.0.php
+---
+
 license    http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)

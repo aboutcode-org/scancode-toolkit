@@ -1,3 +1,10 @@
+---
+license_expression: gpl-1.0-plus AND (gpl-2.0 OR xfree86-1.1)
+is_license_notice: yes
+minimum_coverage: 95
+notes: found in the Linux kernel in some framebuffer driver
+---
+
 This driver consists of two parts.  The first part (intelfbdrv.c) provides
 the basic fbdev interfaces, is derived in part from the radeonfb and
 vesafb drivers, and is covered by the GPL.  The second part (intelfbhw.c)

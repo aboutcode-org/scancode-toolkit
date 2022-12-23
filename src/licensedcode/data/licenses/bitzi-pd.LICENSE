@@ -1,3 +1,17 @@
+---
+key: bitzi-pd
+short_name: Bitzi-PD
+name: Bitzi Public Domain
+category: Permissive
+owner: Bitzi Corporation
+homepage_url: http://bitzi.com/publicdomain
+spdx_license_key: LicenseRef-scancode-bitzi-pd
+ignorable_urls:
+    - http://bitzi.com/publicdomain
+ignorable_emails:
+    - info@bitzi.com
+---
+
 BITZI PUBLIC DOMAIN NOTICES 
 
 UPDATED July 13, 2006 

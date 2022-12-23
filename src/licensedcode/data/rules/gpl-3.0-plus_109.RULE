@@ -1,4 +1,12 @@
-   This file belongs to a GNU package released under GPL 3 license.
+---
+license_expression: gpl-3.0-plus
+is_license_notice: yes
+minimum_coverage: 98
+ignorable_urls:
+    - http://www.gnu.org/licenses/
+---
+
+This file belongs to a GNU package released under GPL 3 license.
  
    This program is free software; you can redistribute it and/or modify
    it under the terms of the GNU General Public License as published by

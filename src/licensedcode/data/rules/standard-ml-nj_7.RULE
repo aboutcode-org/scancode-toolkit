@@ -1,4 +1,10 @@
- * Permission to use, copy, modify, and distribute this software and its
+---
+license_expression: standard-ml-nj
+is_license_text: yes
+relevance: 100
+---
+
+* Permission to use, copy, modify, and distribute this software and its
  * documentation for any purpose and without fee is hereby granted, provided
  * that the above copyright notice appear in all copies and that both the
  * copyright notice and this permission notice and warranty disclaimer appear
@@ -11,4 +17,4 @@
  * be liable for any special, indirect or consequential damages or any damages
  * whatsoever resulting from loss of use, data or profits, whether in an action
  * of contract, negligence or other tortious action, arising out of or in
- * connection with the use or performance of this software. 
+ * connection with the use or performance of this software.

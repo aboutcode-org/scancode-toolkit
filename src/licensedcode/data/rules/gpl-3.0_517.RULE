@@ -1,2 +1,9 @@
+---
+license_expression: gpl-3.0
+is_license_notice: yes
+ignorable_urls:
+    - http://www.gnu.org/licenses/gpl.txt
+---
+
 # Licensed under the GNU General Public License, version 3.
 # See the file http://www.gnu.org/licenses/gpl.txt

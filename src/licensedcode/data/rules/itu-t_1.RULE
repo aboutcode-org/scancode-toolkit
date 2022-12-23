@@ -1,3 +1,11 @@
+---
+license_expression: itu-t
+is_license_text: yes
+relevance: 100
+ignorable_authors:
+    - the User's Group
+---
+
 ITU-T software tools General Public License
 
 Terms and conditions

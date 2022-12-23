@@ -1,4 +1,11 @@
- Released (via statement in email) under the GNU GPL v2.
+---
+license_expression: gpl-2.0
+is_license_notice: yes
+minimum_coverage: 100
+notes: Lizartech gpl notice, rather complex
+---
+
+Released (via statement in email) under the GNU GPL v2.
 
 Copyright:
 
@@ -18,4 +25,3 @@ Copyright:
 On Debian GNU/Linux systems, the complete text of the GNU General
 Public License version 2 can be found in
 `/usr/share/common-licenses/GPL-2'.
-

@@ -1,2 +1,11 @@
+---
+license_expression: isc
+is_license_notice: yes
+relevance: 100
+referenced_filenames:
+    - COPYRIGHT
+ignorable_urls:
+    - http://isc.org/copyright.html
+---
 
 See COPYRIGHT in the source root or http://isc.org/copyright.html for terms.

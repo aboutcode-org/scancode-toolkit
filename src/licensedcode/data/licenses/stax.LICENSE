@@ -1,3 +1,19 @@
+---
+key: stax
+short_name: Stax License
+name: Stax License
+category: Copyleft Limited
+owner: Oracle Corporation
+homepage_url: https://www.jcp.org/aboutJava/communityprocess/licenses/jsr173/JSR173_Spec_License_Streaming_API_XML-1_3-10_22_13.pdf
+spdx_license_key: LicenseRef-scancode-stax
+ignorable_copyrights:
+    - (c) 2002, 2003 BEA Systems, Inc.
+ignorable_holders:
+    - BEA Systems, Inc.
+ignorable_urls:
+    - http://www.bea.com/
+---
+
 Streaming API for XML (JSR-173) Specification Reference Implementation License Agreement
 
 READ THE TERMS OF THIS (THE "AGREEMENT") CAREFULLY BEFORE VIEWING OR USING THE SOFTWARE LICENSED HEREUNDER.  BY VIEWING OR USING THE SOFTWARE, YOU AGREE TO THE TERMS OF THIS AGREEMENT. IF YOU ARE ACCESSING THE SOFTWARE ELECTRONICALLY, INDICATE YOUR ACCEPTANCE OF THESE TERMS BY SELECTING THE "ACCEPT" BUTTON AT THE END OF THIS AGREEMENT. IF YOU DO NOT AGREE TO ALL THESE TERMS, PROMPTLY RETURN THE UNUSED SOFTWARE TO ORIGINAL CONTRIBUTOR, DEFINED HEREIN.

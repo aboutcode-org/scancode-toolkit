@@ -1,3 +1,19 @@
+---
+key: hp-netperf
+short_name: HP Netperf License
+name: HP Netperf License
+category: Free Restricted
+owner: HP - Hewlett Packard
+homepage_url: http://www.netperf.org/netperf/training/Netperf.html
+spdx_license_key: LicenseRef-scancode-hp-netperf
+other_urls:
+    - http://www.netperf.org/netperf/training/Netperf.html
+ignorable_copyrights:
+    - copyrighted works of Hewlett-Packard Co.
+ignorable_holders:
+    - Hewlett-Packard Co.
+---
+
 The enclosed software and documentation includes copyrighted works of Hewlett-Packard Co. For as long as you comply with the following limitations, you are hereby authorized to (i) use, reproduce, and modify the software and documentation, and to (ii) distribute the software and documentation, including modifications, for non-commercial purposes only.
 
 1. The enclosed software and documentation is made available at no charge in order to advance the general development of high-performance networking products.

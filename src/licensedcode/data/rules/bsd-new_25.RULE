@@ -1,2 +1,11 @@
+---
+license_expression: bsd-new
+is_license_notice: yes
+relevance: 95
+referenced_filenames:
+    - LICENSE
+notes: Found in Chromium and Go. There are also some use of the same notice with a bsd-simplified
+---
+
 Use of this source code is i{{ governed by a BSD-style license }} that can be found in the
 LICENSE file.

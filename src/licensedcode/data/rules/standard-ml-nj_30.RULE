@@ -1,1 +1,9 @@
+---
+license_expression: standard-ml-nj
+is_license_reference: yes
+relevance: 100
+ignorable_urls:
+    - https://spdx.org/licenses/StandardML-NJ
+---
+
 {{StandardML-NJ}} https://spdx.org/licenses/StandardML-NJ

@@ -1,5 +1,0 @@
-license_expression: bsd-new AND gpl-2.0-plus WITH bison-exception-2.2
-is_license_notice: yes
-minimum_coverage: 99
-referenced_filenames:
-    - Copyright.txt

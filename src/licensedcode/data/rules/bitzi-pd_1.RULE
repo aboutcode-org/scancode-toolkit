@@ -1,3 +1,14 @@
+---
+license_expression: bitzi-pd
+is_license_text: yes
+referenced_filenames:
+    - COPYING
+ignorable_urls:
+    - http://bitzi.com/publicdomain
+ignorable_emails:
+    - info@bitzi.com
+---
+
 BITZI PUBLIC DOMAIN NOTICES 
 
 UPDATED July 13, 2006 
@@ -73,4 +84,4 @@ include a version of this longer explanation:
 We hope you find our public-domain source code useful, 
 but remember that we can provide absolutely no support 
 or assurances about it; your use is entirely at your 
-own risk. 
+own risk.

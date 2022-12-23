@@ -1,3 +1,10 @@
+---
+license_expression: bsd-new
+is_license_text: yes
+notes: Seen in https://github.com/WebKit/WebKit/blob/aff5e1addc0ed7ff4198f0407e692bbddc70d094/Source/cmake/DetectSSE2.cmake
+    See also https://github.com/nexB/scancode-toolkit/issues/3039
+---
+
 Redistribution and use in source and binary forms, with or without modification,
 are permitted provided that the following conditions are met:
 

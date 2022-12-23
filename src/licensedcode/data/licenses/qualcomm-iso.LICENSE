@@ -1,3 +1,20 @@
+---
+key: qualcomm-iso
+short_name: Qualcomm ISO/IEC MPEG-B DASH License
+name: Qualcomm ISO/IEC MPEG-B DASH License
+category: Free Restricted
+owner: Qualcomm
+spdx_license_key: LicenseRef-scancode-qualcomm-iso
+other_urls:
+    - https://www.iso.org/standard/65274.html
+ignorable_copyrights:
+    - Copyright (c) ISO/IEC 2010
+ignorable_holders:
+    - ISO/IEC
+ignorable_authors:
+    - Qualcomm, Inc.
+---
+
 This software module was originally developed by Qualcomm, Inc. in
 the course of development of the ISO/IEC MPEG-B DASH standard for
 reference purposes and its performance may not have been optimized.

@@ -1,3 +1,10 @@
+---
+license_expression: uoi-ncsa
+is_license_notice: yes
+ignorable_urls:
+    - http://llvm.org/docs/DeveloperPolicy.html#license
+---
+
 license">Use the LLVM 'BSD' License
 
 We actively intend for clang (and LLVM as a whole) to be used for

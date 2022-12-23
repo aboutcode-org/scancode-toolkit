@@ -1,3 +1,14 @@
+---
+license_expression: lgpl-3.0 OR commercial-license
+is_license_notice: yes
+relevance: 100
+referenced_filenames:
+    - COMM-LICENSE
+ignorable_urls:
+    - http://www.gnu.org/licenses/lgpl-3.0.html
+    - https://sidekiq.org/products/pro.html
+---
+
 Sidekiq is an Open Source project licensed under the terms of
 the LGPLv3 license.  Please see <http://www.gnu.org/licenses/lgpl-3.0.html>
 for license text.

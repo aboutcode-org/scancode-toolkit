@@ -1,2 +1,8 @@
+---
+license_expression: mit
+is_license_notice: yes
+notes: https://bitbucket.org/cse-assemblyline/alsvc_unpacker/src/master/LICENCE.md
+---
+
 Unless otherwise noted, computer program source code of Assemblyline (AL) 
 is covered under Crown Copyright, Government of Canada, and is {{distributed under the MIT License.}}

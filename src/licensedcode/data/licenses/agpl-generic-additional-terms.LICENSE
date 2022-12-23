@@ -1,0 +1,12 @@
+---
+key: agpl-generic-additional-terms
+short_name: AGPL Generic Additional Terms
+name: AGPL Generic Additional Terms
+category: Copyleft
+owner: Unspecified
+notes: this is a generic entry for rare one-off AGPL extra license terms. These are typically
+    additional terms under section 7 of the AGPL-3.0
+is_exception: yes
+is_generic: yes
+spdx_license_key: LicenseRef-scancode-agpl-generic-additional-terms
+---

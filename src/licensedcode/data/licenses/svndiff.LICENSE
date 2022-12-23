@@ -1,3 +1,13 @@
+---
+key: svndiff
+short_name: svndiff License
+name: svndiff License
+category: Permissive
+owner: CollabNet
+spdx_license_key: LicenseRef-scancode-svndiff
+minimum_coverage: 60
+---
+
 Redistribution and use in source and binary forms, with or without
 modification, are permitted provided that the following conditions
 are met:

@@ -1,0 +1,531 @@
+Django was originally created in late 2003 at World Online, the Web division
+of the Lawrence Journal-World newspaper in Lawrence, Kansas.
+
+The PRIMARY AUTHORS are (and/or have been):
+
+    * Adrian Holovaty
+    * Simon Willison
+    * Jacob Kaplan-Moss
+    * Wilson Miner
+    * Malcolm Tredinnick
+    * Georg "Hugo" Bauer
+    * Luke Plant
+    * Russell Keith-Magee
+    * Robert Wittams
+    * Gary Wilson
+    * Brian Rosner
+    * Justin Bronn
+    * Karen Tracey
+    * Jannis Leidel
+    * James Tauber
+    * Alex Gaynor
+    * Andrew Godwin
+    * Carl Meyer
+    * Ramiro Morales
+    * Chris Beaven
+
+More information on the main contributors to Django can be found in
+docs/internals/committers.txt.
+
+And here is an inevitably incomplete list of MUCH-APPRECIATED CONTRIBUTORS --
+people who have submitted patches, reported bugs, added translations, helped
+answer newbie questions, and generally made Django that much better:
+
+    Gisle Aas <gisle@aas.no>
+    ajs <adi@sieker.info>
+    alang@bright-green.com
+    Andi Albrecht <albrecht.andi@gmail.com>
+    Marty Alchin <gulopine@gamemusic.org>
+    Ahmad Alhashemi <trans@ahmadh.com>
+    Ahmad Al-Ibrahim
+    Antoni Aloy
+    Daniel Alves Barbosa de Oliveira Vaz <danielvaz@gmail.com>
+    AgarFu <heaven@croasanaso.sytes.net>
+    Dagur Páll Ammendrup <dagurp@gmail.com>
+    Collin Anderson <cmawebsite@gmail.com>
+    Jeff Anderson <jefferya@programmerq.net>
+    Marian Andre <django@andre.sk>
+    Andreas
+    Victor Andrée
+    andy@jadedplanet.net
+    Fabrice Aneche <akh@nobugware.com>
+    ant9000@netwise.it
+    Florian Apolloner <florian@apolloner.eu>
+    arien <regexbot@gmail.com>
+    David Ascher <http://ascher.ca/>
+    atlithorn <atlithorn@gmail.com>
+    Jökull Sólberg Auðunsson <jokullsolberg@gmail.com>
+    Arthur <avandorp@gmail.com>
+    av0000@mail.ru
+    David Avsajanishvili <avsd05@gmail.com>
+    Mike Axiak <axiak@mit.edu>
+    Niran Babalola <niran@niran.org>
+    Vitaly Babiy <vbabiy86@gmail.com>
+    Morten Bagai <m@bagai.com>
+    Jeff Balogh <jbalogh@mozilla.com>
+    Mikaël Barbero <mikael.barbero nospam at nospam free.fr>
+    Randy Barlow <randy@electronsweatshop.com>
+    Scott Barr <scott@divisionbyzero.com.au>
+    Jiri Barton
+    Ned Batchelder <http://www.nedbatchelder.com/>
+    batiste@dosimple.ch
+    Batman
+    Brian Beck <http://blog.brianbeck.com/>
+    Shannon -jj Behrens <http://jjinux.blogspot.com/>
+    Esdras Beleza <linux@esdrasbeleza.com>
+    Chris Bennett <chrisrbennett@yahoo.com>
+    James Bennett
+    Julian Bez
+    Arvis Bickovskis <viestards.lists@gmail.com>
+    Natalia Bidart <nataliabidart@gmail.com>
+    Paul Bissex <http://e-scribe.com/>
+    Simon Blanchard
+    David Blewett <david@dawninglight.net>
+    Matt Boersma <matt@sprout.org>
+    boobsd@gmail.com
+    Matías Bordese
+    Sean Brant
+    Andrew Brehaut <http://brehaut.net/blog>
+    David Brenneman <http://davidbrenneman.com>
+    brut.alll@gmail.com
+    bthomas
+    btoll@bestweb.net
+    Jonathan Buchanan <jonathan.buchanan@gmail.com>
+    Keith Bussell <kbussell@gmail.com>
+    C8E
+    Chris Cahoon <chris.cahoon@gmail.com>
+    Juan Manuel Caicedo <juan.manuel.caicedo@gmail.com>
+    Trevor Caira <trevor@caira.com>
+    Brett Cannon <brett@python.org>
+    Ricardo Javier Cárdenes Medina <ricardo.cardenes@gmail.com>
+    Jeremy Carbaugh <jcarbaugh@gmail.com>
+    Graham Carlyle <graham.carlyle@maplecroft.net>
+    Antonio Cavedoni <http://cavedoni.com/>
+    cedric@terramater.net
+    Chris Chamberlin <dja@cdc.msbx.net>
+    Amit Chakradeo <http://amit.chakradeo.net/>
+    ChaosKCW
+    Kowito Charoenratchatabhan <kowito@felspar.com>
+    Sengtha Chay <sengtha@e-khmer.com>
+    ivan.chelubeev@gmail.com
+    Bryan Chow <bryan at verdjn dot com>
+    Antonis Christofides <anthony@itia.ntua.gr>
+    Michal Chruszcz <troll@pld-linux.org>
+    Can Burak Çilingir <canburak@cs.bilgi.edu.tr>
+    Ian Clelland <clelland@gmail.com>
+    Travis Cline <travis.cline@gmail.com>
+    Russell Cloran <russell@rucus.net>
+    colin@owlfish.com
+    crankycoder@gmail.com
+    Paul Collier <paul@paul-collier.com>
+    Robert Coup
+    Pete Crosier <pete.crosier@gmail.com>
+    Matt Croydon <http://www.postneo.com/>
+    Leah Culver <leah@pownce.com>
+    flavio.curella@gmail.com
+    Jure Cuhalev <gandalf@owca.info>
+    John D'Agostino <john.dagostino@gmail.com>
+    dackze+django@gmail.com
+    Mihai Damian <yang_damian@yahoo.com>
+    David Danier <david.danier@team23.de>
+    Dirk Datzert <dummy@habmalnefrage.de>
+    Jonathan Daugherty (cygnus) <http://www.cprogrammer.org/>
+    dave@thebarproject.com
+    david@kazserve.org
+    Jason Davies (Esaj) <http://www.jasondavies.com/>
+    Richard Davies <richard.davies@elastichosts.com>
+    Alex Dedul
+    Matt Dennenbaum
+    deric@monowerks.com
+    Max Derkachev <mderk@yandex.ru>
+    Rajesh Dhawan <rajesh.dhawan@gmail.com>
+    Sander Dijkhuis <sander.dijkhuis@gmail.com>
+    Jordan Dimov <s3x3y1@gmail.com>
+    Nebojša Dorđević
+    dne@mayonnaise.net
+    dready <wil@mojipage.com>
+    Maximillian Dornseif <md@hudora.de>
+    Jeremy Dunck <http://dunck.us/>
+    Andrew Durdin <adurdin@gmail.com>
+    dusk@woofle.net
+    Andy Dustman <farcepest@gmail.com>
+    Alexander Dutton <dev@alexdutton.co.uk>
+    J. Clifford Dyer <jcd@sdf.lonestar.org>
+    Clint Ecker
+    Nick Efford <nick@efford.org>
+    eibaan@gmail.com
+    Julia Elman
+    enlight
+    Enrico <rico.bl@gmail.com>
+    A. Murat Eren <meren@pardus.org.tr>
+    Ludvig Ericson <ludvig.ericson@gmail.com>
+    eriks@win.tue.nl
+    Tomáš Ehrlich <tomas.ehrlich@gmail.com>
+    Dirk Eschler <dirk.eschler@gmx.net>
+    Marc Fargas <telenieko@telenieko.com>
+    Szilveszter Farkas <szilveszter.farkas@gmail.com>
+    Grigory Fateyev <greg@dial.com.ru>
+    favo@exoweb.net
+    fdr <drfarina@gmail.com>
+    Dmitri Fedortchenko <zeraien@gmail.com>
+    Jonathan Feignberg <jdf@pobox.com>
+    Liang Feng <hutuworm@gmail.com>
+    Bill Fenner <fenner@gmail.com>
+    Stefane Fermgier <sf@fermigier.com>
+    J. Pablo Fernandez <pupeno@pupeno.com>
+    Maciej Fijalkowski
+    Ben Firshman <ben@firshman.co.uk>
+    Matthew Flanagan <http://wadofstuff.blogspot.com>
+    Eric Floehr <eric@intellovations.com>
+    Eric Florenzano <floguy@gmail.com>
+    Vincent Foley <vfoleybourgon@yahoo.ca>
+    Alcides Fonseca
+    Rudolph Froger <rfroger@estrate.nl>
+    Jorge Gajon <gajon@gajon.org>
+    gandalf@owca.info
+    Marc Garcia <marc.garcia@accopensys.com>
+    Andy Gayton <andy-django@thecablelounge.com>
+    Idan Gazit
+    geber@datacollect.com
+    Baishampayan Ghose
+    Dimitris Glezos <dimitris@glezos.com>
+    glin@seznam.cz
+    martin.glueck@gmail.com
+    Artyom Gnilov <boobsd@gmail.com>
+    Ben Godfrey <http://aftnn.org>
+    GomoX <gomo@datafull.com>
+    Guilherme Mesquita Gondim <semente@taurinus.org>
+    Mario Gonzalez <gonzalemario@gmail.com>
+    David Gouldin <dgouldin@gmail.com>
+    pradeep.gowda@gmail.com
+    Collin Grady <collin@collingrady.com>
+    Gabriel Grant <g@briel.ca>
+    Simon Greenhill <dev@simon.net.nz>
+    Owen Griffiths
+    Espen Grindhaug <http://grindhaug.org/>
+    Janos Guljas
+    Thomas Güttler <hv@tbz-pariv.de>
+    Horst Gutmann <zerok@zerokspot.com>
+    Scot Hacker <shacker@birdhouse.org>
+    dAniel hAhler
+    hambaloney
+    Brian Harring <ferringb@gmail.com>
+    Brant Harris
+    Ronny Haryanto <http://ronny.haryan.to/>
+    Hawkeye
+    Joe Heck <http://www.rhonabwy.com/wp/>
+    Joel Heenan <joelh-django@planetjoel.com>
+    Mikko Hellsing <mikko@sorl.net>
+    Sebastian Hillig <sebastian.hillig@gmail.com>
+    hipertracker@gmail.com
+    Deryck Hodge <http://www.devurandom.org/>
+    Brett Hoerner <bretthoerner@bretthoerner.com>
+    Eric Holscher <http://ericholscher.com>
+    Ian Holsman <http://feh.holsman.net/>
+    Kieran Holland <http://www.kieranholland.com>
+    Sung-Jin Hong <serialx.net@gmail.com>
+    Leo "hylje" Honkanen <sealage@gmail.com>
+    Tareque Hossain <http://www.codexn.com>
+    Richard House <Richard.House@i-logue.com>
+    Robert Rock Howard <http://djangomojo.com/>
+    John Huddleston <huddlej@wwu.edu>
+    Rob Hudson <http://rob.cogit8.org/>
+    Jason Huggins <http://www.jrandolph.com/blog/>
+    Gabriel Hurley <gabriel@strikeawe.com>
+    Hyun Mi Ae
+    Ibon <ibonso@gmail.com>
+    Tom Insam
+    Baurzhan Ismagulov <ibr@radix50.net>
+    Stephan Jaekel <steph@rdev.info>
+    james_027@yahoo.com
+    jcrasta@gmail.com
+    jdetaeye
+    jhenry <jhenry@theonion.com>
+    Zak Johnson <zakj@nox.cx>
+    Nis Jørgensen <nis@superlativ.dk>
+    Michael Josephson <http://www.sdjournal.com/>
+    jpellerin@gmail.com
+    junzhang.jn@gmail.com
+    Antti Kaihola <http://djangopeople.net/akaihola/>
+    Bahadır Kandemir <bahadir@pardus.org.tr>
+    Karderio <karderio@gmail.com>
+    Nagy Károly <charlie@rendszergazda.com>
+    George Karpenkov <george@metaworld.ru>
+    Erik Karulf <erik@karulf.com>
+    Ben Dean Kawamura <ben.dean.kawamura@gmail.com>
+    Ian G. Kelly <ian.g.kelly@gmail.com>
+    Niall Kelly <duke.sam.vimes@gmail.com>
+    Ryan Kelly <ryan@rfk.id.au>
+    Thomas Kerpe <thomas@kerpe.net>
+    Wiley Kestner <wiley.kestner@gmail.com>
+    Ossama M. Khayat <okhayat@yahoo.com>
+    Ben Khoo <khoobks@westnet.com.au>
+    Garth Kidd <http://www.deadlybloodyserious.com/>
+    kilian <kilian.cavalotti@lip6.fr>
+    Sune Kirkeby <http://ibofobi.dk/>
+    Bastian Kleineidam <calvin@debian.org>
+    Cameron Knight (ckknight)
+    Nena Kojadin <nena@kiberpipa.org>
+    Igor Kolar <ike@email.si>
+    Tomáš Kopeček <permonik@m6.cz>
+    Gasper Koren
+    Martin Kosír <martin@martinkosir.net>
+    Arthur Koziel <http://arthurkoziel.com>
+    Honza Král <honza.kral@gmail.com>
+    Meir Kriheli <http://mksoft.co.il/>
+    Bruce Kroeze <http://coderseye.com/>
+    krzysiek.pawlik@silvermedia.pl
+    Joseph Kocherhans
+    konrad@gwu.edu
+    knox <christobzr@gmail.com>
+    David Krauth
+    Kevin Kubasik <kevin@kubasik.net>
+    kurtiss@meetro.com
+    Denis Kuzmichyov <kuzmichyov@gmail.com>
+    Panos Laganakos <panos.laganakos@gmail.com>
+    Nick Lane <nick.lane.au@gmail.com>
+    Stuart Langridge <http://www.kryogenix.org/>
+    Paul Lanier <planier@google.com>
+    David Larlet <http://david.larlet.fr>
+    Nicolas Lara <nicolaslara@gmail.com>
+    Nicola Larosa <nico@teknico.net>
+    Finn Gruwier Larsen <finn@gruwier.dk>
+    Lau Bech Lauritzen
+    Rune Rønde Laursen <runerl@skjoldhoej.dk>
+    Mark Lavin <markdlavin@gmail.com>
+    Eugene Lazutkin <http://lazutkin.com/blog/>
+    lcordier@point45.com
+    Jeong-Min Lee <falsetru@gmail.com>
+    Tai Lee <real.human@mrmachine.net>
+    Christopher Lenz <http://www.cmlenz.net/>
+    lerouxb@gmail.com
+    Piotr Lewandowski <piotr.lewandowski@gmail.com>
+    Charlie Leifer <coleifer@gmail.com>
+    Justin Lilly <justinlilly@gmail.com>
+    Waylan Limberg <waylan@gmail.com>
+    limodou
+    Philip Lindborg <philip.lindborg@gmail.com>
+    Simon Litchfield <simon@quo.com.au>
+    Daniel Lindsley <daniel@toastdriven.com>
+    Trey Long <trey@ktrl.com>
+    Laurent Luce <http://www.laurentluce.com>
+    Martin Mahner <http://www.mahner.org/>
+    Matt McClanahan <http://mmcc.cx/>
+    Stanislaus Madueke
+    Yann Malet
+    Frantisek Malina <vizualbod@vizualbod.com>
+    Mike Malone <mjmalone@gmail.com>
+    Martin Maney <http://www.chipy.org/Martin_Maney>
+    masonsimon+django@gmail.com
+    Manuzhai
+    Petr Marhoun <petr.marhoun@gmail.com>
+    Petar Marić <http://www.petarmaric.com/>
+    Nuno Mariz <nmariz@gmail.com>
+    mark@junklight.com
+    Orestis Markou <orestis@orestis.gr>
+    Takashi Matsuo <matsuo.takashi@gmail.com>
+    Yasushi Masuda <whosaysni@gmail.com>
+    mattycakes@gmail.com
+    Glenn Maynard <glenn@zewt.org>
+    Jason McBrayer <http://www.carcosa.net/jason/>
+    Kevin McConnell <kevin.mcconnell@gmail.com>
+    mccutchen@gmail.com
+    michael.mcewan@gmail.com
+    Paul McLanahan <paul@mclanahan.net>
+    Tobias McNulty <http://www.caktusgroup.com/blog>
+    Zain Memon
+    Christian Metts
+    michal@plovarna.cz
+    Slawek Mikula <slawek dot mikula at gmail dot com>
+    mitakummaa@gmail.com
+    mmarshall
+    Andreas Mock <andreas.mock@web.de>
+    Reza Mohammadi <reza@zeerak.ir>
+    Aljosa Mohorovic <aljosa.mohorovic@gmail.com>
+    Eric Moritz <http://eric.themoritzfamily.com/>
+    msaelices <msaelices@gmail.com>
+    Gregor Müllegger <gregor@muellegger.de>
+    Robin Munn <http://www.geekforgod.com/>
+    James Murty
+    msundstr
+    Robert Myers <myer0052@gmail.com>
+    Alexander Myodov <alex@myodov.com>
+    Doug Napoleone <doug@dougma.com>
+    Gopal Narayanan <gopastro@gmail.com>
+    Fraser Nevett <mail@nevett.org>
+    Sam Newman <http://www.magpiebrain.com/>
+    Filip Noetzel <http://filip.noetzel.co.uk/>
+    Afonso Fernández Nogueira <fonzzo.django@gmail.com>
+    Neal Norwitz <nnorwitz@google.com>
+    Todd O'Bryan <toddobryan@mac.com>
+    Selwin Ong <selwin@ui.co.id>
+    Christian Oudard <christian.oudard@gmail.com>
+    oggie rob <oz.robharvey@gmail.com>
+    oggy <ognjen.maric@gmail.com>
+    Jay Parlar <parlar@gmail.com>
+    Claude Paroz <claude@2xlibre.net>
+    Carlos Eduardo de Paula <carlosedp@gmail.com>
+    pavithran s <pavithran.s@gmail.com>
+    Barry Pederson <bp@barryp.org>
+    Andreas Pelme <andreas@pelme.se>
+    permonik@mesias.brnonet.cz
+    peter@mymart.com
+    pgross@thoughtworks.com
+    phaedo <http://phaedo.cx/>
+    Julien Phalip <http://www.julienphalip.com>
+    phil@produxion.net
+    phil.h.smith@gmail.com
+    Gustavo Picon
+    Michael Placentra II <someone@michaelplacentra2.net>
+    plisk
+    Daniel Poelzleithner <http://poelzi.org/>
+    polpak@yahoo.com
+    Ross Poulton <ross@rossp.org>
+    Mihai Preda <mihai_preda@yahoo.com>
+    Matthias Pronk <django@masida.nl>
+    Jyrki Pulliainen <jyrki.pulliainen@gmail.com>
+    Thejaswi Puthraya <thejaswi.puthraya@gmail.com>
+    Johann Queuniet <johann.queuniet@adh.naellia.eu>
+    Jan Rademaker
+    Michael Radziej <mir@noris.de>
+    Laurent Rahuel <laurent.rahuel@gmail.com>
+    Stéphane Raimbault <stephane.raimbault@gmail.com>
+    Luciano Ramalho
+    Amit Ramon <amit.ramon@gmail.com>
+    Philippe Raoult <philippe.raoult@n2nsoft.com>
+    Massimiliano Ravelli <massimiliano.ravelli@gmail.com>
+    Brian Ray <http://brianray.chipy.org/>
+    remco@diji.biz
+    Marc Remolt <m.remolt@webmasters.de>
+    Bruno Renié <buburno@gmail.com>
+    David Reynolds <david@reynoldsfamily.org.uk>
+    rhettg@gmail.com
+    ricardojbarrios@gmail.com
+    Mike Richardson
+    Matt Riggott
+    Alex Robbins <alexander.j.robbins@gmail.com>
+    Henrique Romano <onaiort@gmail.com>
+    Armin Ronacher
+    Daniel Roseman <http://roseman.org.uk/>
+    Rozza <ross.lawley@gmail.com>
+    Oliver Rutherfurd <http://rutherfurd.net/>
+    ryankanno
+    Gonzalo Saavedra <gonzalosaavedra@gmail.com>
+    Manuel Saelices <msaelices@yaco.es>
+    Ivan Sagalaev (Maniac) <http://www.softwaremaniacs.org/>
+    Vinay Sajip <vinay_sajip@yahoo.co.uk>
+    Kadesarin Sanjek
+    Massimo Scamarcia <massimo.scamarcia@gmail.com>
+    Paulo Scardine <paulo@scardine.com.br>
+    David Schein
+    Bernd Schlapsi
+    schwank@gmail.com
+    scott@staplefish.com
+    Ilya Semenov <semenov@inetss.com>
+    serbaut@gmail.com
+    John Shaffer <jshaffer2112@gmail.com>
+    Pete Shinners <pete@shinners.org>
+    Leo Shklovskii
+    jason.sidabras@gmail.com
+    Brenton Simpson <http://theillustratedlife.com>
+    Jozko Skrablin <jozko.skrablin@gmail.com>
+    Ben Slavin <benjamin.slavin@gmail.com>
+    sloonz <simon.lipp@insa-lyon.fr>
+    Paul Smith <blinkylights23@gmail.com>
+    Warren Smith <warren@wandrsmith.net>
+    smurf@smurf.noris.de
+    Vsevolod Solovyov
+    sopel
+    Leo Soto <leo.soto@gmail.com>
+    Wiliam Alves de Souza <wiliamsouza83@gmail.com>
+    Don Spaulding <donspauldingii@gmail.com>
+    Bjørn Stabell <bjorn@exoweb.net>
+    Georgi Stanojevski <glisha@gmail.com>
+    starrynight <cmorgh@gmail.com>
+    Vasiliy Stavenko <stavenko@gmail.com>
+    Thomas Steinacher <http://www.eggdrop.ch/>
+    Johan C. Stöver <johan@nilling.nl>
+    Nowell Strite <http://nowell.strite.org/>
+    Thomas Stromberg <tstromberg@google.com>
+    Pascal Varet
+    SuperJared
+    Radek Švarz <http://www.svarz.cz/translate/>
+    Swaroop C H <http://www.swaroopch.info>
+    Aaron Swartz <http://www.aaronsw.com/>
+    Ville Säävuori <http://www.unessa.net/>
+    Mart Sõmermaa <http://mrts.pri.ee/>
+    Christian Tanzer <tanzer@swing.co.at>
+    Tyler Tarabula <tyler.tarabula@gmail.com>
+    Tyson Tate <tyson@fallingbullets.com>
+    Aryeh Leib Taurog <http://www.aryehleib.com/>
+    Frank Tegtmeyer <fte@fte.to>
+    Marcel Telka <marcel@telka.sk>
+    Terry Huang <terryh.tp@gmail.com>
+    Travis Terry <tdterry7@gmail.com>
+    thebjorn <bp@datakortet.no>
+    Zach Thompson <zthompson47@gmail.com>
+    Michael Thornhill <michael.thornhill@gmail.com>
+    Deepak Thukral <deep.thukral@gmail.com>
+    tibimicu@gmx.net
+    tobias@neuyork.de
+    Tom Tobin
+    Joe Topjian <http://joe.terrarum.net/geek/code/python/django/>
+    torne-django@wolfpuppy.org.uk
+    Jeff Triplett <jeff.triplett@gmail.com>
+    tstromberg@google.com
+    Makoto Tsuyuki <mtsuyuki@gmail.com>
+    tt@gurgle.no
+    David Tulig <david.tulig@gmail.com>
+    Amit Upadhyay <http://www.amitu.com/blog/>
+    Adam Vandenberg
+    Geert Vanderkelen
+    Vasil Vangelovski
+    I.S. van Oostveen <v.oostveen@idca.nl>
+    viestards.lists@gmail.com
+    George Vilches <gav@thataddress.com>
+    Vlado <vlado@labath.org>
+    Zachary Voase <zacharyvoase@gmail.com>
+    Marijn Vriens <marijn@metronomo.cl>
+    Milton Waddams
+    Chris Wagner <cw264701@ohio.edu>
+    Rick Wagner <rwagner@physics.ucsd.edu>
+    wam-djangobug@wamber.net
+    Wang Chun <wangchun@exoweb.net>
+    Filip Wasilewski <filip.wasilewski@gmail.com>
+    Dan Watson <http://theidioteque.net/>
+    Joel Watts <joel@joelwatts.com>
+    Lakin Wecker <lakin@structuredabstraction.com>
+    Chris Wesseling <Chris.Wesseling@cwi.nl>
+    James Wheare <django@sparemint.com>
+    Mike Wiacek <mjwiacek@google.com>
+    Frank Wierzbicki
+    charly.wilhelm@gmail.com
+    Derek Willis <http://blog.thescoop.org/>
+    Rachel Willmer <http://www.willmer.com/kb/>
+    Jakub Wilk <ubanus@users.sf.net>
+    Jakub Wiśniowski <restless.being@gmail.com>
+    Maciej Wiśniowski <pigletto@gmail.com>
+    wojtek
+    Jason Yan <tailofthesun@gmail.com>
+    Lars Yencken <lars.yencken@gmail.com>
+    ye7cakf02@sneakemail.com
+    ymasuda@ethercube.com
+    Jesse Young <adunar@gmail.com>
+    Mykola Zamkovoi <nickzam@gmail.com>
+    zegor
+    Gasper Zejn <zejn@kiberpipa.org>
+    Jarek Zgoda <jarek.zgoda@gmail.com>
+    Cheng Zhang
+
+A big THANK YOU goes to:
+
+    Rob Curley and Ralph Gage for letting us open-source Django.
+
+    Frank Wiles for making excellent arguments for open-sourcing, and for
+    his sage sysadmin advice.
+
+    Ian Bicking for convincing Adrian to ditch code generation.
+
+    Mark Pilgrim for diveintopython.org.
+
+    Guido van Rossum for creating Python.

@@ -1,1 +1,9 @@
+---
+license_expression: zlib-acknowledgement
+is_license_reference: yes
+relevance: 95
+ignorable_urls:
+    - https://spdx.org/licenses/zlib-acknowledgement.html
+---
+
 https://spdx.org/licenses/zlib-acknowledgement.html

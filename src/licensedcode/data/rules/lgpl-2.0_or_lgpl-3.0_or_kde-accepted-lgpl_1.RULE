@@ -1,3 +1,11 @@
+---
+license_expression: lgpl-2.0 OR lgpl-3.0 OR kde-accepted-lgpl
+is_license_notice: yes
+relevance: 99
+referenced_filenames:
+    - COPYING.LIB
+---
+
 This library is free software; you can redistribute it and/or modify
 it under the terms of the GNU Lesser General Public License as published by
 the Free Software Foundation; either version 2 of the License or ( at

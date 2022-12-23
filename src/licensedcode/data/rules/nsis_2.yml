@@ -1,5 +1,0 @@
-license_expression: zlib AND bzip2-libbzip-2010 AND cpl-1.0 AND lzma-cpl-exception
-is_license_notice: yes
-notes: complex NSIS notices, not a choice. Found in Tomcat
-ignorable_urls:
-    - http://nsis.sourceforge.net/

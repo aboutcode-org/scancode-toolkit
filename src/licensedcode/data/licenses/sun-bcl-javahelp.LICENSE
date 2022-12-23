@@ -1,3 +1,15 @@
+---
+key: sun-bcl-javahelp
+short_name: Sun BCL JavaHelp
+name: Sun BCL JavaHelp
+category: Proprietary Free
+owner: Oracle (Sun)
+spdx_license_key: LicenseRef-scancode-sun-bcl-javahelp
+ignorable_urls:
+    - http://www.java.sun.com/jdk/index.html
+    - http://www.sun.com/policies/trademarks
+---
+
 SUN JavaHelp(TM) 2.0
 Sun Microsystems, Inc. Binary Code License Agreement
 

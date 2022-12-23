@@ -1,3 +1,10 @@
+---
+license_expression: proprietary-license
+is_license_text: yes
+relevance: 100
+notes: See https://github.com/prixa-ai/prixa-proto/blob/8590552618fb29a24b05c3d699f31ac2072bd66a/LICENSE
+---
+
 // Permission is hereby restricted, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
 // in the Software with restriction, including with limitation the rights

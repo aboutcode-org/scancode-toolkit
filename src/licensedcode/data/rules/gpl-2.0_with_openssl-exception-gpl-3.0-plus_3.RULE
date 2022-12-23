@@ -1,3 +1,11 @@
+---
+license_expression: gpl-2.0 WITH openssl-exception-gpl-3.0-plus
+is_license_notice: yes
+relevance: 100
+referenced_filenames:
+    - COPYING
+---
+
 documentation are licensed under the terms of the GNU General Public License
 Version 2, you will find a copy of this license in the COPYING file included in
 the source package.

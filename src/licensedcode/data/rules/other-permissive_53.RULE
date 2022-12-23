@@ -1,4 +1,10 @@
- *  This file is subject to the following copyright notice, which is
+---
+license_expression: other-permissive
+is_license_text: yes
+relevance: 100
+---
+
+*  This file is subject to the following copyright notice, which is
  *  different from the notice used elsewhere in Tcl but rougly
  *  equivalent in meaning.
  *

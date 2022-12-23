@@ -1,4 +1,10 @@
-  * As a special exception, the copyright holders give
+---
+license_expression: openssl-exception-gpl-3.0-plus
+is_license_text: yes
+relevance: 100
+---
+
+* As a special exception, the copyright holders give
   * permission to link the code of portions of this program with the
   * OpenSSL library under certain conditions as described in each
   * individual source file, and distribute linked combinations

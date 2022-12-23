@@ -1,2 +1,11 @@
+---
+license_expression: mit OR gpl-2.0
+is_license_notice: yes
+relevance: 100
+notes: jquery always used v2 when it was dual licensed
+ignorable_urls:
+    - http://jquery.org/license/
+---
+
 Dual license, GPL or MIT
 See http://jquery.org/license/

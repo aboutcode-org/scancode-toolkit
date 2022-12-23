@@ -1,4 +1,9 @@
-    *  This software is furnished under license and may be used and 
+---
+license_expression: broadcom-cfe
+is_license_text: yes
+---
+
+*  This software is furnished under license and may be used and 
     *  copied only in accordance with the following terms and 
     *  conditions.  Subject to these conditions, you may download, 
     *  copy, install, use, modify and distribute modified or unmodified 

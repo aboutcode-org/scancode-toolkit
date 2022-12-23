@@ -1,3 +1,27 @@
+---
+key: sybase
+short_name: Open Watcom 1.0
+name: Sybase Open Watcom Public License v1.0
+category: Proprietary Free
+owner: Sybase, Inc. (an SAP subsidiary)
+homepage_url: http://opensource.org/licenses/sybase.php
+notes: Per SPDX.org, this license is OSI certified
+spdx_license_key: Watcom-1.0
+osi_license_key: Watcom-1.0
+text_urls:
+    - http://opensource.org/licenses/sybase.php
+osi_url: http://opensource.org/licenses/sybase.php
+other_urls:
+    - http://www.opensource.org/licenses/Watcom-1.0
+    - https://opensource.org/licenses/Watcom-1.0
+ignorable_copyrights:
+    - Portions Copyright (c) 1983-2002 Sybase, Inc.
+ignorable_holders:
+    - Sybase, Inc.
+ignorable_urls:
+    - http://www.sybase.com/developer/opensource
+---
+
 USE OF THE SYBASE OPEN WATCOM SOFTWARE DESCRIBED BELOW ("SOFTWARE") IS 
 SUBJECT TO THE TERMS AND CONDITIONS SET FORTH IN THE SYBASE OPEN WATCOM 
 PUBLIC LICENSE SET FORTH BELOW ("LICENSE"). YOU MAY NOT USE THE SOFTWARE 

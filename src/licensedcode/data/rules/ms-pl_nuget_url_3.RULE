@@ -1,1 +1,9 @@
+---
+license_expression: ms-pl
+is_license_reference: yes
+relevance: 90
+ignorable_urls:
+    - https://github.com/WickedFlame/Scribe/raw/master/License.txt
+---
+
 https://github.com/WickedFlame/Scribe/raw/master/License.txt

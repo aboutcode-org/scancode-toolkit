@@ -1,3 +1,13 @@
+---
+key: pd-programming
+short_name: PD'Programming License
+name: PD'Programming License
+category: Permissive
+owner: PD'Programming
+spdx_license_key: LicenseRef-scancode-pd-programming
+other_urls:
+    - http://www.pdmagic.com/
+---
 
 Coords.js is free for both commercial and non-commercial use and
 redistribution, provided that PD'Programming's copyright and disclaimer are

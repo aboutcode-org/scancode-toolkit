@@ -1,3 +1,23 @@
+---
+key: mit-0
+short_name: MIT-0-Clause
+name: MIT No Attribution
+category: Permissive
+owner: Amazon Web Services
+homepage_url: https://github.com/awsdocs/aws-cloud9-user-guide/blob/master/LICENSE-SAMPLECODE
+notes: |
+    The former ekioh license has been deprecated in favor of this license. Except
+    for the dangling ", subject to the following conditions:" text, the ekioh
+    license is essentially identical to the mit-0.
+spdx_license_key: MIT-0
+other_spdx_license_keys:
+    - LicenseRef-scancode-ekioh
+other_urls:
+    - https://github.com/aws/mit-0
+    - https://romanrm.net/mit-zero
+    - https://kryogenix.org/code/browser/licence.html
+---
+
 Permission is hereby granted, free of charge, to any person obtaining a copy of this
 software and associated documentation files (the "Software"), to deal in the Software
 without restriction, including without limitation the rights to use, copy, modify,

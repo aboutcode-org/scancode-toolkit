@@ -1,5 +1,0 @@
-license_expression: lgpl-2.1-plus WITH linking-exception-2.1-plus
-is_license_reference: yes
-relevance: 100
-ignorable_urls:
-    - http://sources.redhat.com/git/gitweb.cgi?p=glibc.git;a=blob;f=libio/libio.h

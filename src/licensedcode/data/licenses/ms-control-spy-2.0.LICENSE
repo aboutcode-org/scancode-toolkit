@@ -1,3 +1,16 @@
+---
+key: ms-control-spy-2.0
+short_name: MS Control Spy 2.0
+name: Microsoft Control Spy 2.0
+category: Proprietary Free
+owner: Microsoft
+homepage_url: https://www.microsoft.com/en-us/download/details.aspx?id=4635
+spdx_license_key: LicenseRef-scancode-ms-control-spy-2.0
+ignorable_urls:
+    - http://www.microsoft.com/exporting
+    - http://www.microsoft.com/licensing/userights
+---
+
 MICROSOFT SOFTWARE LICENSE TERMS
 MICROSOFT CONTROL SPY 2.0 
 These license terms are an agreement between Microsoft Corporation (or based on where you live, one of its affiliates) and you.  Please read them.  They apply to the software named above, which includes the media on which you received it, if any.  The terms also apply to any Microsoft

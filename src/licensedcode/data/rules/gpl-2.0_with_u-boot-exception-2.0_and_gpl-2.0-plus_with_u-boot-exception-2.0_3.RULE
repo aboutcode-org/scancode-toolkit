@@ -1,3 +1,8 @@
+---
+license_expression: gpl-2.0 WITH u-boot-exception-2.0 AND gpl-2.0-plus WITH u-boot-exception-2.0
+is_license_notice: yes
+---
+
 Even though U-Boot in general is covered by the GPL-2.0/GPL-2.0+,
 this does *not* cover the so-called "standalone" applications that
 use U-Boot services by means of the jump table provided by U-Boot

@@ -1,3 +1,9 @@
+---
+license_expression: gpl-1.0-plus
+is_license_notice: yes
+notes: GPL on debian copyrights
+---
+
 Copyright:
 
 GPL, on Debian systems you can find the full text of the GPL in

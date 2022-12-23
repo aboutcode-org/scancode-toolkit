@@ -1,3 +1,12 @@
+---
+license_expression: proprietary-license
+is_license_text: yes
+relevance: 100
+minimum_coverage: 90
+notes: See https://github.com/andreagiavatto/Q3ServerBrowser/blob/e42d0fea65e7c33eb657cde74d36327ce4e0ccf3/LICENSE.md#L11
+    which is bsd-like
+---
+
 Redistribution and use in source form with or without modification, is permitted provided that the following conditions are met:
 
 Redistributions of the source code must retain this copyright notice and the following disclaimer.

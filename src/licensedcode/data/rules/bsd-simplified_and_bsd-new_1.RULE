@@ -1,3 +1,10 @@
+---
+license_expression: bsd-simplified AND bsd-new
+is_license_notice: yes
+minimum_coverage: 96
+notes: seen in https://community.kde.org/Policies/Licensing_Policy/Draft
+---
+
 BSD
 
 BSD-2-Clause
@@ -26,4 +33,3 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 A third requirement is sometimes included: "3. The name of the author may not be used to endorse or promote products derived from this software without specific prior written permission."
 
 The advertising clause requiring mention in adverts must never be included. The Facebook patent grant must never be included.
-

@@ -1,3 +1,13 @@
+---
+key: bsd-dpt
+short_name: BSD DPT
+name: BSD Distributed Processing Technology License
+category: Permissive
+owner: Distributed Processing Technology
+spdx_license_key: LicenseRef-scancode-bsd-dpt
+minimum_coverage: 95
+---
+
 Redistribution and use in source form, with or without modification, are
 permitted provided that redistributions of source code must retain the
 above copyright notice, this list of conditions and the following

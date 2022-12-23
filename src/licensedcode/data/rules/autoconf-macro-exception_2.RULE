@@ -1,4 +1,9 @@
- As a special exception, the above copyright owner gives unlimited
+---
+license_expression: autoconf-macro-exception
+is_license_notice: yes
+---
+
+As a special exception, the above copyright owner gives unlimited
  permission to copy, distribute and modify the configure scripts that
  are the output of Autoconf when processing the Macro. You need not
  follow the terms of the GNU General Public License when using or

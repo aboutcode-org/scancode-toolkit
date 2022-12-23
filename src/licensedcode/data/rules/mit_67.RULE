@@ -1,1 +1,9 @@
+---
+license_expression: mit
+is_license_reference: yes
+relevance: 100
+ignorable_urls:
+    - https://opensource.org/licenses/MIT
+---
+
 that is licensed under [MIT](https://opensource.org/licenses/MIT).

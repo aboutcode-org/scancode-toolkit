@@ -1,0 +1,11 @@
+---
+license_expression: epl-2.0
+is_license_notice: yes
+referenced_filenames:
+    - License.md
+ignorable_urls:
+    - https://www.eclipse.org/legal/epl-2.0/
+---
+
+Eclipse Public License 2.0.  A copy of the license is contained
+in the file LICENSE.md and is also available at https://www.eclipse.org/legal/epl-2.0/

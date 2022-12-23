@@ -1,3 +1,15 @@
+---
+key: ralink-firmware
+short_name: Ralink Firmware License
+name: Ralink Firmware License
+category: Proprietary Free
+owner: MediaTek
+homepage_url: http://iotdk.intel.com/repos/3.0/licenses/linux-firmware/LICENCE.ralink-firmware.txt
+spdx_license_key: LicenseRef-scancode-ralink-firmware
+ignorable_urls:
+    - http://opensource.org/licenses
+---
+
 Redistribution.
 Redistribution and use in binary form, without modification, are
 permitted provided that the following conditions are met:

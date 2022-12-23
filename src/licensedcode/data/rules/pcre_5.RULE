@@ -1,2 +1,9 @@
+---
+license_expression: pcre
+is_license_notice: yes
+relevance: 95
+minimum_coverage: 100
+---
+
 The documentation for PCRE, supplied in the "doc" directory, is distributed
  under the same terms as the software itself.

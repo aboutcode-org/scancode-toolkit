@@ -1,3 +1,12 @@
+---
+license_expression: python
+is_license_notice: yes
+ignorable_copyrights:
+    - Copyright (c) Python Software Foundation
+ignorable_holders:
+    - Python Software Foundation
+---
+
 A. TERMS AND CONDITIONS FOR ACCESSING OR OTHERWISE USING JYTHON
 =======================================================
 

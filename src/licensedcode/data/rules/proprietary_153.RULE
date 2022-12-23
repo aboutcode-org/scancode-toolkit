@@ -1,4 +1,13 @@
- SIMPUTERTM GENERAL PUBLIC LICENSE
+---
+license_expression: proprietary-license
+is_license_notice: yes
+ignorable_copyrights:
+    - Copyright (c) The Simputer Trust
+ignorable_holders:
+    - The Simputer Trust
+---
+
+SIMPUTERTM GENERAL PUBLIC LICENSE
 Version 1.3        7 May, 2001
 Copyright © The Simputer Trust
 
@@ -106,4 +115,4 @@ V.     Disclaimer of Warranty:
 
 VI.     Acceptance:
 
-17.     By clicking on the I Agree button below, you affirm that you agree to be bound by the terms of this SGPL and that you will abide by and adhere to the duties and obligations contained in this Agreement. Your electronic acceptance shall operate as a valid binding contract for the purpose of all applicable laws in this regard. 
+17.     By clicking on the I Agree button below, you affirm that you agree to be bound by the terms of this SGPL and that you will abide by and adhere to the duties and obligations contained in this Agreement. Your electronic acceptance shall operate as a valid binding contract for the purpose of all applicable laws in this regard.

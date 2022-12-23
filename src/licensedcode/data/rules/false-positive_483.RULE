@@ -1,2 +1,7 @@
+---
+is_false_positive: yes
+notes: not a license, just a comment about licenses
+---
+
 gmp_errno, ARE FOR INTERNAL USE
    ONLY

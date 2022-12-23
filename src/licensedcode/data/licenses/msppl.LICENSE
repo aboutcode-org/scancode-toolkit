@@ -1,3 +1,13 @@
+---
+key: msppl
+short_name: MSPPL
+name: Microsoft patterns & practices License
+category: Proprietary Free
+owner: Microsoft
+homepage_url: http://msdn.microsoft.com/en-us/library/gg405489(v=pandp.40).aspx
+spdx_license_key: LicenseRef-scancode-msppl
+---
+
 Microsoft patterns & practices License
 patterns & practices Developer Center
 This license governs use of the accompanying software. If you use the software, you accept this license. If you do not accept the license, do not use the software.

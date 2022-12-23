@@ -1,3 +1,14 @@
+---
+key: sun-bcl-jimi-sdk
+short_name: Sun BCL JIMI SDK
+name: Sun BCL JIMI SDK
+category: Proprietary Free
+owner: Oracle (Sun)
+spdx_license_key: LicenseRef-scancode-sun-bcl-jimi-sdk
+ignorable_urls:
+    - http://java.sun.com/
+---
+
 SUN JIMI SDK
 
 JIMI SDK Version 2.0 Sun Microsystems, Inc. Please see the file classes/LICENSE_JIMI.txt

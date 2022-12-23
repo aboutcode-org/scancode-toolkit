@@ -1,3 +1,21 @@
+---
+key: liberation-font-exception
+short_name: Liberation Font Exception to GPL 2.0
+name: Liberation Font Exception to GPL 2.0
+category: Copyleft
+owner: Red Hat
+homepage_url: https://fedoraproject.org/wiki/Licensing:LiberationFontLicense
+is_exception: yes
+spdx_license_key: LicenseRef-scancode-liberation-font-exception
+text_urls:
+    - https://fedoraproject.org/wiki/Licensing:LiberationFontLicense
+    - https://pagure.io/liberation-fonts/raw/cf3040c146097d6b7361e2823d5c6b5c309a456a/f/master/License.txt
+ignorable_copyrights:
+    - Copyright (c) 2007 Red Hat, Inc.
+ignorable_holders:
+    - Red Hat, Inc.
+---
+
  LICENSE AGREEMENT AND LIMITED PRODUCT WARRANTY
  LIBERATION FONT SOFTWARE
  

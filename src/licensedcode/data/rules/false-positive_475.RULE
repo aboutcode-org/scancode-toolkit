@@ -1,1 +1,6 @@
+---
+is_false_positive: yes
+notes: comments on license
+---
+
 JSHINT has some GPL Compatability issues, so we are faking it

@@ -1,3 +1,9 @@
+---
+license_expression: lgpl-2.1-plus AND sun-bcl-sdk-5.0
+is_license_notice: yes
+notes: rxtx is 2.1+
+---
+
 This product includes RXTX serial library which is licensed under
 LGPL and Suns javax.comm library licensed under Suns Binary Code
 License Agreement.

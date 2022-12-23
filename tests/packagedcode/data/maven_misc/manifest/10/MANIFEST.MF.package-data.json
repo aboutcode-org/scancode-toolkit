@@ -4,7 +4,7 @@
   "name": "hibernate-core",
   "version": "5.3.7.Final",
   "description": "",
-  "declared_license": null,
+  "extracted_license_statement": null,
   "copyright": null,
   "homepage_url": "http://hibernate.org/orm",
   "documentation_url": "http://www.hibernate.org/orm/5.3",

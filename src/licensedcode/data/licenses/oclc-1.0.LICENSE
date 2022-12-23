@@ -1,3 +1,24 @@
+---
+key: oclc-1.0
+short_name: OCLC Research Public License 1.0
+name: OCLC Research Public License 1.0
+category: Copyleft Limited
+owner: OCLC Research
+homepage_url: http://www.free-soft.org/mirrors/www.opensource.org/licenses/oclc.php
+spdx_license_key: LicenseRef-scancode-oclc-1.0
+text_urls:
+    - http://www.free-soft.org/mirrors/www.opensource.org/licenses/oclc.php
+ignorable_copyrights:
+    - Copyright (c) 2000- (insert then current year) OCLC OCLC Research and others
+    - Copyright (c) 2000. OCLC Research
+ignorable_holders:
+    - OCLC OCLC Research and others
+    - OCLC Research
+ignorable_urls:
+    - http://purl.oclc.org/oclc/research/ORPL
+    - http://www.oclc.org/oclc/research
+---
+
 OCLC Research Public License 1.0
 Terms & Conditions Of Use
 November, 2000

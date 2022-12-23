@@ -1,3 +1,11 @@
+---
+license_expression: gpl-3.0-plus WITH autoconf-simple-exception
+is_license_notice: yes
+minimum_coverage: 80
+ignorable_urls:
+    - http://www.gnu.org/licenses/
+---
+
 # This file is free software; you can redistribute it and/or modify it
 # under the terms of the GNU General Public License as published by
 # the Free Software Foundation; either version 3 of the License, or
@@ -17,4 +25,3 @@
 # the same distribution terms that you use for the rest of that
 # program.  This Exception is an additional permission under section 7
 # of the GNU General Public License, version 3 ("GPLv3").
-

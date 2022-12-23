@@ -1,3 +1,10 @@
+---
+license_expression: gpl-2.0
+is_license_notice: yes
+relevance: 100
+referenced_filenames:
+    - COPYING
+---
 
 This file is subject to the terms and conditions of version 2 of
 the GNU General Public License.  See the file COPYING in the main

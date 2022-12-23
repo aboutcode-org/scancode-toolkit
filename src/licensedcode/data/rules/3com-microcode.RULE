@@ -1,4 +1,10 @@
- Licence:
+---
+license_expression: 3com-microcode
+is_license_text: yes
+minimum_coverage: 80
+---
+
+Licence:
  /*
   *
   * Redistribution and use in source and binary forms of the 3c990img.h
@@ -32,4 +38,3 @@
   */
  
  Found in hex form in kernel source.
- 

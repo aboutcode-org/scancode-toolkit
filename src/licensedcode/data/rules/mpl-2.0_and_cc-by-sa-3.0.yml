@@ -1,6 +1,0 @@
-license_expression: mpl-2.0 AND cc-by-sa-3.0
-is_license_notice: yes
-minimum_coverage: 80
-ignorable_urls:
-    - http://creativecommons.org/licenses/by-sa/3.0/
-    - http://mozilla.org/MPL/2.0

@@ -1,3 +1,19 @@
+---
+key: hp-ux-java
+short_name: HP-UX 11i Java Technology Software
+name: HP-UX 11i Java Technology Software
+category: Proprietary Free
+owner: HP - Hewlett Packard
+homepage_url: http://www.hp.com/products1/unix/java/java2/sdkrte1_3/downloads/license_rte_1-3-1-17_pa-risc.html
+spdx_license_key: LicenseRef-scancode-hp-ux-java
+text_urls:
+    - http://www.hp.com/products1/unix/java/java2/sdkrte1_3/downloads/license_rte_1-3-1-17_pa-risc.html
+ignorable_copyrights:
+    - copyrighted by HP
+ignorable_holders:
+    - HP
+---
+
 HP-UX Runtime Environment, for the Java(tm) 2 Platform
 
 ATTENTION:  USE OF THE SOFTWARE IS SUBJECT TO THE HP SOFTWARE LICENSE TERMS

@@ -1,1 +1,6 @@
-MODULE_LICENSE(_license)  
+---
+is_false_positive: yes
+notes: seen in the Linux Kernel sources (kernel symbols related code or docs)
+---
+
+MODULE_LICENSE(_license)

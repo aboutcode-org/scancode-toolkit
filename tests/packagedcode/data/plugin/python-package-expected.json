@@ -346,10 +346,59 @@
       "code_view_url": null,
       "vcs_url": null,
       "copyright": null,
-      "license_expression": "bsd-simplified",
-      "declared_license": {
-        "license": "Simplified BSD"
-      },
+      "declared_license_expression": "bsd-simplified",
+      "declared_license_expression_spdx": "BSD-2-Clause",
+      "license_detections": [
+        {
+          "license_expression": "bsd-simplified",
+          "detection_log": [
+            "not-combined"
+          ],
+          "matches": [
+            {
+              "score": 100.0,
+              "start_line": 1,
+              "end_line": 1,
+              "matched_length": 2,
+              "match_coverage": 100.0,
+              "matcher": "1-hash",
+              "license_expression": "bsd-simplified",
+              "rule_identifier": "bsd-simplified_150.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-simplified_150.RULE",
+              "referenced_filenames": [],
+              "is_license_text": false,
+              "is_license_notice": false,
+              "is_license_reference": true,
+              "is_license_tag": false,
+              "is_license_intro": false,
+              "rule_length": 2,
+              "rule_relevance": 100,
+              "matched_text": "Simplified BSD",
+              "licenses": [
+                {
+                  "key": "bsd-simplified",
+                  "name": "BSD-2-Clause",
+                  "short_name": "BSD-2-Clause",
+                  "category": "Permissive",
+                  "is_exception": false,
+                  "is_unknown": false,
+                  "owner": "Regents of the University of California",
+                  "homepage_url": "http://www.opensource.org/licenses/BSD-2-Clause",
+                  "text_url": "http://opensource.org/licenses/bsd-license.php",
+                  "reference_url": "https://scancode-licensedb.aboutcode.org/bsd-simplified",
+                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-simplified.LICENSE",
+                  "spdx_license_key": "BSD-2-Clause",
+                  "spdx_url": "https://spdx.org/licenses/BSD-2-Clause"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "other_license_expression": null,
+      "other_license_expression_spdx": null,
+      "other_license_detections": [],
+      "extracted_license_statement": "{'license': 'Simplified BSD'}",
       "notice_text": null,
       "source_packages": [],
       "extra_data": {},
@@ -404,13 +453,104 @@
       "code_view_url": null,
       "vcs_url": null,
       "copyright": null,
-      "license_expression": "mit AND mit",
-      "declared_license": {
-        "license": "MIT",
-        "classifiers": [
-          "License :: OSI Approved :: MIT License"
-        ]
-      },
+      "declared_license_expression": "mit",
+      "declared_license_expression_spdx": "MIT",
+      "license_detections": [
+        {
+          "license_expression": "mit",
+          "detection_log": [
+            "not-combined"
+          ],
+          "matches": [
+            {
+              "score": 100.0,
+              "start_line": 1,
+              "end_line": 1,
+              "matched_length": 1,
+              "match_coverage": 100.0,
+              "matcher": "1-spdx-id",
+              "license_expression": "mit",
+              "rule_identifier": "spdx-license-identifier: mit",
+              "rule_url": null,
+              "referenced_filenames": [],
+              "is_license_text": false,
+              "is_license_notice": false,
+              "is_license_reference": false,
+              "is_license_tag": true,
+              "is_license_intro": false,
+              "rule_length": 1,
+              "rule_relevance": 100,
+              "matched_text": "MIT",
+              "licenses": [
+                {
+                  "key": "mit",
+                  "name": "MIT License",
+                  "short_name": "MIT License",
+                  "category": "Permissive",
+                  "is_exception": false,
+                  "is_unknown": false,
+                  "owner": "MIT",
+                  "homepage_url": "http://opensource.org/licenses/mit-license.php",
+                  "text_url": "http://opensource.org/licenses/mit-license.php",
+                  "reference_url": "https://scancode-licensedb.aboutcode.org/mit",
+                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE",
+                  "spdx_license_key": "MIT",
+                  "spdx_url": "https://spdx.org/licenses/MIT"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "license_expression": "mit",
+          "detection_log": [
+            "not-combined"
+          ],
+          "matches": [
+            {
+              "score": 100.0,
+              "start_line": 1,
+              "end_line": 1,
+              "matched_length": 5,
+              "match_coverage": 100.0,
+              "matcher": "1-hash",
+              "license_expression": "mit",
+              "rule_identifier": "pypi_mit_license.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/pypi_mit_license.RULE",
+              "referenced_filenames": [],
+              "is_license_text": false,
+              "is_license_notice": false,
+              "is_license_reference": false,
+              "is_license_tag": true,
+              "is_license_intro": false,
+              "rule_length": 5,
+              "rule_relevance": 100,
+              "matched_text": "['License :: OSI Approved :: MIT License']",
+              "licenses": [
+                {
+                  "key": "mit",
+                  "name": "MIT License",
+                  "short_name": "MIT License",
+                  "category": "Permissive",
+                  "is_exception": false,
+                  "is_unknown": false,
+                  "owner": "MIT",
+                  "homepage_url": "http://opensource.org/licenses/mit-license.php",
+                  "text_url": "http://opensource.org/licenses/mit-license.php",
+                  "reference_url": "https://scancode-licensedb.aboutcode.org/mit",
+                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE",
+                  "spdx_license_key": "MIT",
+                  "spdx_url": "https://spdx.org/licenses/MIT"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "other_license_expression": null,
+      "other_license_expression_spdx": null,
+      "other_license_detections": [],
+      "extracted_license_statement": "{'license': 'MIT', 'classifiers': ['License :: OSI Approved :: MIT License']}",
       "notice_text": null,
       "source_packages": [],
       "extra_data": {},
@@ -449,8 +589,59 @@
       "code_view_url": null,
       "vcs_url": null,
       "copyright": null,
-      "license_expression": "mit",
-      "declared_license": "MIT",
+      "declared_license_expression": "mit",
+      "declared_license_expression_spdx": "MIT",
+      "license_detections": [
+        {
+          "license_expression": "mit",
+          "detection_log": [
+            "not-combined"
+          ],
+          "matches": [
+            {
+              "score": 100.0,
+              "start_line": 1,
+              "end_line": 1,
+              "matched_length": 1,
+              "match_coverage": 100.0,
+              "matcher": "1-spdx-id",
+              "license_expression": "mit",
+              "rule_identifier": "spdx-license-identifier: mit",
+              "rule_url": null,
+              "referenced_filenames": [],
+              "is_license_text": false,
+              "is_license_notice": false,
+              "is_license_reference": false,
+              "is_license_tag": true,
+              "is_license_intro": false,
+              "rule_length": 1,
+              "rule_relevance": 100,
+              "matched_text": "MIT",
+              "licenses": [
+                {
+                  "key": "mit",
+                  "name": "MIT License",
+                  "short_name": "MIT License",
+                  "category": "Permissive",
+                  "is_exception": false,
+                  "is_unknown": false,
+                  "owner": "MIT",
+                  "homepage_url": "http://opensource.org/licenses/mit-license.php",
+                  "text_url": "http://opensource.org/licenses/mit-license.php",
+                  "reference_url": "https://scancode-licensedb.aboutcode.org/mit",
+                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE",
+                  "spdx_license_key": "MIT",
+                  "spdx_url": "https://spdx.org/licenses/MIT"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "other_license_expression": null,
+      "other_license_expression_spdx": null,
+      "other_license_detections": [],
+      "extracted_license_statement": "MIT",
       "notice_text": null,
       "source_packages": [],
       "extra_data": {},
@@ -503,13 +694,104 @@
       "code_view_url": null,
       "vcs_url": null,
       "copyright": null,
-      "license_expression": "mit AND mit",
-      "declared_license": {
-        "license": "MIT",
-        "classifiers": [
-          "License :: OSI Approved :: MIT License"
-        ]
-      },
+      "declared_license_expression": "mit",
+      "declared_license_expression_spdx": "MIT",
+      "license_detections": [
+        {
+          "license_expression": "mit",
+          "detection_log": [
+            "not-combined"
+          ],
+          "matches": [
+            {
+              "score": 100.0,
+              "start_line": 1,
+              "end_line": 1,
+              "matched_length": 1,
+              "match_coverage": 100.0,
+              "matcher": "1-spdx-id",
+              "license_expression": "mit",
+              "rule_identifier": "spdx-license-identifier: mit",
+              "rule_url": null,
+              "referenced_filenames": [],
+              "is_license_text": false,
+              "is_license_notice": false,
+              "is_license_reference": false,
+              "is_license_tag": true,
+              "is_license_intro": false,
+              "rule_length": 1,
+              "rule_relevance": 100,
+              "matched_text": "MIT",
+              "licenses": [
+                {
+                  "key": "mit",
+                  "name": "MIT License",
+                  "short_name": "MIT License",
+                  "category": "Permissive",
+                  "is_exception": false,
+                  "is_unknown": false,
+                  "owner": "MIT",
+                  "homepage_url": "http://opensource.org/licenses/mit-license.php",
+                  "text_url": "http://opensource.org/licenses/mit-license.php",
+                  "reference_url": "https://scancode-licensedb.aboutcode.org/mit",
+                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE",
+                  "spdx_license_key": "MIT",
+                  "spdx_url": "https://spdx.org/licenses/MIT"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "license_expression": "mit",
+          "detection_log": [
+            "not-combined"
+          ],
+          "matches": [
+            {
+              "score": 100.0,
+              "start_line": 1,
+              "end_line": 1,
+              "matched_length": 5,
+              "match_coverage": 100.0,
+              "matcher": "1-hash",
+              "license_expression": "mit",
+              "rule_identifier": "pypi_mit_license.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/pypi_mit_license.RULE",
+              "referenced_filenames": [],
+              "is_license_text": false,
+              "is_license_notice": false,
+              "is_license_reference": false,
+              "is_license_tag": true,
+              "is_license_intro": false,
+              "rule_length": 5,
+              "rule_relevance": 100,
+              "matched_text": "['License :: OSI Approved :: MIT License']",
+              "licenses": [
+                {
+                  "key": "mit",
+                  "name": "MIT License",
+                  "short_name": "MIT License",
+                  "category": "Permissive",
+                  "is_exception": false,
+                  "is_unknown": false,
+                  "owner": "MIT",
+                  "homepage_url": "http://opensource.org/licenses/mit-license.php",
+                  "text_url": "http://opensource.org/licenses/mit-license.php",
+                  "reference_url": "https://scancode-licensedb.aboutcode.org/mit",
+                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE",
+                  "spdx_license_key": "MIT",
+                  "spdx_url": "https://spdx.org/licenses/MIT"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "other_license_expression": null,
+      "other_license_expression_spdx": null,
+      "other_license_detections": [],
+      "extracted_license_statement": "{'license': 'MIT', 'classifiers': ['License :: OSI Approved :: MIT License']}",
       "notice_text": null,
       "source_packages": [],
       "extra_data": {},
@@ -556,10 +838,59 @@
       "code_view_url": null,
       "vcs_url": null,
       "copyright": null,
-      "license_expression": "bsd-new",
-      "declared_license": {
-        "license": "BSD"
-      },
+      "declared_license_expression": "bsd-new",
+      "declared_license_expression_spdx": "BSD-3-Clause",
+      "license_detections": [
+        {
+          "license_expression": "bsd-new",
+          "detection_log": [
+            "not-combined"
+          ],
+          "matches": [
+            {
+              "score": 99.0,
+              "start_line": 1,
+              "end_line": 1,
+              "matched_length": 2,
+              "match_coverage": 100.0,
+              "matcher": "1-hash",
+              "license_expression": "bsd-new",
+              "rule_identifier": "bsd-new_89.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_89.RULE",
+              "referenced_filenames": [],
+              "is_license_text": false,
+              "is_license_notice": false,
+              "is_license_reference": false,
+              "is_license_tag": true,
+              "is_license_intro": false,
+              "rule_length": 2,
+              "rule_relevance": 99,
+              "matched_text": "license BSD",
+              "licenses": [
+                {
+                  "key": "bsd-new",
+                  "name": "BSD-3-Clause",
+                  "short_name": "BSD-3-Clause",
+                  "category": "Permissive",
+                  "is_exception": false,
+                  "is_unknown": false,
+                  "owner": "Regents of the University of California",
+                  "homepage_url": "http://www.opensource.org/licenses/BSD-3-Clause",
+                  "text_url": "http://www.opensource.org/licenses/BSD-3-Clause",
+                  "reference_url": "https://scancode-licensedb.aboutcode.org/bsd-new",
+                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-new.LICENSE",
+                  "spdx_license_key": "BSD-3-Clause",
+                  "spdx_url": "https://spdx.org/licenses/BSD-3-Clause"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "other_license_expression": null,
+      "other_license_expression_spdx": null,
+      "other_license_detections": [],
+      "extracted_license_statement": "{'license': 'BSD'}",
       "notice_text": null,
       "source_packages": [],
       "extra_data": {},
@@ -639,13 +970,104 @@
           "code_view_url": null,
           "vcs_url": null,
           "copyright": null,
-          "license_expression": "mit AND mit",
-          "declared_license": {
-            "license": "MIT",
-            "classifiers": [
-              "License :: OSI Approved :: MIT License"
-            ]
-          },
+          "declared_license_expression": "mit",
+          "declared_license_expression_spdx": "MIT",
+          "license_detections": [
+            {
+              "license_expression": "mit",
+              "detection_log": [
+                "not-combined"
+              ],
+              "matches": [
+                {
+                  "score": 100.0,
+                  "start_line": 1,
+                  "end_line": 1,
+                  "matched_length": 1,
+                  "match_coverage": 100.0,
+                  "matcher": "1-spdx-id",
+                  "license_expression": "mit",
+                  "rule_identifier": "spdx-license-identifier: mit",
+                  "rule_url": null,
+                  "referenced_filenames": [],
+                  "is_license_text": false,
+                  "is_license_notice": false,
+                  "is_license_reference": false,
+                  "is_license_tag": true,
+                  "is_license_intro": false,
+                  "rule_length": 1,
+                  "rule_relevance": 100,
+                  "matched_text": "MIT",
+                  "licenses": [
+                    {
+                      "key": "mit",
+                      "name": "MIT License",
+                      "short_name": "MIT License",
+                      "category": "Permissive",
+                      "is_exception": false,
+                      "is_unknown": false,
+                      "owner": "MIT",
+                      "homepage_url": "http://opensource.org/licenses/mit-license.php",
+                      "text_url": "http://opensource.org/licenses/mit-license.php",
+                      "reference_url": "https://scancode-licensedb.aboutcode.org/mit",
+                      "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE",
+                      "spdx_license_key": "MIT",
+                      "spdx_url": "https://spdx.org/licenses/MIT"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "license_expression": "mit",
+              "detection_log": [
+                "not-combined"
+              ],
+              "matches": [
+                {
+                  "score": 100.0,
+                  "start_line": 1,
+                  "end_line": 1,
+                  "matched_length": 5,
+                  "match_coverage": 100.0,
+                  "matcher": "1-hash",
+                  "license_expression": "mit",
+                  "rule_identifier": "pypi_mit_license.RULE",
+                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/pypi_mit_license.RULE",
+                  "referenced_filenames": [],
+                  "is_license_text": false,
+                  "is_license_notice": false,
+                  "is_license_reference": false,
+                  "is_license_tag": true,
+                  "is_license_intro": false,
+                  "rule_length": 5,
+                  "rule_relevance": 100,
+                  "matched_text": "['License :: OSI Approved :: MIT License']",
+                  "licenses": [
+                    {
+                      "key": "mit",
+                      "name": "MIT License",
+                      "short_name": "MIT License",
+                      "category": "Permissive",
+                      "is_exception": false,
+                      "is_unknown": false,
+                      "owner": "MIT",
+                      "homepage_url": "http://opensource.org/licenses/mit-license.php",
+                      "text_url": "http://opensource.org/licenses/mit-license.php",
+                      "reference_url": "https://scancode-licensedb.aboutcode.org/mit",
+                      "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE",
+                      "spdx_license_key": "MIT",
+                      "spdx_url": "https://spdx.org/licenses/MIT"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "other_license_expression": null,
+          "other_license_expression_spdx": null,
+          "other_license_detections": [],
+          "extracted_license_statement": "{'license': 'MIT', 'classifiers': ['License :: OSI Approved :: MIT License']}",
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
@@ -690,8 +1112,59 @@
           "code_view_url": null,
           "vcs_url": null,
           "copyright": null,
-          "license_expression": "mit",
-          "declared_license": "MIT",
+          "declared_license_expression": "mit",
+          "declared_license_expression_spdx": "MIT",
+          "license_detections": [
+            {
+              "license_expression": "mit",
+              "detection_log": [
+                "not-combined"
+              ],
+              "matches": [
+                {
+                  "score": 100.0,
+                  "start_line": 1,
+                  "end_line": 1,
+                  "matched_length": 1,
+                  "match_coverage": 100.0,
+                  "matcher": "1-spdx-id",
+                  "license_expression": "mit",
+                  "rule_identifier": "spdx-license-identifier: mit",
+                  "rule_url": null,
+                  "referenced_filenames": [],
+                  "is_license_text": false,
+                  "is_license_notice": false,
+                  "is_license_reference": false,
+                  "is_license_tag": true,
+                  "is_license_intro": false,
+                  "rule_length": 1,
+                  "rule_relevance": 100,
+                  "matched_text": "MIT",
+                  "licenses": [
+                    {
+                      "key": "mit",
+                      "name": "MIT License",
+                      "short_name": "MIT License",
+                      "category": "Permissive",
+                      "is_exception": false,
+                      "is_unknown": false,
+                      "owner": "MIT",
+                      "homepage_url": "http://opensource.org/licenses/mit-license.php",
+                      "text_url": "http://opensource.org/licenses/mit-license.php",
+                      "reference_url": "https://scancode-licensedb.aboutcode.org/mit",
+                      "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE",
+                      "spdx_license_key": "MIT",
+                      "spdx_url": "https://spdx.org/licenses/MIT"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "other_license_expression": null,
+          "other_license_expression_spdx": null,
+          "other_license_detections": [],
+          "extracted_license_statement": "MIT",
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
@@ -751,10 +1224,59 @@
           "code_view_url": null,
           "vcs_url": null,
           "copyright": null,
-          "license_expression": "bsd-new",
-          "declared_license": {
-            "license": "BSD"
-          },
+          "declared_license_expression": "bsd-new",
+          "declared_license_expression_spdx": "BSD-3-Clause",
+          "license_detections": [
+            {
+              "license_expression": "bsd-new",
+              "detection_log": [
+                "not-combined"
+              ],
+              "matches": [
+                {
+                  "score": 99.0,
+                  "start_line": 1,
+                  "end_line": 1,
+                  "matched_length": 2,
+                  "match_coverage": 100.0,
+                  "matcher": "1-hash",
+                  "license_expression": "bsd-new",
+                  "rule_identifier": "bsd-new_89.RULE",
+                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_89.RULE",
+                  "referenced_filenames": [],
+                  "is_license_text": false,
+                  "is_license_notice": false,
+                  "is_license_reference": false,
+                  "is_license_tag": true,
+                  "is_license_intro": false,
+                  "rule_length": 2,
+                  "rule_relevance": 99,
+                  "matched_text": "license BSD",
+                  "licenses": [
+                    {
+                      "key": "bsd-new",
+                      "name": "BSD-3-Clause",
+                      "short_name": "BSD-3-Clause",
+                      "category": "Permissive",
+                      "is_exception": false,
+                      "is_unknown": false,
+                      "owner": "Regents of the University of California",
+                      "homepage_url": "http://www.opensource.org/licenses/BSD-3-Clause",
+                      "text_url": "http://www.opensource.org/licenses/BSD-3-Clause",
+                      "reference_url": "https://scancode-licensedb.aboutcode.org/bsd-new",
+                      "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-new.LICENSE",
+                      "spdx_license_key": "BSD-3-Clause",
+                      "spdx_url": "https://spdx.org/licenses/BSD-3-Clause"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "other_license_expression": null,
+          "other_license_expression_spdx": null,
+          "other_license_detections": [],
+          "extracted_license_statement": "{'license': 'BSD'}",
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
@@ -814,10 +1336,59 @@
           "code_view_url": null,
           "vcs_url": null,
           "copyright": null,
-          "license_expression": null,
-          "declared_license": {
-            "license": "Simplified BSD"
-          },
+          "declared_license_expression": "bsd-simplified",
+          "declared_license_expression_spdx": "BSD-2-Clause",
+          "license_detections": [
+            {
+              "license_expression": "bsd-simplified",
+              "detection_log": [
+                "not-combined"
+              ],
+              "matches": [
+                {
+                  "score": 100.0,
+                  "start_line": 1,
+                  "end_line": 1,
+                  "matched_length": 2,
+                  "match_coverage": 100.0,
+                  "matcher": "1-hash",
+                  "license_expression": "bsd-simplified",
+                  "rule_identifier": "bsd-simplified_150.RULE",
+                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-simplified_150.RULE",
+                  "referenced_filenames": [],
+                  "is_license_text": false,
+                  "is_license_notice": false,
+                  "is_license_reference": true,
+                  "is_license_tag": false,
+                  "is_license_intro": false,
+                  "rule_length": 2,
+                  "rule_relevance": 100,
+                  "matched_text": "Simplified BSD",
+                  "licenses": [
+                    {
+                      "key": "bsd-simplified",
+                      "name": "BSD-2-Clause",
+                      "short_name": "BSD-2-Clause",
+                      "category": "Permissive",
+                      "is_exception": false,
+                      "is_unknown": false,
+                      "owner": "Regents of the University of California",
+                      "homepage_url": "http://www.opensource.org/licenses/BSD-2-Clause",
+                      "text_url": "http://opensource.org/licenses/bsd-license.php",
+                      "reference_url": "https://scancode-licensedb.aboutcode.org/bsd-simplified",
+                      "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-simplified.LICENSE",
+                      "spdx_license_key": "BSD-2-Clause",
+                      "spdx_url": "https://spdx.org/licenses/BSD-2-Clause"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "other_license_expression": null,
+          "other_license_expression_spdx": null,
+          "other_license_detections": [],
+          "extracted_license_statement": "{'license': 'Simplified BSD'}",
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
@@ -869,8 +1440,13 @@
           "code_view_url": null,
           "vcs_url": null,
           "copyright": null,
-          "license_expression": null,
-          "declared_license": null,
+          "declared_license_expression": null,
+          "declared_license_expression_spdx": null,
+          "license_detections": [],
+          "other_license_expression": null,
+          "other_license_expression_spdx": null,
+          "other_license_detections": [],
+          "extracted_license_statement": null,
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
@@ -1100,13 +1676,104 @@
           "code_view_url": null,
           "vcs_url": null,
           "copyright": null,
-          "license_expression": "mit AND mit",
-          "declared_license": {
-            "license": "MIT",
-            "classifiers": [
-              "License :: OSI Approved :: MIT License"
-            ]
-          },
+          "declared_license_expression": "mit",
+          "declared_license_expression_spdx": "MIT",
+          "license_detections": [
+            {
+              "license_expression": "mit",
+              "detection_log": [
+                "not-combined"
+              ],
+              "matches": [
+                {
+                  "score": 100.0,
+                  "start_line": 1,
+                  "end_line": 1,
+                  "matched_length": 1,
+                  "match_coverage": 100.0,
+                  "matcher": "1-spdx-id",
+                  "license_expression": "mit",
+                  "rule_identifier": "spdx-license-identifier: mit",
+                  "rule_url": null,
+                  "referenced_filenames": [],
+                  "is_license_text": false,
+                  "is_license_notice": false,
+                  "is_license_reference": false,
+                  "is_license_tag": true,
+                  "is_license_intro": false,
+                  "rule_length": 1,
+                  "rule_relevance": 100,
+                  "matched_text": "MIT",
+                  "licenses": [
+                    {
+                      "key": "mit",
+                      "name": "MIT License",
+                      "short_name": "MIT License",
+                      "category": "Permissive",
+                      "is_exception": false,
+                      "is_unknown": false,
+                      "owner": "MIT",
+                      "homepage_url": "http://opensource.org/licenses/mit-license.php",
+                      "text_url": "http://opensource.org/licenses/mit-license.php",
+                      "reference_url": "https://scancode-licensedb.aboutcode.org/mit",
+                      "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE",
+                      "spdx_license_key": "MIT",
+                      "spdx_url": "https://spdx.org/licenses/MIT"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "license_expression": "mit",
+              "detection_log": [
+                "not-combined"
+              ],
+              "matches": [
+                {
+                  "score": 100.0,
+                  "start_line": 1,
+                  "end_line": 1,
+                  "matched_length": 5,
+                  "match_coverage": 100.0,
+                  "matcher": "1-hash",
+                  "license_expression": "mit",
+                  "rule_identifier": "pypi_mit_license.RULE",
+                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/pypi_mit_license.RULE",
+                  "referenced_filenames": [],
+                  "is_license_text": false,
+                  "is_license_notice": false,
+                  "is_license_reference": false,
+                  "is_license_tag": true,
+                  "is_license_intro": false,
+                  "rule_length": 5,
+                  "rule_relevance": 100,
+                  "matched_text": "['License :: OSI Approved :: MIT License']",
+                  "licenses": [
+                    {
+                      "key": "mit",
+                      "name": "MIT License",
+                      "short_name": "MIT License",
+                      "category": "Permissive",
+                      "is_exception": false,
+                      "is_unknown": false,
+                      "owner": "MIT",
+                      "homepage_url": "http://opensource.org/licenses/mit-license.php",
+                      "text_url": "http://opensource.org/licenses/mit-license.php",
+                      "reference_url": "https://scancode-licensedb.aboutcode.org/mit",
+                      "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE",
+                      "spdx_license_key": "MIT",
+                      "spdx_url": "https://spdx.org/licenses/MIT"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "other_license_expression": null,
+          "other_license_expression_spdx": null,
+          "other_license_detections": [],
+          "extracted_license_statement": "{'license': 'MIT', 'classifiers': ['License :: OSI Approved :: MIT License']}",
           "notice_text": null,
           "source_packages": [],
           "file_references": [
@@ -1204,8 +1871,13 @@
           "code_view_url": null,
           "vcs_url": null,
           "copyright": null,
-          "license_expression": null,
-          "declared_license": null,
+          "declared_license_expression": null,
+          "declared_license_expression_spdx": null,
+          "license_detections": [],
+          "other_license_expression": null,
+          "other_license_expression_spdx": null,
+          "other_license_detections": [],
+          "extracted_license_statement": null,
           "notice_text": null,
           "source_packages": [],
           "file_references": [],

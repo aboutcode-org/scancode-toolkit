@@ -1,0 +1,11 @@
+---
+license_expression: zlib
+is_license_reference: yes
+is_continuous: yes
+relevance: 100
+minimum_coverage: 100
+referenced_filenames:
+    - LICENSE.txt
+---
+
+:type = zlib, :file = LICENSE.txt

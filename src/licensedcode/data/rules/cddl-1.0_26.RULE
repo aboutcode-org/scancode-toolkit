@@ -1,3 +1,10 @@
+---
+license_expression: cddl-1.0
+is_license_notice: yes
+ignorable_urls:
+    - http://opensource.org/licenses/CDDL-1.0
+---
+
 # CDDL HEADER START
 #
 # The contents of this file are subject to the terms of the
@@ -16,4 +23,3 @@
 # information: Portions Copyright [yyyy] [name of copyright owner]
 #
 # CDDL HEADER END
- 

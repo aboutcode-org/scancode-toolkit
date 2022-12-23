@@ -1,4 +1,10 @@
- If distributed as part of the software, this code is licensed under the
+---
+license_expression: gpl-2.0 OR bsd-new
+is_license_notice: yes
+minimum_coverage: 80
+---
+
+If distributed as part of the software, this code is licensed under the
  terms of the GPL v2.
 
  Otherwise, the following license terms apply:

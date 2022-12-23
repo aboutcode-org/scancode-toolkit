@@ -1,4 +1,12 @@
- This software file (the "File") is distributed by Marvell International
+---
+license_expression: gpl-2.0
+is_license_notice: yes
+relevance: 100
+ignorable_urls:
+    - https://www.gnu.org/licenses/old-licenses/gpl-2.0.txt
+---
+
+This software file (the "File") is distributed by Marvell International
  Ltd. under the terms of the GNU General Public License Version 2, June 1991
  (the "License").  You may use, redistribute and/or modify this File in
  accordance with the terms and conditions of the License, a copy of which

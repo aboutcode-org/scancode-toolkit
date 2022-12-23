@@ -1,3 +1,12 @@
+---
+license_expression: public-domain
+is_license_text: yes
+ignorable_copyrights:
+    - Copyright (c) 2002-3 Hans Dietrich / Jim Fougeron
+ignorable_holders:
+    - Hans Dietrich / Jim Fougeron
+---
+
 No copyright is claimed, and all modifications to this source
  * fall under original public domain license statement.
  * In case this attempt to disclaim copyright and place the software in

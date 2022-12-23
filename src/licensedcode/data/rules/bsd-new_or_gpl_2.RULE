@@ -1,4 +1,11 @@
- Redistribution and use in source and binary forms, with or without
+---
+license_expression: bsd-new OR gpl-1.0-plus
+is_license_notice: yes
+minimum_coverage: 80
+notes: Dual licenses for GPL and BSD-NEW
+---
+
+Redistribution and use in source and binary forms, with or without
  modification, are permitted provided that the following conditions
  are met:
  1. Redistributions of source code must retain the above copyright

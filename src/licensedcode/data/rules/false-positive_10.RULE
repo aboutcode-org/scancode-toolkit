@@ -1,1 +1,6 @@
+---
+is_false_positive: yes
+notes: a commentary on FFmpeg licensing
+---
+
 OpenCV uses pre-built ffmpeg binaries, built with proper flags (without GPL components)

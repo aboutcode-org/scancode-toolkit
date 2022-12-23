@@ -1,3 +1,10 @@
+---
+license_expression: other-permissive
+is_license_text: yes
+relevance: 100
+notes: this is very close the cmu-uc except for the missing non-endorsement clause. See in pyproj-1.9.5.1
+---
+
 Permission to use, copy, modify, and distribute this software and its
 documentation for any purpose and without fee is hereby granted, provided that
 the above copyright notice appear in all copies and that both the copyright

@@ -1,3 +1,9 @@
+---
+license_expression: isc AND free-unknown
+is_license_text: yes
+minimum_coverage: 70
+---
+
 THIS IS FOR INFORMATION ONLY, CODE IS UNDER THE LICENCE AT THE TOP OF ITS FILE.
 
 The README, CHANGES, FAQ and TODO files are licensed under the ISC

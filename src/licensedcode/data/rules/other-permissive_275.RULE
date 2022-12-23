@@ -1,3 +1,11 @@
+---
+license_expression: other-permissive
+is_license_text: yes
+relevance: 100
+minimum_coverage: 90
+notes: https://fedoraproject.org/wiki/Licensing/CPM
+---
+
 Let this email represent a right to use, distribute, modify, enhance and
 otherwise make available in a nonexclusive manner the CP/M technology as
 part of the "Unofficial CP/M Web Site" with its maintainers, developers and

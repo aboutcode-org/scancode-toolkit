@@ -1,2 +1,11 @@
- On Debian GNU/Linux systems the full text of the GNU LGPL v3 can be found
+---
+license_expression: lgpl-3.0
+is_license_notice: yes
+relevance: 100
+minimum_coverage: 70
+referenced_filenames:
+    - /usr/share/common-licenses/LGPL-3
+---
+
+On Debian GNU/Linux systems the full text of the GNU LGPL v3 can be found
  in the `/usr/share/common-licenses/LGPL-3' file.

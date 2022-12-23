@@ -1,3 +1,15 @@
+---
+license_expression: cnri-python-1.6
+is_license_text: yes
+ignorable_copyrights:
+    - Copyright (c) 1995-2000 Corporation for National Research Initiatives
+ignorable_holders:
+    - Corporation for National Research Initiatives
+ignorable_urls:
+    - http://hdl.handle.net/1895.22/1012
+    - http://www.python.org/
+---
+
 IMPORTANT: PLEASE READ THE FOLLOWING AGREEMENT CAREFULLY. BY CLICKING ON "ACCEPT" WHERE INDICATED BELOW, OR BY COPYING, INSTALLING OR OTHERWISE USING PYTHON 1.6 SOFTWARE, YOU ARE DEEMED TO HAVE AGREED TO THE TERMS AND CONDITIONS OF THIS LICENSE AGREEMENT.
 
 1. This LICENSE AGREEMENT is between the Corporation for National Research Initiatives, having an office at 1895 Preston White Drive, Reston, VA 20191 ("CNRI"), and the Individual or Organization ("Licensee") accessing and otherwise using Python 1.6 software in source or binary form and its associated documentation, as released at the www.python.org Internet site on September 5, 2000 ("Python 1.6").

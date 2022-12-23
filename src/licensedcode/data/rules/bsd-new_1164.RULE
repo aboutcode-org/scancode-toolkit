@@ -1,3 +1,8 @@
-License
+---
+license_expression: bsd-new
+is_license_notice: yes
+relevance: 100
+---
 
-Unless otherwise specified, a BSD 3-clause license applies (see LICENSE).
+All portions of JGit are covered by the {{EDL}}. Absolutely no GPL,
+    LGPL or EPL contributions are accepted within this package.

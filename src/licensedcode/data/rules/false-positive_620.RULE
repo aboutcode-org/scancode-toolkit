@@ -1,2 +1,7 @@
+---
+is_false_positive: yes
+notes: Seen in FreeBSD
+---
+
 WITH_GPL_DTC option has been removed.  The BSD-licenced device tree
 compiler

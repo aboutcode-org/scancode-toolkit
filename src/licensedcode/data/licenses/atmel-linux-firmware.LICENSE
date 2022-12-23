@@ -1,3 +1,13 @@
+---
+key: atmel-linux-firmware
+short_name: Atmel Linux Firmware License
+name: Atmel Linux Firmware License
+category: Proprietary Free
+owner: Atmel
+homepage_url: https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/tree/LICENSE.atmel
+spdx_license_key: LicenseRef-scancode-atmel-linux-firmware
+---
+
 REDISTRIBUTION: Permission is hereby granted by Atmel Corporation (Atmel), free
 of any license fees, to any person obtaining a copy of this firmware (the
 "Software"), to install, reproduce, copy and distribute copies, in binary form,

@@ -1,3 +1,12 @@
+---
+license_expression: afl-3.0
+is_license_text: yes
+ignorable_copyrights:
+    - Copyright (c) 2005 Lawrence Rosen
+ignorable_holders:
+    - Lawrence Rosen
+---
+
 Academic Free License ("AFL") v. 3.0
 This Academic Free License (the "License") applies to any original work of authorship (the "Original Work") whose owner (the "Licensor") has placed the following licensing notice adjacent to the copyright notice for the Original Work:
 

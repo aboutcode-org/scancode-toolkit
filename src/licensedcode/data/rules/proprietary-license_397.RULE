@@ -1,3 +1,11 @@
+---
+license_expression: proprietary-license
+is_license_notice: yes
+relevance: 100
+minimum_coverage: 90
+notes: https://github.com/jcs/endless/
+---
+
 (NOTE: This is not a BSD/ISC/MIT license.  You are permitted to use this
 source code, with or without modification, in source or binary form, on
 your devices however you see fit.  You are not permitted to redistribute

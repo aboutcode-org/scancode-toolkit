@@ -1,4 +1,9 @@
-  ADDITIONAL INFORMATION ABOUT LICENSING
+---
+license_expression: gpl-2.0 WITH classpath-exception-2.0 AND other-permissive
+is_license_reference: yes
+---
+
+ADDITIONAL INFORMATION ABOUT LICENSING
 
 Certain files distributed by Oracle America, Inc. and/or its affiliates are 
 subject to the following clarification and special exception to the GPLv2, 

@@ -1,4 +1,9 @@
- Licensing:      The code must be released to us under the
+---
+is_false_positive: yes
+notes: comments about licensing
+---
+
+Licensing:      The code must be released to us under the
                  GNU General Public License. We don't insist on any kind
                  of exclusive GPL licensing, and if you wish the driver
                  to be useful to other communities such as BSD you may well

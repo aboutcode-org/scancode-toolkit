@@ -1,4 +1,8 @@
-
+---
+license_expression: gpl-2.0 AND lgpl-2.1
+is_license_notice: yes
+relevance: 100
+---
 
 This software is licensed under the GNU GENERAL PUBLIC LICENCE Version
 2. Except that any software in the lib/ directory is for the creation of a

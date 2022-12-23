@@ -1,3 +1,20 @@
+---
+key: zsh
+short_name: zsh License
+name: Z Shell License
+category: Permissive
+owner: Zsh Development Group
+homepage_url: https://sourceforge.net/p/zsh/code/ci/master/tree/LICENCE
+spdx_license_key: LicenseRef-scancode-zsh
+minimum_coverage: 90
+ignorable_copyrights:
+    - copyright (c) 1992-2017 Paul Falstad, Richard Coleman, Zoltan Hidvegi, Andrew Main, Peter
+        Stephenson, Sven Wischnowsky, and others
+ignorable_holders:
+    - Paul Falstad, Richard Coleman, Zoltan Hidvegi, Andrew Main, Peter Stephenson, Sven Wischnowsky,
+        and others
+---
+
 Unless otherwise noted in the header of specific files, files in this
 distribution have the licence shown below.
 

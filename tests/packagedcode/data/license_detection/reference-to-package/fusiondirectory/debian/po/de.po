@@ -1,0 +1,90 @@
+# German debconf translation of fusiondirectory.
+# Copyright (C) 2014 FusionDirectory Project.
+# This file is distributed under the same license as the fusiondirectory package.
+# Copyright (C) of this file 2018 Mathias F. Popp <deb003@magnasec.com>.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: fusiondirectory 1.2.2-4\n"
+"Report-Msgid-Bugs-To: fusiondirectory@packages.debian.org\n"
+"POT-Creation-Date: 2018-08-28 17:16+0200\n"
+"PO-Revision-Date: 2018-11-03 10:51+0100\n"
+"Last-Translator: Mathias F. Popp <deb003@magnasec.com>\n"
+"Language-Team: German <debian-l10n-german@lists.debian.org>\n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. Type: boolean
+#. Description
+#: ../templates:1001
+msgid "Really perform FusionDirectory major version upgrade?"
+msgstr ""
+"Möchten Sie wirklich ein Upgrade auf eine neue Hauptversion von "
+"FusionDirectory durchführen?"
+
+#. Type: boolean
+#. Description
+#: ../templates:1001
+msgid ""
+"You are about to upgrade FusionDirectory to a new major version. Please "
+"consult the UPGRADE documentation first: /usr/share/doc/fusiondirectory/"
+"UPGRADE.md.gz"
+msgstr ""
+"Sie sind dabei, ein Upgrade von FusionDirectory auf eine neue Hauptversion "
+"(engl. major version) durchzuführen. Bitte konsultieren Sie zuerst die "
+"»UPGRADE«-Dokumentation unter: /usr/share/doc/fusiondirectory/UPGRADE.md.gz. "
+
+#. Type: boolean
+#. Description
+#: ../templates:1001
+msgid ""
+"FusionDirectory comes with tools to migrate from one major version to "
+"another. However, as with other LDAP directory setups, exceptional "
+"circumstances or wrong data in the LDAP tree may sometimes prevent these "
+"tools from migrating everything."
+msgstr ""
+"FusionDirectory bietet die nötigen Werkzeuge, um von einer "
+"Hauptversionsnummer auf eine andere zu migrieren. Wie es auch mit anderen "
+"LDAP-Verzeichnisdiensten der Fall ist, können außergewöhnliche Umstände oder "
+"fehlerhafte Datenbestände im LDAP-Verzeichnisbaum manchmal verhindern, dass "
+"diese Werkzeuge die Migration komplett und fehlerfrei durchführen. "
+
+#. Type: boolean
+#. Description
+#: ../templates:1001
+msgid ""
+"In this case, the directory information tree may even need to be manually "
+"adapted outside of FusionDirectory with tools such as ldapmodify or ldapvi."
+msgstr ""
+"In diesem Fall kann es sogar nötig sein, den Verzeichnisbaum außerhalb von "
+"FusionDirectory manuell anzupassen. Hilfreich hierbei sind z.B. die "
+"Werkzeuge »ldapmodify« oder »ldapvi«."
+
+#. Type: boolean
+#. Description
+#: ../templates:1001
+msgid ""
+"If you do not choose to proceed, the upgrade process for FusionDirectory "
+"related packages will be canceled."
+msgstr ""
+"Wenn Sie sich entscheiden hier abzubrechen, wird der Upgrade-Prozess für "
+"FusionDirectory nicht durchgeführt."
+
+#. Type: error
+#. Description
+#: ../templates:2001
+msgid "FusionDirectory upgrade canceled"
+msgstr "Abbruch des Upgrades von FusionDirectory"
+
+#. Type: error
+#. Description
+#: ../templates:2001
+msgid ""
+"The upgrade of FusionDirectory has been canceled on user request. The "
+"installation process will be aborted."
+msgstr ""
+"Der Upgrade-Vorgang von FusionDirectory wurde durch den Benutzer beendet. "
+"Der Installationsvorgang wird abgebrochen."
+

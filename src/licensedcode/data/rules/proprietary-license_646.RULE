@@ -1,3 +1,10 @@
+---
+license_expression: proprietary-license
+is_license_text: yes
+ignorable_emails:
+    - terms@alleninstitute.org
+---
+
 # Allen Institute Software License - This software license is the 2-clause BSD license plus clause a third
 # clause that prohibits redistribution for commercial purposes without further permission.
 

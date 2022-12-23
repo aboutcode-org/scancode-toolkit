@@ -1,3 +1,13 @@
+---
+key: ian-piumarta
+short_name: Ian Piumarta License
+name: Ian Piumarta License
+category: Permissive
+owner: Ian Piumarta
+homepage_url: http://piumarta.com/software/peg/
+spdx_license_key: LicenseRef-scancode-ian-piumarta
+---
+
 Permission is hereby granted, free of charge, to any person obtaining a
 copy of this software and associated documentation files (the 'Software'),
 to deal in the Software without restriction, including without limitation

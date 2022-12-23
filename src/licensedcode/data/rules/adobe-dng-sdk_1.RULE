@@ -1,3 +1,10 @@
+---
+license_expression: adobe-dng-sdk
+is_license_text: yes
+ignorable_urls:
+    - http://www.adobe.com/
+---
+
 DNG SDK License Agreement
 NOTICE TO USER:
 Adobe Systems Incorporated provides the Software and Documentation for use under

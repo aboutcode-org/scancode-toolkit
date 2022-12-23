@@ -1,4 +1,9 @@
-           SPECIAL EXCEPTION GRANTED BY COPYRIGHT HOLDERS
+---
+license_expression: zeromq-exception-lgpl-3.0
+is_license_text: yes
+---
+
+SPECIAL EXCEPTION GRANTED BY COPYRIGHT HOLDERS
 
 As a special exception, copyright holders give you permission to link this
 library with independent modules to produce an executable, regardless of

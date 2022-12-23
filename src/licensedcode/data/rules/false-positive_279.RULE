@@ -1,1 +1,6 @@
- e.g., "Appendix H  GNU Free Documentation License
+---
+is_false_positive: yes
+notes: See in texinfo.tex
+---
+
+e.g., "Appendix H  GNU Free Documentation License

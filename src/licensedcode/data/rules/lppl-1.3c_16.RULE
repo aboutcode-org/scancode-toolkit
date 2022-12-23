@@ -1,3 +1,11 @@
+---
+license_expression: lppl-1.3c
+is_license_notice: yes
+relevance: 100
+ignorable_urls:
+    - http://www.latex-project.org/lppl.txt
+---
+
 The LaTeX support files contained in this software may be modified
 and distributed under the terms and conditions of the LaTeX Project
 Public License, version 1.3c or greater (your choice).

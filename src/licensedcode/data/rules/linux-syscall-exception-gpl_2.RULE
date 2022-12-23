@@ -1,3 +1,17 @@
+---
+license_expression: linux-syscall-exception-gpl
+is_license_text: yes
+relevance: 100
+minimum_coverage: 70
+notes: from https://raw.githubusercontent.com/pombredanne/gpl-history/v1.0/allvers/linux.COPYING.0.4
+ignorable_copyrights:
+    - copyrighted by me and others
+    - copyrighted by the Free Software Foundation
+ignorable_holders:
+    - me and others
+    - the Free Software Foundation
+---
+
 NOTE! This copyright does *not* cover user programs that use kernel
  services by normal system calls - this is merely considered normal use
  of the kernel, and does *not* fall under the heading of "derived work".

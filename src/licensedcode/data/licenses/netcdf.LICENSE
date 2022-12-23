@@ -1,3 +1,14 @@
+---
+key: netcdf
+short_name: NetCDF License
+name: NetCDF License
+category: Permissive
+owner: Unidata
+homepage_url: http://www.unidata.ucar.edu/software/netcdf/copyright.html
+spdx_license_key: NetCDF
+ignorable_authors:
+    - the Unidata Program at the University Corporation for Atmospheric Research
+---
 
 Portions of this software were developed by the Unidata Program at the
 University Corporation for Atmospheric Research.

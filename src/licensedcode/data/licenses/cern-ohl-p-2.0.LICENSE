@@ -1,3 +1,28 @@
+---
+key: cern-ohl-p-2.0
+short_name: CERN-OHL-P-2.0
+name: CERN Open Hardware Licence Version 2 - Permissive
+category: Permissive
+owner: CERN
+homepage_url: https://www.ohwr.org/project/cernohl/wikis/Documents/CERN-OHL-version-2
+spdx_license_key: CERN-OHL-P-2.0
+text_urls:
+    - https://ohwr.org/cern_ohl_p_v2.txt
+    - https://ohwr.org/project/cernohl/wikis/uploads/055bd8b281d0805a3a38188838b370e1/cern_ohl_p_v2.pdf
+    - https://ohwr.org/project/cernohl/wikis/uploads/5a639eaec042c5584104afdbc9350245/cern_ohl_p_v2.txt
+osi_url: https://opensource.org/CERN-OHL-P
+faq_url: https://ohwr.org/project/cernohl/wikis/faq
+other_urls:
+    - https://ohwr.org/project/cernohl
+    - https://cern-ohl.web.cern.ch/
+    - https://ohwr.org/project/cernohl/wikis/Documents/CERN-OHL-version-2
+    - https://ohwr.org/project/cernohl/wikis/uploads/0be6f561d2b4a686c5765c74be32daf9/CERN_OHL_rationale.pdf
+ignorable_copyrights:
+    - copyright CERN 2020
+ignorable_holders:
+    - CERN
+---
+
 CERN Open Hardware Licence Version 2 - Permissive
 
 

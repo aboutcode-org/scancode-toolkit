@@ -1,1 +1,6 @@
+---
+is_false_positive: yes
+notes: seen in the Linux Kernel sources (kernel symbols related code or docs)
+---
+
 The GPL allows you to use the  d r i v e r,  NOT the RADIO

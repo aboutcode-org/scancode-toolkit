@@ -1,3 +1,14 @@
+---
+license_expression: cpal-1.0
+is_license_text: yes
+ignorable_copyrights:
+    - Copyright (c) MuleSoft Inc.
+ignorable_holders:
+    - MuleSoft Inc.
+ignorable_urls:
+    - http://www.mulesoft.com/
+    - http://www.mulesoft.com/CPAL
+---
 
 Common Public Attribution License Version 1.0 (CPAL)
 ====================================================

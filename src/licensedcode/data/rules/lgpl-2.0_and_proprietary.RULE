@@ -1,3 +1,13 @@
+---
+license_expression: lgpl-2.0 AND proprietary-license
+is_license_notice: yes
+notes: LGPL 2.0 with ozone db conflicting advertizing-proprietary like terms. See http://www.ozone-db.org/noframes/home/license.html
+ignorable_authors:
+    - the Ozone Database Project (http://www.ozone-db.org/)
+ignorable_urls:
+    - http://www.ozone-db.org/
+---
+
 This library is free software; you can redistribute it and/or
 modify it provided that the terms of the GNU Library General
 Public License as published by the Free Software Foundation
@@ -26,4 +36,4 @@ written permission of SMB.
 This library is distributed in the hope that it will be useful,
 but WITHOUT ANY WARRANTY; without even the implied warranty of
 MERCHAN- TABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
-GNU Library General Public License for more details. 
+GNU Library General Public License for more details.

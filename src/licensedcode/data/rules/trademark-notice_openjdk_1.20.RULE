@@ -1,3 +1,16 @@
+---
+license_expression: generic-trademark
+is_license_text: yes
+notes: https://web.archive.org/web/20120212051505/http://openjdk.java.net/legal/openjdk-generic-trademark.html
+ignorable_urls:
+    - http://download.java.net/openjdk/jdk6
+    - http://download.java.net/openjdk/jdk7
+    - http://download.java.net/openjdk/jdk8
+    - http://hg.openjdk.java.net/jdk6/jdk6
+    - http://hg.openjdk.java.net/jdk7/jdk7
+    - http://hg.openjdk.java.net/jdk8/jdk8
+    - http://mail.openjdk.java.net/
+---
 
 OpenJDK Trademark Notice
 
@@ -68,4 +81,3 @@ Trademark Owner intends to revise this Notice as necessary in order to
  openjdk.java.net, to which you may subscribe by visiting
  http://mail.openjdk.java.net.  Please send questions or comments about
  this Notice to the discuss list at the same location.
-

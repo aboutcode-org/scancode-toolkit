@@ -1,3 +1,10 @@
+---
+license_expression: crcalc
+is_license_text: yes
+relevance: 99
+notes: contains an extra litigation venue blurb
+---
+
 Permission is granted free of charge to copy, modify, use and distribute
 this software  provided you include the entirety of this notice in all
 copies made.
@@ -32,4 +39,4 @@ between California residents.  Any litigation relating to these license
 terms shall be subject to the exclusive jurisdiction of the Federal Courts
 of the Northern District of California (or, absent subject matter
 jurisdiction in such courts, the courts of the State of California), with
-venue lying exclusively in Santa Clara County, California. 
+venue lying exclusively in Santa Clara County, California.

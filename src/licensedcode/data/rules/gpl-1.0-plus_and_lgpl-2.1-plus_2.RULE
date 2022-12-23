@@ -1,5 +1,11 @@
+---
+license_expression: gpl-1.0-plus AND lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.1-plus
+is_license_notice: yes
+relevance: 100
+---
+
 This software is distributed under the following licenses:
-{{GNU General Public License (GPL)
+GNU General Public License (GPL)
 GNU Lesser General Public (LGPL)
 GNU Lesser General Public (LGPL)
-GNU Lesser General Public (LGPL)}}
+GNU Lesser General Public (LGPL)

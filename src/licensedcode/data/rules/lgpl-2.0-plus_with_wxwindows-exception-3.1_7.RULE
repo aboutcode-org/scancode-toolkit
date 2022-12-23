@@ -1,2 +1,8 @@
- License
+---
+license_expression: lgpl-2.0-plus WITH wxwindows-exception-3.1
+is_license_notice: yes
+relevance: 100
+---
+
+License
 wxWindows Library License (free for comercial use).

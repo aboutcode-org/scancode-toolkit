@@ -1,3 +1,15 @@
+---
+license_expression: proprietary-license
+is_license_notice: yes
+notes: https://gitweb.gentoo.org/repo/gentoo.git/tree/licenses/zi-labone
+ignorable_copyrights:
+    - Copyright (c) Zurich Instruments AG
+ignorable_holders:
+    - Zurich Instruments AG
+ignorable_urls:
+    - http://www.zhinst.com/
+---
+
 SOFTWARE LICENSE AGREEMENT
 
 This is a legal agreement ("Agreement") between you, the end user

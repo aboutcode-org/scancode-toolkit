@@ -1,1 +1,9 @@
+---
+license_expression: apache-2.0
+is_license_reference: yes
+relevance: 100
+referenced_filenames:
+    - apache2.0.LICENSE.txt
+---
+
 apache2.0.LICENSE.txt

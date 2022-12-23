@@ -1,3 +1,13 @@
+---
+key: vicomsoft-software
+short_name: Vicomsoft Software License
+name: Vicomsoft Software License
+category: Commercial
+owner: Vicomsoft Ltd.
+homepage_url: http://www.vicomsoft.com/
+spdx_license_key: LicenseRef-scancode-vicomsoft-software
+---
+
 VICOMSOFT SOFTWARE LICENSE
 Please read this document carefully before installing the 
 Vicomsoft software. By installing the software you agree 

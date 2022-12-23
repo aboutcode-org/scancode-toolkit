@@ -1,1 +1,9 @@
+---
+license_expression: opengroup
+is_license_reference: yes
+relevance: 95
+ignorable_urls:
+    - https://spdx.org/licenses/ogtsl
+---
+
 https://spdx.org/licenses/ogtsl
