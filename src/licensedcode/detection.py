@@ -269,20 +269,12 @@ class LicenseDetection:
         """
         data = []
         for match in self.matches:
-            if isinstance(match, dict):
-                tokenized_matched_text = tuple(query_tokenizer(match['matched_text']))
-                identifier = (
-                    match['rule_identifier'],
-                    match['score'],
-                    tokenized_matched_text,
-                )
-            else:
-                tokenized_matched_text = tuple(query_tokenizer(match.matched_text))
-                identifier = (
-                    match.identifier,
-                    match.score(),
-                    tokenized_matched_text,
-                )
+            tokenized_matched_text = tuple(query_tokenizer(match.matched_text))
+            identifier = (
+                match.identifier,
+                match.score(),
+                tokenized_matched_text,
+            )
             data.append(identifier)
 
         # Return a uuid generated from the contents of the matches
@@ -299,7 +291,6 @@ class LicenseDetection:
         """
         id_safe_expression = python_safe_name(s=str(self.license_expression))
         return "{}-{}".format(id_safe_expression, self.identifier)
-
 
     def get_start_end_line(self):
         """
