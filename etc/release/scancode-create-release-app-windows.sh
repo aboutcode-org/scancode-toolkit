@@ -24,33 +24,48 @@ release_dir=scancode-toolkit-$(git describe --tags)
 
 rm -rf $release_dir
 mkdir -p $release_dir
+
 echo -n "$python_exe" > $release_dir/PYTHON_EXECUTABLE
 git describe --tags > $release_dir/SCANCODE_VERSION
 thirdparty_dir=$release_dir/thirdparty
+thirdparty_src_dir=$release_dir/thirdparty-src
 mkdir -p $thirdparty_dir
+mkdir -p $thirdparty_src_dir
+
+./configure --rel
 
 venv/bin/python etc/scripts/fetch_thirdparty.py \
-  --requirements=requirements.txt \
-  --dest $thirdparty_dir \
-  --operating-system=$operating_system \
-  --python-version=$python_version \
-  --wheels --use-cached-index
-
-venv/bin/python etc/scripts/fetch_thirdparty.py \
-  --requirements=requirements-native.txt \
-  --wheel-only extractcode \
+  --requirements requirements-native.txt \
+  --wheel-only packagedcode-msitools \
+  --wheel-only rpm-inspector-rpm \
   --wheel-only extractcode-7z \
   --wheel-only extractcode-libarchive \
   --wheel-only typecode-libmagic \
-  --wheel-only packagedcode-msitools \
-  --wheel-only rpm-inspector-rpm \
-  --dest $thirdparty_dir \
-  --sdists --use-cached-index
+  --dest $thirdparty_src_dir \
+  --sdists \
+  --use-cached-index
 
-cp dist/scancode_*.whl $release_dir
+venv/bin/python etc/scripts/fetch_thirdparty.py \
+  --requirements requirements.txt \
+  --dest $thirdparty_dir \
+  --operating-system=$operating_system \
+  --python-version=$python_version \
+  --wheels \
+  --use-cached-index
+
+mv $thirdparty_src_dir/* $thirdparty_dir/
+rm -rf $thirdparty_src_dir
+
 mkdir -p $release_dir/etc
 cp -r etc/thirdparty $release_dir/etc
+
+# Build the wheel
+./configure --dev
+./scancode --reindex-licenses
+venv/bin/python setup.py --quiet bdist_wheel --python-tag cp$python_version
+
 cp -r \
+  dist/scancode_*.whl \
   scancode.bat extractcode.bat configure.bat \
   *.rst \
   samples \

@@ -9,7 +9,8 @@
 #
 
 ################################################################################
-# ScanCode release build script for PyPI wheels and sdists
+# ScanCode release build script for PyPI wheels.
+# Build a wheel for the current Python version
 ################################################################################
 
 set -e
@@ -18,13 +19,16 @@ set -e
 
 ./configure --dev
 ./scancode --reindex-licenses
-venv/bin/python setup.py --quiet sdist bdist_wheel
 
-rm -rf build .eggs src/scancode_toolkit.egg-info src/scancode_toolkit_mini.egg-info
+python_tag=$( python -c "import platform;print(f\"cp{''.join(platform.python_version_tuple()[:2])}\")" )
+
+venv/bin/python setup.py --quiet bdist_wheel --python-tag $python_tag
+
+rm -rf build .eggs src/scancode_toolkit*.egg-info src/scancode_toolkit_mini*.egg-info
 cp setup.cfg setup-main.cfg
 cp setup-mini.cfg setup.cfg
 
-venv/bin/python setup.py --quiet sdist bdist_wheel
+venv/bin/python setup.py --quiet bdist_wheel --python-tag $python_tag
 
 cp setup-main.cfg setup.cfg
 rm setup-main.cfg

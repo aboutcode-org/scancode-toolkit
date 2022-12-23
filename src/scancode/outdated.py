@@ -33,7 +33,7 @@ import json
 import logging
 from os import path
 
-from packaging import version as packaging_version
+from packvers import version as packaging_version
 import requests
 from requests.exceptions import ConnectionError
 
@@ -114,7 +114,6 @@ def build_outdated_message(installed_version, release_date, newer_version=''):
         'Visit https://github.com/nexB/scancode-toolkit/releases for details.'
     )
     return msg
- 
 
 
 def check_scancode_version(
@@ -155,8 +154,8 @@ def fetch_newer_version(
     State is stored in the scancode_cache_dir.
     If `force` is True, redo a PyPI remote check.
     """
-    installed_version = packaging_version.parse(installed_version)
     try:
+        installed_version = packaging_version.parse(installed_version)
         state = VersionCheckState()
 
         current_time = datetime.datetime.utcnow()
@@ -185,16 +184,6 @@ def fetch_newer_version(
                 raise
 
         latest_version = packaging_version.parse(latest_version)
-
-        # Our git version string is not PEP 440 compliant, and thus improperly
-        # parsed via most 3rd party version parsers. We handle this case by
-        # pulling out the "base" release version by split()-ting on "post".
-        #
-        # For example, "3.1.2.post351.850399ba3" becomes "3.1.2"
-        if isinstance(installed_version, packaging_version.LegacyVersion):
-            installed_version = installed_version.split('post')
-            installed_version = installed_version[0]
-            installed_version = packaging_version.parse(installed_version)
 
         # Determine if our latest_version is older
         if (installed_version < latest_version
