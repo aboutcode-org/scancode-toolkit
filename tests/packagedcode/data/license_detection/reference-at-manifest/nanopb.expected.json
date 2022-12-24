@@ -1,5 +1,4 @@
 {
-  "dependencies": [],
   "packages": [
     {
       "type": "cocoapods",
@@ -51,34 +50,7 @@
               "license_expression": "zlib",
               "rule_identifier": "zlib_in_manifest.RULE",
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/zlib_in_manifest.RULE",
-              "referenced_filenames": [
-                "LICENSE.txt"
-              ],
-              "is_license_text": false,
-              "is_license_notice": false,
-              "is_license_reference": true,
-              "is_license_tag": false,
-              "is_license_intro": false,
-              "rule_length": 5,
-              "rule_relevance": 100,
-              "matched_text": ":type = zlib, :file = LICENSE.txt",
-              "licenses": [
-                {
-                  "key": "zlib",
-                  "name": "ZLIB License",
-                  "short_name": "ZLIB License",
-                  "category": "Permissive",
-                  "is_exception": false,
-                  "is_unknown": false,
-                  "owner": "zlib",
-                  "homepage_url": "http://www.zlib.net/",
-                  "text_url": "http://www.gzip.org/zlib/zlib_license.html",
-                  "reference_url": "https://scancode-licensedb.aboutcode.org/zlib",
-                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/zlib.LICENSE",
-                  "spdx_license_key": "Zlib",
-                  "spdx_url": "https://spdx.org/licenses/Zlib"
-                }
-              ]
+              "matched_text": ":type = zlib, :file = LICENSE.txt"
             },
             {
               "score": 100.0,
@@ -90,32 +62,7 @@
               "license_expression": "zlib",
               "rule_identifier": "zlib.LICENSE",
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/zlib.LICENSE",
-              "referenced_filenames": [],
-              "is_license_text": true,
-              "is_license_notice": false,
-              "is_license_reference": false,
-              "is_license_tag": false,
-              "is_license_intro": false,
-              "rule_length": 132,
-              "rule_relevance": 100,
-              "matched_text": "This software is provided 'as-is', without any express or \nimplied warranty. In no event will the authors be held liable \nfor any damages arising from the use of this software.\n\nPermission is granted to anyone to use this software for any \npurpose, including commercial applications, and to alter it and \nredistribute it freely, subject to the following restrictions:\n\n1. The origin of this software must not be misrepresented; you \n   must not claim that you wrote the original software. If you use \n   this software in a product, an acknowledgment in the product \n   documentation would be appreciated but is not required.\n\n2. Altered source versions must be plainly marked as such, and \n   must not be misrepresented as being the original software.\n\n3. This notice may not be removed or altered from any source \n   distribution.",
-              "licenses": [
-                {
-                  "key": "zlib",
-                  "name": "ZLIB License",
-                  "short_name": "ZLIB License",
-                  "category": "Permissive",
-                  "is_exception": false,
-                  "is_unknown": false,
-                  "owner": "zlib",
-                  "homepage_url": "http://www.zlib.net/",
-                  "text_url": "http://www.gzip.org/zlib/zlib_license.html",
-                  "reference_url": "https://scancode-licensedb.aboutcode.org/zlib",
-                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/zlib.LICENSE",
-                  "spdx_license_key": "Zlib",
-                  "spdx_url": "https://spdx.org/licenses/Zlib"
-                }
-              ]
+              "matched_text": "This software is provided 'as-is', without any express or \nimplied warranty. In no event will the authors be held liable \nfor any damages arising from the use of this software.\n\nPermission is granted to anyone to use this software for any \npurpose, including commercial applications, and to alter it and \nredistribute it freely, subject to the following restrictions:\n\n1. The origin of this software must not be misrepresented; you \n   must not claim that you wrote the original software. If you use \n   this software in a product, an acknowledgment in the product \n   documentation would be appreciated but is not required.\n\n2. Altered source versions must be plainly marked as such, and \n   must not be misrepresented as being the original software.\n\n3. This notice may not be removed or altered from any source \n   distribution."
             }
           ]
         }
@@ -140,10 +87,146 @@
       "purl": "pkg:cocoapods/nanopb@1.30905.0"
     }
   ],
+  "dependencies": [],
+  "license_detections": [
+    {
+      "identifier": "zlib-fb544817-ac13-5bb2-e219-0e3bba38b9bf",
+      "license_expression": "zlib",
+      "count": 1,
+      "detection_log": [
+        "not-combined"
+      ],
+      "matches": [
+        {
+          "score": 100.0,
+          "start_line": 3,
+          "end_line": 20,
+          "matched_length": 132,
+          "match_coverage": 100.0,
+          "matcher": "2-aho",
+          "license_expression": "zlib",
+          "rule_identifier": "zlib.LICENSE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/zlib.LICENSE"
+        }
+      ]
+    },
+    {
+      "identifier": "zlib-750cc90c-1587-3743-f22a-e2ff2e95e077",
+      "license_expression": "zlib",
+      "count": 1,
+      "detection_log": [
+        "not-combined"
+      ],
+      "matches": [
+        {
+          "score": 100.0,
+          "start_line": 14,
+          "end_line": 14,
+          "matched_length": 5,
+          "match_coverage": 100.0,
+          "matcher": "2-aho",
+          "license_expression": "zlib",
+          "rule_identifier": "zlib_in_manifest.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/zlib_in_manifest.RULE"
+        }
+      ]
+    },
+    {
+      "identifier": "zlib-9aa78722-757b-e59f-3862-ef714530eedc",
+      "license_expression": "zlib",
+      "count": 1,
+      "detection_log": [
+        "package-unknown-reference-to-local-file"
+      ],
+      "matches": [
+        {
+          "score": 100.0,
+          "start_line": 1,
+          "end_line": 1,
+          "matched_length": 5,
+          "match_coverage": 100.0,
+          "matcher": "1-hash",
+          "license_expression": "zlib",
+          "rule_identifier": "zlib_in_manifest.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/zlib_in_manifest.RULE"
+        },
+        {
+          "score": 100.0,
+          "start_line": 3,
+          "end_line": 20,
+          "matched_length": 132,
+          "match_coverage": 100.0,
+          "matcher": "2-aho",
+          "license_expression": "zlib",
+          "rule_identifier": "zlib.LICENSE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/zlib.LICENSE"
+        }
+      ]
+    }
+  ],
+  "license_references": [
+    {
+      "key": "zlib",
+      "short_name": "ZLIB License",
+      "name": "ZLIB License",
+      "category": "Permissive",
+      "owner": "zlib",
+      "homepage_url": "http://www.zlib.net/",
+      "notes": "Per SPDX.org, this is OSI certified",
+      "is_builtin": true,
+      "spdx_license_key": "Zlib",
+      "text_urls": [
+        "http://www.gzip.org/zlib/zlib_license.html"
+      ],
+      "osi_url": "http://www.opensource.org/licenses/zlib-license.php",
+      "faq_url": "http://www.gzip.org/zlib/zlib-faq.html",
+      "other_urls": [
+        "http://www.opensource.org/licenses/Zlib",
+        "http://www.zlib.net/zlib_license.html",
+        "https://opensource.org/licenses/Zlib"
+      ],
+      "minimum_coverage": 50,
+      "text": "This software is provided 'as-is', without any express or implied warranty. In no\nevent will the authors be held liable for any damages arising from the use of this\nsoftware.\n\nPermission is granted to anyone to use this software for any purpose, including\ncommercial applications, and to alter it and redistribute it freely, subject to\nthe following restrictions:\n\n1. The origin of this software must not be misrepresented; you must not claim that\nyou wrote the original software. If you use this software in a product, an\nacknowledgment in the product documentation would be appreciated but is not\nrequired.\n\n2. Altered source versions must be plainly marked as such, and must not be\nmisrepresented as being the original software.\n\n3. This notice may not be removed or altered from any source distribution."
+    }
+  ],
+  "license_rule_references": [
+    {
+      "rule_identifier": "zlib_in_manifest.RULE",
+      "license_expression": "zlib",
+      "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/zlib_in_manifest.RULE",
+      "rule_relevance": 100,
+      "rule_length": 5,
+      "is_license_text": false,
+      "is_license_notice": false,
+      "is_license_reference": true,
+      "is_license_tag": false,
+      "is_license_intro": false,
+      "referenced_filenames": [
+        "LICENSE.txt"
+      ],
+      "rule_text": ":type = zlib, :file = LICENSE.txt"
+    },
+    {
+      "rule_identifier": "zlib.LICENSE",
+      "license_expression": "zlib",
+      "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/zlib.LICENSE",
+      "rule_relevance": 100,
+      "rule_length": 132,
+      "is_license_text": true,
+      "is_license_notice": false,
+      "is_license_reference": false,
+      "is_license_tag": false,
+      "is_license_intro": false,
+      "referenced_filenames": [],
+      "rule_text": "This software is provided 'as-is', without any express or implied warranty. In no\nevent will the authors be held liable for any damages arising from the use of this\nsoftware.\n\nPermission is granted to anyone to use this software for any purpose, including\ncommercial applications, and to alter it and redistribute it freely, subject to\nthe following restrictions:\n\n1. The origin of this software must not be misrepresented; you must not claim that\nyou wrote the original software. If you use this software in a product, an\nacknowledgment in the product documentation would be appreciated but is not\nrequired.\n\n2. Altered source versions must be plainly marked as such, and must not be\nmisrepresented as being the original software.\n\n3. This notice may not be removed or altered from any source distribution."
+    }
+  ],
   "files": [
     {
       "path": "LICENSE.txt",
       "type": "file",
+      "package_data": [],
+      "for_packages": [],
       "detected_license_expression": "zlib",
       "detected_license_expression_spdx": "Zlib",
       "license_detections": [
@@ -163,135 +246,21 @@
               "license_expression": "zlib",
               "rule_identifier": "zlib.LICENSE",
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/zlib.LICENSE",
-              "referenced_filenames": [],
-              "is_license_text": true,
-              "is_license_notice": false,
-              "is_license_reference": false,
-              "is_license_tag": false,
-              "is_license_intro": false,
-              "rule_length": 132,
-              "rule_relevance": 100,
-              "matched_text": "This software is provided 'as-is', without any express or \nimplied warranty. In no event will the authors be held liable \nfor any damages arising from the use of this software.\n\nPermission is granted to anyone to use this software for any \npurpose, including commercial applications, and to alter it and \nredistribute it freely, subject to the following restrictions:\n\n1. The origin of this software must not be misrepresented; you \n   must not claim that you wrote the original software. If you use \n   this software in a product, an acknowledgment in the product \n   documentation would be appreciated but is not required.\n\n2. Altered source versions must be plainly marked as such, and \n   must not be misrepresented as being the original software.\n\n3. This notice may not be removed or altered from any source \n   distribution.",
-              "licenses": [
-                {
-                  "key": "zlib",
-                  "name": "ZLIB License",
-                  "short_name": "ZLIB License",
-                  "category": "Permissive",
-                  "is_exception": false,
-                  "is_unknown": false,
-                  "owner": "zlib",
-                  "homepage_url": "http://www.zlib.net/",
-                  "text_url": "http://www.gzip.org/zlib/zlib_license.html",
-                  "reference_url": "https://scancode-licensedb.aboutcode.org/zlib",
-                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/zlib.LICENSE",
-                  "spdx_license_key": "Zlib",
-                  "spdx_url": "https://spdx.org/licenses/Zlib"
-                }
-              ]
+              "matched_text": "This software is provided 'as-is', without any express or \nimplied warranty. In no event will the authors be held liable \nfor any damages arising from the use of this software.\n\nPermission is granted to anyone to use this software for any \npurpose, including commercial applications, and to alter it and \nredistribute it freely, subject to the following restrictions:\n\n1. The origin of this software must not be misrepresented; you \n   must not claim that you wrote the original software. If you use \n   this software in a product, an acknowledgment in the product \n   documentation would be appreciated but is not required.\n\n2. Altered source versions must be plainly marked as such, and \n   must not be misrepresented as being the original software.\n\n3. This notice may not be removed or altered from any source \n   distribution."
             }
           ]
         }
       ],
       "license_clues": [],
       "percentage_of_license_text": 92.31,
-      "package_data": [],
-      "for_packages": [],
+      "for_license_detections": [
+        "zlib-fb544817-ac13-5bb2-e219-0e3bba38b9bf"
+      ],
       "scan_errors": []
     },
     {
       "path": "nanopb.podspec",
       "type": "file",
-      "detected_license_expression": "zlib",
-      "detected_license_expression_spdx": "Zlib",
-      "license_detections": [
-        {
-          "license_expression": "zlib",
-          "detection_log": [
-            "unknown-reference-to-local-file"
-          ],
-          "matches": [
-            {
-              "score": 100.0,
-              "start_line": 14,
-              "end_line": 14,
-              "matched_length": 5,
-              "match_coverage": 100.0,
-              "matcher": "2-aho",
-              "license_expression": "zlib",
-              "rule_identifier": "zlib_in_manifest.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/zlib_in_manifest.RULE",
-              "referenced_filenames": [
-                "LICENSE.txt"
-              ],
-              "is_license_text": false,
-              "is_license_notice": false,
-              "is_license_reference": true,
-              "is_license_tag": false,
-              "is_license_intro": false,
-              "rule_length": 5,
-              "rule_relevance": 100,
-              "matched_text": "type => 'zlib', :file => 'LICENSE.txt' }",
-              "licenses": [
-                {
-                  "key": "zlib",
-                  "name": "ZLIB License",
-                  "short_name": "ZLIB License",
-                  "category": "Permissive",
-                  "is_exception": false,
-                  "is_unknown": false,
-                  "owner": "zlib",
-                  "homepage_url": "http://www.zlib.net/",
-                  "text_url": "http://www.gzip.org/zlib/zlib_license.html",
-                  "reference_url": "https://scancode-licensedb.aboutcode.org/zlib",
-                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/zlib.LICENSE",
-                  "spdx_license_key": "Zlib",
-                  "spdx_url": "https://spdx.org/licenses/Zlib"
-                }
-              ]
-            },
-            {
-              "score": 100.0,
-              "start_line": 3,
-              "end_line": 20,
-              "matched_length": 132,
-              "match_coverage": 100.0,
-              "matcher": "2-aho",
-              "license_expression": "zlib",
-              "rule_identifier": "zlib.LICENSE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/zlib.LICENSE",
-              "referenced_filenames": [],
-              "is_license_text": true,
-              "is_license_notice": false,
-              "is_license_reference": false,
-              "is_license_tag": false,
-              "is_license_intro": false,
-              "rule_length": 132,
-              "rule_relevance": 100,
-              "matched_text": "This software is provided 'as-is', without any express or \nimplied warranty. In no event will the authors be held liable \nfor any damages arising from the use of this software.\n\nPermission is granted to anyone to use this software for any \npurpose, including commercial applications, and to alter it and \nredistribute it freely, subject to the following restrictions:\n\n1. The origin of this software must not be misrepresented; you \n   must not claim that you wrote the original software. If you use \n   this software in a product, an acknowledgment in the product \n   documentation would be appreciated but is not required.\n\n2. Altered source versions must be plainly marked as such, and \n   must not be misrepresented as being the original software.\n\n3. This notice may not be removed or altered from any source \n   distribution.",
-              "licenses": [
-                {
-                  "key": "zlib",
-                  "name": "ZLIB License",
-                  "short_name": "ZLIB License",
-                  "category": "Permissive",
-                  "is_exception": false,
-                  "is_unknown": false,
-                  "owner": "zlib",
-                  "homepage_url": "http://www.zlib.net/",
-                  "text_url": "http://www.gzip.org/zlib/zlib_license.html",
-                  "reference_url": "https://scancode-licensedb.aboutcode.org/zlib",
-                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/zlib.LICENSE",
-                  "spdx_license_key": "Zlib",
-                  "spdx_url": "https://spdx.org/licenses/Zlib"
-                }
-              ]
-            }
-          ]
-        }
-      ],
-      "license_clues": [],
-      "percentage_of_license_text": 2.49,
       "package_data": [
         {
           "type": "cocoapods",
@@ -343,34 +312,7 @@
                   "license_expression": "zlib",
                   "rule_identifier": "zlib_in_manifest.RULE",
                   "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/zlib_in_manifest.RULE",
-                  "referenced_filenames": [
-                    "LICENSE.txt"
-                  ],
-                  "is_license_text": false,
-                  "is_license_notice": false,
-                  "is_license_reference": true,
-                  "is_license_tag": false,
-                  "is_license_intro": false,
-                  "rule_length": 5,
-                  "rule_relevance": 100,
-                  "matched_text": ":type = zlib, :file = LICENSE.txt",
-                  "licenses": [
-                    {
-                      "key": "zlib",
-                      "name": "ZLIB License",
-                      "short_name": "ZLIB License",
-                      "category": "Permissive",
-                      "is_exception": false,
-                      "is_unknown": false,
-                      "owner": "zlib",
-                      "homepage_url": "http://www.zlib.net/",
-                      "text_url": "http://www.gzip.org/zlib/zlib_license.html",
-                      "reference_url": "https://scancode-licensedb.aboutcode.org/zlib",
-                      "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/zlib.LICENSE",
-                      "spdx_license_key": "Zlib",
-                      "spdx_url": "https://spdx.org/licenses/Zlib"
-                    }
-                  ]
+                  "matched_text": ":type = zlib, :file = LICENSE.txt"
                 },
                 {
                   "score": 100.0,
@@ -382,32 +324,7 @@
                   "license_expression": "zlib",
                   "rule_identifier": "zlib.LICENSE",
                   "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/zlib.LICENSE",
-                  "referenced_filenames": [],
-                  "is_license_text": true,
-                  "is_license_notice": false,
-                  "is_license_reference": false,
-                  "is_license_tag": false,
-                  "is_license_intro": false,
-                  "rule_length": 132,
-                  "rule_relevance": 100,
-                  "matched_text": "This software is provided 'as-is', without any express or \nimplied warranty. In no event will the authors be held liable \nfor any damages arising from the use of this software.\n\nPermission is granted to anyone to use this software for any \npurpose, including commercial applications, and to alter it and \nredistribute it freely, subject to the following restrictions:\n\n1. The origin of this software must not be misrepresented; you \n   must not claim that you wrote the original software. If you use \n   this software in a product, an acknowledgment in the product \n   documentation would be appreciated but is not required.\n\n2. Altered source versions must be plainly marked as such, and \n   must not be misrepresented as being the original software.\n\n3. This notice may not be removed or altered from any source \n   distribution.",
-                  "licenses": [
-                    {
-                      "key": "zlib",
-                      "name": "ZLIB License",
-                      "short_name": "ZLIB License",
-                      "category": "Permissive",
-                      "is_exception": false,
-                      "is_unknown": false,
-                      "owner": "zlib",
-                      "homepage_url": "http://www.zlib.net/",
-                      "text_url": "http://www.gzip.org/zlib/zlib_license.html",
-                      "reference_url": "https://scancode-licensedb.aboutcode.org/zlib",
-                      "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/zlib.LICENSE",
-                      "spdx_license_key": "Zlib",
-                      "spdx_url": "https://spdx.org/licenses/Zlib"
-                    }
-                  ]
+                  "matched_text": "This software is provided 'as-is', without any express or \nimplied warranty. In no event will the authors be held liable \nfor any damages arising from the use of this software.\n\nPermission is granted to anyone to use this software for any \npurpose, including commercial applications, and to alter it and \nredistribute it freely, subject to the following restrictions:\n\n1. The origin of this software must not be misrepresented; you \n   must not claim that you wrote the original software. If you use \n   this software in a product, an acknowledgment in the product \n   documentation would be appreciated but is not required.\n\n2. Altered source versions must be plainly marked as such, and \n   must not be misrepresented as being the original software.\n\n3. This notice may not be removed or altered from any source \n   distribution."
                 }
               ]
             }
@@ -430,6 +347,48 @@
       ],
       "for_packages": [
         "pkg:cocoapods/nanopb@1.30905.0?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
+      "detected_license_expression": "zlib",
+      "detected_license_expression_spdx": "Zlib",
+      "license_detections": [
+        {
+          "license_expression": "zlib",
+          "detection_log": [
+            "unknown-reference-to-local-file"
+          ],
+          "matches": [
+            {
+              "score": 100.0,
+              "start_line": 14,
+              "end_line": 14,
+              "matched_length": 5,
+              "match_coverage": 100.0,
+              "matcher": "2-aho",
+              "license_expression": "zlib",
+              "rule_identifier": "zlib_in_manifest.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/zlib_in_manifest.RULE",
+              "matched_text": "type => 'zlib', :file => 'LICENSE.txt' }"
+            },
+            {
+              "score": 100.0,
+              "start_line": 3,
+              "end_line": 20,
+              "matched_length": 132,
+              "match_coverage": 100.0,
+              "matcher": "2-aho",
+              "license_expression": "zlib",
+              "rule_identifier": "zlib.LICENSE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/zlib.LICENSE",
+              "matched_text": "This software is provided 'as-is', without any express or \nimplied warranty. In no event will the authors be held liable \nfor any damages arising from the use of this software.\n\nPermission is granted to anyone to use this software for any \npurpose, including commercial applications, and to alter it and \nredistribute it freely, subject to the following restrictions:\n\n1. The origin of this software must not be misrepresented; you \n   must not claim that you wrote the original software. If you use \n   this software in a product, an acknowledgment in the product \n   documentation would be appreciated but is not required.\n\n2. Altered source versions must be plainly marked as such, and \n   must not be misrepresented as being the original software.\n\n3. This notice may not be removed or altered from any source \n   distribution."
+            }
+          ]
+        }
+      ],
+      "license_clues": [],
+      "percentage_of_license_text": 2.49,
+      "for_license_detections": [
+        "zlib-750cc90c-1587-3743-f22a-e2ff2e95e077",
+        "zlib-9aa78722-757b-e59f-3862-ef714530eedc"
       ],
       "scan_errors": []
     }

@@ -47,7 +47,7 @@ class Tallies(PostScanPlugin):
     """
     Compute tallies for license, copyright and other scans at the codebase level
     """
-    sort_order = 10
+    sort_order = 15
 
     codebase_attributes = dict(tallies=attr.ib(default=attr.Factory(dict)))
 

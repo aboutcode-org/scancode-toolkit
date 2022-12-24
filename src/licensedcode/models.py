@@ -33,6 +33,7 @@ from commoncode.fileutils import resource_iter
 from licensedcode import MIN_MATCH_HIGH_LENGTH
 from licensedcode import MIN_MATCH_LENGTH
 from licensedcode import SMALL_RULE
+from licensedcode.cache import get_index
 from licensedcode.frontmatter import SaneYAMLHandler
 from licensedcode.frontmatter import FrontmatterPost
 from licensedcode.frontmatter import dumps_frontmatter
@@ -45,6 +46,8 @@ from licensedcode.tokenize import index_tokenizer_with_stopwords
 from licensedcode.tokenize import key_phrase_tokenizer
 from licensedcode.tokenize import KEY_PHRASE_OPEN
 from licensedcode.tokenize import KEY_PHRASE_CLOSE
+from scancode.api import SCANCODE_LICENSE_RULE_URL
+from scancode.api import SCANCODE_RULE_URL
 
 """
 Reference License and license Rule structures persisted as a combo of a YAML
@@ -1568,6 +1571,18 @@ class BasicRule:
             'position is using the magic -1 key.')
     )
 
+    @property
+    def rule_url(self):
+        if 'spdx-license-identifier' in self.identifier:
+            return None
+        elif self.identifier == 'package-manifest-unknown':
+            return None
+        elif self.is_from_license:
+            return SCANCODE_LICENSE_RULE_URL.format(self.identifier)
+        else:
+            return SCANCODE_RULE_URL.format(self.identifier)
+
+
     def rule_file(
         self,
         rules_data_dir=rules_data_dir,
@@ -1762,6 +1777,24 @@ class BasicRule:
     def get_min_high_matched_length(self, unique=False):
         return (self.min_high_matched_length_unique if unique
                 else self.min_high_matched_length)
+
+    def get_reference_data(self):
+
+        data = {}
+
+        data['license_expression'] = self.license_expression
+        data['rule_identifier'] = self.identifier
+        data['rule_url'] = self.rule_url
+        data['referenced_filenames'] = self.referenced_filenames
+        data['is_license_text'] = self.is_license_text
+        data['is_license_notice'] = self.is_license_notice
+        data['is_license_reference'] = self.is_license_reference
+        data['is_license_tag'] = self.is_license_tag
+        data['is_license_intro'] = self.is_license_intro
+        data['rule_length'] = self.length
+        data['rule_relevance'] = self.relevance
+
+        return data
 
     def to_dict(self, include_text=False):
         """
@@ -2189,6 +2222,24 @@ class Rule(BasicRule):
             self.relevance = computed_relevance
 
 
+def get_rule_object_from_match(license_match_mapping):
+    rule_identifier = license_match_mapping["rule_identifier"]
+    if 'spdx-license-identifier' in rule_identifier:
+        return SpdxRule(
+            license_expression=license_match_mapping["license_expression"],
+            text=license_match_mapping.get("matched_text", None),
+            length=license_match_mapping["matched_length"],
+        )
+    elif rule_identifier == 'package-manifest-unknown':
+        return UnDetectedRule(
+            license_expression=license_match_mapping["license_expression"],
+            text=license_match_mapping.get("matched_text", None),
+            length=license_match_mapping["matched_length"],
+        )
+    else:
+        return get_index().rules_by_id[rule_identifier]
+
+
 def compute_relevance(length):
     """
     Return a computed ``relevance`` given a ``length`` and a threshold.
@@ -2404,6 +2455,35 @@ class UnknownRule(Rule):
         an MD5 checksum of the text, but that's an implementation detail)
         """
         return hashlib.md5(self.text.encode('utf-8')).hexdigest()
+
+
+@attr.s(slots=True, repr=False)
+class UnDetectedRule(Rule):
+    """
+    A specialized rule object that is used for the special case of extracted
+    license statements without any valid license detection.
+
+    Since there is a license where there is a non empty extracted license
+    statement (typically found in a package manifest), if there is no license
+    detected by scancode, it would be incorrect to not point out that there
+    is a license (though undetected).
+    """
+
+    def __attrs_post_init__(self, *args, **kwargs):
+        self.identifier = 'package-manifest-' + self.license_expression
+        expression = self.licensing.parse(self.license_expression)
+        self.license_expression = expression.render()
+        self.license_expression_object = expression
+        self.is_license_tag = True
+        self.is_small = False
+        self.relevance = 100
+        self.has_stored_relevance = True
+
+    def load(self):
+        raise NotImplementedError
+
+    def dump(self):
+        raise NotImplementedError
 
 
 def _print_rule_stats():

@@ -1,4 +1,54 @@
 {
+  "license_detections": [
+    {
+      "identifier": "example_installed_1-061a0995-e68e-f37e-b163-25a2ec85db12",
+      "license_expression": "example-installed-1",
+      "count": 1,
+      "detection_log": [
+        "not-combined"
+      ],
+      "matches": [
+        {
+          "score": 100.0,
+          "start_line": 1,
+          "end_line": 1,
+          "matched_length": 11,
+          "match_coverage": 100.0,
+          "matcher": "1-hash",
+          "license_expression": "example-installed-1",
+          "rule_identifier": "example-installed-1.LICENSE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/example-installed-1.LICENSE"
+        }
+      ]
+    }
+  ],
+  "license_references": [
+    {
+      "key": "example-installed-1",
+      "short_name": "Example Installed License 1",
+      "name": "Example Installed License 1",
+      "category": "Permissive",
+      "owner": "NexB",
+      "spdx_license_key": "scancode-example-installed1",
+      "text": "This is a test license that must be installed into ScanCode Toolkit."
+    }
+  ],
+  "license_rule_references": [
+    {
+      "rule_identifier": "example-installed-1.LICENSE",
+      "license_expression": "example-installed-1",
+      "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/example-installed-1.LICENSE",
+      "rule_relevance": 100,
+      "rule_length": 11,
+      "is_license_text": true,
+      "is_license_notice": false,
+      "is_license_reference": false,
+      "is_license_tag": false,
+      "is_license_intro": false,
+      "referenced_filenames": [],
+      "rule_text": "This is a test license that must be installed into ScanCode Toolkit."
+    }
+  ],
   "files": [
     {
       "path": "additional_license_plugin_test.txt",
@@ -22,31 +72,6 @@
               "license_expression": "example-installed-1",
               "rule_identifier": "example-installed-1.LICENSE",
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/example-installed-1.LICENSE",
-              "referenced_filenames": [],
-              "is_license_text": true,
-              "is_license_notice": false,
-              "is_license_reference": false,
-              "is_license_tag": false,
-              "is_license_intro": false,
-              "rule_length": 11,
-              "rule_relevance": 100,
-              "licenses": [
-                {
-                  "key": "example-installed-1",
-                  "name": "Example Installed License 1",
-                  "short_name": "Example Installed License 1",
-                  "category": "Permissive",
-                  "is_exception": false,
-                  "is_unknown": false,
-                  "owner": "NexB",
-                  "homepage_url": null,
-                  "text_url": "",
-                  "reference_url": "https://scancode-licensedb.aboutcode.org/example-installed-1",
-                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/example-installed-1.LICENSE",
-                  "spdx_license_key": "scancode-example-installed1",
-                  "spdx_url": "https://spdx.org/licenses/scancode-example-installed1"
-                }
-              ],
               "is_builtin": false
             }
           ]
@@ -54,6 +79,9 @@
       ],
       "license_clues": [],
       "percentage_of_license_text": 100.0,
+      "for_license_detections": [
+        "example_installed_1-061a0995-e68e-f37e-b163-25a2ec85db12"
+      ],
       "scan_errors": []
     }
   ]
