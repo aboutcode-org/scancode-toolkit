@@ -1,6 +1,4 @@
 license_expressions:
-  - unknown-license-reference
-  - libutil-david-nugent
   - bsd-simplified
 notes: |
   License test derived from a file of the BSD-licensed repository at:
