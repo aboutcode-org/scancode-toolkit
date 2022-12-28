@@ -268,10 +268,10 @@ def make_test(license_test, unknown_detection=False, regen=REGEN_TEST_FIXTURES):
 
     return closure_test_function
 
-
 # A small legalese to use in tests. This must be a sorted mapping of common
 # license-specific words aka. legalese as {token: id}
 # see legalese.py on how to re-create and update this mapping
+
 
 mini_legalese = {
     'accordance': 0,
@@ -315,7 +315,6 @@ mini_legalese = {
     'warranties': 38,
     'warranty': 39
 }
-
 
 
 def query_run_tokens_with_unknowns(query_run):

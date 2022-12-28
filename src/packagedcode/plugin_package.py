@@ -170,7 +170,7 @@ class PackageScanner(ScanPlugin):
         # this is performed before top level packages creation
         for resource in codebase.walk(topdown=False):
             if not hasattr(resource, 'license_detections'):
-                no_licenses=True
+                no_licenses = True
 
             # If we don't detect license in package_data but there is license detected in file
             # we add the license expression from the file to a package
@@ -197,7 +197,7 @@ class PackageScanner(ScanPlugin):
         create_package_and_deps(codebase, strip_root=strip_root, **kwargs)
 
         if not no_licenses:
-            # This step is dependent on top level packages 
+            # This step is dependent on top level packages
             for resource in codebase.walk(topdown=False):
                 # If there is a unknown reference to a package we add the license
                 # from the package license detection

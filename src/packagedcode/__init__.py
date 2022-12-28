@@ -228,9 +228,9 @@ if on_linux:
         win_reg.InstalledProgramFromDockerUtilityvmSoftwareHandler,
     ]
 
-ALL_DATAFILE_HANDLERS= (
+ALL_DATAFILE_HANDLERS = (
     APPLICATION_PACKAGE_DATAFILE_HANDLERS + [
-        p for p in SYSTEM_PACKAGE_DATAFILE_HANDLERS 
+        p for p in SYSTEM_PACKAGE_DATAFILE_HANDLERS
         if p not in APPLICATION_PACKAGE_DATAFILE_HANDLERS
     ]
 )

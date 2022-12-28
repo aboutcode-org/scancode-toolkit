@@ -1137,7 +1137,7 @@ def get_declared_license(metainfo):
     license_classifiers, _ = get_classifiers(metainfo)
     if license_classifiers:
         declared_license['classifiers'] = license_classifiers
-    
+
     if not declared_license:
         declared_license = None
 

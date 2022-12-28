@@ -298,7 +298,7 @@ RPM_TAG_HANDLER_BY_NAME = {
     'Sha1header': name_value_str_handler('sha1'),
     'Url': name_value_str_handler('homepage_url'),
     'License': name_value_str_handler('extracted_license_statement'),
-    'Arch':  arch_handler,
+    'Arch': arch_handler,
     'Size': size_handler,
 
     # TODO:

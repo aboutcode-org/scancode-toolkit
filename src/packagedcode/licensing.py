@@ -175,13 +175,13 @@ def add_referenced_license_detection_from_package(resource, codebase, no_license
     codebase_packages = codebase.attributes.packages
 
     modified = False
- 
+
     for license_detection_mapping in license_detection_mappings:
 
         license_detection_object = LicenseDetectionFromResult.from_license_detection_mapping(
             license_detection_mapping=license_detection_mapping,
             file_path=resource.path,
-        )       
+        )
         detection_modified = False
         license_match_mappings = license_detection_mapping["matches"]
         referenced_filenames = get_referenced_filenames(license_matches=license_detection_object.matches)
@@ -309,7 +309,7 @@ def add_license_from_sibling_file(resource, codebase, no_licenses):
 def is_legal_or_readme(resource):
     """
     Return True if `resource` is a legal (like LICENSE/COPYING) or README file, otherwise
-    return False. 
+    return False.
     """
     is_legal = check_resource_name_start_and_end(resource=resource, STARTS_ENDS=LEGAL_STARTS_ENDS)
     is_readme = check_resource_name_start_and_end(resource=resource, STARTS_ENDS=README_STARTS_ENDS)
@@ -359,7 +359,7 @@ def get_license_detections_from_sibling_file(resource, codebase, no_licenses):
     license_expression = get_license_expression_from_detection_mappings(
         detections=license_detections,
         valid_expression=False,
-    ) 
+    )
     return license_detections, license_expression
 
 
@@ -384,7 +384,7 @@ def get_license_detection_mappings(
     )
 
     for detection in detections:
-        #TODO: also return these?
+        # TODO: also return these?
         if detection.license_expression is None:
             continue
 
@@ -506,7 +506,7 @@ def get_license_expression_from_detection_mappings(
                 continue
 
         expressions.append(detection["license_expression"])
-    
+
     return str(
         combine_expressions(expressions, relation=relation, unique=unique)
     )
@@ -637,7 +637,7 @@ def is_declared_license_not_fully_matched(matches):
 
     if not declared_license_is_fully_matched and not all_matches_have_full_coverage:
         return True
-    
+
     return False
 
 
@@ -695,7 +695,7 @@ def get_normalized_license_detections(
             )
             if TRACE:
                 logger_debug(f'get_normalized_license_detections: dict:')
-    
+
     elif isinstance(extracted_license, list):
 
         for extracted_license_item in extracted_license:
@@ -726,10 +726,10 @@ def get_normalized_license_detections(
 
                     if detections:
                         license_detections.extend(detections)
-            
+
             else:
                 extracted_license_statement = repr(extracted_license_item)
-                
+
                 detections = get_license_detections_for_extracted_license_statement(
                     extracted_license_statement=extracted_license_statement,
                     try_as_expression=try_as_expression,
@@ -809,7 +809,7 @@ def get_license_detections_for_extracted_license_statement(
     """
     if not extracted_license_statement:
         return []
-    
+
     if not isinstance(extracted_license_statement, str):
         extracted_license_statement = repr(extracted_license_statement)
 
@@ -832,7 +832,7 @@ def get_license_detections_for_extracted_license_statement(
         if not matches:
             return []
 
-    license_detections = get_license_detections_from_matches(matches) 
+    license_detections = get_license_detections_from_matches(matches)
 
     if matched_as_expression:
         return license_detections

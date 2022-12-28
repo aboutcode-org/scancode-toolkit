@@ -59,6 +59,7 @@ TRACE = os.environ.get('SCANCODE_DEBUG_PACKAGE', False)
 def logger_debug(*args):
     pass
 
+
 logger = logging.getLogger(__name__)
 
 if TRACE:
@@ -185,7 +186,7 @@ class DebianLicenseFields:
             license_expression_keys = list(set(
                 _licensing.license_keys(combined_license_expression)
             ))
-            
+
         else:
             # We cannot get primary license from Unstructured debian copyright files
             # or Structured files without a header/primary-license paragraph,
@@ -379,7 +380,7 @@ class DebianDetector:
         PackageData.declared_license.
         """
         raise NotImplementedError
-    
+
     def get_license_detections_mapping(self):
         """
         Return a list of packagedcode.detection LicenseDetection objects
@@ -496,7 +497,7 @@ class UnstructuredCopyrightProcessor(DebianDetector):
 
         self.license_matches = license_matches
         return license_matches
-    
+
     def get_license_detections_mapping(self):
         """
         Return a list of packagedcode.detection LicenseDetection objects
@@ -504,7 +505,7 @@ class UnstructuredCopyrightProcessor(DebianDetector):
         """
         if not self.license_matches:
             return []
-        
+
         license_detections = get_license_detections_from_matches(
             matches=self.license_matches
         )
@@ -640,7 +641,7 @@ class StructuredCopyrightProcessor(DebianDetector):
                     expressions.append(ld.license_expression_object)
                     has_primary_license = True
                     primary_debian_license_detections.append(ld)
-        
+
         if not expressions:
             return
 
@@ -666,7 +667,6 @@ class StructuredCopyrightProcessor(DebianDetector):
         )
 
         self.primary_license_detections = detections_mapping
-
 
     def get_declared_license(
         self,

@@ -1241,8 +1241,8 @@ package_handlers_by_field_name = {
 
     # For example: A:x86_64
     # 'arch' in .PKGINFO and APKBUILD
-    'A':  A_arch_handler,
-    'arch':  A_arch_handler,
+    'A': A_arch_handler,
+    'arch': A_arch_handler,
 
     # Compressed package size in bytes.
     # For example: S:507134
@@ -1260,8 +1260,8 @@ package_handlers_by_field_name = {
     # name of the source package
     # For example: o:apk-tools
     # 'origin' in .PKGINFO and APKBUILD
-    'o':  o_source_package_handler,
-    'origin':  o_source_package_handler,
+    'o': o_source_package_handler,
+    'origin': o_source_package_handler,
 
     # c is the sha1 "id" for the git commit in
     # https://git.alpinelinux.org/aports
@@ -1634,12 +1634,12 @@ DECLARED_TO_SPDX = {
 
     'custom:xiph': 'bsd-3-clause',
     # seen in ttf-libertine
-    'gpl and custom:ofl':  '(gpl-2.0 with font-exception-2.0) or ofl-1.1',
+    'gpl and custom:ofl': '(gpl-2.0 with font-exception-2.0) or ofl-1.1',
 
     'none': 'licenseref-scancode-unknown',
     # this is sometimes a IJG jpeg license and sometime an unknown/mitish license
     # as in https://github.com/tdtrask/lua-subprocess
-    'as-is':  'licenseref-scancode-unknown-license-reference',
+    'as-is': 'licenseref-scancode-unknown-license-reference',
 
     # all recent versions are now MIT.
     # the happy license is otherwise licenseref-scancode-visual-idiot

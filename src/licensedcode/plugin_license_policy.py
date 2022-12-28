@@ -28,16 +28,16 @@ TRACE = os.environ.get('SCANCODE_DEBUG_LICENSE_POLICY', False)
 def logger_debug(*args):
     pass
 
+
 if TRACE:
-    
+
     logger = logging.getLogger(__name__)
-    
-    
+
     import sys
-    
+
     logging.basicConfig(stream=sys.stdout)
     logger.setLevel(logging.DEBUG)
-    
+
     def logger_debug(*args):
         return logger.debug(' '.join(isinstance(a, str) and a or repr(a) for a in args))
 

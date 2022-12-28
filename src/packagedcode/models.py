@@ -857,6 +857,7 @@ def _rehydrate_list(cls, values):
     for val in values:
         yield cls.from_dict(val)
 
+
 def add_to_package(package_uid, resource, codebase):
     """
     Append `package_uid` to `resource.for_packages`, if the attribute exists and

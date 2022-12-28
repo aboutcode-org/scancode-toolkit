@@ -32,9 +32,9 @@ class BasePhpComposerHandler(models.DatafileHandler):
         )
 
         if resource.has_parent():
-            dir_resource=resource.parent(codebase)
+            dir_resource = resource.parent(codebase)
         else:
-            dir_resource=resource
+            dir_resource = resource
 
         yield from cls.assemble_from_many_datafiles(
             datafile_name_patterns=datafile_name_patterns,

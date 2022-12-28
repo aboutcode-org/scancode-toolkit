@@ -243,7 +243,7 @@ def get_consolidated_packages(codebase):
             package_root = package.get_package_root(resource, codebase)
             package_root.extra_data['package_root'] = True
             package_root.save(codebase)
-            is_build_file = isinstance(package,     )
+            is_build_file = isinstance(package,)
             package_resources = list(package.get_package_resources(package_root, codebase))
             package_license_expression = package.declared_license_expression
             package_copyright = package.copyright
