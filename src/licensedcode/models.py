@@ -876,10 +876,6 @@ def get_rules_from_multiple_dirs(
     return combined_rules
 
 
-class InvalidLicense(Exception):
-    pass
-
-
 def validate_additional_license_data(additional_directories, scancode_license_dir):
     """
     Raises an exception if there are any invalid licenses in the directories of
