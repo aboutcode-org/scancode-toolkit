@@ -21,7 +21,7 @@ Matching strategy using hashes to match a whole text chunk at once.
 # Set to True to enable debug tracing
 TRACE = False
 
-if TRACE :
+if TRACE:
     import logging
     import sys
 

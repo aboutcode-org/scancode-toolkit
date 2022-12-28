@@ -56,6 +56,7 @@ if TRACE:
     def logger_debug(*args):
         return logger.debug(' '.join(isinstance(a, str) and a or repr(a) for a in args))
 
+
 @scan_impl
 class LicenseScanner(ScanPlugin):
     """
@@ -391,8 +392,8 @@ def add_referenced_license_matches_for_detections(resource, codebase):
         referenced_filenames = get_referenced_filenames(license_detection_object.matches)
 
         if not referenced_filenames:
-            continue 
-        
+            continue
+
         for referenced_filename in referenced_filenames:
             referenced_resource = find_referenced_resource(
                 referenced_filename=referenced_filename,

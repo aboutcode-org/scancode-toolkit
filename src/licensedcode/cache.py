@@ -50,7 +50,7 @@ class LicenseCache:
     spdx_symbols = attribute(help='mapping of LicenseSymbol objects by SPDX key')
     unknown_spdx_symbol = attribute(help='LicenseSymbol object')
     additional_license_directory = attribute(help='Path to an additional license directory used in the license detection')
-    additional_license_plugins  = attribute(help='Path to additional license plugins used in the license detection')
+    additional_license_plugins = attribute(help='Path to additional license plugins used in the license detection')
 
     @staticmethod
     def load_or_build(

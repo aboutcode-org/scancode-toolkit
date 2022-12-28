@@ -36,7 +36,6 @@ from licensedcode.query import Query
 from licensedcode.query import LINES_THRESHOLD
 from licensedcode.licenses_reference import extract_license_rules_reference_data
 
-
 """
 LicenseDetection data structure and processing.
 
@@ -48,6 +47,7 @@ TRACE = os.environ.get('SCANCODE_DEBUG_LICENSE_DETECTION', False)
 
 TRACE_ANALYSIS = False
 TRACE_IS_FUNCTIONS = False
+
 
 def logger_debug(*args):
     pass
@@ -69,7 +69,6 @@ if (
     def logger_debug(*args):
         return logger.debug(' '.join(isinstance(a, str) and a or repr(a) for a in args))
 
-
 MATCHER_UNDETECTED = '5-undetected'
 
 # All values of match_coverage less than this value then they are not considered
@@ -80,7 +79,7 @@ IMPERFECT_MATCH_COVERAGE_THR = 100
 CLUES_MATCH_COVERAGE_THR = 60
 
 # False positives to spurious and gibberish texts are found usually later in the file
-# and matched to relatively short rules 
+# and matched to relatively short rules
 # Threshold Value of start line after which a match to likely be a false positive
 FALSE_POSITIVE_START_LINE_THRESHOLD = 1000
 
@@ -122,7 +121,7 @@ class DetectionRule(Enum):
     LICENSE_CLUES = 'license-clues'
     FALSE_POSITIVE = 'possible-false-positive'
     NOT_LICENSE_CLUES = 'not-license-clues-as-more-detections-present'
-    UNKNOWN_REFERENCE_TO_LOCAL_FILE = 'unknown-reference-to-local-file' 
+    UNKNOWN_REFERENCE_TO_LOCAL_FILE = 'unknown-reference-to-local-file'
     UNKNOWN_INTRO_FOLLOWED_BY_MATCH = 'unknown-intro-followed-by-match'
     UNKNOWN_REFERENCE_IN_FILE_TO_PACKAGE = 'unknown-reference-in-file-to-package'
     UNKNOWN_REFERENCE_IN_FILE_TO_NONEXISTENT_PACKAGE = 'unknown-reference-in-file-to-nonexistent-package'
@@ -244,7 +243,7 @@ class LicenseDetection:
         # All the matches in a file or in a LicenseDetection point to the
         # same query
         return self.matches[0].query
-    
+
     @property
     def qspans(self):
         return [match.qspan for match in self.matches]
@@ -297,7 +296,7 @@ class LicenseDetection:
         Returns start and end line for a license detection issue, from the
         license match(es).
         """
-        if isinstance(self.matches[0], dict): 
+        if isinstance(self.matches[0], dict):
             start_line = min([match['start_line'] for match in self.matches])
             end_line = max([match['end_line'] for match in self.matches])
         else:
@@ -416,9 +415,9 @@ class LicenseDetection:
         matched_tokens_length = len(Span().union(*qspans))
         query_tokens_length = self.query.tokens_length(with_unknown=True)
         return round((matched_tokens_length / query_tokens_length) * 100, 2)
-    
+
     def to_dict(
-        self, 
+        self,
         include_text=False,
         license_text_diagnostics=False,
         whole_lines=True,
@@ -426,6 +425,7 @@ class LicenseDetection:
         """
         Return a mapping for LicenseDetection objects.
         """
+
         def dict_fields(attr, value):
             if attr.name == 'file_region':
                 return False
@@ -447,7 +447,6 @@ class LicenseDetection:
         detection["matches"] = data_matches
 
         return detection
-
 
 
 @attr.s
@@ -644,7 +643,7 @@ def matches_from_license_match_mappings(license_match_mappings):
 
 def mappings_from_license_match_objects(license_matches):
     """
-    Return a list of LicenseMatch mappings from a list of 
+    Return a list of LicenseMatch mappings from a list of
     LicenseMatch/LicenseMatchFromResult objects after removing
     the reference data.
     """
@@ -707,6 +706,7 @@ class UniqueDetection:
         return unique_license_detections
 
     def to_dict(self):
+
         def dict_fields(attr, value):
             if attr.name == 'files':
                 return False
@@ -788,6 +788,7 @@ def is_match_coverage_less_than_threshold(license_matches, threshold, any_matche
         for license_match in license_matches
     )
 
+
 def calculate_query_coverage_coefficient(license_match):
     """
     Calculates and returns an integer `query_coverage_coefficient` value
@@ -864,7 +865,7 @@ def is_false_positive(license_matches, package_license=False):
 
     if is_single_match and is_gpl_bare:
         return True
-    
+
     if is_gpl and all_match_rule_length_one:
         return True
 
@@ -942,7 +943,7 @@ def has_unknown_intro_before_detection(license_matches):
         if has_unknown_intro:
             if not is_match_coverage_less_than_threshold(
                 [match], IMPERFECT_MATCH_COVERAGE_THR
-            ) and not has_unknown_matches([match]): 
+            ) and not has_unknown_matches([match]):
                 has_unknown_intro_before_detection = True
                 return has_unknown_intro_before_detection
 
@@ -1023,7 +1024,7 @@ def has_references_to_local_files(license_matches):
     )
 
 
-def get_detected_license_expression(analysis, license_match_objects=None, license_match_mappings=None,  post_scan=False):
+def get_detected_license_expression(analysis, license_match_objects=None, license_match_mappings=None, post_scan=False):
     """
     Return a tuple of (detection_log, combined_expression) by combining a `matches` list of
     LicenseMatch objects according to the `analysis` string.
@@ -1199,7 +1200,7 @@ def get_matches_from_detections(license_detections):
 
     for detection in license_detections:
         license_matches.extend(detection.matches)
-    
+
     return license_matches
 
 
@@ -1214,7 +1215,7 @@ def get_matches_from_detection_mappings(license_detections):
 
     for detection in license_detections:
         license_matches.extend(detection["matches"])
-    
+
     return license_matches
 
 
@@ -1270,7 +1271,7 @@ def analyze_detection(license_matches, package_license=False):
     # matches with `unknown` rule identifiers
     elif has_unknown_matches(license_matches=license_matches):
         return DetectionCategory.UNKNOWN_MATCH.value
-    
+
     elif is_license_clues(license_matches=license_matches):
         return DetectionCategory.LICENSE_CLUES.value
 
@@ -1353,10 +1354,10 @@ def find_referenced_resource(referenced_filename, resource, codebase, **kwargs):
     """
     Return a Resource matching the ``referenced_filename`` path or filename
     given a ``resource`` in ``codebase``.
-    
+
     Return None if the ``referenced_filename`` cannot be found in the same
     directory as the base ``resource``, or at the codebase ``root``.
-    
+
     ``referenced_filename`` is the path or filename referenced in a
     LicenseMatch detected at ``resource``,
     """

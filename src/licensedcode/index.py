@@ -191,7 +191,7 @@ class LicenseIndex(object):
         # Note: all the following are mappings-like (using lists) of
         # rid-> data are lists of data where the index is the rule id.
 
-        # mapping of rule identifiers -> rule objects 
+        # mapping of rule identifiers -> rule objects
         self.rules_by_id = {}
 
         # maping-like of rule_id -> rule objects proper
@@ -1199,7 +1199,7 @@ def get_weak_rids(len_legalese, tids_by_rid, _idx):
             continue
         weak_rids_add(rid)
 
-    if TRACE :
+    if TRACE:
         for rid in sorted(weak_rids):
             rule = _idx.rules_by_rid[rid]
             message = (

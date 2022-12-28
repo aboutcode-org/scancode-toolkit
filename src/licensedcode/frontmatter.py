@@ -9,11 +9,9 @@ version 1.0.0, to only support nexB/saneyaml instead of pure YAML.
 license: mit. See frontmatter.ABOUT file for details.
 """
 
-
 import codecs
 import saneyaml
 import re
-
 
 DEFAULT_POST_TEMPLATE = """\
 {start_delimiter}
@@ -139,7 +137,7 @@ def load_frontmatter(fd, encoding="utf-8", **defaults):
     else:
         with codecs.open(fd, "r", encoding) as f:
             text = f.read()
-    
+
     text = return_unicode(text, encoding)
     return parse_frontmatter(text, encoding, **defaults)
 

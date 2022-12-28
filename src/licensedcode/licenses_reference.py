@@ -90,7 +90,7 @@ def populate_license_references(codebase):
         license_licexp = getattr(resource, 'detected_license_expression')
         if license_licexp:
             licexps.append(license_licexp)
-        
+
         if has_packages:
             package_data = getattr(resource, 'package_data', []) or []
             package_licexps = [
