@@ -32,7 +32,6 @@ from commoncode.fileutils import resource_iter
 from licensedcode import MIN_MATCH_HIGH_LENGTH
 from licensedcode import MIN_MATCH_LENGTH
 from licensedcode import SMALL_RULE
-from licensedcode.cache import get_index
 from licensedcode.frontmatter import dumps_frontmatter
 from licensedcode.frontmatter import load_frontmatter
 from licensedcode.languages import LANG_INFO as known_languages
@@ -2275,6 +2274,7 @@ def get_rule_object_from_match(license_match_mapping):
             length=length,
         )
     else:
+        from licensedcode.cache import get_index
         return get_index().rules_by_id[rule_identifier]
 
 
