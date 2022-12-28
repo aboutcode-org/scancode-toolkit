@@ -1647,7 +1647,7 @@ DECLARED_TO_SPDX = {
 
     # "with" mishaps
     'gpl-2.0 with classpath': 'gpl-2.0 with classpath-exception-2.0',
-    'gpl-2.0-only with openssl-exception': 'x11vnc-openssl-exception',
+    'gpl-2.0-only with openssl-exception': 'pl-2.0-only with licenseref-scancode-openssl-exception-gpl-2.0',
     'gpl-2.0-or-later with openssl-exception': 'gpl-2.0-or-later with licenseref-scancode-openssl-exception-gpl-2.0-plus',
 
     'gpl-3.0-only with openssl-exception': 'gpl-3.0-only with licenseref-scancode-openssl-exception-gpl-3.0-plus',
