@@ -8,7 +8,6 @@
 #
 
 import hashlib
-import io
 import os
 import sys
 import traceback
@@ -20,8 +19,8 @@ from os.path import abspath
 from os.path import dirname
 from os.path import exists
 from os.path import join
-from time import time
 from pathlib import Path
+from time import time
 
 import attr
 from license_expression import ExpressionError
