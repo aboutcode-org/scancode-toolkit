@@ -55,19 +55,19 @@ def logger_debug(*args):
 
 logger = logging.getLogger(__name__)
 
+if TRACE:
 
-if (
-    TRACE
-    or TRACE_ANALYSIS
-    or TRACE_IS_FUNCTIONS
-):
-    import sys
+    if (
+        TRACE
+        or TRACE_ANALYSIS
+        or TRACE_IS_FUNCTIONS
+    ):
 
-    logging.basicConfig(stream=sys.stdout)
-    logger.setLevel(logging.DEBUG)
+        logging.basicConfig(stream=sys.stdout)
+        logger.setLevel(logging.DEBUG)
 
-    def logger_debug(*args):
-        return logger.debug(' '.join(isinstance(a, str) and a or repr(a) for a in args))
+        def logger_debug(*args):
+            return logger.debug(' '.join(isinstance(a, str) and a or repr(a) for a in args))
 
 MATCHER_UNDETECTED = '5-undetected'
 
@@ -410,7 +410,6 @@ class LicenseDetection:
         Here qspans is a list of all individual qspans corresponding
         to the LicenseDetections for the file.
         """
-        from licensedcode.spans import Span
 
         matched_tokens_length = len(Span().union(*qspans))
         query_tokens_length = self.query.tokens_length(with_unknown=True)
