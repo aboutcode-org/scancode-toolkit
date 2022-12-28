@@ -63,7 +63,6 @@ def logger_debug(*args):
 logger = logging.getLogger(__name__)
 
 if TRACE:
-    import sys
     logging.basicConfig(stream=sys.stdout)
     logger.setLevel(logging.DEBUG)
 
@@ -674,7 +673,7 @@ class PythonSetupPyHandler(BaseExtractedPythonLayout):
             description=get_description(setup_args),
             parties=get_setup_parties(setup_args),
             extracted_license_statement=get_declared_license(setup_args),
-            dependencies=get_setup_py_dependencies(setup_args),
+            dependencies=dependencies,
             keywords=get_keywords(setup_args),
             extra_data=extra_data,
             **urls,
@@ -724,7 +723,6 @@ class SetupCfgHandler(BaseExtractedPythonLayout):
 
     @classmethod
     def parse(cls, location):
-        file_name = fileutils.file_name(location)
 
         metadata = {}
         parser = ConfigParser()
