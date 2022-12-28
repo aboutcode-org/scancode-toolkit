@@ -28,7 +28,6 @@ def logger_debug(*args):
 logger = logging.getLogger(__name__)
 
 if TRACE:
-    import sys
     logging.basicConfig(stream=sys.stdout)
     logger.setLevel(logging.DEBUG)
 
@@ -145,9 +144,9 @@ SPDX_LICENSE_URL = 'https://spdx.org/licenses/{}'
 DEJACODE_LICENSE_URL = 'https://enterprise.dejacode.com/urn/urn:dje:license:{}'
 SCANCODE_LICENSEDB_URL = 'https://scancode-licensedb.aboutcode.org/{}'
 SCANCODE_DATA_BASE_URL = 'https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data'
-SCANCODE_LICENSE_URL = SCANCODE_DATA_BASE_URL + '/licenses/{}.LICENSE'
-SCANCODE_LICENSE_RULE_URL = SCANCODE_DATA_BASE_URL + '/licenses/{}'
-SCANCODE_RULE_URL = SCANCODE_DATA_BASE_URL + '/rules/{}'
+SCANCODE_LICENSE_URL = f'{SCANCODE_DATA_BASE_URL}/licenses/{{}}.LICENSE'
+SCANCODE_LICENSE_RULE_URL = f'{SCANCODE_DATA_BASE_URL}/licenses/{{}}'
+SCANCODE_RULE_URL = f'{SCANCODE_DATA_BASE_URL}/rules/{{}}'
 
 def get_licenses(
     location,
