@@ -823,7 +823,6 @@ def load_licenses_from_multiple_dirs(
     ``additional_license_data_dirs`` containing additional licenses with the
     builtin ``builtin_license_data_dir`` licenses into the same mapping.
     """
-    #raise Exception(builtin_license_data_dir)
     combined_licenses = load_licenses(
         licenses_data_dir=builtin_license_data_dir,
         with_deprecated=with_deprecated,
@@ -1598,7 +1597,6 @@ class BasicRule:
         else:
             return SCANCODE_RULE_URL.format(self.identifier)
 
-
     def rule_file(
         self,
         rules_data_dir=rules_data_dir,
@@ -1609,13 +1607,10 @@ class BasicRule:
         given the `rules_data_dir` directory or `licenses_data_dir`
         if a license rule.
         """
-        rule_file_base_name = file_base_name(self.identifier)
-        rule_file_name = f'{rule_file_base_name}.RULE'
-
         if self.is_from_license:
-            return join(licenses_data_dir, rule_file_name)
+            return join(licenses_data_dir, self.identifier)
         else:
-            return join(rules_data_dir, rule_file_name)
+            return join(rules_data_dir, self.identifier)
 
     def __attrs_post_init__(self, *args, **kwargs):
         self.setup()
@@ -1925,6 +1920,7 @@ class Rule(BasicRule):
     """
     A detection rule object with support for data and text files.
     """
+
     @property
     def unique_id(self):
         return self.compute_unique_id()
@@ -2019,7 +2015,6 @@ class Rule(BasicRule):
             text = self.text
         return hashlib.md5(text.encode('utf-8')).hexdigest()
 
-
     def load_data(self, rule_file):
         """
         Load data from ``rule_file`` which has both the text and the data (as YAML forntmatter).
@@ -2031,7 +2026,7 @@ class Rule(BasicRule):
                     f'Invalid synthetic rule without text: {self}: {self.text!r}')
             return self
 
-        if not rule_file :
+        if not rule_file:
             raise InvalidRule(
                 f'Cannot load rule without its corresponding rule_file: '
                 f'{self}: file://{rule_file}')
@@ -2262,9 +2257,9 @@ def get_rule_object_from_match(license_match_mapping):
     Return a rehydrated Rule object from a `license_match_mapping`
     LicenseMatch mapping.
     """
-    license_expression=license_match_mapping["license_expression"]
-    text=license_match_mapping.get("matched_text", None)
-    length=license_match_mapping["matched_length"]
+    license_expression = license_match_mapping["license_expression"]
+    text = license_match_mapping.get("matched_text", None)
+    length = license_match_mapping["matched_length"]
     rule_identifier = license_match_mapping["rule_identifier"]
     if 'spdx-license-identifier' in rule_identifier:
         return SpdxRule(
@@ -2429,8 +2424,29 @@ def compute_thresholds_unique(
     return min_matched_length_unique, min_high_matched_length_unique
 
 
+class SynthethicRule(Rule):
+    """
+    A specialized rule subclass for synthethic rules generated at runtime.
+    They do not have backing files.
+    """
+
+    def load(self):
+        raise NotImplementedError
+
+    def dump(self):
+        raise NotImplementedError
+
+    def rule_file(
+        self,
+        rules_data_dir=rules_data_dir,
+        licenses_data_dir=licenses_data_dir,
+    ):
+        # synthetic rules have no file
+        return ""
+
+
 @attr.s(slots=True, repr=False)
-class SpdxRule(Rule):
+class SpdxRule(SynthethicRule):
     """
     A specialized rule object that is used for the special case of SPDX license
     expressions.
@@ -2454,18 +2470,12 @@ class SpdxRule(Rule):
         self.has_stored_relevance = True
         self.is_synthetic = True
 
-    def load(self):
-        raise NotImplementedError
-
-    def dump(self):
-        raise NotImplementedError
-
 
 UNKNOWN_LICENSE_KEY = 'unknown'
 
 
 @attr.s(slots=True, repr=False)
-class UnknownRule(Rule):
+class UnknownRule(SynthethicRule):
     """
     A specialized rule object that is used for the special case of unknown
     license detection.
@@ -2491,15 +2501,9 @@ class UnknownRule(Rule):
         # called only for it's side effects
         self.tokens()
 
-    def load(self):
-        raise NotImplementedError
-
-    def dump(self):
-        raise NotImplementedError
-
 
 @attr.s(slots=True, repr=False)
-class UnDetectedRule(Rule):
+class UnDetectedRule(SynthethicRule):
     """
     A specialized rule object that is used for the special case of extracted
     license statements without any valid license detection.
@@ -2519,12 +2523,6 @@ class UnDetectedRule(Rule):
         self.is_small = False
         self.relevance = 100
         self.has_stored_relevance = True
-
-    def load(self):
-        raise NotImplementedError
-
-    def dump(self):
-        raise NotImplementedError
 
 
 def _print_rule_stats():
