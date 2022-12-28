@@ -2000,14 +2000,12 @@ class Rule(BasicRule):
 
     def compute_unique_id(self):
         """
-        Return a a unique id string based on this rule content. (Today this is
-        an SHA1 checksum of the text, but that's an implementation detail)
+        Return a a unique id string based on this rule content. 
+        (Today this is an SHA1 checksum of the identifierm expression and text,
+        but this is an implementation detail)
         """
-        if not self.text:
-            text = "None"
-        else:
-            text = self.text
-        return sha1(text.encode('utf-8')).hexdigest()
+        content = f'{self.identifier!r}{self.license_expression!r}{self.text!r}'
+        return sha1(content.encode('utf-8')).hexdigest()
 
     def load_data(self, rule_file):
         """
