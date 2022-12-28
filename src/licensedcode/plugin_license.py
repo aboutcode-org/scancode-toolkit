@@ -19,9 +19,9 @@ from commoncode.cliutils import SCAN_OPTIONS_GROUP
 from commoncode.cliutils import MISC_GROUP
 from plugincode.scan import ScanPlugin
 from plugincode.scan import scan_impl
+
 from license_expression import Licensing
 from licensedcode.cache import build_spdx_license_expression, get_cache
-from licensedcode.detection import DetectionCategory
 from licensedcode.detection import find_referenced_resource
 from licensedcode.detection import get_detected_license_expression
 from licensedcode.detection import get_matches_from_detection_mappings
