@@ -8,6 +8,8 @@
 
 import binascii
 import hashlib
+import sys
+from functools import partial
 
 from commoncode.codec import bin_to_num
 from commoncode.codec import urlsafe_b64encode
@@ -51,12 +53,21 @@ def _hash_mod(bitsize, hmodule):
     return hasher
 
 
+# for FIPS support
+sys_v0 = sys.version_info[0]
+sys_v1 = sys.version_info[1]
+if sys_v0 == 3 and sys_v1 >= 9:
+    md5_hasher = partial(hashlib.md5, usedforsecurity=False)
+else:
+    md5_hasher = hashlib.md5
+
+
 # Base hashers for each bit size
 _hashmodules_by_bitsize = {
     # md5-based
-    32: _hash_mod(32, hashlib.md5),
-    64: _hash_mod(64, hashlib.md5),
-    128: _hash_mod(128, hashlib.md5),
+    32: _hash_mod(32, md5_hasher),
+    64: _hash_mod(64, md5_hasher),
+    128: _hash_mod(128, md5_hasher),
     # sha-based
     160: _hash_mod(160, hashlib.sha1),
     256: _hash_mod(256, hashlib.sha256),
