@@ -7,12 +7,12 @@
 # See https://aboutcode.org for more information about nexB OSS projects.
 #
 
-import hashlib
 import os
 import sys
 import traceback
 from collections import Counter
 from collections import defaultdict
+from hashlib import sha1
 from itertools import chain
 from operator import itemgetter
 from os.path import abspath
@@ -2001,13 +2001,13 @@ class Rule(BasicRule):
     def compute_unique_id(self):
         """
         Return a a unique id string based on this rule content. (Today this is
-        an MD5 checksum of the text, but that's an implementation detail)
+        an SHA1 checksum of the text, but that's an implementation detail)
         """
         if not self.text:
             text = "None"
         else:
             text = self.text
-        return hashlib.md5(text.encode('utf-8')).hexdigest()
+        return sha1(text.encode('utf-8')).hexdigest()
 
     def load_data(self, rule_file):
         """

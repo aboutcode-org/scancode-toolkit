@@ -11,9 +11,9 @@ import posixpath
 import sys
 import os
 import logging
-import hashlib
 import uuid
 from enum import Enum
+from hashlib import sha1
 from collections import Counter
 
 import attr
@@ -278,7 +278,7 @@ class LicenseDetection:
 
         # Return a uuid generated from the contents of the matches
         identifier_string = repr(tuple(data))
-        md_hash = hashlib.md5()
+        md_hash = sha1()
         md_hash.update(identifier_string.encode('utf-8'))
         return str(uuid.UUID(md_hash.hexdigest()))
 

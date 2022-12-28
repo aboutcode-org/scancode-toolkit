@@ -8,7 +8,7 @@
 #
 
 from array import array
-from hashlib import md5
+from hashlib import sha1
 
 
 from licensedcode.match import LicenseMatch
@@ -46,7 +46,7 @@ def tokens_hash(tokens):
     Return a digest binary string computed from a sequence of numeric token ids.
     """
     as_bytes = array('h', tokens).tobytes()
-    return md5(as_bytes).digest()
+    return sha1(as_bytes).digest()
 
 
 def index_hash(rule_tokens):
