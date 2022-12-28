@@ -7,7 +7,6 @@
 # See https://aboutcode.org for more information about nexB OSS projects.
 #
 
-import logging
 import os
 import uuid
 from fnmatch import fnmatchcase
@@ -131,7 +130,6 @@ def logger_debug(*args):
 logger = logging.getLogger(__name__)
 
 if TRACE or TRACE_UPDATE:
-    import sys
     logging.basicConfig(stream=sys.stdout)
     logger.setLevel(logging.DEBUG)
 
