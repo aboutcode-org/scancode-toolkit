@@ -8,8 +8,6 @@
 # See https://aboutcode.org for more information about nexB OSS projects.
 #
 
-import io
-
 import attr
 import click
 import saneyaml
