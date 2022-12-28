@@ -11,6 +11,7 @@ import hashlib
 import json
 import os
 import logging
+import sys
 from functools import partial
 
 import saneyaml
@@ -37,7 +38,6 @@ def logger_debug(*args):
 logger = logging.getLogger(__name__)
 
 if TRACE:
-    import sys
     logging.basicConfig(stream=sys.stdout)
     logger.setLevel(logging.DEBUG)
 
