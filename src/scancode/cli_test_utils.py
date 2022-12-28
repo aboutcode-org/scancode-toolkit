@@ -388,7 +388,7 @@ def streamline_jsonlines_scan(scan_result, remove_file_date=False):
             streamline_scanned_file(scanned_file, remove_file_date)
 
 
-def check_json2(expected, results, regen=REGEN_TEST_FIXTURES):
+def check_json(expected, results, regen=REGEN_TEST_FIXTURES):
     """
     Assert if the results JSON file is the same as the expected JSON file.
     """
