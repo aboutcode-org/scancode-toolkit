@@ -3,14 +3,10 @@ key: checkmk
 short_name: Checkmk License
 name: Checkmk License
 category: Permissive
-owner: Unspecified
+owner: libcheck
 spdx_license_key: checkmk
 other_urls:
     - https://github.com/libcheck/check/blob/master/checkmk/checkmk.in
-ignorable_copyrights:
-    - Copyright (c) 2006, 2010 Micah Cowan
-ignorable_holders:
-    - Micah Cowan
 ---
 Redistribution of this program in any form, with or without
 modifications, is permitted, provided that the above copyright is
