@@ -6,16 +6,16 @@
 # See https://github.com/nexB/scancode-toolkit for support or download.
 # See https://aboutcode.org for more information about nexB OSS projects.
 
-from debian_inspector.copyright import CopyrightFilesParagraph
-from debian_inspector.copyright import CopyrightHeaderParagraph
-from debian_inspector.copyright import DebianCopyright
-from license_expression import combine_expressions
 
 from commoncode.cliutils import PluggableCommandLineOption
 from commoncode.cliutils import OUTPUT_GROUP
-from formattedcode import FileOptionType
+from debian_inspector.copyright import CopyrightFilesParagraph
+from debian_inspector.copyright import CopyrightHeaderParagraph
+from debian_inspector.copyright import DebianCopyright
 from plugincode.output import output_impl
 from plugincode.output import OutputPlugin
+
+from formattedcode import FileOptionType
 from licensedcode.detection import get_matches_from_detection_mappings
 from scancode import notice
 
