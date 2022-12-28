@@ -7,7 +7,6 @@
 # See https://aboutcode.org for more information about nexB OSS projects.
 #
 
-import json
 import os
 from unittest import TestCase as TestCaseClass
 

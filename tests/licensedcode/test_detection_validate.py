@@ -7,13 +7,11 @@
 # See https://aboutcode.org for more information about nexB OSS projects.
 #
 
-import os
 import unittest
 from pprint import pprint
 
 import pytest
 import saneyaml
-
 from commoncode.functional import flatten
 from commoncode import text
 
