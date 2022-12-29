@@ -4657,7 +4657,7 @@
   "dependencies": [],
   "license_detections": [
     {
-      "identifier": "gpl_2_0_plus-07d990a9-4b75-141e-1214-8f9a6baca3f6",
+      "identifier": "gpl_2_0_plus-53a26be2-1f88-01ec-d294-921768a513c9",
       "license_expression": "gpl-2.0-plus",
       "count": 21,
       "detection_log": [
@@ -4678,7 +4678,7 @@
       ]
     },
     {
-      "identifier": "gpl_2_0_plus_and_free_unknown-0667fcba-0434-a8b0-c381-d21e497f339e",
+      "identifier": "gpl_2_0_plus_and_free_unknown-7df72521-0609-4896-2583-44c45dd3f8e6",
       "license_expression": "gpl-2.0-plus AND free-unknown",
       "count": 1,
       "detection_log": [
@@ -4710,7 +4710,7 @@
       ]
     },
     {
-      "identifier": "bsd_new-5e7cf470-62b4-d7f2-403b-32e360af9959",
+      "identifier": "bsd_new-008266ae-6939-ad31-3617-228b0809863c",
       "license_expression": "bsd-new",
       "count": 1,
       "detection_log": [
@@ -4731,7 +4731,7 @@
       ]
     },
     {
-      "identifier": "apache_2_0_and_gpl_2_0_plus_and_free_unknown-8f13c053-ee2e-fbc9-00bd-94342ccaca54",
+      "identifier": "apache_2_0_and_gpl_2_0_plus_and_free_unknown-946c0f58-eac9-675a-5434-c266108a0fe5",
       "license_expression": "apache-2.0 AND gpl-2.0-plus AND free-unknown",
       "count": 1,
       "detection_log": [
@@ -4774,7 +4774,7 @@
       ]
     },
     {
-      "identifier": "lgpl_3_0_plus-436a53e8-cee5-a1a3-1a63-23f72b7ecff8",
+      "identifier": "lgpl_3_0_plus-4c8d95b2-1acf-7a81-473c-d8e70962288c",
       "license_expression": "lgpl-3.0-plus",
       "count": 1,
       "detection_log": [
@@ -4795,7 +4795,7 @@
       ]
     },
     {
-      "identifier": "public_domain-bd9559dd-d998-d270-8750-8a6673b7e089",
+      "identifier": "public_domain-1a6a4f2c-bd92-9942-920f-be3d0c2bbda6",
       "license_expression": "public-domain",
       "count": 1,
       "detection_log": [
@@ -4817,7 +4817,7 @@
       ]
     },
     {
-      "identifier": "gpl_2_0_plus-5b77229a-4d7f-8d90-8406-e2f0bbefad2f",
+      "identifier": "gpl_2_0_plus-fed2dc38-09ac-103e-1b86-4a4f5c00614a",
       "license_expression": "gpl-2.0-plus",
       "count": 1,
       "detection_log": [
@@ -4839,7 +4839,7 @@
       ]
     },
     {
-      "identifier": "mit-c653439c-e276-d2c2-c877-f4cf44461425",
+      "identifier": "mit-1f9f2ae8-7020-0a13-7934-461c752929a4",
       "license_expression": "mit",
       "count": 3,
       "detection_log": [
@@ -4861,7 +4861,7 @@
       ]
     },
     {
-      "identifier": "bsd_original-98ef120f-3326-ab2a-1549-8e606ef5d913",
+      "identifier": "bsd_original-9198bafe-47c0-f9dc-5ef1-bd276a69786e",
       "license_expression": "bsd-original",
       "count": 1,
       "detection_log": [
@@ -4882,7 +4882,7 @@
       ]
     },
     {
-      "identifier": "gpl_2_0_plus_and_gpl_3_0_plus_and_lgpl_2_1_plus_and_lgpl_3_0_plus_and_bsd_new_and_bsd_original_and_mit_and_public_domain_and_other_permissive-3f66e975-1f1b-f709-e7a9-03ce0158276e",
+      "identifier": "gpl_2_0_plus_and_gpl_3_0_plus_and_lgpl_2_1_plus_and_lgpl_3_0_plus_and_bsd_new_and_bsd_original_and_mit_and_public_domain_and_other_permissive-9e2a213a-3fc4-9ee3-8e3f-783829530b14",
       "license_expression": "gpl-2.0-plus AND gpl-3.0-plus AND lgpl-2.1-plus AND lgpl-3.0-plus AND bsd-new AND bsd-original AND mit AND public-domain AND other-permissive",
       "count": 1,
       "detection_log": [
@@ -5134,7 +5134,7 @@
       ]
     },
     {
-      "identifier": "gpl_2_0_plus-7a7f220c-2737-f01f-ae6d-996a8265fe35",
+      "identifier": "gpl_2_0_plus-227f50b1-f05e-5b3b-b107-ae1e2f56448b",
       "license_expression": "gpl-2.0-plus",
       "count": 22,
       "detection_log": [
@@ -5155,7 +5155,7 @@
       ]
     },
     {
-      "identifier": "bsd_simplified-6d9cdb91-f72a-e66d-131a-5df68f4b8dbe",
+      "identifier": "bsd_simplified-2383ae10-5494-e069-46c2-e2d6cb56951f",
       "license_expression": "bsd-simplified",
       "count": 1,
       "detection_log": [
@@ -5176,7 +5176,7 @@
       ]
     },
     {
-      "identifier": "lgpl_3_0-96ffe1b7-0393-b4ce-7307-8ea9f7b6a926",
+      "identifier": "lgpl_3_0-6b4a45da-85cc-8eb0-5613-be81d4efd6a5",
       "license_expression": "lgpl-3.0",
       "count": 1,
       "detection_log": [
@@ -5198,7 +5198,7 @@
       ]
     },
     {
-      "identifier": "mit_and_other_permissive-2fcd3356-800d-11d7-c648-c983d7089c6f",
+      "identifier": "mit_and_other_permissive-907b56d6-95b9-e85c-83c0-efd967c7e30a",
       "license_expression": "mit AND other-permissive",
       "count": 1,
       "detection_log": [
@@ -5231,7 +5231,7 @@
       ]
     },
     {
-      "identifier": "public_domain_and_bsd_original_and_gpl_1_0_plus-97b7b447-cbd8-46bc-d573-acd1c32c3e4d",
+      "identifier": "public_domain_and_bsd_original_and_gpl_1_0_plus-ccb73883-974d-42eb-d572-39fa7bf22f4c",
       "license_expression": "public-domain AND bsd-original AND gpl-1.0-plus",
       "count": 1,
       "detection_log": [
@@ -5275,7 +5275,7 @@
       ]
     },
     {
-      "identifier": "none-36666984-5064-88c2-90a6-dc14744d84f0",
+      "identifier": "none-3c39742c-edef-82b7-0cdd-fc4d9ff8b044",
       "license_expression": null,
       "count": 1,
       "detection_log": [
@@ -5296,7 +5296,7 @@
       ]
     },
     {
-      "identifier": "free_unknown-142f3261-5728-9933-74c7-7e8aa278ff6d",
+      "identifier": "free_unknown-fddf748a-9953-bc6c-cb9d-91001840e335",
       "license_expression": "free-unknown",
       "count": 1,
       "detection_log": [
@@ -5317,7 +5317,7 @@
       ]
     },
     {
-      "identifier": "free_unknown-b311c6a4-90ca-420f-ddb7-53c164b9bf65",
+      "identifier": "free_unknown-34d6195a-6206-be2e-4bd2-ce3b9493a1ad",
       "license_expression": "free-unknown",
       "count": 1,
       "detection_log": [
@@ -6487,7 +6487,7 @@
       ],
       "percentage_of_license_text": 10.53,
       "for_license_detections": [
-        "none-36666984-5064-88c2-90a6-dc14744d84f0"
+        "none-3c39742c-edef-82b7-0cdd-fc4d9ff8b044"
       ],
       "scan_errors": []
     },
@@ -13590,38 +13590,38 @@
       "license_clues": [],
       "percentage_of_license_text": 11.24,
       "for_license_detections": [
-        "gpl_2_0_plus-07d990a9-4b75-141e-1214-8f9a6baca3f6",
-        "gpl_2_0_plus-07d990a9-4b75-141e-1214-8f9a6baca3f6",
-        "gpl_2_0_plus-07d990a9-4b75-141e-1214-8f9a6baca3f6",
-        "gpl_2_0_plus-07d990a9-4b75-141e-1214-8f9a6baca3f6",
-        "gpl_2_0_plus-07d990a9-4b75-141e-1214-8f9a6baca3f6",
-        "gpl_2_0_plus-07d990a9-4b75-141e-1214-8f9a6baca3f6",
-        "gpl_2_0_plus-07d990a9-4b75-141e-1214-8f9a6baca3f6",
-        "gpl_2_0_plus-07d990a9-4b75-141e-1214-8f9a6baca3f6",
-        "gpl_2_0_plus-07d990a9-4b75-141e-1214-8f9a6baca3f6",
-        "gpl_2_0_plus-07d990a9-4b75-141e-1214-8f9a6baca3f6",
-        "gpl_2_0_plus-07d990a9-4b75-141e-1214-8f9a6baca3f6",
-        "gpl_2_0_plus-07d990a9-4b75-141e-1214-8f9a6baca3f6",
-        "gpl_2_0_plus-07d990a9-4b75-141e-1214-8f9a6baca3f6",
-        "gpl_2_0_plus-07d990a9-4b75-141e-1214-8f9a6baca3f6",
-        "gpl_2_0_plus-07d990a9-4b75-141e-1214-8f9a6baca3f6",
-        "gpl_2_0_plus-07d990a9-4b75-141e-1214-8f9a6baca3f6",
-        "gpl_2_0_plus-07d990a9-4b75-141e-1214-8f9a6baca3f6",
-        "gpl_2_0_plus-07d990a9-4b75-141e-1214-8f9a6baca3f6",
-        "gpl_2_0_plus-07d990a9-4b75-141e-1214-8f9a6baca3f6",
-        "gpl_2_0_plus-07d990a9-4b75-141e-1214-8f9a6baca3f6",
-        "gpl_2_0_plus-07d990a9-4b75-141e-1214-8f9a6baca3f6",
-        "gpl_2_0_plus_and_free_unknown-0667fcba-0434-a8b0-c381-d21e497f339e",
-        "bsd_new-5e7cf470-62b4-d7f2-403b-32e360af9959",
-        "apache_2_0_and_gpl_2_0_plus_and_free_unknown-8f13c053-ee2e-fbc9-00bd-94342ccaca54",
-        "lgpl_3_0_plus-436a53e8-cee5-a1a3-1a63-23f72b7ecff8",
-        "public_domain-bd9559dd-d998-d270-8750-8a6673b7e089",
-        "gpl_2_0_plus-5b77229a-4d7f-8d90-8406-e2f0bbefad2f",
-        "mit-c653439c-e276-d2c2-c877-f4cf44461425",
-        "mit-c653439c-e276-d2c2-c877-f4cf44461425",
-        "mit-c653439c-e276-d2c2-c877-f4cf44461425",
-        "bsd_original-98ef120f-3326-ab2a-1549-8e606ef5d913",
-        "gpl_2_0_plus_and_gpl_3_0_plus_and_lgpl_2_1_plus_and_lgpl_3_0_plus_and_bsd_new_and_bsd_original_and_mit_and_public_domain_and_other_permissive-3f66e975-1f1b-f709-e7a9-03ce0158276e"
+        "gpl_2_0_plus-53a26be2-1f88-01ec-d294-921768a513c9",
+        "gpl_2_0_plus-53a26be2-1f88-01ec-d294-921768a513c9",
+        "gpl_2_0_plus-53a26be2-1f88-01ec-d294-921768a513c9",
+        "gpl_2_0_plus-53a26be2-1f88-01ec-d294-921768a513c9",
+        "gpl_2_0_plus-53a26be2-1f88-01ec-d294-921768a513c9",
+        "gpl_2_0_plus-53a26be2-1f88-01ec-d294-921768a513c9",
+        "gpl_2_0_plus-53a26be2-1f88-01ec-d294-921768a513c9",
+        "gpl_2_0_plus-53a26be2-1f88-01ec-d294-921768a513c9",
+        "gpl_2_0_plus-53a26be2-1f88-01ec-d294-921768a513c9",
+        "gpl_2_0_plus-53a26be2-1f88-01ec-d294-921768a513c9",
+        "gpl_2_0_plus-53a26be2-1f88-01ec-d294-921768a513c9",
+        "gpl_2_0_plus-53a26be2-1f88-01ec-d294-921768a513c9",
+        "gpl_2_0_plus-53a26be2-1f88-01ec-d294-921768a513c9",
+        "gpl_2_0_plus-53a26be2-1f88-01ec-d294-921768a513c9",
+        "gpl_2_0_plus-53a26be2-1f88-01ec-d294-921768a513c9",
+        "gpl_2_0_plus-53a26be2-1f88-01ec-d294-921768a513c9",
+        "gpl_2_0_plus-53a26be2-1f88-01ec-d294-921768a513c9",
+        "gpl_2_0_plus-53a26be2-1f88-01ec-d294-921768a513c9",
+        "gpl_2_0_plus-53a26be2-1f88-01ec-d294-921768a513c9",
+        "gpl_2_0_plus-53a26be2-1f88-01ec-d294-921768a513c9",
+        "gpl_2_0_plus-53a26be2-1f88-01ec-d294-921768a513c9",
+        "gpl_2_0_plus_and_free_unknown-7df72521-0609-4896-2583-44c45dd3f8e6",
+        "bsd_new-008266ae-6939-ad31-3617-228b0809863c",
+        "apache_2_0_and_gpl_2_0_plus_and_free_unknown-946c0f58-eac9-675a-5434-c266108a0fe5",
+        "lgpl_3_0_plus-4c8d95b2-1acf-7a81-473c-d8e70962288c",
+        "public_domain-1a6a4f2c-bd92-9942-920f-be3d0c2bbda6",
+        "gpl_2_0_plus-fed2dc38-09ac-103e-1b86-4a4f5c00614a",
+        "mit-1f9f2ae8-7020-0a13-7934-461c752929a4",
+        "mit-1f9f2ae8-7020-0a13-7934-461c752929a4",
+        "mit-1f9f2ae8-7020-0a13-7934-461c752929a4",
+        "bsd_original-9198bafe-47c0-f9dc-5ef1-bd276a69786e",
+        "gpl_2_0_plus_and_gpl_3_0_plus_and_lgpl_2_1_plus_and_lgpl_3_0_plus_and_bsd_new_and_bsd_original_and_mit_and_public_domain_and_other_permissive-9e2a213a-3fc4-9ee3-8e3f-783829530b14"
       ],
       "scan_errors": []
     },
@@ -14296,32 +14296,32 @@
       "license_clues": [],
       "percentage_of_license_text": 0.66,
       "for_license_detections": [
-        "gpl_2_0_plus-7a7f220c-2737-f01f-ae6d-996a8265fe35",
-        "gpl_2_0_plus-7a7f220c-2737-f01f-ae6d-996a8265fe35",
-        "gpl_2_0_plus-7a7f220c-2737-f01f-ae6d-996a8265fe35",
-        "gpl_2_0_plus-7a7f220c-2737-f01f-ae6d-996a8265fe35",
-        "gpl_2_0_plus-7a7f220c-2737-f01f-ae6d-996a8265fe35",
-        "gpl_2_0_plus-7a7f220c-2737-f01f-ae6d-996a8265fe35",
-        "gpl_2_0_plus-7a7f220c-2737-f01f-ae6d-996a8265fe35",
-        "gpl_2_0_plus-7a7f220c-2737-f01f-ae6d-996a8265fe35",
-        "gpl_2_0_plus-7a7f220c-2737-f01f-ae6d-996a8265fe35",
-        "gpl_2_0_plus-7a7f220c-2737-f01f-ae6d-996a8265fe35",
-        "gpl_2_0_plus-7a7f220c-2737-f01f-ae6d-996a8265fe35",
-        "gpl_2_0_plus-7a7f220c-2737-f01f-ae6d-996a8265fe35",
-        "gpl_2_0_plus-7a7f220c-2737-f01f-ae6d-996a8265fe35",
-        "gpl_2_0_plus-7a7f220c-2737-f01f-ae6d-996a8265fe35",
-        "gpl_2_0_plus-7a7f220c-2737-f01f-ae6d-996a8265fe35",
-        "gpl_2_0_plus-7a7f220c-2737-f01f-ae6d-996a8265fe35",
-        "gpl_2_0_plus-7a7f220c-2737-f01f-ae6d-996a8265fe35",
-        "gpl_2_0_plus-7a7f220c-2737-f01f-ae6d-996a8265fe35",
-        "gpl_2_0_plus-7a7f220c-2737-f01f-ae6d-996a8265fe35",
-        "gpl_2_0_plus-7a7f220c-2737-f01f-ae6d-996a8265fe35",
-        "gpl_2_0_plus-7a7f220c-2737-f01f-ae6d-996a8265fe35",
-        "gpl_2_0_plus-7a7f220c-2737-f01f-ae6d-996a8265fe35",
-        "bsd_simplified-6d9cdb91-f72a-e66d-131a-5df68f4b8dbe",
-        "lgpl_3_0-96ffe1b7-0393-b4ce-7307-8ea9f7b6a926",
-        "mit_and_other_permissive-2fcd3356-800d-11d7-c648-c983d7089c6f",
-        "public_domain_and_bsd_original_and_gpl_1_0_plus-97b7b447-cbd8-46bc-d573-acd1c32c3e4d"
+        "gpl_2_0_plus-227f50b1-f05e-5b3b-b107-ae1e2f56448b",
+        "gpl_2_0_plus-227f50b1-f05e-5b3b-b107-ae1e2f56448b",
+        "gpl_2_0_plus-227f50b1-f05e-5b3b-b107-ae1e2f56448b",
+        "gpl_2_0_plus-227f50b1-f05e-5b3b-b107-ae1e2f56448b",
+        "gpl_2_0_plus-227f50b1-f05e-5b3b-b107-ae1e2f56448b",
+        "gpl_2_0_plus-227f50b1-f05e-5b3b-b107-ae1e2f56448b",
+        "gpl_2_0_plus-227f50b1-f05e-5b3b-b107-ae1e2f56448b",
+        "gpl_2_0_plus-227f50b1-f05e-5b3b-b107-ae1e2f56448b",
+        "gpl_2_0_plus-227f50b1-f05e-5b3b-b107-ae1e2f56448b",
+        "gpl_2_0_plus-227f50b1-f05e-5b3b-b107-ae1e2f56448b",
+        "gpl_2_0_plus-227f50b1-f05e-5b3b-b107-ae1e2f56448b",
+        "gpl_2_0_plus-227f50b1-f05e-5b3b-b107-ae1e2f56448b",
+        "gpl_2_0_plus-227f50b1-f05e-5b3b-b107-ae1e2f56448b",
+        "gpl_2_0_plus-227f50b1-f05e-5b3b-b107-ae1e2f56448b",
+        "gpl_2_0_plus-227f50b1-f05e-5b3b-b107-ae1e2f56448b",
+        "gpl_2_0_plus-227f50b1-f05e-5b3b-b107-ae1e2f56448b",
+        "gpl_2_0_plus-227f50b1-f05e-5b3b-b107-ae1e2f56448b",
+        "gpl_2_0_plus-227f50b1-f05e-5b3b-b107-ae1e2f56448b",
+        "gpl_2_0_plus-227f50b1-f05e-5b3b-b107-ae1e2f56448b",
+        "gpl_2_0_plus-227f50b1-f05e-5b3b-b107-ae1e2f56448b",
+        "gpl_2_0_plus-227f50b1-f05e-5b3b-b107-ae1e2f56448b",
+        "gpl_2_0_plus-227f50b1-f05e-5b3b-b107-ae1e2f56448b",
+        "bsd_simplified-2383ae10-5494-e069-46c2-e2d6cb56951f",
+        "lgpl_3_0-6b4a45da-85cc-8eb0-5613-be81d4efd6a5",
+        "mit_and_other_permissive-907b56d6-95b9-e85c-83c0-efd967c7e30a",
+        "public_domain_and_bsd_original_and_gpl_1_0_plus-ccb73883-974d-42eb-d572-39fa7bf22f4c"
       ],
       "scan_errors": []
     },
@@ -14570,7 +14570,7 @@
       "license_clues": [],
       "percentage_of_license_text": 2.39,
       "for_license_detections": [
-        "free_unknown-142f3261-5728-9933-74c7-7e8aa278ff6d"
+        "free_unknown-fddf748a-9953-bc6c-cb9d-91001840e335"
       ],
       "scan_errors": []
     },
@@ -14706,7 +14706,7 @@
       "license_clues": [],
       "percentage_of_license_text": 2.48,
       "for_license_detections": [
-        "free_unknown-b311c6a4-90ca-420f-ddb7-53c164b9bf65"
+        "free_unknown-34d6195a-6206-be2e-4bd2-ce3b9493a1ad"
       ],
       "scan_errors": []
     },

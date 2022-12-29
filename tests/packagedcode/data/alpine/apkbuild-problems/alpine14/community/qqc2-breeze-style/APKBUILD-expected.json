@@ -38,7 +38,7 @@
           "match_coverage": 100.0,
           "matcher": "1-spdx-id",
           "license_expression": "kde-accepted-lgpl AND kfqf-accepted-gpl",
-          "rule_identifier": "spdx-license-identifier-kde-accepted-lgpl AND kfqf-accepted-gpl-d0ec8b57cee17feb6751fff23b1dcff2",
+          "rule_identifier": "spdx-license-identifier-kde-accepted-lgpl AND kfqf-accepted-gpl-fbcb1c170c12213a992402eeb799a8e7565423ef",
           "rule_url": null,
           "referenced_filenames": [],
           "is_license_text": false,

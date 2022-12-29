@@ -1,7 +1,7 @@
 {
   "license_detections": [
     {
-      "identifier": "mit_or_apache_2_0-672f6c77-3a8c-9aac-41cd-431086630d58",
+      "identifier": "mit_or_apache_2_0-9a015042-79f3-e2b4-2e4a-e64a8523e14d",
       "license_expression": "mit OR apache-2.0",
       "count": 1,
       "detection_log": [
@@ -22,7 +22,7 @@
       ]
     },
     {
-      "identifier": "apache_2_0_and__apache_2_0_or_mit-56399a0b-4bfa-003e-fbc1-8e5ee4560baf",
+      "identifier": "apache_2_0_and__apache_2_0_or_mit-cab65323-c0cc-679e-0bcd-58fd8352337c",
       "license_expression": "apache-2.0 AND (apache-2.0 OR mit)",
       "count": 1,
       "detection_log": [
@@ -54,7 +54,7 @@
       ]
     },
     {
-      "identifier": "apache_2_0-57eec209-3c1b-b197-2e0d-62a521c2130a",
+      "identifier": "apache_2_0-676b1cba-b1d4-ee14-a1c5-b483a997710a",
       "license_expression": "apache-2.0",
       "count": 1,
       "detection_log": [
@@ -75,7 +75,7 @@
       ]
     },
     {
-      "identifier": "mit-e60e2912-9996-f235-207c-8ce2b9e55eb9",
+      "identifier": "mit-f9eeac35-71f2-6963-05c0-cb8e2bbe7860",
       "license_expression": "mit",
       "count": 1,
       "detection_log": [
@@ -96,7 +96,7 @@
       ]
     },
     {
-      "identifier": "mit_or_apache_2_0__and_mit-8aaa1034-ec98-504f-3892-a067d346ca98",
+      "identifier": "mit_or_apache_2_0__and_mit-ece02aa9-cea5-a852-0b8c-e640cded568b",
       "license_expression": "(mit OR apache-2.0) AND mit",
       "count": 1,
       "detection_log": [
@@ -427,7 +427,7 @@
       "license_clues": [],
       "percentage_of_license_text": 81.11,
       "for_license_detections": [
-        "apache_2_0_and__apache_2_0_or_mit-56399a0b-4bfa-003e-fbc1-8e5ee4560baf"
+        "apache_2_0_and__apache_2_0_or_mit-cab65323-c0cc-679e-0bcd-58fd8352337c"
       ],
       "copyrights": [],
       "holders": [],
@@ -487,7 +487,7 @@
       "license_clues": [],
       "percentage_of_license_text": 1.76,
       "for_license_detections": [
-        "mit_or_apache_2_0-672f6c77-3a8c-9aac-41cd-431086630d58"
+        "mit_or_apache_2_0-9a015042-79f3-e2b4-2e4a-e64a8523e14d"
       ],
       "copyrights": [
         {
@@ -565,7 +565,7 @@
       "license_clues": [],
       "percentage_of_license_text": 100.0,
       "for_license_detections": [
-        "apache_2_0-57eec209-3c1b-b197-2e0d-62a521c2130a"
+        "apache_2_0-676b1cba-b1d4-ee14-a1c5-b483a997710a"
       ],
       "copyrights": [],
       "holders": [],
@@ -625,7 +625,7 @@
       "license_clues": [],
       "percentage_of_license_text": 92.0,
       "for_license_detections": [
-        "mit-e60e2912-9996-f235-207c-8ce2b9e55eb9"
+        "mit-f9eeac35-71f2-6963-05c0-cb8e2bbe7860"
       ],
       "copyrights": [
         {
@@ -724,7 +724,7 @@
       "license_clues": [],
       "percentage_of_license_text": 1.69,
       "for_license_detections": [
-        "mit_or_apache_2_0__and_mit-8aaa1034-ec98-504f-3892-a067d346ca98"
+        "mit_or_apache_2_0__and_mit-ece02aa9-cea5-a852-0b8c-e640cded568b"
       ],
       "copyrights": [],
       "holders": [],

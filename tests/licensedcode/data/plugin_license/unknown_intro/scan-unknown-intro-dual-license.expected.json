@@ -1,7 +1,7 @@
 {
   "license_detections": [
     {
-      "identifier": "wtfpl_2_0_and_mit-04db1ff4-743d-5e4b-c651-babe28ddd938",
+      "identifier": "wtfpl_2_0_and_mit-e5642b07-705c-9730-80ab-f5ed0565be28",
       "license_expression": "wtfpl-2.0 AND mit",
       "count": 1,
       "detection_log": [
@@ -222,7 +222,7 @@
       "license_clues": [],
       "percentage_of_license_text": 8.18,
       "for_license_detections": [
-        "wtfpl_2_0_and_mit-04db1ff4-743d-5e4b-c651-babe28ddd938"
+        "wtfpl_2_0_and_mit-e5642b07-705c-9730-80ab-f5ed0565be28"
       ],
       "scan_errors": []
     }

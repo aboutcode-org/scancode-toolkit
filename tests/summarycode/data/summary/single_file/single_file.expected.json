@@ -25,7 +25,7 @@
   "dependencies": [],
   "license_detections": [
     {
-      "identifier": "jetty-427d039d-8476-c119-f150-af365b19c42b",
+      "identifier": "jetty-1c16fe27-df47-d734-adac-9d7c6e561eae",
       "license_expression": "jetty",
       "count": 1,
       "detection_log": [
@@ -168,7 +168,7 @@
       "license_clues": [],
       "percentage_of_license_text": 100.0,
       "for_license_detections": [
-        "jetty-427d039d-8476-c119-f150-af365b19c42b"
+        "jetty-1c16fe27-df47-d734-adac-9d7c6e561eae"
       ],
       "copyrights": [
         {

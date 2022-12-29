@@ -53,7 +53,7 @@
               "match_coverage": 100.0,
               "matcher": "1-spdx-id",
               "license_expression": "mit",
-              "rule_identifier": "spdx-license-identifier-mit-7abc1a233092fc104c7af72a89c0829c",
+              "rule_identifier": "spdx-license-identifier-mit-a4db7113a36d8a7c3f72b0eab712d9e98d1ce6f7",
               "rule_url": null,
               "matched_text": "MIT"
             }
@@ -112,7 +112,7 @@
   ],
   "license_detections": [
     {
-      "identifier": "mit-a56e6f7d-76c6-b3b6-1dfa-7667ccf44fcc",
+      "identifier": "mit-4aff13e0-ac4a-3558-4596-1e3b9e4c7722",
       "license_expression": "mit",
       "count": 1,
       "detection_log": [
@@ -133,7 +133,7 @@
       ]
     },
     {
-      "identifier": "mit-ad74f4c8-2816-f055-5d78-c6eb1e5dd92c",
+      "identifier": "mit-0db787f9-9137-ac48-8965-6af727dc7ad0",
       "license_expression": "mit",
       "count": 1,
       "detection_log": [
@@ -148,7 +148,7 @@
           "match_coverage": 100.0,
           "matcher": "1-spdx-id",
           "license_expression": "mit",
-          "rule_identifier": "spdx-license-identifier-mit-7abc1a233092fc104c7af72a89c0829c",
+          "rule_identifier": "spdx-license-identifier-mit-a4db7113a36d8a7c3f72b0eab712d9e98d1ce6f7",
           "rule_url": null
         }
       ]
@@ -180,7 +180,7 @@
   ],
   "license_rule_references": [
     {
-      "rule_identifier": "spdx-license-identifier-mit-7abc1a233092fc104c7af72a89c0829c",
+      "rule_identifier": "spdx-license-identifier-mit-a4db7113a36d8a7c3f72b0eab712d9e98d1ce6f7",
       "license_expression": "mit",
       "rule_url": null,
       "rule_relevance": 100,
@@ -266,7 +266,7 @@
                   "match_coverage": 100.0,
                   "matcher": "1-spdx-id",
                   "license_expression": "mit",
-                  "rule_identifier": "spdx-license-identifier-mit-7abc1a233092fc104c7af72a89c0829c",
+                  "rule_identifier": "spdx-license-identifier-mit-a4db7113a36d8a7c3f72b0eab712d9e98d1ce6f7",
                   "rule_url": null,
                   "matched_text": "MIT"
                 }
@@ -339,8 +339,8 @@
       "license_clues": [],
       "percentage_of_license_text": 4.05,
       "for_license_detections": [
-        "mit-a56e6f7d-76c6-b3b6-1dfa-7667ccf44fcc",
-        "mit-ad74f4c8-2816-f055-5d78-c6eb1e5dd92c"
+        "mit-4aff13e0-ac4a-3558-4596-1e3b9e4c7722",
+        "mit-0db787f9-9137-ac48-8965-6af727dc7ad0"
       ],
       "scan_errors": []
     }

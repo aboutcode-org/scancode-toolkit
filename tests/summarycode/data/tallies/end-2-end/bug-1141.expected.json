@@ -3,7 +3,7 @@
   "dependencies": [],
   "license_detections": [
     {
-      "identifier": "gpl_3_0_plus-b3d7735f-90c4-2c5b-ff2d-2fe9f092cb2f",
+      "identifier": "gpl_3_0_plus-f0f1bf47-50b3-bc85-d902-c4d84d50c4fb",
       "license_expression": "gpl-3.0-plus",
       "count": 1,
       "detection_log": [
@@ -24,7 +24,7 @@
       ]
     },
     {
-      "identifier": "gpl_2_0_plus-e68d2a19-4f30-77b2-c51f-8f14b7a097d2",
+      "identifier": "gpl_2_0_plus-fb1703c8-ba4a-b814-3fec-c97177c09a7c",
       "license_expression": "gpl-2.0-plus",
       "count": 1,
       "detection_log": [
@@ -403,7 +403,7 @@
       "license_clues": [],
       "percentage_of_license_text": 100.0,
       "for_license_detections": [
-        "gpl_3_0_plus-b3d7735f-90c4-2c5b-ff2d-2fe9f092cb2f"
+        "gpl_3_0_plus-f0f1bf47-50b3-bc85-d902-c4d84d50c4fb"
       ],
       "copyrights": [],
       "holders": [],
@@ -634,7 +634,7 @@
       "license_clues": [],
       "percentage_of_license_text": 80.95,
       "for_license_detections": [
-        "gpl_2_0_plus-e68d2a19-4f30-77b2-c51f-8f14b7a097d2"
+        "gpl_2_0_plus-fb1703c8-ba4a-b814-3fec-c97177c09a7c"
       ],
       "copyrights": [
         {

@@ -1,7 +1,7 @@
 {
   "license_detections": [
     {
-      "identifier": "mit-e60e2912-9996-f235-207c-8ce2b9e55eb9",
+      "identifier": "mit-f9eeac35-71f2-6963-05c0-cb8e2bbe7860",
       "license_expression": "mit",
       "count": 2,
       "detection_log": [
@@ -22,7 +22,7 @@
       ]
     },
     {
-      "identifier": "mit-ad8a216c-f324-d61f-494c-f105455d2fee",
+      "identifier": "mit-d023e558-35f1-ef53-5625-5f585054dde4",
       "license_expression": "mit",
       "count": 1,
       "detection_log": [
@@ -43,7 +43,7 @@
       ]
     },
     {
-      "identifier": "gpl_2_0_plus-33346660-a436-c832-007e-8467861712ef",
+      "identifier": "gpl_2_0_plus-407ee63a-cd2b-4e4d-77fb-f2f0eb153564",
       "license_expression": "gpl-2.0-plus",
       "count": 1,
       "detection_log": [
@@ -58,7 +58,7 @@
           "match_coverage": 100.0,
           "matcher": "1-spdx-id",
           "license_expression": "gpl-2.0-plus",
-          "rule_identifier": "spdx-license-identifier-gpl-2.0-plus-5d436130663c1ea60449cadda9f6898c",
+          "rule_identifier": "spdx-license-identifier-gpl-2.0-plus-dc7318b1f379921b20b4e6321354b6b2602c5b75",
           "rule_url": null
         }
       ]
@@ -143,7 +143,7 @@
       "rule_text": "License: MIT"
     },
     {
-      "rule_identifier": "spdx-license-identifier-gpl-2.0-plus-5d436130663c1ea60449cadda9f6898c",
+      "rule_identifier": "spdx-license-identifier-gpl-2.0-plus-dc7318b1f379921b20b4e6321354b6b2602c5b75",
       "license_expression": "gpl-2.0-plus",
       "rule_url": null,
       "rule_relevance": 100,
@@ -253,7 +253,7 @@
       "license_clues": [],
       "percentage_of_license_text": 79.31,
       "for_license_detections": [
-        "mit-e60e2912-9996-f235-207c-8ce2b9e55eb9"
+        "mit-f9eeac35-71f2-6963-05c0-cb8e2bbe7860"
       ],
       "copyrights": [
         {
@@ -325,7 +325,7 @@
       "license_clues": [],
       "percentage_of_license_text": 64.4,
       "for_license_detections": [
-        "mit-e60e2912-9996-f235-207c-8ce2b9e55eb9"
+        "mit-f9eeac35-71f2-6963-05c0-cb8e2bbe7860"
       ],
       "copyrights": [
         {
@@ -397,7 +397,7 @@
       "license_clues": [],
       "percentage_of_license_text": 1.83,
       "for_license_detections": [
-        "mit-ad8a216c-f324-d61f-494c-f105455d2fee"
+        "mit-d023e558-35f1-ef53-5625-5f585054dde4"
       ],
       "copyrights": [],
       "holders": [],
@@ -454,7 +454,7 @@
               "match_coverage": 100.0,
               "matcher": "1-spdx-id",
               "license_expression": "gpl-2.0-plus",
-              "rule_identifier": "spdx-license-identifier-gpl-2.0-plus-5d436130663c1ea60449cadda9f6898c",
+              "rule_identifier": "spdx-license-identifier-gpl-2.0-plus-dc7318b1f379921b20b4e6321354b6b2602c5b75",
               "rule_url": null
             }
           ]
@@ -463,7 +463,7 @@
       "license_clues": [],
       "percentage_of_license_text": 100.0,
       "for_license_detections": [
-        "gpl_2_0_plus-33346660-a436-c832-007e-8467861712ef"
+        "gpl_2_0_plus-407ee63a-cd2b-4e4d-77fb-f2f0eb153564"
       ],
       "copyrights": [],
       "holders": [],

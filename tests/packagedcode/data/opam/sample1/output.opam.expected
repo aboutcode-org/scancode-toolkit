@@ -124,7 +124,7 @@
             "match_coverage": 100.0,
             "matcher": "1-spdx-id",
             "license_expression": "isc",
-            "rule_identifier": "spdx-license-identifier-isc-f48c9a83ad99c476b37967e89aa9d4f2",
+            "rule_identifier": "spdx-license-identifier-isc-4bea25eeb174eb370f134ccc1a50921b5feccba7",
             "rule_url": null,
             "referenced_filenames": [],
             "is_license_text": false,

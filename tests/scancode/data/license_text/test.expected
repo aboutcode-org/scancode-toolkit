@@ -1,7 +1,7 @@
 {
   "license_detections": [
     {
-      "identifier": "lgpl_2_1-8345fa95-5c7a-d7c4-5e2e-b99cb05b976f",
+      "identifier": "lgpl_2_1-f2c21ebe-b8c5-46cb-b594-01b504d178f0",
       "license_expression": "lgpl-2.1",
       "count": 1,
       "detection_log": [
@@ -104,7 +104,7 @@
       "license_clues": [],
       "percentage_of_license_text": 44.44,
       "for_license_detections": [
-        "lgpl_2_1-8345fa95-5c7a-d7c4-5e2e-b99cb05b976f"
+        "lgpl_2_1-f2c21ebe-b8c5-46cb-b594-01b504d178f0"
       ],
       "scan_errors": []
     }

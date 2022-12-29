@@ -1,7 +1,7 @@
 {
   "license_detections": [
     {
-      "identifier": "none-c356b4b4-d67f-a20e-2b27-6b846b248f17",
+      "identifier": "none-c0ea97eb-46c1-3f14-32fa-dba6cc1d3326",
       "license_expression": null,
       "count": 1,
       "detection_log": [
@@ -22,7 +22,7 @@
       ]
     },
     {
-      "identifier": "gpl_2_0_and_patent_disclaimer-7a8b2654-e2b3-da24-ce96-d08ca2d4d8c3",
+      "identifier": "gpl_2_0_and_patent_disclaimer-678028e8-022d-e622-af93-f2a9c0af83a1",
       "license_expression": "gpl-2.0 AND patent-disclaimer",
       "count": 1,
       "detection_log": [
@@ -142,7 +142,7 @@
       ],
       "percentage_of_license_text": 22.73,
       "for_license_detections": [
-        "none-c356b4b4-d67f-a20e-2b27-6b846b248f17"
+        "none-c0ea97eb-46c1-3f14-32fa-dba6cc1d3326"
       ],
       "scan_errors": []
     },
@@ -175,7 +175,7 @@
       "license_clues": [],
       "percentage_of_license_text": 95.36,
       "for_license_detections": [
-        "gpl_2_0_and_patent_disclaimer-7a8b2654-e2b3-da24-ce96-d08ca2d4d8c3"
+        "gpl_2_0_and_patent_disclaimer-678028e8-022d-e622-af93-f2a9c0af83a1"
       ],
       "scan_errors": []
     }

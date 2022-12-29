@@ -92,7 +92,7 @@
   "dependencies": [],
   "license_detections": [
     {
-      "identifier": "bsd_new-db0ced8a-d236-94c7-9e4d-e77c7bbebad9",
+      "identifier": "bsd_new-3b411c83-a312-46d5-4c43-375cee0b3b39",
       "license_expression": "bsd-new",
       "count": 1,
       "detection_log": [
@@ -124,7 +124,7 @@
       ]
     },
     {
-      "identifier": "bsd_new-8b191dea-30ee-8738-fab1-2c6dbb5d65c2",
+      "identifier": "bsd_new-f4e99f86-00ab-18d9-a65d-a3a12767dcf5",
       "license_expression": "bsd-new",
       "count": 2,
       "detection_log": [
@@ -324,8 +324,8 @@
       "license_clues": [],
       "percentage_of_license_text": 4.03,
       "for_license_detections": [
-        "bsd_new-8b191dea-30ee-8738-fab1-2c6dbb5d65c2",
-        "bsd_new-8b191dea-30ee-8738-fab1-2c6dbb5d65c2"
+        "bsd_new-f4e99f86-00ab-18d9-a65d-a3a12767dcf5",
+        "bsd_new-f4e99f86-00ab-18d9-a65d-a3a12767dcf5"
       ],
       "scan_errors": []
     },
@@ -375,7 +375,7 @@
       "license_clues": [],
       "percentage_of_license_text": 0.07,
       "for_license_detections": [
-        "bsd_new-db0ced8a-d236-94c7-9e4d-e77c7bbebad9"
+        "bsd_new-3b411c83-a312-46d5-4c43-375cee0b3b39"
       ],
       "scan_errors": []
     }

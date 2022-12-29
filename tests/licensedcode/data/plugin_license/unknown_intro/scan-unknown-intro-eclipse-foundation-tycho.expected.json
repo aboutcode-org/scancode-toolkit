@@ -1,7 +1,7 @@
 {
   "license_detections": [
     {
-      "identifier": "epl_1_0-1867eafe-a258-cbb4-408f-2bd33d02ee23",
+      "identifier": "epl_1_0-583490fb-0b3a-f445-a1b9-1b96423b9ec3",
       "license_expression": "epl-1.0",
       "count": 2,
       "detection_log": [
@@ -33,7 +33,7 @@
       ]
     },
     {
-      "identifier": "apache_2_0-b414489c-d2f7-2207-9e37-ea197f00d317",
+      "identifier": "apache_2_0-b9480736-5aa9-53cf-d14a-cd1e7d4d49d3",
       "license_expression": "apache-2.0",
       "count": 2,
       "detection_log": [
@@ -54,7 +54,7 @@
       ]
     },
     {
-      "identifier": "apache_2_0-53c14ef2-2b41-3f63-1dbb-e3a1efbd1e8d",
+      "identifier": "apache_2_0-d5aca480-f390-3518-0726-d232731b5e97",
       "license_expression": "apache-2.0",
       "count": 1,
       "detection_log": [
@@ -119,7 +119,7 @@
       ]
     },
     {
-      "identifier": "apache_2_0-b109c41b-dc8b-5301-5c83-09b7b64f5059",
+      "identifier": "apache_2_0-f985a212-ddd7-cf4c-223f-990765c05d7f",
       "license_expression": "apache-2.0",
       "count": 1,
       "detection_log": [
@@ -184,7 +184,7 @@
       ]
     },
     {
-      "identifier": "apache_2_0-85fd4f2f-af55-4aed-03d9-86d8c06bef05",
+      "identifier": "apache_2_0-572026ce-a21a-cf1f-b168-d2e76a41e85f",
       "license_expression": "apache-2.0",
       "count": 1,
       "detection_log": [
@@ -238,7 +238,7 @@
       ]
     },
     {
-      "identifier": "apache_2_0-185ee88a-b361-c631-330a-31ef36f48039",
+      "identifier": "apache_2_0-3ff6ea1e-7687-edb8-8b35-a2751a601cae",
       "license_expression": "apache-2.0",
       "count": 2,
       "detection_log": [
@@ -270,7 +270,7 @@
       ]
     },
     {
-      "identifier": "epl_2_0_or_apache_2_0__and_apache_2_0_and_epl_2_0-f1d35b57-fc37-e01b-67c0-ff901ec607b2",
+      "identifier": "epl_2_0_or_apache_2_0__and_apache_2_0_and_epl_2_0-52f23e3b-2f64-af31-1586-6bd03db2475f",
       "license_expression": "(epl-2.0 OR apache-2.0) AND apache-2.0 AND epl-2.0",
       "count": 1,
       "detection_log": [
@@ -324,7 +324,7 @@
       ]
     },
     {
-      "identifier": "epl_1_0-7e99df1e-faa6-aea3-5280-d3a36ed87c16",
+      "identifier": "epl_1_0-c49f6fb4-006b-7944-b44b-c283f88bf18d",
       "license_expression": "epl-1.0",
       "count": 2,
       "detection_log": [
@@ -356,7 +356,7 @@
       ]
     },
     {
-      "identifier": "cpl_1_0-5502d99b-f332-cf59-5e87-59714bf42486",
+      "identifier": "cpl_1_0-5160c0f0-326a-077a-efd6-b7e1bb5eb641",
       "license_expression": "cpl-1.0",
       "count": 1,
       "detection_log": [
@@ -399,7 +399,7 @@
       ]
     },
     {
-      "identifier": "bsd_new-f76d24d8-c42a-51a2-5be0-b1bee6618afc",
+      "identifier": "bsd_new-bad4bb72-54ef-7e7c-7644-70daa8f3317e",
       "license_expression": "bsd-new",
       "count": 1,
       "detection_log": [
@@ -453,7 +453,7 @@
       ]
     },
     {
-      "identifier": "bsd_new-fe8a2ed4-ca73-5e9c-1a4c-974a245a78b2",
+      "identifier": "bsd_new-90d0d4b4-f98b-d4da-dbb0-7e601f6d404a",
       "license_expression": "bsd-new",
       "count": 1,
       "detection_log": [
@@ -474,7 +474,7 @@
       ]
     },
     {
-      "identifier": "cpl_1_0-f0e5933e-cc7c-4c33-eb43-c0d66389bf17",
+      "identifier": "cpl_1_0-5038e997-b857-2a64-110b-75cb2d935f40",
       "license_expression": "cpl-1.0",
       "count": 1,
       "detection_log": [
@@ -1053,9 +1053,9 @@
       "license_clues": [],
       "percentage_of_license_text": 52.82,
       "for_license_detections": [
-        "epl_1_0-1867eafe-a258-cbb4-408f-2bd33d02ee23",
-        "apache_2_0-b414489c-d2f7-2207-9e37-ea197f00d317",
-        "apache_2_0-53c14ef2-2b41-3f63-1dbb-e3a1efbd1e8d"
+        "epl_1_0-583490fb-0b3a-f445-a1b9-1b96423b9ec3",
+        "apache_2_0-b9480736-5aa9-53cf-d14a-cd1e7d4d49d3",
+        "apache_2_0-d5aca480-f390-3518-0726-d232731b5e97"
       ],
       "scan_errors": []
     },
@@ -1365,13 +1365,13 @@
       "license_clues": [],
       "percentage_of_license_text": 42.91,
       "for_license_detections": [
-        "epl_1_0-1867eafe-a258-cbb4-408f-2bd33d02ee23",
-        "apache_2_0-b414489c-d2f7-2207-9e37-ea197f00d317",
-        "apache_2_0-b109c41b-dc8b-5301-5c83-09b7b64f5059",
-        "apache_2_0-85fd4f2f-af55-4aed-03d9-86d8c06bef05",
-        "apache_2_0-185ee88a-b361-c631-330a-31ef36f48039",
-        "apache_2_0-185ee88a-b361-c631-330a-31ef36f48039",
-        "epl_2_0_or_apache_2_0__and_apache_2_0_and_epl_2_0-f1d35b57-fc37-e01b-67c0-ff901ec607b2"
+        "epl_1_0-583490fb-0b3a-f445-a1b9-1b96423b9ec3",
+        "apache_2_0-b9480736-5aa9-53cf-d14a-cd1e7d4d49d3",
+        "apache_2_0-f985a212-ddd7-cf4c-223f-990765c05d7f",
+        "apache_2_0-572026ce-a21a-cf1f-b168-d2e76a41e85f",
+        "apache_2_0-3ff6ea1e-7687-edb8-8b35-a2751a601cae",
+        "apache_2_0-3ff6ea1e-7687-edb8-8b35-a2751a601cae",
+        "epl_2_0_or_apache_2_0__and_apache_2_0_and_epl_2_0-52f23e3b-2f64-af31-1586-6bd03db2475f"
       ],
       "scan_errors": []
     },
@@ -1537,10 +1537,10 @@
       "license_clues": [],
       "percentage_of_license_text": 50.37,
       "for_license_detections": [
-        "epl_1_0-7e99df1e-faa6-aea3-5280-d3a36ed87c16",
-        "cpl_1_0-5502d99b-f332-cf59-5e87-59714bf42486",
-        "bsd_new-f76d24d8-c42a-51a2-5be0-b1bee6618afc",
-        "bsd_new-fe8a2ed4-ca73-5e9c-1a4c-974a245a78b2"
+        "epl_1_0-c49f6fb4-006b-7944-b44b-c283f88bf18d",
+        "cpl_1_0-5160c0f0-326a-077a-efd6-b7e1bb5eb641",
+        "bsd_new-bad4bb72-54ef-7e7c-7644-70daa8f3317e",
+        "bsd_new-90d0d4b4-f98b-d4da-dbb0-7e601f6d404a"
       ],
       "scan_errors": []
     },
@@ -1642,8 +1642,8 @@
       "license_clues": [],
       "percentage_of_license_text": 47.22,
       "for_license_detections": [
-        "epl_1_0-7e99df1e-faa6-aea3-5280-d3a36ed87c16",
-        "cpl_1_0-f0e5933e-cc7c-4c33-eb43-c0d66389bf17"
+        "epl_1_0-c49f6fb4-006b-7944-b44b-c283f88bf18d",
+        "cpl_1_0-5038e997-b857-2a64-110b-75cb2d935f40"
       ],
       "scan_errors": []
     }

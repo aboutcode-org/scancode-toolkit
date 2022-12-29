@@ -1,7 +1,7 @@
 {
   "license_detections": [
     {
-      "identifier": "unknown_license_reference-cb2d1ad5-873d-6301-d317-22a999e29333",
+      "identifier": "unknown_license_reference-87d47954-89f5-fcbf-a173-e0d899d7c5e2",
       "license_expression": "unknown-license-reference",
       "count": 2,
       "detection_log": [
@@ -22,7 +22,7 @@
       ]
     },
     {
-      "identifier": "x11_xconsortium_veillard-f8587161-833d-692c-3d76-0d68eb040d40",
+      "identifier": "x11_xconsortium_veillard-b2601908-f03c-335c-5bbd-e72dc065c901",
       "license_expression": "x11-xconsortium-veillard",
       "count": 1,
       "detection_log": [
@@ -43,7 +43,7 @@
       ]
     },
     {
-      "identifier": "unknown_license_reference-0fca325a-cfc9-3067-2426-a2e81f63954e",
+      "identifier": "unknown_license_reference-8715cef9-8691-1147-d5c0-154042d18db1",
       "license_expression": "unknown-license-reference",
       "count": 1,
       "detection_log": [
@@ -160,7 +160,7 @@
       "license_clues": [],
       "percentage_of_license_text": 81.89,
       "for_license_detections": [
-        "x11_xconsortium_veillard-f8587161-833d-692c-3d76-0d68eb040d40"
+        "x11_xconsortium_veillard-b2601908-f03c-335c-5bbd-e72dc065c901"
       ],
       "scan_errors": []
     },
@@ -206,7 +206,7 @@
       "license_clues": [],
       "percentage_of_license_text": 1.32,
       "for_license_detections": [
-        "unknown_license_reference-cb2d1ad5-873d-6301-d317-22a999e29333"
+        "unknown_license_reference-87d47954-89f5-fcbf-a173-e0d899d7c5e2"
       ],
       "scan_errors": []
     },
@@ -252,7 +252,7 @@
       "license_clues": [],
       "percentage_of_license_text": 0.1,
       "for_license_detections": [
-        "unknown_license_reference-cb2d1ad5-873d-6301-d317-22a999e29333"
+        "unknown_license_reference-87d47954-89f5-fcbf-a173-e0d899d7c5e2"
       ],
       "scan_errors": []
     },
@@ -320,7 +320,7 @@
       "license_clues": [],
       "percentage_of_license_text": 2.47,
       "for_license_detections": [
-        "unknown_license_reference-0fca325a-cfc9-3067-2426-a2e81f63954e"
+        "unknown_license_reference-8715cef9-8691-1147-d5c0-154042d18db1"
       ],
       "scan_errors": []
     }

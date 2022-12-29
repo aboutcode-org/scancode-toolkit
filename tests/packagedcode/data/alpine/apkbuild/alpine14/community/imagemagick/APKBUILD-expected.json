@@ -38,7 +38,7 @@
           "match_coverage": 100.0,
           "matcher": "1-spdx-id",
           "license_expression": "imagemagick",
-          "rule_identifier": "spdx-license-identifier-imagemagick-7fa3969eba7a76d5be5dd90ab20091ca",
+          "rule_identifier": "spdx-license-identifier-imagemagick-e46afc30022add6e93b5cfa1cf190a627c0a46c4",
           "rule_url": null,
           "referenced_filenames": [],
           "is_license_text": false,

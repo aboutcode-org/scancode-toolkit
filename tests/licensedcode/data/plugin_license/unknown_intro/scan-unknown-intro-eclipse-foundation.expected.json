@@ -1,7 +1,7 @@
 {
   "license_detections": [
     {
-      "identifier": "epl_2_0-b52d9dd1-937e-3045-e7db-e5adc37547ba",
+      "identifier": "epl_2_0-5c2fde53-ee3f-c94e-b03d-9cc0f76eb558",
       "license_expression": "epl-2.0",
       "count": 1,
       "detection_log": [
@@ -27,7 +27,7 @@
           "match_coverage": 100.0,
           "matcher": "1-spdx-id",
           "license_expression": "epl-2.0",
-          "rule_identifier": "spdx-license-identifier-epl-2.0-d1f8ea961fa74ad395583763d8e7a098",
+          "rule_identifier": "spdx-license-identifier-epl-2.0-56ffe805fbac33a4e6fdb80438f46d1b8feb5387",
           "rule_url": null
         }
       ]
@@ -70,7 +70,7 @@
       "rule_text": "* This program and the accompanying materials are made\n * available under the terms of the Eclipse Public License 2.0\n * which is available at https://www.eclipse.org/legal/epl-2.0/"
     },
     {
-      "rule_identifier": "spdx-license-identifier-epl-2.0-d1f8ea961fa74ad395583763d8e7a098",
+      "rule_identifier": "spdx-license-identifier-epl-2.0-56ffe805fbac33a4e6fdb80438f46d1b8feb5387",
       "license_expression": "epl-2.0",
       "rule_url": null,
       "rule_relevance": 100,
@@ -117,7 +117,7 @@
               "match_coverage": 100.0,
               "matcher": "1-spdx-id",
               "license_expression": "epl-2.0",
-              "rule_identifier": "spdx-license-identifier-epl-2.0-d1f8ea961fa74ad395583763d8e7a098",
+              "rule_identifier": "spdx-license-identifier-epl-2.0-56ffe805fbac33a4e6fdb80438f46d1b8feb5387",
               "rule_url": null,
               "matched_text": "SPDX-License-Identifier: EPL-2.0"
             }
@@ -127,7 +127,7 @@
       "license_clues": [],
       "percentage_of_license_text": 86.05,
       "for_license_detections": [
-        "epl_2_0-b52d9dd1-937e-3045-e7db-e5adc37547ba"
+        "epl_2_0-5c2fde53-ee3f-c94e-b03d-9cc0f76eb558"
       ],
       "scan_errors": []
     }

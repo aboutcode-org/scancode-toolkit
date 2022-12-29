@@ -38,7 +38,7 @@
           "match_coverage": 100.0,
           "matcher": "1-spdx-id",
           "license_expression": "lgpl-2.1 AND lgpl-3.0 AND gpl-3.0 AND qt-gpl-exception-1.0",
-          "rule_identifier": "spdx-license-identifier-lgpl-2.1 AND lgpl-3.0 AND gpl-3.0 AND qt-gpl-exception-1.0-499fb23d5f1fb0945c313e9a3b4ca2de",
+          "rule_identifier": "spdx-license-identifier-lgpl-2.1 AND lgpl-3.0 AND gpl-3.0 AND qt-gpl-exception-1.0-b5a9df9a3c79b33310bd60c074fbb1be54b210cb",
           "rule_url": null,
           "referenced_filenames": [],
           "is_license_text": false,

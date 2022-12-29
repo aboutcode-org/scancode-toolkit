@@ -1,7 +1,7 @@
 {
   "license_detections": [
     {
-      "identifier": "apache_1_1-81b019ea-ed6c-17e3-1cfc-fad8557f8cac",
+      "identifier": "apache_1_1-cb71ed90-062c-facf-d5cf-148f22222367",
       "license_expression": "apache-1.1",
       "count": 1,
       "detection_log": [
@@ -107,7 +107,7 @@
       "license_clues": [],
       "percentage_of_license_text": 92.44,
       "for_license_detections": [
-        "apache_1_1-81b019ea-ed6c-17e3-1cfc-fad8557f8cac"
+        "apache_1_1-cb71ed90-062c-facf-d5cf-148f22222367"
       ],
       "copyrights": [
         {

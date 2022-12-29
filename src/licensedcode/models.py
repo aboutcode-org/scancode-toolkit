@@ -2001,8 +2001,9 @@ class Rule(BasicRule):
     def compute_unique_id(self):
         """
         Return a a unique id string based on this rule content. 
-        (Today this is an SHA1 checksum of the identifierm expression and text,
-        but this is an implementation detail)
+
+        (This is a SHA1 checksum of the identifier expression and text, but this
+        is an implementation detail)
         """
         content = f'{self.identifier!r}{self.license_expression!r}{self.text!r}'
         return sha1(content.encode('utf-8')).hexdigest()

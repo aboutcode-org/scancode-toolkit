@@ -1,7 +1,7 @@
 {
   "license_detections": [
     {
-      "identifier": "mit-f48a0b5f-0e8e-aa20-08c9-3b97c3f7f3e8",
+      "identifier": "mit-3c947379-4257-acb2-bf21-5f93f7de0076",
       "license_expression": "mit",
       "count": 1,
       "detection_log": [
@@ -204,7 +204,7 @@
       "license_clues": [],
       "percentage_of_license_text": 89.06,
       "for_license_detections": [
-        "mit-f48a0b5f-0e8e-aa20-08c9-3b97c3f7f3e8"
+        "mit-3c947379-4257-acb2-bf21-5f93f7de0076"
       ],
       "scan_errors": []
     }

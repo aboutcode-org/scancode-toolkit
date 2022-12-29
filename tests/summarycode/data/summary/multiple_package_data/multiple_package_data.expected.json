@@ -87,7 +87,7 @@
               "match_coverage": 100.0,
               "matcher": "1-spdx-id",
               "license_expression": "mit",
-              "rule_identifier": "spdx-license-identifier-mit-7abc1a233092fc104c7af72a89c0829c",
+              "rule_identifier": "spdx-license-identifier-mit-a4db7113a36d8a7c3f72b0eab712d9e98d1ce6f7",
               "rule_url": null,
               "matched_text": "MIT"
             }
@@ -191,7 +191,7 @@
   "dependencies": [],
   "license_detections": [
     {
-      "identifier": "apache_2_0-131e3a0d-9d03-6ab8-63c7-0593eae53d6f",
+      "identifier": "apache_2_0-ab7c5499-f3db-c91e-f85f-06e66a76e401",
       "license_expression": "apache-2.0",
       "count": 1,
       "detection_log": [
@@ -212,7 +212,7 @@
       ]
     },
     {
-      "identifier": "mit-ad8a216c-f324-d61f-494c-f105455d2fee",
+      "identifier": "mit-d023e558-35f1-ef53-5625-5f585054dde4",
       "license_expression": "mit",
       "count": 1,
       "detection_log": [
@@ -233,7 +233,7 @@
       ]
     },
     {
-      "identifier": "mit-e60e2912-9996-f235-207c-8ce2b9e55eb9",
+      "identifier": "mit-f9eeac35-71f2-6963-05c0-cb8e2bbe7860",
       "license_expression": "mit",
       "count": 1,
       "detection_log": [
@@ -254,7 +254,7 @@
       ]
     },
     {
-      "identifier": "apache_2_0_and__apache_2_0_or_mit-0a7bf83e-120a-2d74-3ddc-f581fb0fc3e2",
+      "identifier": "apache_2_0_and__apache_2_0_or_mit-09cc7df7-92b8-1ab3-ffc6-f3c966e5dbbb",
       "license_expression": "apache-2.0 AND (apache-2.0 OR mit)",
       "count": 1,
       "detection_log": [
@@ -286,7 +286,7 @@
       ]
     },
     {
-      "identifier": "apache_2_0-c6739b12-3643-1e85-cc14-1864411bf945",
+      "identifier": "apache_2_0-0327b43c-6cf8-4fc1-7f3e-4c29b555583a",
       "license_expression": "apache-2.0",
       "count": 1,
       "detection_log": [
@@ -307,7 +307,7 @@
       ]
     },
     {
-      "identifier": "apache_2_0-d5eb9d8e-3b26-fd74-282d-341e657c08eb",
+      "identifier": "apache_2_0-d66ab77d-a5cc-7104-e702-dc7df61fe9e8",
       "license_expression": "apache-2.0",
       "count": 1,
       "detection_log": [
@@ -381,7 +381,7 @@
   ],
   "license_rule_references": [
     {
-      "rule_identifier": "spdx-license-identifier-mit-7abc1a233092fc104c7af72a89c0829c",
+      "rule_identifier": "spdx-license-identifier-mit-a4db7113a36d8a7c3f72b0eab712d9e98d1ce6f7",
       "license_expression": "mit",
       "rule_url": null,
       "rule_relevance": 100,
@@ -594,7 +594,7 @@
       "license_clues": [],
       "percentage_of_license_text": 57.14,
       "for_license_detections": [
-        "apache_2_0_and__apache_2_0_or_mit-0a7bf83e-120a-2d74-3ddc-f581fb0fc3e2"
+        "apache_2_0_and__apache_2_0_or_mit-09cc7df7-92b8-1ab3-ffc6-f3c966e5dbbb"
       ],
       "copyrights": [
         {
@@ -670,7 +670,7 @@
       "license_clues": [],
       "percentage_of_license_text": 100.0,
       "for_license_detections": [
-        "apache_2_0-131e3a0d-9d03-6ab8-63c7-0593eae53d6f"
+        "apache_2_0-ab7c5499-f3db-c91e-f85f-06e66a76e401"
       ],
       "copyrights": [],
       "holders": [],
@@ -753,7 +753,7 @@
                   "match_coverage": 100.0,
                   "matcher": "1-spdx-id",
                   "license_expression": "mit",
-                  "rule_identifier": "spdx-license-identifier-mit-7abc1a233092fc104c7af72a89c0829c",
+                  "rule_identifier": "spdx-license-identifier-mit-a4db7113a36d8a7c3f72b0eab712d9e98d1ce6f7",
                   "rule_url": null,
                   "matched_text": "MIT"
                 }
@@ -806,7 +806,7 @@
       "license_clues": [],
       "percentage_of_license_text": 25.0,
       "for_license_detections": [
-        "mit-ad8a216c-f324-d61f-494c-f105455d2fee"
+        "mit-d023e558-35f1-ef53-5625-5f585054dde4"
       ],
       "copyrights": [],
       "holders": [],
@@ -876,7 +876,7 @@
       "license_clues": [],
       "percentage_of_license_text": 100.0,
       "for_license_detections": [
-        "mit-e60e2912-9996-f235-207c-8ce2b9e55eb9"
+        "mit-f9eeac35-71f2-6963-05c0-cb8e2bbe7860"
       ],
       "copyrights": [],
       "holders": [],
@@ -1011,8 +1011,8 @@
       "license_clues": [],
       "percentage_of_license_text": 40.0,
       "for_license_detections": [
-        "apache_2_0-c6739b12-3643-1e85-cc14-1864411bf945",
-        "apache_2_0-d5eb9d8e-3b26-fd74-282d-341e657c08eb"
+        "apache_2_0-0327b43c-6cf8-4fc1-7f3e-4c29b555583a",
+        "apache_2_0-d66ab77d-a5cc-7104-e702-dc7df61fe9e8"
       ],
       "copyrights": [],
       "holders": [],

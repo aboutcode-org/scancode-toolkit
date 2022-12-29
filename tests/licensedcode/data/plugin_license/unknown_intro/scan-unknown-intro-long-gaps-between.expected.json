@@ -1,7 +1,7 @@
 {
   "license_detections": [
     {
-      "identifier": "x11_lucent-3d4ebed6-d6ff-5d71-13d5-9ae3bb5bc485",
+      "identifier": "x11_lucent-3c40145a-efd5-16ba-0a7a-9c28d9993bc2",
       "license_expression": "x11-lucent",
       "count": 1,
       "detection_log": [
@@ -33,7 +33,7 @@
       ]
     },
     {
-      "identifier": "bzip2_libbzip_2010-5537c6e0-e03f-c489-9ac3-243ae2274830",
+      "identifier": "bzip2_libbzip_2010-2234b9aa-1198-8ed2-f0d2-3310ced04b8a",
       "license_expression": "bzip2-libbzip-2010",
       "count": 1,
       "detection_log": [
@@ -217,8 +217,8 @@
       "license_clues": [],
       "percentage_of_license_text": 87.73,
       "for_license_detections": [
-        "x11_lucent-3d4ebed6-d6ff-5d71-13d5-9ae3bb5bc485",
-        "bzip2_libbzip_2010-5537c6e0-e03f-c489-9ac3-243ae2274830"
+        "x11_lucent-3c40145a-efd5-16ba-0a7a-9c28d9993bc2",
+        "bzip2_libbzip_2010-2234b9aa-1198-8ed2-f0d2-3310ced04b8a"
       ],
       "scan_errors": []
     }

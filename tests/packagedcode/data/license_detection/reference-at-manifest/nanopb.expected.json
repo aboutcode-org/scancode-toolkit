@@ -90,7 +90,7 @@
   "dependencies": [],
   "license_detections": [
     {
-      "identifier": "zlib-fb544817-ac13-5bb2-e219-0e3bba38b9bf",
+      "identifier": "zlib-f32ae987-c66a-44ce-bd13-c90e0c59aab8",
       "license_expression": "zlib",
       "count": 1,
       "detection_log": [
@@ -111,7 +111,7 @@
       ]
     },
     {
-      "identifier": "zlib-750cc90c-1587-3743-f22a-e2ff2e95e077",
+      "identifier": "zlib-3777cd8f-b515-8132-88be-cec12676bbaf",
       "license_expression": "zlib",
       "count": 1,
       "detection_log": [
@@ -132,7 +132,7 @@
       ]
     },
     {
-      "identifier": "zlib-9aa78722-757b-e59f-3862-ef714530eedc",
+      "identifier": "zlib-f9a90795-4ec9-5ce6-467d-b44a4f9924f5",
       "license_expression": "zlib",
       "count": 1,
       "detection_log": [
@@ -254,7 +254,7 @@
       "license_clues": [],
       "percentage_of_license_text": 92.31,
       "for_license_detections": [
-        "zlib-fb544817-ac13-5bb2-e219-0e3bba38b9bf"
+        "zlib-f32ae987-c66a-44ce-bd13-c90e0c59aab8"
       ],
       "scan_errors": []
     },
@@ -387,8 +387,8 @@
       "license_clues": [],
       "percentage_of_license_text": 2.49,
       "for_license_detections": [
-        "zlib-750cc90c-1587-3743-f22a-e2ff2e95e077",
-        "zlib-9aa78722-757b-e59f-3862-ef714530eedc"
+        "zlib-3777cd8f-b515-8132-88be-cec12676bbaf",
+        "zlib-f9a90795-4ec9-5ce6-467d-b44a4f9924f5"
       ],
       "scan_errors": []
     }

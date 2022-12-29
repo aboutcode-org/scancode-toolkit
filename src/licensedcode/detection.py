@@ -278,9 +278,8 @@ class LicenseDetection:
 
         # Return a uuid generated from the contents of the matches
         identifier_string = repr(tuple(data))
-        md_hash = sha1()
-        md_hash.update(identifier_string.encode('utf-8'))
-        return str(uuid.UUID(md_hash.hexdigest()))
+        md_hash = sha1(identifier_string.encode('utf-8'))
+        return str(uuid.UUID(hex=md_hash.hexdigest()[:32]))
 
     @property
     def identifier_with_expression(self):

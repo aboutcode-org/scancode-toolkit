@@ -98,7 +98,7 @@
             "match_coverage": 100.0,
             "matcher": "1-spdx-id",
             "license_expression": "ruby",
-            "rule_identifier": "spdx-license-identifier-ruby-948ea267d4a32b3d91b837b54298de0a",
+            "rule_identifier": "spdx-license-identifier-ruby-a60c3c1bd72e4d9f0f1d6a2f32f1781f1fa23d18",
             "rule_url": null,
             "referenced_filenames": [],
             "is_license_text": false,

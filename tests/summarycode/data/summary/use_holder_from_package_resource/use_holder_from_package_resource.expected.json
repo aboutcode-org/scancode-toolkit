@@ -119,7 +119,7 @@
   ],
   "license_detections": [
     {
-      "identifier": "apache_2_0-28a4af66-3385-dc3d-3b4b-27eea19ac8ca",
+      "identifier": "apache_2_0-6a2b15d7-e480-151d-da55-93e547e467b4",
       "license_expression": "apache-2.0",
       "count": 2,
       "detection_log": [
@@ -410,8 +410,8 @@
       "license_clues": [],
       "percentage_of_license_text": 53.12,
       "for_license_detections": [
-        "apache_2_0-28a4af66-3385-dc3d-3b4b-27eea19ac8ca",
-        "apache_2_0-28a4af66-3385-dc3d-3b4b-27eea19ac8ca"
+        "apache_2_0-6a2b15d7-e480-151d-da55-93e547e467b4",
+        "apache_2_0-6a2b15d7-e480-151d-da55-93e547e467b4"
       ],
       "copyrights": [
         {

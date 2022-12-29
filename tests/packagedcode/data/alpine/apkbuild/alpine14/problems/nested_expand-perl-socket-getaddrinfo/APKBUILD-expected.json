@@ -38,7 +38,7 @@
           "match_coverage": 100.0,
           "matcher": "1-spdx-id",
           "license_expression": "gpl-1.0-plus OR artistic-perl-1.0",
-          "rule_identifier": "spdx-license-identifier-gpl-1.0-plus OR artistic-perl-1.0-b7250a64bb21c3ac229cab4247089069",
+          "rule_identifier": "spdx-license-identifier-gpl-1.0-plus OR artistic-perl-1.0-225d2e60aa2b42b9c63c2d12d13eb6a9fd18a5f8",
           "rule_url": null,
           "referenced_filenames": [],
           "is_license_text": false,

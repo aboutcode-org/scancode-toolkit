@@ -67,7 +67,7 @@
             "match_coverage": 100.0,
             "matcher": "1-spdx-id",
             "license_expression": "apache-2.0 AND cc-by-4.0 AND other-permissive AND other-copyleft",
-            "rule_identifier": "spdx-license-identifier-apache-2.0 AND cc-by-4.0 AND other-permissive AND other-copyleft-7e2bfeb45d615c04cec11a58c447c878",
+            "rule_identifier": "spdx-license-identifier-apache-2.0 AND cc-by-4.0 AND other-permissive AND other-copyleft-a4e3ba2dc0f5d3c1ef85c14c74f87456ca432f33",
             "rule_url": null,
             "referenced_filenames": [],
             "is_license_text": false,

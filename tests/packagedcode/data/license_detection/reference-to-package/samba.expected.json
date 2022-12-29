@@ -311,7 +311,7 @@
   "dependencies": [],
   "license_detections": [
     {
-      "identifier": "gpl_3_0-bd8d31df-3dc9-daa6-b885-dc10671b4103",
+      "identifier": "gpl_3_0-ab79e5a8-e510-cbf4-5302-ef968484bcdf",
       "license_expression": "gpl-3.0",
       "count": 1,
       "detection_log": [
@@ -332,7 +332,7 @@
       ]
     },
     {
-      "identifier": "gpl_3_0_and_lgpl_3_0_and_gpl_2_0-c4243fb1-25ad-ea03-c628-65139658a194",
+      "identifier": "gpl_3_0_and_lgpl_3_0_and_gpl_2_0-ee9a67a8-9de9-86d0-077b-8e6f7f285b72",
       "license_expression": "gpl-3.0 AND lgpl-3.0 AND gpl-2.0",
       "count": 1,
       "detection_log": [
@@ -376,7 +376,7 @@
       ]
     },
     {
-      "identifier": "gpl_2_0_plus_and_free_unknown_and_gpl_1_0_plus-620bb734-dfc2-e276-11d9-45ed11996799",
+      "identifier": "gpl_2_0_plus_and_free_unknown_and_gpl_1_0_plus-4f5c7c7f-d0ee-f1dc-ad8b-236131aab65b",
       "license_expression": "gpl-2.0-plus AND free-unknown AND gpl-1.0-plus",
       "count": 1,
       "detection_log": [
@@ -419,7 +419,7 @@
       ]
     },
     {
-      "identifier": "gpl_1_0_plus_and_lgpl_3_0_plus_and_gpl_3_0_and_lgpl_3_0-ba9e27e5-ccbb-ede0-63b3-68adf7d7b978",
+      "identifier": "gpl_1_0_plus_and_lgpl_3_0_plus_and_gpl_3_0_and_lgpl_3_0-3bd18dcd-0a4c-d46f-f42e-3d2919be9be0",
       "license_expression": "gpl-1.0-plus AND lgpl-3.0-plus AND gpl-3.0 AND lgpl-3.0",
       "count": 1,
       "detection_log": [
@@ -484,7 +484,7 @@
       ]
     },
     {
-      "identifier": "cc_by_sa_3_0_and_cc_by_sa_4_0_and_dco_1_1-cacaaecd-cccf-23a9-b725-f10a66d3d665",
+      "identifier": "cc_by_sa_3_0_and_cc_by_sa_4_0_and_dco_1_1-4fb8e409-441a-1243-5a0d-d6af2acc0c62",
       "license_expression": "cc-by-sa-3.0 AND cc-by-sa-4.0 AND dco-1.1",
       "count": 1,
       "detection_log": [
@@ -527,7 +527,7 @@
       ]
     },
     {
-      "identifier": "gpl_2_0-0c428ae6-46af-09d9-5863-430e80031878",
+      "identifier": "gpl_2_0-29c387aa-50e0-0530-7b0b-aa32e3c372d6",
       "license_expression": "gpl-2.0",
       "count": 1,
       "detection_log": [
@@ -548,7 +548,7 @@
       ]
     },
     {
-      "identifier": "gpl_1_0_plus-788966d2-c08e-ab46-1793-44f388305bca",
+      "identifier": "gpl_1_0_plus-93dec725-7ef5-fcce-6d57-94ba990b8bb3",
       "license_expression": "gpl-1.0-plus",
       "count": 1,
       "detection_log": [
@@ -569,7 +569,7 @@
       ]
     },
     {
-      "identifier": "gpl_3_0_and_lgpl_3_0_and_gpl_2_0_and_gpl_2_0_plus_and_free_unknown_and_gpl_1_0_plus_and_lgpl_3_0_plus_and_cc_by_sa_3_0_and_cc_by_sa_4_0_and_dco_1_1-b9954b23-86bc-29b6-ab56-1bc80171ea0b",
+      "identifier": "gpl_3_0_and_lgpl_3_0_and_gpl_2_0_and_gpl_2_0_plus_and_free_unknown_and_gpl_1_0_plus_and_lgpl_3_0_plus_and_cc_by_sa_3_0_and_cc_by_sa_4_0_and_dco_1_1-4dcb18db-90fc-0fff-a56a-3a570d1eed55",
       "license_expression": "gpl-3.0 AND lgpl-3.0 AND gpl-2.0 AND gpl-2.0-plus AND free-unknown AND gpl-1.0-plus AND lgpl-3.0-plus AND cc-by-sa-3.0 AND cc-by-sa-4.0 AND dco-1.1",
       "count": 1,
       "detection_log": [
@@ -777,7 +777,7 @@
       ]
     },
     {
-      "identifier": "gpl_3_0_plus-f70c823f-c2d0-5369-e1d2-3cc1103e518b",
+      "identifier": "gpl_3_0_plus-494d0068-7138-a14f-4cbb-fd2137263a4f",
       "license_expression": "gpl-3.0-plus",
       "count": 1,
       "detection_log": [
@@ -1344,7 +1344,7 @@
       "license_clues": [],
       "percentage_of_license_text": 100.0,
       "for_license_detections": [
-        "gpl_3_0-bd8d31df-3dc9-daa6-b885-dc10671b4103"
+        "gpl_3_0-ab79e5a8-e510-cbf4-5302-ef968484bcdf"
       ],
       "scan_errors": []
     },
@@ -1608,10 +1608,10 @@
       "license_clues": [],
       "percentage_of_license_text": 9.84,
       "for_license_detections": [
-        "gpl_3_0_and_lgpl_3_0_and_gpl_2_0-c4243fb1-25ad-ea03-c628-65139658a194",
-        "gpl_2_0_plus_and_free_unknown_and_gpl_1_0_plus-620bb734-dfc2-e276-11d9-45ed11996799",
-        "gpl_1_0_plus_and_lgpl_3_0_plus_and_gpl_3_0_and_lgpl_3_0-ba9e27e5-ccbb-ede0-63b3-68adf7d7b978",
-        "cc_by_sa_3_0_and_cc_by_sa_4_0_and_dco_1_1-cacaaecd-cccf-23a9-b725-f10a66d3d665"
+        "gpl_3_0_and_lgpl_3_0_and_gpl_2_0-ee9a67a8-9de9-86d0-077b-8e6f7f285b72",
+        "gpl_2_0_plus_and_free_unknown_and_gpl_1_0_plus-4f5c7c7f-d0ee-f1dc-ad8b-236131aab65b",
+        "gpl_1_0_plus_and_lgpl_3_0_plus_and_gpl_3_0_and_lgpl_3_0-3bd18dcd-0a4c-d46f-f42e-3d2919be9be0",
+        "cc_by_sa_3_0_and_cc_by_sa_4_0_and_dco_1_1-4fb8e409-441a-1243-5a0d-d6af2acc0c62"
       ],
       "scan_errors": []
     },
@@ -1669,8 +1669,8 @@
       "license_clues": [],
       "percentage_of_license_text": 1.51,
       "for_license_detections": [
-        "gpl_2_0-0c428ae6-46af-09d9-5863-430e80031878",
-        "gpl_1_0_plus-788966d2-c08e-ab46-1793-44f388305bca"
+        "gpl_2_0-29c387aa-50e0-0530-7b0b-aa32e3c372d6",
+        "gpl_1_0_plus-93dec725-7ef5-fcce-6d57-94ba990b8bb3"
       ],
       "scan_errors": []
     },
@@ -2610,7 +2610,7 @@
       "license_clues": [],
       "percentage_of_license_text": 0.03,
       "for_license_detections": [
-        "gpl_3_0_and_lgpl_3_0_and_gpl_2_0_and_gpl_2_0_plus_and_free_unknown_and_gpl_1_0_plus_and_lgpl_3_0_plus_and_cc_by_sa_3_0_and_cc_by_sa_4_0_and_dco_1_1-b9954b23-86bc-29b6-ab56-1bc80171ea0b"
+        "gpl_3_0_and_lgpl_3_0_and_gpl_2_0_and_gpl_2_0_plus_and_free_unknown_and_gpl_1_0_plus_and_lgpl_3_0_plus_and_cc_by_sa_3_0_and_cc_by_sa_4_0_and_dco_1_1-4dcb18db-90fc-0fff-a56a-3a570d1eed55"
       ],
       "scan_errors": []
     },
@@ -2648,7 +2648,7 @@
       "license_clues": [],
       "percentage_of_license_text": 27.06,
       "for_license_detections": [
-        "gpl_3_0_plus-f70c823f-c2d0-5369-e1d2-3cc1103e518b"
+        "gpl_3_0_plus-494d0068-7138-a14f-4cbb-fd2137263a4f"
       ],
       "scan_errors": []
     }

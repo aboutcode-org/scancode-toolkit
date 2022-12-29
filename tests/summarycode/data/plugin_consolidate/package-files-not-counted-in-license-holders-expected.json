@@ -70,7 +70,7 @@
   "dependencies": [],
   "license_detections": [
     {
-      "identifier": "apache_2_0-0c954d0c-44a8-826f-8a0e-c82112725467",
+      "identifier": "apache_2_0-977175b5-d3f3-74fb-7e96-840fd1e302fd",
       "license_expression": "apache-2.0",
       "count": 5,
       "detection_log": [
@@ -91,7 +91,7 @@
       ]
     },
     {
-      "identifier": "apache_2_0-c6739b12-3643-1e85-cc14-1864411bf945",
+      "identifier": "apache_2_0-0327b43c-6cf8-4fc1-7f3e-4c29b555583a",
       "license_expression": "apache-2.0",
       "count": 1,
       "detection_log": [
@@ -395,7 +395,7 @@
       "license_clues": [],
       "percentage_of_license_text": 22.22,
       "for_license_detections": [
-        "apache_2_0-c6739b12-3643-1e85-cc14-1864411bf945"
+        "apache_2_0-0327b43c-6cf8-4fc1-7f3e-4c29b555583a"
       ],
       "copyrights": [
         {
@@ -469,7 +469,7 @@
       "license_clues": [],
       "percentage_of_license_text": 33.33,
       "for_license_detections": [
-        "apache_2_0-0c954d0c-44a8-826f-8a0e-c82112725467"
+        "apache_2_0-977175b5-d3f3-74fb-7e96-840fd1e302fd"
       ],
       "copyrights": [
         {
@@ -543,7 +543,7 @@
       "license_clues": [],
       "percentage_of_license_text": 33.33,
       "for_license_detections": [
-        "apache_2_0-0c954d0c-44a8-826f-8a0e-c82112725467"
+        "apache_2_0-977175b5-d3f3-74fb-7e96-840fd1e302fd"
       ],
       "copyrights": [
         {
@@ -617,7 +617,7 @@
       "license_clues": [],
       "percentage_of_license_text": 33.33,
       "for_license_detections": [
-        "apache_2_0-0c954d0c-44a8-826f-8a0e-c82112725467"
+        "apache_2_0-977175b5-d3f3-74fb-7e96-840fd1e302fd"
       ],
       "copyrights": [
         {
@@ -689,7 +689,7 @@
       "license_clues": [],
       "percentage_of_license_text": 33.33,
       "for_license_detections": [
-        "apache_2_0-0c954d0c-44a8-826f-8a0e-c82112725467"
+        "apache_2_0-977175b5-d3f3-74fb-7e96-840fd1e302fd"
       ],
       "copyrights": [
         {
@@ -761,7 +761,7 @@
       "license_clues": [],
       "percentage_of_license_text": 33.33,
       "for_license_detections": [
-        "apache_2_0-0c954d0c-44a8-826f-8a0e-c82112725467"
+        "apache_2_0-977175b5-d3f3-74fb-7e96-840fd1e302fd"
       ],
       "copyrights": [
         {
