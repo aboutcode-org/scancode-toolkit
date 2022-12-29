@@ -1,7 +1,7 @@
 {
   "license_detections": [
     {
-      "identifier": "example_installed_1_and_example_installed_2_and_example1_and_example2_and_apache_2_0-9b30f191-7beb-a9ac-c184-4cbbb6eb3065",
+      "identifier": "example_installed_1_and_example_installed_2_and_example1_and_example2_and_apache_2_0-b3a0a512-8017-d55e-92ca-bff2e4eda61c",
       "license_expression": "example-installed-1 AND example-installed-2 AND example1 AND example2 AND apache-2.0",
       "count": 1,
       "detection_log": [
@@ -282,7 +282,7 @@
       "license_clues": [],
       "percentage_of_license_text": 96.33,
       "for_license_detections": [
-        "example_installed_1_and_example_installed_2_and_example1_and_example2_and_apache_2_0-9b30f191-7beb-a9ac-c184-4cbbb6eb3065"
+        "example_installed_1_and_example_installed_2_and_example1_and_example2_and_apache_2_0-b3a0a512-8017-d55e-92ca-bff2e4eda61c"
       ],
       "scan_errors": []
     }

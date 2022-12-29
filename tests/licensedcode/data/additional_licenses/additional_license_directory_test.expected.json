@@ -1,7 +1,7 @@
 {
   "license_detections": [
     {
-      "identifier": "example1_and_example2-450f710c-75c2-24fd-46e3-13bfded8d08e",
+      "identifier": "example1_and_example2-2f6955bf-3007-907c-96a9-972954a09866",
       "license_expression": "example1 AND example2",
       "count": 1,
       "detection_log": [
@@ -126,7 +126,7 @@
       "license_clues": [],
       "percentage_of_license_text": 95.12,
       "for_license_detections": [
-        "example1_and_example2-450f710c-75c2-24fd-46e3-13bfded8d08e"
+        "example1_and_example2-2f6955bf-3007-907c-96a9-972954a09866"
       ],
       "scan_errors": []
     }

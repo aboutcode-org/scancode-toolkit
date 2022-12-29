@@ -1,7 +1,7 @@
 {
   "license_detections": [
     {
-      "identifier": "example_installed_1-061a0995-e68e-f37e-b163-25a2ec85db12",
+      "identifier": "example_installed_1-64843035-317c-ec04-9281-9e8c942639bc",
       "license_expression": "example-installed-1",
       "count": 1,
       "detection_log": [
@@ -80,7 +80,7 @@
       "license_clues": [],
       "percentage_of_license_text": 100.0,
       "for_license_detections": [
-        "example_installed_1-061a0995-e68e-f37e-b163-25a2ec85db12"
+        "example_installed_1-64843035-317c-ec04-9281-9e8c942639bc"
       ],
       "scan_errors": []
     }
