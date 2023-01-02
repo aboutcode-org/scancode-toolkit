@@ -22,6 +22,7 @@ from licensedcode.spans import Span
 from licensedcode.tracing import get_texts
 from licensedcode_test_utils import mini_legalese
 from licensedcode_test_utils import create_rule_from_text_file_and_expression
+from licensedcode_test_utils import create_rule_from_text_and_expression
 
 
 def MiniLicenseIndex(*args, **kwargs):
@@ -69,7 +70,7 @@ class TestIndexing(IndexTesting):
             (u'the lgpl', (2, 0, 2, 0)),
         ]
         idx = MiniLicenseIndex()
-        rules = [models.create_rule_from_text_and_expression(text=t[0]) for t in test_rules]
+        rules = [create_rule_from_text_and_expression(text=t[0]) for t in test_rules]
         idx._add_rules(rules, _legalese=mini_legalese,)
 
         assert idx.len_legalese == 40
@@ -224,7 +225,7 @@ class TestMatchNoTemplates(IndexTesting):
 
     def test_match_exact_from_string_once(self):
         rule_text = 'Redistribution and use in source and binary forms, with or without modification, are permitted'
-        idx = MiniLicenseIndex([models.create_rule_from_text_and_expression(text=rule_text, license_expression='bsd')])
+        idx = MiniLicenseIndex([create_rule_from_text_and_expression(text=rule_text, license_expression='bsd')])
         querys = '''
             The
             Redistribution and use in source and binary forms, with or without modification, are permitted.

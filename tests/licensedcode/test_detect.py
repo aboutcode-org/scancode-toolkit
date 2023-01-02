@@ -19,10 +19,10 @@ from licensedcode import match_seq
 from licensedcode.legalese import build_dictionary_from_iterable
 from licensedcode.match import LicenseMatch
 from licensedcode.models import load_rules
-from licensedcode.models import Rule
 from licensedcode.spans import Span
 from licensedcode.tracing import get_texts
 from licensedcode_test_utils import mini_legalese
+from licensedcode_test_utils import create_rule_from_text_and_expression
 from licensedcode_test_utils import create_rule_from_text_file_and_expression
 
 TEST_DATA_DIR = os.path.join(os.path.dirname(__file__), 'data')
