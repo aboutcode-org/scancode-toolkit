@@ -10,17 +10,17 @@
 import io
 import os
 import traceback
+from time import time
 
 import attr
-from license_expression import Licensing
 import pytest
 import saneyaml
+from license_expression import Licensing
 
 from commoncode import text
 from commoncode.testcase import get_test_file_pairs
 
 from scancode_config import REGEN_TEST_FIXTURES
-
 
 """
 Data-driven tests using expectations stored in YAML files.
@@ -350,3 +350,53 @@ def query_tokens_with_unknowns(qry):
         yield token
         for _ in range(unknowns.get(pos, 0)):
             yield None
+
+
+def create_rule_from_text_file_and_expression(
+    text_file,
+    license_expression=None,
+    identifier=None,
+    **kwargs
+):
+    """
+    Return a new Rule object from a ``text_file`` and a ``license_expression``.
+    """
+    license_expression = license_expression or 'mit'
+    if os.path.exists(text_file):
+        from licensedcode.models import get_rule_text
+        text = get_rule_text(location=text_file)
+    else:
+        text = ''
+
+    return create_rule_from_text_and_expression(
+        text=text,
+        license_expression=license_expression,
+        identifier=identifier,
+        **kwargs,
+    )
+
+
+def create_rule_from_text_and_expression(
+    text=None,
+    license_expression=None,
+    identifier=None,
+    **kwargs,
+):
+    """
+    Return a new Rule object from a ``text``, a ``license_expression`` and a
+    rule ``identifier``.
+    """
+    from licensedcode.models import Rule
+    license_expression = license_expression or 'mit'
+    text = text or ''
+    identifier = identifier or f'_tst_{time()}_{len(text)}_{license_expression}'
+    rule = Rule(
+        license_expression=license_expression,
+        text=text,
+        is_synthetic=True,
+        identifier=identifier,
+        **kwargs,
+    )
+    rule.setup()
+    return rule
+

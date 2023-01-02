@@ -1580,16 +1580,13 @@ class BasicRule:
         Return a string with the permanent URL to this rule on
         scancode-toolkit github repository.
         """
-        if any([
-            'spdx-license-identifier' in self.identifier,
-            'package-manifest' in self.identifier,
-            'license-detection-unknown' in self.identifier
-        ]):
+        if self.is_synthetic:
             return None
-        elif self.is_from_license:
+
+        if self.is_from_license:
             return SCANCODE_LICENSE_RULE_URL.format(self.identifier)
-        else:
-            return SCANCODE_RULE_URL.format(self.identifier)
+
+        return SCANCODE_RULE_URL.format(self.identifier)
 
     def rule_file(
         self,
@@ -1601,10 +1598,13 @@ class BasicRule:
         given the `rules_data_dir` directory or `licenses_data_dir`
         if a license rule.
         """
+        if self.is_synthetic:
+            return None
+
         if self.is_from_license:
             return join(licenses_data_dir, self.identifier)
-        else:
-            return join(rules_data_dir, self.identifier)
+
+        return join(rules_data_dir, self.identifier)
 
     def __attrs_post_init__(self, *args, **kwargs):
         self.setup()
@@ -1932,75 +1932,9 @@ class Rule(BasicRule):
         rule.load_data(rule_file=rule_file)
         return rule
 
-    @classmethod
-    def _from_text_file_and_expression(
-        cls,
-        text_file,
-        license_expression=None,
-        identifier=None,
-        **kwargs,
-    ):
-        """
-        Return a new Rule object loaded from a ``text_file``  and a
-        ``license_expression``. Used for testing only.
-        """
-        license_expression = license_expression or 'mit'
-        if exists(text_file):
-            text = get_rule_text(location=text_file)
-        else:
-            text = ''
-
-        return cls._from_text_and_expression(
-            text=text,
-            license_expression=license_expression,
-            identifier=identifier,
-            **kwargs,
-        )
-
-    @classmethod
-    def _from_text_and_expression(
-        cls,
-        text=None,
-        license_expression=None,
-        identifier=None,
-        **kwargs,
-    ):
-        """
-        Return a new Rule object loaded from a ``text_file``  and a
-        ``license_expression``. Used for testing only.
-        """
-        license_expression = license_expression or 'mit'
-        text = text or ''
-        identifier = identifier or f'_tst_{time()}_{len(text)}_{license_expression}'
-        rule = Rule(
-            license_expression=license_expression,
-            text=text,
-            is_synthetic=True,
-            identifier=identifier,
-            **kwargs,
-        )
-        rule.setup()
-        return rule
-
-    @classmethod
-    def _from_expression(cls, license_expression=None, identifier=None, **kwargs):
-        """
-        Return a new Rule object from a ``license_expression``. Used for testing only.
-        """
-        license_expression = license_expression or 'mit'
-        identifier = identifier or f'_tst_{time()}_expr_{license_expression}'
-        rule = Rule(
-            identifier=identifier,
-            license_expression=license_expression,
-            text='',
-            is_synthetic=True,
-        )
-        rule.setup()
-        return rule
-
     def compute_unique_id(self):
         """
-        Return a a unique id string based on this rule content. 
+        Return a a unique id string based on this rule content.
 
         (This is a SHA1 checksum of the identifier expression and text, but this
         is an implementation detail)
@@ -2245,36 +2179,29 @@ class Rule(BasicRule):
             self.relevance = computed_relevance
 
 
-def get_rule_object_from_match(license_match_mapping):
+def get_rule_object_from_match(license_match):
     """
-    Return a rehydrated Rule object from a `license_match_mapping`
+    Return a rehydrated Rule object from a `license_match`
     LicenseMatch mapping.
     """
-    license_expression = license_match_mapping["license_expression"]
-    text = license_match_mapping.get("matched_text", None)
-    length = license_match_mapping["matched_length"]
-    rule_identifier = license_match_mapping["rule_identifier"]
-    if 'spdx-license-identifier' in rule_identifier:
-        return SpdxRule(
-            license_expression=license_expression,
-            text=text,
-            length=length,
-        )
-    elif 'license-detection-unknown' in rule_identifier:
-        return UnknownRule(
-            license_expression=license_expression,
-            text=text,
-            length=length,
-        )
-    elif 'package-manifest' in rule_identifier:
-        return UnDetectedRule(
-            license_expression=license_expression,
-            text=text,
-            length=length,
-        )
-    else:
-        from licensedcode.cache import get_index
-        return get_index().rules_by_id[rule_identifier]
+
+    rule_subclass_by_identifier_prefix = {
+        "spdx-license-identifier": SpdxRule,
+        "license-detection-unknown": UnknownRule,
+        "package-manifest": UnDetectedRule,
+    }
+
+    rule_identifier = license_match["rule_identifier"]
+    for prefix, cls in rule_subclass_by_identifier_prefix.items():
+        if rule_identifier.startswith(prefix):
+            return cls(
+                license_expression=license_match["license_expression"],
+                text=license_match.get("matched_text", None),
+                length=license_match["matched_length"],
+            )
+
+    from licensedcode.cache import get_index
+    return get_index().rules_by_id[rule_identifier]
 
 
 def compute_relevance(length):
