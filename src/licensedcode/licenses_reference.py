@@ -281,7 +281,7 @@ def get_reference_data(match):
     Get reference data from a LicenseMatch mapping `match` after rehydrating.
     """
 
-    rule = get_rule_object_from_match(license_match_mapping=match)
+    rule = get_rule_object_from_match(license_match=match)
 
     ref_data = {}
     ref_data['rule_identifier'] = match['rule_identifier']
