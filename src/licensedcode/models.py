@@ -2179,7 +2179,7 @@ class Rule(BasicRule):
             self.relevance = computed_relevance
 
 
-def get_rule_object_from_match(license_match):
+def get_license_rule_from_match(license_match):
     """
     Return a rehydrated Rule object from a `license_match`
     LicenseMatch mapping.
@@ -2190,18 +2190,20 @@ def get_rule_object_from_match(license_match):
         "license-detection-unknown": UnknownRule,
         "package-manifest": UnDetectedRule,
     }
-
+    
+    prefixes = tuple(rule_subclass_by_identifier_prefix.keys())
     rule_identifier = license_match["rule_identifier"]
-    for prefix, cls in rule_subclass_by_identifier_prefix.items():
-        if rule_identifier.startswith(prefix):
-            return cls(
-                license_expression=license_match["license_expression"],
-                text=license_match.get("matched_text", None),
-                length=license_match["matched_length"],
-            )
-
-    from licensedcode.cache import get_index
-    return get_index().rules_by_id[rule_identifier]
+    if rule_identifier.startswith(prefixes):
+        for prefix, cls in rule_subclass_by_identifier_prefix.items():
+            if rule_identifier.startswith(prefix):
+                return cls(
+                    license_expression=license_match["license_expression"],
+                    text=license_match.get("matched_text", None),
+                    length=license_match["matched_length"],
+                )
+    else:
+        from licensedcode.cache import get_index
+        return get_index().rules_by_id[rule_identifier]
 
 
 def compute_relevance(length):

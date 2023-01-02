@@ -11,7 +11,7 @@ import os
 import logging
 from license_expression import Licensing
 
-from licensedcode.models import get_rule_object_from_match
+from licensedcode.models import get_license_rule_from_match
 
 
 TRACE_REFERENCE = os.environ.get('SCANCODE_DEBUG_LICENSE_REFERENCE', False)
@@ -281,22 +281,19 @@ def get_reference_data(match):
     Get reference data from a LicenseMatch mapping `match` after rehydrating.
     """
 
-    rule = get_rule_object_from_match(license_match=match)
+    rule = get_license_rule_from_match(license_match=match)
 
     ref_data = {}
     ref_data['rule_identifier'] = match['rule_identifier']
     ref_data['license_expression'] = match['license_expression']
     ref_data['rule_url'] = rule.rule_url
-    ref_data['rule_relevance'] = match.pop('rule_relevance')
-    ref_data['rule_length'] = match.pop('rule_length')
-    ref_data['is_license_text'] = match.pop('is_license_text')
-    ref_data['is_license_notice'] = match.pop('is_license_notice')
-    ref_data['is_license_reference'] = match.pop('is_license_reference')
-    ref_data['is_license_tag'] = match.pop('is_license_tag')
-    ref_data['is_license_intro'] = match.pop('is_license_intro')
-    ref_data['referenced_filenames'] = match.pop('referenced_filenames')
+    ref_data['rule_relevance'] = match.get('rule_relevance')
+    ref_data['rule_length'] = match.get('rule_length')
+    ref_data['is_license_text'] = match.get('is_license_text')
+    ref_data['is_license_notice'] = match.get('is_license_notice')
+    ref_data['is_license_reference'] = match.get('is_license_reference')
+    ref_data['is_license_tag'] = match.get('is_license_tag')
+    ref_data['is_license_intro'] = match.get('is_license_intro')
+    ref_data['referenced_filenames'] = match.get('referenced_filenames')
     ref_data['rule_text'] = rule.text
-
-    _ = match.pop('licenses')
-
     return ref_data

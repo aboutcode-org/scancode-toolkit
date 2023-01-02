@@ -29,7 +29,7 @@ from licensedcode.match import set_matched_lines
 from licensedcode.models import UnDetectedRule
 from licensedcode.models import BasicRule
 from licensedcode.models import compute_relevance
-from licensedcode.models import get_rule_object_from_match
+from licensedcode.models import get_license_rule_from_match
 from licensedcode.spans import Span
 from licensedcode.tokenize import query_tokenizer
 from licensedcode.query import Query
@@ -627,7 +627,7 @@ def matches_from_license_match_mappings(license_match_mappings):
     license_matches = []
 
     for license_match_mapping in license_match_mappings:
-        rule = get_rule_object_from_match(license_match_mapping)
+        rule = get_license_rule_from_match(license_match_mapping)
         license_rule_reference = rule.get_reference_data()
         license_matches.append(
             LicenseMatchFromResult.from_license_match_mapping(
