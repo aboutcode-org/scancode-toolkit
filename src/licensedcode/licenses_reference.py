@@ -11,11 +11,13 @@ import os
 import logging
 from license_expression import Licensing
 
-from licensedcode.models import get_license_rule_from_match
+from licensedcode.models import Rule
+from plugincode.post_scan import PostScanPlugin
+from plugincode.post_scan import post_scan_impl
+import attr
 
+TRACE = os.environ.get('SCANCODE_DEBUG_LICENSE_REFERENCE', False)
 
-TRACE_REFERENCE = os.environ.get('SCANCODE_DEBUG_LICENSE_REFERENCE', False)
-TRACE_EXTRACT = os.environ.get('SCANCODE_DEBUG_LICENSE_REFERENCE_EXTRACT', False)
 
 def logger_debug(*args):
     pass
@@ -23,7 +25,7 @@ def logger_debug(*args):
 
 logger = logging.getLogger(__name__)
 
-if TRACE_REFERENCE or TRACE_EXTRACT:
+if TRACE:
     import sys
     logging.basicConfig(stream=sys.stdout)
     logger.setLevel(logging.DEBUG)
@@ -32,268 +34,182 @@ if TRACE_REFERENCE or TRACE_EXTRACT:
         return logger.debug(' '.join(isinstance(a, str) and a or repr(a) for a in args))
 
 
-def populate_license_references(codebase):
+@post_scan_impl
+class LicenseReference(PostScanPlugin):
     """
-    Get unique License and Rule data from all license detections in a codebase-level
-    list and only refer to them in the resource level detections. This does two things:
-
-    1. populates the `license_references` and `license_rule_references` attributes
-       for the `codebase`
-    2. it also removes the reference data from all the resource and package
-       license detections as a side effect.
-    """
-    licexps = []
-    rules_data = []
-
-    if not hasattr(codebase.attributes, 'license_detections'):
-        return
-
-    has_packages = False
-    if hasattr(codebase.attributes, 'packages'):
-        has_packages = True
-
-    if has_packages:
-        codebase_packages = codebase.attributes.packages
-        for pkg in codebase_packages:
-            if TRACE_REFERENCE:
-                logger_debug(
-                    f'populate_license_references: codebase.packages',
-                    f'extract_license_rules_reference_data from: {pkg["purl"]}\n',
-                )
-
-            license_rules_reference_data = extract_license_rules_reference_data(
-                license_detections=pkg['license_detections']
-            )
-            if license_rules_reference_data:
-                rules_data.extend(license_rules_reference_data)
-            licexps.append(pkg['declared_license_expression'])
-
-    # This license rules reference data is duplicate as `licenses` is a
-    # top level summary of all unique license detections but this function
-    # is called as the side effect is removing the reference attributes
-    # from license matches
-
-    if TRACE_REFERENCE:
-        identifiers = [
-            detection["identifier"]
-            for detection in codebase.attributes.license_detections
-        ]
-        logger_debug(
-            f'populate_license_references: codebase.license_detections',
-            f'extract_license_rules_reference_data from: {identifiers}\n',
-        )
-    _discard = extract_license_rules_reference_data(codebase.attributes.license_detections)
-
-    for resource in codebase.walk():
-
-        # Get license_expressions from both package and license detections
-        license_licexp = getattr(resource, 'detected_license_expression')
-        if license_licexp:
-            licexps.append(license_licexp)
-
-        if has_packages:
-            package_data = getattr(resource, 'package_data', []) or []
-            package_licexps = [
-                pkg['declared_license_expression']
-                for pkg in package_data
-            ]
-            licexps.extend(package_licexps)
-
-            # Get license matches from both package and license detections
-            package_license_detections = []
-            for pkg in package_data:
-                if not pkg['license_detections']:
-                    continue
-
-                package_license_detections.extend(pkg['license_detections'])
-
-            license_rules_reference_data = extract_license_rules_reference_data(
-                license_detections=package_license_detections
-            )
-            if license_rules_reference_data:
-                rules_data.extend(license_rules_reference_data)
-
-        license_detections = getattr(resource, 'license_detections', []) or []
-        license_clues = getattr(resource, 'license_clues', []) or []
-
-        license_rules_reference_data = extract_license_rules_reference_data(
-            license_detections=license_detections,
-            license_matches=license_clues,
-        )
-        if license_rules_reference_data:
-            rules_data.extend(license_rules_reference_data)
-
-        codebase.save_resource(resource)
-
-    license_references = get_license_references(license_expressions=licexps)
-    codebase.attributes.license_references.extend(license_references)
-
-    rule_references = get_unique_rule_references(rules_data=rules_data)
-    codebase.attributes.license_rule_references.extend(rule_references)
-
-    if TRACE_REFERENCE:
-        logger_debug(
-            f'populate_license_references: codebase.license_references',
-            f'license_expressions: {licexps}\n',
-            f'license_references: {license_references}\n',
-            f'rules_data: {rules_data}\n',
-            f'rule_references: {rule_references}\n',
-        )
-        raise Exception()
-
-
-def add_detection_to_license_references(codebase, license_detection_mappings):
-    """
-    Add references data from `license_detection_mappings` to codebase level
-    license refernces attributes.
+    Add license and rule reference data to a scan.
     """
 
-    license_expressions = [
-        detection["license_expression"]
-        for detection in license_detection_mappings
-    ]
-    license_references = get_license_references(license_expressions=license_expressions)
-    license_rules_reference_data = extract_license_rules_reference_data(
-        license_detections=license_detection_mappings,
+    codebase_attributes = dict(
+        license_references=attr.ib(default=attr.Factory(list)),
+        license_rule_references=attr.ib(default=attr.Factory(list))
     )
-    rule_references = get_unique_rule_references(rules_data=license_rules_reference_data)
-    add_license_references_to_codebase(codebase, license_references, rule_references)
+
+    # TODO: send to the tail of the scan, after files
+    sort_order = 1000
+
+    def is_enabled(self, **kwargs):  # NOQA
+        return 'license' in kwargs or 'package' in kwargs
+
+    def process_codebase(self, codebase, **kwargs):
+        """
+        Collect the ``license_references`` and ``rule_references``
+        list of data mappings and add to the ``codebase``.
+        """
+        include_files = 'license' in kwargs
+        include_packages = 'package' in kwargs
+
+        license_references, rule_references = collect_license_and_rule_references(
+            codebase=codebase,
+            include_packages=include_packages,
+            include_files=include_files,
+        )
+        codebase.attributes.license_references = license_references
+        codebase.attributes.license_rule_references = rule_references
 
 
-def add_license_references_to_codebase(codebase, license_references, rule_references):
+def collect_license_and_rule_references(codebase, include_packages=True, include_files=True):
     """
-    Given the `license_references` and `rule_references` data, add it to the respective
-    `codebase` attributes if they aren't already present.
+    Return a two-tuple of (``license_references``, ``license_rule_references``)
+    sorted lists of unique mappings collected from a ``codebase``.
     """
-    license_references_new = []
-    rule_references_new = []
 
     license_keys = set()
-    rule_identifiers = set()
+    rules_by_identifier = {}
 
-    for license_reference in codebase.attributes.license_references:
-        license_keys.add(license_reference["key"])
+    if include_packages:
+        pks, prules = collect_references_from_packages(codebase)
+        license_keys.update(pks)
+        rules_by_identifier.update(prules)
 
-    for rule_reference in codebase.attributes.license_rule_references:
-        rule_identifiers.add(rule_reference["rule_identifier"])
+    if include_files:
+        pks, prules = collect_references_from_files(codebase)
+        license_keys.update(pks)
+        rules_by_identifier.update(prules)
 
-    for license_reference in license_references:
-        if not license_reference["key"] in license_keys:
-            license_references_new.append(license_reference)
-
-    for rule_reference in rule_references:
-        if not rule_reference["rule_identifier"] in rule_identifiers:
-            rule_references_new.append(rule_reference)
-
-    codebase.attributes.license_references.extend(license_references_new)
-    codebase.attributes.license_rule_references.extend(rule_references_new)
-
-
-def get_license_references(license_expressions, licensing=Licensing()):
-    """
-    Get a list of unique License data from a list of `license_expression` strings.
-    These are added to the codebase attribute `license_references`.
-    """
     from licensedcode.cache import get_licenses_db
+    db = get_licenses_db()
+    license_keys = sorted(set(license_keys))
+    license_references = [db[key].to_reference() for key in license_keys]
+
+    rules = [rule for _id, rule in sorted(rules_by_identifier.items())]
+    rule_references = [rule.to_reference() for rule in rules]
+    return license_references, rule_references
+
+
+def collect_references_from_packages(codebase):
+    """
+    Return a two-tuple of:
+        (set of ``license_keys``, mapping of ``rules_by_identifier``)
+    collected from the ``codebase`` top-level packages and file-level package_data.
+    """
+    licensing = Licensing()
 
     license_keys = set()
-    license_references = []
+    rules_by_identifier = {}
 
-    for expression in license_expressions:
+    # top level
+    packages = getattr(codebase.attributes, 'packages', []) or []
+    for pkg in packages:
+        expression = pkg['declared_license_expression']
         if expression:
             license_keys.update(licensing.license_keys(expression))
 
-    db = get_licenses_db()
-    for key in sorted(license_keys):
-        license_references.append(
-            db[key].to_dict(include_ignorables=False, include_text=True)
-        )
+        detections = pkg['license_detections']
+        rules_by_id = build_rules_from_detection_data(detections)
+        rules_by_identifier.update(rules_by_id)
 
-    return license_references
+    # file level
+    for resource in codebase.walk():
+        package_datas = getattr(resource, 'package_data', []) or []
+        for pkg in package_datas:
+            expression = pkg['declared_license_expression']
+            if expression:
+                license_keys.update(licensing.license_keys(expression))
+
+        detections = getattr(resource, 'license_detections', []) or []
+        rules_by_id = build_rules_from_detection_data(detections)
+        rules_by_identifier.update(rules_by_id)
+
+    for rule in rules_by_identifier.values():
+        # TODO: consider using the expresion object directly instead
+        expo = rule.license_expression
+        license_keys.update(licensing.license_keys(expo))
+
+    return license_keys, rules_by_identifier
 
 
-def get_unique_rule_references(rules_data):
+def collect_references_from_files(codebase):
     """
-    Get a list of unique Rule data from a list of Rule data.
+    Return a two-tuple of:
+        (set of ``license_keys``, mapping of ``rules_by_identifier``)
+    collected from the ``codebase`` files.
     """
-    rules_references_by_identifier = {}
+    licensing = Licensing()
 
-    for rule_data in rules_data:
-        rule_identifier = rule_data['rule_identifier']
-        rules_references_by_identifier[rule_identifier] = rule_data
+    license_keys = set()
+    rules_by_identifier = {}
 
-    return rules_references_by_identifier.values()
+    for resource in codebase.walk():
+        expression = getattr(resource, 'detected_license_expression')
+        if expression:
+            license_keys.update(licensing.license_keys(expression))
+
+        detections = getattr(resource, 'license_detections', []) or []
+        rules_by_id = build_rules_from_detection_data(detections)
+        rules_by_identifier.update(rules_by_id)
+
+        clues = getattr(resource, 'license_clues', []) or []
+        rules_by_id = build_rules_from_match_data(clues)
+        rules_by_identifier.update(rules_by_id)
+
+    for rule in rules_by_identifier.values():
+        # TODO: consider using the expresion object directly instead
+        expo = rule.license_expression
+        license_keys.update(licensing.license_keys(expo))
+
+    return license_keys, rules_by_identifier
 
 
-def extract_license_rules_reference_data(license_detections=None, license_matches=None):
+def build_rules_from_detection_data(license_detection_mappings):
     """
-    Get Rule data for references from a list of LicenseDetection mappings `license_detections`
-    and LicenseMatch mappings `license_matches`.
-
-    Also removes this data from the list of LicenseMatch in detections,
-    apart from the `rule_identifier` as this data is referenced at codebase-level
-    attribute `license_rule_references`.
+    Return a mapping of unique Rule as {identifier: Rule} from a
+    ``license_detection_mappings`` list of LicenseDetection data mappings.
     """
-    rule_identifiers = set()
-    rules_reference_data = []
+    rules_by_identifier = {}
+    if not license_detection_mappings:
+        return rules_by_identifier
 
-    if license_detections:
-
-        for detection in license_detections:
-            if not detection:
-                continue
-
-            for match in detection['matches']:
-
-                rule_identifier = match['rule_identifier']
-                if 'referenced_filenames' in match:
-                    ref_data = get_reference_data(match)
-
-                    if rule_identifier not in rule_identifiers:
-                        rule_identifiers.update(rule_identifier)
-                        rules_reference_data.append(ref_data)
-
-                    if TRACE_EXTRACT:
-                        logger_debug(
-                            f'extract_license_rules_reference_data:',
-                            f'rule_identifier: {rule_identifier}\n',
-                            f'ref_data: {ref_data}\n',
-                            f'match: {match}\n',
-                            f'rules_reference_data: {rules_reference_data}\n',
-                        )
-
-    if license_matches:
-
-        for match in license_matches:
-
-            rule_identifier = match['rule_identifier']
-            ref_data = get_reference_data(match)
-
-            if rule_identifier not in rule_identifiers:
-                rule_identifiers.update(rule_identifier)
-                rules_reference_data.append(ref_data)
-
-    return rules_reference_data
+    for detection in license_detection_mappings:
+        # FIXME: why this?
+        if not detection:
+            continue
+        match_datas = detection['matches']
+        match_rules_by_id = build_rules_from_match_data(match_datas)
+        rules_by_identifier.update(match_rules_by_id)
+    return rules_by_identifier
 
 
-def get_reference_data(match):
+def build_rules_from_match_data(license_match_mappings):
     """
-    Get reference data from a LicenseMatch mapping `match` after rehydrating.
+    Return a mapping of unique Rule as {identifier: Rule} from a
+    ``license_match_mappings``  list of LicenseMatch data mappings .
     """
+    rules_by_identifier = {}
+    if not license_match_mappings:
+        return rules_by_identifier
 
-    rule = get_license_rule_from_match(license_match=match)
+    for license_match_mapping in license_match_mappings:
+        if TRACE:
+            logger_debug('build_rules_from_match_data: license_match_mapping', license_match_mapping)
 
-    ref_data = {}
-    ref_data['rule_identifier'] = match['rule_identifier']
-    ref_data['license_expression'] = match['license_expression']
-    ref_data['rule_url'] = rule.rule_url
-    ref_data['rule_relevance'] = match.get('rule_relevance')
-    ref_data['rule_length'] = match.get('rule_length')
-    ref_data['is_license_text'] = match.get('is_license_text')
-    ref_data['is_license_notice'] = match.get('is_license_notice')
-    ref_data['is_license_reference'] = match.get('is_license_reference')
-    ref_data['is_license_tag'] = match.get('is_license_tag')
-    ref_data['is_license_intro'] = match.get('is_license_intro')
-    ref_data['referenced_filenames'] = match.get('referenced_filenames')
-    ref_data['rule_text'] = rule.text
-    return ref_data
+        try:
+            rule_identifier = license_match_mapping['rule_identifier']
+        except TypeError as e:
+            raise Exception(license_match_mapping) from e
+
+        if rule_identifier not in rules_by_identifier:
+            rule = Rule.from_match_data(license_match_mapping)
+            rules_by_identifier[rule_identifier] = rule
+    return rules_by_identifier
+
