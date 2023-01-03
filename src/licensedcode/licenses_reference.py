@@ -48,8 +48,8 @@ class LicenseReference(PostScanPlugin):
     # TODO: send to the tail of the scan, after files
     sort_order = 1000
 
-    def is_enabled(self, **kwargs):  # NOQA
-        return 'license' in kwargs or 'package' in kwargs
+    def is_enabled(self, **kwargs):
+        return kwargs.get('license') or kwargs.get('package')
 
     def process_codebase(self, codebase, **kwargs):
         """
@@ -151,7 +151,7 @@ def collect_references_from_files(codebase):
     rules_by_identifier = {}
 
     for resource in codebase.walk():
-        expression = getattr(resource, 'detected_license_expression')
+        expression = getattr(resource, 'detected_license_expression', None)
         if expression:
             license_keys.update(licensing.license_keys(expression))
 
