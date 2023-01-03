@@ -22,11 +22,8 @@ from licensedcode.stopwords import STOPWORDS
 from licensedcode.tokenize import index_tokenizer
 from licensedcode.tokenize import matched_query_text_tokenizer
 
-
 from scancode.api import SPDX_LICENSE_URL
 from scancode.api import SCANCODE_LICENSEDB_URL
-from scancode.api import SCANCODE_LICENSE_URL
-from scancode.api import SCANCODE_RULE_URL
 
 """
 LicenseMatch data structure and processing.
@@ -793,14 +790,7 @@ class LicenseMatch(object):
         # LicenseDB Level Information (Rule that was matched)
         result['license_expression'] = self.rule.license_expression
         result['rule_identifier'] = self.rule.identifier
-
-        # TODO: should be a Rule.url()  method instead
-        if self.matcher == "1-spdx-id":
-            result['rule_url'] = None
-        elif self.rule.is_from_license:
-            result['rule_url'] = SCANCODE_LICENSE_URL.format(self.rule.license_expression)
-        else:
-            result['rule_url'] = SCANCODE_RULE_URL.format(self.rule.identifier)
+        result['rule_url'] = self.rule.rule_url
 
         if include_text:
             result['matched_text'] = matched_text

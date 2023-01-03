@@ -43,7 +43,6 @@ from licensedcode.tokenize import KEY_PHRASE_CLOSE
 from licensedcode.tokenize import query_lines
 from scancode.api import SCANCODE_LICENSEDB_URL
 from scancode.api import SCANCODE_LICENSE_URL
-from scancode.api import SCANCODE_LICENSE_RULE_URL
 from scancode.api import SCANCODE_RULE_URL
 from scancode.api import SPDX_LICENSE_URL
 
@@ -1627,13 +1626,14 @@ class BasicRule:
         Return a string with the permanent URL to this rule on
         scancode-toolkit github repository.
         """
-        if self.is_synthetic:
+        if self.is_synthetic or not self.is_builtin:
             return None
 
         if self.is_from_license:
-            return SCANCODE_LICENSE_RULE_URL.format(self.identifier)
-
-        return SCANCODE_RULE_URL.format(self.identifier)
+            # license expression is single key
+            return SCANCODE_LICENSE_URL.format(self.license_expression)
+        else:
+            return SCANCODE_RULE_URL.format(self.identifier)
 
     def rule_file(
         self,
