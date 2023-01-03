@@ -26,7 +26,6 @@ from licensedcode.tokenize import matched_query_text_tokenizer
 from scancode.api import SPDX_LICENSE_URL
 from scancode.api import SCANCODE_LICENSEDB_URL
 from scancode.api import SCANCODE_LICENSE_URL
-from scancode.api import SCANCODE_LICENSE_RULE_URL
 from scancode.api import SCANCODE_RULE_URL
 
 """
@@ -760,7 +759,7 @@ class LicenseMatch(object):
             _usecache=_usecache
         )).rstrip()
 
-    def get_mapping(
+    def to_dict(
         self,
         license_url_template=SCANCODE_LICENSEDB_URL,
         spdx_license_url=SPDX_LICENSE_URL,
@@ -771,9 +770,6 @@ class LicenseMatch(object):
         """
         Return a "result" scan data built from a LicenseMatch object.
         """
-        from licensedcode import cache
-        licenses = cache.get_licenses_db()
-
         matched_text = None
         if include_text:
             if license_text_diagnostics:
@@ -796,60 +792,19 @@ class LicenseMatch(object):
 
         # LicenseDB Level Information (Rule that was matched)
         result['license_expression'] = self.rule.license_expression
+        result['license_expression_spdx'] = self.rule.spdx_license_expression() 
         result['rule_identifier'] = self.rule.identifier
+
+        # TODO: should be a Rule.url()  method instead
         if self.matcher == "1-spdx-id":
             result['rule_url'] = None
         elif self.rule.is_from_license:
-            result['rule_url'] = SCANCODE_LICENSE_RULE_URL.format(self.rule.identifier)
+            result['rule_url'] = SCANCODE_LICENSE_URL.format(self.rule.license_expression)
         else:
             result['rule_url'] = SCANCODE_RULE_URL.format(self.rule.identifier)
 
-        result['referenced_filenames'] = self.rule.referenced_filenames
-        result['is_license_text'] = self.rule.is_license_text
-        result['is_license_notice'] = self.rule.is_license_notice
-        result['is_license_reference'] = self.rule.is_license_reference
-        result['is_license_tag'] = self.rule.is_license_tag
-        result['is_license_intro'] = self.rule.is_license_intro
-        result['rule_length'] = self.rule.length
-        result['rule_relevance'] = self.rule.relevance
         if include_text:
             result['matched_text'] = matched_text
-
-        # License Level Information (Individual licenses that this rule refers to)
-        result['licenses'] = detected_licenses = []
-        for license_key in self.rule.license_keys():
-            detected_license = {}
-            detected_licenses.append(detected_license)
-
-            lic = licenses.get(license_key)
-
-            detected_license['key'] = lic.key
-            detected_license['name'] = lic.name
-            detected_license['short_name'] = lic.short_name
-            detected_license['category'] = lic.category
-            detected_license['is_exception'] = lic.is_exception
-            detected_license['is_unknown'] = lic.is_unknown
-            detected_license['owner'] = lic.owner
-            detected_license['homepage_url'] = lic.homepage_url
-            detected_license['text_url'] = lic.text_urls[0] if lic.text_urls else ''
-            detected_license['reference_url'] = license_url_template.format(lic.key)
-            detected_license['scancode_url'] = SCANCODE_LICENSE_URL.format(lic.key)
-
-            spdx_key = lic.spdx_license_key
-            detected_license['spdx_license_key'] = spdx_key
-
-            if spdx_key:
-                is_license_ref = spdx_key.lower().startswith('licenseref-')
-                if is_license_ref:
-                    spdx_url = SCANCODE_LICENSE_URL.format(lic.key)
-                else:
-                    # TODO: Is this replacing spdx_key???
-                    spdx_key = lic.spdx_license_key.rstrip('+')
-                    spdx_url = spdx_license_url.format(spdx_key)
-            else:
-                spdx_url = None
-            detected_license['spdx_url'] = spdx_url
-
         return result
 
     def get_highlighted_text(self, trace=TRACE_HIGHLIGHTED_TEXT):

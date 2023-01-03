@@ -27,14 +27,12 @@ from licensedcode.cache import get_cache
 from licensedcode.match import LicenseMatch
 from licensedcode.match import set_matched_lines
 from licensedcode.models import UnDetectedRule
-from licensedcode.models import BasicRule
 from licensedcode.models import compute_relevance
-from licensedcode.models import get_license_rule_from_match
-from licensedcode.spans import Span
-from licensedcode.tokenize import query_tokenizer
+from licensedcode.models import Rule
 from licensedcode.query import Query
 from licensedcode.query import LINES_THRESHOLD
-from licensedcode.licenses_reference import extract_license_rules_reference_data
+from licensedcode.spans import Span
+from licensedcode.tokenize import query_tokenizer
 
 """
 LicenseDetection data structure and processing.
@@ -213,8 +211,8 @@ class LicenseDetection:
             )
 
         detection_log, license_expression = get_detected_license_expression(
-            license_match_objects=matches,
             analysis=analysis,
+            license_matches=matches,
             post_scan=post_scan,
         )
 
@@ -263,8 +261,8 @@ class LicenseDetection:
     @property
     def identifier(self):
         """
-        Returns an unique identifier for a license detection, based on it's underlying
-        license matches with the tokenized matched_text.
+        Return an unique identifier for a license detection, based on it's
+        underlying license matches with the tokenized matched_text.
         """
         data = []
         for match in self.matches:
@@ -284,7 +282,7 @@ class LicenseDetection:
     @property
     def identifier_with_expression(self):
         """
-        Returns an identifer for a license detection with the license expression
+        Return an identifer for a license detection with the license expression
         and an UUID created from the detection contents.
         """
         id_safe_expression = python_safe_name(s=str(self.license_expression))
@@ -292,7 +290,7 @@ class LicenseDetection:
 
     def get_start_end_line(self):
         """
-        Returns start and end line for a license detection issue, from the
+        Return start and end line for a license detection issue, from the
         license match(es).
         """
         if isinstance(self.matches[0], dict):
@@ -403,7 +401,7 @@ class LicenseDetection:
 
     def percentage_license_text_of_file(self, qspans):
         """
-        Returns the percentage of license text in the file where the
+        Return the percentage of license text in the file where the
         license was detected, from a list of `qspans`.
 
         Here qspans is a list of all individual qspans corresponding
@@ -434,7 +432,7 @@ class LicenseDetection:
 
         for match in self.matches:
             data_matches.append(
-                match.get_mapping(
+                match.to_dict(
                     include_text=include_text,
                     license_text_diagnostics=license_text_diagnostics,
                     whole_lines=whole_lines,
@@ -464,17 +462,17 @@ class LicenseDetectionFromResult(LicenseDetection):
         file_path,
     ):
         """
-        Returns a LicenseDetectionFromResult objects created from a LicenseDetection
+        Return a LicenseDetectionFromResult objects created from a LicenseDetection
         mapping `license_detection_mapping`.
         """
-        matches_from_results = matches_from_license_match_mappings(
+        matches = LicenseMatchFromResult.from_dicts(
             license_match_mappings=license_detection_mapping["matches"]
         )
 
         detection = cls(
             license_expression=license_detection_mapping["license_expression"],
             detection_log=license_detection_mapping["detection_log"],
-            matches=matches_from_results,
+            matches=matches,
             file_region=None,
         )
         detection.file_region = detection.get_file_region(path=file_path)
@@ -486,7 +484,7 @@ def detections_from_license_detection_mappings(
     file_path,
 ):
     """
-    Returns a list of LicenseDetectionFromResult objects created from a
+    Return a list of LicenseDetectionFromResult objects created from a
     list of LicenseDetection mappings: `license_detection_mappings`.
     """
     license_detections = []
@@ -505,9 +503,7 @@ def detections_from_license_detection_mappings(
 @attr.s
 class LicenseMatchFromResult(LicenseMatch):
     """
-    A LicenseMatch object that is created and rehydrated from a
-    LicenseMatch mapping. The Rule object in here will be a
-    RuleFromResult objects too, as these are created from data mappings.
+    A LicenseMatch object recreated from a LicenseMatch data mapping.
     """
     match_score = attr.ib(
         default=None,
@@ -551,21 +547,13 @@ class LicenseMatchFromResult(LicenseMatch):
         return self.rule.identifier
 
     @classmethod
-    def from_license_match_mapping(cls, license_match_mapping, license_rule_reference):
+    def from_dict(cls, license_match_mapping):
         """
-        Create a LicenseMatchFromResult object from a LicenseMatch mappping
-        `license_match_mapping` with the help of a `license_rule_reference`
-        mapping to rehydrate data back.
+        Return a LicenseMatchFromResult object from a ``license_match_mapping``
+        LicenseMatch data mappping.
         """
-        rule = RuleFromResult.from_license_match_mapping(
-            license_match_mapping=license_match_mapping,
-            license_rule_reference=license_rule_reference,
-        )
-
-        if "matched_text" in license_match_mapping:
-            matched_text = license_match_mapping["matched_text"]
-        else:
-            matched_text = None
+        rule = Rule.from_match_data(license_match_mapping)
+        matched_text = license_match_mapping.get("matched_text") or None
 
         return cls(
             start_line=license_match_mapping["start_line"],
@@ -580,77 +568,13 @@ class LicenseMatchFromResult(LicenseMatch):
             ispan=None,
         )
 
-
-@attr.s
-class RuleFromResult(BasicRule):
-
     @classmethod
-    def from_license_match_mapping(cls, license_match_mapping, license_rule_reference):
+    def from_dicts(cls, license_match_mappings):
         """
-        Create a RuleFromResult object from a LicenseMatch mappping
-        `license_match_mapping` with the help of a `license_rule_reference`
-        mapping (if not None) to rehydrate data back.
+        Return a LicenseMatchFromResult object from a ``license_match_mapping`s`
+        list of LicenseMatch data mapppings.
         """
-        if license_rule_reference:
-            return cls(
-                license_expression=license_match_mapping["license_expression"],
-                identifier=license_match_mapping["rule_identifier"],
-                referenced_filenames=license_rule_reference["referenced_filenames"],
-                is_license_text=license_rule_reference["is_license_text"],
-                is_license_notice=license_rule_reference["is_license_notice"],
-                is_license_reference=license_rule_reference["is_license_reference"],
-                is_license_tag=license_rule_reference["is_license_tag"],
-                is_license_intro=license_rule_reference["is_license_intro"],
-                length=license_rule_reference["rule_length"],
-                relevance=license_rule_reference["rule_relevance"],
-            )
-        else:
-            return cls(
-                license_expression=license_match_mapping["license_expression"],
-                identifier=license_match_mapping["rule_identifier"],
-                referenced_filenames=license_match_mapping["referenced_filenames"],
-                is_license_text=license_match_mapping["is_license_text"],
-                is_license_notice=license_match_mapping["is_license_notice"],
-                is_license_reference=license_match_mapping["is_license_reference"],
-                is_license_tag=license_match_mapping["is_license_tag"],
-                is_license_intro=license_match_mapping["is_license_intro"],
-                length=license_match_mapping["rule_length"],
-                relevance=license_match_mapping["rule_relevance"],
-            )
-
-
-def matches_from_license_match_mappings(license_match_mappings):
-    """
-    Given a list of LicenseMatch mappings `license_match_mappings`,
-    return a list of rehydrated `LicenseMatchFromResult` objects.
-    """
-    license_matches = []
-
-    for license_match_mapping in license_match_mappings:
-        rule = get_license_rule_from_match(license_match_mapping)
-        license_rule_reference = rule.get_reference_data()
-        license_matches.append(
-            LicenseMatchFromResult.from_license_match_mapping(
-                license_match_mapping=license_match_mapping,
-                license_rule_reference=license_rule_reference,
-            )
-        )
-
-    return license_matches
-
-
-def mappings_from_license_match_objects(license_matches):
-    """
-    Return a list of LicenseMatch mappings from a list of
-    LicenseMatch/LicenseMatchFromResult objects after removing
-    the reference data.
-    """
-    license_match_mappings = [
-        license_match.get_mapping()
-        for license_match in license_matches
-    ]
-    _rules_data = extract_license_rules_reference_data(license_matches=license_match_mappings)
-    return license_match_mappings
+        return [LicenseMatchFromResult.from_dict(lmm) for lmm in license_match_mappings]
 
 
 @attr.s
@@ -668,8 +592,8 @@ class UniqueDetection:
     @classmethod
     def get_unique_detections(cls, license_detections):
         """
-        Get all unique license detections from a list of
-        LicenseDetection objects: `license_detections`.
+        Return all unique UniqueDetection from a ``license_detections`` list of
+        LicenseDetection.
         """
         identifiers = get_identifiers(license_detections)
         unique_detection_counts = dict(Counter(identifiers))
@@ -711,12 +635,12 @@ class UniqueDetection:
 
             return True
 
-        return attr.asdict(self, filter=dict_fields, dict_factory=dict)
+        return attr.asdict(self, filter=dict_fields)
 
 
 def get_identifiers(license_detections):
     """
-    Get identifiers for all license detections.
+    Return identifiers for all ``license detections``.
     """
     identifiers = (
         detection.identifier
@@ -728,7 +652,7 @@ def get_identifiers(license_detections):
 def get_detections_from_mappings(detection_mappings):
     """
     Return a list of LicenseDetection objects from a list of
-    `detection_mappings` mappings.
+    ``detection_mappings``.
     """
     license_detections = []
 
@@ -740,7 +664,7 @@ def get_detections_from_mappings(detection_mappings):
 
 def is_undetected_license_matches(license_matches):
     """
-    Return True if there is only one LicenseMatch in `license_matches`
+    Return True if there is only one LicenseMatch in ``license_matches``
     and it is of the `undetected` type.
     """
     if len(license_matches) != 1:
@@ -752,7 +676,7 @@ def is_undetected_license_matches(license_matches):
 
 def is_correct_detection(license_matches):
     """
-    Return True if all the matches in `license_matches` List of LicenseMatch
+    Return True if all the matches in ``license_matches`` List of LicenseMatch
     are correct license detections.
     """
     matchers = (license_match.matcher for license_match in license_matches)
@@ -769,7 +693,7 @@ def is_correct_detection(license_matches):
 
 def is_match_coverage_less_than_threshold(license_matches, threshold, any_matches=True):
     """
-    Return True if any of the matches in `license_matches` List of LicenseMatch
+    Return True if any of the matches in ``license_matches`` List of LicenseMatch
     has a `match_coverage` value below the threshold (a value between 0-100).
 
     If `any_matches` is False, return True if none of the matches in `license_matches`
@@ -807,7 +731,7 @@ def calculate_query_coverage_coefficient(license_match):
 
 def has_extra_words(license_matches):
     """
-    Return True if any of the matches in `license_matches` List of LicenseMatch
+    Return True if any of the matches in ``license_matches`` List of LicenseMatch
     has extra words.
 
     Having extra words means contains a perfect match with a license/rule, but there
@@ -825,7 +749,7 @@ def has_extra_words(license_matches):
 
 def is_false_positive(license_matches, package_license=False):
     """
-    Return True if all of the matches in `license_matches` List of LicenseMatch
+    Return True if all of the matches in ``license_matches`` List of LicenseMatch
     are false positives.
 
     False Positive occurs when other text/code is falsely matched to a license rule,
@@ -881,7 +805,7 @@ def is_false_positive(license_matches, package_license=False):
 
 def has_unknown_matches(license_matches):
     """
-    Return True if any of the matches in `license_matches` List of LicenseMatch
+    Return True if any of the matches in ``license_matches`` List of LicenseMatch
     has an `unknown` rule identifier.
     """
     return any(match.rule.has_unknown for match in license_matches)
@@ -1013,7 +937,7 @@ def filter_license_references(license_match_objects):
 
 def has_references_to_local_files(license_matches):
     """
-    Return True if any of the matched Rule for the `license_matches` has a
+    Return True if any of the matched Rule for the ``license_matches`` has a
     non empty `referenced_filenames`, otherwise return False.
     """
     return any(
@@ -1022,7 +946,12 @@ def has_references_to_local_files(license_matches):
     )
 
 
-def get_detected_license_expression(analysis, license_match_objects=None, license_match_mappings=None, post_scan=False):
+def get_detected_license_expression(
+    analysis, 
+    license_matches=None, 
+    license_match_mappings=None, 
+    post_scan=False,
+):
     """
     Return a tuple of (detection_log, combined_expression) by combining a `matches` list of
     LicenseMatch objects according to the `analysis` string.
@@ -1030,14 +959,18 @@ def get_detected_license_expression(analysis, license_match_objects=None, licens
     If `post_scan` is True, this function is being called from outside the main
     license detection.
     """
-    if not license_match_mappings and not license_match_objects:
-        raise Exception(f"Either license_match_mappings or license_match_objects must be provided")
+    if not license_match_mappings and not license_matches:
+        raise Exception(f"Either license_match_mappings or license_matches must be provided")
 
     if license_match_mappings:
-        license_match_objects = matches_from_license_match_mappings(license_match_mappings)
+        license_matches = LicenseMatchFromResult.from_dicts(license_match_mappings)
 
     if TRACE or TRACE_ANALYSIS:
-        logger_debug(f'license_matches {license_match_objects}', f'package_license {analysis}', f'post_scan: {post_scan}')
+        logger_debug(
+            f'license_matches {license_matches}', 
+            f'package_license {analysis}', 
+            f'post_scan: {post_scan}',
+        )
 
     matches_for_expression = None
     combined_expression = None
@@ -1052,56 +985,56 @@ def get_detected_license_expression(analysis, license_match_objects=None, licens
     elif analysis == DetectionCategory.UNDETECTED_LICENSE.value:
         if TRACE_ANALYSIS:
             logger_debug(f'analysis {DetectionCategory.UNDETECTED_LICENSE.value}')
-        matches_for_expression = license_match_objects
+        matches_for_expression = license_matches
         detection_log.append(DetectionRule.UNDETECTED_LICENSE.value)
 
     elif analysis == DetectionCategory.UNKNOWN_INTRO_BEFORE_DETECTION.value:
         if TRACE_ANALYSIS:
             logger_debug(f'analysis {DetectionCategory.UNKNOWN_INTRO_BEFORE_DETECTION.value}')
-        matches_for_expression = filter_license_intros(license_match_objects)
+        matches_for_expression = filter_license_intros(license_matches)
         detection_log.append(DetectionRule.UNKNOWN_INTRO_FOLLOWED_BY_MATCH.value)
 
     elif post_scan:
         if analysis == DetectionCategory.UNKNOWN_REFERENCE_IN_FILE_TO_PACKAGE.value:
             if TRACE_ANALYSIS:
                 logger_debug(f'analysis {DetectionCategory.UNKNOWN_REFERENCE_IN_FILE_TO_PACKAGE.value}')
-            matches_for_expression = filter_license_references(license_match_objects)
+            matches_for_expression = filter_license_references(license_matches)
             detection_log.append(DetectionRule.UNKNOWN_REFERENCE_IN_FILE_TO_PACKAGE.value)
 
         elif analysis == DetectionCategory.UNKNOWN_REFERENCE_IN_FILE_TO_NONEXISTENT_PACKAGE.value:
             if TRACE_ANALYSIS:
                 logger_debug(f'analysis {DetectionCategory.UNKNOWN_REFERENCE_IN_FILE_TO_NONEXISTENT_PACKAGE.value}')
-            matches_for_expression = filter_license_references(license_match_objects)
+            matches_for_expression = filter_license_references(license_matches)
             detection_log.append(DetectionRule.UNKNOWN_REFERENCE_IN_FILE_TO_NONEXISTENT_PACKAGE.value)
 
         elif analysis == DetectionCategory.UNKNOWN_FILE_REFERENCE_LOCAL.value:
             if TRACE_ANALYSIS:
                 logger_debug(f'analysis {DetectionCategory.UNKNOWN_FILE_REFERENCE_LOCAL.value}')
-            matches_for_expression = filter_license_references(license_match_objects)
+            matches_for_expression = filter_license_references(license_matches)
             detection_log.append(DetectionRule.UNKNOWN_REFERENCE_TO_LOCAL_FILE.value)
 
         elif analysis == DetectionCategory.PACKAGE_UNKNOWN_FILE_REFERENCE_LOCAL.value:
             if TRACE_ANALYSIS:
                 logger_debug(f'analysis {DetectionCategory.PACKAGE_UNKNOWN_FILE_REFERENCE_LOCAL.value}')
-            matches_for_expression = filter_license_references(license_match_objects)
+            matches_for_expression = filter_license_references(license_matches)
             detection_log.append(DetectionRule.PACKAGE_UNKNOWN_REFERENCE_TO_LOCAL_FILE.value)
 
         elif analysis == DetectionCategory.PACKAGE_ADD_FROM_SIBLING_FILE.value:
             if TRACE_ANALYSIS:
                 logger_debug(f'analysis {DetectionCategory.PACKAGE_ADD_FROM_SIBLING_FILE.value}')
-            matches_for_expression = filter_license_references(license_match_objects)
+            matches_for_expression = filter_license_references(license_matches)
             detection_log.append(DetectionRule.PACKAGE_ADD_FROM_SIBLING_FILE.value)
 
         elif analysis == DetectionCategory.PACKAGE_ADD_FROM_FILE.value:
             if TRACE_ANALYSIS:
                 logger_debug(f'analysis {DetectionCategory.PACKAGE_ADD_FROM_FILE.value}')
-            matches_for_expression = filter_license_references(license_match_objects)
+            matches_for_expression = filter_license_references(license_matches)
             detection_log.append(DetectionRule.PACKAGE_ADD_FROM_FILE.value)
 
     elif analysis == DetectionCategory.UNKNOWN_MATCH.value:
         if TRACE_ANALYSIS:
             logger_debug(f'analysis {DetectionCategory.UNKNOWN_MATCH.value}')
-        matches_for_expression = license_match_objects
+        matches_for_expression = license_matches
         detection_log.append(DetectionRule.UNKNOWN_MATCH.value)
 
     elif analysis == DetectionCategory.LICENSE_CLUES.value:
@@ -1113,7 +1046,7 @@ def get_detected_license_expression(analysis, license_match_objects=None, licens
     else:
         if TRACE_ANALYSIS:
             logger_debug(f'analysis {DetectionRule.NOT_COMBINED.value}')
-        matches_for_expression = license_match_objects
+        matches_for_expression = license_matches
         detection_log.append(DetectionRule.NOT_COMBINED.value)
 
     if TRACE:
@@ -1189,7 +1122,7 @@ def get_undetected_matches(query_string):
 
 def get_matches_from_detections(license_detections):
     """
-    Return a `license_matches` list of LicenseMatch objects from a
+    Return a ``license_matches`` list of LicenseMatch objects from a
     `license_detections` list of LicenseDetection objects.
     """
     license_matches = []
@@ -1204,7 +1137,7 @@ def get_matches_from_detections(license_detections):
 
 def get_matches_from_detection_mappings(license_detections):
     """
-    Return a `license_matches` list of LicenseMatch mappings from a
+    Return a ``license_matches`` list of LicenseMatch mappings from a
     `license_detections` list of LicenseDetection mappings.
     """
     license_matches = []
@@ -1219,8 +1152,8 @@ def get_matches_from_detection_mappings(license_detections):
 
 def get_license_keys_from_detections(license_detections, licensing=Licensing()):
     """
-    Return a list of unique license key strings from a list of
-    LicenseDetection mappings.
+    Return a list of unique license key strings from a ``license_detections``
+    list of LicenseDetection mappings.
     """
     license_keys = set()
 
@@ -1292,9 +1225,9 @@ def analyze_detection(license_matches, package_license=False):
 
 def group_matches(license_matches, lines_threshold=LINES_THRESHOLD):
     """
-    Given a list of `matches` LicenseMatch objects, yield lists of grouped matches
-    together where each group is less than `lines_threshold` apart, while also
-    considering presence of license intros.
+    Given a list of ``license_matches`` LicenseMatch objects, yield lists of
+    grouped matches together where each group is less than `lines_threshold`
+    apart, while also considering presence of license intros.
     """
     group_of_license_matches = []
 
@@ -1442,39 +1375,31 @@ def detect_licenses(
     The `analysis` string, if not None, is one of the DetectionCategory values,
     which effects how the license matches are merged into a LicenseDetection.
 
-    If this function is called outside the main license detection, `post_scan` is
-    `True`, otherwise `False`.
+    If this function is called outside the main license detection, `post_scan`
+    is `True`, otherwise `False`.
 
-    If this function is called within the package license detection, `package_license`
-    is `True`, to enable package license specific heuristics.
+    If this function is called within the package license detection,
+    `package_license` is `True`, to enable package license specific heuristics.
     """
     if location and query_string:
-        raise Exception("Either location or query_string should be provided")
+        raise Exception("Only one of location or query_string should be provided")
+
+    if not location and not query_string:
+        return
 
     if not index:
         from licensedcode import cache
         index = cache.get_index()
 
-    if location:
-        license_matches = index.match(
-            location=location,
-            min_score=min_score,
-            deadline=deadline,
-            as_expression=as_expression,
-            unknown_licenses=unknown_licenses,
-            **kwargs,
-        )
-    elif query_string:
-        license_matches = index.match(
-            query_string=query_string,
-            min_score=min_score,
-            deadline=deadline,
-            as_expression=as_expression,
-            unknown_licenses=unknown_licenses,
-            **kwargs,
-        )
-    else:
-        return
+    license_matches = index.match(
+        location=location,
+        query_string=query_string,
+        min_score=min_score,
+        deadline=deadline,
+        as_expression=as_expression,
+        unknown_licenses=unknown_licenses,
+        **kwargs,
+    )
 
     if not license_matches:
         return

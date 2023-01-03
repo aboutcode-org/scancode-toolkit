@@ -16,9 +16,9 @@ from plugincode.post_scan import PostScanPlugin
 from plugincode.post_scan import post_scan_impl
 
 from packagedcode.utils import combine_expressions
-from licensedcode.detection import get_matches_from_detection_mappings
-from licensedcode.detection import matches_from_license_match_mappings
 from licensedcode.cache import get_cache
+from licensedcode.detection import get_matches_from_detection_mappings
+from licensedcode.detection import LicenseMatchFromResult
 
 # Tracing flags
 TRACE = False
@@ -133,7 +133,7 @@ def compute_license_score(codebase):
         key_files_only=True,
     )
     license_match_mappings = get_matches_from_detection_mappings(license_detections)
-    license_match_objects = matches_from_license_match_mappings(license_match_mappings)
+    license_matches = LicenseMatchFromResult.from_dicts(license_match_mappings)
     declared_license_expressions = get_field_values_from_codebase_resources(
         codebase=codebase,
         field_name='detected_license_expression',
@@ -142,7 +142,7 @@ def compute_license_score(codebase):
     )
 
     unique_declared_license_expressions = unique(declared_license_expressions)
-    declared_license_categories = get_license_categories(license_match_objects)
+    declared_license_categories = get_license_categories(license_matches)
 
     copyrights = get_field_values_from_codebase_resources(
         codebase=codebase, field_name='copyrights', key_files_only=True
@@ -152,17 +152,17 @@ def compute_license_score(codebase):
         codebase=codebase, field_name='license_detections', key_files_only=False
     )
     other_license_match_mappings = get_matches_from_detection_mappings(other_license_detections)
-    other_license_match_objects = matches_from_license_match_mappings(other_license_match_mappings)
+    other_license_matches = LicenseMatchFromResult.from_dicts(other_license_match_mappings)
 
-    scoring_elements.declared_license = bool(license_match_objects)
+    scoring_elements.declared_license = bool(license_matches)
     if scoring_elements.declared_license:
         scoring_elements.score += 40
 
-    scoring_elements.identification_precision = check_declared_licenses(license_match_objects)
+    scoring_elements.identification_precision = check_declared_licenses(license_matches)
     if scoring_elements.identification_precision:
         scoring_elements.score += 40
 
-    scoring_elements.has_license_text = check_for_license_texts(license_match_objects)
+    scoring_elements.has_license_text = check_for_license_texts(license_matches)
     if scoring_elements.has_license_text:
         scoring_elements.score += 10
 
@@ -173,7 +173,7 @@ def compute_license_score(codebase):
     is_permissively_licensed = check_declared_license_categories(declared_license_categories)
     if is_permissively_licensed:
         scoring_elements.conflicting_license_categories = check_for_conflicting_licenses(
-            other_license_match_objects
+            other_license_matches
         )
         if scoring_elements.conflicting_license_categories and scoring_elements.score > 0:
             scoring_elements.score -= 20

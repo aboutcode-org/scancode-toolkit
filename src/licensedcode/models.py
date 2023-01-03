@@ -20,7 +20,6 @@ from os.path import dirname
 from os.path import exists
 from os.path import join
 from pathlib import Path
-from time import time
 
 import attr
 from license_expression import ExpressionError
@@ -42,8 +41,11 @@ from licensedcode.tokenize import key_phrase_tokenizer
 from licensedcode.tokenize import KEY_PHRASE_OPEN
 from licensedcode.tokenize import KEY_PHRASE_CLOSE
 from licensedcode.tokenize import query_lines
+from scancode.api import SCANCODE_LICENSEDB_URL
+from scancode.api import SCANCODE_LICENSE_URL
 from scancode.api import SCANCODE_LICENSE_RULE_URL
 from scancode.api import SCANCODE_RULE_URL
+from scancode.api import SPDX_LICENSE_URL
 
 """
 Reference License and license Rule structures persisted as a combo of a YAML
@@ -365,6 +367,32 @@ class License:
         lic.load(license_file=license_file, check_consistency=check_consistency)
         return lic
 
+    @property
+    def scancode_url(self):
+        return SCANCODE_LICENSE_URL.format(self.key)
+
+    @property
+    def licensedb_url(self):
+        return SCANCODE_LICENSEDB_URL.format(self.key)
+
+    @property
+    def spdx_url(self):
+        """
+        Return a URL to the SPDX license either at SPDX, ScanCode or None.
+        """
+        spdx_license_key = self.spdx_license_key
+        if not spdx_license_key:
+            return
+
+        is_license_ref = spdx_license_key.lower().startswith('licenseref-')
+
+        if is_license_ref:
+            return SCANCODE_LICENSE_URL.format(self.key)
+        else:
+            # TODO: Is this replacing spdx_key???
+            spdx_license_key = spdx_license_key.rstrip('+')
+            return SPDX_LICENSE_URL.format(spdx_license_key)
+
     def license_file(self, licenses_data_dir=licenses_data_dir):
         return join(licenses_data_dir, f'{self.key}.LICENSE')
 
@@ -378,47 +406,65 @@ class License:
         newl.update(oldl)
         return newl
 
-    def to_dict(self, include_ignorables=True, include_text=False, include_builtin=True):
+    def _to_dict(self, include_field):
         """
-        Return an ordered mapping of license data (excluding text, unless
-        ``include_text`` is True). Fields with empty values are not included.
-        Optionally include the "ignorable*" attributes if ``include_ignorables``
-        is True.
+        Return a mapping of license data.
+        ``include_field(name, value)`` is a callable that will be called with
+        each name, value pair and returns True to include the field or False
+        to filter it.
+        """
+        data = {}
+        for name, value in attr.asdict(self).items():
+            if not include_field(name, value):
+                continue
+            data[name] = value
+        return data
+
+    def to_dict(
+        self,
+        include_ignorables=True,
+        include_text=False,
+        include_builtin=True,
+    ):
+        """
+        Return a mapping of license data. Skip fields with empty values.
+        Optionally include:
+        - the "ignorable*" attributes if ``include_ignorables`` is True.
+        - the text ``include_text`` is True.
+        - the ``is_builtin`` flag if ``include_builtin`` is True.
         """
 
-        # do not dump false, empties and paths
-        def dict_fields(attr, value):
+        # do not include false, epties and paths
+        def include_field(name, value):
             if not value:
                 return False
-
             if isinstance(value, str) and not value.strip():
                 return False
-
             # default to English which is implied
-            if attr.name == 'language' and value == 'en':
+            if name == 'language' and value == 'en':
                 return False
-
-            if attr.name == 'minimum_coverage' and value == 100:
+            if name == 'minimum_coverage' and value == 100:
                 return False
-
-            if not include_builtin and attr.name == 'is_builtin':
+            if not include_builtin and name == 'is_builtin':
                 return False
-
-            if not include_ignorables and  attr.name.startswith('ignorable_'):
+            if not include_ignorables and  name.startswith('ignorable_'):
                 return False
-
-            if not include_text and  attr.name == 'text':
+            if not include_text and  name == 'text':
                 return False
 
             return True
 
-        data = attr.asdict(self, filter=dict_fields, dict_factory=dict)
-        cv = data.get('minimum_coverage', 0)
-        if cv:
-            data['minimum_coverage'] = as_int(cv)
+        return self._to_dict(include_field=include_field)
 
-        if include_text:
-            data['text'] = self.text or ''
+    def to_reference(self):
+        """
+        Return a mapping of license reference data.
+        """
+        # include everything
+        data = self._to_dict(include_field=lambda k, v: True)
+        data['scancode_url'] = self.spdx_url
+        data['licensedb_url'] = self.spdx_url
+        data['spdx_url'] = self.spdx_url
         return data
 
     def dump(self, licenses_data_dir):
@@ -1211,11 +1257,11 @@ class BasicRule:
             help='Flag set to True if this is a builtin standard rule.')
     )
 
-    # The is_license_xxx flags below are nn indication of what this rule
-    # importance is (e.g. how important is its text when detected as a licensing
-    # clue) as one of several "is_license_xxx" flags. These flags are mutually
-    # exclusive and a license rule can only have one of these as flags with a
-    # True value.
+    # The is_license_xxx flags below are an indication of what this rule
+    # represents and its relative importance is, e.g., how important is the rule
+    # text when detected as a licensing clue as one of several "is_license_xxx"
+    # flags. These flags are mutually exclusive and a license rule can only have
+    # one of these as flags with a True value.
 
     is_license_text = attr.ib(
         default=False,
@@ -1288,7 +1334,7 @@ class BasicRule:
             'have notes explaining why this is a false positive and no other '
             'fields. This is useful in some cases when some text looks like a '
             'license text, notice or tag but is not actually it. '
-            'Mutually exclusive from any other is_license_* flag')
+            'Mutually exclusive from any is_license_* flag')
     )
 
     language = attr.ib(
@@ -1772,7 +1818,7 @@ class BasicRule:
 
     def spdx_license_expression(self, licensing=None):
         from licensedcode.cache import build_spdx_license_expression
-        return str(build_spdx_license_expression(self, licensing=licensing))
+        return str(build_spdx_license_expression(self.license_expression, licensing=licensing))
 
     def get_length(self, unique=False):
         return self.length_unique if unique else self.length
@@ -1788,26 +1834,35 @@ class BasicRule:
         return (self.min_high_matched_length_unique if unique
                 else self.min_high_matched_length)
 
-    def get_reference_data(self):
+    def to_reference(self):
         """
-        Get license reference data for this Rule object.
-        Used to rehydrate license match mappings.
+        Return a mapping of reference data for this Rule object.
         """
-
         data = {}
-
         data['license_expression'] = self.license_expression
-        data['rule_identifier'] = self.identifier
+        data['identifier'] = self.identifier
+        data['language'] = self.language
         data['rule_url'] = self.rule_url
-        data['referenced_filenames'] = self.referenced_filenames
         data['is_license_text'] = self.is_license_text
         data['is_license_notice'] = self.is_license_notice
         data['is_license_reference'] = self.is_license_reference
         data['is_license_tag'] = self.is_license_tag
         data['is_license_intro'] = self.is_license_intro
-        data['rule_length'] = self.length
-        data['rule_relevance'] = self.relevance
-
+        data['is_continuous'] = self.is_continuous
+        data['is_builtin'] = self.is_builtin
+        data['is_from_license'] = self.is_from_license
+        data['is_synthetic'] = self.is_synthetic
+        data['length'] = self.length
+        data['relevance'] = as_int(self.relevance)
+        data['minimum_coverage'] = as_int(self.minimum_coverage)
+        data['referenced_filenames'] = self.referenced_filenames
+        data['notes'] = self.notes
+        data['ignorable_copyrights'] = self.ignorable_copyrights
+        data['ignorable_holders'] = self.ignorable_holders
+        data['ignorable_authors'] = self.ignorable_authors
+        data['ignorable_urls'] = self.ignorable_urls
+        data['ignorable_emails'] = self.ignorable_emails
+        data['text'] = self.text
         return data
 
     def to_dict(self, include_text=False):
@@ -1915,10 +1970,6 @@ class Rule(BasicRule):
     A detection rule object with support for data and text files.
     """
 
-    @property
-    def unique_id(self):
-        return self.compute_unique_id()
-
     def __attrs_post_init__(self, *args, **kwargs):
         self.setup()
 
@@ -1931,16 +1982,6 @@ class Rule(BasicRule):
         rule = Rule(is_builtin=is_builtin)
         rule.load_data(rule_file=rule_file)
         return rule
-
-    def compute_unique_id(self):
-        """
-        Return a a unique id string based on this rule content.
-
-        (This is a SHA1 checksum of the identifier expression and text, but this
-        is an implementation detail)
-        """
-        content = f'{self.identifier!r}{self.license_expression!r}{self.text!r}'
-        return sha1(content.encode('utf-8')).hexdigest()
 
     def load_data(self, rule_file):
         """
@@ -2178,32 +2219,32 @@ class Rule(BasicRule):
         else:
             self.relevance = computed_relevance
 
+    @staticmethod
+    def from_match_data(license_match_mapping):
+        """
+        Return a Rule object from a ``license_match_mapping`` mapping of
+        LicenseMatch data.
+        """
+        rule_identifier = license_match_mapping["rule_identifier"]
 
-def get_license_rule_from_match(license_match):
-    """
-    Return a rehydrated Rule object from a `license_match`
-    LicenseMatch mapping.
-    """
+        rule_subclass_by_identifier_prefix = {
+            "spdx-license-identifier": SpdxRule,
+            "license-detection-unknown": UnknownRule,
+            "package-manifest": UnDetectedRule,
+        }
 
-    rule_subclass_by_identifier_prefix = {
-        "spdx-license-identifier": SpdxRule,
-        "license-detection-unknown": UnknownRule,
-        "package-manifest": UnDetectedRule,
-    }
-    
-    prefixes = tuple(rule_subclass_by_identifier_prefix.keys())
-    rule_identifier = license_match["rule_identifier"]
-    if rule_identifier.startswith(prefixes):
-        for prefix, cls in rule_subclass_by_identifier_prefix.items():
-            if rule_identifier.startswith(prefix):
-                return cls(
-                    license_expression=license_match["license_expression"],
-                    text=license_match.get("matched_text", None),
-                    length=license_match["matched_length"],
-                )
-    else:
-        from licensedcode.cache import get_index
-        return get_index().rules_by_id[rule_identifier]
+        prefixes = tuple(rule_subclass_by_identifier_prefix.keys())
+        if rule_identifier.startswith(prefixes):
+            for prefix, klass in rule_subclass_by_identifier_prefix.items():
+                if rule_identifier.startswith(prefix):
+                    return klass(
+                        license_expression=license_match_mapping["license_expression"],
+                        text=license_match_mapping.get("matched_text", None),
+                        length=license_match_mapping["matched_length"],
+                    )
+        else:
+            from licensedcode.cache import get_index
+            return get_index().rules_by_id[rule_identifier]
 
 
 def compute_relevance(length):
@@ -2353,6 +2394,18 @@ class SynthethicRule(Rule):
     They do not have backing files.
     """
 
+    @property
+    def _unique_id(self):
+        """
+        Return a computed unique id string based on this rule content.
+
+        This is used to compute unique identifiers for synthetic rules.
+        (This is a SHA1 checksum of the expression and text, but this is an
+        implementation detail)
+        """
+        content = f'{self.license_expression!r}{self.text!r}'
+        return sha1(content.encode('utf-8')).hexdigest()
+
     def load(self):
         raise NotImplementedError
 
@@ -2381,7 +2434,7 @@ class SpdxRule(SynthethicRule):
     """
 
     def __attrs_post_init__(self, *args, **kwargs):
-        self.identifier = f'spdx-license-identifier-{self.license_expression}-{self.unique_id}'
+        self.identifier = f'spdx-license-identifier-{self.license_expression}-{self._unique_id}'
         self.setup()
 
         if not self.license_expression:
@@ -2411,16 +2464,15 @@ class UnknownRule(SynthethicRule):
 
     def __attrs_post_init__(self, *args, **kwargs):
         # We craft a UNIQUE identifier for the matched content
-        self.identifier = f'license-detection-unknown-{self.unique_id}'
+        self.identifier = f'license-detection-unknown-{self._unique_id}'
 
         self.license_expression = UNKNOWN_LICENSE_KEY
         # note that this could be shared across rules as an optimization
         self.license_expression_object = self.licensing.parse(UNKNOWN_LICENSE_KEY)
         self.is_license_notice = True
         self.notes = 'Unknown license based on a composite of license words.'
-        self.setup()
         self.is_synthetic = True
-
+        self.setup()
         # called only for it's side effects
         self.tokens()
 
@@ -2438,7 +2490,7 @@ class UnDetectedRule(SynthethicRule):
     """
 
     def __attrs_post_init__(self, *args, **kwargs):
-        self.identifier = f'package-manifest-{self.license_expression}-{self.unique_id}'
+        self.identifier = f'package-manifest-{self.license_expression}-{self._unique_id}'
         expression = self.licensing.parse(self.license_expression)
         self.license_expression = expression.render()
         self.license_expression_object = expression
