@@ -48,32 +48,7 @@
           "license_expression": "mit",
           "rule_identifier": "mit_27.RULE",
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_27.RULE",
-          "referenced_filenames": [],
-          "is_license_text": false,
-          "is_license_notice": false,
-          "is_license_reference": true,
-          "is_license_tag": false,
-          "is_license_intro": false,
-          "rule_length": 3,
-          "rule_relevance": 100,
-          "matched_text": "The MIT License",
-          "licenses": [
-            {
-              "key": "mit",
-              "name": "MIT License",
-              "short_name": "MIT License",
-              "category": "Permissive",
-              "is_exception": false,
-              "is_unknown": false,
-              "owner": "MIT",
-              "homepage_url": "http://opensource.org/licenses/mit-license.php",
-              "text_url": "http://opensource.org/licenses/mit-license.php",
-              "reference_url": "https://scancode-licensedb.aboutcode.org/mit",
-              "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE",
-              "spdx_license_key": "MIT",
-              "spdx_url": "https://spdx.org/licenses/MIT"
-            }
-          ]
+          "matched_text": "The MIT License"
         }
       ]
     },
@@ -93,32 +68,7 @@
           "license_expression": "mit",
           "rule_identifier": "mit_1165.RULE",
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_1165.RULE",
-          "referenced_filenames": [],
-          "is_license_text": false,
-          "is_license_notice": false,
-          "is_license_reference": false,
-          "is_license_tag": true,
-          "is_license_intro": false,
-          "rule_length": 2,
-          "rule_relevance": 100,
-          "matched_text": "http://commons.ucalgary.ca/projects/licenses/mit-license.txt",
-          "licenses": [
-            {
-              "key": "mit",
-              "name": "MIT License",
-              "short_name": "MIT License",
-              "category": "Permissive",
-              "is_exception": false,
-              "is_unknown": false,
-              "owner": "MIT",
-              "homepage_url": "http://opensource.org/licenses/mit-license.php",
-              "text_url": "http://opensource.org/licenses/mit-license.php",
-              "reference_url": "https://scancode-licensedb.aboutcode.org/mit",
-              "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE",
-              "spdx_license_key": "MIT",
-              "spdx_url": "https://spdx.org/licenses/MIT"
-            }
-          ]
+          "matched_text": "http://commons.ucalgary.ca/projects/licenses/mit-license.txt"
         }
       ]
     }
