@@ -131,29 +131,7 @@ class TestRpmInstalled(PackageTester):
     def test_scan_system_package_end_to_end_installed_rpms_fedora_bdb(self):
         test_dir = self.extract_test_tar('rpm_installed/end-to-end/bdb-fedora-rootfs.tar.xz')
         test_dir = os.path.join(test_dir, 'rootfs')
-
-        # To regen this test expected tarball:
-        # - regen the test with SCANCODE_REGEN_TEST_FIXTURES=yes
-        # - in a shell Then run `tar -cJf bdb-fedora-rootfs.tar.xz-expected.json.tar.xz bdb-fedora-rootfs.tar.xz-expected.json`
-        # - Remove the extracted json
-
-        # To regen this test and see changes:
-        # - Extract `bdb-fedora-rootfs.tar.xz-expected.json.tar.xz` and stage the changes, then regen to see changes
-        # - regen the test with SCANCODE_REGEN_TEST_FIXTURES=yes
-        # - in a shell Then run `tar -cJf bdb-fedora-rootfs.tar.xz-expected.json.tar.xz bdb-fedora-rootfs.tar.xz-expected.json`
-        # - Remove the extracted json
-
-        regen = REGEN_TEST_FIXTURES
-        expected = 'bdb-fedora-rootfs.tar.xz-expected.json'
-
-        expected_file_tarball = f'rpm_installed/end-to-end/{expected}.tar.xz'
-        if regen:
-            # regen is special because we compress the JSON
-            expected_file = self.get_test_loc(f'rpm_installed/end-to-end/{expected}', must_exist=False)
-        else:
-            expected_file = self.extract_test_tar(expected_file_tarball)
-            expected_file = os.path.join(expected_file, expected)
-
+        expected_file = self.get_test_loc(f'rpm_installed/end-to-end/bdb-fedora-rootfs.tar.xz-expected.json')
         result_file = self.get_temp_file('results.json')
         run_scan_click(['--system-package', test_dir, '--json-pp', result_file])
-        check_json_scan(expected_file, result_file, regen=regen)
+        check_json_scan(expected_file, result_file, regen=REGEN_TEST_FIXTURES)
