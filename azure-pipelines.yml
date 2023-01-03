@@ -111,18 +111,9 @@ jobs:
 
     - template: etc/ci/azure-posix.yml
       parameters:
-          job_name: macos1015_cpython_1
-          image_name: macos-10.15
-          python_versions: ['3.8']
-          python_architecture: x64
-          test_suites:
-              all: venv/bin/pytest -n 2 -vvs tests/scancode/test_cli.py
-
-    - template: etc/ci/azure-posix.yml
-      parameters:
-          job_name: macos1015_cpython_2
-          image_name: macos-10.15
-          python_versions: ['3.9', '3.10']
+          job_name: ubuntu22_cpython
+          image_name: ubuntu-22.04
+          python_versions: ['3.8', '3.9', '3.10']
           python_architecture: x64
           test_suites:
               all: venv/bin/pytest -n 2 -vvs tests/scancode/test_cli.py
@@ -207,6 +198,13 @@ jobs:
 # Tests using a plain pip install to get the latest of all wheels
 ################################################################################
 
+    - template: etc/ci/azure-posix.yml
+      parameters:
+          job_name: ubuntu22_cpython_latest_from_pip
+          image_name: ubuntu-22.04
+          python_versions: ['3.8', '3.9', '3.10']
+          test_suites:
+              all: venv/bin/pip install --upgrade-strategy eager --force-reinstall --upgrade -e .[dev] && venv/bin/pytest -n 2 -vvs tests/scancode/test_cli.py
 
     - template: etc/ci/azure-posix.yml
       parameters:
@@ -220,14 +218,6 @@ jobs:
       parameters:
           job_name: ubuntu20_cpython_latest_from_pip
           image_name: ubuntu-20.04
-          python_versions: ['3.8', '3.9', '3.10']
-          test_suites:
-              all: venv/bin/pip install --upgrade-strategy eager --force-reinstall --upgrade -e .[dev] && venv/bin/pytest -n 2 -vvs tests/scancode/test_cli.py
-
-    - template: etc/ci/azure-posix.yml
-      parameters:
-          job_name: macos1015_cpython_latest_from_pip
-          image_name: macos-10.15
           python_versions: ['3.8', '3.9', '3.10']
           test_suites:
               all: venv/bin/pip install --upgrade-strategy eager --force-reinstall --upgrade -e .[dev] && venv/bin/pytest -n 2 -vvs tests/scancode/test_cli.py
