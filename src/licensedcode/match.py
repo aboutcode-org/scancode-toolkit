@@ -792,7 +792,6 @@ class LicenseMatch(object):
 
         # LicenseDB Level Information (Rule that was matched)
         result['license_expression'] = self.rule.license_expression
-        result['license_expression_spdx'] = self.rule.spdx_license_expression() 
         result['rule_identifier'] = self.rule.identifier
 
         # TODO: should be a Rule.url()  method instead
