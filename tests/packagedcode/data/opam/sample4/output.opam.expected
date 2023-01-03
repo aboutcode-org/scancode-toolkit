@@ -61,49 +61,9 @@
             "match_coverage": 100.0,
             "matcher": "1-spdx-id",
             "license_expression": "lgpl-3.0 WITH ocaml-lgpl-linking-exception",
-            "rule_identifier": "spdx-license-identifier-lgpl-3.0 WITH ocaml-lgpl-linking-exception-056a6c01c9bd45bf8ec6e0ce5c869cf42187cb17",
+            "rule_identifier": "spdx-license-identifier-lgpl-3.0 WITH ocaml-lgpl-linking-exception-45b28dafe2d3f59c703b2663cd62d139586477a0",
             "rule_url": null,
-            "referenced_filenames": [],
-            "is_license_text": false,
-            "is_license_notice": false,
-            "is_license_reference": false,
-            "is_license_tag": true,
-            "is_license_intro": false,
-            "rule_length": 9,
-            "rule_relevance": 100,
-            "matched_text": "LGPL-3.0-only with OCaml-LGPL-linking-exception",
-            "licenses": [
-              {
-                "key": "lgpl-3.0",
-                "name": "GNU Lesser General Public License 3.0",
-                "short_name": "LGPL 3.0",
-                "category": "Copyleft Limited",
-                "is_exception": false,
-                "is_unknown": false,
-                "owner": "Free Software Foundation (FSF)",
-                "homepage_url": "http://www.gnu.org/licenses/lgpl-3.0.html",
-                "text_url": "http://www.gnu.org/licenses/lgpl-3.0-standalone.html",
-                "reference_url": "https://scancode-licensedb.aboutcode.org/lgpl-3.0",
-                "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/lgpl-3.0.LICENSE",
-                "spdx_license_key": "LGPL-3.0-only",
-                "spdx_url": "https://spdx.org/licenses/LGPL-3.0-only"
-              },
-              {
-                "key": "ocaml-lgpl-linking-exception",
-                "name": "OCaml LGPL Linking Exception",
-                "short_name": "OCaml LGPL Linking Exception",
-                "category": "Copyleft Limited",
-                "is_exception": true,
-                "is_unknown": false,
-                "owner": "OCaml",
-                "homepage_url": "https://caml.inria.fr/ocaml/license.en.html",
-                "text_url": "",
-                "reference_url": "https://scancode-licensedb.aboutcode.org/ocaml-lgpl-linking-exception",
-                "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/ocaml-lgpl-linking-exception.LICENSE",
-                "spdx_license_key": "OCaml-LGPL-linking-exception",
-                "spdx_url": "https://spdx.org/licenses/OCaml-LGPL-linking-exception"
-              }
-            ]
+            "matched_text": "LGPL-3.0-only with OCaml-LGPL-linking-exception"
           }
         ]
       }

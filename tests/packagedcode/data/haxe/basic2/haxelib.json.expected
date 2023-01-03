@@ -52,34 +52,9 @@
             "match_coverage": 100.0,
             "matcher": "1-spdx-id",
             "license_expression": "mit",
-            "rule_identifier": "spdx-license-identifier-mit-a4db7113a36d8a7c3f72b0eab712d9e98d1ce6f7",
+            "rule_identifier": "spdx-license-identifier-mit-5da48780aba670b0860c46d899ed42a0f243ff06",
             "rule_url": null,
-            "referenced_filenames": [],
-            "is_license_text": false,
-            "is_license_notice": false,
-            "is_license_reference": false,
-            "is_license_tag": true,
-            "is_license_intro": false,
-            "rule_length": 1,
-            "rule_relevance": 100,
-            "matched_text": "MIT",
-            "licenses": [
-              {
-                "key": "mit",
-                "name": "MIT License",
-                "short_name": "MIT License",
-                "category": "Permissive",
-                "is_exception": false,
-                "is_unknown": false,
-                "owner": "MIT",
-                "homepage_url": "http://opensource.org/licenses/mit-license.php",
-                "text_url": "http://opensource.org/licenses/mit-license.php",
-                "reference_url": "https://scancode-licensedb.aboutcode.org/mit",
-                "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE",
-                "spdx_license_key": "MIT",
-                "spdx_url": "https://spdx.org/licenses/MIT"
-              }
-            ]
+            "matched_text": "MIT"
           }
         ]
       }

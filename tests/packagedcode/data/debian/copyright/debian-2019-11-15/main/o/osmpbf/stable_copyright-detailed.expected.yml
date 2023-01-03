@@ -23,29 +23,7 @@ other_license_detections:
         license_expression: lgpl-3.0-plus
         rule_identifier: lgpl-3.0-plus_166.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-3.0-plus_166.RULE
-        referenced_filenames: []
-        is_license_text: no
-        is_license_notice: no
-        is_license_reference: no
-        is_license_tag: yes
-        is_license_intro: no
-        rule_length: 3
-        rule_relevance: 100
         matched_text: 'License: lgpl-3+'
-        licenses:
-          - key: lgpl-3.0-plus
-            name: GNU Lesser General Public License 3.0 or later
-            short_name: LGPL 3.0 or later
-            category: Copyleft Limited
-            is_exception: no
-            is_unknown: no
-            owner: Free Software Foundation (FSF)
-            homepage_url: http://www.gnu.org/licenses/lgpl-3.0-standalone.html
-            text_url: http://www.gnu.org/licenses/lgpl-3.0-standalone.html
-            reference_url: https://scancode-licensedb.aboutcode.org/lgpl-3.0-plus
-            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/lgpl-3.0-plus.LICENSE
-            spdx_license_key: LGPL-3.0-or-later
-            spdx_url: https://spdx.org/licenses/LGPL-3.0-or-later
       - score: '100.0'
         start_line: 16
         end_line: 30
@@ -55,15 +33,6 @@ other_license_detections:
         license_expression: lgpl-3.0-plus
         rule_identifier: lgpl-3.0-plus_173.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-3.0-plus_173.RULE
-        referenced_filenames:
-          - /usr/share/common-licenses/LGPL-3
-        is_license_text: no
-        is_license_notice: yes
-        is_license_reference: no
-        is_license_tag: no
-        is_license_intro: no
-        rule_length: 130
-        rule_relevance: 100
         matched_text: |
           This package is free software; you can redistribute it and/or modify
           it under the terms of the GNU Lesser General Public License as published by
@@ -80,20 +49,6 @@ other_license_detections:
 
           On Debian systems, the complete text of the GNU Lesser General Public License
           version 3 can be found in "/usr/share/common-licenses/LGPL-3".
-        licenses:
-          - key: lgpl-3.0-plus
-            name: GNU Lesser General Public License 3.0 or later
-            short_name: LGPL 3.0 or later
-            category: Copyleft Limited
-            is_exception: no
-            is_unknown: no
-            owner: Free Software Foundation (FSF)
-            homepage_url: http://www.gnu.org/licenses/lgpl-3.0-standalone.html
-            text_url: http://www.gnu.org/licenses/lgpl-3.0-standalone.html
-            reference_url: https://scancode-licensedb.aboutcode.org/lgpl-3.0-plus
-            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/lgpl-3.0-plus.LICENSE
-            spdx_license_key: LGPL-3.0-or-later
-            spdx_url: https://spdx.org/licenses/LGPL-3.0-or-later
   - license_expression: gpl-3.0-plus
     detection_log:
       - not-combined
@@ -107,29 +62,7 @@ other_license_detections:
         license_expression: gpl-3.0-plus
         rule_identifier: gpl-3.0-plus_92.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0-plus_92.RULE
-        referenced_filenames: []
-        is_license_text: no
-        is_license_notice: no
-        is_license_reference: no
-        is_license_tag: yes
-        is_license_intro: no
-        rule_length: 3
-        rule_relevance: 100
         matched_text: 'License: gpl-3+'
-        licenses:
-          - key: gpl-3.0-plus
-            name: GNU General Public License 3.0 or later
-            short_name: GPL 3.0 or later
-            category: Copyleft
-            is_exception: no
-            is_unknown: no
-            owner: Free Software Foundation (FSF)
-            homepage_url: http://www.gnu.org/licenses/gpl-3.0-standalone.html
-            text_url: http://www.gnu.org/licenses/gpl-3.0-standalone.html
-            reference_url: https://scancode-licensedb.aboutcode.org/gpl-3.0-plus
-            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-3.0-plus.LICENSE
-            spdx_license_key: GPL-3.0-or-later
-            spdx_url: https://spdx.org/licenses/GPL-3.0-or-later
       - score: '100.0'
         start_line: 33
         end_line: 47
@@ -139,15 +72,6 @@ other_license_detections:
         license_expression: gpl-3.0-plus
         rule_identifier: gpl-3.0-plus_323.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0-plus_323.RULE
-        referenced_filenames:
-          - /usr/share/common-licenses/GPL-3
-        is_license_text: no
-        is_license_notice: yes
-        is_license_reference: no
-        is_license_tag: no
-        is_license_intro: no
-        rule_length: 126
-        rule_relevance: 100
         matched_text: |
           This package is free software; you can redistribute it and/or modify
           it under the terms of the GNU General Public License as published by
@@ -164,20 +88,6 @@ other_license_detections:
 
           On Debian systems, the complete text of the GNU General Public License
           version 3 can be found in "/usr/share/common-licenses/GPL-3".
-        licenses:
-          - key: gpl-3.0-plus
-            name: GNU General Public License 3.0 or later
-            short_name: GPL 3.0 or later
-            category: Copyleft
-            is_exception: no
-            is_unknown: no
-            owner: Free Software Foundation (FSF)
-            homepage_url: http://www.gnu.org/licenses/gpl-3.0-standalone.html
-            text_url: http://www.gnu.org/licenses/gpl-3.0-standalone.html
-            reference_url: https://scancode-licensedb.aboutcode.org/gpl-3.0-plus
-            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-3.0-plus.LICENSE
-            spdx_license_key: GPL-3.0-or-later
-            spdx_url: https://spdx.org/licenses/GPL-3.0-or-later
 copyright: |
   2010, Scott A. Crosby <scott@sacrosby.com>
   2010-2012, Giovanni Mascellani <gio@debian.org>

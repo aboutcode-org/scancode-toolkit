@@ -17,14 +17,6 @@ license_detections:
         license_expression: proprietary-license
         rule_identifier: proprietary-license_521.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/proprietary-license_521.RULE
-        referenced_filenames: []
-        is_license_text: yes
-        is_license_notice: no
-        is_license_reference: no
-        is_license_tag: no
-        is_license_intro: no
-        rule_length: 2975
-        rule_relevance: 100
         matched_text: "TERMS AND CONDITIONS\n    IMPORTANT - PLEASE READ BEFORE INSTALLING OR\
           \ USING THIS INTEL(C) SOFTWARE\n\nDo not use or load this firmware (the \"Software\"\
           ) until you have carefully read\nthe following terms and conditions. By loading or\
@@ -263,19 +255,5 @@ license_detections:
           \ or their successors. Use\nof the Software by the Government constitutes acknowledgment\
           \ of Intel's\nproprietary rights therein. Contractor or Manufacturer is Intel Corporation,\n\
           2200 Mission College Blvd., Santa Clara, CA 95052."
-        licenses:
-          - key: proprietary-license
-            name: Proprietary License
-            short_name: Proprietary License
-            category: Commercial
-            is_exception: no
-            is_unknown: no
-            owner: Unspecified
-            homepage_url:
-            text_url:
-            reference_url: https://scancode-licensedb.aboutcode.org/proprietary-license
-            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/proprietary-license.LICENSE
-            spdx_license_key: LicenseRef-scancode-proprietary-license
-            spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/proprietary-license.LICENSE
 other_license_detections: []
 copyright: Copyright 2003-2009 Intel Corporation

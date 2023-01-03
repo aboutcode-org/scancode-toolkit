@@ -38,49 +38,9 @@
           "match_coverage": 100.0,
           "matcher": "1-spdx-id",
           "license_expression": "gpl-1.0-plus OR artistic-perl-1.0",
-          "rule_identifier": "spdx-license-identifier-gpl-1.0-plus OR artistic-perl-1.0-225d2e60aa2b42b9c63c2d12d13eb6a9fd18a5f8",
+          "rule_identifier": "spdx-license-identifier-gpl-1.0-plus OR artistic-perl-1.0-535d84b5d1aa6e65995199385dd4e21954d8d8ba",
           "rule_url": null,
-          "referenced_filenames": [],
-          "is_license_text": false,
-          "is_license_notice": false,
-          "is_license_reference": false,
-          "is_license_tag": true,
-          "is_license_intro": false,
-          "rule_length": 10,
-          "rule_relevance": 100,
-          "matched_text": "gpl-1.0-or-later OR artistic-1.0-perl",
-          "licenses": [
-            {
-              "key": "gpl-1.0-plus",
-              "name": "GNU General Public License 1.0 or later",
-              "short_name": "GPL 1.0 or later",
-              "category": "Copyleft",
-              "is_exception": false,
-              "is_unknown": false,
-              "owner": "Free Software Foundation (FSF)",
-              "homepage_url": "http://www.gnu.org/licenses/old-licenses/gpl-1.0-standalone.html",
-              "text_url": "http://www.gnu.org/licenses/old-licenses/gpl-1.0-standalone.html",
-              "reference_url": "https://scancode-licensedb.aboutcode.org/gpl-1.0-plus",
-              "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-1.0-plus.LICENSE",
-              "spdx_license_key": "GPL-1.0-or-later",
-              "spdx_url": "https://spdx.org/licenses/GPL-1.0-or-later"
-            },
-            {
-              "key": "artistic-perl-1.0",
-              "name": "Artistic License (Perl) 1.0",
-              "short_name": "Artistic-Perl-1.0",
-              "category": "Copyleft Limited",
-              "is_exception": false,
-              "is_unknown": false,
-              "owner": "Perl Foundation",
-              "homepage_url": "http://dev.perl.org/licenses/artistic.html",
-              "text_url": "http://dev.perl.org/licenses/artistic.html",
-              "reference_url": "https://scancode-licensedb.aboutcode.org/artistic-perl-1.0",
-              "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/artistic-perl-1.0.LICENSE",
-              "spdx_license_key": "Artistic-1.0-Perl",
-              "spdx_url": "https://spdx.org/licenses/Artistic-1.0-Perl"
-            }
-          ]
+          "matched_text": "gpl-1.0-or-later OR artistic-1.0-perl"
         }
       ]
     }

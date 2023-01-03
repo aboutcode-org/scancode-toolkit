@@ -18,14 +18,6 @@ license_detections:
         license_expression: sleepycat
         rule_identifier: sleepycat_17.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/sleepycat_17.RULE
-        referenced_filenames: []
-        is_license_text: no
-        is_license_notice: yes
-        is_license_reference: no
-        is_license_tag: no
-        is_license_intro: no
-        rule_length: 61
-        rule_relevance: 100
         matched_text: |
           http://www.oracle.com/technology/software/products/berkeley-db/db/index.html
 
@@ -35,20 +27,6 @@ license_detections:
           software.  For a license to use the Berkeley DB software under conditions
           other than those described here, or to purchase support for this software,
           please contact Oracle at berkeleydb-info_us@oracle.com.
-        licenses:
-          - key: sleepycat
-            name: Sleepycat License (Berkeley Database License)
-            short_name: Sleepycat License
-            category: Copyleft
-            is_exception: no
-            is_unknown: no
-            owner: Oracle Corporation
-            homepage_url: http://opensource.org/licenses/sleepycat.html
-            text_url: http://www.oracle.com/technology/software/products/berkeley-db/htdocs/oslicense.html
-            reference_url: https://scancode-licensedb.aboutcode.org/sleepycat
-            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/sleepycat.LICENSE
-            spdx_license_key: Sleepycat
-            spdx_url: https://spdx.org/licenses/Sleepycat
   - license_expression: sleepycat
     detection_log:
       - not-combined
@@ -62,14 +40,6 @@ license_detections:
         license_expression: sleepycat
         rule_identifier: sleepycat_15.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/sleepycat_15.RULE
-        referenced_filenames: []
-        is_license_text: yes
-        is_license_notice: no
-        is_license_reference: no
-        is_license_tag: no
-        is_license_intro: no
-        rule_length: 283
-        rule_relevance: 100
         matched_text: |
           Redistribution and use in source and binary forms, with or without
            * modification, are permitted provided that the following conditions
@@ -101,20 +71,6 @@ license_detections:
            * WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
            * OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
            * IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-        licenses:
-          - key: sleepycat
-            name: Sleepycat License (Berkeley Database License)
-            short_name: Sleepycat License
-            category: Copyleft
-            is_exception: no
-            is_unknown: no
-            owner: Oracle Corporation
-            homepage_url: http://opensource.org/licenses/sleepycat.html
-            text_url: http://www.oracle.com/technology/software/products/berkeley-db/htdocs/oslicense.html
-            reference_url: https://scancode-licensedb.aboutcode.org/sleepycat
-            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/sleepycat.LICENSE
-            spdx_license_key: Sleepycat
-            spdx_url: https://spdx.org/licenses/Sleepycat
   - license_expression: bsd-new
     detection_log:
       - not-combined
@@ -128,14 +84,6 @@ license_detections:
         license_expression: bsd-new
         rule_identifier: bsd-new_19.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_19.RULE
-        referenced_filenames: []
-        is_license_text: yes
-        is_license_notice: no
-        is_license_reference: no
-        is_license_tag: no
-        is_license_intro: no
-        rule_length: 213
-        rule_relevance: 100
         matched_text: |
           Redistribution and use in source and binary forms, with or without
            * modification, are permitted provided that the following conditions
@@ -160,20 +108,6 @@ license_detections:
            * LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
            * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
            * SUCH DAMAGE.
-        licenses:
-          - key: bsd-new
-            name: BSD-3-Clause
-            short_name: BSD-3-Clause
-            category: Permissive
-            is_exception: no
-            is_unknown: no
-            owner: Regents of the University of California
-            homepage_url: http://www.opensource.org/licenses/BSD-3-Clause
-            text_url: http://www.opensource.org/licenses/BSD-3-Clause
-            reference_url: https://scancode-licensedb.aboutcode.org/bsd-new
-            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-new.LICENSE
-            spdx_license_key: BSD-3-Clause
-            spdx_url: https://spdx.org/licenses/BSD-3-Clause
   - license_expression: bsd-new
     detection_log:
       - not-combined
@@ -187,14 +121,6 @@ license_detections:
         license_expression: bsd-new
         rule_identifier: bsd-new_943.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_943.RULE
-        referenced_filenames: []
-        is_license_text: yes
-        is_license_notice: no
-        is_license_reference: no
-        is_license_tag: no
-        is_license_intro: no
-        rule_length: 213
-        rule_relevance: 100
         matched_text: |
           Redistribution and use in source and binary forms, with or without
            * modification, are permitted provided that the following conditions
@@ -219,20 +145,6 @@ license_detections:
            * LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
            * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
            * SUCH DAMAGE.
-        licenses:
-          - key: bsd-new
-            name: BSD-3-Clause
-            short_name: BSD-3-Clause
-            category: Permissive
-            is_exception: no
-            is_unknown: no
-            owner: Regents of the University of California
-            homepage_url: http://www.opensource.org/licenses/BSD-3-Clause
-            text_url: http://www.opensource.org/licenses/BSD-3-Clause
-            reference_url: https://scancode-licensedb.aboutcode.org/bsd-new
-            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-new.LICENSE
-            spdx_license_key: BSD-3-Clause
-            spdx_url: https://spdx.org/licenses/BSD-3-Clause
   - license_expression: bsd-new
     detection_log:
       - not-combined
@@ -246,14 +158,6 @@ license_detections:
         license_expression: bsd-new
         rule_identifier: bsd-new_115.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_115.RULE
-        referenced_filenames: []
-        is_license_text: yes
-        is_license_notice: no
-        is_license_reference: no
-        is_license_tag: no
-        is_license_intro: no
-        rule_length: 216
-        rule_relevance: 100
         matched_text: |
           Redistribution and use in source and binary forms, with or without
            * modification, are permitted provided that the following conditions
@@ -278,20 +182,6 @@ license_detections:
            * CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
            * ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF
            * THE POSSIBILITY OF SUCH DAMAGE.
-        licenses:
-          - key: bsd-new
-            name: BSD-3-Clause
-            short_name: BSD-3-Clause
-            category: Permissive
-            is_exception: no
-            is_unknown: no
-            owner: Regents of the University of California
-            homepage_url: http://www.opensource.org/licenses/BSD-3-Clause
-            text_url: http://www.opensource.org/licenses/BSD-3-Clause
-            reference_url: https://scancode-licensedb.aboutcode.org/bsd-new
-            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-new.LICENSE
-            spdx_license_key: BSD-3-Clause
-            spdx_url: https://spdx.org/licenses/BSD-3-Clause
 other_license_detections: []
 copyright: |
   Copyright (c) 1990, 2010 Oracle and/or its affiliates

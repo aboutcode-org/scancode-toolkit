@@ -20,14 +20,6 @@ other_license_detections:
         license_expression: bzip2-libbzip-2010
         rule_identifier: bzip2-libbzip-2010.LICENSE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bzip2-libbzip-2010.LICENSE
-        referenced_filenames: []
-        is_license_text: yes
-        is_license_notice: no
-        is_license_reference: no
-        is_license_tag: no
-        is_license_intro: no
-        rule_length: 233
-        rule_relevance: 100
         matched_text: |
           Redistribution and use in source and binary forms, with or without
           modification, are permitted provided that the following conditions
@@ -59,20 +51,6 @@ other_license_detections:
           WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
           NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
           SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-        licenses:
-          - key: bzip2-libbzip-2010
-            name: bzip2 License 2010
-            short_name: bzip2 License 2010
-            category: Permissive
-            is_exception: no
-            is_unknown: no
-            owner: bzip
-            homepage_url: https://github.com/asimonov-im/bzip2/blob/master/LICENSE
-            text_url:
-            reference_url: https://scancode-licensedb.aboutcode.org/bzip2-libbzip-2010
-            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bzip2-libbzip-2010.LICENSE
-            spdx_license_key: bzip2-1.0.6
-            spdx_url: https://spdx.org/licenses/bzip2-1.0.6
   - license_expression: gpl-2.0
     detection_log:
       - not-combined
@@ -86,29 +64,7 @@ other_license_detections:
         license_expression: gpl-2.0
         rule_identifier: gpl-2.0_561.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0_561.RULE
-        referenced_filenames: []
-        is_license_text: no
-        is_license_notice: no
-        is_license_reference: no
-        is_license_tag: yes
-        is_license_intro: no
-        rule_length: 3
-        rule_relevance: 100
         matched_text: 'License: gpl-2'
-        licenses:
-          - key: gpl-2.0
-            name: GNU General Public License 2.0
-            short_name: GPL 2.0
-            category: Copyleft
-            is_exception: no
-            is_unknown: no
-            owner: Free Software Foundation (FSF)
-            homepage_url: http://www.gnu.org/licenses/gpl-2.0.html
-            text_url: http://www.gnu.org/licenses/gpl-2.0.txt
-            reference_url: https://scancode-licensedb.aboutcode.org/gpl-2.0
-            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-2.0.LICENSE
-            spdx_license_key: GPL-2.0-only
-            spdx_url: https://spdx.org/licenses/GPL-2.0-only
       - score: '100.0'
         start_line: 47
         end_line: 48
@@ -118,32 +74,9 @@ other_license_detections:
         license_expression: gpl-2.0
         rule_identifier: gpl-2.0_1294.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0_1294.RULE
-        referenced_filenames:
-          - /usr/share/common-licenses/GPL-2
-        is_license_text: no
-        is_license_notice: no
-        is_license_reference: yes
-        is_license_tag: no
-        is_license_intro: no
-        rule_length: 21
-        rule_relevance: 100
         matched_text: |
           The full text of the GNU General Public License version 2
           can be found in /usr/share/common-licenses/GPL-2.
-        licenses:
-          - key: gpl-2.0
-            name: GNU General Public License 2.0
-            short_name: GPL 2.0
-            category: Copyleft
-            is_exception: no
-            is_unknown: no
-            owner: Free Software Foundation (FSF)
-            homepage_url: http://www.gnu.org/licenses/gpl-2.0.html
-            text_url: http://www.gnu.org/licenses/gpl-2.0.txt
-            reference_url: https://scancode-licensedb.aboutcode.org/gpl-2.0
-            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-2.0.LICENSE
-            spdx_license_key: GPL-2.0-only
-            spdx_url: https://spdx.org/licenses/GPL-2.0-only
 copyright: |
   1996-2010 Julian R Seward <jseward@bzip.org>
   2018 Nicolas Boulenguez <nicolas.boulenguez@free.fr>

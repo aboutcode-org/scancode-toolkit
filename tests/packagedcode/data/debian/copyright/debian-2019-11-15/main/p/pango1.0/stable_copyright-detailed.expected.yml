@@ -43,32 +43,10 @@ other_license_detections:
         license_expression: other-permissive
         rule_identifier: other-permissive_324.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/other-permissive_324.RULE
-        referenced_filenames: []
-        is_license_text: yes
-        is_license_notice: no
-        is_license_reference: no
-        is_license_tag: no
-        is_license_intro: no
-        rule_length: 28
-        rule_relevance: 100
         matched_text: |
           Permission to use, copy, modify, distribute, and sell this example
           for any purpose is hereby granted without fee.
           It is provided "as is" without express or implied warranty.
-        licenses:
-          - key: other-permissive
-            name: Other Permissive Licenses
-            short_name: Other Permissive Licenses
-            category: Permissive
-            is_exception: no
-            is_unknown: no
-            owner: nexB
-            homepage_url:
-            text_url:
-            reference_url: https://scancode-licensedb.aboutcode.org/other-permissive
-            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/other-permissive.LICENSE
-            spdx_license_key: LicenseRef-scancode-other-permissive
-            spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/other-permissive.LICENSE
   - license_expression: x11
     detection_log:
       - not-combined
@@ -82,14 +60,6 @@ other_license_detections:
         license_expression: x11
         rule_identifier: x11_2.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/x11_2.RULE
-        referenced_filenames: []
-        is_license_text: yes
-        is_license_notice: no
-        is_license_reference: no
-        is_license_tag: no
-        is_license_intro: no
-        rule_length: 241
-        rule_relevance: 100
         matched_text: |
           Permission is hereby granted, free of charge, to any person obtaining a
           copy of this software and associated documentation files (the "Software")
@@ -118,20 +88,6 @@ other_license_detections:
 
           All trademarks and registered trademarks mentioned herein are the property
           of their respective owners.
-        licenses:
-          - key: x11
-            name: X11 License
-            short_name: X11 License
-            category: Permissive
-            is_exception: no
-            is_unknown: no
-            owner: XFree86 Project, Inc
-            homepage_url: http://www.xfree86.org/3.3.6/COPYRIGHT2.html
-            text_url: http://www.xfree86.org/3.3.6/COPYRIGHT2.html
-            reference_url: https://scancode-licensedb.aboutcode.org/x11
-            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/x11.LICENSE
-            spdx_license_key: ICU
-            spdx_url: https://spdx.org/licenses/ICU
   - license_expression: lgpl-2.0-plus
     detection_log:
       - not-combined
@@ -145,29 +101,7 @@ other_license_detections:
         license_expression: lgpl-2.0-plus
         rule_identifier: lgpl-2.0-plus_61.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0-plus_61.RULE
-        referenced_filenames: []
-        is_license_text: no
-        is_license_notice: no
-        is_license_reference: no
-        is_license_tag: yes
-        is_license_intro: no
-        rule_length: 3
-        rule_relevance: 100
         matched_text: 'License: lgpl-2+'
-        licenses:
-          - key: lgpl-2.0-plus
-            name: GNU Library General Public License 2.0 or later
-            short_name: LGPL 2.0 or later
-            category: Copyleft Limited
-            is_exception: no
-            is_unknown: no
-            owner: Free Software Foundation (FSF)
-            homepage_url: http://www.gnu.org/licenses/old-licenses/lgpl-2.0.html
-            text_url: http://www.gnu.org/licenses/old-licenses/lgpl-2.0-standalone.html
-            reference_url: https://scancode-licensedb.aboutcode.org/lgpl-2.0-plus
-            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/lgpl-2.0-plus.LICENSE
-            spdx_license_key: LGPL-2.0-or-later
-            spdx_url: https://spdx.org/licenses/LGPL-2.0-or-later
       - score: '100.0'
         start_line: 119
         end_line: 130
@@ -177,15 +111,6 @@ other_license_detections:
         license_expression: lgpl-2.0-plus
         rule_identifier: lgpl-2.0-plus_529.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0-plus_529.RULE
-        referenced_filenames:
-          - /usr/share/common-licenses/LGPL-2
-        is_license_text: no
-        is_license_notice: yes
-        is_license_reference: no
-        is_license_tag: no
-        is_license_intro: no
-        rule_length: 106
-        rule_relevance: 100
         matched_text: |
           This library is free software; you can redistribute it and/or
           modify it under the terms of the GNU Lesser General Public
@@ -199,20 +124,6 @@ other_license_detections:
 
           On Debian systems, the complete text of the GNU Lesser General Public
           License version 2 can be found in "/usr/share/common-licenses/LGPL-2".
-        licenses:
-          - key: lgpl-2.0-plus
-            name: GNU Library General Public License 2.0 or later
-            short_name: LGPL 2.0 or later
-            category: Copyleft Limited
-            is_exception: no
-            is_unknown: no
-            owner: Free Software Foundation (FSF)
-            homepage_url: http://www.gnu.org/licenses/old-licenses/lgpl-2.0.html
-            text_url: http://www.gnu.org/licenses/old-licenses/lgpl-2.0-standalone.html
-            reference_url: https://scancode-licensedb.aboutcode.org/lgpl-2.0-plus
-            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/lgpl-2.0-plus.LICENSE
-            spdx_license_key: LGPL-2.0-or-later
-            spdx_url: https://spdx.org/licenses/LGPL-2.0-or-later
   - license_expression: tcl
     detection_log:
       - not-combined
@@ -226,14 +137,6 @@ other_license_detections:
         license_expression: tcl
         rule_identifier: tcl_14.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/tcl_14.RULE
-        referenced_filenames: []
-        is_license_text: yes
-        is_license_notice: no
-        is_license_reference: no
-        is_license_tag: no
-        is_license_intro: no
-        rule_length: 341
-        rule_relevance: 100
         matched_text: |
           This software is copyrighted by the Regents of the University of
           California, Sun Microsystems, Inc., and other parties. The following terms
@@ -274,20 +177,6 @@ other_license_detections:
           the authors grant the U.S. Government and others acting in its behalf
           permission to use and distribute the software in accordance with the
           terms specified in this license.
-        licenses:
-          - key: tcl
-            name: TCL/TK License
-            short_name: TCL/TK License
-            category: Permissive
-            is_exception: no
-            is_unknown: no
-            owner: Tcl Developer Xchange
-            homepage_url: http://www.tcl.tk/software/tcltk/license.html
-            text_url: http://www.tcl.tk/software/tcltk/license.html
-            reference_url: https://scancode-licensedb.aboutcode.org/tcl
-            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/tcl.LICENSE
-            spdx_license_key: TCL
-            spdx_url: https://spdx.org/licenses/TCL
   - license_expression: unicode
     detection_log:
       - not-combined
@@ -301,14 +190,6 @@ other_license_detections:
         license_expression: unicode
         rule_identifier: unicode_57.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/unicode_57.RULE
-        referenced_filenames: []
-        is_license_text: yes
-        is_license_notice: no
-        is_license_reference: no
-        is_license_tag: no
-        is_license_intro: no
-        rule_length: 423
-        rule_relevance: 100
         matched_text: |
           Unicode Data Files include all data files under the directories
           http://www.unicode.org/Public/, http://www.unicode.org/reports/,
@@ -361,20 +242,6 @@ other_license_detections:
           shall not be used in advertising or otherwise to promote the sale,
           use or other dealings in these Data Files or Software without prior
           written authorization of the copyright holder.
-        licenses:
-          - key: unicode
-            name: Unicode Inc License Agreement
-            short_name: Unicode Inc License Agreement
-            category: Permissive
-            is_exception: no
-            is_unknown: no
-            owner: Unicode Consortium
-            homepage_url: http://unicode.org/
-            text_url: http://unicode.org/copyright.html
-            reference_url: https://scancode-licensedb.aboutcode.org/unicode
-            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/unicode.LICENSE
-            spdx_license_key: LicenseRef-scancode-unicode
-            spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/unicode.LICENSE
 copyright: |
   1999-2015 Red Hat
   2005-2007 Imendio AB

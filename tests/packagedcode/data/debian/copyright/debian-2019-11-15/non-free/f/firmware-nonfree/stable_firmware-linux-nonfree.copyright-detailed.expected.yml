@@ -17,14 +17,6 @@ license_detections:
         license_expression: gpl-2.0-plus
         rule_identifier: gpl-2.0-plus_68.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_68.RULE
-        referenced_filenames: []
-        is_license_text: no
-        is_license_notice: yes
-        is_license_reference: no
-        is_license_tag: no
-        is_license_intro: no
-        rule_length: 114
-        rule_relevance: 100
         matched_text: |
           License:
 
@@ -41,20 +33,6 @@ license_detections:
               You should have received a copy of the GNU General Public License
               along with this package; if not, write to the Free Software
               Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301 USA
-        licenses:
-          - key: gpl-2.0-plus
-            name: GNU General Public License 2.0 or later
-            short_name: GPL 2.0 or later
-            category: Copyleft
-            is_exception: no
-            is_unknown: no
-            owner: Free Software Foundation (FSF)
-            homepage_url: http://www.gnu.org/licenses/old-licenses/gpl-2.0-standalone.html
-            text_url: http://www.gnu.org/licenses/old-licenses/gpl-2.0-standalone.html
-            reference_url: https://scancode-licensedb.aboutcode.org/gpl-2.0-plus
-            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-2.0-plus.LICENSE
-            spdx_license_key: GPL-2.0-or-later
-            spdx_url: https://spdx.org/licenses/GPL-2.0-or-later
       - score: '100.0'
         start_line: 22
         end_line: 23
@@ -64,32 +42,9 @@ license_detections:
         license_expression: gpl-2.0
         rule_identifier: gpl-2.0_1120.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0_1120.RULE
-        referenced_filenames:
-          - /usr/share/common-licenses/GPL-2
-        is_license_text: no
-        is_license_notice: no
-        is_license_reference: yes
-        is_license_tag: no
-        is_license_intro: no
-        rule_length: 24
-        rule_relevance: 100
         matched_text: |
           On Debian systems, the complete text of the GNU General
           Public License version 2 can be found in `/usr/share/common-licenses/GPL-2'.
-        licenses:
-          - key: gpl-2.0
-            name: GNU General Public License 2.0
-            short_name: GPL 2.0
-            category: Copyleft
-            is_exception: no
-            is_unknown: no
-            owner: Free Software Foundation (FSF)
-            homepage_url: http://www.gnu.org/licenses/gpl-2.0.html
-            text_url: http://www.gnu.org/licenses/gpl-2.0.txt
-            reference_url: https://scancode-licensedb.aboutcode.org/gpl-2.0
-            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-2.0.LICENSE
-            spdx_license_key: GPL-2.0-only
-            spdx_url: https://spdx.org/licenses/GPL-2.0-only
 other_license_detections: []
 copyright: |
   Copyright 2006-2009 Bastian Blank <waldi@debian.org>

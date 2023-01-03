@@ -40,32 +40,7 @@
           "license_expression": "gpl-3.0-plus",
           "rule_identifier": "spdx_license_id_gpl-3.0-or-later_for_gpl-3.0-plus.RULE",
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/spdx_license_id_gpl-3.0-or-later_for_gpl-3.0-plus.RULE",
-          "referenced_filenames": [],
-          "is_license_text": false,
-          "is_license_notice": false,
-          "is_license_reference": true,
-          "is_license_tag": false,
-          "is_license_intro": false,
-          "rule_length": 5,
-          "rule_relevance": 50,
-          "matched_text": "gpl-3.0-or-later",
-          "licenses": [
-            {
-              "key": "gpl-3.0-plus",
-              "name": "GNU General Public License 3.0 or later",
-              "short_name": "GPL 3.0 or later",
-              "category": "Copyleft",
-              "is_exception": false,
-              "is_unknown": false,
-              "owner": "Free Software Foundation (FSF)",
-              "homepage_url": "http://www.gnu.org/licenses/gpl-3.0-standalone.html",
-              "text_url": "http://www.gnu.org/licenses/gpl-3.0-standalone.html",
-              "reference_url": "https://scancode-licensedb.aboutcode.org/gpl-3.0-plus",
-              "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-3.0-plus.LICENSE",
-              "spdx_license_key": "GPL-3.0-or-later",
-              "spdx_url": "https://spdx.org/licenses/GPL-3.0-or-later"
-            }
-          ]
+          "matched_text": "gpl-3.0-or-later"
         }
       ]
     }

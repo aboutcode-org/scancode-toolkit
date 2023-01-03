@@ -19,14 +19,6 @@ license_detections:
         license_expression: proprietary-license
         rule_identifier: proprietary-license_319.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/proprietary-license_319.RULE
-        referenced_filenames: []
-        is_license_text: yes
-        is_license_notice: no
-        is_license_reference: no
-        is_license_tag: no
-        is_license_intro: no
-        rule_length: 303
-        rule_relevance: 100
         matched_text: |
           Redistribution. Redistribution and use in binary form, without
           modification, are permitted provided that the following conditions are
@@ -66,20 +58,6 @@ license_detections:
           TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE
           USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH
           DAMAGE.
-        licenses:
-          - key: proprietary-license
-            name: Proprietary License
-            short_name: Proprietary License
-            category: Commercial
-            is_exception: no
-            is_unknown: no
-            owner: Unspecified
-            homepage_url:
-            text_url:
-            reference_url: https://scancode-licensedb.aboutcode.org/proprietary-license
-            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/proprietary-license.LICENSE
-            spdx_license_key: LicenseRef-scancode-proprietary-license
-            spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/proprietary-license.LICENSE
   - license_expression: marvell-firmware
     detection_log:
       - not-combined
@@ -93,14 +71,6 @@ license_detections:
         license_expression: marvell-firmware
         rule_identifier: marvell-firmware.LICENSE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/marvell-firmware.LICENSE
-        referenced_filenames: []
-        is_license_text: yes
-        is_license_notice: no
-        is_license_reference: no
-        is_license_tag: no
-        is_license_intro: no
-        rule_length: 242
-        rule_relevance: 100
         matched_text: |
           Redistribution.  Redistribution and use in binary form, without
           modification, are permitted provided that the following conditions are
@@ -132,20 +102,6 @@ license_detections:
           TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE
           USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH
           DAMAGE.
-        licenses:
-          - key: marvell-firmware
-            name: Marvell Firmware License
-            short_name: Marvell Firmware License
-            category: Proprietary Free
-            is_exception: no
-            is_unknown: no
-            owner: Marvell
-            homepage_url: https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/tree/LICENCE.OLPC
-            text_url:
-            reference_url: https://scancode-licensedb.aboutcode.org/marvell-firmware
-            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/marvell-firmware.LICENSE
-            spdx_license_key: LicenseRef-scancode-marvell-firmware
-            spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/marvell-firmware.LICENSE
 other_license_detections: []
 copyright: |
   Marvell International Ltd.

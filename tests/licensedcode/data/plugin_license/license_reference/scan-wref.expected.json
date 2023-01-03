@@ -25,33 +25,66 @@
   "license_references": [
     {
       "key": "unknown-license-reference",
+      "language": "en",
       "short_name": "Unknown License reference",
       "name": "Unknown License file reference",
       "category": "Unstated License",
       "owner": "Unspecified",
+      "homepage_url": null,
       "notes": "This applies to the case of a file with no clear license, which may be referenced via URL or text such as \"See license in...\" or \"This file is licensed under...\", but where the reference cannot be resolved to a specific named, public license.",
       "is_builtin": true,
+      "is_exception": false,
       "is_unknown": true,
+      "is_generic": false,
       "spdx_license_key": "LicenseRef-scancode-unknown-license-reference",
-      "text": ""
+      "other_spdx_license_keys": [],
+      "osi_license_key": null,
+      "text_urls": [],
+      "osi_url": null,
+      "faq_url": null,
+      "other_urls": [],
+      "key_aliases": [],
+      "minimum_coverage": 0,
+      "standard_notice": null,
+      "ignorable_copyrights": [],
+      "ignorable_holders": [],
+      "ignorable_authors": [],
+      "ignorable_urls": [],
+      "ignorable_emails": [],
+      "text": "",
+      "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/unknown-license-reference.LICENSE",
+      "licensedb_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/unknown-license-reference.LICENSE",
+      "spdx_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/unknown-license-reference.LICENSE"
     }
   ],
   "license_rule_references": [
     {
-      "rule_identifier": "unknown-license-reference_25.RULE",
       "license_expression": "unknown-license-reference",
+      "identifier": "unknown-license-reference_25.RULE",
+      "language": "en",
       "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/unknown-license-reference_25.RULE",
-      "rule_relevance": 100,
-      "rule_length": 5,
       "is_license_text": false,
       "is_license_notice": false,
       "is_license_reference": false,
       "is_license_tag": true,
       "is_license_intro": false,
+      "is_continuous": false,
+      "is_builtin": true,
+      "is_from_license": false,
+      "is_synthetic": false,
+      "length": 5,
+      "relevance": 100,
+      "minimum_coverage": 80,
       "referenced_filenames": [
         "LICENSE"
       ],
-      "rule_text": "license\": \"SEE LICENSE IN LICENSE"
+      "notes": null,
+      "ignorable_copyrights": [],
+      "ignorable_holders": [],
+      "ignorable_authors": [],
+      "ignorable_urls": [],
+      "ignorable_emails": [],
+      "text": "license\": \"SEE LICENSE IN LICENSE"
     }
   ],
   "files": [

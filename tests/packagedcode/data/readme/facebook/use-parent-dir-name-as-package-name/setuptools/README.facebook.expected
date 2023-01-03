@@ -39,34 +39,9 @@
             "match_coverage": 100.0,
             "matcher": "5-undetected",
             "license_expression": "unknown",
-            "rule_identifier": "package-manifest-unknown-1af9221688a171b7d4a6e294b790e3e0a4bd272a",
-            "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/package-manifest-unknown-1af9221688a171b7d4a6e294b790e3e0a4bd272a",
-            "referenced_filenames": [],
-            "is_license_text": false,
-            "is_license_notice": false,
-            "is_license_reference": false,
-            "is_license_tag": true,
-            "is_license_intro": false,
-            "rule_length": 4,
-            "rule_relevance": 100,
-            "matched_text": "license PSF or ZPL",
-            "licenses": [
-              {
-                "key": "unknown",
-                "name": "Unknown license detected but not recognized",
-                "short_name": "unknown",
-                "category": "Unstated License",
-                "is_exception": false,
-                "is_unknown": true,
-                "owner": "Unspecified",
-                "homepage_url": null,
-                "text_url": "",
-                "reference_url": "https://scancode-licensedb.aboutcode.org/unknown",
-                "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/unknown.LICENSE",
-                "spdx_license_key": "LicenseRef-scancode-unknown",
-                "spdx_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/unknown.LICENSE"
-              }
-            ]
+            "rule_identifier": "package-manifest-unknown-4e63c2896b2b2bc5235eb55ed408f87187ffe1b3",
+            "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/package-manifest-unknown-4e63c2896b2b2bc5235eb55ed408f87187ffe1b3",
+            "matched_text": "license PSF or ZPL"
           }
         ]
       }

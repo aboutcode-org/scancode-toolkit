@@ -38,79 +38,9 @@
           "match_coverage": 100.0,
           "matcher": "1-spdx-id",
           "license_expression": "gpl-2.0-plus AND lgpl-2.0-plus AND (lgpl-2.1 OR lgpl-3.0)",
-          "rule_identifier": "spdx-license-identifier-gpl-2.0-plus AND lgpl-2.0-plus AND (lgpl-2.1 OR lgpl-3.0)-f97ab040a0da8b47e1b5dc98932dde1251fe1e7a",
+          "rule_identifier": "spdx-license-identifier-gpl-2.0-plus AND lgpl-2.0-plus AND (lgpl-2.1 OR lgpl-3.0)-b7eafc9b966222982218b5cba903dd77b43f0540",
           "rule_url": null,
-          "referenced_filenames": [],
-          "is_license_text": false,
-          "is_license_notice": false,
-          "is_license_reference": false,
-          "is_license_tag": true,
-          "is_license_intro": false,
-          "rule_length": 21,
-          "rule_relevance": 100,
-          "matched_text": "gpl-2.0-or-later AND lgpl-2.0-or-later AND (lgpl-2.1-only OR lgpl-3.0-only)",
-          "licenses": [
-            {
-              "key": "gpl-2.0-plus",
-              "name": "GNU General Public License 2.0 or later",
-              "short_name": "GPL 2.0 or later",
-              "category": "Copyleft",
-              "is_exception": false,
-              "is_unknown": false,
-              "owner": "Free Software Foundation (FSF)",
-              "homepage_url": "http://www.gnu.org/licenses/old-licenses/gpl-2.0-standalone.html",
-              "text_url": "http://www.gnu.org/licenses/old-licenses/gpl-2.0-standalone.html",
-              "reference_url": "https://scancode-licensedb.aboutcode.org/gpl-2.0-plus",
-              "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-2.0-plus.LICENSE",
-              "spdx_license_key": "GPL-2.0-or-later",
-              "spdx_url": "https://spdx.org/licenses/GPL-2.0-or-later"
-            },
-            {
-              "key": "lgpl-2.0-plus",
-              "name": "GNU Library General Public License 2.0 or later",
-              "short_name": "LGPL 2.0 or later",
-              "category": "Copyleft Limited",
-              "is_exception": false,
-              "is_unknown": false,
-              "owner": "Free Software Foundation (FSF)",
-              "homepage_url": "http://www.gnu.org/licenses/old-licenses/lgpl-2.0.html",
-              "text_url": "http://www.gnu.org/licenses/old-licenses/lgpl-2.0-standalone.html",
-              "reference_url": "https://scancode-licensedb.aboutcode.org/lgpl-2.0-plus",
-              "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/lgpl-2.0-plus.LICENSE",
-              "spdx_license_key": "LGPL-2.0-or-later",
-              "spdx_url": "https://spdx.org/licenses/LGPL-2.0-or-later"
-            },
-            {
-              "key": "lgpl-2.1",
-              "name": "GNU Lesser General Public License 2.1",
-              "short_name": "LGPL 2.1",
-              "category": "Copyleft Limited",
-              "is_exception": false,
-              "is_unknown": false,
-              "owner": "Free Software Foundation (FSF)",
-              "homepage_url": "http://www.gnu.org/licenses/lgpl-2.1.html",
-              "text_url": "http://www.gnu.org/licenses/lgpl-2.1.txt",
-              "reference_url": "https://scancode-licensedb.aboutcode.org/lgpl-2.1",
-              "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/lgpl-2.1.LICENSE",
-              "spdx_license_key": "LGPL-2.1-only",
-              "spdx_url": "https://spdx.org/licenses/LGPL-2.1-only"
-            },
-            {
-              "key": "lgpl-3.0",
-              "name": "GNU Lesser General Public License 3.0",
-              "short_name": "LGPL 3.0",
-              "category": "Copyleft Limited",
-              "is_exception": false,
-              "is_unknown": false,
-              "owner": "Free Software Foundation (FSF)",
-              "homepage_url": "http://www.gnu.org/licenses/lgpl-3.0.html",
-              "text_url": "http://www.gnu.org/licenses/lgpl-3.0-standalone.html",
-              "reference_url": "https://scancode-licensedb.aboutcode.org/lgpl-3.0",
-              "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/lgpl-3.0.LICENSE",
-              "spdx_license_key": "LGPL-3.0-only",
-              "spdx_url": "https://spdx.org/licenses/LGPL-3.0-only"
-            }
-          ]
+          "matched_text": "gpl-2.0-or-later AND lgpl-2.0-or-later AND (lgpl-2.1-only OR lgpl-3.0-only)"
         }
       ]
     }

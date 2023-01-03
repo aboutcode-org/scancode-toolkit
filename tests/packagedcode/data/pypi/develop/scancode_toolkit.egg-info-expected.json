@@ -67,79 +67,9 @@
             "match_coverage": 100.0,
             "matcher": "1-spdx-id",
             "license_expression": "apache-2.0 AND cc-by-4.0 AND other-permissive AND other-copyleft",
-            "rule_identifier": "spdx-license-identifier-apache-2.0 AND cc-by-4.0 AND other-permissive AND other-copyleft-a4e3ba2dc0f5d3c1ef85c14c74f87456ca432f33",
+            "rule_identifier": "spdx-license-identifier-apache-2.0 AND cc-by-4.0 AND other-permissive AND other-copyleft-c7657a2c18db6a7df47030f236ebed3021446a79",
             "rule_url": null,
-            "referenced_filenames": [],
-            "is_license_text": false,
-            "is_license_notice": false,
-            "is_license_reference": false,
-            "is_license_tag": true,
-            "is_license_intro": false,
-            "rule_length": 18,
-            "rule_relevance": 100,
-            "matched_text": "Apache-2.0 AND CC-BY-4.0 AND LicenseRef-scancode-other-permissive AND LicenseRef-scancode-other-copyleft",
-            "licenses": [
-              {
-                "key": "apache-2.0",
-                "name": "Apache License 2.0",
-                "short_name": "Apache 2.0",
-                "category": "Permissive",
-                "is_exception": false,
-                "is_unknown": false,
-                "owner": "Apache Software Foundation",
-                "homepage_url": "http://www.apache.org/licenses/",
-                "text_url": "http://www.apache.org/licenses/LICENSE-2.0",
-                "reference_url": "https://scancode-licensedb.aboutcode.org/apache-2.0",
-                "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.LICENSE",
-                "spdx_license_key": "Apache-2.0",
-                "spdx_url": "https://spdx.org/licenses/Apache-2.0"
-              },
-              {
-                "key": "cc-by-4.0",
-                "name": "Creative Commons Attribution 4.0 International Public License",
-                "short_name": "CC-BY-4.0",
-                "category": "Permissive",
-                "is_exception": false,
-                "is_unknown": false,
-                "owner": "Creative Commons",
-                "homepage_url": "http://creativecommons.org/licenses/by/4.0/",
-                "text_url": "http://creativecommons.org/licenses/by/4.0/legalcode",
-                "reference_url": "https://scancode-licensedb.aboutcode.org/cc-by-4.0",
-                "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/cc-by-4.0.LICENSE",
-                "spdx_license_key": "CC-BY-4.0",
-                "spdx_url": "https://spdx.org/licenses/CC-BY-4.0"
-              },
-              {
-                "key": "other-permissive",
-                "name": "Other Permissive Licenses",
-                "short_name": "Other Permissive Licenses",
-                "category": "Permissive",
-                "is_exception": false,
-                "is_unknown": false,
-                "owner": "nexB",
-                "homepage_url": null,
-                "text_url": "",
-                "reference_url": "https://scancode-licensedb.aboutcode.org/other-permissive",
-                "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/other-permissive.LICENSE",
-                "spdx_license_key": "LicenseRef-scancode-other-permissive",
-                "spdx_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/other-permissive.LICENSE"
-              },
-              {
-                "key": "other-copyleft",
-                "name": "Other Copyleft Licenses",
-                "short_name": "Other Copyleft Licenses",
-                "category": "Copyleft",
-                "is_exception": false,
-                "is_unknown": false,
-                "owner": "nexB",
-                "homepage_url": null,
-                "text_url": "",
-                "reference_url": "https://scancode-licensedb.aboutcode.org/other-copyleft",
-                "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/other-copyleft.LICENSE",
-                "spdx_license_key": "LicenseRef-scancode-other-copyleft",
-                "spdx_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/other-copyleft.LICENSE"
-              }
-            ]
+            "matched_text": "Apache-2.0 AND CC-BY-4.0 AND LicenseRef-scancode-other-permissive AND LicenseRef-scancode-other-copyleft"
           }
         ]
       }

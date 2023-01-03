@@ -38,64 +38,9 @@
           "match_coverage": 100.0,
           "matcher": "1-spdx-id",
           "license_expression": "gpl-1.0-plus AND mit AND lgpl-2.0-plus",
-          "rule_identifier": "spdx-license-identifier-gpl-1.0-plus AND mit AND lgpl-2.0-plus-e197bd94ac627efca231a76d2ed6ccbbc3b31ec4",
+          "rule_identifier": "spdx-license-identifier-gpl-1.0-plus AND mit AND lgpl-2.0-plus-08bcf9f42fc4cda4bfb36c1191bb03b3121a3b3f",
           "rule_url": null,
-          "referenced_filenames": [],
-          "is_license_text": false,
-          "is_license_notice": false,
-          "is_license_reference": false,
-          "is_license_tag": true,
-          "is_license_intro": false,
-          "rule_length": 13,
-          "rule_relevance": 100,
-          "matched_text": "gpl-1.0-or-later AND mit AND lgpl-2.0-or-later",
-          "licenses": [
-            {
-              "key": "gpl-1.0-plus",
-              "name": "GNU General Public License 1.0 or later",
-              "short_name": "GPL 1.0 or later",
-              "category": "Copyleft",
-              "is_exception": false,
-              "is_unknown": false,
-              "owner": "Free Software Foundation (FSF)",
-              "homepage_url": "http://www.gnu.org/licenses/old-licenses/gpl-1.0-standalone.html",
-              "text_url": "http://www.gnu.org/licenses/old-licenses/gpl-1.0-standalone.html",
-              "reference_url": "https://scancode-licensedb.aboutcode.org/gpl-1.0-plus",
-              "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-1.0-plus.LICENSE",
-              "spdx_license_key": "GPL-1.0-or-later",
-              "spdx_url": "https://spdx.org/licenses/GPL-1.0-or-later"
-            },
-            {
-              "key": "mit",
-              "name": "MIT License",
-              "short_name": "MIT License",
-              "category": "Permissive",
-              "is_exception": false,
-              "is_unknown": false,
-              "owner": "MIT",
-              "homepage_url": "http://opensource.org/licenses/mit-license.php",
-              "text_url": "http://opensource.org/licenses/mit-license.php",
-              "reference_url": "https://scancode-licensedb.aboutcode.org/mit",
-              "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE",
-              "spdx_license_key": "MIT",
-              "spdx_url": "https://spdx.org/licenses/MIT"
-            },
-            {
-              "key": "lgpl-2.0-plus",
-              "name": "GNU Library General Public License 2.0 or later",
-              "short_name": "LGPL 2.0 or later",
-              "category": "Copyleft Limited",
-              "is_exception": false,
-              "is_unknown": false,
-              "owner": "Free Software Foundation (FSF)",
-              "homepage_url": "http://www.gnu.org/licenses/old-licenses/lgpl-2.0.html",
-              "text_url": "http://www.gnu.org/licenses/old-licenses/lgpl-2.0-standalone.html",
-              "reference_url": "https://scancode-licensedb.aboutcode.org/lgpl-2.0-plus",
-              "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/lgpl-2.0-plus.LICENSE",
-              "spdx_license_key": "LGPL-2.0-or-later",
-              "spdx_url": "https://spdx.org/licenses/LGPL-2.0-or-later"
-            }
-          ]
+          "matched_text": "gpl-1.0-or-later AND mit AND lgpl-2.0-or-later"
         }
       ]
     }

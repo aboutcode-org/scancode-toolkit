@@ -36,14 +36,6 @@ license_detections:
         license_expression: bsd-simplified
         rule_identifier: bsd-simplified.LICENSE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-simplified.LICENSE
-        referenced_filenames: []
-        is_license_text: yes
-        is_license_notice: no
-        is_license_reference: no
-        is_license_tag: no
-        is_license_intro: no
-        rule_length: 183
-        rule_relevance: 100
         matched_text: |
           Redistribution and use in source and binary forms, with or without
           modification, are permitted provided that the following conditions are
@@ -67,20 +59,6 @@ license_detections:
           THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
           (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
           OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-        licenses:
-          - key: bsd-simplified
-            name: BSD-2-Clause
-            short_name: BSD-2-Clause
-            category: Permissive
-            is_exception: no
-            is_unknown: no
-            owner: Regents of the University of California
-            homepage_url: http://www.opensource.org/licenses/BSD-2-Clause
-            text_url: http://opensource.org/licenses/bsd-license.php
-            reference_url: https://scancode-licensedb.aboutcode.org/bsd-simplified
-            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-simplified.LICENSE
-            spdx_license_key: BSD-2-Clause
-            spdx_url: https://spdx.org/licenses/BSD-2-Clause
       - score: '100.0'
         start_line: 41
         end_line: 52
@@ -90,14 +68,6 @@ license_detections:
         license_expression: generic-export-compliance
         rule_identifier: generic-export-compliance_3.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/generic-export-compliance_3.RULE
-        referenced_filenames: []
-        is_license_text: yes
-        is_license_notice: no
-        is_license_reference: no
-        is_license_tag: no
-        is_license_intro: no
-        rule_length: 104
-        rule_relevance: 100
         matched_text: |
           Downloading of this software may constitute an export of cryptographic
           software from the United States of America that is subject to the
@@ -111,20 +81,6 @@ license_detections:
           certain countries and individuals, including, but not limited to, the
           countries of Cuba, Iran, North Korea, Sudan, Syria, and residents and
           nationals of those countries.
-        licenses:
-          - key: generic-export-compliance
-            name: Generic Export Compliance Notice
-            short_name: Generic Export Compliance Notice
-            category: Unstated License
-            is_exception: no
-            is_unknown: no
-            owner: Unspecified
-            homepage_url:
-            text_url:
-            reference_url: https://scancode-licensedb.aboutcode.org/generic-export-compliance
-            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/generic-export-compliance.LICENSE
-            spdx_license_key: LicenseRef-scancode-generic-export-compliance
-            spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/generic-export-compliance.LICENSE
       - score: '100.0'
         start_line: 54
         end_line: 56
@@ -134,32 +90,10 @@ license_detections:
         license_expression: cc-by-sa-3.0
         rule_identifier: cc-by-sa-3.0_22.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/cc-by-sa-3.0_22.RULE
-        referenced_filenames: []
-        is_license_text: no
-        is_license_notice: yes
-        is_license_reference: no
-        is_license_tag: no
-        is_license_intro: no
-        rule_length: 25
-        rule_relevance: 100
         matched_text: |
           Documentation components of this software distribution are licensed
           under a Creative Commons Attribution-ShareAlike 3.0 Unported License.
           (http://creativecommons.org/licenses/by-sa/3.0/)
-        licenses:
-          - key: cc-by-sa-3.0
-            name: Creative Commons Attribution Share Alike License 3.0
-            short_name: CC-BY-SA-3.0
-            category: Copyleft Limited
-            is_exception: no
-            is_unknown: no
-            owner: Creative Commons
-            homepage_url: http://creativecommons.org/licenses/by-sa/3.0/
-            text_url: http://creativecommons.org/licenses/by-sa/3.0/legalcode
-            reference_url: https://scancode-licensedb.aboutcode.org/cc-by-sa-3.0
-            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/cc-by-sa-3.0.LICENSE
-            spdx_license_key: CC-BY-SA-3.0
-            spdx_url: https://spdx.org/licenses/CC-BY-SA-3.0
   - license_expression: proprietary-license
     detection_log:
       - not-combined
@@ -173,14 +107,6 @@ license_detections:
         license_expression: proprietary-license
         rule_identifier: proprietary-license_136.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/proprietary-license_136.RULE
-        referenced_filenames: []
-        is_license_text: no
-        is_license_notice: yes
-        is_license_reference: no
-        is_license_tag: no
-        is_license_intro: no
-        rule_length: 57
-        rule_relevance: 100
         matched_text: |
           No commercial use of these trademarks may be made without
           prior written permission of MIT.
@@ -189,20 +115,6 @@ license_detections:
           manner.  It does NOT prevent a commercial firm from referring to the
           MIT trademarks in order to convey information (although in doing so,
           recognition of their trademark status should be given).
-        licenses:
-          - key: proprietary-license
-            name: Proprietary License
-            short_name: Proprietary License
-            category: Commercial
-            is_exception: no
-            is_unknown: no
-            owner: Unspecified
-            homepage_url:
-            text_url:
-            reference_url: https://scancode-licensedb.aboutcode.org/proprietary-license
-            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/proprietary-license.LICENSE
-            spdx_license_key: LicenseRef-scancode-proprietary-license
-            spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/proprietary-license.LICENSE
   - license_expression: other-permissive
     detection_log:
       - not-combined
@@ -216,14 +128,6 @@ license_detections:
         license_expression: other-permissive
         rule_identifier: other-permissive_80.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/other-permissive_80.RULE
-        referenced_filenames: []
-        is_license_text: yes
-        is_license_notice: no
-        is_license_reference: no
-        is_license_tag: no
-        is_license_intro: no
-        rule_length: 244
-        rule_relevance: 100
         matched_text: |
           WARNING:  Retrieving the OpenVision Kerberos Administration system
              source code, as described below, indicates your acceptance of the
@@ -255,20 +159,6 @@ license_detections:
              continuing Kerberos technology development and our gratitude for
              the valuable work which has been performed by MIT and the Kerberos
              community.
-        licenses:
-          - key: other-permissive
-            name: Other Permissive Licenses
-            short_name: Other Permissive Licenses
-            category: Permissive
-            is_exception: no
-            is_unknown: no
-            owner: nexB
-            homepage_url:
-            text_url:
-            reference_url: https://scancode-licensedb.aboutcode.org/other-permissive
-            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/other-permissive.LICENSE
-            spdx_license_key: LicenseRef-scancode-other-permissive
-            spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/other-permissive.LICENSE
   - license_expression: mit-no-advert-export-control
     detection_log:
       - not-combined
@@ -282,14 +172,6 @@ license_detections:
         license_expression: mit-no-advert-export-control
         rule_identifier: mit-no-advert-export-control_1.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit-no-advert-export-control_1.RULE
-        referenced_filenames: []
-        is_license_text: yes
-        is_license_notice: no
-        is_license_reference: no
-        is_license_tag: no
-        is_license_intro: no
-        rule_length: 155
-        rule_relevance: 100
         matched_text: |
           Export of this software from the United States of America may
                 require a specific license from the United States Government.
@@ -310,20 +192,6 @@ license_detections:
              THIS SOFTWARE IS PROVIDED "AS IS" AND WITHOUT ANY EXPRESS OR
              IMPLIED WARRANTIES, INCLUDING, WITHOUT LIMITATION, THE IMPLIED
              WARRANTIES OF MERCHANTIBILITY AND FITNESS FOR A PARTICULAR PURPOSE.
-        licenses:
-          - key: mit-no-advert-export-control
-            name: MIT no advertising with Export Control
-            short_name: MIT no advertising with Export Control
-            category: Permissive
-            is_exception: no
-            is_unknown: no
-            owner: Xerox Corporation
-            homepage_url: https://fedoraproject.org/wiki/Licensing:Xerox?rd=Licensing/Xerox
-            text_url:
-            reference_url: https://scancode-licensedb.aboutcode.org/mit-no-advert-export-control
-            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit-no-advert-export-control.LICENSE
-            spdx_license_key: LicenseRef-scancode-mit-no-advert-export-control
-            spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit-no-advert-export-control.LICENSE
   - license_expression: brian-gladman-3-clause
     detection_log:
       - not-combined
@@ -337,14 +205,6 @@ license_detections:
         license_expression: brian-gladman-3-clause
         rule_identifier: brian-gladman-3-clause_2.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/brian-gladman-3-clause_2.RULE
-        referenced_filenames: []
-        is_license_text: yes
-        is_license_notice: no
-        is_license_reference: no
-        is_license_tag: no
-        is_license_intro: no
-        rule_length: 117
-        rule_relevance: 100
         matched_text: |
           LICENSE TERMS
 
@@ -366,20 +226,6 @@ license_detections:
              This software is provided 'as is' with no explcit or implied
              warranties in respect of any properties, including, but not limited
              to, correctness and fitness for purpose.
-        licenses:
-          - key: brian-gladman-3-clause
-            name: Brian Gladman 3-Clause License
-            short_name: Brian Gladman 3-Clause License
-            category: Permissive
-            is_exception: no
-            is_unknown: no
-            owner: Brian Gladman
-            homepage_url:
-            text_url:
-            reference_url: https://scancode-licensedb.aboutcode.org/brian-gladman-3-clause
-            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/brian-gladman-3-clause.LICENSE
-            spdx_license_key: LicenseRef-scancode-brian-gladman-3-clause
-            spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/brian-gladman-3-clause.LICENSE
   - license_expression: bsd-new
     detection_log:
       - not-combined
@@ -393,14 +239,6 @@ license_detections:
         license_expression: bsd-new
         rule_identifier: bsd-new_587.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_587.RULE
-        referenced_filenames: []
-        is_license_text: yes
-        is_license_notice: no
-        is_license_reference: no
-        is_license_tag: no
-        is_license_intro: no
-        rule_length: 213
-        rule_relevance: 100
         matched_text: |
           Redistribution and use in source and binary forms, with or without
              modification, are permitted provided that the following conditions
@@ -430,20 +268,6 @@ license_detections:
              STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
              ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED
              OF THE POSSIBILITY OF SUCH DAMAGE.
-        licenses:
-          - key: bsd-new
-            name: BSD-3-Clause
-            short_name: BSD-3-Clause
-            category: Permissive
-            is_exception: no
-            is_unknown: no
-            owner: Regents of the University of California
-            homepage_url: http://www.opensource.org/licenses/BSD-3-Clause
-            text_url: http://www.opensource.org/licenses/BSD-3-Clause
-            reference_url: https://scancode-licensedb.aboutcode.org/bsd-new
-            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-new.LICENSE
-            spdx_license_key: BSD-3-Clause
-            spdx_url: https://spdx.org/licenses/BSD-3-Clause
   - license_expression: mit
     detection_log:
       - not-combined
@@ -457,14 +281,6 @@ license_detections:
         license_expression: mit
         rule_identifier: mit.LICENSE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE
-        referenced_filenames: []
-        is_license_text: yes
-        is_license_notice: no
-        is_license_reference: no
-        is_license_tag: no
-        is_license_intro: no
-        rule_length: 161
-        rule_relevance: 100
         matched_text: |
           Permission is hereby granted, free of charge, to any person
              obtaining a copy of this software and associated documentation
@@ -485,20 +301,6 @@ license_detections:
              WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
              OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
              DEALINGS IN THE SOFTWARE.
-        licenses:
-          - key: mit
-            name: MIT License
-            short_name: MIT License
-            category: Permissive
-            is_exception: no
-            is_unknown: no
-            owner: MIT
-            homepage_url: http://opensource.org/licenses/mit-license.php
-            text_url: http://opensource.org/licenses/mit-license.php
-            reference_url: https://scancode-licensedb.aboutcode.org/mit
-            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE
-            spdx_license_key: MIT
-            spdx_url: https://spdx.org/licenses/MIT
   - license_expression: bsd-simplified
     detection_log:
       - not-combined
@@ -512,14 +314,6 @@ license_detections:
         license_expression: bsd-simplified
         rule_identifier: bsd-simplified_20.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-simplified_20.RULE
-        referenced_filenames: []
-        is_license_text: no
-        is_license_notice: yes
-        is_license_reference: no
-        is_license_tag: no
-        is_license_intro: no
-        rule_length: 185
-        rule_relevance: 100
         matched_text: |
           Redistribution and use in source and binary forms, with or without
              modification, are permitted provided that the following conditions
@@ -546,20 +340,6 @@ license_detections:
              STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
              ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED
              OF THE POSSIBILITY OF SUCH DAMAGE.
-        licenses:
-          - key: bsd-simplified
-            name: BSD-2-Clause
-            short_name: BSD-2-Clause
-            category: Permissive
-            is_exception: no
-            is_unknown: no
-            owner: Regents of the University of California
-            homepage_url: http://www.opensource.org/licenses/BSD-2-Clause
-            text_url: http://opensource.org/licenses/bsd-license.php
-            reference_url: https://scancode-licensedb.aboutcode.org/bsd-simplified
-            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-simplified.LICENSE
-            spdx_license_key: BSD-2-Clause
-            spdx_url: https://spdx.org/licenses/BSD-2-Clause
   - license_expression: mit
     detection_log:
       - not-combined
@@ -573,14 +353,6 @@ license_detections:
         license_expression: mit
         rule_identifier: mit.LICENSE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE
-        referenced_filenames: []
-        is_license_text: yes
-        is_license_notice: no
-        is_license_reference: no
-        is_license_tag: no
-        is_license_intro: no
-        rule_length: 161
-        rule_relevance: 100
         matched_text: |
           Permission is hereby granted, free of charge, to any person
              obtaining a copy of this software and associated documentation
@@ -601,20 +373,6 @@ license_detections:
              ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
              CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
              SOFTWARE.
-        licenses:
-          - key: mit
-            name: MIT License
-            short_name: MIT License
-            category: Permissive
-            is_exception: no
-            is_unknown: no
-            owner: MIT
-            homepage_url: http://opensource.org/licenses/mit-license.php
-            text_url: http://opensource.org/licenses/mit-license.php
-            reference_url: https://scancode-licensedb.aboutcode.org/mit
-            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE
-            spdx_license_key: MIT
-            spdx_url: https://spdx.org/licenses/MIT
   - license_expression: bsd-new
     detection_log:
       - not-combined
@@ -628,14 +386,6 @@ license_detections:
         license_expression: bsd-new
         rule_identifier: bsd-new_19.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_19.RULE
-        referenced_filenames: []
-        is_license_text: yes
-        is_license_notice: no
-        is_license_reference: no
-        is_license_tag: no
-        is_license_intro: no
-        rule_length: 213
-        rule_relevance: 100
         matched_text: |
           Redistribution and use in source and binary forms, with or without
              modification, are permitted provided that the following conditions
@@ -665,20 +415,6 @@ license_detections:
              OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT
              OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
              SUCH DAMAGE.
-        licenses:
-          - key: bsd-new
-            name: BSD-3-Clause
-            short_name: BSD-3-Clause
-            category: Permissive
-            is_exception: no
-            is_unknown: no
-            owner: Regents of the University of California
-            homepage_url: http://www.opensource.org/licenses/BSD-3-Clause
-            text_url: http://www.opensource.org/licenses/BSD-3-Clause
-            reference_url: https://scancode-licensedb.aboutcode.org/bsd-new
-            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-new.LICENSE
-            spdx_license_key: BSD-3-Clause
-            spdx_url: https://spdx.org/licenses/BSD-3-Clause
   - license_expression: bsd-new
     detection_log:
       - not-combined
@@ -692,14 +428,6 @@ license_detections:
         license_expression: bsd-new
         rule_identifier: bsd-new_588.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_588.RULE
-        referenced_filenames: []
-        is_license_text: yes
-        is_license_notice: no
-        is_license_reference: no
-        is_license_tag: no
-        is_license_intro: no
-        rule_length: 205
-        rule_relevance: 100
         matched_text: |
           Redistribution and use in source and binary forms, with or without
              modification, are permitted provided that the following conditions
@@ -729,20 +457,6 @@ license_detections:
              STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
              ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED
              OF THE POSSIBILITY OF SUCH DAMAGE.
-        licenses:
-          - key: bsd-new
-            name: BSD-3-Clause
-            short_name: BSD-3-Clause
-            category: Permissive
-            is_exception: no
-            is_unknown: no
-            owner: Regents of the University of California
-            homepage_url: http://www.opensource.org/licenses/BSD-3-Clause
-            text_url: http://www.opensource.org/licenses/BSD-3-Clause
-            reference_url: https://scancode-licensedb.aboutcode.org/bsd-new
-            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-new.LICENSE
-            spdx_license_key: BSD-3-Clause
-            spdx_url: https://spdx.org/licenses/BSD-3-Clause
   - license_expression: michigan-disclaimer
     detection_log:
       - not-combined
@@ -756,14 +470,6 @@ license_detections:
         license_expression: michigan-disclaimer
         rule_identifier: michigan-disclaimer.LICENSE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/michigan-disclaimer.LICENSE
-        referenced_filenames: []
-        is_license_text: yes
-        is_license_notice: no
-        is_license_reference: no
-        is_license_tag: no
-        is_license_intro: no
-        rule_length: 186
-        rule_relevance: 100
         matched_text: |
           Permission is granted to use, copy, create derivative works and
              redistribute this software and such derivative works for any
@@ -785,20 +491,6 @@ license_detections:
              CONSEQUENTIAL DAMAGES, WITH RESPECT TO ANY CLAIM ARISING OUT OF OR
              IN CONNECTION WITH THE USE OF THE SOFTWARE, EVEN IF IT HAS BEEN OR
              IS HEREAFTER ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.
-        licenses:
-          - key: michigan-disclaimer
-            name: University of Michigan Open Source License
-            short_name: University of Michigan OSL
-            category: Permissive
-            is_exception: no
-            is_unknown: no
-            owner: University of Michigan
-            homepage_url:
-            text_url:
-            reference_url: https://scancode-licensedb.aboutcode.org/michigan-disclaimer
-            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/michigan-disclaimer.LICENSE
-            spdx_license_key: LicenseRef-scancode-michigan-disclaimer
-            spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/michigan-disclaimer.LICENSE
   - license_expression: fsf-unlimited-no-warranty
     detection_log:
       - not-combined
@@ -812,14 +504,6 @@ license_detections:
         license_expression: fsf-unlimited-no-warranty
         rule_identifier: fsf-unlimited-no-warranty.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/fsf-unlimited-no-warranty.RULE
-        referenced_filenames: []
-        is_license_text: yes
-        is_license_notice: no
-        is_license_reference: no
-        is_license_tag: no
-        is_license_intro: no
-        rule_length: 64
-        rule_relevance: 100
         matched_text: |
           This file is free software; as a special exception the author gives
              unlimited permission to copy and/or distribute it, with or without
@@ -829,20 +513,6 @@ license_detections:
              WITHOUT ANY WARRANTY, to the extent permitted by law; without even
              the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR
              PURPOSE.
-        licenses:
-          - key: fsf-unlimited-no-warranty
-            name: FSF Unlimited License No Warranty
-            short_name: FSF Unlimited License No Warranty
-            category: Permissive
-            is_exception: no
-            is_unknown: no
-            owner: Free Software Foundation (FSF)
-            homepage_url: http://www.fsf.org/licensing/licenses/
-            text_url: http://www.fsf.org/licensing/licenses/
-            reference_url: https://scancode-licensedb.aboutcode.org/fsf-unlimited-no-warranty
-            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/fsf-unlimited-no-warranty.LICENSE
-            spdx_license_key: FSFULLRWD
-            spdx_url: https://spdx.org/licenses/FSFULLRWD
   - license_expression: mit-no-advert-export-control
     detection_log:
       - not-combined
@@ -856,14 +526,6 @@ license_detections:
         license_expression: mit-no-advert-export-control
         rule_identifier: mit-no-advert-export-control_2.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit-no-advert-export-control_2.RULE
-        referenced_filenames: []
-        is_license_text: yes
-        is_license_notice: no
-        is_license_reference: no
-        is_license_tag: no
-        is_license_intro: no
-        rule_length: 159
-        rule_relevance: 100
         matched_text: |
           Export of this software from the United States of America may
                 require a specific license from the United States Government.
@@ -884,20 +546,6 @@ license_detections:
              THIS SOFTWARE IS PROVIDED "AS IS" AND WITHOUT ANY EXPRESS OR
              IMPLIED WARRANTIES, INCLUDING, WITHOUT LIMITATION, THE IMPLIED
              WARRANTIES OF MERCHANTIBILITY AND FITNESS FOR A PARTICULAR PURPOSE.
-        licenses:
-          - key: mit-no-advert-export-control
-            name: MIT no advertising with Export Control
-            short_name: MIT no advertising with Export Control
-            category: Permissive
-            is_exception: no
-            is_unknown: no
-            owner: Xerox Corporation
-            homepage_url: https://fedoraproject.org/wiki/Licensing:Xerox?rd=Licensing/Xerox
-            text_url:
-            reference_url: https://scancode-licensedb.aboutcode.org/mit-no-advert-export-control
-            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit-no-advert-export-control.LICENSE
-            spdx_license_key: LicenseRef-scancode-mit-no-advert-export-control
-            spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit-no-advert-export-control.LICENSE
   - license_expression: openldap-2.8
     detection_log:
       - not-combined
@@ -911,14 +559,6 @@ license_detections:
         license_expression: openldap-2.8
         rule_identifier: openldap-2.8.LICENSE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/openldap-2.8.LICENSE
-        referenced_filenames: []
-        is_license_text: yes
-        is_license_notice: no
-        is_license_reference: no
-        is_license_tag: no
-        is_license_intro: no
-        rule_length: 330
-        rule_relevance: 100
         matched_text: |
           The OpenLDAP Public License
              Version 2.8, 17 August 2003
@@ -968,20 +608,6 @@ license_detections:
              Copyright 1999-2003 The OpenLDAP Foundation, Redwood City,
              California, USA.  All Rights Reserved.  Permission to copy and
              distribute verbatim copies of this document is granted.
-        licenses:
-          - key: openldap-2.8
-            name: OpenLDAP Public License 2.8
-            short_name: OpenLDAP Public License 2.8
-            category: Permissive
-            is_exception: no
-            is_unknown: no
-            owner: OpenLDAP Foundation
-            homepage_url: http://www.openldap.org/software/release/license.html
-            text_url: http://www.openldap.org/software/release/license.html
-            reference_url: https://scancode-licensedb.aboutcode.org/openldap-2.8
-            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/openldap-2.8.LICENSE
-            spdx_license_key: OLDAP-2.8
-            spdx_url: https://spdx.org/licenses/OLDAP-2.8
   - license_expression: bsd-new
     detection_log:
       - not-combined
@@ -995,14 +621,6 @@ license_detections:
         license_expression: bsd-new
         rule_identifier: bsd-new_933.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_933.RULE
-        referenced_filenames: []
-        is_license_text: yes
-        is_license_notice: no
-        is_license_reference: no
-        is_license_tag: no
-        is_license_intro: no
-        rule_length: 212
-        rule_relevance: 100
         matched_text: |
           Redistribution and use in source and binary forms, with or without
              modification, are permitted provided that the following conditions
@@ -1032,20 +650,6 @@ license_detections:
              OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT
              OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
              SUCH DAMAGE.
-        licenses:
-          - key: bsd-new
-            name: BSD-3-Clause
-            short_name: BSD-3-Clause
-            category: Permissive
-            is_exception: no
-            is_unknown: no
-            owner: Regents of the University of California
-            homepage_url: http://www.opensource.org/licenses/BSD-3-Clause
-            text_url: http://www.opensource.org/licenses/BSD-3-Clause
-            reference_url: https://scancode-licensedb.aboutcode.org/bsd-new
-            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-new.LICENSE
-            spdx_license_key: BSD-3-Clause
-            spdx_url: https://spdx.org/licenses/BSD-3-Clause
   - license_expression: bsd-new
     detection_log:
       - not-combined
@@ -1059,14 +663,6 @@ license_detections:
         license_expression: bsd-new
         rule_identifier: bsd-new_151.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_151.RULE
-        referenced_filenames: []
-        is_license_text: yes
-        is_license_notice: no
-        is_license_reference: no
-        is_license_tag: no
-        is_license_intro: no
-        rule_length: 213
-        rule_relevance: 100
         matched_text: |
           Redistribution and use in source and binary forms, with or without
              modification, are permitted provided that the following conditions
@@ -1097,20 +693,6 @@ license_detections:
              OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT
              OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
              SUCH DAMAGE.
-        licenses:
-          - key: bsd-new
-            name: BSD-3-Clause
-            short_name: BSD-3-Clause
-            category: Permissive
-            is_exception: no
-            is_unknown: no
-            owner: Regents of the University of California
-            homepage_url: http://www.opensource.org/licenses/BSD-3-Clause
-            text_url: http://www.opensource.org/licenses/BSD-3-Clause
-            reference_url: https://scancode-licensedb.aboutcode.org/bsd-new
-            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-new.LICENSE
-            spdx_license_key: BSD-3-Clause
-            spdx_url: https://spdx.org/licenses/BSD-3-Clause
   - license_expression: bsd-new
     detection_log:
       - not-combined
@@ -1124,14 +706,6 @@ license_detections:
         license_expression: bsd-new
         rule_identifier: bsd-new_589.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_589.RULE
-        referenced_filenames: []
-        is_license_text: yes
-        is_license_notice: no
-        is_license_reference: no
-        is_license_tag: no
-        is_license_intro: no
-        rule_length: 217
-        rule_relevance: 100
         matched_text: |
           Redistribution and use in source and binary forms, with or without
              modification, are permitted provided that the following conditions
@@ -1162,20 +736,6 @@ license_detections:
              STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
              ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED
              OF THE POSSIBILITY OF SUCH DAMAGE.
-        licenses:
-          - key: bsd-new
-            name: BSD-3-Clause
-            short_name: BSD-3-Clause
-            category: Permissive
-            is_exception: no
-            is_unknown: no
-            owner: Regents of the University of California
-            homepage_url: http://www.opensource.org/licenses/BSD-3-Clause
-            text_url: http://www.opensource.org/licenses/BSD-3-Clause
-            reference_url: https://scancode-licensedb.aboutcode.org/bsd-new
-            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-new.LICENSE
-            spdx_license_key: BSD-3-Clause
-            spdx_url: https://spdx.org/licenses/BSD-3-Clause
   - license_expression: freebsd-doc
     detection_log:
       - not-combined
@@ -1189,14 +749,6 @@ license_detections:
         license_expression: freebsd-doc
         rule_identifier: freebsd-doc_5.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/freebsd-doc_5.RULE
-        referenced_filenames: []
-        is_license_text: yes
-        is_license_notice: no
-        is_license_reference: no
-        is_license_tag: no
-        is_license_intro: no
-        rule_length: 185
-        rule_relevance: 100
         matched_text: |
           Redistribution and use in source and binary forms, with or without
              modification, are permitted provided that the following conditions
@@ -1222,20 +774,6 @@ license_detections:
              STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
              ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED
              OF THE POSSIBILITY OF SUCH DAMAGE.
-        licenses:
-          - key: freebsd-doc
-            name: FreeBSD Doc License
-            short_name: FreeBSD Doc License
-            category: Permissive
-            is_exception: no
-            is_unknown: no
-            owner: FreeBSD
-            homepage_url:
-            text_url: https://www.freebsd.org/copyright/freebsd-doc-license.html
-            reference_url: https://scancode-licensedb.aboutcode.org/freebsd-doc
-            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/freebsd-doc.LICENSE
-            spdx_license_key: FreeBSD-DOC
-            spdx_url: https://spdx.org/licenses/FreeBSD-DOC
   - license_expression: cmu-uc
     detection_log:
       - not-combined
@@ -1249,14 +787,6 @@ license_detections:
         license_expression: cmu-uc
         rule_identifier: cmu-uc_12.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/cmu-uc_12.RULE
-        referenced_filenames: []
-        is_license_text: yes
-        is_license_notice: no
-        is_license_reference: no
-        is_license_tag: no
-        is_license_intro: no
-        rule_length: 143
-        rule_relevance: 99
         matched_text: |
           Permission to use, copy, modify, and distribute this software and
              its documentation for any purpose and without fee is hereby
@@ -1275,20 +805,6 @@ license_detections:
              AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING
              OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS
              SOFTWARE.
-        licenses:
-          - key: cmu-uc
-            name: Carnegie Mellon UC Regents License
-            short_name: CMU UC Regents License
-            category: Permissive
-            is_exception: no
-            is_unknown: no
-            owner: Carnegie Mellon University
-            homepage_url: https://fedoraproject.org/wiki/Licensing:MIT?rd=Licensing/MIT#CMU_Style
-            text_url:
-            reference_url: https://scancode-licensedb.aboutcode.org/cmu-uc
-            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/cmu-uc.LICENSE
-            spdx_license_key: MIT-CMU
-            spdx_url: https://spdx.org/licenses/MIT-CMU
   - license_expression: nrl-permission
     detection_log:
       - not-combined
@@ -1302,14 +818,6 @@ license_detections:
         license_expression: nrl-permission
         rule_identifier: nrl-permission_1.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/nrl-permission_1.RULE
-        referenced_filenames: []
-        is_license_text: yes
-        is_license_notice: no
-        is_license_reference: no
-        is_license_tag: no
-        is_license_intro: no
-        rule_length: 71
-        rule_relevance: 95
         matched_text: |
           Permission to use, copy, modify and distribute this software and
              its documentation is hereby granted, provided that both the
@@ -1320,20 +828,6 @@ license_detections:
              NRL ALLOWS FREE USE OF THIS SOFTWARE IN ITS "AS IS" CONDITION AND
              DISCLAIMS ANY LIABILITY OF ANY KIND FOR ANY DAMAGES WHATSOEVER
              RESULTING FROM THE USE OF THIS SOFTWARE.
-        licenses:
-          - key: nrl-permission
-            name: NRL permission
-            short_name: NRL permission
-            category: Permissive
-            is_exception: no
-            is_unknown: no
-            owner: NRL
-            homepage_url: https://web.mit.edu/kerberos/krb5-1.14/doc/mitK5license.html
-            text_url:
-            reference_url: https://scancode-licensedb.aboutcode.org/nrl-permission
-            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/nrl-permission.LICENSE
-            spdx_license_key: LicenseRef-scancode-nrl-permission
-            spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/nrl-permission.LICENSE
   - license_expression: ietf-trust
     detection_log:
       - not-combined
@@ -1347,14 +841,6 @@ license_detections:
         license_expression: ietf-trust
         rule_identifier: ietf-trust_10.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/ietf-trust_10.RULE
-        referenced_filenames: []
-        is_license_text: no
-        is_license_notice: yes
-        is_license_reference: no
-        is_license_tag: no
-        is_license_intro: no
-        rule_length: 99
-        rule_relevance: 100
         matched_text: |
           This document is subject to the rights, licenses and restrictions
              contained in BCP 78, and except as set forth therein, the authors
@@ -1368,20 +854,6 @@ license_detections:
              THE USE OF THE INFORMATION HEREIN WILL NOT INFRINGE ANY RIGHTS OR
              ANY IMPLIED WARRANTIES OF MERCHANTABILITY OR FITNESS FOR A
              PARTICULAR PURPOSE.
-        licenses:
-          - key: ietf-trust
-            name: IETF Trust License
-            short_name: IETF Trust License
-            category: Permissive
-            is_exception: no
-            is_unknown: no
-            owner: IETF - Internet Engineering Task Force
-            homepage_url: http://trustee.ietf.org/docs/IETF-Trust-License-Policy.pdf
-            text_url: http://trustee.ietf.org/docs/IETF-Trust-License-Policy.pdf
-            reference_url: https://scancode-licensedb.aboutcode.org/ietf-trust
-            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/ietf-trust.LICENSE
-            spdx_license_key: LicenseRef-scancode-ietf-trust
-            spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/ietf-trust.LICENSE
   - license_expression: mit-old-style
     detection_log:
       - not-combined
@@ -1395,14 +867,6 @@ license_detections:
         license_expression: mit-old-style
         rule_identifier: mit-old-style_11.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit-old-style_11.RULE
-        referenced_filenames: []
-        is_license_text: yes
-        is_license_notice: no
-        is_license_reference: no
-        is_license_tag: no
-        is_license_intro: no
-        rule_length: 69
-        rule_relevance: 100
         matched_text: |
           Permission to use, copy, modify, and distribute this software and
              its documentation for any purpose and without fee is hereby
@@ -1412,20 +876,6 @@ license_detections:
              representations about the suitability of this software for any
              purpose.  It is provided "as is" without express or implied
              warranty.
-        licenses:
-          - key: mit-old-style
-            name: MIT Old Style
-            short_name: MIT Old Style
-            category: Permissive
-            is_exception: no
-            is_unknown: no
-            owner: MIT
-            homepage_url: http://fedoraproject.org/wiki/Licensing:MIT#Old_Style
-            text_url: http://fedoraproject.org/wiki/Licensing:MIT#Old_Style
-            reference_url: https://scancode-licensedb.aboutcode.org/mit-old-style
-            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit-old-style.LICENSE
-            spdx_license_key: LicenseRef-scancode-mit-old-style
-            spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit-old-style.LICENSE
   - license_expression: mit
     detection_log:
       - not-combined
@@ -1439,14 +889,6 @@ license_detections:
         license_expression: mit
         rule_identifier: mit.LICENSE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE
-        referenced_filenames: []
-        is_license_text: yes
-        is_license_notice: no
-        is_license_reference: no
-        is_license_tag: no
-        is_license_intro: no
-        rule_length: 161
-        rule_relevance: 100
         matched_text: |
           Permission is hereby granted, free of charge, to any person
              obtaining a copy of this software and associated documentation
@@ -1467,20 +909,6 @@ license_detections:
              ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
              CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
              SOFTWARE.
-        licenses:
-          - key: mit
-            name: MIT License
-            short_name: MIT License
-            category: Permissive
-            is_exception: no
-            is_unknown: no
-            owner: MIT
-            homepage_url: http://opensource.org/licenses/mit-license.php
-            text_url: http://opensource.org/licenses/mit-license.php
-            reference_url: https://scancode-licensedb.aboutcode.org/mit
-            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE
-            spdx_license_key: MIT
-            spdx_url: https://spdx.org/licenses/MIT
   - license_expression: bsd-simplified AND (mit-no-advert-export-control AND proprietary-license)
     detection_log:
       - not-combined
@@ -1494,14 +922,6 @@ license_detections:
         license_expression: bsd-simplified
         rule_identifier: bsd-simplified_27.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-simplified_27.RULE
-        referenced_filenames: []
-        is_license_text: yes
-        is_license_notice: no
-        is_license_reference: no
-        is_license_tag: no
-        is_license_intro: no
-        rule_length: 183
-        rule_relevance: 100
         matched_text: |
           Redistribution and use in source and binary forms, with or without
              modification, are permitted provided that the following conditions
@@ -1527,20 +947,6 @@ license_detections:
              OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT
              OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
              SUCH DAMAGE.
-        licenses:
-          - key: bsd-simplified
-            name: BSD-2-Clause
-            short_name: BSD-2-Clause
-            category: Permissive
-            is_exception: no
-            is_unknown: no
-            owner: Regents of the University of California
-            homepage_url: http://www.opensource.org/licenses/BSD-2-Clause
-            text_url: http://opensource.org/licenses/bsd-license.php
-            reference_url: https://scancode-licensedb.aboutcode.org/bsd-simplified
-            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-simplified.LICENSE
-            spdx_license_key: BSD-2-Clause
-            spdx_url: https://spdx.org/licenses/BSD-2-Clause
       - score: '100.0'
         start_line: 837
         end_line: 856
@@ -1550,14 +956,6 @@ license_detections:
         license_expression: mit-no-advert-export-control AND proprietary-license
         rule_identifier: mit-no-advert-export-control_and_proprietary-license_1.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit-no-advert-export-control_and_proprietary-license_1.RULE
-        referenced_filenames: []
-        is_license_text: yes
-        is_license_notice: no
-        is_license_reference: no
-        is_license_tag: no
-        is_license_intro: no
-        rule_length: 165
-        rule_relevance: 100
         matched_text: |
           EXPORT OF THIS SOFTWARE from the United States of America may
                 require a specific license from the United States Government. It
@@ -1579,33 +977,6 @@ license_detections:
              be held liable for any liability nor for any direct, indirect, or
              consequential damages with respect to any claim by the user or
              distributor of the ksu software.
-        licenses:
-          - key: mit-no-advert-export-control
-            name: MIT no advertising with Export Control
-            short_name: MIT no advertising with Export Control
-            category: Permissive
-            is_exception: no
-            is_unknown: no
-            owner: Xerox Corporation
-            homepage_url: https://fedoraproject.org/wiki/Licensing:Xerox?rd=Licensing/Xerox
-            text_url:
-            reference_url: https://scancode-licensedb.aboutcode.org/mit-no-advert-export-control
-            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit-no-advert-export-control.LICENSE
-            spdx_license_key: LicenseRef-scancode-mit-no-advert-export-control
-            spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit-no-advert-export-control.LICENSE
-          - key: proprietary-license
-            name: Proprietary License
-            short_name: Proprietary License
-            category: Commercial
-            is_exception: no
-            is_unknown: no
-            owner: Unspecified
-            homepage_url:
-            text_url:
-            reference_url: https://scancode-licensedb.aboutcode.org/proprietary-license
-            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/proprietary-license.LICENSE
-            spdx_license_key: LicenseRef-scancode-proprietary-license
-            spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/proprietary-license.LICENSE
   - license_expression: bsd-original-uc
     detection_log:
       - not-combined
@@ -1619,14 +990,6 @@ license_detections:
         license_expression: bsd-original-uc
         rule_identifier: bsd-original-uc_3.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-original-uc_3.RULE
-        referenced_filenames: []
-        is_license_text: yes
-        is_license_notice: no
-        is_license_reference: no
-        is_license_tag: no
-        is_license_intro: no
-        rule_length: 243
-        rule_relevance: 100
         matched_text: |
           Redistribution and use in source and binary forms, with or without
              modification, are permitted provided that the following conditions
@@ -1662,20 +1025,6 @@ license_detections:
              OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT
              OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
              SUCH DAMAGE.
-        licenses:
-          - key: bsd-original-uc
-            name: BSD-Original-UC
-            short_name: BSD-Original-UC
-            category: Permissive
-            is_exception: no
-            is_unknown: no
-            owner: Regents of the University of California
-            homepage_url: ftp://ftp.cs.berkeley.edu/pub/4bsd/README.Impt.License.Change
-            text_url: http://www.xfree86.org/3.3.6/COPYRIGHT2.html
-            reference_url: https://scancode-licensedb.aboutcode.org/bsd-original-uc
-            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-original-uc.LICENSE
-            spdx_license_key: BSD-4-Clause-UC
-            spdx_url: https://spdx.org/licenses/BSD-4-Clause-UC
   - license_expression: mit-no-advert-export-control
     detection_log:
       - not-combined
@@ -1689,14 +1038,6 @@ license_detections:
         license_expression: mit-no-advert-export-control
         rule_identifier: mit-no-advert-export-control_4.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit-no-advert-export-control_4.RULE
-        referenced_filenames: []
-        is_license_text: yes
-        is_license_notice: no
-        is_license_reference: no
-        is_license_tag: no
-        is_license_intro: no
-        rule_length: 145
-        rule_relevance: 99
         matched_text: |
           Export of this software from the United States of America may
                 require a specific license from the United States Government. It
@@ -1714,20 +1055,6 @@ license_detections:
              Basch, Lehman Brothers and M.I.T. make no representations about the
              suitability of this software for any purpose.  It is provided "as
              is" without express or implied warranty.
-        licenses:
-          - key: mit-no-advert-export-control
-            name: MIT no advertising with Export Control
-            short_name: MIT no advertising with Export Control
-            category: Permissive
-            is_exception: no
-            is_unknown: no
-            owner: Xerox Corporation
-            homepage_url: https://fedoraproject.org/wiki/Licensing:Xerox?rd=Licensing/Xerox
-            text_url:
-            reference_url: https://scancode-licensedb.aboutcode.org/mit-no-advert-export-control
-            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit-no-advert-export-control.LICENSE
-            spdx_license_key: LicenseRef-scancode-mit-no-advert-export-control
-            spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit-no-advert-export-control.LICENSE
   - license_expression: bsd-original
     detection_log:
       - not-combined
@@ -1741,14 +1068,6 @@ license_detections:
         license_expression: bsd-original
         rule_identifier: bsd-original_32.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-original_32.RULE
-        referenced_filenames: []
-        is_license_text: yes
-        is_license_notice: no
-        is_license_reference: no
-        is_license_tag: no
-        is_license_intro: no
-        rule_length: 245
-        rule_relevance: 100
         matched_text: |
           Redistribution and use in source and binary forms, with or without
              modification, are permitted provided that the following conditions
@@ -1785,20 +1104,6 @@ license_detections:
              (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE
              USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH
              DAMAGE.
-        licenses:
-          - key: bsd-original
-            name: BSD-Original
-            short_name: BSD-Original
-            category: Permissive
-            is_exception: no
-            is_unknown: no
-            owner: Regents of the University of California
-            homepage_url: http://www.xfree86.org/3.3.6/COPYRIGHT2.html
-            text_url: http://www.xfree86.org/3.3.6/COPYRIGHT2.html#6
-            reference_url: https://scancode-licensedb.aboutcode.org/bsd-original
-            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-original.LICENSE
-            spdx_license_key: BSD-4-Clause
-            spdx_url: https://spdx.org/licenses/BSD-4-Clause
   - license_expression: mit
     detection_log:
       - not-combined
@@ -1812,14 +1117,6 @@ license_detections:
         license_expression: mit
         rule_identifier: mit_483.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_483.RULE
-        referenced_filenames: []
-        is_license_text: yes
-        is_license_notice: no
-        is_license_reference: no
-        is_license_tag: no
-        is_license_intro: no
-        rule_length: 165
-        rule_relevance: 100
         matched_text: |
           Permission is hereby granted, free of charge, to any person
              obtaining a copy of this software and associated documentation
@@ -1840,20 +1137,6 @@ license_detections:
              OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR
              OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE
              OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-        licenses:
-          - key: mit
-            name: MIT License
-            short_name: MIT License
-            category: Permissive
-            is_exception: no
-            is_unknown: no
-            owner: MIT
-            homepage_url: http://opensource.org/licenses/mit-license.php
-            text_url: http://opensource.org/licenses/mit-license.php
-            reference_url: https://scancode-licensedb.aboutcode.org/mit
-            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE
-            spdx_license_key: MIT
-            spdx_url: https://spdx.org/licenses/MIT
   - license_expression: isc
     detection_log:
       - not-combined
@@ -1867,14 +1150,6 @@ license_detections:
         license_expression: isc
         rule_identifier: isc_14.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/isc_14.RULE
-        referenced_filenames: []
-        is_license_text: yes
-        is_license_notice: no
-        is_license_reference: no
-        is_license_tag: no
-        is_license_intro: no
-        rule_length: 111
-        rule_relevance: 100
         matched_text: |
           Permission to use, copy, modify, and distribute this software for
              any purpose with or without fee is hereby granted, provided that
@@ -1889,20 +1164,6 @@ license_detections:
              OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT,
              NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN
              CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
-        licenses:
-          - key: isc
-            name: ISC License
-            short_name: ISC License
-            category: Permissive
-            is_exception: no
-            is_unknown: no
-            owner: ISC - Internet Systems Consortium
-            homepage_url: https://www.isc.org/licenses/
-            text_url: http://fedoraproject.org/wiki/Licensing:MIT#Old_Style_with_legal_disclaimer_2
-            reference_url: https://scancode-licensedb.aboutcode.org/isc
-            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/isc.LICENSE
-            spdx_license_key: ISC
-            spdx_url: https://spdx.org/licenses/ISC
   - license_expression: isc
     detection_log:
       - not-combined
@@ -1916,14 +1177,6 @@ license_detections:
         license_expression: isc
         rule_identifier: isc_16.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/isc_16.RULE
-        referenced_filenames: []
-        is_license_text: no
-        is_license_notice: yes
-        is_license_reference: no
-        is_license_tag: no
-        is_license_intro: no
-        rule_length: 132
-        rule_relevance: 95
         matched_text: |
           Permission to use, copy, modify, and distribute this software for
              any purpose with or without fee is hereby granted, provided that
@@ -1938,20 +1191,6 @@ license_detections:
              IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.  (Isn't
              it sick that the U.S. culture of lawsuit-happy lawyers requires
              this kind of disclaimer?)
-        licenses:
-          - key: isc
-            name: ISC License
-            short_name: ISC License
-            category: Permissive
-            is_exception: no
-            is_unknown: no
-            owner: ISC - Internet Systems Consortium
-            homepage_url: https://www.isc.org/licenses/
-            text_url: http://fedoraproject.org/wiki/Licensing:MIT#Old_Style_with_legal_disclaimer_2
-            reference_url: https://scancode-licensedb.aboutcode.org/isc
-            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/isc.LICENSE
-            spdx_license_key: ISC
-            spdx_url: https://spdx.org/licenses/ISC
   - license_expression: other-permissive
     detection_log:
       - not-combined
@@ -1965,31 +1204,9 @@ license_detections:
         license_expression: other-permissive
         rule_identifier: other-permissive_22.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/other-permissive_22.RULE
-        referenced_filenames: []
-        is_license_text: yes
-        is_license_notice: no
-        is_license_reference: no
-        is_license_tag: no
-        is_license_intro: no
-        rule_length: 16
-        rule_relevance: 100
         matched_text: |
           This file may be freely redistributed without license or fee
              provided this copyright message remains intact.
-        licenses:
-          - key: other-permissive
-            name: Other Permissive Licenses
-            short_name: Other Permissive Licenses
-            category: Permissive
-            is_exception: no
-            is_unknown: no
-            owner: nexB
-            homepage_url:
-            text_url:
-            reference_url: https://scancode-licensedb.aboutcode.org/other-permissive
-            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/other-permissive.LICENSE
-            spdx_license_key: LicenseRef-scancode-other-permissive
-            spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/other-permissive.LICENSE
   - license_expression: bsd-new
     detection_log:
       - not-combined
@@ -2003,14 +1220,6 @@ license_detections:
         license_expression: bsd-new
         rule_identifier: bsd-new_134.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_134.RULE
-        referenced_filenames: []
-        is_license_text: yes
-        is_license_notice: no
-        is_license_reference: no
-        is_license_tag: no
-        is_license_intro: no
-        rule_length: 208
-        rule_relevance: 100
         matched_text: |
           Redistribution and use in source and binary forms, with or without
              modification, are permitted provided that the following conditions
@@ -2040,20 +1249,6 @@ license_detections:
              (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE
              USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH
              DAMAGE.
-        licenses:
-          - key: bsd-new
-            name: BSD-3-Clause
-            short_name: BSD-3-Clause
-            category: Permissive
-            is_exception: no
-            is_unknown: no
-            owner: Regents of the University of California
-            homepage_url: http://www.opensource.org/licenses/BSD-3-Clause
-            text_url: http://www.opensource.org/licenses/BSD-3-Clause
-            reference_url: https://scancode-licensedb.aboutcode.org/bsd-new
-            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-new.LICENSE
-            spdx_license_key: BSD-3-Clause
-            spdx_url: https://spdx.org/licenses/BSD-3-Clause
   - license_expression: rsa-md4
     detection_log:
       - not-combined
@@ -2067,14 +1262,6 @@ license_detections:
         license_expression: rsa-md4
         rule_identifier: rsa-md4.LICENSE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/rsa-md4.LICENSE
-        referenced_filenames: []
-        is_license_text: yes
-        is_license_notice: no
-        is_license_reference: no
-        is_license_tag: no
-        is_license_intro: no
-        rule_length: 126
-        rule_relevance: 100
         matched_text: |
           License to copy and use this software is granted provided that it
              is identified as the "RSA Data Security, Inc. MD4 Message Digest
@@ -2093,20 +1280,6 @@ license_detections:
 
              These notices must be retained in any copies of any part of this
              documentation and/or software.
-        licenses:
-          - key: rsa-md4
-            name: RSA Data Security MD4
-            short_name: RSA-MD4 License
-            category: Permissive
-            is_exception: no
-            is_unknown: no
-            owner: RSA (the Security Division of EMC)
-            homepage_url:
-            text_url:
-            reference_url: https://scancode-licensedb.aboutcode.org/rsa-md4
-            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/rsa-md4.LICENSE
-            spdx_license_key: LicenseRef-scancode-rsa-md4
-            spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/rsa-md4.LICENSE
   - license_expression: rsa-md5
     detection_log:
       - not-combined
@@ -2120,14 +1293,6 @@ license_detections:
         license_expression: rsa-md5
         rule_identifier: rsa-md5.LICENSE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/rsa-md5.LICENSE
-        referenced_filenames: []
-        is_license_text: yes
-        is_license_notice: no
-        is_license_reference: no
-        is_license_tag: no
-        is_license_intro: no
-        rule_length: 126
-        rule_relevance: 100
         matched_text: |
           License to copy and use this software is granted provided that it
              is identified as the "RSA Data Security, Inc. MD5 Message- Digest
@@ -2146,20 +1311,6 @@ license_detections:
 
              These notices must be retained in any copies of any part of this
              documentation and/or software.
-        licenses:
-          - key: rsa-md5
-            name: RSA Data Security MD5
-            short_name: RSA-MD5 License
-            category: Permissive
-            is_exception: no
-            is_unknown: no
-            owner: RSA (the Security Division of EMC)
-            homepage_url: http://www.faqs.org/rfcs/rfc1321.html
-            text_url: http://www.ietf.org/rfc/rfc1321.txt
-            reference_url: https://scancode-licensedb.aboutcode.org/rsa-md5
-            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/rsa-md5.LICENSE
-            spdx_license_key: RSA-MD
-            spdx_url: https://spdx.org/licenses/RSA-MD
   - license_expression: rsa-1990
     detection_log:
       - not-combined
@@ -2173,14 +1324,6 @@ license_detections:
         license_expression: rsa-1990
         rule_identifier: rsa-1990.LICENSE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/rsa-1990.LICENSE
-        referenced_filenames: []
-        is_license_text: yes
-        is_license_notice: no
-        is_license_reference: no
-        is_license_tag: no
-        is_license_intro: no
-        rule_length: 54
-        rule_relevance: 100
         matched_text: |
           RSA Data Security, Inc. makes no representations concerning either
              the merchantability of this software or the suitability of this
@@ -2189,20 +1332,6 @@ license_detections:
 
              These notices must be retained in any copies of any part of this
              documentation and/or software.
-        licenses:
-          - key: rsa-1990
-            name: RSA Data Security Notice 1990
-            short_name: RSA 1990
-            category: Permissive
-            is_exception: no
-            is_unknown: no
-            owner: RSA (the Security Division of EMC)
-            homepage_url:
-            text_url: http://svn.apache.org/repos/asf/apr/apr/trunk/test/testmd4.c
-            reference_url: https://scancode-licensedb.aboutcode.org/rsa-1990
-            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/rsa-1990.LICENSE
-            spdx_license_key: LicenseRef-scancode-rsa-1990
-            spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/rsa-1990.LICENSE
   - license_expression: mit-with-modification-obligations
     detection_log:
       - not-combined
@@ -2216,14 +1345,6 @@ license_detections:
         license_expression: mit-with-modification-obligations
         rule_identifier: mit-with-modification-obligations_2.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit-with-modification-obligations_2.RULE
-        referenced_filenames: []
-        is_license_text: yes
-        is_license_notice: no
-        is_license_reference: no
-        is_license_tag: no
-        is_license_intro: no
-        rule_length: 177
-        rule_relevance: 100
         matched_text: |
           Export of this software from the United States of America may
                 require a specific license from the United States Government. It
@@ -2244,20 +1365,6 @@ license_detections:
              Security Group, nor CyberSAFE Corporation make any representations
              about the suitability of this software for any purpose.  It is
              provided "as is" without express or implied warranty.
-        licenses:
-          - key: mit-with-modification-obligations
-            name: MIT With Modification Obligations
-            short_name: MIT With Modification Obligations
-            category: Permissive
-            is_exception: no
-            is_unknown: no
-            owner: MIT
-            homepage_url:
-            text_url:
-            reference_url: https://scancode-licensedb.aboutcode.org/mit-with-modification-obligations
-            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit-with-modification-obligations.LICENSE
-            spdx_license_key: LicenseRef-scancode-mit-modification-obligations
-            spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit-with-modification-obligations.LICENSE
   - license_expression: bsd-new
     detection_log:
       - not-combined
@@ -2271,14 +1378,6 @@ license_detections:
         license_expression: bsd-new
         rule_identifier: bsd-new_590.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_590.RULE
-        referenced_filenames: []
-        is_license_text: yes
-        is_license_notice: no
-        is_license_reference: no
-        is_license_tag: no
-        is_license_intro: no
-        rule_length: 213
-        rule_relevance: 100
         matched_text: |
           Redistribution and use in source and binary forms, with or without
              modification, are permitted provided that the following conditions
@@ -2308,20 +1407,6 @@ license_detections:
              OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT
              OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
              SUCH DAMAGE.
-        licenses:
-          - key: bsd-new
-            name: BSD-3-Clause
-            short_name: BSD-3-Clause
-            category: Permissive
-            is_exception: no
-            is_unknown: no
-            owner: Regents of the University of California
-            homepage_url: http://www.opensource.org/licenses/BSD-3-Clause
-            text_url: http://www.opensource.org/licenses/BSD-3-Clause
-            reference_url: https://scancode-licensedb.aboutcode.org/bsd-new
-            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-new.LICENSE
-            spdx_license_key: BSD-3-Clause
-            spdx_url: https://spdx.org/licenses/BSD-3-Clause
   - license_expression: bsd-simplified OR gpl-2.0-plus
     detection_log:
       - not-combined
@@ -2335,15 +1420,6 @@ license_detections:
         license_expression: bsd-simplified OR gpl-2.0-plus
         rule_identifier: bsd-simplified_or_gpl-2.0-plus_7.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-simplified_or_gpl-2.0-plus_7.RULE
-        referenced_filenames:
-          - /usr/share/common-licenses/GPL-2
-        is_license_text: yes
-        is_license_notice: no
-        is_license_reference: no
-        is_license_tag: no
-        is_license_intro: no
-        rule_length: 335
-        rule_relevance: 100
         matched_text: |
           Redistribution and use in source and binary forms, with or without
              modification, are permitted provided that the following conditions
@@ -2384,33 +1460,6 @@ license_detections:
 
              On Debian systems, the complete text of the GNU General Public License
              version 2 can be found in `/usr/share/common-licenses/GPL-2'.
-        licenses:
-          - key: bsd-simplified
-            name: BSD-2-Clause
-            short_name: BSD-2-Clause
-            category: Permissive
-            is_exception: no
-            is_unknown: no
-            owner: Regents of the University of California
-            homepage_url: http://www.opensource.org/licenses/BSD-2-Clause
-            text_url: http://opensource.org/licenses/bsd-license.php
-            reference_url: https://scancode-licensedb.aboutcode.org/bsd-simplified
-            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-simplified.LICENSE
-            spdx_license_key: BSD-2-Clause
-            spdx_url: https://spdx.org/licenses/BSD-2-Clause
-          - key: gpl-2.0-plus
-            name: GNU General Public License 2.0 or later
-            short_name: GPL 2.0 or later
-            category: Copyleft
-            is_exception: no
-            is_unknown: no
-            owner: Free Software Foundation (FSF)
-            homepage_url: http://www.gnu.org/licenses/old-licenses/gpl-2.0-standalone.html
-            text_url: http://www.gnu.org/licenses/old-licenses/gpl-2.0-standalone.html
-            reference_url: https://scancode-licensedb.aboutcode.org/gpl-2.0-plus
-            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-2.0-plus.LICENSE
-            spdx_license_key: GPL-2.0-or-later
-            spdx_url: https://spdx.org/licenses/GPL-2.0-or-later
   - license_expression: bsd-new
     detection_log:
       - not-combined
@@ -2424,14 +1473,6 @@ license_detections:
         license_expression: bsd-new
         rule_identifier: bsd-intel_4.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-intel_4.RULE
-        referenced_filenames: []
-        is_license_text: yes
-        is_license_notice: no
-        is_license_reference: no
-        is_license_tag: no
-        is_license_intro: no
-        rule_length: 212
-        rule_relevance: 100
         matched_text: |
           Redistribution and use in source and binary forms, with or without
              modification, are permitted provided that the following conditions
@@ -2462,20 +1503,6 @@ license_detections:
              STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
              ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED
              OF THE POSSIBILITY OF SUCH DAMAGE.
-        licenses:
-          - key: bsd-new
-            name: BSD-3-Clause
-            short_name: BSD-3-Clause
-            category: Permissive
-            is_exception: no
-            is_unknown: no
-            owner: Regents of the University of California
-            homepage_url: http://www.opensource.org/licenses/BSD-3-Clause
-            text_url: http://www.opensource.org/licenses/BSD-3-Clause
-            reference_url: https://scancode-licensedb.aboutcode.org/bsd-new
-            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-new.LICENSE
-            spdx_license_key: BSD-3-Clause
-            spdx_url: https://spdx.org/licenses/BSD-3-Clause
   - license_expression: bsd-simplified
     detection_log:
       - not-combined
@@ -2489,14 +1516,6 @@ license_detections:
         license_expression: bsd-simplified
         rule_identifier: bsd-simplified.LICENSE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-simplified.LICENSE
-        referenced_filenames: []
-        is_license_text: yes
-        is_license_notice: no
-        is_license_reference: no
-        is_license_tag: no
-        is_license_intro: no
-        rule_length: 183
-        rule_relevance: 100
         matched_text: |
           Redistribution and use in source and binary forms, with or without
              modification, are permitted provided that the following conditions
@@ -2522,20 +1541,6 @@ license_detections:
              STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
              ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED
              OF THE POSSIBILITY OF SUCH DAMAGE.
-        licenses:
-          - key: bsd-simplified
-            name: BSD-2-Clause
-            short_name: BSD-2-Clause
-            category: Permissive
-            is_exception: no
-            is_unknown: no
-            owner: Regents of the University of California
-            homepage_url: http://www.opensource.org/licenses/BSD-2-Clause
-            text_url: http://opensource.org/licenses/bsd-license.php
-            reference_url: https://scancode-licensedb.aboutcode.org/bsd-simplified
-            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-simplified.LICENSE
-            spdx_license_key: BSD-2-Clause
-            spdx_url: https://spdx.org/licenses/BSD-2-Clause
 other_license_detections: []
 copyright: |
   Copyright (c) 1985-2018 by the Massachusetts Institute of Technology

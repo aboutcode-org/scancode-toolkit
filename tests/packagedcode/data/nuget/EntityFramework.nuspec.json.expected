@@ -56,32 +56,7 @@
             "license_expression": "ms-net-library",
             "rule_identifier": "ms-net-library_6.RULE",
             "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/ms-net-library_6.RULE",
-            "referenced_filenames": [],
-            "is_license_text": false,
-            "is_license_notice": false,
-            "is_license_reference": true,
-            "is_license_tag": false,
-            "is_license_intro": false,
-            "rule_length": 7,
-            "rule_relevance": 100,
-            "matched_text": "http://go.microsoft.com/fwlink/?LinkID=320539",
-            "licenses": [
-              {
-                "key": "ms-net-library",
-                "name": "Microsoft .NET Library License",
-                "short_name": "MS .NET Library License",
-                "category": "Proprietary Free",
-                "is_exception": false,
-                "is_unknown": false,
-                "owner": "Microsoft",
-                "homepage_url": "http://www.microsoft.com/web/webpi/eula/net_library_eula_enu.htm",
-                "text_url": "",
-                "reference_url": "https://scancode-licensedb.aboutcode.org/ms-net-library",
-                "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/ms-net-library.LICENSE",
-                "spdx_license_key": "LicenseRef-scancode-ms-net-library",
-                "spdx_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/ms-net-library.LICENSE"
-              }
-            ]
+            "matched_text": "http://go.microsoft.com/fwlink/?LinkID=320539"
           }
         ]
       }

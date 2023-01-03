@@ -23,10 +23,20 @@ headers:
       system_environment:
         operating_system: linux
         cpu_architecture: 64
-        platform: Linux-5.14.0-1054-oem-x86_64-with-glibc2.29
-        platform_version: '#61-Ubuntu SMP Fri Oct 14 13:05:50 UTC 2022'
-        python_version: "3.8.10 (default, Nov 14 2022, 12:59:47) \n[GCC 9.4.0]"
-      spdx_license_list_version: '3.17'
+        platform: Linux-4.15.0-200-generic-x86_64-with-glibc2.23
+        platform_version: '#211~16.04.2-Ubuntu SMP Fri Nov 25 09:18:48 UTC 2022'
+        python_version: "3.9.10 (main, Jan 29 2022, 10:01:49) \n[GCC 5.4.0 20160609]"
+      spdx_license_list_version: '3.19'
+      OUTDATED: 'WARNING: Outdated ScanCode Toolkit version! You are using an outdated version
+        of ScanCode Toolkit: 32.0.0rc1 released on: 2023-01-03. A new version 42.5.1 is available
+        with important improvements including bug and security fixes, updated license, copyright
+        and package detection, and improved scanning accuracy. Please download and install the
+        latest version of ScanCode. Visit https://github.com/nexB/scancode-toolkit/releases
+        for details.'
+      additional_license_directory: /home/pombreda/w421/scancode-toolkit-master5/tests/licensedcode/data/additional_licenses/additional_dir
+      additional_license_plugins:
+        - /home/pombreda/w421/scancode-toolkit-master5/venv/lib/python3.9/site-packages/licenses_to_install1
+        - /home/pombreda/w421/scancode-toolkit-master5/venv/lib/python3.9/site-packages/licenses_to_install2
       files_count: 7
 packages: []
 dependencies: []

@@ -17,14 +17,6 @@ license_detections:
         license_expression: cavium-linux-firmware
         rule_identifier: cavium-linux-firmware.LICENSE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/cavium-linux-firmware.LICENSE
-        referenced_filenames: []
-        is_license_text: yes
-        is_license_notice: no
-        is_license_reference: no
-        is_license_tag: no
-        is_license_intro: no
-        rule_length: 541
-        rule_relevance: 100
         matched_text: |
           Software License Agreement
 
@@ -83,19 +75,5 @@ license_detections:
           (c) anyone who is engaged in activities related to the design, development,
           production, or use of nuclear materials, nuclear facilities, nuclear weapons,
           missiles or chemical or biological weapons.
-        licenses:
-          - key: cavium-linux-firmware
-            name: Cavium Linux Firmware License
-            short_name: Cavium Linux Firmware License
-            category: Proprietary Free
-            is_exception: no
-            is_unknown: no
-            owner: Cavium
-            homepage_url: https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/tree/LICENCE.cavium
-            text_url:
-            reference_url: https://scancode-licensedb.aboutcode.org/cavium-linux-firmware
-            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/cavium-linux-firmware.LICENSE
-            spdx_license_key: LicenseRef-scancode-cavium-linux-firmware
-            spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/cavium-linux-firmware.LICENSE
 other_license_detections: []
 copyright: Copyright (c) 2015, Cavium, Inc.

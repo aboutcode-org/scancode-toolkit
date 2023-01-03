@@ -1,5 +1,4 @@
 {
-  "dependencies": [],
   "packages": [
     {
       "type": "windows-program",
@@ -108,6 +107,7 @@
       "purl": "pkg:windows-program/Test2@0.0.1"
     }
   ],
+  "dependencies": [],
   "files": [
     {
       "path": "layer",

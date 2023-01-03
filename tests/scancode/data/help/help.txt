@@ -101,11 +101,6 @@ Options:
                              active
     --filter-clues           Filter redundant duplicated clues already contained
                              in detected license and copyright texts and notices.
-    --is-license-text        Set the "is_license_text" flag to true for files that
-                             contain mostly license texts and notices (e.g over
-                             90% of the content).[DEPRECATED] this is now built-in
-                             in the --license-text option with  a
-                             "percentage_of_license_text" attribute.
     --license-clarity-score  Compute a summary license clarity score at the
                              codebase level.
     --license-policy FILE    Load a License Policy file and apply it to the scan
@@ -154,9 +149,9 @@ Options:
                              scan depth limit.
 
   miscellaneous:
-    --get-license-data DIR  Include this directory with additional custom licenses
-                            and license rules in the license detection index.
-                            Creates the directory if it does not exist.
+    --dump-license-data DIR  Dump the license data in this directory in the
+                             LicenseDB format and exit. Creates the directory if
+                             it does not exist.
 
   documentation:
     -h, --help       Show this message and exit.

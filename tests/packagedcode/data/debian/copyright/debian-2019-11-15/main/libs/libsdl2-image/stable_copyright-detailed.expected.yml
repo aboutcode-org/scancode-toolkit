@@ -27,14 +27,6 @@ other_license_detections:
         license_expression: unlicense
         rule_identifier: unlicense_6.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/unlicense_6.RULE
-        referenced_filenames: []
-        is_license_text: yes
-        is_license_notice: no
-        is_license_reference: no
-        is_license_tag: no
-        is_license_intro: no
-        rule_length: 189
-        rule_relevance: 100
         matched_text: |
           This is free and unencumbered software released into the public domain.
 
@@ -58,20 +50,6 @@ other_license_detections:
           OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE,
           ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
           OTHER DEALINGS IN THE SOFTWARE.
-        licenses:
-          - key: unlicense
-            name: Unlicense
-            short_name: Unlicense
-            category: Public Domain
-            is_exception: no
-            is_unknown: no
-            owner: Unlicense
-            homepage_url: http://unlicense.org/
-            text_url: https://unlicense.org/
-            reference_url: https://scancode-licensedb.aboutcode.org/unlicense
-            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/unlicense.LICENSE
-            spdx_license_key: Unlicense
-            spdx_url: https://spdx.org/licenses/Unlicense
   - license_expression: zlib
     detection_log:
       - not-combined
@@ -85,14 +63,6 @@ other_license_detections:
         license_expression: zlib
         rule_identifier: zlib.LICENSE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/zlib.LICENSE
-        referenced_filenames: []
-        is_license_text: yes
-        is_license_notice: no
-        is_license_reference: no
-        is_license_tag: no
-        is_license_intro: no
-        rule_length: 132
-        rule_relevance: 100
         matched_text: |
           This software is provided 'as-is', without any express or implied
           warranty.  In no event will the authors be held liable for any damages
@@ -109,20 +79,6 @@ other_license_detections:
           2. Altered source versions must be plainly marked as such, and must not be
              misrepresented as being the original software.
           3. This notice may not be removed or altered from any source distribution.
-        licenses:
-          - key: zlib
-            name: ZLIB License
-            short_name: ZLIB License
-            category: Permissive
-            is_exception: no
-            is_unknown: no
-            owner: zlib
-            homepage_url: http://www.zlib.net/
-            text_url: http://www.gzip.org/zlib/zlib_license.html
-            reference_url: https://scancode-licensedb.aboutcode.org/zlib
-            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/zlib.LICENSE
-            spdx_license_key: Zlib
-            spdx_url: https://spdx.org/licenses/Zlib
   - license_expression: lgpl-2.0-plus AND lgpl-2.1-plus
     detection_log:
       - not-combined
@@ -136,29 +92,7 @@ other_license_detections:
         license_expression: lgpl-2.0-plus
         rule_identifier: lgpl-2.0-plus_61.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0-plus_61.RULE
-        referenced_filenames: []
-        is_license_text: no
-        is_license_notice: no
-        is_license_reference: no
-        is_license_tag: yes
-        is_license_intro: no
-        rule_length: 3
-        rule_relevance: 100
         matched_text: 'License: lgpl-2+'
-        licenses:
-          - key: lgpl-2.0-plus
-            name: GNU Library General Public License 2.0 or later
-            short_name: LGPL 2.0 or later
-            category: Copyleft Limited
-            is_exception: no
-            is_unknown: no
-            owner: Free Software Foundation (FSF)
-            homepage_url: http://www.gnu.org/licenses/old-licenses/lgpl-2.0.html
-            text_url: http://www.gnu.org/licenses/old-licenses/lgpl-2.0-standalone.html
-            reference_url: https://scancode-licensedb.aboutcode.org/lgpl-2.0-plus
-            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/lgpl-2.0-plus.LICENSE
-            spdx_license_key: LGPL-2.0-or-later
-            spdx_url: https://spdx.org/licenses/LGPL-2.0-or-later
       - score: '100.0'
         start_line: 80
         end_line: 86
@@ -168,15 +102,6 @@ other_license_detections:
         license_expression: lgpl-2.1-plus
         rule_identifier: lgpl-2.1-plus_419.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_419.RULE
-        referenced_filenames:
-          - /usr/share/common-licenses/LGPL-2
-        is_license_text: no
-        is_license_notice: yes
-        is_license_reference: no
-        is_license_tag: no
-        is_license_intro: no
-        rule_length: 70
-        rule_relevance: 100
         matched_text: |
           This program is free software; you can redistribute it and/or modify
           it under the terms of the GNU Lesser General Public License as published by
@@ -185,20 +110,6 @@ other_license_detections:
 
           On Debian systems, the complete text of version 2 of the GNU Lesser
           General Public License can be found in '/usr/share/common-licenses/LGPL-2'.
-        licenses:
-          - key: lgpl-2.1-plus
-            name: GNU Lesser General Public License 2.1 or later
-            short_name: LGPL 2.1 or later
-            category: Copyleft Limited
-            is_exception: no
-            is_unknown: no
-            owner: Free Software Foundation (FSF)
-            homepage_url: http://www.gnu.org/licenses/old-licenses/lgpl-2.1-standalone.html
-            text_url: http://www.gnu.org/licenses/old-licenses/lgpl-2.1-standalone.html
-            reference_url: https://scancode-licensedb.aboutcode.org/lgpl-2.1-plus
-            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/lgpl-2.1-plus.LICENSE
-            spdx_license_key: LGPL-2.1-or-later
-            spdx_url: https://spdx.org/licenses/LGPL-2.1-or-later
 copyright: |
   1997-2016 Sam Lantinga <slouken@libsdl.org>
   1997-2016 Sam Lantinga <slouken@libsdl.org>
