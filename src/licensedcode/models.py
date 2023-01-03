@@ -462,6 +462,7 @@ class License:
         """
         # include everything
         data = self._to_dict(include_field=lambda k, v: True)
+        data.pop('is_deprecated', None)
         data['scancode_url'] = self.spdx_url
         data['licensedb_url'] = self.spdx_url
         data['spdx_url'] = self.spdx_url
