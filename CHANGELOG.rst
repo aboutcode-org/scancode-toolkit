@@ -175,13 +175,16 @@ License detection:
 
   - See https://github.com/nexB/scancode-toolkit/issues/3049
 
-- Theer is a new ``--get-license-data`` scancode command line option to export
+- There is a new ``--get-license-data`` scancode command line option to export
   license data in JSON, YAML and HTML, with indexes and a static website for use
   in the licensedb web site. This becomes the  API way to getr scancode license
   data.
 
   See https://github.com/nexB/scancode-toolkit/issues/2738
 
+- The deprecated "--is-license-text" option has been removed.
+  This is now built-in with the --license-text option and --info
+  and exposed with the "percentage_of_license_text" attribute.
 
 
 v31.2.3 - 2022-12-24
