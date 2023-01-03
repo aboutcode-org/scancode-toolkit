@@ -80,7 +80,7 @@ def _create_dir(location):
 __version__ = '32.0.0rc1'
 
 # used to warn user when the version is out of date
-__release_date__ = datetime.datetime(2022, 12, 28)
+__release_date__ = datetime.datetime(2023, 1, 3)
 
 # See https://github.com/nexB/scancode-toolkit/issues/2653 for more information
 # on the data format version
