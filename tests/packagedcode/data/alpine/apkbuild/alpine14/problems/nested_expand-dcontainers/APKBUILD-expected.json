@@ -40,32 +40,7 @@
           "license_expression": "boost-1.0",
           "rule_identifier": "boost-1.0_48.RULE",
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/boost-1.0_48.RULE",
-          "referenced_filenames": [],
-          "is_license_text": false,
-          "is_license_notice": false,
-          "is_license_reference": true,
-          "is_license_tag": false,
-          "is_license_intro": false,
-          "rule_length": 3,
-          "rule_relevance": 50,
-          "matched_text": "bsl-1.0",
-          "licenses": [
-            {
-              "key": "boost-1.0",
-              "name": "Boost Software License 1.0",
-              "short_name": "Boost 1.0",
-              "category": "Permissive",
-              "is_exception": false,
-              "is_unknown": false,
-              "owner": "Boost",
-              "homepage_url": "http://www.boost.org/users/license.html",
-              "text_url": "http://www.boost.org/LICENSE_1_0.txt",
-              "reference_url": "https://scancode-licensedb.aboutcode.org/boost-1.0",
-              "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/boost-1.0.LICENSE",
-              "spdx_license_key": "BSL-1.0",
-              "spdx_url": "https://spdx.org/licenses/BSL-1.0"
-            }
-          ]
+          "matched_text": "bsl-1.0"
         }
       ]
     }

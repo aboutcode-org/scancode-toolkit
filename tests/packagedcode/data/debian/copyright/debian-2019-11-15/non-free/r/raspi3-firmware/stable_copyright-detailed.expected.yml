@@ -22,14 +22,6 @@ license_detections:
         license_expression: proprietary-license
         rule_identifier: proprietary-license_600.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/proprietary-license_600.RULE
-        referenced_filenames: []
-        is_license_text: yes
-        is_license_notice: no
-        is_license_reference: no
-        is_license_tag: no
-        is_license_intro: no
-        rule_length: 203
-        rule_relevance: 100
         matched_text: |
           Redistribution.  Redistribution and use in binary form, without
           modification, are permitted provided that the following conditions are
@@ -56,20 +48,6 @@ license_detections:
           TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE
           USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH
           DAMAGE.
-        licenses:
-          - key: proprietary-license
-            name: Proprietary License
-            short_name: Proprietary License
-            category: Commercial
-            is_exception: no
-            is_unknown: no
-            owner: Unspecified
-            homepage_url:
-            text_url:
-            reference_url: https://scancode-licensedb.aboutcode.org/proprietary-license
-            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/proprietary-license.LICENSE
-            spdx_license_key: LicenseRef-scancode-proprietary-license
-            spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/proprietary-license.LICENSE
   - license_expression: broadcom-proprietary
     detection_log:
       - not-combined
@@ -83,14 +61,6 @@ license_detections:
         license_expression: broadcom-proprietary
         rule_identifier: broadcom-proprietary_1.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/broadcom-proprietary_1.RULE
-        referenced_filenames: []
-        is_license_text: yes
-        is_license_notice: no
-        is_license_reference: no
-        is_license_tag: no
-        is_license_intro: no
-        rule_length: 1770
-        rule_relevance: 100
         matched_text: "SOFTWARE LICENSE AGREEMENT\n\nUnless you and Broadcom Corporation (“Broadcom”)\
           \ execute a separate written\nsoftware license agreement governing use of the accompanying\
           \ software, this\nsoftware is licensed to you under the terms of this Software License\
@@ -231,20 +201,6 @@ license_detections:
           \ and all prior proposals, agreements and\nrepresentations between them, whether written\
           \ or oral concerning the Software.\nThis Agreement may be changed only by mutual agreement\
           \ of the parties in\nwriting."
-        licenses:
-          - key: broadcom-proprietary
-            name: Broadcom Proprietary License
-            short_name: Broadcom Proprietary
-            category: Proprietary Free
-            is_exception: no
-            is_unknown: no
-            owner: Broadcom
-            homepage_url:
-            text_url:
-            reference_url: https://scancode-licensedb.aboutcode.org/broadcom-proprietary
-            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/broadcom-proprietary.LICENSE
-            spdx_license_key: LicenseRef-scancode-broadcom-proprietary
-            spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/broadcom-proprietary.LICENSE
   - license_expression: gpl-2.0-plus
     detection_log:
       - not-combined
@@ -258,29 +214,7 @@ license_detections:
         license_expression: gpl-2.0-plus
         rule_identifier: gpl-2.0-plus_22.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_22.RULE
-        referenced_filenames: []
-        is_license_text: no
-        is_license_notice: no
-        is_license_reference: no
-        is_license_tag: yes
-        is_license_intro: no
-        rule_length: 3
-        rule_relevance: 100
         matched_text: 'License: gpl-2+'
-        licenses:
-          - key: gpl-2.0-plus
-            name: GNU General Public License 2.0 or later
-            short_name: GPL 2.0 or later
-            category: Copyleft
-            is_exception: no
-            is_unknown: no
-            owner: Free Software Foundation (FSF)
-            homepage_url: http://www.gnu.org/licenses/old-licenses/gpl-2.0-standalone.html
-            text_url: http://www.gnu.org/licenses/old-licenses/gpl-2.0-standalone.html
-            reference_url: https://scancode-licensedb.aboutcode.org/gpl-2.0-plus
-            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-2.0-plus.LICENSE
-            spdx_license_key: GPL-2.0-or-later
-            spdx_url: https://spdx.org/licenses/GPL-2.0-or-later
       - score: '100.0'
         start_line: 261
         end_line: 275
@@ -290,15 +224,6 @@ license_detections:
         license_expression: gpl-2.0-plus
         rule_identifier: gpl-2.0-plus_846.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_846.RULE
-        referenced_filenames:
-          - /usr/share/common-licenses/GPL-2
-        is_license_text: no
-        is_license_notice: yes
-        is_license_reference: no
-        is_license_tag: no
-        is_license_intro: no
-        rule_length: 126
-        rule_relevance: 100
         matched_text: |
           This package is free software; you can redistribute it and/or modify
           it under the terms of the GNU General Public License as published by
@@ -315,20 +240,6 @@ license_detections:
 
           On Debian systems, the complete text of the GNU General
           Public License version 2 can be found in "/usr/share/common-licenses/GPL-2".
-        licenses:
-          - key: gpl-2.0-plus
-            name: GNU General Public License 2.0 or later
-            short_name: GPL 2.0 or later
-            category: Copyleft
-            is_exception: no
-            is_unknown: no
-            owner: Free Software Foundation (FSF)
-            homepage_url: http://www.gnu.org/licenses/old-licenses/gpl-2.0-standalone.html
-            text_url: http://www.gnu.org/licenses/old-licenses/gpl-2.0-standalone.html
-            reference_url: https://scancode-licensedb.aboutcode.org/gpl-2.0-plus
-            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-2.0-plus.LICENSE
-            spdx_license_key: GPL-2.0-or-later
-            spdx_url: https://spdx.org/licenses/GPL-2.0-or-later
 other_license_detections: []
 copyright: |
   2006, Broadcom Corporation

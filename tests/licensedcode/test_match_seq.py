@@ -15,10 +15,10 @@ from licensedcode import index
 from licensedcode import match_seq
 from licensedcode.legalese import build_dictionary_from_iterable
 from licensedcode.models import load_rules
-from licensedcode.models import Rule
 from licensedcode.tracing import get_texts
 
 from licensedcode_test_utils import mini_legalese  # NOQA
+from licensedcode_test_utils import create_rule_from_text_and_expression
 
 TEST_DATA_DIR = os.path.join(os.path.dirname(__file__), 'data')
 
@@ -37,7 +37,7 @@ class TestMatchSeq(FileBasedTesting):
             EVEN IF ADVISED OF THE [[POSSIBILITY OF NEW SUCH]] DAMAGE
         '''
 
-        rule = Rule._from_text_and_expression(text=rule_text, license_expression='test')
+        rule = create_rule_from_text_and_expression(text=rule_text, license_expression='test')
 
         legalese = build_dictionary_from_iterable(
             set(mini_legalese) |

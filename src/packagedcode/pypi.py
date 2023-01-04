@@ -24,17 +24,17 @@ from typing import NamedTuple
 import dparse2
 # NOTE: we always want to use the external library rather than the built-in for now
 import importlib_metadata
-import packaging
+import packvers as packaging
 import pip_requirements_parser
 import pkginfo2
 from commoncode import fileutils
 from commoncode.fileutils import as_posixpath
 from commoncode.resource import Resource
-from packaging.specifiers import SpecifierSet
 from packageurl import PackageURL
-from packaging import markers
-from packaging.requirements import Requirement
-from packaging.utils import canonicalize_name
+from packvers.specifiers import SpecifierSet
+from packvers import markers
+from packvers.requirements import Requirement
+from packvers.utils import canonicalize_name
 
 from packagedcode import models
 from packagedcode.utils import build_description
@@ -63,7 +63,6 @@ def logger_debug(*args):
 logger = logging.getLogger(__name__)
 
 if TRACE:
-    import sys
     logging.basicConfig(stream=sys.stdout)
     logger.setLevel(logging.DEBUG)
 
@@ -674,7 +673,7 @@ class PythonSetupPyHandler(BaseExtractedPythonLayout):
             description=get_description(setup_args),
             parties=get_setup_parties(setup_args),
             extracted_license_statement=get_declared_license(setup_args),
-            dependencies=get_setup_py_dependencies(setup_args),
+            dependencies=dependencies,
             keywords=get_keywords(setup_args),
             extra_data=extra_data,
             **urls,
@@ -724,7 +723,6 @@ class SetupCfgHandler(BaseExtractedPythonLayout):
 
     @classmethod
     def parse(cls, location):
-        file_name = fileutils.file_name(location)
 
         metadata = {}
         parser = ConfigParser()
@@ -1139,7 +1137,7 @@ def get_declared_license(metainfo):
     license_classifiers, _ = get_classifiers(metainfo)
     if license_classifiers:
         declared_license['classifiers'] = license_classifiers
-    
+
     if not declared_license:
         declared_license = None
 

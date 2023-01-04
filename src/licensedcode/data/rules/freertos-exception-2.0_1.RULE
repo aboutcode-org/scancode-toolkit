@@ -5,7 +5,7 @@ referenced_filenames:
     - COPYING
 ---
 
-    The FreeRTOS source code is licensed by a modified GNU General Public
+The FreeRTOS source code is licensed by a modified GNU General Public
     License - the modification taking the form of an exception.
     The exception permits the source code of applications that use FreeRTOS
     solely through the API published on this website to remain closed source,

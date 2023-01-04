@@ -5,4 +5,4 @@ relevance: 100
 notes: MODULE_LICENSE with "GPL v2" in escaped text
 ---
 
- MODULE_LICENSE("\x47\x50\x4c\x20\x76\x32");
+MODULE_LICENSE("\x47\x50\x4c\x20\x76\x32");

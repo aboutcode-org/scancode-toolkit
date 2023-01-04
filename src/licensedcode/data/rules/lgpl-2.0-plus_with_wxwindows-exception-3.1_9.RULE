@@ -4,7 +4,7 @@ is_license_notice: yes
 minimum_coverage: 90
 ---
 
-  This program is distributed in the hope that it will be useful,
+This program is distributed in the hope that it will be useful,
   but WITHOUT ANY WARRANTY; without even the implied warranty of
   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
   wxWindows Library License for more details.

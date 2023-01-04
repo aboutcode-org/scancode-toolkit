@@ -9,8 +9,6 @@
 
 import os
 
-import pytest
-
 from commoncode.testcase import FileDrivenTesting
 
 from cluecode.plugin_filter_clues import Detections

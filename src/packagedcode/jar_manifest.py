@@ -28,8 +28,8 @@ class JavaJarManifestHandler(models.DatafileHandler):
     path_patterns = ('*/META-INF/MANIFEST.MF',)
     default_package_type = 'jar'
     default_primary_language = 'Java'
-    description='Java JAR MANIFEST.MF'
-    documentation_url='https://docs.oracle.com/javase/tutorial/deployment/jar/manifestindex.html'
+    description = 'Java JAR MANIFEST.MF'
+    documentation_url = 'https://docs.oracle.com/javase/tutorial/deployment/jar/manifestindex.html'
 
     @classmethod
     def parse(cls, location):
@@ -54,7 +54,6 @@ class JavaJarManifestHandler(models.DatafileHandler):
                 codebase=codebase,
                 package_adder=package_adder,
             )
-
 
 
 def parse_manifest(location):

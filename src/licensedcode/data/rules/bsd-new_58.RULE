@@ -7,7 +7,7 @@ ignorable_urls:
     - http://www.opensource.org/licenses/bsd-license.html
 ---
 
-  <licenses>
+<licenses>
     <license>
       <name>{{Berkeley Software Distribution (BSD) License}}</name>
       <url>http://www.opensource.org/licenses/bsd-license.html</url>

@@ -12,7 +12,6 @@ import os
 from commoncode.testcase import FileDrivenTesting
 
 from licensedcode.plugin_license import find_referenced_resource
-from licensedcode.plugin_license import get_referenced_filenames
 from scancode.cli_test_utils import check_json_scan
 from scancode.cli_test_utils import run_scan_click
 from scancode_config import REGEN_TEST_FIXTURES
@@ -190,7 +189,7 @@ def test_license_match_referenced_filename():
     check_json_scan(test_loc, result_file, regen=REGEN_TEST_FIXTURES)
 
 
-def test_license_match_referenced_filename():
+def test_license_match_referenced_filename_unknown_ref():
     test_dir = test_env.get_test_loc('plugin_license/license_reference/scan/scan-unknown-reference-copyright', copy=True)
     result_file = test_env.get_temp_file('json')
     args = [

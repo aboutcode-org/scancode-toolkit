@@ -22,6 +22,7 @@ per https://www.freebsd.org/cgi/man.cgi?pkg-create(8)
 SCANCODE_DEBUG_PACKAGE = os.environ.get('SCANCODE_DEBUG_PACKAGE', False)
 TRACE = SCANCODE_DEBUG_PACKAGE
 
+
 def logger_debug(*args):
     pass
 
@@ -100,7 +101,7 @@ class CompactManifestHandler(models.DatafileHandler):
 
         if TRACE:
             logger_debug(
-                f"package_data: {package_data}" 
+                f"package_data: {package_data}"
             )
 
         return package_data
@@ -159,6 +160,7 @@ class CompactManifestHandler(models.DatafileHandler):
             license_detections=detections,
             relation=relation,
         )
+
 
 def license_mapper(freebsd_manifest, package):
     """

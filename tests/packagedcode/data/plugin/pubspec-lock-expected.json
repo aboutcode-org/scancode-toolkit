@@ -1,4 +1,5 @@
 {
+  "packages": [],
   "dependencies": [
     {
       "purl": "pkg:pubspec/dart",
@@ -799,7 +800,8 @@
       "datasource_id": "pubspec_lock"
     }
   ],
-  "packages": [],
+  "license_references": [],
+  "license_rule_references": [],
   "files": [
     {
       "path": "dart-pubspec.lock",

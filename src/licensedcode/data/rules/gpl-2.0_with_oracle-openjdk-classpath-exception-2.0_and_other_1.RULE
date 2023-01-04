@@ -7,7 +7,7 @@ referenced_filenames:
     - THIRD_PARTY_README
 ---
 
-  OpenJDK is licensed under the GPL v2 with exceptions,
+OpenJDK is licensed under the GPL v2 with exceptions,
   see `/usr/share/common-licenses/GPL-2'.
   The exceptions are:
    - "CLASSPATH" EXCEPTION TO THE GPL

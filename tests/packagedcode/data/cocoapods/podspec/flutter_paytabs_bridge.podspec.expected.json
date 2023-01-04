@@ -49,34 +49,7 @@
             "license_expression": "unknown-license-reference",
             "rule_identifier": "unknown-license-reference_see_license_at_manifest_1.RULE",
             "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/unknown-license-reference_see_license_at_manifest_1.RULE",
-            "referenced_filenames": [
-              "LICENSE"
-            ],
-            "is_license_text": false,
-            "is_license_notice": false,
-            "is_license_reference": true,
-            "is_license_tag": false,
-            "is_license_intro": false,
-            "rule_length": 3,
-            "rule_relevance": 100,
-            "matched_text": "license :file = ../LICENSE",
-            "licenses": [
-              {
-                "key": "unknown-license-reference",
-                "name": "Unknown License file reference",
-                "short_name": "Unknown License reference",
-                "category": "Unstated License",
-                "is_exception": false,
-                "is_unknown": true,
-                "owner": "Unspecified",
-                "homepage_url": null,
-                "text_url": "",
-                "reference_url": "https://scancode-licensedb.aboutcode.org/unknown-license-reference",
-                "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/unknown-license-reference.LICENSE",
-                "spdx_license_key": "LicenseRef-scancode-unknown-license-reference",
-                "spdx_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/unknown-license-reference.LICENSE"
-              }
-            ]
+            "matched_text": "license :file = ../LICENSE"
           }
         ]
       }

@@ -7,7 +7,7 @@ ignorable_urls:
     - https://www.apache.org/licenses/LICENSE-2.0
 ---
 
-  <licenses>
+<licenses>
     <license>
       Apache License Version 2
       https://www.apache.org/licenses/LICENSE-2.0

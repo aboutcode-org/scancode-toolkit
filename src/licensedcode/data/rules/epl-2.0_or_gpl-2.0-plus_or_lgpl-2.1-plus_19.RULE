@@ -8,7 +8,7 @@ ignorable_urls:
     - https://www.gnu.org/licenses/lgpl-2.1-standalone.html
 ---
 
-  <licenses>
+<licenses>
     <license>
       <name>GPL-2.0</name>
       <url>https://www.gnu.org/licenses/gpl-2.0-standalone.html</url>

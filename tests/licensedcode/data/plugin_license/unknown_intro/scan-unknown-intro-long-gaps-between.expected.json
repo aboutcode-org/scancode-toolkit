@@ -1,7 +1,7 @@
 {
   "license_detections": [
     {
-      "identifier": "x11_lucent-3d4ebed6-d6ff-5d71-13d5-9ae3bb5bc485",
+      "identifier": "x11_lucent-3c40145a-efd5-16ba-0a7a-9c28d9993bc2",
       "license_expression": "x11-lucent",
       "count": 1,
       "detection_log": [
@@ -33,7 +33,7 @@
       ]
     },
     {
-      "identifier": "bzip2_libbzip_2010-5537c6e0-e03f-c489-9ac3-243ae2274830",
+      "identifier": "bzip2_libbzip_2010-2234b9aa-1198-8ed2-f0d2-3310ced04b8a",
       "license_expression": "bzip2-libbzip-2010",
       "count": 1,
       "detection_log": [
@@ -60,7 +60,7 @@
           "matcher": "2-aho",
           "license_expression": "bzip2-libbzip-2010",
           "rule_identifier": "bzip2-libbzip-2010.LICENSE",
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bzip2-libbzip-2010.LICENSE"
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bzip2-libbzip-2010.LICENSE"
         }
       ]
     }
@@ -68,6 +68,7 @@
   "license_references": [
     {
       "key": "bzip2-libbzip-2010",
+      "language": "en",
       "short_name": "bzip2 License 2010",
       "name": "bzip2 License 2010",
       "category": "Permissive",
@@ -75,71 +76,180 @@
       "homepage_url": "https://github.com/asimonov-im/bzip2/blob/master/LICENSE",
       "notes": "until bzip2 1.0.6 there is only one license and not two as listed in SPDX. Therefore we only track one such license.",
       "is_builtin": true,
+      "is_exception": false,
+      "is_unknown": false,
+      "is_generic": false,
       "spdx_license_key": "bzip2-1.0.6",
       "other_spdx_license_keys": [
         "bzip2-1.0.5"
       ],
+      "osi_license_key": null,
+      "text_urls": [],
+      "osi_url": null,
+      "faq_url": null,
       "other_urls": [
         "http://bzip.org/1.0.5/bzip2-manual-1.0.5.html",
         "http://www.bzip.org/",
         "https://sourceware.org/git/?p=bzip2.git;a=blob;f=LICENSE;hb=bzip2-1.0.6"
       ],
-      "text": "Redistribution and use in source and binary forms, with or without\nmodification, are permitted provided that the following conditions\nare met:\n\n1. Redistributions of source code must retain the above copyright\nnotice, this list of conditions and the following disclaimer.\n\n2. The origin of this software must not be misrepresented; you must\nnot claim that you wrote the original software.  If you use this\nsoftware in a product, an acknowledgment in the product\ndocumentation would be appreciated but is not required.\n\n3. Altered source versions must be plainly marked as such, and must\nnot be misrepresented as being the original software.\n\n4. The name of the author may not be used to endorse or promote\nproducts derived from this software without specific prior written\npermission.\n\nTHIS SOFTWARE IS PROVIDED BY THE AUTHOR ``AS IS'' AND ANY EXPRESS\nOR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED\nWARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE\nARE DISCLAIMED.  IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY\nDIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL\nDAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE\nGOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS\nINTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,\nWHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING\nNEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS\nSOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE."
+      "key_aliases": [],
+      "minimum_coverage": 0,
+      "standard_notice": null,
+      "ignorable_copyrights": [],
+      "ignorable_holders": [],
+      "ignorable_authors": [],
+      "ignorable_urls": [],
+      "ignorable_emails": [],
+      "text": "Redistribution and use in source and binary forms, with or without\nmodification, are permitted provided that the following conditions\nare met:\n\n1. Redistributions of source code must retain the above copyright\n   notice, this list of conditions and the following disclaimer.\n\n2. The origin of this software must not be misrepresented; you must\n   not claim that you wrote the original software.  If you use this\n   software in a product, an acknowledgment in the product\n   documentation would be appreciated but is not required.\n\n3. Altered source versions must be plainly marked as such, and must\n   not be misrepresented as being the original software.\n\n4. The name of the author may not be used to endorse or promote\n   products derived from this software without specific prior written\n   permission.\n\nTHIS SOFTWARE IS PROVIDED BY THE AUTHOR ``AS IS'' AND ANY EXPRESS\nOR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED\nWARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE\nARE DISCLAIMED.  IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY\nDIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL\nDAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE\nGOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS\nINTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,\nWHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING\nNEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS\nSOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.",
+      "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bzip2-libbzip-2010.LICENSE",
+      "licensedb_url": "https://scancode-licensedb.aboutcode.org/bzip2-libbzip-2010",
+      "spdx_url": "https://spdx.org/licenses/bzip2-1.0.6"
+    },
+    {
+      "key": "unknown-license-reference",
+      "language": "en",
+      "short_name": "Unknown License reference",
+      "name": "Unknown License file reference",
+      "category": "Unstated License",
+      "owner": "Unspecified",
+      "homepage_url": null,
+      "notes": "This applies to the case of a file with no clear license, which may be referenced via URL or text such as \"See license in...\" or \"This file is licensed under...\", but where the reference cannot be resolved to a specific named, public license.",
+      "is_builtin": true,
+      "is_exception": false,
+      "is_unknown": true,
+      "is_generic": false,
+      "spdx_license_key": "LicenseRef-scancode-unknown-license-reference",
+      "other_spdx_license_keys": [],
+      "osi_license_key": null,
+      "text_urls": [],
+      "osi_url": null,
+      "faq_url": null,
+      "other_urls": [],
+      "key_aliases": [],
+      "minimum_coverage": 0,
+      "standard_notice": null,
+      "ignorable_copyrights": [],
+      "ignorable_holders": [],
+      "ignorable_authors": [],
+      "ignorable_urls": [],
+      "ignorable_emails": [],
+      "text": "",
+      "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/unknown-license-reference.LICENSE",
+      "licensedb_url": "https://scancode-licensedb.aboutcode.org/unknown-license-reference",
+      "spdx_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/unknown-license-reference.LICENSE"
     },
     {
       "key": "x11-lucent",
+      "language": "en",
       "short_name": "X11-Style (Lucent)",
       "name": "X11-Style (Lucent)",
       "category": "Permissive",
       "owner": "Alcatel-Lucent",
+      "homepage_url": null,
+      "notes": null,
       "is_builtin": true,
+      "is_exception": false,
+      "is_unknown": false,
+      "is_generic": false,
       "spdx_license_key": "LicenseRef-scancode-x11-lucent",
+      "other_spdx_license_keys": [],
+      "osi_license_key": null,
+      "text_urls": [],
+      "osi_url": null,
+      "faq_url": null,
+      "other_urls": [],
+      "key_aliases": [],
       "minimum_coverage": 80,
-      "text": "Permission to use, copy, modify, and distribute this software for any\npurpose without fee is hereby granted, provided that this entire notice\nis included in all copies of any software which is or includes a copy\nor modification of this software and in all copies of the supporting\ndocumentation for such software.\n\nTHIS SOFTWARE IS BEING PROVIDED \"AS IS\", WITHOUT ANY EXPRESS OR IMPLIED\nWARRANTY.  IN PARTICULAR, NEITHER THE AUTHOR NOR LUCENT MAKES ANY\nREPRESENTATION OR WARRANTY OF ANY KIND CONCERNING THE MERCHANTABILITY\nOF THIS SOFTWARE OR ITS FITNESS FOR ANY PARTICULAR PURPOSE."
+      "standard_notice": null,
+      "ignorable_copyrights": [],
+      "ignorable_holders": [],
+      "ignorable_authors": [],
+      "ignorable_urls": [],
+      "ignorable_emails": [],
+      "text": "Permission to use, copy, modify, and distribute this software for any\npurpose without fee is hereby granted, provided that this entire notice\nis included in all copies of any software which is or includes a copy\nor modification of this software and in all copies of the supporting\ndocumentation for such software.\n\nTHIS SOFTWARE IS BEING PROVIDED \"AS IS\", WITHOUT ANY EXPRESS OR IMPLIED\nWARRANTY.  IN PARTICULAR, NEITHER THE AUTHOR NOR LUCENT MAKES ANY\nREPRESENTATION OR WARRANTY OF ANY KIND CONCERNING THE MERCHANTABILITY\nOF THIS SOFTWARE OR ITS FITNESS FOR ANY PARTICULAR PURPOSE.",
+      "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/x11-lucent.LICENSE",
+      "licensedb_url": "https://scancode-licensedb.aboutcode.org/x11-lucent",
+      "spdx_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/x11-lucent.LICENSE"
     }
   ],
   "license_rule_references": [
     {
-      "rule_identifier": "license-intro_4.RULE",
+      "license_expression": "bzip2-libbzip-2010",
+      "identifier": "bzip2-libbzip-2010.LICENSE",
+      "language": "en",
+      "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bzip2-libbzip-2010.LICENSE",
+      "is_license_text": true,
+      "is_license_notice": false,
+      "is_license_reference": false,
+      "is_license_tag": false,
+      "is_license_intro": false,
+      "is_continuous": false,
+      "is_builtin": true,
+      "is_from_license": true,
+      "is_synthetic": false,
+      "length": 233,
+      "relevance": 100,
+      "minimum_coverage": 0,
+      "referenced_filenames": [],
+      "notes": null,
+      "ignorable_copyrights": [],
+      "ignorable_holders": [],
+      "ignorable_authors": [],
+      "ignorable_urls": [],
+      "ignorable_emails": [],
+      "text": "Redistribution and use in source and binary forms, with or without\nmodification, are permitted provided that the following conditions\nare met:\n\n1. Redistributions of source code must retain the above copyright\nnotice, this list of conditions and the following disclaimer.\n\n2. The origin of this software must not be misrepresented; you must\nnot claim that you wrote the original software.  If you use this\nsoftware in a product, an acknowledgment in the product\ndocumentation would be appreciated but is not required.\n\n3. Altered source versions must be plainly marked as such, and must\nnot be misrepresented as being the original software.\n\n4. The name of the author may not be used to endorse or promote\nproducts derived from this software without specific prior written\npermission.\n\nTHIS SOFTWARE IS PROVIDED BY THE AUTHOR ``AS IS'' AND ANY EXPRESS\nOR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED\nWARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE\nARE DISCLAIMED.  IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY\nDIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL\nDAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE\nGOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS\nINTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,\nWHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING\nNEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS\nSOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE."
+    },
+    {
       "license_expression": "unknown-license-reference",
+      "identifier": "license-intro_4.RULE",
+      "language": "en",
       "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/license-intro_4.RULE",
-      "rule_relevance": 100,
-      "rule_length": 5,
       "is_license_text": false,
       "is_license_notice": false,
       "is_license_reference": false,
       "is_license_tag": false,
       "is_license_intro": true,
+      "is_continuous": false,
+      "is_builtin": true,
+      "is_from_license": false,
+      "is_synthetic": false,
+      "length": 5,
+      "relevance": 100,
+      "minimum_coverage": 80,
       "referenced_filenames": [],
-      "rule_text": "licensed under the following terms"
+      "notes": "licensed under",
+      "ignorable_copyrights": [],
+      "ignorable_holders": [],
+      "ignorable_authors": [],
+      "ignorable_urls": [],
+      "ignorable_emails": [],
+      "text": "licensed under the following terms"
     },
     {
-      "rule_identifier": "x11-lucent_1.RULE",
       "license_expression": "x11-lucent",
+      "identifier": "x11-lucent_1.RULE",
+      "language": "en",
       "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/x11-lucent_1.RULE",
-      "rule_relevance": 100,
-      "rule_length": 93,
       "is_license_text": true,
       "is_license_notice": false,
       "is_license_reference": false,
       "is_license_tag": false,
       "is_license_intro": false,
+      "is_continuous": false,
+      "is_builtin": true,
+      "is_from_license": false,
+      "is_synthetic": false,
+      "length": 93,
+      "relevance": 100,
+      "minimum_coverage": 0,
       "referenced_filenames": [],
-      "rule_text": "Permission to use, copy, modify, and distribute this software for any\npurpose without fee is hereby granted, provided that this entire notice\nis included in all copies of any software which is or includes a copy\nor modification of this software and in all copies of the supporting\ndocumentation for such software.\nTHIS SOFTWARE IS BEING PROVIDED \"AS IS\", WITHOUT ANY EXPRESS OR IMPLIED\nWARRANTY. IN PARTICULAR, NEITHER THE AUTHORS NOR LUCENT TECHNOLOGIES MAKE ANY\nREPRESENTATION OR WARRANTY OF ANY KIND CONCERNING THE MERCHANTABILITY\nOF THIS SOFTWARE OR ITS FITNESS FOR ANY PARTICULAR PURPOSE."
-    },
-    {
-      "rule_identifier": "bzip2-libbzip-2010.LICENSE",
-      "license_expression": "bzip2-libbzip-2010",
-      "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bzip2-libbzip-2010.LICENSE",
-      "rule_relevance": 100,
-      "rule_length": 233,
-      "is_license_text": true,
-      "is_license_notice": false,
-      "is_license_reference": false,
-      "is_license_tag": false,
-      "is_license_intro": false,
-      "referenced_filenames": [],
-      "rule_text": "Redistribution and use in source and binary forms, with or without\nmodification, are permitted provided that the following conditions\nare met:\n\n1. Redistributions of source code must retain the above copyright\nnotice, this list of conditions and the following disclaimer.\n\n2. The origin of this software must not be misrepresented; you must\nnot claim that you wrote the original software.  If you use this\nsoftware in a product, an acknowledgment in the product\ndocumentation would be appreciated but is not required.\n\n3. Altered source versions must be plainly marked as such, and must\nnot be misrepresented as being the original software.\n\n4. The name of the author may not be used to endorse or promote\nproducts derived from this software without specific prior written\npermission.\n\nTHIS SOFTWARE IS PROVIDED BY THE AUTHOR ``AS IS'' AND ANY EXPRESS\nOR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED\nWARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE\nARE DISCLAIMED.  IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY\nDIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL\nDAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE\nGOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS\nINTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,\nWHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING\nNEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS\nSOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE."
+      "notes": null,
+      "ignorable_copyrights": [],
+      "ignorable_holders": [],
+      "ignorable_authors": [],
+      "ignorable_urls": [],
+      "ignorable_emails": [],
+      "text": "Permission to use, copy, modify, and distribute this software for any\npurpose without fee is hereby granted, provided that this entire notice\nis included in all copies of any software which is or includes a copy\nor modification of this software and in all copies of the supporting\ndocumentation for such software.\nTHIS SOFTWARE IS BEING PROVIDED \"AS IS\", WITHOUT ANY EXPRESS OR IMPLIED\nWARRANTY. IN PARTICULAR, NEITHER THE AUTHORS NOR LUCENT TECHNOLOGIES MAKE ANY\nREPRESENTATION OR WARRANTY OF ANY KIND CONCERNING THE MERCHANTABILITY\nOF THIS SOFTWARE OR ITS FITNESS FOR ANY PARTICULAR PURPOSE."
     }
   ],
   "files": [
@@ -217,8 +327,8 @@
       "license_clues": [],
       "percentage_of_license_text": 87.73,
       "for_license_detections": [
-        "x11_lucent-3d4ebed6-d6ff-5d71-13d5-9ae3bb5bc485",
-        "bzip2_libbzip_2010-5537c6e0-e03f-c489-9ac3-243ae2274830"
+        "x11_lucent-3c40145a-efd5-16ba-0a7a-9c28d9993bc2",
+        "bzip2_libbzip_2010-2234b9aa-1198-8ed2-f0d2-3310ced04b8a"
       ],
       "scan_errors": []
     }

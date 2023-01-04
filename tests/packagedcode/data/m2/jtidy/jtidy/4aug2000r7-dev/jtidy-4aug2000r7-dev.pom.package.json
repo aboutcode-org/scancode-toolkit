@@ -48,32 +48,7 @@
           "license_expression": "tidy",
           "rule_identifier": "tidy_2.RULE",
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/tidy_2.RULE",
-          "referenced_filenames": [],
-          "is_license_text": false,
-          "is_license_notice": false,
-          "is_license_reference": true,
-          "is_license_tag": false,
-          "is_license_intro": false,
-          "rule_length": 3,
-          "rule_relevance": 100,
-          "matched_text": "Java HTML Tidy License",
-          "licenses": [
-            {
-              "key": "tidy",
-              "name": "Tidy License",
-              "short_name": "Tidy License",
-              "category": "Permissive",
-              "is_exception": false,
-              "is_unknown": false,
-              "owner": "W3C - World Wide Web Consortium",
-              "homepage_url": "https://github.com/htacg/tidy-html5/blob/next/README/LICENSE.md",
-              "text_url": "",
-              "reference_url": "https://scancode-licensedb.aboutcode.org/tidy",
-              "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/tidy.LICENSE",
-              "spdx_license_key": "HTMLTIDY",
-              "spdx_url": "https://spdx.org/licenses/HTMLTIDY"
-            }
-          ]
+          "matched_text": "Java HTML Tidy License"
         }
       ]
     }

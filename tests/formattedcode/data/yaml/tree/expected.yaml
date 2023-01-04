@@ -23,10 +23,10 @@ headers:
       system_environment:
         operating_system: linux
         cpu_architecture: 64
-        platform: Linux-5.14.0-1054-oem-x86_64-with-glibc2.29
-        platform_version: '#61-Ubuntu SMP Fri Oct 14 13:05:50 UTC 2022'
-        python_version: "3.8.10 (default, Nov 14 2022, 12:59:47) \n[GCC 9.4.0]"
-      spdx_license_list_version: '3.17'
+        platform: Linux-4.15.0-200-generic-x86_64-with-glibc2.23
+        platform_version: '#211~16.04.2-Ubuntu SMP Fri Nov 25 09:18:48 UTC 2022'
+        python_version: "3.9.10 (main, Jan 29 2022, 10:01:49) \n[GCC 5.4.0 20160609]"
+      spdx_license_list_version: '3.19'
       files_count: 7
 packages: []
 dependencies: []

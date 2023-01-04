@@ -18,14 +18,6 @@ license_detections:
         license_expression: selinux-nsa-declaration-1.0
         rule_identifier: selinux-nsa-declaration-1.0.LICENSE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/selinux-nsa-declaration-1.0.LICENSE
-        referenced_filenames: []
-        is_license_text: yes
-        is_license_notice: no
-        is_license_reference: no
-        is_license_tag: no
-        is_license_intro: no
-        rule_length: 153
-        rule_relevance: 100
         matched_text: |
           This library (libselinux) is public domain software, i.e. not copyrighted.
 
@@ -48,20 +40,6 @@ license_detections:
           limitation will apply even if NSA has been advised of the possibility
           of such damage. You acknowledge that this is a reasonable allocation of
           risk.
-        licenses:
-          - key: selinux-nsa-declaration-1.0
-            name: selinux-nsa-declaration-1.0
-            short_name: selinux-nsa-declaration-1.0
-            category: Public Domain
-            is_exception: no
-            is_unknown: no
-            owner: NSA
-            homepage_url: https://github.com/SELinuxProject/selinux/blob/master/libselinux/LICENSE
-            text_url:
-            reference_url: https://scancode-licensedb.aboutcode.org/selinux-nsa-declaration-1.0
-            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/selinux-nsa-declaration-1.0.LICENSE
-            spdx_license_key: libselinux-1.0
-            spdx_url: https://spdx.org/licenses/libselinux-1.0
   - license_expression: gpl-2.0
     detection_log:
       - not-combined
@@ -75,31 +53,9 @@ license_detections:
         license_expression: gpl-2.0
         rule_identifier: gpl-2.0_929.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0_929.RULE
-        referenced_filenames: []
-        is_license_text: no
-        is_license_notice: yes
-        is_license_reference: no
-        is_license_tag: no
-        is_license_intro: no
-        rule_length: 11
-        rule_relevance: 100
         matched_text: |
           distributed underthe terms of the GNU General Public License,
            version 2.
-        licenses:
-          - key: gpl-2.0
-            name: GNU General Public License 2.0
-            short_name: GPL 2.0
-            category: Copyleft
-            is_exception: no
-            is_unknown: no
-            owner: Free Software Foundation (FSF)
-            homepage_url: http://www.gnu.org/licenses/gpl-2.0.html
-            text_url: http://www.gnu.org/licenses/gpl-2.0.txt
-            reference_url: https://scancode-licensedb.aboutcode.org/gpl-2.0
-            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-2.0.LICENSE
-            spdx_license_key: GPL-2.0-only
-            spdx_url: https://spdx.org/licenses/GPL-2.0-only
   - license_expression: lgpl-2.1-plus
     detection_log:
       - not-combined
@@ -113,15 +69,6 @@ license_detections:
         license_expression: lgpl-2.1-plus
         rule_identifier: lgpl-2.1-plus_384.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_384.RULE
-        referenced_filenames:
-          - /usr/share/common-licenses/LGPL-2.1
-        is_license_text: no
-        is_license_notice: yes
-        is_license_reference: no
-        is_license_tag: no
-        is_license_intro: no
-        rule_length: 97
-        rule_relevance: 100
         matched_text: |
           The GNU C Library is distributed under
           the terms of the GNU Lesser General Public License as published by the
@@ -136,20 +83,6 @@ license_detections:
 
           On Debian systems, the complete text of the GNU Library
           General Public License can be found in `/usr/share/common-licenses/LGPL-2.1'.
-        licenses:
-          - key: lgpl-2.1-plus
-            name: GNU Lesser General Public License 2.1 or later
-            short_name: LGPL 2.1 or later
-            category: Copyleft Limited
-            is_exception: no
-            is_unknown: no
-            owner: Free Software Foundation (FSF)
-            homepage_url: http://www.gnu.org/licenses/old-licenses/lgpl-2.1-standalone.html
-            text_url: http://www.gnu.org/licenses/old-licenses/lgpl-2.1-standalone.html
-            reference_url: https://scancode-licensedb.aboutcode.org/lgpl-2.1-plus
-            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/lgpl-2.1-plus.LICENSE
-            spdx_license_key: LGPL-2.1-or-later
-            spdx_url: https://spdx.org/licenses/LGPL-2.1-or-later
   - license_expression: gpl-2.0
     detection_log:
       - not-combined
@@ -163,15 +96,6 @@ license_detections:
         license_expression: gpl-2.0
         rule_identifier: gpl-2.0_930.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0_930.RULE
-        referenced_filenames:
-          - /usr/share/common-licenses/GPL-2
-        is_license_text: no
-        is_license_notice: yes
-        is_license_reference: no
-        is_license_tag: no
-        is_license_intro: no
-        rule_length: 78
-        rule_relevance: 100
         matched_text: |
           distributed under the terms of the GNU
           General Public License, version 2.
@@ -183,20 +107,6 @@ license_detections:
               <URL:http://www.gnu.org/copyleft/gpl.html>.  You may also obtain
               it by writing to the Free Software Foundation, Inc., 51 Franklin
               St, Fifth Floor, Boston, MA 02110-1301, USA.
-        licenses:
-          - key: gpl-2.0
-            name: GNU General Public License 2.0
-            short_name: GPL 2.0
-            category: Copyleft
-            is_exception: no
-            is_unknown: no
-            owner: Free Software Foundation (FSF)
-            homepage_url: http://www.gnu.org/licenses/gpl-2.0.html
-            text_url: http://www.gnu.org/licenses/gpl-2.0.txt
-            reference_url: https://scancode-licensedb.aboutcode.org/gpl-2.0
-            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-2.0.LICENSE
-            spdx_license_key: GPL-2.0-only
-            spdx_url: https://spdx.org/licenses/GPL-2.0-only
 other_license_detections: []
 copyright: |
   Copyright 2004 Red Hat, Inc., James Morris <jmorris@redhat.com>

@@ -7,6 +7,6 @@ ignorable_urls:
     - http://github.com/appsattic/fmt/raw/master/LICENSE
 ---
 
-    "licenses": [{
+"licenses": [{
         "type": "MIT",
         "url": "http://github.com/appsattic/fmt/raw/master/LICENSE"

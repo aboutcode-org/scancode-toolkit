@@ -3121,7 +3121,7 @@ def strip_trailing_period(s):
     if not s.endswith('.'):
         return s
 
-    if len(s) < 3 :
+    if len(s) < 3:
         return s
 
     is_single_word = len(s.split()) == 1

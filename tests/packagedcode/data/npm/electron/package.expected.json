@@ -1,4 +1,82 @@
 {
+  "packages": [
+    {
+      "type": "npm",
+      "namespace": null,
+      "name": "electron",
+      "version": "3.1.11",
+      "qualifiers": {},
+      "subpath": null,
+      "primary_language": "JavaScript",
+      "description": "Build cross platform desktop apps with JavaScript, HTML, and CSS",
+      "release_date": null,
+      "parties": [
+        {
+          "type": "person",
+          "role": "author",
+          "name": "Electron Community",
+          "email": null,
+          "url": null
+        }
+      ],
+      "keywords": [
+        "electron"
+      ],
+      "homepage_url": null,
+      "download_url": "https://registry.npmjs.org/electron/-/electron-3.1.11.tgz",
+      "size": null,
+      "sha1": null,
+      "md5": null,
+      "sha256": null,
+      "sha512": null,
+      "bug_tracking_url": null,
+      "code_view_url": null,
+      "vcs_url": "https://github.com/electron/electron",
+      "copyright": null,
+      "declared_license_expression": "mit",
+      "declared_license_expression_spdx": "MIT",
+      "license_detections": [
+        {
+          "license_expression": "mit",
+          "detection_log": [
+            "not-combined"
+          ],
+          "matches": [
+            {
+              "score": 100.0,
+              "start_line": 1,
+              "end_line": 1,
+              "matched_length": 1,
+              "match_coverage": 100.0,
+              "matcher": "1-spdx-id",
+              "license_expression": "mit",
+              "rule_identifier": "spdx-license-identifier-mit-5da48780aba670b0860c46d899ed42a0f243ff06",
+              "rule_url": null,
+              "matched_text": "MIT"
+            }
+          ]
+        }
+      ],
+      "other_license_expression": null,
+      "other_license_expression_spdx": null,
+      "other_license_detections": [],
+      "extracted_license_statement": "['MIT']",
+      "notice_text": null,
+      "source_packages": [],
+      "extra_data": {},
+      "repository_homepage_url": "https://www.npmjs.com/package/electron",
+      "repository_download_url": "https://registry.npmjs.org/electron/-/electron-3.1.11.tgz",
+      "api_data_url": "https://registry.npmjs.org/electron/3.1.11",
+      "package_uid": "pkg:npm/electron@3.1.11?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_paths": [
+        "package/package.json"
+      ],
+      "datasource_ids": [
+        "npm_package_json"
+      ],
+      "purl": "pkg:npm/electron@3.1.11"
+    }
+  ],
   "dependencies": [
     {
       "purl": "pkg:npm/%40types/node",
@@ -85,107 +163,73 @@
       "datasource_id": "npm_package_json"
     }
   ],
-  "packages": [
+  "license_references": [
     {
-      "type": "npm",
-      "namespace": null,
-      "name": "electron",
-      "version": "3.1.11",
-      "qualifiers": {},
-      "subpath": null,
-      "primary_language": "JavaScript",
-      "description": "Build cross platform desktop apps with JavaScript, HTML, and CSS",
-      "release_date": null,
-      "parties": [
-        {
-          "type": "person",
-          "role": "author",
-          "name": "Electron Community",
-          "email": null,
-          "url": null
-        }
+      "key": "mit",
+      "language": "en",
+      "short_name": "MIT License",
+      "name": "MIT License",
+      "category": "Permissive",
+      "owner": "MIT",
+      "homepage_url": "http://opensource.org/licenses/mit-license.php",
+      "notes": "Per SPDX.org, this license is OSI certified.",
+      "is_builtin": true,
+      "is_exception": false,
+      "is_unknown": false,
+      "is_generic": false,
+      "spdx_license_key": "MIT",
+      "other_spdx_license_keys": [],
+      "osi_license_key": null,
+      "text_urls": [
+        "http://opensource.org/licenses/mit-license.php"
       ],
-      "keywords": [
-        "electron"
+      "osi_url": "http://www.opensource.org/licenses/MIT",
+      "faq_url": "https://ieeexplore.ieee.org/document/9263265",
+      "other_urls": [
+        "https://opensource.com/article/18/3/patent-grant-mit-license",
+        "https://opensource.com/article/19/4/history-mit-license",
+        "https://opensource.org/licenses/MIT"
       ],
-      "homepage_url": null,
-      "download_url": "https://registry.npmjs.org/electron/-/electron-3.1.11.tgz",
-      "size": null,
-      "sha1": null,
-      "md5": null,
-      "sha256": null,
-      "sha512": null,
-      "bug_tracking_url": null,
-      "code_view_url": null,
-      "vcs_url": "https://github.com/electron/electron",
-      "copyright": null,
-      "declared_license_expression": "mit",
-      "declared_license_expression_spdx": "MIT",
-      "license_detections": [
-        {
-          "license_expression": "mit",
-          "detection_log": [
-            "not-combined"
-          ],
-          "matches": [
-            {
-              "score": 100.0,
-              "start_line": 1,
-              "end_line": 1,
-              "matched_length": 1,
-              "match_coverage": 100.0,
-              "matcher": "1-spdx-id",
-              "license_expression": "mit",
-              "rule_identifier": "spdx-license-identifier: mit",
-              "rule_url": null,
-              "referenced_filenames": [],
-              "is_license_text": false,
-              "is_license_notice": false,
-              "is_license_reference": false,
-              "is_license_tag": true,
-              "is_license_intro": false,
-              "rule_length": 1,
-              "rule_relevance": 100,
-              "matched_text": "MIT",
-              "licenses": [
-                {
-                  "key": "mit",
-                  "name": "MIT License",
-                  "short_name": "MIT License",
-                  "category": "Permissive",
-                  "is_exception": false,
-                  "is_unknown": false,
-                  "owner": "MIT",
-                  "homepage_url": "http://opensource.org/licenses/mit-license.php",
-                  "text_url": "http://opensource.org/licenses/mit-license.php",
-                  "reference_url": "https://scancode-licensedb.aboutcode.org/mit",
-                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE",
-                  "spdx_license_key": "MIT",
-                  "spdx_url": "https://spdx.org/licenses/MIT"
-                }
-              ]
-            }
-          ]
-        }
-      ],
-      "other_license_expression": null,
-      "other_license_expression_spdx": null,
-      "other_license_detections": [],
-      "extracted_license_statement": "['MIT']",
-      "notice_text": null,
-      "source_packages": [],
-      "extra_data": {},
-      "repository_homepage_url": "https://www.npmjs.com/package/electron",
-      "repository_download_url": "https://registry.npmjs.org/electron/-/electron-3.1.11.tgz",
-      "api_data_url": "https://registry.npmjs.org/electron/3.1.11",
-      "package_uid": "pkg:npm/electron@3.1.11?uuid=fixed-uid-done-for-testing-5642512d1758",
-      "datafile_paths": [
-        "package/package.json"
-      ],
-      "datasource_ids": [
-        "npm_package_json"
-      ],
-      "purl": "pkg:npm/electron@3.1.11"
+      "key_aliases": [],
+      "minimum_coverage": 0,
+      "standard_notice": null,
+      "ignorable_copyrights": [],
+      "ignorable_holders": [],
+      "ignorable_authors": [],
+      "ignorable_urls": [],
+      "ignorable_emails": [],
+      "text": "Permission is hereby granted, free of charge, to any person obtaining\na copy of this software and associated documentation files (the\n\"Software\"), to deal in the Software without restriction, including\nwithout limitation the rights to use, copy, modify, merge, publish,\ndistribute, sublicense, and/or sell copies of the Software, and to\npermit persons to whom the Software is furnished to do so, subject to\nthe following conditions:\n\nThe above copyright notice and this permission notice shall be\nincluded in all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND,\nEXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF\nMERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.\nIN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY\nCLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,\nTORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE\nSOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.",
+      "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE",
+      "licensedb_url": "https://scancode-licensedb.aboutcode.org/mit",
+      "spdx_url": "https://spdx.org/licenses/MIT"
+    }
+  ],
+  "license_rule_references": [
+    {
+      "license_expression": "mit",
+      "identifier": "spdx-license-identifier-mit-5da48780aba670b0860c46d899ed42a0f243ff06",
+      "language": "en",
+      "rule_url": null,
+      "is_license_text": false,
+      "is_license_notice": false,
+      "is_license_reference": false,
+      "is_license_tag": true,
+      "is_license_intro": false,
+      "is_continuous": false,
+      "is_builtin": true,
+      "is_from_license": false,
+      "is_synthetic": true,
+      "length": 1,
+      "relevance": 100,
+      "minimum_coverage": 0,
+      "referenced_filenames": [],
+      "notes": null,
+      "ignorable_copyrights": [],
+      "ignorable_holders": [],
+      "ignorable_authors": [],
+      "ignorable_urls": [],
+      "ignorable_emails": [],
+      "text": "MIT"
     }
   ],
   "files": [
@@ -259,34 +303,9 @@
                   "match_coverage": 100.0,
                   "matcher": "1-spdx-id",
                   "license_expression": "mit",
-                  "rule_identifier": "spdx-license-identifier: mit",
+                  "rule_identifier": "spdx-license-identifier-mit-5da48780aba670b0860c46d899ed42a0f243ff06",
                   "rule_url": null,
-                  "referenced_filenames": [],
-                  "is_license_text": false,
-                  "is_license_notice": false,
-                  "is_license_reference": false,
-                  "is_license_tag": true,
-                  "is_license_intro": false,
-                  "rule_length": 1,
-                  "rule_relevance": 100,
-                  "matched_text": "MIT",
-                  "licenses": [
-                    {
-                      "key": "mit",
-                      "name": "MIT License",
-                      "short_name": "MIT License",
-                      "category": "Permissive",
-                      "is_exception": false,
-                      "is_unknown": false,
-                      "owner": "MIT",
-                      "homepage_url": "http://opensource.org/licenses/mit-license.php",
-                      "text_url": "http://opensource.org/licenses/mit-license.php",
-                      "reference_url": "https://scancode-licensedb.aboutcode.org/mit",
-                      "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE",
-                      "spdx_license_key": "MIT",
-                      "spdx_url": "https://spdx.org/licenses/MIT"
-                    }
-                  ]
+                  "matched_text": "MIT"
                 }
               ]
             }

@@ -1,0 +1,233 @@
+---
+key: ofrak-community-1.0
+short_name: OFRAK Community License Agreement 1.0
+name: OFRAK Community License Agreement 1.0
+category: Free Restricted
+owner: Red Balloon Security
+homepage_url: https://github.com/redballoonsecurity/ofrak/blob/master/LICENSE
+spdx_license_key: LicenseRef-scancode-ofrak-community-1.0
+text_urls:
+    - https://raw.githubusercontent.com/redballoonsecurity/ofrak/master/LICENSE
+faq_url: https://github.com/redballoonsecurity/ofrak#license
+other_urls:
+    - https://github.com/redballoonsecurity/ofrak/blob/master/README.md
+ignorable_urls:
+    - https://github.com/redballoonsecurity/ofrak
+    - https://ofrak.com/license
+---
+
+OFRAK COMMUNITY LICENSE AGREEMENT 
+Version 1.0 
+Effective:  August 8, 2022
+
+Thank you for your interest in OFRAK (Open Firmware Reverse Analysis Konsole).
+This OFRAK Community License Agreement (“Agreement”) provides users the right
+to use OFRAK and its components for personal or academic, non-commercial use,
+as detailed below.  This includes educational purposes and non-funded academic
+research.  This Agreement does not permit use for any other purposes, including
+commercial purposes.  For any such use, you will need to reach out to Red
+Balloon Security, Inc. at https://ofrak.com/license and request an OFRAK Pro
+License, OFRAK Enterprise License or a custom agreement.  Below are the details
+regarding use of OFRAK. Note: As of August 2022, and for a limited period,
+OFRAK Pro Licenses are available at no cost.  RED BALLOON SECURITY, INC. (“RED
+BALLOON”) IS ONLY WILLING TO LICENSE OFRAK AND RELATED DOCUMENTATION PURSUANT
+TO THIS AGREEMENT.  READ THIS AGREEMENT CAREFULLY BEFORE DOWNLOADING AND
+INSTALLING AND USING OFRAK.  BY ACCESSING, INSTALLING, COPYING OR OTHERWISE
+USING OFRAK, YOU ACKNOWLEDGE AND AGREE ON BEHALF OF YOURSELF AND YOUR
+EMPLOYER/INSTITUTION (“YOU”) TO BE BOUND TO THIS AGREEMENT AND THAT YOU
+ACKNOWLEDGE THAT THIS AGREEMENT CREATES A LEGALLY ENFORCEABLE CONTRACT AND
+CONSTITUTES ACCEPTANCE OF ALL TERMS AND CONDITIONS OF THIS AGREEMENT WITHOUT
+MODIFICATION.  YOU REPRESENT THAT YOU ARE AUTHORIZED TO ACCEPT THIS AGREEMENT
+ON YOUR EMPLOYER’S BEHALF.  IF YOU DO NOT AGREE TO THE FOREGOING TERMS AND
+CONDITIONS, DO NOT INSTALL, COPY OR USE OFRAK.
+
+1.	Definitions.  1.1	“OFRAK” consists of (a) the source code
+repository for OFRAK, which can be found at
+https://github.com/redballoonsecurity/ofrak; (b) the following Python
+packages, which are also available via PyPI, the Python Package Index: ofrak,
+ofrak_components, ofrak_io, ofrak_type, ofrak_patch_maker, ofrak_angr,
+ofrak_binary_ninja, ofrak_ghidra; (c) the OFRAK graphical user interface (GUI);
+(d) OFRAK documentation. OFRAK includes all updates, improvements, APIs and
+add-ons provided by Red Balloon with respect thereto, which Red Balloon
+specifies is licensed under this Community License Agreement.  OFRAK is
+presently made available in three formats:  (i) source code repository, (ii)
+PyPI Packages and (iii) Docker images with dependencies preinstalled.
+
+1.2	“Academic Purposes” means use within a non-profit academic institution
+by its then-current faculty and students for the purposes of non-profit
+scholarly research, classroom and education, and not any other use (including
+without limitation, directly or indirectly in connection with any commercial
+activity such as, for example, sponsored research or consulting services).
+Shared Use of OFRAK for an Academic Purpose is permitted only when (a) used for
+educational purposes, (b) access is restricted and not provided to the general
+public, (c) access is limited to employees and/or students of the same
+institution involved in a specific educational activity, and (d) all users
+accept and are subject to this Agreement.
+
+1.3	“Non-Commercial Use” means personal research, evaluation, or
+development use by an individual, and not use by or on behalf of any commercial
+entity or organization or directly or indirectly in connection with any
+commercial activity.  For clarity, you cannot make money off of redistributing
+OFRAK code (including Derivatives), OFRAK analysis, OFRAK-modified binaries, or
+other OFRAK outputs.  Non-Commercial Use also excludes any Shared Use.
+  
+1.4	“Commercial Use” means any use other than Academic Purposes or
+Non-Commercial Use, including, without limitation, use for any commercial
+purpose or by any commercial entity, including without limitation
+redistributing the OFRAK code (including Derivatives), OFRAK analysis,
+OFRAK-modified binaries, or other OFRAK outputs for any monetary or other
+commercial consideration.
+
+1.5	“Derivatives” means any modifications, additions, enhancements, or
+derivative works of OFRAK or any component thereof.  For purposes of this
+Agreement, Derivatives shall not include works that remain separable from, or
+merely link to, the interfaces of OFRAK or any Derivatives.
+
+1.6	“Shared Use” means  any use of OFRAK where the person who set up a
+particular instance of OFRAK is not the same person interacting with that
+instance of OFRAK, or where a single instance of OFRAK is used by more than one
+person (whether on the same or different occasions). This includes, but is not
+limited to, the use of OFRAK on a server that is accessible by more than one
+person, or by any person other than the person who set up the use of OFRAK on
+the said server.
+
+2.	License.  Subject to the terms and conditions of this Agreement, Red
+Balloon grants to you a nonexclusive, nonsublicensable, nontransferable,
+no-charge, royalty-free, limited license to install, use, copy, modify, create
+derivative works of OFRAK only for (a) Academic Purposes and (b) Non-Commercial
+Use and to share Derivatives (i) publicly within the community (via publicly
+available forks on GitHub.com), (ii) for Shared Use for an Academic Purpose,
+and (iii) with Red Balloon, for the purposes stated in this Agreement.  For
+clarity, the foregoing license does not grant to you any right or license to
+commercialize, distribute or use OFRAK, Derivatives, OFRAK code, OFRAK
+analysis, OFRAK-modified binaries, or other OFRAK outputs for any other purpose
+whatsoever, including Commercial Use, other than Academic Purposes or
+Non-Commercial Use. In the event that you wish to use OFRAK for any other
+purpose, including Commercial Use, you need to contact Red Balloon and enter
+into a separate OFRAK Pro License, OFRAK Enterprise License or other custom
+agreement. Except for the limited rights and licenses expressly granted
+hereunder, no other license is granted, no other use is permitted.
+
+3.	Derivatives.  To the extent that you prepare or create any Derivatives,
+you shall and hereby grant to (a) all users of OFRAK a right and license to
+such Derivatives upon the terms and conditions set forth in this Agreement and
+(b) Red Balloon a perpetual, fully paid-up, royalty-free, worldwide and
+irrevocable, right and license to use, copy, modify, enhance, prepare
+derivative works of, distribute, with unlimited right to sublicense, make, have
+made, sell, have sold, import, export and otherwise commercialize such
+Derivatives.  You acknowledge that Red Balloon may, but is not obligated to,
+include your Derivatives in, and otherwise incorporate your Derivatives into,
+the core OFRAK codebase.  In the event that you create Derivatives, you must
+(i) retain all copyright and other proprietary rights licenses included in the
+original OFRAK code, and any other Derivatives, and (ii) make it clear that you
+modified the original version of OFRAK.  Red Balloon encourages you to make
+your Derivatives available to the community by forking the OFRAK source code
+repository on GitHub and publishing your Derivatives on your forked repository,
+but you are not required to do so.  You represent and warrant that you have
+sufficient rights to any Derivatives and are legally entitled to grant the
+above rights and licenses. If you are an individual and your
+employer(s)/institution(s) have rights to intellectual property that you create
+that includes your Derivatives, you represent that you have received permission
+to make and contribute Derivatives on behalf of that employer/institution.
+
+4.	Ownership; Restrictions.  Except as expressly and unambiguously set
+forth herein, Red Balloon and its licensors and contributors retain all right,
+title and interest in and to OFRAK, Derivatives, all copies, modifications and
+derivative works thereof, including without limitation, all rights to patent,
+copyright, trade secret and other proprietary or intellectual property rights
+related to any of the foregoing.  To the extent that you create any
+Derivatives, subject to the rights and licenses granted herein, you retain
+ownership of all right, title and interest in and to such Derivatives,
+including without limitation, all intellectual property rights related to any
+of the foregoing.  You will maintain the copyright notice and any other notices
+or identifications that appear on or in OFRAK and any Derivatives or any other
+media or documentation that is subject to this Agreement.  You will not (and
+will not allow any third party to):  (a) use OFRAK or any Derivatives, except
+as expressly permitted in this Agreement, (b) provide, lease, lend, disclose,
+use for timesharing or service bureau purposes, or otherwise use or allow
+others to use for the benefit of any third party, OFRAK, (c) possess or use
+OFRAK, or allow the transfer, transmission, export, or re-export of OFRAK or
+portion thereof in violation of any export control laws or regulations
+administered by the U.S. Commerce Department, U.S. Treasury Department’s Office
+of Foreign Assets Control, or any other government agency, (d) use OFRAK in any
+way that violates any applicable law, rule or regulation or for any illegal use
+or activity; or (e) seek any patent or other intellectual property rights or
+protections over or in connection with OFRAK or any Derivatives you create.
+
+5.	Feedback.  In addition to Derivatives, you may, from time to time and
+in your sole discretion, make suggestions for changes, modifications or
+improvements to OFRAK (“Feedback”).  Red Balloon shall have an irrevocable,
+perpetual, worldwide, sublicenseable, transferable, full paid-up, royalty free
+right and license to use, distribute and otherwise exploit all Feedback for any
+purpose.
+
+6.	No Cost License.  OFRAK and any Derivatives provided pursuant to this
+Agreement shall be provided during the Term at no charge to you.  
+
+7.    Services.  No training or support services are provided under this Agreement.
+Red Balloon may in its discretion respond to support inquiries through Red
+Balloon’s support channels, such as Slack.
+
+8.	Term and Termination.  This Agreement shall commence upon the initial
+download of OFRAK and shall continue until and unless terminated as set forth
+herein (the “Term”).  This Agreement may be terminated by Red Balloon
+immediately upon notice to you in the event that you breach any term or
+condition of this Agreement. Upon any termination, you shall immediately cease
+all use of OFRAK.  This sentence and the following provisions will survive
+termination: 1, 3 - 5 and 9 - 12.  Termination is not an exclusive remedy and
+all other remedies will remain available.
+
+9.	Warranty Disclaimer.  The parties acknowledge that OFRAK is provided
+“AS IS” and may not be functional on any machine or in any environment.
+NEITHER RED BALLOON NOR ANY CONTRIBUTOR OF ANY DERIVATIVES MAKE ANY WARRANTIES,
+EXPRESS OR IMPLIED, EITHER IN FACT OR BY OPERATION OF LAW, STATUTORY OR
+OTHERWISE, AND RED BALLOON AND ANY CONTRIBUTOR OF ANY DERIVATIVES EXPRESSLY
+EXCLUDES AND DISCLAIMS ANY WARRANTY OF MERCHANTABILITY, FITNESS FOR A
+PARTICULAR PURPOSE, TITLE, ACCURACY, FREEDOM FROM ERRORS, FREEDOM FROM
+PROGRAMMING DEFECTS, NONINTERFERENCE AND NONINFRINGEMENT, AND ALL IMPLIED
+WARRANTIES ARISING OUT OF COURSE OF DEALING, COURSE OF PERFORMANCE AND USAGE OF
+TRADE.  THIS AGREEMENT IS NOT INTENDED FOR USE OF OFRAK IN HAZARDOUS
+ENVIRONMENTS REQUIRING FAIL-SAFE PERFORMANCE WHERE THE FAILURE OF OFRAK COULD
+LEAD DIRECTLY TO DEATH, PERSONAL INJURY, OR SIGNIFICANT PHYSICAL OR
+ENVIRONMENTAL DAMAGE (“HIGH RISK ACTIVITIES”).  USE OF OFRAK IN HIGH RISK
+ACTIVITIES IS NOT AUTHORIZED PURSUANT TO THIS AGREEMENT.  THE PARTIES AGREE
+THAT THIS SECTION 9 REPRESENTS A REASONABLE ALLOCATION OF RISK AND THAT RED
+BALLOON WOULD NOT PROCEED IN THE ABSENCE OF SUCH ALLOCATION.
+
+10.	Limitations.  NEITHER RED BALLOON NOR ANY CONTRIBUTOR OF DERIVATIVES
+SHALL BE RESPONSIBLE OR LIABLE WITH RESPECT TO ANY SUBJECT MATTER OF THIS
+AGREEMENT OR TERMS AND CONDITIONS RELATED THERETO UNDER ANY CONTRACT,
+NEGLIGENCE, STRICT LIABILITY OR OTHER THEORY (A) FOR LOSS OR INACCURACY OF
+DATA, OR COST OF PROCUREMENT OF SUBSTITUTE GOODS, SERVICES OR TECHNOLOGY; (B)
+FOR ANY DIRECT, INDIRECT, PUNITIVE, INCIDENTAL, RELIANCE, SPECIAL, EXEMPLARY OR
+CONSEQUENTIAL DAMAGES INCLUDING, BUT NOT LIMITED TO, LOSS OF REVENUES AND LOSS
+OF PROFITS TO LICENSEE OR ANY THIRD PARTIES; (C) FOR ANY MATTER BEYOND ITS
+REASONABLE CONTROL OR (D) FOR USE YOU OR OTHERS MAY MAKE OF OFRAK, EVEN IF
+ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.
+
+11.	Indemnification.  You agree that (a) Red Balloon and any contributors
+shall have no liability whatsoever for your use of OFRAK or any Derivatives and
+(b) you shall indemnify, and hold harmless, and (upon request) defend Red
+Balloon and any other user or contributor from and against any and all claims,
+damages, liabilities, losses, and costs (including reasonable attorneys’ fees)
+suffered or incurred by such party which arise from or relate to your (i) use
+of OFRAK or Derivatives, or (ii) breach of this Agreement.
+
+12.	Miscellaneous.  Neither this Agreement nor the licenses granted
+hereunder are assignable or transferable by you; any attempt to do so shall be
+void.  Red Balloon may assign this Agreement in whole or in part.  Any notice,
+report, approval or consent required or permitted hereunder shall be in
+writing.  The provisions hereof are for the benefit of the parties only and not
+for any other person or entity. If any provision of this Agreement shall be
+adjudged by any court of competent jurisdiction to be unenforceable or invalid,
+that provision shall be limited or eliminated to the minimum extent necessary
+so that this Agreement shall otherwise remain in full force and effect and
+enforceable.  This Agreement shall be deemed to have been made in, and shall be
+construed pursuant to the laws of the State of New York, without regard to
+conflicts of laws provisions thereof, and without regard to the United Nations
+Convention on the International Sale of Goods or the Uniform Computer
+Information Transactions Act. Any waivers or amendments shall be effective only
+if made in writing.  This Agreement is the complete and exclusive statement of
+the mutual understanding of the parties and supersedes and cancels all previous
+written and oral agreements and communications relating to the subject matter
+of this Agreement.

@@ -3,5 +3,5 @@ is_false_positive: yes
 notes: only a comment of a license-related feature switch
 ---
 
- This feature can be turned off if linking with GPL code
+This feature can be turned off if linking with GPL code
 is problematic, using "configure --without-gpl".

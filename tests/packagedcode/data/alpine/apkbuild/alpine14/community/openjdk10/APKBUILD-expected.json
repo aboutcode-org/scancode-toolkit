@@ -40,32 +40,7 @@
           "license_expression": "classpath-exception-2.0",
           "rule_identifier": "classpath-exception-2.0_6.RULE",
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/classpath-exception-2.0_6.RULE",
-          "referenced_filenames": [],
-          "is_license_text": false,
-          "is_license_notice": false,
-          "is_license_reference": true,
-          "is_license_tag": false,
-          "is_license_intro": false,
-          "rule_length": 6,
-          "rule_relevance": 100,
-          "matched_text": "gpl-2.0-with-classpath-exception",
-          "licenses": [
-            {
-              "key": "classpath-exception-2.0",
-              "name": "Classpath exception to GPL 2.0 or later",
-              "short_name": "Classpath exception to GPL 2.0 or later",
-              "category": "Copyleft Limited",
-              "is_exception": true,
-              "is_unknown": false,
-              "owner": "Free Software Foundation (FSF)",
-              "homepage_url": "http://www.gnu.org/software/classpath/",
-              "text_url": "http://www.gnu.org/software/classpath/license.html",
-              "reference_url": "https://scancode-licensedb.aboutcode.org/classpath-exception-2.0",
-              "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/classpath-exception-2.0.LICENSE",
-              "spdx_license_key": "Classpath-exception-2.0",
-              "spdx_url": "https://spdx.org/licenses/Classpath-exception-2.0"
-            }
-          ]
+          "matched_text": "gpl-2.0-with-classpath-exception"
         }
       ]
     }

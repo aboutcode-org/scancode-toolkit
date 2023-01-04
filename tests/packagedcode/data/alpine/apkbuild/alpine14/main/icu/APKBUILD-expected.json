@@ -38,64 +38,9 @@
           "match_coverage": 100.0,
           "matcher": "1-spdx-id",
           "license_expression": "mit AND x11 AND unicode-tou",
-          "rule_identifier": "spdx-license-identifier: mit AND x11 AND unicode-tou",
+          "rule_identifier": "spdx-license-identifier-mit AND x11 AND unicode-tou-04c03ffc5d87121ab71914d00034fdd4a46eb02c",
           "rule_url": null,
-          "referenced_filenames": [],
-          "is_license_text": false,
-          "is_license_notice": false,
-          "is_license_reference": false,
-          "is_license_tag": true,
-          "is_license_intro": false,
-          "rule_length": 6,
-          "rule_relevance": 100,
-          "matched_text": "mit AND icu AND unicode-tou",
-          "licenses": [
-            {
-              "key": "mit",
-              "name": "MIT License",
-              "short_name": "MIT License",
-              "category": "Permissive",
-              "is_exception": false,
-              "is_unknown": false,
-              "owner": "MIT",
-              "homepage_url": "http://opensource.org/licenses/mit-license.php",
-              "text_url": "http://opensource.org/licenses/mit-license.php",
-              "reference_url": "https://scancode-licensedb.aboutcode.org/mit",
-              "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE",
-              "spdx_license_key": "MIT",
-              "spdx_url": "https://spdx.org/licenses/MIT"
-            },
-            {
-              "key": "x11",
-              "name": "X11 License",
-              "short_name": "X11 License",
-              "category": "Permissive",
-              "is_exception": false,
-              "is_unknown": false,
-              "owner": "XFree86 Project, Inc",
-              "homepage_url": "http://www.xfree86.org/3.3.6/COPYRIGHT2.html",
-              "text_url": "http://www.xfree86.org/3.3.6/COPYRIGHT2.html",
-              "reference_url": "https://scancode-licensedb.aboutcode.org/x11",
-              "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/x11.LICENSE",
-              "spdx_license_key": "ICU",
-              "spdx_url": "https://spdx.org/licenses/ICU"
-            },
-            {
-              "key": "unicode-tou",
-              "name": "Unicode Terms of Use",
-              "short_name": "Unicode Terms of Use",
-              "category": "Proprietary Free",
-              "is_exception": false,
-              "is_unknown": false,
-              "owner": "Unicode Consortium",
-              "homepage_url": "http://www.unicode.org/copyright.html",
-              "text_url": "",
-              "reference_url": "https://scancode-licensedb.aboutcode.org/unicode-tou",
-              "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/unicode-tou.LICENSE",
-              "spdx_license_key": "Unicode-TOU",
-              "spdx_url": "https://spdx.org/licenses/Unicode-TOU"
-            }
-          ]
+          "matched_text": "mit AND icu AND unicode-tou"
         }
       ]
     }

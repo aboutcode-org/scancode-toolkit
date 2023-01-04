@@ -8,7 +8,6 @@ ignorable_urls:
     - http://www.gnu.org/licenses/
 ---
 
-
 This SCTP implementation is free software;
 you can redistribute it and/or modify it under the terms of
 the GNU General Public License as published by

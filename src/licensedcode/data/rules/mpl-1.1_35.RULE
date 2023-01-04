@@ -5,7 +5,6 @@ ignorable_urls:
     - http://www.mozilla.org/MPL/
 ---
 
-
 The MPL v1.1:
 
    The contents of this file are subject to the Mozilla Public License

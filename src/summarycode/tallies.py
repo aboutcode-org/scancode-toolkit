@@ -444,7 +444,7 @@ def package_tallies(resource, children, keep_details=False):
 
     if TRACE_LIGHT and current_packages:
         from packagedcode.models import Package
-        packs = [Package.create(**p) for p in current_packages]
+        packs = [Package(**p) for p in current_packages]
         logger_debug('package_tallier: for:', resource,
                      'current_packages are:', packs)
 
@@ -454,7 +454,7 @@ def package_tallies(resource, children, keep_details=False):
     if TRACE_LIGHT and packages:
         logger_debug()
         from packagedcode.models import Package  # NOQA
-        packs = [Package.create(**p) for p in packages]
+        packs = [Package(**p) for p in packages]
         logger_debug('package_tallier: for:', resource,
                      'packages are:', packs)
 

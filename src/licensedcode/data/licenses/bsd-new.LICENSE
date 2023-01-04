@@ -16,6 +16,7 @@ osi_url: http://www.opensource.org/licenses/BSD-3-Clause
 other_urls:
     - http://framework.zend.com/license/new-bsd
     - https://opensource.org/licenses/BSD-3-Clause
+    - https://www.eclipse.org/org/documents/edl-v10.php
 ---
 
 Redistribution and use in source and binary forms, with or without modification,

@@ -11,11 +11,7 @@ import os
 import shutil
 
 from commoncode.testcase import FileBasedTesting
-from licensedcode.cache import LicenseCache
-from licensedcode.cache import build_index
-from licensedcode.cache import build_spdx_symbols
-from licensedcode.cache import build_unknown_spdx_symbol
-from licensedcode.cache import build_licensing
+
 from licensedcode.index import LicenseIndex
 from licensedcode.models import load_rules
 from packagedcode.licensing import get_license_detection_mappings
@@ -62,45 +58,3 @@ def get_rules_from_rule_names(rule_names, temp_dir):
         shutil.copy(rule_path, temp_dir)
 
     return load_rules(temp_dir)
-
-
-def get_index_with_test_rules(test_rules_dir):
-    """
-    Return and eventually build and cache a LicenseIndex from a directory with
-    a few test rules for a specific test.
-    """
-    return MockCacheFromTestRules.build_from_test_rules(test_rules_dir).index
-
-
-class MockCacheFromTestRules(LicenseCache):
-
-    @staticmethod
-    def build_from_test_rules(test_rules_dir):
-
-        from licensedcode.models import licenses_data_dir as ldd
-        from licensedcode.models import load_licenses
-
-        licenses_data_dir = licenses_data_dir or ldd
-        rules_data_dir = test_rules_dir
-
-        licenses_db = load_licenses(licenses_data_dir=licenses_data_dir)
-
-        index = build_index(
-            licenses_db=licenses_db,
-            licenses_data_dir=licenses_data_dir,
-            rules_data_dir=rules_data_dir,
-        )
-
-        spdx_symbols = build_spdx_symbols(licenses_db=licenses_db)
-        unknown_spdx_symbol = build_unknown_spdx_symbol(licenses_db=licenses_db)
-        licensing = build_licensing(licenses_db=licenses_db)
-
-        license_cache = LicenseCache(
-            db=licenses_db,
-            index=index,
-            licensing=licensing,
-            spdx_symbols=spdx_symbols,
-            unknown_spdx_symbol=unknown_spdx_symbol,
-        )
-
-        return license_cache

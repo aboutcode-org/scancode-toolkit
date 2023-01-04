@@ -6,7 +6,7 @@ ignorable_urls:
     - http://opensource.org/licenses/ntp-license.php
 ---
 
-  this is a copyrighted work.  This header file is not encumbered
+this is a copyrighted work.  This header file is not encumbered
   by this licensing, but is provided under the licensing terms chosen
   by the sntp author or copyright holder.  this is
   licensed under the terms of the LGPL.  The redistributable library

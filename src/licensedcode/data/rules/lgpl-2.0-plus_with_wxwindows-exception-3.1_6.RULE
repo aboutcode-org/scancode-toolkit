@@ -4,7 +4,7 @@ is_license_notice: yes
 minimum_coverage: 60
 ---
 
- --[ License ] ----------------------------------------------------------
+--[ License ] ----------------------------------------------------------
 
   wxWindows Library License. See docs/license.doc for more information.
 

@@ -14,7 +14,7 @@ ignorable_emails:
     - tjh@mincom.oz.au
 ---
 
- * This package is an SSL implementation written
+* This package is an SSL implementation written
  * by Eric Young (eay@mincom.oz.au).
  * The implementation was written so as to conform with Netscapes SSL.
  * 

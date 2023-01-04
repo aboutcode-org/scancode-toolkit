@@ -4,6 +4,6 @@ is_license_tag: yes
 relevance: 99
 ---
 
-  "licenses": [
+"licenses": [
     {
 "type": "BSD",

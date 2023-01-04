@@ -4,7 +4,7 @@ notes: See in https://github.com/jslicense/spdx-correct.js/tree/ae4124a26e862181
     which is a license-related tool
 ---
 
-  'Zlib/libpng': 'Zlib',
+'Zlib/libpng': 'Zlib',
   'mit': 'MIT',
   '© 2014 WTFPL – Do What the Fuck You Want to Public License.': 'WTFPL',
   'CDDL': 'CDDL-1.1',

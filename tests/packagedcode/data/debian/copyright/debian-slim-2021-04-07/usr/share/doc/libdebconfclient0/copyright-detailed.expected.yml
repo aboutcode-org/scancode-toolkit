@@ -17,29 +17,7 @@ license_detections:
         license_expression: public-domain
         rule_identifier: public-domain_282.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/public-domain_282.RULE
-        referenced_filenames: []
-        is_license_text: no
-        is_license_notice: yes
-        is_license_reference: no
-        is_license_tag: no
-        is_license_intro: no
-        rule_length: 5
-        rule_relevance: 100
         matched_text: derived portions are public domain)
-        licenses:
-          - key: public-domain
-            name: Public Domain
-            short_name: Public Domain
-            category: Public Domain
-            is_exception: no
-            is_unknown: no
-            owner: Unspecified
-            homepage_url: http://www.linfo.org/publicdomain.html
-            text_url:
-            reference_url: https://scancode-licensedb.aboutcode.org/public-domain
-            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/public-domain.LICENSE
-            spdx_license_key: LicenseRef-scancode-public-domain
-            spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/public-domain.LICENSE
   - license_expression: bsd-unmodified
     detection_log:
       - not-combined
@@ -53,14 +31,6 @@ license_detections:
         license_expression: bsd-unmodified
         rule_identifier: bsd-unmodified_4.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-unmodified_4.RULE
-        referenced_filenames: []
-        is_license_text: yes
-        is_license_notice: no
-        is_license_reference: no
-        is_license_tag: no
-        is_license_intro: no
-        rule_length: 183
-        rule_relevance: 100
         matched_text: |
           Redistribution and use in source and binary forms, with or without
           modification, are permitted provided that the following conditions
@@ -82,20 +52,6 @@ license_detections:
           LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
           OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
           SUCH DAMAGE.
-        licenses:
-          - key: bsd-unmodified
-            name: BSD Simplified with Unmodified requirement
-            short_name: BSD Unmodified
-            category: Permissive
-            is_exception: no
-            is_unknown: no
-            owner: Unspecified
-            homepage_url:
-            text_url:
-            reference_url: https://scancode-licensedb.aboutcode.org/bsd-unmodified
-            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-unmodified.LICENSE
-            spdx_license_key: LicenseRef-scancode-bsd-unmodified
-            spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-unmodified.LICENSE
 other_license_detections: []
 copyright: |
   (c) Joey Hess <joeyh@debian.org>

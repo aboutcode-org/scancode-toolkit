@@ -7,7 +7,6 @@
 # See https://aboutcode.org for more information about nexB OSS projects.
 #
 
-from cgi import test
 import os.path
 
 from packagedcode import misc

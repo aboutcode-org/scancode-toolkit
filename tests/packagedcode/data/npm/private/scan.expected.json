@@ -1,4 +1,5 @@
 {
+  "packages": [],
   "dependencies": [
     {
       "purl": "pkg:npm/lerna",
@@ -15,7 +16,8 @@
       "datasource_id": "npm_package_json"
     }
   ],
-  "packages": [],
+  "license_references": [],
+  "license_rule_references": [],
   "files": [
     {
       "path": "package.json",

@@ -8,8 +8,6 @@
 # See https://aboutcode.org for more information about nexB OSS projects.
 #
 
-import io
-
 import attr
 import click
 import saneyaml
@@ -156,10 +154,9 @@ def all_rule_by_tokens():
         try:
             rule_tokens[tuple(rule.tokens())] = rule.identifier
         except Exception as e:
-            df = f"  file://{rule.data_file()}"
-            tf = f"  file://{rule.text_file()}"
+            rf = f"  file://{rule.rule_file()}"
             raise Exception(
-                f"Failed to to get tokens from rule:: {rule.identifier}\n" f"{df}\n{tf}"
+                f"Failed to to get tokens from rule:: {rule.identifier}\n" f"{rf}"
             ) from e
     return rule_tokens
 

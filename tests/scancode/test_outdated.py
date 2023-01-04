@@ -182,10 +182,10 @@ def test_fetch_newer_version_local_git_version():
             installed_version='3.1.2.post351.850399bc3',
             force=True,
         )
-        assert not result
+        assert result == '3.1.2'
 
         result = outdated.check_scancode_version(
             installed_version='3.1.2.post351.850399bc3',
             force=True,
         )
-        assert not result
+        assert result

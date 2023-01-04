@@ -7,7 +7,7 @@ ignorable_urls:
     - http://www.st.com/software_license_agreement_liberty_v2
 ---
 
-  * This code is derivative work based on the STemWin which is licensed under
+* This code is derivative work based on the STemWin which is licensed under
   * MCD-ST Liberty SW License Agreement V2, available at:
   *
   *     http://www.st.com/software_license_agreement_liberty_v2

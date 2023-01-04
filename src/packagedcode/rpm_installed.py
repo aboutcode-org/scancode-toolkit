@@ -146,7 +146,7 @@ def build_package(rpm_tags, datasource_id, package_type, package_namespace=None)
         'namespace': package_namespace
     }
 
-    for name, value_type, value in rpm_tags:
+    for name, _value_type, value in rpm_tags:
         handler = RPM_TAG_HANDLER_BY_NAME.get(name)
         # FIXME: we need to handle EVRA correctly
         # TODO: add more fields
@@ -298,7 +298,7 @@ RPM_TAG_HANDLER_BY_NAME = {
     'Sha1header': name_value_str_handler('sha1'),
     'Url': name_value_str_handler('homepage_url'),
     'License': name_value_str_handler('extracted_license_statement'),
-    'Arch':  arch_handler,
+    'Arch': arch_handler,
     'Size': size_handler,
 
     # TODO:

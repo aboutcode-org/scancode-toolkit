@@ -8,7 +8,7 @@ ignorable_urls:
     - http://www.mozilla.org/MPL/
 ---
 
- * This library is free software; you can redistribute it and/or
+* This library is free software; you can redistribute it and/or
  * modify it either under the terms of the GNU Lesser General Public
  * License version 2.1 as published by the Free Software Foundation
  * (the "LGPL") or, at your option, under the terms of the Mozilla

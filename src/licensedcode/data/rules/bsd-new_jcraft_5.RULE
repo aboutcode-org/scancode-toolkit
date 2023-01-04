@@ -7,8 +7,7 @@ ignorable_urls:
     - http://www.jcraft.com/jsch/LICENSE.txt
 ---
 
-
-  <licenses>
+<licenses>
     <license>
       <name>BSD</name>
       <url>http://www.jcraft.com/jsch/LICENSE.txt</url>

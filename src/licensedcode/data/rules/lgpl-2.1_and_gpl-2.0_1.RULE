@@ -4,7 +4,7 @@ is_license_notice: yes
 notes: classic library lgpl and tools gpl combo
 ---
 
- library itself is released under the GNU Lesser General Public 
+library itself is released under the GNU Lesser General Public 
 License, see the text of the GNU LGPL below.
 
 The executable programs in the bin, examples, and libtest directories

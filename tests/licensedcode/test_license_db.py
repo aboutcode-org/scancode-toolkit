@@ -28,7 +28,7 @@ class LicenseDbTest(FileBasedTesting):
         licenses = self.get_test_loc('licenses')
         licenses_dump = self.get_test_loc('license_dump')
 
-        generate(build_location=licenses_dump, licenses_data_dir=licenses)
+        generate(build_location=licenses_dump, licenses_data_dir=licenses, test=True)
 
         license_index_json = self.get_test_loc('license_dump/index.json')
         license_index_yaml = self.get_test_loc('license_dump/index.yml')

@@ -1146,6 +1146,7 @@ def _parse(
         **urls,
     )
 
+
 def build_vcs_and_code_view_urls(scm):
     """
     Return a mapping of vcs_url and code_view_url from a Maven `scm` mapping.

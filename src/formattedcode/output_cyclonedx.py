@@ -12,22 +12,22 @@ import os
 import json
 import logging
 import uuid
+import warnings
 from collections import defaultdict
 from datetime import datetime
 from enum import Enum
+from pprint import pformat
 from typing import List
-import warnings
 
 import attr
-from lxml import etree
-
 from commoncode.cliutils import OUTPUT_GROUP
 from commoncode.cliutils import PluggableCommandLineOption
-from formattedcode import FileOptionType
-from licensedcode.cache import build_spdx_license_expression
+from lxml import etree
 from plugincode.output import OutputPlugin
 from plugincode.output import output_impl
 
+from formattedcode import FileOptionType
+from licensedcode.cache import build_spdx_license_expression
 
 TRACE = os.environ.get('SCANCODE_DEBUG_OUTPUTS', False)
 
@@ -330,7 +330,7 @@ class CycloneDxComponent:
 
         for components in components_by_purl.values():
             base_component = components[0]
-            if len(components) == 1 :
+            if len(components) == 1:
                 yield base_component
                 continue
 
@@ -580,7 +580,6 @@ class CycloneDxMetadata:
 
         if TRACE:
             logger_debug('CycloneDxMetadata: headers')
-            from pprint import pformat
             logger_debug(pformat(headers))
 
         try:
@@ -603,7 +602,6 @@ class CycloneDxMetadata:
 
         if TRACE:
             logger_debug('CycloneDxMetadata: properties')
-            from pprint import pformat
             logger_debug(pformat(properties))
 
         return CycloneDxMetadata(

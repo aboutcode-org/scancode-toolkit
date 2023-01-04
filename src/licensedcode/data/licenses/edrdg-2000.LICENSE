@@ -1,0 +1,193 @@
+---
+key: edrdg-2000
+short_name: EDRDG General Dictionary License 2000
+name: EDRDG General Dictionary License 2000
+category: Copyleft Limited
+owner: EDRDG
+homepage_url: http://www.edrdg.org/edrdg/licence.html
+spdx_license_key: LicenseRef-scancode-edrdg-2000
+text_urls:
+    - https://creativecommons.org/licenses/by-sa/3.0/legalcode
+other_urls:
+    - https://creativecommons.org/licenses/by-sa/3.0/
+ignorable_urls:
+    - http://www.edrdg.org/wiki/index.php/JMdict
+    - http://www.edrdg.org/wiki/index.php/KANJIDIC_Project
+ignorable_emails:
+    - jimbreen@gmail.com
+---
+
+[EDRDG]
+      ****** ELECTRONIC DICTIONARY RESEARCH AND DEVELOPMENT GROUP ******
+              ****** GENERAL DICTIONARY LICENCE STATEMENT ******
+EDRDG_Home_Page
+1. Introduction
+In March 2000, James William Breen assigned ownership of the copyright of the
+dictionary files assembled, coordinated and edited by him to the The Electronic
+Dictionary Research and Development Group, then at Monash University (hereafter
+"the Group"), on the understanding that the Group will foster the development
+of the dictionary files, and will utilize all monies received for use of the
+files for the further development of the files, and for research into computer
+lexicography and electronic dictionaries.
+This document outlines the licence arrangement put in place by The Group for
+usage of the files. It replaces all previous copyright and licence statements
+applying to the files.
+
+2. Application
+This licence statement and copyright notice applies to the following dictionary
+files, the associated documentation files, and any data files which are derived
+from them.
+    * JMDICT - Japanese-Multilingual Dictionary File - the Japanese and English
+      components (the translational equivalents in other languages, e.g.
+      German, French, Dutch, etc. are covered by separate copyright held by the
+      compilers of that material.)
+    * EDICT - Japanese-English Electronic DICTionary File
+    * ENAMDICT - Japanese Names File
+    * COMPDIC - Japanese-English Computing and Telecommunications Terminology
+      File
+    * KANJIDIC2 - File of Information about the Kanji in JIS X 0208, JIS X 0212
+      and JIS X 0213 in XML format.
+    * KANJIDIC - File of Information about the 6,355 Kanji in the JIS X 0208
+      Standard (special conditions apply)
+    * KANJD212 - File of Information about the 5,801 Supplementary Kanji in the
+      JIS X 0212 Standard
+    * EDICT-R - romanized version of the EDICT file. (NB: this file has been
+      withdrawn from circulation, and all sites carrying it are requested to
+      remove their copies.)
+    * RADKFILE/KRADFILE - files relating to the decomposition of the 6,355
+      kanji in JIS X 0208 into their visible components.
+Copyright over the documents covered by this statement is held by James William
+BREEN and The Electronic Dictionary Research and Development Group.
+
+3. Licence Conditions
+[http://creativecommons.org/images/public/somerights20.gif]
+The dictionary files are made available under a Creative Commons Attribution-
+ShareAlike Licence (V3.0). The Licence Deed can be viewed here, and the full
+Licence Code is here.
+In summary (extract from the Licence Deed):
+ _____________________________________________________________________________
+|You are free:                                                                |
+|    * to Share - to copy, distribute and transmit the work                   |
+|    * to Remix - to adapt the work                                           |
+|Under the following conditions:                                              |
+|    * Attribution. You must attribute the work in the manner specified by the|
+|      author or licensor (but not in any way that suggests that they endorse |
+|      you or your use of the work).                                          |
+|    * Share Alike. If you alter, transform, or build upon this work, you may |
+|      distribute the resulting work only under the same, similar or a        |
+|      compatible_licence.                                                    |
+|_____________________________________________________________________________|
+
+For attribution of these files, you must:
+   a. in the case of publishing significant extracts of the files, or material
+      based on significant extracts of the files, e.g. in a published
+      dictionary or in vocabulary lists, clearly acknowledge that you used the
+      files for this purpose;
+
+   b. in the case of a software package, WWW server, smartphone app, etc. which
+      uses the files or incorporates data from the files, you must:
+         i. acknowledge the usage and source of the files in the documentation,
+            publicity material, WWW site of the package/server, etc.;
+        ii. provide copies of the documentation and licence files (in the case
+            of software packages). Where the application packaging does not
+            provide for the inclusion of such files (e.g. with iPhone
+            applications), it is sufficient to provide links, as per the next
+            point;
+       iii. provide links to either local copies of the documentation and
+            licence files or to the locations of the files at Monash University
+            or at the EDRDG site.
+            If a WWW server is providing a dictionary function or an on-screen
+            display of words from the files, the acknowledgement must be made
+            on each screen display, e.g. in the form of a message at the foot
+            of the screen or page. If, however, material from the files is
+            mixed with information from other sources, it is sufficient to
+            provide a general acknowledgement of the sources as described
+            above.
+            For smartphone and tablet apps, acknowledgement must be made, e.g.
+            on a separate screen accessed from a menu, such as one labelled
+            "About", "Sources", etc. It is not sufficient just to mention it on
+            a start-up/launch page of the app.
+            For the EDICT, JMdict and KANJIDIC files, the following URLs may be
+            used or quoted:
+                # http://www.edrdg.org/wiki/index.php/JMdict-
+                  EDICT_Dictionary_Project
+                # http://www.edrdg.org/wiki/index.php/KANJIDIC_Project
+See this_page for samples of possible acknowledgement text.
+Note that in all cases, the addition of material to the files or to extracts
+from the files does not remove or in any way diminish the Group's copyright
+over the files. Users of material from the files must NOT claim copyright over
+that material.
+Note also that provided the conditions above are met, there is NO restriction
+placed on commercial use of the files. The files can be bundled with software
+and sold for whatever the developer wants to charge. Software using these files
+does not have to be under any form of open-source licence.
+Where use of the files results in a financial return to the user, it is
+suggested that the user make a donation to the Group to assist with the
+continued development of the files. The only method currently available is to
+make a donation via PayPal using a credit or debit card. Simply click on the
+following button and follow the instructions.
+         [Submit https://www.paypal.com/en_US/i/btn/x-click-but21.gif]
+NB: No contract or agreement needs to be signed in order to use the files. By
+using the files, the user implicitly undertakes to abide by the conditions of
+this licence.
+
+4. Updating Dictionary Versions
+If a software package, WWW server, smartphone app, etc. uses the files or
+incorporates data from the files, there must be a procedure for regular
+updating of the data from the most recent versions available. For example, WWW-
+based dictionary servers should update their dictionary versions at least once
+a month. Failure to keep the versions up-to-date is a violation of the licence
+to use the data.
+
+5. Warranty and Liability
+While every effort has been made to ensure the accuracy of the information in
+the files, it is possible that errors may still be included. The files are made
+available without any warranty whatsoever as to their accuracy or suitability
+for a particular application.
+Any individual or organization making use of the files must agree:
+   a. to assume all liability for the use or misuse of the files, and must
+      agree not to hold the Group liable for any actions or events resulting
+      from use of the files.
+   b. to refrain from bringing action or suit or claim against the Group or any
+      of the Group's members on the basis of the use of the files, or any
+      information included in the files.
+   c. to indemnify the Group or its members in the case of action by a third
+      party on the basis of the use of the files, or any information included
+      in the files.
+
+6. Copyright
+Every effort has been made in the compilation of these files to ensure that the
+copyright of other compilers of dictionaries and lexicographic material has not
+been infringed. The Group asserts its intention to rectify immediately any
+breach of copyright brought to its attention.
+Any individual or organization in possession of copies of the files, upon
+becoming aware that a possible copyright infringement may be present in the
+files, must undertake to contact the Group immediately with details of the
+possible infringement.
+
+7. Prior Permission
+All permissions for use of the files granted by James William Breen prior to
+March 2000 will be honoured and maintained, however the placing of the KANJD212
+and EDICTH files under the GNU GPL has been withdrawn as of 25 March 2000.
+
+8. Special Conditions for the KANJIDIC, KANJD212 and KANJIDIC2 Files
+In addition to licensing arrangements described above, the following additional
+conditions apply to the KANJIDIC, KANJD212 and KANJIDIC2 files.
+The following people have granted permission for material for which they hold
+copyright to be included in the files, and distributed under the above
+conditions, while retaining their copyright over that material:
+Jack HALPERN: The SKIP codes.
+Note that the SKIP codes are under their own similar Creative Common licence.
+See Jack Halpern's conditions_of_use page.
+Christian WITTERN and Koichi YASUOKA: The Pinyin information.
+Urs APP: the Four Corner codes and the Morohashi information.
+Mark SPAHN and Wolfgang HADAMITZKY: the kanji descriptors from their
+dictionary.
+Charles MULLER: the Korean readings.
+Joseph DE ROO: the De Roo codes.
+
+9. Enquiries
+All enquiries to:
+The Electronic Dictionary Research and Development Group
+Attn: Dr Jim Breen
+(jimbreen@gmail.com)

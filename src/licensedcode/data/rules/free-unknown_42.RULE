@@ -4,7 +4,7 @@ is_license_notice: yes
 minimum_coverage: 80
 ---
 
-    as an unpublished work. This notice does not imply unrestricted or
+as an unpublished work. This notice does not imply unrestricted or
     public access to the source code from which this firmware image is
     derived.  Except as noted below this firmware image may not be
     reproduced, used, sold or transferred to any third party without

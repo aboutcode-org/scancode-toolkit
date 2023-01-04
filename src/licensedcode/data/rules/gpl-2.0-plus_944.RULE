@@ -6,8 +6,7 @@ ignorable_urls:
     - https://www.gnu.org/licenses/
 ---
 
-
-   This code was developed from version of the  drivers,
+This code was developed from version of the  drivers,
    released by corp. under the GPL in . It also
    includes code from the Linux  drivers (C) ,
    and the Linux package, (C)  and the Linux wireless

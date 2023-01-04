@@ -6,8 +6,7 @@ ignorable_urls:
     - http://www.gnu.org/licenses/
 ---
 
-
-  ** NOTE! The following LGPL license applies to the tdb
+** NOTE! The following LGPL license applies to the tdb
   ** library. This does NOT imply that all of Samba is released
   ** under the LGPL
 

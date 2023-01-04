@@ -24,14 +24,6 @@ other_license_detections:
         license_expression: x11-fsf
         rule_identifier: x11-fsf.LICENSE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/x11-fsf.LICENSE
-        referenced_filenames: []
-        is_license_text: yes
-        is_license_notice: no
-        is_license_reference: no
-        is_license_tag: no
-        is_license_intro: no
-        rule_length: 200
-        rule_relevance: 100
         matched_text: |
           Permission is hereby granted, free of charge, to any person obtaining a
           copy of this software and associated documentation files (the
@@ -56,20 +48,6 @@ other_license_detections:
           holders shall not be used in advertising or otherwise to promote the
           sale, use or other dealings in this Software without prior written
           authorization.
-        licenses:
-          - key: x11-fsf
-            name: X11-Style (FSF)
-            short_name: X11-Style (FSF)
-            category: Permissive
-            is_exception: no
-            is_unknown: no
-            owner: Free Software Foundation (FSF)
-            homepage_url:
-            text_url:
-            reference_url: https://scancode-licensedb.aboutcode.org/x11-fsf
-            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/x11-fsf.LICENSE
-            spdx_license_key: X11-distribute-modifications-variant
-            spdx_url: https://spdx.org/licenses/X11-distribute-modifications-variant
   - license_expression: x11-xconsortium
     detection_log:
       - not-combined
@@ -83,14 +61,6 @@ other_license_detections:
         license_expression: x11-xconsortium
         rule_identifier: x11-xconsortium_2.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/x11-xconsortium_2.RULE
-        referenced_filenames: []
-        is_license_text: yes
-        is_license_notice: no
-        is_license_reference: no
-        is_license_tag: no
-        is_license_intro: no
-        rule_length: 201
-        rule_relevance: 100
         matched_text: |
           Permission is hereby granted, free of charge, to any person obtaining a copy
           of this software and associated documentation files (the "Software"), to
@@ -113,20 +83,6 @@ other_license_detections:
           be used in advertising or otherwise to promote the sale, use or other deal-
           ings in this Software without prior written authorization from the X Consor-
           tium.
-        licenses:
-          - key: x11-xconsortium
-            name: X11-Style (X Consortium)
-            short_name: X11-Style (X Consortium)
-            category: Permissive
-            is_exception: no
-            is_unknown: no
-            owner: X Consortium
-            homepage_url: http://www.xfree86.org/current/LICENSE5.html
-            text_url: http://www.xfree86.org/current/LICENSE5.html
-            reference_url: https://scancode-licensedb.aboutcode.org/x11-xconsortium
-            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/x11-xconsortium.LICENSE
-            spdx_license_key: X11
-            spdx_url: https://spdx.org/licenses/X11
   - license_expression: bsd-new
     detection_log:
       - not-combined
@@ -140,14 +96,6 @@ other_license_detections:
         license_expression: bsd-new
         rule_identifier: bsd-new_19.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_19.RULE
-        referenced_filenames: []
-        is_license_text: yes
-        is_license_notice: no
-        is_license_reference: no
-        is_license_tag: no
-        is_license_intro: no
-        rule_length: 213
-        rule_relevance: 100
         matched_text: |
           Redistribution and use in source and binary forms, with or without
           modification, are permitted provided that the following conditions
@@ -172,20 +120,6 @@ other_license_detections:
           LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
           OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
           SUCH DAMAGE.
-        licenses:
-          - key: bsd-new
-            name: BSD-3-Clause
-            short_name: BSD-3-Clause
-            category: Permissive
-            is_exception: no
-            is_unknown: no
-            owner: Regents of the University of California
-            homepage_url: http://www.opensource.org/licenses/BSD-3-Clause
-            text_url: http://www.opensource.org/licenses/BSD-3-Clause
-            reference_url: https://scancode-licensedb.aboutcode.org/bsd-new
-            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-new.LICENSE
-            spdx_license_key: BSD-3-Clause
-            spdx_url: https://spdx.org/licenses/BSD-3-Clause
 copyright: |
   1998-2017,2018 Free Software Foundation, Inc.
   1996-2019,2020 Thomas E. Dickey

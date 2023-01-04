@@ -17,14 +17,6 @@ license_detections:
         license_expression: netronome-firmware
         rule_identifier: netronome-firmware.LICENSE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/netronome-firmware.LICENSE
-        referenced_filenames: []
-        is_license_text: yes
-        is_license_notice: no
-        is_license_reference: no
-        is_license_tag: no
-        is_license_intro: no
-        rule_length: 545
-        rule_relevance: 100
         matched_text: |
           Agilio(r) Firmware License Agreement (the "AGREEMENT")
 
@@ -89,19 +81,5 @@ license_detections:
           NETRONOME and, where applicable, NETRONOME'S third party licensors
           specifically disclaim any express or implied warranty of fitness for High
           Risk Activities.
-        licenses:
-          - key: netronome-firmware
-            name: Netronome Firmware License
-            short_name: Netronome Firmware License
-            category: Proprietary Free
-            is_exception: no
-            is_unknown: no
-            owner: Netronome
-            homepage_url: https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/tree/LICENCE.Netronome
-            text_url:
-            reference_url: https://scancode-licensedb.aboutcode.org/netronome-firmware
-            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/netronome-firmware.LICENSE
-            spdx_license_key: LicenseRef-scancode-netronome-firmware
-            spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/netronome-firmware.LICENSE
 other_license_detections: []
 copyright: Copyright (c) 2017, NETRONOME Systems, Inc.

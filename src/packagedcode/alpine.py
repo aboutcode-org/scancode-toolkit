@@ -1241,8 +1241,8 @@ package_handlers_by_field_name = {
 
     # For example: A:x86_64
     # 'arch' in .PKGINFO and APKBUILD
-    'A':  A_arch_handler,
-    'arch':  A_arch_handler,
+    'A': A_arch_handler,
+    'arch': A_arch_handler,
 
     # Compressed package size in bytes.
     # For example: S:507134
@@ -1260,8 +1260,8 @@ package_handlers_by_field_name = {
     # name of the source package
     # For example: o:apk-tools
     # 'origin' in .PKGINFO and APKBUILD
-    'o':  o_source_package_handler,
-    'origin':  o_source_package_handler,
+    'o': o_source_package_handler,
+    'origin': o_source_package_handler,
 
     # c is the sha1 "id" for the git commit in
     # https://git.alpinelinux.org/aports
@@ -1442,6 +1442,7 @@ EXPRESSION_SYNTAX_FIXES = {
         '(gpl-2.0-only with licenseref-scancode-generic-exception '
         'and lgpl-2.1-or-later with licenseref-scancode-generic-exception)',
 
+    # seen in https://github.com/alpinelinux/aports/blob/6052f331b316cf5366bd3db02af8400e9a34ab59/main/haproxy/APKBUILD
     '(gpl-2.0-or-later and gpl-2.1-or-later) with openssl-exception':
         '(gpl-2.0-or-later with licenseref-scancode-generic-exception '
         'and lgpl-2.1-or-later with licenseref-scancode-generic-exception)',
@@ -1634,12 +1635,12 @@ DECLARED_TO_SPDX = {
 
     'custom:xiph': 'bsd-3-clause',
     # seen in ttf-libertine
-    'gpl and custom:ofl':  '(gpl-2.0 with font-exception-2.0) or ofl-1.1',
+    'gpl and custom:ofl': '(gpl-2.0 with font-exception-2.0) or ofl-1.1',
 
     'none': 'licenseref-scancode-unknown',
     # this is sometimes a IJG jpeg license and sometime an unknown/mitish license
     # as in https://github.com/tdtrask/lua-subprocess
-    'as-is':  'licenseref-scancode-unknown-license-reference',
+    'as-is': 'licenseref-scancode-unknown-license-reference',
 
     # all recent versions are now MIT.
     # the happy license is otherwise licenseref-scancode-visual-idiot
@@ -1647,7 +1648,7 @@ DECLARED_TO_SPDX = {
 
     # "with" mishaps
     'gpl-2.0 with classpath': 'gpl-2.0 with classpath-exception-2.0',
-    'gpl-2.0-only with openssl-exception': 'gpl-2.0-only with licenseref-scancode-openssl-exception-gpl-2.0',
+    'gpl-2.0-only with openssl-exception': 'gpl-2.0-only with licenseref-scancode-openssl-exception-gpl-2.0-plus',
     'gpl-2.0-or-later with openssl-exception': 'gpl-2.0-or-later with licenseref-scancode-openssl-exception-gpl-2.0-plus',
 
     'gpl-3.0-only with openssl-exception': 'gpl-3.0-only with licenseref-scancode-openssl-exception-gpl-3.0-plus',
