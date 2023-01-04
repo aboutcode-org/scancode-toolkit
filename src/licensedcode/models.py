@@ -368,29 +368,33 @@ class License:
 
     @property
     def scancode_url(self):
-        return SCANCODE_LICENSE_URL.format(self.key)
+        if self.is_builtin:
+            return SCANCODE_LICENSE_URL.format(self.key)
 
     @property
     def licensedb_url(self):
-        return SCANCODE_LICENSEDB_URL.format(self.key)
+        if self.is_builtin:
+            return SCANCODE_LICENSEDB_URL.format(self.key)
 
     @property
     def spdx_url(self):
         """
         Return a URL to the SPDX license either at SPDX, ScanCode or None.
         """
-        spdx_license_key = self.spdx_license_key
-        if not spdx_license_key:
-            return
+        if self.is_builtin:
+            spdx_license_key = self.spdx_license_key
+            if not spdx_license_key:
+                return
 
-        is_license_ref = spdx_license_key.lower().startswith('licenseref-')
+            slkl = spdx_license_key.lower()
+            is_licenseref = slkl.startswith('licenseref-')
 
-        if is_license_ref:
-            return SCANCODE_LICENSE_URL.format(self.key)
-        else:
-            # TODO: Is this replacing spdx_key???
-            spdx_license_key = spdx_license_key.rstrip('+')
-            return SPDX_LICENSE_URL.format(spdx_license_key)
+            if is_licenseref:
+                return SCANCODE_LICENSE_URL.format(self.key)
+            else:
+                # TODO: Is this replacing spdx_key???
+                spdx_license_key = spdx_license_key.rstrip('+')
+                return SPDX_LICENSE_URL.format(spdx_license_key)
 
     def license_file(self, licenses_data_dir=licenses_data_dir):
         return join(licenses_data_dir, f'{self.key}.LICENSE')
@@ -462,8 +466,8 @@ class License:
         # include everything
         data = self._to_dict(include_field=lambda k, v: True)
         data.pop('is_deprecated', None)
-        data['scancode_url'] = self.spdx_url
-        data['licensedb_url'] = self.spdx_url
+        data['scancode_url'] = self.scancode_url
+        data['licensedb_url'] = self.licensedb_url
         data['spdx_url'] = self.spdx_url
         return data
 

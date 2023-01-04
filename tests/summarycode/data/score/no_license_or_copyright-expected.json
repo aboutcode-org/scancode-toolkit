@@ -1,7 +1,5 @@
 {
   "license_detections": [],
-  "license_references": [],
-  "license_rule_references": [],
   "summary": {
     "declared_license_expression": null,
     "license_clarity_score": {
@@ -14,6 +12,8 @@
       "ambiguous_compound_licensing": true
     }
   },
+  "license_references": [],
+  "license_rule_references": [],
   "files": [
     {
       "path": "no_license_or_copyright",

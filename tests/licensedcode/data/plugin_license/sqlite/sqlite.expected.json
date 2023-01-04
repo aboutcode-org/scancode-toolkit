@@ -55,8 +55,8 @@
       "ignorable_urls": [],
       "ignorable_emails": [],
       "text": "The author disclaims copyright to this source code.\nIn place of a legal notice, here is a blessing:\n   May you do good and not evil.\n   May you find forgiveness for yourself and forgive others.\n   May you share freely, never taking more than you give.",
-      "scancode_url": "https://spdx.org/licenses/blessing",
-      "licensedb_url": "https://spdx.org/licenses/blessing",
+      "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
+      "licensedb_url": "https://scancode-licensedb.aboutcode.org/blessing",
       "spdx_url": "https://spdx.org/licenses/blessing"
     }
   ],

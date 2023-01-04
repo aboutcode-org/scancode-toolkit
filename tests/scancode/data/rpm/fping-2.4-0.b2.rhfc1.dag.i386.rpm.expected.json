@@ -109,7 +109,7 @@
       "ignorable_emails": [],
       "text": "",
       "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/unknown.LICENSE",
-      "licensedb_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/unknown.LICENSE",
+      "licensedb_url": "https://scancode-licensedb.aboutcode.org/unknown",
       "spdx_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/unknown.LICENSE"
     }
   ],
