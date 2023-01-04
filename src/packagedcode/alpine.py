@@ -1442,6 +1442,7 @@ EXPRESSION_SYNTAX_FIXES = {
         '(gpl-2.0-only with licenseref-scancode-generic-exception '
         'and lgpl-2.1-or-later with licenseref-scancode-generic-exception)',
 
+    # seen in https://github.com/alpinelinux/aports/blob/6052f331b316cf5366bd3db02af8400e9a34ab59/main/haproxy/APKBUILD
     '(gpl-2.0-or-later and gpl-2.1-or-later) with openssl-exception':
         '(gpl-2.0-or-later with licenseref-scancode-generic-exception '
         'and lgpl-2.1-or-later with licenseref-scancode-generic-exception)',
@@ -1647,7 +1648,7 @@ DECLARED_TO_SPDX = {
 
     # "with" mishaps
     'gpl-2.0 with classpath': 'gpl-2.0 with classpath-exception-2.0',
-    'gpl-2.0-only with openssl-exception': 'pl-2.0-only with licenseref-scancode-openssl-exception-gpl-2.0',
+    'gpl-2.0-only with openssl-exception': 'gpl-2.0-only with licenseref-scancode-openssl-exception-gpl-2.0-plus',
     'gpl-2.0-or-later with openssl-exception': 'gpl-2.0-or-later with licenseref-scancode-openssl-exception-gpl-2.0-plus',
 
     'gpl-3.0-only with openssl-exception': 'gpl-3.0-only with licenseref-scancode-openssl-exception-gpl-3.0-plus',
