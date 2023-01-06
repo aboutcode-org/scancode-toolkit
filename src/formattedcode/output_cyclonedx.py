@@ -61,6 +61,10 @@ class CycloneDxLicenseExpression(ToDictMixin):
     """
     expression: str = attr.ib(default=None)
 
+    @property
+    def identifier(self):
+        return self.expression
+
     @classmethod
     def from_package(cls, package):
         """
@@ -81,6 +85,10 @@ class CycloneDxProperty(ToDictMixin):
     name: str = attr.ib()
     value: str = attr.ib()
 
+    @property
+    def identifier(self):
+        return f"{self.name}-{self.value}"
+
 
 @attr.s
 class CycloneDxHashObject(ToDictMixin):
@@ -97,6 +105,10 @@ class CycloneDxHashObject(ToDictMixin):
 
     alg: str = attr.ib()
     content: str = attr.ib()
+
+    @property
+    def identifier(self):
+        return f"{self.alg}-{self.content}"
 
     @classmethod
     def from_package(cls, package):
@@ -158,6 +170,10 @@ class CycloneDxExternalRef(ToDictMixin):
     type: str = attr.ib(validator=attr.validators.in_(known_types))
     comment: str = attr.ib(default=None)
     hashes: List[CycloneDxHashObject] = attr.ib(factory=list)
+
+    @property
+    def identifier(self):
+        return f"{self.url}-{self.type}-{self.comment}"
 
     @classmethod
     def from_package(cls, package: dict):
@@ -290,7 +306,8 @@ class CycloneDxComponent:
             properties.append(
                 CycloneDxProperty(
                     name='WARNING',
-                    value=f'WARNING: component skipped in CycloneDX output: {package!r}'
+                    value=f'WARNING: component skipped in CycloneDX output:'
+                    f' purl: {package["purl"]} at datafile_paths: {package["datafile_paths"]}'
                 )
             )
 
@@ -428,8 +445,8 @@ def merge_lists(x, y):
     Merge ``y`` list items in list ``x`` avoiding duplicate entries.
     Return the updated ``x``.
     """
-    seen = set(x)
-    new = (i for i in y if i not in seen)
+    seen = set([item.identifier for item in x])
+    new = (item for item in y if item.identifier not in seen)
     x.extend(new)
     return x
 
