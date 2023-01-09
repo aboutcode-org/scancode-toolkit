@@ -38,7 +38,7 @@ norecursedirs = [
    ".eggs",
    "src/*/data",
    "tests/*/data",
-   "src/licensedcode/_vendor/"
+   "src/licensedcode/_vendor"
 ]
 
 python_files = "*.py"
