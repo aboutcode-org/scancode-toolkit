@@ -1,0 +1,13 @@
+about_resource: attrs
+attribute: yes
+checksum_md5: ad5a10e4dd479f5b1f4b258acf661163
+checksum_sha1: 77295133e1adb57cbcf92fd6c512bc06d7bcacf4
+copyright: Copyright (c) Hynek Schlawack
+download_url: https://files.pythonhosted.org/packages/be/be/7abce643bfdf8ca01c48afa2ddf8308c2308b0c3b239a44e57d020afa0ef/attrs-21.4.0-py2.py3-none-any.whl
+license_expression: mit
+name: attrs
+package_url: pkg:pypi/attrs@21.4.0
+primary_language: Python
+type: pypi
+version: 21.4.0
+notes: this is a vendored copy using python-vendorize

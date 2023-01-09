@@ -27,7 +27,7 @@ from licensedcode.cache import get_index
 from licensedcode.query import Query
 from licensedcode.match import LicenseMatch
 from licensedcode.match import set_matched_lines
-from licensedcode.models import Rule
+from licensedcode.models import DebianUnknownRule
 from licensedcode.spans import Span
 from packagedcode import models
 from packagedcode.licensing import get_license_expression_from_matches
@@ -1568,7 +1568,7 @@ def add_unknown_matches(name, text):
     len_legalese = idx.len_legalese
     hispan = Span(p for p, t in enumerate(matched_tokens) if t < len_legalese)
 
-    unknown_rule = UnknownRule(
+    unknown_rule = DebianUnknownRule(
         license_expression=expression_str,
         text=license_text,
         length=match_len,
@@ -1588,32 +1588,6 @@ def add_unknown_matches(name, text):
     set_matched_lines(matches, query.line_by_pos)
     return matches
 
-
-@attr.s(slots=True, repr=False)
-class UnknownRule(Rule):
-    """
-    A specialized rule object that is used for the special case of unknown
-    matches in debian copyright files.
-
-    Since there can be a lot of unknown licenses in a debian copyright file, the
-    rule and the LicenseMatch objects for these are built at matching time.
-    """
-
-    def __attrs_post_init__(self, *args, **kwargs):
-        self.identifier = 'debian-' + self.license_expression
-        expression = self.licensing.parse(self.license_expression)
-        self.license_expression = expression.render()
-        self.license_expression_object = expression
-        self.is_license_tag = True
-        self.is_small = False
-        self.relevance = 100
-        self.has_stored_relevance = True
-
-    def load(self):
-        raise NotImplementedError
-
-    def dump(self):
-        raise NotImplementedError
 
 
 def get_license_detections_from_other_fields(paragraph):

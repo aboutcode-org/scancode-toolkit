@@ -9,9 +9,6 @@
 import os
 import pickle
 
-import attr
-
-from commoncode.datautils import attribute
 from commoncode.fileutils import create_dir
 
 from scancode_config import licensedcode_cache_dir
@@ -37,16 +34,22 @@ LICENSE_LOCKFILE_NAME = 'scancode_license_index_lockfile'
 LICENSE_CHECKSUM_FILE = 'scancode_license_index_tree_checksums'
 
 
-@attr.s(slots=True)
 class LicenseCache:
     """
     Represent cachable/pickable LicenseIndex and index-related objects.
     """
-    db = attribute(help='mapping of License objects by key')
-    index = attribute(help='LicenseIndex object')
-    licensing = attribute(help='Licensing object')
-    spdx_symbols = attribute(help='mapping of LicenseSymbol objects by SPDX key')
-    unknown_spdx_symbol = attribute(help='LicenseSymbol object')
+
+    def __init__(self, db=None, index=None, licensing=None, spdx_symbols=None, unknown_spdx_symbol=None):
+        # mapping of License objects by key
+        self.db = db
+        # LicenseIndex object
+        self.index = index
+        # Licensing object
+        self.licensing = licensing
+        # mapping of LicenseSymbol objects by SPDX key
+        self.spdx_symbols = spdx_symbols
+        # LicenseSymbol object
+        self.unknown_spdx_symbol = unknown_spdx_symbol
 
     @staticmethod
     def load_or_build(
