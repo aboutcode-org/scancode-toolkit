@@ -1,4 +1,11 @@
-  Permission to copy and distribute these fonts for any purpose is 
+---
+license_expression: bakoma-fonts-1995
+is_license_notice: yes
+ignorable_urls:
+    - http://www.ctan.org/tex-archive/fonts/cm/ps-type1/bakoma
+---
+
+Permission to copy and distribute these fonts for any purpose is 
   hereby granted without fee, provided that the above copyright notice, 
   author statement and this permission notice appear in all copies of 
   these fonts and related documentation.

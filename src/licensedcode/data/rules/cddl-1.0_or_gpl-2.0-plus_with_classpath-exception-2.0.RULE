@@ -1,3 +1,17 @@
+---
+license_expression: gpl-2.0 WITH classpath-exception-2.0 OR cddl-1.0
+is_license_notice: yes
+relevance: 99
+minimum_coverage: 80
+notes: weird format for cddl + gpl + classpath contains extra notice for jurisdiction
+ignorable_copyrights:
+    - Copyright (c) 1989, 1991 Free Software Foundation, Inc.
+    - copyrighted by the Free Software Foundation
+ignorable_holders:
+    - Free Software Foundation, Inc.
+    - the Free Software Foundation
+---
+
 COMMON DEVELOPMENT AND DISTRIBUTION LICENSE (CDDL) Version 1.0
     1. Definitions.
 o    1.1. Contributor means each individual or entity that creates or contributes to the creation of Modifications. 
@@ -134,4 +148,4 @@ This General Public License does not permit incorporating your program into prop
 Certain source files distributed by Sun Microsystems, Inc. are subject to the following clarification and special exception to the GPL Version 2, but only where Sun has expressly included in the particular source file's header the words
 "Sun designates this particular file as subject to the "Classpath" exception as provided by Sun in the License file that accompanied this code." 
 Linking this library statically or dynamically with other modules is making a combined work based on this library. Thus, the terms and conditions of the GNU General Public License Version 2 cover the whole combination. 
-As a special exception, the copyright holders of this library give you permission to link this library with independent modules to produce an executable, regardless of the license terms of these independent modules, and to copy and distribute the resulting executable under terms of your choice, provided that you also meet, for each linked independent module, the terms and conditions of the license of that module.? An independent module is a module which is not derived from or based on this library.? If you modify this library, you may extend this exception to your version of the library, but you are not obligated to do so.? If you do not wish to do so, delete this exception statement from your version. 
+As a special exception, the copyright holders of this library give you permission to link this library with independent modules to produce an executable, regardless of the license terms of these independent modules, and to copy and distribute the resulting executable under terms of your choice, provided that you also meet, for each linked independent module, the terms and conditions of the license of that module.? An independent module is a module which is not derived from or based on this library.? If you modify this library, you may extend this exception to your version of the library, but you are not obligated to do so.? If you do not wish to do so, delete this exception statement from your version.

@@ -1,3 +1,10 @@
+---
+license_expression: other-copyleft
+is_license_notice: yes
+ignorable_urls:
+    - http://alps.comp-phys.org/
+---
+
 # 
 # This software is part of the ALPS libraries, published under the ALPS
 # Library License; you can use, redistribute it and/or modify it under

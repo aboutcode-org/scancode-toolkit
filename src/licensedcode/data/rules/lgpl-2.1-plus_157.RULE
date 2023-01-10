@@ -1,2 +1,11 @@
+---
+license_expression: lgpl-2.1-plus
+is_license_notice: yes
+relevance: 100
+referenced_filenames:
+    - COPYING
+    - COPYING.LESSER
+---
+
 // This file is part of , distributed under the LESSER GNU GPL. 
 For full terms see the included COPYING file and the COPYING.LESSER file.

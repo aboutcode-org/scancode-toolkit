@@ -1,9 +1,0 @@
-key: wol
-short_name: Wide Open License
-name: Wide Open License
-category: Permissive
-owner: Iowegian International
-homepage_url: http://www.dspguru.com/wide-open-license
-spdx_license_key: LicenseRef-scancode-wol
-ignorable_urls:
-    - http://www.dspguru.com/wide-open-license

@@ -1,3 +1,11 @@
+---
+license_expression: sun-sissl-1.1
+is_license_text: yes
+minimum_coverage: 70
+ignorable_urls:
+    - http://api.openoffice.org/
+    - http://xml.openoffice.org/
+---
 
 Sun Industry Standards Source License - Version 1.1
 
@@ -137,4 +145,3 @@ OpenOffice.org XML File Format Specification, located at http://xml.openoffice.o
 
 OpenOffice.org Application Programming Interface Specification, located at
 http://api.openoffice.org
-

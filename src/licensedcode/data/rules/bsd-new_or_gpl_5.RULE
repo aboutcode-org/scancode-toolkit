@@ -1,3 +1,9 @@
+---
+license_expression: bsd-new OR gpl-1.0-plus
+is_license_notice: yes
+minimum_coverage: 80
+---
+
 This software is distributed under the "modified BSD licence".
 
 This software is also released with GNU license (GPL) in another file (same

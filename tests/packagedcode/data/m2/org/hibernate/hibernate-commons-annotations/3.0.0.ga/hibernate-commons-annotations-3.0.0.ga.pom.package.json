@@ -21,15 +21,54 @@
   "code_view_url": "scm:svn:http://anonsvn.jboss.org/repos/hibernate/commons-annotations",
   "vcs_url": "scm:svn:http://anonsvn.jboss.org/repos/hibernate/commons-annotations",
   "copyright": null,
-  "license_expression": "lgpl-2.0-plus",
-  "declared_license": [
+  "declared_license_expression": "lgpl-2.0-plus",
+  "declared_license_expression_spdx": "LGPL-2.0-or-later",
+  "license_detections": [
     {
-      "name": "GNU LESSER GENERAL PUBLIC LICENSE",
-      "url": "http://www.gnu.org/licenses/lgpl.txt",
-      "comments": null,
-      "distribution": "repo"
+      "license_expression": "lgpl-2.0-plus",
+      "detection_log": [
+        "not-combined"
+      ],
+      "matches": [
+        {
+          "score": 100.0,
+          "start_line": 1,
+          "end_line": 1,
+          "matched_length": 5,
+          "match_coverage": 100.0,
+          "matcher": "1-hash",
+          "license_expression": "lgpl-2.0-plus",
+          "rule_identifier": "lgpl-2.0-plus_87.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0-plus_87.RULE",
+          "matched_text": "GNU LESSER GENERAL PUBLIC LICENSE"
+        }
+      ]
+    },
+    {
+      "license_expression": "lgpl-2.0-plus",
+      "detection_log": [
+        "not-combined"
+      ],
+      "matches": [
+        {
+          "score": 100.0,
+          "start_line": 1,
+          "end_line": 1,
+          "matched_length": 7,
+          "match_coverage": 100.0,
+          "matcher": "1-hash",
+          "license_expression": "lgpl-2.0-plus",
+          "rule_identifier": "lgpl-2.0-plus_100.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0-plus_100.RULE",
+          "matched_text": "http://www.gnu.org/licenses/lgpl.txt"
+        }
+      ]
     }
   ],
+  "other_license_expression": null,
+  "other_license_expression_spdx": null,
+  "other_license_detections": [],
+  "extracted_license_statement": "[{'name': 'GNU LESSER GENERAL PUBLIC LICENSE', 'url': 'http://www.gnu.org/licenses/lgpl.txt', 'comments': None, 'distribution': 'repo'}]",
   "notice_text": null,
   "source_packages": [
     "pkg:maven/org.hibernate/hibernate-commons-annotations@3.0.0.ga?classifier=sources"

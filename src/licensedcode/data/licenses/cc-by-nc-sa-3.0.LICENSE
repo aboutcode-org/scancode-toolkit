@@ -1,3 +1,19 @@
+---
+key: cc-by-nc-sa-3.0
+short_name: CC-BY-NC-SA-3.0
+name: Creative Commons Attribution Non-Commercial Share Alike License 3.0
+category: Source-available
+owner: Creative Commons
+homepage_url: http://creativecommons.org/licenses/by-nc-sa/3.0/
+spdx_license_key: CC-BY-NC-SA-3.0
+text_urls:
+    - http://creativecommons.org/licenses/by-nc-sa/3.0/legalcode
+other_urls:
+    - https://creativecommons.org/licenses/by-nc-sa/3.0/legalcode
+ignorable_urls:
+    - https://creativecommons.org/
+---
+
 Creative Commons Legal Code
 
 Attribution-NonCommercial-ShareAlike 3.0 Unported

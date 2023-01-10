@@ -1,3 +1,20 @@
+---
+key: x11-xconsortium-veillard
+short_name: X11-Style (X Consortium Veillard)
+name: X11-Style (X Consortium Veillard)
+category: Permissive
+owner: Daniel Veillard
+notes: the license key has been renamed from the old x11-xconsortium_veillard
+spdx_license_key: LicenseRef-scancode-x11-xconsortium-veillard
+other_spdx_license_keys:
+    - LicenseRef-scancode-x11-xconsortium_veillard
+standard_notice: |
+    Except where otherwise noted in the source code (e.g. the files hash.c,
+    list.c and the trio files, which are covered by a similar licence but
+    with different Copyright notices) all the files are:
+    Copyright (C) 1998-2003 Daniel Veillard. All Rights Reserved.
+---
+
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is fur- nished to do so, subject to the following conditions:
 
 The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.

@@ -1,2 +1,8 @@
+---
+license_expression: lgpl-2.1
+is_license_notice: yes
+relevance: 100
+---
+
 On Debian systems, the text of the GNU Lesser General Public
  License v2.1 can be found in `/usr/share/common-licenses/LGPL-2.1'.

@@ -1,3 +1,10 @@
+---
+license_expression: ruby OR gpl-2.0
+is_license_notice: yes
+referenced_filenames:
+    - gpl-2.0.txt
+---
+
 is copyrighted free software. See README.rdoc in the top directory
 for authors.
 You can redistribute it and/or modify it under either the terms of the GPL

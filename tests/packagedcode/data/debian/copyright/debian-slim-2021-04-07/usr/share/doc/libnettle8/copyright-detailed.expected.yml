@@ -1,4 +1,3 @@
-primary_license: lgpl-3.0-plus OR gpl-2.0-plus
 declared_license:
   - LGPL-3+ or GPL-2+
   - LGPL-3+ or GPL-2+
@@ -71,37 +70,11 @@ declared_license:
   - LGPL-3+
   - GPL-2+
   - Expat
-license_expression: ((lgpl-3.0-plus AND lgpl-3.0-plus) OR (gpl-2.0-plus AND gpl-2.0-plus)) AND
-  (((gpl-2.0-plus OR gpl-3.0-plus) AND other-permissive AND public-domain) AND public-domain
-  AND lgpl-2.0-plus AND mit AND pycrypto AND public-domain AND public-domain AND lgpl-2.1-plus
-  AND public-domain AND lgpl-2.1-plus AND public-domain AND lgpl-2.0-plus) AND ((lgpl-3.0-plus
-  AND lgpl-3.0-plus) OR (gpl-2.0-plus AND gpl-2.0-plus)) AND ((lgpl-3.0-plus AND lgpl-3.0-plus)
-  OR (gpl-2.0-plus AND gpl-2.0-plus)) AND ((lgpl-3.0-plus AND lgpl-3.0-plus) OR (gpl-2.0-plus
-  AND gpl-2.0-plus)) AND ((lgpl-3.0-plus AND lgpl-3.0-plus) OR (gpl-2.0-plus AND gpl-2.0-plus))
-  AND ((lgpl-3.0-plus AND lgpl-3.0-plus) OR (gpl-2.0-plus AND gpl-2.0-plus)) AND ((lgpl-3.0-plus
-  AND lgpl-3.0-plus) OR (gpl-2.0-plus AND gpl-2.0-plus)) AND ((lgpl-3.0-plus AND lgpl-3.0-plus)
-  OR (gpl-2.0-plus AND gpl-2.0-plus)) AND ((lgpl-3.0-plus AND lgpl-3.0-plus) OR (gpl-2.0-plus
-  AND gpl-2.0-plus)) AND ((lgpl-3.0-plus AND lgpl-3.0-plus) OR (gpl-2.0-plus AND gpl-2.0-plus))
-  AND ((lgpl-3.0-plus AND lgpl-3.0-plus) OR (gpl-2.0-plus AND gpl-2.0-plus)) AND ((lgpl-3.0-plus
-  AND lgpl-3.0-plus) OR (gpl-2.0-plus AND gpl-2.0-plus)) AND ((lgpl-3.0-plus AND lgpl-3.0-plus)
-  OR (gpl-2.0-plus AND gpl-2.0-plus)) AND ((lgpl-3.0-plus AND lgpl-3.0-plus) OR (gpl-2.0-plus
-  AND gpl-2.0-plus)) AND ((lgpl-3.0-plus AND lgpl-3.0-plus) OR (gpl-2.0-plus AND gpl-2.0-plus))
-  AND ((lgpl-3.0-plus AND lgpl-3.0-plus) OR (gpl-2.0-plus AND gpl-2.0-plus)) AND ((lgpl-3.0-plus
-  AND lgpl-3.0-plus) OR (gpl-2.0-plus AND gpl-2.0-plus)) AND ((lgpl-3.0-plus AND lgpl-3.0-plus)
-  OR (gpl-2.0-plus AND gpl-2.0-plus)) AND ((lgpl-3.0-plus AND lgpl-3.0-plus) OR (gpl-2.0-plus
-  AND gpl-2.0-plus)) AND ((lgpl-3.0-plus AND lgpl-3.0-plus) OR (gpl-2.0-plus AND gpl-2.0-plus))
-  AND ((lgpl-3.0-plus AND lgpl-3.0-plus) OR (gpl-2.0-plus AND gpl-2.0-plus)) AND ((lgpl-3.0-plus
-  AND lgpl-3.0-plus) OR (gpl-2.0-plus AND gpl-2.0-plus)) AND ((lgpl-3.0-plus AND lgpl-3.0-plus)
-  OR (gpl-2.0-plus AND gpl-2.0-plus)) AND (lgpl-2.0-plus AND lgpl-2.0-plus) AND ((lgpl-3.0-plus
-  AND lgpl-3.0-plus) OR (gpl-2.0-plus AND gpl-2.0-plus)) AND ((lgpl-3.0-plus AND lgpl-3.0-plus)
-  OR (gpl-2.0-plus AND gpl-2.0-plus)) AND ((lgpl-3.0-plus AND lgpl-3.0-plus) OR (gpl-2.0-plus
-  AND gpl-2.0-plus)) AND ((lgpl-3.0-plus AND lgpl-3.0-plus) OR (gpl-2.0-plus AND gpl-2.0-plus))
-  AND ((lgpl-3.0-plus AND lgpl-3.0-plus) OR (gpl-2.0-plus AND gpl-2.0-plus)) AND ((lgpl-3.0-plus
-  AND lgpl-3.0-plus) OR (gpl-2.0-plus AND gpl-2.0-plus)) AND ((lgpl-3.0-plus AND lgpl-3.0-plus)
-  OR (gpl-2.0-plus AND gpl-2.0-plus)) AND mit AND ((lgpl-3.0-plus AND lgpl-3.0-plus) OR (gpl-2.0-plus
-  AND gpl-2.0-plus)) AND ((lgpl-3.0-plus AND lgpl-3.0-plus) OR (gpl-2.0-plus AND gpl-2.0-plus))
-  AND ((lgpl-3.0-plus AND lgpl-3.0-plus) OR (gpl-2.0-plus AND gpl-2.0-plus)) AND ((lgpl-3.0-plus
-  AND lgpl-3.0-plus) OR (gpl-2.0-plus AND gpl-2.0-plus)) AND ((lgpl-3.0-plus AND lgpl-3.0-plus)
+declared_license_expression: lgpl-3.0-plus OR gpl-2.0-plus
+declared_license_expression_spdx: LGPL-3.0-or-later OR GPL-2.0-or-later
+other_license_expression: ((lgpl-3.0-plus AND lgpl-3.0-plus) OR (gpl-2.0-plus AND gpl-2.0-plus))
+  AND (((gpl-2.0-plus OR gpl-3.0-plus) AND other-permissive AND public-domain) AND public-domain
+  AND lgpl-2.0-plus AND mit AND pycrypto AND lgpl-2.1-plus) AND ((lgpl-3.0-plus AND lgpl-3.0-plus)
   OR (gpl-2.0-plus AND gpl-2.0-plus)) AND ((lgpl-3.0-plus AND lgpl-3.0-plus) OR (gpl-2.0-plus
   AND gpl-2.0-plus)) AND ((lgpl-3.0-plus AND lgpl-3.0-plus) OR (gpl-2.0-plus AND gpl-2.0-plus))
   AND ((lgpl-3.0-plus AND lgpl-3.0-plus) OR (gpl-2.0-plus AND gpl-2.0-plus)) AND ((lgpl-3.0-plus
@@ -119,12 +92,532 @@ license_expression: ((lgpl-3.0-plus AND lgpl-3.0-plus) OR (gpl-2.0-plus AND gpl-
   AND ((lgpl-3.0-plus AND lgpl-3.0-plus) OR (gpl-2.0-plus AND gpl-2.0-plus)) AND ((lgpl-3.0-plus
   AND lgpl-3.0-plus) OR (gpl-2.0-plus AND gpl-2.0-plus)) AND ((lgpl-3.0-plus AND lgpl-3.0-plus)
   OR (gpl-2.0-plus AND gpl-2.0-plus)) AND ((lgpl-3.0-plus AND lgpl-3.0-plus) OR (gpl-2.0-plus
+  AND gpl-2.0-plus)) AND (lgpl-2.0-plus AND lgpl-2.0-plus) AND ((lgpl-3.0-plus AND lgpl-3.0-plus)
+  OR (gpl-2.0-plus AND gpl-2.0-plus)) AND ((lgpl-3.0-plus AND lgpl-3.0-plus) OR (gpl-2.0-plus
   AND gpl-2.0-plus)) AND ((lgpl-3.0-plus AND lgpl-3.0-plus) OR (gpl-2.0-plus AND gpl-2.0-plus))
-  AND ((lgpl-3.0-plus AND lgpl-3.0-plus) OR (gpl-2.0-plus AND gpl-2.0-plus)) AND (gpl-3.0-plus
-  AND gpl-3.0-plus WITH tex-exception) AND ((lgpl-3.0-plus AND lgpl-3.0-plus) OR (gpl-2.0-plus
+  AND ((lgpl-3.0-plus AND lgpl-3.0-plus) OR (gpl-2.0-plus AND gpl-2.0-plus)) AND ((lgpl-3.0-plus
+  AND lgpl-3.0-plus) OR (gpl-2.0-plus AND gpl-2.0-plus)) AND ((lgpl-3.0-plus AND lgpl-3.0-plus)
+  OR (gpl-2.0-plus AND gpl-2.0-plus)) AND ((lgpl-3.0-plus AND lgpl-3.0-plus) OR (gpl-2.0-plus
+  AND gpl-2.0-plus)) AND mit AND ((lgpl-3.0-plus AND lgpl-3.0-plus) OR (gpl-2.0-plus AND gpl-2.0-plus))
+  AND ((lgpl-3.0-plus AND lgpl-3.0-plus) OR (gpl-2.0-plus AND gpl-2.0-plus)) AND ((lgpl-3.0-plus
+  AND lgpl-3.0-plus) OR (gpl-2.0-plus AND gpl-2.0-plus)) AND ((lgpl-3.0-plus AND lgpl-3.0-plus)
+  OR (gpl-2.0-plus AND gpl-2.0-plus)) AND ((lgpl-3.0-plus AND lgpl-3.0-plus) OR (gpl-2.0-plus
   AND gpl-2.0-plus)) AND ((lgpl-3.0-plus AND lgpl-3.0-plus) OR (gpl-2.0-plus AND gpl-2.0-plus))
-  AND (gpl-2.0-plus AND gpl-2.0-plus) AND autoconf-simple-exception-2.0 AND public-domain AND
-  (gpl-2.0 AND gpl-2.0) AND fsf-ap
+  AND ((lgpl-3.0-plus AND lgpl-3.0-plus) OR (gpl-2.0-plus AND gpl-2.0-plus)) AND ((lgpl-3.0-plus
+  AND lgpl-3.0-plus) OR (gpl-2.0-plus AND gpl-2.0-plus)) AND ((lgpl-3.0-plus AND lgpl-3.0-plus)
+  OR (gpl-2.0-plus AND gpl-2.0-plus)) AND ((lgpl-3.0-plus AND lgpl-3.0-plus) OR (gpl-2.0-plus
+  AND gpl-2.0-plus)) AND ((lgpl-3.0-plus AND lgpl-3.0-plus) OR (gpl-2.0-plus AND gpl-2.0-plus))
+  AND ((lgpl-3.0-plus AND lgpl-3.0-plus) OR (gpl-2.0-plus AND gpl-2.0-plus)) AND ((lgpl-3.0-plus
+  AND lgpl-3.0-plus) OR (gpl-2.0-plus AND gpl-2.0-plus)) AND ((lgpl-3.0-plus AND lgpl-3.0-plus)
+  OR (gpl-2.0-plus AND gpl-2.0-plus)) AND ((lgpl-3.0-plus AND lgpl-3.0-plus) OR (gpl-2.0-plus
+  AND gpl-2.0-plus)) AND ((lgpl-3.0-plus AND lgpl-3.0-plus) OR (gpl-2.0-plus AND gpl-2.0-plus))
+  AND ((lgpl-3.0-plus AND lgpl-3.0-plus) OR (gpl-2.0-plus AND gpl-2.0-plus)) AND ((lgpl-3.0-plus
+  AND lgpl-3.0-plus) OR (gpl-2.0-plus AND gpl-2.0-plus)) AND ((lgpl-3.0-plus AND lgpl-3.0-plus)
+  OR (gpl-2.0-plus AND gpl-2.0-plus)) AND ((lgpl-3.0-plus AND lgpl-3.0-plus) OR (gpl-2.0-plus
+  AND gpl-2.0-plus)) AND ((lgpl-3.0-plus AND lgpl-3.0-plus) OR (gpl-2.0-plus AND gpl-2.0-plus))
+  AND ((lgpl-3.0-plus AND lgpl-3.0-plus) OR (gpl-2.0-plus AND gpl-2.0-plus)) AND ((lgpl-3.0-plus
+  AND lgpl-3.0-plus) OR (gpl-2.0-plus AND gpl-2.0-plus)) AND ((lgpl-3.0-plus AND lgpl-3.0-plus)
+  OR (gpl-2.0-plus AND gpl-2.0-plus)) AND ((lgpl-3.0-plus AND lgpl-3.0-plus) OR (gpl-2.0-plus
+  AND gpl-2.0-plus)) AND ((lgpl-3.0-plus AND lgpl-3.0-plus) OR (gpl-2.0-plus AND gpl-2.0-plus))
+  AND ((lgpl-3.0-plus AND lgpl-3.0-plus) OR (gpl-2.0-plus AND gpl-2.0-plus)) AND ((lgpl-3.0-plus
+  AND lgpl-3.0-plus) OR (gpl-2.0-plus AND gpl-2.0-plus)) AND (gpl-3.0-plus AND gpl-3.0-plus
+  WITH tex-exception) AND ((lgpl-3.0-plus AND lgpl-3.0-plus) OR (gpl-2.0-plus AND gpl-2.0-plus))
+  AND ((lgpl-3.0-plus AND lgpl-3.0-plus) OR (gpl-2.0-plus AND gpl-2.0-plus)) AND (gpl-2.0-plus
+  AND gpl-2.0-plus) AND autoconf-simple-exception-2.0 AND public-domain AND (gpl-2.0 AND gpl-2.0)
+  AND fsf-ap
+other_license_expression_spdx: ((LGPL-3.0-or-later AND LGPL-3.0-or-later) OR (GPL-2.0-or-later
+  AND GPL-2.0-or-later)) AND (((GPL-2.0-or-later OR GPL-3.0-or-later) AND LicenseRef-scancode-other-permissive
+  AND LicenseRef-scancode-public-domain) AND LicenseRef-scancode-public-domain AND LGPL-2.0-or-later
+  AND MIT AND LicenseRef-scancode-pycrypto AND LGPL-2.1-or-later) AND ((LGPL-3.0-or-later AND
+  LGPL-3.0-or-later) OR (GPL-2.0-or-later AND GPL-2.0-or-later)) AND ((LGPL-3.0-or-later AND
+  LGPL-3.0-or-later) OR (GPL-2.0-or-later AND GPL-2.0-or-later)) AND ((LGPL-3.0-or-later AND
+  LGPL-3.0-or-later) OR (GPL-2.0-or-later AND GPL-2.0-or-later)) AND ((LGPL-3.0-or-later AND
+  LGPL-3.0-or-later) OR (GPL-2.0-or-later AND GPL-2.0-or-later)) AND ((LGPL-3.0-or-later AND
+  LGPL-3.0-or-later) OR (GPL-2.0-or-later AND GPL-2.0-or-later)) AND ((LGPL-3.0-or-later AND
+  LGPL-3.0-or-later) OR (GPL-2.0-or-later AND GPL-2.0-or-later)) AND ((LGPL-3.0-or-later AND
+  LGPL-3.0-or-later) OR (GPL-2.0-or-later AND GPL-2.0-or-later)) AND ((LGPL-3.0-or-later AND
+  LGPL-3.0-or-later) OR (GPL-2.0-or-later AND GPL-2.0-or-later)) AND ((LGPL-3.0-or-later AND
+  LGPL-3.0-or-later) OR (GPL-2.0-or-later AND GPL-2.0-or-later)) AND ((LGPL-3.0-or-later AND
+  LGPL-3.0-or-later) OR (GPL-2.0-or-later AND GPL-2.0-or-later)) AND ((LGPL-3.0-or-later AND
+  LGPL-3.0-or-later) OR (GPL-2.0-or-later AND GPL-2.0-or-later)) AND ((LGPL-3.0-or-later AND
+  LGPL-3.0-or-later) OR (GPL-2.0-or-later AND GPL-2.0-or-later)) AND ((LGPL-3.0-or-later AND
+  LGPL-3.0-or-later) OR (GPL-2.0-or-later AND GPL-2.0-or-later)) AND ((LGPL-3.0-or-later AND
+  LGPL-3.0-or-later) OR (GPL-2.0-or-later AND GPL-2.0-or-later)) AND ((LGPL-3.0-or-later AND
+  LGPL-3.0-or-later) OR (GPL-2.0-or-later AND GPL-2.0-or-later)) AND ((LGPL-3.0-or-later AND
+  LGPL-3.0-or-later) OR (GPL-2.0-or-later AND GPL-2.0-or-later)) AND ((LGPL-3.0-or-later AND
+  LGPL-3.0-or-later) OR (GPL-2.0-or-later AND GPL-2.0-or-later)) AND ((LGPL-3.0-or-later AND
+  LGPL-3.0-or-later) OR (GPL-2.0-or-later AND GPL-2.0-or-later)) AND ((LGPL-3.0-or-later AND
+  LGPL-3.0-or-later) OR (GPL-2.0-or-later AND GPL-2.0-or-later)) AND ((LGPL-3.0-or-later AND
+  LGPL-3.0-or-later) OR (GPL-2.0-or-later AND GPL-2.0-or-later)) AND ((LGPL-3.0-or-later AND
+  LGPL-3.0-or-later) OR (GPL-2.0-or-later AND GPL-2.0-or-later)) AND ((LGPL-3.0-or-later AND
+  LGPL-3.0-or-later) OR (GPL-2.0-or-later AND GPL-2.0-or-later)) AND (LGPL-2.0-or-later AND
+  LGPL-2.0-or-later) AND ((LGPL-3.0-or-later AND LGPL-3.0-or-later) OR (GPL-2.0-or-later AND
+  GPL-2.0-or-later)) AND ((LGPL-3.0-or-later AND LGPL-3.0-or-later) OR (GPL-2.0-or-later AND
+  GPL-2.0-or-later)) AND ((LGPL-3.0-or-later AND LGPL-3.0-or-later) OR (GPL-2.0-or-later AND
+  GPL-2.0-or-later)) AND ((LGPL-3.0-or-later AND LGPL-3.0-or-later) OR (GPL-2.0-or-later AND
+  GPL-2.0-or-later)) AND ((LGPL-3.0-or-later AND LGPL-3.0-or-later) OR (GPL-2.0-or-later AND
+  GPL-2.0-or-later)) AND ((LGPL-3.0-or-later AND LGPL-3.0-or-later) OR (GPL-2.0-or-later AND
+  GPL-2.0-or-later)) AND ((LGPL-3.0-or-later AND LGPL-3.0-or-later) OR (GPL-2.0-or-later AND
+  GPL-2.0-or-later)) AND MIT AND ((LGPL-3.0-or-later AND LGPL-3.0-or-later) OR (GPL-2.0-or-later
+  AND GPL-2.0-or-later)) AND ((LGPL-3.0-or-later AND LGPL-3.0-or-later) OR (GPL-2.0-or-later
+  AND GPL-2.0-or-later)) AND ((LGPL-3.0-or-later AND LGPL-3.0-or-later) OR (GPL-2.0-or-later
+  AND GPL-2.0-or-later)) AND ((LGPL-3.0-or-later AND LGPL-3.0-or-later) OR (GPL-2.0-or-later
+  AND GPL-2.0-or-later)) AND ((LGPL-3.0-or-later AND LGPL-3.0-or-later) OR (GPL-2.0-or-later
+  AND GPL-2.0-or-later)) AND ((LGPL-3.0-or-later AND LGPL-3.0-or-later) OR (GPL-2.0-or-later
+  AND GPL-2.0-or-later)) AND ((LGPL-3.0-or-later AND LGPL-3.0-or-later) OR (GPL-2.0-or-later
+  AND GPL-2.0-or-later)) AND ((LGPL-3.0-or-later AND LGPL-3.0-or-later) OR (GPL-2.0-or-later
+  AND GPL-2.0-or-later)) AND ((LGPL-3.0-or-later AND LGPL-3.0-or-later) OR (GPL-2.0-or-later
+  AND GPL-2.0-or-later)) AND ((LGPL-3.0-or-later AND LGPL-3.0-or-later) OR (GPL-2.0-or-later
+  AND GPL-2.0-or-later)) AND ((LGPL-3.0-or-later AND LGPL-3.0-or-later) OR (GPL-2.0-or-later
+  AND GPL-2.0-or-later)) AND ((LGPL-3.0-or-later AND LGPL-3.0-or-later) OR (GPL-2.0-or-later
+  AND GPL-2.0-or-later)) AND ((LGPL-3.0-or-later AND LGPL-3.0-or-later) OR (GPL-2.0-or-later
+  AND GPL-2.0-or-later)) AND ((LGPL-3.0-or-later AND LGPL-3.0-or-later) OR (GPL-2.0-or-later
+  AND GPL-2.0-or-later)) AND ((LGPL-3.0-or-later AND LGPL-3.0-or-later) OR (GPL-2.0-or-later
+  AND GPL-2.0-or-later)) AND ((LGPL-3.0-or-later AND LGPL-3.0-or-later) OR (GPL-2.0-or-later
+  AND GPL-2.0-or-later)) AND ((LGPL-3.0-or-later AND LGPL-3.0-or-later) OR (GPL-2.0-or-later
+  AND GPL-2.0-or-later)) AND ((LGPL-3.0-or-later AND LGPL-3.0-or-later) OR (GPL-2.0-or-later
+  AND GPL-2.0-or-later)) AND ((LGPL-3.0-or-later AND LGPL-3.0-or-later) OR (GPL-2.0-or-later
+  AND GPL-2.0-or-later)) AND ((LGPL-3.0-or-later AND LGPL-3.0-or-later) OR (GPL-2.0-or-later
+  AND GPL-2.0-or-later)) AND ((LGPL-3.0-or-later AND LGPL-3.0-or-later) OR (GPL-2.0-or-later
+  AND GPL-2.0-or-later)) AND ((LGPL-3.0-or-later AND LGPL-3.0-or-later) OR (GPL-2.0-or-later
+  AND GPL-2.0-or-later)) AND ((LGPL-3.0-or-later AND LGPL-3.0-or-later) OR (GPL-2.0-or-later
+  AND GPL-2.0-or-later)) AND ((LGPL-3.0-or-later AND LGPL-3.0-or-later) OR (GPL-2.0-or-later
+  AND GPL-2.0-or-later)) AND ((LGPL-3.0-or-later AND LGPL-3.0-or-later) OR (GPL-2.0-or-later
+  AND GPL-2.0-or-later)) AND ((LGPL-3.0-or-later AND LGPL-3.0-or-later) OR (GPL-2.0-or-later
+  AND GPL-2.0-or-later)) AND ((LGPL-3.0-or-later AND LGPL-3.0-or-later) OR (GPL-2.0-or-later
+  AND GPL-2.0-or-later)) AND ((LGPL-3.0-or-later AND LGPL-3.0-or-later) OR (GPL-2.0-or-later
+  AND GPL-2.0-or-later)) AND (GPL-3.0-or-later AND GPL-3.0-or-later WITH LicenseRef-scancode-tex-exception)
+  AND ((LGPL-3.0-or-later AND LGPL-3.0-or-later) OR (GPL-2.0-or-later AND GPL-2.0-or-later))
+  AND ((LGPL-3.0-or-later AND LGPL-3.0-or-later) OR (GPL-2.0-or-later AND GPL-2.0-or-later))
+  AND (GPL-2.0-or-later AND GPL-2.0-or-later) AND LicenseRef-scancode-autoconf-simple-exception-2.0
+  AND LicenseRef-scancode-public-domain AND (GPL-2.0-only AND GPL-2.0-only) AND FSFAP
+license_detections: []
+other_license_detections:
+  - license_expression: lgpl-2.0-plus
+    detection_log:
+      - not-combined
+    matches:
+      - score: '100.0'
+        start_line: 276
+        end_line: 276
+        matched_length: 3
+        match_coverage: '100.0'
+        matcher: 1-hash
+        license_expression: lgpl-2.0-plus
+        rule_identifier: lgpl-2.0-plus_61.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0-plus_61.RULE
+        matched_text: 'License: lgpl-2+'
+      - score: '100.0'
+        start_line: 277
+        end_line: 293
+        matched_length: 143
+        match_coverage: '100.0'
+        matcher: 1-hash
+        license_expression: lgpl-2.0-plus
+        rule_identifier: lgpl-2.0-plus_460.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0-plus_460.RULE
+        matched_text: |
+          This program is free software; you can redistribute it and/or modify
+          it under the terms of the GNU Library General Public License as published by
+          the Free Software Foundation; either version 2 of the License, or
+          (at your option) any later version.
+
+          This program is distributed in the hope that it will be useful,
+          but WITHOUT ANY WARRANTY; without even the implied warranty of
+          MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+          GNU Library General Public License for more details.
+
+          You should have received a copy of the GNU Library General Public License
+          along with this program; if not, write to the Free Software
+          Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301, USA.
+
+          On Debian GNU/Linux systems, the complete text of the GNU Library
+          General Public License, version 2, can be found in
+          /usr/share/common-licenses/LGPL-2.
+  - license_expression: gpl-3.0-plus AND gpl-3.0-plus WITH tex-exception
+    detection_log:
+      - not-combined
+    matches:
+      - score: '100.0'
+        start_line: 489
+        end_line: 489
+        matched_length: 3
+        match_coverage: '100.0'
+        matcher: 1-hash
+        license_expression: gpl-3.0-plus
+        rule_identifier: gpl-3.0-plus_92.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0-plus_92.RULE
+        matched_text: 'License: gpl-3+'
+      - score: '100.0'
+        start_line: 490
+        end_line: 505
+        matched_length: 137
+        match_coverage: '100.0'
+        matcher: 1-hash
+        license_expression: gpl-3.0-plus WITH tex-exception
+        rule_identifier: gpl-3.0-plus_with_tex-exception_5.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0-plus_with_tex-exception_5.RULE
+        matched_text: |
+          This texinfo.tex file is free software: you can redistribute it and/or
+          modify it under the terms of the GNU General Public License as
+          published by the Free Software Foundation, either version 3 of the
+          License, or (at your option) any later version.
+
+          This texinfo.tex file is distributed in the hope that it will be
+          useful, but WITHOUT ANY WARRANTY; without even the implied warranty
+          of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+          General Public License for more details.
+
+          You should have received a copy of the GNU General Public License
+          along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+          As a special exception, when this file is read by TeX when processing
+          a Texinfo source document, you may use the result without
+          restriction.  (This has been our intent since Texinfo was invented.)
+  - license_expression: autoconf-simple-exception-2.0
+    detection_log:
+      - not-combined
+    matches:
+      - score: '100.0'
+        start_line: 525
+        end_line: 528
+        matched_length: 42
+        match_coverage: '100.0'
+        matcher: 1-hash
+        license_expression: autoconf-simple-exception-2.0
+        rule_identifier: autoconf-simple-exception-2.0.LICENSE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/autoconf-simple-exception-2.0.LICENSE
+        matched_text: |
+          As a special exception to the GNU General Public License, if you
+          distribute this file as part of a program that contains a
+          configuration script generated by Autoconf, you may include it under
+          the same distribution terms that you use for the rest of that program.
+  - license_expression: public-domain
+    detection_log:
+      - not-combined
+    matches:
+      - score: '100.0'
+        start_line: 533
+        end_line: 534
+        matched_length: 15
+        match_coverage: '100.0'
+        matcher: 1-hash
+        license_expression: public-domain
+        rule_identifier: public-domain_354.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/public-domain_354.RULE
+        matched_text: |
+          I believe that most files in debian/ hardly contains any creative
+          expression eligible for copyright.
+  - license_expression: gpl-2.0
+    detection_log:
+      - not-combined
+    matches:
+      - score: '100.0'
+        start_line: 539
+        end_line: 539
+        matched_length: 3
+        match_coverage: '100.0'
+        matcher: 1-hash
+        license_expression: gpl-2.0
+        rule_identifier: gpl-2.0_561.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0_561.RULE
+        matched_text: 'License: gpl-2'
+      - score: '100.0'
+        start_line: 540
+        end_line: 556
+        matched_length: 131
+        match_coverage: '100.0'
+        matcher: 1-hash
+        license_expression: gpl-2.0
+        rule_identifier: gpl-2.0_1155.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0_1155.RULE
+        matched_text: |
+          This program is free software; you can redistribute it and/or modify
+          it under the terms of the GNU General Public License as published by
+          the Free Software Foundation; version 2 dated June. 1991.
+
+          This program is distributed in the hope that it will be useful,
+          but WITHOUT ANY WARRANTY; without even the implied warranty of
+          MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+          GNU General Public License for more details.
+
+          You should have received a copy of the GNU General Public License
+          along with this program; if not, write to the Free Software
+          Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
+          02110-1301 USA.
+
+          On Debian GNU/Linux systems, the complete text of the GNU General
+          Public License, version 2, can be found in
+          /usr/share/common-licenses/GPL-2.
+  - license_expression: fsf-ap
+    detection_log:
+      - not-combined
+    matches:
+      - score: '100.0'
+        start_line: 565
+        end_line: 567
+        matched_length: 26
+        match_coverage: '100.0'
+        matcher: 1-hash
+        license_expression: fsf-ap
+        rule_identifier: fsf-ap_3.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/fsf-ap_3.RULE
+        matched_text: |
+          Copying and distribution of this file, with or without modification,
+          are permitted in any medium without royalty provided the copyright
+          notice and this notice are preserved.
+  - license_expression: lgpl-3.0-plus
+    detection_log:
+      - not-combined
+    matches:
+      - score: '100.0'
+        start_line: 569
+        end_line: 569
+        matched_length: 3
+        match_coverage: '100.0'
+        matcher: 1-hash
+        license_expression: lgpl-3.0-plus
+        rule_identifier: lgpl-3.0-plus_166.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-3.0-plus_166.RULE
+        matched_text: 'License: lgpl-3+'
+      - score: '100.0'
+        start_line: 570
+        end_line: 585
+        matched_length: 134
+        match_coverage: '100.0'
+        matcher: 1-hash
+        license_expression: lgpl-3.0-plus
+        rule_identifier: lgpl-3.0-plus_196.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-3.0-plus_196.RULE
+        matched_text: |
+          The nettle library is free software; you can redistribute it and/or modify
+          it under the terms of the GNU Lesser General Public License as published by
+          the Free Software Foundation; either version 3 of the License, or (at your
+          option) any later version.
+
+          GNU Nettle is distributed in the hope that it will be useful, but
+          WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY
+          or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU Lesser General Public
+          License for more details.
+
+          You should have received a copy of the GNU Lesser General Public
+          License along with this library; if not, see http://www.gnu.org/licenses/.
+
+          On Debian GNU/Linux systems, the complete text of the newest version
+          of the GNU Lesser General Public License can be found in
+          /usr/share/common-licenses/LGPL.
+  - license_expression: gpl-2.0-plus
+    detection_log:
+      - not-combined
+    matches:
+      - score: '100.0'
+        start_line: 587
+        end_line: 587
+        matched_length: 3
+        match_coverage: '100.0'
+        matcher: 1-hash
+        license_expression: gpl-2.0-plus
+        rule_identifier: gpl-2.0-plus_22.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_22.RULE
+        matched_text: 'License: gpl-2+'
+      - score: '100.0'
+        start_line: 588
+        end_line: 605
+        matched_length: 140
+        match_coverage: '100.0'
+        matcher: 1-hash
+        license_expression: gpl-2.0-plus
+        rule_identifier: gpl-2.0-plus_857.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_857.RULE
+        matched_text: |
+          This program is free software; you can redistribute it and/or modify
+          it under the terms of the GNU General Public License as published by
+          the Free Software Foundation; either version 2 of the License, or
+          (at your option) any later version.
+
+          GNU Nettle is distributed in the hope that it will be useful,
+          but WITHOUT ANY WARRANTY; without even the implied warranty of
+          MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+          GNU General Public License for more details.
+
+          You should have received a copy of the GNU General Public License
+          along with this program; if not, write to the Free Software
+          Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
+          02110-1301 USA.
+
+          On Debian GNU/Linux systems, the complete text of the newest version
+          of the GNU General Public License can be found in
+          /usr/share/common-licenses/GPL.
+  - license_expression: mit
+    detection_log:
+      - not-combined
+    matches:
+      - score: '100.0'
+        start_line: 608
+        end_line: 625
+        matched_length: 161
+        match_coverage: '100.0'
+        matcher: 1-hash
+        license_expression: mit
+        rule_identifier: mit.LICENSE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE
+        matched_text: |
+          Permission is hereby granted, free of charge, to any person obtaining a
+          copy of this software and associated documentation files (the
+          "Software"), to deal in the Software without restriction, including
+          without limitation the rights to use, copy, modify, merge, publish,
+          distribute, sublicense, and/or sell copies of the Software, and to
+          permit persons to whom the Software is furnished to do so, subject to
+          the following conditions:
+
+          The above copyright notice and this permission notice shall be included
+          in all copies or substantial portions of the Software.
+
+          THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
+          OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+          MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+          IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
+          CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
+          TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
+          SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+  - license_expression: ((gpl-2.0-plus OR gpl-3.0-plus) AND other-permissive AND public-domain)
+      AND public-domain AND lgpl-2.0-plus AND mit AND pycrypto AND lgpl-2.1-plus
+    detection_log:
+      - not-combined
+    matches:
+      - score: '100.0'
+        start_line: 10
+        end_line: 16
+        matched_length: 79
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: (gpl-2.0-plus OR gpl-3.0-plus) AND other-permissive AND public-domain
+        rule_identifier: gpl-2.0-plus_or_gpl-3.0-plus_and_other-permissive_and_public-domain_1.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_or_gpl-3.0-plus_and_other-permissive_and_public-domain_1.RULE
+        matched_text: |
+          Nettle is dual licenced under the GNU General Public License version
+          2 or later, and the GNU Lesser General Public License version 3 or
+          later.  When using Nettle, you must comply fully with all conditions
+          of at least one of these licenses. A few of the individual files are
+          licensed under more permissive terms, or in the public domain. To
+          find the current status of particular files, you have to read the
+          copyright notices at the top of the files.
+      - score: '100.0'
+        start_line: 47
+        end_line: 47
+        matched_length: 5
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: public-domain
+        rule_identifier: public-domain_15.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/public-domain_15.RULE
+        matched_text: Released into the public domain.
+      - score: '100.0'
+        start_line: 55
+        end_line: 55
+        matched_length: 8
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: lgpl-2.0-plus
+        rule_identifier: lgpl-2.0-plus_515.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0-plus_515.RULE
+        matched_text: released under the LGPL, version 2 or later.
+      - score: '100.0'
+        start_line: 60
+        end_line: 60
+        matched_length: 7
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: mit
+        rule_identifier: mit_1090.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_1090.RULE
+        matched_text: It is released under the MIT license.
+      - score: '100.0'
+        start_line: 64
+        end_line: 65
+        matched_length: 7
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: pycrypto
+        rule_identifier: pycrypto_1.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/pycrypto_1.RULE
+        matched_text: |
+          Python Cryptography
+              Toolkit license (essentially public domain).
+      - score: '100.0'
+        start_line: 69
+        end_line: 69
+        matched_length: 5
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: public-domain
+        rule_identifier: public-domain_15.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/public-domain_15.RULE
+        matched_text: Released into the public domain.
+      - score: '100.0'
+        start_line: 74
+        end_line: 74
+        matched_length: 5
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: public-domain
+        rule_identifier: public-domain_15.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/public-domain_15.RULE
+        matched_text: Released into the public domain.
+      - score: '100.0'
+        start_line: 81
+        end_line: 82
+        matched_length: 13
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: lgpl-2.1-plus
+        rule_identifier: lgpl-2.1-plus_389.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_389.RULE
+        matched_text: |
+          based on the code
+              in libgcrypt, copyright owned by the Free Software Foundation.
+      - score: '100.0'
+        start_line: 87
+        end_line: 87
+        matched_length: 6
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: public-domain
+        rule_identifier: public-domain_425.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/public-domain_425.RULE
+        matched_text: reference implementation (in the public domain),
+      - score: '100.0'
+        start_line: 92
+        end_line: 93
+        matched_length: 13
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: lgpl-2.1-plus
+        rule_identifier: lgpl-2.1-plus_389.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_389.RULE
+        matched_text: |
+          based on the code in
+              libgcrypt, copyright owned by the Free Software Foundation.
+      - score: '100.0'
+        start_line: 105
+        end_line: 105
+        matched_length: 5
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: public-domain
+        rule_identifier: public-domain_15.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/public-domain_15.RULE
+        matched_text: Released into the public domain.
+      - score: '100.0'
+        start_line: 106
+        end_line: 106
+        matched_length: 4
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: lgpl-2.0-plus
+        rule_identifier: lgpl-2.0-plus_465.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0-plus_465.RULE
+        matched_text: released under the LGPL.
 copyright: |
   © 2001-2020 Niels Möller
   Some parts are Copyright © the Free Software Foundation and various
@@ -253,544 +746,3 @@ copyright: |
   2002 Timshel Knoll <timshel@debian.org>
   2007 Magnus Holmgren
   2007 Magnus Holmgren
-matches:
-  - score: '100.0'
-    start_line: 276
-    end_line: 276
-    matcher: 1-hash
-    rule_length: 3
-    matched_length: 3
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: lgpl-2.0-plus_61.RULE
-    license_expression: lgpl-2.0-plus
-    is_license_text: no
-    is_license_notice: no
-    is_license_reference: no
-    is_license_tag: yes
-    is_license_intro: no
-    matched_text: 'License: lgpl-2+'
-  - score: '100.0'
-    start_line: 277
-    end_line: 293
-    matcher: 1-hash
-    rule_length: 143
-    matched_length: 143
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: lgpl-2.0-plus_460.RULE
-    license_expression: lgpl-2.0-plus
-    is_license_text: no
-    is_license_notice: yes
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      This program is free software; you can redistribute it and/or modify
-      it under the terms of the GNU Library General Public License as published by
-      the Free Software Foundation; either version 2 of the License, or
-      (at your option) any later version.
-
-      This program is distributed in the hope that it will be useful,
-      but WITHOUT ANY WARRANTY; without even the implied warranty of
-      MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-      GNU Library General Public License for more details.
-
-      You should have received a copy of the GNU Library General Public License
-      along with this program; if not, write to the Free Software
-      Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301, USA.
-
-      On Debian GNU/Linux systems, the complete text of the GNU Library
-      General Public License, version 2, can be found in
-      /usr/share/common-licenses/LGPL-2.
-  - score: '100.0'
-    start_line: 489
-    end_line: 489
-    matcher: 1-hash
-    rule_length: 3
-    matched_length: 3
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: gpl-3.0-plus_92.RULE
-    license_expression: gpl-3.0-plus
-    is_license_text: no
-    is_license_notice: no
-    is_license_reference: no
-    is_license_tag: yes
-    is_license_intro: no
-    matched_text: 'License: gpl-3+'
-  - score: '100.0'
-    start_line: 490
-    end_line: 505
-    matcher: 1-hash
-    rule_length: 137
-    matched_length: 137
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: gpl-3.0-plus_with_tex-exception_5.RULE
-    license_expression: gpl-3.0-plus WITH tex-exception
-    is_license_text: no
-    is_license_notice: yes
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      This texinfo.tex file is free software: you can redistribute it and/or
-      modify it under the terms of the GNU General Public License as
-      published by the Free Software Foundation, either version 3 of the
-      License, or (at your option) any later version.
-
-      This texinfo.tex file is distributed in the hope that it will be
-      useful, but WITHOUT ANY WARRANTY; without even the implied warranty
-      of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
-      General Public License for more details.
-
-      You should have received a copy of the GNU General Public License
-      along with this program.  If not, see <http://www.gnu.org/licenses/>.
-
-      As a special exception, when this file is read by TeX when processing
-      a Texinfo source document, you may use the result without
-      restriction.  (This has been our intent since Texinfo was invented.)
-  - score: '100.0'
-    start_line: 525
-    end_line: 528
-    matcher: 1-hash
-    rule_length: 42
-    matched_length: 42
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: autoconf-simple-exception-2.0.LICENSE
-    license_expression: autoconf-simple-exception-2.0
-    is_license_text: yes
-    is_license_notice: no
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      As a special exception to the GNU General Public License, if you
-      distribute this file as part of a program that contains a
-      configuration script generated by Autoconf, you may include it under
-      the same distribution terms that you use for the rest of that program.
-  - score: '100.0'
-    start_line: 533
-    end_line: 534
-    matcher: 1-hash
-    rule_length: 15
-    matched_length: 15
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: public-domain_354.RULE
-    license_expression: public-domain
-    is_license_text: no
-    is_license_notice: yes
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      I believe that most files in debian/ hardly contains any creative
-      expression eligible for copyright.
-  - score: '100.0'
-    start_line: 539
-    end_line: 539
-    matcher: 1-hash
-    rule_length: 3
-    matched_length: 3
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: gpl-2.0_561.RULE
-    license_expression: gpl-2.0
-    is_license_text: no
-    is_license_notice: no
-    is_license_reference: no
-    is_license_tag: yes
-    is_license_intro: no
-    matched_text: 'License: gpl-2'
-  - score: '100.0'
-    start_line: 540
-    end_line: 556
-    matcher: 1-hash
-    rule_length: 131
-    matched_length: 131
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: gpl-2.0_1155.RULE
-    license_expression: gpl-2.0
-    is_license_text: no
-    is_license_notice: yes
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      This program is free software; you can redistribute it and/or modify
-      it under the terms of the GNU General Public License as published by
-      the Free Software Foundation; version 2 dated June. 1991.
-
-      This program is distributed in the hope that it will be useful,
-      but WITHOUT ANY WARRANTY; without even the implied warranty of
-      MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-      GNU General Public License for more details.
-
-      You should have received a copy of the GNU General Public License
-      along with this program; if not, write to the Free Software
-      Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
-      02110-1301 USA.
-
-      On Debian GNU/Linux systems, the complete text of the GNU General
-      Public License, version 2, can be found in
-      /usr/share/common-licenses/GPL-2.
-  - score: '100.0'
-    start_line: 565
-    end_line: 567
-    matcher: 1-hash
-    rule_length: 26
-    matched_length: 26
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: fsf-ap_3.RULE
-    license_expression: fsf-ap
-    is_license_text: no
-    is_license_notice: yes
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      Copying and distribution of this file, with or without modification,
-      are permitted in any medium without royalty provided the copyright
-      notice and this notice are preserved.
-  - score: '100.0'
-    start_line: 569
-    end_line: 569
-    matcher: 1-hash
-    rule_length: 3
-    matched_length: 3
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: lgpl-3.0-plus_166.RULE
-    license_expression: lgpl-3.0-plus
-    is_license_text: no
-    is_license_notice: no
-    is_license_reference: no
-    is_license_tag: yes
-    is_license_intro: no
-    matched_text: 'License: lgpl-3+'
-  - score: '100.0'
-    start_line: 570
-    end_line: 585
-    matcher: 1-hash
-    rule_length: 134
-    matched_length: 134
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: lgpl-3.0-plus_196.RULE
-    license_expression: lgpl-3.0-plus
-    is_license_text: no
-    is_license_notice: yes
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      The nettle library is free software; you can redistribute it and/or modify
-      it under the terms of the GNU Lesser General Public License as published by
-      the Free Software Foundation; either version 3 of the License, or (at your
-      option) any later version.
-
-      GNU Nettle is distributed in the hope that it will be useful, but
-      WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY
-      or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU Lesser General Public
-      License for more details.
-
-      You should have received a copy of the GNU Lesser General Public
-      License along with this library; if not, see http://www.gnu.org/licenses/.
-
-      On Debian GNU/Linux systems, the complete text of the newest version
-      of the GNU Lesser General Public License can be found in
-      /usr/share/common-licenses/LGPL.
-  - score: '100.0'
-    start_line: 587
-    end_line: 587
-    matcher: 1-hash
-    rule_length: 3
-    matched_length: 3
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: gpl-2.0-plus_22.RULE
-    license_expression: gpl-2.0-plus
-    is_license_text: no
-    is_license_notice: no
-    is_license_reference: no
-    is_license_tag: yes
-    is_license_intro: no
-    matched_text: 'License: gpl-2+'
-  - score: '100.0'
-    start_line: 588
-    end_line: 605
-    matcher: 1-hash
-    rule_length: 140
-    matched_length: 140
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: gpl-2.0-plus_857.RULE
-    license_expression: gpl-2.0-plus
-    is_license_text: no
-    is_license_notice: yes
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      This program is free software; you can redistribute it and/or modify
-      it under the terms of the GNU General Public License as published by
-      the Free Software Foundation; either version 2 of the License, or
-      (at your option) any later version.
-
-      GNU Nettle is distributed in the hope that it will be useful,
-      but WITHOUT ANY WARRANTY; without even the implied warranty of
-      MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-      GNU General Public License for more details.
-
-      You should have received a copy of the GNU General Public License
-      along with this program; if not, write to the Free Software
-      Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
-      02110-1301 USA.
-
-      On Debian GNU/Linux systems, the complete text of the newest version
-      of the GNU General Public License can be found in
-      /usr/share/common-licenses/GPL.
-  - score: '100.0'
-    start_line: 608
-    end_line: 625
-    matcher: 1-hash
-    rule_length: 161
-    matched_length: 161
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: mit.LICENSE
-    license_expression: mit
-    is_license_text: yes
-    is_license_notice: no
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      Permission is hereby granted, free of charge, to any person obtaining a
-      copy of this software and associated documentation files (the
-      "Software"), to deal in the Software without restriction, including
-      without limitation the rights to use, copy, modify, merge, publish,
-      distribute, sublicense, and/or sell copies of the Software, and to
-      permit persons to whom the Software is furnished to do so, subject to
-      the following conditions:
-
-      The above copyright notice and this permission notice shall be included
-      in all copies or substantial portions of the Software.
-
-      THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
-      OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
-      MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
-      IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
-      CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
-      TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
-      SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-  - score: '100.0'
-    start_line: 10
-    end_line: 16
-    matcher: 2-aho
-    rule_length: 79
-    matched_length: 79
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: gpl-2.0-plus_or_gpl-3.0-plus_and_other-permissive_and_public-domain_1.RULE
-    license_expression: (gpl-2.0-plus OR gpl-3.0-plus) AND other-permissive AND public-domain
-    is_license_text: no
-    is_license_notice: yes
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      Nettle is dual licenced under the GNU General Public License version
-      2 or later, and the GNU Lesser General Public License version 3 or
-      later.  When using Nettle, you must comply fully with all conditions
-      of at least one of these licenses. A few of the individual files are
-      licensed under more permissive terms, or in the public domain. To
-      find the current status of particular files, you have to read the
-      copyright notices at the top of the files.
-  - score: '100.0'
-    start_line: 47
-    end_line: 47
-    matcher: 2-aho
-    rule_length: 5
-    matched_length: 5
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: public-domain_15.RULE
-    license_expression: public-domain
-    is_license_text: yes
-    is_license_notice: no
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: Released into the public domain.
-  - score: '100.0'
-    start_line: 55
-    end_line: 55
-    matcher: 2-aho
-    rule_length: 8
-    matched_length: 8
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: lgpl-2.0-plus_515.RULE
-    license_expression: lgpl-2.0-plus
-    is_license_text: no
-    is_license_notice: yes
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: released under the LGPL, version 2 or later.
-  - score: '100.0'
-    start_line: 60
-    end_line: 60
-    matcher: 2-aho
-    rule_length: 7
-    matched_length: 7
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: mit_1090.RULE
-    license_expression: mit
-    is_license_text: no
-    is_license_notice: yes
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: It is released under the MIT license.
-  - score: '100.0'
-    start_line: 64
-    end_line: 65
-    matcher: 2-aho
-    rule_length: 7
-    matched_length: 7
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: pycrypto_1.RULE
-    license_expression: pycrypto
-    is_license_text: no
-    is_license_notice: no
-    is_license_reference: yes
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      Python Cryptography
-          Toolkit license (essentially public domain).
-  - score: '100.0'
-    start_line: 69
-    end_line: 69
-    matcher: 2-aho
-    rule_length: 5
-    matched_length: 5
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: public-domain_15.RULE
-    license_expression: public-domain
-    is_license_text: yes
-    is_license_notice: no
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: Released into the public domain.
-  - score: '100.0'
-    start_line: 74
-    end_line: 74
-    matcher: 2-aho
-    rule_length: 5
-    matched_length: 5
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: public-domain_15.RULE
-    license_expression: public-domain
-    is_license_text: yes
-    is_license_notice: no
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: Released into the public domain.
-  - score: '100.0'
-    start_line: 81
-    end_line: 82
-    matcher: 2-aho
-    rule_length: 13
-    matched_length: 13
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: lgpl-2.1-plus_389.RULE
-    license_expression: lgpl-2.1-plus
-    is_license_text: no
-    is_license_notice: yes
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      based on the code
-          in libgcrypt, copyright owned by the Free Software Foundation.
-  - score: '100.0'
-    start_line: 87
-    end_line: 87
-    matcher: 2-aho
-    rule_length: 6
-    matched_length: 6
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: public-domain_425.RULE
-    license_expression: public-domain
-    is_license_text: yes
-    is_license_notice: no
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: reference implementation (in the public domain),
-  - score: '100.0'
-    start_line: 92
-    end_line: 93
-    matcher: 2-aho
-    rule_length: 13
-    matched_length: 13
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: lgpl-2.1-plus_389.RULE
-    license_expression: lgpl-2.1-plus
-    is_license_text: no
-    is_license_notice: yes
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      based on the code in
-          libgcrypt, copyright owned by the Free Software Foundation.
-  - score: '100.0'
-    start_line: 105
-    end_line: 105
-    matcher: 2-aho
-    rule_length: 5
-    matched_length: 5
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: public-domain_15.RULE
-    license_expression: public-domain
-    is_license_text: yes
-    is_license_notice: no
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: Released into the public domain.
-  - score: '100.0'
-    start_line: 106
-    end_line: 106
-    matcher: 2-aho
-    rule_length: 4
-    matched_length: 4
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: lgpl-2.0-plus_465.RULE
-    license_expression: lgpl-2.0-plus
-    is_license_text: no
-    is_license_notice: yes
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: released under the LGPL.

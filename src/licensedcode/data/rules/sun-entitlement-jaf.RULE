@@ -1,3 +1,12 @@
+---
+license_expression: sun-entitlement-jaf
+is_license_text: yes
+minimum_coverage: 60
+ignorable_urls:
+    - http://www.java.net/
+    - http://www.sun.com/service/servicelist
+---
+
 A. Sun Microsystems, Inc. ("Sun") ENTITLEMENT for SOFTWARE
 
 Licensee/Company: Entity receiving Software.

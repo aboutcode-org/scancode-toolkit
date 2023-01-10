@@ -1,3 +1,22 @@
+---
+key: codexia
+short_name: Codexia License
+name: Codexia License
+category: Proprietary Free
+owner: Codexia
+spdx_license_key: LicenseRef-scancode-codexia
+ignorable_copyrights:
+    - Mike Ryan (mike@codexia.com) Copyright (c) 2000
+    - portions (c) Allen Denver
+ignorable_holders:
+    - Allen Denver
+    - Mike Ryan
+ignorable_urls:
+    - http://www.codexia.com/
+ignorable_emails:
+    - mike@codexia.com
+---
+
 By Mike Ryan (mike@codexia.com)
 Copyright (c) 2000, portions (c) Allen Denver
 07.30.2000

@@ -1,4 +1,11 @@
-    Automated Options is free software.
+---
+license_expression: gpl-2.0-plus WITH autoopts-exception-2.0
+is_license_notice: yes
+referenced_filenames:
+    - COPYING
+---
+
+Automated Options is free software.
     You may redistribute it and/or modify it under the terms of the
     GNU General Public License, as published by the Free Software
     Foundation; either version 2, or (at your option) any later version.

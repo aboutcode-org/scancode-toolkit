@@ -1,3 +1,8 @@
+---
+license_expression: proprietary-license
+is_license_notice: yes
+---
+
 Reproduction in whole or in part is prohibited without the prior
 written consent of the copyright owner. 
 
@@ -34,4 +39,4 @@ requires or otherwise is based on the work.
 
 This software is provided for ease of recompilation only. 
 Modification and reverse engineering of this software are strictly
-prohibited. 
+prohibited.

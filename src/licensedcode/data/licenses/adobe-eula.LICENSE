@@ -1,3 +1,19 @@
+---
+key: adobe-eula
+short_name: Adobe EULA
+name: Adobe End User License Agreement
+category: Commercial
+owner: Adobe Systems
+homepage_url: http://www.adobe.com/products/eulas/
+notes: |
+    This is a generic license for a large number of Adobe EULAs that are very
+    long and proprietary.
+spdx_license_key: LicenseRef-scancode-adobe-eula
+minimum_coverage: 70
+ignorable_urls:
+    - http://www.adobe.com/products/eulas/
+---
+
 Patents pending in the United States and 
 other countries. Adobe and Flash are either trademarks or registered 
 trademarks in the United States and/or other countries.

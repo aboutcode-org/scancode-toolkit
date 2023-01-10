@@ -1,3 +1,12 @@
+---
+license_expression: gpl-3.0
+is_license_notice: yes
+relevance: 100
+notes: found in https://github.com/nexB/scancode-toolkit/issues/508 cloudinit
+ignorable_urls:
+    - https://www.gnu.org/licenses/
+---
+
 This program is free software: you can redistribute it and/or modify it under
 the terms of the GNU General Public License version 3, as published by the
 Free Software Foundation.

@@ -1,3 +1,12 @@
+---
+license_expression: lgpl-2.0
+is_license_notice: yes
+relevance: 100
+minimum_coverage: 90
+referenced_filenames:
+    - COPYING.LIB
+---
+
 The C library "libftdi" is distributed under the
 GNU Library General Public License version 2.
 

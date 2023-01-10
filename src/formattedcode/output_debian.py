@@ -6,17 +6,17 @@
 # See https://github.com/nexB/scancode-toolkit for support or download.
 # See https://aboutcode.org for more information about nexB OSS projects.
 
-from debian_inspector.copyright import CopyrightFilesParagraph
-from debian_inspector.copyright import CopyrightHeaderParagraph
-from debian_inspector.copyright import DebianCopyright
-from license_expression import combine_expressions
 
 from commoncode.cliutils import PluggableCommandLineOption
 from commoncode.cliutils import OUTPUT_GROUP
-from formattedcode import FileOptionType
+from debian_inspector.copyright import CopyrightFilesParagraph
+from debian_inspector.copyright import CopyrightHeaderParagraph
+from debian_inspector.copyright import DebianCopyright
 from plugincode.output import output_impl
 from plugincode.output import OutputPlugin
 
+from formattedcode import FileOptionType
+from licensedcode.detection import get_matches_from_detection_mappings
 from scancode import notice
 
 """
@@ -105,7 +105,7 @@ def build_copyright_paragraphs(codebase, **kwargs):
         if scanned_file['type'] == 'directory':
             continue
         dfiles = scanned_file['path']
-        dlicense = build_license(scanned_file)
+        dlicense = build_license(codebase, scanned_file)
         dcopyright = build_copyright_field(scanned_file)
 
         file_para = CopyrightFilesParagraph.from_dict(dict(
@@ -131,27 +131,25 @@ def build_copyright_field(scanned_file):
     return '\n'.join(statements)
 
 
-def build_license(scanned_file):
+def build_license(codebase, scanned_file):
     """
     Return Debian-like text where the first line is the expression and the
     remaining lines are the license text from licenses detected in
     `scanned_file` or None if no license is detected.
     """
     # TODO: filter based on license scores and/or add warnings and or detailed comments with that info
-    license_expressions = scanned_file.get('license_expressions', [])
-    if not license_expressions:
-        return
-
     # TODO: use either Debian license symbols or SPDX
     # TODO: convert license expression to Debian style of expressions
-    expression = str(combine_expressions(license_expressions, unique=False))
+    expression = scanned_file.get('detected_license_expression', None)
+    if not expression:
+        return
 
-    licenses = scanned_file.get('licenses', [])
-    text = '\n'.join(get_texts(licenses))
+    licenses = scanned_file.get('license_detections', [])
+    text = '\n'.join(get_texts(codebase, licenses))
     return f'{expression}\n{text}'
 
 
-def get_texts(detected_licenses):
+def get_texts(codebase, detected_licenses):
     """
     Yield license texts detected in this file.
 
@@ -179,9 +177,10 @@ def get_texts(detected_licenses):
 
     # set of (start line, end line, matched_rule identifier)
     seen = set()
-    for lic in detected_licenses:
-        key = lic['start_line'], lic['end_line'], lic['matched_rule']['identifier']
+    for lic in get_matches_from_detection_mappings(detected_licenses):
+        matched_text = lic.get('matched_text', None)
+        key = lic['start_line'], lic['end_line'], lic['rule_identifier']
         if key not in seen:
-            yield lic['matched_text']
+            if matched_text != None:
+                yield matched_text
             seen.add(key)
-

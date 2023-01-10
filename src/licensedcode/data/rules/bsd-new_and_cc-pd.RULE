@@ -1,4 +1,11 @@
-  software in the
+---
+license_expression: bsd-new AND cc-pd
+is_license_notice: yes
+ignorable_urls:
+    - http://creativecommons.org/licenses/publicdomain/
+---
+
+software in the
  * public domain.  You can find his original copyright below.  Please,
  * aware that the code as part of  is governed by the 3-clause
  * BSD license above.

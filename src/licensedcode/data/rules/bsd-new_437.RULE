@@ -1,3 +1,11 @@
+---
+license_expression: bsd-new
+is_license_notice: yes
+relevance: 100
+ignorable_urls:
+    - http://www.opensource.org/licenses/bsd-license.php
+---
+
 This software is distributable under the BSD license. See the terms of the
 BSD license in the documentation provided with this software.
 

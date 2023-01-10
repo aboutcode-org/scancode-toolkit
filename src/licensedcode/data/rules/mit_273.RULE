@@ -1,1 +1,7 @@
- { "type": "MIT",
+---
+license_expression: mit
+is_license_tag: yes
+relevance: 90
+---
+
+{ "type": "MIT",

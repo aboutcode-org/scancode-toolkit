@@ -1,1 +1,8 @@
+---
+license_expression: bsd-new OR gpl-1.0-plus
+is_license_tag: yes
+relevance: 90
+notes: Dual BSD/GPL, typical in LKMs MODULE_LICENSE
+---
+
 Dual BSD/GPL

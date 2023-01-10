@@ -1,3 +1,10 @@
+---
+license_expression: python
+is_license_notice: yes
+ignorable_urls:
+    - http://www.pythonlabs.com/logos.html
+---
+
 1. This LICENSE AGREEMENT is between BeOpen.com ("BeOpen"), having an
 office at 160 Saratoga Avenue, Santa Clara, CA 95051, and the
 Individual or Organization ("Licensee") accessing and otherwise using

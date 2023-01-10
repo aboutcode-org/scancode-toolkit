@@ -1,3 +1,9 @@
+---
+license_expression: proprietary-license
+is_license_notice: yes
+notes: a fairly complicated license that looks a bit like a bsd. from https://github.com/SBPrime/AsyncWorldEdit/wiki/License
+---
+
 Redistribution in source, use in source and binary forms, with or without
 modification, are permitted free of charge provided that the following
 conditions are met:

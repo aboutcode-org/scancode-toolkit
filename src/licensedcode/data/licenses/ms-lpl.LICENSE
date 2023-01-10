@@ -1,3 +1,23 @@
+---
+key: ms-lpl
+short_name: MS-LPL
+name: Microsoft Limited Permissive License (MS-LPL)
+category: Permissive
+owner: Microsoft
+homepage_url: http://web.archive.org/web/20061122070300/http://www.microsoft.com/resources/sharedsource/licensingbasics/limitedpermissivelicense.mspx
+notes: it was name "Microsoft Limited Permissive License" and later renamed by Microsoft
+spdx_license_key: MS-LPL
+other_spdx_license_keys:
+    - LicenseRef-scancode-ms-lpl
+text_urls:
+    - http://web.archive.org/web/20061122070300/http://www.microsoft.com/resources/sharedsource/licensingbasics/limitedpermissivelicense.mspx
+other_urls:
+    - https://web.archive.org/web/20091211214028/http://msdn.microsoft.com/en-us/cc300389.aspx#MLPL
+    - https://www.openhub.net/licenses/mslpl
+    - https://github.com/gabegundy/atlserver/blob/master/License.txt
+    - https://en.wikipedia.org/wiki/Shared_Source_Initiative#Microsoft_Limited_Public_License_(Ms-LPL)
+---
+
 Microsoft Limited Permissive License (MS-LPL)
 Published: October 12, 2006
 

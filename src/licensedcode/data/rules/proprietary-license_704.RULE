@@ -1,3 +1,14 @@
+---
+license_expression: proprietary-license
+is_license_text: yes
+ignorable_copyrights:
+    - Copyrighted IP YOUR COMPANY NAME
+ignorable_holders:
+    - IP YOUR COMPANY NAME
+ignorable_emails:
+    - ip@x12.org
+---
+
 X12 License
 
 All X12 work products are copyrighted. Any use of any X12 work product must be compliant with US Copyright laws and X12 Intellectual Property policies.

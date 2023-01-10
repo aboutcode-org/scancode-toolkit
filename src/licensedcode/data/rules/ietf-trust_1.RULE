@@ -1,3 +1,25 @@
+---
+license_expression: ietf-trust
+is_license_text: yes
+ignorable_copyrights:
+    - Copyright (c) IETF Trust
+    - Copyright (c) IETF Trust and the persons identified as the document authors
+ignorable_holders:
+    - IETF Trust
+    - IETF Trust and the persons identified as the document authors
+ignorable_authors:
+    - IETF Trust
+    - the IETF Trust
+ignorable_urls:
+    - http://opensource.org/licenses/bsd-license.php
+    - http://trustee.ietf.org/license-info
+    - http://trustee.ietf.org/policyandprocedures.html
+    - http://www.ietf.org/ipr
+ignorable_emails:
+    - ietf-ipr@ietf.org
+    - trustees@ietf.org
+---
+
 1. Background 
 
 The IETF Trust was formed on December 15, 2005, for, among other things, the purpose of acquiring, holding, maintaining and licensing certain existing and future intellectual property used in connection with the Internet standards process and its administration, for the advancement of science and technology associated with the Internet and related technology. Accordingly, pursuant to RFC 5378, Contributors grant the IETF Trust certain licenses with respect to their IETF Contributions. In RFC 5377, the IETF Community has provided the IETF Trust with guidance regarding licenses that the IETF Trust should grant to others with respect to such IETF Contributions and IETF Documents. These Legal Provisions describe the rights and licenses that the IETF Trust grants to others with respect to such IETF Contributions and IETF Documents; as well as certain restrictions, limitations and notices relating to IETF Documents. These Legal Provisions also apply to other document streams that have requested that the IETF Trust act as licensing administrator, as described in Section 8 below. Capitalized terms used in these Legal Provisions that are not otherwise defined have the meanings set forth in RFC 5378.
@@ -289,4 +311,4 @@ licensing administrator for the IRTF Document Stream and that these Legal Provis
 applied to documents submitted and published in the IRTF Document Stream following 
 December 28, 2009.  Section 4 of these Legal Provisions shall not apply to documents in the 
 IRTF Document Stream, and all references to Section 4 hereof shall be disregarded with respect 
-to documents in the IRTF Document Stream. 
+to documents in the IRTF Document Stream.

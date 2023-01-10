@@ -1,3 +1,16 @@
+---
+key: ecma-no-patent
+short_name: Ecma no patent notice
+name: Ecma no patent notice
+category: Proprietary Free
+owner: Ecma International
+homepage_url: http://www.ecma-international.org/memento/codeofconduct.htm
+is_exception: yes
+spdx_license_key: LicenseRef-scancode-ecma-no-patent
+ignorable_urls:
+    - http://www.ecma-international.org/memento/codeofconduct.htm
+---
+
 This Software may be subject to third party rights (rights from parties other than
 Ecma International), including patent rights, and no licenses under such third
 party rights are granted under this license even if the third party concerned is
@@ -6,4 +19,4 @@ a member of Ecma International.
 SEE THE ECMA CODE OF CONDUCT IN PATENT MATTERS
 AVAILABLE AT http://www.ecma-international.org/memento/codeofconduct.htm FOR
 INFORMATION REGARDING THE LICENSING OF PATENT CLAIMS THAT ARE REQUIRED TO
-IMPLEMENT ECMA INTERNATIONAL STANDARDS*. 
+IMPLEMENT ECMA INTERNATIONAL STANDARDS*.

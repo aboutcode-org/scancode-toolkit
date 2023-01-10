@@ -1,3 +1,15 @@
+---
+key: brian-gladman
+short_name: Brian Gladman License
+name: Brian Gladman License
+category: Permissive
+owner: Brian Gladman
+homepage_url: http://www.gladman.me.uk/AES
+spdx_license_key: LicenseRef-scancode-brian-gladman
+text_urls:
+    - http://gladman.plushost.co.uk/oldsite/AES/aes-src-12-09-11.zip
+---
+
 The redistribution and use of this software (with or without changes)
 is allowed without the payment of fees or royalties provided that:
 

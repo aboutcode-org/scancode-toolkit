@@ -1,3 +1,19 @@
+---
+key: x11-dsc
+short_name: X11-Style (DSC Technologies)
+name: X11-Style (DSC Technologies)
+category: Permissive
+owner: Alcatel-Lucent
+spdx_license_key: LicenseRef-scancode-x11-dsc
+minimum_coverage: 90
+ignorable_copyrights:
+    - Copyright 1997 DSC Technologies Corporation
+    - copyrighted by DSC Technologies
+ignorable_holders:
+    - DSC Technologies
+    - DSC Technologies Corporation
+---
+
 This software is copyrighted by DSC Technologies and private individual
 contributors. The copyright holder is specifically listed in the header of each
 file. The following terms apply to all files associated with the software unless

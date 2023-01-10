@@ -1,4 +1,10 @@
-                         SAX COPYRIGHT STATUS
+---
+license_expression: sax-pd
+is_license_notice: yes
+relevance: 100
+---
+
+SAX COPYRIGHT STATUS
 
 Version 1.0 of the Simple API for XML (SAX), created collectively by
 the membership of the XML-DEV mailing list, is hereby released into
@@ -32,4 +38,3 @@ data being rendered inaccurate or losses sustained by you or third
 parties or a failure of the SAX to operate with any other programs),
 even if such holder or other party has been advised of the possibility
 of such damages.
-

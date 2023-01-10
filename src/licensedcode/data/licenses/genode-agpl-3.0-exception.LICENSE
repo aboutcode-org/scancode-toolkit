@@ -1,3 +1,19 @@
+---
+key: genode-agpl-3.0-exception
+short_name: Genode exception to AGPL 3.0
+name: Genode exception to AGPL 3.0
+category: Copyleft Limited
+owner: Genode Labs
+homepage_url: https://genode.org/about/LICENSE
+is_exception: yes
+spdx_license_key: LicenseRef-scancode-genode-agpl-3.0-exception
+text_urls:
+    - https://github.com/genodelabs/genode/blob/e8acc5eabc447fb5da01d109d96988cd21962c56/LICENSE
+    - https://github.com/genodelabs/genode/blob/master/LICENSE
+ignorable_urls:
+    - https://opensource.org/licenses
+    - https://www.gnu.org/licenses/license-list.en.html
+---
 
                         Linking exception clause
 
@@ -33,4 +49,3 @@
 
   [1] https://opensource.org/licenses
   [2] https://www.gnu.org/licenses/license-list.en.html
-

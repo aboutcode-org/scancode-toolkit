@@ -1,3 +1,12 @@
+---
+license_expression: lgpl-2.1 AND patent-disclaimer
+is_license_notice: yes
+notes: Seen in libdwarf
+ignorable_urls:
+    - http://oss.sgi.com/projects/GenInfo/NoticeExplan
+    - http://www.sgi.com/
+---
+
 This program is free software; you can redistribute it and/or modify it
   under the terms of {{ version 2.1 of the GNU Lesser General Public License }}
   as published by the Free Software Foundation.

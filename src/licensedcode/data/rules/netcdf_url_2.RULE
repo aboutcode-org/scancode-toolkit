@@ -1,1 +1,9 @@
+---
+license_expression: netcdf
+is_license_reference: yes
+relevance: 95
+ignorable_urls:
+    - https://spdx.org/licenses/netcdf.html
+---
+
 https://spdx.org/licenses/netcdf.html

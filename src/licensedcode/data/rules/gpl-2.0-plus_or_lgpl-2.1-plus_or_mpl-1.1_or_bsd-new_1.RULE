@@ -1,5 +1,11 @@
+---
+license_expression: gpl-2.0-plus OR lgpl-2.1-plus OR mpl-1.1 OR bsd-new
+is_license_notice: yes
+minimum_coverage: 90
+---
+
 This module may be used under the terms of either the GNU General
 Public License version 2 or later, the GNU Lesser General Public
 License version 2.1 or later, the Mozilla Public License version
 1.1 or the BSD License. The exact terms of either license are
-distributed along with this module. 
+distributed along with this module.

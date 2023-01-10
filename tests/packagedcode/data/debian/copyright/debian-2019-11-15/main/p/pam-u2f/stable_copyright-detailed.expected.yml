@@ -1,4 +1,3 @@
-primary_license: bsd-simplified
 declared_license:
   - BSD-2-clause
   - BSD-2-clause
@@ -10,9 +9,159 @@ declared_license:
   - GPL-2+
   - GPL-3+
   - BSD-2-clause
-license_expression: bsd-simplified AND bsd-simplified AND (gpl-2.0-plus AND gpl-2.0-plus) AND
-  (gpl-2.0-plus AND gpl-2.0-plus) AND fsf-unlimited AND (gpl-3.0-plus AND gpl-3.0-plus) AND
-  gpl-2.0-plus WITH libtool-exception-2.0
+declared_license_expression: bsd-simplified
+declared_license_expression_spdx: BSD-2-Clause
+other_license_expression: bsd-simplified AND bsd-simplified AND (gpl-2.0-plus AND gpl-2.0-plus)
+  AND (gpl-2.0-plus AND gpl-2.0-plus) AND fsf-unlimited AND (gpl-3.0-plus AND gpl-3.0-plus)
+  AND gpl-2.0-plus WITH libtool-exception-2.0
+other_license_expression_spdx: BSD-2-Clause AND BSD-2-Clause AND (GPL-2.0-or-later AND GPL-2.0-or-later)
+  AND (GPL-2.0-or-later AND GPL-2.0-or-later) AND FSFULLR AND (GPL-3.0-or-later AND GPL-3.0-or-later)
+  AND GPL-2.0-or-later WITH Libtool-exception
+license_detections: []
+other_license_detections:
+  - license_expression: fsf-unlimited
+    detection_log:
+      - not-combined
+    matches:
+      - score: '100.0'
+        start_line: 27
+        end_line: 29
+        matched_length: 29
+        match_coverage: '100.0'
+        matcher: 1-hash
+        license_expression: fsf-unlimited
+        rule_identifier: fsf-unlimited.LICENSE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/fsf-unlimited.LICENSE
+        matched_text: |
+          This file is free software; the Free Software Foundation gives
+          unlimited permission to copy and/or distribute it, with or without
+          modifications, as long as this notice is preserved.
+  - license_expression: gpl-2.0-plus WITH libtool-exception-2.0
+    detection_log:
+      - not-combined
+    matches:
+      - score: '100.0'
+        start_line: 39
+        end_line: 51
+        matched_length: 113
+        match_coverage: '100.0'
+        matcher: 1-hash
+        license_expression: gpl-2.0-plus WITH libtool-exception-2.0
+        rule_identifier: gpl-2.0-plus_with_libtool-exception-2.0_8.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_with_libtool-exception-2.0_8.RULE
+        matched_text: |
+          GNU Libtool is free software; you can redistribute it and/or modify
+          it under the terms of the GNU General Public License as published by
+          the Free Software Foundation; either version 2 of the License, or
+          (at your option) any later version.
+
+          As a special exception to the GNU General Public License,
+          if you distribute this file as part of a program or library that
+          is built using GNU Libtool, you may include this file under the
+          same distribution terms that you use for the rest of that program.
+
+          On Debian systems, the full text of the GNU General Public
+          License version 2 can be found in the file
+          `/usr/share/common-licenses/GPL-2'.
+  - license_expression: gpl-2.0-plus
+    detection_log:
+      - not-combined
+    matches:
+      - score: '100.0'
+        start_line: 54
+        end_line: 54
+        matched_length: 3
+        match_coverage: '100.0'
+        matcher: 1-hash
+        license_expression: gpl-2.0-plus
+        rule_identifier: gpl-2.0-plus_22.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_22.RULE
+        matched_text: 'License: gpl-2+'
+      - score: '100.0'
+        start_line: 55
+        end_line: 61
+        matched_length: 66
+        match_coverage: '100.0'
+        matcher: 1-hash
+        license_expression: gpl-2.0-plus
+        rule_identifier: gpl-2.0-plus_842.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_842.RULE
+        matched_text: |
+          This program is free software; you can redistribute it and/or modify it under
+          the terms of the GNU General Public License as published by the Free Software
+          Foundation; either version 2 of the License, or (at your option) any later
+          version.
+
+          On Debian systems, the complete text of the GNU General Public License version 2
+          can be found in /usr/share/common-licenses/GPL-2.
+  - license_expression: gpl-3.0-plus
+    detection_log:
+      - not-combined
+    matches:
+      - score: '100.0'
+        start_line: 63
+        end_line: 63
+        matched_length: 3
+        match_coverage: '100.0'
+        matcher: 1-hash
+        license_expression: gpl-3.0-plus
+        rule_identifier: gpl-3.0-plus_92.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0-plus_92.RULE
+        matched_text: 'License: gpl-3+'
+      - score: '100.0'
+        start_line: 64
+        end_line: 70
+        matched_length: 68
+        match_coverage: '100.0'
+        matcher: 1-hash
+        license_expression: gpl-3.0-plus
+        rule_identifier: gpl-3.0-plus_387.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0-plus_387.RULE
+        matched_text: |
+          This file is free software: you can redistribute it and/or modify
+          it under the terms of the GNU General Public License as published by
+          the Free Software Foundation, either version 3 of the License, or
+          (at your option) any later version.
+
+          On Debian systems, the full text of the GNU General Public License version 3
+          can be found in the file `/usr/share/common-licenses/GPL-3'.
+  - license_expression: bsd-simplified
+    detection_log:
+      - not-combined
+    matches:
+      - score: '100.0'
+        start_line: 73
+        end_line: 95
+        matched_length: 183
+        match_coverage: '100.0'
+        matcher: 1-hash
+        license_expression: bsd-simplified
+        rule_identifier: bsd-simplified_5.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-simplified_5.RULE
+        matched_text: |
+          Redistribution and use in source and binary forms, with or without
+          modification, are permitted provided that the following conditions are
+          met:
+
+             * Redistributions of source code must retain the above copyright
+               notice, this list of conditions and the following disclaimer.
+
+             * Redistributions in binary form must reproduce the above
+               copyright notice, this list of conditions and the following
+               disclaimer in the documentation and/or other materials provided
+               with the distribution.
+
+          THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+          "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+          LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+          A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
+          OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+          SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+          LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+          DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+          THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+          (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+          OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 copyright: |
   Copyright (c) 2006-2018 Yubico AB
   2014-2016 Yubico AB
@@ -25,169 +174,3 @@ copyright: |
   2011, Maarten Bosmans <mkbosmans@gmail.com>
   2008, Guido U. Draheim <guidod@gmx.de>
   1996-2017, Free Software Foundation, Inc.
-matches:
-  - score: '100.0'
-    start_line: 27
-    end_line: 29
-    matcher: 1-hash
-    rule_length: 29
-    matched_length: 29
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: fsf-unlimited.LICENSE
-    license_expression: fsf-unlimited
-    is_license_text: yes
-    is_license_notice: no
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      This file is free software; the Free Software Foundation gives
-      unlimited permission to copy and/or distribute it, with or without
-      modifications, as long as this notice is preserved.
-  - score: '100.0'
-    start_line: 39
-    end_line: 51
-    matcher: 1-hash
-    rule_length: 113
-    matched_length: 113
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: gpl-2.0-plus_with_libtool-exception-2.0_8.RULE
-    license_expression: gpl-2.0-plus WITH libtool-exception-2.0
-    is_license_text: no
-    is_license_notice: yes
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      GNU Libtool is free software; you can redistribute it and/or modify
-      it under the terms of the GNU General Public License as published by
-      the Free Software Foundation; either version 2 of the License, or
-      (at your option) any later version.
-
-      As a special exception to the GNU General Public License,
-      if you distribute this file as part of a program or library that
-      is built using GNU Libtool, you may include this file under the
-      same distribution terms that you use for the rest of that program.
-
-      On Debian systems, the full text of the GNU General Public
-      License version 2 can be found in the file
-      `/usr/share/common-licenses/GPL-2'.
-  - score: '100.0'
-    start_line: 54
-    end_line: 54
-    matcher: 1-hash
-    rule_length: 3
-    matched_length: 3
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: gpl-2.0-plus_22.RULE
-    license_expression: gpl-2.0-plus
-    is_license_text: no
-    is_license_notice: no
-    is_license_reference: no
-    is_license_tag: yes
-    is_license_intro: no
-    matched_text: 'License: gpl-2+'
-  - score: '100.0'
-    start_line: 55
-    end_line: 61
-    matcher: 1-hash
-    rule_length: 66
-    matched_length: 66
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: gpl-2.0-plus_842.RULE
-    license_expression: gpl-2.0-plus
-    is_license_text: no
-    is_license_notice: yes
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      This program is free software; you can redistribute it and/or modify it under
-      the terms of the GNU General Public License as published by the Free Software
-      Foundation; either version 2 of the License, or (at your option) any later
-      version.
-
-      On Debian systems, the complete text of the GNU General Public License version 2
-      can be found in /usr/share/common-licenses/GPL-2.
-  - score: '100.0'
-    start_line: 63
-    end_line: 63
-    matcher: 1-hash
-    rule_length: 3
-    matched_length: 3
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: gpl-3.0-plus_92.RULE
-    license_expression: gpl-3.0-plus
-    is_license_text: no
-    is_license_notice: no
-    is_license_reference: no
-    is_license_tag: yes
-    is_license_intro: no
-    matched_text: 'License: gpl-3+'
-  - score: '100.0'
-    start_line: 64
-    end_line: 70
-    matcher: 1-hash
-    rule_length: 68
-    matched_length: 68
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: gpl-3.0-plus_387.RULE
-    license_expression: gpl-3.0-plus
-    is_license_text: no
-    is_license_notice: yes
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      This file is free software: you can redistribute it and/or modify
-      it under the terms of the GNU General Public License as published by
-      the Free Software Foundation, either version 3 of the License, or
-      (at your option) any later version.
-
-      On Debian systems, the full text of the GNU General Public License version 3
-      can be found in the file `/usr/share/common-licenses/GPL-3'.
-  - score: '100.0'
-    start_line: 73
-    end_line: 95
-    matcher: 1-hash
-    rule_length: 183
-    matched_length: 183
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: bsd-simplified_5.RULE
-    license_expression: bsd-simplified
-    is_license_text: yes
-    is_license_notice: no
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      Redistribution and use in source and binary forms, with or without
-      modification, are permitted provided that the following conditions are
-      met:
-
-         * Redistributions of source code must retain the above copyright
-           notice, this list of conditions and the following disclaimer.
-
-         * Redistributions in binary form must reproduce the above
-           copyright notice, this list of conditions and the following
-           disclaimer in the documentation and/or other materials provided
-           with the distribution.
-
-      THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
-      "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
-      LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
-      A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
-      OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
-      SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
-      LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
-      DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
-      THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
-      (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
-      OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.

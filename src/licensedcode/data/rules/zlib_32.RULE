@@ -1,3 +1,10 @@
+---
+license_expression: zlib
+is_license_reference: yes
+relevance: 100
+minimum_coverage: 100
+---
+
 For conditions of distribution and use, see copyright notice in zlib.h
 
 Pascal translation

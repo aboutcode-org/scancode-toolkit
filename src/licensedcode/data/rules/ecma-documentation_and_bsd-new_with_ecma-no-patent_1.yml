@@ -1,5 +1,0 @@
-license_expression: ecma-documentation AND bsd-new WITH ecma-no-patent
-is_license_text: yes
-minimum_coverage: 70
-ignorable_urls:
-    - http://www.ecma-international.org/memento/codeofconduct.htm

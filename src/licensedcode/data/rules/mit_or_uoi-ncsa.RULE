@@ -1,3 +1,9 @@
+---
+license_expression: mit OR uoi-ncsa
+is_license_notice: yes
+minimum_coverage: 90
+---
+
 The libc++ library is dual licensed under both the University of Illinois
 "BSD-Like" license and the MIT license.  As a user of this code you may choose
 to use it under either license.  As a contributor, you agree to allow your code

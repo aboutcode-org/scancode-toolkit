@@ -1,3 +1,9 @@
+---
+license_expression: linux-openib
+is_license_notice: yes
+notes: openib
+---
+
 This software is available to you under the BSD license below:
 
     Redistribution and use in source and binary forms, with or

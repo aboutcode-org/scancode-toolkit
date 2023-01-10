@@ -1,3 +1,28 @@
+---
+key: acdl-1.0
+short_name: ACDL 1.0
+name: Apple Common Documentation License v1.0
+category: Copyleft Limited
+owner: Apple
+homepage_url: http://fedoraproject.org/wiki/Licensing/Common_Documentation_License
+spdx_license_key: CDL-1.0
+other_spdx_license_keys:
+    - LicenseRef-scancode-acdl-1.0
+text_urls:
+    - http://www.opensource.apple.com/cdl/
+faq_url: http://fedoraproject.org/wiki/Licensing/Common_Documentation_License
+other_urls:
+    - http://fedoraproject.org/wiki/Licensing/Common_Documentation_License
+    - https://fedoraproject.org/wiki/Licensing/Common_Documentation_License
+    - https://www.gnu.org/licenses/license-list.html#ACDL
+ignorable_copyrights:
+    - Copyright (c) 2001 Apple Computer, Inc.
+ignorable_holders:
+    - Apple Computer, Inc.
+ignorable_urls:
+    - http://www.opensource.apple.com/cdl/
+---
+
 Version 1.0 - February 16, 2001
 
 Copyright (C) 2001 Apple Computer, Inc.

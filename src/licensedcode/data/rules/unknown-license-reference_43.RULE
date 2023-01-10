@@ -1,1 +1,9 @@
- Please see toplevel file COPYING for license details
+---
+license_expression: unknown-license-reference
+is_license_reference: yes
+relevance: 100
+referenced_filenames:
+    - COPYING
+---
+
+Please see toplevel file COPYING for license details

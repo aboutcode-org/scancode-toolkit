@@ -21,8 +21,34 @@
   "code_view_url": null,
   "vcs_url": null,
   "copyright": null,
-  "license_expression": "gpl-1.0-plus AND mit AND lgpl-2.0-plus",
-  "declared_license": "GPL MIT LGPL",
+  "declared_license_expression": "gpl-1.0-plus AND mit AND lgpl-2.0-plus",
+  "declared_license_expression_spdx": "GPL-1.0-or-later AND MIT AND LGPL-2.0-or-later",
+  "license_detections": [
+    {
+      "license_expression": "gpl-1.0-plus AND mit AND lgpl-2.0-plus",
+      "detection_log": [
+        "not-combined"
+      ],
+      "matches": [
+        {
+          "score": 100.0,
+          "start_line": 1,
+          "end_line": 1,
+          "matched_length": 13,
+          "match_coverage": 100.0,
+          "matcher": "1-spdx-id",
+          "license_expression": "gpl-1.0-plus AND mit AND lgpl-2.0-plus",
+          "rule_identifier": "spdx-license-identifier-gpl-1.0-plus AND mit AND lgpl-2.0-plus-08bcf9f42fc4cda4bfb36c1191bb03b3121a3b3f",
+          "rule_url": null,
+          "matched_text": "gpl-1.0-or-later AND mit AND lgpl-2.0-or-later"
+        }
+      ]
+    }
+  ],
+  "other_license_expression": null,
+  "other_license_expression_spdx": null,
+  "other_license_detections": [],
+  "extracted_license_statement": "GPL MIT LGPL",
   "notice_text": null,
   "source_packages": [],
   "file_references": [],

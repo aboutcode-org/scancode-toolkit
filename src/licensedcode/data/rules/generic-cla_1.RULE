@@ -1,3 +1,9 @@
+---
+license_expression: generic-cla
+is_license_notice: yes
+relevance: 100
+---
+
 # uses a shared copyright model: each contributor holds copyright over
 #their contributions to Caffe. The project versioning records all such
 #contribution and copyright details. If a contributor wants to further mark

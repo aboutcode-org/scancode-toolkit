@@ -1,7 +1,0 @@
-license_expression: lgpl-2.1 AND gpl-2.0 AND gpl-3.0
-is_license_notice: yes
-minimum_coverage: 90
-ignorable_urls:
-    - http://www.fsf.org/licensing/licenses/info/GPLv2.html
-    - http://www.gnu.org/copyleft/gpl.html
-    - http://www.gnu.org/licenses/old-licenses/lgpl-2.1.html

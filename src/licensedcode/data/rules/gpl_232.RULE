@@ -1,3 +1,12 @@
- *
+---
+license_expression: gpl-1.0-plus
+is_license_notice: yes
+relevance: 100
+referenced_filenames:
+    - doc/LICENSE
+    - doc/README
+---
+
+*
  * This software is free, licensed under the General Public License.
  * Please refer to doc/LICENSE and doc/README for further details.

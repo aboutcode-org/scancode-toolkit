@@ -1,3 +1,11 @@
+---
+license_expression: apache-2.0 AND proprietary-license
+is_license_notice: yes
+relevance: 100
+notes: See in https://github.com/OPSN/MVP-discuss/blob/19fe27cefe8a224a5dba685b0877b7ba7d0f4cba/README.md#L24
+    The patent grant may be problematic
+---
+
 Note that everything contributed to this repo falls under the Apache license,
 version 2.0. In particular, that means that if you suggest any ideas in this
 repository, you're granting everyone the right to use any patents you might own,

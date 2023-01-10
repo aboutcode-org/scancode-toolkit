@@ -1,3 +1,14 @@
+---
+license_expression: regexp
+is_license_text: yes
+minimum_coverage: 80
+notes: |
+    This is a rare almost identical variation on the license
+    found in curl Mac code.
+    See for example
+    https://github.com/bagder/curl/blob/master/src/macos/src/macos_main.cpp
+---
+
 Permission is granted to anyone to use this software for any purpose on any
 computer system, and to redistribute it freely, subject to the following
 restrictions:

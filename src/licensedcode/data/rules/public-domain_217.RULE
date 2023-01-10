@@ -1,1 +1,9 @@
+---
+license_expression: cc-pd
+is_license_reference: yes
+relevance: 100
+ignorable_urls:
+    - http://web.resource.org/cc/PublicDomain
+---
+
 <cc:license rdf:resource="http://web.resource.org/cc/PublicDomain" />

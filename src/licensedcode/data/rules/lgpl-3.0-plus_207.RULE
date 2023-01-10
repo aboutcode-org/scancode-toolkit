@@ -1,3 +1,12 @@
+---
+license_expression: lgpl-3.0-plus
+is_license_notice: yes
+relevance: 100
+minimum_coverage: 60
+ignorable_urls:
+    - https://www.gnu.org/licenses
+---
+
 <span class="comment">    Collection Library is free software: you can redistribute it and/or modify</span>
 <span class="comment">    it under the terms of the GNU Lesser General Public License as published by</span>
 <span class="comment">    the Free Software Foundation, either version 3 of the License, or</span>

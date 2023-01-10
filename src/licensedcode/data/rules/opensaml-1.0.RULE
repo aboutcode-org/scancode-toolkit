@@ -1,3 +1,14 @@
+---
+license_expression: opensaml-1.0
+is_license_text: yes
+ignorable_authors:
+    - the University Corporation
+ignorable_urls:
+    - http://www.ucaid.edu/
+ignorable_emails:
+    - opensaml@opensaml.org
+---
+
 Redistribution and use in source and binary forms, with or without 
 modification, are permitted provided that the following conditions are met:
 

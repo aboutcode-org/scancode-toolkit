@@ -1,4 +1,10 @@
- /*
+---
+license_expression: 3com-microcode
+is_license_text: yes
+minimum_coverage: 80
+---
+
+/*
   *
   * Redistribution and use in source and binary forms of the 3c990img.h
   * microcode software are permitted provided that the following conditions
@@ -31,4 +37,3 @@
   */
  
  Found in hex form in kernel source.
- 

@@ -22,6 +22,9 @@ from licensedcode.stopwords import STOPWORDS
 from licensedcode.tokenize import index_tokenizer
 from licensedcode.tokenize import matched_query_text_tokenizer
 
+from scancode.api import SPDX_LICENSE_URL
+from scancode.api import SCANCODE_LICENSEDB_URL
+
 """
 LicenseMatch data structure and processing.
 A key feature is merging and filtering of matches.
@@ -752,6 +755,46 @@ class LicenseMatch(object):
             highlight_not_matched=highlight_not_matched,
             _usecache=_usecache
         )).rstrip()
+
+    def to_dict(
+        self,
+        license_url_template=SCANCODE_LICENSEDB_URL,
+        spdx_license_url=SPDX_LICENSE_URL,
+        include_text=False,
+        license_text_diagnostics=False,
+        whole_lines=True,
+    ):
+        """
+        Return a "result" scan data built from a LicenseMatch object.
+        """
+        matched_text = None
+        if include_text:
+            if license_text_diagnostics:
+                matched_text = self.matched_text(whole_lines=False, highlight=True)
+            else:
+                if whole_lines:
+                    matched_text = self.matched_text(whole_lines=True, highlight=False)
+                else:
+                    matched_text = self.matched_text(whole_lines=False, highlight=False)
+
+        result = {}
+
+        # Detection Level Information
+        result['score'] = self.score()
+        result['start_line'] = self.start_line
+        result['end_line'] = self.end_line
+        result['matched_length'] = self.len()
+        result['match_coverage'] = self.coverage()
+        result['matcher'] = self.matcher
+
+        # LicenseDB Level Information (Rule that was matched)
+        result['license_expression'] = self.rule.license_expression
+        result['rule_identifier'] = self.rule.identifier
+        result['rule_url'] = self.rule.rule_url
+
+        if include_text:
+            result['matched_text'] = matched_text
+        return result
 
     def get_highlighted_text(self, trace=TRACE_HIGHLIGHTED_TEXT):
         """
@@ -2560,7 +2603,7 @@ def is_candidate_false_positive(
     """
     is_candidate = (
         # only tags or refs,
-        (match.rule.is_license_reference or match.rule.is_license_tag)
+        (match.rule.is_license_reference or match.rule.is_license_tag or match.rule.is_license_intro)
         # but not tags that are SPDX license identifiers
         and not match.matcher == '1-spdx-id'
         # exact matches only

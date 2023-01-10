@@ -1,0 +1,7 @@
+graft src
+graft thirdparty
+
+include setup.*
+include *.rst
+include *LICENSE*
+include *NOTICE*

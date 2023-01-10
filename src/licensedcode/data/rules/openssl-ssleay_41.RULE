@@ -1,2 +1,10 @@
+---
+license_expression: openssl-ssleay
+is_license_notice: yes
+relevance: 100
+ignorable_urls:
+    - https://www.openssl.org/source/license.txt
+---
+
 # OpenSSL, which is being used and maybe distributed via one of this projects'
 # web sites, is subject to their licensing: https://www.openssl.org/source/license.txt

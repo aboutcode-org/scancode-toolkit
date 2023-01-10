@@ -1,3 +1,10 @@
+---
+license_expression: other-permissive
+is_license_text: yes
+minimum_coverage: 60
+notes: seen in old eGenix code
+---
+
 Permission to use, copy, modify, and distribute this software and its
 documentation for any purpose and without fee or royalty is hereby granted,
 provided that the above copyright notice appear in all copies and that

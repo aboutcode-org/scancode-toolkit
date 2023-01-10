@@ -1,3 +1,13 @@
+---
+license_expression: gpl-2.0 OR commercial-license
+is_license_notice: yes
+relevance: 100
+minimum_coverage: 90
+ignorable_urls:
+    - https://www.cesanta.com/license
+    - https://www.gnu.org/licenses/
+---
+
 This software is dual-licensed: you can redistribute it and/or modify
 it under the terms of the GNU General Public License version 2 as
 published by the Free Software Foundation. For the terms of this

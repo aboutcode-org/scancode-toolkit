@@ -21,8 +21,34 @@
   "code_view_url": null,
   "vcs_url": null,
   "copyright": null,
-  "license_expression": "unknown-license-reference",
-  "declared_license": "custom:multiple",
+  "declared_license_expression": "unknown-license-reference",
+  "declared_license_expression_spdx": "LicenseRef-scancode-unknown-license-reference",
+  "license_detections": [
+    {
+      "license_expression": "unknown-license-reference",
+      "detection_log": [
+        "unknown-match"
+      ],
+      "matches": [
+        {
+          "score": 100.0,
+          "start_line": 1,
+          "end_line": 1,
+          "matched_length": 5,
+          "match_coverage": 100.0,
+          "matcher": "1-spdx-id",
+          "license_expression": "unknown-license-reference",
+          "rule_identifier": "spdx-license-identifier-unknown-license-reference-555dc1c4c5d6d483173bdc629017bd81905d82ab",
+          "rule_url": null,
+          "matched_text": "licenseref-scancode-unknown-license-reference"
+        }
+      ]
+    }
+  ],
+  "other_license_expression": null,
+  "other_license_expression_spdx": null,
+  "other_license_detections": [],
+  "extracted_license_statement": "custom:multiple",
   "notice_text": null,
   "source_packages": [],
   "file_references": [],

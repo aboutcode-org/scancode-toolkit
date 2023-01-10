@@ -1,4 +1,11 @@
- * This code is derived from the  software implementation by the
+---
+license_expression: stanford-pvrg
+is_license_text: yes
+ignorable_authors:
+    - Stanford University
+---
+
+* This code is derived from the  software implementation by the
  * Stanford PVRG group:
  * 
  * PUBLIC DOMAIN LICENSE: Stanford University Portable Video Research

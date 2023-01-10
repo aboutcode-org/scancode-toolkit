@@ -1,3 +1,13 @@
+---
+license_expression: afl-3.0
+is_license_notice: yes
+relevance: 100
+referenced_filenames:
+    - LICENSE.txt
+ignorable_urls:
+    - http://opensource.org/licenses/afl-3.0.php
+---
+
 * This source file is subject to the Academic Free License (AFL 3.0)
  * that is bundled with this package in the file LICENSE.txt.
  * It is also available through the world-wide-web at this URL:

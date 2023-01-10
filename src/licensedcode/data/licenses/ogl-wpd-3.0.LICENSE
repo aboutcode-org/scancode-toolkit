@@ -1,3 +1,16 @@
+---
+key: ogl-wpd-3.0
+short_name: OGL-WPD-3.0
+name: Western Power Distribution Open Data Licence v3.0
+category: Permissive
+owner: Western Power Distribution
+homepage_url: https://www.westernpower.co.uk/open-data-licence
+notes: derived from the ogl-uk-3.0 license
+spdx_license_key: LicenseRef-scancode-ogl-wpd-3.0
+ignorable_emails:
+    - dsodigitalisation@westernpower.co.uk
+---
+
 Open Data Licence
 
 Below is WPD's Open Data Licence (latest version December 2020). These licence terms and conditions (the “Licence”) apply to the WPD's datasets as specified within the ‘Connected Data’ data access service. These terms are based on the Open Government Licence v3.0.

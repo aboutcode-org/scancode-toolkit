@@ -1,3 +1,14 @@
+---
+key: shital-shah
+short_name: Shital Shah License
+name: Shital Shah License
+category: Permissive
+owner: Shital Shah
+homepage_url: http://shitalshah.com/disclaimer/
+spdx_license_key: LicenseRef-scancode-shital-shah
+text_urls:
+    - http://shitalshah.com/disclaimer/
+---
 
 You may freely copy, store, distribute and use any material published on this
 site free of charge and without my explicit permission, provided anyone else

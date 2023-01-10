@@ -28,8 +28,8 @@ class JavaJarManifestHandler(models.DatafileHandler):
     path_patterns = ('*/META-INF/MANIFEST.MF',)
     default_package_type = 'jar'
     default_primary_language = 'Java'
-    description='Java JAR MANIFEST.MF'
-    documentation_url='https://docs.oracle.com/javase/tutorial/deployment/jar/manifestindex.html'
+    description = 'Java JAR MANIFEST.MF'
+    documentation_url = 'https://docs.oracle.com/javase/tutorial/deployment/jar/manifestindex.html'
 
     @classmethod
     def parse(cls, location):
@@ -38,12 +38,7 @@ class JavaJarManifestHandler(models.DatafileHandler):
             main_section = sections[0]
             manifest = get_normalized_java_manifest_data(main_section)
             if manifest:
-                package_data = models.PackageData(**manifest,)
-
-                if not package_data.license_expression and package_data.declared_license:
-                    package_data.license_expression = cls.compute_normalized_license(package_data)
-
-                yield package_data
+                yield models.PackageData(**manifest,)
 
     @classmethod
     def assign_package_to_resources(cls, package, resource, codebase, package_adder):
@@ -59,7 +54,6 @@ class JavaJarManifestHandler(models.DatafileHandler):
                 codebase=codebase,
                 package_adder=package_adder,
             )
-
 
 
 def parse_manifest(location):
@@ -272,7 +266,7 @@ def get_normalized_java_manifest_data(manifest_mapping):
     # licensing
     #########################
     # Bundle-License: http://www.apache.org/licenses/LICENSE-2.0.txt
-    package['declared_license'] = dget('Bundle-License')
+    package['extracted_license_statement'] = dget('Bundle-License')
     # Bundle-Copyright: Apache 2.0
     package['copyright'] = dget('Bundle-Copyright')
 

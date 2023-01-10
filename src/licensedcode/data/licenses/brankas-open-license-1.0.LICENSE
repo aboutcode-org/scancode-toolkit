@@ -1,0 +1,95 @@
+---
+key: brankas-open-license-1.0
+short_name: Brankas Open License 1.0
+name: Brankas Open License 1.0
+category: Free Restricted
+owner: Brankas
+homepage_url: https://www.brankas.com/open-license
+spdx_license_key: LicenseRef-scancode-brankas-open-license-1.0
+faq_url: https://www.brankas.com/open-license
+---
+
+BRANKAS OPEN LICENSE
+Version 1.0, September 2022
+
+    Preamble
+
+    This License establishes the terms under which the Software under this License may be copied, modified, distributed, or redistributed.
+
+    Definitions
+
+    2.1. “Derivative Works” shall mean any work, whether in Source Form or Object Form, that is based on (or derived from) the Software and for which the editorial revisions, annotations, elaborations, or other modifications represent, as a whole, an original work of authorship and not an exact or repackaged copy of the Software. It includes proprietary complements, add-ons, modules, or modifications to the Object Form that link to the interfaces of the Software and the Derivative Works thereof. It shall include, among others:
+
+        2.1.1. Any software that results from an addition to, deletion from, or modification of the contents of a file containing Original Software or Derivative Works thereof; and
+
+        2.1.2. Any new file that is contributed or otherwise made available under the terms of this License.
+
+        2.1.3. “License” means the terms and conditions for use, reproduction, and distribution as defined in this document.
+
+        2.1.4. “Licensor” shall mean Brankas, its affiliates, subsidiaries, or permitted assigns.
+
+        2.1.5. “Object Form” shall mean any form resulting from mechanical transformation or translation of a source form, including but not limited to compiled object code, generated documentation, and conversions to other media types.
+
+        2.1.6. “Original Software” means the Source Code of computer software code that was originally released under this License.
+
+        2.1.7. “Software” means (a) the Original Software; (b) Derivative Works; or (c) the combination of files containing Original Software with files containing Derivative Works, in each case, including portions thereof.
+
+        2.1.8. “Source Code” means (a) the common form of computer software code in which modifications are made, and (b) associated documentation included in or with such code.
+
+        2.1.9. “Source Form” shall mean the preferred form for making modifications, including but not limited to software source code, documentation source, and configuration files.
+
+        2.1.10. “You” means an individual or a legal entity exercising rights under this License. For legal entities, “You” includes any entity that controls, is controlled by, or is under common control with you. For purposes of this definition, “control” means (a) the power, direct or indirect, to cause the direction or management of an entity, whether by contract or otherwise; or (b) ownership of more than fifty percent (50%) of the outstanding shares or beneficial ownership of an entity.
+
+    Grants
+
+    3.1. Copyright License
+    The Licensor grants you a perpetual, non-exclusive, royalty-free, worldwide, non-sublicensable, non-transferable license to use, copy, modify, distribute, make available, display, and prepare Derivative Works of the Software, in each case subject to the limitations and conditions of this License.
+
+        3.1.1. Right to Distribute
+        Subject to Clause 5, you may distribute the Derivative Works of the Software, provided that you have clear documentation as to how your Derivative Works differ from the Original Software. You are not required to make such documentation public.
+
+        3.1.2. Aggregation
+        Subject to Clause 5, you may aggregate the Original Software with Derivative Works in Object Form or Source Form and distribute the resulting aggregation.
+
+    3.2. Patent License
+    The Licensor grants You a license, under any patent claims the Licensor can license or becomes able to license, to make, have made, use, sell, offer for sale, import, and have imported the software, in each case subject to the limitations and conditions in this License.
+
+    Effective date
+
+    4.1. The licenses required and granted under Clause 3 with respect to any Derivative Works become effective, for each Derivative Works, on the date you first distribute such Derivative Works.
+
+    Limitations and Conditions of this License
+
+    5.1. You may not, whether by yourself or with other persons, provide the Software, whether in a repackaged version thereof or in a resulting aggregation with Derivative Works, to a third party as a hosted or managed service, including where you will provide access to any substantial set of the features or functionality of the Software.
+
+    Your Responsibilities
+
+    6.1. The Derivative Works that you create or to which you contribute are governed by the terms of this License. You represent that the Derivative Works are your original creation(s), as clearly documented by you, and/or you have sufficient rights to grant the rights conveyed by this License.
+
+    6.2. You assume full responsibility for informing the recipients of this Software of the terms of this License, and how they can obtain a copy of this License.
+
+    6.3. In incorporating Derivative Works into this Software, you must include a statement in your license to that effect in the aggregated Software.
+
+    Termination
+
+    7.1. If you violate the terms of this License, your use is not licensed and will result in the termination of the licenses granted to you hereunder.
+
+    7.2. If the Licensor provides you with a notice of your violation, you shall cease all violations of this license no later than 30 days after receipt of that notice and your licenses will be reinstated retroactively.
+
+    7.3. If you violate the terms of this License after such reinstatement under Clause 7.2, any subsequent violations of these terms will result in the termination of your license automatically and permanently.
+
+    7.4. This License does not cover any patent claims that you cause to be infringed by Derivative Works or additions to the Software. Should you make any written claim that the Software infringes or contributes to infringement of any patent, the patent license for this Software granted under the terms of this License ends immediately. If Your representative makes a patent claim, the patent license granted under this License likewise ends immediately.
+
+    Disclaimer of Warranty
+
+    8.1. Unless required by applicable law or agreed to in writing, the Licensor provides the Software on an “AS IS” BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied, including, without limitation, any warranties or conditions of TITLE, NON-INFRINGEMENT, MERCHANTABILITY, or FITNESS FOR A PARTICULAR PURPOSE. You are solely responsible for determining the appropriateness of using or redistributing Software and assume any risks associated with Your exercise of permissions under this License.
+
+    Limitation of Liability
+
+    9.1. In no event and under no legal theory, whether in tort (including negligence), contract, or otherwise, unless required by applicable law (such as deliberate and grossly negligent acts) or agreed to in writing, shall the Licensor be liable to you for damages, including any direct, indirect, special, incidental, or consequential damages of any character arising as a result of this License or out of the use or inability to use the Software (including but not limited to damages for loss of goodwill, work stoppage, computer failure or malfunction, or any and all other commercial damages or losses), even if the Licensor has been advised of the possibility of such damages.
+
+    General
+
+    10.1. If any provision of this License is invalid or unenforceable under applicable law, it shall not affect the validity or enforceability of the remainder of the terms of this License and without further action by the parties hereto, such provision shall be reformed to the minimum extent necessary to make such provision valid and enforceable.
+
+    10.2. This License shall not be enforceable except by a Licensor acting as such, and third-party beneficiary rights are specifically excluded.

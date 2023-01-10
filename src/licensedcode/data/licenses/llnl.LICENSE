@@ -1,3 +1,15 @@
+---
+key: llnl
+short_name: LLNL
+name: LLNL
+category: Permissive
+owner: Regents of the University of California
+notes: |
+    this notice is quite similar to the DSDP license and appears in similar
+    forms in HDF5 and other common components
+spdx_license_key: LicenseRef-scancode-llnl
+---
+
 Permission to use, copy, modify, and distribute this software for
 any purpose without fee is hereby granted, provided that this en-
 tire notice is included in all copies of any software which is or

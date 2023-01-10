@@ -1,3 +1,11 @@
+---
+license_expression: oset-pl-2.1
+is_license_text: yes
+ignorable_copyrights:
+    - (c) 2015
+ignorable_urls:
+    - http://www.osetfoundation.org/public-license
+---
 
 OSET Public License © 2015 ALL RIGHTS RESERVED
 VERSION 2.1
@@ -67,4 +75,3 @@ If it is not possible or desirable to put the Notice in a particular file, then 
 
 EXHIBIT B - “Incompatible With Secondary License” Notice
 This Source Code Form is “Incompatible With Secondary Licenses”, as defined by the OSET Public License, v.2.1.
-

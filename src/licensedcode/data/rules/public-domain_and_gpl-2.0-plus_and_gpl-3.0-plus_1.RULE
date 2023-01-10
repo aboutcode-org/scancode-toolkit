@@ -1,1 +1,7 @@
+---
+license_expression: public-domain AND gpl-2.0-plus AND gpl-3.0-plus
+is_license_notice: yes
+relevance: 100
+---
+
 The build system contains public domain files, and files that are under GNU GPLv2+ or GNU GPLv3+.

@@ -1,4 +1,11 @@
-                    Confluent Community License Agreement
+---
+license_expression: proprietary-license
+is_license_text: yes
+ignorable_urls:
+    - http://www.confluent.io/confluent-community-license
+---
+
+Confluent Community License Agreement
                                 Version 1.0
 
 This Confluent Community License Agreement Version 1.0 (the “Agreement”) sets

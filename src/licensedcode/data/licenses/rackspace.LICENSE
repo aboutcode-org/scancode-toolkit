@@ -1,3 +1,12 @@
+---
+key: rackspace
+short_name: Rackspace License
+name: Rackspace License
+category: Free Restricted
+owner: Rackspace
+spdx_license_key: LicenseRef-scancode-rackspace
+---
+
 Subject to the terms of this notice, Rackspace, Inc. grants you a
 nonexclusive, nontransferable license, without the right to
 sublicense, to (a) install and execute one copy of these files on any

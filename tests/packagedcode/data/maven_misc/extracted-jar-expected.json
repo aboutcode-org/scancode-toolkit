@@ -1,4 +1,53 @@
 {
+  "packages": [
+    {
+      "type": "maven",
+      "namespace": "org.activiti",
+      "name": "activiti-image-generator",
+      "version": "7-201802-EA",
+      "qualifiers": {},
+      "subpath": null,
+      "primary_language": "Java",
+      "description": "Activiti :: Image Generator",
+      "release_date": null,
+      "parties": [],
+      "keywords": [],
+      "homepage_url": null,
+      "download_url": null,
+      "size": null,
+      "sha1": null,
+      "md5": null,
+      "sha256": null,
+      "sha512": null,
+      "bug_tracking_url": null,
+      "code_view_url": null,
+      "vcs_url": null,
+      "copyright": null,
+      "declared_license_expression": null,
+      "declared_license_expression_spdx": null,
+      "license_detections": [],
+      "other_license_expression": null,
+      "other_license_expression_spdx": null,
+      "other_license_detections": [],
+      "extracted_license_statement": null,
+      "notice_text": null,
+      "source_packages": [
+        "pkg:maven/org.activiti/activiti-image-generator@7-201802-EA?classifier=sources"
+      ],
+      "extra_data": {},
+      "repository_homepage_url": "https://repo1.maven.org/maven2/org/activiti/activiti-image-generator/7-201802-EA/",
+      "repository_download_url": "https://repo1.maven.org/maven2/org/activiti/activiti-image-generator/7-201802-EA/activiti-image-generator-7-201802-EA.jar",
+      "api_data_url": "https://repo1.maven.org/maven2/org/activiti/activiti-image-generator/7-201802-EA/activiti-image-generator-7-201802-EA.pom",
+      "package_uid": "pkg:maven/org.activiti/activiti-image-generator@7-201802-EA?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_paths": [
+        "extracted-jar/activiti-image-generator-7-201802-EA-sources.jar-extract/META-INF/maven/org.activiti/activiti-image-generator/pom.xml"
+      ],
+      "datasource_ids": [
+        "maven_pom"
+      ],
+      "purl": "pkg:maven/org.activiti/activiti-image-generator@7-201802-EA"
+    }
+  ],
   "dependencies": [
     {
       "purl": "pkg:maven/org.activiti/activiti-bpmn-model",
@@ -169,50 +218,8 @@
       "datasource_id": "maven_pom"
     }
   ],
-  "packages": [
-    {
-      "type": "maven",
-      "namespace": "org.activiti",
-      "name": "activiti-image-generator",
-      "version": "7-201802-EA",
-      "qualifiers": {},
-      "subpath": null,
-      "primary_language": "Java",
-      "description": "Activiti :: Image Generator",
-      "release_date": null,
-      "parties": [],
-      "keywords": [],
-      "homepage_url": null,
-      "download_url": null,
-      "size": null,
-      "sha1": null,
-      "md5": null,
-      "sha256": null,
-      "sha512": null,
-      "bug_tracking_url": null,
-      "code_view_url": null,
-      "vcs_url": null,
-      "copyright": null,
-      "license_expression": null,
-      "declared_license": null,
-      "notice_text": null,
-      "source_packages": [
-        "pkg:maven/org.activiti/activiti-image-generator@7-201802-EA?classifier=sources"
-      ],
-      "extra_data": {},
-      "repository_homepage_url": "https://repo1.maven.org/maven2/org/activiti/activiti-image-generator/7-201802-EA/",
-      "repository_download_url": "https://repo1.maven.org/maven2/org/activiti/activiti-image-generator/7-201802-EA/activiti-image-generator-7-201802-EA.jar",
-      "api_data_url": "https://repo1.maven.org/maven2/org/activiti/activiti-image-generator/7-201802-EA/activiti-image-generator-7-201802-EA.pom",
-      "package_uid": "pkg:maven/org.activiti/activiti-image-generator@7-201802-EA?uuid=fixed-uid-done-for-testing-5642512d1758",
-      "datafile_paths": [
-        "extracted-jar/activiti-image-generator-7-201802-EA-sources.jar-extract/META-INF/maven/org.activiti/activiti-image-generator/pom.xml"
-      ],
-      "datasource_ids": [
-        "maven_pom"
-      ],
-      "purl": "pkg:maven/org.activiti/activiti-image-generator@7-201802-EA"
-    }
-  ],
+  "license_references": [],
+  "license_rule_references": [],
   "files": [
     {
       "path": "extracted-jar",
@@ -311,8 +318,13 @@
           "code_view_url": null,
           "vcs_url": null,
           "copyright": null,
-          "license_expression": null,
-          "declared_license": null,
+          "declared_license_expression": null,
+          "declared_license_expression_spdx": null,
+          "license_detections": [],
+          "other_license_expression": null,
+          "other_license_expression_spdx": null,
+          "other_license_detections": [],
+          "extracted_license_statement": null,
           "notice_text": null,
           "source_packages": [
             "pkg:maven/org.activiti/activiti-image-generator@7-201802-EA?classifier=sources"

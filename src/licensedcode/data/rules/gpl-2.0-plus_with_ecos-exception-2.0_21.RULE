@@ -1,3 +1,9 @@
+---
+license_expression: gpl-2.0-plus WITH ecos-exception-2.0
+is_license_notice: yes
+relevance: 100
+---
+
 This file is part of eCos, the Embedded Configurable Operating System.
 
  eCos is free software; you can redistribute it and/or modify it under

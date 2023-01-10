@@ -1,3 +1,8 @@
+---
+license_expression: lgpl-2.0-plus WITH wxwindows-exception-3.1
+is_license_notice: yes
+---
+
 Copyright:
 
 /usr/share/common-licenses/LGPL-2.1
@@ -20,4 +25,3 @@ Copyright:
   Notes: the OSGPL is based on the LGPL, with the 4 exceptions laid in in
   the wxWindows section below.  The LGPL in the final section of this
   license.
-

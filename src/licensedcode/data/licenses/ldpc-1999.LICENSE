@@ -1,3 +1,13 @@
+---
+key: ldpc-1999
+short_name: LDPC-1999
+name: Linux Documentation Project Copying License 1999-09-30
+category: Copyleft
+owner: Linux Documentation Project
+spdx_license_key: LicenseRef-scancode-ldpc-1999
+text_urls:
+    - http://linuxmafia.com/faq/Licensing_and_Law/ldpc-license-1999-09-16.html
+---
 
 Linux Documentation Project Copying License
 Last Revision: 16 September 1999
@@ -19,4 +29,3 @@ Exceptions to these rules may be granted for academic purposes: write to the aut
 Please read the LDP Manifesto for further information. If you are authoring a work, the Manifesto provides a sample copyright (derived from the previous area) to utilize, if you so desire. There is also a section devoted to Publishing LDP Manuals. If you're a publishing company interested in distributing any of the LDP manuals, please read that particular section.
 
 If you have any questions, please email the LDP coordinator, Guylhem Aznar.
-

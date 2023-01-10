@@ -1,3 +1,11 @@
+---
+license_expression: cc-by-3.0
+is_license_notice: yes
+relevance: 100
+ignorable_urls:
+    - https://developer.github.com/
+---
+
 Some documentation is taken from the GitHub Developer site
 <https://developer.github.com/>, which is available under the following Creative
 Commons Attribution 3.0 License. This applies only to the go-github source

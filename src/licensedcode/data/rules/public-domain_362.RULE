@@ -1,4 +1,20 @@
- File lacks copyright and licensing, but contains the comment
+---
+license_expression: public-domain
+is_license_notice: yes
+minimum_coverage: 100
+ignorable_authors:
+    - guido@sienanet.it
+ignorable_urls:
+    - http://delphi.icm.edu.pl/authors/a0002451.htm
+    - http://delphi.icm.edu.pl/ftp/d30free/tmsgvoc.zip
+    - http://torry.net/vcl/comms/voice/tmsgvoc.zip
+    - https://github.com/asterisk/asterisk/commit/0ed94773
+    - https://issues.asterisk.org/jira/browse/ASTERISK-24172
+ignorable_emails:
+    - guido@sienanet.it
+---
+
+File lacks copyright and licensing, but contains the comment
  "Conversion routines derived from code by guido@sienanet.it" which
  might be interpreted as a copyright holder not granting a license.
  More likely, however, the header file is considered non-copyrightable
@@ -17,4 +33,3 @@
     <http://torry.net/vcl/comms/voice/tmsgvoc.zip>.
  .
  See also <https://issues.asterisk.org/jira/browse/ASTERISK-24172>.
-

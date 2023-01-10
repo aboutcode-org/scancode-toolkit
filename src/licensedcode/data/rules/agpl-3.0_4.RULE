@@ -1,3 +1,17 @@
+---
+license_expression: agpl-3.0
+is_license_text: yes
+minimum_coverage: 99
+notes: oodoo agpl
+ignorable_copyrights:
+    - Copyright (c) 2007 Free Software Foundation, Inc. <http://fsf.org/>
+ignorable_holders:
+    - Free Software Foundation, Inc.
+ignorable_urls:
+    - http://fsf.org/
+    - http://www.gnu.org/licenses/
+---
+
 OpenERP is published under the GNU AFFERO GENERAL PUBLIC LICENSE, Version 3
 (AGPLv3), as included below. Some external libraries and contributions bundled
 with OpenERP may be published under other AGPLv3-compatible licenses. For

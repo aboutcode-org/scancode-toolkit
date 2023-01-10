@@ -1,2 +1,11 @@
+---
+license_expression: ofl-1.1
+is_license_notice: yes
+relevance: 100
+notes: https://github.com/python-pillow/Pillow/blob/master/Tests/fonts/LICENSE.txt
+ignorable_urls:
+    - http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL
+---
+
 All of the above fonts are published under the SIL Open Font License (OFL) v1.1 
 (http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL), which allows you to copy, modify, and redistribute them if you need to.

@@ -1,3 +1,15 @@
+---
+key: hessla
+short_name: HESSLA
+name: Hacktivismo Enhanced-Source Software License Agreement
+category: Proprietary Free
+owner: Hacktivismo
+homepage_url: http://www.hacktivismo.com/about/hessla.php
+spdx_license_key: LicenseRef-scancode-hessla
+text_urls:
+    - https://directory.fsf.org/wiki/License:HESSLA
+---
+
 TERMS AND CONDITIONS FOR COPYING, DISTRIBUTION, USE AND/OR MODIFICATION
 
 0. DEFINITIONS. The following are defined terms that, whenever used in
@@ -930,4 +942,4 @@ invalid or unenforceable under any particular circumstance, the
 balance of the License Agreement is intended to apply and the License
 Agreement as a whole is intended to apply in other circumstances.
 
-END OF TERMS AND CONDITIONS 
+END OF TERMS AND CONDITIONS

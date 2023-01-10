@@ -1,4 +1,19 @@
-
+---
+key: cc-gpl-2.0-pt
+language: pt
+short_name: CC-GPL-2.0-PT
+name: Creative Commons Licença Pública Geral do GNU (GPL) [General Public License]
+category: Copyleft
+owner: Creative Commons
+homepage_url: https://creativecommons.org/licenses/GPL/2.0/
+spdx_license_key: LicenseRef-scancode-cc-gpl-2.0-pt
+text_urls:
+    - https://creativecommons.org/licenses/GPL/2.0/legalcode.pt
+ignorable_copyrights:
+    - (c) 1989, 1991 Free Software Foundation, Inc.
+ignorable_holders:
+    - Free Software Foundation, Inc.
+---
 
 Licença Pública Geral do GNU (GPL) [General Public License] 
 
@@ -111,6 +126,4 @@ Você também pode solicitar a seu empregador (se você for um programador) ou s
 A Yoyodyne Ltda., neste ato, renuncia a todos eventuais direitos autorais sobre o programa `Gnomovision' (que realiza passagens em compiladores), escrito por James Hacker. 
 <Assinatura de Ty Coon>
 1º de abril de 1989, Ty Coon, Presidente
-Esta Licença Pública Geral não permite a incorporação do seu programa a programas proprietários. Se seu programa é uma biblioteca de sub-rotinas, você poderá considerar ser mais útil permitir a ligação de aplicações proprietárias à sua biblioteca. Se isso é o que você deseja fazer, utilize a Licença Pública Geral de Biblioteca do GNU, ao invés desta Licença. 
-
-
+Esta Licença Pública Geral não permite a incorporação do seu programa a programas proprietários. Se seu programa é uma biblioteca de sub-rotinas, você poderá considerar ser mais útil permitir a ligação de aplicações proprietárias à sua biblioteca. Se isso é o que você deseja fazer, utilize a Licença Pública Geral de Biblioteca do GNU, ao invés desta Licença.

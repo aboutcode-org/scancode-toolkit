@@ -1,3 +1,9 @@
+---
+license_expression: other-permissive
+is_license_notice: yes
+notes: Seen in gettext
+---
+
 This file can be copied and used freely without restrictions.  It can
 be used in projects which are not available under the GNU General Public
 License but which still want to provide support for the GNU gettext

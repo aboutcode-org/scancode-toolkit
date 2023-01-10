@@ -1,3 +1,12 @@
+---
+key: naughter
+short_name: Naughter Software License
+name: Naughter Software License
+category: Free Restricted
+owner: Naughter Software
+spdx_license_key: LicenseRef-scancode-naughter
+---
+
 Naughter Software License
 
 You are allowed to include the source code in any product (commercial, shareware, freeware or otherwise) when your product is released in binary form.

@@ -55,7 +55,7 @@ class ScanSummary(PostScanPlugin):
     Summarize a scan at the codebase level.
     """
 
-    sort_order = 10
+    sort_order = 2
 
     codebase_attributes = dict(summary=attr.ib(default=attr.Factory(dict)))
 
@@ -81,7 +81,7 @@ class ScanSummary(PostScanPlugin):
 
         # Get tallies
         tallies = compute_codebase_tallies(codebase, keep_details=False, **kwargs)
-        license_expressions_tallies = tallies.get('license_expressions') or []
+        license_expressions_tallies = tallies.get('detected_license_expression') or []
         holders_tallies = tallies.get('holders') or []
         programming_language_tallies = tallies.get('programming_language') or []
 
@@ -231,7 +231,7 @@ def get_origin_info_from_top_level_packages(top_level_packages, codebase):
     ]
     key_file_packages = [p for p in top_level_packages if is_key_package(p, codebase)]
     for package in key_file_packages:
-        license_expression = package.license_expression
+        license_expression = package.declared_license_expression
         if license_expression:
             license_expressions.append(license_expression)
 
@@ -290,16 +290,16 @@ def get_origin_info_from_top_level_packages(top_level_packages, codebase):
     return declared_license_expression, declared_holders, primary_language
 
 
-def get_holders_from_copyright(copyright):
+def get_holders_from_copyright(copyrght):
     """
-    Yield holders detected from a `copyright` string or list.
+    Yield holders detected from a `copyrght` string or list.
     """
     numbered_lines = []
-    if isinstance(copyright, list):
-        for i, c in enumerate(copyright):
+    if isinstance(copyrght, list):
+        for i, c in enumerate(copyrght):
             numbered_lines.append((i, c))
     else:
-        numbered_lines.append((0, copyright))
+        numbered_lines.append((0, copyrght))
 
     holder_detections = CopyrightDetector().detect(
         numbered_lines,

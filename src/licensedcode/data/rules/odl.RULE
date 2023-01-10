@@ -1,1 +1,9 @@
+---
+license_expression: odl
+is_license_reference: yes
+relevance: 100
+ignorable_urls:
+    - http://dmoz.org/become_an_editor
+---
+
 http://dmoz.org/become_an_editor

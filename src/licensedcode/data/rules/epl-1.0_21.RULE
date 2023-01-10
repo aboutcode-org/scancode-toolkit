@@ -1,3 +1,10 @@
+---
+license_expression: epl-1.0
+is_license_notice: yes
+relevance: 100
+ignorable_urls:
+    - http://opensource.org/licenses/eclipse-1.0.php
+---
 
 The use and distribution terms for this software are covered by the
 Eclipse Public License 1.0 (http://opensource.org/licenses/eclipse-1.0.php)

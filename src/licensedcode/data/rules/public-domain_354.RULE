@@ -1,2 +1,11 @@
- I believe that most files in debian/ hardly contains any creative
+---
+license_expression: public-domain
+is_license_notice: yes
+relevance: 100
+minimum_coverage: 100
+notes: Seen in debian copyright files for libhogween and libnettle with tag `public-domain`
+    and refers to files in public domain.
+---
+
+I believe that most files in debian/ hardly contains any creative
  expression eligible for copyright.

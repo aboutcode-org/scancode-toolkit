@@ -1,2 +1,8 @@
+---
+license_expression: mit OR gpl-1.0-plus
+is_license_notice: yes
+relevance: 100
+---
+
 The compiler source code is released under the terms of the
 MIT X11 or GNU GPL licenses

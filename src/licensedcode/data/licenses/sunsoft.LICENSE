@@ -1,3 +1,13 @@
+---
+key: sunsoft
+short_name: Sunsoft License
+name: Sunsoft License
+category: Permissive
+owner: Oracle (Sun)
+notes: this is a legacy license that is highly simialr to the sgi-freeb-2.0 license
+spdx_license_key: LicenseRef-scancode-sunsoft
+---
+
 Permission is hereby granted, free of charge, to any person
 obtaining a copy of this software and associated documentation
 files (the "Software"), to deal in the Software without restrict-
@@ -22,4 +32,3 @@ Except as contained in this notice, the name of SunSoft, Inc.
 shall not be used in advertising or otherwise to promote the
 sale, use or other dealings in this Software without written
 authorization from SunSoft Inc.
-

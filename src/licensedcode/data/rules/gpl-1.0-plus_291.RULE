@@ -1,3 +1,12 @@
+---
+license_expression: gpl-1.0-plus
+is_license_notice: yes
+relevance: 100
+referenced_filenames:
+    - COPYING
+    - COPYLEFT
+---
+
 Ghostscript is distributed in the hope that it will be useful, but WITHOUT
 ANY WARRANTY.  No author or distributor accepts responsibility to anyone for
 the consequences of using it or for whether it serves any particular purpose

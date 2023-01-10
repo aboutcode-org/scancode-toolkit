@@ -1,1 +1,8 @@
+---
+license_expression: apache-2.0 AND generic-cla
+is_license_notice: yes
+referenced_filenames:
+    - LICENSE
+---
+
 By submitting a patch, you agree to allow the project owners to license your work under the [Apache 2.0 License](./LICENSE)

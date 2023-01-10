@@ -1,1 +1,11 @@
-# This file is distributed under the same license as the cpufrequtils package.
+---
+license_expression: gpl-2.0
+is_license_reference: yes
+relevance: 100
+minimum_coverage: 100
+referenced_filenames:
+    - INHERIT_LICENSE_FROM_PACKAGE
+notes: cpufrequtils is gpl-2.0 only
+---
+
+This file is distributed under the same license as the {{cpufrequtils}} package.

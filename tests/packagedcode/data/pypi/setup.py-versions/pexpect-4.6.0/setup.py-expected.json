@@ -50,13 +50,54 @@
     "code_view_url": null,
     "vcs_url": null,
     "copyright": null,
-    "license_expression": "isc",
-    "declared_license": {
-      "license": "ISC license",
-      "classifiers": [
-        "License :: OSI Approved :: ISC License (ISCL)"
-      ]
-    },
+    "declared_license_expression": "isc",
+    "declared_license_expression_spdx": "ISC",
+    "license_detections": [
+      {
+        "license_expression": "isc",
+        "detection_log": [
+          "not-combined"
+        ],
+        "matches": [
+          {
+            "score": 99.0,
+            "start_line": 1,
+            "end_line": 1,
+            "matched_length": 2,
+            "match_coverage": 100.0,
+            "matcher": "1-hash",
+            "license_expression": "isc",
+            "rule_identifier": "isc_22.RULE",
+            "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/isc_22.RULE",
+            "matched_text": "ISC license"
+          }
+        ]
+      },
+      {
+        "license_expression": "isc",
+        "detection_log": [
+          "not-combined"
+        ],
+        "matches": [
+          {
+            "score": 100.0,
+            "start_line": 1,
+            "end_line": 1,
+            "matched_length": 6,
+            "match_coverage": 100.0,
+            "matcher": "1-hash",
+            "license_expression": "isc",
+            "rule_identifier": "pypi_isc_license.RULE",
+            "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/pypi_isc_license.RULE",
+            "matched_text": "['License :: OSI Approved :: ISC License (ISCL)']"
+          }
+        ]
+      }
+    ],
+    "other_license_expression": null,
+    "other_license_expression_spdx": null,
+    "other_license_detections": [],
+    "extracted_license_statement": "{'license': 'ISC license', 'classifiers': ['License :: OSI Approved :: ISC License (ISCL)']}",
     "notice_text": null,
     "source_packages": [],
     "file_references": [],

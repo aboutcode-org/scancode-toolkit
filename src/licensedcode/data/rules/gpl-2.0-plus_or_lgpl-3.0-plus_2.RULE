@@ -1,6 +1,14 @@
- are
+---
+license_expression: gpl-2.0-plus OR lgpl-3.0-plus
+is_license_notice: yes
+minimum_coverage: 95
+referenced_filenames:
+    - COPYINGv2
+    - COPYING.LESSERv3
+---
+
+are
 licensed under the terms of either the GNU General Public License
 version 2.0 or later (see the file COPYINGv2) or the GNU Lesser
 General Public License version 3.0 or later (see the file
 COPYING.LESSERv3), or both in parallel as here.
-

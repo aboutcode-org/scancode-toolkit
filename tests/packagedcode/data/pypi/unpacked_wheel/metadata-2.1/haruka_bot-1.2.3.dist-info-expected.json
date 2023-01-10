@@ -39,13 +39,54 @@
     "code_view_url": null,
     "vcs_url": "https://github.com/SK-415/HarukaBot/tree/master/src/plugins/haruka_bot",
     "copyright": null,
-    "license_expression": "agpl-3.0-plus AND agpl-3.0-plus",
-    "declared_license": {
-      "license": "AGPL-3.0-or-later",
-      "classifiers": [
-        "License :: OSI Approved :: GNU Affero General Public License v3 or later (AGPLv3+)"
-      ]
-    },
+    "declared_license_expression": "agpl-3.0-plus",
+    "declared_license_expression_spdx": "AGPL-3.0-or-later",
+    "license_detections": [
+      {
+        "license_expression": "agpl-3.0-plus",
+        "detection_log": [
+          "not-combined"
+        ],
+        "matches": [
+          {
+            "score": 100.0,
+            "start_line": 1,
+            "end_line": 1,
+            "matched_length": 5,
+            "match_coverage": 100.0,
+            "matcher": "1-hash",
+            "license_expression": "agpl-3.0-plus",
+            "rule_identifier": "spdx_license_id_agpl-3.0-or-later_for_agpl-3.0-plus.RULE",
+            "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/spdx_license_id_agpl-3.0-or-later_for_agpl-3.0-plus.RULE",
+            "matched_text": "AGPL-3.0-or-later"
+          }
+        ]
+      },
+      {
+        "license_expression": "agpl-3.0-plus",
+        "detection_log": [
+          "not-combined"
+        ],
+        "matches": [
+          {
+            "score": 100.0,
+            "start_line": 1,
+            "end_line": 1,
+            "matched_length": 12,
+            "match_coverage": 100.0,
+            "matcher": "1-hash",
+            "license_expression": "agpl-3.0-plus",
+            "rule_identifier": "pypi_gnu_affero_general_public_license_v3_or_later.RULE",
+            "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/pypi_gnu_affero_general_public_license_v3_or_later.RULE",
+            "matched_text": "['License :: OSI Approved :: GNU Affero General Public License v3 or later (AGPLv3+)']"
+          }
+        ]
+      }
+    ],
+    "other_license_expression": null,
+    "other_license_expression_spdx": null,
+    "other_license_detections": [],
+    "extracted_license_statement": "{'license': 'AGPL-3.0-or-later', 'classifiers': ['License :: OSI Approved :: GNU Affero General Public License v3 or later (AGPLv3+)']}",
     "notice_text": null,
     "source_packages": [],
     "file_references": [

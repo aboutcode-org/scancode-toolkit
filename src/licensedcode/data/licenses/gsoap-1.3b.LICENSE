@@ -1,3 +1,25 @@
+---
+key: gsoap-1.3b
+short_name: gSOAP Public License v1.3b
+name: gSOAP Public License v1.3b
+category: Copyleft Limited
+owner: Genivia
+homepage_url: http://www.cs.fsu.edu/~engelen/license.html
+spdx_license_key: gSOAP-1.3b
+text_urls:
+    - http://www.cs.fsu.edu/~engelen/license.html
+ignorable_copyrights:
+    - Copyright (c) 2001-2004 Robert A. van Engelen, Genivia inc.
+    - Copyright (c) 2001-2009 Robert A. van Engelen, Genivia inc.
+ignorable_holders:
+    - Robert A. van Engelen, Genivia inc.
+ignorable_authors:
+    - Robert A. van Engelen
+ignorable_urls:
+    - http://www.cs.fsu.edu/
+    - http://www.genivia.com/
+---
+
 gSOAP Public License
 
 Version 1.3b

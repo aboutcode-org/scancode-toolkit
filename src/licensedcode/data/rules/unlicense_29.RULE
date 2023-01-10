@@ -1,2 +1,10 @@
+---
+license_expression: unlicense
+is_license_notice: yes
+relevance: 100
+ignorable_urls:
+    - http://unlicense.org/
+---
+
 // This software is distributed under The Unlicense.
 // For more information, please refer to <http://unlicense.org/>

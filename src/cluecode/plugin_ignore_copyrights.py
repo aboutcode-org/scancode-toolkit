@@ -9,7 +9,6 @@
 
 import re
 
-
 from commoncode.cliutils import PluggableCommandLineOption
 from commoncode.cliutils import OUTPUT_FILTER_GROUP
 from plugincode.output_filter import OutputFilterPlugin

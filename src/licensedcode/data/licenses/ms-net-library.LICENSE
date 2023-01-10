@@ -1,3 +1,17 @@
+---
+key: ms-net-library
+short_name: MS .NET Library License
+name: Microsoft .NET Library License
+category: Proprietary Free
+owner: Microsoft
+homepage_url: http://www.microsoft.com/web/webpi/eula/net_library_eula_enu.htm
+notes: this is the version that existed at http://www.microsoft.com/net/dotnet_library_license.htm
+    from late 2014 until April 2016 It also existed as this URL in NuGet http://go.microsoft.com/fwlink/?LinkId=329770
+spdx_license_key: LicenseRef-scancode-ms-net-library
+ignorable_urls:
+    - http://www.microsoft.com/exporting
+---
+
 MICROSOFT SOFTWARE LICENSE TERMS
 
 MICROSOFT .NET LIBRARY

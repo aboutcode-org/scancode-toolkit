@@ -1,3 +1,19 @@
+---
+key: c-fsl-1.1
+short_name: C-FSL 1.1
+name: Convertible Free Software License 1.1
+category: Copyleft Limited
+owner: Elmar Stellnberger
+homepage_url: https://www.elstel.org/license/C-FSL-v1.1.txt
+spdx_license_key: LicenseRef-scancode-c-fsl-1.1
+text_urls:
+    - https://www.elstel.org/license/C-FSL-v1.1.txt
+ignorable_copyrights:
+    - copyright 2016, by Elmar Stellnberger
+ignorable_holders:
+    - Elmar Stellnberger
+---
+
 CONVERTIBLE FREE SOFTWARE LICENSE
     Version 1.1, 2016-08-11
 copyright 2016, by Elmar Stellnberger
@@ -23,5 +39,3 @@ This license applies to any software containing a notice by the copyright holder
 9. A work under C-FSL which has another component or plug-in as well as a work under C-FSL which is used itself as a component, plug-in, add-on of another product, any product under C-FSL which is combined or which links against another work requires that the other work will either be put under an open source license as approved by opensource.org or it needs to be put under C-FSL as well. Usage of proprietary libraries and kernel modules pose an exception to this rule. There must be a functionally equivalent open source library for any proprietary library so that a work under C-FSL can run and execute even without any proprietary library. No such restriction applies to kernel modules. The term 'kernel' refers to the core of an operating system. Libraries are separate components which link against the given work or other components. The term 'linking' refers to the relocation of references or addresses when the library is combined with another component in order to make the combined aggregate executable or runnable. Such references are bound to symbols which are part of the common interface between the library and the component which the library is combined with at runtime. Libraries which provide operating system services use a well defined binary interface but do not 'link' against the kernel.
 
 10. This license is either governed by the Laws of Austria or by the laws of the country where the first mentioned original author lives or is a resident. Disputes shall be settled by the nearest proper court given the home town or location of the first original author unless there is a common consensus for another place of court by all original authors. If any of the terms stated in this license were not in accordance with the law of the country that governs this license all other parts of the license shall remain valid.
-
-

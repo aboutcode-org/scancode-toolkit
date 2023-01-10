@@ -1,3 +1,10 @@
+---
+license_expression: lgpl-2.1 AND proprietary-license
+is_license_notice: yes
+relevance: 100
+notes: The nature of these "extensins" is not clear and reported as proprietary
+---
+
 Unless otherwise indicated in components taken from elsewhere, this software
 is licensed under the GNU Lesser General Public License, version 2.1 ("LGPL",
 reproduced below), extended and modified with the following terms:

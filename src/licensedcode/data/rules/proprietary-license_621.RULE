@@ -1,3 +1,9 @@
+---
+license_expression: proprietary-license
+is_license_text: yes
+notes: Based on the MIT with material and problematic changes. https://raw.githubusercontent.com/lightmaster/Meteobridge-Weather34-Template/4d5c5b8bb5c109d0e744a2c549ae1ba90177f43a/license.txt
+---
+
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the “Template”), to deal in the Template without restriction, including without limitation the rights to, can use, can not copy without prior permission, can modify for personal use, can use and publish for personal use ,can not distribute without prior permission, can not sublicense without prior permission, and can not sell copies of the Template, and subject to the following conditions:
 
 The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Template.

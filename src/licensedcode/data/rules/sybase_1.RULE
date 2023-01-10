@@ -1,3 +1,14 @@
+---
+license_expression: sybase
+is_license_notice: yes
+ignorable_copyrights:
+    - Portions Copyright (c) 1983-2002 Sybase, Inc.
+ignorable_holders:
+    - Sybase, Inc.
+ignorable_urls:
+    - http://www.sybase.com/developer/opensource
+---
+
 "Portions Copyright (c) 1983-2002 Sybase, Inc. All Rights Reserved.
 This file contains Original Code and/or Modifications of Original Code as defined in and that are subject to the Sybase Open Watcom Public License version 1.0 (the 'License'). You may not use this file except in compliance with the License. BY USING THIS FILE YOU AGREE TO ALL TERMS AND CONDITIONS OF THE LICENSE. A copy of the License is provided with the Original Code and Modifications, and is also available at www.sybase.com/developer/opensource. 
 

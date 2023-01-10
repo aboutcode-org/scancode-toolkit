@@ -1,4 +1,13 @@
- This license is derived and fully compatible with the Apache 
+---
+license_expression: apache-1.1
+is_license_text: yes
+referenced_filenames:
+    - APACHE.txt
+ignorable_urls:
+    - http://www.apache.org/LICENSE.txt
+---
+
+This license is derived and fully compatible with the Apache 
  Software license, see http://www.apache.org/LICENSE.txt
 
  Redistribution and use in source and binary forms, with or without

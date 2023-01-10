@@ -1,3 +1,21 @@
+---
+key: verbatim-manual
+short_name: Verbatim Copies
+name: Verbatim Copies Permission
+category: Copyleft
+owner: BPF Authors
+notes: the latext2e, verbatim-manual and abstyles are similar licenses
+spdx_license_key: Linux-man-pages-copyleft
+other_spdx_license_keys:
+    - Verbatim-man-pages
+    - LicenseRef-scancode-verbatim-manual
+text_urls:
+    - https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/scripts/bpf_helpers_doc.py?h=v5.0-rc4#n202
+other_urls:
+    - https://www.kernel.org/doc/man-pages/licenses.html
+minimum_coverage: 70
+---
+
 Permission is granted to make and distribute verbatim copies of this
 manual provided the copyright notice and this permission notice are
 preserved on all copies.

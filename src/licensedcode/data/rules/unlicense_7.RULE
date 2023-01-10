@@ -1,3 +1,11 @@
+---
+license_expression: unlicense
+is_license_text: yes
+minimum_coverage: 80
+ignorable_urls:
+    - http://unlicense.org/
+---
+
 The following UNLICENSE statement applies to this example.
 This is free and unencumbered software released into the public domain.
 Anyone is free to copy, modify, publish, use, compile, sell, or

@@ -1,1 +1,6 @@
+---
+is_false_positive: yes
+notes: a list of files
+---
+
 spec.in COPYING.LIB COPYING.GPL LICENSE

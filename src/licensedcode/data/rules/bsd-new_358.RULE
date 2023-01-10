@@ -1,2 +1,10 @@
-      "name": "The 3-Clause BSD License", 
-      "url": "https://opensource.org/licenses/BSD-3-Clause", 
+---
+license_expression: bsd-new
+is_license_tag: yes
+relevance: 100
+ignorable_urls:
+    - https://opensource.org/licenses/BSD-3-Clause
+---
+
+"name": "The 3-Clause BSD License", 
+      "url": "https://opensource.org/licenses/BSD-3-Clause",

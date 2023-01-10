@@ -1,3 +1,9 @@
+---
+license_expression: agpl-3.0 AND bsd-new AND lgpl-2.0-plus
+is_license_notice: yes
+relevance: 99
+---
+
 License
 
 The project is licensed under AGPL v3. Some parts licensed under BSD and LGPL. See the source code for details.

@@ -1,3 +1,10 @@
+---
+license_expression: ecosrh-1.1 OR gpl-2.0
+is_license_notice: yes
+ignorable_urls:
+    - http://www.redhat.com/
+---
+
 The contents of this file are subject to the Red Hat eCos Public
 License Version 1.1 (the "Licence"); you may not use this file
 except in compliance with the Licence.  You may obtain a copy of

@@ -51,6 +51,12 @@ To see all plugins available via command line help, use ``--plugins``.
         The option ``--consolidate`` is a sub-option of and **requires** the options ``--license``
         , ``--copyright`` and ``--package``.
 
+    .. note::
+
+        The --consolidate option will be deprecated in a future version of
+        scancode-toolkit as top level packages now provide a improved
+        consolidated data.
+
     The JSON file containing scan results after using the ``--consolidate`` Plugin is structured as
     follows: (note: "..." in the image contains more data)
 

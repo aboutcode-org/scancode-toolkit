@@ -1,3 +1,15 @@
+---
+key: app-s2p
+short_name: App::s2p License
+name: App::s2p License
+category: Permissive
+owner: Fedora
+homepage_url: https://fedoraproject.org/wiki/Licensing/App-s2p
+spdx_license_key: App-s2p
+other_urls:
+    - https://fedoraproject.org/wiki/Licensing/App-s2p
+---
+
 COPYRIGHT and LICENSE
 
   This program is free and open software. You may use, modify,

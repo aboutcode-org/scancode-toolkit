@@ -13,15 +13,10 @@ import saneyaml
 from packageurl import PackageURL
 
 from packagedcode import models
-from packagedcode.utils import combine_expressions
 """
 Collect data from Dart pub packages.
 See https://dart.dev/tools/pub/pubspec
 
-TODO:
-- license is only in a LICENSE file
-  https://dart.dev/tools/pub/publishing#preparing-to-publish
-See https://dart.dev/tools/pub/publishing#important-files
 
 API has theses URLs:
 is limited and only returns all versions of a package
@@ -44,9 +39,9 @@ class BaseDartPubspecHandler(models.DatafileHandler):
             DartPubspecYamlHandler.path_patterns + DartPubspecLockHandler.path_patterns
 
         if resource.has_parent():
-            dir_resource=resource.parent(codebase)
+            dir_resource = resource.parent(codebase)
         else:
-            dir_resource=resource
+            dir_resource = resource
 
         yield from cls.assemble_from_many_datafiles(
             datafile_name_patterns=datafile_name_patterns,
@@ -54,10 +49,6 @@ class BaseDartPubspecHandler(models.DatafileHandler):
             codebase=codebase,
             package_adder=package_adder,
         )
-
-    @classmethod
-    def compute_normalized_license(cls, package):
-        return compute_normalized_license(package.declared_license)
 
 
 class DartPubspecYamlHandler(BaseDartPubspecHandler):
@@ -76,29 +67,6 @@ class DartPubspecYamlHandler(BaseDartPubspecHandler):
         package_data = build_package(pubspec_data)
         if package_data:
             yield package_data
-
-
-def compute_normalized_license(declared_license):
-    """
-    Return a normalized license expression string detected from a list of
-    declared license items.
-
-    The specification for pub demands to have a LICENSE file side-by-side and
-    nothing else. See https://dart.dev/tools/pub/publishing#preparing-to-publish
-    """
-    # FIXME: we need a location to find the FILE file
-    # Approach:
-    # Find the LICENSE file
-    # detect on the text
-    # combine all expressions
-
-    if not declared_license:
-        return
-
-    detected_licenses = []
-
-    if detected_licenses:
-        return combine_expressions(detected_licenses)
 
 
 class DartPubspecLockHandler(BaseDartPubspecHandler):
@@ -278,7 +246,7 @@ def build_package(pubspec_data):
     version = pubspec_data.get('version')
     description = pubspec_data.get('description')
     homepage_url = pubspec_data.get('homepage')
-    declared_license = pubspec_data.get('license')
+    extracted_license_statement = pubspec_data.get('license')
     vcs_url = pubspec_data.get('repository')
     download_url = pubspec_data.get('archive_url')
 
@@ -347,7 +315,7 @@ def build_package(pubspec_data):
     add_to_extra_if_present('executables')
     add_to_extra_if_present('publish_to')
 
-    package = models.PackageData(
+    return models.PackageData(
         datasource_id=DartPubspecYamlHandler.datasource_id,
         type=DartPubspecYamlHandler.default_primary_language,
         primary_language=DartPubspecYamlHandler.default_primary_language,
@@ -356,7 +324,7 @@ def build_package(pubspec_data):
         download_url=download_url,
         vcs_url=vcs_url,
         description=description,
-        declared_license=declared_license,
+        extracted_license_statement=extracted_license_statement,
         parties=parties,
         homepage_url=homepage_url,
         dependencies=package_dependencies,
@@ -365,8 +333,3 @@ def build_package(pubspec_data):
         api_data_url=api_data_url,
         repository_download_url=repository_download_url,
     )
-
-    if not package.license_expression and package.declared_license:
-        package.license_expression = models.compute_normalized_license(package.declared_license)
-
-    return package

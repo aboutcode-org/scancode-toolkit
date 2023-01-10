@@ -1,1 +1,9 @@
+---
+license_expression: gpl-1.0-plus
+is_license_reference: yes
+relevance: 100
+referenced_filenames:
+    - /usr/share/common-licenses/GPL
+---
+
 The Debian packaging is and is licensed under the GPL, see `/usr/share/common-licenses/GPL'.

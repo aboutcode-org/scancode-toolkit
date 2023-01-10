@@ -1,4 +1,11 @@
- GPL HEADER START
+---
+license_expression: gpl-2.0
+is_license_notice: yes
+ignorable_urls:
+    - http://www.sun.com/
+---
+
+GPL HEADER START
 
  DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
 

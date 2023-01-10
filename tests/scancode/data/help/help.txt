@@ -36,9 +36,7 @@ Options:
                                  0 for no limit.  [default: 50]
     --max-url INT                Report only up to INT urls found in a file. Use 0
                                  for no limit.  [default: 50]
-    --unknown-licenses           [EXPERIMENTAL] Detect unknown licenses and follow
-                                 license references such as "See license in file
-                                 COPYING".
+    --unknown-licenses           [EXPERIMENTAL] Detect unknown licenses.
 
   output formats:
     --json FILE             Write scan output as compact JSON to FILE.
@@ -103,17 +101,10 @@ Options:
                              active
     --filter-clues           Filter redundant duplicated clues already contained
                              in detected license and copyright texts and notices.
-    --is-license-text        Set the "is_license_text" flag to true for files that
-                             contain mostly license texts and notices (e.g over
-                             90% of the content).[DEPRECATED] this is now built-in
-                             in the --license-text option with  a
-                             "percentage_of_license_text" attribute.
     --license-clarity-score  Compute a summary license clarity score at the
                              codebase level.
     --license-policy FILE    Load a License Policy file and apply it to the scan
                              at the Resource level.
-    --licenses-reference     Include a reference of all the licenses referenced in
-                             this scan with the data details and full texts.
     --mark-source            Set the "is_source" to true for directories that
                              contain over 90% of source files as children and
                              descendants. Count the number of source files in a
@@ -158,11 +149,9 @@ Options:
                              scan depth limit.
 
   miscellaneous:
-    --reindex-licenses              Rebuild the license index and exit.
-    --reindex-licenses-for-all-languages
-                                    [EXPERIMENTAL] Rebuild the license index
-                                    including texts all languages (and not only
-                                    English) and exit.
+    --dump-license-data DIR  Dump the license data in this directory in the
+                             LicenseDB format and exit. Creates the directory if
+                             it does not exist.
 
   documentation:
     -h, --help       Show this message and exit.

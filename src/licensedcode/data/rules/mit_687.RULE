@@ -1,1 +1,11 @@
+---
+license_expression: mit
+is_license_reference: yes
+relevance: 100
+referenced_filenames:
+    - LICENSE-MIT
+ignorable_urls:
+    - http://opensource.org/licenses/MIT
+---
+
 MIT license (LICENSE-MIT or http://opensource.org/licenses/MIT)

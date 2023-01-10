@@ -1,3 +1,9 @@
+---
+license_expression: lgpl-2.1-plus
+is_license_notice: yes
+notes: seen in newlib
+---
+
 Free Software Foundation LGPL License
 
    The GNU C Library is free software; you can redistribute it and/or
@@ -14,4 +20,3 @@ Free Software Foundation LGPL License
    License along with the GNU C Library; if not, write to the Free
    Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
    02110-1301 USA.
-

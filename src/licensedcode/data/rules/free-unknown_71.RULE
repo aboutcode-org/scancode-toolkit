@@ -1,1 +1,10 @@
+---
+license_expression: free-unknown
+is_license_reference: yes
+relevance: 100
+referenced_filenames:
+    - COPYING.DJ
+notes: typically for GPL
+---
+
 see COPYING.DJ for details

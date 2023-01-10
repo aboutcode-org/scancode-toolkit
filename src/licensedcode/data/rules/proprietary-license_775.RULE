@@ -1,3 +1,8 @@
+---
+license_expression: proprietary-license
+is_license_text: yes
+---
+
 Sources of the system under license MIT with conditions:
     - Charity links must be displayed on the page 
     - Code of the system only for non-commercial use only

@@ -1,3 +1,11 @@
+---
+license_expression: motorola
+is_license_text: yes
+minimum_coverage: 50
+notes: this is the same text as the original license, but with the clauses in a different order.
+    Spotted in U-Boot
+---
+
 You are hereby granted a copyright license to use, modify, and
 distribute the SOFTWARE so long as this entire notice is retained
 without alteration in any modified and/or redistributed versions,

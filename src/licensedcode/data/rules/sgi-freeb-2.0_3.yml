@@ -1,8 +1,0 @@
-license_expression: sgi-freeb-2.0
-is_license_reference: yes
-ignorable_copyrights:
-    - Copyright (c) September 18, 2008 Silicon Graphics, Inc.
-ignorable_holders:
-    - September 18, Silicon Graphics, Inc.
-ignorable_urls:
-    - http://oss.sgi.com/projects/FreeB/

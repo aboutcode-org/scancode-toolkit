@@ -1,47 +1,46 @@
-primary_license:
 declared_license:
-license_expression: gpl-3.0-plus AND gpl-2.0-plus
+declared_license_expression: gpl-3.0-plus AND gpl-2.0-plus
+declared_license_expression_spdx: GPL-3.0-or-later AND GPL-2.0-or-later
+other_license_expression:
+other_license_expression_spdx:
+license_detections:
+  - license_expression: gpl-3.0-plus
+    detection_log:
+      - not-combined
+    matches:
+      - score: '100.0'
+        start_line: 20
+        end_line: 26
+        matched_length: 65
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: gpl-3.0-plus
+        rule_identifier: gpl-3.0-plus_283.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0-plus_283.RULE
+        matched_text: "This program is free software; you can redistribute it and/or modify\
+          \ it\n   under the terms of the GNU General Public License as published by the\n \
+          \  Free Software Foundation; either version 3, or (at your option) any later\n   version.\n\
+          \nOn Debian GNU/Linux systems, the complete text of the GNU General Public \nLicense\
+          \ version 3 can be found in /usr/share/common-licenses/GPL-3."
+  - license_expression: gpl-2.0-plus
+    detection_log:
+      - not-combined
+    matches:
+      - score: '100.0'
+        start_line: 32
+        end_line: 38
+        matched_length: 65
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: gpl-2.0-plus
+        rule_identifier: gpl-2.0-plus_734.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_734.RULE
+        matched_text: "This program is free software; you can redistribute it and/or modify\
+          \ it\n   under the terms of the GNU General Public License as published by the\n \
+          \  Free Software Foundation; either version 2, or (at your option) any later\n   version.\n\
+          \nOn Debian GNU/Linux systems, the complete text of the GNU General Public \nLicense\
+          \ version 2 can be found in /usr/share/common-licenses/GPL-2."
+other_license_detections: []
 copyright: |
   Copyright (c) 1988, 1992, 1993, 1994, 1995, 1996, 1997, 1999, 2000, 2001, 2003, 2004, 2005, 2006, 2007 Free Software Foundation, Inc.
   Copyright (c) 2006, 2007 Bdale Garbee <bdale@gag.com>
-matches:
-  - score: '100.0'
-    start_line: 20
-    end_line: 26
-    matcher: 2-aho
-    rule_length: 65
-    matched_length: 65
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: gpl-3.0-plus_283.RULE
-    license_expression: gpl-3.0-plus
-    is_license_text: no
-    is_license_notice: yes
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: "This program is free software; you can redistribute it and/or modify it\n\
-      \   under the terms of the GNU General Public License as published by the\n   Free Software\
-      \ Foundation; either version 3, or (at your option) any later\n   version.\n\nOn Debian\
-      \ GNU/Linux systems, the complete text of the GNU General Public \nLicense version 3 can\
-      \ be found in /usr/share/common-licenses/GPL-3."
-  - score: '100.0'
-    start_line: 32
-    end_line: 38
-    matcher: 2-aho
-    rule_length: 65
-    matched_length: 65
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: gpl-2.0-plus_734.RULE
-    license_expression: gpl-2.0-plus
-    is_license_text: no
-    is_license_notice: yes
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: "This program is free software; you can redistribute it and/or modify it\n\
-      \   under the terms of the GNU General Public License as published by the\n   Free Software\
-      \ Foundation; either version 2, or (at your option) any later\n   version.\n\nOn Debian\
-      \ GNU/Linux systems, the complete text of the GNU General Public \nLicense version 2 can\
-      \ be found in /usr/share/common-licenses/GPL-2."

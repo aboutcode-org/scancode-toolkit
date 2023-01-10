@@ -1,4 +1,120 @@
 {
+  "packages": [
+    {
+      "type": "pypi",
+      "namespace": null,
+      "name": "celery",
+      "version": "5.2.7",
+      "qualifiers": {},
+      "subpath": null,
+      "primary_language": "Python",
+      "description": "Distributed Task Queue.\n.. image:: http://docs.celeryproject.org/en/latest/_images/celery-banner-small.png\n\n|build-status| |coverage| |license| |wheel| |pyversion| |pyimp| |ocbackerbadge| |ocsponsorbadge|\n\n:Version: 5.2.7 (dawn-chorus)\n:Web: https://docs.celeryproject.org/en/stable/index.html\n:Download: https://pypi.org/project/celery/\n:Source: https://github.com/celery/celery/\n:Keywords: task, queue, job, async, rabbitmq, amqp, redis,\n  python, distributed, actors\n\nDonations\n=========\n\nThis project relies on your generous donations.\n\nIf you are using Celery to create a commercial product, please consider becoming our `backer`_ or our `sponsor`_ to ensure Celery's future.\n\n.. _`backer`: https://opencollective.com/celery#backer\n.. _`sponsor`: https://opencollective.com/celery#sponsor\n\nFor enterprise\n==============\n\nAvailable as part of the Tidelift Subscription.\n\nThe maintainers of ``celery`` and thousands of other packages are working with Tidelift to deliver commercial support and maintenance for the open source dependencies you use to build your applications. Save time, reduce risk, and improve code health, while paying the maintainers of the exact dependencies you use. `Learn more. <https://tidelift.com/subscription/pkg/pypi-celery?utm_source=pypi-celery&utm_medium=referral&utm_campaign=enterprise&utm_term=repo>`_\n\nWhat's a Task Queue?\n====================\n\nTask queues are used as a mechanism to distribute work across threads or\nmachines.\n\nA task queue's input is a unit of work, called a task, dedicated worker\nprocesses then constantly monitor the queue for new work to perform.\n\nCelery communicates via messages, usually using a broker\nto mediate between clients and workers. To initiate a task a client puts a\nmessage on the queue, the broker then delivers the message to a worker.\n\nA Celery system can consist of multiple workers and brokers, giving way\nto high availability and horizontal scaling.\n\nCelery is written in Python, but the protocol can be implemented in any\nlanguage. In addition to Python there's node-celery_ for Node.js,\na `PHP client`_, `gocelery`_ for golang, and rusty-celery_ for Rust.\n\nLanguage interoperability can also be achieved by using webhooks\nin such a way that the client enqueues an URL to be requested by a worker.\n\n.. _node-celery: https://github.com/mher/node-celery\n.. _`PHP client`: https://github.com/gjedeer/celery-php\n.. _`gocelery`: https://github.com/gocelery/gocelery\n.. _rusty-celery: https://github.com/rusty-celery/rusty-celery\n\nWhat do I need?\n===============\n\nCelery version 5.2.0 runs on,\n\n- Python (3.7, 3.8, 3.9, 3.10)\n- PyPy3.7 (7.3.7+)\n\n\nThis is the version of celery which will support Python 3.7 or newer.\n\nIf you're running an older version of Python, you need to be running\nan older version of Celery:\n\n- Python 2.6: Celery series 3.1 or earlier.\n- Python 2.5: Celery series 3.0 or earlier.\n- Python 2.4: Celery series 2.2 or earlier.\n- Python 2.7: Celery 4.x series.\n- Python 3.6: Celery 5.1 or earlier.\n\nCelery is a project with minimal funding,\nso we don't support Microsoft Windows.\nPlease don't open any issues related to that platform.\n\n*Celery* is usually used with a message broker to send and receive messages.\nThe RabbitMQ, Redis transports are feature complete,\nbut there's also experimental support for a myriad of other solutions, including\nusing SQLite for local development.\n\n*Celery* can run on a single machine, on multiple machines, or even\nacross datacenters.\n\nGet Started\n===========\n\nIf this is the first time you're trying to use Celery, or you're\nnew to Celery v5.2.0 coming from previous versions then you should read our\ngetting started tutorials:\n\n- `First steps with Celery`_\n\n    Tutorial teaching you the bare minimum needed to get started with Celery.\n\n- `Next steps`_\n\n    A more complete overview, showing more features.\n\n.. _`First steps with Celery`:\n    http://docs.celeryproject.org/en/latest/getting-started/first-steps-with-celery.html\n\n.. _`Next steps`:\n    http://docs.celeryproject.org/en/latest/getting-started/next-steps.html\n\n You can also get started with Celery by using a hosted broker transport CloudAMQP. The largest hosting provider of RabbitMQ is a proud sponsor of Celery.\n\nCelery is...\n=============\n\n- **Simple**\n\n    Celery is easy to use and maintain, and does *not need configuration files*.\n\n    It has an active, friendly community you can talk to for support,\n    like at our `mailing-list`_, or the IRC channel.\n\n    Here's one of the simplest applications you can make:\n\n    .. code-block:: python\n\n        from celery import Celery\n\n        app = Celery('hello', broker='amqp://guest@localhost//')\n\n        @app.task\n        def hello():\n            return 'hello world'\n\n- **Highly Available**\n\n    Workers and clients will automatically retry in the event\n    of connection loss or failure, and some brokers support\n    HA in way of *Primary/Primary* or *Primary/Replica* replication.\n\n- **Fast**\n\n    A single Celery process can process millions of tasks a minute,\n    with sub-millisecond round-trip latency (using RabbitMQ,\n    py-librabbitmq, and optimized settings).\n\n- **Flexible**\n\n    Almost every part of *Celery* can be extended or used on its own,\n    Custom pool implementations, serializers, compression schemes, logging,\n    schedulers, consumers, producers, broker transports, and much more.\n\nIt supports...\n================\n\n    - **Message Transports**\n\n        - RabbitMQ_, Redis_, Amazon SQS\n\n    - **Concurrency**\n\n        - Prefork, Eventlet_, gevent_, single threaded (``solo``)\n\n    - **Result Stores**\n\n        - AMQP, Redis\n        - memcached\n        - SQLAlchemy, Django ORM\n        - Apache Cassandra, IronCache, Elasticsearch\n\n    - **Serialization**\n\n        - *pickle*, *json*, *yaml*, *msgpack*.\n        - *zlib*, *bzip2* compression.\n        - Cryptographic message signing.\n\n.. _`Eventlet`: http://eventlet.net/\n.. _`gevent`: http://gevent.org/\n\n.. _RabbitMQ: https://rabbitmq.com\n.. _Redis: https://redis.io\n.. _SQLAlchemy: http://sqlalchemy.org\n\nFramework Integration\n=====================\n\nCelery is easy to integrate with web frameworks, some of which even have\nintegration packages:\n\n    +--------------------+------------------------+\n    | `Django`_          | not needed             |\n    +--------------------+------------------------+\n    | `Pyramid`_         | `pyramid_celery`_      |\n    +--------------------+------------------------+\n    | `Pylons`_          | `celery-pylons`_       |\n    +--------------------+------------------------+\n    | `Flask`_           | not needed             |\n    +--------------------+------------------------+\n    | `web2py`_          | `web2py-celery`_       |\n    +--------------------+------------------------+\n    | `Tornado`_         | `tornado-celery`_      |\n    +--------------------+------------------------+\n\nThe integration packages aren't strictly necessary, but they can make\ndevelopment easier, and sometimes they add important hooks like closing\ndatabase connections at ``fork``.\n\n.. _`Django`: https://djangoproject.com/\n.. _`Pylons`: http://pylonsproject.org/\n.. _`Flask`: http://flask.pocoo.org/\n.. _`web2py`: http://web2py.com/\n.. _`Bottle`: https://bottlepy.org/\n.. _`Pyramid`: http://docs.pylonsproject.org/en/latest/docs/pyramid.html\n.. _`pyramid_celery`: https://pypi.org/project/pyramid_celery/\n.. _`celery-pylons`: https://pypi.org/project/celery-pylons/\n.. _`web2py-celery`: https://code.google.com/p/web2py-celery/\n.. _`Tornado`: http://www.tornadoweb.org/\n.. _`tornado-celery`: https://github.com/mher/tornado-celery/\n\n.. _celery-documentation:\n\nDocumentation\n=============\n\nThe `latest documentation`_ is hosted at Read The Docs, containing user guides,\ntutorials, and an API reference.\n\n\u6700\u65b0\u7684\u4e2d\u6587\u6587\u6863\u6258\u7ba1\u5728 https://www.celerycn.io/ \u4e2d\uff0c\u5305\u542b\u7528\u6237\u6307\u5357\u3001\u6559\u7a0b\u3001API\u63a5\u53e3\u7b49\u3002\n\n.. _`latest documentation`: http://docs.celeryproject.org/en/latest/\n\n.. _celery-installation:\n\nInstallation\n============\n\nYou can install Celery either via the Python Package Index (PyPI)\nor from source.\n\nTo install using ``pip``:\n\n::\n\n\n    $ pip install -U Celery\n\n.. _bundles:\n\nBundles\n-------\n\nCelery also defines a group of bundles that can be used\nto install Celery and the dependencies for a given feature.\n\nYou can specify these in your requirements or on the ``pip``\ncommand-line by using brackets. Multiple bundles can be specified by\nseparating them by commas.\n\n::\n\n\n    $ pip install \"celery[amqp]\"\n\n    $ pip install \"celery[amqp,redis,auth,msgpack]\"\n\nThe following bundles are available:\n\nSerializers\n~~~~~~~~~~~\n\n:``celery[auth]``:\n    for using the ``auth`` security serializer.\n\n:``celery[msgpack]``:\n    for using the msgpack serializer.\n\n:``celery[yaml]``:\n    for using the yaml serializer.\n\nConcurrency\n~~~~~~~~~~~\n\n:``celery[eventlet]``:\n    for using the ``eventlet`` pool.\n\n:``celery[gevent]``:\n    for using the ``gevent`` pool.\n\nTransports and Backends\n~~~~~~~~~~~~~~~~~~~~~~~\n\n:``celery[amqp]``:\n    for using the RabbitMQ amqp python library.\n\n:``celery[redis]``:\n    for using Redis as a message transport or as a result backend.\n\n:``celery[sqs]``:\n    for using Amazon SQS as a message transport.\n\n:``celery[tblib``]:\n    for using the ``task_remote_tracebacks`` feature.\n\n:``celery[memcache]``:\n    for using Memcached as a result backend (using ``pylibmc``)\n\n:``celery[pymemcache]``:\n    for using Memcached as a result backend (pure-Python implementation).\n\n:``celery[cassandra]``:\n    for using Apache Cassandra as a result backend with DataStax driver.\n\n:``celery[azureblockblob]``:\n    for using Azure Storage as a result backend (using ``azure-storage``)\n\n:``celery[s3]``:\n    for using S3 Storage as a result backend.\n\n:``celery[couchbase]``:\n    for using Couchbase as a result backend.\n\n:``celery[arangodb]``:\n    for using ArangoDB as a result backend.\n\n:``celery[elasticsearch]``:\n    for using Elasticsearch as a result backend.\n\n:``celery[riak]``:\n    for using Riak as a result backend.\n\n:``celery[cosmosdbsql]``:\n    for using Azure Cosmos DB as a result backend (using ``pydocumentdb``)\n\n:``celery[zookeeper]``:\n    for using Zookeeper as a message transport.\n\n:``celery[sqlalchemy]``:\n    for using SQLAlchemy as a result backend (*supported*).\n\n:``celery[pyro]``:\n    for using the Pyro4 message transport (*experimental*).\n\n:``celery[slmq]``:\n    for using the SoftLayer Message Queue transport (*experimental*).\n\n:``celery[consul]``:\n    for using the Consul.io Key/Value store as a message transport or result backend (*experimental*).\n\n:``celery[django]``:\n    specifies the lowest version possible for Django support.\n\n    You should probably not use this in your requirements, it's here\n    for informational purposes only.\n\n\n.. _celery-installing-from-source:\n\nDownloading and installing from source\n--------------------------------------\n\nDownload the latest version of Celery from PyPI:\n\nhttps://pypi.org/project/celery/\n\nYou can install it by doing the following,:\n\n::\n\n\n    $ tar xvfz celery-0.0.0.tar.gz\n    $ cd celery-0.0.0\n    $ python setup.py build\n    # python setup.py install\n\nThe last command must be executed as a privileged user if\nyou aren't currently using a virtualenv.\n\n.. _celery-installing-from-git:\n\nUsing the development version\n-----------------------------\n\nWith pip\n~~~~~~~~\n\nThe Celery development version also requires the development\nversions of ``kombu``, ``amqp``, ``billiard``, and ``vine``.\n\nYou can install the latest snapshot of these using the following\npip commands:\n\n::\n\n\n    $ pip install https://github.com/celery/celery/zipball/master#egg=celery\n    $ pip install https://github.com/celery/billiard/zipball/master#egg=billiard\n    $ pip install https://github.com/celery/py-amqp/zipball/master#egg=amqp\n    $ pip install https://github.com/celery/kombu/zipball/master#egg=kombu\n    $ pip install https://github.com/celery/vine/zipball/master#egg=vine\n\nWith git\n~~~~~~~~\n\nPlease see the Contributing section.\n\n.. _getting-help:\n\nGetting Help\n============\n\n.. _mailing-list:\n\nMailing list\n------------\n\nFor discussions about the usage, development, and future of Celery,\nplease join the `celery-users`_ mailing list.\n\n.. _`celery-users`: https://groups.google.com/group/celery-users/\n\n.. _irc-channel:\n\nIRC\n---\n\nCome chat with us on IRC. The **#celery** channel is located at the\n`Libera Chat`_ network.\n\n.. _`Libera Chat`: https://libera.chat/\n\n.. _bug-tracker:\n\nBug tracker\n===========\n\nIf you have any suggestions, bug reports, or annoyances please report them\nto our issue tracker at https://github.com/celery/celery/issues/\n\n.. _wiki:\n\nWiki\n====\n\nhttps://github.com/celery/celery/wiki\n\nCredits\n=======\n\n.. _contributing-short:\n\nContributors\n------------\n\nThis project exists thanks to all the people who contribute. Development of\n`celery` happens at GitHub: https://github.com/celery/celery\n\nYou're highly encouraged to participate in the development\nof `celery`. If you don't like GitHub (for some reason) you're welcome\nto send regular patches.\n\nBe sure to also read the `Contributing to Celery`_ section in the\ndocumentation.\n\n.. _`Contributing to Celery`:\n    http://docs.celeryproject.org/en/master/contributing.html\n\n|oc-contributors|\n\n.. |oc-contributors| image:: https://opencollective.com/celery/contributors.svg?width=890&button=false\n    :target: https://github.com/celery/celery/graphs/contributors\n\nBackers\n-------\n\nThank you to all our backers! \ud83d\ude4f [`Become a backer`_]\n\n.. _`Become a backer`: https://opencollective.com/celery#backer\n\n|oc-backers|\n\n.. |oc-backers| image:: https://opencollective.com/celery/backers.svg?width=890\n    :target: https://opencollective.com/celery#backers\n\nSponsors\n--------\n\nSupport this project by becoming a sponsor. Your logo will show up here with a\nlink to your website. [`Become a sponsor`_]\n\n.. _`Become a sponsor`: https://opencollective.com/celery#sponsor\n\n|oc-sponsors|\n\n.. |oc-sponsors| image:: https://opencollective.com/celery/sponsor/0/avatar.svg\n    :target: https://opencollective.com/celery/sponsor/0/website\n\n.. _license:\n\nLicense\n=======\n\nThis software is licensed under the `New BSD License`. See the ``LICENSE``\nfile in the top distribution directory for the full license text.\n\n.. # vim: syntax=rst expandtab tabstop=4 shiftwidth=4 shiftround\n\n.. |build-status| image:: https://github.com/celery/celery/actions/workflows/python-package.yml/badge.svg\n    :alt: Build status\n    :target: https://github.com/celery/celery/actions/workflows/python-package.yml\n\n.. |coverage| image:: https://codecov.io/github/celery/celery/coverage.svg?branch=master\n    :target: https://codecov.io/github/celery/celery?branch=master\n\n.. |license| image:: https://img.shields.io/pypi/l/celery.svg\n    :alt: BSD License\n    :target: https://opensource.org/licenses/BSD-3-Clause\n\n.. |wheel| image:: https://img.shields.io/pypi/wheel/celery.svg\n    :alt: Celery can be installed via wheel\n    :target: https://pypi.org/project/celery/\n\n.. |pyversion| image:: https://img.shields.io/pypi/pyversions/celery.svg\n    :alt: Supported Python versions.\n    :target: https://pypi.org/project/celery/\n\n.. |pyimp| image:: https://img.shields.io/pypi/implementation/celery.svg\n    :alt: Supported Python implementations.\n    :target: https://pypi.org/project/celery/\n\n.. |ocbackerbadge| image:: https://opencollective.com/celery/backers/badge.svg\n    :alt: Backers on Open Collective\n    :target: #backers\n\n.. |ocsponsorbadge| image:: https://opencollective.com/celery/sponsors/badge.svg\n    :alt: Sponsors on Open Collective\n    :target: #sponsors\n\n.. |downloads| image:: https://pepy.tech/badge/celery\n    :alt: Downloads\n    :target: https://pepy.tech/project/celery",
+      "release_date": null,
+      "parties": [
+        {
+          "type": "person",
+          "role": "author",
+          "name": "Ask Solem",
+          "email": "auvipy@gmail.com",
+          "url": null
+        }
+      ],
+      "keywords": [
+        "task job queue distributed messaging actor",
+        "Development Status :: 5 - Production/Stable",
+        "Topic :: System :: Distributed Computing",
+        "Topic :: Software Development :: Object Brokering",
+        "Framework :: Celery",
+        "Programming Language :: Python",
+        "Programming Language :: Python :: 3 :: Only",
+        "Programming Language :: Python :: 3",
+        "Programming Language :: Python :: 3.7",
+        "Programming Language :: Python :: 3.8",
+        "Programming Language :: Python :: 3.9",
+        "Programming Language :: Python :: 3.10",
+        "Programming Language :: Python :: Implementation :: CPython",
+        "Programming Language :: Python :: Implementation :: PyPy",
+        "Operating System :: OS Independent"
+      ],
+      "homepage_url": "http://celeryproject.org",
+      "download_url": null,
+      "size": null,
+      "sha1": null,
+      "md5": null,
+      "sha256": null,
+      "sha512": null,
+      "bug_tracking_url": "https://github.com/celery/celery/issues",
+      "code_view_url": "https://github.com/celery/celery",
+      "vcs_url": null,
+      "copyright": null,
+      "declared_license_expression": "bsd-new",
+      "declared_license_expression_spdx": "BSD-3-Clause",
+      "license_detections": [
+        {
+          "license_expression": "bsd-new",
+          "detection_log": [
+            "not-combined"
+          ],
+          "matches": [
+            {
+              "score": 99.0,
+              "start_line": 1,
+              "end_line": 1,
+              "matched_length": 2,
+              "match_coverage": 100.0,
+              "matcher": "1-hash",
+              "license_expression": "bsd-new",
+              "rule_identifier": "bsd-new_89.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_89.RULE",
+              "matched_text": "license BSD"
+            }
+          ]
+        },
+        {
+          "license_expression": "bsd-new",
+          "detection_log": [
+            "not-combined"
+          ],
+          "matches": [
+            {
+              "score": 99.0,
+              "start_line": 1,
+              "end_line": 1,
+              "matched_length": 5,
+              "match_coverage": 100.0,
+              "matcher": "1-hash",
+              "license_expression": "bsd-new",
+              "rule_identifier": "pypi_bsd_license.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/pypi_bsd_license.RULE",
+              "matched_text": "['License :: OSI Approved :: BSD License']"
+            }
+          ]
+        }
+      ],
+      "other_license_expression": null,
+      "other_license_expression_spdx": null,
+      "other_license_detections": [],
+      "extracted_license_statement": "{'license': 'BSD', 'classifiers': ['License :: OSI Approved :: BSD License']}",
+      "notice_text": null,
+      "source_packages": [],
+      "extra_data": {
+        "Documentation": "https://docs.celeryproject.org/en/latest/index.html",
+        "Changelog": "https://docs.celeryproject.org/en/stable/changelog.html",
+        "Funding": "https://opencollective.com/celery"
+      },
+      "repository_homepage_url": "https://pypi.org/project/celery",
+      "repository_download_url": "https://pypi.org/packages/source/c/celery/celery-5.2.7.tar.gz",
+      "api_data_url": "https://pypi.org/pypi/celery/5.2.7/json",
+      "package_uid": "pkg:pypi/celery@5.2.7?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_paths": [
+        "celery/celery.egg-info/PKG-INFO"
+      ],
+      "datasource_ids": [
+        "pypi_editable_egg_pkginfo"
+      ],
+      "purl": "pkg:pypi/celery@5.2.7"
+    }
+  ],
   "dependencies": [
     {
       "purl": "pkg:pypi/pytz",
@@ -589,79 +705,101 @@
       "datasource_id": "pypi_editable_egg_pkginfo"
     }
   ],
-  "packages": [
+  "license_references": [
     {
-      "type": "pypi",
-      "namespace": null,
-      "name": "celery",
-      "version": "5.2.7",
-      "qualifiers": {},
-      "subpath": null,
-      "primary_language": "Python",
-      "description": "Distributed Task Queue.\n.. image:: http://docs.celeryproject.org/en/latest/_images/celery-banner-small.png\n\n|build-status| |coverage| |license| |wheel| |pyversion| |pyimp| |ocbackerbadge| |ocsponsorbadge|\n\n:Version: 5.2.7 (dawn-chorus)\n:Web: https://docs.celeryproject.org/en/stable/index.html\n:Download: https://pypi.org/project/celery/\n:Source: https://github.com/celery/celery/\n:Keywords: task, queue, job, async, rabbitmq, amqp, redis,\n  python, distributed, actors\n\nDonations\n=========\n\nThis project relies on your generous donations.\n\nIf you are using Celery to create a commercial product, please consider becoming our `backer`_ or our `sponsor`_ to ensure Celery's future.\n\n.. _`backer`: https://opencollective.com/celery#backer\n.. _`sponsor`: https://opencollective.com/celery#sponsor\n\nFor enterprise\n==============\n\nAvailable as part of the Tidelift Subscription.\n\nThe maintainers of ``celery`` and thousands of other packages are working with Tidelift to deliver commercial support and maintenance for the open source dependencies you use to build your applications. Save time, reduce risk, and improve code health, while paying the maintainers of the exact dependencies you use. `Learn more. <https://tidelift.com/subscription/pkg/pypi-celery?utm_source=pypi-celery&utm_medium=referral&utm_campaign=enterprise&utm_term=repo>`_\n\nWhat's a Task Queue?\n====================\n\nTask queues are used as a mechanism to distribute work across threads or\nmachines.\n\nA task queue's input is a unit of work, called a task, dedicated worker\nprocesses then constantly monitor the queue for new work to perform.\n\nCelery communicates via messages, usually using a broker\nto mediate between clients and workers. To initiate a task a client puts a\nmessage on the queue, the broker then delivers the message to a worker.\n\nA Celery system can consist of multiple workers and brokers, giving way\nto high availability and horizontal scaling.\n\nCelery is written in Python, but the protocol can be implemented in any\nlanguage. In addition to Python there's node-celery_ for Node.js,\na `PHP client`_, `gocelery`_ for golang, and rusty-celery_ for Rust.\n\nLanguage interoperability can also be achieved by using webhooks\nin such a way that the client enqueues an URL to be requested by a worker.\n\n.. _node-celery: https://github.com/mher/node-celery\n.. _`PHP client`: https://github.com/gjedeer/celery-php\n.. _`gocelery`: https://github.com/gocelery/gocelery\n.. _rusty-celery: https://github.com/rusty-celery/rusty-celery\n\nWhat do I need?\n===============\n\nCelery version 5.2.0 runs on,\n\n- Python (3.7, 3.8, 3.9, 3.10)\n- PyPy3.7 (7.3.7+)\n\n\nThis is the version of celery which will support Python 3.7 or newer.\n\nIf you're running an older version of Python, you need to be running\nan older version of Celery:\n\n- Python 2.6: Celery series 3.1 or earlier.\n- Python 2.5: Celery series 3.0 or earlier.\n- Python 2.4: Celery series 2.2 or earlier.\n- Python 2.7: Celery 4.x series.\n- Python 3.6: Celery 5.1 or earlier.\n\nCelery is a project with minimal funding,\nso we don't support Microsoft Windows.\nPlease don't open any issues related to that platform.\n\n*Celery* is usually used with a message broker to send and receive messages.\nThe RabbitMQ, Redis transports are feature complete,\nbut there's also experimental support for a myriad of other solutions, including\nusing SQLite for local development.\n\n*Celery* can run on a single machine, on multiple machines, or even\nacross datacenters.\n\nGet Started\n===========\n\nIf this is the first time you're trying to use Celery, or you're\nnew to Celery v5.2.0 coming from previous versions then you should read our\ngetting started tutorials:\n\n- `First steps with Celery`_\n\n    Tutorial teaching you the bare minimum needed to get started with Celery.\n\n- `Next steps`_\n\n    A more complete overview, showing more features.\n\n.. _`First steps with Celery`:\n    http://docs.celeryproject.org/en/latest/getting-started/first-steps-with-celery.html\n\n.. _`Next steps`:\n    http://docs.celeryproject.org/en/latest/getting-started/next-steps.html\n\n You can also get started with Celery by using a hosted broker transport CloudAMQP. The largest hosting provider of RabbitMQ is a proud sponsor of Celery.\n\nCelery is...\n=============\n\n- **Simple**\n\n    Celery is easy to use and maintain, and does *not need configuration files*.\n\n    It has an active, friendly community you can talk to for support,\n    like at our `mailing-list`_, or the IRC channel.\n\n    Here's one of the simplest applications you can make:\n\n    .. code-block:: python\n\n        from celery import Celery\n\n        app = Celery('hello', broker='amqp://guest@localhost//')\n\n        @app.task\n        def hello():\n            return 'hello world'\n\n- **Highly Available**\n\n    Workers and clients will automatically retry in the event\n    of connection loss or failure, and some brokers support\n    HA in way of *Primary/Primary* or *Primary/Replica* replication.\n\n- **Fast**\n\n    A single Celery process can process millions of tasks a minute,\n    with sub-millisecond round-trip latency (using RabbitMQ,\n    py-librabbitmq, and optimized settings).\n\n- **Flexible**\n\n    Almost every part of *Celery* can be extended or used on its own,\n    Custom pool implementations, serializers, compression schemes, logging,\n    schedulers, consumers, producers, broker transports, and much more.\n\nIt supports...\n================\n\n    - **Message Transports**\n\n        - RabbitMQ_, Redis_, Amazon SQS\n\n    - **Concurrency**\n\n        - Prefork, Eventlet_, gevent_, single threaded (``solo``)\n\n    - **Result Stores**\n\n        - AMQP, Redis\n        - memcached\n        - SQLAlchemy, Django ORM\n        - Apache Cassandra, IronCache, Elasticsearch\n\n    - **Serialization**\n\n        - *pickle*, *json*, *yaml*, *msgpack*.\n        - *zlib*, *bzip2* compression.\n        - Cryptographic message signing.\n\n.. _`Eventlet`: http://eventlet.net/\n.. _`gevent`: http://gevent.org/\n\n.. _RabbitMQ: https://rabbitmq.com\n.. _Redis: https://redis.io\n.. _SQLAlchemy: http://sqlalchemy.org\n\nFramework Integration\n=====================\n\nCelery is easy to integrate with web frameworks, some of which even have\nintegration packages:\n\n    +--------------------+------------------------+\n    | `Django`_          | not needed             |\n    +--------------------+------------------------+\n    | `Pyramid`_         | `pyramid_celery`_      |\n    +--------------------+------------------------+\n    | `Pylons`_          | `celery-pylons`_       |\n    +--------------------+------------------------+\n    | `Flask`_           | not needed             |\n    +--------------------+------------------------+\n    | `web2py`_          | `web2py-celery`_       |\n    +--------------------+------------------------+\n    | `Tornado`_         | `tornado-celery`_      |\n    +--------------------+------------------------+\n\nThe integration packages aren't strictly necessary, but they can make\ndevelopment easier, and sometimes they add important hooks like closing\ndatabase connections at ``fork``.\n\n.. _`Django`: https://djangoproject.com/\n.. _`Pylons`: http://pylonsproject.org/\n.. _`Flask`: http://flask.pocoo.org/\n.. _`web2py`: http://web2py.com/\n.. _`Bottle`: https://bottlepy.org/\n.. _`Pyramid`: http://docs.pylonsproject.org/en/latest/docs/pyramid.html\n.. _`pyramid_celery`: https://pypi.org/project/pyramid_celery/\n.. _`celery-pylons`: https://pypi.org/project/celery-pylons/\n.. _`web2py-celery`: https://code.google.com/p/web2py-celery/\n.. _`Tornado`: http://www.tornadoweb.org/\n.. _`tornado-celery`: https://github.com/mher/tornado-celery/\n\n.. _celery-documentation:\n\nDocumentation\n=============\n\nThe `latest documentation`_ is hosted at Read The Docs, containing user guides,\ntutorials, and an API reference.\n\n\u6700\u65b0\u7684\u4e2d\u6587\u6587\u6863\u6258\u7ba1\u5728 https://www.celerycn.io/ \u4e2d\uff0c\u5305\u542b\u7528\u6237\u6307\u5357\u3001\u6559\u7a0b\u3001API\u63a5\u53e3\u7b49\u3002\n\n.. _`latest documentation`: http://docs.celeryproject.org/en/latest/\n\n.. _celery-installation:\n\nInstallation\n============\n\nYou can install Celery either via the Python Package Index (PyPI)\nor from source.\n\nTo install using ``pip``:\n\n::\n\n\n    $ pip install -U Celery\n\n.. _bundles:\n\nBundles\n-------\n\nCelery also defines a group of bundles that can be used\nto install Celery and the dependencies for a given feature.\n\nYou can specify these in your requirements or on the ``pip``\ncommand-line by using brackets. Multiple bundles can be specified by\nseparating them by commas.\n\n::\n\n\n    $ pip install \"celery[amqp]\"\n\n    $ pip install \"celery[amqp,redis,auth,msgpack]\"\n\nThe following bundles are available:\n\nSerializers\n~~~~~~~~~~~\n\n:``celery[auth]``:\n    for using the ``auth`` security serializer.\n\n:``celery[msgpack]``:\n    for using the msgpack serializer.\n\n:``celery[yaml]``:\n    for using the yaml serializer.\n\nConcurrency\n~~~~~~~~~~~\n\n:``celery[eventlet]``:\n    for using the ``eventlet`` pool.\n\n:``celery[gevent]``:\n    for using the ``gevent`` pool.\n\nTransports and Backends\n~~~~~~~~~~~~~~~~~~~~~~~\n\n:``celery[amqp]``:\n    for using the RabbitMQ amqp python library.\n\n:``celery[redis]``:\n    for using Redis as a message transport or as a result backend.\n\n:``celery[sqs]``:\n    for using Amazon SQS as a message transport.\n\n:``celery[tblib``]:\n    for using the ``task_remote_tracebacks`` feature.\n\n:``celery[memcache]``:\n    for using Memcached as a result backend (using ``pylibmc``)\n\n:``celery[pymemcache]``:\n    for using Memcached as a result backend (pure-Python implementation).\n\n:``celery[cassandra]``:\n    for using Apache Cassandra as a result backend with DataStax driver.\n\n:``celery[azureblockblob]``:\n    for using Azure Storage as a result backend (using ``azure-storage``)\n\n:``celery[s3]``:\n    for using S3 Storage as a result backend.\n\n:``celery[couchbase]``:\n    for using Couchbase as a result backend.\n\n:``celery[arangodb]``:\n    for using ArangoDB as a result backend.\n\n:``celery[elasticsearch]``:\n    for using Elasticsearch as a result backend.\n\n:``celery[riak]``:\n    for using Riak as a result backend.\n\n:``celery[cosmosdbsql]``:\n    for using Azure Cosmos DB as a result backend (using ``pydocumentdb``)\n\n:``celery[zookeeper]``:\n    for using Zookeeper as a message transport.\n\n:``celery[sqlalchemy]``:\n    for using SQLAlchemy as a result backend (*supported*).\n\n:``celery[pyro]``:\n    for using the Pyro4 message transport (*experimental*).\n\n:``celery[slmq]``:\n    for using the SoftLayer Message Queue transport (*experimental*).\n\n:``celery[consul]``:\n    for using the Consul.io Key/Value store as a message transport or result backend (*experimental*).\n\n:``celery[django]``:\n    specifies the lowest version possible for Django support.\n\n    You should probably not use this in your requirements, it's here\n    for informational purposes only.\n\n\n.. _celery-installing-from-source:\n\nDownloading and installing from source\n--------------------------------------\n\nDownload the latest version of Celery from PyPI:\n\nhttps://pypi.org/project/celery/\n\nYou can install it by doing the following,:\n\n::\n\n\n    $ tar xvfz celery-0.0.0.tar.gz\n    $ cd celery-0.0.0\n    $ python setup.py build\n    # python setup.py install\n\nThe last command must be executed as a privileged user if\nyou aren't currently using a virtualenv.\n\n.. _celery-installing-from-git:\n\nUsing the development version\n-----------------------------\n\nWith pip\n~~~~~~~~\n\nThe Celery development version also requires the development\nversions of ``kombu``, ``amqp``, ``billiard``, and ``vine``.\n\nYou can install the latest snapshot of these using the following\npip commands:\n\n::\n\n\n    $ pip install https://github.com/celery/celery/zipball/master#egg=celery\n    $ pip install https://github.com/celery/billiard/zipball/master#egg=billiard\n    $ pip install https://github.com/celery/py-amqp/zipball/master#egg=amqp\n    $ pip install https://github.com/celery/kombu/zipball/master#egg=kombu\n    $ pip install https://github.com/celery/vine/zipball/master#egg=vine\n\nWith git\n~~~~~~~~\n\nPlease see the Contributing section.\n\n.. _getting-help:\n\nGetting Help\n============\n\n.. _mailing-list:\n\nMailing list\n------------\n\nFor discussions about the usage, development, and future of Celery,\nplease join the `celery-users`_ mailing list.\n\n.. _`celery-users`: https://groups.google.com/group/celery-users/\n\n.. _irc-channel:\n\nIRC\n---\n\nCome chat with us on IRC. The **#celery** channel is located at the\n`Libera Chat`_ network.\n\n.. _`Libera Chat`: https://libera.chat/\n\n.. _bug-tracker:\n\nBug tracker\n===========\n\nIf you have any suggestions, bug reports, or annoyances please report them\nto our issue tracker at https://github.com/celery/celery/issues/\n\n.. _wiki:\n\nWiki\n====\n\nhttps://github.com/celery/celery/wiki\n\nCredits\n=======\n\n.. _contributing-short:\n\nContributors\n------------\n\nThis project exists thanks to all the people who contribute. Development of\n`celery` happens at GitHub: https://github.com/celery/celery\n\nYou're highly encouraged to participate in the development\nof `celery`. If you don't like GitHub (for some reason) you're welcome\nto send regular patches.\n\nBe sure to also read the `Contributing to Celery`_ section in the\ndocumentation.\n\n.. _`Contributing to Celery`:\n    http://docs.celeryproject.org/en/master/contributing.html\n\n|oc-contributors|\n\n.. |oc-contributors| image:: https://opencollective.com/celery/contributors.svg?width=890&button=false\n    :target: https://github.com/celery/celery/graphs/contributors\n\nBackers\n-------\n\nThank you to all our backers! \ud83d\ude4f [`Become a backer`_]\n\n.. _`Become a backer`: https://opencollective.com/celery#backer\n\n|oc-backers|\n\n.. |oc-backers| image:: https://opencollective.com/celery/backers.svg?width=890\n    :target: https://opencollective.com/celery#backers\n\nSponsors\n--------\n\nSupport this project by becoming a sponsor. Your logo will show up here with a\nlink to your website. [`Become a sponsor`_]\n\n.. _`Become a sponsor`: https://opencollective.com/celery#sponsor\n\n|oc-sponsors|\n\n.. |oc-sponsors| image:: https://opencollective.com/celery/sponsor/0/avatar.svg\n    :target: https://opencollective.com/celery/sponsor/0/website\n\n.. _license:\n\nLicense\n=======\n\nThis software is licensed under the `New BSD License`. See the ``LICENSE``\nfile in the top distribution directory for the full license text.\n\n.. # vim: syntax=rst expandtab tabstop=4 shiftwidth=4 shiftround\n\n.. |build-status| image:: https://github.com/celery/celery/actions/workflows/python-package.yml/badge.svg\n    :alt: Build status\n    :target: https://github.com/celery/celery/actions/workflows/python-package.yml\n\n.. |coverage| image:: https://codecov.io/github/celery/celery/coverage.svg?branch=master\n    :target: https://codecov.io/github/celery/celery?branch=master\n\n.. |license| image:: https://img.shields.io/pypi/l/celery.svg\n    :alt: BSD License\n    :target: https://opensource.org/licenses/BSD-3-Clause\n\n.. |wheel| image:: https://img.shields.io/pypi/wheel/celery.svg\n    :alt: Celery can be installed via wheel\n    :target: https://pypi.org/project/celery/\n\n.. |pyversion| image:: https://img.shields.io/pypi/pyversions/celery.svg\n    :alt: Supported Python versions.\n    :target: https://pypi.org/project/celery/\n\n.. |pyimp| image:: https://img.shields.io/pypi/implementation/celery.svg\n    :alt: Supported Python implementations.\n    :target: https://pypi.org/project/celery/\n\n.. |ocbackerbadge| image:: https://opencollective.com/celery/backers/badge.svg\n    :alt: Backers on Open Collective\n    :target: #backers\n\n.. |ocsponsorbadge| image:: https://opencollective.com/celery/sponsors/badge.svg\n    :alt: Sponsors on Open Collective\n    :target: #sponsors\n\n.. |downloads| image:: https://pepy.tech/badge/celery\n    :alt: Downloads\n    :target: https://pepy.tech/project/celery",
-      "release_date": null,
-      "parties": [
-        {
-          "type": "person",
-          "role": "author",
-          "name": "Ask Solem",
-          "email": "auvipy@gmail.com",
-          "url": null
-        }
+      "key": "bsd-new",
+      "language": "en",
+      "short_name": "BSD-3-Clause",
+      "name": "BSD-3-Clause",
+      "category": "Permissive",
+      "owner": "Regents of the University of California",
+      "homepage_url": "http://www.opensource.org/licenses/BSD-3-Clause",
+      "notes": "Per SPDX.org, this license is OSI certified.",
+      "is_builtin": true,
+      "is_exception": false,
+      "is_unknown": false,
+      "is_generic": false,
+      "spdx_license_key": "BSD-3-Clause",
+      "other_spdx_license_keys": [
+        "LicenseRef-scancode-libzip"
       ],
-      "keywords": [
-        "task job queue distributed messaging actor",
-        "Development Status :: 5 - Production/Stable",
-        "Topic :: System :: Distributed Computing",
-        "Topic :: Software Development :: Object Brokering",
-        "Framework :: Celery",
-        "Programming Language :: Python",
-        "Programming Language :: Python :: 3 :: Only",
-        "Programming Language :: Python :: 3",
-        "Programming Language :: Python :: 3.7",
-        "Programming Language :: Python :: 3.8",
-        "Programming Language :: Python :: 3.9",
-        "Programming Language :: Python :: 3.10",
-        "Programming Language :: Python :: Implementation :: CPython",
-        "Programming Language :: Python :: Implementation :: PyPy",
-        "Operating System :: OS Independent"
+      "osi_license_key": "BSD-3-Clause",
+      "text_urls": [
+        "http://www.opensource.org/licenses/BSD-3-Clause"
       ],
-      "homepage_url": "http://celeryproject.org",
-      "download_url": null,
-      "size": null,
-      "sha1": null,
-      "md5": null,
-      "sha256": null,
-      "sha512": null,
-      "bug_tracking_url": "https://github.com/celery/celery/issues",
-      "code_view_url": "https://github.com/celery/celery",
-      "vcs_url": null,
-      "copyright": null,
-      "license_expression": "bsd-new AND bsd-new",
-      "declared_license": {
-        "license": "BSD",
-        "classifiers": [
-          "License :: OSI Approved :: BSD License"
-        ]
-      },
-      "notice_text": null,
-      "source_packages": [],
-      "extra_data": {
-        "Documentation": "https://docs.celeryproject.org/en/latest/index.html",
-        "Changelog": "https://docs.celeryproject.org/en/stable/changelog.html",
-        "Funding": "https://opencollective.com/celery"
-      },
-      "repository_homepage_url": "https://pypi.org/project/celery",
-      "repository_download_url": "https://pypi.org/packages/source/c/celery/celery-5.2.7.tar.gz",
-      "api_data_url": "https://pypi.org/pypi/celery/5.2.7/json",
-      "package_uid": "pkg:pypi/celery@5.2.7?uuid=fixed-uid-done-for-testing-5642512d1758",
-      "datafile_paths": [
-        "celery/celery.egg-info/PKG-INFO"
+      "osi_url": "http://www.opensource.org/licenses/BSD-3-Clause",
+      "faq_url": null,
+      "other_urls": [
+        "http://framework.zend.com/license/new-bsd",
+        "https://opensource.org/licenses/BSD-3-Clause",
+        "https://www.eclipse.org/org/documents/edl-v10.php"
       ],
-      "datasource_ids": [
-        "pypi_editable_egg_pkginfo"
-      ],
-      "purl": "pkg:pypi/celery@5.2.7"
+      "key_aliases": [],
+      "minimum_coverage": 0,
+      "standard_notice": null,
+      "ignorable_copyrights": [],
+      "ignorable_holders": [],
+      "ignorable_authors": [],
+      "ignorable_urls": [],
+      "ignorable_emails": [],
+      "text": "Redistribution and use in source and binary forms, with or without modification,\nare permitted provided that the following conditions are met:\n\nRedistributions of source code must retain the above copyright notice, this list\nof conditions and the following disclaimer.\n\nRedistributions in binary form must reproduce the above copyright notice, this\nlist of conditions and the following disclaimer in the documentation and/or\nother materials provided with the distribution.\n\nNeither the name of the ORGANIZATION nor the names of its contributors may be\nused to endorse or promote products derived from this software without specific\nprior written permission.\n\nTHIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS\n\"AS IS\" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO,\nTHE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE\nARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS\nBE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR\nCONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE\nGOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)\nHOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT\nLIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF\nTHE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.",
+      "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-new.LICENSE",
+      "licensedb_url": "https://scancode-licensedb.aboutcode.org/bsd-new",
+      "spdx_url": "https://spdx.org/licenses/BSD-3-Clause"
+    }
+  ],
+  "license_rule_references": [
+    {
+      "license_expression": "bsd-new",
+      "identifier": "bsd-new_89.RULE",
+      "language": "en",
+      "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_89.RULE",
+      "is_license_text": false,
+      "is_license_notice": false,
+      "is_license_reference": false,
+      "is_license_tag": true,
+      "is_license_intro": false,
+      "is_continuous": false,
+      "is_builtin": true,
+      "is_from_license": false,
+      "is_synthetic": false,
+      "length": 2,
+      "relevance": 99,
+      "minimum_coverage": 100,
+      "referenced_filenames": [],
+      "notes": null,
+      "ignorable_copyrights": [],
+      "ignorable_holders": [],
+      "ignorable_authors": [],
+      "ignorable_urls": [],
+      "ignorable_emails": [],
+      "text": "License: BSD"
+    },
+    {
+      "license_expression": "bsd-new",
+      "identifier": "pypi_bsd_license.RULE",
+      "language": "en",
+      "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/pypi_bsd_license.RULE",
+      "is_license_text": false,
+      "is_license_notice": false,
+      "is_license_reference": false,
+      "is_license_tag": true,
+      "is_license_intro": false,
+      "is_continuous": false,
+      "is_builtin": true,
+      "is_from_license": false,
+      "is_synthetic": false,
+      "length": 5,
+      "relevance": 99,
+      "minimum_coverage": 80,
+      "referenced_filenames": [],
+      "notes": "we picked the bsd-new out of all possible bsd licenses",
+      "ignorable_copyrights": [],
+      "ignorable_holders": [],
+      "ignorable_authors": [],
+      "ignorable_urls": [],
+      "ignorable_emails": [],
+      "text": "License :: OSI Approved :: BSD License"
     }
   ],
   "files": [
@@ -723,13 +861,54 @@
           "code_view_url": "https://github.com/celery/celery",
           "vcs_url": null,
           "copyright": null,
-          "license_expression": "bsd-new AND bsd-new",
-          "declared_license": {
-            "license": "BSD",
-            "classifiers": [
-              "License :: OSI Approved :: BSD License"
-            ]
-          },
+          "declared_license_expression": "bsd-new",
+          "declared_license_expression_spdx": "BSD-3-Clause",
+          "license_detections": [
+            {
+              "license_expression": "bsd-new",
+              "detection_log": [
+                "not-combined"
+              ],
+              "matches": [
+                {
+                  "score": 99.0,
+                  "start_line": 1,
+                  "end_line": 1,
+                  "matched_length": 2,
+                  "match_coverage": 100.0,
+                  "matcher": "1-hash",
+                  "license_expression": "bsd-new",
+                  "rule_identifier": "bsd-new_89.RULE",
+                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_89.RULE",
+                  "matched_text": "license BSD"
+                }
+              ]
+            },
+            {
+              "license_expression": "bsd-new",
+              "detection_log": [
+                "not-combined"
+              ],
+              "matches": [
+                {
+                  "score": 99.0,
+                  "start_line": 1,
+                  "end_line": 1,
+                  "matched_length": 5,
+                  "match_coverage": 100.0,
+                  "matcher": "1-hash",
+                  "license_expression": "bsd-new",
+                  "rule_identifier": "pypi_bsd_license.RULE",
+                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/pypi_bsd_license.RULE",
+                  "matched_text": "['License :: OSI Approved :: BSD License']"
+                }
+              ]
+            }
+          ],
+          "other_license_expression": null,
+          "other_license_expression_spdx": null,
+          "other_license_detections": [],
+          "extracted_license_statement": "{'license': 'BSD', 'classifiers': ['License :: OSI Approved :: BSD License']}",
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
@@ -809,13 +988,54 @@
           "code_view_url": "https://github.com/celery/celery",
           "vcs_url": null,
           "copyright": null,
-          "license_expression": "bsd-new AND bsd-new",
-          "declared_license": {
-            "license": "BSD",
-            "classifiers": [
-              "License :: OSI Approved :: BSD License"
-            ]
-          },
+          "declared_license_expression": "bsd-new",
+          "declared_license_expression_spdx": "BSD-3-Clause",
+          "license_detections": [
+            {
+              "license_expression": "bsd-new",
+              "detection_log": [
+                "not-combined"
+              ],
+              "matches": [
+                {
+                  "score": 99.0,
+                  "start_line": 1,
+                  "end_line": 1,
+                  "matched_length": 2,
+                  "match_coverage": 100.0,
+                  "matcher": "1-hash",
+                  "license_expression": "bsd-new",
+                  "rule_identifier": "bsd-new_89.RULE",
+                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_89.RULE",
+                  "matched_text": "license BSD"
+                }
+              ]
+            },
+            {
+              "license_expression": "bsd-new",
+              "detection_log": [
+                "not-combined"
+              ],
+              "matches": [
+                {
+                  "score": 99.0,
+                  "start_line": 1,
+                  "end_line": 1,
+                  "matched_length": 5,
+                  "match_coverage": 100.0,
+                  "matcher": "1-hash",
+                  "license_expression": "bsd-new",
+                  "rule_identifier": "pypi_bsd_license.RULE",
+                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/pypi_bsd_license.RULE",
+                  "matched_text": "['License :: OSI Approved :: BSD License']"
+                }
+              ]
+            }
+          ],
+          "other_license_expression": null,
+          "other_license_expression_spdx": null,
+          "other_license_detections": [],
+          "extracted_license_statement": "{'license': 'BSD', 'classifiers': ['License :: OSI Approved :: BSD License']}",
           "notice_text": null,
           "source_packages": [],
           "file_references": [
@@ -7190,8 +7410,13 @@
           "code_view_url": null,
           "vcs_url": null,
           "copyright": null,
-          "license_expression": null,
-          "declared_license": null,
+          "declared_license_expression": null,
+          "declared_license_expression_spdx": null,
+          "license_detections": [],
+          "other_license_expression": null,
+          "other_license_expression_spdx": null,
+          "other_license_detections": [],
+          "extracted_license_statement": null,
           "notice_text": null,
           "source_packages": [],
           "file_references": [],

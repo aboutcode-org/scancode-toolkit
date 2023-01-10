@@ -1,3 +1,18 @@
+---
+key: json
+short_name: JSON License
+name: JSON License
+category: Permissive
+owner: JSON.org
+homepage_url: http://www.json.org/license.html
+spdx_license_key: JSON
+text_urls:
+    - http://www.json.org/license.html
+other_urls:
+    - http://www.gnu.org/licenses/license-list.html#JSON
+minimum_coverage: 70
+---
+
 Permission is hereby granted, free of charge, to any person obtaining a
 copy of this software and associated documentation files (the
 "Software"), to deal in the Software without restriction, including

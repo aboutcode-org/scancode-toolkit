@@ -1,1 +1,10 @@
+---
+license_expression: mit
+is_license_notice: yes
+relevance: 100
+notes: https://raw.githubusercontent.com/janpaepke/ScrollMagic/master/LICENSE.md
+ignorable_urls:
+    - https://jquery.org/license
+---
+
 * jQuery__ is published under the terms of the [MIT license](https://jquery.org/license/).

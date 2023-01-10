@@ -1,3 +1,18 @@
+---
+license_expression: unicode
+is_license_text: yes
+ignorable_copyrights:
+    - Copyright (c) Unicode, Inc.
+ignorable_holders:
+    - Unicode, Inc.
+ignorable_urls:
+    - http://www.unicode.org/Public
+    - http://www.unicode.org/cldr/data
+    - http://www.unicode.org/cldr/data/
+    - http://www.unicode.org/copyright.html
+    - http://www.unicode.org/copyright.html#Exhibit1
+    - http://www.unicode.org/reports
+---
 
 The following license applies to these materials:
  http://www.unicode.org/copyright.html#Exhibit1

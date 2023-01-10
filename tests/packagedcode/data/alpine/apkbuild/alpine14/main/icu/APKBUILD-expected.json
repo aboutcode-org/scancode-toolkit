@@ -21,8 +21,34 @@
   "code_view_url": null,
   "vcs_url": null,
   "copyright": null,
-  "license_expression": "mit AND x11 AND unicode-tou",
-  "declared_license": "MIT ICU Unicode-TOU",
+  "declared_license_expression": "mit AND x11 AND unicode-tou",
+  "declared_license_expression_spdx": "MIT AND ICU AND Unicode-TOU",
+  "license_detections": [
+    {
+      "license_expression": "mit AND x11 AND unicode-tou",
+      "detection_log": [
+        "not-combined"
+      ],
+      "matches": [
+        {
+          "score": 100.0,
+          "start_line": 1,
+          "end_line": 1,
+          "matched_length": 6,
+          "match_coverage": 100.0,
+          "matcher": "1-spdx-id",
+          "license_expression": "mit AND x11 AND unicode-tou",
+          "rule_identifier": "spdx-license-identifier-mit AND x11 AND unicode-tou-04c03ffc5d87121ab71914d00034fdd4a46eb02c",
+          "rule_url": null,
+          "matched_text": "mit AND icu AND unicode-tou"
+        }
+      ]
+    }
+  ],
+  "other_license_expression": null,
+  "other_license_expression_spdx": null,
+  "other_license_detections": [],
+  "extracted_license_statement": "MIT ICU Unicode-TOU",
   "notice_text": null,
   "source_packages": [],
   "file_references": [],

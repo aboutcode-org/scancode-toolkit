@@ -1,4 +1,16 @@
- * Redistribution and use in source and binary forms, with or without
+---
+license_expression: openldap-2.8
+is_license_notice: yes
+minimum_coverage: 80
+ignorable_copyrights:
+    - Copyright 1999-2003 The OpenLDAP Foundation, Redwood City, California, USA.
+ignorable_holders:
+    - The OpenLDAP Foundation, Redwood City, California, USA.
+ignorable_urls:
+    - http://www.openldap.org/license.html
+---
+
+* Redistribution and use in source and binary forms, with or without
  * modification, are permitted only as authorized by the OpenLDAP
  * Public License.
  *

@@ -1,3 +1,13 @@
+---
+license_expression: zlib
+is_license_text: yes
+notes: Found in copying_we.tx in http://www.wolfgang-ehrhardt.de/aes_2013-01-07.zip This is
+    not clear if the Greman translation is exactly the same as the zlib license but the file
+    contains both side by side and the intention of this text seems to be a zlib translation
+ignorable_urls:
+    - http://www.opensource.org/licenses/zlib-license.php
+---
+
 Based on "The zlib/libpng License": 
 http://www.opensource.org/licenses/zlib-license.php
 
@@ -45,4 +55,3 @@ werden eingehalten:
 
 3. Die Bedingungen ueber die Nutzung/Weitergabe duerfen nicht entfernt oder
    geaendert werden.
-

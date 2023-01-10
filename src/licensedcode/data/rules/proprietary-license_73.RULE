@@ -1,3 +1,9 @@
+---
+license_expression: proprietary-license
+is_license_text: yes
+relevance: 100
+---
+
 License For Customer Use of NVIDIA Software
 
 IMPORTANT NOTICE -- READ CAREFULLY: This License For Customer Use of NVIDIA Software ("LICENSE") is the agreement which governs use of the software of NVIDIA Corporation and its subsidiaries (“NVIDIA”) downloadable herefrom, including computer software and associated printed materials ("SOFTWARE"). By downloading, installing, copying, or otherwise using the SOFTWARE, you agree to be bound by the terms of this LICENSE. If you do not agree to the terms of this LICENSE, do not download the SOFTWARE.
@@ -48,4 +54,4 @@ This LICENSE shall be deemed to have been made in, and shall be construed pursua
 
 7. MISCELLANEOUS
 
-If any provision of this LICENSE is inconsistent with, or cannot be fully enforced under, the law, such provision will be construed as limited to the extent necessary to be consistent with and fully enforceable under the law. This LICENSE is the final, complete and exclusive agreement between the parties relating to the subject matter hereof, and supersedes all prior or contemporaneous understandings and agreements relating to such subject matter, whether oral or written. This LICENSE may only be modified in writing signed by an authorized officer of NVIDIA. Customer agrees that it will not ship, transfer or export the SOFTWARE into any country, or use the SOFTWARE in any manner, prohibited by the United States Bureau of Industry and Security or any export laws, restrictions or regulations. 
+If any provision of this LICENSE is inconsistent with, or cannot be fully enforced under, the law, such provision will be construed as limited to the extent necessary to be consistent with and fully enforceable under the law. This LICENSE is the final, complete and exclusive agreement between the parties relating to the subject matter hereof, and supersedes all prior or contemporaneous understandings and agreements relating to such subject matter, whether oral or written. This LICENSE may only be modified in writing signed by an authorized officer of NVIDIA. Customer agrees that it will not ship, transfer or export the SOFTWARE into any country, or use the SOFTWARE in any manner, prohibited by the United States Bureau of Industry and Security or any export laws, restrictions or regulations.

@@ -7,24 +7,21 @@
 # See https://aboutcode.org for more information about nexB OSS projects.
 #
 
-import hashlib
-import io
 import os
-import re
 import sys
 import traceback
 from collections import Counter
 from collections import defaultdict
+from hashlib import sha1
 from itertools import chain
 from operator import itemgetter
 from os.path import abspath
 from os.path import dirname
 from os.path import exists
 from os.path import join
-from time import time
+from pathlib import Path
 
 from licensedcode._vendor import attr
-import saneyaml
 from license_expression import ExpressionError
 from license_expression import Licensing
 
@@ -34,6 +31,8 @@ from commoncode.fileutils import resource_iter
 from licensedcode import MIN_MATCH_HIGH_LENGTH
 from licensedcode import MIN_MATCH_LENGTH
 from licensedcode import SMALL_RULE
+from licensedcode.frontmatter import dumps_frontmatter
+from licensedcode.frontmatter import load_frontmatter
 from licensedcode.languages import LANG_INFO as known_languages
 from licensedcode.spans import Span
 from licensedcode.tokenize import index_tokenizer
@@ -42,6 +41,10 @@ from licensedcode.tokenize import key_phrase_tokenizer
 from licensedcode.tokenize import KEY_PHRASE_OPEN
 from licensedcode.tokenize import KEY_PHRASE_CLOSE
 from licensedcode.tokenize import query_lines
+from scancode.api import SCANCODE_LICENSEDB_URL
+from scancode.api import SCANCODE_LICENSE_URL
+from scancode.api import SCANCODE_RULE_URL
+from scancode.api import SPDX_LICENSE_URL
 
 """
 Reference License and license Rule structures persisted as a combo of a YAML
@@ -88,6 +91,7 @@ FOSS_CATEGORIES = set([
     'Patent License',
     'Permissive',
     'Public Domain',
+    'CLA',
 ])
 
 OTHER_CATEGORIES = set([
@@ -104,9 +108,8 @@ CATEGORIES = FOSS_CATEGORIES | OTHER_CATEGORIES
 @attr.s(slots=True)
 class License:
     """
-    A license consists of these files, where <key> is the license key:
-        - <key>.yml : the license data in YAML
-        - <key>.LICENSE: the license text
+    A license consists of the following file, where <key> is the license key:
+        - <key>.LICENSE: the license text and the license data in YAML frontmatter
 
     A License object is identified by a unique `key` and its data stored in the
     `src_dir` directory. Key is a lower-case unique ascii string.
@@ -184,6 +187,13 @@ class License:
         repr=False,
         metadata=dict(
             help='Free text notes.')
+    )
+
+    is_builtin = attr.ib(
+        default=True,
+        repr=False,
+        metadata=dict(
+            help='Flag set to True if this is a builtin standard license.')
     )
 
     # TODO: add the license key(s) this exception applies to
@@ -346,23 +356,47 @@ class License:
     )
 
     @classmethod
-    def from_dir(cls, key, licenses_data_dir=licenses_data_dir):
+    def from_dir(cls, key, licenses_data_dir=licenses_data_dir, check_consistency=True, is_builtin=True):
         """
         Return a new License object for a license ``key`` and load its attribute
         from a data file stored in ``licenses_data_dir``.
         """
-        lic = cls(key=key)
-        data_file = lic.data_file(licenses_data_dir=licenses_data_dir)
-        if exists(data_file):
-            text_file = lic.text_file(licenses_data_dir=licenses_data_dir)
-            text_file = exists(text_file) and text_file or None
-            lic.load(data_file=data_file, text_file=text_file)
+        lic = cls(key=key, is_builtin=is_builtin)
+        license_file = lic.license_file(licenses_data_dir=licenses_data_dir)
+        lic.load(license_file=license_file, check_consistency=check_consistency)
         return lic
 
-    def data_file(self, licenses_data_dir=licenses_data_dir):
-        return join(licenses_data_dir, f'{self.key}.yml')
+    @property
+    def scancode_url(self):
+        if self.is_builtin:
+            return SCANCODE_LICENSE_URL.format(self.key)
 
-    def text_file(self, licenses_data_dir=licenses_data_dir):
+    @property
+    def licensedb_url(self):
+        if self.is_builtin:
+            return SCANCODE_LICENSEDB_URL.format(self.key)
+
+    @property
+    def spdx_url(self):
+        """
+        Return a URL to the SPDX license either at SPDX, ScanCode or None.
+        """
+        if self.is_builtin:
+            spdx_license_key = self.spdx_license_key
+            if not spdx_license_key:
+                return
+
+            slkl = spdx_license_key.lower()
+            is_licenseref = slkl.startswith('licenseref-')
+
+            if is_licenseref:
+                return SCANCODE_LICENSE_URL.format(self.key)
+            else:
+                # TODO: Is this replacing spdx_key???
+                spdx_license_key = spdx_license_key.rstrip('+')
+                return SPDX_LICENSE_URL.format(spdx_license_key)
+
+    def license_file(self, licenses_data_dir=licenses_data_dir):
         return join(licenses_data_dir, f'{self.key}.LICENSE')
 
     def update(self, mapping):
@@ -375,78 +409,111 @@ class License:
         newl.update(oldl)
         return newl
 
-    def to_dict(self, include_ignorables=True, include_text=False):
+    def _to_dict(self, include_field):
         """
-        Return an ordered mapping of license data (excluding text, unless
-        ``include_text`` is True). Fields with empty values are not included.
-        Optionally include the "ignorable*" attributes if ``include_ignorables``
-        is True.
+        Return a mapping of license data.
+        ``include_field(name, value)`` is a callable that will be called with
+        each name, value pair and returns True to include the field or False
+        to filter it.
+        """
+        data = {}
+        for name, value in attr.asdict(self).items():
+            if not include_field(name, value):
+                continue
+            data[name] = value
+        return data
+
+    def to_dict(
+        self,
+        include_ignorables=True,
+        include_text=False,
+        include_builtin=True,
+    ):
+        """
+        Return a mapping of license data. Skip fields with empty values.
+        Optionally include:
+        - the "ignorable*" attributes if ``include_ignorables`` is True.
+        - the text ``include_text`` is True.
+        - the ``is_builtin`` flag if ``include_builtin`` is True.
         """
 
-        # do not dump false, empties and paths
-        def dict_fields(attr, value):
+        # do not include false, epties and paths
+        def include_field(name, value):
             if not value:
                 return False
-
             if isinstance(value, str) and not value.strip():
                 return False
-
             # default to English which is implied
-            if attr.name == 'language' and value == 'en':
+            if name == 'language' and value == 'en':
                 return False
-
-            if attr.name == 'minimum_coverage' and value == 100:
+            if name == 'minimum_coverage' and value == 100:
                 return False
-
-            if not include_ignorables and  attr.name.startswith('ignorable_'):
+            if not include_builtin and name == 'is_builtin':
                 return False
-
-            if not include_text and  attr.name == 'text':
+            if not include_ignorables and  name.startswith('ignorable_'):
+                return False
+            if not include_text and  name == 'text':
                 return False
 
             return True
 
-        data = attr.asdict(self, filter=dict_fields, dict_factory=dict)
-        cv = data.get('minimum_coverage', 0)
-        if cv:
-            data['minimum_coverage'] = as_int(cv)
+        return self._to_dict(include_field=include_field)
 
-        if include_text:
-            data['text'] = self.text or ''
+    def to_reference(self):
+        """
+        Return a mapping of license reference data.
+        """
+        # include everything
+        data = self._to_dict(include_field=lambda k, v: True)
+        data.pop('is_deprecated', None)
+        data['scancode_url'] = self.scancode_url
+        data['licensedb_url'] = self.licensedb_url
+        data['spdx_url'] = self.spdx_url
         return data
 
     def dump(self, licenses_data_dir):
         """
-        Dump a representation of this license as two files:
-         - <key>.yml : the license data in YAML
-         - <key>.LICENSE: the license text
+        Dump a representation of this license as a .LICENSE file with:
+         - the license data as YAML frontmatter
+         - the license text
         """
+        metadata = self.to_dict(include_builtin=False)
+        content = self.text
+        output = dumps_frontmatter(content=content, metadata=metadata)
+        license_file = self.license_file(licenses_data_dir=licenses_data_dir)
+        with open(license_file, 'w') as of:
+            of.write(output)
 
-        def write(location, byte_string):
-            # we write as binary because rules and licenses texts and data are
-            # UTF-8-encoded bytes
-            with io.open(location, 'wb') as of:
-                of.write(byte_string)
-
-        as_yaml = saneyaml.dump(self.to_dict(), indent=4, encoding='utf-8')
-        data_file = self.data_file(licenses_data_dir=licenses_data_dir)
-        write(data_file, as_yaml)
-
-        text = self.text
-        if text:
-            write(self.text_file(licenses_data_dir=licenses_data_dir), text.encode('utf-8'))
-
-        return self
-
-    def load(self, data_file, text_file):
+    def load(self, license_file, check_consistency=True):
         """
-        Populate license data from a YAML file stored in ``data_file`` and  ``text_file``.
+        Populate license data from a .LICENSE file stored as a YAML frontmatter.
         Does not load text files yet.
         Unknown fields are ignored and not bound to the License object.
         """
         try:
-            with io.open(data_file, encoding='utf-8') as f:
-                data = saneyaml.load(f.read(), allow_duplicate_keys=False)
+            content, data = load_frontmatter(license_file)
+            if check_consistency:
+                if not data:
+                    raise InvalidLicense(
+                        f'Cannot load License with empty YAML frontmatter: '
+                        f'{self}: file://{license_file}'
+                    )
+
+            if not content:
+                if check_consistency:
+                    if not any(
+                        attribute in data
+                        for attribute in ('is_deprecated', 'is_generic', 'is_unknown')
+                    ):
+                        raise InvalidLicense(
+                            f'Cannot load License with empty text: '
+                            f'only deprecated, generic or unknown licenses can exist without text '
+                            f'{self}: file://{license_file}'
+                        )
+
+                self.text = ''
+            else:
+                self.text = content.lstrip("\n")
 
             for k, v in data.items():
                 if k == 'minimum_coverage':
@@ -454,25 +521,19 @@ class License:
 
                 if k == 'key':
                     assert self.key == v, (
-                        'The license "key" attribute in the .yml file MUST ' +
-                        'be the same as the base name of this license .LICENSE ' +
-                        'and .yml data files license files. ' +
+                        'The license "key" attribute in the YAML frontmatter MUST ' +
+                        'be the same as the base name of this .LICENSE ' +
+                        'license file. ' +
                         f'Yet file name = {self.key} and license key = {v}'
                     )
 
                 setattr(self, k, v)
 
-            if text_file and exists(text_file):
-                with io.open(text_file, encoding='utf-8') as f:
-                    self.text = f.read()
-            else:
-                self.text = ''
-
         except Exception as e:
             # this is a rare case: fail loudly
             print()
             print('#############################')
-            print('INVALID LICENSE YAML FILE:', f'file://{self.data_file}')
+            print('INVALID LICENSE YAML FILE:', f'file://{self.license_file}')
             print('#############################')
             print(traceback.format_exc())
             print('#############################')
@@ -554,7 +615,7 @@ class License:
                 error(f'Unknown language: {lic.language}')
 
             if lic.is_unknown:
-                if not 'unknown' in lic.key:
+                if not 'unknown' in lic.key and lic.key != 'no-license':
                     error(
                         'is_unknown can be true only for licenses with '
                         '"unknown " in their key string.'
@@ -683,7 +744,8 @@ def ignore_editor_tmp_files(location):
 def load_licenses(
     licenses_data_dir=licenses_data_dir,
     with_deprecated=False,
-    check_dangling=True,
+    check_consistency=True,
+    is_builtin=True,
 ):
     """
     Return a mapping of {key: License} loaded from license data and text files
@@ -701,47 +763,39 @@ def load_licenses(
     ))
 
     licenses = {}
-    used_files = set()
 
-    for data_file in all_files:
-        if data_file.endswith('.yml'):
+    for license_file in all_files:
+        if license_file.endswith('.LICENSE'):
             if TRACE:
-                logger_debug('load_licenses: data_file:', data_file)
+                logger_debug('load_licenses: license_file:', license_file)
 
-            key = file_base_name(data_file)
+            key = file_base_name(license_file)
 
             try:
-                lic = License.from_dir(key=key, licenses_data_dir=licenses_data_dir)
+                lic = License.from_dir(
+                    key=key,
+                    licenses_data_dir=licenses_data_dir,
+                    check_consistency=check_consistency,
+                    is_builtin=is_builtin,
+                )
             except Exception as e:
-                raise Exception(f'Failed to load license: {key} from: file://{licenses_data_dir}/{key}.yml with error: {e}') from e
-
-            if check_dangling:
-                used_files.add(data_file)
-
-            text_file = lic.text_file(licenses_data_dir=licenses_data_dir)
-            if check_dangling and exists(text_file):
-                used_files.add(text_file)
+                msg = (
+                    f'Failed to load license: {key} from: '
+                    f'file://{licenses_data_dir}/{key}.LICENSE with error: {e}'
+                )
+                raise InvalidLicense(msg) from e
 
             if not with_deprecated and lic.is_deprecated:
                 continue
 
             licenses[key] = lic
 
-    if check_dangling:
-        dangling = set(all_files).difference(used_files)
-        if dangling:
-            msg = (
-                f'Some License files are orphaned in {licenses_data_dir!r}.\n' +
-                '\n'.join(f'file://{f}' for f in sorted(dangling))
-            )
-            raise Exception(msg)
-
     if not licenses:
         msg = (
             'No licenses were loaded. Check to see if the license data files '
             f'are available at "{licenses_data_dir}".'
         )
-        raise Exception(msg)
+        raise InvalidLicense(msg)
 
     return licenses
 
@@ -751,6 +805,7 @@ def get_rules(
     licenses_data_dir=licenses_data_dir,
     rules_data_dir=rules_data_dir,
     validate=False,
+    is_builtin=True,
 ):
     """
     Yield Rule objects loaded from a ``licenses_db`` and license files found in
@@ -763,6 +818,7 @@ def get_rules(
 
     rules = list(load_rules(
         rules_data_dir=rules_data_dir,
+        is_builtin=is_builtin,
     ))
 
     if validate:
@@ -772,7 +828,172 @@ def get_rules(
     return chain(licenses_as_rules, rules)
 
 
+def get_license_dirs(additional_dirs):
+    """
+    Return a list of all subdirectories containing license files within the
+    input list of additional directories. These directories do not have to be absolute paths.
+    """
+    return [f"{str(Path(path).absolute())}/licenses" for path in additional_dirs]
+
+
+def get_rule_dirs(additional_dirs):
+    """
+    Return a list of all subdirectories containing rule files within the
+    input list of additional directories. These directories do not have to be absolute paths.
+    """
+    return [f"{str(Path(path).absolute())}/rules" for path in additional_dirs]
+
+
+def get_paths_to_installed_licenses_and_rules():
+    """
+    Return a list of paths to externally packaged licenses or rules that the user has
+    installed. Gets a list of all of these licenses (installed as plugins) and
+    then gets the plugins containing licenses by checking that their names start
+    with a common prefix.
+    """
+    from importlib_metadata import entry_points
+    from licensedcode.additional_license_location_provider import get_location
+    installed_plugins = entry_points(group='scancode_additional_license_location_provider')
+    paths = []
+    for plugin in installed_plugins:
+        # get path to directory of licenses and/or rules
+        paths.append(get_location(plugin.name))
+    return paths
+
+
+def load_licenses_from_multiple_dirs(
+    builtin_license_data_dir,
+    additional_license_data_dirs,
+    with_deprecated=False,
+):
+    """
+    Return a mapping of {key: License} combining a list of
+    ``additional_license_data_dirs`` containing additional licenses with the
+    builtin ``builtin_license_data_dir`` licenses into the same mapping.
+    """
+    combined_licenses = load_licenses(
+        licenses_data_dir=builtin_license_data_dir,
+        with_deprecated=with_deprecated,
+        is_builtin=True,
+    )
+    for license_dir in additional_license_data_dirs:
+        additional_licenses = load_licenses(
+            licenses_data_dir=license_dir,
+            with_deprecated=with_deprecated,
+            is_builtin=False,
+        )
+
+        # validate that additional licenses keys do not exist as builtin
+        duplicate_keys = set(combined_licenses).intersection(set(additional_licenses))
+        if duplicate_keys:
+            dupes = ', '.join(sorted(duplicate_keys))
+            message = f'Duplicate licenses found when loading additional licenses from: {license_dir}: {dupes}'
+            raise ValueError(message)
+
+        combined_licenses.update(additional_licenses)
+
+    return combined_licenses
+
+
+def get_rules_from_multiple_dirs(
+    licenses_db,
+    builtin_rule_data_dir,
+    additional_rules_data_dirs,
+):
+    """
+    Yield Rule(s) built from:
+    - A ``license_db`` mapping of {key: License}
+    - The ``builtin_rule_data_dir`` of builtin license rules
+    - The list of ``additional_rules_data_dirs`` containing additional rules.
+    """
+    # first load all builtin
+    combined_rules = list(get_rules(
+        licenses_db=licenses_db,
+        rules_data_dir=builtin_rule_data_dir,
+    ))
+
+    # load additional rules
+    for rules_dir in additional_rules_data_dirs or []:
+        combined_rules.extend(load_rules(
+            rules_data_dir=rules_dir,
+            is_builtin=False,
+        ))
+
+    validate_rules(rules=combined_rules, licenses_by_key=licenses_db)
+
+    return combined_rules
+
+
+def validate_additional_license_data(additional_directories, scancode_license_dir):
+    """
+    Raises an exception if there are any invalid licenses in the directories of
+    additional licenses.
+    """
+    licenses = load_licenses_from_multiple_dirs(
+        additional_license_data_dirs=additional_directories,
+        builtin_license_data_dir=scancode_license_dir
+    )
+    errors, _, _ = License.validate(
+        licenses,
+        verbose=False,
+    )
+    if errors:
+        message = ['Errors while validating licenses:']
+        for key, msgs in errors.items():
+            message.append('')
+            message.append(f'License: {key}')
+            for msg in msgs:
+                message.append(f'  {msg!r}')
+        raise InvalidLicense('\n'.join(message))
+
+
+def _ignorable_clue_error(rule, rules_dir):
+    """
+    Return a pair of the result of validating a rule's ignorable clues and expected ignorable clues
+    if there is an error. Otherwise, returns None.
+    """
+    result = get_ignorables(rule.rule_file(rules_data_dir=rules_dir))
+    expected = get_normalized_ignorables(rule)
+    if result != expected:
+        rule_file = rule.rule_file(rules_data_dir=rules_dir)
+
+        result['files'] = [
+            f'file://{rule_file}',
+        ]
+        return result, expected
+
+
+def validate_ignorable_clues(rule_directories, is_builtin):
+    """
+    Raises an exception if any ignorable clues declared in a Rule are improperly detected
+    in the rule text file.
+    """
+    messages = ['Errors while validating ignorable rules:']
+    error_present = False
+    for rules_dir in rule_directories:
+        r = list(load_rules(
+            rules_data_dir=rules_dir,
+            is_builtin=is_builtin,
+        ))
+        for rule in r:
+            if _ignorable_clue_error(rule, rules_dir):
+                error_present = True
+                result, expected = _ignorable_clue_error(rule, rules_dir)
+                messages.append('')
+                messages.append(f'{rule!r}')
+                messages.append('Result:')
+                messages.append(result)
+                messages.append('Expected:')
+                messages.append(expected)
+    if error_present:
+        raise InvalidRule('\n'.join(messages))
+
+
 class InvalidRule(Exception):
+    pass
+
+
+class InvalidLicense(Exception):
     pass
 
 
@@ -806,13 +1027,9 @@ def validate_rules(rules, licenses_by_key, with_text=False, rules_data_dir=rules
             for rule in rules:
                 message.append(f'  {rule!r}')
 
-                text_file = rule.text_file(rules_data_dir=rules_data_dir)
-                if text_file and exists(text_file):
-                    message.append(f'    file://{text_file}')
-
-                data_file = rule.data_file(rules_data_dir=rules_data_dir)
-                if data_file and exists(data_file):
-                    message.append(f'    file://{data_file}')
+                rule_file = rule.rule_file(rules_data_dir=rules_data_dir)
+                if rule_file and exists(rule_file):
+                    message.append(f'    file://{rule_file}')
 
                 if with_text:
                     txt = rule.text[:100].strip()
@@ -848,6 +1065,7 @@ def build_rule_from_license(license_obj):
             has_stored_minimum_coverage=bool(minimum_coverage),
             minimum_coverage=minimum_coverage,
 
+            is_builtin=license_obj.is_builtin,
             is_from_license=True,
             is_license_text=True,
 
@@ -859,6 +1077,17 @@ def build_rule_from_license(license_obj):
         )
         rule.setup()
         return rule
+
+
+def get_rule_text(location=None, text=None):
+    """
+    Return the rule ``text`` prepared for indexing.
+    ###############
+    # IMPORTANT: we use the same process as used to load query text for symmetry
+    ###############
+    """
+    numbered_lines = query_lines(location=location, query_string=text, plain_text=True)
+    return '\n'.join(l.strip() for _, l in numbered_lines)
 
 
 def get_all_spdx_keys(licenses_db):
@@ -900,7 +1129,7 @@ def get_license_tokens():
     yield 'licensed'
 
 
-def load_rules(rules_data_dir=rules_data_dir, with_checks=True):
+def load_rules(rules_data_dir=rules_data_dir, with_checks=True, is_builtin=True):
     """
     Return an iterable of rules loaded from rule files in ``rules_data_dir``.
     Optionally check for consistency if ``with_checks`` is True.
@@ -914,17 +1143,15 @@ def load_rules(rules_data_dir=rules_data_dir, with_checks=True):
     space_problems = []
     model_errors = []
 
-    for data_file in resource_iter(location=rules_data_dir, with_dirs=False):
-        if data_file.endswith('.yml'):
-            base_name = file_base_name(data_file)
+    for rule_file in resource_iter(location=rules_data_dir, with_dirs=False):
+        if rule_file.endswith('.RULE'):
+            base_name = file_base_name(rule_file)
 
             if with_checks and ' ' in base_name:
-                space_problems.append(data_file)
-
-            text_file = join(rules_data_dir, f'{base_name}.RULE')
+                space_problems.append(rule_file)
 
             try:
-                yield Rule.from_files(data_file=data_file, text_file=text_file)
+                yield Rule.from_file(rule_file=rule_file)
             except Exception as re:
                 if with_checks:
                     model_errors.append(str(re))
@@ -932,22 +1159,16 @@ def load_rules(rules_data_dir=rules_data_dir, with_checks=True):
             if with_checks:
                 # accumulate sets to ensures we do not have illegal names or extra
                 # orphaned files
-                data_file_lower = data_file.lower()
-                if data_file_lower in lower_case_files:
-                    case_problems.add(data_file_lower)
+                rule_file_lower = rule_file.lower()
+                if rule_file_lower in lower_case_files:
+                    case_problems.add(rule_file_lower)
                 else:
-                    lower_case_files.add(data_file_lower)
+                    lower_case_files.add(rule_file_lower)
 
-                text_file_lower = text_file.lower()
-                if text_file_lower in lower_case_files:
-                    case_problems.add(text_file_lower)
-                else:
-                    lower_case_files.add(text_file_lower)
+                processed_files.add(rule_file)
 
-                processed_files.update([data_file, text_file])
-
-        if with_checks and not data_file.endswith('~'):
-            seen_files.add(data_file)
+        if with_checks and not rule_file.endswith('~'):
+            seen_files.add(rule_file)
 
     if with_checks:
         unknown_files = seen_files - processed_files
@@ -957,29 +1178,33 @@ def load_rules(rules_data_dir=rules_data_dir, with_checks=True):
             if model_errors:
                 errors = '\n'.join(model_errors)
                 msg += (
-                    '\nInvalid rule YAML file in directory: '
-                    f'{rules_data_dir!r}\n{errors}'
+                    '\nInvalid rule files: '
+                    f'{rules_data_dir!r}\n'
+                    f'{errors!r}\n'
                 )
 
             if unknown_files:
                 files = '\n'.join(sorted(f'file://{f}"' for f in unknown_files))
                 msg += (
                     '\nOrphaned files in rule directory: '
-                    f'{rules_data_dir!r}\n{files}'
+                    f'{rules_data_dir!r}\n'
+                    f'{files!r}\n'
                 )
 
             if case_problems:
                 files = '\n'.join(sorted(f'"file://{f}"' for f in case_problems))
                 msg += (
                     '\nRule files with non-unique name in rule directory: '
-                    f'{rules_data_dir!r}\n{files}'
+                    f'{rules_data_dir!r}\n'
+                    f'{files!r}\n'
                 )
 
             if space_problems:
                 files = '\n'.join(sorted(f'"file://{f}"' for f in space_problems))
                 msg += (
                     '\nRule filename cannot contain spaces: '
-                    f'{rules_data_dir!r}\n{files}'
+                    f'{rules_data_dir!r}\n'
+                    f'{files!r}\n'
                 )
 
             raise InvalidRule(msg)
@@ -1029,11 +1254,18 @@ class BasicRule:
             'string.')
     )
 
-    # The is_license_xxx flags below are nn indication of what this rule
-    # importance is (e.g. how important is its text when detected as a licensing
-    # clue) as one of several "is_license_xxx" flags. These flags are mutually
-    # exclusive and a license rule can only have one of these as flags with a
-    # True value.
+    is_builtin = attr.ib(
+        default=True,
+        repr=False,
+        metadata=dict(
+            help='Flag set to True if this is a builtin standard rule.')
+    )
+
+    # The is_license_xxx flags below are an indication of what this rule
+    # represents and its relative importance is, e.g., how important is the rule
+    # text when detected as a licensing clue as one of several "is_license_xxx"
+    # flags. These flags are mutually exclusive and a license rule can only have
+    # one of these as flags with a True value.
 
     is_license_text = attr.ib(
         default=False,
@@ -1106,7 +1338,7 @@ class BasicRule:
             'have notes explaining why this is a false positive and no other '
             'fields. This is useful in some cases when some text looks like a '
             'license text, notice or tag but is not actually it. '
-            'Mutually exclusive from any other is_license_* flag')
+            'Mutually exclusive from any is_license_* flag')
     )
 
     language = attr.ib(
@@ -1392,28 +1624,38 @@ class BasicRule:
             'position is using the magic -1 key.')
     )
 
-    def data_file(
+    @property
+    def rule_url(self):
+        """
+        Return a string with the permanent URL to this rule on
+        scancode-toolkit github repository.
+        """
+        if self.is_synthetic or not self.is_builtin:
+            return None
+
+        if self.is_from_license:
+            # license expression is single key
+            return SCANCODE_LICENSE_URL.format(self.license_expression)
+        else:
+            return SCANCODE_RULE_URL.format(self.identifier)
+
+    def rule_file(
         self,
         rules_data_dir=rules_data_dir,
         licenses_data_dir=licenses_data_dir,
     ):
-        data_file_base_name = file_base_name(self.identifier)
-        data_file_name = f'{data_file_base_name}.yml'
+        """
+        Return the path to the rule file for this rule object,
+        given the `rules_data_dir` directory or `licenses_data_dir`
+        if a license rule.
+        """
+        if self.is_synthetic:
+            return None
 
         if self.is_from_license:
-            return join(licenses_data_dir, data_file_name)
-        else:
-            return join(rules_data_dir, data_file_name)
+            return join(licenses_data_dir, self.identifier)
 
-    def text_file(
-        self,
-        rules_data_dir=rules_data_dir,
-        licenses_data_dir=licenses_data_dir,
-    ):
-        if self.is_from_license:
-            return join(licenses_data_dir, f'{self.identifier}')
-        else:
-            return join(rules_data_dir, f'{self.identifier}')
+        return join(rules_data_dir, self.identifier)
 
     def __attrs_post_init__(self, *args, **kwargs):
         self.setup()
@@ -1433,13 +1675,13 @@ class BasicRule:
                 trace = traceback.format_exc()
                 raise InvalidRule(
                     f'Unable to parse Rule license expression: {exp!r} '
-                    f'for: file://{self.data_file}\n{trace}'
+                    f'for: file://{self.identifier}\n{trace}'
                 ) from e
 
             if expression is None:
                 raise InvalidRule(
                     f'Invalid rule License expression parsed to empty: '
-                    f'{self.license_expression!r} for: file://{self.data_file}'
+                    f'{self.license_expression!r} for: file://{self.identifier}'
                 )
 
             self.license_expression = expression.render()
@@ -1581,7 +1823,7 @@ class BasicRule:
 
     def spdx_license_expression(self, licensing=None):
         from licensedcode.cache import build_spdx_license_expression
-        return str(build_spdx_license_expression(self, licensing=licensing))
+        return str(build_spdx_license_expression(self.license_expression, licensing=licensing))
 
     def get_length(self, unique=False):
         return self.length_unique if unique else self.length
@@ -1596,6 +1838,37 @@ class BasicRule:
     def get_min_high_matched_length(self, unique=False):
         return (self.min_high_matched_length_unique if unique
                 else self.min_high_matched_length)
+
+    def to_reference(self):
+        """
+        Return a mapping of reference data for this Rule object.
+        """
+        data = {}
+        data['license_expression'] = self.license_expression
+        data['identifier'] = self.identifier
+        data['language'] = self.language
+        data['rule_url'] = self.rule_url
+        data['is_license_text'] = self.is_license_text
+        data['is_license_notice'] = self.is_license_notice
+        data['is_license_reference'] = self.is_license_reference
+        data['is_license_tag'] = self.is_license_tag
+        data['is_license_intro'] = self.is_license_intro
+        data['is_continuous'] = self.is_continuous
+        data['is_builtin'] = self.is_builtin
+        data['is_from_license'] = self.is_from_license
+        data['is_synthetic'] = self.is_synthetic
+        data['length'] = self.length
+        data['relevance'] = as_int(self.relevance)
+        data['minimum_coverage'] = as_int(self.minimum_coverage)
+        data['referenced_filenames'] = self.referenced_filenames
+        data['notes'] = self.notes
+        data['ignorable_copyrights'] = self.ignorable_copyrights
+        data['ignorable_holders'] = self.ignorable_holders
+        data['ignorable_authors'] = self.ignorable_authors
+        data['ignorable_urls'] = self.ignorable_urls
+        data['ignorable_emails'] = self.ignorable_emails
+        data['text'] = self.text
+        return data
 
     def to_dict(self, include_text=False):
         """
@@ -1661,17 +1934,6 @@ class BasicRule:
         return data
 
 
-def get_rule_text(location=None, text=None):
-    """
-    Return the rule ``text`` prepared for indexing.
-    ###############
-    # IMPORTANT: we use the same process as used to load query text for symmetry
-    ###############
-    """
-    numbered_lines = query_lines(location=location, query_string=text, plain_text=True)
-    return '\n'.join(l.strip() for _, l in numbered_lines)
-
-
 def has_only_lower_license_keys(license_expression, licensing=Licensing()):
     """
     Return True if all license keys of ``license_expression`` are lowercase.
@@ -1717,85 +1979,19 @@ class Rule(BasicRule):
         self.setup()
 
     @classmethod
-    def from_files(cls, data_file, text_file):
+    def from_file(cls, rule_file, is_builtin=True):
         """
-        Return a new Rule object loaded from a data file stored at
-        ``data_file`` and a companion ``text_file``.
+        Return a new Rule object loaded from a file stored at
+        ``rule_file`` with the text and it's data as with YAML frontmatter.
         """
-        rule = Rule()
-        rule.load_data(data_file=data_file, text_file=text_file)
+        rule = Rule(is_builtin=is_builtin)
+        rule.load_data(rule_file=rule_file)
         return rule
 
-    @classmethod
-    def _from_text_file_and_expression(
-        cls,
-        text_file,
-        license_expression=None,
-        identifier=None,
-        **kwargs,
-    ):
+    def load_data(self, rule_file):
         """
-        Return a new Rule object loaded from a ``text_file``  and a
-        ``license_expression``. Used for testing only.
-        """
-        license_expression = license_expression or 'mit'
-        if exists(text_file):
-            text = get_rule_text(location=text_file)
-        else:
-            text = ''
-
-        return cls._from_text_and_expression(
-            text=text,
-            license_expression=license_expression,
-            identifier=identifier,
-            **kwargs,
-        )
-
-    @classmethod
-    def _from_text_and_expression(
-        cls,
-        text=None,
-        license_expression=None,
-        identifier=None,
-        **kwargs,
-    ):
-        """
-        Return a new Rule object loaded from a ``text_file``  and a
-        ``license_expression``. Used for testing only.
-        """
-        license_expression = license_expression or 'mit'
-        text = text or ''
-        identifier = identifier or f'_tst_{time()}_{len(text)}_{license_expression}'
-        rule = Rule(
-            license_expression=license_expression,
-            text=text,
-            is_synthetic=True,
-            identifier=identifier,
-            **kwargs,
-        )
-        rule.setup()
-        return rule
-
-    @classmethod
-    def _from_expression(cls, license_expression=None, identifier=None, **kwargs):
-        """
-        Return a new Rule object from a ``license_expression``. Used for testing only.
-        """
-        license_expression = license_expression or 'mit'
-        identifier = identifier or f'_tst_{time()}_expr_{license_expression}'
-        rule = Rule(
-            identifier=identifier,
-            license_expression=license_expression,
-            text='',
-            is_synthetic=True,
-        )
-        rule.setup()
-        return rule
-
-    def load_data(self, data_file, text_file):
-        """
-        Load data from ``data_file`` and ``text_file``. Check presence of text
-        file to determine if this is a special synthetic rule.
+        Load data from ``rule_file`` which has both the text and the data (as YAML forntmatter).
+        Check presence of text file to determine if this is a special synthetic rule.
         """
         if self.is_synthetic:
             if not self.text:
@@ -1803,18 +1999,18 @@ class Rule(BasicRule):
                     f'Invalid synthetic rule without text: {self}: {self.text!r}')
             return self
 
-        if not data_file or not text_file:
+        if not rule_file:
             raise InvalidRule(
-                f'Cannot load rule without its corresponding text_file and data file: '
-                f'{self}: file://{data_file} file://{text_file}')
+                f'Cannot load rule without its corresponding rule_file: '
+                f'{self}: file://{rule_file}')
 
-        self.identifier = file_name(text_file)
+        self.identifier = file_name(rule_file)
 
         try:
-            self.load(data_file=data_file, text_file=text_file)
+            self.load(rule_file=rule_file)
         except Exception:
             trace = traceback.format_exc()
-            raise InvalidRule(f'While loading: file://{data_file}\n{trace}')
+            raise InvalidRule(f'While loading: file://{rule_file}\n{trace}')
 
         return self
 
@@ -1901,44 +2097,45 @@ class Rule(BasicRule):
 
     def dump(self, rules_data_dir):
         """
-        Dump a representation of this rule as two files stored in
-        ``rules_data_dir``:
-         - a .yml for the rule data in YAML (e.g., data_file)
-         - a .RULE: the rule text as a UTF-8 file (e.g., text_file)
+        Dump a representation of this rule as a .RULE file stored in
+        ``rules_data_dir`` as a UTF-8 file having:
+         - the rule data as YAML frontmatter
+         - the rule text
+        and this is a `rule_file`.
+
         Does nothing if this rule was created from a License (e.g.,
         `is_from_license` is True)
         """
         if self.is_from_license or self.is_synthetic:
             return
 
-        def write(location, byte_string):
-            # we write as binary because rules and licenses texts and data are
-            # UTF-8-encoded bytes
-            with io.open(location, 'wb') as of:
-                of.write(byte_string)
+        rule_file = self.rule_file(rules_data_dir=rules_data_dir)
 
-        data_file = self.data_file(rules_data_dir=rules_data_dir)
-        as_yaml = saneyaml.dump(self.to_dict(), indent=4, encoding='utf-8')
-        write(location=data_file, byte_string=as_yaml)
+        metadata = self.to_dict()
+        content = self.text
+        output = dumps_frontmatter(content=content, metadata=metadata)
+        with open(rule_file, 'w') as of:
+            of.write(output)
 
-        text_file = self.text_file(rules_data_dir=rules_data_dir)
-        write(location=text_file, byte_string=self.text.encode('utf-8'))
-
-    def load(self, data_file, text_file, with_checks=True):
+    def load(self, rule_file, with_checks=True):
         """
-        Load self from a .RULE YAML file stored in data_file and text_file.
+        Load self from a .RULE file with YAMl frontmatter stored in rule_file.
         Unknown fields are ignored and not bound to the Rule object.
         Optionally check for consistency if ``with_checks`` is True.
         """
         try:
-            with io.open(data_file, encoding='utf-8') as f:
-                data = saneyaml.load(f.read(), allow_duplicate_keys=False)
+            content, data = load_frontmatter(rule_file)
+            if not content:
+                raise InvalidRule(
+                    f'Cannot load rule with empty text: '
+                    f'{self}: file://{rule_file}'
+                )
 
-            self.text = get_rule_text(location=text_file)
+            self.text = content.lstrip()
 
         except Exception as e:
             print('#############################')
-            print('INVALID LICENSE RULE FILE:', f'file://{data_file}', f'file://{text_file}')
+            print('INVALID LICENSE RULE FILE:', f'file://{rule_file}')
             print('#############################')
             print(e)
             print('#############################')
@@ -2026,6 +2223,33 @@ class Rule(BasicRule):
                 self.has_stored_relevance = False
         else:
             self.relevance = computed_relevance
+
+    @staticmethod
+    def from_match_data(license_match_mapping):
+        """
+        Return a Rule object from a ``license_match_mapping`` mapping of
+        LicenseMatch data.
+        """
+        rule_identifier = license_match_mapping["rule_identifier"]
+
+        rule_subclass_by_identifier_prefix = {
+            "spdx-license-identifier": SpdxRule,
+            "license-detection-unknown": UnknownRule,
+            "package-manifest": UnDetectedRule,
+        }
+
+        prefixes = tuple(rule_subclass_by_identifier_prefix.keys())
+        if rule_identifier.startswith(prefixes):
+            for prefix, klass in rule_subclass_by_identifier_prefix.items():
+                if rule_identifier.startswith(prefix):
+                    return klass(
+                        license_expression=license_match_mapping["license_expression"],
+                        text=license_match_mapping.get("matched_text", None),
+                        length=license_match_mapping["matched_length"],
+                    )
+        else:
+            from licensedcode.cache import get_index
+            return get_index().rules_by_id[rule_identifier]
 
 
 def compute_relevance(length):
@@ -2169,8 +2393,41 @@ def compute_thresholds_unique(
     return min_matched_length_unique, min_high_matched_length_unique
 
 
+class SynthethicRule(Rule):
+    """
+    A specialized rule subclass for synthethic rules generated at runtime.
+    They do not have backing files.
+    """
+
+    @property
+    def _unique_id(self):
+        """
+        Return a computed unique id string based on this rule content.
+
+        This is used to compute unique identifiers for synthetic rules.
+        (This is a SHA1 checksum of the expression and text, but this is an
+        implementation detail)
+        """
+        content = f'{self.license_expression!r}{self.text!r}'
+        return sha1(content.encode('utf-8')).hexdigest()
+
+    def load(self):
+        raise NotImplementedError
+
+    def dump(self):
+        raise NotImplementedError
+
+    def rule_file(
+        self,
+        rules_data_dir=rules_data_dir,
+        licenses_data_dir=licenses_data_dir,
+    ):
+        # synthetic rules have no file
+        return ""
+
+
 @attr.s(slots=True, repr=False)
-class SpdxRule(Rule):
+class SpdxRule(SynthethicRule):
     """
     A specialized rule object that is used for the special case of SPDX license
     expressions.
@@ -2182,7 +2439,7 @@ class SpdxRule(Rule):
     """
 
     def __attrs_post_init__(self, *args, **kwargs):
-        self.identifier = f'spdx-license-identifier: {self.license_expression}'
+        self.identifier = f'spdx-license-identifier-{self.license_expression}-{self._unique_id}'
         self.setup()
 
         if not self.license_expression:
@@ -2194,18 +2451,12 @@ class SpdxRule(Rule):
         self.has_stored_relevance = True
         self.is_synthetic = True
 
-    def load(self):
-        raise NotImplementedError
-
-    def dump(self):
-        raise NotImplementedError
-
 
 UNKNOWN_LICENSE_KEY = 'unknown'
 
 
 @attr.s(slots=True, repr=False)
-class UnknownRule(Rule):
+class UnknownRule(SynthethicRule):
     """
     A specialized rule object that is used for the special case of unknown
     license detection.
@@ -2218,31 +2469,40 @@ class UnknownRule(Rule):
 
     def __attrs_post_init__(self, *args, **kwargs):
         # We craft a UNIQUE identifier for the matched content
-        self.identifier = f'unknown-license-detection:{self.compute_unique_id()}'
+        self.identifier = f'license-detection-unknown-{self._unique_id}'
 
         self.license_expression = UNKNOWN_LICENSE_KEY
         # note that this could be shared across rules as an optimization
         self.license_expression_object = self.licensing.parse(UNKNOWN_LICENSE_KEY)
         self.is_license_notice = True
         self.notes = 'Unknown license based on a composite of license words.'
-        self.setup()
         self.is_synthetic = True
-
+        self.setup()
         # called only for it's side effects
         self.tokens()
 
-    def load(self):
-        raise NotImplementedError
 
-    def dump(self):
-        raise NotImplementedError
+@attr.s(slots=True, repr=False)
+class UnDetectedRule(SynthethicRule):
+    """
+    A specialized rule object that is used for the special case of extracted
+    license statements without any valid license detection.
 
-    def compute_unique_id(self):
-        """
-        Return a a unique id string based on this rule content. (Today this is
-        an MD5 checksum of the text, but that's an implementation detail)
-        """
-        return hashlib.md5(self.text.encode('utf-8')).hexdigest()
+    Since there is a license where there is a non empty extracted license
+    statement (typically found in a package manifest), if there is no license
+    detected by scancode, it would be incorrect to not point out that there
+    is a license (though undetected).
+    """
+
+    def __attrs_post_init__(self, *args, **kwargs):
+        self.identifier = f'package-manifest-{self.license_expression}-{self._unique_id}'
+        expression = self.licensing.parse(self.license_expression)
+        self.license_expression = expression.render()
+        self.license_expression_object = expression
+        self.is_license_tag = True
+        self.is_small = False
+        self.relevance = 100
+        self.has_stored_relevance = True
 
 
 @attr.s(slots=True, repr=False)

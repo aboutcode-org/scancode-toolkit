@@ -1,4 +1,5 @@
 {
+  "packages": [],
   "dependencies": [
     {
       "purl": "pkg:maven/com.google/guava@1.0",
@@ -57,7 +58,8 @@
       "datasource_id": "build_gradle"
     }
   ],
-  "packages": [],
+  "license_references": [],
+  "license_rule_references": [],
   "files": [
     {
       "path": "build.gradle",
@@ -86,8 +88,13 @@
           "code_view_url": null,
           "vcs_url": null,
           "copyright": null,
-          "license_expression": null,
-          "declared_license": null,
+          "declared_license_expression": null,
+          "declared_license_expression_spdx": null,
+          "license_detections": [],
+          "other_license_expression": null,
+          "other_license_expression_spdx": null,
+          "other_license_detections": [],
+          "extracted_license_statement": null,
           "notice_text": null,
           "source_packages": [],
           "file_references": [],

@@ -1,3 +1,15 @@
+---
+key: lsi-proprietary-eula
+short_name: LSI Proprietary EULA
+name: LSI Proprietary EULA
+category: Proprietary Free
+owner: LSI Corporation
+homepage_url: http://www.lsi.com/Pages/user/eula.aspx
+spdx_license_key: LicenseRef-scancode-lsi-proprietary-eula
+ignorable_urls:
+    - http://www.oracle.com/technetwork/java/javase/terms/license/index.html
+---
+
 USE OF LSI DOCUMENTATION AND SOFTWARE DOWNLOADS IS SUBJECT TO THIS AGREEMENT
 
 IMPORTANT - READ CAREFULLY: This Software License Agreement ("SLA") is a legal

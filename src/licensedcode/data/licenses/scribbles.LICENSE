@@ -1,3 +1,12 @@
+---
+key: scribbles
+short_name: Scribbles Demos Recognizer Notice
+name: Scribbles Demos Recognizer Notice
+category: Permissive
+owner: HP - Hewlett Packard
+spdx_license_key: LicenseRef-scancode-scribbles
+---
+
 Copying or modifying this code for any purpose is permitted, provided that this
 copyright notice is preserved in its entirety in all copies or modifications
 

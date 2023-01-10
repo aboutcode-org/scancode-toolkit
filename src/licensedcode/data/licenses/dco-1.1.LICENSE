@@ -1,4 +1,19 @@
-
+---
+key: dco-1.1
+short_name: DCO 1.1
+name: Developer Certificate of Origin 1.1
+category: CLA
+owner: Linux Foundation
+homepage_url: https://developercertificate.org/
+spdx_license_key: LicenseRef-scancode-dco-1.1
+text_urls:
+    - https://developercertificate.org/
+minimum_coverage: 90
+ignorable_copyrights:
+    - Copyright (c) 2004, 2006 The Linux Foundation and its contributors
+ignorable_holders:
+    - The Linux Foundation and its contributors
+---
 
 Developer Certificate of Origin
 Version 1.1
@@ -37,4 +52,3 @@ By making a contribution to this project, I certify that:
     personal information I submit with it, including my sign-off) is
     maintained indefinitely and may be redistributed consistent with
     this project or the open source license(s) involved.
-

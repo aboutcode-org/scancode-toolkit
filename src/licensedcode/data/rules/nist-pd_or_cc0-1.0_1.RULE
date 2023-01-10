@@ -1,3 +1,12 @@
+---
+license_expression: nist-pd OR cc0-1.0
+is_license_notice: yes
+relevance: 100
+ignorable_urls:
+    - https://creativecommons.org/publicdomain/zero/1.0
+    - https://creativecommons.org/publicdomain/zero/1.0/legalcode
+---
+
 ## This project is in the worldwide public domain
 
 As a work of the United States government, this project is in the public domain within the United States under the [National Institute of Standards and Technology Software License](#national-institute-of-standards-and-technology-software-license).

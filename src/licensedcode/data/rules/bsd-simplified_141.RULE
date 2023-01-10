@@ -1,3 +1,12 @@
+---
+license_expression: bsd-simplified
+is_license_text: yes
+relevance: 100
+minimum_coverage: 100
+ignorable_urls:
+    - http://opensource.org/licenses/BSD-2-Clause
+---
+
 Software License Agreement (BSD License)
 
  Redistribution and use in source and binary forms, with or without

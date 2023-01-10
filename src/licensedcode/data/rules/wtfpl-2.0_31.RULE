@@ -1,2 +1,10 @@
+---
+license_expression: wtfpl-2.0
+is_license_notice: yes
+relevance: 100
+ignorable_urls:
+    - https://www.wtfpl.net/
+---
+
 Free to use under the WTFPL license.
 https://www.wtfpl.net/

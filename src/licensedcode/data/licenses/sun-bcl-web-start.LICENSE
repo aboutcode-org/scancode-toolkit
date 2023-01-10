@@ -1,3 +1,14 @@
+---
+key: sun-bcl-web-start
+short_name: Sun BCL Web Start
+name: Sun BCL Web Start
+category: Proprietary Free
+owner: Oracle (Sun)
+spdx_license_key: LicenseRef-scancode-sun-bcl-web-start
+ignorable_urls:
+    - http://www.sun.com/policies/trademarks
+---
+
 JAVATM WEB START VERSION 1.2.x
 Sun Microsystems, Inc.
 Binary Code License Agreement

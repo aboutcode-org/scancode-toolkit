@@ -1,4 +1,11 @@
-                          MOZILLA PUBLIC LICENSE
+---
+license_expression: mpl-1.1
+is_license_text: yes
+ignorable_urls:
+    - http://www.mozilla.org/MPL/
+---
+
+MOZILLA PUBLIC LICENSE
                                 Version 1.1
 
                               ---------------

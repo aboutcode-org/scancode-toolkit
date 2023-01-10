@@ -1,4 +1,10 @@
- * Redistribution and use in source and binary forms, with or without
+---
+license_expression: apache-1.1
+is_license_notice: yes
+notes: The OpenSymphony Software License, Version 1.1 with XWork is an Apache variant
+---
+
+* Redistribution and use in source and binary forms, with or without
  * modification, are permitted provided that the following conditions
  * are met:
  *

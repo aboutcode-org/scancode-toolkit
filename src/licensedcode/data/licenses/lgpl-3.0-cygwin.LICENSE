@@ -1,3 +1,16 @@
+---
+key: lgpl-3.0-cygwin
+is_deprecated: yes
+short_name: LGPL 3.0 or later with Cygwin exception
+name: LGPL 3.0 or later with Cygwin exception
+category: Copyleft Limited
+owner: Cygwin Project
+homepage_url: https://cygwin.com/licensing.html
+is_exception: yes
+other_urls:
+    - https://cygwin.com/COPYING.LIB
+---
+
 The Cygwin API library found in the winsup subdirectory of the source code is covered by the GNU Lesser General Public License (LGPL) version 3 or later. For details of the requirements of LGPLv3, please read the GNU Lesser General Public License (LGPL).
 
 Cygwin™ Linking Exception

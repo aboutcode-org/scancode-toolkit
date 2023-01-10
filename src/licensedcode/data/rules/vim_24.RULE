@@ -1,3 +1,13 @@
+---
+license_expression: vim
+is_license_notice: yes
+relevance: 99
+ignorable_urls:
+    - http://iccf-holland.org/
+    - http://www.iccf.nl/
+    - http://www.vim.org/iccf/
+---
+
 Vim is Charityware.  You can use and copy it as much as you like, but you are
 encouraged to make a donation for needy children in Uganda.  Please see the
 kcc section of the vim docs or visit the ICCF web site, available at these URLs:

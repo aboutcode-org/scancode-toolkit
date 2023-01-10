@@ -1,4 +1,13 @@
- The firmware contained herein is Copyright (c)  Emagic
+---
+license_expression: free-unknown
+is_license_notice: yes
+ignorable_copyrights:
+    - Copyright (c) Emagic
+ignorable_holders:
+    - Emagic
+---
+
+The firmware contained herein is Copyright (c)  Emagic
  as an unpublished work. This notice does not imply unrestricted
  or public access to this firmware which is a trade secret of Emagic,
  and which may not be reproduced, used, sold or transferred to

@@ -1,4 +1,12 @@
- This is free software. It is licensed for use, modification and
+---
+license_expression: mit-old-style-no-advert
+is_license_notice: yes
+ignorable_urls:
+    - http://ntp.org/license
+    - http://opensource.org/licenses/ntp-license.php
+---
+
+This is free software. It is licensed for use, modification and
  redistribution under the terms of the NTP License, copies of which
  can be seen at:
    <http://ntp.org/license>

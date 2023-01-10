@@ -1,3 +1,13 @@
+---
+key: cpm-2022
+short_name: CP/M License 2022
+name: CP/M License 2022
+category: Permissive
+owner: DRDOS
+homepage_url: http://www.cpm.z80.de/license.html
+spdx_license_key: LicenseRef-scancode-cpm-2022
+---
+
 Let this paragraph represent a right to use, distribute, modify, enhance, and otherwise 
 make available in a nonexclusive manner CP/M and its derivatives. This right comes from 
 the company, DRDOS, Inc.'s purchase of Digital Research, the company and all assets, 

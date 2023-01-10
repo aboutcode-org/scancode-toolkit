@@ -1,3 +1,20 @@
+---
+key: swig
+short_name: SWIG Library License
+name: SWIG Library License
+category: Permissive
+owner: SWIG
+homepage_url: http://www.swig.org/
+notes: |
+    SWIG is itself GPL-licensed. The SWIG library and examples, under the Lib
+    and Examples top level directories are distributed under the these terms.
+spdx_license_key: LicenseRef-scancode-swig
+text_urls:
+    - http://www.swig.org/Release/LICENSE
+other_urls:
+    - http://www.swig.org/Release/COPYRIGHT
+---
+
 You may copy, modify, distribute, and make derivative works based on this
 software, in source code or object code form, without restriction. If you
 distribute the software to others, you may do so according to the terms of your

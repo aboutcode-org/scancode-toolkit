@@ -1,4 +1,14 @@
-   Java(TM) Transaction API (JTA) Specification
+---
+license_expression: sun-jta-spec-1.0.1
+is_license_text: yes
+minimum_coverage: 60
+ignorable_copyrights:
+    - Copyright 2002 Sun Microsystems, Inc.
+ignorable_holders:
+    - Sun Microsystems, Inc.
+---
+
+Java(TM) Transaction API (JTA) Specification
    ("Specification")
    Version: 1.0.1B
    Status: Maintenance Release

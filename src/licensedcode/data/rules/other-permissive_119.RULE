@@ -1,3 +1,10 @@
+---
+license_expression: other-permissive
+is_license_text: yes
+relevance: 100
+notes: found in old Scheme libraries
+---
+
 ;;;
 ;;; Permission to copy this software, in whole or in part, to use this
 ;;; software for any lawful purpose, and to redistribute this software

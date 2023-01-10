@@ -1,3 +1,13 @@
+---
+license_expression: apache-2.0
+is_license_notice: yes
+relevance: 100
+minimum_coverage: 80
+ignorable_urls:
+    - http://www.eclipse.org/
+    - https://www.apache.org/licenses/LICENSE-2.0.txt
+---
+
 License
 
 The Eclipse Foundation makes available all content in this plug-in ("Content"). Unless otherwise indicated below, the

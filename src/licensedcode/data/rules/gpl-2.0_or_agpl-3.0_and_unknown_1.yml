@@ -1,7 +1,0 @@
-license_expression: (gpl-2.0 OR agpl-3.0) AND unknown
-is_license_notice: yes
-minimum_coverage: 75
-referenced_filenames:
-    - COPYING.AGPLv3
-    - COPYING.GPLv2
-    - PATENTS

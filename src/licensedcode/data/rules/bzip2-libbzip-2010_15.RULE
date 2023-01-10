@@ -1,4 +1,17 @@
- * This file uses bzip2 library code which is written
+---
+license_expression: bzip2-libbzip-2010
+is_license_notice: yes
+relevance: 100
+referenced_filenames:
+    - README
+    - LICENSE
+ignorable_authors:
+    - Julian Seward <jseward@bzip.org>
+ignorable_emails:
+    - jseward@bzip.org
+---
+
+* This file uses bzip2 library code which is written
  * by Julian Seward <jseward@bzip.org>.
  * See README and LICENSE files in bz/ directory for more information
  * about bzip2 library code.

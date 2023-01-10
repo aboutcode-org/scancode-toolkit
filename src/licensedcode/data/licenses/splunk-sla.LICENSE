@@ -1,3 +1,22 @@
+---
+key: splunk-sla
+short_name: Splunk SLA
+name: Splunk Software License Agreement
+category: Commercial
+owner: Splunk
+homepage_url: https://www.splunk.com/en_us/legal/splunk-software-license-agreement.html
+spdx_license_key: LicenseRef-scancode-splunk-sla
+text_urls:
+    - https://www.splunk.com/en_us/legal/splunk-software-license-agreement.html
+ignorable_urls:
+    - http://www.splunk.com/en_us/support-and-services/support-programs.html
+    - https://splunkbase.splunk.com/
+    - https://www.splunk.com/en_us/legal/licensed-capacity.html
+    - https://www.splunk.com/en_us/legal/privacy/privacy-policy.html
+    - https://www.splunk.com/en_us/legal/professional-services-agreement.html
+    - https://www.splunk.com/en_us/legal/splunk-software-support-policy.html
+---
+
 SPLUNK SOFTWARE LICENSE AGREEMENT
 
 THIS SPLUNK SOFTWARE LICENSE AGREEMENT (“AGREEMENT”) GOVERNS THE LICENSING, INSTALLATION AND USE OF SPLUNK SOFTWARE. BY DOWNLOADING AND/OR INSTALLING SPLUNK SOFTWARE: (a) you are indicating that you have read and understand this Agreement, and agree to be legally bound by it on behalf of the company, GOVERNMENT, or other entity for which you are acting (for example, as an employee OR GOVERNMENT OFFICIAL) or, if there is no company, GOVERNMENT or other entity for which you are acting, on behalf of yourself as an individual; and (b) you represent and warrant that you have the authority to act on behalf of and bind SUCH company, GOVERNMENT OR OTHER ENTITY (if any). 

@@ -1,6 +1,9 @@
+---
+license_expression: other-permissive
+is_license_text: yes
+---
 
-
-  Regarding this entire document or any portion of it (including
+Regarding this entire document or any portion of it (including
   the pseudocode and C code), the author makes no guarantees and
   is not responsible for any damage resulting from its use.  The
   author grants irrevocable permission to anyone to use, modify,

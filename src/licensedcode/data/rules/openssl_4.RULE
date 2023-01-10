@@ -1,4 +1,16 @@
- * Redistribution and use in source and binary forms, with or without
+---
+license_expression: openssl
+is_license_text: yes
+minimum_coverage: 50
+ignorable_authors:
+    - the OpenSSL Project
+ignorable_urls:
+    - http://www.openssl.org/
+ignorable_emails:
+    - openssl-core@openssl.org
+---
+
+* Redistribution and use in source and binary forms, with or without
  * modification, are permitted provided that the following conditions
  * are met:
  *

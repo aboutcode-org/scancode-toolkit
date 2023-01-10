@@ -1,4 +1,15 @@
-          GNU LESSER GENERAL PUBLIC LICENSE
+---
+license_expression: lgpl-2.1
+is_license_text: yes
+ignorable_copyrights:
+    - Copyright (c) 1991, 1999 Free Software Foundation, Inc.
+    - copyrighted by the Free Software Foundation
+ignorable_holders:
+    - Free Software Foundation, Inc.
+    - the Free Software Foundation
+---
+
+GNU LESSER GENERAL PUBLIC LICENSE
                Version 2.1, February 1999
 
  Copyright (C) 1991, 1999 Free Software Foundation, Inc.
@@ -454,4 +465,3 @@ RENDERED INACCURATE OR LOSSES SUSTAINED BY YOU OR THIRD PARTIES OR A
 FAILURE OF THE LIBRARY TO OPERATE WITH ANY OTHER SOFTWARE), EVEN IF
 SUCH HOLDER OR OTHER PARTY HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH
 DAMAGES.
-

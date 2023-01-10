@@ -1,3 +1,13 @@
+---
+key: careware
+short_name: Careware
+name: Careware License
+category: Permissive
+owner: Jacopo Lazzari
+homepage_url: http://jaclaz.altervista.org/Projects/careware.html
+spdx_license_key: LicenseRef-scancode-careware
+---
+
 CAREWARE LICENSE
 
 This script is released as "CAREWARE", it may be freely distributed, used,

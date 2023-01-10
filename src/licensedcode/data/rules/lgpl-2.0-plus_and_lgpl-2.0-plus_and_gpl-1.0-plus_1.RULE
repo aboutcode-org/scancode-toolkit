@@ -1,3 +1,8 @@
+---
+license_expression: lgpl-2.0-plus AND lgpl-2.0-plus AND gpl-1.0-plus
+is_license_notice: yes
+---
+
 This package contains  an LGPLed software implementation of
 
 an LGPLed convenience library

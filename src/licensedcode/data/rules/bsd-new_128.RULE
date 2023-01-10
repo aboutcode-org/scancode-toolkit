@@ -1,4 +1,13 @@
- LICENSE
+---
+license_expression: bsd-new
+is_license_notice: yes
+ignorable_urls:
+    - http://framework.zend.com/license/new-bsd
+ignorable_emails:
+    - license@zend.com
+---
+
+LICENSE
 
  This source file is subject to the new BSD license that is bundled
  with this package in the file LICENSE.txt.

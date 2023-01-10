@@ -1,3 +1,10 @@
+---
+license_expression: uoi-ncsa
+is_license_reference: yes
+referenced_filenames:
+    - LICENSE.TXT
+---
+
 The LLVM software contains code written by third parties.  Such software will
 have its own individual LICENSE.TXT file in the directory in which it appears.
 This file will describe the copyrights, license, and restrictions which apply

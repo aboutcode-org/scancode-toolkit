@@ -1,1 +1,9 @@
+---
+license_expression: amazon-sl
+is_license_notice: yes
+relevance: 100
+ignorable_urls:
+    - http://aws.amazon.com/asl/
+---
+
 // Licensed under the {{Amazon Software License}}  http://aws.amazon.com/asl/

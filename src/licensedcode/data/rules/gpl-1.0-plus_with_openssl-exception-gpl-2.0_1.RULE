@@ -1,3 +1,9 @@
+---
+license_expression: gpl-1.0-plus WITH openssl-exception-gpl-2.0
+is_license_notice: yes
+relevance: 100
+---
+
 In addition, as a special exception, the copyright holders give permission to
 link the code of portions of this program with the OpenSSL library. You must
 obey the GNU General Public License in all respects for all of the code used

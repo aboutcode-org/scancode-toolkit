@@ -1,3 +1,9 @@
+---
+license_expression: apache-2.0 OR bsd-new
+is_license_notice: yes
+notes: https://bazaar.launchpad.net/~testing-cabal/testscenarios/master/view/head:/COPYING
+---
+
 licensed under two licenses, the Apache License, Version 2.0
 or the 3-clause BSD License. You may use this project under either of these
 licenses - choose the one that works best for you.

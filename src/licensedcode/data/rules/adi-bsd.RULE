@@ -1,2 +1,10 @@
+---
+license_expression: adi-bsd
+is_license_notice: yes
+relevance: 100
+ignorable_urls:
+    - https://docs.blackfin.uclinux.org/doku.php?id=adi_bsd
+---
+
 Licensed under the ADI BSD license.
   https://docs.blackfin.uclinux.org/doku.php?id=adi_bsd

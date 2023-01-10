@@ -1,2 +1,11 @@
+---
+license_expression: gpl-2.0-plus
+is_license_reference: yes
+relevance: 100
+minimum_coverage: 100
+notes: per https://tcltk-team.pages.debian.net/policy-html/tcltk-policy.html/ this is a gpl2+,
+    not 1+
+---
+
 The package contains Debian Tcl/Tk policy manual which is distributed
 under the terms of GNU GPL.

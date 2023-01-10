@@ -1,2 +1,7 @@
+---
+is_false_positive: yes
+notes: comments about licensing
+---
+
 All contributors are required to "sign off" on their code, stating that
 the code can be distributed with the kernel under the GPL.

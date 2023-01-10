@@ -1,0 +1,9 @@
+---
+key: qt-company-exception-lgpl-2.1
+short_name: Qt Company Exception to LGPL 2.1
+name: Qt Company Exception to LGPL 2.1
+category: Copyleft Limited
+owner: Qt Company
+is_exception: yes
+spdx_license_key: Qt-LGPL-exception-1.1
+---

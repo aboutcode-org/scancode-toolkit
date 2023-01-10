@@ -1,3 +1,8 @@
+---
+is_false_positive: yes
+notes: comment about a license elsewhere
+---
+
 The SD card loader is available from
 
 https://wiki..org/Boards/

@@ -1,3 +1,13 @@
+---
+license_expression: afl-2.0 OR lgpl-2.0-plus
+is_license_notice: yes
+minimum_coverage: 60
+ignorable_copyrights:
+    - Copyright (c) 2003 Lawrence E. Rosen
+ignorable_holders:
+    - Lawrence E. Rosen
+---
+
 Licensed under the Academic Free License version 2.0 (below)
 Or under the following terms:
 

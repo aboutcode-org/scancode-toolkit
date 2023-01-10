@@ -1,6 +1,94 @@
-primary_license:
 declared_license:
-license_expression: bsd-new AND tcp-wrappers AND gpl-2.0-plus
+declared_license_expression: bsd-new AND tcp-wrappers AND gpl-2.0-plus
+declared_license_expression_spdx: BSD-3-Clause AND TCP-wrappers AND GPL-2.0-or-later
+other_license_expression:
+other_license_expression_spdx:
+license_detections:
+  - license_expression: bsd-new
+    detection_log:
+      - not-combined
+    matches:
+      - score: '97.18'
+        start_line: 20
+        end_line: 42
+        matched_length: 207
+        match_coverage: '100.0'
+        matcher: 3-seq
+        license_expression: bsd-new
+        rule_identifier: bsd-new_67.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_67.RULE
+        matched_text: |
+          Redistribution and use in source and binary forms, with or without
+          modification, are permitted provided that the following conditions
+          are met:
+          1. Redistributions of source code must retain the above copyright
+             notice, this list of conditions and the following disclaimer.
+          2. Redistributions in binary form must reproduce the above copyright
+             notice, this list of conditions and the following disclaimer in the
+             documentation and/or other materials provided with the distribution.
+          3. Neither the name of Julianne F. Haugh nor the names of its contributors
+             may be used to endorse or promote products derived from this software
+             without specific prior written permission.
+
+          THIS SOFTWARE IS PROVIDED BY JULIE HAUGH AND CONTRIBUTORS ``AS IS'' AND
+          ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+          IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+          ARE DISCLAIMED.  IN NO EVENT SHALL JULIE HAUGH OR CONTRIBUTORS BE LIABLE
+          FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+          DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
+          OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+          HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+          LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
+          OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+          SUCH DAMAGE.
+  - license_expression: tcp-wrappers
+    detection_log:
+      - not-combined
+    matches:
+      - score: '100.0'
+        start_line: 72
+        end_line: 85
+        matched_length: 88
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: tcp-wrappers
+        rule_identifier: tcp-wrappers_3.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/tcp-wrappers_3.RULE
+        matched_text: "Individual files\n* may be covered by other copyrights (as noted in the\
+          \ file itself.)\n*\n* This material was originally written and compiled by Wietse\
+          \ Venema at\n* Eindhoven University of Technology, The Netherlands, in 1990, 1991,\n\
+          * 1992, 1993, 1994 and 1995.\n*\n* Redistribution and use in source and binary forms\
+          \ are permitted\n* provided that this entire copyright notice is duplicated in all\
+          \ such\n* copies.  \n*\n* This software is provided \"as is\" and without any expressed\
+          \ or implied\n* warranties, including, without limitation, the implied warranties\
+          \ of\n* merchantibility and fitness for any particular purpose."
+  - license_expression: gpl-2.0-plus
+    detection_log:
+      - not-combined
+    matches:
+      - score: '100.0'
+        start_line: 92
+        end_line: 103
+        matched_length: 100
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: gpl-2.0-plus
+        rule_identifier: gpl-2.0-plus_749.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_749.RULE
+        matched_text: |
+          This program is free software; you can redistribute it and/or modify
+             it under the terms of the GNU General Public License as published by
+             the Free Software Foundation; either version 2, or (at your option)
+             any later version.
+
+             This program is distributed in the hope that it will be useful,
+             but WITHOUT ANY WARRANTY; without even the implied warranty of
+             MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+             GNU General Public License for more details.
+
+             On Debian GNU/Linux systems, the complete text of the GNU General Public
+             License can be found in '/usr/share/common-licenses/GPL-2'
+other_license_detections: []
 copyright: |
   copyright 1988 - 1994, Julianne Frances Haugh
   copyright 1997 - 2001, Marek Michalkiewicz
@@ -8,94 +96,3 @@ copyright: |
   copyright 2000 - 2007, Tomasz Kloczko
   Copyright 1995 by Wietse Venema
   Copyright (c) 1992-2003 Free Software Foundation, Inc.
-matches:
-  - score: '97.18'
-    start_line: 20
-    end_line: 42
-    matcher: 3-seq
-    rule_length: 207
-    matched_length: 207
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: bsd-new_67.RULE
-    license_expression: bsd-new
-    is_license_text: yes
-    is_license_notice: no
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      Redistribution and use in source and binary forms, with or without
-      modification, are permitted provided that the following conditions
-      are met:
-      1. Redistributions of source code must retain the above copyright
-         notice, this list of conditions and the following disclaimer.
-      2. Redistributions in binary form must reproduce the above copyright
-         notice, this list of conditions and the following disclaimer in the
-         documentation and/or other materials provided with the distribution.
-      3. Neither the name of [Julianne] [F]. [Haugh] nor the names of its contributors
-         may be used to endorse or promote products derived from this software
-         without specific prior written permission.
-
-      THIS SOFTWARE IS PROVIDED BY [JULIE] [HAUGH] AND CONTRIBUTORS ``AS IS'' AND
-      ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
-      IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
-      ARE DISCLAIMED.  IN NO EVENT SHALL [JULIE] [HAUGH] OR CONTRIBUTORS BE LIABLE
-      FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
-      DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
-      OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
-      HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
-      LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
-      OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
-      SUCH DAMAGE.
-  - score: '100.0'
-    start_line: 72
-    end_line: 85
-    matcher: 2-aho
-    rule_length: 88
-    matched_length: 88
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: tcp-wrappers_3.RULE
-    license_expression: tcp-wrappers
-    is_license_text: yes
-    is_license_notice: no
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: "Individual files\n* may be covered by other copyrights (as noted in the file\
-      \ itself.)\n*\n* This material was originally written and compiled by Wietse Venema at\n\
-      * Eindhoven University of Technology, The Netherlands, in 1990, 1991,\n* 1992, 1993, 1994\
-      \ and 1995.\n*\n* Redistribution and use in source and binary forms are permitted\n* provided\
-      \ that this entire copyright notice is duplicated in all such\n* copies.  \n*\n* This\
-      \ software is provided \"as is\" and without any expressed or implied\n* warranties, including,\
-      \ without limitation, the implied warranties of\n* merchantibility and fitness for any\
-      \ particular purpose."
-  - score: '100.0'
-    start_line: 92
-    end_line: 103
-    matcher: 2-aho
-    rule_length: 100
-    matched_length: 100
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: gpl-2.0-plus_749.RULE
-    license_expression: gpl-2.0-plus
-    is_license_text: no
-    is_license_notice: yes
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      This program is free software; you can redistribute it and/or modify
-         it under the terms of the GNU General Public License as published by
-         the Free Software Foundation; either version 2, or (at your option)
-         any later version.
-
-         This program is distributed in the hope that it will be useful,
-         but WITHOUT ANY WARRANTY; without even the implied warranty of
-         MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-         GNU General Public License for more details.
-
-         On Debian GNU/Linux systems, the complete text of the GNU General Public
-         License can be found in '/usr/share/common-licenses/GPL-2'

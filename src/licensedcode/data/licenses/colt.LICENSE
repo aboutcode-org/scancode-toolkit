@@ -1,3 +1,25 @@
+---
+key: colt
+short_name: Colt License Agreement
+name: Colt License Agreement
+category: Free Restricted
+owner: CERN
+homepage_url: http://acs.lbl.gov/software/colt/license.html
+spdx_license_key: LicenseRef-scancode-colt
+text_urls:
+    - http://acs.lbl.gov/software/colt/license.html
+minimum_coverage: 85
+ignorable_copyrights:
+    - Copyright (c) 1999 CERN - European Organization for Nuclear Research
+ignorable_holders:
+    - CERN - European Organization for Nuclear Research
+ignorable_authors:
+    - Pavel Binko, Dino Ferrero Merlino, Wolfgang Hoschek, Tony Johnson, Andreas Pfeiffer, and
+        others. Check the FreeHEP
+ignorable_urls:
+    - http://acs.lbl.gov/software/colt/license.html
+---
+
 Colt License Agreement
 
 http://acs.lbl.gov/software/colt/license.html

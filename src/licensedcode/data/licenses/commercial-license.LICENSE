@@ -1,1 +1,12 @@
+---
+key: commercial-license
+short_name: Commercial License
+name: Commercial License
+category: Commercial
+owner: Unspecified
+notes: this is a generic commercial license
+is_generic: yes
+spdx_license_key: LicenseRef-scancode-commercial-license
+---
+
 This component is licensed under a commercial contract from the supplier.

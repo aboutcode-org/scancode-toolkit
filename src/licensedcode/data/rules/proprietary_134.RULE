@@ -1,4 +1,9 @@
-  Corporation(" ") supplies this software to you in
+---
+license_expression: proprietary-license
+is_license_text: yes
+---
+
+Corporation(" ") supplies this software to you in
 consideration of your agreement to the following terms, and your use,
 installation, modification or redistribution of this   software
 constitutes acceptance of these terms.  If you do not agree with these

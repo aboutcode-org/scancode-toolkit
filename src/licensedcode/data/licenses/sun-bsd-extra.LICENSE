@@ -1,3 +1,13 @@
+---
+key: sun-bsd-extra
+short_name: Sun BSD-Style with Additional Restrictions
+name: Sun BSD-Style with Additional Restrictions
+category: Free Restricted
+owner: Oracle (Sun)
+spdx_license_key: LicenseRef-scancode-sun-bsd-extra
+minimum_coverage: 50
+---
+
 Sun grants you ("Licensee") a non-exclusive, royalty free, license to use,
 modify and redistribute this software in source and binary code form, provided
 that

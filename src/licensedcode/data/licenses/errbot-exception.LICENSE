@@ -1,3 +1,17 @@
+---
+key: errbot-exception
+short_name: Errbot exception
+name: Errbot exception
+category: Permissive
+owner: Errbot
+homepage_url: http://errbot.io/
+is_exception: yes
+spdx_license_key: LicenseRef-scancode-errbot-exception
+text_urls:
+    - https://github.com/errbotio/errbot/blob/master/gplv3-exceptions.txt
+minimum_coverage: 30
+---
+
 As a special exception, the copyright holders of Errbot hereby grant permission
 for plug-ins, scripts or add-ons not bundled or distributed as part
 of Errbot itself and potentially licensed under a different license, to be

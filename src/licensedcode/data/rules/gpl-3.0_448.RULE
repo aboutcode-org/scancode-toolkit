@@ -1,3 +1,18 @@
+---
+license_expression: gpl-3.0
+is_license_text: yes
+relevance: 100
+ignorable_copyrights:
+    - Copyright (c) 2007 Free Software Foundation, Inc. http://fsf.org/ http://fsf.org
+ignorable_holders:
+    - Free Software Foundation, Inc.
+ignorable_urls:
+    - http://fsf.org/
+    - https://www.gnu.org/licenses
+    - https://www.gnu.org/licenses/
+    - https://www.gnu.org/licenses/gpl-3.0.rdf
+    - https://www.gnu.org/philosophy/why-not-lgpl.html
+---
 
 GNU General Public License v3.0 - GNU Project - Free Software Foundation (FSF)
 https://www.gnu.org/licenses/gpl-3.0.rdf
@@ -684,5 +699,4 @@ into proprietary programs.  If your program is a subroutine library, you
 may consider it more useful to permit linking proprietary applications with
 the library.  If this is what you want to do, use the GNU Lesser General
 Public License instead of this License.  But first, please read
-  "https://www.gnu.org/philosophy/why-not-lgpl.html" https://www.gnu.org/philosophy/why-not-lgpl.html . 
-
+  "https://www.gnu.org/philosophy/why-not-lgpl.html" https://www.gnu.org/philosophy/why-not-lgpl.html .

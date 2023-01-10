@@ -1,4 +1,9 @@
-  # Some suggested licenses:
+---
+is_false_positive: yes
+notes: found in Ansible galaxy templates
+---
+
+# Some suggested licenses:
   # - BSD (default)
   # - MIT
   # - GPLv2

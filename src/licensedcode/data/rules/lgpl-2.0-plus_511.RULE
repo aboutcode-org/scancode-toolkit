@@ -1,3 +1,11 @@
+---
+license_expression: lgpl-2.0-plus
+is_license_notice: yes
+relevance: 100
+ignorable_urls:
+    - https://www.gnu.org/licenses/old-licenses/lgpl-2.0.html
+---
+
 *  AutoOpts is a copyrighted work.  This source file is not encumbered
  *  by AutoOpts licensing, but is provided under the licensing terms chosen
  *  by the genshellopt author or copyright holder.  AutoOpts is

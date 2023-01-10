@@ -110,19 +110,14 @@ def make_test(license_test, regen=REGEN_TEST_FIXTURES):
 
     def closure_test_function(*args, **kwargs):
         declared = license_test.declared_license
-        _cleaned, detected = alpine.detect_declared_license(declared)
+        _cleaned, detected, _license_detections = alpine.detect_declared_license(declared)
 
         if regen:
             license_test.license_expression = detected
             license_test.dump()
             return
 
-        if detected != license_test.license_expression:
-            # On failure, we compare against more result data to get additional
-            # failure details, including the test_file
-            expected = [license_test.to_dict(), f'file://{license_test.data_file}']
-
-            assert detected == expected
+        assert detected  == license_test.license_expression
 
     return closure_test_function
 

@@ -1,3 +1,19 @@
+---
+key: oracle-java-ee-sdk-2010
+short_name: OTN Developer License for JAVA EE SDK
+name: OTN Developer License for JAVA EE SDK
+category: Proprietary Free
+owner: Oracle Corporation
+homepage_url: http://www.oracle.com/technetwork/java/javase/downloads/366879
+spdx_license_key: LicenseRef-scancode-oracle-java-ee-sdk-2010
+minimum_coverage: 50
+ignorable_authors:
+    - the OTN Program
+ignorable_urls:
+    - http://www.oracle.com/products/export
+    - http://www.oracle.com/products/export/index.html
+---
+
 Oracle Technology Network Developer License Terms for JAVA EE SDK
 
 Export Controls on the Programs Selecting the "Accept License Agreement" button is a confirmation of your agreement that you comply, now and during the trial term, with each of the following statements:

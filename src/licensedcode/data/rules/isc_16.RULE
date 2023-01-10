@@ -1,4 +1,12 @@
- * 
+---
+license_expression: isc
+is_license_notice: yes
+relevance: 95
+minimum_coverage: 80
+notes: Theodore T'so variant
+---
+
+* 
  * Permission to use, copy, modify, and distribute this software for
  * any purpose with or without fee is hereby granted, provided that
  * the above copyright notice and this permission notice appear in all

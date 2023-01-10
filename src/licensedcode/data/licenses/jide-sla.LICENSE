@@ -1,3 +1,15 @@
+---
+key: jide-sla
+short_name: JIDE SLA
+name: JIDE SLA
+category: Commercial
+owner: JIDE Software
+homepage_url: http://www.jidesoft.com/purchase/SLA.htm
+spdx_license_key: LicenseRef-scancode-jide-sla
+ignorable_urls:
+    - http://www.jidesoft.com/
+---
+
 SOFTWARE LICENSE AGREEMENT FOR JIDE SOFTWARE, INC.'S PRODUCTS
  
 IMPORTANT - READ CAREFULLY: This JIDE Software, Inc. ("JIDE") Software License Agreement ("SLA") is a legal agreement between you (an individual developer or a company of software applications) and JIDE for the JIDE software product accompanying this SLA, which includes computer software and may include associated source code, media, printed materials, and "on-line" or electronic documentation ("SOFTWARE PRODUCT"). By installing, copying, or otherwise using the SOFTWARE PRODUCT, you agree to be bound by the terms of this SLA. If you do not agree to the terms of this SLA, do not install, use, distribute in any manner, or replicate in any manner, any part, file or portion of the SOFTWARE PRODUCT. 
@@ -49,4 +61,3 @@ Signature:	                                           Signature:
 Name	                                                   Name:
 Title:	                                                           Title:
 Date:	                                                    Date:
-

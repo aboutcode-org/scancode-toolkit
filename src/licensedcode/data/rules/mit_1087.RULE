@@ -1,2 +1,9 @@
+---
+license_expression: mit
+is_license_notice: yes
+referenced_filenames:
+    - LICENSE
+---
+
 The project has an `MIT open-source licence <LICENSE>`__.
 Among other things this means you can use it free of charge.

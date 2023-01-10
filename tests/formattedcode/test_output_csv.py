@@ -91,7 +91,7 @@ def test_flatten_scan_minimal():
         ('email', []),
         ('url', []),
         ('package', []),
-        ])
+    ])
     result = list(flatten_scan(scan, headers))
     expected_file = test_env.get_test_loc('csv/flatten_scan/minimal.json-expected')
     check_json(result, expected_file, regen=REGEN_TEST_FIXTURES)
@@ -107,7 +107,7 @@ def test_flatten_scan_can_process_path_with_and_without_leading_slash():
         ('email', []),
         ('url', []),
         ('package', []),
-        ])
+    ])
     result = list(flatten_scan(scan, headers))
     expected_file = test_env.get_test_loc('csv/flatten_scan/path_with_and_without_leading_slash.json-expected')
     check_json(result, expected_file)
@@ -152,7 +152,7 @@ def test_flatten_scan_full():
         ('email', []),
         ('url', []),
         ('package', []),
-        ])
+    ])
     result = list(flatten_scan(scan, headers))
     expected_file = test_env.get_test_loc('csv/flatten_scan/full.json-expected')
     check_json(result, expected_file)
@@ -169,7 +169,7 @@ def test_flatten_scan_key_ordering():
         ('email', []),
         ('url', []),
         ('package', []),
-        ])
+    ])
     result = list(flatten_scan(scan, headers))
     expected_file = test_env.get_test_loc('csv/flatten_scan/key_order.expected.json')
     check_json(result, expected_file)
@@ -187,7 +187,7 @@ def test_flatten_scan_with_no_keys_does_not_error_out():
         ('email', []),
         ('url', []),
         ('package', []),
-        ])
+    ])
     result = list(flatten_scan(scan, headers))
     expected_headers = dict([
         ('info', []),
@@ -196,7 +196,7 @@ def test_flatten_scan_with_no_keys_does_not_error_out():
         ('email', []),
         ('url', []),
         ('package', []),
-        ])
+    ])
     assert headers == expected_headers
     assert result == []
 
@@ -212,7 +212,7 @@ def test_flatten_scan_can_process_package_license_when_license_value_is_null():
         ('email', []),
         ('url', []),
         ('package', []),
-        ])
+    ])
     result = list(flatten_scan(scan, headers))
     expected_file = test_env.get_test_loc('csv/flatten_scan/package_license_value_null.json-expected')
     check_json(result, expected_file)

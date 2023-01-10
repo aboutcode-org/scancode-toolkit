@@ -1,3 +1,10 @@
+---
+license_expression: gitlab-ee
+is_license_text: yes
+ignorable_urls:
+    - https://about.gitlab.com/terms/#subscription
+---
+
 With regard to the GitLab Software:
 
 This software and associated documentation files (the "Software") may only be

@@ -1,3 +1,15 @@
+---
+key: jscheme
+short_name: Jscheme License
+name: Jscheme License
+category: Permissive
+owner: Peter Norvig
+homepage_url: https://norvig.com/license.html
+spdx_license_key: LicenseRef-scancode-jscheme
+ignorable_emails:
+    - peter@norvig.com
+---
+
 Permission is granted to anyone to use this software, in source or object code form, on any computer system, and to modify, compile, decompile, run, and redistribute it to anyone else, subject to the following restrictions:
 
     1. The author makes no warranty of any kind, either expressed or implied, about the suitability of this software for any purpose.

@@ -1,3 +1,21 @@
+---
+key: day-spec
+short_name: Day Specification License
+name: Day Specification License
+category: Proprietary Free
+owner: Day Management AG
+homepage_url: http://www.day.com/maven/jsr170/jars/LICENSE.txt
+spdx_license_key: LicenseRef-scancode-day-spec
+text_urls:
+    - http://www.day.com/maven/jsr170/jars/LICENSE.txt
+    - http://www.day.com/maven/jsr170/licenses/day-spec-license.htm
+minimum_coverage: 70
+ignorable_copyrights:
+    - Copyright 2005 Day Management AG Barfusserplatz 6, 4001 Basel, Switzerland
+ignorable_holders:
+    - Day Management AG Barfusserplatz 6, 4001 Basel, Switzerland
+---
+
 [Day Specification License]
 
 Day Management AG ("Licensor") is willing to license this specification

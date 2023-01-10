@@ -1,3 +1,13 @@
+---
+license_expression: other-permissive
+is_license_text: yes
+relevance: 100
+notes: http://www.globus.org/toolkit/license.html
+ignorable_urls:
+    - http://www.globus.org/toolkit/license.html
+    - https://www.apache.org/licenses/LICENSE-2.0
+---
+
 Globus Toolkit Public License (GTPL) Version 3
 
               Globus(R) Toolkit Public License
@@ -213,4 +223,3 @@ Globus Toolkit Public License (GTPL) Version 3
    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
    See the License for the specific language governing permissions and
    limitations under the License.
-

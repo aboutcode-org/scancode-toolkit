@@ -1,3 +1,10 @@
+---
+license_expression: ecosrh-1.0
+is_license_notice: yes
+ignorable_urls:
+    - http://sourceware.cygnus.com/ecos
+---
+
 in the */
 /* Cygnus eCos source. Here is the copyright notice: */
 /* */

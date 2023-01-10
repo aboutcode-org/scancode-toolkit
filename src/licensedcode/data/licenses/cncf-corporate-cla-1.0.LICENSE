@@ -1,3 +1,16 @@
+---
+key: cncf-corporate-cla-1.0
+short_name: CNCF Corporate CLA 1.0
+name: Software Grant and Corporate Contributor License Agreement ("Agreement") v1.0
+category: CLA
+owner: Linux Foundation
+homepage_url: https://github.com/cncf/cla/blob/master/corporate-cla.pdf
+spdx_license_key: LicenseRef-scancode-cncf-corporate-cla-1.0
+faq_url: https://github.com/kubernetes/community/blob/master/CLA.md
+ignorable_emails:
+    - cla@cncf.io
+---
+
 Cloud Native Computing Foundation
 A project of The Linux Foundation
 Software Grant and Corporate Contributor License Agreement ("Agreement") v1.0

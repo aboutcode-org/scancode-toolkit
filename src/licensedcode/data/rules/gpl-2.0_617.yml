@@ -1,7 +1,0 @@
-license_expression: gpl-2.0
-is_license_notice: yes
-minimum_coverage: 90
-notes: The GPL version is not specified in this notice BUT at https://web.archive.org/web/20020809115410/ftp://prep.ai.mit.edu/pub/gnu/GPL
-    the text is a GPL 2.0 license text
-ignorable_urls:
-    - ftp://prep.ai.mit.edu/pub/gnu/GPL

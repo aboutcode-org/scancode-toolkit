@@ -1,4 +1,11 @@
-                       BSD license
+---
+license_expression: bsd-simplified
+is_license_text: yes
+minimum_coverage: 95
+notes: openib
+---
+
+BSD license
 
 Redistribution and use in source and binary forms, with or without
 modification, are permitted provided that the following conditions

@@ -1,3 +1,14 @@
+---
+key: scanlogd-license
+short_name: scanlogd License
+name: scanlogd License
+category: Permissive
+owner: Openwall
+spdx_license_key: LicenseRef-scancode-scanlogd-license
+other_urls:
+    - http://www.openwall.com/scanlogd/
+---
+
 You're allowed to do whatever you like with this software (including
 re-distribution in any form, with or without modification), provided
 that credit is given where it is due and any modified versions are

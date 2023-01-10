@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<bom xmlns="http://cyclonedx.org/schema/bom/1.3" version="1" serialNumber="urn:uuid:3d085ccd-f81f-4f5a-b82a-56bb4b63a041">
+<bom xmlns="http://cyclonedx.org/schema/bom/1.3" version="1" serialNumber="urn:uuid:699b3c2e-504d-413a-a7bb-17a020d6ae2e">
   <metadata>
-    <timestamp>2022-09-06T19:23:53Z</timestamp>
+    <timestamp>2023-01-03T17:42:48Z</timestamp>
     <tools>
       <tool>
         <vendor>AboutCode.org</vendor>
         <name>scancode-toolkit</name>
-        <version>31.1.1</version>
+        <version>32.0.0rc1</version>
       </tool>
     </tools>
   </metadata>

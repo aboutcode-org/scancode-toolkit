@@ -12,22 +12,22 @@ import os
 import json
 import logging
 import uuid
+import warnings
 from collections import defaultdict
 from datetime import datetime
 from enum import Enum
+from pprint import pformat
 from typing import List
-import warnings
 
 import attr
-from lxml import etree
-
 from commoncode.cliutils import OUTPUT_GROUP
 from commoncode.cliutils import PluggableCommandLineOption
-from formattedcode import FileOptionType
-from licensedcode.cache import build_spdx_license_expression
+from lxml import etree
 from plugincode.output import OutputPlugin
 from plugincode.output import output_impl
 
+from formattedcode import FileOptionType
+from licensedcode.cache import build_spdx_license_expression
 
 TRACE = os.environ.get('SCANCODE_DEBUG_OUTPUTS', False)
 
@@ -61,13 +61,17 @@ class CycloneDxLicenseExpression(ToDictMixin):
     """
     expression: str = attr.ib(default=None)
 
+    @property
+    def identifier(self):
+        return self.expression
+
     @classmethod
     def from_package(cls, package):
         """
         Yield CycloneDxLicenseExpression built from a mapping of ``package``
         data.
         """
-        license_expression = package.get('license_expression')
+        license_expression = package.get('declared_license_expression')
         if license_expression:
             spdx = build_spdx_license_expression(license_expression)
             yield CycloneDxLicenseExpression(expression=spdx)
@@ -80,6 +84,10 @@ class CycloneDxProperty(ToDictMixin):
     """
     name: str = attr.ib()
     value: str = attr.ib()
+
+    @property
+    def identifier(self):
+        return f"{self.name}-{self.value}"
 
 
 @attr.s
@@ -97,6 +105,10 @@ class CycloneDxHashObject(ToDictMixin):
 
     alg: str = attr.ib()
     content: str = attr.ib()
+
+    @property
+    def identifier(self):
+        return f"{self.alg}-{self.content}"
 
     @classmethod
     def from_package(cls, package):
@@ -158,6 +170,10 @@ class CycloneDxExternalRef(ToDictMixin):
     type: str = attr.ib(validator=attr.validators.in_(known_types))
     comment: str = attr.ib(default=None)
     hashes: List[CycloneDxHashObject] = attr.ib(factory=list)
+
+    @property
+    def identifier(self):
+        return f"{self.url}-{self.type}-{self.comment}"
 
     @classmethod
     def from_package(cls, package: dict):
@@ -290,7 +306,8 @@ class CycloneDxComponent:
             properties.append(
                 CycloneDxProperty(
                     name='WARNING',
-                    value=f'WARNING: component skipped in CycloneDX output: {package!r}'
+                    value=f'WARNING: component skipped in CycloneDX output:'
+                    f' purl: {package["purl"]} at datafile_paths: {package["datafile_paths"]}'
                 )
             )
 
@@ -330,7 +347,7 @@ class CycloneDxComponent:
 
         for components in components_by_purl.values():
             base_component = components[0]
-            if len(components) == 1 :
+            if len(components) == 1:
                 yield base_component
                 continue
 
@@ -428,8 +445,8 @@ def merge_lists(x, y):
     Merge ``y`` list items in list ``x`` avoiding duplicate entries.
     Return the updated ``x``.
     """
-    seen = set(x)
-    new = (i for i in y if i not in seen)
+    seen = set([item.identifier for item in x])
+    new = (item for item in y if item.identifier not in seen)
     x.extend(new)
     return x
 
@@ -580,7 +597,6 @@ class CycloneDxMetadata:
 
         if TRACE:
             logger_debug('CycloneDxMetadata: headers')
-            from pprint import pformat
             logger_debug(pformat(headers))
 
         try:
@@ -603,7 +619,6 @@ class CycloneDxMetadata:
 
         if TRACE:
             logger_debug('CycloneDxMetadata: properties')
-            from pprint import pformat
             logger_debug(pformat(properties))
 
         return CycloneDxMetadata(

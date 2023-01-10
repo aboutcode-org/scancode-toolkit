@@ -1,3 +1,17 @@
+---
+key: gpl-2.0-plus-openmotif
+is_deprecated: yes
+short_name: GPL 2.0 or later with Open Motif exception
+name: GPL 2.0 or later with Open Motif exception
+category: Copyleft Limited
+owner: NEdit Project
+homepage_url: http://nedit.sourcearchive.com/documentation/5.6~cvs20081118/grid3_8c-source.html
+is_exception: yes
+other_urls:
+    - http://www.nedit.org/faq/
+notes: replaced by openmotif-exception-2.0-plus
+---
+
 This library is free software; you can redistribute it and/or modify it under
 the terms of the GNU General Public License as published by the Free Software
 Foundation; either version 2, or (at your option) any later version.

@@ -1,3 +1,13 @@
+---
+key: newran
+short_name: Newran License
+name: Newran License
+category: Permissive
+owner: Robert Davies
+homepage_url: http://www.robertnz.net/nr02doc.htm
+spdx_license_key: LicenseRef-scancode-newran
+---
+
 There are no restrictions on the use of newran except that I take no liability for any problems that may arise from its use.
 
 I welcome its distribution as part of low cost CD-ROM collections.

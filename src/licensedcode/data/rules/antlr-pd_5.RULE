@@ -1,3 +1,8 @@
+---
+license_expression: antlr-pd
+is_license_notice: yes
+---
+
 ANTLR 2 License 
  
 We reserve no legal rights to the ANTLR--it is fully in the public domain. An individual or company 
@@ -10,4 +15,4 @@ acknowledge this fact somewhere in the documentation, research report, etc... If
 and have developed a nice tool with the output, please mention that you developed it using 
 ANTLR. In addition, we ask that the headers remain intact in our source code. As long as these 
 guidelines are kept, we expect to continue enhancing this system and expect to make other tools 
-available as they are completed. 
+available as they are completed.

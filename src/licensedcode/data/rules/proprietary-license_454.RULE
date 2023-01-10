@@ -1,3 +1,10 @@
+---
+license_expression: proprietary-license
+is_license_text: yes
+relevance: 100
+notes: mit-like but not MIT from https://github.com/engineyard/ey-cloud-recipes/blob/2aeb4f55a8616f933d7a8aec951bafd3ad92f10d/LICENSE.txt
+---
+
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
 in the Software without restriction, including without limitation the rights

@@ -1,3 +1,14 @@
+---
+key: qwt-1.0
+is_deprecated: yes
+short_name: Qwt License 1.0 Deprecated
+name: Qwt License 1.0 Deprecated
+category: Copyleft Limited
+owner: Qwt Project
+homepage_url: http://qwt.sourceforge.net/qwtlicense.html
+notes: replaced by qwt-exception-1.0
+---
+
 Qwt License
 Version 1.0, January 1, 2003
 The Qwt library and included programs are provided under the terms

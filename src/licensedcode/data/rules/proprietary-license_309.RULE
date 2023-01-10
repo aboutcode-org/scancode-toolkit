@@ -1,3 +1,9 @@
+---
+license_expression: proprietary-license
+is_license_text: yes
+relevance: 100
+---
+
 grants permission to use and redistribute aforementioned firmware
 files for the use with devices, but not as part of the Linux
 kernel, or in any other form which would require these files themselves

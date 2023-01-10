@@ -1,4 +1,14 @@
- * This software is available to you under a choice of one of two
+---
+license_expression: gpl-2.0 OR linux-openib
+is_license_notice: yes
+relevance: 99
+minimum_coverage: 95
+referenced_filenames:
+    - COPYING
+notes: found in the kernel 5rc3. There are typos in this notice
+---
+
+* This software is available to you under a choice of one of two
  * licenses.  You may choose to be licensed under the terms of the GNU
  * General Public License (GPL) Version 2, available from the file
  * COPYING in the main directory of this source tree, or the

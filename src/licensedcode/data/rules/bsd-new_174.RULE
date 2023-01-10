@@ -1,4 +1,9 @@
- is available for use under the following license, commonly known
+---
+license_expression: bsd-new
+is_license_notice: yes
+---
+
+is available for use under the following license, commonly known
 as the 3-clause (or "modified") BSD license:
 
 Redistribution and use in source and binary forms, with or without
@@ -26,4 +31,4 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 Portions of  are based on works by others, also made available by
 them under the three-clause BSD license above.  The copyright notices are
-available in the corresponding source files; the license is as above. 
+available in the corresponding source files; the license is as above.

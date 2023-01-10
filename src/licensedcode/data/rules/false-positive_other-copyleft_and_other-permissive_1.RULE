@@ -1,3 +1,8 @@
+---
+is_false_positive: yes
+notes: Found in Debian docs
+---
+
 modify the
 paragraph in policy saying "Packages distributed under the Apache
 license (version 2.0), the Artistic license, the GNU GPL (versions 1,

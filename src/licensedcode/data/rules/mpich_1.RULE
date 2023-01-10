@@ -1,3 +1,10 @@
+---
+license_expression: mpich
+is_license_notice: yes
+relevance: 90
+notes: https://github.com/Bcfg2/bcfg2/blob/master/LICENSE this is truncated
+---
+
 GOVERNMENT LICENSE
 
 Portions of this material resulted from work developed under a U.S.

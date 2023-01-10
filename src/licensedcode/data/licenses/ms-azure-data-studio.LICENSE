@@ -1,3 +1,13 @@
+---
+key: ms-azure-data-studio
+short_name: MS Azure Data Studio License
+name: Microsoft Azure Data Studio License Terms
+category: Proprietary Free
+owner: Microsoft
+homepage_url: https://github.com/microsoft/azuredatastudio/blob/main/LICENSE.txt
+spdx_license_key: LicenseRef-scancode-ms-azure-data-studio
+---
+
 MICROSOFT SOFTWARE LICENSE TERMS
 
 MICROSOFT AZURE DATA STUDIO

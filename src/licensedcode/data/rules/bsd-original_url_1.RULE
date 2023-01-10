@@ -1,1 +1,9 @@
+---
+license_expression: bsd-original
+is_license_reference: yes
+relevance: 95
+ignorable_urls:
+    - https://spdx.org/licenses/bsd-4-clause
+---
+
 https://spdx.org/licenses/bsd-4-clause

@@ -1,3 +1,10 @@
+---
+license_expression: generic-trademark
+is_license_notice: yes
+relevance: 100
+notes: https://github.com/quantumblacklabs/kedro/blob/master/kedro/pipeline/decorators.py
+---
+
 # The name and logo
 # (either separately or in combination,  Trademarks") are
 # trademarks of. The License does not grant you any right or

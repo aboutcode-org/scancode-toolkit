@@ -1,3 +1,14 @@
+---
+license_expression: lgpl-2.1
+is_license_notice: yes
+relevance: 100
+referenced_filenames:
+    - lgpl-v21.txt
+ignorable_urls:
+    - https://www.gnu.org/
+    - https://www.gnu.org/licenses/lgpl.html
+---
+
 * The contents of this file are made available under the terms
 * of the GNU Lesser General Public License (LGPL) Version 2.1 that
 * accompanies this distribution (lgpl-v21.txt).  The LGPL is also

@@ -1,3 +1,13 @@
+---
+key: softerra-ldap-browser-eula
+short_name: Softerra LDAP Browser EULA
+name: Softerra LDAP Browser EULA
+category: Proprietary Free
+owner: Softerra
+homepage_url: http://www.ldapadministrator.com/softerra-ldap-browser.htm
+spdx_license_key: LicenseRef-scancode-softerra-ldap-browser-eula
+---
+
 END-USER LICENSE AGREEMENT
 
 This end-user software license agreement is a legal agreement ("Agreement") between you ("Licensee") and Softerra, LLC ("Softerra"), which is the owner of the LDAP Browser Software ("Software"). This Agreement specifies the terms and conditions under which Licensee may use the Software.

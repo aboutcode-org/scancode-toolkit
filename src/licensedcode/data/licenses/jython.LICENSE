@@ -1,3 +1,30 @@
+---
+key: jython
+short_name: Jython License
+name: Jython License
+category: Permissive
+owner: Python Software Foundation (PSF)
+homepage_url: http://www.jython.org/license.txt
+notes: this is a complex composite of multiple licenses
+spdx_license_key: LicenseRef-scancode-jython
+text_urls:
+    - http://www.jython.org/license.txt
+minimum_coverage: 80
+ignorable_copyrights:
+    - Copyright (c) 1996-1999 Corporation for National Research Initiatives
+    - Copyright (c) 2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007 Jython Developers
+    - Copyright (c) 2007 Python Software Foundation
+ignorable_holders:
+    - Corporation for National Research Initiatives
+    - Jython Developers
+    - Python Software Foundation
+ignorable_authors:
+    - Brian Zimmer
+ignorable_urls:
+    - http://hdl.handle.net/1895.22/1006
+    - http://www.jython.org/license.txt
+---
+
 Jython License
 http://www.jython.org/license.txt
 

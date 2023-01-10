@@ -1,3 +1,9 @@
+---
+license_expression: gpl-2.0-plus AND free-unknown
+is_license_notice: yes
+minimum_coverage: 10
+---
+
 This is a GPL v2 license with additional rights found from linux kernel
 source files with the declaration MODULE_LICENSE("GPL and additional
 rights")

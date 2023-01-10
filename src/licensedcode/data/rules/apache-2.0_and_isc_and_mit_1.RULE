@@ -1,3 +1,13 @@
+---
+license_expression: apache-2.0 AND isc AND mit
+is_license_notice: yes
+relevance: 100
+ignorable_copyrights:
+    - copyright Regents of the University of Michigan
+ignorable_holders:
+    - Regents of the University of Michigan
+---
+
 original work created at the University of Michigan, and is
 licensed under the Apache 2.0 license. Files that were created by Google, and new files in
 forks of packages maintained by Google have a Google copyright and fall under

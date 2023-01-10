@@ -1,3 +1,12 @@
+---
+key: nxp-warranty-disclaimer
+short_name: NXP Warranty Disclaimer
+name: NXP Warranty Disclaimer
+category: Proprietary Free
+owner: NXP
+spdx_license_key: LicenseRef-scancode-nxp-warranty-disclaimer
+---
+
 Software that is described herein is for illustrative purposes only
 which provides customers with programming information regarding the
 products. This software is supplied "AS IS" without any warranties.

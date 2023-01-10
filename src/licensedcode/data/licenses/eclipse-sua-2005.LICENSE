@@ -1,3 +1,20 @@
+---
+key: eclipse-sua-2005
+short_name: Eclipse Foundation Software User Agreement 2005
+name: Eclipse Foundation Software User Agreement 2005
+category: Copyleft Limited
+owner: Eclipse Foundation
+homepage_url: https://web.archive.org/web/20060128034635/http://www.eclipse.org/legal/epl/notice.php
+spdx_license_key: LicenseRef-scancode-eclipse-sua-2005
+ignorable_urls:
+    - http://oss.software.ibm.com/developerworks/opensource/license10.html
+    - http://www.apache.org/licenses/LICENSE
+    - http://www.apache.org/licenses/LICENSE-2.0
+    - http://www.eclipse.org/legal/cpl-v10.html
+    - http://www.eclipse.org/legal/epl-v10.html
+    - http://www.mozilla.org/MPL/MPL-1.1.html
+    - http://www.opengroup.org/openmotif/supporters/metrolink/license.html
+---
 
 Eclipse Foundation Software User Agreement
 
@@ -39,4 +56,4 @@ IT IS YOUR OBLIGATION TO READ AND ACCEPT ALL SUCH TERMS AND CONDITIONS PRIOR TO 
 Cryptography
 
 Content may contain encryption software. The country in which you are currently may have restrictions on the import, possession, and use, and/or re-export to another country, of encryption software. BEFORE using any encryption software, please check the country’s laws, regulations and policies concerning the import, possession, or use, and re-export of encryption software, to see if this is permitted.
-Java and all Java-based trademarks are trademarks of Sun Microsystems, Inc. in the United States, other countries, or both. 
+Java and all Java-based trademarks are trademarks of Sun Microsystems, Inc. in the United States, other countries, or both.

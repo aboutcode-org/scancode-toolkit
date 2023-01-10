@@ -1,4 +1,13 @@
- H2 is dual licensed and available under the MPL 2.0 (Mozilla Public License Version 2.0) or under the EPL 1.0 (Eclipse Public License). There is a license FAQ for both the MPL and the EPL.
+---
+license_expression: (mpl-2.0 OR epl-1.0) AND proprietary-license
+is_license_notice: yes
+ignorable_urls:
+    - http://www.bungisoft.com/
+    - http://www.h2database.com/
+    - http://www.h2database.com/html/license.html
+---
+
+H2 is dual licensed and available under the MPL 2.0 (Mozilla Public License Version 2.0) or under the EPL 1.0 (Eclipse Public License). There is a license FAQ for both the MPL and the EPL.
 
     You can use H2 for free.
     You can integrate it into your applications (including in commercial applications) and distribute it.

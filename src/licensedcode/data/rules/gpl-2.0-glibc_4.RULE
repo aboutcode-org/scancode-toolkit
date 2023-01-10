@@ -1,3 +1,8 @@
+---
+license_expression: mif-exception
+is_license_reference: yes
+---
+
 As a special exception, if other files instantiate templates or use
 macros or inline functions from these files, or you compile these
 files and link them with other works to produce a work based on these

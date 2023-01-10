@@ -1,3 +1,10 @@
+---
+license_expression: curl
+is_license_text: yes
+minimum_coverage: 15
+notes: variants with minor words differences
+---
+
 COPYRIGHT AND PERMISSION NOTICE
 
 Permission to use, copy, modify, and distribute this software for any purpose

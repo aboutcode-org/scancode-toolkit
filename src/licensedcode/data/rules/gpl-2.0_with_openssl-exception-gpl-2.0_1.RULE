@@ -1,3 +1,11 @@
+---
+license_expression: gpl-2.0 WITH openssl-exception-gpl-2.0
+is_license_notice: yes
+relevance: 100
+referenced_filenames:
+    - LICENSE
+---
+
 This LICENSE file is a modification to the main LICENSE file, which is
 GPLv2. It applies only to the files in the "src" directory.
 

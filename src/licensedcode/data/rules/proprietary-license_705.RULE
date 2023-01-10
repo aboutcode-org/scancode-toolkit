@@ -1,3 +1,15 @@
+---
+license_expression: proprietary-license
+is_license_text: yes
+notes: Older https://raw.githubusercontent.com/wpscanteam/wpscan/master/LICENSE
+ignorable_copyrights:
+    - Copyright 2011-2016 WPScan Team
+ignorable_holders:
+    - WPScan Team
+ignorable_emails:
+    - team@wpscan.org
+---
+
 WPScan Public Source License
 
 The WPScan software (henceforth referred to simply as "WPScan") is dual-licensed - Copyright 2011-2016 WPScan Team.

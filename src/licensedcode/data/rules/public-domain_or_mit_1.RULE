@@ -1,4 +1,12 @@
-   This is the license text for the  source code.
+---
+license_expression: public-domain OR mit
+is_license_text: yes
+minimum_coverage: 80
+ignorable_urls:
+    - http://en.wikipedia.org/wiki/MIT_License
+---
+
+This is the license text for the  source code.
 
    Author:
 

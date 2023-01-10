@@ -1,3 +1,12 @@
+---
+license_expression: python
+is_license_notice: yes
+ignorable_copyrights:
+    - Copyright (c) Python Software Foundation
+ignorable_holders:
+    - Python Software Foundation
+---
+
 1. This LICENSE AGREEMENT is between the Python Software Foundation
 ("PSF"), and the Individual or Organization ("Licensee") accessing and
 otherwise using Python  software in source or binary form and its

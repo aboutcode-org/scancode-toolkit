@@ -1,4 +1,14 @@
- * Licensed under the EUPL V.1.1 (cf. file EUPL-1.1 distributed with the
+---
+license_expression: eupl-1.1 OR mit
+is_license_notice: yes
+referenced_filenames:
+    - EUPL-1.1
+    - MIT
+ignorable_urls:
+    - https://joinup.ec.europa.eu/software/page/eupl
+---
+
+* Licensed under the EUPL V.1.1 (cf. file EUPL-1.1 distributed with the
  * source code.) Translations in other european languages available at
  * https://joinup.ec.europa.eu/software/page/eupl.
  *

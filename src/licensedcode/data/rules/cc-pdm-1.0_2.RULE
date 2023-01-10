@@ -1,2 +1,9 @@
+---
+license_expression: cc-pdm-1.0
+is_license_notice: yes
+ignorable_urls:
+    - http://creativecommons.org/publicdomain/mark/1.0/
+---
+
 /// This Source Code and Plugin are released under the Creative Commons Public Domain Mark 1.0 license.
 /// See http://creativecommons.org/publicdomain/mark/1.0/ for further details.

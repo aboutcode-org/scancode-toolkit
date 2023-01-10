@@ -1,3 +1,8 @@
+---
+license_expression: lgpl-2.0-plus
+is_license_notice: yes
+---
+
 This file is part of the libiberty library.
 Libiberty is free software; you can redistribute it and/or
 modify it under the terms of the GNU Library General Public

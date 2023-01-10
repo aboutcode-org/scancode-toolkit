@@ -1,4 +1,12 @@
- * COPYRIGHT
+---
+license_expression: gpl-3.0
+is_license_notice: yes
+relevance: 100
+ignorable_urls:
+    - ftp://prep.ai.mit.edu/pub/gnu/GPL
+---
+
+* COPYRIGHT
  *  This file is distributed under the terms of the GNU General Public
  *  License (GPL) v3. Copies of the GPL can be obtained from:
  *      ftp://prep.ai.mit.edu/pub/gnu/GPL

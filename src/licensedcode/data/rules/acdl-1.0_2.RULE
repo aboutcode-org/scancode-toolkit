@@ -1,3 +1,15 @@
+---
+license_expression: acdl-1.0
+is_license_text: yes
+relevance: 100
+ignorable_copyrights:
+    - Copyright (c) 2001 Apple Computer, Inc.
+ignorable_holders:
+    - Apple Computer, Inc.
+ignorable_urls:
+    - http://www.opensource.apple.com/cdl/
+---
+
 Common Documentation License
 
 Version 1.0 - February 16, 2001

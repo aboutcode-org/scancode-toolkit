@@ -1,3 +1,11 @@
+---
+license_expression: zlib
+is_license_text: yes
+relevance: 100
+minimum_coverage: 95
+notes: seen in psycopg2
+---
+
 The following BSD-like license applies (at your option) to the files following
 the pattern ``psycopg/adapter*.{h,c}`` and ``psycopg/microprotocol*.{h,c}``:
 

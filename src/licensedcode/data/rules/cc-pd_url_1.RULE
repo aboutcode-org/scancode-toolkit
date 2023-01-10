@@ -1,1 +1,9 @@
+---
+license_expression: cc-pd
+is_license_reference: yes
+relevance: 95
+ignorable_urls:
+    - https://spdx.org/licenses/cc-pddc
+---
+
 https://spdx.org/licenses/cc-pddc

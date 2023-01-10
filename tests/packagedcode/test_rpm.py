@@ -16,61 +16,22 @@ from commoncode.testcase import FileBasedTesting
 
 from packagedcode import rpm
 from scancode_config import REGEN_TEST_FIXTURES
+from packages_test_utils import check_result_equals_expected_json
+
 
 class TestRpmBasics(FileBasedTesting):
     test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
 
     def test_parse_to_package(self):
         test_file = self.get_test_loc('rpm/header/libproxy-bin-0.3.0-4.el6_3.x86_64.rpm')
-        for package_data in rpm.RpmArchiveHandler.parse(test_file):
-            break
+        package_datas = rpm.RpmArchiveHandler.parse(test_file)
+        result = [pd.to_dict() for pd in package_datas]
 
-        expected = [
-            ('type', 'rpm'),
-            ('namespace', None),
-            ('name', 'libproxy-bin'),
-            ('version', '0.3.0-4.el6_3'),
-            ('qualifiers', {}),
-            ('subpath', None),
-            ('primary_language', None),
-            ('description',
-                'Binary to test libproxy\n'
-                'The libproxy-bin package contains the proxy binary for libproxy'),
-            ('release_date', None),
-            ('parties', [
-                dict([
-                    ('type', None),
-                    ('role', 'vendor'),
-                    ('name', 'CentOS'),
-                    ('email', None),
-                    ('url', None)])
-            ]),
-            ('keywords', []),
-            ('homepage_url', 'http://code.google.com/p/libproxy/'),
-            ('download_url', None),
-            ('size', None),
-            ('sha1', None),
-            ('md5', None),
-            ('sha256', None),
-            ('sha512', None),
-            ('bug_tracking_url', None),
-            ('code_view_url', None),
-            ('vcs_url', None),
-            ('copyright', None),
-            ('license_expression', None),
-            ('declared_license', 'LGPLv2+'),
-            ('notice_text', None),
-            ('source_packages', [ 'pkg:rpm/libproxy@0.3.0-4.el6_3?arch=src']),
-            ('file_references', []),
-            ('extra_data', {}),
-            ('dependencies', []),
-            ('repository_homepage_url', None),
-            ('repository_download_url', None),
-            ('api_data_url', None),
-            ('datasource_id', 'rpm_archive'),
-            ('purl', 'pkg:rpm/libproxy-bin@0.3.0-4.el6_3'),
-        ]
-        assert list(package_data.to_dict().items()) == expected
+        expected_loc = self.get_test_loc(
+            'rpm/header/libproxy-bin-0.3.0-4.el6_3.x86_64.rpm-package-expected.json',
+            must_exist=False,
+        )
+        check_result_equals_expected_json(result, expected_loc, regen=REGEN_TEST_FIXTURES)
 
     def test_pyrpm_basic(self):
         test_file = self.get_test_loc('rpm/header/python-glc-0.7.1-1.src.rpm')

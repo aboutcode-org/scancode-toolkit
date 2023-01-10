@@ -1,3 +1,16 @@
+---
+key: x11-dec2
+short_name: X11-Style (DEC 2)
+name: X11-Style (DEC 2)
+category: Permissive
+owner: DEC - Digital Equipment Corporation
+homepage_url: http://www.xfree86.org/current/LICENSE5.html
+spdx_license_key: LicenseRef-scancode-x11-dec2
+text_urls:
+    - http://www.xfree86.org/current/LICENSE5.html
+minimum_coverage: 80
+---
+
 THE INFORMATION IN THIS SOFTWARE IS SUBJECT TO CHANGE WITHOUT NOTICE AND SHOULD
 NOT BE CONSTRUED AS A COMMITMENT BY DIGITAL EQUIPMENT CORPORATION. DIGITAL MAKES
 NO REPRESENTATIONS ABOUT THE SUITABILITY OF THIS SOFTWARE FOR ANY PURPOSE. IT IS

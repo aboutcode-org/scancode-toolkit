@@ -1,1 +1,6 @@
+---
+is_false_positive: yes
+notes: seen in LLVM sources and docs
+---
+
 This differs from Colin Plumb's older public domain implementation

@@ -1,3 +1,11 @@
+---
+license_expression: proprietary-license
+is_license_text: yes
+relevance: 100
+ignorable_urls:
+    - http://www.sun.com/patents
+---
+
 Sun Microsystems, Inc. has intellectual property rights
       relating to technology described in this document. In
       particular, and without limitation, these intellectual

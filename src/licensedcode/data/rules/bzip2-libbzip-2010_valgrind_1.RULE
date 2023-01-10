@@ -1,4 +1,12 @@
-   Notice that the following BSD-style license applies to this one
+---
+license_expression: bzip2-libbzip-2010
+is_license_text: yes
+minimum_coverage: 80
+referenced_filenames:
+    - COPYING
+---
+
+Notice that the following BSD-style license applies to this one
    file  only.  The rest of Valgrind is licensed under the
    terms of the GNU General Public License, version 2, unless
    otherwise indicated.  See the COPYING file in the source

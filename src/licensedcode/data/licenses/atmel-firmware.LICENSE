@@ -1,3 +1,13 @@
+---
+key: atmel-firmware
+short_name: Atmel Firmware License
+name: Atmel Firmware License
+category: Proprietary Free
+owner: Atmel
+homepage_url: http://atmelwlandriver.sourceforge.net/license.txt
+spdx_license_key: LicenseRef-scancode-atmel-firmware
+---
+
 Redistribution and use of the microcode software ( Firmware ) is                  
 permitted provided that the following conditions are met:                         
                                                                                   

@@ -1,3 +1,11 @@
+---
+license_expression: gpl-2.0 WITH mysql-linking-exception-2018 AND gpl-2.0 WITH universal-foss-exception-1.0
+is_license_notice: yes
+relevance: 100
+ignorable_urls:
+    - http://oss.oracle.com/licenses/universal-foss-exception
+---
+
 This program is free software; you can redistribute it and/or modify
  it under the terms of the GNU General Public License, version 2.0,
  as published by the Free Software Foundation.

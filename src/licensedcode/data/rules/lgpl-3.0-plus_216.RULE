@@ -1,3 +1,12 @@
+---
+license_expression: lgpl-3.0-plus
+is_license_notice: yes
+relevance: 100
+minimum_coverage: 93
+ignorable_urls:
+    - https://www.gnu.org/licenses/
+---
+
 GNU Lesser General Public License, Version 3 */
 
  is free software: you can redistribute it and/or modify it under

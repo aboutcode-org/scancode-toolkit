@@ -1,4 +1,12 @@
-    This package is free software; you can redistribute it and/or modify
+---
+license_expression: gpl-2.0-plus
+is_license_notice: yes
+relevance: 100
+minimum_coverage: 90
+notes: GPL 2 or later notice, with debian line
+---
+
+This package is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
     the Free Software Foundation; either version 2 of the License, or
     (at your option) any later version.

@@ -1,0 +1,13 @@
+---
+key: generic-trademark
+short_name: Generic Trademark Notice
+name: Generic Trademark and Name Protection Notice
+category: Unstated License
+owner: Unspecified
+notes: This is a generic Trademark and name realted notice. Actual terms are most commonly related
+    to name use restrictions and no endorsement. This should be used only for rare one-off notices.
+is_generic: yes
+spdx_license_key: LicenseRef-scancode-generic-trademark
+other_spdx_license_keys:
+    - LicenseRef-scancode-trademark-notice
+---

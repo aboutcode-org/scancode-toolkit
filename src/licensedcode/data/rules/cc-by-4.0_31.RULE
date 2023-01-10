@@ -1,3 +1,13 @@
+---
+license_expression: cc-by-4.0
+is_license_notice: yes
+relevance: 100
+referenced_filenames:
+    - ccby40
+ignorable_urls:
+    - https://creativecommons.org/licenses/by/4.0/
+---
+
 ## Code of Conduct
 
 The CoC text carries a Creative Commons [CC BY 4.0][ccby40] license.

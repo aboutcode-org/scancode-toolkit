@@ -1,1 +1,9 @@
+---
+license_expression: mit
+is_license_reference: yes
+relevance: 90
+ignorable_urls:
+    - https://raw.githubusercontent.com/tintoy/HTTPlease/development/r1.0/LICENSE
+---
+
 https://raw.githubusercontent.com/tintoy/HTTPlease/development/r1.0/LICENSE

@@ -1,2 +1,9 @@
- * Licensed under the LGPL v2.1, see the file COPYING.LIB in this tarball.
+---
+license_expression: lgpl-2.1
+is_license_reference: yes
+relevance: 100
+referenced_filenames:
+    - COPYING.LIB
+---
 
+* Licensed under the LGPL v2.1, see the file COPYING.LIB in this tarball.

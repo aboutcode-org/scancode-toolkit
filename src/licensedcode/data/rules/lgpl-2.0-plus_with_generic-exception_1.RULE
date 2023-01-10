@@ -1,2 +1,8 @@
+---
+license_expression: lgpl-2.0-plus WITH generic-exception
+is_license_notice: yes
+relevance: 100
+---
+
 the actual library is released using the LGPL license as modified by a
 special exception and a clarification

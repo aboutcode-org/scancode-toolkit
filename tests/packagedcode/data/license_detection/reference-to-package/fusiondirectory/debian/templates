@@ -1,0 +1,25 @@
+Template: fusiondirectory/upgrade-confirm
+Type: boolean
+Default: false
+_Description: Really perform FusionDirectory major version upgrade?
+ You are about to upgrade FusionDirectory to a new major version.
+ Please consult the UPGRADE documentation first:
+ /usr/share/doc/fusiondirectory/UPGRADE.md.gz
+ .
+ FusionDirectory comes with tools to migrate from one major version to
+ another. However, as with other LDAP directory setups, exceptional
+ circumstances or wrong data in the LDAP tree may sometimes prevent these
+ tools from migrating everything.
+ .
+ In this case, the directory information tree may even need to be
+ manually adapted outside of FusionDirectory with tools such as
+ ldapmodify or ldapvi.
+ .
+ If you do not choose to proceed, the upgrade process for
+ FusionDirectory related packages will be canceled.
+
+Template: fusiondirectory/upgrade-canceled
+Type: error
+_Description: FusionDirectory upgrade canceled
+ The upgrade of FusionDirectory has been canceled on user request. The
+ installation process will be aborted.

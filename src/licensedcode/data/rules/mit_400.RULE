@@ -1,2 +1,10 @@
+---
+license_expression: mit
+is_license_reference: yes
+relevance: 100
+ignorable_urls:
+    - http://creativecommons.org/licenses/MIT/
+---
+
 MIT License (MIT)
     link: http://creativecommons.org/licenses/MIT/

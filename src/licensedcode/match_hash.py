@@ -8,7 +8,7 @@
 #
 
 from array import array
-from hashlib import md5
+from hashlib import sha1
 
 
 from licensedcode.match import LicenseMatch
@@ -21,7 +21,7 @@ Matching strategy using hashes to match a whole text chunk at once.
 # Set to True to enable debug tracing
 TRACE = False
 
-if TRACE :
+if TRACE:
     import logging
     import sys
 
@@ -46,7 +46,7 @@ def tokens_hash(tokens):
     Return a digest binary string computed from a sequence of numeric token ids.
     """
     as_bytes = array('h', tokens).tobytes()
-    return md5(as_bytes).digest()
+    return sha1(as_bytes).digest()
 
 
 def index_hash(rule_tokens):

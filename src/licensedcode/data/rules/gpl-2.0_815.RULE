@@ -1,2 +1,10 @@
+---
+license_expression: gpl-2.0
+is_license_reference: yes
+relevance: 100
+ignorable_urls:
+    - http://creativecommons.org/licenses/GPL/2.0/
+---
+
 GNU General Public License 2 (GPLv2)
     link: http://creativecommons.org/licenses/GPL/2.0/

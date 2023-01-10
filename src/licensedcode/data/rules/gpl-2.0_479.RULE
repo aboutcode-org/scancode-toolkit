@@ -1,3 +1,7 @@
+---
+license_expression: gpl-2.0
+is_license_notice: yes
+---
 
 This is a free software; you can redistribute it and/or modify it
 under the terms of the GNU General Public Licence as published by
@@ -11,4 +15,3 @@ See the GNU General Public Licence for more details.
 You should have received a copy of the GNU General Public Licence
 along with this program; if not, write to the Free Software
 Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
-	

@@ -1,4 +1,11 @@
- * The contents of this file are subject to the Interbase Public
+---
+license_expression: interbase-1.0
+is_license_notice: yes
+ignorable_urls:
+    - http://www.inprise.com/IPL.html
+---
+
+* The contents of this file are subject to the Interbase Public
  * License Version 1.0 (the "License"); you may not use this file
  * except in compliance with the License. You may obtain a copy
  * of the License at http://www.Inprise.com/IPL.html

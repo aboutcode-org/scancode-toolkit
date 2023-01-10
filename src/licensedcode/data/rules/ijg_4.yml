@@ -1,6 +1,0 @@
-license_expression: ijg
-is_license_reference: yes
-relevance: 100
-minimum_coverage: 80
-ignorable_urls:
-    - ftp://ftp.uu.net/graphics/jpeg/jpegsrc.v6b.tar.gz

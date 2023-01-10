@@ -1,3 +1,10 @@
+---
+license_expression: other-permissive
+is_license_text: yes
+relevance: 100
+notes: seen in FreeBSD
+---
+
 Permission is hereby granted to reproduce and distribute ncurses  
 by any means and for any fee, whether alone or as part of a       
 larger distribution, in source or in binary form, PROVIDED        

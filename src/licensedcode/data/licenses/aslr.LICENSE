@@ -1,3 +1,13 @@
+---
+key: aslr
+short_name: Artop ASLR
+name: Artop Software License Based on AUTOSAR Released Material
+category: Copyleft
+owner: Artop
+homepage_url: http://www.artop.org/aslr.html
+spdx_license_key: LicenseRef-scancode-aslr
+---
+
 Artop Software License Based on AUTOSAR Released Material (ASLR)
 
 THE ACCOMPANYING PROGRAM IS PROVIDED UNDER THE TERMS OF THIS ARTOP SOFTWARE LICENSE BASED ON AUTOSAR RELEASED MATERIAL (ASLR) ("LICENSE"). ANY USE, REPRODUCTION OR DISTRIBUTION OF THE PROGRAM CONSTITUTES RECIPIENT'S ACCEPTANCE OF THIS AGREEMENT.

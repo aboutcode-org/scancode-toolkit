@@ -1,12 +1,380 @@
-primary_license:
 declared_license:
-license_expression: lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.1-plus AND bsd-new AND public-domain
-  AND public-domain AND bsd-zero AND bsd-simplified AND bsd-simplified AND bsd-simplified AND
-  bsd-zero AND bsd-zero AND bsd-zero AND bsd-zero AND bsd-simplified AND bsd-simplified AND
-  public-domain AND bsd-new AND bsd-simplified AND public-domain AND gpl-3.0-plus WITH autoconf-exception-3.0
+declared_license_expression: lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.1-plus AND bsd-new AND
+  public-domain AND public-domain AND bsd-zero AND bsd-simplified AND bsd-simplified AND bsd-simplified
+  AND bsd-zero AND bsd-zero AND bsd-zero AND bsd-zero AND bsd-simplified AND bsd-simplified
+  AND public-domain AND bsd-new AND bsd-simplified AND public-domain AND gpl-3.0-plus WITH autoconf-exception-3.0
   AND bsd-zero AND fsf-ap AND fsf-ap AND fsf-ap AND fsf-ap AND gpl-2.0-plus WITH autoconf-simple-exception-2.0
   AND fsf-ap AND fsf-ap AND gpl-3.0-plus WITH autoconf-exception-3.0 AND fsf-ap AND fsf-ap AND
   free-unknown
+declared_license_expression_spdx: LGPL-2.1-or-later AND LGPL-2.1-or-later AND LGPL-2.1-or-later
+  AND BSD-3-Clause AND LicenseRef-scancode-public-domain AND LicenseRef-scancode-public-domain
+  AND 0BSD AND BSD-2-Clause AND BSD-2-Clause AND BSD-2-Clause AND 0BSD AND 0BSD AND 0BSD AND
+  0BSD AND BSD-2-Clause AND BSD-2-Clause AND LicenseRef-scancode-public-domain AND BSD-3-Clause
+  AND BSD-2-Clause AND LicenseRef-scancode-public-domain AND GPL-3.0-or-later WITH Autoconf-exception-3.0
+  AND 0BSD AND FSFAP AND FSFAP AND FSFAP AND FSFAP AND GPL-2.0-or-later WITH LicenseRef-scancode-autoconf-simple-exception-2.0
+  AND FSFAP AND FSFAP AND GPL-3.0-or-later WITH Autoconf-exception-3.0 AND FSFAP AND FSFAP AND
+  LicenseRef-scancode-free-unknown
+other_license_expression:
+other_license_expression_spdx:
+license_detections:
+  - license_expression: lgpl-2.1-plus
+    detection_log:
+      - not-combined
+    matches:
+      - score: '97.06'
+        start_line: 14
+        end_line: 16
+        matched_length: 33
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: lgpl-2.1-plus
+        rule_identifier: lgpl-2.1-plus_297.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_297.RULE
+        matched_text: |
+          The overall license for libxcrypt is the GNU Lesser General Public
+          License, version 2.1 (or, at your option, any later version); see
+          the file COPYING.LIB for the full terms of this license.
+  - license_expression: lgpl-2.1-plus AND bsd-new AND public-domain AND bsd-zero AND bsd-simplified
+    detection_log:
+      - not-combined
+    matches:
+      - score: '100.0'
+        start_line: 22
+        end_line: 22
+        matched_length: 5
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: lgpl-2.1-plus
+        rule_identifier: lgpl-2.1-plus_392.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_392.RULE
+        matched_text: 'LGPL (v2.1 or later):'
+      - score: '100.0'
+        start_line: 25
+        end_line: 25
+        matched_length: 5
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: lgpl-2.1-plus
+        rule_identifier: lgpl-2.1-plus_392.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_392.RULE
+        matched_text: 'LGPL (v2.1 or later):'
+      - score: '100.0'
+        start_line: 29
+        end_line: 29
+        matched_length: 3
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: bsd-new
+        rule_identifier: bsd-new_308.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_308.RULE
+        matched_text: '3-clause BSD:'
+      - score: '100.0'
+        start_line: 33
+        end_line: 33
+        matched_length: 4
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: public-domain
+        rule_identifier: public-domain_426.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/public-domain_426.RULE
+        matched_text: Public domain, written by
+      - score: '100.0'
+        start_line: 36
+        end_line: 36
+        matched_length: 4
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: public-domain
+        rule_identifier: public-domain_426.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/public-domain_426.RULE
+        matched_text: Public domain, written by
+      - score: '100.0'
+        start_line: 40
+        end_line: 40
+        matched_length: 3
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: bsd-zero
+        rule_identifier: bsd-zero_6.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-zero_6.RULE
+        matched_text: '0-clause BSD:'
+      - score: '100.0'
+        start_line: 43
+        end_line: 43
+        matched_length: 3
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: bsd-simplified
+        rule_identifier: bsd-simplified_156.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-simplified_156.RULE
+        matched_text: '2-clause BSD:'
+      - score: '100.0'
+        start_line: 47
+        end_line: 47
+        matched_length: 3
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: bsd-simplified
+        rule_identifier: bsd-simplified_156.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-simplified_156.RULE
+        matched_text: '2-clause BSD:'
+      - score: '100.0'
+        start_line: 50
+        end_line: 50
+        matched_length: 3
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: bsd-simplified
+        rule_identifier: bsd-simplified_156.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-simplified_156.RULE
+        matched_text: '2-clause BSD:'
+  - license_expression: bsd-zero
+    detection_log:
+      - not-combined
+    matches:
+      - score: '100.0'
+        start_line: 55
+        end_line: 55
+        matched_length: 3
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: bsd-zero
+        rule_identifier: bsd-zero_6.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-zero_6.RULE
+        matched_text: '0-clause BSD:'
+  - license_expression: bsd-zero AND bsd-simplified AND public-domain AND bsd-new
+    detection_log:
+      - not-combined
+    matches:
+      - score: '100.0'
+        start_line: 61
+        end_line: 61
+        matched_length: 3
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: bsd-zero
+        rule_identifier: bsd-zero_6.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-zero_6.RULE
+        matched_text: '0-clause BSD:'
+      - score: '100.0'
+        start_line: 64
+        end_line: 64
+        matched_length: 3
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: bsd-zero
+        rule_identifier: bsd-zero_6.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-zero_6.RULE
+        matched_text: '0-clause BSD:'
+      - score: '100.0'
+        start_line: 67
+        end_line: 67
+        matched_length: 3
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: bsd-zero
+        rule_identifier: bsd-zero_6.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-zero_6.RULE
+        matched_text: '0-clause BSD:'
+      - score: '100.0'
+        start_line: 71
+        end_line: 71
+        matched_length: 3
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: bsd-simplified
+        rule_identifier: bsd-simplified_156.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-simplified_156.RULE
+        matched_text: '2-clause BSD:'
+      - score: '100.0'
+        start_line: 74
+        end_line: 74
+        matched_length: 3
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: bsd-simplified
+        rule_identifier: bsd-simplified_156.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-simplified_156.RULE
+        matched_text: '2-clause BSD:'
+      - score: '100.0'
+        start_line: 77
+        end_line: 77
+        matched_length: 4
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: public-domain
+        rule_identifier: public-domain_426.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/public-domain_426.RULE
+        matched_text: Public domain, written by
+      - score: '100.0'
+        start_line: 80
+        end_line: 80
+        matched_length: 3
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: bsd-new
+        rule_identifier: bsd-new_308.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_308.RULE
+        matched_text: '3-clause BSD:'
+      - score: '100.0'
+        start_line: 83
+        end_line: 83
+        matched_length: 3
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: bsd-simplified
+        rule_identifier: bsd-simplified_156.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-simplified_156.RULE
+        matched_text: '2-clause BSD:'
+      - score: '100.0'
+        start_line: 86
+        end_line: 86
+        matched_length: 4
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: public-domain
+        rule_identifier: public-domain_426.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/public-domain_426.RULE
+        matched_text: Public domain, written by
+  - license_expression: gpl-3.0-plus WITH autoconf-exception-3.0 AND bsd-zero AND fsf-ap AND
+      gpl-2.0-plus WITH autoconf-simple-exception-2.0 AND free-unknown
+    detection_log:
+      - unknown-match
+    matches:
+      - score: '99.0'
+        start_line: 98
+        end_line: 98
+        matched_length: 7
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: gpl-3.0-plus WITH autoconf-exception-3.0
+        rule_identifier: gpl-3.0-plus_with_autoconf-exception-3.0_3.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0-plus_with_autoconf-exception-3.0_3.RULE
+        matched_text: 'GPL (v3 or later), with Autoconf exception:'
+      - score: '100.0'
+        start_line: 101
+        end_line: 101
+        matched_length: 3
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: bsd-zero
+        rule_identifier: bsd-zero_6.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-zero_6.RULE
+        matched_text: '0-clause BSD:'
+      - score: '100.0'
+        start_line: 104
+        end_line: 104
+        matched_length: 4
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: fsf-ap
+        rule_identifier: fsf-ap_6.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/fsf-ap_6.RULE
+        matched_text: 'FSF All Permissive License:'
+      - score: '100.0'
+        start_line: 107
+        end_line: 107
+        matched_length: 4
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: fsf-ap
+        rule_identifier: fsf-ap_6.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/fsf-ap_6.RULE
+        matched_text: 'FSF All Permissive License:'
+      - score: '100.0'
+        start_line: 111
+        end_line: 111
+        matched_length: 4
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: fsf-ap
+        rule_identifier: fsf-ap_6.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/fsf-ap_6.RULE
+        matched_text: 'FSF All Permissive License:'
+      - score: '100.0'
+        start_line: 114
+        end_line: 114
+        matched_length: 4
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: fsf-ap
+        rule_identifier: fsf-ap_6.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/fsf-ap_6.RULE
+        matched_text: 'FSF All Permissive License:'
+      - score: '99.0'
+        start_line: 118
+        end_line: 118
+        matched_length: 7
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: gpl-2.0-plus WITH autoconf-simple-exception-2.0
+        rule_identifier: gpl-2.0-plus_with_autoconf-simple-exception-2.0_17.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_with_autoconf-simple-exception-2.0_17.RULE
+        matched_text: 'GPL (v2 or later), with Autoconf exception:'
+      - score: '100.0'
+        start_line: 121
+        end_line: 121
+        matched_length: 4
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: fsf-ap
+        rule_identifier: fsf-ap_6.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/fsf-ap_6.RULE
+        matched_text: 'FSF All Permissive License:'
+      - score: '100.0'
+        start_line: 124
+        end_line: 124
+        matched_length: 4
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: fsf-ap
+        rule_identifier: fsf-ap_6.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/fsf-ap_6.RULE
+        matched_text: 'FSF All Permissive License:'
+      - score: '99.0'
+        start_line: 128
+        end_line: 128
+        matched_length: 7
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: gpl-3.0-plus WITH autoconf-exception-3.0
+        rule_identifier: gpl-3.0-plus_with_autoconf-exception-3.0_3.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0-plus_with_autoconf-exception-3.0_3.RULE
+        matched_text: 'GPL (v3 or later), with Autoconf exception:'
+      - score: '100.0'
+        start_line: 131
+        end_line: 131
+        matched_length: 4
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: fsf-ap
+        rule_identifier: fsf-ap_6.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/fsf-ap_6.RULE
+        matched_text: 'FSF All Permissive License:'
+      - score: '100.0'
+        start_line: 134
+        end_line: 134
+        matched_length: 4
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: fsf-ap
+        rule_identifier: fsf-ap_6.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/fsf-ap_6.RULE
+        matched_text: 'FSF All Permissive License:'
+      - score: '100.0'
+        start_line: 137
+        end_line: 139
+        matched_length: 27
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: free-unknown
+        rule_identifier: free-unknown_120.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/free-unknown_120.RULE
+        matched_text: |
+          Copyright holders unknown, no statement of license (all of these
+             files are part of the testsuite and do not contribute to the
+             installed library or its headers):
+other_license_detections: []
 copyright: |
   Copyright Thorsten Kukuk, Bjorn Esser, Zack Weinberg LGPL
   Copyright Free Software Foundation, Inc.
@@ -37,538 +405,3 @@ copyright: |
   Copyright 2002, 2003, 2004 SuSE Linux AG
   Germany Copyright 2005, 2008, 2009 2011 SUSE LINUX Products GmbH
   Copyright 2015 Bjorn Esser
-matches:
-  - score: '97.06'
-    start_line: 14
-    end_line: 16
-    matcher: 2-aho
-    rule_length: 33
-    matched_length: 33
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: lgpl-2.1-plus_297.RULE
-    license_expression: lgpl-2.1-plus
-    is_license_text: no
-    is_license_notice: yes
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      The overall license for [libxcrypt] is the GNU Lesser General Public
-      License, version 2.1 (or, at your option, any later version); see
-      the file COPYING.LIB for the full terms of this license.
-  - score: '100.0'
-    start_line: 22
-    end_line: 22
-    matcher: 2-aho
-    rule_length: 5
-    matched_length: 5
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: lgpl-2.1-plus_392.RULE
-    license_expression: lgpl-2.1-plus
-    is_license_text: no
-    is_license_notice: no
-    is_license_reference: yes
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: 'LGPL (v2.1 or later):'
-  - score: '100.0'
-    start_line: 25
-    end_line: 25
-    matcher: 2-aho
-    rule_length: 5
-    matched_length: 5
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: lgpl-2.1-plus_392.RULE
-    license_expression: lgpl-2.1-plus
-    is_license_text: no
-    is_license_notice: no
-    is_license_reference: yes
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: 'LGPL (v2.1 or later):'
-  - score: '100.0'
-    start_line: 29
-    end_line: 29
-    matcher: 2-aho
-    rule_length: 3
-    matched_length: 3
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: bsd-new_308.RULE
-    license_expression: bsd-new
-    is_license_text: no
-    is_license_notice: no
-    is_license_reference: yes
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: '3-clause BSD:'
-  - score: '100.0'
-    start_line: 33
-    end_line: 33
-    matcher: 2-aho
-    rule_length: 4
-    matched_length: 4
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: public-domain_426.RULE
-    license_expression: public-domain
-    is_license_text: yes
-    is_license_notice: no
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: Public domain, written by
-  - score: '100.0'
-    start_line: 36
-    end_line: 36
-    matcher: 2-aho
-    rule_length: 4
-    matched_length: 4
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: public-domain_426.RULE
-    license_expression: public-domain
-    is_license_text: yes
-    is_license_notice: no
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: Public domain, written by
-  - score: '100.0'
-    start_line: 40
-    end_line: 40
-    matcher: 2-aho
-    rule_length: 3
-    matched_length: 3
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: bsd-zero_6.RULE
-    license_expression: bsd-zero
-    is_license_text: no
-    is_license_notice: no
-    is_license_reference: yes
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: '0-clause BSD:'
-  - score: '100.0'
-    start_line: 43
-    end_line: 43
-    matcher: 2-aho
-    rule_length: 3
-    matched_length: 3
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: bsd-simplified_156.RULE
-    license_expression: bsd-simplified
-    is_license_text: no
-    is_license_notice: no
-    is_license_reference: yes
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: '2-clause BSD:'
-  - score: '100.0'
-    start_line: 47
-    end_line: 47
-    matcher: 2-aho
-    rule_length: 3
-    matched_length: 3
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: bsd-simplified_156.RULE
-    license_expression: bsd-simplified
-    is_license_text: no
-    is_license_notice: no
-    is_license_reference: yes
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: '2-clause BSD:'
-  - score: '100.0'
-    start_line: 50
-    end_line: 50
-    matcher: 2-aho
-    rule_length: 3
-    matched_length: 3
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: bsd-simplified_156.RULE
-    license_expression: bsd-simplified
-    is_license_text: no
-    is_license_notice: no
-    is_license_reference: yes
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: '2-clause BSD:'
-  - score: '100.0'
-    start_line: 55
-    end_line: 55
-    matcher: 2-aho
-    rule_length: 3
-    matched_length: 3
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: bsd-zero_6.RULE
-    license_expression: bsd-zero
-    is_license_text: no
-    is_license_notice: no
-    is_license_reference: yes
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: '0-clause BSD:'
-  - score: '100.0'
-    start_line: 61
-    end_line: 61
-    matcher: 2-aho
-    rule_length: 3
-    matched_length: 3
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: bsd-zero_6.RULE
-    license_expression: bsd-zero
-    is_license_text: no
-    is_license_notice: no
-    is_license_reference: yes
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: '0-clause BSD:'
-  - score: '100.0'
-    start_line: 64
-    end_line: 64
-    matcher: 2-aho
-    rule_length: 3
-    matched_length: 3
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: bsd-zero_6.RULE
-    license_expression: bsd-zero
-    is_license_text: no
-    is_license_notice: no
-    is_license_reference: yes
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: '0-clause BSD:'
-  - score: '100.0'
-    start_line: 67
-    end_line: 67
-    matcher: 2-aho
-    rule_length: 3
-    matched_length: 3
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: bsd-zero_6.RULE
-    license_expression: bsd-zero
-    is_license_text: no
-    is_license_notice: no
-    is_license_reference: yes
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: '0-clause BSD:'
-  - score: '100.0'
-    start_line: 71
-    end_line: 71
-    matcher: 2-aho
-    rule_length: 3
-    matched_length: 3
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: bsd-simplified_156.RULE
-    license_expression: bsd-simplified
-    is_license_text: no
-    is_license_notice: no
-    is_license_reference: yes
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: '2-clause BSD:'
-  - score: '100.0'
-    start_line: 74
-    end_line: 74
-    matcher: 2-aho
-    rule_length: 3
-    matched_length: 3
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: bsd-simplified_156.RULE
-    license_expression: bsd-simplified
-    is_license_text: no
-    is_license_notice: no
-    is_license_reference: yes
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: '2-clause BSD:'
-  - score: '100.0'
-    start_line: 77
-    end_line: 77
-    matcher: 2-aho
-    rule_length: 4
-    matched_length: 4
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: public-domain_426.RULE
-    license_expression: public-domain
-    is_license_text: yes
-    is_license_notice: no
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: Public domain, written by
-  - score: '100.0'
-    start_line: 80
-    end_line: 80
-    matcher: 2-aho
-    rule_length: 3
-    matched_length: 3
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: bsd-new_308.RULE
-    license_expression: bsd-new
-    is_license_text: no
-    is_license_notice: no
-    is_license_reference: yes
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: '3-clause BSD:'
-  - score: '100.0'
-    start_line: 83
-    end_line: 83
-    matcher: 2-aho
-    rule_length: 3
-    matched_length: 3
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: bsd-simplified_156.RULE
-    license_expression: bsd-simplified
-    is_license_text: no
-    is_license_notice: no
-    is_license_reference: yes
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: '2-clause BSD:'
-  - score: '100.0'
-    start_line: 86
-    end_line: 86
-    matcher: 2-aho
-    rule_length: 4
-    matched_length: 4
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: public-domain_426.RULE
-    license_expression: public-domain
-    is_license_text: yes
-    is_license_notice: no
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: Public domain, written by
-  - score: '99.0'
-    start_line: 98
-    end_line: 98
-    matcher: 2-aho
-    rule_length: 7
-    matched_length: 7
-    match_coverage: '100.0'
-    rule_relevance: 99
-    identifier: gpl-3.0-plus_with_autoconf-exception-3.0_3.RULE
-    license_expression: gpl-3.0-plus WITH autoconf-exception-3.0
-    is_license_text: no
-    is_license_notice: no
-    is_license_reference: yes
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: 'GPL (v3 or later), with Autoconf exception:'
-  - score: '100.0'
-    start_line: 101
-    end_line: 101
-    matcher: 2-aho
-    rule_length: 3
-    matched_length: 3
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: bsd-zero_6.RULE
-    license_expression: bsd-zero
-    is_license_text: no
-    is_license_notice: no
-    is_license_reference: yes
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: '0-clause BSD:'
-  - score: '100.0'
-    start_line: 104
-    end_line: 104
-    matcher: 2-aho
-    rule_length: 4
-    matched_length: 4
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: fsf-ap_6.RULE
-    license_expression: fsf-ap
-    is_license_text: no
-    is_license_notice: no
-    is_license_reference: yes
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: 'FSF All Permissive License:'
-  - score: '100.0'
-    start_line: 107
-    end_line: 107
-    matcher: 2-aho
-    rule_length: 4
-    matched_length: 4
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: fsf-ap_6.RULE
-    license_expression: fsf-ap
-    is_license_text: no
-    is_license_notice: no
-    is_license_reference: yes
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: 'FSF All Permissive License:'
-  - score: '100.0'
-    start_line: 111
-    end_line: 111
-    matcher: 2-aho
-    rule_length: 4
-    matched_length: 4
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: fsf-ap_6.RULE
-    license_expression: fsf-ap
-    is_license_text: no
-    is_license_notice: no
-    is_license_reference: yes
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: 'FSF All Permissive License:'
-  - score: '100.0'
-    start_line: 114
-    end_line: 114
-    matcher: 2-aho
-    rule_length: 4
-    matched_length: 4
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: fsf-ap_6.RULE
-    license_expression: fsf-ap
-    is_license_text: no
-    is_license_notice: no
-    is_license_reference: yes
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: 'FSF All Permissive License:'
-  - score: '99.0'
-    start_line: 118
-    end_line: 118
-    matcher: 2-aho
-    rule_length: 7
-    matched_length: 7
-    match_coverage: '100.0'
-    rule_relevance: 99
-    identifier: gpl-2.0-plus_with_autoconf-simple-exception-2.0_17.RULE
-    license_expression: gpl-2.0-plus WITH autoconf-simple-exception-2.0
-    is_license_text: no
-    is_license_notice: no
-    is_license_reference: yes
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: 'GPL (v2 or later), with Autoconf exception:'
-  - score: '100.0'
-    start_line: 121
-    end_line: 121
-    matcher: 2-aho
-    rule_length: 4
-    matched_length: 4
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: fsf-ap_6.RULE
-    license_expression: fsf-ap
-    is_license_text: no
-    is_license_notice: no
-    is_license_reference: yes
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: 'FSF All Permissive License:'
-  - score: '100.0'
-    start_line: 124
-    end_line: 124
-    matcher: 2-aho
-    rule_length: 4
-    matched_length: 4
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: fsf-ap_6.RULE
-    license_expression: fsf-ap
-    is_license_text: no
-    is_license_notice: no
-    is_license_reference: yes
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: 'FSF All Permissive License:'
-  - score: '99.0'
-    start_line: 128
-    end_line: 128
-    matcher: 2-aho
-    rule_length: 7
-    matched_length: 7
-    match_coverage: '100.0'
-    rule_relevance: 99
-    identifier: gpl-3.0-plus_with_autoconf-exception-3.0_3.RULE
-    license_expression: gpl-3.0-plus WITH autoconf-exception-3.0
-    is_license_text: no
-    is_license_notice: no
-    is_license_reference: yes
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: 'GPL (v3 or later), with Autoconf exception:'
-  - score: '100.0'
-    start_line: 131
-    end_line: 131
-    matcher: 2-aho
-    rule_length: 4
-    matched_length: 4
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: fsf-ap_6.RULE
-    license_expression: fsf-ap
-    is_license_text: no
-    is_license_notice: no
-    is_license_reference: yes
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: 'FSF All Permissive License:'
-  - score: '100.0'
-    start_line: 134
-    end_line: 134
-    matcher: 2-aho
-    rule_length: 4
-    matched_length: 4
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: fsf-ap_6.RULE
-    license_expression: fsf-ap
-    is_license_text: no
-    is_license_notice: no
-    is_license_reference: yes
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: 'FSF All Permissive License:'
-  - score: '100.0'
-    start_line: 137
-    end_line: 139
-    matcher: 2-aho
-    rule_length: 27
-    matched_length: 27
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: free-unknown_120.RULE
-    license_expression: free-unknown
-    is_license_text: no
-    is_license_notice: yes
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      Copyright holders unknown, no statement of license (all of these
-         files are part of the testsuite and do not contribute to the
-         installed library or its headers):

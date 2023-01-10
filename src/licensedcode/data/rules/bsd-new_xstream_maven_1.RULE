@@ -1,4 +1,12 @@
-  <licenses>
+---
+license_expression: bsd-new
+is_license_tag: yes
+relevance: 100
+ignorable_urls:
+    - http://xstream.codehaus.com/license.html
+---
+
+<licenses>
     <license>
       <name>BSD style</name>
       <url>http://xstream.codehaus.com/license.html</url>

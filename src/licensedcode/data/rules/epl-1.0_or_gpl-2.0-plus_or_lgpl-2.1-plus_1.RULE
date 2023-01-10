@@ -1,4 +1,12 @@
- ***** BEGIN LICENSE BLOCK *****
+---
+license_expression: epl-1.0 OR gpl-2.0-plus OR lgpl-2.1-plus
+is_license_notice: yes
+relevance: 100
+ignorable_urls:
+    - http://www.eclipse.org/legal/epl-v10.html
+---
+
+***** BEGIN LICENSE BLOCK *****
  * Version: EPL 1.0/GPL 2.0/LGPL 2.1
  *
  * The contents of this file are subject to the Eclipse Public
@@ -23,5 +31,3 @@
  * the provisions above, a recipient may use your version of this file under
  * the terms of any one of the EPL, the GPL or the LGPL.
  ***** END LICENSE BLOCK *****/
-
- 

@@ -1,1 +1,6 @@
- is licensed under the terms of the NICTA Public Software Licence (which is substantially similar to the "Three-Clause BSD License", with some additional language pertaining to Australian law). 
+---
+license_expression: nicta-psl
+is_license_notice: yes
+---
+
+is licensed under the terms of the NICTA Public Software Licence (which is substantially similar to the "Three-Clause BSD License", with some additional language pertaining to Australian law).

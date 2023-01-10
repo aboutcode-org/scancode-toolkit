@@ -1,3 +1,18 @@
+---
+key: ms-visual-2015-sdk
+short_name: MS Visual Studio 2015 SDK
+name: Microsoft Visual Studio 2015 Software Development Kit License
+category: Proprietary Free
+owner: Microsoft
+homepage_url: https://visualstudio.microsoft.com/license-terms/mt171586/
+spdx_license_key: LicenseRef-scancode-ms-visual-2015-sdk
+other_urls:
+    - http://go.microsoft.com/fwlink/?LinkID=614949
+ignorable_urls:
+    - http://go.microsoft.com/fwlink/?LinkID=528096
+    - http://go.microsoft.com/fwlink/?LinkId=523763&clcid=0x409
+---
+
 MICROSOFT VISUAL STUDIO 2015 SOFTWARE DEVELOPMENT KIT
 
 These license terms are an agreement between Microsoft Corporation (or based on where you live, one of its affiliates) and you. They apply to the software named above. The terms also apply to any Microsoft services or updates for the software, except to the extent those have additional terms.

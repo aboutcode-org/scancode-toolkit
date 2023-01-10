@@ -1,2 +1,10 @@
+---
+license_expression: public-domain
+is_license_notice: yes
+relevance: 100
+ignorable_urls:
+    - https://www.sqlite.org/copyright.html
+---
+
 This product bundles Sqlite, which is in the Public Domain.  For details
 see: https://www.sqlite.org/copyright.html

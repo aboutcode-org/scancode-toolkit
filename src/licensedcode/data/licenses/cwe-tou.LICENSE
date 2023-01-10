@@ -1,3 +1,13 @@
+---
+key: cwe-tou
+short_name: CWE ToU
+name: Common Weaness Enumeration ToU License
+category: Permissive
+owner: Mitre
+homepage_url: https://cwe.mitre.org/about/termsofuse.html
+spdx_license_key: LicenseRef-scancode-cwe-tou
+---
+
 CWE Usage: MITRE hereby grants you a non-exclusive, royalty-free license to use
 CWE for research, development, and commercial purposes. Any copy you make for
 such purposes is authorized on the condition that you reproduce MITRE’s

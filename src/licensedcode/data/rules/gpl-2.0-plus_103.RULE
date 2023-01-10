@@ -1,2 +1,8 @@
- GPL'd.
+---
+license_expression: gpl-2.0-plus
+is_license_tag: yes
+relevance: 100
+---
+
+GPL'd.
  * SPDX-License-Identifier:     GPL-2.0+

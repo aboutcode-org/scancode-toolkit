@@ -1,7 +1,0 @@
-license_expression: pddl-1.0
-is_license_reference: yes
-relevance: 100
-minimum_coverage: 80
-ignorable_urls:
-    - https://img.shields.io/badge/License-PDDL-brightgreen.svg
-    - https://opendatacommons.org/licenses/pddl

@@ -1,4 +1,17 @@
- * The Infozone Software License, Version 2.0
+---
+license_expression: apache-1.1
+is_license_text: yes
+minimum_coverage: 90
+notes: Infozone Template Usage
+ignorable_authors:
+    - the Infozone Group (http://www.infozone-group.org/)
+ignorable_urls:
+    - http://www.infozone-group.org/
+ignorable_emails:
+    - infozone@infozone-group.org
+---
+
+* The Infozone Software License, Version 2.0
  *
  *
  * Redistribution and use in source and binary forms, with or without

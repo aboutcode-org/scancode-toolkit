@@ -1,3 +1,21 @@
+---
+key: zapatec-calendar
+short_name: Zapatec Calendar License
+name: Zapatec DHTML Javascript Calendar License Agreement
+category: Commercial
+owner: Zapatec
+spdx_license_key: LicenseRef-scancode-zapatec-calendar
+text_urls:
+    - http://www.kean.edu/~cpd/calendar/zapatec/zpcal/doc/license.html
+minimum_coverage: 90
+ignorable_copyrights:
+    - (c) 2004-2006 Zapatec, Inc.
+ignorable_holders:
+    - Zapatec, Inc.
+ignorable_urls:
+    - http://www.zapatec.com/website/main/products/prod1/
+---
+
 Zapatec DHTML/Javascript Calendar License Agreement
 
 CAREFULLY READ THE FOLLOWING LICENSE AGREEMENT. YOU ACCEPT AND AGREE TO BE BOUND BY THIS LICENSE AGREEMENT BY DOWNLOADING, INSTALLING, USING, OR DISTRIBUTING THE SOFTWARE. IF YOU DO NOT AGREE TO THIS LICENSE, DO NOT CLICK ON THE DOWNLOAD LINK AND THE SOFTWARE WILL NOT BE DOWNLOADED.

@@ -1,3 +1,8 @@
+---
+license_expression: gpl-1.0-plus WITH autoconf-simple-exception-2.0
+is_license_notice: yes
+---
+
 As a special exception to the GNU General Public License, this file may be
 distributed as part of a program  that contains a configuration script generated
 by Autoconf, under the same distribution terms as the rest of that program.

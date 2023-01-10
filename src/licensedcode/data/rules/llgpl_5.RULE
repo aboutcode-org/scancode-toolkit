@@ -1,5 +1,9 @@
+---
+license_expression: llgpl
+is_license_notice: yes
+---
 
-     "This library is licenced under the Lisp Lesser General Public"
+"This library is licenced under the Lisp Lesser General Public"
      "License."
      ""
      "This library is free software; you can redistribute it and/or"

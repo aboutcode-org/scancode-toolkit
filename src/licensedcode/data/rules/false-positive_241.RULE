@@ -1,2 +1,7 @@
+---
+is_false_positive: yes
+notes: used in linux, GPIOlib support
+---
+
 .ngpio	= S5PC100_GPIO_L3_NR,
 .label	= "GPL3",

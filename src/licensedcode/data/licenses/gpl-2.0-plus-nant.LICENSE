@@ -1,3 +1,13 @@
+---
+key: gpl-2.0-plus-nant
+is_deprecated: yes
+short_name: GPL 2.0 or later with NAnt exception
+name: GPL 2.0 or later with NAnt exception
+category: Copyleft Limited
+owner: NAnt Project
+is_exception: yes
+---
+
 This program is free software; you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
 the Free Software Foundation; either version 2 of the License, or

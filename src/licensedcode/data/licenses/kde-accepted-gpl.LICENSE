@@ -1,3 +1,16 @@
+---
+key: kde-accepted-gpl
+short_name: KDE Accepted GPL
+name: KDE Accepted GPL
+category: Copyleft
+owner: KDE Project
+homepage_url: https://github.com/KDE/licensedigger/blob/master/LICENSES/LicenseRef-KDE-Accepted-GPL.txt
+spdx_license_key: LicenseRef-scancode-kde-accepted-gpl
+other_spdx_license_keys:
+    - LicenseRef-KDE-Accepted-GPL
+faq_url: https://community.kde.org/Policies/Licensing_Policy
+---
+
 This library is free software; you can redistribute it and/or
 modify it under the terms of the GNU General Public License as
 published by the Free Software Foundation; either version 3 of

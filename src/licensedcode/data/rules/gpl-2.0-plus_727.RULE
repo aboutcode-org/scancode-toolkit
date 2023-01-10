@@ -1,1 +1,9 @@
+---
+license_expression: gpl-2.0-plus
+is_license_notice: yes
+relevance: 100
+referenced_filenames:
+    - COPYING.TXT
+---
+
 License GPLv2 or higher, see the file COPYING.TXT for details.

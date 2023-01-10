@@ -1,3 +1,18 @@
+---
+key: rogue-wave
+short_name: Rogue Wave Software License
+name: Rogue Wave Software License
+category: Commercial
+owner: Rogue Wave Software, Inc.
+spdx_license_key: LicenseRef-scancode-rogue-wave
+other_urls:
+    - http://www.roguewave.com/products.aspx
+ignorable_copyrights:
+    - (c) Copyright Rogue Wave Software, Inc.
+ignorable_holders:
+    - Rogue Wave Software, Inc.
+---
+
 Rogue Wave Software License
 
 (c) Copyright  Rogue Wave Software, Inc.

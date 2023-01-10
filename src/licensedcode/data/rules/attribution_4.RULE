@@ -1,3 +1,15 @@
+---
+license_expression: attribution
+is_license_text: yes
+relevance: 100
+ignorable_copyrights:
+    - (c) URL 'https://www.invoiceninja.com
+ignorable_holders:
+    - URL
+ignorable_urls:
+    - https://www.invoiceninja.com/
+---
+
 All Rights Reserved
 ATTRIBUTION ASSURANCE LICENSE (adapted from the original BSD license)
 Redistribution and use in source and binary forms, with or without

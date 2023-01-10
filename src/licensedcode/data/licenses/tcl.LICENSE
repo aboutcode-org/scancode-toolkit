@@ -1,3 +1,24 @@
+---
+key: tcl
+short_name: TCL/TK License
+name: TCL/TK License
+category: Permissive
+owner: Tcl Developer Xchange
+homepage_url: http://www.tcl.tk/software/tcltk/license.html
+spdx_license_key: TCL
+text_urls:
+    - http://www.tcl.tk/software/tcltk/license.html
+other_urls:
+    - http://fedoraproject.org/wiki/Licensing/TCL
+    - https://fedoraproject.org/wiki/Licensing/TCL
+ignorable_copyrights:
+    - copyrighted by the Regents of the University of California, Sun Microsystems, Inc., Scriptics
+        Corporation, ActiveState Corporation
+ignorable_holders:
+    - the Regents of the University of California, Sun Microsystems, Inc., Scriptics Corporation,
+        ActiveState Corporation
+---
+
 This software is copyrighted by the Regents of the University of
 California, Sun Microsystems, Inc., Scriptics Corporation, ActiveState
 Corporation and other parties.  The following terms apply to all files

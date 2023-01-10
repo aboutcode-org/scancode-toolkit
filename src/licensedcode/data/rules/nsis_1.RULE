@@ -1,3 +1,9 @@
+---
+license_expression: zlib
+is_license_notice: yes
+minimum_coverage: 70
+---
+
 All NSIS source code, plug-ins, documentation, examples, header files and
 graphics, with the exception of the compression modules and where otherwise
 noted, are licensed under the zlib/libpng license.

@@ -24,8 +24,34 @@
     "code_view_url": null,
     "vcs_url": null,
     "copyright": null,
-    "license_expression": "public-domain",
-    "declared_license": "Public Domain",
+    "declared_license_expression": "public-domain",
+    "declared_license_expression_spdx": "LicenseRef-scancode-public-domain",
+    "license_detections": [
+      {
+        "license_expression": "public-domain",
+        "detection_log": [
+          "not-combined"
+        ],
+        "matches": [
+          {
+            "score": 70.0,
+            "start_line": 1,
+            "end_line": 1,
+            "matched_length": 2,
+            "match_coverage": 100.0,
+            "matcher": "1-hash",
+            "license_expression": "public-domain",
+            "rule_identifier": "public-domain_bare_words.RULE",
+            "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/public-domain_bare_words.RULE",
+            "matched_text": "Public Domain"
+          }
+        ]
+      }
+    ],
+    "other_license_expression": null,
+    "other_license_expression_spdx": null,
+    "other_license_detections": [],
+    "extracted_license_statement": "Public Domain",
     "notice_text": null,
     "source_packages": [],
     "file_references": [
@@ -396,8 +422,34 @@
     "code_view_url": null,
     "vcs_url": null,
     "copyright": null,
-    "license_expression": "public-domain",
-    "declared_license": "Public Domain",
+    "declared_license_expression": "public-domain",
+    "declared_license_expression_spdx": "LicenseRef-scancode-public-domain",
+    "license_detections": [
+      {
+        "license_expression": "public-domain",
+        "detection_log": [
+          "not-combined"
+        ],
+        "matches": [
+          {
+            "score": 70.0,
+            "start_line": 1,
+            "end_line": 1,
+            "matched_length": 2,
+            "match_coverage": 100.0,
+            "matcher": "1-hash",
+            "license_expression": "public-domain",
+            "rule_identifier": "public-domain_bare_words.RULE",
+            "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/public-domain_bare_words.RULE",
+            "matched_text": "Public Domain"
+          }
+        ]
+      }
+    ],
+    "other_license_expression": null,
+    "other_license_expression_spdx": null,
+    "other_license_detections": [],
+    "extracted_license_statement": "Public Domain",
     "notice_text": null,
     "source_packages": [],
     "file_references": [],
@@ -434,8 +486,34 @@
     "code_view_url": null,
     "vcs_url": null,
     "copyright": null,
-    "license_expression": "mit",
-    "declared_license": "MIT",
+    "declared_license_expression": "mit",
+    "declared_license_expression_spdx": "MIT",
+    "license_detections": [
+      {
+        "license_expression": "mit",
+        "detection_log": [
+          "not-combined"
+        ],
+        "matches": [
+          {
+            "score": 100.0,
+            "start_line": 1,
+            "end_line": 1,
+            "matched_length": 1,
+            "match_coverage": 100.0,
+            "matcher": "1-spdx-id",
+            "license_expression": "mit",
+            "rule_identifier": "spdx-license-identifier-mit-5da48780aba670b0860c46d899ed42a0f243ff06",
+            "rule_url": null,
+            "matched_text": "MIT"
+          }
+        ]
+      }
+    ],
+    "other_license_expression": null,
+    "other_license_expression_spdx": null,
+    "other_license_detections": [],
+    "extracted_license_statement": "MIT",
     "notice_text": null,
     "source_packages": [],
     "file_references": [

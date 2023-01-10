@@ -1,1 +1,10 @@
+---
+license_expression: gpl-3.0-plus OR mit
+is_license_notice: yes
+relevance: 100
+ignorable_urls:
+    - https://opensource.org/licenses/MIT
+    - https://www.gnu.org/licenses/gpl
+---
+
 is dual-licensed under [GNU GPL version 3 (or above) License](https://www.gnu.org/licenses/gpl) and [MIT License](https://opensource.org/licenses/MIT).

@@ -1,3 +1,11 @@
+---
+license_expression: lgpl-2.1 WITH libwebsockets-exception
+is_license_notice: yes
+relevance: 100
+ignorable_urls:
+    - https://libwebsockets.org/
+---
+
 Libwebsockets and included programs are provided under the terms of the GNU
 Library General Public License (LGPL) 2.1, with the following exceptions:
 

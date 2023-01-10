@@ -1,1 +1,7 @@
+---
+license_expression: openssl-ssleay
+is_license_reference: yes
+relevance: 95
+---
+
 contributed under the OpenSSL license

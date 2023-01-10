@@ -1,5 +1,4 @@
 {
-  "dependencies": [],
   "packages": [
     {
       "type": "rpm",
@@ -32,8 +31,34 @@
       "code_view_url": null,
       "vcs_url": null,
       "copyright": null,
-      "license_expression": "unknown",
-      "declared_license": "distributable",
+      "declared_license_expression": "unknown",
+      "declared_license_expression_spdx": "LicenseRef-scancode-unknown",
+      "license_detections": [
+        {
+          "license_expression": "unknown",
+          "detection_log": [
+            "undetected-license"
+          ],
+          "matches": [
+            {
+              "score": 100.0,
+              "start_line": 1,
+              "end_line": 1,
+              "matched_length": 2,
+              "match_coverage": 100.0,
+              "matcher": "5-undetected",
+              "license_expression": "unknown",
+              "rule_identifier": "package-manifest-unknown-195220dbe86398dd9a8e945a50757302c09fb0dc",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/package-manifest-unknown-195220dbe86398dd9a8e945a50757302c09fb0dc",
+              "matched_text": "license distributable"
+            }
+          ]
+        }
+      ],
+      "other_license_expression": null,
+      "other_license_expression_spdx": null,
+      "other_license_detections": [],
+      "extracted_license_statement": "distributable",
       "notice_text": null,
       "source_packages": [
         "pkg:rpm/fping@2.4-0.b2.rhfc1.dag?arch=src"
@@ -50,6 +75,70 @@
         "rpm_archive"
       ],
       "purl": "pkg:rpm/fping@2.4-0.b2.rhfc1.dag"
+    }
+  ],
+  "dependencies": [],
+  "license_references": [
+    {
+      "key": "unknown",
+      "language": "en",
+      "short_name": "unknown",
+      "name": "Unknown license detected but not recognized",
+      "category": "Unstated License",
+      "owner": "Unspecified",
+      "homepage_url": null,
+      "notes": "This applies to the case where there is text referring to a license, but it is not possible to determine exactly which license.",
+      "is_builtin": true,
+      "is_exception": false,
+      "is_unknown": true,
+      "is_generic": false,
+      "spdx_license_key": "LicenseRef-scancode-unknown",
+      "other_spdx_license_keys": [],
+      "osi_license_key": null,
+      "text_urls": [],
+      "osi_url": null,
+      "faq_url": null,
+      "other_urls": [],
+      "key_aliases": [],
+      "minimum_coverage": 0,
+      "standard_notice": null,
+      "ignorable_copyrights": [],
+      "ignorable_holders": [],
+      "ignorable_authors": [],
+      "ignorable_urls": [],
+      "ignorable_emails": [],
+      "text": "",
+      "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/unknown.LICENSE",
+      "licensedb_url": "https://scancode-licensedb.aboutcode.org/unknown",
+      "spdx_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/unknown.LICENSE"
+    }
+  ],
+  "license_rule_references": [
+    {
+      "license_expression": "unknown",
+      "identifier": "package-manifest-unknown-195220dbe86398dd9a8e945a50757302c09fb0dc",
+      "language": "en",
+      "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/package-manifest-unknown-195220dbe86398dd9a8e945a50757302c09fb0dc",
+      "is_license_text": false,
+      "is_license_notice": false,
+      "is_license_reference": false,
+      "is_license_tag": true,
+      "is_license_intro": false,
+      "is_continuous": false,
+      "is_builtin": true,
+      "is_from_license": false,
+      "is_synthetic": false,
+      "length": 2,
+      "relevance": 100,
+      "minimum_coverage": 0,
+      "referenced_filenames": [],
+      "notes": null,
+      "ignorable_copyrights": [],
+      "ignorable_holders": [],
+      "ignorable_authors": [],
+      "ignorable_urls": [],
+      "ignorable_emails": [],
+      "text": "license distributable"
     }
   ],
   "files": [
@@ -88,8 +177,34 @@
           "code_view_url": null,
           "vcs_url": null,
           "copyright": null,
-          "license_expression": null,
-          "declared_license": "distributable",
+          "declared_license_expression": "unknown",
+          "declared_license_expression_spdx": "LicenseRef-scancode-unknown",
+          "license_detections": [
+            {
+              "license_expression": "unknown",
+              "detection_log": [
+                "undetected-license"
+              ],
+              "matches": [
+                {
+                  "score": 100.0,
+                  "start_line": 1,
+                  "end_line": 1,
+                  "matched_length": 2,
+                  "match_coverage": 100.0,
+                  "matcher": "5-undetected",
+                  "license_expression": "unknown",
+                  "rule_identifier": "package-manifest-unknown-195220dbe86398dd9a8e945a50757302c09fb0dc",
+                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/package-manifest-unknown-195220dbe86398dd9a8e945a50757302c09fb0dc",
+                  "matched_text": "license distributable"
+                }
+              ]
+            }
+          ],
+          "other_license_expression": null,
+          "other_license_expression_spdx": null,
+          "other_license_detections": [],
+          "extracted_license_statement": "distributable",
           "notice_text": null,
           "source_packages": [
             "pkg:rpm/fping@2.4-0.b2.rhfc1.dag?arch=src"

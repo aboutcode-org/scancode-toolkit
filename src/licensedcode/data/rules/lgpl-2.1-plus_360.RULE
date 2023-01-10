@@ -1,4 +1,12 @@
-  <licenses>
+---
+license_expression: lgpl-2.1-plus
+is_license_reference: yes
+relevance: 100
+ignorable_urls:
+    - https://www.gnu.org/licenses/lgpl.txt
+---
+
+<licenses>
     <license>
       <name>GNU LESSER GENERAL PUBLIC LICENSE</name>
       <url>https://www.gnu.org/licenses/lgpl.txt</url>

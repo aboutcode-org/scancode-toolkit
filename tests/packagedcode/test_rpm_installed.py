@@ -131,9 +131,7 @@ class TestRpmInstalled(PackageTester):
     def test_scan_system_package_end_to_end_installed_rpms_fedora_bdb(self):
         test_dir = self.extract_test_tar('rpm_installed/end-to-end/bdb-fedora-rootfs.tar.xz')
         test_dir = os.path.join(test_dir, 'rootfs')
-        #expected_file = self.get_test_loc('rpm_installed/end-to-end/bdb-fedora-rootfs.tar.xz-expected.json', must_exist=False)
-        expected_file = self.extract_test_tar('rpm_installed/end-to-end/bdb-fedora-rootfs.tar.xz-expected.json.tar.xz')
-        expected_file= os.path.join(expected_file, 'bdb-fedora-rootfs.tar.xz-expected.json')
+        expected_file = self.get_test_loc(f'rpm_installed/end-to-end/bdb-fedora-rootfs.tar.xz-expected.json')
         result_file = self.get_temp_file('results.json')
         run_scan_click(['--system-package', test_dir, '--json-pp', result_file])
         check_json_scan(expected_file, result_file, regen=REGEN_TEST_FIXTURES)

@@ -30,8 +30,34 @@
     "code_view_url": "https://github.com/nanopb/nanopb/tree/1.30905.0",
     "vcs_url": "https://github.com/nanopb/nanopb.git",
     "copyright": null,
-    "license_expression": "unknown",
-    "declared_license": ":type = zlib, :file = LICENSE.txt",
+    "declared_license_expression": "zlib",
+    "declared_license_expression_spdx": "Zlib",
+    "license_detections": [
+      {
+        "license_expression": "zlib",
+        "detection_log": [
+          "not-combined"
+        ],
+        "matches": [
+          {
+            "score": 100.0,
+            "start_line": 1,
+            "end_line": 1,
+            "matched_length": 5,
+            "match_coverage": 100.0,
+            "matcher": "1-hash",
+            "license_expression": "zlib",
+            "rule_identifier": "zlib_in_manifest.RULE",
+            "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/zlib_in_manifest.RULE",
+            "matched_text": ":type = zlib, :file = LICENSE.txt"
+          }
+        ]
+      }
+    ],
+    "other_license_expression": null,
+    "other_license_expression_spdx": null,
+    "other_license_detections": [],
+    "extracted_license_statement": ":type = zlib, :file = LICENSE.txt",
     "notice_text": null,
     "source_packages": [],
     "file_references": [],

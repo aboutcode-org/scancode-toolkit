@@ -32,10 +32,34 @@
     "code_view_url": null,
     "vcs_url": null,
     "copyright": null,
-    "license_expression": "mit",
-    "declared_license": [
-      "MIT"
+    "declared_license_expression": "mit",
+    "declared_license_expression_spdx": "MIT",
+    "license_detections": [
+      {
+        "license_expression": "mit",
+        "detection_log": [
+          "not-combined"
+        ],
+        "matches": [
+          {
+            "score": 100.0,
+            "start_line": 1,
+            "end_line": 1,
+            "matched_length": 1,
+            "match_coverage": 100.0,
+            "matcher": "1-spdx-id",
+            "license_expression": "mit",
+            "rule_identifier": "spdx-license-identifier-mit-5da48780aba670b0860c46d899ed42a0f243ff06",
+            "rule_url": null,
+            "matched_text": "MIT"
+          }
+        ]
+      }
     ],
+    "other_license_expression": null,
+    "other_license_expression_spdx": null,
+    "other_license_detections": [],
+    "extracted_license_statement": "['MIT']",
     "notice_text": null,
     "source_packages": [],
     "file_references": [],

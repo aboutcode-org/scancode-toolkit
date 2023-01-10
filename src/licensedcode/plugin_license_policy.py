@@ -11,12 +11,35 @@ from os.path import exists
 from os.path import isdir
 
 import attr
+import os
+import logging
 import saneyaml
 
 from plugincode.post_scan import PostScanPlugin
 from plugincode.post_scan import post_scan_impl
 from commoncode.cliutils import PluggableCommandLineOption
 from commoncode.cliutils import POST_SCAN_GROUP
+from licensedcode.detection import get_license_keys_from_detections
+
+
+TRACE = os.environ.get('SCANCODE_DEBUG_LICENSE_POLICY', False)
+
+
+def logger_debug(*args):
+    pass
+
+
+if TRACE:
+
+    logger = logging.getLogger(__name__)
+
+    import sys
+
+    logging.basicConfig(stream=sys.stdout)
+    logger.setLevel(logging.DEBUG)
+
+    def logger_debug(*args):
+        return logger.debug(' '.join(isinstance(a, str) and a or repr(a) for a in args))
 
 
 @post_scan_impl
@@ -63,7 +86,7 @@ class LicensePolicy(PostScanPlugin):
                 continue
 
             try:
-                resource_license_keys = set([entry.get('key') for entry in resource.licenses])
+                resource_license_keys = get_license_keys_from_detections(resource.license_detections)
 
             except AttributeError:
                 # add license_policy regardless if there is license info or not

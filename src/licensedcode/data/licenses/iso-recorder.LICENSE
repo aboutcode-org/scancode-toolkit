@@ -1,3 +1,15 @@
+---
+key: iso-recorder
+short_name: ISO Recorder License
+name: ISO Recorder License
+category: Proprietary Free
+owner: Alex Feinman
+homepage_url: http://isorecorder.alexfeinman.com/v1.htm
+spdx_license_key: LicenseRef-scancode-iso-recorder
+ignorable_emails:
+    - isorecorder@alexfeinman.com
+---
+
 This utility is free for non-commercial (personal) use. Other types of use
 should be discussed with the author (a very reasonable person) - see the
 contact information section. Author shall not be liable for any damage resulting

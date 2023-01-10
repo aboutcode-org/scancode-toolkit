@@ -1,1 +1,10 @@
+---
+license_expression: mpl-2.0
+is_license_reference: yes
+relevance: 100
+minimum_coverage: 90
+ignorable_urls:
+    - https://www.mozilla.org/MPL/2.0/index.txt
+---
+
 `MPL-2.0` - [Mozilla Public License](https://www.mozilla.org/MPL/2.0/index.txt)

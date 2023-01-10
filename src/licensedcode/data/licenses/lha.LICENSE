@@ -1,3 +1,16 @@
+---
+key: lha
+short_name: lha
+name: LHA
+category: Free Restricted
+owner: Yooichi Tagawa
+homepage_url: http://www.copyleftlicense.com/licenses/lha-license-version-10/view.php
+notes: From https://github.com/ErikMcClure/bad-licenses
+spdx_license_key: LicenseRef-scancode-lha
+ignorable_emails:
+    - gotom@debian.org
+---
+
 LHA LICENSE
 
 Permission is given for redistribution, copy, and modification provided

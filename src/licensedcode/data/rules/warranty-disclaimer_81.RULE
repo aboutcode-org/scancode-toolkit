@@ -1,3 +1,8 @@
+---
+license_expression: warranty-disclaimer
+is_license_notice: yes
+---
+
 While we certainly hope this software is useful, none of the authors or
 contributors place any guarantees as to the accuracy of the data or the
 results returned by using this library.

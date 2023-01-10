@@ -1,3 +1,13 @@
+---
+key: rar-winrar-eula
+short_name: RAR and WinRAR EULA
+name: RAR and WinRAR EULA
+category: Commercial
+owner: RAR
+homepage_url: http://www.win-rar.com/
+spdx_license_key: LicenseRef-scancode-rar-winrar-eula
+---
+
 RAR and WinRAR END USER LICENSE AGREEMENT (EULA)
 
 The following agreement regarding RAR (and its Windows version - WinRAR) archiver - referred to as "software" - is made between win.rar GmbH - referred to as "licensor" - and anyone who is installing, accessing or in any other way using the software - referred to as "user".

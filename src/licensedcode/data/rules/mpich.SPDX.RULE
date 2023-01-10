@@ -1,3 +1,13 @@
+---
+license_expression: mpich
+is_license_text: yes
+minimum_coverage: 10
+notes: license text as published by SPDX
+ignorable_emails:
+    - gropp@mcs.anl.gov
+    - lusk@mcs.anl.gov
+---
+
 COPYRIGHT
 The following is a notice of limited availability of the code, and disclaimer which must be included in the prologue of the code and in all source listings of the code.
 

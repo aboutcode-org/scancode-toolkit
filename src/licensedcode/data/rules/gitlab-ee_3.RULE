@@ -1,3 +1,10 @@
+---
+license_expression: gitlab-ee
+is_license_text: yes
+ignorable_urls:
+    - https://about.gitlab.com/terms/#subscription
+---
+
 This software and associated documentation files (the "Software") may only be
 used in production, if you (and any entity that you represent) have agreed to,
 and are in compliance with, the GitLab Subscription Terms of Service, available

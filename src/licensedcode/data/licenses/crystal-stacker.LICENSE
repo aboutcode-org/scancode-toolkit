@@ -1,3 +1,14 @@
+---
+key: crystal-stacker
+short_name: Crystal Stacker License
+name: Crystal Stacker License
+category: Permissive
+owner: NewCreature Design
+homepage_url: https://fedoraproject.org/wiki/Licensing:CrystalStacker?rd=Licensing/CrystalStacker
+spdx_license_key: CrystalStacker
+minimum_coverage: 20
+---
+
 Crystal Stacker is freeware. This means you can pass copies around freely provided you include this document in it's original form in your distribution. Please see the "Contacting Us" section of this document if you need to contact us for any reason.
 
 Disclaimer

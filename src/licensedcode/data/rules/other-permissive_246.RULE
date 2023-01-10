@@ -1,3 +1,11 @@
+---
+license_expression: other-permissive
+is_license_text: yes
+notes: an apache-2.0 license moified with an extra section 10
+ignorable_urls:
+    - https://www.apache.org/licenses/
+---
+
 BLUEPRINT LICENSE based on Apache 2.0 License
 
 Note: Paragraph 10 is the only modification.
@@ -188,4 +196,3 @@ TERMS AND CONDITIONS FOR USE, REPRODUCTION, AND DISTRIBUTION
     Contributors.
 
 END OF TERMS AND CONDITIONS
-

@@ -1,0 +1,555 @@
+fusiondirectory (1.3-5) unstable; urgency=medium
+
+  * debian/watch.*:
+    + Update upstream URL. Switch to format version 4.
+  * debian/copyright:
+    + Update upstream source URL.
+  * debian/control:
+    + Bump Standards-Version: to 4.6.0. No changes needed.
+
+ -- Mike Gabriel <sunweaver@debian.org>  Sat, 23 Apr 2022 00:43:22 +0200
+
+fusiondirectory (1.3-4) unstable; urgency=medium
+
+  * debian/patches:
+    + Add 2001_fd-location-in-apache-conf.patch. Fix application path in
+      Apache2's configuration snippet. (Closes: #975700).
+  * debian/control:
+    + Allow co-installation with GOsa². Drop various Conflicts: fields.
+      (Closes: #975704).
+    + Bump DH compat level to version 13.
+    + Bump Standards-Version: to 4.5.1. No changes needed.
+  * debian/README.Debian:
+    + Add section about security considerations. (Closes: #966061, #975968).
+  * debian/fusiondirectory-plugin-{dovecot,cyrus}.links:
+    + Symlink fusiondirectory's README.Debian to docs folder of the dovecot and
+      the cyrus plugin (because of the security implicataions mentioned in
+      README.Debian).
+  * debian/examples:
+    + Ship Kerberos hook scripts (cudos to Debian Edu).
+  * debian/fusiondirectory.examples:
+    + Install Kerberos hook script examples to fusiondirectory bin:pkg.
+  * debian/NEWS.Debian:
+    + Notify admins when upgrading their FusionDirectory about sensitive data
+      storage in LDAP.
+
+ -- Mike Gabriel <sunweaver@debian.org>  Mon, 07 Dec 2020 12:25:31 +0100
+
+fusiondirectory (1.3-3) unstable; urgency=medium
+
+  * debian/fusiondirectory.install:
+    + Add missing upstream files. (Closes: #963075). Thanks to Olof
+      Johansson for spotting this.
+
+ -- Mike Gabriel <sunweaver@debian.org>  Fri, 19 Jun 2020 16:37:21 +0200
+
+fusiondirectory (1.3-2) unstable; urgency=medium
+
+  * debian/control:
+    + Drop php-recode from D. An alternative code path to its usage exists
+      (iconv). (Closes: #955315).
+
+ -- Mike Gabriel <sunweaver@debian.org>  Mon, 20 Apr 2020 07:47:13 +0200
+
+fusiondirectory (1.3-1) unstable; urgency=medium
+
+  * New upstream release.
+  * debian/fusiondirectory.preinst:
+    + Update CURRENT_MAJOR to 1.3.
+  * debian/patches:
+    + Drop 2001_fusiondirectory-apache.patch and
+      2004_fusiondirectory-apache-php7.patch; both obsolete.
+    + Rebase 0001_CVE-2019-11187_stricter-ldap-error-check.patch.
+  * debian/control:
+    + Add C (fusiondirectory-smarty3-acl-render):
+      fusiondirectory (<< same binary version). Avoid
+      fusiondirectory-smarty3-acl-render being upgraded when
+      fusiondirectory is not being upgraded.
+  * debian/rules:
+    + Update get-orig-source target code to uscan in Debian buster.
+  * debian/copyright:
+    + Update copyright attributions.
+  * debian/fusiondirectory-plugin-developers.install:
+    + Adapt source/installation path name of
+      plugins/developers/addons/debugHelp/.
+  * debian/source/lintian-overrides:
+    + Update source-is-missing override for datepicker.js.
+  * debian/copyright:
+    + Update auto-generated copyright.in file.
+
+ -- Mike Gabriel <sunweaver@debian.org>  Sun, 29 Sep 2019 12:24:42 +0200
+
+fusiondirectory (1.2.3-5) unstable; urgency=medium
+
+  * debian/patches:
+    + Add 0001_CVE-2019-11187_stricter-ldap-error-check.patch.
+      Perform stricter check on LDAP success/failure (CVE-2019-11187).
+  * debian/control:
+    + Add to D (fusiondirectory): php-xml. (Closes: #931959).
+
+ -- Mike Gabriel <sunweaver@debian.org>  Thu, 08 Aug 2019 11:55:44 +0200
+
+fusiondirectory (1.2.3-4) unstable; urgency=medium
+
+  * debian/fusiondirectory.postinst:
+    + Move Apache2 logic into configure condition.
+    + Drop usage of debconf confmodule. (Closes: #925291).
+
+ -- Mike Gabriel <sunweaver@debian.org>  Fri, 22 Mar 2019 15:22:53 +0100
+
+fusiondirectory (1.2.3-3) unstable; urgency=medium
+
+  * debian/control:
+    + Update Maintainer: field. Use mail address @tracker.d.o.
+  * debian/po:
+    + Add Brazilian Portuguese debconf translation. Thanks to Adriano Rafael
+      Gomes. (Closes: #923007).
+
+ -- Mike Gabriel <sunweaver@debian.org>  Sat, 02 Mar 2019 09:36:30 +0100
+
+fusiondirectory (1.2.3-2) unstable; urgency=medium
+
+  * debian/po:
+    + Update German translation. Thanks to Helge Kreutzmann. (Closes: #912734).
+  * debian/control:
+    + Bump Standards-Version: to.4.3.0. No changes needed.
+
+ -- Mike Gabriel <sunweaver@debian.org>  Sun, 06 Jan 2019 19:55:29 +0100
+
+fusiondirectory (1.2.3-1) unstable; urgency=medium
+
+  * New upstream release.
+  * debian/compat:
+    + Drop file. Use new debhelper-compat notation under B-D in control file
+      now.
+    + In fusiondirectory-smarty3-acl-render: relax C (fusiondirectory << source
+      version) to B (fusiondirectory << source version).
+  * debian/copyright:
+    + Update copyright attributions.
+
+ -- Mike Gabriel <sunweaver@debian.org>  Fri, 07 Dec 2018 10:59:40 +0100
+
+fusiondirectory (1.2.2-4) unstable; urgency=medium
+
+  [ Ondřej Nový ]
+  * d/copyright: Change Format URL to correct one
+
+  [ Mike Gabriel ]
+  * debian/fusiondirectory.preinst:
+    + Use 'db_input ... || [ 0 -eq 30 ]' in our upgrade confirmation debconf
+      message to avoid noninteractive upgrade failures (e.g. in piuparts).
+      (Closes: #910212).
+  * debian/copyright:
+    + Update/fix copyright attributions (spotted one missing file).
+  * debian/po:
+    + Add German debconf translation file. Thanks to Mathias F. Popp (Closes:
+      #908348).
+    + Add French debconf translation file. Thanks to Grégoire Scano. (Closes:
+      #911039).
+    + Add Russian debconf translation file. Thanks to Lev Lamberov. (Closes:
+      #910847).
+    + Add Dutch debconf translation file. Thanks to Frans Spiesschaert. (Closes:
+      #909683).
+
+ -- Mike Gabriel <sunweaver@debian.org>  Fri, 26 Oct 2018 13:03:36 +0200
+
+fusiondirectory (1.2.2-3) unstable; urgency=medium
+
+  [ Mike Gabriel ]
+  * debian/fusiondirectory.preinst:
+    + Fix cosmetic-but-nasty copy+paste flaw.
+
+  [ Benoit Mortier ]
+  * debian/fusiondirectory.install:
+    + Add missing file: class_CSRFProtection.inc (new in 1.2.2).
+
+ -- Mike Gabriel <sunweaver@debian.org>  Tue, 04 Sep 2018 08:53:06 +0200
+
+fusiondirectory (1.2.2-2) unstable; urgency=medium
+
+  * Move upgrade warning from config script to preinst script (bin:pkg
+    fusiondirectory). With the previous approach, an upgrade warning would
+    come, but only after the package files had already been unpacked and
+    installed. Thanks to Benoit Mortier for noticing this flaw.
+
+  * debian/control:
+    + Add to Pre-Depends (fusiondirectory): debconf. (We use it in .preinst
+      script).
+    + Bump Standards-Version: to 4.2.1. No changes needed.
+    + Add versioned C (fusiondirectory-smarty3-acl-render). Don't install
+      newer fd-smarty3-acl-render bin:pkg, if something probibits upgrade
+      of the fusiondirectory bin:pkg (e.g. the canceled upgrade warning).
+
+ -- Mike Gabriel <sunweaver@debian.org>  Fri, 31 Aug 2018 10:59:31 +0200
+
+fusiondirectory (1.2.2-1) unstable; urgency=medium
+
+  [ benoit mortier ]
+  * Delete fusiondirectory-plugin-kolab2.dirs
+  * Add fusiondirectory-plugin-renater-partage.dirs
+
+  [ Mike Gabriel ]
+  * New upstream release.
+  * debian/po:
+    + Add European Portuguese debconf translation. Thanks to Américo Monteiro.
+      (Closes: #907508).
+  * debian/copyright:
+    + Update copyright attributions.
+    + Update auto-generated copyright.in file.
+  * debian/fusiondirectory.docs:
+    + AUTHORS file renamed to AUTHORS.md.
+
+ -- Mike Gabriel <sunweaver@debian.org>  Fri, 31 Aug 2018 08:33:27 +0200
+
+fusiondirectory (1.2.1-2) unstable; urgency=medium
+
+  [ Mike Gabriel ]
+  * debian/{fusiondirectory.config,templates}:
+    + Rephrase template. (Thanks to Justin B. Rye) and adapt
+      fusiondirectory.config accordingly (template names changed, one template
+      dropped).
+  * debian/patches:
+    + Rebase 2004_fusiondirectory-apache-php7.patch.
+  * debian/po:
+    + Update translation files.
+
+  [ Benoit Mortier ]
+  * debian/upstream/metadata:
+    + Fix various URLs.
+  * debian/copyright:
+    + Remove duplicate line
+  * debian/patches:
+    + Update 2001_fusiondirectory-apache.patch. Use Directory tag, not
+      Location tag. Drop some php_admin_flag fields.
+    + Improve patch header of 2001_fusiondirectory-apache.patch.
+  * debian/fusiondirectory.postinst:
+    + Fix flawed target path in mv command.
+
+ -- Mike Gabriel <sunweaver@debian.org>  Tue, 28 Aug 2018 16:59:03 +0200
+
+fusiondirectory (1.2.1-1) unstable; urgency=medium
+
+  [ Mike Gabriel ]
+  * debian/changelog: White-space cleanup.
+  * debian/{templates,fusiondirectory.config}:
+    + Add upgrade warning dialog that kicks in when upgrading from one major
+      release to another. (Closes: #867912).
+  * debian/control:
+    + Add missing D (fusiondirectory) on php-mbstring. (Closes: #854398).
+    + Use https:// URL in Homepage: field.
+    + Update to versioned D (fusiondirectory): schema2ldif (>= 1.3).
+    + Drop bin:pkgs fusiondirectory-plugin-kolab2 and
+      fusiondirectory-plugin-kolab2-schema.
+    + Add D to fusiondirectory-plugin-mixedgroups: fusiondirectory-plugin-posix
+      (same bin:Version).
+    + Add bin:pkg fusiondirectory-plugin-posix.
+    + Add bin:pkgs fusiondirectory-plugin-renater-partage and
+      fusiondirectory-plugin-renater-partage-schema.
+    + Add D (fusiondirectory-plugin-samba): fusiondirectory-plugin-posix (same
+      version).
+    + Add D (fusiondirectory-plugin-ssh): fusiondirectory-plugin-posix (same
+      version).
+    + Add D (fusiondirectory-plugin-sudo): fusiondirectory-plugin-posix (same
+      version).
+    + Drop from D (fusiondirectory-plugin-sympa,
+      fusiondirectory-plugin-sympa-schema):
+      fusiondirectory-plugin-alias{,schema}.
+    + Depromote to S (fusiondirectory-plugin-systems):
+      fusiondirectory-plugin-argonaut.
+    + Update Vcs-*: fields. Packaging Git has been migrated to salsa.debian.org.
+    + Bump Standards-Version: to 4.2.0. No changes needed.
+    + White-space cleanup.
+  * debian/{control,compat}: Bump DH compat level to version 11.
+  * debian/*.install:
+    + Adapt to files and installation targets in new upstream release.
+  * debian/fusiondirectory-plugin-kolab2*.install:
+    + Remove files. Kolab v2 plugin has been dropped.
+  * debian/fusiondirectory.postinst:
+    + Don't process files in apache2/conf.d anymore. Looong ago...
+    + Handle old Apache2.2 config files gracefully.
+  * debian/fusiondirectory.postrm:
+    + Don't process files in apache2/conf.d anymore. Looong ago...
+  * debian/fusiondirectory.post*:
+    + Use presence of apache2ctl to detect whether GOsa² is supposed to run
+      under Apache2. (Closes: #872583).
+  * debian/fusiondirectory-plugin-community.dirs:
+    + Remove file, not needed.
+  * debian/fusiondirectory-plugin-kolab2-schema.dirs.
+    + Remove file. Kolab v2 support removed.
+  * debian/fusiondirectory-plugin-spamassassin.dirs:
+    + Remove file. Not needed.
+  * debian/fusiondirectory-plugin-renater-partage-schema.dirs: Add file.
+  * debian/fusiondirectory-plugin-posix.dirs: Add file.
+  * debian/fusiondirectory.docs: Update documentation files.
+  * debian/fusiondirectory-schema.docs: Remove file. Schema documentation gone.
+  * debian/upstream/signing-key.asc: Update public key file.
+  * debian/{rules,watch-*}:
+    + Fix orig tarball retrieval, esp. correct naming of .asc signature files.
+  * debian/rules:
+    + Avoid dpkg-parsechangelog parsing. Use pkg-info.mk instead.
+  * debian/patches:
+    + Drop 1001_spelling-fixes.patch. Applied upstream.
+    + Add 2004_fusiondirectory-apache-php7.patch. Make apache2 config file work
+      against PHP 7.x. (Closes: #867911).
+    + Improve patch headers.
+  * debian/README.source: Drop file. Outdated info.
+  * debian/README.Debian: Update upstream's VCS URL.
+  * debian/copyright:
+    + Use secure URLs in Sources: field and copyright format reference.
+    + Update auto-generated copyright.in file.
+    + Update copyright attributions.
+  * debian/fusiondirectory-lighttpd.conf:
+    + Drop file. Not supported anymore by Debian packaging.
+  * debian/fusiondirectory-plugin-ipmi-schema.install: White-space fix.
+  * debian/fusiondirectory-plugin-ipmi.install: White-space fix.
+  * debian/source/lintian-overrides:
+    + Move files to correct location. Drop license-problem-non-free-RFC
+      override. File is gone now.
+  * debian/fusiondirectory.examples:
+    + Drop file. Lighttpd config example not advertised anymore.
+  * debian/watch.fusiondirectory-*:
+    + Use secure URLs to obtain upstream tarballs.
+  * debian/upstream/metadata: Add file. Comply with DEP-12.
+
+  [ Mathieu Trudel-Lapierre ]
+  * debian/fusiondirectory.triggers:
+    + Be specific about using interest-noawait for the triggers -- there's no
+      need to block in awaiting the triggers for locale, plugins updates.
+      (LP: #1780996). (Closes: #903910).
+
+ -- Mike Gabriel <sunweaver@debian.org>  Fri, 24 Aug 2018 20:42:06 +0200
+
+fusiondirectory (1.0.19-1) unstable; urgency=medium
+
+  [ Benoit Mortier ]
+  * New upstream release.
+  * debian/copyright:
+    + Update copyright attributions.
+    + Update copyright.in template file.
+  * debian/fusiondirectory-plugin-systems.install:
+    + Correct filename for system dashbord plugin.
+  * debian/fusiondirectory.install:
+    + Add include/class_exceptions.inc file.
+
+  [ Mike Gabriel ]
+  * debian/control:
+    + Move from D to R (fusiondirectory-plugin-systems):
+      fusiondirectory-plugin-argonaut. Avoid intra-source-package cicular
+      dependency.
+  * debian/copyright.in:
+    + Update once more with better generator script.
+  * debian/copyright:
+    + Prior-to-upload fine-tunings.
+
+ -- Mike Gabriel <sunweaver@debian.org>  Sun, 22 Jan 2017 21:33:07 +0100
+
+fusiondirectory (1.0.17-2) unstable; urgency=medium
+
+  [ Benoit Mortier ]
+  * debian/copyright:
+    + Removing files names occurring multiple times.
+    + Add missing attribution for another file.
+  * Removing all spaces and empty lines not needed
+  * debian/fusiondirectory.install:
+    + Remove files names occurring multiple times.
+  * debian/control:
+    + Revert to short indentations.
+
+ -- Mike Gabriel <sunweaver@debian.org>  Mon, 28 Nov 2016 15:48:42 +0100
+
+fusiondirectory (1.0.17-1) unstable; urgency=medium
+
+  [ Benoit Mortier ]
+  * New upstream release.
+  * debian/patches: Update Debian patchset for this release:
+           deleted:   2005_relative-path-to-js.patch
+           renamed:   2004_fusiondirectory-setup.patch
+                   to 2003_fusiondirectory-setup.patch
+  * debian/patches:
+    + 2001_fusiondirectory-apache.patch no longer fuzzy. (Closes: #815104).
+  * debian/patches:
+    + Update 2002_fusiondirectory-headers.patch. Remove "/" leftover before
+      javascript include.
+  * debian/control (and others):
+    + Add bin:packages fusiondirectory-plugin-mixedgroups
+    + Add fusiondirectory-plugins-audit{,-schema}.
+    + Add fusiondirectory-plugins-user-reminder{,-schema}.
+    + Add binary version dependency on fusiondirectory-smarty3-acl-render.
+    + Add breaks for the mail plugin splitting.
+    + Removing dependency between gpg and systems.
+    + Removing perl code for the user reminder plugin now in argonaut.
+    + Moving all schemas to suggests.
+    + Rename bin:packages fusiondirectory-plugin-kolab{,-schema}
+      to fusiondirectory-plugin-kolab2{,-schema}.
+    + Drop bin:packages fusiondirectory-plugin-apache.
+    + Drop bin:packages fusiondirectory-plugin-asterisk
+      and fusiondirectory-plugin-asterisk-schema.
+    + Drop bin:packages fusiondirectory-plugin-database-connector
+    + Drop bin:packages fusiondirectory-plugin-fax
+      and fusiondirectory-plugin-fax-schema.
+    + Drop bin:packages fusiondirectory-plugin-game.
+    + Drop bin:packages fusiondirectory-plugin-openstack-compute
+      and fusiondirectory-plugin-openstack-compute-schema.
+    + Drop bin:packages fusiondirectory-plugin-rsyslog
+    + Drop bin:packages fusiondirectory-plugin-uwimap
+  * debian/copyright:
+    + Update some copyright attributions.
+    + Correcting duplicate License: field name for
+      core/html/include/pulldown.js.
+    + Remove UNKNOWN and FIXES.
+  * debian/source.lintian-overrides :
+    + Adapt path for kolab -> kolab2 plugin.
+
+  [ Mike Gabriel ]
+  * debian/control:
+    + Bump Standards: to 3.9.8. No changes needed.
+    + Use unversioned php-<module> dependencies (rather than phpX-<module>).
+      (Closes: #821485, #816040).
+    + Fix Ds for fusiondirectory-plugins-systems{,-schema}.
+    + Add Postfix plugin (fusiondirectory-plugins-postfix{,-schema}).
+    + Add spamassassin plugin (fusiondirectory-plugins-spamassassin{,-schema}).
+    + Don't have fusiondirectory in Depends: and Suggests: field (bin:pkg
+      fusiondirectory-plugin-developers).
+    + Process with wrap-and-sort.
+    + Use secure URLs in Vcs-*: fields.
+    + Avoid circular dependency between fd-plugin-argonaut-schema and
+      fd-plugin-systems-schema.
+    + Avoid circular dependency between fd-plugin-argonaut and
+      fd-plugin-systems.
+    + Don't duplicate SYNOPSIS in LONG_DESCRIPTION (bin:pkg
+      fusiondirectory-plugin-subcontracting).
+    + Don't duplicate SYNOPSIS in LONG_DESCRIPTION (bin:pkg
+      fusiondirectory-plugin-audit).
+    + Add Breaks:/Replaces: for Samba's schema files. The were separated from
+      fusiondirectory-schema at version 1.0.9.1.
+  * debian/copyright:
+    + Update copyright.in file.
+  * debian/copyright:
+    + Update copyright attributions changed in copyright.in (for upstream
+      release 1.0.12).
+    + More work on copyright attributions (for upstream release 1.0.17).
+  * debian/*.install:
+    + Process with wrap-and-sort.
+  * debian/patches:
+    + Fix patch fuzziness for 2003_fusiondirectory-setup.patch.
+    + Add 1001_spelling-fixes.patch. Fix various spelling issues in man pages.
+  * debian/<scripts>:
+    + Don't reference full path of binaries not included in this src:pkg.
+  * debian/README.Debian:
+    + Fix typo.
+  * lintian:
+    + Drop overrides for fd-plugin-kolab2. The lintian tool is not complaining
+      anymore with license-problem-non-free-RFC.
+    + Add override for source pkg. Ignore lintian when it complains about too
+      long code lines in datepicker.js.
+
+ -- Mike Gabriel <sunweaver@debian.org>  Sat, 26 Nov 2016 20:28:08 +0100
+
+fusiondirectory (1.0.8.8-3) unstable; urgency=medium
+
+  * debian/control:
+    + Fix broken Uploaders: field.
+
+ -- Mike Gabriel <sunweaver@debian.org>  Wed, 22 Jul 2015 16:32:39 +0200
+
+fusiondirectory (1.0.8.8-2) unstable; urgency=medium
+
+  * debian/control (and others):
+    + New bin:package fusiondirectory-plugin-ejbca and
+      fusiondirectory-plugin-ejbca-schema. Forgotten in previous upload.
+
+ -- Mike Gabriel <sunweaver@debian.org>  Wed, 22 Jul 2015 15:24:46 +0200
+
+fusiondirectory (1.0.8.8-1) unstable; urgency=medium
+
+  * New upstream release.
+  * debian/fusiondirectory.links:
+    + Add symlinks for prototype and scripaculous shared javascript
+      libraries.
+  * debian/patches:
+    + Add 2005_relative-path-to-js.patch. Access javascript libraries via a
+      path relative to FusionDirectory's base path (Closes: #786864, #782531).
+  * debian/watch:
+    + Provide as symlink to debian/watch.fusiondirectory-core, so that uscan
+      and DDPO can see and use it.
+  * debian/patches: Update Debian patchset for this release:
+        deleted:    0001_fdSaslRealm-and-fdSaslExop-are-not-booleans.patch
+        deleted:    0002_fix-sieve-script-creation.patch
+        deleted:    0003_Fixes-3447-Setting-debug-level-to-0-during-login.patch
+        deleted:    0004_Fixes-3447-Debug-is-back.patch
+        modified:   2004_fusiondirectory-setup.patch
+  * lintian: Drop fusiondirectory: debian-watch-file-is-missing. The
+    debian/watch file is now a symlink to debian/watch.fusiondirectory-core.
+  * debian/fusiondirectory-plugin-debconf-schema.install: No example.ldif for
+    the DebConf plugin anymore.
+  * debian/control:
+    + Add D (fusiondirectory): libterm-readkey-perl. Required for hiding the
+      password in fusiondirectory-setup.
+    + Drop from R (fusiondirectory): \${misc:Recommends}. No such substitution
+      variable.
+    + Various improvements for SYNOPSIS and LONG_DESCRIPTION fields.
+  * debian/control (and others):
+    + Add bin:packages fusiondirectory-plugin-ppolicy and
+      fusiondirectory-plugin-ppolicy-schema.
+    + Add bin:packages fusiondirectory-plugin-personal and
+      fusiondirectory-plugin-personal-schema.
+    + Rename bin:packages fusiondirectory-plugin-desktop-management{,-schema}
+      to fusiondirectory-plugin-applications{,-schema}.
+    + Drop bin:packages fusiondirectory-plugin-dashboard. Upstream moved it
+      (and split it up) into the FusionDirectory core and the systems plugin.
+    + Process with wrap-and-sort.
+  * debian/copyright{,.in}:
+    + Update auto-generated copyright.in template file.
+  * debian/README.source: Provide information on non-documented upstream Vcs
+    location.
+
+ -- Mike Gabriel <sunweaver@debian.org>  Mon, 29 Jun 2015 17:20:42 +0200
+
+fusiondirectory (1.0.8.2-5) unstable; urgency=medium
+
+  * debian/patches:
+    + Add 0003_Fixes-3447-Setting-debug-level-to-0-during-login.patch
+      and 0004_Fixes-3447-Debug-is-back.patch. Make login possible while
+      debug mode is enabled. (Closes: #781805).
+
+ -- Mike Gabriel <sunweaver@debian.org>  Mon, 13 Apr 2015 03:32:05 +0200
+
+fusiondirectory (1.0.8.2-4) unstable; urgency=medium
+
+  * debian/patches:
+    + Add 0002_fix-sieve-script-creation.patch. Don't fail when creating
+      sieve mail filter scripts via fusiondirectory's sieve plugin.
+      (Closes: #780214).
+
+ -- Mike Gabriel <sunweaver@debian.org>  Wed, 11 Mar 2015 11:35:42 +0100
+
+fusiondirectory (1.0.8.2-3) unstable; urgency=medium
+
+  * debian/fusiondirectory.postrm:
+    + Fix handling Apache2's config file. Don't manipulate gosa.conf, but
+      fusiondirectory.conf on bin:package purgal. (Closes: #775336).
+  * debian/fusiondirectory.{dirs,prerm,postrm}:
+    + Perform spooling and cache data cleanup on every package removal in
+      .prerm, not via .postrm only when purging. This let's fusiondirectory
+      src:package pass the piuparts install/purgal test. (Closes: #767823).
+
+ -- Mike Gabriel <sunweaver@debian.org>  Wed, 14 Jan 2015 15:03:36 +0100
+
+fusiondirectory (1.0.8.2-2) unstable; urgency=medium
+
+  [ Benoit Mortier ]
+  * debian/control:
+    + Add D (fusiondirectory): libarchive-extract-perl. Fixes current piuparts
+      failure.
+  * debian/patches:
+    + Add 0001_fdSaslRealm-and-fdSaslExop-are-not-booleans.patch.
+      Provide fix for upstream bug: #3432.
+
+ -- Mike Gabriel <sunweaver@debian.org>  Sat, 25 Oct 2014 18:53:35 +0200
+
+fusiondirectory (1.0.8.2-1) unstable; urgency=low
+
+  [ Benoit Mortier ]
+  * Initial release. (Closes: #623053).
+
+ -- Mike Gabriel <sunweaver@debian.org>  Tue, 14 Oct 2014 05:33:03 +0200

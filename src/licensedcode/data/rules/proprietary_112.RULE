@@ -1,4 +1,11 @@
- This software is licensed under a modified version of the Apache License, Version 2.0 http://sql-workbench.eu/manual/license.html that restricts the use of the software for certain organizations.
+---
+license_expression: proprietary-license
+is_license_text: yes
+ignorable_urls:
+    - http://sql-workbench.eu/manual/license.html
+---
+
+This software is licensed under a modified version of the Apache License, Version 2.0 http://sql-workbench.eu/manual/license.html that restricts the use of the software for certain organizations.
 
 TERMS AND CONDITIONS FOR USE, REPRODUCTION, AND DISTRIBUTION
 2.1. Definitions

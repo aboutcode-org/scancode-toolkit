@@ -1,2 +1,10 @@
+---
+license_expression: apache-2.0
+is_license_notice: yes
+relevance: 100
+referenced_filenames:
+    - LICENSE
+---
+
 Unless otherwise noted, the  source files are distributed
 under the Apache Version 2.0 license found in the LICENSE file.

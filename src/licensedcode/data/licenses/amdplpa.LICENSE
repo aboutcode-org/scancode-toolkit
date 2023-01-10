@@ -1,3 +1,13 @@
+---
+key: amdplpa
+short_name: AMD PLPA License
+name: AMD PLPA License
+category: Permissive
+owner: Advanced Micro Devices
+homepage_url: https://fedoraproject.org/wiki/Licensing/AMD_plpa_map_License
+spdx_license_key: AMDPLPA
+---
+
 Redistribution and use in any form of this material and any product thereof including
 software in source or binary forms, along with any related documentation, with or
 without modification ("this material"), is permitted provided that the following

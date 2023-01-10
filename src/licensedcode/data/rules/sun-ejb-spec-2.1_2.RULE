@@ -1,3 +1,9 @@
+---
+license_expression: sun-ejb-spec-2.1
+is_license_text: yes
+minimum_coverage: 60
+---
+
 NOTICE; LIMITED LICENSE GRANTS 
 
 Sun Microsystems, Inc. ("Sun") hereby grants you a fully-paid, non-exclusive, 
@@ -109,4 +115,4 @@ to incorporate, disclose, and use without limitation the Feedback for any
 purpose related to the Specification and future versions, implementations, and 
 test suites thereof. 
 
-(LFI#136187/Form ID#011801) 
+(LFI#136187/Form ID#011801)

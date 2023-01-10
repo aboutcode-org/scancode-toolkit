@@ -1,1 +1,9 @@
+---
+license_expression: isc
+is_license_notice: yes
+relevance: 100
+referenced_filenames:
+    - LICENSE.txt
+---
+
 This software is licensed under the ISC License, the text of which can be found in [LICENSE.txt](LICENSE.txt).

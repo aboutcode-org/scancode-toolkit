@@ -1,3 +1,12 @@
+---
+key: whistle
+short_name: Whistle Communications License
+name: Whistle Communications License
+category: Permissive
+owner: FreeBSD
+spdx_license_key: LicenseRef-scancode-whistle
+---
+
 Subject to the following obligations and disclaimer of warranty, use and
 redistribution of this software, in source or object code forms, with or
 without modifications are expressly permitted by Whistle Communications;

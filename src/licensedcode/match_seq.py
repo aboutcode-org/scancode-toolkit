@@ -87,7 +87,6 @@ def match_sequence(idx, rule, query_run, high_postings, start_offset=0,
         if TRACE2:
             logger_debug('match_seq:running block_matches:', 'a_start:', qstart, 'a_end', qfinish + 1)
 
-
         block_matches = match_blocks(
             a=qtokens, b=itokens, a_start=qstart, a_end=qfinish + 1,
             b2j=high_postings, len_good=len_legalese,

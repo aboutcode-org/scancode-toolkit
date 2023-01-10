@@ -1,1 +1,9 @@
+---
+license_expression: mit
+is_license_reference: yes
+relevance: 90
+ignorable_urls:
+    - http://kentico.github.io/licenses/kentico-mvc.txt
+---
+
 http://kentico.github.io/licenses/kentico-mvc.txt

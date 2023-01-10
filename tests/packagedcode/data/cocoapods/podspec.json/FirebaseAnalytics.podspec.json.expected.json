@@ -30,8 +30,34 @@
     "code_view_url": null,
     "vcs_url": null,
     "copyright": null,
-    "license_expression": "unknown",
-    "declared_license": "Copyright 2021 Google Copyright",
+    "declared_license_expression": "unknown",
+    "declared_license_expression_spdx": "LicenseRef-scancode-unknown",
+    "license_detections": [
+      {
+        "license_expression": "unknown",
+        "detection_log": [
+          "undetected-license"
+        ],
+        "matches": [
+          {
+            "score": 100.0,
+            "start_line": 1,
+            "end_line": 1,
+            "matched_length": 5,
+            "match_coverage": 100.0,
+            "matcher": "5-undetected",
+            "license_expression": "unknown",
+            "rule_identifier": "package-manifest-unknown-d2754fbb513aa8b758a4d140049dd6bef0aedd05",
+            "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/package-manifest-unknown-d2754fbb513aa8b758a4d140049dd6bef0aedd05",
+            "matched_text": "license Copyright 2021 Google Copyright"
+          }
+        ]
+      }
+    ],
+    "other_license_expression": null,
+    "other_license_expression_spdx": null,
+    "other_license_detections": [],
+    "extracted_license_statement": "Copyright 2021 Google Copyright",
     "notice_text": null,
     "source_packages": [],
     "file_references": [],

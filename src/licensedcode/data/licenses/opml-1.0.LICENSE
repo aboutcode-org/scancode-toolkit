@@ -1,3 +1,13 @@
+---
+key: opml-1.0
+short_name: OPML 1.0
+name: OPML Specification License 1.0
+category: Permissive
+owner: OPML
+homepage_url: http://dev.opml.org/spec1.html
+spdx_license_key: LicenseRef-scancode-opml-1.0
+---
+
 This document and translations of it may be copied and furnished to others, and derivative works that comment on or otherwise explain it or assist in its implementation may be prepared, copied, published and distributed, in whole or in part, without restriction of any kind, provided that the above copyright notice and these paragraphs are included on all such copies and derivative works.
 
 This document may not be modified in any way, such as by removing the copyright notice or references to UserLand or other organizations. Further, while these copyright restrictions apply to the written OPML specification, no claim of ownership is made by UserLand to the format it describes. Any party may, for commercial or non-commercial purposes, implement this protocol without royalty or license fee to UserLand. The limited permissions granted herein are perpetual and will not be revoked by UserLand or its successors or assigns.

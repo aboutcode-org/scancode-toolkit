@@ -32,13 +32,54 @@
     "code_view_url": null,
     "vcs_url": "git://github.com/jaredhanson/utils-merge.git",
     "copyright": null,
-    "license_expression": "mit",
-    "declared_license": [
+    "declared_license_expression": "mit",
+    "declared_license_expression_spdx": "MIT",
+    "license_detections": [
       {
-        "type": "MIT",
-        "url": "http://www.opensource.org/licenses/MIT"
+        "license_expression": "mit",
+        "detection_log": [
+          "not-combined"
+        ],
+        "matches": [
+          {
+            "score": 100.0,
+            "start_line": 1,
+            "end_line": 1,
+            "matched_length": 1,
+            "match_coverage": 100.0,
+            "matcher": "1-spdx-id",
+            "license_expression": "mit",
+            "rule_identifier": "spdx-license-identifier-mit-5da48780aba670b0860c46d899ed42a0f243ff06",
+            "rule_url": null,
+            "matched_text": "MIT"
+          }
+        ]
+      },
+      {
+        "license_expression": "mit",
+        "detection_log": [
+          "not-combined"
+        ],
+        "matches": [
+          {
+            "score": 100.0,
+            "start_line": 1,
+            "end_line": 1,
+            "matched_length": 6,
+            "match_coverage": 100.0,
+            "matcher": "1-hash",
+            "license_expression": "mit",
+            "rule_identifier": "mit_13.RULE",
+            "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_13.RULE",
+            "matched_text": "http://www.opensource.org/licenses/MIT"
+          }
+        ]
       }
     ],
+    "other_license_expression": null,
+    "other_license_expression_spdx": null,
+    "other_license_detections": [],
+    "extracted_license_statement": "[{'type': 'MIT', 'url': 'http://www.opensource.org/licenses/MIT'}]",
     "notice_text": null,
     "source_packages": [],
     "file_references": [],

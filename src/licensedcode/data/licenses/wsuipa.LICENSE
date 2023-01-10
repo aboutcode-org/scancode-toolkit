@@ -1,3 +1,16 @@
+---
+key: wsuipa
+short_name: Wsuipa License
+name: Wsuipa License
+category: Permissive
+owner: Washington State University
+homepage_url: https://fedoraproject.org/wiki/Licensing/Wsuipa
+notes: |
+    Per Fedora, this license was found on the "wsuipa" component of texlive
+    2010. It is Free, but GPL-incompatible.
+spdx_license_key: Wsuipa
+---
+
 This file was added by Clea F. Rees on 2008/11/30 with the permission of Dean
 Guenther and pointers to this file were added to all source files.
 

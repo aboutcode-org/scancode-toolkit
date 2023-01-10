@@ -1,3 +1,14 @@
+---
+key: ttf2pt1
+is_deprecated: yes
+short_name: TTF2PT1 Project License
+name: TTF2PT1 Project License
+category: Permissive
+owner: Unspecified
+notes: composite
+minimum_coverage: 90
+---
+
 TTF2PT1 Project License
 
 The following copyright notice applies to all the files provided in this distribution unless explicitly noted otherwise (the most notable exception being t1asm.c).

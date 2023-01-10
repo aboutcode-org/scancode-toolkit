@@ -1,3 +1,12 @@
+---
+license_expression: unicode
+is_license_notice: yes
+minimum_coverage: 80
+ignorable_urls:
+    - http://www.unicode.org/cldr
+    - http://www.unicode.org/copyright.html
+---
+
 The contents of this directory are based on the Common Locale Data Repository (CLDR) project
 located at http://www.unicode.org/cldr and are covered by Unicode Org's terms of use:
 http://www.unicode.org/copyright.html

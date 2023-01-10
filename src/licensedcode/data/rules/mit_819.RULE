@@ -1,3 +1,10 @@
+---
+license_expression: mit
+is_license_text: yes
+relevance: 100
+notes: An hyphenated version of the text Seen in https://github.com/boto/boto/blob/91ba037e54ef521c379263b0ac769c66182527d7/boto/datapipeline/exceptions.py
+---
+
 Permission is hereby granted, free of charge, to any person obtaining a
 copy of this software and associated documentation files (the
 "Software"), to deal in the Software without restriction, including

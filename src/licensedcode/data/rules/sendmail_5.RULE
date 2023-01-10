@@ -1,3 +1,19 @@
+---
+license_expression: sendmail
+is_license_text: yes
+relevance: 100
+ignorable_copyrights:
+    - Copyright (c) 1988, 1993 The Regents of the University of California
+    - Copyright (c) 1998 Sendmail, Inc.
+ignorable_holders:
+    - Sendmail, Inc.
+    - The Regents of the University of California
+ignorable_authors:
+    - the University of California, Berkeley and its contributors
+ignorable_emails:
+    - license@sendmail.com
+---
+
 SENDMAIL LICENSE
 
 The following license terms and conditions apply, unless a different

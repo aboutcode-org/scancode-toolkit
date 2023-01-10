@@ -1,3 +1,19 @@
+---
+key: proprietary-license
+short_name: Proprietary License
+name: Proprietary License
+category: Commercial
+owner: Unspecified
+notes: replaces the proprietary key npm before 3.1 recommended this "If you are using a license
+    that hasn't been assigned an SPDX identifier, or if you are using a custom license, use
+    the following valid SPDX expression "LicenseRef-LICENSE"
+is_generic: yes
+spdx_license_key: LicenseRef-scancode-proprietary-license
+other_spdx_license_keys:
+    - LicenseRef-LICENSE
+    - LicenseRef-LICENSE.md
+---
+
 This component is normally licensed under a proprietary license agreement with 
 a supplier that has terms and conditions that restrict the use of the code, 
 but may not require payment to the supplier.

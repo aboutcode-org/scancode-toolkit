@@ -1,3 +1,11 @@
+---
+license_expression: isc
+is_license_notice: yes
+relevance: 100
+referenced_filenames:
+    - LICENSE.txt
+---
+
 Licensed under the ISC License (the "License"). You may not use this file
     except in compliance with the License. A copy of the License is in the
     LICENSE.txt file accompanying this file.

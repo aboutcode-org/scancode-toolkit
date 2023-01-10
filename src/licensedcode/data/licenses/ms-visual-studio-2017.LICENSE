@@ -1,3 +1,26 @@
+---
+key: ms-visual-studio-2017
+short_name: MS Visual Studio 2017
+name: Microsoft Visual Studio 2017
+category: Commercial
+owner: Microsoft
+homepage_url: https://visualstudio.microsoft.com/license-terms/mlt687465/
+spdx_license_key: LicenseRef-scancode-ms-visual-studio-2017
+text_urls:
+    - See https://visualstudio.microsoft.com/wp-content/uploads/2018/03/VS_2017_ENT_PRO_TRIAL_RTW_ENU_Eula.1033.docx
+    - https://visualstudio.microsoft.com/wp-content/uploads/2018/03/VS_2017_ENT_PRO_TRIAL_RTW_ENU_Eula.1033.docx
+faq_url: https://visualstudio.microsoft.com/wp-content/uploads/2017/11/Visual-Studio-2018-Licensing-Whitepaper-November-2017.pdf
+ignorable_urls:
+    - http://go.microsoft.com/?linkid=9840733
+    - http://www.howtotell.com/
+    - http://www.microsoft.com/exporting
+    - http://www.microsoft.com/info/nareturns.htm
+    - http://www.microsoft.com/worldwide
+    - https://go.microsoft.com/fwlink/?LinkID=824704
+    - https://go.microsoft.com/fwlink/?linkid=823097
+    - https://support.microsoft.com/
+---
+
 MICROSOFT SOFTWARE LICENSE TERMS
 
 MICROSOFT VISUAL STUDIO ENTERPRISE 2017, VISUAL STUDIO PROFESSIONAL 2017, VISUAL STUDIO TEST PROFESSIONAL 2017 AND TRIAL EDITION

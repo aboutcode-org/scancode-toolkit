@@ -1,3 +1,12 @@
+---
+license_expression: lgpl-2.1
+is_license_notice: yes
+minimum_coverage: 100
+notes: http://creativecommons.org/licenses/LGPL/2.1/
+ignorable_urls:
+    - http://creativecommons.org/licenses/LGPL/2.1/
+---
+
 Creative Commons License
 http://creativecommons.org/licenses/LGPL/2.1/
 CC-GNU LGPL http://creativecommons.org/images/public/cc-LGPL-a.png
@@ -5,4 +14,4 @@ CC-GNU LGPL http://creativecommons.org/images/public/cc-LGPL-a.png
 This software is licensed under the 
 "http://creativecommons.org/licenses/LGPL/2.1/"
 CC-GNU LGPL  version 2.1 or later.
-Creative Commons License 
+Creative Commons License

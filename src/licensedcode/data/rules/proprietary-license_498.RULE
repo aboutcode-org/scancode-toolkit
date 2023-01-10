@@ -1,3 +1,10 @@
+---
+license_expression: proprietary-license
+is_license_text: yes
+relevance: 100
+notes: Seen in https://github.com/cutec-chris/kcontrols/blob/6048b2fc11606ec6b3e2972e444347ebceadecdb/source/kmemodlgparastyle.pas
+---
+
 This code is distributed as a freeware. You are free to use it as part  of your
 application for any purpose including freeware, commercial and  shareware
 applications. The origin of this source code must not be   misrepresented; you

@@ -1,4 +1,9 @@
- * Code adapted from uClibc
+---
+license_expression: lgpl-2.1 AND public-domain
+is_license_notice: yes
+---
+
+* Code adapted from uClibc
  *
  * It is therefore covered by the GNU LESSER GENERAL PUBLIC LICENSE
  * Version 2.1, February 1999

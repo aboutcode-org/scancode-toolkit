@@ -32,8 +32,34 @@
     "code_view_url": null,
     "vcs_url": "git+http://git.alpinelinux.org/aports/commit/?id=afc38b4a14533b4d1c22a11c1b248be0372ec040",
     "copyright": null,
-    "license_expression": "mit",
-    "declared_license": "MIT",
+    "declared_license_expression": "mit",
+    "declared_license_expression_spdx": "MIT",
+    "license_detections": [
+      {
+        "license_expression": "mit",
+        "detection_log": [
+          "not-combined"
+        ],
+        "matches": [
+          {
+            "score": 100.0,
+            "start_line": 1,
+            "end_line": 1,
+            "matched_length": 1,
+            "match_coverage": 100.0,
+            "matcher": "1-spdx-id",
+            "license_expression": "mit",
+            "rule_identifier": "spdx-license-identifier-mit-1b937028f397e2c5fe4eb6a0abd781ab80f9eeff",
+            "rule_url": null,
+            "matched_text": "mit"
+          }
+        ]
+      }
+    ],
+    "other_license_expression": null,
+    "other_license_expression_spdx": null,
+    "other_license_detections": [],
+    "extracted_license_statement": "MIT",
     "notice_text": null,
     "source_packages": [
       "pkg:alpine/musl@1.1.24-r8"
@@ -99,8 +125,34 @@
     "code_view_url": null,
     "vcs_url": "git+http://git.alpinelinux.org/aports/commit/?id=38ef6cebfd8498e03f0636b00c62bdf42fbf5eb2",
     "copyright": null,
-    "license_expression": "gpl-2.0",
-    "declared_license": "GPL-2.0-only",
+    "declared_license_expression": "gpl-2.0",
+    "declared_license_expression_spdx": "GPL-2.0-only",
+    "license_detections": [
+      {
+        "license_expression": "gpl-2.0",
+        "detection_log": [
+          "not-combined"
+        ],
+        "matches": [
+          {
+            "score": 100.0,
+            "start_line": 1,
+            "end_line": 1,
+            "matched_length": 4,
+            "match_coverage": 100.0,
+            "matcher": "1-hash",
+            "license_expression": "gpl-2.0",
+            "rule_identifier": "spdx_license_id_gpl-2.0-only_for_gpl-2.0.RULE",
+            "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/spdx_license_id_gpl-2.0-only_for_gpl-2.0.RULE",
+            "matched_text": "gpl-2.0-only"
+          }
+        ]
+      }
+    ],
+    "other_license_expression": null,
+    "other_license_expression_spdx": null,
+    "other_license_detections": [],
+    "extracted_license_statement": "GPL-2.0-only",
     "notice_text": null,
     "source_packages": [
       "pkg:alpine/busybox@1.31.1-r16"
@@ -211,8 +263,34 @@
     "code_view_url": null,
     "vcs_url": "git+http://git.alpinelinux.org/aports/commit/?id=e1c51734fa96fa4bac92e9f14a474324c67916fc",
     "copyright": null,
-    "license_expression": "gpl-2.0",
-    "declared_license": "GPL-2.0-only",
+    "declared_license_expression": "gpl-2.0",
+    "declared_license_expression_spdx": "GPL-2.0-only",
+    "license_detections": [
+      {
+        "license_expression": "gpl-2.0",
+        "detection_log": [
+          "not-combined"
+        ],
+        "matches": [
+          {
+            "score": 100.0,
+            "start_line": 1,
+            "end_line": 1,
+            "matched_length": 4,
+            "match_coverage": 100.0,
+            "matcher": "1-hash",
+            "license_expression": "gpl-2.0",
+            "rule_identifier": "spdx_license_id_gpl-2.0-only_for_gpl-2.0.RULE",
+            "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/spdx_license_id_gpl-2.0-only_for_gpl-2.0.RULE",
+            "matched_text": "gpl-2.0-only"
+          }
+        ]
+      }
+    ],
+    "other_license_expression": null,
+    "other_license_expression_spdx": null,
+    "other_license_detections": [],
+    "extracted_license_statement": "GPL-2.0-only",
     "notice_text": null,
     "source_packages": [
       "pkg:alpine/alpine-baselayout@3.2.0-r6"
@@ -503,8 +581,34 @@
     "code_view_url": null,
     "vcs_url": "git+http://git.alpinelinux.org/aports/commit/?id=a8372f3ce6e7a3f4cf28524aa729b334eb9d2fd6",
     "copyright": null,
-    "license_expression": "mit",
-    "declared_license": "MIT",
+    "declared_license_expression": "mit",
+    "declared_license_expression_spdx": "MIT",
+    "license_detections": [
+      {
+        "license_expression": "mit",
+        "detection_log": [
+          "not-combined"
+        ],
+        "matches": [
+          {
+            "score": 100.0,
+            "start_line": 1,
+            "end_line": 1,
+            "matched_length": 1,
+            "match_coverage": 100.0,
+            "matcher": "1-spdx-id",
+            "license_expression": "mit",
+            "rule_identifier": "spdx-license-identifier-mit-1b937028f397e2c5fe4eb6a0abd781ab80f9eeff",
+            "rule_url": null,
+            "matched_text": "mit"
+          }
+        ]
+      }
+    ],
+    "other_license_expression": null,
+    "other_license_expression_spdx": null,
+    "other_license_detections": [],
+    "extracted_license_statement": "MIT",
     "notice_text": null,
     "source_packages": [
       "pkg:alpine/alpine-keys@2.2-r0"
@@ -732,8 +836,34 @@
     "code_view_url": null,
     "vcs_url": "git+http://git.alpinelinux.org/aports/commit/?id=8d308c15ed58152196218b079d66720ad606405a",
     "copyright": null,
-    "license_expression": "openssl-ssleay",
-    "declared_license": "OpenSSL",
+    "declared_license_expression": "openssl-ssleay",
+    "declared_license_expression_spdx": "OpenSSL",
+    "license_detections": [
+      {
+        "license_expression": "openssl-ssleay",
+        "detection_log": [
+          "not-combined"
+        ],
+        "matches": [
+          {
+            "score": 100.0,
+            "start_line": 1,
+            "end_line": 1,
+            "matched_length": 1,
+            "match_coverage": 100.0,
+            "matcher": "1-spdx-id",
+            "license_expression": "openssl-ssleay",
+            "rule_identifier": "spdx-license-identifier-openssl-ssleay-b5dd48b21e3399670d584d4ade9a9791a24c58cd",
+            "rule_url": null,
+            "matched_text": "openssl"
+          }
+        ]
+      }
+    ],
+    "other_license_expression": null,
+    "other_license_expression_spdx": null,
+    "other_license_detections": [],
+    "extracted_license_statement": "OpenSSL",
     "notice_text": null,
     "source_packages": [
       "pkg:alpine/openssl@1.1.1g-r0"
@@ -889,8 +1019,34 @@
     "code_view_url": null,
     "vcs_url": "git+http://git.alpinelinux.org/aports/commit/?id=8d308c15ed58152196218b079d66720ad606405a",
     "copyright": null,
-    "license_expression": "openssl-ssleay",
-    "declared_license": "OpenSSL",
+    "declared_license_expression": "openssl-ssleay",
+    "declared_license_expression_spdx": "OpenSSL",
+    "license_detections": [
+      {
+        "license_expression": "openssl-ssleay",
+        "detection_log": [
+          "not-combined"
+        ],
+        "matches": [
+          {
+            "score": 100.0,
+            "start_line": 1,
+            "end_line": 1,
+            "matched_length": 1,
+            "match_coverage": 100.0,
+            "matcher": "1-spdx-id",
+            "license_expression": "openssl-ssleay",
+            "rule_identifier": "spdx-license-identifier-openssl-ssleay-b5dd48b21e3399670d584d4ade9a9791a24c58cd",
+            "rule_url": null,
+            "matched_text": "openssl"
+          }
+        ]
+      }
+    ],
+    "other_license_expression": null,
+    "other_license_expression_spdx": null,
+    "other_license_detections": [],
+    "extracted_license_statement": "OpenSSL",
     "notice_text": null,
     "source_packages": [
       "pkg:alpine/openssl@1.1.1g-r0"
@@ -956,8 +1112,34 @@
     "code_view_url": null,
     "vcs_url": "git+http://git.alpinelinux.org/aports/commit/?id=7363758e1d81ca25dace4597c1bcf0c92119159c",
     "copyright": null,
-    "license_expression": "mpl-2.0 AND gpl-2.0-plus",
-    "declared_license": "MPL-2.0 GPL-2.0-or-later",
+    "declared_license_expression": "mpl-2.0 AND gpl-2.0-plus",
+    "declared_license_expression_spdx": "MPL-2.0 AND GPL-2.0-or-later",
+    "license_detections": [
+      {
+        "license_expression": "mpl-2.0 AND gpl-2.0-plus",
+        "detection_log": [
+          "not-combined"
+        ],
+        "matches": [
+          {
+            "score": 100.0,
+            "start_line": 1,
+            "end_line": 1,
+            "matched_length": 9,
+            "match_coverage": 100.0,
+            "matcher": "1-spdx-id",
+            "license_expression": "mpl-2.0 AND gpl-2.0-plus",
+            "rule_identifier": "spdx-license-identifier-mpl-2.0 AND gpl-2.0-plus-ebba41d440d51e8500958cb8f2bc7302a0b7b0c5",
+            "rule_url": null,
+            "matched_text": "mpl-2.0 AND gpl-2.0-or-later"
+          }
+        ]
+      }
+    ],
+    "other_license_expression": null,
+    "other_license_expression_spdx": null,
+    "other_license_detections": [],
+    "extracted_license_statement": "MPL-2.0 GPL-2.0-or-later",
     "notice_text": null,
     "source_packages": [
       "pkg:alpine/ca-certificates@20191127-r2"
@@ -1015,8 +1197,34 @@
     "code_view_url": null,
     "vcs_url": "git+http://git.alpinelinux.org/aports/commit/?id=7ebfa23b6119a24ca9b9375bdc55373259192da1",
     "copyright": null,
-    "license_expression": "isc",
-    "declared_license": "ISC",
+    "declared_license_expression": "isc",
+    "declared_license_expression_spdx": "ISC",
+    "license_detections": [
+      {
+        "license_expression": "isc",
+        "detection_log": [
+          "not-combined"
+        ],
+        "matches": [
+          {
+            "score": 100.0,
+            "start_line": 1,
+            "end_line": 1,
+            "matched_length": 1,
+            "match_coverage": 100.0,
+            "matcher": "1-spdx-id",
+            "license_expression": "isc",
+            "rule_identifier": "spdx-license-identifier-isc-fd23252ced2c9184cff91208f30a380cf105f995",
+            "rule_url": null,
+            "matched_text": "isc"
+          }
+        ]
+      }
+    ],
+    "other_license_expression": null,
+    "other_license_expression_spdx": null,
+    "other_license_detections": [],
+    "extracted_license_statement": "ISC",
     "notice_text": null,
     "source_packages": [
       "pkg:alpine/libtls-standalone@2.9.1-r1"
@@ -1093,8 +1301,34 @@
     "code_view_url": null,
     "vcs_url": "git+http://git.alpinelinux.org/aports/commit/?id=38ef6cebfd8498e03f0636b00c62bdf42fbf5eb2",
     "copyright": null,
-    "license_expression": "gpl-2.0",
-    "declared_license": "GPL-2.0-only",
+    "declared_license_expression": "gpl-2.0",
+    "declared_license_expression_spdx": "GPL-2.0-only",
+    "license_detections": [
+      {
+        "license_expression": "gpl-2.0",
+        "detection_log": [
+          "not-combined"
+        ],
+        "matches": [
+          {
+            "score": 100.0,
+            "start_line": 1,
+            "end_line": 1,
+            "matched_length": 4,
+            "match_coverage": 100.0,
+            "matcher": "1-hash",
+            "license_expression": "gpl-2.0",
+            "rule_identifier": "spdx_license_id_gpl-2.0-only_for_gpl-2.0.RULE",
+            "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/spdx_license_id_gpl-2.0-only_for_gpl-2.0.RULE",
+            "matched_text": "gpl-2.0-only"
+          }
+        ]
+      }
+    ],
+    "other_license_expression": null,
+    "other_license_expression_spdx": null,
+    "other_license_detections": [],
+    "extracted_license_statement": "GPL-2.0-only",
     "notice_text": null,
     "source_packages": [
       "pkg:alpine/busybox@1.31.1-r16"
@@ -1151,8 +1385,34 @@
     "code_view_url": null,
     "vcs_url": "git+http://git.alpinelinux.org/aports/commit/?id=388a4fb3640f8ccbd18e105df3ad741dca4247e1",
     "copyright": null,
-    "license_expression": "zlib",
-    "declared_license": "Zlib",
+    "declared_license_expression": "zlib",
+    "declared_license_expression_spdx": "Zlib",
+    "license_detections": [
+      {
+        "license_expression": "zlib",
+        "detection_log": [
+          "not-combined"
+        ],
+        "matches": [
+          {
+            "score": 100.0,
+            "start_line": 1,
+            "end_line": 1,
+            "matched_length": 1,
+            "match_coverage": 100.0,
+            "matcher": "1-spdx-id",
+            "license_expression": "zlib",
+            "rule_identifier": "spdx-license-identifier-zlib-2023583c09c2e5aa14d564036e304041c0f1ace3",
+            "rule_url": null,
+            "matched_text": "zlib"
+          }
+        ]
+      }
+    ],
+    "other_license_expression": null,
+    "other_license_expression_spdx": null,
+    "other_license_detections": [],
+    "extracted_license_statement": "Zlib",
     "notice_text": null,
     "source_packages": [
       "pkg:alpine/zlib@1.2.11-r3"
@@ -1218,8 +1478,34 @@
     "code_view_url": null,
     "vcs_url": "git+http://git.alpinelinux.org/aports/commit/?id=6fb6e4266ba2a4c451d2c31c55eaf5b2d1642f8b",
     "copyright": null,
-    "license_expression": "gpl-2.0",
-    "declared_license": "GPL-2.0-only",
+    "declared_license_expression": "gpl-2.0",
+    "declared_license_expression_spdx": "GPL-2.0-only",
+    "license_detections": [
+      {
+        "license_expression": "gpl-2.0",
+        "detection_log": [
+          "not-combined"
+        ],
+        "matches": [
+          {
+            "score": 100.0,
+            "start_line": 1,
+            "end_line": 1,
+            "matched_length": 4,
+            "match_coverage": 100.0,
+            "matcher": "1-hash",
+            "license_expression": "gpl-2.0",
+            "rule_identifier": "spdx_license_id_gpl-2.0-only_for_gpl-2.0.RULE",
+            "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/spdx_license_id_gpl-2.0-only_for_gpl-2.0.RULE",
+            "matched_text": "gpl-2.0-only"
+          }
+        ]
+      }
+    ],
+    "other_license_expression": null,
+    "other_license_expression_spdx": null,
+    "other_license_detections": [],
+    "extracted_license_statement": "GPL-2.0-only",
     "notice_text": null,
     "source_packages": [
       "pkg:alpine/apk-tools@2.10.5-r1"
@@ -1276,8 +1562,34 @@
     "code_view_url": null,
     "vcs_url": "git+http://git.alpinelinux.org/aports/commit/?id=753fa8d765c7a4edb76f11b1995f84cdcb45bce5",
     "copyright": null,
-    "license_expression": "gpl-2.0",
-    "declared_license": "GPL-2.0-only",
+    "declared_license_expression": "gpl-2.0",
+    "declared_license_expression_spdx": "GPL-2.0-only",
+    "license_detections": [
+      {
+        "license_expression": "gpl-2.0",
+        "detection_log": [
+          "not-combined"
+        ],
+        "matches": [
+          {
+            "score": 100.0,
+            "start_line": 1,
+            "end_line": 1,
+            "matched_length": 4,
+            "match_coverage": 100.0,
+            "matcher": "1-hash",
+            "license_expression": "gpl-2.0",
+            "rule_identifier": "spdx_license_id_gpl-2.0-only_for_gpl-2.0.RULE",
+            "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/spdx_license_id_gpl-2.0-only_for_gpl-2.0.RULE",
+            "matched_text": "gpl-2.0-only"
+          }
+        ]
+      }
+    ],
+    "other_license_expression": null,
+    "other_license_expression_spdx": null,
+    "other_license_detections": [],
+    "extracted_license_statement": "GPL-2.0-only",
     "notice_text": null,
     "source_packages": [
       "pkg:alpine/pax-utils@1.2.6-r0"
@@ -1334,8 +1646,34 @@
     "code_view_url": null,
     "vcs_url": "git+http://git.alpinelinux.org/aports/commit/?id=afc38b4a14533b4d1c22a11c1b248be0372ec040",
     "copyright": null,
-    "license_expression": "mit AND bsd-new AND gpl-2.0-plus",
-    "declared_license": "MIT BSD GPL2+",
+    "declared_license_expression": "mit AND bsd-new AND gpl-2.0-plus",
+    "declared_license_expression_spdx": "MIT AND BSD-3-Clause AND GPL-2.0-or-later",
+    "license_detections": [
+      {
+        "license_expression": "mit AND bsd-new AND gpl-2.0-plus",
+        "detection_log": [
+          "not-combined"
+        ],
+        "matches": [
+          {
+            "score": 100.0,
+            "start_line": 1,
+            "end_line": 1,
+            "matched_length": 11,
+            "match_coverage": 100.0,
+            "matcher": "1-spdx-id",
+            "license_expression": "mit AND bsd-new AND gpl-2.0-plus",
+            "rule_identifier": "spdx-license-identifier-mit AND bsd-new AND gpl-2.0-plus-a42688b31c355df3bef97265e8ca20360250716e",
+            "rule_url": null,
+            "matched_text": "mit AND bsd-3-clause AND gpl-2.0-or-later"
+          }
+        ]
+      }
+    ],
+    "other_license_expression": null,
+    "other_license_expression_spdx": null,
+    "other_license_detections": [],
+    "extracted_license_statement": "MIT BSD GPL2+",
     "notice_text": null,
     "source_packages": [
       "pkg:alpine/musl@1.1.24-r8"
@@ -1439,8 +1777,34 @@
     "code_view_url": null,
     "vcs_url": "git+http://git.alpinelinux.org/aports/commit/?id=60424133be2e79bbfeff3d58147a22886f817ce2",
     "copyright": null,
-    "license_expression": "bsd-simplified AND bsd-new",
-    "declared_license": "BSD-2-Clause AND BSD-3-Clause",
+    "declared_license_expression": "bsd-simplified AND bsd-new",
+    "declared_license_expression_spdx": "BSD-2-Clause AND BSD-3-Clause",
+    "license_detections": [
+      {
+        "license_expression": "bsd-simplified AND bsd-new",
+        "detection_log": [
+          "not-combined"
+        ],
+        "matches": [
+          {
+            "score": 100.0,
+            "start_line": 1,
+            "end_line": 1,
+            "matched_length": 7,
+            "match_coverage": 100.0,
+            "matcher": "1-spdx-id",
+            "license_expression": "bsd-simplified AND bsd-new",
+            "rule_identifier": "spdx-license-identifier-bsd-simplified AND bsd-new-dc707a661bb1da34ff773b7e9955e0235b3b3f74",
+            "rule_url": null,
+            "matched_text": "bsd-2-clause AND bsd-3-clause"
+          }
+        ]
+      }
+    ],
+    "other_license_expression": null,
+    "other_license_expression_spdx": null,
+    "other_license_detections": [],
+    "extracted_license_statement": "BSD-2-Clause AND BSD-3-Clause",
     "notice_text": null,
     "source_packages": [
       "pkg:alpine/libc-dev@0.7.2-r3"

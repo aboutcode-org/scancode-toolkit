@@ -1,6 +1,0 @@
-license_expression: gpl-1.0-plus
-is_license_notice: yes
-referenced_filenames:
-    - COPYING
-notes: One of the many Linux GPL declaration. It should be treated as GPL-2.0 but this cannot
-    be done short of knowning what is the license in COPYING

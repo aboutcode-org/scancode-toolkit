@@ -1,3 +1,9 @@
+---
+license_expression: proprietary-license
+is_license_text: yes
+notes: Based on the MIT with material and problematic changes. https://github.com/daneedk/com.uc.heimdall/blob/df735884f7ead47b9ef99525d62fbe23f0082c69/LICENSE
+---
+
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to use
 the Software on their Homey's. Excluding without limitation the rights

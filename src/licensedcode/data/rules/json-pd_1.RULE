@@ -1,3 +1,11 @@
+---
+license_expression: json-pd
+is_license_text: yes
+relevance: 100
+ignorable_urls:
+    - http://www.json.org/js.html
+---
+
 Public Domain.
 
 NO WARRANTY EXPRESSED OR IMPLIED. USE AT YOUR OWN RISK.

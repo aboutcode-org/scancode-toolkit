@@ -1,6 +1,0 @@
-license_expression: other-permissive
-is_license_text: yes
-relevance: 100
-notes: Per Fedora an MIT-like license aka. PetSC variant
-ignorable_emails:
-    - petsc-maint@mcs.anl.gov

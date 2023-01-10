@@ -4,7 +4,7 @@
   "name": "org.glassfish.hk2.utils",
   "version": "2.4.0.b34",
   "description": "HK2 Implementation Utilities",
-  "declared_license": "https://glassfish.java.net/nonav/public/CDDL+GPL_1_1.html",
+  "extracted_license_statement": "https://glassfish.java.net/nonav/public/CDDL+GPL_1_1.html",
   "copyright": null,
   "homepage_url": null,
   "documentation_url": "http://www.oracle.com",

@@ -1,5 +1,11 @@
+---
+license_expression: lgpl-2.1 WITH openssl-exception-lgpl-2.0-plus
+is_license_notice: yes
+relevance: 95
+notes: this is not exactly the same exacption text but highky similar purpose
+---
 
- is licensed under the GNU LGPL (see below) with this exception:
+is licensed under the GNU LGPL (see below) with this exception:
 
 As the copyright holder of  grants the following
 license exception:

@@ -1,3 +1,12 @@
+---
+license_expression: gpl-2.0 OR proprietary-license
+is_license_notice: yes
+relevance: 100
+minimum_coverage: 50
+ignorable_urls:
+    - https://www.gnu.org/licenses/old-licenses/gpl-2.0.html
+---
+
 Unless you and Broadcom execute a separate written software license
 agreement governing use of this software, this software is licensed to you
 under the terms of the GNU General Public License version 2, available

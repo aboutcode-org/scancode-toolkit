@@ -1,1 +1,10 @@
+---
+license_expression: lbnl-bsd
+is_license_reference: yes
+is_continuous: yes
+relevance: 100
+minimum_coverage: 100
+notes: Rule based on an SPDX license identifier and name
+---
+
 Lawrence Berkeley National Labs BSD variant license BSD-3-Clause-LBNL

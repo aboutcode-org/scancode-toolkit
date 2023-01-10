@@ -1,4 +1,9 @@
-    This program is free software; you can redistribute it and/or modify it
+---
+license_expression: artistic-perl-1.0 OR gpl-1.0-plus
+is_license_notice: yes
+---
+
+This program is free software; you can redistribute it and/or modify it
     under the same terms as Perl itself.
 
 Perl is distributed under either the Artistic licence or the GPL.

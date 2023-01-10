@@ -1,2 +1,8 @@
+---
+license_expression: artistic-perl-1.0 OR gpl-1.0-plus
+is_license_tag: yes
+relevance: 100
+---
+
 License-Alias: Perl
 License: Artistic | GPL-1+

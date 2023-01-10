@@ -1,3 +1,17 @@
+---
+key: mozilla-gc
+short_name: Mozilla GC License
+name: Mozilla GC License
+category: Permissive
+owner: Mozilla
+notes: stlport-4.5 and mozilla-gc are mostly the same
+spdx_license_key: LicenseRef-scancode-mozilla-gc
+text_urls:
+    - http://www.hboehm.info/gc/license.txt
+other_urls:
+    - http://www.hboehm.info/gc/
+---
+
 THIS MATERIAL IS PROVIDED AS IS, WITH ABSOLUTELY NO WARRANTY EXPRESSED
 OR IMPLIED. ANY USE IS AT YOUR OWN RISK.
 

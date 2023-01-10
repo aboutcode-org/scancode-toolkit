@@ -1,3 +1,9 @@
+---
+license_expression: postgresql
+is_license_notice: yes
+notes: http://www.postgresql.org/about/licence
+---
+
 Permission to use, copy, modify, and distribute this software and its documentation
 for any purpose, without fee, and without a written agreement is hereby granted,
 provided that the above copyright notice and this paragraph and the following two

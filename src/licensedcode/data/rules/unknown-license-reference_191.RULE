@@ -1,1 +1,9 @@
- * Licensed under the terms outlined in the file COPYING.
+---
+license_expression: unknown-license-reference
+is_license_reference: yes
+relevance: 100
+referenced_filenames:
+    - COPYING
+---
+
+* Licensed under the terms outlined in the file COPYING.

@@ -1,4 +1,114 @@
 {
+  "packages": [
+    {
+      "type": "pypi",
+      "namespace": null,
+      "name": "click",
+      "version": "attr: click.__version__",
+      "qualifiers": {},
+      "subpath": null,
+      "primary_language": "Python",
+      "description": null,
+      "release_date": null,
+      "parties": [
+        {
+          "type": "person",
+          "role": "author",
+          "name": "Armin Ronacher",
+          "email": "armin.ronacher@active-4.com",
+          "url": null
+        }
+      ],
+      "keywords": [],
+      "homepage_url": "https://palletsprojects.com/p/click/",
+      "download_url": null,
+      "size": null,
+      "sha1": null,
+      "md5": null,
+      "sha256": null,
+      "sha512": null,
+      "bug_tracking_url": null,
+      "code_view_url": null,
+      "vcs_url": null,
+      "copyright": null,
+      "declared_license_expression": "(bsd-new AND (bsd-new AND bsd-simplified)) AND bsd-new",
+      "declared_license_expression_spdx": "(BSD-3-Clause AND (BSD-3-Clause AND BSD-2-Clause)) AND BSD-3-Clause",
+      "license_detections": [
+        {
+          "license_expression": "bsd-new AND (bsd-new AND bsd-simplified)",
+          "detection_log": [
+            "license-clues",
+            "not-license-clues-as-more-detections-present",
+            "from-package-file"
+          ],
+          "matches": [
+            {
+              "score": 11.36,
+              "start_line": 13,
+              "end_line": 14,
+              "matched_length": 5,
+              "match_coverage": 11.36,
+              "matcher": "3-seq",
+              "license_expression": "bsd-new",
+              "rule_identifier": "bsd-new_537.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_537.RULE",
+              "matched_text": "license = BSD-3-Clause\nlicense_files = LICENSE.rst"
+            },
+            {
+              "score": 13.16,
+              "start_line": 13,
+              "end_line": 15,
+              "matched_length": 5,
+              "match_coverage": 13.16,
+              "matcher": "3-seq",
+              "license_expression": "bsd-new AND bsd-simplified",
+              "rule_identifier": "bsd-new_and_bsd-simplified_1.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_and_bsd-simplified_1.RULE",
+              "matched_text": "license = BSD-3-Clause\nlicense_files = LICENSE.rst\nauthor = Armin Ronacher"
+            }
+          ]
+        },
+        {
+          "license_expression": "bsd-new",
+          "detection_log": [
+            "from-package-file"
+          ],
+          "matches": [
+            {
+              "score": 99.0,
+              "start_line": 25,
+              "end_line": 25,
+              "matched_length": 5,
+              "match_coverage": 100.0,
+              "matcher": "2-aho",
+              "license_expression": "bsd-new",
+              "rule_identifier": "pypi_bsd_license.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/pypi_bsd_license.RULE",
+              "matched_text": "    License :: OSI Approved :: BSD License"
+            }
+          ]
+        }
+      ],
+      "other_license_expression": null,
+      "other_license_expression_spdx": null,
+      "other_license_detections": [],
+      "extracted_license_statement": null,
+      "notice_text": null,
+      "source_packages": [],
+      "extra_data": {},
+      "repository_homepage_url": null,
+      "repository_download_url": null,
+      "api_data_url": null,
+      "package_uid": "pkg:pypi/click@attr:%20click.__version__?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_paths": [
+        "setup.cfg"
+      ],
+      "datasource_ids": [
+        "pypi_setup_cfg"
+      ],
+      "purl": "pkg:pypi/click@attr:%20click.__version__"
+    }
+  ],
   "dependencies": [
     {
       "purl": "pkg:generic/python",
@@ -43,54 +153,171 @@
       "datasource_id": "pypi_setup_py"
     }
   ],
-  "packages": [
+  "license_references": [
     {
-      "type": "pypi",
-      "namespace": null,
-      "name": "click",
-      "version": "attr: click.__version__",
-      "qualifiers": {},
-      "subpath": null,
-      "primary_language": "Python",
-      "description": null,
-      "release_date": null,
-      "parties": [
-        {
-          "type": "person",
-          "role": "author",
-          "name": "Armin Ronacher",
-          "email": "armin.ronacher@active-4.com",
-          "url": null
-        }
+      "key": "bsd-new",
+      "language": "en",
+      "short_name": "BSD-3-Clause",
+      "name": "BSD-3-Clause",
+      "category": "Permissive",
+      "owner": "Regents of the University of California",
+      "homepage_url": "http://www.opensource.org/licenses/BSD-3-Clause",
+      "notes": "Per SPDX.org, this license is OSI certified.",
+      "is_builtin": true,
+      "is_exception": false,
+      "is_unknown": false,
+      "is_generic": false,
+      "spdx_license_key": "BSD-3-Clause",
+      "other_spdx_license_keys": [
+        "LicenseRef-scancode-libzip"
       ],
-      "keywords": [],
-      "homepage_url": "https://palletsprojects.com/p/click/",
-      "download_url": null,
-      "size": null,
-      "sha1": null,
-      "md5": null,
-      "sha256": null,
-      "sha512": null,
-      "bug_tracking_url": null,
-      "code_view_url": null,
-      "vcs_url": null,
-      "copyright": null,
-      "license_expression": null,
-      "declared_license": null,
-      "notice_text": null,
-      "source_packages": [],
-      "extra_data": {},
-      "repository_homepage_url": null,
-      "repository_download_url": null,
-      "api_data_url": null,
-      "package_uid": "pkg:pypi/click@attr:%20click.__version__?uuid=fixed-uid-done-for-testing-5642512d1758",
-      "datafile_paths": [
-        "setup.cfg"
+      "osi_license_key": "BSD-3-Clause",
+      "text_urls": [
+        "http://www.opensource.org/licenses/BSD-3-Clause"
       ],
-      "datasource_ids": [
-        "pypi_setup_cfg"
+      "osi_url": "http://www.opensource.org/licenses/BSD-3-Clause",
+      "faq_url": null,
+      "other_urls": [
+        "http://framework.zend.com/license/new-bsd",
+        "https://opensource.org/licenses/BSD-3-Clause",
+        "https://www.eclipse.org/org/documents/edl-v10.php"
       ],
-      "purl": "pkg:pypi/click@attr:%20click.__version__"
+      "key_aliases": [],
+      "minimum_coverage": 0,
+      "standard_notice": null,
+      "ignorable_copyrights": [],
+      "ignorable_holders": [],
+      "ignorable_authors": [],
+      "ignorable_urls": [],
+      "ignorable_emails": [],
+      "text": "Redistribution and use in source and binary forms, with or without modification,\nare permitted provided that the following conditions are met:\n\nRedistributions of source code must retain the above copyright notice, this list\nof conditions and the following disclaimer.\n\nRedistributions in binary form must reproduce the above copyright notice, this\nlist of conditions and the following disclaimer in the documentation and/or\nother materials provided with the distribution.\n\nNeither the name of the ORGANIZATION nor the names of its contributors may be\nused to endorse or promote products derived from this software without specific\nprior written permission.\n\nTHIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS\n\"AS IS\" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO,\nTHE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE\nARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS\nBE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR\nCONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE\nGOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)\nHOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT\nLIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF\nTHE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.",
+      "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-new.LICENSE",
+      "licensedb_url": "https://scancode-licensedb.aboutcode.org/bsd-new",
+      "spdx_url": "https://spdx.org/licenses/BSD-3-Clause"
+    },
+    {
+      "key": "bsd-simplified",
+      "language": "en",
+      "short_name": "BSD-2-Clause",
+      "name": "BSD-2-Clause",
+      "category": "Permissive",
+      "owner": "Regents of the University of California",
+      "homepage_url": "http://www.opensource.org/licenses/BSD-2-Clause",
+      "notes": "Per SPDX.org, this license is OSI certified.",
+      "is_builtin": true,
+      "is_exception": false,
+      "is_unknown": false,
+      "is_generic": false,
+      "spdx_license_key": "BSD-2-Clause",
+      "other_spdx_license_keys": [
+        "BSD-2-Clause-NetBSD",
+        "BSD-2"
+      ],
+      "osi_license_key": null,
+      "text_urls": [
+        "http://opensource.org/licenses/bsd-license.php"
+      ],
+      "osi_url": "http://opensource.org/licenses/bsd-license.php",
+      "faq_url": null,
+      "other_urls": [
+        "http://spdx.org/licenses/BSD-2-Clause",
+        "http://www.freebsd.org/copyright/copyright.html",
+        "https://opensource.org/licenses/BSD-2-Clause"
+      ],
+      "key_aliases": [],
+      "minimum_coverage": 0,
+      "standard_notice": null,
+      "ignorable_copyrights": [],
+      "ignorable_holders": [],
+      "ignorable_authors": [],
+      "ignorable_urls": [],
+      "ignorable_emails": [],
+      "text": "Redistribution and use in source and binary forms, with or without modification,\nare permitted provided that the following conditions are met:\n\nRedistributions of source code must retain the above copyright notice, this list\nof conditions and the following disclaimer.\n\nRedistributions in binary form must reproduce the above copyright notice, this\nlist of conditions and the following disclaimer in the documentation and/or\nother materials provided with the distribution.\n\nTHIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS \"AS IS\" AND\nANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED\nWARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE\nDISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR\nANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES\n(INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;\nLOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON\nANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT\n(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS\nSOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.",
+      "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-simplified.LICENSE",
+      "licensedb_url": "https://scancode-licensedb.aboutcode.org/bsd-simplified",
+      "spdx_url": "https://spdx.org/licenses/BSD-2-Clause"
+    }
+  ],
+  "license_rule_references": [
+    {
+      "license_expression": "bsd-new",
+      "identifier": "bsd-new_537.RULE",
+      "language": "en",
+      "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_537.RULE",
+      "is_license_text": false,
+      "is_license_notice": true,
+      "is_license_reference": false,
+      "is_license_tag": false,
+      "is_license_intro": false,
+      "is_continuous": false,
+      "is_builtin": true,
+      "is_from_license": false,
+      "is_synthetic": false,
+      "length": 44,
+      "relevance": 100,
+      "minimum_coverage": 0,
+      "referenced_filenames": [],
+      "notes": null,
+      "ignorable_copyrights": [],
+      "ignorable_holders": [],
+      "ignorable_authors": [],
+      "ignorable_urls": [
+        "http://www.opensource.org/licenses/BSD-3-Clause"
+      ],
+      "ignorable_emails": [],
+      "text": "licensed under The BSD License (3 Clause, also known as\nthe new BSD license).  The license is an OSI approved Open Source\nlicense and is GPL-compatible(1).\n\nThe license text can also be found here:\nhttp://www.opensource.org/licenses/BSD-3-Clause"
+    },
+    {
+      "license_expression": "bsd-new AND bsd-simplified",
+      "identifier": "bsd-new_and_bsd-simplified_1.RULE",
+      "language": "en",
+      "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_and_bsd-simplified_1.RULE",
+      "is_license_text": false,
+      "is_license_notice": true,
+      "is_license_reference": false,
+      "is_license_tag": false,
+      "is_license_intro": false,
+      "is_continuous": false,
+      "is_builtin": true,
+      "is_from_license": false,
+      "is_synthetic": false,
+      "length": 38,
+      "relevance": 100,
+      "minimum_coverage": 0,
+      "referenced_filenames": [],
+      "notes": null,
+      "ignorable_copyrights": [],
+      "ignorable_holders": [],
+      "ignorable_authors": [],
+      "ignorable_urls": [],
+      "ignorable_emails": [],
+      "text": "The  source code is derived from `FreeBSD`_ and `SCC`_. FreeBSD uses\nvarious BSD licenses, including BSD-3-Clause and BSD-2-Clause. The SCC code\nis used under the BSD-3-Clause license with the author's permission."
+    },
+    {
+      "license_expression": "bsd-new",
+      "identifier": "pypi_bsd_license.RULE",
+      "language": "en",
+      "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/pypi_bsd_license.RULE",
+      "is_license_text": false,
+      "is_license_notice": false,
+      "is_license_reference": false,
+      "is_license_tag": true,
+      "is_license_intro": false,
+      "is_continuous": false,
+      "is_builtin": true,
+      "is_from_license": false,
+      "is_synthetic": false,
+      "length": 5,
+      "relevance": 99,
+      "minimum_coverage": 80,
+      "referenced_filenames": [],
+      "notes": "we picked the bsd-new out of all possible bsd licenses",
+      "ignorable_copyrights": [],
+      "ignorable_holders": [],
+      "ignorable_authors": [],
+      "ignorable_urls": [],
+      "ignorable_emails": [],
+      "text": "License :: OSI Approved :: BSD License"
     }
   ],
   "files": [
@@ -138,8 +365,68 @@
           "code_view_url": null,
           "vcs_url": null,
           "copyright": null,
-          "license_expression": null,
-          "declared_license": null,
+          "declared_license_expression": "(bsd-new AND (bsd-new AND bsd-simplified)) AND bsd-new",
+          "declared_license_expression_spdx": "(BSD-3-Clause AND (BSD-3-Clause AND BSD-2-Clause)) AND BSD-3-Clause",
+          "license_detections": [
+            {
+              "license_expression": "bsd-new AND (bsd-new AND bsd-simplified)",
+              "detection_log": [
+                "license-clues",
+                "not-license-clues-as-more-detections-present",
+                "from-package-file"
+              ],
+              "matches": [
+                {
+                  "score": 11.36,
+                  "start_line": 13,
+                  "end_line": 14,
+                  "matched_length": 5,
+                  "match_coverage": 11.36,
+                  "matcher": "3-seq",
+                  "license_expression": "bsd-new",
+                  "rule_identifier": "bsd-new_537.RULE",
+                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_537.RULE",
+                  "matched_text": "license = BSD-3-Clause\nlicense_files = LICENSE.rst"
+                },
+                {
+                  "score": 13.16,
+                  "start_line": 13,
+                  "end_line": 15,
+                  "matched_length": 5,
+                  "match_coverage": 13.16,
+                  "matcher": "3-seq",
+                  "license_expression": "bsd-new AND bsd-simplified",
+                  "rule_identifier": "bsd-new_and_bsd-simplified_1.RULE",
+                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_and_bsd-simplified_1.RULE",
+                  "matched_text": "license = BSD-3-Clause\nlicense_files = LICENSE.rst\nauthor = Armin Ronacher"
+                }
+              ]
+            },
+            {
+              "license_expression": "bsd-new",
+              "detection_log": [
+                "from-package-file"
+              ],
+              "matches": [
+                {
+                  "score": 99.0,
+                  "start_line": 25,
+                  "end_line": 25,
+                  "matched_length": 5,
+                  "match_coverage": 100.0,
+                  "matcher": "2-aho",
+                  "license_expression": "bsd-new",
+                  "rule_identifier": "pypi_bsd_license.RULE",
+                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/pypi_bsd_license.RULE",
+                  "matched_text": "    License :: OSI Approved :: BSD License"
+                }
+              ]
+            }
+          ],
+          "other_license_expression": null,
+          "other_license_expression_spdx": null,
+          "other_license_detections": [],
+          "extracted_license_statement": null,
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
@@ -195,8 +482,13 @@
           "code_view_url": null,
           "vcs_url": null,
           "copyright": null,
-          "license_expression": null,
-          "declared_license": {},
+          "declared_license_expression": null,
+          "declared_license_expression_spdx": null,
+          "license_detections": [],
+          "other_license_expression": null,
+          "other_license_expression_spdx": null,
+          "other_license_detections": [],
+          "extracted_license_statement": null,
           "notice_text": null,
           "source_packages": [],
           "file_references": [],

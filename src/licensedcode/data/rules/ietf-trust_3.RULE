@@ -1,1 +1,10 @@
+---
+license_expression: ietf-trust
+is_license_reference: yes
+relevance: 100
+minimum_coverage: 100
+ignorable_urls:
+    - http://trustee.ietf.org/policyandprocedures.html
+---
+
 http://trustee.ietf.org/policyandprocedures.html

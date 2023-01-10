@@ -1,3 +1,13 @@
+---
+key: epaperpress
+short_name: ePaperPress License
+name: ePaperPress License
+category: Permissive
+owner: ePaperPress
+homepage_url: https://www.epaperpress.com/lexandyacc/
+spdx_license_key: LicenseRef-scancode-epaperpress
+---
+
 Permission to reproduce portions of this document is given provided the web site
 listed below is referenced. No additional restrictions apply. Source code, when
 part of a software project, may be used freely without reference to the author.

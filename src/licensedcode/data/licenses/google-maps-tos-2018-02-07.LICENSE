@@ -1,3 +1,29 @@
+---
+key: google-maps-tos-2018-02-07
+short_name: Google Maps Platform ToS 2018-02-07
+name: Google Maps Platform Terms of Service 2018-02-07
+category: Proprietary Free
+owner: Google
+homepage_url: https://cloud.google.com/maps-platform/terms
+spdx_license_key: LicenseRef-scancode-google-maps-tos-2018-02-07
+text_urls:
+    - https://developers.google.com/maps/terms-20180207
+minimum_coverage: 90
+ignorable_copyrights:
+    - (c) Google Australia Pty Ltd.
+ignorable_holders:
+    - Google Australia Pty Ltd.
+ignorable_authors:
+    - the U.S. Department of State. Remove
+ignorable_urls:
+    - http://developers.google.com/maps/maps-api-list
+    - http://developers.google.com/maps/terms
+    - http://www.google.com/intl/en/about/company/software-principles.html
+    - http://www.google.com/policies/privacy
+    - https://developers.google.com/products/
+    - https://www.google.com/maps
+---
+
 Google Maps APIs Terms of Service
 
 Thank you for your interest in the Google Maps APIs. The Google Maps APIs are a collection of services that allow you to include maps, geocoding, places, and other content from Google in your web pages or applications.
@@ -331,4 +357,4 @@ It is Google’s policy to respond to notices of alleged copyright infringement 
 
 19.8 Conflicting Languages. If these Terms are translated into any other language, and there is a discrepancy between the English text and the translated text, the English text will govern.
 
-19.9 Governing Law. ALL CLAIMS ARISING OUT OF OR RELATING TO THESE TERMS OR ANY RELATED GOOGLE SERVICES WILL BE GOVERNED BY CALIFORNIA LAW, EXCLUDING CALIFORNIA'S CONFLICT OF LAWS RULES, AND WILL BE LITIGATED EXCLUSIVELY IN THE FEDERAL OR STATE COURTS OF SANTA CLARA COUNTY, CALIFORNIA, USA; THE PARTIES CONSENT TO PERSONAL JURISDICTION IN THOSE COURTS. 
+19.9 Governing Law. ALL CLAIMS ARISING OUT OF OR RELATING TO THESE TERMS OR ANY RELATED GOOGLE SERVICES WILL BE GOVERNED BY CALIFORNIA LAW, EXCLUDING CALIFORNIA'S CONFLICT OF LAWS RULES, AND WILL BE LITIGATED EXCLUSIVELY IN THE FEDERAL OR STATE COURTS OF SANTA CLARA COUNTY, CALIFORNIA, USA; THE PARTIES CONSENT TO PERSONAL JURISDICTION IN THOSE COURTS.

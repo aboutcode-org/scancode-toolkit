@@ -1,4 +1,10 @@
-   This file is available under a BSD-style copyright
+---
+license_expression: bsd-innosys
+is_license_notice: yes
+minimum_coverage: 70
+---
+
+This file is available under a BSD-style copyright
 
    Keyspan USB Async Message Formats for the USA19HS
 
@@ -28,4 +34,4 @@
    CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
    LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
    OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
-   SUCH DAMAGE.    
+   SUCH DAMAGE.

@@ -1,2 +1,12 @@
+---
+license_expression: mit AND proprietary-license
+is_license_notice: yes
+relevance: 100
+minimum_coverage: 90
+referenced_filenames:
+    - MIT-COMPILED-LICENSE.md
+notes: Seen in mattermost, binary only
+---
+
 You are licensed to use compiled versions of produced by , Inc. under an MIT LICENSE
 -    See MIT-COMPILED-LICENSE.md included in compiled versions for details

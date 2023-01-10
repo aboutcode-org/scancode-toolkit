@@ -1,4 +1,11 @@
-  Directory contains files extracted from 
+---
+license_expression: mpl-1.1 OR gpl-2.0 OR lgpl-2.1
+is_license_notice: yes
+minimum_coverage: 90
+notes: Found in a Lizartech DJVU debian notice, rather complex
+---
+
+Directory contains files extracted from 
   the Mozilla project.  These files are available under the 
   {{Mozilla Public License version 1.1 with permission to 
   redistribute under either the GNU General Public License 

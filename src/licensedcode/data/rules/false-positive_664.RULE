@@ -1,1 +1,6 @@
+---
+is_false_positive: yes
+notes: Seen in Samsung drivers
+---
+
 gpios gpl2

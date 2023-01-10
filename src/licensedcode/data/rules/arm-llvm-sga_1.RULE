@@ -1,3 +1,11 @@
+---
+license_expression: arm-llvm-sga
+is_license_text: yes
+relevance: 99
+ignorable_urls:
+    - http://llvm.org/
+---
+
 Software Grant License Agreement ("Agreement")
 
 Except for the license granted herein to you, Intel Corporation ("Intel") reserves

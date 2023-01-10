@@ -1,3 +1,10 @@
+---
+license_expression: mit OR uoi-ncsa
+is_license_notice: yes
+relevance: 100
+minimum_coverage: 90
+---
+
 Emscripten is available under 2 licenses, the MIT license and the
 University of Illinois/NCSA Open Source License.
 

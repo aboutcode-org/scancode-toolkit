@@ -1,9 +1,0 @@
-license_expression: apache-1.1
-is_license_notice: yes
-ignorable_authors:
-    - the LOG4PLSQL project team
-ignorable_urls:
-    - http://log4plsql.sourceforge.net/
-ignorable_emails:
-    - apache@apache.org
-    - log4plsql-all-info@lists.sourceforge.net

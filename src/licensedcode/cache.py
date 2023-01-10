@@ -6,8 +6,10 @@
 # See https://github.com/nexB/scancode-toolkit for support or download.
 # See https://aboutcode.org for more information about nexB OSS projects.
 #
+
 import os
 import pickle
+from shutil import rmtree
 
 from commoncode.fileutils import create_dir
 
@@ -39,7 +41,16 @@ class LicenseCache:
     Represent cachable/pickable LicenseIndex and index-related objects.
     """
 
-    def __init__(self, db=None, index=None, licensing=None, spdx_symbols=None, unknown_spdx_symbol=None):
+    def __init__(
+        self,
+        db=None,
+        index=None,
+        licensing=None,
+        spdx_symbols=None,
+        unknown_spdx_symbol=None,
+        additional_license_directory=None,
+        additional_license_plugins=None,
+    ):
         # mapping of License objects by key
         self.db = db
         # LicenseIndex object
@@ -50,9 +61,13 @@ class LicenseCache:
         self.spdx_symbols = spdx_symbols
         # LicenseSymbol object
         self.unknown_spdx_symbol = unknown_spdx_symbol
+        # Additional licenses from directory and plugins
+        self.additional_license_directory = additional_license_directory
+        self.additional_license_plugins = additional_license_plugins
 
     @staticmethod
     def load_or_build(
+        only_builtin=False,
         licensedcode_cache_dir=licensedcode_cache_dir,
         scancode_cache_dir=scancode_cache_dir,
         force=False,
@@ -61,6 +76,7 @@ class LicenseCache:
         timeout=LICENSE_INDEX_LOCK_TIMEOUT,
         licenses_data_dir=None,
         rules_data_dir=None,
+        additional_directory=None,
     ):
         """
         Load or build and save and return a LicenseCache object.
@@ -69,13 +85,20 @@ class LicenseCache:
         On the side, we load cached or build license db, SPDX symbols and other
         license-related data structures.
 
-        - If the cache exists, it is returned unless corrupted or ``force`` is True.
-        - If the cache does not exist, a new index is built and cached.
+        - If the cache exists, it is returned unless corrupted.
+        - If ``force`` is True, or if the cache does not exist a new index is built
+          and cached.
         - If ``index_all_languages`` is True, include texts in all languages when
-          building the license index. Otherwise, only include the English license \
+          building the license index. Otherwise, only include the English license
           texts and rules (the default)
+        - ``additional_directory`` is an optional additional directory
+          that contain additional licenses and rules in a /licenses and a /rules
+          directories using the same format that we use for licenses and rules.
         """
         idx_cache_dir = os.path.join(licensedcode_cache_dir, LICENSE_INDEX_DIR)
+        if only_builtin:
+            rmtree(idx_cache_dir)
+
         create_dir(idx_cache_dir)
         cache_file = os.path.join(idx_cache_dir, LICENSE_INDEX_FILENAME)
 
@@ -84,6 +107,8 @@ class LicenseCache:
         # bypass build if cache exists
         if has_cache and not force:
             try:
+                # save the list of additional directories included in the cache, or None if the cache does not
+                # include any additional directories
                 return load_cache_file(cache_file)
             except Exception as e:
                 # work around some rare Windows quirks
@@ -94,7 +119,10 @@ class LicenseCache:
 
         from licensedcode.models import licenses_data_dir as ldd
         from licensedcode.models import rules_data_dir as rdd
-        from licensedcode.models import load_licenses
+        from licensedcode.models import load_licenses_from_multiple_dirs
+        from licensedcode.models import get_license_dirs
+        from licensedcode.models import validate_additional_license_data
+        from licensedcode.models import get_paths_to_installed_licenses_and_rules
         from scancode import lockfile
 
         licenses_data_dir = licenses_data_dir or ldd
@@ -109,13 +137,38 @@ class LicenseCache:
                 # Here, the cache is either stale or non-existing: we need to
                 # rebuild all cached data (e.g. mostly the index) and cache it
 
-                licenses_db = load_licenses(licenses_data_dir=licenses_data_dir)
+                additional_directories = []
+                if only_builtin:
+                    additional_directory = None
+                    plugin_directories = []
+                else:
+                    plugin_directories = get_paths_to_installed_licenses_and_rules()
+                    if plugin_directories:
+                        additional_directories.extend(plugin_directories)
 
+                    # include installed licenses
+                    if additional_directory:
+                        # additional_directories is originally a tuple
+                        additional_directories.append(additional_directory)
+
+                additional_license_dirs = get_license_dirs(additional_dirs=additional_directories)
+                validate_additional_license_data(
+                    additional_directories=additional_license_dirs,
+                    scancode_license_dir=licenses_data_dir
+                )
+                licenses_db = load_licenses_from_multiple_dirs(
+                    additional_license_data_dirs=additional_license_dirs,
+                    builtin_license_data_dir=licenses_data_dir,
+                )
+
+                # create a single merged index containing license data from licenses_data_dir
+                # and data from additional directories
                 index = build_index(
                     licenses_db=licenses_db,
                     licenses_data_dir=licenses_data_dir,
                     rules_data_dir=rules_data_dir,
                     index_all_languages=index_all_languages,
+                    additional_directories=plugin_directories,
                 )
 
                 spdx_symbols = build_spdx_symbols(licenses_db=licenses_db)
@@ -128,6 +181,8 @@ class LicenseCache:
                     licensing=licensing,
                     spdx_symbols=spdx_symbols,
                     unknown_spdx_symbol=unknown_spdx_symbol,
+                    additional_license_directory=additional_directory,
+                    additional_license_plugins=plugin_directories,
                 )
 
                 # save the cache as pickle new tree checksum
@@ -146,27 +201,47 @@ def build_index(
     licenses_data_dir=None,
     rules_data_dir=None,
     index_all_languages=False,
+    additional_directories=None,
 ):
     """
     Return an index built from rules and licenses directories
 
     If ``index_all_languages`` is True, include texts and rules in all languages.
     Otherwise, only include the English license texts and rules (the default)
+    If ``additional_directories`` is not None, we will include licenses and rules
+    from these additional directories in the returned index.
     """
     from licensedcode.index import LicenseIndex
-    from licensedcode.models import get_rules
+    from licensedcode.models import get_license_dirs
+    from licensedcode.models import get_rule_dirs
+    from licensedcode.models import get_rules_from_multiple_dirs
     from licensedcode.models import get_all_spdx_key_tokens
     from licensedcode.models import get_license_tokens
     from licensedcode.models import licenses_data_dir as ldd
     from licensedcode.models import rules_data_dir as rdd
-    from licensedcode.models import load_licenses
+    from licensedcode.models import load_licenses_from_multiple_dirs
+    from licensedcode.models import validate_ignorable_clues
     from licensedcode.legalese import common_license_words
 
     licenses_data_dir = licenses_data_dir or ldd
     rules_data_dir = rules_data_dir or rdd
 
-    licenses_db = licenses_db or load_licenses(licenses_data_dir=licenses_data_dir)
-    rules = get_rules(licenses_db=licenses_db, rules_data_dir=rules_data_dir)
+    if not licenses_db:
+        # combine the licenses in these additional directories with the licenses in the original DB
+        additional_license_dirs = get_license_dirs(additional_dirs=additional_directories)
+        combined_license_directories = [licenses_data_dir] + additional_license_dirs
+        # generate a single combined license db with all licenses
+        licenses_db = load_licenses_from_multiple_dirs(license_dirs=combined_license_directories)
+
+    # if we have additional directories, extract the rules from them
+    additional_rule_dirs = get_rule_dirs(additional_dirs=additional_directories)
+    validate_ignorable_clues(rule_directories=additional_rule_dirs, is_builtin=False)
+    # then combine the rules in these additional directories with the rules in the original rules directory
+    rules = get_rules_from_multiple_dirs(
+        licenses_db=licenses_db,
+        additional_rules_data_dirs=additional_rule_dirs,
+        builtin_rule_data_dir=rules_data_dir,
+    )
 
     legalese = common_license_words
     spdx_tokens = set(get_all_spdx_key_tokens(licenses_db))
@@ -302,7 +377,12 @@ def build_unknown_spdx_symbol(licenses_db=None):
     return LicenseSymbolLike(licenses_db['unknown-spdx'])
 
 
-def get_cache(force=False, index_all_languages=False):
+def get_cache(
+    only_builtin=False,
+    force=False,
+    index_all_languages=False,
+    additional_directory=None
+):
     """
     Return a LicenseCache either rebuilt, cached or loaded from disk.
 
@@ -310,25 +390,37 @@ def get_cache(force=False, index_all_languages=False):
     building the license index. Otherwise, only include the English license \
     texts and rules (the default)
     """
-    populate_cache(force=force, index_all_languages=index_all_languages)
-    global _LICENSE_CACHE
-    return _LICENSE_CACHE
+    return populate_cache(
+        only_builtin=only_builtin,
+        force=force,
+        index_all_languages=index_all_languages,
+        additional_directory=additional_directory,
+    )
 
 
-def populate_cache(force=False, index_all_languages=False):
+def populate_cache(
+    only_builtin=False,
+    force=False,
+    index_all_languages=False,
+    additional_directory=None
+):
     """
-    Load or build and cache a LicenseCache. Return None.
+    Return, load or build and cache a LicenseCache.
     """
     global _LICENSE_CACHE
+
     if force or not _LICENSE_CACHE:
         _LICENSE_CACHE = LicenseCache.load_or_build(
+            only_builtin=only_builtin,
             licensedcode_cache_dir=licensedcode_cache_dir,
             scancode_cache_dir=scancode_cache_dir,
             force=force,
             index_all_languages=index_all_languages,
             # used for testing only
             timeout=LICENSE_INDEX_LOCK_TIMEOUT,
+            additional_directory=additional_directory,
         )
+    return _LICENSE_CACHE
 
 
 def load_cache_file(cache_file):
@@ -349,11 +441,21 @@ def load_cache_file(cache_file):
             raise Exception(msg) from e
 
 
-def get_index(force=False, index_all_languages=False):
+def get_index(
+    only_builtin=False,
+    force=False,
+    index_all_languages=False,
+    additional_directory=None
+):
     """
     Return and eventually build and cache a LicenseIndex.
     """
-    return get_cache(force=force, index_all_languages=index_all_languages).index
+    return get_cache(
+        only_builtin=only_builtin,
+        force=force,
+        index_all_languages=index_all_languages,
+        additional_directory=additional_directory
+    ).index
 
 
 get_cached_index = get_index

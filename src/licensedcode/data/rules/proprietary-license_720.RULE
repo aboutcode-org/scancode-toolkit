@@ -1,1 +1,10 @@
+---
+license_expression: proprietary-license
+is_license_reference: yes
+relevance: 100
+referenced_filenames:
+    - LICENSE
+notes: recommended by npm in the past for custom licenses
+---
+
 LicenseRef-LICENSE

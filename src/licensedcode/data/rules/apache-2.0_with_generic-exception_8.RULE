@@ -1,3 +1,11 @@
+---
+license_expression: apache-2.0 WITH generic-exception
+is_license_notice: yes
+referenced_filenames:
+    - LICENSE
+    - NOTICE
+---
+
 library is licensed under the Apache License Version 2.0 with an
 *optional* exception to allow linking against GPL2/LGPL2-only software.  See the
 files "LICENSE" and "NOTICE" for more information.

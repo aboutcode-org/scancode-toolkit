@@ -1,1 +1,6 @@
- define the module license as GPL
+---
+is_false_positive: yes
+notes: seen in the Linux Kernel sources (kernel symbols related code or docs)
+---
+
+define the module license as GPL

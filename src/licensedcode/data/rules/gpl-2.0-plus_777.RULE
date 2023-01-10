@@ -1,3 +1,12 @@
+---
+license_expression: gpl-2.0-plus
+is_license_notice: yes
+relevance: 100
+ignorable_urls:
+    - http://gnu.org/licenses/gpl.html
+    - http://www.gnu.org/licenses/
+---
+
 This is free software. It is licensed for use, modification and
 redistribution under the terms of the GNU General Public License,
 version 2 <http://gnu.org/licenses/gpl.html>

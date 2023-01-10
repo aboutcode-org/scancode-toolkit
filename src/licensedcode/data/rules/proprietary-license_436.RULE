@@ -1,3 +1,11 @@
+---
+license_expression: proprietary-license
+is_license_notice: yes
+relevance: 100
+ignorable_urls:
+    - http://www.ee.ucl.ac.uk/~mflanaga
+---
+
 *   PERMISSION TO COPY:
 *   Permission to use, copy and modify this software and its documentation for 
 *   NON-COMMERCIAL purposes is granted, without fee, provided that an acknowledgement 

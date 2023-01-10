@@ -1,3 +1,10 @@
+---
+license_expression: dco-1.1
+is_license_notice: yes
+ignorable_urls:
+    - http://developercertificate.org/
+---
+
 ### Sign your work
 
 The sign-off is a simple line at the end of the explanation for the patch. Your

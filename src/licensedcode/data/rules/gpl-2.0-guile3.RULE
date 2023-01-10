@@ -1,3 +1,9 @@
+---
+license_expression: guile-exception-2.0
+is_license_notice: yes
+notes: this essentially the same as the guile exception with a reference to another project
+---
+
 As a special exception, the Free Software Foundation gives permission for additional uses of the text contained in its release of .
 
 The exception is that, if you link the  library with other files to produce an executable, this does not by itself cause the resulting executable to be covered by the GNU General Public License. Your use of that executable is in no way restricted on account of linking the  library code into it.

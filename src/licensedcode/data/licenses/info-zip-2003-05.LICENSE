@@ -1,3 +1,22 @@
+---
+key: info-zip-2003-05
+short_name: Info-Zip License 2003-05
+name: Info-Zip License 2003-05
+category: Permissive
+owner: info-zip
+homepage_url: http://www.info-zip.org/
+spdx_license_key: LicenseRef-scancode-info-zip-2003-05
+text_urls:
+    - http://web.archive.org/web/20030409023329/http://www.info-zip.org/doc/LICENSE
+    - http://web.archive.org/web/20030601142019/http://www.info-zip.org/license.html
+ignorable_copyrights:
+    - Copyright (c) 1990-2003 Info-ZIP.
+ignorable_holders:
+    - Info-ZIP
+ignorable_urls:
+    - ftp://ftp.info-zip.org/pub/infozip/license.html
+---
+
 This is version 2003-May-08 of the Info-ZIP copyright and license.
 The definitive version of this document should be available at
 ftp://ftp.info-zip.org/pub/infozip/license.html indefinitely.

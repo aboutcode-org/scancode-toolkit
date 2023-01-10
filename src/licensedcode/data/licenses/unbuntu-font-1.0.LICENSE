@@ -1,0 +1,15 @@
+---
+key: unbuntu-font-1.0
+is_deprecated: yes
+short_name: Obsolete Font License 1.0
+name: Obsolete Font License 1.0
+category: Free Restricted
+owner: Unspecified
+homepage_url: http://font.ubuntu.com/licence/
+notes: replaced by ubuntu-font-1.0 (there was a typo in the key)s
+text_urls:
+    - http://font.ubuntu.com/ufl/ubuntu-font-licence-1.0.txt
+faq_url: http://font.ubuntu.com/ufl/FAQ.html
+other_urls:
+    - http://font.ubuntu.com/ufl/copyright.txt
+---

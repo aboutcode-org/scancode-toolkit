@@ -1,3 +1,9 @@
+---
+license_expression: mpich
+is_license_notice: yes
+notes: https://github.com/open-mpi/ompi/blob/master/LICENSE
+---
+
 Permission is hereby granted to use, reproduce, prepare derivative works, and
 to redistribute to others.  This software was authored by:
 

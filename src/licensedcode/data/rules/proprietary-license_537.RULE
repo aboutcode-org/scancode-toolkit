@@ -1,3 +1,11 @@
+---
+license_expression: proprietary-license
+is_license_text: yes
+relevance: 100
+ignorable_urls:
+    - http://opensource.org/
+---
+
 License For Customer Use of NVIDIA Software
 
 

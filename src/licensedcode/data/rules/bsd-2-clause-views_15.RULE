@@ -1,3 +1,10 @@
+---
+license_expression: bsd-2-clause-views
+is_license_notice: yes
+ignorable_urls:
+    - http://www.freebsd.org/copyright/freebsd-license.html
+---
+
 This program is free software; you can redistribute it and/or modify it
 under the terms of the the FreeBSD License . You may obtain a
 copy of the full license at:

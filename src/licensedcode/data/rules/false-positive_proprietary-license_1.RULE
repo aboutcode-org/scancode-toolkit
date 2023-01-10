@@ -1,3 +1,8 @@
+---
+is_false_positive: yes
+notes: See in plan9 https://github.com/9fans/plan9port/blob/fa325e9b42b0bdfb48857d1958d9fb7ceac55151/src/cmd/postscript/download/download.c#L46
+---
+
 Host resident fonts are usually purchased under a license that
 restricts their use to a limited number of printers. A font licensed for
 a single printer should only be used on that printer.

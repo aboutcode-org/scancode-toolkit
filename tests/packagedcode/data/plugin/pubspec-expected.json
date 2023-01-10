@@ -1,4 +1,66 @@
 {
+  "packages": [
+    {
+      "type": "dart",
+      "namespace": null,
+      "name": "openapi",
+      "version": "1.0.0",
+      "qualifiers": {},
+      "subpath": null,
+      "primary_language": "dart",
+      "description": "OpenAPI API client",
+      "release_date": null,
+      "parties": [
+        {
+          "type": "person",
+          "role": "author",
+          "name": "John Does",
+          "email": null,
+          "url": null
+        },
+        {
+          "type": "person",
+          "role": "author",
+          "name": "Author <author@homepage>",
+          "email": null,
+          "url": null
+        }
+      ],
+      "keywords": [],
+      "homepage_url": "homepage",
+      "download_url": "https://pub.dartlang.org/packages/openapi/versions/1.0.0.tar.gz",
+      "size": null,
+      "sha1": null,
+      "md5": null,
+      "sha256": null,
+      "sha512": null,
+      "bug_tracking_url": null,
+      "code_view_url": null,
+      "vcs_url": null,
+      "copyright": null,
+      "declared_license_expression": null,
+      "declared_license_expression_spdx": null,
+      "license_detections": [],
+      "other_license_expression": null,
+      "other_license_expression_spdx": null,
+      "other_license_detections": [],
+      "extracted_license_statement": null,
+      "notice_text": null,
+      "source_packages": [],
+      "extra_data": {},
+      "repository_homepage_url": "https://pub.dev/packages/openapi/versions/1.0.0",
+      "repository_download_url": "https://pub.dartlang.org/packages/openapi/versions/1.0.0.tar.gz",
+      "api_data_url": "https://pub.dev/api/packages/openapi/versions/1.0.0",
+      "package_uid": "pkg:dart/openapi@1.0.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_paths": [
+        "authors-pubspec.yaml"
+      ],
+      "datasource_ids": [
+        "pubspec_yaml"
+      ],
+      "purl": "pkg:dart/openapi@1.0.0"
+    }
+  ],
   "dependencies": [
     {
       "purl": "pkg:pubspec/http",
@@ -43,63 +105,8 @@
       "datasource_id": "pubspec_yaml"
     }
   ],
-  "packages": [
-    {
-      "type": "dart",
-      "namespace": null,
-      "name": "openapi",
-      "version": "1.0.0",
-      "qualifiers": {},
-      "subpath": null,
-      "primary_language": "dart",
-      "description": "OpenAPI API client",
-      "release_date": null,
-      "parties": [
-        {
-          "type": "person",
-          "role": "author",
-          "name": "John Does",
-          "email": null,
-          "url": null
-        },
-        {
-          "type": "person",
-          "role": "author",
-          "name": "Author <author@homepage>",
-          "email": null,
-          "url": null
-        }
-      ],
-      "keywords": [],
-      "homepage_url": "homepage",
-      "download_url": "https://pub.dartlang.org/packages/openapi/versions/1.0.0.tar.gz",
-      "size": null,
-      "sha1": null,
-      "md5": null,
-      "sha256": null,
-      "sha512": null,
-      "bug_tracking_url": null,
-      "code_view_url": null,
-      "vcs_url": null,
-      "copyright": null,
-      "license_expression": null,
-      "declared_license": null,
-      "notice_text": null,
-      "source_packages": [],
-      "extra_data": {},
-      "repository_homepage_url": "https://pub.dev/packages/openapi/versions/1.0.0",
-      "repository_download_url": "https://pub.dartlang.org/packages/openapi/versions/1.0.0.tar.gz",
-      "api_data_url": "https://pub.dev/api/packages/openapi/versions/1.0.0",
-      "package_uid": "pkg:dart/openapi@1.0.0?uuid=fixed-uid-done-for-testing-5642512d1758",
-      "datafile_paths": [
-        "authors-pubspec.yaml"
-      ],
-      "datasource_ids": [
-        "pubspec_yaml"
-      ],
-      "purl": "pkg:dart/openapi@1.0.0"
-    }
-  ],
+  "license_references": [],
+  "license_rule_references": [],
   "files": [
     {
       "path": "authors-pubspec.yaml",
@@ -143,8 +150,13 @@
           "code_view_url": null,
           "vcs_url": null,
           "copyright": null,
-          "license_expression": null,
-          "declared_license": null,
+          "declared_license_expression": null,
+          "declared_license_expression_spdx": null,
+          "license_detections": [],
+          "other_license_expression": null,
+          "other_license_expression_spdx": null,
+          "other_license_detections": [],
+          "extracted_license_statement": null,
           "notice_text": null,
           "source_packages": [],
           "file_references": [],

@@ -1,3 +1,9 @@
+---
+license_expression: apache-2.0 AND cockroach AND mit AND bsd-new
+is_license_notice: yes
+relevance: 100
+---
+
 Source code in this repository is variously licensed under the Apache Public
 License 2.0 (APL), the CockroachDB Community License (CCL), the MIT license, and
 BSD-style licenses. A copy of each license can be found in the licenses

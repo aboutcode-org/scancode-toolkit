@@ -1,3 +1,10 @@
+---
+license_expression: mpl-2.0
+is_license_notice: yes
+ignorable_urls:
+    - http://www.mozilla.org/MPL/2.0/FAQ.html
+---
+
 ## License
  is licensed under the [Mozilla Public License Version 2.0]
 

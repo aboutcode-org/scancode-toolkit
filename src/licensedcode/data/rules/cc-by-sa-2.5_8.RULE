@@ -1,3 +1,12 @@
+---
+license_expression: cc-by-sa-2.5
+is_license_notice: yes
+referenced_filenames:
+    - LICENSE.icons.txt
+ignorable_urls:
+    - http://creativecommons.org/licenses/by-sa/2.5
+---
+
 All of these image files are licensed under the Creative Commons Attribution
 Share-Alike 2.5 License (http://creativecommons.org/licenses/by-sa/2.5/),
 which is in the LICENSE.icons.txt file.

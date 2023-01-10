@@ -1,4 +1,3 @@
-primary_license: gpl-3.0-plus
 declared_license:
   - GPL-3+
   - GPL-3+
@@ -7,8 +6,107 @@ declared_license:
   - GPL-3+
   - GFDL-1.3+-no-invariant
   - FSF-manpages
-license_expression: (gpl-3.0-plus AND gpl-3.0-plus) AND (gpl-3.0-plus AND gpl-3.0-plus) AND
-  gfdl-1.3-plus AND latex2e
+declared_license_expression: gpl-3.0-plus
+declared_license_expression_spdx: GPL-3.0-or-later
+other_license_expression: (gpl-3.0-plus AND gpl-3.0-plus) AND (gpl-3.0-plus AND gpl-3.0-plus)
+  AND gfdl-1.3-plus AND latex2e
+other_license_expression_spdx: (GPL-3.0-or-later AND GPL-3.0-or-later) AND (GPL-3.0-or-later
+  AND GPL-3.0-or-later) AND GFDL-1.3-or-later AND Latex2e
+license_detections: []
+other_license_detections:
+  - license_expression: gpl-3.0-plus
+    detection_log:
+      - not-combined
+    matches:
+      - score: '100.0'
+        start_line: 25
+        end_line: 25
+        matched_length: 3
+        match_coverage: '100.0'
+        matcher: 1-hash
+        license_expression: gpl-3.0-plus
+        rule_identifier: gpl-3.0-plus_92.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0-plus_92.RULE
+        matched_text: 'License: gpl-3+'
+      - score: '100.0'
+        start_line: 26
+        end_line: 40
+        matched_length: 123
+        match_coverage: '100.0'
+        matcher: 1-hash
+        license_expression: gpl-3.0-plus
+        rule_identifier: gpl-3.0-plus_482.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0-plus_482.RULE
+        matched_text: |
+          This program is free software; you can redistribute it and/or modify
+          it under the terms of the GNU General Public License as published by
+          the Free Software Foundation; either version 3, or (at your option)
+          any later version.
+
+          This program is distributed in the hope that it will be useful,
+          but WITHOUT ANY WARRANTY; without even the implied warranty of
+          MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+          GNU General Public License for more details.
+
+          You should have received a copy of the GNU General Public License
+          along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+          On Debian GNU/Linux systems, the complete text of the GNU General
+          Public License can be found in `/usr/share/common-licenses/GPL-3'.
+  - license_expression: gfdl-1.3-plus
+    detection_log:
+      - not-combined
+    matches:
+      - score: '100.0'
+        start_line: 43
+        end_line: 50
+        matched_length: 72
+        match_coverage: '100.0'
+        matcher: 1-hash
+        license_expression: gfdl-1.3-plus
+        rule_identifier: gfdl-1.3-plus_24.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gfdl-1.3-plus_24.RULE
+        matched_text: |
+          Permission is granted to copy, distribute and/or modify this document
+          under the terms of the GNU Free Documentation License, Version 1.3 or
+          any later version published by the Free Software Foundation; with no
+          Invariant Sections, with no Front-Cover Texts, and with no Back-Cover
+          Texts.
+
+          On Debian GNU/Linux systems, the complete text of the GNU Free Documentation
+          License can be found in `/usr/share/common-licenses/GFDL-3'.
+  - license_expression: latex2e
+    detection_log:
+      - not-combined
+    matches:
+      - score: '85.0'
+        start_line: 53
+        end_line: 70
+        matched_length: 138
+        match_coverage: '100.0'
+        matcher: 1-hash
+        license_expression: latex2e
+        rule_identifier: latex2e_8.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/latex2e_8.RULE
+        matched_text: |
+          Permission is granted to make and distribute verbatim copies of
+          this manual provided the copyright notice and this permission notice
+          are preserved on all copies.
+
+          Permission is granted to process this file through troff and print the
+          results, provided the printed document carries copying permission
+          notice identical to this one except for the removal of this paragraph
+          (this paragraph not being relevant to the printed manual).
+
+          Permission is granted to copy and distribute modified versions of this
+          manual under the conditions for verbatim copying, provided that the entire
+          resulting derived work is distributed under the terms of a permission
+          notice identical to this one.
+
+          Permission is granted to copy and distribute translations of this manual
+          into another language, under the above conditions for modified versions,
+          except that this permission notice may be stated in a translation approved
+          by the Foundation.
 copyright: |
   1999-2016 Free Software Foundation, Inc.
   1992-1993 Jean-loup Gailly and Mark Adler
@@ -17,109 +115,3 @@ copyright: |
   1992-1993 Jean-loup Gailly
   1998-2016 Free Software Foundation, Inc.
   1992-1993 Jean-loup Gailly
-matches:
-  - score: '100.0'
-    start_line: 25
-    end_line: 25
-    matcher: 1-hash
-    rule_length: 3
-    matched_length: 3
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: gpl-3.0-plus_92.RULE
-    license_expression: gpl-3.0-plus
-    is_license_text: no
-    is_license_notice: no
-    is_license_reference: no
-    is_license_tag: yes
-    is_license_intro: no
-    matched_text: 'License: gpl-3+'
-  - score: '100.0'
-    start_line: 26
-    end_line: 40
-    matcher: 1-hash
-    rule_length: 123
-    matched_length: 123
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: gpl-3.0-plus_482.RULE
-    license_expression: gpl-3.0-plus
-    is_license_text: no
-    is_license_notice: yes
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      This program is free software; you can redistribute it and/or modify
-      it under the terms of the GNU General Public License as published by
-      the Free Software Foundation; either version 3, or (at your option)
-      any later version.
-
-      This program is distributed in the hope that it will be useful,
-      but WITHOUT ANY WARRANTY; without even the implied warranty of
-      MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-      GNU General Public License for more details.
-
-      You should have received a copy of the GNU General Public License
-      along with this program.  If not, see <http://www.gnu.org/licenses/>.
-
-      On Debian GNU/Linux systems, the complete text of the GNU General
-      Public License can be found in `/usr/share/common-licenses/GPL-3'.
-  - score: '100.0'
-    start_line: 43
-    end_line: 50
-    matcher: 1-hash
-    rule_length: 72
-    matched_length: 72
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: gfdl-1.3-plus_24.RULE
-    license_expression: gfdl-1.3-plus
-    is_license_text: no
-    is_license_notice: yes
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      Permission is granted to copy, distribute and/or modify this document
-      under the terms of the GNU Free Documentation License, Version 1.3 or
-      any later version published by the Free Software Foundation; with no
-      Invariant Sections, with no Front-Cover Texts, and with no Back-Cover
-      Texts.
-
-      On Debian GNU/Linux systems, the complete text of the GNU Free Documentation
-      License can be found in `/usr/share/common-licenses/GFDL-3'.
-  - score: '85.0'
-    start_line: 53
-    end_line: 70
-    matcher: 1-hash
-    rule_length: 138
-    matched_length: 138
-    match_coverage: '100.0'
-    rule_relevance: 85
-    identifier: latex2e_8.RULE
-    license_expression: latex2e
-    is_license_text: no
-    is_license_notice: yes
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      Permission is granted to make and distribute verbatim copies of
-      this manual provided the copyright notice and this permission notice
-      are preserved on all copies.
-
-      Permission is granted to process this file through troff and print the
-      results, provided the printed document carries copying permission
-      notice identical to this one except for the removal of this paragraph
-      (this paragraph not being relevant to the printed manual).
-
-      Permission is granted to copy and distribute modified versions of this
-      manual under the conditions for verbatim copying, provided that the entire
-      resulting derived work is distributed under the terms of a permission
-      notice identical to this one.
-
-      Permission is granted to copy and distribute translations of this manual
-      into another language, under the above conditions for modified versions,
-      except that this permission notice may be stated in a translation approved
-      by the Foundation.

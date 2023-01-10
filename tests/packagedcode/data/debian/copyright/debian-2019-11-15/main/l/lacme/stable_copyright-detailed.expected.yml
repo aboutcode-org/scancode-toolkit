@@ -1,46 +1,41 @@
-primary_license: gpl-3.0-plus
 declared_license:
   - GPL-3+
   - GPL-3+
-license_expression: gpl-3.0-plus AND gpl-3.0-plus
-copyright: © 2015-2017 Guilhem Moulin <guilhem@fripost.org>
-matches:
-  - score: '100.0'
-    start_line: 8
-    end_line: 8
-    matcher: 1-hash
-    rule_length: 3
-    matched_length: 3
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: gpl-3.0-plus_92.RULE
-    license_expression: gpl-3.0-plus
-    is_license_text: no
-    is_license_notice: no
-    is_license_reference: no
-    is_license_tag: yes
-    is_license_intro: no
-    matched_text: 'License: gpl-3+'
-  - score: '100.0'
-    start_line: 9
-    end_line: 15
-    matcher: 1-hash
-    rule_length: 67
-    matched_length: 67
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: gpl-3.0-plus_509.RULE
-    license_expression: gpl-3.0-plus
-    is_license_text: no
-    is_license_notice: yes
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      This package is free software; you can redistribute it and/or modify it
-      under the terms of the GNU General Public License as published by the
-      Free Software Foundation; either version 3 of the License, or (at your
-      option) any later version.
+declared_license_expression: gpl-3.0-plus
+declared_license_expression_spdx: GPL-3.0-or-later
+other_license_expression: gpl-3.0-plus AND gpl-3.0-plus
+other_license_expression_spdx: GPL-3.0-or-later AND GPL-3.0-or-later
+license_detections: []
+other_license_detections:
+  - license_expression: gpl-3.0-plus
+    detection_log:
+      - not-combined
+    matches:
+      - score: '100.0'
+        start_line: 8
+        end_line: 8
+        matched_length: 3
+        match_coverage: '100.0'
+        matcher: 1-hash
+        license_expression: gpl-3.0-plus
+        rule_identifier: gpl-3.0-plus_92.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0-plus_92.RULE
+        matched_text: 'License: gpl-3+'
+      - score: '100.0'
+        start_line: 9
+        end_line: 15
+        matched_length: 67
+        match_coverage: '100.0'
+        matcher: 1-hash
+        license_expression: gpl-3.0-plus
+        rule_identifier: gpl-3.0-plus_509.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0-plus_509.RULE
+        matched_text: |
+          This package is free software; you can redistribute it and/or modify it
+          under the terms of the GNU General Public License as published by the
+          Free Software Foundation; either version 3 of the License, or (at your
+          option) any later version.
 
-      On Debian systems, the complete text of the GNU General Public License
-      version 3 can be found in file "/usr/share/common-licenses/GPL-3".
+          On Debian systems, the complete text of the GNU General Public License
+          version 3 can be found in file "/usr/share/common-licenses/GPL-3".
+copyright: © 2015-2017 Guilhem Moulin <guilhem@fripost.org>

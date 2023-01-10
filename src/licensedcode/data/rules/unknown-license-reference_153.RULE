@@ -1,1 +1,9 @@
+---
+license_expression: unknown-license-reference
+is_license_reference: yes
+relevance: 100
+ignorable_urls:
+    - https://go.microsoft.com/fwlink/?linkid=281843
+---
+
 https://go.microsoft.com/fwlink/?linkid=281843

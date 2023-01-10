@@ -1,3 +1,13 @@
+---
+license_expression: proprietary-license
+is_license_text: yes
+relevance: 100
+ignorable_copyrights:
+    - copyright by CRYPTOCard. CRYPTOCard
+ignorable_holders:
+    - CRYPTOCard. CRYPTOCard
+---
+
 LEGAL:        This code is placed into the public domain, hence requires 
                no license or runtime fees.  However this code is copyright by 
                CRYPTOCard.  CRYPTOCard grants anyone who may wish to use, modify 

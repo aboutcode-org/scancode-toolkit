@@ -1,6 +1,0 @@
-license_expression: mit OR bsd-new OR gpl-2.0
-is_license_notice: yes
-relevance: 100
-notes: found in Dojo and JQuery
-ignorable_urls:
-    - http://sizzlejs.com/

@@ -1,3 +1,12 @@
+---
+license_expression: artistic-perl-1.0 OR gpl-1.0-plus
+is_license_reference: yes
+minimum_coverage: 90
+referenced_filenames:
+    - /usr/share/common-licenses/Artistic
+    - /usr/share/coomon-licenses/GPL
+---
+
 On Debian GNU/Linux systems, the complete text of the GNU General
 Public License is in `/usr/share/common-licenses/GPL', the Artistic
 license in `/usr/share/common-licenses/Artistic'

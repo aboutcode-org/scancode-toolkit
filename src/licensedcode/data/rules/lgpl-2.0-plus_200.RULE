@@ -1,1 +1,9 @@
+---
+license_expression: lgpl-2.0-plus
+is_license_reference: yes
+relevance: 100
+ignorable_urls:
+    - https://gnu.org/licenses/lgpl.html
+---
+
 https://gnu.org/licenses/lgpl.html

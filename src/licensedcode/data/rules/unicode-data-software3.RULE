@@ -1,4 +1,12 @@
- COPYRIGHT AND PERMISSION NOTICE
+---
+license_expression: unicode
+is_license_text: yes
+minimum_coverage: 60
+ignorable_urls:
+    - http://www.unicode.org/copyright.html
+---
+
+COPYRIGHT AND PERMISSION NOTICE
 Distributed under
  the Terms of Use in http://www.unicode.org/copyright.html.
 

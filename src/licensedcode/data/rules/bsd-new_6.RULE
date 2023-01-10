@@ -1,3 +1,10 @@
+---
+license_expression: bsd-new
+is_license_text: yes
+notes: This weird version contains a mistake (corrected later by the author) allowing to use
+    the author name in endorsements.
+---
+
 // Redistribution and use in source and binary forms, with or without
 // modification, are permitted provided that the following conditions are met:
 // 

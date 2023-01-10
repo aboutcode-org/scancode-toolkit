@@ -17,6 +17,7 @@ from license_expression import Licensing
 from license_expression import ExpressionError
 
 from licensedcode import cache
+from licensedcode import models
 from licensedcode.cache import get_spdx_symbols
 from licensedcode.cache import get_unknown_spdx_symbol
 from licensedcode.match_spdx_lid import _parse_expression
@@ -26,7 +27,6 @@ from licensedcode.match_spdx_lid import get_expression
 from licensedcode.match_spdx_lid import prepare_text
 from licensedcode.match_spdx_lid import split_spdx_lid
 from licensedcode.match_spdx_lid import _split_spdx_lid
-from licensedcode import models
 from licensedcode.query import Query
 from scancode_config import REGEN_TEST_FIXTURES
 
@@ -54,6 +54,32 @@ From uboot: the first two lines are patch-like:
             ('SPDX-License-Identifier:  (BSD-3-Clause OR EPL-1.0 OR Apache-2.0 OR MIT)',  0,  15),
             ('SPDX-License-Identifier:  EPL-2.0 OR Apache-2.0 OR GPL-2.0 WITH Classpath-exception-2.0',16,  34),
             ('SPDX-License-Identifier:      GPL-2.0+ BSD-2-Clause', 45, 53)]
+
+        assert qry.spdx_lines == expected
+
+
+class TestNuGetSpdxQueryLines(FileBasedTesting):
+    test_data_dir = TEST_DATA_DIR
+
+    def test_Query_with_spdx_basic(self):
+        idx = cache.get_index()
+        querys = '''
+ * https://licenses.nuget.org/(LGPL-2.0-only WITH FLTK-exception OR Apache-2.0)
+ * SPDX-License-Identifier: EPL-2.0 OR Apache-2.0 OR GPL-2.0 WITH Classpath-exception-2.0
+            Always
+
+From uboot: the first two lines are patch-like:
+ * https://licenses.nuget.org/MIT
+ * https://licenses.nuget.org/(MIT)
+            '''
+
+        qry = Query(query_string=querys, idx=idx)
+        expected = [
+            ('licenses.nuget.org /(LGPL-2.0-only WITH FLTK-exception OR Apache-2.0)',  1,  14),
+            ('SPDX-License-Identifier:  EPL-2.0 OR Apache-2.0 OR GPL-2.0 WITH Classpath-exception-2.0',15,  33),
+            ('licenses.nuget.org /MIT', 45, 48),
+            ('licenses.nuget.org /(MIT)', 50, 53)
+        ]
 
         assert qry.spdx_lines == expected
 
@@ -155,6 +181,22 @@ class TestMatchSpdx(FileBasedTesting):
         ]
         results = [clean_text(test) for test in tests]
         assert results == expected
+    
+
+    def test_clean_line_nuget(self):
+        tests = [
+            '* https://licenses.nuget.org/(LGPL-2.0-only WITH FLTK-exception OR Apache-2.0)', 
+            '* https://licenses.nuget.org/MIT',
+            '* https://licenses.nuget.org/(MIT)' 
+        ]
+
+        expected = [
+            'https://licenses.nuget.org/(LGPL-2.0-only WITH FLTK-exception OR Apache-2.0)',
+            'https://licenses.nuget.org/MIT',
+            'https://licenses.nuget.org/(MIT)'
+        ]
+        results = [clean_text(test) for test in tests]
+        assert results == expected
 
     def test_prepare_text(self):
         tests = [
@@ -201,6 +243,21 @@ class TestMatchSpdx(FileBasedTesting):
         results = [prepare_text(test) for test in tests]
         assert results == expected
 
+    def test_prepare_text_nuget(self):
+        tests = [
+            '* https://licenses.nuget.org/(LGPL-2.0-only WITH FLTK-exception OR Apache-2.0)', 
+            '* https://licenses.nuget.org/MIT',
+            '* https://licenses.nuget.org/(MIT)'
+        ]
+
+        expected = [
+            ('licenses.nuget.org', '(LGPL-2.0-only WITH FLTK-exception OR Apache-2.0)'),
+            ('licenses.nuget.org', 'MIT'),
+            ('licenses.nuget.org', '(MIT)'),
+        ]
+        results = [prepare_text(test) for test in tests]
+        assert results == expected
+
     def test_prepare_text_with_rem(self):
         assert prepare_text('') == (None, '')
         assert prepare_text('@REM # SPDX-License-Identifier: BSD-2-Clause-Patent') == ('SPDX-License-Identifier:', 'BSD-2-Clause-Patent')
@@ -224,6 +281,30 @@ class TestMatchSpdx(FileBasedTesting):
             ('SPDX-License-Identifier : ', 'BSD-3-Clause'),
             ('SPDx-Licence-Identifier : ', 'BSD-3-Clause'),
             (None, 'SPD-Licence-Identifier : BSD-3-Clause'),
+        ]
+        assert results == expected
+
+    def test_split_spdx_lid_nuget(self):
+        test = [
+            'https://licenses.nuget.org/(LGPL-2.0-only WITH FLTK-exception OR Apache-2.0)', 
+            '* https://licenses.nuget.org/(MIT)',
+            'https://licenses.nuget.org/MIT',
+            'http://licenses.nuget.org/MIT',
+            'licenses.nuget.org/MIT',
+            'Licenses NuGet ORG MIT',
+            'licenses nuget org MIT',
+            'licenses MIT',
+        ]
+        results = [split_spdx_lid(l) for l in test]
+        expected = [
+            ('licenses.nuget.org', '/(LGPL-2.0-only WITH FLTK-exception OR Apache-2.0)'),
+            ('licenses.nuget.org', '/(MIT)'),
+            ('licenses.nuget.org', '/MIT'),
+            ('licenses.nuget.org', '/MIT'),
+            ('licenses.nuget.org', '/MIT'),
+            ('Licenses NuGet ORG ', 'MIT'),
+            ('licenses nuget org ', 'MIT'),
+            (None, 'licenses MIT'),
         ]
         assert results == expected
 
@@ -256,6 +337,14 @@ class TestMatchSpdx(FileBasedTesting):
         line_text = '''LIST "SPDX-License-Identifier: GPL-2.0"'''
         expression = get_expression(line_text, licensing, spdx_symbols, unknown_symbol)
         assert expression.render() == 'gpl-2.0'
+    
+    def test_get_expression_nuget(self):
+        licensing = Licensing()
+        spdx_symbols = get_spdx_symbols()
+        unknown_symbol = get_unknown_spdx_symbol()
+        line_text = 'https://licenses.nuget.org/MIT'
+        expression = get_expression(line_text, licensing, spdx_symbols, unknown_symbol)
+        assert expression.render() == 'mit'
 
     def test_get_expression_multiple_or(self):
         licensing = Licensing()
@@ -264,6 +353,14 @@ class TestMatchSpdx(FileBasedTesting):
         line_text = '* SPDX-License-Identifier: (BSD-3-Clause OR EPL-1.0 OR Apache-2.0 OR MIT)'
         expression = get_expression(line_text, licensing, spdx_symbols, unknown_symbol)
         assert expression.render() == 'bsd-new OR epl-1.0 OR apache-2.0 OR mit'
+
+    def test_get_expression_multiple_or_nuget(self):
+        licensing = Licensing()
+        spdx_symbols = get_spdx_symbols()
+        unknown_symbol = get_unknown_spdx_symbol()
+        line_text = 'https://licenses.nuget.org/(LGPL-2.0-only WITH FLTK-exception OR Apache-2.0)'
+        expression = get_expression(line_text, licensing, spdx_symbols, unknown_symbol)
+        assert expression.render() == 'lgpl-2.0 WITH fltk-exception-lgpl-2.0 OR apache-2.0'
 
     def test_get_expression_simple(self):
         licensing = Licensing()
@@ -294,6 +391,14 @@ class TestMatchSpdx(FileBasedTesting):
         spdx_symbols = get_spdx_symbols()
         unknown_symbol = get_unknown_spdx_symbol()
         line_text = '* SPDX-License-Identifier: (GPL-2.0+ OR MIT)'
+        expression = get_expression(line_text, licensing, spdx_symbols, unknown_symbol)
+        assert expression.render() == 'gpl-2.0-plus OR mit'
+
+    def test_get_expression_with_extra_parens2(self):
+        licensing = Licensing()
+        spdx_symbols = get_spdx_symbols()
+        unknown_symbol = get_unknown_spdx_symbol()
+        line_text = 'https://licenses.nuget.org/(GPL-2.0+ OR MIT)'
         expression = get_expression(line_text, licensing, spdx_symbols, unknown_symbol)
         assert expression.render() == 'gpl-2.0-plus OR mit'
 
@@ -446,6 +551,14 @@ class TestMatchSpdx(FileBasedTesting):
         spdx_symbols = get_spdx_symbols()
         unknown_symbol = get_unknown_spdx_symbol()
         line_text = '* SPDX-License-Identifier:'
+        expression = get_expression(line_text, licensing, spdx_symbols, unknown_symbol)
+        assert expression == None
+
+    def test_get_expression_with_empty_expression_should_return_unknown_nuget(self):
+        licensing = Licensing()
+        spdx_symbols = get_spdx_symbols()
+        unknown_symbol = get_unknown_spdx_symbol()
+        line_text = 'https://licenses.nuget.org/'
         expression = get_expression(line_text, licensing, spdx_symbols, unknown_symbol)
         assert expression == None
 

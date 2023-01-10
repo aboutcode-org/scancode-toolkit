@@ -1,1 +1,7 @@
- * Licensed under the OpenSSL license 
+---
+license_expression: openssl-ssleay
+is_license_notice: yes
+relevance: 100
+---
+
+* Licensed under the OpenSSL license

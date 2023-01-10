@@ -1,3 +1,12 @@
+---
+key: broadcom-confidential
+short_name: Broadcom Confidential
+name: Broadcom Confidential
+category: Commercial
+owner: Broadcom
+spdx_license_key: LicenseRef-scancode-broadcom-confidential
+---
+
 No portions of this material may be reproduced in any form without the written permission of:
       Broadcom Corporation
        16251 Laguna Canyon Road

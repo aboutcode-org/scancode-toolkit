@@ -1,3 +1,22 @@
+---
+key: sgi-freeb-1.1
+short_name: SGI Free Software License B 1.1
+name: SGI Free Software License B v1.1
+category: Permissive
+owner: SGI - Silicon Graphics
+homepage_url: http://oss.sgi.com/projects/FreeB/SGIFreeSWLicB.1.1.doc
+notes: Per SPDX.org, this license was released 22 February 2002
+spdx_license_key: SGI-B-1.1
+text_urls:
+    - http://oss.sgi.com/projects/FreeB/SGIFreeSWLicB.1.1.doc
+other_urls:
+    - http://oss.sgi.com/projects/FreeB/
+ignorable_authors:
+    - Silicon Graphics, Inc.
+ignorable_urls:
+    - http://oss.sgi.com/projects/FreeB
+---
+
 SGI FREE SOFTWARE LICENSE B (Version 1.1 [02/22/2000]) 
 2.License Grant and Restrictions.
 2.1.SGI License Grant. Subject to the terms of this License and any third party intellectual property claims, for the duration of intellectual property protections inherent in the Original Code, SGI hereby grants Recipient a worldwide, royalty-free, non-exclusive license, to do the following: (i) under copyrights Licensable by SGI, to reproduce, distribute, create derivative works from, and, to the extent applicable, display and perform the Original Code and/or any Modifications provided by SGI alone and/or as part of a Larger Work; and (ii) under any Licensable Patents, to make, have made, use, sell, offer for sale, import and/or otherwise transfer the Original Code and/or any Modifications provided by SGI. Recipient accepts the terms and conditions of this License by undertaking any of the aforementioned actions. The patent license shall apply to the Covered Code if, at the time any related Modification is added, such addition of the Modification causes such combination to be covered by the Licensed Patents. The patent license in Section 2.1(ii) shall not apply to any other combinations that include the Modification. No patent license is provided under SGI Patents for infringements of SGI Patents by Modifications not provided by SGI or combinations of Original Code and Modifications not provided by SGI. 

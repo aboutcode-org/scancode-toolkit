@@ -1,2 +1,10 @@
+---
+license_expression: gpl-2.0
+is_license_notice: yes
+relevance: 100
+referenced_filenames:
+    - LICENSE.txt
+---
+
 Released under the terms of the GNU General Public License version 2 (GPLv2).
   See the file LICENSE.txt.

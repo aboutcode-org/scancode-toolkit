@@ -1,3 +1,15 @@
+---
+key: eurosym
+short_name: Eurosym License
+name: Eurosym License
+category: Copyleft Limited
+owner: Henrik Theiling
+homepage_url: https://fedoraproject.org/wiki/Licensing:Eurosym?rd=Licensing/Eurosym
+spdx_license_key: Eurosym
+other_urls:
+    - https://fedoraproject.org/wiki/Licensing/Eurosym
+---
+
 Licence Version 2
 
 This software is provided 'as-is', without warranty of any kind, express or implied. In no event will the authors or copyright holders be held liable for any damages arising from the use of this software.

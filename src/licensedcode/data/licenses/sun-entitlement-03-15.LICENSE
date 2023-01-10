@@ -1,3 +1,16 @@
+---
+key: sun-entitlement-03-15
+short_name: Sun Entitlement 3 plus 15
+name: Sun Entitlement 3 plus 15
+category: Proprietary Free
+owner: Oracle (Sun)
+homepage_url: http://download.java.net/media/jai-imageio/builds/release/1.1/LICENSE-jai_imageio.txt
+spdx_license_key: LicenseRef-scancode-sun-entitlement-03-15
+ignorable_urls:
+    - http://www.java.net/
+    - http://www.sun.com/service/servicelist
+---
+
 License Agreement for {ProductName}
 Sun Microsystems, Inc. ("Sun") ENTITLEMENT for SOFTWARE
 

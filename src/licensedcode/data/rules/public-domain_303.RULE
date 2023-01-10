@@ -1,3 +1,11 @@
+---
+license_expression: public-domain
+is_license_text: yes
+relevance: 100
+ignorable_authors:
+    - Colin Plumb
+---
+
 This code was
 written by Colin Plumb in 1993, no copyright is claimed.
 This code is in the public domain; do with it what you wish.

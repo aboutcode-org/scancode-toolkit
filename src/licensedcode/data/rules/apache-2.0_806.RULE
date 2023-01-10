@@ -1,3 +1,12 @@
+---
+license_expression: apache-2.0
+is_license_text: yes
+minimum_coverage: 99
+ignorable_urls:
+    - https://www.apache.org/licenses/
+    - https://www.apache.org/licenses/LICENSE-2.0
+---
+
 EasyMock is provided under the terms of the Apache 2 license, which is one of the most liberal and complete open source licenses available.
 
 EasyMock License

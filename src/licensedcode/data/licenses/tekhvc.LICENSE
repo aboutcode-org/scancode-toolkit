@@ -1,3 +1,14 @@
+---
+key: tekhvc
+short_name: TekHVC License
+name: TekHVC License
+category: Permissive
+owner: Tektronix
+spdx_license_key: LicenseRef-scancode-tekhvc
+other_urls:
+    - https://www.x.org/releases/individual/lib/libX11-1.7.2.tar.bz2
+---
+
 Permission is hereby granted to use, copy,
 modify, sell, and otherwise distribute this software and its
 documentation for any purpose and without fee, provided that:

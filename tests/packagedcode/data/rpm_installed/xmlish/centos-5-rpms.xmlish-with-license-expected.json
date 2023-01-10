@@ -24,8 +24,34 @@
     "code_view_url": null,
     "vcs_url": null,
     "copyright": null,
-    "license_expression": "public-domain",
-    "declared_license": "public domain",
+    "declared_license_expression": "public-domain",
+    "declared_license_expression_spdx": "LicenseRef-scancode-public-domain",
+    "license_detections": [
+      {
+        "license_expression": "public-domain",
+        "detection_log": [
+          "not-combined"
+        ],
+        "matches": [
+          {
+            "score": 70.0,
+            "start_line": 1,
+            "end_line": 1,
+            "matched_length": 2,
+            "match_coverage": 100.0,
+            "matcher": "1-hash",
+            "license_expression": "public-domain",
+            "rule_identifier": "public-domain_bare_words.RULE",
+            "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/public-domain_bare_words.RULE",
+            "matched_text": "public domain"
+          }
+        ]
+      }
+    ],
+    "other_license_expression": null,
+    "other_license_expression_spdx": null,
+    "other_license_detections": [],
+    "extracted_license_statement": "public domain",
     "notice_text": null,
     "source_packages": [],
     "file_references": [
@@ -315,8 +341,34 @@
     "code_view_url": null,
     "vcs_url": null,
     "copyright": null,
-    "license_expression": "public-domain",
-    "declared_license": "public domain",
+    "declared_license_expression": "public-domain",
+    "declared_license_expression_spdx": "LicenseRef-scancode-public-domain",
+    "license_detections": [
+      {
+        "license_expression": "public-domain",
+        "detection_log": [
+          "not-combined"
+        ],
+        "matches": [
+          {
+            "score": 70.0,
+            "start_line": 1,
+            "end_line": 1,
+            "matched_length": 2,
+            "match_coverage": 100.0,
+            "matcher": "1-hash",
+            "license_expression": "public-domain",
+            "rule_identifier": "public-domain_bare_words.RULE",
+            "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/public-domain_bare_words.RULE",
+            "matched_text": "public domain"
+          }
+        ]
+      }
+    ],
+    "other_license_expression": null,
+    "other_license_expression_spdx": null,
+    "other_license_detections": [],
+    "extracted_license_statement": "public domain",
     "notice_text": null,
     "source_packages": [],
     "file_references": [],

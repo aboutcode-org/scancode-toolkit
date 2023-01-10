@@ -22,8 +22,34 @@
     "code_view_url": null,
     "vcs_url": null,
     "copyright": null,
-    "license_expression": "unknown",
-    "declared_license": "PSF or ZPL",
+    "declared_license_expression": "unknown",
+    "declared_license_expression_spdx": "LicenseRef-scancode-unknown",
+    "license_detections": [
+      {
+        "license_expression": "unknown",
+        "detection_log": [
+          "undetected-license"
+        ],
+        "matches": [
+          {
+            "score": 100.0,
+            "start_line": 1,
+            "end_line": 1,
+            "matched_length": 4,
+            "match_coverage": 100.0,
+            "matcher": "5-undetected",
+            "license_expression": "unknown",
+            "rule_identifier": "package-manifest-unknown-4e63c2896b2b2bc5235eb55ed408f87187ffe1b3",
+            "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/package-manifest-unknown-4e63c2896b2b2bc5235eb55ed408f87187ffe1b3",
+            "matched_text": "license PSF or ZPL"
+          }
+        ]
+      }
+    ],
+    "other_license_expression": null,
+    "other_license_expression_spdx": null,
+    "other_license_detections": [],
+    "extracted_license_statement": "PSF or ZPL",
     "notice_text": null,
     "source_packages": [],
     "file_references": [],

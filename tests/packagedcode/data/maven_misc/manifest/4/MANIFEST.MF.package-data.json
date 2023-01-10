@@ -4,7 +4,7 @@
   "name": "log4j",
   "version": "1.2.16",
   "description": "Apache Log4j\nApache Log4j 1.2",
-  "declared_license": "http://www.apache.org/licenses/LICENSE-2.0.txt",
+  "extracted_license_statement": "http://www.apache.org/licenses/LICENSE-2.0.txt",
   "copyright": null,
   "homepage_url": null,
   "documentation_url": "http://logging.apache.org/log4j/1.2",

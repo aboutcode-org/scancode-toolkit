@@ -23,6 +23,8 @@ from packageurl import PackageURL
 
 from packagedcode import bashparse
 from packagedcode import models
+from packagedcode.licensing import get_declared_license_expression_spdx
+from packagedcode.licensing import get_license_detections_and_expression
 from packagedcode.utils import combine_expressions
 from packagedcode.utils import get_ancestor
 from textcode.analysis import as_unicode
@@ -38,10 +40,20 @@ class AlpineApkArchiveHandler(models.DatafileHandler):
     description = 'Alpine Linux .apk package archive'
     documentation_url = 'https://wiki.alpinelinux.org/wiki/Alpine_package_format'
 
-    @classmethod
-    def compute_normalized_license(cls, package):
-        _declared, detected = detect_declared_license(package.declared_license)
-        return detected
+    @staticmethod
+    def get_license_detections_and_expression(package):
+
+        detections = []
+        expression = None
+
+        if not package.extracted_license_statement:
+            return detections, expression
+
+        _cleaned_lic_statement, detected_license_expression, license_detections = detect_declared_license(
+            declared=package.extracted_license_statement
+        )
+
+        return license_detections, detected_license_expression
 
 
 class AlpineInstalledDatabaseHandler(models.DatafileHandler):
@@ -59,11 +71,6 @@ class AlpineInstalledDatabaseHandler(models.DatafileHandler):
         )
 
     @classmethod
-    def compute_normalized_license(cls, package):
-        _declared, detected = detect_declared_license(package.declared_license)
-        return detected
-
-    @classmethod
     def assemble(cls, package_data, resource, codebase, package_adder):
         # get the root resource of the rootfs
         levels_up = len('lib/apk/db/installed'.split('/'))
@@ -79,7 +86,7 @@ class AlpineInstalledDatabaseHandler(models.DatafileHandler):
         )
         package_uid = package.package_uid
 
-        package.license_expression = cls.compute_normalized_license(package)
+        cls.populate_license_fields(package)
 
         root_path = Path(root_resource.path)
         # a file ref extends from the root of the filesystem
@@ -128,14 +135,25 @@ class AlpineApkbuildHandler(models.DatafileHandler):
 
     @classmethod
     def parse(cls, location):
-        parsed = parse_apkbuild(location, strict=True)
-        if parsed:
-            yield parsed
+        package_data = parse_apkbuild(location, strict=True)
+        cls.populate_license_fields(package_data)
+        if package_data:
+            yield package_data
 
-    @classmethod
-    def compute_normalized_license(cls, package):
-        _declared, detected = detect_declared_license(package.declared_license)
-        return detected
+    @staticmethod
+    def get_license_detections_and_expression(package):
+
+        detections = []
+        expression = None
+
+        if not package.extracted_license_statement:
+            return detections, expression
+
+        _cleaned_lic_statement, detected_license_expression, license_detections = detect_declared_license(
+            declared=package.extracted_license_statement
+        )
+
+        return license_detections, detected_license_expression
 
     @classmethod
     def assign_package_to_resources(cls, package, resource, codebase, package_adder):
@@ -867,10 +885,13 @@ def L_license_handler(value, **kwargs):
     Return a normalized declared license and a detected license expression.
     """
     original = value
-    _declared, detected = detect_declared_license(value)
+    _declared, detected, license_detections = detect_declared_license(value)
+    detected_spdx = get_declared_license_expression_spdx(declared_license_expression=detected)
     return {
-        'declared_license': original,
-        'license_expression': detected,
+        'extracted_license_statement': original,
+        'declared_license_expression': detected,
+        'declared_license_expression_spdx': detected_spdx,
+        'license_detections': license_detections,
     }
 
 
@@ -1220,8 +1241,8 @@ package_handlers_by_field_name = {
 
     # For example: A:x86_64
     # 'arch' in .PKGINFO and APKBUILD
-    'A':  A_arch_handler,
-    'arch':  A_arch_handler,
+    'A': A_arch_handler,
+    'arch': A_arch_handler,
 
     # Compressed package size in bytes.
     # For example: S:507134
@@ -1239,8 +1260,8 @@ package_handlers_by_field_name = {
     # name of the source package
     # For example: o:apk-tools
     # 'origin' in .PKGINFO and APKBUILD
-    'o':  o_source_package_handler,
-    'origin':  o_source_package_handler,
+    'o': o_source_package_handler,
+    'origin': o_source_package_handler,
 
     # c is the sha1 "id" for the git commit in
     # https://git.alpinelinux.org/aports
@@ -1342,12 +1363,12 @@ def detect_declared_license(declared):
     extra_licenses = {}
     expression_symbols = get_license_symbols(extra_licenses=extra_licenses)
 
-    detected = models.compute_normalized_license(
-        declared_license=mapped,
+    license_detections, detected_license_expression = get_license_detections_and_expression(
+        extracted_license_statement=mapped,
         expression_symbols=expression_symbols,
     )
 
-    return cleaned, detected
+    return cleaned, detected_license_expression, license_detections
 
 
 def get_license_symbols(extra_licenses):
@@ -1421,6 +1442,7 @@ EXPRESSION_SYNTAX_FIXES = {
         '(gpl-2.0-only with licenseref-scancode-generic-exception '
         'and lgpl-2.1-or-later with licenseref-scancode-generic-exception)',
 
+    # seen in https://github.com/alpinelinux/aports/blob/6052f331b316cf5366bd3db02af8400e9a34ab59/main/haproxy/APKBUILD
     '(gpl-2.0-or-later and gpl-2.1-or-later) with openssl-exception':
         '(gpl-2.0-or-later with licenseref-scancode-generic-exception '
         'and lgpl-2.1-or-later with licenseref-scancode-generic-exception)',
@@ -1613,12 +1635,12 @@ DECLARED_TO_SPDX = {
 
     'custom:xiph': 'bsd-3-clause',
     # seen in ttf-libertine
-    'gpl and custom:ofl':  '(gpl-2.0 with font-exception-2.0) or ofl-1.1',
+    'gpl and custom:ofl': '(gpl-2.0 with font-exception-2.0) or ofl-1.1',
 
     'none': 'licenseref-scancode-unknown',
     # this is sometimes a IJG jpeg license and sometime an unknown/mitish license
     # as in https://github.com/tdtrask/lua-subprocess
-    'as-is':  'licenseref-scancode-unknown-license-reference',
+    'as-is': 'licenseref-scancode-unknown-license-reference',
 
     # all recent versions are now MIT.
     # the happy license is otherwise licenseref-scancode-visual-idiot
@@ -1626,7 +1648,7 @@ DECLARED_TO_SPDX = {
 
     # "with" mishaps
     'gpl-2.0 with classpath': 'gpl-2.0 with classpath-exception-2.0',
-    'gpl-2.0-only with openssl-exception': 'gpl-2.0-only with licenseref-scancode-openssl-exception-gpl-2.0',
+    'gpl-2.0-only with openssl-exception': 'gpl-2.0-only with licenseref-scancode-openssl-exception-gpl-2.0-plus',
     'gpl-2.0-or-later with openssl-exception': 'gpl-2.0-or-later with licenseref-scancode-openssl-exception-gpl-2.0-plus',
 
     'gpl-3.0-only with openssl-exception': 'gpl-3.0-only with licenseref-scancode-openssl-exception-gpl-3.0-plus',

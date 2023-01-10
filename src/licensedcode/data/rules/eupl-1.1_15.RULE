@@ -1,3 +1,12 @@
+---
+license_expression: eupl-1.1
+is_license_text: yes
+ignorable_copyrights:
+    - (c) the European Community 2007
+ignorable_holders:
+    - the European Community
+---
+
 European Union Public Licence V. 1.1 EUPL (c) the European Community 2007
 
 This European Union Public Licence (the "EUPL") applies to the Work or Software

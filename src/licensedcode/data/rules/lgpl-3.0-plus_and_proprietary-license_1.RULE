@@ -1,4 +1,9 @@
- are free software and can be redistributed and/or modified
+---
+license_expression: lgpl-3.0-plus AND proprietary-license
+is_license_notice: yes
+---
+
+are free software and can be redistributed and/or modified
 under the terms of the GNU Lesser General Public License as published by the Free Software
 Foundation, either version 3 of the License, or (optionally) any later version. 
  are distributed in the hope that they will be useful, but WITHOUT ANY WAR-

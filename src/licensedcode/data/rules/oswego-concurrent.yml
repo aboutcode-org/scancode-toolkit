@@ -1,6 +1,0 @@
-license_expression: oswego-concurrent
-is_license_reference: yes
-relevance: 100
-notes: http://gee.cs.oswego.edu/dl/classes/EDU/oswego/cs/dl/util/sun-u.c.license.pdf
-ignorable_urls:
-    - http://gee.cs.oswego.edu/dl/classes/EDU/oswego/cs/dl/util/sun-u.c.license.pdf

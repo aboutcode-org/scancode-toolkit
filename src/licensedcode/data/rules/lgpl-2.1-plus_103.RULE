@@ -1,3 +1,9 @@
+---
+license_expression: lgpl-2.1-plus
+is_license_notice: yes
+relevance: 100
+---
+
 Anything that ends up being part of the  library needs to be released
 under LGPLv2.1+ or a license compatible with it (though the latter will
 only be accepted for cases where the code originated elsewhere and was

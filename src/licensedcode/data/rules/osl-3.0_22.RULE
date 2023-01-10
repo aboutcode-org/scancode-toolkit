@@ -1,3 +1,11 @@
+---
+license_expression: osl-3.0
+is_license_notice: yes
+relevance: 100
+ignorable_urls:
+    - https://opensource.org/licenses/osl-3.0.php
+---
+
 * NOTICE OF LICENSE
  *
  * This source file is subject to the Open Software License (OSL 3.0)

@@ -1,3 +1,9 @@
+---
+license_expression: proprietary-license
+is_license_text: yes
+notes: See https://fedoraproject.org/wiki/Licensing:OReilly?rd=Licensing/OReilly
+---
+
 The source code on this disk can be freely used, adapted, and redistributed in
 source or  binary form, so long as an acknowledgment appears in derived source
 files. The citation should list that the code comes from the  book  

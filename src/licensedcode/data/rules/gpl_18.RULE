@@ -1,3 +1,9 @@
+---
+license_expression: gpl-1.0-plus
+is_license_notice: yes
+notes: GPL license declaration
+---
+
 The code provided here will not assemble out of the box using the GNU
 assembler, however it is being included in order to comply with the
 GNU General Public License

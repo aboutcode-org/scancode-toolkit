@@ -1,3 +1,9 @@
+---
+license_expression: apache-2.0 WITH llvm-exception
+is_license_notice: yes
+relevance: 100
+---
+
 CUPS Exceptions to the Apache 2.0 License 
 As an exception, if, as a result of your compiling your source code, portions
 of this Software are embedded into an Object form of such source code, you may redistribute such embedded portions in such Object form without complying with the conditions of Sections 4(a), 4(b) and 4(d) of the License.

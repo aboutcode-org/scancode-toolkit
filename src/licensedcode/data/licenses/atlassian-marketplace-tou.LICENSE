@@ -1,3 +1,18 @@
+---
+key: atlassian-marketplace-tou
+short_name: Atlassian Marketplace Terms of Use
+name: Atlassian Marketplace Terms of Use
+category: Proprietary Free
+owner: Atlassian
+homepage_url: https://www.atlassian.com/licensing/marketplace/termsofuse
+spdx_license_key: LicenseRef-scancode-atlassian-marketplace-tou
+ignorable_urls:
+    - https://marketplace.atlassian.com/
+ignorable_emails:
+    - legal@atlassian.com
+    - sales@atlassian.com
+---
+
 Atlassian Marketplace Terms of Use
 Welcome to the Atlassian Marketplace! The Atlassian Marketplace is an online marketplace for cloud and downloadable software applications, plugins and extensions (“Marketplace Apps” or “Apps”) that are designed to interoperate with Atlassian’s software and cloud offerings (“Atlassian Products”).
 

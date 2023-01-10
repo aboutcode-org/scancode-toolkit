@@ -7,74 +7,52 @@
 # See https://aboutcode.org for more information about nexB OSS projects.
 #
 
-import posixpath
+import logging
+import os
 from functools import partial
 
 import attr
-from commoncode.cliutils import MISC_GROUP
+import click
 from commoncode.cliutils import PluggableCommandLineOption
-from commoncode.cliutils import SCAN_OPTIONS_GROUP
 from commoncode.cliutils import SCAN_GROUP
-from commoncode.resource import clean_path
+from commoncode.cliutils import SCAN_OPTIONS_GROUP
+from commoncode.cliutils import MISC_GROUP
 from plugincode.scan import ScanPlugin
 from plugincode.scan import scan_impl
 
+from licensedcode.cache import build_spdx_license_expression, get_cache
+from licensedcode.detection import find_referenced_resource
+from licensedcode.detection import get_detected_license_expression
+from licensedcode.detection import get_matches_from_detection_mappings
+from licensedcode.detection import get_referenced_filenames
+from licensedcode.detection import group_matches
+from licensedcode.detection import process_detections
+from licensedcode.detection import DetectionCategory
+from licensedcode.detection import detections_from_license_detection_mappings
+from licensedcode.detection import LicenseDetection
+from licensedcode.detection import LicenseDetectionFromResult
+from licensedcode.detection import LicenseMatchFromResult
+from licensedcode.detection import UniqueDetection
+from licensedcode.license_db import dump_license_data
+from packagedcode.utils import combine_expressions
 from scancode.api import SCANCODE_LICENSEDB_URL
 
-TRACE = False
+TRACE = os.environ.get('SCANCODE_DEBUG_PLUGIN_LICENSE', False)
 
 
-def logger_debug(*args): pass
+def logger_debug(*args):
+    pass
 
+
+logger = logging.getLogger(__name__)
 
 if TRACE:
-    use_print = True
-    if use_print:
-        prn = print
-    else:
-        import logging
-        import sys
-        logger = logging.getLogger(__name__)
-        # logging.basicConfig(level=logging.DEBUG, stream=sys.stdout)
-        logging.basicConfig(stream=sys.stdout)
-        logger.setLevel(logging.DEBUG)
-        prn = logger.debug
+    import sys
+    logging.basicConfig(stream=sys.stdout)
+    logger.setLevel(logging.DEBUG)
 
     def logger_debug(*args):
-        return prn(' '.join(isinstance(a, str) and a or repr(a) for a in args))
-
-
-def reindex_licenses(ctx, param, value):
-    """
-    Rebuild and cache the license index
-    """
-    if not value or ctx.resilient_parsing:
-        return
-
-    # TODO: check for temp file configuration and use that for the cache!!!
-    from licensedcode.cache import get_index
-    import click
-    click.echo('Rebuilding the license index...')
-    get_index(force=True)
-    click.echo('Done.')
-    ctx.exit(0)
-
-
-def reindex_licenses_all_languages(ctx, param, value):
-    """
-    EXPERIMENTAL: Rebuild and cache the license index including all languages
-    and not only English.
-    """
-    if not value or ctx.resilient_parsing:
-        return
-
-    # TODO: check for temp file configuration and use that for the cache!!!
-    from licensedcode.cache import get_index
-    import click
-    click.echo('Rebuilding the license index for all languages...')
-    get_index(force=True, index_all_languages=True)
-    click.echo('Done.')
-    ctx.exit(0)
+        return logger.debug(' '.join(isinstance(a, str) and a or repr(a) for a in args))
 
 
 @scan_impl
@@ -84,12 +62,19 @@ class LicenseScanner(ScanPlugin):
     """
 
     resource_attributes = dict([
-        ('licenses', attr.ib(default=attr.Factory(list))),
-        ('license_expressions', attr.ib(default=attr.Factory(list))),
+        ('detected_license_expression', attr.ib(default=None)),
+        ('detected_license_expression_spdx', attr.ib(default=None)),
+        ('license_detections', attr.ib(default=attr.Factory(list))),
+        ('license_clues', attr.ib(default=attr.Factory(list))),
         ('percentage_of_license_text', attr.ib(default=0)),
+        ('for_license_detections', attr.ib(default=attr.Factory(list))),
     ])
 
-    sort_order = 2
+    codebase_attributes = dict(
+        license_detections=attr.ib(default=attr.Factory(list)),
+    )
+
+    sort_order = 4
 
     options = [
         PluggableCommandLineOption(('-l', '--license'),
@@ -134,28 +119,21 @@ class LicenseScanner(ScanPlugin):
             ('--unknown-licenses',),
             is_flag=True,
             required_options=['license'],
-            help='[EXPERIMENTAL] Detect unknown licenses and follow license '
-                 'references such as "See license in file COPYING".',
+            help='[EXPERIMENTAL] Detect unknown licenses. ',
             help_group=SCAN_OPTIONS_GROUP,
         ),
 
+        # TODO: consider creating a separate comamnd line option exe instead
         PluggableCommandLineOption(
-            ('--reindex-licenses',),
-            is_flag=True, is_eager=True,
-            callback=reindex_licenses,
-            help='Rebuild the license index and exit.',
+            ('--dump-license-data',),
+            type=click.Path(exists=False, readable=True, file_okay=False, resolve_path=True, path_type=str),
+            metavar='DIR',
+            callback=dump_license_data,
+            help='Dump the license data in this directory in the LicenseDB format and exit. '
+            'Creates the directory if it does not exist. ',
             help_group=MISC_GROUP,
+            is_eager=True,
         ),
-
-        PluggableCommandLineOption(
-            ('--reindex-licenses-for-all-languages',),
-            is_flag=True, is_eager=True,
-            callback=reindex_licenses_all_languages,
-            help='[EXPERIMENTAL] Rebuild the license index including texts all '
-                 'languages (and not only English) and exit.',
-            help_group=MISC_GROUP,
-        )
-
     ]
 
     def is_enabled(self, license, **kwargs):  # NOQA
@@ -188,35 +166,160 @@ class LicenseScanner(ScanPlugin):
             unknown_licenses=unknown_licenses,
         )
 
-    def process_codebase(self, codebase, unknown_licenses, **kwargs):
+    def process_codebase(self, codebase, **kwargs):
         """
-        Post process the codebase to further detect unknown licenses and follow
-        license references to other files.
-
-        This is an EXPERIMENTAL feature for now.
+        Post-process ``codebase`` to follow referenced filenames to license
+        matches in other files.
+        Also add top-level unique ``license_detections``.
         """
-        if unknown_licenses:
-            if codebase.has_single_resource:
-                return
+        from licensedcode import cache
+        cche = cache.get_cache()
 
-            for resource in codebase.walk(topdown=False):
-                # follow license references to other files
-                if TRACE:
-                    license_expressions_before = list(resource.license_expressions)
+        cle = codebase.get_or_create_current_header()
+        has_additional_licenses = False
 
-                modified = add_referenced_filenames_license_matches(resource, codebase)
+        if cche.additional_license_directory:
+            cle.extra_data['additional_license_directory'] = cche.additional_license_directory
+            has_additional_licenses = True
 
-                if TRACE and modified:
-                    license_expressions_after = list(resource.license_expressions)
-                    logger_debug(
-                        f'add_referenced_filenames_license_matches: Modfied:',
-                        f'{resource.path} with license_expressions:\n'
-                        f'before: {license_expressions_before}\n'
-                        f'after : {license_expressions_after}'
-                    )
+        if cche.additional_license_plugins:
+            cle.extra_data['additional_license_plugins'] = cche.additional_license_plugins
+            has_additional_licenses = True
+
+        if TRACE and has_additional_licenses:
+            logger_debug(
+                f'add_referenced_filenames_license_matches: additional_licenses',
+                f'has_additional_licenses: {has_additional_licenses}\n',
+                f'additional_license_directory: {cche.additional_license_directory}\n',
+                f'additional_license_plugins : {cche.additional_license_plugins}'
+            )
+
+        if codebase.has_single_resource and not codebase.root.is_file:
+            return
+
+        license_detections = collect_license_detections(codebase)
+        unique_license_detections = UniqueDetection.get_unique_detections(license_detections)
+
+        if TRACE:
+            logger_debug(
+                f'process_codebase: codebase license_detections',
+                f'license_detections: {license_detections}\n',
+                f'unique_license_detections: {unique_license_detections}',
+            )
+
+        modified = False
+        for resource in codebase.walk(topdown=False):
+            # follow license references to other files
+            if TRACE:
+                license_expressions_before = resource.detected_license_expression
+
+            modified = add_referenced_filenames_license_matches_for_detections(resource, codebase)
+
+            if TRACE and modified:
+                license_expressions_after = resource.detected_license_expression
+                logger_debug(
+                    f'add_referenced_filenames_license_matches: Modified:',
+                    f'{resource.path} with license_expressions:\n'
+                    f'before: {license_expressions_before}\n'
+                    f'after : {license_expressions_after}'
+                )
+
+        populate_for_license_detections_in_resources(
+            codebase=codebase,
+            detections=unique_license_detections,
+        )
+        codebase.attributes.license_detections.extend([
+            unique_detection.to_dict()
+            for unique_detection in unique_license_detections
+        ])
 
 
-def add_referenced_filenames_license_matches(resource, codebase):
+def populate_for_license_detections_in_resources(codebase, detections):
+    """
+    Populate the ``codebase`` resource ``for_license_detections`` attribute from
+    a ``detections`` list of ``UniqueDetection``,
+    """
+    for detection in detections:
+        if TRACE:
+            logger_debug(
+                f'populate_for_license_detections_in_resources:',
+                f'for detection: {detection.license_expression}\n',
+                f'file paths: {detection.files}',
+            )
+        for file_region in detection.files:
+            resource = codebase.get_resource(path=file_region.path)
+            resource.for_license_detections.append(detection.identifier)
+            codebase.save_resource(resource)
+
+
+def collect_license_detections(codebase):
+    """
+    Return a list of LicenseDetectionFromResult from a ``codebase``
+    """
+    has_packages = hasattr(codebase.root, 'package_data')
+    has_licenses = hasattr(codebase.root, 'license_detections')
+
+    all_license_detections = []
+
+    for resource in codebase.walk():
+
+        resource_license_detections = []
+        if has_licenses:
+            license_detections = getattr(resource, 'license_detections', []) or []
+            license_clues = getattr(resource, 'license_clues', []) or []
+
+            if license_detections:
+                license_detection_objects = detections_from_license_detection_mappings(
+                    license_detection_mappings=license_detections,
+                    file_path=resource.path,
+                )
+                resource_license_detections.extend(license_detection_objects)
+
+            if license_clues:
+                license_matches = LicenseMatchFromResult.from_dicts(
+                    license_match_mappings=license_clues,
+                )
+
+                for group_of_matches in group_matches(license_matches=license_matches):
+                    detection = LicenseDetection.from_matches(matches=group_of_matches)
+                    detection.file_region = detection.get_file_region(path=resource.path)
+                    resource_license_detections.append(detection)
+
+        all_license_detections.extend(
+            list(process_detections(detections=resource_license_detections))
+        )
+
+    if TRACE:
+        logger_debug(
+            f'before process_detections licenses:',
+            f'resource_license_detections: {resource_license_detections}\n',
+            f'all_license_detections: {all_license_detections}',
+        )
+
+    if has_packages:
+        package_data = getattr(resource, 'package_data', []) or []
+
+        package_license_detection_mappings = []
+        for package in package_data:
+
+            if package["license_detections"]:
+                package_license_detection_mappings.extend(package["license_detections"])
+
+            if package["other_license_detections"]:
+                package_license_detection_mappings.extend(package["other_license_detections"])
+
+            if package_license_detection_mappings:
+                package_license_detection_objects = detections_from_license_detection_mappings(
+                    license_detection_mappings=package_license_detection_mappings,
+                    file_path=resource.path,
+                )
+
+                all_license_detections.extend(package_license_detection_objects)
+
+    return all_license_detections
+
+
+def add_referenced_filenames_license_matches_for_detections(resource, codebase):
     """
     Return an updated ``resource`` saving it in place, after adding new license
     matches (licenses and license_expressions) following their Rule
@@ -226,65 +329,67 @@ def add_referenced_filenames_license_matches(resource, codebase):
     if not resource.is_file:
         return
 
-    license_matches = resource.licenses
-    if not license_matches:
+    license_detection_mappings = resource.license_detections
+    if not license_detection_mappings:
         return
-
-    license_expressions = resource.license_expressions
 
     modified = False
 
-    for referenced_filename in get_referenced_filenames(license_matches):
-        referenced_resource = find_referenced_resource(
-            referenced_filename=referenced_filename,
-            resource=resource,
-            codebase=codebase,
-        )
+    for license_detection_mapping in license_detection_mappings:
 
-        if referenced_resource and referenced_resource.licenses:
-            modified = True
-            # TODO: we should hint that these matches were defererenced from
-            # following a referenced filename
-            license_matches.extend(referenced_resource.licenses)
-            license_expressions.extend(referenced_resource.license_expressions)
+        license_detection = LicenseDetectionFromResult.from_license_detection_mapping(
+            license_detection_mapping=license_detection_mapping,
+            file_path=resource.path,
+        )
+        detection_modified = False
+        license_match_mappings = license_detection_mapping["matches"]
+        referenced_filenames = get_referenced_filenames(license_detection.matches)
+
+        if not referenced_filenames:
+            continue
+
+        for referenced_filename in referenced_filenames:
+            referenced_resource = find_referenced_resource(
+                referenced_filename=referenced_filename,
+                resource=resource,
+                codebase=codebase,
+            )
+
+            if referenced_resource and referenced_resource.license_detections:
+                modified = True
+                detection_modified = True
+                license_match_mappings.extend(
+                    get_matches_from_detection_mappings(
+                        license_detections=referenced_resource.license_detections
+                    )
+                )
+
+        if not detection_modified:
+            continue
+
+        detection_log, license_expression = get_detected_license_expression(
+            license_match_mappings=license_match_mappings,
+            analysis=DetectionCategory.UNKNOWN_FILE_REFERENCE_LOCAL.value,
+            post_scan=True,
+        )
+        license_detection_mapping["license_expression"] = str(license_expression)
+        license_detection_mapping["detection_log"] = detection_log
 
     if modified:
+        license_expressions = [
+            detection["license_expression"]
+            for detection in resource.license_detections
+        ]
+        resource.detected_license_expression = combine_expressions(
+            expressions=license_expressions,
+            relation='AND',
+            unique=True,
+        )
+
+        resource.detected_license_expression_spdx = str(build_spdx_license_expression(
+            license_expression=resource.detected_license_expression,
+            licensing=get_cache().licensing,
+        ))
+
         codebase.save_resource(resource)
-        return resource
-
-
-def get_referenced_filenames(license_matches):
-    """
-    Return a list of unique referenced filenames found in the rules of a list of
-    ``license_matches``
-    """
-    unique_filenames = []
-    for license_match in license_matches:
-        for filename in license_match['matched_rule']['referenced_filenames']:
-            if filename not in unique_filenames:
-                unique_filenames.append(filename)
-
-    return unique_filenames
-
-
-def find_referenced_resource(referenced_filename, resource, codebase, **kwargs):
-    """
-    Return a Resource matching the ``referenced_filename`` path or filename
-    given a ``resource`` in ``codebase``. Return None if the
-    ``referenced_filename`` cannot be found in the same directory as the base
-    ``resource``. ``referenced_filename`` is the path or filename referenced in
-    a LicenseMatch of ``resource``,
-    """
-    if not resource:
-        return
-
-    parent_path = resource.parent_path()
-    if not parent_path:
-        return
-
-    # this can be a path or a plain name
-    referenced_filename = clean_path(referenced_filename)
-    path = posixpath.join(parent_path, referenced_filename)
-    resource = codebase.get_resource(path=path)
-    if resource:
         return resource

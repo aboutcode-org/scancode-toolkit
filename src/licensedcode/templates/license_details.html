@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+
+{% block title %}LicenseDB: {{ license.key }}{% endblock %}
+
+{% block extrahead %}
+  <script src="static/jquery.mark-8.11.1.min.js"></script>
+  <style>
+    table.dataTable {visibility: visible!important;}
+    #search-section {display: none;}
+    ul.list-style-none {list-style: none; margin: 0;}
+    ul li:first-child {margin-top: 0;}
+    dl {display: flex; flex-flow: row wrap;}
+    dl dt, dl dd {margin: 0; padding: 6px 10px;}
+    dt {flex-basis: 20%; background: #555; text-align: right; color: #fff;}
+    dd {flex-basis: 70%; flex-grow: 1;}
+  </style>
+{% endblock %}
+
+{% block content %}
+  <div class="container">
+    <hr>
+    <a href="index.html">back to list</a> -
+    <a href="{{ license.key }}.yml">yml</a> -
+    <a href="{{ license.key }}.json">json</a> -
+    <a href="{{ license.key }}.LICENSE">text</a> -
+    <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/{{ license.key }}.LICENSE" target="_blank">edit text</a> -
+    <a href="https://github.com/nexB/scancode-toolkit/edit/develop/src/licensedcode/data/licenses/{{ license.key }}.yml" target="_blank">edit data</a>
+    <hr>
+    <dl>
+      {% for label, value in license_data.items() %}
+        <dt style="">{{ label }}</dt>
+        <dd>
+          {% if value is iterable and value is not string %}
+            <ul class="list-style-none">
+             {% for item in value %}<li>{{ item|urlize(target='_blank') }}</li>{% endfor %}
+            </ul>
+          {% else %}
+            {{ value|urlize(target='_blank') }}
+          {%  endif %}
+        </dd>
+      {% endfor %}
+    </dl>
+    <div class="text-bold">license_text</div>
+    <pre id="license-text" class="code mt-1" style="white-space: pre-wrap;"><code>{{ license.text }}</code></pre>
+  </div>
+{% endblock %}
+
+{% block scripts %}
+  <script>
+    $(document).ready(function() {
+      let url_params = new URLSearchParams(window.location.search);
+      let marks = url_params.getAll('mark');  // ?mark=0-10&mark=30-40
+      $.each(marks, function(index, value) {
+        let [start, end] = value.split("-");
+        $("#license-text").markRanges([{
+          start: start,
+          length: end - start,
+        }]);
+      });
+    });
+  </script>
+{% endblock %}

@@ -1,3 +1,10 @@
+---
+license_expression: sun-jsr-spec-04-2006
+is_license_text: yes
+minimum_coverage: 60
+notes: BEA variant
+---
+
 1. License for Evaluation Purposes. BEA hereby grants you a fully-paid, 
 non-exclusive, non-transferable, worldwide, limited license (without 
 the right to sublicense), under BEA's applicable intellectual property 

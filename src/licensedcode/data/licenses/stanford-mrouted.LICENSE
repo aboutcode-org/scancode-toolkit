@@ -1,3 +1,18 @@
+---
+key: stanford-mrouted
+short_name: Stanford mrouted License
+name: Stanford mrouted License
+category: Copyleft Limited
+owner: Stanford University
+homepage_url: http://www.mail-archive.com/debian-legal@lists.debian.org/msg04177.html
+spdx_license_key: LicenseRef-scancode-stanford-mrouted
+faq_url: http://www.mail-archive.com/debian-legal@lists.debian.org/msg04177.html
+ignorable_copyrights:
+    - COPYRIGHT 1989 by The Board of Trustees of Leland Stanford Junior University
+ignorable_holders:
+    - The Board of Trustees of Leland Stanford Junior University
+---
+
 The mrouted program is covered by the following license.  Use of the
 mrouted program represents acceptance of these terms and conditions.
 

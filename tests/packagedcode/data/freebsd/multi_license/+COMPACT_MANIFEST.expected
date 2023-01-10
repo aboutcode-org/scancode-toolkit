@@ -36,14 +36,54 @@
     "code_view_url": "https://svnweb.freebsd.org/ports/head/dns/py-idna",
     "vcs_url": null,
     "copyright": null,
-    "license_expression": "python AND bsd-new",
-    "declared_license": {
-      "licenses": [
-        "PSFL",
-        "BSD3CLAUSE"
-      ],
-      "licenselogic": "and"
-    },
+    "declared_license_expression": "python AND bsd-new",
+    "declared_license_expression_spdx": "Python-2.0 AND BSD-3-Clause",
+    "license_detections": [
+      {
+        "license_expression": "python",
+        "detection_log": [
+          "not-combined"
+        ],
+        "matches": [
+          {
+            "score": 80.0,
+            "start_line": 1,
+            "end_line": 1,
+            "matched_length": 1,
+            "match_coverage": 100.0,
+            "matcher": "1-hash",
+            "license_expression": "python",
+            "rule_identifier": "python_10.RULE",
+            "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/python_10.RULE",
+            "matched_text": "PSFL"
+          }
+        ]
+      },
+      {
+        "license_expression": "bsd-new",
+        "detection_log": [
+          "not-combined"
+        ],
+        "matches": [
+          {
+            "score": 99.0,
+            "start_line": 1,
+            "end_line": 1,
+            "matched_length": 1,
+            "match_coverage": 100.0,
+            "matcher": "1-hash",
+            "license_expression": "bsd-new",
+            "rule_identifier": "bsd-new_416.RULE",
+            "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_416.RULE",
+            "matched_text": "BSD3CLAUSE"
+          }
+        ]
+      }
+    ],
+    "other_license_expression": null,
+    "other_license_expression_spdx": null,
+    "other_license_detections": [],
+    "extracted_license_statement": "{'licenses': ['PSFL', 'BSD3CLAUSE'], 'licenselogic': 'and'}",
     "notice_text": null,
     "source_packages": [],
     "file_references": [],

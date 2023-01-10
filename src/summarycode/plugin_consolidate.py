@@ -139,7 +139,7 @@ class Consolidator(PostScanPlugin):
         consolidated_to=attr.ib(default=attr.Factory(list))
     )
 
-    sort_order = 8
+    sort_order = 10
 
     options = [
         PluggableCommandLineOption(('--consolidate',),
@@ -170,9 +170,9 @@ class Consolidator(PostScanPlugin):
         # TODO: Have a "catch-all" Component for the things that we haven't grouped
         consolidations = []
         root = codebase.root
-        if hasattr(root, 'packages') and hasattr(root, 'copyrights') and hasattr(root, 'licenses'):
+        if hasattr(root, 'packages') and hasattr(root, 'copyrights') and hasattr(root, 'license_detections'):
             consolidations.extend(get_consolidated_packages(codebase))
-        if hasattr(root, 'copyrights') and hasattr(root, 'licenses'):
+        if hasattr(root, 'copyrights') and hasattr(root, 'license_detections'):
             consolidations.extend(get_holders_consolidated_components(codebase))
 
         if not consolidations:
@@ -243,9 +243,9 @@ def get_consolidated_packages(codebase):
             package_root = package.get_package_root(resource, codebase)
             package_root.extra_data['package_root'] = True
             package_root.save(codebase)
-            is_build_file = isinstance(package,     )
+            is_build_file = isinstance(package,)
             package_resources = list(package.get_package_resources(package_root, codebase))
-            package_license_expression = package.license_expression
+            package_license_expression = package.declared_license_expression
             package_copyright = package.copyright
 
             package_holders = []
@@ -353,14 +353,12 @@ def get_holders_consolidated_components(codebase):
             # Each child we are processing is a file
             if (child.is_dir
                     or child.extra_data.get('in_package_component')
-                    or (not child.license_expressions and not child.holders)):
+                    or (not child.detected_license_expression and not child.holders)):
                 continue
 
-            if child.license_expressions:
-                license_expression = combine_expressions(child.license_expressions)
-                if license_expression:
-                    child.extra_data['normalized_license_expression'] = license_expression
-                    child.save(codebase)
+            if child.detected_license_expression:
+                child.extra_data['normalized_license_expression'] = child.detected_license_expression
+                child.save(codebase)
 
             if child.holders:
                 holders = process_holders(h['holder'] for h in child.holders)

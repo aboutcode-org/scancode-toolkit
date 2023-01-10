@@ -37,8 +37,34 @@
     "code_view_url": null,
     "vcs_url": "https://github.com/rust-lang/rustfmt",
     "copyright": null,
-    "license_expression": "apache-2.0 OR mit",
-    "declared_license": "Apache-2.0/MIT",
+    "declared_license_expression": "apache-2.0 OR mit",
+    "declared_license_expression_spdx": "Apache-2.0 OR MIT",
+    "license_detections": [
+      {
+        "license_expression": "apache-2.0 OR mit",
+        "detection_log": [
+          "not-combined"
+        ],
+        "matches": [
+          {
+            "score": 99.0,
+            "start_line": 1,
+            "end_line": 1,
+            "matched_length": 4,
+            "match_coverage": 100.0,
+            "matcher": "1-hash",
+            "license_expression": "apache-2.0 OR mit",
+            "rule_identifier": "apache-2.0_or_mit_48.RULE",
+            "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_or_mit_48.RULE",
+            "matched_text": "Apache-2.0/MIT"
+          }
+        ]
+      }
+    ],
+    "other_license_expression": null,
+    "other_license_expression_spdx": null,
+    "other_license_detections": [],
+    "extracted_license_statement": "Apache-2.0/MIT",
     "notice_text": null,
     "source_packages": [],
     "file_references": [],

@@ -1,4 +1,13 @@
- * There appears to be no explicit license for . However, the
+---
+license_expression: unknown
+is_license_reference: yes
+notes: seen with FFpack at https://github.com/notlion/libluaav-wip/blob/master/gamma/fftpack%2B%2B2.cpp
+    technically since this is a US agency, it may be public domain in the US.
+ignorable_authors:
+    - the National Center for Atmospheric Research
+---
+
+* There appears to be no explicit license for . However, the
  * package has been incorporated verbatim into a large number of software
  * systems over the years with numerous types of license without complaint
  * from the original author; therefore it would appear

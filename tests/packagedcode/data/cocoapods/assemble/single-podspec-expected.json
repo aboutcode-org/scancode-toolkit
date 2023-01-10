@@ -1,4 +1,80 @@
 {
+  "packages": [
+    {
+      "type": "cocoapods",
+      "namespace": null,
+      "name": "RxDataSources",
+      "version": "4.0.1",
+      "qualifiers": {},
+      "subpath": null,
+      "primary_language": "Objective-C",
+      "description": "This is a collection of reactive data sources for UITableView and UICollectionView.\n\nIt enables creation of animated data sources for table an collection views in just a couple of lines of code.\n\n```swift\nlet data: Observable<Section> = ...\n\nlet dataSource = RxTableViewSectionedAnimatedDataSource<Section>()\ndataSource.cellFactory = { (tv, ip, i) in\n    let cell = tv.dequeueReusableCell(withIdentifier: \"Cell\") ?? UITableViewCell(style:.Default, reuseIdentifier: \"Cell\")\n    cell.textLabel!.text = \"\\(i)\"\n    return cell\n}\n\n// animated\ndata\n    .bind(to: animatedTableView.rx.items(dataSource: dataSource))\n    .disposed(by: disposeBag)\n\n// normal reload\ndata\n    .bind(to: tableView.rx.items(dataSource: dataSource))\n    .disposed(by: disposeBag)\n```",
+      "release_date": null,
+      "parties": [
+        {
+          "type": "person",
+          "role": "author",
+          "name": "Krunoslav Zaher ",
+          "email": "krunoslav.zaher@gmail.com",
+          "url": null
+        }
+      ],
+      "keywords": [],
+      "homepage_url": "https://github.com/RxSwiftCommunity/RxDataSources",
+      "download_url": null,
+      "size": null,
+      "sha1": null,
+      "md5": null,
+      "sha256": null,
+      "sha512": null,
+      "bug_tracking_url": "https://github.com/RxSwiftCommunity/RxDataSources/issues/",
+      "code_view_url": "https://github.com/RxSwiftCommunity/RxDataSources/tree/4.0.1",
+      "vcs_url": "https://github.com/RxSwiftCommunity/RxDataSources.git",
+      "copyright": null,
+      "declared_license_expression": "mit",
+      "declared_license_expression_spdx": "MIT",
+      "license_detections": [
+        {
+          "license_expression": "mit",
+          "detection_log": [
+            "not-combined"
+          ],
+          "matches": [
+            {
+              "score": 100.0,
+              "start_line": 1,
+              "end_line": 1,
+              "matched_length": 1,
+              "match_coverage": 100.0,
+              "matcher": "1-spdx-id",
+              "license_expression": "mit",
+              "rule_identifier": "spdx-license-identifier-mit-5da48780aba670b0860c46d899ed42a0f243ff06",
+              "rule_url": null,
+              "matched_text": "MIT"
+            }
+          ]
+        }
+      ],
+      "other_license_expression": null,
+      "other_license_expression_spdx": null,
+      "other_license_detections": [],
+      "extracted_license_statement": "MIT",
+      "notice_text": null,
+      "source_packages": [],
+      "extra_data": {},
+      "repository_homepage_url": "https://cocoapods.org/pods/RxDataSources",
+      "repository_download_url": "https://github.com/RxSwiftCommunity/RxDataSources/archive/refs/tags/4.0.1.zip",
+      "api_data_url": "https://raw.githubusercontent.com/CocoaPods/Specs/blob/master/Specs/9/a/4/RxDataSources/4.0.1/RxDataSources.podspec.json",
+      "package_uid": "pkg:cocoapods/RxDataSources@4.0.1?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_paths": [
+        "single-podspec/RxDataSources.podspec"
+      ],
+      "datasource_ids": [
+        "cocoapods_podspec"
+      ],
+      "purl": "pkg:cocoapods/RxDataSources@4.0.1"
+    }
+  ],
   "dependencies": [
     {
       "purl": "pkg:cocoapods/boost@1.76.0",
@@ -43,54 +119,73 @@
       "datasource_id": "cocoapods_podfile_lock"
     }
   ],
-  "packages": [
+  "license_references": [
     {
-      "type": "cocoapods",
-      "namespace": null,
-      "name": "RxDataSources",
-      "version": "4.0.1",
-      "qualifiers": {},
-      "subpath": null,
-      "primary_language": "Objective-C",
-      "description": "This is a collection of reactive data sources for UITableView and UICollectionView.\n\nIt enables creation of animated data sources for table an collection views in just a couple of lines of code.\n\n```swift\nlet data: Observable<Section> = ...\n\nlet dataSource = RxTableViewSectionedAnimatedDataSource<Section>()\ndataSource.cellFactory = { (tv, ip, i) in\n    let cell = tv.dequeueReusableCell(withIdentifier: \"Cell\") ?? UITableViewCell(style:.Default, reuseIdentifier: \"Cell\")\n    cell.textLabel!.text = \"\\(i)\"\n    return cell\n}\n\n// animated\ndata\n    .bind(to: animatedTableView.rx.items(dataSource: dataSource))\n    .disposed(by: disposeBag)\n\n// normal reload\ndata\n    .bind(to: tableView.rx.items(dataSource: dataSource))\n    .disposed(by: disposeBag)\n```",
-      "release_date": null,
-      "parties": [
-        {
-          "type": "person",
-          "role": "author",
-          "name": "Krunoslav Zaher ",
-          "email": "krunoslav.zaher@gmail.com",
-          "url": null
-        }
+      "key": "mit",
+      "language": "en",
+      "short_name": "MIT License",
+      "name": "MIT License",
+      "category": "Permissive",
+      "owner": "MIT",
+      "homepage_url": "http://opensource.org/licenses/mit-license.php",
+      "notes": "Per SPDX.org, this license is OSI certified.",
+      "is_builtin": true,
+      "is_exception": false,
+      "is_unknown": false,
+      "is_generic": false,
+      "spdx_license_key": "MIT",
+      "other_spdx_license_keys": [],
+      "osi_license_key": null,
+      "text_urls": [
+        "http://opensource.org/licenses/mit-license.php"
       ],
-      "keywords": [],
-      "homepage_url": "https://github.com/RxSwiftCommunity/RxDataSources",
-      "download_url": null,
-      "size": null,
-      "sha1": null,
-      "md5": null,
-      "sha256": null,
-      "sha512": null,
-      "bug_tracking_url": "https://github.com/RxSwiftCommunity/RxDataSources/issues/",
-      "code_view_url": "https://github.com/RxSwiftCommunity/RxDataSources/tree/4.0.1",
-      "vcs_url": "https://github.com/RxSwiftCommunity/RxDataSources.git",
-      "copyright": null,
+      "osi_url": "http://www.opensource.org/licenses/MIT",
+      "faq_url": "https://ieeexplore.ieee.org/document/9263265",
+      "other_urls": [
+        "https://opensource.com/article/18/3/patent-grant-mit-license",
+        "https://opensource.com/article/19/4/history-mit-license",
+        "https://opensource.org/licenses/MIT"
+      ],
+      "key_aliases": [],
+      "minimum_coverage": 0,
+      "standard_notice": null,
+      "ignorable_copyrights": [],
+      "ignorable_holders": [],
+      "ignorable_authors": [],
+      "ignorable_urls": [],
+      "ignorable_emails": [],
+      "text": "Permission is hereby granted, free of charge, to any person obtaining\na copy of this software and associated documentation files (the\n\"Software\"), to deal in the Software without restriction, including\nwithout limitation the rights to use, copy, modify, merge, publish,\ndistribute, sublicense, and/or sell copies of the Software, and to\npermit persons to whom the Software is furnished to do so, subject to\nthe following conditions:\n\nThe above copyright notice and this permission notice shall be\nincluded in all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND,\nEXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF\nMERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.\nIN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY\nCLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,\nTORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE\nSOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.",
+      "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE",
+      "licensedb_url": "https://scancode-licensedb.aboutcode.org/mit",
+      "spdx_url": "https://spdx.org/licenses/MIT"
+    }
+  ],
+  "license_rule_references": [
+    {
       "license_expression": "mit",
-      "declared_license": "MIT",
-      "notice_text": null,
-      "source_packages": [],
-      "extra_data": {},
-      "repository_homepage_url": "https://cocoapods.org/pods/RxDataSources",
-      "repository_download_url": "https://github.com/RxSwiftCommunity/RxDataSources/archive/refs/tags/4.0.1.zip",
-      "api_data_url": "https://raw.githubusercontent.com/CocoaPods/Specs/blob/master/Specs/9/a/4/RxDataSources/4.0.1/RxDataSources.podspec.json",
-      "package_uid": "pkg:cocoapods/RxDataSources@4.0.1?uuid=fixed-uid-done-for-testing-5642512d1758",
-      "datafile_paths": [
-        "single-podspec/RxDataSources.podspec"
-      ],
-      "datasource_ids": [
-        "cocoapods_podspec"
-      ],
-      "purl": "pkg:cocoapods/RxDataSources@4.0.1"
+      "identifier": "spdx-license-identifier-mit-5da48780aba670b0860c46d899ed42a0f243ff06",
+      "language": "en",
+      "rule_url": null,
+      "is_license_text": false,
+      "is_license_notice": false,
+      "is_license_reference": false,
+      "is_license_tag": true,
+      "is_license_intro": false,
+      "is_continuous": false,
+      "is_builtin": true,
+      "is_from_license": false,
+      "is_synthetic": true,
+      "length": 1,
+      "relevance": 100,
+      "minimum_coverage": 0,
+      "referenced_filenames": [],
+      "notes": null,
+      "ignorable_copyrights": [],
+      "ignorable_holders": [],
+      "ignorable_authors": [],
+      "ignorable_urls": [],
+      "ignorable_emails": [],
+      "text": "MIT"
     }
   ],
   "files": [
@@ -128,8 +223,13 @@
           "code_view_url": null,
           "vcs_url": "",
           "copyright": null,
-          "license_expression": null,
-          "declared_license": null,
+          "declared_license_expression": null,
+          "declared_license_expression_spdx": null,
+          "license_detections": [],
+          "other_license_expression": null,
+          "other_license_expression_spdx": null,
+          "other_license_detections": [],
+          "extracted_license_statement": null,
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
@@ -174,8 +274,13 @@
           "code_view_url": null,
           "vcs_url": null,
           "copyright": null,
-          "license_expression": null,
-          "declared_license": null,
+          "declared_license_expression": null,
+          "declared_license_expression_spdx": null,
+          "license_detections": [],
+          "other_license_expression": null,
+          "other_license_expression_spdx": null,
+          "other_license_detections": [],
+          "extracted_license_statement": null,
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
@@ -259,8 +364,34 @@
           "code_view_url": "https://github.com/RxSwiftCommunity/RxDataSources/tree/4.0.1",
           "vcs_url": "https://github.com/RxSwiftCommunity/RxDataSources.git",
           "copyright": null,
-          "license_expression": "mit",
-          "declared_license": "MIT",
+          "declared_license_expression": "mit",
+          "declared_license_expression_spdx": "MIT",
+          "license_detections": [
+            {
+              "license_expression": "mit",
+              "detection_log": [
+                "not-combined"
+              ],
+              "matches": [
+                {
+                  "score": 100.0,
+                  "start_line": 1,
+                  "end_line": 1,
+                  "matched_length": 1,
+                  "match_coverage": 100.0,
+                  "matcher": "1-spdx-id",
+                  "license_expression": "mit",
+                  "rule_identifier": "spdx-license-identifier-mit-5da48780aba670b0860c46d899ed42a0f243ff06",
+                  "rule_url": null,
+                  "matched_text": "MIT"
+                }
+              ]
+            }
+          ],
+          "other_license_expression": null,
+          "other_license_expression_spdx": null,
+          "other_license_detections": [],
+          "extracted_license_statement": "MIT",
           "notice_text": null,
           "source_packages": [],
           "file_references": [],

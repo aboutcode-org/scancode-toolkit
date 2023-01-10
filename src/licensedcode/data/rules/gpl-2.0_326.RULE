@@ -1,3 +1,8 @@
+---
+license_expression: gpl-2.0
+is_license_notice: yes
+---
+
 Tmis program is free software; you can redistribute it and/or modify it
 under the terms of version 2 of the GNU General Public License as
 published by the Free Software Foundation.
@@ -9,4 +14,3 @@ more details.
 
 The full GNU General Public License is included in this distribution in the
 file called LICENSE.
-

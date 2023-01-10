@@ -1,0 +1,304 @@
+Name: icu
+URL: https://github.com/unicode-org/icu
+Version: 71-1
+CPEPrefix: cpe:/a:icu-project:international_components_for_unicode:71.1
+License: MIT
+Security Critical: yes
+
+Description:
+This directory contains the source code of ICU 71.1 for C/C++.
+
+A. How to update ICU
+
+1. Run "scripts/update.sh <version>" (e.g. 71-1).
+   This will download ICU from the upstream git repository.
+   It does preserve Chrome-specific build files and
+   converter files. (see section C)
+
+   source.gni and icu.gyp* files are automatically updated, too.
+
+2. Review and apply patches/changes in "D. Local Modifications" if
+   necessary/applicable. Update patch files in patches/.
+
+3. Follow the instructions in section B on building ICU data files
+
+B. How to build ICU data files
+
+
+Pre-built data files are generated and checked in with the following steps
+
+1. icu data files for Chrome OS, Linux, Mac and Windows
+
+  a. Make a icu data build directory outside the Chromium source tree
+     and cd to that directory (say, $ICUBUILDIR).
+
+  b. Run
+       ${CHROME_ICU_TREE_TOP}/scripts/make_data_all.sh
+
+     This script takes the following steps:
+
+     i) Run
+        ${CHROME_ICU_TREE_TOP}/source/runConfigureICU Linux --disable-layout --disable-tests
+
+     ii) Run make
+
+     iii) (cd data && make clean)
+
+     iv) scripts/config_data.sh common
+       This configure the build with filer for common.
+
+     v) Run make
+
+     vi)  scripts/copy_data.sh common
+       This copies the ICU data files for non-Android platforms
+       (both Little and Big Endian) to the following locations:
+
+       common/icudtl.dat
+       common/icudtb.dat
+
+     vii) Repeat step iii) - vi) for chromeos to produce chromeos/icudtl.dat
+
+     viii) cast/patch_locale.sh
+       Modify the file for cast, android, ios and flutter.
+
+     ix) Repeat step iii) - vi) for cast, andriod and ios to produce
+       cast/icudtl.dat
+       andriod/icudtl.dat
+       ios/icudtl.dat
+
+     x) flutter/patch_brkitr.sh
+       On top of cast/patch_locale.sh.sh (step viii)), further patch
+       the code for flutter.
+
+     xi) Repeat step iii) - vi) for flutter to produce
+       flutter/icudtl.dat
+
+     xii) scripts/clean_up_data_source.sh
+
+     This reverts the result of cast/patch_locale.sh and flutter/patch_brkitr.sh
+     make the tree ready for committing updated ICU data files for
+     non-Android and Android platforms.
+
+  c. Whenever data is updated (e.g timezone update), take step b as long
+     as the ICU build directory used in a. is kept.
+
+2. Note on the locale data customization
+
+  - filter/chromeos.json
+      a. Filter the locale data for ChromeOS's UI langauges :
+         locales, lang, region, currency, zone
+      b. Filter the locale data for non-UI languages to the bare minimum :
+         ExemplarCharacters, LocaleScript, layout, and the name of the
+         language for a locale in its native language.
+      c. Filter the legacy Chinese character set-based collation
+         (big5han/gb2312han) that don't make any sense and nobdoy uses.
+
+  - filter/common.json
+      Same as above in filter/chromeos.json, AND
+      e. Filter exemplar cities in timezone data (data/zone).
+
+  - filter/android.json and filter/ios.json
+      a. Filter the locale data for Android / iOS UI langauges :
+         locales, lang, region, currency, zone
+      b. Filter the locale data for non-UI languages to the bare minimum :
+         ExemplarCharacters, LocaleScript, layout, and the name of the
+         language for a locale in its native language.
+      c. Filter the legacy Chinese character set-based collation
+      d. Filter source/data/{region,lang} to exclude these data
+         except the language and script names of zh_Hans and zh_Hant.
+      e. Keep only the minimal calendar data in data/locales.
+      f. Include currency display names for a smaller subset of currencies.
+      g. Minimize the locale data for 9 locales to which Chrome on Android
+         is not localized.
+
+
+C. Chromium-specific data build files and converters
+
+They're preserved in step A.1 above. In general, there's no need to touch
+them when updating ICU.
+
+1. source/data/mappings
+  - convrtrs.txt : Lists encodings and aliases required by the WHATWG
+    Encoding spec plus a few extra (see the file as to why).
+
+  - ucmlocal.txt : to list only converters we need.
+
+  - *html.ucm: Mapping files per WHATWG encoding standards for EUC-JP,
+    Shift_JIS, Big5 (Big5+Big5HKSCS), EUC-KR and all the single byte encodings.
+    They're generated with scripts/{eucjp,sjis,big5,euckr,single_byte}_gen.sh.
+
+  - gb18030.ucm and windows-936.ucm
+    gb_table.patch was applied for the following changes. No need
+    to apply it again. The patch is kept for the record.
+    a. Map \xA3\xA0 to U+3000 instead of U+E5E5 in gb18030 and windows-936 per
+    the encoding spec (one-way mapping in toUnicode direction).
+    b. Map \xA8\xBF to U+01F9 instead of U+E7C8. Add one-way map
+    from U+1E3F to \xA8\xBC (windows-936/GBK).
+       See https://www.w3.org/Bugs/Public/show_bug.cgi?id=28740#c3
+
+2. source/data/brkitr
+  - dictionaries/khmerdict.txt: Abridged Khmer dictionary. See
+    https://unicode-org.atlassian.net/browse/ICU-9451
+  - dictionaries/laodict.txt: Abridged Lao dictionary. We keep using the smaller
+    old version from ICU69-1.
+  - rules/word_ja.txt (used only on Android)
+    Added for Japanese-specific word-breaking without the C+J dictionary.
+  - rules/{root,zh,zh_Hant}.txt
+    a. Use line_normal by default.
+    b. Drop local patches we used to have for the following issues. They'll
+       be dealt with in the upstream (Unicode/CLDR).
+       http://unicode.org/cldr/trac/ticket/6557
+       http://unicode.org/cldr/trac/ticket/4200 (http://crbug.com/39779)
+
+3. Add {an,ku,tg,wa}.txt to source/data/{locale,lang}
+   with the minimal locale data necessary for spellchecker and
+   and language menus.
+
+D. Local Modifications
+
+1. Applied locale data patches from Google obtained by diff'ing
+   the upstream copy and Google's internal copy for source/data
+
+  - patches/locale_google.patch:
+    * Google's internal ICU locale changes
+    * Simpler region names for Hong Kong and Macau in all locales
+    * Currency signs in ru and uk locales (do not include 'tr' locale changes)
+    * AM/PM, midnight, noon formatting for a few Indian locales
+    * Timezone name changes in Korean and Chinese locales
+    * Default digit for Arabic locale is European digits.
+
+  - patches/locale1.patch: Minor fixes for Korean
+
+
+2. Breakiterator patches
+  - patches/wordbrk.patch for word.txt
+    a. Move full stops (U+002E, U+FF0E) from MidNumLet to MidNum so that
+       FQDN labels can be split at '.'
+    b. Move fullwidth digits (U+FF10 - U+FF19) from Ideographic to Numeric.
+       See http://unicode.org/cldr/trac/ticket/6555
+
+  - patches/khmer-dictbe.patch
+    Adjust parameters to use a smaller Khmer dictionary (khmerdict.txt).
+    https://unicode-org.atlassian.net/browse/ICU-9451
+
+  - Add several common Chinese words that were dropped previously to
+    source/data/cjdict/brkitr/cjdict.txt
+    patch: patches/cjdict.patch
+    upstream bug: https://unicode-org.atlassian.net/browse/ICU-10888
+
+3. Timezone data update
+  Run scripts/update_tz.sh to grab the latest version of the
+  following timezone data files and put them in source/data/misc
+
+     metaZones.txt
+     timezoneTypes.txt
+     windowsZones.txt
+     zoneinfo64.txt
+
+  As of Oct 13, 2022, the latest version is 2022e
+  and the above files are available at the ICU github repos.
+
+4. Build-related changes
+
+  - patches/configure.patch:
+    * Remove a section of configure that will cause breakage while
+      running runConfigureICU.
+
+  - patches/wpo.patch (only needed when icudata dll is used).
+    upstream bugs : https://unicode-org.atlassian.net/browse/ICU-8043
+                    https://unicode-org.atlassian.net/browse/ICU-5701
+
+  - patches/data_symb.patch :
+      Put ICU_DATA_ENTRY_POINT(icudtXX_dat) in common when we use
+      the icu data file or icudt.dll
+
+  - patches/unused-var-unary-operators.patch:
+    upstream bug: https://unicode-org.atlassian.net/browse/ICU-21966
+    upstream PR: https://github.com/unicode-org/icu/pull/2055
+
+5. ISO-2022-JP encoding (fromUnicode) change per WHATWG encoding spec.
+  - patches/iso2022jp.patch
+  - upstream bug:
+    https://unicode-org.atlassian.net/browse/ICU-20251
+
+6. Enable tracing of file but not resource, only for Chromium
+    to reduce performance impact/risk.
+  - patches/restrace.patch
+
+7. Patch Arabic date time pattern back to 67 value to avoid test
+   breakage in
+   third_party/blink/web_tests/fast/forms/datetimelocal/datetimelocal-appearance-l10n.html
+  - patches/ardatepattern.patch
+  - https://bugs.chromium.org/p/chromium/issues/detail?id=1139186
+
+8.  Remove explicit std::atomic<NumberRangeFormatterImpl*> template
+    instantiation
+    patches/atomic_template_instantiation.patch
+  - The explicit instantiation was added to silence MSVC C4251 warnings:
+    https://unicode-org.atlassian.net/browse/ICU-20157
+    Small test cases show that it is generally an error to instantiate
+    std::atomic<T*> with an incomplete type T with MSVC, clang, and GCC, so this
+    instantiation never should have worked:
+    https://gcc.godbolt.org/z/34xx8h
+    At this time, it's not clear if this particular instantiation with
+    NumberRangeFormatterImpl* was ever necessary for MSVC. Further testing with
+    MSVC is required to upstream this patch.
+  - https://unicode-org.atlassian.net/browse/ICU-21482
+
+9.  Patch source/common/uposixdefs.h so it compiles on Fuchsia on Macs.
+    patches/fuchsia.patch
+  - context bug: https://bugs.chromium.org/p/chromium/issues/detail?id=1184527
+
+10. Patch i18n/dtitvfmt.cpp to fix DateIntervalFormat regression
+    patches/DateIntervalFormatnormalizeHourMetacharacters.patch
+  - https://github.com/unicode-org/icu/pull/2060
+  - https://unicode-org.atlassian.net/browse/ICU-21984
+
+11. Patch common/locid.cpp to fix heap-buffer-overflow
+    patches/AliasDataBuilder-readAlias.patch
+  - https://patch-diff.githubusercontent.com/raw/unicode-org/icu/pull/2067
+  - https://unicode-org.atlassian.net/browse/ICU-21994
+
+12. Patch source/i18n/collationdatabuilder.*
+    patches/collationdatabuilder.patch
+  - https://github.com/unicode-org/icu/pull/2052
+  - https://unicode-org.atlassian.net/browse/ICU-20715
+
+13. Patch i18n/formatted_string_builder to fix int32_t overflow bug
+    patches/formatted_string_builder.patch
+  - https://github.com/unicode-org/icu/pull/2070
+  - https://unicode-org.atlassian.net/browse/ICU-22005
+
+14. Patch to fix C++20 enum issues
+    patches/cxx20enum.patch
+  - https://unicode-org.atlassian.net/browse/ICU-22014
+  - https://github.com/unicode-org/icu/pull/2084
+
+15. Patch to remove ATOMIC_VAR_INIT for C++20
+    patches/rmATOMIC_VAR_INIT.patch
+  - https://github.com/unicode-org/icu/pull/2090
+
+16. Patch Calendar and TimeZone code to fix out-of-bound result in get()
+    patches/calendar-get-out-of-bound.patch
+  - https://unicode-org.atlassian.net/browse/ICU-22023
+  - https://github.com/unicode-org/icu/pull/2086
+    AND
+    patches/calendar-get-out-of-bound2.patch
+  - https://unicode-org.atlassian.net/browse/ICU-22043
+  - https://github.com/unicode-org/icu/pull/2100
+
+17. Patch TimeZone to fix incorrect name for "Africa/Casablanca"
+    patches/timezone-rawoffset.patch
+  - https://github.com/unicode-org/icu/pull/2096
+  - https://unicode-org.atlassian.net/browse/ICU-22041
+
+18. Patch NumberRangeFormatter to fix numbering system resolution.
+    patches/number_range_format.patch
+  - https://github.com/unicode-org/icu/pull/2085
+  - https://unicode-org.atlassian.net/browse/ICU-22017
+
+19. Patch Calendar to return error ASAP to avoid incorrect assert
+    patches/calendar_return_error_early.patch
+  - https://github.com/unicode-org/icu/pull/2177
+  - https://unicode-org.atlassian.net/browse/ICU-22070
+

@@ -1,3 +1,27 @@
+---
+key: nasa-1.3
+short_name: NASA 1.3
+name: NASA Open Source License v1.3
+category: Copyleft Limited
+owner: OSI - Open Source Initiative
+homepage_url: http://opensource.arc.nasa.gov/static/html/NASA_Open_Source_Agreement_1.3.txt
+notes: Per SPDX.org, this license is OSI certified.
+spdx_license_key: NASA-1.3
+osi_license_key: NASA-1.3
+text_urls:
+    - http://opensource.arc.nasa.gov/static/html/NASA_Open_Source_Agreement_1.3.txt
+other_urls:
+    - http://ti.arc.nasa.gov/opensource/nosa/
+    - http://www.gnu.org/licenses/license-list.html#NASA
+    - http://www.opensource.org/licenses/NASA-1.3
+    - https://opensource.org/licenses/NASA-1.3
+minimum_coverage: 10
+ignorable_copyrights:
+    - Copyright YEAR United States Government as represented by
+ignorable_holders:
+    - United States Government as represented by
+---
+
 NASA OPEN SOURCE AGREEMENT VERSION 1.3
 
 THIS OPEN SOURCE AGREEMENT ("AGREEMENT") DEFINES THE RIGHTS OF USE, REPRODUCTION, DISTRIBUTION, MODIFICATION AND REDISTRIBUTION OF CERTAIN COMPUTER SOFTWARE ORIGINALLY RELEASED BY THE UNITED STATES GOVERNMENT AS REPRESENTED BY THE GOVERNMENT AGENCY LISTED BELOW ("GOVERNMENT AGENCY"). THE UNITED STATES GOVERNMENT, AS REPRESENTED BY GOVERNMENT AGENCY, IS AN INTENDED THIRD-PARTY BENEFICIARY OF ALL SUBSEQUENT DISTRIBUTIONS OR REDISTRIBUTIONS OF THE SUBJECT SOFTWARE. ANYONE WHO USES, REPRODUCES, DISTRIBUTES, MODIFIES OR REDISTRIBUTES THE SUBJECT SOFTWARE, AS DEFINED HEREIN, OR ANY PART THEREOF, IS, BY THAT ACTION, ACCEPTING IN FULL THE RESPONSIBILITIES AND OBLIGATIONS CONTAINED IN THIS AGREEMENT.

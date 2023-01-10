@@ -1,4 +1,16 @@
-  GNAT is free software; you can  redistribute it  and/or modify it under 
+---
+license_expression: gpl-3.0-plus WITH gcc-exception-3.1
+is_license_notice: yes
+relevance: 100
+minimum_coverage: 80
+referenced_filenames:
+    - COPYING3
+    - COPYING.RUNTIME
+ignorable_urls:
+    - https://www.gnu.org/licenses/
+---
+
+GNAT is free software; you can  redistribute it  and/or modify it under 
  terms of the  GNU General Public License as published  by the Free Software 
  Foundation;  either version 3,  or (at your option) any later version. 
  GNAT is distributed in the hope that it will be useful, but WITHOUT 
@@ -11,4 +23,4 @@
  You should have received a copy of the GNU General Public License and    
  a copy of the GCC Runtime Library Exception along with this program;     
  see the files COPYING3 and COPYING.RUNTIME respectively.  If not, see    
- <https://www.gnu.org/licenses/>.           
+ <https://www.gnu.org/licenses/>.

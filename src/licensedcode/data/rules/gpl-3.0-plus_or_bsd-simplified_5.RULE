@@ -1,3 +1,12 @@
+---
+license_expression: gpl-3.0-plus OR bsd-simplified
+is_license_notice: yes
+relevance: 100
+minimum_coverage: 99
+referenced_filenames:
+    - WARRANTY
+---
+
 less comes with NO WARRANTY, to the extent permitted by law.
 For information about the terms of redistribution,
 see the file named README in the less distribution.

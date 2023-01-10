@@ -12,7 +12,6 @@ import json
 from functools import partial
 
 from packagedcode import models
-from packagedcode.utils import combine_expressions
 
 """
 Parse PHP composer package manifests, see https://getcomposer.org/ and
@@ -33,9 +32,9 @@ class BasePhpComposerHandler(models.DatafileHandler):
         )
 
         if resource.has_parent():
-            dir_resource=resource.parent(codebase)
+            dir_resource = resource.parent(codebase)
         else:
-            dir_resource=resource
+            dir_resource = resource
 
         yield from cls.assemble_from_many_datafiles(
             datafile_name_patterns=datafile_name_patterns,
@@ -48,19 +47,13 @@ class BasePhpComposerHandler(models.DatafileHandler):
     def assign_package_to_resources(cls, package, resource, codebase, package_adder):
         return models.DatafileHandler.assign_package_to_parent_tree(package, resource, codebase, package_adder)
 
-    @classmethod
-    def compute_normalized_license(cls, package):
-        """
-        Per https://getcomposer.org/doc/04-schema.md#license this is an expression
-        """
-        return compute_normalized_license(package.declared_license)
-
 
 class PhpComposerJsonHandler(BasePhpComposerHandler):
     datasource_id = 'php_composer_json'
     path_patterns = ('*composer.json',)
     default_package_type = 'composer'
     default_primary_language = 'PHP'
+    default_relation_license = 'OR'
     description = 'PHP composer manifest'
     documentation_url = 'https://getcomposer.org/doc/04-schema.md'
 
@@ -163,9 +156,8 @@ def build_package_data(package_data):
     # Parse vendor from name value
     vendor_mapper(package)
 
-    if not package.license_expression and package.declared_license:
-        package.license_expression = models.compute_normalized_license(package.declared_license)
-
+    # Per https://getcomposer.org/doc/04-schema.md#license this is an expression
+    package.populate_license_fields()
     return package
 
 
@@ -211,38 +203,6 @@ class PhpComposerLockHandler(BasePhpComposerHandler):
             yield package
 
 
-def compute_normalized_license(declared_license):
-    """
-    Return a normalized license expression string detected from a list of
-    declared license items or string type.
-    """
-    if not declared_license:
-        return
-
-    detected_licenses = []
-
-    if isinstance(declared_license, str):
-        if declared_license == 'proprietary':
-            return declared_license
-        if '(' in declared_license and ')' in declared_license and ' or ' in declared_license:
-            declared_license = declared_license.strip().rstrip(')').lstrip('(')
-            declared_license = declared_license.split(' or ')
-        else:
-            return models.compute_normalized_license(declared_license)
-
-    if isinstance(declared_license, list):
-        for declared in declared_license:
-            detected_license = models.compute_normalized_license(declared)
-            detected_licenses.append(detected_license)
-    else:
-        declared_license = repr(declared_license)
-        detected_license = models.compute_normalized_license(declared_license)
-
-    if detected_licenses:
-        # build a proper license expression: the defaultfor composer is OR
-        return combine_expressions(detected_licenses, 'OR')
-
-
 def licensing_mapper(licenses, package, is_private=False):
     """
     Update package licensing and return package.
@@ -257,10 +217,10 @@ def licensing_mapper(licenses, package, is_private=False):
     license.
     """
     if not licenses and is_private:
-        package.declared_license = 'proprietary-license'
+        package.extracted_license_statement = 'proprietary-license'
         return package
 
-    package.declared_license = licenses
+    package.extracted_license_statement = licenses
     return package
 
 

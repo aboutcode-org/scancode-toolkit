@@ -1,9 +1,0 @@
-license_expression: cnri-python-1.6
-is_license_text: yes
-ignorable_copyrights:
-    - Copyright (c) 1995-2000 Corporation for National Research Initiatives
-ignorable_holders:
-    - Corporation for National Research Initiatives
-ignorable_urls:
-    - http://hdl.handle.net/1895.22/1012
-    - http://www.python.org/

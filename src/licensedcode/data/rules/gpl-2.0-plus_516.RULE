@@ -1,4 +1,13 @@
- * @license     GNU/GPL, see LICENSE.php
+---
+license_expression: gpl-2.0-plus
+is_license_notice: yes
+relevance: 100
+referenced_filenames:
+    - LICENSE.php
+    - COPYRIGHT.php
+---
+
+* @license     GNU/GPL, see LICENSE.php
  *  is free software. This version may have been modified pursuant
  * to the GNU General Public License, and as distributed it includes or
  * is derivative of works licensed under the GNU General Public License or

@@ -1,3 +1,25 @@
+---
+key: quin-street
+short_name: QuinStreet License
+name: QuinStreet License
+category: Proprietary Free
+owner: QuinStreet
+homepage_url: http://www.codeguru.com/licensing.html
+spdx_license_key: LicenseRef-scancode-quin-street
+text_urls:
+    - http://www.codeguru.com/licensing.html
+    - http://www.freevbcode.com/licensing
+other_urls:
+    - http://www.codeguru.com/cpp/controls/listview/article.php/c4189/Creating-a-CListCtrl-Class-with-Item-Style-Features-CListCtrlStyled-Class.htm
+    - http://www.codeguru.com/submission-guidelines.php#permission
+ignorable_copyrights:
+    - Copyright 1999-2014 QuinStreet, Inc.
+ignorable_holders:
+    - QuinStreet, Inc.
+ignorable_emails:
+    - copyrightagent@quinstreet.com
+---
+
 Content Licensing
 
 Linking to Our Content

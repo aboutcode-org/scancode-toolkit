@@ -1,3 +1,17 @@
+---
+key: gpl-3.0-aptana
+is_deprecated: yes
+short_name: GPL 3.0 with Aptana exception
+name: GPL 3.0 with Aptana exception
+category: Copyleft
+owner: Appcelerator
+homepage_url: https://github.com/aptana/studio3/blob/development/README.md
+is_exception: yes
+other_urls:
+    - http://www.aptana.com/legal/gpl
+    - ttp://www.aptana.com/legal/gpl
+---
+
 This program is distributed under the GNU General Public license. This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License, Version 3, as published by the Free Software Foundation.
 
 Any modifications must keep this entire license intact.

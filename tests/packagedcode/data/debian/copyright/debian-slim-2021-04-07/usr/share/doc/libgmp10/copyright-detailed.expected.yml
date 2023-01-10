@@ -1,88 +1,82 @@
-primary_license:
 declared_license:
-license_expression: (lgpl-3.0-plus OR gpl-2.0-plus) AND gfdl-1.1-plus AND (lgpl-2.0-plus OR
-  gpl-1.0-plus)
+declared_license_expression: (lgpl-3.0-plus OR gpl-2.0-plus) AND gfdl-1.1-plus AND (lgpl-2.0-plus
+  OR gpl-1.0-plus)
+declared_license_expression_spdx: (LGPL-3.0-or-later OR GPL-2.0-or-later) AND GFDL-1.1-or-later
+  AND (LGPL-2.0-or-later OR GPL-1.0-or-later)
+other_license_expression:
+other_license_expression_spdx:
+license_detections:
+  - license_expression: lgpl-3.0-plus OR gpl-2.0-plus
+    detection_log:
+      - not-combined
+    matches:
+      - score: '100.0'
+        start_line: '19'
+        end_line: 46
+        matched_length: '198'
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: lgpl-3.0-plus OR gpl-2.0-plus
+        rule_identifier: lgpl-3.0-plus_or_gpl-2.0-plus_27.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-3.0-plus_or_gpl-2.0-plus_27.RULE
+        matched_text: |
+          The GNU MP Library is free software; you can redistribute it and/or modify
+          it under the terms of either:
+
+            * the GNU Lesser General Public License as published by the Free
+              Software Foundation; either version 3 of the License, or (at your
+              option) any later version.
+
+          or
+
+            * the GNU General Public License as published by the Free Software
+              Foundation; either version 2 of the License, or (at your option) any
+              later version.
+
+          or both in parallel, as here.
+
+          The GNU MP Library is distributed in the hope that it will be useful, but
+          WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY
+          or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License
+          for more details.
+
+          You should have received copies of the GNU General Public License and the
+          GNU Lesser General Public License along with the GNU MP Library.  If not,
+          see https://www.gnu.org/licenses/.
+
+
+          The GNU Lesser General Public License v3 text is contained in /usr/share/common-licenses/LGPL-3.
+          The GNU General Public License v2 text is contained in /usr/share/common-licenses/GPL-2.
+          The GNU General Public License v3 text is contained in /usr/share/common-licenses/GPL-3.
+  - license_expression: gfdl-1.1-plus AND (lgpl-2.0-plus OR gpl-1.0-plus)
+    detection_log:
+      - not-combined
+    matches:
+      - score: '100.0'
+        start_line: 52
+        end_line: 55
+        matched_length: 38
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: gfdl-1.1-plus
+        rule_identifier: gfdl-1.1-plus_32.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gfdl-1.1-plus_32.RULE
+        matched_text: |
+          The documentation is released under the GNU Free Documentation License
+          (GFDL) and it has cover texts.  As such, it has been determined not to
+          meet the Debian Free Software Guidelines, and is not shipped in the
+          debian packages.
+      - score: '100.0'
+        start_line: 57
+        end_line: 58
+        matched_length: 18
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: lgpl-2.0-plus OR gpl-1.0-plus
+        rule_identifier: lgpl-2.0-plus_or_gpl-1.0-plus_300.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0-plus_or_gpl-1.0-plus_300.RULE
+        matched_text: |
+          is covered either by the LGPL, or
+          under the GNU General Public License /usr/share/common-licenses/GPL.
+other_license_detections: []
 copyright: Copyright 1991, 1996, 1999, 2000, 2007 Free Software Foundation, Inc.
-matches:
-  - score: '100.0'
-    start_line: '19'
-    end_line: 46
-    matcher: 2-aho
-    rule_length: '198'
-    matched_length: '198'
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: lgpl-3.0-plus_or_gpl-2.0-plus_27.RULE
-    license_expression: lgpl-3.0-plus OR gpl-2.0-plus
-    is_license_text: no
-    is_license_notice: yes
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      The GNU MP Library is free software; you can redistribute it and/or modify
-      it under the terms of either:
-
-        * the GNU Lesser General Public License as published by the Free
-          Software Foundation; either version 3 of the License, or (at your
-          option) any later version.
-
-      or
-
-        * the GNU General Public License as published by the Free Software
-          Foundation; either version 2 of the License, or (at your option) any
-          later version.
-
-      or both in parallel, as here.
-
-      The GNU MP Library is distributed in the hope that it will be useful, but
-      WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY
-      or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License
-      for more details.
-
-      You should have received copies of the GNU General Public License and the
-      GNU Lesser General Public License along with the GNU MP Library.  If not,
-      see https://www.gnu.org/licenses/.
-
-
-      The GNU Lesser General Public License v3 text is contained in /usr/share/common-licenses/LGPL-3.
-      The GNU General Public License v2 text is contained in /usr/share/common-licenses/GPL-2.
-      The GNU General Public License v3 text is contained in /usr/share/common-licenses/GPL-3.
-  - score: '100.0'
-    start_line: 52
-    end_line: 55
-    matcher: 2-aho
-    rule_length: 38
-    matched_length: 38
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: gfdl-1.1-plus_32.RULE
-    license_expression: gfdl-1.1-plus
-    is_license_text: no
-    is_license_notice: yes
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      The documentation is released under the GNU Free Documentation License
-      (GFDL) and it has cover texts.  As such, it has been determined not to
-      meet the Debian Free Software Guidelines, and is not shipped in the
-      debian packages.
-  - score: '100.0'
-    start_line: 57
-    end_line: 58
-    matcher: 2-aho
-    rule_length: 18
-    matched_length: 18
-    match_coverage: '100.0'
-    rule_relevance: 100
-    identifier: lgpl-2.0-plus_or_gpl-1.0-plus_300.RULE
-    license_expression: lgpl-2.0-plus OR gpl-1.0-plus
-    is_license_text: no
-    is_license_notice: yes
-    is_license_reference: no
-    is_license_tag: no
-    is_license_intro: no
-    matched_text: |
-      is covered either by the LGPL, or
-      under the GNU General Public License /usr/share/common-licenses/GPL.

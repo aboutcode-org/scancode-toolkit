@@ -1,4 +1,10 @@
- * Redistribution and use in source and binary forms, with or without
+---
+license_expression: bsd-new
+is_license_text: yes
+notes: Apple Mozilla variant
+---
+
+* Redistribution and use in source and binary forms, with or without
  * modification, are permitted provided that the following conditions are
  * met:
  * 
@@ -22,4 +28,3 @@
  * LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
  * NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
  * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-

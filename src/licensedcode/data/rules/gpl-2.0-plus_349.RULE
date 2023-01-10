@@ -1,4 +1,11 @@
-   This code is covered by the GNU GPL and you are free to make any
+---
+license_expression: gpl-2.0-plus
+is_license_notice: yes
+referenced_filenames:
+    - COPYING
+---
+
+This code is covered by the GNU GPL and you are free to make any
    changes you wish to it under the terms of the license. However the
    code has the potential to render your computer and/or someone else's
    unusable. Please proceed with care when modifying the code.

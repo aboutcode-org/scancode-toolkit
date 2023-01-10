@@ -21,8 +21,34 @@
   "code_view_url": null,
   "vcs_url": null,
   "copyright": null,
-  "license_expression": "(gpl-2.0 OR gpl-3.0) AND lgpl-2.1-plus AND gpl-2.0-plus AND mit AND lgpl-2.1 AND lgpl-2.0-plus AND (lgpl-2.1 OR lgpl-3.0) AND lgpl-2.0",
-  "declared_license": "(GPL-2.0-only OR GPL-3.0-only) AND LGPL-2.1-or-later AND GPL-2.0-or-later AND MIT AND LGPL-2.1-only AND LGPL-2.0-or-later AND (LGPL-2.1-only OR LGPL-3.0-only) AND LGPL-2.0-only",
+  "declared_license_expression": "(gpl-2.0 OR gpl-3.0) AND lgpl-2.1-plus AND gpl-2.0-plus AND mit AND lgpl-2.1 AND lgpl-2.0-plus AND (lgpl-2.1 OR lgpl-3.0) AND lgpl-2.0",
+  "declared_license_expression_spdx": "(GPL-2.0-only OR GPL-3.0-only) AND LGPL-2.1-or-later AND GPL-2.0-or-later AND MIT AND LGPL-2.1-only AND LGPL-2.0-or-later AND (LGPL-2.1-only OR LGPL-3.0-only) AND LGPL-2.0-only",
+  "license_detections": [
+    {
+      "license_expression": "(gpl-2.0 OR gpl-3.0) AND lgpl-2.1-plus AND gpl-2.0-plus AND mit AND lgpl-2.1 AND lgpl-2.0-plus AND (lgpl-2.1 OR lgpl-3.0) AND lgpl-2.0",
+      "detection_log": [
+        "not-combined"
+      ],
+      "matches": [
+        {
+          "score": 100.0,
+          "start_line": 1,
+          "end_line": 1,
+          "matched_length": 49,
+          "match_coverage": 100.0,
+          "matcher": "1-spdx-id",
+          "license_expression": "(gpl-2.0 OR gpl-3.0) AND lgpl-2.1-plus AND gpl-2.0-plus AND mit AND lgpl-2.1 AND lgpl-2.0-plus AND (lgpl-2.1 OR lgpl-3.0) AND lgpl-2.0",
+          "rule_identifier": "spdx-license-identifier-(gpl-2.0 OR gpl-3.0) AND lgpl-2.1-plus AND gpl-2.0-plus AND mit AND lgpl-2.1 AND lgpl-2.0-plus AND (lgpl-2.1 OR lgpl-3.0) AND lgpl-2.0-03672b2a90402ac498ea76c8d3bb32c9fc13e415",
+          "rule_url": null,
+          "matched_text": "(gpl-2.0-only OR gpl-3.0-only) AND lgpl-2.1-or-later AND gpl-2.0-or-later AND mit AND lgpl-2.1-only AND lgpl-2.0-or-later AND (lgpl-2.1-only OR lgpl-3.0-only) AND lgpl-2.0-only"
+        }
+      ]
+    }
+  ],
+  "other_license_expression": null,
+  "other_license_expression_spdx": null,
+  "other_license_detections": [],
+  "extracted_license_statement": "(GPL-2.0-only OR GPL-3.0-only) AND LGPL-2.1-or-later AND GPL-2.0-or-later AND MIT AND LGPL-2.1-only AND LGPL-2.0-or-later AND (LGPL-2.1-only OR LGPL-3.0-only) AND LGPL-2.0-only",
   "notice_text": null,
   "source_packages": [],
   "file_references": [],

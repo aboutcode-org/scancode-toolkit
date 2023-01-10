@@ -1293,11 +1293,11 @@ def synchronize_licenses(
         else:
             # Create a new ScanCode license
             external_license.key = matching_key
-            scancode_license = external_license.dump(
+            external_license.dump(
                 licenses_data_dir=licensedcode.models.licenses_data_dir
             )
             added_to_scancode.add(matching_key)
-            scancodes_by_key[matching_key] = scancode_license
+            scancodes_by_key[matching_key] = external_license
             if TRACE:
                 print(
                     "External license key not in ScanCode:",
@@ -1327,9 +1327,9 @@ def synchronize_licenses(
         if scancode_license.is_deprecated:
             continue
 
-        external_license = scancode_license.dump(licenses_data_dir=external_source.new_dir)
+        scancode_license.dump(licenses_data_dir=external_source.new_dir)
         added_to_external.add(lkey)
-        externals_by_key[lkey] = external_license
+        externals_by_key[lkey] = scancode_license
 
         if TRACE_DEEP:
             print("ScanCode license key not in External:", lkey, "created in External.")

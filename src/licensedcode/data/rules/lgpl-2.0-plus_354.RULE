@@ -1,3 +1,10 @@
+---
+license_expression: lgpl-2.0-plus
+is_license_notice: yes
+relevance: 100
+notes: this is a notice mixing some (mistaken?) GPL and LGPL references and is seen in Pulseaudio
+---
+
 uses this LGPLv2 (or later) license:
 
  PulseAudio is free software; you can redistribute it and/or modify it 

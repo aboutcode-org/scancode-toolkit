@@ -1,3 +1,9 @@
+---
+license_expression: free-unknown
+is_license_notice: yes
+minimum_coverage: 80
+---
+
 The firmware this driver downloads into the Localtalk card is a
 separate program and is not GPL'd source code, even though the Linux
 side driver and the routine that loads this data into the card are.

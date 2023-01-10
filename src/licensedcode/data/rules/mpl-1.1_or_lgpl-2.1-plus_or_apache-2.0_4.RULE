@@ -1,3 +1,12 @@
+---
+license_expression: mpl-1.1 OR lgpl-2.1-plus OR apache-2.0
+is_license_notice: yes
+ignorable_authors:
+    - the Initial Developer
+ignorable_urls:
+    - http://www.mozilla.org/MPL/
+---
+
 The contents of this software, Javassist, are subject to
 the Mozilla Public License Version 1.1 (the "License");
 you may not use this software except in compliance 
@@ -33,4 +42,3 @@ Javassist but not the other part of JBoss.
 
 All the contributors to the original source tree have agreed to
 the original license term described above.
-

@@ -1,6 +1,10 @@
+---
+license_expression: mpl-1.1 OR gpl-1.0-plus
+is_license_notice: yes
+minimum_coverage: 50
+---
 
- 
- Alternatively, the contents of this file may be used under the terms
+Alternatively, the contents of this file may be used under the terms
  of the GNU General Public license (the  "[GNU] License"), in which case the
  provisions of [GNU] License are applicable instead of those
  above.  If you wish to allow use of your version of this file only

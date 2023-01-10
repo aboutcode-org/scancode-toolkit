@@ -1,1 +1,9 @@
+---
+license_expression: bsd-new
+is_license_tag: yes
+relevance: 100
+ignorable_urls:
+    - http://asm.ow2.org/license.html
+---
+
 License: $license.name  (http://asm.ow2.org/license.html

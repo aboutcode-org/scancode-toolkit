@@ -1,4 +1,15 @@
-
+---
+key: sgi-fslb-1.0
+short_name: SGI Free Software License B 1.0
+name: SGI Free Software License B v1.0
+category: Free Restricted
+owner: SGI - Silicon Graphics
+homepage_url: http://oss.sgi.com/projects/FreeB/SGIFreeSWLicB.1.0.html
+notes: Per SPDX.org, this license was released 25 January 2000
+spdx_license_key: SGI-B-1.0
+text_urls:
+    - http://oss.sgi.com/projects/FreeB/SGIFreeSWLicB.1.0.html
+---
 
 SGI FREE SOFTWARE LICENSE B
 (Version 1.0 1/25/2000)

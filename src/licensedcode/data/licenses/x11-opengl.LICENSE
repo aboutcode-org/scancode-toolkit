@@ -1,3 +1,13 @@
+---
+key: x11-opengl
+short_name: X11-Style (OpenGL)
+name: X11-Style (OpenGL)
+category: Permissive
+owner: SGI - Silicon Graphics
+spdx_license_key: LicenseRef-scancode-x11-opengl
+minimum_coverage: 80
+---
+
 Permission to use, copy, modify, and distribute this software for any purpose
 and without fee is hereby granted, provided that the above copyright notice
 appear in all copies and that both the copyright notice and this permission

@@ -1,3 +1,11 @@
+---
+license_expression: mpl-1.1
+is_license_notice: yes
+minimum_coverage: 10
+ignorable_urls:
+    - http://www.rabbitmq.com/mpl.html
+---
+
 The MPL v1.1:
 
    The contents of this file are subject to the Mozilla Public License

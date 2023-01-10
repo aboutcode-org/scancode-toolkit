@@ -1,4 +1,9 @@
-    ("BSD-3"
+---
+license_expression: bsd-new
+is_license_notice: yes
+---
+
+("BSD-3"
      t
      "Redistribution and use in source and binary forms, with or"
      "without modification, are permitted provided that the following"

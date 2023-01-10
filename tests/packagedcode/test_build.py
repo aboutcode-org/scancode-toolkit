@@ -78,7 +78,9 @@ class TestBuild(PackageTester):
         result_package = list(build.BuckPackageHandler.parse(test_file))[0]
         codebase = Codebase(test_loc)
         resource = codebase.get_resource('license/BUCK')
-        license_expression = build.compute_normalized_license(result_package, resource, codebase)
+        _detections, license_expression = build.get_license_detections_and_expression(
+            result_package, resource, codebase
+        )
         assert license_expression == 'apache-2.0'
 
     def test_MetadataBzl_parse(self):
@@ -90,7 +92,7 @@ class TestBuild(PackageTester):
                 type='github',
                 name='example',
                 version='0.0.1',
-                declared_license=['BSD-3-Clause'],
+                extracted_license_statement=['BSD-3-Clause'],
                 parties=[
                     models.Party(
                         type=models.party_org,
@@ -112,7 +114,7 @@ class TestBuild(PackageTester):
                 type='github',
                 name='example/example',
                 version='0.0.1',
-                declared_license='BSD-3-Clause',
+                extracted_license_statement='BSD-3-Clause',
                 parties=[
                     models.Party(
                         type=models.party_org,

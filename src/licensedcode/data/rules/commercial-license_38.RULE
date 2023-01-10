@@ -1,4 +1,12 @@
- EGENIX.COM COMMERCIAL LICENSE AGREEMENT VERSION 1.0.0
+---
+license_expression: commercial-license
+is_license_text: yes
+relevance: 100
+ignorable_authors:
+    - prior permission from eGenix.com
+---
+
+EGENIX.COM COMMERCIAL LICENSE AGREEMENT VERSION 1.0.0
 
 1. Introduction
 
@@ -150,4 +158,4 @@ The controlling language of this License Agreement is English. If Licensee has r
 
 By downloading, copying, installing or otherwise using the Software, Licensee agrees to be bound by the terms and conditions of this License Agreement.
 
-For question regarding this license agreement, please write to: 
+For question regarding this license agreement, please write to:

@@ -1,3 +1,11 @@
+---
+license_expression: bsd-new
+is_license_text: yes
+minimum_coverage: 80
+ignorable_urls:
+    - http://www.w3.org/Consortium/Legal/2008/03-bsd-license.html
+---
+
 The files included in this test suite are licensed under the W3C
 3-clause BSD License. A copy opf the license is included below. The
 original copy of the license is at

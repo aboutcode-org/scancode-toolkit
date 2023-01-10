@@ -1,4 +1,11 @@
-        This documentation is free software; you can redistribute
+---
+license_expression: gpl-2.0
+is_license_notice: yes
+referenced_filenames:
+    - COPYING
+---
+
+This documentation is free software; you can redistribute
         it and/or modify it under the terms of the GNU General Public
         License version 2.
 

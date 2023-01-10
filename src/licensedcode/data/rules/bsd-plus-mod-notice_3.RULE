@@ -1,4 +1,14 @@
-  See ITKCopyright.txt or http://www.itk.org/HTML/Copyright.htm for details.
+---
+license_expression: bsd-plus-mod-notice
+is_license_notice: yes
+referenced_filenames:
+    - ITKCopyright.txt
+notes: Seen in https://web.archive.org/web/20020206001851/http://itk.org/HTML/Copyright.htm
+ignorable_urls:
+    - http://www.itk.org/HTML/Copyright.htm
+---
+
+See ITKCopyright.txt or http://www.itk.org/HTML/Copyright.htm for details.
 
      This software is distributed WITHOUT ANY WARRANTY; without even 
      the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR 

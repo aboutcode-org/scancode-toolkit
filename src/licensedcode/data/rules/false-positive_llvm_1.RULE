@@ -1,1 +1,6 @@
- http://llvm.org/demo/ but for the BSD licensed Clang instead
+---
+is_false_positive: yes
+notes: seen in LLVM sources and docs
+---
+
+http://llvm.org/demo/ but for the BSD licensed Clang instead

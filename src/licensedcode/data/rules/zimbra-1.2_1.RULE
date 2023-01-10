@@ -1,3 +1,16 @@
+---
+license_expression: zimbra-1.3
+is_license_text: yes
+relevance: 90
+notes: this is the v1.2 of the license. But this is too rare to be worthy tracking
+ignorable_urls:
+    - http://www.mozilla.org/MPL/MPL-1.1.html
+    - http://www.zimbra.com/
+    - http://www.zimbra.com/license
+    - http://www.zimbra.com/license/zimbra_public_license_1.2.html
+    - http://www.zimbra.com/powered
+---
+
 The Zimbra Public License Version 1.2 ("ZPL") consists of the Mozilla Public License Version 1.1, modified to be specific to Zimbra, with the Additional Terms in Exhibit B. The original Mozilla Public License 1.1 can be found at: http://www.mozilla.org/MPL/MPL-1.1.html 
 
 This is not an OSI approved license. 

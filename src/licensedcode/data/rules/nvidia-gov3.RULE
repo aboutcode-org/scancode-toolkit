@@ -1,4 +1,14 @@
-    NOTICE TO USER:   The source code  is copyrighted under  U.S. and     *|
+---
+license_expression: nvidia
+is_license_notice: yes
+minimum_coverage: 90
+ignorable_copyrights:
+    - Copyright NVIDIA, Corporation
+ignorable_holders:
+    - NVIDIA, Corporation
+---
+
+NOTICE TO USER:   The source code  is copyrighted under  U.S. and     *|
     international laws.  Users and possessors of this source code are     *|
     hereby granted a nonexclusive,  royalty-free copyright license to     *|
     use this code in individual and commercial software.                  *|

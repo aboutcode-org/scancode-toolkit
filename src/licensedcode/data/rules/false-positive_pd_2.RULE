@@ -1,2 +1,7 @@
+---
+is_false_positive: yes
+notes: a pd mention in a a JS file but not a licensing statement
+---
+
 const labels = {
   publicDomain: `Public Domain`,

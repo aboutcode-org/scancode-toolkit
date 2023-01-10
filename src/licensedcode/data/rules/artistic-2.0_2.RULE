@@ -1,1 +1,9 @@
+---
+license_expression: artistic-2.0
+is_license_reference: yes
+relevance: 100
+ignorable_urls:
+    - http://www.perlfoundation.org/artistic-2-0-notes
+---
+
 http://www.perlfoundation.org/artistic-2-0-notes

@@ -1,3 +1,14 @@
+---
+key: nexb-ssla-1.1.0
+short_name: nexB SSLA 1.1.0
+name: nexB Software Subscription License Agreement 1.1.0
+category: Commercial
+owner: nexB
+spdx_license_key: LicenseRef-scancode-nexb-ssla-1.1.0
+ignorable_emails:
+    - sales@nexb.com
+---
+
 nexB Software Subscription License Agreement
 
 This Software Subscription License Agreement (the "Agreement) is entered into by and between nexB Inc., a California corporation, having its principal place of business at 735 Industrial Road Suite 101, San Carlos, CA 94070 and ___________________, a ______________ corporation, having its principal place of business at _________________________________________________ ("Licensee"). This Agreement is effective as of _________________ ("Effective Date").

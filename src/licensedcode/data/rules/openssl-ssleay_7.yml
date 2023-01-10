@@ -1,5 +1,0 @@
-license_expression: openssl-ssleay
-is_license_notice: yes
-notes: Sample from OpenSSL crypto/aes/aes_cbc.c
-ignorable_urls:
-    - https://www.openssl.org/source/license.html

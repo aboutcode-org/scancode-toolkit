@@ -1,4 +1,10 @@
- * Permission to use, copy, modify, and distribute this software and its
+---
+license_expression: mit-modern
+is_license_text: yes
+relevance: 99
+---
+
+* Permission to use, copy, modify, and distribute this software and its
  * documentation for any purpose, without fee, and without written agreement is
  * hereby granted, provided that the above copyright notice, the following
  * two paragraphs and the author appear in all copies of this software.

@@ -1,3 +1,10 @@
- This source file is released under GPL v2 license (no other versions).
+---
+license_expression: gpl-2.0
+is_license_notice: yes
+referenced_filenames:
+    - COPYING
+---
+
+This source file is released under GPL v2 license (no other versions).
  See the COPYING file included in the main directory of this source
  distribution for the license terms and conditions.

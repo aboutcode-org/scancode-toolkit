@@ -1,2 +1,7 @@
-FILE_LICENCE ( MIT );
+---
+license_expression: mit
+is_license_tag: yes
+relevance: 100
+---
 
+FILE_LICENCE ( MIT );

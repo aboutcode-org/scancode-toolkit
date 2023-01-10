@@ -1,2 +1,11 @@
+---
+license_expression: gpl-2.0 OR apache-2.0
+is_license_notice: yes
+relevance: 100
+referenced_filenames:
+    - COPYING
+    - LICENSE.Apache
+---
+
 License
  is dual-licensed under both the GPLv2 (found in the COPYING file in the root directory) and Apache 2.0 License (found in the LICENSE.Apache file in the root directory). You may select, at your option, one of the above-listed licenses.

@@ -1,3 +1,11 @@
+---
+license_expression: gpl-3.0-plus
+is_license_notice: yes
+relevance: 100
+referenced_filenames:
+    - COPYING
+---
+
 is free software, distributed under the terms of the [GNU] General
 Public License as published by the Free Software Foundation,
 version 3 of the License (or any later version).  For more information,

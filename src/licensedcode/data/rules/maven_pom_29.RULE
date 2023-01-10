@@ -1,1 +1,9 @@
+---
+license_expression: bsd-new
+is_license_tag: yes
+relevance: 100
+ignorable_urls:
+    - http://www.adobe.com/devnet/xmp/library/eula-xmp-library-java.html
+---
+
 License: The BSD License  (http://www.adobe.com/devnet/xmp/library/eula-xmp-library-java.html)

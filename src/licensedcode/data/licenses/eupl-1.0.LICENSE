@@ -1,3 +1,21 @@
+---
+key: eupl-1.0
+short_name: EUPL 1.0
+name: European Union Public Licence 1.0
+category: Copyleft
+owner: OSOR.eu
+homepage_url: http://ec.europa.eu/idabc/en/document/7330.html
+spdx_license_key: EUPL-1.0
+text_urls:
+    - http://ec.europa.eu/idabc/en/document/7330.html
+other_urls:
+    - http://ec.europa.eu/idabc/servlets/Doc027f.pdf?id=31096
+ignorable_copyrights:
+    - (c) the European Community 2007
+ignorable_holders:
+    - the European Community
+---
+
 European Union Public Licence V.1.0 
 EUPL © the European Community 2007 
 

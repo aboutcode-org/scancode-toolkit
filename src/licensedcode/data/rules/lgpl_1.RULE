@@ -1,2 +1,7 @@
+---
+license_expression: lgpl-2.0-plus
+is_license_notice: yes
+---
+
 The GNOME libraries are released under the terms of the LGPL license,
 see /usr/share/common-licenses/LGPL for reference.

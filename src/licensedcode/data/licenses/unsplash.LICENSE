@@ -1,3 +1,14 @@
+---
+key: unsplash
+short_name: Unsplash License
+name: Unsplash License
+category: Free Restricted
+owner: Unsplash
+homepage_url: https://unsplash.com/license
+spdx_license_key: LicenseRef-scancode-unsplash
+faq_url: https://help.unsplash.com/en/collections/1463188-unsplash-license
+---
+
 Unsplash grants you an irrevocable, nonexclusive, worldwide copyright license to
 download, copy, modify, distribute, perform, and use photos from Unsplash for free,
 including for commercial purposes, without permission from or attributing the photographer

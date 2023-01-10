@@ -1,3 +1,11 @@
+---
+license_expression: libpbm
+is_license_notice: yes
+relevance: 90
+minimum_coverage: 10
+notes: The warranty disclaimer is different and possibly predates libpbm. See https://github.com/oracle/solaris-xorg/blob/master/open-src/app/xlock/sun-src/image.c
+---
+
 Permission to use, copy, modify, and distribute this software and its
 documentation for any purpose and without fee is hereby granted,
 provided that the above copyright notice appear in all copies and that

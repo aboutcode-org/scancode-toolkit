@@ -1,3 +1,12 @@
+---
+key: carnegie-mellon
+short_name: Carnegie Mellon License
+name: Carnegie Mellon License
+category: Permissive
+owner: Carnegie Mellon University
+spdx_license_key: LicenseRef-scancode-carnegie-mellon
+---
+
 Permission to use, copy, modify, and distribute this program for any purpose and
 without fee is hereby granted, provided that this copyright and permission
 notice appear on all copies and supporting documentation, the name of Carnegie

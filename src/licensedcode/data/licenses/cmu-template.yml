@@ -1,9 +1,0 @@
-key: cmu-template
-short_name: CMU License
-name: Carnegie Mellon Template License
-category: Permissive
-owner: Carnegie Mellon University
-homepage_url: http://copyfree.org/licenses/cmu/license.txt
-spdx_license_key: LicenseRef-scancode-cmu-template
-text_urls:
-    - http://copyfree.org/licenses/cmu/license.txt
