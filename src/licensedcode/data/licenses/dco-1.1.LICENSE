@@ -2,7 +2,7 @@
 key: dco-1.1
 short_name: DCO 1.1
 name: Developer Certificate of Origin 1.1
-category: Permissive
+category: CLA
 owner: Linux Foundation
 homepage_url: https://developercertificate.org/
 spdx_license_key: LicenseRef-scancode-dco-1.1
@@ -14,8 +14,6 @@ ignorable_copyrights:
 ignorable_holders:
     - The Linux Foundation and its contributors
 ---
-
-
 
 Developer Certificate of Origin
 Version 1.1

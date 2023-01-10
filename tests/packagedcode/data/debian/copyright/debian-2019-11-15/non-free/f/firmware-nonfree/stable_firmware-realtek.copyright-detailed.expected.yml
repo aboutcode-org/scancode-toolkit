@@ -19,32 +19,10 @@ license_detections:
         license_expression: other-permissive
         rule_identifier: other-permissive_66.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/other-permissive_66.RULE
-        referenced_filenames: []
-        is_license_text: yes
-        is_license_notice: no
-        is_license_reference: no
-        is_license_tag: no
-        is_license_intro: no
-        rule_length: 23
-        rule_relevance: 100
         matched_text: |
           Permission is hereby granted for the distribution of this firmware
           data in hexadecimal or equivalent format, provided this copyright
           notice is accompanying it.
-        licenses:
-          - key: other-permissive
-            name: Other Permissive Licenses
-            short_name: Other Permissive Licenses
-            category: Permissive
-            is_exception: no
-            is_unknown: no
-            owner: nexB
-            homepage_url:
-            text_url:
-            reference_url: https://scancode-licensedb.aboutcode.org/other-permissive
-            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/other-permissive.LICENSE
-            spdx_license_key: LicenseRef-scancode-other-permissive
-            spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/other-permissive.LICENSE
   - license_expression: intel
     detection_log:
       - not-combined
@@ -58,14 +36,6 @@ license_detections:
         license_expression: intel
         rule_identifier: intel_1.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/intel_1.RULE
-        referenced_filenames: []
-        is_license_text: yes
-        is_license_notice: no
-        is_license_reference: no
-        is_license_tag: no
-        is_license_intro: no
-        rule_length: 293
-        rule_relevance: 95
         matched_text: |
           Redistribution.  Redistribution and use in binary form, without
           modification, are permitted provided that the following conditions are
@@ -103,20 +73,6 @@ license_detections:
           TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE
           USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH
           DAMAGE.
-        licenses:
-          - key: intel
-            name: Intel Limited Patent License
-            short_name: Intel Limited Patent License
-            category: Proprietary Free
-            is_exception: no
-            is_unknown: no
-            owner: Intel Corporation
-            homepage_url: https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/tree/LICENCE.IntcSST2
-            text_url: https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/tree/LICENCE.adsp_sst
-            reference_url: https://scancode-licensedb.aboutcode.org/intel
-            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/intel.LICENSE
-            spdx_license_key: LicenseRef-scancode-intel
-            spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/intel.LICENSE
 other_license_detections: []
 copyright: |
   2010-2013, Realtek Semiconductor Corporation

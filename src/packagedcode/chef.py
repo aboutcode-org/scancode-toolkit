@@ -241,7 +241,7 @@ def build_package(package_data, datasource_id):
     lic = package_data.get('license', '')
     extracted_license_statement = None
     if lic:
-        extracted_license_statement=lic.strip()
+        extracted_license_statement = lic.strip()
 
     code_view_url = package_data.get('source_url', '')
     bug_tracking_url = package_data.get('issues_url', '')

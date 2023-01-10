@@ -3,5 +3,5 @@ is_false_positive: yes
 notes: seen in the Linux Kernel sources (kernel symbols related code or docs)
 ---
 
- Such user mode code will not necessarily be subject to
+Such user mode code will not necessarily be subject to
  the GNU General Public License (GPL).

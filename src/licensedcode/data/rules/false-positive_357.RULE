@@ -3,7 +3,7 @@ is_false_positive: yes
 notes: linux's 5.x module.h license commentaries
 ---
 
- * The following license idents are currently accepted as indicating free
+* The following license idents are currently accepted as indicating free
  * software modules
  *
  *  "GPL"               [GNU Public License v2]

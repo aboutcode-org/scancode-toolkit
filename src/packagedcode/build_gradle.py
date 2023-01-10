@@ -287,7 +287,7 @@ def get_dependencies_from_parse_tree(parse_tree):
                             dependency['name'] = name
                             dependency['version'] = version
                         elif length == 2:
-                            namespace, name  = split_dependency_string
+                            namespace, name = split_dependency_string
                             dependency['namespace'] = namespace
                             dependency['name'] = name
 
@@ -320,7 +320,6 @@ def get_dependencies_from_parse_tree(parse_tree):
                     if child_node.label == 'NAME-ATTRIBUTE':
                         dependency['name'] = child_node.value
                 yield dependency
-
 
 
 def get_dependencies(build_gradle_location):

@@ -4,4 +4,4 @@ is_license_tag: yes
 relevance: 100
 ---
 
- spec.license = "Nonstandard" # License Zero Prosperity Public License
+spec.license = "Nonstandard" # License Zero Prosperity Public License

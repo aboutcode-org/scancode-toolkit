@@ -3,4 +3,4 @@ is_false_positive: yes
 notes: seen in the Linux Kernel sources (kernel symbols related code or docs) and docs
 ---
 
- This was the first full GPL version
+This was the first full GPL version

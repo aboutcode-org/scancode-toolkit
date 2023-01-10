@@ -7,7 +7,6 @@ ignorable_holders:
     - Glenn Randers-Pehrson
 ---
 
-
 This copy of the libpng notices is provided for your convenience. In case of any discrepancy between this copy and the notices in the file png.h that is included in the libpng distribution, the latter shall prevail.
 COPYRIGHT NOTICE, DISCLAIMER, and LICENSE:
 This code is released under the libpng license.

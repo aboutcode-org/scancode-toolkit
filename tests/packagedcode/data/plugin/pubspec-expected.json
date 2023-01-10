@@ -1,48 +1,4 @@
 {
-  "dependencies": [
-    {
-      "purl": "pkg:pubspec/http",
-      "extracted_requirement": ">=0.12.0 <0.13.0",
-      "scope": "dependencies",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": false,
-      "resolved_package": {},
-      "extra_data": {},
-      "dependency_uid": "pkg:pubspec/http?uuid=fixed-uid-done-for-testing-5642512d1758",
-      "for_package_uid": "pkg:dart/openapi@1.0.0?uuid=fixed-uid-done-for-testing-5642512d1758",
-      "datafile_path": "authors-pubspec.yaml",
-      "datasource_id": "pubspec_yaml"
-    },
-    {
-      "purl": "pkg:pubspec/test",
-      "extracted_requirement": "^1.3.0",
-      "scope": "dev_dependencies",
-      "is_runtime": false,
-      "is_optional": true,
-      "is_resolved": false,
-      "resolved_package": {},
-      "extra_data": {},
-      "dependency_uid": "pkg:pubspec/test?uuid=fixed-uid-done-for-testing-5642512d1758",
-      "for_package_uid": "pkg:dart/openapi@1.0.0?uuid=fixed-uid-done-for-testing-5642512d1758",
-      "datafile_path": "authors-pubspec.yaml",
-      "datasource_id": "pubspec_yaml"
-    },
-    {
-      "purl": "pkg:pubspec/sdk",
-      "extracted_requirement": ">=2.0.0 <3.0.0",
-      "scope": "environment",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": false,
-      "resolved_package": {},
-      "extra_data": {},
-      "dependency_uid": "pkg:pubspec/sdk?uuid=fixed-uid-done-for-testing-5642512d1758",
-      "for_package_uid": "pkg:dart/openapi@1.0.0?uuid=fixed-uid-done-for-testing-5642512d1758",
-      "datafile_path": "authors-pubspec.yaml",
-      "datasource_id": "pubspec_yaml"
-    }
-  ],
   "packages": [
     {
       "type": "dart",
@@ -105,6 +61,52 @@
       "purl": "pkg:dart/openapi@1.0.0"
     }
   ],
+  "dependencies": [
+    {
+      "purl": "pkg:pubspec/http",
+      "extracted_requirement": ">=0.12.0 <0.13.0",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false,
+      "resolved_package": {},
+      "extra_data": {},
+      "dependency_uid": "pkg:pubspec/http?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:dart/openapi@1.0.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "authors-pubspec.yaml",
+      "datasource_id": "pubspec_yaml"
+    },
+    {
+      "purl": "pkg:pubspec/test",
+      "extracted_requirement": "^1.3.0",
+      "scope": "dev_dependencies",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": false,
+      "resolved_package": {},
+      "extra_data": {},
+      "dependency_uid": "pkg:pubspec/test?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:dart/openapi@1.0.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "authors-pubspec.yaml",
+      "datasource_id": "pubspec_yaml"
+    },
+    {
+      "purl": "pkg:pubspec/sdk",
+      "extracted_requirement": ">=2.0.0 <3.0.0",
+      "scope": "environment",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false,
+      "resolved_package": {},
+      "extra_data": {},
+      "dependency_uid": "pkg:pubspec/sdk?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:dart/openapi@1.0.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "authors-pubspec.yaml",
+      "datasource_id": "pubspec_yaml"
+    }
+  ],
+  "license_references": [],
+  "license_rule_references": [],
   "files": [
     {
       "path": "authors-pubspec.yaml",

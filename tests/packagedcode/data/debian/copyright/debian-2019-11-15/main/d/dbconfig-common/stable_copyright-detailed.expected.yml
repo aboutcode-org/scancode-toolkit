@@ -20,29 +20,7 @@ other_license_detections:
         license_expression: gpl-2.0-plus
         rule_identifier: gpl-2.0-plus_22.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_22.RULE
-        referenced_filenames: []
-        is_license_text: no
-        is_license_notice: no
-        is_license_reference: no
-        is_license_tag: yes
-        is_license_intro: no
-        rule_length: 3
-        rule_relevance: 100
         matched_text: 'License: gpl-2+'
-        licenses:
-          - key: gpl-2.0-plus
-            name: GNU General Public License 2.0 or later
-            short_name: GPL 2.0 or later
-            category: Copyleft
-            is_exception: no
-            is_unknown: no
-            owner: Free Software Foundation (FSF)
-            homepage_url: http://www.gnu.org/licenses/old-licenses/gpl-2.0-standalone.html
-            text_url: http://www.gnu.org/licenses/old-licenses/gpl-2.0-standalone.html
-            reference_url: https://scancode-licensedb.aboutcode.org/gpl-2.0-plus
-            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-2.0-plus.LICENSE
-            spdx_license_key: GPL-2.0-or-later
-            spdx_url: https://spdx.org/licenses/GPL-2.0-or-later
       - score: '100.0'
         start_line: 11
         end_line: 16
@@ -52,14 +30,6 @@ other_license_detections:
         license_expression: gpl-2.0-plus
         rule_identifier: gpl-2.0-plus_754.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_754.RULE
-        referenced_filenames: []
-        is_license_text: no
-        is_license_notice: yes
-        is_license_reference: no
-        is_license_tag: no
-        is_license_intro: no
-        rule_length: 40
-        rule_relevance: 100
         matched_text: |
           all software (original and derived) is covered under the GPL (version 2 or
           later)
@@ -67,20 +37,6 @@ other_license_detections:
           On Debian GNU/Linux systems, the complete text of the GNU General
           Public License Version 2 can be found in
           /usr/share/common-licenses/GPL-2.
-        licenses:
-          - key: gpl-2.0-plus
-            name: GNU General Public License 2.0 or later
-            short_name: GPL 2.0 or later
-            category: Copyleft
-            is_exception: no
-            is_unknown: no
-            owner: Free Software Foundation (FSF)
-            homepage_url: http://www.gnu.org/licenses/old-licenses/gpl-2.0-standalone.html
-            text_url: http://www.gnu.org/licenses/old-licenses/gpl-2.0-standalone.html
-            reference_url: https://scancode-licensedb.aboutcode.org/gpl-2.0-plus
-            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-2.0-plus.LICENSE
-            spdx_license_key: GPL-2.0-or-later
-            spdx_url: https://spdx.org/licenses/GPL-2.0-or-later
   - license_expression: afl-2.1
     detection_log:
       - not-combined
@@ -94,29 +50,7 @@ other_license_detections:
         license_expression: afl-2.1
         rule_identifier: afl-2.1_12.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/afl-2.1_12.RULE
-        referenced_filenames: []
-        is_license_text: no
-        is_license_notice: yes
-        is_license_reference: no
-        is_license_tag: no
-        is_license_intro: no
-        rule_length: 12
-        rule_relevance: 100
         matched_text: This document is licensed under the Academic Free License, Version 2.1
-        licenses:
-          - key: afl-2.1
-            name: Academic Free License 2.1
-            short_name: AFL 2.1
-            category: Permissive
-            is_exception: no
-            is_unknown: no
-            owner: Lawrence Rosen
-            homepage_url: http://www.rosenlaw.com/afl21.htm
-            text_url: http://opensource.linux-mirror.org/licenses/afl-2.1.txt
-            reference_url: https://scancode-licensedb.aboutcode.org/afl-2.1
-            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/afl-2.1.LICENSE
-            spdx_license_key: AFL-2.1
-            spdx_url: https://spdx.org/licenses/AFL-2.1
       - score: '100.0'
         start_line: 26
         end_line: 181
@@ -126,14 +60,6 @@ other_license_detections:
         license_expression: afl-2.1
         rule_identifier: afl-2.1_6.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/afl-2.1_6.RULE
-        referenced_filenames: []
-        is_license_text: yes
-        is_license_notice: no
-        is_license_reference: no
-        is_license_tag: no
-        is_license_intro: no
-        rule_length: 1411
-        rule_relevance: 100
         matched_text: |
           The Academic Free License v. 2.1
 
@@ -291,20 +217,6 @@ other_license_detections:
           reserved. Permission is hereby granted to copy and distribute this license
           without modification. This license may not be modified without the express
           written permission of its copyright owner.
-        licenses:
-          - key: afl-2.1
-            name: Academic Free License 2.1
-            short_name: AFL 2.1
-            category: Permissive
-            is_exception: no
-            is_unknown: no
-            owner: Lawrence Rosen
-            homepage_url: http://www.rosenlaw.com/afl21.htm
-            text_url: http://opensource.linux-mirror.org/licenses/afl-2.1.txt
-            reference_url: https://scancode-licensedb.aboutcode.org/afl-2.1
-            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/afl-2.1.LICENSE
-            spdx_license_key: AFL-2.1
-            spdx_url: https://spdx.org/licenses/AFL-2.1
 copyright: |
   2000-2004 Ola Lundqvist <opal@debian.org>
   2004-2011 sean finney <seanius@debian.org>

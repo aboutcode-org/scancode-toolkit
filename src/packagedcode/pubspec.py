@@ -13,7 +13,6 @@ import saneyaml
 from packageurl import PackageURL
 
 from packagedcode import models
-from packagedcode.utils import combine_expressions
 """
 Collect data from Dart pub packages.
 See https://dart.dev/tools/pub/pubspec
@@ -40,9 +39,9 @@ class BaseDartPubspecHandler(models.DatafileHandler):
             DartPubspecYamlHandler.path_patterns + DartPubspecLockHandler.path_patterns
 
         if resource.has_parent():
-            dir_resource=resource.parent(codebase)
+            dir_resource = resource.parent(codebase)
         else:
-            dir_resource=resource
+            dir_resource = resource
 
         yield from cls.assemble_from_many_datafiles(
             datafile_name_patterns=datafile_name_patterns,

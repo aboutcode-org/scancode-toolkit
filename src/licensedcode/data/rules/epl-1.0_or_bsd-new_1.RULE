@@ -7,7 +7,7 @@ ignorable_urls:
     - https://github.com/locationtech/jts/blob/master/LICENSE_EPLv1.txt
 ---
 
-    <licenses>
+<licenses>
         <license>
             <name>Eclipse Publish License, Version 1.0</name>
             <u  rl>https://github.com/locationtech/jts/blob/master/LICENSE_EPLv1.txt</url>

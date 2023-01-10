@@ -66,32 +66,7 @@
             "license_expression": "epl-1.0",
             "rule_identifier": "epl-1.0_18.RULE",
             "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/epl-1.0_18.RULE",
-            "referenced_filenames": [],
-            "is_license_text": false,
-            "is_license_notice": false,
-            "is_license_reference": true,
-            "is_license_tag": false,
-            "is_license_intro": false,
-            "rule_length": 5,
-            "rule_relevance": 100,
-            "matched_text": "Eclipse Public License v1.0 / Eclipse Distribution License v1.0",
-            "licenses": [
-              {
-                "key": "epl-1.0",
-                "name": "Eclipse Public License 1.0",
-                "short_name": "EPL 1.0",
-                "category": "Copyleft Limited",
-                "is_exception": false,
-                "is_unknown": false,
-                "owner": "Eclipse Foundation",
-                "homepage_url": "http://www.eclipse.org/legal/epl-v10.html",
-                "text_url": "http://www.eclipse.org/legal/epl-v10.html",
-                "reference_url": "https://scancode-licensedb.aboutcode.org/epl-1.0",
-                "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/epl-1.0.LICENSE",
-                "spdx_license_key": "EPL-1.0",
-                "spdx_url": "https://spdx.org/licenses/EPL-1.0"
-              }
-            ]
+            "matched_text": "Eclipse Public License v1.0 / Eclipse Distribution License v1.0"
           },
           {
             "score": 100.0,
@@ -103,32 +78,7 @@
             "license_expression": "bsd-new",
             "rule_identifier": "bsd-new_802.RULE",
             "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_802.RULE",
-            "referenced_filenames": [],
-            "is_license_text": false,
-            "is_license_notice": false,
-            "is_license_reference": true,
-            "is_license_tag": false,
-            "is_license_intro": false,
-            "rule_length": 3,
-            "rule_relevance": 100,
-            "matched_text": "Eclipse Public License v1.0 / Eclipse Distribution License v1.0",
-            "licenses": [
-              {
-                "key": "bsd-new",
-                "name": "BSD-3-Clause",
-                "short_name": "BSD-3-Clause",
-                "category": "Permissive",
-                "is_exception": false,
-                "is_unknown": false,
-                "owner": "Regents of the University of California",
-                "homepage_url": "http://www.opensource.org/licenses/BSD-3-Clause",
-                "text_url": "http://www.opensource.org/licenses/BSD-3-Clause",
-                "reference_url": "https://scancode-licensedb.aboutcode.org/bsd-new",
-                "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-new.LICENSE",
-                "spdx_license_key": "BSD-3-Clause",
-                "spdx_url": "https://spdx.org/licenses/BSD-3-Clause"
-              }
-            ]
+            "matched_text": "Eclipse Public License v1.0 / Eclipse Distribution License v1.0"
           }
         ]
       },
@@ -148,32 +98,7 @@
             "license_expression": "free-unknown",
             "rule_identifier": "pypi_osi_approved.RULE",
             "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/pypi_osi_approved.RULE",
-            "referenced_filenames": [],
-            "is_license_text": false,
-            "is_license_notice": false,
-            "is_license_reference": false,
-            "is_license_tag": false,
-            "is_license_intro": true,
-            "rule_length": 3,
-            "rule_relevance": 100,
-            "matched_text": "['License :: OSI Approved']",
-            "licenses": [
-              {
-                "key": "free-unknown",
-                "name": "Free unknown license detected but not recognized",
-                "short_name": "Free unknown",
-                "category": "Unstated License",
-                "is_exception": false,
-                "is_unknown": true,
-                "owner": "Unspecified",
-                "homepage_url": null,
-                "text_url": "",
-                "reference_url": "https://scancode-licensedb.aboutcode.org/free-unknown",
-                "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/free-unknown.LICENSE",
-                "spdx_license_key": "LicenseRef-scancode-free-unknown",
-                "spdx_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/free-unknown.LICENSE"
-              }
-            ]
+            "matched_text": "['License :: OSI Approved']"
           }
         ]
       }

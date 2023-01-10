@@ -28,8 +28,8 @@ import saneyaml
 from commoncode import fileutils
 from commoncode.hash import multi_checksums
 from commoncode.text import python_safe_name
-from packaging import tags as packaging_tags
-from packaging import version as packaging_version
+from packvers import tags as packaging_tags
+from packvers import version as packaging_version
 
 import utils_pip_compatibility_tags
 

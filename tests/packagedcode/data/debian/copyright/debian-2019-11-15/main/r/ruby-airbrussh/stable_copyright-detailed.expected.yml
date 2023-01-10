@@ -21,14 +21,6 @@ other_license_detections:
         license_expression: mit
         rule_identifier: mit.LICENSE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE
-        referenced_filenames: []
-        is_license_text: yes
-        is_license_notice: no
-        is_license_reference: no
-        is_license_tag: no
-        is_license_intro: no
-        rule_length: 161
-        rule_relevance: 100
         matched_text: |
           Permission is hereby granted, free of charge, to any person obtaining
           a copy of this software and associated documentation files (the
@@ -48,20 +40,6 @@ other_license_detections:
           LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
           OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
           WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-        licenses:
-          - key: mit
-            name: MIT License
-            short_name: MIT License
-            category: Permissive
-            is_exception: no
-            is_unknown: no
-            owner: MIT
-            homepage_url: http://opensource.org/licenses/mit-license.php
-            text_url: http://opensource.org/licenses/mit-license.php
-            reference_url: https://scancode-licensedb.aboutcode.org/mit
-            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE
-            spdx_license_key: MIT
-            spdx_url: https://spdx.org/licenses/MIT
 copyright: |
   2015-2016 Matt Brictson <airbrussh@mattbrictson.com>
   2017 Samuel Henrique <samueloph@debian.org>

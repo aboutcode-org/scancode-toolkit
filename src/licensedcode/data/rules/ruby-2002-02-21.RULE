@@ -5,7 +5,7 @@ notes: the change is "executables" to "binaries" This is a short-lived changes f
     https://raw.githubusercontent.com/ruby/ruby/a08cea360d69e6a7c42154f2032590ea3e77a386/COPYING
 ---
 
-  1. You may make and give away verbatim copies of the source form of the
+1. You may make and give away verbatim copies of the source form of the
      software without restriction, provided that you duplicate all of the
      original copyright notices and associated disclaimers.
 

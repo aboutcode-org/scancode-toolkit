@@ -1,4 +1,72 @@
 {
+  "packages": [
+    {
+      "type": "conda",
+      "namespace": null,
+      "name": "requests-kerberos",
+      "version": "0.8.0",
+      "qualifiers": {},
+      "subpath": null,
+      "primary_language": null,
+      "description": "Kerberos authentication handler for python-requests",
+      "release_date": null,
+      "parties": [],
+      "keywords": [],
+      "homepage_url": "https://github.com/requests/requests-kerberos",
+      "download_url": "https://pypi.python.org/packages/source/r/requests-kerberos/requests-kerberos-0.8.0.tar.gz",
+      "size": null,
+      "sha1": null,
+      "md5": null,
+      "sha256": null,
+      "sha512": null,
+      "bug_tracking_url": null,
+      "code_view_url": null,
+      "vcs_url": null,
+      "copyright": null,
+      "declared_license_expression": "unknown-license-reference",
+      "declared_license_expression_spdx": "LicenseRef-scancode-unknown-license-reference",
+      "license_detections": [
+        {
+          "license_expression": "unknown-license-reference",
+          "detection_log": [
+            "unknown-match"
+          ],
+          "matches": [
+            {
+              "score": 80.0,
+              "start_line": 1,
+              "end_line": 1,
+              "matched_length": 2,
+              "match_coverage": 100.0,
+              "matcher": "1-hash",
+              "license_expression": "unknown-license-reference",
+              "rule_identifier": "unknown_license_other_12.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/unknown_license_other_12.RULE",
+              "matched_text": "license Other"
+            }
+          ]
+        }
+      ],
+      "other_license_expression": null,
+      "other_license_expression_spdx": null,
+      "other_license_detections": [],
+      "extracted_license_statement": "Other",
+      "notice_text": null,
+      "source_packages": [],
+      "extra_data": {},
+      "repository_homepage_url": null,
+      "repository_download_url": null,
+      "api_data_url": null,
+      "package_uid": "pkg:conda/requests-kerberos@0.8.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_paths": [
+        "info/recipe.tar-extract/recipe/meta.yaml"
+      ],
+      "datasource_ids": [
+        "conda_meta_yaml"
+      ],
+      "purl": "pkg:conda/requests-kerberos@0.8.0"
+    }
+  ],
   "dependencies": [
     {
       "purl": "pkg:conda/zlib",
@@ -169,97 +237,67 @@
       "datasource_id": "conda_meta_yaml"
     }
   ],
-  "packages": [
+  "license_references": [
     {
-      "type": "conda",
-      "namespace": null,
-      "name": "requests-kerberos",
-      "version": "0.8.0",
-      "qualifiers": {},
-      "subpath": null,
-      "primary_language": null,
-      "description": "Kerberos authentication handler for python-requests",
-      "release_date": null,
-      "parties": [],
-      "keywords": [],
-      "homepage_url": "https://github.com/requests/requests-kerberos",
-      "download_url": "https://pypi.python.org/packages/source/r/requests-kerberos/requests-kerberos-0.8.0.tar.gz",
-      "size": null,
-      "sha1": null,
-      "md5": null,
-      "sha256": null,
-      "sha512": null,
-      "bug_tracking_url": null,
-      "code_view_url": null,
-      "vcs_url": null,
-      "copyright": null,
-      "declared_license_expression": "unknown-license-reference",
-      "declared_license_expression_spdx": "LicenseRef-scancode-unknown-license-reference",
-      "license_detections": [
-        {
-          "license_expression": "unknown-license-reference",
-          "detection_log": [
-            "unknown-match"
-          ],
-          "matches": [
-            {
-              "score": 80.0,
-              "start_line": 1,
-              "end_line": 1,
-              "matched_length": 2,
-              "match_coverage": 100.0,
-              "matcher": "1-hash",
-              "license_expression": "unknown-license-reference",
-              "rule_identifier": "unknown_license_other_12.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/unknown_license_other_12.RULE",
-              "referenced_filenames": [],
-              "is_license_text": false,
-              "is_license_notice": false,
-              "is_license_reference": true,
-              "is_license_tag": false,
-              "is_license_intro": false,
-              "rule_length": 2,
-              "rule_relevance": 80,
-              "matched_text": "license Other",
-              "licenses": [
-                {
-                  "key": "unknown-license-reference",
-                  "name": "Unknown License file reference",
-                  "short_name": "Unknown License reference",
-                  "category": "Unstated License",
-                  "is_exception": false,
-                  "is_unknown": true,
-                  "owner": "Unspecified",
-                  "homepage_url": null,
-                  "text_url": "",
-                  "reference_url": "https://scancode-licensedb.aboutcode.org/unknown-license-reference",
-                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/unknown-license-reference.LICENSE",
-                  "spdx_license_key": "LicenseRef-scancode-unknown-license-reference",
-                  "spdx_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/unknown-license-reference.LICENSE"
-                }
-              ]
-            }
-          ]
-        }
-      ],
-      "other_license_expression": null,
-      "other_license_expression_spdx": null,
-      "other_license_detections": [],
-      "extracted_license_statement": "Other",
-      "notice_text": null,
-      "source_packages": [],
-      "extra_data": {},
-      "repository_homepage_url": null,
-      "repository_download_url": null,
-      "api_data_url": null,
-      "package_uid": "pkg:conda/requests-kerberos@0.8.0?uuid=fixed-uid-done-for-testing-5642512d1758",
-      "datafile_paths": [
-        "info/recipe.tar-extract/recipe/meta.yaml"
-      ],
-      "datasource_ids": [
-        "conda_meta_yaml"
-      ],
-      "purl": "pkg:conda/requests-kerberos@0.8.0"
+      "key": "unknown-license-reference",
+      "language": "en",
+      "short_name": "Unknown License reference",
+      "name": "Unknown License file reference",
+      "category": "Unstated License",
+      "owner": "Unspecified",
+      "homepage_url": null,
+      "notes": "This applies to the case of a file with no clear license, which may be referenced via URL or text such as \"See license in...\" or \"This file is licensed under...\", but where the reference cannot be resolved to a specific named, public license.",
+      "is_builtin": true,
+      "is_exception": false,
+      "is_unknown": true,
+      "is_generic": false,
+      "spdx_license_key": "LicenseRef-scancode-unknown-license-reference",
+      "other_spdx_license_keys": [],
+      "osi_license_key": null,
+      "text_urls": [],
+      "osi_url": null,
+      "faq_url": null,
+      "other_urls": [],
+      "key_aliases": [],
+      "minimum_coverage": 0,
+      "standard_notice": null,
+      "ignorable_copyrights": [],
+      "ignorable_holders": [],
+      "ignorable_authors": [],
+      "ignorable_urls": [],
+      "ignorable_emails": [],
+      "text": "",
+      "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/unknown-license-reference.LICENSE",
+      "licensedb_url": "https://scancode-licensedb.aboutcode.org/unknown-license-reference",
+      "spdx_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/unknown-license-reference.LICENSE"
+    }
+  ],
+  "license_rule_references": [
+    {
+      "license_expression": "unknown-license-reference",
+      "identifier": "unknown_license_other_12.RULE",
+      "language": "en",
+      "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/unknown_license_other_12.RULE",
+      "is_license_text": false,
+      "is_license_notice": false,
+      "is_license_reference": true,
+      "is_license_tag": false,
+      "is_license_intro": false,
+      "is_continuous": false,
+      "is_builtin": true,
+      "is_from_license": false,
+      "is_synthetic": false,
+      "length": 2,
+      "relevance": 80,
+      "minimum_coverage": 100,
+      "referenced_filenames": [],
+      "notes": null,
+      "ignorable_copyrights": [],
+      "ignorable_holders": [],
+      "ignorable_authors": [],
+      "ignorable_urls": [],
+      "ignorable_emails": [],
+      "text": "License: `other`"
     }
   ],
   "files": [
@@ -336,32 +374,7 @@
                   "license_expression": "unknown-license-reference",
                   "rule_identifier": "unknown_license_other_12.RULE",
                   "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/unknown_license_other_12.RULE",
-                  "referenced_filenames": [],
-                  "is_license_text": false,
-                  "is_license_notice": false,
-                  "is_license_reference": true,
-                  "is_license_tag": false,
-                  "is_license_intro": false,
-                  "rule_length": 2,
-                  "rule_relevance": 80,
-                  "matched_text": "license Other",
-                  "licenses": [
-                    {
-                      "key": "unknown-license-reference",
-                      "name": "Unknown License file reference",
-                      "short_name": "Unknown License reference",
-                      "category": "Unstated License",
-                      "is_exception": false,
-                      "is_unknown": true,
-                      "owner": "Unspecified",
-                      "homepage_url": null,
-                      "text_url": "",
-                      "reference_url": "https://scancode-licensedb.aboutcode.org/unknown-license-reference",
-                      "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/unknown-license-reference.LICENSE",
-                      "spdx_license_key": "LicenseRef-scancode-unknown-license-reference",
-                      "spdx_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/unknown-license-reference.LICENSE"
-                    }
-                  ]
+                  "matched_text": "license Other"
                 }
               ]
             }

@@ -1,4 +1,116 @@
 {
+  "license_detections": [
+    {
+      "identifier": "pcre-6bfd6b44-b749-0fea-8561-aeb76e388c06",
+      "license_expression": "pcre",
+      "count": 1,
+      "detection_log": [
+        "not-combined"
+      ],
+      "matches": [
+        {
+          "score": 100.0,
+          "start_line": 1,
+          "end_line": 47,
+          "matched_length": 303,
+          "match_coverage": 100.0,
+          "matcher": "1-hash",
+          "license_expression": "pcre",
+          "rule_identifier": "pcre.LICENSE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/pcre.LICENSE"
+        }
+      ]
+    }
+  ],
+  "license_references": [
+    {
+      "key": "pcre",
+      "language": "en",
+      "short_name": "PCRE License",
+      "name": "PCRE License",
+      "category": "Permissive",
+      "owner": "University of Cambridge",
+      "homepage_url": "http://www.pcre.org/licence.txt",
+      "notes": null,
+      "is_builtin": true,
+      "is_exception": false,
+      "is_unknown": false,
+      "is_generic": false,
+      "spdx_license_key": "LicenseRef-scancode-pcre",
+      "other_spdx_license_keys": [],
+      "osi_license_key": null,
+      "text_urls": [
+        "http://www.pcre.org/licence.txt"
+      ],
+      "osi_url": null,
+      "faq_url": null,
+      "other_urls": [],
+      "key_aliases": [],
+      "minimum_coverage": 0,
+      "standard_notice": null,
+      "ignorable_copyrights": [
+        "Copyright (c) 1997-2001 University of Cambridge",
+        "copyright by the University of Cambridge, England"
+      ],
+      "ignorable_holders": [
+        "University of Cambridge",
+        "the University of Cambridge, England"
+      ],
+      "ignorable_authors": [
+        "Philip Hazel"
+      ],
+      "ignorable_urls": [
+        "ftp://ftp.csx.cam.ac.uk/pub/software/programming/pcre/"
+      ],
+      "ignorable_emails": [
+        "ph10@cam.ac.uk"
+      ],
+      "text": "PCRE LICENCE \n------------ \n\nPCRE is a library of functions to support regular expressions whose\nsyntax and semantics are as close as possible to those of the Perl 5\nlanguage.\n\nWritten by: Philip Hazel <ph10@cam.ac.uk>\nUniversity of Cambridge Computing Service, Cambridge, England. \nPhone: +44 1223 334714.\nCopyright (c) 1997-2001 University of Cambridge\n\nPermission is granted to anyone to use this software for any purpose on\nany computer system, and to redistribute it freely, subject to the\nfollowing restrictions:\n\n1. This software is distributed in the hope that it will be useful, but\nWITHOUT ANY WARRANTY; without even the implied warranty of\nMERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.\n\n2. The origin of this software must not be misrepresented, either by\nexplicit claim or by omission. In practice, this means that if you use\nPCRE in software which you distribute to others, commercially or\notherwise, you must put a sentence like this\n\"Regular expression support is provided by the PCRE library package,\nwhich is open source software, written by Philip Hazel, and copyright by\nthe University of Cambridge, England\" \n\nsomewhere reasonably visible in your documentation and in any relevant\nfiles or online help data or similar.\n\nA reference to the ftp site for the source, that is, to\nftp://ftp.csx.cam.ac.uk/pub/software/programming/pcre/ \nshould also be given in the documentation.\n\n3. Altered versions must be plainly marked as such, and must not be\nmisrepresented as being the original software.\n\n4. If PCRE is embedded in any software that is released under the GNU\nGeneral Purpose Licence (GPL), or Lesser General Purpose Licence (LGPL),\nthen the terms of that licence shall supersede any condition above with\nwhich it is incompatible.\n\nThe documentation for PCRE, supplied in the \"doc\" directory, is\ndistributed under the same terms as the software itself.\n\nEnd PCRE LICENCE",
+      "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/pcre.LICENSE",
+      "licensedb_url": "https://scancode-licensedb.aboutcode.org/pcre",
+      "spdx_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/pcre.LICENSE"
+    }
+  ],
+  "license_rule_references": [
+    {
+      "license_expression": "pcre",
+      "identifier": "pcre.LICENSE",
+      "language": "en",
+      "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/pcre.LICENSE",
+      "is_license_text": true,
+      "is_license_notice": false,
+      "is_license_reference": false,
+      "is_license_tag": false,
+      "is_license_intro": false,
+      "is_continuous": false,
+      "is_builtin": true,
+      "is_from_license": true,
+      "is_synthetic": false,
+      "length": 303,
+      "relevance": 100,
+      "minimum_coverage": 0,
+      "referenced_filenames": [],
+      "notes": null,
+      "ignorable_copyrights": [
+        "Copyright (c) 1997-2001 University of Cambridge",
+        "copyright by the University of Cambridge, England"
+      ],
+      "ignorable_holders": [
+        "University of Cambridge",
+        "the University of Cambridge, England"
+      ],
+      "ignorable_authors": [
+        "Philip Hazel"
+      ],
+      "ignorable_urls": [
+        "ftp://ftp.csx.cam.ac.uk/pub/software/programming/pcre/"
+      ],
+      "ignorable_emails": [
+        "ph10@cam.ac.uk"
+      ],
+      "text": "PCRE LICENCE\n------------\n\nPCRE is a library of functions to support regular expressions whose\nsyntax and semantics are as close as possible to those of the Perl 5\nlanguage.\n\nWritten by: Philip Hazel <ph10@cam.ac.uk>\nUniversity of Cambridge Computing Service, Cambridge, England.\nPhone: +44 1223 334714.\nCopyright (c) 1997-2001 University of Cambridge\n\nPermission is granted to anyone to use this software for any purpose on\nany computer system, and to redistribute it freely, subject to the\nfollowing restrictions:\n\n1. This software is distributed in the hope that it will be useful, but\nWITHOUT ANY WARRANTY; without even the implied warranty of\nMERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.\n\n2. The origin of this software must not be misrepresented, either by\nexplicit claim or by omission. In practice, this means that if you use\nPCRE in software which you distribute to others, commercially or\notherwise, you must put a sentence like this\n\"Regular expression support is provided by the PCRE library package,\nwhich is open source software, written by Philip Hazel, and copyright by\nthe University of Cambridge, England\"\n\nsomewhere reasonably visible in your documentation and in any relevant\nfiles or online help data or similar.\n\nA reference to the ftp site for the source, that is, to\nftp://ftp.csx.cam.ac.uk/pub/software/programming/pcre/\nshould also be given in the documentation.\n\n3. Altered versions must be plainly marked as such, and must not be\nmisrepresented as being the original software.\n\n4. If PCRE is embedded in any software that is released under the GNU\nGeneral Purpose Licence (GPL), or Lesser General Purpose Licence (LGPL),\nthen the terms of that licence shall supersede any condition above with\nwhich it is incompatible.\n\nThe documentation for PCRE, supplied in the \"doc\" directory, is\ndistributed under the same terms as the software itself.\n\nEnd PCRE LICENCE"
+    }
+  ],
   "files": [
     {
       "path": "LICENSE3",
@@ -37,38 +149,16 @@
               "matcher": "1-hash",
               "license_expression": "pcre",
               "rule_identifier": "pcre.LICENSE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/pcre.LICENSE",
-              "referenced_filenames": [],
-              "is_license_text": true,
-              "is_license_notice": false,
-              "is_license_reference": false,
-              "is_license_tag": false,
-              "is_license_intro": false,
-              "rule_length": 303,
-              "rule_relevance": 100,
-              "licenses": [
-                {
-                  "key": "pcre",
-                  "name": "PCRE License",
-                  "short_name": "PCRE License",
-                  "category": "Permissive",
-                  "is_exception": false,
-                  "is_unknown": false,
-                  "owner": "University of Cambridge",
-                  "homepage_url": "http://www.pcre.org/licence.txt",
-                  "text_url": "http://www.pcre.org/licence.txt",
-                  "reference_url": "https://scancode-licensedb.aboutcode.org/pcre",
-                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/pcre.LICENSE",
-                  "spdx_license_key": "LicenseRef-scancode-pcre",
-                  "spdx_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/pcre.LICENSE"
-                }
-              ]
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/pcre.LICENSE"
             }
           ]
         }
       ],
       "license_clues": [],
       "percentage_of_license_text": 100.0,
+      "for_license_detections": [
+        "pcre-6bfd6b44-b749-0fea-8561-aeb76e388c06"
+      ],
       "copyrights": [
         {
           "copyright": "Copyright (c) 1997-2001 University of Cambridge",

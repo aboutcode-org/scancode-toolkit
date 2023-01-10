@@ -135,7 +135,9 @@ class LicenseIndexCacheTest(FileBasedTesting):
             cache.get_spdx_symbols(licenses_db=test_licenses)
             self.fail('ValueError not raised!')
         except ValueError as e:
-            assert 'Duplicated SPDX license key' in str(e)
+            msg = str(e)
+            assert msg.startswith('Duplicated')
+            assert 'SPDX license key' in msg
 
     def test_get_spdx_symbols_fails_on_duplicated_other_spdx_keys(self):
         test_dir = self.get_test_loc('spdx/db-dupe-other')
@@ -145,7 +147,9 @@ class LicenseIndexCacheTest(FileBasedTesting):
             cache.get_spdx_symbols(licenses_db=test_licenses)
             self.fail('ValueError not raised!')
         except ValueError as e:
-            assert 'Duplicated SPDX license key' in str(e)
+            msg = str(e)
+            assert msg.startswith('Duplicated')
+            assert 'SPDX license key' in msg
 
     def test_get_spdx_symbols_checks_duplicates_with_deprecated_on_live_db(self):
         from licensedcode.models import load_licenses

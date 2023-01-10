@@ -18,14 +18,6 @@ license_detections:
         license_expression: proprietary-license
         rule_identifier: proprietary-license_556.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/proprietary-license_556.RULE
-        referenced_filenames: []
-        is_license_text: yes
-        is_license_notice: no
-        is_license_reference: no
-        is_license_tag: no
-        is_license_intro: no
-        rule_length: 436
-        rule_relevance: 100
         matched_text: "All rights reserved not granted herein.\n\nLimited License.\n\nTexas\
           \ Instruments Incorporated grants a world-wide, royalty-free, non-exclusive\nlicense\
           \ under copyrights and patents it now or hereafter owns or controls to\nmake, have\
@@ -61,19 +53,5 @@ license_detections:
           \ CAUSED AND ON ANY THEORY OF\nLIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR\
           \ TORT (INCLUDING NEGLIGENCE\nOR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS\
           \ SOFTWARE, EVEN IF\nADVISED OF THE POSSIBILITY OF SUCH DAMAGE."
-        licenses:
-          - key: proprietary-license
-            name: Proprietary License
-            short_name: Proprietary License
-            category: Commercial
-            is_exception: no
-            is_unknown: no
-            owner: Unspecified
-            homepage_url:
-            text_url:
-            reference_url: https://scancode-licensedb.aboutcode.org/proprietary-license
-            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/proprietary-license.LICENSE
-            spdx_license_key: LicenseRef-scancode-proprietary-license
-            spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/proprietary-license.LICENSE
 other_license_detections: []
 copyright: 2000-2016, Texas Instruments Incorporated

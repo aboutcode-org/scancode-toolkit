@@ -9,7 +9,7 @@
           "--json-lines": "<file>"
         },
         "notice": "Generated with ScanCode and provided on an \"AS IS\" BASIS, WITHOUT WARRANTIES\nOR CONDITIONS OF ANY KIND, either express or implied. No content created from\nScanCode should be considered or used as legal advice. Consult an Attorney\nfor any legal advice.\nScanCode is a free software code scanning tool from nexB Inc. and others.\nVisit https://github.com/nexB/scancode-toolkit/ for support and download.",
-        "output_format_version": "2.0.0",
+        "output_format_version": "3.0.0",
         "message": null,
         "errors": [],
         "warnings": [],
@@ -17,11 +17,11 @@
           "system_environment": {
             "operating_system": "linux",
             "cpu_architecture": "64",
-            "platform": "Linux-5.14.0-1045-oem-x86_64-with-glibc2.29",
-            "platform_version": "#51-Ubuntu SMP Mon Jul 4 06:41:22 UTC 2022",
-            "python_version": "3.8.10 (default, Jun 22 2022, 20:18:18) \n[GCC 9.4.0]"
+            "platform": "Linux-4.15.0-200-generic-x86_64-with-glibc2.23",
+            "platform_version": "#211~16.04.2-Ubuntu SMP Fri Nov 25 09:18:48 UTC 2022",
+            "python_version": "3.9.10 (main, Jan 29 2022, 10:01:49) \n[GCC 5.4.0 20160609]"
           },
-          "spdx_license_list_version": "3.17",
+          "spdx_license_list_version": "3.19",
           "files_count": 1
         }
       }

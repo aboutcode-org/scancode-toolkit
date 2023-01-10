@@ -6,7 +6,7 @@ ignorable_urls:
     - http://www.mozilla.org/NPL/MPL-1.0.html
 ---
 
- The code and datafiles in this distribution are licensed under the
+The code and datafiles in this distribution are licensed under the
  Mozilla Public License. See http://www.mozilla.org/NPL/MPL-1.0.html
  for a copy of the license. Alternately, you may use  libical  under the
  terms of the GNU Library General Public License. See

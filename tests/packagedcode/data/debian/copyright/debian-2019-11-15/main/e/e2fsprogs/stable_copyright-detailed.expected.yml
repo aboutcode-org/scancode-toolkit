@@ -19,16 +19,6 @@ license_detections:
         license_expression: gpl-2.0 AND lgpl-2.0 AND bsd-new AND mit-old-style-no-advert
         rule_identifier: gpl-2.0_and_lgpl-2.0_and_bsd-new_and_mit_1.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0_and_lgpl-2.0_and_bsd-new_and_mit_1.RULE
-        referenced_filenames:
-          - /usr/share/common-licenses/GPL-2
-          - /usr/share/common-licenses/LGPL-2
-        is_license_text: no
-        is_license_notice: yes
-        is_license_reference: no
-        is_license_tag: no
-        is_license_intro: no
-        rule_length: 102
-        rule_relevance: 100
         matched_text: "This package, the EXT2 filesystem utilities, are made available under\n\
           the GNU General Public License version 2, with the exception of the\nlib/ext2fs and\
           \ lib/e2p libraries, which are made available under the\nGNU Library General Public\
@@ -38,59 +28,6 @@ license_detections:
           2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008 by Theodore Ts'o\n\nOn Debian GNU systems,\
           \ the complete text of the GNU General Public\nLicense can be found in `/usr/share/common-licenses/GPL-2'.\
           \  The\ncomplete text of the GNU Library General Public License can be found\nin '/usr/share/common-licenses/LGPL-2'."
-        licenses:
-          - key: gpl-2.0
-            name: GNU General Public License 2.0
-            short_name: GPL 2.0
-            category: Copyleft
-            is_exception: no
-            is_unknown: no
-            owner: Free Software Foundation (FSF)
-            homepage_url: http://www.gnu.org/licenses/gpl-2.0.html
-            text_url: http://www.gnu.org/licenses/gpl-2.0.txt
-            reference_url: https://scancode-licensedb.aboutcode.org/gpl-2.0
-            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-2.0.LICENSE
-            spdx_license_key: GPL-2.0-only
-            spdx_url: https://spdx.org/licenses/GPL-2.0-only
-          - key: lgpl-2.0
-            name: GNU Library General Public License 2.0
-            short_name: LGPL 2.0
-            category: Copyleft Limited
-            is_exception: no
-            is_unknown: no
-            owner: Free Software Foundation (FSF)
-            homepage_url: http://www.gnu.org/licenses/old-licenses/lgpl-2.0.html
-            text_url: http://www.gnu.org/licenses/lgpl-2.0.html
-            reference_url: https://scancode-licensedb.aboutcode.org/lgpl-2.0
-            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/lgpl-2.0.LICENSE
-            spdx_license_key: LGPL-2.0-only
-            spdx_url: https://spdx.org/licenses/LGPL-2.0-only
-          - key: bsd-new
-            name: BSD-3-Clause
-            short_name: BSD-3-Clause
-            category: Permissive
-            is_exception: no
-            is_unknown: no
-            owner: Regents of the University of California
-            homepage_url: http://www.opensource.org/licenses/BSD-3-Clause
-            text_url: http://www.opensource.org/licenses/BSD-3-Clause
-            reference_url: https://scancode-licensedb.aboutcode.org/bsd-new
-            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-new.LICENSE
-            spdx_license_key: BSD-3-Clause
-            spdx_url: https://spdx.org/licenses/BSD-3-Clause
-          - key: mit-old-style-no-advert
-            name: MIT Old Style no advertising
-            short_name: MIT Old Style no advertising
-            category: Permissive
-            is_exception: no
-            is_unknown: no
-            owner: MIT
-            homepage_url: http://fedoraproject.org/wiki/Licensing:MIT#Old_Style_.28no_advertising_without_permission.29
-            text_url:
-            reference_url: https://scancode-licensedb.aboutcode.org/mit-old-style-no-advert
-            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit-old-style-no-advert.LICENSE
-            spdx_license_key: NTP
-            spdx_url: https://spdx.org/licenses/NTP
   - license_expression: ntp-0 AND bsd-new
     detection_log:
       - not-combined
@@ -104,14 +41,6 @@ license_detections:
         license_expression: ntp-0
         rule_identifier: ntp-0.LICENSE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/ntp-0.LICENSE
-        referenced_filenames: []
-        is_license_text: yes
-        is_license_notice: no
-        is_license_reference: no
-        is_license_tag: no
-        is_license_intro: no
-        rule_length: 85
-        rule_relevance: 100
         matched_text: |
           Permission to use, copy, modify, and distribute this software and
              its documentation for any purpose is hereby granted, provided that
@@ -121,20 +50,6 @@ license_detections:
              M.I.T. S.I.P.B. make no representations about the suitability of
              this software for any purpose.  It is provided "as is" without
              express or implied warranty.
-        licenses:
-          - key: ntp-0
-            name: NTP No Attribution
-            short_name: NTP-0
-            category: Permissive
-            is_exception: no
-            is_unknown: no
-            owner: MIT
-            homepage_url: https://github.com/tytso/e2fsprogs/blob/master/lib/et/et_name.c
-            text_url:
-            reference_url: https://scancode-licensedb.aboutcode.org/ntp-0
-            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/ntp-0.LICENSE
-            spdx_license_key: NTP-0
-            spdx_url: https://spdx.org/licenses/NTP-0
       - score: '100.0'
         start_line: 49
         end_line: 73
@@ -144,14 +59,6 @@ license_detections:
         license_expression: bsd-new
         rule_identifier: bsd-new_117.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_117.RULE
-        referenced_filenames: []
-        is_license_text: yes
-        is_license_notice: no
-        is_license_reference: no
-        is_license_tag: no
-        is_license_intro: no
-        rule_length: 210
-        rule_relevance: 100
         matched_text: |
           Redistribution and use in source and binary forms, with or without
              modification, are permitted provided that the following conditions
@@ -178,20 +85,6 @@ license_detections:
              (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE
              USE OF THIS SOFTWARE, EVEN IF NOT ADVISED OF THE POSSIBILITY OF SUCH
              DAMAGE.
-        licenses:
-          - key: bsd-new
-            name: BSD-3-Clause
-            short_name: BSD-3-Clause
-            category: Permissive
-            is_exception: no
-            is_unknown: no
-            owner: Regents of the University of California
-            homepage_url: http://www.opensource.org/licenses/BSD-3-Clause
-            text_url: http://www.opensource.org/licenses/BSD-3-Clause
-            reference_url: https://scancode-licensedb.aboutcode.org/bsd-new
-            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-new.LICENSE
-            spdx_license_key: BSD-3-Clause
-            spdx_url: https://spdx.org/licenses/BSD-3-Clause
 other_license_detections: []
 copyright: |
   Copyright (c) 2003-2007 Theodore Ts'o <tytso@mit.edu>

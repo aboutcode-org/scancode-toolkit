@@ -17,14 +17,6 @@ license_detections:
         license_expression: qlogic-firmware
         rule_identifier: qlogic-firmware.LICENSE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/qlogic-firmware.LICENSE
-        referenced_filenames: []
-        is_license_text: yes
-        is_license_notice: no
-        is_license_reference: no
-        is_license_tag: no
-        is_license_intro: no
-        rule_length: 262
-        rule_relevance: 100
         matched_text: "Redistribution and use in binary form, without modification, for use\
           \ in conjunction\nwith QLogic authorized products is permitted provided that the following\
           \ conditions\nare met:\n\n1. Redistribution in binary form must reproduce the above\
@@ -44,19 +36,5 @@ license_detections:
           GROUNDS FOR A LICENSE BY IMPLICATION, ESTOPPEL, OR OTHERWISE IN ANY INTELLECTUAL\n\
           PROPERTY RIGHTS (PATENT, COPYRIGHT, TRADE SECRET, MASK WORK, OR OTHER PROPRIETARY\n\
           RIGHT) EMBODIED IN ANY OTHER QLOGIC HARDWARE OR SOFTWARE EITHER SOLELY OR IN\nCOMBINATION WITH THIS PROGRAM."
-        licenses:
-          - key: qlogic-firmware
-            name: QLogic Firmware License
-            short_name: QLogic Firmware License
-            category: Proprietary Free
-            is_exception: no
-            is_unknown: no
-            owner: QLogic
-            homepage_url: https://github.com/wkennington/linux-firmware/blob/master/LICENCE.qla2xxx
-            text_url: https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/tree/LICENCE.qla2xxx
-            reference_url: https://scancode-licensedb.aboutcode.org/qlogic-firmware
-            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/qlogic-firmware.LICENSE
-            spdx_license_key: LicenseRef-scancode-qlogic-firmware
-            spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/qlogic-firmware.LICENSE
 other_license_detections: []
 copyright: Copyright (c) 2003-2010 QLogic Corporation QLogic Linux Intelligent Ethernet

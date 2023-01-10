@@ -5,7 +5,7 @@ minimum_coverage: 10
 notes: license text as published by SPDX, minus copyright
 ---
 
- ####ECOSGPLCOPYRIGHTBEGIN####                                            
+####ECOSGPLCOPYRIGHTBEGIN####                                            
 // -------------------------------------------                              
 // This file is part of eCos, the Embedded Configurable Operating System.   
 //

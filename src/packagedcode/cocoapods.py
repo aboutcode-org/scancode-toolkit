@@ -11,6 +11,8 @@ import hashlib
 import json
 import os
 import logging
+import sys
+from functools import partial
 
 import saneyaml
 from packageurl import PackageURL
@@ -28,6 +30,7 @@ See https://cocoapods.org
 
 TRACE = os.environ.get('SCANCODE_DEBUG_PACKAGE', False)
 
+
 def logger_debug(*args):
     pass
 
@@ -35,7 +38,6 @@ def logger_debug(*args):
 logger = logging.getLogger(__name__)
 
 if TRACE:
-    import sys
     logging.basicConfig(stream=sys.stdout)
     logger.setLevel(logging.DEBUG)
 
@@ -89,8 +91,10 @@ def get_hashed_path(name):
     Returns a string with a part of the file path derived from the md5 hash.
 
     From https://github.com/CocoaPods/cdn.cocoapods.org:
-    "There are a set of known prefixes for all Podspec paths, you take the name of the pod,
-    create a hash (using md5) of it and take the first three characters."
+        "There are a set of known prefixes for all Podspec paths, you take the
+        name of the pod, create a hash (using md5) of it and take the first
+        three characters."
+
     """
     if not name:
         return
@@ -105,8 +109,22 @@ def get_hashed_path(name):
     return hashed_path
 
 
+# for FIPS support
+sys_v0 = sys.version_info[0]
+sys_v1 = sys.version_info[1]
+if sys_v0 == 3 and sys_v1 >= 9:
+    md5_hasher = partial(hashlib.md5, usedforsecurity=False)
+else:
+    md5_hasher = hashlib.md5
+
+
 def get_first_three_md5_hash_characters(podname):
-    return hashlib.md5(podname.encode('utf-8')).hexdigest()[0:3]
+    """
+    From https://github.com/CocoaPods/cdn.cocoapods.org:
+    "There are a set of known prefixes for all Podspec paths, you take the name of the pod,
+    create a hash (using md5) of it and take the first three characters."
+    """
+    return md5_hasher(podname.encode('utf-8')).hexdigest()[0:3]
 
 
 class BasePodHandler(models.DatafileHandler):

@@ -1,8 +1,8 @@
 ---
 license_expression: apache-2.0 OR mit
 is_license_notice: yes
-minimum_coverage: 60
 relevance: 100
+minimum_coverage: 60
 referenced_filenames:
     - LICENSE-APACHE
     - LICENSE-MIT

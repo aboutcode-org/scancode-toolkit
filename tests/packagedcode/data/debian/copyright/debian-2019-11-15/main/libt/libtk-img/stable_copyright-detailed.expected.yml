@@ -22,14 +22,6 @@ other_license_detections:
         license_expression: tcl
         rule_identifier: tcl_3.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/tcl_3.RULE
-        referenced_filenames: []
-        is_license_text: yes
-        is_license_notice: no
-        is_license_reference: no
-        is_license_tag: no
-        is_license_intro: no
-        rule_length: 332
-        rule_relevance: 100
         matched_text: |
           This software is copyrighted by Jan Nijtmans (the maintainer)
           and a lot of other people who contributed code (most notably
@@ -72,20 +64,6 @@ other_license_detections:
           authors grant the U.S. Government and others acting in its behalf
           permission to use and distribute the software in accordance with the
           terms specified in this license.
-        licenses:
-          - key: tcl
-            name: TCL/TK License
-            short_name: TCL/TK License
-            category: Permissive
-            is_exception: no
-            is_unknown: no
-            owner: Tcl Developer Xchange
-            homepage_url: http://www.tcl.tk/software/tcltk/license.html
-            text_url: http://www.tcl.tk/software/tcltk/license.html
-            reference_url: https://scancode-licensedb.aboutcode.org/tcl
-            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/tcl.LICENSE
-            spdx_license_key: TCL
-            spdx_url: https://spdx.org/licenses/TCL
   - license_expression: pngsuite
     detection_log:
       - not-combined
@@ -99,31 +77,9 @@ other_license_detections:
         license_expression: pngsuite
         rule_identifier: pngsuite.LICENSE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/pngsuite.LICENSE
-        referenced_filenames: []
-        is_license_text: yes
-        is_license_notice: no
-        is_license_reference: no
-        is_license_tag: no
-        is_license_intro: no
-        rule_length: 18
-        rule_relevance: 100
         matched_text: |
           Permission to use, copy, modify, and distribute these images for any
           purpose and without fee is hereby granted.
-        licenses:
-          - key: pngsuite
-            name: PngSuite License
-            short_name: PngSuite License
-            category: Permissive
-            is_exception: no
-            is_unknown: no
-            owner: Unspecified
-            homepage_url:
-            text_url:
-            reference_url: https://scancode-licensedb.aboutcode.org/pngsuite
-            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/pngsuite.LICENSE
-            spdx_license_key: LicenseRef-scancode-pngsuite
-            spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/pngsuite.LICENSE
 copyright: |
   1997-2004 Jan Nijtmans
   1999, 2011 Willem van Schaik

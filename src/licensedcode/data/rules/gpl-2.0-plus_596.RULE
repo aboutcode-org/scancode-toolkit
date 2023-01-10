@@ -12,7 +12,7 @@ ignorable_emails:
     - simon@thekelleys.org.uk
 ---
 
-    This code was developed from version 2.1.1 of the Atmel drivers,
+This code was developed from version 2.1.1 of the Atmel drivers,
     released by Atmel corp. under the GPL in December 2002. It also
     includes code from the Linux aironet drivers (C) Benjamin Reed,
     and the Linux PCMCIA package, (C) David Hinds.

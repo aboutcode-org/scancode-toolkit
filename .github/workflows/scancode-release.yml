@@ -20,11 +20,45 @@ on:
 permissions: {}
 jobs:
 
-  build_scancode_for_pypi:
+  build_scancode_wheel_for_pypi:
     permissions:
       contents: read # to fetch code (actions/checkout)
 
-    name: Build PyPI archives
+    name: Build PyPI wheels
+    runs-on: ubuntu-20.04
+
+    defaults:
+      run:
+        shell: bash
+
+    strategy:
+      fail-fast: true
+      matrix:
+       pyver: ["3.7", "3.8", "3.9", "3.10"]
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Set up Python on ${{ matrix.pyver }}
+        uses: actions/setup-python@v1
+        with:
+          python-version: ${{ matrix.pyver }} 
+
+      - name: Install requirements then build main and mini wheel
+        run: etc/release/scancode-create-pypi-wheel.sh
+
+      - name: Collect built wheels for ${{ matrix.pyver }} 
+        uses: actions/upload-artifact@v3
+        with:
+          name: wheels-${{ matrix.pyver }}
+          path: dist/*.whl
+
+
+  build_scancode_sdist_for_pypi:
+    permissions:
+      contents: read # to fetch code (actions/checkout)
+
+    name: Build PyPI sdist archives
     runs-on: ubuntu-20.04
 
     defaults:
@@ -40,44 +74,24 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v1
         with:
-          python-version: 3.8
+          python-version: "3.10"
 
-      - name: Install requirements then build main and mini wheel and sdist
-        run: etc/release/scancode-create-pypi-dist.sh
+      - name: Install requirements then build main and mini sdist
+        run: etc/release/scancode-create-pypi-sdist.sh
 
-      - name: Collect built main wheel
+      - name: Collect built sdist
         uses: actions/upload-artifact@v3
         with:
-          name: main_wheel
-          path: dist/scancode_toolkit-3*.whl
-
-      - name: Collect built main sdist
-        uses: actions/upload-artifact@v3
-        with:
-          name: main_sdist
-          path: dist/scancode-toolkit-3*.tar.gz
-
-      - name: Collect built mini wheel
-        uses: actions/upload-artifact@v3
-        with:
-          name: mini_wheel
-          path: dist/scancode_toolkit_mini-3*.whl
-
-      - name: Collect built mini sdist
-        uses: actions/upload-artifact@v3
-        with:
-          name: mini_sdist
-          path: dist/scancode-toolkit-mini*.tar.gz
+          name: sdists
+          path: dist/*.tar.gz
 
 
   build_scancode_for_release_linux:
     permissions:
       contents: read # to fetch code (actions/checkout)
 
-    name: Build Release for linux
+    name: Build app Release for linux
     runs-on: ubuntu-20.04
-    needs:
-      - build_scancode_for_pypi
 
     defaults:
       run:
@@ -92,18 +106,10 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v1
         with:
-          python-version: 3.8
-
-      - name: Download a the main wheel
-        uses: actions/download-artifact@v3
-        with:
-          name: main_wheel
-          path: dist
+          python-version: "3.8"
 
       - name: Build linux app archive
-        run: |
-          ./configure --rel
-          etc/release/scancode-create-release-app-linux.sh
+        run: etc/release/scancode-create-release-app-linux.sh
 
       - name: Collect built linux app
         uses: actions/upload-artifact@v3
@@ -116,10 +122,8 @@ jobs:
     permissions:
       contents: read # to fetch code (actions/checkout)
 
-    name: Build Release for mac
+    name: Build app Release for mac
     runs-on: ubuntu-20.04
-    needs:
-      - build_scancode_for_pypi
 
     defaults:
       run:
@@ -134,18 +138,10 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v1
         with:
-          python-version: 3.8
-
-      - name: Download a the main wheel
-        uses: actions/download-artifact@v3
-        with:
-          name: main_wheel
-          path: dist
+          python-version: "3.8"
 
       - name: Build mac app archive
-        run: |
-          ./configure --rel
-          etc/release/scancode-create-release-app-macos.sh
+        run: etc/release/scancode-create-release-app-macos.sh
 
       - name: Collect built mac app
         uses: actions/upload-artifact@v3
@@ -158,10 +154,8 @@ jobs:
     permissions:
       contents: read # to fetch code (actions/checkout)
 
-    name: Build Release for windows
+    name: Build app Release for windows
     runs-on: ubuntu-20.04
-    needs:
-      - build_scancode_for_pypi
 
     defaults:
       run:
@@ -175,18 +169,10 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v1
         with:
-          python-version: 3.8
-
-      - name: Download a the main wheel
-        uses: actions/download-artifact@v3
-        with:
-          name: main_wheel
-          path: dist
+          python-version: "3.8"
 
       - name: Build windows app archive
-        run: |
-          ./configure --rel
-          etc/release/scancode-create-release-app-windows.sh
+        run: etc/release/scancode-create-release-app-windows.sh
 
       - name: Collect built windows app
         uses: actions/upload-artifact@v3
@@ -199,10 +185,8 @@ jobs:
     permissions:
       contents: read # to fetch code (actions/checkout)
 
-    name: Build source
+    name: Build app source
     runs-on: ubuntu-20.04
-    needs:
-      - build_scancode_for_pypi
 
     defaults:
       run:
@@ -216,18 +200,10 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v1
         with:
-          python-version: 3.8
-
-      - name: Download a the main sdist
-        uses: actions/download-artifact@v3
-        with:
-          name: main_sdist
-          path: dist
+          python-version: "3.10"
 
       - name: Build source archive with deps
-        run: |
-          ./configure --rel
-          etc/release/scancode-create-release-app-sources.sh
+        run: etc/release/scancode-create-release-app-sources.sh
 
       - name: Collect built source app tarball
         uses: actions/upload-artifact@v3
@@ -236,13 +212,13 @@ jobs:
           path: release/*
 
 
-  smoke_test_install_and_run_pypi_dists_posix:
+  smoke_test_install_and_run_pypi_wheels_on_posix:
     permissions:
       contents: read # to fetch code (actions/checkout)
 
-    name: Test POSIX PyPI wheels
+    name: Test PyPI wheels on linux and mac
     needs:
-      - build_scancode_for_pypi
+      - build_scancode_wheel_for_pypi
     runs-on: ${{ matrix.os }}
 
     defaults:
@@ -252,10 +228,8 @@ jobs:
     strategy:
       fail-fast: true
       matrix:
-        os: [ubuntu-22.04, macos-12]
-        pyver: ["3.9", "3.10"]
-        # os: [ubuntu-18.04, ubuntu-20.04, ubuntu-22.04, macos-10.15, macos-11, macos-12]
-        # pyver: ["3.7", "3.8", "3.9", "3.10"]
+        os: [ubuntu-20.04, ubuntu-22.04, macos-11, macos-12]
+        pyver: ["3.7", "3.8", "3.9", "3.10"]
 
     steps:
       - uses: actions/checkout@v2
@@ -265,10 +239,10 @@ jobs:
         with:
           python-version: ${{ matrix.pyver }}
 
-      - name: Download a single artifact mainw
+      - name: Download wheels artifact
         uses: actions/download-artifact@v3
         with:
-          name: main_wheel
+          name: wheels-${{ matrix.pyver }}
           path: dist
 
       - name: test install wheels
@@ -277,21 +251,20 @@ jobs:
           rm -rf venv;  \
           python -m venv venv
           venv/bin/python -m pip install --upgrade pip wheel setuptools
-          for f in `find dist -type f`; \
+          for f in `find dist -type f -name "*${{ matrix.pyver }}*"`; \
             do \
               venv/bin/python -m pip install --force-reinstall "$f[full]" ; \
               venv/bin/scancode -clipeu --json-pp - some.file ; \
-              venv/bin/python -m pip uninstall --yes scancode-toolkit ; \
             done
 
 
-  smoke_test_install_and_run_pypi_dists_windows:
+  smoke_test_install_and_run_pypi_wheels_on_windows:
     permissions:
       contents: read # to fetch code (actions/checkout)
 
-    name: Test Windows PyPI wheels
+    name: Test PyPI wheels on Windows
     needs:
-      - build_scancode_for_pypi
+      - build_scancode_wheel_for_pypi
     runs-on: ${{ matrix.os }}
 
     defaults:
@@ -301,10 +274,8 @@ jobs:
     strategy:
       fail-fast: true
       matrix:
-       os: [windows-2022]
-       pyver: ["3.9", "3.10"]
-       #os: [windows-2019, windows-2022]
-       #pyver: ["3.7", "3.8", "3.9", "3.10"]
+       os: [windows-2019, windows-2022]
+       pyver: ["3.7", "3.8", "3.9", "3.10"]
 
     steps:
       - uses: actions/checkout@v2
@@ -314,10 +285,10 @@ jobs:
         with:
           python-version: ${{ matrix.pyver }}
 
-      - name: Download a single artifact mainw
+      - name: Download wheels artifact
         uses: actions/download-artifact@v3
         with:
-          name: main_wheel
+          name: wheels-${{ matrix.pyver }}
           path: dist
 
       - name: test install wheel
@@ -325,11 +296,10 @@ jobs:
           echo "license: gpl-2.0" > some.file
           python -m venv venv
           venv/Scripts/python.exe -m pip install --upgrade pip
-          for f in `find dist -type f`; \
+          for f in `find dist -type f  -name "*${{ matrix.pyver }}*"`; \
             do \
               venv/Scripts/python.exe -m pip install --force-reinstall "$f[full]" ; \
               venv/Scripts/scancode -clipeu --json-pp - some.file ; \
-              venv/Scripts/python.exe -m pip uninstall --yes scancode-toolkit ; \
             done
 
 
@@ -390,7 +360,7 @@ jobs:
     strategy:
       fail-fast: true
       matrix:
-        os: [macos-10.15, macos-11, macos-12]
+        os: [macos-11, macos-12]
         pyver: [3.8]
 
     steps:
@@ -509,9 +479,10 @@ jobs:
   publish_to_pypi:
     name: Publish to PyPI
     needs:
-      - build_scancode_for_pypi
-      - smoke_test_install_and_run_pypi_dists_windows
-      - smoke_test_install_and_run_pypi_dists_posix
+      - build_scancode_wheel_for_pypi
+      - build_scancode_sdist_for_pypi
+      - smoke_test_install_and_run_pypi_wheels_on_windows
+      - smoke_test_install_and_run_pypi_wheels_on_posix
       - publish_to_gh_release
     runs-on: ubuntu-20.04
     defaults:
@@ -520,7 +491,7 @@ jobs:
     strategy:
       fail-fast: true
       matrix:
-        dist_names: [main_wheel, main_sdist, mini_wheel, mini_sdist]
+        dist_names: ["wheels-3.7", "wheels-3.8", "wheels-3.9", "wheels-3.10", sdists]
 
     steps:
       - name: Set up Python

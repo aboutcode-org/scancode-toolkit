@@ -1,5 +1,4 @@
 {
-  "dependencies": [],
   "packages": [
     {
       "type": "bazel",
@@ -92,6 +91,9 @@
       "purl": "pkg:bazel/subdir2"
     }
   ],
+  "dependencies": [],
+  "license_references": [],
+  "license_rule_references": [],
   "files": [
     {
       "path": "end2end",

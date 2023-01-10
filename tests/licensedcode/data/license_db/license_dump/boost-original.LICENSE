@@ -10,7 +10,6 @@ notes: "This is the original notice for Boost prior to the publication of the\nb
     \ boost-1.0 license. This license is aslo found\nin the AntiGrain Geometry component version\
     \ 2.4. \nFor an example of use in historical Boost, see \nhttps://github.com/boostorg/rational/blob/0fe0beca5397c812c4f85a7de0d0769de59e12e0/include/boost/rational.hpp\n\
     For an example of use in the current Boost, see \nhttps://github.com/boostorg/rational/blob/develop/include/boost/rational.hpp"
-is_builtin: yes
 spdx_license_key: LicenseRef-scancode-boost-original
 text_urls:
     - https://github.com/boostorg/rational/blob/0fe0beca5397c812c4f85a7de0d0769de59e12e0/include/boost/rational.hpp
@@ -19,4 +18,7 @@ other_urls:
     - http://www.antigrain.com/license/index.html#toc0002
 ---
 
-b'Permission to copy, use, modify, sell and distribute this software is granted\nprovided this copyright notice appears in all copies. This software is provided "as\nis" without express or implied warranty, and with no claim as to its suitability for\nany purpose.'
+Permission to copy, use, modify, sell and distribute this software is granted
+provided this copyright notice appears in all copies. This software is provided "as
+is" without express or implied warranty, and with no claim as to its suitability for
+any purpose.

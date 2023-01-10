@@ -47,7 +47,7 @@ class Tallies(PostScanPlugin):
     """
     Compute tallies for license, copyright and other scans at the codebase level
     """
-    sort_order = 10
+    sort_order = 15
 
     codebase_attributes = dict(tallies=attr.ib(default=attr.Factory(dict)))
 
@@ -444,7 +444,7 @@ def package_tallies(resource, children, keep_details=False):
 
     if TRACE_LIGHT and current_packages:
         from packagedcode.models import Package
-        packs = [Package.create(**p) for p in current_packages]
+        packs = [Package(**p) for p in current_packages]
         logger_debug('package_tallier: for:', resource,
                      'current_packages are:', packs)
 
@@ -454,7 +454,7 @@ def package_tallies(resource, children, keep_details=False):
     if TRACE_LIGHT and packages:
         logger_debug()
         from packagedcode.models import Package  # NOQA
-        packs = [Package.create(**p) for p in packages]
+        packs = [Package(**p) for p in packages]
         logger_debug('package_tallier: for:', resource,
                      'packages are:', packs)
 

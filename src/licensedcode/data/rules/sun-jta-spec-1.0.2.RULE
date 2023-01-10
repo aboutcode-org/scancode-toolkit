@@ -8,7 +8,7 @@ ignorable_holders:
     - Sun Microsystems, Inc.
 ---
 
-   Java(TM) Transaction API (JTA) Specification
+Java(TM) Transaction API (JTA) Specification
    ("Specification")
    Version: 1.0.1B
    Status: Maintenance Release

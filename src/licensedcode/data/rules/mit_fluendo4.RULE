@@ -8,8 +8,7 @@ ignorable_holders:
     - Fluendo, S.L.
 ---
 
-
-  Intel Performance Primitives library source code
+Intel Performance Primitives library source code
 
  The upstream tarball contained code licensed under a license not compatible
  with Debian Free Software Guidelines and was stripped.  This code was

@@ -1,4 +1,104 @@
 {
+  "license_detections": [
+    {
+      "identifier": "apache_1_0-d4337a34-511e-9f2b-5043-e1bab484ff7d",
+      "license_expression": "apache-1.0",
+      "count": 1,
+      "detection_log": [
+        "not-combined"
+      ],
+      "matches": [
+        {
+          "score": 100.0,
+          "start_line": 4,
+          "end_line": 54,
+          "matched_length": 368,
+          "match_coverage": 100.0,
+          "matcher": "2-aho",
+          "license_expression": "apache-1.0",
+          "rule_identifier": "apache-1.0.LICENSE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-1.0.LICENSE"
+        }
+      ]
+    }
+  ],
+  "license_references": [
+    {
+      "key": "apache-1.0",
+      "language": "en",
+      "short_name": "Apache 1.0",
+      "name": "Apache License 1.0",
+      "category": "Permissive",
+      "owner": "Apache Software Foundation",
+      "homepage_url": "http://www.apache.org/licenses/",
+      "notes": null,
+      "is_builtin": true,
+      "is_exception": false,
+      "is_unknown": false,
+      "is_generic": false,
+      "spdx_license_key": "Apache-1.0",
+      "other_spdx_license_keys": [],
+      "osi_license_key": null,
+      "text_urls": [
+        "http://www.apache.org/licenses/LICENSE-1.0"
+      ],
+      "osi_url": null,
+      "faq_url": "http://www.apache.org/foundation/licence-FAQ.html",
+      "other_urls": [],
+      "key_aliases": [],
+      "minimum_coverage": 80,
+      "standard_notice": null,
+      "ignorable_copyrights": [],
+      "ignorable_holders": [],
+      "ignorable_authors": [
+        "the Apache Group"
+      ],
+      "ignorable_urls": [
+        "http://www.apache.org/"
+      ],
+      "ignorable_emails": [
+        "apache@apache.org"
+      ],
+      "text": "Redistribution and use in source and binary forms, with or without\nmodification, are permitted provided that the following conditions\nare met:\n\n1. Redistributions of source code must retain the above copyright\n   notice, this list of conditions and the following disclaimer. \n\n2. Redistributions in binary form must reproduce the above copyright\n   notice, this list of conditions and the following disclaimer in\n   the documentation and/or other materials provided with the\n   distribution.\n\n3. All advertising materials mentioning features or use of this\n   software must display the following acknowledgment:\n   \"This product includes software developed by the Apache Group\n   for use in the Apache HTTP server project (http://www.apache.org/).\"\n\n4. The names \"Apache Server\" and \"Apache Group\" must not be used to\n   endorse or promote products derived from this software without\n   prior written permission. For written permission, please contact\n   apache@apache.org.\n\n5. Products derived from this software may not be called \"Apache\"\n   nor may \"Apache\" appear in their names without prior written\n   permission of the Apache Group.\n\n6. Redistributions of any form whatsoever must retain the following\n   acknowledgment:\n   \"This product includes software developed by the Apache Group\n   for use in the Apache HTTP server project (http://www.apache.org/).\"\n\nTHIS SOFTWARE IS PROVIDED BY THE APACHE GROUP ``AS IS'' AND ANY\nEXPRESSED OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE\nIMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR\nPURPOSE ARE DISCLAIMED.  IN NO EVENT SHALL THE APACHE GROUP OR\nITS CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,\nSPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT\nNOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;\nLOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)\nHOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT,\nSTRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)\nARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED\nOF THE POSSIBILITY OF SUCH DAMAGE.\n====================================================================\n\nThis software consists of voluntary contributions made by many\nindividuals on behalf of the Apache Group and was originally based\non public domain software written at the National Center for\nSupercomputing Applications, University of Illinois, Urbana-Champaign.\nFor more information on the Apache Group and the Apache HTTP server\nproject, please see <http://www.apache.org/>.",
+      "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-1.0.LICENSE",
+      "licensedb_url": "https://scancode-licensedb.aboutcode.org/apache-1.0",
+      "spdx_url": "https://spdx.org/licenses/Apache-1.0"
+    }
+  ],
+  "license_rule_references": [
+    {
+      "license_expression": "apache-1.0",
+      "identifier": "apache-1.0.LICENSE",
+      "language": "en",
+      "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-1.0.LICENSE",
+      "is_license_text": true,
+      "is_license_notice": false,
+      "is_license_reference": false,
+      "is_license_tag": false,
+      "is_license_intro": false,
+      "is_continuous": false,
+      "is_builtin": true,
+      "is_from_license": true,
+      "is_synthetic": false,
+      "length": 368,
+      "relevance": 100,
+      "minimum_coverage": 80,
+      "referenced_filenames": [],
+      "notes": null,
+      "ignorable_copyrights": [],
+      "ignorable_holders": [],
+      "ignorable_authors": [
+        "the Apache Group"
+      ],
+      "ignorable_urls": [
+        "http://www.apache.org/"
+      ],
+      "ignorable_emails": [
+        "apache@apache.org"
+      ],
+      "text": "Redistribution and use in source and binary forms, with or without\nmodification, are permitted provided that the following conditions\nare met:\n\n1. Redistributions of source code must retain the above copyright\nnotice, this list of conditions and the following disclaimer.\n\n2. Redistributions in binary form must reproduce the above copyright\nnotice, this list of conditions and the following disclaimer in\nthe documentation and/or other materials provided with the\ndistribution.\n\n3. All advertising materials mentioning features or use of this\nsoftware must display the following acknowledgment:\n\"This product includes software developed by the Apache Group\nfor use in the Apache HTTP server project (http://www.apache.org/).\"\n\n4. The names \"Apache Server\" and \"Apache Group\" must not be used to\nendorse or promote products derived from this software without\nprior written permission. For written permission, please contact\napache@apache.org.\n\n5. Products derived from this software may not be called \"Apache\"\nnor may \"Apache\" appear in their names without prior written\npermission of the Apache Group.\n\n6. Redistributions of any form whatsoever must retain the following\nacknowledgment:\n\"This product includes software developed by the Apache Group\nfor use in the Apache HTTP server project (http://www.apache.org/).\"\n\nTHIS SOFTWARE IS PROVIDED BY THE APACHE GROUP ``AS IS'' AND ANY\nEXPRESSED OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE\nIMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR\nPURPOSE ARE DISCLAIMED.  IN NO EVENT SHALL THE APACHE GROUP OR\nITS CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,\nSPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT\nNOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;\nLOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)\nHOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT,\nSTRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)\nARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED\nOF THE POSSIBILITY OF SUCH DAMAGE.\n====================================================================\n\nThis software consists of voluntary contributions made by many\nindividuals on behalf of the Apache Group and was originally based\non public domain software written at the National Center for\nSupercomputing Applications, University of Illinois, Urbana-Champaign.\nFor more information on the Apache Group and the Apache HTTP server\nproject, please see <http://www.apache.org/>."
+    }
+  ],
   "files": [
     {
       "path": "scan",
@@ -8,6 +108,7 @@
       "license_detections": [],
       "license_clues": [],
       "percentage_of_license_text": 0,
+      "for_license_detections": [],
       "scan_errors": []
     },
     {
@@ -31,38 +132,16 @@
               "matcher": "2-aho",
               "license_expression": "apache-1.0",
               "rule_identifier": "apache-1.0.LICENSE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-1.0.LICENSE",
-              "referenced_filenames": [],
-              "is_license_text": true,
-              "is_license_notice": false,
-              "is_license_reference": false,
-              "is_license_tag": false,
-              "is_license_intro": false,
-              "rule_length": 368,
-              "rule_relevance": 100,
-              "licenses": [
-                {
-                  "key": "apache-1.0",
-                  "name": "Apache License 1.0",
-                  "short_name": "Apache 1.0",
-                  "category": "Permissive",
-                  "is_exception": false,
-                  "is_unknown": false,
-                  "owner": "Apache Software Foundation",
-                  "homepage_url": "http://www.apache.org/licenses/",
-                  "text_url": "http://www.apache.org/licenses/LICENSE-1.0",
-                  "reference_url": "https://scancode-licensedb.aboutcode.org/apache-1.0",
-                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-1.0.LICENSE",
-                  "spdx_license_key": "Apache-1.0",
-                  "spdx_url": "https://spdx.org/licenses/Apache-1.0"
-                }
-              ]
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-1.0.LICENSE"
             }
           ]
         }
       ],
       "license_clues": [],
       "percentage_of_license_text": 97.61,
+      "for_license_detections": [
+        "apache_1_0-d4337a34-511e-9f2b-5043-e1bab484ff7d"
+      ],
       "scan_errors": []
     }
   ]

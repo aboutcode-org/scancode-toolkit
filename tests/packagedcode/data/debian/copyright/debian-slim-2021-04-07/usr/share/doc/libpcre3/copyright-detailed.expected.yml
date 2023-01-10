@@ -17,29 +17,7 @@ license_detections:
         license_expression: pcre
         rule_identifier: pcre_4.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/pcre_4.RULE
-        referenced_filenames: []
-        is_license_text: no
-        is_license_notice: no
-        is_license_reference: yes
-        is_license_tag: no
-        is_license_intro: no
-        rule_length: 2
-        rule_relevance: 100
         matched_text: PCRE LICENCE
-        licenses:
-          - key: pcre
-            name: PCRE License
-            short_name: PCRE License
-            category: Permissive
-            is_exception: no
-            is_unknown: no
-            owner: University of Cambridge
-            homepage_url: http://www.pcre.org/licence.txt
-            text_url: http://www.pcre.org/licence.txt
-            reference_url: https://scancode-licensedb.aboutcode.org/pcre
-            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/pcre.LICENSE
-            spdx_license_key: LicenseRef-scancode-pcre
-            spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/pcre.LICENSE
   - license_expression: bsd-new
     detection_log:
       - not-combined
@@ -53,32 +31,10 @@ license_detections:
         license_expression: bsd-new
         rule_identifier: bsd-new_645.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_645.RULE
-        referenced_filenames: []
-        is_license_text: no
-        is_license_notice: yes
-        is_license_reference: no
-        is_license_tag: no
-        is_license_intro: no
-        rule_length: 32
-        rule_relevance: 100
         matched_text: |
           PCRE is distributed under the terms of the "BSD" licence, as
           specified below. The documentation for PCRE, supplied in the "doc"
           directory, is distributed under the same terms as the software itself.
-        licenses:
-          - key: bsd-new
-            name: BSD-3-Clause
-            short_name: BSD-3-Clause
-            category: Permissive
-            is_exception: no
-            is_unknown: no
-            owner: Regents of the University of California
-            homepage_url: http://www.opensource.org/licenses/BSD-3-Clause
-            text_url: http://www.opensource.org/licenses/BSD-3-Clause
-            reference_url: https://scancode-licensedb.aboutcode.org/bsd-new
-            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-new.LICENSE
-            spdx_license_key: BSD-3-Clause
-            spdx_url: https://spdx.org/licenses/BSD-3-Clause
   - license_expression: bsd-new
     detection_log:
       - not-combined
@@ -92,14 +48,6 @@ license_detections:
         license_expression: bsd-new
         rule_identifier: bsd-new_1105.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_1105.RULE
-        referenced_filenames: []
-        is_license_text: yes
-        is_license_notice: no
-        is_license_reference: no
-        is_license_tag: no
-        is_license_intro: no
-        rule_length: 223
-        rule_relevance: 100
         matched_text: |
           THE "BSD" LICENCE
           -----------------
@@ -130,20 +78,6 @@ license_detections:
           CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
           ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
           POSSIBILITY OF SUCH DAMAGE.
-        licenses:
-          - key: bsd-new
-            name: BSD-3-Clause
-            short_name: BSD-3-Clause
-            category: Permissive
-            is_exception: no
-            is_unknown: no
-            owner: Regents of the University of California
-            homepage_url: http://www.opensource.org/licenses/BSD-3-Clause
-            text_url: http://www.opensource.org/licenses/BSD-3-Clause
-            reference_url: https://scancode-licensedb.aboutcode.org/bsd-new
-            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-new.LICENSE
-            spdx_license_key: BSD-3-Clause
-            spdx_url: https://spdx.org/licenses/BSD-3-Clause
 other_license_detections: []
 copyright: |
   Copyright (c) 1997-2007 University of Cambridge

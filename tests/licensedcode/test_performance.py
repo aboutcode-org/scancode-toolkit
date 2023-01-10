@@ -16,9 +16,9 @@ from commoncode.testcase import FileBasedTesting
 from licensedcode import cache
 from licensedcode import index
 from licensedcode import models
+from licensedcode_test_utils import create_rule_from_text_file_and_expression
 
 pytestmark = pytest.mark.scanslow
-
 
 TEST_DATA_DIR = os.path.join(os.path.dirname(__file__), 'data')
 
@@ -80,7 +80,7 @@ class TestMatchingPerf(FileBasedTesting):
 
     @skip('Use only for local profiling')
     def test_approximate_match_to_indexed_template_with_few_tokens_around_gaps_on_limited_index(self):
-        rule = models.Rule._from_text_file_and_expression(text_file=self.get_test_loc('index/templates/idx.txt'), license_expression='test',)
+        rule = create_rule_from_text_file_and_expression(text_file=self.get_test_loc('index/templates/idx.txt'), license_expression='test',)
         idx = index.LicenseIndex([rule])
 
         stats_file = 'test_approximate_match_to_indexed_template_with_few_tokens_around_gaps_on_limited_index.txt'

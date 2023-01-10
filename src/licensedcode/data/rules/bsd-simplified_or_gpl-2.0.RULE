@@ -6,5 +6,5 @@ minimum_coverage: 80
 notes: openib
 ---
 
- This source code is distributed under a dual license of GPL v2.0 and OpenIB
+This source code is distributed under a dual license of GPL v2.0 and OpenIB
  BSD.

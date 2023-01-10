@@ -7,7 +7,7 @@ ignorable_urls:
     - https://www.gnu.org/licenses/gpl-2.0.html
 ---
 
-    "licenses": [
+"licenses": [
         {
             "type": "Apache License",
             "url": "https://www.apache.org/licenses/LICENSE-2.0"

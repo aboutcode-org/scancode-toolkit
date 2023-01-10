@@ -4,7 +4,7 @@ is_license_notice: yes
 minimum_coverage: 40
 ---
 
- * The contents of this file are subject to the Mozilla Public License Version
+* The contents of this file are subject to the Mozilla Public License Version
  * 1.1 (the "License"); you may not use this file except in compliance with
  * the License.  Alternatively, the contents of this file may be used under
  * the terms of the GNU Lesser General Public License Version 2.1 or later.

@@ -1,6 +1,9 @@
 {
-  "dependencies": [],
   "packages": [],
+  "dependencies": [],
+  "license_detections": [],
+  "license_references": [],
+  "license_rule_references": [],
   "files": [
     {
       "path": "copy1.c",
@@ -21,11 +24,14 @@
       "is_media": false,
       "is_source": true,
       "is_script": false,
+      "package_data": [],
+      "for_packages": [],
       "detected_license_expression": null,
       "detected_license_expression_spdx": null,
       "license_detections": [],
       "license_clues": [],
       "percentage_of_license_text": 0,
+      "for_license_detections": [],
       "copyrights": [
         {
           "copyright": "Copyright (c) 2000 ACME, Inc.",
@@ -41,8 +47,6 @@
         }
       ],
       "authors": [],
-      "package_data": [],
-      "for_packages": [],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -67,11 +71,14 @@
       "is_media": false,
       "is_source": true,
       "is_script": false,
+      "package_data": [],
+      "for_packages": [],
       "detected_license_expression": null,
       "detected_license_expression_spdx": null,
       "license_detections": [],
       "license_clues": [],
       "percentage_of_license_text": 0,
+      "for_license_detections": [],
       "copyrights": [
         {
           "copyright": "Copyright (c) 2000 ACME, Inc.",
@@ -87,8 +94,6 @@
         }
       ],
       "authors": [],
-      "package_data": [],
-      "for_packages": [],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -113,11 +118,14 @@
       "is_media": false,
       "is_source": true,
       "is_script": false,
+      "package_data": [],
+      "for_packages": [],
       "detected_license_expression": null,
       "detected_license_expression_spdx": null,
       "license_detections": [],
       "license_clues": [],
       "percentage_of_license_text": 0,
+      "for_license_detections": [],
       "copyrights": [
         {
           "copyright": "Copyright (c) 2000 ACME, Inc.",
@@ -133,8 +141,6 @@
         }
       ],
       "authors": [],
-      "package_data": [],
-      "for_packages": [],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -159,16 +165,17 @@
       "is_media": false,
       "is_source": false,
       "is_script": false,
+      "package_data": [],
+      "for_packages": [],
       "detected_license_expression": null,
       "detected_license_expression_spdx": null,
       "license_detections": [],
       "license_clues": [],
       "percentage_of_license_text": 0,
+      "for_license_detections": [],
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "package_data": [],
-      "for_packages": [],
       "files_count": 4,
       "dirs_count": 0,
       "size_count": 361,
@@ -193,11 +200,14 @@
       "is_media": false,
       "is_source": true,
       "is_script": false,
+      "package_data": [],
+      "for_packages": [],
       "detected_license_expression": null,
       "detected_license_expression_spdx": null,
       "license_detections": [],
       "license_clues": [],
       "percentage_of_license_text": 0,
+      "for_license_detections": [],
       "copyrights": [
         {
           "copyright": "Copyright (c) 2000 ACME, Inc.",
@@ -213,8 +223,6 @@
         }
       ],
       "authors": [],
-      "package_data": [],
-      "for_packages": [],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -239,11 +247,14 @@
       "is_media": false,
       "is_source": true,
       "is_script": false,
+      "package_data": [],
+      "for_packages": [],
       "detected_license_expression": null,
       "detected_license_expression_spdx": null,
       "license_detections": [],
       "license_clues": [],
       "percentage_of_license_text": 0,
+      "for_license_detections": [],
       "copyrights": [
         {
           "copyright": "Copyright (c) 2000 ACME, Inc.",
@@ -259,8 +270,6 @@
         }
       ],
       "authors": [],
-      "package_data": [],
-      "for_packages": [],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -285,11 +294,14 @@
       "is_media": false,
       "is_source": true,
       "is_script": false,
+      "package_data": [],
+      "for_packages": [],
       "detected_license_expression": null,
       "detected_license_expression_spdx": null,
       "license_detections": [],
       "license_clues": [],
       "percentage_of_license_text": 0,
+      "for_license_detections": [],
       "copyrights": [
         {
           "copyright": "Copyright (c) 2000 ACME, Inc.",
@@ -305,8 +317,6 @@
         }
       ],
       "authors": [],
-      "package_data": [],
-      "for_packages": [],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -331,11 +341,14 @@
       "is_media": false,
       "is_source": true,
       "is_script": false,
+      "package_data": [],
+      "for_packages": [],
       "detected_license_expression": null,
       "detected_license_expression_spdx": null,
       "license_detections": [],
       "license_clues": [],
       "percentage_of_license_text": 0,
+      "for_license_detections": [],
       "copyrights": [
         {
           "copyright": "Copyright (c) 2000 ACME, Inc.",
@@ -351,8 +364,6 @@
         }
       ],
       "authors": [],
-      "package_data": [],
-      "for_packages": [],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,

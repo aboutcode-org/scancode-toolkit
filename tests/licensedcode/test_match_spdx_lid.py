@@ -17,6 +17,7 @@ from license_expression import Licensing
 from license_expression import ExpressionError
 
 from licensedcode import cache
+from licensedcode import models
 from licensedcode.cache import get_spdx_symbols
 from licensedcode.cache import get_unknown_spdx_symbol
 from licensedcode.match_spdx_lid import _parse_expression
@@ -26,7 +27,6 @@ from licensedcode.match_spdx_lid import get_expression
 from licensedcode.match_spdx_lid import prepare_text
 from licensedcode.match_spdx_lid import split_spdx_lid
 from licensedcode.match_spdx_lid import _split_spdx_lid
-from licensedcode import models
 from licensedcode.query import Query
 from scancode_config import REGEN_TEST_FIXTURES
 
@@ -394,7 +394,7 @@ class TestMatchSpdx(FileBasedTesting):
         expression = get_expression(line_text, licensing, spdx_symbols, unknown_symbol)
         assert expression.render() == 'gpl-2.0-plus OR mit'
 
-    def test_get_expression_with_extra_parens(self):
+    def test_get_expression_with_extra_parens2(self):
         licensing = Licensing()
         spdx_symbols = get_spdx_symbols()
         unknown_symbol = get_unknown_spdx_symbol()

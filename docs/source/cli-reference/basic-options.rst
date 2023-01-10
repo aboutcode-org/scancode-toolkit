@@ -9,8 +9,510 @@
 
 ----
 
-``--generated`` Options
+``--copyright`` Option
 -----------------------
+
+    The ``--copyright`` option detects copyright statements in files.
+
+    It adds the following file attributes:
+
+    1. ``copyrights``: This is a data mapping with the following attributes: ``copyright``
+       containing the whole copyright value, with ``start_line`` and ``end_line`` containing
+       the line numbers in the file where this copyright value was detected.
+
+    2. ``holders``: This is a data mapping with the following attributes: ``holder``
+       containing the whole copyright holder value, with ``start_line`` and ``end_line``
+       containing the line numbers in the file where this copyright value was detected.
+
+    3. ``authors``: This is a data mapping with the following attributes: ``author``
+       containing the whole copyright author value, with ``start_line`` and ``end_line``
+       containing the line numbers in the file where this copyright value was detected.
+
+    Example::
+
+        # Copyright (c) 2010 Patrick McHardy All rights reserved.
+        # Authors:     Patrick McHardy <kaber@trash.net>
+
+    The above lines when scanned for copyrights generates the following results for the discussed attributes::
+
+        {
+            "copyrights": [
+                {
+                "copyright": "Copyright (c) 2010 Patrick McHardy",
+                "start_line": 2,
+                "end_line": 2
+                }
+            ],
+            "holders": [
+                {
+                "holder": "Patrick McHardy",
+                "start_line": 2,
+                "end_line": 2
+                }
+            ],
+            "authors": [
+                {
+                "author": "Patrick McHardy <kaber@trash.net>",
+                "start_line": 11,
+                "end_line": 11
+                }
+            ],
+        }
+
+----
+
+``--license`` Option
+--------------------
+
+    The ``--license`` option detects various kinds of license texts, notices, tags, references
+    and other specialized license declarations like the SPDX license identifier in files.
+
+    It adds the following attributes to the file data:
+
+    1. ``license_detections``: This has a mapping of license detection data with the license
+       expression, detection log and license matches. And the license matches contain the
+       license expression for the match, score, more details for the license detected
+       and the rule detected, along with the match text optionally.
+    2. ``license_clues``: This is a list of license matches, same as ``matches`` in
+       ``license_detections``. These are mere license clues and not perfect detections.
+    3. ``detected_license_expression``: This is a scancode license expression string.
+    4. ``detected_license_expression_spdx``: This is the SPDX version of
+       ``detected_license_expression``.
+    5. ``percentage_of_license_text``: This has a percentage number which denotes what percentage
+       of the resource scanned has legalese words.
+
+    Example::
+
+        License: Apache-2.0
+
+    If we run license detection (with --license-text) on the above text we get the following
+    result for the attributes added by the license detection::
+
+        {
+            "detected_license_expression": "apache-2.0",
+            "detected_license_expression_spdx": "Apache-2.0",
+            "license_detections": [
+                {
+                    "license_expression": "apache-2.0",
+                    "detection_log": [
+                        "not-combined"
+                    ],
+                    "matches": [
+                        {
+                            "score": 100.0,
+                            "start_line": 1,
+                            "end_line": 1,
+                            "matched_length": 4,
+                            "match_coverage": 100.0,
+                            "matcher": "1-hash",
+                            "license_expression": "apache-2.0",
+                            "rule_identifier": "apache-2.0_65.RULE",
+                            "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_65.RULE",
+                            "referenced_filenames": [],
+                            "is_license_text": false,
+                            "is_license_notice": false,
+                            "is_license_reference": false,
+                            "is_license_tag": true,
+                            "is_license_intro": false,
+                            "rule_length": 4,
+                            "rule_relevance": 100,
+                            "matched_text": "License: Apache-2.0",
+                            "licenses": [
+                                {
+                                    "key": "apache-2.0",
+                                    "name": "Apache License 2.0",
+                                    "short_name": "Apache 2.0",
+                                    "category": "Permissive",
+                                    "is_exception": false,
+                                    "is_unknown": false,
+                                    "owner": "Apache Software Foundation",
+                                    "homepage_url": "http://www.apache.org/licenses/",
+                                    "text_url": "http://www.apache.org/licenses/LICENSE-2.0",
+                                    "reference_url": "https://scancode-licensedb.aboutcode.org/apache-2.0",
+                                    "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.LICENSE",
+                                    "spdx_license_key": "Apache-2.0",
+                                    "spdx_url": "https://spdx.org/licenses/Apache-2.0"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "license_clues": [],
+            "percentage_of_license_text": 100.0,
+        }
+
+----
+
+``--package`` Option
+--------------------
+
+    The ``--package`` option detects various package manifests, lockfiles and package-like
+    data and then assembles codebase level packages and dependencies from these
+    package data detected at files. Also tags files if they are part of the packages.
+
+    It adds the following attributes to the file data:
+
+    1. ``package_data``: This is a mapping of package data parsed and retrieved from
+       the file, with the fields for the package URL, license detections, copyrights,
+       dependencies, and the various URLs.
+
+    2. ``for_packages``: This is a list of strings pointing to the packages that the
+       files is a part of. The string is basically a packageURL with an UUID as a qualifier.
+
+    It adds the following attributes to the top-level in results:
+
+    1. ``packages``: This is a mapping of package data with all the atrributes
+       present in file level ``package_data`` with the following extra attributes:
+       ``package_uid``, ``datafile_paths`` and ``datasource_ids``.
+
+    2. ``dependencies``: This is a mapping of dependency data from all the lockfiles
+       or package manifests in the scan.
+
+    Example:
+
+    The following scan result was generated from scanning a package manifest::
+
+        {
+            "dependencies": [
+                {
+                    "purl": "pkg:bower/get-size",
+                    "extracted_requirement": "~1.2.2",
+                    "scope": "dependencies",
+                    "is_runtime": true,
+                    "is_optional": false,
+                    "is_resolved": false,
+                    "resolved_package": {},
+                    "extra_data": {},
+                    "dependency_uid": "pkg:bower/get-size?uuid=fixed-uid-done-for-testing-5642512d1758",
+                    "for_package_uid": "pkg:bower/blue-leaf?uuid=fixed-uid-done-for-testing-5642512d1758",
+                    "datafile_path": "bower.json",
+                    "datasource_id": "bower_json"
+                },
+                {
+                    "purl": "pkg:bower/eventEmitter",
+                    "extracted_requirement": "~4.2.11",
+                    "scope": "dependencies",
+                    "is_runtime": true,
+                    "is_optional": false,
+                    "is_resolved": false,
+                    "resolved_package": {},
+                    "extra_data": {},
+                    "dependency_uid": "pkg:bower/eventEmitter?uuid=fixed-uid-done-for-testing-5642512d1758",
+                    "for_package_uid": "pkg:bower/blue-leaf?uuid=fixed-uid-done-for-testing-5642512d1758",
+                    "datafile_path": "bower.json",
+                    "datasource_id": "bower_json"
+                },
+                {
+                    "purl": "pkg:bower/qunit",
+                    "extracted_requirement": "~1.16.0",
+                    "scope": "devDependencies",
+                    "is_runtime": false,
+                    "is_optional": true,
+                    "is_resolved": false,
+                    "resolved_package": {},
+                    "extra_data": {},
+                    "dependency_uid": "pkg:bower/qunit?uuid=fixed-uid-done-for-testing-5642512d1758",
+                    "for_package_uid": "pkg:bower/blue-leaf?uuid=fixed-uid-done-for-testing-5642512d1758",
+                    "datafile_path": "bower.json",
+                    "datasource_id": "bower_json"
+                }
+            ],
+            "packages": [
+                {
+                    "type": "bower",
+                    "namespace": null,
+                    "name": "blue-leaf",
+                    "version": null,
+                    "qualifiers": {},
+                    "subpath": null,
+                    "primary_language": null,
+                    "description": "Physics-like animations for pretty particles",
+                    "release_date": null,
+                    "parties": [
+                        {
+                        "type": null,
+                        "role": "author",
+                        "name": "Betty Beta <bbeta@example.com>",
+                        "email": null,
+                        "url": null
+                        }
+                    ],
+                    "keywords": [
+                        "motion",
+                        "physics",
+                        "particles"
+                    ],
+                    "homepage_url": null,
+                    "download_url": null,
+                    "size": null,
+                    "sha1": null,
+                    "md5": null,
+                    "sha256": null,
+                    "sha512": null,
+                    "bug_tracking_url": null,
+                    "code_view_url": null,
+                    "vcs_url": null,
+                    "copyright": null,
+                    "declared_license_expression": "mit",
+                    "declared_license_expression_spdx": "MIT",
+                    "license_detections": [
+                        {
+                            "license_expression": "mit",
+                            "detection_log": [
+                                "not-combined"
+                            ],
+                            "matches": [
+                                {
+                                    "score": 100.0,
+                                    "start_line": 1,
+                                    "end_line": 1,
+                                    "matched_length": 1,
+                                    "match_coverage": 100.0,
+                                    "matcher": "1-spdx-id",
+                                    "license_expression": "mit",
+                                    "rule_identifier": "spdx-license-identifier: mit",
+                                    "rule_url": null,
+                                    "referenced_filenames": [],
+                                    "is_license_text": false,
+                                    "is_license_notice": false,
+                                    "is_license_reference": false,
+                                    "is_license_tag": true,
+                                    "is_license_intro": false,
+                                    "rule_length": 1,
+                                    "rule_relevance": 100,
+                                    "matched_text": "MIT",
+                                    "licenses": [
+                                        {
+                                            "key": "mit",
+                                            "name": "MIT License",
+                                            "short_name": "MIT License",
+                                            "category": "Permissive",
+                                            "is_exception": false,
+                                            "is_unknown": false,
+                                            "owner": "MIT",
+                                            "homepage_url": "http://opensource.org/licenses/mit-license.php",
+                                            "text_url": "http://opensource.org/licenses/mit-license.php",
+                                            "reference_url": "https://scancode-licensedb.aboutcode.org/mit",
+                                            "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE",
+                                            "spdx_license_key": "MIT",
+                                            "spdx_url": "https://spdx.org/licenses/MIT"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ],
+                    "other_license_expression": null,
+                    "other_license_expression_spdx": null,
+                    "other_license_detections": [],
+                    "extracted_license_statement": "MIT",
+                    "notice_text": null,
+                    "source_packages": [],
+                    "extra_data": {},
+                    "repository_homepage_url": null,
+                    "repository_download_url": null,
+                    "api_data_url": null,
+                    "package_uid": "pkg:bower/blue-leaf?uuid=fixed-uid-done-for-testing-5642512d1758",
+                    "datafile_paths": [
+                        "bower.json"
+                    ],
+                    "datasource_ids": [
+                        "bower_json"
+                    ],
+                    "purl": "pkg:bower/blue-leaf"
+                }
+            ],
+            "files": [
+                {
+                    "path": "bower.json",
+                    "type": "file",
+                    "package_data": [
+                        {
+                            "type": "bower",
+                            "namespace": null,
+                            "name": "blue-leaf",
+                            "version": null,
+                            "qualifiers": {},
+                            "subpath": null,
+                            "primary_language": null,
+                            "description": "Physics-like animations for pretty particles",
+                            "release_date": null,
+                            "parties": [
+                                {
+                                    "type": null,
+                                    "role": "author",
+                                    "name": "Betty Beta <bbeta@example.com>",
+                                    "email": null,
+                                    "url": null
+                                }
+                            ],
+                            "keywords": [
+                                "motion",
+                                "physics",
+                                "particles"
+                            ],
+                            "homepage_url": null,
+                            "download_url": null,
+                            "size": null,
+                            "sha1": null,
+                            "md5": null,
+                            "sha256": null,
+                            "sha512": null,
+                            "bug_tracking_url": null,
+                            "code_view_url": null,
+                            "vcs_url": null,
+                            "copyright": null,
+                            "declared_license_expression": "mit",
+                            "declared_license_expression_spdx": "MIT",
+                            "license_detections": [
+                                {
+                                    "license_expression": "mit",
+                                    "detection_log": [
+                                        "not-combined"
+                                    ],
+                                    "matches": [
+                                        {
+                                            "score": 100.0,
+                                            "start_line": 1,
+                                            "end_line": 1,
+                                            "matched_length": 1,
+                                            "match_coverage": 100.0,
+                                            "matcher": "1-spdx-id",
+                                            "license_expression": "mit",
+                                            "rule_identifier": "spdx-license-identifier: mit",
+                                            "rule_url": null,
+                                            "referenced_filenames": [],
+                                            "is_license_text": false,
+                                            "is_license_notice": false,
+                                            "is_license_reference": false,
+                                            "is_license_tag": true,
+                                            "is_license_intro": false,
+                                            "rule_length": 1,
+                                            "rule_relevance": 100,
+                                            "matched_text": "MIT",
+                                            "licenses": [
+                                                {
+                                                    "key": "mit",
+                                                    "name": "MIT License",
+                                                    "short_name": "MIT License",
+                                                    "category": "Permissive",
+                                                    "is_exception": false,
+                                                    "is_unknown": false,
+                                                    "owner": "MIT",
+                                                    "homepage_url": "http://opensource.org/licenses/mit-license.php",
+                                                    "text_url": "http://opensource.org/licenses/mit-license.php",
+                                                    "reference_url": "https://scancode-licensedb.aboutcode.org/mit",
+                                                    "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE",
+                                                    "spdx_license_key": "MIT",
+                                                    "spdx_url": "https://spdx.org/licenses/MIT"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ],
+                            "other_license_expression": null,
+                            "other_license_expression_spdx": null,
+                            "other_license_detections": [],
+                            "extracted_license_statement": "MIT",
+                            "notice_text": null,
+                            "source_packages": [],
+                            "file_references": [],
+                            "extra_data": {},
+                            "dependencies": [
+                                {
+                                    "purl": "pkg:bower/get-size",
+                                    "extracted_requirement": "~1.2.2",
+                                    "scope": "dependencies",
+                                    "is_runtime": true,
+                                    "is_optional": false,
+                                    "is_resolved": false,
+                                    "resolved_package": {},
+                                    "extra_data": {}
+                                },
+                                {
+                                    "purl": "pkg:bower/eventEmitter",
+                                    "extracted_requirement": "~4.2.11",
+                                    "scope": "dependencies",
+                                    "is_runtime": true,
+                                    "is_optional": false,
+                                    "is_resolved": false,
+                                    "resolved_package": {},
+                                    "extra_data": {}
+                                },
+                                {
+                                    "purl": "pkg:bower/qunit",
+                                    "extracted_requirement": "~1.16.0",
+                                    "scope": "devDependencies",
+                                    "is_runtime": false,
+                                    "is_optional": true,
+                                    "is_resolved": false,
+                                    "resolved_package": {},
+                                    "extra_data": {}
+                                }
+                            ],
+                            "repository_homepage_url": null,
+                            "repository_download_url": null,
+                            "api_data_url": null,
+                            "datasource_id": "bower_json",
+                            "purl": "pkg:bower/blue-leaf"
+                        }
+                    ],
+                    "for_packages": [
+                        "pkg:bower/blue-leaf?uuid=fixed-uid-done-for-testing-5642512d1758"
+                    ],
+                    "scan_errors": []
+                }
+            ]
+        }
+
+----
+
+``--info`` Option
+-----------------
+
+    The ``--info`` option obtains miscellaneous information about the file being
+    scanned such as mime/filetype, checksums, programming language, and various
+    boolean flags.
+
+    It adds the following attributes to the file data:
+
+    1. ``date``: last modified data of the file.
+    2. ``sha1``, ``md5`` and ``sha256``: file checksums of various algorithms.
+    3. ``mime_type`` and ``file_type``: basic file type and mime type/subtype
+       information obtained from libmagic.
+    4. ``programming_language``: programming language based on extensions.
+    5. ``is_binary``, ``is_text``, ``is_archive``, ``is_media``, ``is_source``,
+       and ``is_script``: various boolean flags with misc. information about the file.
+
+----
+
+``--email`` Option
+------------------
+
+    The ``--email`` option detects and reports email adresses present in scanned files.
+
+    It adds the ``emails`` attribute to the file data with the following attributes:
+    ``email`` with the actual email that was present in the file, ``start_line`` and
+    ``end_line`` to be able to locate where the email was detected in the file.
+
+----
+
+``--url`` Option
+----------------
+
+    The ``--url`` option detects and reports URLs present in scanned files.
+
+    It adds the  ``urls`` attribute to the file data with the following attributes:
+    ``url`` with the actual URL that was present in the file, ``start_line`` and
+    ``end_line`` to be able to locate where the URL was detected in the file.
+
+
+----
+
+``--generated`` Option
+----------------------
 
     The ``--generated`` option classifies automatically generated code files with a flag.
 
@@ -33,8 +535,8 @@
 
 ----
 
-``--max-email`` Options
------------------------
+``--max-email`` Option
+----------------------
 
     .. admonition:: Dependency
 
@@ -57,8 +559,8 @@
 
 ----
 
-``--max-url`` Options
----------------------
+``--max-url`` Option
+--------------------
 
     .. admonition:: Dependency
 
@@ -81,8 +583,8 @@
 
 ----
 
-``--license-score`` Options
----------------------------
+``--license-score`` Option
+--------------------------
 
     .. admonition:: Dependency
 
@@ -121,8 +623,8 @@
 
 ----
 
-``--license-text`` Options
---------------------------
+``--license-text`` Option
+-------------------------
 
     .. admonition:: Dependency
 
@@ -165,8 +667,8 @@
 
 ----
 
-``--license-url-template`` Options
-----------------------------------
+``--license-url-template`` Option
+---------------------------------
 
     .. admonition:: Dependency
 
@@ -200,8 +702,8 @@
 
 ----
 
-``--license-text-diagnostics`` Options
---------------------------------------
+``--license-text-diagnostics`` Option
+-------------------------------------
 
     .. admonition:: Dependency
 

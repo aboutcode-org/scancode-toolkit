@@ -7,7 +7,7 @@ referenced_filenames:
     - README
 ---
 
-   This file is part of bzip2/libbzip2, a program and library for
+This file is part of bzip2/libbzip2, a program and library for
    lossless, block-sorting data compression.
 
    Please read the WARNING, DISCLAIMER and PATENTS sections in the 

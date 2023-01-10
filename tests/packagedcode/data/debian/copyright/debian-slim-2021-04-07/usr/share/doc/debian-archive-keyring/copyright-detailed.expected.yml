@@ -17,15 +17,6 @@ license_detections:
         license_expression: gpl-2.0-plus
         rule_identifier: gpl-2.0-plus_306.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_306.RULE
-        referenced_filenames:
-          - COPYING
-        is_license_text: no
-        is_license_notice: yes
-        is_license_reference: no
-        is_license_tag: no
-        is_license_intro: no
-        rule_length: 162
-        rule_relevance: 100
         matched_text: "The keys in the keyrings don't fall under any copyright.  Everything\n\
           else in the package is covered by the GNU GPL.\n\nDebian support files Copyright (C)\
           \ 2006 Michael Vogt <mvo@debian.org> \nbased on the debian-keyring package maintained\
@@ -40,19 +31,5 @@ license_detections:
           \ or with the\nDebian GNU debian-archive-keyring source package as the file COPYING.\n\
           If not, write to the Free Software Foundation, Inc., 51 Franklin Street,\nFifth Floor,\
           \ Boston, MA 02110-1301 USA."
-        licenses:
-          - key: gpl-2.0-plus
-            name: GNU General Public License 2.0 or later
-            short_name: GPL 2.0 or later
-            category: Copyleft
-            is_exception: no
-            is_unknown: no
-            owner: Free Software Foundation (FSF)
-            homepage_url: http://www.gnu.org/licenses/old-licenses/gpl-2.0-standalone.html
-            text_url: http://www.gnu.org/licenses/old-licenses/gpl-2.0-standalone.html
-            reference_url: https://scancode-licensedb.aboutcode.org/gpl-2.0-plus
-            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-2.0-plus.LICENSE
-            spdx_license_key: GPL-2.0-or-later
-            spdx_url: https://spdx.org/licenses/GPL-2.0-or-later
 other_license_detections: []
 copyright: Copyright (c) 2006 Michael Vogt <mvo@debian.org>

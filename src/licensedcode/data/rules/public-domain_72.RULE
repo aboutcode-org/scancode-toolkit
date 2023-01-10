@@ -3,7 +3,7 @@ license_expression: public-domain
 is_license_text: yes
 ---
 
-    ("Public Domain"
+("Public Domain"
      nil
      "This software is in Public Domain."
      "You're free to do with it as you please.")

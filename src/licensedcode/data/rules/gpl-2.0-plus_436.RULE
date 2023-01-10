@@ -5,7 +5,7 @@ referenced_filenames:
     - Documentation/scsi/dpti.txt
 ---
 
-    See Documentation/scsi/dpti.txt for history, notes, license info
+See Documentation/scsi/dpti.txt for history, notes, license info
     and credits
  *   This program is free software; you can redistribute it and/or modify  *
  *   it under the terms of the GNU General Public License as published by  *

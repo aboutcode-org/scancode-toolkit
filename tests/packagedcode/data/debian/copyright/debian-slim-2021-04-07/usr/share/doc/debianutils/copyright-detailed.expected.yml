@@ -18,47 +18,11 @@ license_detections:
         license_expression: gpl-2.0-plus AND public-domain
         rule_identifier: gpl-2.0-plus_and_public-domain_810.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_and_public-domain_810.RULE
-        referenced_filenames:
-          - /usr/share/common-licenses/GPL-2
-        is_license_text: no
-        is_license_notice: yes
-        is_license_reference: no
-        is_license_tag: no
-        is_license_intro: no
-        rule_length: 31
-        rule_relevance: 100
         matched_text: |
           redistributed under the terms of the GNU GPL, Version 2 or later,
           found on Debian systems in the file /usr/share/common-licenses/GPL-2.
 
           which is in the public domain.
-        licenses:
-          - key: gpl-2.0-plus
-            name: GNU General Public License 2.0 or later
-            short_name: GPL 2.0 or later
-            category: Copyleft
-            is_exception: no
-            is_unknown: no
-            owner: Free Software Foundation (FSF)
-            homepage_url: http://www.gnu.org/licenses/old-licenses/gpl-2.0-standalone.html
-            text_url: http://www.gnu.org/licenses/old-licenses/gpl-2.0-standalone.html
-            reference_url: https://scancode-licensedb.aboutcode.org/gpl-2.0-plus
-            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-2.0-plus.LICENSE
-            spdx_license_key: GPL-2.0-or-later
-            spdx_url: https://spdx.org/licenses/GPL-2.0-or-later
-          - key: public-domain
-            name: Public Domain
-            short_name: Public Domain
-            category: Public Domain
-            is_exception: no
-            is_unknown: no
-            owner: Unspecified
-            homepage_url: http://www.linfo.org/publicdomain.html
-            text_url:
-            reference_url: https://scancode-licensedb.aboutcode.org/public-domain
-            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/public-domain.LICENSE
-            spdx_license_key: LicenseRef-scancode-public-domain
-            spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/public-domain.LICENSE
   - license_expression: smail-gpl
     detection_log:
       - not-combined
@@ -72,14 +36,6 @@ license_detections:
         license_expression: smail-gpl
         rule_identifier: smail-gpl.LICENSE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/smail-gpl.LICENSE
-        referenced_filenames: []
-        is_license_text: yes
-        is_license_notice: no
-        is_license_reference: no
-        is_license_tag: no
-        is_license_intro: no
-        rule_length: 1227
-        rule_relevance: 100
         matched_text: "SMAIL GENERAL PUBLIC LICENSE\n\t\t       (Clarified 11 Feb 1988)\n\n\
           \ Copyright (C)  1988 Landon Curt Noll & Ronald S. Karr\n Copyright (C)  1992 Ronald\
           \ S. Karr\n Copyleft (GNU) 1988 Landon Curt Noll & Ronald S. Karr\n\n Everyone is\
@@ -172,20 +128,6 @@ license_detections:
           \ SUSTAINED BY THIRD PARTIES OR A FAILURE OF THE\nPROGRAM TO OPERATE WITH ANY OTHER\
           \ PROGRAMS) SMAIL, EVEN IF YOU HAVE\nBEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES,\
           \ OR FOR ANY CLAIM BY\nANY OTHER PARTY."
-        licenses:
-          - key: smail-gpl
-            name: SMAIL General Public License
-            short_name: SMAIL GPL
-            category: Copyleft
-            is_exception: no
-            is_unknown: no
-            owner: SMAIL Project
-            homepage_url: https://gitweb.gentoo.org/repo/gentoo.git/plain/licenses/SMAIL
-            text_url: https://gitweb.gentoo.org/repo/gentoo.git/plain/licenses/SMAIL
-            reference_url: https://scancode-licensedb.aboutcode.org/smail-gpl
-            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/smail-gpl.LICENSE
-            spdx_license_key: LicenseRef-scancode-smail-gpl
-            spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/smail-gpl.LICENSE
 other_license_detections: []
 copyright: |
   Copyright (c) 1988 Landon Curt Noll & Ronald S. Karr

@@ -4,7 +4,7 @@ is_license_text: yes
 notes: this looks a tad like a bsd-simplified and has other terms. Seen in OpenSSL
 ---
 
- * Redistribution and use in source and binary forms, with opr without
+* Redistribution and use in source and binary forms, with opr without
  * modification, are permitted provided that the following conditions
  * are met:
  *

@@ -4,5 +4,5 @@ is_license_notice: yes
 relevance: 100
 ---
 
-    All portions of JGit are covered by the {{EDL}}. Absolutely no GPL,
+All portions of JGit are covered by the {{EDL}}. Absolutely no GPL,
     LGPL or EPL contributions are accepted within this package.

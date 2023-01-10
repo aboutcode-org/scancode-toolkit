@@ -3,6 +3,6 @@ license_expression: public-domain
 is_license_text: yes
 ---
 
-    The standard is considered to be in the public domain.  Anyone is free
+The standard is considered to be in the public domain.  Anyone is free
     to implement SANE interface conforming applications or libraries in
     any way he or she sees fit.

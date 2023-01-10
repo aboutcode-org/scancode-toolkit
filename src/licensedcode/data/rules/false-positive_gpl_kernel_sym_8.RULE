@@ -3,4 +3,4 @@ is_false_positive: yes
 notes: seen in the Linux Kernel sources (kernel symbols related code or docs)
 ---
 
- <function>EXPORT_SYMBOL()</function>
+<function>EXPORT_SYMBOL()</function>

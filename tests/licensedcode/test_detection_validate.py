@@ -7,13 +7,11 @@
 # See https://aboutcode.org for more information about nexB OSS projects.
 #
 
-import os
 import unittest
 from pprint import pprint
 
 import pytest
 import saneyaml
-
 from commoncode.functional import flatten
 from commoncode import text
 
@@ -62,12 +60,12 @@ def check_special_rule_cannot_be_detected(rule):
     results = idx.match(query_string=rule.text)
 
     if results:
-        data_file = rule.data_file()
+        rule_file = rule.rule_file()
         # On failure, we compare again to get additional failure details such as
         # a clickable text_file path
-        results = (results, f'file://{data_file}', f'file://{rule.text_file()}')
+        results = (results, f'file://{rule_file}')
         # this assert will always fail and provide a more detailed failure trace
-        assert  results == []
+        assert results == []
 
 
 def check_rule_or_license_can_be_self_detected_exactly(rule):
@@ -85,28 +83,24 @@ def check_rule_or_license_can_be_self_detected_exactly(rule):
     except:
 
         from licensedcode.tracing import get_texts
-        data_file = rule.data_file()
-        text_file = rule.text_file()
+        rule_file = rule.rule_file()
         # On failure, we compare again to get additional failure details such as
         # a clickable text_file path
         failure_trace = ['======= TEST ====']
         failure_trace.extend(results)
         failure_trace.extend(['',
-            f'file://{data_file}',
-            f'file://{text_file}',
+            f'file://{rule_file}',
             '======================',
         ])
 
         for i, match in enumerate(matches):
             qtext, itext = get_texts(match)
-            m_text_file = match.rule.text_file()
-            m_data_file = match.rule.data_file()
+            m_rule_file = match.rule.rule_file()
 
             failure_trace.extend(['',
                 f'======= MATCH {i} ====',
                 repr(match),
-                f'file://{m_data_file}',
-                f'file://{m_text_file}',
+                f'file://{m_rule_file}',
                 '======= Matched Query Text:', '', qtext, ''
                 '======= Matched Rule Text:', '', itext
             ])
@@ -154,10 +148,10 @@ def check_ignorable_clues(licensish, regen=REGEN_TEST_FIXTURES, verbose=False):
         # On failure, we compare again to get additional failure details such as
         # a clickable text_file path.
 
-        data_file = licensish.data_file
+        rule_file = licensish.rule_file
         result['files'] = [
-            f'file://{data_file}',
-            f'file://{licensish.text_file()}',
+            f'file://{rule_file}',
+            f'file://{licensish.rule_file()}',
         ]
 
         # This assert will always fail and provide a more detailed failure trace

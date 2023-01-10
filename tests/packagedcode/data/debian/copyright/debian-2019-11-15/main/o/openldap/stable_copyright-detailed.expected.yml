@@ -3,8 +3,8 @@ declared_license_expression: openldap-2.8 AND openldap-2.8 AND mit AND fsf-unlim
   AND hs-regexp AND ibm-dhcp AND ietf AND isc AND other-permissive AND other-permissive AND
   mit-old-style-no-advert AND other-permissive AND hs-regexp AND openldap-2.8 AND bsla AND bsd-original-uc
   AND bsd-original-uc AND bsd-original-uc AND bsd-original-uc-1986
-declared_license_expression_spdx: OLDAP-2.8 AND OLDAP-2.8 AND MIT AND LicenseRef-scancode-fsf-unlimited-no-warranty
-  AND Spencer-94 AND LicenseRef-scancode-ibm-dhcp AND LicenseRef-scancode-ietf AND ISC AND LicenseRef-scancode-other-permissive
+declared_license_expression_spdx: OLDAP-2.8 AND OLDAP-2.8 AND MIT AND FSFULLRWD AND Spencer-94
+  AND LicenseRef-scancode-ibm-dhcp AND LicenseRef-scancode-ietf AND ISC AND LicenseRef-scancode-other-permissive
   AND LicenseRef-scancode-other-permissive AND NTP AND LicenseRef-scancode-other-permissive
   AND Spencer-94 AND OLDAP-2.8 AND LicenseRef-scancode-bsla AND BSD-4-Clause-UC AND BSD-4-Clause-UC
   AND BSD-4-Clause-UC AND LicenseRef-scancode-bsd-original-uc-1986
@@ -24,14 +24,6 @@ license_detections:
         license_expression: openldap-2.8
         rule_identifier: openldap-2.8_21.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/openldap-2.8_21.RULE
-        referenced_filenames: []
-        is_license_text: no
-        is_license_notice: yes
-        is_license_reference: no
-        is_license_tag: no
-        is_license_intro: no
-        rule_length: 124
-        rule_relevance: 100
         matched_text: |
           Redistribution and use in source and binary forms, with or without
           modification, are permitted only as authorized by the OpenLDAP
@@ -54,20 +46,6 @@ license_detections:
 
           Additional information about OpenLDAP can be obtained at
           <http://www.openldap.org/>.
-        licenses:
-          - key: openldap-2.8
-            name: OpenLDAP Public License 2.8
-            short_name: OpenLDAP Public License 2.8
-            category: Permissive
-            is_exception: no
-            is_unknown: no
-            owner: OpenLDAP Foundation
-            homepage_url: http://www.openldap.org/software/release/license.html
-            text_url: http://www.openldap.org/software/release/license.html
-            reference_url: https://scancode-licensedb.aboutcode.org/openldap-2.8
-            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/openldap-2.8.LICENSE
-            spdx_license_key: OLDAP-2.8
-            spdx_url: https://spdx.org/licenses/OLDAP-2.8
       - score: '100.0'
         start_line: 41
         end_line: 81
@@ -77,14 +55,6 @@ license_detections:
         license_expression: openldap-2.8
         rule_identifier: openldap-2.8_16.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/openldap-2.8_16.RULE
-        referenced_filenames: []
-        is_license_text: yes
-        is_license_notice: no
-        is_license_reference: no
-        is_license_tag: no
-        is_license_intro: no
-        rule_length: 297
-        rule_relevance: 100
         matched_text: |
           The OpenLDAP Public License
             Version 2.8, 17 August 2003
@@ -127,20 +97,6 @@ license_detections:
           in this Software without specific, written prior permission.  Title
           to copyright in this Software shall at all times remain with copyright
           holders.
-        licenses:
-          - key: openldap-2.8
-            name: OpenLDAP Public License 2.8
-            short_name: OpenLDAP Public License 2.8
-            category: Permissive
-            is_exception: no
-            is_unknown: no
-            owner: OpenLDAP Foundation
-            homepage_url: http://www.openldap.org/software/release/license.html
-            text_url: http://www.openldap.org/software/release/license.html
-            reference_url: https://scancode-licensedb.aboutcode.org/openldap-2.8
-            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/openldap-2.8.LICENSE
-            spdx_license_key: OLDAP-2.8
-            spdx_url: https://spdx.org/licenses/OLDAP-2.8
   - license_expression: mit
     detection_log:
       - not-combined
@@ -154,14 +110,6 @@ license_detections:
         license_expression: mit
         rule_identifier: mit_483.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_483.RULE
-        referenced_filenames: []
-        is_license_text: yes
-        is_license_notice: no
-        is_license_reference: no
-        is_license_tag: no
-        is_license_intro: no
-        rule_length: 165
-        rule_relevance: 100
         matched_text: |
           Permission is hereby granted, free of charge, to any person obtaining a
           # copy of this software and associated documentation files (the "Software"),
@@ -180,20 +128,6 @@ license_detections:
           # CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT
           # OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR
           # THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-        licenses:
-          - key: mit
-            name: MIT License
-            short_name: MIT License
-            category: Permissive
-            is_exception: no
-            is_unknown: no
-            owner: MIT
-            homepage_url: http://opensource.org/licenses/mit-license.php
-            text_url: http://opensource.org/licenses/mit-license.php
-            reference_url: https://scancode-licensedb.aboutcode.org/mit
-            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE
-            spdx_license_key: MIT
-            spdx_url: https://spdx.org/licenses/MIT
   - license_expression: fsf-unlimited-no-warranty
     detection_log:
       - not-combined
@@ -207,14 +141,6 @@ license_detections:
         license_expression: fsf-unlimited-no-warranty
         rule_identifier: fsf-unlimited-no-warranty_2.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/fsf-unlimited-no-warranty_2.RULE
-        referenced_filenames: []
-        is_license_text: yes
-        is_license_notice: no
-        is_license_reference: no
-        is_license_tag: no
-        is_license_intro: no
-        rule_length: 64
-        rule_relevance: 100
         matched_text: |
           This Makefile.in is free software; the Free Software Foundation
           # gives unlimited permission to copy and/or distribute it,
@@ -224,20 +150,6 @@ license_detections:
           # but WITHOUT ANY WARRANTY, to the extent permitted by law; without
           # even the implied warranty of MERCHANTABILITY or FITNESS FOR A
           # PARTICULAR PURPOSE.
-        licenses:
-          - key: fsf-unlimited-no-warranty
-            name: FSF Unlimited License No Warranty
-            short_name: FSF Unlimited License No Warranty
-            category: Permissive
-            is_exception: no
-            is_unknown: no
-            owner: Free Software Foundation (FSF)
-            homepage_url: http://www.fsf.org/licensing/licenses/
-            text_url: http://www.fsf.org/licensing/licenses/
-            reference_url: https://scancode-licensedb.aboutcode.org/fsf-unlimited-no-warranty
-            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/fsf-unlimited-no-warranty.LICENSE
-            spdx_license_key: LicenseRef-scancode-fsf-unlimited-no-warranty
-            spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/fsf-unlimited-no-warranty.LICENSE
   - license_expression: hs-regexp
     detection_log:
       - not-combined
@@ -251,14 +163,6 @@ license_detections:
         license_expression: hs-regexp
         rule_identifier: hs-regexp_5.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/hs-regexp_5.RULE
-        referenced_filenames: []
-        is_license_text: yes
-        is_license_notice: no
-        is_license_reference: no
-        is_license_tag: no
-        is_license_intro: no
-        rule_length: 123
-        rule_relevance: 95
         matched_text: |
           Permission is granted to anyone to use this software for any purpose
            * on any computer system, and to alter it and redistribute it, subject
@@ -277,20 +181,6 @@ license_detections:
            *    documentation.
            *
            * 4. This notice may not be removed or altered.
-        licenses:
-          - key: hs-regexp
-            name: Henry Spencer Regexp License
-            short_name: Henry Spencer Regexp License
-            category: Permissive
-            is_exception: no
-            is_unknown: no
-            owner: Henry Spencer
-            homepage_url: https://github.com/garyhouston/regex/blob/master/COPYRIGHT
-            text_url: http://search.cpan.org/~knok/File-MMagic-1.12/MMagic.pm
-            reference_url: https://scancode-licensedb.aboutcode.org/hs-regexp
-            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/hs-regexp.LICENSE
-            spdx_license_key: Spencer-94
-            spdx_url: https://spdx.org/licenses/Spencer-94
   - license_expression: ibm-dhcp
     detection_log:
       - not-combined
@@ -304,14 +194,6 @@ license_detections:
         license_expression: ibm-dhcp
         rule_identifier: ibm-dhcp.LICENSE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/ibm-dhcp.LICENSE
-        referenced_filenames: []
-        is_license_text: yes
-        is_license_notice: no
-        is_license_reference: no
-        is_license_tag: no
-        is_license_intro: no
-        rule_length: 203
-        rule_relevance: 100
         matched_text: |
           International Business Machines, Inc. (hereinafter called IBM) grants
            * permission under its copyrights to use, copy, modify, and distribute this
@@ -333,20 +215,6 @@ license_detections:
            * DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER ARISING
            * OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE, EVEN
            * IF IBM IS APPRISED OF THE POSSIBILITY OF SUCH DAMAGES.
-        licenses:
-          - key: ibm-dhcp
-            name: IBM DHCP License
-            short_name: IBM DHCP License
-            category: Permissive
-            is_exception: no
-            is_unknown: no
-            owner: IBM
-            homepage_url:
-            text_url:
-            reference_url: https://scancode-licensedb.aboutcode.org/ibm-dhcp
-            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/ibm-dhcp.LICENSE
-            spdx_license_key: LicenseRef-scancode-ibm-dhcp
-            spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/ibm-dhcp.LICENSE
   - license_expression: ietf
     detection_log:
       - not-combined
@@ -360,14 +228,6 @@ license_detections:
         license_expression: ietf
         rule_identifier: ietf_5.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/ietf_5.RULE
-        referenced_filenames: []
-        is_license_text: no
-        is_license_notice: yes
-        is_license_reference: no
-        is_license_tag: no
-        is_license_intro: no
-        rule_length: 221
-        rule_relevance: 100
         matched_text: "Full Copyright Statement\n# \n#    Copyright (C) The Internet Society\
           \ (1999).  All Rights Reserved.\n# \n#    This document and translations of it may\
           \ be copied and furnished to\n#    others, and derivative works that comment on or\
@@ -387,20 +247,6 @@ license_detections:
           \ EXPRESS OR IMPLIED, INCLUDING\n#    BUT NOT LIMITED TO ANY WARRANTY THAT THE USE\
           \ OF THE INFORMATION\n#    HEREIN WILL NOT INFRINGE ANY RIGHTS OR ANY IMPLIED WARRANTIES\
           \ OF\n#    MERCHANTABILITY OR FITNESS FOR A PARTICULAR PURPOSE."
-        licenses:
-          - key: ietf
-            name: Internet Engineering Task Force License
-            short_name: IETF License
-            category: Permissive
-            is_exception: no
-            is_unknown: no
-            owner: IETF - Internet Engineering Task Force
-            homepage_url: http://www.ietf.org/
-            text_url:
-            reference_url: https://scancode-licensedb.aboutcode.org/ietf
-            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/ietf.LICENSE
-            spdx_license_key: LicenseRef-scancode-ietf
-            spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/ietf.LICENSE
   - license_expression: isc
     detection_log:
       - not-combined
@@ -414,14 +260,6 @@ license_detections:
         license_expression: isc
         rule_identifier: isc_9.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/isc_9.RULE
-        referenced_filenames: []
-        is_license_text: yes
-        is_license_notice: no
-        is_license_reference: no
-        is_license_tag: no
-        is_license_intro: no
-        rule_length: 113
-        rule_relevance: 100
         matched_text: |
           Permission to use, copy, modify, and distribute this software for any
            * purpose with or without fee is hereby granted, provided that the above
@@ -435,20 +273,6 @@ license_detections:
            * PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS
            * ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS
            * SOFTWARE.
-        licenses:
-          - key: isc
-            name: ISC License
-            short_name: ISC License
-            category: Permissive
-            is_exception: no
-            is_unknown: no
-            owner: ISC - Internet Systems Consortium
-            homepage_url: https://www.isc.org/licenses/
-            text_url: http://fedoraproject.org/wiki/Licensing:MIT#Old_Style_with_legal_disclaimer_2
-            reference_url: https://scancode-licensedb.aboutcode.org/isc
-            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/isc.LICENSE
-            spdx_license_key: ISC
-            spdx_url: https://spdx.org/licenses/ISC
   - license_expression: other-permissive
     detection_log:
       - not-combined
@@ -462,32 +286,10 @@ license_detections:
         license_expression: other-permissive
         rule_identifier: other-permissive_203.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/other-permissive_203.RULE
-        referenced_filenames: []
-        is_license_text: yes
-        is_license_notice: no
-        is_license_reference: no
-        is_license_tag: no
-        is_license_intro: no
-        rule_length: 39
-        rule_relevance: 100
         matched_text: "This software is not subject to any license of Silicon Graphics \n *\
           \ Inc. or Purdue University.\n *\n * Redistribution and use in source and binary forms\
           \ are permitted\n * without restriction or fee of any kind as long as this notice\n\
           \ * is preserved."
-        licenses:
-          - key: other-permissive
-            name: Other Permissive Licenses
-            short_name: Other Permissive Licenses
-            category: Permissive
-            is_exception: no
-            is_unknown: no
-            owner: nexB
-            homepage_url:
-            text_url:
-            reference_url: https://scancode-licensedb.aboutcode.org/other-permissive
-            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/other-permissive.LICENSE
-            spdx_license_key: LicenseRef-scancode-other-permissive
-            spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/other-permissive.LICENSE
   - license_expression: other-permissive
     detection_log:
       - not-combined
@@ -501,33 +303,11 @@ license_detections:
         license_expression: other-permissive
         rule_identifier: other-permissive_200.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/other-permissive_200.RULE
-        referenced_filenames: []
-        is_license_text: yes
-        is_license_notice: no
-        is_license_reference: no
-        is_license_tag: no
-        is_license_intro: no
-        rule_length: 57
-        rule_relevance: 100
         matched_text: "This software is not subject to any license of Carnegie Mellon University.\n\
           \ *\n * Redistribution and use in source and binary forms are permitted without \n\
           \ * restriction or fee of any kind as long as this notice is preserved.\n *\n * The\
           \ name \"Carnegie Mellon\" must not be used to endorse or promote\n * products derived\
           \ from this software without prior written permission."
-        licenses:
-          - key: other-permissive
-            name: Other Permissive Licenses
-            short_name: Other Permissive Licenses
-            category: Permissive
-            is_exception: no
-            is_unknown: no
-            owner: nexB
-            homepage_url:
-            text_url:
-            reference_url: https://scancode-licensedb.aboutcode.org/other-permissive
-            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/other-permissive.LICENSE
-            spdx_license_key: LicenseRef-scancode-other-permissive
-            spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/other-permissive.LICENSE
   - license_expression: mit-old-style-no-advert
     detection_log:
       - not-combined
@@ -541,14 +321,6 @@ license_detections:
         license_expression: mit-old-style-no-advert
         rule_identifier: mit-old-style-no-advert_3.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit-old-style-no-advert_3.RULE
-        referenced_filenames: []
-        is_license_text: yes
-        is_license_notice: no
-        is_license_reference: no
-        is_license_tag: no
-        is_license_intro: no
-        rule_length: 96
-        rule_relevance: 100
         matched_text: |
           Permission to use, copy, modify, distribute, and sell this software and its
           # documentation for any purpose is hereby granted without fee, provided that
@@ -559,20 +331,6 @@ license_detections:
           # written prior permission.  M.I.T. makes no representations about the
           # suitability of this software for any purpose.  It is provided "as is"
           # without express or implied warranty.
-        licenses:
-          - key: mit-old-style-no-advert
-            name: MIT Old Style no advertising
-            short_name: MIT Old Style no advertising
-            category: Permissive
-            is_exception: no
-            is_unknown: no
-            owner: MIT
-            homepage_url: http://fedoraproject.org/wiki/Licensing:MIT#Old_Style_.28no_advertising_without_permission.29
-            text_url:
-            reference_url: https://scancode-licensedb.aboutcode.org/mit-old-style-no-advert
-            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit-old-style-no-advert.LICENSE
-            spdx_license_key: NTP
-            spdx_url: https://spdx.org/licenses/NTP
   - license_expression: other-permissive
     detection_log:
       - not-combined
@@ -586,31 +344,9 @@ license_detections:
         license_expression: other-permissive
         rule_identifier: other-permissive_199.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/other-permissive_199.RULE
-        referenced_filenames: []
-        is_license_text: yes
-        is_license_notice: no
-        is_license_reference: no
-        is_license_tag: no
-        is_license_intro: no
-        rule_length: 12
-        rule_relevance: 100
         matched_text: |
           Permission to copy and
           distribute verbatim copies of this document is granted.
-        licenses:
-          - key: other-permissive
-            name: Other Permissive Licenses
-            short_name: Other Permissive Licenses
-            category: Permissive
-            is_exception: no
-            is_unknown: no
-            owner: nexB
-            homepage_url:
-            text_url:
-            reference_url: https://scancode-licensedb.aboutcode.org/other-permissive
-            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/other-permissive.LICENSE
-            spdx_license_key: LicenseRef-scancode-other-permissive
-            spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/other-permissive.LICENSE
   - license_expression: hs-regexp
     detection_log:
       - not-combined
@@ -624,14 +360,6 @@ license_detections:
         license_expression: hs-regexp
         rule_identifier: hs-regexp_5.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/hs-regexp_5.RULE
-        referenced_filenames: []
-        is_license_text: yes
-        is_license_notice: no
-        is_license_reference: no
-        is_license_tag: no
-        is_license_intro: no
-        rule_length: 123
-        rule_relevance: 95
         matched_text: |
           Permission is granted to anyone to use this software for any purpose
            * on any computer system, and to alter it and redistribute it, subject
@@ -649,20 +377,6 @@ license_detections:
            * ever read sources, credits should appear in the documentation.
            *
            * 4. This notice may not be removed or altered.
-        licenses:
-          - key: hs-regexp
-            name: Henry Spencer Regexp License
-            short_name: Henry Spencer Regexp License
-            category: Permissive
-            is_exception: no
-            is_unknown: no
-            owner: Henry Spencer
-            homepage_url: https://github.com/garyhouston/regex/blob/master/COPYRIGHT
-            text_url: http://search.cpan.org/~knok/File-MMagic-1.12/MMagic.pm
-            reference_url: https://scancode-licensedb.aboutcode.org/hs-regexp
-            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/hs-regexp.LICENSE
-            spdx_license_key: Spencer-94
-            spdx_url: https://spdx.org/licenses/Spencer-94
   - license_expression: openldap-2.8
     detection_log:
       - not-combined
@@ -676,34 +390,11 @@ license_detections:
         license_expression: openldap-2.8
         rule_identifier: openldap-2.8_15.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/openldap-2.8_15.RULE
-        referenced_filenames:
-          - LICENSE
-        is_license_text: no
-        is_license_notice: yes
-        is_license_reference: no
-        is_license_tag: no
-        is_license_intro: no
-        rule_length: 43
-        rule_relevance: 100
         matched_text: |
           Redistribution and use in source and binary forms are permitted only
            * as authorized by the OpenLDAP Public License.  A copy of this
            * license is available at http://www.OpenLDAP.org/license.html or
            * in file LICENSE in the top-level directory of the distribution.
-        licenses:
-          - key: openldap-2.8
-            name: OpenLDAP Public License 2.8
-            short_name: OpenLDAP Public License 2.8
-            category: Permissive
-            is_exception: no
-            is_unknown: no
-            owner: OpenLDAP Foundation
-            homepage_url: http://www.openldap.org/software/release/license.html
-            text_url: http://www.openldap.org/software/release/license.html
-            reference_url: https://scancode-licensedb.aboutcode.org/openldap-2.8
-            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/openldap-2.8.LICENSE
-            spdx_license_key: OLDAP-2.8
-            spdx_url: https://spdx.org/licenses/OLDAP-2.8
   - license_expression: bsla AND bsd-original-uc
     detection_log:
       - not-combined
@@ -717,14 +408,6 @@ license_detections:
         license_expression: bsla
         rule_identifier: bsla_3.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsla_3.RULE
-        referenced_filenames: []
-        is_license_text: yes
-        is_license_notice: no
-        is_license_reference: no
-        is_license_tag: no
-        is_license_intro: no
-        rule_length: 101
-        rule_relevance: 100
         matched_text: |
           Redistribution and use in source and binary forms are permitted
            * provided that the above copyright notice and this paragraph are
@@ -737,20 +420,6 @@ license_detections:
            * THIS SOFTWARE IS PROVIDED ``AS IS'' AND WITHOUT ANY EXPRESS OR
            * IMPLIED WARRANTIES, INCLUDING, WITHOUT LIMITATION, THE IMPLIED
            * WARRANTIES OF MERCHANTIBILITY AND FITNESS FOR A PARTICULAR PURPOSE.
-        licenses:
-          - key: bsla
-            name: Berkeley Software License Agreement
-            short_name: BSLA
-            category: Permissive
-            is_exception: no
-            is_unknown: no
-            owner: Regents of the University of California
-            homepage_url:
-            text_url:
-            reference_url: https://scancode-licensedb.aboutcode.org/bsla
-            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsla.LICENSE
-            spdx_license_key: LicenseRef-scancode-bsla
-            spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsla.LICENSE
       - score: '100.0'
         start_line: 380
         end_line: 381
@@ -760,31 +429,9 @@ license_detections:
         license_expression: bsd-original-uc
         rule_identifier: bsd-original-uc_25.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-original-uc_25.RULE
-        referenced_filenames: []
-        is_license_text: no
-        is_license_notice: no
-        is_license_reference: yes
-        is_license_tag: no
-        is_license_intro: no
-        rule_length: 12
-        rule_relevance: 100
         matched_text: |
           NOTE: The Regents have since retroactively removed the advertising
           clause from above.
-        licenses:
-          - key: bsd-original-uc
-            name: BSD-Original-UC
-            short_name: BSD-Original-UC
-            category: Permissive
-            is_exception: no
-            is_unknown: no
-            owner: Regents of the University of California
-            homepage_url: ftp://ftp.cs.berkeley.edu/pub/4bsd/README.Impt.License.Change
-            text_url: http://www.xfree86.org/3.3.6/COPYRIGHT2.html
-            reference_url: https://scancode-licensedb.aboutcode.org/bsd-original-uc
-            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-original-uc.LICENSE
-            spdx_license_key: BSD-4-Clause-UC
-            spdx_url: https://spdx.org/licenses/BSD-4-Clause-UC
   - license_expression: bsd-original-uc
     detection_log:
       - not-combined
@@ -798,14 +445,6 @@ license_detections:
         license_expression: bsd-original-uc
         rule_identifier: bsd-original-uc_3.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-original-uc_3.RULE
-        referenced_filenames: []
-        is_license_text: yes
-        is_license_notice: no
-        is_license_reference: no
-        is_license_tag: no
-        is_license_intro: no
-        rule_length: 243
-        rule_relevance: 100
         matched_text: |
           Redistribution and use in source and binary forms, with or without
            * modification, are permitted provided that the following conditions
@@ -834,20 +473,6 @@ license_detections:
            * LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
            * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
            * SUCH DAMAGE.
-        licenses:
-          - key: bsd-original-uc
-            name: BSD-Original-UC
-            short_name: BSD-Original-UC
-            category: Permissive
-            is_exception: no
-            is_unknown: no
-            owner: Regents of the University of California
-            homepage_url: ftp://ftp.cs.berkeley.edu/pub/4bsd/README.Impt.License.Change
-            text_url: http://www.xfree86.org/3.3.6/COPYRIGHT2.html
-            reference_url: https://scancode-licensedb.aboutcode.org/bsd-original-uc
-            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-original-uc.LICENSE
-            spdx_license_key: BSD-4-Clause-UC
-            spdx_url: https://spdx.org/licenses/BSD-4-Clause-UC
       - score: '100.0'
         start_line: 416
         end_line: 419
@@ -857,33 +482,11 @@ license_detections:
         license_expression: bsd-original-uc
         rule_identifier: bsd-original-uc_24.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-original-uc_24.RULE
-        referenced_filenames: []
-        is_license_text: no
-        is_license_notice: no
-        is_license_reference: yes
-        is_license_tag: no
-        is_license_intro: no
-        rule_length: 24
-        rule_relevance: 100
         matched_text: |
           NOTE: The Regents have since retroactively removed the advertising
           clause from above.
           See:
           ftp://ftp.cs.berkeley.edu/pub/4bsd/README.Impt.License.Change
-        licenses:
-          - key: bsd-original-uc
-            name: BSD-Original-UC
-            short_name: BSD-Original-UC
-            category: Permissive
-            is_exception: no
-            is_unknown: no
-            owner: Regents of the University of California
-            homepage_url: ftp://ftp.cs.berkeley.edu/pub/4bsd/README.Impt.License.Change
-            text_url: http://www.xfree86.org/3.3.6/COPYRIGHT2.html
-            reference_url: https://scancode-licensedb.aboutcode.org/bsd-original-uc
-            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-original-uc.LICENSE
-            spdx_license_key: BSD-4-Clause-UC
-            spdx_url: https://spdx.org/licenses/BSD-4-Clause-UC
   - license_expression: bsd-original-uc-1986
     detection_log:
       - not-combined
@@ -897,14 +500,6 @@ license_detections:
         license_expression: bsd-original-uc-1986
         rule_identifier: bsd-original-uc-1986_3.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-original-uc-1986_3.RULE
-        referenced_filenames: []
-        is_license_text: yes
-        is_license_notice: no
-        is_license_reference: no
-        is_license_tag: no
-        is_license_intro: no
-        rule_length: 64
-        rule_relevance: 99
         matched_text: |
           Redistribution and use in source and binary forms are permitted
            * provided that this notice is preserved and that due credit is given
@@ -912,20 +507,6 @@ license_detections:
            * may not be used to endorse or promote products derived from this
            * software without specific prior written permission. This software
            * is provided ``as is'' without express or implied warranty.
-        licenses:
-          - key: bsd-original-uc-1986
-            name: BSD-Original-UC-1986
-            short_name: BSD-Original-UC-1986
-            category: Permissive
-            is_exception: no
-            is_unknown: no
-            owner: Regents of the University of California
-            homepage_url:
-            text_url:
-            reference_url: https://scancode-licensedb.aboutcode.org/bsd-original-uc-1986
-            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-original-uc-1986.LICENSE
-            spdx_license_key: LicenseRef-scancode-bsd-original-uc-1986
-            spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-original-uc-1986.LICENSE
 other_license_detections: []
 copyright: |
   Copyright 1998-2016 The OpenLDAP Foundation

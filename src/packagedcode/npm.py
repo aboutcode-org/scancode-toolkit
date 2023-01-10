@@ -38,6 +38,7 @@ SCANCODE_DEBUG_PACKAGE = os.environ.get('SCANCODE_DEBUG_PACKAGE', False)
 
 TRACE = SCANCODE_DEBUG_PACKAGE
 
+
 def logger_debug(*args):
     pass
 
@@ -261,6 +262,7 @@ class NpmPackageJsonHandler(BaseNpmHandler):
             json_data = json.load(loc)
 
         yield cls._parse(json_data)
+
 
 class BaseNpmLockHandler(BaseNpmHandler):
 
@@ -608,7 +610,7 @@ class YarnLockV1Handler(BaseNpmHandler):
                     ns, _ , name = ns_name.rpartition('/')
                     sub_dependencies.append((ns, name, constraint,))
 
-                elif line.startswith(' ' * 2) :
+                elif line.startswith(' ' * 2):
                     # version "7.3.4"
                     # resolved "https://registry.yarnpkg.com/@babel...."
                     # integrity sha512-jRsuseXBo9

@@ -1,4 +1,5 @@
 {
+  "packages": [],
   "dependencies": [
     {
       "purl": "pkg:npm/lerna",
@@ -849,7 +850,8 @@
       "datasource_id": "yarn_lock_v1"
     }
   ],
-  "packages": [],
+  "license_references": [],
+  "license_rule_references": [],
   "files": [
     {
       "path": "theia",

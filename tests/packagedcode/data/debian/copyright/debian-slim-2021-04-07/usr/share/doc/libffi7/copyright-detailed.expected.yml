@@ -17,14 +17,6 @@ license_detections:
         license_expression: mit
         rule_identifier: mit.LICENSE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE
-        referenced_filenames: []
-        is_license_text: yes
-        is_license_notice: no
-        is_license_reference: no
-        is_license_tag: no
-        is_license_intro: no
-        rule_length: 161
-        rule_relevance: 100
         matched_text: |
           Permission is hereby granted, free of charge, to any person obtaining
               a copy of this software and associated documentation files (the
@@ -44,20 +36,6 @@ license_detections:
               CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
               TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
               SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-        licenses:
-          - key: mit
-            name: MIT License
-            short_name: MIT License
-            category: Permissive
-            is_exception: no
-            is_unknown: no
-            owner: MIT
-            homepage_url: http://opensource.org/licenses/mit-license.php
-            text_url: http://opensource.org/licenses/mit-license.php
-            reference_url: https://scancode-licensedb.aboutcode.org/mit
-            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE
-            spdx_license_key: MIT
-            spdx_url: https://spdx.org/licenses/MIT
       - score: '79.17'
         start_line: 62
         end_line: 70
@@ -67,15 +45,6 @@ license_detections:
         license_expression: gpl-2.0-plus
         rule_identifier: gpl-2.0-plus_858.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_858.RULE
-        referenced_filenames:
-          - /usr/share/common-licenses/GPL
-        is_license_text: no
-        is_license_notice: yes
-        is_license_reference: no
-        is_license_tag: no
-        is_license_intro: no
-        rule_length: 72
-        rule_relevance: 100
         matched_text: |
           Permission is granted to copy, distribute and/or modify this document
               under the terms of the GNU General Public License as published by the
@@ -86,20 +55,6 @@ license_detections:
           doc/*:
             Permission is granted to copy, distribute and/or modify this document
             under the terms of the GNU General Public License
-        licenses:
-          - key: gpl-2.0-plus
-            name: GNU General Public License 2.0 or later
-            short_name: GPL 2.0 or later
-            category: Copyleft
-            is_exception: no
-            is_unknown: no
-            owner: Free Software Foundation (FSF)
-            homepage_url: http://www.gnu.org/licenses/old-licenses/gpl-2.0-standalone.html
-            text_url: http://www.gnu.org/licenses/old-licenses/gpl-2.0-standalone.html
-            reference_url: https://scancode-licensedb.aboutcode.org/gpl-2.0-plus
-            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-2.0-plus.LICENSE
-            spdx_license_key: GPL-2.0-or-later
-            spdx_url: https://spdx.org/licenses/GPL-2.0-or-later
       - score: '100.0'
         start_line: 69
         end_line: 76
@@ -109,15 +64,6 @@ license_detections:
         license_expression: gpl-2.0-plus
         rule_identifier: gpl-2.0-plus_858.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_858.RULE
-        referenced_filenames:
-          - /usr/share/common-licenses/GPL
-        is_license_text: no
-        is_license_notice: yes
-        is_license_reference: no
-        is_license_tag: no
-        is_license_intro: no
-        rule_length: 72
-        rule_relevance: 100
         matched_text: |
           Permission is granted to copy, distribute and/or modify this document
             under the terms of the GNU General Public License as published by the
@@ -127,20 +73,6 @@ license_detections:
 
             On Debian GNU/Linux systems, the complete text of the GNU General
             Public License is in `/usr/share/common-licenses/GPL'.
-        licenses:
-          - key: gpl-2.0-plus
-            name: GNU General Public License 2.0 or later
-            short_name: GPL 2.0 or later
-            category: Copyleft
-            is_exception: no
-            is_unknown: no
-            owner: Free Software Foundation (FSF)
-            homepage_url: http://www.gnu.org/licenses/old-licenses/gpl-2.0-standalone.html
-            text_url: http://www.gnu.org/licenses/old-licenses/gpl-2.0-standalone.html
-            reference_url: https://scancode-licensedb.aboutcode.org/gpl-2.0-plus
-            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-2.0-plus.LICENSE
-            spdx_license_key: GPL-2.0-or-later
-            spdx_url: https://spdx.org/licenses/GPL-2.0-or-later
       - score: '100.0'
         start_line: 79
         end_line: 79
@@ -150,30 +82,7 @@ license_detections:
         license_expression: gpl-1.0-plus
         rule_identifier: gpl-1.0-plus_478.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-1.0-plus_478.RULE
-        referenced_filenames:
-          - /usr/share/common-licenses/GPL
-        is_license_text: no
-        is_license_notice: yes
-        is_license_reference: no
-        is_license_tag: no
-        is_license_intro: no
-        rule_length: 12
-        rule_relevance: 100
         matched_text: and is licensed under the GPL, see `/usr/share/common-licenses/GPL'.
-        licenses:
-          - key: gpl-1.0-plus
-            name: GNU General Public License 1.0 or later
-            short_name: GPL 1.0 or later
-            category: Copyleft
-            is_exception: no
-            is_unknown: no
-            owner: Free Software Foundation (FSF)
-            homepage_url: http://www.gnu.org/licenses/old-licenses/gpl-1.0-standalone.html
-            text_url: http://www.gnu.org/licenses/old-licenses/gpl-1.0-standalone.html
-            reference_url: https://scancode-licensedb.aboutcode.org/gpl-1.0-plus
-            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-1.0-plus.LICENSE
-            spdx_license_key: GPL-1.0-or-later
-            spdx_url: https://spdx.org/licenses/GPL-1.0-or-later
 other_license_detections: []
 copyright: |
   Copyright (c) 1996-2011 Red Hat, Inc.

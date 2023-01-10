@@ -34,14 +34,13 @@ Changes
             that works from sequences of ints.
 """
 
-
 TRACE = False
 
 
 def logger_debug(*args): pass
 
 
-if TRACE :
+if TRACE:
     import logging
 
     logger = logging.getLogger(__name__)
@@ -62,6 +61,7 @@ DIFF_EQUAL = 0
 
 
 Match = namedtuple('Match', 'a b size')
+
 
 def match_blocks(a, b, a_start, a_end, *args, **kwargs):
     """
@@ -121,6 +121,7 @@ def trim(diffs):
 
 
 class Differ(object):
+
     def __init__(self, timeout=0.1):
         # Number of seconds to compute a diff before giving up (0 for infinity).
         self.timeout = timeout

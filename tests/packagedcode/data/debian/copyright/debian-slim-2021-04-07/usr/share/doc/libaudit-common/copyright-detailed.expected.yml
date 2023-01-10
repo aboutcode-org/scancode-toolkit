@@ -25,29 +25,7 @@ other_license_detections:
         license_expression: lgpl-2.1
         rule_identifier: lgpl-2.1_38.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1_38.RULE
-        referenced_filenames: []
-        is_license_text: no
-        is_license_notice: no
-        is_license_reference: no
-        is_license_tag: yes
-        is_license_intro: no
-        rule_length: 4
-        rule_relevance: 100
         matched_text: 'License: lgpl-2.1'
-        licenses:
-          - key: lgpl-2.1
-            name: GNU Lesser General Public License 2.1
-            short_name: LGPL 2.1
-            category: Copyleft Limited
-            is_exception: no
-            is_unknown: no
-            owner: Free Software Foundation (FSF)
-            homepage_url: http://www.gnu.org/licenses/lgpl-2.1.html
-            text_url: http://www.gnu.org/licenses/lgpl-2.1.txt
-            reference_url: https://scancode-licensedb.aboutcode.org/lgpl-2.1
-            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/lgpl-2.1.LICENSE
-            spdx_license_key: LGPL-2.1-only
-            spdx_url: https://spdx.org/licenses/LGPL-2.1-only
       - score: '97.44'
         start_line: 17
         end_line: 21
@@ -57,35 +35,12 @@ other_license_detections:
         license_expression: lgpl-2.1
         rule_identifier: lgpl-2.1_372.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1_372.RULE
-        referenced_filenames:
-          - /usr/share/common-licenses/LGPL-2.1
-        is_license_text: no
-        is_license_notice: yes
-        is_license_reference: no
-        is_license_tag: no
-        is_license_intro: no
-        rule_length: 38
-        rule_relevance: 100
         matched_text: |
           library libaudit.* is released under LGPL
            so that it may be linked with 3rd party software.
            .
            On Debian systems, refer to /usr/share/common-licenses/LGPL-2.1
            for the complete text of the GNU Lesser General Public License.
-        licenses:
-          - key: lgpl-2.1
-            name: GNU Lesser General Public License 2.1
-            short_name: LGPL 2.1
-            category: Copyleft Limited
-            is_exception: no
-            is_unknown: no
-            owner: Free Software Foundation (FSF)
-            homepage_url: http://www.gnu.org/licenses/lgpl-2.1.html
-            text_url: http://www.gnu.org/licenses/lgpl-2.1.txt
-            reference_url: https://scancode-licensedb.aboutcode.org/lgpl-2.1
-            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/lgpl-2.1.LICENSE
-            spdx_license_key: LGPL-2.1-only
-            spdx_url: https://spdx.org/licenses/LGPL-2.1-only
   - license_expression: gpl-2.0
     detection_log:
       - not-combined
@@ -99,29 +54,7 @@ other_license_detections:
         license_expression: gpl-2.0
         rule_identifier: gpl-2.0_561.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0_561.RULE
-        referenced_filenames: []
-        is_license_text: no
-        is_license_notice: no
-        is_license_reference: no
-        is_license_tag: yes
-        is_license_intro: no
-        rule_length: 3
-        rule_relevance: 100
         matched_text: 'License: gpl-2'
-        licenses:
-          - key: gpl-2.0
-            name: GNU General Public License 2.0
-            short_name: GPL 2.0
-            category: Copyleft
-            is_exception: no
-            is_unknown: no
-            owner: Free Software Foundation (FSF)
-            homepage_url: http://www.gnu.org/licenses/gpl-2.0.html
-            text_url: http://www.gnu.org/licenses/gpl-2.0.txt
-            reference_url: https://scancode-licensedb.aboutcode.org/gpl-2.0
-            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-2.0.LICENSE
-            spdx_license_key: GPL-2.0-only
-            spdx_url: https://spdx.org/licenses/GPL-2.0-only
       - score: '99.0'
         start_line: 29
         end_line: 43
@@ -131,15 +64,6 @@ other_license_detections:
         license_expression: gpl-2.0
         rule_identifier: gpl-2.0_1031.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0_1031.RULE
-        referenced_filenames:
-          - /usr/share/common-licenses/GPL-1
-        is_license_text: no
-        is_license_notice: yes
-        is_license_reference: no
-        is_license_tag: no
-        is_license_intro: no
-        rule_length: 124
-        rule_relevance: 99
         matched_text: |
           This package is free software; you can redistribute it and/or modify
           it under the terms of the GNU General Public License version 2,
@@ -156,20 +80,6 @@ other_license_detections:
 
           On Debian systems, the complete text of the GNU General
           Public License can be found in `/usr/share/common-licenses/GPL-1'.
-        licenses:
-          - key: gpl-2.0
-            name: GNU General Public License 2.0
-            short_name: GPL 2.0
-            category: Copyleft
-            is_exception: no
-            is_unknown: no
-            owner: Free Software Foundation (FSF)
-            homepage_url: http://www.gnu.org/licenses/gpl-2.0.html
-            text_url: http://www.gnu.org/licenses/gpl-2.0.txt
-            reference_url: https://scancode-licensedb.aboutcode.org/gpl-2.0
-            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-2.0.LICENSE
-            spdx_license_key: GPL-2.0-only
-            spdx_url: https://spdx.org/licenses/GPL-2.0-only
 copyright: |
   2012-2016 Steve Grubb <sgrubb@redhat.com>
   2006-2012 Rik Faith

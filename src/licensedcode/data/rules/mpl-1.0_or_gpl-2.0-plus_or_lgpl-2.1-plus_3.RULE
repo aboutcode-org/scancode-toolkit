@@ -6,7 +6,7 @@ ignorable_urls:
     - http://www.mozilla.org/MPL/
 ---
 
- OpenSBC  is published under the MPL, GPL, LGPL tripple license.  
+OpenSBC  is published under the MPL, GPL, LGPL tripple license.  
  The default active license is MPL.  However, because of the inherent incompatibility between MPL and GNU licenses, we decided to explicitly publish    using GPL and LGP as alternative licenses.  The full text of the license is as follows
 
  *
