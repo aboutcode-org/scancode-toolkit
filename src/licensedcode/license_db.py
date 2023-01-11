@@ -31,7 +31,11 @@ from os.path import dirname
 from os.path import join
 from distutils.dir_util import copy_tree
 
+import click
 import saneyaml
+
+from commoncode.cliutils import MISC_GROUP
+from commoncode.cliutils import PluggableCommandLineOption
 from jinja2 import Environment, FileSystemLoader
 from licensedcode.models import load_licenses
 from licensedcode.models import licenses_data_dir
@@ -200,7 +204,7 @@ def generate(
     return count
 
 
-def dump_license_data(ctx, param, value):
+def scancode_license_data(path):
     """
     Dump license data from scancode licenses to the directory ``value`` passed
     in from command line.
@@ -208,11 +212,30 @@ def dump_license_data(ctx, param, value):
     Dumps data in JSON, YAML and HTML formats and also dumps the .LICENSE file
     with the license text and the data as YAML frontmatter.
     """
-    if not value or ctx.resilient_parsing:
-        return
-
-    import click
-    click.secho(f'Dumping license data to: {value}', err=True)
-    count = generate(build_location=value)
+    click.secho(f'Dumping license data to: {path}', err=True)
+    count = generate(build_location=path)
     click.secho(f'Done dumping #{count} licenses.', err=True)
-    ctx.exit(0)
+
+
+@click.command(name='scancode-license-data')
+@click.option(
+    '--path',
+    type=click.Path(exists=False, readable=True, file_okay=False, resolve_path=True, path_type=str),
+    metavar='DIR',
+    help='Dump the license data in this directory in the LicenseDB format and exit. '
+            'Creates the directory if it does not exist. ',
+    help_group=MISC_GROUP,
+    cls=PluggableCommandLineOption,
+)
+@click.help_option('-h', '--help')
+def dump_scancode_license_data(
+    path,
+    *args,
+    **kwargs,
+):
+    """Reindex scancode licenses and exit"""
+    scancode_license_data(path=path)
+
+
+if __name__ == '__main__':
+    dump_scancode_license_data()

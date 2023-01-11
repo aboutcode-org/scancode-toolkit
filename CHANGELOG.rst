@@ -175,7 +175,7 @@ License detection:
 
   - See https://github.com/nexB/scancode-toolkit/issues/3049
 
-- There is a new ``--get-license-data`` scancode command line option to export
+- There is a new console script ``scancode-license-data`` to export
   license data in JSON, YAML and HTML, with indexes and a static website for use
   in the licensedb web site. This becomes the  API way to getr scancode license
   data.
