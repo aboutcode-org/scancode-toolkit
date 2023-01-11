@@ -3,7 +3,6 @@ short_name: Bison 2.2 exception to GPL 2.0 or later
 name: Bison 2.2 exception to GPL 2.0 or later
 category: Copyleft Limited
 owner: Free Software Foundation (FSF)
-is_builtin: yes
 is_exception: yes
 spdx_license_key: Bison-exception-2.2
 faq_url: http://www.gnu.org/software/bison/manual/bison.html#Conditions
@@ -33,15 +32,3 @@ standard_notice: |
   Public License without this special exception.
   This special exception was added by the Free Software Foundation in version
   2.2 of Bison.
-text: |
-  As a special exception, you may create a larger work that contains part or all
-  of the Bison parser skeleton and distribute that work under terms of your
-  choice, so long as that work isn't itself a parser generator using the skeleton
-  or a modified version thereof as a parser skeleton.  Alternatively, if you
-  modify or redistribute the parser skeleton itself, you may (at your option)
-  remove this special exception, which will cause the skeleton and the resulting
-  Bison output files to be licensed under the GNU General Public License without
-  this special exception.
-
-  This special exception was added by the Free Software Foundation in version 2.2
-  of Bison.

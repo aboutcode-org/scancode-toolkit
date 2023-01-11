@@ -132,7 +132,7 @@ def generate_details(output_path, environment, licenses, test=False):
         base_context_mapping = base_context
     license_details_template = environment.get_template("license_details.html")
     for lic in licenses.values():
-        license_data = lic.to_dict(include_text=True)
+        license_data = lic.to_dict(include_text=False, include_builtin=False)
         html = license_details_template.render(
             **base_context_mapping,
             license=lic,

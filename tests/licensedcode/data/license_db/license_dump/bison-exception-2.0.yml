@@ -3,7 +3,6 @@ short_name: Bison exception to GPL 2.0 or later
 name: Bison exception to GPL 2.0 or later
 category: Copyleft Limited
 owner: Free Software Foundation (FSF)
-is_builtin: yes
 is_exception: yes
 spdx_license_key: LicenseRef-scancode-bison-exception-2.0
 faq_url: http://www.gnu.org/software/bison/manual/bison.html#Conditions
@@ -23,6 +22,3 @@ standard_notice: |
   output file, you may use that output file without restriction. This special
   exception was added by the Free Software Foundation in version 1.24 of
   Bison.
-text: As a special exception, when this file is copied by Bison into a Bison output file, you
-  may use that output file without restriction. This special exception was added by the Free
-  Software Foundation in version 1.24 of Bison.
