@@ -161,20 +161,17 @@ class LicenseScanner(ScanPlugin):
         cche = cache.get_cache()
 
         cle = codebase.get_or_create_current_header()
-        has_additional_licenses = False
 
         if cche.additional_license_directory:
             cle.extra_data['additional_license_directory'] = cche.additional_license_directory
-            has_additional_licenses = True
 
         if cche.additional_license_plugins:
             cle.extra_data['additional_license_plugins'] = cche.additional_license_plugins
-            has_additional_licenses = True
 
-        if TRACE and has_additional_licenses:
+        if TRACE and cche.has_additional_licenses:
             logger_debug(
                 f'add_referenced_filenames_license_matches: additional_licenses',
-                f'has_additional_licenses: {has_additional_licenses}\n',
+                f'has_additional_licenses: {cche.has_additional_licenses}\n',
                 f'additional_license_directory: {cche.additional_license_directory}\n',
                 f'additional_license_plugins : {cche.additional_license_plugins}'
             )

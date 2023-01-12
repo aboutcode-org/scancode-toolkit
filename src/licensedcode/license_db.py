@@ -130,13 +130,16 @@ def generate_details(output_path, environment, licenses, test=False):
 
     ``test`` is to generate a stable output for testing only
     """
+    from licensedcode.cache import get_cache
+    include_builtin = get_cache().has_additional_licenses
+
     if test:
         base_context_mapping = base_context_test
     else:
         base_context_mapping = base_context
     license_details_template = environment.get_template("license_details.html")
     for lic in licenses.values():
-        license_data = lic.to_dict(include_text=False, include_builtin=False)
+        license_data = lic.to_dict(include_text=False, include_builtin=include_builtin)
         html = license_details_template.render(
             **base_context_mapping,
             license=lic,
@@ -206,7 +209,7 @@ def generate(
 
 def scancode_license_data(path):
     """
-    Dump license data from scancode licenses to the directory ``value`` passed
+    Dump license data from scancode licenses to the directory ``path`` passed
     in from command line.
 
     Dumps data in JSON, YAML and HTML formats and also dumps the .LICENSE file
@@ -220,7 +223,7 @@ def scancode_license_data(path):
 @click.command(name='scancode-license-data')
 @click.option(
     '--path',
-    type=click.Path(exists=False, readable=True, file_okay=False, resolve_path=True, path_type=str),
+    type=click.Path(exists=False, writable=True, file_okay=False, resolve_path=True, path_type=str),
     metavar='DIR',
     help='Dump the license data in this directory in the LicenseDB format and exit. '
             'Creates the directory if it does not exist. ',
@@ -233,7 +236,9 @@ def dump_scancode_license_data(
     *args,
     **kwargs,
 ):
-    """Reindex scancode licenses and exit"""
+    """
+    Dump scancode license data in various formats, and the licenseDB static website at `path`.
+    """
     scancode_license_data(path=path)
 
 
