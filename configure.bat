@@ -34,7 +34,7 @@ set "DOCS_REQUIREMENTS=--editable .[docs] --constraint requirements.txt"
 set "VIRTUALENV_DIR=venv"
 
 @rem # Cleanable files and directories to delete with the --clean option
-set "CLEANABLE=build venv"
+set "CLEANABLE=build dist venv .cache .eggs"
 
 @rem # extra  arguments passed to pip
 set "PIP_EXTRA_ARGS= "
