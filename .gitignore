@@ -2,6 +2,7 @@
 *.py[cod]
 
 # virtualenv and other misc bits
+/src/*.egg-info
 *.egg-info
 /dist
 /build
