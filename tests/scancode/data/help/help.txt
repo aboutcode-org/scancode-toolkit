@@ -148,11 +148,6 @@ Options:
                              and including the starting directory. Use 0 for no
                              scan depth limit.
 
-  miscellaneous:
-    --dump-license-data DIR  Dump the license data in this directory in the
-                             LicenseDB format and exit. Creates the directory if
-                             it does not exist.
-
   documentation:
     -h, --help       Show this message and exit.
     -A, --about      Show information about ScanCode and licensing and exit.

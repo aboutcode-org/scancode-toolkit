@@ -182,6 +182,12 @@ class LicenseCache:
             # TODO: handle unable to lock in a nicer way
             raise
 
+    @property
+    def has_additional_licenses(self):
+        cache = get_cache()
+        if cache.additional_license_directory or cache.additional_license_plugins:
+            return True
+
 
 def build_index(
     licenses_db=None,
