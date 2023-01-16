@@ -98,7 +98,6 @@ def generate_indexes(output_path, environment, licenses, test=False):
             "other_spdx_license_keys": lic.other_spdx_license_keys,
             "is_exception": lic.is_exception,
             "is_deprecated": lic.is_deprecated,
-            "text": lic.text,
             "json": f"{key}.json",
             "yaml": f"{key}.yml",
             "html": f"{key}.html",
@@ -140,6 +139,7 @@ def generate_details(output_path, environment, licenses, test=False):
     license_details_template = environment.get_template("license_details.html")
     for lic in licenses.values():
         license_data = lic.to_dict(include_text=False, include_builtin=include_builtin)
+        license_data_with_text = lic.to_dict(include_text=True, include_builtin=include_builtin)
         html = license_details_template.render(
             **base_context_mapping,
             license=lic,
@@ -149,12 +149,12 @@ def generate_details(output_path, environment, licenses, test=False):
         write_file(
             output_path,
             f"{lic.key}.yml",
-            saneyaml.dump(license_data, indent=2)
+            saneyaml.dump(license_data_with_text, indent=2)
         )
         write_file(
             output_path,
             f"{lic.key}.json",
-            json.dumps(license_data, indent=2, sort_keys=False)
+            json.dumps(license_data_with_text, indent=2, sort_keys=False)
         )
         lic.dump(output_path)
 
