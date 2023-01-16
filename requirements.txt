@@ -1,4 +1,4 @@
-attrs==21.4.0
+attrs==22.1
 banal==1.0.6
 beautifulsoup4==4.11.1
 binaryornot==0.4.4
