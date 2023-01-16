@@ -1,27 +1,11 @@
-# SPDX-License-Identifier: CC-BY-4.0 AND Apache-2.0
 #
-# https://github.com/nexB/scancode-licensedb
-# Copyright 2020 nexB Inc. and others.
+# Copyright (c) nexB Inc. and others. All rights reserved.
 # ScanCode is a trademark of nexB Inc.
+# SPDX-License-Identifier: Apache-2.0
+# See http://www.apache.org/licenses/LICENSE-2.0 for the license text.
+# See https://github.com/nexB/scancode-toolkit for support or download.
+# See https://aboutcode.org for more information about nexB OSS projects.
 #
-# ScanCode LicenseDB data is licensed under the Creative Commons Attribution
-# License 4.0 (CC-BY-4.0).
-# Some licenses, such as the GNU GENERAL PUBLIC LICENSE, are subject to other licenses.
-# See the corresponding license text for the specific license conditions.
-#
-# ScanCode LicenseDB software is licensed under the Apache License version 2.0.
-# You may not use this software except in compliance with the License.
-# You may obtain a copy of the License at: http://apache.org/licenses/LICENSE-2.0
-# Unless required by applicable law or agreed to in writing, software distributed
-# under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
-# CONDITIONS OF ANY KIND, either express or implied. See the License for the
-# specific language governing permissions and limitations under the License.
-#
-# ScanCode LicenseDB is generated with ScanCode Toolkit. The database and its contents
-# are provided on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND,
-# either express or implied.
-# No content from ScanCode LicenseDB should be considered or used as legal advice.
-# Consult an attorney for any legal advice.
 
 import os
 import json
@@ -40,7 +24,7 @@ from jinja2 import Environment, FileSystemLoader
 from licensedcode.models import load_licenses
 from licensedcode.models import licenses_data_dir
 from scancode_config import __version__ as scancode_version
-
+from scancode_config import spdx_license_list_version
 
 TEMPLATES_DIR = os.path.join(dirname(__file__), 'templates')
 STATIC_DIR = os.path.join(dirname(__file__), 'static')
@@ -51,18 +35,19 @@ def write_file(path, filename, content):
 
 
 def now():
-    return datetime.now().strftime("%b %d, %Y")
-
+    return datetime.utcnow().strftime('%Y-%m-%dT')
 
 base_context = {
     "scancode_version": scancode_version,
     "now": now(),
+    "spdx_license_list_version": spdx_license_list_version,
 }
 
 
 base_context_test = {
     "scancode_version": "32.0.0b1",
     "now": "Dec 22, 2022",
+    "spdx_license_list_version": "3.19",
 }
 
 

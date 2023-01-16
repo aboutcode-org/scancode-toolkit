@@ -70,17 +70,73 @@ def _create_dir(location):
 ################################################################################
 # INVARIABLE INSTALLATION-SPECIFIC, BUILT-IN LOCATIONS AND FLAGS
 ################################################################################
-# these are guaranteed to be there and are entirely based on and relative to the
+# These are guaranteed to be there and are entirely based on and relative to the
 # current installation location. This is where the source code and static data
 # lives.
 
 
-# in case package is not installed or we do not have setutools/pkg_resources
-# on hand fall back to this version
-__version__ = '32.0.0rc1'
+system_temp_dir = tempfile.gettempdir()
+scancode_src_dir = dirname(__file__)
+scancode_root_dir = dirname(scancode_src_dir)
 
+# USAGE MODE FLAG. If we have a .git dir, we are a git clone and developing
+_SCANCODE_DEV_MODE = os.path.exists(join(scancode_root_dir, '.git'))
+
+# There are multiple cases for versions, depending on where we come from:
+__version__ = ''
+
+# 1. - a git clone: we can use git describe which take consider the closest tag
+#   "git describe --dirty > SCANCODE_VERSION"
+# This is the common case when we develop, including dump the latestlicense db
+if _SCANCODE_DEV_MODE:
+
+    from subprocess import check_output
+    from subprocess import STDOUT
+    from subprocess import CalledProcessError
+
+    # this may fail with exceptions
+    cmd = 'git', 'describe',
+    try:
+        output = check_output(cmd, stderr=STDOUT)
+        __version__ = output.decode('utf-8').strip()
+    except (Exception, CalledProcessError) as e:
+        pass
+
+# 2. - the scancode-tool binary or sources app archives: with a SCANCODE_VERSION
+#   file containing the git tag of the release with "git describe --tags > SCANCODE_VERSION"
+# - a tarball without an updated .VERSION, we cannot tell anything and we will use importlib metadata
+# - a wheel or sdist in which case we use the importlib metadata
+# we use importlib metadata in all these cases
+if not __version__:
+    try:
+        from importlib_metadata import version
+        __version__ = version('scancode-toolkit')
+    except Exception:
+        pass
+
+# 3. - a tarball or zip archive from git with a .VERSION file with var substitution:
+#   .VERSION will contain:
+#      refs=HEAD -> fix-license-dump
+#      commit=5ccc92e69cffb503e9bedc7fce5a1dbb0fd851da
+#      abbrev_commit=5ccc92e69c
+#      committer_date=2023-01-16
+#      git_describe=v31.2.3-328-g5ccc92e69c
+#    otherwise it contains:
+#      refs=$Format:%D$
+#      commit=$Format:%H$
+#      abbrev_commit=$Format:%h$
+#      committer_date=$Format:%cs$
+#      git_describe=$Format:%(describe)$
+# NOTE: we do not handle this for now
+
+# 4. hardcoded This is the default, fallback version in case package is not installed or we
+# do not have a proper version otherwise.
+if not __version__:
+    __version__ = '32.0.0rc1'
+
+#######################
 # used to warn user when the version is out of date
-__release_date__ = datetime.datetime(2023, 1, 3)
+__release_date__ = datetime.datetime(2023, 1, 15)
 
 # See https://github.com/nexB/scancode-toolkit/issues/2653 for more information
 # on the data format version
@@ -88,25 +144,6 @@ __output_format_version__ = '3.0.0'
 
 #
 spdx_license_list_version = '3.19'
-
-try:
-    from pkg_resources import get_distribution, DistributionNotFound
-    try:
-        __version__ = get_distribution('scancode-toolkit').version
-    except DistributionNotFound:
-        pass
-except ImportError:
-    pass
-
-system_temp_dir = tempfile.gettempdir()
-scancode_src_dir = dirname(__file__)
-scancode_root_dir = dirname(scancode_src_dir)
-
-################################################################################
-# USAGE MODE FLAGS
-################################################################################
-
-_SCANCODE_DEV_MODE = os.path.exists(join(scancode_root_dir, '.git'))
 
 ################################################################################
 # USAGE MODE-, INSTALLATION- and IMPORT- and RUN-SPECIFIC DIRECTORIES
@@ -170,7 +207,6 @@ if not __scancode_temp_base_dir:
 _create_dir(__scancode_temp_base_dir)
 _prefix = 'scancode-tk-' + __version__ + '-'
 scancode_temp_dir = tempfile.mkdtemp(prefix=_prefix, dir=__scancode_temp_base_dir)
-
 
 # Used for tests to regenerate fixtures with regen=True
 REGEN_TEST_FIXTURES = os.getenv('SCANCODE_REGEN_TEST_FIXTURES', False)
