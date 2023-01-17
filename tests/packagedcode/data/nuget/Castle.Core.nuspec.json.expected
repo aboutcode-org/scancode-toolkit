@@ -95,106 +95,136 @@
     "file_references": [],
     "extra_data": {},
     "dependencies": [
-       {
-              "purl": "pkg:nuget/NETStandard.Library@1.6.1",
-              "extracted_requirement": "1.6.1",
-              "scope": "dependency",
-              "is_runtime": false,
-              "is_optional": false,
-              "is_resolved": true,
-              "resolved_package": {},
-              "extra_data": {}
-            },
-            {
-              "purl": "pkg:nuget/System.Diagnostics.TraceSource@4.3.0",
-              "extracted_requirement": "4.3.0",
-              "scope": "dependency",
-              "is_runtime": false,
-              "is_optional": false,
-              "is_resolved": true,
-              "resolved_package": {},
-              "extra_data": {}
-            },
-            {
-              "purl": "pkg:nuget/System.Reflection.TypeExtensions@4.3.0",
-              "extracted_requirement": "4.3.0",
-              "scope": "dependency",
-              "is_runtime": false,
-              "is_optional": false,
-              "is_resolved": true,
-              "resolved_package": {},
-              "extra_data": {}
-            },
-            {
-              "purl": "pkg:nuget/System.Xml.XmlDocument@4.3.0",
-              "extracted_requirement": "4.3.0",
-              "scope": "dependency",
-              "is_runtime": false,
-              "is_optional": false,
-              "is_resolved": true,
-              "resolved_package": {},
-              "extra_data": {}
-            },
-            {
-              "purl": "pkg:nuget/System.Dynamic.Runtime@4.3.0",
-              "extracted_requirement": "4.3.0",
-              "scope": "dependency",
-              "is_runtime": false,
-              "is_optional": false,
-              "is_resolved": true,
-              "resolved_package": {},
-              "extra_data": {}
-            },
-            {
-              "purl": "pkg:nuget/System.Reflection@4.3.0",
-              "extracted_requirement": "4.3.0",
-              "scope": "dependency",
-              "is_runtime": false,
-              "is_optional": false,
-              "is_resolved": true,
-              "resolved_package": {},
-              "extra_data": {}
-            },
-            {
-              "purl": "pkg:nuget/System.Reflection.Emit@4.3.0",
-              "extracted_requirement": "4.3.0",
-              "scope": "dependency",
-              "is_runtime": false,
-              "is_optional": false,
-              "is_resolved": true,
-              "resolved_package": {},
-              "extra_data": {}
-            },
-            {
-              "purl": "pkg:nuget/System.Collections.Specialized@4.3.0",
-              "extracted_requirement": "4.3.0",
-              "scope": "dependency",
-              "is_runtime": false,
-              "is_optional": false,
-              "is_resolved": true,
-              "resolved_package": {},
-              "extra_data": {}
-            },
-            {
-              "purl": "pkg:nuget/System.ComponentModel@4.3.0",
-              "extracted_requirement": "4.3.0",
-              "scope": "dependency",
-              "is_runtime": false,
-              "is_optional": false,
-              "is_resolved": true,
-              "resolved_package": {},
-              "extra_data": {}
-            },
-            {
-              "purl": "pkg:nuget/System.ComponentModel.TypeConverter@4.3.0",
-              "extracted_requirement": "4.3.0",
-              "scope": "dependency",
-              "is_runtime": false,
-              "is_optional": false,
-              "is_resolved": true,
-              "resolved_package": {},
-              "extra_data": {}
-            }
+      {
+        "purl": "pkg:nuget/NETStandard.Library",
+        "extracted_requirement": "1.6.1",
+        "scope": "dependency",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {},
+        "extra_data": {
+          "framework": ".NETStandard1.3",
+          "exclude": "Build,Analyzers"
+        }
+      },
+      {
+        "purl": "pkg:nuget/System.Diagnostics.TraceSource",
+        "extracted_requirement": "4.3.0",
+        "scope": "dependency",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {},
+        "extra_data": {
+          "framework": ".NETStandard1.3",
+          "exclude": "Build,Analyzers"
+        }
+      },
+      {
+        "purl": "pkg:nuget/System.Reflection.TypeExtensions",
+        "extracted_requirement": "4.3.0",
+        "scope": "dependency",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {},
+        "extra_data": {
+          "framework": ".NETStandard1.3",
+          "exclude": "Build,Analyzers"
+        }
+      },
+      {
+        "purl": "pkg:nuget/System.Xml.XmlDocument",
+        "extracted_requirement": "4.3.0",
+        "scope": "dependency",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {},
+        "extra_data": {
+          "framework": ".NETStandard1.3",
+          "exclude": "Build,Analyzers"
+        }
+      },
+      {
+        "purl": "pkg:nuget/System.Dynamic.Runtime",
+        "extracted_requirement": "4.3.0",
+        "scope": "dependency",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {},
+        "extra_data": {
+          "framework": ".NETStandard1.3",
+          "exclude": "Build,Analyzers"
+        }
+      },
+      {
+        "purl": "pkg:nuget/System.Reflection",
+        "extracted_requirement": "4.3.0",
+        "scope": "dependency",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {},
+        "extra_data": {
+          "framework": ".NETStandard1.3",
+          "exclude": "Build,Analyzers"
+        }
+      },
+      {
+        "purl": "pkg:nuget/System.Reflection.Emit",
+        "extracted_requirement": "4.3.0",
+        "scope": "dependency",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {},
+        "extra_data": {
+          "framework": ".NETStandard1.3",
+          "exclude": "Build,Analyzers"
+        }
+      },
+      {
+        "purl": "pkg:nuget/System.Collections.Specialized",
+        "extracted_requirement": "4.3.0",
+        "scope": "dependency",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {},
+        "extra_data": {
+          "framework": ".NETStandard1.3",
+          "exclude": "Build,Analyzers"
+        }
+      },
+      {
+        "purl": "pkg:nuget/System.ComponentModel",
+        "extracted_requirement": "4.3.0",
+        "scope": "dependency",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {},
+        "extra_data": {
+          "framework": ".NETStandard1.3",
+          "exclude": "Build,Analyzers"
+        }
+      },
+      {
+        "purl": "pkg:nuget/System.ComponentModel.TypeConverter",
+        "extracted_requirement": "4.3.0",
+        "scope": "dependency",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {},
+        "extra_data": {
+          "framework": ".NETStandard1.3",
+          "exclude": "Build,Analyzers"
+        }
+      }
     ],
     "repository_homepage_url": "https://www.nuget.org/packages/Castle.Core/4.2.1",
     "repository_download_url": "https://www.nuget.org/api/v2/package/Castle.Core/4.2.1",

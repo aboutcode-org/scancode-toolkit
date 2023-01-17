@@ -95,16 +95,16 @@
     "file_references": [],
     "extra_data": {},
     "dependencies": [
-       {
-              "purl": "pkg:nuget/jQuery@1.6.4",
-              "extracted_requirement": "1.6.4",
-              "scope": "dependency",
-              "is_runtime": false,
-              "is_optional": false,
-              "is_resolved": true,
-              "resolved_package": {},
-              "extra_data": {}
-        }
+      {
+        "purl": "pkg:nuget/jQuery",
+        "extracted_requirement": "1.6.4",
+        "scope": "dependency",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {},
+        "extra_data": {}
+      }
     ],
     "repository_homepage_url": "https://www.nuget.org/packages/jQuery.UI.Combined/1.11.4",
     "repository_download_url": "https://www.nuget.org/api/v2/package/jQuery.UI.Combined/1.11.4",
