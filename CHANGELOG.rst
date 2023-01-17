@@ -187,6 +187,17 @@ License detection:
   and exposed with the "percentage_of_license_text" attribute.
 
 
+v31.2.4 - 2023-01-09
+----------------------------------
+
+This is a minor bugfix release.
+
+There is a fix for an installation issue with the new "attrs" version 22.x
+when scancode-toolkit is installed using pip.
+This is resolved by vendoring attrs for use in licensedcode" to work around
+https://github.com/nexB/scancode-toolkit/issues/3179
+
+
 v31.2.3 - 2022-12-24
 ----------------------------------
 

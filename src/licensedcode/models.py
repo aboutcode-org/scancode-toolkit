@@ -21,7 +21,7 @@ from os.path import exists
 from os.path import join
 from pathlib import Path
 
-import attr
+from licensedcode._vendor import attr
 from license_expression import ExpressionError
 from license_expression import Licensing
 
@@ -2503,6 +2503,34 @@ class UnDetectedRule(SynthethicRule):
         self.is_small = False
         self.relevance = 100
         self.has_stored_relevance = True
+
+
+@attr.s(slots=True, repr=False)
+class DebianUnknownRule(Rule):
+    """
+    A specialized rule object that is used for the special case of unknown
+    matches in debian copyright files.
+
+    Since there can be a lot of unknown licenses in a debian copyright file, the
+    rule and the LicenseMatch objects for these are built at matching time.
+    """
+
+    def __attrs_post_init__(self, *args, **kwargs):
+        self.identifier = 'debian-' + self.license_expression
+        expression = self.licensing.parse(self.license_expression)
+        self.license_expression = expression.render()
+        self.license_expression_object = expression
+        self.is_license_tag = True
+        self.is_small = False
+        self.relevance = 100
+        self.has_stored_relevance = True
+
+    def load(self):
+        raise NotImplementedError
+
+    def dump(self):
+        raise NotImplementedError
+
 
 
 def _print_rule_stats():

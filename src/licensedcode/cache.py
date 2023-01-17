@@ -11,9 +11,6 @@ import os
 import pickle
 from shutil import rmtree
 
-import attr
-
-from commoncode.datautils import attribute
 from commoncode.fileutils import create_dir
 
 from scancode_config import licensedcode_cache_dir
@@ -39,18 +36,34 @@ LICENSE_LOCKFILE_NAME = 'scancode_license_index_lockfile'
 LICENSE_CHECKSUM_FILE = 'scancode_license_index_tree_checksums'
 
 
-@attr.s(slots=True)
 class LicenseCache:
     """
     Represent cachable/pickable LicenseIndex and index-related objects.
     """
-    db = attribute(help='mapping of License objects by key')
-    index = attribute(help='LicenseIndex object')
-    licensing = attribute(help='Licensing object')
-    spdx_symbols = attribute(help='mapping of LicenseSymbol objects by SPDX key')
-    unknown_spdx_symbol = attribute(help='LicenseSymbol object')
-    additional_license_directory = attribute(help='Path to an additional license directory used in the license detection')
-    additional_license_plugins = attribute(help='Path to additional license plugins used in the license detection')
+
+    def __init__(
+        self,
+        db=None,
+        index=None,
+        licensing=None,
+        spdx_symbols=None,
+        unknown_spdx_symbol=None,
+        additional_license_directory=None,
+        additional_license_plugins=None,
+    ):
+        # mapping of License objects by key
+        self.db = db
+        # LicenseIndex object
+        self.index = index
+        # Licensing object
+        self.licensing = licensing
+        # mapping of LicenseSymbol objects by SPDX key
+        self.spdx_symbols = spdx_symbols
+        # LicenseSymbol object
+        self.unknown_spdx_symbol = unknown_spdx_symbol
+        # Additional licenses from directory and plugins
+        self.additional_license_directory = additional_license_directory
+        self.additional_license_plugins = additional_license_plugins
 
     @staticmethod
     def load_or_build(
