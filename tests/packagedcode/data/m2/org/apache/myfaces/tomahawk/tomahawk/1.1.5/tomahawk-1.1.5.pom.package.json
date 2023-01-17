@@ -141,7 +141,7 @@
       "scope": "provided",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": null,
+      "is_resolved": false,
       "resolved_package": {},
       "extra_data": {}
     },
@@ -151,7 +151,7 @@
       "scope": "provided",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": null,
+      "is_resolved": false,
       "resolved_package": {},
       "extra_data": {}
     },
@@ -191,7 +191,7 @@
       "scope": "test",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": null,
+      "is_resolved": false,
       "resolved_package": {},
       "extra_data": {}
     },
