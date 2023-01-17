@@ -30,8 +30,9 @@
 
 import datetime
 import json
+import os
 import logging
-from os import path
+import sys
 
 from packvers import version as packaging_version
 import requests
@@ -54,9 +55,22 @@ This code is based on a pip module and heavilty modified for use here.
 
 SELFCHECK_DATE_FMT = "%Y-%m-%dT%H:%M:%SZ"
 
+TRACE = os.environ.get('SCANCODE_DEBUG_OUTDATED', False)
+
+def logger_debug(*args):
+    pass
+
+
 logger = logging.getLogger(__name__)
-# logging.basicConfig(stream=sys.stdout)
-# logger.setLevel(logging.WARNING)
+
+if TRACE:
+
+    if TRACE:
+        logging.basicConfig(stream=sys.stdout)
+        logger.setLevel(logging.DEBUG)
+
+        def logger_debug(*args):
+            return logger.debug(' '.join(isinstance(a, str) and a or repr(a) for a in args))
 
 
 def total_seconds(td):
@@ -70,7 +84,7 @@ def total_seconds(td):
 class VersionCheckState:
 
     def __init__(self):
-        self.statefile_path = path.join(
+        self.statefile_path = os.path.join(
             scancode_cache_dir, 'scancode-version-check.json')
         self.lockfile_path = self.statefile_path + '.lockfile'
         # Load the existing state
@@ -154,6 +168,11 @@ def fetch_newer_version(
     State is stored in the scancode_cache_dir.
     If `force` is True, redo a PyPI remote check.
     """
+    # If installed version is from git describe, only use the first part of it
+    # i.e. `v31.2.1-343-gd9d2e19e32` -> `v31.2.1`
+    if "-" in installed_version:
+        installed_version = installed_version.split("-")[0]
+
     try:
         installed_version = packaging_version.parse(installed_version)
         state = VersionCheckState()
@@ -184,6 +203,10 @@ def fetch_newer_version(
                 raise
 
         latest_version = packaging_version.parse(latest_version)
+
+        if TRACE:
+            logger_debug(f"installed_version: {installed_version}, latest version: {latest_version}")
+            logger_debug(f"installed_version < latest_version: {installed_version < latest_version}")
 
         # Determine if our latest_version is older
         if (installed_version < latest_version
