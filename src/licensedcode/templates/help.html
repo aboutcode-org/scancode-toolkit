@@ -7,193 +7,344 @@
     <ul class="menu" style="margin-top: 20px; margin-bottom: 30px;">
       <li class="divider" data-content="TABLE OF CONTENTS"></li>
       <li class="menu-item">
-        <a href="#field-definitions">Field Definitions</a>
-        <a href="#license-categories">License Categories</a>
+        <a href="#overview">Overview</a>
+        <a href="#browse">Web access</a>
+        <a href="#api">JSON API usage</a>
+        <a href="#git">Git repositories</a>
+        <a href="#support">Support</a>
+        <a href="#license">License</a>
+        <a href="#field-definitions">License Field Definitions</a>
+        <a href="#license-categories">License Categories Definition</a>
       </li>
     </ul>
 
-    <h4 id="field-definitions">
-      Field Definitions <a class="anchor" href="#field-definitions" aria-hidden="true">#</a>
-    </h4>
-    <dl>
-      <dt class="chip bg-secondary">key</dt>
-      <dd>
-        The unique identifier for the license in the ScanCode LicenseDB as assigned by scancode-toolkit.
-        Note that this identifier is permanent and never changes and never goes away once published: no license key is ever deleted.
-        Instead a license can be marked as deprecated.
-      </dd>
+    <section id="overview">
+        <h4 id="overview">
+          LicenseDB overview <a class="anchor" href="#overview" aria-hidden="true">#</a>
+        </h4>
+        <p>LicenseDB is likely the largest collection of software licenses available on
+        earth and may be beyond.
+        </p>
 
-      <dt class="chip bg-secondary">short_name</dt>
-      <dd>A short descriptive name (title) for the license in the ScanCode LicenseDB as assigned by scancode-toolkit.</dd>
+        <p>LicenseDB is a free and open database of mostly all the software licenses, in
+        particular all the open source software licenses, with over 2000 curated licenses
+        texts and their metadata.
+        </p>
 
-      <dt class="chip bg-secondary">name</dt>
-      <dd>A long name for the license in the ScanCode LicenseDB as assigned by scancode-toolkit.</dd>
+        <p>LicenseDB is built from the ScanCode Toolkit license dataset. ScanCode Toolkit
+        is a leading open source code scanner and license detection engine.</p>
 
-      <dt class="chip bg-secondary">is_deprecated</dt>
-      <dd>
-        When this is “yes”, the license is no longer used. For deprecated licenses, the notes may contain commentaries
-        and the license key that this license may be replaced by when relevant.
-      </dd>
+        <p>LicenseDB is an essential reference license resource for license compliance and
+        SBOMs. LicenseDB includes all the SPDX and OSI licenses together with an extended
+        curated collection of other licenses and license metadata. These licenses are
+        carefully reviewed and curated and continusouly updated by an open community of
+        contributors.</p>
 
-      <dt class="chip bg-secondary">spdx_license_key</dt>
-      <dd>
-        The SPDX Short Identifier for the license if it exists in the SPDX license list at
-        <a href="https://spdx.org/licenses/" target="_blank">https://spdx.org/licenses/</a>.
-        Otherwise this is an SPDX license reference in the form of <code>LicenseRef-scancode-&lt;license key&gt;</code>.
-      </dd>
-
-      <dt class="chip bg-secondary">other_spdx_license_keys</dt>
-      <dd>Alternative (or older, deprecated or obsolete) SPDX Short Identifiers or LicenseRef for the license.</dd>
-
-      <dt class="chip bg-secondary">text_urls</dt>
-      <dd>URLs to the standard text of the license.</dd>
-
-      <dt class="chip bg-secondary">notes</dt>
-      <dd>Notes and comments about the license.</dd>
-
-      <dt class="chip bg-secondary">category</dt>
-      <dd>
-        A license category code, assigned by scancode-toolkit, that provides a major grouping for licenses,
-        generally describing the relationship between the licensor and the licensee. These license categories are not
-        legally precise, and are only intended to support Software Composition Analysis and usage policy implementations.
-      </dd>
-
-      <dt class="chip bg-secondary">owner</dt>
-      <dd>
-        An owner is an entity that is the original author or custodian of a software license, and which may be responsible
-        for the text of the license. This is mandatory and should be set to "Unspecified" if it cannot be determined.
-      </dd>
-
-      <dt class="chip bg-secondary">homepage_url</dt>
-      <dd>The homepage URL where the license is described.</dd>
-
-      <dt class="chip bg-secondary">other_urls</dt>
-      <dd>
-        Other URLs that identify or are related to this license, such as URLs to this license in different open-source projects.
-        Obsolete links may be kept here, as they may be useful for historical analysis purposes.
-      </dd>
-
-      <dt class="chip bg-secondary">osi_license_key</dt>
-      <dd>The identifier assigned by the OSI to a license for OSI-approved licenses.</dd>
-
-      <dt class="chip bg-secondary">osi_url</dt>
-      <dd>A URL on the OSI website <a href="http://opensource.org" target="_blank">http://opensource.org</a> for OSI-approved licenses.</dd>
-
-      <dt class="chip bg-secondary">faq_url</dt>
-      <dd>A URL that provides answers to frequently asked questions about the license.</dd>
-
-      <dt class="chip bg-secondary">is_exception</dt>
-      <dd>
-        When this is "yes", indicates that this license is actually an exception applied to another license in order to
-        modify specific conditions of that other license.
-      </dd>
-
-      <dt class="chip bg-secondary">standard_notice</dt>
-      <dd>The standard text to provide in source or documentation that identifies the license or exception that applies to the software.</dd>
-    </dl>
-
-    <h5>These fields are used only to support certain technical aspects of code scanning:</h5>
-    <dl>
-      <dt class="chip bg-secondary">ignorable_urls</dt>
-      <dd>URLs found in the license text but that can be ignored when scanning for URLs.</dd>
-
-      <dt class="chip bg-secondary">ignorable_emails</dt>
-      <dd>Email addresses found in the license text but that can be ignored when scanning for emails.</dd>
-
-      <dt class="chip bg-secondary">ignorable_copyrights</dt>
-      <dd>Copyright statements found in the license text but that can be ignored when scanning for copyright.</dd>
-
-      <dt class="chip bg-secondary">ignorable_holders</dt>
-      <dd>Copyright holders found in the license text but that can be ignored when scanning for copyright holders.</dd>
-
-      <dt class="chip bg-secondary">ignorable_authors</dt>
-      <dd>Author names found in the license text but that can be ignored when scanning for authors.</dd>
-
-      <dt class="chip bg-secondary">minimum_coverage</dt>
-      <dd>Minimum percentage of the license text words that need to be matched to consider a license detection as a valid match.</dd>
-    </dl>
+        <p>LicenseDB is available as a web site, an JSON or YAML API and a git repository
+        making it easy to reuse and integrate in tools that need a database of reference
+        software licenses.</p>
+    </section>
 
     <hr>
-    <h4 id="license-categories">
-      License Categories <a class="anchor" href="#license-categories" aria-hidden="true">#</a>
-    </h4>
-    <dl>
-      <dt class="chip bg-secondary">Commercial</dt>
-      <dd>
-        A direct commercial license between a supplier and a customer.
-        Further fact-finding by a Product Team will be necessary to determine how the license conditions apply to use of the software.
-        This is a Proprietary license that is not Open Source.
-      </dd>
+    <section id="browse">
+        <h4 id="browse">
+          LicenseDB web <a class="anchor" href="#browse" aria-hidden="true">#</a>
+        </h4>
 
-      <dt class="chip bg-secondary">Copyleft</dt>
-      <dd>
-        A license that offers irrevocable permission to the public to copy and redistribute the work in the same or modified form,
-        but with the conditions that all such redistributions make the work available in a form that facilitates further modification
-        and uses the same license terms. A Copyleft license can require code interacting with Copyleft-licensed code to be licensed under
-        the same license or a compatible license. This is an Open Source license. This category may be described as “Strong Copyleft”.
-      </dd>
+        <p>The web site is published at: <a class="reference external" 
+        href="https://scancode-licensedb.aboutcode.org/">https://scancode-licensedb.aboutcode.org/</a>.
+        You can search the licenses by name, key and other attributes.</p>
+    </section>
 
-      <dt class="chip bg-secondary">Copyleft Limited</dt>
-      <dd>
-        A license that requires you to redistribute source code, including your changes, and to provide attribution for the software authors.
-        Your obligation to redistribute source code, including proprietary code linked with code under this license,
-        is limited according to license-specific rules. This  is an Open Source license. This category may be described as “Weak Copyleft”.
-      </dd>
 
-      <dt class="chip bg-secondary">Free Restricted</dt>
-      <dd>
-        A Permissive-style license that contains restrictions regarding the usage of the software (e.g. where the software is not
-        intended for use in nuclear power plants) or the redistribution of the software (e.g. where commercial redistribution of
-        the software is not allowed or allowed only with express permission). The Free Software Foundation (FSF) says that a license
-        with this kind of restriction is not really open source, although the OSI point of view is not that strict.
-        This is a Proprietary license that is not Open Source.
-      </dd>
+    <hr>
+    <section id="api">
+        <h4 id="api">
+          LicenseDB API <a class="anchor" href="#api" aria-hidden="true">#</a>
+        </h4>
 
-      <dt class="chip bg-secondary">Patent License</dt>
-      <dd>
-        A license that applies to patents rather than specific software. May be used in conjunction with other software license(s) that
-        apply to a software component.
-      </dd>
+        <p>The API index is available at these endpoints:</p>
+        <ul class="simple">
+            <li>as JSON:
+                <a class="reference external" 
+                    href="https://scancode-licensedb.aboutcode.org/index.json">
+                    https://scancode-licensedb.aboutcode.org/index.json
+                </a>
+            </li>
+            <li>as YAML:
+                <a class="reference external" 
+                    href="https://scancode-licensedb.aboutcode.org/index.yml">
+                    https://scancode-licensedb.aboutcode.org/index.yml
+                </a>
+            </li>
+        </ul>
+        <p>The index contains a list of the license keys with key metadata and links to the
+        license details and texts using this license key as an identifier:</p>
+        <ul class="simple">
+        <li>
+            as JSON: https://scancode-licensedb.aboutcode.org/&lt;license key&gt;.json
+            for instance: <a class="reference external" 
+            href="https://scancode-licensedb.aboutcode.org/gpl-2.0.json">https://scancode-licensedb.aboutcode.org/gpl-2.0.json</a><
+        /li>
+        <li>
+        as YAML: https://scancode-licensedb.aboutcode.org/&lt;license key&gt;.yml
+            for instance: <a class="reference external" href="https://scancode-licensedb.aboutcode.org/gpl-2.0.yml">
+            https://scancode-licensedb.aboutcode.org/gpl-2.0.yml</a>
+        </li>
+        <li>
+            as text for the full license text: https://scancode-licensedb.aboutcode.org/&lt;license key&gt;.LICENSE
+            for instance: <a class="reference external" href="https://scancode-licensedb.aboutcode.org/gpl-2.0.LICENSE">
+            https://scancode-licensedb.aboutcode.org/gpl-2.0.LICENSE</a>
+        </li>
+        </ul>
+    </section>
 
-      <dt class="chip bg-secondary">Permissive</dt>
-      <dd>
-        A license that requires you to provide attribution for the software authors and may include other conditions.
-        This is an Open Source license.
-      </dd>
+    <hr>
+    <section id="git">
+        <h4 id="git">
+          LicenseDB Git repositories <a class="anchor" href="#git" aria-hidden="true">#</a>
+        </h4>
+        <p>This git repository contains the full history of the generated HTML and JSON API documents <a class="reference external" href="https://github.com/nexB/scancode-licensedb">https://github.com/nexB/scancode-licensedb</a></p>
+        <p>This  git repository contains the original and editable source files: <a class="reference external" href="https://github.com/nexB/scancode-toolkit">https://github.com/nexB/scancode-toolkit</a></p>
+        <ul class="simple">
+            <li>for the text of a license and for the metadata of a license as YAML frontmatter, for instance at <a class="reference external" href="https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-2.0.LICENSE">https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-2.0.LICENSE</a></li>
+        </ul>
+    </section>
 
-      <dt class="chip bg-secondary">Proprietary Free</dt>
-      <dd>
-        A license that does not require a supplier-customer contract, but has specific terms and conditions which a Product Team
-        is obligated to follow. These terms and conditions may be documented in the code and/or from a webpage where you must accept
-        the license (i.e. click-through). This is a Proprietary license that is not Open Source.
-      </dd>
+    <hr>
+    <section id="support">
+        <h4 id="support">
+          Support <a class="anchor" href="#support" aria-hidden="true">#</a>
+        </h4>
+        <ul class="simple">
+            <li>Chat with us at: <a class="reference external" href="https://gitter.im/aboutcode-org/discuss">https://gitter.im/aboutcode-org/discuss</a></li>
+            <li>Report issues or ask questions at: <a class="reference external" href="https://github.com/nexB/scancode-toolkit/issues">https://github.com/nexB/scancode-toolkit/issues</a> and
+            <a class="reference external" href="https://github.com/nexB/scancode-licensedb/issues">https://github.com/nexB/scancode-licensedb/issues</a></li>
+            <li>Visit <a class="reference external" href="https://www.aboutcode.org/">https://www.aboutcode.org/</a> for more open source and open data projects.</li>
+        </ul>
+    </section>
 
-      <dt class="chip bg-secondary">Public Domain</dt>
-      <dd>
-        “Public Domain” as a license category means software that is not restricted by copyright.
-        This is most often applicable to a software component because the person entitled to control the copyright has disclaimed that
-        right in a notice (“dedication”) that appears similar to a license. It is possible for software to be in the public domain
-        because the copyright has expired, but this is rarely relevant for software due to the long duration of copyrights in most jurisdictions.
-        The rules for disclaiming copyright and copyright expiration dates vary widely by jurisdiction.
-        A public domain dedication may apply to software code examples on a website, published public domain specifications or
-        another type of publication. Public Domain is typically treated as similar to an Open Source license even though it is not an
-        Open Source license.
-      </dd>
+    <hr>
+    <section id="license">
+        <h4 id="license">
+          LicenseDB's own license <a class="anchor" href="#license" aria-hidden="true">#</a>
+        </h4>
+        <p>SPDX-License-Identifier: CC-BY-4.0 AND Apache-2.0</p>
+        <p><a class="reference external" href="https://github.com/nexB/scancode-licensedb">https://github.com/nexB/scancode-licensedb</a>
+        Copyright (c) nexB Inc. and others.
+        ScanCode is a trademark of nexB Inc.</p>
+        <p>ScanCode LicenseDB data is licensed under the Creative Commons Attribution
+        License 4.0 (CC-BY-4.0).
+        Some licenses, such as the GNU GENERAL PUBLIC LICENSE, are subject to other licenses.
+        See the corresponding license text for the specific license conditions.</p>
+        <p>ScanCode LicenseDB software is licensed under the Apache License version 2.0.
+        You may not use this software except in compliance with the License.
+        You may obtain a copy of the License at: <a class="reference external" href="http://apache.org/licenses/LICENSE-2.0">http://apache.org/licenses/LICENSE-2.0</a>
+        Unless required by applicable law or agreed to in writing, software distributed
+        under the License is distributed on an &quot;AS IS&quot; BASIS, WITHOUT WARRANTIES OR
+        CONDITIONS OF ANY KIND, either express or implied. See the License for the
+        specific language governing permissions and limitations under the License.</p>
+        <p>ScanCode LicenseDB is generated with ScanCode Toolkit. The database and its contents
+        are provided on an &quot;AS IS&quot; BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND,
+        either express or implied.
+        No content from ScanCode LicenseDB should be considered or used as legal advice.
+        Consult an attorney for any legal advice.</p>
+        <p>Visit <a class="reference external" href="https://github.com/nexB/scancode-licensedb">https://github.com/nexB/scancode-licensedb</a> for support.</p>
+        <p>ScanCode Toolkit is a free Software Composition Analysis tool from nexB Inc. and
+        others.
+        Visit <a class="reference external" href="https://github.com/nexB/scancode-toolkit">https://github.com/nexB/scancode-toolkit</a> for support and download.</p>
+    </section>
 
-      <dt class="chip bg-secondary">Source-available</dt>
-      <dd>
-        A license where the software is released through a source code distribution model that includes conditions where the source
-        can be viewed, and in some cases modified, but without meeting the criteria to be called Open Source.
-        The most common restriction is for “field of use”. This is a Proprietary license that is not Open Source.
-      </dd>
 
-      <dt class="chip bg-secondary">Unstated License</dt>
-      <dd>
-        “Unstated License” as a license category means third-party software that has a copyright notice, but no stated license.
-        Common examples include code snippets from publications and websites. The absence of a license poses a risk that the copyright
-        owner may assert license conditions at some future time. A Product Team may need to contact the copyright owner to determine the
-        license conditions, if any.
-      </dd>
-    </dl>
+    <hr>
+    <section id="field-definitions">
+        <h4 id="field-definitions">
+          Field Definitions <a class="anchor" href="#field-definitions" aria-hidden="true">#</a>
+        </h4>
+        <dl>
+          <dt class="chip bg-secondary">key</dt>
+          <dd>
+            The unique identifier for the license in the ScanCode LicenseDB as assigned by scancode-toolkit.
+            Note that this identifier is permanent and never changes and never goes away once published: no license key is ever deleted.
+            Instead a license can be marked as deprecated.
+          </dd>
+    
+          <dt class="chip bg-secondary">short_name</dt>
+          <dd>A short descriptive name (title) for the license in the ScanCode LicenseDB as assigned by scancode-toolkit.</dd>
+    
+          <dt class="chip bg-secondary">name</dt>
+          <dd>A long name for the license in the ScanCode LicenseDB as assigned by scancode-toolkit.</dd>
+    
+          <dt class="chip bg-secondary">is_deprecated</dt>
+          <dd>
+            When this is “yes”, the license is no longer used. For deprecated licenses, the notes may contain commentaries
+            and the license key that this license may be replaced by when relevant.
+          </dd>
+    
+          <dt class="chip bg-secondary">spdx_license_key</dt>
+          <dd>
+            The SPDX Short Identifier for the license if it exists in the SPDX license list at
+            <a href="https://spdx.org/licenses/" target="_blank">https://spdx.org/licenses/</a>.
+            Otherwise this is an SPDX license reference in the form of <code>LicenseRef-scancode-&lt;license key&gt;</code>.
+          </dd>
+    
+          <dt class="chip bg-secondary">other_spdx_license_keys</dt>
+          <dd>Alternative (or older, deprecated or obsolete) SPDX Short Identifiers or LicenseRef for the license.</dd>
+    
+          <dt class="chip bg-secondary">text_urls</dt>
+          <dd>URLs to the standard text of the license.</dd>
+    
+          <dt class="chip bg-secondary">notes</dt>
+          <dd>Notes and comments about the license.</dd>
+    
+          <dt class="chip bg-secondary">category</dt>
+          <dd>
+            A license category code, assigned by scancode-toolkit, that provides a major grouping for licenses,
+            generally describing the relationship between the licensor and the licensee. These license categories are not
+            legally precise, and are only intended to support Software Composition Analysis and usage policy implementations.
+          </dd>
+    
+          <dt class="chip bg-secondary">owner</dt>
+          <dd>
+            An owner is an entity that is the original author or custodian of a software license, and which may be responsible
+            for the text of the license. This is mandatory and should be set to "Unspecified" if it cannot be determined.
+          </dd>
+    
+          <dt class="chip bg-secondary">homepage_url</dt>
+          <dd>The homepage URL where the license is described.</dd>
+    
+          <dt class="chip bg-secondary">other_urls</dt>
+          <dd>
+            Other URLs that identify or are related to this license, such as URLs to this license in different open-source projects.
+            Obsolete links may be kept here, as they may be useful for historical analysis purposes.
+          </dd>
+    
+          <dt class="chip bg-secondary">osi_license_key</dt>
+          <dd>The identifier assigned by the OSI to a license for OSI-approved licenses.</dd>
+    
+          <dt class="chip bg-secondary">osi_url</dt>
+          <dd>A URL on the OSI website <a href="http://opensource.org" target="_blank">http://opensource.org</a> for OSI-approved licenses.</dd>
+    
+          <dt class="chip bg-secondary">faq_url</dt>
+          <dd>A URL that provides answers to frequently asked questions about the license.</dd>
+    
+          <dt class="chip bg-secondary">is_exception</dt>
+          <dd>
+            When this is "yes", indicates that this license is actually an exception applied to another license in order to
+            modify specific conditions of that other license.
+          </dd>
+    
+          <dt class="chip bg-secondary">standard_notice</dt>
+          <dd>The standard text to provide in source or documentation that identifies the license or exception that applies to the software.</dd>
+        </dl>
+    
+        <h5>These fields are used only to support certain technical aspects of code scanning:</h5>
+        <dl>
+          <dt class="chip bg-secondary">ignorable_urls</dt>
+          <dd>URLs found in the license text but that can be ignored when scanning for URLs.</dd>
+    
+          <dt class="chip bg-secondary">ignorable_emails</dt>
+          <dd>Email addresses found in the license text but that can be ignored when scanning for emails.</dd>
+    
+          <dt class="chip bg-secondary">ignorable_copyrights</dt>
+          <dd>Copyright statements found in the license text but that can be ignored when scanning for copyright.</dd>
+    
+          <dt class="chip bg-secondary">ignorable_holders</dt>
+          <dd>Copyright holders found in the license text but that can be ignored when scanning for copyright holders.</dd>
+    
+          <dt class="chip bg-secondary">ignorable_authors</dt>
+          <dd>Author names found in the license text but that can be ignored when scanning for authors.</dd>
+    
+          <dt class="chip bg-secondary">minimum_coverage</dt>
+          <dd>Minimum percentage of the license text words that need to be matched to consider a license detection as a valid match.</dd>
+        </dl>
+    </section>
+
+    <hr>
+    <section id="license-categories">
+        <h4 id="license-categories">
+          License Categories <a class="anchor" href="#license-categories" aria-hidden="true">#</a>
+        </h4>
+        <dl>
+          <dt class="chip bg-secondary">CLA</dt>
+          <dd>
+            A Contributor License Agreement (CLA) describes and defines the contribution acceptance rules for the ongoing
+            development and enhancement of a software project. The CLA may specify how the resulting software contribution
+            itself will be licensed.
+          </dd>
+          <dt class="chip bg-secondary">Commercial</dt>
+          <dd>
+            Third-party proprietary software offered under a direct commercial license between supplier and customer.
+            Further fact-finding by Product Teams will be necessary to determine the code's license status and function,
+            if any.
+          </dd>
+    
+          <dt class="chip bg-secondary">Copyleft</dt>
+          <dd>
+            Open source software with a "copyleft" license that offers irrevocable permission to the public to copy and
+            redistribute the work in the same or modified form, but with the conditions that all such redistributions
+            make the work available in a form that facilitates further modification and use the same license terms.
+            A copyleft license can require code interacting with copyleft-licensed code to be licensed the same way.
+          </dd>
+    
+          <dt class="chip bg-secondary">Copyleft Limited</dt>
+          <dd>
+            A license that requires you to redistribute source code, including your changes, and also to provide
+            attribution for the software authors. Your obligation to redistribute source code, including proprietary
+            code linked with code under this license, is limited according to license-specific rules.
+          </dd>
+    
+          <dt class="chip bg-secondary">Free Restricted</dt>
+          <dd>
+            A Permissive-style license, that contains restrictions regarding the usage of the software
+            (for example, where the software is not intended for use in nuclear power plants) or the redistribution
+            of the software (for example, where commercial redistribution of the software is not allowed without
+            express permission). The Free Software Foundation (FSF) says that a license with this kind of restriction
+            is not really open source, although the OSI point of view is not that strict.
+          </dd>
+    
+          <dt class="chip bg-secondary">Patent License</dt>
+          <dd>
+            A license that applies to patents rather than specific software. May be used in conjunction with other
+            software license(s) that apply to a software component. 
+          </dd>
+    
+          <dt class="chip bg-secondary">Permissive</dt>
+          <dd>
+            Open Source software that is made available under "non-copyleft" licenses. These generally require
+            attribution of the included open source and may include other obligations.
+          </dd>
+    
+          <dt class="chip bg-secondary">Proprietary Free</dt>
+          <dd>
+            Proprietary Free software that may not require a commercial license but may have specific terms and
+            conditions which Product Teams are obligated to follow. Some of these terms and conditions are provided
+            with or in the code or in clickable downloaded licenses. Examples are the Sun Binary Code License Agreement
+            or a freely offered BSP. 
+          </dd>
+    
+          <dt class="chip bg-secondary">Public Domain</dt>
+          <dd>
+            Open source software that is made available without explicit obligations, but which has a license notice
+            that must be kept with the code per organization policy. The match may be to software, code examples
+            on a website, published public domain specifications or another type of publication.
+          </dd>
+    
+          <dt class="chip bg-secondary">Source-available</dt>
+          <dd>
+            Source-available software is software released through a source code distribution model that includes
+            arrangements where the source can be viewed, and in some cases modified, but without necessarily meeting
+            the criteria to be called open-source.
+          </dd>
+    
+          <dt class="chip bg-secondary">Unstated License</dt>
+          <dd>
+            Third-party software that has a copyright notice, but no stated license. Common examples include code snippets
+            from publications and websites (such as those from O'Reilly Media). The absence of a license poses a risk
+            that the copyright owner may assert license obligations at some future time. Product Teams may need to
+            contact the copyright owner to determine the license obligations, if any.
+          </dd>
+        </dl>
+    </section>
   </div>
 {% endblock %}
