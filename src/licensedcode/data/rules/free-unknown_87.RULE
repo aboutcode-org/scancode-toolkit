@@ -1,8 +1,8 @@
 ---
 license_expression: free-unknown
+is_license_intro: yes
 relevance: 90
 notes: tag as documented in the Module-Build pod
-is_license_intro: yes
 ---
 
 license unrestricted

@@ -7,7 +7,6 @@
 # See https://aboutcode.org for more information about nexB OSS projects.
 #
 
-import json
 import os
 from unittest import TestCase as TestCaseClass
 
@@ -20,18 +19,20 @@ from licensedcode.models import InvalidRule
 from licensedcode.models import Rule
 from licensedcode.models import rules_data_dir
 from licensedcode.spans import Span
+from licensedcode_test_utils import create_rule_from_text_and_expression
+from licensedcode_test_utils import create_rule_from_text_file_and_expression
 from scancode.cli_test_utils import check_json
 
 TEST_DATA_DIR = os.path.join(os.path.dirname(__file__), 'data')
 
 
 
-def as_sorted_mapping_seq(licenses):
+def as_sorted_mapping_seq(licenses, include_text=False):
     """
     Given a `licenses` iterator of to_dict()'able objects, return a sorted list
     of these.
     """
-    return sorted((l.to_dict() for l in licenses), key=lambda x: tuple(x.items()))
+    return sorted((l.to_dict(include_text=include_text) for l in licenses), key=lambda x: tuple(x.items()))
 
 
 class TestLicense(FileBasedTesting):
@@ -55,6 +56,19 @@ class TestLicense(FileBasedTesting):
         results = as_sorted_mapping_seq(lics.values())
         expected = self.get_test_loc('models/licenses.dump.expected.json')
         check_json(expected, results)
+
+    def test_dump_license_file(self):
+        test_dir = self.get_test_loc('models/licenses', copy=True)
+        test_dir_dump = self.get_test_loc('models/license_file_dump')
+        lics = models.load_licenses(licenses_data_dir=test_dir, with_deprecated=True)
+        lic_example = lics["apache-2.0"]
+        lic_example.dump(licenses_data_dir=test_dir_dump)
+        lics_from_dump = models.load_licenses(licenses_data_dir=test_dir_dump, with_deprecated=True)
+        lic_example_from_dump = lics_from_dump["apache-2.0"]
+        # Note: one license is obsolete and not loaded. Other are various exception/version cases
+        before_dump = as_sorted_mapping_seq(licenses=[lic_example], include_text=True)
+        after_dump = as_sorted_mapping_seq(licenses=[lic_example_from_dump], include_text=True)
+        assert before_dump == after_dump
 
     def test_License_text(self):
         test_dir = self.get_test_loc('models/licenses')
@@ -102,12 +116,12 @@ class TestLicense(FileBasedTesting):
             'foo-2.0': ['Unknown language: foobar', 'No SPDX license key'],
             'gpl-1.0': [
                 'Unknown license category: GNU Copyleft.\nUse one of these valid categories:\n'
-                'Commercial\nCopyleft\nCopyleft Limited\nFree Restricted\n'
+                'CLA\nCommercial\nCopyleft\nCopyleft Limited\nFree Restricted\n'
                 'Patent License\nPermissive\nProprietary Free\nPublic Domain\nSource-available\nUnstated License',
                 'No SPDX license key'],
             'w3c-docs-19990405': [
                 'Unknown license category: Permissive Restricted.\nUse one of these valid categories:\n'
-                'Commercial\nCopyleft\nCopyleft Limited\nFree Restricted\n'
+                'CLA\nCommercial\nCopyleft\nCopyleft Limited\nFree Restricted\n'
                 'Patent License\nPermissive\nProprietary Free\nPublic Domain\nSource-available\nUnstated License',
                 'No SPDX license key'],
         }
@@ -172,7 +186,7 @@ class TestRule(FileBasedTesting):
     test_data_dir = TEST_DATA_DIR
 
     def test_create_rule_ignore_punctuation(self):
-        test_rule = models.Rule._from_text_and_expression(text='A one. A two. A three.')
+        test_rule = create_rule_from_text_and_expression(text='A one. A two. A three.')
         expected = ['one', 'two', 'three']
         assert list(test_rule.tokens()) == expected
         assert test_rule.length == 3
@@ -185,7 +199,7 @@ class TestRule(FileBasedTesting):
                 of.write(text)
             return tf
 
-        test_rule = models.Rule._from_text_file_and_expression(text_file=create_test_file('A one. A two. A three.'))
+        test_rule = create_rule_from_text_file_and_expression(text_file=create_test_file('A one. A two. A three.'))
         expected = ['one', 'two', 'three']
         assert list(test_rule.tokens()) == expected
         assert test_rule.length == 3
@@ -235,6 +249,19 @@ class TestRule(FileBasedTesting):
         expected = self.get_test_loc('models/rules.expected.json')
         check_json(expected, results)
 
+    def test_dump_rule_file(self):
+        test_dir = self.get_test_loc('models/rules', copy=True)
+        test_dir_dump = self.get_test_loc('models/rule_file_dump')
+        rules = list(models.load_rules(test_dir))
+        rule_example = rules.pop()
+        rule_example.dump(rules_data_dir=test_dir_dump)
+        rule_from_dump = list(models.load_rules(test_dir_dump))
+        rule_example_from_dump = rule_from_dump.pop()
+        # Note: one license is obsolete and not loaded. Other are various exception/version cases
+        before_dump = as_sorted_mapping_seq(licenses=[rule_example], include_text=True)
+        after_dump = as_sorted_mapping_seq(licenses=[rule_example_from_dump], include_text=True)
+        assert before_dump == after_dump
+
     def test_spdxrule(self):
         rule = models.SpdxRule(
             license_expression='mit OR gpl-2.0',
@@ -277,18 +304,18 @@ class TestRule(FileBasedTesting):
         test_text = '''zero one two three
             four gap1
             five six seven eight nine ten'''
-        r1 = models.Rule._from_text_and_expression(text=test_text)
+        r1 = create_rule_from_text_and_expression(text=test_text)
         list(r1.tokens())
         assert r1.length == 12
 
     def test_rule_templates_are_ignored(self):
         test_text = '''gap0 zero one two three gap2'''
-        r1 = models.Rule._from_text_and_expression(text=test_text)
+        r1 = create_rule_from_text_and_expression(text=test_text)
         assert list(r1.tokens()) == ['gap0', 'zero', 'one', 'two', 'three', 'gap2']
 
     def test_rule_tokens_are_computed_correctly_ignoring_templates(self):
         test_text = '''I hereby abandon any SAX 2.0 (the), and Release all of the SAX 2.0 source code of his'''
-        rule = models.Rule._from_text_and_expression(text=test_text, license_expression='public-domain')
+        rule = create_rule_from_text_and_expression(text=test_text, license_expression='public-domain')
 
         rule_tokens = list(rule.tokens())
         expected = [
@@ -322,9 +349,9 @@ class TestRule(FileBasedTesting):
 
     def test_Thresholds(self):
         r1_text = 'licensed under the GPL, licensed under the GPL'
-        r1 = models.Rule._from_text_and_expression(license_expression='apache-1.1', text=r1_text)
+        r1 = create_rule_from_text_and_expression(license_expression='apache-1.1', text=r1_text)
         r2_text = 'licensed under the GPL, licensed under the GPL' * 10
-        r2 = models.Rule._from_text_and_expression(license_expression='apache-1.1', text=r2_text)
+        r2 = create_rule_from_text_and_expression(license_expression='apache-1.1', text=r2_text)
         _idx = index.LicenseIndex([r1, r2])
 
         results = models.compute_thresholds_occurences(r1.minimum_coverage, r1.length, r1.high_length)
@@ -357,7 +384,7 @@ class TestRule(FileBasedTesting):
         assert results == expected
 
     def test_compute_relevance_does_not_change_stored_relevance(self):
-        rule = models.Rule._from_text_and_expression(text='1', license_expression='public-domain')
+        rule = create_rule_from_text_and_expression(text='1', license_expression='public-domain')
         rule.relevance = 13
         rule.has_stored_relevance = True
         rule.length = 1000
@@ -366,7 +393,7 @@ class TestRule(FileBasedTesting):
         assert rule.has_stored_relevance
 
     def test_compute_relevance_changes_stored_relevance_for_long_rules(self):
-        rule = models.Rule._from_text_and_expression(text='abcd ' * 18, license_expression='public-domain')
+        rule = create_rule_from_text_and_expression(text='abcd ' * 18, license_expression='public-domain')
         rule.relevance = 100
         rule.has_stored_relevance = True
         rule.length = 18
@@ -375,7 +402,7 @@ class TestRule(FileBasedTesting):
         assert not rule.has_stored_relevance
 
     def test_compute_relevance_does_not_change_stored_relevance_for_short_rules(self):
-        rule = models.Rule._from_text_and_expression(text='abcd ' * 18, license_expression='public-domain')
+        rule = create_rule_from_text_and_expression(text='abcd ' * 18, license_expression='public-domain')
         rule.relevance = 100
         rule.has_stored_relevance = True
         rule.length = 17
@@ -384,7 +411,7 @@ class TestRule(FileBasedTesting):
         assert rule.has_stored_relevance
 
     def test_compute_relevance_does_not_update_stored_relevance(self):
-        rule = models.Rule._from_text_and_expression(text='abcd ' * 17, license_expression='public-domain')
+        rule = create_rule_from_text_and_expression(text='abcd ' * 17, license_expression='public-domain')
         rule.relevance = 100
         rule.has_stored_relevance = True
         rule.length = 17
@@ -393,7 +420,7 @@ class TestRule(FileBasedTesting):
         assert rule.has_stored_relevance
 
     def test_compute_relevance_does_not_update_stored_relevance_for_short_rules(self):
-        rule = models.Rule._from_text_and_expression(text='abcd ' * 17, license_expression='public-domain')
+        rule = create_rule_from_text_and_expression(text='abcd ' * 17, license_expression='public-domain')
         rule.relevance = 99
         rule.has_stored_relevance = True
         rule.length = 18
@@ -402,7 +429,7 @@ class TestRule(FileBasedTesting):
         assert rule.has_stored_relevance
 
     def test_compute_relevance_does_update_stored_relevance_for_short_rules(self):
-        rule = models.Rule._from_text_and_expression(text='abcd ' * 17, license_expression='public-domain')
+        rule = create_rule_from_text_and_expression(text='abcd ' * 17, license_expression='public-domain')
         rule.relevance = 94
         rule.has_stored_relevance = True
         rule.length = 17
@@ -411,7 +438,7 @@ class TestRule(FileBasedTesting):
         assert not rule.has_stored_relevance
 
     def test_compute_relevance_does_not_update_stored_relevance_for_short_rules_if_computed_differs(self):
-        rule = models.Rule._from_text_and_expression(text='abcd ' * 16, license_expression='public-domain')
+        rule = create_rule_from_text_and_expression(text='abcd ' * 16, license_expression='public-domain')
         rule.relevance = 94
         rule.has_stored_relevance = True
         rule.length = 16
@@ -420,7 +447,7 @@ class TestRule(FileBasedTesting):
         assert rule.has_stored_relevance
 
     def test_compute_relevance_is_hundred_for_false_positive(self):
-        rule = models.Rule._from_text_and_expression(text='1', license_expression='public-domain')
+        rule = create_rule_from_text_and_expression(text='1', license_expression='public-domain')
         rule.relevance = 13
         rule.has_stored_relevance = False
         rule.is_false_positive = True
@@ -429,7 +456,7 @@ class TestRule(FileBasedTesting):
         assert rule.relevance == 100
 
     def test_compute_relevance_is_using_rule_length(self):
-        rule = models.Rule._from_text_and_expression(text='1', license_expression='some-license')
+        rule = create_rule_from_text_and_expression(text='1', license_expression='some-license')
         rule.relevance = 13
         rule.has_stored_relevance = False
         rule.is_false_positive = False

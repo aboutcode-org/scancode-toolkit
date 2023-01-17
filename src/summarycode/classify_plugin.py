@@ -93,7 +93,7 @@ class FileClassifier(PreScanPlugin):
 
     ])
 
-    sort_order = 50
+    sort_order = 30
 
     options = [
         PluggableCommandLineOption(('--classify',),

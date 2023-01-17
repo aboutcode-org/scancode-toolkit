@@ -88,7 +88,7 @@ class CranDescriptionFileHandler(models.DatafileHandler):
                 )
             )
 
-        extracted_license_statement=cran_desc.get('License')
+        extracted_license_statement = cran_desc.get('License')
 
         # TODO: Let's handle the release date as a Date type
         # release_date = cran_desc.get('Date/Publication'),

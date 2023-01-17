@@ -3,4 +3,4 @@ is_false_positive: yes
 notes: Seen in ntp commit log
 ---
 
-   sntp/libopts/COPYING.lgplv3
+sntp/libopts/COPYING.lgplv3

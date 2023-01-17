@@ -7,7 +7,7 @@ ignorable_urls:
     - https://www.gnu.org/licenses/
 ---
 
-    ("GPL3-fr"
+("GPL3-fr"
      t
      "Ce programme est un logiciel libre ; vous pouvez le redistribuer ou le"
      "modifier suivant les termes de la GNU General Public License telle que"

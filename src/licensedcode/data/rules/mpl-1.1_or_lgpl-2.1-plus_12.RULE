@@ -8,7 +8,7 @@ ignorable_urls:
     - https://www.gnu.org/licenses/lgpl-2.1.html
 ---
 
-  <licenses>
+<licenses>
     <!-- this is the license under which javassist is usually distributed
       -->
     <license>

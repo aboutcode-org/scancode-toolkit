@@ -10,7 +10,7 @@ ignorable_urls:
     - https://www.gnu.org/licenses/
 ---
 
-  GNAT is free software; you can  redistribute it  and/or modify it under 
+GNAT is free software; you can  redistribute it  and/or modify it under 
  terms of the  GNU General Public License as published  by the Free Software 
  Foundation;  either version 3,  or (at your option) any later version. 
  GNAT is distributed in the hope that it will be useful, but WITHOUT 

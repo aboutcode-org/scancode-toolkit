@@ -1,4 +1,216 @@
 {
+  "license_detections": [
+    {
+      "identifier": "cc0_1_0-794566f2-c217-9ba1-42ef-36bf282ee01c",
+      "license_expression": "cc0-1.0",
+      "count": 1,
+      "detection_log": [
+        "not-combined"
+      ],
+      "matches": [
+        {
+          "score": 99.69,
+          "start_line": 1,
+          "end_line": 98,
+          "matched_length": 978,
+          "match_coverage": 99.69,
+          "matcher": "3-seq",
+          "license_expression": "cc0-1.0",
+          "rule_identifier": "cc0-1.0_155.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/cc0-1.0_155.RULE"
+        }
+      ]
+    },
+    {
+      "identifier": "artistic_2_0-3a21dc91-8930-074b-8e75-779c58660388",
+      "license_expression": "artistic-2.0",
+      "count": 1,
+      "detection_log": [
+        "not-combined"
+      ],
+      "matches": [
+        {
+          "score": 100.0,
+          "start_line": 198,
+          "end_line": 198,
+          "matched_length": 4,
+          "match_coverage": 100.0,
+          "matcher": "2-aho",
+          "license_expression": "artistic-2.0",
+          "rule_identifier": "artistic-2.0_46.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/artistic-2.0_46.RULE"
+        }
+      ]
+    },
+    {
+      "identifier": "zlib-40a07b45-2815-d501-b4b7-95c00453a3d4",
+      "license_expression": "zlib",
+      "count": 9,
+      "detection_log": [
+        "not-combined"
+      ],
+      "matches": [
+        {
+          "score": 100.0,
+          "start_line": 3,
+          "end_line": 3,
+          "matched_length": 12,
+          "match_coverage": 100.0,
+          "matcher": "2-aho",
+          "license_expression": "zlib",
+          "rule_identifier": "zlib_5.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/zlib_5.RULE"
+        }
+      ]
+    },
+    {
+      "identifier": "zlib-828c423f-cc46-4ae5-845c-125303c2a9a8",
+      "license_expression": "zlib",
+      "count": 2,
+      "detection_log": [
+        "not-combined"
+      ],
+      "matches": [
+        {
+          "score": 100.0,
+          "start_line": 6,
+          "end_line": 23,
+          "matched_length": 144,
+          "match_coverage": 100.0,
+          "matcher": "2-aho",
+          "license_expression": "zlib",
+          "rule_identifier": "zlib_17.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/zlib_17.RULE"
+        }
+      ]
+    },
+    {
+      "identifier": "lgpl_2_1_plus-86fcc420-6b71-a69f-93b5-54d76cab2087",
+      "license_expression": "lgpl-2.1-plus",
+      "count": 3,
+      "detection_log": [
+        "not-combined"
+      ],
+      "matches": [
+        {
+          "score": 100.0,
+          "start_line": 7,
+          "end_line": 20,
+          "matched_length": 125,
+          "match_coverage": 100.0,
+          "matcher": "2-aho",
+          "license_expression": "lgpl-2.1-plus",
+          "rule_identifier": "lgpl-2.1-plus_59.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_59.RULE"
+        }
+      ]
+    },
+    {
+      "identifier": "cc_by_2_5-61e7d014-1bbc-6439-6655-c6c3bbee9cd9",
+      "license_expression": "cc-by-2.5",
+      "count": 1,
+      "detection_log": [
+        "not-combined"
+      ],
+      "matches": [
+        {
+          "score": 100.0,
+          "start_line": 4,
+          "end_line": 5,
+          "matched_length": 14,
+          "match_coverage": 100.0,
+          "matcher": "2-aho",
+          "license_expression": "cc-by-2.5",
+          "rule_identifier": "cc-by-2.5_4.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/cc-by-2.5_4.RULE"
+        }
+      ]
+    },
+    {
+      "identifier": "gpl_2_0_plus_with_ada_linking_exception-97310180-3074-fb5b-0bc8-9e82438a60bb",
+      "license_expression": "gpl-2.0-plus WITH ada-linking-exception",
+      "count": 1,
+      "detection_log": [
+        "not-combined"
+      ],
+      "matches": [
+        {
+          "score": 100.0,
+          "start_line": 6,
+          "end_line": 25,
+          "matched_length": 176,
+          "match_coverage": 100.0,
+          "matcher": "2-aho",
+          "license_expression": "gpl-2.0-plus WITH ada-linking-exception",
+          "rule_identifier": "gpl-2.0-plus_with_ada-linking-exception_1.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_with_ada-linking-exception_1.RULE"
+        }
+      ]
+    },
+    {
+      "identifier": "boost_1_0-b055ee6f-43f9-b780-3033-fd33f02b6e1d",
+      "license_expression": "boost-1.0",
+      "count": 1,
+      "detection_log": [
+        "not-combined"
+      ],
+      "matches": [
+        {
+          "score": 100.0,
+          "start_line": 4,
+          "end_line": 5,
+          "matched_length": 32,
+          "match_coverage": 100.0,
+          "matcher": "2-aho",
+          "license_expression": "boost-1.0",
+          "rule_identifier": "boost-1.0_21.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/boost-1.0_21.RULE"
+        }
+      ]
+    },
+    {
+      "identifier": "zlib-2a6f2066-9dae-b0a2-b93f-2e5391409d93",
+      "license_expression": "zlib",
+      "count": 1,
+      "detection_log": [
+        "not-combined"
+      ],
+      "matches": [
+        {
+          "score": 100.0,
+          "start_line": 17,
+          "end_line": 31,
+          "matched_length": 132,
+          "match_coverage": 100.0,
+          "matcher": "2-aho",
+          "license_expression": "zlib",
+          "rule_identifier": "zlib.LICENSE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/zlib.LICENSE"
+        }
+      ]
+    },
+    {
+      "identifier": "mit_old_style-916f4423-80fb-1f12-06b7-dcbf35dcfb3d",
+      "license_expression": "mit-old-style",
+      "count": 1,
+      "detection_log": [
+        "not-combined"
+      ],
+      "matches": [
+        {
+          "score": 100.0,
+          "start_line": 9,
+          "end_line": 15,
+          "matched_length": 71,
+          "match_coverage": 100.0,
+          "matcher": "2-aho",
+          "license_expression": "mit-old-style",
+          "rule_identifier": "mit-old-style_cmr-no_1.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit-old-style_cmr-no_1.RULE"
+        }
+      ]
+    }
+  ],
   "tallies": {
     "detected_license_expression": [
       {
@@ -200,6 +412,651 @@
     ],
     "programming_language": []
   },
+  "license_references": [
+    {
+      "key": "ada-linking-exception",
+      "language": "en",
+      "short_name": "Ada linking exception to GPL 2.0 or later",
+      "name": "Ada linking exception to GPL 2.0 or later",
+      "category": "Copyleft Limited",
+      "owner": "Dmitriy Anisimkov",
+      "homepage_url": null,
+      "notes": null,
+      "is_builtin": true,
+      "is_exception": true,
+      "is_unknown": false,
+      "is_generic": false,
+      "spdx_license_key": "LicenseRef-scancode-ada-linking-exception",
+      "other_spdx_license_keys": [],
+      "osi_license_key": null,
+      "text_urls": [],
+      "osi_url": null,
+      "faq_url": null,
+      "other_urls": [
+        "http://zlib-ada.sourceforge.net/",
+        "http://ada-ru.org/"
+      ],
+      "key_aliases": [],
+      "minimum_coverage": 0,
+      "standard_notice": "---------------------------------------------------------------------------\n---\n-- This library is free software; you can redistribute it and/or modify --\n-- it under the terms of the GNU General Public License as published by --\n-- the Free Software Foundation; either version 2 of the License, or (at --\n-- your option) any later version. --\n-- --\n-- This library is distributed in the hope that it will be useful, but --\n-- WITHOUT ANY WARRANTY; without even the implied warranty of --\n-- MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU --\n-- General Public License for more details. --\n-- --\n-- You should have received a copy of the GNU General Public License --\n-- along with this library; if not, write to the Free Software Foundation,\n--\n-- Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA. --\n-- --\n-- As a special exception, if other files instantiate generics from this --\n-- unit, or you link this unit with other files to produce an executable,\n--\n-- this unit does not by itself cause the resulting executable to be --\n-- covered by the GNU General Public License. This exception does not --\n-- however invalidate any other reasons why the executable file might be --\n-- covered by the GNU Public License. --\n---------------------------------------------------------------------------\n---\n",
+      "ignorable_copyrights": [],
+      "ignorable_holders": [],
+      "ignorable_authors": [],
+      "ignorable_urls": [],
+      "ignorable_emails": [],
+      "text": "As a special exception, if other files instantiate generics from this \nunit, or you link this unit with other files to produce an executable, \nthis  unit  does not  by itself cause  the resulting executable to be \ncovered by the GNU General Public License. This exception does not \nhowever invalidate any other reasons why the executable file  might be \ncovered by the GNU Public License.",
+      "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/ada-linking-exception.LICENSE",
+      "licensedb_url": "https://scancode-licensedb.aboutcode.org/ada-linking-exception",
+      "spdx_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/ada-linking-exception.LICENSE"
+    },
+    {
+      "key": "artistic-2.0",
+      "language": "en",
+      "short_name": "Artistic 2.0",
+      "name": "Artistic License 2.0",
+      "category": "Copyleft Limited",
+      "owner": "Perl Foundation",
+      "homepage_url": "http://www.perlfoundation.org/",
+      "notes": "Per SPDX.org, this version was released 2006 This license is OSI\ncertifified.\n",
+      "is_builtin": true,
+      "is_exception": false,
+      "is_unknown": false,
+      "is_generic": false,
+      "spdx_license_key": "Artistic-2.0",
+      "other_spdx_license_keys": [],
+      "osi_license_key": "Artistic-2.0",
+      "text_urls": [
+        "https://www.perlfoundation.org/artistic_license_2_0",
+        "https://www.perlfoundation.org/attachment/legal/artistic-2_0.txt"
+      ],
+      "osi_url": "https://www.opensource.org/licenses/artistic-license-2.0.php",
+      "faq_url": "https://www.perlfoundation.org/artistic-2-0-notes",
+      "other_urls": [
+        "http://www.perlfoundation.org/artistic_license_2_0",
+        "https://opensource.org/licenses/artistic-license-2.0",
+        "https://www.opensource.org/licenses/artistic-license-2.0",
+        "https://www.perlfoundation.org/artistic-license-20.html"
+      ],
+      "key_aliases": [],
+      "minimum_coverage": 0,
+      "standard_notice": null,
+      "ignorable_copyrights": [
+        "Copyright (c) 2000-2006, The Perl Foundation"
+      ],
+      "ignorable_holders": [
+        "The Perl Foundation"
+      ],
+      "ignorable_authors": [
+        "The Perl Foundation"
+      ],
+      "ignorable_urls": [],
+      "ignorable_emails": [],
+      "text": "               The Artistic License 2.0\n\n        Copyright (c) 2000-2006, The Perl Foundation.\n\n     Everyone is permitted to copy and distribute verbatim copies\n      of this license document, but changing it is not allowed.\n\nPreamble\n\nThis license establishes the terms under which a given free software\nPackage may be copied, modified, distributed, and/or redistributed.\nThe intent is that the Copyright Holder maintains some artistic\ncontrol over the development of that Package while still keeping the\nPackage available as open source and free software.\n\nYou are always permitted to make arrangements wholly outside of this\nlicense directly with the Copyright Holder of a given Package.  If the\nterms of this license do not permit the full use that you propose to\nmake of the Package, you should contact the Copyright Holder and seek\na different licensing arrangement. \n\nDefinitions\n\n    \"Copyright Holder\" means the individual(s) or organization(s)\n    named in the copyright notice for the entire Package.\n\n    \"Contributor\" means any party that has contributed code or other\n    material to the Package, in accordance with the Copyright Holder's\n    procedures.\n\n    \"You\" and \"your\" means any person who would like to copy,\n    distribute, or modify the Package.\n\n    \"Package\" means the collection of files distributed by the\n    Copyright Holder, and derivatives of that collection and/or of\n    those files. A given Package may consist of either the Standard\n    Version, or a Modified Version.\n\n    \"Distribute\" means providing a copy of the Package or making it\n    accessible to anyone else, or in the case of a company or\n    organization, to others outside of your company or organization.\n\n    \"Distributor Fee\" means any fee that you charge for Distributing\n    this Package or providing support for this Package to another\n    party.  It does not mean licensing fees.\n\n    \"Standard Version\" refers to the Package if it has not been\n    modified, or has been modified only in ways explicitly requested\n    by the Copyright Holder.\n\n    \"Modified Version\" means the Package, if it has been changed, and\n    such changes were not explicitly requested by the Copyright\n    Holder. \n\n    \"Original License\" means this Artistic License as Distributed with\n    the Standard Version of the Package, in its current version or as\n    it may be modified by The Perl Foundation in the future.\n\n    \"Source\" form means the source code, documentation source, and\n    configuration files for the Package.\n\n    \"Compiled\" form means the compiled bytecode, object code, binary,\n    or any other form resulting from mechanical transformation or\n    translation of the Source form.\n\n\nPermission for Use and Modification Without Distribution\n\n(1)  You are permitted to use the Standard Version and create and use\nModified Versions for any purpose without restriction, provided that\nyou do not Distribute the Modified Version.\n\n\nPermissions for Redistribution of the Standard Version\n\n(2)  You may Distribute verbatim copies of the Source form of the\nStandard Version of this Package in any medium without restriction,\neither gratis or for a Distributor Fee, provided that you duplicate\nall of the original copyright notices and associated disclaimers.  At\nyour discretion, such verbatim copies may or may not include a\nCompiled form of the Package.\n\n(3)  You may apply any bug fixes, portability changes, and other\nmodifications made available from the Copyright Holder.  The resulting\nPackage will still be considered the Standard Version, and as such\nwill be subject to the Original License.\n\n\nDistribution of Modified Versions of the Package as Source \n\n(4)  You may Distribute your Modified Version as Source (either gratis\nor for a Distributor Fee, and with or without a Compiled form of the\nModified Version) provided that you clearly document how it differs\nfrom the Standard Version, including, but not limited to, documenting\nany non-standard features, executables, or modules, and provided that\nyou do at least ONE of the following:\n\n    (a)  make the Modified Version available to the Copyright Holder\n    of the Standard Version, under the Original License, so that the\n    Copyright Holder may include your modifications in the Standard\n    Version.\n\n    (b)  ensure that installation of your Modified Version does not\n    prevent the user installing or running the Standard Version. In\n    addition, the Modified Version must bear a name that is different\n    from the name of the Standard Version.\n\n    (c)  allow anyone who receives a copy of the Modified Version to\n    make the Source form of the Modified Version available to others\n    under\n        \n    (i)  the Original License or\n\n    (ii)  a license that permits the licensee to freely copy,\n    modify and redistribute the Modified Version using the same\n    licensing terms that apply to the copy that the licensee\n    received, and requires that the Source form of the Modified\n    Version, and of any works derived from it, be made freely\n    available in that license fees are prohibited but Distributor\n    Fees are allowed.\n\n\nDistribution of Compiled Forms of the Standard Version \nor Modified Versions without the Source\n\n(5)  You may Distribute Compiled forms of the Standard Version without\nthe Source, provided that you include complete instructions on how to\nget the Source of the Standard Version.  Such instructions must be\nvalid at the time of your distribution.  If these instructions, at any\ntime while you are carrying out such distribution, become invalid, you\nmust provide new instructions on demand or cease further distribution.\nIf you provide valid instructions or cease distribution within thirty\ndays after you become aware that the instructions are invalid, then\nyou do not forfeit any of your rights under this license.\n\n(6)  You may Distribute a Modified Version in Compiled form without\nthe Source, provided that you comply with Section 4 with respect to\nthe Source of the Modified Version.\n\n\nAggregating or Linking the Package \n\n(7)  You may aggregate the Package (either the Standard Version or\nModified Version) with other packages and Distribute the resulting\naggregation provided that you do not charge a licensing fee for the\nPackage.  Distributor Fees are permitted, and licensing fees for other\ncomponents in the aggregation are permitted. The terms of this license\napply to the use and Distribution of the Standard or Modified Versions\nas included in the aggregation.\n\n(8) You are permitted to link Modified and Standard Versions with\nother works, to embed the Package in a larger work of your own, or to\nbuild stand-alone binary or bytecode versions of applications that\ninclude the Package, and Distribute the result without restriction,\nprovided the result does not expose a direct interface to the Package.\n\n\nItems That are Not Considered Part of a Modified Version \n\n(9) Works (including, but not limited to, modules and scripts) that\nmerely extend or make use of the Package, do not, by themselves, cause\nthe Package to be a Modified Version.  In addition, such works are not\nconsidered parts of the Package itself, and are not subject to the\nterms of this license.\n\n\nGeneral Provisions\n\n(10)  Any use, modification, and distribution of the Standard or\nModified Versions is governed by this Artistic License. By using,\nmodifying or distributing the Package, you accept this license. Do not\nuse, modify, or distribute the Package, if you do not accept this\nlicense.\n\n(11)  If your Modified Version has been derived from a Modified\nVersion made by someone other than you, you are nevertheless required\nto ensure that your Modified Version complies with the requirements of\nthis license.\n\n(12)  This license does not grant you the right to use any trademark,\nservice mark, tradename, or logo of the Copyright Holder.\n\n(13)  This license includes the non-exclusive, worldwide,\nfree-of-charge patent license to make, have made, use, offer to sell,\nsell, import and otherwise transfer the Package with respect to any\npatent claims licensable by the Copyright Holder that are necessarily\ninfringed by the Package. If you institute patent litigation\n(including a cross-claim or counterclaim) against any party alleging\nthat the Package constitutes direct or contributory patent\ninfringement, then this Artistic License to you shall terminate on the\ndate that such litigation is filed.\n\n(14)  Disclaimer of Warranty:\nTHE PACKAGE IS PROVIDED BY THE COPYRIGHT HOLDER AND CONTRIBUTORS \"AS\nIS' AND WITHOUT ANY EXPRESS OR IMPLIED WARRANTIES. THE IMPLIED\nWARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, OR\nNON-INFRINGEMENT ARE DISCLAIMED TO THE EXTENT PERMITTED BY YOUR LOCAL\nLAW. UNLESS REQUIRED BY LAW, NO COPYRIGHT HOLDER OR CONTRIBUTOR WILL\nBE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, OR CONSEQUENTIAL\nDAMAGES ARISING IN ANY WAY OUT OF THE USE OF THE PACKAGE, EVEN IF\nADVISED OF THE POSSIBILITY OF SUCH DAMAGE.",
+      "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/artistic-2.0.LICENSE",
+      "licensedb_url": "https://scancode-licensedb.aboutcode.org/artistic-2.0",
+      "spdx_url": "https://spdx.org/licenses/Artistic-2.0"
+    },
+    {
+      "key": "boost-1.0",
+      "language": "en",
+      "short_name": "Boost 1.0",
+      "name": "Boost Software License 1.0",
+      "category": "Permissive",
+      "owner": "Boost",
+      "homepage_url": "http://www.boost.org/users/license.html",
+      "notes": "Per SPDX.org, this version was released 17 August 2003 This license is OSI\ncertifified.\n",
+      "is_builtin": true,
+      "is_exception": false,
+      "is_unknown": false,
+      "is_generic": false,
+      "spdx_license_key": "BSL-1.0",
+      "other_spdx_license_keys": [],
+      "osi_license_key": null,
+      "text_urls": [
+        "http://www.boost.org/LICENSE_1_0.txt"
+      ],
+      "osi_url": "http://www.opensource.org/licenses/bsl1.0.html",
+      "faq_url": null,
+      "other_urls": [
+        "http://www.boost.org/users/license.html",
+        "http://www.opensource.org/licenses/BSL-1.0",
+        "https://opensource.org/licenses/BSL-1.0"
+      ],
+      "key_aliases": [],
+      "minimum_coverage": 0,
+      "standard_notice": null,
+      "ignorable_copyrights": [],
+      "ignorable_holders": [],
+      "ignorable_authors": [],
+      "ignorable_urls": [],
+      "ignorable_emails": [],
+      "text": "Boost Software License - Version 1.0 - August 17th, 2003\n\nPermission is hereby granted, free of charge, to any person or organization\nobtaining a copy of the software and accompanying documentation covered by\nthis license (the \"Software\") to use, reproduce, display, distribute,\nexecute, and transmit the Software, and to prepare derivative works of the\nSoftware, and to permit third-parties to whom the Software is furnished to\ndo so, all subject to the following:\n\nThe copyright notices in the Software and this entire statement, including\nthe above license grant, this restriction and the following disclaimer,\nmust be included in all copies of the Software, in whole or in part, and\nall derivative works of the Software, unless such copies or derivative\nworks are solely in the form of machine-executable object code generated by\na source language processor.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE, TITLE AND NON-INFRINGEMENT. IN NO EVENT\nSHALL THE COPYRIGHT HOLDERS OR ANYONE DISTRIBUTING THE SOFTWARE BE LIABLE\nFOR ANY DAMAGES OR OTHER LIABILITY, WHETHER IN CONTRACT, TORT OR OTHERWISE,\nARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER\nDEALINGS IN THE SOFTWARE.",
+      "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/boost-1.0.LICENSE",
+      "licensedb_url": "https://scancode-licensedb.aboutcode.org/boost-1.0",
+      "spdx_url": "https://spdx.org/licenses/BSL-1.0"
+    },
+    {
+      "key": "cc-by-2.5",
+      "language": "en",
+      "short_name": "CC-BY-2.5",
+      "name": "Creative Commons Attribution License 2.5",
+      "category": "Permissive",
+      "owner": "Creative Commons",
+      "homepage_url": "http://creativecommons.org/licenses/by/2.5/",
+      "notes": null,
+      "is_builtin": true,
+      "is_exception": false,
+      "is_unknown": false,
+      "is_generic": false,
+      "spdx_license_key": "CC-BY-2.5",
+      "other_spdx_license_keys": [],
+      "osi_license_key": null,
+      "text_urls": [
+        "http://creativecommons.org/licenses/by/2.5/legalcode"
+      ],
+      "osi_url": null,
+      "faq_url": null,
+      "other_urls": [
+        "https://creativecommons.org/licenses/by/2.5/legalcode"
+      ],
+      "key_aliases": [],
+      "minimum_coverage": 0,
+      "standard_notice": null,
+      "ignorable_copyrights": [],
+      "ignorable_holders": [],
+      "ignorable_authors": [],
+      "ignorable_urls": [
+        "http://creativecommons.org/"
+      ],
+      "ignorable_emails": [],
+      "text": "Attribution 2.5\n\nCREATIVE COMMONS CORPORATION IS NOT A LAW FIRM AND DOES NOT PROVIDE LEGAL SERVICES. DISTRIBUTION OF THIS LICENSE DOES NOT CREATE AN ATTORNEY-CLIENT RELATIONSHIP. CREATIVE COMMONS PROVIDES THIS INFORMATION ON AN \"AS-IS\" BASIS. CREATIVE COMMONS MAKES NO WARRANTIES REGARDING THE INFORMATION PROVIDED, AND DISCLAIMS LIABILITY FOR DAMAGES RESULTING FROM ITS USE.\nLicense\n\nTHE WORK (AS DEFINED BELOW) IS PROVIDED UNDER THE TERMS OF THIS CREATIVE COMMONS PUBLIC LICENSE (\"CCPL\" OR \"LICENSE\"). THE WORK IS PROTECTED BY COPYRIGHT AND/OR OTHER APPLICABLE LAW. ANY USE OF THE WORK OTHER THAN AS AUTHORIZED UNDER THIS LICENSE OR COPYRIGHT LAW IS PROHIBITED.\n\nBY EXERCISING ANY RIGHTS TO THE WORK PROVIDED HERE, YOU ACCEPT AND AGREE TO BE BOUND BY THE TERMS OF THIS LICENSE. THE LICENSOR GRANTS YOU THE RIGHTS CONTAINED HERE IN CONSIDERATION OF YOUR ACCEPTANCE OF SUCH TERMS AND CONDITIONS.\n\n1. Definitions\n\n\"Collective Work\" means a work, such as a periodical issue, anthology or encyclopedia, in which the Work in its entirety in unmodified form, along with a number of other contributions, constituting separate and independent works in themselves, are assembled into a collective whole. A work that constitutes a Collective Work will not be considered a Derivative Work (as defined below) for the purposes of this License.\n\"Derivative Work\" means a work based upon the Work or upon the Work and other pre-existing works, such as a translation, musical arrangement, dramatization, fictionalization, motion picture version, sound recording, art reproduction, abridgment, condensation, or any other form in which the Work may be recast, transformed, or adapted, except that a work that constitutes a Collective Work will not be considered a Derivative Work for the purpose of this License. For the avoidance of doubt, where the Work is a musical composition or sound recording, the synchronization of the Work in timed-relation with a moving image (\"synching\") will be considered a Derivative Work for the purpose of this License.\n\"Licensor\" means the individual or entity that offers the Work under the terms of this License.\n\"Original Author\" means the individual or entity who created the Work.\n\"Work\" means the copyrightable work of authorship offered under the terms of this License.\n\"You\" means an individual or entity exercising rights under this License who has not previously violated the terms of this License with respect to the Work, or who has received express permission from the Licensor to exercise rights under this License despite a previous violation.\n2. Fair Use Rights. Nothing in this license is intended to reduce, limit, or restrict any rights arising from fair use, first sale or other limitations on the exclusive rights of the copyright owner under copyright law or other applicable laws.\n\n3. License Grant. Subject to the terms and conditions of this License, Licensor hereby grants You a worldwide, royalty-free, non-exclusive, perpetual (for the duration of the applicable copyright) license to exercise the rights in the Work as stated below:\n\nto reproduce the Work, to incorporate the Work into one or more Collective Works, and to reproduce the Work as incorporated in the Collective Works;\nto create and reproduce Derivative Works;\nto distribute copies or phonorecords of, display publicly, perform publicly, and perform publicly by means of a digital audio transmission the Work including as incorporated in Collective Works;\nto distribute copies or phonorecords of, display publicly, perform publicly, and perform publicly by means of a digital audio transmission Derivative Works.\nFor the avoidance of doubt, where the work is a musical composition:\n\nPerformance Royalties Under Blanket Licenses. Licensor waives the exclusive right to collect, whether individually or via a performance rights society (e.g. ASCAP, BMI, SESAC), royalties for the public performance or public digital performance (e.g. webcast) of the Work.\nMechanical Rights and Statutory Royalties. Licensor waives the exclusive right to collect, whether individually or via a music rights agency or designated agent (e.g. Harry Fox Agency), royalties for any phonorecord You create from the Work (\"cover version\") and distribute, subject to the compulsory license created by 17 USC Section 115 of the US Copyright Act (or the equivalent in other jurisdictions).\nWebcasting Rights and Statutory Royalties. For the avoidance of doubt, where the Work is a sound recording, Licensor waives the exclusive right to collect, whether individually or via a performance-rights society (e.g. SoundExchange), royalties for the public digital performance (e.g. webcast) of the Work, subject to the compulsory license created by 17 USC Section 114 of the US Copyright Act (or the equivalent in other jurisdictions).\nThe above rights may be exercised in all media and formats whether now known or hereafter devised. The above rights include the right to make such modifications as are technically necessary to exercise the rights in other media and formats. All rights not expressly granted by Licensor are hereby reserved.\n\n4. Restrictions.The license granted in Section 3 above is expressly made subject to and limited by the following restrictions:\n\nYou may distribute, publicly display, publicly perform, or publicly digitally perform the Work only under the terms of this License, and You must include a copy of, or the Uniform Resource Identifier for, this License with every copy or phonorecord of the Work You distribute, publicly display, publicly perform, or publicly digitally perform. You may not offer or impose any terms on the Work that alter or restrict the terms of this License or the recipients' exercise of the rights granted hereunder. You may not sublicense the Work. You must keep intact all notices that refer to this License and to the disclaimer of warranties. You may not distribute, publicly display, publicly perform, or publicly digitally perform the Work with any technological measures that control access or use of the Work in a manner inconsistent with the terms of this License Agreement. The above applies to the Work as incorporated in a Collective Work, but this does not require the Collective Work apart from the Work itself to be made subject to the terms of this License. If You create a Collective Work, upon notice from any Licensor You must, to the extent practicable, remove from the Collective Work any credit as required by clause 4(b), as requested. If You create a Derivative Work, upon notice from any Licensor You must, to the extent practicable, remove from the Derivative Work any credit as required by clause 4(b), as requested.\nIf you distribute, publicly display, publicly perform, or publicly digitally perform the Work or any Derivative Works or Collective Works, You must keep intact all copyright notices for the Work and provide, reasonable to the medium or means You are utilizing: (i) the name of the Original Author (or pseudonym, if applicable) if supplied, and/or (ii) if the Original Author and/or Licensor designate another party or parties (e.g. a sponsor institute, publishing entity, journal) for attribution in Licensor's copyright notice, terms of service or by other reasonable means, the name of such party or parties; the title of the Work if supplied; to the extent reasonably practicable, the Uniform Resource Identifier, if any, that Licensor specifies to be associated with the Work, unless such URI does not refer to the copyright notice or licensing information for the Work; and in the case of a Derivative Work, a credit identifying the use of the Work in the Derivative Work (e.g., \"French translation of the Work by Original Author,\" or \"Screenplay based on original Work by Original Author\"). Such credit may be implemented in any reasonable manner; provided, however, that in the case of a Derivative Work or Collective Work, at a minimum such credit will appear where any other comparable authorship credit appears and in a manner at least as prominent as such other comparable authorship credit.\n5. Representations, Warranties and Disclaimer\n\nUNLESS OTHERWISE MUTUALLY AGREED TO BY THE PARTIES IN WRITING, LICENSOR OFFERS THE WORK AS-IS AND MAKES NO REPRESENTATIONS OR WARRANTIES OF ANY KIND CONCERNING THE WORK, EXPRESS, IMPLIED, STATUTORY OR OTHERWISE, INCLUDING, WITHOUT LIMITATION, WARRANTIES OF TITLE, MERCHANTIBILITY, FITNESS FOR A PARTICULAR PURPOSE, NONINFRINGEMENT, OR THE ABSENCE OF LATENT OR OTHER DEFECTS, ACCURACY, OR THE PRESENCE OF ABSENCE OF ERRORS, WHETHER OR NOT DISCOVERABLE. SOME JURISDICTIONS DO NOT ALLOW THE EXCLUSION OF IMPLIED WARRANTIES, SO SUCH EXCLUSION MAY NOT APPLY TO YOU.\n\n6. Limitation on Liability. EXCEPT TO THE EXTENT REQUIRED BY APPLICABLE LAW, IN NO EVENT WILL LICENSOR BE LIABLE TO YOU ON ANY LEGAL THEORY FOR ANY SPECIAL, INCIDENTAL, CONSEQUENTIAL, PUNITIVE OR EXEMPLARY DAMAGES ARISING OUT OF THIS LICENSE OR THE USE OF THE WORK, EVEN IF LICENSOR HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.\n\n7. Termination\n\nThis License and the rights granted hereunder will terminate automatically upon any breach by You of the terms of this License. Individuals or entities who have received Derivative Works or Collective Works from You under this License, however, will not have their licenses terminated provided such individuals or entities remain in full compliance with those licenses. Sections 1, 2, 5, 6, 7, and 8 will survive any termination of this License.\nSubject to the above terms and conditions, the license granted here is perpetual (for the duration of the applicable copyright in the Work). Notwithstanding the above, Licensor reserves the right to release the Work under different license terms or to stop distributing the Work at any time; provided, however that any such election will not serve to withdraw this License (or any other license that has been, or is required to be, granted under the terms of this License), and this License will continue in full force and effect unless terminated as stated above.\n8. Miscellaneous\n\nEach time You distribute or publicly digitally perform the Work or a Collective Work, the Licensor offers to the recipient a license to the Work on the same terms and conditions as the license granted to You under this License.\nEach time You distribute or publicly digitally perform a Derivative Work, Licensor offers to the recipient a license to the original Work on the same terms and conditions as the license granted to You under this License.\nIf any provision of this License is invalid or unenforceable under applicable law, it shall not affect the validity or enforceability of the remainder of the terms of this License, and without further action by the parties to this agreement, such provision shall be reformed to the minimum extent necessary to make such provision valid and enforceable.\nNo term or provision of this License shall be deemed waived and no breach consented to unless such waiver or consent shall be in writing and signed by the party to be charged with such waiver or consent.\nThis License constitutes the entire agreement between the parties with respect to the Work licensed here. There are no understandings, agreements or representations with respect to the Work not specified here. Licensor shall not be bound by any additional provisions that may appear in any communication from You. This License may not be modified without the mutual written agreement of the Licensor and You.\nCreative Commons is not a party to this License, and makes no warranty whatsoever in connection with the Work. Creative Commons will not be liable to You or any party on any legal theory for any damages whatsoever, including without limitation any general, special, incidental or consequential damages arising in connection to this license. Notwithstanding the foregoing two (2) sentences, if Creative Commons has expressly identified itself as the Licensor hereunder, it shall have all rights and obligations of Licensor.\n\nExcept for the limited purpose of indicating to the public that the Work is licensed under the CCPL, neither party will use the trademark \"Creative Commons\" or any related trademark or logo of Creative Commons without the prior written consent of Creative Commons. Any permitted use will be in compliance with Creative Commons' then-current trademark usage guidelines, as may be published on its website or otherwise made available upon request from time to time.\n\nCreative Commons may be contacted at http://creativecommons.org/.",
+      "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/cc-by-2.5.LICENSE",
+      "licensedb_url": "https://scancode-licensedb.aboutcode.org/cc-by-2.5",
+      "spdx_url": "https://spdx.org/licenses/CC-BY-2.5"
+    },
+    {
+      "key": "cc0-1.0",
+      "language": "en",
+      "short_name": "CC0-1.0",
+      "name": "Creative Commons CC0 1.0 Universal",
+      "category": "Public Domain",
+      "owner": "Creative Commons",
+      "homepage_url": "http://creativecommons.org/publicdomain/zero/1.0/",
+      "notes": null,
+      "is_builtin": true,
+      "is_exception": false,
+      "is_unknown": false,
+      "is_generic": false,
+      "spdx_license_key": "CC0-1.0",
+      "other_spdx_license_keys": [],
+      "osi_license_key": null,
+      "text_urls": [
+        "http://creativecommons.org/publicdomain/zero/1.0/legalcode"
+      ],
+      "osi_url": null,
+      "faq_url": "http://wiki.creativecommons.org/CC0_FAQ",
+      "other_urls": [
+        "https://creativecommons.org/publicdomain/zero/1.0/legalcode"
+      ],
+      "key_aliases": [],
+      "minimum_coverage": 0,
+      "standard_notice": null,
+      "ignorable_copyrights": [],
+      "ignorable_holders": [],
+      "ignorable_authors": [],
+      "ignorable_urls": [],
+      "ignorable_emails": [],
+      "text": "Creative Commons Legal Code\n\nCC0 1.0 Universal\n\n    CREATIVE COMMONS CORPORATION IS NOT A LAW FIRM AND DOES NOT PROVIDE\n    LEGAL SERVICES. DISTRIBUTION OF THIS DOCUMENT DOES NOT CREATE AN\n    ATTORNEY-CLIENT RELATIONSHIP. CREATIVE COMMONS PROVIDES THIS\n    INFORMATION ON AN \"AS-IS\" BASIS. CREATIVE COMMONS MAKES NO WARRANTIES\n    REGARDING THE USE OF THIS DOCUMENT OR THE INFORMATION OR WORKS\n    PROVIDED HEREUNDER, AND DISCLAIMS LIABILITY FOR DAMAGES RESULTING FROM\n    THE USE OF THIS DOCUMENT OR THE INFORMATION OR WORKS PROVIDED\n    HEREUNDER.\n\nStatement of Purpose\n\nThe laws of most jurisdictions throughout the world automatically confer\nexclusive Copyright and Related Rights (defined below) upon the creator\nand subsequent owner(s) (each and all, an \"owner\") of an original work of\nauthorship and/or a database (each, a \"Work\").\n\nCertain owners wish to permanently relinquish those rights to a Work for\nthe purpose of contributing to a commons of creative, cultural and\nscientific works (\"Commons\") that the public can reliably and without fear\nof later claims of infringement build upon, modify, incorporate in other\nworks, reuse and redistribute as freely as possible in any form whatsoever\nand for any purposes, including without limitation commercial purposes.\nThese owners may contribute to the Commons to promote the ideal of a free\nculture and the further production of creative, cultural and scientific\nworks, or to gain reputation or greater distribution for their Work in\npart through the use and efforts of others.\n\nFor these and/or other purposes and motivations, and without any\nexpectation of additional consideration or compensation, the person\nassociating CC0 with a Work (the \"Affirmer\"), to the extent that he or she\nis an owner of Copyright and Related Rights in the Work, voluntarily\nelects to apply CC0 to the Work and publicly distribute the Work under its\nterms, with knowledge of his or her Copyright and Related Rights in the\nWork and the meaning and intended legal effect of CC0 on those rights.\n\n1. Copyright and Related Rights. A Work made available under CC0 may be\nprotected by copyright and related or neighboring rights (\"Copyright and\nRelated Rights\"). Copyright and Related Rights include, but are not\nlimited to, the following:\n\n  i. the right to reproduce, adapt, distribute, perform, display,\n     communicate, and translate a Work;\n ii. moral rights retained by the original author(s) and/or performer(s);\niii. publicity and privacy rights pertaining to a person's image or\n     likeness depicted in a Work;\n iv. rights protecting against unfair competition in regards to a Work,\n     subject to the limitations in paragraph 4(a), below;\n  v. rights protecting the extraction, dissemination, use and reuse of data\n     in a Work;\n vi. database rights (such as those arising under Directive 96/9/EC of the\n     European Parliament and of the Council of 11 March 1996 on the legal\n     protection of databases, and under any national implementation\n     thereof, including any amended or successor version of such\n     directive); and\nvii. other similar, equivalent or corresponding rights throughout the\n     world based on applicable law or treaty, and any national\n     implementations thereof.\n\n2. Waiver. To the greatest extent permitted by, but not in contravention\nof, applicable law, Affirmer hereby overtly, fully, permanently,\nirrevocably and unconditionally waives, abandons, and surrenders all of\nAffirmer's Copyright and Related Rights and associated claims and causes\nof action, whether now known or unknown (including existing as well as\nfuture claims and causes of action), in the Work (i) in all territories\nworldwide, (ii) for the maximum duration provided by applicable law or\ntreaty (including future time extensions), (iii) in any current or future\nmedium and for any number of copies, and (iv) for any purpose whatsoever,\nincluding without limitation commercial, advertising or promotional\npurposes (the \"Waiver\"). Affirmer makes the Waiver for the benefit of each\nmember of the public at large and to the detriment of Affirmer's heirs and\nsuccessors, fully intending that such Waiver shall not be subject to\nrevocation, rescission, cancellation, termination, or any other legal or\nequitable action to disrupt the quiet enjoyment of the Work by the public\nas contemplated by Affirmer's express Statement of Purpose.\n\n3. Public License Fallback. Should any part of the Waiver for any reason\nbe judged legally invalid or ineffective under applicable law, then the\nWaiver shall be preserved to the maximum extent permitted taking into\naccount Affirmer's express Statement of Purpose. In addition, to the\nextent the Waiver is so judged Affirmer hereby grants to each affected\nperson a royalty-free, non transferable, non sublicensable, non exclusive,\nirrevocable and unconditional license to exercise Affirmer's Copyright and\nRelated Rights in the Work (i) in all territories worldwide, (ii) for the\nmaximum duration provided by applicable law or treaty (including future\ntime extensions), (iii) in any current or future medium and for any number\nof copies, and (iv) for any purpose whatsoever, including without\nlimitation commercial, advertising or promotional purposes (the\n\"License\"). The License shall be deemed effective as of the date CC0 was\napplied by Affirmer to the Work. Should any part of the License for any\nreason be judged legally invalid or ineffective under applicable law, such\npartial invalidity or ineffectiveness shall not invalidate the remainder\nof the License, and in such case Affirmer hereby affirms that he or she\nwill not (i) exercise any of his or her remaining Copyright and Related\nRights in the Work or (ii) assert any associated claims and causes of\naction with respect to the Work, in either case contrary to Affirmer's\nexpress Statement of Purpose.\n\n4. Limitations and Disclaimers.\n\n a. No trademark or patent rights held by Affirmer are waived, abandoned,\n    surrendered, licensed or otherwise affected by this document.\n b. Affirmer offers the Work as-is and makes no representations or\n    warranties of any kind concerning the Work, express, implied,\n    statutory or otherwise, including without limitation warranties of\n    title, merchantability, fitness for a particular purpose, non\n    infringement, or the absence of latent or other defects, accuracy, or\n    the present or absence of errors, whether or not discoverable, all to\n    the greatest extent permissible under applicable law.\n c. Affirmer disclaims responsibility for clearing rights of other persons\n    that may apply to the Work or any use thereof, including without\n    limitation any person's Copyright and Related Rights in the Work.\n    Further, Affirmer disclaims responsibility for obtaining any necessary\n    consents, permissions or other rights required for any use of the\n    Work.\n d. Affirmer understands and acknowledges that Creative Commons is not a\n    party to this document and has no duty or obligation with respect to\n    this CC0 or use of the Work.",
+      "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/cc0-1.0.LICENSE",
+      "licensedb_url": "https://scancode-licensedb.aboutcode.org/cc0-1.0",
+      "spdx_url": "https://spdx.org/licenses/CC0-1.0"
+    },
+    {
+      "key": "gpl-2.0-plus",
+      "language": "en",
+      "short_name": "GPL 2.0 or later",
+      "name": "GNU General Public License 2.0 or later",
+      "category": "Copyleft",
+      "owner": "Free Software Foundation (FSF)",
+      "homepage_url": "http://www.gnu.org/licenses/old-licenses/gpl-2.0-standalone.html",
+      "notes": "Per SPDX.org, this license was released June 1991 This license is OSI\ncertified.\n",
+      "is_builtin": true,
+      "is_exception": false,
+      "is_unknown": false,
+      "is_generic": false,
+      "spdx_license_key": "GPL-2.0-or-later",
+      "other_spdx_license_keys": [
+        "GPL-2.0+",
+        "GPL 2.0+"
+      ],
+      "osi_license_key": null,
+      "text_urls": [
+        "http://www.gnu.org/licenses/old-licenses/gpl-2.0-standalone.html"
+      ],
+      "osi_url": null,
+      "faq_url": null,
+      "other_urls": [
+        "http://www.opensource.org/licenses/GPL-2.0",
+        "https://opensource.org/licenses/GPL-2.0",
+        "https://www.gnu.org/licenses/old-licenses/gpl-2.0-standalone.html"
+      ],
+      "key_aliases": [],
+      "minimum_coverage": 99,
+      "standard_notice": null,
+      "ignorable_copyrights": [
+        "Copyright (c) 1989, 1991 Free Software Foundation, Inc.",
+        "copyrighted by the Free Software Foundation"
+      ],
+      "ignorable_holders": [
+        "Free Software Foundation, Inc.",
+        "the Free Software Foundation"
+      ],
+      "ignorable_authors": [],
+      "ignorable_urls": [],
+      "ignorable_emails": [],
+      "text": "This program is free software; you can redistribute it and/or modify it under\nthe terms of the GNU General Public License as published by the Free Software\nFoundation; either version 2 of the License, or (at your option) any later\nversion.\n\nThis program is distributed in the hope that it will be useful, but WITHOUT ANY\nWARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A\nPARTICULAR PURPOSE.  See the GNU General Public License for more details.\n\nYou should have received a copy of the GNU General Public License along with\nthis program; if not, write to the Free Software Foundation, Inc., 51 Franklin\nStreet, Fifth Floor, Boston, MA  02110-1301, USA.\n\n                    GNU GENERAL PUBLIC LICENSE\n                       Version 2, June 1991\n\n Copyright (C) 1989, 1991 Free Software Foundation, Inc.,\n 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA\n Everyone is permitted to copy and distribute verbatim copies\n of this license document, but changing it is not allowed.\n\n                            Preamble\n\n  The licenses for most software are designed to take away your\nfreedom to share and change it.  By contrast, the GNU General Public\nLicense is intended to guarantee your freedom to share and change free\nsoftware--to make sure the software is free for all its users.  This\nGeneral Public License applies to most of the Free Software\nFoundation's software and to any other program whose authors commit to\nusing it.  (Some other Free Software Foundation software is covered by\nthe GNU Lesser General Public License instead.)  You can apply it to\nyour programs, too.\n\n  When we speak of free software, we are referring to freedom, not\nprice.  Our General Public Licenses are designed to make sure that you\nhave the freedom to distribute copies of free software (and charge for\nthis service if you wish), that you receive source code or can get it\nif you want it, that you can change the software or use pieces of it\nin new free programs; and that you know you can do these things.\n\n  To protect your rights, we need to make restrictions that forbid\nanyone to deny you these rights or to ask you to surrender the rights.\nThese restrictions translate to certain responsibilities for you if you\ndistribute copies of the software, or if you modify it.\n\n  For example, if you distribute copies of such a program, whether\ngratis or for a fee, you must give the recipients all the rights that\nyou have.  You must make sure that they, too, receive or can get the\nsource code.  And you must show them these terms so they know their\nrights.\n\n  We protect your rights with two steps: (1) copyright the software, and\n(2) offer you this license which gives you legal permission to copy,\ndistribute and/or modify the software.\n\n  Also, for each author's protection and ours, we want to make certain\nthat everyone understands that there is no warranty for this free\nsoftware.  If the software is modified by someone else and passed on, we\nwant its recipients to know that what they have is not the original, so\nthat any problems introduced by others will not reflect on the original\nauthors' reputations.\n\n  Finally, any free program is threatened constantly by software\npatents.  We wish to avoid the danger that redistributors of a free\nprogram will individually obtain patent licenses, in effect making the\nprogram proprietary.  To prevent this, we have made it clear that any\npatent must be licensed for everyone's free use or not licensed at all.\n\n  The precise terms and conditions for copying, distribution and\nmodification follow.\n\n                    GNU GENERAL PUBLIC LICENSE\n   TERMS AND CONDITIONS FOR COPYING, DISTRIBUTION AND MODIFICATION\n\n  0. This License applies to any program or other work which contains\na notice placed by the copyright holder saying it may be distributed\nunder the terms of this General Public License.  The \"Program\", below,\nrefers to any such program or work, and a \"work based on the Program\"\nmeans either the Program or any derivative work under copyright law:\nthat is to say, a work containing the Program or a portion of it,\neither verbatim or with modifications and/or translated into another\nlanguage.  (Hereinafter, translation is included without limitation in\nthe term \"modification\".)  Each licensee is addressed as \"you\".\n\nActivities other than copying, distribution and modification are not\ncovered by this License; they are outside its scope.  The act of\nrunning the Program is not restricted, and the output from the Program\nis covered only if its contents constitute a work based on the\nProgram (independent of having been made by running the Program).\nWhether that is true depends on what the Program does.\n\n  1. You may copy and distribute verbatim copies of the Program's\nsource code as you receive it, in any medium, provided that you\nconspicuously and appropriately publish on each copy an appropriate\ncopyright notice and disclaimer of warranty; keep intact all the\nnotices that refer to this License and to the absence of any warranty;\nand give any other recipients of the Program a copy of this License\nalong with the Program.\n\nYou may charge a fee for the physical act of transferring a copy, and\nyou may at your option offer warranty protection in exchange for a fee.\n\n  2. You may modify your copy or copies of the Program or any portion\nof it, thus forming a work based on the Program, and copy and\ndistribute such modifications or work under the terms of Section 1\nabove, provided that you also meet all of these conditions:\n\n    a) You must cause the modified files to carry prominent notices\n    stating that you changed the files and the date of any change.\n\n    b) You must cause any work that you distribute or publish, that in\n    whole or in part contains or is derived from the Program or any\n    part thereof, to be licensed as a whole at no charge to all third\n    parties under the terms of this License.\n\n    c) If the modified program normally reads commands interactively\n    when run, you must cause it, when started running for such\n    interactive use in the most ordinary way, to print or display an\n    announcement including an appropriate copyright notice and a\n    notice that there is no warranty (or else, saying that you provide\n    a warranty) and that users may redistribute the program under\n    these conditions, and telling the user how to view a copy of this\n    License.  (Exception: if the Program itself is interactive but\n    does not normally print such an announcement, your work based on\n    the Program is not required to print an announcement.)\n\nThese requirements apply to the modified work as a whole.  If\nidentifiable sections of that work are not derived from the Program,\nand can be reasonably considered independent and separate works in\nthemselves, then this License, and its terms, do not apply to those\nsections when you distribute them as separate works.  But when you\ndistribute the same sections as part of a whole which is a work based\non the Program, the distribution of the whole must be on the terms of\nthis License, whose permissions for other licensees extend to the\nentire whole, and thus to each and every part regardless of who wrote it.\n\nThus, it is not the intent of this section to claim rights or contest\nyour rights to work written entirely by you; rather, the intent is to\nexercise the right to control the distribution of derivative or\ncollective works based on the Program.\n\nIn addition, mere aggregation of another work not based on the Program\nwith the Program (or with a work based on the Program) on a volume of\na storage or distribution medium does not bring the other work under\nthe scope of this License.\n\n  3. You may copy and distribute the Program (or a work based on it,\nunder Section 2) in object code or executable form under the terms of\nSections 1 and 2 above provided that you also do one of the following:\n\n    a) Accompany it with the complete corresponding machine-readable\n    source code, which must be distributed under the terms of Sections\n    1 and 2 above on a medium customarily used for software interchange; or,\n\n    b) Accompany it with a written offer, valid for at least three\n    years, to give any third party, for a charge no more than your\n    cost of physically performing source distribution, a complete\n    machine-readable copy of the corresponding source code, to be\n    distributed under the terms of Sections 1 and 2 above on a medium\n    customarily used for software interchange; or,\n\n    c) Accompany it with the information you received as to the offer\n    to distribute corresponding source code.  (This alternative is\n    allowed only for noncommercial distribution and only if you\n    received the program in object code or executable form with such\n    an offer, in accord with Subsection b above.)\n\nThe source code for a work means the preferred form of the work for\nmaking modifications to it.  For an executable work, complete source\ncode means all the source code for all modules it contains, plus any\nassociated interface definition files, plus the scripts used to\ncontrol compilation and installation of the executable.  However, as a\nspecial exception, the source code distributed need not include\nanything that is normally distributed (in either source or binary\nform) with the major components (compiler, kernel, and so on) of the\noperating system on which the executable runs, unless that component\nitself accompanies the executable.\n\nIf distribution of executable or object code is made by offering\naccess to copy from a designated place, then offering equivalent\naccess to copy the source code from the same place counts as\ndistribution of the source code, even though third parties are not\ncompelled to copy the source along with the object code.\n\n  4. You may not copy, modify, sublicense, or distribute the Program\nexcept as expressly provided under this License.  Any attempt\notherwise to copy, modify, sublicense or distribute the Program is\nvoid, and will automatically terminate your rights under this License.\nHowever, parties who have received copies, or rights, from you under\nthis License will not have their licenses terminated so long as such\nparties remain in full compliance.\n\n  5. You are not required to accept this License, since you have not\nsigned it.  However, nothing else grants you permission to modify or\ndistribute the Program or its derivative works.  These actions are\nprohibited by law if you do not accept this License.  Therefore, by\nmodifying or distributing the Program (or any work based on the\nProgram), you indicate your acceptance of this License to do so, and\nall its terms and conditions for copying, distributing or modifying\nthe Program or works based on it.\n\n  6. Each time you redistribute the Program (or any work based on the\nProgram), the recipient automatically receives a license from the\noriginal licensor to copy, distribute or modify the Program subject to\nthese terms and conditions.  You may not impose any further\nrestrictions on the recipients' exercise of the rights granted herein.\nYou are not responsible for enforcing compliance by third parties to\nthis License.\n\n  7. If, as a consequence of a court judgment or allegation of patent\ninfringement or for any other reason (not limited to patent issues),\nconditions are imposed on you (whether by court order, agreement or\notherwise) that contradict the conditions of this License, they do not\nexcuse you from the conditions of this License.  If you cannot\ndistribute so as to satisfy simultaneously your obligations under this\nLicense and any other pertinent obligations, then as a consequence you\nmay not distribute the Program at all.  For example, if a patent\nlicense would not permit royalty-free redistribution of the Program by\nall those who receive copies directly or indirectly through you, then\nthe only way you could satisfy both it and this License would be to\nrefrain entirely from distribution of the Program.\n\nIf any portion of this section is held invalid or unenforceable under\nany particular circumstance, the balance of the section is intended to\napply and the section as a whole is intended to apply in other\ncircumstances.\n\nIt is not the purpose of this section to induce you to infringe any\npatents or other property right claims or to contest validity of any\nsuch claims; this section has the sole purpose of protecting the\nintegrity of the free software distribution system, which is\nimplemented by public license practices.  Many people have made\ngenerous contributions to the wide range of software distributed\nthrough that system in reliance on consistent application of that\nsystem; it is up to the author/donor to decide if he or she is willing\nto distribute software through any other system and a licensee cannot\nimpose that choice.\n\nThis section is intended to make thoroughly clear what is believed to\nbe a consequence of the rest of this License.\n\n  8. If the distribution and/or use of the Program is restricted in\ncertain countries either by patents or by copyrighted interfaces, the\noriginal copyright holder who places the Program under this License\nmay add an explicit geographical distribution limitation excluding\nthose countries, so that distribution is permitted only in or among\ncountries not thus excluded.  In such case, this License incorporates\nthe limitation as if written in the body of this License.\n\n  9. The Free Software Foundation may publish revised and/or new versions\nof the General Public License from time to time.  Such new versions will\nbe similar in spirit to the present version, but may differ in detail to\naddress new problems or concerns.\n\nEach version is given a distinguishing version number.  If the Program\nspecifies a version number of this License which applies to it and \"any\nlater version\", you have the option of following the terms and conditions\neither of that version or of any later version published by the Free\nSoftware Foundation.  If the Program does not specify a version number of\nthis License, you may choose any version ever published by the Free Software\nFoundation.\n\n  10. If you wish to incorporate parts of the Program into other free\nprograms whose distribution conditions are different, write to the author\nto ask for permission.  For software which is copyrighted by the Free\nSoftware Foundation, write to the Free Software Foundation; we sometimes\nmake exceptions for this.  Our decision will be guided by the two goals\nof preserving the free status of all derivatives of our free software and\nof promoting the sharing and reuse of software generally.\n\n                            NO WARRANTY\n\n  11. BECAUSE THE PROGRAM IS LICENSED FREE OF CHARGE, THERE IS NO WARRANTY\nFOR THE PROGRAM, TO THE EXTENT PERMITTED BY APPLICABLE LAW.  EXCEPT WHEN\nOTHERWISE STATED IN WRITING THE COPYRIGHT HOLDERS AND/OR OTHER PARTIES\nPROVIDE THE PROGRAM \"AS IS\" WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED\nOR IMPLIED, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF\nMERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.  THE ENTIRE RISK AS\nTO THE QUALITY AND PERFORMANCE OF THE PROGRAM IS WITH YOU.  SHOULD THE\nPROGRAM PROVE DEFECTIVE, YOU ASSUME THE COST OF ALL NECESSARY SERVICING,\nREPAIR OR CORRECTION.\n\n  12. IN NO EVENT UNLESS REQUIRED BY APPLICABLE LAW OR AGREED TO IN WRITING\nWILL ANY COPYRIGHT HOLDER, OR ANY OTHER PARTY WHO MAY MODIFY AND/OR\nREDISTRIBUTE THE PROGRAM AS PERMITTED ABOVE, BE LIABLE TO YOU FOR DAMAGES,\nINCLUDING ANY GENERAL, SPECIAL, INCIDENTAL OR CONSEQUENTIAL DAMAGES ARISING\nOUT OF THE USE OR INABILITY TO USE THE PROGRAM (INCLUDING BUT NOT LIMITED\nTO LOSS OF DATA OR DATA BEING RENDERED INACCURATE OR LOSSES SUSTAINED BY\nYOU OR THIRD PARTIES OR A FAILURE OF THE PROGRAM TO OPERATE WITH ANY OTHER\nPROGRAMS), EVEN IF SUCH HOLDER OR OTHER PARTY HAS BEEN ADVISED OF THE\nPOSSIBILITY OF SUCH DAMAGES.\n\n                     END OF TERMS AND CONDITIONS\n\n            How to Apply These Terms to Your New Programs\n\n  If you develop a new program, and you want it to be of the greatest\npossible use to the public, the best way to achieve this is to make it\nfree software which everyone can redistribute and change under these terms.\n\n  To do so, attach the following notices to the program.  It is safest\nto attach them to the start of each source file to most effectively\nconvey the exclusion of warranty; and each file should have at least\nthe \"copyright\" line and a pointer to where the full notice is found.\n\n    <one line to give the program's name and a brief idea of what it does.>\n    Copyright (C) <year>  <name of author>\n\n    This program is free software; you can redistribute it and/or modify\n    it under the terms of the GNU General Public License as published by\n    the Free Software Foundation; either version 2 of the License, or\n    (at your option) any later version.\n\n    This program is distributed in the hope that it will be useful,\n    but WITHOUT ANY WARRANTY; without even the implied warranty of\n    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the\n    GNU General Public License for more details.\n\n    You should have received a copy of the GNU General Public License along\n    with this program; if not, write to the Free Software Foundation, Inc.,\n    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.\n\nAlso add information on how to contact you by electronic and paper mail.\n\nIf the program is interactive, make it output a short notice like this\nwhen it starts in an interactive mode:\n\n    Gnomovision version 69, Copyright (C) year name of author\n    Gnomovision comes with ABSOLUTELY NO WARRANTY; for details type `show w'.\n    This is free software, and you are welcome to redistribute it\n    under certain conditions; type `show c' for details.\n\nThe hypothetical commands `show w' and `show c' should show the appropriate\nparts of the General Public License.  Of course, the commands you use may\nbe called something other than `show w' and `show c'; they could even be\nmouse-clicks or menu items--whatever suits your program.\n\nYou should also get your employer (if you work as a programmer) or your\nschool, if any, to sign a \"copyright disclaimer\" for the program, if\nnecessary.  Here is a sample; alter the names:\n\n  Yoyodyne, Inc., hereby disclaims all copyright interest in the program\n  `Gnomovision' (which makes passes at compilers) written by James Hacker.\n\n  <signature of Ty Coon>, 1 April 1989\n  Ty Coon, President of Vice\n\nThis General Public License does not permit incorporating your program into\nproprietary programs.  If your program is a subroutine library, you may\nconsider it more useful to permit linking proprietary applications with the\nlibrary.  If this is what you want to do, use the GNU Lesser General\nPublic License instead of this License.",
+      "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-2.0-plus.LICENSE",
+      "licensedb_url": "https://scancode-licensedb.aboutcode.org/gpl-2.0-plus",
+      "spdx_url": "https://spdx.org/licenses/GPL-2.0-or-later"
+    },
+    {
+      "key": "lgpl-2.1-plus",
+      "language": "en",
+      "short_name": "LGPL 2.1 or later",
+      "name": "GNU Lesser General Public License 2.1 or later",
+      "category": "Copyleft Limited",
+      "owner": "Free Software Foundation (FSF)",
+      "homepage_url": "http://www.gnu.org/licenses/old-licenses/lgpl-2.1-standalone.html",
+      "notes": "Per SPDX.org, this license was released February 1999. This license is OSI\ncertified.\n",
+      "is_builtin": true,
+      "is_exception": false,
+      "is_unknown": false,
+      "is_generic": false,
+      "spdx_license_key": "LGPL-2.1-or-later",
+      "other_spdx_license_keys": [
+        "LGPL-2.1+"
+      ],
+      "osi_license_key": null,
+      "text_urls": [
+        "http://www.gnu.org/licenses/old-licenses/lgpl-2.1-standalone.html"
+      ],
+      "osi_url": null,
+      "faq_url": null,
+      "other_urls": [
+        "http://www.gnu.org/copyleft/lesser.html",
+        "http://www.opensource.org/licenses/LGPL-2.1",
+        "https://opensource.org/licenses/LGPL-2.1",
+        "https://www.gnu.org/licenses/old-licenses/lgpl-2.1-standalone.html"
+      ],
+      "key_aliases": [],
+      "minimum_coverage": 99,
+      "standard_notice": null,
+      "ignorable_copyrights": [
+        "Copyright (c) 1991, 1999 Free Software Foundation, Inc.",
+        "copyrighted by the Free Software Foundation"
+      ],
+      "ignorable_holders": [
+        "Free Software Foundation, Inc.",
+        "the Free Software Foundation"
+      ],
+      "ignorable_authors": [],
+      "ignorable_urls": [],
+      "ignorable_emails": [],
+      "text": "This library is free software; you can redistribute it and/or modify it under\nthe terms of the GNU Lesser General Public License as published by the Free\nSoftware Foundation; either version 2.1 of the License, or (at your option) any\nlater version.\n\nThis library is distributed in the hope that it will be useful, but WITHOUT ANY\nWARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A\nPARTICULAR PURPOSE.  See the GNU Lesser General Public License for more details.\n\nYou should have received a copy of the GNU Lesser General Public License along\nwith this library; if not, write to the Free Software Foundation, Inc., 51\nFranklin Street, Fifth Floor, Boston, MA  02110-1301  USA\n\n\n                  GNU LESSER GENERAL PUBLIC LICENSE\n                       Version 2.1, February 1999\n\n Copyright (C) 1991, 1999 Free Software Foundation, Inc.\n 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA\n Everyone is permitted to copy and distribute verbatim copies\n of this license document, but changing it is not allowed.\n\n[This is the first released version of the Lesser GPL.  It also counts\n as the successor of the GNU Library Public License, version 2, hence\n the version number 2.1.]\n\n                            Preamble\n\n  The licenses for most software are designed to take away your\nfreedom to share and change it.  By contrast, the GNU General Public\nLicenses are intended to guarantee your freedom to share and change\nfree software--to make sure the software is free for all its users.\n\n  This license, the Lesser General Public License, applies to some\nspecially designated software packages--typically libraries--of the\nFree Software Foundation and other authors who decide to use it.  You\ncan use it too, but we suggest you first think carefully about whether\nthis license or the ordinary General Public License is the better\nstrategy to use in any particular case, based on the explanations below.\n\n  When we speak of free software, we are referring to freedom of use,\nnot price.  Our General Public Licenses are designed to make sure that\nyou have the freedom to distribute copies of free software (and charge\nfor this service if you wish); that you receive source code or can get\nit if you want it; that you can change the software and use pieces of\nit in new free programs; and that you are informed that you can do\nthese things.\n\n  To protect your rights, we need to make restrictions that forbid\ndistributors to deny you these rights or to ask you to surrender these\nrights.  These restrictions translate to certain responsibilities for\nyou if you distribute copies of the library or if you modify it.\n\n  For example, if you distribute copies of the library, whether gratis\nor for a fee, you must give the recipients all the rights that we gave\nyou.  You must make sure that they, too, receive or can get the source\ncode.  If you link other code with the library, you must provide\ncomplete object files to the recipients, so that they can relink them\nwith the library after making changes to the library and recompiling\nit.  And you must show them these terms so they know their rights.\n\n  We protect your rights with a two-step method: (1) we copyright the\nlibrary, and (2) we offer you this license, which gives you legal\npermission to copy, distribute and/or modify the library.\n\n  To protect each distributor, we want to make it very clear that\nthere is no warranty for the free library.  Also, if the library is\nmodified by someone else and passed on, the recipients should know\nthat what they have is not the original version, so that the original\nauthor's reputation will not be affected by problems that might be\nintroduced by others.\n\n\n  Finally, software patents pose a constant threat to the existence of\nany free program.  We wish to make sure that a company cannot\neffectively restrict the users of a free program by obtaining a\nrestrictive license from a patent holder.  Therefore, we insist that\nany patent license obtained for a version of the library must be\nconsistent with the full freedom of use specified in this license.\n\n  Most GNU software, including some libraries, is covered by the\nordinary GNU General Public License.  This license, the GNU Lesser\nGeneral Public License, applies to certain designated libraries, and\nis quite different from the ordinary General Public License.  We use\nthis license for certain libraries in order to permit linking those\nlibraries into non-free programs.\n\n  When a program is linked with a library, whether statically or using\na shared library, the combination of the two is legally speaking a\ncombined work, a derivative of the original library.  The ordinary\nGeneral Public License therefore permits such linking only if the\nentire combination fits its criteria of freedom.  The Lesser General\nPublic License permits more lax criteria for linking other code with\nthe library.\n\n  We call this license the \"Lesser\" General Public License because it\ndoes Less to protect the user's freedom than the ordinary General\nPublic License.  It also provides other free software developers Less\nof an advantage over competing non-free programs.  These disadvantages\nare the reason we use the ordinary General Public License for many\nlibraries.  However, the Lesser license provides advantages in certain\nspecial circumstances.\n\n  For example, on rare occasions, there may be a special need to\nencourage the widest possible use of a certain library, so that it becomes\na de-facto standard.  To achieve this, non-free programs must be\nallowed to use the library.  A more frequent case is that a free\nlibrary does the same job as widely used non-free libraries.  In this\ncase, there is little to gain by limiting the free library to free\nsoftware only, so we use the Lesser General Public License.\n\n  In other cases, permission to use a particular library in non-free\nprograms enables a greater number of people to use a large body of\nfree software.  For example, permission to use the GNU C Library in\nnon-free programs enables many more people to use the whole GNU\noperating system, as well as its variant, the GNU/Linux operating\nsystem.\n\n  Although the Lesser General Public License is Less protective of the\nusers' freedom, it does ensure that the user of a program that is\nlinked with the Library has the freedom and the wherewithal to run\nthat program using a modified version of the Library.\n\n  The precise terms and conditions for copying, distribution and\nmodification follow.  Pay close attention to the difference between a\n\"work based on the library\" and a \"work that uses the library\".  The\nformer contains code derived from the library, whereas the latter must\nbe combined with the library in order to run.\n\n\n                  GNU LESSER GENERAL PUBLIC LICENSE\n   TERMS AND CONDITIONS FOR COPYING, DISTRIBUTION AND MODIFICATION\n\n  0. This License Agreement applies to any software library or other\nprogram which contains a notice placed by the copyright holder or\nother authorized party saying it may be distributed under the terms of\nthis Lesser General Public License (also called \"this License\").\nEach licensee is addressed as \"you\".\n\n  A \"library\" means a collection of software functions and/or data\nprepared so as to be conveniently linked with application programs\n(which use some of those functions and data) to form executables.\n\n  The \"Library\", below, refers to any such software library or work\nwhich has been distributed under these terms.  A \"work based on the\nLibrary\" means either the Library or any derivative work under\ncopyright law: that is to say, a work containing the Library or a\nportion of it, either verbatim or with modifications and/or translated\nstraightforwardly into another language.  (Hereinafter, translation is\nincluded without limitation in the term \"modification\".)\n\n  \"Source code\" for a work means the preferred form of the work for\nmaking modifications to it.  For a library, complete source code means\nall the source code for all modules it contains, plus any associated\ninterface definition files, plus the scripts used to control compilation\nand installation of the library.\n\n  Activities other than copying, distribution and modification are not\ncovered by this License; they are outside its scope.  The act of\nrunning a program using the Library is not restricted, and output from\nsuch a program is covered only if its contents constitute a work based\non the Library (independent of the use of the Library in a tool for\nwriting it).  Whether that is true depends on what the Library does\nand what the program that uses the Library does.\n\n  1. You may copy and distribute verbatim copies of the Library's\ncomplete source code as you receive it, in any medium, provided that\nyou conspicuously and appropriately publish on each copy an\nappropriate copyright notice and disclaimer of warranty; keep intact\nall the notices that refer to this License and to the absence of any\nwarranty; and distribute a copy of this License along with the\nLibrary.\n\n  You may charge a fee for the physical act of transferring a copy,\nand you may at your option offer warranty protection in exchange for a\nfee.\n\n\n  2. You may modify your copy or copies of the Library or any portion\nof it, thus forming a work based on the Library, and copy and\ndistribute such modifications or work under the terms of Section 1\nabove, provided that you also meet all of these conditions:\n\n    a) The modified work must itself be a software library.\n\n    b) You must cause the files modified to carry prominent notices\n    stating that you changed the files and the date of any change.\n\n    c) You must cause the whole of the work to be licensed at no\n    charge to all third parties under the terms of this License.\n\n    d) If a facility in the modified Library refers to a function or a\n    table of data to be supplied by an application program that uses\n    the facility, other than as an argument passed when the facility\n    is invoked, then you must make a good faith effort to ensure that,\n    in the event an application does not supply such function or\n    table, the facility still operates, and performs whatever part of\n    its purpose remains meaningful.\n\n    (For example, a function in a library to compute square roots has\n    a purpose that is entirely well-defined independent of the\n    application.  Therefore, Subsection 2d requires that any\n    application-supplied function or table used by this function must\n    be optional: if the application does not supply it, the square\n    root function must still compute square roots.)\n\nThese requirements apply to the modified work as a whole.  If\nidentifiable sections of that work are not derived from the Library,\nand can be reasonably considered independent and separate works in\nthemselves, then this License, and its terms, do not apply to those\nsections when you distribute them as separate works.  But when you\ndistribute the same sections as part of a whole which is a work based\non the Library, the distribution of the whole must be on the terms of\nthis License, whose permissions for other licensees extend to the\nentire whole, and thus to each and every part regardless of who wrote\nit.\n\nThus, it is not the intent of this section to claim rights or contest\nyour rights to work written entirely by you; rather, the intent is to\nexercise the right to control the distribution of derivative or\ncollective works based on the Library.\n\nIn addition, mere aggregation of another work not based on the Library\nwith the Library (or with a work based on the Library) on a volume of\na storage or distribution medium does not bring the other work under\nthe scope of this License.\n\n  3. You may opt to apply the terms of the ordinary GNU General Public\nLicense instead of this License to a given copy of the Library.  To do\nthis, you must alter all the notices that refer to this License, so\nthat they refer to the ordinary GNU General Public License, version 2,\ninstead of to this License.  (If a newer version than version 2 of the\nordinary GNU General Public License has appeared, then you can specify\nthat version instead if you wish.)  Do not make any other change in\nthese notices.\n\n\n  Once this change is made in a given copy, it is irreversible for\nthat copy, so the ordinary GNU General Public License applies to all\nsubsequent copies and derivative works made from that copy.\n\n  This option is useful when you wish to copy part of the code of\nthe Library into a program that is not a library.\n\n  4. You may copy and distribute the Library (or a portion or\nderivative of it, under Section 2) in object code or executable form\nunder the terms of Sections 1 and 2 above provided that you accompany\nit with the complete corresponding machine-readable source code, which\nmust be distributed under the terms of Sections 1 and 2 above on a\nmedium customarily used for software interchange.\n\n  If distribution of object code is made by offering access to copy\nfrom a designated place, then offering equivalent access to copy the\nsource code from the same place satisfies the requirement to\ndistribute the source code, even though third parties are not\ncompelled to copy the source along with the object code.\n\n  5. A program that contains no derivative of any portion of the\nLibrary, but is designed to work with the Library by being compiled or\nlinked with it, is called a \"work that uses the Library\".  Such a\nwork, in isolation, is not a derivative work of the Library, and\ntherefore falls outside the scope of this License.\n\n  However, linking a \"work that uses the Library\" with the Library\ncreates an executable that is a derivative of the Library (because it\ncontains portions of the Library), rather than a \"work that uses the\nlibrary\".  The executable is therefore covered by this License.\nSection 6 states terms for distribution of such executables.\n\n  When a \"work that uses the Library\" uses material from a header file\nthat is part of the Library, the object code for the work may be a\nderivative work of the Library even though the source code is not.\nWhether this is true is especially significant if the work can be\nlinked without the Library, or if the work is itself a library.  The\nthreshold for this to be true is not precisely defined by law.\n\n  If such an object file uses only numerical parameters, data\nstructure layouts and accessors, and small macros and small inline\nfunctions (ten lines or less in length), then the use of the object\nfile is unrestricted, regardless of whether it is legally a derivative\nwork.  (Executables containing this object code plus portions of the\nLibrary will still fall under Section 6.)\n\n  Otherwise, if the work is a derivative of the Library, you may\ndistribute the object code for the work under the terms of Section 6.\nAny executables containing that work also fall under Section 6,\nwhether or not they are linked directly with the Library itself.\n\n\n  6. As an exception to the Sections above, you may also combine or\nlink a \"work that uses the Library\" with the Library to produce a\nwork containing portions of the Library, and distribute that work\nunder terms of your choice, provided that the terms permit\nmodification of the work for the customer's own use and reverse\nengineering for debugging such modifications.\n\n  You must give prominent notice with each copy of the work that the\nLibrary is used in it and that the Library and its use are covered by\nthis License.  You must supply a copy of this License.  If the work\nduring execution displays copyright notices, you must include the\ncopyright notice for the Library among them, as well as a reference\ndirecting the user to the copy of this License.  Also, you must do one\nof these things:\n\n    a) Accompany the work with the complete corresponding\n    machine-readable source code for the Library including whatever\n    changes were used in the work (which must be distributed under\n    Sections 1 and 2 above); and, if the work is an executable linked\n    with the Library, with the complete machine-readable \"work that\n    uses the Library\", as object code and/or source code, so that the\n    user can modify the Library and then relink to produce a modified\n    executable containing the modified Library.  (It is understood\n    that the user who changes the contents of definitions files in the\n    Library will not necessarily be able to recompile the application\n    to use the modified definitions.)\n\n    b) Use a suitable shared library mechanism for linking with the\n    Library.  A suitable mechanism is one that (1) uses at run time a\n    copy of the library already present on the user's computer system,\n    rather than copying library functions into the executable, and (2)\n    will operate properly with a modified version of the library, if\n    the user installs one, as long as the modified version is\n    interface-compatible with the version that the work was made with.\n\n    c) Accompany the work with a written offer, valid for at\n    least three years, to give the same user the materials\n    specified in Subsection 6a, above, for a charge no more\n    than the cost of performing this distribution.\n\n    d) If distribution of the work is made by offering access to copy\n    from a designated place, offer equivalent access to copy the above\n    specified materials from the same place.\n\n    e) Verify that the user has already received a copy of these\n    materials or that you have already sent this user a copy.\n\n  For an executable, the required form of the \"work that uses the\nLibrary\" must include any data and utility programs needed for\nreproducing the executable from it.  However, as a special exception,\nthe materials to be distributed need not include anything that is\nnormally distributed (in either source or binary form) with the major\ncomponents (compiler, kernel, and so on) of the operating system on\nwhich the executable runs, unless that component itself accompanies\nthe executable.\n\n  It may happen that this requirement contradicts the license\nrestrictions of other proprietary libraries that do not normally\naccompany the operating system.  Such a contradiction means you cannot\nuse both them and the Library together in an executable that you\ndistribute.\n\n\n  7. You may place library facilities that are a work based on the\nLibrary side-by-side in a single library together with other library\nfacilities not covered by this License, and distribute such a combined\nlibrary, provided that the separate distribution of the work based on\nthe Library and of the other library facilities is otherwise\npermitted, and provided that you do these two things:\n\n    a) Accompany the combined library with a copy of the same work\n    based on the Library, uncombined with any other library\n    facilities.  This must be distributed under the terms of the\n    Sections above.\n\n    b) Give prominent notice with the combined library of the fact\n    that part of it is a work based on the Library, and explaining\n    where to find the accompanying uncombined form of the same work.\n\n  8. You may not copy, modify, sublicense, link with, or distribute\nthe Library except as expressly provided under this License.  Any\nattempt otherwise to copy, modify, sublicense, link with, or\ndistribute the Library is void, and will automatically terminate your\nrights under this License.  However, parties who have received copies,\nor rights, from you under this License will not have their licenses\nterminated so long as such parties remain in full compliance.\n\n  9. You are not required to accept this License, since you have not\nsigned it.  However, nothing else grants you permission to modify or\ndistribute the Library or its derivative works.  These actions are\nprohibited by law if you do not accept this License.  Therefore, by\nmodifying or distributing the Library (or any work based on the\nLibrary), you indicate your acceptance of this License to do so, and\nall its terms and conditions for copying, distributing or modifying\nthe Library or works based on it.\n\n  10. Each time you redistribute the Library (or any work based on the\nLibrary), the recipient automatically receives a license from the\noriginal licensor to copy, distribute, link with or modify the Library\nsubject to these terms and conditions.  You may not impose any further\nrestrictions on the recipients' exercise of the rights granted herein.\nYou are not responsible for enforcing compliance by third parties with\nthis License.\n\n\n  11. If, as a consequence of a court judgment or allegation of patent\ninfringement or for any other reason (not limited to patent issues),\nconditions are imposed on you (whether by court order, agreement or\notherwise) that contradict the conditions of this License, they do not\nexcuse you from the conditions of this License.  If you cannot\ndistribute so as to satisfy simultaneously your obligations under this\nLicense and any other pertinent obligations, then as a consequence you\nmay not distribute the Library at all.  For example, if a patent\nlicense would not permit royalty-free redistribution of the Library by\nall those who receive copies directly or indirectly through you, then\nthe only way you could satisfy both it and this License would be to\nrefrain entirely from distribution of the Library.\n\nIf any portion of this section is held invalid or unenforceable under any\nparticular circumstance, the balance of the section is intended to apply,\nand the section as a whole is intended to apply in other circumstances.\n\nIt is not the purpose of this section to induce you to infringe any\npatents or other property right claims or to contest validity of any\nsuch claims; this section has the sole purpose of protecting the\nintegrity of the free software distribution system which is\nimplemented by public license practices.  Many people have made\ngenerous contributions to the wide range of software distributed\nthrough that system in reliance on consistent application of that\nsystem; it is up to the author/donor to decide if he or she is willing\nto distribute software through any other system and a licensee cannot\nimpose that choice.\n\nThis section is intended to make thoroughly clear what is believed to\nbe a consequence of the rest of this License.\n\n  12. If the distribution and/or use of the Library is restricted in\ncertain countries either by patents or by copyrighted interfaces, the\noriginal copyright holder who places the Library under this License may add\nan explicit geographical distribution limitation excluding those countries,\nso that distribution is permitted only in or among countries not thus\nexcluded.  In such case, this License incorporates the limitation as if\nwritten in the body of this License.\n\n  13. The Free Software Foundation may publish revised and/or new\nversions of the Lesser General Public License from time to time.\nSuch new versions will be similar in spirit to the present version,\nbut may differ in detail to address new problems or concerns.\n\nEach version is given a distinguishing version number.  If the Library\nspecifies a version number of this License which applies to it and\n\"any later version\", you have the option of following the terms and\nconditions either of that version or of any later version published by\nthe Free Software Foundation.  If the Library does not specify a\nlicense version number, you may choose any version ever published by\nthe Free Software Foundation.\n\n\n  14. If you wish to incorporate parts of the Library into other free\nprograms whose distribution conditions are incompatible with these,\nwrite to the author to ask for permission.  For software which is\ncopyrighted by the Free Software Foundation, write to the Free\nSoftware Foundation; we sometimes make exceptions for this.  Our\ndecision will be guided by the two goals of preserving the free status\nof all derivatives of our free software and of promoting the sharing\nand reuse of software generally.\n\n                            NO WARRANTY\n\n  15. BECAUSE THE LIBRARY IS LICENSED FREE OF CHARGE, THERE IS NO\nWARRANTY FOR THE LIBRARY, TO THE EXTENT PERMITTED BY APPLICABLE LAW.\nEXCEPT WHEN OTHERWISE STATED IN WRITING THE COPYRIGHT HOLDERS AND/OR\nOTHER PARTIES PROVIDE THE LIBRARY \"AS IS\" WITHOUT WARRANTY OF ANY\nKIND, EITHER EXPRESSED OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, THE\nIMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR\nPURPOSE.  THE ENTIRE RISK AS TO THE QUALITY AND PERFORMANCE OF THE\nLIBRARY IS WITH YOU.  SHOULD THE LIBRARY PROVE DEFECTIVE, YOU ASSUME\nTHE COST OF ALL NECESSARY SERVICING, REPAIR OR CORRECTION.\n\n  16. IN NO EVENT UNLESS REQUIRED BY APPLICABLE LAW OR AGREED TO IN\nWRITING WILL ANY COPYRIGHT HOLDER, OR ANY OTHER PARTY WHO MAY MODIFY\nAND/OR REDISTRIBUTE THE LIBRARY AS PERMITTED ABOVE, BE LIABLE TO YOU\nFOR DAMAGES, INCLUDING ANY GENERAL, SPECIAL, INCIDENTAL OR\nCONSEQUENTIAL DAMAGES ARISING OUT OF THE USE OR INABILITY TO USE THE\nLIBRARY (INCLUDING BUT NOT LIMITED TO LOSS OF DATA OR DATA BEING\nRENDERED INACCURATE OR LOSSES SUSTAINED BY YOU OR THIRD PARTIES OR A\nFAILURE OF THE LIBRARY TO OPERATE WITH ANY OTHER SOFTWARE), EVEN IF\nSUCH HOLDER OR OTHER PARTY HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH\nDAMAGES.\n\n                     END OF TERMS AND CONDITIONS\n\n\n           How to Apply These Terms to Your New Libraries\n\n  If you develop a new library, and you want it to be of the greatest\npossible use to the public, we recommend making it free software that\neveryone can redistribute and change.  You can do so by permitting\nredistribution under these terms (or, alternatively, under the terms of the\nordinary General Public License).\n\n  To apply these terms, attach the following notices to the library.  It is\nsafest to attach them to the start of each source file to most effectively\nconvey the exclusion of warranty; and each file should have at least the\n\"copyright\" line and a pointer to where the full notice is found.\n\n    <one line to give the library's name and a brief idea of what it does.>\n    Copyright (C) <year>  <name of author>\n\n    This library is free software; you can redistribute it and/or\n    modify it under the terms of the GNU Lesser General Public\n    License as published by the Free Software Foundation; either\n    version 2.1 of the License, or (at your option) any later version.\n\n    This library is distributed in the hope that it will be useful,\n    but WITHOUT ANY WARRANTY; without even the implied warranty of\n    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU\n    Lesser General Public License for more details.\n\n    You should have received a copy of the GNU Lesser General Public\n    License along with this library; if not, write to the Free Software\n    Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA\n\nAlso add information on how to contact you by electronic and paper mail.\n\nYou should also get your employer (if you work as a programmer) or your\nschool, if any, to sign a \"copyright disclaimer\" for the library, if\nnecessary.  Here is a sample; alter the names:\n\n  Yoyodyne, Inc., hereby disclaims all copyright interest in the\n  library `Frob' (a library for tweaking knobs) written by James Random Hacker.\n\n  <signature of Ty Coon>, 1 April 1990\n  Ty Coon, President of Vice\n\nThat's all there is to it!",
+      "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/lgpl-2.1-plus.LICENSE",
+      "licensedb_url": "https://scancode-licensedb.aboutcode.org/lgpl-2.1-plus",
+      "spdx_url": "https://spdx.org/licenses/LGPL-2.1-or-later"
+    },
+    {
+      "key": "mit-old-style",
+      "language": "en",
+      "short_name": "MIT Old Style",
+      "name": "MIT Old Style",
+      "category": "Permissive",
+      "owner": "MIT",
+      "homepage_url": "http://fedoraproject.org/wiki/Licensing:MIT#Old_Style",
+      "notes": null,
+      "is_builtin": true,
+      "is_exception": false,
+      "is_unknown": false,
+      "is_generic": false,
+      "spdx_license_key": "LicenseRef-scancode-mit-old-style",
+      "other_spdx_license_keys": [],
+      "osi_license_key": null,
+      "text_urls": [
+        "http://fedoraproject.org/wiki/Licensing:MIT#Old_Style"
+      ],
+      "osi_url": null,
+      "faq_url": null,
+      "other_urls": [],
+      "key_aliases": [],
+      "minimum_coverage": 0,
+      "standard_notice": null,
+      "ignorable_copyrights": [],
+      "ignorable_holders": [],
+      "ignorable_authors": [],
+      "ignorable_urls": [],
+      "ignorable_emails": [],
+      "text": "Permission to use, copy, modify, distribute, and sell this software and\nits documentation for any purpose is hereby granted without fee, provided that\nthe above copyright notice appear in all copies and that both that\ncopyright notice and this permission notice appear in supporting\ndocumentation.  No representations are made about the suitability of this\nsoftware for any purpose. It is provided \"as is\" without express or\nimplied warranty.",
+      "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit-old-style.LICENSE",
+      "licensedb_url": "https://scancode-licensedb.aboutcode.org/mit-old-style",
+      "spdx_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit-old-style.LICENSE"
+    },
+    {
+      "key": "zlib",
+      "language": "en",
+      "short_name": "ZLIB License",
+      "name": "ZLIB License",
+      "category": "Permissive",
+      "owner": "zlib",
+      "homepage_url": "http://www.zlib.net/",
+      "notes": "Per SPDX.org, this is OSI certified",
+      "is_builtin": true,
+      "is_exception": false,
+      "is_unknown": false,
+      "is_generic": false,
+      "spdx_license_key": "Zlib",
+      "other_spdx_license_keys": [],
+      "osi_license_key": null,
+      "text_urls": [
+        "http://www.gzip.org/zlib/zlib_license.html"
+      ],
+      "osi_url": "http://www.opensource.org/licenses/zlib-license.php",
+      "faq_url": "http://www.gzip.org/zlib/zlib-faq.html",
+      "other_urls": [
+        "http://www.opensource.org/licenses/Zlib",
+        "http://www.zlib.net/zlib_license.html",
+        "https://opensource.org/licenses/Zlib"
+      ],
+      "key_aliases": [],
+      "minimum_coverage": 50,
+      "standard_notice": null,
+      "ignorable_copyrights": [],
+      "ignorable_holders": [],
+      "ignorable_authors": [],
+      "ignorable_urls": [],
+      "ignorable_emails": [],
+      "text": "This software is provided 'as-is', without any express or implied warranty. In no\nevent will the authors be held liable for any damages arising from the use of this\nsoftware.\n\nPermission is granted to anyone to use this software for any purpose, including\ncommercial applications, and to alter it and redistribute it freely, subject to\nthe following restrictions:\n\n1. The origin of this software must not be misrepresented; you must not claim that\n   you wrote the original software. If you use this software in a product, an\n   acknowledgment in the product documentation would be appreciated but is not\n   required.\n\n2. Altered source versions must be plainly marked as such, and must not be\n   misrepresented as being the original software.\n\n3. This notice may not be removed or altered from any source distribution.",
+      "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/zlib.LICENSE",
+      "licensedb_url": "https://scancode-licensedb.aboutcode.org/zlib",
+      "spdx_url": "https://spdx.org/licenses/Zlib"
+    }
+  ],
+  "license_rule_references": [
+    {
+      "license_expression": "artistic-2.0",
+      "identifier": "artistic-2.0_46.RULE",
+      "language": "en",
+      "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/artistic-2.0_46.RULE",
+      "is_license_text": false,
+      "is_license_notice": false,
+      "is_license_reference": false,
+      "is_license_tag": true,
+      "is_license_intro": false,
+      "is_continuous": true,
+      "is_builtin": true,
+      "is_from_license": false,
+      "is_synthetic": false,
+      "length": 4,
+      "relevance": 100,
+      "minimum_coverage": 100,
+      "referenced_filenames": [],
+      "notes": "Rule based on an SPDX license identifier and name",
+      "ignorable_copyrights": [],
+      "ignorable_holders": [],
+      "ignorable_authors": [],
+      "ignorable_urls": [],
+      "ignorable_emails": [],
+      "text": "license: Artistic-2.0"
+    },
+    {
+      "license_expression": "boost-1.0",
+      "identifier": "boost-1.0_21.RULE",
+      "language": "en",
+      "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/boost-1.0_21.RULE",
+      "is_license_text": false,
+      "is_license_notice": true,
+      "is_license_reference": false,
+      "is_license_tag": false,
+      "is_license_intro": false,
+      "is_continuous": false,
+      "is_builtin": true,
+      "is_from_license": false,
+      "is_synthetic": false,
+      "length": 32,
+      "relevance": 100,
+      "minimum_coverage": 0,
+      "referenced_filenames": [
+        "LICENSE_1_0.txt"
+      ],
+      "notes": null,
+      "ignorable_copyrights": [],
+      "ignorable_holders": [],
+      "ignorable_authors": [],
+      "ignorable_urls": [
+        "http://www.boost.org/LICENSE_1_0.txt"
+      ],
+      "ignorable_emails": [],
+      "text": "Use, modification and distribution are subject to the Boost Software License, Version 1.0.\n(See accompanying file LICENSE_1_0.txt or copy at http://www.boost.org/LICENSE_1_0.txt)"
+    },
+    {
+      "license_expression": "cc-by-2.5",
+      "identifier": "cc-by-2.5_4.RULE",
+      "language": "en",
+      "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/cc-by-2.5_4.RULE",
+      "is_license_text": false,
+      "is_license_notice": true,
+      "is_license_reference": false,
+      "is_license_tag": false,
+      "is_license_intro": false,
+      "is_continuous": false,
+      "is_builtin": true,
+      "is_from_license": false,
+      "is_synthetic": false,
+      "length": 14,
+      "relevance": 100,
+      "minimum_coverage": 50,
+      "referenced_filenames": [],
+      "notes": null,
+      "ignorable_copyrights": [],
+      "ignorable_holders": [],
+      "ignorable_authors": [],
+      "ignorable_urls": [
+        "http://creativecommons.org/licenses/by/2.5"
+      ],
+      "ignorable_emails": [],
+      "text": "* Released under the Creative Commons Attribution License\n *   (http://creativecommons.org/licenses/by/2.5)"
+    },
+    {
+      "license_expression": "cc0-1.0",
+      "identifier": "cc0-1.0_155.RULE",
+      "language": "en",
+      "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/cc0-1.0_155.RULE",
+      "is_license_text": true,
+      "is_license_notice": false,
+      "is_license_reference": false,
+      "is_license_tag": false,
+      "is_license_intro": false,
+      "is_continuous": false,
+      "is_builtin": true,
+      "is_from_license": false,
+      "is_synthetic": false,
+      "length": 981,
+      "relevance": 100,
+      "minimum_coverage": 0,
+      "referenced_filenames": [],
+      "notes": null,
+      "ignorable_copyrights": [],
+      "ignorable_holders": [],
+      "ignorable_authors": [],
+      "ignorable_urls": [],
+      "ignorable_emails": [],
+      "text": "Statatement of Purpose\n .\n The laws of most jurisdictions throughout the world automatically confer\n exclusive Copyright and Related Rights (defined below) upon the creator\n and subsequent owner(s) (each and all, an \"owner\") of an original work\n of authorship and/or a database (each, a \"Work\").\n .\n Certain owners wish to permanently relinquish those rights to a Work\n for the purpose of contributing to a commons of creative, cultural and\n scientific works (\"Commons\") that the public can reliably and without\n fear of later claims of infringement build upon, modify, incorporate in\n other works, reuse and redistribute as freely as possible in any form\n whatsoever and for any purposes, including without limitation commercial\n purposes. These owners may contribute to the Commons to promote the ideal\n of a free culture and the further production of creative, cultural and\n scientific works, or to gain reputation or greater distribution for\n their Work in part through the use and efforts of others.\n .\n For these and/or other purposes and motivations, and without any\n expectation of additional consideration or compensation, the person\n associating CC0 with a Work (the \"Affirmer\"), to the extent that\n he or she is an owner of Copyright and Related Rights in the Work,\n voluntarily elects to apply CC0 to the Work and publicly distribute\n the Work under its terms, with knowledge of his or her Copyright and\n Related Rights in the Work and the meaning and intended legal effect\n of CC0 on those rights.\n .\n 1. Copyright and Related Rights. A Work made available under CC0 may be\n protected by copyright and related or neighboring rights (\"Copyright\n and Related Rights\"). Copyright and Related Rights include, but are\n not limited to, the following:\n .\n    the right to reproduce, adapt, distribute, perform, display,\n    communicate, and translate a Work;\n .\n    moral rights retained by the original author(s) and/or performer(s);\n .\n    publicity and privacy rights pertaining to a person's image or\n    likeness depicted in a Work;\n .\n    rights protecting against unfair competition in regards to a Work,\n    subject to the limitations in paragraph 4(a), below;\n .\n    rights protecting the extraction, dissemination, use and reuse of data in a Work;\n .\n    database rights (such as those arising under Directive 96/9/EC\n    of the European Parliament and of the Council of 11 March 1996\n    on the legal protection of databases, and under any national\n    implementation thereof, including any amended or successor version\n    of such directive); and\n .\n    other similar, equivalent or corresponding rights throughout the world\n    based on applicable law or treaty, and any national implementations\n    thereof.\n .\n 2. Waiver. To the greatest extent permitted by, but not in contravention\n of, applicable law, Affirmer hereby overtly, fully, permanently,\n irrevocably and unconditionally waives, abandons, and surrenders all\n of Affirmer's Copyright and Related Rights and associated claims and\n causes of action, whether now known or unknown (including existing\n as well as future claims and causes of action), in the Work (i) in\n all territories worldwide, (ii) for the maximum duration provided by\n applicable law or treaty (including future time extensions), (iii)\n in any current or future medium and for any number of copies, and (iv)\n for any purpose whatsoever, including without limitation commercial,\n advertising or promotional purposes (the \"Waiver\"). Affirmer makes the\n Waiver for the benefit of each member of the public at large and to the\n detriment of Affirmer's heirs and successors, fully intending that such\n Waiver shall not be subject to revocation, rescission, cancellation,\n termination, or any other legal or equitable action to disrupt the\n quiet enjoyment of the Work by the public as contemplated by Affirmer's\n express Statement of Purpose.\n .\n 3. Public License Fallback. Should any part of the Waiver for any\n reason be judged legally invalid or ineffective under applicable law,\n then the Waiver shall be preserved to the maximum extent permitted\n taking into account Affirmer's express Statement of Purpose. In\n addition, to the extent the Waiver is so judged Affirmer hereby\n grants to each affected person a royalty-free, non transferable, non\n sublicensable, non exclusive, irrevocable and unconditional license\n to exercise Affirmer's Copyright and Related Rights in the Work (i)\n in all territories worldwide, (ii) for the maximum duration provided\n by applicable law or treaty (including future time extensions), (iii)\n in any current or future medium and for any number of copies, and (iv)\n for any purpose whatsoever, including without limitation commercial,\n advertising or promotional purposes (the \"License\"). The License shall\n be deemed effective as of the date CC0 was applied by Affirmer to the\n Work. Should any part of the License for any reason be judged legally\n invalid or ineffective under applicable law, such partial invalidity\n or ineffectiveness shall not invalidate the remainder of the License,\n and in such case Affirmer hereby affirms that he or she will not (i)\n exercise any of his or her remaining Copyright and Related Rights in\n the Work or (ii) assert any associated claims and causes of action\n with respect to the Work, in either case contrary to Affirmer's express\n Statement of Purpose.\n .\n 4. Limitations and Disclaimers.\n .\n    No trademark or patent rights held by Affirmer are waived,\n    abandoned, surrendered, licensed or otherwise affected by this\n    document.\n .\n    Affirmer offers the Work as-is and makes no representations or\n    warranties of any kind concerning the Work, express, implied,\n    statutory or otherwise, including without limitation warranties\n    of title, merchantability, fitness for a particular purpose, non\n    infringement, or the absence of latent or other defects, accuracy,\n    or the present or absence of errors, whether or not discoverable,\n    all to the greatest extent permissible under applicable law.\n .\n    Affirmer disclaims responsibility for clearing rights of other\n    persons that may apply to the Work or any use thereof, including\n    without limitation any person's Copyright and Related Rights in the\n    Work. Further, Affirmer disclaims responsibility for obtaining any\n    necessary consents, permissions or other rights required for any\n    use of the Work.\n .\n    Affirmer understands and acknowledges that Creative Commons is not\n    a party to this document and has no duty or obligation with respect\n    to this CC0 or use of the Work."
+    },
+    {
+      "license_expression": "gpl-2.0-plus WITH ada-linking-exception",
+      "identifier": "gpl-2.0-plus_with_ada-linking-exception_1.RULE",
+      "language": "en",
+      "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_with_ada-linking-exception_1.RULE",
+      "is_license_text": false,
+      "is_license_notice": true,
+      "is_license_reference": false,
+      "is_license_tag": false,
+      "is_license_intro": false,
+      "is_continuous": false,
+      "is_builtin": true,
+      "is_from_license": false,
+      "is_synthetic": false,
+      "length": 176,
+      "relevance": 100,
+      "minimum_coverage": 0,
+      "referenced_filenames": [],
+      "notes": null,
+      "ignorable_copyrights": [],
+      "ignorable_holders": [],
+      "ignorable_authors": [],
+      "ignorable_urls": [],
+      "ignorable_emails": [],
+      "text": "This library is free software; you can redistribute it and/or modify  \nit under the terms of the GNU General Public License as published by  \nthe Free Software Foundation; either version 2 of the License, or (at \nyour option) any later version.                                       \n                                                                      \nThis library is distributed in the hope that it will be useful, but   \nWITHOUT ANY WARRANTY; without even the implied warranty of            \nMERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU     \nGeneral Public License for more details.                              \n                                                                      \nYou should have received a copy of the GNU General Public License     \nalong with this library; if not, write to the Free Software Foundation\nInc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.        \n                                                                      \nAs a special exception, if other files instantiate generics from this \nunit, or you link this unit with other files to produce an executable,\nthis  unit  does not  by itself cause  the resulting executable to be \ncovered by the GNU General Public License. This exception does not    \nhowever invalidate any other reasons why the executable file  might be\ncovered by the  GNU Public License."
+    },
+    {
+      "license_expression": "lgpl-2.1-plus",
+      "identifier": "lgpl-2.1-plus_59.RULE",
+      "language": "en",
+      "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_59.RULE",
+      "is_license_text": false,
+      "is_license_notice": true,
+      "is_license_reference": false,
+      "is_license_tag": false,
+      "is_license_intro": false,
+      "is_continuous": false,
+      "is_builtin": true,
+      "is_from_license": false,
+      "is_synthetic": false,
+      "length": 125,
+      "relevance": 100,
+      "minimum_coverage": 0,
+      "referenced_filenames": [],
+      "notes": null,
+      "ignorable_copyrights": [],
+      "ignorable_holders": [],
+      "ignorable_authors": [],
+      "ignorable_urls": [
+        "http://www.fsf.org/"
+      ],
+      "ignorable_emails": [],
+      "text": "This is free software; you can redistribute it and/or modify it\n under the terms of the GNU Lesser General Public License as\n published by the Free Software Foundation; either version 2.1 of\n the License, or (at your option) any later version.\n\n This software is distributed in the hope that it will be useful,\n but WITHOUT ANY WARRANTY; without even the implied warranty of\n MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU\n Lesser General Public License for more details.\n\n You should have received a copy of the GNU Lesser General Public\n License along with this software; if not, write to the Free\n Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA\n 02110-1301 USA, or see the FSF site: http://www.fsf.org."
+    },
+    {
+      "license_expression": "mit-old-style",
+      "identifier": "mit-old-style_cmr-no_1.RULE",
+      "language": "en",
+      "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit-old-style_cmr-no_1.RULE",
+      "is_license_text": true,
+      "is_license_notice": false,
+      "is_license_reference": false,
+      "is_license_tag": false,
+      "is_license_intro": false,
+      "is_continuous": false,
+      "is_builtin": true,
+      "is_from_license": false,
+      "is_synthetic": false,
+      "length": 71,
+      "relevance": 100,
+      "minimum_coverage": 0,
+      "referenced_filenames": [],
+      "notes": null,
+      "ignorable_copyrights": [],
+      "ignorable_holders": [],
+      "ignorable_authors": [],
+      "ignorable_urls": [],
+      "ignorable_emails": [],
+      "text": "Permission to use, copy, modify, distribute and sell this software\nand its documentation for any purpose is hereby granted without fee,\nprovided that the above copyright notice appear in all copies and\nthat both that copyright notice and this permission notice appear\nin supporting documentation.  Christian Michelsen Research AS\nmakes no representations about the suitability of this software for\nany purpose. It is provided \"as is\" without express or implied warranty."
+    },
+    {
+      "license_expression": "zlib",
+      "identifier": "zlib.LICENSE",
+      "language": "en",
+      "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/zlib.LICENSE",
+      "is_license_text": true,
+      "is_license_notice": false,
+      "is_license_reference": false,
+      "is_license_tag": false,
+      "is_license_intro": false,
+      "is_continuous": false,
+      "is_builtin": true,
+      "is_from_license": true,
+      "is_synthetic": false,
+      "length": 132,
+      "relevance": 100,
+      "minimum_coverage": 50,
+      "referenced_filenames": [],
+      "notes": null,
+      "ignorable_copyrights": [],
+      "ignorable_holders": [],
+      "ignorable_authors": [],
+      "ignorable_urls": [],
+      "ignorable_emails": [],
+      "text": "This software is provided 'as-is', without any express or implied warranty. In no\nevent will the authors be held liable for any damages arising from the use of this\nsoftware.\n\nPermission is granted to anyone to use this software for any purpose, including\ncommercial applications, and to alter it and redistribute it freely, subject to\nthe following restrictions:\n\n1. The origin of this software must not be misrepresented; you must not claim that\nyou wrote the original software. If you use this software in a product, an\nacknowledgment in the product documentation would be appreciated but is not\nrequired.\n\n2. Altered source versions must be plainly marked as such, and must not be\nmisrepresented as being the original software.\n\n3. This notice may not be removed or altered from any source distribution."
+    },
+    {
+      "license_expression": "zlib",
+      "identifier": "zlib_17.RULE",
+      "language": "en",
+      "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/zlib_17.RULE",
+      "is_license_text": true,
+      "is_license_notice": false,
+      "is_license_reference": false,
+      "is_license_tag": false,
+      "is_license_intro": false,
+      "is_continuous": false,
+      "is_builtin": true,
+      "is_from_license": false,
+      "is_synthetic": false,
+      "length": 144,
+      "relevance": 100,
+      "minimum_coverage": 100,
+      "referenced_filenames": [],
+      "notes": null,
+      "ignorable_copyrights": [],
+      "ignorable_holders": [],
+      "ignorable_authors": [],
+      "ignorable_urls": [],
+      "ignorable_emails": [
+        "jloup@gzip.org",
+        "madler@alumni.caltech.edu"
+      ],
+      "text": "This software is provided 'as-is', without any express or implied\n warranty.  In no event will the authors be held liable for any damages\n arising from the use of this software.\n\n Permission is granted to anyone to use this software for any purpose,\n including commercial applications, and to alter it and redistribute it\n freely, subject to the following restrictions:\n\n 1. The origin of this software must not be misrepresented; you must not\n    claim that you wrote the original software. If you use this software\n    in a product, an acknowledgment in the product documentation would be\n    appreciated but is not required.\n 2. Altered source versions must be plainly marked as such, and must not be\n    misrepresented as being the original software.\n 3. This notice may not be removed or altered from any source distribution.\n\n Jean-loup Gailly        Mark Adler\n jloup@gzip.org          madler@alumni.caltech.edu"
+    },
+    {
+      "license_expression": "zlib",
+      "identifier": "zlib_5.RULE",
+      "language": "en",
+      "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/zlib_5.RULE",
+      "is_license_text": false,
+      "is_license_notice": false,
+      "is_license_reference": true,
+      "is_license_tag": false,
+      "is_license_intro": false,
+      "is_continuous": false,
+      "is_builtin": true,
+      "is_from_license": false,
+      "is_synthetic": false,
+      "length": 12,
+      "relevance": 100,
+      "minimum_coverage": 99,
+      "referenced_filenames": [
+        "zlib.h"
+      ],
+      "notes": null,
+      "ignorable_copyrights": [],
+      "ignorable_holders": [],
+      "ignorable_authors": [],
+      "ignorable_urls": [],
+      "ignorable_emails": [],
+      "text": "For conditions of distribution and use, see copyright notice in zlib.h"
+    }
+  ],
   "files": [
     {
       "path": "scan",
@@ -225,6 +1082,7 @@
       "license_detections": [],
       "license_clues": [],
       "percentage_of_license_text": 0,
+      "for_license_detections": [],
       "copyrights": [],
       "holders": [],
       "authors": [],
@@ -262,6 +1120,7 @@
       "license_detections": [],
       "license_clues": [],
       "percentage_of_license_text": 0,
+      "for_license_detections": [],
       "copyrights": [],
       "holders": [],
       "authors": [],
@@ -299,6 +1158,7 @@
       "license_detections": [],
       "license_clues": [],
       "percentage_of_license_text": 0,
+      "for_license_detections": [],
       "copyrights": [],
       "holders": [],
       "authors": [],
@@ -349,38 +1209,16 @@
               "matcher": "2-aho",
               "license_expression": "lgpl-2.1-plus",
               "rule_identifier": "lgpl-2.1-plus_59.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_59.RULE",
-              "referenced_filenames": [],
-              "is_license_text": false,
-              "is_license_notice": true,
-              "is_license_reference": false,
-              "is_license_tag": false,
-              "is_license_intro": false,
-              "rule_length": 125,
-              "rule_relevance": 100,
-              "licenses": [
-                {
-                  "key": "lgpl-2.1-plus",
-                  "name": "GNU Lesser General Public License 2.1 or later",
-                  "short_name": "LGPL 2.1 or later",
-                  "category": "Copyleft Limited",
-                  "is_exception": false,
-                  "is_unknown": false,
-                  "owner": "Free Software Foundation (FSF)",
-                  "homepage_url": "http://www.gnu.org/licenses/old-licenses/lgpl-2.1-standalone.html",
-                  "text_url": "http://www.gnu.org/licenses/old-licenses/lgpl-2.1-standalone.html",
-                  "reference_url": "https://scancode-licensedb.aboutcode.org/lgpl-2.1-plus",
-                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/lgpl-2.1-plus.LICENSE",
-                  "spdx_license_key": "LGPL-2.1-or-later",
-                  "spdx_url": "https://spdx.org/licenses/LGPL-2.1-or-later"
-                }
-              ]
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_59.RULE"
             }
           ]
         }
       ],
       "license_clues": [],
       "percentage_of_license_text": 79.62,
+      "for_license_detections": [
+        "lgpl_2_1_plus-86fcc420-6b71-a69f-93b5-54d76cab2087"
+      ],
       "copyrights": [
         {
           "copyright": "Copyright 2005, JBoss Inc., and individual contributors",
@@ -443,38 +1281,16 @@
               "matcher": "2-aho",
               "license_expression": "cc-by-2.5",
               "rule_identifier": "cc-by-2.5_4.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/cc-by-2.5_4.RULE",
-              "referenced_filenames": [],
-              "is_license_text": false,
-              "is_license_notice": true,
-              "is_license_reference": false,
-              "is_license_tag": false,
-              "is_license_intro": false,
-              "rule_length": 14,
-              "rule_relevance": 100,
-              "licenses": [
-                {
-                  "key": "cc-by-2.5",
-                  "name": "Creative Commons Attribution License 2.5",
-                  "short_name": "CC-BY-2.5",
-                  "category": "Permissive",
-                  "is_exception": false,
-                  "is_unknown": false,
-                  "owner": "Creative Commons",
-                  "homepage_url": "http://creativecommons.org/licenses/by/2.5/",
-                  "text_url": "http://creativecommons.org/licenses/by/2.5/legalcode",
-                  "reference_url": "https://scancode-licensedb.aboutcode.org/cc-by-2.5",
-                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/cc-by-2.5.LICENSE",
-                  "spdx_license_key": "CC-BY-2.5",
-                  "spdx_url": "https://spdx.org/licenses/CC-BY-2.5"
-                }
-              ]
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/cc-by-2.5_4.RULE"
             }
           ]
         }
       ],
       "license_clues": [],
       "percentage_of_license_text": 19.72,
+      "for_license_detections": [
+        "cc_by_2_5-61e7d014-1bbc-6439-6655-c6c3bbee9cd9"
+      ],
       "copyrights": [
         {
           "copyright": "Copyright (c) 2005 Brian Goetz and Tim Peierls",
@@ -543,38 +1359,16 @@
               "matcher": "2-aho",
               "license_expression": "lgpl-2.1-plus",
               "rule_identifier": "lgpl-2.1-plus_59.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_59.RULE",
-              "referenced_filenames": [],
-              "is_license_text": false,
-              "is_license_notice": true,
-              "is_license_reference": false,
-              "is_license_tag": false,
-              "is_license_intro": false,
-              "rule_length": 125,
-              "rule_relevance": 100,
-              "licenses": [
-                {
-                  "key": "lgpl-2.1-plus",
-                  "name": "GNU Lesser General Public License 2.1 or later",
-                  "short_name": "LGPL 2.1 or later",
-                  "category": "Copyleft Limited",
-                  "is_exception": false,
-                  "is_unknown": false,
-                  "owner": "Free Software Foundation (FSF)",
-                  "homepage_url": "http://www.gnu.org/licenses/old-licenses/lgpl-2.1-standalone.html",
-                  "text_url": "http://www.gnu.org/licenses/old-licenses/lgpl-2.1-standalone.html",
-                  "reference_url": "https://scancode-licensedb.aboutcode.org/lgpl-2.1-plus",
-                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/lgpl-2.1-plus.LICENSE",
-                  "spdx_license_key": "LGPL-2.1-or-later",
-                  "spdx_url": "https://spdx.org/licenses/LGPL-2.1-or-later"
-                }
-              ]
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_59.RULE"
             }
           ]
         }
       ],
       "license_clues": [],
       "percentage_of_license_text": 78.62,
+      "for_license_detections": [
+        "lgpl_2_1_plus-86fcc420-6b71-a69f-93b5-54d76cab2087"
+      ],
       "copyrights": [
         {
           "copyright": "Copyright 2010, Red Hat, Inc. and individual contributors",
@@ -624,6 +1418,7 @@
       "license_detections": [],
       "license_clues": [],
       "percentage_of_license_text": 0,
+      "for_license_detections": [],
       "copyrights": [],
       "holders": [],
       "authors": [
@@ -667,6 +1462,7 @@
       "license_detections": [],
       "license_clues": [],
       "percentage_of_license_text": 0,
+      "for_license_detections": [],
       "copyrights": [],
       "holders": [],
       "authors": [
@@ -723,38 +1519,16 @@
               "matcher": "2-aho",
               "license_expression": "lgpl-2.1-plus",
               "rule_identifier": "lgpl-2.1-plus_59.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_59.RULE",
-              "referenced_filenames": [],
-              "is_license_text": false,
-              "is_license_notice": true,
-              "is_license_reference": false,
-              "is_license_tag": false,
-              "is_license_intro": false,
-              "rule_length": 125,
-              "rule_relevance": 100,
-              "licenses": [
-                {
-                  "key": "lgpl-2.1-plus",
-                  "name": "GNU Lesser General Public License 2.1 or later",
-                  "short_name": "LGPL 2.1 or later",
-                  "category": "Copyleft Limited",
-                  "is_exception": false,
-                  "is_unknown": false,
-                  "owner": "Free Software Foundation (FSF)",
-                  "homepage_url": "http://www.gnu.org/licenses/old-licenses/lgpl-2.1-standalone.html",
-                  "text_url": "http://www.gnu.org/licenses/old-licenses/lgpl-2.1-standalone.html",
-                  "reference_url": "https://scancode-licensedb.aboutcode.org/lgpl-2.1-plus",
-                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/lgpl-2.1-plus.LICENSE",
-                  "spdx_license_key": "LGPL-2.1-or-later",
-                  "spdx_url": "https://spdx.org/licenses/LGPL-2.1-or-later"
-                }
-              ]
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_59.RULE"
             }
           ]
         }
       ],
       "license_clues": [],
       "percentage_of_license_text": 78.12,
+      "for_license_detections": [
+        "lgpl_2_1_plus-86fcc420-6b71-a69f-93b5-54d76cab2087"
+      ],
       "copyrights": [
         {
           "copyright": "Copyright 2009, Red Hat Middleware LLC, and individual contributors",
@@ -804,6 +1578,7 @@
       "license_detections": [],
       "license_clues": [],
       "percentage_of_license_text": 0,
+      "for_license_detections": [],
       "copyrights": [],
       "holders": [],
       "authors": [
@@ -847,6 +1622,7 @@
       "license_detections": [],
       "license_clues": [],
       "percentage_of_license_text": 0,
+      "for_license_detections": [],
       "copyrights": [],
       "holders": [],
       "authors": [],
@@ -884,6 +1660,7 @@
       "license_detections": [],
       "license_clues": [],
       "percentage_of_license_text": 0,
+      "for_license_detections": [],
       "copyrights": [],
       "holders": [],
       "authors": [],
@@ -934,34 +1711,7 @@
               "matcher": "2-aho",
               "license_expression": "zlib",
               "rule_identifier": "zlib_5.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/zlib_5.RULE",
-              "referenced_filenames": [
-                "zlib.h"
-              ],
-              "is_license_text": false,
-              "is_license_notice": false,
-              "is_license_reference": true,
-              "is_license_tag": false,
-              "is_license_intro": false,
-              "rule_length": 12,
-              "rule_relevance": 100,
-              "licenses": [
-                {
-                  "key": "zlib",
-                  "name": "ZLIB License",
-                  "short_name": "ZLIB License",
-                  "category": "Permissive",
-                  "is_exception": false,
-                  "is_unknown": false,
-                  "owner": "zlib",
-                  "homepage_url": "http://www.zlib.net/",
-                  "text_url": "http://www.gzip.org/zlib/zlib_license.html",
-                  "reference_url": "https://scancode-licensedb.aboutcode.org/zlib",
-                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/zlib.LICENSE",
-                  "spdx_license_key": "Zlib",
-                  "spdx_url": "https://spdx.org/licenses/Zlib"
-                }
-              ]
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/zlib_5.RULE"
             },
             {
               "score": 100.0,
@@ -972,38 +1722,16 @@
               "matcher": "2-aho",
               "license_expression": "zlib",
               "rule_identifier": "zlib_17.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/zlib_17.RULE",
-              "referenced_filenames": [],
-              "is_license_text": true,
-              "is_license_notice": false,
-              "is_license_reference": false,
-              "is_license_tag": false,
-              "is_license_intro": false,
-              "rule_length": 144,
-              "rule_relevance": 100,
-              "licenses": [
-                {
-                  "key": "zlib",
-                  "name": "ZLIB License",
-                  "short_name": "ZLIB License",
-                  "category": "Permissive",
-                  "is_exception": false,
-                  "is_unknown": false,
-                  "owner": "zlib",
-                  "homepage_url": "http://www.zlib.net/",
-                  "text_url": "http://www.gzip.org/zlib/zlib_license.html",
-                  "reference_url": "https://scancode-licensedb.aboutcode.org/zlib",
-                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/zlib.LICENSE",
-                  "spdx_license_key": "Zlib",
-                  "spdx_url": "https://spdx.org/licenses/Zlib"
-                }
-              ]
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/zlib_17.RULE"
             }
           ]
         }
       ],
       "license_clues": [],
       "percentage_of_license_text": 42.86,
+      "for_license_detections": [
+        "zlib-40a07b45-2815-d501-b4b7-95c00453a3d4"
+      ],
       "copyrights": [
         {
           "copyright": "Copyright (c) 1995-2011 Mark Adler",
@@ -1066,38 +1794,16 @@
               "matcher": "2-aho",
               "license_expression": "zlib",
               "rule_identifier": "zlib_17.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/zlib_17.RULE",
-              "referenced_filenames": [],
-              "is_license_text": true,
-              "is_license_notice": false,
-              "is_license_reference": false,
-              "is_license_tag": false,
-              "is_license_intro": false,
-              "rule_length": 144,
-              "rule_relevance": 100,
-              "licenses": [
-                {
-                  "key": "zlib",
-                  "name": "ZLIB License",
-                  "short_name": "ZLIB License",
-                  "category": "Permissive",
-                  "is_exception": false,
-                  "is_unknown": false,
-                  "owner": "zlib",
-                  "homepage_url": "http://www.zlib.net/",
-                  "text_url": "http://www.gzip.org/zlib/zlib_license.html",
-                  "reference_url": "https://scancode-licensedb.aboutcode.org/zlib",
-                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/zlib.LICENSE",
-                  "spdx_license_key": "Zlib",
-                  "spdx_url": "https://spdx.org/licenses/Zlib"
-                }
-              ]
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/zlib_17.RULE"
             }
           ]
         }
       ],
       "license_clues": [],
       "percentage_of_license_text": 69.57,
+      "for_license_detections": [
+        "zlib-828c423f-cc46-4ae5-845c-125303c2a9a8"
+      ],
       "copyrights": [
         {
           "copyright": "Copyright (c) 1995-2013 Jean-loup Gailly and Mark Adler",
@@ -1160,34 +1866,7 @@
               "matcher": "2-aho",
               "license_expression": "zlib",
               "rule_identifier": "zlib_5.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/zlib_5.RULE",
-              "referenced_filenames": [
-                "zlib.h"
-              ],
-              "is_license_text": false,
-              "is_license_notice": false,
-              "is_license_reference": true,
-              "is_license_tag": false,
-              "is_license_intro": false,
-              "rule_length": 12,
-              "rule_relevance": 100,
-              "licenses": [
-                {
-                  "key": "zlib",
-                  "name": "ZLIB License",
-                  "short_name": "ZLIB License",
-                  "category": "Permissive",
-                  "is_exception": false,
-                  "is_unknown": false,
-                  "owner": "zlib",
-                  "homepage_url": "http://www.zlib.net/",
-                  "text_url": "http://www.gzip.org/zlib/zlib_license.html",
-                  "reference_url": "https://scancode-licensedb.aboutcode.org/zlib",
-                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/zlib.LICENSE",
-                  "spdx_license_key": "Zlib",
-                  "spdx_url": "https://spdx.org/licenses/Zlib"
-                }
-              ]
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/zlib_5.RULE"
             },
             {
               "score": 100.0,
@@ -1198,38 +1877,16 @@
               "matcher": "2-aho",
               "license_expression": "zlib",
               "rule_identifier": "zlib_17.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/zlib_17.RULE",
-              "referenced_filenames": [],
-              "is_license_text": true,
-              "is_license_notice": false,
-              "is_license_reference": false,
-              "is_license_tag": false,
-              "is_license_intro": false,
-              "rule_length": 144,
-              "rule_relevance": 100,
-              "licenses": [
-                {
-                  "key": "zlib",
-                  "name": "ZLIB License",
-                  "short_name": "ZLIB License",
-                  "category": "Permissive",
-                  "is_exception": false,
-                  "is_unknown": false,
-                  "owner": "zlib",
-                  "homepage_url": "http://www.zlib.net/",
-                  "text_url": "http://www.gzip.org/zlib/zlib_license.html",
-                  "reference_url": "https://scancode-licensedb.aboutcode.org/zlib",
-                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/zlib.LICENSE",
-                  "spdx_license_key": "Zlib",
-                  "spdx_url": "https://spdx.org/licenses/Zlib"
-                }
-              ]
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/zlib_17.RULE"
             }
           ]
         }
       ],
       "license_clues": [],
       "percentage_of_license_text": 20.34,
+      "for_license_detections": [
+        "zlib-40a07b45-2815-d501-b4b7-95c00453a3d4"
+      ],
       "copyrights": [
         {
           "copyright": "Copyright (c) 1995-2013 Jean-loup Gailly",
@@ -1292,38 +1949,16 @@
               "matcher": "3-seq",
               "license_expression": "cc0-1.0",
               "rule_identifier": "cc0-1.0_155.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/cc0-1.0_155.RULE",
-              "referenced_filenames": [],
-              "is_license_text": true,
-              "is_license_notice": false,
-              "is_license_reference": false,
-              "is_license_tag": false,
-              "is_license_intro": false,
-              "rule_length": 981,
-              "rule_relevance": 100,
-              "licenses": [
-                {
-                  "key": "cc0-1.0",
-                  "name": "Creative Commons CC0 1.0 Universal",
-                  "short_name": "CC0-1.0",
-                  "category": "Public Domain",
-                  "is_exception": false,
-                  "is_unknown": false,
-                  "owner": "Creative Commons",
-                  "homepage_url": "http://creativecommons.org/publicdomain/zero/1.0/",
-                  "text_url": "http://creativecommons.org/publicdomain/zero/1.0/legalcode",
-                  "reference_url": "https://scancode-licensedb.aboutcode.org/cc0-1.0",
-                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/cc0-1.0.LICENSE",
-                  "spdx_license_key": "CC0-1.0",
-                  "spdx_url": "https://spdx.org/licenses/CC0-1.0"
-                }
-              ]
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/cc0-1.0_155.RULE"
             }
           ]
         }
       ],
       "license_clues": [],
       "percentage_of_license_text": 100.0,
+      "for_license_detections": [
+        "cc0_1_0-794566f2-c217-9ba1-42ef-36bf282ee01c"
+      ],
       "copyrights": [],
       "holders": [],
       "authors": [],
@@ -1374,38 +2009,16 @@
               "matcher": "2-aho",
               "license_expression": "artistic-2.0",
               "rule_identifier": "artistic-2.0_46.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/artistic-2.0_46.RULE",
-              "referenced_filenames": [],
-              "is_license_text": false,
-              "is_license_notice": false,
-              "is_license_reference": false,
-              "is_license_tag": true,
-              "is_license_intro": false,
-              "rule_length": 4,
-              "rule_relevance": 100,
-              "licenses": [
-                {
-                  "key": "artistic-2.0",
-                  "name": "Artistic License 2.0",
-                  "short_name": "Artistic 2.0",
-                  "category": "Copyleft Limited",
-                  "is_exception": false,
-                  "is_unknown": false,
-                  "owner": "Perl Foundation",
-                  "homepage_url": "http://www.perlfoundation.org/",
-                  "text_url": "https://www.perlfoundation.org/artistic_license_2_0",
-                  "reference_url": "https://scancode-licensedb.aboutcode.org/artistic-2.0",
-                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/artistic-2.0.LICENSE",
-                  "spdx_license_key": "Artistic-2.0",
-                  "spdx_url": "https://spdx.org/licenses/Artistic-2.0"
-                }
-              ]
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/artistic-2.0_46.RULE"
             }
           ]
         }
       ],
       "license_clues": [],
       "percentage_of_license_text": 0.1,
+      "for_license_detections": [
+        "artistic_2_0-3a21dc91-8930-074b-8e75-779c58660388"
+      ],
       "copyrights": [],
       "holders": [],
       "authors": [
@@ -1449,6 +2062,7 @@
       "license_detections": [],
       "license_clues": [],
       "percentage_of_license_text": 0,
+      "for_license_detections": [],
       "copyrights": [],
       "holders": [],
       "authors": [],
@@ -1486,6 +2100,7 @@
       "license_detections": [],
       "license_clues": [],
       "percentage_of_license_text": 0,
+      "for_license_detections": [],
       "copyrights": [],
       "holders": [],
       "authors": [],
@@ -1536,53 +2151,16 @@
               "matcher": "2-aho",
               "license_expression": "gpl-2.0-plus WITH ada-linking-exception",
               "rule_identifier": "gpl-2.0-plus_with_ada-linking-exception_1.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_with_ada-linking-exception_1.RULE",
-              "referenced_filenames": [],
-              "is_license_text": false,
-              "is_license_notice": true,
-              "is_license_reference": false,
-              "is_license_tag": false,
-              "is_license_intro": false,
-              "rule_length": 176,
-              "rule_relevance": 100,
-              "licenses": [
-                {
-                  "key": "gpl-2.0-plus",
-                  "name": "GNU General Public License 2.0 or later",
-                  "short_name": "GPL 2.0 or later",
-                  "category": "Copyleft",
-                  "is_exception": false,
-                  "is_unknown": false,
-                  "owner": "Free Software Foundation (FSF)",
-                  "homepage_url": "http://www.gnu.org/licenses/old-licenses/gpl-2.0-standalone.html",
-                  "text_url": "http://www.gnu.org/licenses/old-licenses/gpl-2.0-standalone.html",
-                  "reference_url": "https://scancode-licensedb.aboutcode.org/gpl-2.0-plus",
-                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-2.0-plus.LICENSE",
-                  "spdx_license_key": "GPL-2.0-or-later",
-                  "spdx_url": "https://spdx.org/licenses/GPL-2.0-or-later"
-                },
-                {
-                  "key": "ada-linking-exception",
-                  "name": "Ada linking exception to GPL 2.0 or later",
-                  "short_name": "Ada linking exception to GPL 2.0 or later",
-                  "category": "Copyleft Limited",
-                  "is_exception": true,
-                  "is_unknown": false,
-                  "owner": "Dmitriy Anisimkov",
-                  "homepage_url": null,
-                  "text_url": "",
-                  "reference_url": "https://scancode-licensedb.aboutcode.org/ada-linking-exception",
-                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/ada-linking-exception.LICENSE",
-                  "spdx_license_key": "LicenseRef-scancode-ada-linking-exception",
-                  "spdx_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/ada-linking-exception.LICENSE"
-                }
-              ]
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_with_ada-linking-exception_1.RULE"
             }
           ]
         }
       ],
       "license_clues": [],
       "percentage_of_license_text": 94.12,
+      "for_license_detections": [
+        "gpl_2_0_plus_with_ada_linking_exception-97310180-3074-fb5b-0bc8-9e82438a60bb"
+      ],
       "copyrights": [
         {
           "copyright": "Copyright (c) 2002-2004 Dmitriy Anisimkov",
@@ -1645,34 +2223,7 @@
               "matcher": "2-aho",
               "license_expression": "zlib",
               "rule_identifier": "zlib_5.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/zlib_5.RULE",
-              "referenced_filenames": [
-                "zlib.h"
-              ],
-              "is_license_text": false,
-              "is_license_notice": false,
-              "is_license_reference": true,
-              "is_license_tag": false,
-              "is_license_intro": false,
-              "rule_length": 12,
-              "rule_relevance": 100,
-              "licenses": [
-                {
-                  "key": "zlib",
-                  "name": "ZLIB License",
-                  "short_name": "ZLIB License",
-                  "category": "Permissive",
-                  "is_exception": false,
-                  "is_unknown": false,
-                  "owner": "zlib",
-                  "homepage_url": "http://www.zlib.net/",
-                  "text_url": "http://www.gzip.org/zlib/zlib_license.html",
-                  "reference_url": "https://scancode-licensedb.aboutcode.org/zlib",
-                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/zlib.LICENSE",
-                  "spdx_license_key": "Zlib",
-                  "spdx_url": "https://spdx.org/licenses/Zlib"
-                }
-              ]
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/zlib_5.RULE"
             },
             {
               "score": 100.0,
@@ -1683,38 +2234,16 @@
               "matcher": "2-aho",
               "license_expression": "zlib",
               "rule_identifier": "zlib_17.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/zlib_17.RULE",
-              "referenced_filenames": [],
-              "is_license_text": true,
-              "is_license_notice": false,
-              "is_license_reference": false,
-              "is_license_tag": false,
-              "is_license_intro": false,
-              "rule_length": 144,
-              "rule_relevance": 100,
-              "licenses": [
-                {
-                  "key": "zlib",
-                  "name": "ZLIB License",
-                  "short_name": "ZLIB License",
-                  "category": "Permissive",
-                  "is_exception": false,
-                  "is_unknown": false,
-                  "owner": "zlib",
-                  "homepage_url": "http://www.zlib.net/",
-                  "text_url": "http://www.gzip.org/zlib/zlib_license.html",
-                  "reference_url": "https://scancode-licensedb.aboutcode.org/zlib",
-                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/zlib.LICENSE",
-                  "spdx_license_key": "Zlib",
-                  "spdx_url": "https://spdx.org/licenses/Zlib"
-                }
-              ]
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/zlib_17.RULE"
             }
           ]
         }
       ],
       "license_clues": [],
       "percentage_of_license_text": 42.86,
+      "for_license_detections": [
+        "zlib-40a07b45-2815-d501-b4b7-95c00453a3d4"
+      ],
       "copyrights": [
         {
           "copyright": "Copyright (c) 1995-2011 Mark Adler",
@@ -1777,34 +2306,7 @@
               "matcher": "2-aho",
               "license_expression": "zlib",
               "rule_identifier": "zlib_5.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/zlib_5.RULE",
-              "referenced_filenames": [
-                "zlib.h"
-              ],
-              "is_license_text": false,
-              "is_license_notice": false,
-              "is_license_reference": true,
-              "is_license_tag": false,
-              "is_license_intro": false,
-              "rule_length": 12,
-              "rule_relevance": 100,
-              "licenses": [
-                {
-                  "key": "zlib",
-                  "name": "ZLIB License",
-                  "short_name": "ZLIB License",
-                  "category": "Permissive",
-                  "is_exception": false,
-                  "is_unknown": false,
-                  "owner": "zlib",
-                  "homepage_url": "http://www.zlib.net/",
-                  "text_url": "http://www.gzip.org/zlib/zlib_license.html",
-                  "reference_url": "https://scancode-licensedb.aboutcode.org/zlib",
-                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/zlib.LICENSE",
-                  "spdx_license_key": "Zlib",
-                  "spdx_url": "https://spdx.org/licenses/Zlib"
-                }
-              ]
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/zlib_5.RULE"
             },
             {
               "score": 100.0,
@@ -1815,38 +2317,16 @@
               "matcher": "2-aho",
               "license_expression": "zlib",
               "rule_identifier": "zlib_17.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/zlib_17.RULE",
-              "referenced_filenames": [],
-              "is_license_text": true,
-              "is_license_notice": false,
-              "is_license_reference": false,
-              "is_license_tag": false,
-              "is_license_intro": false,
-              "rule_length": 144,
-              "rule_relevance": 100,
-              "licenses": [
-                {
-                  "key": "zlib",
-                  "name": "ZLIB License",
-                  "short_name": "ZLIB License",
-                  "category": "Permissive",
-                  "is_exception": false,
-                  "is_unknown": false,
-                  "owner": "zlib",
-                  "homepage_url": "http://www.zlib.net/",
-                  "text_url": "http://www.gzip.org/zlib/zlib_license.html",
-                  "reference_url": "https://scancode-licensedb.aboutcode.org/zlib",
-                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/zlib.LICENSE",
-                  "spdx_license_key": "Zlib",
-                  "spdx_url": "https://spdx.org/licenses/Zlib"
-                }
-              ]
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/zlib_17.RULE"
             }
           ]
         }
       ],
       "license_clues": [],
       "percentage_of_license_text": 40.0,
+      "for_license_detections": [
+        "zlib-40a07b45-2815-d501-b4b7-95c00453a3d4"
+      ],
       "copyrights": [
         {
           "copyright": "Copyright (c) 1995-2013 Jean-loup Gailly and Mark Adler",
@@ -1909,34 +2389,7 @@
               "matcher": "2-aho",
               "license_expression": "zlib",
               "rule_identifier": "zlib_5.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/zlib_5.RULE",
-              "referenced_filenames": [
-                "zlib.h"
-              ],
-              "is_license_text": false,
-              "is_license_notice": false,
-              "is_license_reference": true,
-              "is_license_tag": false,
-              "is_license_intro": false,
-              "rule_length": 12,
-              "rule_relevance": 100,
-              "licenses": [
-                {
-                  "key": "zlib",
-                  "name": "ZLIB License",
-                  "short_name": "ZLIB License",
-                  "category": "Permissive",
-                  "is_exception": false,
-                  "is_unknown": false,
-                  "owner": "zlib",
-                  "homepage_url": "http://www.zlib.net/",
-                  "text_url": "http://www.gzip.org/zlib/zlib_license.html",
-                  "reference_url": "https://scancode-licensedb.aboutcode.org/zlib",
-                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/zlib.LICENSE",
-                  "spdx_license_key": "Zlib",
-                  "spdx_url": "https://spdx.org/licenses/Zlib"
-                }
-              ]
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/zlib_5.RULE"
             },
             {
               "score": 100.0,
@@ -1947,38 +2400,16 @@
               "matcher": "2-aho",
               "license_expression": "zlib",
               "rule_identifier": "zlib_17.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/zlib_17.RULE",
-              "referenced_filenames": [],
-              "is_license_text": true,
-              "is_license_notice": false,
-              "is_license_reference": false,
-              "is_license_tag": false,
-              "is_license_intro": false,
-              "rule_length": 144,
-              "rule_relevance": 100,
-              "licenses": [
-                {
-                  "key": "zlib",
-                  "name": "ZLIB License",
-                  "short_name": "ZLIB License",
-                  "category": "Permissive",
-                  "is_exception": false,
-                  "is_unknown": false,
-                  "owner": "zlib",
-                  "homepage_url": "http://www.zlib.net/",
-                  "text_url": "http://www.gzip.org/zlib/zlib_license.html",
-                  "reference_url": "https://scancode-licensedb.aboutcode.org/zlib",
-                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/zlib.LICENSE",
-                  "spdx_license_key": "Zlib",
-                  "spdx_url": "https://spdx.org/licenses/Zlib"
-                }
-              ]
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/zlib_17.RULE"
             }
           ]
         }
       ],
       "license_clues": [],
       "percentage_of_license_text": 50.0,
+      "for_license_detections": [
+        "zlib-40a07b45-2815-d501-b4b7-95c00453a3d4"
+      ],
       "copyrights": [
         {
           "copyright": "Copyright (c) 1995-2012 Jean-loup Gailly",
@@ -2028,6 +2459,7 @@
       "license_detections": [],
       "license_clues": [],
       "percentage_of_license_text": 0,
+      "for_license_detections": [],
       "copyrights": [],
       "holders": [],
       "authors": [],
@@ -2065,6 +2497,7 @@
       "license_detections": [],
       "license_clues": [],
       "percentage_of_license_text": 0,
+      "for_license_detections": [],
       "copyrights": [
         {
           "copyright": "Copyright (c) 2004 by Henrik Ravn",
@@ -2127,40 +2560,16 @@
               "matcher": "2-aho",
               "license_expression": "boost-1.0",
               "rule_identifier": "boost-1.0_21.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/boost-1.0_21.RULE",
-              "referenced_filenames": [
-                "LICENSE_1_0.txt"
-              ],
-              "is_license_text": false,
-              "is_license_notice": true,
-              "is_license_reference": false,
-              "is_license_tag": false,
-              "is_license_intro": false,
-              "rule_length": 32,
-              "rule_relevance": 100,
-              "licenses": [
-                {
-                  "key": "boost-1.0",
-                  "name": "Boost Software License 1.0",
-                  "short_name": "Boost 1.0",
-                  "category": "Permissive",
-                  "is_exception": false,
-                  "is_unknown": false,
-                  "owner": "Boost",
-                  "homepage_url": "http://www.boost.org/users/license.html",
-                  "text_url": "http://www.boost.org/LICENSE_1_0.txt",
-                  "reference_url": "https://scancode-licensedb.aboutcode.org/boost-1.0",
-                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/boost-1.0.LICENSE",
-                  "spdx_license_key": "BSL-1.0",
-                  "spdx_url": "https://spdx.org/licenses/BSL-1.0"
-                }
-              ]
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/boost-1.0_21.RULE"
             }
           ]
         }
       ],
       "license_clues": [],
       "percentage_of_license_text": 88.89,
+      "for_license_detections": [
+        "boost_1_0-b055ee6f-43f9-b780-3033-fd33f02b6e1d"
+      ],
       "copyrights": [
         {
           "copyright": "Copyright Henrik Ravn 2004",
@@ -2210,6 +2619,7 @@
       "license_detections": [],
       "license_clues": [],
       "percentage_of_license_text": 0,
+      "for_license_detections": [],
       "copyrights": [],
       "holders": [],
       "authors": [],
@@ -2260,38 +2670,16 @@
               "matcher": "2-aho",
               "license_expression": "zlib",
               "rule_identifier": "zlib.LICENSE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/zlib.LICENSE",
-              "referenced_filenames": [],
-              "is_license_text": true,
-              "is_license_notice": false,
-              "is_license_reference": false,
-              "is_license_tag": false,
-              "is_license_intro": false,
-              "rule_length": 132,
-              "rule_relevance": 100,
-              "licenses": [
-                {
-                  "key": "zlib",
-                  "name": "ZLIB License",
-                  "short_name": "ZLIB License",
-                  "category": "Permissive",
-                  "is_exception": false,
-                  "is_unknown": false,
-                  "owner": "zlib",
-                  "homepage_url": "http://www.zlib.net/",
-                  "text_url": "http://www.gzip.org/zlib/zlib_license.html",
-                  "reference_url": "https://scancode-licensedb.aboutcode.org/zlib",
-                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/zlib.LICENSE",
-                  "spdx_license_key": "Zlib",
-                  "spdx_url": "https://spdx.org/licenses/Zlib"
-                }
-              ]
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/zlib.LICENSE"
             }
           ]
         }
       ],
       "license_clues": [],
       "percentage_of_license_text": 50.0,
+      "for_license_detections": [
+        "zlib-2a6f2066-9dae-b0a2-b93f-2e5391409d93"
+      ],
       "copyrights": [
         {
           "copyright": "Copyright (c) 1995-2010 Jean-loup Gailly, Brian Raiter and Gilles Vollant",
@@ -2347,6 +2735,7 @@
       "license_detections": [],
       "license_clues": [],
       "percentage_of_license_text": 0,
+      "for_license_detections": [],
       "copyrights": [],
       "holders": [],
       "authors": [],
@@ -2397,40 +2786,16 @@
               "matcher": "2-aho",
               "license_expression": "zlib",
               "rule_identifier": "zlib_5.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/zlib_5.RULE",
-              "referenced_filenames": [
-                "zlib.h"
-              ],
-              "is_license_text": false,
-              "is_license_notice": false,
-              "is_license_reference": true,
-              "is_license_tag": false,
-              "is_license_intro": false,
-              "rule_length": 12,
-              "rule_relevance": 100,
-              "licenses": [
-                {
-                  "key": "zlib",
-                  "name": "ZLIB License",
-                  "short_name": "ZLIB License",
-                  "category": "Permissive",
-                  "is_exception": false,
-                  "is_unknown": false,
-                  "owner": "zlib",
-                  "homepage_url": "http://www.zlib.net/",
-                  "text_url": "http://www.gzip.org/zlib/zlib_license.html",
-                  "reference_url": "https://scancode-licensedb.aboutcode.org/zlib",
-                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/zlib.LICENSE",
-                  "spdx_license_key": "Zlib",
-                  "spdx_url": "https://spdx.org/licenses/Zlib"
-                }
-              ]
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/zlib_5.RULE"
             }
           ]
         }
       ],
       "license_clues": [],
       "percentage_of_license_text": 44.44,
+      "for_license_detections": [
+        "zlib-40a07b45-2815-d501-b4b7-95c00453a3d4"
+      ],
       "copyrights": [
         {
           "copyright": "Copyright (c) 1995-2008 Mark Adler",
@@ -2493,40 +2858,16 @@
               "matcher": "2-aho",
               "license_expression": "zlib",
               "rule_identifier": "zlib_5.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/zlib_5.RULE",
-              "referenced_filenames": [
-                "zlib.h"
-              ],
-              "is_license_text": false,
-              "is_license_notice": false,
-              "is_license_reference": true,
-              "is_license_tag": false,
-              "is_license_intro": false,
-              "rule_length": 12,
-              "rule_relevance": 100,
-              "licenses": [
-                {
-                  "key": "zlib",
-                  "name": "ZLIB License",
-                  "short_name": "ZLIB License",
-                  "category": "Permissive",
-                  "is_exception": false,
-                  "is_unknown": false,
-                  "owner": "zlib",
-                  "homepage_url": "http://www.zlib.net/",
-                  "text_url": "http://www.gzip.org/zlib/zlib_license.html",
-                  "reference_url": "https://scancode-licensedb.aboutcode.org/zlib",
-                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/zlib.LICENSE",
-                  "spdx_license_key": "Zlib",
-                  "spdx_url": "https://spdx.org/licenses/Zlib"
-                }
-              ]
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/zlib_5.RULE"
             }
           ]
         }
       ],
       "license_clues": [],
       "percentage_of_license_text": 50.0,
+      "for_license_detections": [
+        "zlib-40a07b45-2815-d501-b4b7-95c00453a3d4"
+      ],
       "copyrights": [
         {
           "copyright": "Copyright (c) 2003 Mark Adler",
@@ -2576,6 +2917,7 @@
       "license_detections": [],
       "license_clues": [],
       "percentage_of_license_text": 0,
+      "for_license_detections": [],
       "copyrights": [],
       "holders": [],
       "authors": [],
@@ -2626,38 +2968,16 @@
               "matcher": "2-aho",
               "license_expression": "mit-old-style",
               "rule_identifier": "mit-old-style_cmr-no_1.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit-old-style_cmr-no_1.RULE",
-              "referenced_filenames": [],
-              "is_license_text": true,
-              "is_license_notice": false,
-              "is_license_reference": false,
-              "is_license_tag": false,
-              "is_license_intro": false,
-              "rule_length": 71,
-              "rule_relevance": 100,
-              "licenses": [
-                {
-                  "key": "mit-old-style",
-                  "name": "MIT Old Style",
-                  "short_name": "MIT Old Style",
-                  "category": "Permissive",
-                  "is_exception": false,
-                  "is_unknown": false,
-                  "owner": "MIT",
-                  "homepage_url": "http://fedoraproject.org/wiki/Licensing:MIT#Old_Style",
-                  "text_url": "http://fedoraproject.org/wiki/Licensing:MIT#Old_Style",
-                  "reference_url": "https://scancode-licensedb.aboutcode.org/mit-old-style",
-                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit-old-style.LICENSE",
-                  "spdx_license_key": "LicenseRef-scancode-mit-old-style",
-                  "spdx_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit-old-style.LICENSE"
-                }
-              ]
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit-old-style_cmr-no_1.RULE"
             }
           ]
         }
       ],
       "license_clues": [],
       "percentage_of_license_text": 79.78,
+      "for_license_detections": [
+        "mit_old_style-916f4423-80fb-1f12-06b7-dcbf35dcfb3d"
+      ],
       "copyrights": [
         {
           "copyright": "Copyright (c) 1997 Christian Michelsen Research AS Advanced Computing",
@@ -2720,38 +3040,16 @@
               "matcher": "2-aho",
               "license_expression": "zlib",
               "rule_identifier": "zlib_17.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/zlib_17.RULE",
-              "referenced_filenames": [],
-              "is_license_text": true,
-              "is_license_notice": false,
-              "is_license_reference": false,
-              "is_license_tag": false,
-              "is_license_intro": false,
-              "rule_length": 144,
-              "rule_relevance": 100,
-              "licenses": [
-                {
-                  "key": "zlib",
-                  "name": "ZLIB License",
-                  "short_name": "ZLIB License",
-                  "category": "Permissive",
-                  "is_exception": false,
-                  "is_unknown": false,
-                  "owner": "zlib",
-                  "homepage_url": "http://www.zlib.net/",
-                  "text_url": "http://www.gzip.org/zlib/zlib_license.html",
-                  "reference_url": "https://scancode-licensedb.aboutcode.org/zlib",
-                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/zlib.LICENSE",
-                  "spdx_license_key": "Zlib",
-                  "spdx_url": "https://spdx.org/licenses/Zlib"
-                }
-              ]
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/zlib_17.RULE"
             }
           ]
         }
       ],
       "license_clues": [],
       "percentage_of_license_text": 84.21,
+      "for_license_detections": [
+        "zlib-828c423f-cc46-4ae5-845c-125303c2a9a8"
+      ],
       "copyrights": [
         {
           "copyright": "Copyright (c) 1995-2013 Jean-loup Gailly and Mark Adler",
@@ -2814,34 +3112,7 @@
               "matcher": "2-aho",
               "license_expression": "zlib",
               "rule_identifier": "zlib_5.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/zlib_5.RULE",
-              "referenced_filenames": [
-                "zlib.h"
-              ],
-              "is_license_text": false,
-              "is_license_notice": false,
-              "is_license_reference": true,
-              "is_license_tag": false,
-              "is_license_intro": false,
-              "rule_length": 12,
-              "rule_relevance": 100,
-              "licenses": [
-                {
-                  "key": "zlib",
-                  "name": "ZLIB License",
-                  "short_name": "ZLIB License",
-                  "category": "Permissive",
-                  "is_exception": false,
-                  "is_unknown": false,
-                  "owner": "zlib",
-                  "homepage_url": "http://www.zlib.net/",
-                  "text_url": "http://www.gzip.org/zlib/zlib_license.html",
-                  "reference_url": "https://scancode-licensedb.aboutcode.org/zlib",
-                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/zlib.LICENSE",
-                  "spdx_license_key": "Zlib",
-                  "spdx_url": "https://spdx.org/licenses/Zlib"
-                }
-              ]
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/zlib_5.RULE"
             },
             {
               "score": 100.0,
@@ -2852,38 +3123,16 @@
               "matcher": "2-aho",
               "license_expression": "zlib",
               "rule_identifier": "zlib_17.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/zlib_17.RULE",
-              "referenced_filenames": [],
-              "is_license_text": true,
-              "is_license_notice": false,
-              "is_license_reference": false,
-              "is_license_tag": false,
-              "is_license_intro": false,
-              "rule_length": 144,
-              "rule_relevance": 100,
-              "licenses": [
-                {
-                  "key": "zlib",
-                  "name": "ZLIB License",
-                  "short_name": "ZLIB License",
-                  "category": "Permissive",
-                  "is_exception": false,
-                  "is_unknown": false,
-                  "owner": "zlib",
-                  "homepage_url": "http://www.zlib.net/",
-                  "text_url": "http://www.gzip.org/zlib/zlib_license.html",
-                  "reference_url": "https://scancode-licensedb.aboutcode.org/zlib",
-                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/zlib.LICENSE",
-                  "spdx_license_key": "Zlib",
-                  "spdx_url": "https://spdx.org/licenses/Zlib"
-                }
-              ]
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/zlib_17.RULE"
             }
           ]
         }
       ],
       "license_clues": [],
       "percentage_of_license_text": 37.5,
+      "for_license_detections": [
+        "zlib-40a07b45-2815-d501-b4b7-95c00453a3d4"
+      ],
       "copyrights": [
         {
           "copyright": "Copyright (c) 1995-2005, 2010, 2011, 2012 Jean-loup Gailly",
@@ -2946,34 +3195,7 @@
               "matcher": "2-aho",
               "license_expression": "zlib",
               "rule_identifier": "zlib_5.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/zlib_5.RULE",
-              "referenced_filenames": [
-                "zlib.h"
-              ],
-              "is_license_text": false,
-              "is_license_notice": false,
-              "is_license_reference": true,
-              "is_license_tag": false,
-              "is_license_intro": false,
-              "rule_length": 12,
-              "rule_relevance": 100,
-              "licenses": [
-                {
-                  "key": "zlib",
-                  "name": "ZLIB License",
-                  "short_name": "ZLIB License",
-                  "category": "Permissive",
-                  "is_exception": false,
-                  "is_unknown": false,
-                  "owner": "zlib",
-                  "homepage_url": "http://www.zlib.net/",
-                  "text_url": "http://www.gzip.org/zlib/zlib_license.html",
-                  "reference_url": "https://scancode-licensedb.aboutcode.org/zlib",
-                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/zlib.LICENSE",
-                  "spdx_license_key": "Zlib",
-                  "spdx_url": "https://spdx.org/licenses/Zlib"
-                }
-              ]
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/zlib_5.RULE"
             },
             {
               "score": 100.0,
@@ -2984,38 +3206,16 @@
               "matcher": "2-aho",
               "license_expression": "zlib",
               "rule_identifier": "zlib_17.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/zlib_17.RULE",
-              "referenced_filenames": [],
-              "is_license_text": true,
-              "is_license_notice": false,
-              "is_license_reference": false,
-              "is_license_tag": false,
-              "is_license_intro": false,
-              "rule_length": 144,
-              "rule_relevance": 100,
-              "licenses": [
-                {
-                  "key": "zlib",
-                  "name": "ZLIB License",
-                  "short_name": "ZLIB License",
-                  "category": "Permissive",
-                  "is_exception": false,
-                  "is_unknown": false,
-                  "owner": "zlib",
-                  "homepage_url": "http://www.zlib.net/",
-                  "text_url": "http://www.gzip.org/zlib/zlib_license.html",
-                  "reference_url": "https://scancode-licensedb.aboutcode.org/zlib",
-                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/zlib.LICENSE",
-                  "spdx_license_key": "Zlib",
-                  "spdx_url": "https://spdx.org/licenses/Zlib"
-                }
-              ]
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/zlib_17.RULE"
             }
           ]
         }
       ],
       "license_clues": [],
       "percentage_of_license_text": 20.34,
+      "for_license_detections": [
+        "zlib-40a07b45-2815-d501-b4b7-95c00453a3d4"
+      ],
       "copyrights": [
         {
           "copyright": "Copyright (c) 1995-2013 Jean-loup Gailly",

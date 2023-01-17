@@ -7,7 +7,7 @@ ignorable_urls:
     - https://www.gnu.org/copyleft/gpl.html
 ---
 
- eCos and RedBoot are open source software, covered by a
+eCos and RedBoot are open source software, covered by a
 modified version of the https://www.gnu.org/copyleft/gpl.html"
  GNU
 General Public Licence 

@@ -3,7 +3,7 @@ license_expression: bsd-new
 is_license_text: yes
 ---
 
-  BSD:
+BSD:
   The BSD license applies to all files in the directory 
 
   Redistribution and use in source and binary forms, with or without

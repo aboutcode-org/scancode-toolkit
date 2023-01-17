@@ -8,7 +8,6 @@ ignorable_emails:
     - jhunter@servlets.com
 ---
 
-
 The source code, object code, and documentation in the com.oreilly.servlet
 package is copyright and owned by Jason Hunter. 
 

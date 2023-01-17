@@ -68,14 +68,6 @@ license_detections:
         license_expression: 3com-microcode
         rule_identifier: 3com-microcode3.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/3com-microcode3.RULE
-        referenced_filenames: []
-        is_license_text: yes
-        is_license_notice: no
-        is_license_reference: no
-        is_license_tag: no
-        is_license_intro: no
-        rule_length: 264
-        rule_relevance: 100
         matched_text: |
           Redistribution and use in source and binary forms of the 3c990img.h
           microcode software are permitted provided that the following conditions
@@ -105,20 +97,6 @@ license_detections:
           (PATENT, COPYRIGHT, TRADE SECRET, MASK WORK, OR OTHER PROPRIETARY RIGHT)
           EMBODIED IN ANY OTHER 3COM HARDWARE OR SOFTWARE EITHER SOLELY OR IN
           COMBINATION WITH THE 3c990img.h MICROCODE SOFTWARE
-        licenses:
-          - key: 3com-microcode
-            name: 3Com Microcode
-            short_name: 3Com Microcode
-            category: Permissive
-            is_exception: no
-            is_unknown: no
-            owner: HP - Hewlett Packard
-            homepage_url:
-            text_url:
-            reference_url: https://scancode-licensedb.aboutcode.org/3com-microcode
-            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/3com-microcode.LICENSE
-            spdx_license_key: LicenseRef-scancode-3com-microcode
-            spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/3com-microcode.LICENSE
   - license_expression: bsd-simplified-source
     detection_log:
       - not-combined
@@ -132,33 +110,11 @@ license_detections:
         license_expression: bsd-simplified-source
         rule_identifier: bsd-simplified-source.LICENSE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-simplified-source.LICENSE
-        referenced_filenames: []
-        is_license_text: yes
-        is_license_notice: no
-        is_license_reference: no
-        is_license_tag: no
-        is_license_intro: no
-        rule_length: 30
-        rule_relevance: 100
         matched_text: |
           Redistribution and use in source and binary forms, with or without
           modification, are permitted provided that redistributions of source
           code retain the above copyright notice and this comment without
           modification.
-        licenses:
-          - key: bsd-simplified-source
-            name: BSD-Simplified source
-            short_name: BSD-Simplified source
-            category: Permissive
-            is_exception: no
-            is_unknown: no
-            owner: Unspecified
-            homepage_url:
-            text_url:
-            reference_url: https://scancode-licensedb.aboutcode.org/bsd-simplified-source
-            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-simplified-source.LICENSE
-            spdx_license_key: LicenseRef-scancode-bsd-simplified-source
-            spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-simplified-source.LICENSE
   - license_expression: agere-bsd
     detection_log:
       - not-combined
@@ -172,14 +128,6 @@ license_detections:
         license_expression: agere-bsd
         rule_identifier: agere-bsd_1.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/agere-bsd_1.RULE
-        referenced_filenames: []
-        is_license_text: yes
-        is_license_notice: no
-        is_license_reference: no
-        is_license_tag: no
-        is_license_intro: no
-        rule_length: 296
-        rule_relevance: 100
         matched_text: |
           This software is provided subject to the following terms and conditions,
           which you should read carefully before using the software.  Using this
@@ -218,20 +166,6 @@ license_detections:
           LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT
           OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH
           DAMAGE.
-        licenses:
-          - key: agere-bsd
-            name: Agere Systems BSD Software license
-            short_name: Agere BSD
-            category: Permissive
-            is_exception: no
-            is_unknown: no
-            owner: LSI Corporation
-            homepage_url: https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/tree/LICENCE.agere
-            text_url:
-            reference_url: https://scancode-licensedb.aboutcode.org/agere-bsd
-            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/agere-bsd.LICENSE
-            spdx_license_key: LicenseRef-scancode-agere-bsd
-            spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/agere-bsd.LICENSE
   - license_expression: x11-acer
     detection_log:
       - not-combined
@@ -245,14 +179,6 @@ license_detections:
         license_expression: x11-acer
         rule_identifier: x11-acer.LICENSE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/x11-acer.LICENSE
-        referenced_filenames: []
-        is_license_text: yes
-        is_license_notice: no
-        is_license_reference: no
-        is_license_tag: no
-        is_license_intro: no
-        rule_length: 112
-        rule_relevance: 100
         matched_text: |
           Permission to use, copy, modify, and/or distribute this software for
           any purpose with or without fee is hereby granted, provided that the
@@ -267,20 +193,6 @@ license_detections:
           PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER
           TORTUOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
           PERFORMANCE OF THIS SOFTWARE.
-        licenses:
-          - key: x11-acer
-            name: X11-Style (Acer)
-            short_name: X11-Style (Acer)
-            category: Permissive
-            is_exception: no
-            is_unknown: no
-            owner: Acer Labs
-            homepage_url: https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/tree/LICENCE.Abilis
-            text_url:
-            reference_url: https://scancode-licensedb.aboutcode.org/x11-acer
-            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/x11-acer.LICENSE
-            spdx_license_key: LicenseRef-scancode-x11-acer
-            spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/x11-acer.LICENSE
   - license_expression: ctl-linux-firmware
     detection_log:
       - not-combined
@@ -294,14 +206,6 @@ license_detections:
         license_expression: ctl-linux-firmware
         rule_identifier: ctl-linux-firmware.LICENSE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/ctl-linux-firmware.LICENSE
-        referenced_filenames: []
-        is_license_text: yes
-        is_license_notice: no
-        is_license_reference: no
-        is_license_tag: no
-        is_license_intro: no
-        rule_length: 364
-        rule_relevance: 100
         matched_text: |
           Redistribution.  Redistribution and use in binary form, without
           modification, are permitted provided that the following conditions are
@@ -347,20 +251,6 @@ license_detections:
           (PATENT, COPYRIGHT, TRADE SECRET, MASK WORK, OR OTHER PROPRIETARY RIGHT)
           EMBODIED IN ANY OTHER CTL HARDWARE OR SOFTWARE WHETHER SOLELY OR IN
           COMBINATION WITH THIS SOFTWARE.
-        licenses:
-          - key: ctl-linux-firmware
-            name: Creative Technology Linux Firmware License
-            short_name: Creative Technology Linux Firmware License
-            category: Proprietary Free
-            is_exception: no
-            is_unknown: no
-            owner: Creative Technology Ltd
-            homepage_url: https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/tree/LICENCE.ca0132
-            text_url:
-            reference_url: https://scancode-licensedb.aboutcode.org/ctl-linux-firmware
-            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/ctl-linux-firmware.LICENSE
-            spdx_license_key: LicenseRef-scancode-ctl-linux-firmware
-            spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/ctl-linux-firmware.LICENSE
   - license_expression: other-permissive
     detection_log:
       - not-combined
@@ -374,32 +264,10 @@ license_detections:
         license_expression: other-permissive
         rule_identifier: other-permissive_66.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/other-permissive_66.RULE
-        referenced_filenames: []
-        is_license_text: yes
-        is_license_notice: no
-        is_license_reference: no
-        is_license_tag: no
-        is_license_intro: no
-        rule_length: 23
-        rule_relevance: 100
         matched_text: |
           Permission is hereby granted for the distribution of this firmware
           data in hexadecimal or equivalent format, provided this copyright
           notice is accompanying it.
-        licenses:
-          - key: other-permissive
-            name: Other Permissive Licenses
-            short_name: Other Permissive Licenses
-            category: Permissive
-            is_exception: no
-            is_unknown: no
-            owner: nexB
-            homepage_url:
-            text_url:
-            reference_url: https://scancode-licensedb.aboutcode.org/other-permissive
-            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/other-permissive.LICENSE
-            spdx_license_key: LicenseRef-scancode-other-permissive
-            spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/other-permissive.LICENSE
   - license_expression: linux-openib
     detection_log:
       - not-combined
@@ -413,14 +281,6 @@ license_detections:
         license_expression: linux-openib
         rule_identifier: linux-openib.LICENSE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/linux-openib.LICENSE
-        referenced_filenames: []
-        is_license_text: yes
-        is_license_notice: no
-        is_license_reference: no
-        is_license_tag: no
-        is_license_intro: no
-        rule_length: 143
-        rule_relevance: 100
         matched_text: |
           Redistribution and use in source and binary forms, with or
           without modification, are permitted provided that the following
@@ -443,20 +303,6 @@ license_detections:
           ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
           CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
           SOFTWARE.
-        licenses:
-          - key: linux-openib
-            name: Linux-OpenIB
-            short_name: Linux-OpenIB
-            category: Permissive
-            is_exception: no
-            is_unknown: no
-            owner: Linux Foundation
-            homepage_url: https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/drivers/infiniband/core/sa.h
-            text_url: https://github.com/ofiwg/libfabric/blob/master/contrib/buildrpm/README
-            reference_url: https://scancode-licensedb.aboutcode.org/linux-openib
-            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/linux-openib.LICENSE
-            spdx_license_key: Linux-OpenIB
-            spdx_url: https://spdx.org/licenses/Linux-OpenIB
   - license_expression: proprietary-license
     detection_log:
       - not-combined
@@ -470,14 +316,6 @@ license_detections:
         license_expression: proprietary-license
         rule_identifier: proprietary-license_334.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/proprietary-license_334.RULE
-        referenced_filenames: []
-        is_license_text: yes
-        is_license_notice: no
-        is_license_reference: no
-        is_license_tag: no
-        is_license_intro: no
-        rule_length: '199'
-        rule_relevance: 100
         matched_text: |
           Redistribution and use in binary form, without modification, are
           permitted provided that the following conditions are met:
@@ -503,20 +341,6 @@ license_detections:
           ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR
           TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE
           USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-        licenses:
-          - key: proprietary-license
-            name: Proprietary License
-            short_name: Proprietary License
-            category: Commercial
-            is_exception: no
-            is_unknown: no
-            owner: Unspecified
-            homepage_url:
-            text_url:
-            reference_url: https://scancode-licensedb.aboutcode.org/proprietary-license
-            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/proprietary-license.LICENSE
-            spdx_license_key: LicenseRef-scancode-proprietary-license
-            spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/proprietary-license.LICENSE
   - license_expression: bsd-simplified-source
     detection_log:
       - not-combined
@@ -530,33 +354,11 @@ license_detections:
         license_expression: bsd-simplified-source
         rule_identifier: bsd-simplified-source.LICENSE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-simplified-source.LICENSE
-        referenced_filenames: []
-        is_license_text: yes
-        is_license_notice: no
-        is_license_reference: no
-        is_license_tag: no
-        is_license_intro: no
-        rule_length: 30
-        rule_relevance: 100
         matched_text: |
           Redistribution and use in source and binary forms, with or without
           modification, are permitted provided that redistributions of source
           code retain the above copyright notice and this comment without
           modification.
-        licenses:
-          - key: bsd-simplified-source
-            name: BSD-Simplified source
-            short_name: BSD-Simplified source
-            category: Permissive
-            is_exception: no
-            is_unknown: no
-            owner: Unspecified
-            homepage_url:
-            text_url:
-            reference_url: https://scancode-licensedb.aboutcode.org/bsd-simplified-source
-            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-simplified-source.LICENSE
-            spdx_license_key: LicenseRef-scancode-bsd-simplified-source
-            spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-simplified-source.LICENSE
   - license_expression: proprietary-license
     detection_log:
       - not-combined
@@ -570,14 +372,6 @@ license_detections:
         license_expression: proprietary-license
         rule_identifier: proprietary-license_332.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/proprietary-license_332.RULE
-        referenced_filenames: []
-        is_license_text: yes
-        is_license_notice: no
-        is_license_reference: no
-        is_license_tag: no
-        is_license_intro: no
-        rule_length: 120
-        rule_relevance: 100
         matched_text: |
           Permission to use, copy, modify, and/or distribute this software, only
           for use with Xceive ICs, for any purpose with or without fee is hereby
@@ -591,20 +385,6 @@ license_detections:
           WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
           ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
           OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
-        licenses:
-          - key: proprietary-license
-            name: Proprietary License
-            short_name: Proprietary License
-            category: Commercial
-            is_exception: no
-            is_unknown: no
-            owner: Unspecified
-            homepage_url:
-            text_url:
-            reference_url: https://scancode-licensedb.aboutcode.org/proprietary-license
-            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/proprietary-license.LICENSE
-            spdx_license_key: LicenseRef-scancode-proprietary-license
-            spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/proprietary-license.LICENSE
   - license_expression: isc
     detection_log:
       - not-combined
@@ -618,14 +398,6 @@ license_detections:
         license_expression: isc
         rule_identifier: isc.LICENSE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/isc.LICENSE
-        referenced_filenames: []
-        is_license_text: yes
-        is_license_notice: no
-        is_license_reference: no
-        is_license_tag: no
-        is_license_intro: no
-        rule_length: 112
-        rule_relevance: 100
         matched_text: |
           Permission to use, copy, modify, and/or distribute this software for
           any purpose with or without fee is hereby granted, provided that the
@@ -640,20 +412,6 @@ license_detections:
           PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER
           TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
           PERFORMANCE OF THIS SOFTWARE.
-        licenses:
-          - key: isc
-            name: ISC License
-            short_name: ISC License
-            category: Permissive
-            is_exception: no
-            is_unknown: no
-            owner: ISC - Internet Systems Consortium
-            homepage_url: https://www.isc.org/licenses/
-            text_url: http://fedoraproject.org/wiki/Licensing:MIT#Old_Style_with_legal_disclaimer_2
-            reference_url: https://scancode-licensedb.aboutcode.org/isc
-            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/isc.LICENSE
-            spdx_license_key: ISC
-            spdx_url: https://spdx.org/licenses/ISC
   - license_expression: isc
     detection_log:
       - not-combined
@@ -667,14 +425,6 @@ license_detections:
         license_expression: isc
         rule_identifier: isc.LICENSE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/isc.LICENSE
-        referenced_filenames: []
-        is_license_text: yes
-        is_license_notice: no
-        is_license_reference: no
-        is_license_tag: no
-        is_license_intro: no
-        rule_length: 112
-        rule_relevance: 100
         matched_text: |
           Permission to use, copy, modify, and/or distribute this software for
           any purpose with or without fee is hereby granted, provided that the
@@ -689,20 +439,6 @@ license_detections:
           PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER
           TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
           PERFORMANCE OF THIS SOFTWARE.
-        licenses:
-          - key: isc
-            name: ISC License
-            short_name: ISC License
-            category: Permissive
-            is_exception: no
-            is_unknown: no
-            owner: ISC - Internet Systems Consortium
-            homepage_url: https://www.isc.org/licenses/
-            text_url: http://fedoraproject.org/wiki/Licensing:MIT#Old_Style_with_legal_disclaimer_2
-            reference_url: https://scancode-licensedb.aboutcode.org/isc
-            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/isc.LICENSE
-            spdx_license_key: ISC
-            spdx_url: https://spdx.org/licenses/ISC
   - license_expression: proprietary-license
     detection_log:
       - not-combined
@@ -716,14 +452,6 @@ license_detections:
         license_expression: proprietary-license
         rule_identifier: proprietary-license_331.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/proprietary-license_331.RULE
-        referenced_filenames: []
-        is_license_text: yes
-        is_license_notice: no
-        is_license_reference: no
-        is_license_tag: no
-        is_license_intro: no
-        rule_length: 75
-        rule_relevance: 100
         matched_text: |
           TERRATEC grants permission to use and redistribute these firmware
           files for use with TERRATEC devices, but not as part of the Linux
@@ -733,20 +461,6 @@ license_detections:
           These firmware files are distributed in the hope that they will be
           useful, but WITHOUT ANY WARRANTY; without even the implied warranty
           of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
-        licenses:
-          - key: proprietary-license
-            name: Proprietary License
-            short_name: Proprietary License
-            category: Commercial
-            is_exception: no
-            is_unknown: no
-            owner: Unspecified
-            homepage_url:
-            text_url:
-            reference_url: https://scancode-licensedb.aboutcode.org/proprietary-license
-            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/proprietary-license.LICENSE
-            spdx_license_key: LicenseRef-scancode-proprietary-license
-            spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/proprietary-license.LICENSE
   - license_expression: bsd-new
     detection_log:
       - not-combined
@@ -760,14 +474,6 @@ license_detections:
         license_expression: bsd-new
         rule_identifier: bsd-new_786.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_786.RULE
-        referenced_filenames: []
-        is_license_text: yes
-        is_license_notice: no
-        is_license_reference: no
-        is_license_tag: no
-        is_license_intro: no
-        rule_length: 211
-        rule_relevance: 100
         matched_text: |
           Redistribution and use in source and binary forms, with or without
           modification, are permitted provided that the following conditions are met:
@@ -793,20 +499,6 @@ license_detections:
           LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
           NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
           EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-        licenses:
-          - key: bsd-new
-            name: BSD-3-Clause
-            short_name: BSD-3-Clause
-            category: Permissive
-            is_exception: no
-            is_unknown: no
-            owner: Regents of the University of California
-            homepage_url: http://www.opensource.org/licenses/BSD-3-Clause
-            text_url: http://www.opensource.org/licenses/BSD-3-Clause
-            reference_url: https://scancode-licensedb.aboutcode.org/bsd-new
-            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-new.LICENSE
-            spdx_license_key: BSD-3-Clause
-            spdx_url: https://spdx.org/licenses/BSD-3-Clause
   - license_expression: isc
     detection_log:
       - not-combined
@@ -820,14 +512,6 @@ license_detections:
         license_expression: isc
         rule_identifier: isc.LICENSE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/isc.LICENSE
-        referenced_filenames: []
-        is_license_text: yes
-        is_license_notice: no
-        is_license_reference: no
-        is_license_tag: no
-        is_license_intro: no
-        rule_length: 112
-        rule_relevance: 100
         matched_text: |
           Permission to use, copy, modify, and/or distribute this software for any
           purpose with or without fee is hereby granted, provided that the above
@@ -841,20 +525,6 @@ license_detections:
           LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT,
           NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION
           WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
-        licenses:
-          - key: isc
-            name: ISC License
-            short_name: ISC License
-            category: Permissive
-            is_exception: no
-            is_unknown: no
-            owner: ISC - Internet Systems Consortium
-            homepage_url: https://www.isc.org/licenses/
-            text_url: http://fedoraproject.org/wiki/Licensing:MIT#Old_Style_with_legal_disclaimer_2
-            reference_url: https://scancode-licensedb.aboutcode.org/isc
-            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/isc.LICENSE
-            spdx_license_key: ISC
-            spdx_url: https://spdx.org/licenses/ISC
   - license_expression: proprietary-license
     detection_log:
       - not-combined
@@ -868,14 +538,6 @@ license_detections:
         license_expression: proprietary-license
         rule_identifier: proprietary-license_330.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/proprietary-license_330.RULE
-        referenced_filenames: []
-        is_license_text: yes
-        is_license_notice: no
-        is_license_reference: no
-        is_license_tag: no
-        is_license_intro: no
-        rule_length: 75
-        rule_relevance: 100
         matched_text: |
           Sensoray grants permission to use and redistribute these firmware
           files for use with Sensoray devices, but not as a part of the Linux
@@ -884,20 +546,6 @@ license_detections:
           These firmware files are distributed in the hope that they will be
           useful, but WITHOUT ANY WARRANTY; without even the implied warranty
           of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
-        licenses:
-          - key: proprietary-license
-            name: Proprietary License
-            short_name: Proprietary License
-            category: Commercial
-            is_exception: no
-            is_unknown: no
-            owner: Unspecified
-            homepage_url:
-            text_url:
-            reference_url: https://scancode-licensedb.aboutcode.org/proprietary-license
-            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/proprietary-license.LICENSE
-            spdx_license_key: LicenseRef-scancode-proprietary-license
-            spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/proprietary-license.LICENSE
   - license_expression: proprietary-license
     detection_log:
       - not-combined
@@ -911,15 +559,6 @@ license_detections:
         license_expression: proprietary-license
         rule_identifier: proprietary-license_328.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/proprietary-license_328.RULE
-        referenced_filenames:
-          - LICENCE.go7007
-        is_license_text: yes
-        is_license_notice: no
-        is_license_reference: no
-        is_license_tag: no
-        is_license_intro: no
-        rule_length: 73
-        rule_relevance: 100
         matched_text: |
           The firmware files included in the firmware/ directory may be freely
           redistributed only in conjunction with this document [LICENCE.go7007];
@@ -930,20 +569,6 @@ license_detections:
           LICENSES AND DISCLAIMS ALL IMPLIED WARRANTIES, INCLUDING WITHOUT LIMITATION
           WARRANTIES OF MERCHANTABILITY, SUPPORT, AND FITNESS FOR A PARTICULAR
           PURPOSE AND NON-INFRINGEMENT.
-        licenses:
-          - key: proprietary-license
-            name: Proprietary License
-            short_name: Proprietary License
-            category: Commercial
-            is_exception: no
-            is_unknown: no
-            owner: Unspecified
-            homepage_url:
-            text_url:
-            reference_url: https://scancode-licensedb.aboutcode.org/proprietary-license
-            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/proprietary-license.LICENSE
-            spdx_license_key: LicenseRef-scancode-proprietary-license
-            spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/proprietary-license.LICENSE
   - license_expression: intel
     detection_log:
       - not-combined
@@ -957,14 +582,6 @@ license_detections:
         license_expression: intel
         rule_identifier: intel_2.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/intel_2.RULE
-        referenced_filenames: []
-        is_license_text: yes
-        is_license_notice: no
-        is_license_reference: no
-        is_license_tag: no
-        is_license_intro: no
-        rule_length: 268
-        rule_relevance: 95
         matched_text: |
           Redistribution.
 
@@ -1000,20 +617,6 @@ license_detections:
           ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
           (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
           SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-        licenses:
-          - key: intel
-            name: Intel Limited Patent License
-            short_name: Intel Limited Patent License
-            category: Proprietary Free
-            is_exception: no
-            is_unknown: no
-            owner: Intel Corporation
-            homepage_url: https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/tree/LICENCE.IntcSST2
-            text_url: https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/tree/LICENCE.adsp_sst
-            reference_url: https://scancode-licensedb.aboutcode.org/intel
-            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/intel.LICENSE
-            spdx_license_key: LicenseRef-scancode-intel
-            spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/intel.LICENSE
   - license_expression: nxp-firmware-patent
     detection_log:
       - not-combined
@@ -1027,14 +630,6 @@ license_detections:
         license_expression: nxp-firmware-patent
         rule_identifier: nxp-firmware-patent.LICENSE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/nxp-firmware-patent.LICENSE
-        referenced_filenames: []
-        is_license_text: yes
-        is_license_notice: no
-        is_license_reference: no
-        is_license_tag: no
-        is_license_intro: no
-        rule_length: 384
-        rule_relevance: 100
         matched_text: |
           Redistribution. Reproduction and redistribution in binary form, without
           modification, for use solely in conjunction with a NXP
@@ -1080,20 +675,6 @@ license_detections:
           ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR
           TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE
           USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-        licenses:
-          - key: nxp-firmware-patent
-            name: NXP Firmware with Patent License
-            short_name: NXP Firmware with Patent License
-            category: Proprietary Free
-            is_exception: no
-            is_unknown: no
-            owner: NXP
-            homepage_url: https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/tree/LICENSE.sdma_firmware
-            text_url:
-            reference_url: https://scancode-licensedb.aboutcode.org/nxp-firmware-patent
-            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/nxp-firmware-patent.LICENSE
-            spdx_license_key: LicenseRef-scancode-nxp-firmware-patent
-            spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/nxp-firmware-patent.LICENSE
   - license_expression: bsd-original
     detection_log:
       - not-combined
@@ -1107,14 +688,6 @@ license_detections:
         license_expression: bsd-original
         rule_identifier: bsd-original_44.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-original_44.RULE
-        referenced_filenames: []
-        is_license_text: yes
-        is_license_notice: no
-        is_license_reference: no
-        is_license_tag: no
-        is_license_intro: no
-        rule_length: 233
-        rule_relevance: 100
         matched_text: |
           Redistribution and use in source and binary forms, with or without
           modification, are permitted provided that the following conditions
@@ -1142,20 +715,6 @@ license_detections:
           STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING
           IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
           POSSIBILITY OF SUCH DAMAGE.
-        licenses:
-          - key: bsd-original
-            name: BSD-Original
-            short_name: BSD-Original
-            category: Permissive
-            is_exception: no
-            is_unknown: no
-            owner: Regents of the University of California
-            homepage_url: http://www.xfree86.org/3.3.6/COPYRIGHT2.html
-            text_url: http://www.xfree86.org/3.3.6/COPYRIGHT2.html#6
-            reference_url: https://scancode-licensedb.aboutcode.org/bsd-original
-            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-original.LICENSE
-            spdx_license_key: BSD-4-Clause
-            spdx_url: https://spdx.org/licenses/BSD-4-Clause
   - license_expression: mit
     detection_log:
       - not-combined
@@ -1169,14 +728,6 @@ license_detections:
         license_expression: mit
         rule_identifier: mit_712.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_712.RULE
-        referenced_filenames: []
-        is_license_text: yes
-        is_license_notice: no
-        is_license_reference: no
-        is_license_tag: no
-        is_license_intro: no
-        rule_length: 161
-        rule_relevance: 100
         matched_text: |
           Permission is hereby granted, free of charge, to any person obtaining a
           copy of this software and associated documentation files (the "Software"),
@@ -1195,20 +746,6 @@ license_detections:
           DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR
           OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE
           OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-        licenses:
-          - key: mit
-            name: MIT License
-            short_name: MIT License
-            category: Permissive
-            is_exception: no
-            is_unknown: no
-            owner: MIT
-            homepage_url: http://opensource.org/licenses/mit-license.php
-            text_url: http://opensource.org/licenses/mit-license.php
-            reference_url: https://scancode-licensedb.aboutcode.org/mit
-            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE
-            spdx_license_key: MIT
-            spdx_url: https://spdx.org/licenses/MIT
   - license_expression: moxa-linux-firmware
     detection_log:
       - not-combined
@@ -1222,14 +759,6 @@ license_detections:
         license_expression: moxa-linux-firmware
         rule_identifier: moxa-linux-firmware.LICENSE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/moxa-linux-firmware.LICENSE
-        referenced_filenames: []
-        is_license_text: yes
-        is_license_notice: no
-        is_license_reference: no
-        is_license_tag: no
-        is_license_intro: no
-        rule_length: 143
-        rule_relevance: 100
         matched_text: |
           The software accompanying this license statement (the “Software”)
           is the property of Moxa Inc. (the “Moxa”), and is protected by
@@ -1247,20 +776,6 @@ license_detections:
           4. You may not re-license or sub-license the software to any person or
              business, using any other license.
           5. Moxa(r) is worldwide registered trademark.
-        licenses:
-          - key: moxa-linux-firmware
-            name: Moxa Linux Firmware License
-            short_name: Moxa Linux Firmware License
-            category: Proprietary Free
-            is_exception: no
-            is_unknown: no
-            owner: Moxa
-            homepage_url: https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/tree/LICENCE.moxa
-            text_url:
-            reference_url: https://scancode-licensedb.aboutcode.org/moxa-linux-firmware
-            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/moxa-linux-firmware.LICENSE
-            spdx_license_key: LicenseRef-scancode-moxa-linux-firmware
-            spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/moxa-linux-firmware.LICENSE
   - license_expression: ralink-firmware
     detection_log:
       - not-combined
@@ -1274,14 +789,6 @@ license_detections:
         license_expression: ralink-firmware
         rule_identifier: ralink-firmware.LICENSE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/ralink-firmware.LICENSE
-        referenced_filenames: []
-        is_license_text: yes
-        is_license_notice: no
-        is_license_reference: no
-        is_license_tag: no
-        is_license_intro: no
-        rule_length: 297
-        rule_relevance: 100
         matched_text: |
           Redistribution.  Redistribution and use in binary form, without
           modification, are permitted provided that the following conditions are
@@ -1319,20 +826,6 @@ license_detections:
           TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE
           USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH
           DAMAGE.
-        licenses:
-          - key: ralink-firmware
-            name: Ralink Firmware License
-            short_name: Ralink Firmware License
-            category: Proprietary Free
-            is_exception: no
-            is_unknown: no
-            owner: MediaTek
-            homepage_url: http://iotdk.intel.com/repos/3.0/licenses/linux-firmware/LICENCE.ralink-firmware.txt
-            text_url:
-            reference_url: https://scancode-licensedb.aboutcode.org/ralink-firmware
-            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/ralink-firmware.LICENSE
-            spdx_license_key: LicenseRef-scancode-ralink-firmware
-            spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/ralink-firmware.LICENSE
   - license_expression: proprietary-license
     detection_log:
       - not-combined
@@ -1346,29 +839,7 @@ license_detections:
         license_expression: proprietary-license
         rule_identifier: proprietary-license_324.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/proprietary-license_324.RULE
-        referenced_filenames: []
-        is_license_text: no
-        is_license_notice: yes
-        is_license_reference: no
-        is_license_tag: no
-        is_license_intro: no
-        rule_length: 8
-        rule_relevance: 100
         matched_text: All firmware components are redistributable in binary form.
-        licenses:
-          - key: proprietary-license
-            name: Proprietary License
-            short_name: Proprietary License
-            category: Commercial
-            is_exception: no
-            is_unknown: no
-            owner: Unspecified
-            homepage_url:
-            text_url:
-            reference_url: https://scancode-licensedb.aboutcode.org/proprietary-license
-            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/proprietary-license.LICENSE
-            spdx_license_key: LicenseRef-scancode-proprietary-license
-            spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/proprietary-license.LICENSE
   - license_expression: proprietary-license
     detection_log:
       - not-combined
@@ -1382,14 +853,6 @@ license_detections:
         license_expression: proprietary-license
         rule_identifier: proprietary-license_325.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/proprietary-license_325.RULE
-        referenced_filenames: []
-        is_license_text: yes
-        is_license_notice: no
-        is_license_reference: no
-        is_license_tag: no
-        is_license_intro: no
-        rule_length: 956
-        rule_relevance: 100
         matched_text: |
           IMPORTANT NOTICE -- READ CAREFULLY: This License For Customer Use of
           NVIDIA Software ("LICENSE") is the agreement which governs use of
@@ -1518,20 +981,6 @@ license_detections:
           United States Bureau of Export Administration or any export laws,
           restrictions or regulations.  This LICENSE may only be modified in
           writing signed by an authorized officer of NVIDIA.
-        licenses:
-          - key: proprietary-license
-            name: Proprietary License
-            short_name: Proprietary License
-            category: Commercial
-            is_exception: no
-            is_unknown: no
-            owner: Unspecified
-            homepage_url:
-            text_url:
-            reference_url: https://scancode-licensedb.aboutcode.org/proprietary-license
-            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/proprietary-license.LICENSE
-            spdx_license_key: LicenseRef-scancode-proprietary-license
-            spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/proprietary-license.LICENSE
   - license_expression: proprietary-license
     detection_log:
       - not-combined
@@ -1545,14 +994,6 @@ license_detections:
         license_expression: proprietary-license
         rule_identifier: proprietary-license_319.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/proprietary-license_319.RULE
-        referenced_filenames: []
-        is_license_text: yes
-        is_license_notice: no
-        is_license_reference: no
-        is_license_tag: no
-        is_license_intro: no
-        rule_length: 303
-        rule_relevance: 100
         matched_text: |
           Redistribution.  Redistribution and use in binary form, without
           modification, are permitted provided that the following conditions are
@@ -1592,20 +1033,6 @@ license_detections:
           TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE
           USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH
           DAMAGE.
-        licenses:
-          - key: proprietary-license
-            name: Proprietary License
-            short_name: Proprietary License
-            category: Commercial
-            is_exception: no
-            is_unknown: no
-            owner: Unspecified
-            homepage_url:
-            text_url:
-            reference_url: https://scancode-licensedb.aboutcode.org/proprietary-license
-            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/proprietary-license.LICENSE
-            spdx_license_key: LicenseRef-scancode-proprietary-license
-            spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/proprietary-license.LICENSE
   - license_expression: proprietary-license
     detection_log:
       - not-combined
@@ -1619,14 +1046,6 @@ license_detections:
         license_expression: proprietary-license
         rule_identifier: proprietary-license_311.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/proprietary-license_311.RULE
-        referenced_filenames: []
-        is_license_text: yes
-        is_license_notice: no
-        is_license_reference: no
-        is_license_tag: no
-        is_license_intro: no
-        rule_length: 75
-        rule_relevance: 100
         matched_text: |
           Comtrol grants permission to use and redistribute these firmware
           files for use with Comtrol devices, but not as part of the Linux
@@ -1636,20 +1055,6 @@ license_detections:
           These firmware files are distributed in the hope that they will be
           useful, but WITHOUT ANY WARRANTY; without even the implied warranty
           of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
-        licenses:
-          - key: proprietary-license
-            name: Proprietary License
-            short_name: Proprietary License
-            category: Commercial
-            is_exception: no
-            is_unknown: no
-            owner: Unspecified
-            homepage_url:
-            text_url:
-            reference_url: https://scancode-licensedb.aboutcode.org/proprietary-license
-            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/proprietary-license.LICENSE
-            spdx_license_key: LicenseRef-scancode-proprietary-license
-            spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/proprietary-license.LICENSE
   - license_expression: ralink-firmware
     detection_log:
       - not-combined
@@ -1663,14 +1068,6 @@ license_detections:
         license_expression: ralink-firmware
         rule_identifier: ralink-firmware.LICENSE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/ralink-firmware.LICENSE
-        referenced_filenames: []
-        is_license_text: yes
-        is_license_notice: no
-        is_license_reference: no
-        is_license_tag: no
-        is_license_intro: no
-        rule_length: 297
-        rule_relevance: 100
         matched_text: |
           Redistribution.  Redistribution and use in binary form, without
           modification, are permitted provided that the following conditions are
@@ -1708,20 +1105,6 @@ license_detections:
           TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE
           USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH
           DAMAGE.
-        licenses:
-          - key: ralink-firmware
-            name: Ralink Firmware License
-            short_name: Ralink Firmware License
-            category: Proprietary Free
-            is_exception: no
-            is_unknown: no
-            owner: MediaTek
-            homepage_url: http://iotdk.intel.com/repos/3.0/licenses/linux-firmware/LICENCE.ralink-firmware.txt
-            text_url:
-            reference_url: https://scancode-licensedb.aboutcode.org/ralink-firmware
-            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/ralink-firmware.LICENSE
-            spdx_license_key: LicenseRef-scancode-ralink-firmware
-            spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/ralink-firmware.LICENSE
   - license_expression: other-permissive
     detection_log:
       - not-combined
@@ -1735,32 +1118,10 @@ license_detections:
         license_expression: other-permissive
         rule_identifier: other-permissive_66.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/other-permissive_66.RULE
-        referenced_filenames: []
-        is_license_text: yes
-        is_license_notice: no
-        is_license_reference: no
-        is_license_tag: no
-        is_license_intro: no
-        rule_length: 23
-        rule_relevance: 100
         matched_text: |
           Permission is hereby granted for the distribution of this firmware
           data in hexadecimal or equivalent format, provided this copyright
           notice is accompanying it.
-        licenses:
-          - key: other-permissive
-            name: Other Permissive Licenses
-            short_name: Other Permissive Licenses
-            category: Permissive
-            is_exception: no
-            is_unknown: no
-            owner: nexB
-            homepage_url:
-            text_url:
-            reference_url: https://scancode-licensedb.aboutcode.org/other-permissive
-            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/other-permissive.LICENSE
-            spdx_license_key: LicenseRef-scancode-other-permissive
-            spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/other-permissive.LICENSE
   - license_expression: other-permissive
     detection_log:
       - not-combined
@@ -1774,32 +1135,10 @@ license_detections:
         license_expression: other-permissive
         rule_identifier: other-permissive_66.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/other-permissive_66.RULE
-        referenced_filenames: []
-        is_license_text: yes
-        is_license_notice: no
-        is_license_reference: no
-        is_license_tag: no
-        is_license_intro: no
-        rule_length: 23
-        rule_relevance: 100
         matched_text: |
           Permission is hereby granted for the distribution of this firmware
           data in hexadecimal or equivalent format, provided this copyright
           notice is accompanying it.
-        licenses:
-          - key: other-permissive
-            name: Other Permissive Licenses
-            short_name: Other Permissive Licenses
-            category: Permissive
-            is_exception: no
-            is_unknown: no
-            owner: nexB
-            homepage_url:
-            text_url:
-            reference_url: https://scancode-licensedb.aboutcode.org/other-permissive
-            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/other-permissive.LICENSE
-            spdx_license_key: LicenseRef-scancode-other-permissive
-            spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/other-permissive.LICENSE
   - license_expression: bsd-new AND proprietary-license
     detection_log:
       - not-combined
@@ -1813,14 +1152,6 @@ license_detections:
         license_expression: bsd-new AND proprietary-license
         rule_identifier: bsd-new_and_proprietary-license_1.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_and_proprietary-license_1.RULE
-        referenced_filenames: []
-        is_license_text: yes
-        is_license_notice: no
-        is_license_reference: no
-        is_license_tag: no
-        is_license_intro: no
-        rule_length: 266
-        rule_relevance: 100
         matched_text: |
           Redistribution and use in source and binary forms, with or without
           modification, are permitted provided that the following
@@ -1855,33 +1186,6 @@ license_detections:
           RIGHTS (PATENT, COPYRIGHT, TRADE SECRET, MASK WORK, OR OTHER
           PROPRIETARY RIGHT) EMBODIED IN ANY OTHER IKANOS HARDWARE OR SOFTWARE
           EITHER SOLELY OR IN COMBINATION WITH THIS SOFTWARE.
-        licenses:
-          - key: bsd-new
-            name: BSD-3-Clause
-            short_name: BSD-3-Clause
-            category: Permissive
-            is_exception: no
-            is_unknown: no
-            owner: Regents of the University of California
-            homepage_url: http://www.opensource.org/licenses/BSD-3-Clause
-            text_url: http://www.opensource.org/licenses/BSD-3-Clause
-            reference_url: https://scancode-licensedb.aboutcode.org/bsd-new
-            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-new.LICENSE
-            spdx_license_key: BSD-3-Clause
-            spdx_url: https://spdx.org/licenses/BSD-3-Clause
-          - key: proprietary-license
-            name: Proprietary License
-            short_name: Proprietary License
-            category: Commercial
-            is_exception: no
-            is_unknown: no
-            owner: Unspecified
-            homepage_url:
-            text_url:
-            reference_url: https://scancode-licensedb.aboutcode.org/proprietary-license
-            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/proprietary-license.LICENSE
-            spdx_license_key: LicenseRef-scancode-proprietary-license
-            spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/proprietary-license.LICENSE
   - license_expression: proprietary-license
     detection_log:
       - not-combined
@@ -1895,14 +1199,6 @@ license_detections:
         license_expression: proprietary-license
         rule_identifier: proprietary-license_308.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/proprietary-license_308.RULE
-        referenced_filenames: []
-        is_license_text: yes
-        is_license_notice: no
-        is_license_reference: no
-        is_license_tag: no
-        is_license_intro: no
-        rule_length: 75
-        rule_relevance: 100
         matched_text: |
           Conexant grants permission to use and redistribute these firmware
           files for use with Conexant devices, but not as a part of the Linux
@@ -1911,20 +1207,6 @@ license_detections:
           These firmware files are distributed in the hope that they will be
           useful, but WITHOUT ANY WARRANTY; without even the implied warranty
           of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
-        licenses:
-          - key: proprietary-license
-            name: Proprietary License
-            short_name: Proprietary License
-            category: Commercial
-            is_exception: no
-            is_unknown: no
-            owner: Unspecified
-            homepage_url:
-            text_url:
-            reference_url: https://scancode-licensedb.aboutcode.org/proprietary-license
-            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/proprietary-license.LICENSE
-            spdx_license_key: LicenseRef-scancode-proprietary-license
-            spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/proprietary-license.LICENSE
   - license_expression: intel
     detection_log:
       - not-combined
@@ -1938,14 +1220,6 @@ license_detections:
         license_expression: intel
         rule_identifier: intel.LICENSE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/intel.LICENSE
-        referenced_filenames: []
-        is_license_text: yes
-        is_license_notice: no
-        is_license_reference: no
-        is_license_tag: no
-        is_license_intro: no
-        rule_length: 295
-        rule_relevance: 100
         matched_text: |
           Redistribution.  Redistribution and use in binary form, without
           modification, are permitted provided that the following conditions are
@@ -1983,20 +1257,6 @@ license_detections:
           TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE
           USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH
           DAMAGE.
-        licenses:
-          - key: intel
-            name: Intel Limited Patent License
-            short_name: Intel Limited Patent License
-            category: Proprietary Free
-            is_exception: no
-            is_unknown: no
-            owner: Intel Corporation
-            homepage_url: https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/tree/LICENCE.IntcSST2
-            text_url: https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/tree/LICENCE.adsp_sst
-            reference_url: https://scancode-licensedb.aboutcode.org/intel
-            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/intel.LICENSE
-            spdx_license_key: LicenseRef-scancode-intel
-            spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/intel.LICENSE
 other_license_detections: []
 copyright: |
   1999-2004, 3Com Corporation

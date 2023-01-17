@@ -7,5 +7,5 @@ notes: Seen in debian copyright files for libhogween and libnettle with tag `pub
     and refers to files in public domain.
 ---
 
- I believe that most files in debian/ hardly contains any creative
+I believe that most files in debian/ hardly contains any creative
  expression eligible for copyright.

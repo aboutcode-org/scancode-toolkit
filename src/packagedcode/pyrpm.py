@@ -146,7 +146,7 @@ RPMTAG_FILEDIGESTS = 1035
 # SHA256: 8
 # SHA384: 9
 # SHA512: 10
-RPMTAG_FILEDIGESTALGO    = 5011
+RPMTAG_FILEDIGESTALGO = 5011
 
 RPMTAG_FILELINKTOS = 1036
 # File virtual attributes (doc, license, ghost, artifact etc)
@@ -260,17 +260,17 @@ class Entry(object):
     def parse_entry(cls, etag, etype, eoffset, ecount, data_store):
 
         reader_by_type = {
-            RPM_DATA_TYPE_NULL:            cls.read_null,
-            RPM_DATA_TYPE_CHAR:            cls.read_char,
-            RPM_DATA_TYPE_INT8:            cls.read_int8,
-            RPM_DATA_TYPE_INT16:           cls.read_int16,
-            RPM_DATA_TYPE_INT32:           cls.read_int32,
-            RPM_DATA_TYPE_INT64:           cls.read_int64,
-            RPM_DATA_TYPE_STRING:          cls.read_string,
-            RPM_DATA_TYPE_BIN:             cls.read_bin,
-            RPM_DATA_TYPE_STRING_ARRAY:    cls.read_string_array,
-            RPM_DATA_TYPE_ASN1:            cls.read_bin,
-            RPM_DATA_TYPE_OPENPGP:         cls.read_bin,
+            RPM_DATA_TYPE_NULL: cls.read_null,
+            RPM_DATA_TYPE_CHAR: cls.read_char,
+            RPM_DATA_TYPE_INT8: cls.read_int8,
+            RPM_DATA_TYPE_INT16: cls.read_int16,
+            RPM_DATA_TYPE_INT32: cls.read_int32,
+            RPM_DATA_TYPE_INT64: cls.read_int64,
+            RPM_DATA_TYPE_STRING: cls.read_string,
+            RPM_DATA_TYPE_BIN: cls.read_bin,
+            RPM_DATA_TYPE_STRING_ARRAY: cls.read_string_array,
+            RPM_DATA_TYPE_ASN1: cls.read_bin,
+            RPM_DATA_TYPE_OPENPGP: cls.read_bin,
             RPM_DATA_TYPE_I18NSTRING_TYPE: cls.read_string
         }
 

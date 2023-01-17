@@ -1,5 +1,4 @@
 {
-  "dependencies": [],
   "packages": [
     {
       "type": "deb",
@@ -65,6 +64,7 @@
       "purl": "pkg:deb/libncurses5@6.1-1ubuntu1?architecture=amd64"
     }
   ],
+  "dependencies": [],
   "files": [
     {
       "path": "end-to-end.tgz",

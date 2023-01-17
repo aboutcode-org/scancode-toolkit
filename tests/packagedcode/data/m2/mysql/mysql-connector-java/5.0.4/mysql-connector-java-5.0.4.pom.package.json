@@ -40,32 +40,7 @@
           "license_expression": "gpl-2.0",
           "rule_identifier": "gpl-2.0_660.RULE",
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0_660.RULE",
-          "referenced_filenames": [],
-          "is_license_text": false,
-          "is_license_notice": false,
-          "is_license_reference": true,
-          "is_license_tag": false,
-          "is_license_intro": false,
-          "rule_length": 7,
-          "rule_relevance": 100,
-          "matched_text": "The GNU General Public License, Version 2",
-          "licenses": [
-            {
-              "key": "gpl-2.0",
-              "name": "GNU General Public License 2.0",
-              "short_name": "GPL 2.0",
-              "category": "Copyleft",
-              "is_exception": false,
-              "is_unknown": false,
-              "owner": "Free Software Foundation (FSF)",
-              "homepage_url": "http://www.gnu.org/licenses/gpl-2.0.html",
-              "text_url": "http://www.gnu.org/licenses/gpl-2.0.txt",
-              "reference_url": "https://scancode-licensedb.aboutcode.org/gpl-2.0",
-              "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-2.0.LICENSE",
-              "spdx_license_key": "GPL-2.0-only",
-              "spdx_url": "https://spdx.org/licenses/GPL-2.0-only"
-            }
-          ]
+          "matched_text": "The GNU General Public License, Version 2"
         }
       ]
     },
@@ -85,32 +60,7 @@
           "license_expression": "gpl-1.0-plus",
           "rule_identifier": "gpl-1.0-plus_48.RULE",
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-1.0-plus_48.RULE",
-          "referenced_filenames": [],
-          "is_license_text": false,
-          "is_license_notice": false,
-          "is_license_reference": true,
-          "is_license_tag": false,
-          "is_license_intro": false,
-          "rule_length": 7,
-          "rule_relevance": 100,
-          "matched_text": "http://www.gnu.org/licenses/gpl.txt",
-          "licenses": [
-            {
-              "key": "gpl-1.0-plus",
-              "name": "GNU General Public License 1.0 or later",
-              "short_name": "GPL 1.0 or later",
-              "category": "Copyleft",
-              "is_exception": false,
-              "is_unknown": false,
-              "owner": "Free Software Foundation (FSF)",
-              "homepage_url": "http://www.gnu.org/licenses/old-licenses/gpl-1.0-standalone.html",
-              "text_url": "http://www.gnu.org/licenses/old-licenses/gpl-1.0-standalone.html",
-              "reference_url": "https://scancode-licensedb.aboutcode.org/gpl-1.0-plus",
-              "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-1.0-plus.LICENSE",
-              "spdx_license_key": "GPL-1.0-or-later",
-              "spdx_url": "https://spdx.org/licenses/GPL-1.0-or-later"
-            }
-          ]
+          "matched_text": "http://www.gnu.org/licenses/gpl.txt"
         }
       ]
     },
@@ -130,49 +80,7 @@
           "license_expression": "gpl-2.0 WITH mysql-linking-exception-2018",
           "rule_identifier": "gpl-2.0_with_mysql-linking-exception-2018_4.RULE",
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0_with_mysql-linking-exception-2018_4.RULE",
-          "referenced_filenames": [
-            "EXCEPTIONS-CONNECTOR-J"
-          ],
-          "is_license_text": false,
-          "is_license_notice": true,
-          "is_license_reference": false,
-          "is_license_tag": false,
-          "is_license_intro": false,
-          "rule_length": 32,
-          "rule_relevance": 100,
-          "matched_text": "MySQL Connector/J contains exceptions to GPL requirements when linking with other components\n      \t\tthat are licensed under OSI-approved open source licenses, see EXCEPTIONS-CONNECTOR-J\n      \t\tin this distribution for more details.",
-          "licenses": [
-            {
-              "key": "gpl-2.0",
-              "name": "GNU General Public License 2.0",
-              "short_name": "GPL 2.0",
-              "category": "Copyleft",
-              "is_exception": false,
-              "is_unknown": false,
-              "owner": "Free Software Foundation (FSF)",
-              "homepage_url": "http://www.gnu.org/licenses/gpl-2.0.html",
-              "text_url": "http://www.gnu.org/licenses/gpl-2.0.txt",
-              "reference_url": "https://scancode-licensedb.aboutcode.org/gpl-2.0",
-              "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-2.0.LICENSE",
-              "spdx_license_key": "GPL-2.0-only",
-              "spdx_url": "https://spdx.org/licenses/GPL-2.0-only"
-            },
-            {
-              "key": "mysql-linking-exception-2018",
-              "name": "MySQL linking exception 2018",
-              "short_name": "MySQL linking exception 2018",
-              "category": "Copyleft Limited",
-              "is_exception": true,
-              "is_unknown": false,
-              "owner": "Oracle Corporation",
-              "homepage_url": "https://raw.githubusercontent.com/mysql/mysql-server/8.0/include/mysql.h",
-              "text_url": "",
-              "reference_url": "https://scancode-licensedb.aboutcode.org/mysql-linking-exception-2018",
-              "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mysql-linking-exception-2018.LICENSE",
-              "spdx_license_key": "LicenseRef-scancode-mysql-linking-exception-2018",
-              "spdx_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mysql-linking-exception-2018.LICENSE"
-            }
-          ]
+          "matched_text": "MySQL Connector/J contains exceptions to GPL requirements when linking with other components\n      \t\tthat are licensed under OSI-approved open source licenses, see EXCEPTIONS-CONNECTOR-J\n      \t\tin this distribution for more details."
         }
       ]
     }

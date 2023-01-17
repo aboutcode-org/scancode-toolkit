@@ -40,32 +40,7 @@
           "license_expression": "unicode-dfs-2015",
           "rule_identifier": "spdx_license_id_unicode-dfs-2015_for_unicode-dfs-2015.RULE",
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/spdx_license_id_unicode-dfs-2015_for_unicode-dfs-2015.RULE",
-          "referenced_filenames": [],
-          "is_license_text": false,
-          "is_license_notice": false,
-          "is_license_reference": true,
-          "is_license_tag": false,
-          "is_license_intro": false,
-          "rule_length": 3,
-          "rule_relevance": 50,
-          "matched_text": "unicode-dfs-2015",
-          "licenses": [
-            {
-              "key": "unicode-dfs-2015",
-              "name": "Unicode License Agreement - Data Files and Software (2015)",
-              "short_name": "Unicode DFS 2015",
-              "category": "Permissive",
-              "is_exception": false,
-              "is_unknown": false,
-              "owner": "Unicode Consortium",
-              "homepage_url": "https://web.archive.org/web/20151224134844/http://unicode.org/copyright.html",
-              "text_url": "",
-              "reference_url": "https://scancode-licensedb.aboutcode.org/unicode-dfs-2015",
-              "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/unicode-dfs-2015.LICENSE",
-              "spdx_license_key": "Unicode-DFS-2015",
-              "spdx_url": "https://spdx.org/licenses/Unicode-DFS-2015"
-            }
-          ]
+          "matched_text": "unicode-dfs-2015"
         }
       ]
     }

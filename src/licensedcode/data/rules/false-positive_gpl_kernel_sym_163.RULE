@@ -3,7 +3,7 @@ is_false_positive: yes
 notes: seen in the Linux Kernel sources (kernel symbols related code or docs)
 ---
 
- *
+*
  * There are dual licensed components, but when running with Linux it is the
  * GPL that is relevant so this is a non issue. Similarly LGPL linked with GPL
  * is a GPL combined work.

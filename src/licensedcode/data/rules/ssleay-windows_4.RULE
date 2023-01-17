@@ -13,7 +13,7 @@ ignorable_emails:
     - tjh@mincom.oz.au
 ---
 
- * The implementation was written so as to conform with Netscapes SSL.
+* The implementation was written so as to conform with Netscapes SSL.
  * 
  * This library is free for commercial and non-commercial use as long as
  * the following conditions are aheared to.  The following conditions

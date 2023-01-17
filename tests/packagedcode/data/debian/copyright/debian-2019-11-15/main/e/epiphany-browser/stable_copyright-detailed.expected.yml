@@ -46,29 +46,7 @@ other_license_detections:
         license_expression: apache-2.0
         rule_identifier: apache-2.0_65.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_65.RULE
-        referenced_filenames: []
-        is_license_text: no
-        is_license_notice: no
-        is_license_reference: no
-        is_license_tag: yes
-        is_license_intro: no
-        rule_length: 4
-        rule_relevance: 100
         matched_text: 'License: apache-2.0'
-        licenses:
-          - key: apache-2.0
-            name: Apache License 2.0
-            short_name: Apache 2.0
-            category: Permissive
-            is_exception: no
-            is_unknown: no
-            owner: Apache Software Foundation
-            homepage_url: http://www.apache.org/licenses/
-            text_url: http://www.apache.org/licenses/LICENSE-2.0
-            reference_url: https://scancode-licensedb.aboutcode.org/apache-2.0
-            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.LICENSE
-            spdx_license_key: Apache-2.0
-            spdx_url: https://spdx.org/licenses/Apache-2.0
       - score: '100.0'
         start_line: 94
         end_line: 107
@@ -78,15 +56,6 @@ other_license_detections:
         license_expression: apache-2.0
         rule_identifier: apache-2.0_949.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_949.RULE
-        referenced_filenames:
-          - /usr/share/common-licenses/Apache-2.0
-        is_license_text: no
-        is_license_notice: yes
-        is_license_reference: no
-        is_license_tag: no
-        is_license_intro: no
-        rule_length: 107
-        rule_relevance: 100
         matched_text: |
           Licensed under the Apache License, Version 2.0 (the "License");
           you may not use this file except in compliance with the License.
@@ -102,20 +71,6 @@ other_license_detections:
 
           On Debian systems a copy of the Apache License, Version 2.0 can be
           found in /usr/share/common-licenses/Apache-2.0
-        licenses:
-          - key: apache-2.0
-            name: Apache License 2.0
-            short_name: Apache 2.0
-            category: Permissive
-            is_exception: no
-            is_unknown: no
-            owner: Apache Software Foundation
-            homepage_url: http://www.apache.org/licenses/
-            text_url: http://www.apache.org/licenses/LICENSE-2.0
-            reference_url: https://scancode-licensedb.aboutcode.org/apache-2.0
-            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.LICENSE
-            spdx_license_key: Apache-2.0
-            spdx_url: https://spdx.org/licenses/Apache-2.0
   - license_expression: gpl-2.0-plus
     detection_log:
       - not-combined
@@ -129,29 +84,7 @@ other_license_detections:
         license_expression: gpl-2.0-plus
         rule_identifier: gpl-2.0-plus_22.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_22.RULE
-        referenced_filenames: []
-        is_license_text: no
-        is_license_notice: no
-        is_license_reference: no
-        is_license_tag: yes
-        is_license_intro: no
-        rule_length: 3
-        rule_relevance: 100
         matched_text: 'License: gpl-2+'
-        licenses:
-          - key: gpl-2.0-plus
-            name: GNU General Public License 2.0 or later
-            short_name: GPL 2.0 or later
-            category: Copyleft
-            is_exception: no
-            is_unknown: no
-            owner: Free Software Foundation (FSF)
-            homepage_url: http://www.gnu.org/licenses/old-licenses/gpl-2.0-standalone.html
-            text_url: http://www.gnu.org/licenses/old-licenses/gpl-2.0-standalone.html
-            reference_url: https://scancode-licensedb.aboutcode.org/gpl-2.0-plus
-            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-2.0-plus.LICENSE
-            spdx_license_key: GPL-2.0-or-later
-            spdx_url: https://spdx.org/licenses/GPL-2.0-or-later
       - score: '100.0'
         start_line: 110
         end_line: 124
@@ -161,15 +94,6 @@ other_license_detections:
         license_expression: gpl-2.0-plus
         rule_identifier: gpl-2.0-plus_839.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_839.RULE
-        referenced_filenames:
-          - /usr/share/common-licenses/GPL-2
-        is_license_text: no
-        is_license_notice: yes
-        is_license_reference: no
-        is_license_tag: no
-        is_license_intro: no
-        rule_length: 126
-        rule_relevance: 100
         matched_text: |
           This package is free software; you can redistribute it and/or modify
           it under the terms of the GNU General Public License as published by
@@ -186,20 +110,6 @@ other_license_detections:
 
           On Debian systems, the complete text of the GNU General
           Public License version 2 can be found in "/usr/share/common-licenses/GPL-2".
-        licenses:
-          - key: gpl-2.0-plus
-            name: GNU General Public License 2.0 or later
-            short_name: GPL 2.0 or later
-            category: Copyleft
-            is_exception: no
-            is_unknown: no
-            owner: Free Software Foundation (FSF)
-            homepage_url: http://www.gnu.org/licenses/old-licenses/gpl-2.0-standalone.html
-            text_url: http://www.gnu.org/licenses/old-licenses/gpl-2.0-standalone.html
-            reference_url: https://scancode-licensedb.aboutcode.org/gpl-2.0-plus
-            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-2.0-plus.LICENSE
-            spdx_license_key: GPL-2.0-or-later
-            spdx_url: https://spdx.org/licenses/GPL-2.0-or-later
   - license_expression: gpl-3.0-plus
     detection_log:
       - not-combined
@@ -213,29 +123,7 @@ other_license_detections:
         license_expression: gpl-3.0-plus
         rule_identifier: gpl-3.0-plus_92.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0-plus_92.RULE
-        referenced_filenames: []
-        is_license_text: no
-        is_license_notice: no
-        is_license_reference: no
-        is_license_tag: yes
-        is_license_intro: no
-        rule_length: 3
-        rule_relevance: 100
         matched_text: 'License: gpl-3+'
-        licenses:
-          - key: gpl-3.0-plus
-            name: GNU General Public License 3.0 or later
-            short_name: GPL 3.0 or later
-            category: Copyleft
-            is_exception: no
-            is_unknown: no
-            owner: Free Software Foundation (FSF)
-            homepage_url: http://www.gnu.org/licenses/gpl-3.0-standalone.html
-            text_url: http://www.gnu.org/licenses/gpl-3.0-standalone.html
-            reference_url: https://scancode-licensedb.aboutcode.org/gpl-3.0-plus
-            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-3.0-plus.LICENSE
-            spdx_license_key: GPL-3.0-or-later
-            spdx_url: https://spdx.org/licenses/GPL-3.0-or-later
       - score: '100.0'
         start_line: 127
         end_line: 141
@@ -245,15 +133,6 @@ other_license_detections:
         license_expression: gpl-3.0-plus
         rule_identifier: gpl-3.0-plus_385.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0-plus_385.RULE
-        referenced_filenames:
-          - /usr/share/common-licenses/GPL-3
-        is_license_text: no
-        is_license_notice: yes
-        is_license_reference: no
-        is_license_tag: no
-        is_license_intro: no
-        rule_length: 126
-        rule_relevance: 100
         matched_text: |
           This program is free software: you can redistribute it and/or modify
           it under the terms of the GNU General Public License as published by
@@ -270,20 +149,6 @@ other_license_detections:
 
           On Debian systems, the complete text of the GNU General
           Public License version 3 can be found in "/usr/share/common-licenses/GPL-3".
-        licenses:
-          - key: gpl-3.0-plus
-            name: GNU General Public License 3.0 or later
-            short_name: GPL 3.0 or later
-            category: Copyleft
-            is_exception: no
-            is_unknown: no
-            owner: Free Software Foundation (FSF)
-            homepage_url: http://www.gnu.org/licenses/gpl-3.0-standalone.html
-            text_url: http://www.gnu.org/licenses/gpl-3.0-standalone.html
-            reference_url: https://scancode-licensedb.aboutcode.org/gpl-3.0-plus
-            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-3.0-plus.LICENSE
-            spdx_license_key: GPL-3.0-or-later
-            spdx_url: https://spdx.org/licenses/GPL-3.0-or-later
   - license_expression: lgpl-2.0-plus
     detection_log:
       - not-combined
@@ -297,29 +162,7 @@ other_license_detections:
         license_expression: lgpl-2.0-plus
         rule_identifier: lgpl-2.0-plus_61.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0-plus_61.RULE
-        referenced_filenames: []
-        is_license_text: no
-        is_license_notice: no
-        is_license_reference: no
-        is_license_tag: yes
-        is_license_intro: no
-        rule_length: 3
-        rule_relevance: 100
         matched_text: 'License: lgpl-2+'
-        licenses:
-          - key: lgpl-2.0-plus
-            name: GNU Library General Public License 2.0 or later
-            short_name: LGPL 2.0 or later
-            category: Copyleft Limited
-            is_exception: no
-            is_unknown: no
-            owner: Free Software Foundation (FSF)
-            homepage_url: http://www.gnu.org/licenses/old-licenses/lgpl-2.0.html
-            text_url: http://www.gnu.org/licenses/old-licenses/lgpl-2.0-standalone.html
-            reference_url: https://scancode-licensedb.aboutcode.org/lgpl-2.0-plus
-            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/lgpl-2.0-plus.LICENSE
-            spdx_license_key: LGPL-2.0-or-later
-            spdx_url: https://spdx.org/licenses/LGPL-2.0-or-later
       - score: '100.0'
         start_line: 144
         end_line: 155
@@ -329,15 +172,6 @@ other_license_detections:
         license_expression: lgpl-2.0-plus
         rule_identifier: lgpl-2.0-plus_457.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0-plus_457.RULE
-        referenced_filenames:
-          - /usr/share/common-licenses/LGPL-2
-        is_license_text: no
-        is_license_notice: yes
-        is_license_reference: no
-        is_license_tag: no
-        is_license_intro: no
-        rule_length: 106
-        rule_relevance: 100
         matched_text: |
           This library is free software; you can redistribute it and/or
           modify it under the terms of the GNU Library General Public
@@ -351,20 +185,6 @@ other_license_detections:
 
           On Debian systems, the complete text of the GNU Library General Public
           License version 2 can be found in "/usr/share/common-licenses/LGPL-2".
-        licenses:
-          - key: lgpl-2.0-plus
-            name: GNU Library General Public License 2.0 or later
-            short_name: LGPL 2.0 or later
-            category: Copyleft Limited
-            is_exception: no
-            is_unknown: no
-            owner: Free Software Foundation (FSF)
-            homepage_url: http://www.gnu.org/licenses/old-licenses/lgpl-2.0.html
-            text_url: http://www.gnu.org/licenses/old-licenses/lgpl-2.0-standalone.html
-            reference_url: https://scancode-licensedb.aboutcode.org/lgpl-2.0-plus
-            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/lgpl-2.0-plus.LICENSE
-            spdx_license_key: LGPL-2.0-or-later
-            spdx_url: https://spdx.org/licenses/LGPL-2.0-or-later
   - license_expression: cc0-1.0
     detection_log:
       - not-combined
@@ -378,29 +198,7 @@ other_license_detections:
         license_expression: cc0-1.0
         rule_identifier: cc0-1.0_12.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/cc0-1.0_12.RULE
-        referenced_filenames: []
-        is_license_text: no
-        is_license_notice: no
-        is_license_reference: no
-        is_license_tag: yes
-        is_license_intro: no
-        rule_length: 4
-        rule_relevance: 100
         matched_text: 'License: cc0-1.0'
-        licenses:
-          - key: cc0-1.0
-            name: Creative Commons CC0 1.0 Universal
-            short_name: CC0-1.0
-            category: Public Domain
-            is_exception: no
-            is_unknown: no
-            owner: Creative Commons
-            homepage_url: http://creativecommons.org/publicdomain/zero/1.0/
-            text_url: http://creativecommons.org/publicdomain/zero/1.0/legalcode
-            reference_url: https://scancode-licensedb.aboutcode.org/cc0-1.0
-            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/cc0-1.0.LICENSE
-            spdx_license_key: CC0-1.0
-            spdx_url: https://spdx.org/licenses/CC0-1.0
       - score: '100.0'
         start_line: 158
         end_line: 179
@@ -410,15 +208,6 @@ other_license_detections:
         license_expression: cc0-1.0
         rule_identifier: cc0-1.0_186.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/cc0-1.0_186.RULE
-        referenced_filenames:
-          - /usr/share/common-licenses/CC0-1.0
-        is_license_text: no
-        is_license_notice: yes
-        is_license_reference: no
-        is_license_tag: no
-        is_license_intro: no
-        rule_length: 213
-        rule_relevance: 100
         matched_text: |
           Certain owners wish to permanently relinquish those rights to a Work for
           the purpose of contributing to a commons of creative, cultural and
@@ -442,20 +231,6 @@ other_license_detections:
            .
           The complete text of the Creative Commons 0 1.0 Universal
           can be found in `/usr/share/common-licenses/CC0-1.0'.
-        licenses:
-          - key: cc0-1.0
-            name: Creative Commons CC0 1.0 Universal
-            short_name: CC0-1.0
-            category: Public Domain
-            is_exception: no
-            is_unknown: no
-            owner: Creative Commons
-            homepage_url: http://creativecommons.org/publicdomain/zero/1.0/
-            text_url: http://creativecommons.org/publicdomain/zero/1.0/legalcode
-            reference_url: https://scancode-licensedb.aboutcode.org/cc0-1.0
-            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/cc0-1.0.LICENSE
-            spdx_license_key: CC0-1.0
-            spdx_url: https://spdx.org/licenses/CC0-1.0
   - license_expression: cc-by-sa-3.0
     detection_log:
       - not-combined
@@ -469,14 +244,6 @@ other_license_detections:
         license_expression: cc-by-sa-3.0
         rule_identifier: cc-by-sa-3.0_35.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/cc-by-sa-3.0_35.RULE
-        referenced_filenames: []
-        is_license_text: yes
-        is_license_notice: no
-        is_license_reference: no
-        is_license_tag: no
-        is_license_intro: no
-        rule_length: 3143
-        rule_relevance: 100
         matched_text: |
           THE WORK (AS DEFINED BELOW) IS PROVIDED UNDER THE TERMS OF THIS
           CREATIVE COMMONS PUBLIC LICENSE ("CCPL" OR "LICENSE"). THE WORK IS
@@ -785,20 +552,6 @@ other_license_detections:
           this License, such additional rights are deemed to be included in the
           License; this License is not intended to restrict the license of any
           rights under applicable law.
-        licenses:
-          - key: cc-by-sa-3.0
-            name: Creative Commons Attribution Share Alike License 3.0
-            short_name: CC-BY-SA-3.0
-            category: Copyleft Limited
-            is_exception: no
-            is_unknown: no
-            owner: Creative Commons
-            homepage_url: http://creativecommons.org/licenses/by-sa/3.0/
-            text_url: http://creativecommons.org/licenses/by-sa/3.0/legalcode
-            reference_url: https://scancode-licensedb.aboutcode.org/cc-by-sa-3.0
-            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/cc-by-sa-3.0.LICENSE
-            spdx_license_key: CC-BY-SA-3.0
-            spdx_url: https://spdx.org/licenses/CC-BY-SA-3.0
   - license_expression: cc-by-sa-4.0
     detection_log:
       - not-combined
@@ -812,29 +565,7 @@ other_license_detections:
         license_expression: cc-by-sa-4.0
         rule_identifier: cc-by-sa-4.0_36.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/cc-by-sa-4.0_36.RULE
-        referenced_filenames: []
-        is_license_text: no
-        is_license_notice: no
-        is_license_reference: yes
-        is_license_tag: no
-        is_license_intro: no
-        rule_length: 8
-        rule_relevance: 100
         matched_text: http://creativecommons.org/licenses/by-sa/4.0/
-        licenses:
-          - key: cc-by-sa-4.0
-            name: Creative Commons Attribution-ShareAlike 4.0 International Public License
-            short_name: CC-BY-SA-4.0
-            category: Copyleft Limited
-            is_exception: no
-            is_unknown: no
-            owner: Creative Commons
-            homepage_url: http://creativecommons.org/licenses/by-sa/4.0/
-            text_url: http://creativecommons.org/licenses/by-sa/4.0/legalcode
-            reference_url: https://scancode-licensedb.aboutcode.org/cc-by-sa-4.0
-            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/cc-by-sa-4.0.LICENSE
-            spdx_license_key: CC-BY-SA-4.0
-            spdx_url: https://spdx.org/licenses/CC-BY-SA-4.0
       - score: '99.82'
         start_line: 493
         end_line: 914
@@ -844,14 +575,6 @@ other_license_detections:
         license_expression: cc-by-sa-4.0
         rule_identifier: cc-by-sa-4.0.LICENSE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/cc-by-sa-4.0.LICENSE
-        referenced_filenames: []
-        is_license_text: yes
-        is_license_notice: no
-        is_license_reference: no
-        is_license_tag: no
-        is_license_intro: no
-        rule_length: 2771
-        rule_relevance: 100
         matched_text: |
           Creative Commons Corporation ("Creative Commons") is not a law firm and
           does not provide legal services or legal advice. Distribution of
@@ -1275,20 +998,6 @@ other_license_detections:
           public licenses.
 
           Creative Commons may be contacted at creativecommons.org.
-        licenses:
-          - key: cc-by-sa-4.0
-            name: Creative Commons Attribution-ShareAlike 4.0 International Public License
-            short_name: CC-BY-SA-4.0
-            category: Copyleft Limited
-            is_exception: no
-            is_unknown: no
-            owner: Creative Commons
-            homepage_url: http://creativecommons.org/licenses/by-sa/4.0/
-            text_url: http://creativecommons.org/licenses/by-sa/4.0/legalcode
-            reference_url: https://scancode-licensedb.aboutcode.org/cc-by-sa-4.0
-            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/cc-by-sa-4.0.LICENSE
-            spdx_license_key: CC-BY-SA-4.0
-            spdx_url: https://spdx.org/licenses/CC-BY-SA-4.0
 copyright: |
   2009-2018 Igalia S.L
   2002 Jorn Baayen

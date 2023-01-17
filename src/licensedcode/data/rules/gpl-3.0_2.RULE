@@ -6,7 +6,7 @@ ignorable_urls:
     - ftp://prep.ai.mit.edu/pub/gnu/GPL
 ---
 
- * COPYRIGHT
+* COPYRIGHT
  *  This file is distributed under the terms of the GNU General Public
  *  License (GPL) v3. Copies of the GPL can be obtained from:
  *      ftp://prep.ai.mit.edu/pub/gnu/GPL

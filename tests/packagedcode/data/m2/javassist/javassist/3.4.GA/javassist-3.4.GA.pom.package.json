@@ -40,32 +40,7 @@
           "license_expression": "lgpl-2.0-plus",
           "rule_identifier": "lgpl_bare_single_word.RULE",
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl_bare_single_word.RULE",
-          "referenced_filenames": [],
-          "is_license_text": false,
-          "is_license_notice": false,
-          "is_license_reference": true,
-          "is_license_tag": false,
-          "is_license_intro": false,
-          "rule_length": 1,
-          "rule_relevance": 75,
-          "matched_text": "lgpl",
-          "licenses": [
-            {
-              "key": "lgpl-2.0-plus",
-              "name": "GNU Library General Public License 2.0 or later",
-              "short_name": "LGPL 2.0 or later",
-              "category": "Copyleft Limited",
-              "is_exception": false,
-              "is_unknown": false,
-              "owner": "Free Software Foundation (FSF)",
-              "homepage_url": "http://www.gnu.org/licenses/old-licenses/lgpl-2.0.html",
-              "text_url": "http://www.gnu.org/licenses/old-licenses/lgpl-2.0-standalone.html",
-              "reference_url": "https://scancode-licensedb.aboutcode.org/lgpl-2.0-plus",
-              "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/lgpl-2.0-plus.LICENSE",
-              "spdx_license_key": "LGPL-2.0-or-later",
-              "spdx_url": "https://spdx.org/licenses/LGPL-2.0-or-later"
-            }
-          ]
+          "matched_text": "lgpl"
         }
       ]
     },
@@ -85,32 +60,7 @@
           "license_expression": "lgpl-2.0-plus",
           "rule_identifier": "lgpl_bare_single_word.RULE",
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl_bare_single_word.RULE",
-          "referenced_filenames": [],
-          "is_license_text": false,
-          "is_license_notice": false,
-          "is_license_reference": true,
-          "is_license_tag": false,
-          "is_license_intro": false,
-          "rule_length": 1,
-          "rule_relevance": 75,
-          "matched_text": "http://repository.jboss.com/licenses/lgpl.txt",
-          "licenses": [
-            {
-              "key": "lgpl-2.0-plus",
-              "name": "GNU Library General Public License 2.0 or later",
-              "short_name": "LGPL 2.0 or later",
-              "category": "Copyleft Limited",
-              "is_exception": false,
-              "is_unknown": false,
-              "owner": "Free Software Foundation (FSF)",
-              "homepage_url": "http://www.gnu.org/licenses/old-licenses/lgpl-2.0.html",
-              "text_url": "http://www.gnu.org/licenses/old-licenses/lgpl-2.0-standalone.html",
-              "reference_url": "https://scancode-licensedb.aboutcode.org/lgpl-2.0-plus",
-              "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/lgpl-2.0-plus.LICENSE",
-              "spdx_license_key": "LGPL-2.0-or-later",
-              "spdx_url": "https://spdx.org/licenses/LGPL-2.0-or-later"
-            }
-          ]
+          "matched_text": "http://repository.jboss.com/licenses/lgpl.txt"
         }
       ]
     }

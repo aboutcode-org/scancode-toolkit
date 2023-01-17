@@ -49,32 +49,7 @@
             "license_expression": "proprietary-license",
             "rule_identifier": "proprietary-license_507.RULE",
             "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/proprietary-license_507.RULE",
-            "referenced_filenames": [],
-            "is_license_text": false,
-            "is_license_notice": false,
-            "is_license_reference": false,
-            "is_license_tag": true,
-            "is_license_intro": false,
-            "rule_length": 2,
-            "rule_relevance": 99,
-            "matched_text": "license Nonstandard",
-            "licenses": [
-              {
-                "key": "proprietary-license",
-                "name": "Proprietary License",
-                "short_name": "Proprietary License",
-                "category": "Commercial",
-                "is_exception": false,
-                "is_unknown": false,
-                "owner": "Unspecified",
-                "homepage_url": null,
-                "text_url": "",
-                "reference_url": "https://scancode-licensedb.aboutcode.org/proprietary-license",
-                "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/proprietary-license.LICENSE",
-                "spdx_license_key": "LicenseRef-scancode-proprietary-license",
-                "spdx_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/proprietary-license.LICENSE"
-              }
-            ]
+            "matched_text": "license Nonstandard"
           }
         ]
       }

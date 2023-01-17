@@ -8,8 +8,6 @@
 # See https://aboutcode.org for more information about nexB OSS projects.
 #
 
-import io
-
 import attr
 import click
 import saneyaml
@@ -79,7 +77,7 @@ def load_data(location="00-new-licenses.txt"):
     Load rules metadata  and text from file at ``location``. Return a list of
     RuleData.
     """
-    with io.open(location, encoding="utf-8") as o:
+    with open(location) as o:
         lines = o.read().splitlines(False)
 
     rules = []
@@ -156,10 +154,9 @@ def all_rule_by_tokens():
         try:
             rule_tokens[tuple(rule.tokens())] = rule.identifier
         except Exception as e:
-            df = f"  file://{rule.data_file()}"
-            tf = f"  file://{rule.text_file()}"
+            rf = f"  file://{rule.rule_file()}"
             raise Exception(
-                f"Failed to to get tokens from rule:: {rule.identifier}\n" f"{df}\n{tf}"
+                f"Failed to to get tokens from rule:: {rule.identifier}\n" f"{rf}"
             ) from e
     return rule_tokens
 
@@ -262,7 +259,7 @@ def cli(licenses_file):
             print(existing_msg.format(**locals()))
             continue
         else:
-            print(f"Adding new rule: {identifier}")
+            print(f"Adding new rule: file://{identifier}")
             rl = models.update_ignorables(rulerec, verbose=False)
             rl.dump(rules_data_dir=models.rules_data_dir)
 

@@ -170,7 +170,7 @@ def compute_path_facets(path, facet_definitions):
 def build_facets(facets, known_facet_names=FACETS):
     """
     Return:
-    - a mapping for facet patterns  to a list of unique facet names as 
+    - a mapping for facet patterns  to a list of unique facet names as
       {pattern: [facet, facet, ...]}
     - a sorted list of error messages for invalid or unknown facet definitions
       found in `facets`.

@@ -38,49 +38,9 @@
           "match_coverage": 100.0,
           "matcher": "1-spdx-id",
           "license_expression": "unknown-license-reference AND isc",
-          "rule_identifier": "spdx-license-identifier: unknown-license-reference AND isc",
+          "rule_identifier": "spdx-license-identifier-unknown-license-reference AND isc-931c1a1fdf45228cefb05b09f05449a73fc24287",
           "rule_url": null,
-          "referenced_filenames": [],
-          "is_license_text": false,
-          "is_license_notice": false,
-          "is_license_reference": false,
-          "is_license_tag": true,
-          "is_license_intro": false,
-          "rule_length": 7,
-          "rule_relevance": 100,
-          "matched_text": "licenseref-scancode-unknown-license-reference AND isc",
-          "licenses": [
-            {
-              "key": "unknown-license-reference",
-              "name": "Unknown License file reference",
-              "short_name": "Unknown License reference",
-              "category": "Unstated License",
-              "is_exception": false,
-              "is_unknown": true,
-              "owner": "Unspecified",
-              "homepage_url": null,
-              "text_url": "",
-              "reference_url": "https://scancode-licensedb.aboutcode.org/unknown-license-reference",
-              "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/unknown-license-reference.LICENSE",
-              "spdx_license_key": "LicenseRef-scancode-unknown-license-reference",
-              "spdx_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/unknown-license-reference.LICENSE"
-            },
-            {
-              "key": "isc",
-              "name": "ISC License",
-              "short_name": "ISC License",
-              "category": "Permissive",
-              "is_exception": false,
-              "is_unknown": false,
-              "owner": "ISC - Internet Systems Consortium",
-              "homepage_url": "https://www.isc.org/licenses/",
-              "text_url": "http://fedoraproject.org/wiki/Licensing:MIT#Old_Style_with_legal_disclaimer_2",
-              "reference_url": "https://scancode-licensedb.aboutcode.org/isc",
-              "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/isc.LICENSE",
-              "spdx_license_key": "ISC",
-              "spdx_url": "https://spdx.org/licenses/ISC"
-            }
-          ]
+          "matched_text": "licenseref-scancode-unknown-license-reference AND isc"
         }
       ]
     }

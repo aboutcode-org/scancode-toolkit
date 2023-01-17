@@ -10,7 +10,6 @@
 import re
 import string
 
-
 """
 Extract raw ASCII strings from (possibly) binary strings.
 Both plain ASCII and UTF-16-LE-encoded (aka. wide) strings are extracted.
@@ -32,6 +31,7 @@ https://github.com/TakahiroHaruyama/openioc_scan/blob/d7e8c5962f77f55f9a5d34dbfd
 # this is the same default as GNU strings
 MIN_LEN = 4
 MIN_LEN_STR = b'4'
+
 
 def strings_from_file(location, buff_size=1024 * 1024, clean=True, min_len=MIN_LEN):
     """
@@ -59,19 +59,18 @@ null_byte = b'\x00'
 _ascii_pattern = (
     # plain ASCII is a sequence of printable of a minimum length
       b'('
-    + b'[' + printable + b']'
-    + b'{' + MIN_LEN_STR + b',}'
-    + b')'
+    +b'[' + printable + b']'
+    +b'{' + MIN_LEN_STR + b',}'
+    +b')'
     # or utf-16-le-encoded ASCII is a sequence of ASCII+null byte
-    + b'|'
-    + b'('
-    + b'(?:' + b'[' + printable + b']' + null_byte + b')'
-    + b'{' + MIN_LEN_STR + b',}'
-    + b')'
+    +b'|'
+    +b'('
+    +b'(?:' + b'[' + printable + b']' + null_byte + b')'
+    +b'{' + MIN_LEN_STR + b',}'
+    +b')'
 )
 
 ascii_strings = re.compile(_ascii_pattern).finditer
-
 
 replace_literal_line_returns = re.compile(
     '[\\n\\r]+$'
@@ -134,6 +133,7 @@ def decode(s):
 remove_junk = re.compile('[' + punctuation.decode('utf-8') + whitespaces.decode('utf-8') + ']').sub
 
 JUNK = frozenset(string.punctuation + string.digits + string.whitespace)
+
 
 def clean_string(s, min_len=MIN_LEN, junk=JUNK):
     """

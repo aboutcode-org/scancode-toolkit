@@ -4,7 +4,7 @@ is_license_notice: yes
 minimum_coverage: 80
 ---
 
- If distributed as part of the software, this code is licensed under the
+If distributed as part of the software, this code is licensed under the
  terms of the GPL v2.
 
  Otherwise, the following license terms apply:

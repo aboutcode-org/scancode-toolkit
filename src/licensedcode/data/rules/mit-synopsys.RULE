@@ -4,7 +4,6 @@ is_license_notice: yes
 minimum_coverage: 60
 ---
 
-
 This file incorporates work covered by the following copyright and
 permission notice:
     The Synopsys DWC ETHER XGMAC Software Driver and documentation

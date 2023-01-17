@@ -283,6 +283,69 @@ the resource ``license_detections``, with additional ``declared_license_expressi
 ``other_license_expression`` with their SPDX counterparts. The ``declared_license`` field
 also has been renamed to ``extracted_license_statement``.
 
+
+
+New codebase level Unique License Detection
+-------------------------------------------
+
+
+We now have a new codebase level attribute ``license_detections`` which has Unique
+license detection across the codebase, in both packages and resources. There is also
+a new resource level attribute to reference to the codebase level unique license
+detections, which is ``for_license_detections``.
+
+New codebase level attribute::
+
+  {
+    "license_detections": [
+      {
+        "identifier": "epl_1_0-1867eafe-a258-cbb4-408f-2bd33d02ee23",
+        "license_expression": "epl-1.0",
+        "count": 2,
+        "detection_log": [
+          "not-combined"
+        ],
+        "matches": [
+          {
+            "score": 99.34,
+            "start_line": 12,
+            "end_line": 25,
+            "matched_length": 150,
+            "match_coverage": 99.34,
+            "matcher": "3-seq",
+            "license_expression": "epl-1.0",
+            "rule_identifier": "epl-1.0_3.RULE",
+            "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/epl-1.0_3.RULE"
+          },
+          {
+            "score": 100.0,
+            "start_line": 17,
+            "end_line": 17,
+            "matched_length": 8,
+            "match_coverage": 100.0,
+            "matcher": "2-aho",
+            "license_expression": "epl-1.0",
+            "rule_identifier": "epl-1.0_7.RULE",
+            "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/epl-1.0_7.RULE"
+          }
+        ]
+      }
+    ]
+  }
+
+New resource level attribute::
+
+  {
+    "files": [
+      {
+        "for_license_detections": [
+          "epl_1_0-1867eafe-a258-cbb4-408f-2bd33d02ee23"
+        ]
+      }
+    ]
+  }
+
+
 LicenseMatch Result Data
 ------------------------
 
@@ -396,7 +459,7 @@ After::
 Only reference License related Data
 -----------------------------------
 
-Currently all license related data is inlined in each match, and this repeats
+Before 32.x all license related data was inlined in each match, and this repeats
 a lot of information. This repeatation exists in three levels:
 
 - License-level Data (a license-key)
@@ -427,15 +490,16 @@ Other attributes are it's license-expression, the boolean fields, length, releva
 CLI option
 ^^^^^^^^^^
 
-We introduce a new command line option ``--licenses-reference``, which references from
+This is now default with the CLI option ``--license``, which references from
 the match License-level Data and LicenseDB-level Data, and removes the actual data from
 the matches, and adds them to two top-level lists.
 
 Comparision: Before/After license references
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-To compare how the license output data changes when we use the ``--licenses-reference``
-option, check out the before/after comparision below.
+To compare how the license output data changes between when license references are not collected
+vs when they are collected (which is default from version 32.x), check out the before/after
+comparision below.
 
 Before::
 
@@ -528,10 +592,11 @@ After::
         "text": "Apache License\nVersion 2.0, {Truncated text}"
       }
     ],
-    "rule_references": [
+    "license_rule_references": [
       {
         "license_expression": "apache-2.0",
         "rule_identifier": "apache-2.0_65.RULE",
+        "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_65.RULE",
         "referenced_filenames": [],
         "is_license_text": false,
         "is_license_notice": false,
@@ -540,7 +605,7 @@ After::
         "is_license_intro": false,
         "rule_length": 4,
         "rule_relevance": 100,
-        "matched_text": "License: Apache-2.0"
+        "rule_text": "license: Apache-2.0"
       }
     ],
     "files": [
@@ -563,6 +628,7 @@ After::
                 "matcher": "1-hash",
                 "license_expression": "apache-2.0",
                 "rule_identifier": "apache-2.0_65.RULE",
+                "matched_text": "License: Apache-2.0",
                 "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_65.RULE"
               }
             ]

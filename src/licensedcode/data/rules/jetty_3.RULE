@@ -14,7 +14,6 @@ ignorable_urls:
     - http://www.opensource.org/
 ---
 
-
 Jetty License
 $Revision: 3.7 $
 Preamble:

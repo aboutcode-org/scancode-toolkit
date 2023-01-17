@@ -20,7 +20,9 @@ from licensedcode.legalese import build_dictionary_from_iterable
 from licensedcode.query import Query
 from licensedcode.spans import Span
 from licensedcode.tracing import get_texts
-from licensedcode_test_utils import mini_legalese  # NOQA
+from licensedcode_test_utils import mini_legalese
+from licensedcode_test_utils import create_rule_from_text_file_and_expression
+from licensedcode_test_utils import create_rule_from_text_and_expression
 
 
 def MiniLicenseIndex(*args, **kwargs):
@@ -42,7 +44,7 @@ class IndexTesting(FileBasedTesting):
         rules = []
         for text_file in text_files:
             expr = fileutils.file_base_name(text_file)
-            rule = models.Rule._from_text_file_and_expression(
+            rule = create_rule_from_text_file_and_expression(
                 text_file=os.path.join(rule_data_dir, text_file),
                 license_expression=expr,
             )
@@ -68,7 +70,7 @@ class TestIndexing(IndexTesting):
             (u'the lgpl', (2, 0, 2, 0)),
         ]
         idx = MiniLicenseIndex()
-        rules = [models.Rule._from_text_and_expression(text=t[0]) for t in test_rules]
+        rules = [create_rule_from_text_and_expression(text=t[0]) for t in test_rules]
         idx._add_rules(rules, _legalese=mini_legalese,)
 
         assert idx.len_legalese == 40
@@ -122,7 +124,7 @@ class TestIndexing(IndexTesting):
         idx = MiniLicenseIndex()
         rules = []
         for key in keys:
-            rules.append(models.Rule._from_text_file_and_expression(
+            rules.append(create_rule_from_text_file_and_expression(
                 text_file=os.path.join(base, key),
                 license_expression='gpl-2.0',
             ))
@@ -223,7 +225,7 @@ class TestMatchNoTemplates(IndexTesting):
 
     def test_match_exact_from_string_once(self):
         rule_text = 'Redistribution and use in source and binary forms, with or without modification, are permitted'
-        idx = MiniLicenseIndex([models.Rule._from_text_and_expression(text=rule_text, license_expression='bsd')])
+        idx = MiniLicenseIndex([create_rule_from_text_and_expression(text=rule_text, license_expression='bsd')])
         querys = '''
             The
             Redistribution and use in source and binary forms, with or without modification, are permitted.
@@ -448,7 +450,7 @@ No part of match        '''
         # a rule tokens seq. We may still skip that, but we capture a large
         # match anyway.
 
-        rule = models.Rule._from_text_file_and_expression(text_file=self.get_test_loc('index/templates/idx.txt'),
+        rule = create_rule_from_text_file_and_expression(text_file=self.get_test_loc('index/templates/idx.txt'),
                            license_expression='test')
         legalese = build_dictionary_from_iterable(
             set(mini_legalese) |

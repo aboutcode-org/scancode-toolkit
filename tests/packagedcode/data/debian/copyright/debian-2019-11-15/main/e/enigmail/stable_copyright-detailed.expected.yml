@@ -30,29 +30,7 @@ other_license_detections:
         license_expression: mpl-2.0
         rule_identifier: mpl-2.0_75.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mpl-2.0_75.RULE
-        referenced_filenames: []
-        is_license_text: no
-        is_license_notice: no
-        is_license_reference: no
-        is_license_tag: yes
-        is_license_intro: no
-        rule_length: 4
-        rule_relevance: 100
         matched_text: 'License: mpl-2.0'
-        licenses:
-          - key: mpl-2.0
-            name: Mozilla Public License 2.0
-            short_name: MPL 2.0
-            category: Copyleft Limited
-            is_exception: no
-            is_unknown: no
-            owner: Mozilla
-            homepage_url: http://mpl.mozilla.org/2012/01/03/announcing-mpl-2-0/
-            text_url: http://www.mozilla.com/MPL/2.0/
-            reference_url: https://scancode-licensedb.aboutcode.org/mpl-2.0
-            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mpl-2.0.LICENSE
-            spdx_license_key: MPL-2.0
-            spdx_url: https://spdx.org/licenses/MPL-2.0
       - score: '100.0'
         start_line: 39
         end_line: 411
@@ -62,14 +40,6 @@ other_license_detections:
         license_expression: mpl-2.0
         rule_identifier: mpl-2.0.LICENSE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mpl-2.0.LICENSE
-        referenced_filenames: []
-        is_license_text: yes
-        is_license_notice: no
-        is_license_reference: no
-        is_license_tag: no
-        is_license_intro: no
-        rule_length: 2371
-        rule_relevance: 100
         matched_text: |
           Mozilla Public License Version 2.0
           ==================================
@@ -444,20 +414,6 @@ other_license_detections:
 
            This Source Code Form is "Incompatible With Secondary Licenses", as
            defined by the Mozilla Public License, v. 2.0.
-        licenses:
-          - key: mpl-2.0
-            name: Mozilla Public License 2.0
-            short_name: MPL 2.0
-            category: Copyleft Limited
-            is_exception: no
-            is_unknown: no
-            owner: Mozilla
-            homepage_url: http://mpl.mozilla.org/2012/01/03/announcing-mpl-2-0/
-            text_url: http://www.mozilla.com/MPL/2.0/
-            reference_url: https://scancode-licensedb.aboutcode.org/mpl-2.0
-            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mpl-2.0.LICENSE
-            spdx_license_key: MPL-2.0
-            spdx_url: https://spdx.org/licenses/MPL-2.0
   - license_expression: bsd-2-clause-views
     detection_log:
       - not-combined
@@ -471,14 +427,6 @@ other_license_detections:
         license_expression: bsd-2-clause-views
         rule_identifier: bsd-2-clause-views_1.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-2-clause-views_1.RULE
-        referenced_filenames: []
-        is_license_text: yes
-        is_license_notice: no
-        is_license_reference: no
-        is_license_tag: no
-        is_license_intro: no
-        rule_length: 215
-        rule_relevance: 100
         matched_text: |
           Redistribution and use in source and binary forms, with or without
           modification, are permitted provided that the following conditions are
@@ -508,20 +456,6 @@ other_license_detections:
           are those of the authors and should not be interpreted as representing
           official policies, either expressed or implied, of the Mozilla
           Foundation.
-        licenses:
-          - key: bsd-2-clause-views
-            name: BSD 2-Clause with views sentence
-            short_name: BSD-2-Clause-Views
-            category: Permissive
-            is_exception: no
-            is_unknown: no
-            owner: FreeBSD
-            homepage_url: https://www.freebsd.org/copyright/freebsd-license.html
-            text_url: https://github.com/protegeproject/protege/blob/master/license.txt
-            reference_url: https://scancode-licensedb.aboutcode.org/bsd-2-clause-views
-            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-2-clause-views.LICENSE
-            spdx_license_key: BSD-2-Clause-Views
-            spdx_url: https://spdx.org/licenses/BSD-2-Clause-Views
   - license_expression: bsd-new
     detection_log:
       - not-combined
@@ -535,14 +469,6 @@ other_license_detections:
         license_expression: bsd-new
         rule_identifier: bsd-new_784.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_784.RULE
-        referenced_filenames: []
-        is_license_text: yes
-        is_license_notice: no
-        is_license_reference: no
-        is_license_tag: no
-        is_license_intro: no
-        rule_length: 207
-        rule_relevance: 100
         matched_text: |
           Redistribution  and  use  in  source   and  binary  forms,  with  or  without
           modification, are permitted provided that the following conditions are met:
@@ -569,20 +495,6 @@ other_license_detections:
           CONTRACT,  STRICT  LIABILITY, OR  TORT  (INCLUDING  NEGLIGENCE OR  OTHERWISE)
           ARISING IN ANY  WAY OUT OF THE USE  OF THIS SOFTWARE, EVEN IF  ADVISED OF THE
           POSSIBILITY OF SUCH DAMAGE.
-        licenses:
-          - key: bsd-new
-            name: BSD-3-Clause
-            short_name: BSD-3-Clause
-            category: Permissive
-            is_exception: no
-            is_unknown: no
-            owner: Regents of the University of California
-            homepage_url: http://www.opensource.org/licenses/BSD-3-Clause
-            text_url: http://www.opensource.org/licenses/BSD-3-Clause
-            reference_url: https://scancode-licensedb.aboutcode.org/bsd-new
-            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-new.LICENSE
-            spdx_license_key: BSD-3-Clause
-            spdx_url: https://spdx.org/licenses/BSD-3-Clause
   - license_expression: cc0-1.0
     detection_log:
       - not-combined
@@ -596,29 +508,7 @@ other_license_detections:
         license_expression: cc0-1.0
         rule_identifier: cc0-1.0_12.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/cc0-1.0_12.RULE
-        referenced_filenames: []
-        is_license_text: no
-        is_license_notice: no
-        is_license_reference: no
-        is_license_tag: yes
-        is_license_intro: no
-        rule_length: 4
-        rule_relevance: 100
         matched_text: 'License: cc0-1.0'
-        licenses:
-          - key: cc0-1.0
-            name: Creative Commons CC0 1.0 Universal
-            short_name: CC0-1.0
-            category: Public Domain
-            is_exception: no
-            is_unknown: no
-            owner: Creative Commons
-            homepage_url: http://creativecommons.org/publicdomain/zero/1.0/
-            text_url: http://creativecommons.org/publicdomain/zero/1.0/legalcode
-            reference_url: https://scancode-licensedb.aboutcode.org/cc0-1.0
-            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/cc0-1.0.LICENSE
-            spdx_license_key: CC0-1.0
-            spdx_url: https://spdx.org/licenses/CC0-1.0
       - score: '100.0'
         start_line: 473
         end_line: 481
@@ -628,15 +518,6 @@ other_license_detections:
         license_expression: cc0-1.0
         rule_identifier: cc0-1.0_99.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/cc0-1.0_99.RULE
-        referenced_filenames:
-          - /usr/share/common-licenses/CC0-1.0
-        is_license_text: no
-        is_license_notice: yes
-        is_license_reference: no
-        is_license_tag: no
-        is_license_intro: no
-        rule_length: 82
-        rule_relevance: 100
         matched_text: |
           To the extent possible under law, the author(s) have dedicated all copyright
           and related and neighboring rights to this software to the public domain
@@ -647,20 +528,6 @@ other_license_detections:
 
           On Debian systems, the complete text of the CC0 1.0 Universal license can be
           found in ‘/usr/share/common-licenses/CC0-1.0’.
-        licenses:
-          - key: cc0-1.0
-            name: Creative Commons CC0 1.0 Universal
-            short_name: CC0-1.0
-            category: Public Domain
-            is_exception: no
-            is_unknown: no
-            owner: Creative Commons
-            homepage_url: http://creativecommons.org/publicdomain/zero/1.0/
-            text_url: http://creativecommons.org/publicdomain/zero/1.0/legalcode
-            reference_url: https://scancode-licensedb.aboutcode.org/cc0-1.0
-            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/cc0-1.0.LICENSE
-            spdx_license_key: CC0-1.0
-            spdx_url: https://spdx.org/licenses/CC0-1.0
 copyright: |
   2003-2017 Patrick Brunschwig <patrick@enigmail.net>,
   2001-2002 Ramalingam Saravanan <svn@xmlterm.org>

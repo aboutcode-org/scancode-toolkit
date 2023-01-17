@@ -1,0 +1,16 @@
+---
+license_expression: uoi-ncsa
+is_license_notice: yes
+relevance: 100
+ignorable_copyrights:
+    - Copyright (c) 2004 eXtensible Systems, Inc.
+ignorable_holders:
+    - eXtensible Systems, Inc.
+---
+
+LLVM System Interface Library
+-------------------------------------------------------------------------------
+The LLVM System Interface Library is licensed under the {{Illinois Open Source
+License}} and has the following additional copyright:
+
+Copyright (C) 2004 eXtensible Systems, Inc.

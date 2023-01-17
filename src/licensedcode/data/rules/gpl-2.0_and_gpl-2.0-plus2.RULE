@@ -8,7 +8,7 @@ ignorable_holders:
     - Wolfgang Denk
 ---
 
-  U-Boot is Free Software.  It is copyrighted by Wolfgang Denk and
+U-Boot is Free Software.  It is copyrighted by Wolfgang Denk and
 many others who contributed code (see the actual source code and the
 git commit messages for details).  You can redistribute U-Boot and/or
 modify it under the terms of version 2 of the GNU General Public

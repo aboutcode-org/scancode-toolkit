@@ -70,32 +70,7 @@
             "license_expression": "python",
             "rule_identifier": "python_26.RULE",
             "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/python_26.RULE",
-            "referenced_filenames": [],
-            "is_license_text": false,
-            "is_license_notice": false,
-            "is_license_reference": true,
-            "is_license_tag": false,
-            "is_license_intro": false,
-            "rule_length": 3,
-            "rule_relevance": 90,
-            "matched_text": "license Python style",
-            "licenses": [
-              {
-                "key": "python",
-                "name": "Python Software Foundation License v2",
-                "short_name": "Python License 2.0",
-                "category": "Permissive",
-                "is_exception": false,
-                "is_unknown": false,
-                "owner": "Python Software Foundation (PSF)",
-                "homepage_url": "http://docs.python.org/license.html",
-                "text_url": "http://spdx.org/licenses/Python-2.0",
-                "reference_url": "https://scancode-licensedb.aboutcode.org/python",
-                "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/python.LICENSE",
-                "spdx_license_key": "Python-2.0",
-                "spdx_url": "https://spdx.org/licenses/Python-2.0"
-              }
-            ]
+            "matched_text": "license Python style"
           }
         ]
       },
@@ -115,32 +90,7 @@
             "license_expression": "python",
             "rule_identifier": "pypi_python_software_foundation_license.RULE",
             "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/pypi_python_software_foundation_license.RULE",
-            "referenced_filenames": [],
-            "is_license_text": false,
-            "is_license_notice": false,
-            "is_license_reference": false,
-            "is_license_tag": true,
-            "is_license_intro": false,
-            "rule_length": 7,
-            "rule_relevance": 99,
-            "matched_text": "['License :: OSI Approved :: Python Software Foundation License']",
-            "licenses": [
-              {
-                "key": "python",
-                "name": "Python Software Foundation License v2",
-                "short_name": "Python License 2.0",
-                "category": "Permissive",
-                "is_exception": false,
-                "is_unknown": false,
-                "owner": "Python Software Foundation (PSF)",
-                "homepage_url": "http://docs.python.org/license.html",
-                "text_url": "http://spdx.org/licenses/Python-2.0",
-                "reference_url": "https://scancode-licensedb.aboutcode.org/python",
-                "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/python.LICENSE",
-                "spdx_license_key": "Python-2.0",
-                "spdx_url": "https://spdx.org/licenses/Python-2.0"
-              }
-            ]
+            "matched_text": "['License :: OSI Approved :: Python Software Foundation License']"
           }
         ]
       }

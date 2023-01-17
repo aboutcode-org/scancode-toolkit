@@ -7,7 +7,6 @@
 # See https://aboutcode.org for more information about nexB OSS projects.
 #
 
-from inspect import trace
 from os.path import exists
 from os.path import isdir
 
@@ -30,16 +29,17 @@ def logger_debug(*args):
     pass
 
 
-logger = logging.getLogger(__name__)
+if TRACE:
 
+    logger = logging.getLogger(__name__)
 
-import sys
+    import sys
 
-logging.basicConfig(stream=sys.stdout)
-logger.setLevel(logging.DEBUG)
+    logging.basicConfig(stream=sys.stdout)
+    logger.setLevel(logging.DEBUG)
 
-def logger_debug(*args):
-    return logger.debug(' '.join(isinstance(a, str) and a or repr(a) for a in args))
+    def logger_debug(*args):
+        return logger.debug(' '.join(isinstance(a, str) and a or repr(a) for a in args))
 
 
 @post_scan_impl

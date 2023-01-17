@@ -3,7 +3,7 @@ is_false_positive: yes
 notes: seen in the Linux Kernel sources (kernel symbols related code or docs)
 ---
 
- * The following license idents are currently accepted as indicating free
+* The following license idents are currently accepted as indicating free
  * software modules
  *
  *      "GPL"                           [GNU Public License v2 or later]

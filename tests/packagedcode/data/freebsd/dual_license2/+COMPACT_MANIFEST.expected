@@ -55,32 +55,7 @@
             "license_expression": "gpl-3.0",
             "rule_identifier": "gpl-3.0_32.RULE",
             "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0_32.RULE",
-            "referenced_filenames": [],
-            "is_license_text": false,
-            "is_license_notice": false,
-            "is_license_reference": true,
-            "is_license_tag": false,
-            "is_license_intro": false,
-            "rule_length": 1,
-            "rule_relevance": 100,
-            "matched_text": "GPLv3",
-            "licenses": [
-              {
-                "key": "gpl-3.0",
-                "name": "GNU General Public License 3.0",
-                "short_name": "GPL 3.0",
-                "category": "Copyleft",
-                "is_exception": false,
-                "is_unknown": false,
-                "owner": "Free Software Foundation (FSF)",
-                "homepage_url": "http://www.gnu.org/licenses/gpl-3.0.html",
-                "text_url": "http://www.gnu.org/licenses/gpl-3.0-standalone.html",
-                "reference_url": "https://scancode-licensedb.aboutcode.org/gpl-3.0",
-                "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-3.0.LICENSE",
-                "spdx_license_key": "GPL-3.0-only",
-                "spdx_url": "https://spdx.org/licenses/GPL-3.0-only"
-              }
-            ]
+            "matched_text": "GPLv3"
           }
         ]
       },
@@ -98,34 +73,9 @@
             "match_coverage": 100.0,
             "matcher": "1-spdx-id",
             "license_expression": "ruby",
-            "rule_identifier": "spdx-license-identifier: ruby",
+            "rule_identifier": "spdx-license-identifier-ruby-549f9d48faec54b20eadf7c9097124f88f2cdd2b",
             "rule_url": null,
-            "referenced_filenames": [],
-            "is_license_text": false,
-            "is_license_notice": false,
-            "is_license_reference": false,
-            "is_license_tag": true,
-            "is_license_intro": false,
-            "rule_length": 1,
-            "rule_relevance": 100,
-            "matched_text": "RUBY",
-            "licenses": [
-              {
-                "key": "ruby",
-                "name": "Ruby License",
-                "short_name": "Ruby License",
-                "category": "Copyleft Limited",
-                "is_exception": false,
-                "is_unknown": false,
-                "owner": "Ruby",
-                "homepage_url": "http://www.ruby-lang.org/en/LICENSE.txt",
-                "text_url": "http://www.ruby-lang.org/en/LICENSE.txt",
-                "reference_url": "https://scancode-licensedb.aboutcode.org/ruby",
-                "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/ruby.LICENSE",
-                "spdx_license_key": "Ruby",
-                "spdx_url": "https://spdx.org/licenses/Ruby"
-              }
-            ]
+            "matched_text": "RUBY"
           }
         ]
       },
@@ -145,32 +95,7 @@
             "license_expression": "gpl-2.0",
             "rule_identifier": "gpl-2.0_bare_single_word.RULE",
             "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0_bare_single_word.RULE",
-            "referenced_filenames": [],
-            "is_license_text": false,
-            "is_license_notice": false,
-            "is_license_reference": true,
-            "is_license_tag": false,
-            "is_license_intro": false,
-            "rule_length": 1,
-            "rule_relevance": 100,
-            "matched_text": "GPLv2",
-            "licenses": [
-              {
-                "key": "gpl-2.0",
-                "name": "GNU General Public License 2.0",
-                "short_name": "GPL 2.0",
-                "category": "Copyleft",
-                "is_exception": false,
-                "is_unknown": false,
-                "owner": "Free Software Foundation (FSF)",
-                "homepage_url": "http://www.gnu.org/licenses/gpl-2.0.html",
-                "text_url": "http://www.gnu.org/licenses/gpl-2.0.txt",
-                "reference_url": "https://scancode-licensedb.aboutcode.org/gpl-2.0",
-                "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-2.0.LICENSE",
-                "spdx_license_key": "GPL-2.0-only",
-                "spdx_url": "https://spdx.org/licenses/GPL-2.0-only"
-              }
-            ]
+            "matched_text": "GPLv2"
           }
         ]
       }

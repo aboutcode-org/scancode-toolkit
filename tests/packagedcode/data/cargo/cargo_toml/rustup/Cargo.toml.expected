@@ -49,47 +49,7 @@
             "license_expression": "mit OR apache-2.0",
             "rule_identifier": "mit_or_apache-2.0_15.RULE",
             "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_or_apache-2.0_15.RULE",
-            "referenced_filenames": [],
-            "is_license_text": false,
-            "is_license_notice": false,
-            "is_license_reference": false,
-            "is_license_tag": true,
-            "is_license_intro": false,
-            "rule_length": 5,
-            "rule_relevance": 100,
-            "matched_text": "MIT OR Apache-2.0",
-            "licenses": [
-              {
-                "key": "mit",
-                "name": "MIT License",
-                "short_name": "MIT License",
-                "category": "Permissive",
-                "is_exception": false,
-                "is_unknown": false,
-                "owner": "MIT",
-                "homepage_url": "http://opensource.org/licenses/mit-license.php",
-                "text_url": "http://opensource.org/licenses/mit-license.php",
-                "reference_url": "https://scancode-licensedb.aboutcode.org/mit",
-                "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE",
-                "spdx_license_key": "MIT",
-                "spdx_url": "https://spdx.org/licenses/MIT"
-              },
-              {
-                "key": "apache-2.0",
-                "name": "Apache License 2.0",
-                "short_name": "Apache 2.0",
-                "category": "Permissive",
-                "is_exception": false,
-                "is_unknown": false,
-                "owner": "Apache Software Foundation",
-                "homepage_url": "http://www.apache.org/licenses/",
-                "text_url": "http://www.apache.org/licenses/LICENSE-2.0",
-                "reference_url": "https://scancode-licensedb.aboutcode.org/apache-2.0",
-                "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.LICENSE",
-                "spdx_license_key": "Apache-2.0",
-                "spdx_url": "https://spdx.org/licenses/Apache-2.0"
-              }
-            ]
+            "matched_text": "MIT OR Apache-2.0"
           }
         ]
       }

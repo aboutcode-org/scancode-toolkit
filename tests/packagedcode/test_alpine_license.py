@@ -117,12 +117,7 @@ def make_test(license_test, regen=REGEN_TEST_FIXTURES):
             license_test.dump()
             return
 
-        if detected != license_test.license_expression:
-            # On failure, we compare against more result data to get additional
-            # failure details, including the test_file
-            expected = [license_test.to_dict(), f'file://{license_test.data_file}']
-
-            assert detected == expected
+        assert detected  == license_test.license_expression
 
     return closure_test_function
 

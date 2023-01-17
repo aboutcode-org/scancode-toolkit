@@ -17,14 +17,6 @@ license_detections:
         license_expression: mit-old-style-no-advert
         rule_identifier: mit-old-style-no-advert_5.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit-old-style-no-advert_5.RULE
-        referenced_filenames: []
-        is_license_text: yes
-        is_license_notice: no
-        is_license_reference: no
-        is_license_tag: no
-        is_license_intro: no
-        rule_length: 112
-        rule_relevance: 100
         matched_text: |
           Permission to use, copy, modify, and distribute this software
           and its documentation for any purpose and without fee is
@@ -37,20 +29,6 @@ license_detections:
           M.I.T. and the M.I.T. S.I.P.B. make no representations about
           the suitability of this software for any purpose.  It is
           provided "as is" without express or implied warranty.
-        licenses:
-          - key: mit-old-style-no-advert
-            name: MIT Old Style no advertising
-            short_name: MIT Old Style no advertising
-            category: Permissive
-            is_exception: no
-            is_unknown: no
-            owner: MIT
-            homepage_url: http://fedoraproject.org/wiki/Licensing:MIT#Old_Style_.28no_advertising_without_permission.29
-            text_url:
-            reference_url: https://scancode-licensedb.aboutcode.org/mit-old-style-no-advert
-            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit-old-style-no-advert.LICENSE
-            spdx_license_key: NTP
-            spdx_url: https://spdx.org/licenses/NTP
 other_license_detections: []
 copyright: Copyright 1987, 1988 by the Student Information Processing Board of the Massachusetts
   Institute of Technology

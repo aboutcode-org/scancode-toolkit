@@ -6,7 +6,7 @@ ignorable_urls:
     - https://www.gnu.org/licenses/
 ---
 
-    ("LGPL3"
+("LGPL3"
      t
 
      "This library is free software; you can redistribute it and/or"

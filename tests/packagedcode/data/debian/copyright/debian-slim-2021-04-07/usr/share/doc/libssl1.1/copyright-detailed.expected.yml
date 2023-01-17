@@ -17,14 +17,6 @@ license_detections:
         license_expression: openssl-ssleay
         rule_identifier: openssl-ssleay_37.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/openssl-ssleay_37.RULE
-        referenced_filenames: []
-        is_license_text: yes
-        is_license_notice: no
-        is_license_reference: no
-        is_license_tag: no
-        is_license_intro: no
-        rule_length: 870
-        rule_relevance: 100
         matched_text: "LICENSE ISSUES\n  ==============\n\n  The OpenSSL toolkit stays under\
           \ a dual license, i.e. both the conditions of\n  the OpenSSL License and the original\
           \ SSLeay license apply to the toolkit.\n  See below for the actual license texts.\
@@ -101,20 +93,6 @@ license_detections:
           \ version or\n * derivative of this code cannot be changed.  i.e. this code cannot\
           \ simply be\n * copied and put under another distribution licence\n * [including the\
           \ GNU Public Licence.]"
-        licenses:
-          - key: openssl-ssleay
-            name: OpenSSL/SSLeay License
-            short_name: OpenSSL/SSLeay License
-            category: Permissive
-            is_exception: no
-            is_unknown: no
-            owner: OpenSSL
-            homepage_url: http://www.openssl.org/source/license.html
-            text_url: http://www.openssl.org/source/license.html
-            reference_url: https://scancode-licensedb.aboutcode.org/openssl-ssleay
-            scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/openssl-ssleay.LICENSE
-            spdx_license_key: OpenSSL
-            spdx_url: https://spdx.org/licenses/OpenSSL
 other_license_detections: []
 copyright: |
   Copyright (c) 1998-2004 The OpenSSL Project

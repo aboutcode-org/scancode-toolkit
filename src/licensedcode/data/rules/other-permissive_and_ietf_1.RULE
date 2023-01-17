@@ -3,8 +3,7 @@ license_expression: other-permissive AND ietf
 is_license_text: yes
 ---
 
-
-    Disclaimer and license: Regarding this entire document or any
+Disclaimer and license: Regarding this entire document or any
     portion of it (including the pseudocode and C code), the author
     makes no guarantees and is not responsible for any damage resulting
     from its use.  The author grants irrevocable permission to anyone

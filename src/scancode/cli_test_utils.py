@@ -106,7 +106,7 @@ def run_scan_click(
 
     if monkeypatch:
         monkeypatch.setattr(click._termui_impl, 'isatty', lambda _: True)
-        monkeypatch.setattr(shutil , 'get_terminal_size', lambda : (80, 43,))
+        monkeypatch.setattr(shutil , 'get_terminal_size', lambda: (80, 43,))
 
     if not env:
         env = dict(os.environ)
@@ -137,13 +137,8 @@ output:
 
 
 def get_opts(options):
-    try:
-        return ' '.join(options)
-    except:
-        try:
-            return b' '.join(options)
-        except:
-            return b' '.join(map(repr, options))
+    opts = [o if isinstance(o, str) else repr(o) for o in options]
+    return ' '.join(opts)
 
 
 WINDOWS_CI_TIMEOUT = '222.2'
@@ -207,23 +202,8 @@ def check_json_scan(
         if not check_headers:
             expected.pop('headers', None)
 
-
     # NOTE we redump the JSON as a YAML string for easier display of
     # the failures comparison/diff
-    if results != expected:
-        expected = saneyaml.dump(expected)
-        results = saneyaml.dump(results)
-        assert results == expected
-
-
-def check_json(expected, results, regen):
-    if regen:
-        mode = 'w'
-        with open(expected, mode) as ex:
-            json.dump(results, ex, indent=2, separators=(',', ': '))
-    with open(expected) as ex:
-        expected = json.load(ex)
-
     if results != expected:
         expected = saneyaml.dump(expected)
         results = saneyaml.dump(results)
@@ -413,12 +393,15 @@ def check_json(expected, results, regen=REGEN_TEST_FIXTURES):
     Assert if the results JSON file is the same as the expected JSON file.
     """
     if regen:
-        mode = 'w'
-        with open(expected, mode) as ex:
+        with open(expected, 'w') as ex:
             json.dump(results, ex, indent=2, separators=(',', ': '))
     with open(expected) as ex:
         expected = json.load(ex)
-    assert results == expected
+
+    if results != expected:
+        expected = saneyaml.dump(expected)
+        results = saneyaml.dump(results)
+        assert results == expected
 
 
 def load_both_and_check_json(expected, results, regen=REGEN_TEST_FIXTURES):

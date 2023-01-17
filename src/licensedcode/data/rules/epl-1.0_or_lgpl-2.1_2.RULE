@@ -8,7 +8,7 @@ ignorable_urls:
     - https://www.gnu.org/licenses/old-licenses/lgpl-2.1.html
 ---
 
-  <licenses>
+<licenses>
     <license>
       <name>Eclipse Public License - v 1.0</name>
       <url>http://www.eclipse.org/legal/epl-v10.html</url>

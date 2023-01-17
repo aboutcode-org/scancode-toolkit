@@ -15,7 +15,7 @@ headers:
       for any legal advice.
       ScanCode is a free software code scanning tool from nexB Inc. and others.
       Visit https://github.com/nexB/scancode-toolkit/ for support and download.
-    output_format_version: 2.0.0
+    output_format_version: 3.0.0
     message:
     errors: []
     warnings: []
@@ -23,13 +23,16 @@ headers:
       system_environment:
         operating_system: linux
         cpu_architecture: 64
-        platform: Linux-5.14.0-1045-oem-x86_64-with-glibc2.29
-        platform_version: '#51-Ubuntu SMP Mon Jul 4 06:41:22 UTC 2022'
-        python_version: "3.8.10 (default, Jun 22 2022, 20:18:18) \n[GCC 9.4.0]"
-      spdx_license_list_version: '3.17'
+        platform: Linux-4.15.0-200-generic-x86_64-with-glibc2.23
+        platform_version: '#211~16.04.2-Ubuntu SMP Fri Nov 25 09:18:48 UTC 2022'
+        python_version: "3.9.10 (main, Jan 29 2022, 10:01:49) \n[GCC 5.4.0 20160609]"
+      spdx_license_list_version: '3.19'
       files_count: 7
-dependencies: []
 packages: []
+dependencies: []
+license_detections: []
+license_references: []
+license_rule_references: []
 files:
   - path: copy1.c
     type: file
@@ -49,11 +52,14 @@ files:
     is_media: no
     is_source: yes
     is_script: no
+    package_data: []
+    for_packages: []
     detected_license_expression:
     detected_license_expression_spdx:
     license_detections: []
     license_clues: []
     percentage_of_license_text: '0'
+    for_license_detections: []
     copyrights:
       - copyright: Copyright (c) 2000 ACME, Inc.
         start_line: 1
@@ -63,8 +69,6 @@ files:
         start_line: 1
         end_line: 1
     authors: []
-    package_data: []
-    for_packages: []
     files_count: '0'
     dirs_count: '0'
     size_count: '0'
@@ -87,11 +91,14 @@ files:
     is_media: no
     is_source: yes
     is_script: no
+    package_data: []
+    for_packages: []
     detected_license_expression:
     detected_license_expression_spdx:
     license_detections: []
     license_clues: []
     percentage_of_license_text: '0'
+    for_license_detections: []
     copyrights:
       - copyright: Copyright (c) 2000 ACME, Inc.
         start_line: 1
@@ -101,8 +108,6 @@ files:
         start_line: 1
         end_line: 1
     authors: []
-    package_data: []
-    for_packages: []
     files_count: '0'
     dirs_count: '0'
     size_count: '0'
@@ -125,11 +130,14 @@ files:
     is_media: no
     is_source: yes
     is_script: no
+    package_data: []
+    for_packages: []
     detected_license_expression:
     detected_license_expression_spdx:
     license_detections: []
     license_clues: []
     percentage_of_license_text: '0'
+    for_license_detections: []
     copyrights:
       - copyright: Copyright (c) 2000 ACME, Inc.
         start_line: 1
@@ -139,8 +147,6 @@ files:
         start_line: 1
         end_line: 1
     authors: []
-    package_data: []
-    for_packages: []
     files_count: '0'
     dirs_count: '0'
     size_count: '0'
@@ -163,16 +169,17 @@ files:
     is_media: no
     is_source: no
     is_script: no
+    package_data: []
+    for_packages: []
     detected_license_expression:
     detected_license_expression_spdx:
     license_detections: []
     license_clues: []
     percentage_of_license_text: '0'
+    for_license_detections: []
     copyrights: []
     holders: []
     authors: []
-    package_data: []
-    for_packages: []
     files_count: 4
     dirs_count: '0'
     size_count: 361
@@ -195,11 +202,14 @@ files:
     is_media: no
     is_source: yes
     is_script: no
+    package_data: []
+    for_packages: []
     detected_license_expression:
     detected_license_expression_spdx:
     license_detections: []
     license_clues: []
     percentage_of_license_text: '0'
+    for_license_detections: []
     copyrights:
       - copyright: Copyright (c) 2000 ACME, Inc.
         start_line: 1
@@ -209,8 +219,6 @@ files:
         start_line: 1
         end_line: 1
     authors: []
-    package_data: []
-    for_packages: []
     files_count: '0'
     dirs_count: '0'
     size_count: '0'
@@ -233,11 +241,14 @@ files:
     is_media: no
     is_source: yes
     is_script: no
+    package_data: []
+    for_packages: []
     detected_license_expression:
     detected_license_expression_spdx:
     license_detections: []
     license_clues: []
     percentage_of_license_text: '0'
+    for_license_detections: []
     copyrights:
       - copyright: Copyright (c) 2000 ACME, Inc.
         start_line: 1
@@ -247,8 +258,6 @@ files:
         start_line: 1
         end_line: 1
     authors: []
-    package_data: []
-    for_packages: []
     files_count: '0'
     dirs_count: '0'
     size_count: '0'
@@ -271,11 +280,14 @@ files:
     is_media: no
     is_source: yes
     is_script: no
+    package_data: []
+    for_packages: []
     detected_license_expression:
     detected_license_expression_spdx:
     license_detections: []
     license_clues: []
     percentage_of_license_text: '0'
+    for_license_detections: []
     copyrights:
       - copyright: Copyright (c) 2000 ACME, Inc.
         start_line: 1
@@ -285,8 +297,6 @@ files:
         start_line: 1
         end_line: 1
     authors: []
-    package_data: []
-    for_packages: []
     files_count: '0'
     dirs_count: '0'
     size_count: '0'
@@ -309,11 +319,14 @@ files:
     is_media: no
     is_source: yes
     is_script: no
+    package_data: []
+    for_packages: []
     detected_license_expression:
     detected_license_expression_spdx:
     license_detections: []
     license_clues: []
     percentage_of_license_text: '0'
+    for_license_detections: []
     copyrights:
       - copyright: Copyright (c) 2000 ACME, Inc.
         start_line: 1
@@ -323,8 +336,6 @@ files:
         start_line: 1
         end_line: 1
     authors: []
-    package_data: []
-    for_packages: []
     files_count: '0'
     dirs_count: '0'
     size_count: '0'

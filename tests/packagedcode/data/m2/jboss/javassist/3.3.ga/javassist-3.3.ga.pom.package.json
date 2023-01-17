@@ -48,32 +48,7 @@
           "license_expression": "mpl-1.1",
           "rule_identifier": "spdx_license_id_mpl-1.1_for_mpl-1.1.RULE",
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/spdx_license_id_mpl-1.1_for_mpl-1.1.RULE",
-          "referenced_filenames": [],
-          "is_license_text": false,
-          "is_license_notice": false,
-          "is_license_reference": true,
-          "is_license_tag": false,
-          "is_license_intro": false,
-          "rule_length": 3,
-          "rule_relevance": 50,
-          "matched_text": "MPL 1.1",
-          "licenses": [
-            {
-              "key": "mpl-1.1",
-              "name": "Mozilla Public License 1.1",
-              "short_name": "MPL 1.1",
-              "category": "Copyleft Limited",
-              "is_exception": false,
-              "is_unknown": false,
-              "owner": "Mozilla",
-              "homepage_url": "http://www.mozilla.org/MPL/MPL-1.1.html",
-              "text_url": "http://www.mozilla.com/MPL/1.1/index.html",
-              "reference_url": "https://scancode-licensedb.aboutcode.org/mpl-1.1",
-              "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mpl-1.1.LICENSE",
-              "spdx_license_key": "MPL-1.1",
-              "spdx_url": "https://spdx.org/licenses/MPL-1.1"
-            }
-          ]
+          "matched_text": "MPL 1.1"
         }
       ]
     },
@@ -93,47 +68,7 @@
           "license_expression": "mpl-1.1 OR lgpl-2.1-plus",
           "rule_identifier": "mpl-1.1_or_lgpl-2.1-plus_6.RULE",
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mpl-1.1_or_lgpl-2.1-plus_6.RULE",
-          "referenced_filenames": [],
-          "is_license_text": false,
-          "is_license_notice": false,
-          "is_license_reference": true,
-          "is_license_tag": false,
-          "is_license_intro": false,
-          "rule_length": 19,
-          "rule_relevance": 100,
-          "matched_text": "http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/*checkout*/jboss/javassist/License.html?rev=HEAD&content-type=text/html",
-          "licenses": [
-            {
-              "key": "mpl-1.1",
-              "name": "Mozilla Public License 1.1",
-              "short_name": "MPL 1.1",
-              "category": "Copyleft Limited",
-              "is_exception": false,
-              "is_unknown": false,
-              "owner": "Mozilla",
-              "homepage_url": "http://www.mozilla.org/MPL/MPL-1.1.html",
-              "text_url": "http://www.mozilla.com/MPL/1.1/index.html",
-              "reference_url": "https://scancode-licensedb.aboutcode.org/mpl-1.1",
-              "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mpl-1.1.LICENSE",
-              "spdx_license_key": "MPL-1.1",
-              "spdx_url": "https://spdx.org/licenses/MPL-1.1"
-            },
-            {
-              "key": "lgpl-2.1-plus",
-              "name": "GNU Lesser General Public License 2.1 or later",
-              "short_name": "LGPL 2.1 or later",
-              "category": "Copyleft Limited",
-              "is_exception": false,
-              "is_unknown": false,
-              "owner": "Free Software Foundation (FSF)",
-              "homepage_url": "http://www.gnu.org/licenses/old-licenses/lgpl-2.1-standalone.html",
-              "text_url": "http://www.gnu.org/licenses/old-licenses/lgpl-2.1-standalone.html",
-              "reference_url": "https://scancode-licensedb.aboutcode.org/lgpl-2.1-plus",
-              "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/lgpl-2.1-plus.LICENSE",
-              "spdx_license_key": "LGPL-2.1-or-later",
-              "spdx_url": "https://spdx.org/licenses/LGPL-2.1-or-later"
-            }
-          ]
+          "matched_text": "http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/*checkout*/jboss/javassist/License.html?rev=HEAD&content-type=text/html"
         }
       ]
     },
@@ -153,47 +88,7 @@
           "license_expression": "mpl-1.1 OR lgpl-2.1-plus",
           "rule_identifier": "mpl-1.1_or_lgpl-2.1-plus_5.RULE",
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mpl-1.1_or_lgpl-2.1-plus_5.RULE",
-          "referenced_filenames": [],
-          "is_license_text": false,
-          "is_license_notice": true,
-          "is_license_reference": false,
-          "is_license_tag": false,
-          "is_license_intro": false,
-          "rule_length": 13,
-          "rule_relevance": 100,
-          "matched_text": "Dual-license; LGPL if downloaded as part of JBoss, MPL if downloaded separately.",
-          "licenses": [
-            {
-              "key": "mpl-1.1",
-              "name": "Mozilla Public License 1.1",
-              "short_name": "MPL 1.1",
-              "category": "Copyleft Limited",
-              "is_exception": false,
-              "is_unknown": false,
-              "owner": "Mozilla",
-              "homepage_url": "http://www.mozilla.org/MPL/MPL-1.1.html",
-              "text_url": "http://www.mozilla.com/MPL/1.1/index.html",
-              "reference_url": "https://scancode-licensedb.aboutcode.org/mpl-1.1",
-              "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mpl-1.1.LICENSE",
-              "spdx_license_key": "MPL-1.1",
-              "spdx_url": "https://spdx.org/licenses/MPL-1.1"
-            },
-            {
-              "key": "lgpl-2.1-plus",
-              "name": "GNU Lesser General Public License 2.1 or later",
-              "short_name": "LGPL 2.1 or later",
-              "category": "Copyleft Limited",
-              "is_exception": false,
-              "is_unknown": false,
-              "owner": "Free Software Foundation (FSF)",
-              "homepage_url": "http://www.gnu.org/licenses/old-licenses/lgpl-2.1-standalone.html",
-              "text_url": "http://www.gnu.org/licenses/old-licenses/lgpl-2.1-standalone.html",
-              "reference_url": "https://scancode-licensedb.aboutcode.org/lgpl-2.1-plus",
-              "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/lgpl-2.1-plus.LICENSE",
-              "spdx_license_key": "LGPL-2.1-or-later",
-              "spdx_url": "https://spdx.org/licenses/LGPL-2.1-or-later"
-            }
-          ]
+          "matched_text": "Dual-license; LGPL if downloaded as part of JBoss, MPL if downloaded separately."
         }
       ]
     }

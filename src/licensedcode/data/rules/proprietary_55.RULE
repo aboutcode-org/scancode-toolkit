@@ -8,7 +8,6 @@ ignorable_holders:
     - Intel Corporation
 ---
 
-
 CNTK distribution contains Redistributable components of Intel (r) Math Kernel Library (Intel (r) MKL), Copyright © 2017 Intel Corporation. 
 
 Limited patent license. Intel grants you a world-wide, royalty-free, non-exclusive license under patents it now or hereafter owns or controls to make, have made, use, import, offer to sell and sell (“Utilize”) this Software, but solely to the extent that any such patent is necessary to Utilize the Software alone. The patent license shall not apply to any combinations which include this software. No hardware per se is licensed hereunder.

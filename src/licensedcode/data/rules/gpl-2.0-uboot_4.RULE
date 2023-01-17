@@ -3,7 +3,6 @@ license_expression: u-boot-exception-2.0
 is_license_notice: yes
 ---
 
-
 GPL License Exception:
 
 Even though U-Boot in general is covered by the GPL-2.0/GPL-2.0+,

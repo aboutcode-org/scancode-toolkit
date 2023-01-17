@@ -6,5 +6,5 @@ ignorable_urls:
     - http://graphics.stanford.edu/~seander/bithacks.html#IntegerLog
 ---
 
- Code was written based on public domain code:
+Code was written based on public domain code:
       URL: http://graphics.stanford.edu/~seander/bithacks.html#IntegerLog.

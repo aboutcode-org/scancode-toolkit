@@ -10,7 +10,6 @@ ignorable_urls:
     - http://www.jrsoftware.org/tb2kreg.php
 ---
 
-
 "Author" herein refers to Jordan Russell (the creator of the Toolbar2000
 components).
 "Software" refers to all files bearing this notice, as well as any other

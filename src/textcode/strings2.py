@@ -20,7 +20,6 @@
 # - removed main()
 # - do not cache compiled patterns. re does cache patterns alright.
 
-
 import re
 
 ASCII_BYTE = (

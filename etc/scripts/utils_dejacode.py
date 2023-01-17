@@ -15,7 +15,7 @@ import zipfile
 import requests
 import saneyaml
 
-from packaging import version as packaging_version
+from packvers import version as packaging_version
 
 """
 Utility to create and retrieve package and ABOUT file data from DejaCode.

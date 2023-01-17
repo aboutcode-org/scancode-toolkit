@@ -1,4 +1,5 @@
 {
+  "packages": [],
   "dependencies": [
     {
       "purl": "pkg:maven/com.google/guava@1.0",
@@ -57,7 +58,8 @@
       "datasource_id": "build_gradle"
     }
   ],
-  "packages": [],
+  "license_references": [],
+  "license_rule_references": [],
   "files": [
     {
       "path": "build.gradle",

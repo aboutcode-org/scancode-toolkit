@@ -23,6 +23,7 @@ from spdx.utils import NoAssert
 from spdx.utils import SPDXNone
 from spdx.version import Version
 
+from license_expression import Licensing
 from commoncode.cliutils import OUTPUT_GROUP
 from commoncode.cliutils import PluggableCommandLineOption
 from commoncode.fileutils import file_name
@@ -170,6 +171,7 @@ def _process_codebase(
     package_name = build_package_name(input_path)
 
     write_spdx(
+        codebase=codebase,
         output_file=output_file,
         files=files,
         tool_name=tool_name,
@@ -208,6 +210,7 @@ def check_sha1(codebase):
 
 
 def write_spdx(
+    codebase,
     output_file,
     files,
     tool_name,
@@ -229,6 +232,10 @@ def write_spdx(
     producing this SPDX document.
     Use ``package_name`` as a Package name and as a namespace prefix base.
     """
+    from licensedcode import cache
+    licenses = cache.get_licenses_db()
+    licensing = Licensing()
+
     as_rdf = not as_tagvalue
     _patch_license_list()
 
@@ -282,11 +289,16 @@ def write_spdx(
         if license_matches:
             all_files_have_no_license = False
             for match in license_matches:
-                file_licenses = match["licenses"]
-                for file_license in file_licenses:
-                    license_key = file_license.get('key')
+                file_license_expression = match["license_expression"]
+                file_license_keys = licensing.license_keys(
+                    expression=file_license_expression,
+                    unique=True
+                )
+                for license_key in file_license_keys:
+                    file_license = licenses.get(license_key)
+                    license_key = file_license.key
 
-                    spdx_id = file_license.get('spdx_license_key')
+                    spdx_id = file_license.spdx_license_key
                     if not spdx_id:
                         spdx_id = f'LicenseRef-scancode-{license_key}'
                     is_license_ref = spdx_id.lower().startswith('licenseref-')
@@ -295,7 +307,7 @@ def write_spdx(
                         spdx_license = License.from_identifier(spdx_id)
                     else:
                         spdx_license = ExtractedLicense(spdx_id)
-                        spdx_license.name = file_license.get('short_name')
+                        spdx_license.name = file_license.short_name
                         # FIXME: replace this with the licensedb URL
                         comment = (
                             f'See details at https://github.com/nexB/scancode-toolkit'

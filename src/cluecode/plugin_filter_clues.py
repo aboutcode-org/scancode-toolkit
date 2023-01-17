@@ -63,10 +63,8 @@ class RedundantCluesFilter(PostScanPlugin):
 
         from licensedcode.cache import get_index
 
-        rules_by_id = {r.identifier: r for r in get_index().rules_by_rid}
-
         for resource in codebase.walk():
-            filtered = filter_ignorable_resource_clues(resource, rules_by_id)
+            filtered = filter_ignorable_resource_clues(resource, get_index().rules_by_id)
             if filtered:
                 filtered.save(codebase)
 

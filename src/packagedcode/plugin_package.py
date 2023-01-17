@@ -91,10 +91,10 @@ class PackageScanner(ScanPlugin):
     """
 
     codebase_attributes = dict(
-        # a list of dependencies
-        dependencies=attr.ib(default=attr.Factory(list), repr=False),
         # a list of packages
         packages=attr.ib(default=attr.Factory(list), repr=False),
+        # a list of dependencies
+        dependencies=attr.ib(default=attr.Factory(list), repr=False),
     )
     resource_attributes = dict(
         # a list of package data
@@ -105,7 +105,7 @@ class PackageScanner(ScanPlugin):
 
     required_plugins = ['scan:licenses']
 
-    sort_order = 6
+    sort_order = 3
 
     options = [
         PluggableCommandLineOption(
@@ -170,7 +170,7 @@ class PackageScanner(ScanPlugin):
         # this is performed before top level packages creation
         for resource in codebase.walk(topdown=False):
             if not hasattr(resource, 'license_detections'):
-                no_licenses=True
+                no_licenses = True
 
             # If we don't detect license in package_data but there is license detected in file
             # we add the license expression from the file to a package
@@ -197,7 +197,7 @@ class PackageScanner(ScanPlugin):
         create_package_and_deps(codebase, strip_root=strip_root, **kwargs)
 
         if not no_licenses:
-            # This step is dependent on top level packages 
+            # This step is dependent on top level packages
             for resource in codebase.walk(topdown=False):
                 # If there is a unknown reference to a package we add the license
                 # from the package license detection
@@ -249,7 +249,7 @@ def add_license_from_file(resource, codebase, no_licenses):
             license_expression = get_license_expression_from_detection_mappings(
                 detections=license_detections_file,
                 valid_expression=True
-            ) 
+            )
             pkg["declared_license_expression"] = license_expression
             pkg["declared_license_expression_spdx"] = str(build_spdx_license_expression(
                 license_expression=license_expression,

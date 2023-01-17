@@ -1,5 +1,4 @@
 {
-  "dependencies": [],
   "packages": [
     {
       "type": "deb",
@@ -55,32 +54,7 @@
               "license_expression": "x11-fsf",
               "rule_identifier": "x11-fsf.LICENSE",
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/x11-fsf.LICENSE",
-              "referenced_filenames": [],
-              "is_license_text": true,
-              "is_license_notice": false,
-              "is_license_reference": false,
-              "is_license_tag": false,
-              "is_license_intro": false,
-              "rule_length": 200,
-              "rule_relevance": 100,
-              "matched_text": "Permission is hereby granted, free of charge, to any person obtaining a\ncopy of this software and associated documentation files (the\n\"Software\"), to deal in the Software without restriction, including\nwithout limitation the rights to use, copy, modify, merge, publish,\ndistribute, distribute with modifications, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included\nin all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS\nOR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF\nMERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.\nIN NO EVENT SHALL THE ABOVE COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,\nDAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR\nOTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR\nTHE USE OR OTHER DEALINGS IN THE SOFTWARE.\n\nExcept as contained in this notice, the name(s) of the above copyright\nholders shall not be used in advertising or otherwise to promote the\nsale, use or other dealings in this Software without prior written\nauthorization.",
-              "licenses": [
-                {
-                  "key": "x11-fsf",
-                  "name": "X11-Style (FSF)",
-                  "short_name": "X11-Style (FSF)",
-                  "category": "Permissive",
-                  "is_exception": false,
-                  "is_unknown": false,
-                  "owner": "Free Software Foundation (FSF)",
-                  "homepage_url": null,
-                  "text_url": "",
-                  "reference_url": "https://scancode-licensedb.aboutcode.org/x11-fsf",
-                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/x11-fsf.LICENSE",
-                  "spdx_license_key": "X11-distribute-modifications-variant",
-                  "spdx_url": "https://spdx.org/licenses/X11-distribute-modifications-variant"
-                }
-              ]
+              "matched_text": "Permission is hereby granted, free of charge, to any person obtaining a\ncopy of this software and associated documentation files (the\n\"Software\"), to deal in the Software without restriction, including\nwithout limitation the rights to use, copy, modify, merge, publish,\ndistribute, distribute with modifications, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included\nin all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS\nOR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF\nMERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.\nIN NO EVENT SHALL THE ABOVE COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,\nDAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR\nOTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR\nTHE USE OR OTHER DEALINGS IN THE SOFTWARE.\n\nExcept as contained in this notice, the name(s) of the above copyright\nholders shall not be used in advertising or otherwise to promote the\nsale, use or other dealings in this Software without prior written\nauthorization."
             }
           ]
         },
@@ -100,32 +74,7 @@
               "license_expression": "x11-xconsortium",
               "rule_identifier": "x11-xconsortium_2.RULE",
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/x11-xconsortium_2.RULE",
-              "referenced_filenames": [],
-              "is_license_text": true,
-              "is_license_notice": false,
-              "is_license_reference": false,
-              "is_license_tag": false,
-              "is_license_intro": false,
-              "rule_length": 201,
-              "rule_relevance": 100,
-              "matched_text": "Permission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to\ndeal in the Software without restriction, including without limitation the\nrights to use, copy, modify, merge, publish, distribute, sublicense, and/or\nsell copies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in\nall copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.  IN NO EVENT SHALL THE\nX CONSORTIUM BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN\nAN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNEC-\nTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n\nExcept as contained in this notice, the name of the X Consortium shall not\nbe used in advertising or otherwise to promote the sale, use or other deal-\nings in this Software without prior written authorization from the X Consor-\ntium.",
-              "licenses": [
-                {
-                  "key": "x11-xconsortium",
-                  "name": "X11-Style (X Consortium)",
-                  "short_name": "X11-Style (X Consortium)",
-                  "category": "Permissive",
-                  "is_exception": false,
-                  "is_unknown": false,
-                  "owner": "X Consortium",
-                  "homepage_url": "http://www.xfree86.org/current/LICENSE5.html",
-                  "text_url": "http://www.xfree86.org/current/LICENSE5.html",
-                  "reference_url": "https://scancode-licensedb.aboutcode.org/x11-xconsortium",
-                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/x11-xconsortium.LICENSE",
-                  "spdx_license_key": "X11",
-                  "spdx_url": "https://spdx.org/licenses/X11"
-                }
-              ]
+              "matched_text": "Permission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to\ndeal in the Software without restriction, including without limitation the\nrights to use, copy, modify, merge, publish, distribute, sublicense, and/or\nsell copies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in\nall copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.  IN NO EVENT SHALL THE\nX CONSORTIUM BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN\nAN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNEC-\nTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n\nExcept as contained in this notice, the name of the X Consortium shall not\nbe used in advertising or otherwise to promote the sale, use or other deal-\nings in this Software without prior written authorization from the X Consor-\ntium."
             }
           ]
         },
@@ -145,32 +94,7 @@
               "license_expression": "bsd-new",
               "rule_identifier": "bsd-new_19.RULE",
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_19.RULE",
-              "referenced_filenames": [],
-              "is_license_text": true,
-              "is_license_notice": false,
-              "is_license_reference": false,
-              "is_license_tag": false,
-              "is_license_intro": false,
-              "rule_length": 213,
-              "rule_relevance": 100,
-              "matched_text": "Redistribution and use in source and binary forms, with or without\nmodification, are permitted provided that the following conditions\nare met:\n1. Redistributions of source code must retain the above copyright\n   notice, this list of conditions and the following disclaimer.\n2. Redistributions in binary form must reproduce the above copyright\n   notice, this list of conditions and the following disclaimer in the\n   documentation and/or other materials provided with the distribution.\n3. Neither the name of the University nor the names of its contributors\n   may be used to endorse or promote products derived from this software\n   without specific prior written permission.\n\nTHIS SOFTWARE IS PROVIDED BY THE REGENTS AND CONTRIBUTORS ``AS IS'' AND\nANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE\nIMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE\nARE DISCLAIMED.  IN NO EVENT SHALL THE REGENTS OR CONTRIBUTORS BE LIABLE\nFOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL\nDAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS\nOR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)\nHOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT\nLIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY\nOUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF\nSUCH DAMAGE.",
-              "licenses": [
-                {
-                  "key": "bsd-new",
-                  "name": "BSD-3-Clause",
-                  "short_name": "BSD-3-Clause",
-                  "category": "Permissive",
-                  "is_exception": false,
-                  "is_unknown": false,
-                  "owner": "Regents of the University of California",
-                  "homepage_url": "http://www.opensource.org/licenses/BSD-3-Clause",
-                  "text_url": "http://www.opensource.org/licenses/BSD-3-Clause",
-                  "reference_url": "https://scancode-licensedb.aboutcode.org/bsd-new",
-                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-new.LICENSE",
-                  "spdx_license_key": "BSD-3-Clause",
-                  "spdx_url": "https://spdx.org/licenses/BSD-3-Clause"
-                }
-              ]
+              "matched_text": "Redistribution and use in source and binary forms, with or without\nmodification, are permitted provided that the following conditions\nare met:\n1. Redistributions of source code must retain the above copyright\n   notice, this list of conditions and the following disclaimer.\n2. Redistributions in binary form must reproduce the above copyright\n   notice, this list of conditions and the following disclaimer in the\n   documentation and/or other materials provided with the distribution.\n3. Neither the name of the University nor the names of its contributors\n   may be used to endorse or promote products derived from this software\n   without specific prior written permission.\n\nTHIS SOFTWARE IS PROVIDED BY THE REGENTS AND CONTRIBUTORS ``AS IS'' AND\nANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE\nIMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE\nARE DISCLAIMED.  IN NO EVENT SHALL THE REGENTS OR CONTRIBUTORS BE LIABLE\nFOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL\nDAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS\nOR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)\nHOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT\nLIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY\nOUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF\nSUCH DAMAGE."
             }
           ]
         },
@@ -190,32 +114,7 @@
               "license_expression": "x11-fsf",
               "rule_identifier": "x11-fsf_7.RULE",
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/x11-fsf_7.RULE",
-              "referenced_filenames": [],
-              "is_license_text": true,
-              "is_license_notice": false,
-              "is_license_reference": false,
-              "is_license_tag": false,
-              "is_license_intro": false,
-              "rule_length": 199,
-              "rule_relevance": 100,
-              "matched_text": "Permission is hereby granted, free of charge, to any person obtaining a\ncopy of this software and associated documentation files (the\n\"Software\"), to deal in the Software without restriction, including\nwithout limitation the rights to use, copy, modify, merge, publish,\ndistribute, sublicense, and/or sell copies of the Software, and to\npermit persons to whom the Software is furnished to do so, subject to\nthe following conditions:\n\nThe above copyright notice and this permission notice shall be included\nin all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS\nOR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF\nMERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.\nIN NO EVENT SHALL THE ABOVE LISTED COPYRIGHT HOLDER(S) BE LIABLE FOR ANY\nCLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,\nTORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE\nSOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n\nExcept as contained in this notice, the name(s) of the above copyright\nholders shall not be used in advertising or otherwise to promote the\nsale, use or other dealings in this Software without prior written\nauthorization.",
-              "licenses": [
-                {
-                  "key": "x11-fsf",
-                  "name": "X11-Style (FSF)",
-                  "short_name": "X11-Style (FSF)",
-                  "category": "Permissive",
-                  "is_exception": false,
-                  "is_unknown": false,
-                  "owner": "Free Software Foundation (FSF)",
-                  "homepage_url": null,
-                  "text_url": "",
-                  "reference_url": "https://scancode-licensedb.aboutcode.org/x11-fsf",
-                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/x11-fsf.LICENSE",
-                  "spdx_license_key": "X11-distribute-modifications-variant",
-                  "spdx_url": "https://spdx.org/licenses/X11-distribute-modifications-variant"
-                }
-              ]
+              "matched_text": "Permission is hereby granted, free of charge, to any person obtaining a\ncopy of this software and associated documentation files (the\n\"Software\"), to deal in the Software without restriction, including\nwithout limitation the rights to use, copy, modify, merge, publish,\ndistribute, sublicense, and/or sell copies of the Software, and to\npermit persons to whom the Software is furnished to do so, subject to\nthe following conditions:\n\nThe above copyright notice and this permission notice shall be included\nin all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS\nOR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF\nMERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.\nIN NO EVENT SHALL THE ABOVE LISTED COPYRIGHT HOLDER(S) BE LIABLE FOR ANY\nCLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,\nTORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE\nSOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n\nExcept as contained in this notice, the name(s) of the above copyright\nholders shall not be used in advertising or otherwise to promote the\nsale, use or other dealings in this Software without prior written\nauthorization."
             }
           ]
         }
@@ -339,32 +238,7 @@
               "license_expression": "lgpl-2.1-plus",
               "rule_identifier": "lgpl-2.1-plus_108.RULE",
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_108.RULE",
-              "referenced_filenames": [],
-              "is_license_text": false,
-              "is_license_notice": false,
-              "is_license_reference": false,
-              "is_license_tag": true,
-              "is_license_intro": false,
-              "rule_length": 4,
-              "rule_relevance": 100,
-              "matched_text": "License: LGPL-2.1+",
-              "licenses": [
-                {
-                  "key": "lgpl-2.1-plus",
-                  "name": "GNU Lesser General Public License 2.1 or later",
-                  "short_name": "LGPL 2.1 or later",
-                  "category": "Copyleft Limited",
-                  "is_exception": false,
-                  "is_unknown": false,
-                  "owner": "Free Software Foundation (FSF)",
-                  "homepage_url": "http://www.gnu.org/licenses/old-licenses/lgpl-2.1-standalone.html",
-                  "text_url": "http://www.gnu.org/licenses/old-licenses/lgpl-2.1-standalone.html",
-                  "reference_url": "https://scancode-licensedb.aboutcode.org/lgpl-2.1-plus",
-                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/lgpl-2.1-plus.LICENSE",
-                  "spdx_license_key": "LGPL-2.1-or-later",
-                  "spdx_url": "https://spdx.org/licenses/LGPL-2.1-or-later"
-                }
-              ]
+              "matched_text": "License: LGPL-2.1+"
             },
             {
               "score": 100.0,
@@ -376,32 +250,7 @@
               "license_expression": "lgpl-2.1-plus",
               "rule_identifier": "lgpl-2.1-plus_108.RULE",
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_108.RULE",
-              "referenced_filenames": [],
-              "is_license_text": false,
-              "is_license_notice": false,
-              "is_license_reference": false,
-              "is_license_tag": true,
-              "is_license_intro": false,
-              "rule_length": 4,
-              "rule_relevance": 100,
-              "matched_text": "License: LGPL-2.1+",
-              "licenses": [
-                {
-                  "key": "lgpl-2.1-plus",
-                  "name": "GNU Lesser General Public License 2.1 or later",
-                  "short_name": "LGPL 2.1 or later",
-                  "category": "Copyleft Limited",
-                  "is_exception": false,
-                  "is_unknown": false,
-                  "owner": "Free Software Foundation (FSF)",
-                  "homepage_url": "http://www.gnu.org/licenses/old-licenses/lgpl-2.1-standalone.html",
-                  "text_url": "http://www.gnu.org/licenses/old-licenses/lgpl-2.1-standalone.html",
-                  "reference_url": "https://scancode-licensedb.aboutcode.org/lgpl-2.1-plus",
-                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/lgpl-2.1-plus.LICENSE",
-                  "spdx_license_key": "LGPL-2.1-or-later",
-                  "spdx_url": "https://spdx.org/licenses/LGPL-2.1-or-later"
-                }
-              ]
+              "matched_text": "License: LGPL-2.1+"
             },
             {
               "score": 100.0,
@@ -413,32 +262,7 @@
               "license_expression": "lgpl-2.1-plus",
               "rule_identifier": "lgpl-2.1-plus_108.RULE",
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_108.RULE",
-              "referenced_filenames": [],
-              "is_license_text": false,
-              "is_license_notice": false,
-              "is_license_reference": false,
-              "is_license_tag": true,
-              "is_license_intro": false,
-              "rule_length": 4,
-              "rule_relevance": 100,
-              "matched_text": "License: LGPL-2.1+",
-              "licenses": [
-                {
-                  "key": "lgpl-2.1-plus",
-                  "name": "GNU Lesser General Public License 2.1 or later",
-                  "short_name": "LGPL 2.1 or later",
-                  "category": "Copyleft Limited",
-                  "is_exception": false,
-                  "is_unknown": false,
-                  "owner": "Free Software Foundation (FSF)",
-                  "homepage_url": "http://www.gnu.org/licenses/old-licenses/lgpl-2.1-standalone.html",
-                  "text_url": "http://www.gnu.org/licenses/old-licenses/lgpl-2.1-standalone.html",
-                  "reference_url": "https://scancode-licensedb.aboutcode.org/lgpl-2.1-plus",
-                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/lgpl-2.1-plus.LICENSE",
-                  "spdx_license_key": "LGPL-2.1-or-later",
-                  "spdx_url": "https://spdx.org/licenses/LGPL-2.1-or-later"
-                }
-              ]
+              "matched_text": "License: LGPL-2.1+"
             },
             {
               "score": 100.0,
@@ -450,32 +274,7 @@
               "license_expression": "lgpl-2.1-plus",
               "rule_identifier": "lgpl-2.1-plus_93.RULE",
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_93.RULE",
-              "referenced_filenames": [],
-              "is_license_text": false,
-              "is_license_notice": true,
-              "is_license_reference": false,
-              "is_license_tag": false,
-              "is_license_intro": false,
-              "rule_length": 117,
-              "rule_relevance": 100,
-              "matched_text": " This program is free software; you can redistribute it and/or modify it\n under the terms of the GNU Lesser General Public License as published\n by the Free Software Foundation; either version 2.1 of the License, or\n (at your option) any later version.\n .\n This program is distributed in the hope that it will be useful,\n but WITHOUT ANY WARRANTY; without even the implied warranty of\n MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU Lesser\n General Public License for more details.\n .\n You should have received a copy of the GNU Lesser General Public License\n along with this program; if not, write to the Free Software Foundation,\n Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA",
-              "licenses": [
-                {
-                  "key": "lgpl-2.1-plus",
-                  "name": "GNU Lesser General Public License 2.1 or later",
-                  "short_name": "LGPL 2.1 or later",
-                  "category": "Copyleft Limited",
-                  "is_exception": false,
-                  "is_unknown": false,
-                  "owner": "Free Software Foundation (FSF)",
-                  "homepage_url": "http://www.gnu.org/licenses/old-licenses/lgpl-2.1-standalone.html",
-                  "text_url": "http://www.gnu.org/licenses/old-licenses/lgpl-2.1-standalone.html",
-                  "reference_url": "https://scancode-licensedb.aboutcode.org/lgpl-2.1-plus",
-                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/lgpl-2.1-plus.LICENSE",
-                  "spdx_license_key": "LGPL-2.1-or-later",
-                  "spdx_url": "https://spdx.org/licenses/LGPL-2.1-or-later"
-                }
-              ]
+              "matched_text": " This program is free software; you can redistribute it and/or modify it\n under the terms of the GNU Lesser General Public License as published\n by the Free Software Foundation; either version 2.1 of the License, or\n (at your option) any later version.\n .\n This program is distributed in the hope that it will be useful,\n but WITHOUT ANY WARRANTY; without even the implied warranty of\n MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU Lesser\n General Public License for more details.\n .\n You should have received a copy of the GNU Lesser General Public License\n along with this program; if not, write to the Free Software Foundation,\n Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA"
             },
             {
               "score": 100.0,
@@ -487,34 +286,7 @@
               "license_expression": "lgpl-2.1",
               "rule_identifier": "lgpl-2.1_314.RULE",
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1_314.RULE",
-              "referenced_filenames": [
-                "/usr/share/common-licenses/LGPL-2.1"
-              ],
-              "is_license_text": false,
-              "is_license_notice": true,
-              "is_license_reference": false,
-              "is_license_tag": false,
-              "is_license_intro": false,
-              "rule_length": 64,
-              "rule_relevance": 100,
-              "matched_text": " You should have received a copy of the GNU Lesser General Public License\n along with this program; if not, write to the Free Software Foundation,\n Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA\n .\n On Debian systems, the full text of the GNU Lesser General Public\n License version 2.1 can be found in the file\n `/usr/share/common-licenses/LGPL-2.1'.",
-              "licenses": [
-                {
-                  "key": "lgpl-2.1",
-                  "name": "GNU Lesser General Public License 2.1",
-                  "short_name": "LGPL 2.1",
-                  "category": "Copyleft Limited",
-                  "is_exception": false,
-                  "is_unknown": false,
-                  "owner": "Free Software Foundation (FSF)",
-                  "homepage_url": "http://www.gnu.org/licenses/lgpl-2.1.html",
-                  "text_url": "http://www.gnu.org/licenses/lgpl-2.1.txt",
-                  "reference_url": "https://scancode-licensedb.aboutcode.org/lgpl-2.1",
-                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/lgpl-2.1.LICENSE",
-                  "spdx_license_key": "LGPL-2.1-only",
-                  "spdx_url": "https://spdx.org/licenses/LGPL-2.1-only"
-                }
-              ]
+              "matched_text": " You should have received a copy of the GNU Lesser General Public License\n along with this program; if not, write to the Free Software Foundation,\n Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA\n .\n On Debian systems, the full text of the GNU Lesser General Public\n License version 2.1 can be found in the file\n `/usr/share/common-licenses/LGPL-2.1'."
             }
           ]
         }
@@ -538,32 +310,7 @@
               "license_expression": "lgpl-2.1-plus",
               "rule_identifier": "lgpl-2.1-plus_108.RULE",
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_108.RULE",
-              "referenced_filenames": [],
-              "is_license_text": false,
-              "is_license_notice": false,
-              "is_license_reference": false,
-              "is_license_tag": true,
-              "is_license_intro": false,
-              "rule_length": 4,
-              "rule_relevance": 100,
-              "matched_text": "License: lgpl-2.1+",
-              "licenses": [
-                {
-                  "key": "lgpl-2.1-plus",
-                  "name": "GNU Lesser General Public License 2.1 or later",
-                  "short_name": "LGPL 2.1 or later",
-                  "category": "Copyleft Limited",
-                  "is_exception": false,
-                  "is_unknown": false,
-                  "owner": "Free Software Foundation (FSF)",
-                  "homepage_url": "http://www.gnu.org/licenses/old-licenses/lgpl-2.1-standalone.html",
-                  "text_url": "http://www.gnu.org/licenses/old-licenses/lgpl-2.1-standalone.html",
-                  "reference_url": "https://scancode-licensedb.aboutcode.org/lgpl-2.1-plus",
-                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/lgpl-2.1-plus.LICENSE",
-                  "spdx_license_key": "LGPL-2.1-or-later",
-                  "spdx_url": "https://spdx.org/licenses/LGPL-2.1-or-later"
-                }
-              ]
+              "matched_text": "License: lgpl-2.1+"
             },
             {
               "score": 100.0,
@@ -575,32 +322,7 @@
               "license_expression": "lgpl-2.1-plus",
               "rule_identifier": "lgpl-2.1-plus_93.RULE",
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_93.RULE",
-              "referenced_filenames": [],
-              "is_license_text": false,
-              "is_license_notice": true,
-              "is_license_reference": false,
-              "is_license_tag": false,
-              "is_license_intro": false,
-              "rule_length": 117,
-              "rule_relevance": 100,
-              "matched_text": "This program is free software; you can redistribute it and/or modify it\nunder the terms of the GNU Lesser General Public License as published\nby the Free Software Foundation; either version 2.1 of the License, or\n(at your option) any later version.\n\nThis program is distributed in the hope that it will be useful,\nbut WITHOUT ANY WARRANTY; without even the implied warranty of\nMERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU Lesser\nGeneral Public License for more details.\n\nYou should have received a copy of the GNU Lesser General Public License\nalong with this program; if not, write to the Free Software Foundation,\nInc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA",
-              "licenses": [
-                {
-                  "key": "lgpl-2.1-plus",
-                  "name": "GNU Lesser General Public License 2.1 or later",
-                  "short_name": "LGPL 2.1 or later",
-                  "category": "Copyleft Limited",
-                  "is_exception": false,
-                  "is_unknown": false,
-                  "owner": "Free Software Foundation (FSF)",
-                  "homepage_url": "http://www.gnu.org/licenses/old-licenses/lgpl-2.1-standalone.html",
-                  "text_url": "http://www.gnu.org/licenses/old-licenses/lgpl-2.1-standalone.html",
-                  "reference_url": "https://scancode-licensedb.aboutcode.org/lgpl-2.1-plus",
-                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/lgpl-2.1-plus.LICENSE",
-                  "spdx_license_key": "LGPL-2.1-or-later",
-                  "spdx_url": "https://spdx.org/licenses/LGPL-2.1-or-later"
-                }
-              ]
+              "matched_text": "This program is free software; you can redistribute it and/or modify it\nunder the terms of the GNU Lesser General Public License as published\nby the Free Software Foundation; either version 2.1 of the License, or\n(at your option) any later version.\n\nThis program is distributed in the hope that it will be useful,\nbut WITHOUT ANY WARRANTY; without even the implied warranty of\nMERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU Lesser\nGeneral Public License for more details.\n\nYou should have received a copy of the GNU Lesser General Public License\nalong with this program; if not, write to the Free Software Foundation,\nInc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA"
             },
             {
               "score": 100.0,
@@ -612,34 +334,7 @@
               "license_expression": "lgpl-2.1",
               "rule_identifier": "lgpl-2.1_314.RULE",
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1_314.RULE",
-              "referenced_filenames": [
-                "/usr/share/common-licenses/LGPL-2.1"
-              ],
-              "is_license_text": false,
-              "is_license_notice": true,
-              "is_license_reference": false,
-              "is_license_tag": false,
-              "is_license_intro": false,
-              "rule_length": 64,
-              "rule_relevance": 100,
-              "matched_text": "You should have received a copy of the GNU Lesser General Public License\nalong with this program; if not, write to the Free Software Foundation,\nInc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA\n\nOn Debian systems, the full text of the GNU Lesser General Public\nLicense version 2.1 can be found in the file\n`/usr/share/common-licenses/LGPL-2.1'.",
-              "licenses": [
-                {
-                  "key": "lgpl-2.1",
-                  "name": "GNU Lesser General Public License 2.1",
-                  "short_name": "LGPL 2.1",
-                  "category": "Copyleft Limited",
-                  "is_exception": false,
-                  "is_unknown": false,
-                  "owner": "Free Software Foundation (FSF)",
-                  "homepage_url": "http://www.gnu.org/licenses/lgpl-2.1.html",
-                  "text_url": "http://www.gnu.org/licenses/lgpl-2.1.txt",
-                  "reference_url": "https://scancode-licensedb.aboutcode.org/lgpl-2.1",
-                  "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/lgpl-2.1.LICENSE",
-                  "spdx_license_key": "LGPL-2.1-only",
-                  "spdx_url": "https://spdx.org/licenses/LGPL-2.1-only"
-                }
-              ]
+              "matched_text": "You should have received a copy of the GNU Lesser General Public License\nalong with this program; if not, write to the Free Software Foundation,\nInc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA\n\nOn Debian systems, the full text of the GNU Lesser General Public\nLicense version 2.1 can be found in the file\n`/usr/share/common-licenses/LGPL-2.1'."
             }
           ]
         }
@@ -689,6 +384,7 @@
       "purl": "pkg:deb/libndp0@1.4-2ubuntu0.16.04.1?architecture=amd64"
     }
   ],
+  "dependencies": [],
   "files": [
     {
       "path": "basic-rootfs.tar.gz",
@@ -771,32 +467,7 @@
                   "license_expression": "x11-fsf",
                   "rule_identifier": "x11-fsf.LICENSE",
                   "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/x11-fsf.LICENSE",
-                  "referenced_filenames": [],
-                  "is_license_text": true,
-                  "is_license_notice": false,
-                  "is_license_reference": false,
-                  "is_license_tag": false,
-                  "is_license_intro": false,
-                  "rule_length": 200,
-                  "rule_relevance": 100,
-                  "matched_text": "Permission is hereby granted, free of charge, to any person obtaining a\ncopy of this software and associated documentation files (the\n\"Software\"), to deal in the Software without restriction, including\nwithout limitation the rights to use, copy, modify, merge, publish,\ndistribute, distribute with modifications, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included\nin all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS\nOR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF\nMERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.\nIN NO EVENT SHALL THE ABOVE COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,\nDAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR\nOTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR\nTHE USE OR OTHER DEALINGS IN THE SOFTWARE.\n\nExcept as contained in this notice, the name(s) of the above copyright\nholders shall not be used in advertising or otherwise to promote the\nsale, use or other dealings in this Software without prior written\nauthorization.",
-                  "licenses": [
-                    {
-                      "key": "x11-fsf",
-                      "name": "X11-Style (FSF)",
-                      "short_name": "X11-Style (FSF)",
-                      "category": "Permissive",
-                      "is_exception": false,
-                      "is_unknown": false,
-                      "owner": "Free Software Foundation (FSF)",
-                      "homepage_url": null,
-                      "text_url": "",
-                      "reference_url": "https://scancode-licensedb.aboutcode.org/x11-fsf",
-                      "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/x11-fsf.LICENSE",
-                      "spdx_license_key": "X11-distribute-modifications-variant",
-                      "spdx_url": "https://spdx.org/licenses/X11-distribute-modifications-variant"
-                    }
-                  ]
+                  "matched_text": "Permission is hereby granted, free of charge, to any person obtaining a\ncopy of this software and associated documentation files (the\n\"Software\"), to deal in the Software without restriction, including\nwithout limitation the rights to use, copy, modify, merge, publish,\ndistribute, distribute with modifications, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included\nin all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS\nOR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF\nMERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.\nIN NO EVENT SHALL THE ABOVE COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,\nDAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR\nOTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR\nTHE USE OR OTHER DEALINGS IN THE SOFTWARE.\n\nExcept as contained in this notice, the name(s) of the above copyright\nholders shall not be used in advertising or otherwise to promote the\nsale, use or other dealings in this Software without prior written\nauthorization."
                 }
               ]
             },
@@ -816,32 +487,7 @@
                   "license_expression": "x11-xconsortium",
                   "rule_identifier": "x11-xconsortium_2.RULE",
                   "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/x11-xconsortium_2.RULE",
-                  "referenced_filenames": [],
-                  "is_license_text": true,
-                  "is_license_notice": false,
-                  "is_license_reference": false,
-                  "is_license_tag": false,
-                  "is_license_intro": false,
-                  "rule_length": 201,
-                  "rule_relevance": 100,
-                  "matched_text": "Permission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to\ndeal in the Software without restriction, including without limitation the\nrights to use, copy, modify, merge, publish, distribute, sublicense, and/or\nsell copies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in\nall copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.  IN NO EVENT SHALL THE\nX CONSORTIUM BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN\nAN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNEC-\nTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n\nExcept as contained in this notice, the name of the X Consortium shall not\nbe used in advertising or otherwise to promote the sale, use or other deal-\nings in this Software without prior written authorization from the X Consor-\ntium.",
-                  "licenses": [
-                    {
-                      "key": "x11-xconsortium",
-                      "name": "X11-Style (X Consortium)",
-                      "short_name": "X11-Style (X Consortium)",
-                      "category": "Permissive",
-                      "is_exception": false,
-                      "is_unknown": false,
-                      "owner": "X Consortium",
-                      "homepage_url": "http://www.xfree86.org/current/LICENSE5.html",
-                      "text_url": "http://www.xfree86.org/current/LICENSE5.html",
-                      "reference_url": "https://scancode-licensedb.aboutcode.org/x11-xconsortium",
-                      "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/x11-xconsortium.LICENSE",
-                      "spdx_license_key": "X11",
-                      "spdx_url": "https://spdx.org/licenses/X11"
-                    }
-                  ]
+                  "matched_text": "Permission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to\ndeal in the Software without restriction, including without limitation the\nrights to use, copy, modify, merge, publish, distribute, sublicense, and/or\nsell copies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in\nall copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.  IN NO EVENT SHALL THE\nX CONSORTIUM BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN\nAN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNEC-\nTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n\nExcept as contained in this notice, the name of the X Consortium shall not\nbe used in advertising or otherwise to promote the sale, use or other deal-\nings in this Software without prior written authorization from the X Consor-\ntium."
                 }
               ]
             },
@@ -861,32 +507,7 @@
                   "license_expression": "bsd-new",
                   "rule_identifier": "bsd-new_19.RULE",
                   "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_19.RULE",
-                  "referenced_filenames": [],
-                  "is_license_text": true,
-                  "is_license_notice": false,
-                  "is_license_reference": false,
-                  "is_license_tag": false,
-                  "is_license_intro": false,
-                  "rule_length": 213,
-                  "rule_relevance": 100,
-                  "matched_text": "Redistribution and use in source and binary forms, with or without\nmodification, are permitted provided that the following conditions\nare met:\n1. Redistributions of source code must retain the above copyright\n   notice, this list of conditions and the following disclaimer.\n2. Redistributions in binary form must reproduce the above copyright\n   notice, this list of conditions and the following disclaimer in the\n   documentation and/or other materials provided with the distribution.\n3. Neither the name of the University nor the names of its contributors\n   may be used to endorse or promote products derived from this software\n   without specific prior written permission.\n\nTHIS SOFTWARE IS PROVIDED BY THE REGENTS AND CONTRIBUTORS ``AS IS'' AND\nANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE\nIMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE\nARE DISCLAIMED.  IN NO EVENT SHALL THE REGENTS OR CONTRIBUTORS BE LIABLE\nFOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL\nDAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS\nOR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)\nHOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT\nLIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY\nOUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF\nSUCH DAMAGE.",
-                  "licenses": [
-                    {
-                      "key": "bsd-new",
-                      "name": "BSD-3-Clause",
-                      "short_name": "BSD-3-Clause",
-                      "category": "Permissive",
-                      "is_exception": false,
-                      "is_unknown": false,
-                      "owner": "Regents of the University of California",
-                      "homepage_url": "http://www.opensource.org/licenses/BSD-3-Clause",
-                      "text_url": "http://www.opensource.org/licenses/BSD-3-Clause",
-                      "reference_url": "https://scancode-licensedb.aboutcode.org/bsd-new",
-                      "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-new.LICENSE",
-                      "spdx_license_key": "BSD-3-Clause",
-                      "spdx_url": "https://spdx.org/licenses/BSD-3-Clause"
-                    }
-                  ]
+                  "matched_text": "Redistribution and use in source and binary forms, with or without\nmodification, are permitted provided that the following conditions\nare met:\n1. Redistributions of source code must retain the above copyright\n   notice, this list of conditions and the following disclaimer.\n2. Redistributions in binary form must reproduce the above copyright\n   notice, this list of conditions and the following disclaimer in the\n   documentation and/or other materials provided with the distribution.\n3. Neither the name of the University nor the names of its contributors\n   may be used to endorse or promote products derived from this software\n   without specific prior written permission.\n\nTHIS SOFTWARE IS PROVIDED BY THE REGENTS AND CONTRIBUTORS ``AS IS'' AND\nANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE\nIMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE\nARE DISCLAIMED.  IN NO EVENT SHALL THE REGENTS OR CONTRIBUTORS BE LIABLE\nFOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL\nDAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS\nOR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)\nHOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT\nLIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY\nOUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF\nSUCH DAMAGE."
                 }
               ]
             },
@@ -906,32 +527,7 @@
                   "license_expression": "x11-fsf",
                   "rule_identifier": "x11-fsf_7.RULE",
                   "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/x11-fsf_7.RULE",
-                  "referenced_filenames": [],
-                  "is_license_text": true,
-                  "is_license_notice": false,
-                  "is_license_reference": false,
-                  "is_license_tag": false,
-                  "is_license_intro": false,
-                  "rule_length": 199,
-                  "rule_relevance": 100,
-                  "matched_text": "Permission is hereby granted, free of charge, to any person obtaining a\ncopy of this software and associated documentation files (the\n\"Software\"), to deal in the Software without restriction, including\nwithout limitation the rights to use, copy, modify, merge, publish,\ndistribute, sublicense, and/or sell copies of the Software, and to\npermit persons to whom the Software is furnished to do so, subject to\nthe following conditions:\n\nThe above copyright notice and this permission notice shall be included\nin all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS\nOR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF\nMERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.\nIN NO EVENT SHALL THE ABOVE LISTED COPYRIGHT HOLDER(S) BE LIABLE FOR ANY\nCLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,\nTORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE\nSOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n\nExcept as contained in this notice, the name(s) of the above copyright\nholders shall not be used in advertising or otherwise to promote the\nsale, use or other dealings in this Software without prior written\nauthorization.",
-                  "licenses": [
-                    {
-                      "key": "x11-fsf",
-                      "name": "X11-Style (FSF)",
-                      "short_name": "X11-Style (FSF)",
-                      "category": "Permissive",
-                      "is_exception": false,
-                      "is_unknown": false,
-                      "owner": "Free Software Foundation (FSF)",
-                      "homepage_url": null,
-                      "text_url": "",
-                      "reference_url": "https://scancode-licensedb.aboutcode.org/x11-fsf",
-                      "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/x11-fsf.LICENSE",
-                      "spdx_license_key": "X11-distribute-modifications-variant",
-                      "spdx_url": "https://spdx.org/licenses/X11-distribute-modifications-variant"
-                    }
-                  ]
+                  "matched_text": "Permission is hereby granted, free of charge, to any person obtaining a\ncopy of this software and associated documentation files (the\n\"Software\"), to deal in the Software without restriction, including\nwithout limitation the rights to use, copy, modify, merge, publish,\ndistribute, sublicense, and/or sell copies of the Software, and to\npermit persons to whom the Software is furnished to do so, subject to\nthe following conditions:\n\nThe above copyright notice and this permission notice shall be included\nin all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS\nOR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF\nMERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.\nIN NO EVENT SHALL THE ABOVE LISTED COPYRIGHT HOLDER(S) BE LIABLE FOR ANY\nCLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,\nTORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE\nSOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n\nExcept as contained in this notice, the name(s) of the above copyright\nholders shall not be used in advertising or otherwise to promote the\nsale, use or other dealings in this Software without prior written\nauthorization."
                 }
               ]
             }
@@ -1010,32 +606,7 @@
                   "license_expression": "lgpl-2.1-plus",
                   "rule_identifier": "lgpl-2.1-plus_108.RULE",
                   "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_108.RULE",
-                  "referenced_filenames": [],
-                  "is_license_text": false,
-                  "is_license_notice": false,
-                  "is_license_reference": false,
-                  "is_license_tag": true,
-                  "is_license_intro": false,
-                  "rule_length": 4,
-                  "rule_relevance": 100,
-                  "matched_text": "License: LGPL-2.1+",
-                  "licenses": [
-                    {
-                      "key": "lgpl-2.1-plus",
-                      "name": "GNU Lesser General Public License 2.1 or later",
-                      "short_name": "LGPL 2.1 or later",
-                      "category": "Copyleft Limited",
-                      "is_exception": false,
-                      "is_unknown": false,
-                      "owner": "Free Software Foundation (FSF)",
-                      "homepage_url": "http://www.gnu.org/licenses/old-licenses/lgpl-2.1-standalone.html",
-                      "text_url": "http://www.gnu.org/licenses/old-licenses/lgpl-2.1-standalone.html",
-                      "reference_url": "https://scancode-licensedb.aboutcode.org/lgpl-2.1-plus",
-                      "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/lgpl-2.1-plus.LICENSE",
-                      "spdx_license_key": "LGPL-2.1-or-later",
-                      "spdx_url": "https://spdx.org/licenses/LGPL-2.1-or-later"
-                    }
-                  ]
+                  "matched_text": "License: LGPL-2.1+"
                 },
                 {
                   "score": 100.0,
@@ -1047,32 +618,7 @@
                   "license_expression": "lgpl-2.1-plus",
                   "rule_identifier": "lgpl-2.1-plus_108.RULE",
                   "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_108.RULE",
-                  "referenced_filenames": [],
-                  "is_license_text": false,
-                  "is_license_notice": false,
-                  "is_license_reference": false,
-                  "is_license_tag": true,
-                  "is_license_intro": false,
-                  "rule_length": 4,
-                  "rule_relevance": 100,
-                  "matched_text": "License: LGPL-2.1+",
-                  "licenses": [
-                    {
-                      "key": "lgpl-2.1-plus",
-                      "name": "GNU Lesser General Public License 2.1 or later",
-                      "short_name": "LGPL 2.1 or later",
-                      "category": "Copyleft Limited",
-                      "is_exception": false,
-                      "is_unknown": false,
-                      "owner": "Free Software Foundation (FSF)",
-                      "homepage_url": "http://www.gnu.org/licenses/old-licenses/lgpl-2.1-standalone.html",
-                      "text_url": "http://www.gnu.org/licenses/old-licenses/lgpl-2.1-standalone.html",
-                      "reference_url": "https://scancode-licensedb.aboutcode.org/lgpl-2.1-plus",
-                      "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/lgpl-2.1-plus.LICENSE",
-                      "spdx_license_key": "LGPL-2.1-or-later",
-                      "spdx_url": "https://spdx.org/licenses/LGPL-2.1-or-later"
-                    }
-                  ]
+                  "matched_text": "License: LGPL-2.1+"
                 },
                 {
                   "score": 100.0,
@@ -1084,32 +630,7 @@
                   "license_expression": "lgpl-2.1-plus",
                   "rule_identifier": "lgpl-2.1-plus_108.RULE",
                   "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_108.RULE",
-                  "referenced_filenames": [],
-                  "is_license_text": false,
-                  "is_license_notice": false,
-                  "is_license_reference": false,
-                  "is_license_tag": true,
-                  "is_license_intro": false,
-                  "rule_length": 4,
-                  "rule_relevance": 100,
-                  "matched_text": "License: LGPL-2.1+",
-                  "licenses": [
-                    {
-                      "key": "lgpl-2.1-plus",
-                      "name": "GNU Lesser General Public License 2.1 or later",
-                      "short_name": "LGPL 2.1 or later",
-                      "category": "Copyleft Limited",
-                      "is_exception": false,
-                      "is_unknown": false,
-                      "owner": "Free Software Foundation (FSF)",
-                      "homepage_url": "http://www.gnu.org/licenses/old-licenses/lgpl-2.1-standalone.html",
-                      "text_url": "http://www.gnu.org/licenses/old-licenses/lgpl-2.1-standalone.html",
-                      "reference_url": "https://scancode-licensedb.aboutcode.org/lgpl-2.1-plus",
-                      "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/lgpl-2.1-plus.LICENSE",
-                      "spdx_license_key": "LGPL-2.1-or-later",
-                      "spdx_url": "https://spdx.org/licenses/LGPL-2.1-or-later"
-                    }
-                  ]
+                  "matched_text": "License: LGPL-2.1+"
                 },
                 {
                   "score": 100.0,
@@ -1121,32 +642,7 @@
                   "license_expression": "lgpl-2.1-plus",
                   "rule_identifier": "lgpl-2.1-plus_93.RULE",
                   "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_93.RULE",
-                  "referenced_filenames": [],
-                  "is_license_text": false,
-                  "is_license_notice": true,
-                  "is_license_reference": false,
-                  "is_license_tag": false,
-                  "is_license_intro": false,
-                  "rule_length": 117,
-                  "rule_relevance": 100,
-                  "matched_text": " This program is free software; you can redistribute it and/or modify it\n under the terms of the GNU Lesser General Public License as published\n by the Free Software Foundation; either version 2.1 of the License, or\n (at your option) any later version.\n .\n This program is distributed in the hope that it will be useful,\n but WITHOUT ANY WARRANTY; without even the implied warranty of\n MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU Lesser\n General Public License for more details.\n .\n You should have received a copy of the GNU Lesser General Public License\n along with this program; if not, write to the Free Software Foundation,\n Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA",
-                  "licenses": [
-                    {
-                      "key": "lgpl-2.1-plus",
-                      "name": "GNU Lesser General Public License 2.1 or later",
-                      "short_name": "LGPL 2.1 or later",
-                      "category": "Copyleft Limited",
-                      "is_exception": false,
-                      "is_unknown": false,
-                      "owner": "Free Software Foundation (FSF)",
-                      "homepage_url": "http://www.gnu.org/licenses/old-licenses/lgpl-2.1-standalone.html",
-                      "text_url": "http://www.gnu.org/licenses/old-licenses/lgpl-2.1-standalone.html",
-                      "reference_url": "https://scancode-licensedb.aboutcode.org/lgpl-2.1-plus",
-                      "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/lgpl-2.1-plus.LICENSE",
-                      "spdx_license_key": "LGPL-2.1-or-later",
-                      "spdx_url": "https://spdx.org/licenses/LGPL-2.1-or-later"
-                    }
-                  ]
+                  "matched_text": " This program is free software; you can redistribute it and/or modify it\n under the terms of the GNU Lesser General Public License as published\n by the Free Software Foundation; either version 2.1 of the License, or\n (at your option) any later version.\n .\n This program is distributed in the hope that it will be useful,\n but WITHOUT ANY WARRANTY; without even the implied warranty of\n MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU Lesser\n General Public License for more details.\n .\n You should have received a copy of the GNU Lesser General Public License\n along with this program; if not, write to the Free Software Foundation,\n Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA"
                 },
                 {
                   "score": 100.0,
@@ -1158,34 +654,7 @@
                   "license_expression": "lgpl-2.1",
                   "rule_identifier": "lgpl-2.1_314.RULE",
                   "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1_314.RULE",
-                  "referenced_filenames": [
-                    "/usr/share/common-licenses/LGPL-2.1"
-                  ],
-                  "is_license_text": false,
-                  "is_license_notice": true,
-                  "is_license_reference": false,
-                  "is_license_tag": false,
-                  "is_license_intro": false,
-                  "rule_length": 64,
-                  "rule_relevance": 100,
-                  "matched_text": " You should have received a copy of the GNU Lesser General Public License\n along with this program; if not, write to the Free Software Foundation,\n Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA\n .\n On Debian systems, the full text of the GNU Lesser General Public\n License version 2.1 can be found in the file\n `/usr/share/common-licenses/LGPL-2.1'.",
-                  "licenses": [
-                    {
-                      "key": "lgpl-2.1",
-                      "name": "GNU Lesser General Public License 2.1",
-                      "short_name": "LGPL 2.1",
-                      "category": "Copyleft Limited",
-                      "is_exception": false,
-                      "is_unknown": false,
-                      "owner": "Free Software Foundation (FSF)",
-                      "homepage_url": "http://www.gnu.org/licenses/lgpl-2.1.html",
-                      "text_url": "http://www.gnu.org/licenses/lgpl-2.1.txt",
-                      "reference_url": "https://scancode-licensedb.aboutcode.org/lgpl-2.1",
-                      "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/lgpl-2.1.LICENSE",
-                      "spdx_license_key": "LGPL-2.1-only",
-                      "spdx_url": "https://spdx.org/licenses/LGPL-2.1-only"
-                    }
-                  ]
+                  "matched_text": " You should have received a copy of the GNU Lesser General Public License\n along with this program; if not, write to the Free Software Foundation,\n Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA\n .\n On Debian systems, the full text of the GNU Lesser General Public\n License version 2.1 can be found in the file\n `/usr/share/common-licenses/LGPL-2.1'."
                 }
               ]
             }
@@ -1209,32 +678,7 @@
                   "license_expression": "lgpl-2.1-plus",
                   "rule_identifier": "lgpl-2.1-plus_108.RULE",
                   "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_108.RULE",
-                  "referenced_filenames": [],
-                  "is_license_text": false,
-                  "is_license_notice": false,
-                  "is_license_reference": false,
-                  "is_license_tag": true,
-                  "is_license_intro": false,
-                  "rule_length": 4,
-                  "rule_relevance": 100,
-                  "matched_text": "License: lgpl-2.1+",
-                  "licenses": [
-                    {
-                      "key": "lgpl-2.1-plus",
-                      "name": "GNU Lesser General Public License 2.1 or later",
-                      "short_name": "LGPL 2.1 or later",
-                      "category": "Copyleft Limited",
-                      "is_exception": false,
-                      "is_unknown": false,
-                      "owner": "Free Software Foundation (FSF)",
-                      "homepage_url": "http://www.gnu.org/licenses/old-licenses/lgpl-2.1-standalone.html",
-                      "text_url": "http://www.gnu.org/licenses/old-licenses/lgpl-2.1-standalone.html",
-                      "reference_url": "https://scancode-licensedb.aboutcode.org/lgpl-2.1-plus",
-                      "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/lgpl-2.1-plus.LICENSE",
-                      "spdx_license_key": "LGPL-2.1-or-later",
-                      "spdx_url": "https://spdx.org/licenses/LGPL-2.1-or-later"
-                    }
-                  ]
+                  "matched_text": "License: lgpl-2.1+"
                 },
                 {
                   "score": 100.0,
@@ -1246,32 +690,7 @@
                   "license_expression": "lgpl-2.1-plus",
                   "rule_identifier": "lgpl-2.1-plus_93.RULE",
                   "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_93.RULE",
-                  "referenced_filenames": [],
-                  "is_license_text": false,
-                  "is_license_notice": true,
-                  "is_license_reference": false,
-                  "is_license_tag": false,
-                  "is_license_intro": false,
-                  "rule_length": 117,
-                  "rule_relevance": 100,
-                  "matched_text": "This program is free software; you can redistribute it and/or modify it\nunder the terms of the GNU Lesser General Public License as published\nby the Free Software Foundation; either version 2.1 of the License, or\n(at your option) any later version.\n\nThis program is distributed in the hope that it will be useful,\nbut WITHOUT ANY WARRANTY; without even the implied warranty of\nMERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU Lesser\nGeneral Public License for more details.\n\nYou should have received a copy of the GNU Lesser General Public License\nalong with this program; if not, write to the Free Software Foundation,\nInc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA",
-                  "licenses": [
-                    {
-                      "key": "lgpl-2.1-plus",
-                      "name": "GNU Lesser General Public License 2.1 or later",
-                      "short_name": "LGPL 2.1 or later",
-                      "category": "Copyleft Limited",
-                      "is_exception": false,
-                      "is_unknown": false,
-                      "owner": "Free Software Foundation (FSF)",
-                      "homepage_url": "http://www.gnu.org/licenses/old-licenses/lgpl-2.1-standalone.html",
-                      "text_url": "http://www.gnu.org/licenses/old-licenses/lgpl-2.1-standalone.html",
-                      "reference_url": "https://scancode-licensedb.aboutcode.org/lgpl-2.1-plus",
-                      "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/lgpl-2.1-plus.LICENSE",
-                      "spdx_license_key": "LGPL-2.1-or-later",
-                      "spdx_url": "https://spdx.org/licenses/LGPL-2.1-or-later"
-                    }
-                  ]
+                  "matched_text": "This program is free software; you can redistribute it and/or modify it\nunder the terms of the GNU Lesser General Public License as published\nby the Free Software Foundation; either version 2.1 of the License, or\n(at your option) any later version.\n\nThis program is distributed in the hope that it will be useful,\nbut WITHOUT ANY WARRANTY; without even the implied warranty of\nMERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU Lesser\nGeneral Public License for more details.\n\nYou should have received a copy of the GNU Lesser General Public License\nalong with this program; if not, write to the Free Software Foundation,\nInc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA"
                 },
                 {
                   "score": 100.0,
@@ -1283,34 +702,7 @@
                   "license_expression": "lgpl-2.1",
                   "rule_identifier": "lgpl-2.1_314.RULE",
                   "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1_314.RULE",
-                  "referenced_filenames": [
-                    "/usr/share/common-licenses/LGPL-2.1"
-                  ],
-                  "is_license_text": false,
-                  "is_license_notice": true,
-                  "is_license_reference": false,
-                  "is_license_tag": false,
-                  "is_license_intro": false,
-                  "rule_length": 64,
-                  "rule_relevance": 100,
-                  "matched_text": "You should have received a copy of the GNU Lesser General Public License\nalong with this program; if not, write to the Free Software Foundation,\nInc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA\n\nOn Debian systems, the full text of the GNU Lesser General Public\nLicense version 2.1 can be found in the file\n`/usr/share/common-licenses/LGPL-2.1'.",
-                  "licenses": [
-                    {
-                      "key": "lgpl-2.1",
-                      "name": "GNU Lesser General Public License 2.1",
-                      "short_name": "LGPL 2.1",
-                      "category": "Copyleft Limited",
-                      "is_exception": false,
-                      "is_unknown": false,
-                      "owner": "Free Software Foundation (FSF)",
-                      "homepage_url": "http://www.gnu.org/licenses/lgpl-2.1.html",
-                      "text_url": "http://www.gnu.org/licenses/lgpl-2.1.txt",
-                      "reference_url": "https://scancode-licensedb.aboutcode.org/lgpl-2.1",
-                      "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/lgpl-2.1.LICENSE",
-                      "spdx_license_key": "LGPL-2.1-only",
-                      "spdx_url": "https://spdx.org/licenses/LGPL-2.1-only"
-                    }
-                  ]
+                  "matched_text": "You should have received a copy of the GNU Lesser General Public License\nalong with this program; if not, write to the Free Software Foundation,\nInc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA\n\nOn Debian systems, the full text of the GNU Lesser General Public\nLicense version 2.1 can be found in the file\n`/usr/share/common-licenses/LGPL-2.1'."
                 }
               ]
             }

@@ -24,6 +24,13 @@ git describe --tags > $release_dir/SCANCODE_VERSION
 thirdparty_dir=$release_dir/thirdparty
 mkdir -p $thirdparty_dir
 
+# build an sdist
+./configure --dev
+venv/bin/python setup.py --quiet sdist
+mv dist/*.tar.gz $release_dir
+
+./configure --rel
+
 venv/bin/python etc/scripts/fetch_thirdparty.py \
   --requirements requirements.txt \
   --requirements requirements-native.txt \
@@ -34,12 +41,12 @@ venv/bin/python etc/scripts/fetch_thirdparty.py \
   --wheel-only extractcode-libarchive \
   --wheel-only typecode-libmagic \
   --dest $thirdparty_dir \
-  --sdists --use-cached-index
+  --sdists \
+  --use-cached-index
 
 mkdir -p $release_dir/etc
 cp -r etc/thirdparty $release_dir/etc
 
-mv dist/*.tar.gz $release_dir
 
 cp -r \
   scancode.bat scancode extractcode extractcode.bat configure configure.bat \

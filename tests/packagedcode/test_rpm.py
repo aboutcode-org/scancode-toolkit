@@ -16,100 +16,22 @@ from commoncode.testcase import FileBasedTesting
 
 from packagedcode import rpm
 from scancode_config import REGEN_TEST_FIXTURES
+from packages_test_utils import check_result_equals_expected_json
+
 
 class TestRpmBasics(FileBasedTesting):
     test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
 
     def test_parse_to_package(self):
         test_file = self.get_test_loc('rpm/header/libproxy-bin-0.3.0-4.el6_3.x86_64.rpm')
-        for package_data in rpm.RpmArchiveHandler.parse(test_file):
-            break
+        package_datas = rpm.RpmArchiveHandler.parse(test_file)
+        result = [pd.to_dict() for pd in package_datas]
 
-        expected = [
-            ('type', 'rpm'),
-            ('namespace', None),
-            ('name', 'libproxy-bin'),
-            ('version', '0.3.0-4.el6_3'),
-            ('qualifiers', {}),
-            ('subpath', None),
-            ('primary_language', None),
-            ('description',
-                'Binary to test libproxy\n'
-                'The libproxy-bin package contains the proxy binary for libproxy'),
-            ('release_date', None),
-            ('parties', [
-                dict([
-                    ('type', None),
-                    ('role', 'vendor'),
-                    ('name', 'CentOS'),
-                    ('email', None),
-                    ('url', None)])
-            ]),
-            ('keywords', []),
-            ('homepage_url', 'http://code.google.com/p/libproxy/'),
-            ('download_url', None),
-            ('size', None),
-            ('sha1', None),
-            ('md5', None),
-            ('sha256', None),
-            ('sha512', None),
-            ('bug_tracking_url', None),
-            ('code_view_url', None),
-            ('vcs_url', None),
-            ('copyright', None),
-            ('declared_license_expression', 'lgpl-2.0-plus'),
-            ('declared_license_expression_spdx', 'LGPL-2.0-or-later'),
-            ('license_detections',
-               [{'detection_log': ['not-combined'],
-                 'license_expression': 'lgpl-2.0-plus',
-                 'matches': [{'end_line': 1,
-                              'is_license_intro': False,
-                              'is_license_notice': False,
-                              'is_license_reference': True,
-                              'is_license_tag': False,
-                              'is_license_text': False,
-                              'license_expression': 'lgpl-2.0-plus',
-                              'rule_identifier': 'lgpl-2.0-plus_68.RULE',
-                              'rule_url': 'https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0-plus_68.RULE',
-                              'licenses': [{'category': 'Copyleft Limited',
-                                            'homepage_url': 'http://www.gnu.org/licenses/old-licenses/lgpl-2.0.html',
-                                            'is_exception': False,
-                                            'is_unknown': False,
-                                            'key': 'lgpl-2.0-plus',
-                                            'name': 'GNU Library General Public License 2.0 '
-                                                    'or later',
-                                            'owner': 'Free Software Foundation (FSF)',
-                                            'reference_url': 'https://scancode-licensedb.aboutcode.org/lgpl-2.0-plus',
-                                            'scancode_url': 'https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/lgpl-2.0-plus.LICENSE',
-                                            'short_name': 'LGPL 2.0 or later',
-                                            'spdx_license_key': 'LGPL-2.0-or-later',
-                                            'spdx_url': 'https://spdx.org/licenses/LGPL-2.0-or-later',
-                                            'text_url': 'http://www.gnu.org/licenses/old-licenses/lgpl-2.0-standalone.html'}],
-                              'match_coverage': 100.0,
-                              'matched_length': 1,
-                              'matched_text': 'LGPLv2+',
-                              'matcher': '1-hash',
-                              'referenced_filenames': [],
-                              'rule_length': 1,
-                              'rule_relevance': 100,
-                              'score': 100.0,
-                              'start_line': 1}]}]),
-            ('other_license_expression', None),
-            ('other_license_expression_spdx', None),
-            ('other_license_detections', []),
-            ('extracted_license_statement', 'LGPLv2+'),
-            ('notice_text', None),
-            ('source_packages', [ 'pkg:rpm/libproxy@0.3.0-4.el6_3?arch=src']),
-            ('file_references', []),
-            ('extra_data', {}),
-            ('dependencies', []),
-            ('repository_homepage_url', None),
-            ('repository_download_url', None),
-            ('api_data_url', None),
-            ('datasource_id', 'rpm_archive'),
-            ('purl', 'pkg:rpm/libproxy-bin@0.3.0-4.el6_3'),
-        ]
-        assert list(package_data.to_dict().items()) == expected
+        expected_loc = self.get_test_loc(
+            'rpm/header/libproxy-bin-0.3.0-4.el6_3.x86_64.rpm-package-expected.json',
+            must_exist=False,
+        )
+        check_result_equals_expected_json(result, expected_loc, regen=REGEN_TEST_FIXTURES)
 
     def test_pyrpm_basic(self):
         test_file = self.get_test_loc('rpm/header/python-glc-0.7.1-1.src.rpm')

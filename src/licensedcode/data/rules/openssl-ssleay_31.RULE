@@ -22,7 +22,7 @@ ignorable_emails:
     - tjh@cryptsoft.com
 ---
 
-  LICENSE ISSUES
+LICENSE ISSUES
   ==============
 
   The OpenSSL toolkit stays under a dual license, i.e. both the conditions of
