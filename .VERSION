@@ -1,3 +1,5 @@
 refs=$Format:%D$
 commit=$Format:%H$
-abbrev_commit=$Format:%H$
+abbrev_commit=$Format:%h$
+committer_date=$Format:%cs$
+git_describe=$Format:%(describe)$

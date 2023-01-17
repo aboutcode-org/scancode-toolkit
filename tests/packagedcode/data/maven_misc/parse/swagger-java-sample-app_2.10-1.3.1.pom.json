@@ -1,0 +1,74 @@
+{
+  "model_version": "4.0.0",
+  "group_id": "com.wordnik",
+  "artifact_id": "swagger-java-sample-app_2.10",
+  "version": "1.3.1",
+  "classifier": null,
+  "packaging": "war",
+  "parent": {
+    "group_id": "com.wordnik",
+    "artifact_id": "swagger-project_2.10",
+    "version": "1.3.1",
+    "classifier": null,
+    "type": "pom"
+  },
+  "name": "swagger-java-jaxrs-app",
+  "description": null,
+  "inception_year": null,
+  "url": null,
+  "organization_name": null,
+  "organization_url": null,
+  "licenses": [],
+  "developers": [],
+  "contributors": [],
+  "modules": [],
+  "mailing_lists": [],
+  "scm": {},
+  "issue_management": {},
+  "ci_management": {},
+  "distribution_management": {},
+  "repositories": [],
+  "plugin_repositories": [],
+  "dependencies": {
+    "compile": [
+      {
+        "group_id": "com.wordnik",
+        "artifact_id": "swagger-jaxrs_2.10",
+        "version": "latest.release",
+        "required": true
+      },
+      {
+        "group_id": "ch.qos.logback",
+        "artifact_id": "logback-classic",
+        "version": "${logback-version}",
+        "required": true
+      },
+      {
+        "group_id": "ch.qos.logback",
+        "artifact_id": "logback-core",
+        "version": "${logback-version}",
+        "required": true
+      },
+      {
+        "group_id": "javax.servlet",
+        "artifact_id": "servlet-api",
+        "version": "latest.release",
+        "required": true
+      }
+    ],
+    "test": [
+      {
+        "group_id": "org.scalatest",
+        "artifact_id": "scalatest_2.10",
+        "version": "latest.release",
+        "required": true
+      },
+      {
+        "group_id": "junit",
+        "artifact_id": "junit",
+        "version": "latest.release",
+        "required": true
+      }
+    ]
+  }
+}

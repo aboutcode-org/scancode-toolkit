@@ -895,7 +895,7 @@ def get_dependencies(pom):
             if dversion == 'latest.release':
                 dversion = None
 
-            is_resolved = dversion and not any(c in dversion for c in '$[,]')
+            is_resolved = bool(dversion and not any(c in dversion for c in '$[,]'))
 
             dqualifiers = {}
             # FIXME: this is missing from the original Pom parser

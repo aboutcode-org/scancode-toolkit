@@ -6,7 +6,6 @@
   "owner": "BitTorrent, Inc.",
   "homepage_url": "https://web.archive.org/web/20080213154112/http://www.bittorrent.com/bittorrent-open-source-license",
   "notes": "The link http://www.bittorrent.com/license/ is dead, so there is no live\ntext containing the license terms except at\nhttp://web.archive.org/web/20090609222926/http://www.bittorrent.com/legal/bittorrent-open-source-license\n",
-  "is_builtin": true,
   "spdx_license_key": "BitTorrent-1.1",
   "text_urls": [
     "http://www.bittorrent.com/legal/bittorrent-open-source-license"

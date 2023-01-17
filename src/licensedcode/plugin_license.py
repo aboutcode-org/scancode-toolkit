@@ -12,11 +12,9 @@ import os
 from functools import partial
 
 import attr
-import click
 from commoncode.cliutils import PluggableCommandLineOption
 from commoncode.cliutils import SCAN_GROUP
 from commoncode.cliutils import SCAN_OPTIONS_GROUP
-from commoncode.cliutils import MISC_GROUP
 from plugincode.scan import ScanPlugin
 from plugincode.scan import scan_impl
 
@@ -33,7 +31,6 @@ from licensedcode.detection import LicenseDetection
 from licensedcode.detection import LicenseDetectionFromResult
 from licensedcode.detection import LicenseMatchFromResult
 from licensedcode.detection import UniqueDetection
-from licensedcode.license_db import dump_license_data
 from packagedcode.utils import combine_expressions
 from scancode.api import SCANCODE_LICENSEDB_URL
 
@@ -121,19 +118,7 @@ class LicenseScanner(ScanPlugin):
             required_options=['license'],
             help='[EXPERIMENTAL] Detect unknown licenses. ',
             help_group=SCAN_OPTIONS_GROUP,
-        ),
-
-        # TODO: consider creating a separate comamnd line option exe instead
-        PluggableCommandLineOption(
-            ('--dump-license-data',),
-            type=click.Path(exists=False, readable=True, file_okay=False, resolve_path=True, path_type=str),
-            metavar='DIR',
-            callback=dump_license_data,
-            help='Dump the license data in this directory in the LicenseDB format and exit. '
-            'Creates the directory if it does not exist. ',
-            help_group=MISC_GROUP,
-            is_eager=True,
-        ),
+        )
     ]
 
     def is_enabled(self, license, **kwargs):  # NOQA
@@ -176,20 +161,17 @@ class LicenseScanner(ScanPlugin):
         cche = cache.get_cache()
 
         cle = codebase.get_or_create_current_header()
-        has_additional_licenses = False
 
         if cche.additional_license_directory:
             cle.extra_data['additional_license_directory'] = cche.additional_license_directory
-            has_additional_licenses = True
 
         if cche.additional_license_plugins:
             cle.extra_data['additional_license_plugins'] = cche.additional_license_plugins
-            has_additional_licenses = True
 
-        if TRACE and has_additional_licenses:
+        if TRACE and cche.has_additional_licenses:
             logger_debug(
                 f'add_referenced_filenames_license_matches: additional_licenses',
-                f'has_additional_licenses: {has_additional_licenses}\n',
+                f'has_additional_licenses: {cche.has_additional_licenses}\n',
                 f'additional_license_directory: {cche.additional_license_directory}\n',
                 f'additional_license_plugins : {cche.additional_license_plugins}'
             )

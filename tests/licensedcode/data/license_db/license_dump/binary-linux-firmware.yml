@@ -4,7 +4,6 @@ name: Binary-Only Linux Firmware License
 category: Proprietary Free
 owner: Unspecified
 homepage_url: https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/tree/
-is_builtin: yes
 spdx_license_key: LicenseRef-scancode-binary-linux-firmware
 text: |
   Redistribution. Redistribution and use in binary form, without

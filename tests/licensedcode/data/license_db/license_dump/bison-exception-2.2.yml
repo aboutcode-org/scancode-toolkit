@@ -3,7 +3,6 @@ short_name: Bison 2.2 exception to GPL 2.0 or later
 name: Bison 2.2 exception to GPL 2.0 or later
 category: Copyleft Limited
 owner: Free Software Foundation (FSF)
-is_builtin: yes
 is_exception: yes
 spdx_license_key: Bison-exception-2.2
 faq_url: http://www.gnu.org/software/bison/manual/bison.html#Conditions
