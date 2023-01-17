@@ -21,9 +21,8 @@ with your name and email::
 
     Signed-off-by: Jane Doe <developer@example.com>
 
-Please try to write a good commit message, see `good commit message wiki <https://aboutcode.readthedocs.io/en/latest/contributing/writing_good_commit_messages.html>`_ for
-details. In particular use, the imperative for your commit subject: think that
-you are giving an order to the codebase to update itself.
+Please try to write a good commit message, see `good commit message wiki
+<https://aboutcode.readthedocs.io/en/latest/contributing/writing_good_commit_messages.html>`_ for details. In particular use the imperative for your commit subject: think that you are giving an order to the codebase to update itself.
 
 
 Feature requests and feedback
@@ -123,6 +122,8 @@ To set up ScanCode for local development:
 3. Create a branch for local development::
 
     git checkout -b name-of-your-bugfix-or-feature
+    
+   Link to a related `documentation <https://scancode-toolkit.readthedocs.io/en/stable/contribute/contrib_dev.html>`_, which contains a more detailed guide for contributing code or documentation.
 
 4. To configure your local environment for development, locate to the main
    directory of the local repository, and run the configure script.
@@ -145,7 +146,7 @@ To set up ScanCode for local development:
 
         or
 
-        .venv/bin/activate
+        . venv/bin/activate
 
    On Windows use::
 
@@ -158,6 +159,16 @@ To set up ScanCode for local development:
 
 5. Now you can make your code changes in your local clone.
    Please create new unit tests for your code. We love tests!
+
+   An update to the ``CHANGELOG`` is required if any important changes are made that needs to be communicated such as:
+
+   * Changes in the API.
+
+   * Addition or deletion of CLI options.
+
+   * Addition of any new feature or any other miscellaneous changes to the program.
+   
+   If there is a code change, a significant document, or any other changes, you must update the ``AUTHORS`` to include your own name.
 
 6. When you are done with your changes, run all the tests.
    Use this command::
@@ -227,20 +238,3 @@ To run tests in parallel on eight processors::
 To run tests verbosely, displaying all print statements to terminal::
 
     py.test  -vvs
-
-Things to Keep in Mind When Contributing
-----------------------------------------
-
-#. An update to the ``CHANGELOG`` is required if any important changes are made that needs to be communicated such as:
-
-   * Changes in the API.
-   
-   * Addition or deletion of CLI options.
-   
-   * Addition of any new feature to the program.
-   
-   * Any other miscellaneous changes to the program.
-   
-#. If there is a code change, a significant document, or any other changes, you must update the ``AUTHORS`` to include your own name.
-
-#. A link to the related documentation, which contains a more detailed guide for contributing code or documentation.
