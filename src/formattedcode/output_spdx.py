@@ -12,7 +12,8 @@ import uuid
 from io import BytesIO
 from io import StringIO
 
-from spdx.checksum import Checksum, ChecksumAlgorithm
+from spdx.checksum import Checksum
+from spdx.checksum import ChecksumAlgorithm
 from spdx.creationinfo import Tool
 from spdx.document import ExtractedLicense
 from spdx.document import Document
@@ -359,10 +360,10 @@ def write_spdx(
             file_entry.copyright = SPDXNone()
 
         doc.add_file(file_entry)
-        relationship = Relationship(package.spdx_id + " CONTAINS " + file_entry.spdx_id)
+        relationship = Relationship(f'{package.spdx_id} CONTAINS {file_entry.spdx_id}')
         doc.add_relationship(relationship)
 
-    if len(doc.files) == 0:
+    if not doc.files:
         if as_tagvalue:
             msg = "# No results for package '{}'.\n".format(package.name)
         else:
