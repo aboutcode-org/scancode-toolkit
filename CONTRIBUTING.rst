@@ -3,7 +3,7 @@ Contributing
 ============
 
 Contributions are welcome and appreciated!
-Every little bit helps, and credit will always be given.
+Every little bit helps, and a credit will always be given.
 
 .. _issues : https://github.com/nexB/scancode-toolkit/issues
 __ issues_
@@ -14,7 +14,7 @@ check `easy issues <https://github.com/nexB/scancode-toolkit/labels/easy>`_
 When contributing to ScanCode (such as code, bugs, documentation, etc.) you
 agree to the Developer `Certificate of Origin <http://developercertificate.org/>`_
 and the ScanCode license (see the `NOTICE <https://github.com/nexB/scancode-toolkit/blob/develop/NOTICE>`_ file).
-The same approach is used by the Linux Kernel developers and several other projects.
+The same approach is used by Linux Kernel developers and several other projects.
 
 For commits, it is best to simply add a line like this to your commit message,
 with your name and email::
@@ -22,9 +22,7 @@ with your name and email::
     Signed-off-by: Jane Doe <developer@example.com>
 
 Please try to write a good commit message, see `good commit message wiki
-<https://aboutcode.readthedocs.io/en/latest/contributing/writing_good_commit_messages.html>` for
-details. In particular use the imperative for your commit subject: think that
-you are giving an order to the codebase to update itself.
+<https://aboutcode.readthedocs.io/en/latest/contributing/writing_good_commit_messages.html>`_ for details. In particular use the imperative for your commit subject: think that you are giving an order to the codebase to update itself.
 
 
 Feature requests and feedback
@@ -35,7 +33,7 @@ To send feedback or ask a question, `file an issue <issues_>`_
 If you are proposing a feature:
 
 * Explain how it would work.
-* Keep the scope simple possible to make it easier to implement.
+* Keep the scope as simple as possible to make it easier to implement.
 * Remember that your contributions are welcomed to implement this feature!
 
 
@@ -54,7 +52,7 @@ For other questions, discussions, and chats, we have:
   This is a busy place with a lot of CI and commit notifications that makes
   actual chat sometimes difficult!
 
-- a mailing list at `sourceforge <https://lists.sourceforge.net/lists/listinfo/aboutcode-discuss>`_
+- a mailing list at `SourceForge <https://lists.sourceforge.net/lists/listinfo/aboutcode-discuss>`_
 
 - a Gitter channel to discuss Documentation at https://gitter.im/aboutcode-org/gsod-season-of-docs
 
@@ -63,14 +61,14 @@ Bug reports
 
 When `reporting a bug`__ please include:
 
-* Your operating system name, version and architecture (32 or 64 bits).
+* Your operating system name, version, and architecture (32 or 64 bits).
 * Your Python version.
 * Your ScanCode version.
 * Any additional details about your local setup that might be helpful to
   diagnose this bug.
 * Detailed steps to reproduce the bug, such as the commands you ran and a link
   to the code you are scanning.
-* The errors messages or failure trace if any.
+* The error messages or failure trace if any.
 * If helpful, you can add a screenshot as an issue attachment when relevant or
   some extra file as a link to a `Gist <https://gist.github.com>`_.
 
@@ -83,11 +81,11 @@ any other general upgrades, etc. Even a minor typo fix is welcomed.
 
 If something is missing in the documentation or if you found some part confusing,
 please file an issue with your suggestions for improvement. Use the “Documentation Improvement”
-template. Your help and contributions makes ScanCode docs better, we love hearing from you!
+template. Your help and contribution make ScanCode docs better, we love hearing from you!
 
 The ScanCode documentation is hosted at `scancode-toolkit.readthedocs.io <https://scancode-toolkit.readthedocs.io/en/latest/>`_.
 
-If you want to contribute to Scancode Dcoumentation, you'll find `this guide here <https://scancode-toolkit.readthedocs.io/en/latest/contribute/contrib_doc.html>`_ helpful.
+If you want to contribute to Scancode Documentation, you'll find `this guide here <https://scancode-toolkit.readthedocs.io/en/latest/contribute/contrib_doc.html>`_ helpful.
 
 Development
 ===========
@@ -124,11 +122,13 @@ To set up ScanCode for local development:
 3. Create a branch for local development::
 
     git checkout -b name-of-your-bugfix-or-feature
+    
+4. Check out the Contributing to Code Development `documentation <https://scancode-toolkit.readthedocs.io/en/stable/contribute/contrib_dev.html>`_, as it contains more in-depth guide for contributing code and documentation.
 
-4. To configure your local environment for development, locate to the main
-   directory of the local repository, run the configure script.
+5. To configure your local environment for development, locate to the main
+   directory of the local repository, and run the configure script.
    The configure script creates an isolated Python `virtual environment` in
-   your checkout directory, the Python `pip` tool, and installs the thirdparty
+   your checkout directory, the Python `pip` tool, and installs the third-party
    libraries (from the `thirdparty/ directory`), setup the paths, etc.
    See https://virtualenv.pypa.io/en/latest/ for more details. 
 
@@ -157,10 +157,20 @@ To set up ScanCode for local development:
    When you pull new code from git, rerun ./configure
 
 
-5. Now you can make your code changes in your local clone.
+6. Now you can make your code changes in your local clone.
    Please create new unit tests for your code. We love tests!
 
-6. When you are done with your changes, run all the tests.
+7. An update to the ``CHANGELOG`` is required if any important changes are made that needs to be communicated such as:
+
+   * Changes in the API.
+
+   * Addition or deletion of CLI options.
+
+   * Addition of any new feature or any other miscellaneous changes to the program.
+   
+8. If there is a code change, a significant document, or any other changes, you must update the ``AUTHORS`` to include your own name.
+
+9. When you are done with your changes, run all the tests.
    Use this command::
 
         py.test
@@ -169,7 +179,7 @@ To set up ScanCode for local development:
 
        py.test -n6
 
-   If you are running this on a RedHat based OS you may come across this
+   If you are running this on a RedHat-based OS you may come across this
    failure::
 
        OSError: libbz2.so.1.0: cannot open shared object file: No such file or directory
@@ -182,18 +192,18 @@ To set up ScanCode for local development:
 
    See `this issue <https://github.com/nexB/scancode-toolkit/issues/443>`_ for more information.
 
-7. Check the status of your local repository before commit, regarding files changed::
+10. Check the status of your local repository before committing, regarding files changed::
 
-    git status
+     git status
 
 
-8. Commit your changes and push your branch to your GitHub fork::
+11. Commit your changes and push your branch to your GitHub fork::
 
-    git add <file-changed-1> <file-changed-2> <file-changed-3>
-    git commit -m "Your detailed description of your changes." --signoff
-    git push <repository-alias-name> name-of-your-bugfix-or-feature
+     git add <file-changed-1> <file-changed-2> <file-changed-3>
+     git commit -m "Your detailed description of your changes." --signoff
+     git push <repository-alias-name> name-of-your-bugfix-or-feature
 
-9. Submit a pull request through the GitHub website for this branch.
+12. Submit a pull request through the GitHub website for this branch.
 
 
 Pull Request Guidelines
@@ -205,7 +215,7 @@ create a pull request. You can add new commits to your branch as needed.
 For merging, your request would need to:
 
 1. Include unit tests that are passing (run ``py.test``).
-2. Update documentation as needed for new API, functionality etc.
+2. Update documentation as needed for new API, functionality, etc.
 3. Add a note to ``CHANGELOG.rst`` about the changes.
 4. Add your name to ``AUTHORS.rst``.
 
@@ -228,3 +238,4 @@ To run tests in parallel on eight processors::
 To run tests verbosely, displaying all print statements to terminal::
 
     py.test  -vvs
+
