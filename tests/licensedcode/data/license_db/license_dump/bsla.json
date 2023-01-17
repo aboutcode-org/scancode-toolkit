@@ -7,5 +7,6 @@
   "spdx_license_key": "LicenseRef-scancode-bsla",
   "ignorable_authors": [
     "the University of California, Berkeley"
-  ]
+  ],
+  "text": "Redistribution and use in source and binary forms are permitted\nprovided that the above copyright notice and this paragraph are\nduplicated in all such forms and that any documentation,\nadvertising materials, and other materials related to such\ndistribution and use acknowledge that the software was developed\nby the University of California, Berkeley. The name of the\nUniversity may not be used to endorse or promote products derived\nfrom this software without specific prior written permission.\nTHIS SOFTWARE IS PROVIDED ``AS IS'' AND WITHOUT ANY EXPRESS OR\nIMPLIED WARRANTIES, INCLUDING, WITHOUT LIMITATION, THE IMPLIED\nWARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE."
 }

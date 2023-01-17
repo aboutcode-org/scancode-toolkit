@@ -9,5 +9,6 @@
   "spdx_license_key": "LicenseRef-scancode-bash-exception-gpl-2.0",
   "text_urls": [
     "https://git.savannah.gnu.org/cgit/bash.git/plain/COPYING?h=bash-3.0-rc1&id=dd9e6dfa23d0dae4888f11fb8c6a27bc36d1b283"
-  ]
+  ],
+  "text": "The Free Software Foundation has exempted Bash from the requirement of\nParagraph 2c of the General Public License.  This is to say, there is\nno requirement for Bash to print a notice when it is started\ninteractively in the usual way.  We made this exception because users\nand standards expect shells not to print such messages.  This\nexception applies to any program that serves as a shell and that is\nbased primarily on Bash as opposed to other GNU software."
 }
