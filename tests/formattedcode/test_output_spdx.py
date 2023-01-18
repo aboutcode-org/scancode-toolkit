@@ -149,6 +149,8 @@ def load_and_clean_tv(location):
         line = line.strip()
         if not line:
             continue
+        if line.startswith('LicenseListVersion'):
+            continue
         if line.startswith(('Creator: ', 'Created: ',)):
             continue
         if line.startswith(dns):

@@ -12,13 +12,16 @@ import uuid
 from io import BytesIO
 from io import StringIO
 
-from spdx.checksum import Algorithm
+from spdx.checksum import Checksum
+from spdx.checksum import ChecksumAlgorithm
 from spdx.creationinfo import Tool
 from spdx.document import ExtractedLicense
 from spdx.document import Document
-from spdx.document import License
+from spdx.license import License
 from spdx.file import File
 from spdx.package import Package
+from spdx.relationship import Relationship
+from spdx.utils import calc_verif_code
 from spdx.utils import NoAssert
 from spdx.utils import SPDXNone
 from spdx.version import Version
@@ -280,9 +283,8 @@ def write_spdx(
         name = './' + file_data.get('path')
         file_entry = File(
             spdx_id=f'SPDXRef-{sid}',
-            name=name,
-            chk_sum=Algorithm('SHA1', file_data.get('sha1') or '')
-        )
+            name=name)
+        file_entry.set_checksum(Checksum(ChecksumAlgorithm.SHA1, file_data.get('sha1') or ''))
 
         file_license_detections = file_data.get('license_detections')
         license_matches = get_matches_from_detection_mappings(file_license_detections)
@@ -357,9 +359,11 @@ def write_spdx(
         else:
             file_entry.copyright = SPDXNone()
 
-        package.add_file(file_entry)
+        doc.add_file(file_entry)
+        relationship = Relationship(f'{package.spdx_id} CONTAINS {file_entry.spdx_id}')
+        doc.add_relationship(relationship)
 
-    if len(package.files) == 0:
+    if not doc.files:
         if as_tagvalue:
             msg = "# No results for package '{}'.\n".format(package.name)
         else:
@@ -392,7 +396,7 @@ def write_spdx(
         # statements for the package.
         package.cr_text = '\n'.join(sorted(package.cr_text)) + '\n'
 
-    package.verif_code = doc.package.calc_verif_code()
+    package.verif_code = calc_verif_code(doc.files)
     package.license_declared = NoAssert()
     package.conc_lics = NoAssert()
 
@@ -404,7 +408,7 @@ def write_spdx(
     # one case we do need to deal with bytes and decode before writing (rdf) and
     # in the other case we deal with text all the way.
 
-    if package.files:
+    if doc.files:
 
         if as_tagvalue:
             from spdx.writers.tagvalue import write_document  # NOQA
