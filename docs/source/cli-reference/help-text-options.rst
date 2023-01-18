@@ -240,13 +240,6 @@ The Following Help Text is displayed, i.e. This is the help text for Scancode Ve
                               and including the starting directory. Use 0 for no
                               scan depth limit.
 
-    miscellaneous:
-      --reindex-licenses              Rebuild the license index and exit.
-
-      --reindex-licenses-for-all-languages
-                                      [EXPERIMENTAL] Rebuild the license index
-                                      including texts all languages (and not only
-                                      English) and exit.
 
     documentation:
       -h, --help       Show this message and exit.

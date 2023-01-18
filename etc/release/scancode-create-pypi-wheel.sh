@@ -18,7 +18,7 @@ set -e
 #set -x
 
 ./configure --dev
-./scancode --reindex-licenses
+venv/bin/scancode-reindex-licenses
 
 python_tag=$( python -c "import platform;print(f\"cp{''.join(platform.python_version_tuple()[:2])}\")" )
 
