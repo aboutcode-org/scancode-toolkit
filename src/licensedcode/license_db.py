@@ -35,7 +35,7 @@ def write_file(path, filename, content):
 
 
 def now():
-    return datetime.utcnow().strftime('%Y-%m-%dT')
+    return datetime.utcnow().strftime('%Y-%m-%d')
 
 base_context = {
     "scancode_version": scancode_version,
