@@ -61,7 +61,7 @@ cp -r etc/thirdparty $release_dir/etc
 
 # Build the wheel
 ./configure --dev
-./scancode --reindex-licenses
+venv/bin/scancode-reindex-licenses
 venv/bin/python setup.py --quiet bdist_wheel --python-tag cp$python_version
 
 cp -r \
