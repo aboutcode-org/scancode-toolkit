@@ -69,7 +69,18 @@
     "source_packages": [],
     "file_references": [],
     "extra_data": {},
-    "dependencies": [],
+    "dependencies": [
+      {
+        "purl": "pkg:nuget/jQuery",
+        "extracted_requirement": "1.9.1",
+        "scope": "dependency",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {},
+        "extra_data": {}
+      }
+    ],
     "repository_homepage_url": "https://www.nuget.org/packages/bootstrap/4.0.0-alpha",
     "repository_download_url": "https://www.nuget.org/api/v2/package/bootstrap/4.0.0-alpha",
     "api_data_url": "https://api.nuget.org/v3/registration3/bootstrap/4.0.0-alpha.json",

@@ -8,6 +8,7 @@
 #
 
 import xmltodict
+from packageurl import PackageURL
 
 from packagedcode import models
 from packagedcode.utils import build_description
@@ -15,7 +16,67 @@ from packagedcode.utils import build_description
 """
 Handle NuGet packages and their manifests.
 """
-# TODO: add dependencies
+
+
+def get_dependencies(nuspec):
+    """
+    Yield DependentPackage found in a NuGet ``nuspec`` object.
+    """
+    # This is either a list of dependency or a list of group/dependency
+    # or a single dep or a single group mapping
+
+    dependencies = nuspec.get('dependencies') or []
+    if isinstance(dependencies, dict):
+        # wrap the mapping in a list if we have more than one dependencies
+        dependencies = [dependencies]
+
+    for depends in dependencies:
+        groups = depends.get('group') or []
+        if groups:
+            if isinstance(groups, dict):
+                # wrap the mapping in a list
+                groups = [groups]
+
+            for group in groups:
+                extra_data = dict(framework=group['@targetFramework'])
+                deps = group.get('dependency') or []
+                yield from _get_dep_packs(deps, extra_data)
+        else:
+            # {'dependency': {'@id': 'jQuery', '@version': '1.9.1'}}
+            deps = depends.get('dependency') or []
+            yield from _get_dep_packs(deps, extra_data={})
+
+
+def _get_dep_packs(deps, extra_data):
+    """
+    Yield DependentPackage found in a NuGet ``deps`` mapping or list of mappings.
+    """
+    if not deps:
+        return
+
+    if isinstance(deps, dict):
+        # wrap the mapping in a list
+        deps = [deps]
+
+    for dep in deps:
+        extra = dict(extra_data) or {}
+        include = dep.get('@include')
+        if include:
+            extra['include'] = include
+        exclude = dep.get('@exclude')
+        if exclude:
+            extra['exclude'] = exclude
+
+        yield models.DependentPackage(
+            purl=str(PackageURL(type='nuget', name=dep.get('@id'))),
+            # this is a range, not a version
+            extracted_requirement=dep.get('@version'),
+            scope='dependency',
+            is_runtime=True,
+            is_optional=False,
+            is_resolved=False,
+            extra_data=extra,
+        )
 
 
 def get_urls(name, version, **kwargs):
@@ -46,7 +107,7 @@ class NugetNuspecHandler(models.DatafileHandler):
 
     @classmethod
     def parse(cls, location):
-        with open(location , 'rb') as loc:
+        with open(location, 'rb') as loc:
             parsed = xmltodict.parse(loc)
 
         if not parsed:
@@ -62,14 +123,14 @@ class NugetNuspecHandler(models.DatafileHandler):
 
         # Summary: A short description of the package for UI display. If omitted, a
         # truncated version of description is used.
-        description = build_description(nuspec.get('summary') , nuspec.get('description'))
+        description = build_description(nuspec.get('summary'), nuspec.get('description'))
 
         # title: A human-friendly title of the package, typically used in UI
         # displays as on nuget.org and the Package Manager in Visual Studio. If not
         # specified, the package ID is used.
         title = nuspec.get('title')
         if title and title != name:
-            description = build_description(nuspec.get('title') , description)
+            description = build_description(title, description)
 
         parties = []
         authors = nuspec.get('authors')
@@ -98,7 +159,6 @@ class NugetNuspecHandler(models.DatafileHandler):
         # This is a SPDX license expression
         if 'license' in nuspec:
             extracted_license_statement = nuspec.get('license')
-            # TODO: try to convert to normal license expression
         # Deprecated and not a license expression, just a URL
         elif 'licenseUrl' in nuspec:
             extracted_license_statement = nuspec.get('licenseUrl')
@@ -111,8 +171,10 @@ class NugetNuspecHandler(models.DatafileHandler):
             description=description or None,
             homepage_url=nuspec.get('projectUrl') or None,
             parties=parties,
+            dependencies=list(get_dependencies(nuspec)),
             extracted_license_statement=extracted_license_statement,
             copyright=nuspec.get('copyright') or None,
             vcs_url=vcs_url,
             **urls,
         )
+

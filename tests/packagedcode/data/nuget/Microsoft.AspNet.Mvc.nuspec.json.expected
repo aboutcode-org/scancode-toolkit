@@ -69,7 +69,224 @@
     "source_packages": [],
     "file_references": [],
     "extra_data": {},
-    "dependencies": [],
+    "dependencies": [
+      {
+        "purl": "pkg:nuget/Microsoft.AspNet.Mvc.ApiExplorer",
+        "extracted_requirement": "6.0.0-beta7",
+        "scope": "dependency",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {},
+        "extra_data": {
+          "framework": "DNX4.5.1"
+        }
+      },
+      {
+        "purl": "pkg:nuget/Microsoft.AspNet.Mvc.Cors",
+        "extracted_requirement": "6.0.0-beta7",
+        "scope": "dependency",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {},
+        "extra_data": {
+          "framework": "DNX4.5.1"
+        }
+      },
+      {
+        "purl": "pkg:nuget/Microsoft.AspNet.Mvc.DataAnnotations",
+        "extracted_requirement": "6.0.0-beta7",
+        "scope": "dependency",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {},
+        "extra_data": {
+          "framework": "DNX4.5.1"
+        }
+      },
+      {
+        "purl": "pkg:nuget/Microsoft.AspNet.Mvc.Formatters.Json",
+        "extracted_requirement": "6.0.0-beta7",
+        "scope": "dependency",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {},
+        "extra_data": {
+          "framework": "DNX4.5.1"
+        }
+      },
+      {
+        "purl": "pkg:nuget/Microsoft.AspNet.Mvc.Localization",
+        "extracted_requirement": "6.0.0-beta7",
+        "scope": "dependency",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {},
+        "extra_data": {
+          "framework": "DNX4.5.1"
+        }
+      },
+      {
+        "purl": "pkg:nuget/Microsoft.AspNet.Mvc.Razor",
+        "extracted_requirement": "6.0.0-beta7",
+        "scope": "dependency",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {},
+        "extra_data": {
+          "framework": "DNX4.5.1"
+        }
+      },
+      {
+        "purl": "pkg:nuget/Microsoft.AspNet.Mvc.ViewFeatures",
+        "extracted_requirement": "6.0.0-beta7",
+        "scope": "dependency",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {},
+        "extra_data": {
+          "framework": "DNX4.5.1"
+        }
+      },
+      {
+        "purl": "pkg:nuget/Microsoft.Framework.Caching.Memory",
+        "extracted_requirement": "1.0.0-beta7",
+        "scope": "dependency",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {},
+        "extra_data": {
+          "framework": "DNX4.5.1"
+        }
+      },
+      {
+        "purl": "pkg:nuget/Microsoft.Framework.DependencyInjection",
+        "extracted_requirement": "1.0.0-beta7",
+        "scope": "dependency",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {},
+        "extra_data": {
+          "framework": "DNX4.5.1"
+        }
+      },
+      {
+        "purl": "pkg:nuget/Microsoft.AspNet.Mvc.ApiExplorer",
+        "extracted_requirement": "6.0.0-beta7",
+        "scope": "dependency",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {},
+        "extra_data": {
+          "framework": "DNXCore5.0"
+        }
+      },
+      {
+        "purl": "pkg:nuget/Microsoft.AspNet.Mvc.Cors",
+        "extracted_requirement": "6.0.0-beta7",
+        "scope": "dependency",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {},
+        "extra_data": {
+          "framework": "DNXCore5.0"
+        }
+      },
+      {
+        "purl": "pkg:nuget/Microsoft.AspNet.Mvc.DataAnnotations",
+        "extracted_requirement": "6.0.0-beta7",
+        "scope": "dependency",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {},
+        "extra_data": {
+          "framework": "DNXCore5.0"
+        }
+      },
+      {
+        "purl": "pkg:nuget/Microsoft.AspNet.Mvc.Formatters.Json",
+        "extracted_requirement": "6.0.0-beta7",
+        "scope": "dependency",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {},
+        "extra_data": {
+          "framework": "DNXCore5.0"
+        }
+      },
+      {
+        "purl": "pkg:nuget/Microsoft.AspNet.Mvc.Localization",
+        "extracted_requirement": "6.0.0-beta7",
+        "scope": "dependency",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {},
+        "extra_data": {
+          "framework": "DNXCore5.0"
+        }
+      },
+      {
+        "purl": "pkg:nuget/Microsoft.AspNet.Mvc.Razor",
+        "extracted_requirement": "6.0.0-beta7",
+        "scope": "dependency",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {},
+        "extra_data": {
+          "framework": "DNXCore5.0"
+        }
+      },
+      {
+        "purl": "pkg:nuget/Microsoft.AspNet.Mvc.ViewFeatures",
+        "extracted_requirement": "6.0.0-beta7",
+        "scope": "dependency",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {},
+        "extra_data": {
+          "framework": "DNXCore5.0"
+        }
+      },
+      {
+        "purl": "pkg:nuget/Microsoft.Framework.Caching.Memory",
+        "extracted_requirement": "1.0.0-beta7",
+        "scope": "dependency",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {},
+        "extra_data": {
+          "framework": "DNXCore5.0"
+        }
+      },
+      {
+        "purl": "pkg:nuget/Microsoft.Framework.DependencyInjection",
+        "extracted_requirement": "1.0.0-beta7",
+        "scope": "dependency",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {},
+        "extra_data": {
+          "framework": "DNXCore5.0"
+        }
+      }
+    ],
     "repository_homepage_url": "https://www.nuget.org/packages/Microsoft.AspNet.Mvc/6.0.0-beta7",
     "repository_download_url": "https://www.nuget.org/api/v2/package/Microsoft.AspNet.Mvc/6.0.0-beta7",
     "api_data_url": "https://api.nuget.org/v3/registration3/microsoft.aspnet.mvc/6.0.0-beta7.json",
