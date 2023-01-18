@@ -69,7 +69,28 @@
     "source_packages": [],
     "file_references": [],
     "extra_data": {},
-    "dependencies": [],
+    "dependencies": [
+      {
+        "purl": "pkg:nuget/Microsoft.Bcl",
+        "extracted_requirement": "1.1.10",
+        "scope": "dependency",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:nuget/Microsoft.Bcl.Build",
+        "extracted_requirement": "1.0.14",
+        "scope": "dependency",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {},
+        "extra_data": {}
+      }
+    ],
     "repository_homepage_url": "https://www.nuget.org/packages/Microsoft.Net.Http/2.2.29",
     "repository_download_url": "https://www.nuget.org/api/v2/package/Microsoft.Net.Http/2.2.29",
     "api_data_url": "https://api.nuget.org/v3/registration3/microsoft.net.http/2.2.29.json",
