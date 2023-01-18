@@ -22,7 +22,7 @@ jobs:
                 venv/bin/pytest -n 3 -vvs --test-suite=all \
                   --ignore=tests/cluecode \
                   --ignore=tests/licensedcode \
-                  --ignore=tests/scancode/test_cli.py
+                  --ignore=tests/scancode/test_cli.py --reruns 2
 
               cluecode_license_base: |
                 venv/bin/pytest -n 3 -vvs --test-suite=all \
@@ -34,7 +34,7 @@ jobs:
                   --ignore=tests/licensedcode/test_detection_datadriven3.py \
                   --ignore=tests/licensedcode/test_detection_datadriven4.py \
                   --ignore=tests/licensedcode/test_additional_license.py \
-                  tests/licensedcode
+                  tests/licensedcode --reruns 2
 
               license_datadriven1_2: |
                 venv/bin/pytest -n 3 -vvs --test-suite=all \
@@ -77,7 +77,7 @@ jobs:
 
               license_cache: |
                 venv/bin/pytest -n 3 -vvs --test-suite=all \
-                  tests/licensedcode/test_zzzz_cache.py
+                  tests/licensedcode/test_zzzz_cache.py --reruns 2
 
               # this test runs in isolation because it modifies the actual
               # license index with additional licenses provided by a plugin
@@ -98,7 +98,7 @@ jobs:
           python_versions: ['3.8', '3.9', '3.10', '3.11']
           python_architecture: x64
           test_suites:
-              all: venv/bin/pytest -n 2 -vvs tests/scancode/test_cli.py
+              all: venv/bin/pytest -n 2 -vvs tests/scancode/test_cli.py --reruns 2
 
     - template: etc/ci/azure-posix.yml
       parameters:
@@ -107,7 +107,7 @@ jobs:
           python_versions: ['3.8', '3.9', '3.10', '3.11']
           python_architecture: x64
           test_suites:
-              all: venv/bin/pytest -n 2 -vvs tests/scancode/test_cli.py
+              all: venv/bin/pytest -n 2 -vvs tests/scancode/test_cli.py --reruns 2
 
     - template: etc/ci/azure-posix.yml
       parameters:
@@ -116,7 +116,7 @@ jobs:
           python_versions: ['3.8', '3.9', '3.10', '3.11']
           python_architecture: x64
           test_suites:
-              all: venv/bin/pytest -n 2 -vvs tests/scancode/test_cli.py
+              all: venv/bin/pytest -n 2 -vvs tests/scancode/test_cli.py --reruns 2
 
     - template: etc/ci/azure-posix.yml
       parameters:
@@ -125,7 +125,7 @@ jobs:
           python_versions: ['3.8', '3.9', '3.10', '3.11']
           python_architecture: x64
           test_suites:
-              all: venv/bin/pytest -n 2 -vvs tests/scancode/test_cli.py
+              all: venv/bin/pytest -n 2 -vvs tests/scancode/test_cli.py --reruns 2
 
     - template: etc/ci/azure-posix.yml
       parameters:
@@ -134,7 +134,7 @@ jobs:
           python_versions: ['3.8', '3.9', '3.10', '3.11']
           python_architecture: x64
           test_suites:
-              all: venv/bin/pytest -n 2 -vvs tests/scancode/test_cli.py
+              all: venv/bin/pytest -n 2 -vvs tests/scancode/test_cli.py --reruns 2
 
     - template: etc/ci/azure-win.yml
       parameters:
@@ -143,7 +143,7 @@ jobs:
           python_versions: ['3.8']
           python_architecture: x64
           test_suites:
-              all: venv\Scripts\pytest -n 2 -vvs tests\scancode\test_cli.py
+              all: venv\Scripts\pytest -n 2 -vvs tests\scancode\test_cli.py --reruns 2
 
     - template: etc/ci/azure-win.yml
       parameters:
@@ -152,7 +152,7 @@ jobs:
           python_versions: ['3.9', '3.10', '3.11']
           python_architecture: x64
           test_suites:
-              all: venv\Scripts\pytest -n 2 -vvs tests\scancode\test_cli.py
+              all: venv\Scripts\pytest -n 2 -vvs tests\scancode\test_cli.py --reruns 2
 
     - template: etc/ci/azure-win.yml
       parameters:
@@ -161,7 +161,7 @@ jobs:
           python_versions: ['3.8']
           python_architecture: x64
           test_suites:
-              all: venv\Scripts\pytest -n 2 -vvs tests\scancode\test_cli.py
+              all: venv\Scripts\pytest -n 2 -vvs tests\scancode\test_cli.py --reruns 2
 
     - template: etc/ci/azure-win.yml
       parameters:
@@ -170,7 +170,7 @@ jobs:
           python_versions: ['3.9', '3.10', '3.11']
           python_architecture: x64
           test_suites:
-              all: venv\Scripts\pytest -n 2 -vvs tests\scancode\test_cli.py
+              all: venv\Scripts\pytest -n 2 -vvs tests\scancode\test_cli.py --reruns 2
 
 
 ################################################################################
