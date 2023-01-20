@@ -8,7 +8,7 @@ ignorable_urls:
 
 <licenses>
   <license>
-    <name>HERE Proprietary License</name>
+    <name>{{HERE Proprietary}} License</name>
     <url>https://here.com</url>
     <distribution>repo</distribution>
     <comments>SPDX-License-Identifier: LicenseRef-Proprietary-HERE</comments>
