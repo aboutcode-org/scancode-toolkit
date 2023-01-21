@@ -1,0 +1,16 @@
+---
+license_expression: here-proprietary
+is_license_tag: yes
+relevance: 100
+ignorable_urls:
+    - https://here.com/
+---
+
+<licenses>
+  <license>
+    <name>{{HERE Proprietary}} License</name>
+    <url>https://here.com</url>
+    <distribution>repo</distribution>
+    <comments>SPDX-License-Identifier: LicenseRef-Proprietary-HERE</comments>
+  </license>
+</licenses>
