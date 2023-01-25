@@ -112,3 +112,6 @@ var
 .metaflow
 selenium
 /dist/
+
+# Briefcase build directories
+linux
