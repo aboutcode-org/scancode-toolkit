@@ -18,8 +18,8 @@ set -e
 
 
 operating_system=linux
-python_dot_version=3.8
-python_version=38
+python_dot_version=$1
+python_version=${python_dot_version//.}
 python_exe="python$python_dot_version"
 release_dir=scancode-toolkit-$(git describe --tags)
 
