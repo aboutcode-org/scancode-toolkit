@@ -36,7 +36,7 @@ Jinja2==3.1.2
 jsonstreams==0.6.0
 license-expression==30.0.0
 lxml==4.9.2
-MarkupSafe==2.1.1
+MarkupSafe==2.1.2
 more-itertools==8.13.0
 normality==2.3.3
 packageurl-python==0.10.0
