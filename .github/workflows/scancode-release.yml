@@ -439,6 +439,9 @@ jobs:
       - smoke_test_install_and_run_app_archives_on_windows
       - smoke_test_install_and_run_app_archives_on_macos
       - build_scancode_for_release_source
+      - build_scancode_for_release_windows
+      - build_scancode_for_release_linux
+      - build_scancode_for_release_macos
 
     runs-on: ubuntu-20.04
     defaults:
@@ -454,22 +457,94 @@ jobs:
           name: source_app
           path: dist
 
-      - name: Download a single artifact macos_app
+      - name: Download a single artifact macos_app for python 3.7
         uses: actions/download-artifact@v3
         with:
-          name: macos_app
+          name: macos_app_py_3.7
           path: dist
 
-      - name: Download a single artifact linux_app
+      - name: Download a single artifact macos_app for python 3.8
         uses: actions/download-artifact@v3
         with:
-          name: linux_app
+          name: macos_app_py_3.8
           path: dist
 
-      - name: Download a single artifact windows_app
+      - name: Download a single artifact macos_app for python 3.9
         uses: actions/download-artifact@v3
         with:
-          name: windows_app
+          name: macos_app_py_3.9
+          path: dist
+
+      - name: Download a single artifact macos_app for python 3.10
+        uses: actions/download-artifact@v3
+        with:
+          name: macos_app_py_3.10
+          path: dist
+
+      - name: Download a single artifact macos_app for python 3.11
+        uses: actions/download-artifact@v3
+        with:
+          name: macos_app_py_3.11
+          path: dist
+
+      - name: Download a single artifact linux_app for python 3.7
+        uses: actions/download-artifact@v3
+        with:
+          name: linux_app_py_3.7
+          path: dist
+
+      - name: Download a single artifact linux_app for python 3.8
+        uses: actions/download-artifact@v3
+        with:
+          name: linux_app_py_3.8
+          path: dist
+
+      - name: Download a single artifact linux_app for python 3.9
+        uses: actions/download-artifact@v3
+        with:
+          name: linux_app_py_3.9
+          path: dist
+
+      - name: Download a single artifact linux_app for python 3.10
+        uses: actions/download-artifact@v3
+        with:
+          name: linux_app_py_3.10
+          path: dist
+
+      - name: Download a single artifact linux_app for python 3.11
+        uses: actions/download-artifact@v3
+        with:
+          name: linux_app_py_3.11
+          path: dist
+
+      - name: Download a single artifact windows_app for python 3.7
+        uses: actions/download-artifact@v3
+        with:
+          name: windows_app_py_3.7
+          path: dist
+
+      - name: Download a single artifact windows_app for python 3.8
+        uses: actions/download-artifact@v3
+        with:
+          name: windows_app_py_3.8
+          path: dist
+
+      - name: Download a single artifact windows_app for python 3.9
+        uses: actions/download-artifact@v3
+        with:
+          name: windows_app_py_3.9
+          path: dist
+
+      - name: Download a single artifact windows_app for python 3.10
+        uses: actions/download-artifact@v3
+        with:
+          name: windows_app_py_3.10
+          path: dist
+
+      - name: Download a single artifact windows_app for python 3.11
+        uses: actions/download-artifact@v3
+        with:
+          name: windows_app_py_3.11
           path: dist
 
       - name: Mock GH release
