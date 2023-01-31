@@ -2,6 +2,10 @@
 license_expression: kfgqpc-uthmanic-script-hafs
 is_license_text: yes
 minimum_coverage: 80
+ignorable_copyrights:
+    - Copyright (c) 2009 by King Fahd Glorious Quran Printing Complex
+ignorable_holders:
+    - King Fahd Glorious Quran Printing Complex
 ---
 
 ELECTRONIC END-USER LICENSE AGREEMENT
