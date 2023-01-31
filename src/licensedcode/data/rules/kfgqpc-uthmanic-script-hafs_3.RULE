@@ -1,0 +1,13 @@
+---
+license_expression: kfgqpc-uthmanic-script-hafs
+is_license_notice: yes
+minimum_coverage: 80
+ignorable_urls:
+    - http://fonts.qurancomplex.gov.sa/?page_id=40
+---
+
+KFGQPC Uthman Taha Naskh (UthmanTN1 Ver10.otf and UthmanTN1B Ver10.otf) is built based on
+    Uthman Taha calligraphy (Calligrapher of Mushaf Al-Madina) by King Fahd Glorious Quran
+    Printing Complex (KFGQPC). This font can be distributed freely for both commercial and
+    non-commercial use, according to the Arabic license terms available here:
+    http://fonts.qurancomplex.gov.sa/?page_id=40.

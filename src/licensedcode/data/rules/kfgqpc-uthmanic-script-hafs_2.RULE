@@ -2,6 +2,11 @@
 license_expression: kfgqpc-uthmanic-script-hafs
 is_license_text: yes
 minimum_coverage: 80
+ignorable_urls:
+    - http://fonts.qurancomplex.gov.sa/
+    - http://web.archive.org/web/20150320212510/http:/fonts.qurancomplex.gov.sa/
+ignorable_emails:
+    - aniazi@ymail.com
 ---
 
 King Fahd Glorious Quran Printing Complex (KFGQPC) has released the Best Unicode Opentype Naskh Font, 
