@@ -22,7 +22,9 @@ with your name and email::
     Signed-off-by: Jane Doe <developer@example.com>
 
 Please try to write a good commit message, see `good commit message wiki
-<https://aboutcode.readthedocs.io/en/latest/contributing/writing_good_commit_messages.html>`_ for details. In particular use the imperative for your commit subject: think that you are giving an order to the codebase to update itself.
+<https://aboutcode.readthedocs.io/en/latest/contributing/writing_good_commit_messages.html>`_ for
+details. In particular use the imperative for your commit subject: think that
+you are giving an order to the codebase to update itself.
 
 
 Feature requests and feedback
@@ -51,8 +53,6 @@ For other questions, discussions, and chats, we have:
   favorite IRC client or use the web chat at https://web.libera.chat/?#aboutcode .
   This is a busy place with a lot of CI and commit notifications that makes
   actual chat sometimes difficult!
-
-- a mailing list at `SourceForge <https://lists.sourceforge.net/lists/listinfo/aboutcode-discuss>`_
 
 - a Gitter channel to discuss Documentation at https://gitter.im/aboutcode-org/gsod-season-of-docs
 
