@@ -878,10 +878,9 @@ class DatafileHandler:
     """
     A base handler class to handle any package manifests, lockfiles and data
     files. Each subclass handles a package datafile format to parse datafiles
-    and assemble Package and Depdencies from these:
+    and assemble Package and Dependencies from these:
 
     - parses a datafile format and yields package data.
-
     - assembles this datafile package data in top-level packages and dependencies
     - assigns package files to their package
     """

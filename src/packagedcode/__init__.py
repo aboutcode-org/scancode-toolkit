@@ -12,6 +12,7 @@ import attr
 from commoncode.system import on_linux
 from packagedcode import about
 from packagedcode import alpine
+from packagedcode import bitbake
 from packagedcode import bower
 from packagedcode import build
 from packagedcode import build_gradle
@@ -55,6 +56,8 @@ APPLICATION_PACKAGE_DATAFILE_HANDLERS = [
     alpine.AlpineApkbuildHandler,
 
     bower.BowerJsonHandler,
+
+    bitbake.BitbakeBbManifestHandler,
 
     build_gradle.BuildGradleHandler,
 
