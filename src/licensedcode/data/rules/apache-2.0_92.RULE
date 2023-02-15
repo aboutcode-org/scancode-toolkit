@@ -6,4 +6,4 @@ ignorable_urls:
     - http://choosealicense.com/licenses/apache-2.0
 ---
 
-License: [`apache-2.0`](http://choosealicense.com/licenses/apache-2.0/)
+License: [`{{apache-2.0}}`](http://choosealicense.com/licenses/apache-2.0/)
