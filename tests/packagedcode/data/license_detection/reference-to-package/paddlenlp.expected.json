@@ -760,7 +760,7 @@
       "ignorable_authors": [],
       "ignorable_urls": [],
       "ignorable_emails": [],
-      "text": "is provided under the [Apache-2.0 license](LICENSE)."
+      "text": "is provided under the [{{Apache-2.0}} license](LICENSE)."
     },
     {
       "license_expression": "free-unknown",
