@@ -13,12 +13,14 @@ from collections import defaultdict
 from binascii import crc32
 from itertools import islice
 
+from licensedcode.spans import Span
 from licensedcode.stopwords import STOPWORDS
 from textcode.analysis import numbered_text_lines
 
 """
-Utilities to break texts in lines and tokens (aka. words) with specialized
-version for queries and rules texts.
+Utilities to break texts in lines and tokens (aka. words),
+and handle required phrases in texts through these tokens,
+with specialized version for queries and rules texts.
 """
 
 
@@ -111,6 +113,117 @@ def key_phrase_tokenizer(text, stopwords=STOPWORDS):
     for token in key_phrase_splitter(text.lower()):
         if token and token not in stopwords:
             yield token
+
+
+def return_spans_for_key_phrase_in_text(text, key_phrase):
+    """
+    Returns a list of Spans where in `text`, the `key_phrase` exists,
+    and if it doesn't exist anywhere, returns an empty list.
+    """
+    spans_with_key_phrase = []
+    
+    text_tokens = list(index_tokenizer(text))
+    key_phrase_tokens = list(index_tokenizer(key_phrase))
+    key_phrase_first_token = key_phrase_tokens[0]
+
+    if all([
+        key_phrase_token in text_tokens
+        for key_phrase_token in key_phrase_tokens
+    ]):
+        start_positions = [
+            i
+            for i, x in enumerate(text_tokens)
+            if x == key_phrase_first_token
+        ]
+
+        for start_pos in start_positions:
+            end_pos = start_pos + len(key_phrase_tokens)
+
+            if end_pos <= len(text_tokens) and text_tokens[start_pos:end_pos] == key_phrase_tokens:
+                spans_with_key_phrase.append(
+                    Span(start_pos, end_pos-1)
+                )
+    
+    return spans_with_key_phrase
+
+
+def get_ignorable_spans(rule):
+    """
+    Return a list of Spans which are the positions in the rule text there
+    are ignorable URLs or referenced filenames.
+    """
+    ignorable_spans = []
+    ignorables = rule.referenced_filenames + rule.ignorable_urls
+    for ignorable in ignorables:
+        ignorable_spans.extend(
+            return_spans_for_key_phrase_in_text(text=rule.text, key_phrase=ignorable)
+        )
+    
+    return ignorable_spans
+
+
+def get_non_overlapping_spans(old_key_phrase_spans, new_key_phrase_spans):
+    """
+    Given two list of spans `old_key_phrase_spans` and `new_key_phrase_spans`,
+    return all the spans in `new_key_phrase_spans` that do not overlap with any
+    of the spans in `old_key_phrase_spans`.
+
+    The list of spans `old_key_phrase_spans` contains all the spans of required
+    phrases or ignorables already present in a rule text, and the other list of spans
+    `new_key_phrase_spans` contains the proposed new required phrases.
+    """
+    if not old_key_phrase_spans:
+        return new_key_phrase_spans
+    
+    for new_span in new_key_phrase_spans:
+        if not any(
+            old_span.overlap(new_span) != 0
+            for old_span in old_key_phrase_spans
+        ):
+            yield new_span
+
+
+def combine_tokens(token_tuples):
+    """
+    Returns a string `combined_text` combining token tuples from the list `token_tuples`,
+    which are token tuples created by the tokenizer functions.
+    """
+    combined_text = ''
+    
+    for token_tuple in token_tuples:
+        _value, token = token_tuple
+        combined_text += token
+        
+    return combined_text
+
+
+def add_key_phrase_markers(text, key_phrase_span):
+    """
+    Given a string `text` and a Span object `key_phrase_span`, add key phrase
+    markers to the `text` around the tokens which the span represents, while
+    being mindful of whitespace and stopwords.
+    """
+    tokens_tuples_without_markers = list(matched_query_text_tokenizer(text))
+    tokens_tuples_with_markers = []
+    token_index = 0
+
+    for token_tuple in tokens_tuples_without_markers:
+        
+        is_word, token = token_tuple
+
+        if is_word and token not in STOPWORDS:
+            if token_index == key_phrase_span.start:
+                tokens_tuples_with_markers.append((False, KEY_PHRASE_OPEN))
+
+            token_index += 1
+
+        tokens_tuples_with_markers.append(token_tuple)
+        
+        if is_word and token not in STOPWORDS: 
+            if token_index == key_phrase_span.end + 1:
+                tokens_tuples_with_markers.append((False, KEY_PHRASE_CLOSE))
+            
+    return combine_tokens(tokens_tuples_with_markers)
 
 
 def index_tokenizer(text, stopwords=STOPWORDS):
