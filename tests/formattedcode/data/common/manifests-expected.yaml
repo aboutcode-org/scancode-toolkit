@@ -29,9 +29,9 @@ headers:
       system_environment:
         operating_system: linux
         cpu_architecture: 64
-        platform: Linux-5.15.0-116-generic-x86_64-with-glibc2.35
-        platform_version: '#126-Ubuntu SMP Mon Jul 1 10:14:24 UTC 2024'
-        python_version: 3.10.12 (main, Mar 22 2024, 16:50:05) [GCC 11.4.0]
+        platform: Linux-5.15.0-119-generic-x86_64-with-glibc2.35
+        platform_version: '#129-Ubuntu SMP Fri Aug 2 19:25:20 UTC 2024'
+        python_version: 3.10.12 (main, Jul 29 2024, 16:56:48) [GCC 11.4.0]
       spdx_license_list_version: '3.24'
       files_count: 4
 summary:
@@ -1601,6 +1601,8 @@ license_rule_references:
     is_license_tag: yes
     is_license_intro: no
     is_license_clue: no
+    is_required_phrase: no
+    skip_collecting_required_phrases: no
     is_continuous: no
     is_builtin: yes
     is_from_license: no
@@ -1626,6 +1628,8 @@ license_rule_references:
     is_license_tag: no
     is_license_intro: no
     is_license_clue: no
+    is_required_phrase: no
+    skip_collecting_required_phrases: no
     is_continuous: no
     is_builtin: yes
     is_from_license: no
@@ -1651,6 +1655,8 @@ license_rule_references:
     is_license_tag: yes
     is_license_intro: no
     is_license_clue: no
+    is_required_phrase: no
+    skip_collecting_required_phrases: no
     is_continuous: no
     is_builtin: yes
     is_from_license: no
@@ -1677,6 +1683,8 @@ license_rule_references:
     is_license_tag: no
     is_license_intro: no
     is_license_clue: no
+    is_required_phrase: no
+    skip_collecting_required_phrases: no
     is_continuous: no
     is_builtin: yes
     is_from_license: no
@@ -1703,6 +1711,8 @@ license_rule_references:
     is_license_tag: yes
     is_license_intro: no
     is_license_clue: no
+    is_required_phrase: no
+    skip_collecting_required_phrases: no
     is_continuous: no
     is_builtin: yes
     is_from_license: no
@@ -1728,6 +1738,8 @@ license_rule_references:
     is_license_tag: no
     is_license_intro: no
     is_license_clue: no
+    is_required_phrase: no
+    skip_collecting_required_phrases: no
     is_continuous: no
     is_builtin: yes
     is_from_license: no
@@ -1765,6 +1777,8 @@ license_rule_references:
     is_license_tag: no
     is_license_intro: no
     is_license_clue: no
+    is_required_phrase: no
+    skip_collecting_required_phrases: no
     is_continuous: no
     is_builtin: yes
     is_from_license: no
@@ -1790,6 +1804,8 @@ license_rule_references:
     is_license_tag: no
     is_license_intro: yes
     is_license_clue: no
+    is_required_phrase: no
+    skip_collecting_required_phrases: no
     is_continuous: no
     is_builtin: yes
     is_from_license: no
@@ -1818,6 +1834,8 @@ license_rule_references:
     is_license_tag: yes
     is_license_intro: no
     is_license_clue: no
+    is_required_phrase: yes
+    skip_collecting_required_phrases: no
     is_continuous: no
     is_builtin: yes
     is_from_license: no
@@ -1843,6 +1861,8 @@ license_rule_references:
     is_license_tag: yes
     is_license_intro: no
     is_license_clue: no
+    is_required_phrase: no
+    skip_collecting_required_phrases: no
     is_continuous: no
     is_builtin: yes
     is_from_license: no
@@ -1868,6 +1888,8 @@ license_rule_references:
     is_license_tag: yes
     is_license_intro: no
     is_license_clue: no
+    is_required_phrase: no
+    skip_collecting_required_phrases: no
     is_continuous: no
     is_builtin: yes
     is_from_license: no
@@ -1893,6 +1915,8 @@ license_rule_references:
     is_license_tag: no
     is_license_intro: no
     is_license_clue: no
+    is_required_phrase: no
+    skip_collecting_required_phrases: no
     is_continuous: no
     is_builtin: yes
     is_from_license: no
