@@ -113,7 +113,7 @@ jobs:
       - name: Build linux app archive
         run: etc/release/scancode-create-release-app-linux.sh ${{ matrix.pyver }}
 
-      - name: Collect built linux app for python {{ matrix.pyver }}
+      - name: Collect built linux app for python ${{ matrix.pyver }}
         uses: actions/upload-artifact@v3
         with:
           name: linux_app_py_${{ matrix.pyver }}
@@ -147,7 +147,7 @@ jobs:
       - name: Build mac app archive
         run: etc/release/scancode-create-release-app-macos.sh ${{ matrix.pyver }}
 
-      - name: Collect built mac app for python {{ matrix.pyver }}
+      - name: Collect built mac app for python ${{ matrix.pyver }}
         uses: actions/upload-artifact@v3
         with:
           name: macos_app_py_${{ matrix.pyver }}
@@ -181,7 +181,7 @@ jobs:
       - name: Build windows app archive
         run: etc/release/scancode-create-release-app-windows.sh ${{ matrix.pyver }}
 
-      - name: Collect built windows app for python {{ matrix.pyver }}
+      - name: Collect built windows app for python ${{ matrix.pyver }}
         uses: actions/upload-artifact@v3
         with:
           name: windows_app_py_${{ matrix.pyver }}
