@@ -14,9 +14,9 @@ import logging
 import uuid
 from enum import Enum
 from hashlib import sha1
-from collections import Counter
 
 import attr
+from collections import defaultdict
 from license_expression import combine_expressions
 from license_expression import Licensing
 
@@ -595,33 +595,25 @@ class UniqueDetection:
         Return all unique UniqueDetection from a ``license_detections`` list of
         LicenseDetection.
         """
-        identifiers = get_identifiers(license_detections)
-        unique_detection_counts = dict(Counter(identifiers))
-
+        detections_by_id = get_detections_by_id(license_detections)
         unique_license_detections = []
-        for detection_identifier in unique_detection_counts.keys():
-            file_regions = (
-                detection.file_region
-                for detection in license_detections
-                if detection_identifier == detection.identifier
-            )
-            all_detections = (
-                detection
-                for detection in license_detections
-                if detection_identifier == detection.identifier
-            )
 
-            detection = next(all_detections)
+        for all_detections in detections_by_id.values():
+            file_regions = [
+                detection.file_region
+                for detection in all_detections
+            ]
+
+            detection = next(iter(all_detections))
             detection_mapping = detection.to_dict()
-            files = list(file_regions)
             unique_license_detections.append(
                 cls(
                     identifier=detection.identifier_with_expression,
                     license_expression=detection_mapping["license_expression"],
                     detection_log=detection_mapping["detection_log"],
                     matches=detection_mapping["matches"],
-                    count=len(files),
-                    files=files,
+                    count=len(file_regions),
+                    files=file_regions,
                 )
             )
 
@@ -637,6 +629,18 @@ class UniqueDetection:
 
         return attr.asdict(self, filter=dict_fields)
 
+
+def get_detections_by_id(license_detections):
+    """
+    Get a dict(hashmap) where each item is: {detection.identifier: all_detections} where
+    `all_detections` is all detections in `license_detections` whose detection.identifier
+    is the same.
+    """
+    detections_by_id = defaultdict(list)
+    for detection in license_detections:
+        detections_by_id[detection.identifier].append(detection)
+
+    return detections_by_id
 
 def get_identifiers(license_detections):
     """
