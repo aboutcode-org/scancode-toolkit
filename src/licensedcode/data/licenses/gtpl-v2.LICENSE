@@ -1,0 +1,115 @@
+---
+key: gtpl-v2
+short_name: GTPL-v2
+name: Globus Toolkit Public License (GTPL) v2
+category: Permissive
+owner: Globus
+homepage_url: https://web.archive.org/web/20060715182344/http://www.globus.org/toolkit/legal/3.2/license-v2.html
+spdx_license_key: LicenseRef-scancode-gtpl-v2
+ignorable_copyrights:
+    - Copyright 1999-2003 University of Chicago and The University of Southern California
+ignorable_holders:
+    - University of Chicago and The University of Southern California
+ignorable_authors:
+    - the Globus Project (http://www.globus.org/)
+ignorable_urls:
+    - http://www.globus.org/
+ignorable_emails:
+    - info@globus.org
+---
+
+Globus Toolkit Public License
+Version 2, July 31, 2003
+
+Copyright 1999-2003 University of Chicago and The University of Southern
+California.  All rights reserved.
+
+This software referred to as the Globus Toolkit software
+("Software") includes voluntary contributions made to the Globus
+Project collaboration.  Persons and entities that have made voluntary
+contributions are hereinafter referred to as "Contributors." This Globus
+Toolkit Public License is referred to herein as "the GTPL."  For more
+information on the Globus Project, please see http://www.globus.org/.
+
+Permission is granted for the installation, use, reproduction,
+modification, display, performance and redistribution of this Software,
+with or without modification, in source and binary forms.  Permission is
+granted for the installation, use, reproduction, modification, display,
+performance and redistribution of user files, manuals, and training and
+demonstration slides ("Documentation") distributed with or specifically
+designated as distributed under the GTPL.  Any exercise of rights under
+the GTPL is subject to the following conditions:
+
+1.  Redistributions of this Software, with or without modification,
+    must reproduce the GTPL in: (1) the Software, or (2) the Documentation
+    or some other similar material which is provided with the Software
+    (if any).
+
+2.  The Documentation, alone or if included with a redistribution of
+    the Software, must include the following notice: "This
+    product includes material developed by the Globus Project
+    (http://www.globus.org/)."
+
+    Alternatively, if that is where third-party acknowledgments normally
+    appear, this acknowledgment must be reproduced in the Software itself.
+
+3.  Globus Toolkit and Globus Project are trademarks of the
+    University of Chicago.  Any trademarks of the University of
+    Chicago or the University of Southern California may not be used
+    to endorse or promote software, or products derived therefrom, and
+    except as expressly provided herein may not be affixed to modified
+    redistributions of this Software or Documentation except with prior
+    written approval, obtainable at the discretion of the trademark
+    owner from info@globus.org.
+
+4.  To the extent that patent claims licensable by the University of
+    Southern California and/or by the University of Chicago (as Operator
+    of Argonne National Laboratory) are necessarily infringed by the
+    use or sale of the Software, you and your transferees are granted
+    a non-exclusive, worldwide, royalty-free license under such patent
+    claims, with the rights to make, use, sell, offer to sell, import and
+    otherwise transfer the Software in source code and object code form.
+    This patent license shall not apply to Documentation or to any other
+    software combinations which include the Software.  No hardware per
+    se is licensed hereunder.
+
+    If you or any subsequent transferee (a "Recipient") institutes patent
+    litigation against any entity (including a cross-claim or counterclaim
+    in a lawsuit) alleging that the Software infringes such Recipient's
+    patent(s), then such Recipient's rights granted under the patent
+    license above shall terminate as of the date such litigation is filed.
+
+5.  DISCLAIMER 
+
+    SOFTWARE AND DOCUMENTATION ARE PROVIDED BY THE COPYRIGHT HOLDERS AND
+    CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING,
+    BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY,
+    OF SATISFACTORY QUALITY, AND FITNESS FOR A PARTICULAR PURPOSE OR
+    USE ARE DISCLAIMED.  THE COPYRIGHT HOLDERS AND CONTRIBUTORS MAKE
+    NO REPRESENTATION THAT THE SOFTWARE, DOCUMENTATION, MODIFICATIONS,
+    ENHANCEMENTS OR DERIVATIVE WORKS THEREOF, WILL NOT INFRINGE ANY
+    PATENT, COPYRIGHT, TRADEMARK, TRADE SECRET OR OTHER PROPRIETARY RIGHT.
+
+6.  LIMITATION OF LIABILITY
+
+    THE COPYRIGHT HOLDERS AND CONTRIBUTORS SHALL HAVE NO LIABILITY TO
+    LICENSEE OR OTHER PERSONS FOR DIRECT, INDIRECT, SPECIAL, INCIDENTAL,
+    CONSEQUENTIAL, EXEMPLARY, OR PUNITIVE DAMAGES OF ANY CHARACTER
+    INCLUDING, WITHOUT LIMITATION, PROCUREMENT OF SUBSTITUTE GOODS OR
+    SERVICES, LOSS OF USE, DATA OR PROFITS, OR BUSINESS INTERRUPTION,
+    HOWEVER CAUSED AND ON ANY THEORY OF CONTRACT, WARRANTY, TORT
+    (INCLUDING NEGLIGENCE), PRODUCT LIABILITY OR OTHERWISE, ARISING IN
+    ANY WAY OUT OF THE USE OF THIS SOFTWARE OR DOCUMENTATION, EVEN IF
+    ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.
+
+7.  The Globus Project may publish revised and/or new versions of
+    the GTPL from time to time.  Each version will be given a
+    distinguishing version number.  Once Software or Documentation
+    has been published under a particular version of the GTPL, you may
+    always continue to use it under the terms of that version. You may
+    also choose to use such Software or Documentation under the terms of
+    any subsequent version of the GTPL published by the Globus Project.
+    No one other than the Globus Project has the right to modify the
+    terms of the GTPL.
+
+Globus Toolkit Public License 7-31-03
