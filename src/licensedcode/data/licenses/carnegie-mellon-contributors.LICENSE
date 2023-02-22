@@ -4,7 +4,11 @@ short_name: Carnegie Mellon Contributors
 name: Carnegie Mellon Contributors License
 category: Permissive
 owner: Carnegie Mellon University
-spdx_license_key: LicenseRef-scancode-carnegie-mellon-contributors
+spdx_license_key: CMU-Mach
+other_spdx_license_keys:
+    - LicenseRef-scancode-carnegie-mellon-contributors
+other_urls:
+    - https://www.cs.cmu.edu/~410/licenses.html
 ignorable_emails:
     - Software.Distribution@CS.CMU.EDU
 ---

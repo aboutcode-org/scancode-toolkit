@@ -4,7 +4,11 @@ short_name: BSLA
 name: Berkeley Software License Agreement
 category: Permissive
 owner: Regents of the University of California
-spdx_license_key: LicenseRef-scancode-bsla
+spdx_license_key: BSD-4.3TAHOE
+other_spdx_license_keys:
+    - LicenseRef-scancode-bsla
+other_urls:
+    - https://github.com/389ds/389-ds-base/blob/main/ldap/include/sysexits-compat.h#L15
 ignorable_authors:
     - the University of California, Berkeley
 ---

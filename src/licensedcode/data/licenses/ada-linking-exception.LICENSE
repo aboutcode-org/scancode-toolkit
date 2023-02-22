@@ -5,10 +5,13 @@ name: Ada linking exception to GPL 2.0 or later
 category: Copyleft Limited
 owner: Dmitriy Anisimkov
 is_exception: yes
-spdx_license_key: LicenseRef-scancode-ada-linking-exception
+spdx_license_key: GNAT-exception
+other_spdx_license_keys:
+    - LicenseRef-scancode-ada-linking-exception
 other_urls:
     - http://zlib-ada.sourceforge.net/
     - http://ada-ru.org/
+    - https://github.com/AdaCore/florist/blob/master/libsrc/posix-configurable_file_limits.adb
 standard_notice: |
     ---------------------------------------------------------------------------
     ---

@@ -7,7 +7,13 @@ owner: Free Software Foundation (FSF)
 homepage_url: https://git.savannah.gnu.org/gitweb/?p=config.git;a=blob;f=config.guess;h=a7448442748cc6f98a066d2d1051fad3b043761a;hb=HEAD
 notes: this is a simpler version of the Autonconf exception to the GPL
 is_exception: yes
-spdx_license_key: LicenseRef-scancode-autoconf-simple-exception-2.0
+spdx_license_key: Autoconf-exception-generic
+other_spdx_license_keys:
+    - LicenseRef-scancode-autoconf-simple-exception-2.0
+other_urls:
+    - https://launchpad.net/ubuntu/precise/+source/xmltooling/+copyright
+    - https://tracker.debian.org/media/packages/s/sipwitch/copyright-1.9.15-3
+    - https://opensource.apple.com/source/launchd/launchd-258.1/launchd/compile.auto.html
 ---
 
 As a special exception to the GNU General Public License, if you

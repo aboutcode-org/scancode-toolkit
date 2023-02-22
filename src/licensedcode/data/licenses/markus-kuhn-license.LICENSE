@@ -5,11 +5,15 @@ name: Markus Kuhn License
 category: Permissive
 owner: Markus Kuhn
 homepage_url: https://www.cl.cam.ac.uk/~mgk25/ucs/wcwidth.c
-spdx_license_key: LicenseRef-scancode-markus-kuhn-license
+spdx_license_key: HPND-Markus-Kuhn
+other_spdx_license_keys:
+    - LicenseRef-scancode-markus-kuhn-license
 text_urls:
     - https://www.cl.cam.ac.uk/~mgk25/ucs/langinfo.c
 other_urls:
     - https://github.com/search?q=%22Permission+to+use%2C+copy%2C+modify%2C+and+distribute+this+software+for+any+purpose+and+without+fee+is+hereby+granted.%22+%22The+author+disclaims+all+warranties+with+regard+to+this+software.%22&type=code
+    - https://www.cl.cam.ac.uk/~mgk25/ucs/wcwidth.c
+    - https://sourceware.org/git/?p=binutils-gdb.git;a=blob;f=readline/readline/support/wcwidth.c;h=0f5ec995796f4813abbcf4972aec0378ab74722a;hb=HEAD#l55
 ---
 
 Permission to use, copy, modify, and distribute this software
