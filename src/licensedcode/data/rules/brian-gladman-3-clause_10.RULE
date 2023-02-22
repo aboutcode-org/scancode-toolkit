@@ -2,6 +2,10 @@
 license_expression: brian-gladman-3-clause
 is_license_notice: yes
 relevance: 100
+ignorable_copyrights:
+  - Copyright (c) 2003, Dr Brian Gladman, Worcester, UK.
+ignorable_holders:
+  - Dr Brian Gladman, Worcester, UK.
 ---
 
 Copyright (c) 2003, Dr Brian Gladman, Worcester, UK.   All rights reserved.

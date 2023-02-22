@@ -5,7 +5,7 @@ name: Apple Academic License Agreement Lisa OS v3.1
 category: Proprietary Free
 owner: Apple
 homepage_url: https://info.computerhistory.org/apple-lisa-code
-spdx_license_key: LicenseRef-scancode-apple-academic-lisa-OS-3.1
+spdx_license_key: LicenseRef-scancode-apple-academic-lisa-os-3.1
 text_urls:
     - https://d1yx3ys82bpsa0.cloudfront.net/source/lisa-source.zip
 other_urls:

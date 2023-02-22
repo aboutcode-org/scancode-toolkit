@@ -7,18 +7,7 @@ owner: David Giffin
 spdx_license_key: BSD-Advertising-Acknowledgement
 other_urls:
     - https://github.com/python-excel/xlrd/blob/master/LICENSE#L33
-ignorable_copyrights:
-    - Copyright (c) 2001 David Giffin
-ignorable_holders:
-    - David Giffin
-ignorable_authors:
-    - David Giffin <david@giffin.org>
-ignorable_emails:
-    - david@giffin.org
 ---
-
-Copyright (c) 2001 David Giffin.
-All rights reserved.
 
 Redistribution and use in source and binary forms, with or without
 modification, are permitted provided that the following conditions

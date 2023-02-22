@@ -2,6 +2,10 @@
 license_expression: martin-birgmeier
 is_license_text: yes
 relevance: 100
+ignorable_copyrights:
+  - Copyright (c) 1993 Martin Birgmeier
+ignorable_holders:
+  - Martin Birgmeier
 ---
 
 Copyright (c) 1993 Martin Birgmeier All rights reserved. 

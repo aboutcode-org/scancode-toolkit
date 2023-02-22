@@ -3989,15 +3989,18 @@
       "is_exception": true,
       "is_unknown": false,
       "is_generic": false,
-      "spdx_license_key": "LicenseRef-scancode-ada-linking-exception",
-      "other_spdx_license_keys": [],
+      "spdx_license_key": "GNAT-exception",
+      "other_spdx_license_keys": [
+        "LicenseRef-scancode-ada-linking-exception"
+      ],
       "osi_license_key": null,
       "text_urls": [],
       "osi_url": null,
       "faq_url": null,
       "other_urls": [
         "http://zlib-ada.sourceforge.net/",
-        "http://ada-ru.org/"
+        "http://ada-ru.org/",
+        "https://github.com/AdaCore/florist/blob/master/libsrc/posix-configurable_file_limits.adb"
       ],
       "key_aliases": [],
       "minimum_coverage": 0,
@@ -4010,7 +4013,7 @@
       "text": "As a special exception, if other files instantiate generics from this \nunit, or you link this unit with other files to produce an executable, \nthis  unit  does not  by itself cause  the resulting executable to be \ncovered by the GNU General Public License. This exception does not \nhowever invalidate any other reasons why the executable file  might be \ncovered by the GNU Public License.",
       "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/ada-linking-exception.LICENSE",
       "licensedb_url": "https://scancode-licensedb.aboutcode.org/ada-linking-exception",
-      "spdx_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/ada-linking-exception.LICENSE"
+      "spdx_url": "https://spdx.org/licenses/GNAT-exception"
     },
     {
       "key": "artistic-2.0",
@@ -9145,7 +9148,7 @@
         "pkg:npm/npm@2.13.5?uuid=fixed-uid-done-for-testing-5642512d1758"
       ],
       "detected_license_expression": "gpl-2.0-plus WITH ada-linking-exception",
-      "detected_license_expression_spdx": "GPL-2.0-or-later WITH LicenseRef-scancode-ada-linking-exception",
+      "detected_license_expression_spdx": "GPL-2.0-or-later WITH GNAT-exception",
       "license_detections": [
         {
           "license_expression": "gpl-2.0-plus WITH ada-linking-exception",

@@ -26,7 +26,7 @@ other_license_expression: (apache-2.0 AND apache-2.0) AND (bsd-new OR (apache-2.
   (gpl-3.0-plus AND gpl-3.0) AND afl-3.0 AND (mit AND unicode) AND bsd-simplified AND bsd-new
   AND bsd-simplified
 other_license_expression_spdx: (Apache-2.0 AND Apache-2.0) AND (BSD-3-Clause OR (Apache-2.0
-  AND Apache-2.0)) AND LicenseRef-scancode-markus-kuhn-license AND BSD-3-Clause AND LicenseRef-scancode-other-permissive
+  AND Apache-2.0)) AND HPND-Markus-Kuhn AND BSD-3-Clause AND LicenseRef-scancode-other-permissive
   AND (GPL-2.0-or-later AND GPL-2.0-only) AND (GPL-3.0-or-later AND GPL-3.0-only) AND AFL-3.0
   AND (MIT AND LicenseRef-scancode-unicode) AND BSD-2-Clause AND BSD-3-Clause AND BSD-2-Clause
 license_detections: []

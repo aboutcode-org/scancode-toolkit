@@ -2,6 +2,14 @@
 license_expression: snprintf
 is_license_text: yes
 relevance: 100
+ignorable_authors:
+  - Patrick Powell (papowell@astart.com)
+ignorable_copyrights:
+  - Copyright Patrick Powell 1995
+ignorable_emails:
+  - papowell@astart.com
+ignorable_holders:
+  - Patrick Powell
 ---
 
 Copyright Patrick Powell 1995 

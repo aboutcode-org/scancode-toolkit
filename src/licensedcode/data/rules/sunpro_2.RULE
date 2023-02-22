@@ -2,6 +2,10 @@
 license_expression: sunpro
 is_license_text: yes
 relevance: 100
+ignorable_copyrights:
+  - Copyright (c) 1993 by Sun Microsystems, Inc.
+ignorable_holders:
+  - Sun Microsystems, Inc.
 ---
 
 Copyright (C) 1993 by Sun Microsystems, Inc. All rights reserved.
