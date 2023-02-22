@@ -245,6 +245,9 @@ def write_spdx(
     ns_prefix = '_'.join(package_name.lower().split())
     comment = notice + f'\nSPDX License List: {scancode_config.spdx_license_list_version}'
 
+    version_major, version_minor = tuple(scancode_config.spdx_license_list_version.split("."))
+    spdx_license_list_version = Version(major=version_major, minor=version_minor)
+
     doc = Document(
         version=Version(*spdx_version),
         data_license=License.from_identifier('CC0-1.0'),
@@ -257,6 +260,7 @@ def write_spdx(
     tool_name = tool_name or 'ScanCode'
     doc.creation_info.add_creator(Tool(f'{tool_name} {tool_version}'))
     doc.creation_info.set_created_now()
+    doc.creation_info.license_list_version = spdx_license_list_version
 
     package_id = '001'
     package = doc.package = Package(
