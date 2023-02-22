@@ -6,6 +6,8 @@ category: Permissive
 owner: Free Software Foundation (FSF)
 homepage_url: http://www.fsf.org/licensing/licenses/
 spdx_license_key: FSFULLRWD
+other_spdx_license_keys:
+    - LicenseRef-scancode-fsf-unlimited-no-warranty
 text_urls:
     - http://www.fsf.org/licensing/licenses/
 other_urls:
