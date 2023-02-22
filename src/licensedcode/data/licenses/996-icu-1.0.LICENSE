@@ -9,6 +9,8 @@ notes: this is based on the still draft text as of 2019-04-17
 spdx_license_key: LicenseRef-scancode-996-icu-1.0
 text_urls:
     - https://github.com/996icu/996.ICU/blob/dd185162b9d56b629e52c5726995cd7505326b06/LICENSE
+other_urls:
+    - https://ethicalsource.dev/licenses/
 ---
 
 "Anti 996" License Version 1.0 (Draft)
