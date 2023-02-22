@@ -2,8 +2,8 @@
 key: ttwl
 short_name: Text-Tabs+Wrap License
 name: Text-Tabs+Wrap License
-owner: David Muir Sharnoff
 category: Public Domain
+owner: David Muir Sharnoff
 spdx_license_key: TTWL
 other_urls:
     - https://fedoraproject.org/wiki/Licensing/TTWL

@@ -2,8 +2,8 @@
 key: adacore-doc
 short_name: AdaCore Doc License
 name: AdaCore Doc License
-owner: adacore
 category: Permissive
+owner: adacore
 spdx_license_key: AdaCore-doc
 other_urls:
     - https://github.com/AdaCore/xmlada/blob/master/docs/index.rst

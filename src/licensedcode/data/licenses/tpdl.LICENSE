@@ -2,8 +2,8 @@
 key: tpdl
 short_name: Time::ParseDate License
 name: Time::ParseDate License
-owner: David Muir Sharnoff
 category: Public Domain
+owner: David Muir Sharnoff
 spdx_license_key: TPDL
 other_urls:
     - https://metacpan.org/pod/Time::ParseDate#LICENSE

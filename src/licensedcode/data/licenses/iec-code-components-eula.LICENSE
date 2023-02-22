@@ -2,8 +2,8 @@
 key: iec-code-components-eula
 short_name: IEC CC EULA
 name: IEC Code Components End-user licence agreement
-owner: IEC
 category: Permissive
+owner: IEC
 spdx_license_key: IEC-Code-Components-EULA
 other_urls:
     - https://www.iec.ch/webstore/custserv/pdf/CC-EULA.pdf

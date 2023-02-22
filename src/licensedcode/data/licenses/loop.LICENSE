@@ -2,9 +2,9 @@
 key: loop
 short_name: Common Lisp LOOP License
 name: Common Lisp LOOP License
-spdx_license_key: LOOP
 category: Permissive
 owner: Symbolics Inc and MIT
+spdx_license_key: LOOP
 other_urls:
     - https://gitlab.com/embeddable-common-lisp/ecl/-/blob/develop/src/lsp/loop.lsp
     - http://git.savannah.gnu.org/cgit/gcl.git/tree/gcl/lsp/gcl_loop.lsp?h=Version_2_6_13pre

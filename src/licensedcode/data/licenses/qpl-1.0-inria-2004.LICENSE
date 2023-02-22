@@ -2,8 +2,8 @@
 key: qpl-1.0-inria-2004
 short_name: Q Public License 1.0 - INRIA 2004 variant
 name: Q Public License 1.0 - INRIA 2004 variant
-owner: Troll Tech AS
 category: Copyleft Limited
+owner: Troll Tech AS
 spdx_license_key: QPL-1.0-INRIA-2004
 other_urls:
     - https://github.com/maranget/hevea/blob/master/LICENSE

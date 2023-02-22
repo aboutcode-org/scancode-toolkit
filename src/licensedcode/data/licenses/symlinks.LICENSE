@@ -2,8 +2,8 @@
 key: symlinks
 short_name: Symlinks License
 name: Symlinks License
-owner: Mark Lord
 category: Public Domain
+owner: Mark Lord
 spdx_license_key: Symlinks
 other_urls:
     - https://www.mail-archive.com/debian-bugs-rc@lists.debian.org/msg11494.html

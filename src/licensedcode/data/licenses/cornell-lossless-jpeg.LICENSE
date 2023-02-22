@@ -2,8 +2,8 @@
 key: cornell-lossless-jpeg
 short_name: Cornell Lossless JPEG License
 name: Cornell Lossless JPEG License
-owner: Kongji Huang
 category: Permissive
+owner: Kongji Huang
 spdx_license_key: Cornell-Lossless-JPEG
 other_urls:
     - https://android.googlesource.com/platform/external/dng_sdk/+/refs/heads/master/source/dng_lossless_jpeg.cpp#16

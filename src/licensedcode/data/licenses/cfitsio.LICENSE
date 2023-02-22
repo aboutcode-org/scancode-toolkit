@@ -2,8 +2,8 @@
 key: cfitsio
 short_name: CFITSIO License
 name: CFITSIO License
-owner: NASA
 category: Permissive
+owner: NASA
 spdx_license_key: CFITSIO
 other_urls:
     - https://heasarc.gsfc.nasa.gov/docs/software/fitsio/c/f_user/node9.html

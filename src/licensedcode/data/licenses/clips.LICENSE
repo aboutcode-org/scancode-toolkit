@@ -2,8 +2,8 @@
 key: clips
 short_name: Clips License
 name: Clips License
-owner: Joshua Scoggins
 category: Permissive
+owner: Joshua Scoggins
 spdx_license_key: Clips
 other_urls:
     - https://github.com/DrItanium/maya/blob/master/LICENSE.CLIPS

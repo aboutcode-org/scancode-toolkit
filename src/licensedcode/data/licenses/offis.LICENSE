@@ -2,9 +2,9 @@
 key: offis
 short_name: OFFIS License
 name: OFFIS License
-spdx_license_key: OFFIS
 category: Permissive
 owner: OFFIS
+spdx_license_key: OFFIS
 other_urls:
     - https://sourceforge.net/p/xmedcon/code/ci/master/tree/libs/dicom/README
 ignorable_copyrights:

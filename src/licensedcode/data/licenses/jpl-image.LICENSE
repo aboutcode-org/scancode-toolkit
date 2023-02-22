@@ -2,8 +2,8 @@
 key: jpl-image
 short_name: JPL Image Use Policy
 name: JPL Image Use Policy
-owner: Nasa Jet Propulsion Laboratory
 category: Source-available
+owner: Nasa Jet Propulsion Laboratory
 spdx_license_key: JPL-image
 other_urls:
     - https://www.jpl.nasa.gov/jpl-image-use-policy

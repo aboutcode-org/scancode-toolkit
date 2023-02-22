@@ -2,8 +2,8 @@
 key: swi-exception
 short_name: SWI exception
 name: SWI exception
-owner: SWI
 category: Copyleft Limited
+owner: SWI
 is_exception: yes
 spdx_license_key: SWI-exception
 other_urls:

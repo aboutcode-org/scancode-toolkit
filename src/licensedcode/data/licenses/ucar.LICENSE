@@ -2,8 +2,8 @@
 key: ucar
 short_name: UCAR License
 name: UCAR License
-owner: UCAR
 category: Permissive
+owner: UCAR
 spdx_license_key: UCAR
 other_urls:
     - https://github.com/Unidata/UDUNITS-2/blob/master/COPYRIGHT

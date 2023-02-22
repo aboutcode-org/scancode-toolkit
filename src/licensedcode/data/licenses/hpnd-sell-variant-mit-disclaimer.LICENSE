@@ -1,9 +1,9 @@
 ---
 key: hpnd-sell-variant-mit-disclaimer
-category: Permissive
-owner: Jim Knoble
 short_name: HPND sell variant with MIT disclaimer
 name: HPND sell variant with MIT disclaimer
+category: Permissive
+owner: Jim Knoble
 spdx_license_key: HPND-sell-variant-MIT-disclaimer
 other_urls:
     - https://github.com/sigmavirus24/x11-ssh-askpass/blob/master/README
