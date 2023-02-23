@@ -12,6 +12,8 @@ from os.path import dirname
 from os.path import exists
 from os.path import join
 
+import attr
+
 from commoncode.fileutils import parent_directory
 from commoncode.resource import Codebase
 from commoncode.resource import Resource
@@ -660,6 +662,17 @@ class TestCodebaseWithPath(FileBasedTesting):
             must_exist=False,
         )
         check_against_expected_json_file(results, expected_file, regen=False)
+
+    def test_VirtualCodebase_codebase_attributes_assignment(self):
+        test_codebase = self.get_test_loc('resource/with_path/virtual-codebase.json')
+        vc = VirtualCodebase(
+            location=test_codebase,
+            codebase_attributes=dict(
+                packages=attr.ib(default=attr.Factory(list))
+            ),
+        )
+        self.assertNotEqual(vc.attributes.packages, None)
+        self.assertEqual(vc.attributes.packages, [])
 
 
 class TestCodebaseCache(FileBasedTesting):
