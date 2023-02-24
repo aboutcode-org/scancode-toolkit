@@ -1,8 +1,17 @@
 Release notes
 =============
 
-Version (next)
+Version 31.0.1 - (2023-02-23)
 ------------------------------
+
+- Fix issue when instantiating a ``VirtualCodebase`` from a JSON where if there
+  is no codebase attribute with the same name in the scan, then None is assigned
+  to the codebase attribute instead of the default value that was passed in when
+  VirtualCodebase was instantiated.
+  https://github.com/nexB/commoncode/issues/48
+
+- Update spdx-tools to 0.7.0rc0
+  https://github.com/nexB/commoncode/pull/50
 
 
 Version 31.0.0 - (2022-08-24)
