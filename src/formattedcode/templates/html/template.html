@@ -276,15 +276,19 @@
         </tr>
       </thead>
       <tbody>
-        {% for key, license in licenses.items() %}
+        {% for license in licenses %}
           <tr id="license_{{ license.key }}">
             <td>{{ license.key }}</td>
             <td>{{ license.short_name }}</td>
             <td>{{ license.category }}</td>
             <td>{{ license.owner }}</td>
-            <td>{{ license.reference_url|urlize(target='_blank') }}</td>
-            <td>{{ license.homepage_url|urlize(target='_blank') }}</td>
-            <td>{{ license.text_url|urlize(target='_blank') }}</td>
+            <td>{{ license.scancode_url|urlize(target='_blank') }}</td>
+            <td>{{ license.licensedb_url|urlize(target='_blank') }}</td>
+            <td>
+              {% for text_url in license.text_urls %}
+                {{ text_url|urlize(target='_blank') }}
+              {% endfor %}
+            </td>
             <td>{{ license.spdx_license_key }}</td>
             <td>{{ license.spdx_url|urlize(target='_blank') }}</td>
           </tr>
