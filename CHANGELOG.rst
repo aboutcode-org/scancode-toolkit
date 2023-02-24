@@ -1,6 +1,14 @@
 Release notes
 =============
 
+Version 31.0.2 - (2023-02-23)
+------------------------------
+
+- Update requirements in requirements.txt and requirements-dev.txt
+- v31.0.1 was uploaded to PyPI without updating requirements.txt and
+  requirements-dev.txt
+
+
 Version 31.0.1 - (2023-02-23)
 ------------------------------
 
