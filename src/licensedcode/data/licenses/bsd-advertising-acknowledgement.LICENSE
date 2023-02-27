@@ -4,9 +4,12 @@ short_name: BSD Advertising Acknowledgement License
 name: BSD Advertising Acknowledgement License
 category: Permissive
 owner: David Giffin
+homepage_url: https://github.com/python-excel/xlrd/blob/master/LICENSE#L33
 spdx_license_key: BSD-Advertising-Acknowledgement
-other_urls:
-    - https://github.com/python-excel/xlrd/blob/master/LICENSE#L33
+ignorable_authors:
+    - David Giffin <david@giffin.org>
+ignorable_emails:
+    - david@giffin.org
 ---
 
 Redistribution and use in source and binary forms, with or without

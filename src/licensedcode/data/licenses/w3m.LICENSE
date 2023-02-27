@@ -3,10 +3,9 @@ key: w3m
 short_name: w3m License
 name: w3m License
 category: Permissive
-owner: Unspecified
+owner: tats
+homepage_url: https://github.com/tats/w3m/blob/master/COPYING
 spdx_license_key: w3m
-other_urls:
-    - https://github.com/tats/w3m/blob/master/COPYING
 ---
 
 Use, modification and redistribution of this software is hereby granted,

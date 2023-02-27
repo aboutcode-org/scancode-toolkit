@@ -4,9 +4,14 @@ short_name: CFITSIO License
 name: CFITSIO License
 category: Permissive
 owner: NASA
+homepage_url: https://heasarc.gsfc.nasa.gov/docs/software/fitsio/c/f_user/node9.html
+notes: |
+    this is  a combination of us-govt-public-domain AND nist-pd licenses but SPDX
+    does not recognize public-domain as a license so they have created a new license
+    for this specific text. Minimum coverage is added to ensure both parts are detected.
 spdx_license_key: CFITSIO
-other_urls:
-    - https://heasarc.gsfc.nasa.gov/docs/software/fitsio/c/f_user/node9.html
+faq_url: https://heasarc.gsfc.nasa.gov/docs/software/fitsio/fitsio.html
+minimum_coverage: 90
 ---
 
 Copyright (Unpublished-all rights reserved under the copyright laws of the United States),
@@ -29,4 +34,4 @@ CONSEQUENTIAL DAMAGES, ARISING OUT OF, RESULTING FROM, OR IN ANY WAY CONNECTED W
 SOFTWARE, WHETHER OR NOT BASED UPON WARRANTY, CONTRACT, TORT , OR OTHERWISE, WHETHER OR NOT
 INJURY WAS SUSTAINED BY PERSONS OR PROPERTY OR OTHERWISE, AND WHETHER OR NOT LOSS WAS
 SUSTAINED FROM, OR AROSE OUT OF THE RESULTS OF, OR USE OF, THE SOFTWARE OR SERVICES
-PROVIDED HEREUNDER."
+PROVIDED HEREUNDER.

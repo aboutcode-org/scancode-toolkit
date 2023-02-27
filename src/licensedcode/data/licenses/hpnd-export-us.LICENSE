@@ -3,17 +3,10 @@ key: hpnd-export-us
 short_name: HPND with US Government export control warning
 name: HPND with US Government export control warning
 category: Free Restricted
-owner: Massachusetts Institute of Technology
+owner: MIT
+homepage_url: https://www.kermitproject.org/ck90.html#source
 spdx_license_key: HPND-export-US
-other_urls:
-    - https://www.kermitproject.org/ck90.html#source
-ignorable_copyrights:
-    - Copyright (c) 1990 by the Massachusetts Institute of Technology
-ignorable_holders:
-    - the Massachusetts Institute of Technology
 ---
-
-Copyright (C) 1990 by the Massachusetts Institute of Technology
 
 Export of this software from the United States of America may
 require a specific license from the United States Government.

@@ -3,7 +3,7 @@ license_expressions:
   - lgpl-2.1-plus
   - lgpl-2.1-plus
   - lgpl-2.1-plus AND free-unknown
-  - cornell-lossless-jpeg
+  - mit-modern
   - gpl-2.0-plus
   - gpl-2.0-plus
   - lgpl-2.1 AND gpl-2.0 AND gpl-3.0

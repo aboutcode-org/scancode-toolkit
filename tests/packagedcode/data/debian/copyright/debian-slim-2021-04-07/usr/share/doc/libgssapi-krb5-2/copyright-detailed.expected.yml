@@ -10,8 +10,8 @@ declared_license_expression: bsd-simplified AND generic-export-compliance AND cc
   AND bsd-new AND (bsd-simplified OR gpl-2.0-plus) AND bsd-new AND bsd-simplified
 declared_license_expression_spdx: BSD-2-Clause AND LicenseRef-scancode-generic-export-compliance
   AND CC-BY-SA-3.0 AND LicenseRef-scancode-proprietary-license AND LicenseRef-scancode-other-permissive
-  AND LicenseRef-scancode-mit-no-advert-export-control AND Brian-Gladman-3-Clause AND BSD-3-Clause
-  AND MIT AND BSD-2-Clause AND MIT AND BSD-3-Clause AND BSD-3-Clause AND LicenseRef-scancode-michigan-disclaimer
+  AND LicenseRef-scancode-mit-no-advert-export-control AND LicenseRef-scancode-brian-gladman-3-clause
+  AND BSD-3-Clause AND MIT AND BSD-2-Clause AND MIT AND BSD-3-Clause AND BSD-3-Clause AND LicenseRef-scancode-michigan-disclaimer
   AND FSFULLRWD AND LicenseRef-scancode-mit-no-advert-export-control AND OLDAP-2.8 AND BSD-3-Clause
   AND BSD-3-Clause AND BSD-3-Clause AND FreeBSD-DOC AND MIT-CMU AND LicenseRef-scancode-nrl-permission
   AND LicenseRef-scancode-ietf-trust AND LicenseRef-scancode-mit-old-style AND MIT AND BSD-2-Clause

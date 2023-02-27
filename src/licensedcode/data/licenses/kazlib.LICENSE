@@ -4,9 +4,8 @@ short_name: Kazlib
 name: Kazlib License
 category: Permissive
 owner: Kaz Kylheku
+homepage_url: http://git.savannah.gnu.org/cgit/kazlib.git/tree/except.c?id=0062df360c2d17d57f6af19b0e444c51feb99036
 spdx_license_key: Kazlib
-other_urls:
-    - http://git.savannah.gnu.org/cgit/kazlib.git/tree/except.c?id=0062df360c2d17d57f6af19b0e444c51feb99036
 ---
 
 Free Software License: 

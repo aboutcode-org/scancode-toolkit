@@ -3,10 +3,10 @@ key: adacore-doc
 short_name: AdaCore Doc License
 name: AdaCore Doc License
 category: Permissive
-owner: adacore
+owner: AdaCore
+homepage_url: https://github.com/AdaCore/xmlada/blob/master/docs/index.rst
 spdx_license_key: AdaCore-doc
 other_urls:
-    - https://github.com/AdaCore/xmlada/blob/master/docs/index.rst
     - https://github.com/AdaCore/gnatcoll-core/blob/master/docs/index.rst
     - https://github.com/AdaCore/gnatcoll-db/blob/master/docs/index.rst
 ---

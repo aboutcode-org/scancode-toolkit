@@ -3,10 +3,10 @@ key: qpl-1.0-inria-2004
 short_name: Q Public License 1.0 - INRIA 2004 variant
 name: Q Public License 1.0 - INRIA 2004 variant
 category: Copyleft Limited
-owner: Troll Tech AS
+owner: Trolltech
+homepage_url: https://github.com/maranget/hevea/blob/master/LICENSE
 spdx_license_key: QPL-1.0-INRIA-2004
-other_urls:
-    - https://github.com/maranget/hevea/blob/master/LICENSE
+minimum_coverage: 95
 ignorable_copyrights:
     - Copyright (c) 1999 Troll Tech AS, Norway
 ignorable_holders:
@@ -114,4 +114,4 @@ MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
 
                             Choice of Law
 
-This license is governed by the Laws of France.
+This license is governed by the {{Laws of France}}.

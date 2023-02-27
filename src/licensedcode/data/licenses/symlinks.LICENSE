@@ -4,9 +4,8 @@ short_name: Symlinks License
 name: Symlinks License
 category: Public Domain
 owner: Mark Lord
+homepage_url: https://www.mail-archive.com/debian-bugs-rc@lists.debian.org/msg11494.html
 spdx_license_key: Symlinks
-other_urls:
-    - https://www.mail-archive.com/debian-bugs-rc@lists.debian.org/msg11494.html
 ---
 
 My "symlinks" utility pre-dates the "open source licensing"

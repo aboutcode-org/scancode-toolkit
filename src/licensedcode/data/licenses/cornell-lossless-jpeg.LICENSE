@@ -4,19 +4,13 @@ short_name: Cornell Lossless JPEG License
 name: Cornell Lossless JPEG License
 category: Permissive
 owner: Kongji Huang
+homepage_url: https://www.mssl.ucl.ac.uk/~mcrw/src/20050920/proto.h
 spdx_license_key: Cornell-Lossless-JPEG
 other_urls:
     - https://android.googlesource.com/platform/external/dng_sdk/+/refs/heads/master/source/dng_lossless_jpeg.cpp#16
-    - https://www.mssl.ucl.ac.uk/~mcrw/src/20050920/proto.h
     - https://gitlab.freedesktop.org/libopenraw/libopenraw/blob/master/lib/ljpegdecompressor.cpp#L32
-ignorable_copyrights:
-    - Copyright (c) 1993 Cornell University, Kongji Huang
-ignorable_holders:
-    - Cornell University, Kongji Huang
+minimum_coverage: 99
 ---
-
-Copyright (c) 1993 Cornell University, Kongji Huang
-All rights reserved.
 
 Permission to use, copy, modify, and distribute this software and its
 documentation for any purpose, without fee, and without written

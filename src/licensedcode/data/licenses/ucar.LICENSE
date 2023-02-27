@@ -4,9 +4,8 @@ short_name: UCAR License
 name: UCAR License
 category: Permissive
 owner: UCAR
+homepage_url: https://github.com/Unidata/UDUNITS-2/blob/master/COPYRIGHT
 spdx_license_key: UCAR
-other_urls:
-    - https://github.com/Unidata/UDUNITS-2/blob/master/COPYRIGHT
 ignorable_authors:
     - the Unidata Program Center of the University Corporation for Atmospheric Research (UCAR)
         <http://www.unidata.ucar.edu>

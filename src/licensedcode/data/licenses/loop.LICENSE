@@ -3,15 +3,19 @@ key: loop
 short_name: Common Lisp LOOP License
 name: Common Lisp LOOP License
 category: Permissive
-owner: Symbolics Inc and MIT
+owner: Symbolics
+homepage_url: https://gitlab.com/embeddable-common-lisp/ecl/-/blob/develop/src/lsp/loop.lsp
+notes: |
+    The two paragraphs of license text here is identical except MIT/Symbolics
+    and we are adding another generic-loop license for the common text.
 spdx_license_key: LOOP
 other_urls:
-    - https://gitlab.com/embeddable-common-lisp/ecl/-/blob/develop/src/lsp/loop.lsp
     - http://git.savannah.gnu.org/cgit/gcl.git/tree/gcl/lsp/gcl_loop.lsp?h=Version_2_6_13pre
     - https://sourceforge.net/p/sbcl/sbcl/ci/master/tree/src/code/loop.lisp
     - https://github.com/cl-adams/adams/blob/master/LICENSE.md
     - https://github.com/blakemcbride/eclipse-lisp/blob/master/lisp/loop.lisp
     - https://gitlab.common-lisp.net/cmucl/cmucl/-/blob/master/src/code/loop.lisp
+minimum_coverage: 95
 ignorable_copyrights:
     - Copyright (c) 1986 by the Massachusetts Institute of Technology
     - Copyright (c) 1989, 1990, 1991, 1992 by Symbolics, Inc.

@@ -1,6 +1,5 @@
 ---
 key: brian-gladman-dual
-is_deprecated: yes
 short_name: Brian Gladman Dual BSD-GPL
 name: Brian Gladman Dual BSD-GPL
 category: Permissive
@@ -15,6 +14,9 @@ notes: this is a composite of gpl-2.0-plus AND brian-gladman-3-clause. See the a
     product may be distributed under the terms of a GNU General Public License (GPL) of your
     choice, in which case the provisions of this GPL apply INSTEAD OF those given above." I
     hope that helps, if not please get back to me.
+spdx_license_key: Brian-Gladman-3-Clause
+other_spdx_license_keys:
+    - LicenseRef-scancode-brian-gladman-dual
 text_urls:
     - https://github.com/basho/skerl/blob/master/c_src/brg_types.h
 other_urls:
@@ -22,6 +24,7 @@ other_urls:
     - http://fp.gladman.plus.com/
     - http://www.ecrypt.eu.org/stream/svn/viewcvs.cgi/ecrypt/trunk/benchmarks/aes-ctr/aes-128/gladman/aes.h?diff_format=s&rev=190&view=auto
     - https://launchpad.net/ubuntu/oneiric/+source/silc-server/+copyright
+    - https://github.com/SWI-Prolog/packages-clib/blob/master/sha1/brg_endian.h
 ---
 
 LICENSE TERMS

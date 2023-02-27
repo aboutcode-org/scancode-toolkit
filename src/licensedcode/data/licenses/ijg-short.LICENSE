@@ -4,9 +4,8 @@ short_name: Independent JPEG Group License - short
 name: Independent JPEG Group License - short
 category: Permissive
 owner: IJG - Independent JPEG Group
+homepage_url: https://sourceforge.net/p/xmedcon/code/ci/master/tree/libs/ljpg/
 spdx_license_key: IJG-short
-other_urls:
-    - https://sourceforge.net/p/xmedcon/code/ci/master/tree/libs/ljpg/
 ignorable_copyrights:
     - copyright (c) 1991, 1992, Thomas G. Lane
 ignorable_holders:
