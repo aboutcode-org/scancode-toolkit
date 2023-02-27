@@ -284,7 +284,10 @@ def write_spdx(
         file_entry = File(
             spdx_id=f'SPDXRef-{sid}',
             name=name)
-        file_entry.set_checksum(Checksum(ChecksumAlgorithm.SHA1, file_data.get('sha1') or ''))
+        if file_data.get('file_type') == 'empty':
+            file_entry.set_checksum(Checksum(ChecksumAlgorithm.SHA1, "da39a3ee5e6b4b0d3255bfef95601890afd80709"))
+        else:
+            file_entry.set_checksum(Checksum(ChecksumAlgorithm.SHA1, file_data.get('sha1') or ''))
 
         file_license_detections = file_data.get('license_detections')
         license_matches = get_matches_from_detection_mappings(file_license_detections)
