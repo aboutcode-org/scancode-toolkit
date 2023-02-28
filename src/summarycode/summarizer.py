@@ -29,6 +29,7 @@ from summarycode.tallies import compute_codebase_tallies
 TRACE = False
 TRACE_LIGHT = False
 
+warnings.simplefilter('ignore', UnicodeWarning)
 
 def logger_debug(*args):
     pass
@@ -162,8 +163,6 @@ def get_declared_holders(codebase, holders_tallies):
     A declared holder is a copyright holder present in the key files who has the
     highest amount of refrences throughout the codebase.
     """
-    warnings.simplefilter('ignore', UnicodeWarning)
-
     entry_by_holders = {
         fingerprints.generate(entry['value']): entry for entry in holders_tallies if entry['value']
     }
