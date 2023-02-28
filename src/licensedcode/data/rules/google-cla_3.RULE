@@ -1,0 +1,9 @@
+---
+license_expression: google-cla
+is_license_reference: yes
+relevance: 100
+ignorable_urls:
+    - https://developers.google.com/open-source/cla/individual
+---
+
+[Google Individual Contributor License Agreement](https://developers.google.com/open-source/cla/individual).

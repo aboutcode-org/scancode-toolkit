@@ -1,0 +1,73 @@
+---
+license_expression: proprietary-license
+is_license_text: yes
+notes: https://raw.githubusercontent.com/RoaLogic/rltheme/02a6ccd12775e2018c7dff83b1fdf3996d72e8dd/_pages/license_bsd.md
+ignorable_copyrights:
+    - copyrighted by Roa Logic
+ignorable_holders:
+    - Roa Logic
+---
+
+title: BSD License Agreement
+permalink: /license/bsd/
+
+# BSD License Agreement
+
+PLEASE CAREFULLY REVIEW THE FOLLOWING TERMS AND CONDITIONS BEFORE DOWNLOADING AND USING THE LICENSED MATERIALS. THIS LICENSE AGREEMENT (“AGREEMENT”) IS A LEGAL AGREEMENT BETWEEN YOU (EITHER A SINGLE INDIVIDUAL, OR A SINGLE LEGAL ENTITY) (“YOU”) AND ROA LOGIC BV (“ROA LOGIC”) COVERING THE PRODUCTS OR SERVICES YOU PURCHASE FROM ROA LOGIC.
+
+By downloading and/or using or installing products from Roa Logic you automatically agree to and are bound by the terms and conditions of this agreement.
+
+## 1. DEFINITIONS
+
+“Intellectual Property” means any or all of the following and all rights in, arising out of, or associated with:
+
+1. All inventions (whether patentable or not), invention disclosures, improvements, trade secrets, proprietary information, know how, technology, algorithms, techniques, methods, devices, technical data, customer lists, and all documentation embodying or evidencing any of the foregoing;
+2. All computer software, source codes, object codes, firmware, development tools, files, records, data, and all media on which any of the foregoing is recorded
+
+“Product” means an Intellectual Property block consisting of, but not limited to, Verilog, VHDL, and/or SystemVerilog design files, specifications, block diagrams and documentation.
+
+“Physical Implementation” means any implementation in programmable or non-programmable technologies including, but not limited to Field Programmable Gate Arrays (FPGAs), Complex Programmable Logic Devices (CPLDs), Application Specific Integrated Circuits (ASICs), Application Specific Standard Products (ASSPs)
+
+“Silicon Device(s)” means any customer Physical Implementation containing a unique part number.
+
+“You” the opposite contract party as referred to in article 6:231, subsection c, of the Dutch Civil Code, being the party to whom an offer is made by Roa Logic, or with whom an agreement is concluded by Roa Logic, or to whom the Product is supplied.
+
+## 2. LICENSE TO USE
+
+Roa Logic hereby grants you the following limited, non-exclusive, no-charge, and royalty-free licenses to use, modify, and distribute the Product:
+
+1. Copyright license   
+2. Patent license, where such license only applies to those patent claims licensable by Roa Logic.
+
+Specifically you are allowed to:
+
+1. Use the Product in your design to create, simulate, implement, manufacture, use, and sell a Silicon Device;
+2. Distribute the Product and/or Silicon Device, provided the original disclaimer and copyright notice are retained and this Agreement is part of the distribution.
+
+## 3. OWNERSHIP
+
+The Product, its documentation, and any associated material is owned by Roa Logic and is protected by copyright and other intellectual property right laws.
+
+Any modification or addition to the Product, documentation, and any associated materials or derivatives thereof, that You intentionally submit to Roa Logic for inclusion in the Product will become part of the Product and thus owned and copyrighted by Roa Logic. By submitting any material for inclusion you wave any ownership, copyright, and patent rights and claims for the use of the submitted material in the Product.
+
+“Submitting” means any form of electronic, verbal, or written communication sent to Roa Logic or its representatives, including, but not limited to, email, mailing lists, source repositories, and issue tracking systems for the purpose of discussing and improving the Product.
+
+You shall not remove any copyright, disclaimers, or other notices from any parts of the Product.
+
+## 4. DISCLAIMER OF WARRANTY
+
+The Product is provided “AS IS”. Roa Logic has no obligation to provide maintenance or support services in connection with the Product.
+
+ROA LOGIC DISCLAIMS ALL WARRANTIES, CONDITIONS AND REPRESENTATIONS, EXPRESS, IMPLIED, OR STATUTORY, INCLUDING, BUT NOT LIMITED TO, THOSE RELATED TO MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, SATISFACTORY QUALITY, ACCURACY OR COMPLETENESS OR RESULTS, CONFORMANCE WITH DESCRIPTION, AND NON-INFRINGEMENT.
+
+## 5. LIMITATION OF LIABILITY
+
+TO THE MAXIMUM EXTENT PERMITTED BY LAW, IN NO EVENT SHALL ROA LOGIC BE LIABLE TO YOU OR ANY THIRD PARTY FOR ANY INDIRECT, SPECIAL, CONSEQUENTIAL OR INCIDENTAL DAMAGES WHATSOEVER (INCLUDING, BUT NOT LIMITED TO, DAMAGES FOR LOSS OF PROFIT, BUSINESS INTERRUPTIONS OR LOSS OF INFORMATION) ARISING OUT OF THE USE OR INABILITY TO USE THE PRODUCT WHETHER BASED ON A CLAIM UNDER CONTRACT, TORT OR OTHER LEGAL THEORY, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.  
+
+## 6. APPLICABLE LAW AND CHOICE OF FORUM
+
+All agreements and contracts between you and Roa Logic, which these conditions are applicable to, shall be governed by Dutch law with the exclusion of the uniform UN Convention on Contracts for the International Sale of Goods (CISG) and other bilateral or multilateral treaties for the purpose of unifying international sales.
+
+The competent courts in the district where Roa Logic has its registered office in the Netherlands has jurisdiction over all disputes concerning rights and obligations associated with the contractual relations.
+
+Conversion: If any clause or sentence of this agreement is held by a court of law to be illegal or unenforceable, the remaining provisions of the agreement remain in effect. The failure of Roa Logic to enforce any of the provisions in the agreement does not constitute a waiver of Roa Logic’s rights to enforce any provision of the agreement in the future.

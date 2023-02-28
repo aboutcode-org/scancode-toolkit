@@ -1,0 +1,11 @@
+---
+license_expression: ruby WITH generic-exception
+is_license_notice: yes
+---
+
+This program is free software.
+ You can distribute/modify this program under the same terms of ruby.
+
+ As a special exception, when this code is copied by Racc
+ into a Racc output file, you may use that output file
+ without restriction.

@@ -1,0 +1,14 @@
+---
+license_expression: proprietary-license
+is_license_notice: yes
+referenced_filenames:
+    - LICENSE.txt
+notes: https://opensource.apple.com/source/cups/cups-86/test/5.2-lpc.sh.auto.html This likely
+    is some cups, GPL or LGPL.
+---
+
+#   These coded instructions, statements, and computer programs are the
+#   property of  and are protected by Federal
+#   copyright law.  Distribution and use rights are outlined in the file
+#   "LICENSE.txt" which should have been included with this file.  If this
+#   file is missing or damaged please contact
