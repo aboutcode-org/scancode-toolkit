@@ -1,0 +1,9 @@
+---
+license_expression: xnet
+is_license_reference: yes
+relevance: 100
+ignorable_urls:
+    - http://www.opensource.org/licenses/xnet.php
+---
+
+http://www.opensource.org/licenses/xnet.php X.Net License

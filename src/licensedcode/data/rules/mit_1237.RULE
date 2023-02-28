@@ -1,0 +1,9 @@
+---
+license_expression: mit
+is_license_notice: yes
+ignorable_urls:
+    - https://git.musl-libc.org/cgit/musl/tree/COPYRIGHT
+---
+
+Ported from musl, which is licensed under the MIT license:
+ https://git.musl-libc.org/cgit/musl/tree/COPYRIGHT

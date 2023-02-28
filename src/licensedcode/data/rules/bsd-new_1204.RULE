@@ -1,0 +1,12 @@
+---
+license_expression: bsd-new
+is_license_notice: yes
+referenced_filenames:
+    - LICENSE
+---
+
+This project as a whole and each piece of it individually
+are licensed for use and redistribution under the conditions
+stated in the included LICENSE file, also known as
+"The BSD 3-Clause" License as described at
+http ://opensource.org/licenses/BSD-3-Clause.

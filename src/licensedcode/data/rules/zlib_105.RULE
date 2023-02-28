@@ -1,0 +1,9 @@
+---
+license_expression: zlib
+is_license_reference: yes
+relevance: 100
+ignorable_urls:
+    - http://www.opensource.org/licenses/zlib-license.php
+---
+
+http://www.opensource.org/licenses/zlib-license.php zlib/libpng license

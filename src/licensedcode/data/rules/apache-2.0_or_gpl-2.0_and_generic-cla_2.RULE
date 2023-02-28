@@ -1,0 +1,14 @@
+---
+license_expression: (apache-2.0 OR gpl-2.0) AND generic-cla
+is_license_notice: yes
+referenced_filenames:
+    - LICENSE-Apache-2.0
+    - LICENSE-GPL-2.0
+notes: https://github.com/osquery/osquery/blob/cbf4c025f2de883176fb6cc2b9299519cc2bfcdc/LICENSE
+---
+
+By contributing to osquery you agree that your contributions will be licensed
+under the terms of both the [LICENSE-Apache-2.0](LICENSE-Apache-2.0) and the
+[LICENSE-GPL-2.0](LICENSE-GPL-2.0) files in the root of this source tree.
+
+If you're using osquery you are free to choose one of the provided licenses.
