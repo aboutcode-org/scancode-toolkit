@@ -1,0 +1,11 @@
+---
+license_expression: gpl-2.0-plus
+is_license_notice: yes
+ignorable_urls:
+    - http://www.gnu.org/licenses/gpl.txt
+---
+
+This program is licensed under the terms of the
+GNU General Public License as published by the Free Software
+Foundation; either {{version 2}} of the License, or (at your
+option) any {{later version}} (http://www.gnu.org/licenses/gpl.txt).

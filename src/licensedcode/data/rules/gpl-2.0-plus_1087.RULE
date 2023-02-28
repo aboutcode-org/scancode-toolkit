@@ -1,0 +1,7 @@
+---
+license_expression: gpl-2.0-plus
+is_license_notice: yes
+---
+
+All the files copied carry SPDX license identifiers of `GPL-2.0+` or
+`GPL-2.0-or-later`.

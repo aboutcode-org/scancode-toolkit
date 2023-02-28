@@ -1,0 +1,9 @@
+---
+license_expression: lgpl-2.0-plus WITH wxwindows-exception-3.1
+is_license_reference: yes
+relevance: 100
+ignorable_urls:
+    - http://www.opensource.org/licenses/W3C.php
+---
+
+http://www.opensource.org/licenses/W3C.php W3C License
