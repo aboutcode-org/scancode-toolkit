@@ -1,0 +1,9 @@
+---
+is_false_positive: yes
+notes: Some license suggestion at https://sourceforge.net/p/phpwiki/code/11015/tree/trunk/configurator.php#l1392
+---
+
+COPYRIGHTPAGE_TITLE = \"GNU Free Documentation License\"
+ COPYRIGHTPAGE_URL = \"https://www.gnu.org/copyleft/fdl.html\"
+ COPYRIGHTPAGE_TITLE = \"Creative Commons License 2.0\"
+ COPYRIGHTPAGE_URL = \"https://creativecommons.org/licenses/by/2.0/
