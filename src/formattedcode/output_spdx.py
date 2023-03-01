@@ -245,7 +245,7 @@ def write_spdx(
     ns_prefix = '_'.join(package_name.lower().split())
     comment = notice + f'\nSPDX License List: {scancode_config.spdx_license_list_version}'
 
-    version_major, version_minor = tuple(scancode_config.spdx_license_list_version.split("."))
+    version_major, version_minor = scancode_config.spdx_license_list_version.split(".")
     spdx_license_list_version = Version(major=version_major, minor=version_minor)
 
     doc = Document(

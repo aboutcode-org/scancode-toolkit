@@ -26,7 +26,7 @@
             "platform_version": "#64-Ubuntu SMP Mon Jan 23 17:02:19 UTC 2023",
             "python_version": "3.8.10 (default, Nov 14 2022, 12:59:47) \n[GCC 9.4.0]"
           },
-          "spdx_license_list_version": "3.19",
+          "spdx_license_list_version": "3.20",
           "files_count": 26
         }
       }

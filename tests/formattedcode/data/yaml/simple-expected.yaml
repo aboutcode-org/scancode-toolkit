@@ -25,7 +25,7 @@ headers:
         platform: Linux-4.15.0-200-generic-x86_64-with-glibc2.23
         platform_version: '#211~16.04.2-Ubuntu SMP Fri Nov 25 09:18:48 UTC 2022'
         python_version: "3.9.10 (main, Jan 29 2022, 10:01:49) \n[GCC 5.4.0 20160609]"
-      spdx_license_list_version: '3.19'
+      spdx_license_list_version: '3.20'
       files_count: 1
 packages: []
 dependencies: []
