@@ -2,8 +2,8 @@
 key: ooura-2001
 short_name: OOURA License 2001
 name: OOURA License 2001
-category: Permissive
-owner: OOURA
+category: Proprietary Free
+owner: Takuya OOURA
 homepage_url: https://www.kurims.kyoto-u.ac.jp/~ooura/fft.html
 spdx_license_key: LicenseRef-scancode-ooura-2001
 text_urls:

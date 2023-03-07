@@ -4,7 +4,7 @@ language: zh-hans
 short_name: Mulan PSL v1
 name: Mulan Permissive Software License, Version 1
 category: Permissive
-owner: COSCI
+owner: COSCL - China Open Source Cloud League
 homepage_url: https://license.coscl.org.cn/MulanPSL/
 spdx_license_key: MulanPSL-1.0
 text_urls:

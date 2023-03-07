@@ -143,7 +143,7 @@ __release_date__ = datetime.datetime(2023, 1, 15)
 __output_format_version__ = '3.0.0'
 
 #
-spdx_license_list_version = '3.19'
+spdx_license_list_version = '3.20'
 
 ################################################################################
 # USAGE MODE-, INSTALLATION- and IMPORT- and RUN-SPECIFIC DIRECTORIES

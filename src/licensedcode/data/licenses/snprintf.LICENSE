@@ -4,7 +4,11 @@ short_name: snprintf License
 name: snprintf License
 category: Permissive
 owner: Unspecified
-spdx_license_key: LicenseRef-scancode-snprintf
+spdx_license_key: snprintf
+other_spdx_license_keys:
+    - LicenseRef-scancode-snprintf
+other_urls:
+    - https://github.com/openssh/openssh-portable/blob/master/openbsd-compat/bsd-snprintf.c#L2
 ---
 
 It may be used for any purpose as long as this notice remains intact on all

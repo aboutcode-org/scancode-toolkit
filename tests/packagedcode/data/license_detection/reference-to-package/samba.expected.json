@@ -897,7 +897,9 @@
       ],
       "osi_url": null,
       "faq_url": null,
-      "other_urls": [],
+      "other_urls": [
+        "https://github.com/nexB/scancode-toolkit/issues/3038#issuecomment-1317511139"
+      ],
       "key_aliases": [],
       "minimum_coverage": 90,
       "standard_notice": null,

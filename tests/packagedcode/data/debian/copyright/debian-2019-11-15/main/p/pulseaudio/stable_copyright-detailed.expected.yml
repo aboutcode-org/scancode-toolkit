@@ -14,22 +14,21 @@ declared_license_expression: lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.1-plus A
   AND lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.1-plus AND gpl-2.0-plus AND lgpl-2.1-plus AND
   lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.1-plus
 declared_license_expression_spdx: LGPL-2.1-or-later AND LGPL-2.1-or-later AND LGPL-2.1-or-later
-  AND LicenseRef-scancode-sun-source AND LicenseRef-scancode-libpbm AND LGPL-2.1-or-later AND
-  LGPL-2.1-or-later AND LGPL-2.1-or-later AND LGPL-2.1-or-later AND GPL-2.0-or-later AND LGPL-2.1-or-later
-  AND LGPL-2.1-or-later AND LGPL-2.1-or-later AND LGPL-2.1-or-later AND LicenseRef-scancode-adrian
+  AND LicenseRef-scancode-sun-source AND xlock AND LGPL-2.1-or-later AND LGPL-2.1-or-later AND
+  LGPL-2.1-or-later AND LGPL-2.1-or-later AND GPL-2.0-or-later AND LGPL-2.1-or-later AND LGPL-2.1-or-later
+  AND LGPL-2.1-or-later AND LGPL-2.1-or-later AND LicenseRef-scancode-adrian AND LGPL-2.1-or-later
   AND LGPL-2.1-or-later AND LGPL-2.1-or-later AND LGPL-2.1-or-later AND LGPL-2.1-or-later AND
   LGPL-2.1-or-later AND LGPL-2.1-or-later AND LGPL-2.1-or-later AND LGPL-2.1-or-later AND LGPL-2.1-or-later
   AND LGPL-2.1-or-later AND LGPL-2.1-or-later AND LGPL-2.1-or-later AND LGPL-2.1-or-later AND
-  LGPL-2.1-or-later AND LGPL-2.1-or-later AND LGPL-2.1-or-later AND LGPL-2.1-or-later AND MIT
+  LGPL-2.1-or-later AND LGPL-2.1-or-later AND LGPL-2.1-or-later AND MIT AND LGPL-2.1-or-later
   AND LGPL-2.1-or-later AND LGPL-2.1-or-later AND LGPL-2.1-or-later AND LGPL-2.1-or-later AND
-  LGPL-2.1-or-later AND LGPL-2.1-or-later AND LGPL-2.0-or-later AND LGPL-2.1-or-later AND LGPL-2.1-or-later
-  AND LGPL-2.1-or-later AND LGPL-2.1-or-later AND LGPL-2.1-or-later AND LGPL-2.1-or-later AND
-  LGPL-2.1-or-later AND LGPL-2.1-or-later AND LGPL-2.1-or-later AND LGPL-2.1-or-later AND LGPL-2.1-or-later
+  LGPL-2.1-or-later AND LGPL-2.0-or-later AND LGPL-2.1-or-later AND LGPL-2.1-or-later AND LGPL-2.1-or-later
   AND LGPL-2.1-or-later AND LGPL-2.1-or-later AND LGPL-2.1-or-later AND LGPL-2.1-or-later AND
   LGPL-2.1-or-later AND LGPL-2.1-or-later AND LGPL-2.1-or-later AND LGPL-2.1-or-later AND LGPL-2.1-or-later
   AND LGPL-2.1-or-later AND LGPL-2.1-or-later AND LGPL-2.1-or-later AND LGPL-2.1-or-later AND
-  LGPL-2.1-or-later AND GPL-2.0-or-later AND LGPL-2.1-or-later AND LGPL-2.1-or-later AND LGPL-2.1-or-later
-  AND LGPL-2.1-or-later
+  LGPL-2.1-or-later AND LGPL-2.1-or-later AND LGPL-2.1-or-later AND LGPL-2.1-or-later AND LGPL-2.1-or-later
+  AND LGPL-2.1-or-later AND LGPL-2.1-or-later AND LGPL-2.1-or-later AND LGPL-2.1-or-later AND
+  GPL-2.0-or-later AND LGPL-2.1-or-later AND LGPL-2.1-or-later AND LGPL-2.1-or-later AND LGPL-2.1-or-later
 other_license_expression:
 other_license_expression_spdx:
 license_detections:

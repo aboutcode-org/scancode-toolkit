@@ -1,0 +1,8 @@
+---
+license_expression: clips-2017
+is_license_notice: yes
+relevance: 100
+---
+
+The {{CLIPS}} source code is licensed under a separate license which is found in
+src/native/LICENSE.

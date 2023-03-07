@@ -65,12 +65,12 @@ other_license_expression: gpl-2.0 AND gpl-2.0 AND gpl-2.0 AND fsf-free AND autoc
   AND brian-clapper AND lgpl-2.1 AND gpl-2.0 AND lgpl-2.0-plus AND mit-0 AND mit AND gpl-2.0
   AND gpl-2.0 AND gpl-2.0 AND gpl-1.0-plus
 other_license_expression_spdx: GPL-2.0-only AND GPL-2.0-only AND GPL-2.0-only AND FSFUL AND
-  LicenseRef-scancode-autoconf-simple-exception-2.0 AND GPL-2.0-or-later AND NTP AND GPL-2.0-only
-  AND GPL-2.0-only AND GPL-1.0-or-later AND GPL-2.0-only AND GPL-2.0-only AND GPL-1.0-or-later
-  AND LicenseRef-scancode-unknown AND BSD-4-Clause-UC AND GPL-2.0-only AND LicenseRef-scancode-free-unknown
-  AND TU-Berlin-1.0 AND BSD-3-Clause AND BSD-3-Clause AND BSD-4-Clause AND GPL-2.0-or-later
-  AND LicenseRef-scancode-public-domain AND LicenseRef-scancode-unknown AND LicenseRef-scancode-public-domain
-  AND GPL-2.0-only AND GPL-2.0-or-later AND LicenseRef-scancode-public-domain AND LicenseRef-scancode-other-permissive
+  Autoconf-exception-generic AND GPL-2.0-or-later AND NTP AND GPL-2.0-only AND GPL-2.0-only
+  AND GPL-1.0-or-later AND GPL-2.0-only AND GPL-2.0-only AND GPL-1.0-or-later AND LicenseRef-scancode-unknown
+  AND BSD-4-Clause-UC AND GPL-2.0-only AND LicenseRef-scancode-free-unknown AND TU-Berlin-1.0
+  AND BSD-3-Clause AND BSD-3-Clause AND BSD-4-Clause AND GPL-2.0-or-later AND LicenseRef-scancode-public-domain
+  AND LicenseRef-scancode-unknown AND LicenseRef-scancode-public-domain AND GPL-2.0-only AND
+  GPL-2.0-or-later AND LicenseRef-scancode-public-domain AND LicenseRef-scancode-other-permissive
   AND (MIT AND GPL-2.0-only) AND GPL-2.0-or-later AND GPL-2.0-or-later AND LicenseRef-scancode-other-permissive
   AND (BSD-4-Clause-UC AND ISC AND GPL-2.0-only) AND GPL-2.0-only AND BSD-4-Clause-UC AND Bison-exception-2.2
   AND GPL-3.0-or-later AND BSD-3-Clause AND GPL-2.0-only AND GPL-2.0-only AND GPL-1.0-or-later

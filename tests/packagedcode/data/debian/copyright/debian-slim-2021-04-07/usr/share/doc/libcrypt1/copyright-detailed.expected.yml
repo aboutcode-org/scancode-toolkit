@@ -11,7 +11,7 @@ declared_license_expression_spdx: LGPL-2.1-or-later AND LGPL-2.1-or-later AND LG
   AND 0BSD AND BSD-2-Clause AND BSD-2-Clause AND BSD-2-Clause AND 0BSD AND 0BSD AND 0BSD AND
   0BSD AND BSD-2-Clause AND BSD-2-Clause AND LicenseRef-scancode-public-domain AND BSD-3-Clause
   AND BSD-2-Clause AND LicenseRef-scancode-public-domain AND GPL-3.0-or-later WITH Autoconf-exception-3.0
-  AND 0BSD AND FSFAP AND FSFAP AND FSFAP AND FSFAP AND GPL-2.0-or-later WITH LicenseRef-scancode-autoconf-simple-exception-2.0
+  AND 0BSD AND FSFAP AND FSFAP AND FSFAP AND FSFAP AND GPL-2.0-or-later WITH Autoconf-exception-generic
   AND FSFAP AND FSFAP AND GPL-3.0-or-later WITH Autoconf-exception-3.0 AND FSFAP AND FSFAP AND
   LicenseRef-scancode-free-unknown
 other_license_expression:

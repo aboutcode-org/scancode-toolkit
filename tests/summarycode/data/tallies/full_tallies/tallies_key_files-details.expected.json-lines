@@ -22,11 +22,11 @@
           "system_environment": {
             "operating_system": "linux",
             "cpu_architecture": "64",
-            "platform": "Linux-4.15.0-200-generic-x86_64-with-glibc2.23",
-            "platform_version": "#211~16.04.2-Ubuntu SMP Fri Nov 25 09:18:48 UTC 2022",
-            "python_version": "3.9.10 (main, Jan 29 2022, 10:01:49) \n[GCC 5.4.0 20160609]"
+            "platform": "Linux-5.14.0-1057-oem-x86_64-with-glibc2.29",
+            "platform_version": "#64-Ubuntu SMP Mon Jan 23 17:02:19 UTC 2023",
+            "python_version": "3.8.10 (default, Nov 14 2022, 12:59:47) \n[GCC 9.4.0]"
           },
-          "spdx_license_list_version": "3.19",
+          "spdx_license_list_version": "3.20",
           "files_count": 26
         }
       }
@@ -466,15 +466,18 @@
         "is_exception": true,
         "is_unknown": false,
         "is_generic": false,
-        "spdx_license_key": "LicenseRef-scancode-ada-linking-exception",
-        "other_spdx_license_keys": [],
+        "spdx_license_key": "GNAT-exception",
+        "other_spdx_license_keys": [
+          "LicenseRef-scancode-ada-linking-exception"
+        ],
         "osi_license_key": null,
         "text_urls": [],
         "osi_url": null,
         "faq_url": null,
         "other_urls": [
           "http://zlib-ada.sourceforge.net/",
-          "http://ada-ru.org/"
+          "http://ada-ru.org/",
+          "https://github.com/AdaCore/florist/blob/master/libsrc/posix-configurable_file_limits.adb"
         ],
         "key_aliases": [],
         "minimum_coverage": 0,
@@ -487,7 +490,7 @@
         "text": "As a special exception, if other files instantiate generics from this \nunit, or you link this unit with other files to produce an executable, \nthis  unit  does not  by itself cause  the resulting executable to be \ncovered by the GNU General Public License. This exception does not \nhowever invalidate any other reasons why the executable file  might be \ncovered by the GNU Public License.",
         "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/ada-linking-exception.LICENSE",
         "licensedb_url": "https://scancode-licensedb.aboutcode.org/ada-linking-exception",
-        "spdx_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/ada-linking-exception.LICENSE"
+        "spdx_url": "https://spdx.org/licenses/GNAT-exception"
       },
       {
         "key": "artistic-2.0",
@@ -2765,7 +2768,7 @@
         "is_source": false,
         "is_script": false,
         "detected_license_expression": "gpl-2.0-plus WITH ada-linking-exception",
-        "detected_license_expression_spdx": "GPL-2.0-or-later WITH LicenseRef-scancode-ada-linking-exception",
+        "detected_license_expression_spdx": "GPL-2.0-or-later WITH GNAT-exception",
         "license_detections": [
           {
             "license_expression": "gpl-2.0-plus WITH ada-linking-exception",
