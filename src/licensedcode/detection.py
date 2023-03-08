@@ -114,7 +114,6 @@ class DetectionRule(Enum):
 
     These are logged in LicenseDetection.detection_log for verbosity.
     """
-    NOT_COMBINED = 'not-combined'
     UNKNOWN_MATCH = 'unknown-match'
     LICENSE_CLUES = 'license-clues'
     FALSE_POSITIVE = 'possible-false-positive'
@@ -1049,9 +1048,8 @@ def get_detected_license_expression(
 
     else:
         if TRACE_ANALYSIS:
-            logger_debug(f'analysis {DetectionRule.NOT_COMBINED.value}')
+            logger_debug(f'analysis not-combined')
         matches_for_expression = license_matches
-        detection_log.append(DetectionRule.NOT_COMBINED.value)
 
     if TRACE:
         logger_debug(f'matches_for_expression: {matches_for_expression}', f'detection_log: {detection_log}')
