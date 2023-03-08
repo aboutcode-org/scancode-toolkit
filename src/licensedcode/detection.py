@@ -159,19 +159,19 @@ class LicenseDetection:
             'using the SPDX license expression syntax and ScanCode license keys.')
     )
 
+    matches = attr.ib(
+        default=attr.Factory(list),
+        metadata=dict(
+            help='List of license matches combined in this detection.'
+        )
+    )
+
     detection_log = attr.ib(
         repr=False,
         default=attr.Factory(list),
         metadata=dict(
             help='A list of detection DetectionRule explaining how '
             'this detection was created.'
-        )
-    )
-
-    matches = attr.ib(
-        default=attr.Factory(list),
-        metadata=dict(
-            help='List of license matches combined in this detection.'
         )
     )
 
@@ -585,8 +585,8 @@ class UniqueDetection:
     identifier = attr.ib(default=None)
     license_expression = attr.ib(default=None)
     count = attr.ib(default=None)
-    detection_log = attr.ib(default=attr.Factory(list))
     matches = attr.ib(default=attr.Factory(list))
+    detection_log = attr.ib(default=attr.Factory(list))
     files = attr.ib(factory=list)
 
     @classmethod
