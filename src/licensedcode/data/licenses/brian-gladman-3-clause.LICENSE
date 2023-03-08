@@ -4,7 +4,12 @@ short_name: Brian Gladman 3-Clause License
 name: Brian Gladman 3-Clause License
 category: Permissive
 owner: Brian Gladman
+notes: |
+    There is now a SPDX license with the same name as this license but
+    this is actually a license that we track at brian-gladman-dual.
 spdx_license_key: LicenseRef-scancode-brian-gladman-3-clause
+other_urls:
+    - https://github.com/SWI-Prolog/packages-clib/blob/master/sha1/brg_endian.h
 ---
 
  LICENSE TERMS

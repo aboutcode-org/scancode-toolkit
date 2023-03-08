@@ -1,8 +1,11 @@
 ---
-license_expression: other-permissive
-is_license_text: yes
-relevance: 100
-notes: Seen in https://github.com/tats/w3m/blob/master/COPYING
+key: w3m
+short_name: w3m License
+name: w3m License
+category: Permissive
+owner: tats
+homepage_url: https://github.com/tats/w3m/blob/master/COPYING
+spdx_license_key: w3m
 ---
 
 Use, modification and redistribution of this software is hereby granted,

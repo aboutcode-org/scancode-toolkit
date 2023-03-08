@@ -1,0 +1,38 @@
+---
+key: offis
+short_name: OFFIS License
+name: OFFIS License
+category: Permissive
+owner: OFFIS
+homepage_url: https://sourceforge.net/p/xmedcon/code/ci/master/tree/libs/dicom/README
+spdx_license_key: OFFIS
+ignorable_copyrights:
+    - Copyright (c) 1994-2001, OFFIS
+ignorable_holders:
+    - OFFIS
+ignorable_authors:
+    - Kuratorium OFFIS e.V.
+---
+
+Copyright (C) 1994-2001, OFFIS
+
+This software and supporting documentation were developed by
+ 
+Kuratorium OFFIS e.V.
+Healthcare Information and Communication Systems
+Escherweg 2
+D-26121 Oldenburg, Germany
+ 
+THIS SOFTWARE IS MADE AVAILABLE,  AS IS,  AND OFFIS MAKES NO  WARRANTY
+REGARDING  THE  SOFTWARE,  ITS  PERFORMANCE,  ITS  MERCHANTABILITY  OR
+FITNESS FOR ANY PARTICULAR USE, FREEDOM FROM ANY COMPUTER DISEASES  OR
+ITS CONFORMITY TO ANY SPECIFICATION. THE ENTIRE RISK AS TO QUALITY AND
+PERFORMANCE OF THE SOFTWARE IS WITH THE USER.
+
+Copyright of the software  and  supporting  documentation  is,  unless
+otherwise stated, owned by OFFIS, and free access is hereby granted as
+a license to  use  this  software,  copy  this  software  and  prepare
+derivative works based upon this software.  However, any  distribution
+of this software source code or supporting documentation or derivative
+works  (source code and  supporting documentation)  must  include  the
+three paragraphs of this copyright notice.

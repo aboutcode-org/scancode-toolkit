@@ -1,0 +1,50 @@
+---
+key: apple-academic-lisa-os-3.1
+short_name: Apple Academic Lisa OS v3.1
+name: Apple Academic License Agreement Lisa OS v3.1
+category: Proprietary Free
+owner: Apple
+homepage_url: https://info.computerhistory.org/apple-lisa-code
+spdx_license_key: LicenseRef-scancode-apple-academic-lisa-os-3.1
+text_urls:
+    - https://d1yx3ys82bpsa0.cloudfront.net/source/lisa-source.zip
+other_urls:
+    - https://arstechnica.com/information-technology/2023/01/pioneering-apple-lisa-goes-open-source-thanks-to-computer-history-museum/
+---
+
+APPLE ACADEMIC LICENSE AGREEMENT
+Lisa OS Software version 3.1
+
+IMPORTANT: Please read these terms carefully as they are an agreement between you and Apple Inc. about the Apple software, fonts, interfaces, content, data, and documentation included as part of the Lisa OS software package referenced above (collectively the "Apple Software").
+
+By using the Apple Software, you accept these terms. If you do not accept these terms, you may not download or use the Apple Software.
+
+1. Software Use Rights and Limitations. Subject to your compliance with these terms, Apple grants you a non-exclusive, non-transferable license under Apple's copyrights in the Apple Software to do the following for non-commercial, academic research, educational teaching, and personal study purposes only:
+•	use, reproduce, compile and modify the Apple Software,
+•	run the Apple Software and your modifications of it on your hardware,
+•	copy and reference documentation that comes with the Apple Software.
+You may not and you agree not to:
+•	redistribute, publish, sublicense, sell, rent or transfer the Apple Software publish benchmarking results about the Apple Software or your use of it 
+•	use the name, trademarks, service marks or logos of Apple to endorse or
+promote your modifications or other materials derived from the Apple Software
+
+2. Scope of License. The Apple Software is only licensed (not sold) to you for the non-commercial purposes stated above and may not be used for any other purposes without Apple's prior written permission. Apple and Apple's licensors
+retain ownership of the Apple Software and reserve all rights not expressly granted to you. If you create modifications of the Apple Software, you hereby grant to Apple a non-exclusive, perpetual, irrevocable, royalty-free, sublicensable, assignable, worldwide license to use, reproduce, modify, publicly display, distribute, make, have made, import and sell your modifications.
+
+3. Term. The license granted under this agreement shall continue in effect unless terminated as provided herein. If you fail to comply with any term of this agreement, the license granted to you under this agreement will terminate automatically, with or without notice from Apple. Apple may also, in its sale discretion, terminate this agreement upon thirty (30) days notice for any reason. Upon termination, you agree to cease all use of the Apple Software and destroy all copies of it in your possession or control. Sections 4 through 7, inclusive, of this agreement shall survive any such termination.
+
+4. Export Control. The Apple Software is subject to U.S. export laws and regulations and you agree to comply fully with all such laws and regulations. In particular, but without limitation, the Apple Software may not be exported or re-exported (a) into any U.S. embargoed countries or (b) to anyone on the U.S. Treasury Department's list of Specially Designated Nationals, the U.S. Department of Commerce Denied Person's List or Entity List or any other restricted party lists. By using the Apple Software, you represent and warrant that you are not located in any such country or on any such list, and that will not use the Apple Software for any purposes prohibited by U.S. laws and regulations.
+
+5. Disclaimer of Warranty. THE APPLE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND. APPLE DISCLAIMS ALL WARRANTIES AND CONDITIONS, EXPRESS OR IMPLIED, INCLUDING WITHOUT LIMITATION THE IMPLIED WARRANTIES OF NON-INFRINGEMENT, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE, REGARDING THE APPLE SOFTWARE, ITS USE, PERFORMANCE, ACCURACY OR COMPLETENESS. NO ORAL OR WRITTEN INFORMATION OR ADVICE GIVEN BY APPLE OR AN APPLE AUTHORIZED REPRESENTATIVE SHALL CREATE A WARRANTY.
+
+6. Limitation of Liability. APPLE'S TOTAL LIABILITY TO YOU FROM ALL CAUSES OF ACTION AND UNDER ALL THEORIES OF LIABILITY WILL BE LIMITED TO US$10. IN NO EVENT WILL APPLE BE LIABLE TO YOU FOR ANY SPECIAL, INDIRECT, INCIDENTAL OR CONSEQUENTIAL DAMAGES ARISING OUT OF OR IN CONNECTION WITH THIS AGREEMENT OR THE EXECUTION OR PERFORMANCE OF THE APPLE SOFTWARE, HOWEVER CAUSED AND WHETHER UNDER
+THEORY OF CONTRACT, TORT (INCLUDING NEGLIGENCE), STRICT LIABILITY OR OTHERWISE, EVEN IF APPLE HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGE. Some jurisdictions do not allow the exclusion or limitation of liability for personal injury or of incidental or consequential damages, so this limitation may not apply to you.
+
+7. General.
+a. This agreement will be governed by and construed in accordance with the laws of the State of California, excluding its conflict of law principles. The United Nations Convention on Contracts for the International Sale of Goods will not apply. Each party hereby consents to the jurisdiction and venue of the United States
+District Court for the Northern District of California, the Superior Court of the State of California for the County of Santa Clara, the Santa Clara Municipal Court, and any mutually agreed to alternative dispute resolution proceeding taking place in Santa Clara County, California, with respect to any claim or suit related to or arising out of this agreement.
+b. You may not assign or transfer this Agreement or any rights granted hereunder, by operation of law or otherwise, without Apple's prior written consent, and any attempt by you to do so, without such consent, will be void.
+c. If any provision of this Agreement is held to be unenforceable or invalid, that provision will be enforced to the maximum extent possible, and the other provisions will remain in full force and effect.
+d. This agreement is the entire agreement between you and Apple for the Apple Software. No amendment to or modification of this agreement will be binding unless in writing and signed by Apple.
+
+YOUR INSTALLATION AND USE OF THE APPLE SOFTWARE CONSTITUTES AGREEMENT TO THE FOREGOING TERMS AND CONDITIONS.

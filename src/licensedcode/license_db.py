@@ -47,7 +47,7 @@ base_context = {
 base_context_test = {
     "scancode_version": "32.0.0b1",
     "now": "Dec 22, 2022",
-    "spdx_license_list_version": "3.19",
+    "spdx_license_list_version": "3.20",
 }
 
 

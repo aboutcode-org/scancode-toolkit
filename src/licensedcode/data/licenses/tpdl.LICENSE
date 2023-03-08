@@ -1,0 +1,14 @@
+---
+key: tpdl
+short_name: Time::ParseDate License
+name: Time::ParseDate License
+category: Permissive
+owner: David Muir Sharnoff
+homepage_url: https://metacpan.org/pod/Time::ParseDate#LICENSE
+spdx_license_key: TPDL
+ignorable_emails:
+    - cpan@dave.sharnoff.org
+---
+
+License hereby granted for anyone to use, modify or redistribute this module
+at their own risk. Please feed useful changes back to cpan@dave.sharnoff.org.
