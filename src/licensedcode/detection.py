@@ -583,7 +583,7 @@ class UniqueDetection:
     """
     identifier = attr.ib(default=None)
     license_expression = attr.ib(default=None)
-    count = attr.ib(default=None)
+    detection_count = attr.ib(default=None)
     matches = attr.ib(default=attr.Factory(list))
     detection_log = attr.ib(default=attr.Factory(list))
     files = attr.ib(factory=list)
@@ -611,7 +611,7 @@ class UniqueDetection:
                     license_expression=detection_mapping["license_expression"],
                     detection_log=detection_mapping["detection_log"],
                     matches=detection_mapping["matches"],
-                    count=len(file_regions),
+                    detection_count=len(file_regions),
                     files=file_regions,
                 )
             )
