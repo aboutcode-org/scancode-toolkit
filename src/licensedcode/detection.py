@@ -425,6 +425,9 @@ class LicenseDetection:
             if attr.name == 'file_region':
                 return False
 
+            if attr.name == 'detection_log' and not license_text_diagnostics:
+                return False
+
             return True
 
         data_matches = []
@@ -470,7 +473,7 @@ class LicenseDetectionFromResult(LicenseDetection):
 
         detection = cls(
             license_expression=license_detection_mapping["license_expression"],
-            detection_log=license_detection_mapping["detection_log"],
+            detection_log=license_detection_mapping.get("detection_log", []) or None,
             matches=matches,
             file_region=None,
         )
@@ -589,7 +592,7 @@ class UniqueDetection:
     files = attr.ib(factory=list)
 
     @classmethod
-    def get_unique_detections(cls, license_detections):
+    def get_unique_detections(cls, license_detections, license_text_diagnostics):
         """
         Return all unique UniqueDetection from a ``license_detections`` list of
         LicenseDetection.
@@ -609,7 +612,7 @@ class UniqueDetection:
                 cls(
                     identifier=detection.identifier_with_expression,
                     license_expression=detection_mapping["license_expression"],
-                    detection_log=detection_mapping["detection_log"],
+                    detection_log=detection_mapping.get("detection_log", []) or [],
                     matches=detection_mapping["matches"],
                     detection_count=len(file_regions),
                     files=file_regions,
@@ -618,10 +621,14 @@ class UniqueDetection:
 
         return unique_license_detections
 
-    def to_dict(self):
+    def to_dict(self, license_text_diagnostics):
 
         def dict_fields(attr, value):
+
             if attr.name == 'files':
+                return False
+
+            if attr.name == 'detection_log' and not license_text_diagnostics:
                 return False
 
             return True

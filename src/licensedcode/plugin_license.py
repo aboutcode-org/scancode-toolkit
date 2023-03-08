@@ -151,7 +151,7 @@ class LicenseScanner(ScanPlugin):
             unknown_licenses=unknown_licenses,
         )
 
-    def process_codebase(self, codebase, **kwargs):
+    def process_codebase(self, codebase, license_text_diagnostics, **kwargs):
         """
         Post-process ``codebase`` to follow referenced filenames to license
         matches in other files.
@@ -180,7 +180,10 @@ class LicenseScanner(ScanPlugin):
             return
 
         license_detections = collect_license_detections(codebase)
-        unique_license_detections = UniqueDetection.get_unique_detections(license_detections)
+        unique_license_detections = UniqueDetection.get_unique_detections(
+            license_detections=license_detections,
+            license_text_diagnostics=license_text_diagnostics,
+        )
 
         if TRACE:
             logger_debug(
@@ -211,7 +214,7 @@ class LicenseScanner(ScanPlugin):
             detections=unique_license_detections,
         )
         codebase.attributes.license_detections.extend([
-            unique_detection.to_dict()
+            unique_detection.to_dict(license_text_diagnostics=license_text_diagnostics)
             for unique_detection in unique_license_detections
         ])
 
