@@ -59,8 +59,7 @@
             "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-3.0_29.RULE",
             "matched_text": "LGPLv3"
           }
-        ],
-        "detection_log": []
+        ]
       },
       {
         "license_expression": "lgpl-3.0",
@@ -78,8 +77,7 @@
             "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/pypi_gnu_lesser_general_public_license_v3.RULE",
             "matched_text": "['License :: OSI Approved :: GNU Lesser General Public License v3 (LGPLv3)']"
           }
-        ],
-        "detection_log": []
+        ]
       }
     ],
     "other_license_expression": null,

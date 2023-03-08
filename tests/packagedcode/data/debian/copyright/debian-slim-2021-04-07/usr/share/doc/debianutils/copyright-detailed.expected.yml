@@ -22,7 +22,6 @@ license_detections:
           found on Debian systems in the file /usr/share/common-licenses/GPL-2.
 
           which is in the public domain.
-    detection_log: []
   - license_expression: smail-gpl
     matches:
       - score: '100.0'
@@ -127,7 +126,6 @@ license_detections:
           \ SUSTAINED BY THIRD PARTIES OR A FAILURE OF THE\nPROGRAM TO OPERATE WITH ANY OTHER\
           \ PROGRAMS) SMAIL, EVEN IF YOU HAVE\nBEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES,\
           \ OR FOR ANY CLAIM BY\nANY OTHER PARTY."
-    detection_log: []
 other_license_detections: []
 copyright: |
   Copyright (c) 1988 Landon Curt Noll & Ronald S. Karr

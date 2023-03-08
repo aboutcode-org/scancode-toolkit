@@ -30,9 +30,7 @@
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/x11-lucent_1.RULE"
         }
       ],
-      "detection_log": [
-        "unknown-intro-followed-by-match"
-      ]
+      "detection_log": []
     },
     {
       "identifier": "bzip2_libbzip_2010-2234b9aa-1198-8ed2-f0d2-3310ced04b8a",
@@ -64,9 +62,7 @@
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bzip2-libbzip-2010.LICENSE"
         }
       ],
-      "detection_log": [
-        "unknown-intro-followed-by-match"
-      ]
+      "detection_log": []
     }
   ],
   "license_references": [

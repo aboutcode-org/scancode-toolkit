@@ -69,7 +69,6 @@ license_detections:
         matched_text: |
           On Debian GNU/Linux systems, the complete text of the GNU General
           Public License can be found in `/usr/share/common-licenses/GPL'.
-    detection_log: []
 other_license_detections: []
 copyright: |
   Copyright (c) 1994, 1995, 1996 Olaf Kirch, <okir@monad.swb.de>

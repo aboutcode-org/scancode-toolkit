@@ -107,7 +107,6 @@ license_detections:
           that contains text to be displayed or printed using this font,
           regardless of the conditions or license
           applying to the document itself.
-    detection_log: []
   - license_expression: sunsoft
     matches:
       - score: '95.0'
@@ -126,7 +125,6 @@ license_detections:
           in advertising or otherwise to promote
           the sale, use or other dealings in this Software
           without written authorization from SunSoft Inc.
-    detection_log: []
   - license_expression: public-domain
     matches:
       - score: '100.0'
@@ -145,7 +143,6 @@ license_detections:
           It therefore is not covered
           by the Ghostscript copyright or license:
           it is in the public domain.
-    detection_log: []
   - license_expression: other-permissive
     matches:
       - score: '100.0'
@@ -163,7 +160,6 @@ license_detections:
           with or without modifications,
           so long as modified versions are marked as such
           and copyright notices are not removed.
-    detection_log: []
   - license_expression: gpl-1.0-plus
     matches:
       - score: '100.0'
@@ -177,7 +173,6 @@ license_detections:
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl_72.RULE
         matched_text: 'License: gpl'
-    detection_log: []
   - license_expression: agpl-3.0
     matches:
       - score: '100.0'
@@ -1041,7 +1036,6 @@ license_detections:
           For more information on this,
           and how to apply and follow the GNU AGPL,
           see <http://www.gnu.org/licenses/>.
-    detection_log: []
   - license_expression: fsf-free
     matches:
       - score: '100.0'
@@ -1058,7 +1052,6 @@ license_detections:
           This configure script is free software;
           the Free Software Foundation gives unlimited permission
           to copy, distribute and modify it.
-    detection_log: []
   - license_expression: mit
     matches:
       - score: '100.0'
@@ -1095,7 +1088,6 @@ license_detections:
           WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE,
           ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE
           OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-    detection_log: []
   - license_expression: mit
     matches:
       - score: '100.0'
@@ -1132,7 +1124,6 @@ license_detections:
           WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE,
           ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE
           OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-    detection_log: []
   - license_expression: other-permissive
     matches:
       - score: '100.0'
@@ -1163,7 +1154,6 @@ license_detections:
 
           The above copyright notice and this permission notice shall be included
           in all copies or substantial portions of the Software.
-    detection_log: []
   - license_expression: x11-opengroup
     matches:
       - score: '99.0'
@@ -1197,7 +1187,6 @@ license_detections:
           WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE,
           ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE
           OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-    detection_log: []
   - license_expression: ghostpdl-permissive
     matches:
       - score: '100.0'
@@ -1216,7 +1205,6 @@ license_detections:
           for any purpose and without fee is hereby granted.
           This software is provided "as is"
           without express or implied warranty.
-    detection_log: []
   - license_expression: x11-lucent-variant
     matches:
       - score: '100.0'
@@ -1242,7 +1230,6 @@ license_detections:
           ANY REPRESENTATION OR WARRANTY OF ANY KIND
           CONCERNING THE MERCHANTABILITY OF THIS SOFTWARE OR ITS FITNESS
           FOR ANY PARTICULAR PURPOSE.
-    detection_log: []
   - license_expression: bsd-new
     matches:
       - score: '100.0'
@@ -1288,7 +1275,6 @@ license_detections:
           (INCLUDING NEGLIGENCE OR OTHERWISE)
           ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
           EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-    detection_log: []
   - license_expression: bsd-new
     matches:
       - score: '100.0'
@@ -1339,7 +1325,6 @@ license_detections:
           (INCLUDING NEGLIGENCE OR OTHERWISE)
           ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
           EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-    detection_log: []
   - license_expression: freetype
     matches:
       - score: '100.0'
@@ -1533,7 +1518,6 @@ license_detections:
              specific licenses, porting, etc.
 
           Our home page can be found at https://www.freetype.org
-    detection_log: []
   - license_expression: zlib
     matches:
       - score: '100.0'
@@ -1567,7 +1551,6 @@ license_detections:
               and must not be misrepresented as being the original software.
            3. This notice may not be removed or altered
               from any source distribution.
-    detection_log: []
   - license_expression: isc
     matches:
       - score: '100.0'
@@ -1596,7 +1579,6 @@ license_detections:
           WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION,
           ARISING OUT OF OR IN CONNECTION WITH
           THE USE OR PERFORMANCE OF THIS SOFTWARE.
-    detection_log: []
   - license_expression: agpl-3.0 AND agpl-3.0-plus
     matches:
       - score: '100.0'
@@ -1621,7 +1603,6 @@ license_detections:
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/agpl-3.0-plus_28.RULE
         matched_text: agpl-3+
-    detection_log: []
   - license_expression: agpl-3.0-plus
     matches:
       - score: '100.0'
@@ -1640,7 +1621,6 @@ license_detections:
            under the terms of the GNU Affero General Public License
            as published by the Free Software Foundation,
            either version 3 of the License, or (at your option) any later version.
-    detection_log: []
   - license_expression: agpl-3.0-plus
     matches:
       - score: '90.0'
@@ -1654,7 +1634,6 @@ license_detections:
         rule_relevance: 90
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/agpl-3.0-plus_143.RULE
         matched_text: GPL Ghostscript,
-    detection_log: []
   - license_expression: agpl-3.0 AND agpl-3.0-plus
     matches:
       - score: '100.0'
@@ -1679,7 +1658,6 @@ license_detections:
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/agpl-3.0-plus_28.RULE
         matched_text: agpl-3+
-    detection_log: []
   - license_expression: agpl-3.0-plus
     matches:
       - score: '100.0'
@@ -1698,7 +1676,6 @@ license_detections:
            it under the terms the GNU Affero General Public License
            as published by the Free Software Foundation,
            either version 3 of the License, or (at your option) any later version.
-    detection_log: []
   - license_expression: lgpl-2.1
     matches:
       - score: '100.0'
@@ -1715,7 +1692,6 @@ license_detections:
           is free software and can be used
            under the terms of the GNU Lesser General Public License (LGPL),
            Version 2.1 (February 1999).
-    detection_log: []
   - license_expression: freetype
     matches:
       - score: '100.0'
@@ -1735,7 +1711,6 @@ license_detections:
            By continuing to use, modify, or distribute this file
            you indicate that you have read the license
            and understand and accept it fully.
-    detection_log: []
   - license_expression: gpl-1.0-plus
     matches:
       - score: '100.0'
@@ -1757,7 +1732,6 @@ license_detections:
            along with this software
            so you can know your rights and responsibilities.
            It should be in a file named COPYING.
-    detection_log: []
   - license_expression: ghostscript-1988
     matches:
       - score: '100.0'
@@ -1779,7 +1753,6 @@ license_detections:
            along with this software
            so you can know your rights and responsibilities.
            It should be in a file named COPYING.
-    detection_log: []
   - license_expression: agpl-3.0-plus
     matches:
       - score: '100.0'
@@ -1798,7 +1771,6 @@ license_detections:
            under the terms the GNU Affero General Public License
            as published by the Free Software Foundation,
            either version 3 of the License, or (at your option) any later version.
-    detection_log: []
   - license_expression: gpl-1.0-plus
     matches:
       - score: '100.0'
@@ -1820,7 +1792,6 @@ license_detections:
            along with this software
            so you can know your rights and responsibilities.
            It should be in a file named COPYING.
-    detection_log: []
   - license_expression: gpl-1.0-plus
     matches:
       - score: '100.0'
@@ -1842,7 +1813,6 @@ license_detections:
            along with this software
            so you can know your rights and responsibilities.
            It should be in a file named COPYING.
-    detection_log: []
   - license_expression: gpl-1.0-plus
     matches:
       - score: '100.0'
@@ -1866,7 +1836,6 @@ license_detections:
            It should be in a file named COPYING or COPYLEFT.
            Among other things,
            the copyright notice and this notice must be preserved on all copies.
-    detection_log: []
   - license_expression: gpl-1.0-plus
     matches:
       - score: '100.0'
@@ -1880,7 +1849,6 @@ license_detections:
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-1.0-plus_292.RULE
         matched_text: This code is subject to the GNU General Public License
-    detection_log: []
   - license_expression: gpl-1.0-plus OR cups
     matches:
       - score: '99.0'
@@ -1903,7 +1871,6 @@ license_detections:
            Use of the code (or any derivative of it)
            with software other than GNU GhostScript (or its derivatives)
            is governed by the CUPS license agreement.
-    detection_log: []
   - license_expression: gpl-2.0-plus
     matches:
       - score: '100.0'
@@ -1921,7 +1888,6 @@ license_detections:
            under the terms of the GNU General Public License
            as published by the Free Software Foundation (the "GPL");
            either version 2 of the GPL, or (at your option) any later version.
-    detection_log: []
   - license_expression: apache-2.0
     matches:
       - score: '100.0'
@@ -1945,7 +1911,6 @@ license_detections:
            except in compliance with the License.
            You may obtain a copy of the License
            at <http://www.apache.org/licenses/LICENSE-2.0>
-    detection_log: []
   - license_expression: apache-2.0
     matches:
       - score: '100.0'
@@ -1963,7 +1928,6 @@ license_detections:
            Version 2.0 (the "License");
            you may not use this file
            except in compliance with the License.
-    detection_log: []
   - license_expression: agpl-3.0 AND agpl-3.0-plus
     matches:
       - score: '100.0'
@@ -1988,7 +1952,6 @@ license_detections:
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/agpl-3.0-plus_28.RULE
         matched_text: agpl-3+
-    detection_log: []
   - license_expression: afpl-9.0
     matches:
       - score: '90.0'
@@ -2002,7 +1965,6 @@ license_detections:
         rule_relevance: 90
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/afpl-9.0_9.RULE
         matched_text: AFPL Ghostscript,
-    detection_log: []
   - license_expression: gpl-2.0-plus
     matches:
       - score: '100.0'
@@ -2021,7 +1983,6 @@ license_detections:
            under the terms of the GNU General Public License
            as published by the Free Software Foundation;
            either version 2, or (at your option) any later version.
-    detection_log: []
   - license_expression: gpl-2.0-plus
     matches:
       - score: '100.0'
@@ -2040,7 +2001,6 @@ license_detections:
            under the terms of the GNU General Public License
            as published by the Free Software Foundation;
            either version 2 of the License, or (at your option) any later version.
-    detection_log: []
   - license_expression: gpl-2.0-plus
     matches:
       - score: '100.0'
@@ -2059,7 +2019,6 @@ license_detections:
            under the terms of the GNU General Public License
            as published by the Free Software Foundation;
            either version 2 of the License, or (at your option) any later version.
-    detection_log: []
   - license_expression: gpl-2.0-plus
     matches:
       - score: '100.0'
@@ -2078,7 +2037,6 @@ license_detections:
            under the terms of the GNU General Public License
            as published by the Free Software Foundation;
            either version 2 of the License, or (at your option) any later version.
-    detection_log: []
   - license_expression: gpl-2.0-plus
     matches:
       - score: '100.0'
@@ -2097,7 +2055,6 @@ license_detections:
            under the terms of the GNU General Public License
            as published by the Free Software Foundation;
            either version 2 of the License, or (at your option) any later version.
-    detection_log: []
   - license_expression: gpl-2.0-plus
     matches:
       - score: '100.0'
@@ -2116,7 +2073,6 @@ license_detections:
            under the terms of the GNU General Public License
            as published by the Free Software Foundation;
            either version 2 of the License, or (at your option) any later version.
-    detection_log: []
   - license_expression: gpl-1.0-plus
     matches:
       - score: '100.0'
@@ -2138,7 +2094,6 @@ license_detections:
            along with this software
            so you can know your rights and responsibilities.
            It should be in a file named COPYING.
-    detection_log: []
   - license_expression: gpl-3.0-plus
     matches:
       - score: '100.0'
@@ -2157,7 +2112,6 @@ license_detections:
            under the terms of the GNU General Public License
            as published by the Free Software Foundation;
            either version 3, or (at your option) any later version.
-    detection_log: []
 other_license_detections: []
 copyright: |
   1986, Eric Gisin

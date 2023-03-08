@@ -46,7 +46,6 @@ other_license_detections:
           LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
           FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
           DEALINGS IN THE SOFTWARE.
-    detection_log: []
   - license_expression: boost-1.0
     matches:
       - score: '100.0'
@@ -82,7 +81,6 @@ other_license_detections:
           FOR ANY DAMAGES OR OTHER LIABILITY, WHETHER IN CONTRACT, TORT OR OTHERWISE,
           ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
           DEALINGS IN THE SOFTWARE.
-    detection_log: []
   - license_expression: gpl-2.0
     matches:
       - score: '100.0'
@@ -113,7 +111,6 @@ other_license_detections:
 
           On Debian systems, the complete text of version 2 of the GNU General
           Public License can be found in '/usr/share/common-licenses/GPL-2'.
-    detection_log: []
   - license_expression: gpl-2.0-plus
     matches:
       - score: '100.0'
@@ -145,7 +142,6 @@ other_license_detections:
 
           On Debian systems, the complete text of version 2 of the GNU General
           Public License can be found in '/usr/share/common-licenses/GPL-2'.
-    detection_log: []
 copyright: |
   2015-2018, Alexander Batischev <eual.jp@gmail.com>
   2006-2010, Andreas Krennmair <ak@synflood.at>

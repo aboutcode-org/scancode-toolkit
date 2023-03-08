@@ -73,8 +73,7 @@
             "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/spdx_license_id_cc0-1.0_for_cc0-1.0.RULE",
             "matched_text": "Apache-2.0 with ScanCode acknowledgment and CC0-1.0 and others"
           }
-        ],
-        "detection_log": []
+        ]
       },
       {
         "license_expression": "apache-2.0",
@@ -92,8 +91,7 @@
             "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/pypi_apache_no-version.RULE",
             "matched_text": "['License :: OSI Approved :: Apache Software License', 'License :: OSI Approved :: CC0']"
           }
-        ],
-        "detection_log": []
+        ]
       },
       {
         "license_expression": "cc0-1.0",
@@ -124,9 +122,6 @@
             "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/cc0-1.0_176.RULE",
             "matched_text": "['License :: OSI Approved :: Apache Software License', 'License :: OSI Approved :: CC0']"
           }
-        ],
-        "detection_log": [
-          "unknown-intro-followed-by-match"
         ]
       }
     ],

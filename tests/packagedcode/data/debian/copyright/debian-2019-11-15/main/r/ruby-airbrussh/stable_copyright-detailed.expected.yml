@@ -39,7 +39,6 @@ other_license_detections:
           LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
           OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
           WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-    detection_log: []
 copyright: |
   2015-2016 Matt Brictson <airbrussh@mattbrictson.com>
   2017 Samuel Henrique <samueloph@debian.org>

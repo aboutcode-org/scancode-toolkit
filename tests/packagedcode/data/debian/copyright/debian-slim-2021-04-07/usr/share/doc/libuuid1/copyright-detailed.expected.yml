@@ -86,7 +86,6 @@ other_license_detections:
         matched_text: |
           No copyright is claimed.  This code is in the public domain; do with
           it what you wish.
-    detection_log: []
   - license_expression: gpl-2.0
     matches:
       - score: '100.0'
@@ -126,7 +125,6 @@ other_license_detections:
 
           On Debian systems, the complete text of the GNU General Public
           License version 2 can be found in `/usr/share/common-licenses/GPL-2'.
-    detection_log: []
   - license_expression: gpl-2.0-plus
     matches:
       - score: '100.0'
@@ -167,7 +165,6 @@ other_license_detections:
 
           On Debian systems, the complete text of the GNU General Public
           License version 2 can be found in `/usr/share/common-licenses/GPL-2'.
-    detection_log: []
   - license_expression: gpl-3.0-plus
     matches:
       - score: '100.0'
@@ -207,7 +204,6 @@ other_license_detections:
 
           On Debian systems, the complete text of the GNU General Public
           License version 3 can be found in `/usr/share/common-licenses/GPL-3'.
-    detection_log: []
   - license_expression: bsd-simplified
     matches:
       - score: '100.0'
@@ -229,7 +225,6 @@ other_license_detections:
           2. Redistributions in binary form must reproduce the above copyright
              notice, this list of conditions and the following disclaimer in the
              documentation and/or other materials provided with the distribution.
-    detection_log: []
   - license_expression: bsd-new
     matches:
       - score: '100.0'
@@ -268,7 +263,6 @@ other_license_detections:
           CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
           ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
           POSSIBILITY OF SUCH DAMAGE.
-    detection_log: []
   - license_expression: bsd-original-uc
     matches:
       - score: '100.0'
@@ -309,7 +303,6 @@ other_license_detections:
           LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
           OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
           SUCH DAMAGE.
-    detection_log: []
   - license_expression: lgpl-2.0-plus AND lgpl-2.1-plus
     matches:
       - score: '100.0'
@@ -339,7 +332,6 @@ other_license_detections:
 
           On Debian systems, the complete text of the GNU Lesser General Public
           License can be found in ‘/usr/share/common-licenses/LGPL’.
-    detection_log: []
   - license_expression: lgpl-2.0-plus
     matches:
       - score: '100.0'
@@ -379,7 +371,6 @@ other_license_detections:
 
           The complete text of the GNU Lesser General Public License
           can be found in /usr/share/common-licenses/LGPL-2 file.
-    detection_log: []
   - license_expression: lgpl-2.1-plus
     matches:
       - score: '100.0'
@@ -420,7 +411,6 @@ other_license_detections:
 
           On Debian systems, the complete text of the GNU Lesser General Public
           License version 2.1 can be found in ‘/usr/share/common-licenses/LGPL-2.1’.
-    detection_log: []
   - license_expression: lgpl-3.0-plus
     matches:
       - score: '100.0'
@@ -460,7 +450,6 @@ other_license_detections:
 
           On Debian systems, the complete text of the GNU Lesser General
           Public License can be found in "/usr/share/common-licenses/LGPL-3".
-    detection_log: []
   - license_expression: mit
     matches:
       - score: '100.0'
@@ -493,7 +482,6 @@ other_license_detections:
           ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
           CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
           SOFTWARE.
-    detection_log: []
 copyright: |
   Michal Luscon <mluscon@redhat.com>
   1986 Gary S. Brown

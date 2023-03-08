@@ -54,8 +54,7 @@
             "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0_32.RULE",
             "matched_text": "GPLv3"
           }
-        ],
-        "detection_log": []
+        ]
       }
     ],
     "other_license_expression": null,

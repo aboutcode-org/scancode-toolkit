@@ -17,9 +17,6 @@
           "rule_relevance": 100,
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0-plus_65.RULE"
         }
-      ],
-      "detection_log": [
-        "license-clues"
       ]
     },
     {
@@ -39,8 +36,7 @@
           "rule_relevance": 100,
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0_and_patent-disclaimer_3.RULE"
         }
-      ],
-      "detection_log": []
+      ]
     }
   ],
   "license_references": [
@@ -284,8 +280,7 @@
               "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0_and_patent-disclaimer_3.RULE"
             }
-          ],
-          "detection_log": []
+          ]
         }
       ],
       "license_clues": [],

@@ -68,7 +68,6 @@ other_license_detections:
 
           On Debian systems a full copy of the LGPL 2.1 can be found at
           /usr/share/common-licenses/Apache-2.0
-    detection_log: []
   - license_expression: bsd-new
     matches:
       - score: '100.0'
@@ -104,7 +103,6 @@ other_license_detections:
           THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
           (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
           THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-    detection_log: []
   - license_expression: boost-1.0
     matches:
       - score: '100.0'
@@ -139,7 +137,6 @@ other_license_detections:
           FOR ANY DAMAGES OR OTHER LIABILITY, WHETHER IN CONTRACT, TORT OR OTHERWISE,
           ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
           DEALINGS IN THE SOFTWARE.
-    detection_log: []
   - license_expression: cc-by-3.0
     matches:
       - score: '100.0'
@@ -176,7 +173,6 @@ other_license_detections:
           BE CONSIDERED TO BE A CONTRACT, THE LICENSOR GRANTS YOU THE RIGHTS
           CONTAINED HERE IN CONSIDERATION OF YOUR ACCEPTANCE OF SUCH TERMS AND
           CONDITIONS.
-    detection_log: []
   - license_expression: mit
     matches:
       - score: '100.0'
@@ -218,7 +214,6 @@ other_license_detections:
           LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
           OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
           SOFTWARE.
-    detection_log: []
   - license_expression: gpl-2.0-plus
     matches:
       - score: '100.0'
@@ -269,7 +264,6 @@ other_license_detections:
         matched_text: |
           On Debian systems a full copy of the GPL 2 can be found at
           /usr/share/common-licenses/GPL-2
-    detection_log: []
   - license_expression: gpl-3.0
     matches:
       - score: '100.0'
@@ -309,7 +303,6 @@ other_license_detections:
 
           On Debian systems a full copy of the GPL 3 can be found at
           /usr/share/common-licenses/GPL-3
-    detection_log: []
   - license_expression: lgpl-2.1
     matches:
       - score: '100.0'
@@ -343,7 +336,6 @@ other_license_detections:
 
           On Debian systems a full copy of the LGPL 2.1 can be found at
           /usr/share/common-licenses/LGPL-2.1
-    detection_log: []
   - license_expression: lgpl-2.1-plus AND lgpl-2.1
     matches:
       - score: '100.0'
@@ -384,7 +376,6 @@ other_license_detections:
 
           On Debian systems a full copy of the LGPL 2.1 can be found at
           /usr/share/common-licenses/LGPL-2.1
-    detection_log: []
   - license_expression: public-domain-disclaimer
     matches:
       - score: '100.0'
@@ -401,7 +392,6 @@ other_license_detections:
           This software is in the public domain, furnished "as is", without technical
           support, and with no warranty, express or implied, as to its usefulness for
           any purpose.
-    detection_log: []
 copyright: |
   2006, Alexander Neundorf <neundorf@kde.org>
   2006, Andreas Schneider <asn@cryptomilk.org>

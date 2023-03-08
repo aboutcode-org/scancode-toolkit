@@ -53,7 +53,6 @@ other_license_detections:
 
           On Debian systems, the complete text of the GNU General
           Public License version 2 can be found in "/usr/share/common-licenses/GPL-2".
-    detection_log: []
   - license_expression: lgpl-2.1-plus
     matches:
       - score: '100.0'
@@ -93,7 +92,6 @@ other_license_detections:
 
           On Debian systems, the complete text of the GNU Lesser General
           Public License can be found in "/usr/share/common-licenses/LGPL-2.1".
-    detection_log: []
 copyright: |
   2006-2013 Bastien Nocera <hadess@hadess.net>
   2010 Giovanni Campagna <scampa.giovanni@gmail.com>

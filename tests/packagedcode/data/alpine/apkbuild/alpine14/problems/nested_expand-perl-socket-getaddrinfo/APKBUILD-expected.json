@@ -40,8 +40,7 @@
           "rule_url": null,
           "matched_text": "gpl-1.0-or-later OR artistic-1.0-perl"
         }
-      ],
-      "detection_log": []
+      ]
     }
   ],
   "other_license_expression": null,

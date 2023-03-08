@@ -49,8 +49,7 @@
             "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_or_apache-2.0_15.RULE",
             "matched_text": "MIT OR Apache-2.0"
           }
-        ],
-        "detection_log": []
+        ]
       }
     ],
     "other_license_expression": null,

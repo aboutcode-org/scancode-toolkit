@@ -48,8 +48,7 @@
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/cpl-1.0_5.RULE",
           "matched_text": "Common Public License Version 1.0"
         }
-      ],
-      "detection_log": []
+      ]
     },
     {
       "license_expression": "cpl-1.0",
@@ -67,8 +66,7 @@
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/cpl-1.0_10.RULE",
           "matched_text": "http://www.opensource.org/licenses/cpl1.0.txt"
         }
-      ],
-      "detection_log": []
+      ]
     }
   ],
   "other_license_expression": null,

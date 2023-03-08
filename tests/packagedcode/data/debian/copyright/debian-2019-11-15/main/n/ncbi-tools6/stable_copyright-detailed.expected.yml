@@ -81,7 +81,6 @@ other_license_detections:
           purpose.
 
           Please cite the author in any work or product based on this material.
-    detection_log: []
   - license_expression: boost-1.0
     matches:
       - score: '100.0'
@@ -116,7 +115,6 @@ other_license_detections:
           FOR ANY DAMAGES OR OTHER LIABILITY, WHETHER IN CONTRACT, TORT OR OTHERWISE,
           ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
           DEALINGS IN THE SOFTWARE.
-    detection_log: []
   - license_expression: mit
     matches:
       - score: '100.0'
@@ -147,7 +145,6 @@ other_license_detections:
           LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
           FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
           IN THE SOFTWARE.
-    detection_log: []
   - license_expression: mit-with-modification-obligations AND proprietary-license
     matches:
       - score: '100.0'
@@ -195,7 +192,6 @@ other_license_detections:
           manner.  It does NOT prevent a commercial firm from referring to the MIT
           trademarks in order to convey information (although in doing so,
           recognition of their trademark status should be given).
-    detection_log: []
   - license_expression: public-domain
     matches:
       - score: '100.0'
@@ -216,7 +212,6 @@ other_license_detections:
                152 Computing Applications Building
                605 E. Springfield Ave.
                Champaign, IL  61820
-    detection_log: []
   - license_expression: flex-2.5
     matches:
       - score: '100.0'
@@ -243,7 +238,6 @@ other_license_detections:
           THIS SOFTWARE IS PROVIDED ``AS IS'' AND WITHOUT ANY EXPRESS OR
           IMPLIED WARRANTIES, INCLUDING, WITHOUT LIMITATION, THE IMPLIED
           WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
-    detection_log: []
   - license_expression: gpl-2.0-plus
     matches:
       - score: '100.0'
@@ -288,7 +282,6 @@ other_license_detections:
           On Debian systems, the full text of the GNU General Public
           License version 2 can be found in the file
           `/usr/share/common-licenses/GPL-2'.
-    detection_log: []
 copyright: |
   1996-2017 NCBI
   2006 John Maddock

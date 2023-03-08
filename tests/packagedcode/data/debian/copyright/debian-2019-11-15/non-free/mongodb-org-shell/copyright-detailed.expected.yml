@@ -23,7 +23,6 @@ license_detections:
 
           The Debian packaging is (C) 2009, Kristina Chodorow <kristina@10gen.com> and
           is licensed under the SSPL, see `https://www.mongodb.com/licensing/server-side-public-license'.
-    detection_log: []
 other_license_detections: []
 copyright: |
   Copyright 2009 10gen

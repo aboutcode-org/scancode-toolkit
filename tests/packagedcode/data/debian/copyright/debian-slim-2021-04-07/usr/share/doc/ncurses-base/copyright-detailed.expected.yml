@@ -47,7 +47,6 @@ other_license_detections:
           holders shall not be used in advertising or otherwise to promote the
           sale, use or other dealings in this Software without prior written
           authorization.
-    detection_log: []
   - license_expression: x11-xconsortium
     matches:
       - score: '100.0'
@@ -82,7 +81,6 @@ other_license_detections:
           be used in advertising or otherwise to promote the sale, use or other deal-
           ings in this Software without prior written authorization from the X Consor-
           tium.
-    detection_log: []
   - license_expression: bsd-new
     matches:
       - score: '100.0'
@@ -119,7 +117,6 @@ other_license_detections:
           LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
           OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
           SUCH DAMAGE.
-    detection_log: []
 copyright: |
   1998-2017,2018 Free Software Foundation, Inc.
   1996-2019,2020 Thomas E. Dickey

@@ -55,8 +55,7 @@
               "rule_url": null,
               "matched_text": "Artistic-2.0 OR MIT"
             }
-          ],
-          "detection_log": []
+          ]
         }
       ],
       "other_license_expression": null,
@@ -110,8 +109,7 @@
           "rule_relevance": 100,
           "rule_url": null
         }
-      ],
-      "detection_log": []
+      ]
     },
     {
       "identifier": "artistic_2_0-3a21dc91-8930-074b-8e75-779c58660388",
@@ -130,8 +128,7 @@
           "rule_relevance": 100,
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/artistic-2.0_46.RULE"
         }
-      ],
-      "detection_log": []
+      ]
     },
     {
       "identifier": "artistic_2_0_or_mit-529b866b-c702-0328-8f33-363ba46b3370",
@@ -150,8 +147,7 @@
           "rule_relevance": 100,
           "rule_url": null
         }
-      ],
-      "detection_log": []
+      ]
     }
   ],
   "license_references": [
@@ -490,8 +486,7 @@
               "rule_relevance": 100,
               "rule_url": null
             }
-          ],
-          "detection_log": []
+          ]
         }
       ],
       "license_clues": [],
@@ -560,8 +555,7 @@
                   "rule_url": null,
                   "matched_text": "Artistic-2.0 OR MIT"
                 }
-              ],
-              "detection_log": []
+              ]
             }
           ],
           "other_license_expression": null,
@@ -601,8 +595,7 @@
               "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/artistic-2.0_46.RULE"
             }
-          ],
-          "detection_log": []
+          ]
         }
       ],
       "license_clues": [],

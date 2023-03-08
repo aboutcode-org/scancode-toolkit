@@ -21,7 +21,7 @@
       "detection_log": []
     },
     {
-      "identifier": "gpl_1_0_plus-2e9e9b8c-a06f-17f9-3d38-b2d26a4ffca4",
+      "identifier": "gpl_1_0_plus-473308ff-72ce-7e72-b3a9-5b1cc6680abb",
       "license_expression": "gpl-1.0-plus",
       "detection_count": 1,
       "matches": [
@@ -38,13 +38,10 @@
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl_bare_word_only.RULE"
         }
       ],
-      "detection_log": [
-        "possible-false-positive",
-        "not-license-clues-as-more-detections-present"
-      ]
+      "detection_log": []
     },
     {
-      "identifier": "lgpl_3_0_and_lgpl_3_0_plus_and__lgpl_3_0_and_gpl_3_0-db4a0d18-01e6-0960-8a73-45a886fdb5f6",
+      "identifier": "lgpl_3_0_and_lgpl_3_0_plus_and__lgpl_3_0_and_gpl_3_0-eb2232a5-2c4f-3fc9-a2ee-cdf40b20ae23",
       "license_expression": "lgpl-3.0 AND lgpl-3.0-plus AND (lgpl-3.0 AND gpl-3.0)",
       "detection_count": 1,
       "matches": [
@@ -88,7 +85,7 @@
       "detection_log": []
     },
     {
-      "identifier": "ijg_and_mit-fc75e86d-f5a4-5f7e-68fe-8b1308184387",
+      "identifier": "ijg_and_mit-e50613dc-8a09-65cc-c498-5d9527795382",
       "license_expression": "ijg AND mit",
       "detection_count": 1,
       "matches": [
@@ -129,12 +126,10 @@
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_576.RULE"
         }
       ],
-      "detection_log": [
-        "unknown-intro-followed-by-match"
-      ]
+      "detection_log": []
     },
     {
-      "identifier": "gpl_1_0_plus-d455ba66-9db5-21be-3391-22ffd0d40b37",
+      "identifier": "gpl_1_0_plus-0211bbc4-784e-97fe-2ac1-f150ccba866e",
       "license_expression": "gpl-1.0-plus",
       "detection_count": 1,
       "matches": [
@@ -154,7 +149,7 @@
       "detection_log": []
     },
     {
-      "identifier": "gpl_2_0_and_apache_2_0_and_lgpl_3_0_plus-5efebe76-4f83-7002-28c3-bafe9ac2ceda",
+      "identifier": "gpl_2_0_and_apache_2_0_and_lgpl_3_0_plus-c2393e5a-e531-304f-58a9-a6431d46d214",
       "license_expression": "gpl-2.0 AND apache-2.0 AND lgpl-3.0-plus",
       "detection_count": 1,
       "matches": [
@@ -198,7 +193,7 @@
       "detection_log": []
     },
     {
-      "identifier": "gpl_2_0_and_lgpl_2_0_plus_and_proprietary_license-b3966a1b-ce70-e06a-0194-fd145fad58a6",
+      "identifier": "gpl_2_0_and_lgpl_2_0_plus_and_proprietary_license-45a8a75a-5b7e-5dbe-21f8-412756fac148",
       "license_expression": "gpl-2.0 AND lgpl-2.0-plus AND proprietary-license",
       "detection_count": 1,
       "matches": [
@@ -1299,7 +1294,7 @@
               "rule_identifier": "gpl_bare_word_only.RULE",
               "rule_relevance": 50,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl_bare_word_only.RULE",
-              "matched_text": "  libavcodec/x86/flac_dsp_gpl.asm"
+              "matched_text": "gpl."
             }
           ],
           "detection_log": [
@@ -1321,7 +1316,7 @@
               "rule_identifier": "lgpl-3.0_134.RULE",
               "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-3.0_134.RULE",
-              "matched_text": "Should you, for whatever reason, prefer to use version 3 of the (L)GPL, then"
+              "matched_text": "version 3 of the (L)GPL,"
             },
             {
               "score": 99.0,
@@ -1334,7 +1329,7 @@
               "rule_identifier": "lgpl-3.0-plus_130.RULE",
               "rule_relevance": 99,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-3.0-plus_130.RULE",
-              "matched_text": "the configure parameter --enable-version3 will activate this licensing option"
+              "matched_text": "enable-version3"
             },
             {
               "score": 100.0,
@@ -1347,7 +1342,7 @@
               "rule_identifier": "lgpl-3.0_and_gpl-3.0_2.RULE",
               "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-3.0_and_gpl-3.0_2.RULE",
-              "matched_text": "for you. Read the file COPYING.LGPLv3 or, if you have enabled GPL parts,\nCOPYING.GPLv3 to learn the exact legal terms that apply in this case."
+              "matched_text": "Read the file COPYING.LGPLv3 or, if you have enabled GPL parts,\nCOPYING.GPLv3 to learn the exact legal terms that apply in this case."
             }
           ],
           "detection_log": []
@@ -1366,7 +1361,7 @@
               "rule_identifier": "unknown-license-reference_235.RULE",
               "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/unknown-license-reference_235.RULE",
-              "matched_text": "There are a handful of files under other licensing terms, namely:"
+              "matched_text": "under other licensing terms,"
             },
             {
               "score": 100.0,
@@ -1379,7 +1374,7 @@
               "rule_identifier": "ijg_28.RULE",
               "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/ijg_28.RULE",
-              "matched_text": "  libavcodec/jrevdct.c are taken from libjpeg, see the top of the files for\n  licensing details. Specifically note that you must credit the IJG in the"
+              "matched_text": "taken from libjpeg, see the top of the files for\n  licensing details."
             },
             {
               "score": 100.0,
@@ -1392,7 +1387,7 @@
               "rule_identifier": "mit_576.RULE",
               "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_576.RULE",
-              "matched_text": "  tests/reference.pnm is under the expat license"
+              "matched_text": "is under the expat license"
             }
           ],
           "detection_log": [
@@ -1413,7 +1408,7 @@
               "rule_identifier": "gpl_70.RULE",
               "rule_relevance": 90,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl_70.RULE",
-              "matched_text": "The following libraries are under GPL:"
+              "matched_text": "under GPL:"
             }
           ],
           "detection_log": []
@@ -1445,7 +1440,7 @@
               "rule_identifier": "apache-2.0_411.RULE",
               "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_411.RULE",
-              "matched_text": "The OpenCORE and VisualOn libraries are under the Apache License 2.0. That"
+              "matched_text": "libraries are under the Apache License 2.0."
             },
             {
               "score": 99.0,
@@ -1458,7 +1453,7 @@
               "rule_identifier": "lgpl-3.0-plus_130.RULE",
               "rule_relevance": 99,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-3.0-plus_130.RULE",
-              "matched_text": "license version needs to be upgraded by passing --enable-version3 to configure."
+              "matched_text": "enable-version3"
             }
           ],
           "detection_log": []
@@ -1477,7 +1472,7 @@
               "rule_identifier": "gpl-2.0_bare_single_word.RULE",
               "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0_bare_single_word.RULE",
-              "matched_text": "are incompatible with the GPLv2 and v3. We do not know for certain if their"
+              "matched_text": "GPLv2"
             },
             {
               "score": 75.0,
@@ -1490,7 +1485,7 @@
               "rule_identifier": "lgpl_bare_single_word.RULE",
               "rule_relevance": 75,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl_bare_single_word.RULE",
-              "matched_text": "licenses are compatible with the LGPL."
+              "matched_text": "LGPL."
             },
             {
               "score": 100.0,
@@ -1503,7 +1498,7 @@
               "rule_identifier": "proprietary-license_490.RULE",
               "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/proprietary-license_490.RULE",
-              "matched_text": "If you wish to enable these libraries, pass --enable-nonfree to configure."
+              "matched_text": "enable-nonfree"
             },
             {
               "score": 75.0,
@@ -1516,7 +1511,7 @@
               "rule_identifier": "lgpl_bare_single_word.RULE",
               "rule_relevance": 75,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl_bare_single_word.RULE",
-              "matched_text": "be under a complex license mix that is more restrictive than the LGPL and that"
+              "matched_text": "LGPL"
             }
           ],
           "detection_log": []
@@ -1526,12 +1521,12 @@
       "percentage_of_license_text": 34.96,
       "for_license_detections": [
         "lgpl_2_1_plus_and_other_permissive_and_gpl_2_0_plus-666058ef-8c38-3b17-d8e7-448b304de833",
-        "gpl_1_0_plus-2e9e9b8c-a06f-17f9-3d38-b2d26a4ffca4",
-        "lgpl_3_0_and_lgpl_3_0_plus_and__lgpl_3_0_and_gpl_3_0-db4a0d18-01e6-0960-8a73-45a886fdb5f6",
-        "ijg_and_mit-fc75e86d-f5a4-5f7e-68fe-8b1308184387",
-        "gpl_1_0_plus-d455ba66-9db5-21be-3391-22ffd0d40b37",
-        "gpl_2_0_and_apache_2_0_and_lgpl_3_0_plus-5efebe76-4f83-7002-28c3-bafe9ac2ceda",
-        "gpl_2_0_and_lgpl_2_0_plus_and_proprietary_license-b3966a1b-ce70-e06a-0194-fd145fad58a6"
+        "gpl_1_0_plus-473308ff-72ce-7e72-b3a9-5b1cc6680abb",
+        "lgpl_3_0_and_lgpl_3_0_plus_and__lgpl_3_0_and_gpl_3_0-eb2232a5-2c4f-3fc9-a2ee-cdf40b20ae23",
+        "ijg_and_mit-e50613dc-8a09-65cc-c498-5d9527795382",
+        "gpl_1_0_plus-0211bbc4-784e-97fe-2ac1-f150ccba866e",
+        "gpl_2_0_and_apache_2_0_and_lgpl_3_0_plus-c2393e5a-e531-304f-58a9-a6431d46d214",
+        "gpl_2_0_and_lgpl_2_0_plus_and_proprietary_license-45a8a75a-5b7e-5dbe-21f8-412756fac148"
       ],
       "scan_errors": []
     }

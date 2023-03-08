@@ -63,11 +63,6 @@
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_and_bsd-simplified_1.RULE",
               "matched_text": "license = BSD-3-Clause\nlicense_files = LICENSE.rst\nauthor = Armin Ronacher"
             }
-          ],
-          "detection_log": [
-            "license-clues",
-            "not-license-clues-as-more-detections-present",
-            "from-package-file"
           ]
         },
         {
@@ -86,9 +81,6 @@
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/pypi_bsd_license.RULE",
               "matched_text": "    License :: OSI Approved :: BSD License"
             }
-          ],
-          "detection_log": [
-            "from-package-file"
           ]
         }
       ],
@@ -400,11 +392,6 @@
                   "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_and_bsd-simplified_1.RULE",
                   "matched_text": "license = BSD-3-Clause\nlicense_files = LICENSE.rst\nauthor = Armin Ronacher"
                 }
-              ],
-              "detection_log": [
-                "license-clues",
-                "not-license-clues-as-more-detections-present",
-                "from-package-file"
               ]
             },
             {
@@ -423,9 +410,6 @@
                   "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/pypi_bsd_license.RULE",
                   "matched_text": "    License :: OSI Approved :: BSD License"
                 }
-              ],
-              "detection_log": [
-                "from-package-file"
               ]
             }
           ],

@@ -17,7 +17,6 @@ license_detections:
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/pcre_4.RULE
         matched_text: PCRE LICENCE
-    detection_log: []
   - license_expression: bsd-new
     matches:
       - score: '100.0'
@@ -34,7 +33,6 @@ license_detections:
           PCRE is distributed under the terms of the "BSD" licence, as
           specified below. The documentation for PCRE, supplied in the "doc"
           directory, is distributed under the same terms as the software itself.
-    detection_log: []
   - license_expression: bsd-new
     matches:
       - score: '100.0'
@@ -77,7 +75,6 @@ license_detections:
           CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
           ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
           POSSIBILITY OF SUCH DAMAGE.
-    detection_log: []
 other_license_detections: []
 copyright: |
   Copyright (c) 1997-2007 University of Cambridge

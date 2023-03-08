@@ -34,7 +34,6 @@ license_detections:
               #  WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION,
               #  ARISING OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS
               #  SOFTWARE.
-    detection_log: []
   - license_expression: gpl-1.0-plus
     matches:
       - score: '100.0'
@@ -54,7 +53,6 @@ license_detections:
               .
               On Debian systems, the complete text of the GNU General Public License
               can be found in file "/usr/share/common-licenses/GPL".
-    detection_log: []
   - license_expression: reportbug AND gpl-2.0
     matches:
       - score: '100.0'
@@ -95,7 +93,6 @@ license_detections:
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0_561.RULE
         matched_text: 'License: GPL-2'
-    detection_log: []
 other_license_detections: []
 copyright: |
   Copyright (c) 1999-2006 Chris Lawrence

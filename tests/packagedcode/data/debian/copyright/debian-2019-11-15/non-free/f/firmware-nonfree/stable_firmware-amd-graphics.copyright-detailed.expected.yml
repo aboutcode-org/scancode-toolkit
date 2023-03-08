@@ -37,7 +37,6 @@ license_detections:
           LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
           OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
           WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-    detection_log: []
   - license_expression: amd-linux-firmware
     matches:
       - score: '100.0'
@@ -100,7 +99,6 @@ license_detections:
           U.S. Department of Commerce and International Traffic in Arm Regulations
           administered by the U.S. Department of State.  These laws include
           restrictions on destinations, end users and end use.
-    detection_log: []
 other_license_detections: []
 copyright: |
   2000-2009, Advanced Micro Devices, Inc.

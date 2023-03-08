@@ -4810,10 +4810,7 @@
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/pypi_public_domain.RULE"
         }
       ],
-      "detection_log": [
-        "possible-false-positive",
-        "not-license-clues-as-more-detections-present"
-      ]
+      "detection_log": []
     },
     {
       "identifier": "gpl_2_0_plus-fed2dc38-09ac-103e-1b86-4a4f5c00614a",
@@ -4833,10 +4830,7 @@
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_67.RULE"
         }
       ],
-      "detection_log": [
-        "possible-false-positive",
-        "not-license-clues-as-more-detections-present"
-      ]
+      "detection_log": []
     },
     {
       "identifier": "mit-1f9f2ae8-7020-0a13-7934-461c752929a4",
@@ -4856,10 +4850,7 @@
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_437.RULE"
         }
       ],
-      "detection_log": [
-        "possible-false-positive",
-        "not-license-clues-as-more-detections-present"
-      ]
+      "detection_log": []
     },
     {
       "identifier": "bsd_original-9198bafe-47c0-f9dc-5ef1-bd276a69786e",
@@ -5211,10 +5202,7 @@
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-3.0_37.RULE"
         }
       ],
-      "detection_log": [
-        "possible-false-positive",
-        "not-license-clues-as-more-detections-present"
-      ]
+      "detection_log": []
     },
     {
       "identifier": "mit_and_other_permissive-907b56d6-95b9-e85c-83c0-efd967c7e30a",
@@ -5246,10 +5234,7 @@
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/other-permissive_16.RULE"
         }
       ],
-      "detection_log": [
-        "possible-false-positive",
-        "not-license-clues-as-more-detections-present"
-      ]
+      "detection_log": []
     },
     {
       "identifier": "public_domain_and_bsd_original_and_gpl_1_0_plus-ccb73883-974d-42eb-d572-39fa7bf22f4c",
@@ -5293,10 +5278,7 @@
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl_bare_word_only.RULE"
         }
       ],
-      "detection_log": [
-        "possible-false-positive",
-        "not-license-clues-as-more-detections-present"
-      ]
+      "detection_log": []
     },
     {
       "identifier": "none-3c39742c-edef-82b7-0cdd-fc4d9ff8b044",
@@ -5316,9 +5298,7 @@
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/borceux.LICENSE"
         }
       ],
-      "detection_log": [
-        "license-clues"
-      ]
+      "detection_log": []
     },
     {
       "identifier": "free_unknown-fddf748a-9953-bc6c-cb9d-91001840e335",

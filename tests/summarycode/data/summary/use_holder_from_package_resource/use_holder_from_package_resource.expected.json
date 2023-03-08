@@ -76,9 +76,6 @@
               "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_7.RULE"
             }
-          ],
-          "detection_log": [
-            "from-package-file"
           ]
         }
       ],
@@ -136,9 +133,6 @@
           "rule_relevance": 100,
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_7.RULE"
         }
-      ],
-      "detection_log": [
-        "from-package-file"
       ]
     }
   ],
@@ -383,9 +377,6 @@
                   "rule_relevance": 100,
                   "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_7.RULE"
                 }
-              ],
-              "detection_log": [
-                "from-package-file"
               ]
             }
           ],
@@ -437,9 +428,6 @@
               "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_7.RULE"
             }
-          ],
-          "detection_log": [
-            "from-package-file"
           ]
         }
       ],

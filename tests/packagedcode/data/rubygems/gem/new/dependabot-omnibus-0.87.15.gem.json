@@ -49,8 +49,7 @@
             "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/proprietary-license_507.RULE",
             "matched_text": "license Nonstandard"
           }
-        ],
-        "detection_log": []
+        ]
       }
     ],
     "other_license_expression": null,

@@ -65,7 +65,6 @@ other_license_detections:
           THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
           (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
           OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-    detection_log: []
   - license_expression: unicode
     matches:
       - score: '100.0'
@@ -110,7 +109,6 @@ other_license_detections:
           not be used in advertising or otherwise to promote the sale, use or other
           dealings in these Data Files or Software without prior written
           authorization of the copyright holder.
-    detection_log: []
   - license_expression: mit
     matches:
       - score: '100.0'
@@ -141,7 +139,6 @@ other_license_detections:
           LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
           FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
           DEALINGS IN THE SOFTWARE.
-    detection_log: []
   - license_expression: gpl-2.0
     matches:
       - score: '100.0'
@@ -181,7 +178,6 @@ other_license_detections:
 
           On Debian systems, the complete text of the GNU General Public License version
           2 can be found in `/usr/share/common-licenses/GPL-2'.
-    detection_log: []
   - license_expression: lgpl-2.1 AND lgpl-2.1-plus
     matches:
       - score: '100.0'
@@ -231,7 +227,6 @@ other_license_detections:
         matched_text: |
           On Debian systems, the complete text of the GNU Lesser General Public
           License version 2.1 can be found in `/usr/share/common-licenses/LGPL-2.1'.
-    detection_log: []
   - license_expression: gpl-2.0-plus OR mit
     matches:
       - score: '100.0'
@@ -282,7 +277,6 @@ other_license_detections:
               WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
               FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
               OTHER DEALINGS IN THE SOFTWARE.
-    detection_log: []
 copyright: |
   1991-2012 Linus Torvalds and many others
   1996-2006 Manoj Srivastava

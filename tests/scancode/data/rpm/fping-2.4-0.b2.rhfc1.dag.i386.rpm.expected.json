@@ -50,9 +50,6 @@
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/package-manifest-unknown-195220dbe86398dd9a8e945a50757302c09fb0dc",
               "matched_text": "license distributable"
             }
-          ],
-          "detection_log": [
-            "undetected-license"
           ]
         }
       ],
@@ -197,9 +194,6 @@
                   "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/package-manifest-unknown-195220dbe86398dd9a8e945a50757302c09fb0dc",
                   "matched_text": "license distributable"
                 }
-              ],
-              "detection_log": [
-                "undetected-license"
               ]
             }
           ],

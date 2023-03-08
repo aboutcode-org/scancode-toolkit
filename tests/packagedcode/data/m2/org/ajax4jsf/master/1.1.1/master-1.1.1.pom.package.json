@@ -62,8 +62,7 @@
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1_85.RULE",
           "matched_text": "LGPL 2.1"
         }
-      ],
-      "detection_log": []
+      ]
     },
     {
       "license_expression": "lgpl-2.0-plus",
@@ -81,8 +80,7 @@
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl_3.RULE",
           "matched_text": "http://www.gnu.org/licenses/lgpl.html"
         }
-      ],
-      "detection_log": []
+      ]
     },
     {
       "license_expression": "lgpl-2.1",
@@ -100,8 +98,7 @@
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1_36.RULE",
           "matched_text": "GNU LESSER GENERAL PUBLIC LICENSE Version 2.1"
         }
-      ],
-      "detection_log": []
+      ]
     }
   ],
   "other_license_expression": null,

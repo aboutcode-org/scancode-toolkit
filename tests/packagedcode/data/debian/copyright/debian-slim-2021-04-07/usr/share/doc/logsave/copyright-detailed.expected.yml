@@ -27,7 +27,6 @@ license_detections:
           2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008 by Theodore Ts'o\n\nOn Debian GNU systems,\
           \ the complete text of the GNU General Public\nLicense can be found in `/usr/share/common-licenses/GPL-2'.\
           \  The\ncomplete text of the GNU Library General Public License can be found\nin '/usr/share/common-licenses/LGPL-2'."
-    detection_log: []
   - license_expression: ntp-0 AND bsd-new
     matches:
       - score: '100.0'
@@ -85,7 +84,6 @@ license_detections:
              (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE
              USE OF THIS SOFTWARE, EVEN IF NOT ADVISED OF THE POSSIBILITY OF SUCH
              DAMAGE.
-    detection_log: []
 other_license_detections: []
 copyright: |
   Copyright (c) 2003-2007 Theodore Ts'o <tytso@mit.edu>

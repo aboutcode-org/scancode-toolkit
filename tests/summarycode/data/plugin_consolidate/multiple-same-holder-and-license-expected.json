@@ -31,8 +31,7 @@
           "rule_relevance": 100,
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0_1074.RULE"
         }
-      ],
-      "detection_log": []
+      ]
     }
   ],
   "consolidated_components": [
@@ -229,8 +228,7 @@
               "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0_1074.RULE"
             }
-          ],
-          "detection_log": []
+          ]
         }
       ],
       "license_clues": [],
@@ -322,8 +320,7 @@
               "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0_1074.RULE"
             }
-          ],
-          "detection_log": []
+          ]
         }
       ],
       "license_clues": [],

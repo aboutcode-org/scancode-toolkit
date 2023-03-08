@@ -54,9 +54,6 @@
         "rule_url": null,
         "matched_text": " * SPDX-License-Identifier: EPL-2.0"
       }
-    ],
-    "detection_log": [
-      "unknown-intro-followed-by-match"
     ]
   }
 ]

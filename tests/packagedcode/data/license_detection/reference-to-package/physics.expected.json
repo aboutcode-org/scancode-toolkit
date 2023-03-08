@@ -188,9 +188,7 @@
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0_204.RULE"
         }
       ],
-      "detection_log": [
-        "unknown-reference-in-file-to-nonexistent-package"
-      ]
+      "detection_log": []
     },
     {
       "identifier": "gpl_3_0-f9982375-8b8e-0498-0e1a-50c63811d601",
@@ -282,9 +280,7 @@
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0_204.RULE"
         }
       ],
-      "detection_log": [
-        "unknown-reference-in-file-to-nonexistent-package"
-      ]
+      "detection_log": []
     }
   ],
   "license_references": [

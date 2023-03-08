@@ -39,7 +39,6 @@ license_detections:
           limitation will apply even if NSA has been advised of the possibility
           of such damage. You acknowledge that this is a reasonable allocation of
           risk.
-    detection_log: []
   - license_expression: gpl-2.0
     matches:
       - score: '100.0'
@@ -55,7 +54,6 @@ license_detections:
         matched_text: |
           distributed underthe terms of the GNU General Public License,
            version 2.
-    detection_log: []
   - license_expression: lgpl-2.1-plus
     matches:
       - score: '100.0'
@@ -82,7 +80,6 @@ license_detections:
 
           On Debian systems, the complete text of the GNU Library
           General Public License can be found in `/usr/share/common-licenses/LGPL-2.1'.
-    detection_log: []
   - license_expression: gpl-2.0
     matches:
       - score: '100.0'
@@ -106,7 +103,6 @@ license_detections:
               <URL:http://www.gnu.org/copyleft/gpl.html>.  You may also obtain
               it by writing to the Free Software Foundation, Inc., 51 Franklin
               St, Fifth Floor, Boston, MA 02110-1301, USA.
-    detection_log: []
 other_license_detections: []
 copyright: |
   Copyright 2004 Red Hat, Inc., James Morris <jmorris@redhat.com>

@@ -67,7 +67,6 @@ other_license_detections:
 
           On Debian systems, the complete text of the GNU General
           Public License version 2 can be found in "/usr/share/common-licenses/GPL-2".
-    detection_log: []
   - license_expression: lgpl-2.1-plus AND lgpl-2.0-plus AND lgpl-2.1
     matches:
       - score: '100.0'
@@ -123,7 +122,6 @@ other_license_detections:
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1_82.RULE
         matched_text: usr/share/common-licenses/LGPL-2.1'.
-    detection_log: []
   - license_expression: boost-1.0
     matches:
       - score: '100.0'
@@ -160,7 +158,6 @@ other_license_detections:
           FOR ANY DAMAGES OR OTHER LIABILITY, WHETHER IN CONTRACT, TORT OR OTHERWISE,
           ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
           DEALINGS IN THE SOFTWARE.
-    detection_log: []
   - license_expression: bsd-new
     matches:
       - score: '100.0'
@@ -189,7 +186,6 @@ other_license_detections:
             nor the names of their contributors may be used to endorse or promote
             products derived from this software without specific prior written
             permission.
-    detection_log: []
   - license_expression: apache-2.0
     matches:
       - score: '100.0'
@@ -216,7 +212,6 @@ other_license_detections:
         matched_text: |
           On Debian systems the complete license text of the Apache license version 2.0
           can be found at /usr/share/common-licenses/Apache-2.0.
-    detection_log: []
   - license_expression: cc-by-sa-3.0
     matches:
       - score: '99.82'
@@ -606,7 +601,6 @@ other_license_detections:
           does not form part of the License.
           ․
           Creative Commons may be contacted at http://creativecommons.org/.
-    detection_log: []
   - license_expression: bitstream
     matches:
       - score: '100.0'
@@ -713,7 +707,6 @@ other_license_detections:
           dealings in this Font Software without prior written authorization
           from Tavmjong Bah. For further information, contact: tavmjong @ free
            fr.
-    detection_log: []
   - license_expression: cc-by-sa-3.0 AND gpl-2.0
     matches:
       - score: '100.0'
@@ -743,7 +736,6 @@ other_license_detections:
         matched_text: |
           licensed
           under the GNU General Public License, Version 2.
-    detection_log: []
 copyright: |
   The FreeOrion project
   The FreeOrion project

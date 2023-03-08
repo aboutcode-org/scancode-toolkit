@@ -126,8 +126,7 @@
             "rule_url": null,
             "matched_text": "ISC"
           }
-        ],
-        "detection_log": []
+        ]
       }
     ],
     "other_license_expression": null,

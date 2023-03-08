@@ -40,8 +40,7 @@
           "rule_url": null,
           "matched_text": "bsd-2-clause AND bsd-3-clause AND isc AND gpl-2.0-only AND gpl-2.0-or-later AND gpl-3.0-only AND gpl-3.0-or-later"
         }
-      ],
-      "detection_log": []
+      ]
     }
   ],
   "other_license_expression": null,

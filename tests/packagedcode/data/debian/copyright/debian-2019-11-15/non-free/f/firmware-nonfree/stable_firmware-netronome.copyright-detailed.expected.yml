@@ -80,6 +80,5 @@ license_detections:
           NETRONOME and, where applicable, NETRONOME'S third party licensors
           specifically disclaim any express or implied warranty of fitness for High
           Risk Activities.
-    detection_log: []
 other_license_detections: []
 copyright: Copyright (c) 2017, NETRONOME Systems, Inc.

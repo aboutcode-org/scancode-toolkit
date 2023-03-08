@@ -69,8 +69,7 @@
             "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/isc_22.RULE",
             "matched_text": "ISC license"
           }
-        ],
-        "detection_log": []
+        ]
       },
       {
         "license_expression": "isc",
@@ -88,8 +87,7 @@
             "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/pypi_isc_license.RULE",
             "matched_text": "['License :: OSI Approved :: ISC License (ISCL)']"
           }
-        ],
-        "detection_log": []
+        ]
       }
     ],
     "other_license_expression": null,

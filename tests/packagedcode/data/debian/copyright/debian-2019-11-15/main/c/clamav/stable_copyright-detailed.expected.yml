@@ -56,9 +56,9 @@ other_license_expression: (gpl-2.0 AND gpl-2.0) AND gpl-2.0 AND (gpl-2.0 AND ope
 other_license_expression_spdx: (GPL-2.0-only AND GPL-2.0-only) AND GPL-2.0-only AND (GPL-2.0-only
   AND LicenseRef-scancode-openssl-exception-gpl-3.0-plus AND GPL-2.0-only) AND GPL-2.0-only
   AND (GPL-2.0-or-later AND GPL-2.0-or-later) AND GPL-2.0-only AND (GPL-2.0-or-later AND GPL-2.0-or-later)
-  AND GPL-2.0-only AND (GPL-2.0-or-later AND LicenseRef-scancode-autoconf-simple-exception-2.0
-  AND GPL-2.0-only) AND GPL-2.0-only AND (GPL-3.0-or-later WITH LicenseRef-scancode-autoconf-simple-exception
-  AND GPL-3.0-only) AND GPL-3.0-only AND (GPL-2.0-or-later WITH Libtool-exception AND GPL-2.0-only)
+  AND GPL-2.0-only AND (GPL-2.0-or-later AND Autoconf-exception-generic AND GPL-2.0-only) AND
+  GPL-2.0-only AND (GPL-3.0-or-later WITH LicenseRef-scancode-autoconf-simple-exception AND
+  GPL-3.0-only) AND GPL-3.0-only AND (GPL-2.0-or-later WITH Libtool-exception AND GPL-2.0-only)
   AND GPL-2.0-only AND (LGPL-2.0-or-later WITH Libtool-exception AND LGPL-2.0-or-later) AND
   LGPL-2.0-or-later AND (LGPL-2.1-only AND LGPL-2.1-only) AND ((LGPL-2.1-only AND LGPL-2.1-only)
   AND BSD-3-Clause) AND MIT AND (X11 AND LicenseRef-scancode-public-domain) AND MIT AND BSD-2-Clause
@@ -103,7 +103,6 @@ other_license_detections:
           but WITHOUT ANY WARRANTY; without even the implied warranty of
           MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
           GNU General Public License for more details.
-    detection_log: []
   - license_expression: gpl-2.0 AND openssl-exception-gpl-3.0-plus
     matches:
       - score: '100.0'
@@ -167,7 +166,6 @@ other_license_detections:
 
           On Debian systems, the full text of the GNU General Public License
           version 2 can be found in the file `/usr/share/common-licenses/GPL-2'.
-    detection_log: []
   - license_expression: gpl-2.0-plus AND autoconf-simple-exception-2.0 AND gpl-2.0
     matches:
       - score: '100.0'
@@ -223,7 +221,6 @@ other_license_detections:
 
           On Debian systems, the full text of the GNU General Public License
           version 2 can be found in the file `/usr/share/common-licenses/GPL-2'.
-    detection_log: []
   - license_expression: gpl-3.0-plus WITH autoconf-simple-exception AND gpl-3.0
     matches:
       - score: '100.0'
@@ -271,7 +268,6 @@ other_license_detections:
 
           On Debian systems, the full text of the GNU General Public License
           version 3 can be found in the file `/usr/share/common-licenses/GPL-3.
-    detection_log: []
   - license_expression: gpl-2.0-plus WITH libtool-exception-2.0 AND gpl-2.0
     matches:
       - score: '100.0'
@@ -317,7 +313,6 @@ other_license_detections:
 
           On Debian systems, the full text of the GNU General Public License
           version 2 can be found in the file `/usr/share/common-licenses/GPL-2'.
-    detection_log: []
   - license_expression: lgpl-2.0-plus WITH libtool-exception-2.0 AND lgpl-2.0-plus
     matches:
       - score: '100.0'
@@ -363,7 +358,6 @@ other_license_detections:
 
           On Debian systems, the full text of the GNU Lesser General Public License
           version 2 can be found in the file `/usr/share/common-licenses/LGPL-2'.
-    detection_log: []
   - license_expression: isc
     matches:
       - score: '100.0'
@@ -388,7 +382,6 @@ other_license_detections:
           WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
           ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
           OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
-    detection_log: []
   - license_expression: fsf-unlimited
     matches:
       - score: '100.0'
@@ -405,7 +398,6 @@ other_license_detections:
           This file is free software; the Free Software Foundation gives
           unlimited permission to copy and/or distribute it, with or without
           modifications, as long as this notice is preserved.
-    detection_log: []
   - license_expression: fsf-free
     matches:
       - score: '100.0'
@@ -421,7 +413,6 @@ other_license_detections:
         matched_text: |
           This configure script is free software; the Free Software Foundation
           gives unlimited permission to copy, distribute and modify it.
-    detection_log: []
   - license_expression: fsf-unlimited-no-warranty
     matches:
       - score: '100.0'
@@ -443,7 +434,6 @@ other_license_detections:
           but WITHOUT ANY WARRANTY, to the extent permitted by law; without
           even the implied warranty of MERCHANTABILITY or FITNESS FOR A
           PARTICULAR PURPOSE.
-    detection_log: []
   - license_expression: fsf-ap
     matches:
       - score: '100.0'
@@ -461,7 +451,6 @@ other_license_detections:
           are permitted in any medium without royalty provided the copyright
           notice and this notice are preserved.  This file is offered as-is,
           without warranty of any kind.
-    detection_log: []
   - license_expression: fsf-ap
     matches:
       - score: '100.0'
@@ -479,7 +468,6 @@ other_license_detections:
           permitted in any medium without royalty provided the copyright notice
           and this notice are preserved. This file is offered as-is, without any
           warranty.
-    detection_log: []
   - license_expression: bzip2-libbzip-2010
     matches:
       - score: '100.0'
@@ -523,7 +511,6 @@ other_license_detections:
           WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
           NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
           SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-    detection_log: []
   - license_expression: public-domain
     matches:
       - score: '70.0'
@@ -548,7 +535,6 @@ other_license_detections:
         rule_relevance: 70
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/public-domain_bare_words.RULE
         matched_text: Public Domain
-    detection_log: []
   - license_expression: public-domain
     matches:
       - score: '100.0'
@@ -562,7 +548,6 @@ other_license_detections:
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/public-domain_38.RULE
         matched_text: is public domain
-    detection_log: []
   - license_expression: public-domain
     matches:
       - score: '100.0'
@@ -576,7 +561,6 @@ other_license_detections:
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/public-domain_45.RULE
         matched_text: placed in the public domain
-    detection_log: []
   - license_expression: x11-tiff
     matches:
       - score: '100.0'
@@ -608,7 +592,6 @@ other_license_detections:
           WHETHER OR NOT ADVISED OF THE POSSIBILITY OF DAMAGE, AND ON ANY THEORY OF
           LIABILITY, ARISING OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE
           OF THIS SOFTWARE.
-    detection_log: []
   - license_expression: public-domain
     matches:
       - score: '100.0'
@@ -633,7 +616,6 @@ other_license_detections:
         rule_relevance: 70
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/public-domain_bare_words.RULE
         matched_text: public domain.
-    detection_log: []
   - license_expression: apache-2.0 AND (free-unknown AND apache-2.0 WITH generic-exception)
     matches:
       - score: '100.0'
@@ -681,7 +663,6 @@ other_license_detections:
 
           On Debian systems, the full text of the Apache License, Version 2.0 can be
           found in the file `/usr/share/common-licenses/Apache-2.0'.
-    detection_log: []
   - license_expression: gpl-3.0-plus WITH bison-exception-2.2 AND gpl-3.0
     matches:
       - score: '100.0'
@@ -732,7 +713,6 @@ other_license_detections:
 
           On Debian systems, the full text of the GNU General Public License
           version 3 can be found in the file `/usr/share/common-licenses/GPL-3.
-    detection_log: []
   - license_expression: gpl-2.0-plus
     matches:
       - score: '100.0'
@@ -766,7 +746,6 @@ other_license_detections:
           but WITHOUT ANY WARRANTY; without even the implied warranty of
           MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
           GNU General Public License for more details.
-    detection_log: []
   - license_expression: lgpl-2.1
     matches:
       - score: '100.0'
@@ -799,7 +778,6 @@ other_license_detections:
           but WITHOUT ANY WARRANTY; without even the implied warranty of
           MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
           Lesser General Public License for more details.
-    detection_log: []
   - license_expression: mit
     matches:
       - score: '100.0'
@@ -829,7 +807,6 @@ other_license_detections:
           X CONSORTIUM BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN
           AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNEC-
           TION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-    detection_log: []
   - license_expression: bsd-simplified
     matches:
       - score: '100.0'
@@ -863,7 +840,6 @@ other_license_detections:
           LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
           OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
           SUCH DAMAGE.
-    detection_log: []
   - license_expression: bsd-new
     matches:
       - score: '100.0'
@@ -900,7 +876,6 @@ other_license_detections:
           LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
           OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
           SUCH DAMAGE.
-    detection_log: []
   - license_expression: zlib
     matches:
       - score: '100.0'
@@ -929,7 +904,6 @@ other_license_detections:
           2. Altered source versions must be plainly marked as such, and must not be
              misrepresented as being the original software.
           3. This notice may not be removed or altered from any source distribution.
-    detection_log: []
   - license_expression: gpl-2.0
     matches:
       - score: '100.0'
@@ -950,7 +924,6 @@ other_license_detections:
 
           On Debian systems, the full text of the GNU General Public License
           version 2 can be found in the file `/usr/share/common-licenses/GPL-2'.
-    detection_log: []
   - license_expression: gpl-2.0
     matches:
       - score: '100.0'
@@ -971,7 +944,6 @@ other_license_detections:
 
           On Debian systems, the full text of the GNU General Public License
           version 2 can be found in the file `/usr/share/common-licenses/GPL-2'.
-    detection_log: []
   - license_expression: gpl-2.0
     matches:
       - score: '100.0'
@@ -992,7 +964,6 @@ other_license_detections:
 
           On Debian systems, the full text of the GNU General Public License
           version 2 can be found in the file `/usr/share/common-licenses/GPL-2'.
-    detection_log: []
   - license_expression: gpl-2.0
     matches:
       - score: '100.0'
@@ -1013,7 +984,6 @@ other_license_detections:
 
           On Debian systems, the full text of the GNU General Public License
           version 2 can be found in the file `/usr/share/common-licenses/GPL-2'.
-    detection_log: []
   - license_expression: gpl-2.0
     matches:
       - score: '100.0'
@@ -1034,7 +1004,6 @@ other_license_detections:
 
           On Debian systems, the full text of the GNU General Public License
           version 2 can be found in the file `/usr/share/common-licenses/GPL-2'.
-    detection_log: []
   - license_expression: gpl-3.0
     matches:
       - score: '100.0'
@@ -1055,7 +1024,6 @@ other_license_detections:
 
           On Debian systems, the full text of the GNU General Public License
           version 3 can be found in the file `/usr/share/common-licenses/GPL-3.
-    detection_log: []
   - license_expression: gpl-2.0
     matches:
       - score: '100.0'
@@ -1076,7 +1044,6 @@ other_license_detections:
 
           On Debian systems, the full text of the GNU General Public License
           version 2 can be found in the file `/usr/share/common-licenses/GPL-2'.
-    detection_log: []
   - license_expression: lgpl-2.0-plus
     matches:
       - score: '100.0'
@@ -1097,7 +1064,6 @@ other_license_detections:
 
           On Debian systems, the full text of the GNU Lesser General Public License
           version 2 can be found in the file `/usr/share/common-licenses/LGPL-2'.
-    detection_log: []
   - license_expression: x11-xconsortium AND public-domain
     matches:
       - score: '20.2'
@@ -1126,7 +1092,6 @@ other_license_detections:
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/public-domain_58.RULE
         matched_text: FSF changes to this file are in the public domain.
-    detection_log: []
   - license_expression: free-unknown AND apache-2.0 WITH generic-exception
     matches:
       - score: '100.0'
@@ -1152,7 +1117,6 @@ other_license_detections:
 
           On Debian systems, the full text of the Apache License, Version 2.0 can be
           found in the file `/usr/share/common-licenses/Apache-2.0'.
-    detection_log: []
   - license_expression: gpl-3.0
     matches:
       - score: '100.0'
@@ -1173,7 +1137,6 @@ other_license_detections:
 
           On Debian systems, the full text of the GNU General Public License
           version 3 can be found in the file `/usr/share/common-licenses/GPL-3.
-    detection_log: []
 copyright: |
   1998-2015, Sourcefire, Inc.
   2002-2007, Tomasz Kojm <tkojm@clamav.net>

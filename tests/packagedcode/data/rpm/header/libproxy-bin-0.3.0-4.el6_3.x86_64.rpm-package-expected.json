@@ -49,8 +49,7 @@
             "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0-plus_68.RULE",
             "matched_text": "LGPLv2+"
           }
-        ],
-        "detection_log": []
+        ]
       }
     ],
     "other_license_expression": null,

@@ -54,7 +54,6 @@ other_license_detections:
         matched_text: |
           You may use this program, or code or tables extracted from it, as
           desired without restriction.
-    detection_log: []
   - license_expression: gpl-2.0-plus
     matches:
       - score: '100.0'
@@ -95,7 +94,6 @@ other_license_detections:
 
           On Debian systems, the complete text of the GNU General Public
           License v2 can be found in `/usr/share/common-licenses/GPL-2'.
-    detection_log: []
   - license_expression: gpl-2.0-plus WITH openssl-exception-gpl-3.0-plus
     matches:
       - score: '100.0'
@@ -137,7 +135,6 @@ other_license_detections:
           do so, delete this exception statement from your version.  If you
           delete this exception statement from all source files in the program,
           then also delete it here.
-    detection_log: []
   - license_expression: lgpl-2.1-plus
     matches:
       - score: '100.0'
@@ -179,7 +176,6 @@ other_license_detections:
 
           On Debian systems, the complete text of the GNU Lesser General Public
           License v2.1 can be found in `/usr/share/common-licenses/LGPL-2.1'.
-    detection_log: []
   - license_expression: lgpl-2.1-plus WITH openssl-exception-gpl-3.0-plus
     matches:
       - score: '95.0'
@@ -222,7 +218,6 @@ other_license_detections:
           not wish to do so, delete this exception statement from your version.
           If you delete this exception statement from all source files in the
           program, then also delete it here.
-    detection_log: []
   - license_expression: cc0-1.0
     matches:
       - score: '100.0'
@@ -241,7 +236,6 @@ other_license_detections:
 
           On Debian systems, the complete text of the Creative Commons CC0 1.0
           Universal license can be found in `/usr/share/common-licenses/CC0-1.0'.
-    detection_log: []
   - license_expression: apache-2.0
     matches:
       - score: '100.0'
@@ -280,7 +274,6 @@ other_license_detections:
 
           On Debian systems, the complete text of the Apache version 2.0 license
           can be found in "/usr/share/common-licenses/Apache-2.0".
-    detection_log: []
 copyright: |
   © 2004 Christophe Saout <christophe@saout.de>
   © 2004-2008 Clemens Fruhwirth <clemens@endorphin.org>

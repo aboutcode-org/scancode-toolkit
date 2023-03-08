@@ -187,7 +187,6 @@ other_license_detections:
 
           On Debian systems, the complete text of the Artistic License can be
           found in `/usr/share/common-licenses/Artistic'.
-    detection_log: []
   - license_expression: artistic-2.0
     matches:
       - score: '99.93'
@@ -390,7 +389,6 @@ other_license_detections:
                LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, OR CONSEQUENTIAL
                DAMAGES ARISING IN ANY WAY OUT OF THE USE OF THE PACKAGE, EVEN
                IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-    detection_log: []
   - license_expression: gpl-1.0-plus AND gpl-1.0
     matches:
       - score: '100.0'
@@ -454,7 +452,6 @@ other_license_detections:
         rule_relevance: 60
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-1.0_15.RULE
         matched_text: GPL-1'
-    detection_log: []
   - license_expression: gpl-2.0
     matches:
       - score: '100.0'
@@ -495,7 +492,6 @@ other_license_detections:
         matched_text: |
           On Debian systems, the complete text of version 2 of the GNU General
           Public License can be found in `/usr/share/common-licenses/GPL-2'
-    detection_log: []
   - license_expression: gpl-2.0-plus AND gpl-2.0
     matches:
       - score: '100.0'
@@ -537,7 +533,6 @@ other_license_detections:
         matched_text: |
           On Debian systems, the complete text of version 2 of the GNU General
           Public License can be found in `/usr/share/common-licenses/GPL-2'
-    detection_log: []
   - license_expression: gpl-3.0 AND gpl-1.0-plus
     matches:
       - score: '100.0'
@@ -589,7 +584,6 @@ other_license_detections:
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0_93.RULE
         matched_text: usr/share/common-licenses/GPL-3'
-    detection_log: []
   - license_expression: gpl-3.0-plus AND gpl-3.0
     matches:
       - score: '100.0'
@@ -642,7 +636,6 @@ other_license_detections:
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0_93.RULE
         matched_text: usr/share/common-licenses/GPL-3'
-    detection_log: []
   - license_expression: isc
     matches:
       - score: '100.0'
@@ -667,7 +660,6 @@ other_license_detections:
           LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR
           OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
           PERFORMANCE OF THIS SOFTWARE.
-    detection_log: []
   - license_expression: public-domain-disclaimer
     matches:
       - score: '100.0'
@@ -684,7 +676,6 @@ other_license_detections:
           To the extent possible under law, the author(s) have dedicated all copyright
           and related and neighboring rights to this software to the public domain
           worldwide. This software is distributed without any warranty.
-    detection_log: []
 copyright: |
   1997, Klee Dienes <klee@mit.edu>
   Christoph Lameter <clameter@debian.org>

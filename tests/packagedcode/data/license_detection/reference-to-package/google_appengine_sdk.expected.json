@@ -62,8 +62,7 @@
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/pypi_bsd_license.RULE",
               "matched_text": "['License :: OSI Approved :: BSD License']"
             }
-          ],
-          "detection_log": []
+          ]
         }
       ],
       "other_license_expression": null,
@@ -153,8 +152,7 @@
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/pypi_bsd_license.RULE",
               "matched_text": "['License :: OSI Approved :: BSD License']"
             }
-          ],
-          "detection_log": []
+          ]
         }
       ],
       "other_license_expression": null,
@@ -251,9 +249,7 @@
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/pypi_bsd_license.RULE"
         }
       ],
-      "detection_log": [
-        "unknown-reference-in-file-to-package"
-      ]
+      "detection_log": []
     },
     {
       "identifier": "bsd_new-edd5e7bc-e652-18ba-427f-8896246f69a9",
@@ -285,9 +281,7 @@
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/pypi_bsd_license.RULE"
         }
       ],
-      "detection_log": [
-        "unknown-reference-in-file-to-package"
-      ]
+      "detection_log": []
     },
     {
       "identifier": "bsd_new-72cae3bc-4423-3a9e-be84-ee8bb5120a4d",
@@ -1262,8 +1256,7 @@
                   "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/pypi_bsd_license.RULE",
                   "matched_text": "['License :: OSI Approved :: BSD License']"
                 }
-              ],
-              "detection_log": []
+              ]
             }
           ],
           "other_license_expression": null,
@@ -1519,8 +1512,7 @@
                   "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/pypi_bsd_license.RULE",
                   "matched_text": "['License :: OSI Approved :: BSD License']"
                 }
-              ],
-              "detection_log": []
+              ]
             }
           ],
           "other_license_expression": null,
@@ -1944,8 +1936,7 @@
                   "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/pypi_bsd_license.RULE",
                   "matched_text": "['License :: OSI Approved :: BSD License']"
                 }
-              ],
-              "detection_log": []
+              ]
             }
           ],
           "other_license_expression": null,

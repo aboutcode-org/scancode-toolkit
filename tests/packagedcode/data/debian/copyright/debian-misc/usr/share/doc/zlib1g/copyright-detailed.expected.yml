@@ -35,6 +35,5 @@ license_detections:
 
             Jean-loup Gailly        Mark Adler
             jloup@gzip.org          madler@alumni.caltech.edu
-    detection_log: []
 other_license_detections: []
 copyright: Copyright (c) 1995-1998 Jean-loup Gailly and Mark Adler

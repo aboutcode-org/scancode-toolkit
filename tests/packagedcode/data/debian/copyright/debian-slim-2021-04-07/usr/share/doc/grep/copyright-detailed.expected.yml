@@ -52,7 +52,6 @@ other_license_detections:
 
           On a Debian system you can find a copy of this license in
           /usr/share/common-licenses/GPL-3.
-    detection_log: []
 copyright: |
   1992, 1997-2002, 2004-2012 Free Software Foundation, Inc.
   2004, Stepan Kasal <kasal@ucw.cz>

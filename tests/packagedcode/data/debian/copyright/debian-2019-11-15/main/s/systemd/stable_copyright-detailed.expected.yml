@@ -43,7 +43,6 @@ other_license_detections:
         matched_text: |
           You can use this free for any purpose. It's in the public domain. It has no
           warranty.
-    detection_log: []
   - license_expression: mit
     matches:
       - score: '100.0'
@@ -74,7 +73,6 @@ other_license_detections:
           LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
           FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
           IN THE SOFTWARE.
-    detection_log: []
   - license_expression: gpl-2.0
     matches:
       - score: '100.0'
@@ -115,7 +113,6 @@ other_license_detections:
           On Debian and systems the full text of the GNU General Public
           License version 2 can be found in the file
           `/usr/share/common-licenses/GPL-2`
-    detection_log: []
   - license_expression: gpl-2.0-plus
     matches:
       - score: '100.0'
@@ -156,7 +153,6 @@ other_license_detections:
 
           On Debian systems, the complete text of the GNU General Public License
           version 2 can be found in ‘/usr/share/common-licenses/GPL-2’.
-    detection_log: []
   - license_expression: lgpl-2.1-plus
     matches:
       - score: '100.0'
@@ -197,7 +193,6 @@ other_license_detections:
 
           On Debian systems, the complete text of the GNU Lesser General Public
           License version 2.1 can be found in ‘/usr/share/common-licenses/LGPL-2.1’.
-    detection_log: []
   - license_expression: cc0-1.0
     matches:
       - score: '100.0'
@@ -231,7 +226,6 @@ other_license_detections:
 
           On Debian systems, the complete text of the CC0 1.0 Universal license can be
           found in ‘/usr/share/common-licenses/CC0-1.0’.
-    detection_log: []
 copyright: |
   2008-2015 Kay Sievers <kay@vrfy.org>
   2010-2015 Lennart Poettering

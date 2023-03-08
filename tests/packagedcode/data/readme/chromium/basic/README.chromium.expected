@@ -41,8 +41,7 @@
             "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_161.RULE",
             "matched_text": "license Apache"
           }
-        ],
-        "detection_log": []
+        ]
       }
     ],
     "other_license_expression": null,

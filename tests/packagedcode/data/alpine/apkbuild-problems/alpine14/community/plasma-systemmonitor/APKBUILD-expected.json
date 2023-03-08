@@ -40,8 +40,7 @@
           "rule_url": null,
           "matched_text": "licenseref-kde-accepted-gpl AND licenseref-kde-accepted-lgpl AND cc0-1.0"
         }
-      ],
-      "detection_log": []
+      ]
     }
   ],
   "other_license_expression": null,

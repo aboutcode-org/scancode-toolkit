@@ -56,8 +56,7 @@
             "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_180.RULE",
             "matched_text": "https://github.com/twbs/bootstrap/blob/master/LICENSE"
           }
-        ],
-        "detection_log": []
+        ]
       }
     ],
     "other_license_expression": null,

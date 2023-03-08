@@ -125,8 +125,7 @@
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_48.RULE",
           "matched_text": "Apache License Version 2.0"
         }
-      ],
-      "detection_log": []
+      ]
     },
     {
       "license_expression": "apache-2.0",
@@ -144,8 +143,7 @@
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_25.RULE",
           "matched_text": "http://www.apache.org/licenses/LICENSE-2.0"
         }
-      ],
-      "detection_log": []
+      ]
     }
   ],
   "other_license_expression": null,

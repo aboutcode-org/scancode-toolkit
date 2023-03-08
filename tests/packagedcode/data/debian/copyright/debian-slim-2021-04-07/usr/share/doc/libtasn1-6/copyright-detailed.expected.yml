@@ -21,7 +21,6 @@ license_detections:
         matched_text: |
           The library itself is licensed as LGPLv2.1+, the build system, test-suite and
           command-line tools (package libtasn1-bin) are GPLv3+.
-    detection_log: []
   - license_expression: lgpl-2.1-plus
     matches:
       - score: '99.39'
@@ -55,7 +54,6 @@ license_detections:
           General Public License can be found in
           `/usr/share/common-licenses/LGPL'; the text of the earliest applying version
           of the license (2.1) can be found in `/usr/share/common-licenses/LGPL-2.1'.
-    detection_log: []
   - license_expression: gpl-3.0-plus AND gfdl-1.3 AND gfdl-1.3-plus
     matches:
       - score: '85.91'
@@ -124,7 +122,6 @@ license_detections:
 
           On Debian systems a copy of the complete text of the GNU FDL 1.3
           can be found in /usr/share/common-licenses/GFDL-1.3.
-    detection_log: []
 other_license_detections: []
 copyright: |
   Copyright (c) 2000-2020 Free Software Foundation, Inc.

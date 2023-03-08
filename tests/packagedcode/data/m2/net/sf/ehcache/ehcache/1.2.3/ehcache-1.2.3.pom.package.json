@@ -90,8 +90,7 @@
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_5.RULE",
           "matched_text": "The Apache Software License, Version 2.0"
         }
-      ],
-      "detection_log": []
+      ]
     },
     {
       "license_expression": "apache-2.0",
@@ -109,8 +108,7 @@
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_222.RULE",
           "matched_text": "http://ehcache.sourceforge.net/LICENSE.txt"
         }
-      ],
-      "detection_log": []
+      ]
     },
     {
       "license_expression": "apache-2.0",
@@ -128,8 +126,7 @@
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_228.RULE",
           "matched_text": "The license is the standard wording from the Apache license, but with\n                Greg Luck as copyright\n                owner."
         }
-      ],
-      "detection_log": []
+      ]
     }
   ],
   "other_license_expression": null,

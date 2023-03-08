@@ -77,8 +77,7 @@
               "rule_url": null,
               "matched_text": "Apache-2.0 AND CC-BY-4.0 AND LicenseRef-scancode-other-permissive AND LicenseRef-scancode-other-copyleft"
             }
-          ],
-          "detection_log": []
+          ]
         }
       ],
       "other_license_expression": null,
@@ -362,8 +361,7 @@
                   "rule_url": null,
                   "matched_text": "Apache-2.0 AND CC-BY-4.0 AND LicenseRef-scancode-other-permissive AND LicenseRef-scancode-other-copyleft"
                 }
-              ],
-              "detection_log": []
+              ]
             }
           ],
           "other_license_expression": null,

@@ -99,8 +99,7 @@
             "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/public-domain_and_python_and_bsd-simplified_and_gpl-3.0_2.RULE",
             "matched_text": "public domain, Python, 2-Clause BSD, GPL 3 (see COPYING.txt)"
           }
-        ],
-        "detection_log": []
+        ]
       },
       {
         "license_expression": "public-domain AND python AND bsd-new AND gpl-1.0-plus",
@@ -157,8 +156,7 @@
             "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/pypi_gnu_general_public_license.RULE",
             "matched_text": "['License :: Public Domain', 'License :: OSI Approved :: Python Software Foundation License', 'License :: OSI Approved :: BSD License', 'License :: OSI Approved :: GNU General Public License (GPL)']"
           }
-        ],
-        "detection_log": []
+        ]
       }
     ],
     "other_license_expression": null,

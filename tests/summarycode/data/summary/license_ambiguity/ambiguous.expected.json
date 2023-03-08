@@ -54,8 +54,7 @@
           "rule_relevance": 100,
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_93.RULE"
         }
-      ],
-      "detection_log": []
+      ]
     },
     {
       "identifier": "mit-f9eeac35-71f2-6963-05c0-cb8e2bbe7860",
@@ -74,8 +73,7 @@
           "rule_relevance": 100,
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE"
         }
-      ],
-      "detection_log": []
+      ]
     }
   ],
   "license_references": [
@@ -352,8 +350,7 @@
               "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_93.RULE"
             }
-          ],
-          "detection_log": []
+          ]
         }
       ],
       "license_clues": [],
@@ -413,8 +410,7 @@
               "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE"
             }
-          ],
-          "detection_log": []
+          ]
         }
       ],
       "license_clues": [],

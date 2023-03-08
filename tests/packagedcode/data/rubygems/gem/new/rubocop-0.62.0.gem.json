@@ -63,8 +63,7 @@
             "rule_url": null,
             "matched_text": "MIT"
           }
-        ],
-        "detection_log": []
+        ]
       }
     ],
     "other_license_expression": null,

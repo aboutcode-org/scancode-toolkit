@@ -118,9 +118,7 @@
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_689.RULE"
         }
       ],
-      "detection_log": [
-        "unknown-intro-followed-by-match"
-      ]
+      "detection_log": []
     },
     {
       "identifier": "apache_2_0-f985a212-ddd7-cf4c-223f-990765c05d7f",
@@ -188,9 +186,7 @@
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_182.RULE"
         }
       ],
-      "detection_log": [
-        "unknown-intro-followed-by-match"
-      ]
+      "detection_log": []
     },
     {
       "identifier": "apache_2_0-572026ce-a21a-cf1f-b168-d2e76a41e85f",
@@ -246,9 +242,7 @@
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_20.RULE"
         }
       ],
-      "detection_log": [
-        "unknown-intro-followed-by-match"
-      ]
+      "detection_log": []
     },
     {
       "identifier": "apache_2_0-3ff6ea1e-7687-edb8-8b35-a2751a601cae",
@@ -336,9 +330,7 @@
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/epl-2.0_4.RULE"
         }
       ],
-      "detection_log": [
-        "unknown-intro-followed-by-match"
-      ]
+      "detection_log": []
     },
     {
       "identifier": "epl_1_0-c49f6fb4-006b-7944-b44b-c283f88bf18d",
@@ -414,9 +406,7 @@
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/cpl-1.0_14.RULE"
         }
       ],
-      "detection_log": [
-        "unknown-intro-followed-by-match"
-      ]
+      "detection_log": []
     },
     {
       "identifier": "bsd_new-bad4bb72-54ef-7e7c-7644-70daa8f3317e",
@@ -472,9 +462,7 @@
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_172.RULE"
         }
       ],
-      "detection_log": [
-        "unknown-intro-followed-by-match"
-      ]
+      "detection_log": []
     },
     {
       "identifier": "bsd_new-90d0d4b4-f98b-d4da-dbb0-7e601f6d404a",
@@ -550,9 +538,7 @@
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/cpl-1.0_24.RULE"
         }
       ],
-      "detection_log": [
-        "unknown-intro-followed-by-match"
-      ]
+      "detection_log": []
     }
   ],
   "license_references": [

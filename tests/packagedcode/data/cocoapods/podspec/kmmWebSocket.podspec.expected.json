@@ -49,8 +49,7 @@
             "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_in_manifest.RULE",
             "matched_text": ":type = MIT, :file = LICENSE"
           }
-        ],
-        "detection_log": []
+        ]
       }
     ],
     "other_license_expression": null,

@@ -17,6 +17,5 @@ license_detections:
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/public-domain_285.RULE
         matched_text: is in the public domain.
-    detection_log: []
 other_license_detections: []
 copyright:

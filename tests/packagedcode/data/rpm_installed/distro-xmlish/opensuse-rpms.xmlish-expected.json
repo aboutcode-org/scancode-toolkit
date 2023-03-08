@@ -43,8 +43,7 @@
             "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/boost-1.0_48.RULE",
             "matched_text": "BSL-1.0"
           }
-        ],
-        "detection_log": []
+        ]
       }
     ],
     "other_license_expression": null,
@@ -125,8 +124,7 @@
             "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1_85.RULE",
             "matched_text": "LGPL-2.1"
           }
-        ],
-        "detection_log": []
+        ]
       }
     ],
     "other_license_expression": null,

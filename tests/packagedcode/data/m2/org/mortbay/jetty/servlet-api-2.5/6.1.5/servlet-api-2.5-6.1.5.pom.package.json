@@ -40,8 +40,7 @@
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/spdx_license_id_cddl-1.0_for_cddl-1.0.RULE",
           "matched_text": "CDDL 1.0"
         }
-      ],
-      "detection_log": []
+      ]
     },
     {
       "license_expression": "cddl-1.0",
@@ -59,8 +58,7 @@
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/cddl-1.0_6.RULE",
           "matched_text": "https://glassfish.dev.java.net/public/CDDLv1.0.html"
         }
-      ],
-      "detection_log": []
+      ]
     }
   ],
   "other_license_expression": null,

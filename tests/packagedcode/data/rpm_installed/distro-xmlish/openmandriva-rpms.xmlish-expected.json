@@ -43,8 +43,7 @@
             "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl_bare_word_only.RULE",
             "matched_text": "GPL"
           }
-        ],
-        "detection_log": []
+        ]
       }
     ],
     "other_license_expression": null,
@@ -971,8 +970,7 @@
             "rule_url": null,
             "matched_text": "MIT"
           }
-        ],
-        "detection_log": []
+        ]
       }
     ],
     "other_license_expression": null,

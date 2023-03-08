@@ -40,8 +40,7 @@
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0_660.RULE",
           "matched_text": "The GNU General Public License, Version 2"
         }
-      ],
-      "detection_log": []
+      ]
     },
     {
       "license_expression": "gpl-1.0-plus",
@@ -59,8 +58,7 @@
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-1.0-plus_48.RULE",
           "matched_text": "http://www.gnu.org/licenses/gpl.txt"
         }
-      ],
-      "detection_log": []
+      ]
     },
     {
       "license_expression": "gpl-2.0 WITH mysql-linking-exception-2018",
@@ -78,8 +76,7 @@
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0_with_mysql-linking-exception-2018_4.RULE",
           "matched_text": "MySQL Connector/J contains exceptions to GPL requirements when linking with other components\n      \t\tthat are licensed under OSI-approved open source licenses, see EXCEPTIONS-CONNECTOR-J\n      \t\tin this distribution for more details."
         }
-      ],
-      "detection_log": []
+      ]
     }
   ],
   "other_license_expression": null,

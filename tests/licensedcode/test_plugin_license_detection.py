@@ -26,6 +26,7 @@ def test_complicated_license_text_from_ffmpeg():
     args = [
         '--license',
         '--license-text',
+        '--license-text-diagnostics',
         '--strip-root',
         '--verbose',
         '--json', result_file,

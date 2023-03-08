@@ -35,7 +35,6 @@ other_license_detections:
           the Software, and to permit persons who receive copies from any such
           party to do so, with the only requirement being that the above copyright
           and this permission notice remain intact.
-    detection_log: []
   - license_expression: gpl-2.0-plus AND (gpl-2.0 OR gpl-3.0)
     matches:
       - score: '100.0'
@@ -76,7 +75,6 @@ other_license_detections:
           On Debian systems, the full text of the GNU General Public
           License version 2 can be found in the file
           `/usr/share/common-licenses/GPL-2'.
-    detection_log: []
   - license_expression: mit-old-style-no-advert
     matches:
       - score: '100.0'
@@ -99,7 +97,6 @@ other_license_detections:
           written prior permission.  M.I.T. makes no representations about the
           suitability of this software for any purpose.  It is provided "as is"
           without express or implied warranty.
-    detection_log: []
   - license_expression: gpl-3.0 AND gpl-3.0-plus
     matches:
       - score: '100.0'
@@ -147,7 +144,6 @@ other_license_detections:
           On Debian systems, the full text of the GNU General Public
           License version 3 can be found in the file
           `/usr/share/common-licenses/GPL-3'.
-    detection_log: []
 copyright: |
   Copyright (c) 1991-1999 by Micah Beck
   Parts Copyright (c) 1985-1988 by Supoj Sutanthavibul

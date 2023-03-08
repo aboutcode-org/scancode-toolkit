@@ -50,7 +50,6 @@ other_license_detections:
           \ WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT\n(INCLUDING NEGLIGENCE OR OTHERWISE)\
           \ ARISING IN ANY WAY OUT OF THE USE OF THIS\nSOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY\
           \ OF SUCH DAMAGE."
-    detection_log: []
   - license_expression: gpl-2.0
     matches:
       - score: '100.0'
@@ -99,7 +98,6 @@ other_license_detections:
         matched_text: |
           The complete text of the GNU General Public License
           can be found in /usr/share/common-licenses/GPL-2 file.
-    detection_log: []
   - license_expression: gpl-2.0-plus
     matches:
       - score: '100.0'
@@ -139,7 +137,6 @@ other_license_detections:
 
           The complete text of the GNU General Public License
           can be found in /usr/share/common-licenses/GPL-2 file.
-    detection_log: []
   - license_expression: lgpl-2.1 AND lgpl-2.0-plus
     matches:
       - score: '100.0'
@@ -178,7 +175,6 @@ other_license_detections:
 
           The complete text of the GNU Lesser General Public License
           can be found in /usr/share/common-licenses/
-    detection_log: []
   - license_expression: isc AND ibm-dhcp
     matches:
       - score: '100.0'
@@ -233,7 +229,6 @@ other_license_detections:
           CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER ARISING OUT OF OR IN CONNECTION
           WITH THE USE OR PERFORMANCE OF THIS SOFTWARE, EVEN IF IBM IS APPRISED OF THE
           POSSIBILITY OF SUCH DAMAGES.
-    detection_log: []
   - license_expression: xfree86-1.0
     matches:
       - score: '100.0'
@@ -269,7 +264,6 @@ other_license_detections:
           author(s) shall not be used in advertising or otherwise to promote the sale,
           use or other dealings in this Software without prior written authorization from
           the copyright holder(s) and author(s).
-    detection_log: []
 copyright: |
   VMware, Inc. <http://www.vmware.com/>
   VMware, Inc. <http://www.vmware.com/>

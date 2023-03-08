@@ -38,7 +38,6 @@ other_license_detections:
           but WITHOUT ANY WARRANTY; without even the implied warranty of
           MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
           GNU General Public License for more details.
-    detection_log: []
   - license_expression: gpl-2.0
     matches:
       - score: '100.0'
@@ -59,7 +58,6 @@ other_license_detections:
 
           On Debian systems, the full text of the GNU General Public License
           version 2 can be found in the file `/usr/share/common-licenses/GPL-2'.
-    detection_log: []
 copyright: |
   1998-2015, Sourcefire, Inc.
   2002-2007, Tomasz Kojm <tkojm@clamav.net>

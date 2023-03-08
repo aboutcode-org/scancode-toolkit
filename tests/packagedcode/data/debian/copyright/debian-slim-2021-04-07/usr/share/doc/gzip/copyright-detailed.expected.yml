@@ -53,7 +53,6 @@ other_license_detections:
 
           On Debian GNU/Linux systems, the complete text of the GNU General
           Public License can be found in `/usr/share/common-licenses/GPL-3'.
-    detection_log: []
   - license_expression: gfdl-1.3-plus
     matches:
       - score: '100.0'
@@ -75,7 +74,6 @@ other_license_detections:
 
           On Debian GNU/Linux systems, the complete text of the GNU Free Documentation
           License can be found in `/usr/share/common-licenses/GFDL-3'.
-    detection_log: []
   - license_expression: latex2e
     matches:
       - score: '85.0'
@@ -107,7 +105,6 @@ other_license_detections:
           into another language, under the above conditions for modified versions,
           except that this permission notice may be stated in a translation approved
           by the Foundation.
-    detection_log: []
 copyright: |
   1999-2016 Free Software Foundation, Inc.
   1992-1993 Jean-loup Gailly and Mark Adler

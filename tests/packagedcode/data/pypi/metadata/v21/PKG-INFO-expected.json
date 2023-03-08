@@ -63,8 +63,7 @@
             "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/pypi_apache_no-version.RULE",
             "matched_text": "['License :: OSI Approved :: Apache Software License']"
           }
-        ],
-        "detection_log": []
+        ]
       }
     ],
     "other_license_expression": null,

@@ -79,6 +79,5 @@ license_detections:
               4. Info-ZIP retains the right to use the names "Info-ZIP," "Zip," "UnZip,"
                  "UnZipSFX," "WiZ," "Pocket UnZip," "Pocket Zip," and "MacZip" for its
                  own source and binary releases.
-    detection_log: []
 other_license_detections: []
 copyright: Copyright (c) 1990-2009 Info-ZIP.

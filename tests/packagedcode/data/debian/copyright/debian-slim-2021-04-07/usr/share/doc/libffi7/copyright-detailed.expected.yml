@@ -85,7 +85,6 @@ license_detections:
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-1.0-plus_478.RULE
         matched_text: and is licensed under the GPL, see `/usr/share/common-licenses/GPL'.
-    detection_log: []
 other_license_detections: []
 copyright: |
   Copyright (c) 1996-2011 Red Hat, Inc.

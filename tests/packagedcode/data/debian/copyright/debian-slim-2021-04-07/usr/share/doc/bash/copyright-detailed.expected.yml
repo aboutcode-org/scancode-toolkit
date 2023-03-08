@@ -65,7 +65,6 @@ license_detections:
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl_72.RULE
         matched_text: License GPL
-    detection_log: []
   - license_expression: other-permissive
     matches:
       - score: '100.0'
@@ -84,7 +83,6 @@ license_detections:
            this document for any purpose, provided that the above copyright
            notice appears in all copies of this document and that the
            contents of this document remain unaltered.
-    detection_log: []
   - license_expression: gfdl-1.3-plus
     matches:
       - score: '100.0'
@@ -108,7 +106,6 @@ license_detections:
            Invariant Sections, no Front-Cover Texts, and no Back-Cover Texts.
            A copy of the license is included in the section entitled
            ``GNU Free Documentation License''.
-    detection_log: []
   - license_expression: gfdl-1.3-plus
     matches:
       - score: '100.0'
@@ -128,7 +125,6 @@ license_detections:
            Invariant Sections, no Front-Cover Texts, and no Back-Cover Texts.
            A copy of the license is included in the section entitled
            ``GNU Free Documentation License''.
-    detection_log: []
   - license_expression: other-permissive AND latex2e
     matches:
       - score: '100.0'
@@ -170,7 +166,6 @@ license_detections:
            into another language, under the above conditions for modified versions,
            except that this permission notice may be stated in a translation approved
            by the Foundation.
-    detection_log: []
   - license_expression: latex2e
     matches:
       - score: '99.0'
@@ -201,7 +196,6 @@ license_detections:
 
            Permission is granted to copy and distribute translations of this manual
            into another language, under the above conditions for modified versions.
-    detection_log: []
   - license_expression: gfdl-1.3-plus
     matches:
       - score: '100.0'
@@ -221,7 +215,6 @@ license_detections:
            Invariant Sections, no Front-Cover Texts, and no Back-Cover Texts.
            A copy of the license is included in the section entitled
            ``GNU Free Documentation License''.
-    detection_log: []
   - license_expression: latex2e
     matches:
       - score: '99.0'
@@ -252,7 +245,6 @@ license_detections:
 
            Permission is granted to copy and distribute translations of this manual
            into another language, under the above conditions for modified versions.
-    detection_log: []
   - license_expression: bsd-original-uc AND historical
     matches:
       - score: '100.0'
@@ -319,7 +311,6 @@ license_detections:
            * PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS
            * ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS
            * SOFTWARE.
-    detection_log: []
   - license_expression: other-permissive
     matches:
       - score: '100.0'
@@ -337,7 +328,6 @@ license_detections:
            * as this comment is not removed or changed.
            *
            * THIS IS A MODIFIED VERSION.  IT WAS MODIFIED BY
-    detection_log: []
 other_license_detections: []
 copyright: |
   Copyright (c) 1987-2014 Free Software Foundation, Inc.

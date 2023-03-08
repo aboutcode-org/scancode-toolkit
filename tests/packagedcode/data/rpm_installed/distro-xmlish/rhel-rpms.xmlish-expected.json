@@ -43,8 +43,7 @@
             "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/public-domain_bare_words.RULE",
             "matched_text": "Public Domain"
           }
-        ],
-        "detection_log": []
+        ]
       }
     ],
     "other_license_expression": null,
@@ -440,8 +439,7 @@
             "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/public-domain_bare_words.RULE",
             "matched_text": "Public Domain"
           }
-        ],
-        "detection_log": []
+        ]
       }
     ],
     "other_license_expression": null,
@@ -503,8 +501,7 @@
             "rule_url": null,
             "matched_text": "MIT"
           }
-        ],
-        "detection_log": []
+        ]
       }
     ],
     "other_license_expression": null,

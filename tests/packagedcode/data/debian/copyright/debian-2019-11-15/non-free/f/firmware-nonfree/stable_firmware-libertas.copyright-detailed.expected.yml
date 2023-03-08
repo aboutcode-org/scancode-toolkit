@@ -57,7 +57,6 @@ license_detections:
           TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE
           USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH
           DAMAGE.
-    detection_log: []
   - license_expression: marvell-firmware
     matches:
       - score: '100.0'
@@ -101,7 +100,6 @@ license_detections:
           TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE
           USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH
           DAMAGE.
-    detection_log: []
 other_license_detections: []
 copyright: |
   Marvell International Ltd.

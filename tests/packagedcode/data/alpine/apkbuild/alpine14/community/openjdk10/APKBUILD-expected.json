@@ -40,8 +40,7 @@
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/classpath-exception-2.0_6.RULE",
           "matched_text": "gpl-2.0-with-classpath-exception"
         }
-      ],
-      "detection_log": []
+      ]
     }
   ],
   "other_license_expression": null,

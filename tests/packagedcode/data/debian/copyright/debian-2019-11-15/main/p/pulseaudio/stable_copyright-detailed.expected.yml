@@ -14,22 +14,21 @@ declared_license_expression: lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.1-plus A
   AND lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.1-plus AND gpl-2.0-plus AND lgpl-2.1-plus AND
   lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.1-plus
 declared_license_expression_spdx: LGPL-2.1-or-later AND LGPL-2.1-or-later AND LGPL-2.1-or-later
-  AND LicenseRef-scancode-sun-source AND LicenseRef-scancode-libpbm AND LGPL-2.1-or-later AND
-  LGPL-2.1-or-later AND LGPL-2.1-or-later AND LGPL-2.1-or-later AND GPL-2.0-or-later AND LGPL-2.1-or-later
-  AND LGPL-2.1-or-later AND LGPL-2.1-or-later AND LGPL-2.1-or-later AND LicenseRef-scancode-adrian
+  AND LicenseRef-scancode-sun-source AND xlock AND LGPL-2.1-or-later AND LGPL-2.1-or-later AND
+  LGPL-2.1-or-later AND LGPL-2.1-or-later AND GPL-2.0-or-later AND LGPL-2.1-or-later AND LGPL-2.1-or-later
+  AND LGPL-2.1-or-later AND LGPL-2.1-or-later AND LicenseRef-scancode-adrian AND LGPL-2.1-or-later
   AND LGPL-2.1-or-later AND LGPL-2.1-or-later AND LGPL-2.1-or-later AND LGPL-2.1-or-later AND
   LGPL-2.1-or-later AND LGPL-2.1-or-later AND LGPL-2.1-or-later AND LGPL-2.1-or-later AND LGPL-2.1-or-later
   AND LGPL-2.1-or-later AND LGPL-2.1-or-later AND LGPL-2.1-or-later AND LGPL-2.1-or-later AND
-  LGPL-2.1-or-later AND LGPL-2.1-or-later AND LGPL-2.1-or-later AND LGPL-2.1-or-later AND MIT
+  LGPL-2.1-or-later AND LGPL-2.1-or-later AND LGPL-2.1-or-later AND MIT AND LGPL-2.1-or-later
   AND LGPL-2.1-or-later AND LGPL-2.1-or-later AND LGPL-2.1-or-later AND LGPL-2.1-or-later AND
-  LGPL-2.1-or-later AND LGPL-2.1-or-later AND LGPL-2.0-or-later AND LGPL-2.1-or-later AND LGPL-2.1-or-later
-  AND LGPL-2.1-or-later AND LGPL-2.1-or-later AND LGPL-2.1-or-later AND LGPL-2.1-or-later AND
-  LGPL-2.1-or-later AND LGPL-2.1-or-later AND LGPL-2.1-or-later AND LGPL-2.1-or-later AND LGPL-2.1-or-later
+  LGPL-2.1-or-later AND LGPL-2.0-or-later AND LGPL-2.1-or-later AND LGPL-2.1-or-later AND LGPL-2.1-or-later
   AND LGPL-2.1-or-later AND LGPL-2.1-or-later AND LGPL-2.1-or-later AND LGPL-2.1-or-later AND
   LGPL-2.1-or-later AND LGPL-2.1-or-later AND LGPL-2.1-or-later AND LGPL-2.1-or-later AND LGPL-2.1-or-later
   AND LGPL-2.1-or-later AND LGPL-2.1-or-later AND LGPL-2.1-or-later AND LGPL-2.1-or-later AND
-  LGPL-2.1-or-later AND GPL-2.0-or-later AND LGPL-2.1-or-later AND LGPL-2.1-or-later AND LGPL-2.1-or-later
-  AND LGPL-2.1-or-later
+  LGPL-2.1-or-later AND LGPL-2.1-or-later AND LGPL-2.1-or-later AND LGPL-2.1-or-later AND LGPL-2.1-or-later
+  AND LGPL-2.1-or-later AND LGPL-2.1-or-later AND LGPL-2.1-or-later AND LGPL-2.1-or-later AND
+  GPL-2.0-or-later AND LGPL-2.1-or-later AND LGPL-2.1-or-later AND LGPL-2.1-or-later AND LGPL-2.1-or-later
 other_license_expression:
 other_license_expression_spdx:
 license_detections:
@@ -86,7 +85,6 @@ license_detections:
         matched_text: |
           On Debian systems, the complete text of the LGPL-2.1 can be found in
             /usr/share/common-licenses/LGPL-2.1.
-    detection_log: []
   - license_expression: sun-source
     matches:
       - score: '100.0'
@@ -119,7 +117,6 @@ license_detections:
            In no event will Sun Microsystems, Inc. be liable for any lost revenue
            or profits or other special, indirect and consequential damages, even if
            Sun has been advised of the possibility of such damages.
-    detection_log: []
   - license_expression: libpbm
     matches:
       - score: '100.0'
@@ -139,7 +136,6 @@ license_detections:
            copyright notice and this permission notice appear in supporting
            documentation.  This software is provided "as is" without express or
            implied warranty.
-    detection_log: []
   - license_expression: lgpl-2.1-plus
     matches:
       - score: '100.0'
@@ -156,7 +152,6 @@ license_detections:
           License: LGPL-2.1+
            On Debian systems, the complete text of the LGPL-2.1 can be found in
            /usr/share/common-licenses/LGPL-2.1.
-    detection_log: []
   - license_expression: lgpl-2.1-plus
     matches:
       - score: '100.0'
@@ -173,7 +168,6 @@ license_detections:
           License: LGPL-2.1+
            On Debian systems, the complete text of the LGPL-2.1 can be found in
            /usr/share/common-licenses/LGPL-2.1.
-    detection_log: []
   - license_expression: lgpl-2.1-plus
     matches:
       - score: '100.0'
@@ -190,7 +184,6 @@ license_detections:
           License: LGPL-2.1+
            On Debian systems, the complete text of the LGPL-2.1 can be found in
            /usr/share/common-licenses/LGPL-2.1.
-    detection_log: []
   - license_expression: lgpl-2.1-plus
     matches:
       - score: '100.0'
@@ -207,7 +200,6 @@ license_detections:
           License: LGPL-2.1+
            On Debian systems, the complete text of the LGPL-2.1 can be found in
            /usr/share/common-licenses/LGPL-2.
-    detection_log: []
   - license_expression: gpl-2.0-plus
     matches:
       - score: '100.0'
@@ -224,7 +216,6 @@ license_detections:
           License: GPL-2+
            On Debian systems, the complete text of the GPL-2 can be found in
            /usr/share/common-licenses/GPL-2.
-    detection_log: []
   - license_expression: lgpl-2.1-plus
     matches:
       - score: '100.0'
@@ -241,7 +232,6 @@ license_detections:
           License: LGPL-2.1+
            On Debian systems, the complete text of the LGPL-2.1 can be found in
            /usr/share/common-licenses/LGPL-2.1.
-    detection_log: []
   - license_expression: lgpl-2.1-plus
     matches:
       - score: '100.0'
@@ -258,7 +248,6 @@ license_detections:
           License: LGPL-2.1+
            On Debian systems, the complete text of the LGPL-2.1 can be found in
            /usr/share/common-licenses/LGPL-2.1.
-    detection_log: []
   - license_expression: lgpl-2.1-plus
     matches:
       - score: '100.0'
@@ -275,7 +264,6 @@ license_detections:
           License: LGPL-2.1+
            On Debian systems, the complete text of the LGPL-2.1 can be found in
            /usr/share/common-licenses/LGPL-2.1.
-    detection_log: []
   - license_expression: lgpl-2.1-plus
     matches:
       - score: '100.0'
@@ -292,7 +280,6 @@ license_detections:
           License: LGPL-2.1+
            On Debian systems, the complete text of the LGPL-2.1 can be found in
            /usr/share/common-licenses/LGPL-2.1.
-    detection_log: []
   - license_expression: adrian
     matches:
       - score: '100.0'
@@ -314,7 +301,6 @@ license_detections:
            source code or the algorithms behind the source code as your
            intellectual property. This source code is free of royalty and comes
            with no warranty.
-    detection_log: []
   - license_expression: lgpl-2.1-plus
     matches:
       - score: '100.0'
@@ -331,7 +317,6 @@ license_detections:
           License: LGPL-2.1+
            On Debian systems, the complete text of the LGPL-2.1 can be found in
            /usr/share/common-licenses/LGPL-2.1.
-    detection_log: []
   - license_expression: lgpl-2.1-plus
     matches:
       - score: '100.0'
@@ -348,7 +333,6 @@ license_detections:
           License: LGPL-2.1+
            On Debian systems, the complete text of the LGPL-2.1 can be found in
            /usr/share/common-licenses/LGPL-2.1.
-    detection_log: []
   - license_expression: lgpl-2.1-plus
     matches:
       - score: '100.0'
@@ -365,7 +349,6 @@ license_detections:
           License: LGPL-2.1+
            On Debian systems, the complete text of the LGPL-2.1 can be found in
            /usr/share/common-licenses/LGPL-2.1.
-    detection_log: []
   - license_expression: lgpl-2.1-plus
     matches:
       - score: '100.0'
@@ -382,7 +365,6 @@ license_detections:
           License: LGPL-2.1+
            On Debian systems, the complete text of the LGPL-2.1 can be found in
            /usr/share/common-licenses/LGPL-2.1.
-    detection_log: []
   - license_expression: lgpl-2.1-plus
     matches:
       - score: '100.0'
@@ -399,7 +381,6 @@ license_detections:
           License: LGPL-2.1+
            On Debian systems, the complete text of the LGPL-2.1 can be found in
            /usr/share/common-licenses/LGPL-2.1.
-    detection_log: []
   - license_expression: lgpl-2.1-plus
     matches:
       - score: '100.0'
@@ -416,7 +397,6 @@ license_detections:
           License: LGPL-2.1+
            On Debian systems, the complete text of the LGPL-2.1 can be found in
            /usr/share/common-licenses/LGPL-2.1.
-    detection_log: []
   - license_expression: lgpl-2.1-plus
     matches:
       - score: '100.0'
@@ -433,7 +413,6 @@ license_detections:
           License: LGPL-2.1+
            On Debian systems, the complete text of the LGPL-2.1 can be found in
            /usr/share/common-licenses/LGPL-2.1.
-    detection_log: []
   - license_expression: lgpl-2.1-plus
     matches:
       - score: '100.0'
@@ -450,7 +429,6 @@ license_detections:
           License: LGPL-2.1+
            On Debian systems, the complete text of the LGPL-2.1 can be found in
            /usr/share/common-licenses/LGPL-2.1.
-    detection_log: []
   - license_expression: lgpl-2.1-plus
     matches:
       - score: '100.0'
@@ -467,7 +445,6 @@ license_detections:
           License: LGPL-2.1+
            On Debian systems, the complete text of the LGPL-2.1 can be found in
            /usr/share/common-licenses/LGPL-2.1.
-    detection_log: []
   - license_expression: lgpl-2.1-plus
     matches:
       - score: '100.0'
@@ -484,7 +461,6 @@ license_detections:
           License: LGPL-2.1+
            On Debian systems, the complete text of the LGPL-2.1 can be found in
            /usr/share/common-licenses/LGPL-2.1.
-    detection_log: []
   - license_expression: lgpl-2.1-plus
     matches:
       - score: '100.0'
@@ -501,7 +477,6 @@ license_detections:
           License: LGPL-2.1+
            On Debian systems, the complete text of the LGPL-2.1 can be found in
            /usr/share/common-licenses/LGPL-2.1.
-    detection_log: []
   - license_expression: lgpl-2.1-plus
     matches:
       - score: '100.0'
@@ -518,7 +493,6 @@ license_detections:
           License: LGPL-2.1+
            On Debian systems, the complete text of the LGPL-2.1 can be found in
            /usr/share/common-licenses/LGPL-2.1.
-    detection_log: []
   - license_expression: lgpl-2.1-plus
     matches:
       - score: '100.0'
@@ -535,7 +509,6 @@ license_detections:
           License: LGPL-2.1+
            On Debian systems, the complete text of the LGPL-2.1 can be found in
            /usr/share/common-licenses/LGPL-2.1.
-    detection_log: []
   - license_expression: lgpl-2.1-plus
     matches:
       - score: '100.0'
@@ -552,7 +525,6 @@ license_detections:
           License: LGPL-2.1+
            On Debian systems, the complete text of the LGPL-2.1 can be found in
            /usr/share/common-licenses/LGPL-2.1.
-    detection_log: []
   - license_expression: lgpl-2.1-plus
     matches:
       - score: '100.0'
@@ -569,7 +541,6 @@ license_detections:
           License: LGPL-2.1+
            On Debian systems, the complete text of the LGPL-2.1 can be found in
            /usr/share/common-licenses/LGPL-2.1.
-    detection_log: []
   - license_expression: lgpl-2.1-plus
     matches:
       - score: '100.0'
@@ -586,7 +557,6 @@ license_detections:
           License: LGPL-2.1+
            On Debian systems, the complete text of the LGPL-2.1 can be found in
            /usr/share/common-licenses/LGPL-2.1.
-    detection_log: []
   - license_expression: lgpl-2.1-plus
     matches:
       - score: '100.0'
@@ -603,7 +573,6 @@ license_detections:
           License: LGPL-2.1+
            On Debian systems, the complete text of the LGPL-2.1 can be found in
            /usr/share/common-licenses/LGPL-2.1.
-    detection_log: []
   - license_expression: mit
     matches:
       - score: '100.0'
@@ -636,7 +605,6 @@ license_detections:
             ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
             CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
             SOFTWARE.
-    detection_log: []
   - license_expression: lgpl-2.1-plus
     matches:
       - score: '100.0'
@@ -653,7 +621,6 @@ license_detections:
           License: LGPL-2.1+
            On Debian systems, the complete text of the LGPL-2.1 can be found in
            /usr/share/common-licenses/LGPL-2.1.
-    detection_log: []
   - license_expression: lgpl-2.1-plus
     matches:
       - score: '100.0'
@@ -670,7 +637,6 @@ license_detections:
           License: LGPL-2.1+
            On Debian systems, the complete text of the LGPL-2.1 can be found in
            /usr/share/common-licenses/LGPL-2.1.
-    detection_log: []
   - license_expression: lgpl-2.1-plus
     matches:
       - score: '100.0'
@@ -687,7 +653,6 @@ license_detections:
           License: LGPL-2.1+
            On Debian systems, the complete text of the LGPL-2.1 can be found in
            /usr/share/common-licenses/LGPL-2.1.
-    detection_log: []
   - license_expression: lgpl-2.1-plus
     matches:
       - score: '100.0'
@@ -704,7 +669,6 @@ license_detections:
           License: LGPL-2.1+
            On Debian systems, the complete text of the LGPL-2.1 can be found in
            /usr/share/common-licenses/LGPL-2.1.
-    detection_log: []
   - license_expression: lgpl-2.1-plus
     matches:
       - score: '100.0'
@@ -721,7 +685,6 @@ license_detections:
           License: LGPL-2.1+
            On Debian systems, the complete text of the LGPL-2.1 can be found in
            /usr/share/common-licenses/LGPL-2.1.
-    detection_log: []
   - license_expression: lgpl-2.1-plus
     matches:
       - score: '100.0'
@@ -738,7 +701,6 @@ license_detections:
           License: LGPL-2.1+
            On Debian systems, the complete text of the LGPL-2.1 can be found in
            /usr/share/common-licenses/LGPL-2.1.
-    detection_log: []
   - license_expression: lgpl-2.0-plus
     matches:
       - score: '100.0'
@@ -755,7 +717,6 @@ license_detections:
           License: LGPL-2+
            On Debian systems, the complete text of the LGPL-2 can be found in
            /usr/share/common-licenses/LGPL-2.
-    detection_log: []
   - license_expression: lgpl-2.1-plus
     matches:
       - score: '100.0'
@@ -772,7 +733,6 @@ license_detections:
           License: LGPL-2.1+
            On Debian systems, the complete text of the LGPL-2.1 can be found in
            /usr/share/common-licenses/LGPL-2.1.
-    detection_log: []
   - license_expression: lgpl-2.1-plus
     matches:
       - score: '100.0'
@@ -789,7 +749,6 @@ license_detections:
           License: LGPL-2.1+
            On Debian systems, the complete text of the LGPL-2.1 can be found in
            /usr/share/common-licenses/LGPL-2.1.
-    detection_log: []
   - license_expression: lgpl-2.1-plus
     matches:
       - score: '100.0'
@@ -806,7 +765,6 @@ license_detections:
           License: LGPL-2.1+
            On Debian systems, the complete text of the LGPL-2.1 can be found in
            /usr/share/common-licenses/LGPL-2.1.
-    detection_log: []
   - license_expression: lgpl-2.1-plus
     matches:
       - score: '100.0'
@@ -823,7 +781,6 @@ license_detections:
           License: LGPL-2.1+
            On Debian systems, the complete text of the LGPL-2.1 can be found in
            /usr/share/common-licenses/LGPL-2.1.
-    detection_log: []
   - license_expression: lgpl-2.1-plus
     matches:
       - score: '100.0'
@@ -840,7 +797,6 @@ license_detections:
           License: LGPL-2.1+
            On Debian systems, the complete text of the LGPL-2.1 can be found in
            /usr/share/common-licenses/LGPL-2.1.
-    detection_log: []
   - license_expression: lgpl-2.1-plus
     matches:
       - score: '100.0'
@@ -857,7 +813,6 @@ license_detections:
           License: LGPL-2.1+
            On Debian systems, the complete text of the LGPL-2.1 can be found in
            /usr/share/common-licenses/LGPL-2.1.
-    detection_log: []
   - license_expression: lgpl-2.1-plus
     matches:
       - score: '100.0'
@@ -874,7 +829,6 @@ license_detections:
           License: LGPL-2.1+
            On Debian systems, the complete text of the LGPL-2.1 can be found in
            /usr/share/common-licenses/LGPL-2.1.
-    detection_log: []
   - license_expression: lgpl-2.1-plus
     matches:
       - score: '100.0'
@@ -891,7 +845,6 @@ license_detections:
           License: LGPL-2.1+
            On Debian systems, the complete text of the LGPL-2.1 can be found in
            /usr/share/common-licenses/LGPL-2.1.
-    detection_log: []
   - license_expression: lgpl-2.1-plus
     matches:
       - score: '100.0'
@@ -908,7 +861,6 @@ license_detections:
           License: LGPL-2.1+
            On Debian systems, the complete text of the LGPL-2.1 can be found in
            /usr/share/common-licenses/LGPL-2.1.
-    detection_log: []
   - license_expression: lgpl-2.1-plus
     matches:
       - score: '100.0'
@@ -925,7 +877,6 @@ license_detections:
           License: LGPL-2.1+
            On Debian systems, the complete text of the LGPL-2.1 can be found in
            /usr/share/common-licenses/LGPL-2.1.
-    detection_log: []
   - license_expression: lgpl-2.1-plus
     matches:
       - score: '100.0'
@@ -942,7 +893,6 @@ license_detections:
           License: LGPL-2.1+
            On Debian systems, the complete text of the LGPL-2.1 can be found in
            /usr/share/common-licenses/LGPL-2.1.
-    detection_log: []
   - license_expression: lgpl-2.1-plus
     matches:
       - score: '100.0'
@@ -959,7 +909,6 @@ license_detections:
           License: LGPL-2.1+
            On Debian systems, the complete text of the LGPL-2.1 can be found in
            /usr/share/common-licenses/LGPL-2.1.
-    detection_log: []
   - license_expression: lgpl-2.1-plus
     matches:
       - score: '100.0'
@@ -976,7 +925,6 @@ license_detections:
           License: LGPL-2.1+
            On Debian systems, the complete text of the LGPL-2.1 can be found in
            /usr/share/common-licenses/LGPL-2.1.
-    detection_log: []
   - license_expression: lgpl-2.1-plus
     matches:
       - score: '100.0'
@@ -993,7 +941,6 @@ license_detections:
           License: LGPL-2.1+
            On Debian systems, the complete text of the LGPL-2.1 can be found in
            /usr/share/common-licenses/LGPL-2.1.
-    detection_log: []
   - license_expression: lgpl-2.1-plus
     matches:
       - score: '100.0'
@@ -1010,7 +957,6 @@ license_detections:
           License: LGPL-2.1+
            On Debian systems, the complete text of the LGPL-2.1 can be found in
            /usr/share/common-licenses/LGPL-2.1.
-    detection_log: []
   - license_expression: lgpl-2.1-plus
     matches:
       - score: '100.0'
@@ -1027,7 +973,6 @@ license_detections:
           License: LGPL-2.1+
            On Debian systems, the complete text of the LGPL-2.1 can be found in
            /usr/share/common-licenses/LGPL-2.1.
-    detection_log: []
   - license_expression: lgpl-2.1-plus
     matches:
       - score: '100.0'
@@ -1044,7 +989,6 @@ license_detections:
           License: LGPL-2.1+
            On Debian systems, the complete text of the LGPL-2.1 can be found in
            /usr/share/common-licenses/LGPL-2.1.
-    detection_log: []
   - license_expression: lgpl-2.1-plus
     matches:
       - score: '100.0'
@@ -1061,7 +1005,6 @@ license_detections:
           License: LGPL-2.1+
            On Debian systems, the complete text of the LGPL-2.1 can be found in
            /usr/share/common-licenses/LGPL-2.1.
-    detection_log: []
   - license_expression: lgpl-2.1-plus
     matches:
       - score: '100.0'
@@ -1078,7 +1021,6 @@ license_detections:
           License: LGPL-2.1+
            On Debian systems, the complete text of the LGPL-2.1 can be found in
            /usr/share/common-licenses/LGPL-2.1.
-    detection_log: []
   - license_expression: lgpl-2.1-plus
     matches:
       - score: '100.0'
@@ -1095,7 +1037,6 @@ license_detections:
           License: LGPL-2.1+
            On Debian systems, the complete text of the LGPL-2.1 can be found in
            /usr/share/common-licenses/LGPL-2.1.
-    detection_log: []
   - license_expression: lgpl-2.1-plus
     matches:
       - score: '100.0'
@@ -1112,7 +1053,6 @@ license_detections:
           License: LGPL-2.1+
            On Debian systems, the complete text of the LGPL-2.1 can be found in
            /usr/share/common-licenses/LGPL-2.1.
-    detection_log: []
   - license_expression: lgpl-2.1-plus
     matches:
       - score: '100.0'
@@ -1129,7 +1069,6 @@ license_detections:
           License: LGPL-2.1+
            On Debian systems, the complete text of the LGPL-2.1 can be found in
            /usr/share/common-licenses/LGPL-2.1.
-    detection_log: []
   - license_expression: lgpl-2.1-plus
     matches:
       - score: '100.0'
@@ -1146,7 +1085,6 @@ license_detections:
           License: LGPL-2.1+
            On Debian systems, the complete text of the LGPL-2.1 can be found in
            /usr/share/common-licenses/LGPL-2.1.
-    detection_log: []
   - license_expression: lgpl-2.1-plus
     matches:
       - score: '100.0'
@@ -1163,7 +1101,6 @@ license_detections:
           License: LGPL-2.1+
            On Debian systems, the complete text of the LGPL-2.1 can be found in
            /usr/share/common-licenses/LGPL-2.1.
-    detection_log: []
   - license_expression: lgpl-2.1-plus
     matches:
       - score: '100.0'
@@ -1180,7 +1117,6 @@ license_detections:
           License: LGPL-2.1+
            On Debian systems, the complete text of the LGPL-2.1 can be found in
            /usr/share/common-licenses/LGPL-2.1.
-    detection_log: []
   - license_expression: gpl-2.0-plus
     matches:
       - score: '100.0'
@@ -1197,7 +1133,6 @@ license_detections:
           License: GPL-2+
            On Debian systems, the complete text of the GPL-2 can be found in
             /usr/share/common-licenses/GPL-2.
-    detection_log: []
   - license_expression: lgpl-2.1-plus
     matches:
       - score: '100.0'
@@ -1214,7 +1149,6 @@ license_detections:
           License: LGPL-2.1+
            On Debian systems, the complete text of the LGPL-2.1 can be found in
            /usr/share/common-licenses/LGPL-2.1.
-    detection_log: []
   - license_expression: lgpl-2.1-plus
     matches:
       - score: '100.0'
@@ -1231,7 +1165,6 @@ license_detections:
           License: LGPL-2.1+
            On Debian systems, the complete text of the LGPL-2.1 can be found in
            /usr/share/common-licenses/LGPL-2.1.
-    detection_log: []
   - license_expression: lgpl-2.1-plus
     matches:
       - score: '100.0'
@@ -1262,7 +1195,6 @@ license_detections:
           License: LGPL-2.1+
            On Debian systems, the complete text of the LGPL-2.1 can be found in
            /usr/share/common-licenses/LGPL-2.1.
-    detection_log: []
 other_license_detections: []
 copyright: |
   Copyright (c) 2004-2009 Lennart Poettering

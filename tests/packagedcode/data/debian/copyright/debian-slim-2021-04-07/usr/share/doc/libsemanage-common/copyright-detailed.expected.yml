@@ -33,7 +33,6 @@ license_detections:
 
           On Debian GNU/Linux systems, the complete text of the Lesser GNU General
           Public License can be found in `/usr/share/common-licenses/LGPL'.
-    detection_log: []
   - license_expression: gpl-2.0
     matches:
       - score: '100.0'
@@ -57,7 +56,6 @@ license_detections:
               <URL:http://www.gnu.org/copyleft/gpl.html>.  You may also obtain
               it by writing to the Free Software Foundation, Inc., 51 Franklin
               St, Fifth Floor, Boston, MA 02110-1301, USA.
-    detection_log: []
 other_license_detections: []
 copyright: |
   Copyright (c) 2004-2007 Tresys Technology, LLC

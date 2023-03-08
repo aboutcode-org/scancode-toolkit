@@ -232,7 +232,6 @@ license_detections:
           province of Quebec, Canada, the following applies: The Parties hereby confirm
           they have requested this Agreement and all related documents be prepared
           in English.
-    detection_log: []
   - license_expression: proprietary-license
     matches:
       - score: '44.44'
@@ -250,7 +249,6 @@ license_detections:
           United States and other countries. All Qualcomm Incorporated trademarks are used
           with permission. Other products and brand names may be trademarks or registered
           trademarks of their respective owners.
-    detection_log: []
   - license_expression: openssl-ssleay
     matches:
       - score: '100.0'
@@ -280,7 +278,6 @@ license_detections:
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/openssl-ssleay_2.RULE
         matched_text: OpenSSL License
-    detection_log: []
   - license_expression: openssl
     matches:
       - score: '100.0'
@@ -342,7 +339,6 @@ license_detections:
            * This product includes cryptographic software written by Eric Young
            * (eay@cryptsoft.com).  This product includes software written by Tim
            * Hudson (tjh@cryptsoft.com).
-    detection_log: []
   - license_expression: ssleay-windows
     matches:
       - score: '100.0'
@@ -408,7 +404,6 @@ license_detections:
            * derivative of this code cannot be changed.  i.e. this code cannot simply be
            * copied and put under another distribution licence
            * [including the GNU Public Licence.]
-    detection_log: []
   - license_expression: zlib
     matches:
       - score: '100.0'
@@ -422,7 +417,6 @@ license_detections:
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/zlib_5.RULE
         matched_text: For conditions of distribution and use, see copyright notice in zlib.h
-    detection_log: []
   - license_expression: zlib
     matches:
       - score: '100.0'
@@ -453,7 +447,6 @@ license_detections:
             3. This notice may not be removed or altered from any source distribution.
             Jean-loup Gailly        Mark Adler
             jloup@gzip.org          madler@alumni.caltech.edu
-    detection_log: []
   - license_expression: public-domain
     matches:
       - score: '100.0'
@@ -470,7 +463,6 @@ license_detections:
           This code was
            * written by Colin Plumb in 1993, no copyright is claimed.
            * This code is in the public domain; do with it what you wish.
-    detection_log: []
   - license_expression: bsd-new
     matches:
       - score: '100.0'
@@ -507,7 +499,6 @@ license_detections:
            * LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
            * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
            * SUCH DAMAGE.
-    detection_log: []
   - license_expression: gary-s-brown
     matches:
       - score: '100.0'
@@ -523,7 +514,6 @@ license_detections:
         matched_text: |
           You may use this program, or
            *  code or tables extracted from it, as desired without restriction.
-    detection_log: []
   - license_expression: other-permissive
     matches:
       - score: '100.0'
@@ -543,7 +533,6 @@ license_detections:
              it I would appreciate an acknowledgement of its origin in the code or
              the product that results and I would also appreciate knowing a liitle
              about the use to which it is being put.
-    detection_log: []
   - license_expression: public-domain-disclaimer
     matches:
       - score: '100.0'
@@ -566,7 +555,6 @@ license_detections:
            * USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR
            * OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
            * PERFORMANCE OF THIS SOFTWARE.
-    detection_log: []
   - license_expression: public-domain-disclaimer
     matches:
       - score: '100.0'
@@ -596,7 +584,6 @@ license_detections:
            * LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
            * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
            * SUCH DAMAGE.
-    detection_log: []
   - license_expression: gpl-2.0 OR bsd-new
     matches:
       - score: '100.0'
@@ -618,7 +605,6 @@ license_detections:
            * license.
            *
            * See README and COPYING for more details.
-    detection_log: []
   - license_expression: gpl-2.0 OR bsd-new
     matches:
       - score: '100.0'
@@ -640,7 +626,6 @@ license_detections:
            * license.
            *
            * See README and COPYING for more details.
-    detection_log: []
   - license_expression: bsd-new
     matches:
       - score: '100.0'
@@ -677,7 +662,6 @@ license_detections:
            * LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
            * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
            * SUCH DAMAGE.
-    detection_log: []
   - license_expression: bsd-new
     matches:
       - score: '100.0'
@@ -727,7 +711,6 @@ license_detections:
           * LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
           * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
           * SUCH DAMAGE.
-    detection_log: []
   - license_expression: bsd-new
     matches:
       - score: '100.0'
@@ -762,7 +745,6 @@ license_detections:
            * WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR
            * OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
            * ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-    detection_log: []
   - license_expression: isc
     matches:
       - score: '100.0'
@@ -787,7 +769,6 @@ license_detections:
            * WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
            * ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
            * OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
-    detection_log: []
 other_license_detections: []
 copyright: |
   Copyright (c) 2013-2017 Qualcomm Technologies, Inc.

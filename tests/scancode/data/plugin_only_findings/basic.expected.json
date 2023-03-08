@@ -19,8 +19,7 @@
           "rule_relevance": 100,
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0_or_bsd-new_aes_1.RULE"
         }
-      ],
-      "detection_log": []
+      ]
     },
     {
       "identifier": "bsd_original_uc-5efd6652-3d84-9376-6fbe-46d88e406436",
@@ -39,8 +38,7 @@
           "rule_relevance": 100,
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-original-uc_3.RULE"
         }
-      ],
-      "detection_log": []
+      ]
     }
   ],
   "license_references": [
@@ -288,8 +286,7 @@
               "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-original-uc_3.RULE"
             }
-          ],
-          "detection_log": []
+          ]
         }
       ],
       "license_clues": [],
@@ -362,8 +359,7 @@
               "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0_or_bsd-new_aes_1.RULE"
             }
-          ],
-          "detection_log": []
+          ]
         }
       ],
       "license_clues": [],

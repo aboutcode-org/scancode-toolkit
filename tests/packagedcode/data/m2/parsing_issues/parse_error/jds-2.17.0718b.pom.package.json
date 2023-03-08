@@ -48,8 +48,7 @@
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_357.RULE",
           "matched_text": "The 3-Clause BSD License"
         }
-      ],
-      "detection_log": []
+      ]
     },
     {
       "license_expression": "bsd-new",
@@ -67,8 +66,7 @@
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_356.RULE",
           "matched_text": "https://opensource.org/licenses/BSD-3-Clause"
         }
-      ],
-      "detection_log": []
+      ]
     }
   ],
   "other_license_expression": null,

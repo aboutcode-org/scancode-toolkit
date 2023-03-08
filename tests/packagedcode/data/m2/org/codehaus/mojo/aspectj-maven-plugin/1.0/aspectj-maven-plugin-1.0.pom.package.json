@@ -55,8 +55,7 @@
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_27.RULE",
           "matched_text": "The MIT License"
         }
-      ],
-      "detection_log": []
+      ]
     }
   ],
   "other_license_expression": null,

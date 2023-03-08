@@ -41,7 +41,6 @@ other_license_detections:
 
           Jean-loup Gailly        Mark Adler
           jloup@gzip.org          madler@alumni.caltech.edu
-    detection_log: []
 copyright: |
   1995-2013 Jean-loup Gailly and Mark Adler
   1998 by Andreas R. Kleinert

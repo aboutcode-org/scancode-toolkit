@@ -379,10 +379,7 @@
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0_bare_single_word.RULE"
         }
       ],
-      "detection_log": [
-        "possible-false-positive",
-        "not-license-clues-as-more-detections-present"
-      ]
+      "detection_log": []
     },
     {
       "identifier": "gpl_2_0_plus_and_free_unknown_and_gpl_1_0_plus-4f5c7c7f-d0ee-f1dc-ad8b-236131aab65b",
@@ -426,9 +423,7 @@
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-1.0-plus_33.RULE"
         }
       ],
-      "detection_log": [
-        "unknown-match"
-      ]
+      "detection_log": []
     },
     {
       "identifier": "gpl_1_0_plus_and_lgpl_3_0_plus_and_gpl_3_0_and_lgpl_3_0-3bd18dcd-0a4c-d46f-f42e-3d2919be9be0",
@@ -804,9 +799,7 @@
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl_236.RULE"
         }
       ],
-      "detection_log": [
-        "unknown-reference-in-file-to-package"
-      ]
+      "detection_log": []
     },
     {
       "identifier": "gpl_3_0_plus-494d0068-7138-a14f-4cbb-fd2137263a4f",
@@ -928,7 +921,9 @@
       ],
       "osi_url": null,
       "faq_url": null,
-      "other_urls": [],
+      "other_urls": [
+        "https://github.com/nexB/scancode-toolkit/issues/3038#issuecomment-1317511139"
+      ],
       "key_aliases": [],
       "minimum_coverage": 90,
       "standard_notice": null,

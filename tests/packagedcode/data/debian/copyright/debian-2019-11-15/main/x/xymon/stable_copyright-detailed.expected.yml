@@ -99,7 +99,6 @@ other_license_detections:
           derivative of this code cannot be changed.  i.e. this code cannot simply be
           copied and put under another distribution licence
           [including the GNU General Public Licence.]
-    detection_log: []
   - license_expression: public-domain
     matches:
       - score: '100.0'
@@ -113,7 +112,6 @@ other_license_detections:
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/public-domain_125.RULE
         matched_text: 100% Public Domain,
-    detection_log: []
   - license_expression: mit-old-style-no-advert
     matches:
       - score: '100.0'
@@ -138,7 +136,6 @@ other_license_detections:
           M.I.T. makes no representations about the suitability of
           this software for any purpose.  It is provided "as is"
           without express or implied warranty.
-    detection_log: []
   - license_expression: gpl-2.0 WITH openssl-exception-gpl-2.0
     matches:
       - score: '100.0'
@@ -159,7 +156,6 @@ other_license_detections:
           On Debian GNU/Linux systems, the complete text of the GNU General
           Public License version 2 can be found in
           `/usr/share/common-licenses/GPL-2'.
-    detection_log: []
   - license_expression: gpl-2.0
     matches:
       - score: '100.0'
@@ -190,7 +186,6 @@ other_license_detections:
           On Debian GNU/Linux systems, the complete text of the GNU General
           Public License version 2 can be found in
           `/usr/share/common-licenses/GPL-2'.
-    detection_log: []
   - license_expression: gpl-2.0-plus
     matches:
       - score: '100.0'
@@ -222,7 +217,6 @@ other_license_detections:
           On Debian GNU/Linux systems, the complete text of the GNU General
           Public License version 2 can be found in
           `/usr/share/common-licenses/GPL-2'.
-    detection_log: []
   - license_expression: gpl-1.0-plus
     matches:
       - score: '100.0'
@@ -252,7 +246,6 @@ other_license_detections:
           On Debian GNU/Linux systems, the complete text of the latest version
           of the GNU General Public License version can be found in
           `/usr/share/common-licenses/GPL'.
-    detection_log: []
   - license_expression: zlib
     matches:
       - score: '100.0'
@@ -283,7 +276,6 @@ other_license_detections:
              misrepresented as being the original software.
 
           3. This notice may not be removed or altered from any source distribution.
-    detection_log: []
   - license_expression: bsd-new
     matches:
       - score: '100.0'
@@ -323,7 +315,6 @@ other_license_detections:
           LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
           OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
           SUCH DAMAGE.
-    detection_log: []
   - license_expression: gpl-1.0-plus AND zlib
     matches:
       - score: '100.0'
@@ -339,7 +330,6 @@ other_license_detections:
         matched_text: |
           released under
           the GNU GPL." and then shows the zlib license text.
-    detection_log: []
 copyright: |
   2002-2016 Henrik Størner <henrik@hswn.dk>
   2005-2007 Henrik Størner <henrik@hswn.dk>

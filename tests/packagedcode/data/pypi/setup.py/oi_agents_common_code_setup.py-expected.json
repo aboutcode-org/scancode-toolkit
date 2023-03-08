@@ -61,8 +61,7 @@
             "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0_32.RULE",
             "matched_text": "GPLv3"
           }
-        ],
-        "detection_log": []
+        ]
       },
       {
         "license_expression": "gpl-3.0",
@@ -93,9 +92,6 @@
             "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0_90.RULE",
             "matched_text": "['License :: OSI Approved :: GPLv3 License']"
           }
-        ],
-        "detection_log": [
-          "unknown-intro-followed-by-match"
         ]
       }
     ],

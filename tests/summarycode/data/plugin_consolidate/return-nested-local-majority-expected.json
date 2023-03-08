@@ -31,9 +31,6 @@
           "rule_relevance": 100,
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/spdx_license_id_apache-2.0_for_apache-2.0.RULE"
         }
-      ],
-      "detection_log": [
-        "unknown-intro-followed-by-match"
       ]
     },
     {
@@ -65,8 +62,7 @@
           "rule_relevance": 100,
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0_840.RULE"
         }
-      ],
-      "detection_log": []
+      ]
     }
   ],
   "consolidated_components": [
@@ -517,9 +513,6 @@
               "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/spdx_license_id_apache-2.0_for_apache-2.0.RULE"
             }
-          ],
-          "detection_log": [
-            "unknown-intro-followed-by-match"
           ]
         }
       ],
@@ -602,9 +595,6 @@
               "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/spdx_license_id_apache-2.0_for_apache-2.0.RULE"
             }
-          ],
-          "detection_log": [
-            "unknown-intro-followed-by-match"
           ]
         }
       ],
@@ -725,8 +715,7 @@
               "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0_840.RULE"
             }
-          ],
-          "detection_log": []
+          ]
         }
       ],
       "license_clues": [],
@@ -808,9 +797,6 @@
               "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/spdx_license_id_apache-2.0_for_apache-2.0.RULE"
             }
-          ],
-          "detection_log": [
-            "unknown-intro-followed-by-match"
           ]
         }
       ],

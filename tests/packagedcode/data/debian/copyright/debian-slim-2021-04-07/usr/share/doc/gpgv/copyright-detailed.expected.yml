@@ -76,7 +76,6 @@ other_license_detections:
           LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
           NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
           SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-    detection_log: []
   - license_expression: fsf-unlimited-no-warranty
     matches:
       - score: '100.0'
@@ -98,7 +97,6 @@ other_license_detections:
           WITHOUT ANY WARRANTY, to the extent permitted by law; without even
           the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR
           PURPOSE.
-    detection_log: []
   - license_expression: ietf
     matches:
       - score: '90.0'
@@ -128,7 +126,6 @@ other_license_detections:
 
           The limited permissions granted above are perpetual and will not be
           revoked by the Internet Society or its successors or assigns.
-    detection_log: []
   - license_expression: gpl-3.0-plus
     matches:
       - score: '100.0'
@@ -169,7 +166,6 @@ other_license_detections:
           On Debian systems, the full text of the GNU General Public
           License version 3 can be found in the file
           `/usr/share/common-licenses/GPL-3'.
-    detection_log: []
   - license_expression: lgpl-3.0-plus
     matches:
       - score: '100.0'
@@ -210,7 +206,6 @@ other_license_detections:
           On Debian systems, the full text of the GNU Lesser General Public
           License version 3 can be found in the file
           `/usr/share/common-licenses/LGPL-3'.
-    detection_log: []
   - license_expression: lgpl-2.1-plus
     matches:
       - score: '100.0'
@@ -251,7 +246,6 @@ other_license_detections:
           On Debian systems, the full text of the GNU Lesser General Public
           License version 2.1 can be found in the file
           `/usr/share/common-licenses/LGPL-2.1'.
-    detection_log: []
   - license_expression: bsd-new
     matches:
       - score: '100.0'
@@ -289,7 +283,6 @@ other_license_detections:
           STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
           ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED
           OF THE POSSIBILITY OF SUCH DAMAGE.
-    detection_log: []
   - license_expression: mit
     matches:
       - score: '100.0'
@@ -321,7 +314,6 @@ other_license_detections:
           DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR
           OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE
           USE OR OTHER DEALINGS IN THE SOFTWARE.
-    detection_log: []
   - license_expression: cc0-1.0
     matches:
       - score: '100.0'
@@ -352,7 +344,6 @@ other_license_detections:
 
           On Debian systems, the complete text of the CC0 license, version 1.0,
           can be found in /usr/share/common-licenses/CC0-1.0.
-    detection_log: []
   - license_expression: other-permissive
     matches:
       - score: '100.0'
@@ -366,7 +357,6 @@ other_license_detections:
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/other-permissive_321.RULE
         matched_text: This file is licensed permissively
-    detection_log: []
 copyright: |
   1992, 1995-2020, Free Software Foundation, Inc
   1998-2007, 2009, 2012, Free Software Foundation, Inc

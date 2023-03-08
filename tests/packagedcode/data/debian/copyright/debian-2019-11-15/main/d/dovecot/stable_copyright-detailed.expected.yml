@@ -61,7 +61,6 @@ other_license_detections:
           <phk@login.dknet.dk> wrote this file.  As long as you retain this notice you
           can do whatever you want with this stuff. If we meet some day, and you think
           this stuff is worth it, you can buy me a beer in return.   Poul-Henning Kamp
-    detection_log: []
   - license_expression: public-domain
     matches:
       - score: '100.0'
@@ -77,7 +76,6 @@ other_license_detections:
         matched_text: |
           placed in the
           public domain.
-    detection_log: []
   - license_expression: mit
     matches:
       - score: '100.0'
@@ -108,7 +106,6 @@ other_license_detections:
           LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
           FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
           DEALINGS IN THE SOFTWARE.
-    detection_log: []
   - license_expression: lgpl-2.1 AND lgpl-2.1-plus
     matches:
       - score: '100.0'
@@ -168,7 +165,6 @@ other_license_detections:
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1_82.RULE
         matched_text: usr/share/common-licenses/LGPL-2.1.
-    detection_log: []
   - license_expression: apache-2.0
     matches:
       - score: '100.0'
@@ -207,7 +203,6 @@ other_license_detections:
 
           On Debian systems, the full text of the Apache License, Version 2.0 can be
           found at /usr/share/common-licenses/Apache-2.0.
-    detection_log: []
   - license_expression: bsd-new
     matches:
       - score: '100.0'
@@ -244,7 +239,6 @@ other_license_detections:
           LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
           OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
           SUCH DAMAGE.
-    detection_log: []
   - license_expression: bsd-simplified
     matches:
       - score: '100.0'
@@ -278,7 +272,6 @@ other_license_detections:
           CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
           OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
           OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-    detection_log: []
   - license_expression: gpl-2.0-plus AND gpl-2.0
     matches:
       - score: '100.0'
@@ -338,7 +331,6 @@ other_license_detections:
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0_621.RULE
         matched_text: usr/share/common-licenses/GPL-2.
-    detection_log: []
   - license_expression: unicode
     matches:
       - score: '100.0'
@@ -385,7 +377,6 @@ other_license_detections:
           be used in advertising or otherwise to promote the sale, use or other dealings
           in these Data Files or Software without prior written authorization of the
           copyright holder.
-    detection_log: []
 copyright: |
   (c) 2001-2018 Dovecot authors
   (c) 2001-2018 Dovecot authors

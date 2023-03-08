@@ -59,7 +59,6 @@ other_license_detections:
           This code was written by Colin Plumb in 1993, no copyright is
           claimed.
           This code is in the public domain; do with it what you wish.
-    detection_log: []
   - license_expression: bsd-simplified
     matches:
       - score: '100.0'
@@ -93,7 +92,6 @@ other_license_detections:
           OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
           (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
           OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-    detection_log: []
   - license_expression: bsd-new
     matches:
       - score: '100.0'
@@ -132,7 +130,6 @@ other_license_detections:
           THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
           (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
           OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-    detection_log: []
   - license_expression: mit
     matches:
       - score: '100.0'
@@ -165,7 +162,6 @@ other_license_detections:
           ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
           CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
           SOFTWARE.
-    detection_log: []
   - license_expression: boost-1.0
     matches:
       - score: '100.0'
@@ -203,7 +199,6 @@ other_license_detections:
           LIABILITY, WHETHER IN CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT
           OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
           THE SOFTWARE.
-    detection_log: []
   - license_expression: lgpl-2.0 AND lgpl-2.0-plus
     matches:
       - score: '100.0'
@@ -238,7 +233,6 @@ other_license_detections:
 
           On Debian systems, the complete text of the license can be found in
           the file /usr/share/common-licenses/LGPL-2
-    detection_log: []
   - license_expression: lgpl-2.0-plus
     matches:
       - score: '100.0'
@@ -274,7 +268,6 @@ other_license_detections:
 
           On Debian systems, the complete text of the license can be found in
           the file /usr/share/common-licenses/LGPL-2
-    detection_log: []
   - license_expression: lgpl-2.1
     matches:
       - score: '100.0'
@@ -309,7 +302,6 @@ other_license_detections:
 
           On Debian systems, the complete text of the license can be found in
           the file /usr/share/common-licenses/LGPL-2.1
-    detection_log: []
   - license_expression: lgpl-2.1-plus
     matches:
       - score: '100.0'
@@ -345,7 +337,6 @@ other_license_detections:
 
           On Debian systems, the complete text of the license can be found in
           the file /usr/share/common-licenses/LGPL-2.1
-    detection_log: []
   - license_expression: gpl-2.0-plus
     matches:
       - score: '100.0'
@@ -381,7 +372,6 @@ other_license_detections:
 
           On Debian systems, the complete text of the license can be found in
           the file /usr/share/common-licenses/GPL-2
-    detection_log: []
   - license_expression: gpl-3.0-plus
     matches:
       - score: '100.0'
@@ -418,7 +408,6 @@ other_license_detections:
 
           On Debian systems, the complete text of the license can be found in
           the file /usr/share/common-licenses/GPL-3
-    detection_log: []
   - license_expression: x11
     matches:
       - score: '100.0'
@@ -456,7 +445,6 @@ other_license_detections:
           shall not be used in advertising or otherwise to promote the sale,
           use or other dealings in this Software without prior written
           authorization of the copyright holder.
-    detection_log: []
   - license_expression: mpl-1.1
     matches:
       - score: '100.0'
@@ -948,7 +936,6 @@ other_license_detections:
                the notices in the Source Code files of the Original Code. You should
                use the text of this Exhibit A rather than the text found in the
                Original Code Source Code for Your Modifications.]
-    detection_log: []
   - license_expression: apache-2.0
     matches:
       - score: '100.0'
@@ -975,7 +962,6 @@ other_license_detections:
         matched_text: |
           On Debian systems, the full text of the Apache license version 2 can
           be found in the file `/usr/share/common-licenses/Apache-2.0'.
-    detection_log: []
   - license_expression: isc
     matches:
       - score: '100.0'
@@ -1002,7 +988,6 @@ other_license_detections:
           PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER
           TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
           PERFORMANCE OF THIS SOFTWARE.
-    detection_log: []
   - license_expression: bsd-simplified
     matches:
       - score: '100.0'
@@ -1016,7 +1001,6 @@ other_license_detections:
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/spdx_license_id_bsd-2-clause_for_bsd-simplified.RULE
         matched_text: BSD 2-clause,
-    detection_log: []
 copyright: |
   © 2002-2019 Apple Inc. and others
   © 2002-2014 Apple Inc. and others

@@ -70,8 +70,7 @@
             "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/python_26.RULE",
             "matched_text": "license Python style"
           }
-        ],
-        "detection_log": []
+        ]
       },
       {
         "license_expression": "python",
@@ -89,8 +88,7 @@
             "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/pypi_python_software_foundation_license.RULE",
             "matched_text": "['License :: OSI Approved :: Python Software Foundation License']"
           }
-        ],
-        "detection_log": []
+        ]
       }
     ],
     "other_license_expression": null,

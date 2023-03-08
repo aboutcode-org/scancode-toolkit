@@ -21,7 +21,7 @@
       "detection_log": []
     },
     {
-      "identifier": "fsf_ap-b6b1c52f-301f-3458-68dd-11d75aedfce1",
+      "identifier": "fsf_ap-49ad9aab-c91b-eeb7-e90f-dc3f959b1c36",
       "license_expression": "fsf-ap",
       "detection_count": 1,
       "matches": [
@@ -324,7 +324,7 @@
               "rule_identifier": "fsf-ap.LICENSE",
               "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/fsf-ap.LICENSE",
-              "matched_text": "Reproduction and distribution of this file, with or without modification, are\npermitted in any medium without royalties provided the copyright notice\nand this notice are preserved. This file is offered as-is, without any warranties."
+              "matched_text": "and distribution of this file, with or without modification, are\npermitted in any medium without [royalties] provided the copyright notice\nand this notice are preserved. This file is offered as-is, without any"
             }
           ],
           "detection_log": []
@@ -333,7 +333,7 @@
       "license_clues": [],
       "percentage_of_license_text": 91.43,
       "for_license_detections": [
-        "fsf_ap-b6b1c52f-301f-3458-68dd-11d75aedfce1"
+        "fsf_ap-49ad9aab-c91b-eeb7-e90f-dc3f959b1c36"
       ],
       "scan_errors": []
     }

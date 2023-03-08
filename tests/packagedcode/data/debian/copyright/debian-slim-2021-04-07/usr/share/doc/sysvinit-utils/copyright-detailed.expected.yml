@@ -48,7 +48,6 @@ other_license_detections:
 
           On Debian system, copy of GNU Lesser General Public License version 2
           is also located at `/usr/share/common-licenses/GPL-2'
-    detection_log: []
 copyright: |
   1997-2005 Miquel van Smoorenburg <miquels@cistron.nl>
   2015 Adam Conrad <adconrad@debian.org>

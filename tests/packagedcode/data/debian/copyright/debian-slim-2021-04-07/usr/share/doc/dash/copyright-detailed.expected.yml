@@ -82,7 +82,6 @@ other_license_detections:
           LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
           OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
           SUCH DAMAGE.
-    detection_log: []
   - license_expression: fsf-free
     matches:
       - score: '100.0'
@@ -98,7 +97,6 @@ other_license_detections:
         matched_text: |
           This configure script is free software; the Free Software Foundation
           gives unlimited permission to copy, distribute and modify it.
-    detection_log: []
   - license_expression: fsf-unlimited-no-warranty
     matches:
       - score: '100.0'
@@ -120,7 +118,6 @@ other_license_detections:
           but WITHOUT ANY WARRANTY, to the extent permitted by law; without
           even the implied warranty of MERCHANTABILITY or FITNESS FOR A
           PARTICULAR PURPOSE.
-    detection_log: []
   - license_expression: x11-xconsortium AND public-domain
     matches:
       - score: '100.0'
@@ -166,7 +163,6 @@ other_license_detections:
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/public-domain_58.RULE
         matched_text: FSF changes to this file are in the public domain.
-    detection_log: []
   - license_expression: gpl-2.0-plus
     matches:
       - score: '100.0'
@@ -207,7 +203,6 @@ other_license_detections:
 
           On Debian systems, the complete text of the GNU General Public License
           version 2 can be found in ‘/usr/share/common-licenses/GPL-2’.
-    detection_log: []
   - license_expression: public-domain
     matches:
       - score: '99.0'
@@ -221,7 +216,6 @@ other_license_detections:
         rule_relevance: 99
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/pypi_public_domain.RULE
         matched_text: 'License: public-domain'
-    detection_log: []
 copyright: |
   1989-1994 The Regents of the University of California. All rights reserved.
   1997 Christos Zoulas. All rights reserved.

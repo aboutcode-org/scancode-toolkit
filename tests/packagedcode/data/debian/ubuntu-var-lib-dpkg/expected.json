@@ -197,9 +197,6 @@
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/spdx_license_id_mpl-2.0_for_mpl-2.0.RULE",
               "matched_text": "/usr/share/common-licenses/MPL-2.0"
             }
-          ],
-          "detection_log": [
-            "from-package-file"
           ]
         },
         {
@@ -218,9 +215,6 @@
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0_and_lgpl-2.0_4.RULE",
               "matched_text": "/usr/share/common-licenses/GPL\n/usr/share/common-licenses/LGPL"
             }
-          ],
-          "detection_log": [
-            "from-package-file"
           ]
         }
       ],
@@ -1039,9 +1033,6 @@
                   "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/spdx_license_id_mpl-2.0_for_mpl-2.0.RULE",
                   "matched_text": "/usr/share/common-licenses/MPL-2.0"
                 }
-              ],
-              "detection_log": [
-                "from-package-file"
               ]
             },
             {
@@ -1060,9 +1051,6 @@
                   "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0_and_lgpl-2.0_4.RULE",
                   "matched_text": "/usr/share/common-licenses/GPL\n/usr/share/common-licenses/LGPL"
                 }
-              ],
-              "detection_log": [
-                "from-package-file"
               ]
             }
           ],

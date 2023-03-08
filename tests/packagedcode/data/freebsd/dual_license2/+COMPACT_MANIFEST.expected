@@ -55,8 +55,7 @@
             "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0_32.RULE",
             "matched_text": "GPLv3"
           }
-        ],
-        "detection_log": []
+        ]
       },
       {
         "license_expression": "ruby",
@@ -74,8 +73,7 @@
             "rule_url": null,
             "matched_text": "RUBY"
           }
-        ],
-        "detection_log": []
+        ]
       },
       {
         "license_expression": "gpl-2.0",
@@ -93,8 +91,7 @@
             "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0_bare_single_word.RULE",
             "matched_text": "GPLv2"
           }
-        ],
-        "detection_log": []
+        ]
       }
     ],
     "other_license_expression": null,

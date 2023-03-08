@@ -74,6 +74,5 @@ license_detections:
           (c) anyone who is engaged in activities related to the design, development,
           production, or use of nuclear materials, nuclear facilities, nuclear weapons,
           missiles or chemical or biological weapons.
-    detection_log: []
 other_license_detections: []
 copyright: Copyright (c) 2015, Cavium, Inc.

@@ -96,7 +96,6 @@ license_detections:
           (PATENT, COPYRIGHT, TRADE SECRET, MASK WORK, OR OTHER PROPRIETARY RIGHT)
           EMBODIED IN ANY OTHER 3COM HARDWARE OR SOFTWARE EITHER SOLELY OR IN
           COMBINATION WITH THE 3c990img.h MICROCODE SOFTWARE
-    detection_log: []
   - license_expression: bsd-simplified-source
     matches:
       - score: '100.0'
@@ -114,7 +113,6 @@ license_detections:
           modification, are permitted provided that redistributions of source
           code retain the above copyright notice and this comment without
           modification.
-    detection_log: []
   - license_expression: agere-bsd
     matches:
       - score: '100.0'
@@ -165,7 +163,6 @@ license_detections:
           LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT
           OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH
           DAMAGE.
-    detection_log: []
   - license_expression: x11-acer
     matches:
       - score: '100.0'
@@ -192,7 +189,6 @@ license_detections:
           PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER
           TORTUOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
           PERFORMANCE OF THIS SOFTWARE.
-    detection_log: []
   - license_expression: ctl-linux-firmware
     matches:
       - score: '100.0'
@@ -250,7 +246,6 @@ license_detections:
           (PATENT, COPYRIGHT, TRADE SECRET, MASK WORK, OR OTHER PROPRIETARY RIGHT)
           EMBODIED IN ANY OTHER CTL HARDWARE OR SOFTWARE WHETHER SOLELY OR IN
           COMBINATION WITH THIS SOFTWARE.
-    detection_log: []
   - license_expression: other-permissive
     matches:
       - score: '100.0'
@@ -267,7 +262,6 @@ license_detections:
           Permission is hereby granted for the distribution of this firmware
           data in hexadecimal or equivalent format, provided this copyright
           notice is accompanying it.
-    detection_log: []
   - license_expression: linux-openib
     matches:
       - score: '100.0'
@@ -302,7 +296,6 @@ license_detections:
           ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
           CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
           SOFTWARE.
-    detection_log: []
   - license_expression: proprietary-license
     matches:
       - score: '100.0'
@@ -340,7 +333,6 @@ license_detections:
           ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR
           TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE
           USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-    detection_log: []
   - license_expression: bsd-simplified-source
     matches:
       - score: '100.0'
@@ -358,7 +350,6 @@ license_detections:
           modification, are permitted provided that redistributions of source
           code retain the above copyright notice and this comment without
           modification.
-    detection_log: []
   - license_expression: proprietary-license
     matches:
       - score: '100.0'
@@ -384,7 +375,6 @@ license_detections:
           WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
           ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
           OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
-    detection_log: []
   - license_expression: isc
     matches:
       - score: '100.0'
@@ -411,7 +401,6 @@ license_detections:
           PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER
           TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
           PERFORMANCE OF THIS SOFTWARE.
-    detection_log: []
   - license_expression: isc
     matches:
       - score: '100.0'
@@ -438,7 +427,6 @@ license_detections:
           PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER
           TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
           PERFORMANCE OF THIS SOFTWARE.
-    detection_log: []
   - license_expression: proprietary-license
     matches:
       - score: '100.0'
@@ -460,7 +448,6 @@ license_detections:
           These firmware files are distributed in the hope that they will be
           useful, but WITHOUT ANY WARRANTY; without even the implied warranty
           of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
-    detection_log: []
   - license_expression: bsd-new
     matches:
       - score: '100.0'
@@ -498,7 +485,6 @@ license_detections:
           LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
           NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
           EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-    detection_log: []
   - license_expression: isc
     matches:
       - score: '100.0'
@@ -524,7 +510,6 @@ license_detections:
           LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT,
           NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION
           WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
-    detection_log: []
   - license_expression: proprietary-license
     matches:
       - score: '100.0'
@@ -545,7 +530,6 @@ license_detections:
           These firmware files are distributed in the hope that they will be
           useful, but WITHOUT ANY WARRANTY; without even the implied warranty
           of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
-    detection_log: []
   - license_expression: proprietary-license
     matches:
       - score: '100.0'
@@ -568,7 +552,6 @@ license_detections:
           LICENSES AND DISCLAIMS ALL IMPLIED WARRANTIES, INCLUDING WITHOUT LIMITATION
           WARRANTIES OF MERCHANTABILITY, SUPPORT, AND FITNESS FOR A PARTICULAR
           PURPOSE AND NON-INFRINGEMENT.
-    detection_log: []
   - license_expression: intel
     matches:
       - score: '95.0'
@@ -616,7 +599,6 @@ license_detections:
           ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
           (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
           SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-    detection_log: []
   - license_expression: nxp-firmware-patent
     matches:
       - score: '100.0'
@@ -674,7 +656,6 @@ license_detections:
           ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR
           TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE
           USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-    detection_log: []
   - license_expression: bsd-original
     matches:
       - score: '100.0'
@@ -714,7 +695,6 @@ license_detections:
           STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING
           IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
           POSSIBILITY OF SUCH DAMAGE.
-    detection_log: []
   - license_expression: mit
     matches:
       - score: '98.77'
@@ -745,7 +725,6 @@ license_detections:
           DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR
           OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE
           OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-    detection_log: []
   - license_expression: moxa-linux-firmware
     matches:
       - score: '100.0'
@@ -775,7 +754,6 @@ license_detections:
           4. You may not re-license or sub-license the software to any person or
              business, using any other license.
           5. Moxa(r) is worldwide registered trademark.
-    detection_log: []
   - license_expression: ralink-firmware
     matches:
       - score: '100.0'
@@ -825,7 +803,6 @@ license_detections:
           TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE
           USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH
           DAMAGE.
-    detection_log: []
   - license_expression: proprietary-license
     matches:
       - score: '100.0'
@@ -839,7 +816,6 @@ license_detections:
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/proprietary-license_324.RULE
         matched_text: All firmware components are redistributable in binary form.
-    detection_log: []
   - license_expression: proprietary-license
     matches:
       - score: '100.0'
@@ -980,7 +956,6 @@ license_detections:
           United States Bureau of Export Administration or any export laws,
           restrictions or regulations.  This LICENSE may only be modified in
           writing signed by an authorized officer of NVIDIA.
-    detection_log: []
   - license_expression: proprietary-license
     matches:
       - score: '100.0'
@@ -1032,7 +1007,6 @@ license_detections:
           TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE
           USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH
           DAMAGE.
-    detection_log: []
   - license_expression: proprietary-license
     matches:
       - score: '100.0'
@@ -1054,7 +1028,6 @@ license_detections:
           These firmware files are distributed in the hope that they will be
           useful, but WITHOUT ANY WARRANTY; without even the implied warranty
           of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
-    detection_log: []
   - license_expression: ralink-firmware
     matches:
       - score: '100.0'
@@ -1104,7 +1077,6 @@ license_detections:
           TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE
           USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH
           DAMAGE.
-    detection_log: []
   - license_expression: other-permissive
     matches:
       - score: '100.0'
@@ -1121,7 +1093,6 @@ license_detections:
           Permission is hereby granted for the distribution of this firmware
           data in hexadecimal or equivalent format, provided this copyright
           notice is accompanying it.
-    detection_log: []
   - license_expression: other-permissive
     matches:
       - score: '100.0'
@@ -1138,7 +1109,6 @@ license_detections:
           Permission is hereby granted for the distribution of this firmware
           data in hexadecimal or equivalent format, provided this copyright
           notice is accompanying it.
-    detection_log: []
   - license_expression: bsd-new AND proprietary-license
     matches:
       - score: '100.0'
@@ -1185,7 +1155,6 @@ license_detections:
           RIGHTS (PATENT, COPYRIGHT, TRADE SECRET, MASK WORK, OR OTHER
           PROPRIETARY RIGHT) EMBODIED IN ANY OTHER IKANOS HARDWARE OR SOFTWARE
           EITHER SOLELY OR IN COMBINATION WITH THIS SOFTWARE.
-    detection_log: []
   - license_expression: proprietary-license
     matches:
       - score: '100.0'
@@ -1206,7 +1175,6 @@ license_detections:
           These firmware files are distributed in the hope that they will be
           useful, but WITHOUT ANY WARRANTY; without even the implied warranty
           of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
-    detection_log: []
   - license_expression: intel
     matches:
       - score: '100.0'
@@ -1256,7 +1224,6 @@ license_detections:
           TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE
           USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH
           DAMAGE.
-    detection_log: []
 other_license_detections: []
 copyright: |
   1999-2004, 3Com Corporation

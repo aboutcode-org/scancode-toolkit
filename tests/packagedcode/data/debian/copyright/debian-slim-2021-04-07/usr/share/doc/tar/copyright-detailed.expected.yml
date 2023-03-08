@@ -21,7 +21,6 @@ license_detections:
           \  Free Software Foundation; either version 3, or (at your option) any later\n   version.\n\
           \nOn Debian GNU/Linux systems, the complete text of the GNU General Public \nLicense\
           \ version 3 can be found in /usr/share/common-licenses/GPL-3."
-    detection_log: []
   - license_expression: gpl-2.0-plus
     matches:
       - score: '100.0'
@@ -39,7 +38,6 @@ license_detections:
           \  Free Software Foundation; either version 2, or (at your option) any later\n   version.\n\
           \nOn Debian GNU/Linux systems, the complete text of the GNU General Public \nLicense\
           \ version 2 can be found in /usr/share/common-licenses/GPL-2."
-    detection_log: []
 other_license_detections: []
 copyright: |
   Copyright (c) 1988, 1992, 1993, 1994, 1995, 1996, 1997, 1999, 2000, 2001, 2003, 2004, 2005, 2006, 2007 Free Software Foundation, Inc.

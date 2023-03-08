@@ -54,7 +54,6 @@ other_license_detections:
           LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
           OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
           SUCH DAMAGE.
-    detection_log: []
 copyright: |
   1999-2010 Joey Hess <joeyh@debian.org>
   2003 Tomohiro KUBOTA <kubota@debian.org>

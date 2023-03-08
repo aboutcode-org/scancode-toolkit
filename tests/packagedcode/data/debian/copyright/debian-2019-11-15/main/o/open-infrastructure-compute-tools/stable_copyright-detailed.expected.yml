@@ -65,7 +65,6 @@ other_license_detections:
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0_93.RULE
         matched_text: usr/share/common-licenses/GPL-3.
-    detection_log: []
 copyright: |
   2014-2019 Daniel Baumann <daniel.baumann@open-infrastructure.net>
   2016 Andreas Kreuzer <andreas.kreuzer@open-infrastructure.net>

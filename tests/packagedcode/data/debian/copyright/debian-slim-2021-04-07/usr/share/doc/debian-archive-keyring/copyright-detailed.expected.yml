@@ -30,6 +30,5 @@ license_detections:
           \ or with the\nDebian GNU debian-archive-keyring source package as the file COPYING.\n\
           If not, write to the Free Software Foundation, Inc., 51 Franklin Street,\nFifth Floor,\
           \ Boston, MA 02110-1301 USA."
-    detection_log: []
 other_license_detections: []
 copyright: Copyright (c) 2006 Michael Vogt <mvo@debian.org>

@@ -54,9 +54,7 @@
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE"
         }
       ],
-      "detection_log": [
-        "unknown-intro-followed-by-match"
-      ]
+      "detection_log": []
     }
   ],
   "license_references": [

@@ -49,7 +49,6 @@ other_license_detections:
           OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE,
           ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
           OTHER DEALINGS IN THE SOFTWARE.
-    detection_log: []
   - license_expression: zlib
     matches:
       - score: '100.0'
@@ -78,7 +77,6 @@ other_license_detections:
           2. Altered source versions must be plainly marked as such, and must not be
              misrepresented as being the original software.
           3. This notice may not be removed or altered from any source distribution.
-    detection_log: []
   - license_expression: lgpl-2.0-plus AND lgpl-2.1-plus
     matches:
       - score: '100.0'
@@ -110,7 +108,6 @@ other_license_detections:
 
           On Debian systems, the complete text of version 2 of the GNU Lesser
           General Public License can be found in '/usr/share/common-licenses/LGPL-2'.
-    detection_log: []
 copyright: |
   1997-2016 Sam Lantinga <slouken@libsdl.org>
   1997-2016 Sam Lantinga <slouken@libsdl.org>

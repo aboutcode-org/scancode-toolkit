@@ -110,7 +110,6 @@ license_detections:
 
           On Debian systems, the complete text of the GNU General
           Public License 2 can be found in `/usr/share/common-licenses/GPL-2'.
-    detection_log: []
   - license_expression: gpl-3.0-plus
     matches:
       - score: '100.0'
@@ -151,7 +150,6 @@ license_detections:
 
           On Debian systems, the complete text of the GNU General
           Public License 3 can be found in `/usr/share/common-licenses/GPL-3'.
-    detection_log: []
   - license_expression: lgpl-2.1-plus
     matches:
       - score: '100.0'
@@ -194,7 +192,6 @@ license_detections:
           On Debian systems, the full text of the GNU Lesser General Public
           License version 2,1 can be found in the file
           `/usr/share/common-licenses/LGPL-2.1'.
-    detection_log: []
   - license_expression: mit
     matches:
       - score: '100.0'
@@ -225,7 +222,6 @@ license_detections:
           LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
           OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
           SOFTWARE.
-    detection_log: []
   - license_expression: bsd-new
     matches:
       - score: '100.0'
@@ -262,7 +258,6 @@ license_detections:
           INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT,
           STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
           OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-    detection_log: []
   - license_expression: bsd-original
     matches:
       - score: '100.0'
@@ -302,7 +297,6 @@ license_detections:
           LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
           OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
           ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-    detection_log: []
   - license_expression: lgpl-3.0-plus
     matches:
       - score: '100.0'
@@ -339,7 +333,6 @@ license_detections:
 
           On Debian systems, the complete text of the GNU Lesser General
           Public License 3 can be found in `/usr/share/common-licenses/LGPL-3'.
-    detection_log: []
   - license_expression: other-permissive
     matches:
       - score: '100.0'
@@ -357,7 +350,6 @@ license_detections:
           you see fit, as long as this copyright message is included and
           that there is an indication as to what modifications have been
           made (if any).
-    detection_log: []
   - license_expression: free-unknown
     matches:
       - score: '100.0'
@@ -371,7 +363,6 @@ license_detections:
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/free-unknown-package_2.RULE
         matched_text: This file is distributed under the same license as the PACKAGE package.
-    detection_log: []
   - license_expression: free-unknown
     matches:
       - score: '91.67'
@@ -386,7 +377,6 @@ license_detections:
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/free-unknown-package_1.RULE
         matched_text: This file is distributed under the same license as the fusiondirectory
           package.
-    detection_log: []
   - license_expression: gpl-2.0-plus
     matches:
       - score: '100.0'
@@ -400,7 +390,6 @@ license_detections:
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_67.RULE
         matched_text: GPL-2+).
-    detection_log: []
 other_license_detections: []
 copyright: |
   2011-2018, FusionDirectory

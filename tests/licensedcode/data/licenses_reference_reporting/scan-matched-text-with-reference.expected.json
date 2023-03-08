@@ -55,8 +55,7 @@
               "rule_url": null,
               "matched_text": "Artistic-2.0 OR MIT"
             }
-          ],
-          "detection_log": []
+          ]
         }
       ],
       "other_license_expression": null,
@@ -114,7 +113,7 @@
       "detection_log": []
     },
     {
-      "identifier": "artistic_2_0-cb894725-5f2d-c39e-81e5-50ee1d4322fa",
+      "identifier": "artistic_2_0-c1ede1c6-eb3d-61cc-53ad-abba5e17c732",
       "license_expression": "artistic-2.0",
       "detection_count": 1,
       "matches": [
@@ -477,7 +476,7 @@
               "rule_identifier": "apache-2.0_2.RULE",
               "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_2.RULE",
-              "matched_text": " * Licensed to the Apache Software Foundation (ASF) under one or more\n * contributor license agreements.  See the NOTICE file distributed with\n * this work for additional information regarding copyright ownership.\n * The ASF licenses this file to You under the Apache License, Version 2.0\n * (the \"License\"); you may not use this file except in compliance with\n * the License.  You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License."
+              "matched_text": "Licensed to the Apache Software Foundation (ASF) under one or more\n * contributor license agreements.  See the NOTICE file distributed with\n * this work for additional information regarding copyright ownership.\n * The ASF licenses this file to You under the Apache License, Version 2.0\n * (the \"License\"); you may not use this file except in compliance with\n * the License.  You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License."
             },
             {
               "score": 100.0,
@@ -562,8 +561,7 @@
                   "rule_url": null,
                   "matched_text": "Artistic-2.0 OR MIT"
                 }
-              ],
-              "detection_log": []
+              ]
             }
           ],
           "other_license_expression": null,
@@ -602,7 +600,7 @@
               "rule_identifier": "artistic-2.0_46.RULE",
               "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/artistic-2.0_46.RULE",
-              "matched_text": "  \"license\": \"Artistic-2.0 OR MIT\","
+              "matched_text": "license\": \"Artistic-2.0"
             }
           ],
           "detection_log": []
@@ -611,7 +609,7 @@
       "license_clues": [],
       "percentage_of_license_text": 5.0,
       "for_license_detections": [
-        "artistic_2_0-cb894725-5f2d-c39e-81e5-50ee1d4322fa",
+        "artistic_2_0-c1ede1c6-eb3d-61cc-53ad-abba5e17c732",
         "artistic_2_0_or_mit-529b866b-c702-0328-8f33-363ba46b3370"
       ],
       "scan_errors": []

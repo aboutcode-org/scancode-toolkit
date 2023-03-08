@@ -56,8 +56,7 @@
             "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/spdx_license_id_lgpl-2.1-only_for_lgpl-2.1.RULE",
             "matched_text": "LGPL-2.1-only"
           }
-        ],
-        "detection_log": []
+        ]
       },
       {
         "license_expression": "gpl-3.0-plus",
@@ -75,8 +74,7 @@
             "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/spdx_license_id_gpl-3.0-or-later_for_gpl-3.0-plus.RULE",
             "matched_text": "GPL-3.0-or-later"
           }
-        ],
-        "detection_log": []
+        ]
       }
     ],
     "other_license_expression": null,

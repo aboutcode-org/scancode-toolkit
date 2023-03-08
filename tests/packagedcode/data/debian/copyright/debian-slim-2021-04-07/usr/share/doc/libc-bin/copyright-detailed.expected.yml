@@ -5,12 +5,11 @@ declared_license_expression: lgpl-2.1-plus AND gpl-2.0-plus AND bsd-new AND bsd-
   ietf AND bsd-new AND other-permissive AND hs-regexp AND pcre AND sunpro AND other-permissive
   AND lgpl-2.1-plus
 declared_license_expression_spdx: LGPL-2.1-or-later AND GPL-2.0-or-later AND BSD-3-Clause AND
-  BSD-3-Clause AND HPND AND ISC AND BSD-3-Clause AND LicenseRef-scancode-carnegie-mellon-contributors
-  AND BSD-3-Clause AND BSD-3-Clause AND BSD-3-Clause AND LicenseRef-scancode-inner-net-2.0 AND
-  LGPL-2.1-or-later AND LGPL-2.1-or-later AND LGPL-2.0-or-later AND LicenseRef-scancode-other-permissive
-  AND LicenseRef-scancode-ietf AND BSD-3-Clause AND LicenseRef-scancode-other-permissive AND
-  Spencer-94 AND LicenseRef-scancode-pcre AND LicenseRef-scancode-sunpro AND LicenseRef-scancode-other-permissive
-  AND LGPL-2.1-or-later
+  BSD-3-Clause AND HPND AND ISC AND BSD-3-Clause AND CMU-Mach AND BSD-3-Clause AND BSD-3-Clause
+  AND BSD-3-Clause AND LicenseRef-scancode-inner-net-2.0 AND LGPL-2.1-or-later AND LGPL-2.1-or-later
+  AND LGPL-2.0-or-later AND LicenseRef-scancode-other-permissive AND LicenseRef-scancode-ietf
+  AND BSD-3-Clause AND LicenseRef-scancode-other-permissive AND Spencer-94 AND LicenseRef-scancode-pcre
+  AND SunPro AND LicenseRef-scancode-other-permissive AND LGPL-2.1-or-later
 other_license_expression:
 other_license_expression_spdx:
 license_detections:
@@ -44,7 +43,6 @@ license_detections:
 
             On Debian systems, the complete text of the GNU Library
             General Public License can be found in `/usr/share/common-licenses/LGPL-2.1'.
-    detection_log: []
   - license_expression: gpl-2.0-plus AND bsd-new
     matches:
       - score: '95.0'
@@ -87,7 +85,6 @@ license_detections:
         matched_text: |
           All code incorporated from 4.4 BSD is distributed under the following
             license:
-    detection_log: []
   - license_expression: bsd-new
     matches:
       - score: '100.0'
@@ -126,7 +123,6 @@ license_detections:
              LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
              OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
              SUCH DAMAGE.
-    detection_log: []
   - license_expression: historical
     matches:
       - score: '100.0'
@@ -155,7 +151,6 @@ license_detections:
               FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT,
               NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION
               WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
-    detection_log: []
   - license_expression: isc
     matches:
       - score: '100.0'
@@ -181,7 +176,6 @@ license_detections:
               PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS
               ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS
               SOFTWARE.
-    detection_log: []
   - license_expression: bsd-new AND carnegie-mellon-contributors
     matches:
       - score: '100.0'
@@ -311,7 +305,6 @@ license_detections:
             Mathematical Functions for Itanium" collection:
 
               Intel License Agreement
-    detection_log: []
   - license_expression: bsd-new AND inner-net-2.0
     matches:
       - score: '100.0'
@@ -398,7 +391,6 @@ license_detections:
               SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
                 If these license terms cause you a real problem, contact the author.  */
-    detection_log: []
   - license_expression: lgpl-2.1-plus
     matches:
       - score: '100.0'
@@ -416,7 +408,6 @@ license_detections:
               Public License, version 2.1 or later - see the file COPYING.LIB for details.
               If you did not receive a copy of the license with this program, please
               see <http://www.gnu.org/licenses/> to obtain a copy.
-    detection_log: []
   - license_expression: lgpl-2.1-plus
     matches:
       - score: '97.17'
@@ -442,7 +433,6 @@ license_detections:
 
               You should have received a copy of the GNU Lesser General Public
               License along with GNU Libidn; if not, see <http://www.gnu.org/licenses/>.
-    detection_log: []
   - license_expression: lgpl-2.0-plus
     matches:
       - score: '100.0'
@@ -456,7 +446,6 @@ license_detections:
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0-plus_218.RULE
         matched_text: all licensed under LGPL
-    detection_log: []
   - license_expression: other-permissive AND ietf
     matches:
       - score: '100.0'
@@ -513,7 +502,6 @@ license_detections:
               BUT NOT LIMITED TO ANY WARRANTY THAT THE USE OF THE INFORMATION
               HEREIN WILL NOT INFRINGE ANY RIGHTS OR ANY IMPLIED WARRANTIES OF
               MERCHANTABILITY OR FITNESS FOR A PARTICULAR PURPOSE.
-    detection_log: []
   - license_expression: bsd-new
     matches:
       - score: '100.0'
@@ -550,7 +538,6 @@ license_detections:
               LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
               OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
               SUCH DAMAGE.
-    detection_log: []
   - license_expression: other-permissive
     matches:
       - score: '100.0'
@@ -579,7 +566,6 @@ license_detections:
               USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR
               OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
               PERFORMANCE OF THIS SOFTWARE.
-    detection_log: []
   - license_expression: hs-regexp
     matches:
       - score: '100.0'
@@ -612,7 +598,6 @@ license_detections:
                  ever read sources, credits must appear in the documentation.
 
               4. This notice may not be removed or altered.
-    detection_log: []
   - license_expression: pcre
     matches:
       - score: '95.0'
@@ -662,7 +647,6 @@ license_detections:
                 General Purpose Licence (GPL), or Lesser General Purpose Licence (LGPL),
                 then the terms of that licence shall supersede any condition above with
                 which it is incompatible.
-    detection_log: []
   - license_expression: sunpro
     matches:
       - score: '100.0'
@@ -680,7 +664,6 @@ license_detections:
               Permission to use, copy, modify, and distribute this
               software is freely granted, provided that this notice
               is preserved.
-    detection_log: []
   - license_expression: other-permissive
     matches:
       - score: '100.0'
@@ -698,7 +681,6 @@ license_detections:
 
                    1. you do not pretend that you wrote it
                    2. you leave this copyright notice intact.
-    detection_log: []
   - license_expression: lgpl-2.1-plus
     matches:
       - score: '100.0'
@@ -725,7 +707,6 @@ license_detections:
                You should have received a copy of the GNU Lesser General Public
                License along with this library; if not, see
                <http://www.gnu.org/licenses/>.  */
-    detection_log: []
 other_license_detections: []
 copyright: |
   Copyright (c) 1991-2015 Free Software Foundation, Inc.

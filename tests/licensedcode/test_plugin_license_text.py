@@ -28,7 +28,7 @@ def test_is_licensing_works():
     test_dir = test_env.get_test_loc('plugin_license_text/scan', copy=True)
     result_file = test_env.get_temp_file('json')
     args = [
-        '--license', '--license-text',
+        '--license', '--license-text', '--license-text-diagnostics',
         '--info',
         test_dir, '--json-pp', result_file, '--verbose']
     run_scan_click(args)

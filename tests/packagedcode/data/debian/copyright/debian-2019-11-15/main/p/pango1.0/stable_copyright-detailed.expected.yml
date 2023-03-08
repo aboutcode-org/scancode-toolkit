@@ -46,7 +46,6 @@ other_license_detections:
           Permission to use, copy, modify, distribute, and sell this example
           for any purpose is hereby granted without fee.
           It is provided "as is" without express or implied warranty.
-    detection_log: []
   - license_expression: x11
     matches:
       - score: '100.0'
@@ -87,7 +86,6 @@ other_license_detections:
 
           All trademarks and registered trademarks mentioned herein are the property
           of their respective owners.
-    detection_log: []
   - license_expression: lgpl-2.0-plus
     matches:
       - score: '100.0'
@@ -124,7 +122,6 @@ other_license_detections:
 
           On Debian systems, the complete text of the GNU Lesser General Public
           License version 2 can be found in "/usr/share/common-licenses/LGPL-2".
-    detection_log: []
   - license_expression: tcl
     matches:
       - score: '100.0'
@@ -177,7 +174,6 @@ other_license_detections:
           the authors grant the U.S. Government and others acting in its behalf
           permission to use and distribute the software in accordance with the
           terms specified in this license.
-    detection_log: []
   - license_expression: unicode
     matches:
       - score: '100.0'
@@ -242,7 +238,6 @@ other_license_detections:
           shall not be used in advertising or otherwise to promote the sale,
           use or other dealings in these Data Files or Software without prior
           written authorization of the copyright holder.
-    detection_log: []
 copyright: |
   1999-2015 Red Hat
   2005-2007 Imendio AB

@@ -37,7 +37,7 @@ def test_licenses_reference_works_with_matched_text():
     test_dir = test_env.get_test_loc('licenses_reference_reporting/scan', copy=True)
     result_file = test_env.get_temp_file('json')
     args = [
-        '--license', '--package',  '--license-text',
+        '--license', '--package',  '--license-text', '--license-text-diagnostics',
         test_dir, '--json-pp', result_file, '--verbose'
     ]
     run_scan_click(args)
@@ -50,7 +50,7 @@ def test_licenses_reference_works_with_license_clues():
     test_dir = test_env.get_test_loc('licenses_reference_reporting/python.LICENSE', copy=True)
     result_file = test_env.get_temp_file('json')
     args = [
-        '--license',  '--license-text',
+        '--license',  '--license-text', '--license-text-diagnostics',
         test_dir, '--json-pp', result_file, '--verbose'
     ]
     run_scan_click(args)

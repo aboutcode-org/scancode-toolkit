@@ -76,7 +76,6 @@ license_detections:
           LGPLv3+ or GPLv2+. Starting with 3.5.7 libunistring is needed, too. It also
           is dual licensed LGPLv3+ or GPLv2+ (libunistring 0.9.7 and above, earlier
           version were LGPLv3+ only.)
-    detection_log: []
   - license_expression: lgpl-2.1-plus
     matches:
       - score: '100.0'
@@ -102,7 +101,6 @@ license_detections:
            *
            * You should have received a copy of the GNU Lesser General Public License
            * along with this program.  If not, see <http://www.gnu.org/licenses/>
-    detection_log: []
   - license_expression: gpl-3.0-plus AND gfdl-1.1-plus
     matches:
       - score: '100.0'
@@ -141,7 +139,6 @@ license_detections:
         matched_text: |
           The documentation is distributed under the terms of the GNU Free
           Documentation License (FDL):
-    detection_log: []
   - license_expression: gfdl-1.3-plus
     matches:
       - score: '100.0'
@@ -161,7 +158,6 @@ license_detections:
                Foundation; with no Invariant Sections, no Front-Cover Texts, and
                no Back-Cover Texts.  A copy of the license is included in the
                section entitled "GNU Free Documentation License".
-    detection_log: []
   - license_expression: lgpl-2.0-plus AND lgpl-3.0 AND gpl-1.0-plus AND gpl-3.0 AND gfdl-1.3
     matches:
       - score: '100.0'
@@ -182,7 +178,6 @@ license_detections:
           be found in `/usr/share/common-licenses/GPL' (version 3 in
           /usr/share/common-licenses/GPL-3) The GNU Free Documentation
           License is available under /usr/share/common-licenses/GFDL-1.3.
-    detection_log: []
   - license_expression: lgpl-2.1-plus AND (lgpl-3.0-plus OR gpl-2.0-plus)
     matches:
       - score: '100.0'
@@ -212,7 +207,6 @@ license_detections:
           distributed under a LGPLv3+ or GPLv2+ dual license, and
           as such binaries of this library need to adhere to either LGPLv3+ or
           GPLv2+ license.
-    detection_log: []
   - license_expression: lgpl-2.0-plus AND gpl-3.0
     matches:
       - score: '100.0'
@@ -237,7 +231,6 @@ license_detections:
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0_472.RULE
         matched_text: library are under the GNU GPL version 3.
-    detection_log: []
   - license_expression: bsd-new OR gpl-1.0-plus
     matches:
       - score: '100.0'
@@ -284,7 +277,6 @@ license_detections:
           # THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
           # (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
           # OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-    detection_log: []
   - license_expression: bsd-simplified
     matches:
       - score: '100.0'
@@ -317,7 +309,6 @@ license_detections:
            * THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
            * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
            * THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-    detection_log: []
   - license_expression: public-domain
     matches:
       - score: '99.0'
@@ -333,7 +324,6 @@ license_detections:
         matched_text: |
           License:
            Public domain.
-    detection_log: []
   - license_expression: isc
     matches:
       - score: '100.0'
@@ -359,7 +349,6 @@ license_detections:
            * PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS
            * ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS
            * SOFTWARE.
-    detection_log: []
   - license_expression: cc0-1.0
     matches:
       - score: '100.0'
@@ -404,7 +393,6 @@ license_detections:
                 Affirmer offers the Work as-is and makes no representations or warranties of any kind concerning the Work, express, implied, statutory or otherwise, including without limitation warranties of title, merchantability, fitness for a particular purpose, non infringement, or the absence of latent or other defects, accuracy, or the present or absence of errors, whether or not discoverable, all to the greatest extent permissible under applicable law.
                 Affirmer disclaims responsibility for clearing rights of other persons that may apply to the Work or any use thereof, including without limitation any person's Copyright and Related Rights in the Work. Further, Affirmer disclaims responsibility for obtaining any necessary consents, permissions or other rights required for any use of the Work.
                 Affirmer understands and acknowledges that Creative Commons is not a party to this document and has no duty or obligation with respect to this CC0 or use of the Work.
-    detection_log: []
   - license_expression: mit
     matches:
       - score: '100.0'
@@ -446,7 +434,6 @@ license_detections:
            OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE,
            ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
            OTHER DEALINGS IN THE SOFTWARE.
-    detection_log: []
   - license_expression: apache-2.0
     matches:
       - score: '100.0'
@@ -485,7 +472,6 @@ license_detections:
           License: Apache-2.0
            On Debian systems the complete text of the license can be found in
            /usr/share/common-licenses/Apache-2.0
-    detection_log: []
   - license_expression: lgpl-3.0-plus AND gpl-2.0-plus
     matches:
       - score: '100.0'
@@ -499,7 +485,6 @@ license_detections:
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-3.0-plus_and_gpl-2.0-plus_1.RULE
         matched_text: 'License: LGPLv3+_or_GPLv2+'
-    detection_log: []
   - license_expression: apache-2.0
     matches:
       - score: '100.0'
@@ -516,7 +501,6 @@ license_detections:
           License: Apache-2.0
            On Debian systems the complete text of the license can be found in
            /usr/share/common-licenses/Apache-2.0
-    detection_log: []
   - license_expression: apache-2.0
     matches:
       - score: '100.0'
@@ -544,7 +528,6 @@ license_detections:
            # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
            # See the License for the specific language governing permissions and
            # limitations under the License.
-    detection_log: []
   - license_expression: apache-2.0
     matches:
       - score: '100.0'
@@ -572,7 +555,6 @@ license_detections:
            # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
            # See the License for the specific language governing permissions and
            # limitations under the License.
-    detection_log: []
   - license_expression: apache-2.0
     matches:
       - score: '100.0'
@@ -602,7 +584,6 @@ license_detections:
           License: Apache-2.0
            On Debian systems the complete text of the license can be found in
            /usr/share/common-licenses/Apache-2.0
-    detection_log: []
   - license_expression: mit
     matches:
       - score: '100.0'
@@ -644,7 +625,6 @@ license_detections:
            * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
            * FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
            * DEALINGS IN THE SOFTWARE.
-    detection_log: []
   - license_expression: mit
     matches:
       - score: '100.0'
@@ -686,7 +666,6 @@ license_detections:
            * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
            * FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
            * DEALINGS IN THE SOFTWARE.
-    detection_log: []
   - license_expression: mit AND lgpl-2.1-plus
     matches:
       - score: '100.0'
@@ -739,7 +718,6 @@ license_detections:
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_299.RULE
         matched_text: 'License: LGPLv2.1+'
-    detection_log: []
   - license_expression: lgpl-3.0-plus AND gpl-2.0-plus
     matches:
       - score: '100.0'
@@ -764,7 +742,6 @@ license_detections:
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-3.0-plus_and_gpl-2.0-plus_1.RULE
         matched_text: 'License: LGPLv3+_or_GPLv2+'
-    detection_log: []
   - license_expression: mit
     matches:
       - score: '100.0'
@@ -807,7 +784,6 @@ license_detections:
            CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
            TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
            SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-    detection_log: []
   - license_expression: lgpl-3.0-plus AND gpl-2.0-plus
     matches:
       - score: '100.0'
@@ -821,7 +797,6 @@ license_detections:
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-3.0-plus_and_gpl-2.0-plus_1.RULE
         matched_text: 'License: LGPLv3+_or_GPLv2+'
-    detection_log: []
   - license_expression: lgpl-3.0-plus AND gpl-2.0-plus
     matches:
       - score: '100.0'
@@ -835,7 +810,6 @@ license_detections:
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-3.0-plus_and_gpl-2.0-plus_1.RULE
         matched_text: 'License: LGPLv3+_or_GPLv2+'
-    detection_log: []
   - license_expression: lgpl-3.0-plus AND gpl-2.0-plus
     matches:
       - score: '100.0'
@@ -882,7 +856,6 @@ license_detections:
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-3.0-plus_and_gpl-2.0-plus_1.RULE
         matched_text: 'License: LGPLv3+_or_GPLv2+'
-    detection_log: []
   - license_expression: lgpl-3.0-plus AND gpl-2.0-plus
     matches:
       - score: '100.0'
@@ -896,7 +869,6 @@ license_detections:
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-3.0-plus_and_gpl-2.0-plus_1.RULE
         matched_text: 'License: LGPLv3+_or_GPLv2+'
-    detection_log: []
   - license_expression: lgpl-3.0-plus AND gpl-2.0-plus
     matches:
       - score: '100.0'
@@ -954,7 +926,6 @@ license_detections:
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-3.0-plus_and_gpl-2.0-plus_1.RULE
         matched_text: 'License: LGPLv3+_or_GPLv2+'
-    detection_log: []
   - license_expression: lgpl-3.0-plus AND gpl-2.0-plus
     matches:
       - score: '100.0'
@@ -979,7 +950,6 @@ license_detections:
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-3.0-plus_and_gpl-2.0-plus_1.RULE
         matched_text: 'License: LGPLv3+_or_GPLv2+'
-    detection_log: []
   - license_expression: lgpl-3.0-plus AND gpl-2.0-plus
     matches:
       - score: '100.0'
@@ -993,7 +963,6 @@ license_detections:
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-3.0-plus_and_gpl-2.0-plus_1.RULE
         matched_text: 'License: LGPLv3+_or_GPLv2+'
-    detection_log: []
   - license_expression: lgpl-3.0-plus AND gpl-2.0-plus
     matches:
       - score: '100.0'
@@ -1018,7 +987,6 @@ license_detections:
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-3.0-plus_and_gpl-2.0-plus_1.RULE
         matched_text: 'License: LGPLv3+_or_GPLv2+'
-    detection_log: []
   - license_expression: (lgpl-3.0-plus AND gpl-2.0-plus) AND mit
     matches:
       - score: '100.0'
@@ -1061,7 +1029,6 @@ license_detections:
            * CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
            * TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
            * SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-    detection_log: []
   - license_expression: mit
     matches:
       - score: '100.0'
@@ -1093,7 +1060,6 @@ license_detections:
            * CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
            * TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
            * SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-    detection_log: []
   - license_expression: lgpl-2.1-plus AND (lgpl-3.0-plus AND gpl-2.0-plus) AND (lgpl-3.0-plus
       OR gpl-2.0-plus)
     matches:
@@ -1176,7 +1142,6 @@ license_detections:
            *  You should have received copies of the GNU General Public License and
            *  the GNU Lesser General Public License along with this program.  If
            *  not, see http://www.gnu.org/licenses/.
-    detection_log: []
   - license_expression: gpl-3.0-plus
     matches:
       - score: '100.0'
@@ -1190,7 +1155,6 @@ license_detections:
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0-plus_112.RULE
         matched_text: 'License: GPLv3+'
-    detection_log: []
   - license_expression: gpl-3.0-plus
     matches:
       - score: '100.0'
@@ -1204,7 +1168,6 @@ license_detections:
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0-plus_112.RULE
         matched_text: 'License: GPLv3+'
-    detection_log: []
   - license_expression: gpl-3.0-plus
     matches:
       - score: '100.0'
@@ -1229,7 +1192,6 @@ license_detections:
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0-plus_112.RULE
         matched_text: 'License: GPLv3+'
-    detection_log: []
   - license_expression: gpl-3.0-plus
     matches:
       - score: '100.0'
@@ -1243,7 +1205,6 @@ license_detections:
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0-plus_112.RULE
         matched_text: 'License: GPLv3+'
-    detection_log: []
   - license_expression: gpl-3.0-plus AND lgpl-2.1-plus
     matches:
       - score: '100.0'
@@ -1279,7 +1240,6 @@ license_detections:
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0-plus_112.RULE
         matched_text: 'License: GPLv3+'
-    detection_log: []
   - license_expression: gpl-3.0-plus
     matches:
       - score: '100.0'
@@ -1293,7 +1253,6 @@ license_detections:
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0-plus_112.RULE
         matched_text: 'License: GPLv3+'
-    detection_log: []
   - license_expression: gpl-3.0-plus
     matches:
       - score: '100.0'
@@ -1307,7 +1266,6 @@ license_detections:
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0-plus_112.RULE
         matched_text: 'License: GPLv3+'
-    detection_log: []
   - license_expression: gpl-3.0-plus
     matches:
       - score: '100.0'
@@ -1321,7 +1279,6 @@ license_detections:
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0-plus_112.RULE
         matched_text: 'License: GPLv3+'
-    detection_log: []
   - license_expression: gpl-3.0-plus
     matches:
       - score: '100.0'
@@ -1335,7 +1292,6 @@ license_detections:
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0-plus_112.RULE
         matched_text: 'License: GPLv3+'
-    detection_log: []
   - license_expression: gpl-3.0-plus
     matches:
       - score: '100.0'
@@ -1349,7 +1305,6 @@ license_detections:
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0-plus_112.RULE
         matched_text: 'License: GPLv3+'
-    detection_log: []
   - license_expression: gpl-3.0-plus
     matches:
       - score: '100.0'
@@ -1363,7 +1318,6 @@ license_detections:
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0-plus_112.RULE
         matched_text: 'License: GPLv3+'
-    detection_log: []
   - license_expression: gpl-3.0-plus
     matches:
       - score: '100.0'
@@ -1399,7 +1353,6 @@ license_detections:
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0-plus_112.RULE
         matched_text: 'License: GPLv3+'
-    detection_log: []
   - license_expression: gpl-3.0-plus AND lgpl-2.1-plus
     matches:
       - score: '100.0'
@@ -1457,7 +1410,6 @@ license_detections:
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_299.RULE
         matched_text: 'License: LGPLv2.1+'
-    detection_log: []
   - license_expression: gpl-3.0-plus
     matches:
       - score: '100.0'
@@ -1471,7 +1423,6 @@ license_detections:
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0-plus_112.RULE
         matched_text: 'License: GPLv3+'
-    detection_log: []
   - license_expression: gpl-3.0-plus
     matches:
       - score: '100.0'
@@ -1496,7 +1447,6 @@ license_detections:
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0-plus_112.RULE
         matched_text: 'License: GPLv3+'
-    detection_log: []
   - license_expression: gpl-3.0-plus
     matches:
       - score: '100.0'
@@ -1532,7 +1482,6 @@ license_detections:
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0-plus_112.RULE
         matched_text: 'License: GPLv3+'
-    detection_log: []
   - license_expression: bsd-new
     matches:
       - score: '100.0'
@@ -1578,7 +1527,6 @@ license_detections:
            ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
            (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
            SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-    detection_log: []
 other_license_detections: []
 copyright: |
   Copyright (c) 2000-2019 Free Software Foundation, Inc.

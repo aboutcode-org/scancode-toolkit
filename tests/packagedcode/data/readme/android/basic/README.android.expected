@@ -41,8 +41,7 @@
             "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_89.RULE",
             "matched_text": "license BSD"
           }
-        ],
-        "detection_log": []
+        ]
       }
     ],
     "other_license_expression": null,

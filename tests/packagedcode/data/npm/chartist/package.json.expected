@@ -54,8 +54,7 @@
             "rule_url": null,
             "matched_text": "MIT OR WTFPL"
           }
-        ],
-        "detection_log": []
+        ]
       },
       {
         "license_expression": "wtfpl-2.0",
@@ -73,8 +72,7 @@
             "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/spdx_license_id_wtfpl_for_wtfpl-2.0.RULE",
             "matched_text": "WTFPL"
           }
-        ],
-        "detection_log": []
+        ]
       },
       {
         "license_expression": "wtfpl-2.0",
@@ -92,8 +90,7 @@
             "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/wtfpl-2.0_33.RULE",
             "matched_text": "https://github.com/gionkunz/chartist-js/blob/master/LICENSE-WTFPL"
           }
-        ],
-        "detection_log": []
+        ]
       },
       {
         "license_expression": "mit",
@@ -111,8 +108,7 @@
             "rule_url": null,
             "matched_text": "MIT"
           }
-        ],
-        "detection_log": []
+        ]
       },
       {
         "license_expression": "mit",
@@ -130,8 +126,7 @@
             "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_30.RULE",
             "matched_text": "https://github.com/gionkunz/chartist-js/blob/master/LICENSE-MIT"
           }
-        ],
-        "detection_log": []
+        ]
       }
     ],
     "other_license_expression": null,

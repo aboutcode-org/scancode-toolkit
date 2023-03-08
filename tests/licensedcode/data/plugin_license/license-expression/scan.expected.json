@@ -17,8 +17,7 @@
           "rule_relevance": 100,
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-1.0.LICENSE"
         }
-      ],
-      "detection_log": []
+      ]
     },
     {
       "identifier": "gpl_2_0_with_linux_syscall_exception_gpl_or_linux_openib-a9a9c6d7-552f-6784-5c60-e9e164ab2047",
@@ -37,8 +36,7 @@
           "rule_relevance": 100,
           "rule_url": null
         }
-      ],
-      "detection_log": []
+      ]
     }
   ],
   "license_references": [
@@ -301,8 +299,7 @@
               "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-1.0.LICENSE"
             }
-          ],
-          "detection_log": []
+          ]
         }
       ],
       "license_clues": [],
@@ -333,8 +330,7 @@
               "rule_relevance": 100,
               "rule_url": null
             }
-          ],
-          "detection_log": []
+          ]
         }
       ],
       "license_clues": [],

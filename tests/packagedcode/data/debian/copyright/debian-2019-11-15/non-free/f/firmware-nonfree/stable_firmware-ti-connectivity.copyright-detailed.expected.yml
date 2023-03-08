@@ -52,6 +52,5 @@ license_detections:
           \ CAUSED AND ON ANY THEORY OF\nLIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR\
           \ TORT (INCLUDING NEGLIGENCE\nOR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS\
           \ SOFTWARE, EVEN IF\nADVISED OF THE POSSIBILITY OF SUCH DAMAGE."
-    detection_log: []
 other_license_detections: []
 copyright: 2000-2016, Texas Instruments Incorporated

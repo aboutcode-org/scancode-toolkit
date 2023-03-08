@@ -40,9 +40,6 @@
           "rule_url": null,
           "matched_text": "licenseref-scancode-unknown-license-reference"
         }
-      ],
-      "detection_log": [
-        "unknown-match"
       ]
     }
   ],

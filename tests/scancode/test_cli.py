@@ -492,7 +492,7 @@ def test_scan_can_return_matched_license_text():
     test_file = test_env.get_test_loc('license_text/test.txt')
     expected_file = test_env.get_test_loc('license_text/test.expected')
     result_file = test_env.get_temp_file('json')
-    args = ['--license', '--license-text', '--strip-root', test_file, '--json', result_file]
+    args = ['--license', '--license-text', '--license-text-diagnostics', '--strip-root', test_file, '--json', result_file]
     run_scan_click(args)
     check_json_scan(test_env.get_test_loc(expected_file), result_file, regen=REGEN_TEST_FIXTURES)
 

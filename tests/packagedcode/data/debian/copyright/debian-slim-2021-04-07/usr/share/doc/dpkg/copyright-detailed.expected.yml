@@ -81,7 +81,6 @@ other_license_detections:
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/public-domain_347.RULE
         matched_text: placed in public domain as well.
-    detection_log: []
   - license_expression: public-domain
     matches:
       - score: '100.0'
@@ -98,7 +97,6 @@ other_license_detections:
           This code was
           written by Colin Plumb in 1993, no copyright is claimed.
           This code is in the public domain; do with it what you wish.
-    detection_log: []
   - license_expression: gpl-2.0-plus AND gpl-2.0
     matches:
       - score: '100.0'
@@ -149,7 +147,6 @@ other_license_detections:
           On Debian systems, the complete text of the GNU General Public License
           can be found in ‘/usr/share/common-licenses/GPL-2’ or in the dpkg source
           as the file ‘COPYING’.
-    detection_log: []
   - license_expression: gpl-2.0
     matches:
       - score: '100.0'
@@ -185,7 +182,6 @@ other_license_detections:
 
           You should have received a copy of the GNU General Public License
           along with this program.  If not, see <https://www.gnu.org/licenses/>.
-    detection_log: []
   - license_expression: bsd-simplified
     matches:
       - score: '99.45'
@@ -219,7 +215,6 @@ other_license_detections:
           LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
           OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
           SUCH DAMAGE.
-    detection_log: []
 copyright: |
   Copyright © 1994 Ian Murdock <imurdock@debian.org>
   Copyright © 1994 Matt Welsh <mdw@sunsite.unc.edu>

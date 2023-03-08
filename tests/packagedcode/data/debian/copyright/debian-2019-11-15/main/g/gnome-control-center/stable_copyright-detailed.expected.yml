@@ -62,7 +62,6 @@ other_license_detections:
         matched_text: |
           On Debian systems, the complete text of the GNU General
           Public License can be found in `/usr/share/common-licenses/GPL-2'.
-    detection_log: []
   - license_expression: mit
     matches:
       - score: '100.0'
@@ -93,7 +92,6 @@ other_license_detections:
           LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
           OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
           THE SOFTWARE.
-    detection_log: []
   - license_expression: lgpl-2.0-plus AND lgpl-2.1
     matches:
       - score: '100.0'
@@ -140,7 +138,6 @@ other_license_detections:
         matched_text: |
           On Debian systems, the complete text of the GNU Lesser General
           Public License can be found in `/usr/share/common-licenses/LGPL-2.1'.
-    detection_log: []
   - license_expression: lgpl-2.1-plus AND lgpl-2.1
     matches:
       - score: '100.0'
@@ -187,7 +184,6 @@ other_license_detections:
         matched_text: |
           On Debian systems, the complete text of the GNU Lesser General
           Public License can be found in `/usr/share/common-licenses/LGPL-2.1'.
-    detection_log: []
 copyright: |
   1996-2018 Free Software Foundation, Inc.
   1999-2015 The Gnome Project

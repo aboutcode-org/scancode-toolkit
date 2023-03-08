@@ -51,7 +51,6 @@ other_license_detections:
 
           On Debian systems, the complete text of the license can be found in
           the file /usr/share/common-licenses/GPL-2
-    detection_log: []
   - license_expression: lgpl-2.1-plus
     matches:
       - score: '100.0'
@@ -87,7 +86,6 @@ other_license_detections:
 
           On Debian systems, the complete text of the license can be found in
           the file /usr/share/common-licenses/LGPL-2.1
-    detection_log: []
 copyright: |
   1999-2018 Philip Kendall and others
   1987-2001 Free Software Foundation, Inc.

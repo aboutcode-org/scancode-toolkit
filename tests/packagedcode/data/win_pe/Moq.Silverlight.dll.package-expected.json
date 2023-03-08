@@ -49,9 +49,6 @@
             "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/package-manifest-unknown-679f097d28658555700ef170738adb0fd7151fce",
             "matched_text": "license {'LegalCopyright': None, 'LegalTrademarks': '', 'License': None}"
           }
-        ],
-        "detection_log": [
-          "undetected-license"
         ]
       }
     ],

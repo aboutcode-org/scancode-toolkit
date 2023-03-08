@@ -48,8 +48,7 @@
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_89.RULE",
           "matched_text": "license BSD"
         }
-      ],
-      "detection_log": []
+      ]
     },
     {
       "license_expression": "bsd-new",
@@ -67,8 +66,7 @@
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_jcraft_4.RULE",
           "matched_text": "http://www.jcraft.com/jsch/LICENSE.txt"
         }
-      ],
-      "detection_log": []
+      ]
     },
     {
       "license_expression": "bsd-new",
@@ -86,8 +84,7 @@
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_jcraft_3.RULE",
           "matched_text": "License information from http://www.jcraft.com/jsch"
         }
-      ],
-      "detection_log": []
+      ]
     }
   ],
   "other_license_expression": null,

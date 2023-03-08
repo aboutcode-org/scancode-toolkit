@@ -73,7 +73,6 @@ other_license_detections:
 
           On Debian systems, the full text of the Apache Software License version 2 can
           be found in the file `/usr/share/common-licenses/Apache-2.0'.
-    detection_log: []
   - license_expression: zeusbench
     matches:
       - score: '100.0'
@@ -97,7 +96,6 @@ other_license_detections:
             in contract, strict liability or tort (including negligence or otherwise)
             arising in any way out of the use of this software, even if advised of the
             possibility of such damage
-    detection_log: []
   - license_expression: bsd-new
     matches:
       - score: '100.0'
@@ -136,7 +134,6 @@ other_license_detections:
           CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
           ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
           POSSIBILITY OF SUCH DAMAGE.
-    detection_log: []
   - license_expression: x11-keith-packard AND historical
     matches:
       - score: '100.0'
@@ -191,7 +188,6 @@ other_license_detections:
           MAKES NO REPRESENTATIONS ABOUT THE ACCURACY OR SUITABILITY
           OF THIS MATERIAL FOR ANY PURPOSE.  IT IS PROVIDED "AS IS",
           WITHOUT ANY EXPRESS OR IMPLIED WARRANTIES.
-    detection_log: []
   - license_expression: gpl-3.0-plus
     matches:
       - score: '100.0'
@@ -229,7 +225,6 @@ other_license_detections:
           On Debian systems, the full text of the GNU General Public
           License version 2 can be found in the file
           `/usr/share/common-licenses/GPL-3'.
-    detection_log: []
   - license_expression: gpl-2.0-plus
     matches:
       - score: '100.0'
@@ -267,7 +262,6 @@ other_license_detections:
           On Debian systems, the full text of the GNU General Public
           License version 2 can be found in the file
           `/usr/share/common-licenses/GPL-2'.
-    detection_log: []
   - license_expression: public-domain
     matches:
       - score: '100.0'
@@ -314,7 +308,6 @@ other_license_detections:
           Map format and menu concept courtesy Joshua Bell, jsbell@acs.ucalgary.ca.
 
           Mark Cox, mark@ukweb.com, Allow relative URLs even when no base specified
-    detection_log: []
   - license_expression: bsd-simplified-darwin
     matches:
       - score: '100.0'
@@ -352,7 +345,6 @@ other_license_detections:
           LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
           OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
           SUCH DAMAGE.
-    detection_log: []
   - license_expression: apache-2.0 AND hs-regexp
     matches:
       - score: '100.0'
@@ -400,7 +392,6 @@ other_license_detections:
           sources, credits must appear in the documentation.
 
           4. This notice may not be removed or altered.
-    detection_log: []
   - license_expression: bsd-unchanged
     matches:
       - score: '100.0'
@@ -436,7 +427,6 @@ other_license_detections:
           THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
           (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
           THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-    detection_log: []
   - license_expression: bsd-new
     matches:
       - score: '100.0'
@@ -475,7 +465,6 @@ other_license_detections:
           CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
           ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
           POSSIBILITY OF SUCH DAMAGE.
-    detection_log: []
   - license_expression: bison-exception-2.2
     matches:
       - score: '100.0'
@@ -501,7 +490,6 @@ other_license_detections:
             .
             This special exception was added by the Free Software Foundation in
             version 2.2 of Bison.  */
-    detection_log: []
   - license_expression: mit
     matches:
       - score: '100.0'
@@ -531,7 +519,6 @@ other_license_detections:
           COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
           IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
           CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-    detection_log: []
 copyright: |
   Copyright 2019 The Apache Software Foundation
   2019 The Apache Software Foundation

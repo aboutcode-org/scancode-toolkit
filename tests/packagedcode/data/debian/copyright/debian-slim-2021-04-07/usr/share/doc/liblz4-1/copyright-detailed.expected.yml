@@ -58,7 +58,6 @@ other_license_detections:
 
           On Debian systems, the complete text of version 2 of the GNU General
           Public License can be found in '/usr/share/common-licenses/GPL-2'.
-    detection_log: []
   - license_expression: gpl-2.0-plus
     matches:
       - score: '100.0'
@@ -90,7 +89,6 @@ other_license_detections:
 
           On Debian systems, the complete text of version 2 of the GNU General
           Public License can be found in '/usr/share/common-licenses/GPL-2'.
-    detection_log: []
   - license_expression: bsd-simplified
     matches:
       - score: '100.0'
@@ -124,7 +122,6 @@ other_license_detections:
           HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
           LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT
           OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-    detection_log: []
 copyright: |
   Copyright (C) 2011-2017, Yann Collet.
   Copyright (C) 2011-2017, Yann Collet.

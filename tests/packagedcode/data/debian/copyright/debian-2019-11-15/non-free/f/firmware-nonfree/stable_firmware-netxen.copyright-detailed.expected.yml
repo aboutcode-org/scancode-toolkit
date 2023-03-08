@@ -35,6 +35,5 @@ license_detections:
           GROUNDS FOR A LICENSE BY IMPLICATION, ESTOPPEL, OR OTHERWISE IN ANY INTELLECTUAL\n\
           PROPERTY RIGHTS (PATENT, COPYRIGHT, TRADE SECRET, MASK WORK, OR OTHER PROPRIETARY\n\
           RIGHT) EMBODIED IN ANY OTHER QLOGIC HARDWARE OR SOFTWARE EITHER SOLELY OR IN\nCOMBINATION WITH THIS PROGRAM."
-    detection_log: []
 other_license_detections: []
 copyright: Copyright (c) 2003-2010 QLogic Corporation QLogic Linux Intelligent Ethernet

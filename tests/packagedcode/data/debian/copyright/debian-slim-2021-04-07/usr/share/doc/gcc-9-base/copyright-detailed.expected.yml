@@ -21,29 +21,27 @@ declared_license_expression: gpl-3.0-plus WITH gcc-exception-3.1 AND gpl-3.0-plu
 declared_license_expression_spdx: GPL-3.0-or-later WITH GCC-exception-3.1 AND GPL-3.0-or-later
   WITH GCC-exception-3.1 AND BSD-3-Clause AND NCSA AND MIT AND MIT AND GFDL-1.2-only AND GCC-exception-3.1
   AND LGPL-2.0-or-later AND LGPL-2.1-or-later AND LGPL-2.1-or-later AND LGPL-2.1-or-later AND
-  LicenseRef-scancode-public-domain AND LGPL-2.1-or-later AND LGPL-2.1-or-later AND LicenseRef-scancode-sunpro
-  AND BSD-3-Clause AND GPL-2.0-or-later AND (Artistic-1.0-Perl OR GPL-1.0-only) AND Zlib AND
-  LicenseRef-scancode-d-zlib AND MIT AND GPL-3.0-or-later WITH GCC-exception-3.1 AND GPL-3.0-or-later
-  AND GFDL-1.3-or-later AND LGPL-2.1-or-later AND GPL-3.0-or-later WITH GCC-exception-3.1 AND
-  LGPL-2.1-or-later AND LGPL-2.1-or-later AND GPL-3.0-or-later AND GPL-3.0-or-later AND (GPL-3.0-only
-  AND LGPL-2.1-only) AND LGPL-2.1-or-later AND GPL-3.0-or-later AND LGPL-2.1-or-later AND (LGPL-3.0-only
-  AND GPL-3.0-only) AND (GPL-3.0-only AND LGPL-2.1-only AND LGPL-3.0-only) AND (GPL-3.0-only
-  AND LGPL-2.1-only AND LGPL-3.0-only) AND (LGPL-2.0-only AND GPL-3.0-only) AND GPL-3.0-or-later
-  AND LicenseRef-scancode-gnu-emacs-gpl-1988 AND (GPL-3.0-only AND LGPL-2.1-only) AND (GPL-2.0-or-later
-  AND GPL-3.0-or-later) AND LGPL-2.1-or-later AND (LGPL-2.1-only AND LGPL-3.0-only AND GPL-3.0-only)
-  AND (LGPL-2.1-only AND LGPL-3.0-only) AND LGPL-2.1-or-later AND GPL-3.0-or-later AND GPL-3.0-or-later
-  AND GPL-3.0-or-later AND GPL-3.0-or-later AND (LGPL-2.0-or-later AND GPL-1.0-or-later) AND
-  LicenseRef-scancode-bsla-no-advert AND LicenseRef-scancode-bsla AND BSD-4-Clause-UC AND BSD-3-Clause
-  AND BSD-4-Clause-UC AND LicenseRef-scancode-flex-2.5 AND BSD-4-Clause-UC AND (GPL-3.0-only
-  AND GPL-2.0-only AND LGPL-3.0-or-later WITH LicenseRef-scancode-cygwin-exception-lgpl-3.0-plus
+  LicenseRef-scancode-public-domain AND LGPL-2.1-or-later AND LGPL-2.1-or-later AND SunPro AND
+  BSD-3-Clause AND GPL-2.0-or-later AND (Artistic-1.0-Perl OR GPL-1.0-only) AND Zlib AND LicenseRef-scancode-d-zlib
+  AND MIT AND GPL-3.0-or-later WITH GCC-exception-3.1 AND GPL-3.0-or-later AND GFDL-1.3-or-later
+  AND LGPL-2.1-or-later AND GPL-3.0-or-later WITH GCC-exception-3.1 AND LGPL-2.1-or-later AND
+  LGPL-2.1-or-later AND GPL-3.0-or-later AND GPL-3.0-or-later AND (GPL-3.0-only AND LGPL-2.1-only)
+  AND LGPL-2.1-or-later AND GPL-3.0-or-later AND LGPL-2.1-or-later AND (LGPL-3.0-only AND GPL-3.0-only)
+  AND (GPL-3.0-only AND LGPL-2.1-only AND LGPL-3.0-only) AND (GPL-3.0-only AND LGPL-2.1-only
+  AND LGPL-3.0-only) AND (LGPL-2.0-only AND GPL-3.0-only) AND GPL-3.0-or-later AND LicenseRef-scancode-gnu-emacs-gpl-1988
+  AND (GPL-3.0-only AND LGPL-2.1-only) AND (GPL-2.0-or-later AND GPL-3.0-or-later) AND LGPL-2.1-or-later
+  AND (LGPL-2.1-only AND LGPL-3.0-only AND GPL-3.0-only) AND (LGPL-2.1-only AND LGPL-3.0-only)
+  AND LGPL-2.1-or-later AND GPL-3.0-or-later AND GPL-3.0-or-later AND GPL-3.0-or-later AND GPL-3.0-or-later
+  AND (LGPL-2.0-or-later AND GPL-1.0-or-later) AND LicenseRef-scancode-bsla-no-advert AND BSD-4.3TAHOE
+  AND BSD-4-Clause-UC AND BSD-3-Clause AND BSD-4-Clause-UC AND LicenseRef-scancode-flex-2.5
+  AND BSD-4-Clause-UC AND (GPL-3.0-only AND GPL-2.0-only AND LGPL-3.0-or-later WITH LicenseRef-scancode-cygwin-exception-lgpl-3.0-plus
   AND LicenseRef-scancode-other-copyleft AND LicenseRef-scancode-other-permissive) AND LicenseRef-scancode-x11-lucent
-  AND LicenseRef-scancode-amd-historical AND LicenseRef-scancode-sunpro AND LicenseRef-scancode-osf-1990
-  AND LicenseRef-scancode-nilsson-historical AND LicenseRef-scancode-newlib-historical AND BSD-3-Clause
-  AND LicenseRef-scancode-amd-historical AND BSD-3-Clause AND BSD-2-Clause AND BSD-2-Clause
-  AND BSD-2-Clause AND LicenseRef-scancode-x11-hanson AND BSD-2-Clause AND BSD-3-Clause AND
-  LGPL-2.0-or-later AND LGPL-2.1-or-later AND LGPL-2.0-or-later AND LGPL-2.0-or-later AND LicenseRef-scancode-intel-osl-1993
-  AND LicenseRef-scancode-osf-1990 AND Spencer-94 AND BSD-2-Clause AND BSD-2-Clause AND BSD-2-Clause
-  AND BSD-3-Clause
+  AND LicenseRef-scancode-amd-historical AND SunPro AND HP-1986 AND LicenseRef-scancode-nilsson-historical
+  AND LicenseRef-scancode-newlib-historical AND BSD-3-Clause AND LicenseRef-scancode-amd-historical
+  AND BSD-3-Clause AND BSD-2-Clause AND BSD-2-Clause AND BSD-2-Clause AND LicenseRef-scancode-x11-hanson
+  AND BSD-2-Clause AND BSD-3-Clause AND LGPL-2.0-or-later AND LGPL-2.1-or-later AND LGPL-2.0-or-later
+  AND LGPL-2.0-or-later AND LicenseRef-scancode-intel-osl-1993 AND HP-1986 AND Spencer-94 AND
+  BSD-2-Clause AND BSD-2-Clause AND BSD-2-Clause AND BSD-3-Clause
 other_license_expression:
 other_license_expression_spdx:
 license_detections:
@@ -91,7 +89,6 @@ license_detections:
           The following runtime libraries are licensed under the terms of the
           GNU General Public License (v3 or later) with version 3.1 of the GCC
           Runtime Library Exception (included in this file):
-    detection_log: []
   - license_expression: bsd-new
     matches:
       - score: '100.0'
@@ -121,7 +118,6 @@ license_detections:
           HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT,\nSTRICT LIABILITY,\
           \ OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING\nIN ANY WAY OUT OF THE USE OF\
           \ THIS SOFTWARE, EVEN IF ADVISED OF THE\nPOSSIBILITY OF SUCH DAMAGE."
-    detection_log: []
   - license_expression: uoi-ncsa AND mit
     matches:
       - score: '100.0'
@@ -189,7 +185,6 @@ license_detections:
           LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
           OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
           THE SOFTWARE.
-    detection_log: []
   - license_expression: mit AND gfdl-1.2 AND gcc-exception-3.1
     matches:
       - score: '100.0'
@@ -318,7 +313,6 @@ license_detections:
           The availability of this Exception does not imply any general
           presumption that third-party software is unaffected by the copyleft
           requirements of the license of GCC.
-    detection_log: []
   - license_expression: lgpl-2.0-plus
     matches:
       - score: '100.0'
@@ -342,7 +336,6 @@ license_detections:
           but WITHOUT ANY WARRANTY; without even the implied warranty of
           MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
           Library General Public License for more details.
-    detection_log: []
   - license_expression: lgpl-2.1-plus
     matches:
       - score: '100.0'
@@ -365,7 +358,6 @@ license_detections:
               but WITHOUT ANY WARRANTY; without even the implied warranty of
               MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
               Lesser General Public License for more details.
-    detection_log: []
   - license_expression: lgpl-2.1-plus
     matches:
       - score: '100.0'
@@ -388,7 +380,6 @@ license_detections:
               but WITHOUT ANY WARRANTY; without even the implied warranty of
               MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
               Lesser General Public License for more details.
-    detection_log: []
   - license_expression: lgpl-2.1-plus
     matches:
       - score: '100.0'
@@ -411,7 +402,6 @@ license_detections:
              but WITHOUT ANY WARRANTY; without even the implied warranty of
              MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
              Lesser General Public License for more details.
-    detection_log: []
   - license_expression: public-domain
     matches:
       - score: '70.0'
@@ -425,7 +415,6 @@ license_detections:
         rule_relevance: 70
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/public-domain_bare_words.RULE
         matched_text: Public domain.
-    detection_log: []
   - license_expression: lgpl-2.1-plus
     matches:
       - score: '100.0'
@@ -448,7 +437,6 @@ license_detections:
              but WITHOUT ANY WARRANTY; without even the implied warranty of
              MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
              Lesser General Public License for more details.
-    detection_log: []
   - license_expression: lgpl-2.1-plus
     matches:
       - score: '100.0'
@@ -471,7 +459,6 @@ license_detections:
               but WITHOUT ANY WARRANTY; without even the implied warranty of
               MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
               Lesser General Public License for more details.
-    detection_log: []
   - license_expression: sunpro
     matches:
       - score: '100.0'
@@ -489,7 +476,6 @@ license_detections:
            * Permission to use, copy, modify, and distribute this
            * software is freely granted, provided that this notice
            * is preserved.
-    detection_log: []
   - license_expression: bsd-new
     matches:
       - score: '100.0'
@@ -528,7 +514,6 @@ license_detections:
           THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
           (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
           OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-    detection_log: []
   - license_expression: gpl-2.0-plus
     matches:
       - score: '100.0'
@@ -550,7 +535,6 @@ license_detections:
           On Debian GNU/Linux systems, the complete text of the GNU General
           Public License is in `/usr/share/common-licenses/GPL', version 2 of this
           license in `/usr/share/common-licenses/GPL-2'.
-    detection_log: []
   - license_expression: artistic-perl-1.0 OR gpl-1.0
     matches:
       - score: '100.0'
@@ -570,7 +554,6 @@ license_detections:
           On Debian GNU/Linux systems, the complete text of the GNU General
           Public License is in `/usr/share/common-licenses/GPL', the Artistic
           license in `/usr/share/common-licenses/Artistic'.
-    detection_log: []
   - license_expression: zlib
     matches:
       - score: '100.0'
@@ -599,7 +582,6 @@ license_detections:
             2. Altered source versions must be plainly marked as such, and must not be
                misrepresented as being the original software.
             3. This notice may not be removed or altered from any source distribution.
-    detection_log: []
   - license_expression: d-zlib
     matches:
       - score: '100.0'
@@ -630,7 +612,6 @@ license_detections:
               be misrepresented as being the original software.
            o  This notice may not be removed or altered from any source
               distribution.
-    detection_log: []
   - license_expression: mit
     matches:
       - score: '100.0'
@@ -662,7 +643,6 @@ license_detections:
              DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR
              OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE
              USE OR OTHER DEALINGS IN THE SOFTWARE.
-    detection_log: []
   - license_expression: gpl-3.0-plus WITH gcc-exception-3.1
     matches:
       - score: '100.0'
@@ -694,7 +674,6 @@ license_detections:
              a copy of the GCC Runtime Library Exception along with this program;
              see the files COPYING3 and COPYING.RUNTIME respectively.  If not, see
              <http://www.gnu.org/licenses/>.
-    detection_log: []
   - license_expression: gpl-3.0-plus
     matches:
       - score: '100.0'
@@ -717,7 +696,6 @@ license_detections:
           WITHOUT ANY WARRANTY; without even the implied warranty of
           MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
           General Public License for more details.
-    detection_log: []
   - license_expression: gfdl-1.3-plus
     matches:
       - score: '100.0'
@@ -735,7 +713,6 @@ license_detections:
           under the terms of the GNU Free Documentation License, Version 1.3 or
           any later version published by the Free Software Foundation; with no
           Invariant Sections, no Front-Cover Texts, and no Back-Cover Texts.
-    detection_log: []
   - license_expression: lgpl-2.1-plus
     matches:
       - score: '100.0'
@@ -758,7 +735,6 @@ license_detections:
           but WITHOUT ANY WARRANTY; without even the implied warranty of
           MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
           Lesser General Public License for more details.
-    detection_log: []
   - license_expression: gpl-3.0-plus WITH gcc-exception-3.1
     matches:
       - score: '100.0'
@@ -776,7 +752,6 @@ license_detections:
           the terms of the GNU General Public License as published by the Free
           Software Foundation; either version 3, or (at your option) any later
           version.
-    detection_log: []
   - license_expression: lgpl-2.1-plus
     matches:
       - score: '100.0'
@@ -799,7 +774,6 @@ license_detections:
           but WITHOUT ANY WARRANTY; without even the implied warranty of
           MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
           Lesser General Public License for more details.
-    detection_log: []
   - license_expression: lgpl-2.1-plus
     matches:
       - score: '100.0'
@@ -822,7 +796,6 @@ license_detections:
           but WITHOUT ANY WARRANTY; without even the implied warranty of
           MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
           Lesser General Public License for more details.
-    detection_log: []
   - license_expression: gpl-3.0-plus
     matches:
       - score: '100.0'
@@ -845,7 +818,6 @@ license_detections:
           WITHOUT ANY WARRANTY; without even the implied warranty of
           MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
           General Public License for more details.
-    detection_log: []
   - license_expression: gpl-3.0-plus AND (gpl-3.0 AND lgpl-2.1)
     matches:
       - score: '100.0'
@@ -879,7 +851,6 @@ license_detections:
         rule_relevance: 95
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0_and_lgpl-2.1_1.RULE
         matched_text: This has a mix of licenses, both LGPL-2.1 and GPL-3.0, plus the apparently
-    detection_log: []
   - license_expression: lgpl-2.1-plus
     matches:
       - score: '100.0'
@@ -902,7 +873,6 @@ license_detections:
           but WITHOUT ANY WARRANTY; without even the implied warranty of
           MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
           Lesser General Public License for more details.
-    detection_log: []
   - license_expression: gpl-3.0-plus
     matches:
       - score: '100.0'
@@ -925,7 +895,6 @@ license_detections:
           WARRANTY; without even the implied warranty of MERCHANTABILITY or
           FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License
           for more details.
-    detection_log: []
   - license_expression: lgpl-2.1-plus AND (lgpl-3.0 AND gpl-3.0) AND (gpl-3.0 AND lgpl-2.1 AND
       lgpl-3.0) AND (lgpl-2.0 AND gpl-3.0) AND gpl-3.0-plus AND gnu-emacs-gpl-1988
     matches:
@@ -1022,7 +991,6 @@ license_detections:
           ;; can know your rights and responsibilities.  It should be in a
           ;; file named COPYING.  Among other things, the copyright notice
           ;; and this notice must be preserved on all copies.
-    detection_log: []
   - license_expression: (gpl-3.0 AND lgpl-2.1) AND (gpl-2.0-plus AND gpl-3.0-plus)
     matches:
       - score: '100.0'
@@ -1047,7 +1015,6 @@ license_detections:
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_and_gpl-3.0-plus_3.RULE
         matched_text: Mix of GPL-2+ and GPL-3+
-    detection_log: []
   - license_expression: lgpl-2.1-plus AND (lgpl-2.1 AND lgpl-3.0 AND gpl-3.0) AND (lgpl-2.1
       AND lgpl-3.0)
     matches:
@@ -1114,7 +1081,6 @@ license_detections:
            but WITHOUT ANY WARRANTY; without even the implied warranty of
            MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
            Library General Public License for more details.
-    detection_log: []
   - license_expression: gpl-3.0-plus
     matches:
       - score: '100.0'
@@ -1137,7 +1103,6 @@ license_detections:
           WARRANTY; without even the implied warranty of MERCHANTABILITY or
           FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License
           for more details.
-    detection_log: []
   - license_expression: gpl-3.0-plus
     matches:
       - score: '100.0'
@@ -1160,7 +1125,6 @@ license_detections:
           WITHOUT ANY WARRANTY; without even the implied warranty of
           MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
           General Public License for more details.
-    detection_log: []
   - license_expression: gpl-3.0-plus
     matches:
       - score: '100.0'
@@ -1183,7 +1147,6 @@ license_detections:
           WARRANTY; without even the implied warranty of MERCHANTABILITY or
           FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License
           for more details.
-    detection_log: []
   - license_expression: gpl-3.0-plus
     matches:
       - score: '100.0'
@@ -1206,7 +1169,6 @@ license_detections:
           but WITHOUT ANY WARRANTY; without even the implied warranty of
           MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
           GNU General Public License for more details.
-    detection_log: []
   - license_expression: lgpl-2.0-plus AND gpl-1.0-plus
     matches:
       - score: '100.0'
@@ -1227,7 +1189,6 @@ license_detections:
           Parts of this work are licensed under the terms of the GNU Library
           General Public License. On Debian systems, the complete text of this
           license be found in /usr/share/common-licenses/LGPL.
-    detection_log: []
   - license_expression: bsla-no-advert
     matches:
       - score: '100.0'
@@ -1249,7 +1210,6 @@ license_detections:
           \ IS PROVIDED ``AS IS'' AND WITHOUT ANY EXPRESS OR\nIMPLIED WARRANTIES, INCLUDING,\
           \ WITHOUT LIMITATION, THE IMPLIED\nWARRANTIES OF MERCHANTABILITY AND FITNESS FOR A\
           \ PARTICULAR PURPOSE."
-    detection_log: []
   - license_expression: bsla
     matches:
       - score: '100.0'
@@ -1274,7 +1234,6 @@ license_detections:
           THIS SOFTWARE IS PROVIDED ``AS IS'' AND WITHOUT ANY EXPRESS OR
           IMPLIED WARRANTIES, INCLUDING, WITHOUT LIMITATION, THE IMPLIED
           WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
-    detection_log: []
   - license_expression: bsd-original-uc
     matches:
       - score: '100.0'
@@ -1315,7 +1274,6 @@ license_detections:
           LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
           OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
           SUCH DAMAGE.
-    detection_log: []
   - license_expression: bsd-new
     matches:
       - score: '100.0'
@@ -1352,7 +1310,6 @@ license_detections:
           LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
           OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
           SUCH DAMAGE.
-    detection_log: []
   - license_expression: bsd-original-uc
     matches:
       - score: '100.0'
@@ -1393,7 +1350,6 @@ license_detections:
           LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
           OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
           SUCH DAMAGE.
-    detection_log: []
   - license_expression: flex-2.5
     matches:
       - score: '100.0'
@@ -1420,7 +1376,6 @@ license_detections:
           THIS SOFTWARE IS PROVIDED ``AS IS'' AND WITHOUT ANY EXPRESS OR
           IMPLIED WARRANTIES, INCLUDING, WITHOUT LIMITATION, THE IMPLIED
           WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
-    detection_log: []
   - license_expression: bsd-original-uc
     matches:
       - score: '100.0'
@@ -1434,7 +1389,6 @@ license_detections:
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-original-uc.RULE
         matched_text: ftp://ftp.cs.berkeley.edu/pub/4bsd/README.Impt.License.Change
-    detection_log: []
   - license_expression: gpl-3.0 AND gpl-2.0 AND lgpl-3.0-plus WITH cygwin-exception-lgpl-3.0-plus
       AND other-copyleft AND other-permissive
     matches:
@@ -1453,7 +1407,6 @@ license_detections:
           This software is a copyrighted work licensed under the terms of the
           Cygwin license.  Please consult the file "CYGWIN_LICENSE" for
           details.
-    detection_log: []
   - license_expression: x11-lucent
     matches:
       - score: '100.0'
@@ -1477,7 +1430,6 @@ license_detections:
           WARRANTY.  IN PARTICULAR, NEITHER THE AUTHOR NOR AT&T MAKES ANY
           REPRESENTATION OR WARRANTY OF ANY KIND CONCERNING THE MERCHANTABILITY
           OF THIS SOFTWARE OR ITS FITNESS FOR ANY PARTICULAR PURPOSE.
-    detection_log: []
   - license_expression: amd-historical
     matches:
       - score: '100.0'
@@ -1503,7 +1455,6 @@ license_detections:
 
           So that all may benefit from your experience, please report  any  problems
           or  suggestions about this software
-    detection_log: []
   - license_expression: sunpro
     matches:
       - score: '100.0'
@@ -1519,7 +1470,6 @@ license_detections:
         matched_text: "Developed at SunPro, a Sun Microsystems, Inc. business.\nPermission to\
           \ use, copy, modify, and distribute this\nsoftware is freely granted, provided that\
           \ this notice \nis preserved."
-    detection_log: []
   - license_expression: osf-1990
     matches:
       - score: '100.0'
@@ -1543,7 +1493,6 @@ license_detections:
           of the software without specific, written prior permission.
           Hewlett-Packard Company makes no representations about the
           suitability of this software for any purpose.
-    detection_log: []
   - license_expression: nilsson-historical
     matches:
       - score: '100.0'
@@ -1565,7 +1514,6 @@ license_detections:
           IMPLIED WARRANTIES, INCLUDING, WITHOUT LIMITATION, THE IMPLIED
           WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
           PURPOSE.
-    detection_log: []
   - license_expression: newlib-historical
     matches:
       - score: '100.0'
@@ -1588,7 +1536,6 @@ license_detections:
           and need not follow the licensing terms described here, provided that
           the new terms are clearly indicated on the first page of each file where
           they apply.
-    detection_log: []
   - license_expression: bsd-new
     matches:
       - score: '100.0'
@@ -1623,7 +1570,6 @@ license_detections:
           THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
           (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
           THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-    detection_log: []
   - license_expression: amd-historical
     matches:
       - score: '95.0'
@@ -1644,7 +1590,6 @@ license_detections:
           \ DAMAGES IN CONNECTION WITH OR ARISING FROM\nTHE FURNISHING, PERFORMANCE, OR USE\
           \ OF THIS SOFTWARE.\n\nSo that all may benefit from your experience, please report\
           \ any problems\nor suggestions about this software to the"
-    detection_log: []
   - license_expression: bsd-new
     matches:
       - score: '100.0'
@@ -1684,7 +1629,6 @@ license_detections:
           WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR
           OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
           ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-    detection_log: []
   - license_expression: bsd-simplified
     matches:
       - score: '100.0'
@@ -1718,7 +1662,6 @@ license_detections:
           LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
           OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
           SUCH DAMAGE.
-    detection_log: []
   - license_expression: bsd-simplified
     matches:
       - score: '100.0'
@@ -1752,7 +1695,6 @@ license_detections:
           LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
           OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
           SUCH DAMAGE.
-    detection_log: []
   - license_expression: bsd-simplified
     matches:
       - score: '100.0'
@@ -1786,7 +1728,6 @@ license_detections:
           LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
           OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
           SUCH DAMAGE.
-    detection_log: []
   - license_expression: x11-hanson
     matches:
       - score: '99.0'
@@ -1810,7 +1751,6 @@ license_detections:
           WARRANTY.  IN PARTICULAR,  THE AUTHOR MAKES NO REPRESENTATION
           OR WARRANTY OF ANY KIND CONCERNING THE MERCHANTABILITY OF THIS
           SOFTWARE OR ITS FITNESS FOR ANY PARTICULAR PURPOSE.
-    detection_log: []
   - license_expression: bsd-simplified
     matches:
       - score: '100.0'
@@ -1844,7 +1784,6 @@ license_detections:
           LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
           OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
           SUCH DAMAGE.
-    detection_log: []
   - license_expression: bsd-new
     matches:
       - score: '100.0'
@@ -1879,7 +1818,6 @@ license_detections:
           WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR
           OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
           ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-    detection_log: []
   - license_expression: lgpl-2.0-plus
     matches:
       - score: '100.0'
@@ -1893,7 +1831,6 @@ license_detections:
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl_39.RULE
         matched_text: Free Software Foundation LGPL License (*-
-    detection_log: []
   - license_expression: lgpl-2.1-plus AND lgpl-2.0-plus
     matches:
       - score: '100.0'
@@ -1949,7 +1886,6 @@ license_detections:
           \ program is distributed in the hope that it will be useful,\nbut WITHOUT ANY WARRANTY;\
           \ without even the implied warranty of\nMERCHANTABILITY or FITNESS FOR A PARTICULAR\
           \ PURPOSE.  See the\nGNU Library General Public License for more details."
-    detection_log: []
   - license_expression: intel-osl-1993
     matches:
       - score: '100.0'
@@ -1986,7 +1922,6 @@ license_detections:
           LOSS OF PROFITS, INDIRECT, INCIDENTAL, SPECIAL OR CONSEQUENTIAL DAMAGES
           OF ANY KIND.  IN NO EVENT SHALL INTEL'S TOTAL LIABILITY EXCEED THE SUM
           PAID TO INTEL FOR THE PRODUCT LICENSED HEREUNDER.
-    detection_log: []
   - license_expression: osf-1990
     matches:
       - score: '100.0'
@@ -2010,7 +1945,6 @@ license_detections:
           of the software without specific, written prior permission.
           Hewlett-Packard Company makes no representations about the
           suitability of this software for any purpose.
-    detection_log: []
   - license_expression: hs-regexp
     matches:
       - score: '100.0'
@@ -2043,7 +1977,6 @@ license_detections:
              ever read sources, credits must appear in the documentation.
 
           4. This notice may not be removed or altered.
-    detection_log: []
   - license_expression: bsd-simplified
     matches:
       - score: '100.0'
@@ -2077,7 +2010,6 @@ license_detections:
           LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
           OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
           SUCH DAMAGE.
-    detection_log: []
   - license_expression: bsd-simplified
     matches:
       - score: '100.0'
@@ -2111,7 +2043,6 @@ license_detections:
           LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
           OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
           SUCH DAMAGE.
-    detection_log: []
   - license_expression: bsd-simplified
     matches:
       - score: '100.0'
@@ -2145,7 +2076,6 @@ license_detections:
           LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
           OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
           SUCH DAMAGE.
-    detection_log: []
   - license_expression: bsd-new
     matches:
       - score: '100.0'
@@ -2176,7 +2106,6 @@ license_detections:
           \ WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT\n(INCLUDING NEGLIGENCE OR OTHERWISE)\
           \ ARISING IN ANY WAY OUT OF THE USE OF THIS\nSOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY\
           \ OF SUCH DAMAGE."
-    detection_log: []
 other_license_detections: []
 copyright: |
   Copyright (c) 1986, 1987, 1988, 1989, 1990, 1991, 1992, 1993, 1994, 1995, 1996, 1997, 1998, 1999, 2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019

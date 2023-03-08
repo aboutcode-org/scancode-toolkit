@@ -40,8 +40,7 @@
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl_bare_single_word.RULE",
           "matched_text": "lgpl"
         }
-      ],
-      "detection_log": []
+      ]
     },
     {
       "license_expression": "lgpl-2.0-plus",
@@ -59,8 +58,7 @@
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl_bare_single_word.RULE",
           "matched_text": "http://repository.jboss.com/licenses/lgpl.txt"
         }
-      ],
-      "detection_log": []
+      ]
     }
   ],
   "other_license_expression": null,

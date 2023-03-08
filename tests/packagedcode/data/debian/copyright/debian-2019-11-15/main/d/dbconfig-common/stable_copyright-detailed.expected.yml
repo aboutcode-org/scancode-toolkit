@@ -37,7 +37,6 @@ other_license_detections:
           On Debian GNU/Linux systems, the complete text of the GNU General
           Public License Version 2 can be found in
           /usr/share/common-licenses/GPL-2.
-    detection_log: []
   - license_expression: afl-2.1
     matches:
       - score: '100.0'
@@ -218,7 +217,6 @@ other_license_detections:
           reserved. Permission is hereby granted to copy and distribute this license
           without modification. This license may not be modified without the express
           written permission of its copyright owner.
-    detection_log: []
 copyright: |
   2000-2004 Ola Lundqvist <opal@debian.org>
   2004-2011 sean finney <seanius@debian.org>

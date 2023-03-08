@@ -49,8 +49,7 @@
             "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/zlib_in_manifest.RULE",
             "matched_text": ":type = zlib, :file = LICENSE.txt"
           }
-        ],
-        "detection_log": []
+        ]
       }
     ],
     "other_license_expression": null,

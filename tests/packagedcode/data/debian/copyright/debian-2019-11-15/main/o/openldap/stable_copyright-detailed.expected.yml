@@ -6,8 +6,8 @@ declared_license_expression: openldap-2.8 AND openldap-2.8 AND mit AND fsf-unlim
 declared_license_expression_spdx: OLDAP-2.8 AND OLDAP-2.8 AND MIT AND FSFULLRWD AND Spencer-94
   AND LicenseRef-scancode-ibm-dhcp AND LicenseRef-scancode-ietf AND ISC AND LicenseRef-scancode-other-permissive
   AND LicenseRef-scancode-other-permissive AND NTP AND LicenseRef-scancode-other-permissive
-  AND Spencer-94 AND OLDAP-2.8 AND LicenseRef-scancode-bsla AND BSD-4-Clause-UC AND BSD-4-Clause-UC
-  AND BSD-4-Clause-UC AND LicenseRef-scancode-bsd-original-uc-1986
+  AND Spencer-94 AND OLDAP-2.8 AND BSD-4.3TAHOE AND BSD-4-Clause-UC AND BSD-4-Clause-UC AND
+  BSD-4-Clause-UC AND BSD-4.3RENO
 other_license_expression:
 other_license_expression_spdx:
 license_detections:
@@ -97,7 +97,6 @@ license_detections:
           in this Software without specific, written prior permission.  Title
           to copyright in this Software shall at all times remain with copyright
           holders.
-    detection_log: []
   - license_expression: mit
     matches:
       - score: '100.0'
@@ -128,7 +127,6 @@ license_detections:
           # CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT
           # OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR
           # THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-    detection_log: []
   - license_expression: fsf-unlimited-no-warranty
     matches:
       - score: '100.0'
@@ -150,7 +148,6 @@ license_detections:
           # but WITHOUT ANY WARRANTY, to the extent permitted by law; without
           # even the implied warranty of MERCHANTABILITY or FITNESS FOR A
           # PARTICULAR PURPOSE.
-    detection_log: []
   - license_expression: hs-regexp
     matches:
       - score: '95.0'
@@ -181,7 +178,6 @@ license_detections:
            *    documentation.
            *
            * 4. This notice may not be removed or altered.
-    detection_log: []
   - license_expression: ibm-dhcp
     matches:
       - score: '100.0'
@@ -215,7 +211,6 @@ license_detections:
            * DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER ARISING
            * OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE, EVEN
            * IF IBM IS APPRISED OF THE POSSIBILITY OF SUCH DAMAGES.
-    detection_log: []
   - license_expression: ietf
     matches:
       - score: '100.0'
@@ -247,7 +242,6 @@ license_detections:
           \ EXPRESS OR IMPLIED, INCLUDING\n#    BUT NOT LIMITED TO ANY WARRANTY THAT THE USE\
           \ OF THE INFORMATION\n#    HEREIN WILL NOT INFRINGE ANY RIGHTS OR ANY IMPLIED WARRANTIES\
           \ OF\n#    MERCHANTABILITY OR FITNESS FOR A PARTICULAR PURPOSE."
-    detection_log: []
   - license_expression: isc
     matches:
       - score: '100.0'
@@ -273,7 +267,6 @@ license_detections:
            * PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS
            * ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS
            * SOFTWARE.
-    detection_log: []
   - license_expression: other-permissive
     matches:
       - score: '100.0'
@@ -290,7 +283,6 @@ license_detections:
           \ Inc. or Purdue University.\n *\n * Redistribution and use in source and binary forms\
           \ are permitted\n * without restriction or fee of any kind as long as this notice\n\
           \ * is preserved."
-    detection_log: []
   - license_expression: other-permissive
     matches:
       - score: '100.0'
@@ -308,7 +300,6 @@ license_detections:
           \ * restriction or fee of any kind as long as this notice is preserved.\n *\n * The\
           \ name \"Carnegie Mellon\" must not be used to endorse or promote\n * products derived\
           \ from this software without prior written permission."
-    detection_log: []
   - license_expression: mit-old-style-no-advert
     matches:
       - score: '100.0'
@@ -331,7 +322,6 @@ license_detections:
           # written prior permission.  M.I.T. makes no representations about the
           # suitability of this software for any purpose.  It is provided "as is"
           # without express or implied warranty.
-    detection_log: []
   - license_expression: other-permissive
     matches:
       - score: '100.0'
@@ -347,7 +337,6 @@ license_detections:
         matched_text: |
           Permission to copy and
           distribute verbatim copies of this document is granted.
-    detection_log: []
   - license_expression: hs-regexp
     matches:
       - score: '95.0'
@@ -377,7 +366,6 @@ license_detections:
            * ever read sources, credits should appear in the documentation.
            *
            * 4. This notice may not be removed or altered.
-    detection_log: []
   - license_expression: openldap-2.8
     matches:
       - score: '100.0'
@@ -395,7 +383,6 @@ license_detections:
            * as authorized by the OpenLDAP Public License.  A copy of this
            * license is available at http://www.OpenLDAP.org/license.html or
            * in file LICENSE in the top-level directory of the distribution.
-    detection_log: []
   - license_expression: bsla AND bsd-original-uc
     matches:
       - score: '100.0'
@@ -433,7 +420,6 @@ license_detections:
         matched_text: |
           NOTE: The Regents have since retroactively removed the advertising
           clause from above.
-    detection_log: []
   - license_expression: bsd-original-uc
     matches:
       - score: '100.0'
@@ -489,7 +475,6 @@ license_detections:
           clause from above.
           See:
           ftp://ftp.cs.berkeley.edu/pub/4bsd/README.Impt.License.Change
-    detection_log: []
   - license_expression: bsd-original-uc-1986
     matches:
       - score: '99.0'
@@ -509,7 +494,6 @@ license_detections:
            * may not be used to endorse or promote products derived from this
            * software without specific prior written permission. This software
            * is provided ``as is'' without express or implied warranty.
-    detection_log: []
 other_license_detections: []
 copyright: |
   Copyright 1998-2016 The OpenLDAP Foundation

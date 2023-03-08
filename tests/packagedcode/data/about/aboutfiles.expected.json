@@ -50,8 +50,7 @@
               "rule_url": null,
               "matched_text": "mit"
             }
-          ],
-          "detection_log": []
+          ]
         }
       ],
       "other_license_expression": null,
@@ -123,8 +122,7 @@
               "rule_url": null,
               "matched_text": "mit"
             }
-          ],
-          "detection_log": []
+          ]
         }
       ],
       "other_license_expression": null,
@@ -300,8 +298,7 @@
                   "rule_url": null,
                   "matched_text": "mit"
                 }
-              ],
-              "detection_log": []
+              ]
             }
           ],
           "other_license_expression": null,
@@ -389,8 +386,7 @@
                   "rule_url": null,
                   "matched_text": "mit"
                 }
-              ],
-              "detection_log": []
+              ]
             }
           ],
           "other_license_expression": null,

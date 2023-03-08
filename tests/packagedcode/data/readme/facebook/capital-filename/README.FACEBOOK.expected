@@ -41,9 +41,6 @@
             "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/package-manifest-unknown-4e63c2896b2b2bc5235eb55ed408f87187ffe1b3",
             "matched_text": "license PSF or ZPL"
           }
-        ],
-        "detection_log": [
-          "undetected-license"
         ]
       }
     ],

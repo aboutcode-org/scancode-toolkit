@@ -71,7 +71,6 @@ other_license_detections:
 
           On Debian systems a copy of the Apache License, Version 2.0 can be
           found in /usr/share/common-licenses/Apache-2.0
-    detection_log: []
   - license_expression: gpl-2.0-plus
     matches:
       - score: '100.0'
@@ -111,7 +110,6 @@ other_license_detections:
 
           On Debian systems, the complete text of the GNU General
           Public License version 2 can be found in "/usr/share/common-licenses/GPL-2".
-    detection_log: []
   - license_expression: gpl-3.0-plus
     matches:
       - score: '100.0'
@@ -151,7 +149,6 @@ other_license_detections:
 
           On Debian systems, the complete text of the GNU General
           Public License version 3 can be found in "/usr/share/common-licenses/GPL-3".
-    detection_log: []
   - license_expression: lgpl-2.0-plus
     matches:
       - score: '100.0'
@@ -188,7 +185,6 @@ other_license_detections:
 
           On Debian systems, the complete text of the GNU Library General Public
           License version 2 can be found in "/usr/share/common-licenses/LGPL-2".
-    detection_log: []
   - license_expression: cc0-1.0
     matches:
       - score: '100.0'
@@ -235,7 +231,6 @@ other_license_detections:
            .
           The complete text of the Creative Commons 0 1.0 Universal
           can be found in `/usr/share/common-licenses/CC0-1.0'.
-    detection_log: []
   - license_expression: cc-by-sa-3.0
     matches:
       - score: '97.8'
@@ -556,7 +551,6 @@ other_license_detections:
           this License, such additional rights are deemed to be included in the
           License; this License is not intended to restrict the license of any
           rights under applicable law.
-    detection_log: []
   - license_expression: cc-by-sa-4.0
     matches:
       - score: '100.0'
@@ -1003,7 +997,6 @@ other_license_detections:
           public licenses.
 
           Creative Commons may be contacted at creativecommons.org.
-    detection_log: []
 copyright: |
   2009-2018 Igalia S.L
   2002 Jorn Baayen

@@ -64,7 +64,6 @@ license_detections:
 
           On Debian GNU/Linux systems, the complete text of the GNU Free Documentation
           License, Version 1.3 can be found in `/usr/share/common-licenses/GFDL-1.3'.
-    detection_log: []
 other_license_detections: []
 copyright: |
   Copyright (c) 1990-2021 Free Software Foundation, Inc.

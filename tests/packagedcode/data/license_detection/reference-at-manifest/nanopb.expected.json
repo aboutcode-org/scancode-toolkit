@@ -161,9 +161,7 @@
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/zlib.LICENSE"
         }
       ],
-      "detection_log": [
-        "package-unknown-reference-to-local-file"
-      ]
+      "detection_log": []
     }
   ],
   "license_references": [

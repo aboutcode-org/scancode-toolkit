@@ -61,8 +61,7 @@
             "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/spdx_license_id_apache-2.0_for_apache-2.0.RULE",
             "matched_text": "Apache-2.0"
           }
-        ],
-        "detection_log": []
+        ]
       },
       {
         "license_expression": "apache-2.0",
@@ -80,8 +79,7 @@
             "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/pypi_apache_no-version.RULE",
             "matched_text": "['License :: OSI Approved :: Apache Software License']"
           }
-        ],
-        "detection_log": []
+        ]
       }
     ],
     "other_license_expression": null,

@@ -37,7 +37,6 @@ license_detections:
           Except as contained in this notice, the name of Daniel Veillard shall not
           be used in advertising or otherwise to promote the sale, use or other deal-
           ings in this Software without prior written authorization from him.
-    detection_log: []
   - license_expression: x11-xconsortium
     matches:
       - score: '100.0'
@@ -71,7 +70,6 @@ license_detections:
           Except as contained in this notice, the name of the authors shall not
           be used in advertising or otherwise to promote the sale, use or other deal-
           ings in this Software without prior written authorization from him.
-    detection_log: []
 other_license_detections: []
 copyright: |
   Copyright (c) 2001-2002 Daniel Veillard

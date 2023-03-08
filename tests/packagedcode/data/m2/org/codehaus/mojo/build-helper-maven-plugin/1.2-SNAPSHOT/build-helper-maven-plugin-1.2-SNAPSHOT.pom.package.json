@@ -48,8 +48,7 @@
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_27.RULE",
           "matched_text": "The MIT License"
         }
-      ],
-      "detection_log": []
+      ]
     },
     {
       "license_expression": "mit",
@@ -67,8 +66,7 @@
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_237.RULE",
           "matched_text": "http://www.opensource.org/licenses/mit-license.php"
         }
-      ],
-      "detection_log": []
+      ]
     }
   ],
   "other_license_expression": null,

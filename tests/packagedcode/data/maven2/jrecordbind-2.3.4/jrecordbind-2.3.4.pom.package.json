@@ -48,8 +48,7 @@
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl_bare_single_word.RULE",
           "matched_text": "LGPL"
         }
-      ],
-      "detection_log": []
+      ]
     },
     {
       "license_expression": "lgpl-2.1-plus",
@@ -67,8 +66,7 @@
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl_7.RULE",
           "matched_text": "http://www.gnu.org/copyleft/lesser.html"
         }
-      ],
-      "detection_log": []
+      ]
     }
   ],
   "other_license_expression": null,

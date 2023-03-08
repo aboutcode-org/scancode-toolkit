@@ -1,7 +1,7 @@
 {
   "license_detections": [
     {
-      "identifier": "zlib_and_apache_2_0-e396b1b0-1283-19a7-c40a-042f278928e8",
+      "identifier": "zlib_and_apache_2_0-060f60bd-574b-0aae-d9a6-6b028a9ad94b",
       "license_expression": "zlib AND apache-2.0",
       "detection_count": 1,
       "matches": [
@@ -13,7 +13,7 @@
           "match_coverage": 100.0,
           "matcher": "1-spdx-id",
           "license_expression": "zlib",
-          "rule_identifier": "spdx-license-identifier-zlib-4a028b82b49264191c29aec7d2e5b4d780173fab",
+          "rule_identifier": "spdx-license-identifier-zlib-478bffd97a87207ab3ba955132d7a51b329faca0",
           "rule_relevance": 100,
           "rule_url": null
         },
@@ -148,7 +148,7 @@
     },
     {
       "license_expression": "zlib",
-      "identifier": "spdx-license-identifier-zlib-4a028b82b49264191c29aec7d2e5b4d780173fab",
+      "identifier": "spdx-license-identifier-zlib-478bffd97a87207ab3ba955132d7a51b329faca0",
       "language": "en",
       "rule_url": null,
       "is_license_text": false,
@@ -170,7 +170,7 @@
       "ignorable_authors": [],
       "ignorable_urls": [],
       "ignorable_emails": [],
-      "text": "https://licenses.nuget.org/Zlib"
+      "text": "licenses.nuget.org/Zlib"
     }
   ],
   "files": [
@@ -194,7 +194,7 @@
               "rule_identifier": "spdx-license-identifier-zlib-defbb051fec96d25d21a92bf9e28889f674a89dc",
               "rule_relevance": 100,
               "rule_url": null,
-              "matched_text": "https://licenses.nuget.org/Zlib"
+              "matched_text": "licenses.nuget.org/Zlib"
             },
             {
               "score": 100.0,
@@ -216,7 +216,7 @@
       "license_clues": [],
       "percentage_of_license_text": 90.91,
       "for_license_detections": [
-        "zlib_and_apache_2_0-e396b1b0-1283-19a7-c40a-042f278928e8"
+        "zlib_and_apache_2_0-060f60bd-574b-0aae-d9a6-6b028a9ad94b"
       ],
       "scan_errors": []
     }

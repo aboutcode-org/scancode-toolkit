@@ -26,7 +26,7 @@ other_license_expression: (apache-2.0 AND apache-2.0) AND (bsd-new OR (apache-2.
   (gpl-3.0-plus AND gpl-3.0) AND afl-3.0 AND (mit AND unicode) AND bsd-simplified AND bsd-new
   AND bsd-simplified
 other_license_expression_spdx: (Apache-2.0 AND Apache-2.0) AND (BSD-3-Clause OR (Apache-2.0
-  AND Apache-2.0)) AND LicenseRef-scancode-markus-kuhn-license AND BSD-3-Clause AND LicenseRef-scancode-other-permissive
+  AND Apache-2.0)) AND HPND-Markus-Kuhn AND BSD-3-Clause AND LicenseRef-scancode-other-permissive
   AND (GPL-2.0-or-later AND GPL-2.0-only) AND (GPL-3.0-or-later AND GPL-3.0-only) AND AFL-3.0
   AND (MIT AND LicenseRef-scancode-unicode) AND BSD-2-Clause AND BSD-3-Clause AND BSD-2-Clause
 license_detections: []
@@ -47,7 +47,6 @@ other_license_detections:
           Permission to use, copy, modify, and distribute this software
           for any purpose and without fee is hereby granted.  The author
           disclaims all warranties with regard to this software.
-    detection_log: []
   - license_expression: other-permissive
     matches:
       - score: '100.0'
@@ -63,7 +62,6 @@ other_license_detections:
         matched_text: |
           Permission is granted to everyone to use and distribute this work,
           without limitation, modified or unmodified, in any way, for any purpose.
-    detection_log: []
   - license_expression: gpl-2.0-plus AND gpl-2.0
     matches:
       - score: '100.0'
@@ -90,7 +88,6 @@ other_license_detections:
         matched_text: |
           On Debian systems, the complete text of the GPL version 2 license can be
           found in `/usr/share/common-licenses/GPL-2'.
-    detection_log: []
   - license_expression: gpl-3.0-plus AND gpl-3.0
     matches:
       - score: '100.0'
@@ -117,7 +114,6 @@ other_license_detections:
         matched_text: |
           On Debian systems, the complete text of the GPL version 3 license can be
           found in `/usr/share/common-licenses/GPL-3'.
-    detection_log: []
   - license_expression: apache-2.0
     matches:
       - score: '100.0'
@@ -158,7 +154,6 @@ other_license_detections:
           KIND, either express or implied.  See the License for the
           specific language governing permissions and limitations
           under the License.
-    detection_log: []
   - license_expression: bsd-new
     matches:
       - score: '100.0'
@@ -197,7 +192,6 @@ other_license_detections:
           IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR
           OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
           IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-    detection_log: []
   - license_expression: bsd-simplified
     matches:
       - score: '100.0'
@@ -231,7 +225,6 @@ other_license_detections:
           ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
           (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
           SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-    detection_log: []
   - license_expression: mit
     matches:
       - score: '100.0'
@@ -262,7 +255,6 @@ other_license_detections:
           LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
           FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
           DEALINGS IN THE SOFTWARE.
-    detection_log: []
   - license_expression: unicode
     matches:
       - score: '100.0'
@@ -308,7 +300,6 @@ other_license_detections:
           Unicode and the Unicode logo are trademarks of Unicode, Inc., and may be
           registered in some jurisdictions. All other trademarks and registered
           trademarks mentioned herein are the property of their respective owners.
-    detection_log: []
   - license_expression: afl-3.0
     matches:
       - score: '100.0'
@@ -508,7 +499,6 @@ other_license_detections:
               open source software unless your Modified License has been
               approved by Open Source Initiative (OSI) and You comply with its
               license review and certification process.
-    detection_log: []
 copyright: |
   Apache Software Foundation
   2007 Max Bowsher
