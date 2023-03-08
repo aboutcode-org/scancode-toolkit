@@ -42,8 +42,6 @@ other_license_expression_spdx: (GPL-2.0-or-later AND GPL-2.0-or-later AND GPL-2.
 license_detections: []
 other_license_detections:
   - license_expression: apache-2.0 AND lgpl-2.1
-    detection_log:
-      - not-combined
     matches:
       - score: '90.0'
         start_line: 162
@@ -53,6 +51,7 @@ other_license_detections:
         matcher: 1-hash
         license_expression: apache-2.0 AND lgpl-2.1
         rule_identifier: apache-2.0_and_lgpl-2.1_2.RULE
+        rule_relevance: 90
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_and_lgpl-2.1_2.RULE
         matched_text: |
           Licensed under the Apache License, Version 2.0 (the "License");
@@ -69,9 +68,8 @@ other_license_detections:
 
           On Debian systems a full copy of the LGPL 2.1 can be found at
           /usr/share/common-licenses/Apache-2.0
+    detection_log: []
   - license_expression: bsd-new
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 178
@@ -81,6 +79,7 @@ other_license_detections:
         matcher: 1-hash
         license_expression: bsd-new
         rule_identifier: bsd-new_942.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_942.RULE
         matched_text: |
           Redistribution and use in source and binary forms, with or without
@@ -105,9 +104,8 @@ other_license_detections:
           THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
           (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
           THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+    detection_log: []
   - license_expression: boost-1.0
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 202
@@ -117,6 +115,7 @@ other_license_detections:
         matcher: 1-hash
         license_expression: boost-1.0
         rule_identifier: boost-1.0_9.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/boost-1.0_9.RULE
         matched_text: |
           Permission is hereby granted, free of charge, to any person or organization
@@ -140,9 +139,8 @@ other_license_detections:
           FOR ANY DAMAGES OR OTHER LIABILITY, WHETHER IN CONTRACT, TORT OR OTHERWISE,
           ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
           DEALINGS IN THE SOFTWARE.
+    detection_log: []
   - license_expression: cc-by-3.0
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 225
@@ -152,6 +150,7 @@ other_license_detections:
         matcher: 1-hash
         license_expression: cc-by-3.0
         rule_identifier: cc-by-3.0_110.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/cc-by-3.0_110.RULE
         matched_text: |
           Creative Commons Legal Code
@@ -177,9 +176,8 @@ other_license_detections:
           BE CONSIDERED TO BE A CONTRACT, THE LICENSOR GRANTS YOU THE RIGHTS
           CONTAINED HERE IN CONSIDERATION OF YOUR ACCEPTANCE OF SUCH TERMS AND
           CONDITIONS.
+    detection_log: []
   - license_expression: mit
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 250
@@ -189,6 +187,7 @@ other_license_detections:
         matcher: 2-aho
         license_expression: mit
         rule_identifier: mit_26.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_26.RULE
         matched_text: The MIT License (MIT)
       - score: '100.0'
@@ -199,6 +198,7 @@ other_license_detections:
         matcher: 2-aho
         license_expression: mit
         rule_identifier: mit.LICENSE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE
         matched_text: |
           Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -218,9 +218,8 @@ other_license_detections:
           LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
           OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
           SOFTWARE.
+    detection_log: []
   - license_expression: gpl-2.0-plus
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 270
@@ -230,6 +229,7 @@ other_license_detections:
         matcher: 1-hash
         license_expression: gpl-2.0-plus
         rule_identifier: gpl-2.0-plus_22.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_22.RULE
         matched_text: 'License: gpl-2+'
       - score: '100.0'
@@ -240,6 +240,7 @@ other_license_detections:
         matcher: 2-aho
         license_expression: gpl-2.0-plus
         rule_identifier: gpl-2.0-plus_420.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_420.RULE
         matched_text: |
           This program is free software; you can redistribute it and/or
@@ -263,13 +264,13 @@ other_license_detections:
         matcher: 2-aho
         license_expression: gpl-2.0-plus
         rule_identifier: gpl-2.0-plus_843.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_843.RULE
         matched_text: |
           On Debian systems a full copy of the GPL 2 can be found at
           /usr/share/common-licenses/GPL-2
+    detection_log: []
   - license_expression: gpl-3.0
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 288
@@ -279,6 +280,7 @@ other_license_detections:
         matcher: 1-hash
         license_expression: gpl-3.0
         rule_identifier: gpl-3.0_rdesc_1.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0_rdesc_1.RULE
         matched_text: 'License: gpl-3'
       - score: '100.0'
@@ -289,6 +291,7 @@ other_license_detections:
         matcher: 1-hash
         license_expression: gpl-3.0
         rule_identifier: gpl-3.0_417.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0_417.RULE
         matched_text: |
           This program is free software; you can redistribute it and/or
@@ -306,9 +309,8 @@ other_license_detections:
 
           On Debian systems a full copy of the GPL 3 can be found at
           /usr/share/common-licenses/GPL-3
+    detection_log: []
   - license_expression: lgpl-2.1
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 305
@@ -318,6 +320,7 @@ other_license_detections:
         matcher: 1-hash
         license_expression: lgpl-2.1
         rule_identifier: lgpl-2.1_38.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1_38.RULE
         matched_text: 'License: lgpl-2.1'
       - score: '100.0'
@@ -328,6 +331,7 @@ other_license_detections:
         matcher: 1-hash
         license_expression: lgpl-2.1
         rule_identifier: lgpl-2.1_313.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1_313.RULE
         matched_text: |
           This file may be used under the terms of the GNU Lesser General Public
@@ -339,9 +343,8 @@ other_license_detections:
 
           On Debian systems a full copy of the LGPL 2.1 can be found at
           /usr/share/common-licenses/LGPL-2.1
+    detection_log: []
   - license_expression: lgpl-2.1-plus AND lgpl-2.1
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 316
@@ -351,6 +354,7 @@ other_license_detections:
         matcher: 1-hash
         license_expression: lgpl-2.1-plus
         rule_identifier: lgpl-2.1-plus_108.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_108.RULE
         matched_text: 'License: lgpl-2.1+'
       - score: '100.0'
@@ -361,6 +365,7 @@ other_license_detections:
         matcher: 1-hash
         license_expression: lgpl-2.1
         rule_identifier: lgpl-2.1_312.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1_312.RULE
         matched_text: |
           This library is free software; you can redistribute it and/or
@@ -379,9 +384,8 @@ other_license_detections:
 
           On Debian systems a full copy of the LGPL 2.1 can be found at
           /usr/share/common-licenses/LGPL-2.1
+    detection_log: []
   - license_expression: public-domain-disclaimer
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 335
@@ -391,11 +395,13 @@ other_license_detections:
         matcher: 1-hash
         license_expression: public-domain-disclaimer
         rule_identifier: public-domain-disclaimer_47.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/public-domain-disclaimer_47.RULE
         matched_text: |
           This software is in the public domain, furnished "as is", without technical
           support, and with no warranty, express or implied, as to its usefulness for
           any purpose.
+    detection_log: []
 copyright: |
   2006, Alexander Neundorf <neundorf@kde.org>
   2006, Andreas Schneider <asn@cryptomilk.org>

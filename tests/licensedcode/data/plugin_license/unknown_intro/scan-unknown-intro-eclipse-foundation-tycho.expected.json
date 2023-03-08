@@ -3,10 +3,7 @@
     {
       "identifier": "epl_1_0-583490fb-0b3a-f445-a1b9-1b96423b9ec3",
       "license_expression": "epl-1.0",
-      "count": 2,
-      "detection_log": [
-        "not-combined"
-      ],
+      "detection_count": 2,
       "matches": [
         {
           "score": 99.34,
@@ -17,6 +14,7 @@
           "matcher": "3-seq",
           "license_expression": "epl-1.0",
           "rule_identifier": "epl-1.0_3.RULE",
+          "rule_relevance": 100,
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/epl-1.0_3.RULE"
         },
         {
@@ -28,17 +26,16 @@
           "matcher": "2-aho",
           "license_expression": "epl-1.0",
           "rule_identifier": "epl-1.0_7.RULE",
+          "rule_relevance": 100,
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/epl-1.0_7.RULE"
         }
-      ]
+      ],
+      "detection_log": []
     },
     {
       "identifier": "apache_2_0-b9480736-5aa9-53cf-d14a-cd1e7d4d49d3",
       "license_expression": "apache-2.0",
-      "count": 2,
-      "detection_log": [
-        "not-combined"
-      ],
+      "detection_count": 2,
       "matches": [
         {
           "score": 95.0,
@@ -49,17 +46,16 @@
           "matcher": "2-aho",
           "license_expression": "apache-2.0",
           "rule_identifier": "apache_no-version_1.RULE",
+          "rule_relevance": 95,
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache_no-version_1.RULE"
         }
-      ]
+      ],
+      "detection_log": []
     },
     {
       "identifier": "apache_2_0-d5aca480-f390-3518-0726-d232731b5e97",
       "license_expression": "apache-2.0",
-      "count": 1,
-      "detection_log": [
-        "unknown-intro-followed-by-match"
-      ],
+      "detection_count": 1,
       "matches": [
         {
           "score": 100.0,
@@ -70,6 +66,7 @@
           "matcher": "2-aho",
           "license_expression": "unknown-license-reference",
           "rule_identifier": "license-intro_35.RULE",
+          "rule_relevance": 100,
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/license-intro_35.RULE"
         },
         {
@@ -81,6 +78,7 @@
           "matcher": "2-aho",
           "license_expression": "apache-2.0",
           "rule_identifier": "apache-2.0_322.RULE",
+          "rule_relevance": 100,
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_322.RULE"
         },
         {
@@ -92,6 +90,7 @@
           "matcher": "3-seq",
           "license_expression": "apache-2.0",
           "rule_identifier": "apache-2.0_1112.RULE",
+          "rule_relevance": 100,
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_1112.RULE"
         },
         {
@@ -103,6 +102,7 @@
           "matcher": "3-seq",
           "license_expression": "apache-2.0",
           "rule_identifier": "apache-2.0_842.RULE",
+          "rule_relevance": 100,
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_842.RULE"
         },
         {
@@ -114,17 +114,18 @@
           "matcher": "3-seq",
           "license_expression": "apache-2.0",
           "rule_identifier": "apache-2.0_689.RULE",
+          "rule_relevance": 100,
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_689.RULE"
         }
+      ],
+      "detection_log": [
+        "unknown-intro-followed-by-match"
       ]
     },
     {
       "identifier": "apache_2_0-f985a212-ddd7-cf4c-223f-990765c05d7f",
       "license_expression": "apache-2.0",
-      "count": 1,
-      "detection_log": [
-        "unknown-intro-followed-by-match"
-      ],
+      "detection_count": 1,
       "matches": [
         {
           "score": 100.0,
@@ -135,6 +136,7 @@
           "matcher": "2-aho",
           "license_expression": "unknown-license-reference",
           "rule_identifier": "license-intro_35.RULE",
+          "rule_relevance": 100,
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/license-intro_35.RULE"
         },
         {
@@ -146,6 +148,7 @@
           "matcher": "2-aho",
           "license_expression": "apache-2.0",
           "rule_identifier": "apache-2.0_322.RULE",
+          "rule_relevance": 100,
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_322.RULE"
         },
         {
@@ -157,6 +160,7 @@
           "matcher": "3-seq",
           "license_expression": "apache-2.0",
           "rule_identifier": "apache-2.0_1112.RULE",
+          "rule_relevance": 100,
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_1112.RULE"
         },
         {
@@ -168,6 +172,7 @@
           "matcher": "3-seq",
           "license_expression": "apache-2.0",
           "rule_identifier": "apache-2.0_842.RULE",
+          "rule_relevance": 100,
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_842.RULE"
         },
         {
@@ -179,17 +184,18 @@
           "matcher": "2-aho",
           "license_expression": "apache-2.0",
           "rule_identifier": "apache-2.0_182.RULE",
+          "rule_relevance": 100,
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_182.RULE"
         }
+      ],
+      "detection_log": [
+        "unknown-intro-followed-by-match"
       ]
     },
     {
       "identifier": "apache_2_0-572026ce-a21a-cf1f-b168-d2e76a41e85f",
       "license_expression": "apache-2.0",
-      "count": 1,
-      "detection_log": [
-        "unknown-intro-followed-by-match"
-      ],
+      "detection_count": 1,
       "matches": [
         {
           "score": 100.0,
@@ -200,6 +206,7 @@
           "matcher": "2-aho",
           "license_expression": "unknown-license-reference",
           "rule_identifier": "license-intro_35.RULE",
+          "rule_relevance": 100,
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/license-intro_35.RULE"
         },
         {
@@ -211,6 +218,7 @@
           "matcher": "2-aho",
           "license_expression": "apache-2.0",
           "rule_identifier": "apache-2.0_322.RULE",
+          "rule_relevance": 100,
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_322.RULE"
         },
         {
@@ -222,6 +230,7 @@
           "matcher": "3-seq",
           "license_expression": "apache-2.0",
           "rule_identifier": "apache-2.0_1112.RULE",
+          "rule_relevance": 100,
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_1112.RULE"
         },
         {
@@ -233,17 +242,18 @@
           "matcher": "2-aho",
           "license_expression": "apache-2.0",
           "rule_identifier": "apache-2.0_20.RULE",
+          "rule_relevance": 100,
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_20.RULE"
         }
+      ],
+      "detection_log": [
+        "unknown-intro-followed-by-match"
       ]
     },
     {
       "identifier": "apache_2_0-3ff6ea1e-7687-edb8-8b35-a2751a601cae",
       "license_expression": "apache-2.0",
-      "count": 2,
-      "detection_log": [
-        "not-combined"
-      ],
+      "detection_count": 2,
       "matches": [
         {
           "score": 92.68,
@@ -254,6 +264,7 @@
           "matcher": "3-seq",
           "license_expression": "apache-2.0",
           "rule_identifier": "apache-2.0_1112.RULE",
+          "rule_relevance": 100,
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_1112.RULE"
         },
         {
@@ -265,17 +276,16 @@
           "matcher": "3-seq",
           "license_expression": "apache-2.0",
           "rule_identifier": "apache-2.0_842.RULE",
+          "rule_relevance": 100,
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_842.RULE"
         }
-      ]
+      ],
+      "detection_log": []
     },
     {
       "identifier": "epl_2_0_or_apache_2_0__and_apache_2_0_and_epl_2_0-52f23e3b-2f64-af31-1586-6bd03db2475f",
       "license_expression": "(epl-2.0 OR apache-2.0) AND apache-2.0 AND epl-2.0",
-      "count": 1,
-      "detection_log": [
-        "unknown-intro-followed-by-match"
-      ],
+      "detection_count": 1,
       "matches": [
         {
           "score": 100.0,
@@ -286,6 +296,7 @@
           "matcher": "2-aho",
           "license_expression": "unknown-license-reference",
           "rule_identifier": "license-intro_35.RULE",
+          "rule_relevance": 100,
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/license-intro_35.RULE"
         },
         {
@@ -297,6 +308,7 @@
           "matcher": "3-seq",
           "license_expression": "epl-2.0 OR apache-2.0",
           "rule_identifier": "epl-2.0_or_apache-2.0_2.RULE",
+          "rule_relevance": 100,
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/epl-2.0_or_apache-2.0_2.RULE"
         },
         {
@@ -308,6 +320,7 @@
           "matcher": "3-seq",
           "license_expression": "apache-2.0",
           "rule_identifier": "apache-2.0_1112.RULE",
+          "rule_relevance": 100,
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_1112.RULE"
         },
         {
@@ -319,17 +332,18 @@
           "matcher": "3-seq",
           "license_expression": "epl-2.0",
           "rule_identifier": "epl-2.0_4.RULE",
+          "rule_relevance": 100,
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/epl-2.0_4.RULE"
         }
+      ],
+      "detection_log": [
+        "unknown-intro-followed-by-match"
       ]
     },
     {
       "identifier": "epl_1_0-c49f6fb4-006b-7944-b44b-c283f88bf18d",
       "license_expression": "epl-1.0",
-      "count": 2,
-      "detection_log": [
-        "not-combined"
-      ],
+      "detection_count": 2,
       "matches": [
         {
           "score": 96.69,
@@ -340,6 +354,7 @@
           "matcher": "3-seq",
           "license_expression": "epl-1.0",
           "rule_identifier": "epl-1.0_3.RULE",
+          "rule_relevance": 100,
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/epl-1.0_3.RULE"
         },
         {
@@ -351,17 +366,16 @@
           "matcher": "2-aho",
           "license_expression": "epl-1.0",
           "rule_identifier": "epl-1.0_7.RULE",
+          "rule_relevance": 100,
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/epl-1.0_7.RULE"
         }
-      ]
+      ],
+      "detection_log": []
     },
     {
       "identifier": "cpl_1_0-5160c0f0-326a-077a-efd6-b7e1bb5eb641",
       "license_expression": "cpl-1.0",
-      "count": 1,
-      "detection_log": [
-        "unknown-intro-followed-by-match"
-      ],
+      "detection_count": 1,
       "matches": [
         {
           "score": 100.0,
@@ -372,6 +386,7 @@
           "matcher": "2-aho",
           "license_expression": "unknown-license-reference",
           "rule_identifier": "license-intro_35.RULE",
+          "rule_relevance": 100,
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/license-intro_35.RULE"
         },
         {
@@ -383,6 +398,7 @@
           "matcher": "2-aho",
           "license_expression": "cpl-1.0",
           "rule_identifier": "cpl-1.0_5.RULE",
+          "rule_relevance": 100,
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/cpl-1.0_5.RULE"
         },
         {
@@ -394,17 +410,18 @@
           "matcher": "3-seq",
           "license_expression": "cpl-1.0",
           "rule_identifier": "cpl-1.0_14.RULE",
+          "rule_relevance": 100,
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/cpl-1.0_14.RULE"
         }
+      ],
+      "detection_log": [
+        "unknown-intro-followed-by-match"
       ]
     },
     {
       "identifier": "bsd_new-bad4bb72-54ef-7e7c-7644-70daa8f3317e",
       "license_expression": "bsd-new",
-      "count": 1,
-      "detection_log": [
-        "unknown-intro-followed-by-match"
-      ],
+      "detection_count": 1,
       "matches": [
         {
           "score": 100.0,
@@ -415,6 +432,7 @@
           "matcher": "2-aho",
           "license_expression": "unknown-license-reference",
           "rule_identifier": "license-intro_35.RULE",
+          "rule_relevance": 100,
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/license-intro_35.RULE"
         },
         {
@@ -426,6 +444,7 @@
           "matcher": "2-aho",
           "license_expression": "bsd-new",
           "rule_identifier": "bsd-new_119.RULE",
+          "rule_relevance": 100,
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_119.RULE"
         },
         {
@@ -437,6 +456,7 @@
           "matcher": "2-aho",
           "license_expression": "bsd-new",
           "rule_identifier": "bsd-new_103.RULE",
+          "rule_relevance": 100,
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_103.RULE"
         },
         {
@@ -448,17 +468,18 @@
           "matcher": "2-aho",
           "license_expression": "bsd-new",
           "rule_identifier": "bsd-new_172.RULE",
+          "rule_relevance": 99,
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_172.RULE"
         }
+      ],
+      "detection_log": [
+        "unknown-intro-followed-by-match"
       ]
     },
     {
       "identifier": "bsd_new-90d0d4b4-f98b-d4da-dbb0-7e601f6d404a",
       "license_expression": "bsd-new",
-      "count": 1,
-      "detection_log": [
-        "not-combined"
-      ],
+      "detection_count": 1,
       "matches": [
         {
           "score": 100.0,
@@ -469,17 +490,16 @@
           "matcher": "2-aho",
           "license_expression": "bsd-new",
           "rule_identifier": "bsd-new_860.RULE",
+          "rule_relevance": 100,
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_860.RULE"
         }
-      ]
+      ],
+      "detection_log": []
     },
     {
       "identifier": "cpl_1_0-5038e997-b857-2a64-110b-75cb2d935f40",
       "license_expression": "cpl-1.0",
-      "count": 1,
-      "detection_log": [
-        "unknown-intro-followed-by-match"
-      ],
+      "detection_count": 1,
       "matches": [
         {
           "score": 100.0,
@@ -490,6 +510,7 @@
           "matcher": "2-aho",
           "license_expression": "unknown-license-reference",
           "rule_identifier": "license-intro_35.RULE",
+          "rule_relevance": 100,
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/license-intro_35.RULE"
         },
         {
@@ -501,6 +522,7 @@
           "matcher": "2-aho",
           "license_expression": "cpl-1.0",
           "rule_identifier": "cpl-1.0_5.RULE",
+          "rule_relevance": 100,
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/cpl-1.0_5.RULE"
         },
         {
@@ -512,6 +534,7 @@
           "matcher": "3-seq",
           "license_expression": "cpl-1.0",
           "rule_identifier": "cpl-1.0_14.RULE",
+          "rule_relevance": 100,
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/cpl-1.0_14.RULE"
         },
         {
@@ -523,8 +546,12 @@
           "matcher": "2-aho",
           "license_expression": "cpl-1.0",
           "rule_identifier": "cpl-1.0_24.RULE",
+          "rule_relevance": 100,
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/cpl-1.0_24.RULE"
         }
+      ],
+      "detection_log": [
+        "unknown-intro-followed-by-match"
       ]
     }
   ],
@@ -1301,9 +1328,6 @@
       "license_detections": [
         {
           "license_expression": "epl-1.0",
-          "detection_log": [
-            "not-combined"
-          ],
           "matches": [
             {
               "score": 99.34,
@@ -1314,6 +1338,7 @@
               "matcher": "3-seq",
               "license_expression": "epl-1.0",
               "rule_identifier": "epl-1.0_3.RULE",
+              "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/epl-1.0_3.RULE",
               "matched_text": "License</h3>\n\n<p>The Eclipse Foundation makes available all content in this plug-in (&quot;Content&quot;).  Unless otherwise \nindicated below, the Content is provided to you under the terms and conditions of the\nEclipse Public License Version 1.0 (&quot;EPL&quot;).  A copy of the EPL is available \nat <a href=\"[https]://[www].[eclipse].[org]/[legal]/[epl]-[v10].[html]\">[https]://www.eclipse.org/legal/epl-v10.html</a>.\nFor purposes of the EPL, &quot;Program&quot; will mean the Content.</p>\n\n<p>If you did not receive this Content directly from the Eclipse Foundation, the Content is \nbeing redistributed by another party (&quot;Redistributor&quot;) and different terms and conditions may\napply to your use of any object code in the Content.  Check the Redistributor's license that was \nprovided with the Content.  If no such license exists, contact the Redistributor.  Unless otherwise\nindicated below, the terms and conditions of the EPL still apply to any source code in the Content\nand such source code may be obtained at <a href=\"http://www.eclipse.org\">"
             },
@@ -1326,16 +1351,15 @@
               "matcher": "2-aho",
               "license_expression": "epl-1.0",
               "rule_identifier": "epl-1.0_7.RULE",
+              "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/epl-1.0_7.RULE",
               "matched_text": "https://www.eclipse.org/legal/epl-v10.html\">"
             }
-          ]
+          ],
+          "detection_log": []
         },
         {
           "license_expression": "apache-2.0",
-          "detection_log": [
-            "not-combined"
-          ],
           "matches": [
             {
               "score": 95.0,
@@ -1346,16 +1370,15 @@
               "matcher": "2-aho",
               "license_expression": "apache-2.0",
               "rule_identifier": "apache_no-version_1.RULE",
+              "rule_relevance": 95,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache_no-version_1.RULE",
               "matched_text": "This product includes software developed by the Apache Software Foundation (<a href=\"http://www.apache.org/\">"
             }
-          ]
+          ],
+          "detection_log": []
         },
         {
           "license_expression": "apache-2.0",
-          "detection_log": [
-            "unknown-intro-followed-by-match"
-          ],
           "matches": [
             {
               "score": 100.0,
@@ -1366,6 +1389,7 @@
               "matcher": "2-aho",
               "license_expression": "unknown-license-reference",
               "rule_identifier": "license-intro_35.RULE",
+              "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/license-intro_35.RULE",
               "matched_text": "subject to the terms and conditions"
             },
@@ -1378,6 +1402,7 @@
               "matcher": "2-aho",
               "license_expression": "apache-2.0",
               "rule_identifier": "apache-2.0_322.RULE",
+              "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_322.RULE",
               "matched_text": "Apache Software License 2.0."
             },
@@ -1390,6 +1415,7 @@
               "matcher": "3-seq",
               "license_expression": "apache-2.0",
               "rule_identifier": "apache-2.0_1112.RULE",
+              "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_1112.RULE",
               "matched_text": "LICENSE</a> and is also available at <a href=\"http://www.apache.org/licenses/LICENSE-2.0.html\">"
             },
@@ -1402,6 +1428,7 @@
               "matcher": "3-seq",
               "license_expression": "apache-2.0",
               "rule_identifier": "apache-2.0_842.RULE",
+              "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_842.RULE",
               "matched_text": "www.apache.org/licenses/LICENSE-2.0.[html]\">[http]://www.apache.org/licenses/LICENSE-2.0."
             },
@@ -1414,9 +1441,13 @@
               "matcher": "3-seq",
               "license_expression": "apache-2.0",
               "rule_identifier": "apache-2.0_689.RULE",
+              "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_689.RULE",
               "matched_text": "2.0.html</a>.\n\n<p>The Apache attribution <a href=\"[about]_[files]/[NOTICE]\">[NOTICE]</a> [file] is included with the Content in accordance with 4d of the Apache License, Version 2.0.</"
             }
+          ],
+          "detection_log": [
+            "unknown-intro-followed-by-match"
           ]
         }
       ],
@@ -1437,9 +1468,6 @@
       "license_detections": [
         {
           "license_expression": "epl-1.0",
-          "detection_log": [
-            "not-combined"
-          ],
           "matches": [
             {
               "score": 99.34,
@@ -1450,6 +1478,7 @@
               "matcher": "3-seq",
               "license_expression": "epl-1.0",
               "rule_identifier": "epl-1.0_3.RULE",
+              "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/epl-1.0_3.RULE",
               "matched_text": "License</h3>\n\n<p>The Eclipse Foundation makes available all content in this plug-in (&quot;Content&quot;).  Unless otherwise \nindicated below, the Content is provided to you under the terms and conditions of the\nEclipse Public License Version 1.0 (&quot;EPL&quot;).  A copy of the EPL is available \nat <a href=\"[https]://[www].[eclipse].[org]/[legal]/[epl]-[v10].[html]\">[https]://www.eclipse.org/legal/epl-v10.html</a>.\nFor purposes of the EPL, &quot;Program&quot; will mean the Content.</p>\n\n<p>If you did not receive this Content directly from the Eclipse Foundation, the Content is \nbeing redistributed by another party (&quot;Redistributor&quot;) and different terms and conditions may\napply to your use of any object code in the Content.  Check the Redistributor's license that was \nprovided with the Content.  If no such license exists, contact the Redistributor.  Unless otherwise\nindicated below, the terms and conditions of the EPL still apply to any source code in the Content\nand such source code may be obtained at <a href=\"http://www.eclipse.org\">"
             },
@@ -1462,16 +1491,15 @@
               "matcher": "2-aho",
               "license_expression": "epl-1.0",
               "rule_identifier": "epl-1.0_7.RULE",
+              "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/epl-1.0_7.RULE",
               "matched_text": "https://www.eclipse.org/legal/epl-v10.html\">"
             }
-          ]
+          ],
+          "detection_log": []
         },
         {
           "license_expression": "apache-2.0",
-          "detection_log": [
-            "not-combined"
-          ],
           "matches": [
             {
               "score": 95.0,
@@ -1482,16 +1510,15 @@
               "matcher": "2-aho",
               "license_expression": "apache-2.0",
               "rule_identifier": "apache_no-version_1.RULE",
+              "rule_relevance": 95,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache_no-version_1.RULE",
               "matched_text": "This product includes software developed by the Apache Software Foundation (<a href=\"http://www.apache.org/\">"
             }
-          ]
+          ],
+          "detection_log": []
         },
         {
           "license_expression": "apache-2.0",
-          "detection_log": [
-            "unknown-intro-followed-by-match"
-          ],
           "matches": [
             {
               "score": 100.0,
@@ -1502,6 +1529,7 @@
               "matcher": "2-aho",
               "license_expression": "unknown-license-reference",
               "rule_identifier": "license-intro_35.RULE",
+              "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/license-intro_35.RULE",
               "matched_text": "subject to the terms and conditions"
             },
@@ -1514,6 +1542,7 @@
               "matcher": "2-aho",
               "license_expression": "apache-2.0",
               "rule_identifier": "apache-2.0_322.RULE",
+              "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_322.RULE",
               "matched_text": "Apache Software License 2.0."
             },
@@ -1526,6 +1555,7 @@
               "matcher": "3-seq",
               "license_expression": "apache-2.0",
               "rule_identifier": "apache-2.0_1112.RULE",
+              "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_1112.RULE",
               "matched_text": "LICENSE</a> and is also available at <a href=\"http://www.apache.org/licenses/LICENSE-2.0.html\">"
             },
@@ -1538,6 +1568,7 @@
               "matcher": "3-seq",
               "license_expression": "apache-2.0",
               "rule_identifier": "apache-2.0_842.RULE",
+              "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_842.RULE",
               "matched_text": "www.apache.org/licenses/LICENSE-2.0.[html]\">[http]://www.apache.org/licenses/LICENSE-2.0."
             },
@@ -1550,16 +1581,17 @@
               "matcher": "2-aho",
               "license_expression": "apache-2.0",
               "rule_identifier": "apache-2.0_182.RULE",
+              "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_182.RULE",
               "matched_text": "the Apache License, Version 2.0.</"
             }
+          ],
+          "detection_log": [
+            "unknown-intro-followed-by-match"
           ]
         },
         {
           "license_expression": "apache-2.0",
-          "detection_log": [
-            "unknown-intro-followed-by-match"
-          ],
           "matches": [
             {
               "score": 100.0,
@@ -1570,6 +1602,7 @@
               "matcher": "2-aho",
               "license_expression": "unknown-license-reference",
               "rule_identifier": "license-intro_35.RULE",
+              "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/license-intro_35.RULE",
               "matched_text": "subject to the terms and conditions"
             },
@@ -1582,6 +1615,7 @@
               "matcher": "2-aho",
               "license_expression": "apache-2.0",
               "rule_identifier": "apache-2.0_322.RULE",
+              "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_322.RULE",
               "matched_text": "Apache Software License 2.0."
             },
@@ -1594,6 +1628,7 @@
               "matcher": "3-seq",
               "license_expression": "apache-2.0",
               "rule_identifier": "apache-2.0_1112.RULE",
+              "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_1112.RULE",
               "matched_text": "License [2].[0].  A [copy] [of] [the] [license] [is] [contained]\n[in] [the] [file] <a href=\"[about]_[files]/[LICENSE]\">LICENSE</a> and is also available at <a href=\"http://www.apache.org/licenses/LICENSE-2.0.html\">"
             },
@@ -1606,16 +1641,17 @@
               "matcher": "2-aho",
               "license_expression": "apache-2.0",
               "rule_identifier": "apache-2.0_20.RULE",
+              "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_20.RULE",
               "matched_text": "http://www.apache.org/licenses/LICENSE-2.0.html</"
             }
+          ],
+          "detection_log": [
+            "unknown-intro-followed-by-match"
           ]
         },
         {
           "license_expression": "apache-2.0",
-          "detection_log": [
-            "not-combined"
-          ],
           "matches": [
             {
               "score": 92.68,
@@ -1626,6 +1662,7 @@
               "matcher": "3-seq",
               "license_expression": "apache-2.0",
               "rule_identifier": "apache-2.0_1112.RULE",
+              "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_1112.RULE",
               "matched_text": "is subject to the terms and conditions of the Apache Software License 2.0.  A copy of the license is contained\nin the file <a href=\"[about]_[files]/[LICENSE]\">LICENSE</a> and is also available at <a href=\"http://www.apache.org/licenses/LICENSE-2.0.html\">"
             },
@@ -1638,16 +1675,15 @@
               "matcher": "3-seq",
               "license_expression": "apache-2.0",
               "rule_identifier": "apache-2.0_842.RULE",
+              "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_842.RULE",
               "matched_text": "License [2].[0].  A [copy] [of] [the] license is [contained]\n[in] [the] [file] <a href=\"[about]_[files]/[LICENSE]\">[LICENSE]</a> [and] [is] [also] [available] [at] <a href=\"[http]://www.apache.org/licenses/LICENSE-2.0.[html]\">[http]://www.apache.org/licenses/LICENSE-2.0."
             }
-          ]
+          ],
+          "detection_log": []
         },
         {
           "license_expression": "apache-2.0",
-          "detection_log": [
-            "not-combined"
-          ],
           "matches": [
             {
               "score": 92.68,
@@ -1658,6 +1694,7 @@
               "matcher": "3-seq",
               "license_expression": "apache-2.0",
               "rule_identifier": "apache-2.0_1112.RULE",
+              "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_1112.RULE",
               "matched_text": "is subject to the terms and conditions of the Apache Software License 2.0.  A copy of the license is contained\nin the file <a href=\"[about]_[files]/[LICENSE]\">LICENSE</a> and is also available at <a href=\"http://www.apache.org/licenses/LICENSE-2.0.html\">"
             },
@@ -1670,16 +1707,15 @@
               "matcher": "3-seq",
               "license_expression": "apache-2.0",
               "rule_identifier": "apache-2.0_842.RULE",
+              "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_842.RULE",
               "matched_text": "License [2].[0].  A [copy] [of] [the] license is [contained]\n[in] [the] [file] <a href=\"[about]_[files]/[LICENSE]\">[LICENSE]</a> [and] [is] [also] [available] [at] <a href=\"[http]://www.apache.org/licenses/LICENSE-2.0.[html]\">[http]://www.apache.org/licenses/LICENSE-2.0."
             }
-          ]
+          ],
+          "detection_log": []
         },
         {
           "license_expression": "(epl-2.0 OR apache-2.0) AND apache-2.0 AND epl-2.0",
-          "detection_log": [
-            "unknown-intro-followed-by-match"
-          ],
           "matches": [
             {
               "score": 100.0,
@@ -1690,6 +1726,7 @@
               "matcher": "2-aho",
               "license_expression": "unknown-license-reference",
               "rule_identifier": "license-intro_35.RULE",
+              "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/license-intro_35.RULE",
               "matched_text": "subject to the terms and conditions"
             },
@@ -1702,6 +1739,7 @@
               "matcher": "3-seq",
               "license_expression": "epl-2.0 OR apache-2.0",
               "rule_identifier": "epl-2.0_or_apache-2.0_2.RULE",
+              "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/epl-2.0_or_apache-2.0_2.RULE",
               "matched_text": "of the Eclipse Public License 2.0.  A [copy] [of] [the] [license] [is] [contained]\n[in] [the] [file] <a href=\"[about]_[files]/[LICENSE].[md]\">[LICENSE].[md]</a> [and] [is] [also] [available] [at] <a href=\"[https]://www.eclipse.org/legal/epl-2.0/\">"
             },
@@ -1714,6 +1752,7 @@
               "matcher": "3-seq",
               "license_expression": "apache-2.0",
               "rule_identifier": "apache-2.0_1112.RULE",
+              "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_1112.RULE",
               "matched_text": "License 2.0.  A copy of the license is contained\nin the file <a href=\"[about]_[files]/LICENSE.[md]\">LICENSE."
             },
@@ -1726,9 +1765,13 @@
               "matcher": "3-seq",
               "license_expression": "epl-2.0",
               "rule_identifier": "epl-2.0_4.RULE",
+              "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/epl-2.0_4.RULE",
               "matched_text": "and is also available at <a href=\"https://www.eclipse.org/legal/epl-2.0/\">https://www.eclipse.org/legal/epl-2.0/</"
             }
+          ],
+          "detection_log": [
+            "unknown-intro-followed-by-match"
           ]
         }
       ],
@@ -1753,9 +1796,6 @@
       "license_detections": [
         {
           "license_expression": "epl-1.0",
-          "detection_log": [
-            "not-combined"
-          ],
           "matches": [
             {
               "score": 96.69,
@@ -1766,6 +1806,7 @@
               "matcher": "3-seq",
               "license_expression": "epl-1.0",
               "rule_identifier": "epl-1.0_3.RULE",
+              "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/epl-1.0_3.RULE",
               "matched_text": "License</h3>\n\n<p>The Eclipse Foundation makes available all content in this plug-in (&quot;Content&quot;).  Unless otherwise \nindicated below, the Content is provided to you under the terms and conditions of the\nEclipse Public License Version 1.0 (&quot;EPL&quot;).  A copy of the EPL is available \nat <a href=\"[https]://[www].[eclipse].[org]/[legal]/[epl]-[v10].[html]\">[https]://www.eclipse.org/legal/epl-v10.html</a>.\nFor purposes of the EPL, &quot;Program&quot; will mean the Content.</p>\n\n<p>If you did not receive this Content directly from the Eclipse Foundation, the Content is \nbeing redistributed by another party (&quot;Redistributor&quot;) and different terms and conditions may\napply to your use of any object code in the Content.  Check the Redistributor's license that was \nprovided with the Content.  If no such license exists, contact the Redistributor.  Unless otherwise\nindicated below, the terms and conditions of the EPL still apply to any source code in the Content\nand such source code may be obtained at <"
             },
@@ -1778,16 +1819,15 @@
               "matcher": "2-aho",
               "license_expression": "epl-1.0",
               "rule_identifier": "epl-1.0_7.RULE",
+              "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/epl-1.0_7.RULE",
               "matched_text": "https://www.eclipse.org/legal/epl-v10.html\">"
             }
-          ]
+          ],
+          "detection_log": []
         },
         {
           "license_expression": "cpl-1.0",
-          "detection_log": [
-            "unknown-intro-followed-by-match"
-          ],
           "matches": [
             {
               "score": 100.0,
@@ -1798,6 +1838,7 @@
               "matcher": "2-aho",
               "license_expression": "unknown-license-reference",
               "rule_identifier": "license-intro_35.RULE",
+              "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/license-intro_35.RULE",
               "matched_text": "subject to the terms and conditions"
             },
@@ -1810,6 +1851,7 @@
               "matcher": "2-aho",
               "license_expression": "cpl-1.0",
               "rule_identifier": "cpl-1.0_5.RULE",
+              "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/cpl-1.0_5.RULE",
               "matched_text": "Common Public License Version 1.0 (&"
             },
@@ -1822,16 +1864,17 @@
               "matcher": "3-seq",
               "license_expression": "cpl-1.0",
               "rule_identifier": "cpl-1.0_14.RULE",
+              "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/cpl-1.0_14.RULE",
               "matched_text": "available at <a href=\"https://www.eclipse.org/legal/cpl-v10.html\">https://www.eclipse.org/legal/cpl-v10.html</"
             }
+          ],
+          "detection_log": [
+            "unknown-intro-followed-by-match"
           ]
         },
         {
           "license_expression": "bsd-new",
-          "detection_log": [
-            "unknown-intro-followed-by-match"
-          ],
           "matches": [
             {
               "score": 100.0,
@@ -1842,6 +1885,7 @@
               "matcher": "2-aho",
               "license_expression": "unknown-license-reference",
               "rule_identifier": "license-intro_35.RULE",
+              "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/license-intro_35.RULE",
               "matched_text": "subject to the terms and conditions"
             },
@@ -1854,6 +1898,7 @@
               "matcher": "2-aho",
               "license_expression": "bsd-new",
               "rule_identifier": "bsd-new_119.RULE",
+              "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_119.RULE",
               "matched_text": "the \nNew BSD License."
             },
@@ -1866,6 +1911,7 @@
               "matcher": "2-aho",
               "license_expression": "bsd-new",
               "rule_identifier": "bsd-new_103.RULE",
+              "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_103.RULE",
               "matched_text": "New BSD License:</p>\n<pre>\nBSD"
             },
@@ -1878,16 +1924,17 @@
               "matcher": "2-aho",
               "license_expression": "bsd-new",
               "rule_identifier": "bsd-new_172.RULE",
+              "rule_relevance": 99,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_172.RULE",
               "matched_text": "License:</p>\n<pre>\nBSD License"
             }
+          ],
+          "detection_log": [
+            "unknown-intro-followed-by-match"
           ]
         },
         {
           "license_expression": "bsd-new",
-          "detection_log": [
-            "not-combined"
-          ],
           "matches": [
             {
               "score": 100.0,
@@ -1898,10 +1945,12 @@
               "matcher": "2-aho",
               "license_expression": "bsd-new",
               "rule_identifier": "bsd-new_860.RULE",
+              "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_860.RULE",
               "matched_text": "Redistribution and use in source and binary forms, with or without\nmodification, are permitted provided that the following conditions are met:\n\nRedistributions of source code must retain the above copyright notice, this list of\nconditions and the following disclaimer. Redistributions in binary form must reproduce\nthe above copyright notice, this list of conditions and the following disclaimer in\nthe documentation and/or other materials provided with the distribution.\n\nNeither the name of Hamcrest nor the names of its contributors may be used to endorse\nor promote products derived from this software without specific prior written\npermission.\n\nTHIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS \"AS IS\" AND ANY\nEXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES\nOF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT\nSHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,\nINCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED\nTO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR\nBUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN\nCONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY\nWAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH\nDAMAGE."
             }
-          ]
+          ],
+          "detection_log": []
         }
       ],
       "license_clues": [],
@@ -1922,9 +1971,6 @@
       "license_detections": [
         {
           "license_expression": "epl-1.0",
-          "detection_log": [
-            "not-combined"
-          ],
           "matches": [
             {
               "score": 96.69,
@@ -1935,6 +1981,7 @@
               "matcher": "3-seq",
               "license_expression": "epl-1.0",
               "rule_identifier": "epl-1.0_3.RULE",
+              "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/epl-1.0_3.RULE",
               "matched_text": "License</h3>\n\n<p>The Eclipse Foundation makes available all content in this plug-in (&quot;Content&quot;).  Unless otherwise \nindicated below, the Content is provided to you under the terms and conditions of the\nEclipse Public License Version 1.0 (&quot;EPL&quot;).  A copy of the EPL is available \nat <a href=\"[https]://[www].[eclipse].[org]/[legal]/[epl]-[v10].[html]\">[https]://www.eclipse.org/legal/epl-v10.html</a>.\nFor purposes of the EPL, &quot;Program&quot; will mean the Content.</p>\n\n<p>If you did not receive this Content directly from the Eclipse Foundation, the Content is \nbeing redistributed by another party (&quot;Redistributor&quot;) and different terms and conditions may\napply to your use of any object code in the Content.  Check the Redistributor's license that was \nprovided with the Content.  If no such license exists, contact the Redistributor.  Unless otherwise\nindicated below, the terms and conditions of the EPL still apply to any source code in the Content\nand such source code may be obtained at <"
             },
@@ -1947,16 +1994,15 @@
               "matcher": "2-aho",
               "license_expression": "epl-1.0",
               "rule_identifier": "epl-1.0_7.RULE",
+              "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/epl-1.0_7.RULE",
               "matched_text": "https://www.eclipse.org/legal/epl-v10.html\">"
             }
-          ]
+          ],
+          "detection_log": []
         },
         {
           "license_expression": "cpl-1.0",
-          "detection_log": [
-            "unknown-intro-followed-by-match"
-          ],
           "matches": [
             {
               "score": 100.0,
@@ -1967,6 +2013,7 @@
               "matcher": "2-aho",
               "license_expression": "unknown-license-reference",
               "rule_identifier": "license-intro_35.RULE",
+              "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/license-intro_35.RULE",
               "matched_text": "subject to the terms and conditions"
             },
@@ -1979,6 +2026,7 @@
               "matcher": "2-aho",
               "license_expression": "cpl-1.0",
               "rule_identifier": "cpl-1.0_5.RULE",
+              "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/cpl-1.0_5.RULE",
               "matched_text": "Common Public License Version 1.0 (&"
             },
@@ -1991,6 +2039,7 @@
               "matcher": "3-seq",
               "license_expression": "cpl-1.0",
               "rule_identifier": "cpl-1.0_14.RULE",
+              "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/cpl-1.0_14.RULE",
               "matched_text": "available at <a href=\"https://www.eclipse.org/legal/cpl-v10.html\">https://www.eclipse.org/legal/cpl-v10.html</"
             },
@@ -2003,9 +2052,13 @@
               "matcher": "2-aho",
               "license_expression": "cpl-1.0",
               "rule_identifier": "cpl-1.0_24.RULE",
+              "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/cpl-1.0_24.RULE",
               "matched_text": "cpl-v10.html\">"
             }
+          ],
+          "detection_log": [
+            "unknown-intro-followed-by-match"
           ]
         }
       ],

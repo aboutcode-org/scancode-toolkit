@@ -29,9 +29,6 @@
     "license_detections": [
       {
         "license_expression": "gpl-1.0-plus",
-        "detection_log": [
-          "not-combined"
-        ],
         "matches": [
           {
             "score": 50.0,
@@ -42,10 +39,12 @@
             "matcher": "1-hash",
             "license_expression": "gpl-1.0-plus",
             "rule_identifier": "gpl_bare_word_only.RULE",
+            "rule_relevance": 50,
             "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl_bare_word_only.RULE",
             "matched_text": "GPL"
           }
-        ]
+        ],
+        "detection_log": []
       }
     ],
     "other_license_expression": null,
@@ -958,9 +957,6 @@
     "license_detections": [
       {
         "license_expression": "mit",
-        "detection_log": [
-          "not-combined"
-        ],
         "matches": [
           {
             "score": 100.0,
@@ -971,10 +967,12 @@
             "matcher": "1-spdx-id",
             "license_expression": "mit",
             "rule_identifier": "spdx-license-identifier-mit-5da48780aba670b0860c46d899ed42a0f243ff06",
+            "rule_relevance": 100,
             "rule_url": null,
             "matched_text": "MIT"
           }
-        ]
+        ],
+        "detection_log": []
       }
     ],
     "other_license_expression": null,

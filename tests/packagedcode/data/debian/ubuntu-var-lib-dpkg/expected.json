@@ -40,9 +40,6 @@
       "license_detections": [
         {
           "license_expression": "(lgpl-2.0-plus AND lgpl-3.0 AND gpl-1.0-plus AND gpl-3.0 AND gfdl-1.3) AND apache-2.0 AND bsd-new AND cc0-1.0 AND gfdl-1.2 AND gfdl-1.3 AND (gpl-1.0-plus AND gpl-2.0-plus AND lgpl-2.0-plus AND gfdl-1.1) AND gpl-1.0 AND (lgpl-2.0 AND lgpl-2.1) AND lgpl-3.0 AND mpl-1.1 AND mpl-2.0",
-          "detection_log": [
-            "from-package-file"
-          ],
           "matches": [
             {
               "score": 28.57,
@@ -53,6 +50,7 @@
               "matcher": "3-seq",
               "license_expression": "lgpl-2.0-plus AND lgpl-3.0 AND gpl-1.0-plus AND gpl-3.0 AND gfdl-1.3",
               "rule_identifier": "lgpl-2.0-plus_and_lgpl-3.0_and_gpl-1.0-plus_and_gpl-3.0_and_gfdl-1.3_1.RULE",
+              "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0-plus_and_lgpl-3.0_and_gpl-1.0-plus_and_gpl-3.0_and_gfdl-1.3_1.RULE",
               "matched_text": "/usr/share/common-licenses\n/usr/share/common-licenses/Apache-2.0\n/usr/share/common-licenses/Artistic\n/usr/share/common-licenses/BSD\n/usr/share/common-licenses/CC0-1.0\n/usr/share/common-licenses/GFDL-1.2"
             },
@@ -65,6 +63,7 @@
               "matcher": "2-aho",
               "license_expression": "apache-2.0",
               "rule_identifier": "apache-2.0_1086.RULE",
+              "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_1086.RULE",
               "matched_text": "/usr/share/common-licenses/Apache-2.0"
             },
@@ -77,6 +76,7 @@
               "matcher": "2-aho",
               "license_expression": "bsd-new",
               "rule_identifier": "bsd-new_1137.RULE",
+              "rule_relevance": 99,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_1137.RULE",
               "matched_text": "/usr/share/common-licenses/BSD"
             },
@@ -89,6 +89,7 @@
               "matcher": "2-aho",
               "license_expression": "cc0-1.0",
               "rule_identifier": "spdx_license_id_cc0-1.0_for_cc0-1.0.RULE",
+              "rule_relevance": 95,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/spdx_license_id_cc0-1.0_for_cc0-1.0.RULE",
               "matched_text": "/usr/share/common-licenses/CC0-1.0"
             },
@@ -101,6 +102,7 @@
               "matcher": "2-aho",
               "license_expression": "gfdl-1.2",
               "rule_identifier": "spdx_license_id_gfdl-1.2_for_gfdl-1.2.RULE",
+              "rule_relevance": 50,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/spdx_license_id_gfdl-1.2_for_gfdl-1.2.RULE",
               "matched_text": "/usr/share/common-licenses/GFDL-1.2"
             },
@@ -113,6 +115,7 @@
               "matcher": "2-aho",
               "license_expression": "gfdl-1.3",
               "rule_identifier": "spdx_license_id_gfdl-1.3_for_gfdl-1.3.RULE",
+              "rule_relevance": 50,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/spdx_license_id_gfdl-1.3_for_gfdl-1.3.RULE",
               "matched_text": "/usr/share/common-licenses/GFDL-1.3"
             },
@@ -125,6 +128,7 @@
               "matcher": "3-seq",
               "license_expression": "gpl-1.0-plus AND gpl-2.0-plus AND lgpl-2.0-plus AND gfdl-1.1",
               "rule_identifier": "debian_gpl_footer.RULE",
+              "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/debian_gpl_footer.RULE",
               "matched_text": "/usr/share/common-licenses/GPL-1\n/usr/share/common-licenses/GPL-2\n/usr/share/common-licenses/GPL-3\n/usr/share/common-licenses/LGPL-2"
             },
@@ -137,6 +141,7 @@
               "matcher": "2-aho",
               "license_expression": "gpl-1.0",
               "rule_identifier": "gpl-1.0_15.RULE",
+              "rule_relevance": 60,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-1.0_15.RULE",
               "matched_text": "/usr/share/common-licenses/GPL-1"
             },
@@ -149,6 +154,7 @@
               "matcher": "3-seq",
               "license_expression": "lgpl-2.0 AND lgpl-2.1",
               "rule_identifier": "lgpl-2.0_and_lgpl-2.1_5.RULE",
+              "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0_and_lgpl-2.1_5.RULE",
               "matched_text": "/usr/share/common-licenses/LGPL-2\n/usr/share/common-licenses/LGPL-2.1"
             },
@@ -161,6 +167,7 @@
               "matcher": "2-aho",
               "license_expression": "lgpl-3.0",
               "rule_identifier": "lgpl-3.0_41.RULE",
+              "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-3.0_41.RULE",
               "matched_text": "/usr/share/common-licenses/LGPL-3"
             },
@@ -173,6 +180,7 @@
               "matcher": "2-aho",
               "license_expression": "mpl-1.1",
               "rule_identifier": "spdx_license_id_mpl-1.1_for_mpl-1.1.RULE",
+              "rule_relevance": 50,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/spdx_license_id_mpl-1.1_for_mpl-1.1.RULE",
               "matched_text": "/usr/share/common-licenses/MPL-1.1"
             },
@@ -185,16 +193,17 @@
               "matcher": "2-aho",
               "license_expression": "mpl-2.0",
               "rule_identifier": "spdx_license_id_mpl-2.0_for_mpl-2.0.RULE",
+              "rule_relevance": 50,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/spdx_license_id_mpl-2.0_for_mpl-2.0.RULE",
               "matched_text": "/usr/share/common-licenses/MPL-2.0"
             }
+          ],
+          "detection_log": [
+            "from-package-file"
           ]
         },
         {
           "license_expression": "gpl-2.0 AND lgpl-2.0",
-          "detection_log": [
-            "from-package-file"
-          ],
           "matches": [
             {
               "score": 23.26,
@@ -205,9 +214,13 @@
               "matcher": "3-seq",
               "license_expression": "gpl-2.0 AND lgpl-2.0",
               "rule_identifier": "gpl-2.0_and_lgpl-2.0_4.RULE",
+              "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0_and_lgpl-2.0_4.RULE",
               "matched_text": "/usr/share/common-licenses/GPL\n/usr/share/common-licenses/LGPL"
             }
+          ],
+          "detection_log": [
+            "from-package-file"
           ]
         }
       ],
@@ -869,9 +882,6 @@
           "license_detections": [
             {
               "license_expression": "(lgpl-2.0-plus AND lgpl-3.0 AND gpl-1.0-plus AND gpl-3.0 AND gfdl-1.3) AND apache-2.0 AND bsd-new AND cc0-1.0 AND gfdl-1.2 AND gfdl-1.3 AND (gpl-1.0-plus AND gpl-2.0-plus AND lgpl-2.0-plus AND gfdl-1.1) AND gpl-1.0 AND (lgpl-2.0 AND lgpl-2.1) AND lgpl-3.0 AND mpl-1.1 AND mpl-2.0",
-              "detection_log": [
-                "from-package-file"
-              ],
               "matches": [
                 {
                   "score": 28.57,
@@ -882,6 +892,7 @@
                   "matcher": "3-seq",
                   "license_expression": "lgpl-2.0-plus AND lgpl-3.0 AND gpl-1.0-plus AND gpl-3.0 AND gfdl-1.3",
                   "rule_identifier": "lgpl-2.0-plus_and_lgpl-3.0_and_gpl-1.0-plus_and_gpl-3.0_and_gfdl-1.3_1.RULE",
+                  "rule_relevance": 100,
                   "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0-plus_and_lgpl-3.0_and_gpl-1.0-plus_and_gpl-3.0_and_gfdl-1.3_1.RULE",
                   "matched_text": "/usr/share/common-licenses\n/usr/share/common-licenses/Apache-2.0\n/usr/share/common-licenses/Artistic\n/usr/share/common-licenses/BSD\n/usr/share/common-licenses/CC0-1.0\n/usr/share/common-licenses/GFDL-1.2"
                 },
@@ -894,6 +905,7 @@
                   "matcher": "2-aho",
                   "license_expression": "apache-2.0",
                   "rule_identifier": "apache-2.0_1086.RULE",
+                  "rule_relevance": 100,
                   "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_1086.RULE",
                   "matched_text": "/usr/share/common-licenses/Apache-2.0"
                 },
@@ -906,6 +918,7 @@
                   "matcher": "2-aho",
                   "license_expression": "bsd-new",
                   "rule_identifier": "bsd-new_1137.RULE",
+                  "rule_relevance": 99,
                   "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_1137.RULE",
                   "matched_text": "/usr/share/common-licenses/BSD"
                 },
@@ -918,6 +931,7 @@
                   "matcher": "2-aho",
                   "license_expression": "cc0-1.0",
                   "rule_identifier": "spdx_license_id_cc0-1.0_for_cc0-1.0.RULE",
+                  "rule_relevance": 95,
                   "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/spdx_license_id_cc0-1.0_for_cc0-1.0.RULE",
                   "matched_text": "/usr/share/common-licenses/CC0-1.0"
                 },
@@ -930,6 +944,7 @@
                   "matcher": "2-aho",
                   "license_expression": "gfdl-1.2",
                   "rule_identifier": "spdx_license_id_gfdl-1.2_for_gfdl-1.2.RULE",
+                  "rule_relevance": 50,
                   "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/spdx_license_id_gfdl-1.2_for_gfdl-1.2.RULE",
                   "matched_text": "/usr/share/common-licenses/GFDL-1.2"
                 },
@@ -942,6 +957,7 @@
                   "matcher": "2-aho",
                   "license_expression": "gfdl-1.3",
                   "rule_identifier": "spdx_license_id_gfdl-1.3_for_gfdl-1.3.RULE",
+                  "rule_relevance": 50,
                   "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/spdx_license_id_gfdl-1.3_for_gfdl-1.3.RULE",
                   "matched_text": "/usr/share/common-licenses/GFDL-1.3"
                 },
@@ -954,6 +970,7 @@
                   "matcher": "3-seq",
                   "license_expression": "gpl-1.0-plus AND gpl-2.0-plus AND lgpl-2.0-plus AND gfdl-1.1",
                   "rule_identifier": "debian_gpl_footer.RULE",
+                  "rule_relevance": 100,
                   "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/debian_gpl_footer.RULE",
                   "matched_text": "/usr/share/common-licenses/GPL-1\n/usr/share/common-licenses/GPL-2\n/usr/share/common-licenses/GPL-3\n/usr/share/common-licenses/LGPL-2"
                 },
@@ -966,6 +983,7 @@
                   "matcher": "2-aho",
                   "license_expression": "gpl-1.0",
                   "rule_identifier": "gpl-1.0_15.RULE",
+                  "rule_relevance": 60,
                   "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-1.0_15.RULE",
                   "matched_text": "/usr/share/common-licenses/GPL-1"
                 },
@@ -978,6 +996,7 @@
                   "matcher": "3-seq",
                   "license_expression": "lgpl-2.0 AND lgpl-2.1",
                   "rule_identifier": "lgpl-2.0_and_lgpl-2.1_5.RULE",
+                  "rule_relevance": 100,
                   "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0_and_lgpl-2.1_5.RULE",
                   "matched_text": "/usr/share/common-licenses/LGPL-2\n/usr/share/common-licenses/LGPL-2.1"
                 },
@@ -990,6 +1009,7 @@
                   "matcher": "2-aho",
                   "license_expression": "lgpl-3.0",
                   "rule_identifier": "lgpl-3.0_41.RULE",
+                  "rule_relevance": 100,
                   "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-3.0_41.RULE",
                   "matched_text": "/usr/share/common-licenses/LGPL-3"
                 },
@@ -1002,6 +1022,7 @@
                   "matcher": "2-aho",
                   "license_expression": "mpl-1.1",
                   "rule_identifier": "spdx_license_id_mpl-1.1_for_mpl-1.1.RULE",
+                  "rule_relevance": 50,
                   "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/spdx_license_id_mpl-1.1_for_mpl-1.1.RULE",
                   "matched_text": "/usr/share/common-licenses/MPL-1.1"
                 },
@@ -1014,16 +1035,17 @@
                   "matcher": "2-aho",
                   "license_expression": "mpl-2.0",
                   "rule_identifier": "spdx_license_id_mpl-2.0_for_mpl-2.0.RULE",
+                  "rule_relevance": 50,
                   "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/spdx_license_id_mpl-2.0_for_mpl-2.0.RULE",
                   "matched_text": "/usr/share/common-licenses/MPL-2.0"
                 }
+              ],
+              "detection_log": [
+                "from-package-file"
               ]
             },
             {
               "license_expression": "gpl-2.0 AND lgpl-2.0",
-              "detection_log": [
-                "from-package-file"
-              ],
               "matches": [
                 {
                   "score": 23.26,
@@ -1034,9 +1056,13 @@
                   "matcher": "3-seq",
                   "license_expression": "gpl-2.0 AND lgpl-2.0",
                   "rule_identifier": "gpl-2.0_and_lgpl-2.0_4.RULE",
+                  "rule_relevance": 100,
                   "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0_and_lgpl-2.0_4.RULE",
                   "matched_text": "/usr/share/common-licenses/GPL\n/usr/share/common-licenses/LGPL"
                 }
+              ],
+              "detection_log": [
+                "from-package-file"
               ]
             }
           ],

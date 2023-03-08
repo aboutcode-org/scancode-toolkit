@@ -32,8 +32,6 @@ other_license_expression_spdx: BSD-3-Clause AND BSD-3-Clause AND (Apache-2.0 AND
 license_detections: []
 other_license_detections:
   - license_expression: apache-2.0
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 84
@@ -43,6 +41,7 @@ other_license_detections:
         matcher: 1-hash
         license_expression: apache-2.0
         rule_identifier: apache-2.0_65.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_65.RULE
         matched_text: 'License: apache-2.0'
       - score: '100.0'
@@ -53,6 +52,7 @@ other_license_detections:
         matcher: 2-aho
         license_expression: apache-2.0
         rule_identifier: apache-2.0_7.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_7.RULE
         matched_text: |
           Licensed under the Apache License, Version 2.0 (the "License");
@@ -74,13 +74,13 @@ other_license_detections:
         matcher: 2-aho
         license_expression: apache-2.0
         rule_identifier: apache-2.0_865.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_865.RULE
         matched_text: |
           On Debian systems, the complete text of the Apache version 2.0 license
           can be found in `/usr/share/common-licenses/Apache-2.0'.
+    detection_log: []
   - license_expression: mit
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 101
@@ -90,6 +90,7 @@ other_license_detections:
         matcher: 1-hash
         license_expression: mit
         rule_identifier: mit.LICENSE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE
         matched_text: |
           Permission is hereby granted, free of charge, to any person obtaining
@@ -110,9 +111,8 @@ other_license_detections:
           LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
           OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
           WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+    detection_log: []
   - license_expression: psf-2.0
-    detection_log:
-      - not-combined
     matches:
       - score: '89.1'
         start_line: 121
@@ -122,6 +122,7 @@ other_license_detections:
         matcher: 3-seq
         license_expression: psf-2.0
         rule_identifier: psf-2.0.LICENSE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/psf-2.0.LICENSE
         matched_text: |
           PYTHON SOFTWARE FOUNDATION LICENSE VERSION 2
@@ -173,9 +174,8 @@ other_license_detections:
 
           8. By copying, installing or otherwise using Baseconv, Licensee agrees
           to be bound by the terms and conditions of this License Agreement.
+    detection_log: []
   - license_expression: bsd-simplified
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 172
@@ -185,6 +185,7 @@ other_license_detections:
         matcher: 1-hash
         license_expression: bsd-simplified
         rule_identifier: bsd-simplified_16.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-simplified_16.RULE
         matched_text: |
           Redistribution and use in source and binary forms, with or without
@@ -207,9 +208,8 @@ other_license_detections:
           CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
           OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
           OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+    detection_log: []
   - license_expression: bsd-new
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: '194'
@@ -219,6 +219,7 @@ other_license_detections:
         matcher: 1-hash
         license_expression: bsd-new
         rule_identifier: bsd-new_1072.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_1072.RULE
         matched_text: |
           Redistribution and use in source and binary forms, with or without
@@ -245,9 +246,8 @@ other_license_detections:
           CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
           OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
           OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+    detection_log: []
   - license_expression: bsd-new
-    detection_log:
-      - not-combined
     matches:
       - score: '99.0'
         start_line: 76
@@ -257,8 +257,10 @@ other_license_detections:
         matcher: 2-aho
         license_expression: bsd-new
         rule_identifier: bsd-new_509.RULE
+        rule_relevance: 99
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_509.RULE
         matched_text: Software License Agreement (BSD License),
+    detection_log: []
 copyright: |
   Django Software Foundation and individual contributors
   2006-2008 Brett Parker <iDunno@sommitrealweird.co.uk>,

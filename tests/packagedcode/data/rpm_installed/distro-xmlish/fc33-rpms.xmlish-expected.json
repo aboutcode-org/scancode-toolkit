@@ -29,9 +29,6 @@
     "license_detections": [
       {
         "license_expression": "gpl-3.0-plus AND gpl-2.0-plus AND lgpl-2.0-plus",
-        "detection_log": [
-          "not-combined"
-        ],
         "matches": [
           {
             "score": 100.0,
@@ -42,6 +39,7 @@
             "matcher": "2-aho",
             "license_expression": "gpl-3.0-plus",
             "rule_identifier": "gpl-3.0-plus_28.RULE",
+            "rule_relevance": 100,
             "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0-plus_28.RULE",
             "matched_text": "GPLv3+ and GPLv3+ with exceptions and GPLv2+ with exceptions and LGPLv2+ and BSD"
           },
@@ -54,6 +52,7 @@
             "matcher": "2-aho",
             "license_expression": "gpl-3.0-plus",
             "rule_identifier": "gpl-3.0-plus_28.RULE",
+            "rule_relevance": 100,
             "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0-plus_28.RULE",
             "matched_text": "GPLv3+ and GPLv3+ with exceptions and GPLv2+ with exceptions and LGPLv2+ and BSD"
           },
@@ -66,6 +65,7 @@
             "matcher": "2-aho",
             "license_expression": "gpl-2.0-plus",
             "rule_identifier": "gpl-2.0-plus_bare_single_word.RULE",
+            "rule_relevance": 100,
             "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_bare_single_word.RULE",
             "matched_text": "GPLv3+ and GPLv3+ with exceptions and GPLv2+ with exceptions and LGPLv2+ and BSD"
           },
@@ -78,10 +78,12 @@
             "matcher": "2-aho",
             "license_expression": "lgpl-2.0-plus",
             "rule_identifier": "lgpl-2.0-plus_68.RULE",
+            "rule_relevance": 100,
             "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0-plus_68.RULE",
             "matched_text": "GPLv3+ and GPLv3+ with exceptions and GPLv2+ with exceptions and LGPLv2+ and BSD"
           }
-        ]
+        ],
+        "detection_log": []
       }
     ],
     "other_license_expression": null,
@@ -229,9 +231,6 @@
     "license_detections": [
       {
         "license_expression": "mit",
-        "detection_log": [
-          "not-combined"
-        ],
         "matches": [
           {
             "score": 100.0,
@@ -242,10 +241,12 @@
             "matcher": "1-spdx-id",
             "license_expression": "mit",
             "rule_identifier": "spdx-license-identifier-mit-5da48780aba670b0860c46d899ed42a0f243ff06",
+            "rule_relevance": 100,
             "rule_url": null,
             "matched_text": "MIT"
           }
-        ]
+        ],
+        "detection_log": []
       }
     ],
     "other_license_expression": null,

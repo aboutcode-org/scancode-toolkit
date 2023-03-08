@@ -41,9 +41,6 @@
     "license_detections": [
       {
         "license_expression": "python",
-        "detection_log": [
-          "not-combined"
-        ],
         "matches": [
           {
             "score": 80.0,
@@ -54,16 +51,15 @@
             "matcher": "1-hash",
             "license_expression": "python",
             "rule_identifier": "python_10.RULE",
+            "rule_relevance": 80,
             "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/python_10.RULE",
             "matched_text": "PSFL"
           }
-        ]
+        ],
+        "detection_log": []
       },
       {
         "license_expression": "bsd-new",
-        "detection_log": [
-          "not-combined"
-        ],
         "matches": [
           {
             "score": 99.0,
@@ -74,10 +70,12 @@
             "matcher": "1-hash",
             "license_expression": "bsd-new",
             "rule_identifier": "bsd-new_416.RULE",
+            "rule_relevance": 99,
             "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_416.RULE",
             "matched_text": "BSD3CLAUSE"
           }
-        ]
+        ],
+        "detection_log": []
       }
     ],
     "other_license_expression": null,

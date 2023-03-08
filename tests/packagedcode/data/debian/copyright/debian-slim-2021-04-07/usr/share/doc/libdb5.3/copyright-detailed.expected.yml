@@ -6,8 +6,6 @@ other_license_expression:
 other_license_expression_spdx:
 license_detections:
   - license_expression: sleepycat
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 5
@@ -17,6 +15,7 @@ license_detections:
         matcher: 2-aho
         license_expression: sleepycat
         rule_identifier: sleepycat_17.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/sleepycat_17.RULE
         matched_text: |
           http://www.oracle.com/technology/software/products/berkeley-db/db/index.html
@@ -27,9 +26,8 @@ license_detections:
           software.  For a license to use the Berkeley DB software under conditions
           other than those described here, or to purchase support for this software,
           please contact Oracle at berkeleydb-info_us@oracle.com.
+    detection_log: []
   - license_expression: sleepycat
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 18
@@ -39,6 +37,7 @@ license_detections:
         matcher: 2-aho
         license_expression: sleepycat
         rule_identifier: sleepycat_15.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/sleepycat_15.RULE
         matched_text: |
           Redistribution and use in source and binary forms, with or without
@@ -71,9 +70,8 @@ license_detections:
            * WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
            * OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
            * IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+    detection_log: []
   - license_expression: bsd-new
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 53
@@ -83,6 +81,7 @@ license_detections:
         matcher: 2-aho
         license_expression: bsd-new
         rule_identifier: bsd-new_19.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_19.RULE
         matched_text: |
           Redistribution and use in source and binary forms, with or without
@@ -108,9 +107,8 @@ license_detections:
            * LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
            * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
            * SUCH DAMAGE.
+    detection_log: []
   - license_expression: bsd-new
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 81
@@ -120,6 +118,7 @@ license_detections:
         matcher: 2-aho
         license_expression: bsd-new
         rule_identifier: bsd-new_943.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_943.RULE
         matched_text: |
           Redistribution and use in source and binary forms, with or without
@@ -145,9 +144,8 @@ license_detections:
            * LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
            * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
            * SUCH DAMAGE.
+    detection_log: []
   - license_expression: bsd-new
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 111
@@ -157,6 +155,7 @@ license_detections:
         matcher: 2-aho
         license_expression: bsd-new
         rule_identifier: bsd-new_115.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_115.RULE
         matched_text: |
           Redistribution and use in source and binary forms, with or without
@@ -182,6 +181,7 @@ license_detections:
            * CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
            * ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF
            * THE POSSIBILITY OF SUCH DAMAGE.
+    detection_log: []
 other_license_detections: []
 copyright: |
   Copyright (c) 1990, 2010 Oracle and/or its affiliates

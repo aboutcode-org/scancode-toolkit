@@ -28,9 +28,6 @@
       "license_detections": [
         {
           "license_expression": "unknown-license-reference",
-          "detection_log": [
-            "unknown-match"
-          ],
           "matches": [
             {
               "score": 80.0,
@@ -41,9 +38,13 @@
               "matcher": "1-hash",
               "license_expression": "unknown-license-reference",
               "rule_identifier": "unknown_license_other_12.RULE",
+              "rule_relevance": 80,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/unknown_license_other_12.RULE",
               "matched_text": "license Other"
             }
+          ],
+          "detection_log": [
+            "unknown-match"
           ]
         }
       ],
@@ -360,9 +361,6 @@
           "license_detections": [
             {
               "license_expression": "unknown-license-reference",
-              "detection_log": [
-                "unknown-match"
-              ],
               "matches": [
                 {
                   "score": 80.0,
@@ -373,9 +371,13 @@
                   "matcher": "1-hash",
                   "license_expression": "unknown-license-reference",
                   "rule_identifier": "unknown_license_other_12.RULE",
+                  "rule_relevance": 80,
                   "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/unknown_license_other_12.RULE",
                   "matched_text": "license Other"
                 }
+              ],
+              "detection_log": [
+                "unknown-match"
               ]
             }
           ],

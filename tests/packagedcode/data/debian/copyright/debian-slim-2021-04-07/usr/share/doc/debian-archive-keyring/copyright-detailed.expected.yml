@@ -5,8 +5,6 @@ other_license_expression:
 other_license_expression_spdx:
 license_detections:
   - license_expression: gpl-2.0-plus
-    detection_log:
-      - not-combined
     matches:
       - score: '90.0'
         start_line: 6
@@ -16,6 +14,7 @@ license_detections:
         matcher: 3-seq
         license_expression: gpl-2.0-plus
         rule_identifier: gpl-2.0-plus_306.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_306.RULE
         matched_text: "The keys in the keyrings don't fall under any copyright.  Everything\n\
           else in the package is covered by the GNU GPL.\n\nDebian support files Copyright (C)\
@@ -31,5 +30,6 @@ license_detections:
           \ or with the\nDebian GNU debian-archive-keyring source package as the file COPYING.\n\
           If not, write to the Free Software Foundation, Inc., 51 Franklin Street,\nFifth Floor,\
           \ Boston, MA 02110-1301 USA."
+    detection_log: []
 other_license_detections: []
 copyright: Copyright (c) 2006 Michael Vogt <mvo@debian.org>

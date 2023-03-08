@@ -10,8 +10,6 @@ other_license_expression_spdx: TCL AND LicenseRef-scancode-pngsuite
 license_detections: []
 other_license_detections:
   - license_expression: tcl
-    detection_log:
-      - not-combined
     matches:
       - score: '98.8'
         start_line: 13
@@ -21,6 +19,7 @@ other_license_detections:
         matcher: 3-seq
         license_expression: tcl
         rule_identifier: tcl_3.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/tcl_3.RULE
         matched_text: |
           This software is copyrighted by Jan Nijtmans (the maintainer)
@@ -64,9 +63,8 @@ other_license_detections:
           authors grant the U.S. Government and others acting in its behalf
           permission to use and distribute the software in accordance with the
           terms specified in this license.
+    detection_log: []
   - license_expression: pngsuite
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 56
@@ -76,10 +74,12 @@ other_license_detections:
         matcher: 1-hash
         license_expression: pngsuite
         rule_identifier: pngsuite.LICENSE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/pngsuite.LICENSE
         matched_text: |
           Permission to use, copy, modify, and distribute these images for any
           purpose and without fee is hereby granted.
+    detection_log: []
 copyright: |
   1997-2004 Jan Nijtmans
   1999, 2011 Willem van Schaik

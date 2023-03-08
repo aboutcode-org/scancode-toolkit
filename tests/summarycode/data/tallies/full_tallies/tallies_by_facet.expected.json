@@ -2211,9 +2211,6 @@
       "license_detections": [
         {
           "license_expression": "artistic-2.0",
-          "detection_log": [
-            "not-combined"
-          ],
           "matches": [
             {
               "score": 50.0,
@@ -2224,10 +2221,12 @@
               "matcher": "1-hash",
               "license_expression": "artistic-2.0",
               "rule_identifier": "spdx_license_id_artistic-2.0_for_artistic-2.0.RULE",
+              "rule_relevance": 50,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/spdx_license_id_artistic-2.0_for_artistic-2.0.RULE",
               "matched_text": "Artistic-2.0"
             }
-          ]
+          ],
+          "detection_log": []
         }
       ],
       "other_license_expression": null,
@@ -3334,10 +3333,7 @@
     {
       "identifier": "cc0_1_0-794566f2-c217-9ba1-42ef-36bf282ee01c",
       "license_expression": "cc0-1.0",
-      "count": 1,
-      "detection_log": [
-        "not-combined"
-      ],
+      "detection_count": 1,
       "matches": [
         {
           "score": 99.69,
@@ -3348,17 +3344,16 @@
           "matcher": "3-seq",
           "license_expression": "cc0-1.0",
           "rule_identifier": "cc0-1.0_155.RULE",
+          "rule_relevance": 100,
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/cc0-1.0_155.RULE"
         }
-      ]
+      ],
+      "detection_log": []
     },
     {
       "identifier": "artistic_2_0-3a21dc91-8930-074b-8e75-779c58660388",
       "license_expression": "artistic-2.0",
-      "count": 1,
-      "detection_log": [
-        "not-combined"
-      ],
+      "detection_count": 1,
       "matches": [
         {
           "score": 100.0,
@@ -3369,17 +3364,16 @@
           "matcher": "2-aho",
           "license_expression": "artistic-2.0",
           "rule_identifier": "artistic-2.0_46.RULE",
+          "rule_relevance": 100,
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/artistic-2.0_46.RULE"
         }
-      ]
+      ],
+      "detection_log": []
     },
     {
       "identifier": "zlib-40a07b45-2815-d501-b4b7-95c00453a3d4",
       "license_expression": "zlib",
-      "count": 9,
-      "detection_log": [
-        "not-combined"
-      ],
+      "detection_count": 9,
       "matches": [
         {
           "score": 100.0,
@@ -3390,17 +3384,16 @@
           "matcher": "2-aho",
           "license_expression": "zlib",
           "rule_identifier": "zlib_5.RULE",
+          "rule_relevance": 100,
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/zlib_5.RULE"
         }
-      ]
+      ],
+      "detection_log": []
     },
     {
       "identifier": "zlib-828c423f-cc46-4ae5-845c-125303c2a9a8",
       "license_expression": "zlib",
-      "count": 2,
-      "detection_log": [
-        "not-combined"
-      ],
+      "detection_count": 2,
       "matches": [
         {
           "score": 100.0,
@@ -3411,17 +3404,16 @@
           "matcher": "2-aho",
           "license_expression": "zlib",
           "rule_identifier": "zlib_17.RULE",
+          "rule_relevance": 100,
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/zlib_17.RULE"
         }
-      ]
+      ],
+      "detection_log": []
     },
     {
       "identifier": "lgpl_2_1_plus-86fcc420-6b71-a69f-93b5-54d76cab2087",
       "license_expression": "lgpl-2.1-plus",
-      "count": 3,
-      "detection_log": [
-        "not-combined"
-      ],
+      "detection_count": 3,
       "matches": [
         {
           "score": 100.0,
@@ -3432,17 +3424,16 @@
           "matcher": "2-aho",
           "license_expression": "lgpl-2.1-plus",
           "rule_identifier": "lgpl-2.1-plus_59.RULE",
+          "rule_relevance": 100,
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_59.RULE"
         }
-      ]
+      ],
+      "detection_log": []
     },
     {
       "identifier": "cc_by_2_5-61e7d014-1bbc-6439-6655-c6c3bbee9cd9",
       "license_expression": "cc-by-2.5",
-      "count": 1,
-      "detection_log": [
-        "not-combined"
-      ],
+      "detection_count": 1,
       "matches": [
         {
           "score": 100.0,
@@ -3453,17 +3444,16 @@
           "matcher": "2-aho",
           "license_expression": "cc-by-2.5",
           "rule_identifier": "cc-by-2.5_4.RULE",
+          "rule_relevance": 100,
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/cc-by-2.5_4.RULE"
         }
-      ]
+      ],
+      "detection_log": []
     },
     {
       "identifier": "gpl_2_0_plus_with_ada_linking_exception-97310180-3074-fb5b-0bc8-9e82438a60bb",
       "license_expression": "gpl-2.0-plus WITH ada-linking-exception",
-      "count": 1,
-      "detection_log": [
-        "not-combined"
-      ],
+      "detection_count": 1,
       "matches": [
         {
           "score": 100.0,
@@ -3474,17 +3464,16 @@
           "matcher": "2-aho",
           "license_expression": "gpl-2.0-plus WITH ada-linking-exception",
           "rule_identifier": "gpl-2.0-plus_with_ada-linking-exception_1.RULE",
+          "rule_relevance": 100,
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_with_ada-linking-exception_1.RULE"
         }
-      ]
+      ],
+      "detection_log": []
     },
     {
       "identifier": "boost_1_0-b055ee6f-43f9-b780-3033-fd33f02b6e1d",
       "license_expression": "boost-1.0",
-      "count": 1,
-      "detection_log": [
-        "not-combined"
-      ],
+      "detection_count": 1,
       "matches": [
         {
           "score": 100.0,
@@ -3495,17 +3484,16 @@
           "matcher": "2-aho",
           "license_expression": "boost-1.0",
           "rule_identifier": "boost-1.0_21.RULE",
+          "rule_relevance": 100,
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/boost-1.0_21.RULE"
         }
-      ]
+      ],
+      "detection_log": []
     },
     {
       "identifier": "zlib-2a6f2066-9dae-b0a2-b93f-2e5391409d93",
       "license_expression": "zlib",
-      "count": 1,
-      "detection_log": [
-        "not-combined"
-      ],
+      "detection_count": 1,
       "matches": [
         {
           "score": 100.0,
@@ -3516,17 +3504,16 @@
           "matcher": "2-aho",
           "license_expression": "zlib",
           "rule_identifier": "zlib.LICENSE",
+          "rule_relevance": 100,
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/zlib.LICENSE"
         }
-      ]
+      ],
+      "detection_log": []
     },
     {
       "identifier": "mit_old_style-916f4423-80fb-1f12-06b7-dcbf35dcfb3d",
       "license_expression": "mit-old-style",
-      "count": 1,
-      "detection_log": [
-        "not-combined"
-      ],
+      "detection_count": 1,
       "matches": [
         {
           "score": 100.0,
@@ -3537,9 +3524,11 @@
           "matcher": "2-aho",
           "license_expression": "mit-old-style",
           "rule_identifier": "mit-old-style_cmr-no_1.RULE",
+          "rule_relevance": 100,
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit-old-style_cmr-no_1.RULE"
         }
-      ]
+      ],
+      "detection_log": []
     }
   ],
   "tallies": {
@@ -4793,9 +4782,6 @@
       "license_detections": [
         {
           "license_expression": "lgpl-2.1-plus",
-          "detection_log": [
-            "not-combined"
-          ],
           "matches": [
             {
               "score": 100.0,
@@ -4806,9 +4792,11 @@
               "matcher": "2-aho",
               "license_expression": "lgpl-2.1-plus",
               "rule_identifier": "lgpl-2.1-plus_59.RULE",
+              "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_59.RULE"
             }
-          ]
+          ],
+          "detection_log": []
         }
       ],
       "license_clues": [],
@@ -4875,9 +4863,6 @@
       "license_detections": [
         {
           "license_expression": "cc-by-2.5",
-          "detection_log": [
-            "not-combined"
-          ],
           "matches": [
             {
               "score": 100.0,
@@ -4888,9 +4873,11 @@
               "matcher": "2-aho",
               "license_expression": "cc-by-2.5",
               "rule_identifier": "cc-by-2.5_4.RULE",
+              "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/cc-by-2.5_4.RULE"
             }
-          ]
+          ],
+          "detection_log": []
         }
       ],
       "license_clues": [],
@@ -4968,9 +4955,6 @@
       "license_detections": [
         {
           "license_expression": "lgpl-2.1-plus",
-          "detection_log": [
-            "not-combined"
-          ],
           "matches": [
             {
               "score": 100.0,
@@ -4981,9 +4965,11 @@
               "matcher": "2-aho",
               "license_expression": "lgpl-2.1-plus",
               "rule_identifier": "lgpl-2.1-plus_59.RULE",
+              "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_59.RULE"
             }
-          ]
+          ],
+          "detection_log": []
         }
       ],
       "license_clues": [],
@@ -5146,9 +5132,6 @@
       "license_detections": [
         {
           "license_expression": "lgpl-2.1-plus",
-          "detection_log": [
-            "not-combined"
-          ],
           "matches": [
             {
               "score": 100.0,
@@ -5159,9 +5142,11 @@
               "matcher": "2-aho",
               "license_expression": "lgpl-2.1-plus",
               "rule_identifier": "lgpl-2.1-plus_59.RULE",
+              "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_59.RULE"
             }
-          ]
+          ],
+          "detection_log": []
         }
       ],
       "license_clues": [],
@@ -5369,9 +5354,6 @@
       "license_detections": [
         {
           "license_expression": "zlib",
-          "detection_log": [
-            "unknown-reference-to-local-file"
-          ],
           "matches": [
             {
               "score": 100.0,
@@ -5382,6 +5364,7 @@
               "matcher": "2-aho",
               "license_expression": "zlib",
               "rule_identifier": "zlib_5.RULE",
+              "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/zlib_5.RULE"
             },
             {
@@ -5393,8 +5376,12 @@
               "matcher": "2-aho",
               "license_expression": "zlib",
               "rule_identifier": "zlib_17.RULE",
+              "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/zlib_17.RULE"
             }
+          ],
+          "detection_log": [
+            "unknown-reference-to-local-file"
           ]
         }
       ],
@@ -5456,9 +5443,6 @@
       "license_detections": [
         {
           "license_expression": "zlib",
-          "detection_log": [
-            "not-combined"
-          ],
           "matches": [
             {
               "score": 100.0,
@@ -5469,9 +5453,11 @@
               "matcher": "2-aho",
               "license_expression": "zlib",
               "rule_identifier": "zlib_17.RULE",
+              "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/zlib_17.RULE"
             }
-          ]
+          ],
+          "detection_log": []
         }
       ],
       "license_clues": [],
@@ -5549,9 +5535,6 @@
       "license_detections": [
         {
           "license_expression": "zlib",
-          "detection_log": [
-            "unknown-reference-to-local-file"
-          ],
           "matches": [
             {
               "score": 100.0,
@@ -5562,6 +5545,7 @@
               "matcher": "2-aho",
               "license_expression": "zlib",
               "rule_identifier": "zlib_5.RULE",
+              "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/zlib_5.RULE"
             },
             {
@@ -5573,8 +5557,12 @@
               "matcher": "2-aho",
               "license_expression": "zlib",
               "rule_identifier": "zlib_17.RULE",
+              "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/zlib_17.RULE"
             }
+          ],
+          "detection_log": [
+            "unknown-reference-to-local-file"
           ]
         }
       ],
@@ -5636,9 +5624,6 @@
       "license_detections": [
         {
           "license_expression": "cc0-1.0",
-          "detection_log": [
-            "not-combined"
-          ],
           "matches": [
             {
               "score": 99.69,
@@ -5649,9 +5634,11 @@
               "matcher": "3-seq",
               "license_expression": "cc0-1.0",
               "rule_identifier": "cc0-1.0_155.RULE",
+              "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/cc0-1.0_155.RULE"
             }
-          ]
+          ],
+          "detection_log": []
         }
       ],
       "license_clues": [],
@@ -7903,9 +7890,6 @@
           "license_detections": [
             {
               "license_expression": "artistic-2.0",
-              "detection_log": [
-                "not-combined"
-              ],
               "matches": [
                 {
                   "score": 50.0,
@@ -7916,10 +7900,12 @@
                   "matcher": "1-hash",
                   "license_expression": "artistic-2.0",
                   "rule_identifier": "spdx_license_id_artistic-2.0_for_artistic-2.0.RULE",
+                  "rule_relevance": 50,
                   "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/spdx_license_id_artistic-2.0_for_artistic-2.0.RULE",
                   "matched_text": "Artistic-2.0"
                 }
-              ]
+              ],
+              "detection_log": []
             }
           ],
           "other_license_expression": null,
@@ -8717,9 +8703,6 @@
       "license_detections": [
         {
           "license_expression": "artistic-2.0",
-          "detection_log": [
-            "not-combined"
-          ],
           "matches": [
             {
               "score": 100.0,
@@ -8730,9 +8713,11 @@
               "matcher": "2-aho",
               "license_expression": "artistic-2.0",
               "rule_identifier": "artistic-2.0_46.RULE",
+              "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/artistic-2.0_46.RULE"
             }
-          ]
+          ],
+          "detection_log": []
         }
       ],
       "license_clues": [],
@@ -9149,9 +9134,6 @@
       "license_detections": [
         {
           "license_expression": "gpl-2.0-plus WITH ada-linking-exception",
-          "detection_log": [
-            "not-combined"
-          ],
           "matches": [
             {
               "score": 100.0,
@@ -9162,9 +9144,11 @@
               "matcher": "2-aho",
               "license_expression": "gpl-2.0-plus WITH ada-linking-exception",
               "rule_identifier": "gpl-2.0-plus_with_ada-linking-exception_1.RULE",
+              "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_with_ada-linking-exception_1.RULE"
             }
-          ]
+          ],
+          "detection_log": []
         }
       ],
       "license_clues": [],
@@ -9225,9 +9209,6 @@
       "license_detections": [
         {
           "license_expression": "zlib",
-          "detection_log": [
-            "unknown-reference-to-local-file"
-          ],
           "matches": [
             {
               "score": 100.0,
@@ -9238,6 +9219,7 @@
               "matcher": "2-aho",
               "license_expression": "zlib",
               "rule_identifier": "zlib_5.RULE",
+              "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/zlib_5.RULE"
             },
             {
@@ -9249,8 +9231,12 @@
               "matcher": "2-aho",
               "license_expression": "zlib",
               "rule_identifier": "zlib_17.RULE",
+              "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/zlib_17.RULE"
             }
+          ],
+          "detection_log": [
+            "unknown-reference-to-local-file"
           ]
         }
       ],
@@ -9312,9 +9298,6 @@
       "license_detections": [
         {
           "license_expression": "zlib",
-          "detection_log": [
-            "unknown-reference-to-local-file"
-          ],
           "matches": [
             {
               "score": 100.0,
@@ -9325,6 +9308,7 @@
               "matcher": "2-aho",
               "license_expression": "zlib",
               "rule_identifier": "zlib_5.RULE",
+              "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/zlib_5.RULE"
             },
             {
@@ -9336,8 +9320,12 @@
               "matcher": "2-aho",
               "license_expression": "zlib",
               "rule_identifier": "zlib_17.RULE",
+              "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/zlib_17.RULE"
             }
+          ],
+          "detection_log": [
+            "unknown-reference-to-local-file"
           ]
         }
       ],
@@ -9399,9 +9387,6 @@
       "license_detections": [
         {
           "license_expression": "zlib",
-          "detection_log": [
-            "unknown-reference-to-local-file"
-          ],
           "matches": [
             {
               "score": 100.0,
@@ -9412,6 +9397,7 @@
               "matcher": "2-aho",
               "license_expression": "zlib",
               "rule_identifier": "zlib_5.RULE",
+              "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/zlib_5.RULE"
             },
             {
@@ -9423,8 +9409,12 @@
               "matcher": "2-aho",
               "license_expression": "zlib",
               "rule_identifier": "zlib_17.RULE",
+              "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/zlib_17.RULE"
             }
+          ],
+          "detection_log": [
+            "unknown-reference-to-local-file"
           ]
         }
       ],
@@ -9580,9 +9570,6 @@
       "license_detections": [
         {
           "license_expression": "boost-1.0",
-          "detection_log": [
-            "not-combined"
-          ],
           "matches": [
             {
               "score": 100.0,
@@ -9593,9 +9580,11 @@
               "matcher": "2-aho",
               "license_expression": "boost-1.0",
               "rule_identifier": "boost-1.0_21.RULE",
+              "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/boost-1.0_21.RULE"
             }
-          ]
+          ],
+          "detection_log": []
         }
       ],
       "license_clues": [],
@@ -9702,9 +9691,6 @@
       "license_detections": [
         {
           "license_expression": "zlib",
-          "detection_log": [
-            "not-combined"
-          ],
           "matches": [
             {
               "score": 100.0,
@@ -9715,9 +9701,11 @@
               "matcher": "2-aho",
               "license_expression": "zlib",
               "rule_identifier": "zlib.LICENSE",
+              "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/zlib.LICENSE"
             }
-          ]
+          ],
+          "detection_log": []
         }
       ],
       "license_clues": [],
@@ -9840,9 +9828,6 @@
       "license_detections": [
         {
           "license_expression": "zlib",
-          "detection_log": [
-            "not-combined"
-          ],
           "matches": [
             {
               "score": 100.0,
@@ -9853,9 +9838,11 @@
               "matcher": "2-aho",
               "license_expression": "zlib",
               "rule_identifier": "zlib_5.RULE",
+              "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/zlib_5.RULE"
             }
-          ]
+          ],
+          "detection_log": []
         }
       ],
       "license_clues": [],
@@ -9916,9 +9903,6 @@
       "license_detections": [
         {
           "license_expression": "zlib",
-          "detection_log": [
-            "not-combined"
-          ],
           "matches": [
             {
               "score": 100.0,
@@ -9929,9 +9913,11 @@
               "matcher": "2-aho",
               "license_expression": "zlib",
               "rule_identifier": "zlib_5.RULE",
+              "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/zlib_5.RULE"
             }
-          ]
+          ],
+          "detection_log": []
         }
       ],
       "license_clues": [],
@@ -10032,9 +10018,6 @@
       "license_detections": [
         {
           "license_expression": "mit-old-style",
-          "detection_log": [
-            "not-combined"
-          ],
           "matches": [
             {
               "score": 100.0,
@@ -10045,9 +10028,11 @@
               "matcher": "2-aho",
               "license_expression": "mit-old-style",
               "rule_identifier": "mit-old-style_cmr-no_1.RULE",
+              "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit-old-style_cmr-no_1.RULE"
             }
-          ]
+          ],
+          "detection_log": []
         }
       ],
       "license_clues": [],
@@ -10114,9 +10099,6 @@
       "license_detections": [
         {
           "license_expression": "zlib",
-          "detection_log": [
-            "not-combined"
-          ],
           "matches": [
             {
               "score": 100.0,
@@ -10127,9 +10109,11 @@
               "matcher": "2-aho",
               "license_expression": "zlib",
               "rule_identifier": "zlib_17.RULE",
+              "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/zlib_17.RULE"
             }
-          ]
+          ],
+          "detection_log": []
         }
       ],
       "license_clues": [],
@@ -10201,9 +10185,6 @@
       "license_detections": [
         {
           "license_expression": "zlib",
-          "detection_log": [
-            "unknown-reference-to-local-file"
-          ],
           "matches": [
             {
               "score": 100.0,
@@ -10214,6 +10195,7 @@
               "matcher": "2-aho",
               "license_expression": "zlib",
               "rule_identifier": "zlib_5.RULE",
+              "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/zlib_5.RULE"
             },
             {
@@ -10225,8 +10207,12 @@
               "matcher": "2-aho",
               "license_expression": "zlib",
               "rule_identifier": "zlib_17.RULE",
+              "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/zlib_17.RULE"
             }
+          ],
+          "detection_log": [
+            "unknown-reference-to-local-file"
           ]
         }
       ],
@@ -10288,9 +10274,6 @@
       "license_detections": [
         {
           "license_expression": "zlib",
-          "detection_log": [
-            "unknown-reference-to-local-file"
-          ],
           "matches": [
             {
               "score": 100.0,
@@ -10301,6 +10284,7 @@
               "matcher": "2-aho",
               "license_expression": "zlib",
               "rule_identifier": "zlib_5.RULE",
+              "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/zlib_5.RULE"
             },
             {
@@ -10312,8 +10296,12 @@
               "matcher": "2-aho",
               "license_expression": "zlib",
               "rule_identifier": "zlib_17.RULE",
+              "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/zlib_17.RULE"
             }
+          ],
+          "detection_log": [
+            "unknown-reference-to-local-file"
           ]
         }
       ],

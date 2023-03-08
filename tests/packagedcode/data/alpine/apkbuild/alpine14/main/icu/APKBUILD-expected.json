@@ -26,9 +26,6 @@
   "license_detections": [
     {
       "license_expression": "mit AND x11 AND unicode-tou",
-      "detection_log": [
-        "not-combined"
-      ],
       "matches": [
         {
           "score": 100.0,
@@ -39,10 +36,12 @@
           "matcher": "1-spdx-id",
           "license_expression": "mit AND x11 AND unicode-tou",
           "rule_identifier": "spdx-license-identifier-mit AND x11 AND unicode-tou-04c03ffc5d87121ab71914d00034fdd4a46eb02c",
+          "rule_relevance": 100,
           "rule_url": null,
           "matched_text": "mit AND icu AND unicode-tou"
         }
-      ]
+      ],
+      "detection_log": []
     }
   ],
   "other_license_expression": null,

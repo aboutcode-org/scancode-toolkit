@@ -5,8 +5,6 @@ other_license_expression:
 other_license_expression_spdx:
 license_detections:
   - license_expression: pcre
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 7
@@ -16,11 +14,11 @@ license_detections:
         matcher: 2-aho
         license_expression: pcre
         rule_identifier: pcre_4.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/pcre_4.RULE
         matched_text: PCRE LICENCE
+    detection_log: []
   - license_expression: bsd-new
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 13
@@ -30,14 +28,14 @@ license_detections:
         matcher: 2-aho
         license_expression: bsd-new
         rule_identifier: bsd-new_645.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_645.RULE
         matched_text: |
           PCRE is distributed under the terms of the "BSD" licence, as
           specified below. The documentation for PCRE, supplied in the "doc"
           directory, is distributed under the same terms as the software itself.
+    detection_log: []
   - license_expression: bsd-new
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 44
@@ -47,6 +45,7 @@ license_detections:
         matcher: 2-aho
         license_expression: bsd-new
         rule_identifier: bsd-new_1105.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_1105.RULE
         matched_text: |
           THE "BSD" LICENCE
@@ -78,6 +77,7 @@ license_detections:
           CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
           ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
           POSSIBILITY OF SUCH DAMAGE.
+    detection_log: []
 other_license_detections: []
 copyright: |
   Copyright (c) 1997-2007 University of Cambridge

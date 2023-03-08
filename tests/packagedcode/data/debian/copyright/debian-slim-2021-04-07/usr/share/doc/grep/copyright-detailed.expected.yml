@@ -10,8 +10,6 @@ other_license_expression_spdx: (GPL-3.0-or-later AND GPL-3.0-or-later) AND (GPL-
 license_detections: []
 other_license_detections:
   - license_expression: gpl-3.0-plus
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 23
@@ -21,6 +19,7 @@ other_license_detections:
         matcher: 1-hash
         license_expression: gpl-3.0-plus
         rule_identifier: gpl-3.0-plus_92.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0-plus_92.RULE
         matched_text: 'License: gpl-3+'
       - score: '100.0'
@@ -31,6 +30,7 @@ other_license_detections:
         matcher: 2-aho
         license_expression: gpl-3.0-plus
         rule_identifier: gpl-3.0-plus_481.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0-plus_481.RULE
         matched_text: |
           This program is free software; you can redistribute it and/or modify
@@ -52,6 +52,7 @@ other_license_detections:
 
           On a Debian system you can find a copy of this license in
           /usr/share/common-licenses/GPL-3.
+    detection_log: []
 copyright: |
   1992, 1997-2002, 2004-2012 Free Software Foundation, Inc.
   2004, Stepan Kasal <kasal@ucw.cz>

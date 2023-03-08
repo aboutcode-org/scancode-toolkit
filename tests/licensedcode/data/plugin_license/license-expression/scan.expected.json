@@ -3,10 +3,7 @@
     {
       "identifier": "apache_1_0-d4337a34-511e-9f2b-5043-e1bab484ff7d",
       "license_expression": "apache-1.0",
-      "count": 1,
-      "detection_log": [
-        "not-combined"
-      ],
+      "detection_count": 1,
       "matches": [
         {
           "score": 100.0,
@@ -17,17 +14,16 @@
           "matcher": "2-aho",
           "license_expression": "apache-1.0",
           "rule_identifier": "apache-1.0.LICENSE",
+          "rule_relevance": 100,
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-1.0.LICENSE"
         }
-      ]
+      ],
+      "detection_log": []
     },
     {
       "identifier": "gpl_2_0_with_linux_syscall_exception_gpl_or_linux_openib-a9a9c6d7-552f-6784-5c60-e9e164ab2047",
       "license_expression": "gpl-2.0 WITH linux-syscall-exception-gpl OR linux-openib",
-      "count": 1,
-      "detection_log": [
-        "not-combined"
-      ],
+      "detection_count": 1,
       "matches": [
         {
           "score": 100.0,
@@ -38,9 +34,11 @@
           "matcher": "1-spdx-id",
           "license_expression": "gpl-2.0 WITH linux-syscall-exception-gpl OR linux-openib",
           "rule_identifier": "spdx-license-identifier-gpl-2.0 WITH linux-syscall-exception-gpl OR linux-openib-258b785d25f606282f8c2f4ed6e51a66b60b7f16",
+          "rule_relevance": 100,
           "rule_url": null
         }
-      ]
+      ],
+      "detection_log": []
     }
   ],
   "license_references": [
@@ -290,9 +288,6 @@
       "license_detections": [
         {
           "license_expression": "apache-1.0",
-          "detection_log": [
-            "not-combined"
-          ],
           "matches": [
             {
               "score": 100.0,
@@ -303,9 +298,11 @@
               "matcher": "2-aho",
               "license_expression": "apache-1.0",
               "rule_identifier": "apache-1.0.LICENSE",
+              "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-1.0.LICENSE"
             }
-          ]
+          ],
+          "detection_log": []
         }
       ],
       "license_clues": [],
@@ -323,9 +320,6 @@
       "license_detections": [
         {
           "license_expression": "gpl-2.0 WITH linux-syscall-exception-gpl OR linux-openib",
-          "detection_log": [
-            "not-combined"
-          ],
           "matches": [
             {
               "score": 100.0,
@@ -336,9 +330,11 @@
               "matcher": "1-spdx-id",
               "license_expression": "gpl-2.0 WITH linux-syscall-exception-gpl OR linux-openib",
               "rule_identifier": "spdx-license-identifier-gpl-2.0 WITH linux-syscall-exception-gpl OR linux-openib-4099cddf665e1c4068ae21bd191fabfb71b7c536",
+              "rule_relevance": 100,
               "rule_url": null
             }
-          ]
+          ],
+          "detection_log": []
         }
       ],
       "license_clues": [],

@@ -8,8 +8,6 @@ other_license_expression_spdx: bzip2-1.0.6 AND (GPL-2.0-only AND GPL-2.0-only)
 license_detections: []
 other_license_detections:
   - license_expression: bzip2-libbzip-2010
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 8
@@ -19,6 +17,7 @@ other_license_detections:
         matcher: 1-hash
         license_expression: bzip2-libbzip-2010
         rule_identifier: bzip2-libbzip-2010.LICENSE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bzip2-libbzip-2010.LICENSE
         matched_text: |
           Redistribution and use in source and binary forms, with or without
@@ -51,9 +50,8 @@ other_license_detections:
           WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
           NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
           SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+    detection_log: []
   - license_expression: gpl-2.0
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 46
@@ -63,6 +61,7 @@ other_license_detections:
         matcher: 1-hash
         license_expression: gpl-2.0
         rule_identifier: gpl-2.0_561.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0_561.RULE
         matched_text: 'License: gpl-2'
       - score: '100.0'
@@ -73,10 +72,12 @@ other_license_detections:
         matcher: 1-hash
         license_expression: gpl-2.0
         rule_identifier: gpl-2.0_1294.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0_1294.RULE
         matched_text: |
           The full text of the GNU General Public License version 2
           can be found in /usr/share/common-licenses/GPL-2.
+    detection_log: []
 copyright: |
   1996-2010 Julian R Seward <jseward@bzip.org>
   2018 Nicolas Boulenguez <nicolas.boulenguez@free.fr>

@@ -9,8 +9,6 @@ other_license_expression_spdx: Sendmail AND Sendmail
 license_detections: []
 other_license_detections:
   - license_expression: sendmail
-    detection_log:
-      - not-combined
     matches:
       - score: '97.65'
         start_line: '19'
@@ -20,6 +18,7 @@ other_license_detections:
         matcher: 3-seq
         license_expression: sendmail
         rule_identifier: sendmail-2014.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/sendmail-2014.RULE
         matched_text: |
           SENDMAIL LICENSE
@@ -103,6 +102,7 @@ other_license_detections:
              THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.
 
           $Revision: 8.
+    detection_log: []
 copyright: |
   Copyright (c) 1998-2015 Proofpoint, Inc. and its suppliers. All rights reserved.
   Copyright (c) 1983, 1995-1997 Eric P. Allman. All rights reserved.

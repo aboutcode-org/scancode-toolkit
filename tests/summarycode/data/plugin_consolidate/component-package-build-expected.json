@@ -73,9 +73,6 @@
       "license_detections": [
         {
           "license_expression": "apache-2.0",
-          "detection_log": [
-            "not-combined"
-          ],
           "matches": [
             {
               "score": 100.0,
@@ -86,10 +83,12 @@
               "matcher": "1-hash",
               "license_expression": "apache-2.0",
               "rule_identifier": "spdx_license_id_apache-2.0_for_apache-2.0.RULE",
+              "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/spdx_license_id_apache-2.0_for_apache-2.0.RULE",
               "matched_text": "apache-2.0"
             }
-          ]
+          ],
+          "detection_log": []
         }
       ],
       "other_license_expression": null,
@@ -117,10 +116,7 @@
     {
       "identifier": "apache_2_0-977175b5-d3f3-74fb-7e96-840fd1e302fd",
       "license_expression": "apache-2.0",
-      "count": 4,
-      "detection_log": [
-        "not-combined"
-      ],
+      "detection_count": 4,
       "matches": [
         {
           "score": 100.0,
@@ -131,17 +127,16 @@
           "matcher": "2-aho",
           "license_expression": "apache-2.0",
           "rule_identifier": "spdx_license_id_apache-2.0_for_apache-2.0.RULE",
+          "rule_relevance": 100,
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/spdx_license_id_apache-2.0_for_apache-2.0.RULE"
         }
-      ]
+      ],
+      "detection_log": []
     },
     {
       "identifier": "lgpl_2_0-e79c760a-4db6-59b3-dd10-9972f52099b3",
       "license_expression": "lgpl-2.0",
-      "count": 1,
-      "detection_log": [
-        "not-combined"
-      ],
+      "detection_count": 1,
       "matches": [
         {
           "score": 80.0,
@@ -152,17 +147,16 @@
           "matcher": "2-aho",
           "license_expression": "lgpl-2.0",
           "rule_identifier": "lgpl-2.0_bare_id.RULE",
+          "rule_relevance": 80,
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0_bare_id.RULE"
         }
-      ]
+      ],
+      "detection_log": []
     },
     {
       "identifier": "apache_2_0-0327b43c-6cf8-4fc1-7f3e-4c29b555583a",
       "license_expression": "apache-2.0",
-      "count": 1,
-      "detection_log": [
-        "not-combined"
-      ],
+      "detection_count": 1,
       "matches": [
         {
           "score": 100.0,
@@ -173,17 +167,16 @@
           "matcher": "2-aho",
           "license_expression": "apache-2.0",
           "rule_identifier": "apache-2.0_65.RULE",
+          "rule_relevance": 100,
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_65.RULE"
         }
-      ]
+      ],
+      "detection_log": []
     },
     {
       "identifier": "gpl_2_0-e293df00-fb0e-b85c-3954-566507e97888",
       "license_expression": "gpl-2.0",
-      "count": 1,
-      "detection_log": [
-        "not-combined"
-      ],
+      "detection_count": 1,
       "matches": [
         {
           "score": 100.0,
@@ -194,9 +187,11 @@
           "matcher": "2-aho",
           "license_expression": "gpl-2.0",
           "rule_identifier": "gpl-2.0_1336.RULE",
+          "rule_relevance": 100,
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0_1336.RULE"
         }
-      ]
+      ],
+      "detection_log": []
     }
   ],
   "consolidated_components": [
@@ -744,9 +739,6 @@
       "license_detections": [
         {
           "license_expression": "apache-2.0",
-          "detection_log": [
-            "not-combined"
-          ],
           "matches": [
             {
               "score": 100.0,
@@ -757,9 +749,11 @@
               "matcher": "2-aho",
               "license_expression": "apache-2.0",
               "rule_identifier": "spdx_license_id_apache-2.0_for_apache-2.0.RULE",
+              "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/spdx_license_id_apache-2.0_for_apache-2.0.RULE"
             }
-          ]
+          ],
+          "detection_log": []
         }
       ],
       "license_clues": [],
@@ -816,9 +810,6 @@
       "license_detections": [
         {
           "license_expression": "apache-2.0",
-          "detection_log": [
-            "not-combined"
-          ],
           "matches": [
             {
               "score": 100.0,
@@ -829,9 +820,11 @@
               "matcher": "2-aho",
               "license_expression": "apache-2.0",
               "rule_identifier": "spdx_license_id_apache-2.0_for_apache-2.0.RULE",
+              "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/spdx_license_id_apache-2.0_for_apache-2.0.RULE"
             }
-          ]
+          ],
+          "detection_log": []
         }
       ],
       "license_clues": [],
@@ -888,9 +881,6 @@
       "license_detections": [
         {
           "license_expression": "apache-2.0",
-          "detection_log": [
-            "not-combined"
-          ],
           "matches": [
             {
               "score": 100.0,
@@ -901,9 +891,11 @@
               "matcher": "2-aho",
               "license_expression": "apache-2.0",
               "rule_identifier": "spdx_license_id_apache-2.0_for_apache-2.0.RULE",
+              "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/spdx_license_id_apache-2.0_for_apache-2.0.RULE"
             }
-          ]
+          ],
+          "detection_log": []
         }
       ],
       "license_clues": [],
@@ -960,9 +952,6 @@
       "license_detections": [
         {
           "license_expression": "lgpl-2.0",
-          "detection_log": [
-            "not-combined"
-          ],
           "matches": [
             {
               "score": 80.0,
@@ -973,9 +962,11 @@
               "matcher": "2-aho",
               "license_expression": "lgpl-2.0",
               "rule_identifier": "lgpl-2.0_bare_id.RULE",
+              "rule_relevance": 80,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0_bare_id.RULE"
             }
-          ]
+          ],
+          "detection_log": []
         }
       ],
       "license_clues": [],
@@ -1093,9 +1084,6 @@
           "license_detections": [
             {
               "license_expression": "apache-2.0",
-              "detection_log": [
-                "not-combined"
-              ],
               "matches": [
                 {
                   "score": 100.0,
@@ -1106,10 +1094,12 @@
                   "matcher": "1-hash",
                   "license_expression": "apache-2.0",
                   "rule_identifier": "spdx_license_id_apache-2.0_for_apache-2.0.RULE",
+                  "rule_relevance": 100,
                   "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/spdx_license_id_apache-2.0_for_apache-2.0.RULE",
                   "matched_text": "apache-2.0"
                 }
-              ]
+              ],
+              "detection_log": []
             }
           ],
           "other_license_expression": null,
@@ -1136,9 +1126,6 @@
       "license_detections": [
         {
           "license_expression": "apache-2.0",
-          "detection_log": [
-            "not-combined"
-          ],
           "matches": [
             {
               "score": 100.0,
@@ -1149,9 +1136,11 @@
               "matcher": "2-aho",
               "license_expression": "apache-2.0",
               "rule_identifier": "apache-2.0_65.RULE",
+              "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_65.RULE"
             }
-          ]
+          ],
+          "detection_log": []
         }
       ],
       "license_clues": [],
@@ -1210,9 +1199,6 @@
       "license_detections": [
         {
           "license_expression": "apache-2.0",
-          "detection_log": [
-            "not-combined"
-          ],
           "matches": [
             {
               "score": 100.0,
@@ -1223,9 +1209,11 @@
               "matcher": "2-aho",
               "license_expression": "apache-2.0",
               "rule_identifier": "spdx_license_id_apache-2.0_for_apache-2.0.RULE",
+              "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/spdx_license_id_apache-2.0_for_apache-2.0.RULE"
             }
-          ]
+          ],
+          "detection_log": []
         }
       ],
       "license_clues": [],
@@ -1282,9 +1270,6 @@
       "license_detections": [
         {
           "license_expression": "gpl-2.0",
-          "detection_log": [
-            "not-combined"
-          ],
           "matches": [
             {
               "score": 100.0,
@@ -1295,9 +1280,11 @@
               "matcher": "2-aho",
               "license_expression": "gpl-2.0",
               "rule_identifier": "gpl-2.0_1336.RULE",
+              "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0_1336.RULE"
             }
-          ]
+          ],
+          "detection_log": []
         }
       ],
       "license_clues": [],

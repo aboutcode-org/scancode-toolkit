@@ -41,9 +41,6 @@
       "license_detections": [
         {
           "license_expression": "artistic-2.0 OR mit",
-          "detection_log": [
-            "not-combined"
-          ],
           "matches": [
             {
               "score": 100.0,
@@ -54,10 +51,12 @@
               "matcher": "1-spdx-id",
               "license_expression": "artistic-2.0 OR mit",
               "rule_identifier": "spdx-license-identifier-artistic-2.0 OR mit-512604ee8f4c8e5ccdd4631c2b447196299cd404",
+              "rule_relevance": 100,
               "rule_url": null,
               "matched_text": "Artistic-2.0 OR MIT"
             }
-          ]
+          ],
+          "detection_log": []
         }
       ],
       "other_license_expression": null,
@@ -85,10 +84,7 @@
     {
       "identifier": "apache_2_0_and__mit_or_bsd_simplified-fbac269b-95f2-a631-6884-8ae3cd900e87",
       "license_expression": "apache-2.0 AND (mit OR bsd-simplified)",
-      "count": 1,
-      "detection_log": [
-        "not-combined"
-      ],
+      "detection_count": 1,
       "matches": [
         {
           "score": 100.0,
@@ -99,6 +95,7 @@
           "matcher": "2-aho",
           "license_expression": "apache-2.0",
           "rule_identifier": "apache-2.0_2.RULE",
+          "rule_relevance": 100,
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_2.RULE"
         },
         {
@@ -110,17 +107,16 @@
           "matcher": "1-spdx-id",
           "license_expression": "mit OR bsd-simplified",
           "rule_identifier": "spdx-license-identifier-mit OR bsd-simplified-521d0523ce32cc52dd709e9fc653552931947808",
+          "rule_relevance": 100,
           "rule_url": null
         }
-      ]
+      ],
+      "detection_log": []
     },
     {
       "identifier": "artistic_2_0-cb894725-5f2d-c39e-81e5-50ee1d4322fa",
       "license_expression": "artistic-2.0",
-      "count": 1,
-      "detection_log": [
-        "not-combined"
-      ],
+      "detection_count": 1,
       "matches": [
         {
           "score": 100.0,
@@ -131,17 +127,16 @@
           "matcher": "2-aho",
           "license_expression": "artistic-2.0",
           "rule_identifier": "artistic-2.0_46.RULE",
+          "rule_relevance": 100,
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/artistic-2.0_46.RULE"
         }
-      ]
+      ],
+      "detection_log": []
     },
     {
       "identifier": "artistic_2_0_or_mit-529b866b-c702-0328-8f33-363ba46b3370",
       "license_expression": "artistic-2.0 OR mit",
-      "count": 1,
-      "detection_log": [
-        "not-combined"
-      ],
+      "detection_count": 1,
       "matches": [
         {
           "score": 100.0,
@@ -152,9 +147,11 @@
           "matcher": "1-spdx-id",
           "license_expression": "artistic-2.0 OR mit",
           "rule_identifier": "spdx-license-identifier-artistic-2.0 OR mit-512604ee8f4c8e5ccdd4631c2b447196299cd404",
+          "rule_relevance": 100,
           "rule_url": null
         }
-      ]
+      ],
+      "detection_log": []
     }
   ],
   "license_references": [
@@ -468,9 +465,6 @@
       "license_detections": [
         {
           "license_expression": "apache-2.0 AND (mit OR bsd-simplified)",
-          "detection_log": [
-            "not-combined"
-          ],
           "matches": [
             {
               "score": 100.0,
@@ -481,6 +475,7 @@
               "matcher": "2-aho",
               "license_expression": "apache-2.0",
               "rule_identifier": "apache-2.0_2.RULE",
+              "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_2.RULE",
               "matched_text": " * Licensed to the Apache Software Foundation (ASF) under one or more\n * contributor license agreements.  See the NOTICE file distributed with\n * this work for additional information regarding copyright ownership.\n * The ASF licenses this file to You under the Apache License, Version 2.0\n * (the \"License\"); you may not use this file except in compliance with\n * the License.  You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License."
             },
@@ -493,10 +488,12 @@
               "matcher": "1-spdx-id",
               "license_expression": "mit OR bsd-simplified",
               "rule_identifier": "spdx-license-identifier-mit OR bsd-simplified-f59ff8931aa67ccbfb194b8c7db7d4e5eafb709c",
+              "rule_relevance": 100,
               "rule_url": null,
               "matched_text": "SPDX-License-Identifier: MIT or BSD-2-Clause"
             }
-          ]
+          ],
+          "detection_log": []
         }
       ],
       "license_clues": [],
@@ -551,9 +548,6 @@
           "license_detections": [
             {
               "license_expression": "artistic-2.0 OR mit",
-              "detection_log": [
-                "not-combined"
-              ],
               "matches": [
                 {
                   "score": 100.0,
@@ -564,10 +558,12 @@
                   "matcher": "1-spdx-id",
                   "license_expression": "artistic-2.0 OR mit",
                   "rule_identifier": "spdx-license-identifier-artistic-2.0 OR mit-512604ee8f4c8e5ccdd4631c2b447196299cd404",
+                  "rule_relevance": 100,
                   "rule_url": null,
                   "matched_text": "Artistic-2.0 OR MIT"
                 }
-              ]
+              ],
+              "detection_log": []
             }
           ],
           "other_license_expression": null,
@@ -594,9 +590,6 @@
       "license_detections": [
         {
           "license_expression": "artistic-2.0",
-          "detection_log": [
-            "not-combined"
-          ],
           "matches": [
             {
               "score": 100.0,
@@ -607,10 +600,12 @@
               "matcher": "2-aho",
               "license_expression": "artistic-2.0",
               "rule_identifier": "artistic-2.0_46.RULE",
+              "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/artistic-2.0_46.RULE",
               "matched_text": "  \"license\": \"Artistic-2.0 OR MIT\","
             }
-          ]
+          ],
+          "detection_log": []
         }
       ],
       "license_clues": [],

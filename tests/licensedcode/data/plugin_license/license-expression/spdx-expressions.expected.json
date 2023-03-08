@@ -3,10 +3,7 @@
     {
       "identifier": "zlib_and_apache_2_0-e396b1b0-1283-19a7-c40a-042f278928e8",
       "license_expression": "zlib AND apache-2.0",
-      "count": 1,
-      "detection_log": [
-        "not-combined"
-      ],
+      "detection_count": 1,
       "matches": [
         {
           "score": 100.0,
@@ -17,6 +14,7 @@
           "matcher": "1-spdx-id",
           "license_expression": "zlib",
           "rule_identifier": "spdx-license-identifier-zlib-4a028b82b49264191c29aec7d2e5b4d780173fab",
+          "rule_relevance": 100,
           "rule_url": null
         },
         {
@@ -28,9 +26,11 @@
           "matcher": "1-spdx-id",
           "license_expression": "apache-2.0",
           "rule_identifier": "spdx-license-identifier-apache-2.0-5dcda840588b4f07f49f2c0100924ebca7bc0649",
+          "rule_relevance": 100,
           "rule_url": null
         }
-      ]
+      ],
+      "detection_log": []
     }
   ],
   "license_references": [
@@ -182,9 +182,6 @@
       "license_detections": [
         {
           "license_expression": "zlib AND apache-2.0",
-          "detection_log": [
-            "not-combined"
-          ],
           "matches": [
             {
               "score": 100.0,
@@ -195,6 +192,7 @@
               "matcher": "1-spdx-id",
               "license_expression": "zlib",
               "rule_identifier": "spdx-license-identifier-zlib-defbb051fec96d25d21a92bf9e28889f674a89dc",
+              "rule_relevance": 100,
               "rule_url": null,
               "matched_text": "https://licenses.nuget.org/Zlib"
             },
@@ -207,10 +205,12 @@
               "matcher": "1-spdx-id",
               "license_expression": "apache-2.0",
               "rule_identifier": "spdx-license-identifier-apache-2.0-8b7d7ba520c6ab392deaea36b8b1f018b637027e",
+              "rule_relevance": 100,
               "rule_url": null,
               "matched_text": "SPDX-License-Identifier: Apache-2.0"
             }
-          ]
+          ],
+          "detection_log": []
         }
       ],
       "license_clues": [],

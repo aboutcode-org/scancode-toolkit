@@ -41,9 +41,6 @@
     "license_detections": [
       {
         "license_expression": "ruby",
-        "detection_log": [
-          "not-combined"
-        ],
         "matches": [
           {
             "score": 100.0,
@@ -54,16 +51,15 @@
             "matcher": "1-spdx-id",
             "license_expression": "ruby",
             "rule_identifier": "spdx-license-identifier-ruby-549f9d48faec54b20eadf7c9097124f88f2cdd2b",
+            "rule_relevance": 100,
             "rule_url": null,
             "matched_text": "RUBY"
           }
-        ]
+        ],
+        "detection_log": []
       },
       {
         "license_expression": "gpl-2.0",
-        "detection_log": [
-          "not-combined"
-        ],
         "matches": [
           {
             "score": 100.0,
@@ -74,10 +70,12 @@
             "matcher": "1-hash",
             "license_expression": "gpl-2.0",
             "rule_identifier": "gpl-2.0_bare_single_word.RULE",
+            "rule_relevance": 100,
             "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0_bare_single_word.RULE",
             "matched_text": "GPLv2"
           }
-        ]
+        ],
+        "detection_log": []
       }
     ],
     "other_license_expression": null,

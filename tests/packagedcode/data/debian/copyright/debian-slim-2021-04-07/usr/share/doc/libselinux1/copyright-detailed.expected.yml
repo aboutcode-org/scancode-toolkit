@@ -6,8 +6,6 @@ other_license_expression:
 other_license_expression_spdx:
 license_detections:
   - license_expression: selinux-nsa-declaration-1.0
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 7
@@ -17,6 +15,7 @@ license_detections:
         matcher: 2-aho
         license_expression: selinux-nsa-declaration-1.0
         rule_identifier: selinux-nsa-declaration-1.0.LICENSE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/selinux-nsa-declaration-1.0.LICENSE
         matched_text: |
           This library (libselinux) is public domain software, i.e. not copyrighted.
@@ -40,9 +39,8 @@ license_detections:
           limitation will apply even if NSA has been advised of the possibility
           of such damage. You acknowledge that this is a reasonable allocation of
           risk.
+    detection_log: []
   - license_expression: gpl-2.0
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 32
@@ -52,13 +50,13 @@ license_detections:
         matcher: 2-aho
         license_expression: gpl-2.0
         rule_identifier: gpl-2.0_929.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0_929.RULE
         matched_text: |
           distributed underthe terms of the GNU General Public License,
            version 2.
+    detection_log: []
   - license_expression: lgpl-2.1-plus
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 38
@@ -68,6 +66,7 @@ license_detections:
         matcher: 2-aho
         license_expression: lgpl-2.1-plus
         rule_identifier: lgpl-2.1-plus_384.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_384.RULE
         matched_text: |
           The GNU C Library is distributed under
@@ -83,9 +82,8 @@ license_detections:
 
           On Debian systems, the complete text of the GNU Library
           General Public License can be found in `/usr/share/common-licenses/LGPL-2.1'.
+    detection_log: []
   - license_expression: gpl-2.0
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 56
@@ -95,6 +93,7 @@ license_detections:
         matcher: 2-aho
         license_expression: gpl-2.0
         rule_identifier: gpl-2.0_930.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0_930.RULE
         matched_text: |
           distributed under the terms of the GNU
@@ -107,6 +106,7 @@ license_detections:
               <URL:http://www.gnu.org/copyleft/gpl.html>.  You may also obtain
               it by writing to the Free Software Foundation, Inc., 51 Franklin
               St, Fifth Floor, Boston, MA 02110-1301, USA.
+    detection_log: []
 other_license_detections: []
 copyright: |
   Copyright 2004 Red Hat, Inc., James Morris <jmorris@redhat.com>

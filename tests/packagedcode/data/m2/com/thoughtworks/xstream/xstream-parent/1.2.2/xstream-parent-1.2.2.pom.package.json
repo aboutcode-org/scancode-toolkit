@@ -34,9 +34,6 @@
   "license_detections": [
     {
       "license_expression": "bsd-new",
-      "detection_log": [
-        "not-combined"
-      ],
       "matches": [
         {
           "score": 90.0,
@@ -47,16 +44,15 @@
           "matcher": "1-hash",
           "license_expression": "bsd-new",
           "rule_identifier": "bsd-new_878.RULE",
+          "rule_relevance": 90,
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_878.RULE",
           "matched_text": "BSD style"
         }
-      ]
+      ],
+      "detection_log": []
     },
     {
       "license_expression": "bsd-new",
-      "detection_log": [
-        "not-combined"
-      ],
       "matches": [
         {
           "score": 100.0,
@@ -67,10 +63,12 @@
           "matcher": "1-hash",
           "license_expression": "bsd-new",
           "rule_identifier": "bsd-new_xstream_maven_4.RULE",
+          "rule_relevance": 100,
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_xstream_maven_4.RULE",
           "matched_text": "http://xstream.codehaus.com/license.html"
         }
-      ]
+      ],
+      "detection_log": []
     }
   ],
   "other_license_expression": null,

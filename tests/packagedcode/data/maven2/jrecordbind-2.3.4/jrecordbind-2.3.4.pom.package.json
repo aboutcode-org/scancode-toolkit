@@ -34,9 +34,6 @@
   "license_detections": [
     {
       "license_expression": "lgpl-2.0-plus",
-      "detection_log": [
-        "not-combined"
-      ],
       "matches": [
         {
           "score": 75.0,
@@ -47,16 +44,15 @@
           "matcher": "1-hash",
           "license_expression": "lgpl-2.0-plus",
           "rule_identifier": "lgpl_bare_single_word.RULE",
+          "rule_relevance": 75,
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl_bare_single_word.RULE",
           "matched_text": "LGPL"
         }
-      ]
+      ],
+      "detection_log": []
     },
     {
       "license_expression": "lgpl-2.1-plus",
-      "detection_log": [
-        "not-combined"
-      ],
       "matches": [
         {
           "score": 100.0,
@@ -67,10 +63,12 @@
           "matcher": "1-hash",
           "license_expression": "lgpl-2.1-plus",
           "rule_identifier": "lgpl_7.RULE",
+          "rule_relevance": 100,
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl_7.RULE",
           "matched_text": "http://www.gnu.org/copyleft/lesser.html"
         }
-      ]
+      ],
+      "detection_log": []
     }
   ],
   "other_license_expression": null,

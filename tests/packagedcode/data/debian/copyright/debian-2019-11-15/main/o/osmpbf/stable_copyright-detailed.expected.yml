@@ -11,8 +11,6 @@ other_license_expression_spdx: (LGPL-3.0-or-later AND LGPL-3.0-or-later) AND (GP
 license_detections: []
 other_license_detections:
   - license_expression: lgpl-3.0-plus
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 15
@@ -22,6 +20,7 @@ other_license_detections:
         matcher: 1-hash
         license_expression: lgpl-3.0-plus
         rule_identifier: lgpl-3.0-plus_166.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-3.0-plus_166.RULE
         matched_text: 'License: lgpl-3+'
       - score: '100.0'
@@ -32,6 +31,7 @@ other_license_detections:
         matcher: 1-hash
         license_expression: lgpl-3.0-plus
         rule_identifier: lgpl-3.0-plus_173.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-3.0-plus_173.RULE
         matched_text: |
           This package is free software; you can redistribute it and/or modify
@@ -49,9 +49,8 @@ other_license_detections:
 
           On Debian systems, the complete text of the GNU Lesser General Public License
           version 3 can be found in "/usr/share/common-licenses/LGPL-3".
+    detection_log: []
   - license_expression: gpl-3.0-plus
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 32
@@ -61,6 +60,7 @@ other_license_detections:
         matcher: 1-hash
         license_expression: gpl-3.0-plus
         rule_identifier: gpl-3.0-plus_92.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0-plus_92.RULE
         matched_text: 'License: gpl-3+'
       - score: '100.0'
@@ -71,6 +71,7 @@ other_license_detections:
         matcher: 1-hash
         license_expression: gpl-3.0-plus
         rule_identifier: gpl-3.0-plus_323.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0-plus_323.RULE
         matched_text: |
           This package is free software; you can redistribute it and/or modify
@@ -88,6 +89,7 @@ other_license_detections:
 
           On Debian systems, the complete text of the GNU General Public License
           version 3 can be found in "/usr/share/common-licenses/GPL-3".
+    detection_log: []
 copyright: |
   2010, Scott A. Crosby <scott@sacrosby.com>
   2010-2012, Giovanni Mascellani <gio@debian.org>

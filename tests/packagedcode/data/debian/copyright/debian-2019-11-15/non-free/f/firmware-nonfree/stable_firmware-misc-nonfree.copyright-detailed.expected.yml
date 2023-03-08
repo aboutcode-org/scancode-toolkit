@@ -56,8 +56,6 @@ other_license_expression:
 other_license_expression_spdx:
 license_detections:
   - license_expression: 3com-microcode
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 11
@@ -67,6 +65,7 @@ license_detections:
         matcher: 2-aho
         license_expression: 3com-microcode
         rule_identifier: 3com-microcode3.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/3com-microcode3.RULE
         matched_text: |
           Redistribution and use in source and binary forms of the 3c990img.h
@@ -97,9 +96,8 @@ license_detections:
           (PATENT, COPYRIGHT, TRADE SECRET, MASK WORK, OR OTHER PROPRIETARY RIGHT)
           EMBODIED IN ANY OTHER 3COM HARDWARE OR SOFTWARE EITHER SOLELY OR IN
           COMBINATION WITH THE 3c990img.h MICROCODE SOFTWARE
+    detection_log: []
   - license_expression: bsd-simplified-source
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 46
@@ -109,15 +107,15 @@ license_detections:
         matcher: 2-aho
         license_expression: bsd-simplified-source
         rule_identifier: bsd-simplified-source.LICENSE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-simplified-source.LICENSE
         matched_text: |
           Redistribution and use in source and binary forms, with or without
           modification, are permitted provided that redistributions of source
           code retain the above copyright notice and this comment without
           modification.
+    detection_log: []
   - license_expression: agere-bsd
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 56
@@ -127,6 +125,7 @@ license_detections:
         matcher: 1-hash
         license_expression: agere-bsd
         rule_identifier: agere-bsd_1.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/agere-bsd_1.RULE
         matched_text: |
           This software is provided subject to the following terms and conditions,
@@ -166,9 +165,8 @@ license_detections:
           LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT
           OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH
           DAMAGE.
+    detection_log: []
   - license_expression: x11-acer
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 97
@@ -178,6 +176,7 @@ license_detections:
         matcher: 1-hash
         license_expression: x11-acer
         rule_identifier: x11-acer.LICENSE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/x11-acer.LICENSE
         matched_text: |
           Permission to use, copy, modify, and/or distribute this software for
@@ -193,9 +192,8 @@ license_detections:
           PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER
           TORTUOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
           PERFORMANCE OF THIS SOFTWARE.
+    detection_log: []
   - license_expression: ctl-linux-firmware
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 116
@@ -205,6 +203,7 @@ license_detections:
         matcher: 2-aho
         license_expression: ctl-linux-firmware
         rule_identifier: ctl-linux-firmware.LICENSE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/ctl-linux-firmware.LICENSE
         matched_text: |
           Redistribution.  Redistribution and use in binary form, without
@@ -251,9 +250,8 @@ license_detections:
           (PATENT, COPYRIGHT, TRADE SECRET, MASK WORK, OR OTHER PROPRIETARY RIGHT)
           EMBODIED IN ANY OTHER CTL HARDWARE OR SOFTWARE WHETHER SOLELY OR IN
           COMBINATION WITH THIS SOFTWARE.
+    detection_log: []
   - license_expression: other-permissive
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 164
@@ -263,14 +261,14 @@ license_detections:
         matcher: 1-hash
         license_expression: other-permissive
         rule_identifier: other-permissive_66.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/other-permissive_66.RULE
         matched_text: |
           Permission is hereby granted for the distribution of this firmware
           data in hexadecimal or equivalent format, provided this copyright
           notice is accompanying it.
+    detection_log: []
   - license_expression: linux-openib
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 173
@@ -280,6 +278,7 @@ license_detections:
         matcher: 2-aho
         license_expression: linux-openib
         rule_identifier: linux-openib.LICENSE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/linux-openib.LICENSE
         matched_text: |
           Redistribution and use in source and binary forms, with or
@@ -303,9 +302,8 @@ license_detections:
           ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
           CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
           SOFTWARE.
+    detection_log: []
   - license_expression: proprietary-license
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 200
@@ -315,6 +313,7 @@ license_detections:
         matcher: 2-aho
         license_expression: proprietary-license
         rule_identifier: proprietary-license_334.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/proprietary-license_334.RULE
         matched_text: |
           Redistribution and use in binary form, without modification, are
@@ -341,9 +340,8 @@ license_detections:
           ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR
           TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE
           USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+    detection_log: []
   - license_expression: bsd-simplified-source
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 228
@@ -353,15 +351,15 @@ license_detections:
         matcher: 1-hash
         license_expression: bsd-simplified-source
         rule_identifier: bsd-simplified-source.LICENSE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-simplified-source.LICENSE
         matched_text: |
           Redistribution and use in source and binary forms, with or without
           modification, are permitted provided that redistributions of source
           code retain the above copyright notice and this comment without
           modification.
+    detection_log: []
   - license_expression: proprietary-license
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 236
@@ -371,6 +369,7 @@ license_detections:
         matcher: 1-hash
         license_expression: proprietary-license
         rule_identifier: proprietary-license_332.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/proprietary-license_332.RULE
         matched_text: |
           Permission to use, copy, modify, and/or distribute this software, only
@@ -385,9 +384,8 @@ license_detections:
           WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
           ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
           OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+    detection_log: []
   - license_expression: isc
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 252
@@ -397,6 +395,7 @@ license_detections:
         matcher: 1-hash
         license_expression: isc
         rule_identifier: isc.LICENSE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/isc.LICENSE
         matched_text: |
           Permission to use, copy, modify, and/or distribute this software for
@@ -412,9 +411,8 @@ license_detections:
           PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER
           TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
           PERFORMANCE OF THIS SOFTWARE.
+    detection_log: []
   - license_expression: isc
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 269
@@ -424,6 +422,7 @@ license_detections:
         matcher: 1-hash
         license_expression: isc
         rule_identifier: isc.LICENSE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/isc.LICENSE
         matched_text: |
           Permission to use, copy, modify, and/or distribute this software for
@@ -439,9 +438,8 @@ license_detections:
           PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER
           TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
           PERFORMANCE OF THIS SOFTWARE.
+    detection_log: []
   - license_expression: proprietary-license
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 286
@@ -451,6 +449,7 @@ license_detections:
         matcher: 1-hash
         license_expression: proprietary-license
         rule_identifier: proprietary-license_331.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/proprietary-license_331.RULE
         matched_text: |
           TERRATEC grants permission to use and redistribute these firmware
@@ -461,9 +460,8 @@ license_detections:
           These firmware files are distributed in the hope that they will be
           useful, but WITHOUT ANY WARRANTY; without even the implied warranty
           of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+    detection_log: []
   - license_expression: bsd-new
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 300
@@ -473,6 +471,7 @@ license_detections:
         matcher: 2-aho
         license_expression: bsd-new
         rule_identifier: bsd-new_786.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_786.RULE
         matched_text: |
           Redistribution and use in source and binary forms, with or without
@@ -499,9 +498,8 @@ license_detections:
           LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
           NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
           EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+    detection_log: []
   - license_expression: isc
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 328
@@ -511,6 +509,7 @@ license_detections:
         matcher: 1-hash
         license_expression: isc
         rule_identifier: isc.LICENSE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/isc.LICENSE
         matched_text: |
           Permission to use, copy, modify, and/or distribute this software for any
@@ -525,9 +524,8 @@ license_detections:
           LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT,
           NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION
           WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+    detection_log: []
   - license_expression: proprietary-license
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 344
@@ -537,6 +535,7 @@ license_detections:
         matcher: 1-hash
         license_expression: proprietary-license
         rule_identifier: proprietary-license_330.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/proprietary-license_330.RULE
         matched_text: |
           Sensoray grants permission to use and redistribute these firmware
@@ -546,9 +545,8 @@ license_detections:
           These firmware files are distributed in the hope that they will be
           useful, but WITHOUT ANY WARRANTY; without even the implied warranty
           of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+    detection_log: []
   - license_expression: proprietary-license
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 355
@@ -558,6 +556,7 @@ license_detections:
         matcher: 1-hash
         license_expression: proprietary-license
         rule_identifier: proprietary-license_328.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/proprietary-license_328.RULE
         matched_text: |
           The firmware files included in the firmware/ directory may be freely
@@ -569,9 +568,8 @@ license_detections:
           LICENSES AND DISCLAIMS ALL IMPLIED WARRANTIES, INCLUDING WITHOUT LIMITATION
           WARRANTIES OF MERCHANTABILITY, SUPPORT, AND FITNESS FOR A PARTICULAR
           PURPOSE AND NON-INFRINGEMENT.
+    detection_log: []
   - license_expression: intel
-    detection_log:
-      - not-combined
     matches:
       - score: '95.0'
         start_line: 370
@@ -581,6 +579,7 @@ license_detections:
         matcher: 2-aho
         license_expression: intel
         rule_identifier: intel_2.RULE
+        rule_relevance: 95
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/intel_2.RULE
         matched_text: |
           Redistribution.
@@ -617,9 +616,8 @@ license_detections:
           ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
           (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
           SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+    detection_log: []
   - license_expression: nxp-firmware-patent
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 414
@@ -629,6 +627,7 @@ license_detections:
         matcher: 2-aho
         license_expression: nxp-firmware-patent
         rule_identifier: nxp-firmware-patent.LICENSE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/nxp-firmware-patent.LICENSE
         matched_text: |
           Redistribution. Reproduction and redistribution in binary form, without
@@ -675,9 +674,8 @@ license_detections:
           ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR
           TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE
           USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+    detection_log: []
   - license_expression: bsd-original
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 462
@@ -687,6 +685,7 @@ license_detections:
         matcher: 1-hash
         license_expression: bsd-original
         rule_identifier: bsd-original_44.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-original_44.RULE
         matched_text: |
           Redistribution and use in source and binary forms, with or without
@@ -715,9 +714,8 @@ license_detections:
           STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING
           IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
           POSSIBILITY OF SUCH DAMAGE.
+    detection_log: []
   - license_expression: mit
-    detection_log:
-      - not-combined
     matches:
       - score: '98.77'
         start_line: 494
@@ -727,6 +725,7 @@ license_detections:
         matcher: 3-seq
         license_expression: mit
         rule_identifier: mit_712.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_712.RULE
         matched_text: |
           Permission is hereby granted, free of charge, to any person obtaining a
@@ -746,9 +745,8 @@ license_detections:
           DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR
           OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE
           OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+    detection_log: []
   - license_expression: moxa-linux-firmware
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 515
@@ -758,6 +756,7 @@ license_detections:
         matcher: 1-hash
         license_expression: moxa-linux-firmware
         rule_identifier: moxa-linux-firmware.LICENSE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/moxa-linux-firmware.LICENSE
         matched_text: |
           The software accompanying this license statement (the “Software”)
@@ -776,9 +775,8 @@ license_detections:
           4. You may not re-license or sub-license the software to any person or
              business, using any other license.
           5. Moxa(r) is worldwide registered trademark.
+    detection_log: []
   - license_expression: ralink-firmware
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 537
@@ -788,6 +786,7 @@ license_detections:
         matcher: 2-aho
         license_expression: ralink-firmware
         rule_identifier: ralink-firmware.LICENSE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/ralink-firmware.LICENSE
         matched_text: |
           Redistribution.  Redistribution and use in binary form, without
@@ -826,9 +825,8 @@ license_detections:
           TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE
           USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH
           DAMAGE.
+    detection_log: []
   - license_expression: proprietary-license
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 577
@@ -838,11 +836,11 @@ license_detections:
         matcher: 1-hash
         license_expression: proprietary-license
         rule_identifier: proprietary-license_324.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/proprietary-license_324.RULE
         matched_text: All firmware components are redistributable in binary form.
+    detection_log: []
   - license_expression: proprietary-license
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 582
@@ -852,6 +850,7 @@ license_detections:
         matcher: 1-hash
         license_expression: proprietary-license
         rule_identifier: proprietary-license_325.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/proprietary-license_325.RULE
         matched_text: |
           IMPORTANT NOTICE -- READ CAREFULLY: This License For Customer Use of
@@ -981,9 +980,8 @@ license_detections:
           United States Bureau of Export Administration or any export laws,
           restrictions or regulations.  This LICENSE may only be modified in
           writing signed by an authorized officer of NVIDIA.
+    detection_log: []
   - license_expression: proprietary-license
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 719
@@ -993,6 +991,7 @@ license_detections:
         matcher: 2-aho
         license_expression: proprietary-license
         rule_identifier: proprietary-license_319.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/proprietary-license_319.RULE
         matched_text: |
           Redistribution.  Redistribution and use in binary form, without
@@ -1033,9 +1032,8 @@ license_detections:
           TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE
           USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH
           DAMAGE.
+    detection_log: []
   - license_expression: proprietary-license
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 761
@@ -1045,6 +1043,7 @@ license_detections:
         matcher: 1-hash
         license_expression: proprietary-license
         rule_identifier: proprietary-license_311.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/proprietary-license_311.RULE
         matched_text: |
           Comtrol grants permission to use and redistribute these firmware
@@ -1055,9 +1054,8 @@ license_detections:
           These firmware files are distributed in the hope that they will be
           useful, but WITHOUT ANY WARRANTY; without even the implied warranty
           of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+    detection_log: []
   - license_expression: ralink-firmware
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 775
@@ -1067,6 +1065,7 @@ license_detections:
         matcher: 2-aho
         license_expression: ralink-firmware
         rule_identifier: ralink-firmware.LICENSE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/ralink-firmware.LICENSE
         matched_text: |
           Redistribution.  Redistribution and use in binary form, without
@@ -1105,9 +1104,8 @@ license_detections:
           TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE
           USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH
           DAMAGE.
+    detection_log: []
   - license_expression: other-permissive
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 815
@@ -1117,14 +1115,14 @@ license_detections:
         matcher: 1-hash
         license_expression: other-permissive
         rule_identifier: other-permissive_66.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/other-permissive_66.RULE
         matched_text: |
           Permission is hereby granted for the distribution of this firmware
           data in hexadecimal or equivalent format, provided this copyright
           notice is accompanying it.
+    detection_log: []
   - license_expression: other-permissive
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 822
@@ -1134,14 +1132,14 @@ license_detections:
         matcher: 1-hash
         license_expression: other-permissive
         rule_identifier: other-permissive_66.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/other-permissive_66.RULE
         matched_text: |
           Permission is hereby granted for the distribution of this firmware
           data in hexadecimal or equivalent format, provided this copyright
           notice is accompanying it.
+    detection_log: []
   - license_expression: bsd-new AND proprietary-license
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 829
@@ -1151,6 +1149,7 @@ license_detections:
         matcher: 1-hash
         license_expression: bsd-new AND proprietary-license
         rule_identifier: bsd-new_and_proprietary-license_1.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_and_proprietary-license_1.RULE
         matched_text: |
           Redistribution and use in source and binary forms, with or without
@@ -1186,9 +1185,8 @@ license_detections:
           RIGHTS (PATENT, COPYRIGHT, TRADE SECRET, MASK WORK, OR OTHER
           PROPRIETARY RIGHT) EMBODIED IN ANY OTHER IKANOS HARDWARE OR SOFTWARE
           EITHER SOLELY OR IN COMBINATION WITH THIS SOFTWARE.
+    detection_log: []
   - license_expression: proprietary-license
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 865
@@ -1198,6 +1196,7 @@ license_detections:
         matcher: 1-hash
         license_expression: proprietary-license
         rule_identifier: proprietary-license_308.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/proprietary-license_308.RULE
         matched_text: |
           Conexant grants permission to use and redistribute these firmware
@@ -1207,9 +1206,8 @@ license_detections:
           These firmware files are distributed in the hope that they will be
           useful, but WITHOUT ANY WARRANTY; without even the implied warranty
           of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+    detection_log: []
   - license_expression: intel
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 876
@@ -1219,6 +1217,7 @@ license_detections:
         matcher: 2-aho
         license_expression: intel
         rule_identifier: intel.LICENSE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/intel.LICENSE
         matched_text: |
           Redistribution.  Redistribution and use in binary form, without
@@ -1257,6 +1256,7 @@ license_detections:
           TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE
           USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH
           DAMAGE.
+    detection_log: []
 other_license_detections: []
 copyright: |
   1999-2004, 3Com Corporation

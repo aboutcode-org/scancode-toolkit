@@ -36,9 +36,6 @@
       "license_detections": [
         {
           "license_expression": "mit",
-          "detection_log": [
-            "package-unknown-reference-to-local-file"
-          ],
           "matches": [
             {
               "score": 100.0,
@@ -49,6 +46,7 @@
               "matcher": "1-hash",
               "license_expression": "unknown-license-reference",
               "rule_identifier": "unknown-license-reference_see_license_at_manifest_1.RULE",
+              "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/unknown-license-reference_see_license_at_manifest_1.RULE",
               "matched_text": "license :file = ../LICENSE"
             },
@@ -61,6 +59,7 @@
               "matcher": "2-aho",
               "license_expression": "mit",
               "rule_identifier": "mit_14.RULE",
+              "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_14.RULE",
               "matched_text": "MIT License"
             },
@@ -73,9 +72,13 @@
               "matcher": "2-aho",
               "license_expression": "mit",
               "rule_identifier": "mit.LICENSE",
+              "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE",
               "matched_text": "Permission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE."
             }
+          ],
+          "detection_log": [
+            "package-unknown-reference-to-local-file"
           ]
         }
       ],
@@ -104,10 +107,7 @@
     {
       "identifier": "unknown_license_reference-6b24f327-22b1-723e-10f9-37a8bc8b3c70",
       "license_expression": "unknown-license-reference",
-      "count": 1,
-      "detection_log": [
-        "not-combined"
-      ],
+      "detection_count": 1,
       "matches": [
         {
           "score": 100.0,
@@ -118,17 +118,16 @@
           "matcher": "2-aho",
           "license_expression": "unknown-license-reference",
           "rule_identifier": "unknown-license-reference_see_license_at_manifest_1.RULE",
+          "rule_relevance": 100,
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/unknown-license-reference_see_license_at_manifest_1.RULE"
         }
-      ]
+      ],
+      "detection_log": []
     },
     {
       "identifier": "mit-ac40beba-5702-f54d-755f-333441314bb0",
       "license_expression": "mit",
-      "count": 1,
-      "detection_log": [
-        "not-combined"
-      ],
+      "detection_count": 1,
       "matches": [
         {
           "score": 100.0,
@@ -139,6 +138,7 @@
           "matcher": "2-aho",
           "license_expression": "mit",
           "rule_identifier": "mit_14.RULE",
+          "rule_relevance": 100,
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_14.RULE"
         },
         {
@@ -150,9 +150,11 @@
           "matcher": "2-aho",
           "license_expression": "mit",
           "rule_identifier": "mit.LICENSE",
+          "rule_relevance": 100,
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE"
         }
-      ]
+      ],
+      "detection_log": []
     }
   ],
   "license_references": [
@@ -322,9 +324,6 @@
       "license_detections": [
         {
           "license_expression": "mit",
-          "detection_log": [
-            "not-combined"
-          ],
           "matches": [
             {
               "score": 100.0,
@@ -335,6 +334,7 @@
               "matcher": "2-aho",
               "license_expression": "mit",
               "rule_identifier": "mit_14.RULE",
+              "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_14.RULE",
               "matched_text": "MIT License"
             },
@@ -347,10 +347,12 @@
               "matcher": "2-aho",
               "license_expression": "mit",
               "rule_identifier": "mit.LICENSE",
+              "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE",
               "matched_text": "Permission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE."
             }
-          ]
+          ],
+          "detection_log": []
         }
       ],
       "license_clues": [],
@@ -400,9 +402,6 @@
           "license_detections": [
             {
               "license_expression": "mit",
-              "detection_log": [
-                "package-unknown-reference-to-local-file"
-              ],
               "matches": [
                 {
                   "score": 100.0,
@@ -413,6 +412,7 @@
                   "matcher": "1-hash",
                   "license_expression": "unknown-license-reference",
                   "rule_identifier": "unknown-license-reference_see_license_at_manifest_1.RULE",
+                  "rule_relevance": 100,
                   "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/unknown-license-reference_see_license_at_manifest_1.RULE",
                   "matched_text": "license :file = ../LICENSE"
                 },
@@ -425,6 +425,7 @@
                   "matcher": "2-aho",
                   "license_expression": "mit",
                   "rule_identifier": "mit_14.RULE",
+                  "rule_relevance": 100,
                   "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_14.RULE",
                   "matched_text": "MIT License"
                 },
@@ -437,9 +438,13 @@
                   "matcher": "2-aho",
                   "license_expression": "mit",
                   "rule_identifier": "mit.LICENSE",
+                  "rule_relevance": 100,
                   "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE",
                   "matched_text": "Permission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE."
                 }
+              ],
+              "detection_log": [
+                "package-unknown-reference-to-local-file"
               ]
             }
           ],
@@ -467,9 +472,6 @@
       "license_detections": [
         {
           "license_expression": "mit",
-          "detection_log": [
-            "unknown-reference-to-local-file"
-          ],
           "matches": [
             {
               "score": 100.0,
@@ -480,6 +482,7 @@
               "matcher": "2-aho",
               "license_expression": "unknown-license-reference",
               "rule_identifier": "unknown-license-reference_see_license_at_manifest_1.RULE",
+              "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/unknown-license-reference_see_license_at_manifest_1.RULE",
               "matched_text": "license          = { :file => '../LICENSE' }"
             },
@@ -492,6 +495,7 @@
               "matcher": "2-aho",
               "license_expression": "mit",
               "rule_identifier": "mit_14.RULE",
+              "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_14.RULE",
               "matched_text": "MIT License"
             },
@@ -504,9 +508,13 @@
               "matcher": "2-aho",
               "license_expression": "mit",
               "rule_identifier": "mit.LICENSE",
+              "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE",
               "matched_text": "Permission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE."
             }
+          ],
+          "detection_log": [
+            "unknown-reference-to-local-file"
           ]
         }
       ],

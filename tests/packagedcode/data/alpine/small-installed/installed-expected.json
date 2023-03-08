@@ -37,9 +37,6 @@
     "license_detections": [
       {
         "license_expression": "mit",
-        "detection_log": [
-          "not-combined"
-        ],
         "matches": [
           {
             "score": 100.0,
@@ -50,10 +47,12 @@
             "matcher": "1-spdx-id",
             "license_expression": "mit",
             "rule_identifier": "spdx-license-identifier-mit-1b937028f397e2c5fe4eb6a0abd781ab80f9eeff",
+            "rule_relevance": 100,
             "rule_url": null,
             "matched_text": "mit"
           }
-        ]
+        ],
+        "detection_log": []
       }
     ],
     "other_license_expression": null,
@@ -130,9 +129,6 @@
     "license_detections": [
       {
         "license_expression": "gpl-2.0",
-        "detection_log": [
-          "not-combined"
-        ],
         "matches": [
           {
             "score": 100.0,
@@ -143,10 +139,12 @@
             "matcher": "1-hash",
             "license_expression": "gpl-2.0",
             "rule_identifier": "spdx_license_id_gpl-2.0-only_for_gpl-2.0.RULE",
+            "rule_relevance": 100,
             "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/spdx_license_id_gpl-2.0-only_for_gpl-2.0.RULE",
             "matched_text": "gpl-2.0-only"
           }
-        ]
+        ],
+        "detection_log": []
       }
     ],
     "other_license_expression": null,
@@ -268,9 +266,6 @@
     "license_detections": [
       {
         "license_expression": "gpl-2.0",
-        "detection_log": [
-          "not-combined"
-        ],
         "matches": [
           {
             "score": 100.0,
@@ -281,10 +276,12 @@
             "matcher": "1-hash",
             "license_expression": "gpl-2.0",
             "rule_identifier": "spdx_license_id_gpl-2.0-only_for_gpl-2.0.RULE",
+            "rule_relevance": 100,
             "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/spdx_license_id_gpl-2.0-only_for_gpl-2.0.RULE",
             "matched_text": "gpl-2.0-only"
           }
-        ]
+        ],
+        "detection_log": []
       }
     ],
     "other_license_expression": null,
@@ -586,9 +583,6 @@
     "license_detections": [
       {
         "license_expression": "mit",
-        "detection_log": [
-          "not-combined"
-        ],
         "matches": [
           {
             "score": 100.0,
@@ -599,10 +593,12 @@
             "matcher": "1-spdx-id",
             "license_expression": "mit",
             "rule_identifier": "spdx-license-identifier-mit-1b937028f397e2c5fe4eb6a0abd781ab80f9eeff",
+            "rule_relevance": 100,
             "rule_url": null,
             "matched_text": "mit"
           }
-        ]
+        ],
+        "detection_log": []
       }
     ],
     "other_license_expression": null,
@@ -823,9 +819,6 @@
     "license_detections": [
       {
         "license_expression": "openssl-ssleay",
-        "detection_log": [
-          "not-combined"
-        ],
         "matches": [
           {
             "score": 100.0,
@@ -836,10 +829,12 @@
             "matcher": "1-spdx-id",
             "license_expression": "openssl-ssleay",
             "rule_identifier": "spdx-license-identifier-openssl-ssleay-b5dd48b21e3399670d584d4ade9a9791a24c58cd",
+            "rule_relevance": 100,
             "rule_url": null,
             "matched_text": "openssl"
           }
-        ]
+        ],
+        "detection_log": []
       }
     ],
     "other_license_expression": null,
@@ -1006,9 +1001,6 @@
     "license_detections": [
       {
         "license_expression": "openssl-ssleay",
-        "detection_log": [
-          "not-combined"
-        ],
         "matches": [
           {
             "score": 100.0,
@@ -1019,10 +1011,12 @@
             "matcher": "1-spdx-id",
             "license_expression": "openssl-ssleay",
             "rule_identifier": "spdx-license-identifier-openssl-ssleay-b5dd48b21e3399670d584d4ade9a9791a24c58cd",
+            "rule_relevance": 100,
             "rule_url": null,
             "matched_text": "openssl"
           }
-        ]
+        ],
+        "detection_log": []
       }
     ],
     "other_license_expression": null,
@@ -1099,9 +1093,6 @@
     "license_detections": [
       {
         "license_expression": "mpl-2.0 AND gpl-2.0-plus",
-        "detection_log": [
-          "not-combined"
-        ],
         "matches": [
           {
             "score": 100.0,
@@ -1112,10 +1103,12 @@
             "matcher": "1-spdx-id",
             "license_expression": "mpl-2.0 AND gpl-2.0-plus",
             "rule_identifier": "spdx-license-identifier-mpl-2.0 AND gpl-2.0-plus-ebba41d440d51e8500958cb8f2bc7302a0b7b0c5",
+            "rule_relevance": 100,
             "rule_url": null,
             "matched_text": "mpl-2.0 AND gpl-2.0-or-later"
           }
-        ]
+        ],
+        "detection_log": []
       }
     ],
     "other_license_expression": null,
@@ -1175,9 +1168,6 @@
     "license_detections": [
       {
         "license_expression": "isc",
-        "detection_log": [
-          "not-combined"
-        ],
         "matches": [
           {
             "score": 100.0,
@@ -1188,10 +1178,12 @@
             "matcher": "1-spdx-id",
             "license_expression": "isc",
             "rule_identifier": "spdx-license-identifier-isc-fd23252ced2c9184cff91208f30a380cf105f995",
+            "rule_relevance": 100,
             "rule_url": null,
             "matched_text": "isc"
           }
-        ]
+        ],
+        "detection_log": []
       }
     ],
     "other_license_expression": null,
@@ -1279,9 +1271,6 @@
     "license_detections": [
       {
         "license_expression": "gpl-2.0",
-        "detection_log": [
-          "not-combined"
-        ],
         "matches": [
           {
             "score": 100.0,
@@ -1292,10 +1281,12 @@
             "matcher": "1-hash",
             "license_expression": "gpl-2.0",
             "rule_identifier": "spdx_license_id_gpl-2.0-only_for_gpl-2.0.RULE",
+            "rule_relevance": 100,
             "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/spdx_license_id_gpl-2.0-only_for_gpl-2.0.RULE",
             "matched_text": "gpl-2.0-only"
           }
-        ]
+        ],
+        "detection_log": []
       }
     ],
     "other_license_expression": null,
@@ -1363,9 +1354,6 @@
     "license_detections": [
       {
         "license_expression": "zlib",
-        "detection_log": [
-          "not-combined"
-        ],
         "matches": [
           {
             "score": 100.0,
@@ -1376,10 +1364,12 @@
             "matcher": "1-spdx-id",
             "license_expression": "zlib",
             "rule_identifier": "spdx-license-identifier-zlib-2023583c09c2e5aa14d564036e304041c0f1ace3",
+            "rule_relevance": 100,
             "rule_url": null,
             "matched_text": "zlib"
           }
-        ]
+        ],
+        "detection_log": []
       }
     ],
     "other_license_expression": null,
@@ -1456,9 +1446,6 @@
     "license_detections": [
       {
         "license_expression": "gpl-2.0",
-        "detection_log": [
-          "not-combined"
-        ],
         "matches": [
           {
             "score": 50.0,
@@ -1469,10 +1456,12 @@
             "matcher": "1-hash",
             "license_expression": "gpl-2.0",
             "rule_identifier": "gpl2_bare_word_only.RULE",
+            "rule_relevance": 50,
             "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl2_bare_word_only.RULE",
             "matched_text": "gpl2"
           }
-        ]
+        ],
+        "detection_log": []
       }
     ],
     "other_license_expression": null,
@@ -1540,9 +1529,6 @@
     "license_detections": [
       {
         "license_expression": "gpl-2.0",
-        "detection_log": [
-          "not-combined"
-        ],
         "matches": [
           {
             "score": 100.0,
@@ -1553,10 +1539,12 @@
             "matcher": "1-hash",
             "license_expression": "gpl-2.0",
             "rule_identifier": "spdx_license_id_gpl-2.0-only_for_gpl-2.0.RULE",
+            "rule_relevance": 100,
             "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/spdx_license_id_gpl-2.0-only_for_gpl-2.0.RULE",
             "matched_text": "gpl-2.0-only"
           }
-        ]
+        ],
+        "detection_log": []
       }
     ],
     "other_license_expression": null,
@@ -1624,9 +1612,6 @@
     "license_detections": [
       {
         "license_expression": "mit AND bsd-new AND gpl-2.0-plus",
-        "detection_log": [
-          "not-combined"
-        ],
         "matches": [
           {
             "score": 100.0,
@@ -1637,10 +1622,12 @@
             "matcher": "1-spdx-id",
             "license_expression": "mit AND bsd-new AND gpl-2.0-plus",
             "rule_identifier": "spdx-license-identifier-mit AND bsd-new AND gpl-2.0-plus-a42688b31c355df3bef97265e8ca20360250716e",
+            "rule_relevance": 100,
             "rule_url": null,
             "matched_text": "mit AND bsd-3-clause AND gpl-2.0-or-later"
           }
-        ]
+        ],
+        "detection_log": []
       }
     ],
     "other_license_expression": null,
@@ -1755,9 +1742,6 @@
     "license_detections": [
       {
         "license_expression": "bsd-new",
-        "detection_log": [
-          "not-combined"
-        ],
         "matches": [
           {
             "score": 100.0,
@@ -1768,10 +1752,12 @@
             "matcher": "1-hash",
             "license_expression": "bsd-new",
             "rule_identifier": "bsd-new_10.RULE",
+            "rule_relevance": 100,
             "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_10.RULE",
             "matched_text": "bsd-3-clause"
           }
-        ]
+        ],
+        "detection_log": []
       }
     ],
     "other_license_expression": null,

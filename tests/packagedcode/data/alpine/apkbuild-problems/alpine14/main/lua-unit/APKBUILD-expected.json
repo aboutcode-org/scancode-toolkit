@@ -26,9 +26,6 @@
   "license_detections": [
     {
       "license_expression": "bsd-simplified",
-      "detection_log": [
-        "not-combined"
-      ],
       "matches": [
         {
           "score": 100.0,
@@ -39,10 +36,12 @@
           "matcher": "1-hash",
           "license_expression": "bsd-simplified",
           "rule_identifier": "spdx_license_id_bsd-2-clause_for_bsd-simplified.RULE",
+          "rule_relevance": 100,
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/spdx_license_id_bsd-2-clause_for_bsd-simplified.RULE",
           "matched_text": "bsd-2-clause"
         }
-      ]
+      ],
+      "detection_log": []
     }
   ],
   "other_license_expression": null,

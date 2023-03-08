@@ -3,10 +3,7 @@
     {
       "identifier": "mit-3c947379-4257-acb2-bf21-5f93f7de0076",
       "license_expression": "mit",
-      "count": 1,
-      "detection_log": [
-        "unknown-intro-followed-by-match"
-      ],
+      "detection_count": 1,
       "matches": [
         {
           "score": 50.0,
@@ -17,6 +14,7 @@
           "matcher": "2-aho",
           "license_expression": "unknown-license-reference",
           "rule_identifier": "license-intro_2.RULE",
+          "rule_relevance": 50,
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/license-intro_2.RULE"
         },
         {
@@ -28,6 +26,7 @@
           "matcher": "2-aho",
           "license_expression": "mit",
           "rule_identifier": "mit_21.RULE",
+          "rule_relevance": 100,
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_21.RULE"
         },
         {
@@ -39,6 +38,7 @@
           "matcher": "2-aho",
           "license_expression": "mit",
           "rule_identifier": "mit_31.RULE",
+          "rule_relevance": 100,
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_31.RULE"
         },
         {
@@ -50,8 +50,12 @@
           "matcher": "2-aho",
           "license_expression": "mit",
           "rule_identifier": "mit.LICENSE",
+          "rule_relevance": 100,
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE"
         }
+      ],
+      "detection_log": [
+        "unknown-intro-followed-by-match"
       ]
     }
   ],
@@ -246,9 +250,6 @@
       "license_detections": [
         {
           "license_expression": "mit",
-          "detection_log": [
-            "unknown-intro-followed-by-match"
-          ],
           "matches": [
             {
               "score": 50.0,
@@ -259,6 +260,7 @@
               "matcher": "2-aho",
               "license_expression": "unknown-license-reference",
               "rule_identifier": "license-intro_2.RULE",
+              "rule_relevance": 50,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/license-intro_2.RULE",
               "matched_text": "licensed under:"
             },
@@ -271,6 +273,7 @@
               "matcher": "2-aho",
               "license_expression": "mit",
               "rule_identifier": "mit_21.RULE",
+              "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_21.RULE",
               "matched_text": "http://spdx.org/licenses/MIT."
             },
@@ -283,6 +286,7 @@
               "matcher": "2-aho",
               "license_expression": "mit",
               "rule_identifier": "mit_31.RULE",
+              "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_31.RULE",
               "matched_text": "License</a></li></ul>\n\n<h2>MIT License</"
             },
@@ -295,9 +299,13 @@
               "matcher": "2-aho",
               "license_expression": "mit",
               "rule_identifier": "mit.LICENSE",
+              "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE",
               "matched_text": "Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the \"Software\"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so,\n subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE."
             }
+          ],
+          "detection_log": [
+            "unknown-intro-followed-by-match"
           ]
         }
       ],

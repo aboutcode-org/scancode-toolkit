@@ -26,9 +26,6 @@
   "license_detections": [
     {
       "license_expression": "mit",
-      "detection_log": [
-        "not-combined"
-      ],
       "matches": [
         {
           "score": 100.0,
@@ -39,16 +36,15 @@
           "matcher": "1-hash",
           "license_expression": "mit",
           "rule_identifier": "mit_14.RULE",
+          "rule_relevance": 100,
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_14.RULE",
           "matched_text": "MIT License"
         }
-      ]
+      ],
+      "detection_log": []
     },
     {
       "license_expression": "mit",
-      "detection_log": [
-        "not-combined"
-      ],
       "matches": [
         {
           "score": 100.0,
@@ -59,10 +55,12 @@
           "matcher": "1-hash",
           "license_expression": "mit",
           "rule_identifier": "mit_1144.RULE",
+          "rule_relevance": 100,
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_1144.RULE",
           "matched_text": "http://httpunit.sourceforge.net/doc/license.html"
         }
-      ]
+      ],
+      "detection_log": []
     }
   ],
   "other_license_expression": null,

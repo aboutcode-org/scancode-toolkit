@@ -26,9 +26,6 @@
   "license_detections": [
     {
       "license_expression": "unicode-dfs-2015",
-      "detection_log": [
-        "not-combined"
-      ],
       "matches": [
         {
           "score": 50.0,
@@ -39,10 +36,12 @@
           "matcher": "1-hash",
           "license_expression": "unicode-dfs-2015",
           "rule_identifier": "spdx_license_id_unicode-dfs-2015_for_unicode-dfs-2015.RULE",
+          "rule_relevance": 50,
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/spdx_license_id_unicode-dfs-2015_for_unicode-dfs-2015.RULE",
           "matched_text": "unicode-dfs-2015"
         }
-      ]
+      ],
+      "detection_log": []
     }
   ],
   "other_license_expression": null,

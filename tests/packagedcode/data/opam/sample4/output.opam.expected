@@ -49,9 +49,6 @@
     "license_detections": [
       {
         "license_expression": "lgpl-3.0 WITH ocaml-lgpl-linking-exception",
-        "detection_log": [
-          "not-combined"
-        ],
         "matches": [
           {
             "score": 100.0,
@@ -62,10 +59,12 @@
             "matcher": "1-spdx-id",
             "license_expression": "lgpl-3.0 WITH ocaml-lgpl-linking-exception",
             "rule_identifier": "spdx-license-identifier-lgpl-3.0 WITH ocaml-lgpl-linking-exception-45b28dafe2d3f59c703b2663cd62d139586477a0",
+            "rule_relevance": 100,
             "rule_url": null,
             "matched_text": "LGPL-3.0-only with OCaml-LGPL-linking-exception"
           }
-        ]
+        ],
+        "detection_log": []
       }
     ],
     "other_license_expression": null,

@@ -29,9 +29,6 @@
     "license_detections": [
       {
         "license_expression": "mit",
-        "detection_log": [
-          "not-combined"
-        ],
         "matches": [
           {
             "score": 100.0,
@@ -42,10 +39,12 @@
             "matcher": "1-spdx-id",
             "license_expression": "mit",
             "rule_identifier": "spdx-license-identifier-mit-5da48780aba670b0860c46d899ed42a0f243ff06",
+            "rule_relevance": 100,
             "rule_url": null,
             "matched_text": "MIT"
           }
-        ]
+        ],
+        "detection_log": []
       }
     ],
     "other_license_expression": null,
@@ -130,9 +129,6 @@
     "license_detections": [
       {
         "license_expression": "gpl-2.0",
-        "detection_log": [
-          "not-combined"
-        ],
         "matches": [
           {
             "score": 100.0,
@@ -143,10 +139,12 @@
             "matcher": "1-hash",
             "license_expression": "gpl-2.0",
             "rule_identifier": "gpl-2.0_bare_single_word.RULE",
+            "rule_relevance": 100,
             "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0_bare_single_word.RULE",
             "matched_text": "GPLv2"
           }
-        ]
+        ],
+        "detection_log": []
       }
     ],
     "other_license_expression": null,
@@ -222,9 +220,6 @@
     "license_detections": [
       {
         "license_expression": "gpl-2.0-plus",
-        "detection_log": [
-          "not-combined"
-        ],
         "matches": [
           {
             "score": 100.0,
@@ -235,10 +230,12 @@
             "matcher": "1-hash",
             "license_expression": "gpl-2.0-plus",
             "rule_identifier": "gpl-2.0-plus_bare_single_word.RULE",
+            "rule_relevance": 100,
             "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_bare_single_word.RULE",
             "matched_text": "GPLv2+"
           }
-        ]
+        ],
+        "detection_log": []
       }
     ],
     "other_license_expression": null,

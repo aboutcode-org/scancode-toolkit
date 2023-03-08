@@ -13,8 +13,6 @@ other_license_expression_spdx: (GPL-2.0-or-later AND GPL-2.0-or-later) AND (LGPL
 license_detections: []
 other_license_detections:
   - license_expression: gpl-2.0-plus
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 20
@@ -24,6 +22,7 @@ other_license_detections:
         matcher: 1-hash
         license_expression: gpl-2.0-plus
         rule_identifier: gpl-2.0-plus_22.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_22.RULE
         matched_text: 'License: gpl-2+'
       - score: '100.0'
@@ -34,6 +33,7 @@ other_license_detections:
         matcher: 1-hash
         license_expression: gpl-2.0-plus
         rule_identifier: gpl-2.0-plus_983.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_983.RULE
         matched_text: |
           This program is free software: you can redistribute it and/or modify
@@ -51,9 +51,8 @@ other_license_detections:
 
           The complete text of the GNU General Public License
           can be found in /usr/share/common-licenses/GPL-2 file.
+    detection_log: []
   - license_expression: lgpl-2.0-plus
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 37
@@ -63,6 +62,7 @@ other_license_detections:
         matcher: 1-hash
         license_expression: lgpl-2.0-plus
         rule_identifier: lgpl-2.0-plus_61.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0-plus_61.RULE
         matched_text: 'License: lgpl-2+'
       - score: '100.0'
@@ -73,6 +73,7 @@ other_license_detections:
         matcher: 1-hash
         license_expression: lgpl-2.0-plus
         rule_identifier: lgpl-2.0-plus_477.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0-plus_477.RULE
         matched_text: |
           This program is free software: you can redistribute it and/or modify
@@ -90,6 +91,7 @@ other_license_detections:
 
           The complete text of the GNU Lesser General Public License
           can be found in /usr/share/common-licenses/LGPL-2 file.
+    detection_log: []
 copyright: |
   2005-2018, Red Hat <http://www.redhat.com/>
   2005-2018, Red Hat <http://www.redhat.com/>

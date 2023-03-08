@@ -26,9 +26,6 @@
   "license_detections": [
     {
       "license_expression": "isc",
-      "detection_log": [
-        "not-combined"
-      ],
       "matches": [
         {
           "score": 100.0,
@@ -39,10 +36,12 @@
           "matcher": "1-spdx-id",
           "license_expression": "isc",
           "rule_identifier": "spdx-license-identifier-isc-fd23252ced2c9184cff91208f30a380cf105f995",
+          "rule_relevance": 100,
           "rule_url": null,
           "matched_text": "isc"
         }
-      ]
+      ],
+      "detection_log": []
     }
   ],
   "other_license_expression": null,

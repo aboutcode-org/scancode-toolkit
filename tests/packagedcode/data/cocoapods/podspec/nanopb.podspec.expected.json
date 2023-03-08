@@ -35,9 +35,6 @@
     "license_detections": [
       {
         "license_expression": "zlib",
-        "detection_log": [
-          "not-combined"
-        ],
         "matches": [
           {
             "score": 100.0,
@@ -48,10 +45,12 @@
             "matcher": "1-hash",
             "license_expression": "zlib",
             "rule_identifier": "zlib_in_manifest.RULE",
+            "rule_relevance": 100,
             "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/zlib_in_manifest.RULE",
             "matched_text": ":type = zlib, :file = LICENSE.txt"
           }
-        ]
+        ],
+        "detection_log": []
       }
     ],
     "other_license_expression": null,

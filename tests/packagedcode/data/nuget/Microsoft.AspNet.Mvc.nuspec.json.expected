@@ -42,9 +42,6 @@
     "license_detections": [
       {
         "license_expression": "ms-net-library",
-        "detection_log": [
-          "not-combined"
-        ],
         "matches": [
           {
             "score": 100.0,
@@ -55,10 +52,12 @@
             "matcher": "1-hash",
             "license_expression": "ms-net-library",
             "rule_identifier": "ms-net-library_1.RULE",
+            "rule_relevance": 100,
             "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/ms-net-library_1.RULE",
             "matched_text": "http://www.microsoft.com/web/webpi/eula/net_library_eula_enu.htm"
           }
-        ]
+        ],
+        "detection_log": []
       }
     ],
     "other_license_expression": null,

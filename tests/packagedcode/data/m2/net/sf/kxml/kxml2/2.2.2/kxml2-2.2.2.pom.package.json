@@ -41,9 +41,6 @@
   "license_detections": [
     {
       "license_expression": "bsd-new",
-      "detection_log": [
-        "not-combined"
-      ],
       "matches": [
         {
           "score": 99.0,
@@ -54,16 +51,15 @@
           "matcher": "1-hash",
           "license_expression": "bsd-new",
           "rule_identifier": "bsd-new_145.RULE",
+          "rule_relevance": 99,
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_145.RULE",
           "matched_text": "The BSD License"
         }
-      ]
+      ],
+      "detection_log": []
     },
     {
       "license_expression": "bsd-new",
-      "detection_log": [
-        "not-combined"
-      ],
       "matches": [
         {
           "score": 100.0,
@@ -74,10 +70,12 @@
           "matcher": "1-hash",
           "license_expression": "bsd-new",
           "rule_identifier": "bsd-new_335.RULE",
+          "rule_relevance": 100,
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_335.RULE",
           "matched_text": "http://www.opensource.org/licenses/bsd-license.html"
         }
-      ]
+      ],
+      "detection_log": []
     }
   ],
   "other_license_expression": null,

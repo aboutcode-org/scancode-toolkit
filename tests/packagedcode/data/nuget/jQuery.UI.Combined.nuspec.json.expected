@@ -42,9 +42,6 @@
     "license_detections": [
       {
         "license_expression": "mit",
-        "detection_log": [
-          "not-combined"
-        ],
         "matches": [
           {
             "score": 80.0,
@@ -55,10 +52,12 @@
             "matcher": "1-hash",
             "license_expression": "mit",
             "rule_identifier": "mit_jquery_url.RULE",
+            "rule_relevance": 80,
             "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_jquery_url.RULE",
             "matched_text": "http://jquery.org/license"
           }
-        ]
+        ],
+        "detection_log": []
       }
     ],
     "other_license_expression": null,

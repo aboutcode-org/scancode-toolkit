@@ -35,9 +35,6 @@
     "license_detections": [
       {
         "license_expression": "unknown",
-        "detection_log": [
-          "undetected-license"
-        ],
         "matches": [
           {
             "score": 100.0,
@@ -48,9 +45,13 @@
             "matcher": "5-undetected",
             "license_expression": "unknown",
             "rule_identifier": "package-manifest-unknown-d2754fbb513aa8b758a4d140049dd6bef0aedd05",
+            "rule_relevance": 100,
             "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/package-manifest-unknown-d2754fbb513aa8b758a4d140049dd6bef0aedd05",
             "matched_text": "license Copyright 2021 Google Copyright"
           }
+        ],
+        "detection_log": [
+          "undetected-license"
         ]
       }
     ],

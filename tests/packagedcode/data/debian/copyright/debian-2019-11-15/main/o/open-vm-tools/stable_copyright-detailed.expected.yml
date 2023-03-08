@@ -21,8 +21,6 @@ other_license_expression_spdx: (LGPL-2.1-only AND LGPL-2.0-or-later) AND (GPL-2.
 license_detections: []
 other_license_detections:
   - license_expression: bsd-new
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 38
@@ -32,6 +30,7 @@ other_license_detections:
         matcher: 2-aho
         license_expression: bsd-new
         rule_identifier: bsd-new_42.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_42.RULE
         matched_text: "Redistribution and use in source and binary forms, with or without\n\
           modification, are permitted provided that the following conditions are\tmet:\n\n1.\
@@ -51,9 +50,8 @@ other_license_detections:
           \ WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT\n(INCLUDING NEGLIGENCE OR OTHERWISE)\
           \ ARISING IN ANY WAY OUT OF THE USE OF THIS\nSOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY\
           \ OF SUCH DAMAGE."
+    detection_log: []
   - license_expression: gpl-2.0
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 63
@@ -63,6 +61,7 @@ other_license_detections:
         matcher: 1-hash
         license_expression: gpl-2.0
         rule_identifier: gpl-2.0_561.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0_561.RULE
         matched_text: 'License: gpl-2'
       - score: '100.0'
@@ -73,6 +72,7 @@ other_license_detections:
         matcher: 2-aho
         license_expression: gpl-2.0
         rule_identifier: gpl-2.0_353.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0_353.RULE
         matched_text: |
           This program is free software: you can redistribute it and/or modify
@@ -94,13 +94,13 @@ other_license_detections:
         matcher: 2-aho
         license_expression: gpl-2.0
         rule_identifier: gpl-2.0_1290.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0_1290.RULE
         matched_text: |
           The complete text of the GNU General Public License
           can be found in /usr/share/common-licenses/GPL-2 file.
+    detection_log: []
   - license_expression: gpl-2.0-plus
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 79
@@ -110,6 +110,7 @@ other_license_detections:
         matcher: 1-hash
         license_expression: gpl-2.0-plus
         rule_identifier: gpl-2.0-plus_22.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_22.RULE
         matched_text: 'License: gpl-2+'
       - score: '100.0'
@@ -120,6 +121,7 @@ other_license_detections:
         matcher: 1-hash
         license_expression: gpl-2.0-plus
         rule_identifier: gpl-2.0-plus_983.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_983.RULE
         matched_text: |
           This program is free software: you can redistribute it and/or modify
@@ -137,9 +139,8 @@ other_license_detections:
 
           The complete text of the GNU General Public License
           can be found in /usr/share/common-licenses/GPL-2 file.
+    detection_log: []
   - license_expression: lgpl-2.1 AND lgpl-2.0-plus
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 96
@@ -149,6 +150,7 @@ other_license_detections:
         matcher: 1-hash
         license_expression: lgpl-2.1
         rule_identifier: lgpl-2.1_38.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1_38.RULE
         matched_text: 'License: lgpl-2.1'
       - score: '89.68'
@@ -159,6 +161,7 @@ other_license_detections:
         matcher: 3-seq
         license_expression: lgpl-2.0-plus
         rule_identifier: lgpl-2.0-plus_477.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0-plus_477.RULE
         matched_text: |
           This program is free software: you can redistribute it and/or modify
@@ -175,9 +178,8 @@ other_license_detections:
 
           The complete text of the GNU Lesser General Public License
           can be found in /usr/share/common-licenses/
+    detection_log: []
   - license_expression: isc AND ibm-dhcp
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 113
@@ -187,6 +189,7 @@ other_license_detections:
         matcher: 2-aho
         license_expression: isc
         rule_identifier: isc_9.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/isc_9.RULE
         matched_text: |
           Permission to use, copy, modify, and distribute this software for any purpose
@@ -208,6 +211,7 @@ other_license_detections:
         matcher: 2-aho
         license_expression: ibm-dhcp
         rule_identifier: ibm-dhcp.LICENSE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/ibm-dhcp.LICENSE
         matched_text: |
           International Business Machines, Inc. (hereinafter called IBM) grants
@@ -229,9 +233,8 @@ other_license_detections:
           CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER ARISING OUT OF OR IN CONNECTION
           WITH THE USE OR PERFORMANCE OF THIS SOFTWARE, EVEN IF IBM IS APPRISED OF THE
           POSSIBILITY OF SUCH DAMAGES.
+    detection_log: []
   - license_expression: xfree86-1.0
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 148
@@ -241,6 +244,7 @@ other_license_detections:
         matcher: 1-hash
         license_expression: xfree86-1.0
         rule_identifier: xfree86-1.0_2.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/xfree86-1.0_2.RULE
         matched_text: |
           Permission is hereby granted, free of charge, to any person obtaining a copy of
@@ -265,6 +269,7 @@ other_license_detections:
           author(s) shall not be used in advertising or otherwise to promote the sale,
           use or other dealings in this Software without prior written authorization from
           the copyright holder(s) and author(s).
+    detection_log: []
 copyright: |
   VMware, Inc. <http://www.vmware.com/>
   VMware, Inc. <http://www.vmware.com/>

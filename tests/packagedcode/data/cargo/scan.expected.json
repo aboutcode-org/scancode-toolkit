@@ -36,9 +36,6 @@
       "license_detections": [
         {
           "license_expression": "mpl-2.0",
-          "detection_log": [
-            "not-combined"
-          ],
           "matches": [
             {
               "score": 50.0,
@@ -49,10 +46,12 @@
               "matcher": "1-hash",
               "license_expression": "mpl-2.0",
               "rule_identifier": "spdx_license_id_mpl-2.0_for_mpl-2.0.RULE",
+              "rule_relevance": 50,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/spdx_license_id_mpl-2.0_for_mpl-2.0.RULE",
               "matched_text": "MPL-2.0"
             }
-          ]
+          ],
+          "detection_log": []
         }
       ],
       "other_license_expression": null,
@@ -117,9 +116,6 @@
       "license_detections": [
         {
           "license_expression": "mit OR apache-2.0",
-          "detection_log": [
-            "not-combined"
-          ],
           "matches": [
             {
               "score": 100.0,
@@ -130,10 +126,12 @@
               "matcher": "1-hash",
               "license_expression": "mit OR apache-2.0",
               "rule_identifier": "mit_or_apache-2.0_15.RULE",
+              "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_or_apache-2.0_15.RULE",
               "matched_text": "MIT OR Apache-2.0"
             }
-          ]
+          ],
+          "detection_log": []
         }
       ],
       "other_license_expression": null,
@@ -945,9 +943,6 @@
           "license_detections": [
             {
               "license_expression": "mpl-2.0",
-              "detection_log": [
-                "not-combined"
-              ],
               "matches": [
                 {
                   "score": 50.0,
@@ -958,10 +953,12 @@
                   "matcher": "1-hash",
                   "license_expression": "mpl-2.0",
                   "rule_identifier": "spdx_license_id_mpl-2.0_for_mpl-2.0.RULE",
+                  "rule_relevance": 50,
                   "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/spdx_license_id_mpl-2.0_for_mpl-2.0.RULE",
                   "matched_text": "MPL-2.0"
                 }
-              ]
+              ],
+              "detection_log": []
             }
           ],
           "other_license_expression": null,
@@ -1039,9 +1036,6 @@
           "license_detections": [
             {
               "license_expression": "mit OR apache-2.0",
-              "detection_log": [
-                "not-combined"
-              ],
               "matches": [
                 {
                   "score": 100.0,
@@ -1052,10 +1046,12 @@
                   "matcher": "1-hash",
                   "license_expression": "mit OR apache-2.0",
                   "rule_identifier": "mit_or_apache-2.0_15.RULE",
+                  "rule_relevance": 100,
                   "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_or_apache-2.0_15.RULE",
                   "matched_text": "MIT OR Apache-2.0"
                 }
-              ]
+              ],
+              "detection_log": []
             }
           ],
           "other_license_expression": null,

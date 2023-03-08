@@ -40,9 +40,6 @@
     "license_detections": [
       {
         "license_expression": "mit OR wtfpl-2.0",
-        "detection_log": [
-          "not-combined"
-        ],
         "matches": [
           {
             "score": 100.0,
@@ -53,16 +50,15 @@
             "matcher": "1-spdx-id",
             "license_expression": "mit OR wtfpl-2.0",
             "rule_identifier": "spdx-license-identifier-mit OR wtfpl-2.0-a3a16f7e12d6ecec29951dd1a41d0d4dbd91e112",
+            "rule_relevance": 100,
             "rule_url": null,
             "matched_text": "MIT OR WTFPL"
           }
-        ]
+        ],
+        "detection_log": []
       },
       {
         "license_expression": "wtfpl-2.0",
-        "detection_log": [
-          "not-combined"
-        ],
         "matches": [
           {
             "score": 50.0,
@@ -73,16 +69,15 @@
             "matcher": "1-hash",
             "license_expression": "wtfpl-2.0",
             "rule_identifier": "spdx_license_id_wtfpl_for_wtfpl-2.0.RULE",
+            "rule_relevance": 50,
             "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/spdx_license_id_wtfpl_for_wtfpl-2.0.RULE",
             "matched_text": "WTFPL"
           }
-        ]
+        ],
+        "detection_log": []
       },
       {
         "license_expression": "wtfpl-2.0",
-        "detection_log": [
-          "not-combined"
-        ],
         "matches": [
           {
             "score": 100.0,
@@ -93,16 +88,15 @@
             "matcher": "2-aho",
             "license_expression": "wtfpl-2.0",
             "rule_identifier": "wtfpl-2.0_33.RULE",
+            "rule_relevance": 100,
             "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/wtfpl-2.0_33.RULE",
             "matched_text": "https://github.com/gionkunz/chartist-js/blob/master/LICENSE-WTFPL"
           }
-        ]
+        ],
+        "detection_log": []
       },
       {
         "license_expression": "mit",
-        "detection_log": [
-          "not-combined"
-        ],
         "matches": [
           {
             "score": 100.0,
@@ -113,16 +107,15 @@
             "matcher": "1-spdx-id",
             "license_expression": "mit",
             "rule_identifier": "spdx-license-identifier-mit-5da48780aba670b0860c46d899ed42a0f243ff06",
+            "rule_relevance": 100,
             "rule_url": null,
             "matched_text": "MIT"
           }
-        ]
+        ],
+        "detection_log": []
       },
       {
         "license_expression": "mit",
-        "detection_log": [
-          "not-combined"
-        ],
         "matches": [
           {
             "score": 100.0,
@@ -133,10 +126,12 @@
             "matcher": "2-aho",
             "license_expression": "mit",
             "rule_identifier": "mit_30.RULE",
+            "rule_relevance": 100,
             "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_30.RULE",
             "matched_text": "https://github.com/gionkunz/chartist-js/blob/master/LICENSE-MIT"
           }
-        ]
+        ],
+        "detection_log": []
       }
     ],
     "other_license_expression": null,

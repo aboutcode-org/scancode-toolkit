@@ -36,9 +36,6 @@
       "license_detections": [
         {
           "license_expression": "bsd-simplified",
-          "detection_log": [
-            "not-combined"
-          ],
           "matches": [
             {
               "score": 100.0,
@@ -49,10 +46,12 @@
               "matcher": "1-hash",
               "license_expression": "bsd-simplified",
               "rule_identifier": "bsd-simplified_150.RULE",
+              "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-simplified_150.RULE",
               "matched_text": "Simplified BSD"
             }
-          ]
+          ],
+          "detection_log": []
         }
       ],
       "other_license_expression": null,
@@ -118,9 +117,6 @@
       "license_detections": [
         {
           "license_expression": "mit",
-          "detection_log": [
-            "not-combined"
-          ],
           "matches": [
             {
               "score": 100.0,
@@ -131,16 +127,15 @@
               "matcher": "1-spdx-id",
               "license_expression": "mit",
               "rule_identifier": "spdx-license-identifier-mit-5da48780aba670b0860c46d899ed42a0f243ff06",
+              "rule_relevance": 100,
               "rule_url": null,
               "matched_text": "MIT"
             }
-          ]
+          ],
+          "detection_log": []
         },
         {
           "license_expression": "mit",
-          "detection_log": [
-            "not-combined"
-          ],
           "matches": [
             {
               "score": 100.0,
@@ -151,10 +146,12 @@
               "matcher": "1-hash",
               "license_expression": "mit",
               "rule_identifier": "pypi_mit_license.RULE",
+              "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/pypi_mit_license.RULE",
               "matched_text": "['License :: OSI Approved :: MIT License']"
             }
-          ]
+          ],
+          "detection_log": []
         }
       ],
       "other_license_expression": null,
@@ -204,9 +201,6 @@
       "license_detections": [
         {
           "license_expression": "mit",
-          "detection_log": [
-            "not-combined"
-          ],
           "matches": [
             {
               "score": 100.0,
@@ -217,10 +211,12 @@
               "matcher": "1-spdx-id",
               "license_expression": "mit",
               "rule_identifier": "spdx-license-identifier-mit-5da48780aba670b0860c46d899ed42a0f243ff06",
+              "rule_relevance": 100,
               "rule_url": null,
               "matched_text": "MIT"
             }
-          ]
+          ],
+          "detection_log": []
         }
       ],
       "other_license_expression": null,
@@ -284,9 +280,6 @@
       "license_detections": [
         {
           "license_expression": "mit",
-          "detection_log": [
-            "not-combined"
-          ],
           "matches": [
             {
               "score": 100.0,
@@ -297,16 +290,15 @@
               "matcher": "1-spdx-id",
               "license_expression": "mit",
               "rule_identifier": "spdx-license-identifier-mit-5da48780aba670b0860c46d899ed42a0f243ff06",
+              "rule_relevance": 100,
               "rule_url": null,
               "matched_text": "MIT"
             }
-          ]
+          ],
+          "detection_log": []
         },
         {
           "license_expression": "mit",
-          "detection_log": [
-            "not-combined"
-          ],
           "matches": [
             {
               "score": 100.0,
@@ -317,10 +309,12 @@
               "matcher": "1-hash",
               "license_expression": "mit",
               "rule_identifier": "pypi_mit_license.RULE",
+              "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/pypi_mit_license.RULE",
               "matched_text": "['License :: OSI Approved :: MIT License']"
             }
-          ]
+          ],
+          "detection_log": []
         }
       ],
       "other_license_expression": null,
@@ -378,9 +372,6 @@
       "license_detections": [
         {
           "license_expression": "bsd-new",
-          "detection_log": [
-            "not-combined"
-          ],
           "matches": [
             {
               "score": 99.0,
@@ -391,10 +382,12 @@
               "matcher": "1-hash",
               "license_expression": "bsd-new",
               "rule_identifier": "bsd-new_89.RULE",
+              "rule_relevance": 99,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_89.RULE",
               "matched_text": "license BSD"
             }
-          ]
+          ],
+          "detection_log": []
         }
       ],
       "other_license_expression": null,
@@ -1030,9 +1023,6 @@
           "license_detections": [
             {
               "license_expression": "mit",
-              "detection_log": [
-                "not-combined"
-              ],
               "matches": [
                 {
                   "score": 100.0,
@@ -1043,16 +1033,15 @@
                   "matcher": "1-spdx-id",
                   "license_expression": "mit",
                   "rule_identifier": "spdx-license-identifier-mit-5da48780aba670b0860c46d899ed42a0f243ff06",
+                  "rule_relevance": 100,
                   "rule_url": null,
                   "matched_text": "MIT"
                 }
-              ]
+              ],
+              "detection_log": []
             },
             {
               "license_expression": "mit",
-              "detection_log": [
-                "not-combined"
-              ],
               "matches": [
                 {
                   "score": 100.0,
@@ -1063,10 +1052,12 @@
                   "matcher": "1-hash",
                   "license_expression": "mit",
                   "rule_identifier": "pypi_mit_license.RULE",
+                  "rule_relevance": 100,
                   "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/pypi_mit_license.RULE",
                   "matched_text": "['License :: OSI Approved :: MIT License']"
                 }
-              ]
+              ],
+              "detection_log": []
             }
           ],
           "other_license_expression": null,
@@ -1122,9 +1113,6 @@
           "license_detections": [
             {
               "license_expression": "mit",
-              "detection_log": [
-                "not-combined"
-              ],
               "matches": [
                 {
                   "score": 100.0,
@@ -1135,10 +1123,12 @@
                   "matcher": "1-spdx-id",
                   "license_expression": "mit",
                   "rule_identifier": "spdx-license-identifier-mit-5da48780aba670b0860c46d899ed42a0f243ff06",
+                  "rule_relevance": 100,
                   "rule_url": null,
                   "matched_text": "MIT"
                 }
-              ]
+              ],
+              "detection_log": []
             }
           ],
           "other_license_expression": null,
@@ -1209,9 +1199,6 @@
           "license_detections": [
             {
               "license_expression": "bsd-new",
-              "detection_log": [
-                "not-combined"
-              ],
               "matches": [
                 {
                   "score": 99.0,
@@ -1222,10 +1209,12 @@
                   "matcher": "1-hash",
                   "license_expression": "bsd-new",
                   "rule_identifier": "bsd-new_89.RULE",
+                  "rule_relevance": 99,
                   "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_89.RULE",
                   "matched_text": "license BSD"
                 }
-              ]
+              ],
+              "detection_log": []
             }
           ],
           "other_license_expression": null,
@@ -1296,9 +1285,6 @@
           "license_detections": [
             {
               "license_expression": "bsd-simplified",
-              "detection_log": [
-                "not-combined"
-              ],
               "matches": [
                 {
                   "score": 100.0,
@@ -1309,10 +1295,12 @@
                   "matcher": "1-hash",
                   "license_expression": "bsd-simplified",
                   "rule_identifier": "bsd-simplified_150.RULE",
+                  "rule_relevance": 100,
                   "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-simplified_150.RULE",
                   "matched_text": "Simplified BSD"
                 }
-              ]
+              ],
+              "detection_log": []
             }
           ],
           "other_license_expression": null,
@@ -1611,9 +1599,6 @@
           "license_detections": [
             {
               "license_expression": "mit",
-              "detection_log": [
-                "not-combined"
-              ],
               "matches": [
                 {
                   "score": 100.0,
@@ -1624,16 +1609,15 @@
                   "matcher": "1-spdx-id",
                   "license_expression": "mit",
                   "rule_identifier": "spdx-license-identifier-mit-5da48780aba670b0860c46d899ed42a0f243ff06",
+                  "rule_relevance": 100,
                   "rule_url": null,
                   "matched_text": "MIT"
                 }
-              ]
+              ],
+              "detection_log": []
             },
             {
               "license_expression": "mit",
-              "detection_log": [
-                "not-combined"
-              ],
               "matches": [
                 {
                   "score": 100.0,
@@ -1644,10 +1628,12 @@
                   "matcher": "1-hash",
                   "license_expression": "mit",
                   "rule_identifier": "pypi_mit_license.RULE",
+                  "rule_relevance": 100,
                   "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/pypi_mit_license.RULE",
                   "matched_text": "['License :: OSI Approved :: MIT License']"
                 }
-              ]
+              ],
+              "detection_log": []
             }
           ],
           "other_license_expression": null,

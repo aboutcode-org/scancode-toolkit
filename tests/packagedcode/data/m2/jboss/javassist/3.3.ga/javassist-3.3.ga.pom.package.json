@@ -34,9 +34,6 @@
   "license_detections": [
     {
       "license_expression": "mpl-1.1",
-      "detection_log": [
-        "not-combined"
-      ],
       "matches": [
         {
           "score": 50.0,
@@ -47,16 +44,15 @@
           "matcher": "1-hash",
           "license_expression": "mpl-1.1",
           "rule_identifier": "spdx_license_id_mpl-1.1_for_mpl-1.1.RULE",
+          "rule_relevance": 50,
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/spdx_license_id_mpl-1.1_for_mpl-1.1.RULE",
           "matched_text": "MPL 1.1"
         }
-      ]
+      ],
+      "detection_log": []
     },
     {
       "license_expression": "mpl-1.1 OR lgpl-2.1-plus",
-      "detection_log": [
-        "not-combined"
-      ],
       "matches": [
         {
           "score": 100.0,
@@ -67,16 +63,15 @@
           "matcher": "1-hash",
           "license_expression": "mpl-1.1 OR lgpl-2.1-plus",
           "rule_identifier": "mpl-1.1_or_lgpl-2.1-plus_6.RULE",
+          "rule_relevance": 100,
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mpl-1.1_or_lgpl-2.1-plus_6.RULE",
           "matched_text": "http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/*checkout*/jboss/javassist/License.html?rev=HEAD&content-type=text/html"
         }
-      ]
+      ],
+      "detection_log": []
     },
     {
       "license_expression": "mpl-1.1 OR lgpl-2.1-plus",
-      "detection_log": [
-        "not-combined"
-      ],
       "matches": [
         {
           "score": 100.0,
@@ -87,10 +82,12 @@
           "matcher": "1-hash",
           "license_expression": "mpl-1.1 OR lgpl-2.1-plus",
           "rule_identifier": "mpl-1.1_or_lgpl-2.1-plus_5.RULE",
+          "rule_relevance": 100,
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mpl-1.1_or_lgpl-2.1-plus_5.RULE",
           "matched_text": "Dual-license; LGPL if downloaded as part of JBoss, MPL if downloaded separately."
         }
-      ]
+      ],
+      "detection_log": []
     }
   ],
   "other_license_expression": null,

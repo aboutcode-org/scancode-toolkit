@@ -40,9 +40,6 @@
     "license_detections": [
       {
         "license_expression": "gpl-3.0",
-        "detection_log": [
-          "not-combined"
-        ],
         "matches": [
           {
             "score": 100.0,
@@ -53,10 +50,12 @@
             "matcher": "1-hash",
             "license_expression": "gpl-3.0",
             "rule_identifier": "gpl-3.0_32.RULE",
+            "rule_relevance": 100,
             "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0_32.RULE",
             "matched_text": "GPLv3"
           }
-        ]
+        ],
+        "detection_log": []
       }
     ],
     "other_license_expression": null,

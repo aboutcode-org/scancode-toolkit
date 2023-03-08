@@ -3,10 +3,7 @@
     {
       "identifier": "none-c0ea97eb-46c1-3f14-32fa-dba6cc1d3326",
       "license_expression": null,
-      "count": 1,
-      "detection_log": [
-        "license-clues"
-      ],
+      "detection_count": 1,
       "matches": [
         {
           "score": 14.39,
@@ -17,17 +14,18 @@
           "matcher": "3-seq",
           "license_expression": "lgpl-2.0-plus",
           "rule_identifier": "lgpl-2.0-plus_65.RULE",
+          "rule_relevance": 100,
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0-plus_65.RULE"
         }
+      ],
+      "detection_log": [
+        "license-clues"
       ]
     },
     {
       "identifier": "gpl_2_0_and_patent_disclaimer-678028e8-022d-e622-af93-f2a9c0af83a1",
       "license_expression": "gpl-2.0 AND patent-disclaimer",
-      "count": 1,
-      "detection_log": [
-        "not-combined"
-      ],
+      "detection_count": 1,
       "matches": [
         {
           "score": 100.0,
@@ -38,9 +36,11 @@
           "matcher": "2-aho",
           "license_expression": "gpl-2.0 AND patent-disclaimer",
           "rule_identifier": "gpl-2.0_and_patent-disclaimer_3.RULE",
+          "rule_relevance": 100,
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0_and_patent-disclaimer_3.RULE"
         }
-      ]
+      ],
+      "detection_log": []
     }
   ],
   "license_references": [
@@ -253,6 +253,7 @@
           "matcher": "3-seq",
           "license_expression": "lgpl-2.0-plus",
           "rule_identifier": "lgpl-2.0-plus_65.RULE",
+          "rule_relevance": 100,
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0-plus_65.RULE"
         }
       ],
@@ -270,9 +271,6 @@
       "license_detections": [
         {
           "license_expression": "gpl-2.0 AND patent-disclaimer",
-          "detection_log": [
-            "not-combined"
-          ],
           "matches": [
             {
               "score": 100.0,
@@ -283,9 +281,11 @@
               "matcher": "2-aho",
               "license_expression": "gpl-2.0 AND patent-disclaimer",
               "rule_identifier": "gpl-2.0_and_patent-disclaimer_3.RULE",
+              "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0_and_patent-disclaimer_3.RULE"
             }
-          ]
+          ],
+          "detection_log": []
         }
       ],
       "license_clues": [],

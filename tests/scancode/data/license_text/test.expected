@@ -3,10 +3,7 @@
     {
       "identifier": "lgpl_2_1-f2c21ebe-b8c5-46cb-b594-01b504d178f0",
       "license_expression": "lgpl-2.1",
-      "count": 1,
-      "detection_log": [
-        "not-combined"
-      ],
+      "detection_count": 1,
       "matches": [
         {
           "score": 100.0,
@@ -17,9 +14,11 @@
           "matcher": "2-aho",
           "license_expression": "lgpl-2.1",
           "rule_identifier": "lgpl-2.1_38.RULE",
+          "rule_relevance": 100,
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1_38.RULE"
         }
-      ]
+      ],
+      "detection_log": []
     }
   ],
   "license_references": [
@@ -116,9 +115,6 @@
       "license_detections": [
         {
           "license_expression": "lgpl-2.1",
-          "detection_log": [
-            "not-combined"
-          ],
           "matches": [
             {
               "score": 100.0,
@@ -129,10 +125,12 @@
               "matcher": "2-aho",
               "license_expression": "lgpl-2.1",
               "rule_identifier": "lgpl-2.1_38.RULE",
+              "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1_38.RULE",
               "matched_text": "foo bar this that license: LGPL-2.1 bar"
             }
-          ]
+          ],
+          "detection_log": []
         }
       ],
       "license_clues": [],

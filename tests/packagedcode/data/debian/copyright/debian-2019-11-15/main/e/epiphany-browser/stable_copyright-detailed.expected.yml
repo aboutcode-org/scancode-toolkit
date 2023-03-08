@@ -34,8 +34,6 @@ other_license_expression_spdx: (GPL-3.0-or-later AND GPL-3.0-or-later) AND (CC0-
 license_detections: []
 other_license_detections:
   - license_expression: apache-2.0
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 93
@@ -45,6 +43,7 @@ other_license_detections:
         matcher: 1-hash
         license_expression: apache-2.0
         rule_identifier: apache-2.0_65.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_65.RULE
         matched_text: 'License: apache-2.0'
       - score: '100.0'
@@ -55,6 +54,7 @@ other_license_detections:
         matcher: 1-hash
         license_expression: apache-2.0
         rule_identifier: apache-2.0_949.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_949.RULE
         matched_text: |
           Licensed under the Apache License, Version 2.0 (the "License");
@@ -71,9 +71,8 @@ other_license_detections:
 
           On Debian systems a copy of the Apache License, Version 2.0 can be
           found in /usr/share/common-licenses/Apache-2.0
+    detection_log: []
   - license_expression: gpl-2.0-plus
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 109
@@ -83,6 +82,7 @@ other_license_detections:
         matcher: 1-hash
         license_expression: gpl-2.0-plus
         rule_identifier: gpl-2.0-plus_22.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_22.RULE
         matched_text: 'License: gpl-2+'
       - score: '100.0'
@@ -93,6 +93,7 @@ other_license_detections:
         matcher: 1-hash
         license_expression: gpl-2.0-plus
         rule_identifier: gpl-2.0-plus_839.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_839.RULE
         matched_text: |
           This package is free software; you can redistribute it and/or modify
@@ -110,9 +111,8 @@ other_license_detections:
 
           On Debian systems, the complete text of the GNU General
           Public License version 2 can be found in "/usr/share/common-licenses/GPL-2".
+    detection_log: []
   - license_expression: gpl-3.0-plus
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 126
@@ -122,6 +122,7 @@ other_license_detections:
         matcher: 1-hash
         license_expression: gpl-3.0-plus
         rule_identifier: gpl-3.0-plus_92.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0-plus_92.RULE
         matched_text: 'License: gpl-3+'
       - score: '100.0'
@@ -132,6 +133,7 @@ other_license_detections:
         matcher: 1-hash
         license_expression: gpl-3.0-plus
         rule_identifier: gpl-3.0-plus_385.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0-plus_385.RULE
         matched_text: |
           This program is free software: you can redistribute it and/or modify
@@ -149,9 +151,8 @@ other_license_detections:
 
           On Debian systems, the complete text of the GNU General
           Public License version 3 can be found in "/usr/share/common-licenses/GPL-3".
+    detection_log: []
   - license_expression: lgpl-2.0-plus
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 143
@@ -161,6 +162,7 @@ other_license_detections:
         matcher: 1-hash
         license_expression: lgpl-2.0-plus
         rule_identifier: lgpl-2.0-plus_61.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0-plus_61.RULE
         matched_text: 'License: lgpl-2+'
       - score: '100.0'
@@ -171,6 +173,7 @@ other_license_detections:
         matcher: 1-hash
         license_expression: lgpl-2.0-plus
         rule_identifier: lgpl-2.0-plus_457.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0-plus_457.RULE
         matched_text: |
           This library is free software; you can redistribute it and/or
@@ -185,9 +188,8 @@ other_license_detections:
 
           On Debian systems, the complete text of the GNU Library General Public
           License version 2 can be found in "/usr/share/common-licenses/LGPL-2".
+    detection_log: []
   - license_expression: cc0-1.0
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 157
@@ -197,6 +199,7 @@ other_license_detections:
         matcher: 1-hash
         license_expression: cc0-1.0
         rule_identifier: cc0-1.0_12.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/cc0-1.0_12.RULE
         matched_text: 'License: cc0-1.0'
       - score: '100.0'
@@ -207,6 +210,7 @@ other_license_detections:
         matcher: 1-hash
         license_expression: cc0-1.0
         rule_identifier: cc0-1.0_186.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/cc0-1.0_186.RULE
         matched_text: |
           Certain owners wish to permanently relinquish those rights to a Work for
@@ -231,9 +235,8 @@ other_license_detections:
            .
           The complete text of the Creative Commons 0 1.0 Universal
           can be found in `/usr/share/common-licenses/CC0-1.0'.
+    detection_log: []
   - license_expression: cc-by-sa-3.0
-    detection_log:
-      - not-combined
     matches:
       - score: '97.8'
         start_line: 182
@@ -243,6 +246,7 @@ other_license_detections:
         matcher: 3-seq
         license_expression: cc-by-sa-3.0
         rule_identifier: cc-by-sa-3.0_35.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/cc-by-sa-3.0_35.RULE
         matched_text: |
           THE WORK (AS DEFINED BELOW) IS PROVIDED UNDER THE TERMS OF THIS
@@ -552,9 +556,8 @@ other_license_detections:
           this License, such additional rights are deemed to be included in the
           License; this License is not intended to restrict the license of any
           rights under applicable law.
+    detection_log: []
   - license_expression: cc-by-sa-4.0
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 491
@@ -564,6 +567,7 @@ other_license_detections:
         matcher: 2-aho
         license_expression: cc-by-sa-4.0
         rule_identifier: cc-by-sa-4.0_36.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/cc-by-sa-4.0_36.RULE
         matched_text: http://creativecommons.org/licenses/by-sa/4.0/
       - score: '99.82'
@@ -574,6 +578,7 @@ other_license_detections:
         matcher: 3-seq
         license_expression: cc-by-sa-4.0
         rule_identifier: cc-by-sa-4.0.LICENSE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/cc-by-sa-4.0.LICENSE
         matched_text: |
           Creative Commons Corporation ("Creative Commons") is not a law firm and
@@ -998,6 +1003,7 @@ other_license_detections:
           public licenses.
 
           Creative Commons may be contacted at creativecommons.org.
+    detection_log: []
 copyright: |
   2009-2018 Igalia S.L
   2002 Jorn Baayen

@@ -41,8 +41,6 @@ other_license_expression_spdx: (BSD-3-Clause AND LicenseRef-scancode-google-pate
 license_detections: []
 other_license_detections:
   - license_expression: other-permissive
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 187
@@ -52,13 +50,13 @@ other_license_detections:
         matcher: 1-hash
         license_expression: other-permissive
         rule_identifier: other-permissive_292.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/other-permissive_292.RULE
         matched_text: |
           Permission to use, copy, and distribute these images for any purpose and
           without fee is hereby granted.
+    detection_log: []
   - license_expression: bsd-new
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 226
@@ -68,6 +66,7 @@ other_license_detections:
         matcher: 1-hash
         license_expression: bsd-new
         rule_identifier: bsd-new_166.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_166.RULE
         matched_text: |
           Redistribution and use in source and binary forms, with or without
@@ -95,9 +94,8 @@ other_license_detections:
           THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
           (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
           OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+    detection_log: []
   - license_expression: bsd-new AND google-patent-license-golang
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 255
@@ -107,6 +105,7 @@ other_license_detections:
         matcher: 2-aho
         license_expression: bsd-new
         rule_identifier: bsd-new_166.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_166.RULE
         matched_text: |
           Redistribution and use in source and binary forms, with or without
@@ -142,6 +141,7 @@ other_license_detections:
         matcher: 2-aho
         license_expression: google-patent-license-golang
         rule_identifier: google-patent-license-golang_1.RULE
+        rule_relevance: 95
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/google-patent-license-golang_1.RULE
         matched_text: |
           Subject to the terms and conditions of this License, Google hereby
@@ -158,9 +158,8 @@ other_license_detections:
           infringement, then any patent licenses granted to You under this
           License for this implementation of Go shall terminate as of the date
           such litigation is filed.
+    detection_log: []
   - license_expression: apache-2.0
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 296
@@ -170,6 +169,7 @@ other_license_detections:
         matcher: 1-hash
         license_expression: apache-2.0
         rule_identifier: apache-2.0_65.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_65.RULE
         matched_text: 'License: apache-2.0'
       - score: '100.0'
@@ -180,6 +180,7 @@ other_license_detections:
         matcher: 1-hash
         license_expression: apache-2.0
         rule_identifier: apache-2.0_1019.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_1019.RULE
         matched_text: |
           Licensed under the Apache License, Version 2.0 (the "License");
@@ -196,9 +197,8 @@ other_license_detections:
 
           On Debian systems, the Apache License, Version 2.0 can be found at
           /usr/share/common-licenses/Apache-2.0.
+    detection_log: []
   - license_expression: mit
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 313
@@ -208,6 +208,7 @@ other_license_detections:
         matcher: 1-hash
         license_expression: mit
         rule_identifier: mit.LICENSE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE
         matched_text: |
           Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -227,9 +228,8 @@ other_license_detections:
           LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
           OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
           THE SOFTWARE.
+    detection_log: []
   - license_expression: bsd-simplified
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 336
@@ -239,6 +239,7 @@ other_license_detections:
         matcher: 2-aho
         license_expression: bsd-simplified
         rule_identifier: bsd-simplified_27.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-simplified_27.RULE
         matched_text: |
           Redistribution and use in source and binary forms, with or without
@@ -261,9 +262,8 @@ other_license_detections:
           LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
           OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
           SUCH DAMAGE.
+    detection_log: []
   - license_expression: mpeg-ssg
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 358
@@ -273,6 +273,7 @@ other_license_detections:
         matcher: 1-hash
         license_expression: mpeg-ssg
         rule_identifier: mpeg-ssg_1.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mpeg-ssg_1.RULE
         matched_text: |
           These software programs are available to the user without any license fee or
@@ -294,9 +295,8 @@ other_license_detections:
           are subject to royalty fees to patent holders.  Many of these patents are
           general enough such that they are unavoidable regardless of implementation
           design.
+    detection_log: []
   - license_expression: cc-by-3.0
-    detection_log:
-      - not-combined
     matches:
       - score: '97.85'
         start_line: 379
@@ -306,6 +306,7 @@ other_license_detections:
         matcher: 3-seq
         license_expression: cc-by-3.0
         rule_identifier: cc-by-3.0_102.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/cc-by-3.0_102.RULE
         matched_text: |
           THE WORK (AS DEFINED BELOW) IS PROVIDED UNDER THE TERMS OF THIS
@@ -635,9 +636,8 @@ other_license_detections:
                rights not granted under this License, such additional rights
                are deemed to be included in the License; this License is not
                intended to restrict the license of any rights under applicable law.
+    detection_log: []
   - license_expression: bsd-2-clause-views
-    detection_log:
-      - not-combined
     matches:
       - score: '98.1'
         start_line: 708
@@ -647,6 +647,7 @@ other_license_detections:
         matcher: 1-hash
         license_expression: bsd-2-clause-views
         rule_identifier: bsd-2-clause-views_11.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-2-clause-views_11.RULE
         matched_text: |
           Redistribution and use in source and binary forms, with or without
@@ -673,9 +674,8 @@ other_license_detections:
           The views and conclusions contained in the software and documentation are those
           of the authors and should not be interpreted as representing official policies,
           either expressed or implied, of
+    detection_log: []
   - license_expression: sunpro
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 171
@@ -685,15 +685,15 @@ other_license_detections:
         matcher: 2-aho
         license_expression: sunpro
         rule_identifier: sunpro.LICENSE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/sunpro.LICENSE
         matched_text: |
           Developed at SunPro, a Sun Microsystems, Inc. business.
           Permission to use, copy, modify, and distribute this
           software is freely granted, provided that this notice
           is preserved.
+    detection_log: []
   - license_expression: cc-by-3.0
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 209
@@ -703,11 +703,13 @@ other_license_detections:
         matcher: 2-aho
         license_expression: cc-by-3.0
         rule_identifier: cc-by-3.0_111.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/cc-by-3.0_111.RULE
         matched_text: |
           are covered by the
           Creative Commons Attribution 3.0 <http://creativecommons.org/licenses/by/3.0>
           license.
+    detection_log: []
 copyright: |
   © 2009, 2010, The Go Authors. All rights reserved.
   © 1994-1999 Lucent Technologies Inc. All rights reserved.

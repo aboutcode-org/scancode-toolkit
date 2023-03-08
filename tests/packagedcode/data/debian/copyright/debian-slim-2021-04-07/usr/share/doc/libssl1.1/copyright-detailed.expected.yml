@@ -5,8 +5,6 @@ other_license_expression:
 other_license_expression_spdx:
 license_detections:
   - license_expression: openssl-ssleay
-    detection_log:
-      - not-combined
     matches:
       - score: '99.89'
         start_line: 10
@@ -16,6 +14,7 @@ license_detections:
         matcher: 3-seq
         license_expression: openssl-ssleay
         rule_identifier: openssl-ssleay_37.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/openssl-ssleay_37.RULE
         matched_text: "LICENSE ISSUES\n  ==============\n\n  The OpenSSL toolkit stays under\
           \ a dual license, i.e. both the conditions of\n  the OpenSSL License and the original\
@@ -93,6 +92,7 @@ license_detections:
           \ version or\n * derivative of this code cannot be changed.  i.e. this code cannot\
           \ simply be\n * copied and put under another distribution licence\n * [including the\
           \ GNU Public Licence.]"
+    detection_log: []
 other_license_detections: []
 copyright: |
   Copyright (c) 1998-2004 The OpenSSL Project

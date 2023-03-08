@@ -47,8 +47,6 @@ other_license_expression_spdx: BSD-3-Clause AND FSFULLRWD AND FSFULLRWD AND FSFU
 license_detections: []
 other_license_detections:
   - license_expression: bsd-new
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 155
@@ -58,6 +56,7 @@ other_license_detections:
         matcher: 1-hash
         license_expression: bsd-new
         rule_identifier: bsd-new_19.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_19.RULE
         matched_text: |
           Redistribution and use in source and binary forms, with or without
@@ -83,9 +82,8 @@ other_license_detections:
           LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
           OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
           SUCH DAMAGE.
+    detection_log: []
   - license_expression: fsf-free
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 180
@@ -95,13 +93,13 @@ other_license_detections:
         matcher: 1-hash
         license_expression: fsf-free
         rule_identifier: fsf-free.LICENSE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/fsf-free.LICENSE
         matched_text: |
           This configure script is free software; the Free Software Foundation
           gives unlimited permission to copy, distribute and modify it.
+    detection_log: []
   - license_expression: fsf-unlimited-no-warranty
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 184
@@ -111,6 +109,7 @@ other_license_detections:
         matcher: 1-hash
         license_expression: fsf-unlimited-no-warranty
         rule_identifier: fsf-unlimited-no-warranty.LICENSE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/fsf-unlimited-no-warranty.LICENSE
         matched_text: |
           This file is free software; the Free Software Foundation
@@ -121,9 +120,8 @@ other_license_detections:
           but WITHOUT ANY WARRANTY, to the extent permitted by law; without
           even the implied warranty of MERCHANTABILITY or FITNESS FOR A
           PARTICULAR PURPOSE.
+    detection_log: []
   - license_expression: x11-xconsortium AND public-domain
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: '194'
@@ -133,6 +131,7 @@ other_license_detections:
         matcher: 2-aho
         license_expression: x11-xconsortium
         rule_identifier: x11-xconsortium_2.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/x11-xconsortium_2.RULE
         matched_text: |
           Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -164,11 +163,11 @@ other_license_detections:
         matcher: 2-aho
         license_expression: public-domain
         rule_identifier: public-domain_58.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/public-domain_58.RULE
         matched_text: FSF changes to this file are in the public domain.
+    detection_log: []
   - license_expression: gpl-2.0-plus
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 218
@@ -178,6 +177,7 @@ other_license_detections:
         matcher: 1-hash
         license_expression: gpl-2.0-plus
         rule_identifier: gpl-2.0-plus_22.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_22.RULE
         matched_text: 'License: gpl-2+'
       - score: '100.0'
@@ -188,6 +188,7 @@ other_license_detections:
         matcher: 1-hash
         license_expression: gpl-2.0-plus
         rule_identifier: gpl-2.0-plus_737.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_737.RULE
         matched_text: |
           This program is free software; you can redistribute it and/or modify
@@ -206,9 +207,8 @@ other_license_detections:
 
           On Debian systems, the complete text of the GNU General Public License
           version 2 can be found in ‘/usr/share/common-licenses/GPL-2’.
+    detection_log: []
   - license_expression: public-domain
-    detection_log:
-      - not-combined
     matches:
       - score: '99.0'
         start_line: 138
@@ -218,8 +218,10 @@ other_license_detections:
         matcher: 1-hash
         license_expression: public-domain
         rule_identifier: pypi_public_domain.RULE
+        rule_relevance: 99
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/pypi_public_domain.RULE
         matched_text: 'License: public-domain'
+    detection_log: []
 copyright: |
   1989-1994 The Regents of the University of California. All rights reserved.
   1997 Christos Zoulas. All rights reserved.

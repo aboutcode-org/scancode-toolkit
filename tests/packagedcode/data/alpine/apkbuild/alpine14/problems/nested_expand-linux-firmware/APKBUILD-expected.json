@@ -26,9 +26,6 @@
   "license_detections": [
     {
       "license_expression": "unknown-license-reference",
-      "detection_log": [
-        "unknown-match"
-      ],
       "matches": [
         {
           "score": 100.0,
@@ -39,9 +36,13 @@
           "matcher": "1-spdx-id",
           "license_expression": "unknown-license-reference",
           "rule_identifier": "spdx-license-identifier-unknown-license-reference-555dc1c4c5d6d483173bdc629017bd81905d82ab",
+          "rule_relevance": 100,
           "rule_url": null,
           "matched_text": "licenseref-scancode-unknown-license-reference"
         }
+      ],
+      "detection_log": [
+        "unknown-match"
       ]
     }
   ],

@@ -7,8 +7,6 @@ other_license_expression:
 other_license_expression_spdx:
 license_detections:
   - license_expression: mit
-    detection_log:
-      - not-combined
     matches:
       - score: '97.67'
         start_line: 14
@@ -18,6 +16,7 @@ license_detections:
         matcher: 3-seq
         license_expression: mit
         rule_identifier: mit_x11-r75_58.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_x11-r75_58.RULE
         matched_text: |
           Permission is hereby granted, free of charge, to any person obtaining a
@@ -38,9 +37,8 @@ license_detections:
           LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
           OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
           WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+    detection_log: []
   - license_expression: amd-linux-firmware
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 38
@@ -50,6 +48,7 @@ license_detections:
         matcher: 2-aho
         license_expression: amd-linux-firmware
         rule_identifier: amd-linux-firmware.LICENSE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/amd-linux-firmware.LICENSE
         matched_text: |
           REDISTRIBUTION: Permission is hereby granted, free of any license fees,
@@ -101,6 +100,7 @@ license_detections:
           U.S. Department of Commerce and International Traffic in Arm Regulations
           administered by the U.S. Department of State.  These laws include
           restrictions on destinations, end users and end use.
+    detection_log: []
 other_license_detections: []
 copyright: |
   2000-2009, Advanced Micro Devices, Inc.

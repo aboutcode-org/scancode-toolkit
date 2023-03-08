@@ -52,9 +52,6 @@
     "license_detections": [
       {
         "license_expression": "epl-1.0 AND bsd-new",
-        "detection_log": [
-          "not-combined"
-        ],
         "matches": [
           {
             "score": 100.0,
@@ -65,6 +62,7 @@
             "matcher": "2-aho",
             "license_expression": "epl-1.0",
             "rule_identifier": "epl-1.0_18.RULE",
+            "rule_relevance": 100,
             "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/epl-1.0_18.RULE",
             "matched_text": "Eclipse Public License v1.0 / Eclipse Distribution License v1.0"
           },
@@ -77,16 +75,15 @@
             "matcher": "2-aho",
             "license_expression": "bsd-new",
             "rule_identifier": "bsd-new_802.RULE",
+            "rule_relevance": 100,
             "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_802.RULE",
             "matched_text": "Eclipse Public License v1.0 / Eclipse Distribution License v1.0"
           }
-        ]
+        ],
+        "detection_log": []
       },
       {
         "license_expression": "free-unknown",
-        "detection_log": [
-          "unknown-match"
-        ],
         "matches": [
           {
             "score": 100.0,
@@ -97,9 +94,13 @@
             "matcher": "1-hash",
             "license_expression": "free-unknown",
             "rule_identifier": "pypi_osi_approved.RULE",
+            "rule_relevance": 100,
             "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/pypi_osi_approved.RULE",
             "matched_text": "['License :: OSI Approved']"
           }
+        ],
+        "detection_log": [
+          "unknown-match"
         ]
       }
     ],

@@ -10,8 +10,6 @@ other_license_expression:
 other_license_expression_spdx:
 license_detections:
   - license_expression: gpl-3.0-plus AND bash-exception-gpl AND gpl-1.0-plus
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 13
@@ -21,6 +19,7 @@ license_detections:
         matcher: 2-aho
         license_expression: gpl-3.0-plus
         rule_identifier: gpl-3.0-plus_289.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0-plus_289.RULE
         matched_text: |
           Bash is free software; you can redistribute it and/or modify it under
@@ -45,6 +44,7 @@ license_detections:
         matcher: 2-aho
         license_expression: bash-exception-gpl
         rule_identifier: bash-exception-gpl.LICENSE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bash-exception-gpl.LICENSE
         matched_text: |
           The Free Software Foundation has exempted Bash from the requirement of
@@ -62,11 +62,11 @@ license_detections:
         matcher: 2-aho
         license_expression: gpl-1.0-plus
         rule_identifier: gpl_72.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl_72.RULE
         matched_text: License GPL
+    detection_log: []
   - license_expression: other-permissive
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 44
@@ -76,6 +76,7 @@ license_detections:
         matcher: 2-aho
         license_expression: other-permissive
         rule_identifier: other-permissive_207.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/other-permissive_207.RULE
         matched_text: |
           Permission is hereby granted, without written agreement and
@@ -83,9 +84,8 @@ license_detections:
            this document for any purpose, provided that the above copyright
            notice appears in all copies of this document and that the
            contents of this document remain unaltered.
+    detection_log: []
   - license_expression: gfdl-1.3-plus
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 55
@@ -95,6 +95,7 @@ license_detections:
         matcher: 2-aho
         license_expression: gfdl-1.3-plus
         rule_identifier: gfdl-1.3-plus_22.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gfdl-1.3-plus_22.RULE
         matched_text: |
           Permission is granted to make and distribute verbatim copies of
@@ -107,9 +108,8 @@ license_detections:
            Invariant Sections, no Front-Cover Texts, and no Back-Cover Texts.
            A copy of the license is included in the section entitled
            ``GNU Free Documentation License''.
+    detection_log: []
   - license_expression: gfdl-1.3-plus
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 71
@@ -119,6 +119,7 @@ license_detections:
         matcher: 2-aho
         license_expression: gfdl-1.3-plus
         rule_identifier: gfdl-1.3-plus.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gfdl-1.3-plus.RULE
         matched_text: |
           Permission is granted to copy, distribute and/or modify this document
@@ -127,9 +128,8 @@ license_detections:
            Invariant Sections, no Front-Cover Texts, and no Back-Cover Texts.
            A copy of the license is included in the section entitled
            ``GNU Free Documentation License''.
+    detection_log: []
   - license_expression: other-permissive AND latex2e
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 82
@@ -139,6 +139,7 @@ license_detections:
         matcher: 2-aho
         license_expression: other-permissive
         rule_identifier: other-permissive_206.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/other-permissive_206.RULE
         matched_text: |
           Permission is granted to make and distribute verbatim copies of
@@ -152,6 +153,7 @@ license_detections:
         matcher: 2-aho
         license_expression: latex2e
         rule_identifier: latex2e_7.RULE
+        rule_relevance: 99
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/latex2e_7.RULE
         matched_text: |
           Permission is granted to process this file through TeX and print the
@@ -168,9 +170,8 @@ license_detections:
            into another language, under the above conditions for modified versions,
            except that this permission notice may be stated in a translation approved
            by the Foundation.
+    detection_log: []
   - license_expression: latex2e
-    detection_log:
-      - not-combined
     matches:
       - score: '99.0'
         start_line: 108
@@ -180,6 +181,7 @@ license_detections:
         matcher: 2-aho
         license_expression: latex2e
         rule_identifier: latex2e_3.RULE
+        rule_relevance: 99
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/latex2e_3.RULE
         matched_text: |
           Permission is granted to process this file through Tex and print the
@@ -199,9 +201,8 @@ license_detections:
 
            Permission is granted to copy and distribute translations of this manual
            into another language, under the above conditions for modified versions.
+    detection_log: []
   - license_expression: gfdl-1.3-plus
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 132
@@ -211,6 +212,7 @@ license_detections:
         matcher: 2-aho
         license_expression: gfdl-1.3-plus
         rule_identifier: gfdl-1.3-plus.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gfdl-1.3-plus.RULE
         matched_text: |
           Permission is granted to copy, distribute and/or modify this document
@@ -219,9 +221,8 @@ license_detections:
            Invariant Sections, no Front-Cover Texts, and no Back-Cover Texts.
            A copy of the license is included in the section entitled
            ``GNU Free Documentation License''.
+    detection_log: []
   - license_expression: latex2e
-    detection_log:
-      - not-combined
     matches:
       - score: '99.0'
         start_line: 144
@@ -231,6 +232,7 @@ license_detections:
         matcher: 2-aho
         license_expression: latex2e
         rule_identifier: latex2e_2.RULE
+        rule_relevance: 99
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/latex2e_2.RULE
         matched_text: |
           Permission is granted to make and distribute verbatim copies of this manual
@@ -250,9 +252,8 @@ license_detections:
 
            Permission is granted to copy and distribute translations of this manual
            into another language, under the above conditions for modified versions.
+    detection_log: []
   - license_expression: bsd-original-uc AND historical
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 168
@@ -262,6 +263,7 @@ license_detections:
         matcher: 2-aho
         license_expression: bsd-original-uc
         rule_identifier: bsd-original-uc_3.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-original-uc_3.RULE
         matched_text: |
           Redistribution and use in source and binary forms, with or without
@@ -299,6 +301,7 @@ license_detections:
         matcher: 2-aho
         license_expression: historical
         rule_identifier: historical_10.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/historical_10.RULE
         matched_text: |
           Permission to use, copy, modify, and distribute this software for any
@@ -316,9 +319,8 @@ license_detections:
            * PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS
            * ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS
            * SOFTWARE.
+    detection_log: []
   - license_expression: other-permissive
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 220
@@ -328,12 +330,14 @@ license_detections:
         matcher: 2-aho
         license_expression: other-permissive
         rule_identifier: other-permissive_291.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/other-permissive_291.RULE
         matched_text: |
           Permission is granted to distribute, modify and use this program as long
            * as this comment is not removed or changed.
            *
            * THIS IS A MODIFIED VERSION.  IT WAS MODIFIED BY
+    detection_log: []
 other_license_detections: []
 copyright: |
   Copyright (c) 1987-2014 Free Software Foundation, Inc.

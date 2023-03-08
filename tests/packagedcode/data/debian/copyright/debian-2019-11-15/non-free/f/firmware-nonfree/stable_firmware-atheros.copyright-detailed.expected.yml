@@ -16,8 +16,6 @@ other_license_expression:
 other_license_expression_spdx:
 license_detections:
   - license_expression: stmicroelectronics-linux-firmware
-    detection_log:
-      - not-combined
     matches:
       - score: '96.74'
         start_line: 12
@@ -27,6 +25,7 @@ license_detections:
         matcher: 3-seq
         license_expression: stmicroelectronics-linux-firmware
         rule_identifier: stmicroelectronics-linux-firmware.LICENSE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/stmicroelectronics-linux-firmware.LICENSE
         matched_text: |
           Redistribution.  Redistribution and use in binary form, without
@@ -64,10 +63,9 @@ license_detections:
           ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR
           TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE
           USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+    detection_log: []
   - license_expression: clear-bsd AND isc AND bsd-no-mod AND gpl-2.0-plus WITH ecos-exception-2.0
       AND mit
-    detection_log:
-      - not-combined
     matches:
       - score: '99.15'
         start_line: 57
@@ -77,6 +75,7 @@ license_detections:
         matcher: 3-seq
         license_expression: clear-bsd
         rule_identifier: clear-bsd_3.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/clear-bsd_3.RULE
         matched_text: |
           Redistribution and use in source and binary forms, with or without
@@ -116,6 +115,7 @@ license_detections:
         matcher: 2-aho
         license_expression: isc
         rule_identifier: isc.LICENSE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/isc.LICENSE
         matched_text: |
           Permission to use, copy, modify, and/or distribute this software for any
@@ -137,6 +137,7 @@ license_detections:
         matcher: 2-aho
         license_expression: bsd-no-mod
         rule_identifier: bsd-no-mod.LICENSE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-no-mod.LICENSE
         matched_text: |
           Redistribution and use in source and binary forms are permitted
@@ -177,6 +178,7 @@ license_detections:
         matcher: 2-aho
         license_expression: gpl-2.0-plus WITH ecos-exception-2.0
         rule_identifier: gpl-2.0-plus_with_ecos-exception-2.0_25.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_with_ecos-exception-2.0_25.RULE
         matched_text: |
           eCos is free software; you can redistribute it and/or modify it under
@@ -200,6 +202,7 @@ license_detections:
         matcher: 2-aho
         license_expression: mit
         rule_identifier: mit.LICENSE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE
         matched_text: |
           Permission is hereby granted, free of charge, to any person obtaining
@@ -220,9 +223,8 @@ license_detections:
           CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
           TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
           SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+    detection_log: []
   - license_expression: qca-linux-firmware
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 205
@@ -232,6 +234,7 @@ license_detections:
         matcher: 2-aho
         license_expression: qca-linux-firmware
         rule_identifier: qca-linux-firmware.LICENSE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/qca-linux-firmware.LICENSE
         matched_text: |
           Redistribution. Reproduction and redistribution in binary form, without
@@ -278,6 +281,7 @@ license_detections:
           ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR
           TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE
           USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+    detection_log: []
 other_license_detections: []
 copyright: |
   2008-2010, Atheros Communications, Inc.

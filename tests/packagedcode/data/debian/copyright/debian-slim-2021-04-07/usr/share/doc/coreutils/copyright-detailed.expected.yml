@@ -9,8 +9,6 @@ other_license_expression:
 other_license_expression_spdx:
 license_detections:
   - license_expression: gpl-3.0-plus
-    detection_log:
-      - not-combined
     matches:
       - score: '81.1'
         start_line: 22
@@ -20,6 +18,7 @@ license_detections:
         matcher: 3-seq
         license_expression: gpl-3.0-plus
         rule_identifier: gpl-3.0-plus_487.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0-plus_487.RULE
         matched_text: |
           License
@@ -42,9 +41,8 @@ license_detections:
 
              You should have received a copy of the GNU General Public License
              along with this program.  If not, see <http://www.gnu.org/licenses/>.  */
+    detection_log: []
   - license_expression: bsd-new
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 47
@@ -54,6 +52,7 @@ license_detections:
         matcher: 2-aho
         license_expression: bsd-new
         rule_identifier: bsd-new_42.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_42.RULE
         matched_text: |
           Redistribution and use in source and binary forms, with or without
@@ -79,9 +78,8 @@ license_detections:
            * LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
            * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
            * SUCH DAMAGE.
+    detection_log: []
   - license_expression: gpl-3.0-plus
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 78
@@ -91,6 +89,7 @@ license_detections:
         matcher: 2-aho
         license_expression: gpl-3.0-plus
         rule_identifier: gpl-3.0-plus_290.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0-plus_290.RULE
         matched_text: |
           This program is free software: you can redistribute it and/or modify
@@ -105,9 +104,8 @@ license_detections:
 
              You should have received a copy of the GNU General Public License
              along with this program.  If not, see <http://www.gnu.org/licenses/>.  */
+    detection_log: []
   - license_expression: bsd-new
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 95
@@ -117,6 +115,7 @@ license_detections:
         matcher: 2-aho
         license_expression: bsd-new
         rule_identifier: bsd-new_42.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_42.RULE
         matched_text: |
           Redistribution and use in source and binary forms, with or without
@@ -142,9 +141,8 @@ license_detections:
            * LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
            * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
            * SUCH DAMAGE.
+    detection_log: []
   - license_expression: gpl-3.0-plus
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 126
@@ -154,6 +152,7 @@ license_detections:
         matcher: 2-aho
         license_expression: gpl-3.0-plus
         rule_identifier: gpl-3.0-plus_290.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0-plus_290.RULE
         matched_text: |
           This program is free software: you can redistribute it and/or modify
@@ -168,9 +167,8 @@ license_detections:
 
              You should have received a copy of the GNU General Public License
              along with this program.  If not, see <http://www.gnu.org/licenses/>.
+    detection_log: []
   - license_expression: gpl-3.0-plus
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 145
@@ -180,6 +178,7 @@ license_detections:
         matcher: 2-aho
         license_expression: gpl-3.0-plus
         rule_identifier: gpl-3.0-plus_4.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0-plus_4.RULE
         matched_text: |
           This program is free software; you can redistribute it and/or modify
@@ -195,9 +194,8 @@ license_detections:
              You should have received a copy of the GNU General Public License
              along with this program; if not, write to the Free Software Foundation,
              Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.  */
+    detection_log: []
   - license_expression: isc
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 162
@@ -207,6 +205,7 @@ license_detections:
         matcher: 2-aho
         license_expression: isc
         rule_identifier: isc_9.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/isc_9.RULE
         matched_text: |
           Permission to use, copy, modify, and distribute this software for any
@@ -221,9 +220,8 @@ license_detections:
            * PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS
            * ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS
            * SOFTWARE.
+    detection_log: []
   - license_expression: fsf-unlimited
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 180
@@ -233,14 +231,14 @@ license_detections:
         matcher: 2-aho
         license_expression: fsf-unlimited
         rule_identifier: fsf-unlimited.LICENSE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/fsf-unlimited.LICENSE
         matched_text: |
           This file is free software; the Free Software Foundation
           dnl gives unlimited permission to copy and/or distribute it,
           dnl with or without modifications, as long as this notice is preserved.
+    detection_log: []
   - license_expression: gpl-3.0-plus
-    detection_log:
-      - not-combined
     matches:
       - score: '75.18'
         start_line: '193'
@@ -250,6 +248,7 @@ license_detections:
         matcher: 3-seq
         license_expression: gpl-3.0-plus
         rule_identifier: gpl-3.0-plus_286.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0-plus_286.RULE
         matched_text: |
           This program is free software: you can redistribute it and/or modify
@@ -282,6 +281,7 @@ license_detections:
         matcher: 2-aho
         license_expression: gpl-3.0-plus
         rule_identifier: gpl-3.0-plus_290.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0-plus_290.RULE
         matched_text: |
           This program is free software: you can redistribute it and/or modify
@@ -296,9 +296,8 @@ license_detections:
 
              You should have received a copy of the GNU General Public License
              along with this program.  If not, see <http://www.gnu.org/licenses/>.  */
+    detection_log: []
   - license_expression: gpl-3.0-plus
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 233
@@ -308,6 +307,7 @@ license_detections:
         matcher: 2-aho
         license_expression: gpl-3.0-plus
         rule_identifier: gpl-3.0-plus_290.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0-plus_290.RULE
         matched_text: |
           This program is free software: you can redistribute it and/or modify
@@ -322,9 +322,8 @@ license_detections:
 
              You should have received a copy of the GNU General Public License
              along with this program.  If not, see <http://www.gnu.org/licenses/>.  */
+    detection_log: []
   - license_expression: gpl-3.0-plus
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 253
@@ -334,6 +333,7 @@ license_detections:
         matcher: 2-aho
         license_expression: gpl-3.0-plus
         rule_identifier: gpl-3.0-plus_290.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0-plus_290.RULE
         matched_text: |
           This program is free software: you can redistribute it and/or modify
@@ -348,9 +348,8 @@ license_detections:
 
              You should have received a copy of the GNU General Public License
              along with this program.  If not, see <http://www.gnu.org/licenses/>.
+    detection_log: []
   - license_expression: gfdl-1.2-plus
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 272
@@ -360,6 +359,7 @@ license_detections:
         matcher: 2-aho
         license_expression: gfdl-1.2-plus
         rule_identifier: gfdl-1.2-plus.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gfdl-1.2-plus.RULE
         matched_text: |
           Permission is granted to copy, distribute and/or modify this document
@@ -368,9 +368,8 @@ license_detections:
           Invariant Sections, with no Front-Cover Texts, and with no Back-Cover
           Texts.  A copy of the license is included in the section entitled ``GNU
           Free Documentation License''.
+    detection_log: []
   - license_expression: gpl-3.0-plus
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 285
@@ -380,6 +379,7 @@ license_detections:
         matcher: 2-aho
         license_expression: gpl-3.0-plus
         rule_identifier: gpl-3.0-plus_2.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0-plus_2.RULE
         matched_text: |
           This program is free software: you can redistribute it and/or modify
@@ -397,6 +397,7 @@ license_detections:
 
           On Debian systems, the complete text of the GNU General
           Public License can be found in `/usr/share/common-licenses/GPL-3'.
+    detection_log: []
 other_license_detections: []
 copyright: |
   Copyright (c) 2004, 2005, 2006, 2007, 2008 Free Software Foundation, Inc.

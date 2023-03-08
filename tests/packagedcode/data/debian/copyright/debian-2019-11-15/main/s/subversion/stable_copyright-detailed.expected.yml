@@ -32,8 +32,6 @@ other_license_expression_spdx: (Apache-2.0 AND Apache-2.0) AND (BSD-3-Clause OR 
 license_detections: []
 other_license_detections:
   - license_expression: markus-kuhn-license
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 21
@@ -43,14 +41,14 @@ other_license_detections:
         matcher: 1-hash
         license_expression: markus-kuhn-license
         rule_identifier: markus-kuhn-license.LICENSE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/markus-kuhn-license.LICENSE
         matched_text: |
           Permission to use, copy, modify, and distribute this software
           for any purpose and without fee is hereby granted.  The author
           disclaims all warranties with regard to this software.
+    detection_log: []
   - license_expression: other-permissive
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 33
@@ -60,13 +58,13 @@ other_license_detections:
         matcher: 1-hash
         license_expression: other-permissive
         rule_identifier: other-permissive_323.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/other-permissive_323.RULE
         matched_text: |
           Permission is granted to everyone to use and distribute this work,
           without limitation, modified or unmodified, in any way, for any purpose.
+    detection_log: []
   - license_expression: gpl-2.0-plus AND gpl-2.0
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 78
@@ -76,6 +74,7 @@ other_license_detections:
         matcher: 1-hash
         license_expression: gpl-2.0-plus
         rule_identifier: gpl-2.0-plus_22.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_22.RULE
         matched_text: 'License: gpl-2+'
       - score: '100.0'
@@ -86,13 +85,13 @@ other_license_detections:
         matcher: 1-hash
         license_expression: gpl-2.0
         rule_identifier: gpl-2.0_1325.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0_1325.RULE
         matched_text: |
           On Debian systems, the complete text of the GPL version 2 license can be
           found in `/usr/share/common-licenses/GPL-2'.
+    detection_log: []
   - license_expression: gpl-3.0-plus AND gpl-3.0
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 82
@@ -102,6 +101,7 @@ other_license_detections:
         matcher: 1-hash
         license_expression: gpl-3.0-plus
         rule_identifier: gpl-3.0-plus_92.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0-plus_92.RULE
         matched_text: 'License: gpl-3+'
       - score: '100.0'
@@ -112,13 +112,13 @@ other_license_detections:
         matcher: 1-hash
         license_expression: gpl-3.0
         rule_identifier: gpl-3.0_480.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0_480.RULE
         matched_text: |
           On Debian systems, the complete text of the GPL version 3 license can be
           found in `/usr/share/common-licenses/GPL-3'.
+    detection_log: []
   - license_expression: apache-2.0
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 86
@@ -128,6 +128,7 @@ other_license_detections:
         matcher: 1-hash
         license_expression: apache-2.0
         rule_identifier: apache-2.0_65.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_65.RULE
         matched_text: 'License: apache-2.0'
       - score: '100.0'
@@ -138,6 +139,7 @@ other_license_detections:
         matcher: 1-hash
         license_expression: apache-2.0
         rule_identifier: apache-2.0_2.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_2.RULE
         matched_text: |
           Licensed to the Apache Software Foundation (ASF) under one
@@ -156,9 +158,8 @@ other_license_detections:
           KIND, either express or implied.  See the License for the
           specific language governing permissions and limitations
           under the License.
+    detection_log: []
   - license_expression: bsd-new
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 107
@@ -168,6 +169,7 @@ other_license_detections:
         matcher: 2-aho
         license_expression: bsd-new
         rule_identifier: bsd-new_970.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_970.RULE
         matched_text: |
           Redistribution and use in source and binary forms, with or without
@@ -195,9 +197,8 @@ other_license_detections:
           IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR
           OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
           IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+    detection_log: []
   - license_expression: bsd-simplified
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 136
@@ -207,6 +208,7 @@ other_license_detections:
         matcher: 2-aho
         license_expression: bsd-simplified
         rule_identifier: bsd-simplified.LICENSE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-simplified.LICENSE
         matched_text: |
           Redistribution and use in source and binary forms, with or without modification,
@@ -229,9 +231,8 @@ other_license_detections:
           ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
           (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
           SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+    detection_log: []
   - license_expression: mit
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 158
@@ -241,6 +242,7 @@ other_license_detections:
         matcher: 1-hash
         license_expression: mit
         rule_identifier: mit.LICENSE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE
         matched_text: |
           Permission is hereby granted, free of charge, to any person obtaining a
@@ -260,9 +262,8 @@ other_license_detections:
           LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
           FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
           DEALINGS IN THE SOFTWARE.
+    detection_log: []
   - license_expression: unicode
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 177
@@ -272,6 +273,7 @@ other_license_detections:
         matcher: 1-hash
         license_expression: unicode
         rule_identifier: unicode_56.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/unicode_56.RULE
         matched_text: |
           Permission is hereby granted, free of charge, to any person obtaining a
@@ -306,9 +308,8 @@ other_license_detections:
           Unicode and the Unicode logo are trademarks of Unicode, Inc., and may be
           registered in some jurisdictions. All other trademarks and registered
           trademarks mentioned herein are the property of their respective owners.
+    detection_log: []
   - license_expression: afl-3.0
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 211
@@ -318,6 +319,7 @@ other_license_detections:
         matcher: 1-hash
         license_expression: afl-3.0
         rule_identifier: afl-3.0.LICENSE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/afl-3.0.LICENSE
         matched_text: |
           This Academic Free License (the "License") applies to any original
@@ -506,6 +508,7 @@ other_license_detections:
               open source software unless your Modified License has been
               approved by Open Source Initiative (OSI) and You comply with its
               license review and certification process.
+    detection_log: []
 copyright: |
   Apache Software Foundation
   2007 Max Bowsher

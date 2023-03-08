@@ -10,8 +10,6 @@ other_license_expression:
 other_license_expression_spdx:
 license_detections:
   - license_expression: proprietary-license
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 21
@@ -21,6 +19,7 @@ license_detections:
         matcher: 2-aho
         license_expression: proprietary-license
         rule_identifier: proprietary-license_600.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/proprietary-license_600.RULE
         matched_text: |
           Redistribution.  Redistribution and use in binary form, without
@@ -48,9 +47,8 @@ license_detections:
           TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE
           USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH
           DAMAGE.
+    detection_log: []
   - license_expression: broadcom-proprietary
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 51
@@ -60,6 +58,7 @@ license_detections:
         matcher: 1-hash
         license_expression: broadcom-proprietary
         rule_identifier: broadcom-proprietary_1.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/broadcom-proprietary_1.RULE
         matched_text: "SOFTWARE LICENSE AGREEMENT\n\nUnless you and Broadcom Corporation (“Broadcom”)\
           \ execute a separate written\nsoftware license agreement governing use of the accompanying\
@@ -201,9 +200,8 @@ license_detections:
           \ and all prior proposals, agreements and\nrepresentations between them, whether written\
           \ or oral concerning the Software.\nThis Agreement may be changed only by mutual agreement\
           \ of the parties in\nwriting."
+    detection_log: []
   - license_expression: gpl-2.0-plus
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 260
@@ -213,6 +211,7 @@ license_detections:
         matcher: 1-hash
         license_expression: gpl-2.0-plus
         rule_identifier: gpl-2.0-plus_22.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_22.RULE
         matched_text: 'License: gpl-2+'
       - score: '100.0'
@@ -223,6 +222,7 @@ license_detections:
         matcher: 1-hash
         license_expression: gpl-2.0-plus
         rule_identifier: gpl-2.0-plus_846.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_846.RULE
         matched_text: |
           This package is free software; you can redistribute it and/or modify
@@ -240,6 +240,7 @@ license_detections:
 
           On Debian systems, the complete text of the GNU General
           Public License version 2 can be found in "/usr/share/common-licenses/GPL-2".
+    detection_log: []
 other_license_detections: []
 copyright: |
   2006, Broadcom Corporation

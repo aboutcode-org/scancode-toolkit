@@ -37,9 +37,6 @@
     "license_detections": [
       {
         "license_expression": "bsd-new",
-        "detection_log": [
-          "not-combined"
-        ],
         "matches": [
           {
             "score": 100.0,
@@ -50,10 +47,12 @@
             "matcher": "1-hash",
             "license_expression": "bsd-new",
             "rule_identifier": "bsd-new_10.RULE",
+            "rule_relevance": 100,
             "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_10.RULE",
             "matched_text": "BSD-3-Clause"
           }
-        ]
+        ],
+        "detection_log": []
       }
     ],
     "other_license_expression": null,

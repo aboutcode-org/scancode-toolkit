@@ -3,10 +3,7 @@
     {
       "identifier": "pcre-6bfd6b44-b749-0fea-8561-aeb76e388c06",
       "license_expression": "pcre",
-      "count": 1,
-      "detection_log": [
-        "not-combined"
-      ],
+      "detection_count": 1,
       "matches": [
         {
           "score": 100.0,
@@ -17,9 +14,11 @@
           "matcher": "1-hash",
           "license_expression": "pcre",
           "rule_identifier": "pcre.LICENSE",
+          "rule_relevance": 100,
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/pcre.LICENSE"
         }
-      ]
+      ],
+      "detection_log": []
     }
   ],
   "license_references": [
@@ -136,9 +135,6 @@
       "license_detections": [
         {
           "license_expression": "pcre",
-          "detection_log": [
-            "not-combined"
-          ],
           "matches": [
             {
               "score": 100.0,
@@ -149,9 +145,11 @@
               "matcher": "1-hash",
               "license_expression": "pcre",
               "rule_identifier": "pcre.LICENSE",
+              "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/pcre.LICENSE"
             }
-          ]
+          ],
+          "detection_log": []
         }
       ],
       "license_clues": [],

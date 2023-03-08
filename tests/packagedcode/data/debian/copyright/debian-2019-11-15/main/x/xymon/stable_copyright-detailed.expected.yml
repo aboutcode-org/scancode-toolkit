@@ -29,8 +29,6 @@ other_license_expression_spdx: GPL-2.0-only WITH x11vnc-openssl-exception AND GP
 license_detections: []
 other_license_detections:
   - license_expression: ssleay-windows
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 43
@@ -40,6 +38,7 @@ other_license_detections:
         matcher: 2-aho
         license_expression: ssleay-windows
         rule_identifier: ssleay-windows_8.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/ssleay-windows_8.RULE
         matched_text: |
           This package is an SSL implementation written
@@ -100,9 +99,8 @@ other_license_detections:
           derivative of this code cannot be changed.  i.e. this code cannot simply be
           copied and put under another distribution licence
           [including the GNU General Public Licence.]
+    detection_log: []
   - license_expression: public-domain
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 105
@@ -112,11 +110,11 @@ other_license_detections:
         matcher: 2-aho
         license_expression: public-domain
         rule_identifier: public-domain_125.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/public-domain_125.RULE
         matched_text: 100% Public Domain,
+    detection_log: []
   - license_expression: mit-old-style-no-advert
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 116
@@ -126,6 +124,7 @@ other_license_detections:
         matcher: 1-hash
         license_expression: mit-old-style-no-advert
         rule_identifier: mit-old-style-no-advert_1.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit-old-style-no-advert_1.RULE
         matched_text: |
           Permission to use, copy, modify, and distribute this
@@ -139,9 +138,8 @@ other_license_detections:
           M.I.T. makes no representations about the suitability of
           this software for any purpose.  It is provided "as is"
           without express or implied warranty.
+    detection_log: []
   - license_expression: gpl-2.0 WITH openssl-exception-gpl-2.0
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 129
@@ -151,6 +149,7 @@ other_license_detections:
         matcher: 1-hash
         license_expression: gpl-2.0 WITH openssl-exception-gpl-2.0
         rule_identifier: gpl-2.0_with_openssl-exception-gpl-2.0_9.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0_with_openssl-exception-gpl-2.0_9.RULE
         matched_text: |
           This program is released under the GNU General Public License (GPL),
@@ -160,9 +159,8 @@ other_license_detections:
           On Debian GNU/Linux systems, the complete text of the GNU General
           Public License version 2 can be found in
           `/usr/share/common-licenses/GPL-2'.
+    detection_log: []
   - license_expression: gpl-2.0
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 137
@@ -172,6 +170,7 @@ other_license_detections:
         matcher: 1-hash
         license_expression: gpl-2.0
         rule_identifier: gpl-2.0_561.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0_561.RULE
         matched_text: 'License: gpl-2'
       - score: '100.0'
@@ -182,6 +181,7 @@ other_license_detections:
         matcher: 1-hash
         license_expression: gpl-2.0
         rule_identifier: gpl-2.0_1151.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0_1151.RULE
         matched_text: |
           This program is released under the GNU General Public License (GPL),
@@ -190,9 +190,8 @@ other_license_detections:
           On Debian GNU/Linux systems, the complete text of the GNU General
           Public License version 2 can be found in
           `/usr/share/common-licenses/GPL-2'.
+    detection_log: []
   - license_expression: gpl-2.0-plus
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 145
@@ -202,6 +201,7 @@ other_license_detections:
         matcher: 1-hash
         license_expression: gpl-2.0-plus
         rule_identifier: gpl-2.0-plus_22.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_22.RULE
         matched_text: 'License: gpl-2+'
       - score: '100.0'
@@ -212,6 +212,7 @@ other_license_detections:
         matcher: 1-hash
         license_expression: gpl-2.0-plus
         rule_identifier: gpl-2.0-plus_841.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_841.RULE
         matched_text: |
           This program is released under the GNU General Public License (GPL),
@@ -221,9 +222,8 @@ other_license_detections:
           On Debian GNU/Linux systems, the complete text of the GNU General
           Public License version 2 can be found in
           `/usr/share/common-licenses/GPL-2'.
+    detection_log: []
   - license_expression: gpl-1.0-plus
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 154
@@ -233,6 +233,7 @@ other_license_detections:
         matcher: 1-hash
         license_expression: gpl-1.0-plus
         rule_identifier: gpl_72.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl_72.RULE
         matched_text: 'License: gpl'
       - score: '100.0'
@@ -243,6 +244,7 @@ other_license_detections:
         matcher: 1-hash
         license_expression: gpl-1.0-plus
         rule_identifier: gpl-1.0-plus_465.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-1.0-plus_465.RULE
         matched_text: |
           This program is released under the GNU General Public License (GPL).
@@ -250,9 +252,8 @@ other_license_detections:
           On Debian GNU/Linux systems, the complete text of the latest version
           of the GNU General Public License version can be found in
           `/usr/share/common-licenses/GPL'.
+    detection_log: []
   - license_expression: zlib
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 163
@@ -262,6 +263,7 @@ other_license_detections:
         matcher: 1-hash
         license_expression: zlib
         rule_identifier: zlib.LICENSE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/zlib.LICENSE
         matched_text: |
           This software is provided 'as-is', without any express or implied
@@ -281,9 +283,8 @@ other_license_detections:
              misrepresented as being the original software.
 
           3. This notice may not be removed or altered from any source distribution.
+    detection_log: []
   - license_expression: bsd-new
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 182
@@ -293,6 +294,7 @@ other_license_detections:
         matcher: 1-hash
         license_expression: bsd-new
         rule_identifier: bsd-new_66.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_66.RULE
         matched_text: |
           Redistribution and use in source and binary forms, with or without
@@ -321,9 +323,8 @@ other_license_detections:
           LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
           OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
           SUCH DAMAGE.
+    detection_log: []
   - license_expression: gpl-1.0-plus AND zlib
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 35
@@ -333,10 +334,12 @@ other_license_detections:
         matcher: 2-aho
         license_expression: gpl-1.0-plus AND zlib
         rule_identifier: gpl-1.0-plus_and_zlib_1.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-1.0-plus_and_zlib_1.RULE
         matched_text: |
           released under
           the GNU GPL." and then shows the zlib license text.
+    detection_log: []
 copyright: |
   2002-2016 Henrik Størner <henrik@hswn.dk>
   2005-2007 Henrik Størner <henrik@hswn.dk>

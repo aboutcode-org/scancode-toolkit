@@ -6,8 +6,6 @@ other_license_expression:
 other_license_expression_spdx:
 license_detections:
   - license_expression: reportbug
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 10
@@ -17,6 +15,7 @@ license_detections:
         matcher: 2-aho
         license_expression: reportbug
         rule_identifier: reportbug_1.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/reportbug_1.RULE
         matched_text: |
           License: other
@@ -35,9 +34,8 @@ license_detections:
               #  WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION,
               #  ARISING OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS
               #  SOFTWARE.
+    detection_log: []
   - license_expression: gpl-1.0-plus
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 32
@@ -47,6 +45,7 @@ license_detections:
         matcher: 2-aho
         license_expression: gpl-1.0-plus
         rule_identifier: gpl_77.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl_77.RULE
         matched_text: |
           License: GPL-any
@@ -55,9 +54,8 @@ license_detections:
               .
               On Debian systems, the complete text of the GNU General Public License
               can be found in file "/usr/share/common-licenses/GPL".
+    detection_log: []
   - license_expression: reportbug AND gpl-2.0
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 43
@@ -67,6 +65,7 @@ license_detections:
         matcher: 2-aho
         license_expression: reportbug
         rule_identifier: reportbug_1.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/reportbug_1.RULE
         matched_text: |
           License: other
@@ -93,8 +92,10 @@ license_detections:
         matcher: 2-aho
         license_expression: gpl-2.0
         rule_identifier: gpl-2.0_561.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0_561.RULE
         matched_text: 'License: GPL-2'
+    detection_log: []
 other_license_detections: []
 copyright: |
   Copyright (c) 1999-2006 Chris Lawrence

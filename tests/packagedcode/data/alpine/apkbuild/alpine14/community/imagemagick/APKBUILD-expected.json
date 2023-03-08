@@ -26,9 +26,6 @@
   "license_detections": [
     {
       "license_expression": "imagemagick",
-      "detection_log": [
-        "not-combined"
-      ],
       "matches": [
         {
           "score": 100.0,
@@ -39,10 +36,12 @@
           "matcher": "1-spdx-id",
           "license_expression": "imagemagick",
           "rule_identifier": "spdx-license-identifier-imagemagick-0dd8f5c123a82d3e8b7c6d577c371911a89076bb",
+          "rule_relevance": 100,
           "rule_url": null,
           "matched_text": "imagemagick"
         }
-      ]
+      ],
+      "detection_log": []
     }
   ],
   "other_license_expression": null,

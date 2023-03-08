@@ -5,8 +5,6 @@ other_license_expression:
 other_license_expression_spdx:
 license_detections:
   - license_expression: gpl-2.0
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 18
@@ -16,13 +14,13 @@ license_detections:
         matcher: 2-aho
         license_expression: gpl-2.0
         rule_identifier: gpl-2.0_1137.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0_1137.RULE
         matched_text: |
           This package, the EXT2 filesystem utilities, is protected by the GNU
           General Public License.
+    detection_log: []
   - license_expression: gpl-2.0
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 24
@@ -32,10 +30,12 @@ license_detections:
         matcher: 2-aho
         license_expression: gpl-2.0
         rule_identifier: gpl-2.0_563.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0_563.RULE
         matched_text: |
           On Debian GNU systems, the complete text of the GNU General
           Public License can be found in `/usr/share/common-licenses/GPL-2'.
+    detection_log: []
 other_license_detections: []
 copyright: |
   Copyright (c) 2003-2006 Theodore Ts'o <tytso@mit.edu>

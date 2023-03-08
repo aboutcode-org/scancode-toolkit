@@ -14,8 +14,6 @@ other_license_expression_spdx: LicenseRef-scancode-cups AND LicenseRef-scancode-
 license_detections: []
 other_license_detections:
   - license_expression: bsd-simplified
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 26
@@ -25,6 +23,7 @@ other_license_detections:
         matcher: 1-hash
         license_expression: bsd-simplified
         rule_identifier: bsd-simplified_70.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-simplified_70.RULE
         matched_text: |
           Redistribution and use in source and binary forms, with or without
@@ -50,9 +49,8 @@ other_license_detections:
           STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
           ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED
           OF THE POSSIBILITY OF SUCH DAMAGE.
+    detection_log: []
   - license_expression: cups
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 51
@@ -62,6 +60,7 @@ other_license_detections:
         matcher: 1-hash
         license_expression: cups
         rule_identifier: cups_6.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/cups_6.RULE
         matched_text: |
           This program is free software; you can redistribute it and/or modify
@@ -121,9 +120,8 @@ other_license_detections:
 
           No developer is required to provide these exceptions in a
           derived work.
+    detection_log: []
   - license_expression: cups
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 110
@@ -133,6 +131,7 @@ other_license_detections:
         matcher: 1-hash
         license_expression: cups
         rule_identifier: cups_4.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/cups_4.RULE
         matched_text: |
           This program is free software; you can redistribute it and/or modify it
@@ -192,9 +191,8 @@ other_license_detections:
 
           No developer is required to provide these exceptions in a
           derived work.
+    detection_log: []
   - license_expression: zlib
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 169
@@ -204,6 +202,7 @@ other_license_detections:
         matcher: 2-aho
         license_expression: zlib
         rule_identifier: zlib_7.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/zlib_7.RULE
         matched_text: zlib License
       - score: '100.0'
@@ -214,6 +213,7 @@ other_license_detections:
         matcher: 2-aho
         license_expression: zlib
         rule_identifier: zlib.LICENSE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/zlib.LICENSE
         matched_text: |
           This software is provided 'as-is', without any express or implied
@@ -234,6 +234,7 @@ other_license_detections:
 
             3. This notice may not be removed or altered from any source
                distribution.
+    detection_log: []
 copyright: |
   2007-2015, Apple Inc.
   2007-2013, Apple Inc.

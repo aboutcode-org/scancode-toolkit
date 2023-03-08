@@ -5,8 +5,6 @@ other_license_expression:
 other_license_expression_spdx:
 license_detections:
   - license_expression: cavium-linux-firmware
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 6
@@ -16,6 +14,7 @@ license_detections:
         matcher: 2-aho
         license_expression: cavium-linux-firmware
         rule_identifier: cavium-linux-firmware.LICENSE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/cavium-linux-firmware.LICENSE
         matched_text: |
           Software License Agreement
@@ -75,5 +74,6 @@ license_detections:
           (c) anyone who is engaged in activities related to the design, development,
           production, or use of nuclear materials, nuclear facilities, nuclear weapons,
           missiles or chemical or biological weapons.
+    detection_log: []
 other_license_detections: []
 copyright: Copyright (c) 2015, Cavium, Inc.

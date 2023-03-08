@@ -9,8 +9,6 @@ other_license_expression_spdx: (Apache-2.0 AND Apache-2.0) AND (Apache-2.0 AND A
 license_detections: []
 other_license_detections:
   - license_expression: apache-2.0
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 14
@@ -20,6 +18,7 @@ other_license_detections:
         matcher: 1-hash
         license_expression: apache-2.0
         rule_identifier: apache-2.0_65.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_65.RULE
         matched_text: 'License: apache-2.0'
       - score: '100.0'
@@ -30,6 +29,7 @@ other_license_detections:
         matcher: 1-hash
         license_expression: apache-2.0
         rule_identifier: apache-2.0_845.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_845.RULE
         matched_text: |
           Licensed under the Apache License, Version 2.0 (the "License");
@@ -46,6 +46,7 @@ other_license_detections:
 
           On Debian systems, the complete text of the Apache version 2.0 license
           can be found in "/usr/share/common-licenses/Apache-2.0".
+    detection_log: []
 copyright: |
   2002-2019 ProcessOne
   2018-2019 Evgeny Khramtsov <ekhramtsov@process-one.net>

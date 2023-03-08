@@ -63,9 +63,6 @@
       "license_detections": [
         {
           "license_expression": "apache-2.0",
-          "detection_log": [
-            "from-package-file"
-          ],
           "matches": [
             {
               "score": 100.0,
@@ -76,8 +73,12 @@
               "matcher": "2-aho",
               "license_expression": "apache-2.0",
               "rule_identifier": "apache-2.0_7.RULE",
+              "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_7.RULE"
             }
+          ],
+          "detection_log": [
+            "from-package-file"
           ]
         }
       ],
@@ -121,10 +122,7 @@
     {
       "identifier": "apache_2_0-6a2b15d7-e480-151d-da55-93e547e467b4",
       "license_expression": "apache-2.0",
-      "count": 2,
-      "detection_log": [
-        "from-package-file"
-      ],
+      "detection_count": 2,
       "matches": [
         {
           "score": 100.0,
@@ -135,8 +133,12 @@
           "matcher": "2-aho",
           "license_expression": "apache-2.0",
           "rule_identifier": "apache-2.0_7.RULE",
+          "rule_relevance": 100,
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_7.RULE"
         }
+      ],
+      "detection_log": [
+        "from-package-file"
       ]
     }
   ],
@@ -368,9 +370,6 @@
           "license_detections": [
             {
               "license_expression": "apache-2.0",
-              "detection_log": [
-                "from-package-file"
-              ],
               "matches": [
                 {
                   "score": 100.0,
@@ -381,8 +380,12 @@
                   "matcher": "2-aho",
                   "license_expression": "apache-2.0",
                   "rule_identifier": "apache-2.0_7.RULE",
+                  "rule_relevance": 100,
                   "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_7.RULE"
                 }
+              ],
+              "detection_log": [
+                "from-package-file"
               ]
             }
           ],
@@ -421,9 +424,6 @@
       "license_detections": [
         {
           "license_expression": "apache-2.0",
-          "detection_log": [
-            "from-package-file"
-          ],
           "matches": [
             {
               "score": 100.0,
@@ -434,8 +434,12 @@
               "matcher": "2-aho",
               "license_expression": "apache-2.0",
               "rule_identifier": "apache-2.0_7.RULE",
+              "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_7.RULE"
             }
+          ],
+          "detection_log": [
+            "from-package-file"
           ]
         }
       ],

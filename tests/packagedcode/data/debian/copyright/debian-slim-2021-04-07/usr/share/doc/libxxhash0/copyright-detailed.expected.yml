@@ -12,8 +12,6 @@ other_license_expression_spdx: BSD-2-Clause AND (GPL-2.0-only AND GPL-2.0-or-lat
 license_detections: []
 other_license_detections:
   - license_expression: bsd-simplified
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 20
@@ -23,6 +21,7 @@ other_license_detections:
         matcher: 1-hash
         license_expression: bsd-simplified
         rule_identifier: bsd-simplified.LICENSE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-simplified.LICENSE
         matched_text: |
           Redistribution and use in source and binary forms, with or without modification,
@@ -45,9 +44,8 @@ other_license_detections:
           ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
           (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
           SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+    detection_log: []
   - license_expression: gpl-2.0 AND gpl-2.0-plus
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 41
@@ -57,6 +55,7 @@ other_license_detections:
         matcher: 1-hash
         license_expression: gpl-2.0
         rule_identifier: gpl-2.0_561.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0_561.RULE
         matched_text: 'License: gpl-2'
       - score: '100.0'
@@ -67,6 +66,7 @@ other_license_detections:
         matcher: 1-hash
         license_expression: gpl-2.0-plus
         rule_identifier: gpl-2.0-plus_984.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_984.RULE
         matched_text: |
           This program is free software; you can redistribute it and/or modify
@@ -85,6 +85,7 @@ other_license_detections:
 
           The full text of the GPLv can be found in
           /usr/share/common-licenses/GPL-2
+    detection_log: []
 copyright: |
   2012-2014 Yann Collet
   2012-2014 Yann Collet

@@ -3,10 +3,7 @@
     {
       "identifier": "wtfpl_2_0_and_mit-e5642b07-705c-9730-80ab-f5ed0565be28",
       "license_expression": "wtfpl-2.0 AND mit",
-      "count": 1,
-      "detection_log": [
-        "unknown-intro-followed-by-match"
-      ],
+      "detection_count": 1,
       "matches": [
         {
           "score": 100.0,
@@ -17,6 +14,7 @@
           "matcher": "2-aho",
           "license_expression": "unknown-license-reference",
           "rule_identifier": "lead-in_unknown_30.RULE",
+          "rule_relevance": 100,
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lead-in_unknown_30.RULE"
         },
         {
@@ -28,6 +26,7 @@
           "matcher": "2-aho",
           "license_expression": "wtfpl-2.0",
           "rule_identifier": "spdx_license_id_wtfpl_for_wtfpl-2.0.RULE",
+          "rule_relevance": 50,
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/spdx_license_id_wtfpl_for_wtfpl-2.0.RULE"
         },
         {
@@ -39,6 +38,7 @@
           "matcher": "2-aho",
           "license_expression": "wtfpl-2.0",
           "rule_identifier": "wtfpl-2.0_27.RULE",
+          "rule_relevance": 100,
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/wtfpl-2.0_27.RULE"
         },
         {
@@ -50,8 +50,12 @@
           "matcher": "2-aho",
           "license_expression": "mit",
           "rule_identifier": "mit_64.RULE",
+          "rule_relevance": 100,
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_64.RULE"
         }
+      ],
+      "detection_log": [
+        "unknown-intro-followed-by-match"
       ]
     }
   ],
@@ -290,9 +294,6 @@
       "license_detections": [
         {
           "license_expression": "wtfpl-2.0 AND mit",
-          "detection_log": [
-            "unknown-intro-followed-by-match"
-          ],
           "matches": [
             {
               "score": 100.0,
@@ -303,6 +304,7 @@
               "matcher": "2-aho",
               "license_expression": "unknown-license-reference",
               "rule_identifier": "lead-in_unknown_30.RULE",
+              "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lead-in_unknown_30.RULE",
               "matched_text": "dual-licensed under [`"
             },
@@ -315,6 +317,7 @@
               "matcher": "2-aho",
               "license_expression": "wtfpl-2.0",
               "rule_identifier": "spdx_license_id_wtfpl_for_wtfpl-2.0.RULE",
+              "rule_relevance": 50,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/spdx_license_id_wtfpl_for_wtfpl-2.0.RULE",
               "matched_text": "WTFPL`]("
             },
@@ -327,6 +330,7 @@
               "matcher": "2-aho",
               "license_expression": "wtfpl-2.0",
               "rule_identifier": "wtfpl-2.0_27.RULE",
+              "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/wtfpl-2.0_27.RULE",
               "matched_text": "www.wtfpl.net/"
             },
@@ -339,9 +343,13 @@
               "matcher": "2-aho",
               "license_expression": "mit",
               "rule_identifier": "mit_64.RULE",
+              "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_64.RULE",
               "matched_text": "MIT`](https://opensource.org/licenses/MIT)."
             }
+          ],
+          "detection_log": [
+            "unknown-intro-followed-by-match"
           ]
         }
       ],

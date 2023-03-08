@@ -5,8 +5,6 @@ other_license_expression:
 other_license_expression_spdx:
 license_detections:
   - license_expression: x11-xconsortium-veillard
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 15
@@ -16,6 +14,7 @@ license_detections:
         matcher: 2-aho
         license_expression: x11-xconsortium-veillard
         rule_identifier: x11-xconsortium-veillard.LICENSE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/x11-xconsortium-veillard.LICENSE
         matched_text: |
           Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -38,9 +37,8 @@ license_detections:
           Except as contained in this notice, the name of Daniel Veillard shall not
           be used in advertising or otherwise to promote the sale, use or other deal-
           ings in this Software without prior written authorization from him.
+    detection_log: []
   - license_expression: x11-xconsortium
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 43
@@ -50,6 +48,7 @@ license_detections:
         matcher: 2-aho
         license_expression: x11-xconsortium
         rule_identifier: x11-xconsortium_4.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/x11-xconsortium_4.RULE
         matched_text: |
           Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -72,6 +71,7 @@ license_detections:
           Except as contained in this notice, the name of the authors shall not
           be used in advertising or otherwise to promote the sale, use or other deal-
           ings in this Software without prior written authorization from him.
+    detection_log: []
 other_license_detections: []
 copyright: |
   Copyright (c) 2001-2002 Daniel Veillard
