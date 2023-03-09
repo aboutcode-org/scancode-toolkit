@@ -105,6 +105,8 @@ Options:
                              codebase level.
     --license-policy FILE    Load a License Policy file and apply it to the scan
                              at the Resource level.
+    --license-references     Return reference data for all licenses and license
+                             rulespresent in detections.
     --mark-source            Set the "is_source" to true for directories that
                              contain over 90% of source files as children and
                              descendants. Count the number of source files in a

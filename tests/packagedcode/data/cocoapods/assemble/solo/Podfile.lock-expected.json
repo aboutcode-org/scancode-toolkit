@@ -44,8 +44,6 @@
       "datasource_id": "cocoapods_podfile_lock"
     }
   ],
-  "license_references": [],
-  "license_rule_references": [],
   "files": [
     {
       "path": "Podfile.lock",

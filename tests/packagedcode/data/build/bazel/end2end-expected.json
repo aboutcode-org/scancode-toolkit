@@ -92,8 +92,6 @@
     }
   ],
   "dependencies": [],
-  "license_references": [],
-  "license_rule_references": [],
   "files": [
     {
       "path": "end2end",

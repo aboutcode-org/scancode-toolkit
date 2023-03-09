@@ -58,8 +58,6 @@
       "datasource_id": "build_gradle"
     }
   ],
-  "license_references": [],
-  "license_rule_references": [],
   "files": [
     {
       "path": "build.gradle",

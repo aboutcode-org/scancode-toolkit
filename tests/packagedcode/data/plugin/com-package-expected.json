@@ -1,42 +1,6 @@
 {
   "packages": [],
   "dependencies": [],
-  "license_references": [
-    {
-      "key": "unknown",
-      "language": "en",
-      "short_name": "unknown",
-      "name": "Unknown license detected but not recognized",
-      "category": "Unstated License",
-      "owner": "Unspecified",
-      "homepage_url": null,
-      "notes": "This applies to the case where there is text referring to a license, but it is not possible to determine exactly which license.",
-      "is_builtin": true,
-      "is_exception": false,
-      "is_unknown": true,
-      "is_generic": false,
-      "spdx_license_key": "LicenseRef-scancode-unknown",
-      "other_spdx_license_keys": [],
-      "osi_license_key": null,
-      "text_urls": [],
-      "osi_url": null,
-      "faq_url": null,
-      "other_urls": [],
-      "key_aliases": [],
-      "minimum_coverage": 0,
-      "standard_notice": null,
-      "ignorable_copyrights": [],
-      "ignorable_holders": [],
-      "ignorable_authors": [],
-      "ignorable_urls": [],
-      "ignorable_emails": [],
-      "text": "",
-      "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/unknown.LICENSE",
-      "licensedb_url": "https://scancode-licensedb.aboutcode.org/unknown",
-      "spdx_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/unknown.LICENSE"
-    }
-  ],
-  "license_rule_references": [],
   "files": [
     {
       "path": "chcp.com",

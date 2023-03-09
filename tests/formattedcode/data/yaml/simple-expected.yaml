@@ -22,16 +22,14 @@ headers:
       system_environment:
         operating_system: linux
         cpu_architecture: 64
-        platform: Linux-4.15.0-200-generic-x86_64-with-glibc2.23
-        platform_version: '#211~16.04.2-Ubuntu SMP Fri Nov 25 09:18:48 UTC 2022'
-        python_version: "3.9.10 (main, Jan 29 2022, 10:01:49) \n[GCC 5.4.0 20160609]"
+        platform: Linux-5.14.0-1057-oem-x86_64-with-glibc2.29
+        platform_version: '#64-Ubuntu SMP Mon Jan 23 17:02:19 UTC 2023'
+        python_version: "3.8.10 (default, Nov 14 2022, 12:59:47) \n[GCC 9.4.0]"
       spdx_license_list_version: '3.20'
       files_count: 1
 packages: []
 dependencies: []
 license_detections: []
-license_references: []
-license_rule_references: []
 files:
   - path: simple
     type: directory

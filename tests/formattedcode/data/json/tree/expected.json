@@ -2,8 +2,6 @@
   "packages": [],
   "dependencies": [],
   "license_detections": [],
-  "license_references": [],
-  "license_rule_references": [],
   "files": [
     {
       "path": "copy1.c",
