@@ -152,6 +152,7 @@ def get_licenses(
     min_score=0,
     include_text=False,
     license_text_diagnostics=False,
+    license_diagnostics=False,
     deadline=sys.maxsize,
     unknown_licenses=False,
     **kwargs,
@@ -204,6 +205,7 @@ def get_licenses(
             detection_mapping = detection.to_dict(
                 include_text=include_text,
                 license_text_diagnostics=license_text_diagnostics,
+                license_diagnostics=license_diagnostics,
             )
             license_clues.extend(detection_mapping["matches"])
         else:
@@ -212,6 +214,7 @@ def get_licenses(
                 detection.to_dict(
                     include_text=include_text,
                     license_text_diagnostics=license_text_diagnostics,
+                    license_diagnostics=license_diagnostics,
                 )
             )
 

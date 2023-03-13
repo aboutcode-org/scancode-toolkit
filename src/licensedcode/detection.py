@@ -415,6 +415,7 @@ class LicenseDetection:
         self,
         include_text=False,
         license_text_diagnostics=False,
+        license_diagnostics=False,
         whole_lines=True,
     ):
         """
@@ -425,7 +426,7 @@ class LicenseDetection:
             if attr.name == 'file_region':
                 return False
 
-            if attr.name == 'detection_log' and not license_text_diagnostics:
+            if attr.name == 'detection_log' and not license_diagnostics:
                 return False
 
             return True
@@ -592,7 +593,7 @@ class UniqueDetection:
     files = attr.ib(factory=list)
 
     @classmethod
-    def get_unique_detections(cls, license_detections, license_text_diagnostics):
+    def get_unique_detections(cls, license_detections):
         """
         Return all unique UniqueDetection from a ``license_detections`` list of
         LicenseDetection.
@@ -621,14 +622,14 @@ class UniqueDetection:
 
         return unique_license_detections
 
-    def to_dict(self, license_text_diagnostics):
+    def to_dict(self, license_diagnostics):
 
         def dict_fields(attr, value):
 
             if attr.name == 'files':
                 return False
 
-            if attr.name == 'detection_log' and not license_text_diagnostics:
+            if attr.name == 'detection_log' and not license_diagnostics:
                 return False
 
             return True

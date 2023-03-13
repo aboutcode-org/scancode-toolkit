@@ -104,6 +104,14 @@ class LicenseScanner(ScanPlugin):
             help_group=SCAN_OPTIONS_GROUP,
         ),
 
+        PluggableCommandLineOption(('--license-diagnostics',),
+            is_flag=True,
+            required_options=['license'],
+            help='In license detections, include diagnostic details to figure '
+                 'out the license detection post processing steps applied.',
+            help_group=SCAN_OPTIONS_GROUP,
+        ),
+
         PluggableCommandLineOption(('--license-url-template',),
             default=SCANCODE_LICENSEDB_URL, show_default=True,
             required_options=['license'],
@@ -137,6 +145,7 @@ class LicenseScanner(ScanPlugin):
         license_score=0,
         license_text=False,
         license_text_diagnostics=False,
+        license_diagnostics=False,
         license_url_template=SCANCODE_LICENSEDB_URL,
         unknown_licenses=False,
         **kwargs
@@ -147,11 +156,12 @@ class LicenseScanner(ScanPlugin):
             min_score=license_score,
             include_text=license_text,
             license_text_diagnostics=license_text_diagnostics,
+            license_diagnostics=license_diagnostics,
             license_url_template=license_url_template,
             unknown_licenses=unknown_licenses,
         )
 
-    def process_codebase(self, codebase, license_text_diagnostics, **kwargs):
+    def process_codebase(self, codebase, license_diagnostics, **kwargs):
         """
         Post-process ``codebase`` to follow referenced filenames to license
         matches in other files.
@@ -182,7 +192,6 @@ class LicenseScanner(ScanPlugin):
         license_detections = collect_license_detections(codebase)
         unique_license_detections = UniqueDetection.get_unique_detections(
             license_detections=license_detections,
-            license_text_diagnostics=license_text_diagnostics,
         )
 
         if TRACE:
@@ -214,7 +223,7 @@ class LicenseScanner(ScanPlugin):
             detections=unique_license_detections,
         )
         codebase.attributes.license_detections.extend([
-            unique_detection.to_dict(license_text_diagnostics=license_text_diagnostics)
+            unique_detection.to_dict(license_diagnostics=license_diagnostics)
             for unique_detection in unique_license_detections
         ])
 
