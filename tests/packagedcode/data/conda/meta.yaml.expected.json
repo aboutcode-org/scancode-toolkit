@@ -41,7 +41,8 @@
             "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_292.RULE",
             "matched_text": "license Apache Software"
           }
-        ]
+        ],
+        "identifier": "apache_2_0-b61e521f-8056-676d-d623-119feca87b8c"
       }
     ],
     "other_license_expression": null,

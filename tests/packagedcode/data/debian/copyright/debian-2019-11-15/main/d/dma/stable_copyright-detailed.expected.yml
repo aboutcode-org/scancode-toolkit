@@ -44,6 +44,7 @@ other_license_detections:
            3. Neither the name of The DragonFly Project nor the names of its
               contributors may be used to endorse or promote products derived
               from this software without specific, prior written permission.
+    identifier: bsd_new-075516ae-8349-5cd8-e103-e7e7fee3a471
   - license_expression: isc
     matches:
       - score: '100.0'
@@ -68,6 +69,7 @@ other_license_detections:
            WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
            ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
            OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+    identifier: isc-ea6c318e-91a9-413d-027a-507b2cebec2c
   - license_expression: bsd-simplified
     matches:
       - score: '100.0'
@@ -101,6 +103,7 @@ other_license_detections:
            LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
            OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
            SUCH DAMAGE.
+    identifier: bsd_simplified-24fb2214-fe65-fd01-a4db-75b7cf8d710c
 copyright: |
   Copyright (c) 1995-2001 Kungliga Tekniska Högskolan
   (Royal Institute of Technology, Stockholm, Sweden).

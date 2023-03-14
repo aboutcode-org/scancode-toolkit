@@ -40,7 +40,8 @@
           "rule_url": null,
           "matched_text": "gpl-1.0-or-later OR artistic-1.0-perl"
         }
-      ]
+      ],
+      "identifier": "gpl_1_0_plus_or_artistic_perl_1_0-5b18e6f8-26f2-64b3-9bbb-03e93b71de62"
     }
   ],
   "other_license_expression": null,

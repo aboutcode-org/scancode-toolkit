@@ -4660,684 +4660,102 @@
       "identifier": "gpl_2_0_plus-53a26be2-1f88-01ec-d294-921768a513c9",
       "license_expression": "gpl-2.0-plus",
       "detection_count": 21,
-      "matches": [
-        {
-          "score": 100.0,
-          "start_line": 297,
-          "end_line": 297,
-          "matched_length": 3,
-          "match_coverage": 100.0,
-          "matcher": "2-aho",
-          "license_expression": "gpl-2.0-plus",
-          "rule_identifier": "gpl-2.0-plus_22.RULE",
-          "rule_relevance": 100,
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_22.RULE"
-        }
-      ],
       "detection_log": []
     },
     {
       "identifier": "gpl_2_0_plus_and_free_unknown-7df72521-0609-4896-2583-44c45dd3f8e6",
       "license_expression": "gpl-2.0-plus AND free-unknown",
       "detection_count": 1,
-      "matches": [
-        {
-          "score": 100.0,
-          "start_line": 411,
-          "end_line": 411,
-          "matched_length": 3,
-          "match_coverage": 100.0,
-          "matcher": "2-aho",
-          "license_expression": "gpl-2.0-plus",
-          "rule_identifier": "gpl-2.0-plus_22.RULE",
-          "rule_relevance": 100,
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_22.RULE"
-        },
-        {
-          "score": 100.0,
-          "start_line": 413,
-          "end_line": 413,
-          "matched_length": 12,
-          "match_coverage": 100.0,
-          "matcher": "2-aho",
-          "license_expression": "free-unknown",
-          "rule_identifier": "free-unknown-package_2.RULE",
-          "rule_relevance": 100,
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/free-unknown-package_2.RULE"
-        }
-      ],
       "detection_log": []
     },
     {
       "identifier": "bsd_new-008266ae-6939-ad31-3617-228b0809863c",
       "license_expression": "bsd-new",
       "detection_count": 1,
-      "matches": [
-        {
-          "score": 100.0,
-          "start_line": 441,
-          "end_line": 441,
-          "matched_length": 4,
-          "match_coverage": 100.0,
-          "matcher": "2-aho",
-          "license_expression": "bsd-new",
-          "rule_identifier": "bsd-new_195.RULE",
-          "rule_relevance": 100,
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_195.RULE"
-        }
-      ],
       "detection_log": []
     },
     {
       "identifier": "apache_2_0_and_gpl_2_0_plus_and_free_unknown-946c0f58-eac9-675a-5434-c266108a0fe5",
       "license_expression": "apache-2.0 AND gpl-2.0-plus AND free-unknown",
       "detection_count": 1,
-      "matches": [
-        {
-          "score": 20.0,
-          "start_line": 560,
-          "end_line": 562,
-          "matched_length": 6,
-          "match_coverage": 20.0,
-          "matcher": "3-seq",
-          "license_expression": "apache-2.0",
-          "rule_identifier": "apache-2.0_1066.RULE",
-          "rule_relevance": 100,
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_1066.RULE"
-        },
-        {
-          "score": 100.0,
-          "start_line": 560,
-          "end_line": 560,
-          "matched_length": 3,
-          "match_coverage": 100.0,
-          "matcher": "2-aho",
-          "license_expression": "gpl-2.0-plus",
-          "rule_identifier": "gpl-2.0-plus_22.RULE",
-          "rule_relevance": 100,
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_22.RULE"
-        },
-        {
-          "score": 100.0,
-          "start_line": 562,
-          "end_line": 562,
-          "matched_length": 10,
-          "match_coverage": 100.0,
-          "matcher": "2-aho",
-          "license_expression": "free-unknown",
-          "rule_identifier": "free-unknown-package_4.RULE",
-          "rule_relevance": 100,
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/free-unknown-package_4.RULE"
-        }
-      ],
       "detection_log": []
     },
     {
       "identifier": "lgpl_3_0_plus-4c8d95b2-1acf-7a81-473c-d8e70962288c",
       "license_expression": "lgpl-3.0-plus",
       "detection_count": 1,
-      "matches": [
-        {
-          "score": 100.0,
-          "start_line": 968,
-          "end_line": 968,
-          "matched_length": 3,
-          "match_coverage": 100.0,
-          "matcher": "2-aho",
-          "license_expression": "lgpl-3.0-plus",
-          "rule_identifier": "lgpl-3.0-plus_166.RULE",
-          "rule_relevance": 100,
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-3.0-plus_166.RULE"
-        }
-      ],
       "detection_log": []
     },
     {
       "identifier": "public_domain-1a6a4f2c-bd92-9942-920f-be3d0c2bbda6",
       "license_expression": "public-domain",
       "detection_count": 1,
-      "matches": [
-        {
-          "score": 99.0,
-          "start_line": 1094,
-          "end_line": 1094,
-          "matched_length": 3,
-          "match_coverage": 100.0,
-          "matcher": "2-aho",
-          "license_expression": "public-domain",
-          "rule_identifier": "pypi_public_domain.RULE",
-          "rule_relevance": 99,
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/pypi_public_domain.RULE"
-        }
-      ],
       "detection_log": []
     },
     {
       "identifier": "gpl_2_0_plus-fed2dc38-09ac-103e-1b86-4a4f5c00614a",
       "license_expression": "gpl-2.0-plus",
       "detection_count": 1,
-      "matches": [
-        {
-          "score": 100.0,
-          "start_line": 1099,
-          "end_line": 1099,
-          "matched_length": 2,
-          "match_coverage": 100.0,
-          "matcher": "2-aho",
-          "license_expression": "gpl-2.0-plus",
-          "rule_identifier": "gpl-2.0-plus_67.RULE",
-          "rule_relevance": 100,
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_67.RULE"
-        }
-      ],
       "detection_log": []
     },
     {
       "identifier": "mit-1f9f2ae8-7020-0a13-7934-461c752929a4",
       "license_expression": "mit",
       "detection_count": 3,
-      "matches": [
-        {
-          "score": 100.0,
-          "start_line": 1429,
-          "end_line": 1429,
-          "matched_length": 2,
-          "match_coverage": 100.0,
-          "matcher": "2-aho",
-          "license_expression": "mit",
-          "rule_identifier": "mit_437.RULE",
-          "rule_relevance": 100,
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_437.RULE"
-        }
-      ],
       "detection_log": []
     },
     {
       "identifier": "bsd_original-9198bafe-47c0-f9dc-5ef1-bd276a69786e",
       "license_expression": "bsd-original",
       "detection_count": 1,
-      "matches": [
-        {
-          "score": 100.0,
-          "start_line": 1501,
-          "end_line": 1501,
-          "matched_length": 4,
-          "match_coverage": 100.0,
-          "matcher": "2-aho",
-          "license_expression": "bsd-original",
-          "rule_identifier": "bsd-original_43.RULE",
-          "rule_relevance": 100,
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-original_43.RULE"
-        }
-      ],
       "detection_log": []
     },
     {
       "identifier": "gpl_2_0_plus_and_gpl_3_0_plus_and_lgpl_2_1_plus_and_lgpl_3_0_plus_and_bsd_new_and_bsd_original_and_mit_and_public_domain_and_other_permissive-9e2a213a-3fc4-9ee3-8e3f-783829530b14",
       "license_expression": "gpl-2.0-plus AND gpl-3.0-plus AND lgpl-2.1-plus AND lgpl-3.0-plus AND bsd-new AND bsd-original AND mit AND public-domain AND other-permissive",
       "detection_count": 1,
-      "matches": [
-        {
-          "score": 100.0,
-          "start_line": 1521,
-          "end_line": 1521,
-          "matched_length": 3,
-          "match_coverage": 100.0,
-          "matcher": "2-aho",
-          "license_expression": "gpl-2.0-plus",
-          "rule_identifier": "gpl-2.0-plus_22.RULE",
-          "rule_relevance": 100,
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_22.RULE"
-        },
-        {
-          "score": 100.0,
-          "start_line": 1521,
-          "end_line": 1521,
-          "matched_length": 2,
-          "match_coverage": 100.0,
-          "matcher": "2-aho",
-          "license_expression": "gpl-3.0-plus",
-          "rule_identifier": "gpl-3.0-plus_89.RULE",
-          "rule_relevance": 100,
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0-plus_89.RULE"
-        },
-        {
-          "score": 100.0,
-          "start_line": 1521,
-          "end_line": 1521,
-          "matched_length": 3,
-          "match_coverage": 100.0,
-          "matcher": "2-aho",
-          "license_expression": "lgpl-2.1-plus",
-          "rule_identifier": "lgpl-2.1-plus_64.RULE",
-          "rule_relevance": 100,
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_64.RULE"
-        },
-        {
-          "score": 100.0,
-          "start_line": 1521,
-          "end_line": 1521,
-          "matched_length": 2,
-          "match_coverage": 100.0,
-          "matcher": "2-aho",
-          "license_expression": "lgpl-3.0-plus",
-          "rule_identifier": "lgpl-3.0-plus_36.RULE",
-          "rule_relevance": 100,
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-3.0-plus_36.RULE"
-        },
-        {
-          "score": 100.0,
-          "start_line": 1521,
-          "end_line": 1521,
-          "matched_length": 3,
-          "match_coverage": 100.0,
-          "matcher": "2-aho",
-          "license_expression": "bsd-new",
-          "rule_identifier": "bsd-new_10.RULE",
-          "rule_relevance": 100,
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_10.RULE"
-        },
-        {
-          "score": 100.0,
-          "start_line": 1521,
-          "end_line": 1521,
-          "matched_length": 3,
-          "match_coverage": 100.0,
-          "matcher": "2-aho",
-          "license_expression": "bsd-original",
-          "rule_identifier": "spdx_license_id_bsd-4-clause_for_bsd-original.RULE",
-          "rule_relevance": 100,
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/spdx_license_id_bsd-4-clause_for_bsd-original.RULE"
-        },
-        {
-          "score": 100.0,
-          "start_line": 1523,
-          "end_line": 1523,
-          "matched_length": 3,
-          "match_coverage": 100.0,
-          "matcher": "2-aho",
-          "license_expression": "gpl-2.0-plus",
-          "rule_identifier": "gpl-2.0-plus_22.RULE",
-          "rule_relevance": 100,
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_22.RULE"
-        },
-        {
-          "score": 100.0,
-          "start_line": 1524,
-          "end_line": 1539,
-          "matched_length": 136,
-          "match_coverage": 100.0,
-          "matcher": "2-aho",
-          "license_expression": "gpl-2.0-plus",
-          "rule_identifier": "gpl-2.0-plus_1038.RULE",
-          "rule_relevance": 100,
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_1038.RULE"
-        },
-        {
-          "score": 100.0,
-          "start_line": 1541,
-          "end_line": 1541,
-          "matched_length": 3,
-          "match_coverage": 100.0,
-          "matcher": "2-aho",
-          "license_expression": "gpl-3.0-plus",
-          "rule_identifier": "gpl-3.0-plus_92.RULE",
-          "rule_relevance": 100,
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0-plus_92.RULE"
-        },
-        {
-          "score": 100.0,
-          "start_line": 1542,
-          "end_line": 1557,
-          "matched_length": 136,
-          "match_coverage": 100.0,
-          "matcher": "2-aho",
-          "license_expression": "gpl-3.0-plus",
-          "rule_identifier": "gpl-3.0-plus_512.RULE",
-          "rule_relevance": 100,
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0-plus_512.RULE"
-        },
-        {
-          "score": 100.0,
-          "start_line": 1559,
-          "end_line": 1559,
-          "matched_length": 4,
-          "match_coverage": 100.0,
-          "matcher": "2-aho",
-          "license_expression": "lgpl-2.1-plus",
-          "rule_identifier": "lgpl-2.1-plus_108.RULE",
-          "rule_relevance": 100,
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_108.RULE"
-        },
-        {
-          "score": 100.0,
-          "start_line": 1560,
-          "end_line": 1577,
-          "matched_length": 146,
-          "match_coverage": 100.0,
-          "matcher": "2-aho",
-          "license_expression": "lgpl-2.1-plus",
-          "rule_identifier": "lgpl-2.1-plus_418.RULE",
-          "rule_relevance": 100,
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_418.RULE"
-        },
-        {
-          "score": 100.0,
-          "start_line": 1579,
-          "end_line": 1579,
-          "matched_length": 2,
-          "match_coverage": 100.0,
-          "matcher": "2-aho",
-          "license_expression": "mit",
-          "rule_identifier": "mit_437.RULE",
-          "rule_relevance": 100,
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_437.RULE"
-        },
-        {
-          "score": 100.0,
-          "start_line": 1580,
-          "end_line": 1596,
-          "matched_length": 161,
-          "match_coverage": 100.0,
-          "matcher": "2-aho",
-          "license_expression": "mit",
-          "rule_identifier": "mit.LICENSE",
-          "rule_relevance": 100,
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE"
-        },
-        {
-          "score": 100.0,
-          "start_line": 1598,
-          "end_line": 1598,
-          "matched_length": 4,
-          "match_coverage": 100.0,
-          "matcher": "2-aho",
-          "license_expression": "bsd-new",
-          "rule_identifier": "bsd-new_195.RULE",
-          "rule_relevance": 100,
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_195.RULE"
-        },
-        {
-          "score": 100.0,
-          "start_line": 1599,
-          "end_line": 1621,
-          "matched_length": 213,
-          "match_coverage": 100.0,
-          "matcher": "2-aho",
-          "license_expression": "bsd-new",
-          "rule_identifier": "bsd-new_577.RULE",
-          "rule_relevance": 100,
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_577.RULE"
-        },
-        {
-          "score": 100.0,
-          "start_line": 1623,
-          "end_line": 1623,
-          "matched_length": 4,
-          "match_coverage": 100.0,
-          "matcher": "2-aho",
-          "license_expression": "bsd-original",
-          "rule_identifier": "bsd-original_43.RULE",
-          "rule_relevance": 100,
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-original_43.RULE"
-        },
-        {
-          "score": 100.0,
-          "start_line": 1624,
-          "end_line": 1649,
-          "matched_length": 236,
-          "match_coverage": 100.0,
-          "matcher": "2-aho",
-          "license_expression": "bsd-original",
-          "rule_identifier": "bsd-original_71.RULE",
-          "rule_relevance": 100,
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-original_71.RULE"
-        },
-        {
-          "score": 100.0,
-          "start_line": 1651,
-          "end_line": 1651,
-          "matched_length": 3,
-          "match_coverage": 100.0,
-          "matcher": "2-aho",
-          "license_expression": "lgpl-3.0-plus",
-          "rule_identifier": "lgpl-3.0-plus_166.RULE",
-          "rule_relevance": 100,
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-3.0-plus_166.RULE"
-        },
-        {
-          "score": 100.0,
-          "start_line": 1652,
-          "end_line": 1663,
-          "matched_length": 105,
-          "match_coverage": 100.0,
-          "matcher": "2-aho",
-          "license_expression": "lgpl-3.0-plus",
-          "rule_identifier": "lgpl-3.0-plus_189.RULE",
-          "rule_relevance": 100,
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-3.0-plus_189.RULE"
-        },
-        {
-          "score": 99.0,
-          "start_line": 1665,
-          "end_line": 1665,
-          "matched_length": 3,
-          "match_coverage": 100.0,
-          "matcher": "2-aho",
-          "license_expression": "public-domain",
-          "rule_identifier": "pypi_public_domain.RULE",
-          "rule_relevance": 99,
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/pypi_public_domain.RULE"
-        },
-        {
-          "score": 100.0,
-          "start_line": 1666,
-          "end_line": 1669,
-          "matched_length": 40,
-          "match_coverage": 100.0,
-          "matcher": "2-aho",
-          "license_expression": "other-permissive",
-          "rule_identifier": "other-permissive_325.RULE",
-          "rule_relevance": 100,
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/other-permissive_325.RULE"
-        }
-      ],
       "detection_log": []
     },
     {
       "identifier": "gpl_2_0_plus-227f50b1-f05e-5b3b-b107-ae1e2f56448b",
       "license_expression": "gpl-2.0-plus",
       "detection_count": 22,
-      "matches": [
-        {
-          "score": 100.0,
-          "start_line": 2692,
-          "end_line": 2692,
-          "matched_length": 5,
-          "match_coverage": 100.0,
-          "matcher": "2-aho",
-          "license_expression": "gpl-2.0-plus",
-          "rule_identifier": "gpl-2.0-plus_687.RULE",
-          "rule_relevance": 100,
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_687.RULE"
-        }
-      ],
       "detection_log": []
     },
     {
       "identifier": "bsd_simplified-2383ae10-5494-e069-46c2-e2d6cb56951f",
       "license_expression": "bsd-simplified",
       "detection_count": 1,
-      "matches": [
-        {
-          "score": 100.0,
-          "start_line": 2880,
-          "end_line": 2880,
-          "matched_length": 4,
-          "match_coverage": 100.0,
-          "matcher": "2-aho",
-          "license_expression": "bsd-simplified",
-          "rule_identifier": "bsd-simplified_136.RULE",
-          "rule_relevance": 100,
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-simplified_136.RULE"
-        }
-      ],
       "detection_log": []
     },
     {
       "identifier": "lgpl_3_0-6b4a45da-85cc-8eb0-5613-be81d4efd6a5",
       "license_expression": "lgpl-3.0",
       "detection_count": 1,
-      "matches": [
-        {
-          "score": 100.0,
-          "start_line": 2925,
-          "end_line": 2925,
-          "matched_length": 3,
-          "match_coverage": 100.0,
-          "matcher": "2-aho",
-          "license_expression": "lgpl-3.0",
-          "rule_identifier": "lgpl-3.0_37.RULE",
-          "rule_relevance": 100,
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-3.0_37.RULE"
-        }
-      ],
       "detection_log": []
     },
     {
       "identifier": "mit_and_other_permissive-907b56d6-95b9-e85c-83c0-efd967c7e30a",
       "license_expression": "mit AND other-permissive",
       "detection_count": 1,
-      "matches": [
-        {
-          "score": 90.0,
-          "start_line": 3010,
-          "end_line": 3010,
-          "matched_length": 3,
-          "match_coverage": 100.0,
-          "matcher": "2-aho",
-          "license_expression": "mit",
-          "rule_identifier": "mit_221.RULE",
-          "rule_relevance": 90,
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_221.RULE"
-        },
-        {
-          "score": 100.0,
-          "start_line": 3010,
-          "end_line": 3010,
-          "matched_length": 2,
-          "match_coverage": 100.0,
-          "matcher": "2-aho",
-          "license_expression": "other-permissive",
-          "rule_identifier": "other-permissive_16.RULE",
-          "rule_relevance": 100,
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/other-permissive_16.RULE"
-        }
-      ],
       "detection_log": []
     },
     {
       "identifier": "public_domain_and_bsd_original_and_gpl_1_0_plus-ccb73883-974d-42eb-d572-39fa7bf22f4c",
       "license_expression": "public-domain AND bsd-original AND gpl-1.0-plus",
       "detection_count": 1,
-      "matches": [
-        {
-          "score": 99.0,
-          "start_line": 3016,
-          "end_line": 3016,
-          "matched_length": 3,
-          "match_coverage": 100.0,
-          "matcher": "2-aho",
-          "license_expression": "public-domain",
-          "rule_identifier": "pypi_public_domain.RULE",
-          "rule_relevance": 99,
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/pypi_public_domain.RULE"
-        },
-        {
-          "score": 100.0,
-          "start_line": 3016,
-          "end_line": 3016,
-          "matched_length": 3,
-          "match_coverage": 100.0,
-          "matcher": "2-aho",
-          "license_expression": "bsd-original",
-          "rule_identifier": "spdx_license_id_bsd-4-clause_for_bsd-original.RULE",
-          "rule_relevance": 100,
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/spdx_license_id_bsd-4-clause_for_bsd-original.RULE"
-        },
-        {
-          "score": 50.0,
-          "start_line": 3016,
-          "end_line": 3016,
-          "matched_length": 1,
-          "match_coverage": 100.0,
-          "matcher": "2-aho",
-          "license_expression": "gpl-1.0-plus",
-          "rule_identifier": "gpl_bare_word_only.RULE",
-          "rule_relevance": 50,
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl_bare_word_only.RULE"
-        }
-      ],
-      "detection_log": []
-    },
-    {
-      "identifier": "none-3c39742c-edef-82b7-0cdd-fc4d9ff8b044",
-      "license_expression": null,
-      "detection_count": 1,
-      "matches": [
-        {
-          "score": 4.71,
-          "start_line": 1,
-          "end_line": 3,
-          "matched_length": 4,
-          "match_coverage": 4.71,
-          "matcher": "3-seq",
-          "license_expression": "borceux",
-          "rule_identifier": "borceux.LICENSE",
-          "rule_relevance": 100,
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/borceux.LICENSE"
-        }
-      ],
       "detection_log": []
     },
     {
       "identifier": "free_unknown-fddf748a-9953-bc6c-cb9d-91001840e335",
       "license_expression": "free-unknown",
       "detection_count": 1,
-      "matches": [
-        {
-          "score": 100.0,
-          "start_line": 3,
-          "end_line": 3,
-          "matched_length": 10,
-          "match_coverage": 100.0,
-          "matcher": "2-aho",
-          "license_expression": "free-unknown",
-          "rule_identifier": "free-unknown-package_4.RULE",
-          "rule_relevance": 100,
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/free-unknown-package_4.RULE"
-        }
-      ],
       "detection_log": []
     },
     {
       "identifier": "free_unknown-34d6195a-6206-be2e-4bd2-ce3b9493a1ad",
       "license_expression": "free-unknown",
       "detection_count": 1,
-      "matches": [
-        {
-          "score": 100.0,
-          "start_line": 3,
-          "end_line": 3,
-          "matched_length": 11,
-          "match_coverage": 100.0,
-          "matcher": "2-aho",
-          "license_expression": "free-unknown",
-          "rule_identifier": "free-unknown-package_1.RULE",
-          "rule_relevance": 100,
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/free-unknown-package_1.RULE"
-        }
-      ],
       "detection_log": []
     }
   ],
@@ -5452,7 +4870,6 @@
       "license_detections": [],
       "license_clues": [],
       "percentage_of_license_text": 0,
-      "for_license_detections": [],
       "scan_errors": []
     },
     {
@@ -5565,7 +4982,6 @@
       "license_detections": [],
       "license_clues": [],
       "percentage_of_license_text": 0,
-      "for_license_detections": [],
       "scan_errors": []
     },
     {
@@ -5692,9 +5108,6 @@
         }
       ],
       "percentage_of_license_text": 10.53,
-      "for_license_detections": [
-        "none-3c39742c-edef-82b7-0cdd-fc4d9ff8b044"
-      ],
       "scan_errors": []
     },
     {
@@ -5807,7 +5220,6 @@
       "license_detections": [],
       "license_clues": [],
       "percentage_of_license_text": 0,
-      "for_license_detections": [],
       "scan_errors": []
     },
     {
@@ -5867,7 +5279,8 @@
                   "matched_text": "License: GPL-2+"
                 }
               ],
-              "detection_log": []
+              "detection_log": [],
+              "identifier": "gpl_2_0_plus-53a26be2-1f88-01ec-d294-921768a513c9"
             },
             {
               "license_expression": "gpl-2.0-plus AND free-unknown",
@@ -5899,7 +5312,8 @@
                   "matched_text": "This file is distributed under the same license as the PACKAGE package."
                 }
               ],
-              "detection_log": []
+              "detection_log": [],
+              "identifier": "gpl_2_0_plus_and_free_unknown-7df72521-0609-4896-2583-44c45dd3f8e6"
             },
             {
               "license_expression": "gpl-2.0-plus",
@@ -5918,7 +5332,8 @@
                   "matched_text": "License: GPL-2+"
                 }
               ],
-              "detection_log": []
+              "detection_log": [],
+              "identifier": "gpl_2_0_plus-53a26be2-1f88-01ec-d294-921768a513c9"
             },
             {
               "license_expression": "gpl-2.0-plus",
@@ -5937,7 +5352,8 @@
                   "matched_text": "License: GPL-2+"
                 }
               ],
-              "detection_log": []
+              "detection_log": [],
+              "identifier": "gpl_2_0_plus-53a26be2-1f88-01ec-d294-921768a513c9"
             },
             {
               "license_expression": "bsd-new",
@@ -5956,7 +5372,8 @@
                   "matched_text": "License: BSD-3-clause"
                 }
               ],
-              "detection_log": []
+              "detection_log": [],
+              "identifier": "bsd_new-008266ae-6939-ad31-3617-228b0809863c"
             },
             {
               "license_expression": "gpl-2.0-plus",
@@ -5975,7 +5392,8 @@
                   "matched_text": "License: GPL-2+"
                 }
               ],
-              "detection_log": []
+              "detection_log": [],
+              "identifier": "gpl_2_0_plus-53a26be2-1f88-01ec-d294-921768a513c9"
             },
             {
               "license_expression": "gpl-2.0-plus",
@@ -5994,7 +5412,8 @@
                   "matched_text": "License: GPL-2+"
                 }
               ],
-              "detection_log": []
+              "detection_log": [],
+              "identifier": "gpl_2_0_plus-53a26be2-1f88-01ec-d294-921768a513c9"
             },
             {
               "license_expression": "gpl-2.0-plus",
@@ -6013,7 +5432,8 @@
                   "matched_text": "License: GPL-2+"
                 }
               ],
-              "detection_log": []
+              "detection_log": [],
+              "identifier": "gpl_2_0_plus-53a26be2-1f88-01ec-d294-921768a513c9"
             },
             {
               "license_expression": "gpl-2.0-plus",
@@ -6032,7 +5452,8 @@
                   "matched_text": "License: GPL-2+"
                 }
               ],
-              "detection_log": []
+              "detection_log": [],
+              "identifier": "gpl_2_0_plus-53a26be2-1f88-01ec-d294-921768a513c9"
             },
             {
               "license_expression": "gpl-2.0-plus",
@@ -6051,7 +5472,8 @@
                   "matched_text": "License: GPL-2+"
                 }
               ],
-              "detection_log": []
+              "detection_log": [],
+              "identifier": "gpl_2_0_plus-53a26be2-1f88-01ec-d294-921768a513c9"
             },
             {
               "license_expression": "gpl-2.0-plus",
@@ -6070,7 +5492,8 @@
                   "matched_text": "License: GPL-2+"
                 }
               ],
-              "detection_log": []
+              "detection_log": [],
+              "identifier": "gpl_2_0_plus-53a26be2-1f88-01ec-d294-921768a513c9"
             },
             {
               "license_expression": "apache-2.0 AND gpl-2.0-plus AND free-unknown",
@@ -6115,7 +5538,8 @@
                   "matched_text": "This file is distributed under the same license as the"
                 }
               ],
-              "detection_log": []
+              "detection_log": [],
+              "identifier": "apache_2_0_and_gpl_2_0_plus_and_free_unknown-946c0f58-eac9-675a-5434-c266108a0fe5"
             },
             {
               "license_expression": "lgpl-3.0-plus",
@@ -6134,7 +5558,8 @@
                   "matched_text": "License: LGPL-3+"
                 }
               ],
-              "detection_log": []
+              "detection_log": [],
+              "identifier": "lgpl_3_0_plus-4c8d95b2-1acf-7a81-473c-d8e70962288c"
             },
             {
               "license_expression": "public-domain",
@@ -6156,7 +5581,8 @@
               "detection_log": [
                 "possible-false-positive",
                 "not-license-clues-as-more-detections-present"
-              ]
+              ],
+              "identifier": "public_domain-1a6a4f2c-bd92-9942-920f-be3d0c2bbda6"
             },
             {
               "license_expression": "gpl-2.0-plus",
@@ -6178,7 +5604,8 @@
               "detection_log": [
                 "possible-false-positive",
                 "not-license-clues-as-more-detections-present"
-              ]
+              ],
+              "identifier": "gpl_2_0_plus-fed2dc38-09ac-103e-1b86-4a4f5c00614a"
             },
             {
               "license_expression": "gpl-2.0-plus",
@@ -6200,7 +5627,8 @@
               "detection_log": [
                 "possible-false-positive",
                 "not-license-clues-as-more-detections-present"
-              ]
+              ],
+              "identifier": "gpl_2_0_plus-53a26be2-1f88-01ec-d294-921768a513c9"
             },
             {
               "license_expression": "gpl-2.0-plus",
@@ -6222,7 +5650,8 @@
               "detection_log": [
                 "possible-false-positive",
                 "not-license-clues-as-more-detections-present"
-              ]
+              ],
+              "identifier": "gpl_2_0_plus-53a26be2-1f88-01ec-d294-921768a513c9"
             },
             {
               "license_expression": "mit",
@@ -6244,7 +5673,8 @@
               "detection_log": [
                 "possible-false-positive",
                 "not-license-clues-as-more-detections-present"
-              ]
+              ],
+              "identifier": "mit-1f9f2ae8-7020-0a13-7934-461c752929a4"
             },
             {
               "license_expression": "gpl-2.0-plus",
@@ -6266,7 +5696,8 @@
               "detection_log": [
                 "possible-false-positive",
                 "not-license-clues-as-more-detections-present"
-              ]
+              ],
+              "identifier": "gpl_2_0_plus-53a26be2-1f88-01ec-d294-921768a513c9"
             },
             {
               "license_expression": "gpl-2.0-plus",
@@ -6288,7 +5719,8 @@
               "detection_log": [
                 "possible-false-positive",
                 "not-license-clues-as-more-detections-present"
-              ]
+              ],
+              "identifier": "gpl_2_0_plus-53a26be2-1f88-01ec-d294-921768a513c9"
             },
             {
               "license_expression": "gpl-2.0-plus",
@@ -6310,7 +5742,8 @@
               "detection_log": [
                 "possible-false-positive",
                 "not-license-clues-as-more-detections-present"
-              ]
+              ],
+              "identifier": "gpl_2_0_plus-53a26be2-1f88-01ec-d294-921768a513c9"
             },
             {
               "license_expression": "gpl-2.0-plus",
@@ -6332,7 +5765,8 @@
               "detection_log": [
                 "possible-false-positive",
                 "not-license-clues-as-more-detections-present"
-              ]
+              ],
+              "identifier": "gpl_2_0_plus-53a26be2-1f88-01ec-d294-921768a513c9"
             },
             {
               "license_expression": "gpl-2.0-plus",
@@ -6354,7 +5788,8 @@
               "detection_log": [
                 "possible-false-positive",
                 "not-license-clues-as-more-detections-present"
-              ]
+              ],
+              "identifier": "gpl_2_0_plus-53a26be2-1f88-01ec-d294-921768a513c9"
             },
             {
               "license_expression": "gpl-2.0-plus",
@@ -6376,7 +5811,8 @@
               "detection_log": [
                 "possible-false-positive",
                 "not-license-clues-as-more-detections-present"
-              ]
+              ],
+              "identifier": "gpl_2_0_plus-53a26be2-1f88-01ec-d294-921768a513c9"
             },
             {
               "license_expression": "gpl-2.0-plus",
@@ -6398,7 +5834,8 @@
               "detection_log": [
                 "possible-false-positive",
                 "not-license-clues-as-more-detections-present"
-              ]
+              ],
+              "identifier": "gpl_2_0_plus-53a26be2-1f88-01ec-d294-921768a513c9"
             },
             {
               "license_expression": "gpl-2.0-plus",
@@ -6420,7 +5857,8 @@
               "detection_log": [
                 "possible-false-positive",
                 "not-license-clues-as-more-detections-present"
-              ]
+              ],
+              "identifier": "gpl_2_0_plus-53a26be2-1f88-01ec-d294-921768a513c9"
             },
             {
               "license_expression": "gpl-2.0-plus",
@@ -6442,7 +5880,8 @@
               "detection_log": [
                 "possible-false-positive",
                 "not-license-clues-as-more-detections-present"
-              ]
+              ],
+              "identifier": "gpl_2_0_plus-53a26be2-1f88-01ec-d294-921768a513c9"
             },
             {
               "license_expression": "gpl-2.0-plus",
@@ -6464,7 +5903,8 @@
               "detection_log": [
                 "possible-false-positive",
                 "not-license-clues-as-more-detections-present"
-              ]
+              ],
+              "identifier": "gpl_2_0_plus-53a26be2-1f88-01ec-d294-921768a513c9"
             },
             {
               "license_expression": "bsd-original",
@@ -6483,7 +5923,8 @@
                   "matched_text": "License: BSD-4-clause"
                 }
               ],
-              "detection_log": []
+              "detection_log": [],
+              "identifier": "bsd_original-9198bafe-47c0-f9dc-5ef1-bd276a69786e"
             },
             {
               "license_expression": "mit",
@@ -6505,7 +5946,8 @@
               "detection_log": [
                 "possible-false-positive",
                 "not-license-clues-as-more-detections-present"
-              ]
+              ],
+              "identifier": "mit-1f9f2ae8-7020-0a13-7934-461c752929a4"
             },
             {
               "license_expression": "mit",
@@ -6527,7 +5969,8 @@
               "detection_log": [
                 "possible-false-positive",
                 "not-license-clues-as-more-detections-present"
-              ]
+              ],
+              "identifier": "mit-1f9f2ae8-7020-0a13-7934-461c752929a4"
             },
             {
               "license_expression": "gpl-2.0-plus AND gpl-3.0-plus AND lgpl-2.1-plus AND lgpl-3.0-plus AND bsd-new AND bsd-original AND mit AND public-domain AND other-permissive",
@@ -6819,7 +6262,8 @@
                   "matched_text": "This file is in the public domain.  You may use and modify it as\n you see fit, as long as this copyright message is included and\n that there is an indication as to what modifications have been\n made (if any)."
                 }
               ],
-              "detection_log": []
+              "detection_log": [],
+              "identifier": "gpl_2_0_plus_and_gpl_3_0_plus_and_lgpl_2_1_plus_and_lgpl_3_0_plus_and_bsd_new_and_bsd_original_and_mit_and_public_domain_and_other_permissive-9e2a213a-3fc4-9ee3-8e3f-783829530b14"
             },
             {
               "license_expression": "gpl-2.0-plus",
@@ -6838,7 +6282,8 @@
                   "matched_text": "License: GPL (v2 or later)"
                 }
               ],
-              "detection_log": []
+              "detection_log": [],
+              "identifier": "gpl_2_0_plus-227f50b1-f05e-5b3b-b107-ae1e2f56448b"
             },
             {
               "license_expression": "gpl-2.0-plus",
@@ -6857,7 +6302,8 @@
                   "matched_text": "License: GPL (v2 or later)"
                 }
               ],
-              "detection_log": []
+              "detection_log": [],
+              "identifier": "gpl_2_0_plus-227f50b1-f05e-5b3b-b107-ae1e2f56448b"
             },
             {
               "license_expression": "gpl-2.0-plus",
@@ -6876,7 +6322,8 @@
                   "matched_text": "License: GPL (v2 or later)"
                 }
               ],
-              "detection_log": []
+              "detection_log": [],
+              "identifier": "gpl_2_0_plus-227f50b1-f05e-5b3b-b107-ae1e2f56448b"
             },
             {
               "license_expression": "gpl-2.0-plus",
@@ -6895,7 +6342,8 @@
                   "matched_text": "License: GPL (v2 or later)"
                 }
               ],
-              "detection_log": []
+              "detection_log": [],
+              "identifier": "gpl_2_0_plus-227f50b1-f05e-5b3b-b107-ae1e2f56448b"
             },
             {
               "license_expression": "gpl-2.0-plus",
@@ -6914,7 +6362,8 @@
                   "matched_text": "License: GPL (v2 or later)"
                 }
               ],
-              "detection_log": []
+              "detection_log": [],
+              "identifier": "gpl_2_0_plus-227f50b1-f05e-5b3b-b107-ae1e2f56448b"
             },
             {
               "license_expression": "gpl-2.0-plus",
@@ -6933,7 +6382,8 @@
                   "matched_text": "License: GPL (v2 or later)"
                 }
               ],
-              "detection_log": []
+              "detection_log": [],
+              "identifier": "gpl_2_0_plus-227f50b1-f05e-5b3b-b107-ae1e2f56448b"
             },
             {
               "license_expression": "bsd-simplified",
@@ -6952,7 +6402,8 @@
                   "matched_text": "License: BSD (2 clause)"
                 }
               ],
-              "detection_log": []
+              "detection_log": [],
+              "identifier": "bsd_simplified-2383ae10-5494-e069-46c2-e2d6cb56951f"
             },
             {
               "license_expression": "gpl-2.0-plus",
@@ -6971,7 +6422,8 @@
                   "matched_text": "License: GPL (v2 or later) ("
                 }
               ],
-              "detection_log": []
+              "detection_log": [],
+              "identifier": "gpl_2_0_plus-227f50b1-f05e-5b3b-b107-ae1e2f56448b"
             },
             {
               "license_expression": "gpl-2.0-plus",
@@ -6990,7 +6442,8 @@
                   "matched_text": "License: GPL (v2 or later)"
                 }
               ],
-              "detection_log": []
+              "detection_log": [],
+              "identifier": "gpl_2_0_plus-227f50b1-f05e-5b3b-b107-ae1e2f56448b"
             },
             {
               "license_expression": "gpl-2.0-plus",
@@ -7009,7 +6462,8 @@
                   "matched_text": "License: GPL (v2 or later)"
                 }
               ],
-              "detection_log": []
+              "detection_log": [],
+              "identifier": "gpl_2_0_plus-227f50b1-f05e-5b3b-b107-ae1e2f56448b"
             },
             {
               "license_expression": "gpl-2.0-plus",
@@ -7028,7 +6482,8 @@
                   "matched_text": "License: GPL (v2 or later)"
                 }
               ],
-              "detection_log": []
+              "detection_log": [],
+              "identifier": "gpl_2_0_plus-227f50b1-f05e-5b3b-b107-ae1e2f56448b"
             },
             {
               "license_expression": "lgpl-3.0",
@@ -7050,7 +6505,8 @@
               "detection_log": [
                 "possible-false-positive",
                 "not-license-clues-as-more-detections-present"
-              ]
+              ],
+              "identifier": "lgpl_3_0-6b4a45da-85cc-8eb0-5613-be81d4efd6a5"
             },
             {
               "license_expression": "gpl-2.0-plus",
@@ -7069,7 +6525,8 @@
                   "matched_text": "License: GPL (v2 or later)"
                 }
               ],
-              "detection_log": []
+              "detection_log": [],
+              "identifier": "gpl_2_0_plus-227f50b1-f05e-5b3b-b107-ae1e2f56448b"
             },
             {
               "license_expression": "gpl-2.0-plus",
@@ -7088,7 +6545,8 @@
                   "matched_text": "License: GPL (v2 or later)"
                 }
               ],
-              "detection_log": []
+              "detection_log": [],
+              "identifier": "gpl_2_0_plus-227f50b1-f05e-5b3b-b107-ae1e2f56448b"
             },
             {
               "license_expression": "gpl-2.0-plus",
@@ -7107,7 +6565,8 @@
                   "matched_text": "License: GPL (v2 or later)"
                 }
               ],
-              "detection_log": []
+              "detection_log": [],
+              "identifier": "gpl_2_0_plus-227f50b1-f05e-5b3b-b107-ae1e2f56448b"
             },
             {
               "license_expression": "gpl-2.0-plus",
@@ -7126,7 +6585,8 @@
                   "matched_text": "License: GPL (v2 or later)"
                 }
               ],
-              "detection_log": []
+              "detection_log": [],
+              "identifier": "gpl_2_0_plus-227f50b1-f05e-5b3b-b107-ae1e2f56448b"
             },
             {
               "license_expression": "gpl-2.0-plus",
@@ -7145,7 +6605,8 @@
                   "matched_text": "License: GPL (v2 or later)"
                 }
               ],
-              "detection_log": []
+              "detection_log": [],
+              "identifier": "gpl_2_0_plus-227f50b1-f05e-5b3b-b107-ae1e2f56448b"
             },
             {
               "license_expression": "gpl-2.0-plus",
@@ -7164,7 +6625,8 @@
                   "matched_text": "License: GPL (v2 or later)"
                 }
               ],
-              "detection_log": []
+              "detection_log": [],
+              "identifier": "gpl_2_0_plus-227f50b1-f05e-5b3b-b107-ae1e2f56448b"
             },
             {
               "license_expression": "gpl-2.0-plus",
@@ -7183,7 +6645,8 @@
                   "matched_text": "License: GPL (v2 or later)"
                 }
               ],
-              "detection_log": []
+              "detection_log": [],
+              "identifier": "gpl_2_0_plus-227f50b1-f05e-5b3b-b107-ae1e2f56448b"
             },
             {
               "license_expression": "gpl-2.0-plus",
@@ -7202,7 +6665,8 @@
                   "matched_text": "License: GPL (v2 or later)"
                 }
               ],
-              "detection_log": []
+              "detection_log": [],
+              "identifier": "gpl_2_0_plus-227f50b1-f05e-5b3b-b107-ae1e2f56448b"
             },
             {
               "license_expression": "gpl-2.0-plus",
@@ -7221,7 +6685,8 @@
                   "matched_text": "License: GPL (v2 or later)"
                 }
               ],
-              "detection_log": []
+              "detection_log": [],
+              "identifier": "gpl_2_0_plus-227f50b1-f05e-5b3b-b107-ae1e2f56448b"
             },
             {
               "license_expression": "gpl-2.0-plus",
@@ -7240,7 +6705,8 @@
                   "matched_text": "License: GPL (v2 or later)"
                 }
               ],
-              "detection_log": []
+              "detection_log": [],
+              "identifier": "gpl_2_0_plus-227f50b1-f05e-5b3b-b107-ae1e2f56448b"
             },
             {
               "license_expression": "gpl-2.0-plus",
@@ -7259,7 +6725,8 @@
                   "matched_text": "License: GPL (v2 or later) ("
                 }
               ],
-              "detection_log": []
+              "detection_log": [],
+              "identifier": "gpl_2_0_plus-227f50b1-f05e-5b3b-b107-ae1e2f56448b"
             },
             {
               "license_expression": "gpl-2.0-plus",
@@ -7278,7 +6745,8 @@
                   "matched_text": "License: GPL (v2 or later)"
                 }
               ],
-              "detection_log": []
+              "detection_log": [],
+              "identifier": "gpl_2_0_plus-227f50b1-f05e-5b3b-b107-ae1e2f56448b"
             },
             {
               "license_expression": "mit AND other-permissive",
@@ -7313,7 +6781,8 @@
               "detection_log": [
                 "possible-false-positive",
                 "not-license-clues-as-more-detections-present"
-              ]
+              ],
+              "identifier": "mit_and_other_permissive-907b56d6-95b9-e85c-83c0-efd967c7e30a"
             },
             {
               "license_expression": "public-domain AND bsd-original AND gpl-1.0-plus",
@@ -7361,7 +6830,8 @@
               "detection_log": [
                 "possible-false-positive",
                 "not-license-clues-as-more-detections-present"
-              ]
+              ],
+              "identifier": "public_domain_and_bsd_original_and_gpl_1_0_plus-ccb73883-974d-42eb-d572-39fa7bf22f4c"
             }
           ],
           "other_license_expression": null,
@@ -11745,7 +11215,6 @@
       "license_detections": [],
       "license_clues": [],
       "percentage_of_license_text": 0,
-      "for_license_detections": [],
       "scan_errors": []
     },
     {
@@ -11873,7 +11342,8 @@
               "matched_text": "License: GPL-2+"
             }
           ],
-          "detection_log": []
+          "detection_log": [],
+          "identifier": "gpl_2_0_plus-53a26be2-1f88-01ec-d294-921768a513c9"
         },
         {
           "license_expression": "gpl-2.0-plus AND free-unknown",
@@ -11905,7 +11375,8 @@
               "matched_text": "This file is distributed under the same license as the PACKAGE package."
             }
           ],
-          "detection_log": []
+          "detection_log": [],
+          "identifier": "gpl_2_0_plus_and_free_unknown-7df72521-0609-4896-2583-44c45dd3f8e6"
         },
         {
           "license_expression": "gpl-2.0-plus",
@@ -11924,7 +11395,8 @@
               "matched_text": "License: GPL-2+"
             }
           ],
-          "detection_log": []
+          "detection_log": [],
+          "identifier": "gpl_2_0_plus-53a26be2-1f88-01ec-d294-921768a513c9"
         },
         {
           "license_expression": "gpl-2.0-plus",
@@ -11943,7 +11415,8 @@
               "matched_text": "License: GPL-2+"
             }
           ],
-          "detection_log": []
+          "detection_log": [],
+          "identifier": "gpl_2_0_plus-53a26be2-1f88-01ec-d294-921768a513c9"
         },
         {
           "license_expression": "bsd-new",
@@ -11962,7 +11435,8 @@
               "matched_text": "License: BSD-3-clause"
             }
           ],
-          "detection_log": []
+          "detection_log": [],
+          "identifier": "bsd_new-008266ae-6939-ad31-3617-228b0809863c"
         },
         {
           "license_expression": "gpl-2.0-plus",
@@ -11981,7 +11455,8 @@
               "matched_text": "License: GPL-2+"
             }
           ],
-          "detection_log": []
+          "detection_log": [],
+          "identifier": "gpl_2_0_plus-53a26be2-1f88-01ec-d294-921768a513c9"
         },
         {
           "license_expression": "gpl-2.0-plus",
@@ -12000,7 +11475,8 @@
               "matched_text": "License: GPL-2+"
             }
           ],
-          "detection_log": []
+          "detection_log": [],
+          "identifier": "gpl_2_0_plus-53a26be2-1f88-01ec-d294-921768a513c9"
         },
         {
           "license_expression": "gpl-2.0-plus",
@@ -12019,7 +11495,8 @@
               "matched_text": "License: GPL-2+"
             }
           ],
-          "detection_log": []
+          "detection_log": [],
+          "identifier": "gpl_2_0_plus-53a26be2-1f88-01ec-d294-921768a513c9"
         },
         {
           "license_expression": "gpl-2.0-plus",
@@ -12038,7 +11515,8 @@
               "matched_text": "License: GPL-2+"
             }
           ],
-          "detection_log": []
+          "detection_log": [],
+          "identifier": "gpl_2_0_plus-53a26be2-1f88-01ec-d294-921768a513c9"
         },
         {
           "license_expression": "gpl-2.0-plus",
@@ -12057,7 +11535,8 @@
               "matched_text": "License: GPL-2+"
             }
           ],
-          "detection_log": []
+          "detection_log": [],
+          "identifier": "gpl_2_0_plus-53a26be2-1f88-01ec-d294-921768a513c9"
         },
         {
           "license_expression": "gpl-2.0-plus",
@@ -12076,7 +11555,8 @@
               "matched_text": "License: GPL-2+"
             }
           ],
-          "detection_log": []
+          "detection_log": [],
+          "identifier": "gpl_2_0_plus-53a26be2-1f88-01ec-d294-921768a513c9"
         },
         {
           "license_expression": "apache-2.0 AND gpl-2.0-plus AND free-unknown",
@@ -12121,7 +11601,8 @@
               "matched_text": "This file is distributed under the same license as the"
             }
           ],
-          "detection_log": []
+          "detection_log": [],
+          "identifier": "apache_2_0_and_gpl_2_0_plus_and_free_unknown-946c0f58-eac9-675a-5434-c266108a0fe5"
         },
         {
           "license_expression": "lgpl-3.0-plus",
@@ -12140,7 +11621,8 @@
               "matched_text": "License: LGPL-3+"
             }
           ],
-          "detection_log": []
+          "detection_log": [],
+          "identifier": "lgpl_3_0_plus-4c8d95b2-1acf-7a81-473c-d8e70962288c"
         },
         {
           "license_expression": "public-domain",
@@ -12162,7 +11644,8 @@
           "detection_log": [
             "possible-false-positive",
             "not-license-clues-as-more-detections-present"
-          ]
+          ],
+          "identifier": "public_domain-1a6a4f2c-bd92-9942-920f-be3d0c2bbda6"
         },
         {
           "license_expression": "gpl-2.0-plus",
@@ -12184,7 +11667,8 @@
           "detection_log": [
             "possible-false-positive",
             "not-license-clues-as-more-detections-present"
-          ]
+          ],
+          "identifier": "gpl_2_0_plus-fed2dc38-09ac-103e-1b86-4a4f5c00614a"
         },
         {
           "license_expression": "gpl-2.0-plus",
@@ -12206,7 +11690,8 @@
           "detection_log": [
             "possible-false-positive",
             "not-license-clues-as-more-detections-present"
-          ]
+          ],
+          "identifier": "gpl_2_0_plus-53a26be2-1f88-01ec-d294-921768a513c9"
         },
         {
           "license_expression": "gpl-2.0-plus",
@@ -12228,7 +11713,8 @@
           "detection_log": [
             "possible-false-positive",
             "not-license-clues-as-more-detections-present"
-          ]
+          ],
+          "identifier": "gpl_2_0_plus-53a26be2-1f88-01ec-d294-921768a513c9"
         },
         {
           "license_expression": "mit",
@@ -12250,7 +11736,8 @@
           "detection_log": [
             "possible-false-positive",
             "not-license-clues-as-more-detections-present"
-          ]
+          ],
+          "identifier": "mit-1f9f2ae8-7020-0a13-7934-461c752929a4"
         },
         {
           "license_expression": "gpl-2.0-plus",
@@ -12272,7 +11759,8 @@
           "detection_log": [
             "possible-false-positive",
             "not-license-clues-as-more-detections-present"
-          ]
+          ],
+          "identifier": "gpl_2_0_plus-53a26be2-1f88-01ec-d294-921768a513c9"
         },
         {
           "license_expression": "gpl-2.0-plus",
@@ -12294,7 +11782,8 @@
           "detection_log": [
             "possible-false-positive",
             "not-license-clues-as-more-detections-present"
-          ]
+          ],
+          "identifier": "gpl_2_0_plus-53a26be2-1f88-01ec-d294-921768a513c9"
         },
         {
           "license_expression": "gpl-2.0-plus",
@@ -12316,7 +11805,8 @@
           "detection_log": [
             "possible-false-positive",
             "not-license-clues-as-more-detections-present"
-          ]
+          ],
+          "identifier": "gpl_2_0_plus-53a26be2-1f88-01ec-d294-921768a513c9"
         },
         {
           "license_expression": "gpl-2.0-plus",
@@ -12338,7 +11828,8 @@
           "detection_log": [
             "possible-false-positive",
             "not-license-clues-as-more-detections-present"
-          ]
+          ],
+          "identifier": "gpl_2_0_plus-53a26be2-1f88-01ec-d294-921768a513c9"
         },
         {
           "license_expression": "gpl-2.0-plus",
@@ -12360,7 +11851,8 @@
           "detection_log": [
             "possible-false-positive",
             "not-license-clues-as-more-detections-present"
-          ]
+          ],
+          "identifier": "gpl_2_0_plus-53a26be2-1f88-01ec-d294-921768a513c9"
         },
         {
           "license_expression": "gpl-2.0-plus",
@@ -12382,7 +11874,8 @@
           "detection_log": [
             "possible-false-positive",
             "not-license-clues-as-more-detections-present"
-          ]
+          ],
+          "identifier": "gpl_2_0_plus-53a26be2-1f88-01ec-d294-921768a513c9"
         },
         {
           "license_expression": "gpl-2.0-plus",
@@ -12404,7 +11897,8 @@
           "detection_log": [
             "possible-false-positive",
             "not-license-clues-as-more-detections-present"
-          ]
+          ],
+          "identifier": "gpl_2_0_plus-53a26be2-1f88-01ec-d294-921768a513c9"
         },
         {
           "license_expression": "gpl-2.0-plus",
@@ -12426,7 +11920,8 @@
           "detection_log": [
             "possible-false-positive",
             "not-license-clues-as-more-detections-present"
-          ]
+          ],
+          "identifier": "gpl_2_0_plus-53a26be2-1f88-01ec-d294-921768a513c9"
         },
         {
           "license_expression": "gpl-2.0-plus",
@@ -12448,7 +11943,8 @@
           "detection_log": [
             "possible-false-positive",
             "not-license-clues-as-more-detections-present"
-          ]
+          ],
+          "identifier": "gpl_2_0_plus-53a26be2-1f88-01ec-d294-921768a513c9"
         },
         {
           "license_expression": "gpl-2.0-plus",
@@ -12470,7 +11966,8 @@
           "detection_log": [
             "possible-false-positive",
             "not-license-clues-as-more-detections-present"
-          ]
+          ],
+          "identifier": "gpl_2_0_plus-53a26be2-1f88-01ec-d294-921768a513c9"
         },
         {
           "license_expression": "bsd-original",
@@ -12489,7 +11986,8 @@
               "matched_text": "License: BSD-4-clause"
             }
           ],
-          "detection_log": []
+          "detection_log": [],
+          "identifier": "bsd_original-9198bafe-47c0-f9dc-5ef1-bd276a69786e"
         },
         {
           "license_expression": "mit",
@@ -12511,7 +12009,8 @@
           "detection_log": [
             "possible-false-positive",
             "not-license-clues-as-more-detections-present"
-          ]
+          ],
+          "identifier": "mit-1f9f2ae8-7020-0a13-7934-461c752929a4"
         },
         {
           "license_expression": "mit",
@@ -12533,7 +12032,8 @@
           "detection_log": [
             "possible-false-positive",
             "not-license-clues-as-more-detections-present"
-          ]
+          ],
+          "identifier": "mit-1f9f2ae8-7020-0a13-7934-461c752929a4"
         },
         {
           "license_expression": "gpl-2.0-plus AND gpl-3.0-plus AND lgpl-2.1-plus AND lgpl-3.0-plus AND bsd-new AND bsd-original AND mit AND public-domain AND other-permissive",
@@ -12825,45 +12325,12 @@
               "matched_text": "This file is in the public domain.  You may use and modify it as\n you see fit, as long as this copyright message is included and\n that there is an indication as to what modifications have been\n made (if any)."
             }
           ],
-          "detection_log": []
+          "detection_log": [],
+          "identifier": "gpl_2_0_plus_and_gpl_3_0_plus_and_lgpl_2_1_plus_and_lgpl_3_0_plus_and_bsd_new_and_bsd_original_and_mit_and_public_domain_and_other_permissive-9e2a213a-3fc4-9ee3-8e3f-783829530b14"
         }
       ],
       "license_clues": [],
       "percentage_of_license_text": 11.24,
-      "for_license_detections": [
-        "gpl_2_0_plus-53a26be2-1f88-01ec-d294-921768a513c9",
-        "gpl_2_0_plus-53a26be2-1f88-01ec-d294-921768a513c9",
-        "gpl_2_0_plus-53a26be2-1f88-01ec-d294-921768a513c9",
-        "gpl_2_0_plus-53a26be2-1f88-01ec-d294-921768a513c9",
-        "gpl_2_0_plus-53a26be2-1f88-01ec-d294-921768a513c9",
-        "gpl_2_0_plus-53a26be2-1f88-01ec-d294-921768a513c9",
-        "gpl_2_0_plus-53a26be2-1f88-01ec-d294-921768a513c9",
-        "gpl_2_0_plus-53a26be2-1f88-01ec-d294-921768a513c9",
-        "gpl_2_0_plus-53a26be2-1f88-01ec-d294-921768a513c9",
-        "gpl_2_0_plus-53a26be2-1f88-01ec-d294-921768a513c9",
-        "gpl_2_0_plus-53a26be2-1f88-01ec-d294-921768a513c9",
-        "gpl_2_0_plus-53a26be2-1f88-01ec-d294-921768a513c9",
-        "gpl_2_0_plus-53a26be2-1f88-01ec-d294-921768a513c9",
-        "gpl_2_0_plus-53a26be2-1f88-01ec-d294-921768a513c9",
-        "gpl_2_0_plus-53a26be2-1f88-01ec-d294-921768a513c9",
-        "gpl_2_0_plus-53a26be2-1f88-01ec-d294-921768a513c9",
-        "gpl_2_0_plus-53a26be2-1f88-01ec-d294-921768a513c9",
-        "gpl_2_0_plus-53a26be2-1f88-01ec-d294-921768a513c9",
-        "gpl_2_0_plus-53a26be2-1f88-01ec-d294-921768a513c9",
-        "gpl_2_0_plus-53a26be2-1f88-01ec-d294-921768a513c9",
-        "gpl_2_0_plus-53a26be2-1f88-01ec-d294-921768a513c9",
-        "gpl_2_0_plus_and_free_unknown-7df72521-0609-4896-2583-44c45dd3f8e6",
-        "bsd_new-008266ae-6939-ad31-3617-228b0809863c",
-        "apache_2_0_and_gpl_2_0_plus_and_free_unknown-946c0f58-eac9-675a-5434-c266108a0fe5",
-        "lgpl_3_0_plus-4c8d95b2-1acf-7a81-473c-d8e70962288c",
-        "public_domain-1a6a4f2c-bd92-9942-920f-be3d0c2bbda6",
-        "gpl_2_0_plus-fed2dc38-09ac-103e-1b86-4a4f5c00614a",
-        "mit-1f9f2ae8-7020-0a13-7934-461c752929a4",
-        "mit-1f9f2ae8-7020-0a13-7934-461c752929a4",
-        "mit-1f9f2ae8-7020-0a13-7934-461c752929a4",
-        "bsd_original-9198bafe-47c0-f9dc-5ef1-bd276a69786e",
-        "gpl_2_0_plus_and_gpl_3_0_plus_and_lgpl_2_1_plus_and_lgpl_3_0_plus_and_bsd_new_and_bsd_original_and_mit_and_public_domain_and_other_permissive-9e2a213a-3fc4-9ee3-8e3f-783829530b14"
-      ],
       "scan_errors": []
     },
     {
@@ -12991,7 +12458,8 @@
               "matched_text": "License: GPL (v2 or later)"
             }
           ],
-          "detection_log": []
+          "detection_log": [],
+          "identifier": "gpl_2_0_plus-227f50b1-f05e-5b3b-b107-ae1e2f56448b"
         },
         {
           "license_expression": "gpl-2.0-plus",
@@ -13010,7 +12478,8 @@
               "matched_text": "License: GPL (v2 or later)"
             }
           ],
-          "detection_log": []
+          "detection_log": [],
+          "identifier": "gpl_2_0_plus-227f50b1-f05e-5b3b-b107-ae1e2f56448b"
         },
         {
           "license_expression": "gpl-2.0-plus",
@@ -13029,7 +12498,8 @@
               "matched_text": "License: GPL (v2 or later)"
             }
           ],
-          "detection_log": []
+          "detection_log": [],
+          "identifier": "gpl_2_0_plus-227f50b1-f05e-5b3b-b107-ae1e2f56448b"
         },
         {
           "license_expression": "gpl-2.0-plus",
@@ -13048,7 +12518,8 @@
               "matched_text": "License: GPL (v2 or later)"
             }
           ],
-          "detection_log": []
+          "detection_log": [],
+          "identifier": "gpl_2_0_plus-227f50b1-f05e-5b3b-b107-ae1e2f56448b"
         },
         {
           "license_expression": "gpl-2.0-plus",
@@ -13067,7 +12538,8 @@
               "matched_text": "License: GPL (v2 or later)"
             }
           ],
-          "detection_log": []
+          "detection_log": [],
+          "identifier": "gpl_2_0_plus-227f50b1-f05e-5b3b-b107-ae1e2f56448b"
         },
         {
           "license_expression": "gpl-2.0-plus",
@@ -13086,7 +12558,8 @@
               "matched_text": "License: GPL (v2 or later)"
             }
           ],
-          "detection_log": []
+          "detection_log": [],
+          "identifier": "gpl_2_0_plus-227f50b1-f05e-5b3b-b107-ae1e2f56448b"
         },
         {
           "license_expression": "bsd-simplified",
@@ -13105,7 +12578,8 @@
               "matched_text": "License: BSD (2 clause)"
             }
           ],
-          "detection_log": []
+          "detection_log": [],
+          "identifier": "bsd_simplified-2383ae10-5494-e069-46c2-e2d6cb56951f"
         },
         {
           "license_expression": "gpl-2.0-plus",
@@ -13124,7 +12598,8 @@
               "matched_text": "License: GPL (v2 or later) ("
             }
           ],
-          "detection_log": []
+          "detection_log": [],
+          "identifier": "gpl_2_0_plus-227f50b1-f05e-5b3b-b107-ae1e2f56448b"
         },
         {
           "license_expression": "gpl-2.0-plus",
@@ -13143,7 +12618,8 @@
               "matched_text": "License: GPL (v2 or later)"
             }
           ],
-          "detection_log": []
+          "detection_log": [],
+          "identifier": "gpl_2_0_plus-227f50b1-f05e-5b3b-b107-ae1e2f56448b"
         },
         {
           "license_expression": "gpl-2.0-plus",
@@ -13162,7 +12638,8 @@
               "matched_text": "License: GPL (v2 or later)"
             }
           ],
-          "detection_log": []
+          "detection_log": [],
+          "identifier": "gpl_2_0_plus-227f50b1-f05e-5b3b-b107-ae1e2f56448b"
         },
         {
           "license_expression": "gpl-2.0-plus",
@@ -13181,7 +12658,8 @@
               "matched_text": "License: GPL (v2 or later)"
             }
           ],
-          "detection_log": []
+          "detection_log": [],
+          "identifier": "gpl_2_0_plus-227f50b1-f05e-5b3b-b107-ae1e2f56448b"
         },
         {
           "license_expression": "lgpl-3.0",
@@ -13203,7 +12681,8 @@
           "detection_log": [
             "possible-false-positive",
             "not-license-clues-as-more-detections-present"
-          ]
+          ],
+          "identifier": "lgpl_3_0-6b4a45da-85cc-8eb0-5613-be81d4efd6a5"
         },
         {
           "license_expression": "gpl-2.0-plus",
@@ -13222,7 +12701,8 @@
               "matched_text": "License: GPL (v2 or later)"
             }
           ],
-          "detection_log": []
+          "detection_log": [],
+          "identifier": "gpl_2_0_plus-227f50b1-f05e-5b3b-b107-ae1e2f56448b"
         },
         {
           "license_expression": "gpl-2.0-plus",
@@ -13241,7 +12721,8 @@
               "matched_text": "License: GPL (v2 or later)"
             }
           ],
-          "detection_log": []
+          "detection_log": [],
+          "identifier": "gpl_2_0_plus-227f50b1-f05e-5b3b-b107-ae1e2f56448b"
         },
         {
           "license_expression": "gpl-2.0-plus",
@@ -13260,7 +12741,8 @@
               "matched_text": "License: GPL (v2 or later)"
             }
           ],
-          "detection_log": []
+          "detection_log": [],
+          "identifier": "gpl_2_0_plus-227f50b1-f05e-5b3b-b107-ae1e2f56448b"
         },
         {
           "license_expression": "gpl-2.0-plus",
@@ -13279,7 +12761,8 @@
               "matched_text": "License: GPL (v2 or later)"
             }
           ],
-          "detection_log": []
+          "detection_log": [],
+          "identifier": "gpl_2_0_plus-227f50b1-f05e-5b3b-b107-ae1e2f56448b"
         },
         {
           "license_expression": "gpl-2.0-plus",
@@ -13298,7 +12781,8 @@
               "matched_text": "License: GPL (v2 or later)"
             }
           ],
-          "detection_log": []
+          "detection_log": [],
+          "identifier": "gpl_2_0_plus-227f50b1-f05e-5b3b-b107-ae1e2f56448b"
         },
         {
           "license_expression": "gpl-2.0-plus",
@@ -13317,7 +12801,8 @@
               "matched_text": "License: GPL (v2 or later)"
             }
           ],
-          "detection_log": []
+          "detection_log": [],
+          "identifier": "gpl_2_0_plus-227f50b1-f05e-5b3b-b107-ae1e2f56448b"
         },
         {
           "license_expression": "gpl-2.0-plus",
@@ -13336,7 +12821,8 @@
               "matched_text": "License: GPL (v2 or later)"
             }
           ],
-          "detection_log": []
+          "detection_log": [],
+          "identifier": "gpl_2_0_plus-227f50b1-f05e-5b3b-b107-ae1e2f56448b"
         },
         {
           "license_expression": "gpl-2.0-plus",
@@ -13355,7 +12841,8 @@
               "matched_text": "License: GPL (v2 or later)"
             }
           ],
-          "detection_log": []
+          "detection_log": [],
+          "identifier": "gpl_2_0_plus-227f50b1-f05e-5b3b-b107-ae1e2f56448b"
         },
         {
           "license_expression": "gpl-2.0-plus",
@@ -13374,7 +12861,8 @@
               "matched_text": "License: GPL (v2 or later)"
             }
           ],
-          "detection_log": []
+          "detection_log": [],
+          "identifier": "gpl_2_0_plus-227f50b1-f05e-5b3b-b107-ae1e2f56448b"
         },
         {
           "license_expression": "gpl-2.0-plus",
@@ -13393,7 +12881,8 @@
               "matched_text": "License: GPL (v2 or later)"
             }
           ],
-          "detection_log": []
+          "detection_log": [],
+          "identifier": "gpl_2_0_plus-227f50b1-f05e-5b3b-b107-ae1e2f56448b"
         },
         {
           "license_expression": "gpl-2.0-plus",
@@ -13412,7 +12901,8 @@
               "matched_text": "License: GPL (v2 or later) ("
             }
           ],
-          "detection_log": []
+          "detection_log": [],
+          "identifier": "gpl_2_0_plus-227f50b1-f05e-5b3b-b107-ae1e2f56448b"
         },
         {
           "license_expression": "gpl-2.0-plus",
@@ -13431,7 +12921,8 @@
               "matched_text": "License: GPL (v2 or later)"
             }
           ],
-          "detection_log": []
+          "detection_log": [],
+          "identifier": "gpl_2_0_plus-227f50b1-f05e-5b3b-b107-ae1e2f56448b"
         },
         {
           "license_expression": "mit AND other-permissive",
@@ -13466,7 +12957,8 @@
           "detection_log": [
             "possible-false-positive",
             "not-license-clues-as-more-detections-present"
-          ]
+          ],
+          "identifier": "mit_and_other_permissive-907b56d6-95b9-e85c-83c0-efd967c7e30a"
         },
         {
           "license_expression": "public-domain AND bsd-original AND gpl-1.0-plus",
@@ -13514,39 +13006,12 @@
           "detection_log": [
             "possible-false-positive",
             "not-license-clues-as-more-detections-present"
-          ]
+          ],
+          "identifier": "public_domain_and_bsd_original_and_gpl_1_0_plus-ccb73883-974d-42eb-d572-39fa7bf22f4c"
         }
       ],
       "license_clues": [],
       "percentage_of_license_text": 0.66,
-      "for_license_detections": [
-        "gpl_2_0_plus-227f50b1-f05e-5b3b-b107-ae1e2f56448b",
-        "gpl_2_0_plus-227f50b1-f05e-5b3b-b107-ae1e2f56448b",
-        "gpl_2_0_plus-227f50b1-f05e-5b3b-b107-ae1e2f56448b",
-        "gpl_2_0_plus-227f50b1-f05e-5b3b-b107-ae1e2f56448b",
-        "gpl_2_0_plus-227f50b1-f05e-5b3b-b107-ae1e2f56448b",
-        "gpl_2_0_plus-227f50b1-f05e-5b3b-b107-ae1e2f56448b",
-        "gpl_2_0_plus-227f50b1-f05e-5b3b-b107-ae1e2f56448b",
-        "gpl_2_0_plus-227f50b1-f05e-5b3b-b107-ae1e2f56448b",
-        "gpl_2_0_plus-227f50b1-f05e-5b3b-b107-ae1e2f56448b",
-        "gpl_2_0_plus-227f50b1-f05e-5b3b-b107-ae1e2f56448b",
-        "gpl_2_0_plus-227f50b1-f05e-5b3b-b107-ae1e2f56448b",
-        "gpl_2_0_plus-227f50b1-f05e-5b3b-b107-ae1e2f56448b",
-        "gpl_2_0_plus-227f50b1-f05e-5b3b-b107-ae1e2f56448b",
-        "gpl_2_0_plus-227f50b1-f05e-5b3b-b107-ae1e2f56448b",
-        "gpl_2_0_plus-227f50b1-f05e-5b3b-b107-ae1e2f56448b",
-        "gpl_2_0_plus-227f50b1-f05e-5b3b-b107-ae1e2f56448b",
-        "gpl_2_0_plus-227f50b1-f05e-5b3b-b107-ae1e2f56448b",
-        "gpl_2_0_plus-227f50b1-f05e-5b3b-b107-ae1e2f56448b",
-        "gpl_2_0_plus-227f50b1-f05e-5b3b-b107-ae1e2f56448b",
-        "gpl_2_0_plus-227f50b1-f05e-5b3b-b107-ae1e2f56448b",
-        "gpl_2_0_plus-227f50b1-f05e-5b3b-b107-ae1e2f56448b",
-        "gpl_2_0_plus-227f50b1-f05e-5b3b-b107-ae1e2f56448b",
-        "bsd_simplified-2383ae10-5494-e069-46c2-e2d6cb56951f",
-        "lgpl_3_0-6b4a45da-85cc-8eb0-5613-be81d4efd6a5",
-        "mit_and_other_permissive-907b56d6-95b9-e85c-83c0-efd967c7e30a",
-        "public_domain_and_bsd_original_and_gpl_1_0_plus-ccb73883-974d-42eb-d572-39fa7bf22f4c"
-      ],
       "scan_errors": []
     },
     {
@@ -13659,7 +13124,6 @@
       "license_detections": [],
       "license_clues": [],
       "percentage_of_license_text": 0,
-      "for_license_detections": [],
       "scan_errors": []
     },
     {
@@ -13787,14 +13251,12 @@
               "matched_text": "This file is distributed under the same license as the"
             }
           ],
-          "detection_log": []
+          "detection_log": [],
+          "identifier": "free_unknown-fddf748a-9953-bc6c-cb9d-91001840e335"
         }
       ],
       "license_clues": [],
       "percentage_of_license_text": 2.39,
-      "for_license_detections": [
-        "free_unknown-fddf748a-9953-bc6c-cb9d-91001840e335"
-      ],
       "scan_errors": []
     },
     {
@@ -13922,14 +13384,12 @@
               "matched_text": "This file is distributed under the same license as the package."
             }
           ],
-          "detection_log": []
+          "detection_log": [],
+          "identifier": "free_unknown-34d6195a-6206-be2e-4bd2-ce3b9493a1ad"
         }
       ],
       "license_clues": [],
       "percentage_of_license_text": 2.48,
-      "for_license_detections": [
-        "free_unknown-34d6195a-6206-be2e-4bd2-ce3b9493a1ad"
-      ],
       "scan_errors": []
     },
     {
@@ -14042,7 +13502,6 @@
       "license_detections": [],
       "license_clues": [],
       "percentage_of_license_text": 0,
-      "for_license_detections": [],
       "scan_errors": []
     }
   ]

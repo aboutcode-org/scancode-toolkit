@@ -45,5 +45,6 @@ license_detections:
           See /usr/share/common-licenses/GPL-2, or
           <http://www.gnu.org/copyleft/gpl.txt> for the terms of the latest version
           of the GNU General Public License.
+    identifier: gpl_2_0_plus-74a334f0-c991-de85-1854-94aa27b9207b
 other_license_detections: []
 copyright: copyright 1997, 1998, 1999 Jason Gunthorpe and others

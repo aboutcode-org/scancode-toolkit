@@ -4,56 +4,6 @@
       "identifier": "mit-3c947379-4257-acb2-bf21-5f93f7de0076",
       "license_expression": "mit",
       "detection_count": 1,
-      "matches": [
-        {
-          "score": 50.0,
-          "start_line": 9,
-          "end_line": 9,
-          "matched_length": 2,
-          "match_coverage": 100.0,
-          "matcher": "2-aho",
-          "license_expression": "unknown-license-reference",
-          "rule_identifier": "license-intro_2.RULE",
-          "rule_relevance": 50,
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/license-intro_2.RULE"
-        },
-        {
-          "score": 100.0,
-          "start_line": 11,
-          "end_line": 11,
-          "matched_length": 5,
-          "match_coverage": 100.0,
-          "matcher": "2-aho",
-          "license_expression": "mit",
-          "rule_identifier": "mit_21.RULE",
-          "rule_relevance": 100,
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_21.RULE"
-        },
-        {
-          "score": 100.0,
-          "start_line": 11,
-          "end_line": 13,
-          "matched_length": 3,
-          "match_coverage": 100.0,
-          "matcher": "2-aho",
-          "license_expression": "mit",
-          "rule_identifier": "mit_31.RULE",
-          "rule_relevance": 100,
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_31.RULE"
-        },
-        {
-          "score": 100.0,
-          "start_line": 16,
-          "end_line": 20,
-          "matched_length": 161,
-          "match_coverage": 100.0,
-          "matcher": "2-aho",
-          "license_expression": "mit",
-          "rule_identifier": "mit.LICENSE",
-          "rule_relevance": 100,
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE"
-        }
-      ],
       "detection_log": []
     }
   ],
@@ -122,14 +72,12 @@
           ],
           "detection_log": [
             "unknown-intro-followed-by-match"
-          ]
+          ],
+          "identifier": "mit-3c947379-4257-acb2-bf21-5f93f7de0076"
         }
       ],
       "license_clues": [],
       "percentage_of_license_text": 89.06,
-      "for_license_detections": [
-        "mit-3c947379-4257-acb2-bf21-5f93f7de0076"
-      ],
       "scan_errors": []
     }
   ]

@@ -1,23 +1,9 @@
 {
   "license_detections": [
     {
-      "identifier": "apache_1_0-d4337a34-511e-9f2b-5043-e1bab484ff7d",
+      "identifier": "apache_1_0-01e67edb-9930-c1d2-2a95-f923a0ecacfb",
       "license_expression": "apache-1.0",
-      "detection_count": 1,
-      "matches": [
-        {
-          "score": 100.0,
-          "start_line": 4,
-          "end_line": 54,
-          "matched_length": 368,
-          "match_coverage": 100.0,
-          "matcher": "2-aho",
-          "license_expression": "apache-1.0",
-          "rule_identifier": "apache-1.0.LICENSE",
-          "rule_relevance": 100,
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-1.0.LICENSE"
-        }
-      ]
+      "detection_count": 1
     }
   ],
   "files": [
@@ -29,7 +15,6 @@
       "license_detections": [],
       "license_clues": [],
       "percentage_of_license_text": 0,
-      "for_license_detections": [],
       "scan_errors": []
     },
     {
@@ -53,14 +38,12 @@
               "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-1.0.LICENSE"
             }
-          ]
+          ],
+          "identifier": "apache_1_0-01e67edb-9930-c1d2-2a95-f923a0ecacfb"
         }
       ],
       "license_clues": [],
       "percentage_of_license_text": 97.61,
-      "for_license_detections": [
-        "apache_1_0-d4337a34-511e-9f2b-5043-e1bab484ff7d"
-      ],
       "scan_errors": []
     }
   ]

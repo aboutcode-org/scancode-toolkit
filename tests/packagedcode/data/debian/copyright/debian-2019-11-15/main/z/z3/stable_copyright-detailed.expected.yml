@@ -37,6 +37,7 @@ other_license_detections:
           LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
           OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
           SOFTWARE.
+    identifier: mit-cacd5c0c-204a-85c2-affc-e4c125b2492a
   - license_expression: gpl-2.0-plus
     matches:
       - score: '100.0'
@@ -76,6 +77,7 @@ other_license_detections:
 
           On Debian systems, the complete text of the GNU General
           Public License version 2 can be found in "/usr/share/common-licenses/GPL-2".
+    identifier: gpl_2_0_plus-00217b75-1a81-9ffa-8aed-0d1bd2f9756b
 copyright: |
   Microsoft Corporation
   2016 Fabian Wolff <fabi.wolff@arcor.de>

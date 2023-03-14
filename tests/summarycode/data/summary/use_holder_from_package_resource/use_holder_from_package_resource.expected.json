@@ -76,7 +76,8 @@
               "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_7.RULE"
             }
-          ]
+          ],
+          "identifier": "apache_2_0-c4e30bcd-ccfd-bbc3-d2f1-196ab911e47d"
         }
       ],
       "other_license_expression": null,
@@ -117,23 +118,9 @@
   ],
   "license_detections": [
     {
-      "identifier": "apache_2_0-6a2b15d7-e480-151d-da55-93e547e467b4",
+      "identifier": "apache_2_0-c4e30bcd-ccfd-bbc3-d2f1-196ab911e47d",
       "license_expression": "apache-2.0",
-      "detection_count": 2,
-      "matches": [
-        {
-          "score": 100.0,
-          "start_line": 4,
-          "end_line": 14,
-          "matched_length": 85,
-          "match_coverage": 100.0,
-          "matcher": "2-aho",
-          "license_expression": "apache-2.0",
-          "rule_identifier": "apache-2.0_7.RULE",
-          "rule_relevance": 100,
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_7.RULE"
-        }
-      ]
+      "detection_count": 2
     }
   ],
   "files": [
@@ -163,7 +150,6 @@
       "license_detections": [],
       "license_clues": [],
       "percentage_of_license_text": 0,
-      "for_license_detections": [],
       "copyrights": [],
       "holders": [],
       "authors": [],
@@ -205,7 +191,6 @@
       "license_detections": [],
       "license_clues": [],
       "percentage_of_license_text": 0,
-      "for_license_detections": [],
       "copyrights": [
         {
           "copyright": "Copyright (c) Example Corporation",
@@ -300,7 +285,8 @@
                   "rule_relevance": 100,
                   "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_7.RULE"
                 }
-              ]
+              ],
+              "identifier": "apache_2_0-c4e30bcd-ccfd-bbc3-d2f1-196ab911e47d"
             }
           ],
           "other_license_expression": null,
@@ -351,15 +337,12 @@
               "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_7.RULE"
             }
-          ]
+          ],
+          "identifier": "apache_2_0-c4e30bcd-ccfd-bbc3-d2f1-196ab911e47d"
         }
       ],
       "license_clues": [],
       "percentage_of_license_text": 53.12,
-      "for_license_detections": [
-        "apache_2_0-6a2b15d7-e480-151d-da55-93e547e467b4",
-        "apache_2_0-6a2b15d7-e480-151d-da55-93e547e467b4"
-      ],
       "copyrights": [
         {
           "copyright": "Copyright 2020 Google LLC",

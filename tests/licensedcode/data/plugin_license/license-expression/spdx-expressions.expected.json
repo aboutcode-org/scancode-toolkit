@@ -1,35 +1,9 @@
 {
   "license_detections": [
     {
-      "identifier": "zlib_and_apache_2_0-060f60bd-574b-0aae-d9a6-6b028a9ad94b",
+      "identifier": "zlib_and_apache_2_0-98210dcd-8eb2-6675-dd67-08f007face08",
       "license_expression": "zlib AND apache-2.0",
       "detection_count": 1,
-      "matches": [
-        {
-          "score": 100.0,
-          "start_line": 2,
-          "end_line": 2,
-          "matched_length": 4,
-          "match_coverage": 100.0,
-          "matcher": "1-spdx-id",
-          "license_expression": "zlib",
-          "rule_identifier": "spdx-license-identifier-zlib-478bffd97a87207ab3ba955132d7a51b329faca0",
-          "rule_relevance": 100,
-          "rule_url": null
-        },
-        {
-          "score": 100.0,
-          "start_line": 4,
-          "end_line": 4,
-          "matched_length": 6,
-          "match_coverage": 100.0,
-          "matcher": "1-spdx-id",
-          "license_expression": "apache-2.0",
-          "rule_identifier": "spdx-license-identifier-apache-2.0-5dcda840588b4f07f49f2c0100924ebca7bc0649",
-          "rule_relevance": 100,
-          "rule_url": null
-        }
-      ],
       "detection_log": []
     }
   ],
@@ -70,14 +44,12 @@
               "matched_text": "SPDX-License-Identifier: Apache-2.0"
             }
           ],
-          "detection_log": []
+          "detection_log": [],
+          "identifier": "zlib_and_apache_2_0-98210dcd-8eb2-6675-dd67-08f007face08"
         }
       ],
       "license_clues": [],
       "percentage_of_license_text": 90.91,
-      "for_license_detections": [
-        "zlib_and_apache_2_0-060f60bd-574b-0aae-d9a6-6b028a9ad94b"
-      ],
       "scan_errors": []
     }
   ]

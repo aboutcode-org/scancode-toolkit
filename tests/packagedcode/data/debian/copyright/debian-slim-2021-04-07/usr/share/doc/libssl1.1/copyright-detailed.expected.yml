@@ -92,6 +92,7 @@ license_detections:
           \ version or\n * derivative of this code cannot be changed.  i.e. this code cannot\
           \ simply be\n * copied and put under another distribution licence\n * [including the\
           \ GNU Public Licence.]"
+    identifier: openssl_ssleay-05288c1b-fc72-7aac-a5ca-0e703d0bf8fb
 other_license_detections: []
 copyright: |
   Copyright (c) 1998-2004 The OpenSSL Project

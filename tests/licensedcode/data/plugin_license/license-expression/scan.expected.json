@@ -1,42 +1,14 @@
 {
   "license_detections": [
     {
-      "identifier": "apache_1_0-d4337a34-511e-9f2b-5043-e1bab484ff7d",
+      "identifier": "apache_1_0-01e67edb-9930-c1d2-2a95-f923a0ecacfb",
       "license_expression": "apache-1.0",
-      "detection_count": 1,
-      "matches": [
-        {
-          "score": 100.0,
-          "start_line": 4,
-          "end_line": 54,
-          "matched_length": 368,
-          "match_coverage": 100.0,
-          "matcher": "2-aho",
-          "license_expression": "apache-1.0",
-          "rule_identifier": "apache-1.0.LICENSE",
-          "rule_relevance": 100,
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-1.0.LICENSE"
-        }
-      ]
+      "detection_count": 1
     },
     {
-      "identifier": "gpl_2_0_with_linux_syscall_exception_gpl_or_linux_openib-a9a9c6d7-552f-6784-5c60-e9e164ab2047",
+      "identifier": "gpl_2_0_with_linux_syscall_exception_gpl_or_linux_openib-c196bf1c-1c1f-18b4-554f-690be18bbad0",
       "license_expression": "gpl-2.0 WITH linux-syscall-exception-gpl OR linux-openib",
-      "detection_count": 1,
-      "matches": [
-        {
-          "score": 100.0,
-          "start_line": 1,
-          "end_line": 1,
-          "matched_length": 13,
-          "match_coverage": 100.0,
-          "matcher": "1-spdx-id",
-          "license_expression": "gpl-2.0 WITH linux-syscall-exception-gpl OR linux-openib",
-          "rule_identifier": "spdx-license-identifier-gpl-2.0 WITH linux-syscall-exception-gpl OR linux-openib-258b785d25f606282f8c2f4ed6e51a66b60b7f16",
-          "rule_relevance": 100,
-          "rule_url": null
-        }
-      ]
+      "detection_count": 1
     }
   ],
   "files": [
@@ -61,14 +33,12 @@
               "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-1.0.LICENSE"
             }
-          ]
+          ],
+          "identifier": "apache_1_0-01e67edb-9930-c1d2-2a95-f923a0ecacfb"
         }
       ],
       "license_clues": [],
       "percentage_of_license_text": 97.61,
-      "for_license_detections": [
-        "apache_1_0-d4337a34-511e-9f2b-5043-e1bab484ff7d"
-      ],
       "scan_errors": []
     },
     {
@@ -92,14 +62,12 @@
               "rule_relevance": 100,
               "rule_url": null
             }
-          ]
+          ],
+          "identifier": "gpl_2_0_with_linux_syscall_exception_gpl_or_linux_openib-c196bf1c-1c1f-18b4-554f-690be18bbad0"
         }
       ],
       "license_clues": [],
       "percentage_of_license_text": 100.0,
-      "for_license_detections": [
-        "gpl_2_0_with_linux_syscall_exception_gpl_or_linux_openib-a9a9c6d7-552f-6784-5c60-e9e164ab2047"
-      ],
       "scan_errors": []
     }
   ]

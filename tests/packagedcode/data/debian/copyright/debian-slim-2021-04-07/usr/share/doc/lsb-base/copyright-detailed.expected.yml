@@ -46,6 +46,7 @@ other_license_detections:
           WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
           OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
           IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+    identifier: bsd_new-654c38c8-5c40-9a2f-451b-190141ab0a77
   - license_expression: gpl-2.0
     matches:
       - score: '100.0'
@@ -89,6 +90,7 @@ other_license_detections:
           On Debian systems, the full text of the GNU General Public
           License version 2 can be found in the file
           `/usr/share/common-licenses/GPL-2'.
+    identifier: gpl_2_0-41b2cd11-1458-1dd5-c8e5-f2f853195b41
 copyright: |
   2002-2010, Chris Lawrence <lawrencc@debian.org>
   2005-2011, Canonical Ltd.

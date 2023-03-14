@@ -22,6 +22,7 @@ license_detections:
 
           On Debian systems, the complete text of the GNU Lesser (Library)
           General Public License can be found in /usr/share/common-licenses/LGPL-2.
+    identifier: lgpl_2_0-ea336dbe-d6ad-2adf-83b6-2d5c13de7fbe
 other_license_detections: []
 copyright: |
   Copyright (c) 1999, 2001 by Andries Brouwer

@@ -65,6 +65,7 @@ license_detections:
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl_72.RULE
         matched_text: License GPL
+    identifier: gpl_3_0_plus_and_bash_exception_gpl_and_gpl_1_0_plus-97ecff07-b029-2b9f-7d04-2b0e02ccce04
   - license_expression: other-permissive
     matches:
       - score: '100.0'
@@ -83,6 +84,7 @@ license_detections:
            this document for any purpose, provided that the above copyright
            notice appears in all copies of this document and that the
            contents of this document remain unaltered.
+    identifier: other_permissive-60c74a7c-6092-8de0-c193-49a4fe912e05
   - license_expression: gfdl-1.3-plus
     matches:
       - score: '100.0'
@@ -106,6 +108,7 @@ license_detections:
            Invariant Sections, no Front-Cover Texts, and no Back-Cover Texts.
            A copy of the license is included in the section entitled
            ``GNU Free Documentation License''.
+    identifier: gfdl_1_3_plus-0aeecc5a-f102-1cd4-f9a4-21a9fa22ea82
   - license_expression: gfdl-1.3-plus
     matches:
       - score: '100.0'
@@ -125,6 +128,7 @@ license_detections:
            Invariant Sections, no Front-Cover Texts, and no Back-Cover Texts.
            A copy of the license is included in the section entitled
            ``GNU Free Documentation License''.
+    identifier: gfdl_1_3_plus-07dd7e9d-9df0-a5d7-2970-ca1db4485238
   - license_expression: other-permissive AND latex2e
     matches:
       - score: '100.0'
@@ -166,6 +170,7 @@ license_detections:
            into another language, under the above conditions for modified versions,
            except that this permission notice may be stated in a translation approved
            by the Foundation.
+    identifier: other_permissive_and_latex2e-9bfec26a-a076-0444-9a14-c06a5cb3d5c9
   - license_expression: latex2e
     matches:
       - score: '99.0'
@@ -196,6 +201,7 @@ license_detections:
 
            Permission is granted to copy and distribute translations of this manual
            into another language, under the above conditions for modified versions.
+    identifier: latex2e-abecc49a-960b-cb0b-20f3-1234574e4447
   - license_expression: gfdl-1.3-plus
     matches:
       - score: '100.0'
@@ -215,6 +221,7 @@ license_detections:
            Invariant Sections, no Front-Cover Texts, and no Back-Cover Texts.
            A copy of the license is included in the section entitled
            ``GNU Free Documentation License''.
+    identifier: gfdl_1_3_plus-07dd7e9d-9df0-a5d7-2970-ca1db4485238
   - license_expression: latex2e
     matches:
       - score: '99.0'
@@ -245,6 +252,7 @@ license_detections:
 
            Permission is granted to copy and distribute translations of this manual
            into another language, under the above conditions for modified versions.
+    identifier: latex2e-6a890414-92fd-9f22-de3c-b47764d7b84e
   - license_expression: bsd-original-uc AND historical
     matches:
       - score: '100.0'
@@ -311,6 +319,7 @@ license_detections:
            * PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS
            * ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS
            * SOFTWARE.
+    identifier: bsd_original_uc_and_historical-f1b25d95-5587-016c-88d1-a85a2079ce8f
   - license_expression: other-permissive
     matches:
       - score: '100.0'
@@ -328,6 +337,7 @@ license_detections:
            * as this comment is not removed or changed.
            *
            * THIS IS A MODIFIED VERSION.  IT WAS MODIFIED BY
+    identifier: other_permissive-556782c0-30b2-6283-e55b-130b569c9d91
 other_license_detections: []
 copyright: |
   Copyright (c) 1987-2014 Free Software Foundation, Inc.

@@ -97,6 +97,7 @@ license_detections:
           in this Software without specific, written prior permission.  Title
           to copyright in this Software shall at all times remain with copyright
           holders.
+    identifier: openldap_2_8-a2059e16-441f-3cbf-7ca5-4d2d30253c32
   - license_expression: mit
     matches:
       - score: '100.0'
@@ -127,6 +128,7 @@ license_detections:
           # CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT
           # OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR
           # THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+    identifier: mit-c00d5dad-390d-222f-7182-5d856cf7b8de
   - license_expression: fsf-unlimited-no-warranty
     matches:
       - score: '100.0'
@@ -148,6 +150,7 @@ license_detections:
           # but WITHOUT ANY WARRANTY, to the extent permitted by law; without
           # even the implied warranty of MERCHANTABILITY or FITNESS FOR A
           # PARTICULAR PURPOSE.
+    identifier: fsf_unlimited_no_warranty-05f3eea9-e9cc-944d-4dc4-2b53a3e39319
   - license_expression: hs-regexp
     matches:
       - score: '95.0'
@@ -178,6 +181,7 @@ license_detections:
            *    documentation.
            *
            * 4. This notice may not be removed or altered.
+    identifier: hs_regexp-32499786-31ce-3850-a6f6-cd86b15e63f6
   - license_expression: ibm-dhcp
     matches:
       - score: '100.0'
@@ -211,6 +215,7 @@ license_detections:
            * DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER ARISING
            * OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE, EVEN
            * IF IBM IS APPRISED OF THE POSSIBILITY OF SUCH DAMAGES.
+    identifier: ibm_dhcp-dbdce127-2353-307e-a8ca-9b4b36d360d0
   - license_expression: ietf
     matches:
       - score: '100.0'
@@ -242,6 +247,7 @@ license_detections:
           \ EXPRESS OR IMPLIED, INCLUDING\n#    BUT NOT LIMITED TO ANY WARRANTY THAT THE USE\
           \ OF THE INFORMATION\n#    HEREIN WILL NOT INFRINGE ANY RIGHTS OR ANY IMPLIED WARRANTIES\
           \ OF\n#    MERCHANTABILITY OR FITNESS FOR A PARTICULAR PURPOSE."
+    identifier: ietf-23d2fb67-3930-da5a-2c51-1eb7124a6cd1
   - license_expression: isc
     matches:
       - score: '100.0'
@@ -267,6 +273,7 @@ license_detections:
            * PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS
            * ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS
            * SOFTWARE.
+    identifier: isc-fbf6f8d8-a949-0427-62b2-aef52fe84e71
   - license_expression: other-permissive
     matches:
       - score: '100.0'
@@ -283,6 +290,7 @@ license_detections:
           \ Inc. or Purdue University.\n *\n * Redistribution and use in source and binary forms\
           \ are permitted\n * without restriction or fee of any kind as long as this notice\n\
           \ * is preserved."
+    identifier: other_permissive-a2d2ef7c-de65-e9c1-5dc3-80a1fa867e5f
   - license_expression: other-permissive
     matches:
       - score: '100.0'
@@ -300,6 +308,7 @@ license_detections:
           \ * restriction or fee of any kind as long as this notice is preserved.\n *\n * The\
           \ name \"Carnegie Mellon\" must not be used to endorse or promote\n * products derived\
           \ from this software without prior written permission."
+    identifier: other_permissive-cb1634c7-cff6-c876-793d-9679f4c49378
   - license_expression: mit-old-style-no-advert
     matches:
       - score: '100.0'
@@ -322,6 +331,7 @@ license_detections:
           # written prior permission.  M.I.T. makes no representations about the
           # suitability of this software for any purpose.  It is provided "as is"
           # without express or implied warranty.
+    identifier: mit_old_style_no_advert-469a8f5b-14cb-1cf1-ac4f-fd7a23bb63e5
   - license_expression: other-permissive
     matches:
       - score: '100.0'
@@ -337,6 +347,7 @@ license_detections:
         matched_text: |
           Permission to copy and
           distribute verbatim copies of this document is granted.
+    identifier: other_permissive-37dc9756-e211-83ce-e703-b3275e50e484
   - license_expression: hs-regexp
     matches:
       - score: '95.0'
@@ -366,6 +377,7 @@ license_detections:
            * ever read sources, credits should appear in the documentation.
            *
            * 4. This notice may not be removed or altered.
+    identifier: hs_regexp-32499786-31ce-3850-a6f6-cd86b15e63f6
   - license_expression: openldap-2.8
     matches:
       - score: '100.0'
@@ -383,6 +395,7 @@ license_detections:
            * as authorized by the OpenLDAP Public License.  A copy of this
            * license is available at http://www.OpenLDAP.org/license.html or
            * in file LICENSE in the top-level directory of the distribution.
+    identifier: openldap_2_8-99672c54-2a17-1ad2-398b-76ba3e6834cc
   - license_expression: bsla AND bsd-original-uc
     matches:
       - score: '100.0'
@@ -420,6 +433,7 @@ license_detections:
         matched_text: |
           NOTE: The Regents have since retroactively removed the advertising
           clause from above.
+    identifier: bsla_and_bsd_original_uc-baf8c66c-255a-4e0e-885f-a17e5d67094e
   - license_expression: bsd-original-uc
     matches:
       - score: '100.0'
@@ -475,6 +489,7 @@ license_detections:
           clause from above.
           See:
           ftp://ftp.cs.berkeley.edu/pub/4bsd/README.Impt.License.Change
+    identifier: bsd_original_uc-7d861d8c-b658-cbe9-abaf-82bd99b2f466
   - license_expression: bsd-original-uc-1986
     matches:
       - score: '99.0'
@@ -494,6 +509,7 @@ license_detections:
            * may not be used to endorse or promote products derived from this
            * software without specific prior written permission. This software
            * is provided ``as is'' without express or implied warranty.
+    identifier: bsd_original_uc_1986-66f330b2-6960-30e8-9363-c9a264bfa54c
 other_license_detections: []
 copyright: |
   Copyright 1998-2016 The OpenLDAP Foundation

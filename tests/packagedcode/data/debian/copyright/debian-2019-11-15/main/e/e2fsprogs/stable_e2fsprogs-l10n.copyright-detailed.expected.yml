@@ -19,6 +19,7 @@ license_detections:
         matched_text: |
           This package, the EXT2 filesystem utilities, is protected by the GNU
           General Public License.
+    identifier: gpl_2_0-aefa39b0-a76b-6c60-5a18-f680bc579b0d
   - license_expression: gpl-2.0
     matches:
       - score: '100.0'
@@ -34,6 +35,7 @@ license_detections:
         matched_text: |
           On Debian GNU systems, the complete text of the GNU General
           Public License can be found in `/usr/share/common-licenses/GPL-2'.
+    identifier: gpl_2_0-5c6afcba-8aec-d807-dd28-cd5ae1793e44
 other_license_detections: []
 copyright: |
   Copyright (c) 2003-2006 Theodore Ts'o <tytso@mit.edu>

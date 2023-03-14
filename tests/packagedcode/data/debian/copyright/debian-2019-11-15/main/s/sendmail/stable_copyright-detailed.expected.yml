@@ -102,6 +102,7 @@ other_license_detections:
              THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.
 
           $Revision: 8.
+    identifier: sendmail-5c006ed2-b77c-e9c5-652a-eeb856f2729d
 copyright: |
   Copyright (c) 1998-2015 Proofpoint, Inc. and its suppliers. All rights reserved.
   Copyright (c) 1983, 1995-1997 Eric P. Allman. All rights reserved.

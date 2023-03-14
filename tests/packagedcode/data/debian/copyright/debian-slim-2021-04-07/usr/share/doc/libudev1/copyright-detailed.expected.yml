@@ -41,6 +41,7 @@ other_license_detections:
         matched_text: |
           You can use this free for any purpose. It's in the public domain. It has no
           warranty.
+    identifier: public_domain_disclaimer-8e235ed9-5a49-0bba-be41-0bb35f0779c9
   - license_expression: mit
     matches:
       - score: '100.0'
@@ -71,6 +72,7 @@ other_license_detections:
           LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
           FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
           IN THE SOFTWARE.
+    identifier: mit-cacd5c0c-204a-85c2-affc-e4c125b2492a
   - license_expression: gpl-2.0
     matches:
       - score: '100.0'
@@ -111,6 +113,7 @@ other_license_detections:
           On Debian and systems the full text of the GNU General Public
           License version 2 can be found in the file
           `/usr/share/common-licenses/GPL-2`
+    identifier: gpl_2_0-0acbb9ac-a862-7099-0f33-caefbf2d141b
   - license_expression: gpl-2.0 WITH linux-syscall-exception-gpl
     matches:
       - score: '100.0'
@@ -153,6 +156,7 @@ other_license_detections:
           On Debian and systems the full text of the GNU General Public
           License version 2 can be found in the file
           `/usr/share/common-licenses/GPL-2`
+    identifier: gpl_2_0_with_linux_syscall_exception_gpl-1465edb5-6e2a-792a-cbbe-8a910dd31c7c
   - license_expression: gpl-2.0-plus
     matches:
       - score: '100.0'
@@ -193,6 +197,7 @@ other_license_detections:
 
           On Debian systems, the complete text of the GNU General Public License
           version 2 can be found in ‘/usr/share/common-licenses/GPL-2’.
+    identifier: gpl_2_0_plus-b1b987d4-03d4-5eb8-154c-7c270ba63c44
   - license_expression: lgpl-2.1-plus
     matches:
       - score: '100.0'
@@ -233,6 +238,7 @@ other_license_detections:
 
           On Debian systems, the complete text of the GNU Lesser General Public
           License version 2.1 can be found in ‘/usr/share/common-licenses/LGPL-2.1’.
+    identifier: lgpl_2_1_plus-920f52f3-7de9-6f8b-d6c2-998167ded0bd
   - license_expression: cc0-1.0
     matches:
       - score: '100.0'
@@ -266,6 +272,7 @@ other_license_detections:
 
           On Debian systems, the complete text of the CC0 1.0 Universal license can be
           found in ‘/usr/share/common-licenses/CC0-1.0’.
+    identifier: cc0_1_0-9d6f1f50-dfa5-6d35-2e0b-56fa0bf2c14e
 copyright: |
   2008-2015 Kay Sievers <kay@vrfy.org>
   2010-2015 Lennart Poettering

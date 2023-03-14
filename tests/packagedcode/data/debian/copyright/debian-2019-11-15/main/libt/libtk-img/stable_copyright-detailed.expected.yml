@@ -63,6 +63,7 @@ other_license_detections:
           authors grant the U.S. Government and others acting in its behalf
           permission to use and distribute the software in accordance with the
           terms specified in this license.
+    identifier: tcl-dd56f002-7495-c249-a5da-5ef965c62822
   - license_expression: pngsuite
     matches:
       - score: '100.0'
@@ -78,6 +79,7 @@ other_license_detections:
         matched_text: |
           Permission to use, copy, modify, and distribute these images for any
           purpose and without fee is hereby granted.
+    identifier: pngsuite-2ce003f0-adf9-747a-8e65-a09d747821f6
 copyright: |
   1997-2004 Jan Nijtmans
   1999, 2011 Willem van Schaik

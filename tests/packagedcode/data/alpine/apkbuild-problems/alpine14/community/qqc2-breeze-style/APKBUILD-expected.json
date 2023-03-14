@@ -40,7 +40,8 @@
           "rule_url": null,
           "matched_text": "licenseref-kde-accepted-lgpl AND licenseref-kfqf-accepted-gpl"
         }
-      ]
+      ],
+      "identifier": "kde_accepted_lgpl_and_kfqf_accepted_gpl-56df79dc-2a6f-aa15-1384-b9638a21737f"
     }
   ],
   "other_license_expression": null,

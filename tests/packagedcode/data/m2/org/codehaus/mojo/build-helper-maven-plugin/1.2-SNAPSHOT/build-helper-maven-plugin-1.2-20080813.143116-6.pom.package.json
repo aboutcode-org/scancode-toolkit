@@ -48,7 +48,8 @@
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_27.RULE",
           "matched_text": "The MIT License"
         }
-      ]
+      ],
+      "identifier": "mit-3ab5a1cd-6f73-3105-a815-d0d7c55b1922"
     },
     {
       "license_expression": "mit",
@@ -66,7 +67,8 @@
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_237.RULE",
           "matched_text": "http://www.opensource.org/licenses/mit-license.php"
         }
-      ]
+      ],
+      "identifier": "mit-45e0259a-8088-c36b-e9e1-6ee80c86605a"
     }
   ],
   "other_license_expression": null,

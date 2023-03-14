@@ -56,7 +56,8 @@
             "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl_bare_word_only.RULE",
             "matched_text": "GPL"
           }
-        ]
+        ],
+        "identifier": "gpl_1_0_plus-473308ff-72ce-7e72-b3a9-5b1cc6680abb"
       }
     ],
     "other_license_expression": null,

@@ -68,6 +68,7 @@ other_license_detections:
 
           On Debian systems a full copy of the LGPL 2.1 can be found at
           /usr/share/common-licenses/Apache-2.0
+    identifier: apache_2_0_and_lgpl_2_1-bf9c1a6e-3503-291d-0a38-d275e48b6404
   - license_expression: bsd-new
     matches:
       - score: '100.0'
@@ -103,6 +104,7 @@ other_license_detections:
           THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
           (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
           THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+    identifier: bsd_new-ec493980-5bb3-5f10-73b9-7c82003a5f4b
   - license_expression: boost-1.0
     matches:
       - score: '100.0'
@@ -137,6 +139,7 @@ other_license_detections:
           FOR ANY DAMAGES OR OTHER LIABILITY, WHETHER IN CONTRACT, TORT OR OTHERWISE,
           ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
           DEALINGS IN THE SOFTWARE.
+    identifier: boost_1_0-0a228323-a725-4239-e66d-7117aa6c54bb
   - license_expression: cc-by-3.0
     matches:
       - score: '100.0'
@@ -173,6 +176,7 @@ other_license_detections:
           BE CONSIDERED TO BE A CONTRACT, THE LICENSOR GRANTS YOU THE RIGHTS
           CONTAINED HERE IN CONSIDERATION OF YOUR ACCEPTANCE OF SUCH TERMS AND
           CONDITIONS.
+    identifier: cc_by_3_0-85c40002-c78a-e362-e471-c4d97777bac4
   - license_expression: mit
     matches:
       - score: '100.0'
@@ -214,6 +218,7 @@ other_license_detections:
           LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
           OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
           SOFTWARE.
+    identifier: mit-86fcf017-3572-9813-b7e8-0a10ec4a120f
   - license_expression: gpl-2.0-plus
     matches:
       - score: '100.0'
@@ -264,6 +269,7 @@ other_license_detections:
         matched_text: |
           On Debian systems a full copy of the GPL 2 can be found at
           /usr/share/common-licenses/GPL-2
+    identifier: gpl_2_0_plus-35e4cd88-b99c-c282-9c8d-6adda8e30de7
   - license_expression: gpl-3.0
     matches:
       - score: '100.0'
@@ -303,6 +309,7 @@ other_license_detections:
 
           On Debian systems a full copy of the GPL 3 can be found at
           /usr/share/common-licenses/GPL-3
+    identifier: gpl_3_0-8aedd1ed-14a5-6251-d7c9-2043652e8a9d
   - license_expression: lgpl-2.1
     matches:
       - score: '100.0'
@@ -336,6 +343,7 @@ other_license_detections:
 
           On Debian systems a full copy of the LGPL 2.1 can be found at
           /usr/share/common-licenses/LGPL-2.1
+    identifier: lgpl_2_1-2e3849b9-b454-6df2-7ee6-17217037ee49
   - license_expression: lgpl-2.1-plus AND lgpl-2.1
     matches:
       - score: '100.0'
@@ -376,6 +384,7 @@ other_license_detections:
 
           On Debian systems a full copy of the LGPL 2.1 can be found at
           /usr/share/common-licenses/LGPL-2.1
+    identifier: lgpl_2_1_plus_and_lgpl_2_1-cf318f99-012d-ea29-3c3d-7de3bd7e0338
   - license_expression: public-domain-disclaimer
     matches:
       - score: '100.0'
@@ -392,6 +401,7 @@ other_license_detections:
           This software is in the public domain, furnished "as is", without technical
           support, and with no warranty, express or implied, as to its usefulness for
           any purpose.
+    identifier: public_domain_disclaimer-a7fd4587-1d91-498a-3ba8-fdb138277b1d
 copyright: |
   2006, Alexander Neundorf <neundorf@kde.org>
   2006, Andreas Schneider <asn@cryptomilk.org>

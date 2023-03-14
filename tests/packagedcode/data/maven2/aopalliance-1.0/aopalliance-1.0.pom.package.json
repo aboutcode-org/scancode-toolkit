@@ -40,7 +40,8 @@
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/public-domain_bare_words.RULE",
           "matched_text": "Public Domain"
         }
-      ]
+      ],
+      "identifier": "public_domain-3dd945ae-65df-7d90-6467-60f8ecf2eb77"
     },
     {
       "license_expression": "gpl-1.0-plus",
@@ -58,7 +59,8 @@
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl_bare_word_only.RULE",
           "matched_text": "GPL"
         }
-      ]
+      ],
+      "identifier": "gpl_1_0_plus-473308ff-72ce-7e72-b3a9-5b1cc6680abb"
     }
   ],
   "other_license_expression": null,

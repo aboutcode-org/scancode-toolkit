@@ -50,6 +50,7 @@ other_license_detections:
           \ WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT\n(INCLUDING NEGLIGENCE OR OTHERWISE)\
           \ ARISING IN ANY WAY OUT OF THE USE OF THIS\nSOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY\
           \ OF SUCH DAMAGE."
+    identifier: bsd_new-fe71ef21-9657-e8d8-ad75-ddd776ac9710
   - license_expression: gpl-2.0
     matches:
       - score: '100.0'
@@ -98,6 +99,7 @@ other_license_detections:
         matched_text: |
           The complete text of the GNU General Public License
           can be found in /usr/share/common-licenses/GPL-2 file.
+    identifier: gpl_2_0-22f74d38-e594-125c-2e35-76df8364a68b
   - license_expression: gpl-2.0-plus
     matches:
       - score: '100.0'
@@ -137,6 +139,7 @@ other_license_detections:
 
           The complete text of the GNU General Public License
           can be found in /usr/share/common-licenses/GPL-2 file.
+    identifier: gpl_2_0_plus-fe100017-b30d-a3e1-08b9-40cc9f056db5
   - license_expression: lgpl-2.1 AND lgpl-2.0-plus
     matches:
       - score: '100.0'
@@ -175,6 +178,7 @@ other_license_detections:
 
           The complete text of the GNU Lesser General Public License
           can be found in /usr/share/common-licenses/
+    identifier: lgpl_2_1_and_lgpl_2_0_plus-75866488-678a-19bf-7970-6610a46062a1
   - license_expression: isc AND ibm-dhcp
     matches:
       - score: '100.0'
@@ -229,6 +233,7 @@ other_license_detections:
           CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER ARISING OUT OF OR IN CONNECTION
           WITH THE USE OR PERFORMANCE OF THIS SOFTWARE, EVEN IF IBM IS APPRISED OF THE
           POSSIBILITY OF SUCH DAMAGES.
+    identifier: isc_and_ibm_dhcp-d539ba65-a2a0-2bb1-a2a4-c389ed251972
   - license_expression: xfree86-1.0
     matches:
       - score: '100.0'
@@ -264,6 +269,7 @@ other_license_detections:
           author(s) shall not be used in advertising or otherwise to promote the sale,
           use or other dealings in this Software without prior written authorization from
           the copyright holder(s) and author(s).
+    identifier: xfree86_1_0-a5642b82-945a-34e4-b447-88558f97bab8
 copyright: |
   VMware, Inc. <http://www.vmware.com/>
   VMware, Inc. <http://www.vmware.com/>

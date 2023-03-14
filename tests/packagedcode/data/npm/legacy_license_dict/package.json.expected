@@ -56,7 +56,8 @@
             "rule_url": null,
             "matched_text": "MIT"
           }
-        ]
+        ],
+        "identifier": "mit-a822f434-d61f-f2b1-c792-8b8cb9e7b9bf"
       },
       {
         "license_expression": "mit",
@@ -74,7 +75,8 @@
             "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_30.RULE",
             "matched_text": "https://github.com/sartak/grunt-inline-imgsize/blob/master/LICENSE-MIT"
           }
-        ]
+        ],
+        "identifier": "mit-3fce6ea2-8abd-6c6b-3ede-a37af7c6efee"
       }
     ],
     "other_license_expression": null,

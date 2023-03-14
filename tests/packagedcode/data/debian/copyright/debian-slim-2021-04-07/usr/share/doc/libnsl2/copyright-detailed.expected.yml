@@ -77,6 +77,7 @@ license_detections:
             WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
             NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
             OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+    identifier: bsd_new-ac94609c-944a-f9a1-4cff-f58b845098a0
   - license_expression: gpl-2.0-plus WITH autoconf-simple-exception-2.0
     matches:
       - score: '100.0'
@@ -110,6 +111,7 @@ license_detections:
 
           On Debian systems, the complete text of the GNU General Public License
           version 2 can be found in `/usr/share/common-licenses/GPL-2'.
+    identifier: gpl_2_0_plus_with_autoconf_simple_exception_2_0-a61a1123-4a91-29fe-f86c-06db7b1208df
   - license_expression: gpl-2.0-plus WITH libtool-exception-2.0
     matches:
       - score: '100.0'
@@ -143,6 +145,7 @@ license_detections:
 
           On Debian systems, the complete text of the GNU General Public License
           version 2 can be found in `/usr/share/common-licenses/GPL-2'.
+    identifier: gpl_2_0_plus_with_libtool_exception_2_0-c4669be3-4e50-9924-e80b-2a4ebee07dec
   - license_expression: gpl-3.0-plus WITH autoconf-simple-exception
     matches:
       - score: '100.0'
@@ -178,6 +181,7 @@ license_detections:
 
           On Debian systems, the complete text of the GNU General Public License
           Version 3 can be found in `/usr/share/common-licenses/GPL-3'.
+    identifier: gpl_3_0_plus_with_autoconf_simple_exception-6756a4a1-65da-4388-3f23-465053561382
   - license_expression: lgpl-2.1
     matches:
       - score: '100.0'
@@ -216,6 +220,7 @@ license_detections:
 
           On Debian systems, the complete text of the GNU Lesser General Public
           License version 2.1 can be found in "/usr/share/common-licenses/LGPL-2.1".
+    identifier: lgpl_2_1-af00f224-7cdc-f157-5516-90a5799b4be1
   - license_expression: lgpl-2.1-plus
     matches:
       - score: '100.0'
@@ -256,6 +261,7 @@ license_detections:
 
           On Debian systems, the complete text of the GNU Lesser General Public
           License version 2.1 can be found in "/usr/share/common-licenses/LGPL-2.1".
+    identifier: lgpl_2_1_plus-f466018a-eac5-e44c-e9ea-68075d3fe9ae
   - license_expression: x11-xconsortium
     matches:
       - score: '100.0'
@@ -290,6 +296,7 @@ license_detections:
           be used in advertising or otherwise to promote the sale, use or other deal-
           ings in this Software without prior written authorization from the X Consor-
           tium.
+    identifier: x11_xconsortium-8bc3e205-5f29-ecad-90bc-2f492c65be46
   - license_expression: fsf-unlimited
     matches:
       - score: '100.0'
@@ -306,6 +313,7 @@ license_detections:
           This file is free software; the Free Software Foundation gives
           unlimited permission to copy and/or distribute it, with or without
           modifications, as long as this notice is preserved.
+    identifier: fsf_unlimited-ed3d6762-95f0-131d-94c5-834f10d192a2
   - license_expression: fsf-unlimited-no-warranty
     matches:
       - score: '100.0'
@@ -327,6 +335,7 @@ license_detections:
           but WITHOUT ANY WARRANTY, to the extent permitted by law; without
           even the implied warranty of MERCHANTABILITY or FITNESS FOR A
           PARTICULAR PURPOSE.
+    identifier: fsf_unlimited_no_warranty-0823c9f0-6e4b-8cf0-64e1-5165a09dfa45
   - license_expression: fsf-free
     matches:
       - score: '100.0'
@@ -342,6 +351,7 @@ license_detections:
         matched_text: |
           This configure script is free software; the Free Software Foundation
           gives unlimited permission to copy, distribute and modify it.
+    identifier: fsf_free-95bff5c5-ed9b-1c78-0dd8-4c05168176ba
   - license_expression: fsf-ap
     matches:
       - score: '100.0'
@@ -359,6 +369,7 @@ license_detections:
           are permitted in any medium without royalty provided the copyright
           notice and this notice are preserved.  This file is offered as-is,
           without any warranty.
+    identifier: fsf_ap-a7d380d0-4462-458a-36c1-1852bdcbf538
   - license_expression: fsf-unlimited-no-warranty
     matches:
       - score: '100.0'
@@ -380,6 +391,7 @@ license_detections:
           but WITHOUT ANY WARRANTY, to the extent permitted by law; without
           even the implied warranty of MERCHANTABILITY or FITNESS FOR A
           PARTICULAR PURPOSE.
+    identifier: fsf_unlimited_no_warranty-05f3eea9-e9cc-944d-4dc4-2b53a3e39319
 other_license_detections: []
 copyright: |
   2020, Aurelien Jarno

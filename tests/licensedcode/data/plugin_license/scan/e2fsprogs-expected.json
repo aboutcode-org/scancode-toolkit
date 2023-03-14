@@ -1,42 +1,9 @@
 {
   "license_detections": [
     {
-      "identifier": "none-c0ea97eb-46c1-3f14-32fa-dba6cc1d3326",
-      "license_expression": null,
-      "detection_count": 1,
-      "matches": [
-        {
-          "score": 14.39,
-          "start_line": 19,
-          "end_line": 20,
-          "matched_length": 20,
-          "match_coverage": 14.39,
-          "matcher": "3-seq",
-          "license_expression": "lgpl-2.0-plus",
-          "rule_identifier": "lgpl-2.0-plus_65.RULE",
-          "rule_relevance": 100,
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0-plus_65.RULE"
-        }
-      ]
-    },
-    {
-      "identifier": "gpl_2_0_and_patent_disclaimer-678028e8-022d-e622-af93-f2a9c0af83a1",
+      "identifier": "gpl_2_0_and_patent_disclaimer-3bb2602f-86f5-b9da-9bf5-b52e6920c8d1",
       "license_expression": "gpl-2.0 AND patent-disclaimer",
-      "detection_count": 1,
-      "matches": [
-        {
-          "score": 100.0,
-          "start_line": 4,
-          "end_line": 30,
-          "matched_length": 185,
-          "match_coverage": 100.0,
-          "matcher": "2-aho",
-          "license_expression": "gpl-2.0 AND patent-disclaimer",
-          "rule_identifier": "gpl-2.0_and_patent-disclaimer_3.RULE",
-          "rule_relevance": 100,
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0_and_patent-disclaimer_3.RULE"
-        }
-      ]
+      "detection_count": 1
     }
   ],
   "files": [
@@ -61,9 +28,6 @@
         }
       ],
       "percentage_of_license_text": 22.73,
-      "for_license_detections": [
-        "none-c0ea97eb-46c1-3f14-32fa-dba6cc1d3326"
-      ],
       "scan_errors": []
     },
     {
@@ -87,14 +51,12 @@
               "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0_and_patent-disclaimer_3.RULE"
             }
-          ]
+          ],
+          "identifier": "gpl_2_0_and_patent_disclaimer-3bb2602f-86f5-b9da-9bf5-b52e6920c8d1"
         }
       ],
       "license_clues": [],
       "percentage_of_license_text": 95.36,
-      "for_license_detections": [
-        "gpl_2_0_and_patent_disclaimer-678028e8-022d-e622-af93-f2a9c0af83a1"
-      ],
       "scan_errors": []
     }
   ]

@@ -763,6 +763,7 @@ other_license_detections:
         matched_text: |
           On Debian GNU/Linux systems, the complete text of the LGPL 2.1
           license can be found in `/usr/share/common-licenses/LGPL-2.1'.
+    identifier: lgpl_2_1-25729df7-c7a2-c465-4e3a-95c8bbfa2166
   - license_expression: gpl-1.0-plus AND gpl-1.0
     matches:
       - score: '100.0'
@@ -789,6 +790,7 @@ other_license_detections:
         matched_text: |
           On Debian GNU/Linux systems, the complete text of the GNU General
           Public License can be found in `/usr/share/common-licenses/GPL-1'.
+    identifier: gpl_1_0_plus_and_gpl_1_0-6a152a01-a4b1-59a8-bc68-c255f8f729e1
   - license_expression: gpl-2.0-plus AND gpl-2.0
     matches:
       - score: '100.0'
@@ -816,6 +818,7 @@ other_license_detections:
           On Debian GNU/Linux systems, the complete text of version 2 of
           the GNU General Public License can be found in
           `/usr/share/common-licenses/GPL-2'.
+    identifier: gpl_2_0_plus_and_gpl_2_0-592736dd-25b8-8a93-9c9d-661b18b9e615
   - license_expression: artistic-perl-1.0
     matches:
       - score: '99.0'
@@ -842,6 +845,7 @@ other_license_detections:
         matched_text: |
           On Debian GNU/Linux systems, the complete text of the
           Artistic Licence can be found in `/usr/share/common-licenses/Artistic'.
+    identifier: artistic_perl_1_0-28364b45-8110-28fe-aee5-cb6a37853295
   - license_expression: artistic-2.0
     matches:
       - score: '100.0'
@@ -1037,6 +1041,7 @@ other_license_detections:
           HOLDER OR CONTRIBUTOR WILL BE LIABLE FOR ANY DIRECT, INDIRECT,
           INCIDENTAL, OR CONSEQUENTIAL DAMAGES ARISING IN ANY WAY OUT OF THE USE
           OF THE PACKAGE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+    identifier: artistic_2_0-bc78b6a9-7dba-285f-7e81-1b30d7b5e445
   - license_expression: bzip2-libbzip-2010
     matches:
       - score: '100.0'
@@ -1080,6 +1085,7 @@ other_license_detections:
            WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
            NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
            SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+    identifier: bzip2_libbzip_2010-72b4db44-6142-9aeb-acd2-1d8f2447148c
   - license_expression: zlib
     matches:
       - score: '100.0'
@@ -1108,6 +1114,7 @@ other_license_detections:
            2. Altered source versions must be plainly marked as such, and must not be
               misrepresented as being the original software.
            3. This notice may not be removed or altered from any source distribution.
+    identifier: zlib-f32ae987-c66a-44ce-bd13-c90e0c59aab8
   - license_expression: mit
     matches:
       - score: '100.0'
@@ -1138,6 +1145,7 @@ other_license_detections:
           LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
           FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
           DEALINGS IN THE SOFTWARE.
+    identifier: mit-cacd5c0c-204a-85c2-affc-e4c125b2492a
   - license_expression: bsd-new
     matches:
       - score: '100.0'
@@ -1174,6 +1182,7 @@ other_license_detections:
           LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
           OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
           SUCH DAMAGE.
+    identifier: bsd_new-fe71ef21-9657-e8d8-ad75-ddd776ac9710
   - license_expression: bsd-original
     matches:
       - score: '98.25'
@@ -1214,6 +1223,7 @@ other_license_detections:
           WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
           OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
           EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+    identifier: bsd_original-3dc9cdcb-7881-5f58-5eb0-abe40fe6974d
   - license_expression: unicode-dfs-2015
     matches:
       - score: '99.57'
@@ -1282,6 +1292,7 @@ other_license_detections:
                shall not be used in advertising or otherwise to promote the sale,
                use or other dealings in these Data Files or Software without
                prior written authorization of the copyright holder.
+    identifier: unicode_dfs_2015-a68362d0-e886-6936-9f94-af7247f63c6f
   - license_expression: bsd-new
     matches:
       - score: '100.0'
@@ -1318,6 +1329,7 @@ other_license_detections:
           LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
           OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
           SUCH DAMAGE.
+    identifier: bsd_new-df1e02c8-d8f1-e983-3d20-fffa0788153b
   - license_expression: bsd-new
     matches:
       - score: '100.0'
@@ -1354,6 +1366,7 @@ other_license_detections:
           LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
           OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
           SUCH DAMAGE.
+    identifier: bsd_new-ccc98c3a-92d4-e7a3-e0ba-798328cb6b98
   - license_expression: regexp
     matches:
       - score: '100.0'
@@ -1380,6 +1393,7 @@ other_license_detections:
 
            3. Altered versions must be plainly marked as such, and must not
                    be misrepresented as being the original software.
+    identifier: regexp-80089f45-0a6c-4f30-e4b6-24334a206225
   - license_expression: ttwl
     matches:
       - score: '100.0'
@@ -1398,6 +1412,7 @@ other_license_detections:
           Although allowed by the preceding license, please do not publicly
           redistribute modified versions of this code with the name "Text::Tabs"
           unless it passes the unmodified Text::Tabs test suite.
+    identifier: ttwl-eeadd029-25f0-a4b1-0af8-c75212d02135
   - license_expression: other-copyleft
     matches:
       - score: '100.0'
@@ -1414,6 +1429,7 @@ other_license_detections:
           This program is free and open software. You may use, modify,
           distribute, and sell this program (and any modified variants) in any
           way you wish, provided you do not restrict others from doing the same.
+    identifier: other_copyleft-c7bd5df8-17ea-832d-36d6-a7557d00fb09
   - license_expression: other-copyleft
     matches:
       - score: '90.0'
@@ -1429,6 +1445,7 @@ other_license_detections:
         matched_text: |
           Everyone is permitted to copy and distribute verbatim copies
           of this license document, but changing it is not allowed.
+    identifier: other_copyleft-0ac0d4dd-1063-c305-80e8-d67a64a53eaf
   - license_expression: public-domain
     matches:
       - score: '100.0'
@@ -1475,6 +1492,7 @@ other_license_detections:
         rule_relevance: 70
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/public-domain_bare_words.RULE
         matched_text: public  domain
+    identifier: public_domain-d6560563-b3c0-65ee-7cca-7225d652d54d
   - license_expression: gpl-3.0-plus WITH bison-exception-2.2
     matches:
       - score: '100.0'
@@ -1513,6 +1531,7 @@ other_license_detections:
 
           This special exception was added by the Free Software Foundation in
           version 2.2 of Bison.
+    identifier: gpl_3_0_plus_with_bison_exception_2_2-637d6c30-89c5-8764-b189-8bb20227ccfc
   - license_expression: paul-hsieh-derivative
     matches:
       - score: '100.0'
@@ -1542,6 +1561,7 @@ other_license_detections:
              One may not attribute any derivative content to authors not involved
              in the creation of the content, though an attribution to the author
              is not necessary.
+    identifier: paul_hsieh_derivative-227e82af-732d-87b3-eb2c-9409d183d572
   - license_expression: bsd-x11
     matches:
       - score: '99.0'
@@ -1581,6 +1601,7 @@ other_license_detections:
           THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
           (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
           OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+    identifier: bsd_x11-53db30c9-af29-3609-e3c2-f3c4ac87fabe
   - license_expression: cc0-1.0
     matches:
       - score: '100.0'
@@ -1725,6 +1746,7 @@ other_license_detections:
              Affirmer understands and acknowledges that Creative Commons is not
              a party to this document and has no duty or obligation with respect
              to this CC0 or use of the Work.
+    identifier: cc0_1_0-d16cc04e-8802-8225-9e6f-0fb92bcba694
   - license_expression: fsf-ap
     matches:
       - score: '100.0'
@@ -1742,6 +1764,7 @@ other_license_detections:
           permitted in any medium without royalty provided the copyright notice and
           this notice are preserved.  This file is offered as-is, without any
           warranty.
+    identifier: fsf_ap-a7d380d0-4462-458a-36c1-1852bdcbf538
   - license_expression: artistic-dist-1.0
     matches:
       - score: '100.0'
@@ -1880,6 +1903,7 @@ other_license_detections:
           WARRANTIES OF MERCHANTIBILITY AND FITNESS FOR A PARTICULAR PURPOSE.
 
                                           The End
+    identifier: artistic_dist_1_0-c8a5103b-b244-055a-58c3-4fd73f491e6a
   - license_expression: gpl-1.0-plus OR artistic-perl-1.0
     matches:
       - score: '100.0'
@@ -1901,6 +1925,7 @@ other_license_detections:
                 version, or
 
              b) the "Artistic License" which comes with Perl.
+    identifier: gpl_1_0_plus_or_artistic_perl_1_0-95ef4a7b-575e-74fe-2260-6fb5805fd955
   - license_expression: gpl-1.0-plus OR artistic-perl-1.0
     matches:
       - score: '100.0'
@@ -1914,6 +1939,7 @@ other_license_detections:
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-1.0-plus_or_artistic-perl-1.0_12.RULE
         matched_text: This file is a part of Perl itself, licensed as above.
+    identifier: gpl_1_0_plus_or_artistic_perl_1_0-fd15e46d-ac77-acdb-3f93-0d54ee03a1b7
   - license_expression: gpl-1.0-plus OR artistic-perl-1.0
     matches:
       - score: '100.0'
@@ -1927,6 +1953,7 @@ other_license_detections:
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-1.0-plus_or_artistic-perl-1.0_12.RULE
         matched_text: This file is a part of Perl itself, licensed as above.
+    identifier: gpl_1_0_plus_or_artistic_perl_1_0-fd15e46d-ac77-acdb-3f93-0d54ee03a1b7
   - license_expression: gpl-1.0-plus OR artistic-perl-1.0
     matches:
       - score: '100.0'
@@ -1940,6 +1967,7 @@ other_license_detections:
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-1.0-plus_or_artistic-perl-1.0_12.RULE
         matched_text: This file is a part of Perl itself, licensed as above.
+    identifier: gpl_1_0_plus_or_artistic_perl_1_0-fd15e46d-ac77-acdb-3f93-0d54ee03a1b7
   - license_expression: gpl-1.0-plus OR artistic-perl-1.0
     matches:
       - score: '100.0'
@@ -1953,6 +1981,7 @@ other_license_detections:
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-1.0-plus_or_artistic-perl-1.0_12.RULE
         matched_text: This file is a part of Perl itself, licensed as above.
+    identifier: gpl_1_0_plus_or_artistic_perl_1_0-fd15e46d-ac77-acdb-3f93-0d54ee03a1b7
   - license_expression: gpl-1.0-plus OR artistic-perl-1.0
     matches:
       - score: '100.0'
@@ -1966,6 +1995,7 @@ other_license_detections:
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-1.0-plus_or_artistic-perl-1.0_12.RULE
         matched_text: This file is a part of Perl itself, licensed as above.
+    identifier: gpl_1_0_plus_or_artistic_perl_1_0-fd15e46d-ac77-acdb-3f93-0d54ee03a1b7
   - license_expression: artistic-perl-1.0 OR gpl-1.0-plus
     matches:
       - score: '100.0'
@@ -1981,6 +2011,7 @@ other_license_detections:
         matched_text: |
           You may distribute under the terms of either the GNU General Public
            License or the Artistic License, as specified in the README file.
+    identifier: artistic_perl_1_0_or_gpl_1_0_plus-bce9eb76-af55-8217-d862-796e5d7accc7
   - license_expression: gpl-1.0-plus OR artistic-perl-1.0
     matches:
       - score: '100.0'
@@ -1996,6 +2027,7 @@ other_license_detections:
         matched_text: |
           This program is free software; you may redistribute it
           and/or modify it under the same terms as Perl itself.
+    identifier: gpl_1_0_plus_or_artistic_perl_1_0-abf4b96c-fc73-c8e3-29cd-08cded8bef2c
   - license_expression: unicode
     matches:
       - score: '100.0'
@@ -2009,6 +2041,7 @@ other_license_detections:
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/unicode_14.RULE
         matched_text: For terms of use, see http://www.unicode.org/terms_of_use.html
+    identifier: unicode-694376d5-aeeb-e4bc-a4e1-095d162d3862
   - license_expression: artistic-perl-1.0 OR gpl-1.0-plus
     matches:
       - score: '100.0'
@@ -2025,6 +2058,7 @@ other_license_detections:
           This library is free software; you can redistribute it and/or modify
           it under the same terms as Perl itself, either Perl version 5.10.0 or,
           at your option, any later version of Perl 5 you may have available.
+    identifier: artistic_perl_1_0_or_gpl_1_0_plus-c184d674-b309-2d8f-2170-8340d9b74afc
   - license_expression: artistic-perl-1.0 OR gpl-1.0-plus
     matches:
       - score: '100.0'
@@ -2040,6 +2074,7 @@ other_license_detections:
         matched_text: |
           This library is free software. You can redistribute it
           and/or modify it under the same terms as Perl itself.
+    identifier: artistic_perl_1_0_or_gpl_1_0_plus-781b2f48-5747-4d66-d428-c271c1b34947
   - license_expression: artistic-perl-1.0 OR gpl-1.0-plus
     matches:
       - score: '100.0'
@@ -2055,6 +2090,7 @@ other_license_detections:
         matched_text: |
           This program is free software; you can redistribute it and/or modify it
           under the same terms as Perl itself.
+    identifier: artistic_perl_1_0_or_gpl_1_0_plus-5362e445-2780-fe5e-5f5c-8e18d2260a6e
   - license_expression: artistic-perl-1.0 OR gpl-1.0-plus
     matches:
       - score: '100.0'
@@ -2068,6 +2104,7 @@ other_license_detections:
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/artistic-perl-1.0_or_gpl-1.0-plus_34.RULE
         matched_text: All files are licensed under the same terms as Perl itself.
+    identifier: artistic_perl_1_0_or_gpl_1_0_plus-4e05fce9-1807-80b2-856e-0fa39a440170
   - license_expression: artistic-perl-1.0 OR gpl-1.0-plus
     matches:
       - score: '90.91'
@@ -2081,6 +2118,7 @@ other_license_detections:
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/artistic-perl-1.0_or_gpl-1.0-plus_32.RULE
         matched_text: The PerlUi class is licensed under the same terms as Perl itself.
+    identifier: artistic_perl_1_0_or_gpl_1_0_plus-522746e5-bffc-fa4c-ea81-334067779aac
   - license_expression: artistic-perl-1.0 OR gpl-1.0-plus
     matches:
       - score: '91.67'
@@ -2094,6 +2132,7 @@ other_license_detections:
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/artistic-perl-1.0_or_gpl-1.0-plus_31.RULE
         matched_text: The Symbian port is licensed under the same terms as Perl itself.
+    identifier: artistic_perl_1_0_or_gpl_1_0_plus-7e59d507-72c7-19bf-6165-d58bcc316f9a
   - license_expression: artistic-perl-1.0 OR gpl-1.0-plus
     matches:
       - score: '100.0'
@@ -2109,6 +2148,7 @@ other_license_detections:
         matched_text: |
           It is assumed that the test code is licensed under the same terms
           as Perl.
+    identifier: artistic_perl_1_0_or_gpl_1_0_plus-2ed96cd5-955e-4781-7dd3-7bcd315fff9b
   - license_expression: artistic-perl-1.0 OR gpl-1.0-plus
     matches:
       - score: '100.0'
@@ -2124,6 +2164,7 @@ other_license_detections:
         matched_text: |
           You may distribute under the terms of either the GNU General Public
           License or the Artistic License, as specified in the README file.
+    identifier: artistic_perl_1_0_or_gpl_1_0_plus-bce9eb76-af55-8217-d862-796e5d7accc7
   - license_expression: gpl-1.0-plus OR artistic-perl-1.0
     matches:
       - score: '100.0'
@@ -2139,6 +2180,7 @@ other_license_detections:
         matched_text: |
           This program is free software; you may redistribute it
           and/or modify it under the same terms as Perl itself.
+    identifier: gpl_1_0_plus_or_artistic_perl_1_0-abf4b96c-fc73-c8e3-29cd-08cded8bef2c
   - license_expression: artistic-perl-1.0 OR gpl-1.0-plus
     matches:
       - score: '100.0'
@@ -2154,6 +2196,7 @@ other_license_detections:
         matched_text: |
           You may distribute under the terms of either the GNU General Public
           License or the Artistic License, as specified in the README file.
+    identifier: artistic_perl_1_0_or_gpl_1_0_plus-bce9eb76-af55-8217-d862-796e5d7accc7
   - license_expression: gpl-1.0-plus OR artistic-1.0
     matches:
       - score: '100.0'
@@ -2169,6 +2212,7 @@ other_license_detections:
         matched_text: |
           This is free software; you can redistribute it and/or modify it under the same
           terms as the Perl 5 programming language system itself.
+    identifier: gpl_1_0_plus_or_artistic_1_0-83290536-f01d-d3fa-2e0c-62204354be7a
   - license_expression: artistic-perl-1.0 OR gpl-1.0-plus
     matches:
       - score: '100.0'
@@ -2184,6 +2228,7 @@ other_license_detections:
         matched_text: |
           You may distribute under the terms of either the GNU General Public
           License or the Artistic License, as specified in the README file.
+    identifier: artistic_perl_1_0_or_gpl_1_0_plus-bce9eb76-af55-8217-d862-796e5d7accc7
   - license_expression: artistic-perl-1.0 OR gpl-1.0-plus
     matches:
       - score: '100.0'
@@ -2199,6 +2244,7 @@ other_license_detections:
         matched_text: |
           You may distribute under the terms of either the GNU General Public
           License or the Artistic License, as specified in the README file.
+    identifier: artistic_perl_1_0_or_gpl_1_0_plus-bce9eb76-af55-8217-d862-796e5d7accc7
   - license_expression: gpl-1.0-plus OR artistic-perl-1.0
     matches:
       - score: '100.0'
@@ -2212,6 +2258,7 @@ other_license_detections:
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-1.0-plus_or_artistic-perl-1.0_12.RULE
         matched_text: This file is a part of Perl itself, licensed as above.
+    identifier: gpl_1_0_plus_or_artistic_perl_1_0-fd15e46d-ac77-acdb-3f93-0d54ee03a1b7
   - license_expression: artistic-perl-1.0 OR gpl-1.0-plus
     matches:
       - score: '100.0'
@@ -2227,6 +2274,7 @@ other_license_detections:
         matched_text: |
           This library is free software; you may redistribute and/or modify
           it under the same terms as Perl itself.
+    identifier: artistic_perl_1_0_or_gpl_1_0_plus-fc24870c-10ae-2148-d3bf-e786583923db
   - license_expression: gpl-1.0-plus OR artistic-perl-1.0
     matches:
       - score: '100.0'
@@ -2240,6 +2288,7 @@ other_license_detections:
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-1.0-plus_or_artistic-perl-1.0_11.RULE
         matched_text: This package has the same copyright and license as the perl core.
+    identifier: gpl_1_0_plus_or_artistic_perl_1_0-00c5b5e7-0cc5-6dc8-2914-7a86e3fe305f
   - license_expression: gpl-1.0-plus OR artistic-perl-1.0
     matches:
       - score: '100.0'
@@ -2255,6 +2304,7 @@ other_license_detections:
         matched_text: |
           This module is free software, you may distribute it under the
           same terms as Perl itself.
+    identifier: gpl_1_0_plus_or_artistic_perl_1_0-7efcdd95-ec2e-48b4-6b08-e8b6a41ced5d
   - license_expression: gpl-1.0-plus OR artistic-perl-1.0
     matches:
       - score: '100.0'
@@ -2271,6 +2321,7 @@ other_license_detections:
           This is free software.  You may modify and/or redistribute this
           code under the same terms as Perl 5.10 itself, or, at your option,
           any later version of Perl 5.
+    identifier: gpl_1_0_plus_or_artistic_perl_1_0-8ca7b680-12a9-c6a8-d60b-abd1b0e1aa81
   - license_expression: gpl-1.0-plus OR artistic-perl-1.0
     matches:
       - score: '100.0'
@@ -2286,6 +2337,7 @@ other_license_detections:
         matched_text: |
           This module is free software.  You may distribute it under the
           same terms as Perl itself.
+    identifier: gpl_1_0_plus_or_artistic_perl_1_0-7efcdd95-ec2e-48b4-6b08-e8b6a41ced5d
   - license_expression: gpl-1.0-plus OR artistic-perl-1.0
     matches:
       - score: '100.0'
@@ -2307,6 +2359,7 @@ other_license_detections:
           later version, or
 
           b) the "Artistic License" which comes with this kit.
+    identifier: gpl_1_0_plus_or_artistic_perl_1_0-01827891-d8b3-db54-a82c-45e2a8af8edc
   - license_expression: artistic-perl-1.0 OR gpl-1.0-plus
     matches:
       - score: '100.0'
@@ -2322,6 +2375,7 @@ other_license_detections:
         matched_text: |
           This program is free software; you can redistribute it
           and/or modify it under the same terms as Perl itself.
+    identifier: artistic_perl_1_0_or_gpl_1_0_plus-5362e445-2780-fe5e-5f5c-8e18d2260a6e
   - license_expression: artistic-perl-1.0 OR gpl-1.0-plus
     matches:
       - score: '100.0'
@@ -2337,6 +2391,7 @@ other_license_detections:
         matched_text: |
           This program is free software; you can redistribute it
           and/or modify it under the same terms as Perl itself.
+    identifier: artistic_perl_1_0_or_gpl_1_0_plus-5362e445-2780-fe5e-5f5c-8e18d2260a6e
   - license_expression: artistic-perl-1.0 OR gpl-1.0-plus
     matches:
       - score: '100.0'
@@ -2352,6 +2407,7 @@ other_license_detections:
         matched_text: |
           This library is free software; you can redistribute it and/or modify
           it under the same terms as Perl itself.
+    identifier: artistic_perl_1_0_or_gpl_1_0_plus-781b2f48-5747-4d66-d428-c271c1b34947
   - license_expression: artistic-perl-1.0 OR gpl-1.0-plus
     matches:
       - score: '100.0'
@@ -2367,6 +2423,7 @@ other_license_detections:
         matched_text: |
           This program is free software; you can redistribute it and/or
           modify it under the same terms as Perl itself.
+    identifier: artistic_perl_1_0_or_gpl_1_0_plus-5362e445-2780-fe5e-5f5c-8e18d2260a6e
   - license_expression: gpl-1.0-plus OR artistic-perl-1.0
     matches:
       - score: '100.0'
@@ -2380,6 +2437,7 @@ other_license_detections:
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-1.0-plus_or_artistic-perl-1.0_42.RULE
         matched_text: You may redistribute this under the same terms as Perl itself.
+    identifier: gpl_1_0_plus_or_artistic_perl_1_0-d15d44f1-6970-d898-4fa2-eb72ec024222
   - license_expression: gpl-1.0-plus OR artistic-1.0
     matches:
       - score: '100.0'
@@ -2395,6 +2453,7 @@ other_license_detections:
         matched_text: |
           This is free software; you can redistribute it and/or modify it under
           the same terms as the Perl 5 programming language system itself.
+    identifier: gpl_1_0_plus_or_artistic_1_0-83290536-f01d-d3fa-2e0c-62204354be7a
   - license_expression: gpl-1.0-plus OR artistic-1.0
     matches:
       - score: '100.0'
@@ -2410,6 +2469,7 @@ other_license_detections:
         matched_text: |
           This is free software; you can redistribute it and/or modify it under
           the same terms as the Perl 5 programming language system itself.
+    identifier: gpl_1_0_plus_or_artistic_1_0-83290536-f01d-d3fa-2e0c-62204354be7a
   - license_expression: gpl-1.0-plus OR artistic-1.0
     matches:
       - score: '100.0'
@@ -2425,6 +2485,7 @@ other_license_detections:
         matched_text: |
           This is free software; you can redistribute it and/or modify it under
           the same terms as the Perl 5 programming language system itself.
+    identifier: gpl_1_0_plus_or_artistic_1_0-83290536-f01d-d3fa-2e0c-62204354be7a
   - license_expression: gpl-1.0-plus OR artistic-1.0
     matches:
       - score: '100.0'
@@ -2440,6 +2501,7 @@ other_license_detections:
         matched_text: |
           This is free software; you can redistribute it and/or modify it under
           the same terms as the Perl 5 programming language system itself.
+    identifier: gpl_1_0_plus_or_artistic_1_0-83290536-f01d-d3fa-2e0c-62204354be7a
   - license_expression: artistic-perl-1.0 OR gpl-1.0-plus
     matches:
       - score: '100.0'
@@ -2455,6 +2517,7 @@ other_license_detections:
         matched_text: |
           This program is free software; you can redistribute it and/or modify
           it under the same terms as Perl itself.
+    identifier: artistic_perl_1_0_or_gpl_1_0_plus-5362e445-2780-fe5e-5f5c-8e18d2260a6e
   - license_expression: artistic-perl-1.0 OR gpl-1.0-plus
     matches:
       - score: '100.0'
@@ -2470,6 +2533,7 @@ other_license_detections:
         matched_text: |
           This program is free software; you can redistribute it and/or
           modify it under the same terms as Perl itself.
+    identifier: artistic_perl_1_0_or_gpl_1_0_plus-5362e445-2780-fe5e-5f5c-8e18d2260a6e
   - license_expression: artistic-perl-1.0 OR gpl-1.0-plus
     matches:
       - score: '100.0'
@@ -2485,6 +2549,7 @@ other_license_detections:
         matched_text: |
           This program is free software; you can redistribute it and/or
           modify it under the same terms as Perl itself.
+    identifier: artistic_perl_1_0_or_gpl_1_0_plus-5362e445-2780-fe5e-5f5c-8e18d2260a6e
   - license_expression: artistic-perl-1.0 OR gpl-1.0-plus
     matches:
       - score: '100.0'
@@ -2500,6 +2565,7 @@ other_license_detections:
         matched_text: |
           This library is free software; you can redistribute it and/or
           modify it under the same terms as Perl itself.
+    identifier: artistic_perl_1_0_or_gpl_1_0_plus-781b2f48-5747-4d66-d428-c271c1b34947
   - license_expression: artistic-perl-1.0 OR gpl-1.0-plus
     matches:
       - score: '100.0'
@@ -2515,6 +2581,7 @@ other_license_detections:
         matched_text: |
           This library is free software; you can redistribute it and/or
           modify it under the same terms as Perl itself.
+    identifier: artistic_perl_1_0_or_gpl_1_0_plus-781b2f48-5747-4d66-d428-c271c1b34947
   - license_expression: artistic-perl-1.0 OR gpl-1.0-plus
     matches:
       - score: '100.0'
@@ -2530,6 +2597,7 @@ other_license_detections:
         matched_text: |
           This library is free software; you can redistribute it and/or modify
           it under the same terms as Perl itself.
+    identifier: artistic_perl_1_0_or_gpl_1_0_plus-781b2f48-5747-4d66-d428-c271c1b34947
   - license_expression: artistic-perl-1.0 OR gpl-1.0-plus
     matches:
       - score: '100.0'
@@ -2545,6 +2613,7 @@ other_license_detections:
         matched_text: |
           This library is free software; you can redistribute it and/or modify
           it under the same terms as Perl itself.
+    identifier: artistic_perl_1_0_or_gpl_1_0_plus-781b2f48-5747-4d66-d428-c271c1b34947
   - license_expression: artistic-2.0
     matches:
       - score: '100.0'
@@ -2560,6 +2629,7 @@ other_license_detections:
         matched_text: |
           This program is free software; you can redistribute it and/or modify it
           under the terms of the the Artistic License (2.0).
+    identifier: artistic_2_0-e78d6739-c4ab-40c9-572b-bcaabfb23964
   - license_expression: artistic-perl-1.0 OR gpl-1.0-plus
     matches:
       - score: '100.0'
@@ -2575,6 +2645,7 @@ other_license_detections:
         matched_text: |
           This program is free software; you can redistribute it and/or modify it
           under the same terms as Perl itself.
+    identifier: artistic_perl_1_0_or_gpl_1_0_plus-5362e445-2780-fe5e-5f5c-8e18d2260a6e
   - license_expression: gpl-1.0-plus OR artistic-1.0
     matches:
       - score: '100.0'
@@ -2590,6 +2661,7 @@ other_license_detections:
         matched_text: |
           This is free software; you can redistribute it and/or modify it under
           the same terms as the Perl 5 programming language system itself.
+    identifier: gpl_1_0_plus_or_artistic_1_0-83290536-f01d-d3fa-2e0c-62204354be7a
   - license_expression: gpl-1.0-plus OR artistic-perl-1.0
     matches:
       - score: '100.0'
@@ -2613,6 +2685,7 @@ other_license_detections:
           You may distribute this work under the terms of either the GNU General
           Public License or the Artistic License, as specified in perl's README
           file.
+    identifier: gpl_1_0_plus_or_artistic_perl_1_0-3c906dee-c087-db95-4092-056433d16fb5
   - license_expression: artistic-perl-1.0 OR gpl-1.0-plus
     matches:
       - score: '100.0'
@@ -2628,6 +2701,7 @@ other_license_detections:
         matched_text: |
           This library is free software; you can redistribute it and/or modify it
           under the same terms as Perl itself.
+    identifier: artistic_perl_1_0_or_gpl_1_0_plus-781b2f48-5747-4d66-d428-c271c1b34947
   - license_expression: artistic-perl-1.0 OR gpl-1.0-plus
     matches:
       - score: '100.0'
@@ -2643,6 +2717,7 @@ other_license_detections:
         matched_text: |
           This is free software; you can redistribute it and/or modify it
           under the same terms as Perl itself.
+    identifier: artistic_perl_1_0_or_gpl_1_0_plus-18449fdf-781e-7e30-7f07-dfe1ecca6ee1
   - license_expression: artistic-perl-1.0 OR gpl-1.0-plus
     matches:
       - score: '100.0'
@@ -2658,6 +2733,7 @@ other_license_detections:
         matched_text: |
           This library is free software; you may redistribute and/or modify it
           under the same terms as Perl itself.
+    identifier: artistic_perl_1_0_or_gpl_1_0_plus-fc24870c-10ae-2148-d3bf-e786583923db
   - license_expression: artistic-perl-1.0 OR gpl-1.0-plus
     matches:
       - score: '100.0'
@@ -2673,6 +2749,7 @@ other_license_detections:
         matched_text: |
           This library is free software; you can redistribute it and/or modify
           it under the same terms as Perl itself.
+    identifier: artistic_perl_1_0_or_gpl_1_0_plus-781b2f48-5747-4d66-d428-c271c1b34947
   - license_expression: gpl-1.0-plus OR artistic-1.0
     matches:
       - score: '100.0'
@@ -2688,6 +2765,7 @@ other_license_detections:
         matched_text: |
           This is free software; you can redistribute it and/or modify it under
           the same terms as the Perl 5 programming language system itself.
+    identifier: gpl_1_0_plus_or_artistic_1_0-83290536-f01d-d3fa-2e0c-62204354be7a
   - license_expression: artistic-perl-1.0 OR gpl-1.0-plus
     matches:
       - score: '100.0'
@@ -2703,6 +2781,7 @@ other_license_detections:
         matched_text: |
           This program is free software; you can redistribute it and/or
           modify it under the same terms as Perl itself.
+    identifier: artistic_perl_1_0_or_gpl_1_0_plus-5362e445-2780-fe5e-5f5c-8e18d2260a6e
   - license_expression: artistic-perl-1.0 OR gpl-2.0-plus
     matches:
       - score: '100.0'
@@ -2721,6 +2800,7 @@ other_license_detections:
           GNU General Public License as published by the Free Software
           Foundation; either version 2 of the License, or (at your option) any
           later version.
+    identifier: artistic_perl_1_0_or_gpl_2_0_plus-9838542c-8067-e5da-446d-8a162c7c3cc5
   - license_expression: gpl-1.0-plus OR artistic-1.0
     matches:
       - score: '100.0'
@@ -2736,6 +2816,7 @@ other_license_detections:
         matched_text: |
           This is free software; you can redistribute it and/or modify it under
           the same terms as the Perl 5 programming language system itself.
+    identifier: gpl_1_0_plus_or_artistic_1_0-83290536-f01d-d3fa-2e0c-62204354be7a
   - license_expression: artistic-perl-1.0 OR gpl-1.0-plus
     matches:
       - score: '100.0'
@@ -2751,6 +2832,7 @@ other_license_detections:
         matched_text: |
           This program is free software; you can redistribute it
           and/or modify it under the same terms as Perl itself.
+    identifier: artistic_perl_1_0_or_gpl_1_0_plus-5362e445-2780-fe5e-5f5c-8e18d2260a6e
   - license_expression: artistic-perl-1.0 OR gpl-1.0-plus
     matches:
       - score: '100.0'
@@ -2766,6 +2848,7 @@ other_license_detections:
         matched_text: |
           This program is free software; you can redistribute
           it and/or modify it under the same terms as Perl itself.
+    identifier: artistic_perl_1_0_or_gpl_1_0_plus-5362e445-2780-fe5e-5f5c-8e18d2260a6e
   - license_expression: artistic-perl-1.0 OR gpl-1.0-plus
     matches:
       - score: '100.0'
@@ -2781,6 +2864,7 @@ other_license_detections:
         matched_text: |
           This program is free software; you can redistribute it and/or
           modify it under the same terms as Perl itself.
+    identifier: artistic_perl_1_0_or_gpl_1_0_plus-5362e445-2780-fe5e-5f5c-8e18d2260a6e
   - license_expression: artistic-perl-1.0 OR gpl-1.0-plus
     matches:
       - score: '100.0'
@@ -2796,6 +2880,7 @@ other_license_detections:
         matched_text: |
           This library is free software; you can redistribute it and/or modify
           it under the same terms as Perl itself.
+    identifier: artistic_perl_1_0_or_gpl_1_0_plus-781b2f48-5747-4d66-d428-c271c1b34947
   - license_expression: artistic-perl-1.0 OR gpl-1.0-plus
     matches:
       - score: '100.0'
@@ -2811,6 +2896,7 @@ other_license_detections:
         matched_text: |
           This library is free software; you can redistribute it and/or modify
           it under the same terms as Perl itself.
+    identifier: artistic_perl_1_0_or_gpl_1_0_plus-781b2f48-5747-4d66-d428-c271c1b34947
   - license_expression: gpl-1.0-plus OR artistic-perl-1.0
     matches:
       - score: '100.0'
@@ -2826,6 +2912,7 @@ other_license_detections:
         matched_text: |
           You may distribute under the terms of either the GNU General Public License
           or the Artistic License, as specified in the LICENCE file.
+    identifier: gpl_1_0_plus_or_artistic_perl_1_0-998f11a5-2f46-f75b-3298-dbfa69a673aa
   - license_expression: artistic-perl-1.0 OR gpl-1.0-plus
     matches:
       - score: '100.0'
@@ -2841,6 +2928,7 @@ other_license_detections:
         matched_text: |
           This library is free software; you can redistribute it and/or
           modify it under the same terms as Perl itself.
+    identifier: artistic_perl_1_0_or_gpl_1_0_plus-781b2f48-5747-4d66-d428-c271c1b34947
   - license_expression: artistic-perl-1.0 OR gpl-1.0-plus
     matches:
       - score: '100.0'
@@ -2856,6 +2944,7 @@ other_license_detections:
         matched_text: |
           This program is free software; you can redistribute it and/or modify it
           under the same terms as Perl itself.
+    identifier: artistic_perl_1_0_or_gpl_1_0_plus-5362e445-2780-fe5e-5f5c-8e18d2260a6e
   - license_expression: artistic-perl-1.0 OR gpl-1.0-plus
     matches:
       - score: '100.0'
@@ -2871,6 +2960,7 @@ other_license_detections:
         matched_text: |
           This program is free software; you can redistribute it and/or modify it
           under the same terms as Perl itself.
+    identifier: artistic_perl_1_0_or_gpl_1_0_plus-5362e445-2780-fe5e-5f5c-8e18d2260a6e
   - license_expression: artistic-perl-1.0 OR gpl-1.0-plus
     matches:
       - score: '100.0'
@@ -2886,6 +2976,7 @@ other_license_detections:
         matched_text: |
           This module is free software; you can redistribute it and/or
           modify it under the same terms as Perl itself.
+    identifier: artistic_perl_1_0_or_gpl_1_0_plus-253ad29b-8eea-a58f-0e55-7f1f30b4d132
   - license_expression: mit OR gpl-1.0-plus OR artistic-perl-1.0
     matches:
       - score: '100.0'
@@ -2902,6 +2993,7 @@ other_license_detections:
           This software is released under the MIT license cited below.  Additionally,
           when this software is distributed with Perl Kit, Version 5, you may also
           redistribute it and/or modify it under the same terms as Perl itself.
+    identifier: mit_or_gpl_1_0_plus_or_artistic_perl_1_0-109da13c-da24-fa09-6ec8-f6606ea1dddf
   - license_expression: mit OR artistic-perl-1.0 OR gpl-1.0-plus
     matches:
       - score: '99.0'
@@ -2917,6 +3009,7 @@ other_license_detections:
         matched_text: |
           It is assumed that these translations are licensed under the same terms as
           the rest of the Locale-Maketext-Simple distribution.
+    identifier: mit_or_artistic_perl_1_0_or_gpl_1_0_plus-5a94f7ce-d5c0-58cd-b181-c00f8fbbc497
   - license_expression: artistic-perl-1.0 OR gpl-1.0-plus
     matches:
       - score: '100.0'
@@ -2932,6 +3025,7 @@ other_license_detections:
         matched_text: |
           This library is free software; you can redistribute it and/or modify
           it under the same terms as Perl itself.
+    identifier: artistic_perl_1_0_or_gpl_1_0_plus-781b2f48-5747-4d66-d428-c271c1b34947
   - license_expression: gpl-1.0-plus OR artistic-perl-1.0
     matches:
       - score: '100.0'
@@ -2950,6 +3044,7 @@ other_license_detections:
 
           You may copy and distribute this program under the same terms as
           Perl itself.
+    identifier: gpl_1_0_plus_or_artistic_perl_1_0-8e682309-5b67-ab89-6945-3ea7a79aa541
   - license_expression: artistic-perl-1.0 OR gpl-1.0-plus
     matches:
       - score: '100.0'
@@ -2965,6 +3060,7 @@ other_license_detections:
         matched_text: |
           This library is free software; you can redistribute it and/or
           modify it under the same terms as Perl itself.
+    identifier: artistic_perl_1_0_or_gpl_1_0_plus-781b2f48-5747-4d66-d428-c271c1b34947
   - license_expression: (artistic-perl-1.0 OR gpl-1.0-plus) AND historical
     matches:
       - score: '100.0'
@@ -3001,6 +3097,7 @@ other_license_detections:
            MAKES NO REPRESENTATIONS ABOUT THE ACCURACY OR SUITABILITY
            OF THIS MATERIAL FOR ANY PURPOSE.  IT IS PROVIDED "AS IS",
            WITHOUT ANY EXPRESS OR IMPLIED WARRANTIES.
+    identifier: artistic_perl_1_0_or_gpl_1_0_plus__and_historical-61899612-c591-bdaa-59f7-dadaf5afa2e3
   - license_expression: artistic-perl-1.0 OR gpl-1.0-plus
     matches:
       - score: '100.0'
@@ -3016,6 +3113,7 @@ other_license_detections:
         matched_text: |
           This library is free software; you can redistribute it and/or
           modify it under the same terms as Perl itself.
+    identifier: artistic_perl_1_0_or_gpl_1_0_plus-781b2f48-5747-4d66-d428-c271c1b34947
   - license_expression: gpl-1.0-plus OR artistic-perl-1.0
     matches:
       - score: '100.0'
@@ -3031,6 +3129,7 @@ other_license_detections:
         matched_text: |
           This module is free software. It may be used, redistributed
           and/or modified under the same terms as Perl itself.
+    identifier: gpl_1_0_plus_or_artistic_perl_1_0-e8fc6fc9-6684-3799-00a7-dc38172bda29
   - license_expression: gpl-1.0-plus OR artistic-perl-1.0
     matches:
       - score: '100.0'
@@ -3044,6 +3143,7 @@ other_license_detections:
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-1.0-plus_or_artistic-perl-1.0_10.RULE
         matched_text: This module is released under the same terms as Perl itself.
+    identifier: gpl_1_0_plus_or_artistic_perl_1_0-6ac722a3-703c-e413-9b17-5dd475d88fa5
   - license_expression: gpl-1.0-plus OR artistic-1.0
     matches:
       - score: '100.0'
@@ -3059,6 +3159,7 @@ other_license_detections:
         matched_text: |
           This is free software; you can redistribute it and/or modify it under
           the same terms as the Perl 5 programming language system itself.
+    identifier: gpl_1_0_plus_or_artistic_1_0-83290536-f01d-d3fa-2e0c-62204354be7a
   - license_expression: artistic-perl-1.0 OR gpl-1.0-plus
     matches:
       - score: '100.0'
@@ -3074,6 +3175,7 @@ other_license_detections:
         matched_text: |
           This library is free software; you can redistribute it and/or modify
           it under the same terms as Perl itself.
+    identifier: artistic_perl_1_0_or_gpl_1_0_plus-781b2f48-5747-4d66-d428-c271c1b34947
   - license_expression: gpl-1.0-plus OR artistic-1.0
     matches:
       - score: '100.0'
@@ -3089,6 +3191,7 @@ other_license_detections:
         matched_text: |
           This is free software; you can redistribute it and/or modify it under
           the same terms as the Perl 5 programming language system itself.
+    identifier: gpl_1_0_plus_or_artistic_1_0-83290536-f01d-d3fa-2e0c-62204354be7a
   - license_expression: gpl-1.0-plus OR artistic-perl-1.0
     matches:
       - score: '100.0'
@@ -3105,6 +3208,7 @@ other_license_detections:
           is free software;
           you can redistribute it and/or modify it under the same terms
           as Perl itself.
+    identifier: gpl_1_0_plus_or_artistic_perl_1_0-3f59d10a-2b40-7221-4e05-ac331bac263d
   - license_expression: artistic-perl-1.0 OR gpl-1.0-plus
     matches:
       - score: '100.0'
@@ -3120,6 +3224,7 @@ other_license_detections:
         matched_text: |
           This library is free software; you can redistribute it and/or modify
           it under the same terms as Perl itself.
+    identifier: artistic_perl_1_0_or_gpl_1_0_plus-781b2f48-5747-4d66-d428-c271c1b34947
   - license_expression: gpl-1.0-plus OR artistic-perl-1.0
     matches:
       - score: '100.0'
@@ -3135,6 +3240,7 @@ other_license_detections:
         matched_text: |
           This program is free software; you may redistribute it and/or modify it
           under the same terms as Perl itself.
+    identifier: gpl_1_0_plus_or_artistic_perl_1_0-abf4b96c-fc73-c8e3-29cd-08cded8bef2c
   - license_expression: gpl-1.0-plus OR artistic-perl-1.0
     matches:
       - score: '100.0'
@@ -3150,6 +3256,7 @@ other_license_detections:
         matched_text: |
           This program is free software; you may redistribute it and/or modify it
           under the same terms as Perl itself.
+    identifier: gpl_1_0_plus_or_artistic_perl_1_0-abf4b96c-fc73-c8e3-29cd-08cded8bef2c
   - license_expression: gpl-1.0-plus OR artistic-perl-1.0
     matches:
       - score: '100.0'
@@ -3165,6 +3272,7 @@ other_license_detections:
         matched_text: |
           This program is free software; you may redistribute it and/or modify it
           under the same terms as Perl itself.
+    identifier: gpl_1_0_plus_or_artistic_perl_1_0-abf4b96c-fc73-c8e3-29cd-08cded8bef2c
   - license_expression: gpl-1.0-plus OR artistic-perl-1.0
     matches:
       - score: '100.0'
@@ -3180,6 +3288,7 @@ other_license_detections:
         matched_text: |
           is free software; you can redistribute it and/or modify it
           under the same terms as Perl itself.
+    identifier: gpl_1_0_plus_or_artistic_perl_1_0-3f59d10a-2b40-7221-4e05-ac331bac263d
   - license_expression: artistic-perl-1.0 OR gpl-1.0-plus
     matches:
       - score: '100.0'
@@ -3195,6 +3304,7 @@ other_license_detections:
         matched_text: |
           This program is free software; you can redistribute it and/or modify it
           under the same terms as Perl itself.
+    identifier: artistic_perl_1_0_or_gpl_1_0_plus-5362e445-2780-fe5e-5f5c-8e18d2260a6e
   - license_expression: gpl-1.0-plus OR artistic-perl-1.0
     matches:
       - score: '100.0'
@@ -3211,6 +3321,7 @@ other_license_detections:
           is free software;
           you can redistribute it and/or modify it under the same terms
           as Perl itself.
+    identifier: gpl_1_0_plus_or_artistic_perl_1_0-3f59d10a-2b40-7221-4e05-ac331bac263d
   - license_expression: artistic-perl-1.0 OR gpl-1.0-plus
     matches:
       - score: '56.14'
@@ -3226,6 +3337,7 @@ other_license_detections:
         matched_text: |
           license notice, but it is assumed that it
           is licensed under the same terms as
+    identifier:
   - license_expression: artistic-perl-1.0 OR gpl-1.0-plus
     matches:
       - score: '100.0'
@@ -3241,6 +3353,7 @@ other_license_detections:
         matched_text: |
           This library is free software; you can redistribute it and/or modify it
           under the same terms as Perl itself.
+    identifier: artistic_perl_1_0_or_gpl_1_0_plus-781b2f48-5747-4d66-d428-c271c1b34947
   - license_expression: artistic-perl-1.0 OR gpl-1.0-plus
     matches:
       - score: '100.0'
@@ -3256,6 +3369,7 @@ other_license_detections:
         matched_text: |
           This library is free software; you can redistribute it and/or modify it
           under the same terms as Perl itself.
+    identifier: artistic_perl_1_0_or_gpl_1_0_plus-781b2f48-5747-4d66-d428-c271c1b34947
   - license_expression: artistic-perl-1.0 AND public-domain AND (artistic-2.0 AND public-domain-disclaimer)
     matches:
       - score: '100.0'
@@ -3304,6 +3418,7 @@ other_license_detections:
           This document is available under the same terms as Perl itself. Code
            examples in all the perlfaq documents are in the public domain. Use
            them as you see fit (and at your own risk with no warranty from anyone).
+    identifier: artistic_perl_1_0_and_public_domain_and__artistic_2_0_and_public_domain_disclaimer-2d510dad-1736-1044-1f83-ffc03282e54a
   - license_expression: gpl-1.0-plus OR artistic-perl-1.0
     matches:
       - score: '100.0'
@@ -3320,6 +3435,7 @@ other_license_detections:
           is free software;
           you can redistribute it and/or modify it under the same terms
           as Perl itself.
+    identifier: gpl_1_0_plus_or_artistic_perl_1_0-3f59d10a-2b40-7221-4e05-ac331bac263d
   - license_expression: artistic-perl-1.0 OR gpl-1.0-plus
     matches:
       - score: '100.0'
@@ -3335,6 +3451,7 @@ other_license_detections:
         matched_text: |
           This program is free software; you can redistribute it and/or modify it
           under the same terms as Perl itself.
+    identifier: artistic_perl_1_0_or_gpl_1_0_plus-5362e445-2780-fe5e-5f5c-8e18d2260a6e
   - license_expression: artistic-perl-1.0 OR gpl-1.0-plus
     matches:
       - score: '100.0'
@@ -3350,6 +3467,7 @@ other_license_detections:
         matched_text: |
           This program is free software; you can redistribute it and/or modify it
           under the same terms as Perl itself.
+    identifier: artistic_perl_1_0_or_gpl_1_0_plus-5362e445-2780-fe5e-5f5c-8e18d2260a6e
   - license_expression: gpl-1.0-plus OR artistic-perl-1.0
     matches:
       - score: '100.0'
@@ -3365,6 +3483,7 @@ other_license_detections:
         matched_text: |
           This program is free software; you may redistribute it and/or modify
           it under the same terms as Perl itself.
+    identifier: gpl_1_0_plus_or_artistic_perl_1_0-abf4b96c-fc73-c8e3-29cd-08cded8bef2c
   - license_expression: gpl-1.0-plus OR artistic-perl-1.0
     matches:
       - score: '100.0'
@@ -3380,6 +3499,7 @@ other_license_detections:
         matched_text: |
           This software is free software and can be modified and distributed under
           the same terms as Perl itself.
+    identifier: gpl_1_0_plus_or_artistic_perl_1_0-e8104884-0d49-693f-2246-ae9522b0bf98
   - license_expression: artistic-perl-1.0 OR gpl-1.0-plus
     matches:
       - score: '100.0'
@@ -3395,6 +3515,7 @@ other_license_detections:
         matched_text: |
           This module is free software; you can redistribute it and/or
           modify it under the same terms as Perl itself.
+    identifier: artistic_perl_1_0_or_gpl_1_0_plus-253ad29b-8eea-a58f-0e55-7f1f30b4d132
   - license_expression: artistic-perl-1.0 OR gpl-1.0-plus
     matches:
       - score: '100.0'
@@ -3410,6 +3531,7 @@ other_license_detections:
         matched_text: |
           This program is free software; you can redistribute it and/or modify it
           under the same terms as Perl itself.
+    identifier: artistic_perl_1_0_or_gpl_1_0_plus-5362e445-2780-fe5e-5f5c-8e18d2260a6e
   - license_expression: artistic-perl-1.0 OR gpl-1.0-plus
     matches:
       - score: '100.0'
@@ -3425,6 +3547,7 @@ other_license_detections:
         matched_text: |
           This program is free software; you can redistribute it and/or modify it
           under the same terms as Perl itself.
+    identifier: artistic_perl_1_0_or_gpl_1_0_plus-5362e445-2780-fe5e-5f5c-8e18d2260a6e
   - license_expression: artistic-perl-1.0 OR gpl-1.0-plus
     matches:
       - score: '100.0'
@@ -3440,6 +3563,7 @@ other_license_detections:
         matched_text: |
           This program is free software; you can redistribute it and/or
           modify it under the same terms as Perl itself.
+    identifier: artistic_perl_1_0_or_gpl_1_0_plus-5362e445-2780-fe5e-5f5c-8e18d2260a6e
   - license_expression: artistic-perl-1.0 OR gpl-1.0-plus
     matches:
       - score: '100.0'
@@ -3455,6 +3579,7 @@ other_license_detections:
         matched_text: |
           This program is free software; you can redistribute it and/or
           modify it under the same terms as Perl itself.
+    identifier: artistic_perl_1_0_or_gpl_1_0_plus-5362e445-2780-fe5e-5f5c-8e18d2260a6e
   - license_expression: artistic-perl-1.0 OR gpl-1.0-plus
     matches:
       - score: '100.0'
@@ -3470,6 +3595,7 @@ other_license_detections:
         matched_text: |
           This program is free software; you can redistribute it
           and/or modify it under the same terms as Perl itself.
+    identifier: artistic_perl_1_0_or_gpl_1_0_plus-5362e445-2780-fe5e-5f5c-8e18d2260a6e
   - license_expression: artistic-perl-1.0 OR gpl-1.0-plus
     matches:
       - score: '100.0'
@@ -3485,6 +3611,7 @@ other_license_detections:
         matched_text: |
           This program is free software; you can redistribute it
           and/or modify it under the same terms as Perl itself.
+    identifier: artistic_perl_1_0_or_gpl_1_0_plus-5362e445-2780-fe5e-5f5c-8e18d2260a6e
   - license_expression: (gpl-1.0-plus OR artistic-perl-1.0) AND public-domain
     matches:
       - score: '100.0'
@@ -3516,6 +3643,7 @@ other_license_detections:
           encouraged to use this code in your own programs for fun
           or for profit as you see fit.  A simple comment in the code giving
           credit would be courteous but is not required.
+    identifier: gpl_1_0_plus_or_artistic_perl_1_0__and_public_domain-1eb230bb-78ce-5300-5012-920fd3811563
   - license_expression: artistic-perl-1.0 OR gpl-1.0-plus
     matches:
       - score: '100.0'
@@ -3531,6 +3659,7 @@ other_license_detections:
         matched_text: |
           This program is free software; you can redistribute it
           and/or modify it under the same terms as Perl itself.
+    identifier: artistic_perl_1_0_or_gpl_1_0_plus-5362e445-2780-fe5e-5f5c-8e18d2260a6e
   - license_expression: artistic-perl-1.0 OR gpl-1.0-plus
     matches:
       - score: '100.0'
@@ -3546,6 +3675,7 @@ other_license_detections:
         matched_text: |
           This program is free software; you can redistribute it
           and/or modify it under the same terms as Perl itself.
+    identifier: artistic_perl_1_0_or_gpl_1_0_plus-5362e445-2780-fe5e-5f5c-8e18d2260a6e
   - license_expression: cc0-1.0
     matches:
       - score: '100.0'
@@ -3562,6 +3692,7 @@ other_license_detections:
           The file links to http://creativecommons.org/publicdomain/zero/1.0/
           and the full license text as retrieved from there can be found at the
           end of this file.
+    identifier: cc0_1_0-ce0a113c-2f14-79cb-71e2-f8d26c4e9bc9
   - license_expression: gpl-1.0-plus OR artistic-perl-1.0
     matches:
       - score: '100.0'
@@ -3577,6 +3708,7 @@ other_license_detections:
         matched_text: |
           This module is free software. It may be used, redistributed and/or
           modified under the same terms as Perl itself.
+    identifier: gpl_1_0_plus_or_artistic_perl_1_0-e8fc6fc9-6684-3799-00a7-dc38172bda29
   - license_expression: gpl-1.0-plus OR artistic-perl-1.0
     matches:
       - score: '99.0'
@@ -3594,6 +3726,7 @@ other_license_detections:
 
           This library is free software; you may redistribute and/or modify it
           under the same terms as Perl itself.
+    identifier: gpl_1_0_plus_or_artistic_perl_1_0-825f9c5f-31da-bfc2-ad53-0cceccade3a2
   - license_expression: artistic-perl-1.0 OR gpl-2.0-plus
     matches:
       - score: '100.0'
@@ -3614,6 +3747,7 @@ other_license_detections:
           or (2) version 2 of the GNU General Public License as published by the
           Free Software Foundation, or (3) any later version of the GNU General
           Public License.
+    identifier: artistic_perl_1_0_or_gpl_2_0_plus-b35b8478-ff32-af71-be53-77500ee9fe8c
   - license_expression: gpl-1.0-plus OR artistic-perl-1.0
     matches:
       - score: '100.0'
@@ -3632,6 +3766,7 @@ other_license_detections:
           ----------------------------------------
           These distributions include no copyright notices but have
           the same explicit licensing information.
+    identifier: gpl_1_0_plus_or_artistic_perl_1_0-4b362e04-cf63-aed3-04d0-700b12e560b9
   - license_expression: gpl-1.0-plus OR artistic-1.0
     matches:
       - score: '100.0'
@@ -3647,6 +3782,7 @@ other_license_detections:
         matched_text: |
           This is free software; you can redistribute it and/or modify it under
           the same terms as the Perl 5 programming language system itself.
+    identifier: gpl_1_0_plus_or_artistic_1_0-83290536-f01d-d3fa-2e0c-62204354be7a
   - license_expression: gpl-1.0-plus OR artistic-perl-1.0
     matches:
       - score: '100.0'
@@ -3662,6 +3798,7 @@ other_license_detections:
         matched_text: |
           This module is free software, you may distribute it under the same
           terms as Perl.
+    identifier: gpl_1_0_plus_or_artistic_perl_1_0-5d9e5932-ca64-fd4b-88f4-3bdacbc03f1d
   - license_expression: bsd-new AND (gpl-1.0-plus OR artistic-perl-1.0)
     matches:
       - score: '99.0'
@@ -3688,6 +3825,7 @@ other_license_detections:
         matched_text: |
           It is assumed that the other parts are licensed under the same
           terms as the rest of the distribution.
+    identifier: bsd_new_and__gpl_1_0_plus_or_artistic_perl_1_0-66a31b89-70bb-c59f-36de-c76a8ce944e0
   - license_expression: artistic-perl-1.0 OR gpl-1.0-plus
     matches:
       - score: '100.0'
@@ -3703,6 +3841,7 @@ other_license_detections:
         matched_text: |
           This module is free software; you can redistribute it and/or
           modify it under the same terms as Perl itself.
+    identifier: artistic_perl_1_0_or_gpl_1_0_plus-253ad29b-8eea-a58f-0e55-7f1f30b4d132
   - license_expression: unicode
     matches:
       - score: '100.0'
@@ -3716,6 +3855,7 @@ other_license_detections:
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/unicode_14.RULE
         matched_text: For terms of use, see http://www.unicode.org/terms_of_use.html
+    identifier: unicode-694376d5-aeeb-e4bc-a4e1-095d162d3862
   - license_expression: artistic-perl-1.0 OR gpl-1.0-plus
     matches:
       - score: '100.0'
@@ -3731,6 +3871,7 @@ other_license_detections:
         matched_text: |
           This module is free software; you can redistribute it and/or
           modify it under the same terms as Perl itself.
+    identifier: artistic_perl_1_0_or_gpl_1_0_plus-253ad29b-8eea-a58f-0e55-7f1f30b4d132
   - license_expression: gpl-1.0-plus OR artistic-perl-1.0
     matches:
       - score: '100.0'
@@ -3749,6 +3890,7 @@ other_license_detections:
 
           The "Perl for Win32" source code was licensed under the same terms
           as Perl itself and contained this copyright notice:
+    identifier: gpl_1_0_plus_or_artistic_perl_1_0-8a0e346e-31dc-322f-05d4-2902f683ce20
   - license_expression: gpl-1.0-plus OR artistic-perl-1.0
     matches:
       - score: '100.0'
@@ -3764,6 +3906,7 @@ other_license_detections:
         matched_text: |
           This module is free software. It may be used, redistributed
           and/or modified under the same terms as Perl itself.
+    identifier: gpl_1_0_plus_or_artistic_perl_1_0-e8fc6fc9-6684-3799-00a7-dc38172bda29
   - license_expression: artistic-perl-1.0 OR gpl-1.0-plus
     matches:
       - score: '99.0'
@@ -3779,6 +3922,7 @@ other_license_detections:
         matched_text: |
           There is no copyright or license information in these distributions.
           It is assumed that they are licensed under the same terms as Perl itself.
+    identifier: artistic_perl_1_0_or_gpl_1_0_plus-8aa4724c-ae7c-4733-1063-b0a456c393d4
   - license_expression: artistic-perl-1.0 OR gpl-1.0-plus
     matches:
       - score: '100.0'
@@ -3794,6 +3938,7 @@ other_license_detections:
         matched_text: |
           This module is free software; you can redistribute and/or modify
           it under the same terms as Perl itself.
+    identifier: artistic_perl_1_0_or_gpl_1_0_plus-32b9c99f-78d4-e645-c66f-2f10debb1d78
   - license_expression: gpl-1.0-plus OR artistic-perl-1.0
     matches:
       - score: '100.0'
@@ -3809,6 +3954,7 @@ other_license_detections:
         matched_text: |
           This module is free software. It may be used, redistributed
           and/or modified under the same terms as Perl itself.
+    identifier: gpl_1_0_plus_or_artistic_perl_1_0-e8fc6fc9-6684-3799-00a7-dc38172bda29
   - license_expression: artistic-perl-1.0 OR gpl-1.0-plus
     matches:
       - score: '100.0'
@@ -3824,6 +3970,7 @@ other_license_detections:
         matched_text: |
           This program is free software; you can redistribute it and/or
           modify it under the same terms as Perl itself.
+    identifier: artistic_perl_1_0_or_gpl_1_0_plus-5362e445-2780-fe5e-5f5c-8e18d2260a6e
   - license_expression: artistic-perl-1.0 OR gpl-1.0-plus
     matches:
       - score: '100.0'
@@ -3839,6 +3986,7 @@ other_license_detections:
         matched_text: |
           This library is free software; you can redistribute it and/or
           modify it under the same terms as Perl itself.
+    identifier: artistic_perl_1_0_or_gpl_1_0_plus-781b2f48-5747-4d66-d428-c271c1b34947
   - license_expression: (artistic-perl-1.0 OR gpl-1.0-plus) AND (gpl-1.0-plus OR artistic-perl-1.0)
     matches:
       - score: '100.0'
@@ -3867,6 +4015,7 @@ other_license_detections:
         matched_text: |
           Perl 5
           Porters, which was released under the same license terms.
+    identifier: artistic_perl_1_0_or_gpl_1_0_plus__and__gpl_1_0_plus_or_artistic_perl_1_0-00e61bda-5cd5-19fb-b521-ca0d569c0379
   - license_expression: gpl-1.0-plus OR artistic-perl-1.0
     matches:
       - score: '100.0'
@@ -3882,6 +4031,7 @@ other_license_detections:
         matched_text: |
           This module is free software. It may be used, redistributed
           and/or modified under the same terms as Perl itself.
+    identifier: gpl_1_0_plus_or_artistic_perl_1_0-e8fc6fc9-6684-3799-00a7-dc38172bda29
   - license_expression: gpl-1.0-plus OR artistic-1.0
     matches:
       - score: '100.0'
@@ -3897,6 +4047,7 @@ other_license_detections:
         matched_text: |
           This is free software; you can redistribute it and/or modify it under
           the same terms as the Perl 5 programming language system itself.
+    identifier: gpl_1_0_plus_or_artistic_1_0-83290536-f01d-d3fa-2e0c-62204354be7a
   - license_expression: artistic-perl-1.0 OR gpl-1.0-plus
     matches:
       - score: '100.0'
@@ -3912,6 +4063,7 @@ other_license_detections:
         matched_text: |
           This library is free software; you can redistribute it and/or modify
           it under the same terms as Perl itself.
+    identifier: artistic_perl_1_0_or_gpl_1_0_plus-781b2f48-5747-4d66-d428-c271c1b34947
   - license_expression: artistic-perl-1.0 OR gpl-1.0-plus
     matches:
       - score: '100.0'
@@ -3927,6 +4079,7 @@ other_license_detections:
         matched_text: |
           You can redistribute and/or modify this document under the same terms
           as Perl itself.
+    identifier: artistic_perl_1_0_or_gpl_1_0_plus-bc101dac-fad1-f7aa-f226-ac50d2a1e9f3
   - license_expression: artistic-perl-1.0 OR gpl-1.0-plus
     matches:
       - score: '100.0'
@@ -3942,6 +4095,7 @@ other_license_detections:
         matched_text: |
           This program is free software; you can redistribute it and/or
           modify it under the same terms as Perl itself.
+    identifier: artistic_perl_1_0_or_gpl_1_0_plus-5362e445-2780-fe5e-5f5c-8e18d2260a6e
   - license_expression: artistic-perl-1.0 OR gpl-1.0-plus
     matches:
       - score: '100.0'
@@ -3971,6 +4125,7 @@ other_license_detections:
           This module is distributed under the same terms as Perl itself.
           Feel free to use, modify and redistribute it as long as you retain
           the correct attribution.
+    identifier: artistic_perl_1_0_or_gpl_1_0_plus-022b9900-7aee-6501-6734-49f6ea2c95da
   - license_expression: gpl-1.0-plus OR artistic-perl-1.0
     matches:
       - score: '100.0'
@@ -3984,6 +4139,7 @@ other_license_detections:
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-1.0-plus_or_artistic-perl-1.0_11.RULE
         matched_text: This package has the same copyright and license as the perl core.
+    identifier: gpl_1_0_plus_or_artistic_perl_1_0-00c5b5e7-0cc5-6dc8-2914-7a86e3fe305f
   - license_expression: artistic-perl-1.0 OR gpl-1.0-plus
     matches:
       - score: '100.0'
@@ -3999,6 +4155,7 @@ other_license_detections:
         matched_text: |
           This program is free software; you can redistribute it and/or modify
           it under the same terms as Perl itself.
+    identifier: artistic_perl_1_0_or_gpl_1_0_plus-5362e445-2780-fe5e-5f5c-8e18d2260a6e
   - license_expression: gpl-1.0-plus OR artistic-perl-1.0
     matches:
       - score: '100.0'
@@ -4012,6 +4169,7 @@ other_license_detections:
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-1.0-plus_or_artistic-perl-1.0_27.RULE
         matched_text: This document may be distributed under the same terms as Perl itself.
+    identifier: gpl_1_0_plus_or_artistic_perl_1_0-59bdc9da-ad6a-3a9f-ac53-9fc77d62ac40
   - license_expression: gpl-1.0-plus OR artistic-perl-1.0
     matches:
       - score: '100.0'
@@ -4027,6 +4185,7 @@ other_license_detections:
         matched_text: |
           This program is free software; you may redistribute it and/or modify
           it under the same terms as Perl itself.
+    identifier: gpl_1_0_plus_or_artistic_perl_1_0-abf4b96c-fc73-c8e3-29cd-08cded8bef2c
   - license_expression: gpl-1.0-plus OR artistic-perl-1.0
     matches:
       - score: '100.0'
@@ -4040,6 +4199,7 @@ other_license_detections:
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-1.0-plus_or_artistic-perl-1.0_29.RULE
         matched_text: This program is distributed under the same terms as perl itself.
+    identifier: gpl_1_0_plus_or_artistic_perl_1_0-2bcbbce8-54f0-bccc-2196-d6690e456d84
   - license_expression: artistic-perl-1.0 OR gpl-1.0-plus
     matches:
       - score: '100.0'
@@ -4055,6 +4215,7 @@ other_license_detections:
         matched_text: |
           This module is free software; you can redistribute it and/or modify it
           under the same terms as Perl itself.
+    identifier: artistic_perl_1_0_or_gpl_1_0_plus-253ad29b-8eea-a58f-0e55-7f1f30b4d132
   - license_expression: gpl-1.0-plus OR artistic-perl-1.0
     matches:
       - score: '100.0'
@@ -4070,6 +4231,7 @@ other_license_detections:
         matched_text: |
           This program is free software; you may redistribute it and/or
           modify it under the same terms as Perl itself.
+    identifier: gpl_1_0_plus_or_artistic_perl_1_0-abf4b96c-fc73-c8e3-29cd-08cded8bef2c
   - license_expression: artistic-perl-1.0 OR gpl-1.0-plus
     matches:
       - score: '100.0'
@@ -4085,6 +4247,7 @@ other_license_detections:
         matched_text: |
           This program is free software; you can redistribute it and/or modify
           it under the same terms as Perl itself.
+    identifier: artistic_perl_1_0_or_gpl_1_0_plus-5362e445-2780-fe5e-5f5c-8e18d2260a6e
   - license_expression: (artistic-perl-1.0 OR gpl-1.0-plus) AND bsd-new
     matches:
       - score: '100.0'
@@ -4105,6 +4268,7 @@ other_license_detections:
 
           but portions of it have been taken from a BSD variant and are licensed
           under the terms of the "BSD-3-clause-GENERIC" license included in this file.
+    identifier: artistic_perl_1_0_or_gpl_1_0_plus__and_bsd_new-4ecf727d-f402-75d3-46ee-1a9cb87ec7cb
   - license_expression: artistic-perl-1.0 OR gpl-1.0-plus
     matches:
       - score: '100.0'
@@ -4120,6 +4284,7 @@ other_license_detections:
         matched_text: |
           This library is free software; you can redistribute it and/or modify it
           under the same terms as Perl itself.
+    identifier: artistic_perl_1_0_or_gpl_1_0_plus-781b2f48-5747-4d66-d428-c271c1b34947
   - license_expression: artistic-perl-1.0 OR gpl-1.0-plus
     matches:
       - score: '100.0'
@@ -4135,6 +4300,7 @@ other_license_detections:
         matched_text: |
           This program is free software; you can redistribute it and/or modify
           it under the same terms as Perl
+    identifier: artistic_perl_1_0_or_gpl_1_0_plus-0aab4f56-a9e1-f787-6f06-4a75c1c9b81e
   - license_expression: gpl-1.0-plus OR artistic-perl-1.0
     matches:
       - score: '100.0'
@@ -4150,6 +4316,7 @@ other_license_detections:
         matched_text: |
           You may redistribute only under the same terms as Perl 5, as specified
           in the README file that comes with the distribution.
+    identifier: gpl_1_0_plus_or_artistic_perl_1_0-8a66f022-d8b4-4b86-212a-934dd2bc3089
   - license_expression: gpl-1.0-plus OR artistic-perl-1.0
     matches:
       - score: '100.0'
@@ -4165,6 +4332,7 @@ other_license_detections:
         matched_text: |
           You may redistribute only under the same terms as Perl 5, as specified
           in the README file that comes with the distribution.
+    identifier: gpl_1_0_plus_or_artistic_perl_1_0-8a66f022-d8b4-4b86-212a-934dd2bc3089
   - license_expression: gpl-1.0-plus OR artistic-perl-1.0
     matches:
       - score: '100.0'
@@ -4180,6 +4348,7 @@ other_license_detections:
         matched_text: |
           You may redistribute only under the same terms as Perl 5, as specified
           in the README file that comes with the distribution.
+    identifier: gpl_1_0_plus_or_artistic_perl_1_0-8a66f022-d8b4-4b86-212a-934dd2bc3089
   - license_expression: artistic-perl-1.0 OR gpl-1.0-plus
     matches:
       - score: '100.0'
@@ -4195,6 +4364,7 @@ other_license_detections:
         matched_text: |
           You may distribute under the terms of either the GNU General Public
           License or the Artistic License, as specified in the README file.
+    identifier: artistic_perl_1_0_or_gpl_1_0_plus-bce9eb76-af55-8217-d862-796e5d7accc7
   - license_expression: artistic-perl-1.0 OR gpl-1.0-plus
     matches:
       - score: '100.0'
@@ -4211,6 +4381,7 @@ other_license_detections:
           This package is free software and is provided "as is" without express
           or implied warranty.  It may be used, redistributed and/or modified
           under the same terms as Perl itself.
+    identifier: artistic_perl_1_0_or_gpl_1_0_plus-3b848d2f-500b-c107-aa42-9eb5c222ff60
   - license_expression: artistic-perl-1.0 OR gpl-1.0-plus
     matches:
       - score: '100.0'
@@ -4226,6 +4397,7 @@ other_license_detections:
         matched_text: |
           This program is free software; you can redistribute it and/or modify
           it under the same terms as Perl itself.
+    identifier: artistic_perl_1_0_or_gpl_1_0_plus-5362e445-2780-fe5e-5f5c-8e18d2260a6e
   - license_expression: artistic-perl-1.0 OR gpl-1.0-plus
     matches:
       - score: '100.0'
@@ -4241,6 +4413,7 @@ other_license_detections:
         matched_text: |
           This program is free software; you can redistribute it and/or modify
           it under the same terms as Perl itself.
+    identifier: artistic_perl_1_0_or_gpl_1_0_plus-5362e445-2780-fe5e-5f5c-8e18d2260a6e
   - license_expression: artistic-perl-1.0 OR gpl-1.0-plus
     matches:
       - score: '100.0'
@@ -4256,6 +4429,7 @@ other_license_detections:
         matched_text: |
           You may distribute under the terms of either the GNU General Public
           License or the Artistic License, as specified in the README file.
+    identifier: artistic_perl_1_0_or_gpl_1_0_plus-bce9eb76-af55-8217-d862-796e5d7accc7
   - license_expression: artistic-perl-1.0 OR gpl-1.0-plus
     matches:
       - score: '95.0'
@@ -4271,6 +4445,7 @@ other_license_detections:
         matched_text: |
           There is no license information included. It is assumed that this
           distribution is licensed under the same terms as Perl itself.
+    identifier: artistic_perl_1_0_or_gpl_1_0_plus-1a86e593-e255-ed0a-e5a1-d8fdbea5e365
   - license_expression: artistic-perl-1.0 OR gpl-1.0-plus
     matches:
       - score: '100.0'
@@ -4286,6 +4461,7 @@ other_license_detections:
         matched_text: |
           You may distribute under the terms of either the GNU General Public
           License or the Artistic License, as specified in the README file.
+    identifier: artistic_perl_1_0_or_gpl_1_0_plus-bce9eb76-af55-8217-d862-796e5d7accc7
   - license_expression: artistic-perl-1.0 OR gpl-1.0-plus
     matches:
       - score: '100.0'
@@ -4301,6 +4477,7 @@ other_license_detections:
         matched_text: |
           This program is free software; you can redistribute and/or modify it
           under the same terms as Perl itself.
+    identifier: artistic_perl_1_0_or_gpl_1_0_plus-0c90b422-60c3-e525-05ea-c266dd2a51b1
   - license_expression: artistic-perl-1.0 OR gpl-1.0-plus
     matches:
       - score: '100.0'
@@ -4316,6 +4493,7 @@ other_license_detections:
         matched_text: |
           This program is free software; you can redistribute it and/or
           modify it under the same terms as Perl itself.
+    identifier: artistic_perl_1_0_or_gpl_1_0_plus-5362e445-2780-fe5e-5f5c-8e18d2260a6e
   - license_expression: artistic-perl-1.0 OR gpl-1.0-plus
     matches:
       - score: '95.0'
@@ -4332,6 +4510,7 @@ other_license_detections:
           There is no license information included that clearly applies to the
           whole of this distribution. It is assumed that it is licensed under
           the same terms as Perl itself.
+    identifier: artistic_perl_1_0_or_gpl_1_0_plus-baa14b4d-271c-af68-77f4-4cfd796ec9ea
   - license_expression: artistic-perl-1.0 OR gpl-1.0-plus
     matches:
       - score: '95.0'
@@ -4346,6 +4525,7 @@ other_license_detections:
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/artistic-perl-1.0_or_gpl-1.0-plus_40.RULE
         matched_text: It is assumed that this file is licensed under the same terms as Perl
           itself.
+    identifier: artistic_perl_1_0_or_gpl_1_0_plus-c6a20c55-7328-0e53-7889-7c78c5415d0b
   - license_expression: artistic-perl-1.0 OR gpl-1.0-plus
     matches:
       - score: '100.0'
@@ -4361,6 +4541,7 @@ other_license_detections:
         matched_text: |
           You may distribute under the terms of either the GNU General Public
           License or the Artistic License, as specified in the README file.
+    identifier: artistic_perl_1_0_or_gpl_1_0_plus-bce9eb76-af55-8217-d862-796e5d7accc7
   - license_expression: gpl-1.0-plus OR artistic-perl-1.0
     matches:
       - score: '100.0'
@@ -4377,6 +4558,7 @@ other_license_detections:
           The license in the file is specified as
 
            License:     Artistic/GPL
+    identifier: gpl_1_0_plus_or_artistic_perl_1_0-21b340f7-1c33-9e19-4d95-6db009738447
   - license_expression: artistic-perl-1.0 OR gpl-1.0-plus
     matches:
       - score: '100.0'
@@ -4392,6 +4574,7 @@ other_license_detections:
         matched_text: |
           This program is free software; you can redistribute it and/or modify
           it under the same terms as Perl itself.
+    identifier: artistic_perl_1_0_or_gpl_1_0_plus-5362e445-2780-fe5e-5f5c-8e18d2260a6e
   - license_expression: artistic-1.0
     matches:
       - score: '90.0'
@@ -4405,6 +4588,7 @@ other_license_detections:
         rule_relevance: 90
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/artistic-1.0_11.RULE
         matched_text: the artistic license.
+    identifier: artistic_1_0-2ff80857-def0-0ed3-86d0-f745062039f9
   - license_expression: artistic-perl-1.0 OR gpl-1.0-plus
     matches:
       - score: '95.0'
@@ -4420,6 +4604,7 @@ other_license_detections:
         matched_text: |
           There is no license information in this distribution.
           It is assumed that it is licensed under the same terms as Perl itself.
+    identifier: artistic_perl_1_0_or_gpl_1_0_plus-71dd85f2-c2a8-e634-a472-12fad824a9b7
   - license_expression: artistic-perl-1.0 OR gpl-1.0-plus
     matches:
       - score: '95.0'
@@ -4448,6 +4633,7 @@ other_license_detections:
         matched_text: |
           This library is free software; you can redistribute it and/or
            modify it under the same terms as Perl itself.
+    identifier: artistic_perl_1_0_or_gpl_1_0_plus-4608b132-68af-fc8c-5b55-7bfbd0034d22
   - license_expression: gpl-1.0-plus OR artistic-perl-1.0
     matches:
       - score: '100.0'
@@ -4464,6 +4650,7 @@ other_license_detections:
           This library is free software; you can redistribute it and/or modify
           it under the same terms as Perl itself, either Perl version 5.8.7 or,
           at your option, any later version of Perl 5 you may have available.
+    identifier: gpl_1_0_plus_or_artistic_perl_1_0-02d238e7-dfb3-3d0f-17b5-552ede2bf765
   - license_expression: artistic-perl-1.0 OR gpl-1.0-plus
     matches:
       - score: '100.0'
@@ -4479,6 +4666,7 @@ other_license_detections:
         matched_text: |
           This library is free software; you can redistribute it and/or modify
           it under the same terms as Perl itself.
+    identifier: artistic_perl_1_0_or_gpl_1_0_plus-781b2f48-5747-4d66-d428-c271c1b34947
   - license_expression: artistic-perl-1.0 OR gpl-1.0-plus
     matches:
       - score: '100.0'
@@ -4494,6 +4682,7 @@ other_license_detections:
         matched_text: |
           You may distribute under the terms of either the GNU General Public
           License or the Artistic License, as specified in the README file.
+    identifier: artistic_perl_1_0_or_gpl_1_0_plus-bce9eb76-af55-8217-d862-796e5d7accc7
   - license_expression: artistic-perl-1.0
     matches:
       - score: '99.0'
@@ -4507,6 +4696,7 @@ other_license_detections:
         rule_relevance: 99
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/artistic-perl-1.0_7.RULE
         matched_text: This program is distributed under the Artistic License.
+    identifier: artistic_perl_1_0-2d6db20c-52be-912f-b056-8d081e123f91
   - license_expression: artistic-perl-1.0 OR gpl-1.0-plus
     matches:
       - score: '95.0'
@@ -4522,6 +4712,7 @@ other_license_detections:
         matched_text: |
           There is no copyright or license information in this distribution.
           It is assumed that it is licensed under the same terms as Perl itself.
+    identifier: artistic_perl_1_0_or_gpl_1_0_plus-83df0e4e-ee81-a531-f469-f98c96477f44
   - license_expression: artistic-perl-1.0 OR gpl-1.0-plus
     matches:
       - score: '100.0'
@@ -4537,6 +4728,7 @@ other_license_detections:
         matched_text: |
           You may distribute under the terms of either the GNU General Public
           License or the Artistic License, as specified in the README file.
+    identifier: artistic_perl_1_0_or_gpl_1_0_plus-bce9eb76-af55-8217-d862-796e5d7accc7
   - license_expression: artistic-perl-1.0 OR gpl-1.0-plus
     matches:
       - score: '100.0'
@@ -4552,6 +4744,7 @@ other_license_detections:
         matched_text: |
           This library is free software; you can redistribute it and/or modify
           it under the same terms as Perl itself.
+    identifier: artistic_perl_1_0_or_gpl_1_0_plus-781b2f48-5747-4d66-d428-c271c1b34947
   - license_expression: artistic-perl-1.0 OR gpl-1.0-plus
     matches:
       - score: '100.0'
@@ -4567,6 +4760,7 @@ other_license_detections:
         matched_text: |
           This program is free software; you can redistribute it and/or modify
           it under the same terms as Perl itself.
+    identifier: artistic_perl_1_0_or_gpl_1_0_plus-5362e445-2780-fe5e-5f5c-8e18d2260a6e
   - license_expression: gpl-1.0-plus OR artistic-perl-1.0
     matches:
       - score: '100.0'
@@ -4580,6 +4774,7 @@ other_license_detections:
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-1.0-plus_or_artistic-perl-1.0_27.RULE
         matched_text: This document may be distributed under the same terms as Perl itself.
+    identifier: gpl_1_0_plus_or_artistic_perl_1_0-59bdc9da-ad6a-3a9f-ac53-9fc77d62ac40
   - license_expression: gpl-1.0-plus OR artistic-perl-1.0
     matches:
       - score: '100.0'
@@ -4595,6 +4790,7 @@ other_license_detections:
         matched_text: |
           You can use and redistribute this document under the same terms as Perl
           itself.
+    identifier: gpl_1_0_plus_or_artistic_perl_1_0-995430fd-ab65-9897-2857-c13429160160
   - license_expression: (gpl-1.0-plus OR artistic-perl-1.0) AND public-domain
     matches:
       - score: '100.0'
@@ -4626,6 +4822,7 @@ other_license_detections:
           derivatives thereof in your own programs for fun or for profit as you
           see fit. A simple comment in the code giving credit to the FAQ would
           be courteous but is not required.
+    identifier: gpl_1_0_plus_or_artistic_perl_1_0__and_public_domain-93862a24-32df-2e58-a989-877ba708872a
   - license_expression: artistic-2.0 AND public-domain-disclaimer
     matches:
       - score: '100.0'
@@ -4642,6 +4839,7 @@ other_license_detections:
           This document is available under the same terms as Perl itself. Code
           examples in all the perlfaq documents are in the public domain. Use
           them as you see fit (and at your own risk with no warranty from anyone).
+    identifier: artistic_2_0_and_public_domain_disclaimer-0f623011-76a2-9362-7a9e-866e141da819
   - license_expression: gpl-1.0-plus OR artistic-perl-1.0
     matches:
       - score: '100.0'
@@ -4655,6 +4853,7 @@ other_license_detections:
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-1.0-plus_or_artistic-perl-1.0_27.RULE
         matched_text: This document may be distributed under the same terms as Perl itself.
+    identifier: gpl_1_0_plus_or_artistic_perl_1_0-59bdc9da-ad6a-3a9f-ac53-9fc77d62ac40
   - license_expression: gpl-1.0-plus OR artistic-perl-1.0
     matches:
       - score: '100.0'
@@ -4668,6 +4867,7 @@ other_license_detections:
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-1.0-plus_or_artistic-perl-1.0_27.RULE
         matched_text: This document may be distributed under the same terms as Perl itself.
+    identifier: gpl_1_0_plus_or_artistic_perl_1_0-59bdc9da-ad6a-3a9f-ac53-9fc77d62ac40
   - license_expression: gpl-1.0-plus OR artistic-perl-1.0
     matches:
       - score: '100.0'
@@ -4681,6 +4881,7 @@ other_license_detections:
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-1.0-plus_or_artistic-perl-1.0_27.RULE
         matched_text: This document may be distributed under the same terms as Perl itself.
+    identifier: gpl_1_0_plus_or_artistic_perl_1_0-59bdc9da-ad6a-3a9f-ac53-9fc77d62ac40
   - license_expression: (gpl-1.0-plus OR artistic-perl-1.0) AND public-domain
     matches:
       - score: '100.0'
@@ -4712,6 +4913,7 @@ other_license_detections:
           encouraged to use this code in your own programs for fun or for profit
           as you see fit.  A simple comment in the code giving credit would be
           courteous but is not required.
+    identifier: gpl_1_0_plus_or_artistic_perl_1_0__and_public_domain-1eb230bb-78ce-5300-5012-920fd3811563
   - license_expression: artistic-perl-1.0 OR gpl-1.0-plus
     matches:
       - score: '100.0'
@@ -4727,6 +4929,7 @@ other_license_detections:
         matched_text: |
           This program is free software; you can redistribute it and/or modify it under
           the same terms as Perl itself.
+    identifier: artistic_perl_1_0_or_gpl_1_0_plus-5362e445-2780-fe5e-5f5c-8e18d2260a6e
   - license_expression: (gpl-1.0-plus OR artistic-perl-1.0) AND public-domain
     matches:
       - score: '100.0'
@@ -4758,6 +4961,7 @@ other_license_detections:
           encouraged to use this code in your own programs for fun or for profit
           as you see fit.  A simple comment in the code giving credit would be
           courteous but is not required.
+    identifier: gpl_1_0_plus_or_artistic_perl_1_0__and_public_domain-1eb230bb-78ce-5300-5012-920fd3811563
   - license_expression: gpl-1.0-plus OR artistic-perl-1.0
     matches:
       - score: '100.0'
@@ -4771,6 +4975,7 @@ other_license_detections:
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-1.0-plus_or_artistic-perl-1.0_27.RULE
         matched_text: This document may be distributed under the same terms as Perl itself.
+    identifier: gpl_1_0_plus_or_artistic_perl_1_0-59bdc9da-ad6a-3a9f-ac53-9fc77d62ac40
   - license_expression: gpl-1.0-plus OR artistic-perl-1.0
     matches:
       - score: '100.0'
@@ -4784,6 +4989,7 @@ other_license_detections:
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-1.0-plus_or_artistic-perl-1.0_27.RULE
         matched_text: This document may be distributed under the same terms as Perl itself.
+    identifier: gpl_1_0_plus_or_artistic_perl_1_0-59bdc9da-ad6a-3a9f-ac53-9fc77d62ac40
   - license_expression: gpl-1.0-plus OR artistic-perl-1.0
     matches:
       - score: '100.0'
@@ -4797,6 +5003,7 @@ other_license_detections:
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-1.0-plus_or_artistic-perl-1.0_27.RULE
         matched_text: This document may be distributed under the same terms as Perl itself.
+    identifier: gpl_1_0_plus_or_artistic_perl_1_0-59bdc9da-ad6a-3a9f-ac53-9fc77d62ac40
   - license_expression: artistic-perl-1.0 OR gpl-1.0-plus
     matches:
       - score: '100.0'
@@ -4812,6 +5019,7 @@ other_license_detections:
         matched_text: |
           This program is free software; you can redistribute it and/or
           modify it under the same terms as Perl itself.
+    identifier: artistic_perl_1_0_or_gpl_1_0_plus-5362e445-2780-fe5e-5f5c-8e18d2260a6e
   - license_expression: artistic-perl-1.0 OR artistic-dist-1.0 OR gpl-1.0-plus
     matches:
       - score: '100.0'
@@ -4841,6 +5049,7 @@ other_license_detections:
           differs slightly from the one that is in /usr/share/common-licenses
           on Debian systems, and can be found later in this file under the
           "Artistic-dist" tag.
+    identifier: artistic_perl_1_0_or_artistic_dist_1_0_or_gpl_1_0_plus-9cd54d77-c838-d496-0a92-de100a6c75bc
   - license_expression: artistic-dist-1.0
     matches:
       - score: '100.0'
@@ -4857,6 +5066,7 @@ other_license_detections:
           This subdirectory contains unmodified 'dist' code that is
           licensed under the modified Artistic license detailed below
           under the "Artistic-dist" tag.
+    identifier: artistic_dist_1_0-52936621-27b8-5371-2fc4-9a5b06005497
   - license_expression: artistic-dist-1.0 OR gpl-1.0-plus
     matches:
       - score: '100.0'
@@ -4895,6 +5105,7 @@ other_license_detections:
 
           The modified license can be found later in this file under the
           "Artistic-dist" tag.
+    identifier: artistic_dist_1_0_or_gpl_1_0_plus-7fb72184-972c-40cb-2bf5-2a39c35cbc5a
   - license_expression: (gpl-1.0-plus OR artistic-perl-1.0) AND mit
     matches:
       - score: '100.0'
@@ -4927,6 +5138,7 @@ other_license_detections:
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_577.RULE
         matched_text: under the Expat license.
+    identifier: gpl_1_0_plus_or_artistic_perl_1_0__and_mit-96b88a5a-57e2-5b8b-99de-0b9196e7d3fc
   - license_expression: artistic-perl-1.0 OR gpl-1.0-plus
     matches:
       - score: '95.0'
@@ -4944,6 +5156,7 @@ other_license_detections:
           and/or modified under the same terms as Perl itself. It is assumed that
           other contributors have placed their contributions under a compatible
           license.
+    identifier: artistic_perl_1_0_or_gpl_1_0_plus-9e3e18ef-0be8-4c4a-be5c-87540031058f
 copyright: |
   Perl is Copyright (C) 1987-2018 by Larry Wall and others. All rights reserved.
   Copyright (c) 1996-2006, Nick Ing-Simmons

@@ -45,6 +45,7 @@ other_license_detections:
           2. Altered source versions must be plainly marked as such, and must not be
              misrepresented as being the original software.
           3. This notice may not be removed or altered from any source distribution.
+    identifier: zlib-9a572338-50f0-922a-4ff5-942f61bbd11b
   - license_expression: mit
     matches:
       - score: '100.0'
@@ -77,6 +78,7 @@ other_license_detections:
           ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
           CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
           SOFTWARE.
+    identifier: mit-cacd5c0c-204a-85c2-affc-e4c125b2492a
   - license_expression: gpl-2.0
     matches:
       - score: '100.0'
@@ -116,6 +118,7 @@ other_license_detections:
 
           On Debian systems, the complete text of the GNU General Public
           License version 2 can be found in `/usr/share/common-licenses/GPL-2'.
+    identifier: gpl_2_0-f0da9233-5233-7bfb-cd4d-15c9cbd6a410
   - license_expression: bsd-new
     matches:
       - score: '99.52'
@@ -150,6 +153,7 @@ other_license_detections:
           ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
           (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
           SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+    identifier: bsd_new-e84c2b3c-fdef-54d9-0d80-846b468be913
 copyright: |
   2013-2018, Yann Collet
   2016, Przemyslaw Skibinski

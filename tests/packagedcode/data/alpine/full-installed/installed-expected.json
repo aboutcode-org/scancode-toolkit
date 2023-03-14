@@ -51,7 +51,8 @@
             "rule_url": null,
             "matched_text": "mit"
           }
-        ]
+        ],
+        "identifier": "mit-704ced38-ea60-e53b-6c20-390fe781b1c3"
       }
     ],
     "other_license_expression": null,
@@ -142,7 +143,8 @@
             "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/spdx_license_id_gpl-2.0-only_for_gpl-2.0.RULE",
             "matched_text": "gpl-2.0-only"
           }
-        ]
+        ],
+        "identifier": "gpl_2_0-7541c21a-b2c9-c697-2794-bf0cfcdf32f9"
       }
     ],
     "other_license_expression": null,
@@ -278,7 +280,8 @@
             "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/spdx_license_id_gpl-2.0-only_for_gpl-2.0.RULE",
             "matched_text": "gpl-2.0-only"
           }
-        ]
+        ],
+        "identifier": "gpl_2_0-7541c21a-b2c9-c697-2794-bf0cfcdf32f9"
       }
     ],
     "other_license_expression": null,
@@ -594,7 +597,8 @@
             "rule_url": null,
             "matched_text": "mit"
           }
-        ]
+        ],
+        "identifier": "mit-704ced38-ea60-e53b-6c20-390fe781b1c3"
       }
     ],
     "other_license_expression": null,
@@ -847,7 +851,8 @@
             "rule_url": null,
             "matched_text": "openssl"
           }
-        ]
+        ],
+        "identifier": "openssl_ssleay-5eedc4a6-a77c-b373-2ac4-55bb8c004773"
       }
     ],
     "other_license_expression": null,
@@ -1028,7 +1033,8 @@
             "rule_url": null,
             "matched_text": "openssl"
           }
-        ]
+        ],
+        "identifier": "openssl_ssleay-5eedc4a6-a77c-b373-2ac4-55bb8c004773"
       }
     ],
     "other_license_expression": null,
@@ -1119,7 +1125,8 @@
             "rule_url": null,
             "matched_text": "mpl-2.0 AND gpl-2.0-or-later"
           }
-        ]
+        ],
+        "identifier": "mpl_2_0_and_gpl_2_0_plus-fb163695-8575-68e5-0fd0-cd41328bb5a5"
       }
     ],
     "other_license_expression": null,
@@ -1202,7 +1209,8 @@
             "rule_url": null,
             "matched_text": "isc"
           }
-        ]
+        ],
+        "identifier": "isc-0d657e09-0de3-06c6-ce9e-46867b6ce2d6"
       }
     ],
     "other_license_expression": null,
@@ -1304,7 +1312,8 @@
             "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/spdx_license_id_gpl-2.0-only_for_gpl-2.0.RULE",
             "matched_text": "gpl-2.0-only"
           }
-        ]
+        ],
+        "identifier": "gpl_2_0-7541c21a-b2c9-c697-2794-bf0cfcdf32f9"
       }
     ],
     "other_license_expression": null,
@@ -1386,7 +1395,8 @@
             "rule_url": null,
             "matched_text": "zlib"
           }
-        ]
+        ],
+        "identifier": "zlib-f742edbd-d484-7a19-19f0-f4582738f149"
       }
     ],
     "other_license_expression": null,
@@ -1477,7 +1487,8 @@
             "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/spdx_license_id_gpl-2.0-only_for_gpl-2.0.RULE",
             "matched_text": "gpl-2.0-only"
           }
-        ]
+        ],
+        "identifier": "gpl_2_0-7541c21a-b2c9-c697-2794-bf0cfcdf32f9"
       }
     ],
     "other_license_expression": null,
@@ -1559,7 +1570,8 @@
             "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/spdx_license_id_gpl-2.0-only_for_gpl-2.0.RULE",
             "matched_text": "gpl-2.0-only"
           }
-        ]
+        ],
+        "identifier": "gpl_2_0-7541c21a-b2c9-c697-2794-bf0cfcdf32f9"
       }
     ],
     "other_license_expression": null,
@@ -1641,7 +1653,8 @@
             "rule_url": null,
             "matched_text": "mit AND bsd-3-clause AND gpl-2.0-or-later"
           }
-        ]
+        ],
+        "identifier": "mit_and_bsd_new_and_gpl_2_0_plus-57deb96b-d294-ad77-12c0-3e0e3c5d55f3"
       }
     ],
     "other_license_expression": null,
@@ -1770,7 +1783,8 @@
             "rule_url": null,
             "matched_text": "bsd-2-clause AND bsd-3-clause"
           }
-        ]
+        ],
+        "identifier": "bsd_simplified_and_bsd_new-73e0acf3-001a-667e-f37b-135c6b8a5cad"
       }
     ],
     "other_license_expression": null,

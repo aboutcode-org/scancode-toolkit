@@ -71,6 +71,7 @@ other_license_detections:
 
           On Debian systems a copy of the Apache License, Version 2.0 can be
           found in /usr/share/common-licenses/Apache-2.0
+    identifier: apache_2_0-48f1cb7d-5851-8285-69a3-25dbd96819f7
   - license_expression: gpl-2.0-plus
     matches:
       - score: '100.0'
@@ -110,6 +111,7 @@ other_license_detections:
 
           On Debian systems, the complete text of the GNU General
           Public License version 2 can be found in "/usr/share/common-licenses/GPL-2".
+    identifier: gpl_2_0_plus-cc17af11-ba60-7b3d-40d0-91bc262b80f8
   - license_expression: gpl-3.0-plus
     matches:
       - score: '100.0'
@@ -149,6 +151,7 @@ other_license_detections:
 
           On Debian systems, the complete text of the GNU General
           Public License version 3 can be found in "/usr/share/common-licenses/GPL-3".
+    identifier: gpl_3_0_plus-d32e0b16-ec08-400f-7308-94bab4d18d11
   - license_expression: lgpl-2.0-plus
     matches:
       - score: '100.0'
@@ -185,6 +188,7 @@ other_license_detections:
 
           On Debian systems, the complete text of the GNU Library General Public
           License version 2 can be found in "/usr/share/common-licenses/LGPL-2".
+    identifier: lgpl_2_0_plus-d3782433-aa9a-99c9-ba7e-875a7ee9c1c7
   - license_expression: cc0-1.0
     matches:
       - score: '100.0'
@@ -231,6 +235,7 @@ other_license_detections:
            .
           The complete text of the Creative Commons 0 1.0 Universal
           can be found in `/usr/share/common-licenses/CC0-1.0'.
+    identifier: cc0_1_0-3aab8d22-5239-2e29-95d3-367a0090d037
   - license_expression: cc-by-sa-3.0
     matches:
       - score: '97.8'
@@ -551,6 +556,7 @@ other_license_detections:
           this License, such additional rights are deemed to be included in the
           License; this License is not intended to restrict the license of any
           rights under applicable law.
+    identifier: cc_by_sa_3_0-e7ec5d5a-0fab-6861-22fd-9f2bbf2329d1
   - license_expression: cc-by-sa-4.0
     matches:
       - score: '100.0'
@@ -997,6 +1003,7 @@ other_license_detections:
           public licenses.
 
           Creative Commons may be contacted at creativecommons.org.
+    identifier: cc_by_sa_4_0-1a71c7bb-650b-3eb6-94d5-3555db5f863e
 copyright: |
   2009-2018 Igalia S.L
   2002 Jorn Baayen

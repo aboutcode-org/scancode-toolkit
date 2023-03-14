@@ -110,6 +110,7 @@ license_detections:
 
           On Debian systems, the complete text of the GNU General
           Public License 2 can be found in `/usr/share/common-licenses/GPL-2'.
+    identifier: gpl_2_0_plus-841292a1-755d-28a2-e988-9335e1ab78af
   - license_expression: gpl-3.0-plus
     matches:
       - score: '100.0'
@@ -150,6 +151,7 @@ license_detections:
 
           On Debian systems, the complete text of the GNU General
           Public License 3 can be found in `/usr/share/common-licenses/GPL-3'.
+    identifier: gpl_3_0_plus-dd3fa3fa-0f02-d622-9751-b34998421a05
   - license_expression: lgpl-2.1-plus
     matches:
       - score: '100.0'
@@ -192,6 +194,7 @@ license_detections:
           On Debian systems, the full text of the GNU Lesser General Public
           License version 2,1 can be found in the file
           `/usr/share/common-licenses/LGPL-2.1'.
+    identifier: lgpl_2_1_plus-f25c3ccd-f8e8-1ec3-cce3-8fe504f23993
   - license_expression: mit
     matches:
       - score: '100.0'
@@ -222,6 +225,7 @@ license_detections:
           LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
           OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
           SOFTWARE.
+    identifier: mit-cacd5c0c-204a-85c2-affc-e4c125b2492a
   - license_expression: bsd-new
     matches:
       - score: '100.0'
@@ -258,6 +262,7 @@ license_detections:
           INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT,
           STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
           OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+    identifier: bsd_new-5be47247-8ec7-7f95-1b90-0aaa3275e0c2
   - license_expression: bsd-original
     matches:
       - score: '100.0'
@@ -297,6 +302,7 @@ license_detections:
           LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
           OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
           ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+    identifier: bsd_original-351c901f-5810-bf40-e98b-65d5c070c643
   - license_expression: lgpl-3.0-plus
     matches:
       - score: '100.0'
@@ -333,6 +339,7 @@ license_detections:
 
           On Debian systems, the complete text of the GNU Lesser General
           Public License 3 can be found in `/usr/share/common-licenses/LGPL-3'.
+    identifier: lgpl_3_0_plus-1efe4ad9-3fe0-d0d3-abd8-c522d921e751
   - license_expression: other-permissive
     matches:
       - score: '100.0'
@@ -350,6 +357,7 @@ license_detections:
           you see fit, as long as this copyright message is included and
           that there is an indication as to what modifications have been
           made (if any).
+    identifier: other_permissive-f5dd09cb-3a00-86dd-63d7-a576f4dd0415
   - license_expression: free-unknown
     matches:
       - score: '100.0'
@@ -363,6 +371,7 @@ license_detections:
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/free-unknown-package_2.RULE
         matched_text: This file is distributed under the same license as the PACKAGE package.
+    identifier: free_unknown-6489a264-9d51-ad5f-94b9-6939d54b4036
   - license_expression: free-unknown
     matches:
       - score: '91.67'
@@ -377,6 +386,7 @@ license_detections:
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/free-unknown-package_1.RULE
         matched_text: This file is distributed under the same license as the fusiondirectory
           package.
+    identifier: free_unknown-bdda6baa-90ff-18b3-96c9-89a930a6cf8d
   - license_expression: gpl-2.0-plus
     matches:
       - score: '100.0'
@@ -390,6 +400,7 @@ license_detections:
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_67.RULE
         matched_text: GPL-2+).
+    identifier: gpl_2_0_plus-fed2dc38-09ac-103e-1b86-4a4f5c00614a
 other_license_detections: []
 copyright: |
   2011-2018, FusionDirectory

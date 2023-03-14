@@ -414,6 +414,7 @@ other_license_detections:
 
            This Source Code Form is "Incompatible With Secondary Licenses", as
            defined by the Mozilla Public License, v. 2.0.
+    identifier: mpl_2_0-a4e80716-0ace-81d4-b4b0-3d29c3a0f1e2
   - license_expression: bsd-2-clause-views
     matches:
       - score: '100.0'
@@ -455,6 +456,7 @@ other_license_detections:
           are those of the authors and should not be interpreted as representing
           official policies, either expressed or implied, of the Mozilla
           Foundation.
+    identifier: bsd_2_clause_views-1d997716-afbf-cd29-cb1e-420af00fe852
   - license_expression: bsd-new
     matches:
       - score: '99.04'
@@ -493,6 +495,7 @@ other_license_detections:
           CONTRACT,  STRICT  LIABILITY, OR  TORT  (INCLUDING  NEGLIGENCE OR  OTHERWISE)
           ARISING IN ANY  WAY OUT OF THE USE  OF THIS SOFTWARE, EVEN IF  ADVISED OF THE
           POSSIBILITY OF SUCH DAMAGE.
+    identifier: bsd_new-2b3a5518-e8a8-d9b2-be49-79747be815eb
   - license_expression: cc0-1.0
     matches:
       - score: '100.0'
@@ -526,6 +529,7 @@ other_license_detections:
 
           On Debian systems, the complete text of the CC0 1.0 Universal license can be
           found in ‘/usr/share/common-licenses/CC0-1.0’.
+    identifier: cc0_1_0-40516c7d-0f7f-97ef-5345-dd3b9a02a355
 copyright: |
   2003-2017 Patrick Brunschwig <patrick@enigmail.net>,
   2001-2002 Ramalingam Saravanan <svn@xmlterm.org>

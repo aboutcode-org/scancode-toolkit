@@ -40,7 +40,8 @@
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/spdx_license_id_gpl-3.0-only_for_gpl-3.0.RULE",
           "matched_text": "gpl-3.0-only"
         }
-      ]
+      ],
+      "identifier": "gpl_3_0-c40e1583-9bea-e122-2576-a76192b84364"
     }
   ],
   "other_license_expression": null,

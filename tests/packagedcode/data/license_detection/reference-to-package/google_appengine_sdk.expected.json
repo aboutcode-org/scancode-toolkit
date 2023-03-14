@@ -62,7 +62,8 @@
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/pypi_bsd_license.RULE",
               "matched_text": "['License :: OSI Approved :: BSD License']"
             }
-          ]
+          ],
+          "identifier": "bsd_new-f4e99f86-00ab-18d9-a65d-a3a12767dcf5"
         }
       ],
       "other_license_expression": null,
@@ -152,7 +153,8 @@
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/pypi_bsd_license.RULE",
               "matched_text": "['License :: OSI Approved :: BSD License']"
             }
-          ]
+          ],
+          "identifier": "bsd_new-f4e99f86-00ab-18d9-a65d-a3a12767dcf5"
         }
       ],
       "other_license_expression": null,
@@ -183,124 +185,30 @@
       "identifier": "apache_2_0_and_cc_by_nc_nd_3_0_and_other_permissive_and_proprietary_license-21b00e16-ec3a-6dc3-3971-5dbd5f5b756a",
       "license_expression": "apache-2.0 AND cc-by-nc-nd-3.0 AND other-permissive AND proprietary-license",
       "detection_count": 2,
-      "matches": [
-        {
-          "score": 5.88,
-          "start_line": 7,
-          "end_line": 9,
-          "matched_length": 5,
-          "match_coverage": 5.88,
-          "matcher": "3-seq",
-          "license_expression": "apache-2.0 AND cc-by-nc-nd-3.0 AND other-permissive AND proprietary-license",
-          "rule_identifier": "apache-2.0_and_cc-by-nc-nd-3.0_and_other-permissive_and_proprietary-license_1.RULE",
-          "rule_relevance": 100,
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_and_cc-by-nc-nd-3.0_and_other-permissive_and_proprietary-license_1.RULE"
-        }
-      ],
       "detection_log": []
     },
     {
       "identifier": "bsd_new-f4e99f86-00ab-18d9-a65d-a3a12767dcf5",
       "license_expression": "bsd-new",
       "detection_count": 3,
-      "matches": [
-        {
-          "score": 99.0,
-          "start_line": 89,
-          "end_line": 89,
-          "matched_length": 5,
-          "match_coverage": 100.0,
-          "matcher": "2-aho",
-          "license_expression": "bsd-new",
-          "rule_identifier": "pypi_bsd_license.RULE",
-          "rule_relevance": 99,
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/pypi_bsd_license.RULE"
-        }
-      ],
       "detection_log": []
     },
     {
-      "identifier": "bsd_new-15b60c62-5455-66bd-1ca8-ad3cdf2d7672",
+      "identifier": "cdb8fe96-c13c-043d-8031-aebb4cd77653",
       "license_expression": "bsd-new",
       "detection_count": 5,
-      "matches": [
-        {
-          "score": 100.0,
-          "start_line": 2,
-          "end_line": 2,
-          "matched_length": 12,
-          "match_coverage": 100.0,
-          "matcher": "2-aho",
-          "license_expression": "free-unknown",
-          "rule_identifier": "free-unknown-package_3.RULE",
-          "rule_relevance": 100,
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/free-unknown-package_3.RULE"
-        },
-        {
-          "score": 99.0,
-          "start_line": 1,
-          "end_line": 1,
-          "matched_length": 5,
-          "match_coverage": 100.0,
-          "matcher": "1-hash",
-          "license_expression": "bsd-new",
-          "rule_identifier": "pypi_bsd_license.RULE",
-          "rule_relevance": 99,
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/pypi_bsd_license.RULE"
-        }
-      ],
       "detection_log": []
     },
     {
-      "identifier": "bsd_new-edd5e7bc-e652-18ba-427f-8896246f69a9",
+      "identifier": "734cc7c8-5d13-b9e1-3f7c-d04a0d9396c7",
       "license_expression": "bsd-new",
       "detection_count": 2,
-      "matches": [
-        {
-          "score": 100.0,
-          "start_line": 3,
-          "end_line": 3,
-          "matched_length": 12,
-          "match_coverage": 100.0,
-          "matcher": "2-aho",
-          "license_expression": "free-unknown",
-          "rule_identifier": "free-unknown-package_2.RULE",
-          "rule_relevance": 100,
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/free-unknown-package_2.RULE"
-        },
-        {
-          "score": 99.0,
-          "start_line": 1,
-          "end_line": 1,
-          "matched_length": 5,
-          "match_coverage": 100.0,
-          "matcher": "1-hash",
-          "license_expression": "bsd-new",
-          "rule_identifier": "pypi_bsd_license.RULE",
-          "rule_relevance": 99,
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/pypi_bsd_license.RULE"
-        }
-      ],
       "detection_log": []
     },
     {
       "identifier": "bsd_new-72cae3bc-4423-3a9e-be84-ee8bb5120a4d",
       "license_expression": "bsd-new",
       "detection_count": 1,
-      "matches": [
-        {
-          "score": 100.0,
-          "start_line": 4,
-          "end_line": 27,
-          "matched_length": 214,
-          "match_coverage": 100.0,
-          "matcher": "2-aho",
-          "license_expression": "bsd-new",
-          "rule_identifier": "bsd-new_683.RULE",
-          "rule_relevance": 100,
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_683.RULE"
-        }
-      ],
       "detection_log": []
     }
   ],
@@ -315,7 +223,6 @@
       "license_detections": [],
       "license_clues": [],
       "percentage_of_license_text": 0,
-      "for_license_detections": [],
       "scan_errors": []
     },
     {
@@ -330,7 +237,6 @@
       "license_detections": [],
       "license_clues": [],
       "percentage_of_license_text": 0,
-      "for_license_detections": [],
       "scan_errors": []
     },
     {
@@ -345,7 +251,6 @@
       "license_detections": [],
       "license_clues": [],
       "percentage_of_license_text": 0,
-      "for_license_detections": [],
       "scan_errors": []
     },
     {
@@ -375,14 +280,12 @@
               "matched_text": "LICENSE\n[include] [django]/[dispatch]/license.txt\n[include] [django]/[utils]/[simplejson]/LICENSE.txt"
             }
           ],
-          "detection_log": []
+          "detection_log": [],
+          "identifier": "apache_2_0_and_cc_by_nc_nd_3_0_and_other_permissive_and_proprietary_license-21b00e16-ec3a-6dc3-3971-5dbd5f5b756a"
         }
       ],
       "license_clues": [],
       "percentage_of_license_text": 3.38,
-      "for_license_detections": [
-        "apache_2_0_and_cc_by_nc_nd_3_0_and_other_permissive_and_proprietary_license-21b00e16-ec3a-6dc3-3971-5dbd5f5b756a"
-      ],
       "scan_errors": []
     },
     {
@@ -397,7 +300,6 @@
       "license_detections": [],
       "license_clues": [],
       "percentage_of_license_text": 0,
-      "for_license_detections": [],
       "scan_errors": []
     },
     {
@@ -412,7 +314,6 @@
       "license_detections": [],
       "license_clues": [],
       "percentage_of_license_text": 0,
-      "for_license_detections": [],
       "scan_errors": []
     },
     {
@@ -425,7 +326,6 @@
       "license_detections": [],
       "license_clues": [],
       "percentage_of_license_text": 0,
-      "for_license_detections": [],
       "scan_errors": []
     },
     {
@@ -438,7 +338,6 @@
       "license_detections": [],
       "license_clues": [],
       "percentage_of_license_text": 0,
-      "for_license_detections": [],
       "scan_errors": []
     },
     {
@@ -451,7 +350,6 @@
       "license_detections": [],
       "license_clues": [],
       "percentage_of_license_text": 0,
-      "for_license_detections": [],
       "scan_errors": []
     },
     {
@@ -464,7 +362,6 @@
       "license_detections": [],
       "license_clues": [],
       "percentage_of_license_text": 0,
-      "for_license_detections": [],
       "scan_errors": []
     },
     {
@@ -477,7 +374,6 @@
       "license_detections": [],
       "license_clues": [],
       "percentage_of_license_text": 0,
-      "for_license_detections": [],
       "scan_errors": []
     },
     {
@@ -522,14 +418,12 @@
           ],
           "detection_log": [
             "unknown-reference-in-file-to-package"
-          ]
+          ],
+          "identifier": "cdb8fe96-c13c-043d-8031-aebb4cd77653"
         }
       ],
       "license_clues": [],
       "percentage_of_license_text": 2.15,
-      "for_license_detections": [
-        "bsd_new-15b60c62-5455-66bd-1ca8-ad3cdf2d7672"
-      ],
       "scan_errors": []
     },
     {
@@ -574,14 +468,12 @@
           ],
           "detection_log": [
             "unknown-reference-in-file-to-package"
-          ]
+          ],
+          "identifier": "cdb8fe96-c13c-043d-8031-aebb4cd77653"
         }
       ],
       "license_clues": [],
       "percentage_of_license_text": 5.15,
-      "for_license_detections": [
-        "bsd_new-15b60c62-5455-66bd-1ca8-ad3cdf2d7672"
-      ],
       "scan_errors": []
     },
     {
@@ -594,7 +486,6 @@
       "license_detections": [],
       "license_clues": [],
       "percentage_of_license_text": 0,
-      "for_license_detections": [],
       "scan_errors": []
     },
     {
@@ -607,7 +498,6 @@
       "license_detections": [],
       "license_clues": [],
       "percentage_of_license_text": 0,
-      "for_license_detections": [],
       "scan_errors": []
     },
     {
@@ -652,14 +542,12 @@
           ],
           "detection_log": [
             "unknown-reference-in-file-to-package"
-          ]
+          ],
+          "identifier": "734cc7c8-5d13-b9e1-3f7c-d04a0d9396c7"
         }
       ],
       "license_clues": [],
       "percentage_of_license_text": 0.07,
-      "for_license_detections": [
-        "bsd_new-edd5e7bc-e652-18ba-427f-8896246f69a9"
-      ],
       "scan_errors": []
     },
     {
@@ -704,14 +592,12 @@
           ],
           "detection_log": [
             "unknown-reference-in-file-to-package"
-          ]
+          ],
+          "identifier": "734cc7c8-5d13-b9e1-3f7c-d04a0d9396c7"
         }
       ],
       "license_clues": [],
       "percentage_of_license_text": 2.49,
-      "for_license_detections": [
-        "bsd_new-edd5e7bc-e652-18ba-427f-8896246f69a9"
-      ],
       "scan_errors": []
     },
     {
@@ -756,14 +642,12 @@
           ],
           "detection_log": [
             "unknown-reference-in-file-to-package"
-          ]
+          ],
+          "identifier": "cdb8fe96-c13c-043d-8031-aebb4cd77653"
         }
       ],
       "license_clues": [],
       "percentage_of_license_text": 17.91,
-      "for_license_detections": [
-        "bsd_new-15b60c62-5455-66bd-1ca8-ad3cdf2d7672"
-      ],
       "scan_errors": []
     },
     {
@@ -820,7 +704,6 @@
       "license_detections": [],
       "license_clues": [],
       "percentage_of_license_text": 0,
-      "for_license_detections": [],
       "scan_errors": []
     },
     {
@@ -889,7 +772,8 @@
                   "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/pypi_bsd_license.RULE",
                   "matched_text": "['License :: OSI Approved :: BSD License']"
                 }
-              ]
+              ],
+              "identifier": "bsd_new-f4e99f86-00ab-18d9-a65d-a3a12767dcf5"
             }
           ],
           "other_license_expression": null,
@@ -933,14 +817,12 @@
               "matched_text": "License :: OSI Approved :: BSD License',"
             }
           ],
-          "detection_log": []
+          "detection_log": [],
+          "identifier": "bsd_new-f4e99f86-00ab-18d9-a65d-a3a12767dcf5"
         }
       ],
       "license_clues": [],
       "percentage_of_license_text": 0.99,
-      "for_license_detections": [
-        "bsd_new-f4e99f86-00ab-18d9-a65d-a3a12767dcf5"
-      ],
       "scan_errors": []
     },
     {
@@ -953,7 +835,6 @@
       "license_detections": [],
       "license_clues": [],
       "percentage_of_license_text": 0,
-      "for_license_detections": [],
       "scan_errors": []
     },
     {
@@ -968,7 +849,6 @@
       "license_detections": [],
       "license_clues": [],
       "percentage_of_license_text": 0,
-      "for_license_detections": [],
       "scan_errors": []
     },
     {
@@ -983,7 +863,6 @@
       "license_detections": [],
       "license_clues": [],
       "percentage_of_license_text": 0,
-      "for_license_detections": [],
       "scan_errors": []
     },
     {
@@ -1013,14 +892,12 @@
               "matched_text": "Redistribution and use in source and binary forms, with or without modification,\nare permitted provided that the following conditions are met:\n\n    1. Redistributions of source code must retain the above copyright notice, \n       this list of conditions and the following disclaimer.\n    \n    2. Redistributions in binary form must reproduce the above copyright \n       notice, this list of conditions and the following disclaimer in the\n       documentation and/or other materials provided with the distribution.\n\n    3. Neither the name of Django nor the names of its contributors may be used\n       to endorse or promote products derived from this software without\n       specific prior written permission.\n\nTHIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS \"AS IS\" AND\nANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED\nWARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE\nDISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR\nANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES\n(INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;\nLOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON\nANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT\n(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS\nSOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE."
             }
           ],
-          "detection_log": []
+          "detection_log": [],
+          "identifier": "bsd_new-72cae3bc-4423-3a9e-be84-ee8bb5120a4d"
         }
       ],
       "license_clues": [],
       "percentage_of_license_text": 95.11,
-      "for_license_detections": [
-        "bsd_new-72cae3bc-4423-3a9e-be84-ee8bb5120a4d"
-      ],
       "scan_errors": []
     },
     {
@@ -1050,14 +927,12 @@
               "matched_text": "LICENSE\n[include] [django]/[dispatch]/license.txt\n[include] [django]/[utils]/[simplejson]/LICENSE.txt"
             }
           ],
-          "detection_log": []
+          "detection_log": [],
+          "identifier": "apache_2_0_and_cc_by_nc_nd_3_0_and_other_permissive_and_proprietary_license-21b00e16-ec3a-6dc3-3971-5dbd5f5b756a"
         }
       ],
       "license_clues": [],
       "percentage_of_license_text": 2.73,
-      "for_license_detections": [
-        "apache_2_0_and_cc_by_nc_nd_3_0_and_other_permissive_and_proprietary_license-21b00e16-ec3a-6dc3-3971-5dbd5f5b756a"
-      ],
       "scan_errors": []
     },
     {
@@ -1072,7 +947,6 @@
       "license_detections": [],
       "license_clues": [],
       "percentage_of_license_text": 0,
-      "for_license_detections": [],
       "scan_errors": []
     },
     {
@@ -1145,7 +1019,8 @@
                   "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/pypi_bsd_license.RULE",
                   "matched_text": "['License :: OSI Approved :: BSD License']"
                 }
-              ]
+              ],
+              "identifier": "bsd_new-f4e99f86-00ab-18d9-a65d-a3a12767dcf5"
             }
           ],
           "other_license_expression": null,
@@ -1189,14 +1064,12 @@
               "matched_text": "License :: OSI Approved :: BSD License"
             }
           ],
-          "detection_log": []
+          "detection_log": [],
+          "identifier": "bsd_new-f4e99f86-00ab-18d9-a65d-a3a12767dcf5"
         }
       ],
       "license_clues": [],
       "percentage_of_license_text": 3.38,
-      "for_license_detections": [
-        "bsd_new-f4e99f86-00ab-18d9-a65d-a3a12767dcf5"
-      ],
       "scan_errors": []
     },
     {
@@ -1211,7 +1084,6 @@
       "license_detections": [],
       "license_clues": [],
       "percentage_of_license_text": 0,
-      "for_license_detections": [],
       "scan_errors": []
     },
     {
@@ -1224,7 +1096,6 @@
       "license_detections": [],
       "license_clues": [],
       "percentage_of_license_text": 0,
-      "for_license_detections": [],
       "scan_errors": []
     },
     {
@@ -1237,7 +1108,6 @@
       "license_detections": [],
       "license_clues": [],
       "percentage_of_license_text": 0,
-      "for_license_detections": [],
       "scan_errors": []
     },
     {
@@ -1250,7 +1120,6 @@
       "license_detections": [],
       "license_clues": [],
       "percentage_of_license_text": 0,
-      "for_license_detections": [],
       "scan_errors": []
     },
     {
@@ -1263,7 +1132,6 @@
       "license_detections": [],
       "license_clues": [],
       "percentage_of_license_text": 0,
-      "for_license_detections": [],
       "scan_errors": []
     },
     {
@@ -1276,7 +1144,6 @@
       "license_detections": [],
       "license_clues": [],
       "percentage_of_license_text": 0,
-      "for_license_detections": [],
       "scan_errors": []
     },
     {
@@ -1289,7 +1156,6 @@
       "license_detections": [],
       "license_clues": [],
       "percentage_of_license_text": 0,
-      "for_license_detections": [],
       "scan_errors": []
     },
     {
@@ -1334,14 +1200,12 @@
           ],
           "detection_log": [
             "unknown-reference-in-file-to-package"
-          ]
+          ],
+          "identifier": "cdb8fe96-c13c-043d-8031-aebb4cd77653"
         }
       ],
       "license_clues": [],
       "percentage_of_license_text": 16.9,
-      "for_license_detections": [
-        "bsd_new-15b60c62-5455-66bd-1ca8-ad3cdf2d7672"
-      ],
       "scan_errors": []
     },
     {
@@ -1354,7 +1218,6 @@
       "license_detections": [],
       "license_clues": [],
       "percentage_of_license_text": 0,
-      "for_license_detections": [],
       "scan_errors": []
     },
     {
@@ -1367,7 +1230,6 @@
       "license_detections": [],
       "license_clues": [],
       "percentage_of_license_text": 0,
-      "for_license_detections": [],
       "scan_errors": []
     },
     {
@@ -1412,14 +1274,12 @@
           ],
           "detection_log": [
             "unknown-reference-in-file-to-package"
-          ]
+          ],
+          "identifier": "cdb8fe96-c13c-043d-8031-aebb4cd77653"
         }
       ],
       "license_clues": [],
       "percentage_of_license_text": 12.12,
-      "for_license_detections": [
-        "bsd_new-15b60c62-5455-66bd-1ca8-ad3cdf2d7672"
-      ],
       "scan_errors": []
     },
     {
@@ -1469,7 +1329,8 @@
                   "matched_text": "Redistribution and use in source and binary forms, with or without modification,\nare permitted provided that the following conditions are met:\n\n    1. Redistributions of source code must retain the above copyright notice, \n       this list of conditions and the following disclaimer.\n    \n    2. Redistributions in binary form must reproduce the above copyright \n       notice, this list of conditions and the following disclaimer in the\n       documentation and/or other materials provided with the distribution.\n\n    3. Neither the name of Django nor the names of its contributors may be used\n       to endorse or promote products derived from this software without\n       specific prior written permission.\n\nTHIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS \"AS IS\" AND\nANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED\nWARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE\nDISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR\nANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES\n(INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;\nLOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON\nANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT\n(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS\nSOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE."
                 }
               ],
-              "detection_log": []
+              "detection_log": [],
+              "identifier": "bsd_new-72cae3bc-4423-3a9e-be84-ee8bb5120a4d"
             }
           ],
           "other_license_expression": null,
@@ -1496,7 +1357,6 @@
       "license_detections": [],
       "license_clues": [],
       "percentage_of_license_text": 0,
-      "for_license_detections": [],
       "scan_errors": []
     },
     {
@@ -1569,7 +1429,8 @@
                   "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/pypi_bsd_license.RULE",
                   "matched_text": "['License :: OSI Approved :: BSD License']"
                 }
-              ]
+              ],
+              "identifier": "bsd_new-f4e99f86-00ab-18d9-a65d-a3a12767dcf5"
             }
           ],
           "other_license_expression": null,
@@ -1613,14 +1474,12 @@
               "matched_text": "License :: OSI Approved :: BSD License',"
             }
           ],
-          "detection_log": []
+          "detection_log": [],
+          "identifier": "bsd_new-f4e99f86-00ab-18d9-a65d-a3a12767dcf5"
         }
       ],
       "license_clues": [],
       "percentage_of_license_text": 0.95,
-      "for_license_detections": [
-        "bsd_new-f4e99f86-00ab-18d9-a65d-a3a12767dcf5"
-      ],
       "scan_errors": []
     }
   ]

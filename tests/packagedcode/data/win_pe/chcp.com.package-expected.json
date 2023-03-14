@@ -49,7 +49,8 @@
             "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/package-manifest-unknown-33f1f14c9c3aed427a1ebff42fd03640ebc75225",
             "matched_text": "license {'LegalCopyright': '\u00a9 Microsoft Corporation. All rights reserved.', 'LegalTrademarks': '', 'License': None}"
           }
-        ]
+        ],
+        "identifier": "unknown-7a4e31a4-3c62-cfda-29ff-b00424060fd7"
       }
     ],
     "other_license_expression": null,

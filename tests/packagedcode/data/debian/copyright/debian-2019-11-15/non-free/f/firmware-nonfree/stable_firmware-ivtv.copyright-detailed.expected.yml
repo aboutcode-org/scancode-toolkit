@@ -166,5 +166,6 @@ license_detections:
           at any time if you violate its terms. Upon termination, you will
           immediately destroy the Firmware or return all copies of the Firmware
           to Hauppauge.
+    identifier: hauppauge_firmware_oem-d24de8d0-b39b-9182-f2f9-5f54b0262de2
 other_license_detections: []
 copyright: Copyright 2003-2006 Hauppauge

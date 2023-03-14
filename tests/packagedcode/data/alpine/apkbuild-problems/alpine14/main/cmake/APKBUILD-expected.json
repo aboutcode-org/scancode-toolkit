@@ -40,7 +40,8 @@
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_10.RULE",
           "matched_text": "bsd-3-clause"
         }
-      ]
+      ],
+      "identifier": "bsd_new-50fa5753-f24d-ec04-33a1-36bb8ac0492c"
     }
   ],
   "other_license_expression": null,

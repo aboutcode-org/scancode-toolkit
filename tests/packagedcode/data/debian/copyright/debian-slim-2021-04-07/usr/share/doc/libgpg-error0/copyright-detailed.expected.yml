@@ -48,6 +48,7 @@ other_license_detections:
           This file is distributed in the hope that it will be useful, but
           WITHOUT ANY WARRANTY, to the extent permitted by law; without even the
           implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+    identifier: fsf_unlimited_no_warranty-005cbd82-97e0-5c6c-e111-cd46d95d2c5a
   - license_expression: lgpl-2.1-plus
     matches:
       - score: '100.0'
@@ -88,6 +89,7 @@ other_license_detections:
 
           On Debian systems, the complete text of the GNU Lesser General Public License
           version 2.1 can be found in /usr/share/common-licenses/LGPL-2.1.
+    identifier: lgpl_2_1_plus-b69e098d-e26d-66eb-a9eb-d64b9fb65747
   - license_expression: gpl-3.0-plus
     matches:
       - score: '100.0'
@@ -127,6 +129,7 @@ other_license_detections:
 
           On Debian systems, the complete text of the GNU General Public License
           version 3 can be found in /usr/share/common-licenses/GPL-3.
+    identifier: gpl_3_0_plus-d32e0b16-ec08-400f-7308-94bab4d18d11
   - license_expression: bsd-new
     matches:
       - score: '100.0'
@@ -164,6 +167,7 @@ other_license_detections:
           STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
           ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED
           OF THE POSSIBILITY OF SUCH DAMAGE.
+    identifier: bsd_new-d710da7a-d455-7e11-d6d1-e58805668aae
 copyright: |
   2001-2004, 2010, 2012-2018, g10 Code GmbH
   2008, 2011 Free Software Foundation, Inc.

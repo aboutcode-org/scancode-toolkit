@@ -56,7 +56,8 @@
             "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/ms-net-library_6.RULE",
             "matched_text": "http://go.microsoft.com/fwlink/?LinkID=320539"
           }
-        ]
+        ],
+        "identifier": "ms_net_library-c4f25003-9bdd-58b0-1838-251037aad0bf"
       }
     ],
     "other_license_expression": null,

@@ -76,7 +76,8 @@
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-1.1_66.RULE",
           "matched_text": "The P6Spy Software License, Version 1.1"
         }
-      ]
+      ],
+      "identifier": "apache_1_1-51dbace7-f45b-db27-5fbc-4d8b4fecc14d"
     },
     {
       "license_expression": "apache-1.1",
@@ -94,7 +95,8 @@
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-1.1_64.RULE",
           "matched_text": "http://cvs.sourceforge.net/viewcvs.py/*checkout*/p6spy/p6spy/license.txt?rev=HEAD"
         }
-      ]
+      ],
+      "identifier": "apache_1_1-8fd3995e-0a9b-bbca-a092-62f14299e23b"
     }
   ],
   "other_license_expression": null,

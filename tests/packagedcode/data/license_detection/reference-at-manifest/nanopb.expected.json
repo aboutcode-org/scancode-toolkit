@@ -64,6 +64,7 @@
               "matched_text": "This software is provided 'as-is', without any express or \nimplied warranty. In no event will the authors be held liable \nfor any damages arising from the use of this software.\n\nPermission is granted to anyone to use this software for any \npurpose, including commercial applications, and to alter it and \nredistribute it freely, subject to the following restrictions:\n\n1. The origin of this software must not be misrepresented; you \n   must not claim that you wrote the original software. If you use \n   this software in a product, an acknowledgment in the product \n   documentation would be appreciated but is not required.\n\n2. Altered source versions must be plainly marked as such, and \n   must not be misrepresented as being the original software.\n\n3. This notice may not be removed or altered from any source \n   distribution."
             }
           ],
+          "identifier": "9531c668-be8d-7a25-49eb-c18c9dcd616b",
           "detection_log": [
             "package-unknown-reference-to-local-file"
           ]
@@ -95,72 +96,18 @@
       "identifier": "zlib-f32ae987-c66a-44ce-bd13-c90e0c59aab8",
       "license_expression": "zlib",
       "detection_count": 1,
-      "matches": [
-        {
-          "score": 100.0,
-          "start_line": 3,
-          "end_line": 20,
-          "matched_length": 132,
-          "match_coverage": 100.0,
-          "matcher": "2-aho",
-          "license_expression": "zlib",
-          "rule_identifier": "zlib.LICENSE",
-          "rule_relevance": 100,
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/zlib.LICENSE"
-        }
-      ],
       "detection_log": []
     },
     {
       "identifier": "zlib-3777cd8f-b515-8132-88be-cec12676bbaf",
       "license_expression": "zlib",
       "detection_count": 1,
-      "matches": [
-        {
-          "score": 100.0,
-          "start_line": 14,
-          "end_line": 14,
-          "matched_length": 5,
-          "match_coverage": 100.0,
-          "matcher": "2-aho",
-          "license_expression": "zlib",
-          "rule_identifier": "zlib_in_manifest.RULE",
-          "rule_relevance": 100,
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/zlib_in_manifest.RULE"
-        }
-      ],
       "detection_log": []
     },
     {
-      "identifier": "zlib-f9a90795-4ec9-5ce6-467d-b44a4f9924f5",
+      "identifier": "9531c668-be8d-7a25-49eb-c18c9dcd616b",
       "license_expression": "zlib",
       "detection_count": 1,
-      "matches": [
-        {
-          "score": 100.0,
-          "start_line": 1,
-          "end_line": 1,
-          "matched_length": 5,
-          "match_coverage": 100.0,
-          "matcher": "1-hash",
-          "license_expression": "zlib",
-          "rule_identifier": "zlib_in_manifest.RULE",
-          "rule_relevance": 100,
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/zlib_in_manifest.RULE"
-        },
-        {
-          "score": 100.0,
-          "start_line": 3,
-          "end_line": 20,
-          "matched_length": 132,
-          "match_coverage": 100.0,
-          "matcher": "2-aho",
-          "license_expression": "zlib",
-          "rule_identifier": "zlib.LICENSE",
-          "rule_relevance": 100,
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/zlib.LICENSE"
-        }
-      ],
       "detection_log": []
     }
   ],
@@ -190,14 +137,12 @@
               "matched_text": "This software is provided 'as-is', without any express or \nimplied warranty. In no event will the authors be held liable \nfor any damages arising from the use of this software.\n\nPermission is granted to anyone to use this software for any \npurpose, including commercial applications, and to alter it and \nredistribute it freely, subject to the following restrictions:\n\n1. The origin of this software must not be misrepresented; you \n   must not claim that you wrote the original software. If you use \n   this software in a product, an acknowledgment in the product \n   documentation would be appreciated but is not required.\n\n2. Altered source versions must be plainly marked as such, and \n   must not be misrepresented as being the original software.\n\n3. This notice may not be removed or altered from any source \n   distribution."
             }
           ],
-          "detection_log": []
+          "detection_log": [],
+          "identifier": "zlib-f32ae987-c66a-44ce-bd13-c90e0c59aab8"
         }
       ],
       "license_clues": [],
       "percentage_of_license_text": 92.31,
-      "for_license_detections": [
-        "zlib-f32ae987-c66a-44ce-bd13-c90e0c59aab8"
-      ],
       "scan_errors": []
     },
     {
@@ -268,6 +213,7 @@
                   "matched_text": "This software is provided 'as-is', without any express or \nimplied warranty. In no event will the authors be held liable \nfor any damages arising from the use of this software.\n\nPermission is granted to anyone to use this software for any \npurpose, including commercial applications, and to alter it and \nredistribute it freely, subject to the following restrictions:\n\n1. The origin of this software must not be misrepresented; you \n   must not claim that you wrote the original software. If you use \n   this software in a product, an acknowledgment in the product \n   documentation would be appreciated but is not required.\n\n2. Altered source versions must be plainly marked as such, and \n   must not be misrepresented as being the original software.\n\n3. This notice may not be removed or altered from any source \n   distribution."
                 }
               ],
+              "identifier": "9531c668-be8d-7a25-49eb-c18c9dcd616b",
               "detection_log": [
                 "package-unknown-reference-to-local-file"
               ]
@@ -327,15 +273,12 @@
           ],
           "detection_log": [
             "unknown-reference-to-local-file"
-          ]
+          ],
+          "identifier": "9531c668-be8d-7a25-49eb-c18c9dcd616b"
         }
       ],
       "license_clues": [],
       "percentage_of_license_text": 2.49,
-      "for_license_detections": [
-        "zlib-3777cd8f-b515-8132-88be-cec12676bbaf",
-        "zlib-f9a90795-4ec9-5ce6-467d-b44a4f9924f5"
-      ],
       "scan_errors": []
     }
   ]

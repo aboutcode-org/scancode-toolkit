@@ -44,6 +44,7 @@ other_license_detections:
             WITHOUT ANY WARRANTY, to the extent permitted by law; without even
             the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR
             PURPOSE.  */
+    identifier: fsf_unlimited_no_warranty-005cbd82-97e0-5c6c-e111-cd46d95d2c5a
   - license_expression: isc
     matches:
       - score: '100.0'
@@ -68,6 +69,7 @@ other_license_detections:
           LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE
           OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
           PERFORMANCE OF THIS SOFTWARE.
+    identifier: isc-027c5afe-e7fe-a7fe-149e-fdcae05e6c2e
   - license_expression: isc AND ibm-dhcp
     matches:
       - score: '100.0'
@@ -124,6 +126,7 @@ other_license_detections:
           DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER ARISING
           OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE, EVEN
           IF IBM IS APPRISED OF THE POSSIBILITY OF SUCH DAMAGES.
+    identifier: isc_and_ibm_dhcp-d539ba65-a2a0-2bb1-a2a4-c389ed251972
   - license_expression: free-unknown
     matches:
       - score: '100.0'
@@ -137,6 +140,7 @@ other_license_detections:
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/free-unknown-package_4.RULE
         matched_text: This file is distributed under the same license as the
+    identifier: free_unknown-fddf748a-9953-bc6c-cb9d-91001840e335
   - license_expression: bsd-new
     matches:
       - score: '100.0'
@@ -173,6 +177,7 @@ other_license_detections:
           LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
           OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
           SUCH DAMAGE.
+    identifier: bsd_new-ccc98c3a-92d4-e7a3-e0ba-798328cb6b98
   - license_expression: mit
     matches:
       - score: '80.0'
@@ -196,6 +201,7 @@ other_license_detections:
           *
           * The above copyright notice and this permission notice shall be
           * included in all copies or substantial portions of the Software.
+    identifier: mit-19e92631-4a50-0b43-f7f7-3c6b7d44ec18
   - license_expression: bsd-new
     matches:
       - score: '100.0'
@@ -211,6 +217,7 @@ other_license_detections:
         matched_text: |
           This file is distributed under the same license as the
           debian files of the p11-kit package.
+    identifier: bsd_new-d61d7d0f-9df7-669f-68bd-8b2c5c58a205
 copyright: |
   2011 Collabora Ltd.
   2004, 2005, 2007, 2008, 2012, 2013 Stefan Walter

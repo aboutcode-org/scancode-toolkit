@@ -87,7 +87,8 @@
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/spdx_license_id_apache-2.0_for_apache-2.0.RULE",
               "matched_text": "apache-2.0"
             }
-          ]
+          ],
+          "identifier": "apache_2_0-d66ab77d-a5cc-7104-e702-dc7df61fe9e8"
         }
       ],
       "other_license_expression": null,
@@ -113,80 +114,24 @@
   "dependencies": [],
   "license_detections": [
     {
-      "identifier": "apache_2_0-977175b5-d3f3-74fb-7e96-840fd1e302fd",
+      "identifier": "apache_2_0-d66ab77d-a5cc-7104-e702-dc7df61fe9e8",
       "license_expression": "apache-2.0",
-      "detection_count": 4,
-      "matches": [
-        {
-          "score": 100.0,
-          "start_line": 2,
-          "end_line": 2,
-          "matched_length": 3,
-          "match_coverage": 100.0,
-          "matcher": "2-aho",
-          "license_expression": "apache-2.0",
-          "rule_identifier": "spdx_license_id_apache-2.0_for_apache-2.0.RULE",
-          "rule_relevance": 100,
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/spdx_license_id_apache-2.0_for_apache-2.0.RULE"
-        }
-      ]
+      "detection_count": 4
     },
     {
-      "identifier": "lgpl_2_0-e79c760a-4db6-59b3-dd10-9972f52099b3",
+      "identifier": "lgpl_2_0-3903e697-0f73-0feb-d95d-198a91825d0f",
       "license_expression": "lgpl-2.0",
-      "detection_count": 1,
-      "matches": [
-        {
-          "score": 80.0,
-          "start_line": 2,
-          "end_line": 2,
-          "matched_length": 3,
-          "match_coverage": 100.0,
-          "matcher": "2-aho",
-          "license_expression": "lgpl-2.0",
-          "rule_identifier": "lgpl-2.0_bare_id.RULE",
-          "rule_relevance": 80,
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0_bare_id.RULE"
-        }
-      ]
+      "detection_count": 1
     },
     {
-      "identifier": "apache_2_0-0327b43c-6cf8-4fc1-7f3e-4c29b555583a",
+      "identifier": "apache_2_0-ec759ae0-ea5a-f138-793e-388520e080c0",
       "license_expression": "apache-2.0",
-      "detection_count": 1,
-      "matches": [
-        {
-          "score": 100.0,
-          "start_line": 5,
-          "end_line": 5,
-          "matched_length": 4,
-          "match_coverage": 100.0,
-          "matcher": "2-aho",
-          "license_expression": "apache-2.0",
-          "rule_identifier": "apache-2.0_65.RULE",
-          "rule_relevance": 100,
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_65.RULE"
-        }
-      ]
+      "detection_count": 1
     },
     {
-      "identifier": "gpl_2_0-e293df00-fb0e-b85c-3954-566507e97888",
+      "identifier": "gpl_2_0-864c0c2e-be17-d035-c591-df0235f46a09",
       "license_expression": "gpl-2.0",
-      "detection_count": 1,
-      "matches": [
-        {
-          "score": 100.0,
-          "start_line": 2,
-          "end_line": 2,
-          "matched_length": 9,
-          "match_coverage": 100.0,
-          "matcher": "2-aho",
-          "license_expression": "gpl-2.0",
-          "rule_identifier": "gpl-2.0_1336.RULE",
-          "rule_relevance": 100,
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0_1336.RULE"
-        }
-      ]
+      "detection_count": 1
     }
   ],
   "consolidated_components": [
@@ -283,7 +228,6 @@
       "license_detections": [],
       "license_clues": [],
       "percentage_of_license_text": 0,
-      "for_license_detections": [],
       "copyrights": [],
       "holders": [],
       "authors": [],
@@ -319,7 +263,6 @@
       "license_detections": [],
       "license_clues": [],
       "percentage_of_license_text": 0,
-      "for_license_detections": [],
       "copyrights": [],
       "holders": [],
       "authors": [],
@@ -399,7 +342,6 @@
       "license_detections": [],
       "license_clues": [],
       "percentage_of_license_text": 0,
-      "for_license_detections": [],
       "copyrights": [],
       "holders": [],
       "authors": [],
@@ -435,7 +377,6 @@
       "license_detections": [],
       "license_clues": [],
       "percentage_of_license_text": 0,
-      "for_license_detections": [],
       "copyrights": [],
       "holders": [],
       "authors": [],
@@ -487,14 +428,12 @@
               "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/spdx_license_id_apache-2.0_for_apache-2.0.RULE"
             }
-          ]
+          ],
+          "identifier": "apache_2_0-d66ab77d-a5cc-7104-e702-dc7df61fe9e8"
         }
       ],
       "license_clues": [],
       "percentage_of_license_text": 33.33,
-      "for_license_detections": [
-        "apache_2_0-977175b5-d3f3-74fb-7e96-840fd1e302fd"
-      ],
       "copyrights": [
         {
           "copyright": "Copyright (c) The Apache Software Foundation",
@@ -557,14 +496,12 @@
               "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/spdx_license_id_apache-2.0_for_apache-2.0.RULE"
             }
-          ]
+          ],
+          "identifier": "apache_2_0-d66ab77d-a5cc-7104-e702-dc7df61fe9e8"
         }
       ],
       "license_clues": [],
       "percentage_of_license_text": 33.33,
-      "for_license_detections": [
-        "apache_2_0-977175b5-d3f3-74fb-7e96-840fd1e302fd"
-      ],
       "copyrights": [
         {
           "copyright": "Copyright (c) The Apache Software Foundation",
@@ -627,14 +564,12 @@
               "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/spdx_license_id_apache-2.0_for_apache-2.0.RULE"
             }
-          ]
+          ],
+          "identifier": "apache_2_0-d66ab77d-a5cc-7104-e702-dc7df61fe9e8"
         }
       ],
       "license_clues": [],
       "percentage_of_license_text": 33.33,
-      "for_license_detections": [
-        "apache_2_0-977175b5-d3f3-74fb-7e96-840fd1e302fd"
-      ],
       "copyrights": [
         {
           "copyright": "Copyright (c) The Apache Software Foundation",
@@ -697,14 +632,12 @@
               "rule_relevance": 80,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0_bare_id.RULE"
             }
-          ]
+          ],
+          "identifier": "lgpl_2_0-3903e697-0f73-0feb-d95d-198a91825d0f"
         }
       ],
       "license_clues": [],
       "percentage_of_license_text": 42.86,
-      "for_license_detections": [
-        "lgpl_2_0-e79c760a-4db6-59b3-dd10-9972f52099b3"
-      ],
       "copyrights": [
         {
           "copyright": "Copyright (c) nexB, Inc.",
@@ -754,7 +687,6 @@
       "license_detections": [],
       "license_clues": [],
       "percentage_of_license_text": 0,
-      "for_license_detections": [],
       "copyrights": [],
       "holders": [],
       "authors": [],
@@ -829,7 +761,8 @@
                   "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/spdx_license_id_apache-2.0_for_apache-2.0.RULE",
                   "matched_text": "apache-2.0"
                 }
-              ]
+              ],
+              "identifier": "apache_2_0-d66ab77d-a5cc-7104-e702-dc7df61fe9e8"
             }
           ],
           "other_license_expression": null,
@@ -869,14 +802,12 @@
               "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_65.RULE"
             }
-          ]
+          ],
+          "identifier": "apache_2_0-ec759ae0-ea5a-f138-793e-388520e080c0"
         }
       ],
       "license_clues": [],
       "percentage_of_license_text": 22.22,
-      "for_license_detections": [
-        "apache_2_0-0327b43c-6cf8-4fc1-7f3e-4c29b555583a"
-      ],
       "copyrights": [
         {
           "copyright": "Copyright (c) The Apache Software",
@@ -941,14 +872,12 @@
               "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/spdx_license_id_apache-2.0_for_apache-2.0.RULE"
             }
-          ]
+          ],
+          "identifier": "apache_2_0-d66ab77d-a5cc-7104-e702-dc7df61fe9e8"
         }
       ],
       "license_clues": [],
       "percentage_of_license_text": 33.33,
-      "for_license_detections": [
-        "apache_2_0-977175b5-d3f3-74fb-7e96-840fd1e302fd"
-      ],
       "copyrights": [
         {
           "copyright": "Copyright (c) The Apache Software Foundation",
@@ -1011,14 +940,12 @@
               "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0_1336.RULE"
             }
-          ]
+          ],
+          "identifier": "gpl_2_0-864c0c2e-be17-d035-c591-df0235f46a09"
         }
       ],
       "license_clues": [],
       "percentage_of_license_text": 64.29,
-      "for_license_detections": [
-        "gpl_2_0-e293df00-fb0e-b85c-3954-566507e97888"
-      ],
       "copyrights": [
         {
           "copyright": "copyright (c) 2017 IBM Corp.",

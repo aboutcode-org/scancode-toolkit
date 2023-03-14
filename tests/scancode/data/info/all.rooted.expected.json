@@ -1,42 +1,14 @@
 {
   "license_detections": [
     {
-      "identifier": "gpl_2_0_or_bsd_new-814d8711-2ceb-c909-ad5b-04c14fe1f9e3",
+      "identifier": "gpl_2_0_or_bsd_new-1aafbf52-fc7a-3ded-e4ce-3a96e276a0f9",
       "license_expression": "gpl-2.0 OR bsd-new",
-      "detection_count": 1,
-      "matches": [
-        {
-          "score": 100.0,
-          "start_line": 5,
-          "end_line": 12,
-          "matched_length": 50,
-          "match_coverage": 100.0,
-          "matcher": "2-aho",
-          "license_expression": "gpl-2.0 OR bsd-new",
-          "rule_identifier": "gpl-2.0_or_bsd-new_aes_1.RULE",
-          "rule_relevance": 100,
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0_or_bsd-new_aes_1.RULE"
-        }
-      ]
+      "detection_count": 1
     },
     {
-      "identifier": "bsd_original_uc-5efd6652-3d84-9376-6fbe-46d88e406436",
+      "identifier": "bsd_original_uc-f28cb4d4-6336-ee60-f186-4c1929d3a4b0",
       "license_expression": "bsd-original-uc",
-      "detection_count": 1,
-      "matches": [
-        {
-          "score": 100.0,
-          "start_line": 25,
-          "end_line": 51,
-          "matched_length": 243,
-          "match_coverage": 100.0,
-          "matcher": "2-aho",
-          "license_expression": "bsd-original-uc",
-          "rule_identifier": "bsd-original-uc_3.RULE",
-          "rule_relevance": 100,
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-original-uc_3.RULE"
-        }
-      ]
+      "detection_count": 1
     }
   ],
   "files": [
@@ -48,7 +20,6 @@
       "license_detections": [],
       "license_clues": [],
       "percentage_of_license_text": 0,
-      "for_license_detections": [],
       "copyrights": [],
       "holders": [],
       "authors": [],
@@ -64,7 +35,6 @@
       "license_detections": [],
       "license_clues": [],
       "percentage_of_license_text": 0,
-      "for_license_detections": [],
       "copyrights": [],
       "holders": [],
       "authors": [],
@@ -80,7 +50,6 @@
       "license_detections": [],
       "license_clues": [],
       "percentage_of_license_text": 0,
-      "for_license_detections": [],
       "copyrights": [],
       "holders": [],
       "authors": [],
@@ -96,7 +65,6 @@
       "license_detections": [],
       "license_clues": [],
       "percentage_of_license_text": 0,
-      "for_license_detections": [],
       "copyrights": [],
       "holders": [],
       "authors": [],
@@ -112,7 +80,6 @@
       "license_detections": [],
       "license_clues": [],
       "percentage_of_license_text": 0,
-      "for_license_detections": [],
       "copyrights": [],
       "holders": [],
       "authors": [],
@@ -128,7 +95,6 @@
       "license_detections": [],
       "license_clues": [],
       "percentage_of_license_text": 0,
-      "for_license_detections": [],
       "copyrights": [],
       "holders": [],
       "authors": [],
@@ -144,7 +110,6 @@
       "license_detections": [],
       "license_clues": [],
       "percentage_of_license_text": 0,
-      "for_license_detections": [],
       "copyrights": [],
       "holders": [],
       "authors": [],
@@ -160,7 +125,6 @@
       "license_detections": [],
       "license_clues": [],
       "percentage_of_license_text": 0,
-      "for_license_detections": [],
       "copyrights": [],
       "holders": [],
       "authors": [],
@@ -176,7 +140,6 @@
       "license_detections": [],
       "license_clues": [],
       "percentage_of_license_text": 0,
-      "for_license_detections": [],
       "copyrights": [],
       "holders": [],
       "authors": [],
@@ -205,14 +168,12 @@
               "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-original-uc_3.RULE"
             }
-          ]
+          ],
+          "identifier": "bsd_original_uc-f28cb4d4-6336-ee60-f186-4c1929d3a4b0"
         }
       ],
       "license_clues": [],
       "percentage_of_license_text": 4.82,
-      "for_license_detections": [
-        "bsd_original_uc-5efd6652-3d84-9376-6fbe-46d88e406436"
-      ],
       "copyrights": [
         {
           "copyright": "Copyright (c) 1993 The Regents of the University of California",
@@ -258,7 +219,6 @@
       "license_detections": [],
       "license_clues": [],
       "percentage_of_license_text": 0,
-      "for_license_detections": [],
       "copyrights": [],
       "holders": [],
       "authors": [],
@@ -293,14 +253,12 @@
               "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0_or_bsd-new_aes_1.RULE"
             }
-          ]
+          ],
+          "identifier": "gpl_2_0_or_bsd_new-1aafbf52-fc7a-3ded-e4ce-3a96e276a0f9"
         }
       ],
       "license_clues": [],
       "percentage_of_license_text": 19.01,
-      "for_license_detections": [
-        "gpl_2_0_or_bsd_new-814d8711-2ceb-c909-ad5b-04c14fe1f9e3"
-      ],
       "copyrights": [
         {
           "copyright": "Copyright (c) 2006, Jouni Malinen <j@w1.fi>",

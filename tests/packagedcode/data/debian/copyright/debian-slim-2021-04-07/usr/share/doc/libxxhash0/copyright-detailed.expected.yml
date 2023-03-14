@@ -44,6 +44,7 @@ other_license_detections:
           ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
           (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
           SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+    identifier: bsd_simplified-a1deb97f-56cd-71ea-a95f-82477d400503
   - license_expression: gpl-2.0 AND gpl-2.0-plus
     matches:
       - score: '100.0'
@@ -84,6 +85,7 @@ other_license_detections:
 
           The full text of the GPLv can be found in
           /usr/share/common-licenses/GPL-2
+    identifier: gpl_2_0_and_gpl_2_0_plus-5df65081-d312-a8e0-1d1b-c78fe5fc7973
 copyright: |
   2012-2014 Yann Collet
   2012-2014 Yann Collet

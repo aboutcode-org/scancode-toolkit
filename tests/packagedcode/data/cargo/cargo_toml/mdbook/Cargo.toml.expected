@@ -63,7 +63,8 @@
             "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/spdx_license_id_mpl-2.0_for_mpl-2.0.RULE",
             "matched_text": "MPL-2.0"
           }
-        ]
+        ],
+        "identifier": "mpl_2_0-159c4a7a-362a-76f0-7d8e-d20aa1923af3"
       }
     ],
     "other_license_expression": null,

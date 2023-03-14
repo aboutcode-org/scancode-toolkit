@@ -50,7 +50,8 @@
               "rule_url": null,
               "matched_text": "mit"
             }
-          ]
+          ],
+          "identifier": "mit-704ced38-ea60-e53b-6c20-390fe781b1c3"
         }
       ],
       "other_license_expression": null,
@@ -122,7 +123,8 @@
               "rule_url": null,
               "matched_text": "mit"
             }
-          ]
+          ],
+          "identifier": "mit-704ced38-ea60-e53b-6c20-390fe781b1c3"
         }
       ],
       "other_license_expression": null,
@@ -222,7 +224,8 @@
                   "rule_url": null,
                   "matched_text": "mit"
                 }
-              ]
+              ],
+              "identifier": "mit-704ced38-ea60-e53b-6c20-390fe781b1c3"
             }
           ],
           "other_license_expression": null,
@@ -310,7 +313,8 @@
                   "rule_url": null,
                   "matched_text": "mit"
                 }
-              ]
+              ],
+              "identifier": "mit-704ced38-ea60-e53b-6c20-390fe781b1c3"
             }
           ],
           "other_license_expression": null,

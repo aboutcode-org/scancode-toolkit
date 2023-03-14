@@ -49,7 +49,8 @@
             "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0_bare_single_word.RULE",
             "matched_text": "GPLv2"
           }
-        ]
+        ],
+        "identifier": "gpl_2_0-3aa0fcde-6d7f-a8e2-6494-7f9352e6aafb"
       }
     ],
     "other_license_expression": null,

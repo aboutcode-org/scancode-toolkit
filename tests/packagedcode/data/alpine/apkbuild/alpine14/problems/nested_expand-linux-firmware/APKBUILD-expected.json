@@ -40,7 +40,8 @@
           "rule_url": null,
           "matched_text": "licenseref-scancode-unknown-license-reference"
         }
-      ]
+      ],
+      "identifier": "unknown_license_reference-c96a9bc7-af3a-ff3f-fb67-793f7201aab1"
     }
   ],
   "other_license_expression": null,

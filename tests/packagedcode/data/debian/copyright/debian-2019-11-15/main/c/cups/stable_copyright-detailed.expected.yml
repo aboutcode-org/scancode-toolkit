@@ -49,6 +49,7 @@ other_license_detections:
           STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
           ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED
           OF THE POSSIBILITY OF SUCH DAMAGE.
+    identifier: bsd_simplified-ec301da4-ee99-7256-688b-0e0ca57ab6eb
   - license_expression: cups
     matches:
       - score: '100.0'
@@ -119,6 +120,7 @@ other_license_detections:
 
           No developer is required to provide these exceptions in a
           derived work.
+    identifier: cups-6d04e430-ddd5-a021-eef2-53103e172a4a
   - license_expression: cups
     matches:
       - score: '100.0'
@@ -189,6 +191,7 @@ other_license_detections:
 
           No developer is required to provide these exceptions in a
           derived work.
+    identifier: cups-a1c6fe77-1eeb-f76a-7b3e-a0867d417450
   - license_expression: zlib
     matches:
       - score: '100.0'
@@ -231,6 +234,7 @@ other_license_detections:
 
             3. This notice may not be removed or altered from any source
                distribution.
+    identifier: zlib-5ca248e8-e045-8f0b-3011-80c7c21b071b
 copyright: |
   2007-2015, Apple Inc.
   2007-2013, Apple Inc.

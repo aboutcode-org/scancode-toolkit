@@ -26,6 +26,7 @@ license_detections:
           software.  For a license to use the Berkeley DB software under conditions
           other than those described here, or to purchase support for this software,
           please contact Oracle at berkeleydb-info_us@oracle.com.
+    identifier: sleepycat-0b546f04-dee3-6f0f-7cfb-5ef05c060879
   - license_expression: sleepycat
     matches:
       - score: '100.0'
@@ -69,6 +70,7 @@ license_detections:
            * WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
            * OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
            * IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+    identifier: sleepycat-137b65e9-cdff-e8b1-adf2-2377ce1d6f33
   - license_expression: bsd-new
     matches:
       - score: '100.0'
@@ -105,6 +107,7 @@ license_detections:
            * LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
            * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
            * SUCH DAMAGE.
+    identifier: bsd_new-ccc98c3a-92d4-e7a3-e0ba-798328cb6b98
   - license_expression: bsd-new
     matches:
       - score: '100.0'
@@ -141,6 +144,7 @@ license_detections:
            * LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
            * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
            * SUCH DAMAGE.
+    identifier: bsd_new-35c287f1-5d41-52f8-399e-2391cd1b4b40
   - license_expression: bsd-new
     matches:
       - score: '100.0'
@@ -177,6 +181,7 @@ license_detections:
            * CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
            * ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF
            * THE POSSIBILITY OF SUCH DAMAGE.
+    identifier: bsd_new-e2b570dc-6f0b-acfe-a80d-27df9f3975b8
 other_license_detections: []
 copyright: |
   Copyright (c) 1990, 2010 Oracle and/or its affiliates

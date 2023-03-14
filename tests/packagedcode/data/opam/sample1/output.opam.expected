@@ -126,7 +126,8 @@
             "rule_url": null,
             "matched_text": "ISC"
           }
-        ]
+        ],
+        "identifier": "isc-6c4320cc-eb5b-3792-8c56-b8565fff1119"
       }
     ],
     "other_license_expression": null,

@@ -40,7 +40,8 @@
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0-plus_87.RULE",
           "matched_text": "GNU Lesser General Public License"
         }
-      ]
+      ],
+      "identifier": "lgpl_2_0_plus-4a537314-959d-dbbd-2add-1b2422c6521e"
     },
     {
       "license_expression": "lgpl-2.0-plus",
@@ -58,7 +59,8 @@
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl_3.RULE",
           "matched_text": "http://www.gnu.org/licenses/lgpl.html"
         }
-      ]
+      ],
+      "identifier": "lgpl_2_0_plus-bd2014ad-7f5c-e384-8316-a0068fe42d91"
     }
   ],
   "other_license_expression": null,

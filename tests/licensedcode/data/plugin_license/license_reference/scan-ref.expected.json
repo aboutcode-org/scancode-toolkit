@@ -4,40 +4,12 @@
       "identifier": "mit-6fc93e6a-0319-6943-7be7-2e20513a43e0",
       "license_expression": "mit",
       "detection_count": 1,
-      "matches": [
-        {
-          "score": 100.0,
-          "start_line": 1,
-          "end_line": 1,
-          "matched_length": 10,
-          "match_coverage": 100.0,
-          "matcher": "1-hash",
-          "license_expression": "mit",
-          "rule_identifier": "mit_66.RULE",
-          "rule_relevance": 100,
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_66.RULE"
-        }
-      ],
       "detection_log": []
     },
     {
       "identifier": "unknown_license_reference-8dac7670-e286-f6de-27a1-f2b5c87524ff",
       "license_expression": "unknown-license-reference",
       "detection_count": 1,
-      "matches": [
-        {
-          "score": 100.0,
-          "start_line": 34,
-          "end_line": 34,
-          "matched_length": 5,
-          "match_coverage": 100.0,
-          "matcher": "2-aho",
-          "license_expression": "unknown-license-reference",
-          "rule_identifier": "unknown-license-reference_25.RULE",
-          "rule_relevance": 100,
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/unknown-license-reference_25.RULE"
-        }
-      ],
       "detection_log": []
     }
   ],
@@ -65,14 +37,12 @@
               "matched_text": "that is licensed under [MIT](http://opensource.org/licenses/MIT)."
             }
           ],
-          "detection_log": []
+          "detection_log": [],
+          "identifier": "mit-6fc93e6a-0319-6943-7be7-2e20513a43e0"
         }
       ],
       "license_clues": [],
       "percentage_of_license_text": 100.0,
-      "for_license_detections": [
-        "mit-6fc93e6a-0319-6943-7be7-2e20513a43e0"
-      ],
       "scan_errors": []
     },
     {
@@ -113,14 +83,12 @@
           ],
           "detection_log": [
             "unknown-reference-to-local-file"
-          ]
+          ],
+          "identifier": "20c01557-97bd-0022-052e-56c5ed8465ea"
         }
       ],
       "license_clues": [],
       "percentage_of_license_text": 0.2,
-      "for_license_detections": [
-        "unknown_license_reference-8dac7670-e286-f6de-27a1-f2b5c87524ff"
-      ],
       "scan_errors": []
     }
   ]

@@ -1,23 +1,9 @@
 {
   "license_detections": [
     {
-      "identifier": "mit-d023e558-35f1-ef53-5625-5f585054dde4",
+      "identifier": "mit-3fce6ea2-8abd-6c6b-3ede-a37af7c6efee",
       "license_expression": "mit",
-      "detection_count": 1,
-      "matches": [
-        {
-          "score": 100.0,
-          "start_line": 7,
-          "end_line": 7,
-          "matched_length": 2,
-          "match_coverage": 100.0,
-          "matcher": "2-aho",
-          "license_expression": "mit",
-          "rule_identifier": "mit_30.RULE",
-          "rule_relevance": 100,
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_30.RULE"
-        }
-      ]
+      "detection_count": 1
     }
   ],
   "summary": {
@@ -57,7 +43,6 @@
       "license_detections": [],
       "license_clues": [],
       "percentage_of_license_text": 0,
-      "for_license_detections": [],
       "copyrights": [],
       "holders": [],
       "authors": [],
@@ -95,7 +80,6 @@
       "license_detections": [],
       "license_clues": [],
       "percentage_of_license_text": 0,
-      "for_license_detections": [],
       "copyrights": [
         {
           "copyright": "Copyright (c) Example, Inc.",
@@ -145,7 +129,6 @@
       "license_detections": [],
       "license_clues": [],
       "percentage_of_license_text": 0,
-      "for_license_detections": [],
       "copyrights": [],
       "holders": [],
       "authors": [],
@@ -196,14 +179,12 @@
               "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_30.RULE"
             }
-          ]
+          ],
+          "identifier": "mit-3fce6ea2-8abd-6c6b-3ede-a37af7c6efee"
         }
       ],
       "license_clues": [],
       "percentage_of_license_text": 1.83,
-      "for_license_detections": [
-        "mit-d023e558-35f1-ef53-5625-5f585054dde4"
-      ],
       "copyrights": [],
       "holders": [],
       "authors": [

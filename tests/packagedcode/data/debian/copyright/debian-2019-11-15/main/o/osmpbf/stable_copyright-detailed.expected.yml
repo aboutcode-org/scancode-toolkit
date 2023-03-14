@@ -49,6 +49,7 @@ other_license_detections:
 
           On Debian systems, the complete text of the GNU Lesser General Public License
           version 3 can be found in "/usr/share/common-licenses/LGPL-3".
+    identifier: lgpl_3_0_plus-c84eb3ae-8936-b3a7-4f16-d8137a955f29
   - license_expression: gpl-3.0-plus
     matches:
       - score: '100.0'
@@ -88,6 +89,7 @@ other_license_detections:
 
           On Debian systems, the complete text of the GNU General Public License
           version 3 can be found in "/usr/share/common-licenses/GPL-3".
+    identifier: gpl_3_0_plus-cb21207c-ee75-9c0d-268d-8f6d2e992076
 copyright: |
   2010, Scott A. Crosby <scott@sacrosby.com>
   2010-2012, Giovanni Mascellani <gio@debian.org>

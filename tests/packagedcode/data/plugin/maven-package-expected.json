@@ -42,7 +42,8 @@
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_2.RULE",
               "matched_text": "  Licensed to the Apache Software Foundation (ASF) under one or more\n  contributor license agreements.  See the NOTICE file distributed with\n  this work for additional information regarding copyright ownership.\n  The ASF licenses this file to You under the Apache License, Version 2.0\n  (the \"License\"); you may not use this file except in compliance with\n  the License.  You may obtain a copy of the License at\n  \n  http://www.apache.org/licenses/LICENSE-2.0\n  \n  Unless required by applicable law or agreed to in writing, software\n  distributed under the License is distributed on an \"AS IS\" BASIS,\n  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n  See the License for the specific language governing permissions and\n  limitations under the License."
             }
-          ]
+          ],
+          "identifier": "apache_2_0-4bde3f57-78aa-4201-96bf-531cba09e7de"
         }
       ],
       "other_license_expression": null,
@@ -155,7 +156,8 @@
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_2.RULE",
               "matched_text": "   Licensed to the Apache Software Foundation (ASF) under one or more\r\n   contributor license agreements.  See the NOTICE file distributed with\r\n   this work for additional information regarding copyright ownership.\r\n   The ASF licenses this file to You under the Apache License, Version 2.0\r\n   (the \"License\"); you may not use this file except in compliance with\r\n   the License.  You may obtain a copy of the License at\r\n\r\n       http://www.apache.org/licenses/LICENSE-2.0\r\n\r\n   Unless required by applicable law or agreed to in writing, software\r\n   distributed under the License is distributed on an \"AS IS\" BASIS,\r\n   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\r\n   See the License for the specific language governing permissions and\r\n   limitations under the License."
             }
-          ]
+          ],
+          "identifier": "apache_2_0-4bde3f57-78aa-4201-96bf-531cba09e7de"
         }
       ],
       "other_license_expression": null,
@@ -221,7 +223,8 @@
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_2.RULE",
               "matched_text": "   Licensed to the Apache Software Foundation (ASF) under one or more\r\n   contributor license agreements.  See the NOTICE file distributed with\r\n   this work for additional information regarding copyright ownership.\r\n   The ASF licenses this file to You under the Apache License, Version 2.0\r\n   (the \"License\"); you may not use this file except in compliance with\r\n   the License.  You may obtain a copy of the License at\r\n\r\n       http://www.apache.org/licenses/LICENSE-2.0\r\n\r\n   Unless required by applicable law or agreed to in writing, software\r\n   distributed under the License is distributed on an \"AS IS\" BASIS,\r\n   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\r\n   See the License for the specific language governing permissions and\r\n   limitations under the License."
             }
-          ]
+          ],
+          "identifier": "apache_2_0-4bde3f57-78aa-4201-96bf-531cba09e7de"
         }
       ],
       "other_license_expression": null,
@@ -287,7 +290,8 @@
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/public-domain_bare_words.RULE",
               "matched_text": "Public Domain"
             }
-          ]
+          ],
+          "identifier": "public_domain-3dd945ae-65df-7d90-6467-60f8ecf2eb77"
         },
         {
           "license_expression": "gpl-1.0-plus",
@@ -305,7 +309,8 @@
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl_bare_word_only.RULE",
               "matched_text": "GPL"
             }
-          ]
+          ],
+          "identifier": "gpl_1_0_plus-473308ff-72ce-7e72-b3a9-5b1cc6680abb"
         }
       ],
       "other_license_expression": null,
@@ -816,7 +821,8 @@
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_5.RULE",
               "matched_text": "The Apache Software License, Version 2.0"
             }
-          ]
+          ],
+          "identifier": "apache_2_0-daaaee76-1395-c8c8-e06a-3f3f76e079b1"
         }
       ],
       "other_license_expression": null,
@@ -1041,7 +1047,8 @@
               "rule_url": null,
               "matched_text": "MIT"
             }
-          ]
+          ],
+          "identifier": "mit-a822f434-d61f-f2b1-c792-8b8cb9e7b9bf"
         }
       ],
       "other_license_expression": null,
@@ -1209,7 +1216,8 @@
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/epl-1.0_4.RULE",
               "matched_text": "Eclipse Public License - v 1.0"
             }
-          ]
+          ],
+          "identifier": "epl_1_0-08260e9e-18a1-8e8e-6b84-e5bd8fb66c01"
         },
         {
           "license_expression": "epl-1.0",
@@ -1227,7 +1235,8 @@
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/epl-1.0.RULE",
               "matched_text": "http://www.eclipse.org/legal/epl-v10.html"
             }
-          ]
+          ],
+          "identifier": "epl_1_0-55aef6c5-220a-7892-61d4-4edfb5d67d75"
         }
       ],
       "other_license_expression": null,
@@ -1293,7 +1302,8 @@
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_2.RULE",
               "matched_text": "        Licensed to the Apache Software Foundation (ASF) under one or more\r\n        contributor license agreements.  See the NOTICE file distributed with\r\n        this work for additional information regarding copyright ownership.\r\n        The ASF licenses this file to You under the Apache License, Version 2.0\r\n        (the \"License\"); you may not use this file except in compliance with\r\n        the License.  You may obtain a copy of the License at\r\n\r\n           http://www.apache.org/licenses/LICENSE-2.0\r\n\r\n        Unless required by applicable law or agreed to in writing, software\r\n        distributed under the License is distributed on an \"AS IS\" BASIS,\r\n        WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\r\n        See the License for the specific language governing permissions and\r\n        limitations under the License."
             }
-          ]
+          ],
+          "identifier": "apache_2_0-4bde3f57-78aa-4201-96bf-531cba09e7de"
         }
       ],
       "other_license_expression": null,
@@ -1443,7 +1453,8 @@
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl_bare_single_word.RULE",
               "matched_text": "LGPL"
             }
-          ]
+          ],
+          "identifier": "lgpl_2_0_plus-64f6d457-252f-6fe3-26b9-ae66d29ef973"
         },
         {
           "license_expression": "lgpl-2.1-plus",
@@ -1461,7 +1472,8 @@
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl_7.RULE",
               "matched_text": "http://www.gnu.org/copyleft/lesser.html"
             }
-          ]
+          ],
+          "identifier": "lgpl_2_1_plus-b16c21f5-6aef-caba-ec70-9c220b47a1a5"
         }
       ],
       "other_license_expression": null,
@@ -1535,7 +1547,8 @@
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_5.RULE",
               "matched_text": "The Apache Software License, Version 2.0"
             }
-          ]
+          ],
+          "identifier": "apache_2_0-daaaee76-1395-c8c8-e06a-3f3f76e079b1"
         },
         {
           "license_expression": "apache-2.0",
@@ -1553,7 +1566,8 @@
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_42.RULE",
               "matched_text": "http://www.apache.org/licenses/LICENSE-2.0.txt"
             }
-          ]
+          ],
+          "identifier": "apache_2_0-e6b67d43-b657-21c0-8d8b-17f617aef8ce"
         }
       ],
       "other_license_expression": null,
@@ -1619,7 +1633,8 @@
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0-plus_87.RULE",
               "matched_text": "GNU Lesser General Public License"
             }
-          ]
+          ],
+          "identifier": "lgpl_2_0_plus-4a537314-959d-dbbd-2add-1b2422c6521e"
         },
         {
           "license_expression": "lgpl-2.0-plus",
@@ -1637,7 +1652,8 @@
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl_3.RULE",
               "matched_text": "http://www.gnu.org/licenses/lgpl.html"
             }
-          ]
+          ],
+          "identifier": "lgpl_2_0_plus-bd2014ad-7f5c-e384-8316-a0068fe42d91"
         }
       ],
       "other_license_expression": null,
@@ -1882,7 +1898,8 @@
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_2.RULE",
               "matched_text": "        Licensed to the Apache Software Foundation (ASF) under one or more\n        contributor license agreements.  See the NOTICE file distributed with\n        this work for additional information regarding copyright ownership.\n        The ASF licenses this file to You under the Apache License, Version 2.0\n        (the \"License\"); you may not use this file except in compliance with\n        the License.  You may obtain a copy of the License at\n\n           http://www.apache.org/licenses/LICENSE-2.0\n\n        Unless required by applicable law or agreed to in writing, software\n        distributed under the License is distributed on an \"AS IS\" BASIS,\n        WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n        See the License for the specific language governing permissions and\n        limitations under the License."
             }
-          ]
+          ],
+          "identifier": "apache_2_0-4bde3f57-78aa-4201-96bf-531cba09e7de"
         }
       ],
       "other_license_expression": null,
@@ -2064,7 +2081,8 @@
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_2.RULE",
               "matched_text": "\t    Licensed to the Apache Software Foundation (ASF) under one\n\t    or more contributor license agreements.  See the NOTICE file\n\t    distributed with this work for additional information\n\t    regarding copyright ownership.  The ASF licenses this file\n\t    to you under the Apache License, Version 2.0 (the\n\t    \"License\"); you may not use this file except in compliance\n\t    with the License.  You may obtain a copy of the License at\n\n\t     http://www.apache.org/licenses/LICENSE-2.0\n\n\t    Unless required by applicable law or agreed to in writing,\n\t    software distributed under the License is distributed on an\n\t    \"AS IS\" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY\n\t    KIND, either express or implied.  See the License for the\n\t    specific language governing permissions and limitations\n\t    under the License."
             }
-          ]
+          ],
+          "identifier": "apache_2_0-4bde3f57-78aa-4201-96bf-531cba09e7de"
         }
       ],
       "other_license_expression": null,
@@ -2138,7 +2156,8 @@
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_5.RULE",
               "matched_text": "The Apache Software License, Version 2.0"
             }
-          ]
+          ],
+          "identifier": "apache_2_0-daaaee76-1395-c8c8-e06a-3f3f76e079b1"
         },
         {
           "license_expression": "apache-2.0",
@@ -2156,7 +2175,8 @@
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_42.RULE",
               "matched_text": "http://www.apache.org/licenses/LICENSE-2.0.txt"
             }
-          ]
+          ],
+          "identifier": "apache_2_0-e6b67d43-b657-21c0-8d8b-17f617aef8ce"
         }
       ],
       "other_license_expression": null,
@@ -2230,7 +2250,8 @@
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_5.RULE",
               "matched_text": "The Apache Software License, Version 2.0"
             }
-          ]
+          ],
+          "identifier": "apache_2_0-daaaee76-1395-c8c8-e06a-3f3f76e079b1"
         },
         {
           "license_expression": "apache-2.0",
@@ -2248,7 +2269,8 @@
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_42.RULE",
               "matched_text": "http://www.apache.org/licenses/LICENSE-2.0.txt"
             }
-          ]
+          ],
+          "identifier": "apache_2_0-e6b67d43-b657-21c0-8d8b-17f617aef8ce"
         }
       ],
       "other_license_expression": null,
@@ -2322,7 +2344,8 @@
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_5.RULE",
               "matched_text": "The Apache Software License, Version 2.0"
             }
-          ]
+          ],
+          "identifier": "apache_2_0-daaaee76-1395-c8c8-e06a-3f3f76e079b1"
         },
         {
           "license_expression": "apache-2.0",
@@ -2340,7 +2363,8 @@
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_42.RULE",
               "matched_text": "http://www.apache.org/licenses/LICENSE-2.0.txt"
             }
-          ]
+          ],
+          "identifier": "apache_2_0-e6b67d43-b657-21c0-8d8b-17f617aef8ce"
         }
       ],
       "other_license_expression": null,
@@ -2602,7 +2626,8 @@
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_94.RULE",
               "matched_text": "    <license.licenseName>apache_v2</license.licenseName>"
             }
-          ]
+          ],
+          "identifier": "apache_2_0-3d848632-5094-b3b6-bd3b-629868451b7f"
         }
       ],
       "other_license_expression": null,
@@ -6325,7 +6350,8 @@
                   "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_2.RULE",
                   "matched_text": "  Licensed to the Apache Software Foundation (ASF) under one or more\n  contributor license agreements.  See the NOTICE file distributed with\n  this work for additional information regarding copyright ownership.\n  The ASF licenses this file to You under the Apache License, Version 2.0\n  (the \"License\"); you may not use this file except in compliance with\n  the License.  You may obtain a copy of the License at\n  \n  http://www.apache.org/licenses/LICENSE-2.0\n  \n  Unless required by applicable law or agreed to in writing, software\n  distributed under the License is distributed on an \"AS IS\" BASIS,\n  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n  See the License for the specific language governing permissions and\n  limitations under the License."
                 }
-              ]
+              ],
+              "identifier": "apache_2_0-4bde3f57-78aa-4201-96bf-531cba09e7de"
             }
           ],
           "other_license_expression": null,
@@ -6615,7 +6641,8 @@
                   "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_2.RULE",
                   "matched_text": "   Licensed to the Apache Software Foundation (ASF) under one or more\r\n   contributor license agreements.  See the NOTICE file distributed with\r\n   this work for additional information regarding copyright ownership.\r\n   The ASF licenses this file to You under the Apache License, Version 2.0\r\n   (the \"License\"); you may not use this file except in compliance with\r\n   the License.  You may obtain a copy of the License at\r\n\r\n       http://www.apache.org/licenses/LICENSE-2.0\r\n\r\n   Unless required by applicable law or agreed to in writing, software\r\n   distributed under the License is distributed on an \"AS IS\" BASIS,\r\n   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\r\n   See the License for the specific language governing permissions and\r\n   limitations under the License."
                 }
-              ]
+              ],
+              "identifier": "apache_2_0-4bde3f57-78aa-4201-96bf-531cba09e7de"
             }
           ],
           "other_license_expression": null,
@@ -6745,7 +6772,8 @@
                   "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_2.RULE",
                   "matched_text": "   Licensed to the Apache Software Foundation (ASF) under one or more\r\n   contributor license agreements.  See the NOTICE file distributed with\r\n   this work for additional information regarding copyright ownership.\r\n   The ASF licenses this file to You under the Apache License, Version 2.0\r\n   (the \"License\"); you may not use this file except in compliance with\r\n   the License.  You may obtain a copy of the License at\r\n\r\n       http://www.apache.org/licenses/LICENSE-2.0\r\n\r\n   Unless required by applicable law or agreed to in writing, software\r\n   distributed under the License is distributed on an \"AS IS\" BASIS,\r\n   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\r\n   See the License for the specific language governing permissions and\r\n   limitations under the License."
                 }
-              ]
+              ],
+              "identifier": "apache_2_0-4bde3f57-78aa-4201-96bf-531cba09e7de"
             }
           ],
           "other_license_expression": null,
@@ -6865,7 +6893,8 @@
                   "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/public-domain_bare_words.RULE",
                   "matched_text": "Public Domain"
                 }
-              ]
+              ],
+              "identifier": "public_domain-3dd945ae-65df-7d90-6467-60f8ecf2eb77"
             },
             {
               "license_expression": "gpl-1.0-plus",
@@ -6883,7 +6912,8 @@
                   "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl_bare_word_only.RULE",
                   "matched_text": "GPL"
                 }
-              ]
+              ],
+              "identifier": "gpl_1_0_plus-473308ff-72ce-7e72-b3a9-5b1cc6680abb"
             }
           ],
           "other_license_expression": null,
@@ -7547,7 +7577,8 @@
                   "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_5.RULE",
                   "matched_text": "The Apache Software License, Version 2.0"
                 }
-              ]
+              ],
+              "identifier": "apache_2_0-daaaee76-1395-c8c8-e06a-3f3f76e079b1"
             }
           ],
           "other_license_expression": null,
@@ -8113,7 +8144,8 @@
                   "rule_url": null,
                   "matched_text": "MIT"
                 }
-              ]
+              ],
+              "identifier": "mit-a822f434-d61f-f2b1-c792-8b8cb9e7b9bf"
             }
           ],
           "other_license_expression": null,
@@ -8603,7 +8635,8 @@
                   "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/epl-1.0_4.RULE",
                   "matched_text": "Eclipse Public License - v 1.0"
                 }
-              ]
+              ],
+              "identifier": "epl_1_0-08260e9e-18a1-8e8e-6b84-e5bd8fb66c01"
             },
             {
               "license_expression": "epl-1.0",
@@ -8621,7 +8654,8 @@
                   "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/epl-1.0.RULE",
                   "matched_text": "http://www.eclipse.org/legal/epl-v10.html"
                 }
-              ]
+              ],
+              "identifier": "epl_1_0-55aef6c5-220a-7892-61d4-4edfb5d67d75"
             }
           ],
           "other_license_expression": null,
@@ -8801,7 +8835,8 @@
                   "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_2.RULE",
                   "matched_text": "        Licensed to the Apache Software Foundation (ASF) under one or more\r\n        contributor license agreements.  See the NOTICE file distributed with\r\n        this work for additional information regarding copyright ownership.\r\n        The ASF licenses this file to You under the Apache License, Version 2.0\r\n        (the \"License\"); you may not use this file except in compliance with\r\n        the License.  You may obtain a copy of the License at\r\n\r\n           http://www.apache.org/licenses/LICENSE-2.0\r\n\r\n        Unless required by applicable law or agreed to in writing, software\r\n        distributed under the License is distributed on an \"AS IS\" BASIS,\r\n        WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\r\n        See the License for the specific language governing permissions and\r\n        limitations under the License."
                 }
-              ]
+              ],
+              "identifier": "apache_2_0-4bde3f57-78aa-4201-96bf-531cba09e7de"
             }
           ],
           "other_license_expression": null,
@@ -9069,7 +9104,8 @@
                   "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl_bare_single_word.RULE",
                   "matched_text": "LGPL"
                 }
-              ]
+              ],
+              "identifier": "lgpl_2_0_plus-64f6d457-252f-6fe3-26b9-ae66d29ef973"
             },
             {
               "license_expression": "lgpl-2.1-plus",
@@ -9087,7 +9123,8 @@
                   "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl_7.RULE",
                   "matched_text": "http://www.gnu.org/copyleft/lesser.html"
                 }
-              ]
+              ],
+              "identifier": "lgpl_2_1_plus-b16c21f5-6aef-caba-ec70-9c220b47a1a5"
             }
           ],
           "other_license_expression": null,
@@ -9235,7 +9272,8 @@
                   "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_5.RULE",
                   "matched_text": "The Apache Software License, Version 2.0"
                 }
-              ]
+              ],
+              "identifier": "apache_2_0-daaaee76-1395-c8c8-e06a-3f3f76e079b1"
             },
             {
               "license_expression": "apache-2.0",
@@ -9253,7 +9291,8 @@
                   "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_42.RULE",
                   "matched_text": "http://www.apache.org/licenses/LICENSE-2.0.txt"
                 }
-              ]
+              ],
+              "identifier": "apache_2_0-e6b67d43-b657-21c0-8d8b-17f617aef8ce"
             }
           ],
           "other_license_expression": null,
@@ -9413,7 +9452,8 @@
                   "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0-plus_87.RULE",
                   "matched_text": "GNU Lesser General Public License"
                 }
-              ]
+              ],
+              "identifier": "lgpl_2_0_plus-4a537314-959d-dbbd-2add-1b2422c6521e"
             },
             {
               "license_expression": "lgpl-2.0-plus",
@@ -9431,7 +9471,8 @@
                   "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl_3.RULE",
                   "matched_text": "http://www.gnu.org/licenses/lgpl.html"
                 }
-              ]
+              ],
+              "identifier": "lgpl_2_0_plus-bd2014ad-7f5c-e384-8316-a0068fe42d91"
             }
           ],
           "other_license_expression": null,
@@ -9867,7 +9908,8 @@
                   "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_2.RULE",
                   "matched_text": "        Licensed to the Apache Software Foundation (ASF) under one or more\n        contributor license agreements.  See the NOTICE file distributed with\n        this work for additional information regarding copyright ownership.\n        The ASF licenses this file to You under the Apache License, Version 2.0\n        (the \"License\"); you may not use this file except in compliance with\n        the License.  You may obtain a copy of the License at\n\n           http://www.apache.org/licenses/LICENSE-2.0\n\n        Unless required by applicable law or agreed to in writing, software\n        distributed under the License is distributed on an \"AS IS\" BASIS,\n        WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n        See the License for the specific language governing permissions and\n        limitations under the License."
                 }
-              ]
+              ],
+              "identifier": "apache_2_0-4bde3f57-78aa-4201-96bf-531cba09e7de"
             }
           ],
           "other_license_expression": null,
@@ -10621,7 +10663,8 @@
                   "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_2.RULE",
                   "matched_text": "\t    Licensed to the Apache Software Foundation (ASF) under one\n\t    or more contributor license agreements.  See the NOTICE file\n\t    distributed with this work for additional information\n\t    regarding copyright ownership.  The ASF licenses this file\n\t    to you under the Apache License, Version 2.0 (the\n\t    \"License\"); you may not use this file except in compliance\n\t    with the License.  You may obtain a copy of the License at\n\n\t     http://www.apache.org/licenses/LICENSE-2.0\n\n\t    Unless required by applicable law or agreed to in writing,\n\t    software distributed under the License is distributed on an\n\t    \"AS IS\" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY\n\t    KIND, either express or implied.  See the License for the\n\t    specific language governing permissions and limitations\n\t    under the License."
                 }
-              ]
+              ],
+              "identifier": "apache_2_0-4bde3f57-78aa-4201-96bf-531cba09e7de"
             }
           ],
           "other_license_expression": null,
@@ -10739,7 +10782,8 @@
                   "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_5.RULE",
                   "matched_text": "The Apache Software License, Version 2.0"
                 }
-              ]
+              ],
+              "identifier": "apache_2_0-daaaee76-1395-c8c8-e06a-3f3f76e079b1"
             },
             {
               "license_expression": "apache-2.0",
@@ -10757,7 +10801,8 @@
                   "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_42.RULE",
                   "matched_text": "http://www.apache.org/licenses/LICENSE-2.0.txt"
                 }
-              ]
+              ],
+              "identifier": "apache_2_0-e6b67d43-b657-21c0-8d8b-17f617aef8ce"
             }
           ],
           "other_license_expression": null,
@@ -11515,7 +11560,8 @@
                   "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_5.RULE",
                   "matched_text": "The Apache Software License, Version 2.0"
                 }
-              ]
+              ],
+              "identifier": "apache_2_0-daaaee76-1395-c8c8-e06a-3f3f76e079b1"
             },
             {
               "license_expression": "apache-2.0",
@@ -11533,7 +11579,8 @@
                   "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_42.RULE",
                   "matched_text": "http://www.apache.org/licenses/LICENSE-2.0.txt"
                 }
-              ]
+              ],
+              "identifier": "apache_2_0-e6b67d43-b657-21c0-8d8b-17f617aef8ce"
             }
           ],
           "other_license_expression": null,
@@ -11801,7 +11848,8 @@
                   "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_5.RULE",
                   "matched_text": "The Apache Software License, Version 2.0"
                 }
-              ]
+              ],
+              "identifier": "apache_2_0-daaaee76-1395-c8c8-e06a-3f3f76e079b1"
             },
             {
               "license_expression": "apache-2.0",
@@ -11819,7 +11867,8 @@
                   "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_42.RULE",
                   "matched_text": "http://www.apache.org/licenses/LICENSE-2.0.txt"
                 }
-              ]
+              ],
+              "identifier": "apache_2_0-e6b67d43-b657-21c0-8d8b-17f617aef8ce"
             }
           ],
           "other_license_expression": null,
@@ -12529,7 +12578,8 @@
                   "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_94.RULE",
                   "matched_text": "    <license.licenseName>apache_v2</license.licenseName>"
                 }
-              ]
+              ],
+              "identifier": "apache_2_0-3d848632-5094-b3b6-bd3b-629868451b7f"
             }
           ],
           "other_license_expression": null,

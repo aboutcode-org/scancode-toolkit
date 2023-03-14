@@ -46,6 +46,7 @@ other_license_detections:
 
           On Debian systems, the complete text of the Apache version 2.0 license
           can be found in "/usr/share/common-licenses/Apache-2.0".
+    identifier: apache_2_0-0a5efff7-905e-0c0f-9b9a-b606d13ea20b
 copyright: |
   2002-2019 ProcessOne
   2018-2019 Evgeny Khramtsov <ekhramtsov@process-one.net>

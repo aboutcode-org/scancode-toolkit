@@ -56,7 +56,8 @@
             "rule_url": null,
             "matched_text": "(LGPL-2.1-only or GPL-3.0-or-later)"
           }
-        ]
+        ],
+        "identifier": "lgpl_2_1_or_gpl_3_0_plus-ffc36bf4-cf08-e140-bdd7-23139c43d6ea"
       }
     ],
     "other_license_expression": null,

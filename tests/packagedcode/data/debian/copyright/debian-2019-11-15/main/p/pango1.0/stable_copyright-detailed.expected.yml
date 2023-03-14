@@ -46,6 +46,7 @@ other_license_detections:
           Permission to use, copy, modify, distribute, and sell this example
           for any purpose is hereby granted without fee.
           It is provided "as is" without express or implied warranty.
+    identifier: other_permissive-030a04e3-fab9-cc90-a7eb-341ec19285d1
   - license_expression: x11
     matches:
       - score: '100.0'
@@ -86,6 +87,7 @@ other_license_detections:
 
           All trademarks and registered trademarks mentioned herein are the property
           of their respective owners.
+    identifier: x11-fa1d6e22-e05b-6093-6d7b-b82e9d97a910
   - license_expression: lgpl-2.0-plus
     matches:
       - score: '100.0'
@@ -122,6 +124,7 @@ other_license_detections:
 
           On Debian systems, the complete text of the GNU Lesser General Public
           License version 2 can be found in "/usr/share/common-licenses/LGPL-2".
+    identifier: lgpl_2_0_plus-4c6098f7-5b22-4023-84df-76b5f2165c85
   - license_expression: tcl
     matches:
       - score: '100.0'
@@ -174,6 +177,7 @@ other_license_detections:
           the authors grant the U.S. Government and others acting in its behalf
           permission to use and distribute the software in accordance with the
           terms specified in this license.
+    identifier: tcl-5f656d8e-004e-b8eb-6b96-10577123cfec
   - license_expression: unicode
     matches:
       - score: '100.0'
@@ -238,6 +242,7 @@ other_license_detections:
           shall not be used in advertising or otherwise to promote the sale,
           use or other dealings in these Data Files or Software without prior
           written authorization of the copyright holder.
+    identifier: unicode-f1da50be-f434-aa05-57e4-e760b87d8a28
 copyright: |
   1999-2015 Red Hat
   2005-2007 Imendio AB

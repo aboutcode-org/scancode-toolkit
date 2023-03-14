@@ -41,6 +41,7 @@ other_license_detections:
            .
            On Debian systems, refer to /usr/share/common-licenses/LGPL-2.1
            for the complete text of the GNU Lesser General Public License.
+    identifier: lgpl_2_1-20d58352-2308-f9d4-19be-3c2cf2b3336a
   - license_expression: gpl-2.0
     matches:
       - score: '100.0'
@@ -80,6 +81,7 @@ other_license_detections:
 
           On Debian systems, the complete text of the GNU General
           Public License can be found in `/usr/share/common-licenses/GPL-1'.
+    identifier: gpl_2_0-849b6c24-e973-aa54-41e1-05bf5e6402d8
 copyright: |
   2012-2016 Steve Grubb <sgrubb@redhat.com>
   2006-2012 Rik Faith

@@ -74,7 +74,8 @@
             "rule_url": null,
             "matched_text": "MIT"
           }
-        ]
+        ],
+        "identifier": "mit-a822f434-d61f-f2b1-c792-8b8cb9e7b9bf"
       },
       {
         "license_expression": "mit",
@@ -92,7 +93,8 @@
             "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/pypi_mit_license.RULE",
             "matched_text": "['License :: OSI Approved :: MIT License']"
           }
-        ]
+        ],
+        "identifier": "mit-24a5293c-14d7-5403-efac-1a8b7532c0e8"
       }
     ],
     "other_license_expression": null,

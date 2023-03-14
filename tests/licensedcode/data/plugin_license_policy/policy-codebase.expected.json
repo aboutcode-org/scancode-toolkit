@@ -1,99 +1,29 @@
 {
   "license_detections": [
     {
-      "identifier": "broadcom_commercial-eb6332e3-8fb8-e2b9-4b8a-93664ac5ead1",
+      "identifier": "broadcom_commercial-c75957a5-a538-0f21-d34e-5cb732b83de0",
       "license_expression": "broadcom-commercial",
-      "detection_count": 1,
-      "matches": [
-        {
-          "score": 100.0,
-          "start_line": 3,
-          "end_line": 7,
-          "matched_length": 42,
-          "match_coverage": 100.0,
-          "matcher": "2-aho",
-          "license_expression": "broadcom-commercial",
-          "rule_identifier": "broadcom-commercial.LICENSE",
-          "rule_relevance": 100,
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/broadcom-commercial.LICENSE"
-        }
-      ]
+      "detection_count": 1
     },
     {
-      "identifier": "bsd_1988-4b3ca9d4-af1e-4189-1e8a-2a8298cd906f",
+      "identifier": "bsd_1988-6f82c6f9-3188-d25a-b614-a8da40a182eb",
       "license_expression": "bsd-1988",
-      "detection_count": 1,
-      "matches": [
-        {
-          "score": 100.0,
-          "start_line": 4,
-          "end_line": 14,
-          "matched_length": 120,
-          "match_coverage": 100.0,
-          "matcher": "2-aho",
-          "license_expression": "bsd-1988",
-          "rule_identifier": "bsd-1988.LICENSE",
-          "rule_relevance": 100,
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-1988.LICENSE"
-        }
-      ]
+      "detection_count": 1
     },
     {
-      "identifier": "esri_devkit-6d6fd7a9-d8fa-6b3f-48ef-08ed2d4df770",
+      "identifier": "esri_devkit-61ff055a-1f77-2a34-84c0-13880adcee3a",
       "license_expression": "esri-devkit",
-      "detection_count": 1,
-      "matches": [
-        {
-          "score": 100.0,
-          "start_line": 1,
-          "end_line": 10,
-          "matched_length": 51,
-          "match_coverage": 100.0,
-          "matcher": "1-hash",
-          "license_expression": "esri-devkit",
-          "rule_identifier": "esri-devkit.LICENSE",
-          "rule_relevance": 100,
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/esri-devkit.LICENSE"
-        }
-      ]
+      "detection_count": 1
     },
     {
-      "identifier": "oracle_java_ee_sdk_2010-29813ee0-8d53-4b21-8e85-673067344b82",
+      "identifier": "oracle_java_ee_sdk_2010-62721c1c-0579-102d-4299-b9ada4a65100",
       "license_expression": "oracle-java-ee-sdk-2010",
-      "detection_count": 1,
-      "matches": [
-        {
-          "score": 100.0,
-          "start_line": 1,
-          "end_line": 89,
-          "matched_length": 1668,
-          "match_coverage": 100.0,
-          "matcher": "1-hash",
-          "license_expression": "oracle-java-ee-sdk-2010",
-          "rule_identifier": "oracle-java-ee-sdk-2010.LICENSE",
-          "rule_relevance": 100,
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/oracle-java-ee-sdk-2010.LICENSE"
-        }
-      ]
+      "detection_count": 1
     },
     {
-      "identifier": "rh_eula-10143de5-9918-a429-4d90-0bc3267c7be8",
+      "identifier": "rh_eula-5e8f3250-f910-dacc-e3f1-b0ee8c925477",
       "license_expression": "rh-eula",
-      "detection_count": 1,
-      "matches": [
-        {
-          "score": 100.0,
-          "start_line": 1,
-          "end_line": 124,
-          "matched_length": 1283,
-          "match_coverage": 100.0,
-          "matcher": "1-hash",
-          "license_expression": "rh-eula",
-          "rule_identifier": "rh-eula.LICENSE",
-          "rule_relevance": 100,
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/rh-eula.LICENSE"
-        }
-      ]
+      "detection_count": 1
     }
   ],
   "files": [
@@ -122,7 +52,6 @@
       "license_detections": [],
       "license_clues": [],
       "percentage_of_license_text": 0,
-      "for_license_detections": [],
       "license_policy": {},
       "files_count": 5,
       "dirs_count": 1,
@@ -154,7 +83,6 @@
       "license_detections": [],
       "license_clues": [],
       "percentage_of_license_text": 0,
-      "for_license_detections": [],
       "license_policy": {},
       "files_count": 5,
       "dirs_count": 0,
@@ -199,14 +127,12 @@
               "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/broadcom-commercial.LICENSE"
             }
-          ]
+          ],
+          "identifier": "broadcom_commercial-c75957a5-a538-0f21-d34e-5cb732b83de0"
         }
       ],
       "license_clues": [],
       "percentage_of_license_text": 84.0,
-      "for_license_detections": [
-        "broadcom_commercial-eb6332e3-8fb8-e2b9-4b8a-93664ac5ead1"
-      ],
       "license_policy": {
         "license_key": "broadcom-commercial",
         "label": "Restricted License",
@@ -256,14 +182,12 @@
               "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-1988.LICENSE"
             }
-          ]
+          ],
+          "identifier": "bsd_1988-6f82c6f9-3188-d25a-b614-a8da40a182eb"
         }
       ],
       "license_clues": [],
       "percentage_of_license_text": 93.75,
-      "for_license_detections": [
-        "bsd_1988-4b3ca9d4-af1e-4189-1e8a-2a8298cd906f"
-      ],
       "license_policy": {
         "license_key": "bsd-1988",
         "label": "Approved License",
@@ -313,14 +237,12 @@
               "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/esri-devkit.LICENSE"
             }
-          ]
+          ],
+          "identifier": "esri_devkit-61ff055a-1f77-2a34-84c0-13880adcee3a"
         }
       ],
       "license_clues": [],
       "percentage_of_license_text": 100.0,
-      "for_license_detections": [
-        "esri_devkit-6d6fd7a9-d8fa-6b3f-48ef-08ed2d4df770"
-      ],
       "license_policy": {
         "license_key": "esri-devkit",
         "label": "Restricted License",
@@ -370,14 +292,12 @@
               "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/oracle-java-ee-sdk-2010.LICENSE"
             }
-          ]
+          ],
+          "identifier": "oracle_java_ee_sdk_2010-62721c1c-0579-102d-4299-b9ada4a65100"
         }
       ],
       "license_clues": [],
       "percentage_of_license_text": 100.0,
-      "for_license_detections": [
-        "oracle_java_ee_sdk_2010-29813ee0-8d53-4b21-8e85-673067344b82"
-      ],
       "license_policy": {
         "license_key": "oracle-java-ee-sdk-2010",
         "label": "Restricted License",
@@ -427,14 +347,12 @@
               "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/rh-eula.LICENSE"
             }
-          ]
+          ],
+          "identifier": "rh_eula-5e8f3250-f910-dacc-e3f1-b0ee8c925477"
         }
       ],
       "license_clues": [],
       "percentage_of_license_text": 100.0,
-      "for_license_detections": [
-        "rh_eula-10143de5-9918-a429-4d90-0bc3267c7be8"
-      ],
       "license_policy": {
         "license_key": "rh-eula",
         "label": "Restricted License",

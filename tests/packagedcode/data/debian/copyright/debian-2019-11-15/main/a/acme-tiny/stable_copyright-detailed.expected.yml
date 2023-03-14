@@ -39,6 +39,7 @@ other_license_detections:
           CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
           TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
           SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+    identifier: mit-cacd5c0c-204a-85c2-affc-e4c125b2492a
 copyright: |
   2015 Daniel Roesler <diafygi@gmail.com>
   2016-2017 Jeremías Casteglione <jrmsdev@gmail.com>

@@ -40,7 +40,8 @@
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/spdx_license_id_unicode-dfs-2015_for_unicode-dfs-2015.RULE",
           "matched_text": "unicode-dfs-2015"
         }
-      ]
+      ],
+      "identifier": "unicode_dfs_2015-b2fab4ea-2c1b-2766-4914-3a9d6112ef87"
     }
   ],
   "other_license_expression": null,

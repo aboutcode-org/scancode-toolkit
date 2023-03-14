@@ -40,7 +40,8 @@
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0_52.RULE",
           "matched_text": "gpl-2.0"
         }
-      ]
+      ],
+      "identifier": "gpl_2_0-d7f02717-086e-f71b-962e-b18cc23b1827"
     }
   ],
   "other_license_expression": null,

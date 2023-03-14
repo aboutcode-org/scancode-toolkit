@@ -58,6 +58,7 @@ other_license_detections:
         matched_text: |
           On Debian systems, the full text of the GNU General Public License
           can be found in '/usr/share/common-licenses/GPL-2'.
+    identifier: gpl_2_0_plus_and_gpl_2_0-6749e336-e70c-3988-4833-e4900655801f
   - license_expression: lgpl-2.0-plus AND lgpl-2.1-plus
     matches:
       - score: '100.0'
@@ -94,6 +95,7 @@ other_license_detections:
 
           You should have received a copy of the GNU Lesser General Public License
           along with this program.  If not, see <https://www.gnu.org/licenses/>.
+    identifier: lgpl_2_0_plus_and_lgpl_2_1_plus-c21bb300-ded5-f5b0-2943-5f76e0f2f623
   - license_expression: gpl-2.0
     matches:
       - score: '100.0'
@@ -109,6 +111,7 @@ other_license_detections:
         matched_text: |
           On Debian systems, the full text of the GNU General Public License
           can be found in '/usr/share/common-licenses/GPL-2'.
+    identifier: gpl_2_0-f5a12419-1f21-0dcb-9684-72c2f6e40432
   - license_expression: lgpl-2.1-plus
     matches:
       - score: '100.0'
@@ -124,6 +127,7 @@ other_license_detections:
         matched_text: |
           On Debian systems, the full text of the GNU Lesser General Public License
           can be found in '/usr/share/common-licenses/LGPL-2.1'.
+    identifier: lgpl_2_1_plus-e8a8efba-8005-9eb1-ff4b-4e716b18779d
 copyright: |
   Copyright © 2000-2008 Silicon Graphics, Inc.
   Copyright © 1999-2001,2007-2009 Andreas Gruenbacher

@@ -1,42 +1,14 @@
 {
   "license_detections": [
     {
-      "identifier": "mit-f9eeac35-71f2-6963-05c0-cb8e2bbe7860",
+      "identifier": "mit-cacd5c0c-204a-85c2-affc-e4c125b2492a",
       "license_expression": "mit",
-      "detection_count": 2,
-      "matches": [
-        {
-          "score": 100.0,
-          "start_line": 2,
-          "end_line": 19,
-          "matched_length": 161,
-          "match_coverage": 100.0,
-          "matcher": "2-aho",
-          "license_expression": "mit",
-          "rule_identifier": "mit.LICENSE",
-          "rule_relevance": 100,
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE"
-        }
-      ]
+      "detection_count": 2
     },
     {
-      "identifier": "mit-d023e558-35f1-ef53-5625-5f585054dde4",
+      "identifier": "mit-3fce6ea2-8abd-6c6b-3ede-a37af7c6efee",
       "license_expression": "mit",
-      "detection_count": 1,
-      "matches": [
-        {
-          "score": 100.0,
-          "start_line": 7,
-          "end_line": 7,
-          "matched_length": 2,
-          "match_coverage": 100.0,
-          "matcher": "2-aho",
-          "license_expression": "mit",
-          "rule_identifier": "mit_30.RULE",
-          "rule_relevance": 100,
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_30.RULE"
-        }
-      ]
+      "detection_count": 1
     }
   ],
   "summary": {
@@ -76,7 +48,6 @@
       "license_detections": [],
       "license_clues": [],
       "percentage_of_license_text": 0,
-      "for_license_detections": [],
       "copyrights": [],
       "holders": [],
       "authors": [],
@@ -127,14 +98,12 @@
               "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE"
             }
-          ]
+          ],
+          "identifier": "mit-cacd5c0c-204a-85c2-affc-e4c125b2492a"
         }
       ],
       "license_clues": [],
       "percentage_of_license_text": 79.31,
-      "for_license_detections": [
-        "mit-f9eeac35-71f2-6963-05c0-cb8e2bbe7860"
-      ],
       "copyrights": [
         {
           "copyright": "Copyright (c) Example, Inc.",
@@ -197,14 +166,12 @@
               "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE"
             }
-          ]
+          ],
+          "identifier": "mit-cacd5c0c-204a-85c2-affc-e4c125b2492a"
         }
       ],
       "license_clues": [],
       "percentage_of_license_text": 64.4,
-      "for_license_detections": [
-        "mit-f9eeac35-71f2-6963-05c0-cb8e2bbe7860"
-      ],
       "copyrights": [
         {
           "copyright": "Copyright (c) 2007 nexB Inc.",
@@ -267,14 +234,12 @@
               "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_30.RULE"
             }
-          ]
+          ],
+          "identifier": "mit-3fce6ea2-8abd-6c6b-3ede-a37af7c6efee"
         }
       ],
       "license_clues": [],
       "percentage_of_license_text": 1.83,
-      "for_license_detections": [
-        "mit-d023e558-35f1-ef53-5625-5f585054dde4"
-      ],
       "copyrights": [],
       "holders": [],
       "authors": [

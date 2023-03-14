@@ -43,6 +43,7 @@ license_detections:
 
             On Debian systems, the complete text of the GNU Library
             General Public License can be found in `/usr/share/common-licenses/LGPL-2.1'.
+    identifier: lgpl_2_1_plus-effa9b0d-2dd9-16c2-f7de-6c9b6389a0c1
   - license_expression: gpl-2.0-plus AND bsd-new
     matches:
       - score: '95.0'
@@ -85,6 +86,7 @@ license_detections:
         matched_text: |
           All code incorporated from 4.4 BSD is distributed under the following
             license:
+    identifier: gpl_2_0_plus_and_bsd_new-8c21febb-54ca-ba5d-046f-fee85ec37185
   - license_expression: bsd-new
     matches:
       - score: '100.0'
@@ -123,6 +125,7 @@ license_detections:
              LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
              OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
              SUCH DAMAGE.
+    identifier: bsd_new-b6760a68-89b7-1bd6-4698-89448b896f0e
   - license_expression: historical
     matches:
       - score: '100.0'
@@ -151,6 +154,7 @@ license_detections:
               FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT,
               NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION
               WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+    identifier: historical-322b727f-722e-1ae7-dd47-9d55d61e81ec
   - license_expression: isc
     matches:
       - score: '100.0'
@@ -176,6 +180,7 @@ license_detections:
               PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS
               ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS
               SOFTWARE.
+    identifier: isc-fbf6f8d8-a949-0427-62b2-aef52fe84e71
   - license_expression: bsd-new AND carnegie-mellon-contributors
     matches:
       - score: '100.0'
@@ -305,6 +310,7 @@ license_detections:
             Mathematical Functions for Itanium" collection:
 
               Intel License Agreement
+    identifier: bsd_new_and_carnegie_mellon_contributors-45f65077-fffa-19dd-b436-5027d4b2f218
   - license_expression: bsd-new AND inner-net-2.0
     matches:
       - score: '100.0'
@@ -391,6 +397,7 @@ license_detections:
               SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
                 If these license terms cause you a real problem, contact the author.  */
+    identifier: bsd_new_and_inner_net_2_0-532e8013-dbb6-0b26-da03-db6fd50178c1
   - license_expression: lgpl-2.1-plus
     matches:
       - score: '100.0'
@@ -408,6 +415,7 @@ license_detections:
               Public License, version 2.1 or later - see the file COPYING.LIB for details.
               If you did not receive a copy of the license with this program, please
               see <http://www.gnu.org/licenses/> to obtain a copy.
+    identifier: lgpl_2_1_plus-cbb754d2-a8a7-b58c-4ef8-315e1df5356e
   - license_expression: lgpl-2.1-plus
     matches:
       - score: '97.17'
@@ -433,6 +441,7 @@ license_detections:
 
               You should have received a copy of the GNU Lesser General Public
               License along with GNU Libidn; if not, see <http://www.gnu.org/licenses/>.
+    identifier: lgpl_2_1_plus-fdc7a0fc-5a6f-07a8-7310-07077c7820dd
   - license_expression: lgpl-2.0-plus
     matches:
       - score: '100.0'
@@ -446,6 +455,7 @@ license_detections:
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0-plus_218.RULE
         matched_text: all licensed under LGPL
+    identifier: lgpl_2_0_plus-f75a1f10-bdd9-8132-e348-bb505cbb82e6
   - license_expression: other-permissive AND ietf
     matches:
       - score: '100.0'
@@ -502,6 +512,7 @@ license_detections:
               BUT NOT LIMITED TO ANY WARRANTY THAT THE USE OF THE INFORMATION
               HEREIN WILL NOT INFRINGE ANY RIGHTS OR ANY IMPLIED WARRANTIES OF
               MERCHANTABILITY OR FITNESS FOR A PARTICULAR PURPOSE.
+    identifier: other_permissive_and_ietf-ecea5b86-86d5-b280-af5c-d2d3da66579a
   - license_expression: bsd-new
     matches:
       - score: '100.0'
@@ -538,6 +549,7 @@ license_detections:
               LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
               OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
               SUCH DAMAGE.
+    identifier: bsd_new-1c9f5e21-d1f7-70e3-725e-68240c6ce757
   - license_expression: other-permissive
     matches:
       - score: '100.0'
@@ -566,6 +578,7 @@ license_detections:
               USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR
               OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
               PERFORMANCE OF THIS SOFTWARE.
+    identifier: other_permissive-464315b0-8a5a-0d67-4a44-3fd90abf71f7
   - license_expression: hs-regexp
     matches:
       - score: '100.0'
@@ -598,6 +611,7 @@ license_detections:
                  ever read sources, credits must appear in the documentation.
 
               4. This notice may not be removed or altered.
+    identifier: hs_regexp-45f2b42c-373c-dcca-6300-bc6a3f618b50
   - license_expression: pcre
     matches:
       - score: '95.0'
@@ -647,6 +661,7 @@ license_detections:
                 General Purpose Licence (GPL), or Lesser General Purpose Licence (LGPL),
                 then the terms of that licence shall supersede any condition above with
                 which it is incompatible.
+    identifier: pcre-d4f9dab2-85b9-1c79-0a5b-a4431a4d0a8c
   - license_expression: sunpro
     matches:
       - score: '100.0'
@@ -664,6 +679,7 @@ license_detections:
               Permission to use, copy, modify, and distribute this
               software is freely granted, provided that this notice
               is preserved.
+    identifier: sunpro-8cbf8f94-4a9d-af5a-dc57-033780c667f7
   - license_expression: other-permissive
     matches:
       - score: '100.0'
@@ -681,6 +697,7 @@ license_detections:
 
                    1. you do not pretend that you wrote it
                    2. you leave this copyright notice intact.
+    identifier: other_permissive-ef3b6b92-0319-fdb5-7719-25b5d16e6fe9
   - license_expression: lgpl-2.1-plus
     matches:
       - score: '100.0'
@@ -707,6 +724,7 @@ license_detections:
                You should have received a copy of the GNU Lesser General Public
                License along with this library; if not, see
                <http://www.gnu.org/licenses/>.  */
+    identifier: lgpl_2_1_plus-82848255-94c6-a435-7187-4d6914427a21
 other_license_detections: []
 copyright: |
   Copyright (c) 1991-2015 Free Software Foundation, Inc.

@@ -65,6 +65,7 @@ license_detections:
               <URL:http://www.gnu.org/copyleft/gpl.html>.  You may also obtain
               it by writing to the Free Software Foundation, Inc., 51 Franklin
               St, Fifth Floor, Boston, MA 02110-1301 USA
+    identifier: lgpl_2_1_plus_and_gpl_2_0-b692f769-146f-b44e-952a-1c81d2c7cf5e
 other_license_detections: []
 copyright: |
   Copyright (c) 2003, 2004 Stephen Smalley <sds@epoch.ncsc.mil>

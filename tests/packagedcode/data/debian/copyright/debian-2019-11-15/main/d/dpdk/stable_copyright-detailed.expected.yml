@@ -51,6 +51,7 @@ other_license_detections:
         matched_text: |
           On Debian systems, the complete text of the GNU General
           Public License version 2 can be found in "/usr/share/common-licenses/GPL-2".
+    identifier: gpl_2_0-416557e2-c2f7-99b4-8ab7-8a3ea02df364
   - license_expression: gpl-2.0-plus
     matches:
       - score: '100.0'
@@ -71,6 +72,7 @@ other_license_detections:
 
           On Debian systems, the complete text of the GNU General Public
           License version 2 can be found in "/usr/share/common-licenses/GPL-2".
+    identifier: gpl_2_0_plus-dd877c58-59e3-3806-1e07-d20a246adf43
   - license_expression: gpl-3.0
     matches:
       - score: '100.0'
@@ -97,6 +99,7 @@ other_license_detections:
         matched_text: |
           On Debian systems, the complete text of the GNU General
           Public License version 3 can be found in "/usr/share/common-licenses/GPL-3".
+    identifier: gpl_3_0-2db1569e-9bb3-297f-fa07-cccfb39c4a09
   - license_expression: lgpl-2.1
     matches:
       - score: '100.0'
@@ -123,6 +126,7 @@ other_license_detections:
         matched_text: |
           On Debian systems, the complete text of the GNU Library General Public
           License can be found in the file `/usr/share/common-licenses/LGPL-2.1'.
+    identifier: lgpl_2_1-e422cbf7-cc72-fc90-ad06-06d6fdec2919
   - license_expression: bsd-simplified
     matches:
       - score: '100.0'
@@ -160,6 +164,7 @@ other_license_detections:
           LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN
           ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
           POSSIBILITY OF SUCH DAMAGE.
+    identifier: bsd_simplified-25075703-83ad-f419-e8fc-55c5ce7e67a5
   - license_expression: bsd-new
     matches:
       - score: '100.0'
@@ -198,6 +203,7 @@ other_license_detections:
           THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
           (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
           OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+    identifier: bsd_new-27fdae2b-970d-afa7-4ecb-ef39abbe9d1e
 copyright: |
   2008-2014 Cisco Systems, Inc.
   2012-2014 6WIND S.A.

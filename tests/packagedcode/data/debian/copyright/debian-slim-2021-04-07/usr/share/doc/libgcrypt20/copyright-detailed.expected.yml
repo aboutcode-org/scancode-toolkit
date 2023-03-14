@@ -132,6 +132,7 @@ license_detections:
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0-plus_467.RULE
         matched_text: the license headers of the LGPL
+    identifier: gpl_1_0_plus_and_other_permissive_and_public_domain_and_fsf_unlimited_no_warranty_and__lgpl_2_1_plus_and_gpl_2_0_plus__and__lgpl_2_0_plus_and_gpl_2_0_plus__and_lgpl_2_0_plus-71da280b-c092-be79-7ec6-e3cc205ddfd8
   - license_expression: lgpl-2.1-plus AND gpl-1.0-plus
     matches:
       - score: '100.0'
@@ -173,6 +174,7 @@ license_detections:
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-1.0-plus_476.RULE
         matched_text: The documentation licensed under the GPL
+    identifier: lgpl_2_1_plus_and_gpl_1_0_plus-1af8506a-97be-93a0-6cba-7d1c0a97c09e
   - license_expression: gpl-2.0-plus
     matches:
       - score: '100.0'
@@ -191,6 +193,7 @@ license_detections:
           Free Software Foundation; either version 2 of the License, or (at your
           option) any later version. The text of the license can be found in the
           section entitled ``GNU General Public License''.
+    identifier: gpl_2_0_plus-f0a5b3d9-dda2-71aa-c005-5b1325e37f04
   - license_expression: other-permissive AND other-copyleft
     matches:
       - score: '100.0'
@@ -206,6 +209,7 @@ license_detections:
         matched_text: |
           distribution which are not covered by the GNU Lesser
           General Public License (LGPL) or the GNU General Public License (GPL).
+    identifier: other_permissive_and_other_copyleft-63e4a2bf-16c2-8dee-73c5-f24d627936b1
   - license_expression: bsd-new
     matches:
       - score: '100.0'
@@ -219,6 +223,7 @@ license_detections:
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_947.RULE
         matched_text: BSD_3Clause
+    identifier: bsd_new-a83045d9-7f1e-552d-a2b3-29267dd1d408
   - license_expression: bsd-new
     matches:
       - score: '100.0'
@@ -260,6 +265,7 @@ license_detections:
             LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
             NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
             SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+    identifier: bsd_new-5cc0e99a-0b5a-11eb-e919-1cf09ba89f04
   - license_expression: bsd-new OR gpl-1.0-plus
     matches:
       - score: '100.0'
@@ -304,6 +310,7 @@ license_detections:
            * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE
            * USE OF THIS SOFTWARE, EVEN IF NOT ADVISED OF THE POSSIBILITY OF SUCH
            * DAMAGE.
+    identifier: bsd_new_or_gpl_1_0_plus-f8085429-0058-17f2-8a37-27a1965c9f8a
   - license_expression: x11-xconsortium AND public-domain
     matches:
       - score: '100.0'
@@ -349,6 +356,7 @@ license_detections:
         rule_relevance: 70
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/public-domain_bare_words.RULE
         matched_text: Public domain
+    identifier: x11_xconsortium_and_public_domain-3a4b5640-3d0e-289d-2ed6-5568ba1f72cd
   - license_expression: public-domain AND ocb-open-source-2013
     matches:
       - score: '100.0'
@@ -375,6 +383,7 @@ license_detections:
         rule_relevance: 99
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/ocb-open-source-2013_12.RULE
         matched_text: OCB license 1
+    identifier: public_domain_and_ocb_open_source_2013-7ef7f6b1-6db5-43c8-5a10-9e3da7f87fef
   - license_expression: ocb-open-source-2013
     matches:
       - score: '100.0'
@@ -494,6 +503,7 @@ license_detections:
            WITHOUT LIMITATION, DIRECT, INDIRECT, INCIDENTAL, CONSEQUENTIAL, PUNITIVE
            OR SPECIAL DAMAGES, EVEN IF LICENSOR HAS BEEN ADVISED OF THE POSSIBILITY OF
            SUCH DAMAGES PRIOR TO SUCH AN OCCURRENCE.
+    identifier: ocb_open_source_2013-2bec0450-e55d-5281-9cd2-08adae19cdaa
   - license_expression: gpl-2.0
     matches:
       - score: '100.0'
@@ -509,6 +519,7 @@ license_detections:
         matched_text: |
           On Debian GNU/Linux systems, the text of the GNU General Public License,
           version 2 can be found in `/usr/share/common-licenses/GPL-2'.
+    identifier: gpl_2_0-b6a1e840-be6c-ce83-909f-efc51bdcb093
 other_license_detections: []
 copyright: |
   Copyright (c) 1989,1991-2019 Free Software Foundation, Inc.

@@ -68,7 +68,8 @@
             "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/other-permissive_16.RULE",
             "matched_text": "BSD-like"
           }
-        ]
+        ],
+        "identifier": "other_permissive-604c60e0-064e-f7f2-9880-d279b5cced12"
       },
       {
         "license_expression": "bsd-new",
@@ -86,7 +87,8 @@
             "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/pypi_bsd_license.RULE",
             "matched_text": "['License :: OSI Approved :: BSD License']"
           }
-        ]
+        ],
+        "identifier": "bsd_new-f4e99f86-00ab-18d9-a65d-a3a12767dcf5"
       }
     ],
     "other_license_expression": null,

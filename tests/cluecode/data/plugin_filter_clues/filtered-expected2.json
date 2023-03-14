@@ -1,23 +1,9 @@
 {
   "license_detections": [
     {
-      "identifier": "pygres_2_2-88058d56-5916-1e18-d3aa-1de8b39f7fbf",
+      "identifier": "pygres_2_2-04f085e8-3db1-f9e2-8dde-7ba8a7ba619a",
       "license_expression": "pygres-2.2",
-      "detection_count": 1,
-      "matches": [
-        {
-          "score": 100.0,
-          "start_line": 7,
-          "end_line": 22,
-          "matched_length": 145,
-          "match_coverage": 100.0,
-          "matcher": "2-aho",
-          "license_expression": "pygres-2.2",
-          "rule_identifier": "pygres-2.2_2.RULE",
-          "rule_relevance": 100,
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/pygres-2.2_2.RULE"
-        }
-      ]
+      "detection_count": 1
     }
   ],
   "files": [
@@ -58,14 +44,12 @@
               "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/pygres-2.2_2.RULE"
             }
-          ]
+          ],
+          "identifier": "pygres_2_2-04f085e8-3db1-f9e2-8dde-7ba8a7ba619a"
         }
       ],
       "license_clues": [],
       "percentage_of_license_text": 69.38,
-      "for_license_detections": [
-        "pygres_2_2-88058d56-5916-1e18-d3aa-1de8b39f7fbf"
-      ],
       "copyrights": [
         {
           "copyright": "Copyright (c) 1996, Pascal Andre (andre@avia.ecp.fr)",

@@ -47,6 +47,7 @@ other_license_detections:
           Permission to use, copy, modify, and distribute this software
           for any purpose and without fee is hereby granted.  The author
           disclaims all warranties with regard to this software.
+    identifier: markus_kuhn_license-295f6fda-191f-872c-b04b-3876e296284a
   - license_expression: other-permissive
     matches:
       - score: '100.0'
@@ -62,6 +63,7 @@ other_license_detections:
         matched_text: |
           Permission is granted to everyone to use and distribute this work,
           without limitation, modified or unmodified, in any way, for any purpose.
+    identifier: other_permissive-7bea3fe6-1cb8-bf34-9c3e-7838c62068eb
   - license_expression: gpl-2.0-plus AND gpl-2.0
     matches:
       - score: '100.0'
@@ -88,6 +90,7 @@ other_license_detections:
         matched_text: |
           On Debian systems, the complete text of the GPL version 2 license can be
           found in `/usr/share/common-licenses/GPL-2'.
+    identifier: gpl_2_0_plus_and_gpl_2_0-10dc4dde-c7f1-a166-da30-2c69a01c2c0f
   - license_expression: gpl-3.0-plus AND gpl-3.0
     matches:
       - score: '100.0'
@@ -114,6 +117,7 @@ other_license_detections:
         matched_text: |
           On Debian systems, the complete text of the GPL version 3 license can be
           found in `/usr/share/common-licenses/GPL-3'.
+    identifier: gpl_3_0_plus_and_gpl_3_0-078c7647-d24b-f86e-aa47-7ac72abda7dc
   - license_expression: apache-2.0
     matches:
       - score: '100.0'
@@ -154,6 +158,7 @@ other_license_detections:
           KIND, either express or implied.  See the License for the
           specific language governing permissions and limitations
           under the License.
+    identifier: apache_2_0-aeabe930-a28e-205e-e368-f6c12f1d7220
   - license_expression: bsd-new
     matches:
       - score: '100.0'
@@ -192,6 +197,7 @@ other_license_detections:
           IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR
           OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
           IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+    identifier: bsd_new-a174ddc5-8db2-d884-fdfa-783911e89ca7
   - license_expression: bsd-simplified
     matches:
       - score: '100.0'
@@ -225,6 +231,7 @@ other_license_detections:
           ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
           (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
           SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+    identifier: bsd_simplified-a1deb97f-56cd-71ea-a95f-82477d400503
   - license_expression: mit
     matches:
       - score: '100.0'
@@ -255,6 +262,7 @@ other_license_detections:
           LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
           FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
           DEALINGS IN THE SOFTWARE.
+    identifier: mit-cacd5c0c-204a-85c2-affc-e4c125b2492a
   - license_expression: unicode
     matches:
       - score: '100.0'
@@ -300,6 +308,7 @@ other_license_detections:
           Unicode and the Unicode logo are trademarks of Unicode, Inc., and may be
           registered in some jurisdictions. All other trademarks and registered
           trademarks mentioned herein are the property of their respective owners.
+    identifier: unicode-9705ed00-4a5e-7686-ae43-8d76e5bb8000
   - license_expression: afl-3.0
     matches:
       - score: '100.0'
@@ -499,6 +508,7 @@ other_license_detections:
               open source software unless your Modified License has been
               approved by Open Source Initiative (OSI) and You comply with its
               license review and certification process.
+    identifier: afl_3_0-3b99c4a5-4d72-17ed-a8dc-dd86fb4a1a7e
 copyright: |
   Apache Software Foundation
   2007 Max Bowsher

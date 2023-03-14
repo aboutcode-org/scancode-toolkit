@@ -42,7 +42,8 @@
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/unknown_license_other_12.RULE",
               "matched_text": "license Other"
             }
-          ]
+          ],
+          "identifier": "unknown_license_reference-e1d5d99b-3b3e-7d4b-a3c1-71248ff49c51"
         }
       ],
       "other_license_expression": null,
@@ -309,7 +310,8 @@
                   "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/unknown_license_other_12.RULE",
                   "matched_text": "license Other"
                 }
-              ]
+              ],
+              "identifier": "unknown_license_reference-e1d5d99b-3b3e-7d4b-a3c1-71248ff49c51"
             }
           ],
           "other_license_expression": null,

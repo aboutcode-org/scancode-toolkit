@@ -81,6 +81,7 @@ other_license_detections:
           purpose.
 
           Please cite the author in any work or product based on this material.
+    identifier: public_domain_and_us_govt_public_domain-895fe8b3-9bbf-2d1f-e72e-0f0fa3e85ebc
   - license_expression: boost-1.0
     matches:
       - score: '100.0'
@@ -115,6 +116,7 @@ other_license_detections:
           FOR ANY DAMAGES OR OTHER LIABILITY, WHETHER IN CONTRACT, TORT OR OTHERWISE,
           ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
           DEALINGS IN THE SOFTWARE.
+    identifier: boost_1_0-0a228323-a725-4239-e66d-7117aa6c54bb
   - license_expression: mit
     matches:
       - score: '100.0'
@@ -145,6 +147,7 @@ other_license_detections:
           LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
           FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
           IN THE SOFTWARE.
+    identifier: mit-cacd5c0c-204a-85c2-affc-e4c125b2492a
   - license_expression: mit-with-modification-obligations AND proprietary-license
     matches:
       - score: '100.0'
@@ -192,6 +195,7 @@ other_license_detections:
           manner.  It does NOT prevent a commercial firm from referring to the MIT
           trademarks in order to convey information (although in doing so,
           recognition of their trademark status should be given).
+    identifier: mit_with_modification_obligations_and_proprietary_license-d8f55aff-c8ea-6055-f1d9-e64dedf37d99
   - license_expression: public-domain
     matches:
       - score: '100.0'
@@ -212,6 +216,7 @@ other_license_detections:
                152 Computing Applications Building
                605 E. Springfield Ave.
                Champaign, IL  61820
+    identifier: public_domain-3ede6353-539f-56a1-dbd0-5b29db1edfc9
   - license_expression: flex-2.5
     matches:
       - score: '100.0'
@@ -238,6 +243,7 @@ other_license_detections:
           THIS SOFTWARE IS PROVIDED ``AS IS'' AND WITHOUT ANY EXPRESS OR
           IMPLIED WARRANTIES, INCLUDING, WITHOUT LIMITATION, THE IMPLIED
           WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+    identifier: flex_2_5-dc2b38a4-d8d9-e49a-8c97-65694300b4be
   - license_expression: gpl-2.0-plus
     matches:
       - score: '100.0'
@@ -282,6 +288,7 @@ other_license_detections:
           On Debian systems, the full text of the GNU General Public
           License version 2 can be found in the file
           `/usr/share/common-licenses/GPL-2'.
+    identifier: gpl_2_0_plus-02707cfc-7c52-275d-ce00-75c15b36e6f2
 copyright: |
   1996-2017 NCBI
   2006 John Maddock

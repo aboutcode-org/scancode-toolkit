@@ -25,23 +25,9 @@
   "dependencies": [],
   "license_detections": [
     {
-      "identifier": "jetty-1c16fe27-df47-d734-adac-9d7c6e561eae",
+      "identifier": "jetty-a0130d29-e7f1-bc37-111a-fccd6b1c6b58",
       "license_expression": "jetty",
-      "detection_count": 1,
-      "matches": [
-        {
-          "score": 100.0,
-          "start_line": 1,
-          "end_line": 132,
-          "matched_length": 996,
-          "match_coverage": 100.0,
-          "matcher": "1-hash",
-          "license_expression": "jetty",
-          "rule_identifier": "jetty.LICENSE",
-          "rule_relevance": 100,
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/jetty.LICENSE"
-        }
-      ]
+      "detection_count": 1
     }
   ],
   "files": [
@@ -71,7 +57,6 @@
       "license_detections": [],
       "license_clues": [],
       "percentage_of_license_text": 0,
-      "for_license_detections": [],
       "copyrights": [],
       "holders": [],
       "authors": [],
@@ -124,14 +109,12 @@
               "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/jetty.LICENSE"
             }
-          ]
+          ],
+          "identifier": "jetty-a0130d29-e7f1-bc37-111a-fccd6b1c6b58"
         }
       ],
       "license_clues": [],
       "percentage_of_license_text": 100.0,
-      "for_license_detections": [
-        "jetty-1c16fe27-df47-d734-adac-9d7c6e561eae"
-      ],
       "copyrights": [
         {
           "copyright": "Copyright (c) Mort Bay Consulting Pty. Ltd. (Australia) and others",

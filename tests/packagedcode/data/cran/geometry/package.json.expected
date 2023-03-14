@@ -98,7 +98,8 @@
             "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0_25.RULE",
             "matched_text": "GPL (>= 3)"
           }
-        ]
+        ],
+        "identifier": "gpl_3_0-04745a9b-3141-672c-bc5b-f0e39d4c8202"
       }
     ],
     "other_license_expression": null,

@@ -62,6 +62,7 @@ other_license_detections:
         matched_text: |
           On Debian systems, the complete text of the GNU General
           Public License can be found in `/usr/share/common-licenses/GPL-2'.
+    identifier: gpl_2_0_plus_and_gpl_2_0-67d2f469-481f-0cd9-8ff9-534830b22de1
   - license_expression: mit
     matches:
       - score: '100.0'
@@ -92,6 +93,7 @@ other_license_detections:
           LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
           OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
           THE SOFTWARE.
+    identifier: mit-cacd5c0c-204a-85c2-affc-e4c125b2492a
   - license_expression: lgpl-2.0-plus AND lgpl-2.1
     matches:
       - score: '100.0'
@@ -138,6 +140,7 @@ other_license_detections:
         matched_text: |
           On Debian systems, the complete text of the GNU Lesser General
           Public License can be found in `/usr/share/common-licenses/LGPL-2.1'.
+    identifier: lgpl_2_0_plus_and_lgpl_2_1-b94eb3c2-132e-4a98-3f36-7d5883ed50d0
   - license_expression: lgpl-2.1-plus AND lgpl-2.1
     matches:
       - score: '100.0'
@@ -184,6 +187,7 @@ other_license_detections:
         matched_text: |
           On Debian systems, the complete text of the GNU Lesser General
           Public License can be found in `/usr/share/common-licenses/LGPL-2.1'.
+    identifier: lgpl_2_1_plus_and_lgpl_2_1-32ab165d-4601-a9ad-0264-fb173649760d
 copyright: |
   1996-2018 Free Software Foundation, Inc.
   1999-2015 The Gnome Project

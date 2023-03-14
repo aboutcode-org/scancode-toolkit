@@ -54,6 +54,7 @@ other_license_detections:
         matched_text: |
           You may use this program, or code or tables extracted from it, as
           desired without restriction.
+    identifier: gary_s_brown-00cc5fb9-1775-705c-7cef-d16939c33621
   - license_expression: gpl-2.0-plus
     matches:
       - score: '100.0'
@@ -94,6 +95,7 @@ other_license_detections:
 
           On Debian systems, the complete text of the GNU General Public
           License v2 can be found in `/usr/share/common-licenses/GPL-2'.
+    identifier: gpl_2_0_plus-4e79540c-e313-dd16-f163-61e6669029cb
   - license_expression: gpl-2.0-plus WITH openssl-exception-gpl-3.0-plus
     matches:
       - score: '100.0'
@@ -135,6 +137,7 @@ other_license_detections:
           do so, delete this exception statement from your version.  If you
           delete this exception statement from all source files in the program,
           then also delete it here.
+    identifier: gpl_2_0_plus_with_openssl_exception_gpl_3_0_plus-cd0a53c3-195e-8aaa-a52a-63cdd0ec060b
   - license_expression: lgpl-2.1-plus
     matches:
       - score: '100.0'
@@ -176,6 +179,7 @@ other_license_detections:
 
           On Debian systems, the complete text of the GNU Lesser General Public
           License v2.1 can be found in `/usr/share/common-licenses/LGPL-2.1'.
+    identifier: lgpl_2_1_plus-92524a9d-fa24-4473-c0bd-9db8994678c0
   - license_expression: lgpl-2.1-plus WITH openssl-exception-gpl-3.0-plus
     matches:
       - score: '95.0'
@@ -218,6 +222,7 @@ other_license_detections:
           not wish to do so, delete this exception statement from your version.
           If you delete this exception statement from all source files in the
           program, then also delete it here.
+    identifier: lgpl_2_1_plus_with_openssl_exception_gpl_3_0_plus-e204903f-6e59-75fe-0a89-535375db6e93
   - license_expression: cc0-1.0
     matches:
       - score: '100.0'
@@ -236,6 +241,7 @@ other_license_detections:
 
           On Debian systems, the complete text of the Creative Commons CC0 1.0
           Universal license can be found in `/usr/share/common-licenses/CC0-1.0'.
+    identifier: cc0_1_0-5beade1d-aaaa-0e66-b349-bf4292c3ebff
   - license_expression: apache-2.0
     matches:
       - score: '100.0'
@@ -274,6 +280,7 @@ other_license_detections:
 
           On Debian systems, the complete text of the Apache version 2.0 license
           can be found in "/usr/share/common-licenses/Apache-2.0".
+    identifier: apache_2_0-0a5efff7-905e-0c0f-9b9a-b606d13ea20b
 copyright: |
   © 2004 Christophe Saout <christophe@saout.de>
   © 2004-2008 Clemens Fruhwirth <clemens@endorphin.org>

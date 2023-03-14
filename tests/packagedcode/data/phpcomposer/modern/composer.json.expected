@@ -41,7 +41,8 @@
             "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/proprietary_8.RULE",
             "matched_text": "license proprietary"
           }
-        ]
+        ],
+        "identifier": "proprietary_license-c7bb9545-7b66-e7ab-5be4-34e26dc02178"
       }
     ],
     "other_license_expression": null,

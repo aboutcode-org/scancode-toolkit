@@ -187,6 +187,7 @@ other_license_detections:
 
           On Debian systems, the complete text of the Artistic License can be
           found in `/usr/share/common-licenses/Artistic'.
+    identifier: artistic_perl_1_0-e9ef718c-d03b-c86e-d9fc-fda61d7cdf41
   - license_expression: artistic-2.0
     matches:
       - score: '99.93'
@@ -389,6 +390,7 @@ other_license_detections:
                LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, OR CONSEQUENTIAL
                DAMAGES ARISING IN ANY WAY OUT OF THE USE OF THE PACKAGE, EVEN
                IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+    identifier: artistic_2_0-da505167-7963-b6e8-5f04-2ffe855ea5e9
   - license_expression: gpl-1.0-plus AND gpl-1.0
     matches:
       - score: '100.0'
@@ -452,6 +454,7 @@ other_license_detections:
         rule_relevance: 60
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-1.0_15.RULE
         matched_text: GPL-1'
+    identifier: gpl_1_0_plus_and_gpl_1_0-40cd1f34-7ef5-dd7b-2ab9-7f0a899d139c
   - license_expression: gpl-2.0
     matches:
       - score: '100.0'
@@ -492,6 +495,7 @@ other_license_detections:
         matched_text: |
           On Debian systems, the complete text of version 2 of the GNU General
           Public License can be found in `/usr/share/common-licenses/GPL-2'
+    identifier: gpl_2_0-558b8bf3-eeb8-2a7a-6f28-55f4c2aa111f
   - license_expression: gpl-2.0-plus AND gpl-2.0
     matches:
       - score: '100.0'
@@ -533,6 +537,7 @@ other_license_detections:
         matched_text: |
           On Debian systems, the complete text of version 2 of the GNU General
           Public License can be found in `/usr/share/common-licenses/GPL-2'
+    identifier: gpl_2_0_plus_and_gpl_2_0-b73d5e9f-2938-57e1-de18-818469af1109
   - license_expression: gpl-3.0 AND gpl-1.0-plus
     matches:
       - score: '100.0'
@@ -584,6 +589,7 @@ other_license_detections:
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0_93.RULE
         matched_text: usr/share/common-licenses/GPL-3'
+    identifier: gpl_3_0_and_gpl_1_0_plus-9c11f207-d3a8-a6a3-d2a6-46552a959726
   - license_expression: gpl-3.0-plus AND gpl-3.0
     matches:
       - score: '100.0'
@@ -636,6 +642,7 @@ other_license_detections:
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0_93.RULE
         matched_text: usr/share/common-licenses/GPL-3'
+    identifier: gpl_3_0_plus_and_gpl_3_0-3e5fdf20-1437-7ca2-c0cd-475f7307fbbb
   - license_expression: isc
     matches:
       - score: '100.0'
@@ -660,6 +667,7 @@ other_license_detections:
           LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR
           OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
           PERFORMANCE OF THIS SOFTWARE.
+    identifier: isc-58175475-cc81-cb6a-8921-4daa3f26b3e8
   - license_expression: public-domain-disclaimer
     matches:
       - score: '100.0'
@@ -676,6 +684,7 @@ other_license_detections:
           To the extent possible under law, the author(s) have dedicated all copyright
           and related and neighboring rights to this software to the public domain
           worldwide. This software is distributed without any warranty.
+    identifier: public_domain_disclaimer-7976ce53-70d4-9d5b-49a1-d2bba11c58a2
 copyright: |
   1997, Klee Dienes <klee@mit.edu>
   Christoph Lameter <clameter@debian.org>

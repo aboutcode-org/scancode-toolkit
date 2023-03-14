@@ -63,7 +63,8 @@
             "rule_url": null,
             "matched_text": "LGPL-3.0-only with OCaml-LGPL-linking-exception"
           }
-        ]
+        ],
+        "identifier": "lgpl_3_0_with_ocaml_lgpl_linking_exception-cfc152e7-89df-f8e0-0d25-d5b45a077913"
       }
     ],
     "other_license_expression": null,

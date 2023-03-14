@@ -4,540 +4,72 @@
       "identifier": "epl_1_0-583490fb-0b3a-f445-a1b9-1b96423b9ec3",
       "license_expression": "epl-1.0",
       "detection_count": 2,
-      "matches": [
-        {
-          "score": 99.34,
-          "start_line": 12,
-          "end_line": 25,
-          "matched_length": 150,
-          "match_coverage": 99.34,
-          "matcher": "3-seq",
-          "license_expression": "epl-1.0",
-          "rule_identifier": "epl-1.0_3.RULE",
-          "rule_relevance": 100,
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/epl-1.0_3.RULE"
-        },
-        {
-          "score": 100.0,
-          "start_line": 17,
-          "end_line": 17,
-          "matched_length": 8,
-          "match_coverage": 100.0,
-          "matcher": "2-aho",
-          "license_expression": "epl-1.0",
-          "rule_identifier": "epl-1.0_7.RULE",
-          "rule_relevance": 100,
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/epl-1.0_7.RULE"
-        }
-      ],
       "detection_log": []
     },
     {
       "identifier": "apache_2_0-b9480736-5aa9-53cf-d14a-cd1e7d4d49d3",
       "license_expression": "apache-2.0",
       "detection_count": 2,
-      "matches": [
-        {
-          "score": 95.0,
-          "start_line": 37,
-          "end_line": 37,
-          "matched_length": 14,
-          "match_coverage": 100.0,
-          "matcher": "2-aho",
-          "license_expression": "apache-2.0",
-          "rule_identifier": "apache_no-version_1.RULE",
-          "rule_relevance": 95,
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache_no-version_1.RULE"
-        }
-      ],
       "detection_log": []
     },
     {
       "identifier": "apache_2_0-d5aca480-f390-3518-0726-d232731b5e97",
       "license_expression": "apache-2.0",
       "detection_count": 1,
-      "matches": [
-        {
-          "score": 100.0,
-          "start_line": 44,
-          "end_line": 44,
-          "matched_length": 6,
-          "match_coverage": 100.0,
-          "matcher": "2-aho",
-          "license_expression": "unknown-license-reference",
-          "rule_identifier": "license-intro_35.RULE",
-          "rule_relevance": 100,
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/license-intro_35.RULE"
-        },
-        {
-          "score": 100.0,
-          "start_line": 44,
-          "end_line": 44,
-          "matched_length": 5,
-          "match_coverage": 100.0,
-          "matcher": "2-aho",
-          "license_expression": "apache-2.0",
-          "rule_identifier": "apache-2.0_322.RULE",
-          "rule_relevance": 100,
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_322.RULE"
-        },
-        {
-          "score": 39.47,
-          "start_line": 45,
-          "end_line": 45,
-          "matched_length": 15,
-          "match_coverage": 39.47,
-          "matcher": "3-seq",
-          "license_expression": "apache-2.0",
-          "rule_identifier": "apache-2.0_1112.RULE",
-          "rule_relevance": 100,
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_1112.RULE"
-        },
-        {
-          "score": 40.0,
-          "start_line": 45,
-          "end_line": 45,
-          "matched_length": 14,
-          "match_coverage": 40.0,
-          "matcher": "3-seq",
-          "license_expression": "apache-2.0",
-          "rule_identifier": "apache-2.0_842.RULE",
-          "rule_relevance": 100,
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_842.RULE"
-        },
-        {
-          "score": 33.85,
-          "start_line": 45,
-          "end_line": 47,
-          "matched_length": 22,
-          "match_coverage": 33.85,
-          "matcher": "3-seq",
-          "license_expression": "apache-2.0",
-          "rule_identifier": "apache-2.0_689.RULE",
-          "rule_relevance": 100,
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_689.RULE"
-        }
-      ],
       "detection_log": []
     },
     {
       "identifier": "apache_2_0-f985a212-ddd7-cf4c-223f-990765c05d7f",
       "license_expression": "apache-2.0",
       "detection_count": 1,
-      "matches": [
-        {
-          "score": 100.0,
-          "start_line": 44,
-          "end_line": 44,
-          "matched_length": 6,
-          "match_coverage": 100.0,
-          "matcher": "2-aho",
-          "license_expression": "unknown-license-reference",
-          "rule_identifier": "license-intro_35.RULE",
-          "rule_relevance": 100,
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/license-intro_35.RULE"
-        },
-        {
-          "score": 100.0,
-          "start_line": 44,
-          "end_line": 44,
-          "matched_length": 5,
-          "match_coverage": 100.0,
-          "matcher": "2-aho",
-          "license_expression": "apache-2.0",
-          "rule_identifier": "apache-2.0_322.RULE",
-          "rule_relevance": 100,
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_322.RULE"
-        },
-        {
-          "score": 39.47,
-          "start_line": 45,
-          "end_line": 45,
-          "matched_length": 15,
-          "match_coverage": 39.47,
-          "matcher": "3-seq",
-          "license_expression": "apache-2.0",
-          "rule_identifier": "apache-2.0_1112.RULE",
-          "rule_relevance": 100,
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_1112.RULE"
-        },
-        {
-          "score": 40.0,
-          "start_line": 45,
-          "end_line": 45,
-          "matched_length": 14,
-          "match_coverage": 40.0,
-          "matcher": "3-seq",
-          "license_expression": "apache-2.0",
-          "rule_identifier": "apache-2.0_842.RULE",
-          "rule_relevance": 100,
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_842.RULE"
-        },
-        {
-          "score": 100.0,
-          "start_line": 47,
-          "end_line": 47,
-          "matched_length": 6,
-          "match_coverage": 100.0,
-          "matcher": "2-aho",
-          "license_expression": "apache-2.0",
-          "rule_identifier": "apache-2.0_182.RULE",
-          "rule_relevance": 100,
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_182.RULE"
-        }
-      ],
       "detection_log": []
     },
     {
       "identifier": "apache_2_0-572026ce-a21a-cf1f-b168-d2e76a41e85f",
       "license_expression": "apache-2.0",
       "detection_count": 1,
-      "matches": [
-        {
-          "score": 100.0,
-          "start_line": 53,
-          "end_line": 53,
-          "matched_length": 6,
-          "match_coverage": 100.0,
-          "matcher": "2-aho",
-          "license_expression": "unknown-license-reference",
-          "rule_identifier": "license-intro_35.RULE",
-          "rule_relevance": 100,
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/license-intro_35.RULE"
-        },
-        {
-          "score": 100.0,
-          "start_line": 53,
-          "end_line": 53,
-          "matched_length": 5,
-          "match_coverage": 100.0,
-          "matcher": "2-aho",
-          "license_expression": "apache-2.0",
-          "rule_identifier": "apache-2.0_322.RULE",
-          "rule_relevance": 100,
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_322.RULE"
-        },
-        {
-          "score": 42.11,
-          "start_line": 53,
-          "end_line": 54,
-          "matched_length": 16,
-          "match_coverage": 42.11,
-          "matcher": "3-seq",
-          "license_expression": "apache-2.0",
-          "rule_identifier": "apache-2.0_1112.RULE",
-          "rule_relevance": 100,
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_1112.RULE"
-        },
-        {
-          "score": 100.0,
-          "start_line": 54,
-          "end_line": 54,
-          "matched_length": 9,
-          "match_coverage": 100.0,
-          "matcher": "2-aho",
-          "license_expression": "apache-2.0",
-          "rule_identifier": "apache-2.0_20.RULE",
-          "rule_relevance": 100,
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_20.RULE"
-        }
-      ],
       "detection_log": []
     },
     {
       "identifier": "apache_2_0-3ff6ea1e-7687-edb8-8b35-a2751a601cae",
       "license_expression": "apache-2.0",
       "detection_count": 2,
-      "matches": [
-        {
-          "score": 92.68,
-          "start_line": 59,
-          "end_line": 60,
-          "matched_length": 38,
-          "match_coverage": 100.0,
-          "matcher": "3-seq",
-          "license_expression": "apache-2.0",
-          "rule_identifier": "apache-2.0_1112.RULE",
-          "rule_relevance": 100,
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_1112.RULE"
-        },
-        {
-          "score": 48.57,
-          "start_line": 59,
-          "end_line": 60,
-          "matched_length": 17,
-          "match_coverage": 48.57,
-          "matcher": "3-seq",
-          "license_expression": "apache-2.0",
-          "rule_identifier": "apache-2.0_842.RULE",
-          "rule_relevance": 100,
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_842.RULE"
-        }
-      ],
       "detection_log": []
     },
     {
       "identifier": "epl_2_0_or_apache_2_0__and_apache_2_0_and_epl_2_0-52f23e3b-2f64-af31-1586-6bd03db2475f",
       "license_expression": "(epl-2.0 OR apache-2.0) AND apache-2.0 AND epl-2.0",
       "detection_count": 1,
-      "matches": [
-        {
-          "score": 100.0,
-          "start_line": 71,
-          "end_line": 71,
-          "matched_length": 6,
-          "match_coverage": 100.0,
-          "matcher": "2-aho",
-          "license_expression": "unknown-license-reference",
-          "rule_identifier": "license-intro_35.RULE",
-          "rule_relevance": 100,
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/license-intro_35.RULE"
-        },
-        {
-          "score": 28.0,
-          "start_line": 71,
-          "end_line": 72,
-          "matched_length": 14,
-          "match_coverage": 28.0,
-          "matcher": "3-seq",
-          "license_expression": "epl-2.0 OR apache-2.0",
-          "rule_identifier": "epl-2.0_or_apache-2.0_2.RULE",
-          "rule_relevance": 100,
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/epl-2.0_or_apache-2.0_2.RULE"
-        },
-        {
-          "score": 36.84,
-          "start_line": 71,
-          "end_line": 72,
-          "matched_length": 14,
-          "match_coverage": 36.84,
-          "matcher": "3-seq",
-          "license_expression": "apache-2.0",
-          "rule_identifier": "apache-2.0_1112.RULE",
-          "rule_relevance": 100,
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_1112.RULE"
-        },
-        {
-          "score": 30.43,
-          "start_line": 72,
-          "end_line": 72,
-          "matched_length": 21,
-          "match_coverage": 30.43,
-          "matcher": "3-seq",
-          "license_expression": "epl-2.0",
-          "rule_identifier": "epl-2.0_4.RULE",
-          "rule_relevance": 100,
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/epl-2.0_4.RULE"
-        }
-      ],
       "detection_log": []
     },
     {
       "identifier": "epl_1_0-c49f6fb4-006b-7944-b44b-c283f88bf18d",
       "license_expression": "epl-1.0",
       "detection_count": 2,
-      "matches": [
-        {
-          "score": 96.69,
-          "start_line": 12,
-          "end_line": 25,
-          "matched_length": 146,
-          "match_coverage": 96.69,
-          "matcher": "3-seq",
-          "license_expression": "epl-1.0",
-          "rule_identifier": "epl-1.0_3.RULE",
-          "rule_relevance": 100,
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/epl-1.0_3.RULE"
-        },
-        {
-          "score": 100.0,
-          "start_line": 17,
-          "end_line": 17,
-          "matched_length": 8,
-          "match_coverage": 100.0,
-          "matcher": "2-aho",
-          "license_expression": "epl-1.0",
-          "rule_identifier": "epl-1.0_7.RULE",
-          "rule_relevance": 100,
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/epl-1.0_7.RULE"
-        }
-      ],
       "detection_log": []
     },
     {
       "identifier": "cpl_1_0-5160c0f0-326a-077a-efd6-b7e1bb5eb641",
       "license_expression": "cpl-1.0",
       "detection_count": 1,
-      "matches": [
-        {
-          "score": 100.0,
-          "start_line": 40,
-          "end_line": 40,
-          "matched_length": 6,
-          "match_coverage": 100.0,
-          "matcher": "2-aho",
-          "license_expression": "unknown-license-reference",
-          "rule_identifier": "license-intro_35.RULE",
-          "rule_relevance": 100,
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/license-intro_35.RULE"
-        },
-        {
-          "score": 100.0,
-          "start_line": 41,
-          "end_line": 41,
-          "matched_length": 6,
-          "match_coverage": 100.0,
-          "matcher": "2-aho",
-          "license_expression": "cpl-1.0",
-          "rule_identifier": "cpl-1.0_5.RULE",
-          "rule_relevance": 100,
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/cpl-1.0_5.RULE"
-        },
-        {
-          "score": 75.0,
-          "start_line": 41,
-          "end_line": 41,
-          "matched_length": 18,
-          "match_coverage": 75.0,
-          "matcher": "3-seq",
-          "license_expression": "cpl-1.0",
-          "rule_identifier": "cpl-1.0_14.RULE",
-          "rule_relevance": 100,
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/cpl-1.0_14.RULE"
-        }
-      ],
       "detection_log": []
     },
     {
       "identifier": "bsd_new-bad4bb72-54ef-7e7c-7644-70daa8f3317e",
       "license_expression": "bsd-new",
       "detection_count": 1,
-      "matches": [
-        {
-          "score": 100.0,
-          "start_line": 53,
-          "end_line": 53,
-          "matched_length": 6,
-          "match_coverage": 100.0,
-          "matcher": "2-aho",
-          "license_expression": "unknown-license-reference",
-          "rule_identifier": "license-intro_35.RULE",
-          "rule_relevance": 100,
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/license-intro_35.RULE"
-        },
-        {
-          "score": 100.0,
-          "start_line": 53,
-          "end_line": 54,
-          "matched_length": 4,
-          "match_coverage": 100.0,
-          "matcher": "2-aho",
-          "license_expression": "bsd-new",
-          "rule_identifier": "bsd-new_119.RULE",
-          "rule_relevance": 100,
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_119.RULE"
-        },
-        {
-          "score": 100.0,
-          "start_line": 57,
-          "end_line": 59,
-          "matched_length": 4,
-          "match_coverage": 100.0,
-          "matcher": "2-aho",
-          "license_expression": "bsd-new",
-          "rule_identifier": "bsd-new_103.RULE",
-          "rule_relevance": 100,
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_103.RULE"
-        },
-        {
-          "score": 99.0,
-          "start_line": 57,
-          "end_line": 59,
-          "matched_length": 3,
-          "match_coverage": 100.0,
-          "matcher": "2-aho",
-          "license_expression": "bsd-new",
-          "rule_identifier": "bsd-new_172.RULE",
-          "rule_relevance": 99,
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_172.RULE"
-        }
-      ],
       "detection_log": []
     },
     {
       "identifier": "bsd_new-90d0d4b4-f98b-d4da-dbb0-7e601f6d404a",
       "license_expression": "bsd-new",
       "detection_count": 1,
-      "matches": [
-        {
-          "score": 100.0,
-          "start_line": 64,
-          "end_line": 85,
-          "matched_length": 211,
-          "match_coverage": 100.0,
-          "matcher": "2-aho",
-          "license_expression": "bsd-new",
-          "rule_identifier": "bsd-new_860.RULE",
-          "rule_relevance": 100,
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_860.RULE"
-        }
-      ],
       "detection_log": []
     },
     {
       "identifier": "cpl_1_0-5038e997-b857-2a64-110b-75cb2d935f40",
       "license_expression": "cpl-1.0",
       "detection_count": 1,
-      "matches": [
-        {
-          "score": 100.0,
-          "start_line": 39,
-          "end_line": 39,
-          "matched_length": 6,
-          "match_coverage": 100.0,
-          "matcher": "2-aho",
-          "license_expression": "unknown-license-reference",
-          "rule_identifier": "license-intro_35.RULE",
-          "rule_relevance": 100,
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/license-intro_35.RULE"
-        },
-        {
-          "score": 100.0,
-          "start_line": 40,
-          "end_line": 40,
-          "matched_length": 6,
-          "match_coverage": 100.0,
-          "matcher": "2-aho",
-          "license_expression": "cpl-1.0",
-          "rule_identifier": "cpl-1.0_5.RULE",
-          "rule_relevance": 100,
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/cpl-1.0_5.RULE"
-        },
-        {
-          "score": 75.0,
-          "start_line": 40,
-          "end_line": 40,
-          "matched_length": 18,
-          "match_coverage": 75.0,
-          "matcher": "3-seq",
-          "license_expression": "cpl-1.0",
-          "rule_identifier": "cpl-1.0_14.RULE",
-          "rule_relevance": 100,
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/cpl-1.0_14.RULE"
-        },
-        {
-          "score": 100.0,
-          "start_line": 41,
-          "end_line": 41,
-          "matched_length": 3,
-          "match_coverage": 100.0,
-          "matcher": "2-aho",
-          "license_expression": "cpl-1.0",
-          "rule_identifier": "cpl-1.0_24.RULE",
-          "rule_relevance": 100,
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/cpl-1.0_24.RULE"
-        }
-      ],
       "detection_log": []
     }
   ],
@@ -578,7 +110,8 @@
               "matched_text": "https://www.eclipse.org/legal/epl-v10.html\">"
             }
           ],
-          "detection_log": []
+          "detection_log": [],
+          "identifier": "epl_1_0-583490fb-0b3a-f445-a1b9-1b96423b9ec3"
         },
         {
           "license_expression": "apache-2.0",
@@ -597,7 +130,8 @@
               "matched_text": "This product includes software developed by the Apache Software Foundation (<a href=\"http://www.apache.org/\">"
             }
           ],
-          "detection_log": []
+          "detection_log": [],
+          "identifier": "apache_2_0-b9480736-5aa9-53cf-d14a-cd1e7d4d49d3"
         },
         {
           "license_expression": "apache-2.0",
@@ -670,16 +204,12 @@
           ],
           "detection_log": [
             "unknown-intro-followed-by-match"
-          ]
+          ],
+          "identifier": "apache_2_0-d5aca480-f390-3518-0726-d232731b5e97"
         }
       ],
       "license_clues": [],
       "percentage_of_license_text": 52.82,
-      "for_license_detections": [
-        "epl_1_0-583490fb-0b3a-f445-a1b9-1b96423b9ec3",
-        "apache_2_0-b9480736-5aa9-53cf-d14a-cd1e7d4d49d3",
-        "apache_2_0-d5aca480-f390-3518-0726-d232731b5e97"
-      ],
       "scan_errors": []
     },
     {
@@ -718,7 +248,8 @@
               "matched_text": "https://www.eclipse.org/legal/epl-v10.html\">"
             }
           ],
-          "detection_log": []
+          "detection_log": [],
+          "identifier": "epl_1_0-583490fb-0b3a-f445-a1b9-1b96423b9ec3"
         },
         {
           "license_expression": "apache-2.0",
@@ -737,7 +268,8 @@
               "matched_text": "This product includes software developed by the Apache Software Foundation (<a href=\"http://www.apache.org/\">"
             }
           ],
-          "detection_log": []
+          "detection_log": [],
+          "identifier": "apache_2_0-b9480736-5aa9-53cf-d14a-cd1e7d4d49d3"
         },
         {
           "license_expression": "apache-2.0",
@@ -810,7 +342,8 @@
           ],
           "detection_log": [
             "unknown-intro-followed-by-match"
-          ]
+          ],
+          "identifier": "apache_2_0-f985a212-ddd7-cf4c-223f-990765c05d7f"
         },
         {
           "license_expression": "apache-2.0",
@@ -870,7 +403,8 @@
           ],
           "detection_log": [
             "unknown-intro-followed-by-match"
-          ]
+          ],
+          "identifier": "apache_2_0-572026ce-a21a-cf1f-b168-d2e76a41e85f"
         },
         {
           "license_expression": "apache-2.0",
@@ -902,7 +436,8 @@
               "matched_text": "License [2].[0].  A [copy] [of] [the] license is [contained]\n[in] [the] [file] <a href=\"[about]_[files]/[LICENSE]\">[LICENSE]</a> [and] [is] [also] [available] [at] <a href=\"[http]://www.apache.org/licenses/LICENSE-2.0.[html]\">[http]://www.apache.org/licenses/LICENSE-2.0."
             }
           ],
-          "detection_log": []
+          "detection_log": [],
+          "identifier": "apache_2_0-3ff6ea1e-7687-edb8-8b35-a2751a601cae"
         },
         {
           "license_expression": "apache-2.0",
@@ -934,7 +469,8 @@
               "matched_text": "License [2].[0].  A [copy] [of] [the] license is [contained]\n[in] [the] [file] <a href=\"[about]_[files]/[LICENSE]\">[LICENSE]</a> [and] [is] [also] [available] [at] <a href=\"[http]://www.apache.org/licenses/LICENSE-2.0.[html]\">[http]://www.apache.org/licenses/LICENSE-2.0."
             }
           ],
-          "detection_log": []
+          "detection_log": [],
+          "identifier": "apache_2_0-3ff6ea1e-7687-edb8-8b35-a2751a601cae"
         },
         {
           "license_expression": "(epl-2.0 OR apache-2.0) AND apache-2.0 AND epl-2.0",
@@ -994,20 +530,12 @@
           ],
           "detection_log": [
             "unknown-intro-followed-by-match"
-          ]
+          ],
+          "identifier": "epl_2_0_or_apache_2_0__and_apache_2_0_and_epl_2_0-52f23e3b-2f64-af31-1586-6bd03db2475f"
         }
       ],
       "license_clues": [],
       "percentage_of_license_text": 42.91,
-      "for_license_detections": [
-        "epl_1_0-583490fb-0b3a-f445-a1b9-1b96423b9ec3",
-        "apache_2_0-b9480736-5aa9-53cf-d14a-cd1e7d4d49d3",
-        "apache_2_0-f985a212-ddd7-cf4c-223f-990765c05d7f",
-        "apache_2_0-572026ce-a21a-cf1f-b168-d2e76a41e85f",
-        "apache_2_0-3ff6ea1e-7687-edb8-8b35-a2751a601cae",
-        "apache_2_0-3ff6ea1e-7687-edb8-8b35-a2751a601cae",
-        "epl_2_0_or_apache_2_0__and_apache_2_0_and_epl_2_0-52f23e3b-2f64-af31-1586-6bd03db2475f"
-      ],
       "scan_errors": []
     },
     {
@@ -1046,7 +574,8 @@
               "matched_text": "https://www.eclipse.org/legal/epl-v10.html\">"
             }
           ],
-          "detection_log": []
+          "detection_log": [],
+          "identifier": "epl_1_0-c49f6fb4-006b-7944-b44b-c283f88bf18d"
         },
         {
           "license_expression": "cpl-1.0",
@@ -1093,7 +622,8 @@
           ],
           "detection_log": [
             "unknown-intro-followed-by-match"
-          ]
+          ],
+          "identifier": "cpl_1_0-5160c0f0-326a-077a-efd6-b7e1bb5eb641"
         },
         {
           "license_expression": "bsd-new",
@@ -1153,7 +683,8 @@
           ],
           "detection_log": [
             "unknown-intro-followed-by-match"
-          ]
+          ],
+          "identifier": "bsd_new-bad4bb72-54ef-7e7c-7644-70daa8f3317e"
         },
         {
           "license_expression": "bsd-new",
@@ -1172,17 +703,12 @@
               "matched_text": "Redistribution and use in source and binary forms, with or without\nmodification, are permitted provided that the following conditions are met:\n\nRedistributions of source code must retain the above copyright notice, this list of\nconditions and the following disclaimer. Redistributions in binary form must reproduce\nthe above copyright notice, this list of conditions and the following disclaimer in\nthe documentation and/or other materials provided with the distribution.\n\nNeither the name of Hamcrest nor the names of its contributors may be used to endorse\nor promote products derived from this software without specific prior written\npermission.\n\nTHIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS \"AS IS\" AND ANY\nEXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES\nOF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT\nSHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,\nINCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED\nTO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR\nBUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN\nCONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY\nWAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH\nDAMAGE."
             }
           ],
-          "detection_log": []
+          "detection_log": [],
+          "identifier": "bsd_new-90d0d4b4-f98b-d4da-dbb0-7e601f6d404a"
         }
       ],
       "license_clues": [],
       "percentage_of_license_text": 50.37,
-      "for_license_detections": [
-        "epl_1_0-c49f6fb4-006b-7944-b44b-c283f88bf18d",
-        "cpl_1_0-5160c0f0-326a-077a-efd6-b7e1bb5eb641",
-        "bsd_new-bad4bb72-54ef-7e7c-7644-70daa8f3317e",
-        "bsd_new-90d0d4b4-f98b-d4da-dbb0-7e601f6d404a"
-      ],
       "scan_errors": []
     },
     {
@@ -1221,7 +747,8 @@
               "matched_text": "https://www.eclipse.org/legal/epl-v10.html\">"
             }
           ],
-          "detection_log": []
+          "detection_log": [],
+          "identifier": "epl_1_0-c49f6fb4-006b-7944-b44b-c283f88bf18d"
         },
         {
           "license_expression": "cpl-1.0",
@@ -1281,15 +808,12 @@
           ],
           "detection_log": [
             "unknown-intro-followed-by-match"
-          ]
+          ],
+          "identifier": "cpl_1_0-5038e997-b857-2a64-110b-75cb2d935f40"
         }
       ],
       "license_clues": [],
       "percentage_of_license_text": 47.22,
-      "for_license_detections": [
-        "epl_1_0-c49f6fb4-006b-7944-b44b-c283f88bf18d",
-        "cpl_1_0-5038e997-b857-2a64-110b-75cb2d935f40"
-      ],
       "scan_errors": []
     }
   ]

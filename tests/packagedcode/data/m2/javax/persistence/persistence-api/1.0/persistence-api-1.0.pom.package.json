@@ -40,7 +40,8 @@
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/cddl-1.0.RULE",
           "matched_text": "Common Development and Distribution License (CDDL) v1.0"
         }
-      ]
+      ],
+      "identifier": "cddl_1_0-9893b55c-3b2b-4ee8-a932-6c6c93a63fc5"
     },
     {
       "license_expression": "cddl-1.0",
@@ -58,7 +59,8 @@
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/cddl-1.0_4.RULE",
           "matched_text": "http://www.sun.com/cddl/cddl.html"
         }
-      ]
+      ],
+      "identifier": "cddl_1_0-ef82fc8c-50cb-6f35-1814-d2eb0bc13e83"
     }
   ],
   "other_license_expression": null,

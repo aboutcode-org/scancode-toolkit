@@ -95,6 +95,7 @@ license_detections:
           Documentation components of this software distribution are licensed
           under a Creative Commons Attribution-ShareAlike 3.0 Unported License.
           (http://creativecommons.org/licenses/by-sa/3.0/)
+    identifier: bsd_simplified_and_generic_export_compliance_and_cc_by_sa_3_0-33db6ba2-24df-220e-9776-12e2f090117e
   - license_expression: proprietary-license
     matches:
       - score: '100.0'
@@ -115,6 +116,7 @@ license_detections:
           manner.  It does NOT prevent a commercial firm from referring to the
           MIT trademarks in order to convey information (although in doing so,
           recognition of their trademark status should be given).
+    identifier: proprietary_license-ae26591e-560d-5622-14d0-ff1ff9a49b22
   - license_expression: other-permissive
     matches:
       - score: '100.0'
@@ -158,6 +160,7 @@ license_detections:
              continuing Kerberos technology development and our gratitude for
              the valuable work which has been performed by MIT and the Kerberos
              community.
+    identifier: other_permissive-46e6e2b3-dadb-a39b-50ee-b8a8739b526d
   - license_expression: mit-no-advert-export-control
     matches:
       - score: '98.73'
@@ -190,6 +193,7 @@ license_detections:
              THIS SOFTWARE IS PROVIDED "AS IS" AND WITHOUT ANY EXPRESS OR
              IMPLIED WARRANTIES, INCLUDING, WITHOUT LIMITATION, THE IMPLIED
              WARRANTIES OF MERCHANTIBILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+    identifier: mit_no_advert_export_control-1128ece3-2db6-bad0-d5d9-6c912fa4983c
   - license_expression: brian-gladman-3-clause
     matches:
       - score: '100.0'
@@ -223,6 +227,7 @@ license_detections:
              This software is provided 'as is' with no explcit or implied
              warranties in respect of any properties, including, but not limited
              to, correctness and fitness for purpose.
+    identifier: brian_gladman_3_clause-7a3ee4cc-fd00-4912-cc3a-c1abe777f891
   - license_expression: bsd-new
     matches:
       - score: '100.0'
@@ -264,6 +269,7 @@ license_detections:
              STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
              ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED
              OF THE POSSIBILITY OF SUCH DAMAGE.
+    identifier: bsd_new-66fbca06-fdde-6367-5e72-bd742f214050
   - license_expression: mit
     matches:
       - score: '100.0'
@@ -296,6 +302,7 @@ license_detections:
              WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
              OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
              DEALINGS IN THE SOFTWARE.
+    identifier: mit-cacd5c0c-204a-85c2-affc-e4c125b2492a
   - license_expression: bsd-simplified
     matches:
       - score: '100.0'
@@ -334,6 +341,7 @@ license_detections:
              STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
              ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED
              OF THE POSSIBILITY OF SUCH DAMAGE.
+    identifier: bsd_simplified-fe5ce6eb-1b7c-6cd1-2e78-e9f71b0262f1
   - license_expression: mit
     matches:
       - score: '100.0'
@@ -366,6 +374,7 @@ license_detections:
              ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
              CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
              SOFTWARE.
+    identifier: mit-cacd5c0c-204a-85c2-affc-e4c125b2492a
   - license_expression: bsd-new
     matches:
       - score: '100.0'
@@ -407,6 +416,7 @@ license_detections:
              OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT
              OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
              SUCH DAMAGE.
+    identifier: bsd_new-ccc98c3a-92d4-e7a3-e0ba-798328cb6b98
   - license_expression: bsd-new
     matches:
       - score: '100.0'
@@ -448,6 +458,7 @@ license_detections:
              STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
              ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED
              OF THE POSSIBILITY OF SUCH DAMAGE.
+    identifier: bsd_new-dc7f0df2-c1a1-daeb-6556-1f60f5c4484c
   - license_expression: michigan-disclaimer
     matches:
       - score: '100.0'
@@ -481,6 +492,7 @@ license_detections:
              CONSEQUENTIAL DAMAGES, WITH RESPECT TO ANY CLAIM ARISING OUT OF OR
              IN CONNECTION WITH THE USE OF THE SOFTWARE, EVEN IF IT HAS BEEN OR
              IS HEREAFTER ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.
+    identifier: michigan_disclaimer-f90073dd-2b26-8fe5-d12a-32531681f44a
   - license_expression: fsf-unlimited-no-warranty
     matches:
       - score: '100.0'
@@ -502,6 +514,7 @@ license_detections:
              WITHOUT ANY WARRANTY, to the extent permitted by law; without even
              the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR
              PURPOSE.
+    identifier: fsf_unlimited_no_warranty-005cbd82-97e0-5c6c-e111-cd46d95d2c5a
   - license_expression: mit-no-advert-export-control
     matches:
       - score: '100.0'
@@ -534,6 +547,7 @@ license_detections:
              THIS SOFTWARE IS PROVIDED "AS IS" AND WITHOUT ANY EXPRESS OR
              IMPLIED WARRANTIES, INCLUDING, WITHOUT LIMITATION, THE IMPLIED
              WARRANTIES OF MERCHANTIBILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+    identifier: mit_no_advert_export_control-d6c84c49-6090-f5cb-35df-480e9ca265bf
   - license_expression: openldap-2.8
     matches:
       - score: '100.0'
@@ -595,6 +609,7 @@ license_detections:
              Copyright 1999-2003 The OpenLDAP Foundation, Redwood City,
              California, USA.  All Rights Reserved.  Permission to copy and
              distribute verbatim copies of this document is granted.
+    identifier: openldap_2_8-58e150c7-83e9-bea6-0075-83fa7a4a9025
   - license_expression: bsd-new
     matches:
       - score: '100.0'
@@ -636,6 +651,7 @@ license_detections:
              OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT
              OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
              SUCH DAMAGE.
+    identifier: bsd_new-3067d87e-03fa-386b-14c5-8c725b58e271
   - license_expression: bsd-new
     matches:
       - score: '100.0'
@@ -678,6 +694,7 @@ license_detections:
              OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT
              OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
              SUCH DAMAGE.
+    identifier: bsd_new-405dd1d5-a75a-5b1c-3698-dad680358560
   - license_expression: bsd-new
     matches:
       - score: '100.0'
@@ -720,6 +737,7 @@ license_detections:
              STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
              ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED
              OF THE POSSIBILITY OF SUCH DAMAGE.
+    identifier: bsd_new-bcd7c498-0b2c-5abe-4ee7-1e4d56c69bcc
   - license_expression: freebsd-doc
     matches:
       - score: '100.0'
@@ -757,6 +775,7 @@ license_detections:
              STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
              ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED
              OF THE POSSIBILITY OF SUCH DAMAGE.
+    identifier: freebsd_doc-9db33af1-af77-1b9f-27f4-0ae766439a3a
   - license_expression: cmu-uc
     matches:
       - score: '99.0'
@@ -787,6 +806,7 @@ license_detections:
              AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING
              OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS
              SOFTWARE.
+    identifier: cmu_uc-81218bbc-ee50-f7e2-791a-f18dcff965fd
   - license_expression: nrl-permission
     matches:
       - score: '95.0'
@@ -809,6 +829,7 @@ license_detections:
              NRL ALLOWS FREE USE OF THIS SOFTWARE IN ITS "AS IS" CONDITION AND
              DISCLAIMS ANY LIABILITY OF ANY KIND FOR ANY DAMAGES WHATSOEVER
              RESULTING FROM THE USE OF THIS SOFTWARE.
+    identifier: nrl_permission-69f7eb46-92e8-fb4c-6788-8285e4f7effa
   - license_expression: ietf-trust
     matches:
       - score: '100.0'
@@ -834,6 +855,7 @@ license_detections:
              THE USE OF THE INFORMATION HEREIN WILL NOT INFRINGE ANY RIGHTS OR
              ANY IMPLIED WARRANTIES OF MERCHANTABILITY OR FITNESS FOR A
              PARTICULAR PURPOSE.
+    identifier: ietf_trust-f268e8cf-010e-2ddb-9692-832496073cf3
   - license_expression: mit-old-style
     matches:
       - score: '100.0'
@@ -855,6 +877,7 @@ license_detections:
              representations about the suitability of this software for any
              purpose.  It is provided "as is" without express or implied
              warranty.
+    identifier: mit_old_style-1e993fd4-e311-4d2f-c751-607871e23414
   - license_expression: mit
     matches:
       - score: '100.0'
@@ -887,6 +910,7 @@ license_detections:
              ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
              CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
              SOFTWARE.
+    identifier: mit-cacd5c0c-204a-85c2-affc-e4c125b2492a
   - license_expression: bsd-simplified AND (mit-no-advert-export-control AND proprietary-license)
     matches:
       - score: '100.0'
@@ -955,6 +979,7 @@ license_detections:
              be held liable for any liability nor for any direct, indirect, or
              consequential damages with respect to any claim by the user or
              distributor of the ksu software.
+    identifier: bsd_simplified_and__mit_no_advert_export_control_and_proprietary_license-345b28a9-f29e-4bc5-6160-59a84fd1aadf
   - license_expression: bsd-original-uc
     matches:
       - score: '100.0'
@@ -1002,6 +1027,7 @@ license_detections:
              OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT
              OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
              SUCH DAMAGE.
+    identifier: bsd_original_uc-f28cb4d4-6336-ee60-f186-4c1929d3a4b0
   - license_expression: mit-no-advert-export-control
     matches:
       - score: '99.0'
@@ -1031,6 +1057,7 @@ license_detections:
              Basch, Lehman Brothers and M.I.T. make no representations about the
              suitability of this software for any purpose.  It is provided "as
              is" without express or implied warranty.
+    identifier: mit_no_advert_export_control-8a3f7c38-f5cb-2016-0e86-70fb9f16ca5c
   - license_expression: bsd-original
     matches:
       - score: '100.0'
@@ -1079,6 +1106,7 @@ license_detections:
              (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE
              USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH
              DAMAGE.
+    identifier: bsd_original-07212ebb-4bc6-b4e9-de7c-a4d294184c21
   - license_expression: mit
     matches:
       - score: '100.0'
@@ -1111,6 +1139,7 @@ license_detections:
              OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR
              OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE
              OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+    identifier: mit-c00d5dad-390d-222f-7182-5d856cf7b8de
   - license_expression: isc
     matches:
       - score: '100.0'
@@ -1137,6 +1166,7 @@ license_detections:
              OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT,
              NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN
              CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+    identifier: isc-ea6c318e-91a9-413d-027a-507b2cebec2c
   - license_expression: isc
     matches:
       - score: '95.0'
@@ -1163,6 +1193,7 @@ license_detections:
              IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.  (Isn't
              it sick that the U.S. culture of lawsuit-happy lawyers requires
              this kind of disclaimer?)
+    identifier: isc-e2afa98f-2f94-8ed0-73b4-11ad7eb78f27
   - license_expression: other-permissive
     matches:
       - score: '100.0'
@@ -1178,6 +1209,7 @@ license_detections:
         matched_text: |
           This file may be freely redistributed without license or fee
              provided this copyright message remains intact.
+    identifier: other_permissive-159ebe90-9eb6-c7d5-9749-3fca97d30548
   - license_expression: bsd-new
     matches:
       - score: '100.0'
@@ -1219,6 +1251,7 @@ license_detections:
              (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE
              USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH
              DAMAGE.
+    identifier: bsd_new-12f1ac86-ca22-4cc1-70be-ff0581226e16
   - license_expression: rsa-md4
     matches:
       - score: '100.0'
@@ -1249,6 +1282,7 @@ license_detections:
 
              These notices must be retained in any copies of any part of this
              documentation and/or software.
+    identifier: rsa_md4-a759e81a-f925-4fa7-feb4-1653e6ac100e
   - license_expression: rsa-md5
     matches:
       - score: '100.0'
@@ -1279,6 +1313,7 @@ license_detections:
 
              These notices must be retained in any copies of any part of this
              documentation and/or software.
+    identifier: rsa_md5-15c129b1-dd57-a1d1-c398-85cc6d20017e
   - license_expression: rsa-1990
     matches:
       - score: '100.0'
@@ -1299,6 +1334,7 @@ license_detections:
 
              These notices must be retained in any copies of any part of this
              documentation and/or software.
+    identifier: rsa_1990-2041758f-0e05-d693-1067-8e6b055aa3ee
   - license_expression: mit-with-modification-obligations
     matches:
       - score: '100.0'
@@ -1331,6 +1367,7 @@ license_detections:
              Security Group, nor CyberSAFE Corporation make any representations
              about the suitability of this software for any purpose.  It is
              provided "as is" without express or implied warranty.
+    identifier: mit_with_modification_obligations-42eb6af6-0f2c-428f-f892-f4bb7295452c
   - license_expression: bsd-new
     matches:
       - score: '100.0'
@@ -1372,6 +1409,7 @@ license_detections:
              OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT
              OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
              SUCH DAMAGE.
+    identifier: bsd_new-92ffce46-c317-d9f5-e740-a98f7d6eb994
   - license_expression: bsd-simplified OR gpl-2.0-plus
     matches:
       - score: '100.0'
@@ -1424,6 +1462,7 @@ license_detections:
 
              On Debian systems, the complete text of the GNU General Public License
              version 2 can be found in `/usr/share/common-licenses/GPL-2'.
+    identifier: bsd_simplified_or_gpl_2_0_plus-061f1e82-e3fd-1972-4fbc-961626a0b57a
   - license_expression: bsd-new
     matches:
       - score: '100.0'
@@ -1466,6 +1505,7 @@ license_detections:
              STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
              ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED
              OF THE POSSIBILITY OF SUCH DAMAGE.
+    identifier: bsd_new-27fdae2b-970d-afa7-4ecb-ef39abbe9d1e
   - license_expression: bsd-simplified
     matches:
       - score: '100.0'
@@ -1503,6 +1543,7 @@ license_detections:
              STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
              ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED
              OF THE POSSIBILITY OF SUCH DAMAGE.
+    identifier: bsd_simplified-a1deb97f-56cd-71ea-a95f-82477d400503
 other_license_detections: []
 copyright: |
   Copyright (c) 1985-2018 by the Massachusetts Institute of Technology

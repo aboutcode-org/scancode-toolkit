@@ -46,6 +46,7 @@ other_license_detections:
           LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
           FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
           DEALINGS IN THE SOFTWARE.
+    identifier: mit-cacd5c0c-204a-85c2-affc-e4c125b2492a
   - license_expression: boost-1.0
     matches:
       - score: '100.0'
@@ -81,6 +82,7 @@ other_license_detections:
           FOR ANY DAMAGES OR OTHER LIABILITY, WHETHER IN CONTRACT, TORT OR OTHERWISE,
           ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
           DEALINGS IN THE SOFTWARE.
+    identifier: boost_1_0-a8ac3b7f-e1b3-e54d-c81b-d2165ef4621a
   - license_expression: gpl-2.0
     matches:
       - score: '100.0'
@@ -111,6 +113,7 @@ other_license_detections:
 
           On Debian systems, the complete text of version 2 of the GNU General
           Public License can be found in '/usr/share/common-licenses/GPL-2'.
+    identifier: gpl_2_0-8f03a209-723a-5338-eac8-e37c880f528d
   - license_expression: gpl-2.0-plus
     matches:
       - score: '100.0'
@@ -142,6 +145,7 @@ other_license_detections:
 
           On Debian systems, the complete text of version 2 of the GNU General
           Public License can be found in '/usr/share/common-licenses/GPL-2'.
+    identifier: gpl_2_0_plus-e081e12a-5320-6d45-b399-2b85f6a41f9a
 copyright: |
   2015-2018, Alexander Batischev <eual.jp@gmail.com>
   2006-2010, Andreas Krennmair <ak@synflood.at>

@@ -64,6 +64,7 @@ license_detections:
           TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE
           USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH
           DAMAGE.
+    identifier: intel-ba019b8e-e0ea-8048-9073-a76fbb247ff8
   - license_expression: intel
     matches:
       - score: '95.0'
@@ -112,6 +113,7 @@ license_detections:
           CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
           ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
           POSSIBILITY OF SUCH DAMAGE.
+    identifier: intel-aad21753-33a8-9b6b-b0be-dbc0838c75ab
   - license_expression: intel AND (bsd-new AND other-permissive AND other-copyleft) AND bsd-new
       AND x11-lucent AND standard-ml-nj AND amd-historical AND sunpro AND osf-1990 AND nilsson-historical
       AND newlib-historical AND bsd-simplified AND x11-hanson AND delorie-historical AND intel-osl-1993
@@ -1229,6 +1231,7 @@ license_detections:
           LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
           OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
           SUCH DAMAGE.
+    identifier: intel_and__bsd_new_and_other_permissive_and_other_copyleft__and_bsd_new_and_x11_lucent_and_standard_ml_nj_and_amd_historical_and_sunpro_and_osf_1990_and_nilsson_historical_and_newlib_historical_and_bsd_simplified_and_x11_hanson_and_delorie_historical_and_intel_osl_1993-690642fb-013b-0f88-86be-98f59b0d6212
 other_license_detections: []
 copyright: |
   2014, Intel Corporation.

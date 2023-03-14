@@ -99,6 +99,7 @@ other_license_detections:
           derivative of this code cannot be changed.  i.e. this code cannot simply be
           copied and put under another distribution licence
           [including the GNU General Public Licence.]
+    identifier: ssleay_windows-93878952-a9e8-1f8d-16e5-daf65078e9d8
   - license_expression: public-domain
     matches:
       - score: '100.0'
@@ -112,6 +113,7 @@ other_license_detections:
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/public-domain_125.RULE
         matched_text: 100% Public Domain,
+    identifier: public_domain-febd716b-0a50-4cbc-9a5b-36698c14ffd8
   - license_expression: mit-old-style-no-advert
     matches:
       - score: '100.0'
@@ -136,6 +138,7 @@ other_license_detections:
           M.I.T. makes no representations about the suitability of
           this software for any purpose.  It is provided "as is"
           without express or implied warranty.
+    identifier: mit_old_style_no_advert-19f78f33-dd8b-9688-e8e7-956044c36d07
   - license_expression: gpl-2.0 WITH openssl-exception-gpl-2.0
     matches:
       - score: '100.0'
@@ -156,6 +159,7 @@ other_license_detections:
           On Debian GNU/Linux systems, the complete text of the GNU General
           Public License version 2 can be found in
           `/usr/share/common-licenses/GPL-2'.
+    identifier: gpl_2_0_with_openssl_exception_gpl_2_0-8356e424-817e-5d5b-5bb5-f1c1211c2151
   - license_expression: gpl-2.0
     matches:
       - score: '100.0'
@@ -186,6 +190,7 @@ other_license_detections:
           On Debian GNU/Linux systems, the complete text of the GNU General
           Public License version 2 can be found in
           `/usr/share/common-licenses/GPL-2'.
+    identifier: gpl_2_0-404c8878-5009-b35f-910c-bb68abd6f353
   - license_expression: gpl-2.0-plus
     matches:
       - score: '100.0'
@@ -217,6 +222,7 @@ other_license_detections:
           On Debian GNU/Linux systems, the complete text of the GNU General
           Public License version 2 can be found in
           `/usr/share/common-licenses/GPL-2'.
+    identifier: gpl_2_0_plus-835c02fb-84cd-83f2-e14c-b39c13f54dfb
   - license_expression: gpl-1.0-plus
     matches:
       - score: '100.0'
@@ -246,6 +252,7 @@ other_license_detections:
           On Debian GNU/Linux systems, the complete text of the latest version
           of the GNU General Public License version can be found in
           `/usr/share/common-licenses/GPL'.
+    identifier: gpl_1_0_plus-14761f06-743f-4cbf-1afa-cea270559e48
   - license_expression: zlib
     matches:
       - score: '100.0'
@@ -276,6 +283,7 @@ other_license_detections:
              misrepresented as being the original software.
 
           3. This notice may not be removed or altered from any source distribution.
+    identifier: zlib-f32ae987-c66a-44ce-bd13-c90e0c59aab8
   - license_expression: bsd-new
     matches:
       - score: '100.0'
@@ -315,6 +323,7 @@ other_license_detections:
           LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
           OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
           SUCH DAMAGE.
+    identifier: bsd_new-1c9f5e21-d1f7-70e3-725e-68240c6ce757
   - license_expression: gpl-1.0-plus AND zlib
     matches:
       - score: '100.0'
@@ -330,6 +339,7 @@ other_license_detections:
         matched_text: |
           released under
           the GNU GPL." and then shows the zlib license text.
+    identifier: gpl_1_0_plus_and_zlib-5f5c99a2-ddc6-dd21-eabc-89941f8675f3
 copyright: |
   2002-2016 Henrik Størner <henrik@hswn.dk>
   2005-2007 Henrik Størner <henrik@hswn.dk>

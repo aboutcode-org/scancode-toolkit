@@ -47,6 +47,7 @@ other_license_detections:
           holders shall not be used in advertising or otherwise to promote the
           sale, use or other dealings in this Software without prior written
           authorization.
+    identifier: x11_fsf-5f3d72c2-fa6a-2f7b-b859-17e7567c1724
   - license_expression: x11-xconsortium
     matches:
       - score: '100.0'
@@ -81,6 +82,7 @@ other_license_detections:
           be used in advertising or otherwise to promote the sale, use or other deal-
           ings in this Software without prior written authorization from the X Consor-
           tium.
+    identifier: x11_xconsortium-8bc3e205-5f29-ecad-90bc-2f492c65be46
   - license_expression: bsd-new
     matches:
       - score: '100.0'
@@ -117,6 +119,7 @@ other_license_detections:
           LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
           OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
           SUCH DAMAGE.
+    identifier: bsd_new-ccc98c3a-92d4-e7a3-e0ba-798328cb6b98
 copyright: |
   1998-2017,2018 Free Software Foundation, Inc.
   1996-2019,2020 Thomas E. Dickey

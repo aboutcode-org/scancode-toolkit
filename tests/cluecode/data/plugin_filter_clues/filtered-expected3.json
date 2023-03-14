@@ -1,23 +1,9 @@
 {
   "license_detections": [
     {
-      "identifier": "pcre-6bfd6b44-b749-0fea-8561-aeb76e388c06",
+      "identifier": "pcre-c61d8210-7748-d787-5e3e-fd64c6cd6b6a",
       "license_expression": "pcre",
-      "detection_count": 1,
-      "matches": [
-        {
-          "score": 100.0,
-          "start_line": 1,
-          "end_line": 47,
-          "matched_length": 303,
-          "match_coverage": 100.0,
-          "matcher": "1-hash",
-          "license_expression": "pcre",
-          "rule_identifier": "pcre.LICENSE",
-          "rule_relevance": 100,
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/pcre.LICENSE"
-        }
-      ]
+      "detection_count": 1
     }
   ],
   "files": [
@@ -58,14 +44,12 @@
               "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/pcre.LICENSE"
             }
-          ]
+          ],
+          "identifier": "pcre-c61d8210-7748-d787-5e3e-fd64c6cd6b6a"
         }
       ],
       "license_clues": [],
       "percentage_of_license_text": 100.0,
-      "for_license_detections": [
-        "pcre-6bfd6b44-b749-0fea-8561-aeb76e388c06"
-      ],
       "copyrights": [
         {
           "copyright": "Copyright (c) 1997-2001 University of Cambridge",

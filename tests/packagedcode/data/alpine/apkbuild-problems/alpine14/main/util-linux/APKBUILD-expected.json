@@ -40,7 +40,8 @@
           "rule_url": null,
           "matched_text": "gpl-3.0-or-later AND gpl-2.0-or-later AND gpl-2.0-only AND lgpl-2.1-or-later AND bsd-3-clause AND bsd-4-clause-uc AND licenseref-scancode-public-domain"
         }
-      ]
+      ],
+      "identifier": "gpl_3_0_plus_and_gpl_2_0_plus_and_gpl_2_0_and_lgpl_2_1_plus_and_bsd_new_and_bsd_original_uc_and_public_domain-bf8f1c95-7f51-85e4-e3ef-f3b4dcaa3167"
     }
   ],
   "other_license_expression": null,

@@ -79,7 +79,8 @@
             "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_802.RULE",
             "matched_text": "Eclipse Public License v1.0 / Eclipse Distribution License v1.0"
           }
-        ]
+        ],
+        "identifier": "epl_1_0_and_bsd_new-668a8088-f2dc-ea82-9ee5-604a82829d59"
       },
       {
         "license_expression": "free-unknown",
@@ -97,7 +98,8 @@
             "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/pypi_osi_approved.RULE",
             "matched_text": "['License :: OSI Approved']"
           }
-        ]
+        ],
+        "identifier": "free_unknown-e8fad921-e243-7cbb-bf61-2ac054636272"
       }
     ],
     "other_license_expression": null,

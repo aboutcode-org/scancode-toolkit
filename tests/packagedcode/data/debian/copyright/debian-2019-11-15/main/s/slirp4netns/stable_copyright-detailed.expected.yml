@@ -45,6 +45,7 @@ other_license_detections:
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-simplified_136.RULE
         matched_text: license BSD-2-clause
+    identifier: bsd_simplified-2383ae10-5494-e069-46c2-e2d6cb56951f
   - license_expression: bsd-new
     matches:
       - score: '100.0'
@@ -81,6 +82,7 @@ other_license_detections:
           LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
           OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
           SUCH DAMAGE.
+    identifier: bsd_new-ccc98c3a-92d4-e7a3-e0ba-798328cb6b98
   - license_expression: bsd-simplified
     matches:
       - score: '98.88'
@@ -113,6 +115,7 @@ other_license_detections:
           THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
           (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
           THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+    identifier: bsd_simplified-d94468f5-485a-ebb9-1548-b7e909e0c153
   - license_expression: mit
     matches:
       - score: '100.0'
@@ -143,6 +146,7 @@ other_license_detections:
           LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
           OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
           THE SOFTWARE.
+    identifier: mit-cacd5c0c-204a-85c2-affc-e4c125b2492a
   - license_expression: gpl-2.0
     matches:
       - score: '100.0'
@@ -186,6 +190,7 @@ other_license_detections:
           the Free Software Foundation; version 2 dated June, 1991.
           On Debian systems, the complete text of version 2 of the GNU General
           Public License can be found in '/usr/share/common-licenses/GPL-2'.
+    identifier: gpl_2_0-16076205-58b7-9073-142a-e00e35648f2d
   - license_expression: gpl-2.0-plus
     matches:
       - score: '100.0'
@@ -225,6 +230,7 @@ other_license_detections:
 
           On Debian systems, the complete text of the GNU General
           Public License version 2 can be found in "/usr/share/common-licenses/GPL-2".
+    identifier: gpl_2_0_plus-cc17af11-ba60-7b3d-40d0-91bc262b80f8
   - license_expression: lgpl-2.1-plus AND lgpl-2.1
     matches:
       - score: '100.0'
@@ -274,6 +280,7 @@ other_license_detections:
         matched_text: |
           On Debian systems, the complete text of the GNU Lesser General
           Public License version 2.1 can be found in "/usr/share/common-licenses/LGPL-2.1".
+    identifier: lgpl_2_1_plus_and_lgpl_2_1-204b36b2-a9f6-ee19-a401-520ccd0f3862
 copyright: |
   2018 Giuseppe Scrivano <gscrivan@redhat.com>
   Akihiro Suda <suda.akihiro@lab.ntt.co.jp>

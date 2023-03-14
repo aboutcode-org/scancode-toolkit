@@ -197,7 +197,8 @@
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/spdx_license_id_mpl-2.0_for_mpl-2.0.RULE",
               "matched_text": "/usr/share/common-licenses/MPL-2.0"
             }
-          ]
+          ],
+          "identifier": "lgpl_2_0_plus_and_lgpl_3_0_and_gpl_1_0_plus_and_gpl_3_0_and_gfdl_1_3__and_apache_2_0_and_bsd_new_and_cc0_1_0_and_gfdl_1_2_and_gfdl_1_3_and__gpl_1_0_plus_and_gpl_2_0_plus_and_lgpl_2_0_plus_and_gfdl_1_1__and_gpl_1_0_and__lgpl_2_0_and_lgpl_2_1__and_lgpl_3_0_and_mpl_1_1_and_mpl_2_0-1cdbaa39-7445-5cc0-ae76-4a6e1d06fd90"
         },
         {
           "license_expression": "gpl-2.0 AND lgpl-2.0",
@@ -215,7 +216,8 @@
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0_and_lgpl-2.0_4.RULE",
               "matched_text": "/usr/share/common-licenses/GPL\n/usr/share/common-licenses/LGPL"
             }
-          ]
+          ],
+          "identifier": "gpl_2_0_and_lgpl_2_0-97b218b6-30fa-cec2-ed6d-22f3fe7fd1de"
         }
       ],
       "other_license_expression": null,
@@ -1033,7 +1035,8 @@
                   "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/spdx_license_id_mpl-2.0_for_mpl-2.0.RULE",
                   "matched_text": "/usr/share/common-licenses/MPL-2.0"
                 }
-              ]
+              ],
+              "identifier": "lgpl_2_0_plus_and_lgpl_3_0_and_gpl_1_0_plus_and_gpl_3_0_and_gfdl_1_3__and_apache_2_0_and_bsd_new_and_cc0_1_0_and_gfdl_1_2_and_gfdl_1_3_and__gpl_1_0_plus_and_gpl_2_0_plus_and_lgpl_2_0_plus_and_gfdl_1_1__and_gpl_1_0_and__lgpl_2_0_and_lgpl_2_1__and_lgpl_3_0_and_mpl_1_1_and_mpl_2_0-1cdbaa39-7445-5cc0-ae76-4a6e1d06fd90"
             },
             {
               "license_expression": "gpl-2.0 AND lgpl-2.0",
@@ -1051,7 +1054,8 @@
                   "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0_and_lgpl-2.0_4.RULE",
                   "matched_text": "/usr/share/common-licenses/GPL\n/usr/share/common-licenses/LGPL"
                 }
-              ]
+              ],
+              "identifier": "gpl_2_0_and_lgpl_2_0-97b218b6-30fa-cec2-ed6d-22f3fe7fd1de"
             }
           ],
           "other_license_expression": null,

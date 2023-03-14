@@ -76,6 +76,7 @@ other_license_detections:
           LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
           NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
           SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+    identifier: bsd_new-1529bb96-2d58-f678-a443-d3bbbf37a9ff
   - license_expression: fsf-unlimited-no-warranty
     matches:
       - score: '100.0'
@@ -97,6 +98,7 @@ other_license_detections:
           WITHOUT ANY WARRANTY, to the extent permitted by law; without even
           the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR
           PURPOSE.
+    identifier: fsf_unlimited_no_warranty-005cbd82-97e0-5c6c-e111-cd46d95d2c5a
   - license_expression: ietf
     matches:
       - score: '90.0'
@@ -126,6 +128,7 @@ other_license_detections:
 
           The limited permissions granted above are perpetual and will not be
           revoked by the Internet Society or its successors or assigns.
+    identifier: ietf-020936d7-aad7-a859-aa41-3ef78b39c612
   - license_expression: gpl-3.0-plus
     matches:
       - score: '100.0'
@@ -166,6 +169,7 @@ other_license_detections:
           On Debian systems, the full text of the GNU General Public
           License version 3 can be found in the file
           `/usr/share/common-licenses/GPL-3'.
+    identifier: gpl_3_0_plus-59e30787-1a62-c2cf-50f5-e0d50fffcd04
   - license_expression: lgpl-3.0-plus
     matches:
       - score: '100.0'
@@ -206,6 +210,7 @@ other_license_detections:
           On Debian systems, the full text of the GNU Lesser General Public
           License version 3 can be found in the file
           `/usr/share/common-licenses/LGPL-3'.
+    identifier: lgpl_3_0_plus-1cede042-6a19-16e7-f08a-f722296d0745
   - license_expression: lgpl-2.1-plus
     matches:
       - score: '100.0'
@@ -246,6 +251,7 @@ other_license_detections:
           On Debian systems, the full text of the GNU Lesser General Public
           License version 2.1 can be found in the file
           `/usr/share/common-licenses/LGPL-2.1'.
+    identifier: lgpl_2_1_plus-75b8a956-d72b-ab7f-5921-bec21e7047bb
   - license_expression: bsd-new
     matches:
       - score: '100.0'
@@ -283,6 +289,7 @@ other_license_detections:
           STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
           ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED
           OF THE POSSIBILITY OF SUCH DAMAGE.
+    identifier: bsd_new-d710da7a-d455-7e11-d6d1-e58805668aae
   - license_expression: mit
     matches:
       - score: '100.0'
@@ -314,6 +321,7 @@ other_license_detections:
           DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR
           OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE
           USE OR OTHER DEALINGS IN THE SOFTWARE.
+    identifier: mit-cacd5c0c-204a-85c2-affc-e4c125b2492a
   - license_expression: cc0-1.0
     matches:
       - score: '100.0'
@@ -344,6 +352,7 @@ other_license_detections:
 
           On Debian systems, the complete text of the CC0 license, version 1.0,
           can be found in /usr/share/common-licenses/CC0-1.0.
+    identifier: cc0_1_0-28709819-142f-86f2-a09a-d8ab5f97a889
   - license_expression: other-permissive
     matches:
       - score: '100.0'
@@ -357,6 +366,7 @@ other_license_detections:
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/other-permissive_321.RULE
         matched_text: This file is licensed permissively
+    identifier: other_permissive-9b0e778e-b2cb-3f63-cd43-d76f05797558
 copyright: |
   1992, 1995-2016, Free Software Foundation, Inc
   1998-2007, 2009, 2012, Free Software Foundation, Inc

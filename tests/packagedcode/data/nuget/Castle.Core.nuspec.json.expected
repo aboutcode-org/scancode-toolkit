@@ -56,7 +56,8 @@
             "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_20.RULE",
             "matched_text": "http://www.apache.org/licenses/LICENSE-2.0.html"
           }
-        ]
+        ],
+        "identifier": "apache_2_0-9a5226a4-0901-7d18-06ae-49c1887ecbd7"
       }
     ],
     "other_license_expression": null,

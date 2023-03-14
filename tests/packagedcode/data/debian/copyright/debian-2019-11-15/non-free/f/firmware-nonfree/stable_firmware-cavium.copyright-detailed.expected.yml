@@ -74,5 +74,6 @@ license_detections:
           (c) anyone who is engaged in activities related to the design, development,
           production, or use of nuclear materials, nuclear facilities, nuclear weapons,
           missiles or chemical or biological weapons.
+    identifier: cavium_linux_firmware-ddda0925-3142-7552-a61c-81fd6910befb
 other_license_detections: []
 copyright: Copyright (c) 2015, Cavium, Inc.

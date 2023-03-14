@@ -162,6 +162,7 @@ other_license_detections:
         matched_text: |
           Everyone is permitted to copy and distribute verbatim copies
           of this license document, but changing it is not allowed.
+    identifier: other_copyleft-0ac0d4dd-1063-c305-80e8-d67a64a53eaf
   - license_expression: fsf-free
     matches:
       - score: '100.0'
@@ -177,6 +178,7 @@ other_license_detections:
         matched_text: |
           This file is free documentation; the Free Software Foundation gives
           unlimited permission to copy, distribute and modify it.
+    identifier: fsf_free-8d4278b0-1a18-46ea-fb34-66b65143a311
   - license_expression: zlib
     matches:
       - score: '100.0'
@@ -205,6 +207,7 @@ other_license_detections:
            2. Altered source versions must be plainly marked as such, and must not be
               misrepresented as being the original software.
            3. This notice may not be removed or altered from any source distribution.
+    identifier: zlib-f32ae987-c66a-44ce-bd13-c90e0c59aab8
   - license_expression: gpl-2.0-plus WITH bison-exception-2.2
     matches:
       - score: '100.0'
@@ -245,6 +248,7 @@ other_license_detections:
 
           This special exception was added by the Free Software Foundation in
           version 2.2 of Bison.
+    identifier: gpl_2_0_plus_with_bison_exception_2_2-ceb319fe-ed42-88fc-1732-0b4f76fdc6cc
   - license_expression: gpl-3.0-plus WITH bison-exception-2.2
     matches:
       - score: '100.0'
@@ -283,6 +287,7 @@ other_license_detections:
 
           This special exception was added by the Free Software Foundation in
           version 2.2 of Bison.
+    identifier: gpl_3_0_plus_with_bison_exception_2_2-637d6c30-89c5-8764-b189-8bb20227ccfc
   - license_expression: stlport-4.5
     matches:
       - score: '100.0'
@@ -304,6 +309,7 @@ other_license_detections:
           Permission to modify the code and to distribute modified code is granted,
           provided the above notices are retained, and a notice that the code was
           modified is included with the above copyright notice.
+    identifier: stlport_4_5-990bf173-c1f4-f13d-0d69-00f3f53ea5bc
   - license_expression: x11-xconsortium AND public-domain
     matches:
       - score: '100.0'
@@ -349,6 +355,7 @@ other_license_detections:
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/public-domain_58.RULE
         matched_text: FSF changes to this file are in the public domain.
+    identifier: x11_xconsortium_and_public_domain-85b6bf80-9de9-fe71-fa83-14be44f52a4b
   - license_expression: gpl-2.0
     matches:
       - score: '100.0'
@@ -388,6 +395,7 @@ other_license_detections:
 
           You should have received a copy of the GNU General Public License
           along with this program.  If not, see <http://www.gnu.org/licenses/>.
+    identifier: gpl_2_0-93f9e0b0-f602-f26d-bd96-db62133b8e63
   - license_expression: gpl-2.0-plus
     matches:
       - score: '100.0'
@@ -428,6 +436,7 @@ other_license_detections:
 
           You should have received a copy of the GNU General Public License
           along with this program.  If not, see <http://www.gnu.org/licenses/>.
+    identifier: gpl_2_0_plus-380616da-8e9e-f6e0-48a4-2968f6753e13
   - license_expression: lgpl-2.1-plus
     matches:
       - score: '100.0'
@@ -469,6 +478,7 @@ other_license_detections:
           On Debian and systems the full text of the GNU Library General Public
           License version 2.1 can be found in the file
           `/usr/share/common-licenses/LGPL-2.1`
+    identifier: lgpl_2_1_plus-7ab20781-d1ab-808d-5995-827b36a1937b
   - license_expression: lgpl-2.0-plus AND lgpl-2.0
     matches:
       - score: '100.0'
@@ -511,6 +521,7 @@ other_license_detections:
           On Debian and systems the full text of the GNU Library General Public
           License version 2 can be found in the file
           `/usr/share/common-licenses/LGPL-2`
+    identifier: lgpl_2_0_plus_and_lgpl_2_0-9618c993-f50f-833f-bab4-b076894634e9
   - license_expression: bsd-new
     matches:
       - score: '53.47'
@@ -534,6 +545,7 @@ other_license_detections:
            2. Redistributions in binary form must the following disclaimer in
              the documentation and/or other materials provided with the
              distribution.
+    identifier:
   - license_expression: bsd-new
     matches:
       - score: '100.0'
@@ -570,6 +582,7 @@ other_license_detections:
           LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
           OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
           SUCH DAMAGE.
+    identifier: bsd_new-ccc98c3a-92d4-e7a3-e0ba-798328cb6b98
   - license_expression: artistic-perl-1.0
     matches:
       - score: '99.0'
@@ -721,6 +734,7 @@ other_license_detections:
           WARRANTIES OF MERCHANTIBILITY AND FITNESS FOR A PARTICULAR PURPOSE.
 
           The End
+    identifier: artistic_perl_1_0-93a1d46b-ef61-c65f-f1af-4f804df80e5f
   - license_expression: public-domain
     matches:
       - score: '100.0'
@@ -734,6 +748,7 @@ other_license_detections:
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/public-domain_38.RULE
         matched_text: is public domain (
+    identifier: public_domain-7d49b7ad-8b9e-60cd-5fde-397e63b65786
   - license_expression: gpl-3.0-plus
     matches:
       - score: '100.0'
@@ -773,6 +788,7 @@ other_license_detections:
 
           On Debian systems, the complete text of the GNU General
           Public License version 3 can be found in "/usr/share/common-licenses/GPL-3".
+    identifier: gpl_3_0_plus-bef32a24-b1d4-4ab7-d330-6b902546acf3
   - license_expression: lgpl-2.0
     matches:
       - score: '100.0'
@@ -811,6 +827,7 @@ other_license_detections:
 
           On Debian systems, the complete text of the GNU Lesser General
           Public License can be found in "/usr/share/common-licenses/LGPL-2".
+    identifier: lgpl_2_0-a4c832e5-a9fd-43b2-8d18-fe78f560e3e8
   - license_expression: gpl-2.0
     matches:
       - score: '100.0'
@@ -834,6 +851,7 @@ other_license_detections:
           license versions is made available with the language indicating
           that GPLv2 or any later version may be used, or where a choice
           of which version of the GPL is applied is otherwise unspecified.
+    identifier: gpl_2_0-fc958795-718d-378a-8452-96de62c9a866
 copyright: |
   2000-2016, Oracle and/or its affiliates. All rights reserved.
   2008-2013 Monty Program AB

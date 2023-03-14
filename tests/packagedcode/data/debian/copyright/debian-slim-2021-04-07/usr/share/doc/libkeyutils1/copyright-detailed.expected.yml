@@ -51,6 +51,7 @@ other_license_detections:
 
           The complete text of the GNU General Public License
           can be found in /usr/share/common-licenses/GPL-2 file.
+    identifier: gpl_2_0_plus-fe100017-b30d-a3e1-08b9-40cc9f056db5
   - license_expression: lgpl-2.0-plus
     matches:
       - score: '100.0'
@@ -90,6 +91,7 @@ other_license_detections:
 
           The complete text of the GNU Lesser General Public License
           can be found in /usr/share/common-licenses/LGPL-2 file.
+    identifier: lgpl_2_0_plus-8aa1c724-4bbb-dbb4-937d-77e7ac7027fe
 copyright: |
   2005-2018, Red Hat <http://www.redhat.com/>
   2005-2018, Red Hat <http://www.redhat.com/>

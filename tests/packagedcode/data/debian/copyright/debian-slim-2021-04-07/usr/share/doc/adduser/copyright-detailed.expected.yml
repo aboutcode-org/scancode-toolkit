@@ -37,6 +37,7 @@ license_detections:
 
           On Debian GNU/Linux systems, the complete text of the GNU General
           Public License can be found in `/usr/share/common-licenses/GPL-2'.
+    identifier: gpl_2_0_plus-bd268cbc-da04-f625-d624-1392ccc5a732
 other_license_detections: []
 copyright: |
   Copyright (c) 2000 Roland Bauerschmidt <rb@debian.org>

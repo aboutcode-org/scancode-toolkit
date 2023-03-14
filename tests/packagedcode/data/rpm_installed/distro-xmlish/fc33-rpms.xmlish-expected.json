@@ -82,7 +82,8 @@
             "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0-plus_68.RULE",
             "matched_text": "GPLv3+ and GPLv3+ with exceptions and GPLv2+ with exceptions and LGPLv2+ and BSD"
           }
-        ]
+        ],
+        "identifier": "gpl_3_0_plus_and_gpl_2_0_plus_and_lgpl_2_0_plus-8116dc70-40ae-4977-f896-723241169fe6"
       }
     ],
     "other_license_expression": null,
@@ -244,7 +245,8 @@
             "rule_url": null,
             "matched_text": "MIT"
           }
-        ]
+        ],
+        "identifier": "mit-a822f434-d61f-f2b1-c792-8b8cb9e7b9bf"
       }
     ],
     "other_license_expression": null,

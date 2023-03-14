@@ -23,6 +23,7 @@ license_detections:
           Permission is hereby granted for the distribution of this firmware data
           in hexadecimal or equivalent format, provided this copyright notice is
           accompanying it.
+    identifier: proprietary_license-933c255f-dbdb-d49a-9dc1-8ac98f91828a
 other_license_detections: []
 copyright: |
   Copyright (c) 2007-2010 Broadcom Corporation

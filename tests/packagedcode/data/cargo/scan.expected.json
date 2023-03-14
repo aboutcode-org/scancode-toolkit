@@ -50,7 +50,8 @@
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/spdx_license_id_mpl-2.0_for_mpl-2.0.RULE",
               "matched_text": "MPL-2.0"
             }
-          ]
+          ],
+          "identifier": "mpl_2_0-159c4a7a-362a-76f0-7d8e-d20aa1923af3"
         }
       ],
       "other_license_expression": null,
@@ -129,7 +130,8 @@
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_or_apache-2.0_15.RULE",
               "matched_text": "MIT OR Apache-2.0"
             }
-          ]
+          ],
+          "identifier": "mit_or_apache_2_0-480eec53-1a80-0150-7c7e-39cf79c9f3a8"
         }
       ],
       "other_license_expression": null,
@@ -772,7 +774,8 @@
                   "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/spdx_license_id_mpl-2.0_for_mpl-2.0.RULE",
                   "matched_text": "MPL-2.0"
                 }
-              ]
+              ],
+              "identifier": "mpl_2_0-159c4a7a-362a-76f0-7d8e-d20aa1923af3"
             }
           ],
           "other_license_expression": null,
@@ -864,7 +867,8 @@
                   "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_or_apache-2.0_15.RULE",
                   "matched_text": "MIT OR Apache-2.0"
                 }
-              ]
+              ],
+              "identifier": "mit_or_apache_2_0-480eec53-1a80-0150-7c7e-39cf79c9f3a8"
             }
           ],
           "other_license_expression": null,

@@ -55,7 +55,8 @@
             "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/python_10.RULE",
             "matched_text": "PSFL"
           }
-        ]
+        ],
+        "identifier": "python-1721264e-0167-aa2d-cb21-1f44af363db3"
       },
       {
         "license_expression": "bsd-new",
@@ -73,7 +74,8 @@
             "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_416.RULE",
             "matched_text": "BSD3CLAUSE"
           }
-        ]
+        ],
+        "identifier": "bsd_new-cc1cc165-8154-9d0a-7f4f-fec3d6e6f578"
       }
     ],
     "other_license_expression": null,

@@ -22,6 +22,7 @@ license_detections:
           Permission is hereby granted for the distribution of this firmware
           data in hexadecimal or equivalent format, provided this copyright
           notice is accompanying it.
+    identifier: other_permissive-16dc1659-320f-55c9-0ddb-4d46c5526cbb
   - license_expression: intel
     matches:
       - score: '93.72'
@@ -71,6 +72,7 @@ license_detections:
           TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE
           USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH
           DAMAGE.
+    identifier: intel-066e3a31-92c6-4f54-d106-62df186d8643
 other_license_detections: []
 copyright: |
   2010-2013, Realtek Semiconductor Corporation

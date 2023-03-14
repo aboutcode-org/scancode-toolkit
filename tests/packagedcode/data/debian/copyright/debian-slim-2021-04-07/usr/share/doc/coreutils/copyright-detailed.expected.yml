@@ -41,6 +41,7 @@ license_detections:
 
              You should have received a copy of the GNU General Public License
              along with this program.  If not, see <http://www.gnu.org/licenses/>.  */
+    identifier: gpl_3_0_plus-58ef5a2f-7e40-62ff-7783-d9d46c47ccfd
   - license_expression: bsd-new
     matches:
       - score: '100.0'
@@ -77,6 +78,7 @@ license_detections:
            * LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
            * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
            * SUCH DAMAGE.
+    identifier: bsd_new-fe71ef21-9657-e8d8-ad75-ddd776ac9710
   - license_expression: gpl-3.0-plus
     matches:
       - score: '100.0'
@@ -102,6 +104,7 @@ license_detections:
 
              You should have received a copy of the GNU General Public License
              along with this program.  If not, see <http://www.gnu.org/licenses/>.  */
+    identifier: gpl_3_0_plus-494d0068-7138-a14f-4cbb-fd2137263a4f
   - license_expression: bsd-new
     matches:
       - score: '100.0'
@@ -138,6 +141,7 @@ license_detections:
            * LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
            * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
            * SUCH DAMAGE.
+    identifier: bsd_new-fe71ef21-9657-e8d8-ad75-ddd776ac9710
   - license_expression: gpl-3.0-plus
     matches:
       - score: '100.0'
@@ -163,6 +167,7 @@ license_detections:
 
              You should have received a copy of the GNU General Public License
              along with this program.  If not, see <http://www.gnu.org/licenses/>.
+    identifier: gpl_3_0_plus-494d0068-7138-a14f-4cbb-fd2137263a4f
   - license_expression: gpl-3.0-plus
     matches:
       - score: '100.0'
@@ -189,6 +194,7 @@ license_detections:
              You should have received a copy of the GNU General Public License
              along with this program; if not, write to the Free Software Foundation,
              Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.  */
+    identifier: gpl_3_0_plus-3bfa9c99-47df-a325-9340-4a339cab8cf7
   - license_expression: isc
     matches:
       - score: '100.0'
@@ -214,6 +220,7 @@ license_detections:
            * PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS
            * ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS
            * SOFTWARE.
+    identifier: isc-fbf6f8d8-a949-0427-62b2-aef52fe84e71
   - license_expression: fsf-unlimited
     matches:
       - score: '100.0'
@@ -230,6 +237,7 @@ license_detections:
           This file is free software; the Free Software Foundation
           dnl gives unlimited permission to copy and/or distribute it,
           dnl with or without modifications, as long as this notice is preserved.
+    identifier: fsf_unlimited-8da7bfd8-1c00-9b33-a4c5-6170a19ffb0f
   - license_expression: gpl-3.0-plus
     matches:
       - score: '75.18'
@@ -288,6 +296,7 @@ license_detections:
 
              You should have received a copy of the GNU General Public License
              along with this program.  If not, see <http://www.gnu.org/licenses/>.  */
+    identifier: gpl_3_0_plus-0da3ef65-99de-5ae9-77c7-870876e764cf
   - license_expression: gpl-3.0-plus
     matches:
       - score: '100.0'
@@ -313,6 +322,7 @@ license_detections:
 
              You should have received a copy of the GNU General Public License
              along with this program.  If not, see <http://www.gnu.org/licenses/>.  */
+    identifier: gpl_3_0_plus-494d0068-7138-a14f-4cbb-fd2137263a4f
   - license_expression: gpl-3.0-plus
     matches:
       - score: '100.0'
@@ -338,6 +348,7 @@ license_detections:
 
              You should have received a copy of the GNU General Public License
              along with this program.  If not, see <http://www.gnu.org/licenses/>.
+    identifier: gpl_3_0_plus-494d0068-7138-a14f-4cbb-fd2137263a4f
   - license_expression: gfdl-1.2-plus
     matches:
       - score: '100.0'
@@ -357,6 +368,7 @@ license_detections:
           Invariant Sections, with no Front-Cover Texts, and with no Back-Cover
           Texts.  A copy of the license is included in the section entitled ``GNU
           Free Documentation License''.
+    identifier: gfdl_1_2_plus-861db719-73be-b056-b95c-1a4494feed0b
   - license_expression: gpl-3.0-plus
     matches:
       - score: '100.0'
@@ -385,6 +397,7 @@ license_detections:
 
           On Debian systems, the complete text of the GNU General
           Public License can be found in `/usr/share/common-licenses/GPL-3'.
+    identifier: gpl_3_0_plus-87ea5b27-13fa-5b63-e2ca-bd6b7bccba7c
 other_license_detections: []
 copyright: |
   Copyright (c) 2004, 2005, 2006, 2007, 2008 Free Software Foundation, Inc.

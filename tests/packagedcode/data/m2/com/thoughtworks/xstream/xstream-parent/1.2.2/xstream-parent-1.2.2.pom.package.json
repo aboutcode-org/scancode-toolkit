@@ -48,7 +48,8 @@
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_878.RULE",
           "matched_text": "BSD style"
         }
-      ]
+      ],
+      "identifier": "bsd_new-a77f8bf6-d564-f8d2-8f4e-2ff70cf207f4"
     },
     {
       "license_expression": "bsd-new",
@@ -66,7 +67,8 @@
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_xstream_maven_4.RULE",
           "matched_text": "http://xstream.codehaus.com/license.html"
         }
-      ]
+      ],
+      "identifier": "bsd_new-3c28c341-2557-a170-5574-2b740318c7e1"
     }
   ],
   "other_license_expression": null,

@@ -1,43 +1,15 @@
 {
   "license_detections": [
     {
-      "identifier": "gpl_2_0_with_linux_syscall_exception_gpl_or_linux_openib-88c476e9-3011-a36d-24bd-9eb689a51ecc",
+      "identifier": "gpl_2_0_with_linux_syscall_exception_gpl_or_linux_openib-c196bf1c-1c1f-18b4-554f-690be18bbad0",
       "license_expression": "gpl-2.0 WITH linux-syscall-exception-gpl OR linux-openib",
       "detection_count": 1,
-      "matches": [
-        {
-          "score": 100.0,
-          "start_line": 1,
-          "end_line": 1,
-          "matched_length": 13,
-          "match_coverage": 100.0,
-          "matcher": "1-spdx-id",
-          "license_expression": "gpl-2.0 WITH linux-syscall-exception-gpl OR linux-openib",
-          "rule_identifier": "spdx-license-identifier-gpl-2.0 WITH linux-syscall-exception-gpl OR linux-openib-40ad9110ec6551e97f55cd72b297773235a415e7",
-          "rule_relevance": 100,
-          "rule_url": null
-        }
-      ],
       "detection_log": []
     },
     {
       "identifier": "unlicense-5cac2dde-ce1c-ad2c-181b-a2b96eff3bab",
       "license_expression": "unlicense",
       "detection_count": 1,
-      "matches": [
-        {
-          "score": 100.0,
-          "start_line": 89,
-          "end_line": 89,
-          "matched_length": 198,
-          "match_coverage": 100.0,
-          "matcher": "2-aho",
-          "license_expression": "unlicense",
-          "rule_identifier": "unlicense.LICENSE",
-          "rule_relevance": 100,
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/unlicense.LICENSE"
-        }
-      ],
       "detection_log": []
     }
   ],
@@ -65,14 +37,12 @@
               "matched_text": "SPDX-License-Identifier: ((GPL-2.0 WITH Linux-syscall-note) OR Linux-Openib) */"
             }
           ],
-          "detection_log": []
+          "detection_log": [],
+          "identifier": "gpl_2_0_with_linux_syscall_exception_gpl_or_linux_openib-c196bf1c-1c1f-18b4-554f-690be18bbad0"
         }
       ],
       "license_clues": [],
       "percentage_of_license_text": 100.0,
-      "for_license_detections": [
-        "gpl_2_0_with_linux_syscall_exception_gpl_or_linux_openib-88c476e9-3011-a36d-24bd-9eb689a51ecc"
-      ],
       "scan_errors": []
     },
     {
@@ -98,14 +68,12 @@
               "matched_text": "This is free and unencumbered software released into the public domain.  *   * Anyone is free to copy, modify, publish, use, compile, sell, or  * distribute this software, either in source code form or as a compiled  * binary, for any purpose, commercial or non-commercial, and by any  * means.  *   * In jurisdictions that recognize copyright laws, the author or authors  * of this software dedicate any and all copyright interest in the  * software to the public domain. We make this dedication for the benefit  * of the public at large and to the detriment of our heirs and  * successors. We intend this dedication to be an overt act of  * relinquishment in perpetuity of all present and future rights to this  * software under copyright law.  *   * THE SOFTWARE IS PROVIDED \\\"\nAS IS\\\", WITHOUT WARRANTY OF ANY KIND,  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF  * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.  * IN NO EVENT SHALL THE AUTHORS BE LIABLE FOR ANY CLAIM, DAMAGES OR  * OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE,  * ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR  * OTHER DEALINGS IN THE SOFTWARE.  *   * For more information, please refer to <http://unlicense.org>  *   */  /*"
             }
           ],
-          "detection_log": []
+          "detection_log": [],
+          "identifier": "unlicense-5cac2dde-ce1c-ad2c-181b-a2b96eff3bab"
         }
       ],
       "license_clues": [],
       "percentage_of_license_text": 5.25,
-      "for_license_detections": [
-        "unlicense-5cac2dde-ce1c-ad2c-181b-a2b96eff3bab"
-      ],
       "scan_errors": []
     }
   ]

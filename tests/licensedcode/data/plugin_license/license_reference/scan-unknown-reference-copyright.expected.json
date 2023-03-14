@@ -4,60 +4,18 @@
       "identifier": "unknown_license_reference-87d47954-89f5-fcbf-a173-e0d899d7c5e2",
       "license_expression": "unknown-license-reference",
       "detection_count": 2,
-      "matches": [
-        {
-          "score": 100.0,
-          "start_line": 9,
-          "end_line": 9,
-          "matched_length": 8,
-          "match_coverage": 100.0,
-          "matcher": "2-aho",
-          "license_expression": "unknown-license-reference",
-          "rule_identifier": "unknown-license-reference_30.RULE",
-          "rule_relevance": 100,
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/unknown-license-reference_30.RULE"
-        }
-      ],
       "detection_log": []
     },
     {
       "identifier": "x11_xconsortium_veillard-b2601908-f03c-335c-5bbd-e72dc065c901",
       "license_expression": "x11-xconsortium-veillard",
       "detection_count": 1,
-      "matches": [
-        {
-          "score": 100.0,
-          "start_line": 7,
-          "end_line": 26,
-          "matched_length": 199,
-          "match_coverage": 100.0,
-          "matcher": "2-aho",
-          "license_expression": "x11-xconsortium-veillard",
-          "rule_identifier": "x11-xconsortium-veillard.LICENSE",
-          "rule_relevance": 100,
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/x11-xconsortium-veillard.LICENSE"
-        }
-      ],
       "detection_log": []
     },
     {
       "identifier": "unknown_license_reference-8715cef9-8691-1147-d5c0-154042d18db1",
       "license_expression": "unknown-license-reference",
       "detection_count": 1,
-      "matches": [
-        {
-          "score": 100.0,
-          "start_line": 13,
-          "end_line": 13,
-          "matched_length": 9,
-          "match_coverage": 100.0,
-          "matcher": "2-aho",
-          "license_expression": "unknown-license-reference",
-          "rule_identifier": "unknown-license-reference_108.RULE",
-          "rule_relevance": 100,
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/unknown-license-reference_108.RULE"
-        }
-      ],
       "detection_log": []
     }
   ],
@@ -85,14 +43,12 @@
               "matched_text": "Permission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is fur-\nnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in\nall copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FIT-\nNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.  IN NO EVENT SHALL THE\nDANIEL VEILLARD BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER\nIN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CON-\nNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n\nExcept as contained in this notice, the name of Daniel Veillard shall not\nbe used in advertising or otherwise to promote the sale, use or other deal-\nings in this Software without prior written authorization from him."
             }
           ],
-          "detection_log": []
+          "detection_log": [],
+          "identifier": "x11_xconsortium_veillard-b2601908-f03c-335c-5bbd-e72dc065c901"
         }
       ],
       "license_clues": [],
       "percentage_of_license_text": 81.89,
-      "for_license_detections": [
-        "x11_xconsortium_veillard-b2601908-f03c-335c-5bbd-e72dc065c901"
-      ],
       "scan_errors": []
     },
     {
@@ -133,14 +89,12 @@
           ],
           "detection_log": [
             "unknown-reference-to-local-file"
-          ]
+          ],
+          "identifier": "61f804f6-d484-92ca-09b5-26be51ac974e"
         }
       ],
       "license_clues": [],
       "percentage_of_license_text": 1.32,
-      "for_license_detections": [
-        "unknown_license_reference-87d47954-89f5-fcbf-a173-e0d899d7c5e2"
-      ],
       "scan_errors": []
     },
     {
@@ -181,14 +135,12 @@
           ],
           "detection_log": [
             "unknown-reference-to-local-file"
-          ]
+          ],
+          "identifier": "61f804f6-d484-92ca-09b5-26be51ac974e"
         }
       ],
       "license_clues": [],
       "percentage_of_license_text": 0.1,
-      "for_license_detections": [
-        "unknown_license_reference-87d47954-89f5-fcbf-a173-e0d899d7c5e2"
-      ],
       "scan_errors": []
     },
     {
@@ -199,7 +151,6 @@
       "license_detections": [],
       "license_clues": [],
       "percentage_of_license_text": 0,
-      "for_license_detections": [],
       "scan_errors": []
     },
     {
@@ -210,7 +161,6 @@
       "license_detections": [],
       "license_clues": [],
       "percentage_of_license_text": 0,
-      "for_license_detections": [],
       "scan_errors": []
     },
     {
@@ -251,14 +201,12 @@
           ],
           "detection_log": [
             "unknown-reference-to-local-file"
-          ]
+          ],
+          "identifier": "50c015bd-e4e1-c6fe-eb82-9551473dd8e1"
         }
       ],
       "license_clues": [],
       "percentage_of_license_text": 2.47,
-      "for_license_detections": [
-        "unknown_license_reference-8715cef9-8691-1147-d5c0-154042d18db1"
-      ],
       "scan_errors": []
     }
   ]

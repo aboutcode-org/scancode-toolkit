@@ -48,6 +48,7 @@ other_license_detections:
           CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
           OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
           OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+    identifier: bsd_new-f23dc916-0d10-a62b-e883-6fe84fea0844
   - license_expression: mit
     matches:
       - score: '100.0'
@@ -81,6 +82,7 @@ other_license_detections:
           WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
           FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
           OTHER DEALINGS IN THE SOFTWARE.
+    identifier: mit-cacd5c0c-204a-85c2-affc-e4c125b2492a
   - license_expression: gpl-2.0-plus
     matches:
       - score: '100.0'
@@ -120,6 +122,7 @@ other_license_detections:
 
           On Debian systems, the complete text of the GNU General
           Public License version 2 can be found in "/usr/share/common-licenses/GPL-2".
+    identifier: gpl_2_0_plus-00217b75-1a81-9ffa-8aed-0d1bd2f9756b
   - license_expression: warranty-disclaimer
     matches:
       - score: '100.0'
@@ -133,6 +136,7 @@ other_license_detections:
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/warranty-disclaimer_78.RULE
         matched_text: NO WARRANTY EXPRESSED OR IMPLIED. USE AT YOUR OWN RISK.
+    identifier: warranty_disclaimer-7ce752f1-3fd2-5c9f-d85a-ceb48cc6e7c9
 copyright: |
   JS Foundation and other contributors <https:js.foundation/>
   Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors

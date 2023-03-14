@@ -40,7 +40,8 @@
           "rule_url": null,
           "matched_text": "(gpl-2.0-only OR gpl-3.0-only) AND (lgpl-2.1-only AND lgpl-3.0-only)"
         }
-      ]
+      ],
+      "identifier": "gpl_2_0_or_gpl_3_0__and__lgpl_2_1_and_lgpl_3_0-70c43909-f750-eafa-7ac9-62b9d78846af"
     }
   ],
   "other_license_expression": null,

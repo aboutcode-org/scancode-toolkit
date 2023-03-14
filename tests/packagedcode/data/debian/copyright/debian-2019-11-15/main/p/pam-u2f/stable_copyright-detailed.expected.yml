@@ -35,6 +35,7 @@ other_license_detections:
           This file is free software; the Free Software Foundation gives
           unlimited permission to copy and/or distribute it, with or without
           modifications, as long as this notice is preserved.
+    identifier: fsf_unlimited-ed3d6762-95f0-131d-94c5-834f10d192a2
   - license_expression: gpl-2.0-plus WITH libtool-exception-2.0
     matches:
       - score: '100.0'
@@ -61,6 +62,7 @@ other_license_detections:
           On Debian systems, the full text of the GNU General Public
           License version 2 can be found in the file
           `/usr/share/common-licenses/GPL-2'.
+    identifier: gpl_2_0_plus_with_libtool_exception_2_0-e1a8cc64-f5eb-97cf-c90d-a5d265d7d63f
   - license_expression: gpl-2.0-plus
     matches:
       - score: '100.0'
@@ -92,6 +94,7 @@ other_license_detections:
 
           On Debian systems, the complete text of the GNU General Public License version 2
           can be found in /usr/share/common-licenses/GPL-2.
+    identifier: gpl_2_0_plus-db94a8a0-a1a1-5b56-3906-697a3aec3c2d
   - license_expression: gpl-3.0-plus
     matches:
       - score: '100.0'
@@ -123,6 +126,7 @@ other_license_detections:
 
           On Debian systems, the full text of the GNU General Public License version 3
           can be found in the file `/usr/share/common-licenses/GPL-3'.
+    identifier: gpl_3_0_plus-19176ed3-f40f-a50b-29ca-3d0d961d6743
   - license_expression: bsd-simplified
     matches:
       - score: '100.0'
@@ -159,6 +163,7 @@ other_license_detections:
           THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
           (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
           OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+    identifier: bsd_simplified-736cf666-5c8a-381f-2d71-66b4a6445a31
 copyright: |
   Copyright (c) 2006-2018 Yubico AB
   2014-2016 Yubico AB

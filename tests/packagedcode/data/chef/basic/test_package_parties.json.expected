@@ -48,7 +48,8 @@
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/public-domain_bare_words.RULE",
           "matched_text": "public-domain"
         }
-      ]
+      ],
+      "identifier": "public_domain-3dd945ae-65df-7d90-6467-60f8ecf2eb77"
     }
   ],
   "other_license_expression": null,

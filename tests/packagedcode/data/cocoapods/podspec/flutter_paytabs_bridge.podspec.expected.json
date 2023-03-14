@@ -49,7 +49,8 @@
             "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/unknown-license-reference_see_license_at_manifest_1.RULE",
             "matched_text": "license :file = ../LICENSE"
           }
-        ]
+        ],
+        "identifier": "unknown_license_reference-6b24f327-22b1-723e-10f9-37a8bc8b3c70"
       }
     ],
     "other_license_expression": null,

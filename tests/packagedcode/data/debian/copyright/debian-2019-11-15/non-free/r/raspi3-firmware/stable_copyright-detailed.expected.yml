@@ -47,6 +47,7 @@ license_detections:
           TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE
           USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH
           DAMAGE.
+    identifier: proprietary_license-f62990af-76c7-140e-c98a-c964711a4db6
   - license_expression: broadcom-proprietary
     matches:
       - score: '100.0'
@@ -199,6 +200,7 @@ license_detections:
           \ and all prior proposals, agreements and\nrepresentations between them, whether written\
           \ or oral concerning the Software.\nThis Agreement may be changed only by mutual agreement\
           \ of the parties in\nwriting."
+    identifier: broadcom_proprietary-8e7d81ee-b774-62b0-887f-2a2771ec256f
   - license_expression: gpl-2.0-plus
     matches:
       - score: '100.0'
@@ -238,6 +240,7 @@ license_detections:
 
           On Debian systems, the complete text of the GNU General
           Public License version 2 can be found in "/usr/share/common-licenses/GPL-2".
+    identifier: gpl_2_0_plus-00217b75-1a81-9ffa-8aed-0d1bd2f9756b
 other_license_detections: []
 copyright: |
   2006, Broadcom Corporation

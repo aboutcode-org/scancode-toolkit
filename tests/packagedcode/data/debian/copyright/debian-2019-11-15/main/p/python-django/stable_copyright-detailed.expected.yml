@@ -79,6 +79,7 @@ other_license_detections:
         matched_text: |
           On Debian systems, the complete text of the Apache version 2.0 license
           can be found in `/usr/share/common-licenses/Apache-2.0'.
+    identifier: apache_2_0-e6211cc7-51f7-02d0-af92-2f8c94a2175c
   - license_expression: mit
     matches:
       - score: '100.0'
@@ -110,6 +111,7 @@ other_license_detections:
           LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
           OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
           WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+    identifier: mit-cacd5c0c-204a-85c2-affc-e4c125b2492a
   - license_expression: psf-2.0
     matches:
       - score: '89.1'
@@ -172,6 +174,7 @@ other_license_detections:
 
           8. By copying, installing or otherwise using Baseconv, Licensee agrees
           to be bound by the terms and conditions of this License Agreement.
+    identifier: psf_2_0-7783998d-f3df-e1e7-edd4-22ee0d990095
   - license_expression: bsd-simplified
     matches:
       - score: '100.0'
@@ -205,6 +208,7 @@ other_license_detections:
           CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
           OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
           OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+    identifier: bsd_simplified-25075703-83ad-f419-e8fc-55c5ce7e67a5
   - license_expression: bsd-new
     matches:
       - score: '100.0'
@@ -242,6 +246,7 @@ other_license_detections:
           CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
           OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
           OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+    identifier: bsd_new-4d661fac-2580-23d1-8757-1ee91fd8c12f
   - license_expression: bsd-new
     matches:
       - score: '99.0'
@@ -255,6 +260,7 @@ other_license_detections:
         rule_relevance: 99
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_509.RULE
         matched_text: Software License Agreement (BSD License),
+    identifier: bsd_new-a78c649f-fcdf-a1af-d0f9-463c2f476c05
 copyright: |
   Django Software Foundation and individual contributors
   2006-2008 Brett Parker <iDunno@sommitrealweird.co.uk>,

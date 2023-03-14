@@ -26,6 +26,7 @@ license_detections:
           \ to the Free Software\n\tFoundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA\
           \ 02110-1301 USA\n\nOn Debian systems, the complete text of the GNU General Public\
           \ License\ncan be found in /usr/share/common-licenses/GPL-2 file."
+    identifier: gpl_2_0-733173e4-4e5f-ffb3-aaf4-151ac32f9c1e
 other_license_detections: []
 copyright: |
   Copyright (c) 2009 Michael Meskes <meskes@debian.org>

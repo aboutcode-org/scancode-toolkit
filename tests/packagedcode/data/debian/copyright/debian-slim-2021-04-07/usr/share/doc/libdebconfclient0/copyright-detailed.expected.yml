@@ -17,6 +17,7 @@ license_detections:
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/public-domain_282.RULE
         matched_text: derived portions are public domain)
+    identifier: public_domain-8b1c4208-37f4-199b-a316-29e1b9bdceca
   - license_expression: bsd-unmodified
     matches:
       - score: '100.0'
@@ -50,6 +51,7 @@ license_detections:
           LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
           OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
           SUCH DAMAGE.
+    identifier: bsd_unmodified-99412de6-1e55-f401-a3fa-f754ae42a782
 other_license_detections: []
 copyright: |
   (c) Joey Hess <joeyh@debian.org>

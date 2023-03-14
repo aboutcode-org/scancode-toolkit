@@ -40,7 +40,8 @@
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/spdx_license_id_lgpl-2.0-or-later_for_lgpl-2.0-plus.RULE",
           "matched_text": "lgpl-2.0-or-later"
         }
-      ]
+      ],
+      "identifier": "lgpl_2_0_plus-93509c10-44f9-243e-32d8-17d0574585c6"
     }
   ],
   "other_license_expression": null,

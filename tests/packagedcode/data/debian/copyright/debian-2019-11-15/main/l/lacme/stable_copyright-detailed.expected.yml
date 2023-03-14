@@ -38,4 +38,5 @@ other_license_detections:
 
           On Debian systems, the complete text of the GNU General Public License
           version 3 can be found in file "/usr/share/common-licenses/GPL-3".
+    identifier: gpl_3_0_plus-bac672d5-f2bc-6163-ab97-6dc113fdf983
 copyright: © 2015-2017 Guilhem Moulin <guilhem@fripost.org>

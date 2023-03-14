@@ -40,7 +40,8 @@
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/spdx_license_id_bsd-2-clause_for_bsd-simplified.RULE",
           "matched_text": "bsd-2-clause"
         }
-      ]
+      ],
+      "identifier": "bsd_simplified-7cacd81a-0bdb-1c32-cf2d-2250f633f213"
     }
   ],
   "other_license_expression": null,

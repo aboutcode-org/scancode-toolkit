@@ -40,7 +40,8 @@
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/public-domain_bare_words.RULE",
           "matched_text": "Public Domain"
         }
-      ]
+      ],
+      "identifier": "public_domain-3dd945ae-65df-7d90-6467-60f8ecf2eb77"
     },
     {
       "license_expression": "sax-pd",
@@ -58,7 +59,8 @@
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/sax-pd_url_4.RULE",
           "matched_text": "http://www.xmlpull.org/v1/download/unpacked/LICENSE.txt"
         }
-      ]
+      ],
+      "identifier": "sax_pd-7d81647e-13a5-134c-284f-4cb78c6a80ff"
     }
   ],
   "other_license_expression": null,

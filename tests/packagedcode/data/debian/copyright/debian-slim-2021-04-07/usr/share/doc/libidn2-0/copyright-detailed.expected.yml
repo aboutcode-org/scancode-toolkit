@@ -58,6 +58,7 @@ other_license_detections:
 
           On Debian GNU/Linux systems, the complete text of the GNU General Public
           License version 3 can be found in /usr/share/common-licenses/GPL-3.
+    identifier: gpl_3_0_plus-72ba7e1f-5a94-0166-4814-d0e59799bcd4
   - license_expression: gpl-2.0-plus
     matches:
       - score: '100.0'
@@ -97,6 +98,7 @@ other_license_detections:
 
           On Debian GNU/Linux systems, the complete text of the GNU General Public
           License version 2 can be found in /usr/share/common-licenses/GPL-2.
+    identifier: gpl_2_0_plus-dde05ee1-8772-bb9a-d36b-c75646c05589
   - license_expression: lgpl-3.0-plus
     matches:
       - score: '100.0'
@@ -136,6 +138,7 @@ other_license_detections:
 
           On Debian GNU/Linux systems, the complete text of the GNU Lesser General
           Public License version 3 can be found in /usr/share/common-licenses/LGPL-3.
+    identifier: lgpl_3_0_plus-cb77b810-0c5c-bef8-0c96-b51c5109756f
   - license_expression: unicode
     matches:
       - score: '100.0'
@@ -193,6 +196,7 @@ other_license_detections:
           shall not be used in advertising or otherwise to promote the sale,
           use or other dealings in these Data Files or Software without prior
           written authorization of the copyright holder.
+    identifier: unicode-274bdbd7-3d9d-c294-07e3-405ff1a5392b
 copyright: |
   Copyright (C) 2011-2014 Simon Josefsson
   Copyright (C) 2011-2014 Simon Josefsson

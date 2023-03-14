@@ -33,6 +33,7 @@ license_detections:
           The overall license for libxcrypt is the GNU Lesser General Public
           License, version 2.1 (or, at your option, any later version); see
           the file COPYING.LIB for the full terms of this license.
+    identifier: lgpl_2_1_plus-020c4fdd-bb0b-ba56-db94-aa6a942c9bd8
   - license_expression: lgpl-2.1-plus AND bsd-new AND public-domain AND bsd-zero AND bsd-simplified
     matches:
       - score: '100.0'
@@ -134,6 +135,7 @@ license_detections:
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-simplified_156.RULE
         matched_text: '2-clause BSD:'
+    identifier: lgpl_2_1_plus_and_bsd_new_and_public_domain_and_bsd_zero_and_bsd_simplified-0789af82-1187-8c17-de70-8f158fe859dd
   - license_expression: bsd-zero
     matches:
       - score: '100.0'
@@ -147,6 +149,7 @@ license_detections:
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-zero_6.RULE
         matched_text: '0-clause BSD:'
+    identifier: bsd_zero-79fb5c8c-8a93-cf25-4481-532b6b01d3b7
   - license_expression: bsd-zero AND bsd-simplified AND public-domain AND bsd-new
     matches:
       - score: '100.0'
@@ -248,6 +251,7 @@ license_detections:
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/public-domain_426.RULE
         matched_text: Public domain, written by
+    identifier: bsd_zero_and_bsd_simplified_and_public_domain_and_bsd_new-33742a24-5ed2-ddf4-f29a-58e0cddc9766
   - license_expression: gpl-3.0-plus WITH autoconf-exception-3.0 AND bsd-zero AND fsf-ap AND
       gpl-2.0-plus WITH autoconf-simple-exception-2.0 AND free-unknown
     matches:
@@ -397,6 +401,7 @@ license_detections:
           Copyright holders unknown, no statement of license (all of these
              files are part of the testsuite and do not contribute to the
              installed library or its headers):
+    identifier: gpl_3_0_plus_with_autoconf_exception_3_0_and_bsd_zero_and_fsf_ap_and_gpl_2_0_plus_with_autoconf_simple_exception_2_0_and_free_unknown-9de6335e-46f3-3ded-4a43-79d664c09328
 other_license_detections: []
 copyright: |
   Copyright Thorsten Kukuk, Bjorn Esser, Zack Weinberg LGPL

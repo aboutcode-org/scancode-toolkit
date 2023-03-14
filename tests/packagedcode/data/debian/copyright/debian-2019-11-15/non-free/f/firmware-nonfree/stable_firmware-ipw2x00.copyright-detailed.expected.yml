@@ -254,5 +254,6 @@ license_detections:
           \ or their successors. Use\nof the Software by the Government constitutes acknowledgment\
           \ of Intel's\nproprietary rights therein. Contractor or Manufacturer is Intel Corporation,\n\
           2200 Mission College Blvd., Santa Clara, CA 95052."
+    identifier: proprietary_license-57319d5e-5119-fad5-35c4-214531f0d0e9
 other_license_detections: []
 copyright: Copyright 2003-2009 Intel Corporation

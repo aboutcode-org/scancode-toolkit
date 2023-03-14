@@ -25,5 +25,6 @@ license_detections:
           These firmware files are distributed in the hope that they will be
           useful, but WITHOUT ANY WARRANTY; without even the implied warranty
           of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+    identifier: proprietary_license-8d5e0b92-fba4-d6f8-bdf8-034bb5d7cfd7
 other_license_detections: []
 copyright: Copyright 2011-2014 Samsung Electronics Co.

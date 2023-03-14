@@ -3,35 +3,9 @@
   "dependencies": [],
   "license_detections": [
     {
-      "identifier": "gpl_2_0-4a66d709-ce96-4b16-25bb-0553a2752e00",
+      "identifier": "gpl_2_0-20789449-d01b-5c54-146e-d0c746e6368a",
       "license_expression": "gpl-2.0",
-      "detection_count": 2,
-      "matches": [
-        {
-          "score": 100.0,
-          "start_line": 4,
-          "end_line": 4,
-          "matched_length": 4,
-          "match_coverage": 100.0,
-          "matcher": "2-aho",
-          "license_expression": "gpl-2.0",
-          "rule_identifier": "gpl-2.0_1074.RULE",
-          "rule_relevance": 100,
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0_1074.RULE"
-        },
-        {
-          "score": 100.0,
-          "start_line": 5,
-          "end_line": 5,
-          "matched_length": 4,
-          "match_coverage": 100.0,
-          "matcher": "2-aho",
-          "license_expression": "gpl-2.0",
-          "rule_identifier": "gpl-2.0_1074.RULE",
-          "rule_relevance": 100,
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0_1074.RULE"
-        }
-      ]
+      "detection_count": 2
     }
   ],
   "consolidated_components": [
@@ -80,7 +54,6 @@
       "license_detections": [],
       "license_clues": [],
       "percentage_of_license_text": 0,
-      "for_license_detections": [],
       "copyrights": [],
       "holders": [],
       "authors": [],
@@ -143,14 +116,12 @@
               "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0_1074.RULE"
             }
-          ]
+          ],
+          "identifier": "gpl_2_0-20789449-d01b-5c54-146e-d0c746e6368a"
         }
       ],
       "license_clues": [],
       "percentage_of_license_text": 50.0,
-      "for_license_detections": [
-        "gpl_2_0-4a66d709-ce96-4b16-25bb-0553a2752e00"
-      ],
       "copyrights": [
         {
           "copyright": "Copyright (c) IBM Corp.",
@@ -235,14 +206,12 @@
               "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0_1074.RULE"
             }
-          ]
+          ],
+          "identifier": "gpl_2_0-20789449-d01b-5c54-146e-d0c746e6368a"
         }
       ],
       "license_clues": [],
       "percentage_of_license_text": 50.0,
-      "for_license_detections": [
-        "gpl_2_0-4a66d709-ce96-4b16-25bb-0553a2752e00"
-      ],
       "copyrights": [
         {
           "copyright": "Copyright (c) IBM Corp.",

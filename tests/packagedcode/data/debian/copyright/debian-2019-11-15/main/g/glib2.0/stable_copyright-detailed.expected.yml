@@ -35,6 +35,7 @@ license_detections:
 
           On Debian systems, the complete text of the GNU Lesser General
           Public License can be found in `/usr/share/common-licenses/LGPL'.
+    identifier: lgpl_2_0_plus-c5f2b989-b7ac-a778-8c01-9fcfb9290933
   - license_expression: mit
     matches:
       - score: '100.0'
@@ -48,6 +49,7 @@ license_detections:
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_437.RULE
         matched_text: 'License: Expat'
+    identifier: mit-1f9f2ae8-7020-0a13-7934-461c752929a4
   - license_expression: gpl-2.0-plus
     matches:
       - score: '100.0'
@@ -61,6 +63,7 @@ license_detections:
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_22.RULE
         matched_text: 'License: GPL-2+'
+    identifier: gpl_2_0_plus-53a26be2-1f88-01ec-d294-921768a513c9
   - license_expression: apache-2.0 AND mit AND gpl-2.0-plus
     matches:
       - score: '100.0'
@@ -173,6 +176,7 @@ license_detections:
            .
            You should have received a copy of the GNU General Public License
            along with this program; if not, see <http://www.gnu.org/licenses/>.
+    identifier: apache_2_0_and_mit_and_gpl_2_0_plus-01551af4-f727-e664-7cae-269edf02cee6
 other_license_detections: []
 copyright: |
   Copyright (c) 1995-2018 Red Hat, Inc.

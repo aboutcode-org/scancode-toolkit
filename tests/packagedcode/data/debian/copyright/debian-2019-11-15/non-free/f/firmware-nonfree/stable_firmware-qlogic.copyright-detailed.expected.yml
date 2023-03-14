@@ -45,6 +45,7 @@ license_detections:
           THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
           (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
           THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+    identifier: bsd_new-3fdabc09-7d33-9955-9b42-64e45eab4535
   - license_expression: linux-openib
     matches:
       - score: '100.0'
@@ -79,6 +80,7 @@ license_detections:
           ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
           CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
           SOFTWARE.
+    identifier: linux_openib-5cc86e85-b634-0fcb-8ddc-4ddbb0522a54
   - license_expression: qlogic-microcode
     matches:
       - score: '100.0'
@@ -128,6 +130,7 @@ license_detections:
           TRADE SECRET, MASK WORK, OR OTHER PROPRIETARY RIGHT) EMBODIED IN
           ANY OTHER QLOGIC HARDWARE OR SOFTWARE EITHER SOLELY OR IN
           COMBINATION WITH THIS PROGRAM.
+    identifier: qlogic_microcode-dc001f04-531b-99f7-2248-d734ca5030f2
   - license_expression: other-permissive AND proprietary-license
     matches:
       - score: '100.0'
@@ -162,6 +165,7 @@ license_detections:
           These firmware files are distributed in the hope that they will be
           useful, but WITHOUT ANY WARRANTY; without even the implied warranty
           of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+    identifier: other_permissive_and_proprietary_license-697a2b44-6955-8abd-ac33-75afd7dab11e
   - license_expression: other-permissive
     matches:
       - score: '100.0'
@@ -178,6 +182,7 @@ license_detections:
           Permission is hereby granted for the distribution of this firmware data
           in hexadecimal or equivalent format, provided this copyright notice is
           accompanying it.
+    identifier: other_permissive-16dc1659-320f-55c9-0ddb-4d46c5526cbb
 other_license_detections: []
 copyright: |
   1995, 1996, 1997, 1998, 1999, 2000, QLogic, Inc.

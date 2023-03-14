@@ -39,6 +39,7 @@ license_detections:
         matched_text: |
           licensed under the GNU General Public License version 2 or above
           See `/usr/share/common-licenses/GPL-2'.
+    identifier: lgpl_2_1_plus_and_gpl_2_0_plus-b90093f2-2cc2-c7e4-89e0-83414f4c0a88
   - license_expression: gpl-3.0
     matches:
       - score: '100.0'
@@ -52,6 +53,7 @@ license_detections:
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0_468.RULE
         matched_text: "and is licensed under the GPL version 3, \nsee `/usr/share/common-licenses/GPL-3'."
+    identifier: gpl_3_0-3238e4b2-36b1-43fa-44cf-18d881c6b1bf
 other_license_detections: []
 copyright: |
   Copyright 2009 Red Hat Inc.

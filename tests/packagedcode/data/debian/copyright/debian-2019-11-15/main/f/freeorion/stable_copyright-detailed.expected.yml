@@ -67,6 +67,7 @@ other_license_detections:
 
           On Debian systems, the complete text of the GNU General
           Public License version 2 can be found in "/usr/share/common-licenses/GPL-2".
+    identifier: gpl_2_0-b917de81-5bba-1d0f-2db7-5318a537b85c
   - license_expression: lgpl-2.1-plus AND lgpl-2.0-plus AND lgpl-2.1
     matches:
       - score: '100.0'
@@ -122,6 +123,7 @@ other_license_detections:
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1_82.RULE
         matched_text: usr/share/common-licenses/LGPL-2.1'.
+    identifier: lgpl_2_1_plus_and_lgpl_2_0_plus_and_lgpl_2_1-2059e657-b017-b289-bd23-348b4f78bc71
   - license_expression: boost-1.0
     matches:
       - score: '100.0'
@@ -158,6 +160,7 @@ other_license_detections:
           FOR ANY DAMAGES OR OTHER LIABILITY, WHETHER IN CONTRACT, TORT OR OTHERWISE,
           ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
           DEALINGS IN THE SOFTWARE.
+    identifier: boost_1_0-dcd1a22a-7766-abc4-a96d-eefedae4fbf2
   - license_expression: bsd-new
     matches:
       - score: '100.0'
@@ -186,6 +189,7 @@ other_license_detections:
             nor the names of their contributors may be used to endorse or promote
             products derived from this software without specific prior written
             permission.
+    identifier: bsd_new-aff84c79-b8ad-af44-8c02-73d6e6a799a0
   - license_expression: apache-2.0
     matches:
       - score: '100.0'
@@ -212,6 +216,7 @@ other_license_detections:
         matched_text: |
           On Debian systems the complete license text of the Apache license version 2.0
           can be found at /usr/share/common-licenses/Apache-2.0.
+    identifier: apache_2_0-f9ae1f00-9945-c0a9-e6bb-cebf07aec6f2
   - license_expression: cc-by-sa-3.0
     matches:
       - score: '99.82'
@@ -601,6 +606,7 @@ other_license_detections:
           does not form part of the License.
           ․
           Creative Commons may be contacted at http://creativecommons.org/.
+    identifier: cc_by_sa_3_0-33d6e24f-4dca-f73d-ade0-52b78a9bc1e8
   - license_expression: bitstream
     matches:
       - score: '100.0'
@@ -707,6 +713,7 @@ other_license_detections:
           dealings in this Font Software without prior written authorization
           from Tavmjong Bah. For further information, contact: tavmjong @ free
            fr.
+    identifier: bitstream-2033b7a1-28d9-6af7-b4b6-9fe2eda580fd
   - license_expression: cc-by-sa-3.0 AND gpl-2.0
     matches:
       - score: '100.0'
@@ -736,6 +743,7 @@ other_license_detections:
         matched_text: |
           licensed
           under the GNU General Public License, Version 2.
+    identifier: cc_by_sa_3_0_and_gpl_2_0-34a2adc7-b6ae-4173-9961-e502c4a58749
 copyright: |
   The FreeOrion project
   The FreeOrion project

@@ -48,7 +48,8 @@
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/tidy_2.RULE",
           "matched_text": "Java HTML Tidy License"
         }
-      ]
+      ],
+      "identifier": "tidy-45701b40-0018-576f-ce3e-64441b0a1d40"
     }
   ],
   "other_license_expression": null,

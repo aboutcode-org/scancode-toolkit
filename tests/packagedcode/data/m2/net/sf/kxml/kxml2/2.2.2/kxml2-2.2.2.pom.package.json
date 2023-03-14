@@ -55,7 +55,8 @@
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_145.RULE",
           "matched_text": "The BSD License"
         }
-      ]
+      ],
+      "identifier": "bsd_new-3aebf692-2747-040f-2c82-b00bb8b29c95"
     },
     {
       "license_expression": "bsd-new",
@@ -73,7 +74,8 @@
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_335.RULE",
           "matched_text": "http://www.opensource.org/licenses/bsd-license.html"
         }
-      ]
+      ],
+      "identifier": "bsd_new-139383c9-1f60-4a6c-61d8-4668422c23d5"
     }
   ],
   "other_license_expression": null,
