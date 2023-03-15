@@ -28,10 +28,8 @@ This is the basic structure of the example plugin::
     │   └── licenses_to_install1/
     │       ├── licenses/
     │       │   ├── example-installed-1.LICENSE
-    │       │   └── example-installed-1.yaml
     |       ├── rules/
     │       │   ├── example-installed-1.RULE
-    │       │   └── example-installed-1.yaml
     │       └── __init__.py
     ├── apache-2.0.LICENSE
     ├── MANIFEST.in
@@ -104,17 +102,15 @@ an example of a plugin with tests. The tests are contained in the ``tests`` dire
     │   └── licenses_to_install1/
     │       ├── licenses/
     │       │   ├── example-installed-1.LICENSE
-    │       │   └── example-installed-1.yaml
     │       ├── rules/
     │       │   ├── example-installed-1.RULE
-    │       │   └── example-installed-1.yaml
     │       └── __init__.py/
     ├── tests/
     │    ├── data/
     │    │   ├── example-installed-1.txt
     │    │   └── example-installed-1.txt.yml
     │    └── test_detection_datadriven.py
-    ├── gpl-1.0.LICENSE
+    ├── apache-2.0.LICENSE
     ├── MANIFEST.in
     ├── setup.cfg
     └── setup.py
@@ -142,8 +138,9 @@ Then you can define a test class and call the ``build_tests`` method defined in
         TEST_DIR,
         clazz=TestLicenseDataDriven1, regen=scancode_config.REGEN_TEST_FIXTURES)
 
-The ``tests/data`` directory contains a pair of files for each license:
-a license text file and a YAML file specifying the expected license expressions from the test.
+The ``tests/data`` directory contains a file for each license:
+a license text file with a YAML frontmatter specifying the expected license expression 
+from the test.
 
 Finally, install the plugin and run the test:
 
@@ -163,10 +160,8 @@ This is the basic structure of the example license directory::
     additional_license_directory/
     ├── licenses/
     │   ├── example-installed-1.LICENSE
-    │   └── example-installed-1.yaml
     ├── rules/
     │   ├── example-installed-1.RULE
-    │   └── example-installed-1.yaml
 
 Adding the licenses to the index
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
