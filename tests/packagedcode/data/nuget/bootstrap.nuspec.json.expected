@@ -42,9 +42,6 @@
     "license_detections": [
       {
         "license_expression": "mit",
-        "detection_log": [
-          "not-combined"
-        ],
         "matches": [
           {
             "score": 100.0,
@@ -55,10 +52,12 @@
             "matcher": "1-hash",
             "license_expression": "mit",
             "rule_identifier": "mit_180.RULE",
+            "rule_relevance": 100,
             "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_180.RULE",
             "matched_text": "https://github.com/twbs/bootstrap/blob/master/LICENSE"
           }
-        ]
+        ],
+        "identifier": "mit-899d417a-c474-8caa-1190-30de4b5ca35a"
       }
     ],
     "other_license_expression": null,

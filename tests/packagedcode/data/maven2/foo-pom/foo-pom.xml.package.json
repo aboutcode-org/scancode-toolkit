@@ -34,9 +34,6 @@
   "license_detections": [
     {
       "license_expression": "epl-1.0",
-      "detection_log": [
-        "not-combined"
-      ],
       "matches": [
         {
           "score": 100.0,
@@ -47,16 +44,15 @@
           "matcher": "1-hash",
           "license_expression": "epl-1.0",
           "rule_identifier": "epl-1.0_4.RULE",
+          "rule_relevance": 100,
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/epl-1.0_4.RULE",
           "matched_text": "Eclipse Public License - v 1.0"
         }
-      ]
+      ],
+      "identifier": "epl_1_0-08260e9e-18a1-8e8e-6b84-e5bd8fb66c01"
     },
     {
       "license_expression": "epl-1.0",
-      "detection_log": [
-        "not-combined"
-      ],
       "matches": [
         {
           "score": 100.0,
@@ -67,10 +63,12 @@
           "matcher": "1-hash",
           "license_expression": "epl-1.0",
           "rule_identifier": "epl-1.0.RULE",
+          "rule_relevance": 100,
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/epl-1.0.RULE",
           "matched_text": "http://www.eclipse.org/legal/epl-v10.html"
         }
-      ]
+      ],
+      "identifier": "epl_1_0-55aef6c5-220a-7892-61d4-4edfb5d67d75"
     }
   ],
   "other_license_expression": null,

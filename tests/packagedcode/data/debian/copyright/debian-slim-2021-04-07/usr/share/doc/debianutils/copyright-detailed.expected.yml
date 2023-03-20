@@ -6,8 +6,6 @@ other_license_expression:
 other_license_expression_spdx:
 license_detections:
   - license_expression: gpl-2.0-plus AND public-domain
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 8
@@ -17,15 +15,15 @@ license_detections:
         matcher: 2-aho
         license_expression: gpl-2.0-plus AND public-domain
         rule_identifier: gpl-2.0-plus_and_public-domain_810.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_and_public-domain_810.RULE
         matched_text: |
           redistributed under the terms of the GNU GPL, Version 2 or later,
           found on Debian systems in the file /usr/share/common-licenses/GPL-2.
 
           which is in the public domain.
+    identifier: gpl_2_0_plus_and_public_domain-e8510ebe-e9a6-c0d1-ae7e-42280922b32a
   - license_expression: smail-gpl
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 18
@@ -35,6 +33,7 @@ license_detections:
         matcher: 2-aho
         license_expression: smail-gpl
         rule_identifier: smail-gpl.LICENSE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/smail-gpl.LICENSE
         matched_text: "SMAIL GENERAL PUBLIC LICENSE\n\t\t       (Clarified 11 Feb 1988)\n\n\
           \ Copyright (C)  1988 Landon Curt Noll & Ronald S. Karr\n Copyright (C)  1992 Ronald\
@@ -128,6 +127,7 @@ license_detections:
           \ SUSTAINED BY THIRD PARTIES OR A FAILURE OF THE\nPROGRAM TO OPERATE WITH ANY OTHER\
           \ PROGRAMS) SMAIL, EVEN IF YOU HAVE\nBEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES,\
           \ OR FOR ANY CLAIM BY\nANY OTHER PARTY."
+    identifier: smail_gpl-ff3c2606-0635-43b4-786b-1688f832b7c2
 other_license_detections: []
 copyright: |
   Copyright (c) 1988 Landon Curt Noll & Ronald S. Karr

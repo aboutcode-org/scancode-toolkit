@@ -42,9 +42,6 @@
     "license_detections": [
       {
         "license_expression": "apache-2.0",
-        "detection_log": [
-          "not-combined"
-        ],
         "matches": [
           {
             "score": 100.0,
@@ -55,10 +52,12 @@
             "matcher": "1-hash",
             "license_expression": "apache-2.0",
             "rule_identifier": "apache-2.0_48.RULE",
+            "rule_relevance": 100,
             "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_48.RULE",
             "matched_text": "Apache License, Version 2.0"
           }
-        ]
+        ],
+        "identifier": "apache_2_0-428c1364-ecb5-f806-7a2e-77d10737a7ce"
       }
     ],
     "other_license_expression": null,

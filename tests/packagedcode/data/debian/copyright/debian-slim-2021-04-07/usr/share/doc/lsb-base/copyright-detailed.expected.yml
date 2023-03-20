@@ -11,8 +11,6 @@ other_license_expression_spdx: (GPL-2.0-only AND GPL-2.0-only) AND (GPL-2.0-only
 license_detections: []
 other_license_detections:
   - license_expression: bsd-new
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 15
@@ -22,6 +20,7 @@ other_license_detections:
         matcher: 1-hash
         license_expression: bsd-new
         rule_identifier: bsd-new_1069.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_1069.RULE
         matched_text: |
           Redistribution and use in source and binary forms, with or without
@@ -47,9 +46,8 @@ other_license_detections:
           WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
           OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
           IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+    identifier: bsd_new-654c38c8-5c40-9a2f-451b-190141ab0a77
   - license_expression: gpl-2.0
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 39
@@ -59,6 +57,7 @@ other_license_detections:
         matcher: 1-hash
         license_expression: gpl-2.0
         rule_identifier: gpl-2.0_561.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0_561.RULE
         matched_text: 'License: gpl-2'
       - score: '100.0'
@@ -69,6 +68,7 @@ other_license_detections:
         matcher: 1-hash
         license_expression: gpl-2.0
         rule_identifier: gpl-2.0_1301.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0_1301.RULE
         matched_text: |
           This program is free software; you can redistribute it
@@ -90,6 +90,7 @@ other_license_detections:
           On Debian systems, the full text of the GNU General Public
           License version 2 can be found in the file
           `/usr/share/common-licenses/GPL-2'.
+    identifier: gpl_2_0-41b2cd11-1458-1dd5-c8e5-f2f853195b41
 copyright: |
   2002-2010, Chris Lawrence <lawrencc@debian.org>
   2005-2011, Canonical Ltd.

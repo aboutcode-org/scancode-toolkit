@@ -18,8 +18,6 @@ other_license_expression_spdx: (MPL-2.0 AND MPL-2.0) AND (MPL-2.0 AND MPL-2.0) A
 license_detections: []
 other_license_detections:
   - license_expression: mpl-2.0
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 38
@@ -29,6 +27,7 @@ other_license_detections:
         matcher: 1-hash
         license_expression: mpl-2.0
         rule_identifier: mpl-2.0_75.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mpl-2.0_75.RULE
         matched_text: 'License: mpl-2.0'
       - score: '100.0'
@@ -39,6 +38,7 @@ other_license_detections:
         matcher: 1-hash
         license_expression: mpl-2.0
         rule_identifier: mpl-2.0.LICENSE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mpl-2.0.LICENSE
         matched_text: |
           Mozilla Public License Version 2.0
@@ -414,9 +414,8 @@ other_license_detections:
 
            This Source Code Form is "Incompatible With Secondary Licenses", as
            defined by the Mozilla Public License, v. 2.0.
+    identifier: mpl_2_0-a4e80716-0ace-81d4-b4b0-3d29c3a0f1e2
   - license_expression: bsd-2-clause-views
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 414
@@ -426,6 +425,7 @@ other_license_detections:
         matcher: 1-hash
         license_expression: bsd-2-clause-views
         rule_identifier: bsd-2-clause-views_1.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-2-clause-views_1.RULE
         matched_text: |
           Redistribution and use in source and binary forms, with or without
@@ -456,9 +456,8 @@ other_license_detections:
           are those of the authors and should not be interpreted as representing
           official policies, either expressed or implied, of the Mozilla
           Foundation.
+    identifier: bsd_2_clause_views-1d997716-afbf-cd29-cb1e-420af00fe852
   - license_expression: bsd-new
-    detection_log:
-      - not-combined
     matches:
       - score: '99.04'
         start_line: 446
@@ -468,6 +467,7 @@ other_license_detections:
         matcher: 3-seq
         license_expression: bsd-new
         rule_identifier: bsd-new_784.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_784.RULE
         matched_text: |
           Redistribution  and  use  in  source   and  binary  forms,  with  or  without
@@ -495,9 +495,8 @@ other_license_detections:
           CONTRACT,  STRICT  LIABILITY, OR  TORT  (INCLUDING  NEGLIGENCE OR  OTHERWISE)
           ARISING IN ANY  WAY OUT OF THE USE  OF THIS SOFTWARE, EVEN IF  ADVISED OF THE
           POSSIBILITY OF SUCH DAMAGE.
+    identifier: bsd_new-2b3a5518-e8a8-d9b2-be49-79747be815eb
   - license_expression: cc0-1.0
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 472
@@ -507,6 +506,7 @@ other_license_detections:
         matcher: 1-hash
         license_expression: cc0-1.0
         rule_identifier: cc0-1.0_12.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/cc0-1.0_12.RULE
         matched_text: 'License: cc0-1.0'
       - score: '100.0'
@@ -517,6 +517,7 @@ other_license_detections:
         matcher: 1-hash
         license_expression: cc0-1.0
         rule_identifier: cc0-1.0_99.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/cc0-1.0_99.RULE
         matched_text: |
           To the extent possible under law, the author(s) have dedicated all copyright
@@ -528,6 +529,7 @@ other_license_detections:
 
           On Debian systems, the complete text of the CC0 1.0 Universal license can be
           found in ‘/usr/share/common-licenses/CC0-1.0’.
+    identifier: cc0_1_0-40516c7d-0f7f-97ef-5345-dd3b9a02a355
 copyright: |
   2003-2017 Patrick Brunschwig <patrick@enigmail.net>,
   2001-2002 Ramalingam Saravanan <svn@xmlterm.org>

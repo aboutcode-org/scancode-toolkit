@@ -5,8 +5,6 @@ other_license_expression:
 other_license_expression_spdx:
 license_detections:
   - license_expression: lgpl-2.1-plus AND gpl-2.0
-    detection_log:
-      - not-combined
     matches:
       - score: '89.63'
         start_line: 16
@@ -16,6 +14,7 @@ license_detections:
         matcher: 3-seq
         license_expression: lgpl-2.1-plus
         rule_identifier: lgpl-2.1-plus_312.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_312.RULE
         matched_text: |
           library is free software; you can redistribute it and/or
@@ -52,6 +51,7 @@ license_detections:
         matcher: 2-aho
         license_expression: gpl-2.0
         rule_identifier: gpl-2.0_1123.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0_1123.RULE
         matched_text: |
           distributed under the terms of the GNU
@@ -65,6 +65,7 @@ license_detections:
               <URL:http://www.gnu.org/copyleft/gpl.html>.  You may also obtain
               it by writing to the Free Software Foundation, Inc., 51 Franklin
               St, Fifth Floor, Boston, MA 02110-1301 USA
+    identifier: lgpl_2_1_plus_and_gpl_2_0-b692f769-146f-b44e-952a-1c81d2c7cf5e
 other_license_detections: []
 copyright: |
   Copyright (c) 2003, 2004 Stephen Smalley <sds@epoch.ncsc.mil>

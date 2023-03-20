@@ -5,8 +5,6 @@ other_license_expression:
 other_license_expression_spdx:
 license_detections:
   - license_expression: gpl-2.0-plus AND gpl-2.0
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 6
@@ -16,6 +14,7 @@ license_detections:
         matcher: 2-aho
         license_expression: gpl-2.0-plus
         rule_identifier: gpl-2.0-plus_68.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_68.RULE
         matched_text: |
           License:
@@ -41,10 +40,12 @@ license_detections:
         matcher: 2-aho
         license_expression: gpl-2.0
         rule_identifier: gpl-2.0_1120.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0_1120.RULE
         matched_text: |
           On Debian systems, the complete text of the GNU General
           Public License version 2 can be found in `/usr/share/common-licenses/GPL-2'.
+    identifier: gpl_2_0_plus_and_gpl_2_0-75efd1aa-c8b8-6e40-bfeb-6d93aaca5143
 other_license_detections: []
 copyright: |
   Copyright 2006-2009 Bastian Blank <waldi@debian.org>

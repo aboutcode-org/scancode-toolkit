@@ -5,8 +5,6 @@ other_license_expression:
 other_license_expression_spdx:
 license_detections:
   - license_expression: netronome-firmware
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 6
@@ -16,6 +14,7 @@ license_detections:
         matcher: 2-aho
         license_expression: netronome-firmware
         rule_identifier: netronome-firmware.LICENSE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/netronome-firmware.LICENSE
         matched_text: |
           Agilio(r) Firmware License Agreement (the "AGREEMENT")
@@ -81,5 +80,6 @@ license_detections:
           NETRONOME and, where applicable, NETRONOME'S third party licensors
           specifically disclaim any express or implied warranty of fitness for High
           Risk Activities.
+    identifier: netronome_firmware-c59951ea-4ccd-9aff-7c69-d8f26399e466
 other_license_detections: []
 copyright: Copyright (c) 2017, NETRONOME Systems, Inc.

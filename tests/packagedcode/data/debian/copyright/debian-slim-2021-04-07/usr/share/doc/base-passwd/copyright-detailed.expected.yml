@@ -11,8 +11,6 @@ other_license_expression_spdx: (GPL-2.0-only AND GPL-2.0-only) AND LicenseRef-sc
 license_detections: []
 other_license_detections:
   - license_expression: gpl-2.0
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 23
@@ -22,6 +20,7 @@ other_license_detections:
         matcher: 1-hash
         license_expression: gpl-2.0
         rule_identifier: gpl-2.0_561.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0_561.RULE
         matched_text: 'License: gpl-2'
       - score: '100.0'
@@ -32,13 +31,13 @@ other_license_detections:
         matcher: 1-hash
         license_expression: gpl-2.0
         rule_identifier: gpl-2.0_1188.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0_1188.RULE
         matched_text: |
           On Debian and Debian-based systems, a copy of the GNU General Public
           License version 2 is available in /usr/share/common-licenses/GPL-2.
+    identifier: gpl_2_0-3c00a491-4933-3121-b9bf-74ca28cddcfe
   - license_expression: public-domain
-    detection_log:
-      - not-combined
     matches:
       - score: '99.0'
         start_line: 13
@@ -48,8 +47,10 @@ other_license_detections:
         matcher: 1-hash
         license_expression: public-domain
         rule_identifier: pypi_public_domain.RULE
+        rule_relevance: 99
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/pypi_public_domain.RULE
         matched_text: 'License: public-domain'
+    identifier: public_domain-1a6a4f2c-bd92-9942-920f-be3d0c2bbda6
 copyright: |
   Copyright 1999-2002 Wichert Akkerman <wichert@deephackmode.org>
   Copyright 2002, 2003, 2004 Colin Watson <cjwatson@debian.org>

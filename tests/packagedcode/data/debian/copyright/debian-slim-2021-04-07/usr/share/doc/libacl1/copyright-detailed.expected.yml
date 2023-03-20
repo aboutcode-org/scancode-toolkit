@@ -10,8 +10,6 @@ other_license_expression_spdx: (GPL-2.0-or-later AND GPL-2.0-or-later AND GPL-2.
 license_detections: []
 other_license_detections:
   - license_expression: gpl-2.0-plus AND gpl-2.0
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 8
@@ -21,6 +19,7 @@ other_license_detections:
         matcher: 1-hash
         license_expression: gpl-2.0-plus
         rule_identifier: gpl-2.0-plus_22.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_22.RULE
         matched_text: 'License: gpl-2+'
       - score: '100.0'
@@ -31,6 +30,7 @@ other_license_detections:
         matcher: 1-hash
         license_expression: gpl-2.0-plus
         rule_identifier: gpl-2.0-plus_860.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_860.RULE
         matched_text: |
           This program is free software: you can redistribute it and/or modify it
@@ -53,13 +53,13 @@ other_license_detections:
         matcher: 1-hash
         license_expression: gpl-2.0
         rule_identifier: gpl-2.0_1160.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0_1160.RULE
         matched_text: |
           On Debian systems, the full text of the GNU General Public License
           can be found in '/usr/share/common-licenses/GPL-2'.
+    identifier: gpl_2_0_plus_and_gpl_2_0-6749e336-e70c-3988-4833-e4900655801f
   - license_expression: lgpl-2.0-plus AND lgpl-2.1-plus
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 39
@@ -69,6 +69,7 @@ other_license_detections:
         matcher: 1-hash
         license_expression: lgpl-2.0-plus
         rule_identifier: lgpl-2.0-plus_61.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0-plus_61.RULE
         matched_text: 'License: lgpl-2+'
       - score: '100.0'
@@ -79,6 +80,7 @@ other_license_detections:
         matcher: 1-hash
         license_expression: lgpl-2.1-plus
         rule_identifier: lgpl-2.1-plus_306.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_306.RULE
         matched_text: |
           This program is free software: you can redistribute it and/or modify it
@@ -93,9 +95,8 @@ other_license_detections:
 
           You should have received a copy of the GNU Lesser General Public License
           along with this program.  If not, see <https://www.gnu.org/licenses/>.
+    identifier: lgpl_2_0_plus_and_lgpl_2_1_plus-c21bb300-ded5-f5b0-2943-5f76e0f2f623
   - license_expression: gpl-2.0
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 22
@@ -105,13 +106,13 @@ other_license_detections:
         matcher: 1-hash
         license_expression: gpl-2.0
         rule_identifier: gpl-2.0_1160.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0_1160.RULE
         matched_text: |
           On Debian systems, the full text of the GNU General Public License
           can be found in '/usr/share/common-licenses/GPL-2'.
+    identifier: gpl_2_0-f5a12419-1f21-0dcb-9684-72c2f6e40432
   - license_expression: lgpl-2.1-plus
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 53
@@ -121,10 +122,12 @@ other_license_detections:
         matcher: 1-hash
         license_expression: lgpl-2.1-plus
         rule_identifier: lgpl-2.1-plus_325.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_325.RULE
         matched_text: |
           On Debian systems, the full text of the GNU Lesser General Public License
           can be found in '/usr/share/common-licenses/LGPL-2.1'.
+    identifier: lgpl_2_1_plus-e8a8efba-8005-9eb1-ff4b-4e716b18779d
 copyright: |
   Copyright © 2000-2008 Silicon Graphics, Inc.
   Copyright © 1999-2001,2007-2009 Andreas Gruenbacher

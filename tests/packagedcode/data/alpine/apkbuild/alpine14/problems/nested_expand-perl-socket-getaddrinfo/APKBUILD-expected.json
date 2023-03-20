@@ -26,9 +26,6 @@
   "license_detections": [
     {
       "license_expression": "gpl-1.0-plus OR artistic-perl-1.0",
-      "detection_log": [
-        "not-combined"
-      ],
       "matches": [
         {
           "score": 100.0,
@@ -39,10 +36,12 @@
           "matcher": "1-spdx-id",
           "license_expression": "gpl-1.0-plus OR artistic-perl-1.0",
           "rule_identifier": "spdx-license-identifier-gpl-1.0-plus OR artistic-perl-1.0-535d84b5d1aa6e65995199385dd4e21954d8d8ba",
+          "rule_relevance": 100,
           "rule_url": null,
           "matched_text": "gpl-1.0-or-later OR artistic-1.0-perl"
         }
-      ]
+      ],
+      "identifier": "gpl_1_0_plus_or_artistic_perl_1_0-5b18e6f8-26f2-64b3-9bbb-03e93b71de62"
     }
   ],
   "other_license_expression": null,

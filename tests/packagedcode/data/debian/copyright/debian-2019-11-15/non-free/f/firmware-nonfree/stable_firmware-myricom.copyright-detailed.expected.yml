@@ -5,8 +5,6 @@ other_license_expression:
 other_license_expression_spdx:
 license_detections:
   - license_expression: bsd-source-code
-    detection_log:
-      - not-combined
     matches:
       - score: '99.46'
         start_line: 7
@@ -16,6 +14,7 @@ license_detections:
         matcher: 2-aho
         license_expression: bsd-source-code
         rule_identifier: bsd-source-code_8.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-source-code_8.RULE
         matched_text: |
           Redistribution and use in source and binary forms, with or without
@@ -39,5 +38,6 @@ license_detections:
           CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
           ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
           POSSIBILITY OF SUCH DAMAGE.
+    identifier: bsd_source_code-203013c5-adbf-f00a-e1c1-e400377932b9
 other_license_detections: []
 copyright: Copyright (c) 2006-2010, Myricom Inc.

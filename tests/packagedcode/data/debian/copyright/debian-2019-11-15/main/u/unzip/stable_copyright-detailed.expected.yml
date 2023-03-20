@@ -5,8 +5,6 @@ other_license_expression:
 other_license_expression_spdx:
 license_detections:
   - license_expression: info-zip-2009-01
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 15
@@ -16,6 +14,7 @@ license_detections:
         matcher: 2-aho
         license_expression: info-zip-2009-01
         rule_identifier: info-zip-2009-01_12.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/info-zip-2009-01_12.RULE
         matched_text: |
           This is version 2009-Jan-02 of the Info-ZIP license.
@@ -80,5 +79,6 @@ license_detections:
               4. Info-ZIP retains the right to use the names "Info-ZIP," "Zip," "UnZip,"
                  "UnZipSFX," "WiZ," "Pocket UnZip," "Pocket Zip," and "MacZip" for its
                  own source and binary releases.
+    identifier: info_zip_2009_01-301bc685-e92d-f3aa-d0dc-d9009531f6db
 other_license_detections: []
 copyright: Copyright (c) 1990-2009 Info-ZIP.

@@ -3,89 +3,7 @@
     {
       "identifier": "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d",
       "license_expression": "blessing",
-      "count": 136,
-      "detection_log": [
-        "not-combined"
-      ],
-      "matches": [
-        {
-          "score": 100.0,
-          "start_line": 30,
-          "end_line": 35,
-          "matched_length": 42,
-          "match_coverage": 100.0,
-          "matcher": "2-aho",
-          "license_expression": "blessing",
-          "rule_identifier": "blessing.LICENSE",
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE"
-        }
-      ]
-    }
-  ],
-  "license_references": [
-    {
-      "key": "blessing",
-      "language": "en",
-      "short_name": "SQLite Blessing",
-      "name": "SQLite Blessing",
-      "category": "Public Domain",
-      "owner": "SQLite",
-      "homepage_url": "https://sqlite.org/src/artifact/df5091916dbb40e6",
-      "notes": null,
-      "is_builtin": true,
-      "is_exception": false,
-      "is_unknown": false,
-      "is_generic": false,
-      "spdx_license_key": "blessing",
-      "other_spdx_license_keys": [],
-      "osi_license_key": null,
-      "text_urls": [],
-      "osi_url": null,
-      "faq_url": null,
-      "other_urls": [
-        "https://www.sqlite.org/src/artifact/e33a4df7e32d742a?ln=4-9",
-        "https://sqlite.org/src/artifact/df5091916dbb40e6"
-      ],
-      "key_aliases": [],
-      "minimum_coverage": 0,
-      "standard_notice": null,
-      "ignorable_copyrights": [],
-      "ignorable_holders": [],
-      "ignorable_authors": [],
-      "ignorable_urls": [],
-      "ignorable_emails": [],
-      "text": "The author disclaims copyright to this source code.\nIn place of a legal notice, here is a blessing:\n   May you do good and not evil.\n   May you find forgiveness for yourself and forgive others.\n   May you share freely, never taking more than you give.",
-      "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-      "licensedb_url": "https://scancode-licensedb.aboutcode.org/blessing",
-      "spdx_url": "https://spdx.org/licenses/blessing"
-    }
-  ],
-  "license_rule_references": [
-    {
-      "license_expression": "blessing",
-      "identifier": "blessing.LICENSE",
-      "language": "en",
-      "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-      "is_license_text": true,
-      "is_license_notice": false,
-      "is_license_reference": false,
-      "is_license_tag": false,
-      "is_license_intro": false,
-      "is_continuous": false,
-      "is_builtin": true,
-      "is_from_license": true,
-      "is_synthetic": false,
-      "length": 42,
-      "relevance": 100,
-      "minimum_coverage": 0,
-      "referenced_filenames": [],
-      "notes": null,
-      "ignorable_copyrights": [],
-      "ignorable_holders": [],
-      "ignorable_authors": [],
-      "ignorable_urls": [],
-      "ignorable_emails": [],
-      "text": "The author disclaims copyright to this source code.\nIn place of a legal notice, here is a blessing:\nMay you do good and not evil.\nMay you find forgiveness for yourself and forgive others.\nMay you share freely, never taking more than you give."
+      "detection_count": 136
     }
   ],
   "files": [
@@ -97,7 +15,6 @@
       "license_detections": [],
       "license_clues": [],
       "percentage_of_license_text": 0,
-      "for_license_detections": [],
       "scan_errors": []
     },
     {
@@ -108,9 +25,6 @@
       "license_detections": [
         {
           "license_expression": "blessing",
-          "detection_log": [
-            "not-combined"
-          ],
           "matches": [
             {
               "score": 100.0,
@@ -121,16 +35,15 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-              "matched_text": "** The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
+              "matched_text": "The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
             }
-          ]
+          ],
+          "identifier": "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d"
         },
         {
           "license_expression": "blessing",
-          "detection_log": [
-            "not-combined"
-          ],
           "matches": [
             {
               "score": 100.0,
@@ -141,16 +54,15 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-              "matched_text": "** The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
+              "matched_text": "The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
             }
-          ]
+          ],
+          "identifier": "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d"
         },
         {
           "license_expression": "blessing",
-          "detection_log": [
-            "not-combined"
-          ],
           "matches": [
             {
               "score": 100.0,
@@ -161,16 +73,15 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-              "matched_text": "** The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
+              "matched_text": "The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
             }
-          ]
+          ],
+          "identifier": "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d"
         },
         {
           "license_expression": "blessing",
-          "detection_log": [
-            "not-combined"
-          ],
           "matches": [
             {
               "score": 100.0,
@@ -181,16 +92,15 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-              "matched_text": "** The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
+              "matched_text": "The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
             }
-          ]
+          ],
+          "identifier": "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d"
         },
         {
           "license_expression": "blessing",
-          "detection_log": [
-            "not-combined"
-          ],
           "matches": [
             {
               "score": 100.0,
@@ -201,16 +111,15 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-              "matched_text": "** The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
+              "matched_text": "The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
             }
-          ]
+          ],
+          "identifier": "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d"
         },
         {
           "license_expression": "blessing",
-          "detection_log": [
-            "not-combined"
-          ],
           "matches": [
             {
               "score": 100.0,
@@ -221,16 +130,15 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-              "matched_text": "** The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
+              "matched_text": "The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
             }
-          ]
+          ],
+          "identifier": "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d"
         },
         {
           "license_expression": "blessing",
-          "detection_log": [
-            "not-combined"
-          ],
           "matches": [
             {
               "score": 100.0,
@@ -241,16 +149,15 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-              "matched_text": "** The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
+              "matched_text": "The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
             }
-          ]
+          ],
+          "identifier": "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d"
         },
         {
           "license_expression": "blessing",
-          "detection_log": [
-            "not-combined"
-          ],
           "matches": [
             {
               "score": 100.0,
@@ -261,16 +168,15 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-              "matched_text": "** The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
+              "matched_text": "The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
             }
-          ]
+          ],
+          "identifier": "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d"
         },
         {
           "license_expression": "blessing",
-          "detection_log": [
-            "not-combined"
-          ],
           "matches": [
             {
               "score": 100.0,
@@ -281,16 +187,15 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-              "matched_text": "** The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
+              "matched_text": "The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
             }
-          ]
+          ],
+          "identifier": "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d"
         },
         {
           "license_expression": "blessing",
-          "detection_log": [
-            "not-combined"
-          ],
           "matches": [
             {
               "score": 100.0,
@@ -301,16 +206,15 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-              "matched_text": "** The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
+              "matched_text": "The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
             }
-          ]
+          ],
+          "identifier": "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d"
         },
         {
           "license_expression": "blessing",
-          "detection_log": [
-            "not-combined"
-          ],
           "matches": [
             {
               "score": 100.0,
@@ -321,16 +225,15 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-              "matched_text": "** The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
+              "matched_text": "The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
             }
-          ]
+          ],
+          "identifier": "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d"
         },
         {
           "license_expression": "blessing",
-          "detection_log": [
-            "not-combined"
-          ],
           "matches": [
             {
               "score": 100.0,
@@ -341,16 +244,15 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-              "matched_text": "** The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
+              "matched_text": "The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
             }
-          ]
+          ],
+          "identifier": "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d"
         },
         {
           "license_expression": "blessing",
-          "detection_log": [
-            "not-combined"
-          ],
           "matches": [
             {
               "score": 100.0,
@@ -361,16 +263,15 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-              "matched_text": "** The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
+              "matched_text": "The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
             }
-          ]
+          ],
+          "identifier": "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d"
         },
         {
           "license_expression": "blessing",
-          "detection_log": [
-            "not-combined"
-          ],
           "matches": [
             {
               "score": 100.0,
@@ -381,16 +282,15 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-              "matched_text": "** The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
+              "matched_text": "The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
             }
-          ]
+          ],
+          "identifier": "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d"
         },
         {
           "license_expression": "blessing",
-          "detection_log": [
-            "not-combined"
-          ],
           "matches": [
             {
               "score": 100.0,
@@ -401,16 +301,15 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-              "matched_text": "** The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
+              "matched_text": "The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
             }
-          ]
+          ],
+          "identifier": "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d"
         },
         {
           "license_expression": "blessing",
-          "detection_log": [
-            "not-combined"
-          ],
           "matches": [
             {
               "score": 100.0,
@@ -421,16 +320,15 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-              "matched_text": "** The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
+              "matched_text": "The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
             }
-          ]
+          ],
+          "identifier": "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d"
         },
         {
           "license_expression": "blessing",
-          "detection_log": [
-            "not-combined"
-          ],
           "matches": [
             {
               "score": 100.0,
@@ -441,16 +339,15 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-              "matched_text": "** The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
+              "matched_text": "The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
             }
-          ]
+          ],
+          "identifier": "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d"
         },
         {
           "license_expression": "blessing",
-          "detection_log": [
-            "not-combined"
-          ],
           "matches": [
             {
               "score": 100.0,
@@ -461,16 +358,15 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-              "matched_text": "** The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
+              "matched_text": "The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
             }
-          ]
+          ],
+          "identifier": "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d"
         },
         {
           "license_expression": "blessing",
-          "detection_log": [
-            "not-combined"
-          ],
           "matches": [
             {
               "score": 100.0,
@@ -481,16 +377,15 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-              "matched_text": "** The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
+              "matched_text": "The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
             }
-          ]
+          ],
+          "identifier": "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d"
         },
         {
           "license_expression": "blessing",
-          "detection_log": [
-            "not-combined"
-          ],
           "matches": [
             {
               "score": 100.0,
@@ -501,16 +396,15 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-              "matched_text": "** The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
+              "matched_text": "The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
             }
-          ]
+          ],
+          "identifier": "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d"
         },
         {
           "license_expression": "blessing",
-          "detection_log": [
-            "not-combined"
-          ],
           "matches": [
             {
               "score": 100.0,
@@ -521,16 +415,15 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-              "matched_text": "** The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
+              "matched_text": "The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
             }
-          ]
+          ],
+          "identifier": "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d"
         },
         {
           "license_expression": "blessing",
-          "detection_log": [
-            "not-combined"
-          ],
           "matches": [
             {
               "score": 100.0,
@@ -541,16 +434,15 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-              "matched_text": "** The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
+              "matched_text": "The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
             }
-          ]
+          ],
+          "identifier": "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d"
         },
         {
           "license_expression": "blessing",
-          "detection_log": [
-            "not-combined"
-          ],
           "matches": [
             {
               "score": 100.0,
@@ -561,16 +453,15 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-              "matched_text": "** The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
+              "matched_text": "The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
             }
-          ]
+          ],
+          "identifier": "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d"
         },
         {
           "license_expression": "blessing",
-          "detection_log": [
-            "not-combined"
-          ],
           "matches": [
             {
               "score": 100.0,
@@ -581,16 +472,15 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-              "matched_text": "** The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
+              "matched_text": "The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
             }
-          ]
+          ],
+          "identifier": "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d"
         },
         {
           "license_expression": "blessing",
-          "detection_log": [
-            "not-combined"
-          ],
           "matches": [
             {
               "score": 100.0,
@@ -601,16 +491,15 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-              "matched_text": "** The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
+              "matched_text": "The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
             }
-          ]
+          ],
+          "identifier": "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d"
         },
         {
           "license_expression": "blessing",
-          "detection_log": [
-            "not-combined"
-          ],
           "matches": [
             {
               "score": 100.0,
@@ -621,16 +510,15 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-              "matched_text": "** The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
+              "matched_text": "The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
             }
-          ]
+          ],
+          "identifier": "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d"
         },
         {
           "license_expression": "blessing",
-          "detection_log": [
-            "not-combined"
-          ],
           "matches": [
             {
               "score": 100.0,
@@ -641,16 +529,15 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-              "matched_text": "** The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
+              "matched_text": "The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
             }
-          ]
+          ],
+          "identifier": "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d"
         },
         {
           "license_expression": "blessing",
-          "detection_log": [
-            "not-combined"
-          ],
           "matches": [
             {
               "score": 100.0,
@@ -661,16 +548,15 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-              "matched_text": "** The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
+              "matched_text": "The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
             }
-          ]
+          ],
+          "identifier": "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d"
         },
         {
           "license_expression": "blessing",
-          "detection_log": [
-            "not-combined"
-          ],
           "matches": [
             {
               "score": 100.0,
@@ -681,16 +567,15 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-              "matched_text": "** The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
+              "matched_text": "The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
             }
-          ]
+          ],
+          "identifier": "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d"
         },
         {
           "license_expression": "blessing",
-          "detection_log": [
-            "not-combined"
-          ],
           "matches": [
             {
               "score": 100.0,
@@ -701,16 +586,15 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-              "matched_text": "** The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
+              "matched_text": "The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
             }
-          ]
+          ],
+          "identifier": "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d"
         },
         {
           "license_expression": "blessing",
-          "detection_log": [
-            "not-combined"
-          ],
           "matches": [
             {
               "score": 100.0,
@@ -721,16 +605,15 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-              "matched_text": "** The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
+              "matched_text": "The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
             }
-          ]
+          ],
+          "identifier": "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d"
         },
         {
           "license_expression": "blessing",
-          "detection_log": [
-            "not-combined"
-          ],
           "matches": [
             {
               "score": 100.0,
@@ -741,16 +624,15 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-              "matched_text": "** The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
+              "matched_text": "The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
             }
-          ]
+          ],
+          "identifier": "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d"
         },
         {
           "license_expression": "blessing",
-          "detection_log": [
-            "not-combined"
-          ],
           "matches": [
             {
               "score": 100.0,
@@ -761,16 +643,15 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-              "matched_text": "** The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
+              "matched_text": "The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
             }
-          ]
+          ],
+          "identifier": "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d"
         },
         {
           "license_expression": "blessing",
-          "detection_log": [
-            "not-combined"
-          ],
           "matches": [
             {
               "score": 100.0,
@@ -781,16 +662,15 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-              "matched_text": "** The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
+              "matched_text": "The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
             }
-          ]
+          ],
+          "identifier": "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d"
         },
         {
           "license_expression": "blessing",
-          "detection_log": [
-            "not-combined"
-          ],
           "matches": [
             {
               "score": 100.0,
@@ -801,16 +681,15 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-              "matched_text": "** The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
+              "matched_text": "The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
             }
-          ]
+          ],
+          "identifier": "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d"
         },
         {
           "license_expression": "blessing",
-          "detection_log": [
-            "not-combined"
-          ],
           "matches": [
             {
               "score": 100.0,
@@ -821,16 +700,15 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-              "matched_text": "** The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
+              "matched_text": "The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
             }
-          ]
+          ],
+          "identifier": "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d"
         },
         {
           "license_expression": "blessing",
-          "detection_log": [
-            "not-combined"
-          ],
           "matches": [
             {
               "score": 100.0,
@@ -841,16 +719,15 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-              "matched_text": "** The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
+              "matched_text": "The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
             }
-          ]
+          ],
+          "identifier": "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d"
         },
         {
           "license_expression": "blessing",
-          "detection_log": [
-            "not-combined"
-          ],
           "matches": [
             {
               "score": 100.0,
@@ -861,16 +738,15 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-              "matched_text": "** The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
+              "matched_text": "The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
             }
-          ]
+          ],
+          "identifier": "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d"
         },
         {
           "license_expression": "blessing",
-          "detection_log": [
-            "not-combined"
-          ],
           "matches": [
             {
               "score": 100.0,
@@ -881,16 +757,15 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-              "matched_text": "** The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
+              "matched_text": "The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
             }
-          ]
+          ],
+          "identifier": "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d"
         },
         {
           "license_expression": "blessing",
-          "detection_log": [
-            "not-combined"
-          ],
           "matches": [
             {
               "score": 100.0,
@@ -901,16 +776,15 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-              "matched_text": "** The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
+              "matched_text": "The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
             }
-          ]
+          ],
+          "identifier": "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d"
         },
         {
           "license_expression": "blessing",
-          "detection_log": [
-            "not-combined"
-          ],
           "matches": [
             {
               "score": 100.0,
@@ -921,16 +795,15 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-              "matched_text": "** The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
+              "matched_text": "The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
             }
-          ]
+          ],
+          "identifier": "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d"
         },
         {
           "license_expression": "blessing",
-          "detection_log": [
-            "not-combined"
-          ],
           "matches": [
             {
               "score": 100.0,
@@ -941,16 +814,15 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-              "matched_text": "** The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
+              "matched_text": "The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
             }
-          ]
+          ],
+          "identifier": "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d"
         },
         {
           "license_expression": "blessing",
-          "detection_log": [
-            "not-combined"
-          ],
           "matches": [
             {
               "score": 100.0,
@@ -961,16 +833,15 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-              "matched_text": "** The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
+              "matched_text": "The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
             }
-          ]
+          ],
+          "identifier": "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d"
         },
         {
           "license_expression": "blessing",
-          "detection_log": [
-            "not-combined"
-          ],
           "matches": [
             {
               "score": 100.0,
@@ -981,16 +852,15 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-              "matched_text": "** The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
+              "matched_text": "The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
             }
-          ]
+          ],
+          "identifier": "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d"
         },
         {
           "license_expression": "blessing",
-          "detection_log": [
-            "not-combined"
-          ],
           "matches": [
             {
               "score": 100.0,
@@ -1001,16 +871,15 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-              "matched_text": "** The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
+              "matched_text": "The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
             }
-          ]
+          ],
+          "identifier": "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d"
         },
         {
           "license_expression": "blessing",
-          "detection_log": [
-            "not-combined"
-          ],
           "matches": [
             {
               "score": 100.0,
@@ -1021,16 +890,15 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-              "matched_text": "** The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
+              "matched_text": "The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
             }
-          ]
+          ],
+          "identifier": "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d"
         },
         {
           "license_expression": "blessing",
-          "detection_log": [
-            "not-combined"
-          ],
           "matches": [
             {
               "score": 100.0,
@@ -1041,16 +909,15 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-              "matched_text": "** The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
+              "matched_text": "The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
             }
-          ]
+          ],
+          "identifier": "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d"
         },
         {
           "license_expression": "blessing",
-          "detection_log": [
-            "not-combined"
-          ],
           "matches": [
             {
               "score": 100.0,
@@ -1061,16 +928,15 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-              "matched_text": "** The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
+              "matched_text": "The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
             }
-          ]
+          ],
+          "identifier": "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d"
         },
         {
           "license_expression": "blessing",
-          "detection_log": [
-            "not-combined"
-          ],
           "matches": [
             {
               "score": 100.0,
@@ -1081,16 +947,15 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-              "matched_text": "** The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
+              "matched_text": "The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
             }
-          ]
+          ],
+          "identifier": "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d"
         },
         {
           "license_expression": "blessing",
-          "detection_log": [
-            "not-combined"
-          ],
           "matches": [
             {
               "score": 100.0,
@@ -1101,16 +966,15 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-              "matched_text": "** The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
+              "matched_text": "The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
             }
-          ]
+          ],
+          "identifier": "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d"
         },
         {
           "license_expression": "blessing",
-          "detection_log": [
-            "not-combined"
-          ],
           "matches": [
             {
               "score": 100.0,
@@ -1121,16 +985,15 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-              "matched_text": "** The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
+              "matched_text": "The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
             }
-          ]
+          ],
+          "identifier": "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d"
         },
         {
           "license_expression": "blessing",
-          "detection_log": [
-            "not-combined"
-          ],
           "matches": [
             {
               "score": 100.0,
@@ -1141,16 +1004,15 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-              "matched_text": "** The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
+              "matched_text": "The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
             }
-          ]
+          ],
+          "identifier": "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d"
         },
         {
           "license_expression": "blessing",
-          "detection_log": [
-            "not-combined"
-          ],
           "matches": [
             {
               "score": 100.0,
@@ -1161,16 +1023,15 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-              "matched_text": "** The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
+              "matched_text": "The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
             }
-          ]
+          ],
+          "identifier": "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d"
         },
         {
           "license_expression": "blessing",
-          "detection_log": [
-            "not-combined"
-          ],
           "matches": [
             {
               "score": 100.0,
@@ -1181,16 +1042,15 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-              "matched_text": "** The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
+              "matched_text": "The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
             }
-          ]
+          ],
+          "identifier": "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d"
         },
         {
           "license_expression": "blessing",
-          "detection_log": [
-            "not-combined"
-          ],
           "matches": [
             {
               "score": 100.0,
@@ -1201,16 +1061,15 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-              "matched_text": "** The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
+              "matched_text": "The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
             }
-          ]
+          ],
+          "identifier": "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d"
         },
         {
           "license_expression": "blessing",
-          "detection_log": [
-            "not-combined"
-          ],
           "matches": [
             {
               "score": 100.0,
@@ -1221,16 +1080,15 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-              "matched_text": "** The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
+              "matched_text": "The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
             }
-          ]
+          ],
+          "identifier": "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d"
         },
         {
           "license_expression": "blessing",
-          "detection_log": [
-            "not-combined"
-          ],
           "matches": [
             {
               "score": 100.0,
@@ -1241,16 +1099,15 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-              "matched_text": "** The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
+              "matched_text": "The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
             }
-          ]
+          ],
+          "identifier": "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d"
         },
         {
           "license_expression": "blessing",
-          "detection_log": [
-            "not-combined"
-          ],
           "matches": [
             {
               "score": 100.0,
@@ -1261,16 +1118,15 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-              "matched_text": "** The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
+              "matched_text": "The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
             }
-          ]
+          ],
+          "identifier": "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d"
         },
         {
           "license_expression": "blessing",
-          "detection_log": [
-            "not-combined"
-          ],
           "matches": [
             {
               "score": 100.0,
@@ -1281,16 +1137,15 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-              "matched_text": "** The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
+              "matched_text": "The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
             }
-          ]
+          ],
+          "identifier": "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d"
         },
         {
           "license_expression": "blessing",
-          "detection_log": [
-            "not-combined"
-          ],
           "matches": [
             {
               "score": 100.0,
@@ -1301,16 +1156,15 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-              "matched_text": "** The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
+              "matched_text": "The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
             }
-          ]
+          ],
+          "identifier": "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d"
         },
         {
           "license_expression": "blessing",
-          "detection_log": [
-            "not-combined"
-          ],
           "matches": [
             {
               "score": 100.0,
@@ -1321,16 +1175,15 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-              "matched_text": "** The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
+              "matched_text": "The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
             }
-          ]
+          ],
+          "identifier": "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d"
         },
         {
           "license_expression": "blessing",
-          "detection_log": [
-            "not-combined"
-          ],
           "matches": [
             {
               "score": 100.0,
@@ -1341,16 +1194,15 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-              "matched_text": "** The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
+              "matched_text": "The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
             }
-          ]
+          ],
+          "identifier": "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d"
         },
         {
           "license_expression": "blessing",
-          "detection_log": [
-            "not-combined"
-          ],
           "matches": [
             {
               "score": 100.0,
@@ -1361,16 +1213,15 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-              "matched_text": "** The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
+              "matched_text": "The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
             }
-          ]
+          ],
+          "identifier": "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d"
         },
         {
           "license_expression": "blessing",
-          "detection_log": [
-            "not-combined"
-          ],
           "matches": [
             {
               "score": 100.0,
@@ -1381,16 +1232,15 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-              "matched_text": "** The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
+              "matched_text": "The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
             }
-          ]
+          ],
+          "identifier": "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d"
         },
         {
           "license_expression": "blessing",
-          "detection_log": [
-            "not-combined"
-          ],
           "matches": [
             {
               "score": 100.0,
@@ -1401,16 +1251,15 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-              "matched_text": "** The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
+              "matched_text": "The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
             }
-          ]
+          ],
+          "identifier": "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d"
         },
         {
           "license_expression": "blessing",
-          "detection_log": [
-            "not-combined"
-          ],
           "matches": [
             {
               "score": 100.0,
@@ -1421,16 +1270,15 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-              "matched_text": "** The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
+              "matched_text": "The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
             }
-          ]
+          ],
+          "identifier": "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d"
         },
         {
           "license_expression": "blessing",
-          "detection_log": [
-            "not-combined"
-          ],
           "matches": [
             {
               "score": 100.0,
@@ -1441,16 +1289,15 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-              "matched_text": "** The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
+              "matched_text": "The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
             }
-          ]
+          ],
+          "identifier": "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d"
         },
         {
           "license_expression": "blessing",
-          "detection_log": [
-            "not-combined"
-          ],
           "matches": [
             {
               "score": 100.0,
@@ -1461,16 +1308,15 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-              "matched_text": "** The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
+              "matched_text": "The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
             }
-          ]
+          ],
+          "identifier": "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d"
         },
         {
           "license_expression": "blessing",
-          "detection_log": [
-            "not-combined"
-          ],
           "matches": [
             {
               "score": 100.0,
@@ -1481,16 +1327,15 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-              "matched_text": "** The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
+              "matched_text": "The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
             }
-          ]
+          ],
+          "identifier": "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d"
         },
         {
           "license_expression": "blessing",
-          "detection_log": [
-            "not-combined"
-          ],
           "matches": [
             {
               "score": 100.0,
@@ -1501,16 +1346,15 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-              "matched_text": "** The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
+              "matched_text": "The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
             }
-          ]
+          ],
+          "identifier": "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d"
         },
         {
           "license_expression": "blessing",
-          "detection_log": [
-            "not-combined"
-          ],
           "matches": [
             {
               "score": 100.0,
@@ -1521,16 +1365,15 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-              "matched_text": "** The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
+              "matched_text": "The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
             }
-          ]
+          ],
+          "identifier": "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d"
         },
         {
           "license_expression": "blessing",
-          "detection_log": [
-            "not-combined"
-          ],
           "matches": [
             {
               "score": 100.0,
@@ -1541,16 +1384,15 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-              "matched_text": "** The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
+              "matched_text": "The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
             }
-          ]
+          ],
+          "identifier": "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d"
         },
         {
           "license_expression": "blessing",
-          "detection_log": [
-            "not-combined"
-          ],
           "matches": [
             {
               "score": 100.0,
@@ -1561,16 +1403,15 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-              "matched_text": "** The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
+              "matched_text": "The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
             }
-          ]
+          ],
+          "identifier": "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d"
         },
         {
           "license_expression": "blessing",
-          "detection_log": [
-            "not-combined"
-          ],
           "matches": [
             {
               "score": 100.0,
@@ -1581,16 +1422,15 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-              "matched_text": "** The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
+              "matched_text": "The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
             }
-          ]
+          ],
+          "identifier": "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d"
         },
         {
           "license_expression": "blessing",
-          "detection_log": [
-            "not-combined"
-          ],
           "matches": [
             {
               "score": 100.0,
@@ -1601,16 +1441,15 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-              "matched_text": "** The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
+              "matched_text": "The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
             }
-          ]
+          ],
+          "identifier": "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d"
         },
         {
           "license_expression": "blessing",
-          "detection_log": [
-            "not-combined"
-          ],
           "matches": [
             {
               "score": 100.0,
@@ -1621,16 +1460,15 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-              "matched_text": "** The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
+              "matched_text": "The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
             }
-          ]
+          ],
+          "identifier": "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d"
         },
         {
           "license_expression": "blessing",
-          "detection_log": [
-            "not-combined"
-          ],
           "matches": [
             {
               "score": 100.0,
@@ -1641,16 +1479,15 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-              "matched_text": "** The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
+              "matched_text": "The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
             }
-          ]
+          ],
+          "identifier": "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d"
         },
         {
           "license_expression": "blessing",
-          "detection_log": [
-            "not-combined"
-          ],
           "matches": [
             {
               "score": 100.0,
@@ -1661,16 +1498,15 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-              "matched_text": "** The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
+              "matched_text": "The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
             }
-          ]
+          ],
+          "identifier": "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d"
         },
         {
           "license_expression": "blessing",
-          "detection_log": [
-            "not-combined"
-          ],
           "matches": [
             {
               "score": 100.0,
@@ -1681,16 +1517,15 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-              "matched_text": "** The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
+              "matched_text": "The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
             }
-          ]
+          ],
+          "identifier": "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d"
         },
         {
           "license_expression": "blessing",
-          "detection_log": [
-            "not-combined"
-          ],
           "matches": [
             {
               "score": 100.0,
@@ -1701,16 +1536,15 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-              "matched_text": "** The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
+              "matched_text": "The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
             }
-          ]
+          ],
+          "identifier": "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d"
         },
         {
           "license_expression": "blessing",
-          "detection_log": [
-            "not-combined"
-          ],
           "matches": [
             {
               "score": 100.0,
@@ -1721,16 +1555,15 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-              "matched_text": "** The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
+              "matched_text": "The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
             }
-          ]
+          ],
+          "identifier": "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d"
         },
         {
           "license_expression": "blessing",
-          "detection_log": [
-            "not-combined"
-          ],
           "matches": [
             {
               "score": 100.0,
@@ -1741,16 +1574,15 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-              "matched_text": "** The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
+              "matched_text": "The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
             }
-          ]
+          ],
+          "identifier": "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d"
         },
         {
           "license_expression": "blessing",
-          "detection_log": [
-            "not-combined"
-          ],
           "matches": [
             {
               "score": 100.0,
@@ -1761,16 +1593,15 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-              "matched_text": "** The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
+              "matched_text": "The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
             }
-          ]
+          ],
+          "identifier": "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d"
         },
         {
           "license_expression": "blessing",
-          "detection_log": [
-            "not-combined"
-          ],
           "matches": [
             {
               "score": 100.0,
@@ -1781,16 +1612,15 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-              "matched_text": "** The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
+              "matched_text": "The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
             }
-          ]
+          ],
+          "identifier": "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d"
         },
         {
           "license_expression": "blessing",
-          "detection_log": [
-            "not-combined"
-          ],
           "matches": [
             {
               "score": 100.0,
@@ -1801,16 +1631,15 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-              "matched_text": "** The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
+              "matched_text": "The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
             }
-          ]
+          ],
+          "identifier": "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d"
         },
         {
           "license_expression": "blessing",
-          "detection_log": [
-            "not-combined"
-          ],
           "matches": [
             {
               "score": 100.0,
@@ -1821,16 +1650,15 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-              "matched_text": "** The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
+              "matched_text": "The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
             }
-          ]
+          ],
+          "identifier": "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d"
         },
         {
           "license_expression": "blessing",
-          "detection_log": [
-            "not-combined"
-          ],
           "matches": [
             {
               "score": 100.0,
@@ -1841,16 +1669,15 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-              "matched_text": "** The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
+              "matched_text": "The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
             }
-          ]
+          ],
+          "identifier": "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d"
         },
         {
           "license_expression": "blessing",
-          "detection_log": [
-            "not-combined"
-          ],
           "matches": [
             {
               "score": 100.0,
@@ -1861,16 +1688,15 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-              "matched_text": "** The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
+              "matched_text": "The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
             }
-          ]
+          ],
+          "identifier": "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d"
         },
         {
           "license_expression": "blessing",
-          "detection_log": [
-            "not-combined"
-          ],
           "matches": [
             {
               "score": 100.0,
@@ -1881,16 +1707,15 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-              "matched_text": "** The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
+              "matched_text": "The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
             }
-          ]
+          ],
+          "identifier": "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d"
         },
         {
           "license_expression": "blessing",
-          "detection_log": [
-            "not-combined"
-          ],
           "matches": [
             {
               "score": 100.0,
@@ -1901,16 +1726,15 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-              "matched_text": "** The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
+              "matched_text": "The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
             }
-          ]
+          ],
+          "identifier": "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d"
         },
         {
           "license_expression": "blessing",
-          "detection_log": [
-            "not-combined"
-          ],
           "matches": [
             {
               "score": 100.0,
@@ -1921,16 +1745,15 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-              "matched_text": "** The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
+              "matched_text": "The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
             }
-          ]
+          ],
+          "identifier": "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d"
         },
         {
           "license_expression": "blessing",
-          "detection_log": [
-            "not-combined"
-          ],
           "matches": [
             {
               "score": 100.0,
@@ -1941,16 +1764,15 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-              "matched_text": "** The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
+              "matched_text": "The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
             }
-          ]
+          ],
+          "identifier": "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d"
         },
         {
           "license_expression": "blessing",
-          "detection_log": [
-            "not-combined"
-          ],
           "matches": [
             {
               "score": 100.0,
@@ -1961,16 +1783,15 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-              "matched_text": "** The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
+              "matched_text": "The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
             }
-          ]
+          ],
+          "identifier": "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d"
         },
         {
           "license_expression": "blessing",
-          "detection_log": [
-            "not-combined"
-          ],
           "matches": [
             {
               "score": 100.0,
@@ -1981,16 +1802,15 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-              "matched_text": "** The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
+              "matched_text": "The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
             }
-          ]
+          ],
+          "identifier": "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d"
         },
         {
           "license_expression": "blessing",
-          "detection_log": [
-            "not-combined"
-          ],
           "matches": [
             {
               "score": 100.0,
@@ -2001,16 +1821,15 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-              "matched_text": "** The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
+              "matched_text": "The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
             }
-          ]
+          ],
+          "identifier": "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d"
         },
         {
           "license_expression": "blessing",
-          "detection_log": [
-            "not-combined"
-          ],
           "matches": [
             {
               "score": 100.0,
@@ -2021,16 +1840,15 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-              "matched_text": "** The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
+              "matched_text": "The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
             }
-          ]
+          ],
+          "identifier": "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d"
         },
         {
           "license_expression": "blessing",
-          "detection_log": [
-            "not-combined"
-          ],
           "matches": [
             {
               "score": 100.0,
@@ -2041,16 +1859,15 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-              "matched_text": "** The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
+              "matched_text": "The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
             }
-          ]
+          ],
+          "identifier": "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d"
         },
         {
           "license_expression": "blessing",
-          "detection_log": [
-            "not-combined"
-          ],
           "matches": [
             {
               "score": 100.0,
@@ -2061,16 +1878,15 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-              "matched_text": "** The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
+              "matched_text": "The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
             }
-          ]
+          ],
+          "identifier": "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d"
         },
         {
           "license_expression": "blessing",
-          "detection_log": [
-            "not-combined"
-          ],
           "matches": [
             {
               "score": 100.0,
@@ -2081,16 +1897,15 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-              "matched_text": "** The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
+              "matched_text": "The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
             }
-          ]
+          ],
+          "identifier": "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d"
         },
         {
           "license_expression": "blessing",
-          "detection_log": [
-            "not-combined"
-          ],
           "matches": [
             {
               "score": 100.0,
@@ -2101,16 +1916,15 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-              "matched_text": "** The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
+              "matched_text": "The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
             }
-          ]
+          ],
+          "identifier": "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d"
         },
         {
           "license_expression": "blessing",
-          "detection_log": [
-            "not-combined"
-          ],
           "matches": [
             {
               "score": 100.0,
@@ -2121,16 +1935,15 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-              "matched_text": "** The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
+              "matched_text": "The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
             }
-          ]
+          ],
+          "identifier": "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d"
         },
         {
           "license_expression": "blessing",
-          "detection_log": [
-            "not-combined"
-          ],
           "matches": [
             {
               "score": 100.0,
@@ -2141,16 +1954,15 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-              "matched_text": "** The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
+              "matched_text": "The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
             }
-          ]
+          ],
+          "identifier": "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d"
         },
         {
           "license_expression": "blessing",
-          "detection_log": [
-            "not-combined"
-          ],
           "matches": [
             {
               "score": 100.0,
@@ -2161,16 +1973,15 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-              "matched_text": "** The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
+              "matched_text": "The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
             }
-          ]
+          ],
+          "identifier": "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d"
         },
         {
           "license_expression": "blessing",
-          "detection_log": [
-            "not-combined"
-          ],
           "matches": [
             {
               "score": 100.0,
@@ -2181,16 +1992,15 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-              "matched_text": "** The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
+              "matched_text": "The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
             }
-          ]
+          ],
+          "identifier": "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d"
         },
         {
           "license_expression": "blessing",
-          "detection_log": [
-            "not-combined"
-          ],
           "matches": [
             {
               "score": 100.0,
@@ -2201,16 +2011,15 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-              "matched_text": "** The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
+              "matched_text": "The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
             }
-          ]
+          ],
+          "identifier": "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d"
         },
         {
           "license_expression": "blessing",
-          "detection_log": [
-            "not-combined"
-          ],
           "matches": [
             {
               "score": 100.0,
@@ -2221,16 +2030,15 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-              "matched_text": "** The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
+              "matched_text": "The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
             }
-          ]
+          ],
+          "identifier": "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d"
         },
         {
           "license_expression": "blessing",
-          "detection_log": [
-            "not-combined"
-          ],
           "matches": [
             {
               "score": 100.0,
@@ -2241,16 +2049,15 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-              "matched_text": "** The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
+              "matched_text": "The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
             }
-          ]
+          ],
+          "identifier": "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d"
         },
         {
           "license_expression": "blessing",
-          "detection_log": [
-            "not-combined"
-          ],
           "matches": [
             {
               "score": 100.0,
@@ -2261,16 +2068,15 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-              "matched_text": "** The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
+              "matched_text": "The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
             }
-          ]
+          ],
+          "identifier": "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d"
         },
         {
           "license_expression": "blessing",
-          "detection_log": [
-            "not-combined"
-          ],
           "matches": [
             {
               "score": 100.0,
@@ -2281,16 +2087,15 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-              "matched_text": "** The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
+              "matched_text": "The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
             }
-          ]
+          ],
+          "identifier": "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d"
         },
         {
           "license_expression": "blessing",
-          "detection_log": [
-            "not-combined"
-          ],
           "matches": [
             {
               "score": 100.0,
@@ -2301,16 +2106,15 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-              "matched_text": "** The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
+              "matched_text": "The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
             }
-          ]
+          ],
+          "identifier": "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d"
         },
         {
           "license_expression": "blessing",
-          "detection_log": [
-            "not-combined"
-          ],
           "matches": [
             {
               "score": 100.0,
@@ -2321,16 +2125,15 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-              "matched_text": "** The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
+              "matched_text": "The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
             }
-          ]
+          ],
+          "identifier": "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d"
         },
         {
           "license_expression": "blessing",
-          "detection_log": [
-            "not-combined"
-          ],
           "matches": [
             {
               "score": 100.0,
@@ -2341,16 +2144,15 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-              "matched_text": "** The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
+              "matched_text": "The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
             }
-          ]
+          ],
+          "identifier": "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d"
         },
         {
           "license_expression": "blessing",
-          "detection_log": [
-            "not-combined"
-          ],
           "matches": [
             {
               "score": 100.0,
@@ -2361,16 +2163,15 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-              "matched_text": "** The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
+              "matched_text": "The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
             }
-          ]
+          ],
+          "identifier": "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d"
         },
         {
           "license_expression": "blessing",
-          "detection_log": [
-            "not-combined"
-          ],
           "matches": [
             {
               "score": 100.0,
@@ -2381,16 +2182,15 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-              "matched_text": "** The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
+              "matched_text": "The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
             }
-          ]
+          ],
+          "identifier": "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d"
         },
         {
           "license_expression": "blessing",
-          "detection_log": [
-            "not-combined"
-          ],
           "matches": [
             {
               "score": 100.0,
@@ -2401,16 +2201,15 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-              "matched_text": "** The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
+              "matched_text": "The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
             }
-          ]
+          ],
+          "identifier": "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d"
         },
         {
           "license_expression": "blessing",
-          "detection_log": [
-            "not-combined"
-          ],
           "matches": [
             {
               "score": 100.0,
@@ -2421,16 +2220,15 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-              "matched_text": "** The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
+              "matched_text": "The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
             }
-          ]
+          ],
+          "identifier": "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d"
         },
         {
           "license_expression": "blessing",
-          "detection_log": [
-            "not-combined"
-          ],
           "matches": [
             {
               "score": 100.0,
@@ -2441,16 +2239,15 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-              "matched_text": "** The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
+              "matched_text": "The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
             }
-          ]
+          ],
+          "identifier": "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d"
         },
         {
           "license_expression": "blessing",
-          "detection_log": [
-            "not-combined"
-          ],
           "matches": [
             {
               "score": 100.0,
@@ -2461,16 +2258,15 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-              "matched_text": "** The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
+              "matched_text": "The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
             }
-          ]
+          ],
+          "identifier": "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d"
         },
         {
           "license_expression": "blessing",
-          "detection_log": [
-            "not-combined"
-          ],
           "matches": [
             {
               "score": 100.0,
@@ -2481,16 +2277,15 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-              "matched_text": "** The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
+              "matched_text": "The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
             }
-          ]
+          ],
+          "identifier": "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d"
         },
         {
           "license_expression": "blessing",
-          "detection_log": [
-            "not-combined"
-          ],
           "matches": [
             {
               "score": 100.0,
@@ -2501,16 +2296,15 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-              "matched_text": "** The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
+              "matched_text": "The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
             }
-          ]
+          ],
+          "identifier": "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d"
         },
         {
           "license_expression": "blessing",
-          "detection_log": [
-            "not-combined"
-          ],
           "matches": [
             {
               "score": 100.0,
@@ -2521,16 +2315,15 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-              "matched_text": "** The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
+              "matched_text": "The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
             }
-          ]
+          ],
+          "identifier": "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d"
         },
         {
           "license_expression": "blessing",
-          "detection_log": [
-            "not-combined"
-          ],
           "matches": [
             {
               "score": 100.0,
@@ -2541,16 +2334,15 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-              "matched_text": "** The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
+              "matched_text": "The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
             }
-          ]
+          ],
+          "identifier": "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d"
         },
         {
           "license_expression": "blessing",
-          "detection_log": [
-            "not-combined"
-          ],
           "matches": [
             {
               "score": 100.0,
@@ -2561,16 +2353,15 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-              "matched_text": "** The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
+              "matched_text": "The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
             }
-          ]
+          ],
+          "identifier": "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d"
         },
         {
           "license_expression": "blessing",
-          "detection_log": [
-            "not-combined"
-          ],
           "matches": [
             {
               "score": 100.0,
@@ -2581,16 +2372,15 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-              "matched_text": "** The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
+              "matched_text": "The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
             }
-          ]
+          ],
+          "identifier": "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d"
         },
         {
           "license_expression": "blessing",
-          "detection_log": [
-            "not-combined"
-          ],
           "matches": [
             {
               "score": 100.0,
@@ -2601,16 +2391,15 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-              "matched_text": "** The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
+              "matched_text": "The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
             }
-          ]
+          ],
+          "identifier": "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d"
         },
         {
           "license_expression": "blessing",
-          "detection_log": [
-            "not-combined"
-          ],
           "matches": [
             {
               "score": 100.0,
@@ -2621,16 +2410,15 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-              "matched_text": "** The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
+              "matched_text": "The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
             }
-          ]
+          ],
+          "identifier": "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d"
         },
         {
           "license_expression": "blessing",
-          "detection_log": [
-            "not-combined"
-          ],
           "matches": [
             {
               "score": 100.0,
@@ -2641,16 +2429,15 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-              "matched_text": "** The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
+              "matched_text": "The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
             }
-          ]
+          ],
+          "identifier": "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d"
         },
         {
           "license_expression": "blessing",
-          "detection_log": [
-            "not-combined"
-          ],
           "matches": [
             {
               "score": 100.0,
@@ -2661,16 +2448,15 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-              "matched_text": "** The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
+              "matched_text": "The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
             }
-          ]
+          ],
+          "identifier": "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d"
         },
         {
           "license_expression": "blessing",
-          "detection_log": [
-            "not-combined"
-          ],
           "matches": [
             {
               "score": 100.0,
@@ -2681,16 +2467,15 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-              "matched_text": "** The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
+              "matched_text": "The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
             }
-          ]
+          ],
+          "identifier": "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d"
         },
         {
           "license_expression": "blessing",
-          "detection_log": [
-            "not-combined"
-          ],
           "matches": [
             {
               "score": 100.0,
@@ -2701,16 +2486,15 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-              "matched_text": "** The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
+              "matched_text": "The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
             }
-          ]
+          ],
+          "identifier": "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d"
         },
         {
           "license_expression": "blessing",
-          "detection_log": [
-            "not-combined"
-          ],
           "matches": [
             {
               "score": 100.0,
@@ -2721,16 +2505,15 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-              "matched_text": "** The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
+              "matched_text": "The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
             }
-          ]
+          ],
+          "identifier": "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d"
         },
         {
           "license_expression": "blessing",
-          "detection_log": [
-            "not-combined"
-          ],
           "matches": [
             {
               "score": 100.0,
@@ -2741,16 +2524,15 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-              "matched_text": "** The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
+              "matched_text": "The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
             }
-          ]
+          ],
+          "identifier": "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d"
         },
         {
           "license_expression": "blessing",
-          "detection_log": [
-            "not-combined"
-          ],
           "matches": [
             {
               "score": 100.0,
@@ -2761,16 +2543,15 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-              "matched_text": "** The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
+              "matched_text": "The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
             }
-          ]
+          ],
+          "identifier": "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d"
         },
         {
           "license_expression": "blessing",
-          "detection_log": [
-            "not-combined"
-          ],
           "matches": [
             {
               "score": 100.0,
@@ -2781,16 +2562,15 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-              "matched_text": "** The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
+              "matched_text": "The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
             }
-          ]
+          ],
+          "identifier": "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d"
         },
         {
           "license_expression": "blessing",
-          "detection_log": [
-            "not-combined"
-          ],
           "matches": [
             {
               "score": 100.0,
@@ -2801,16 +2581,15 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-              "matched_text": "** The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
+              "matched_text": "The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
             }
-          ]
+          ],
+          "identifier": "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d"
         },
         {
           "license_expression": "blessing",
-          "detection_log": [
-            "not-combined"
-          ],
           "matches": [
             {
               "score": 100.0,
@@ -2821,152 +2600,16 @@
               "matcher": "2-aho",
               "license_expression": "blessing",
               "rule_identifier": "blessing.LICENSE",
+              "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
-              "matched_text": "** The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
+              "matched_text": "The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
             }
-          ]
+          ],
+          "identifier": "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d"
         }
       ],
       "license_clues": [],
       "percentage_of_license_text": 36.67,
-      "for_license_detections": [
-        "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d",
-        "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d",
-        "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d",
-        "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d",
-        "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d",
-        "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d",
-        "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d",
-        "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d",
-        "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d",
-        "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d",
-        "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d",
-        "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d",
-        "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d",
-        "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d",
-        "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d",
-        "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d",
-        "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d",
-        "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d",
-        "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d",
-        "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d",
-        "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d",
-        "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d",
-        "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d",
-        "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d",
-        "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d",
-        "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d",
-        "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d",
-        "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d",
-        "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d",
-        "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d",
-        "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d",
-        "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d",
-        "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d",
-        "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d",
-        "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d",
-        "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d",
-        "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d",
-        "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d",
-        "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d",
-        "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d",
-        "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d",
-        "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d",
-        "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d",
-        "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d",
-        "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d",
-        "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d",
-        "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d",
-        "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d",
-        "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d",
-        "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d",
-        "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d",
-        "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d",
-        "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d",
-        "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d",
-        "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d",
-        "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d",
-        "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d",
-        "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d",
-        "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d",
-        "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d",
-        "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d",
-        "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d",
-        "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d",
-        "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d",
-        "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d",
-        "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d",
-        "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d",
-        "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d",
-        "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d",
-        "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d",
-        "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d",
-        "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d",
-        "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d",
-        "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d",
-        "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d",
-        "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d",
-        "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d",
-        "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d",
-        "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d",
-        "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d",
-        "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d",
-        "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d",
-        "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d",
-        "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d",
-        "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d",
-        "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d",
-        "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d",
-        "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d",
-        "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d",
-        "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d",
-        "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d",
-        "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d",
-        "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d",
-        "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d",
-        "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d",
-        "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d",
-        "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d",
-        "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d",
-        "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d",
-        "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d",
-        "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d",
-        "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d",
-        "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d",
-        "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d",
-        "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d",
-        "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d",
-        "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d",
-        "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d",
-        "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d",
-        "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d",
-        "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d",
-        "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d",
-        "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d",
-        "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d",
-        "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d",
-        "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d",
-        "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d",
-        "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d",
-        "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d",
-        "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d",
-        "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d",
-        "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d",
-        "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d",
-        "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d",
-        "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d",
-        "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d",
-        "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d",
-        "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d",
-        "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d",
-        "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d",
-        "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d",
-        "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d",
-        "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d",
-        "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d",
-        "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d",
-        "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d"
-      ],
       "scan_errors": []
     }
   ]

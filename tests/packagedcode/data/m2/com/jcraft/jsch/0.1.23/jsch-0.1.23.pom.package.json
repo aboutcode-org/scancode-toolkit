@@ -34,9 +34,6 @@
   "license_detections": [
     {
       "license_expression": "bsd-new",
-      "detection_log": [
-        "not-combined"
-      ],
       "matches": [
         {
           "score": 99.0,
@@ -47,16 +44,15 @@
           "matcher": "1-hash",
           "license_expression": "bsd-new",
           "rule_identifier": "bsd-new_89.RULE",
+          "rule_relevance": 99,
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_89.RULE",
           "matched_text": "license BSD"
         }
-      ]
+      ],
+      "identifier": "bsd_new-261898a0-0118-87c4-7092-14e4ff134882"
     },
     {
       "license_expression": "bsd-new",
-      "detection_log": [
-        "not-combined"
-      ],
       "matches": [
         {
           "score": 100.0,
@@ -67,16 +63,15 @@
           "matcher": "1-hash",
           "license_expression": "bsd-new",
           "rule_identifier": "bsd-new_jcraft_4.RULE",
+          "rule_relevance": 100,
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_jcraft_4.RULE",
           "matched_text": "http://www.jcraft.com/jsch/LICENSE.txt"
         }
-      ]
+      ],
+      "identifier": "bsd_new-9b2ba589-3ced-488c-3ecb-90b41e97c23f"
     },
     {
       "license_expression": "bsd-new",
-      "detection_log": [
-        "not-combined"
-      ],
       "matches": [
         {
           "score": 100.0,
@@ -87,10 +82,12 @@
           "matcher": "1-hash",
           "license_expression": "bsd-new",
           "rule_identifier": "bsd-new_jcraft_3.RULE",
+          "rule_relevance": 100,
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_jcraft_3.RULE",
           "matched_text": "License information from http://www.jcraft.com/jsch"
         }
-      ]
+      ],
+      "identifier": "bsd_new-19333726-afcc-ac06-4a44-9207b316b68e"
     }
   ],
   "other_license_expression": null,

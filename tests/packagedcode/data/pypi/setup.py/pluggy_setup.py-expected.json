@@ -35,9 +35,6 @@
     "license_detections": [
       {
         "license_expression": "mit",
-        "detection_log": [
-          "not-combined"
-        ],
         "matches": [
           {
             "score": 100.0,
@@ -48,10 +45,12 @@
             "matcher": "1-hash",
             "license_expression": "mit",
             "rule_identifier": "mit_14.RULE",
+            "rule_relevance": 100,
             "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_14.RULE",
             "matched_text": "MIT license"
           }
-        ]
+        ],
+        "identifier": "mit-9967e727-165e-9bb5-f090-7de5e47a3929"
       }
     ],
     "other_license_expression": null,

@@ -2,8 +2,6 @@
   "packages": [],
   "dependencies": [],
   "license_detections": [],
-  "license_references": [],
-  "license_rule_references": [],
   "files": [
     {
       "path": "simple",
@@ -31,7 +29,6 @@
       "license_detections": [],
       "license_clues": [],
       "percentage_of_license_text": 0,
-      "for_license_detections": [],
       "copyrights": [],
       "holders": [],
       "authors": [],
@@ -66,7 +63,6 @@
       "license_detections": [],
       "license_clues": [],
       "percentage_of_license_text": 0,
-      "for_license_detections": [],
       "copyrights": [
         {
           "copyright": "Copyright (c) 2000 ACME, Inc.",

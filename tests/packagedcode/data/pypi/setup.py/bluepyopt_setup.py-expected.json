@@ -45,9 +45,6 @@
     "license_detections": [
       {
         "license_expression": "lgpl-3.0",
-        "detection_log": [
-          "not-combined"
-        ],
         "matches": [
           {
             "score": 100.0,
@@ -58,16 +55,15 @@
             "matcher": "1-hash",
             "license_expression": "lgpl-3.0",
             "rule_identifier": "lgpl-3.0_29.RULE",
+            "rule_relevance": 100,
             "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-3.0_29.RULE",
             "matched_text": "LGPLv3"
           }
-        ]
+        ],
+        "identifier": "lgpl_3_0-38174920-e8ed-7bda-41ec-94df7380b7d5"
       },
       {
         "license_expression": "lgpl-3.0",
-        "detection_log": [
-          "not-combined"
-        ],
         "matches": [
           {
             "score": 100.0,
@@ -78,10 +74,12 @@
             "matcher": "1-hash",
             "license_expression": "lgpl-3.0",
             "rule_identifier": "pypi_gnu_lesser_general_public_license_v3.RULE",
+            "rule_relevance": 100,
             "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/pypi_gnu_lesser_general_public_license_v3.RULE",
             "matched_text": "['License :: OSI Approved :: GNU Lesser General Public License v3 (LGPLv3)']"
           }
-        ]
+        ],
+        "identifier": "lgpl_3_0-272571eb-5e68-95b6-ddb0-71de2d8df321"
       }
     ],
     "other_license_expression": null,

@@ -19,6 +19,7 @@ from licensedcode.detection import DetectionCategory
 from licensedcode.detection import group_matches
 from licensedcode.detection import get_detected_license_expression
 from licensedcode.detection import get_matches_from_detection_mappings
+from licensedcode.detection import get_new_identifier_from_detections
 from licensedcode.detection import get_unknown_license_detection
 from licensedcode.detection import get_referenced_filenames
 from licensedcode.detection import find_referenced_resource
@@ -132,6 +133,10 @@ def add_referenced_license_matches_for_package(resource, codebase, no_licenses):
             )
             license_detection_mapping["license_expression"] = str(license_expression)
             license_detection_mapping["detection_log"] = detection_log
+            license_detection_mapping["identifier"] = get_new_identifier_from_detections(
+                initial_detection=license_detection_mapping,
+                detections_added=referenced_license_detections,
+            )
 
         if modified:
             license_expressions = [
@@ -184,6 +189,7 @@ def add_referenced_license_detection_from_package(resource, codebase, no_license
         )
         detection_modified = False
         license_match_mappings = license_detection_mapping["matches"]
+        detections_added = []
         referenced_filenames = get_referenced_filenames(license_matches=license_detection_object.matches)
         if not referenced_filenames:
             continue
@@ -214,6 +220,7 @@ def add_referenced_license_detection_from_package(resource, codebase, no_license
                 modified = True
                 detection_modified = True
                 license_match_mappings.extend(sibling_detection["matches"])
+                detections_added.append(sibling_detection)
                 analysis = DetectionCategory.UNKNOWN_REFERENCE_IN_FILE_TO_NONEXISTENT_PACKAGE.value
 
         else:
@@ -229,6 +236,7 @@ def add_referenced_license_detection_from_package(resource, codebase, no_license
                     modified = True
                     detection_modified = True
                     license_match_mappings.extend(pkg_detection["matches"])
+                    detections_added.append(pkg_detection)
                     analysis = DetectionCategory.UNKNOWN_REFERENCE_IN_FILE_TO_PACKAGE.value
 
         if not detection_modified:
@@ -241,6 +249,10 @@ def add_referenced_license_detection_from_package(resource, codebase, no_license
         )
         license_detection_mapping["license_expression"] = str(license_expression)
         license_detection_mapping["detection_log"] = detection_log
+        license_detection_mapping["identifier"] = get_new_identifier_from_detections(
+            initial_detection=license_detection_mapping,
+            detections_added=detections_added,
+        )
 
     if modified:
 

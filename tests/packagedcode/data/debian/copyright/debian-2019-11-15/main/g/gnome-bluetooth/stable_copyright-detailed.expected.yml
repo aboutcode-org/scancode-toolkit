@@ -15,8 +15,6 @@ other_license_expression_spdx: (LGPL-2.1-or-later AND LGPL-2.1-or-later) AND (GP
 license_detections: []
 other_license_detections:
   - license_expression: gpl-2.0-plus
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 27
@@ -26,6 +24,7 @@ other_license_detections:
         matcher: 1-hash
         license_expression: gpl-2.0-plus
         rule_identifier: gpl-2.0-plus_22.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_22.RULE
         matched_text: 'License: gpl-2+'
       - score: '100.0'
@@ -36,6 +35,7 @@ other_license_detections:
         matcher: 1-hash
         license_expression: gpl-2.0-plus
         rule_identifier: gpl-2.0-plus_839.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_839.RULE
         matched_text: |
           This package is free software; you can redistribute it and/or modify
@@ -53,9 +53,8 @@ other_license_detections:
 
           On Debian systems, the complete text of the GNU General
           Public License version 2 can be found in "/usr/share/common-licenses/GPL-2".
+    identifier: gpl_2_0_plus-cc17af11-ba60-7b3d-40d0-91bc262b80f8
   - license_expression: lgpl-2.1-plus
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 44
@@ -65,6 +64,7 @@ other_license_detections:
         matcher: 1-hash
         license_expression: lgpl-2.1-plus
         rule_identifier: lgpl-2.1-plus_108.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_108.RULE
         matched_text: 'License: lgpl-2.1+'
       - score: '100.0'
@@ -75,6 +75,7 @@ other_license_detections:
         matcher: 1-hash
         license_expression: lgpl-2.1-plus
         rule_identifier: lgpl-2.1-plus_416.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_416.RULE
         matched_text: |
           This package is free software; you can redistribute it and/or
@@ -92,6 +93,7 @@ other_license_detections:
 
           On Debian systems, the complete text of the GNU Lesser General
           Public License can be found in "/usr/share/common-licenses/LGPL-2.1".
+    identifier: lgpl_2_1_plus-d19a42f1-3f2d-2e87-c22f-450b554499d5
 copyright: |
   2006-2013 Bastien Nocera <hadess@hadess.net>
   2010 Giovanni Campagna <scampa.giovanni@gmail.com>

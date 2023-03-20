@@ -37,9 +37,6 @@
     "license_detections": [
       {
         "license_expression": "gpl-2.0",
-        "detection_log": [
-          "not-combined"
-        ],
         "matches": [
           {
             "score": 100.0,
@@ -50,10 +47,12 @@
             "matcher": "1-hash",
             "license_expression": "gpl-2.0",
             "rule_identifier": "spdx_license_id_gpl-2.0-only_for_gpl-2.0.RULE",
+            "rule_relevance": 100,
             "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/spdx_license_id_gpl-2.0-only_for_gpl-2.0.RULE",
             "matched_text": "gpl-2.0-only"
           }
-        ]
+        ],
+        "identifier": "gpl_2_0-7541c21a-b2c9-c697-2794-bf0cfcdf32f9"
       }
     ],
     "other_license_expression": null,

@@ -5,8 +5,6 @@ other_license_expression:
 other_license_expression_spdx:
 license_detections:
   - license_expression: mongodb-sspl-1.0
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 18
@@ -16,6 +14,7 @@ license_detections:
         matcher: 2-aho
         license_expression: mongodb-sspl-1.0
         rule_identifier: mongodb-sspl-1.0_9.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mongodb-sspl-1.0_9.RULE
         matched_text: |
           License:
@@ -24,6 +23,7 @@ license_detections:
 
           The Debian packaging is (C) 2009, Kristina Chodorow <kristina@10gen.com> and
           is licensed under the SSPL, see `https://www.mongodb.com/licensing/server-side-public-license'.
+    identifier: mongodb_sspl_1_0-ff3850d1-b49e-4006-7913-293211bbd8a6
 other_license_detections: []
 copyright: |
   Copyright 2009 10gen

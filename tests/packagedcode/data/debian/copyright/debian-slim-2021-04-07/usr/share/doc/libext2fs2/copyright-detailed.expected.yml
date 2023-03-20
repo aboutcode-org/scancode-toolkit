@@ -7,8 +7,6 @@ other_license_expression:
 other_license_expression_spdx:
 license_detections:
   - license_expression: gpl-2.0 AND lgpl-2.0 AND bsd-new AND mit-old-style-no-advert
-    detection_log:
-      - not-combined
     matches:
       - score: '99.02'
         start_line: 17
@@ -18,6 +16,7 @@ license_detections:
         matcher: 3-seq
         license_expression: gpl-2.0 AND lgpl-2.0 AND bsd-new AND mit-old-style-no-advert
         rule_identifier: gpl-2.0_and_lgpl-2.0_and_bsd-new_and_mit_1.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0_and_lgpl-2.0_and_bsd-new_and_mit_1.RULE
         matched_text: "This package, the EXT2 filesystem utilities, are made available under\n\
           the GNU General Public License version 2, with the exception of the\nlib/ext2fs and\
@@ -28,9 +27,8 @@ license_detections:
           2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008 by Theodore Ts'o\n\nOn Debian GNU systems,\
           \ the complete text of the GNU General Public\nLicense can be found in `/usr/share/common-licenses/GPL-2'.\
           \  The\ncomplete text of the GNU Library General Public License can be found\nin '/usr/share/common-licenses/LGPL-2'."
+    identifier: gpl_2_0_and_lgpl_2_0_and_bsd_new_and_mit_old_style_no_advert-aed55561-0504-0265-5986-832cc7f7bbf2
   - license_expression: ntp-0 AND bsd-new
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 38
@@ -40,6 +38,7 @@ license_detections:
         matcher: 2-aho
         license_expression: ntp-0
         rule_identifier: ntp-0.LICENSE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/ntp-0.LICENSE
         matched_text: |
           Permission to use, copy, modify, and distribute this software and
@@ -58,6 +57,7 @@ license_detections:
         matcher: 2-aho
         license_expression: bsd-new
         rule_identifier: bsd-new_117.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_117.RULE
         matched_text: |
           Redistribution and use in source and binary forms, with or without
@@ -85,6 +85,7 @@ license_detections:
              (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE
              USE OF THIS SOFTWARE, EVEN IF NOT ADVISED OF THE POSSIBILITY OF SUCH
              DAMAGE.
+    identifier: ntp_0_and_bsd_new-3e70b37e-1d4e-a210-b9e4-4e4dae842319
 other_license_detections: []
 copyright: |
   Copyright (c) 2003-2007 Theodore Ts'o <tytso@mit.edu>

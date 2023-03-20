@@ -55,9 +55,6 @@
     "license_detections": [
       {
         "license_expression": "isc",
-        "detection_log": [
-          "not-combined"
-        ],
         "matches": [
           {
             "score": 99.0,
@@ -68,16 +65,15 @@
             "matcher": "1-hash",
             "license_expression": "isc",
             "rule_identifier": "isc_22.RULE",
+            "rule_relevance": 99,
             "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/isc_22.RULE",
             "matched_text": "ISC license"
           }
-        ]
+        ],
+        "identifier": "isc-d21e4a8e-7cce-593b-6804-3c0c88f62348"
       },
       {
         "license_expression": "isc",
-        "detection_log": [
-          "not-combined"
-        ],
         "matches": [
           {
             "score": 100.0,
@@ -88,10 +84,12 @@
             "matcher": "1-hash",
             "license_expression": "isc",
             "rule_identifier": "pypi_isc_license.RULE",
+            "rule_relevance": 100,
             "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/pypi_isc_license.RULE",
             "matched_text": "['License :: OSI Approved :: ISC License (ISCL)']"
           }
-        ]
+        ],
+        "identifier": "isc-bfc709ed-b0f3-9d73-8265-40c95f813b22"
       }
     ],
     "other_license_expression": null,

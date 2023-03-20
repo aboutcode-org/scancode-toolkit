@@ -240,10 +240,7 @@ def add_license_from_file(resource, codebase, no_licenses):
         if not license_detections_pkg:
             pkg["license_detections"] = license_detections_file.copy()
             for detection in pkg["license_detections"]:
-
-                if detection["detection_log"] == [DetectionRule.NOT_COMBINED.value]:
-                    detection["detection_log"] = [DetectionRule.PACKAGE_ADD_FROM_FILE.value]
-                else:
+                if "detection_log" in detection:
                     detection["detection_log"].append(DetectionRule.PACKAGE_ADD_FROM_FILE.value)
 
             license_expression = get_license_expression_from_detection_mappings(

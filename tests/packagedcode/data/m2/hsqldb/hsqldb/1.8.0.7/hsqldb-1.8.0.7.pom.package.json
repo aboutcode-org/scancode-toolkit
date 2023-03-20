@@ -26,9 +26,6 @@
   "license_detections": [
     {
       "license_expression": "bsd-new",
-      "detection_log": [
-        "not-combined"
-      ],
       "matches": [
         {
           "score": 100.0,
@@ -39,16 +36,15 @@
           "matcher": "1-hash",
           "license_expression": "bsd-new",
           "rule_identifier": "bsd-new_363.RULE",
+          "rule_relevance": 100,
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_363.RULE",
           "matched_text": "HSQLDB License"
         }
-      ]
+      ],
+      "identifier": "bsd_new-a46e6f28-7101-60ae-3c6a-b57aa23264e5"
     },
     {
       "license_expression": "bsd-new",
-      "detection_log": [
-        "not-combined"
-      ],
       "matches": [
         {
           "score": 100.0,
@@ -59,10 +55,12 @@
           "matcher": "1-hash",
           "license_expression": "bsd-new",
           "rule_identifier": "bsd-new_82.RULE",
+          "rule_relevance": 100,
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_82.RULE",
           "matched_text": "http://hsqldb.org/web/hsqlLicense.html"
         }
-      ]
+      ],
+      "identifier": "bsd_new-f1ebd3aa-2540-19a3-338e-6a998e354d0e"
     }
   ],
   "other_license_expression": null,

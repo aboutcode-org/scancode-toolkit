@@ -33,8 +33,6 @@ other_license_expression:
 other_license_expression_spdx:
 license_detections:
   - license_expression: lgpl-2.1-plus
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 17
@@ -44,6 +42,7 @@ license_detections:
         matcher: 2-aho
         license_expression: lgpl-2.1-plus
         rule_identifier: lgpl-2.1-plus_108.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_108.RULE
         matched_text: 'License: LGPL-2.1+'
       - score: '100.0'
@@ -54,6 +53,7 @@ license_detections:
         matcher: 2-aho
         license_expression: lgpl-2.1-plus
         rule_identifier: lgpl-2.1-plus_267.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_267.RULE
         matched_text: |
           The upstream license clarifies pretty well that the sources of pulseaudio are
@@ -80,13 +80,13 @@ license_detections:
         matcher: 2-aho
         license_expression: lgpl-2.1-plus
         rule_identifier: lgpl-2.1-plus_232.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_232.RULE
         matched_text: |
           On Debian systems, the complete text of the LGPL-2.1 can be found in
             /usr/share/common-licenses/LGPL-2.1.
+    identifier: lgpl_2_1_plus-bcd17595-f3dd-a7e4-38d6-be996ed9d675
   - license_expression: sun-source
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 44
@@ -96,6 +96,7 @@ license_detections:
         matcher: 2-aho
         license_expression: sun-source
         rule_identifier: sun-source_1.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/sun-source_1.RULE
         matched_text: |
           This source code is a product of Sun Microsystems, Inc. and is provided
@@ -117,9 +118,8 @@ license_detections:
            In no event will Sun Microsystems, Inc. be liable for any lost revenue
            or profits or other special, indirect and consequential damages, even if
            Sun has been advised of the possibility of such damages.
+    identifier: sun_source-02813787-7782-d45a-b30b-598566f2f032
   - license_expression: libpbm
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 68
@@ -129,6 +129,7 @@ license_detections:
         matcher: 2-aho
         license_expression: libpbm
         rule_identifier: libpbm.LICENSE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/libpbm.LICENSE
         matched_text: |
           Permission to use, copy, modify, and distribute this software and its
@@ -137,9 +138,8 @@ license_detections:
            copyright notice and this permission notice appear in supporting
            documentation.  This software is provided "as is" without express or
            implied warranty.
+    identifier: libpbm-285aa0f9-c4e9-26cb-7e01-29594fbc0842
   - license_expression: lgpl-2.1-plus
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 79
@@ -149,14 +149,14 @@ license_detections:
         matcher: 2-aho
         license_expression: lgpl-2.1-plus
         rule_identifier: lgpl-2.1-plus_231.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_231.RULE
         matched_text: |
           License: LGPL-2.1+
            On Debian systems, the complete text of the LGPL-2.1 can be found in
            /usr/share/common-licenses/LGPL-2.1.
+    identifier: lgpl_2_1_plus-e3503782-dabb-a2b9-bb59-14bddddca6ec
   - license_expression: lgpl-2.1-plus
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 87
@@ -166,14 +166,14 @@ license_detections:
         matcher: 2-aho
         license_expression: lgpl-2.1-plus
         rule_identifier: lgpl-2.1-plus_231.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_231.RULE
         matched_text: |
           License: LGPL-2.1+
            On Debian systems, the complete text of the LGPL-2.1 can be found in
            /usr/share/common-licenses/LGPL-2.1.
+    identifier: lgpl_2_1_plus-e3503782-dabb-a2b9-bb59-14bddddca6ec
   - license_expression: lgpl-2.1-plus
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 94
@@ -183,14 +183,14 @@ license_detections:
         matcher: 2-aho
         license_expression: lgpl-2.1-plus
         rule_identifier: lgpl-2.1-plus_231.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_231.RULE
         matched_text: |
           License: LGPL-2.1+
            On Debian systems, the complete text of the LGPL-2.1 can be found in
            /usr/share/common-licenses/LGPL-2.1.
+    identifier: lgpl_2_1_plus-e3503782-dabb-a2b9-bb59-14bddddca6ec
   - license_expression: lgpl-2.1-plus
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 102
@@ -200,14 +200,14 @@ license_detections:
         matcher: 2-aho
         license_expression: lgpl-2.1-plus
         rule_identifier: lgpl-2.1-plus_266.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_266.RULE
         matched_text: |
           License: LGPL-2.1+
            On Debian systems, the complete text of the LGPL-2.1 can be found in
            /usr/share/common-licenses/LGPL-2.
+    identifier: lgpl_2_1_plus-71729f6f-ef57-95b2-a0e3-46c5dbedfe44
   - license_expression: gpl-2.0-plus
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 111
@@ -217,14 +217,14 @@ license_detections:
         matcher: 2-aho
         license_expression: gpl-2.0-plus
         rule_identifier: gpl-2.0-plus_711.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_711.RULE
         matched_text: |
           License: GPL-2+
            On Debian systems, the complete text of the GPL-2 can be found in
            /usr/share/common-licenses/GPL-2.
+    identifier: gpl_2_0_plus-3032bd69-4dfa-eb9e-e226-72ce6f830857
   - license_expression: lgpl-2.1-plus
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 120
@@ -234,14 +234,14 @@ license_detections:
         matcher: 2-aho
         license_expression: lgpl-2.1-plus
         rule_identifier: lgpl-2.1-plus_231.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_231.RULE
         matched_text: |
           License: LGPL-2.1+
            On Debian systems, the complete text of the LGPL-2.1 can be found in
            /usr/share/common-licenses/LGPL-2.1.
+    identifier: lgpl_2_1_plus-e3503782-dabb-a2b9-bb59-14bddddca6ec
   - license_expression: lgpl-2.1-plus
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 128
@@ -251,14 +251,14 @@ license_detections:
         matcher: 2-aho
         license_expression: lgpl-2.1-plus
         rule_identifier: lgpl-2.1-plus_231.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_231.RULE
         matched_text: |
           License: LGPL-2.1+
            On Debian systems, the complete text of the LGPL-2.1 can be found in
            /usr/share/common-licenses/LGPL-2.1.
+    identifier: lgpl_2_1_plus-e3503782-dabb-a2b9-bb59-14bddddca6ec
   - license_expression: lgpl-2.1-plus
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 137
@@ -268,14 +268,14 @@ license_detections:
         matcher: 2-aho
         license_expression: lgpl-2.1-plus
         rule_identifier: lgpl-2.1-plus_231.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_231.RULE
         matched_text: |
           License: LGPL-2.1+
            On Debian systems, the complete text of the LGPL-2.1 can be found in
            /usr/share/common-licenses/LGPL-2.1.
+    identifier: lgpl_2_1_plus-e3503782-dabb-a2b9-bb59-14bddddca6ec
   - license_expression: lgpl-2.1-plus
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 144
@@ -285,14 +285,14 @@ license_detections:
         matcher: 2-aho
         license_expression: lgpl-2.1-plus
         rule_identifier: lgpl-2.1-plus_231.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_231.RULE
         matched_text: |
           License: LGPL-2.1+
            On Debian systems, the complete text of the LGPL-2.1 can be found in
            /usr/share/common-licenses/LGPL-2.1.
+    identifier: lgpl_2_1_plus-e3503782-dabb-a2b9-bb59-14bddddca6ec
   - license_expression: adrian
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 152
@@ -302,6 +302,7 @@ license_detections:
         matcher: 2-aho
         license_expression: adrian
         rule_identifier: adrian.LICENSE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/adrian.LICENSE
         matched_text: |
           You are allowed to use this source code in any open source or closed
@@ -312,9 +313,8 @@ license_detections:
            source code or the algorithms behind the source code as your
            intellectual property. This source code is free of royalty and comes
            with no warranty.
+    identifier: adrian-0f705124-8a69-aa6e-bdc8-c0c1997d93ed
   - license_expression: lgpl-2.1-plus
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 164
@@ -324,14 +324,14 @@ license_detections:
         matcher: 2-aho
         license_expression: lgpl-2.1-plus
         rule_identifier: lgpl-2.1-plus_231.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_231.RULE
         matched_text: |
           License: LGPL-2.1+
            On Debian systems, the complete text of the LGPL-2.1 can be found in
            /usr/share/common-licenses/LGPL-2.1.
+    identifier: lgpl_2_1_plus-e3503782-dabb-a2b9-bb59-14bddddca6ec
   - license_expression: lgpl-2.1-plus
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 171
@@ -341,14 +341,14 @@ license_detections:
         matcher: 2-aho
         license_expression: lgpl-2.1-plus
         rule_identifier: lgpl-2.1-plus_231.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_231.RULE
         matched_text: |
           License: LGPL-2.1+
            On Debian systems, the complete text of the LGPL-2.1 can be found in
            /usr/share/common-licenses/LGPL-2.1.
+    identifier: lgpl_2_1_plus-e3503782-dabb-a2b9-bb59-14bddddca6ec
   - license_expression: lgpl-2.1-plus
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 179
@@ -358,14 +358,14 @@ license_detections:
         matcher: 2-aho
         license_expression: lgpl-2.1-plus
         rule_identifier: lgpl-2.1-plus_231.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_231.RULE
         matched_text: |
           License: LGPL-2.1+
            On Debian systems, the complete text of the LGPL-2.1 can be found in
            /usr/share/common-licenses/LGPL-2.1.
+    identifier: lgpl_2_1_plus-e3503782-dabb-a2b9-bb59-14bddddca6ec
   - license_expression: lgpl-2.1-plus
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 187
@@ -375,14 +375,14 @@ license_detections:
         matcher: 2-aho
         license_expression: lgpl-2.1-plus
         rule_identifier: lgpl-2.1-plus_231.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_231.RULE
         matched_text: |
           License: LGPL-2.1+
            On Debian systems, the complete text of the LGPL-2.1 can be found in
            /usr/share/common-licenses/LGPL-2.1.
+    identifier: lgpl_2_1_plus-e3503782-dabb-a2b9-bb59-14bddddca6ec
   - license_expression: lgpl-2.1-plus
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: '195'
@@ -392,14 +392,14 @@ license_detections:
         matcher: 2-aho
         license_expression: lgpl-2.1-plus
         rule_identifier: lgpl-2.1-plus_231.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_231.RULE
         matched_text: |
           License: LGPL-2.1+
            On Debian systems, the complete text of the LGPL-2.1 can be found in
            /usr/share/common-licenses/LGPL-2.1.
+    identifier: lgpl_2_1_plus-e3503782-dabb-a2b9-bb59-14bddddca6ec
   - license_expression: lgpl-2.1-plus
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 203
@@ -409,14 +409,14 @@ license_detections:
         matcher: 2-aho
         license_expression: lgpl-2.1-plus
         rule_identifier: lgpl-2.1-plus_231.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_231.RULE
         matched_text: |
           License: LGPL-2.1+
            On Debian systems, the complete text of the LGPL-2.1 can be found in
            /usr/share/common-licenses/LGPL-2.1.
+    identifier: lgpl_2_1_plus-e3503782-dabb-a2b9-bb59-14bddddca6ec
   - license_expression: lgpl-2.1-plus
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 211
@@ -426,14 +426,14 @@ license_detections:
         matcher: 2-aho
         license_expression: lgpl-2.1-plus
         rule_identifier: lgpl-2.1-plus_231.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_231.RULE
         matched_text: |
           License: LGPL-2.1+
            On Debian systems, the complete text of the LGPL-2.1 can be found in
            /usr/share/common-licenses/LGPL-2.1.
+    identifier: lgpl_2_1_plus-e3503782-dabb-a2b9-bb59-14bddddca6ec
   - license_expression: lgpl-2.1-plus
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 219
@@ -443,14 +443,14 @@ license_detections:
         matcher: 2-aho
         license_expression: lgpl-2.1-plus
         rule_identifier: lgpl-2.1-plus_231.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_231.RULE
         matched_text: |
           License: LGPL-2.1+
            On Debian systems, the complete text of the LGPL-2.1 can be found in
            /usr/share/common-licenses/LGPL-2.1.
+    identifier: lgpl_2_1_plus-e3503782-dabb-a2b9-bb59-14bddddca6ec
   - license_expression: lgpl-2.1-plus
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 226
@@ -460,14 +460,14 @@ license_detections:
         matcher: 2-aho
         license_expression: lgpl-2.1-plus
         rule_identifier: lgpl-2.1-plus_231.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_231.RULE
         matched_text: |
           License: LGPL-2.1+
            On Debian systems, the complete text of the LGPL-2.1 can be found in
            /usr/share/common-licenses/LGPL-2.1.
+    identifier: lgpl_2_1_plus-e3503782-dabb-a2b9-bb59-14bddddca6ec
   - license_expression: lgpl-2.1-plus
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 235
@@ -477,14 +477,14 @@ license_detections:
         matcher: 2-aho
         license_expression: lgpl-2.1-plus
         rule_identifier: lgpl-2.1-plus_231.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_231.RULE
         matched_text: |
           License: LGPL-2.1+
            On Debian systems, the complete text of the LGPL-2.1 can be found in
            /usr/share/common-licenses/LGPL-2.1.
+    identifier: lgpl_2_1_plus-e3503782-dabb-a2b9-bb59-14bddddca6ec
   - license_expression: lgpl-2.1-plus
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 243
@@ -494,14 +494,14 @@ license_detections:
         matcher: 2-aho
         license_expression: lgpl-2.1-plus
         rule_identifier: lgpl-2.1-plus_231.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_231.RULE
         matched_text: |
           License: LGPL-2.1+
            On Debian systems, the complete text of the LGPL-2.1 can be found in
            /usr/share/common-licenses/LGPL-2.1.
+    identifier: lgpl_2_1_plus-e3503782-dabb-a2b9-bb59-14bddddca6ec
   - license_expression: lgpl-2.1-plus
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 251
@@ -511,14 +511,14 @@ license_detections:
         matcher: 2-aho
         license_expression: lgpl-2.1-plus
         rule_identifier: lgpl-2.1-plus_231.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_231.RULE
         matched_text: |
           License: LGPL-2.1+
            On Debian systems, the complete text of the LGPL-2.1 can be found in
            /usr/share/common-licenses/LGPL-2.1.
+    identifier: lgpl_2_1_plus-e3503782-dabb-a2b9-bb59-14bddddca6ec
   - license_expression: lgpl-2.1-plus
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 259
@@ -528,14 +528,14 @@ license_detections:
         matcher: 2-aho
         license_expression: lgpl-2.1-plus
         rule_identifier: lgpl-2.1-plus_231.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_231.RULE
         matched_text: |
           License: LGPL-2.1+
            On Debian systems, the complete text of the LGPL-2.1 can be found in
            /usr/share/common-licenses/LGPL-2.1.
+    identifier: lgpl_2_1_plus-e3503782-dabb-a2b9-bb59-14bddddca6ec
   - license_expression: lgpl-2.1-plus
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 266
@@ -545,14 +545,14 @@ license_detections:
         matcher: 2-aho
         license_expression: lgpl-2.1-plus
         rule_identifier: lgpl-2.1-plus_231.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_231.RULE
         matched_text: |
           License: LGPL-2.1+
            On Debian systems, the complete text of the LGPL-2.1 can be found in
            /usr/share/common-licenses/LGPL-2.1.
+    identifier: lgpl_2_1_plus-e3503782-dabb-a2b9-bb59-14bddddca6ec
   - license_expression: lgpl-2.1-plus
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 275
@@ -562,14 +562,14 @@ license_detections:
         matcher: 2-aho
         license_expression: lgpl-2.1-plus
         rule_identifier: lgpl-2.1-plus_231.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_231.RULE
         matched_text: |
           License: LGPL-2.1+
            On Debian systems, the complete text of the LGPL-2.1 can be found in
            /usr/share/common-licenses/LGPL-2.1.
+    identifier: lgpl_2_1_plus-e3503782-dabb-a2b9-bb59-14bddddca6ec
   - license_expression: lgpl-2.1-plus
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 283
@@ -579,14 +579,14 @@ license_detections:
         matcher: 2-aho
         license_expression: lgpl-2.1-plus
         rule_identifier: lgpl-2.1-plus_231.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_231.RULE
         matched_text: |
           License: LGPL-2.1+
            On Debian systems, the complete text of the LGPL-2.1 can be found in
            /usr/share/common-licenses/LGPL-2.1.
+    identifier: lgpl_2_1_plus-e3503782-dabb-a2b9-bb59-14bddddca6ec
   - license_expression: lgpl-2.1-plus
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 291
@@ -596,14 +596,14 @@ license_detections:
         matcher: 2-aho
         license_expression: lgpl-2.1-plus
         rule_identifier: lgpl-2.1-plus_231.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_231.RULE
         matched_text: |
           License: LGPL-2.1+
            On Debian systems, the complete text of the LGPL-2.1 can be found in
            /usr/share/common-licenses/LGPL-2.1.
+    identifier: lgpl_2_1_plus-e3503782-dabb-a2b9-bb59-14bddddca6ec
   - license_expression: mit
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 299
@@ -613,6 +613,7 @@ license_detections:
         matcher: 2-aho
         license_expression: mit
         rule_identifier: mit.LICENSE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE
         matched_text: |
           Permission is hereby granted, free of charge, to any person
@@ -634,9 +635,8 @@ license_detections:
             ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
             CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
             SOFTWARE.
+    identifier: mit-cacd5c0c-204a-85c2-affc-e4c125b2492a
   - license_expression: lgpl-2.1-plus
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 323
@@ -646,14 +646,14 @@ license_detections:
         matcher: 2-aho
         license_expression: lgpl-2.1-plus
         rule_identifier: lgpl-2.1-plus_231.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_231.RULE
         matched_text: |
           License: LGPL-2.1+
            On Debian systems, the complete text of the LGPL-2.1 can be found in
            /usr/share/common-licenses/LGPL-2.1.
+    identifier: lgpl_2_1_plus-e3503782-dabb-a2b9-bb59-14bddddca6ec
   - license_expression: lgpl-2.1-plus
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 332
@@ -663,14 +663,14 @@ license_detections:
         matcher: 2-aho
         license_expression: lgpl-2.1-plus
         rule_identifier: lgpl-2.1-plus_231.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_231.RULE
         matched_text: |
           License: LGPL-2.1+
            On Debian systems, the complete text of the LGPL-2.1 can be found in
            /usr/share/common-licenses/LGPL-2.1.
+    identifier: lgpl_2_1_plus-e3503782-dabb-a2b9-bb59-14bddddca6ec
   - license_expression: lgpl-2.1-plus
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 340
@@ -680,14 +680,14 @@ license_detections:
         matcher: 2-aho
         license_expression: lgpl-2.1-plus
         rule_identifier: lgpl-2.1-plus_231.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_231.RULE
         matched_text: |
           License: LGPL-2.1+
            On Debian systems, the complete text of the LGPL-2.1 can be found in
            /usr/share/common-licenses/LGPL-2.1.
+    identifier: lgpl_2_1_plus-e3503782-dabb-a2b9-bb59-14bddddca6ec
   - license_expression: lgpl-2.1-plus
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 347
@@ -697,14 +697,14 @@ license_detections:
         matcher: 2-aho
         license_expression: lgpl-2.1-plus
         rule_identifier: lgpl-2.1-plus_231.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_231.RULE
         matched_text: |
           License: LGPL-2.1+
            On Debian systems, the complete text of the LGPL-2.1 can be found in
            /usr/share/common-licenses/LGPL-2.1.
+    identifier: lgpl_2_1_plus-e3503782-dabb-a2b9-bb59-14bddddca6ec
   - license_expression: lgpl-2.1-plus
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 354
@@ -714,14 +714,14 @@ license_detections:
         matcher: 2-aho
         license_expression: lgpl-2.1-plus
         rule_identifier: lgpl-2.1-plus_231.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_231.RULE
         matched_text: |
           License: LGPL-2.1+
            On Debian systems, the complete text of the LGPL-2.1 can be found in
            /usr/share/common-licenses/LGPL-2.1.
+    identifier: lgpl_2_1_plus-e3503782-dabb-a2b9-bb59-14bddddca6ec
   - license_expression: lgpl-2.1-plus
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 363
@@ -731,14 +731,14 @@ license_detections:
         matcher: 2-aho
         license_expression: lgpl-2.1-plus
         rule_identifier: lgpl-2.1-plus_231.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_231.RULE
         matched_text: |
           License: LGPL-2.1+
            On Debian systems, the complete text of the LGPL-2.1 can be found in
            /usr/share/common-licenses/LGPL-2.1.
+    identifier: lgpl_2_1_plus-e3503782-dabb-a2b9-bb59-14bddddca6ec
   - license_expression: lgpl-2.0-plus
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 371
@@ -748,14 +748,14 @@ license_detections:
         matcher: 2-aho
         license_expression: lgpl-2.0-plus
         rule_identifier: lgpl-2.0-plus_528.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0-plus_528.RULE
         matched_text: |
           License: LGPL-2+
            On Debian systems, the complete text of the LGPL-2 can be found in
            /usr/share/common-licenses/LGPL-2.
+    identifier: lgpl_2_0_plus-ebf414f2-2099-4528-86ae-45f3f720d2e0
   - license_expression: lgpl-2.1-plus
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 382
@@ -765,14 +765,14 @@ license_detections:
         matcher: 2-aho
         license_expression: lgpl-2.1-plus
         rule_identifier: lgpl-2.1-plus_231.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_231.RULE
         matched_text: |
           License: LGPL-2.1+
            On Debian systems, the complete text of the LGPL-2.1 can be found in
            /usr/share/common-licenses/LGPL-2.1.
+    identifier: lgpl_2_1_plus-e3503782-dabb-a2b9-bb59-14bddddca6ec
   - license_expression: lgpl-2.1-plus
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 389
@@ -782,14 +782,14 @@ license_detections:
         matcher: 2-aho
         license_expression: lgpl-2.1-plus
         rule_identifier: lgpl-2.1-plus_231.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_231.RULE
         matched_text: |
           License: LGPL-2.1+
            On Debian systems, the complete text of the LGPL-2.1 can be found in
            /usr/share/common-licenses/LGPL-2.1.
+    identifier: lgpl_2_1_plus-e3503782-dabb-a2b9-bb59-14bddddca6ec
   - license_expression: lgpl-2.1-plus
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 397
@@ -799,14 +799,14 @@ license_detections:
         matcher: 2-aho
         license_expression: lgpl-2.1-plus
         rule_identifier: lgpl-2.1-plus_231.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_231.RULE
         matched_text: |
           License: LGPL-2.1+
            On Debian systems, the complete text of the LGPL-2.1 can be found in
            /usr/share/common-licenses/LGPL-2.1.
+    identifier: lgpl_2_1_plus-e3503782-dabb-a2b9-bb59-14bddddca6ec
   - license_expression: lgpl-2.1-plus
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 405
@@ -816,14 +816,14 @@ license_detections:
         matcher: 2-aho
         license_expression: lgpl-2.1-plus
         rule_identifier: lgpl-2.1-plus_231.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_231.RULE
         matched_text: |
           License: LGPL-2.1+
            On Debian systems, the complete text of the LGPL-2.1 can be found in
            /usr/share/common-licenses/LGPL-2.1.
+    identifier: lgpl_2_1_plus-e3503782-dabb-a2b9-bb59-14bddddca6ec
   - license_expression: lgpl-2.1-plus
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 413
@@ -833,14 +833,14 @@ license_detections:
         matcher: 2-aho
         license_expression: lgpl-2.1-plus
         rule_identifier: lgpl-2.1-plus_231.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_231.RULE
         matched_text: |
           License: LGPL-2.1+
            On Debian systems, the complete text of the LGPL-2.1 can be found in
            /usr/share/common-licenses/LGPL-2.1.
+    identifier: lgpl_2_1_plus-e3503782-dabb-a2b9-bb59-14bddddca6ec
   - license_expression: lgpl-2.1-plus
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 422
@@ -850,14 +850,14 @@ license_detections:
         matcher: 2-aho
         license_expression: lgpl-2.1-plus
         rule_identifier: lgpl-2.1-plus_231.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_231.RULE
         matched_text: |
           License: LGPL-2.1+
            On Debian systems, the complete text of the LGPL-2.1 can be found in
            /usr/share/common-licenses/LGPL-2.1.
+    identifier: lgpl_2_1_plus-e3503782-dabb-a2b9-bb59-14bddddca6ec
   - license_expression: lgpl-2.1-plus
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 430
@@ -867,14 +867,14 @@ license_detections:
         matcher: 2-aho
         license_expression: lgpl-2.1-plus
         rule_identifier: lgpl-2.1-plus_231.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_231.RULE
         matched_text: |
           License: LGPL-2.1+
            On Debian systems, the complete text of the LGPL-2.1 can be found in
            /usr/share/common-licenses/LGPL-2.1.
+    identifier: lgpl_2_1_plus-e3503782-dabb-a2b9-bb59-14bddddca6ec
   - license_expression: lgpl-2.1-plus
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 440
@@ -884,14 +884,14 @@ license_detections:
         matcher: 2-aho
         license_expression: lgpl-2.1-plus
         rule_identifier: lgpl-2.1-plus_231.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_231.RULE
         matched_text: |
           License: LGPL-2.1+
            On Debian systems, the complete text of the LGPL-2.1 can be found in
            /usr/share/common-licenses/LGPL-2.1.
+    identifier: lgpl_2_1_plus-e3503782-dabb-a2b9-bb59-14bddddca6ec
   - license_expression: lgpl-2.1-plus
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 447
@@ -901,14 +901,14 @@ license_detections:
         matcher: 2-aho
         license_expression: lgpl-2.1-plus
         rule_identifier: lgpl-2.1-plus_231.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_231.RULE
         matched_text: |
           License: LGPL-2.1+
            On Debian systems, the complete text of the LGPL-2.1 can be found in
            /usr/share/common-licenses/LGPL-2.1.
+    identifier: lgpl_2_1_plus-e3503782-dabb-a2b9-bb59-14bddddca6ec
   - license_expression: lgpl-2.1-plus
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 454
@@ -918,14 +918,14 @@ license_detections:
         matcher: 2-aho
         license_expression: lgpl-2.1-plus
         rule_identifier: lgpl-2.1-plus_231.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_231.RULE
         matched_text: |
           License: LGPL-2.1+
            On Debian systems, the complete text of the LGPL-2.1 can be found in
            /usr/share/common-licenses/LGPL-2.1.
+    identifier: lgpl_2_1_plus-e3503782-dabb-a2b9-bb59-14bddddca6ec
   - license_expression: lgpl-2.1-plus
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 465
@@ -935,14 +935,14 @@ license_detections:
         matcher: 2-aho
         license_expression: lgpl-2.1-plus
         rule_identifier: lgpl-2.1-plus_231.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_231.RULE
         matched_text: |
           License: LGPL-2.1+
            On Debian systems, the complete text of the LGPL-2.1 can be found in
            /usr/share/common-licenses/LGPL-2.1.
+    identifier: lgpl_2_1_plus-e3503782-dabb-a2b9-bb59-14bddddca6ec
   - license_expression: lgpl-2.1-plus
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 472
@@ -952,14 +952,14 @@ license_detections:
         matcher: 2-aho
         license_expression: lgpl-2.1-plus
         rule_identifier: lgpl-2.1-plus_231.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_231.RULE
         matched_text: |
           License: LGPL-2.1+
            On Debian systems, the complete text of the LGPL-2.1 can be found in
            /usr/share/common-licenses/LGPL-2.1.
+    identifier: lgpl_2_1_plus-e3503782-dabb-a2b9-bb59-14bddddca6ec
   - license_expression: lgpl-2.1-plus
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 479
@@ -969,14 +969,14 @@ license_detections:
         matcher: 2-aho
         license_expression: lgpl-2.1-plus
         rule_identifier: lgpl-2.1-plus_231.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_231.RULE
         matched_text: |
           License: LGPL-2.1+
            On Debian systems, the complete text of the LGPL-2.1 can be found in
            /usr/share/common-licenses/LGPL-2.1.
+    identifier: lgpl_2_1_plus-e3503782-dabb-a2b9-bb59-14bddddca6ec
   - license_expression: lgpl-2.1-plus
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 487
@@ -986,14 +986,14 @@ license_detections:
         matcher: 2-aho
         license_expression: lgpl-2.1-plus
         rule_identifier: lgpl-2.1-plus_231.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_231.RULE
         matched_text: |
           License: LGPL-2.1+
            On Debian systems, the complete text of the LGPL-2.1 can be found in
            /usr/share/common-licenses/LGPL-2.1.
+    identifier: lgpl_2_1_plus-e3503782-dabb-a2b9-bb59-14bddddca6ec
   - license_expression: lgpl-2.1-plus
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 495
@@ -1003,14 +1003,14 @@ license_detections:
         matcher: 2-aho
         license_expression: lgpl-2.1-plus
         rule_identifier: lgpl-2.1-plus_231.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_231.RULE
         matched_text: |
           License: LGPL-2.1+
            On Debian systems, the complete text of the LGPL-2.1 can be found in
            /usr/share/common-licenses/LGPL-2.1.
+    identifier: lgpl_2_1_plus-e3503782-dabb-a2b9-bb59-14bddddca6ec
   - license_expression: lgpl-2.1-plus
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 502
@@ -1020,14 +1020,14 @@ license_detections:
         matcher: 2-aho
         license_expression: lgpl-2.1-plus
         rule_identifier: lgpl-2.1-plus_231.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_231.RULE
         matched_text: |
           License: LGPL-2.1+
            On Debian systems, the complete text of the LGPL-2.1 can be found in
            /usr/share/common-licenses/LGPL-2.1.
+    identifier: lgpl_2_1_plus-e3503782-dabb-a2b9-bb59-14bddddca6ec
   - license_expression: lgpl-2.1-plus
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 511
@@ -1037,14 +1037,14 @@ license_detections:
         matcher: 2-aho
         license_expression: lgpl-2.1-plus
         rule_identifier: lgpl-2.1-plus_231.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_231.RULE
         matched_text: |
           License: LGPL-2.1+
            On Debian systems, the complete text of the LGPL-2.1 can be found in
            /usr/share/common-licenses/LGPL-2.1.
+    identifier: lgpl_2_1_plus-e3503782-dabb-a2b9-bb59-14bddddca6ec
   - license_expression: lgpl-2.1-plus
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 518
@@ -1054,14 +1054,14 @@ license_detections:
         matcher: 2-aho
         license_expression: lgpl-2.1-plus
         rule_identifier: lgpl-2.1-plus_231.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_231.RULE
         matched_text: |
           License: LGPL-2.1+
            On Debian systems, the complete text of the LGPL-2.1 can be found in
            /usr/share/common-licenses/LGPL-2.1.
+    identifier: lgpl_2_1_plus-e3503782-dabb-a2b9-bb59-14bddddca6ec
   - license_expression: lgpl-2.1-plus
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 525
@@ -1071,14 +1071,14 @@ license_detections:
         matcher: 2-aho
         license_expression: lgpl-2.1-plus
         rule_identifier: lgpl-2.1-plus_231.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_231.RULE
         matched_text: |
           License: LGPL-2.1+
            On Debian systems, the complete text of the LGPL-2.1 can be found in
            /usr/share/common-licenses/LGPL-2.1.
+    identifier: lgpl_2_1_plus-e3503782-dabb-a2b9-bb59-14bddddca6ec
   - license_expression: lgpl-2.1-plus
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 533
@@ -1088,14 +1088,14 @@ license_detections:
         matcher: 2-aho
         license_expression: lgpl-2.1-plus
         rule_identifier: lgpl-2.1-plus_231.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_231.RULE
         matched_text: |
           License: LGPL-2.1+
            On Debian systems, the complete text of the LGPL-2.1 can be found in
            /usr/share/common-licenses/LGPL-2.1.
+    identifier: lgpl_2_1_plus-e3503782-dabb-a2b9-bb59-14bddddca6ec
   - license_expression: lgpl-2.1-plus
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 540
@@ -1105,14 +1105,14 @@ license_detections:
         matcher: 2-aho
         license_expression: lgpl-2.1-plus
         rule_identifier: lgpl-2.1-plus_231.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_231.RULE
         matched_text: |
           License: LGPL-2.1+
            On Debian systems, the complete text of the LGPL-2.1 can be found in
            /usr/share/common-licenses/LGPL-2.1.
+    identifier: lgpl_2_1_plus-e3503782-dabb-a2b9-bb59-14bddddca6ec
   - license_expression: lgpl-2.1-plus
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 547
@@ -1122,14 +1122,14 @@ license_detections:
         matcher: 2-aho
         license_expression: lgpl-2.1-plus
         rule_identifier: lgpl-2.1-plus_231.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_231.RULE
         matched_text: |
           License: LGPL-2.1+
            On Debian systems, the complete text of the LGPL-2.1 can be found in
            /usr/share/common-licenses/LGPL-2.1.
+    identifier: lgpl_2_1_plus-e3503782-dabb-a2b9-bb59-14bddddca6ec
   - license_expression: lgpl-2.1-plus
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 554
@@ -1139,14 +1139,14 @@ license_detections:
         matcher: 2-aho
         license_expression: lgpl-2.1-plus
         rule_identifier: lgpl-2.1-plus_231.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_231.RULE
         matched_text: |
           License: LGPL-2.1+
            On Debian systems, the complete text of the LGPL-2.1 can be found in
            /usr/share/common-licenses/LGPL-2.1.
+    identifier: lgpl_2_1_plus-e3503782-dabb-a2b9-bb59-14bddddca6ec
   - license_expression: lgpl-2.1-plus
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 561
@@ -1156,14 +1156,14 @@ license_detections:
         matcher: 2-aho
         license_expression: lgpl-2.1-plus
         rule_identifier: lgpl-2.1-plus_231.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_231.RULE
         matched_text: |
           License: LGPL-2.1+
            On Debian systems, the complete text of the LGPL-2.1 can be found in
            /usr/share/common-licenses/LGPL-2.1.
+    identifier: lgpl_2_1_plus-e3503782-dabb-a2b9-bb59-14bddddca6ec
   - license_expression: lgpl-2.1-plus
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 568
@@ -1173,14 +1173,14 @@ license_detections:
         matcher: 2-aho
         license_expression: lgpl-2.1-plus
         rule_identifier: lgpl-2.1-plus_231.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_231.RULE
         matched_text: |
           License: LGPL-2.1+
            On Debian systems, the complete text of the LGPL-2.1 can be found in
            /usr/share/common-licenses/LGPL-2.1.
+    identifier: lgpl_2_1_plus-e3503782-dabb-a2b9-bb59-14bddddca6ec
   - license_expression: gpl-2.0-plus
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 576
@@ -1190,14 +1190,14 @@ license_detections:
         matcher: 2-aho
         license_expression: gpl-2.0-plus
         rule_identifier: gpl-2.0-plus_711.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_711.RULE
         matched_text: |
           License: GPL-2+
            On Debian systems, the complete text of the GPL-2 can be found in
             /usr/share/common-licenses/GPL-2.
+    identifier: gpl_2_0_plus-3032bd69-4dfa-eb9e-e226-72ce6f830857
   - license_expression: lgpl-2.1-plus
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 585
@@ -1207,14 +1207,14 @@ license_detections:
         matcher: 2-aho
         license_expression: lgpl-2.1-plus
         rule_identifier: lgpl-2.1-plus_231.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_231.RULE
         matched_text: |
           License: LGPL-2.1+
            On Debian systems, the complete text of the LGPL-2.1 can be found in
            /usr/share/common-licenses/LGPL-2.1.
+    identifier: lgpl_2_1_plus-e3503782-dabb-a2b9-bb59-14bddddca6ec
   - license_expression: lgpl-2.1-plus
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 594
@@ -1224,14 +1224,14 @@ license_detections:
         matcher: 2-aho
         license_expression: lgpl-2.1-plus
         rule_identifier: lgpl-2.1-plus_231.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_231.RULE
         matched_text: |
           License: LGPL-2.1+
            On Debian systems, the complete text of the LGPL-2.1 can be found in
            /usr/share/common-licenses/LGPL-2.1.
+    identifier: lgpl_2_1_plus-e3503782-dabb-a2b9-bb59-14bddddca6ec
   - license_expression: lgpl-2.1-plus
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 602
@@ -1241,6 +1241,7 @@ license_detections:
         matcher: 2-aho
         license_expression: lgpl-2.1-plus
         rule_identifier: lgpl-2.1-plus_231.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_231.RULE
         matched_text: |
           License: LGPL-2.1+
@@ -1254,11 +1255,13 @@ license_detections:
         matcher: 2-aho
         license_expression: lgpl-2.1-plus
         rule_identifier: lgpl-2.1-plus_231.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_231.RULE
         matched_text: |
           License: LGPL-2.1+
            On Debian systems, the complete text of the LGPL-2.1 can be found in
            /usr/share/common-licenses/LGPL-2.1.
+    identifier: lgpl_2_1_plus-f35ab78a-0ded-b5c9-571c-2aacdfce718a
 other_license_detections: []
 copyright: |
   Copyright (c) 2004-2009 Lennart Poettering

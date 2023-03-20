@@ -26,9 +26,6 @@
   "license_detections": [
     {
       "license_expression": "lgpl-3.0-plus",
-      "detection_log": [
-        "not-combined"
-      ],
       "matches": [
         {
           "score": 50.0,
@@ -39,10 +36,12 @@
           "matcher": "1-hash",
           "license_expression": "lgpl-3.0-plus",
           "rule_identifier": "spdx_license_id_lgpl-3.0-or-later_for_lgpl-3.0-plus.RULE",
+          "rule_relevance": 50,
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/spdx_license_id_lgpl-3.0-or-later_for_lgpl-3.0-plus.RULE",
           "matched_text": "lgpl-3.0-or-later"
         }
-      ]
+      ],
+      "identifier": "lgpl_3_0_plus-5723f07e-c7d2-230c-a706-2b581914377e"
     }
   ],
   "other_license_expression": null,

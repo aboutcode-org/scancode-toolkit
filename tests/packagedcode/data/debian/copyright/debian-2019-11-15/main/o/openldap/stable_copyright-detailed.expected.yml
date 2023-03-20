@@ -12,8 +12,6 @@ other_license_expression:
 other_license_expression_spdx:
 license_detections:
   - license_expression: openldap-2.8
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 17
@@ -23,6 +21,7 @@ license_detections:
         matcher: 2-aho
         license_expression: openldap-2.8
         rule_identifier: openldap-2.8_21.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/openldap-2.8_21.RULE
         matched_text: |
           Redistribution and use in source and binary forms, with or without
@@ -54,6 +53,7 @@ license_detections:
         matcher: 2-aho
         license_expression: openldap-2.8
         rule_identifier: openldap-2.8_16.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/openldap-2.8_16.RULE
         matched_text: |
           The OpenLDAP Public License
@@ -97,9 +97,8 @@ license_detections:
           in this Software without specific, written prior permission.  Title
           to copyright in this Software shall at all times remain with copyright
           holders.
+    identifier: openldap_2_8-a2059e16-441f-3cbf-7ca5-4d2d30253c32
   - license_expression: mit
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 91
@@ -109,6 +108,7 @@ license_detections:
         matcher: 2-aho
         license_expression: mit
         rule_identifier: mit_483.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_483.RULE
         matched_text: |
           Permission is hereby granted, free of charge, to any person obtaining a
@@ -128,9 +128,8 @@ license_detections:
           # CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT
           # OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR
           # THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+    identifier: mit-c00d5dad-390d-222f-7182-5d856cf7b8de
   - license_expression: fsf-unlimited-no-warranty
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 115
@@ -140,6 +139,7 @@ license_detections:
         matcher: 2-aho
         license_expression: fsf-unlimited-no-warranty
         rule_identifier: fsf-unlimited-no-warranty_2.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/fsf-unlimited-no-warranty_2.RULE
         matched_text: |
           This Makefile.in is free software; the Free Software Foundation
@@ -150,9 +150,8 @@ license_detections:
           # but WITHOUT ANY WARRANTY, to the extent permitted by law; without
           # even the implied warranty of MERCHANTABILITY or FITNESS FOR A
           # PARTICULAR PURPOSE.
+    identifier: fsf_unlimited_no_warranty-05f3eea9-e9cc-944d-4dc4-2b53a3e39319
   - license_expression: hs-regexp
-    detection_log:
-      - not-combined
     matches:
       - score: '95.0'
         start_line: 129
@@ -162,6 +161,7 @@ license_detections:
         matcher: 2-aho
         license_expression: hs-regexp
         rule_identifier: hs-regexp_5.RULE
+        rule_relevance: 95
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/hs-regexp_5.RULE
         matched_text: |
           Permission is granted to anyone to use this software for any purpose
@@ -181,9 +181,8 @@ license_detections:
            *    documentation.
            *
            * 4. This notice may not be removed or altered.
+    identifier: hs_regexp-32499786-31ce-3850-a6f6-cd86b15e63f6
   - license_expression: ibm-dhcp
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 154
@@ -193,6 +192,7 @@ license_detections:
         matcher: 2-aho
         license_expression: ibm-dhcp
         rule_identifier: ibm-dhcp.LICENSE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/ibm-dhcp.LICENSE
         matched_text: |
           International Business Machines, Inc. (hereinafter called IBM) grants
@@ -215,9 +215,8 @@ license_detections:
            * DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER ARISING
            * OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE, EVEN
            * IF IBM IS APPRISED OF THE POSSIBILITY OF SUCH DAMAGES.
+    identifier: ibm_dhcp-dbdce127-2353-307e-a8ca-9b4b36d360d0
   - license_expression: ietf
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 180
@@ -227,6 +226,7 @@ license_detections:
         matcher: 2-aho
         license_expression: ietf
         rule_identifier: ietf_5.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/ietf_5.RULE
         matched_text: "Full Copyright Statement\n# \n#    Copyright (C) The Internet Society\
           \ (1999).  All Rights Reserved.\n# \n#    This document and translations of it may\
@@ -247,9 +247,8 @@ license_detections:
           \ EXPRESS OR IMPLIED, INCLUDING\n#    BUT NOT LIMITED TO ANY WARRANTY THAT THE USE\
           \ OF THE INFORMATION\n#    HEREIN WILL NOT INFRINGE ANY RIGHTS OR ANY IMPLIED WARRANTIES\
           \ OF\n#    MERCHANTABILITY OR FITNESS FOR A PARTICULAR PURPOSE."
+    identifier: ietf-23d2fb67-3930-da5a-2c51-1eb7124a6cd1
   - license_expression: isc
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 227
@@ -259,6 +258,7 @@ license_detections:
         matcher: 2-aho
         license_expression: isc
         rule_identifier: isc_9.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/isc_9.RULE
         matched_text: |
           Permission to use, copy, modify, and distribute this software for any
@@ -273,9 +273,8 @@ license_detections:
            * PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS
            * ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS
            * SOFTWARE.
+    identifier: isc-fbf6f8d8-a949-0427-62b2-aef52fe84e71
   - license_expression: other-permissive
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 245
@@ -285,14 +284,14 @@ license_detections:
         matcher: 2-aho
         license_expression: other-permissive
         rule_identifier: other-permissive_203.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/other-permissive_203.RULE
         matched_text: "This software is not subject to any license of Silicon Graphics \n *\
           \ Inc. or Purdue University.\n *\n * Redistribution and use in source and binary forms\
           \ are permitted\n * without restriction or fee of any kind as long as this notice\n\
           \ * is preserved."
+    identifier: other_permissive-a2d2ef7c-de65-e9c1-5dc3-80a1fa867e5f
   - license_expression: other-permissive
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 277
@@ -302,15 +301,15 @@ license_detections:
         matcher: 2-aho
         license_expression: other-permissive
         rule_identifier: other-permissive_200.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/other-permissive_200.RULE
         matched_text: "This software is not subject to any license of Carnegie Mellon University.\n\
           \ *\n * Redistribution and use in source and binary forms are permitted without \n\
           \ * restriction or fee of any kind as long as this notice is preserved.\n *\n * The\
           \ name \"Carnegie Mellon\" must not be used to endorse or promote\n * products derived\
           \ from this software without prior written permission."
+    identifier: other_permissive-cb1634c7-cff6-c876-793d-9679f4c49378
   - license_expression: mit-old-style-no-advert
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 311
@@ -320,6 +319,7 @@ license_detections:
         matcher: 2-aho
         license_expression: mit-old-style-no-advert
         rule_identifier: mit-old-style-no-advert_3.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit-old-style-no-advert_3.RULE
         matched_text: |
           Permission to use, copy, modify, distribute, and sell this software and its
@@ -331,9 +331,8 @@ license_detections:
           # written prior permission.  M.I.T. makes no representations about the
           # suitability of this software for any purpose.  It is provided "as is"
           # without express or implied warranty.
+    identifier: mit_old_style_no_advert-469a8f5b-14cb-1cf1-ac4f-fd7a23bb63e5
   - license_expression: other-permissive
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 327
@@ -343,13 +342,13 @@ license_detections:
         matcher: 2-aho
         license_expression: other-permissive
         rule_identifier: other-permissive_199.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/other-permissive_199.RULE
         matched_text: |
           Permission to copy and
           distribute verbatim copies of this document is granted.
+    identifier: other_permissive-37dc9756-e211-83ce-e703-b3275e50e484
   - license_expression: hs-regexp
-    detection_log:
-      - not-combined
     matches:
       - score: '95.0'
         start_line: 337
@@ -359,6 +358,7 @@ license_detections:
         matcher: 2-aho
         license_expression: hs-regexp
         rule_identifier: hs-regexp_5.RULE
+        rule_relevance: 95
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/hs-regexp_5.RULE
         matched_text: |
           Permission is granted to anyone to use this software for any purpose
@@ -377,9 +377,8 @@ license_detections:
            * ever read sources, credits should appear in the documentation.
            *
            * 4. This notice may not be removed or altered.
+    identifier: hs_regexp-32499786-31ce-3850-a6f6-cd86b15e63f6
   - license_expression: openldap-2.8
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 359
@@ -389,15 +388,15 @@ license_detections:
         matcher: 2-aho
         license_expression: openldap-2.8
         rule_identifier: openldap-2.8_15.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/openldap-2.8_15.RULE
         matched_text: |
           Redistribution and use in source and binary forms are permitted only
            * as authorized by the OpenLDAP Public License.  A copy of this
            * license is available at http://www.OpenLDAP.org/license.html or
            * in file LICENSE in the top-level directory of the distribution.
+    identifier: openldap_2_8-99672c54-2a17-1ad2-398b-76ba3e6834cc
   - license_expression: bsla AND bsd-original-uc
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 368
@@ -407,6 +406,7 @@ license_detections:
         matcher: 2-aho
         license_expression: bsla
         rule_identifier: bsla_3.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsla_3.RULE
         matched_text: |
           Redistribution and use in source and binary forms are permitted
@@ -428,13 +428,13 @@ license_detections:
         matcher: 2-aho
         license_expression: bsd-original-uc
         rule_identifier: bsd-original-uc_25.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-original-uc_25.RULE
         matched_text: |
           NOTE: The Regents have since retroactively removed the advertising
           clause from above.
+    identifier: bsla_and_bsd_original_uc-baf8c66c-255a-4e0e-885f-a17e5d67094e
   - license_expression: bsd-original-uc
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 388
@@ -444,6 +444,7 @@ license_detections:
         matcher: 2-aho
         license_expression: bsd-original-uc
         rule_identifier: bsd-original-uc_3.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-original-uc_3.RULE
         matched_text: |
           Redistribution and use in source and binary forms, with or without
@@ -481,15 +482,15 @@ license_detections:
         matcher: 2-aho
         license_expression: bsd-original-uc
         rule_identifier: bsd-original-uc_24.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-original-uc_24.RULE
         matched_text: |
           NOTE: The Regents have since retroactively removed the advertising
           clause from above.
           See:
           ftp://ftp.cs.berkeley.edu/pub/4bsd/README.Impt.License.Change
+    identifier: bsd_original_uc-7d861d8c-b658-cbe9-abaf-82bd99b2f466
   - license_expression: bsd-original-uc-1986
-    detection_log:
-      - not-combined
     matches:
       - score: '99.0'
         start_line: 426
@@ -499,6 +500,7 @@ license_detections:
         matcher: 2-aho
         license_expression: bsd-original-uc-1986
         rule_identifier: bsd-original-uc-1986_3.RULE
+        rule_relevance: 99
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-original-uc-1986_3.RULE
         matched_text: |
           Redistribution and use in source and binary forms are permitted
@@ -507,6 +509,7 @@ license_detections:
            * may not be used to endorse or promote products derived from this
            * software without specific prior written permission. This software
            * is provided ``as is'' without express or implied warranty.
+    identifier: bsd_original_uc_1986-66f330b2-6960-30e8-9363-c9a264bfa54c
 other_license_detections: []
 copyright: |
   Copyright 1998-2016 The OpenLDAP Foundation

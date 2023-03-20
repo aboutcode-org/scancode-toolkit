@@ -5,8 +5,6 @@ other_license_expression:
 other_license_expression_spdx:
 license_detections:
   - license_expression: qlogic-firmware
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 7
@@ -16,6 +14,7 @@ license_detections:
         matcher: 2-aho
         license_expression: qlogic-firmware
         rule_identifier: qlogic-firmware.LICENSE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/qlogic-firmware.LICENSE
         matched_text: "Redistribution and use in binary form, without modification, for use\
           \ in conjunction\nwith QLogic authorized products is permitted provided that the following\
@@ -36,5 +35,6 @@ license_detections:
           GROUNDS FOR A LICENSE BY IMPLICATION, ESTOPPEL, OR OTHERWISE IN ANY INTELLECTUAL\n\
           PROPERTY RIGHTS (PATENT, COPYRIGHT, TRADE SECRET, MASK WORK, OR OTHER PROPRIETARY\n\
           RIGHT) EMBODIED IN ANY OTHER QLOGIC HARDWARE OR SOFTWARE EITHER SOLELY OR IN\nCOMBINATION WITH THIS PROGRAM."
+    identifier: qlogic_firmware-ccb8af98-2b73-8f68-aa46-29df97f773fe
 other_license_detections: []
 copyright: Copyright (c) 2003-2010 QLogic Corporation QLogic Linux Intelligent Ethernet

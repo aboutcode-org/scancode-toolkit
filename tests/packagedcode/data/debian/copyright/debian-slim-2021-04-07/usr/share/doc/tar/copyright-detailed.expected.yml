@@ -5,8 +5,6 @@ other_license_expression:
 other_license_expression_spdx:
 license_detections:
   - license_expression: gpl-3.0-plus
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 20
@@ -16,15 +14,15 @@ license_detections:
         matcher: 2-aho
         license_expression: gpl-3.0-plus
         rule_identifier: gpl-3.0-plus_283.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0-plus_283.RULE
         matched_text: "This program is free software; you can redistribute it and/or modify\
           \ it\n   under the terms of the GNU General Public License as published by the\n \
           \  Free Software Foundation; either version 3, or (at your option) any later\n   version.\n\
           \nOn Debian GNU/Linux systems, the complete text of the GNU General Public \nLicense\
           \ version 3 can be found in /usr/share/common-licenses/GPL-3."
+    identifier: gpl_3_0_plus-72552c94-3196-d38e-6a71-2d6e21cd1304
   - license_expression: gpl-2.0-plus
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 32
@@ -34,12 +32,14 @@ license_detections:
         matcher: 2-aho
         license_expression: gpl-2.0-plus
         rule_identifier: gpl-2.0-plus_734.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_734.RULE
         matched_text: "This program is free software; you can redistribute it and/or modify\
           \ it\n   under the terms of the GNU General Public License as published by the\n \
           \  Free Software Foundation; either version 2, or (at your option) any later\n   version.\n\
           \nOn Debian GNU/Linux systems, the complete text of the GNU General Public \nLicense\
           \ version 2 can be found in /usr/share/common-licenses/GPL-2."
+    identifier: gpl_2_0_plus-74ad86f4-1357-cc4f-9a66-21c9b99de62f
 other_license_detections: []
 copyright: |
   Copyright (c) 1988, 1992, 1993, 1994, 1995, 1996, 1997, 1999, 2000, 2001, 2003, 2004, 2005, 2006, 2007 Free Software Foundation, Inc.
