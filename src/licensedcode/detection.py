@@ -522,7 +522,7 @@ def detections_from_license_detection_mappings(
     return license_detections
 
 
-def get_new_identifier_from_detections(initial_detection, detections_added):
+def get_new_identifier_from_detections(initial_detection, detections_added, license_expression):
     """
     Return a new UUID based on two sets of detections: `initial_detection` is
     the detection being modified with a list of detections (from another file region)
@@ -533,7 +533,8 @@ def get_new_identifier_from_detections(initial_detection, detections_added):
         for detection_mapping in detections_added
     ]
     identifiers.append(initial_detection["identifier"])
-    return get_uuid_on_content(content=sorted(identifiers))
+    uuid = get_uuid_on_content(content=sorted(identifiers))
+    return f"{license_expression}-{uuid}"
 
 
 @attr.s

@@ -367,7 +367,7 @@
       "detection_log": []
     },
     {
-      "identifier": "d4083501-8104-7348-1d78-cf10fabc2187",
+      "identifier": "gpl-3.0 AND lgpl-3.0 AND gpl-2.0 AND gpl-2.0-plus AND free-unknown AND gpl-1.0-plus AND lgpl-3.0-plus AND cc-by-sa-3.0 AND cc-by-sa-4.0 AND dco-1.1-d4083501-8104-7348-1d78-cf10fabc2187",
       "license_expression": "gpl-3.0 AND lgpl-3.0 AND gpl-2.0 AND gpl-2.0-plus AND free-unknown AND gpl-1.0-plus AND lgpl-3.0-plus AND cc-by-sa-3.0 AND cc-by-sa-4.0 AND dco-1.1",
       "detection_count": 1,
       "detection_log": []
@@ -1713,7 +1713,7 @@
           "detection_log": [
             "unknown-reference-in-file-to-package"
           ],
-          "identifier": "d4083501-8104-7348-1d78-cf10fabc2187"
+          "identifier": "gpl-3.0 AND lgpl-3.0 AND gpl-2.0 AND gpl-2.0-plus AND free-unknown AND gpl-1.0-plus AND lgpl-3.0-plus AND cc-by-sa-3.0 AND cc-by-sa-4.0 AND dco-1.1-d4083501-8104-7348-1d78-cf10fabc2187"
         }
       ],
       "license_clues": [],
