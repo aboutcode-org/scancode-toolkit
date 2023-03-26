@@ -139,7 +139,7 @@ Then you can define a test class and call the ``build_tests`` method defined in
         clazz=TestLicenseDataDriven1, regen=scancode_config.REGEN_TEST_FIXTURES)
 
 The ``tests/data`` directory contains a file for each license:
-a license text file with a YAML frontmatter specifying the expected license expression 
+a license text file with a YAML frontmatter specifying the expected license expression
 from the test.
 
 Finally, install the plugin and run the test:

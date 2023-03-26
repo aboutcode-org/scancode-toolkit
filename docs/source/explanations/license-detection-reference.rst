@@ -303,7 +303,7 @@ We now have a new codebase level attribute ``license_detections`` which has Uniq
 license detection across the codebase, in both packages and resources. They are
 linked by a common attribute ``identifier`` containing the ``license_expression``
 and a UUID generated from the match content. The match level data is only present
-at the resource level if needed, to look at details. 
+at the resource level if needed, to look at details.
 
 New codebase level attribute::
 
@@ -684,7 +684,7 @@ LicenseDetection Data
 This is referencing by LicenseDetections objcts, and has one or multiple
 license matches. This is linked to the resource level detections through
 an ``identifier`` attribute present in both resource and codebase level
-detections. See the `unique license detections section <license_detections_unique>`_ 
+detections. See the `unique license detections section <license_detections_unique>`_
 above for more details on this.
 
 There could be a list of ambiguous detections as a summary to review.

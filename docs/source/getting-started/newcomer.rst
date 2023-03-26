@@ -252,17 +252,6 @@ Good First Issues
 A `good first issue <https://github.com/nexB/scancode-toolkit/labels/good%20first%20issue>`_
 means it's recommended for people who haven't contributed to Scancode Toolkit before.
 
-#. Refer the detailed documentation for :ref:`good_first_issue`.
-#. :ref:`good_1st_issue_links` for Good First issues are also compiled.
-#. :ref:`good_1st_issue_understand_b4_solving`
-#. :ref:`good_1st_issue_workflow`
-
-A `first timers only <https://github.com/nexB/scancode-toolkit/labels/%20first%20timers%20only>`_
-issue means we've worked to make it more legible to folks who either **haven't contributed to our
-codebase before, or even folks who haven't contributed to open source before**.
-
-Refer the detailed documentation for :ref:`first_timers_only`.
-
 .. _newcomer_add_functionalirty:
 
 Add new Functionality/Enhancement to ScanCode
@@ -324,14 +313,13 @@ If you want to participate in any of the two programs:
 Then:
 
 #. Keep an eye out for Application Timelines.
-#. Solve multiple of these :ref:`good_first_issue` to demonstrate your skills,
+#. Solve multiple of these :ref:`newcomer_good_first_issue` to demonstrate your skills,
    and improve your chances of selection.
 #. Refer the Projects Ideas list for details on tentative projects.
 
-     - :ref:`GSoC2019`
-     - :ref:`GSoD2019`
+     - `GSoC2023 <https://github.com/nexB/aboutcode/wiki/GSOC-2023>`_
 
-#. Remain active in Gitter and talk with the organization mentors well ahead of the deadlines.
+#. Remain active in Element and talk with the organization mentors well ahead of the deadlines.
 #. Select projects according to your skills and finalize project proposals.
 #. Discuss your proposals extensively with corresponding mentors.
 #. Apply for the Programs well before the Deadline.

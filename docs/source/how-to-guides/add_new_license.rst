@@ -54,7 +54,7 @@ And more attributes which are not mandatory but nice to have always (if applicab
 We want to use `minimum_coverage` when there are other licenses which are very similar
 and we want to make sure we match correctly these licenses, and `notes` for interesting
 cases of licenses with descriptions to help identify origin, similarities to other licenses,
-notes about the SPDX keys and others. 
+notes about the SPDX keys and others.
 
 Some URLs:
 

@@ -34,7 +34,7 @@ might have a filename: `mit_and_apache-2.0_10.RULE`.
 
 Save your rule text in this file, if there are specific words like company names,
 projects or other, it is better to have rules with and without these so we have
-better detection. 
+better detection.
 
 For a simple `mit AND apache-2.0` license expression detection, here is an example
 rule file::

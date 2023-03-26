@@ -123,7 +123,7 @@ operating system by going to the `project releases page <https://github.com/nexB
 
 For example, Version 30.0.1 archive can be obtained from
 `Toolkit release 30.0.1 <https://github.com/nexB/scancode-toolkit/releases/tag/v30.0.1>`_
-under assets options. 
+under assets options.
 
 .. Note::
 
@@ -347,7 +347,7 @@ the standard Python package management tool.
     Apple M1 chips, as some non-native dependencies does not have pre-built wheels
     for ARM (like py-ahocorasick, intbitset). See :ref:`system_requirements` for
     more information. See related issues for more info:
-    
+
     - `Fallback pure-python deps <https://github.com/nexB/scancode-toolkit/issues/3210>`_
     - `pip install failing on M1 <https://github.com/nexB/scancode-toolkit/issues/3205>`_
 
