@@ -96,6 +96,7 @@
       "repository_homepage_url": null,
       "repository_download_url": null,
       "api_data_url": null,
+      "holder": null,
       "package_uid": "pkg:pypi/click@attr:%20click.__version__?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_paths": [
         "setup.cfg"
@@ -274,6 +275,7 @@
           "repository_download_url": null,
           "api_data_url": null,
           "datasource_id": "pypi_setup_cfg",
+          "holder": null,
           "purl": "pkg:pypi/click@attr:%20click.__version__"
         }
       ],
@@ -346,6 +348,7 @@
           "repository_download_url": null,
           "api_data_url": "https://pypi.org/pypi/click/json",
           "datasource_id": "pypi_setup_py",
+          "holder": null,
           "purl": "pkg:pypi/click"
         }
       ],

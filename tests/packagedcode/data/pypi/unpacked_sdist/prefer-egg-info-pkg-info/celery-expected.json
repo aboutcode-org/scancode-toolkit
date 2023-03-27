@@ -103,6 +103,7 @@
       "repository_homepage_url": "https://pypi.org/project/celery",
       "repository_download_url": "https://pypi.org/packages/source/c/celery/celery-5.2.7.tar.gz",
       "api_data_url": "https://pypi.org/pypi/celery/5.2.7/json",
+      "holder": null,
       "package_uid": "pkg:pypi/celery@5.2.7?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_paths": [
         "celery/celery.egg-info/PKG-INFO"
@@ -821,6 +822,7 @@
           "repository_download_url": "https://pypi.org/packages/source/c/celery/celery-5.2.7.tar.gz",
           "api_data_url": "https://pypi.org/pypi/celery/5.2.7/json",
           "datasource_id": "pypi_sdist_pkginfo",
+          "holder": null,
           "purl": "pkg:pypi/celery@5.2.7"
         }
       ],
@@ -7236,6 +7238,7 @@
           "repository_download_url": "https://pypi.org/packages/source/c/celery/celery-5.2.7.tar.gz",
           "api_data_url": "https://pypi.org/pypi/celery/5.2.7/json",
           "datasource_id": "pypi_editable_egg_pkginfo",
+          "holder": null,
           "purl": "pkg:pypi/celery@5.2.7"
         }
       ],
@@ -8206,6 +8209,7 @@
           "repository_download_url": null,
           "api_data_url": null,
           "datasource_id": "pip_requirements",
+          "holder": null,
           "purl": null
         }
       ],

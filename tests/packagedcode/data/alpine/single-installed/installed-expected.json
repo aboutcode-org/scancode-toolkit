@@ -134,6 +134,7 @@
     "repository_download_url": null,
     "api_data_url": null,
     "datasource_id": "alpine_installed_db",
+    "holder": null,
     "purl": "pkg:alpine/busybox@1.31.1-r9?arch=x86_64"
   }
 ]

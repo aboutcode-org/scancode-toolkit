@@ -88,6 +88,7 @@
       "repository_homepage_url": "https://www.npmjs.com/package/lodash.clonedeep",
       "repository_download_url": "https://registry.npmjs.org/lodash.clonedeep/-/lodash.clonedeep-4.3.2.tgz",
       "api_data_url": "https://registry.npmjs.org/lodash.clonedeep/4.3.2",
+      "holder": null,
       "package_uid": "pkg:npm/lodash.clonedeep@4.3.2?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_paths": [
         "scan/package.json"
@@ -193,6 +194,7 @@
       "repository_homepage_url": "https://www.npmjs.com/package/sequelize",
       "repository_download_url": "https://registry.npmjs.org/sequelize/-/sequelize-3.30.2.tgz",
       "api_data_url": "https://registry.npmjs.org/sequelize/3.30.2",
+      "holder": null,
       "package_uid": "pkg:npm/sequelize@3.30.2?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_paths": [
         "scan/node_modules/sequelize/package.json"
@@ -276,6 +278,7 @@
         "repository_download_url": "https://registry.npmjs.org/ms/-/ms-2.0.0.tgz",
         "api_data_url": "https://registry.npmjs.org/ms/2.0.0",
         "datasource_id": "npm_package_lock_json",
+        "holder": null,
         "purl": "pkg:npm/ms@2.0.0"
       },
       "extra_data": {},
@@ -342,6 +345,7 @@
         "repository_download_url": "https://registry.npmjs.org/regenerator-runtime/-/regenerator-runtime-0.11.0.tgz",
         "api_data_url": "https://registry.npmjs.org/regenerator-runtime/0.11.0",
         "datasource_id": "npm_package_lock_json",
+        "holder": null,
         "purl": "pkg:npm/regenerator-runtime@0.11.0"
       },
       "extra_data": {},
@@ -408,6 +412,7 @@
         "repository_download_url": "https://registry.npmjs.org/to-fast-properties/-/to-fast-properties-1.0.3.tgz",
         "api_data_url": "https://registry.npmjs.org/to-fast-properties/1.0.3",
         "datasource_id": "npm_package_lock_json",
+        "holder": null,
         "purl": "pkg:npm/to-fast-properties@1.0.3"
       },
       "extra_data": {},
@@ -544,6 +549,7 @@
         "repository_download_url": "https://registry.npmjs.org/ansi-regex/-/ansi-regex-2.1.1.tgz",
         "api_data_url": "https://registry.npmjs.org/ansi-regex/2.1.1",
         "datasource_id": "npm_package_lock_json",
+        "holder": null,
         "purl": "pkg:npm/ansi-regex@2.1.1"
       },
       "extra_data": {},
@@ -610,6 +616,7 @@
         "repository_download_url": "https://registry.npmjs.org/to-fast-properties/-/to-fast-properties-1.0.3.tgz",
         "api_data_url": "https://registry.npmjs.org/to-fast-properties/1.0.3",
         "datasource_id": "npm_package_lock_json",
+        "holder": null,
         "purl": "pkg:npm/to-fast-properties@1.0.3"
       },
       "extra_data": {},
@@ -664,6 +671,7 @@
         "repository_download_url": "https://registry.npmjs.org/abbrev/-/abbrev-1.0.9.tgz",
         "api_data_url": "https://registry.npmjs.org/abbrev/1.0.9",
         "datasource_id": "yarn_lock_v1",
+        "holder": null,
         "purl": "pkg:npm/abbrev@1.0.9"
       },
       "extra_data": {},
@@ -729,6 +737,7 @@
         "repository_download_url": "https://registry.npmjs.org/xdg-basedir/-/xdg-basedir-2.0.0.tgz",
         "api_data_url": "https://registry.npmjs.org/xdg-basedir/2.0.0",
         "datasource_id": "yarn_lock_v1",
+        "holder": null,
         "purl": "pkg:npm/xdg-basedir@2.0.0"
       },
       "extra_data": {},
@@ -783,6 +792,7 @@
         "repository_download_url": "https://registry.npmjs.org/xtend/-/xtend-4.0.1.tgz",
         "api_data_url": "https://registry.npmjs.org/xtend/4.0.1",
         "datasource_id": "yarn_lock_v1",
+        "holder": null,
         "purl": "pkg:npm/xtend@4.0.1"
       },
       "extra_data": {},
@@ -837,6 +847,7 @@
         "repository_download_url": "https://registry.npmjs.org/yallist/-/yallist-2.0.0.tgz",
         "api_data_url": "https://registry.npmjs.org/yallist/2.0.0",
         "datasource_id": "yarn_lock_v1",
+        "holder": null,
         "purl": "pkg:npm/yallist@2.0.0"
       },
       "extra_data": {},
@@ -967,6 +978,7 @@
                 "repository_download_url": "https://registry.npmjs.org/ansi-regex/-/ansi-regex-2.1.1.tgz",
                 "api_data_url": "https://registry.npmjs.org/ansi-regex/2.1.1",
                 "datasource_id": "npm_package_lock_json",
+                "holder": null,
                 "purl": "pkg:npm/ansi-regex@2.1.1"
               },
               "extra_data": {}
@@ -1029,6 +1041,7 @@
                 "repository_download_url": "https://registry.npmjs.org/to-fast-properties/-/to-fast-properties-1.0.3.tgz",
                 "api_data_url": "https://registry.npmjs.org/to-fast-properties/1.0.3",
                 "datasource_id": "npm_package_lock_json",
+                "holder": null,
                 "purl": "pkg:npm/to-fast-properties@1.0.3"
               },
               "extra_data": {}
@@ -1038,6 +1051,7 @@
           "repository_download_url": "https://registry.npmjs.org/sequelize/-/sequelize-3.30.2.tgz",
           "api_data_url": "https://registry.npmjs.org/sequelize/3.30.2",
           "datasource_id": "npm_package_lock_json",
+          "holder": null,
           "purl": "pkg:npm/sequelize@3.30.2"
         }
       ],
@@ -1200,6 +1214,7 @@
           "repository_download_url": "https://registry.npmjs.org/sequelize/-/sequelize-3.30.2.tgz",
           "api_data_url": "https://registry.npmjs.org/sequelize/3.30.2",
           "datasource_id": "npm_package_json",
+          "holder": null,
           "purl": "pkg:npm/sequelize@3.30.2"
         }
       ],
@@ -1293,6 +1308,7 @@
                 "repository_download_url": "https://registry.npmjs.org/abbrev/-/abbrev-1.0.9.tgz",
                 "api_data_url": "https://registry.npmjs.org/abbrev/1.0.9",
                 "datasource_id": "yarn_lock_v1",
+                "holder": null,
                 "purl": "pkg:npm/abbrev@1.0.9"
               },
               "extra_data": {}
@@ -1354,6 +1370,7 @@
                 "repository_download_url": "https://registry.npmjs.org/xdg-basedir/-/xdg-basedir-2.0.0.tgz",
                 "api_data_url": "https://registry.npmjs.org/xdg-basedir/2.0.0",
                 "datasource_id": "yarn_lock_v1",
+                "holder": null,
                 "purl": "pkg:npm/xdg-basedir@2.0.0"
               },
               "extra_data": {}
@@ -1404,6 +1421,7 @@
                 "repository_download_url": "https://registry.npmjs.org/xtend/-/xtend-4.0.1.tgz",
                 "api_data_url": "https://registry.npmjs.org/xtend/4.0.1",
                 "datasource_id": "yarn_lock_v1",
+                "holder": null,
                 "purl": "pkg:npm/xtend@4.0.1"
               },
               "extra_data": {}
@@ -1454,6 +1472,7 @@
                 "repository_download_url": "https://registry.npmjs.org/yallist/-/yallist-2.0.0.tgz",
                 "api_data_url": "https://registry.npmjs.org/yallist/2.0.0",
                 "datasource_id": "yarn_lock_v1",
+                "holder": null,
                 "purl": "pkg:npm/yallist@2.0.0"
               },
               "extra_data": {}
@@ -1463,6 +1482,7 @@
           "repository_download_url": null,
           "api_data_url": null,
           "datasource_id": "yarn_lock_v1",
+          "holder": null,
           "purl": null
         }
       ],
@@ -1570,6 +1590,7 @@
                 "repository_download_url": "https://registry.npmjs.org/ms/-/ms-2.0.0.tgz",
                 "api_data_url": "https://registry.npmjs.org/ms/2.0.0",
                 "datasource_id": "npm_package_lock_json",
+                "holder": null,
                 "purl": "pkg:npm/ms@2.0.0"
               },
               "extra_data": {}
@@ -1632,6 +1653,7 @@
                 "repository_download_url": "https://registry.npmjs.org/regenerator-runtime/-/regenerator-runtime-0.11.0.tgz",
                 "api_data_url": "https://registry.npmjs.org/regenerator-runtime/0.11.0",
                 "datasource_id": "npm_package_lock_json",
+                "holder": null,
                 "purl": "pkg:npm/regenerator-runtime@0.11.0"
               },
               "extra_data": {}
@@ -1694,6 +1716,7 @@
                 "repository_download_url": "https://registry.npmjs.org/to-fast-properties/-/to-fast-properties-1.0.3.tgz",
                 "api_data_url": "https://registry.npmjs.org/to-fast-properties/1.0.3",
                 "datasource_id": "npm_package_lock_json",
+                "holder": null,
                 "purl": "pkg:npm/to-fast-properties@1.0.3"
               },
               "extra_data": {}
@@ -1703,6 +1726,7 @@
           "repository_download_url": "https://registry.npmjs.org/lodash.clonedeep/-/lodash.clonedeep-4.3.2.tgz",
           "api_data_url": "https://registry.npmjs.org/lodash.clonedeep/4.3.2",
           "datasource_id": "npm_package_lock_json",
+          "holder": null,
           "purl": "pkg:npm/lodash.clonedeep@4.3.2"
         }
       ],
@@ -1817,6 +1841,7 @@
           "repository_download_url": "https://registry.npmjs.org/lodash.clonedeep/-/lodash.clonedeep-4.3.2.tgz",
           "api_data_url": "https://registry.npmjs.org/lodash.clonedeep/4.3.2",
           "datasource_id": "npm_package_json",
+          "holder": null,
           "purl": "pkg:npm/lodash.clonedeep@4.3.2"
         }
       ],

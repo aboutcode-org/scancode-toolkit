@@ -91,6 +91,7 @@
       "repository_homepage_url": "https://pypi.org/project/paddlenlp",
       "repository_download_url": null,
       "api_data_url": "https://pypi.org/pypi/paddlenlp/json",
+      "holder": null,
       "package_uid": "pkg:pypi/paddlenlp?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_paths": [
         "setup.py"
@@ -905,6 +906,7 @@
           "repository_download_url": null,
           "api_data_url": null,
           "datasource_id": "pip_requirements",
+          "holder": null,
           "purl": null
         }
       ],
@@ -1283,6 +1285,7 @@
           "repository_download_url": null,
           "api_data_url": null,
           "datasource_id": "pip_requirements",
+          "holder": null,
           "purl": null
         }
       ],
@@ -1415,6 +1418,7 @@
           "repository_download_url": null,
           "api_data_url": "https://pypi.org/pypi/paddlenlp/json",
           "datasource_id": "pypi_setup_py",
+          "holder": null,
           "purl": "pkg:pypi/paddlenlp"
         }
       ],

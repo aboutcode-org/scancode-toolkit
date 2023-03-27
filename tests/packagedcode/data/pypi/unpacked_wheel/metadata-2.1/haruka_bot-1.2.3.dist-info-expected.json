@@ -398,6 +398,7 @@
     "repository_download_url": "https://pypi.org/packages/source/h/haruka-bot/haruka-bot-1.2.3.tar.gz",
     "api_data_url": "https://pypi.org/pypi/haruka-bot/1.2.3/json",
     "datasource_id": "pypi_wheel_metadata",
+    "holder": null,
     "purl": "pkg:pypi/haruka-bot@1.2.3"
   }
 ]

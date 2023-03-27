@@ -58,6 +58,7 @@
       "repository_homepage_url": null,
       "repository_download_url": null,
       "api_data_url": null,
+      "holder": null,
       "package_uid": "pkg:rpm/alfandega@2.0-1.7.3?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_paths": [
         "alfandega-2.0-1.7.3.noarch.rpm"
@@ -135,6 +136,7 @@
           "repository_download_url": null,
           "api_data_url": null,
           "datasource_id": "rpm_archive",
+          "holder": null,
           "purl": "pkg:rpm/alfandega@2.0-1.7.3"
         }
       ],

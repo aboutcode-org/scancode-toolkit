@@ -102,6 +102,7 @@
     "repository_download_url": "https://pypi.org/packages/source/p/pycparser/pycparser-2.20.tar.gz",
     "api_data_url": "https://pypi.org/pypi/pycparser/2.20/json",
     "datasource_id": "pypi_setup_py",
+    "holder": null,
     "purl": "pkg:pypi/pycparser@2.20"
   }
 ]

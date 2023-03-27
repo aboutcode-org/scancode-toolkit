@@ -106,6 +106,7 @@
     "repository_download_url": "https://pypi.org/packages/source/p/pyserial/pyserial-3.4.tar.gz",
     "api_data_url": "https://pypi.org/pypi/pyserial/3.4/json",
     "datasource_id": "pypi_setup_py",
+    "holder": null,
     "purl": "pkg:pypi/pyserial@3.4"
   }
 ]

@@ -104,6 +104,7 @@
     "repository_download_url": null,
     "api_data_url": "https://packagist.org/p/packages/fake/fake.json",
     "datasource_id": "php_composer_json",
+    "holder": null,
     "purl": "pkg:composer/fake/fake"
   }
 ]

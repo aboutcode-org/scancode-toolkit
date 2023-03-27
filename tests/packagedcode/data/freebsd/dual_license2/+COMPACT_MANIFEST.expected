@@ -110,6 +110,7 @@
     "repository_download_url": null,
     "api_data_url": null,
     "datasource_id": "freebsd_compact_manifest",
+    "holder": null,
     "purl": "pkg:freebsd/rubygem-ttfunk@1.5.1?arch=freebsd:10:%2A&origin=print/rubygem-ttfunk"
   }
 ]

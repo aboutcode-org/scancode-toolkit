@@ -313,6 +313,7 @@
     "repository_download_url": null,
     "api_data_url": null,
     "datasource_id": "rpm_installed_database_sqlite",
+    "holder": null,
     "purl": "pkg:rpm/setup@2.5.58?arch=noarch"
   },
   {
@@ -376,6 +377,7 @@
     "repository_download_url": null,
     "api_data_url": null,
     "datasource_id": "rpm_installed_database_sqlite",
+    "holder": null,
     "purl": "pkg:rpm/basesystem@8.0?arch=noarch"
   }
 ]

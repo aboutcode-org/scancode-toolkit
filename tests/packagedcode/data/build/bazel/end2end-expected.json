@@ -36,6 +36,7 @@
       "repository_homepage_url": null,
       "repository_download_url": null,
       "api_data_url": null,
+      "holder": null,
       "package_uid": "pkg:bazel/end2end?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_paths": [
         "end2end/BUILD"
@@ -81,6 +82,7 @@
       "repository_homepage_url": null,
       "repository_download_url": null,
       "api_data_url": null,
+      "holder": null,
       "package_uid": "pkg:bazel/subdir2?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_paths": [
         "end2end/subdir2/BUILD"
@@ -143,6 +145,7 @@
           "repository_download_url": null,
           "api_data_url": null,
           "datasource_id": "bazel_build",
+          "holder": null,
           "purl": "pkg:bazel/end2end"
         }
       ],
@@ -239,6 +242,7 @@
           "repository_download_url": null,
           "api_data_url": null,
           "datasource_id": "bazel_build",
+          "holder": null,
           "purl": "pkg:bazel/subdir2"
         }
       ],

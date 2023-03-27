@@ -70,5 +70,6 @@
   "repository_download_url": null,
   "api_data_url": null,
   "datasource_id": "alpine_apkbuild",
+  "holder": null,
   "purl": "pkg:alpine/imagemagick6@6.9.11.55-r0"
 }

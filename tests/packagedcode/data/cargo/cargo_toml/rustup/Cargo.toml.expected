@@ -66,6 +66,7 @@
     "repository_download_url": "https://crates.io/api/v1/crates/rustup/1.17.0/download",
     "api_data_url": "https://crates.io/api/v1/crates/rustup",
     "datasource_id": "cargo_toml",
+    "holder": null,
     "purl": "pkg:cargo/rustup@1.17.0"
   }
 ]

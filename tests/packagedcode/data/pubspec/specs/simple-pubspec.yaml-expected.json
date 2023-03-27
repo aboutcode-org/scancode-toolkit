@@ -69,6 +69,7 @@
     "repository_download_url": "https://pub.dartlang.org/packages/painter/versions/2.0.0.tar.gz",
     "api_data_url": "https://pub.dev/api/packages/painter/versions/2.0.0",
     "datasource_id": "pubspec_yaml",
+    "holder": null,
     "purl": "pkg:dart/painter@2.0.0"
   }
 ]

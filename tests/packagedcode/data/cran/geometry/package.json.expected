@@ -126,6 +126,7 @@
     "repository_download_url": null,
     "api_data_url": null,
     "datasource_id": "cran_description",
+    "holder": null,
     "purl": "pkg:cran/geometry@0.4.2"
   }
 ]

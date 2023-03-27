@@ -169,6 +169,7 @@
     "repository_download_url": null,
     "api_data_url": null,
     "datasource_id": "pipfile_lock",
+    "holder": null,
     "purl": null
   }
 ]

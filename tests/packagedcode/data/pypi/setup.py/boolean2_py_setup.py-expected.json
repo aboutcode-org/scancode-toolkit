@@ -100,6 +100,7 @@
     "repository_download_url": "https://pypi.org/packages/source/b/boolean.py/boolean.py-1.2.tar.gz",
     "api_data_url": "https://pypi.org/pypi/boolean.py/1.2/json",
     "datasource_id": "pypi_setup_py",
+    "holder": null,
     "purl": "pkg:pypi/boolean.py@1.2"
   }
 ]

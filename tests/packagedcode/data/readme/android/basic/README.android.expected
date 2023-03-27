@@ -58,6 +58,7 @@
     "repository_download_url": null,
     "api_data_url": null,
     "datasource_id": "readme",
+    "holder": null,
     "purl": "pkg:readme/libaom@v1.0.0"
   }
 ]

@@ -79,6 +79,7 @@
     "repository_homepage_url": null,
     "repository_download_url": null,
     "api_data_url": null,
+    "holder": null,
     "package_uid": "pkg:alpine/alpine-baselayout-data@3.2.0-r22?arch=x86_64&uuid=fixed-uid-done-for-testing-5642512d1758",
     "datafile_paths": [
       "alpine-container-layer.tar.xz/lib/apk/db/installed"
@@ -287,6 +288,7 @@
     "repository_homepage_url": null,
     "repository_download_url": null,
     "api_data_url": null,
+    "holder": null,
     "package_uid": "pkg:alpine/musl@1.2.3-r0?arch=x86_64&uuid=fixed-uid-done-for-testing-5642512d1758",
     "datafile_paths": [
       "alpine-container-layer.tar.xz/lib/apk/db/installed"
@@ -387,6 +389,7 @@
     "repository_homepage_url": null,
     "repository_download_url": null,
     "api_data_url": null,
+    "holder": null,
     "package_uid": "pkg:alpine/busybox@1.35.0-r15?arch=x86_64&uuid=fixed-uid-done-for-testing-5642512d1758",
     "datafile_paths": [
       "alpine-container-layer.tar.xz/lib/apk/db/installed"
@@ -550,6 +553,7 @@
     "repository_homepage_url": null,
     "repository_download_url": null,
     "api_data_url": null,
+    "holder": null,
     "package_uid": "pkg:alpine/alpine-baselayout@3.2.0-r22?arch=x86_64&uuid=fixed-uid-done-for-testing-5642512d1758",
     "datafile_paths": [
       "alpine-container-layer.tar.xz/lib/apk/db/installed"
@@ -902,6 +906,7 @@
     "repository_homepage_url": null,
     "repository_download_url": null,
     "api_data_url": null,
+    "holder": null,
     "package_uid": "pkg:alpine/alpine-keys@2.4-r1?arch=x86_64&uuid=fixed-uid-done-for-testing-5642512d1758",
     "datafile_paths": [
       "alpine-container-layer.tar.xz/lib/apk/db/installed"
@@ -1191,6 +1196,7 @@
     "repository_homepage_url": null,
     "repository_download_url": null,
     "api_data_url": null,
+    "holder": null,
     "package_uid": "pkg:alpine/ca-certificates-bundle@20211220-r0?arch=x86_64&uuid=fixed-uid-done-for-testing-5642512d1758",
     "datafile_paths": [
       "alpine-container-layer.tar.xz/lib/apk/db/installed"
@@ -1300,6 +1306,7 @@
     "repository_homepage_url": null,
     "repository_download_url": null,
     "api_data_url": null,
+    "holder": null,
     "package_uid": "pkg:alpine/libcrypto1.1@1.1.1q-r0?arch=x86_64&uuid=fixed-uid-done-for-testing-5642512d1758",
     "datafile_paths": [
       "alpine-container-layer.tar.xz/lib/apk/db/installed"
@@ -1481,6 +1488,7 @@
     "repository_homepage_url": null,
     "repository_download_url": null,
     "api_data_url": null,
+    "holder": null,
     "package_uid": "pkg:alpine/libssl1.1@1.1.1q-r0?arch=x86_64&uuid=fixed-uid-done-for-testing-5642512d1758",
     "datafile_paths": [
       "alpine-container-layer.tar.xz/lib/apk/db/installed"
@@ -1569,6 +1577,7 @@
     "repository_homepage_url": null,
     "repository_download_url": null,
     "api_data_url": null,
+    "holder": null,
     "package_uid": "pkg:alpine/ssl_client@1.35.0-r15?arch=x86_64&uuid=fixed-uid-done-for-testing-5642512d1758",
     "datafile_paths": [
       "alpine-container-layer.tar.xz/lib/apk/db/installed"
@@ -1669,6 +1678,7 @@
     "repository_homepage_url": null,
     "repository_download_url": null,
     "api_data_url": null,
+    "holder": null,
     "package_uid": "pkg:alpine/zlib@1.2.12-r1?arch=x86_64&uuid=fixed-uid-done-for-testing-5642512d1758",
     "datafile_paths": [
       "alpine-container-layer.tar.xz/lib/apk/db/installed"
@@ -1757,6 +1767,7 @@
     "repository_homepage_url": null,
     "repository_download_url": null,
     "api_data_url": null,
+    "holder": null,
     "package_uid": "pkg:alpine/apk-tools@2.12.9-r3?arch=x86_64&uuid=fixed-uid-done-for-testing-5642512d1758",
     "datafile_paths": [
       "alpine-container-layer.tar.xz/lib/apk/db/installed"
@@ -1854,6 +1865,7 @@
     "repository_homepage_url": null,
     "repository_download_url": null,
     "api_data_url": null,
+    "holder": null,
     "package_uid": "pkg:alpine/scanelf@1.3.4-r0?arch=x86_64&uuid=fixed-uid-done-for-testing-5642512d1758",
     "datafile_paths": [
       "alpine-container-layer.tar.xz/lib/apk/db/installed"
@@ -1942,6 +1954,7 @@
     "repository_homepage_url": null,
     "repository_download_url": null,
     "api_data_url": null,
+    "holder": null,
     "package_uid": "pkg:alpine/musl-utils@1.2.3-r0?arch=x86_64&uuid=fixed-uid-done-for-testing-5642512d1758",
     "datafile_paths": [
       "alpine-container-layer.tar.xz/lib/apk/db/installed"
@@ -2066,6 +2079,7 @@
     "repository_homepage_url": null,
     "repository_download_url": null,
     "api_data_url": null,
+    "holder": null,
     "package_uid": "pkg:alpine/libc-utils@0.7.2-r3?arch=x86_64&uuid=fixed-uid-done-for-testing-5642512d1758",
     "datafile_paths": [
       "alpine-container-layer.tar.xz/lib/apk/db/installed"

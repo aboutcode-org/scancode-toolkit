@@ -70,5 +70,6 @@
   "repository_download_url": null,
   "api_data_url": null,
   "datasource_id": "alpine_apkbuild",
+  "holder": null,
   "purl": "pkg:alpine/qt6-qt3d@6.1.1-r0"
 }

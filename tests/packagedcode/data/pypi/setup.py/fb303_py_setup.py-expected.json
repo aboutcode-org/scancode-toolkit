@@ -78,6 +78,7 @@
     "repository_download_url": "https://pypi.org/packages/source/t/thrift_fb303/thrift_fb303-0.10.0.tar.gz",
     "api_data_url": "https://pypi.org/pypi/thrift_fb303/0.10.0/json",
     "datasource_id": "pypi_setup_py",
+    "holder": null,
     "purl": "pkg:pypi/thrift-fb303@0.10.0"
   }
 ]

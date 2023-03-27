@@ -71,6 +71,7 @@
     "repository_download_url": "https://registry.npmjs.org/cookie-signature/-/cookie-signature-1.0.3.tgz",
     "api_data_url": "https://registry.npmjs.org/cookie-signature/1.0.3",
     "datasource_id": "npm_package_json",
+    "holder": null,
     "purl": "pkg:npm/cookie-signature@1.0.3"
   }
 ]

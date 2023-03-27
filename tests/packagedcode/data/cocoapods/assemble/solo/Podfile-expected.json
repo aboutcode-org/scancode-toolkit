@@ -45,6 +45,7 @@
           "repository_download_url": null,
           "api_data_url": null,
           "datasource_id": "cocoapods_podfile",
+          "holder": null,
           "purl": null
         }
       ],

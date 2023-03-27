@@ -117,6 +117,7 @@
     "repository_download_url": "https://registry.npmjs.org/angular-compare-validator/-/angular-compare-validator-0.1.1.tgz",
     "api_data_url": "https://registry.npmjs.org/angular-compare-validator/0.1.1",
     "datasource_id": "npm_package_json",
+    "holder": null,
     "purl": "pkg:npm/angular-compare-validator@0.1.1"
   }
 ]

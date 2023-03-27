@@ -73,6 +73,7 @@
           "repository_download_url": null,
           "api_data_url": null,
           "datasource_id": "windows_executable",
+          "holder": "Ian F. Darwin",
           "purl": "pkg:winexe/File@5.03.3414.16721"
         }
       ],

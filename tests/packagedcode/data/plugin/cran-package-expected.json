@@ -71,6 +71,7 @@
       "repository_homepage_url": "https://cran.r-project.org/package=codetools",
       "repository_download_url": null,
       "api_data_url": null,
+      "holder": null,
       "package_uid": "pkg:cran/codetools@0.2-16?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_paths": [
         "DESCRIPTION"
@@ -187,6 +188,7 @@
           "repository_download_url": null,
           "api_data_url": null,
           "datasource_id": "cran_description",
+          "holder": null,
           "purl": "pkg:cran/codetools@0.2-16"
         }
       ],

@@ -68,5 +68,6 @@
   "repository_download_url": null,
   "api_data_url": null,
   "datasource_id": "rpm_archive",
+  "holder": null,
   "purl": "pkg:rpm/Sample"
 }

@@ -1645,6 +1645,7 @@
     "repository_download_url": "https://pypi.org/packages/source/s/scancode-toolkit/scancode-toolkit-21.3.31.tar.gz",
     "api_data_url": "https://pypi.org/pypi/scancode-toolkit/21.3.31/json",
     "datasource_id": "pypi_editable_egg_pkginfo",
+    "holder": null,
     "purl": "pkg:pypi/scancode-toolkit@21.3.31"
   }
 ]

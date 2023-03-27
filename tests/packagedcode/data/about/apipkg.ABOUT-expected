@@ -76,6 +76,7 @@
     "repository_download_url": null,
     "api_data_url": null,
     "datasource_id": "about_file",
+    "holder": "holger krekel",
     "purl": "pkg:about/apipkg@1.4"
   }
 ]

@@ -345,5 +345,6 @@
   "repository_download_url": "https://repo1.maven.org/maven2/commons-validator/commons-validator/1.2.0/commons-validator-1.2.0.jar",
   "api_data_url": "https://repo1.maven.org/maven2/commons-validator/commons-validator/1.2.0/commons-validator-1.2.0.pom",
   "datasource_id": "maven_pom",
+  "holder": null,
   "purl": "pkg:maven/commons-validator/commons-validator@1.2.0"
 }

@@ -73,6 +73,7 @@
     "repository_download_url": "https://crates.io/api/v1/crates/rustfmt-nightly/1.0.3/download",
     "api_data_url": "https://crates.io/api/v1/crates/rustfmt-nightly",
     "datasource_id": "cargo_toml",
+    "holder": null,
     "purl": "pkg:cargo/rustfmt-nightly@1.0.3"
   }
 ]

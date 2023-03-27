@@ -108,6 +108,7 @@
     "repository_download_url": "https://registry.npmjs.org/utils-merge/-/utils-merge-1.0.0.tgz",
     "api_data_url": "https://registry.npmjs.org/utils-merge/1.0.0",
     "datasource_id": "npm_package_json",
+    "holder": null,
     "purl": "pkg:npm/utils-merge@1.0.0"
   }
 ]

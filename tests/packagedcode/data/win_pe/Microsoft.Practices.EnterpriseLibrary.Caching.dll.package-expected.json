@@ -66,6 +66,7 @@
     "repository_download_url": null,
     "api_data_url": null,
     "datasource_id": "windows_executable",
+    "holder": null,
     "purl": "pkg:winexe/Microsoft%20Enterprise%20Library%20for%20.NET@2.0.0.0"
   }
 ]

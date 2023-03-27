@@ -179,6 +179,7 @@
     "repository_download_url": "https://pypi.org/packages/source/f/flit/flit-2.3.0.tar.gz",
     "api_data_url": "https://pypi.org/pypi/flit/2.3.0/json",
     "datasource_id": "pypi_setup_py",
+    "holder": null,
     "purl": "pkg:pypi/flit@2.3.0"
   }
 ]

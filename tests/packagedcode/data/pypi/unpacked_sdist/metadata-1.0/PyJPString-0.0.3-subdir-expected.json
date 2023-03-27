@@ -237,6 +237,7 @@
     "repository_download_url": "https://pypi.org/packages/source/P/PyJPString/PyJPString-0.0.3.tar.gz",
     "api_data_url": "https://pypi.org/pypi/PyJPString/0.0.3/json",
     "datasource_id": "pypi_editable_egg_pkginfo",
+    "holder": null,
     "purl": "pkg:pypi/pyjpstring@0.0.3"
   }
 ]

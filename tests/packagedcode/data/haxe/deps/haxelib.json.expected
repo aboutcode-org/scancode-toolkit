@@ -100,6 +100,7 @@
     "repository_download_url": "https://lib.haxe.org/p/selecthxml/0.5.1/download/",
     "api_data_url": null,
     "datasource_id": "haxelib_json",
+    "holder": null,
     "purl": "pkg:haxe/selecthxml@0.5.1"
   }
 ]

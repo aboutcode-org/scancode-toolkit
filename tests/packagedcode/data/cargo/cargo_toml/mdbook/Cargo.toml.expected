@@ -80,6 +80,7 @@
     "repository_download_url": "https://crates.io/api/v1/crates/mdbook/0.2.4-alpha.0/download",
     "api_data_url": "https://crates.io/api/v1/crates/mdbook",
     "datasource_id": "cargo_toml",
+    "holder": null,
     "purl": "pkg:cargo/mdbook@0.2.4-alpha.0"
   }
 ]

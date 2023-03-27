@@ -158,6 +158,7 @@
     "repository_download_url": "https://rubygems.org/downloads/rubocop-RuboCop::Version::STRING.gem",
     "api_data_url": "https://rubygems.org/api/v2/rubygems/rubocop/versions/RuboCop::Version::STRING.json",
     "datasource_id": "gemspec",
+    "holder": null,
     "purl": "pkg:gem/rubocop@RuboCop::Version::STRING"
   }
 ]

@@ -52,6 +52,7 @@
     "repository_download_url": null,
     "api_data_url": null,
     "datasource_id": "debian_installed_status_db",
+    "holder": null,
     "purl": "pkg:deb/perl-base@5.22.1-9ubuntu0.6?architecture=amd64"
   }
 ]

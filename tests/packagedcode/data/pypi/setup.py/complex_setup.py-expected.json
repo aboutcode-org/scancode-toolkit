@@ -167,6 +167,7 @@
     "repository_download_url": "https://pypi.org/packages/source/t/thefuck/thefuck-3.32.tar.gz",
     "api_data_url": "https://pypi.org/pypi/thefuck/3.32/json",
     "datasource_id": "pypi_setup_py",
+    "holder": null,
     "purl": "pkg:pypi/thefuck@3.32"
   }
 ]

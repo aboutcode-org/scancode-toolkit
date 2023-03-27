@@ -91,6 +91,7 @@
     "repository_download_url": null,
     "api_data_url": null,
     "datasource_id": "freebsd_compact_manifest",
+    "holder": null,
     "purl": "pkg:freebsd/py27-idna@2.6?arch=freebsd:10:%2A&origin=dns/py-idna"
   }
 ]

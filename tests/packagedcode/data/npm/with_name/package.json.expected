@@ -77,6 +77,7 @@
     "repository_download_url": null,
     "api_data_url": "https://registry.npmjs.org/bson",
     "datasource_id": "npm_package_json",
+    "holder": null,
     "purl": "pkg:npm/bson"
   }
 ]

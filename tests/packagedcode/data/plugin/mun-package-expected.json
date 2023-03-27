@@ -73,6 +73,7 @@
           "repository_download_url": null,
           "api_data_url": null,
           "datasource_id": "windows_executable",
+          "holder": "Microsoft Corporation",
           "purl": "pkg:winexe/Microsoft%C2%AE%20Windows%C2%AE%20Operating%20System@10.0.18362.1256"
         }
       ],

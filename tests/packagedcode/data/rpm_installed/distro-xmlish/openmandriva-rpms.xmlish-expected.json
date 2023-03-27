@@ -925,6 +925,7 @@
     "repository_download_url": null,
     "api_data_url": null,
     "datasource_id": "rpm_installed_database_sqlite",
+    "holder": null,
     "purl": "pkg:rpm/chkconfig@1.11?arch=x86_64"
   },
   {
@@ -1016,6 +1017,7 @@
     "repository_download_url": null,
     "api_data_url": null,
     "datasource_id": "rpm_installed_database_sqlite",
+    "holder": null,
     "purl": "pkg:rpm/lib64ncursesw6@6.2?arch=x86_64"
   }
 ]

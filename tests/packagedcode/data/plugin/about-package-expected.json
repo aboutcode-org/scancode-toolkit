@@ -64,6 +64,7 @@
       "repository_homepage_url": null,
       "repository_download_url": null,
       "api_data_url": null,
+      "holder": "holger krekel",
       "package_uid": "pkg:about/apipkg@1.4?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_paths": [
         "apipkg.ABOUT"
@@ -149,6 +150,7 @@
       "repository_homepage_url": null,
       "repository_download_url": null,
       "api_data_url": null,
+      "holder": "ActiveState Software Inc.",
       "package_uid": "pkg:about/appdirs@1.4.3?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_paths": [
         "appdirs.ABOUT"
@@ -251,6 +253,7 @@
           "repository_download_url": null,
           "api_data_url": null,
           "datasource_id": "about_file",
+          "holder": "holger krekel",
           "purl": "pkg:about/apipkg@1.4"
         }
       ],
@@ -340,6 +343,7 @@
           "repository_download_url": null,
           "api_data_url": null,
           "datasource_id": "about_file",
+          "holder": "ActiveState Software Inc.",
           "purl": "pkg:about/appdirs@1.4.3"
         }
       ],

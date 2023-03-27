@@ -64,6 +64,7 @@
       "repository_homepage_url": "https://cocoapods.org/pods/RxDataSources",
       "repository_download_url": "https://github.com/RxSwiftCommunity/RxDataSources/archive/refs/tags/4.0.1.zip",
       "api_data_url": "https://raw.githubusercontent.com/CocoaPods/Specs/blob/master/Specs/9/a/4/RxDataSources/4.0.1/RxDataSources.podspec.json",
+      "holder": null,
       "package_uid": "pkg:cocoapods/RxDataSources@4.0.1?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_paths": [
         "RxDataSources.podspec"
@@ -147,6 +148,7 @@
           "repository_download_url": "https://github.com/RxSwiftCommunity/RxDataSources/archive/refs/tags/4.0.1.zip",
           "api_data_url": "https://raw.githubusercontent.com/CocoaPods/Specs/blob/master/Specs/9/a/4/RxDataSources/4.0.1/RxDataSources.podspec.json",
           "datasource_id": "cocoapods_podspec",
+          "holder": null,
           "purl": "pkg:cocoapods/RxDataSources@4.0.1"
         }
       ],

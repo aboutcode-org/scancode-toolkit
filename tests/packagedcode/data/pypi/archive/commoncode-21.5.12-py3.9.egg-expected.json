@@ -225,6 +225,7 @@
     "repository_download_url": "https://pypi.org/packages/source/c/commoncode/commoncode-21.5.12.tar.gz",
     "api_data_url": "https://pypi.org/pypi/commoncode/21.5.12/json",
     "datasource_id": "pypi_egg",
+    "holder": null,
     "purl": "pkg:pypi/commoncode@21.5.12"
   }
 ]

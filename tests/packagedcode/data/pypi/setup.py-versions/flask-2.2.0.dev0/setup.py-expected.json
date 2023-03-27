@@ -109,6 +109,7 @@
     "repository_download_url": "https://pypi.org/packages/source/F/Flask/Flask-2.2.0.dev0.tar.gz",
     "api_data_url": "https://pypi.org/pypi/Flask/2.2.0.dev0/json",
     "datasource_id": "pypi_setup_py",
+    "holder": null,
     "purl": "pkg:pypi/flask@2.2.0.dev0"
   }
 ]

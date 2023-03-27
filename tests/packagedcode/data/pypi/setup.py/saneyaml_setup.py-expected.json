@@ -111,6 +111,7 @@
     "repository_download_url": "https://pypi.org/packages/source/s/saneyaml/saneyaml-0.2dev.tar.gz",
     "api_data_url": "https://pypi.org/pypi/saneyaml/0.2dev/json",
     "datasource_id": "pypi_setup_py",
+    "holder": null,
     "purl": "pkg:pypi/saneyaml@0.2dev"
   }
 ]

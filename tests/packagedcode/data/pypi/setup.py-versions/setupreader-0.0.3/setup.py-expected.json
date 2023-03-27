@@ -87,6 +87,7 @@
     "repository_download_url": "https://pypi.org/packages/source/s/setupreader/setupreader-0.0.3.tar.gz",
     "api_data_url": "https://pypi.org/pypi/setupreader/0.0.3/json",
     "datasource_id": "pypi_setup_py",
+    "holder": null,
     "purl": "pkg:pypi/setupreader@0.0.3"
   }
 ]

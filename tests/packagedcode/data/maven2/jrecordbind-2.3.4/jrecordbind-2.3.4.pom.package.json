@@ -127,5 +127,6 @@
   "repository_download_url": "https://repo1.maven.org/maven2/it/assist/jrecordbind/jrecordbind${artifactId.ext}/2.3.4/jrecordbind${artifactId.ext}-2.3.4.jar",
   "api_data_url": "https://repo1.maven.org/maven2/it/assist/jrecordbind/jrecordbind${artifactId.ext}/2.3.4/jrecordbind${artifactId.ext}-2.3.4.pom",
   "datasource_id": "maven_pom",
+  "holder": null,
   "purl": "pkg:maven/it.assist.jrecordbind/jrecordbind%24%7BartifactId.ext%7D@2.3.4"
 }

@@ -114,6 +114,7 @@
     "repository_download_url": "https://rubygems.org/downloads/cat_-12.gem",
     "api_data_url": "https://rubygems.org/api/v2/rubygems/cat_/versions/12.json",
     "datasource_id": "gemspec",
+    "holder": null,
     "purl": "pkg:gem/cat_@12"
   }
 ]

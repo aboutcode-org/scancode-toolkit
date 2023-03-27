@@ -289,6 +289,7 @@
     "repository_download_url": "https://registry.npmjs.org/etcd-dashboard/-/etcd-dashboard-0.0.0.tgz",
     "api_data_url": "https://registry.npmjs.org/etcd-dashboard/0.0.0",
     "datasource_id": "npm_package_json",
+    "holder": null,
     "purl": "pkg:npm/etcd-dashboard@0.0.0"
   }
 ]

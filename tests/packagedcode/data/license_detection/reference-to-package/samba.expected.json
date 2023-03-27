@@ -312,6 +312,7 @@
       "repository_homepage_url": null,
       "repository_download_url": null,
       "api_data_url": null,
+      "holder": null,
       "package_uid": "pkg:autotools/samba?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_paths": [
         "configure"
@@ -1061,6 +1062,7 @@
           "repository_download_url": null,
           "api_data_url": null,
           "datasource_id": "autotools_configure",
+          "holder": null,
           "purl": "pkg:autotools/samba"
         }
       ],
@@ -1407,6 +1409,7 @@
           "repository_download_url": null,
           "api_data_url": null,
           "datasource_id": "pypi_setup_cfg",
+          "holder": null,
           "purl": null
         }
       ],

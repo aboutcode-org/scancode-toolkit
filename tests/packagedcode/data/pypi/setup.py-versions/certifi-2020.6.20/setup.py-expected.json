@@ -100,6 +100,7 @@
     "repository_download_url": "https://pypi.org/packages/source/c/certifi/certifi-2020.06.20.tar.gz",
     "api_data_url": "https://pypi.org/pypi/certifi/2020.06.20/json",
     "datasource_id": "pypi_setup_py",
+    "holder": null,
     "purl": "pkg:pypi/certifi@2020.06.20"
   }
 ]

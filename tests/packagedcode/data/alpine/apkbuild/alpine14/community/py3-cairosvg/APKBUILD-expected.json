@@ -70,5 +70,6 @@
   "repository_download_url": null,
   "api_data_url": null,
   "datasource_id": "alpine_apkbuild",
+  "holder": null,
   "purl": "pkg:alpine/py3-cairosvg@2.5.2-r1"
 }

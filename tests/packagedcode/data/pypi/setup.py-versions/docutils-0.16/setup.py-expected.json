@@ -176,6 +176,7 @@
     "repository_download_url": "https://pypi.org/packages/source/d/docutils/docutils-0.16.tar.gz",
     "api_data_url": "https://pypi.org/pypi/docutils/0.16/json",
     "datasource_id": "pypi_setup_py",
+    "holder": null,
     "purl": "pkg:pypi/docutils@0.16"
   }
 ]

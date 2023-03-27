@@ -69,6 +69,7 @@
       "repository_homepage_url": "https://lib.haxe.org/p/hxsocketio",
       "repository_download_url": "https://lib.haxe.org/p/hxsocketio/0.1.0/download/",
       "api_data_url": null,
+      "holder": null,
       "package_uid": "pkg:haxe/hxsocketio@0.1.0?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_paths": [
         "haxelib.json"
@@ -157,6 +158,7 @@
           "repository_download_url": "https://lib.haxe.org/p/hxsocketio/0.1.0/download/",
           "api_data_url": null,
           "datasource_id": "haxelib_json",
+          "holder": null,
           "purl": "pkg:haxe/hxsocketio@0.1.0"
         }
       ],

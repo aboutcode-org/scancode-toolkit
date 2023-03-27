@@ -87,6 +87,7 @@
     "repository_download_url": "https://registry.npmjs.org/mime/-/mime-1.3.4.tgz",
     "api_data_url": "https://registry.npmjs.org/mime/1.3.4",
     "datasource_id": "npm_package_json",
+    "holder": null,
     "purl": "pkg:npm/mime@1.3.4"
   }
 ]

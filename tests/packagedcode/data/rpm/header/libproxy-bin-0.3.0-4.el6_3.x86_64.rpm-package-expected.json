@@ -68,6 +68,7 @@
     "repository_download_url": null,
     "api_data_url": null,
     "datasource_id": "rpm_archive",
+    "holder": null,
     "purl": "pkg:rpm/libproxy-bin@0.3.0-4.el6_3"
   }
 ]

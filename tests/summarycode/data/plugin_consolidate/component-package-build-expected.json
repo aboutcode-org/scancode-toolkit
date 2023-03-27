@@ -36,6 +36,7 @@
       "repository_homepage_url": null,
       "repository_download_url": null,
       "api_data_url": null,
+      "holder": null,
       "package_uid": "pkg:buck/demo?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_paths": [
         "component-package-build/build/BUCK"
@@ -101,6 +102,7 @@
       "repository_homepage_url": "https://www.npmjs.com/package/test-package",
       "repository_download_url": "https://registry.npmjs.org/test-package/-/test-package-0.0.1.tgz",
       "api_data_url": "https://registry.npmjs.org/test-package/0.0.1",
+      "holder": null,
       "package_uid": "pkg:npm/test-package@0.0.1?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_paths": [
         "component-package-build/package/package.json"
@@ -331,6 +333,7 @@
           "repository_download_url": null,
           "api_data_url": null,
           "datasource_id": "buck_file",
+          "holder": null,
           "purl": "pkg:buck/demo"
         }
       ],
@@ -778,6 +781,7 @@
           "repository_download_url": "https://registry.npmjs.org/test-package/-/test-package-0.0.1.tgz",
           "api_data_url": "https://registry.npmjs.org/test-package/0.0.1",
           "datasource_id": "npm_package_json",
+          "holder": null,
           "purl": "pkg:npm/test-package@0.0.1"
         }
       ],

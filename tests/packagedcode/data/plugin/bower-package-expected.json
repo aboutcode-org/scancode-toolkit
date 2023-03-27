@@ -68,6 +68,7 @@
       "repository_homepage_url": null,
       "repository_download_url": null,
       "api_data_url": null,
+      "holder": null,
       "package_uid": "pkg:bower/blue-leaf?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_paths": [
         "bower.json"
@@ -229,6 +230,7 @@
           "repository_download_url": null,
           "api_data_url": null,
           "datasource_id": "bower_json",
+          "holder": null,
           "purl": "pkg:bower/blue-leaf"
         }
       ],

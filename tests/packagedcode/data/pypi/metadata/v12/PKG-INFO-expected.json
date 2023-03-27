@@ -108,6 +108,7 @@
     "repository_download_url": "https://pypi.org/packages/source/p/pyldap/pyldap-2.4.45.tar.gz",
     "api_data_url": "https://pypi.org/pypi/pyldap/2.4.45/json",
     "datasource_id": "pypi_sdist_pkginfo",
+    "holder": null,
     "purl": "pkg:pypi/pyldap@2.4.45"
   }
 ]

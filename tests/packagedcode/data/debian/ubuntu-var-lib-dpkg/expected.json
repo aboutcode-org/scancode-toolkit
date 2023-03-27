@@ -243,6 +243,7 @@
       "repository_homepage_url": null,
       "repository_download_url": null,
       "api_data_url": null,
+      "holder": null,
       "package_uid": "pkg:deb/base-files@11ubuntu5?architecture=amd64&uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_paths": [
         "ubuntu-var-lib-dpkg/var/lib/dpkg/status",
@@ -459,6 +460,7 @@
       "repository_homepage_url": null,
       "repository_download_url": null,
       "api_data_url": null,
+      "holder": null,
       "package_uid": "pkg:deb/base-passwd@3.5.47?architecture=amd64&uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_paths": [
         "ubuntu-var-lib-dpkg/var/lib/dpkg/status",
@@ -729,6 +731,7 @@
       "repository_homepage_url": null,
       "repository_download_url": null,
       "api_data_url": null,
+      "holder": null,
       "package_uid": "pkg:deb/bash@5.0-6ubuntu1?architecture=amd64&uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_paths": [
         "ubuntu-var-lib-dpkg/var/lib/dpkg/status",
@@ -792,6 +795,7 @@
       "repository_homepage_url": null,
       "repository_download_url": null,
       "api_data_url": null,
+      "holder": null,
       "package_uid": "pkg:deb/tar@1.30%2Bdfsg-7?architecture=amd64&uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_paths": [
         "ubuntu-var-lib-dpkg/var/lib/dpkg/status"
@@ -1981,6 +1985,7 @@
           "repository_download_url": null,
           "api_data_url": null,
           "datasource_id": "debian_installed_files_list",
+          "holder": null,
           "purl": "pkg:deb/base-files"
         }
       ],
@@ -2186,6 +2191,7 @@
           "repository_download_url": null,
           "api_data_url": null,
           "datasource_id": "debian_installed_md5sums",
+          "holder": null,
           "purl": "pkg:deb/base-passwd"
         }
       ],
@@ -2625,6 +2631,7 @@
           "repository_download_url": null,
           "api_data_url": null,
           "datasource_id": "debian_installed_files_list",
+          "holder": null,
           "purl": "pkg:deb/bash"
         }
       ],
@@ -2875,6 +2882,7 @@
           "repository_download_url": null,
           "api_data_url": null,
           "datasource_id": "debian_installed_md5sums",
+          "holder": null,
           "purl": "pkg:deb/bash"
         }
       ],
@@ -2940,6 +2948,7 @@
           "repository_download_url": null,
           "api_data_url": null,
           "datasource_id": "debian_installed_status_db",
+          "holder": null,
           "purl": "pkg:deb/base-files@11ubuntu5?architecture=amd64"
         },
         {
@@ -2995,6 +3004,7 @@
           "repository_download_url": null,
           "api_data_url": null,
           "datasource_id": "debian_installed_status_db",
+          "holder": null,
           "purl": "pkg:deb/base-passwd@3.5.47?architecture=amd64"
         },
         {
@@ -3050,6 +3060,7 @@
           "repository_download_url": null,
           "api_data_url": null,
           "datasource_id": "debian_installed_status_db",
+          "holder": null,
           "purl": "pkg:deb/bash@5.0-6ubuntu1?architecture=amd64"
         },
         {
@@ -3105,6 +3116,7 @@
           "repository_download_url": null,
           "api_data_url": null,
           "datasource_id": "debian_installed_status_db",
+          "holder": null,
           "purl": "pkg:deb/tar@1.30%2Bdfsg-7?architecture=amd64"
         }
       ],

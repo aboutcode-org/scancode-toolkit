@@ -97,6 +97,7 @@
     "repository_download_url": "https://pypi.org/packages/source/p/pyrpm-02strich/pyrpm-02strich-0.5.3.tar.gz",
     "api_data_url": "https://pypi.org/pypi/pyrpm-02strich/0.5.3/json",
     "datasource_id": "pypi_setup_py",
+    "holder": null,
     "purl": "pkg:pypi/pyrpm-02strich@0.5.3"
   }
 ]

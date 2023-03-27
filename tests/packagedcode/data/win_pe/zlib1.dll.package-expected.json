@@ -85,6 +85,7 @@
     "repository_download_url": null,
     "api_data_url": null,
     "datasource_id": "windows_executable",
+    "holder": "Jean-loup Gailly",
     "purl": "pkg:winexe/Zlib@1.2.3.2532"
   }
 ]

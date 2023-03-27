@@ -66,6 +66,7 @@
     "repository_download_url": "https://crates.io/api/v1/crates/clap/2.32.0/download",
     "api_data_url": "https://crates.io/api/v1/crates/clap",
     "datasource_id": "cargo_toml",
+    "holder": null,
     "purl": "pkg:cargo/clap@2.32.0"
   }
 ]

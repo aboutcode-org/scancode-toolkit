@@ -71,6 +71,7 @@
       "repository_homepage_url": "https://packagist.org/packages/jandreasn/a-timer",
       "repository_download_url": null,
       "api_data_url": "https://packagist.org/p/packages/jandreasn/a-timer.json",
+      "holder": null,
       "package_uid": "pkg:composer/jandreasn/a-timer?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_paths": [
         "composer.json"
@@ -235,6 +236,7 @@
           "repository_download_url": null,
           "api_data_url": "https://packagist.org/p/packages/jandreasn/a-timer.json",
           "datasource_id": "php_composer_json",
+          "holder": null,
           "purl": "pkg:composer/jandreasn/a-timer"
         }
       ],

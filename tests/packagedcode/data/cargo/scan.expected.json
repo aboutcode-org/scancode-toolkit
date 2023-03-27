@@ -64,6 +64,7 @@
       "repository_homepage_url": "https://crates.io/crates/apple-xar",
       "repository_download_url": "https://crates.io/api/v1/crates/apple-xar/0.4.0-pre/download",
       "api_data_url": "https://crates.io/api/v1/crates/apple-xar",
+      "holder": null,
       "package_uid": "pkg:cargo/apple-xar@0.4.0-pre?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_paths": [
         "scan/Cargo.toml"
@@ -144,6 +145,7 @@
       "repository_homepage_url": "https://crates.io/crates/daachorse",
       "repository_download_url": "https://crates.io/api/v1/crates/daachorse/0.4.1/download",
       "api_data_url": "https://crates.io/api/v1/crates/daachorse",
+      "holder": null,
       "package_uid": "pkg:cargo/daachorse@0.4.1?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_paths": [
         "scan/dac/Cargo.toml"
@@ -712,6 +714,7 @@
           "repository_download_url": null,
           "api_data_url": null,
           "datasource_id": "cargo_lock",
+          "holder": null,
           "purl": null
         }
       ],
@@ -791,6 +794,7 @@
           "repository_download_url": "https://crates.io/api/v1/crates/apple-xar/0.4.0-pre/download",
           "api_data_url": "https://crates.io/api/v1/crates/apple-xar",
           "datasource_id": "cargo_toml",
+          "holder": null,
           "purl": "pkg:cargo/apple-xar@0.4.0-pre"
         }
       ],
@@ -884,6 +888,7 @@
           "repository_download_url": "https://crates.io/api/v1/crates/daachorse/0.4.1/download",
           "api_data_url": "https://crates.io/api/v1/crates/daachorse",
           "datasource_id": "cargo_toml",
+          "holder": null,
           "purl": "pkg:cargo/daachorse@0.4.1"
         }
       ],

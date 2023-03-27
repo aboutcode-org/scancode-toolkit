@@ -184,6 +184,7 @@
     "repository_download_url": "https://pypi.org/packages/source/u/urllib3/urllib3-1.25.9.tar.gz",
     "api_data_url": "https://pypi.org/pypi/urllib3/1.25.9/json",
     "datasource_id": "pypi_setup_py",
+    "holder": null,
     "purl": "pkg:pypi/urllib3@1.25.9"
   }
 ]

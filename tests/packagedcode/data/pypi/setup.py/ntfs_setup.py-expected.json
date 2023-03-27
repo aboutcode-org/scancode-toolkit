@@ -107,6 +107,7 @@
     "repository_download_url": "https://pypi.org/packages/source/n/ntfsutils/ntfsutils-0.1.1.tar.gz",
     "api_data_url": "https://pypi.org/pypi/ntfsutils/0.1.1/json",
     "datasource_id": "pypi_setup_py",
+    "holder": null,
     "purl": "pkg:pypi/ntfsutils@0.1.1"
   }
 ]

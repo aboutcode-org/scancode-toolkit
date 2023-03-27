@@ -126,6 +126,7 @@
     "repository_download_url": "https://pypi.org/packages/source/p/paho-mqtt/paho-mqtt-1.5.0.tar.gz",
     "api_data_url": "https://pypi.org/pypi/paho-mqtt/1.5.0/json",
     "datasource_id": "pypi_setup_py",
+    "holder": null,
     "purl": "pkg:pypi/paho-mqtt@1.5.0"
   }
 ]

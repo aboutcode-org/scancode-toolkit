@@ -49,6 +49,7 @@
     "repository_download_url": null,
     "api_data_url": null,
     "datasource_id": "go_mod",
+    "holder": null,
     "purl": "pkg:golang/github.com/ua-parser/uap-go"
   }
 ]

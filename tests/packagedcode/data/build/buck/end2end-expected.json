@@ -36,6 +36,7 @@
       "repository_homepage_url": null,
       "repository_download_url": null,
       "api_data_url": null,
+      "holder": null,
       "package_uid": "pkg:buck/end2end?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_paths": [
         "end2end/BUCK"
@@ -101,6 +102,7 @@
       "repository_homepage_url": null,
       "repository_download_url": null,
       "api_data_url": null,
+      "holder": null,
       "package_uid": "pkg:buck/bin?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_paths": [
         "end2end/subdir2/BUCK"
@@ -163,6 +165,7 @@
           "repository_download_url": null,
           "api_data_url": null,
           "datasource_id": "buck_file",
+          "holder": null,
           "purl": "pkg:buck/end2end"
         }
       ],
@@ -281,6 +284,7 @@
           "repository_download_url": null,
           "api_data_url": null,
           "datasource_id": "buck_file",
+          "holder": null,
           "purl": "pkg:buck/bin"
         }
       ],

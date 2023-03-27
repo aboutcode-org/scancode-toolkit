@@ -166,6 +166,7 @@
     "repository_homepage_url": null,
     "repository_download_url": null,
     "api_data_url": null,
+    "holder": "Free Software Foundation, Inc.\nPradeep Padala\nX Consortium\nThe Regents of the University of California\nThomas E. Dickey",
     "package_uid": "pkg:deb/libncurses5@6.1-1ubuntu1.18.04?architecture=amd64&uuid=fixed-uid-done-for-testing-5642512d1758",
     "datafile_paths": [
       "debian-container-layer.tar.xz/var/lib/dpkg/status",
@@ -298,6 +299,7 @@
             "repository_download_url": null,
             "api_data_url": null,
             "datasource_id": "debian_copyright_in_package",
+            "holder": "Free Software Foundation, Inc.\nPradeep Padala\nX Consortium\nThe Regents of the University of California\nThomas E. Dickey",
             "purl": "pkg:deb/libncurses5"
           }
         ],
@@ -388,6 +390,7 @@
             "repository_download_url": null,
             "api_data_url": null,
             "datasource_id": "debian_installed_md5sums",
+            "holder": null,
             "purl": "pkg:deb/libncurses5?arch=amd64"
           }
         ],
@@ -589,6 +592,7 @@
     "repository_homepage_url": null,
     "repository_download_url": null,
     "api_data_url": null,
+    "holder": "Jiri Pirko\nAndrew Ayer",
     "package_uid": "pkg:deb/libndp0@1.4-2ubuntu0.16.04.1?architecture=amd64&uuid=fixed-uid-done-for-testing-5642512d1758",
     "datafile_paths": [
       "debian-container-layer.tar.xz/var/lib/dpkg/status",
@@ -762,6 +766,7 @@
             "repository_download_url": null,
             "api_data_url": null,
             "datasource_id": "debian_copyright_in_package",
+            "holder": "Jiri Pirko\nAndrew Ayer",
             "purl": "pkg:deb/libndp0"
           }
         ],
@@ -843,6 +848,7 @@
             "repository_download_url": null,
             "api_data_url": null,
             "datasource_id": "debian_installed_md5sums",
+            "holder": null,
             "purl": "pkg:deb/libndp0?arch=amd64"
           }
         ],

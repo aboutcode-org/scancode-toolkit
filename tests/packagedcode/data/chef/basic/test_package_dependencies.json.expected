@@ -68,5 +68,6 @@
   "repository_download_url": "https://supermarket.chef.io/cookbooks/test/versions/0.01/download",
   "api_data_url": "https://supermarket.chef.io/api/v1/cookbooks/test/versions/0.01",
   "datasource_id": "chef_cookbook_metadata_rb",
+  "holder": null,
   "purl": "pkg:chef/test@0.01"
 }

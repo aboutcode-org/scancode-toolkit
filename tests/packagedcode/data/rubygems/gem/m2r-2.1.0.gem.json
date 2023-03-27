@@ -218,6 +218,7 @@
     "repository_download_url": "https://rubygems.org/downloads/m2r-2.1.0.gem",
     "api_data_url": "https://rubygems.org/api/v2/rubygems/m2r/versions/2.1.0.json",
     "datasource_id": "gem_archive",
+    "holder": null,
     "purl": "pkg:gem/m2r@2.1.0"
   }
 ]

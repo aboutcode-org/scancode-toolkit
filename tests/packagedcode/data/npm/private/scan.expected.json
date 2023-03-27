@@ -71,6 +71,7 @@
           "repository_download_url": null,
           "api_data_url": null,
           "datasource_id": "npm_package_json",
+          "holder": null,
           "purl": null
         }
       ],

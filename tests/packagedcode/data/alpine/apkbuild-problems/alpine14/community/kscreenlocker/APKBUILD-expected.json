@@ -86,5 +86,6 @@
   "repository_download_url": null,
   "api_data_url": null,
   "datasource_id": "alpine_apkbuild",
+  "holder": null,
   "purl": "pkg:alpine/kscreenlocker@5.22.0-r0"
 }

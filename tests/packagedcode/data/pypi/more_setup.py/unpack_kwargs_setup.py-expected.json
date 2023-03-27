@@ -87,6 +87,7 @@
     "repository_download_url": "https://pypi.org/packages/source/m/my-package/my-package-0.1.2.tar.gz",
     "api_data_url": "https://pypi.org/pypi/my-package/0.1.2/json",
     "datasource_id": "pypi_setup_py",
+    "holder": null,
     "purl": "pkg:pypi/my-package@0.1.2"
   }
 ]

@@ -116,6 +116,7 @@
     "repository_download_url": "https://pypi.org/packages/source/p/pexpect/pexpect-4.6.0.tar.gz",
     "api_data_url": "https://pypi.org/pypi/pexpect/4.6.0/json",
     "datasource_id": "pypi_setup_py",
+    "holder": null,
     "purl": "pkg:pypi/pexpect@4.6.0"
   }
 ]

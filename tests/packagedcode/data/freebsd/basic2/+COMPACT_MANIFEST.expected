@@ -71,6 +71,7 @@
     "repository_download_url": null,
     "api_data_url": null,
     "datasource_id": "freebsd_compact_manifest",
+    "holder": null,
     "purl": "pkg:freebsd/0d1n@2.3?arch=freebsd:10:x86:64&origin=security/0d1n"
   }
 ]

@@ -119,6 +119,7 @@
           "repository_download_url": null,
           "api_data_url": null,
           "datasource_id": "cocoapods_podfile_lock",
+          "holder": null,
           "purl": null
         }
       ],

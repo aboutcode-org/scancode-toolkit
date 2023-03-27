@@ -74,5 +74,6 @@
   "repository_download_url": null,
   "api_data_url": null,
   "datasource_id": "rpm_archive",
+  "holder": "nexB Inc.",
   "purl": "pkg:rpm/fedora/Sample@12.2.3?abc=12&this=that#asdasd/asdasd/asdasd"
 }

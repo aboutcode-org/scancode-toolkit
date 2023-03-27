@@ -252,6 +252,7 @@
     "repository_download_url": null,
     "api_data_url": "https://pypi.org/pypi/Flask/json",
     "datasource_id": "pypi_setup_py",
+    "holder": null,
     "purl": "pkg:pypi/flask"
   }
 ]

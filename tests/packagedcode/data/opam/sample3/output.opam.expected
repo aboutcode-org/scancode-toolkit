@@ -118,6 +118,7 @@
     "repository_download_url": null,
     "api_data_url": null,
     "datasource_id": "opam_file",
+    "holder": null,
     "purl": null
   }
 ]

@@ -951,6 +951,7 @@
     "repository_download_url": "https://pypi.org/packages/source/u/urllib3/urllib3-1.26.4.tar.gz",
     "api_data_url": "https://pypi.org/pypi/urllib3/1.26.4/json",
     "datasource_id": "pypi_wheel_metadata",
+    "holder": null,
     "purl": "pkg:pypi/urllib3@1.26.4"
   }
 ]

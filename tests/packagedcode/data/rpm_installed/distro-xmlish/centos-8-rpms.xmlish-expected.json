@@ -97,6 +97,7 @@
     "repository_download_url": null,
     "api_data_url": null,
     "datasource_id": "rpm_installed_database_sqlite",
+    "holder": null,
     "purl": "pkg:rpm/python3-setuptools-wheel@39.2.0?arch=noarch"
   },
   {
@@ -188,6 +189,7 @@
     "repository_download_url": null,
     "api_data_url": null,
     "datasource_id": "rpm_installed_database_sqlite",
+    "holder": null,
     "purl": "pkg:rpm/centos-gpg-keys@8.1?arch=noarch"
   },
   {
@@ -261,6 +263,7 @@
     "repository_download_url": null,
     "api_data_url": null,
     "datasource_id": "rpm_installed_database_sqlite",
+    "holder": null,
     "purl": "pkg:rpm/langpacks-en@1.0?arch=noarch"
   }
 ]

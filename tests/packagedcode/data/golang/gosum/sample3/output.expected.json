@@ -59,6 +59,7 @@
     "repository_download_url": null,
     "api_data_url": null,
     "datasource_id": "go_sum",
+    "holder": null,
     "purl": null
   }
 ]

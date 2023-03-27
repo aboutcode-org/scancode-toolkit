@@ -97,6 +97,7 @@
     "repository_download_url": "https://pypi.org/packages/source/P/PyYAML/PyYAML-3.13.tar.gz",
     "api_data_url": "https://pypi.org/pypi/PyYAML/3.13/json",
     "datasource_id": "pypi_setup_py",
+    "holder": null,
     "purl": "pkg:pypi/pyyaml@3.13"
   }
 ]

@@ -367,6 +367,7 @@
     "repository_download_url": "https://pypi.org/packages/source/p/plugincode/plugincode-21.1.21.tar.gz",
     "api_data_url": "https://pypi.org/pypi/plugincode/21.1.21/json",
     "datasource_id": "pypi_wheel_metadata",
+    "holder": null,
     "purl": "pkg:pypi/plugincode@21.1.21"
   }
 ]

@@ -369,6 +369,7 @@
     "repository_download_url": null,
     "api_data_url": "https://packagist.org/p/packages/integration-hub.json",
     "datasource_id": "php_composer_json",
+    "holder": null,
     "purl": "pkg:composer/integration-hub"
   }
 ]

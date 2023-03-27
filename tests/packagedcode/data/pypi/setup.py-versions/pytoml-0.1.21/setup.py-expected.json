@@ -93,6 +93,7 @@
     "repository_download_url": "https://pypi.org/packages/source/p/pytoml/pytoml-0.1.21.tar.gz",
     "api_data_url": "https://pypi.org/pypi/pytoml/0.1.21/json",
     "datasource_id": "pypi_setup_py",
+    "holder": null,
     "purl": "pkg:pypi/pytoml@0.1.21"
   }
 ]

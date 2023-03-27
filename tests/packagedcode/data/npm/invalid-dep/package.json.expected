@@ -86,6 +86,7 @@
     "repository_download_url": "https://registry.npmjs.org/angular2-autosize/-/angular2-autosize-1.0.0.tgz",
     "api_data_url": "https://registry.npmjs.org/angular2-autosize/1.0.0",
     "datasource_id": "npm_package_json",
+    "holder": null,
     "purl": "pkg:npm/angular2-autosize@1.0.0"
   }
 ]

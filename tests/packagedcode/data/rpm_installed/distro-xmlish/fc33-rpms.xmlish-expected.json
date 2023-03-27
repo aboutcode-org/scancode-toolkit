@@ -199,6 +199,7 @@
     "repository_download_url": null,
     "api_data_url": null,
     "datasource_id": "rpm_installed_database_sqlite",
+    "holder": null,
     "purl": "pkg:rpm/libgcc@10.1.1?arch=x86_64"
   },
   {
@@ -281,6 +282,7 @@
     "repository_download_url": null,
     "api_data_url": null,
     "datasource_id": "rpm_installed_database_sqlite",
+    "holder": null,
     "purl": "pkg:rpm/fedora-release-identity-container@33?arch=noarch"
   }
 ]

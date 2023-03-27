@@ -66,6 +66,7 @@
       "repository_homepage_url": "https://www.npmjs.com/package/electron",
       "repository_download_url": "https://registry.npmjs.org/electron/-/electron-3.1.11.tgz",
       "api_data_url": "https://registry.npmjs.org/electron/3.1.11",
+      "holder": null,
       "package_uid": "pkg:npm/electron@3.1.11?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_paths": [
         "package/package.json"
@@ -313,6 +314,7 @@
           "repository_download_url": "https://registry.npmjs.org/electron/-/electron-3.1.11.tgz",
           "api_data_url": "https://registry.npmjs.org/electron/3.1.11",
           "datasource_id": "npm_package_json",
+          "holder": null,
           "purl": "pkg:npm/electron@3.1.11"
         }
       ],

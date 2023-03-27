@@ -46,6 +46,7 @@
     "repository_download_url": null,
     "api_data_url": null,
     "datasource_id": "microsoft_update_manifest_mum",
+    "holder": null,
     "purl": "pkg:windows-update/Package_1_for_KB4601060@10.0.3770.4"
   }
 ]

@@ -152,6 +152,7 @@
           "repository_download_url": "https://pypi.org/packages/source/c/cdp-seattle-backend/cdp-seattle-backend-1.0.0.tar.gz",
           "api_data_url": "https://pypi.org/pypi/cdp-seattle-backend/1.0.0/json",
           "datasource_id": "pypi_setup_py",
+          "holder": null,
           "purl": "pkg:pypi/cdp-seattle-backend@1.0.0"
         }
       ],

@@ -101,6 +101,7 @@
     "repository_download_url": "https://pypi.org/packages/source/u/urlpy/urlpy-0.2.0.2.tar.gz",
     "api_data_url": "https://pypi.org/pypi/urlpy/0.2.0.2/json",
     "datasource_id": "pypi_setup_py",
+    "holder": null,
     "purl": "pkg:pypi/urlpy@0.2.0.2"
   }
 ]

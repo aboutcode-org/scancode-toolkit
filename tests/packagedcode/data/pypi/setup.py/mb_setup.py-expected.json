@@ -66,6 +66,7 @@
     "repository_download_url": "https://pypi.org/packages/source/m/mb/mb-2.19.0.tar.gz",
     "api_data_url": "https://pypi.org/pypi/mb/2.19.0/json",
     "datasource_id": "pypi_setup_py",
+    "holder": null,
     "purl": "pkg:pypi/mb@2.19.0"
   }
 ]

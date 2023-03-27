@@ -86,6 +86,7 @@
     "repository_download_url": null,
     "api_data_url": null,
     "datasource_id": "debian_installed_md5sums",
+    "holder": null,
     "purl": "pkg:deb/mockutil?arch=amd64"
   }
 ]

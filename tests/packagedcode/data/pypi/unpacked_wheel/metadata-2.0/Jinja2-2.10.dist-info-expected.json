@@ -691,6 +691,7 @@
     "repository_download_url": "https://pypi.org/packages/source/J/Jinja2/Jinja2-2.10.tar.gz",
     "api_data_url": "https://pypi.org/pypi/Jinja2/2.10/json",
     "datasource_id": "pypi_wheel_metadata",
+    "holder": null,
     "purl": "pkg:pypi/jinja2@2.10"
   }
 ]

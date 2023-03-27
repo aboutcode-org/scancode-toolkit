@@ -832,6 +832,7 @@
     "repository_download_url": "https://registry.npmjs.org/npm/-/npm-2.13.5.tgz",
     "api_data_url": "https://registry.npmjs.org/npm/2.13.5",
     "datasource_id": "npm_package_json",
+    "holder": null,
     "purl": "pkg:npm/npm@2.13.5"
   }
 ]

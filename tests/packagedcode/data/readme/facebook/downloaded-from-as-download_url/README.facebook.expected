@@ -58,6 +58,7 @@
     "repository_download_url": null,
     "api_data_url": null,
     "datasource_id": "readme",
+    "holder": null,
     "purl": "pkg:readme/mbed%20TLS@2.16.4"
   }
 ]

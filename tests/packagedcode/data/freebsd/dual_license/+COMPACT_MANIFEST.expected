@@ -91,6 +91,7 @@
     "repository_download_url": null,
     "api_data_url": null,
     "datasource_id": "freebsd_compact_manifest",
+    "holder": null,
     "purl": "pkg:freebsd/rubygem-facets@3.1.0?arch=freebsd:10:%2A&origin=devel/rubygem-facets"
   }
 ]

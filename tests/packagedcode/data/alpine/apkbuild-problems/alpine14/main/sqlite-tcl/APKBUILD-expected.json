@@ -70,5 +70,6 @@
   "repository_download_url": null,
   "api_data_url": null,
   "datasource_id": "alpine_apkbuild",
+  "holder": null,
   "purl": "pkg:alpine/sqlite-tcl@3.35.5-r0"
 }

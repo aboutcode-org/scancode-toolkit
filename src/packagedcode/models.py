@@ -711,8 +711,34 @@ class PackageData(IdentifiablePackageData):
         repr=True,
     )
 
+    holder= String(
+    label='Holder',
+    help='Holder for this package. Typically one per line.')
+
     def __attrs_post_init__(self, *args, **kwargs):
         self.populate_license_fields()
+        self.populate_holder_field()
+
+    def populate_holder_field(self):
+        if self.copyright:
+            from cluecode.copyrights import CopyrightDetector
+
+            numbered_lines = [
+                (count, value) for count, value in enumerate(self.copyright.split("\n"), start=1)
+            ]
+            detector = CopyrightDetector()
+            holder_list = list(
+                detector.detect(
+                    numbered_lines,
+                    include_copyrights=False,
+                    include_holders=True,
+                    include_authors=False,
+                )
+            )
+            if holder_list:
+                self.holder = "\n".join(
+                    [holder_detection.holder for holder_detection in holder_list]
+                )
 
     def populate_license_fields(self):
         """

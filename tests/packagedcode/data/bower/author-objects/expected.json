@@ -146,6 +146,7 @@
     "repository_download_url": null,
     "api_data_url": null,
     "datasource_id": "bower_json",
+    "holder": null,
     "purl": "pkg:bower/John%20Doe"
   }
 ]

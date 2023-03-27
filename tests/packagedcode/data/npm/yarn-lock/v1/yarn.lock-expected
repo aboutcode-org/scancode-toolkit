@@ -80,6 +80,7 @@
           "repository_download_url": "https://registry.npmjs.org/abbrev/-/abbrev-1.0.9.tgz",
           "api_data_url": "https://registry.npmjs.org/abbrev/1.0.9",
           "datasource_id": "yarn_lock_v1",
+          "holder": null,
           "purl": "pkg:npm/abbrev@1.0.9"
         },
         "extra_data": {}
@@ -141,6 +142,7 @@
           "repository_download_url": "https://registry.npmjs.org/ansi-align/-/ansi-align-1.1.0.tgz",
           "api_data_url": "https://registry.npmjs.org/ansi-align/1.1.0",
           "datasource_id": "yarn_lock_v1",
+          "holder": null,
           "purl": "pkg:npm/ansi-align@1.1.0"
         },
         "extra_data": {}
@@ -212,6 +214,7 @@
           "repository_download_url": "https://registry.npmjs.org/are-we-there-yet/-/are-we-there-yet-1.1.2.tgz",
           "api_data_url": "https://registry.npmjs.org/are-we-there-yet/1.1.2",
           "datasource_id": "yarn_lock_v1",
+          "holder": null,
           "purl": "pkg:npm/are-we-there-yet@1.1.2"
         },
         "extra_data": {}
@@ -273,6 +276,7 @@
           "repository_download_url": "https://registry.npmjs.org/arr-diff/-/arr-diff-2.0.0.tgz",
           "api_data_url": "https://registry.npmjs.org/arr-diff/2.0.0",
           "datasource_id": "yarn_lock_v1",
+          "holder": null,
           "purl": "pkg:npm/arr-diff@2.0.0"
         },
         "extra_data": {}
@@ -354,6 +358,7 @@
           "repository_download_url": "https://registry.npmjs.org/babel-helper-function-name/-/babel-helper-function-name-6.18.0.tgz",
           "api_data_url": "https://registry.npmjs.org/babel-helper-function-name/6.18.0",
           "datasource_id": "yarn_lock_v1",
+          "holder": null,
           "purl": "pkg:npm/babel-helper-function-name@6.18.0"
         },
         "extra_data": {}
@@ -415,6 +420,7 @@
           "repository_download_url": "https://registry.npmjs.org/rimraf/-/rimraf-2.5.4.tgz",
           "api_data_url": "https://registry.npmjs.org/rimraf/2.5.4",
           "datasource_id": "yarn_lock_v1",
+          "holder": null,
           "purl": "pkg:npm/rimraf@2.5.4"
         },
         "extra_data": {}
@@ -476,6 +482,7 @@
           "repository_download_url": "https://registry.npmjs.org/semver-diff/-/semver-diff-2.1.0.tgz",
           "api_data_url": "https://registry.npmjs.org/semver-diff/2.1.0",
           "datasource_id": "yarn_lock_v1",
+          "holder": null,
           "purl": "pkg:npm/semver-diff@2.1.0"
         },
         "extra_data": {}
@@ -526,6 +533,7 @@
           "repository_download_url": "https://registry.npmjs.org/semver/-/semver-5.3.0.tgz",
           "api_data_url": "https://registry.npmjs.org/semver/5.3.0",
           "datasource_id": "yarn_lock_v1",
+          "holder": null,
           "purl": "pkg:npm/semver@5.3.0"
         },
         "extra_data": {}
@@ -535,6 +543,7 @@
     "repository_download_url": null,
     "api_data_url": null,
     "datasource_id": "yarn_lock_v1",
+    "holder": null,
     "purl": null
   }
 ]

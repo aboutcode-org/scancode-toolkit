@@ -84,6 +84,7 @@
     "repository_download_url": "https://www.nuget.org/api/v2/package/jQuery.UI.Combined/1.11.4",
     "api_data_url": "https://api.nuget.org/v3/registration3/jquery.ui.combined/1.11.4.json",
     "datasource_id": "nuget_nupsec",
+    "holder": null,
     "purl": "pkg:nuget/jQuery.UI.Combined@1.11.4"
   }
 ]

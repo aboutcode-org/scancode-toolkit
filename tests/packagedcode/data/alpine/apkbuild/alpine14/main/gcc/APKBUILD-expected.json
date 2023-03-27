@@ -398,5 +398,6 @@
   "repository_download_url": null,
   "api_data_url": null,
   "datasource_id": "alpine_apkbuild",
+  "holder": null,
   "purl": "pkg:alpine/gcc@10.3.1_git20210424-r1"
 }

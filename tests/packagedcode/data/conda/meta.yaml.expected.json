@@ -159,6 +159,7 @@
     "repository_download_url": null,
     "api_data_url": null,
     "datasource_id": "conda_meta_yaml",
+    "holder": null,
     "purl": "pkg:conda/abeona@0.45.0"
   }
 ]

@@ -66,6 +66,7 @@
     "repository_download_url": null,
     "api_data_url": null,
     "datasource_id": "windows_executable",
+    "holder": null,
     "purl": "pkg:winexe/Moq@4.2.1507.0118"
   }
 ]

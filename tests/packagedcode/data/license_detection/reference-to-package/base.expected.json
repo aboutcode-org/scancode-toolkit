@@ -78,6 +78,7 @@
       "repository_homepage_url": "https://pypi.org/project/Django",
       "repository_download_url": "https://pypi.org/packages/source/D/Django/Django-1.2.5.tar.gz",
       "api_data_url": "https://pypi.org/pypi/Django/1.2.5/json",
+      "holder": null,
       "package_uid": "pkg:pypi/django@1.2.5?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_paths": [
         "PKG-INFO"
@@ -189,6 +190,7 @@
           "repository_download_url": "https://pypi.org/packages/source/D/Django/Django-1.2.5.tar.gz",
           "api_data_url": "https://pypi.org/pypi/Django/1.2.5/json",
           "datasource_id": "pypi_sdist_pkginfo",
+          "holder": null,
           "purl": "pkg:pypi/django@1.2.5"
         }
       ],

@@ -79,6 +79,7 @@
     "repository_download_url": null,
     "api_data_url": null,
     "datasource_id": "rpm_installed_database_sqlite",
+    "holder": null,
     "purl": "pkg:rpm/boost-license1_71_0@1.71.0?arch=noarch"
   },
   {
@@ -170,6 +171,7 @@
     "repository_download_url": null,
     "api_data_url": null,
     "datasource_id": "rpm_installed_database_sqlite",
+    "holder": null,
     "purl": "pkg:rpm/cracklib-dict-small@2.9.6?arch=x86_64"
   }
 ]

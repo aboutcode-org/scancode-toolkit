@@ -64,6 +64,7 @@
       "repository_homepage_url": "https://pypi.org/project/arpy",
       "repository_download_url": "https://pypi.org/packages/source/a/arpy/arpy-0.1.1.tar.gz",
       "api_data_url": "https://pypi.org/pypi/arpy/0.1.1/json",
+      "holder": null,
       "package_uid": "pkg:pypi/arpy@0.1.1?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_paths": [
         "arpy/setup.py"
@@ -164,6 +165,7 @@
       "repository_homepage_url": "https://pypi.org/project/atomicwrites",
       "repository_download_url": "https://pypi.org/packages/source/a/atomicwrites/atomicwrites-1.2.1.tar.gz",
       "api_data_url": "https://pypi.org/pypi/atomicwrites/1.2.1/json",
+      "holder": null,
       "package_uid": "pkg:pypi/atomicwrites@1.2.1?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_paths": [
         "atomicwrites/atomicwrites-1.2.1-py2.py3-none-any.whl"
@@ -229,6 +231,7 @@
       "repository_homepage_url": "https://supermarket.chef.io/cookbooks/six/versions/1.10.0/",
       "repository_download_url": "https://supermarket.chef.io/cookbooks/six/versions/1.10.0/download",
       "api_data_url": "https://supermarket.chef.io/api/v1/cookbooks/six/versions/1.10.0",
+      "holder": null,
       "package_uid": "pkg:chef/six@1.10.0?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_paths": [
         "Six/metadata.json"
@@ -327,6 +330,7 @@
       "repository_homepage_url": "https://pypi.org/project/six",
       "repository_download_url": "https://pypi.org/packages/source/s/six/six-1.10.0.tar.gz",
       "api_data_url": "https://pypi.org/pypi/six/1.10.0/json",
+      "holder": null,
       "package_uid": "pkg:pypi/six@1.10.0?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_paths": [
         "Six/Six.dist-info/METADATA"
@@ -400,6 +404,7 @@
       "repository_homepage_url": "https://pypi.org/project/TicketImport",
       "repository_download_url": "https://pypi.org/packages/source/T/TicketImport/TicketImport-0.7a.tar.gz",
       "api_data_url": "https://pypi.org/pypi/TicketImport/0.7a/json",
+      "holder": null,
       "package_uid": "pkg:pypi/ticketimport@0.7a?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_paths": [
         "TicketImport/PKG-INFO"
@@ -843,6 +848,7 @@
           "repository_download_url": "https://pypi.org/packages/source/s/six/six-1.10.0.tar.gz",
           "api_data_url": "https://pypi.org/pypi/six/1.10.0/json",
           "datasource_id": "pypi_wheel_metadata",
+          "holder": null,
           "purl": "pkg:pypi/six@1.10.0"
         }
       ],
@@ -914,6 +920,7 @@
           "repository_download_url": "https://supermarket.chef.io/cookbooks/six/versions/1.10.0/download",
           "api_data_url": "https://supermarket.chef.io/api/v1/cookbooks/six/versions/1.10.0",
           "datasource_id": "chef_cookbook_metadata_json",
+          "holder": null,
           "purl": "pkg:chef/six@1.10.0"
         }
       ],
@@ -1000,6 +1007,7 @@
           "repository_download_url": "https://pypi.org/packages/source/T/TicketImport/TicketImport-0.7a.tar.gz",
           "api_data_url": "https://pypi.org/pypi/TicketImport/0.7a/json",
           "datasource_id": "pypi_sdist_pkginfo",
+          "holder": null,
           "purl": "pkg:pypi/ticketimport@0.7a"
         }
       ],
@@ -1086,6 +1094,7 @@
           "repository_download_url": "https://pypi.org/packages/source/a/arpy/arpy-0.1.1.tar.gz",
           "api_data_url": "https://pypi.org/pypi/arpy/0.1.1/json",
           "datasource_id": "pypi_setup_py",
+          "holder": null,
           "purl": "pkg:pypi/arpy@0.1.1"
         }
       ],
@@ -1315,6 +1324,7 @@
           "repository_download_url": null,
           "api_data_url": null,
           "datasource_id": "pipfile_lock",
+          "holder": null,
           "purl": null
         }
       ],
@@ -1465,6 +1475,7 @@
           "repository_download_url": "https://pypi.org/packages/source/a/atomicwrites/atomicwrites-1.2.1.tar.gz",
           "api_data_url": "https://pypi.org/pypi/atomicwrites/1.2.1/json",
           "datasource_id": "pypi_wheel",
+          "holder": null,
           "purl": "pkg:pypi/atomicwrites@1.2.1"
         }
       ],
@@ -1587,6 +1598,7 @@
           "repository_download_url": null,
           "api_data_url": null,
           "datasource_id": "pip_requirements",
+          "holder": null,
           "purl": null
         }
       ],

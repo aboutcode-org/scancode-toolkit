@@ -77,6 +77,7 @@
     "repository_download_url": "https://supermarket.chef.io/cookbooks/301/versions/0.1.0/download",
     "api_data_url": "https://supermarket.chef.io/api/v1/cookbooks/301/versions/0.1.0",
     "datasource_id": "chef_cookbook_metadata_json",
+    "holder": null,
     "purl": "pkg:chef/301@0.1.0"
   }
 ]

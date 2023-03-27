@@ -89,6 +89,7 @@
       "repository_homepage_url": "https://pypi.org/project/daglib",
       "repository_download_url": "https://pypi.org/packages/source/d/daglib/daglib-0.6.0.tar.gz",
       "api_data_url": "https://pypi.org/pypi/daglib/0.6.0/json",
+      "holder": null,
       "package_uid": "pkg:pypi/daglib@0.6.0?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_paths": [
         "daglib_wheel_extracted/daglib-0.6.0.dist-info/METADATA"
@@ -389,6 +390,7 @@
           "repository_download_url": "https://pypi.org/packages/source/d/daglib/daglib-0.6.0.tar.gz",
           "api_data_url": "https://pypi.org/pypi/daglib/0.6.0/json",
           "datasource_id": "pypi_wheel_metadata",
+          "holder": null,
           "purl": "pkg:pypi/daglib@0.6.0"
         }
       ],
