@@ -198,3 +198,9 @@ Using ScanCode as a Python library
 ScanCode can be used alright as a Python library and is available as as a
 Python wheel in Pypi and installed with ``pip install scancode-toolkit`` or
 ``pip install scancode-toolkit-mini``.
+
+.. _note:
+
+   Since we do not pin dependencies to avoid dependency resolution conflicts
+   for downstream users, there are possibilities of issues arising from
+   dependencies silently changing API/functions which scancode uses.
