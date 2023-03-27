@@ -913,6 +913,8 @@ def test_scan_errors_out_without_an_input_path():
 
 
 def test_merge_multiple_scans():
+    # Run `--info` scans on samples/ and thirdparty/ directories respectively
+    # in a git checkout of scancode-toolkit v3.0.2
     test_file_1 = test_env.get_test_loc('merge_scans/sample.json')
     test_file_2 = test_env.get_test_loc('merge_scans/thirdparty.json')
     result_file = test_env.get_temp_file('json')

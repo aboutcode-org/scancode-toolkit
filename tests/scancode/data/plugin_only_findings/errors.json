@@ -2,68 +2,72 @@
   "headers": [
     {
       "tool_name": "scancode-toolkit",
-      "tool_version": "3.1.0",
+      "tool_version": "v32.0.0rc3-3-gcf08f4b7be",
       "options": {
-        "input": "<path>",
+        "input": [
+          "tests/scancode/data/plugin_only_findings/errors/many_copyrights.c"
+        ],
         "--copyright": true,
         "--email": true,
         "--info": true,
-        "--json-pp": "<file>",
+        "--json-pp": "tests/scancode/data/plugin_only_findings/errors.json",
         "--only-findings": true,
         "--timeout": "0.01"
       },
       "notice": "Generated with ScanCode and provided on an \"AS IS\" BASIS, WITHOUT WARRANTIES\nOR CONDITIONS OF ANY KIND, either express or implied. No content created from\nScanCode should be considered or used as legal advice. Consult an Attorney\nfor any legal advice.\nScanCode is a free software code scanning tool from nexB Inc. and others.\nVisit https://github.com/nexB/scancode-toolkit/ for support and download.",
-      "start_timestamp": "2019-09-03T075955.177000",
-      "end_timestamp": "2019-09-03T075955.796952",
+      "start_timestamp": "2023-03-28T144928.989319",
+      "end_timestamp": "2023-03-28T144929.037694",
+      "output_format_version": "3.0.0",
+      "duration": 0.04839038848876953,
       "message": null,
       "errors": [
-        "Path: errors/many_copyrights.c"
+        "Path: many_copyrights.c"
       ],
+      "warnings": [],
       "extra_data": {
+        "system_environment": {
+          "operating_system": "linux",
+          "cpu_architecture": "64",
+          "platform": "Linux-5.14.0-1058-oem-x86_64-with-glibc2.29",
+          "platform_version": "#66-Ubuntu SMP Fri Feb 10 09:46:18 UTC 2023",
+          "python_version": "3.8.10 (default, Mar 13 2023, 10:26:41) \n[GCC 9.4.0]"
+        },
+        "spdx_license_list_version": "3.20",
         "files_count": 1
       }
     }
   ],
   "files": [
     {
-      "path": "errors/many_copyrights.c",
+      "path": "many_copyrights.c",
       "type": "file",
       "name": "many_copyrights.c",
       "base_name": "many_copyrights",
       "extension": ".c",
-      "size": 14056,
-      "date": "2019-08-20",
-      "sha1": "71551d028e1a732d23d8ddafd2fa3493456c5719",
-      "md5": "682cfd155c73a9129591b05a9eb95eca",
-      "mime_type": "text/plain",
-      "file_type": "UTF-8 Unicode text",
-      "programming_language": "C++",
+      "size": 0,
+      "date": null,
+      "sha1": null,
+      "md5": null,
+      "sha256": null,
+      "mime_type": null,
+      "file_type": null,
+      "programming_language": null,
       "is_binary": false,
-      "is_text": true,
+      "is_text": false,
       "is_archive": false,
       "is_media": false,
-      "is_source": true,
+      "is_source": false,
       "is_script": false,
-      "copyrights": [
-        {
-          "copyright": "Copyright (c) 2000 ACME, Inc.",
-          "start_line": 1,
-          "end_line": 1
-        }
-      ],
-      "holders": [
-        {
-          "holder": "ACME, Inc.",
-          "start_line": 1,
-          "end_line": 1
-        }
-      ],
+      "copyrights": [],
+      "holders": [],
       "authors": [],
       "emails": [],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
       "scan_errors": [
+        "ERROR: for scanner: info:\nERROR: Processing interrupted: timeout after 0 seconds.",
+        "ERROR: for scanner: copyrights:\nERROR: Processing interrupted: timeout after 0 seconds.",
         "ERROR: for scanner: emails:\nERROR: Processing interrupted: timeout after 0 seconds."
       ]
     }
