@@ -58,8 +58,6 @@
       "datasource_id": "opam_file"
     }
   ],
-  "license_references": [],
-  "license_rule_references": [],
   "files": [
     {
       "path": "ocaml-variants.opam",

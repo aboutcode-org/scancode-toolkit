@@ -1,36 +1,9 @@
 {
   "license_detections": [
     {
-      "identifier": "example1_and_example2-2f6955bf-3007-907c-96a9-972954a09866",
+      "identifier": "example1_and_example2-f86ebb61-26dd-be05-2a61-01d7b630ba62",
       "license_expression": "example1 AND example2",
-      "count": 1,
-      "detection_log": [
-        "not-combined"
-      ],
-      "matches": [
-        {
-          "score": 100.0,
-          "start_line": 1,
-          "end_line": 1,
-          "matched_length": 9,
-          "match_coverage": 100.0,
-          "matcher": "2-aho",
-          "license_expression": "example1",
-          "rule_identifier": "example1.LICENSE",
-          "rule_url": null
-        },
-        {
-          "score": 100.0,
-          "start_line": 1,
-          "end_line": 5,
-          "matched_length": 69,
-          "match_coverage": 100.0,
-          "matcher": "2-aho",
-          "license_expression": "example2",
-          "rule_identifier": "example2.LICENSE",
-          "rule_url": null
-        }
-      ]
+      "detection_count": 1
     }
   ],
   "license_references": [
@@ -164,9 +137,6 @@
       "license_detections": [
         {
           "license_expression": "example1 AND example2",
-          "detection_log": [
-            "not-combined"
-          ],
           "matches": [
             {
               "score": 100.0,
@@ -177,6 +147,7 @@
               "matcher": "2-aho",
               "license_expression": "example1",
               "rule_identifier": "example1.LICENSE",
+              "rule_relevance": 100,
               "rule_url": null
             },
             {
@@ -188,16 +159,15 @@
               "matcher": "2-aho",
               "license_expression": "example2",
               "rule_identifier": "example2.LICENSE",
+              "rule_relevance": 100,
               "rule_url": null
             }
-          ]
+          ],
+          "identifier": "example1_and_example2-f86ebb61-26dd-be05-2a61-01d7b630ba62"
         }
       ],
       "license_clues": [],
       "percentage_of_license_text": 95.12,
-      "for_license_detections": [
-        "example1_and_example2-2f6955bf-3007-907c-96a9-972954a09866"
-      ],
       "scan_errors": []
     }
   ]

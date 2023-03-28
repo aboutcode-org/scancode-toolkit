@@ -245,6 +245,9 @@ def write_spdx(
     ns_prefix = '_'.join(package_name.lower().split())
     comment = notice + f'\nSPDX License List: {scancode_config.spdx_license_list_version}'
 
+    version_major, version_minor = scancode_config.spdx_license_list_version.split(".")
+    spdx_license_list_version = Version(major=version_major, minor=version_minor)
+
     doc = Document(
         version=Version(*spdx_version),
         data_license=License.from_identifier('CC0-1.0'),
@@ -257,6 +260,7 @@ def write_spdx(
     tool_name = tool_name or 'ScanCode'
     doc.creation_info.add_creator(Tool(f'{tool_name} {tool_version}'))
     doc.creation_info.set_created_now()
+    doc.creation_info.license_list_version = spdx_license_list_version
 
     package_id = '001'
     package = doc.package = Package(
@@ -284,7 +288,10 @@ def write_spdx(
         file_entry = File(
             spdx_id=f'SPDXRef-{sid}',
             name=name)
-        file_entry.set_checksum(Checksum(ChecksumAlgorithm.SHA1, file_data.get('sha1') or ''))
+        if file_data.get('file_type') == 'empty':
+            file_entry.set_checksum(Checksum(ChecksumAlgorithm.SHA1, "da39a3ee5e6b4b0d3255bfef95601890afd80709"))
+        else:
+            file_entry.set_checksum(Checksum(ChecksumAlgorithm.SHA1, file_data.get('sha1') or ''))
 
         file_license_detections = file_data.get('license_detections')
         license_matches = get_matches_from_detection_mappings(file_license_detections)

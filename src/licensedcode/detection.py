@@ -114,7 +114,6 @@ class DetectionRule(Enum):
 
     These are logged in LicenseDetection.detection_log for verbosity.
     """
-    NOT_COMBINED = 'not-combined'
     UNKNOWN_MATCH = 'unknown-match'
     LICENSE_CLUES = 'license-clues'
     FALSE_POSITIVE = 'possible-false-positive'
@@ -159,6 +158,13 @@ class LicenseDetection:
             'using the SPDX license expression syntax and ScanCode license keys.')
     )
 
+    matches = attr.ib(
+        default=attr.Factory(list),
+        metadata=dict(
+            help='List of license matches combined in this detection.'
+        )
+    )
+
     detection_log = attr.ib(
         repr=False,
         default=attr.Factory(list),
@@ -168,12 +174,13 @@ class LicenseDetection:
         )
     )
 
-    matches = attr.ib(
-        default=attr.Factory(list),
+    identifier = attr.ib(
+        default=None,
         metadata=dict(
-            help='List of license matches combined in this detection.'
-        )
+            help='An identifier unique for a license detection, containing the license '
+            'expression and a UUID crafted from the match contents.')
     )
+
 
     # Only used in unique detection calculation and referencing
     file_region = attr.ib(
@@ -222,11 +229,13 @@ class LicenseDetection:
                 detection_log=detection_log,
             )
 
-        return cls(
+        detection = cls(
             matches=matches,
             license_expression=str(license_expression),
             detection_log=detection_log,
         )
+        detection.identifier = detection.identifier_with_expression
+        return detection
 
     def __eq__(self, other):
         return (
@@ -259,25 +268,23 @@ class LicenseDetection:
         )
 
     @property
-    def identifier(self):
+    def _identifier(self):
         """
         Return an unique identifier for a license detection, based on it's
         underlying license matches with the tokenized matched_text.
         """
         data = []
         for match in self.matches:
-            tokenized_matched_text = tuple(query_tokenizer(match.matched_text))
+            tokenized_matched_text = tuple(query_tokenizer(match.matched_text()))
             identifier = (
-                match.identifier,
+                match.rule.identifier,
                 match.score(),
                 tokenized_matched_text,
             )
             data.append(identifier)
 
         # Return a uuid generated from the contents of the matches
-        identifier_string = repr(tuple(data))
-        md_hash = sha1(identifier_string.encode('utf-8'))
-        return str(uuid.UUID(hex=md_hash.hexdigest()[:32]))
+        return get_uuid_on_content(content=data)
 
     @property
     def identifier_with_expression(self):
@@ -286,7 +293,7 @@ class LicenseDetection:
         and an UUID created from the detection contents.
         """
         id_safe_expression = python_safe_name(s=str(self.license_expression))
-        return "{}-{}".format(id_safe_expression, self.identifier)
+        return "{}-{}".format(id_safe_expression, self._identifier)
 
     def get_start_end_line(self):
         """
@@ -416,6 +423,7 @@ class LicenseDetection:
         self,
         include_text=False,
         license_text_diagnostics=False,
+        license_diagnostics=False,
         whole_lines=True,
     ):
         """
@@ -424,6 +432,9 @@ class LicenseDetection:
 
         def dict_fields(attr, value):
             if attr.name == 'file_region':
+                return False
+
+            if attr.name == 'detection_log' and not license_diagnostics:
                 return False
 
             return True
@@ -443,6 +454,16 @@ class LicenseDetection:
         detection["matches"] = data_matches
 
         return detection
+
+
+def get_uuid_on_content(content):
+    """
+    Return an UUID based on the contents of a list, which should be
+    a list of hashable elements.
+    """
+    identifier_string = repr(tuple(content))
+    md_hash = sha1(identifier_string.encode('utf-8'))
+    return str(uuid.UUID(hex=md_hash.hexdigest()[:32]))
 
 
 @attr.s
@@ -471,7 +492,8 @@ class LicenseDetectionFromResult(LicenseDetection):
 
         detection = cls(
             license_expression=license_detection_mapping["license_expression"],
-            detection_log=license_detection_mapping["detection_log"],
+            detection_log=license_detection_mapping.get("detection_log", []) or None,
+            identifier=license_detection_mapping["identifier"],
             matches=matches,
             file_region=None,
         )
@@ -498,6 +520,20 @@ def detections_from_license_detection_mappings(
         )
 
     return license_detections
+
+
+def get_new_identifier_from_detections(initial_detection, detections_added):
+    """
+    Return a new UUID based on two sets of detections: `initial_detection` is
+    the detection being modified with a list of detections (from another file region)
+    `detections_added`.
+    """
+    identifiers = [
+        detection_mapping["identifier"]
+        for detection_mapping in detections_added
+    ]
+    identifiers.append(initial_detection["identifier"])
+    return get_uuid_on_content(content=sorted(identifiers))
 
 
 @attr.s
@@ -584,9 +620,9 @@ class UniqueDetection:
     """
     identifier = attr.ib(default=None)
     license_expression = attr.ib(default=None)
-    count = attr.ib(default=None)
-    detection_log = attr.ib(default=attr.Factory(list))
+    detection_count = attr.ib(default=None)
     matches = attr.ib(default=attr.Factory(list))
+    detection_log = attr.ib(default=attr.Factory(list))
     files = attr.ib(factory=list)
 
     @classmethod
@@ -608,21 +644,28 @@ class UniqueDetection:
             detection_mapping = detection.to_dict()
             unique_license_detections.append(
                 cls(
-                    identifier=detection.identifier_with_expression,
+                    identifier=detection_mapping["identifier"],
                     license_expression=detection_mapping["license_expression"],
-                    detection_log=detection_mapping["detection_log"],
+                    detection_log=detection_mapping.get("detection_log", []) or [],
                     matches=detection_mapping["matches"],
-                    count=len(file_regions),
+                    detection_count=len(file_regions),
                     files=file_regions,
                 )
             )
 
         return unique_license_detections
 
-    def to_dict(self):
+    def to_dict(self, license_diagnostics):
 
         def dict_fields(attr, value):
+
             if attr.name == 'files':
+                return False
+
+            if attr.name == 'matches':
+                return False
+
+            if attr.name == 'detection_log' and not license_diagnostics:
                 return False
 
             return True
@@ -1049,9 +1092,8 @@ def get_detected_license_expression(
 
     else:
         if TRACE_ANALYSIS:
-            logger_debug(f'analysis {DetectionRule.NOT_COMBINED.value}')
+            logger_debug(f'analysis not-combined')
         matches_for_expression = license_matches
-        detection_log.append(DetectionRule.NOT_COMBINED.value)
 
     if TRACE:
         logger_debug(f'matches_for_expression: {matches_for_expression}', f'detection_log: {detection_log}')
@@ -1355,6 +1397,7 @@ def process_detections(detections, licensing=Licensing()):
                         licensing=licensing,
                     ))
                     detection.detection_log.append(DetectionRule.NOT_LICENSE_CLUES.value)
+                    detection.identifier = detection.identifier_with_expression
 
             yield detection
 

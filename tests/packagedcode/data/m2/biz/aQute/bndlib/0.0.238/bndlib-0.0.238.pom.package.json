@@ -34,9 +34,6 @@
   "license_detections": [
     {
       "license_expression": "apache-2.0",
-      "detection_log": [
-        "not-combined"
-      ],
       "matches": [
         {
           "score": 100.0,
@@ -47,16 +44,15 @@
           "matcher": "1-hash",
           "license_expression": "apache-2.0",
           "rule_identifier": "apache-2.0_239.RULE",
+          "rule_relevance": 100,
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_239.RULE",
           "matched_text": "This material is licensed under the Apache Software License, Version 2.0"
         }
-      ]
+      ],
+      "identifier": "apache_2_0-4195590c-2c42-6030-e13a-cf15b4d87b67"
     },
     {
       "license_expression": "apache-2.0",
-      "detection_log": [
-        "not-combined"
-      ],
       "matches": [
         {
           "score": 100.0,
@@ -67,10 +63,12 @@
           "matcher": "1-hash",
           "license_expression": "apache-2.0",
           "rule_identifier": "apache-2.0_25.RULE",
+          "rule_relevance": 100,
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_25.RULE",
           "matched_text": "http://www.apache.org/licenses/LICENSE-2.0"
         }
-      ]
+      ],
+      "identifier": "apache_2_0-e3a84133-3548-87fd-b873-d193344afada"
     }
   ],
   "other_license_expression": null,

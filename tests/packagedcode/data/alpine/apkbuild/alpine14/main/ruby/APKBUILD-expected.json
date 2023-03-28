@@ -26,9 +26,6 @@
   "license_detections": [
     {
       "license_expression": "ruby AND bsd-simplified AND mit",
-      "detection_log": [
-        "not-combined"
-      ],
       "matches": [
         {
           "score": 100.0,
@@ -39,10 +36,12 @@
           "matcher": "1-spdx-id",
           "license_expression": "ruby AND bsd-simplified AND mit",
           "rule_identifier": "spdx-license-identifier-ruby AND bsd-simplified AND mit-41ebb50cee7db0cae90eea02dcf774f353e5566e",
+          "rule_relevance": 100,
           "rule_url": null,
           "matched_text": "ruby AND bsd-2-clause AND mit"
         }
-      ]
+      ],
+      "identifier": "ruby_and_bsd_simplified_and_mit-51044b18-d59b-bf75-33d1-1915e63eba54"
     }
   ],
   "other_license_expression": null,

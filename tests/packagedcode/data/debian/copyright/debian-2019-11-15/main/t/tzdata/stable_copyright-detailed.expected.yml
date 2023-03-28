@@ -5,8 +5,6 @@ other_license_expression:
 other_license_expression_spdx:
 license_detections:
   - license_expression: public-domain
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 9
@@ -16,7 +14,9 @@ license_detections:
         matcher: 2-aho
         license_expression: public-domain
         rule_identifier: public-domain_285.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/public-domain_285.RULE
         matched_text: is in the public domain.
+    identifier: public_domain-66cbe544-bff0-b748-48f3-5ee40ae6ba61
 other_license_detections: []
 copyright:

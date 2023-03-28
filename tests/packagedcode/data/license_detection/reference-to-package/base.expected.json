@@ -48,9 +48,6 @@
       "license_detections": [
         {
           "license_expression": "bsd-new",
-          "detection_log": [
-            "not-combined"
-          ],
           "matches": [
             {
               "score": 99.0,
@@ -61,10 +58,12 @@
               "matcher": "1-hash",
               "license_expression": "bsd-new",
               "rule_identifier": "pypi_bsd_license.RULE",
+              "rule_relevance": 99,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/pypi_bsd_license.RULE",
               "matched_text": "['License :: OSI Approved :: BSD License']"
             }
-          ]
+          ],
+          "identifier": "bsd_new-f4e99f86-00ab-18d9-a65d-a3a12767dcf5"
         }
       ],
       "other_license_expression": null,
@@ -92,189 +91,16 @@
   "dependencies": [],
   "license_detections": [
     {
-      "identifier": "bsd_new-3b411c83-a312-46d5-4c43-375cee0b3b39",
+      "identifier": "af493d9f-0c66-d9f8-4538-579134812514",
       "license_expression": "bsd-new",
-      "count": 1,
-      "detection_log": [
-        "unknown-reference-in-file-to-package"
-      ],
-      "matches": [
-        {
-          "score": 100.0,
-          "start_line": 1,
-          "end_line": 1,
-          "matched_length": 11,
-          "match_coverage": 100.0,
-          "matcher": "2-aho",
-          "license_expression": "free-unknown",
-          "rule_identifier": "free-unknown-package_1.RULE",
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/free-unknown-package_1.RULE"
-        },
-        {
-          "score": 99.0,
-          "start_line": 1,
-          "end_line": 1,
-          "matched_length": 5,
-          "match_coverage": 100.0,
-          "matcher": "1-hash",
-          "license_expression": "bsd-new",
-          "rule_identifier": "pypi_bsd_license.RULE",
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/pypi_bsd_license.RULE"
-        }
-      ]
+      "detection_count": 1,
+      "detection_log": []
     },
     {
       "identifier": "bsd_new-f4e99f86-00ab-18d9-a65d-a3a12767dcf5",
       "license_expression": "bsd-new",
-      "count": 2,
-      "detection_log": [
-        "not-combined"
-      ],
-      "matches": [
-        {
-          "score": 99.0,
-          "start_line": 16,
-          "end_line": 16,
-          "matched_length": 5,
-          "match_coverage": 100.0,
-          "matcher": "2-aho",
-          "license_expression": "bsd-new",
-          "rule_identifier": "pypi_bsd_license.RULE",
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/pypi_bsd_license.RULE"
-        }
-      ]
-    }
-  ],
-  "license_references": [
-    {
-      "key": "bsd-new",
-      "language": "en",
-      "short_name": "BSD-3-Clause",
-      "name": "BSD-3-Clause",
-      "category": "Permissive",
-      "owner": "Regents of the University of California",
-      "homepage_url": "http://www.opensource.org/licenses/BSD-3-Clause",
-      "notes": "Per SPDX.org, this license is OSI certified.",
-      "is_builtin": true,
-      "is_exception": false,
-      "is_unknown": false,
-      "is_generic": false,
-      "spdx_license_key": "BSD-3-Clause",
-      "other_spdx_license_keys": [
-        "LicenseRef-scancode-libzip"
-      ],
-      "osi_license_key": "BSD-3-Clause",
-      "text_urls": [
-        "http://www.opensource.org/licenses/BSD-3-Clause"
-      ],
-      "osi_url": "http://www.opensource.org/licenses/BSD-3-Clause",
-      "faq_url": null,
-      "other_urls": [
-        "http://framework.zend.com/license/new-bsd",
-        "https://opensource.org/licenses/BSD-3-Clause",
-        "https://www.eclipse.org/org/documents/edl-v10.php"
-      ],
-      "key_aliases": [],
-      "minimum_coverage": 0,
-      "standard_notice": null,
-      "ignorable_copyrights": [],
-      "ignorable_holders": [],
-      "ignorable_authors": [],
-      "ignorable_urls": [],
-      "ignorable_emails": [],
-      "text": "Redistribution and use in source and binary forms, with or without modification,\nare permitted provided that the following conditions are met:\n\nRedistributions of source code must retain the above copyright notice, this list\nof conditions and the following disclaimer.\n\nRedistributions in binary form must reproduce the above copyright notice, this\nlist of conditions and the following disclaimer in the documentation and/or\nother materials provided with the distribution.\n\nNeither the name of the ORGANIZATION nor the names of its contributors may be\nused to endorse or promote products derived from this software without specific\nprior written permission.\n\nTHIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS\n\"AS IS\" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO,\nTHE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE\nARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS\nBE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR\nCONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE\nGOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)\nHOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT\nLIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF\nTHE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.",
-      "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-new.LICENSE",
-      "licensedb_url": "https://scancode-licensedb.aboutcode.org/bsd-new",
-      "spdx_url": "https://spdx.org/licenses/BSD-3-Clause"
-    },
-    {
-      "key": "free-unknown",
-      "language": "en",
-      "short_name": "Free unknown",
-      "name": "Free unknown license detected but not recognized",
-      "category": "Unstated License",
-      "owner": "Unspecified",
-      "homepage_url": null,
-      "notes": "This case applies to software with a notice that refers in a non-specific manner to a free or open-source license, but where it is not possible to determine that specific license.",
-      "is_builtin": true,
-      "is_exception": false,
-      "is_unknown": true,
-      "is_generic": false,
-      "spdx_license_key": "LicenseRef-scancode-free-unknown",
-      "other_spdx_license_keys": [],
-      "osi_license_key": null,
-      "text_urls": [],
-      "osi_url": null,
-      "faq_url": null,
-      "other_urls": [],
-      "key_aliases": [],
-      "minimum_coverage": 0,
-      "standard_notice": null,
-      "ignorable_copyrights": [],
-      "ignorable_holders": [],
-      "ignorable_authors": [],
-      "ignorable_urls": [],
-      "ignorable_emails": [],
-      "text": "",
-      "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/free-unknown.LICENSE",
-      "licensedb_url": "https://scancode-licensedb.aboutcode.org/free-unknown",
-      "spdx_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/free-unknown.LICENSE"
-    }
-  ],
-  "license_rule_references": [
-    {
-      "license_expression": "free-unknown",
-      "identifier": "free-unknown-package_1.RULE",
-      "language": "en",
-      "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/free-unknown-package_1.RULE",
-      "is_license_text": false,
-      "is_license_notice": false,
-      "is_license_reference": true,
-      "is_license_tag": false,
-      "is_license_intro": false,
-      "is_continuous": true,
-      "is_builtin": true,
-      "is_from_license": false,
-      "is_synthetic": false,
-      "length": 11,
-      "relevance": 100,
-      "minimum_coverage": 100,
-      "referenced_filenames": [
-        "INHERIT_LICENSE_FROM_PACKAGE"
-      ],
-      "notes": null,
-      "ignorable_copyrights": [],
-      "ignorable_holders": [],
-      "ignorable_authors": [],
-      "ignorable_urls": [],
-      "ignorable_emails": [],
-      "text": "This file is distributed under the same license as the package."
-    },
-    {
-      "license_expression": "bsd-new",
-      "identifier": "pypi_bsd_license.RULE",
-      "language": "en",
-      "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/pypi_bsd_license.RULE",
-      "is_license_text": false,
-      "is_license_notice": false,
-      "is_license_reference": false,
-      "is_license_tag": true,
-      "is_license_intro": false,
-      "is_continuous": false,
-      "is_builtin": true,
-      "is_from_license": false,
-      "is_synthetic": false,
-      "length": 5,
-      "relevance": 99,
-      "minimum_coverage": 80,
-      "referenced_filenames": [],
-      "notes": "we picked the bsd-new out of all possible bsd licenses",
-      "ignorable_copyrights": [],
-      "ignorable_holders": [],
-      "ignorable_authors": [],
-      "ignorable_urls": [],
-      "ignorable_emails": [],
-      "text": "License :: OSI Approved :: BSD License"
+      "detection_count": 2,
+      "detection_log": []
     }
   ],
   "files": [
@@ -330,9 +156,6 @@
           "license_detections": [
             {
               "license_expression": "bsd-new",
-              "detection_log": [
-                "not-combined"
-              ],
               "matches": [
                 {
                   "score": 99.0,
@@ -343,10 +166,12 @@
                   "matcher": "1-hash",
                   "license_expression": "bsd-new",
                   "rule_identifier": "pypi_bsd_license.RULE",
+                  "rule_relevance": 99,
                   "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/pypi_bsd_license.RULE",
                   "matched_text": "['License :: OSI Approved :: BSD License']"
                 }
-              ]
+              ],
+              "identifier": "bsd_new-f4e99f86-00ab-18d9-a65d-a3a12767dcf5"
             }
           ],
           "other_license_expression": null,
@@ -375,9 +200,6 @@
       "license_detections": [
         {
           "license_expression": "bsd-new",
-          "detection_log": [
-            "not-combined"
-          ],
           "matches": [
             {
               "score": 99.0,
@@ -388,18 +210,17 @@
               "matcher": "2-aho",
               "license_expression": "bsd-new",
               "rule_identifier": "pypi_bsd_license.RULE",
+              "rule_relevance": 99,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/pypi_bsd_license.RULE",
               "matched_text": "License :: OSI Approved :: BSD License"
             }
-          ]
+          ],
+          "detection_log": [],
+          "identifier": "bsd_new-f4e99f86-00ab-18d9-a65d-a3a12767dcf5"
         }
       ],
       "license_clues": [],
       "percentage_of_license_text": 4.03,
-      "for_license_detections": [
-        "bsd_new-f4e99f86-00ab-18d9-a65d-a3a12767dcf5",
-        "bsd_new-f4e99f86-00ab-18d9-a65d-a3a12767dcf5"
-      ],
       "scan_errors": []
     },
     {
@@ -414,9 +235,6 @@
       "license_detections": [
         {
           "license_expression": "bsd-new",
-          "detection_log": [
-            "unknown-reference-in-file-to-package"
-          ],
           "matches": [
             {
               "score": 100.0,
@@ -427,6 +245,7 @@
               "matcher": "2-aho",
               "license_expression": "free-unknown",
               "rule_identifier": "free-unknown-package_1.RULE",
+              "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/free-unknown-package_1.RULE",
               "matched_text": "This file is distributed under the same license as the package."
             },
@@ -439,17 +258,19 @@
               "matcher": "1-hash",
               "license_expression": "bsd-new",
               "rule_identifier": "pypi_bsd_license.RULE",
+              "rule_relevance": 99,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/pypi_bsd_license.RULE",
               "matched_text": "['License :: OSI Approved :: BSD License']"
             }
-          ]
+          ],
+          "detection_log": [
+            "unknown-reference-in-file-to-package"
+          ],
+          "identifier": "af493d9f-0c66-d9f8-4538-579134812514"
         }
       ],
       "license_clues": [],
       "percentage_of_license_text": 0.07,
-      "for_license_detections": [
-        "bsd_new-3b411c83-a312-46d5-4c43-375cee0b3b39"
-      ],
       "scan_errors": []
     }
   ]

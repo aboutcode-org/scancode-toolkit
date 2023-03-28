@@ -35,9 +35,6 @@
     "license_detections": [
       {
         "license_expression": "unknown",
-        "detection_log": [
-          "undetected-license"
-        ],
         "matches": [
           {
             "score": 83.33,
@@ -48,10 +45,12 @@
             "matcher": "5-undetected",
             "license_expression": "unknown",
             "rule_identifier": "package-manifest-unknown-679f097d28658555700ef170738adb0fd7151fce",
+            "rule_relevance": 100,
             "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/package-manifest-unknown-679f097d28658555700ef170738adb0fd7151fce",
             "matched_text": "license {'LegalCopyright': None, 'LegalTrademarks': '', 'License': None}"
           }
-        ]
+        ],
+        "identifier": "unknown-3a74427e-26a2-7b3f-eb84-9b610c013417"
       }
     ],
     "other_license_expression": null,

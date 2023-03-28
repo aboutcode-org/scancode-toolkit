@@ -26,9 +26,6 @@
   "license_detections": [
     {
       "license_expression": "lgpl-2.0-plus",
-      "detection_log": [
-        "not-combined"
-      ],
       "matches": [
         {
           "score": 75.0,
@@ -39,16 +36,15 @@
           "matcher": "1-hash",
           "license_expression": "lgpl-2.0-plus",
           "rule_identifier": "lgpl_bare_single_word.RULE",
+          "rule_relevance": 75,
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl_bare_single_word.RULE",
           "matched_text": "lgpl"
         }
-      ]
+      ],
+      "identifier": "lgpl_2_0_plus-64f6d457-252f-6fe3-26b9-ae66d29ef973"
     },
     {
       "license_expression": "lgpl-2.0-plus",
-      "detection_log": [
-        "not-combined"
-      ],
       "matches": [
         {
           "score": 75.0,
@@ -59,10 +55,12 @@
           "matcher": "2-aho",
           "license_expression": "lgpl-2.0-plus",
           "rule_identifier": "lgpl_bare_single_word.RULE",
+          "rule_relevance": 75,
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl_bare_single_word.RULE",
           "matched_text": "http://repository.jboss.com/licenses/lgpl.txt"
         }
-      ]
+      ],
+      "identifier": "lgpl_2_0_plus-64f6d457-252f-6fe3-26b9-ae66d29ef973"
     }
   ],
   "other_license_expression": null,

@@ -26,9 +26,6 @@
   "license_detections": [
     {
       "license_expression": "cddl-1.0",
-      "detection_log": [
-        "not-combined"
-      ],
       "matches": [
         {
           "score": 95.0,
@@ -39,16 +36,15 @@
           "matcher": "1-hash",
           "license_expression": "cddl-1.0",
           "rule_identifier": "spdx_license_id_cddl-1.0_for_cddl-1.0.RULE",
+          "rule_relevance": 95,
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/spdx_license_id_cddl-1.0_for_cddl-1.0.RULE",
           "matched_text": "CDDL 1.0"
         }
-      ]
+      ],
+      "identifier": "cddl_1_0-71485250-23f5-756d-2093-4784d4e3a801"
     },
     {
       "license_expression": "cddl-1.0",
-      "detection_log": [
-        "not-combined"
-      ],
       "matches": [
         {
           "score": 100.0,
@@ -59,10 +55,12 @@
           "matcher": "1-hash",
           "license_expression": "cddl-1.0",
           "rule_identifier": "cddl-1.0_6.RULE",
+          "rule_relevance": 100,
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/cddl-1.0_6.RULE",
           "matched_text": "https://glassfish.dev.java.net/public/CDDLv1.0.html"
         }
-      ]
+      ],
+      "identifier": "cddl_1_0-4f2bf4d0-3879-deb3-fbbc-dee2fdcf653b"
     }
   ],
   "other_license_expression": null,

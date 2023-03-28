@@ -67,6 +67,8 @@ def test_license_option_reports_license_expressions_spdx_nuget():
     args = [
         '--license',
         '--license-text',
+        '--license-text-diagnostics',
+        '--license-diagnostics',
         '--strip-root',
         '--verbose',
         '--json', result_file,
@@ -84,6 +86,8 @@ def test_license_option_reports_license_texts():
     args = [
         '--license',
         '--license-text',
+        '--license-text-diagnostics',
+        '--license-diagnostics',
         '--strip-root',
         '--verbose',
         '--json', result_file,
@@ -102,6 +106,7 @@ def test_license_option_reports_license_texts_diag():
         '--license',
         '--license-text',
         '--license-text-diagnostics',
+        '--license-diagnostics',
         '--strip-root',
         '--verbose',
         '--json', result_file,
@@ -118,6 +123,8 @@ def test_license_option_reports_license_texts_long_lines():
     args = [
         '--license',
         '--license-text',
+        '--license-text-diagnostics',
+        '--license-diagnostics',
         '--strip-root',
         '--verbose',
         '--json', result_file,
@@ -135,6 +142,7 @@ def test_license_option_reports_license_texts_diag_long_lines():
         '--license',
         '--license-text',
         '--license-text-diagnostics',
+        '--license-diagnostics',
         '--strip-root',
         '--verbose',
         '--json', result_file,
@@ -173,7 +181,7 @@ def test_detection_does_not_timeout_on_sqlite3_amalgamation():
     result_file = test_env.get_temp_file('json')
     expected_file = test_env.get_test_loc('plugin_license/sqlite/sqlite.expected.json')
     # we use the default 120 seconds timeout
-    run_scan_click(['-l', '--license-text', '--json-pp', result_file, test_dir])
+    run_scan_click(['-l', '--license-text', '--license-text-diagnostics', '--json-pp', result_file, test_dir])
     check_json_scan(expected_file, result_file, remove_file_date=True, regen=REGEN_TEST_FIXTURES)
 
 

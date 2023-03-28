@@ -28,9 +28,6 @@
       "license_detections": [
         {
           "license_expression": "bsd-new",
-          "detection_log": [
-            "not-combined"
-          ],
           "matches": [
             {
               "score": 100.0,
@@ -41,10 +38,13 @@
               "matcher": "2-aho",
               "license_expression": "bsd-new",
               "rule_identifier": "bsd-new_166.RULE",
+              "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_166.RULE",
               "matched_text": "Redistribution and use in source and binary forms, with or without\nmodification, are permitted provided that the following conditions are\nmet:\n\n   * Redistributions of source code must retain the above copyright\nnotice, this list of conditions and the following disclaimer.\n   * Redistributions in binary form must reproduce the above\ncopyright notice, this list of conditions and the following disclaimer\nin the documentation and/or other materials provided with the\ndistribution.\n\n   * Neither the name of Google Inc. nor the names of its\ncontributors may be used to endorse or promote products derived from\nthis software without specific prior written permission.\n\nTHIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS\n\"AS IS\" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT\nLIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR\nA PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT\nOWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,\nSPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT\nLIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,\nDATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY\nTHEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT\n(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE\nOF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE."
             }
-          ]
+          ],
+          "detection_log": [],
+          "identifier": "bsd_new-050b3051-820b-200e-26c9-1a3c8e9761d2"
         }
       ],
       "other_license_expression": null,
@@ -115,94 +115,8 @@
     {
       "identifier": "bsd_new-050b3051-820b-200e-26c9-1a3c8e9761d2",
       "license_expression": "bsd-new",
-      "count": 2,
-      "detection_log": [
-        "not-combined"
-      ],
-      "matches": [
-        {
-          "score": 100.0,
-          "start_line": 3,
-          "end_line": 28,
-          "matched_length": 212,
-          "match_coverage": 100.0,
-          "matcher": "2-aho",
-          "license_expression": "bsd-new",
-          "rule_identifier": "bsd-new_166.RULE",
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_166.RULE"
-        }
-      ]
-    }
-  ],
-  "license_references": [
-    {
-      "key": "bsd-new",
-      "language": "en",
-      "short_name": "BSD-3-Clause",
-      "name": "BSD-3-Clause",
-      "category": "Permissive",
-      "owner": "Regents of the University of California",
-      "homepage_url": "http://www.opensource.org/licenses/BSD-3-Clause",
-      "notes": "Per SPDX.org, this license is OSI certified.",
-      "is_builtin": true,
-      "is_exception": false,
-      "is_unknown": false,
-      "is_generic": false,
-      "spdx_license_key": "BSD-3-Clause",
-      "other_spdx_license_keys": [
-        "LicenseRef-scancode-libzip"
-      ],
-      "osi_license_key": "BSD-3-Clause",
-      "text_urls": [
-        "http://www.opensource.org/licenses/BSD-3-Clause"
-      ],
-      "osi_url": "http://www.opensource.org/licenses/BSD-3-Clause",
-      "faq_url": null,
-      "other_urls": [
-        "http://framework.zend.com/license/new-bsd",
-        "https://opensource.org/licenses/BSD-3-Clause",
-        "https://www.eclipse.org/org/documents/edl-v10.php"
-      ],
-      "key_aliases": [],
-      "minimum_coverage": 0,
-      "standard_notice": null,
-      "ignorable_copyrights": [],
-      "ignorable_holders": [],
-      "ignorable_authors": [],
-      "ignorable_urls": [],
-      "ignorable_emails": [],
-      "text": "Redistribution and use in source and binary forms, with or without modification,\nare permitted provided that the following conditions are met:\n\nRedistributions of source code must retain the above copyright notice, this list\nof conditions and the following disclaimer.\n\nRedistributions in binary form must reproduce the above copyright notice, this\nlist of conditions and the following disclaimer in the documentation and/or\nother materials provided with the distribution.\n\nNeither the name of the ORGANIZATION nor the names of its contributors may be\nused to endorse or promote products derived from this software without specific\nprior written permission.\n\nTHIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS\n\"AS IS\" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO,\nTHE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE\nARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS\nBE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR\nCONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE\nGOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)\nHOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT\nLIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF\nTHE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.",
-      "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-new.LICENSE",
-      "licensedb_url": "https://scancode-licensedb.aboutcode.org/bsd-new",
-      "spdx_url": "https://spdx.org/licenses/BSD-3-Clause"
-    }
-  ],
-  "license_rule_references": [
-    {
-      "license_expression": "bsd-new",
-      "identifier": "bsd-new_166.RULE",
-      "language": "en",
-      "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_166.RULE",
-      "is_license_text": true,
-      "is_license_notice": false,
-      "is_license_reference": false,
-      "is_license_tag": false,
-      "is_license_intro": false,
-      "is_continuous": false,
-      "is_builtin": true,
-      "is_from_license": false,
-      "is_synthetic": false,
-      "length": 212,
-      "relevance": 100,
-      "minimum_coverage": 0,
-      "referenced_filenames": [],
-      "notes": null,
-      "ignorable_copyrights": [],
-      "ignorable_holders": [],
-      "ignorable_authors": [],
-      "ignorable_urls": [],
-      "ignorable_emails": [],
-      "text": "// Redistribution and use in source and binary forms, with or without\n// modification, are permitted provided that the following conditions are\n// met:\n//\n//    * Redistributions of source code must retain the above copyright\n// notice, this list of conditions and the following disclaimer.\n//    * Redistributions in binary form must reproduce the above\n// copyright notice, this list of conditions and the following disclaimer\n// in the documentation and/or other materials provided with the\n// distribution.\n//    * Neither the name of Google Inc. nor the names of its\n// contributors may be used to endorse or promote products derived from\n// this software without specific prior written permission.\n//\n// THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS\n// &quot;AS IS&quot; AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT\n// LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR\n// A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT\n// OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,\n// SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT\n// LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,\n// DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY\n// THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT\n// (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE\n// OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE."
+      "detection_count": 2,
+      "detection_log": []
     }
   ],
   "files": [
@@ -216,9 +130,6 @@
       "license_detections": [
         {
           "license_expression": "bsd-new",
-          "detection_log": [
-            "not-combined"
-          ],
           "matches": [
             {
               "score": 100.0,
@@ -229,17 +140,17 @@
               "matcher": "2-aho",
               "license_expression": "bsd-new",
               "rule_identifier": "bsd-new_166.RULE",
+              "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_166.RULE",
               "matched_text": "Redistribution and use in source and binary forms, with or without\nmodification, are permitted provided that the following conditions are\nmet:\n\n   * Redistributions of source code must retain the above copyright\nnotice, this list of conditions and the following disclaimer.\n   * Redistributions in binary form must reproduce the above\ncopyright notice, this list of conditions and the following disclaimer\nin the documentation and/or other materials provided with the\ndistribution.\n\n   * Neither the name of Google Inc. nor the names of its\ncontributors may be used to endorse or promote products derived from\nthis software without specific prior written permission.\n\nTHIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS\n\"AS IS\" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT\nLIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR\nA PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT\nOWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,\nSPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT\nLIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,\nDATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY\nTHEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT\n(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE\nOF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE."
             }
-          ]
+          ],
+          "detection_log": [],
+          "identifier": "bsd_new-050b3051-820b-200e-26c9-1a3c8e9761d2"
         }
       ],
       "license_clues": [],
       "percentage_of_license_text": 96.8,
-      "for_license_detections": [
-        "bsd_new-050b3051-820b-200e-26c9-1a3c8e9761d2"
-      ],
       "scan_errors": []
     },
     {
@@ -274,9 +185,6 @@
           "license_detections": [
             {
               "license_expression": "bsd-new",
-              "detection_log": [
-                "not-combined"
-              ],
               "matches": [
                 {
                   "score": 100.0,
@@ -287,10 +195,13 @@
                   "matcher": "2-aho",
                   "license_expression": "bsd-new",
                   "rule_identifier": "bsd-new_166.RULE",
+                  "rule_relevance": 100,
                   "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_166.RULE",
                   "matched_text": "Redistribution and use in source and binary forms, with or without\nmodification, are permitted provided that the following conditions are\nmet:\n\n   * Redistributions of source code must retain the above copyright\nnotice, this list of conditions and the following disclaimer.\n   * Redistributions in binary form must reproduce the above\ncopyright notice, this list of conditions and the following disclaimer\nin the documentation and/or other materials provided with the\ndistribution.\n\n   * Neither the name of Google Inc. nor the names of its\ncontributors may be used to endorse or promote products derived from\nthis software without specific prior written permission.\n\nTHIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS\n\"AS IS\" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT\nLIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR\nA PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT\nOWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,\nSPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT\nLIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,\nDATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY\nTHEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT\n(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE\nOF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE."
                 }
-              ]
+              ],
+              "detection_log": [],
+              "identifier": "bsd_new-050b3051-820b-200e-26c9-1a3c8e9761d2"
             }
           ],
           "other_license_expression": null,
@@ -348,9 +259,6 @@
       "license_detections": [],
       "license_clues": [],
       "percentage_of_license_text": 0,
-      "for_license_detections": [
-        "bsd_new-050b3051-820b-200e-26c9-1a3c8e9761d2"
-      ],
       "scan_errors": []
     }
   ]

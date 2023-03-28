@@ -35,9 +35,6 @@
     "license_detections": [
       {
         "license_expression": "lgpl-2.1-plus",
-        "detection_log": [
-          "not-combined"
-        ],
         "matches": [
           {
             "score": 100.0,
@@ -48,10 +45,12 @@
             "matcher": "1-hash",
             "license_expression": "lgpl-2.1-plus",
             "rule_identifier": "lgpl-2.1-plus_455.RULE",
+            "rule_relevance": 100,
             "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_455.RULE",
             "matched_text": "This program is free software; you can redistribute it and/or modify it under the terms of the GNU Lesser General Public License;see www.gnu.org/copyleft/lesser.html."
           }
-        ]
+        ],
+        "identifier": "lgpl_2_1_plus-d52498f2-31be-5daf-9703-6bed57c7717e"
       }
     ],
     "other_license_expression": null,

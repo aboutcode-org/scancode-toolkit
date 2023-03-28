@@ -5,11 +5,14 @@ name: PBM Library License
 category: Permissive
 owner: ACME Labs
 homepage_url: http://web.mit.edu/tex/fontutil/fontutils-0.6/pbm/libpbm1.c
-spdx_license_key: LicenseRef-scancode-libpbm
+spdx_license_key: xlock
+other_spdx_license_keys:
+    - LicenseRef-scancode-libpbm
 text_urls:
     - http://web.mit.edu/tex/fontutil/fontutils-0.6/pbm/libpbm1.c
 other_urls:
     - http://sourceforge.net/p/netpbm/code/HEAD/tree/trunk/doc/COPYRIGHT.PATENT
+    - https://fossies.org/linux/tiff/contrib/ras/ras2tif.c
 ---
 
 Permission to use, copy, modify, and distribute this software and its documentation

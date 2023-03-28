@@ -790,6 +790,7 @@ class LicenseMatch(object):
         # LicenseDB Level Information (Rule that was matched)
         result['license_expression'] = self.rule.license_expression
         result['rule_identifier'] = self.rule.identifier
+        result['rule_relevance'] = self.rule.relevance
         result['rule_url'] = self.rule.rule_url
 
         if include_text:

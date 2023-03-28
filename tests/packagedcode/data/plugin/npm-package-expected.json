@@ -40,9 +40,6 @@
       "license_detections": [
         {
           "license_expression": "mit",
-          "detection_log": [
-            "from-package-file"
-          ],
           "matches": [
             {
               "score": 100.0,
@@ -53,6 +50,7 @@
               "matcher": "2-aho",
               "license_expression": "mit",
               "rule_identifier": "mit_27.RULE",
+              "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_27.RULE",
               "matched_text": "  \"readme\": \"\\n# cookie-signature\\n\\n  Sign and unsign cookies.\\n\\n## Example\\n\\n```js\\nvar cookie = require('cookie-signature');\\n\\nvar val = cookie.sign('hello', 'tobiiscool');\\nval.should.equal('hello.DGDUkGlIkCzPz+C0B064FNgHdEjox7ch8tOBGslZ5QI');\\n\\nvar val = cookie.sign('hello', 'tobiiscool');\\ncookie.unsign(val, 'tobiiscool').should.equal('hello');\\ncookie.unsign(val, 'luna').should.be.false;\\n```\\n\\n## License \\n\\n(The MIT License)\\n\\nCopyright (c) 2012 LearnBoost &lt;tj@learnboost.com&gt;\\n\\nPermission is hereby granted, free of charge, to any person obtaining\\na copy of this software and associated documentation files (the\\n'Software'), to deal in the Software without restriction, including\\nwithout limitation the rights to use, copy, modify, merge, publish,\\ndistribute, sublicense, and/or sell copies of the Software, and to\\npermit persons to whom the Software is furnished to do so, subject to\\nthe following conditions:\\n\\nThe above copyright notice and this permission notice shall be\\nincluded in all copies or substantial portions of the Software.\\n\\nTHE SOFTWARE IS PROVIDED 'AS IS', WITHOUT WARRANTY OF ANY KIND,\\nEXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF\\nMERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.\\nIN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY\\nCLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,\\nTORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE\\nSOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\","
             },
@@ -65,10 +63,12 @@
               "matcher": "3-seq",
               "license_expression": "mit",
               "rule_identifier": "mit_823.RULE",
+              "rule_relevance": 99,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_823.RULE",
               "matched_text": "  \"readme\": \"\\n# cookie-signature\\n\\n  Sign and unsign cookies.\\n\\n## Example\\n\\n```js\\nvar cookie = require('cookie-signature');\\n\\nvar val = cookie.sign('hello', 'tobiiscool');\\nval.should.equal('hello.DGDUkGlIkCzPz+C0B064FNgHdEjox7ch8tOBGslZ5QI');\\n\\nvar val = cookie.sign('hello', 'tobiiscool');\\ncookie.unsign(val, 'tobiiscool').should.equal('hello');\\ncookie.unsign(val, 'luna').should.be.false;\\n```\\n\\n## License \\n\\n(The MIT License)\\n\\nCopyright (c) 2012 LearnBoost &lt;tj@learnboost.com&gt;\\n\\nPermission is hereby granted, free of charge, to any person obtaining\\na copy of this software and associated documentation files (the\\n'Software'), to deal in the Software without restriction, including\\nwithout limitation the rights to use, copy, modify, merge, publish,\\ndistribute, sublicense, and/or sell copies of the Software, and to\\npermit persons to whom the Software is furnished to do so, subject to\\nthe following conditions:\\n\\nThe above copyright notice and this permission notice shall be\\nincluded in all copies or substantial portions of the Software.\\n\\nTHE SOFTWARE IS PROVIDED 'AS IS', WITHOUT WARRANTY OF ANY KIND,\\nEXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF\\nMERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.\\nIN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY\\nCLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,\\nTORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE\\nSOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\","
             }
-          ]
+          ],
+          "identifier": "mit-13195f55-8383-ff05-7a20-04ec94bbf4b1"
         }
       ],
       "other_license_expression": null,
@@ -121,101 +121,6 @@
       "datasource_id": "npm_package_json"
     }
   ],
-  "license_references": [
-    {
-      "key": "mit",
-      "language": "en",
-      "short_name": "MIT License",
-      "name": "MIT License",
-      "category": "Permissive",
-      "owner": "MIT",
-      "homepage_url": "http://opensource.org/licenses/mit-license.php",
-      "notes": "Per SPDX.org, this license is OSI certified.",
-      "is_builtin": true,
-      "is_exception": false,
-      "is_unknown": false,
-      "is_generic": false,
-      "spdx_license_key": "MIT",
-      "other_spdx_license_keys": [],
-      "osi_license_key": null,
-      "text_urls": [
-        "http://opensource.org/licenses/mit-license.php"
-      ],
-      "osi_url": "http://www.opensource.org/licenses/MIT",
-      "faq_url": "https://ieeexplore.ieee.org/document/9263265",
-      "other_urls": [
-        "https://opensource.com/article/18/3/patent-grant-mit-license",
-        "https://opensource.com/article/19/4/history-mit-license",
-        "https://opensource.org/licenses/MIT"
-      ],
-      "key_aliases": [],
-      "minimum_coverage": 0,
-      "standard_notice": null,
-      "ignorable_copyrights": [],
-      "ignorable_holders": [],
-      "ignorable_authors": [],
-      "ignorable_urls": [],
-      "ignorable_emails": [],
-      "text": "Permission is hereby granted, free of charge, to any person obtaining\na copy of this software and associated documentation files (the\n\"Software\"), to deal in the Software without restriction, including\nwithout limitation the rights to use, copy, modify, merge, publish,\ndistribute, sublicense, and/or sell copies of the Software, and to\npermit persons to whom the Software is furnished to do so, subject to\nthe following conditions:\n\nThe above copyright notice and this permission notice shall be\nincluded in all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND,\nEXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF\nMERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.\nIN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY\nCLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,\nTORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE\nSOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.",
-      "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE",
-      "licensedb_url": "https://scancode-licensedb.aboutcode.org/mit",
-      "spdx_url": "https://spdx.org/licenses/MIT"
-    }
-  ],
-  "license_rule_references": [
-    {
-      "license_expression": "mit",
-      "identifier": "mit_27.RULE",
-      "language": "en",
-      "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_27.RULE",
-      "is_license_text": false,
-      "is_license_notice": false,
-      "is_license_reference": true,
-      "is_license_tag": false,
-      "is_license_intro": false,
-      "is_continuous": false,
-      "is_builtin": true,
-      "is_from_license": false,
-      "is_synthetic": false,
-      "length": 3,
-      "relevance": 100,
-      "minimum_coverage": 80,
-      "referenced_filenames": [],
-      "notes": null,
-      "ignorable_copyrights": [],
-      "ignorable_holders": [],
-      "ignorable_authors": [],
-      "ignorable_urls": [],
-      "ignorable_emails": [],
-      "text": "the MIT License"
-    },
-    {
-      "license_expression": "mit",
-      "identifier": "mit_823.RULE",
-      "language": "en",
-      "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_823.RULE",
-      "is_license_text": true,
-      "is_license_notice": false,
-      "is_license_reference": false,
-      "is_license_tag": false,
-      "is_license_intro": false,
-      "is_continuous": false,
-      "is_builtin": true,
-      "is_from_license": false,
-      "is_synthetic": false,
-      "length": 159,
-      "relevance": 99,
-      "minimum_coverage": 0,
-      "referenced_filenames": [],
-      "notes": "contains a project name Seen in https://github.com/cjb/serverless-webrtc/blob/0a887eb9c06f08e8c53fa313e4e2947167fa2617/LICENSE",
-      "ignorable_copyrights": [],
-      "ignorable_holders": [],
-      "ignorable_authors": [],
-      "ignorable_urls": [],
-      "ignorable_emails": [],
-      "text": "Permission is hereby granted, free of charge, to any person obtaining a\ncopy of  and associated documentation files (the \"Software\"),\nto deal in the Software without restriction, including without limitation the\nrights to use, copy, modify, merge, publish, distribute, sublicense, and/or\nsell copies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in\nall copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \u201cAS IS\u201d, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN\nTHE SOFTWARE."
-    }
-  ],
   "files": [
     {
       "path": "package.json",
@@ -261,9 +166,6 @@
           "license_detections": [
             {
               "license_expression": "mit",
-              "detection_log": [
-                "from-package-file"
-              ],
               "matches": [
                 {
                   "score": 100.0,
@@ -274,6 +176,7 @@
                   "matcher": "2-aho",
                   "license_expression": "mit",
                   "rule_identifier": "mit_27.RULE",
+                  "rule_relevance": 100,
                   "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_27.RULE",
                   "matched_text": "  \"readme\": \"\\n# cookie-signature\\n\\n  Sign and unsign cookies.\\n\\n## Example\\n\\n```js\\nvar cookie = require('cookie-signature');\\n\\nvar val = cookie.sign('hello', 'tobiiscool');\\nval.should.equal('hello.DGDUkGlIkCzPz+C0B064FNgHdEjox7ch8tOBGslZ5QI');\\n\\nvar val = cookie.sign('hello', 'tobiiscool');\\ncookie.unsign(val, 'tobiiscool').should.equal('hello');\\ncookie.unsign(val, 'luna').should.be.false;\\n```\\n\\n## License \\n\\n(The MIT License)\\n\\nCopyright (c) 2012 LearnBoost &lt;tj@learnboost.com&gt;\\n\\nPermission is hereby granted, free of charge, to any person obtaining\\na copy of this software and associated documentation files (the\\n'Software'), to deal in the Software without restriction, including\\nwithout limitation the rights to use, copy, modify, merge, publish,\\ndistribute, sublicense, and/or sell copies of the Software, and to\\npermit persons to whom the Software is furnished to do so, subject to\\nthe following conditions:\\n\\nThe above copyright notice and this permission notice shall be\\nincluded in all copies or substantial portions of the Software.\\n\\nTHE SOFTWARE IS PROVIDED 'AS IS', WITHOUT WARRANTY OF ANY KIND,\\nEXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF\\nMERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.\\nIN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY\\nCLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,\\nTORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE\\nSOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\","
                 },
@@ -286,10 +189,12 @@
                   "matcher": "3-seq",
                   "license_expression": "mit",
                   "rule_identifier": "mit_823.RULE",
+                  "rule_relevance": 99,
                   "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_823.RULE",
                   "matched_text": "  \"readme\": \"\\n# cookie-signature\\n\\n  Sign and unsign cookies.\\n\\n## Example\\n\\n```js\\nvar cookie = require('cookie-signature');\\n\\nvar val = cookie.sign('hello', 'tobiiscool');\\nval.should.equal('hello.DGDUkGlIkCzPz+C0B064FNgHdEjox7ch8tOBGslZ5QI');\\n\\nvar val = cookie.sign('hello', 'tobiiscool');\\ncookie.unsign(val, 'tobiiscool').should.equal('hello');\\ncookie.unsign(val, 'luna').should.be.false;\\n```\\n\\n## License \\n\\n(The MIT License)\\n\\nCopyright (c) 2012 LearnBoost &lt;tj@learnboost.com&gt;\\n\\nPermission is hereby granted, free of charge, to any person obtaining\\na copy of this software and associated documentation files (the\\n'Software'), to deal in the Software without restriction, including\\nwithout limitation the rights to use, copy, modify, merge, publish,\\ndistribute, sublicense, and/or sell copies of the Software, and to\\npermit persons to whom the Software is furnished to do so, subject to\\nthe following conditions:\\n\\nThe above copyright notice and this permission notice shall be\\nincluded in all copies or substantial portions of the Software.\\n\\nTHE SOFTWARE IS PROVIDED 'AS IS', WITHOUT WARRANTY OF ANY KIND,\\nEXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF\\nMERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.\\nIN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY\\nCLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,\\nTORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE\\nSOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\","
                 }
-              ]
+              ],
+              "identifier": "mit-13195f55-8383-ff05-7a20-04ec94bbf4b1"
             }
           ],
           "other_license_expression": null,

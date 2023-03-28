@@ -5,8 +5,6 @@ other_license_expression:
 other_license_expression_spdx:
 license_detections:
   - license_expression: intel
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 7
@@ -16,6 +14,7 @@ license_detections:
         matcher: 2-aho
         license_expression: intel
         rule_identifier: intel.LICENSE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/intel.LICENSE
         matched_text: |
           Redistribution.  Redistribution and use in binary form, without
@@ -54,5 +53,6 @@ license_detections:
           TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE
           USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH
           DAMAGE.
+    identifier: intel-ba019b8e-e0ea-8048-9073-a76fbb247ff8
 other_license_detections: []
 copyright: Copyright (c) 2006-2016, Intel Corporation

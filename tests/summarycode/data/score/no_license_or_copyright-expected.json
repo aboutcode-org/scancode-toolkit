@@ -12,8 +12,6 @@
       "ambiguous_compound_licensing": true
     }
   },
-  "license_references": [],
-  "license_rule_references": [],
   "files": [
     {
       "path": "no_license_or_copyright",
@@ -39,7 +37,6 @@
       "license_detections": [],
       "license_clues": [],
       "percentage_of_license_text": 0,
-      "for_license_detections": [],
       "copyrights": [],
       "holders": [],
       "authors": [],
@@ -77,7 +74,6 @@
       "license_detections": [],
       "license_clues": [],
       "percentage_of_license_text": 0,
-      "for_license_detections": [],
       "copyrights": [],
       "holders": [],
       "authors": [],
@@ -115,7 +111,6 @@
       "license_detections": [],
       "license_clues": [],
       "percentage_of_license_text": 0,
-      "for_license_detections": [],
       "copyrights": [],
       "holders": [],
       "authors": [],
@@ -153,7 +148,6 @@
       "license_detections": [],
       "license_clues": [],
       "percentage_of_license_text": 0,
-      "for_license_detections": [],
       "copyrights": [],
       "holders": [],
       "authors": [

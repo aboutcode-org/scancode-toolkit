@@ -412,9 +412,6 @@
     "license_detections": [
       {
         "license_expression": "mit",
-        "detection_log": [
-          "not-combined"
-        ],
         "matches": [
           {
             "score": 100.0,
@@ -425,10 +422,12 @@
             "matcher": "1-spdx-id",
             "license_expression": "mit",
             "rule_identifier": "spdx-license-identifier-mit-5da48780aba670b0860c46d899ed42a0f243ff06",
+            "rule_relevance": 100,
             "rule_url": null,
             "matched_text": "MIT"
           }
-        ]
+        ],
+        "identifier": "mit-a822f434-d61f-f2b1-c792-8b8cb9e7b9bf"
       }
     ],
     "other_license_expression": null,
@@ -540,9 +539,6 @@
     "license_detections": [
       {
         "license_expression": "mit",
-        "detection_log": [
-          "not-combined"
-        ],
         "matches": [
           {
             "score": 100.0,
@@ -553,10 +549,12 @@
             "matcher": "1-spdx-id",
             "license_expression": "mit",
             "rule_identifier": "spdx-license-identifier-mit-5da48780aba670b0860c46d899ed42a0f243ff06",
+            "rule_relevance": 100,
             "rule_url": null,
             "matched_text": "MIT"
           }
-        ]
+        ],
+        "identifier": "mit-a822f434-d61f-f2b1-c792-8b8cb9e7b9bf"
       }
     ],
     "other_license_expression": null,
@@ -658,9 +656,6 @@
     "license_detections": [
       {
         "license_expression": "mit",
-        "detection_log": [
-          "not-combined"
-        ],
         "matches": [
           {
             "score": 100.0,
@@ -671,10 +666,12 @@
             "matcher": "1-spdx-id",
             "license_expression": "mit",
             "rule_identifier": "spdx-license-identifier-mit-5da48780aba670b0860c46d899ed42a0f243ff06",
+            "rule_relevance": 100,
             "rule_url": null,
             "matched_text": "MIT"
           }
-        ]
+        ],
+        "identifier": "mit-a822f434-d61f-f2b1-c792-8b8cb9e7b9bf"
       }
     ],
     "other_license_expression": null,
@@ -786,9 +783,6 @@
     "license_detections": [
       {
         "license_expression": "mit",
-        "detection_log": [
-          "not-combined"
-        ],
         "matches": [
           {
             "score": 100.0,
@@ -799,10 +793,12 @@
             "matcher": "1-spdx-id",
             "license_expression": "mit",
             "rule_identifier": "spdx-license-identifier-mit-5da48780aba670b0860c46d899ed42a0f243ff06",
+            "rule_relevance": 100,
             "rule_url": null,
             "matched_text": "MIT"
           }
-        ]
+        ],
+        "identifier": "mit-a822f434-d61f-f2b1-c792-8b8cb9e7b9bf"
       }
     ],
     "other_license_expression": null,
@@ -924,9 +920,6 @@
     "license_detections": [
       {
         "license_expression": "mit",
-        "detection_log": [
-          "not-combined"
-        ],
         "matches": [
           {
             "score": 100.0,
@@ -937,10 +930,12 @@
             "matcher": "1-spdx-id",
             "license_expression": "mit",
             "rule_identifier": "spdx-license-identifier-mit-5da48780aba670b0860c46d899ed42a0f243ff06",
+            "rule_relevance": 100,
             "rule_url": null,
             "matched_text": "MIT"
           }
-        ]
+        ],
+        "identifier": "mit-a822f434-d61f-f2b1-c792-8b8cb9e7b9bf"
       }
     ],
     "other_license_expression": null,
@@ -1029,9 +1024,6 @@
     "license_detections": [
       {
         "license_expression": "mit",
-        "detection_log": [
-          "not-combined"
-        ],
         "matches": [
           {
             "score": 100.0,
@@ -1042,10 +1034,12 @@
             "matcher": "1-spdx-id",
             "license_expression": "mit",
             "rule_identifier": "spdx-license-identifier-mit-5da48780aba670b0860c46d899ed42a0f243ff06",
+            "rule_relevance": 100,
             "rule_url": null,
             "matched_text": "MIT"
           }
-        ]
+        ],
+        "identifier": "mit-a822f434-d61f-f2b1-c792-8b8cb9e7b9bf"
       }
     ],
     "other_license_expression": null,
@@ -1237,9 +1231,6 @@
     "license_detections": [
       {
         "license_expression": "mit",
-        "detection_log": [
-          "not-combined"
-        ],
         "matches": [
           {
             "score": 100.0,
@@ -1250,10 +1241,12 @@
             "matcher": "1-spdx-id",
             "license_expression": "mit",
             "rule_identifier": "spdx-license-identifier-mit-5da48780aba670b0860c46d899ed42a0f243ff06",
+            "rule_relevance": 100,
             "rule_url": null,
             "matched_text": "MIT"
           }
-        ]
+        ],
+        "identifier": "mit-a822f434-d61f-f2b1-c792-8b8cb9e7b9bf"
       }
     ],
     "other_license_expression": null,
@@ -1349,9 +1342,6 @@
     "license_detections": [
       {
         "license_expression": "mit",
-        "detection_log": [
-          "not-combined"
-        ],
         "matches": [
           {
             "score": 100.0,
@@ -1362,10 +1352,12 @@
             "matcher": "1-spdx-id",
             "license_expression": "mit",
             "rule_identifier": "spdx-license-identifier-mit-5da48780aba670b0860c46d899ed42a0f243ff06",
+            "rule_relevance": 100,
             "rule_url": null,
             "matched_text": "MIT"
           }
-        ]
+        ],
+        "identifier": "mit-a822f434-d61f-f2b1-c792-8b8cb9e7b9bf"
       }
     ],
     "other_license_expression": null,
@@ -1451,9 +1443,6 @@
     "license_detections": [
       {
         "license_expression": "mit",
-        "detection_log": [
-          "not-combined"
-        ],
         "matches": [
           {
             "score": 100.0,
@@ -1464,10 +1453,12 @@
             "matcher": "1-spdx-id",
             "license_expression": "mit",
             "rule_identifier": "spdx-license-identifier-mit-5da48780aba670b0860c46d899ed42a0f243ff06",
+            "rule_relevance": 100,
             "rule_url": null,
             "matched_text": "MIT"
           }
-        ]
+        ],
+        "identifier": "mit-a822f434-d61f-f2b1-c792-8b8cb9e7b9bf"
       }
     ],
     "other_license_expression": null,
@@ -1559,9 +1550,6 @@
     "license_detections": [
       {
         "license_expression": "mit",
-        "detection_log": [
-          "not-combined"
-        ],
         "matches": [
           {
             "score": 100.0,
@@ -1572,10 +1560,12 @@
             "matcher": "1-spdx-id",
             "license_expression": "mit",
             "rule_identifier": "spdx-license-identifier-mit-5da48780aba670b0860c46d899ed42a0f243ff06",
+            "rule_relevance": 100,
             "rule_url": null,
             "matched_text": "MIT"
           }
-        ]
+        ],
+        "identifier": "mit-a822f434-d61f-f2b1-c792-8b8cb9e7b9bf"
       }
     ],
     "other_license_expression": null,
@@ -1695,9 +1685,6 @@
     "license_detections": [
       {
         "license_expression": "mit",
-        "detection_log": [
-          "not-combined"
-        ],
         "matches": [
           {
             "score": 100.0,
@@ -1708,10 +1695,12 @@
             "matcher": "1-spdx-id",
             "license_expression": "mit",
             "rule_identifier": "spdx-license-identifier-mit-5da48780aba670b0860c46d899ed42a0f243ff06",
+            "rule_relevance": 100,
             "rule_url": null,
             "matched_text": "MIT"
           }
-        ]
+        ],
+        "identifier": "mit-a822f434-d61f-f2b1-c792-8b8cb9e7b9bf"
       }
     ],
     "other_license_expression": null,
@@ -1827,9 +1816,6 @@
     "license_detections": [
       {
         "license_expression": "mit",
-        "detection_log": [
-          "not-combined"
-        ],
         "matches": [
           {
             "score": 100.0,
@@ -1840,10 +1826,12 @@
             "matcher": "1-spdx-id",
             "license_expression": "mit",
             "rule_identifier": "spdx-license-identifier-mit-5da48780aba670b0860c46d899ed42a0f243ff06",
+            "rule_relevance": 100,
             "rule_url": null,
             "matched_text": "MIT"
           }
-        ]
+        ],
+        "identifier": "mit-a822f434-d61f-f2b1-c792-8b8cb9e7b9bf"
       }
     ],
     "other_license_expression": null,
@@ -1932,9 +1920,6 @@
     "license_detections": [
       {
         "license_expression": "mit",
-        "detection_log": [
-          "not-combined"
-        ],
         "matches": [
           {
             "score": 100.0,
@@ -1945,10 +1930,12 @@
             "matcher": "1-spdx-id",
             "license_expression": "mit",
             "rule_identifier": "spdx-license-identifier-mit-5da48780aba670b0860c46d899ed42a0f243ff06",
+            "rule_relevance": 100,
             "rule_url": null,
             "matched_text": "MIT"
           }
-        ]
+        ],
+        "identifier": "mit-a822f434-d61f-f2b1-c792-8b8cb9e7b9bf"
       }
     ],
     "other_license_expression": null,
@@ -2330,9 +2317,6 @@
     "license_detections": [
       {
         "license_expression": "mit",
-        "detection_log": [
-          "not-combined"
-        ],
         "matches": [
           {
             "score": 100.0,
@@ -2343,10 +2327,12 @@
             "matcher": "1-spdx-id",
             "license_expression": "mit",
             "rule_identifier": "spdx-license-identifier-mit-5da48780aba670b0860c46d899ed42a0f243ff06",
+            "rule_relevance": 100,
             "rule_url": null,
             "matched_text": "MIT"
           }
-        ]
+        ],
+        "identifier": "mit-a822f434-d61f-f2b1-c792-8b8cb9e7b9bf"
       }
     ],
     "other_license_expression": null,
@@ -2452,9 +2438,6 @@
     "license_detections": [
       {
         "license_expression": "bsd-new",
-        "detection_log": [
-          "not-combined"
-        ],
         "matches": [
           {
             "score": 100.0,
@@ -2465,10 +2448,12 @@
             "matcher": "1-hash",
             "license_expression": "bsd-new",
             "rule_identifier": "bsd-new_10.RULE",
+            "rule_relevance": 100,
             "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_10.RULE",
             "matched_text": "BSD-3-Clause"
           }
-        ]
+        ],
+        "identifier": "bsd_new-50fa5753-f24d-ec04-33a1-36bb8ac0492c"
       }
     ],
     "other_license_expression": null,
@@ -2553,9 +2538,6 @@
     "license_detections": [
       {
         "license_expression": "mit",
-        "detection_log": [
-          "not-combined"
-        ],
         "matches": [
           {
             "score": 100.0,
@@ -2566,10 +2548,12 @@
             "matcher": "1-spdx-id",
             "license_expression": "mit",
             "rule_identifier": "spdx-license-identifier-mit-5da48780aba670b0860c46d899ed42a0f243ff06",
+            "rule_relevance": 100,
             "rule_url": null,
             "matched_text": "MIT"
           }
-        ]
+        ],
+        "identifier": "mit-a822f434-d61f-f2b1-c792-8b8cb9e7b9bf"
       }
     ],
     "other_license_expression": null,
@@ -2681,9 +2665,6 @@
     "license_detections": [
       {
         "license_expression": "mit",
-        "detection_log": [
-          "not-combined"
-        ],
         "matches": [
           {
             "score": 100.0,
@@ -2694,10 +2675,12 @@
             "matcher": "1-spdx-id",
             "license_expression": "mit",
             "rule_identifier": "spdx-license-identifier-mit-5da48780aba670b0860c46d899ed42a0f243ff06",
+            "rule_relevance": 100,
             "rule_url": null,
             "matched_text": "MIT"
           }
-        ]
+        ],
+        "identifier": "mit-a822f434-d61f-f2b1-c792-8b8cb9e7b9bf"
       }
     ],
     "other_license_expression": null,
@@ -2769,9 +2752,6 @@
     "license_detections": [
       {
         "license_expression": "bsd-new",
-        "detection_log": [
-          "not-combined"
-        ],
         "matches": [
           {
             "score": 100.0,
@@ -2782,10 +2762,12 @@
             "matcher": "1-hash",
             "license_expression": "bsd-new",
             "rule_identifier": "bsd-new_10.RULE",
+            "rule_relevance": 100,
             "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_10.RULE",
             "matched_text": "BSD-3-Clause"
           }
-        ]
+        ],
+        "identifier": "bsd_new-50fa5753-f24d-ec04-33a1-36bb8ac0492c"
       }
     ],
     "other_license_expression": null,
@@ -2904,9 +2886,6 @@
     "license_detections": [
       {
         "license_expression": "mit",
-        "detection_log": [
-          "not-combined"
-        ],
         "matches": [
           {
             "score": 100.0,
@@ -2917,10 +2896,12 @@
             "matcher": "1-spdx-id",
             "license_expression": "mit",
             "rule_identifier": "spdx-license-identifier-mit-5da48780aba670b0860c46d899ed42a0f243ff06",
+            "rule_relevance": 100,
             "rule_url": null,
             "matched_text": "MIT"
           }
-        ]
+        ],
+        "identifier": "mit-a822f434-d61f-f2b1-c792-8b8cb9e7b9bf"
       }
     ],
     "other_license_expression": null,
@@ -3149,9 +3130,6 @@
     "license_detections": [
       {
         "license_expression": "mit",
-        "detection_log": [
-          "not-combined"
-        ],
         "matches": [
           {
             "score": 100.0,
@@ -3162,10 +3140,12 @@
             "matcher": "1-spdx-id",
             "license_expression": "mit",
             "rule_identifier": "spdx-license-identifier-mit-5da48780aba670b0860c46d899ed42a0f243ff06",
+            "rule_relevance": 100,
             "rule_url": null,
             "matched_text": "MIT"
           }
-        ]
+        ],
+        "identifier": "mit-a822f434-d61f-f2b1-c792-8b8cb9e7b9bf"
       }
     ],
     "other_license_expression": null,
@@ -3274,9 +3254,6 @@
     "license_detections": [
       {
         "license_expression": "mit",
-        "detection_log": [
-          "not-combined"
-        ],
         "matches": [
           {
             "score": 100.0,
@@ -3287,10 +3264,12 @@
             "matcher": "1-spdx-id",
             "license_expression": "mit",
             "rule_identifier": "spdx-license-identifier-mit-5da48780aba670b0860c46d899ed42a0f243ff06",
+            "rule_relevance": 100,
             "rule_url": null,
             "matched_text": "MIT"
           }
-        ]
+        ],
+        "identifier": "mit-a822f434-d61f-f2b1-c792-8b8cb9e7b9bf"
       }
     ],
     "other_license_expression": null,
@@ -3449,9 +3428,6 @@
     "license_detections": [
       {
         "license_expression": "mit",
-        "detection_log": [
-          "not-combined"
-        ],
         "matches": [
           {
             "score": 100.0,
@@ -3462,10 +3438,12 @@
             "matcher": "1-spdx-id",
             "license_expression": "mit",
             "rule_identifier": "spdx-license-identifier-mit-5da48780aba670b0860c46d899ed42a0f243ff06",
+            "rule_relevance": 100,
             "rule_url": null,
             "matched_text": "MIT"
           }
-        ]
+        ],
+        "identifier": "mit-a822f434-d61f-f2b1-c792-8b8cb9e7b9bf"
       }
     ],
     "other_license_expression": null,
@@ -3554,9 +3532,6 @@
     "license_detections": [
       {
         "license_expression": "mit",
-        "detection_log": [
-          "not-combined"
-        ],
         "matches": [
           {
             "score": 100.0,
@@ -3567,10 +3542,12 @@
             "matcher": "1-spdx-id",
             "license_expression": "mit",
             "rule_identifier": "spdx-license-identifier-mit-5da48780aba670b0860c46d899ed42a0f243ff06",
+            "rule_relevance": 100,
             "rule_url": null,
             "matched_text": "MIT"
           }
-        ]
+        ],
+        "identifier": "mit-a822f434-d61f-f2b1-c792-8b8cb9e7b9bf"
       }
     ],
     "other_license_expression": null,
@@ -3649,9 +3626,6 @@
     "license_detections": [
       {
         "license_expression": "mit",
-        "detection_log": [
-          "not-combined"
-        ],
         "matches": [
           {
             "score": 100.0,
@@ -3662,10 +3636,12 @@
             "matcher": "1-spdx-id",
             "license_expression": "mit",
             "rule_identifier": "spdx-license-identifier-mit-5da48780aba670b0860c46d899ed42a0f243ff06",
+            "rule_relevance": 100,
             "rule_url": null,
             "matched_text": "MIT"
           }
-        ]
+        ],
+        "identifier": "mit-a822f434-d61f-f2b1-c792-8b8cb9e7b9bf"
       }
     ],
     "other_license_expression": null,
@@ -3744,9 +3720,6 @@
     "license_detections": [
       {
         "license_expression": "mit",
-        "detection_log": [
-          "not-combined"
-        ],
         "matches": [
           {
             "score": 100.0,
@@ -3757,10 +3730,12 @@
             "matcher": "1-spdx-id",
             "license_expression": "mit",
             "rule_identifier": "spdx-license-identifier-mit-5da48780aba670b0860c46d899ed42a0f243ff06",
+            "rule_relevance": 100,
             "rule_url": null,
             "matched_text": "MIT"
           }
-        ]
+        ],
+        "identifier": "mit-a822f434-d61f-f2b1-c792-8b8cb9e7b9bf"
       }
     ],
     "other_license_expression": null,
@@ -3849,9 +3824,6 @@
     "license_detections": [
       {
         "license_expression": "mit",
-        "detection_log": [
-          "not-combined"
-        ],
         "matches": [
           {
             "score": 100.0,
@@ -3862,10 +3834,12 @@
             "matcher": "1-spdx-id",
             "license_expression": "mit",
             "rule_identifier": "spdx-license-identifier-mit-5da48780aba670b0860c46d899ed42a0f243ff06",
+            "rule_relevance": 100,
             "rule_url": null,
             "matched_text": "MIT"
           }
-        ]
+        ],
+        "identifier": "mit-a822f434-d61f-f2b1-c792-8b8cb9e7b9bf"
       }
     ],
     "other_license_expression": null,
@@ -3954,9 +3928,6 @@
     "license_detections": [
       {
         "license_expression": "mit",
-        "detection_log": [
-          "not-combined"
-        ],
         "matches": [
           {
             "score": 100.0,
@@ -3967,10 +3938,12 @@
             "matcher": "1-spdx-id",
             "license_expression": "mit",
             "rule_identifier": "spdx-license-identifier-mit-5da48780aba670b0860c46d899ed42a0f243ff06",
+            "rule_relevance": 100,
             "rule_url": null,
             "matched_text": "MIT"
           }
-        ]
+        ],
+        "identifier": "mit-a822f434-d61f-f2b1-c792-8b8cb9e7b9bf"
       }
     ],
     "other_license_expression": null,
@@ -4059,9 +4032,6 @@
     "license_detections": [
       {
         "license_expression": "mit",
-        "detection_log": [
-          "not-combined"
-        ],
         "matches": [
           {
             "score": 100.0,
@@ -4072,10 +4042,12 @@
             "matcher": "1-spdx-id",
             "license_expression": "mit",
             "rule_identifier": "spdx-license-identifier-mit-5da48780aba670b0860c46d899ed42a0f243ff06",
+            "rule_relevance": 100,
             "rule_url": null,
             "matched_text": "MIT"
           }
-        ]
+        ],
+        "identifier": "mit-a822f434-d61f-f2b1-c792-8b8cb9e7b9bf"
       }
     ],
     "other_license_expression": null,
@@ -4154,9 +4126,6 @@
     "license_detections": [
       {
         "license_expression": "mit",
-        "detection_log": [
-          "not-combined"
-        ],
         "matches": [
           {
             "score": 100.0,
@@ -4167,10 +4136,12 @@
             "matcher": "1-spdx-id",
             "license_expression": "mit",
             "rule_identifier": "spdx-license-identifier-mit-5da48780aba670b0860c46d899ed42a0f243ff06",
+            "rule_relevance": 100,
             "rule_url": null,
             "matched_text": "MIT"
           }
-        ]
+        ],
+        "identifier": "mit-a822f434-d61f-f2b1-c792-8b8cb9e7b9bf"
       }
     ],
     "other_license_expression": null,
@@ -4249,9 +4220,6 @@
     "license_detections": [
       {
         "license_expression": "mit",
-        "detection_log": [
-          "not-combined"
-        ],
         "matches": [
           {
             "score": 100.0,
@@ -4262,10 +4230,12 @@
             "matcher": "1-spdx-id",
             "license_expression": "mit",
             "rule_identifier": "spdx-license-identifier-mit-5da48780aba670b0860c46d899ed42a0f243ff06",
+            "rule_relevance": 100,
             "rule_url": null,
             "matched_text": "MIT"
           }
-        ]
+        ],
+        "identifier": "mit-a822f434-d61f-f2b1-c792-8b8cb9e7b9bf"
       }
     ],
     "other_license_expression": null,

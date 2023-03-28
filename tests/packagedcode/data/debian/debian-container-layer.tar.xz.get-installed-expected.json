@@ -39,9 +39,6 @@
     "license_detections": [
       {
         "license_expression": "x11-fsf",
-        "detection_log": [
-          "not-combined"
-        ],
         "matches": [
           {
             "score": 100.0,
@@ -52,16 +49,15 @@
             "matcher": "2-aho",
             "license_expression": "x11-fsf",
             "rule_identifier": "x11-fsf.LICENSE",
+            "rule_relevance": 100,
             "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/x11-fsf.LICENSE",
             "matched_text": "Permission is hereby granted, free of charge, to any person obtaining a\ncopy of this software and associated documentation files (the\n\"Software\"), to deal in the Software without restriction, including\nwithout limitation the rights to use, copy, modify, merge, publish,\ndistribute, distribute with modifications, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included\nin all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS\nOR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF\nMERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.\nIN NO EVENT SHALL THE ABOVE COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,\nDAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR\nOTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR\nTHE USE OR OTHER DEALINGS IN THE SOFTWARE.\n\nExcept as contained in this notice, the name(s) of the above copyright\nholders shall not be used in advertising or otherwise to promote the\nsale, use or other dealings in this Software without prior written\nauthorization."
           }
-        ]
+        ],
+        "identifier": "x11_fsf-5f3d72c2-fa6a-2f7b-b859-17e7567c1724"
       },
       {
         "license_expression": "x11-xconsortium",
-        "detection_log": [
-          "not-combined"
-        ],
         "matches": [
           {
             "score": 100.0,
@@ -72,16 +68,15 @@
             "matcher": "2-aho",
             "license_expression": "x11-xconsortium",
             "rule_identifier": "x11-xconsortium_2.RULE",
+            "rule_relevance": 100,
             "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/x11-xconsortium_2.RULE",
             "matched_text": "Permission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to\ndeal in the Software without restriction, including without limitation the\nrights to use, copy, modify, merge, publish, distribute, sublicense, and/or\nsell copies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in\nall copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.  IN NO EVENT SHALL THE\nX CONSORTIUM BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN\nAN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNEC-\nTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n\nExcept as contained in this notice, the name of the X Consortium shall not\nbe used in advertising or otherwise to promote the sale, use or other deal-\nings in this Software without prior written authorization from the X Consor-\ntium."
           }
-        ]
+        ],
+        "identifier": "x11_xconsortium-8bc3e205-5f29-ecad-90bc-2f492c65be46"
       },
       {
         "license_expression": "bsd-new",
-        "detection_log": [
-          "not-combined"
-        ],
         "matches": [
           {
             "score": 100.0,
@@ -92,16 +87,15 @@
             "matcher": "2-aho",
             "license_expression": "bsd-new",
             "rule_identifier": "bsd-new_19.RULE",
+            "rule_relevance": 100,
             "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_19.RULE",
             "matched_text": "Redistribution and use in source and binary forms, with or without\nmodification, are permitted provided that the following conditions\nare met:\n1. Redistributions of source code must retain the above copyright\n   notice, this list of conditions and the following disclaimer.\n2. Redistributions in binary form must reproduce the above copyright\n   notice, this list of conditions and the following disclaimer in the\n   documentation and/or other materials provided with the distribution.\n3. Neither the name of the University nor the names of its contributors\n   may be used to endorse or promote products derived from this software\n   without specific prior written permission.\n\nTHIS SOFTWARE IS PROVIDED BY THE REGENTS AND CONTRIBUTORS ``AS IS'' AND\nANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE\nIMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE\nARE DISCLAIMED.  IN NO EVENT SHALL THE REGENTS OR CONTRIBUTORS BE LIABLE\nFOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL\nDAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS\nOR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)\nHOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT\nLIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY\nOUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF\nSUCH DAMAGE."
           }
-        ]
+        ],
+        "identifier": "bsd_new-ccc98c3a-92d4-e7a3-e0ba-798328cb6b98"
       },
       {
         "license_expression": "x11-fsf",
-        "detection_log": [
-          "not-combined"
-        ],
         "matches": [
           {
             "score": 100.0,
@@ -112,10 +106,12 @@
             "matcher": "2-aho",
             "license_expression": "x11-fsf",
             "rule_identifier": "x11-fsf_7.RULE",
+            "rule_relevance": 100,
             "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/x11-fsf_7.RULE",
             "matched_text": "Permission is hereby granted, free of charge, to any person obtaining a\ncopy of this software and associated documentation files (the\n\"Software\"), to deal in the Software without restriction, including\nwithout limitation the rights to use, copy, modify, merge, publish,\ndistribute, sublicense, and/or sell copies of the Software, and to\npermit persons to whom the Software is furnished to do so, subject to\nthe following conditions:\n\nThe above copyright notice and this permission notice shall be included\nin all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS\nOR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF\nMERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.\nIN NO EVENT SHALL THE ABOVE LISTED COPYRIGHT HOLDER(S) BE LIABLE FOR ANY\nCLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,\nTORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE\nSOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n\nExcept as contained in this notice, the name(s) of the above copyright\nholders shall not be used in advertising or otherwise to promote the\nsale, use or other dealings in this Software without prior written\nauthorization."
           }
-        ]
+        ],
+        "identifier": "x11_fsf-c2b8535e-1b81-42d8-945b-b026f349228d"
       }
     ],
     "other_license_expression": null,
@@ -214,9 +210,6 @@
             "license_detections": [
               {
                 "license_expression": "x11-fsf",
-                "detection_log": [
-                  "not-combined"
-                ],
                 "matches": [
                   {
                     "score": 100.0,
@@ -227,16 +220,15 @@
                     "matcher": "2-aho",
                     "license_expression": "x11-fsf",
                     "rule_identifier": "x11-fsf.LICENSE",
+                    "rule_relevance": 100,
                     "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/x11-fsf.LICENSE",
                     "matched_text": "Permission is hereby granted, free of charge, to any person obtaining a\ncopy of this software and associated documentation files (the\n\"Software\"), to deal in the Software without restriction, including\nwithout limitation the rights to use, copy, modify, merge, publish,\ndistribute, distribute with modifications, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included\nin all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS\nOR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF\nMERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.\nIN NO EVENT SHALL THE ABOVE COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,\nDAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR\nOTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR\nTHE USE OR OTHER DEALINGS IN THE SOFTWARE.\n\nExcept as contained in this notice, the name(s) of the above copyright\nholders shall not be used in advertising or otherwise to promote the\nsale, use or other dealings in this Software without prior written\nauthorization."
                   }
-                ]
+                ],
+                "identifier": "x11_fsf-5f3d72c2-fa6a-2f7b-b859-17e7567c1724"
               },
               {
                 "license_expression": "x11-xconsortium",
-                "detection_log": [
-                  "not-combined"
-                ],
                 "matches": [
                   {
                     "score": 100.0,
@@ -247,16 +239,15 @@
                     "matcher": "2-aho",
                     "license_expression": "x11-xconsortium",
                     "rule_identifier": "x11-xconsortium_2.RULE",
+                    "rule_relevance": 100,
                     "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/x11-xconsortium_2.RULE",
                     "matched_text": "Permission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to\ndeal in the Software without restriction, including without limitation the\nrights to use, copy, modify, merge, publish, distribute, sublicense, and/or\nsell copies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in\nall copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.  IN NO EVENT SHALL THE\nX CONSORTIUM BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN\nAN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNEC-\nTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n\nExcept as contained in this notice, the name of the X Consortium shall not\nbe used in advertising or otherwise to promote the sale, use or other deal-\nings in this Software without prior written authorization from the X Consor-\ntium."
                   }
-                ]
+                ],
+                "identifier": "x11_xconsortium-8bc3e205-5f29-ecad-90bc-2f492c65be46"
               },
               {
                 "license_expression": "bsd-new",
-                "detection_log": [
-                  "not-combined"
-                ],
                 "matches": [
                   {
                     "score": 100.0,
@@ -267,16 +258,15 @@
                     "matcher": "2-aho",
                     "license_expression": "bsd-new",
                     "rule_identifier": "bsd-new_19.RULE",
+                    "rule_relevance": 100,
                     "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_19.RULE",
                     "matched_text": "Redistribution and use in source and binary forms, with or without\nmodification, are permitted provided that the following conditions\nare met:\n1. Redistributions of source code must retain the above copyright\n   notice, this list of conditions and the following disclaimer.\n2. Redistributions in binary form must reproduce the above copyright\n   notice, this list of conditions and the following disclaimer in the\n   documentation and/or other materials provided with the distribution.\n3. Neither the name of the University nor the names of its contributors\n   may be used to endorse or promote products derived from this software\n   without specific prior written permission.\n\nTHIS SOFTWARE IS PROVIDED BY THE REGENTS AND CONTRIBUTORS ``AS IS'' AND\nANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE\nIMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE\nARE DISCLAIMED.  IN NO EVENT SHALL THE REGENTS OR CONTRIBUTORS BE LIABLE\nFOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL\nDAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS\nOR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)\nHOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT\nLIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY\nOUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF\nSUCH DAMAGE."
                   }
-                ]
+                ],
+                "identifier": "bsd_new-ccc98c3a-92d4-e7a3-e0ba-798328cb6b98"
               },
               {
                 "license_expression": "x11-fsf",
-                "detection_log": [
-                  "not-combined"
-                ],
                 "matches": [
                   {
                     "score": 100.0,
@@ -287,10 +277,12 @@
                     "matcher": "2-aho",
                     "license_expression": "x11-fsf",
                     "rule_identifier": "x11-fsf_7.RULE",
+                    "rule_relevance": 100,
                     "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/x11-fsf_7.RULE",
                     "matched_text": "Permission is hereby granted, free of charge, to any person obtaining a\ncopy of this software and associated documentation files (the\n\"Software\"), to deal in the Software without restriction, including\nwithout limitation the rights to use, copy, modify, merge, publish,\ndistribute, sublicense, and/or sell copies of the Software, and to\npermit persons to whom the Software is furnished to do so, subject to\nthe following conditions:\n\nThe above copyright notice and this permission notice shall be included\nin all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS\nOR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF\nMERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.\nIN NO EVENT SHALL THE ABOVE LISTED COPYRIGHT HOLDER(S) BE LIABLE FOR ANY\nCLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,\nTORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE\nSOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n\nExcept as contained in this notice, the name(s) of the above copyright\nholders shall not be used in advertising or otherwise to promote the\nsale, use or other dealings in this Software without prior written\nauthorization."
                   }
-                ]
+                ],
+                "identifier": "x11_fsf-c2b8535e-1b81-42d8-945b-b026f349228d"
               }
             ],
             "other_license_expression": null,
@@ -447,9 +439,6 @@
     "license_detections": [
       {
         "license_expression": "lgpl-2.1-plus AND lgpl-2.1",
-        "detection_log": [
-          "from-package-file"
-        ],
         "matches": [
           {
             "score": 100.0,
@@ -460,6 +449,7 @@
             "matcher": "2-aho",
             "license_expression": "lgpl-2.1-plus",
             "rule_identifier": "lgpl-2.1-plus_108.RULE",
+            "rule_relevance": 100,
             "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_108.RULE",
             "matched_text": "License: LGPL-2.1+"
           },
@@ -472,6 +462,7 @@
             "matcher": "2-aho",
             "license_expression": "lgpl-2.1-plus",
             "rule_identifier": "lgpl-2.1-plus_108.RULE",
+            "rule_relevance": 100,
             "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_108.RULE",
             "matched_text": "License: LGPL-2.1+"
           },
@@ -484,6 +475,7 @@
             "matcher": "2-aho",
             "license_expression": "lgpl-2.1-plus",
             "rule_identifier": "lgpl-2.1-plus_108.RULE",
+            "rule_relevance": 100,
             "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_108.RULE",
             "matched_text": "License: LGPL-2.1+"
           },
@@ -496,6 +488,7 @@
             "matcher": "2-aho",
             "license_expression": "lgpl-2.1-plus",
             "rule_identifier": "lgpl-2.1-plus_93.RULE",
+            "rule_relevance": 100,
             "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_93.RULE",
             "matched_text": " This program is free software; you can redistribute it and/or modify it\n under the terms of the GNU Lesser General Public License as published\n by the Free Software Foundation; either version 2.1 of the License, or\n (at your option) any later version.\n .\n This program is distributed in the hope that it will be useful,\n but WITHOUT ANY WARRANTY; without even the implied warranty of\n MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU Lesser\n General Public License for more details.\n .\n You should have received a copy of the GNU Lesser General Public License\n along with this program; if not, write to the Free Software Foundation,\n Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA"
           },
@@ -508,10 +501,12 @@
             "matcher": "2-aho",
             "license_expression": "lgpl-2.1",
             "rule_identifier": "lgpl-2.1_314.RULE",
+            "rule_relevance": 100,
             "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1_314.RULE",
             "matched_text": " You should have received a copy of the GNU Lesser General Public License\n along with this program; if not, write to the Free Software Foundation,\n Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA\n .\n On Debian systems, the full text of the GNU Lesser General Public\n License version 2.1 can be found in the file\n `/usr/share/common-licenses/LGPL-2.1'."
           }
-        ]
+        ],
+        "identifier": "lgpl_2_1_plus_and_lgpl_2_1-6a4d01fd-fa99-80b1-0c2c-a69c91c2ad96"
       }
     ],
     "other_license_expression": "lgpl-2.1-plus AND lgpl-2.1",
@@ -519,9 +514,6 @@
     "other_license_detections": [
       {
         "license_expression": "lgpl-2.1-plus AND lgpl-2.1",
-        "detection_log": [
-          "not-combined"
-        ],
         "matches": [
           {
             "score": 100.0,
@@ -532,6 +524,7 @@
             "matcher": "1-hash",
             "license_expression": "lgpl-2.1-plus",
             "rule_identifier": "lgpl-2.1-plus_108.RULE",
+            "rule_relevance": 100,
             "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_108.RULE",
             "matched_text": "License: lgpl-2.1+"
           },
@@ -544,6 +537,7 @@
             "matcher": "2-aho",
             "license_expression": "lgpl-2.1-plus",
             "rule_identifier": "lgpl-2.1-plus_93.RULE",
+            "rule_relevance": 100,
             "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_93.RULE",
             "matched_text": "This program is free software; you can redistribute it and/or modify it\nunder the terms of the GNU Lesser General Public License as published\nby the Free Software Foundation; either version 2.1 of the License, or\n(at your option) any later version.\n\nThis program is distributed in the hope that it will be useful,\nbut WITHOUT ANY WARRANTY; without even the implied warranty of\nMERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU Lesser\nGeneral Public License for more details.\n\nYou should have received a copy of the GNU Lesser General Public License\nalong with this program; if not, write to the Free Software Foundation,\nInc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA"
           },
@@ -556,10 +550,12 @@
             "matcher": "2-aho",
             "license_expression": "lgpl-2.1",
             "rule_identifier": "lgpl-2.1_314.RULE",
+            "rule_relevance": 100,
             "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1_314.RULE",
             "matched_text": "You should have received a copy of the GNU Lesser General Public License\nalong with this program; if not, write to the Free Software Foundation,\nInc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA\n\nOn Debian systems, the full text of the GNU Lesser General Public\nLicense version 2.1 can be found in the file\n`/usr/share/common-licenses/LGPL-2.1'."
           }
-        ]
+        ],
+        "identifier": "lgpl_2_1_plus_and_lgpl_2_1-1018860f-b475-01e3-bdd4-39bf3444650e"
       }
     ],
     "extracted_license_statement": "['LGPL-2.1+', 'LGPL-2.1+', 'LGPL-2.1+']",
@@ -637,9 +633,6 @@
             "license_detections": [
               {
                 "license_expression": "lgpl-2.1-plus AND lgpl-2.1",
-                "detection_log": [
-                  "from-package-file"
-                ],
                 "matches": [
                   {
                     "score": 100.0,
@@ -650,6 +643,7 @@
                     "matcher": "2-aho",
                     "license_expression": "lgpl-2.1-plus",
                     "rule_identifier": "lgpl-2.1-plus_108.RULE",
+                    "rule_relevance": 100,
                     "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_108.RULE",
                     "matched_text": "License: LGPL-2.1+"
                   },
@@ -662,6 +656,7 @@
                     "matcher": "2-aho",
                     "license_expression": "lgpl-2.1-plus",
                     "rule_identifier": "lgpl-2.1-plus_108.RULE",
+                    "rule_relevance": 100,
                     "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_108.RULE",
                     "matched_text": "License: LGPL-2.1+"
                   },
@@ -674,6 +669,7 @@
                     "matcher": "2-aho",
                     "license_expression": "lgpl-2.1-plus",
                     "rule_identifier": "lgpl-2.1-plus_108.RULE",
+                    "rule_relevance": 100,
                     "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_108.RULE",
                     "matched_text": "License: LGPL-2.1+"
                   },
@@ -686,6 +682,7 @@
                     "matcher": "2-aho",
                     "license_expression": "lgpl-2.1-plus",
                     "rule_identifier": "lgpl-2.1-plus_93.RULE",
+                    "rule_relevance": 100,
                     "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_93.RULE",
                     "matched_text": " This program is free software; you can redistribute it and/or modify it\n under the terms of the GNU Lesser General Public License as published\n by the Free Software Foundation; either version 2.1 of the License, or\n (at your option) any later version.\n .\n This program is distributed in the hope that it will be useful,\n but WITHOUT ANY WARRANTY; without even the implied warranty of\n MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU Lesser\n General Public License for more details.\n .\n You should have received a copy of the GNU Lesser General Public License\n along with this program; if not, write to the Free Software Foundation,\n Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA"
                   },
@@ -698,10 +695,12 @@
                     "matcher": "2-aho",
                     "license_expression": "lgpl-2.1",
                     "rule_identifier": "lgpl-2.1_314.RULE",
+                    "rule_relevance": 100,
                     "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1_314.RULE",
                     "matched_text": " You should have received a copy of the GNU Lesser General Public License\n along with this program; if not, write to the Free Software Foundation,\n Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA\n .\n On Debian systems, the full text of the GNU Lesser General Public\n License version 2.1 can be found in the file\n `/usr/share/common-licenses/LGPL-2.1'."
                   }
-                ]
+                ],
+                "identifier": "lgpl_2_1_plus_and_lgpl_2_1-6a4d01fd-fa99-80b1-0c2c-a69c91c2ad96"
               }
             ],
             "other_license_expression": "lgpl-2.1-plus AND lgpl-2.1",
@@ -709,9 +708,6 @@
             "other_license_detections": [
               {
                 "license_expression": "lgpl-2.1-plus AND lgpl-2.1",
-                "detection_log": [
-                  "not-combined"
-                ],
                 "matches": [
                   {
                     "score": 100.0,
@@ -722,6 +718,7 @@
                     "matcher": "1-hash",
                     "license_expression": "lgpl-2.1-plus",
                     "rule_identifier": "lgpl-2.1-plus_108.RULE",
+                    "rule_relevance": 100,
                     "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_108.RULE",
                     "matched_text": "License: lgpl-2.1+"
                   },
@@ -734,6 +731,7 @@
                     "matcher": "2-aho",
                     "license_expression": "lgpl-2.1-plus",
                     "rule_identifier": "lgpl-2.1-plus_93.RULE",
+                    "rule_relevance": 100,
                     "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_93.RULE",
                     "matched_text": "This program is free software; you can redistribute it and/or modify it\nunder the terms of the GNU Lesser General Public License as published\nby the Free Software Foundation; either version 2.1 of the License, or\n(at your option) any later version.\n\nThis program is distributed in the hope that it will be useful,\nbut WITHOUT ANY WARRANTY; without even the implied warranty of\nMERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU Lesser\nGeneral Public License for more details.\n\nYou should have received a copy of the GNU Lesser General Public License\nalong with this program; if not, write to the Free Software Foundation,\nInc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA"
                   },
@@ -746,10 +744,12 @@
                     "matcher": "2-aho",
                     "license_expression": "lgpl-2.1",
                     "rule_identifier": "lgpl-2.1_314.RULE",
+                    "rule_relevance": 100,
                     "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1_314.RULE",
                     "matched_text": "You should have received a copy of the GNU Lesser General Public License\nalong with this program; if not, write to the Free Software Foundation,\nInc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA\n\nOn Debian systems, the full text of the GNU Lesser General Public\nLicense version 2.1 can be found in the file\n`/usr/share/common-licenses/LGPL-2.1'."
                   }
-                ]
+                ],
+                "identifier": "lgpl_2_1_plus_and_lgpl_2_1-1018860f-b475-01e3-bdd4-39bf3444650e"
               }
             ],
             "extracted_license_statement": "['LGPL-2.1+', 'LGPL-2.1+', 'LGPL-2.1+']",

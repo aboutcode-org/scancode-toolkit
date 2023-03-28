@@ -35,9 +35,6 @@
     "license_detections": [
       {
         "license_expression": "mit",
-        "detection_log": [
-          "not-combined"
-        ],
         "matches": [
           {
             "score": 100.0,
@@ -48,10 +45,12 @@
             "matcher": "1-spdx-id",
             "license_expression": "mit",
             "rule_identifier": "spdx-license-identifier-mit-1b937028f397e2c5fe4eb6a0abd781ab80f9eeff",
+            "rule_relevance": 100,
             "rule_url": null,
             "matched_text": "mit"
           }
-        ]
+        ],
+        "identifier": "mit-704ced38-ea60-e53b-6c20-390fe781b1c3"
       }
     ],
     "other_license_expression": null,

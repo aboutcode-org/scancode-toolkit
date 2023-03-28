@@ -26,9 +26,6 @@
   "license_detections": [
     {
       "license_expression": "lgpl-2.0-plus",
-      "detection_log": [
-        "not-combined"
-      ],
       "matches": [
         {
           "score": 100.0,
@@ -39,16 +36,15 @@
           "matcher": "1-hash",
           "license_expression": "lgpl-2.0-plus",
           "rule_identifier": "lgpl-2.0-plus_87.RULE",
+          "rule_relevance": 100,
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0-plus_87.RULE",
           "matched_text": "GNU LESSER GENERAL PUBLIC LICENSE"
         }
-      ]
+      ],
+      "identifier": "lgpl_2_0_plus-4a537314-959d-dbbd-2add-1b2422c6521e"
     },
     {
       "license_expression": "lgpl-2.0-plus",
-      "detection_log": [
-        "not-combined"
-      ],
       "matches": [
         {
           "score": 100.0,
@@ -59,10 +55,12 @@
           "matcher": "1-hash",
           "license_expression": "lgpl-2.0-plus",
           "rule_identifier": "lgpl-2.0-plus_100.RULE",
+          "rule_relevance": 100,
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0-plus_100.RULE",
           "matched_text": "http://www.gnu.org/licenses/lgpl.txt"
         }
-      ]
+      ],
+      "identifier": "lgpl_2_0_plus-841051ab-4cff-20d1-3845-2b91167dec78"
     }
   ],
   "other_license_expression": null,

@@ -8,8 +8,6 @@ other_license_expression_spdx: GPL-3.0-or-later AND GPL-3.0-or-later
 license_detections: []
 other_license_detections:
   - license_expression: gpl-3.0-plus
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 8
@@ -19,6 +17,7 @@ other_license_detections:
         matcher: 1-hash
         license_expression: gpl-3.0-plus
         rule_identifier: gpl-3.0-plus_92.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0-plus_92.RULE
         matched_text: 'License: gpl-3+'
       - score: '100.0'
@@ -29,6 +28,7 @@ other_license_detections:
         matcher: 1-hash
         license_expression: gpl-3.0-plus
         rule_identifier: gpl-3.0-plus_509.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0-plus_509.RULE
         matched_text: |
           This package is free software; you can redistribute it and/or modify it
@@ -38,4 +38,5 @@ other_license_detections:
 
           On Debian systems, the complete text of the GNU General Public License
           version 3 can be found in file "/usr/share/common-licenses/GPL-3".
+    identifier: gpl_3_0_plus-bac672d5-f2bc-6163-ab97-6dc113fdf983
 copyright: © 2015-2017 Guilhem Moulin <guilhem@fripost.org>

@@ -5,8 +5,6 @@ other_license_expression:
 other_license_expression_spdx:
 license_detections:
   - license_expression: mit-old-style-no-advert
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 15
@@ -16,6 +14,7 @@ license_detections:
         matcher: 2-aho
         license_expression: mit-old-style-no-advert
         rule_identifier: mit-old-style-no-advert_5.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit-old-style-no-advert_5.RULE
         matched_text: |
           Permission to use, copy, modify, and distribute this software
@@ -29,6 +28,7 @@ license_detections:
           M.I.T. and the M.I.T. S.I.P.B. make no representations about
           the suitability of this software for any purpose.  It is
           provided "as is" without express or implied warranty.
+    identifier: mit_old_style_no_advert-469d538d-4ad7-8c01-b220-6112c9d2d714
 other_license_detections: []
 copyright: Copyright 1987, 1988 by the Student Information Processing Board of the Massachusetts
   Institute of Technology

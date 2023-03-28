@@ -105,8 +105,6 @@
       "datasource_id": "pubspec_yaml"
     }
   ],
-  "license_references": [],
-  "license_rule_references": [],
   "files": [
     {
       "path": "authors-pubspec.yaml",

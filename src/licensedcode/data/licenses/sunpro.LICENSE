@@ -4,7 +4,12 @@ short_name: SunPro Attribution License
 name: SunPro Attribution License
 category: Permissive
 owner: Oracle (Sun)
-spdx_license_key: LicenseRef-scancode-sunpro
+spdx_license_key: SunPro
+other_spdx_license_keys:
+    - LicenseRef-scancode-sunpro
+other_urls:
+    - https://github.com/freebsd/freebsd-src/blob/main/lib/msun/src/e_acosh.c
+    - https://github.com/freebsd/freebsd-src/blob/main/lib/msun/src/e_lgammal.c
 ---
 
 Developed at SunPro, a Sun Microsystems, Inc. business.

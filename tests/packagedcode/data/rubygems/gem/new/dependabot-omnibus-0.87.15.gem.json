@@ -35,9 +35,6 @@
     "license_detections": [
       {
         "license_expression": "proprietary-license",
-        "detection_log": [
-          "not-combined"
-        ],
         "matches": [
           {
             "score": 99.0,
@@ -48,10 +45,12 @@
             "matcher": "1-hash",
             "license_expression": "proprietary-license",
             "rule_identifier": "proprietary-license_507.RULE",
+            "rule_relevance": 99,
             "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/proprietary-license_507.RULE",
             "matched_text": "license Nonstandard"
           }
-        ]
+        ],
+        "identifier": "proprietary_license-57e84079-2cde-81ab-b31f-a9a22bd602cf"
       }
     ],
     "other_license_expression": null,

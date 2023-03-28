@@ -67,7 +67,7 @@ Package detection:
 License detection:
 ~~~~~~~~~~~~~~~~~~~
 
-- The SPDX license list has been updated to the latest v3.19
+- The SPDX license list has been updated to the latest v3.20
 
 - This is a major update to license detection where we now combine one or more
   license matches in a larger license detection. This approach improves the
@@ -78,11 +78,9 @@ License detection:
 - There is a new ``license_detections`` codebase level attribute with all the
   unique license detections in the whole scan, both in resources and packages.
   This has the 3 attributes also present in package/resource level license
-  detections: ``license_expression``, ``matches`` and ``detection_log`` and has
-  two additional attributes:
-
-  - ``identifier``: which is the ``license_expression`` with an UUID created out
-    of the detection contents and is the same for same detections.
+  detections: ``license_expression``, ``identifier`` and ``detection_log``
+  (present optionally if the ``--license-diagnostics`` option is enabled) with
+  an additional attribute:
 
   - ``count``: Number of times in the codebase this unique license detection
     was encountered.
@@ -91,15 +89,14 @@ License detection:
 
   - The ``licenses`` attribute is deleted.
 
-  - A new ``for_license_detections`` attribute is aded which references the codebase
-    level unique license detections, and this is a list of ``identifer`` strings from
-    the codebase level license detections it references.
-  
   - A new ``license_detections`` attribute contains license detections in that file.
-    This object has three attributes: ``license_expression``, ``detection_log``
+    This object has three attributes: ``license_expression``, ``identifier``
     and ``matches``. ``matches`` is a list of license matches and is roughly
     the same as  ``licenses`` in the previous version with additional structure
-    changes detailed below.
+    changes detailed below. Identifier is the detected license-expression with an
+    UUID generated from the content of ``matches`` such that this is unique for
+    unique detections. We also have another attribute ``detection_log`` with
+    diagnostics information if the ``--license-diagnostics`` option is enabled.
 
   - A new attribute ``license_clues`` contains license matches with the
     same data structure as the ``matches`` attribute in ``license_detections``.
@@ -140,13 +137,14 @@ License detection:
   avoiding nesting. See `license updates doc <https://scancode-toolkit.readthedocs.io/en/latest/explanations/license-detection-reference.html#licensematch-result-data>`_
   for examples and details.
 
-- There are new and codebase level attributes default with `--licenses` to report
+- There are new and codebase level attributes with ``--license-references`` to report
   reference license metadata and texts once for each license matched across the
   scan; we now have two codebase level attributes: ``license_references`` and
   ``license_rule_references`` that list unique detected license and license rules.
   for examples and details. This reference data is also removed from license matches
   in all levels i.e. from codebase, package and resource level license detections and
-  resource level license clues.
+  resource level license clues, irrespective of this CLI option being used, i.e. default
+  with ``--licenses``.
   See `license updates documentation <https://scancode-toolkit.readthedocs.io/en/latest/explanations/license-detection-reference.html#comparision-before-after-license-references>`_
 
 - We replaced the ``scancode --reindex-licenses`` command line option with a
@@ -166,7 +164,7 @@ License detection:
 
   - See https://github.com/nexB/scancode-toolkit/issues/480 for more details.
 
-- We combined the licensedata file and text file of each license in a single
+- We combined the license data file and text file of each license in a single
   file with a .LICENSE extension. The .yml data file is now included at the
   top of each .LICENSE file as "YAML frontmatter". The same applies to license
   rules and their .RULE and .yml files. This halves the number of data files

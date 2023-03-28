@@ -1,0 +1,16 @@
+---
+key: object-form-exception-to-mit
+short_name: Object Form Exception to MIT
+name: Object Form Exception to MIT
+category: Permissive
+owner: Android Open Source Project
+homepage_url: https://android.googlesource.com/platform/external/fmtlib/+/refs/heads/master/LICENSE.rst
+is_exception: yes
+spdx_license_key: LicenseRef-scancode-object-form-exception-to-mit
+---
+
+Optional exception to the license
+As an exception, if, as a result of your compiling your source code, portions
+of this Software are embedded into a machine-executable object form of such
+source code, you may redistribute such embedded portions in such object form
+without including the above copyright and permission notices.

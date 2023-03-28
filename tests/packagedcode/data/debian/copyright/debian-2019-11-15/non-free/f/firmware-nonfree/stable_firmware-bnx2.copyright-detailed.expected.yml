@@ -5,8 +5,6 @@ other_license_expression:
 other_license_expression_spdx:
 license_detections:
   - license_expression: proprietary-license
-    detection_log:
-      - not-combined
     matches:
       - score: '87.5'
         start_line: 4
@@ -16,6 +14,7 @@ license_detections:
         matcher: 3-seq
         license_expression: proprietary-license
         rule_identifier: proprietary-license_599.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/proprietary-license_599.RULE
         matched_text: |
           This file contains firmware data derived from proprietary unpublished
@@ -24,5 +23,6 @@ license_detections:
           Permission is hereby granted for the distribution of this firmware data
           in hexadecimal or equivalent format, provided this copyright notice is
           accompanying it.
+    identifier: proprietary_license-af4a2eef-9a5a-ce96-a5dd-771b1a14029c
 other_license_detections: []
 copyright: Copyright (c) 2004 - 2010 Broadcom Corporation

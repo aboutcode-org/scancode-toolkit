@@ -146,7 +146,7 @@ def flatten_scan(scan, headers):
 
         for detection in scanned_file.get('license_detections', []):
             license_expression = detection["license_expression"]
-            detection_log = detection["detection_log"]
+            detection_log = detection.get("detection_log", []) or []
             detection_log = '\n'.join(detection_log)
             license_matches = detection["matches"]
             for match in license_matches:

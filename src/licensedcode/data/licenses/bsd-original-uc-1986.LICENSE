@@ -4,7 +4,11 @@ short_name: BSD-Original-UC-1986
 name: BSD-Original-UC-1986
 category: Permissive
 owner: Regents of the University of California
-spdx_license_key: LicenseRef-scancode-bsd-original-uc-1986
+spdx_license_key: BSD-4.3RENO
+other_spdx_license_keys:
+    - LicenseRef-scancode-bsd-original-uc-1986
+other_urls:
+    - https://sourceware.org/git/?p=binutils-gdb.git;a=blob;f=libiberty/strcasecmp.c;h=131d81c2ce7881fa48c363dc5bf5fb302c61ce0b;hb=HEAD
 ---
 
 Redistribution and use in source and binary forms are permitted provided that

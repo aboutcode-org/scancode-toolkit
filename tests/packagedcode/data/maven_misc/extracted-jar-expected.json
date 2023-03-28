@@ -218,8 +218,6 @@
       "datasource_id": "maven_pom"
     }
   ],
-  "license_references": [],
-  "license_rule_references": [],
   "files": [
     {
       "path": "extracted-jar",

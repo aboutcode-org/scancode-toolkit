@@ -16,8 +16,6 @@
       "datasource_id": "npm_package_json"
     }
   ],
-  "license_references": [],
-  "license_rule_references": [],
   "files": [
     {
       "path": "package.json",

@@ -2210,9 +2210,6 @@
     "license_detections": [
       {
         "license_expression": "artistic-2.0",
-        "detection_log": [
-          "not-combined"
-        ],
         "matches": [
           {
             "score": 50.0,
@@ -2223,10 +2220,12 @@
             "matcher": "1-hash",
             "license_expression": "artistic-2.0",
             "rule_identifier": "spdx_license_id_artistic-2.0_for_artistic-2.0.RULE",
+            "rule_relevance": 50,
             "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/spdx_license_id_artistic-2.0_for_artistic-2.0.RULE",
             "matched_text": "Artistic-2.0"
           }
-        ]
+        ],
+        "identifier": "artistic_2_0-2ca48deb-7b37-fc93-edd9-b349ad073774"
       }
     ],
     "other_license_expression": null,

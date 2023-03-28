@@ -85,9 +85,6 @@
     "license_detections": [
       {
         "license_expression": "public-domain AND python AND bsd-simplified AND gpl-3.0",
-        "detection_log": [
-          "not-combined"
-        ],
         "matches": [
           {
             "score": 100.0,
@@ -98,16 +95,15 @@
             "matcher": "1-hash",
             "license_expression": "public-domain AND python AND bsd-simplified AND gpl-3.0",
             "rule_identifier": "public-domain_and_python_and_bsd-simplified_and_gpl-3.0_2.RULE",
+            "rule_relevance": 100,
             "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/public-domain_and_python_and_bsd-simplified_and_gpl-3.0_2.RULE",
             "matched_text": "public domain, Python, 2-Clause BSD, GPL 3 (see COPYING.txt)"
           }
-        ]
+        ],
+        "identifier": "public_domain_and_python_and_bsd_simplified_and_gpl_3_0-cebb44a1-8b50-ed1d-29ba-943072b49a0f"
       },
       {
         "license_expression": "public-domain AND python AND bsd-new AND gpl-1.0-plus",
-        "detection_log": [
-          "not-combined"
-        ],
         "matches": [
           {
             "score": 99.0,
@@ -118,6 +114,7 @@
             "matcher": "2-aho",
             "license_expression": "public-domain",
             "rule_identifier": "pypi_public_domain.RULE",
+            "rule_relevance": 99,
             "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/pypi_public_domain.RULE",
             "matched_text": "['License :: Public Domain', 'License :: OSI Approved :: Python Software Foundation License', 'License :: OSI Approved :: BSD License', 'License :: OSI Approved :: GNU General Public License (GPL)']"
           },
@@ -130,6 +127,7 @@
             "matcher": "2-aho",
             "license_expression": "python",
             "rule_identifier": "pypi_python_software_foundation_license.RULE",
+            "rule_relevance": 99,
             "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/pypi_python_software_foundation_license.RULE",
             "matched_text": "['License :: Public Domain', 'License :: OSI Approved :: Python Software Foundation License', 'License :: OSI Approved :: BSD License', 'License :: OSI Approved :: GNU General Public License (GPL)']"
           },
@@ -142,6 +140,7 @@
             "matcher": "2-aho",
             "license_expression": "bsd-new",
             "rule_identifier": "pypi_bsd_license.RULE",
+            "rule_relevance": 99,
             "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/pypi_bsd_license.RULE",
             "matched_text": "['License :: Public Domain', 'License :: OSI Approved :: Python Software Foundation License', 'License :: OSI Approved :: BSD License', 'License :: OSI Approved :: GNU General Public License (GPL)']"
           },
@@ -154,10 +153,12 @@
             "matcher": "2-aho",
             "license_expression": "gpl-1.0-plus",
             "rule_identifier": "pypi_gnu_general_public_license.RULE",
+            "rule_relevance": 100,
             "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/pypi_gnu_general_public_license.RULE",
             "matched_text": "['License :: Public Domain', 'License :: OSI Approved :: Python Software Foundation License', 'License :: OSI Approved :: BSD License', 'License :: OSI Approved :: GNU General Public License (GPL)']"
           }
-        ]
+        ],
+        "identifier": "public_domain_and_python_and_bsd_new_and_gpl_1_0_plus-d42d20ce-2a05-56d2-6583-62ae92240491"
       }
     ],
     "other_license_expression": null,

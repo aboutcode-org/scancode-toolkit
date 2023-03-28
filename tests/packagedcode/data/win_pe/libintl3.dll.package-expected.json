@@ -35,9 +35,6 @@
     "license_detections": [
       {
         "license_expression": "gpl-1.0-plus",
-        "detection_log": [
-          "not-combined"
-        ],
         "matches": [
           {
             "score": 100.0,
@@ -48,10 +45,12 @@
             "matcher": "1-hash",
             "license_expression": "gpl-1.0-plus",
             "rule_identifier": "gpl-1.0-plus_569.RULE",
+            "rule_relevance": 100,
             "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-1.0-plus_569.RULE",
             "matched_text": "This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License;see www.gnu.org/copyleft/gpl.html."
           }
-        ]
+        ],
+        "identifier": "gpl_1_0_plus-5fd4d6d4-ee9e-094b-b723-aa97a019a2e9"
       }
     ],
     "other_license_expression": null,

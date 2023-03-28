@@ -8,6 +8,8 @@ homepage_url: http://www.openssl.org/source/license.html
 notes: this is typically used with GPL 2.0 but sometimes seen with GPL 3.0
 is_exception: yes
 spdx_license_key: x11vnc-openssl-exception
+other_spdx_license_keys:
+    - LicenseRef-scancode-openssl-exception-gpl-2.0
 text_urls:
     - http://www.openssl.org/source/license.html
     - http://www.gnu.org/licenses/gpl-2.0.txt

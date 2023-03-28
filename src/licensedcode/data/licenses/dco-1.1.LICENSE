@@ -8,6 +8,8 @@ homepage_url: https://developercertificate.org/
 spdx_license_key: LicenseRef-scancode-dco-1.1
 text_urls:
     - https://developercertificate.org/
+other_urls:
+    - https://github.com/nexB/scancode-toolkit/issues/3038#issuecomment-1317511139
 minimum_coverage: 90
 ignorable_copyrights:
     - Copyright (c) 2004, 2006 The Linux Foundation and its contributors

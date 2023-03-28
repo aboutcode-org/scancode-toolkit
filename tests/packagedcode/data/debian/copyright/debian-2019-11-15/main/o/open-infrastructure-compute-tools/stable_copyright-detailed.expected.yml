@@ -8,8 +8,6 @@ other_license_expression_spdx: GPL-3.0-or-later AND GPL-3.0-or-later AND GPL-3.0
 license_detections: []
 other_license_detections:
   - license_expression: gpl-3.0-plus AND gpl-3.0
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 12
@@ -19,6 +17,7 @@ other_license_detections:
         matcher: 1-hash
         license_expression: gpl-3.0-plus
         rule_identifier: gpl-3.0-plus_92.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0-plus_92.RULE
         matched_text: 'License: gpl-3+'
       - score: '100.0'
@@ -29,6 +28,7 @@ other_license_detections:
         matcher: 2-aho
         license_expression: gpl-3.0-plus
         rule_identifier: gpl-3.0-plus_290.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0-plus_290.RULE
         matched_text: |
           This program is free software: you can redistribute it and/or modify
@@ -51,6 +51,7 @@ other_license_detections:
         matcher: 2-aho
         license_expression: gpl-3.0
         rule_identifier: gpl-3.0_378.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0_378.RULE
         matched_text: the GNU General Public License version 3
       - score: '100.0'
@@ -61,8 +62,10 @@ other_license_detections:
         matcher: 2-aho
         license_expression: gpl-3.0
         rule_identifier: gpl-3.0_93.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0_93.RULE
         matched_text: usr/share/common-licenses/GPL-3.
+    identifier: gpl_3_0_plus_and_gpl_3_0-60967129-5b9c-1055-6b3f-a7dc475d5b0b
 copyright: |
   2014-2019 Daniel Baumann <daniel.baumann@open-infrastructure.net>
   2016 Andreas Kreuzer <andreas.kreuzer@open-infrastructure.net>

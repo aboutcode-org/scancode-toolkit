@@ -14,6 +14,8 @@ from license_expression import Licensing
 from licensedcode.models import Rule
 from plugincode.post_scan import PostScanPlugin
 from plugincode.post_scan import post_scan_impl
+from commoncode.cliutils import PluggableCommandLineOption
+from commoncode.cliutils import POST_SCAN_GROUP
 import attr
 
 TRACE = os.environ.get('SCANCODE_DEBUG_LICENSE_REFERENCE', False)
@@ -48,8 +50,18 @@ class LicenseReference(PostScanPlugin):
     # TODO: send to the tail of the scan, after files
     sort_order = 1000
 
-    def is_enabled(self, **kwargs):
-        return kwargs.get('license') or kwargs.get('package')
+    options = [
+        PluggableCommandLineOption(('--license-references',),
+            is_flag=True,
+            help='Return reference data for all licenses and license rules'
+                 'present in detections.',
+            help_group=POST_SCAN_GROUP,
+            sort_order=100,
+        )
+    ]
+
+    def is_enabled(self, license_references, **kwargs):
+        return license_references
 
     def process_codebase(self, codebase, **kwargs):
         """

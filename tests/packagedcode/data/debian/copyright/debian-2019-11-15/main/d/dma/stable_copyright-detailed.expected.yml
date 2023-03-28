@@ -19,8 +19,6 @@ other_license_expression_spdx: BSD-3-Clause AND BSD-3-Clause AND BSD-3-Clause AN
 license_detections: []
 other_license_detections:
   - license_expression: bsd-new
-    detection_log:
-      - not-combined
     matches:
       - score: '90.0'
         start_line: 47
@@ -30,6 +28,7 @@ other_license_detections:
         matcher: 1-hash
         license_expression: bsd-new
         rule_identifier: bsd-new_1036.RULE
+        rule_relevance: 90
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_1036.RULE
         matched_text: |
           Redistribution and use in source and binary forms, with or without
@@ -45,9 +44,8 @@ other_license_detections:
            3. Neither the name of The DragonFly Project nor the names of its
               contributors may be used to endorse or promote products derived
               from this software without specific, prior written permission.
+    identifier: bsd_new-075516ae-8349-5cd8-e103-e7e7fee3a471
   - license_expression: isc
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 62
@@ -57,6 +55,7 @@ other_license_detections:
         matcher: 1-hash
         license_expression: isc
         rule_identifier: isc_14.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/isc_14.RULE
         matched_text: |
           Permission to use, copy, modify, and distribute this software for any
@@ -70,9 +69,8 @@ other_license_detections:
            WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
            ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
            OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+    identifier: isc-ea6c318e-91a9-413d-027a-507b2cebec2c
   - license_expression: bsd-simplified
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 75
@@ -82,6 +80,7 @@ other_license_detections:
         matcher: 1-hash
         license_expression: bsd-simplified
         rule_identifier: bsd-simplified_27.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-simplified_27.RULE
         matched_text: |
           Redistribution and use in source and binary forms, with or without
@@ -104,6 +103,7 @@ other_license_detections:
            LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
            OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
            SUCH DAMAGE.
+    identifier: bsd_simplified-24fb2214-fe65-fd01-a4db-75b7cf8d710c
 copyright: |
   Copyright (c) 1995-2001 Kungliga Tekniska Högskolan
   (Royal Institute of Technology, Stockholm, Sweden).

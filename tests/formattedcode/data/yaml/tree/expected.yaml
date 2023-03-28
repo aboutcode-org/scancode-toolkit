@@ -23,16 +23,14 @@ headers:
       system_environment:
         operating_system: linux
         cpu_architecture: 64
-        platform: Linux-4.15.0-200-generic-x86_64-with-glibc2.23
-        platform_version: '#211~16.04.2-Ubuntu SMP Fri Nov 25 09:18:48 UTC 2022'
-        python_version: "3.9.10 (main, Jan 29 2022, 10:01:49) \n[GCC 5.4.0 20160609]"
-      spdx_license_list_version: '3.19'
+        platform: Linux-5.14.0-1058-oem-x86_64-with-glibc2.29
+        platform_version: '#66-Ubuntu SMP Fri Feb 10 09:46:18 UTC 2023'
+        python_version: "3.8.10 (default, Nov 14 2022, 12:59:47) \n[GCC 9.4.0]"
+      spdx_license_list_version: '3.20'
       files_count: 7
 packages: []
 dependencies: []
 license_detections: []
-license_references: []
-license_rule_references: []
 files:
   - path: copy1.c
     type: file
@@ -59,7 +57,6 @@ files:
     license_detections: []
     license_clues: []
     percentage_of_license_text: '0'
-    for_license_detections: []
     copyrights:
       - copyright: Copyright (c) 2000 ACME, Inc.
         start_line: 1
@@ -98,7 +95,6 @@ files:
     license_detections: []
     license_clues: []
     percentage_of_license_text: '0'
-    for_license_detections: []
     copyrights:
       - copyright: Copyright (c) 2000 ACME, Inc.
         start_line: 1
@@ -137,7 +133,6 @@ files:
     license_detections: []
     license_clues: []
     percentage_of_license_text: '0'
-    for_license_detections: []
     copyrights:
       - copyright: Copyright (c) 2000 ACME, Inc.
         start_line: 1
@@ -176,7 +171,6 @@ files:
     license_detections: []
     license_clues: []
     percentage_of_license_text: '0'
-    for_license_detections: []
     copyrights: []
     holders: []
     authors: []
@@ -209,7 +203,6 @@ files:
     license_detections: []
     license_clues: []
     percentage_of_license_text: '0'
-    for_license_detections: []
     copyrights:
       - copyright: Copyright (c) 2000 ACME, Inc.
         start_line: 1
@@ -248,7 +241,6 @@ files:
     license_detections: []
     license_clues: []
     percentage_of_license_text: '0'
-    for_license_detections: []
     copyrights:
       - copyright: Copyright (c) 2000 ACME, Inc.
         start_line: 1
@@ -287,7 +279,6 @@ files:
     license_detections: []
     license_clues: []
     percentage_of_license_text: '0'
-    for_license_detections: []
     copyrights:
       - copyright: Copyright (c) 2000 ACME, Inc.
         start_line: 1
@@ -326,7 +317,6 @@ files:
     license_detections: []
     license_clues: []
     percentage_of_license_text: '0'
-    for_license_detections: []
     copyrights:
       - copyright: Copyright (c) 2000 ACME, Inc.
         start_line: 1

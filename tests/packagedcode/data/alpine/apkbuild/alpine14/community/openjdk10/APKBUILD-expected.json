@@ -26,9 +26,6 @@
   "license_detections": [
     {
       "license_expression": "classpath-exception-2.0",
-      "detection_log": [
-        "not-combined"
-      ],
       "matches": [
         {
           "score": 100.0,
@@ -39,10 +36,12 @@
           "matcher": "1-hash",
           "license_expression": "classpath-exception-2.0",
           "rule_identifier": "classpath-exception-2.0_6.RULE",
+          "rule_relevance": 100,
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/classpath-exception-2.0_6.RULE",
           "matched_text": "gpl-2.0-with-classpath-exception"
         }
-      ]
+      ],
+      "identifier": "classpath_exception_2_0-56df45bf-e395-5647-90ac-6b89b0543e60"
     }
   ],
   "other_license_expression": null,

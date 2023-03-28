@@ -34,9 +34,6 @@
   "license_detections": [
     {
       "license_expression": "bsd-new",
-      "detection_log": [
-        "not-combined"
-      ],
       "matches": [
         {
           "score": 100.0,
@@ -47,16 +44,15 @@
           "matcher": "1-hash",
           "license_expression": "bsd-new",
           "rule_identifier": "bsd-new_357.RULE",
+          "rule_relevance": 100,
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_357.RULE",
           "matched_text": "The 3-Clause BSD License"
         }
-      ]
+      ],
+      "identifier": "bsd_new-4a9d3cf0-ff09-5016-1803-17b6319e005b"
     },
     {
       "license_expression": "bsd-new",
-      "detection_log": [
-        "not-combined"
-      ],
       "matches": [
         {
           "score": 100.0,
@@ -67,10 +63,12 @@
           "matcher": "1-hash",
           "license_expression": "bsd-new",
           "rule_identifier": "bsd-new_356.RULE",
+          "rule_relevance": 100,
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_356.RULE",
           "matched_text": "https://opensource.org/licenses/BSD-3-Clause"
         }
-      ]
+      ],
+      "identifier": "bsd_new-258b6fd3-b429-125a-31cb-35d6ddac32c5"
     }
   ],
   "other_license_expression": null,

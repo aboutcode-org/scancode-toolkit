@@ -46,8 +46,6 @@ other_license_expression_spdx: (Apache-2.0 AND Apache-2.0) AND ((Apache-2.0 AND 
 license_detections: []
 other_license_detections:
   - license_expression: apache-2.0
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 71
@@ -57,6 +55,7 @@ other_license_detections:
         matcher: 1-hash
         license_expression: apache-2.0
         rule_identifier: apache-2.0_65.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_65.RULE
         matched_text: 'License: apache-2.0'
       - score: '100.0'
@@ -67,6 +66,7 @@ other_license_detections:
         matcher: 1-hash
         license_expression: apache-2.0
         rule_identifier: apache-2.0_971.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_971.RULE
         matched_text: |
           Licensed to the Apache Software Foundation (ASF) under one or more
@@ -86,9 +86,8 @@ other_license_detections:
 
           On Debian systems, the full text of the Apache Software License version 2 can
           be found in the file `/usr/share/common-licenses/Apache-2.0'.
+    identifier: apache_2_0-54a3cb61-dd1f-a43e-0748-862fb858b0d2
   - license_expression: zeusbench
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 94
@@ -98,6 +97,7 @@ other_license_detections:
         matcher: 2-aho
         license_expression: zeusbench
         rule_identifier: zeusbench_1.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/zeusbench_1.RULE
         matched_text: |
           This software is provided "as is" and any express or implied warranties,
@@ -110,9 +110,8 @@ other_license_detections:
             in contract, strict liability or tort (including negligence or otherwise)
             arising in any way out of the use of this software, even if advised of the
             possibility of such damage
+    identifier: zeusbench-015480ab-358c-46e9-b585-8bc7330ace50
   - license_expression: bsd-new
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 118
@@ -122,6 +121,7 @@ other_license_detections:
         matcher: 2-aho
         license_expression: bsd-new
         rule_identifier: bsd-new_879.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_879.RULE
         matched_text: |
           Redistribution and use in source and binary forms, with or without
@@ -149,9 +149,8 @@ other_license_detections:
           CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
           ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
           POSSIBILITY OF SUCH DAMAGE.
+    identifier: bsd_new-bd6a26eb-db9d-de45-5d56-8c5674ddfb3f
   - license_expression: x11-keith-packard AND historical
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 172
@@ -161,6 +160,7 @@ other_license_detections:
         matcher: 2-aho
         license_expression: x11-keith-packard
         rule_identifier: x11-keith-packard3.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/x11-keith-packard3.RULE
         matched_text: |
           Permission to use, copy, modify, distribute, and sell this software
@@ -191,6 +191,7 @@ other_license_detections:
         matcher: 2-aho
         license_expression: historical
         rule_identifier: historical_9.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/historical_9.RULE
         matched_text: |
           Permission to use, copy, modify, and distribute this material
@@ -203,9 +204,8 @@ other_license_detections:
           MAKES NO REPRESENTATIONS ABOUT THE ACCURACY OR SUITABILITY
           OF THIS MATERIAL FOR ANY PURPOSE.  IT IS PROVIDED "AS IS",
           WITHOUT ANY EXPRESS OR IMPLIED WARRANTIES.
+    identifier: x11_keith_packard_and_historical-372bb973-e538-48bf-05ac-7c596aacb62c
   - license_expression: gpl-3.0-plus
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 209
@@ -215,6 +215,7 @@ other_license_detections:
         matcher: 1-hash
         license_expression: gpl-3.0-plus
         rule_identifier: gpl-3.0-plus_92.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0-plus_92.RULE
         matched_text: 'License: gpl-3+'
       - score: '99.0'
@@ -225,6 +226,7 @@ other_license_detections:
         matcher: 1-hash
         license_expression: gpl-3.0-plus
         rule_identifier: gpl-3.0-plus_483.RULE
+        rule_relevance: 99
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0-plus_483.RULE
         matched_text: |
           This program is free software: you can redistribute it and/or modify
@@ -240,9 +242,8 @@ other_license_detections:
           On Debian systems, the full text of the GNU General Public
           License version 2 can be found in the file
           `/usr/share/common-licenses/GPL-3'.
+    identifier: gpl_3_0_plus-19d9def9-e12c-2282-ca9d-6b65b77eb924
   - license_expression: gpl-2.0-plus
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 224
@@ -252,6 +253,7 @@ other_license_detections:
         matcher: 1-hash
         license_expression: gpl-2.0-plus
         rule_identifier: gpl-2.0-plus_22.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_22.RULE
         matched_text: 'License: gpl-2+'
       - score: '100.0'
@@ -262,6 +264,7 @@ other_license_detections:
         matcher: 1-hash
         license_expression: gpl-2.0-plus
         rule_identifier: gpl-2.0-plus_986.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_986.RULE
         matched_text: |
           This program is free software; you can redistribute it and/or
@@ -277,9 +280,8 @@ other_license_detections:
           On Debian systems, the full text of the GNU General Public
           License version 2 can be found in the file
           `/usr/share/common-licenses/GPL-2'.
+    identifier: gpl_2_0_plus-54a2dc03-8069-9f58-8fd2-21a866d843f8
   - license_expression: public-domain
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 240
@@ -289,6 +291,7 @@ other_license_detections:
         matcher: 1-hash
         license_expression: public-domain
         rule_identifier: public-domain_361.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/public-domain_361.RULE
         matched_text: |
           This imagemap module started as a port of the original imagemap.c
@@ -324,9 +327,8 @@ other_license_detections:
           Map format and menu concept courtesy Joshua Bell, jsbell@acs.ucalgary.ca.
 
           Mark Cox, mark@ukweb.com, Allow relative URLs even when no base specified
+    identifier: public_domain-a7ae1690-4f60-4902-e6d2-15dc3a028b4c
   - license_expression: bsd-simplified-darwin
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 279
@@ -336,6 +338,7 @@ other_license_detections:
         matcher: 2-aho
         license_expression: bsd-simplified-darwin
         rule_identifier: bsd-simplified-darwin.LICENSE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-simplified-darwin.LICENSE
         matched_text: |
           This software is not subject to any export provision of the United States
@@ -362,9 +365,8 @@ other_license_detections:
           LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
           OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
           SUCH DAMAGE.
+    identifier: bsd_simplified_darwin-9a2496b0-cc3a-2546-8280-ca8b6b3383c6
   - license_expression: apache-2.0 AND hs-regexp
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 306
@@ -374,6 +376,7 @@ other_license_detections:
         matcher: 2-aho
         license_expression: apache-2.0
         rule_identifier: apache-2.0_1021.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_1021.RULE
         matched_text: |
           This software was submitted by Cisco Systems to the Apache Software Foundation in July
@@ -388,6 +391,7 @@ other_license_detections:
         matcher: 2-aho
         license_expression: hs-regexp
         rule_identifier: hs-regexp_1.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/hs-regexp_1.RULE
         matched_text: |
           This software is not subject to any license of the American Telephone and
@@ -409,9 +413,8 @@ other_license_detections:
           sources, credits must appear in the documentation.
 
           4. This notice may not be removed or altered.
+    identifier: apache_2_0_and_hs_regexp-418b8fd9-1905-1ad7-6930-311a90aaf0a7
   - license_expression: bsd-unchanged
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 370
@@ -421,6 +424,7 @@ other_license_detections:
         matcher: 1-hash
         license_expression: bsd-unchanged
         rule_identifier: bsd-unchanged_4.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-unchanged_4.RULE
         matched_text: |
           Redistribution and use in source and binary forms, with or without
@@ -445,9 +449,8 @@ other_license_detections:
           THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
           (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
           THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+    identifier: bsd_unchanged-b3a50ceb-2258-90d8-693d-32de170e8f80
   - license_expression: bsd-new
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 395
@@ -457,6 +460,7 @@ other_license_detections:
         matcher: 1-hash
         license_expression: bsd-new
         rule_identifier: bsd-new_879.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_879.RULE
         matched_text: |
           Redistribution and use in source and binary forms, with or without
@@ -484,9 +488,8 @@ other_license_detections:
           CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
           ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
           POSSIBILITY OF SUCH DAMAGE.
+    identifier: bsd_new-bd6a26eb-db9d-de45-5d56-8c5674ddfb3f
   - license_expression: bison-exception-2.2
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 422
@@ -496,6 +499,7 @@ other_license_detections:
         matcher: 2-aho
         license_expression: bison-exception-2.2
         rule_identifier: bison-exception-2.2.LICENSE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bison-exception-2.2.LICENSE
         matched_text: |
           As a special exception, you may create a larger work that contains
@@ -510,9 +514,8 @@ other_license_detections:
             .
             This special exception was added by the Free Software Foundation in
             version 2.2 of Bison.  */
+    identifier: bison_exception_2_2-b8782f6d-6348-8be8-bb53-4f79d1684277
   - license_expression: mit
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 439
@@ -522,6 +525,7 @@ other_license_detections:
         matcher: 1-hash
         license_expression: mit
         rule_identifier: mit.LICENSE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE
         matched_text: |
           Permission is hereby granted, free of charge, to any person obtaining a copy of
@@ -540,6 +544,7 @@ other_license_detections:
           COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
           IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
           CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+    identifier: mit-cacd5c0c-204a-85c2-affc-e4c125b2492a
 copyright: |
   Copyright 2019 The Apache Software Foundation
   2019 The Apache Software Foundation

@@ -850,8 +850,6 @@
       "datasource_id": "yarn_lock_v1"
     }
   ],
-  "license_references": [],
-  "license_rule_references": [],
   "files": [
     {
       "path": "theia",

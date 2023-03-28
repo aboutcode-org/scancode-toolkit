@@ -3,219 +3,20 @@
     {
       "identifier": "unknown_license_reference-87d47954-89f5-fcbf-a173-e0d899d7c5e2",
       "license_expression": "unknown-license-reference",
-      "count": 2,
-      "detection_log": [
-        "not-combined"
-      ],
-      "matches": [
-        {
-          "score": 100.0,
-          "start_line": 9,
-          "end_line": 9,
-          "matched_length": 8,
-          "match_coverage": 100.0,
-          "matcher": "2-aho",
-          "license_expression": "unknown-license-reference",
-          "rule_identifier": "unknown-license-reference_30.RULE",
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/unknown-license-reference_30.RULE"
-        }
-      ]
+      "detection_count": 2,
+      "detection_log": []
     },
     {
       "identifier": "x11_xconsortium_veillard-b2601908-f03c-335c-5bbd-e72dc065c901",
       "license_expression": "x11-xconsortium-veillard",
-      "count": 1,
-      "detection_log": [
-        "not-combined"
-      ],
-      "matches": [
-        {
-          "score": 100.0,
-          "start_line": 7,
-          "end_line": 26,
-          "matched_length": 199,
-          "match_coverage": 100.0,
-          "matcher": "2-aho",
-          "license_expression": "x11-xconsortium-veillard",
-          "rule_identifier": "x11-xconsortium-veillard.LICENSE",
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/x11-xconsortium-veillard.LICENSE"
-        }
-      ]
+      "detection_count": 1,
+      "detection_log": []
     },
     {
       "identifier": "unknown_license_reference-8715cef9-8691-1147-d5c0-154042d18db1",
       "license_expression": "unknown-license-reference",
-      "count": 1,
-      "detection_log": [
-        "not-combined"
-      ],
-      "matches": [
-        {
-          "score": 100.0,
-          "start_line": 13,
-          "end_line": 13,
-          "matched_length": 9,
-          "match_coverage": 100.0,
-          "matcher": "2-aho",
-          "license_expression": "unknown-license-reference",
-          "rule_identifier": "unknown-license-reference_108.RULE",
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/unknown-license-reference_108.RULE"
-        }
-      ]
-    }
-  ],
-  "license_references": [
-    {
-      "key": "unknown-license-reference",
-      "language": "en",
-      "short_name": "Unknown License reference",
-      "name": "Unknown License file reference",
-      "category": "Unstated License",
-      "owner": "Unspecified",
-      "homepage_url": null,
-      "notes": "This applies to the case of a file with no clear license, which may be referenced via URL or text such as \"See license in...\" or \"This file is licensed under...\", but where the reference cannot be resolved to a specific named, public license.",
-      "is_builtin": true,
-      "is_exception": false,
-      "is_unknown": true,
-      "is_generic": false,
-      "spdx_license_key": "LicenseRef-scancode-unknown-license-reference",
-      "other_spdx_license_keys": [],
-      "osi_license_key": null,
-      "text_urls": [],
-      "osi_url": null,
-      "faq_url": null,
-      "other_urls": [],
-      "key_aliases": [],
-      "minimum_coverage": 0,
-      "standard_notice": null,
-      "ignorable_copyrights": [],
-      "ignorable_holders": [],
-      "ignorable_authors": [],
-      "ignorable_urls": [],
-      "ignorable_emails": [],
-      "text": "",
-      "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/unknown-license-reference.LICENSE",
-      "licensedb_url": "https://scancode-licensedb.aboutcode.org/unknown-license-reference",
-      "spdx_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/unknown-license-reference.LICENSE"
-    },
-    {
-      "key": "x11-xconsortium-veillard",
-      "language": "en",
-      "short_name": "X11-Style (X Consortium Veillard)",
-      "name": "X11-Style (X Consortium Veillard)",
-      "category": "Permissive",
-      "owner": "Daniel Veillard",
-      "homepage_url": null,
-      "notes": "the license key has been renamed from the old x11-xconsortium_veillard",
-      "is_builtin": true,
-      "is_exception": false,
-      "is_unknown": false,
-      "is_generic": false,
-      "spdx_license_key": "LicenseRef-scancode-x11-xconsortium-veillard",
-      "other_spdx_license_keys": [
-        "LicenseRef-scancode-x11-xconsortium_veillard"
-      ],
-      "osi_license_key": null,
-      "text_urls": [],
-      "osi_url": null,
-      "faq_url": null,
-      "other_urls": [],
-      "key_aliases": [],
-      "minimum_coverage": 0,
-      "standard_notice": "Except where otherwise noted in the source code (e.g. the files hash.c,\nlist.c and the trio files, which are covered by a similar licence but\nwith different Copyright notices) all the files are:\nCopyright (C) 1998-2003 Daniel Veillard. All Rights Reserved.\n",
-      "ignorable_copyrights": [],
-      "ignorable_holders": [],
-      "ignorable_authors": [],
-      "ignorable_urls": [],
-      "ignorable_emails": [],
-      "text": "Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the \"Software\"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is fur- nished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FIT- NESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.  IN NO EVENT SHALL THE DANIEL VEILLARD BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CON- NECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n\nExcept as contained in this notice, the name of Daniel Veillard shall not be used in advertising or otherwise to promote the sale, use or other deal- ings in this Software without prior written authorization from him.",
-      "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/x11-xconsortium-veillard.LICENSE",
-      "licensedb_url": "https://scancode-licensedb.aboutcode.org/x11-xconsortium-veillard",
-      "spdx_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/x11-xconsortium-veillard.LICENSE"
-    }
-  ],
-  "license_rule_references": [
-    {
-      "license_expression": "unknown-license-reference",
-      "identifier": "unknown-license-reference_108.RULE",
-      "language": "en",
-      "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/unknown-license-reference_108.RULE",
-      "is_license_text": false,
-      "is_license_notice": false,
-      "is_license_reference": true,
-      "is_license_tag": false,
-      "is_license_intro": false,
-      "is_continuous": false,
-      "is_builtin": true,
-      "is_from_license": false,
-      "is_synthetic": false,
-      "length": 9,
-      "relevance": 100,
-      "minimum_coverage": 80,
-      "referenced_filenames": [
-        "Copyright"
-      ],
-      "notes": null,
-      "ignorable_copyrights": [],
-      "ignorable_holders": [],
-      "ignorable_authors": [],
-      "ignorable_urls": [],
-      "ignorable_emails": [],
-      "text": "Copy: See Copyright for the status of this software."
-    },
-    {
-      "license_expression": "unknown-license-reference",
-      "identifier": "unknown-license-reference_30.RULE",
-      "language": "en",
-      "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/unknown-license-reference_30.RULE",
-      "is_license_text": false,
-      "is_license_notice": false,
-      "is_license_reference": true,
-      "is_license_tag": false,
-      "is_license_intro": false,
-      "is_continuous": false,
-      "is_builtin": true,
-      "is_from_license": false,
-      "is_synthetic": false,
-      "length": 8,
-      "relevance": 100,
-      "minimum_coverage": 80,
-      "referenced_filenames": [
-        "Copyright"
-      ],
-      "notes": null,
-      "ignorable_copyrights": [],
-      "ignorable_holders": [],
-      "ignorable_authors": [],
-      "ignorable_urls": [],
-      "ignorable_emails": [],
-      "text": "See Copyright for the status of this software."
-    },
-    {
-      "license_expression": "x11-xconsortium-veillard",
-      "identifier": "x11-xconsortium-veillard.LICENSE",
-      "language": "en",
-      "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/x11-xconsortium-veillard.LICENSE",
-      "is_license_text": true,
-      "is_license_notice": false,
-      "is_license_reference": false,
-      "is_license_tag": false,
-      "is_license_intro": false,
-      "is_continuous": false,
-      "is_builtin": true,
-      "is_from_license": true,
-      "is_synthetic": false,
-      "length": 199,
-      "relevance": 100,
-      "minimum_coverage": 0,
-      "referenced_filenames": [],
-      "notes": null,
-      "ignorable_copyrights": [],
-      "ignorable_holders": [],
-      "ignorable_authors": [],
-      "ignorable_urls": [],
-      "ignorable_emails": [],
-      "text": "Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the \"Software\"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is fur- nished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FIT- NESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.  IN NO EVENT SHALL THE DANIEL VEILLARD BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CON- NECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n\nExcept as contained in this notice, the name of Daniel Veillard shall not be used in advertising or otherwise to promote the sale, use or other deal- ings in this Software without prior written authorization from him."
+      "detection_count": 1,
+      "detection_log": []
     }
   ],
   "files": [
@@ -227,9 +28,6 @@
       "license_detections": [
         {
           "license_expression": "x11-xconsortium-veillard",
-          "detection_log": [
-            "not-combined"
-          ],
           "matches": [
             {
               "score": 100.0,
@@ -240,17 +38,17 @@
               "matcher": "2-aho",
               "license_expression": "x11-xconsortium-veillard",
               "rule_identifier": "x11-xconsortium-veillard.LICENSE",
+              "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/x11-xconsortium-veillard.LICENSE",
               "matched_text": "Permission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is fur-\nnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in\nall copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FIT-\nNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.  IN NO EVENT SHALL THE\nDANIEL VEILLARD BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER\nIN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CON-\nNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n\nExcept as contained in this notice, the name of Daniel Veillard shall not\nbe used in advertising or otherwise to promote the sale, use or other deal-\nings in this Software without prior written authorization from him."
             }
-          ]
+          ],
+          "detection_log": [],
+          "identifier": "x11_xconsortium_veillard-b2601908-f03c-335c-5bbd-e72dc065c901"
         }
       ],
       "license_clues": [],
       "percentage_of_license_text": 81.89,
-      "for_license_detections": [
-        "x11_xconsortium_veillard-b2601908-f03c-335c-5bbd-e72dc065c901"
-      ],
       "scan_errors": []
     },
     {
@@ -261,9 +59,6 @@
       "license_detections": [
         {
           "license_expression": "x11-xconsortium-veillard",
-          "detection_log": [
-            "unknown-reference-to-local-file"
-          ],
           "matches": [
             {
               "score": 100.0,
@@ -274,6 +69,7 @@
               "matcher": "2-aho",
               "license_expression": "unknown-license-reference",
               "rule_identifier": "unknown-license-reference_30.RULE",
+              "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/unknown-license-reference_30.RULE",
               "matched_text": "See Copyright for the status of this software."
             },
@@ -286,17 +82,19 @@
               "matcher": "2-aho",
               "license_expression": "x11-xconsortium-veillard",
               "rule_identifier": "x11-xconsortium-veillard.LICENSE",
+              "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/x11-xconsortium-veillard.LICENSE",
               "matched_text": "Permission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is fur-\nnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in\nall copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FIT-\nNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.  IN NO EVENT SHALL THE\nDANIEL VEILLARD BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER\nIN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CON-\nNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n\nExcept as contained in this notice, the name of Daniel Veillard shall not\nbe used in advertising or otherwise to promote the sale, use or other deal-\nings in this Software without prior written authorization from him."
             }
-          ]
+          ],
+          "detection_log": [
+            "unknown-reference-to-local-file"
+          ],
+          "identifier": "61f804f6-d484-92ca-09b5-26be51ac974e"
         }
       ],
       "license_clues": [],
       "percentage_of_license_text": 1.32,
-      "for_license_detections": [
-        "unknown_license_reference-87d47954-89f5-fcbf-a173-e0d899d7c5e2"
-      ],
       "scan_errors": []
     },
     {
@@ -307,9 +105,6 @@
       "license_detections": [
         {
           "license_expression": "x11-xconsortium-veillard",
-          "detection_log": [
-            "unknown-reference-to-local-file"
-          ],
           "matches": [
             {
               "score": 100.0,
@@ -320,6 +115,7 @@
               "matcher": "2-aho",
               "license_expression": "unknown-license-reference",
               "rule_identifier": "unknown-license-reference_30.RULE",
+              "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/unknown-license-reference_30.RULE",
               "matched_text": "See Copyright for the status of this software."
             },
@@ -332,17 +128,19 @@
               "matcher": "2-aho",
               "license_expression": "x11-xconsortium-veillard",
               "rule_identifier": "x11-xconsortium-veillard.LICENSE",
+              "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/x11-xconsortium-veillard.LICENSE",
               "matched_text": "Permission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is fur-\nnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in\nall copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FIT-\nNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.  IN NO EVENT SHALL THE\nDANIEL VEILLARD BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER\nIN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CON-\nNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n\nExcept as contained in this notice, the name of Daniel Veillard shall not\nbe used in advertising or otherwise to promote the sale, use or other deal-\nings in this Software without prior written authorization from him."
             }
-          ]
+          ],
+          "detection_log": [
+            "unknown-reference-to-local-file"
+          ],
+          "identifier": "61f804f6-d484-92ca-09b5-26be51ac974e"
         }
       ],
       "license_clues": [],
       "percentage_of_license_text": 0.1,
-      "for_license_detections": [
-        "unknown_license_reference-87d47954-89f5-fcbf-a173-e0d899d7c5e2"
-      ],
       "scan_errors": []
     },
     {
@@ -353,7 +151,6 @@
       "license_detections": [],
       "license_clues": [],
       "percentage_of_license_text": 0,
-      "for_license_detections": [],
       "scan_errors": []
     },
     {
@@ -364,7 +161,6 @@
       "license_detections": [],
       "license_clues": [],
       "percentage_of_license_text": 0,
-      "for_license_detections": [],
       "scan_errors": []
     },
     {
@@ -375,9 +171,6 @@
       "license_detections": [
         {
           "license_expression": "x11-xconsortium-veillard",
-          "detection_log": [
-            "unknown-reference-to-local-file"
-          ],
           "matches": [
             {
               "score": 100.0,
@@ -388,6 +181,7 @@
               "matcher": "2-aho",
               "license_expression": "unknown-license-reference",
               "rule_identifier": "unknown-license-reference_108.RULE",
+              "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/unknown-license-reference_108.RULE",
               "matched_text": "Copy: See Copyright for the status of this software."
             },
@@ -400,17 +194,19 @@
               "matcher": "2-aho",
               "license_expression": "x11-xconsortium-veillard",
               "rule_identifier": "x11-xconsortium-veillard.LICENSE",
+              "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/x11-xconsortium-veillard.LICENSE",
               "matched_text": "Permission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is fur-\nnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in\nall copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FIT-\nNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.  IN NO EVENT SHALL THE\nDANIEL VEILLARD BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER\nIN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CON-\nNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n\nExcept as contained in this notice, the name of Daniel Veillard shall not\nbe used in advertising or otherwise to promote the sale, use or other deal-\nings in this Software without prior written authorization from him."
             }
-          ]
+          ],
+          "detection_log": [
+            "unknown-reference-to-local-file"
+          ],
+          "identifier": "50c015bd-e4e1-c6fe-eb82-9551473dd8e1"
         }
       ],
       "license_clues": [],
       "percentage_of_license_text": 2.47,
-      "for_license_detections": [
-        "unknown_license_reference-8715cef9-8691-1147-d5c0-154042d18db1"
-      ],
       "scan_errors": []
     }
   ]
