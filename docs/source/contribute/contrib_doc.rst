@@ -312,3 +312,15 @@ bugs. But this is definitely better than converting everything by yourself.
 
 This will be helpful in converting GitHub wiki's (Markdown Files) to reStructuredtext files for
 Sphinx/ReadTheDocs hosting.
+
+Automatic Docs Generation
+-------------------------
+
+It's possible to generate docs automatically from data by using a combination of:
+
+- `shell scripts: example <https://github.com/nexB/scancode-toolkit/blob/develop/docs/scripts/regen_package_docs.sh>`_
+- `python scripts: example <https://github.com/nexB/scancode-toolkit/blob/develop/src/packagedcode/regen_package_docs.py>`_
+- `jinja templates: example <https://github.com/nexB/scancode-toolkit/blob/develop/src/packagedcode/templates/available_package_parsers.rst>`_
+
+And we do this currently to keep a documentation page for all the supported package formats.
+See :ref:`supported_packages` for details.
