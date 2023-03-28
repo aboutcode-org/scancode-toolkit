@@ -171,5 +171,6 @@
   "repository_download_url": "https://repo1.maven.org/maven2/commons-logging/commons-logging/1.0.4/commons-logging-1.0.4.jar",
   "api_data_url": "https://repo1.maven.org/maven2/commons-logging/commons-logging/1.0.4/commons-logging-1.0.4.pom",
   "datasource_id": "maven_pom",
+  "holder": null,
   "purl": "pkg:maven/commons-logging/commons-logging@1.0.4"
 }

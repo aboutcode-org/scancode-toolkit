@@ -39,5 +39,6 @@
   "repository_download_url": "https://repo1.maven.org/maven2/org/bouncycastle/bcprov/1.37/bcprov-1.37.jar",
   "api_data_url": "https://repo1.maven.org/maven2/org/bouncycastle/bcprov/1.37/bcprov-1.37.pom",
   "datasource_id": "maven_pom",
+  "holder": null,
   "purl": "pkg:maven/org.bouncycastle/bcprov@1.37"
 }

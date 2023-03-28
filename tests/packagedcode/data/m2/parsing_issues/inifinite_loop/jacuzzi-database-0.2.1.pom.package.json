@@ -70,5 +70,6 @@
   "repository_download_url": "https://repo1.maven.org/maven2/com/github/albertoanguita/jacuzzi-database/${version}/jacuzzi-database-${version}.jar",
   "api_data_url": "https://repo1.maven.org/maven2/com/github/albertoanguita/jacuzzi-database/${version}/jacuzzi-database-${version}.pom",
   "datasource_id": "maven_pom",
+  "holder": null,
   "purl": "pkg:maven/com.github.albertoanguita/jacuzzi-database@%24%7Bversion%7D"
 }

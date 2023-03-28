@@ -86,5 +86,6 @@
   "repository_download_url": "https://repo1.maven.org/maven2/xml-apis/xml-apis/1.0.b2/xml-apis-1.0.b2.jar",
   "api_data_url": "https://repo1.maven.org/maven2/xml-apis/xml-apis/1.0.b2/xml-apis-1.0.b2.pom",
   "datasource_id": "maven_pom",
+  "holder": null,
   "purl": "pkg:maven/xml-apis/xml-apis@1.0.b2"
 }

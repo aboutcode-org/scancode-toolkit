@@ -90,5 +90,6 @@
   "repository_download_url": "https://repo1.maven.org/maven2/commons-digester/commons-digester/1.6/commons-digester-1.6.jar",
   "api_data_url": "https://repo1.maven.org/maven2/commons-digester/commons-digester/1.6/commons-digester-1.6.pom",
   "datasource_id": "maven_pom",
+  "holder": null,
   "purl": "pkg:maven/commons-digester/commons-digester@1.6"
 }

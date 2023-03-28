@@ -110,5 +110,6 @@
   "repository_download_url": "https://repo1.maven.org/maven2/org/codehaus/cargo/cargo-maven2-plugin/1.0-SNAPSHOT/cargo-maven2-plugin-1.0-SNAPSHOT.jar",
   "api_data_url": "https://repo1.maven.org/maven2/org/codehaus/cargo/cargo-maven2-plugin/1.0-SNAPSHOT/cargo-maven2-plugin-1.0-SNAPSHOT.pom",
   "datasource_id": "maven_pom",
+  "holder": null,
   "purl": "pkg:maven/org.codehaus.cargo/cargo-maven2-plugin@1.0-SNAPSHOT"
 }

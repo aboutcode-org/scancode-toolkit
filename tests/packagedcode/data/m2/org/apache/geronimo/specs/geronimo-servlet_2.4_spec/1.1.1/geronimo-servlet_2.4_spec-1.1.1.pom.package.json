@@ -39,5 +39,6 @@
   "repository_download_url": "https://repo1.maven.org/maven2/org/apache/geronimo/specs/geronimo-servlet_2.4_spec/1.1.1/geronimo-servlet_2.4_spec-1.1.1.jar",
   "api_data_url": "https://repo1.maven.org/maven2/org/apache/geronimo/specs/geronimo-servlet_2.4_spec/1.1.1/geronimo-servlet_2.4_spec-1.1.1.pom",
   "datasource_id": "maven_pom",
+  "holder": null,
   "purl": "pkg:maven/org.apache.geronimo.specs/geronimo-servlet_2.4_spec@1.1.1"
 }

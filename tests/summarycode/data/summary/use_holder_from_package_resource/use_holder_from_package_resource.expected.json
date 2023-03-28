@@ -90,6 +90,7 @@
       "repository_homepage_url": "https://pypi.org/project/atheris",
       "repository_download_url": null,
       "api_data_url": "https://pypi.org/pypi/atheris/json",
+      "holder": null,
       "package_uid": "pkg:pypi/atheris?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_paths": [
         "codebase/setup.py"
@@ -313,6 +314,7 @@
           "repository_download_url": null,
           "api_data_url": "https://pypi.org/pypi/atheris/json",
           "datasource_id": "pypi_setup_py",
+          "holder": null,
           "purl": "pkg:pypi/atheris"
         }
       ],

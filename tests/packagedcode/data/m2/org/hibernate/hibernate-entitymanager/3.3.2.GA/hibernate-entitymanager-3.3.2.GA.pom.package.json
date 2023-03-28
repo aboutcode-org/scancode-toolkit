@@ -139,5 +139,6 @@
   "repository_download_url": "https://repo1.maven.org/maven2/org/hibernate/hibernate-entitymanager/3.3.2.GA/hibernate-entitymanager-3.3.2.GA.jar",
   "api_data_url": "https://repo1.maven.org/maven2/org/hibernate/hibernate-entitymanager/3.3.2.GA/hibernate-entitymanager-3.3.2.GA.pom",
   "datasource_id": "maven_pom",
+  "holder": null,
   "purl": "pkg:maven/org.hibernate/hibernate-entitymanager@3.3.2.GA"
 }

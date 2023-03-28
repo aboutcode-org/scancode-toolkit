@@ -70,5 +70,6 @@
   "repository_download_url": "https://repo1.maven.org/maven2/org/codehaus/plexus/plexus-active-collections/1.0-beta-2/plexus-active-collections-1.0-beta-2.jar",
   "api_data_url": "https://repo1.maven.org/maven2/org/codehaus/plexus/plexus-active-collections/1.0-beta-2/plexus-active-collections-1.0-beta-2.pom",
   "datasource_id": "maven_pom",
+  "holder": null,
   "purl": "pkg:maven/org.codehaus.plexus/plexus-active-collections@1.0-beta-2"
 }

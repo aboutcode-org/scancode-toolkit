@@ -50,5 +50,6 @@
   "repository_download_url": "https://repo1.maven.org/maven2/org/uncommons/reportng/0.9.5/reportng-0.9.5.jar",
   "api_data_url": "https://repo1.maven.org/maven2/org/uncommons/reportng/0.9.5/reportng-0.9.5.pom",
   "datasource_id": "maven_pom",
+  "holder": null,
   "purl": "pkg:maven/org.uncommons/reportng@0.9.5"
 }

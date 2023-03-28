@@ -531,6 +531,13 @@ Package type:  mozilla
   description:       Mozilla XPI extension
   path_patterns:    '*.xpi'
 --------------------------------------------
+Package type:  msi
+  datasource_id:     msi_installer
+  documentation URL: https://docs.microsoft.com/en-us/windows/win32/msi/windows-installer-portal
+  primary language:  None
+  description:       Microsoft MSI installer
+  path_patterns:    '*.msi'
+--------------------------------------------
 Package type:  npm
   datasource_id:     npm_package_json
   documentation URL: https://docs.npmjs.com/cli/v8/configuring-npm/package-json
@@ -714,6 +721,27 @@ Package type:  rpm
   path_patterns:    '*.rpm', '*.src.rpm', '*.srpm', '*.mvl', '*.vip'
 --------------------------------------------
 Package type:  rpm
+  datasource_id:     rpm_installed_database_bdb
+  documentation URL: https://man7.org/linux/man-pages/man8/rpmdb.8.html
+  primary language:  None
+  description:       RPM installed package BDB database
+  path_patterns:    '*var/lib/rpm/Packages'
+--------------------------------------------
+Package type:  rpm
+  datasource_id:     rpm_installed_database_ndb
+  documentation URL: https://fedoraproject.org/wiki/Changes/NewRpmDBFormat
+  primary language:  None
+  description:       RPM installed package NDB database
+  path_patterns:    '*usr/lib/sysimage/rpm/Packages.db'
+--------------------------------------------
+Package type:  rpm
+  datasource_id:     rpm_installed_database_sqlite
+  documentation URL: https://fedoraproject.org/wiki/Changes/Sqlite_Rpmdb
+  primary language:  None
+  description:       RPM installed package SQLite database
+  path_patterns:    '*var/lib/rpm/rpmdb.sqlite'
+--------------------------------------------
+Package type:  rpm
   datasource_id:     rpm_spefile
   documentation URL: https://en.wikipedia.org/wiki/RPM_Package_Manager
   primary language:  None
@@ -747,6 +775,27 @@ Package type:  war
   primary language:  Java
   description:       Java WAR web/xml
   path_patterns:    '*/WEB-INF/web.xml'
+--------------------------------------------
+Package type:  windows-program
+  datasource_id:     win_reg_installed_programs_docker_file_software
+  documentation URL: https://en.wikipedia.org/wiki/Windows_Registry
+  primary language:  None
+  description:       Windows Registry Installed Program - Docker SOFTWARE
+  path_patterns:    '*/Files/Windows/System32/config/SOFTWARE'
+--------------------------------------------
+Package type:  windows-program
+  datasource_id:     win_reg_installed_programs_docker_software_delta
+  documentation URL: https://en.wikipedia.org/wiki/Windows_Registry
+  primary language:  None
+  description:       Windows Registry Installed Program - Docker Software Delta
+  path_patterns:    '*/Hives/Software_Delta'
+--------------------------------------------
+Package type:  windows-program
+  datasource_id:     win_reg_installed_programs_docker_utility_software
+  documentation URL: https://en.wikipedia.org/wiki/Windows_Registry
+  primary language:  None
+  description:       Windows Registry Installed Program - Docker UtilityVM SOFTWARE
+  path_patterns:    '*/UtilityVM/Files/Windows/System32/config/SOFTWARE'
 --------------------------------------------
 Package type:  windows-update
   datasource_id:     microsoft_update_manifest_mum

@@ -50,5 +50,6 @@
   "repository_download_url": "https://repo1.maven.org/maven2/com/github/simondan/ojcms/ojcms-beans/${project.version}/ojcms-beans-${project.version}.jar",
   "api_data_url": "https://repo1.maven.org/maven2/com/github/simondan/ojcms/ojcms-beans/${project.version}/ojcms-beans-${project.version}.pom",
   "datasource_id": "maven_pom",
+  "holder": null,
   "purl": "pkg:maven/com.github.simondan.ojcms/ojcms-beans@%24%7Bproject.version%7D"
 }

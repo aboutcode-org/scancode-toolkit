@@ -99,5 +99,6 @@
   "repository_download_url": "https://repo1.maven.org/maven2/org/hibernate/hibernate-commons-annotations/3.0.0.ga/hibernate-commons-annotations-3.0.0.ga.jar",
   "api_data_url": "https://repo1.maven.org/maven2/org/hibernate/hibernate-commons-annotations/3.0.0.ga/hibernate-commons-annotations-3.0.0.ga.pom",
   "datasource_id": "maven_pom",
+  "holder": null,
   "purl": "pkg:maven/org.hibernate/hibernate-commons-annotations@3.0.0.ga"
 }

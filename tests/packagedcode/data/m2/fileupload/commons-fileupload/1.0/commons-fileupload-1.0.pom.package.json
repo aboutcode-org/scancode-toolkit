@@ -110,5 +110,6 @@
   "repository_download_url": "https://repo1.maven.org/maven2/commons-fileupload/commons-fileupload/1.0/commons-fileupload-1.0.jar",
   "api_data_url": "https://repo1.maven.org/maven2/commons-fileupload/commons-fileupload/1.0/commons-fileupload-1.0.pom",
   "datasource_id": "maven_pom",
+  "holder": null,
   "purl": "pkg:maven/commons-fileupload/commons-fileupload@1.0"
 }

@@ -264,5 +264,6 @@
   "repository_download_url": "https://repo1.maven.org/maven2/org/codehaus/cargo/cargo-parent/4.2-SNAPSHOT/cargo-parent-4.2-SNAPSHOT.jar",
   "api_data_url": "https://repo1.maven.org/maven2/org/codehaus/cargo/cargo-parent/4.2-SNAPSHOT/cargo-parent-4.2-SNAPSHOT.pom",
   "datasource_id": "maven_pom",
+  "holder": null,
   "purl": "pkg:maven/org.codehaus.cargo/cargo-parent@4.2-SNAPSHOT"
 }

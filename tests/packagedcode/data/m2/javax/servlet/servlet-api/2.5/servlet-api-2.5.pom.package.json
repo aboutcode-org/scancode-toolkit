@@ -39,5 +39,6 @@
   "repository_download_url": "https://repo1.maven.org/maven2/javax/servlet/servlet-api/2.5/servlet-api-2.5.jar",
   "api_data_url": "https://repo1.maven.org/maven2/javax/servlet/servlet-api/2.5/servlet-api-2.5.pom",
   "datasource_id": "maven_pom",
+  "holder": null,
   "purl": "pkg:maven/javax.servlet/servlet-api@2.5"
 }

@@ -70,5 +70,6 @@
   "repository_download_url": "https://repo1.maven.org/maven2/org/apache/mina/mina-core/1.1.1/mina-core-1.1.1.jar",
   "api_data_url": "https://repo1.maven.org/maven2/org/apache/mina/mina-core/1.1.1/mina-core-1.1.1.pom",
   "datasource_id": "maven_pom",
+  "holder": null,
   "purl": "pkg:maven/org.apache.mina/mina-core@1.1.1"
 }

@@ -223,5 +223,6 @@
   "repository_download_url": "https://repo1.maven.org/maven2/org/apache/maven/maven/2.0.4/maven-2.0.4.jar",
   "api_data_url": "https://repo1.maven.org/maven2/org/apache/maven/maven/2.0.4/maven-2.0.4.pom",
   "datasource_id": "maven_pom",
+  "holder": null,
   "purl": "pkg:maven/org.apache.maven/maven@2.0.4"
 }

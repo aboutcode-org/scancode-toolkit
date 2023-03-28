@@ -50,5 +50,6 @@
   "repository_download_url": "https://repo1.maven.org/maven2/xml-apis/xml-apis/2.0.2/xml-apis-2.0.2.jar",
   "api_data_url": "https://repo1.maven.org/maven2/xml-apis/xml-apis/2.0.2/xml-apis-2.0.2.pom",
   "datasource_id": "maven_pom",
+  "holder": null,
   "purl": "pkg:maven/xml-apis/xml-apis@2.0.2"
 }

@@ -70,5 +70,6 @@
   "repository_download_url": "https://repo1.maven.org/maven2/org/openqa/selenium/core/selenium-core/0.8.3/selenium-core-0.8.3.jar",
   "api_data_url": "https://repo1.maven.org/maven2/org/openqa/selenium/core/selenium-core/0.8.3/selenium-core-0.8.3.pom",
   "datasource_id": "maven_pom",
+  "holder": null,
   "purl": "pkg:maven/org.openqa.selenium.core/selenium-core@0.8.3"
 }

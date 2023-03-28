@@ -163,5 +163,6 @@
   "repository_download_url": "https://repo1.maven.org/maven2/org/codehaus/plexus/plexus/1.0.9/plexus-1.0.9.jar",
   "api_data_url": "https://repo1.maven.org/maven2/org/codehaus/plexus/plexus/1.0.9/plexus-1.0.9.pom",
   "datasource_id": "maven_pom",
+  "holder": null,
   "purl": "pkg:maven/org.codehaus.plexus/plexus@1.0.9"
 }

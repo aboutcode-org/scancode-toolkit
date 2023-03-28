@@ -113,6 +113,7 @@
       "repository_homepage_url": "https://pypi.org/project/pip",
       "repository_download_url": "https://pypi.org/packages/source/p/pip/pip-22.0.4.tar.gz",
       "api_data_url": "https://pypi.org/pypi/pip/22.0.4/json",
+      "holder": null,
       "package_uid": "pkg:pypi/pip@22.0.4?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_paths": [
         "pip-22.0.4/PKG-INFO"
@@ -367,6 +368,7 @@
           "repository_download_url": "https://pypi.org/packages/source/p/pip/pip-22.0.4.tar.gz",
           "api_data_url": "https://pypi.org/pypi/pip/22.0.4/json",
           "datasource_id": "pypi_sdist_pkginfo",
+          "holder": null,
           "purl": "pkg:pypi/pip@22.0.4"
         }
       ],
@@ -703,6 +705,7 @@
           "repository_download_url": null,
           "api_data_url": null,
           "datasource_id": "pip_requirements",
+          "holder": null,
           "purl": null
         }
       ],
@@ -783,6 +786,7 @@
           "repository_download_url": null,
           "api_data_url": null,
           "datasource_id": "pypi_pyproject_toml",
+          "holder": null,
           "purl": null
         }
       ],
@@ -890,6 +894,7 @@
           "repository_download_url": null,
           "api_data_url": null,
           "datasource_id": "pypi_setup_cfg",
+          "holder": null,
           "purl": null
         }
       ],
@@ -1053,6 +1058,7 @@
           "repository_download_url": "https://pypi.org/packages/source/p/pip/pip-22.0.4.tar.gz",
           "api_data_url": "https://pypi.org/pypi/pip/22.0.4/json",
           "datasource_id": "pypi_setup_py",
+          "holder": null,
           "purl": "pkg:pypi/pip@22.0.4"
         }
       ],

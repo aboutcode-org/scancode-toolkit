@@ -38,6 +38,7 @@
     "repository_download_url": null,
     "api_data_url": null,
     "datasource_id": "win_reg_installed_programs_docker_file_software",
+    "holder": null,
     "purl": null
   },
   {
@@ -79,6 +80,7 @@
     "repository_download_url": null,
     "api_data_url": null,
     "datasource_id": "win_reg_installed_programs_docker_file_software",
+    "holder": null,
     "purl": null
   },
   {
@@ -120,6 +122,7 @@
     "repository_download_url": null,
     "api_data_url": null,
     "datasource_id": "win_reg_installed_programs_docker_file_software",
+    "holder": null,
     "purl": null
   },
   {
@@ -161,6 +164,7 @@
     "repository_download_url": null,
     "api_data_url": null,
     "datasource_id": "win_reg_installed_programs_docker_file_software",
+    "holder": null,
     "purl": null
   },
   {
@@ -202,6 +206,7 @@
     "repository_download_url": null,
     "api_data_url": null,
     "datasource_id": "win_reg_installed_programs_docker_file_software",
+    "holder": null,
     "purl": null
   },
   {
@@ -243,6 +248,7 @@
     "repository_download_url": null,
     "api_data_url": null,
     "datasource_id": "win_reg_installed_programs_docker_file_software",
+    "holder": null,
     "purl": null
   },
   {
@@ -284,6 +290,7 @@
     "repository_download_url": null,
     "api_data_url": null,
     "datasource_id": "win_reg_installed_programs_docker_file_software",
+    "holder": null,
     "purl": null
   },
   {
@@ -325,6 +332,7 @@
     "repository_download_url": null,
     "api_data_url": null,
     "datasource_id": "win_reg_installed_programs_docker_file_software",
+    "holder": null,
     "purl": null
   },
   {
@@ -366,6 +374,7 @@
     "repository_download_url": null,
     "api_data_url": null,
     "datasource_id": "win_reg_installed_programs_docker_file_software",
+    "holder": null,
     "purl": null
   },
   {
@@ -407,6 +416,7 @@
     "repository_download_url": null,
     "api_data_url": null,
     "datasource_id": "win_reg_installed_programs_docker_file_software",
+    "holder": null,
     "purl": null
   },
   {
@@ -448,6 +458,7 @@
     "repository_download_url": null,
     "api_data_url": null,
     "datasource_id": "win_reg_installed_programs_docker_file_software",
+    "holder": null,
     "purl": null
   },
   {
@@ -489,6 +500,7 @@
     "repository_download_url": null,
     "api_data_url": null,
     "datasource_id": "win_reg_installed_programs_docker_file_software",
+    "holder": null,
     "purl": null
   },
   {
@@ -548,6 +560,7 @@
     "repository_download_url": null,
     "api_data_url": null,
     "datasource_id": "win_reg_installed_programs_docker_file_software",
+    "holder": null,
     "purl": "pkg:windows-program/Python%203.9.5%20Tcl/Tk%20Support%20%2864-bit%29@3.9.5150.0"
   },
   {
@@ -607,6 +620,7 @@
     "repository_download_url": null,
     "api_data_url": null,
     "datasource_id": "win_reg_installed_programs_docker_file_software",
+    "holder": null,
     "purl": "pkg:windows-program/Python%203.9.5%20Utility%20Scripts%20%2864-bit%29@3.9.5150.0"
   },
   {
@@ -666,6 +680,7 @@
     "repository_download_url": null,
     "api_data_url": null,
     "datasource_id": "win_reg_installed_programs_docker_file_software",
+    "holder": null,
     "purl": "pkg:windows-program/Python%203.9.5%20Add%20to%20Path%20%2864-bit%29@3.9.5150.0"
   },
   {
@@ -725,6 +740,7 @@
     "repository_download_url": null,
     "api_data_url": null,
     "datasource_id": "win_reg_installed_programs_docker_file_software",
+    "holder": null,
     "purl": "pkg:windows-program/Python%203.9.5%20Executables%20%2864-bit%29@3.9.5150.0"
   },
   {
@@ -784,6 +800,7 @@
     "repository_download_url": null,
     "api_data_url": null,
     "datasource_id": "win_reg_installed_programs_docker_file_software",
+    "holder": null,
     "purl": "pkg:windows-program/Python%203.9.5%20Development%20Libraries%20%2864-bit%29@3.9.5150.0"
   },
   {
@@ -843,6 +860,7 @@
     "repository_download_url": null,
     "api_data_url": null,
     "datasource_id": "win_reg_installed_programs_docker_file_software",
+    "holder": null,
     "purl": "pkg:windows-program/Python%203.9.5%20Standard%20Library%20%2864-bit%29@3.9.5150.0"
   },
   {
@@ -902,6 +920,7 @@
     "repository_download_url": null,
     "api_data_url": null,
     "datasource_id": "win_reg_installed_programs_docker_file_software",
+    "holder": null,
     "purl": "pkg:windows-program/Python%203.9.5%20Core%20Interpreter%20%2864-bit%29@3.9.5150.0"
   },
   {
@@ -943,6 +962,7 @@
     "repository_download_url": null,
     "api_data_url": null,
     "datasource_id": "win_reg_installed_programs_docker_file_software",
+    "holder": null,
     "purl": null
   }
 ]

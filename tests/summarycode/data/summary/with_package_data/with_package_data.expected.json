@@ -99,6 +99,7 @@
       "repository_homepage_url": "https://pypi.org/project/codebase",
       "repository_download_url": null,
       "api_data_url": "https://pypi.org/pypi/codebase/json",
+      "holder": null,
       "package_uid": "pkg:pypi/codebase?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_paths": [
         "codebase/setup.py"
@@ -468,6 +469,7 @@
           "repository_download_url": null,
           "api_data_url": "https://pypi.org/pypi/codebase/json",
           "datasource_id": "pypi_setup_py",
+          "holder": null,
           "purl": "pkg:pypi/codebase"
         }
       ],

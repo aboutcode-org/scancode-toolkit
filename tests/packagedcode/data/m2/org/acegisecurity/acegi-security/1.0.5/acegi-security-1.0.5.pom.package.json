@@ -270,5 +270,6 @@
   "repository_download_url": "https://repo1.maven.org/maven2/org/acegisecurity/acegi-security/1.0.5/acegi-security-1.0.5.jar",
   "api_data_url": "https://repo1.maven.org/maven2/org/acegisecurity/acegi-security/1.0.5/acegi-security-1.0.5.pom",
   "datasource_id": "maven_pom",
+  "holder": null,
   "purl": "pkg:maven/org.acegisecurity/acegi-security@1.0.5"
 }

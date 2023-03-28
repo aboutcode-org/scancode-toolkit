@@ -137,5 +137,6 @@
   "repository_download_url": "https://repo1.maven.org/maven2/io/github/subiyacryolite/jds/2.17.0718b/jds-2.17.0718b.jar",
   "api_data_url": "https://repo1.maven.org/maven2/io/github/subiyacryolite/jds/2.17.0718b/jds-2.17.0718b.pom",
   "datasource_id": "maven_pom",
+  "holder": null,
   "purl": "pkg:maven/io.github.subiyacryolite/jds@2.17.0718b"
 }

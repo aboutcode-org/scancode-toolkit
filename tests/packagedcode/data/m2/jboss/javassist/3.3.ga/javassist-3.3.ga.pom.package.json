@@ -105,5 +105,6 @@
   "repository_download_url": "https://repo1.maven.org/maven2/jboss/javassist/3.3.ga/javassist-3.3.ga.jar",
   "api_data_url": "https://repo1.maven.org/maven2/jboss/javassist/3.3.ga/javassist-3.3.ga.pom",
   "datasource_id": "maven_pom",
+  "holder": null,
   "purl": "pkg:maven/jboss/javassist@3.3.ga"
 }
