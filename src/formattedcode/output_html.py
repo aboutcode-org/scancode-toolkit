@@ -126,7 +126,13 @@ class CustomTemplateOutput(OutputPlugin):
             license_references = codebase.attributes.license_references
         template_loc = custom_template
         output_file = custom_output
-        write_templated(output_file, results, license_references, version, template_loc)
+        write_templated(
+            output_file=output_file,
+            results=results,
+            license_references=license_references,
+            version=version,
+            template_loc=template_loc
+        )
 
 
 def write_templated(output_file, results, license_references, version, template_loc):
@@ -137,7 +143,12 @@ def write_templated(output_file, results, license_references, version, template_
     """
     template = get_template(template_loc)
 
-    for template_chunk in generate_output(results, license_references, version, template):
+    for template_chunk in generate_output(
+        results=results,
+        license_references=license_references,
+        version=version,
+        template=template,
+    ):
         assert isinstance(template_chunk, str)
         try:
             output_file.write(template_chunk)
@@ -228,7 +239,7 @@ def generate_output(results, license_references, version, template):
         'package_data': converted_packages
     }
 
-    return template.generate(files=files, licenses=license_references, version=version)
+    return template.generate(files=files, license_references=license_references, version=version)
 
 
 @output_impl
@@ -240,6 +251,7 @@ class HtmlAppOutput(OutputPlugin):
         PluggableCommandLineOption(('--html-app',),
             type=FileOptionType(mode='w', encoding='utf-8', lazy=True),
             metavar='FILE',
+            hidden=True,
             help='(DEPRECATED: use the ScanCode Workbench app instead ) '
                   'Write scan output as a mini HTML application to FILE.',
             help_group=OUTPUT_GROUP,

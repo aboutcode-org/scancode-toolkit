@@ -276,21 +276,22 @@
         </tr>
       </thead>
       <tbody>
-        {% for license in licenses %}
-          <tr id="license_{{ license.key }}">
-            <td>{{ license.key }}</td>
-            <td>{{ license.short_name }}</td>
-            <td>{{ license.category }}</td>
-            <td>{{ license.owner }}</td>
-            <td>{{ license.scancode_url|urlize(target='_blank') }}</td>
-            <td>{{ license.licensedb_url|urlize(target='_blank') }}</td>
+        {% for license_reference in license_references %}
+          <tr id="license_{{ license_reference.key }}">
+            <td>{{ license_reference.key }}</td>
+            <td>{{ license_reference.short_name }}</td>
+            <td>{{ license_reference.category }}</td>
+            <td>{{ license_reference.owner }}</td>
+            <td>{{ license_reference.scancode_url|urlize(target='_blank') }}</td>
+            <td>{{ license_reference.licensedb_url|urlize(target='_blank') }}</td>
+            <td>{{ license_reference.homepage_url|urlize(target='_blank') }}</td>
             <td>
-              {% for text_url in license.text_urls %}
+              {% for text_url in license_reference.text_urls %}
                 {{ text_url|urlize(target='_blank') }}
               {% endfor %}
             </td>
-            <td>{{ license.spdx_license_key }}</td>
-            <td>{{ license.spdx_url|urlize(target='_blank') }}</td>
+            <td>{{ license_reference.spdx_license_key }}</td>
+            <td>{{ license_reference.spdx_url|urlize(target='_blank') }}</td>
           </tr>
         {% endfor %}
       </tbody>
