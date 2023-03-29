@@ -84,7 +84,13 @@ class HtmlOutput(OutputPlugin):
             license_references = codebase.attributes.license_references
         template_loc = join(TEMPLATES_DIR, 'html', 'template.html')
         output_file = html
-        write_templated(output_file, results, license_references, version, template_loc)
+        write_templated(
+            output_file=output_file,
+            results=results,
+            license_references=license_references,
+            version=version,
+            template_loc=template_loc,
+        )
 
 
 @output_impl
