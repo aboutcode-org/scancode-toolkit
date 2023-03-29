@@ -17,565 +17,564 @@ parsers in scancode-toolkit during documentation builds.
    :widths: 10 10 20 10 10 2
    :header-rows: 1
 
-   * - Package type
-     - Datasource ID
+   * - Description
      - Path Patterns
+     - Package type
+     - Datasource ID
      - Primary Language
      - Documentation URL
-     - Description
-   * - None
-     - ``java_jar``
+   * - JAR Java Archive
      - ``*.jar``
      - None
+     - ``java_jar``
+     - None
      - https://en.wikipedia.org/wiki/JAR_(file_format)
-     - JAR Java Archive
-   * - ``about``
-     - ``about_file``
+   * - AboutCode ABOUT file
      - ``*.ABOUT``
+     - ``about``
+     - ``about_file``
      - None
      - https://aboutcode-toolkit.readthedocs.io/en/latest/specification.html
-     - AboutCode ABOUT file
-   * - ``alpine``
-     - ``alpine_apk_archive``
+   * - Alpine Linux .apk package archive
      - ``*.apk``
+     - ``alpine``
+     - ``alpine_apk_archive``
      - None
      - https://wiki.alpinelinux.org/wiki/Alpine_package_format
-     - Alpine Linux .apk package archive
-   * - ``alpine``
-     - ``alpine_apkbuild``
+   * - Alpine Linux APKBUILD package script
      - ``*APKBUILD``
+     - ``alpine``
+     - ``alpine_apkbuild``
      - None
      - https://wiki.alpinelinux.org/wiki/APKBUILD_Reference
-     - Alpine Linux APKBUILD package script
-   * - ``alpine``
-     - ``alpine_installed_db``
+   * - Alpine Linux installed package database
      - ``*lib/apk/db/installed``
+     - ``alpine``
+     - ``alpine_installed_db``
      - None
      - None
-     - Alpine Linux installed package database
-   * - ``android``
-     - ``android_apk``
+   * - Android application package
      - ``*.apk``
+     - ``android``
+     - ``android_apk``
      - Java
      - https://en.wikipedia.org/wiki/Apk_(file_format)
-     - Android application package
-   * - ``android_lib``
-     - ``android_aar_library``
+   * - Android library archive
      - ``*.aar``
+     - ``android_lib``
+     - ``android_aar_library``
      - Java
      - https://developer.android.com/studio/projects/android-library
-     - Android library archive
-   * - ``autotools``
-     - ``autotools_configure``
+   * - Autotools configure script
      - ``*/configure``
        ``*/configure.ac``
+     - ``autotools``
+     - ``autotools_configure``
      - None
      - https://www.gnu.org/software/automake/
-     - Autotools configure script
-   * - ``axis2``
-     - ``axis2_mar``
+   * - Apache Axis2 module archive
      - ``*.mar``
+     - ``axis2``
+     - ``axis2_mar``
      - Java
      - https://axis.apache.org/axis2/java/core/docs/modules.html
-     - Apache Axis2 module archive
-   * - ``axis2``
-     - ``axis2_module_xml``
+   * - Apache Axis2 module.xml
      - ``*/meta-inf/module.xml``
+     - ``axis2``
+     - ``axis2_module_xml``
      - Java
      - https://axis.apache.org/axis2/java/core/docs/modules.html
-     - Apache Axis2 module.xml
-   * - ``bazel``
-     - ``bazel_build``
+   * - Bazel BUILD
      - ``*/BUILD``
+     - ``bazel``
+     - ``bazel_build``
      - None
      - https://bazel.build/
-     - Bazel BUILD
-   * - ``bower``
-     - ``bower_json``
+   * - Bower package
      - ``*/bower.json``
        ``*/.bower.json``
+     - ``bower``
+     - ``bower_json``
      - JavaScript
      - https://bower.io
-     - Bower package
-   * - ``buck``
-     - ``buck_file``
+   * - Buck file
      - ``*/BUCK``
+     - ``buck``
+     - ``buck_file``
      - None
      - https://buck.build/
-     - Buck file
-   * - ``buck``
-     - ``buck_metadata``
+   * - Buck metadata file
      - ``*/METADATA.bzl``
+     - ``buck``
+     - ``buck_metadata``
      - None
      - https://buck.build/
-     - Buck metadata file
-   * - ``cab``
-     - ``microsoft_cabinet``
+   * - Microsoft cabinet archive
      - ``*.cab``
+     - ``cab``
+     - ``microsoft_cabinet``
      - C
      - https://docs.microsoft.com/en-us/windows/win32/msi/cabinet-files
-     - Microsoft cabinet archive
-   * - ``cargo``
-     - ``cargo_lock``
+   * - Rust Cargo.lock dependencies lockfile
      - ``*/Cargo.lock``
        ``*/cargo.lock``
+     - ``cargo``
+     - ``cargo_lock``
      - Rust
      - https://doc.rust-lang.org/cargo/guide/cargo-toml-vs-cargo-lock.html
-     - Rust Cargo.lock dependencies lockfile
-   * - ``cargo``
-     - ``cargo_toml``
+   * - Rust Cargo.toml package manifest
      - ``*/Cargo.toml``
        ``*/cargo.toml``
+     - ``cargo``
+     - ``cargo_toml``
      - Rust
      - https://doc.rust-lang.org/cargo/reference/manifest.html
-     - Rust Cargo.toml package manifest
-   * - ``chef``
-     - ``chef_cookbook_metadata_json``
+   * - Chef cookbook metadata.json
      - ``*/metadata.json``
+     - ``chef``
+     - ``chef_cookbook_metadata_json``
      - Ruby
      - https://docs.chef.io/config_rb_metadata/
-     - Chef cookbook metadata.json
-   * - ``chef``
-     - ``chef_cookbook_metadata_rb``
+   * - Chef cookbook metadata.rb
      - ``*/metadata.rb``
+     - ``chef``
+     - ``chef_cookbook_metadata_rb``
      - Ruby
      - https://docs.chef.io/config_rb_metadata/
-     - Chef cookbook metadata.rb
-   * - ``chrome``
-     - ``chrome_crx``
+   * - Chrome extension
      - ``*.crx``
+     - ``chrome``
+     - ``chrome_crx``
      - JavaScript
      - https://chrome.google.com/extensions
-     - Chrome extension
-   * - ``cocoapods``
-     - ``cocoapods_podfile``
+   * - Cocoapods Podfile
      - ``*Podfile``
+     - ``cocoapods``
+     - ``cocoapods_podfile``
      - Objective-C
      - https://guides.cocoapods.org/using/the-podfile.html
-     - Cocoapods Podfile
-   * - ``cocoapods``
-     - ``cocoapods_podfile_lock``
+   * - Cocoapods Podfile.lock
      - ``*Podfile.lock``
+     - ``cocoapods``
+     - ``cocoapods_podfile_lock``
      - Objective-C
      - https://guides.cocoapods.org/using/the-podfile.html
-     - Cocoapods Podfile.lock
-   * - ``cocoapods``
-     - ``cocoapods_podspec``
+   * - Cocoapods .podspec
      - ``*.podspec``
+     - ``cocoapods``
+     - ``cocoapods_podspec``
      - Objective-C
      - https://guides.cocoapods.org/syntax/podspec.html
-     - Cocoapods .podspec
-   * - ``cocoapods``
-     - ``cocoapods_podspec_json``
+   * - Cocoapods .podspec.json
      - ``*.podspec.json``
+     - ``cocoapods``
+     - ``cocoapods_podspec_json``
      - Objective-C
      - https://guides.cocoapods.org/syntax/podspec.html
-     - Cocoapods .podspec.json
-   * - ``composer``
-     - ``php_composer_json``
+   * - PHP composer manifest
      - ``*composer.json``
+     - ``composer``
+     - ``php_composer_json``
      - PHP
      - https://getcomposer.org/doc/04-schema.md
-     - PHP composer manifest
-   * - ``composer``
-     - ``php_composer_lock``
+   * - PHP composer lockfile
      - ``*composer.lock``
+     - ``composer``
+     - ``php_composer_lock``
      - PHP
      - https://getcomposer.org/doc/01-basic-usage.md#commit-your-composer-lock-file-to-version-control
-     - PHP composer lockfile
-   * - ``conda``
-     - ``conda_meta_yaml``
+   * - Conda meta.yml manifest
      - ``*/meta.yaml``
+     - ``conda``
+     - ``conda_meta_yaml``
      - None
      - https://docs.conda.io/
-     - Conda meta.yml manifest
-   * - ``cpan``
-     - ``cpan_dist_ini``
+   * - CPAN Perl dist.ini
      - ``*/dist.ini``
+     - ``cpan``
+     - ``cpan_dist_ini``
      - Perl
      - https://metacpan.org/pod/Dist::Zilla::Tutorial
-     - CPAN Perl dist.ini
-   * - ``cpan``
-     - ``cpan_makefile``
+   * - CPAN Perl Makefile.PL
      - ``*/Makefile.PL``
+     - ``cpan``
+     - ``cpan_makefile``
      - Perl
      - https://www.perlmonks.org/?node_id=128077
-     - CPAN Perl Makefile.PL
-   * - ``cpan``
-     - ``cpan_manifest``
+   * - CPAN Perl module MANIFEST
      - ``*/MANIFEST``
+     - ``cpan``
+     - ``cpan_manifest``
      - Perl
      - https://metacpan.org/pod/Module::Manifest
-     - CPAN Perl module MANIFEST
-   * - ``cpan``
-     - ``cpan_meta_json``
+   * - CPAN Perl META.json
      - ``*/META.json``
+     - ``cpan``
+     - ``cpan_meta_json``
      - Perl
      - https://metacpan.org/pod/Parse::CPAN::Meta
-     - CPAN Perl META.json
-   * - ``cpan``
-     - ``cpan_meta_yml``
+   * - CPAN Perl META.yml
      - ``*/META.yml``
+     - ``cpan``
+     - ``cpan_meta_yml``
      - Perl
      - https://metacpan.org/pod/CPAN::Meta::YAML
-     - CPAN Perl META.yml
-   * - ``cran``
-     - ``cran_description``
+   * - CRAN package DESCRIPTION
      - ``*/DESCRIPTION``
+     - ``cran``
+     - ``cran_description``
      - R
      - https://r-pkgs.org/description.html
-     - CRAN package DESCRIPTION
-   * - ``deb``
-     - ``debian_control_extracted_deb``
+   * - Debian control file - extracted layout
      - ``*/control.tar.gz-extract/control``
+     - ``deb``
+     - ``debian_control_extracted_deb``
      - None
      - https://www.debian.org/doc/debian-policy/ch-controlfields.html
-     - Debian control file - extracted layout
-   * - ``deb``
-     - ``debian_control_in_source``
+   * - Debian control file - source layout
      - ``*/debian/control``
+     - ``deb``
+     - ``debian_control_in_source``
      - None
      - https://www.debian.org/doc/debian-policy/ch-controlfields.html
-     - Debian control file - source layout
-   * - ``deb``
-     - ``debian_copyright_in_package``
+   * - Debian machine readable file in source
      - ``*usr/share/doc/*/copyright``
+     - ``deb``
+     - ``debian_copyright_in_package``
      - None
      - https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
-     - Debian machine readable file in source
-   * - ``deb``
-     - ``debian_copyright_in_source``
+   * - Debian machine readable file in source
      - ``*/debian/copyright``
+     - ``deb``
+     - ``debian_copyright_in_source``
      - None
      - https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
-     - Debian machine readable file in source
-   * - ``deb``
-     - ``debian_deb``
+   * - Debian binary package archive
      - ``*.deb``
+     - ``deb``
+     - ``debian_deb``
      - None
      - https://manpages.debian.org/unstable/dpkg-dev/deb.5.en.html
-     - Debian binary package archive
-   * - ``deb``
-     - ``debian_distroless_installed_db``
+   * - Debian distroless installed database
      - ``*var/lib/dpkg/status.d/*``
+     - ``deb``
+     - ``debian_distroless_installed_db``
      - None
      - https://www.debian.org/doc/debian-policy/ch-controlfields.html
-     - Debian distroless installed database
-   * - ``deb``
-     - ``debian_installed_files_list``
+   * - Debian installed file paths list
      - ``*var/lib/dpkg/info/*.list``
+     - ``deb``
+     - ``debian_installed_files_list``
      - None
      - None
-     - Debian installed file paths list
-   * - ``deb``
-     - ``debian_installed_md5sums``
+   * - Debian installed file MD5 and paths list
      - ``*var/lib/dpkg/info/*.md5sums``
+     - ``deb``
+     - ``debian_installed_md5sums``
      - None
      - https://www.debian.org/doc/manuals/debian-handbook/sect.package-meta-information.en.html#sect.configuration-scripts
-     - Debian installed file MD5 and paths list
-   * - ``deb``
-     - ``debian_installed_status_db``
+   * - Debian installed packages database
      - ``*var/lib/dpkg/status``
+     - ``deb``
+     - ``debian_installed_status_db``
      - None
      - https://www.debian.org/doc/debian-policy/ch-controlfields.html
-     - Debian installed packages database
-   * - ``deb``
-     - ``debian_md5sums_in_extracted_deb``
+   * - Debian file MD5 and paths list in .deb archive
      - ``*/control.tar.gz-extract/md5sums``
        ``*/control.tar.xz-extract/md5sums``
+     - ``deb``
+     - ``debian_md5sums_in_extracted_deb``
      - None
      - https://www.debian.org/doc/manuals/debian-handbook/sect.package-meta-information.en.html#sect.configuration-scripts
-     - Debian file MD5 and paths list in .deb archive
-   * - ``deb``
-     - ``debian_original_source_tarball``
+   * - Debian package original source archive
      - ``*.orig.tar.xz``
        ``*.orig.tar.gz``
+     - ``deb``
+     - ``debian_original_source_tarball``
      - None
      - https://manpages.debian.org/unstable/dpkg-dev/deb.5.en.html
-     - Debian package original source archive
-   * - ``deb``
-     - ``debian_source_control_dsc``
+   * - Debian source control file
      - ``*.dsc``
+     - ``deb``
+     - ``debian_source_control_dsc``
      - None
      - https://wiki.debian.org/dsc
-     - Debian source control file
-   * - ``deb``
-     - ``debian_source_metadata_tarball``
+   * - Debian source package metadata archive
      - ``*.debian.tar.xz``
        ``*.debian.tar.gz``
+     - ``deb``
+     - ``debian_source_metadata_tarball``
      - None
      - https://manpages.debian.org/unstable/dpkg-dev/deb.5.en.html
-     - Debian source package metadata archive
-   * - ``dmg``
-     - ``apple_dmg``
+   * - None
      - ``*.dmg``
        ``*.sparseimage``
+     - ``dmg``
+     - ``apple_dmg``
      - None
      - None
-     - None
-   * - ``ear``
-     - ``java_ear_application_xml``
+   * - Java EAR application.xml
      - ``*/META-INF/application.xml``
+     - ``ear``
+     - ``java_ear_application_xml``
      - Java
      - https://en.wikipedia.org/wiki/EAR_(file_format)
-     - Java EAR application.xml
-   * - ``ear``
-     - ``java_ear_archive``
+   * - Java EAR Enterprise application archive
      - ``*.ear``
+     - ``ear``
+     - ``java_ear_archive``
      - Java
      - https://en.wikipedia.org/wiki/EAR_(file_format)
-     - Java EAR Enterprise application archive
-   * - ``freebsd``
-     - ``freebsd_compact_manifest``
+   * - FreeBSD compact package manifest
      - ``*/+COMPACT_MANIFEST``
+     - ``freebsd``
+     - ``freebsd_compact_manifest``
      - None
      - https://www.freebsd.org/cgi/man.cgi?pkg-create(8)#MANIFEST_FILE_DETAILS
-     - FreeBSD compact package manifest
-   * - ``gem``
-     - ``gem_archive``
+   * - RubyGems gem package archive
      - ``*.gem``
+     - ``gem``
+     - ``gem_archive``
      - Ruby
      - https://web.archive.org/web/20220326093616/https://piotrmurach.com/articles/looking-inside-a-ruby-gem/
-     - RubyGems gem package archive
-   * - ``gem``
-     - ``gem_archive_extracted``
+   * - RubyGems gem package extracted archive
      - ``*/metadata.gz-extract``
+     - ``gem``
+     - ``gem_archive_extracted``
      - Ruby
      - https://web.archive.org/web/20220326093616/https://piotrmurach.com/articles/looking-inside-a-ruby-gem/
-     - RubyGems gem package extracted archive
-   * - ``gem``
-     - ``gem_gemspec_installed_specifications``
+   * - RubyGems gemspec manifest - installed vendor/bundle/specifications layout
      - ``*/specifications/*.gemspec``
+     - ``gem``
+     - ``gem_gemspec_installed_specifications``
      - Ruby
      - https://guides.rubygems.org/specification-reference/
-     - RubyGems gemspec manifest - installed vendor/bundle/specifications layout
-   * - ``gem``
-     - ``gemfile``
+   * - RubyGems Bundler Gemfile
      - ``*/Gemfile``
        ``*/*.gemfile``
        ``*/Gemfile-*``
+     - ``gem``
+     - ``gemfile``
      - Ruby
      - https://bundler.io/man/gemfile.5.html
-     - RubyGems Bundler Gemfile
-   * - ``gem``
-     - ``gemfile_extracted``
+   * - RubyGems Bundler Gemfile - extracted layout
      - ``*/data.gz-extract/Gemfile``
+     - ``gem``
+     - ``gemfile_extracted``
      - Ruby
      - https://bundler.io/man/gemfile.5.html
-     - RubyGems Bundler Gemfile - extracted layout
-   * - ``gem``
-     - ``gemfile_lock``
+   * - RubyGems Bundler Gemfile.lock
      - ``*/Gemfile.lock``
+     - ``gem``
+     - ``gemfile_lock``
      - Ruby
      - https://bundler.io/man/gemfile.5.html
-     - RubyGems Bundler Gemfile.lock
-   * - ``gem``
-     - ``gemfile_lock_extracted``
+   * - RubyGems Bundler Gemfile.lock - extracted layout
      - ``*/data.gz-extract/Gemfile.lock``
+     - ``gem``
+     - ``gemfile_lock_extracted``
      - Ruby
      - https://bundler.io/man/gemfile.5.html
-     - RubyGems Bundler Gemfile.lock - extracted layout
-   * - ``gem``
-     - ``gemspec``
+   * - RubyGems gemspec manifest
      - ``*.gemspec``
+     - ``gem``
+     - ``gemspec``
      - Ruby
      - https://guides.rubygems.org/specification-reference/
-     - RubyGems gemspec manifest
-   * - ``gem``
-     - ``gemspec_extracted``
+   * - RubyGems gemspec manifest - extracted data layout
      - ``*/data.gz-extract/*.gemspec``
+     - ``gem``
+     - ``gemspec_extracted``
      - Ruby
      - https://guides.rubygems.org/specification-reference/
-     - RubyGems gemspec manifest - extracted data layout
-   * - ``golang``
-     - ``go_mod``
+   * - Go modules file
      - ``*/go.mod``
+     - ``golang``
+     - ``go_mod``
      - Go
      - https://go.dev/ref/mod
-     - Go modules file
-   * - ``golang``
-     - ``go_sum``
+   * - Go module cheksums file
      - ``*/go.sum``
+     - ``golang``
+     - ``go_sum``
      - Go
      - https://go.dev/ref/mod#go-sum-files
-     - Go module cheksums file
-   * - ``golang``
-     - ``godeps``
+   * - Go Godeps
      - ``*/Godeps.json``
+     - ``golang``
+     - ``godeps``
      - Go
      - https://github.com/tools/godep
-     - Go Godeps
-   * - ``haxe``
-     - ``haxelib_json``
+   * - Haxe haxelib.json metadata file
      - ``*/haxelib.json``
+     - ``haxe``
+     - ``haxelib_json``
      - Haxe
      - https://lib.haxe.org/documentation/creating-a-haxelib-package/
-     - Haxe haxelib.json metadata file
-   * - ``installshield``
-     - ``installshield_installer``
+   * - InstallShield installer
      - ``*.exe``
+     - ``installshield``
+     - ``installshield_installer``
      - None
      - https://www.revenera.com/install/products/installshield
-     - InstallShield installer
-   * - ``ios``
-     - ``ios_ipa``
+   * - iOS package archive
      - ``*.ipa``
+     - ``ios``
+     - ``ios_ipa``
      - Objective-C
      - https://en.wikipedia.org/wiki/.ipa
-     - iOS package archive
-   * - ``iso``
-     - ``iso_disk_image``
+   * - ISO disk image
      - ``*.iso``
        ``*.udf``
        ``*.img``
+     - ``iso``
+     - ``iso_disk_image``
      - None
      - https://en.wikipedia.org/wiki/ISO_9660
-     - ISO disk image
-   * - ``ivy``
-     - ``ant_ivy_xml``
+   * - Ant IVY dependency file
      - ``*/ivy.xml``
+     - ``ivy``
+     - ``ant_ivy_xml``
      - Java
      - https://ant.apache.org/ivy/history/latest-milestone/ivyfile.html
-     - Ant IVY dependency file
-   * - ``jar``
-     - ``java_jar_manifest``
+   * - Java JAR MANIFEST.MF
      - ``*/META-INF/MANIFEST.MF``
+     - ``jar``
+     - ``java_jar_manifest``
      - Java
      - https://docs.oracle.com/javase/tutorial/deployment/jar/manifestindex.html
-     - Java JAR MANIFEST.MF
-   * - ``jboss-service``
-     - ``jboss_sar``
+   * - JBOSS service archive
      - ``*.sar``
+     - ``jboss-service``
+     - ``jboss_sar``
      - Java
      - https://docs.jboss.org/jbossas/docs/Server_Configuration_Guide/4/html/ch02s01.html
-     - JBOSS service archive
-   * - ``jboss-service``
-     - ``jboss_service_xml``
+   * - JBOSS service.xml
      - ``*/meta-inf/jboss-service.xml``
+     - ``jboss-service``
+     - ``jboss_service_xml``
      - Java
      - https://docs.jboss.org/jbossas/docs/Server_Configuration_Guide/4/html/ch02s01.html
-     - JBOSS service.xml
-   * - ``linux-distro``
-     - ``etc_os_release``
+   * - Linux OS release metadata file
      - ``*etc/os-release``
        ``*usr/lib/os-release``
+     - ``linux-distro``
+     - ``etc_os_release``
      - None
      - https://www.freedesktop.org/software/systemd/man/os-release.html
-     - Linux OS release metadata file
-   * - ``maven``
-     - ``build_gradle``
+   * - Gradle build script
      - ``*/build.gradle``
        ``*/build.gradle.kts``
+     - ``maven``
+     - ``build_gradle``
      - None
      - None
-     - Gradle build script
-   * - ``maven``
-     - ``maven_pom``
+   * - Apache Maven pom
      - ``*.pom``
        ``*pom.xml``
+     - ``maven``
+     - ``maven_pom``
      - Java
      - https://maven.apache.org/pom.html
-     - Apache Maven pom
-   * - ``maven``
-     - ``maven_pom_properties``
+   * - Apache Maven pom properties file
      - ``*/pom.properties``
+     - ``maven``
+     - ``maven_pom_properties``
      - Java
      - https://maven.apache.org/pom.html
-     - Apache Maven pom properties file
-   * - ``meteor``
-     - ``meteor_package``
+   * - Meteor package.js
      - ``*/package.js``
+     - ``meteor``
+     - ``meteor_package``
      - JavaScript
      - https://docs.meteor.com/api/packagejs.html
-     - Meteor package.js
-   * - ``mozilla``
-     - ``mozilla_xpi``
+   * - Mozilla XPI extension
      - ``*.xpi``
+     - ``mozilla``
+     - ``mozilla_xpi``
      - JavaScript
      - https://en.wikipedia.org/wiki/XPInstall
-     - Mozilla XPI extension
-   * - ``msi``
-     - ``msi_installer``
+   * - Microsoft MSI installer
      - ``*.msi``
+     - ``msi``
+     - ``msi_installer``
      - None
      - https://docs.microsoft.com/en-us/windows/win32/msi/windows-installer-portal
-     - Microsoft MSI installer
-   * - ``npm``
-     - ``npm_package_json``
+   * - npm package.json
      - ``*/package.json``
+     - ``npm``
+     - ``npm_package_json``
      - JavaScript
      - https://docs.npmjs.com/cli/v8/configuring-npm/package-json
-     - npm package.json
-   * - ``npm``
-     - ``npm_package_lock_json``
+   * - npm package-lock.json lockfile
      - ``*/package-lock.json``
        ``*/.package-lock.json``
+     - ``npm``
+     - ``npm_package_lock_json``
      - JavaScript
      - https://docs.npmjs.com/cli/v8/configuring-npm/package-lock-json
-     - npm package-lock.json lockfile
-   * - ``npm``
-     - ``npm_shrinkwrap_json``
+   * - npm shrinkwrap.json lockfile
      - ``*/npm-shrinkwrap.json``
+     - ``npm``
+     - ``npm_shrinkwrap_json``
      - JavaScript
      - https://docs.npmjs.com/cli/v8/configuring-npm/npm-shrinkwrap-json
-     - npm shrinkwrap.json lockfile
-   * - ``npm``
+   * - yarn.lock lockfile v1 format
+     - ``*/yarn.lock``
+     - ``npm``
      - ``yarn_lock_v1``
-     - ``*/yarn.lock``
      - JavaScript
      - https://classic.yarnpkg.com/lang/en/docs/yarn-lock/
-     - yarn.lock lockfile v1 format
-   * - ``npm``
+   * - yarn.lock lockfile v2 format
+     - ``*/yarn.lock``
+     - ``npm``
      - ``yarn_lock_v2``
-     - ``*/yarn.lock``
      - JavaScript
      - https://classic.yarnpkg.com/lang/en/docs/yarn-lock/
-     - yarn.lock lockfile v2 format
-   * - ``nsis``
-     - ``nsis_installer``
+   * - NSIS installer
      - ``*.exe``
+     - ``nsis``
+     - ``nsis_installer``
      - None
      - https://nsis.sourceforge.io/Main_Page
-     - NSIS installer
-   * - ``nuget``
-     - ``nuget_nupkg``
+   * - NuGet nupkg package archive
      - ``*.nupkg``
+     - ``nuget``
+     - ``nuget_nupkg``
      - None
      - https://en.wikipedia.org/wiki/Open_Packaging_Conventions
-     - NuGet nupkg package archive
-   * - ``nuget``
-     - ``nuget_nupsec``
+   * - NuGet nuspec package manifest
      - ``*.nuspec``
+     - ``nuget``
+     - ``nuget_nupsec``
      - None
      - https://docs.microsoft.com/en-us/nuget/reference/nuspec
-     - NuGet nuspec package manifest
-   * - ``opam``
-     - ``opam_file``
+   * - Ocaml Opam file
      - ``*opam``
+     - ``opam``
+     - ``opam_file``
      - Ocaml
      - https://opam.ocaml.org/doc/Manual.html#Common-file-format
-     - Ocaml Opam file
-   * - ``pubspec``
-     - ``pubspec_lock``
+   * - Dart pubspec lockfile
      - ``*pubspec.lock``
+     - ``pubspec``
+     - ``pubspec_lock``
      - dart
      - https://web.archive.org/web/20220330081004/https://gpalma.pt/blog/what-is-the-pubspec-lock/
-     - Dart pubspec lockfile
-   * - ``pubspec``
-     - ``pubspec_yaml``
+   * - Dart pubspec manifest
      - ``*pubspec.yaml``
+     - ``pubspec``
+     - ``pubspec_yaml``
      - dart
      - https://dart.dev/tools/pub/pubspec
-     - Dart pubspec manifest
-   * - ``pypi``
-     - ``conda_yaml``
+   * - Conda yaml manifest
      - ``*conda.yaml``
        ``*conda.yml``
+     - ``pypi``
+     - ``conda_yaml``
      - Python
      - https://docs.conda.io/
-     - Conda yaml manifest
-   * - ``pypi``
-     - ``pip_requirements``
+   * - pip requirements file
      - ``*requirement*.txt``
        ``*requirement*.pip``
        ``*requirement*.in``
@@ -584,169 +583,169 @@ parsers in scancode-toolkit during documentation builds.
        ``*requirements/*.pip``
        ``*requirements/*.in``
        ``*reqs.txt``
+     - ``pypi``
+     - ``pip_requirements``
      - Python
      - https://pip.pypa.io/en/latest/reference/requirements-file-format/
-     - pip requirements file
-   * - ``pypi``
-     - ``pipfile``
+   * - Pipfile
      - ``*Pipfile``
+     - ``pypi``
+     - ``pipfile``
      - Python
      - https://github.com/pypa/pipfile
-     - Pipfile
-   * - ``pypi``
-     - ``pipfile_lock``
+   * - Pipfile.lock
      - ``*Pipfile.lock``
+     - ``pypi``
+     - ``pipfile_lock``
      - Python
      - https://github.com/pypa/pipfile
-     - Pipfile.lock
-   * - ``pypi``
-     - ``pypi_editable_egg_pkginfo``
+   * - PyPI editable local installation PKG-INFO
      - ``*.egg-info/PKG-INFO``
+     - ``pypi``
+     - ``pypi_editable_egg_pkginfo``
      - Python
      - https://peps.python.org/pep-0376/
-     - PyPI editable local installation PKG-INFO
-   * - ``pypi``
-     - ``pypi_egg``
+   * - PyPI egg
      - ``*.egg``
+     - ``pypi``
+     - ``pypi_egg``
      - Python
      - https://web.archive.org/web/20210604075235/http://peak.telecommunity.com/DevCenter/PythonEggs
-     - PyPI egg
-   * - ``pypi``
-     - ``pypi_egg_pkginfo``
+   * - PyPI extracted egg PKG-INFO
      - ``*/EGG-INFO/PKG-INFO``
+     - ``pypi``
+     - ``pypi_egg_pkginfo``
      - Python
      - https://peps.python.org/pep-0376/
-     - PyPI extracted egg PKG-INFO
-   * - ``pypi``
-     - ``pypi_pyproject_toml``
+   * - Python pyproject.toml
      - ``*pyproject.toml``
+     - ``pypi``
+     - ``pypi_pyproject_toml``
      - Python
      - https://peps.python.org/pep-0621/
-     - Python pyproject.toml
-   * - ``pypi``
-     - ``pypi_sdist_pkginfo``
+   * - PyPI extracted sdist PKG-INFO
      - ``*/PKG-INFO``
+     - ``pypi``
+     - ``pypi_sdist_pkginfo``
      - Python
      - https://peps.python.org/pep-0314/
-     - PyPI extracted sdist PKG-INFO
-   * - ``pypi``
-     - ``pypi_setup_cfg``
+   * - Python setup.cfg
      - ``*setup.cfg``
+     - ``pypi``
+     - ``pypi_setup_cfg``
      - Python
      - https://peps.python.org/pep-0390/
-     - Python setup.cfg
-   * - ``pypi``
-     - ``pypi_setup_py``
+   * - Python setup.py
      - ``*setup.py``
+     - ``pypi``
+     - ``pypi_setup_py``
      - Python
      - https://docs.python.org/3/distutils/setupscript.html
-     - Python setup.py
-   * - ``pypi``
-     - ``pypi_wheel``
+   * - PyPI wheel
      - ``*.whl``
+     - ``pypi``
+     - ``pypi_wheel``
      - Python
      - https://peps.python.org/pep-0427/
-     - PyPI wheel
-   * - ``pypi``
-     - ``pypi_wheel_metadata``
+   * - PyPI installed wheel METADATA
      - ``*.dist-info/METADATA``
+     - ``pypi``
+     - ``pypi_wheel_metadata``
      - Python
      - https://packaging.python.org/en/latest/specifications/core-metadata/
-     - PyPI installed wheel METADATA
-   * - ``readme``
-     - ``readme``
+   * - None
      - ``*/README.android``
        ``*/README.chromium``
        ``*/README.facebook``
        ``*/README.google``
        ``*/README.thirdparty``
+     - ``readme``
+     - ``readme``
      - None
      - None
-     - None
-   * - ``rpm``
-     - ``rpm_archive``
+   * - RPM package archive
      - ``*.rpm``
        ``*.src.rpm``
        ``*.srpm``
        ``*.mvl``
        ``*.vip``
+     - ``rpm``
+     - ``rpm_archive``
      - None
      - https://en.wikipedia.org/wiki/RPM_Package_Manager
-     - RPM package archive
-   * - ``rpm``
-     - ``rpm_installed_database_bdb``
+   * - RPM installed package BDB database
      - ``*var/lib/rpm/Packages``
+     - ``rpm``
+     - ``rpm_installed_database_bdb``
      - None
      - https://man7.org/linux/man-pages/man8/rpmdb.8.html
-     - RPM installed package BDB database
-   * - ``rpm``
-     - ``rpm_installed_database_ndb``
+   * - RPM installed package NDB database
      - ``*usr/lib/sysimage/rpm/Packages.db``
+     - ``rpm``
+     - ``rpm_installed_database_ndb``
      - None
      - https://fedoraproject.org/wiki/Changes/NewRpmDBFormat
-     - RPM installed package NDB database
-   * - ``rpm``
-     - ``rpm_installed_database_sqlite``
+   * - RPM installed package SQLite database
      - ``*var/lib/rpm/rpmdb.sqlite``
+     - ``rpm``
+     - ``rpm_installed_database_sqlite``
      - None
      - https://fedoraproject.org/wiki/Changes/Sqlite_Rpmdb
-     - RPM installed package SQLite database
-   * - ``rpm``
-     - ``rpm_spefile``
+   * - RPM specfile
      - ``*.spec``
+     - ``rpm``
+     - ``rpm_spefile``
      - None
      - https://en.wikipedia.org/wiki/RPM_Package_Manager
-     - RPM specfile
-   * - ``shar``
-     - ``shar_shell_archive``
+   * - shell archive
      - ``*.shar``
+     - ``shar``
+     - ``shar_shell_archive``
      - None
      - https://en.wikipedia.org/wiki/Shar
-     - shell archive
-   * - ``squashfs``
+   * - Squashfs disk image
+     - None
+     - ``squashfs``
      - ``squashfs_disk_image``
      - None
-     - None
      - https://en.wikipedia.org/wiki/SquashFS
-     - Squashfs disk image
-   * - ``war``
-     - ``java_war_archive``
+   * - Java Web Application Archive
      - ``*.war``
+     - ``war``
+     - ``java_war_archive``
      - Java
      - https://en.wikipedia.org/wiki/WAR_(file_format)
-     - Java Web Application Archive
-   * - ``war``
-     - ``java_war_web_xml``
+   * - Java WAR web/xml
      - ``*/WEB-INF/web.xml``
+     - ``war``
+     - ``java_war_web_xml``
      - Java
      - https://en.wikipedia.org/wiki/WAR_(file_format)
-     - Java WAR web/xml
-   * - ``windows-program``
-     - ``win_reg_installed_programs_docker_file_software``
+   * - Windows Registry Installed Program - Docker SOFTWARE
      - ``*/Files/Windows/System32/config/SOFTWARE``
+     - ``windows-program``
+     - ``win_reg_installed_programs_docker_file_software``
      - None
      - https://en.wikipedia.org/wiki/Windows_Registry
-     - Windows Registry Installed Program - Docker SOFTWARE
-   * - ``windows-program``
-     - ``win_reg_installed_programs_docker_software_delta``
+   * - Windows Registry Installed Program - Docker Software Delta
      - ``*/Hives/Software_Delta``
+     - ``windows-program``
+     - ``win_reg_installed_programs_docker_software_delta``
      - None
      - https://en.wikipedia.org/wiki/Windows_Registry
-     - Windows Registry Installed Program - Docker Software Delta
-   * - ``windows-program``
-     - ``win_reg_installed_programs_docker_utility_software``
+   * - Windows Registry Installed Program - Docker UtilityVM SOFTWARE
      - ``*/UtilityVM/Files/Windows/System32/config/SOFTWARE``
+     - ``windows-program``
+     - ``win_reg_installed_programs_docker_utility_software``
      - None
      - https://en.wikipedia.org/wiki/Windows_Registry
-     - Windows Registry Installed Program - Docker UtilityVM SOFTWARE
-   * - ``windows-update``
-     - ``microsoft_update_manifest_mum``
+   * - Microsoft Update Manifest .mum file
      - ``*.mum``
+     - ``windows-update``
+     - ``microsoft_update_manifest_mum``
      - None
      - None
-     - Microsoft Update Manifest .mum file
-   * - ``winexe``
-     - ``windows_executable``
+   * - Windows Portable Executable metadata
      - ``*.exe``
        ``*.dll``
        ``*.mui``
@@ -764,6 +763,7 @@ parsers in scancode-toolkit during documentation builds.
        ``*.sys_*``
        ``*.tlb_*``
        ``*.ocx``
+     - ``winexe``
+     - ``windows_executable``
      - None
      - https://en.wikipedia.org/wiki/Portable_Executable
-     - Windows Portable Executable metadata
