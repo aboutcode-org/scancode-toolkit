@@ -34,7 +34,6 @@
       "base_name": "policy-codebase.tgz",
       "extension": "",
       "size": 0,
-      "date": null,
       "sha1": null,
       "md5": null,
       "sha256": null,
@@ -52,7 +51,7 @@
       "license_detections": [],
       "license_clues": [],
       "percentage_of_license_text": 0,
-      "license_policy": {},
+      "license_policy": [],
       "files_count": 5,
       "dirs_count": 1,
       "size_count": 20834,
@@ -65,7 +64,6 @@
       "base_name": "policy-codebase",
       "extension": "",
       "size": 0,
-      "date": null,
       "sha1": null,
       "md5": null,
       "sha256": null,
@@ -83,7 +81,7 @@
       "license_detections": [],
       "license_clues": [],
       "percentage_of_license_text": 0,
-      "license_policy": {},
+      "license_policy": [],
       "files_count": 5,
       "dirs_count": 0,
       "size_count": 20834,
@@ -96,7 +94,6 @@
       "base_name": "broadcom",
       "extension": ".txt",
       "size": 360,
-      "date": "2018-03-11",
       "sha1": "217ccbbd9f1fb74515d4876546331fcd89231960",
       "md5": "24f77d5a5c926f8779feef39ba4b3c16",
       "sha256": "9b5f0e72a72c5cdacf37e62e958155f02c75433ef60e0985f7ba471d8d25d2b0",
@@ -133,12 +130,14 @@
       ],
       "license_clues": [],
       "percentage_of_license_text": 84.0,
-      "license_policy": {
-        "license_key": "broadcom-commercial",
-        "label": "Restricted License",
-        "color_code": "#FFcc33",
-        "icon": "icon-warning-sign"
-      },
+      "license_policy": [
+        {
+          "license_key": "broadcom-commercial",
+          "label": "Restricted License",
+          "color_code": "#FFcc33",
+          "icon": "icon-warning-sign"
+        }
+      ],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -151,7 +150,6 @@
       "base_name": "bsd-1988",
       "extension": ".txt",
       "size": 933,
-      "date": "2018-03-11",
       "sha1": "02056333e1deb7deefcd9a43ce010ffa60f5dadf",
       "md5": "b6a98b8fb9697411ff10f16cf5ab7bab",
       "sha256": "daaf83d3795d98119d15139a03e57331cc462100c51b9ad278248172d6f3097a",
@@ -188,12 +186,14 @@
       ],
       "license_clues": [],
       "percentage_of_license_text": 93.75,
-      "license_policy": {
-        "license_key": "bsd-1988",
-        "label": "Approved License",
-        "color_code": "#008000",
-        "icon": "icon-ok-circle"
-      },
+      "license_policy": [
+        {
+          "license_key": "bsd-1988",
+          "label": "Approved License",
+          "color_code": "#008000",
+          "icon": "icon-ok-circle"
+        }
+      ],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -206,7 +206,6 @@
       "base_name": "esri-devkit",
       "extension": ".txt",
       "size": 397,
-      "date": "2018-03-11",
       "sha1": "e5646193f4e52c43d549c5e8ed389a39fa988b49",
       "md5": "629e535ed3b3d6a5e52b1fa96dcd9bfb",
       "sha256": "05e84837a6b210ec4727ba362caf1946fc78550b7131ef25923af1593ea1e4f7",
@@ -243,12 +242,14 @@
       ],
       "license_clues": [],
       "percentage_of_license_text": 100.0,
-      "license_policy": {
-        "license_key": "esri-devkit",
-        "label": "Restricted License",
-        "color_code": "#FFcc33",
-        "icon": "icon-warning-sign"
-      },
+      "license_policy": [
+        {
+          "license_key": "esri-devkit",
+          "label": "Restricted License",
+          "color_code": "#FFcc33",
+          "icon": "icon-warning-sign"
+        }
+      ],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -261,7 +262,6 @@
       "base_name": "oracle-java-ee-sdk-2010",
       "extension": ".txt",
       "size": 10702,
-      "date": "2018-03-11",
       "sha1": "f891d3b96d0c01f1d754f494c65aba9231c1d7b5",
       "md5": "040e0f985dcc6c2e8093f7dc5c4bf64d",
       "sha256": "001aef30f8edbd2bd36ce13a8ea47bce4de99796ae74afba7ed97a0745bf53d1",
@@ -298,12 +298,14 @@
       ],
       "license_clues": [],
       "percentage_of_license_text": 100.0,
-      "license_policy": {
-        "license_key": "oracle-java-ee-sdk-2010",
-        "label": "Restricted License",
-        "color_code": "#FFcc33",
-        "icon": "icon-warning-sign"
-      },
+      "license_policy": [
+        {
+          "license_key": "oracle-java-ee-sdk-2010",
+          "label": "Restricted License",
+          "color_code": "#FFcc33",
+          "icon": "icon-warning-sign"
+        }
+      ],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -316,7 +318,6 @@
       "base_name": "rh-eula",
       "extension": ".txt",
       "size": 8442,
-      "date": "2018-03-11",
       "sha1": "f371cde1d49624fb791e079a283be63db03d41bd",
       "md5": "c9646421755f00aff62024dc72231f24",
       "sha256": "1f11e800d2e0052b75539726a93dcd2ffb76b38d187a81ba44adc82c1cfeed8c",
@@ -353,12 +354,14 @@
       ],
       "license_clues": [],
       "percentage_of_license_text": 100.0,
-      "license_policy": {
-        "license_key": "rh-eula",
-        "label": "Restricted License",
-        "color_code": "#FFcc33",
-        "icon": "icon-warning-sign"
-      },
+      "license_policy": [
+        {
+          "license_key": "rh-eula",
+          "label": "Restricted License",
+          "color_code": "#FFcc33",
+          "icon": "icon-warning-sign"
+        }
+      ],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
