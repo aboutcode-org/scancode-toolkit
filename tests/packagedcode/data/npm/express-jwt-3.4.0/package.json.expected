@@ -41,6 +41,7 @@
     "code_view_url": null,
     "vcs_url": "git://github.com/auth0/express-jwt.git",
     "copyright": null,
+    "holder": null,
     "declared_license_expression": "mit",
     "declared_license_expression_spdx": "MIT",
     "license_detections": [
@@ -147,7 +148,6 @@
     "repository_download_url": "https://registry.npmjs.org/express-jwt/-/express-jwt-3.4.0.tgz",
     "api_data_url": "https://registry.npmjs.org/express-jwt/3.4.0",
     "datasource_id": "npm_package_json",
-    "holder": null,
     "purl": "pkg:npm/express-jwt@3.4.0"
   }
 ]

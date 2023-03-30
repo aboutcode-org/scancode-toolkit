@@ -21,6 +21,7 @@
   "code_view_url": "git://github.com/osglworks/java-http.git",
   "vcs_url": "git://github.com/osglworks/java-http.git",
   "copyright": null,
+  "holder": null,
   "declared_license_expression": "apache-2.0",
   "declared_license_expression_spdx": "Apache-2.0",
   "license_detections": [
@@ -129,6 +130,5 @@
   "repository_download_url": "https://repo1.maven.org/maven2/org/osgl/osgl-http/1.1.2/osgl-http-1.1.2.jar",
   "api_data_url": "https://repo1.maven.org/maven2/org/osgl/osgl-http/1.1.2/osgl-http-1.1.2.pom",
   "datasource_id": "maven_pom",
-  "holder": null,
   "purl": "pkg:maven/org.osgl/osgl-http@1.1.2"
 }

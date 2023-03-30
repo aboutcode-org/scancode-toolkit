@@ -52,6 +52,7 @@
       "code_view_url": null,
       "vcs_url": null,
       "copyright": null,
+      "holder": null,
       "declared_license_expression": "mit",
       "declared_license_expression_spdx": "MIT",
       "license_detections": [
@@ -85,7 +86,6 @@
       "repository_homepage_url": "https://rubygems.org/gems/m2r/versions/2.1.0",
       "repository_download_url": "https://rubygems.org/downloads/m2r-2.1.0.gem",
       "api_data_url": "https://rubygems.org/api/v2/rubygems/m2r/versions/2.1.0.json",
-      "holder": null,
       "package_uid": "pkg:gem/m2r@2.1.0?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_paths": [
         "m2r-2.1.0.gem"
@@ -337,6 +337,7 @@
           "code_view_url": null,
           "vcs_url": null,
           "copyright": null,
+          "holder": null,
           "declared_license_expression": "mit",
           "declared_license_expression_spdx": "MIT",
           "license_detections": [
@@ -504,7 +505,6 @@
           "repository_download_url": "https://rubygems.org/downloads/m2r-2.1.0.gem",
           "api_data_url": "https://rubygems.org/api/v2/rubygems/m2r/versions/2.1.0.json",
           "datasource_id": "gem_archive",
-          "holder": null,
           "purl": "pkg:gem/m2r@2.1.0"
         }
       ],

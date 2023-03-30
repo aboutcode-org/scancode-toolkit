@@ -30,6 +30,7 @@
     "code_view_url": null,
     "vcs_url": null,
     "copyright": "Copyright (c) 2010 ActiveState Software Inc.",
+    "holder": "ActiveState Software Inc.",
     "declared_license_expression": "mit",
     "declared_license_expression_spdx": "MIT",
     "license_detections": [
@@ -76,7 +77,6 @@
     "repository_download_url": null,
     "api_data_url": null,
     "datasource_id": "about_file",
-    "holder": "ActiveState Software Inc.",
     "purl": "pkg:about/appdirs@1.4.3"
   }
 ]

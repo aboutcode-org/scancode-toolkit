@@ -58,6 +58,7 @@
       "code_view_url": "https://github.com/pypa/pip",
       "vcs_url": null,
       "copyright": null,
+      "holder": null,
       "declared_license_expression": "mit",
       "declared_license_expression_spdx": "MIT",
       "license_detections": [
@@ -113,7 +114,6 @@
       "repository_homepage_url": "https://pypi.org/project/pip",
       "repository_download_url": "https://pypi.org/packages/source/p/pip/pip-22.0.4.tar.gz",
       "api_data_url": "https://pypi.org/pypi/pip/22.0.4/json",
-      "holder": null,
       "package_uid": "pkg:pypi/pip@22.0.4?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_paths": [
         "pip-22.0.4/PKG-INFO"
@@ -310,6 +310,7 @@
           "code_view_url": "https://github.com/pypa/pip",
           "vcs_url": null,
           "copyright": null,
+          "holder": null,
           "declared_license_expression": "mit",
           "declared_license_expression_spdx": "MIT",
           "license_detections": [
@@ -368,7 +369,6 @@
           "repository_download_url": "https://pypi.org/packages/source/p/pip/pip-22.0.4.tar.gz",
           "api_data_url": "https://pypi.org/pypi/pip/22.0.4/json",
           "datasource_id": "pypi_sdist_pkginfo",
-          "holder": null,
           "purl": "pkg:pypi/pip@22.0.4"
         }
       ],
@@ -520,6 +520,7 @@
           "code_view_url": null,
           "vcs_url": null,
           "copyright": null,
+          "holder": null,
           "declared_license_expression": null,
           "declared_license_expression_spdx": null,
           "license_detections": [],
@@ -705,7 +706,6 @@
           "repository_download_url": null,
           "api_data_url": null,
           "datasource_id": "pip_requirements",
-          "holder": null,
           "purl": null
         }
       ],
@@ -751,6 +751,7 @@
           "code_view_url": null,
           "vcs_url": null,
           "copyright": null,
+          "holder": null,
           "declared_license_expression": "mit",
           "declared_license_expression_spdx": "MIT",
           "license_detections": [
@@ -786,7 +787,6 @@
           "repository_download_url": null,
           "api_data_url": null,
           "datasource_id": "pypi_pyproject_toml",
-          "holder": null,
           "purl": null
         }
       ],
@@ -832,6 +832,7 @@
           "code_view_url": null,
           "vcs_url": null,
           "copyright": null,
+          "holder": null,
           "declared_license_expression": "mit",
           "declared_license_expression_spdx": "MIT",
           "license_detections": [
@@ -894,7 +895,6 @@
           "repository_download_url": null,
           "api_data_url": null,
           "datasource_id": "pypi_setup_cfg",
-          "holder": null,
           "purl": null
         }
       ],
@@ -999,6 +999,7 @@
           "code_view_url": "https://github.com/pypa/pip",
           "vcs_url": null,
           "copyright": null,
+          "holder": null,
           "declared_license_expression": "mit",
           "declared_license_expression_spdx": "MIT",
           "license_detections": [
@@ -1058,7 +1059,6 @@
           "repository_download_url": "https://pypi.org/packages/source/p/pip/pip-22.0.4.tar.gz",
           "api_data_url": "https://pypi.org/pypi/pip/22.0.4/json",
           "datasource_id": "pypi_setup_py",
-          "holder": null,
           "purl": "pkg:pypi/pip@22.0.4"
         }
       ],

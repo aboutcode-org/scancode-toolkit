@@ -29,6 +29,7 @@
   "code_view_url": "http://cvs.sourceforge.net/viewcvs.py/hibernate/Hibernate3/",
   "vcs_url": "svn+http://anonhibernate.labs.jboss.com/trunk/Hibernate3",
   "copyright": null,
+  "holder": null,
   "declared_license_expression": "lgpl-2.0-plus",
   "declared_license_expression_spdx": "LGPL-2.0-or-later",
   "license_detections": [
@@ -257,6 +258,5 @@
   "repository_download_url": "https://repo1.maven.org/maven2/org/hibernate/hibernate/3.2.6.ga/hibernate-3.2.6.ga.jar",
   "api_data_url": "https://repo1.maven.org/maven2/org/hibernate/hibernate/3.2.6.ga/hibernate-3.2.6.ga.pom",
   "datasource_id": "maven_pom",
-  "holder": null,
   "purl": "pkg:maven/org.hibernate/hibernate@3.2.6.ga"
 }

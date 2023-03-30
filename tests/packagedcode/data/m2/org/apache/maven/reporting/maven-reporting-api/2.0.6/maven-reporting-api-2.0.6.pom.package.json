@@ -29,6 +29,7 @@
   "code_view_url": null,
   "vcs_url": null,
   "copyright": null,
+  "holder": null,
   "declared_license_expression": null,
   "declared_license_expression_spdx": null,
   "license_detections": [],
@@ -58,6 +59,5 @@
   "repository_download_url": "https://repo1.maven.org/maven2/org/apache/maven/reporting/maven-reporting-api/2.0.6/maven-reporting-api-2.0.6.jar",
   "api_data_url": "https://repo1.maven.org/maven2/org/apache/maven/reporting/maven-reporting-api/2.0.6/maven-reporting-api-2.0.6.pom",
   "datasource_id": "maven_pom",
-  "holder": null,
   "purl": "pkg:maven/org.apache.maven.reporting/maven-reporting-api@2.0.6"
 }

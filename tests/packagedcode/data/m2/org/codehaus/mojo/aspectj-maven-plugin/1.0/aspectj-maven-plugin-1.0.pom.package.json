@@ -36,6 +36,7 @@
   "code_view_url": "https://svn.codehaus.org/mojo/tags/aspectj-maven-plugin-1.0",
   "vcs_url": "svn+https://svn.codehaus.org/mojo/tags/aspectj-maven-plugin-1.0",
   "copyright": null,
+  "holder": null,
   "declared_license_expression": "mit",
   "declared_license_expression_spdx": "MIT",
   "license_detections": [
@@ -165,6 +166,5 @@
   "repository_download_url": "https://repo1.maven.org/maven2/org/codehaus/mojo/aspectj-maven-plugin/1.0/aspectj-maven-plugin-1.0.jar",
   "api_data_url": "https://repo1.maven.org/maven2/org/codehaus/mojo/aspectj-maven-plugin/1.0/aspectj-maven-plugin-1.0.pom",
   "datasource_id": "maven_pom",
-  "holder": null,
   "purl": "pkg:maven/org.codehaus.mojo/aspectj-maven-plugin@1.0"
 }

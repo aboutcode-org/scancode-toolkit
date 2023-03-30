@@ -107,6 +107,7 @@
     "code_view_url": null,
     "vcs_url": "git+https://github.com/mirage/mirage.git",
     "copyright": null,
+    "holder": null,
     "declared_license_expression": "isc",
     "declared_license_expression_spdx": "ISC",
     "license_detections": [
@@ -244,7 +245,6 @@
     "repository_download_url": null,
     "api_data_url": null,
     "datasource_id": "opam_file",
-    "holder": null,
     "purl": null
   }
 ]

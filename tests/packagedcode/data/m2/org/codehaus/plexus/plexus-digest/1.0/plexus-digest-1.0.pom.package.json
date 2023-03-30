@@ -21,6 +21,7 @@
   "code_view_url": "https://svn.codehaus.org/plexus/tags/plexus-digest-1.0",
   "vcs_url": "svn+https://svn.codehaus.org/plexus/tags/plexus-digest-1.0",
   "copyright": null,
+  "holder": null,
   "declared_license_expression": null,
   "declared_license_expression_spdx": null,
   "license_detections": [],
@@ -39,6 +40,5 @@
   "repository_download_url": "https://repo1.maven.org/maven2/org/codehaus/plexus/plexus-digest/1.0/plexus-digest-1.0.jar",
   "api_data_url": "https://repo1.maven.org/maven2/org/codehaus/plexus/plexus-digest/1.0/plexus-digest-1.0.pom",
   "datasource_id": "maven_pom",
-  "holder": null,
   "purl": "pkg:maven/org.codehaus.plexus/plexus-digest@1.0"
 }

@@ -30,6 +30,7 @@
     "code_view_url": "https://github.com/chef-cookbooks/build-essential",
     "vcs_url": null,
     "copyright": null,
+    "holder": null,
     "declared_license_expression": "apache-2.0",
     "declared_license_expression_spdx": "Apache-2.0",
     "license_detections": [
@@ -87,7 +88,6 @@
     "repository_download_url": "https://supermarket.chef.io/cookbooks/build-essential/versions/8.2.1/download",
     "api_data_url": "https://supermarket.chef.io/api/v1/cookbooks/build-essential/versions/8.2.1",
     "datasource_id": "chef_cookbook_metadata_rb",
-    "holder": null,
     "purl": "pkg:chef/build-essential@8.2.1"
   }
 ]

@@ -31,6 +31,7 @@
       "code_view_url": null,
       "vcs_url": null,
       "copyright": null,
+      "holder": null,
       "declared_license_expression": "mit",
       "declared_license_expression_spdx": "MIT",
       "license_detections": [
@@ -64,7 +65,6 @@
       "repository_homepage_url": "https://packagist.org/packages/laravel/laravel",
       "repository_download_url": null,
       "api_data_url": "https://packagist.org/p/packages/laravel/laravel.json",
-      "holder": null,
       "package_uid": "pkg:composer/laravel/laravel?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_paths": [
         "composer.json"
@@ -225,6 +225,7 @@
           "code_view_url": null,
           "vcs_url": null,
           "copyright": null,
+          "holder": null,
           "declared_license_expression": "mit",
           "declared_license_expression_spdx": "MIT",
           "license_detections": [
@@ -342,7 +343,6 @@
           "repository_download_url": null,
           "api_data_url": "https://packagist.org/p/packages/laravel/laravel.json",
           "datasource_id": "php_composer_json",
-          "holder": null,
           "purl": "pkg:composer/laravel/laravel"
         }
       ],

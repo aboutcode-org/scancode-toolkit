@@ -33,6 +33,7 @@
     "code_view_url": null,
     "vcs_url": null,
     "copyright": null,
+    "holder": null,
     "declared_license_expression": "mit",
     "declared_license_expression_spdx": "MIT",
     "license_detections": [
@@ -237,7 +238,6 @@
     "repository_download_url": "https://pypi.org/packages/source/P/PyJPString/PyJPString-0.0.3.tar.gz",
     "api_data_url": "https://pypi.org/pypi/PyJPString/0.0.3/json",
     "datasource_id": "pypi_editable_egg_pkginfo",
-    "holder": null,
     "purl": "pkg:pypi/pyjpstring@0.0.3"
   }
 ]

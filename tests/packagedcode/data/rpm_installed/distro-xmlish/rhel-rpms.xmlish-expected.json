@@ -24,6 +24,7 @@
     "code_view_url": null,
     "vcs_url": null,
     "copyright": null,
+    "holder": null,
     "declared_license_expression": "public-domain",
     "declared_license_expression_spdx": "LicenseRef-scancode-public-domain",
     "license_detections": [
@@ -394,7 +395,6 @@
     "repository_download_url": null,
     "api_data_url": null,
     "datasource_id": "rpm_installed_database_sqlite",
-    "holder": null,
     "purl": "pkg:rpm/setup@2.12.2?arch=noarch"
   },
   {
@@ -422,6 +422,7 @@
     "code_view_url": null,
     "vcs_url": null,
     "copyright": null,
+    "holder": null,
     "declared_license_expression": "public-domain",
     "declared_license_expression_spdx": "LicenseRef-scancode-public-domain",
     "license_detections": [
@@ -458,7 +459,6 @@
     "repository_download_url": null,
     "api_data_url": null,
     "datasource_id": "rpm_installed_database_sqlite",
-    "holder": null,
     "purl": "pkg:rpm/basesystem@11?arch=noarch"
   },
   {
@@ -486,6 +486,7 @@
     "code_view_url": null,
     "vcs_url": null,
     "copyright": null,
+    "holder": null,
     "declared_license_expression": "mit",
     "declared_license_expression_spdx": "MIT",
     "license_detections": [
@@ -2017,7 +2018,6 @@
     "repository_download_url": null,
     "api_data_url": null,
     "datasource_id": "rpm_installed_database_sqlite",
-    "holder": null,
     "purl": "pkg:rpm/ncurses-base@6.1?arch=noarch"
   }
 ]

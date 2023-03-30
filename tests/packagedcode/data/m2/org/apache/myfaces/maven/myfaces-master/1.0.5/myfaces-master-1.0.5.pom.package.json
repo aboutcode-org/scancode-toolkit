@@ -288,6 +288,7 @@
   "code_view_url": "https://svn.apache.org/repos/asf/myfaces/maven/branches/1_0_5",
   "vcs_url": "svn+https://svn.apache.org/repos/asf/myfaces/maven/branches/1_0_5",
   "copyright": null,
+  "holder": null,
   "declared_license_expression": "apache-2.0",
   "declared_license_expression_spdx": "Apache-2.0",
   "license_detections": [
@@ -356,6 +357,5 @@
   "repository_download_url": "https://repo1.maven.org/maven2/org/apache/myfaces/maven/myfaces-master/1.0.5/myfaces-master-1.0.5.jar",
   "api_data_url": "https://repo1.maven.org/maven2/org/apache/myfaces/maven/myfaces-master/1.0.5/myfaces-master-1.0.5.pom",
   "datasource_id": "maven_pom",
-  "holder": null,
   "purl": "pkg:maven/org.apache.myfaces.maven/myfaces-master@1.0.5"
 }

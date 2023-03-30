@@ -31,6 +31,7 @@
       "code_view_url": null,
       "vcs_url": null,
       "copyright": null,
+      "holder": null,
       "declared_license_expression": "unknown",
       "declared_license_expression_spdx": "LicenseRef-scancode-unknown",
       "license_detections": [
@@ -66,7 +67,6 @@
       "repository_homepage_url": null,
       "repository_download_url": null,
       "api_data_url": null,
-      "holder": null,
       "package_uid": "pkg:rpm/fping@2.4-0.b2.rhfc1.dag?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_paths": [
         "fping-2.4-0.b2.rhfc1.dag.i386.rpm"
@@ -114,6 +114,7 @@
           "code_view_url": null,
           "vcs_url": null,
           "copyright": null,
+          "holder": null,
           "declared_license_expression": "unknown",
           "declared_license_expression_spdx": "LicenseRef-scancode-unknown",
           "license_detections": [
@@ -152,7 +153,6 @@
           "repository_download_url": null,
           "api_data_url": null,
           "datasource_id": "rpm_archive",
-          "holder": null,
           "purl": "pkg:rpm/fping@2.4-0.b2.rhfc1.dag"
         }
       ],

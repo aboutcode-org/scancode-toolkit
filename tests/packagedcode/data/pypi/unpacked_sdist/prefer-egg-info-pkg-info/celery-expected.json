@@ -47,6 +47,7 @@
       "code_view_url": "https://github.com/celery/celery",
       "vcs_url": null,
       "copyright": null,
+      "holder": null,
       "declared_license_expression": "bsd-new",
       "declared_license_expression_spdx": "BSD-3-Clause",
       "license_detections": [
@@ -103,7 +104,6 @@
       "repository_homepage_url": "https://pypi.org/project/celery",
       "repository_download_url": "https://pypi.org/packages/source/c/celery/celery-5.2.7.tar.gz",
       "api_data_url": "https://pypi.org/pypi/celery/5.2.7/json",
-      "holder": null,
       "package_uid": "pkg:pypi/celery@5.2.7?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_paths": [
         "celery/celery.egg-info/PKG-INFO"
@@ -763,6 +763,7 @@
           "code_view_url": "https://github.com/celery/celery",
           "vcs_url": null,
           "copyright": null,
+          "holder": null,
           "declared_license_expression": "bsd-new",
           "declared_license_expression_spdx": "BSD-3-Clause",
           "license_detections": [
@@ -822,7 +823,6 @@
           "repository_download_url": "https://pypi.org/packages/source/c/celery/celery-5.2.7.tar.gz",
           "api_data_url": "https://pypi.org/pypi/celery/5.2.7/json",
           "datasource_id": "pypi_sdist_pkginfo",
-          "holder": null,
           "purl": "pkg:pypi/celery@5.2.7"
         }
       ],
@@ -889,6 +889,7 @@
           "code_view_url": "https://github.com/celery/celery",
           "vcs_url": null,
           "copyright": null,
+          "holder": null,
           "declared_license_expression": "bsd-new",
           "declared_license_expression_spdx": "BSD-3-Clause",
           "license_detections": [
@@ -7238,7 +7239,6 @@
           "repository_download_url": "https://pypi.org/packages/source/c/celery/celery-5.2.7.tar.gz",
           "api_data_url": "https://pypi.org/pypi/celery/5.2.7/json",
           "datasource_id": "pypi_editable_egg_pkginfo",
-          "holder": null,
           "purl": "pkg:pypi/celery@5.2.7"
         }
       ],
@@ -7310,6 +7310,7 @@
           "code_view_url": null,
           "vcs_url": null,
           "copyright": null,
+          "holder": null,
           "declared_license_expression": null,
           "declared_license_expression_spdx": null,
           "license_detections": [],
@@ -8209,7 +8210,6 @@
           "repository_download_url": null,
           "api_data_url": null,
           "datasource_id": "pip_requirements",
-          "holder": null,
           "purl": null
         }
       ],

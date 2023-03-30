@@ -43,6 +43,7 @@
       "code_view_url": null,
       "vcs_url": null,
       "copyright": null,
+      "holder": null,
       "declared_license_expression": "bsd-new",
       "declared_license_expression_spdx": "BSD-3-Clause",
       "license_detections": [
@@ -78,7 +79,6 @@
       "repository_homepage_url": "https://pypi.org/project/Django",
       "repository_download_url": "https://pypi.org/packages/source/D/Django/Django-1.2.5.tar.gz",
       "api_data_url": "https://pypi.org/pypi/Django/1.2.5/json",
-      "holder": null,
       "package_uid": "pkg:pypi/django@1.2.5?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_paths": [
         "PKG-INFO"
@@ -152,6 +152,7 @@
           "code_view_url": null,
           "vcs_url": null,
           "copyright": null,
+          "holder": null,
           "declared_license_expression": "bsd-new",
           "declared_license_expression_spdx": "BSD-3-Clause",
           "license_detections": [
@@ -190,7 +191,6 @@
           "repository_download_url": "https://pypi.org/packages/source/D/Django/Django-1.2.5.tar.gz",
           "api_data_url": "https://pypi.org/pypi/Django/1.2.5/json",
           "datasource_id": "pypi_sdist_pkginfo",
-          "holder": null,
           "purl": "pkg:pypi/django@1.2.5"
         }
       ],

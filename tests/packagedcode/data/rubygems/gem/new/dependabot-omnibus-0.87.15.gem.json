@@ -30,6 +30,7 @@
     "code_view_url": null,
     "vcs_url": null,
     "copyright": null,
+    "holder": null,
     "declared_license_expression": "proprietary-license",
     "declared_license_expression_spdx": "LicenseRef-scancode-proprietary-license",
     "license_detections": [
@@ -177,7 +178,6 @@
     "repository_download_url": "https://rubygems.org/downloads/dependabot-omnibus-0.87.15.gem",
     "api_data_url": "https://rubygems.org/api/v2/rubygems/dependabot-omnibus/versions/0.87.15.json",
     "datasource_id": "gem_archive",
-    "holder": null,
     "purl": "pkg:gem/dependabot-omnibus@0.87.15"
   }
 ]

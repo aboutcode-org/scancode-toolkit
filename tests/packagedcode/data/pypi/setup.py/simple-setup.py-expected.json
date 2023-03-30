@@ -41,6 +41,7 @@
     "code_view_url": null,
     "vcs_url": null,
     "copyright": null,
+    "holder": null,
     "declared_license_expression": "((apache-2.0 AND scancode-acknowledgment) AND cc0-1.0) AND apache-2.0 AND cc0-1.0",
     "declared_license_expression_spdx": "((Apache-2.0 AND LicenseRef-scancode-scancode-acknowledgment) AND CC0-1.0) AND Apache-2.0 AND CC0-1.0",
     "license_detections": [
@@ -452,7 +453,6 @@
     "repository_download_url": "https://pypi.org/packages/source/s/scancode-toolkit/scancode-toolkit-1.5.0.tar.gz",
     "api_data_url": "https://pypi.org/pypi/scancode-toolkit/1.5.0/json",
     "datasource_id": "pypi_setup_py",
-    "holder": null,
     "purl": "pkg:pypi/scancode-toolkit@1.5.0"
   }
 ]

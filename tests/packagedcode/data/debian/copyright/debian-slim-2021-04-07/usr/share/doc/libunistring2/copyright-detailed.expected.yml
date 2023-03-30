@@ -21,10 +21,10 @@ other_license_expression: ((lgpl-3.0-plus AND lgpl-3.0-plus) OR (gpl-2.0-plus AN
   (gpl-2.0-plus AND gpl-2.0-plus) AND (gpl-2.0-plus AND gpl-2.0-plus) AND x11-xconsortium AND
   (gpl-3.0-plus AND gpl-3.0-plus)
 other_license_expression_spdx: ((LGPL-3.0-or-later AND LGPL-3.0-or-later) OR (GPL-2.0-or-later
-  AND GPL-2.0-or-later)) AND FSFULLR AND GPL-1.0-or-later WITH LicenseRef-scancode-autoconf-simple-exception-2.0
-  AND ((GPL-3.0-or-later AND GPL-3.0-or-later) OR (GFDL-1.2-or-later AND GFDL-1.2-or-later))
-  AND (GPL-3.0-or-later AND GPL-3.0-or-later) AND (GPL-2.0-or-later AND GPL-2.0-or-later) AND
-  (GPL-2.0-or-later AND GPL-2.0-or-later) AND X11 AND (GPL-3.0-or-later AND GPL-3.0-or-later)
+  AND GPL-2.0-or-later)) AND FSFULLR AND GPL-1.0-or-later WITH Autoconf-exception-generic AND
+  ((GPL-3.0-or-later AND GPL-3.0-or-later) OR (GFDL-1.2-or-later AND GFDL-1.2-or-later)) AND
+  (GPL-3.0-or-later AND GPL-3.0-or-later) AND (GPL-2.0-or-later AND GPL-2.0-or-later) AND (GPL-2.0-or-later
+  AND GPL-2.0-or-later) AND X11 AND (GPL-3.0-or-later AND GPL-3.0-or-later)
 license_detections: []
 other_license_detections:
   - license_expression: fsf-unlimited

@@ -36,6 +36,7 @@
   "code_view_url": "http://homepage.com/code",
   "vcs_url": "git+http://homepage.com/code.git@12ed302c4b4c2aa10638db3890",
   "copyright": "copyright (c) nexB Inc.",
+  "holder": "nexB Inc.",
   "declared_license_expression": "apache-2.0",
   "declared_license_expression_spdx": "Apache-2.0",
   "license_detections": [
@@ -74,6 +75,5 @@
   "repository_download_url": null,
   "api_data_url": null,
   "datasource_id": "rpm_archive",
-  "holder": "nexB Inc.",
   "purl": "pkg:rpm/fedora/Sample@12.2.3?abc=12&this=that#asdasd/asdasd/asdasd"
 }

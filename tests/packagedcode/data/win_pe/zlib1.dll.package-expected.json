@@ -30,6 +30,7 @@
     "code_view_url": null,
     "vcs_url": null,
     "copyright": "\u00a9 2006 Jean-loup Gailly <jloup@gzip.org >, Mark Adler <madler@alumni.caltech.edu>",
+    "holder": "Jean-loup Gailly",
     "declared_license_expression": "zlib",
     "declared_license_expression_spdx": "Zlib",
     "license_detections": [
@@ -85,7 +86,6 @@
     "repository_download_url": null,
     "api_data_url": null,
     "datasource_id": "windows_executable",
-    "holder": "Jean-loup Gailly",
     "purl": "pkg:winexe/Zlib@1.2.3.2532"
   }
 ]

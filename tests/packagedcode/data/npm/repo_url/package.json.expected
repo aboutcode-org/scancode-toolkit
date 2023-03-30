@@ -37,6 +37,7 @@
     "code_view_url": null,
     "vcs_url": null,
     "copyright": null,
+    "holder": null,
     "declared_license_expression": null,
     "declared_license_expression_spdx": null,
     "license_detections": [],
@@ -374,7 +375,6 @@
     "repository_download_url": "https://registry.npmjs.org/react-mobile-navigation-modal/-/react-mobile-navigation-modal-0.1.0-rc.3.tgz",
     "api_data_url": "https://registry.npmjs.org/react-mobile-navigation-modal/0.1.0-rc.3",
     "datasource_id": "npm_package_json",
-    "holder": null,
     "purl": "pkg:npm/react-mobile-navigation-modal@0.1.0-rc.3"
   }
 ]

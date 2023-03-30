@@ -183,6 +183,7 @@
   "code_view_url": "http://svn.apache.org/repos/asf/jakarta/commons/proper/digester/trunk",
   "vcs_url": "svn+http://svn.apache.org/repos/asf/jakarta/commons/proper/digester/trunk",
   "copyright": null,
+  "holder": null,
   "declared_license_expression": "apache-2.0",
   "declared_license_expression_spdx": "Apache-2.0",
   "license_detections": [
@@ -262,6 +263,5 @@
   "repository_download_url": "https://repo1.maven.org/maven2/commons-digester/commons-digester/1.8/commons-digester-1.8.jar",
   "api_data_url": "https://repo1.maven.org/maven2/commons-digester/commons-digester/1.8/commons-digester-1.8.pom",
   "datasource_id": "maven_pom",
-  "holder": null,
   "purl": "pkg:maven/commons-digester/commons-digester@1.8"
 }

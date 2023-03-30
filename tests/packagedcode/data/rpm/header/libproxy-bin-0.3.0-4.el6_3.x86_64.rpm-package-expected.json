@@ -30,6 +30,7 @@
     "code_view_url": null,
     "vcs_url": null,
     "copyright": null,
+    "holder": null,
     "declared_license_expression": "lgpl-2.0-plus",
     "declared_license_expression_spdx": "LGPL-2.0-or-later",
     "license_detections": [
@@ -68,7 +69,6 @@
     "repository_download_url": null,
     "api_data_url": null,
     "datasource_id": "rpm_archive",
-    "holder": null,
     "purl": "pkg:rpm/libproxy-bin@0.3.0-4.el6_3"
   }
 ]

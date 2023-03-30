@@ -42,6 +42,7 @@
     "code_view_url": null,
     "vcs_url": null,
     "copyright": null,
+    "holder": null,
     "declared_license_expression": "apache-2.0",
     "declared_license_expression_spdx": "Apache-2.0",
     "license_detections": [
@@ -367,7 +368,6 @@
     "repository_download_url": "https://pypi.org/packages/source/p/plugincode/plugincode-21.1.21.tar.gz",
     "api_data_url": "https://pypi.org/pypi/plugincode/21.1.21/json",
     "datasource_id": "pypi_wheel_metadata",
-    "holder": null,
     "purl": "pkg:pypi/plugincode@21.1.21"
   }
 ]

@@ -50,6 +50,7 @@
     "code_view_url": null,
     "vcs_url": null,
     "copyright": null,
+    "holder": null,
     "declared_license_expression": "mit",
     "declared_license_expression_spdx": "MIT",
     "license_detections": [
@@ -349,7 +350,6 @@
     "repository_download_url": "https://pypi.org/packages/source/w/wplay/wplay-8.0.7.tar.gz",
     "api_data_url": "https://pypi.org/pypi/wplay/8.0.7/json",
     "datasource_id": "pypi_setup_py",
-    "holder": null,
     "purl": "pkg:pypi/wplay@8.0.7"
   }
 ]

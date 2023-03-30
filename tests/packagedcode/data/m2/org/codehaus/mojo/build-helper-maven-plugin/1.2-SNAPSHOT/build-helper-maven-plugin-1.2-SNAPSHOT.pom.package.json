@@ -29,6 +29,7 @@
   "code_view_url": "http://svn.codehaus.org/mojo/trunk/mojo/build-helper-maven-plugin",
   "vcs_url": "svn+http://svn.codehaus.org/mojo/trunk/mojo/build-helper-maven-plugin",
   "copyright": null,
+  "holder": null,
   "declared_license_expression": "mit",
   "declared_license_expression_spdx": "MIT",
   "license_detections": [
@@ -127,6 +128,5 @@
   "repository_download_url": "https://repo1.maven.org/maven2/org/codehaus/mojo/build-helper-maven-plugin/1.2-SNAPSHOT/build-helper-maven-plugin-1.2-SNAPSHOT.jar",
   "api_data_url": "https://repo1.maven.org/maven2/org/codehaus/mojo/build-helper-maven-plugin/1.2-SNAPSHOT/build-helper-maven-plugin-1.2-SNAPSHOT.pom",
   "datasource_id": "maven_pom",
-  "holder": null,
   "purl": "pkg:maven/org.codehaus.mojo/build-helper-maven-plugin@1.2-SNAPSHOT"
 }

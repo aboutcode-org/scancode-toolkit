@@ -34,6 +34,7 @@
     "code_view_url": null,
     "vcs_url": null,
     "copyright": null,
+    "holder": null,
     "declared_license_expression": null,
     "declared_license_expression_spdx": null,
     "license_detections": [],
@@ -54,7 +55,6 @@
     "repository_download_url": null,
     "api_data_url": null,
     "datasource_id": "debian_installed_status_db",
-    "holder": null,
     "purl": "pkg:deb/libncurses5@6.1-1ubuntu1.18.04?architecture=amd64"
   },
   {
@@ -92,6 +92,7 @@
     "code_view_url": null,
     "vcs_url": null,
     "copyright": null,
+    "holder": null,
     "declared_license_expression": null,
     "declared_license_expression_spdx": null,
     "license_detections": [],
@@ -112,7 +113,6 @@
     "repository_download_url": null,
     "api_data_url": null,
     "datasource_id": "debian_installed_status_db",
-    "holder": null,
     "purl": "pkg:deb/libcom-err2@1.44.1-1ubuntu1.1?architecture=amd64"
   },
   {
@@ -150,6 +150,7 @@
     "code_view_url": null,
     "vcs_url": null,
     "copyright": null,
+    "holder": null,
     "declared_license_expression": null,
     "declared_license_expression_spdx": null,
     "license_detections": [],
@@ -170,7 +171,6 @@
     "repository_download_url": null,
     "api_data_url": null,
     "datasource_id": "debian_installed_status_db",
-    "holder": null,
     "purl": "pkg:deb/libapt-pkg5.0@1.6.11?architecture=amd64"
   },
   {
@@ -208,6 +208,7 @@
     "code_view_url": null,
     "vcs_url": null,
     "copyright": null,
+    "holder": null,
     "declared_license_expression": null,
     "declared_license_expression_spdx": null,
     "license_detections": [],
@@ -228,7 +229,6 @@
     "repository_download_url": null,
     "api_data_url": null,
     "datasource_id": "debian_installed_status_db",
-    "holder": null,
     "purl": "pkg:deb/libaudit1@1:2.8.2-1ubuntu1?architecture=amd64"
   },
   {
@@ -266,6 +266,7 @@
     "code_view_url": null,
     "vcs_url": null,
     "copyright": null,
+    "holder": null,
     "declared_license_expression": null,
     "declared_license_expression_spdx": null,
     "license_detections": [],
@@ -284,7 +285,6 @@
     "repository_download_url": null,
     "api_data_url": null,
     "datasource_id": "debian_installed_status_db",
-    "holder": null,
     "purl": "pkg:deb/perl-base@5.26.1-6ubuntu0.3?architecture=amd64"
   },
   {
@@ -322,6 +322,7 @@
     "code_view_url": null,
     "vcs_url": null,
     "copyright": null,
+    "holder": null,
     "declared_license_expression": null,
     "declared_license_expression_spdx": null,
     "license_detections": [],
@@ -342,7 +343,6 @@
     "repository_download_url": null,
     "api_data_url": null,
     "datasource_id": "debian_installed_status_db",
-    "holder": null,
     "purl": "pkg:deb/libudev1@237-3ubuntu10.22?architecture=amd64"
   }
 ]

@@ -6,8 +6,8 @@ declared_license_expression: openldap-2.8 AND openldap-2.8 AND mit AND fsf-unlim
 declared_license_expression_spdx: OLDAP-2.8 AND OLDAP-2.8 AND MIT AND FSFULLRWD AND Spencer-94
   AND LicenseRef-scancode-ibm-dhcp AND LicenseRef-scancode-ietf AND ISC AND LicenseRef-scancode-other-permissive
   AND LicenseRef-scancode-other-permissive AND NTP AND LicenseRef-scancode-other-permissive
-  AND Spencer-94 AND OLDAP-2.8 AND LicenseRef-scancode-bsla AND BSD-4-Clause-UC AND BSD-4-Clause-UC
-  AND BSD-4-Clause-UC AND LicenseRef-scancode-bsd-original-uc-1986
+  AND Spencer-94 AND OLDAP-2.8 AND BSD-4.3TAHOE AND BSD-4-Clause-UC AND BSD-4-Clause-UC AND
+  BSD-4-Clause-UC AND BSD-4.3RENO
 other_license_expression:
 other_license_expression_spdx:
 license_detections:

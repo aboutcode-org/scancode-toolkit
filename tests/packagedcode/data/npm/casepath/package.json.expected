@@ -30,6 +30,7 @@
     "code_view_url": null,
     "vcs_url": null,
     "copyright": null,
+    "holder": null,
     "declared_license_expression": "mit",
     "declared_license_expression_spdx": "MIT",
     "license_detections": [
@@ -357,7 +358,6 @@
     "repository_download_url": "https://registry.npmjs.org/casesensitivepathswebpackpluginDemo/-/casesensitivepathswebpackpluginDemo-0.0.1.tgz",
     "api_data_url": "https://registry.npmjs.org/casesensitivepathswebpackpluginDemo/0.0.1",
     "datasource_id": "npm_package_json",
-    "holder": null,
     "purl": "pkg:npm/casesensitivepathswebpackpluginDemo@0.0.1"
   }
 ]

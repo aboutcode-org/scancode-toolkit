@@ -50,6 +50,7 @@
   "code_view_url": "https://svn.codehaus.org/mojo/tags/findbugs-maven-plugin-1.1.1",
   "vcs_url": "svn+https://svn.codehaus.org/mojo/tags/findbugs-maven-plugin-1.1.1",
   "copyright": null,
+  "holder": null,
   "declared_license_expression": "mit",
   "declared_license_expression_spdx": "MIT",
   "license_detections": [
@@ -139,6 +140,5 @@
   "repository_download_url": "https://repo1.maven.org/maven2/org/codehaus/mojo/findbugs-maven-plugin/1.1.1/findbugs-maven-plugin-1.1.1.jar",
   "api_data_url": "https://repo1.maven.org/maven2/org/codehaus/mojo/findbugs-maven-plugin/1.1.1/findbugs-maven-plugin-1.1.1.pom",
   "datasource_id": "maven_pom",
-  "holder": null,
   "purl": "pkg:maven/org.codehaus.mojo/findbugs-maven-plugin@1.1.1"
 }

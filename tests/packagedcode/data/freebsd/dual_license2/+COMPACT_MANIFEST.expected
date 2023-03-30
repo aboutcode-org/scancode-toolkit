@@ -36,6 +36,7 @@
     "code_view_url": "https://svnweb.freebsd.org/ports/head/print/rubygem-ttfunk",
     "vcs_url": null,
     "copyright": null,
+    "holder": null,
     "declared_license_expression": "gpl-3.0 OR ruby OR gpl-2.0",
     "declared_license_expression_spdx": "GPL-3.0-only OR Ruby OR GPL-2.0-only",
     "license_detections": [
@@ -110,7 +111,6 @@
     "repository_download_url": null,
     "api_data_url": null,
     "datasource_id": "freebsd_compact_manifest",
-    "holder": null,
     "purl": "pkg:freebsd/rubygem-ttfunk@1.5.1?arch=freebsd:10:%2A&origin=print/rubygem-ttfunk"
   }
 ]

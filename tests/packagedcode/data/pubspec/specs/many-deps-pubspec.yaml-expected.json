@@ -22,6 +22,7 @@
     "code_view_url": null,
     "vcs_url": null,
     "copyright": null,
+    "holder": null,
     "declared_license_expression": null,
     "declared_license_expression_spdx": null,
     "license_detections": [],
@@ -69,7 +70,6 @@
     "repository_download_url": "https://pub.dartlang.org/packages/built_collection/versions/5.1.0.tar.gz",
     "api_data_url": "https://pub.dev/api/packages/built_collection/versions/5.1.0",
     "datasource_id": "pubspec_yaml",
-    "holder": null,
     "purl": "pkg:dart/built_collection@5.1.0"
   }
 ]

@@ -50,6 +50,7 @@
   "code_view_url": "http://svn.apache.org/viewcvs.cgi/maven/wagon/wagon-providers/wagon-ssh",
   "vcs_url": "svn+http://svn.apache.org/repos/asf/maven/wagon/trunk/wagon-providers/wagon-ssh",
   "copyright": null,
+  "holder": null,
   "declared_license_expression": "apache-2.0",
   "declared_license_expression_spdx": "Apache-2.0",
   "license_detections": [
@@ -198,6 +199,5 @@
   "repository_download_url": "https://repo1.maven.org/maven2/org/apache/maven/wagon/wagon-ssh/1.0-alpha-5/wagon-ssh-1.0-alpha-5.jar",
   "api_data_url": "https://repo1.maven.org/maven2/org/apache/maven/wagon/wagon-ssh/1.0-alpha-5/wagon-ssh-1.0-alpha-5.pom",
   "datasource_id": "maven_pom",
-  "holder": null,
   "purl": "pkg:maven/org.apache.maven.wagon/wagon-ssh@1.0-alpha-5"
 }

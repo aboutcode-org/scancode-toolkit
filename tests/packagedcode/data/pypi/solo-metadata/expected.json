@@ -58,6 +58,7 @@
       "code_view_url": null,
       "vcs_url": null,
       "copyright": null,
+      "holder": null,
       "declared_license_expression": "apache-2.0 AND cc-by-4.0 AND other-permissive AND other-copyleft",
       "declared_license_expression_spdx": "Apache-2.0 AND CC-BY-4.0 AND LicenseRef-scancode-other-permissive AND LicenseRef-scancode-other-copyleft",
       "license_detections": [
@@ -91,7 +92,6 @@
       "repository_homepage_url": "https://pypi.org/project/scancode-toolkit",
       "repository_download_url": "https://pypi.org/packages/source/s/scancode-toolkit/scancode-toolkit-31.0.0b1.tar.gz",
       "api_data_url": "https://pypi.org/pypi/scancode-toolkit/31.0.0b1/json",
-      "holder": null,
       "package_uid": "pkg:pypi/scancode-toolkit@31.0.0b1?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_paths": [
         "PKG-INFO"
@@ -166,6 +166,7 @@
           "code_view_url": null,
           "vcs_url": null,
           "copyright": null,
+          "holder": null,
           "declared_license_expression": "apache-2.0 AND cc-by-4.0 AND other-permissive AND other-copyleft",
           "declared_license_expression_spdx": "Apache-2.0 AND CC-BY-4.0 AND LicenseRef-scancode-other-permissive AND LicenseRef-scancode-other-copyleft",
           "license_detections": [
@@ -202,7 +203,6 @@
           "repository_download_url": "https://pypi.org/packages/source/s/scancode-toolkit/scancode-toolkit-31.0.0b1.tar.gz",
           "api_data_url": "https://pypi.org/pypi/scancode-toolkit/31.0.0b1/json",
           "datasource_id": "pypi_sdist_pkginfo",
-          "holder": null,
           "purl": "pkg:pypi/scancode-toolkit@31.0.0b1"
         }
       ],

@@ -36,6 +36,7 @@
       "code_view_url": null,
       "vcs_url": "git+http://github.com/mscdex/busboy.git",
       "copyright": null,
+      "holder": null,
       "declared_license_expression": "mit",
       "declared_license_expression_spdx": "MIT",
       "license_detections": [
@@ -69,7 +70,6 @@
       "repository_homepage_url": "https://www.npmjs.com/package/busboy",
       "repository_download_url": "https://registry.npmjs.org/busboy/-/busboy-0.2.14.tgz",
       "api_data_url": "https://registry.npmjs.org/busboy/0.2.14",
-      "holder": null,
       "package_uid": "pkg:npm/busboy@0.2.14?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_paths": [
         "package.json"
@@ -163,6 +163,7 @@
           "code_view_url": null,
           "vcs_url": "git+http://github.com/mscdex/busboy.git",
           "copyright": null,
+          "holder": null,
           "declared_license_expression": "mit",
           "declared_license_expression_spdx": "MIT",
           "license_detections": [
@@ -220,7 +221,6 @@
           "repository_download_url": "https://registry.npmjs.org/busboy/-/busboy-0.2.14.tgz",
           "api_data_url": "https://registry.npmjs.org/busboy/0.2.14",
           "datasource_id": "npm_package_json",
-          "holder": null,
           "purl": "pkg:npm/busboy@0.2.14"
         }
       ],

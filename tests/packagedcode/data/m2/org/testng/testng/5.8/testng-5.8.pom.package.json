@@ -21,6 +21,7 @@
   "code_view_url": "http://testng.googlecode.com/svn/trunk",
   "vcs_url": "svn+http://testng.googlecode.com/svn/trunk/",
   "copyright": null,
+  "holder": null,
   "declared_license_expression": "apache-2.0",
   "declared_license_expression_spdx": "Apache-2.0",
   "license_detections": [
@@ -119,6 +120,5 @@
   "repository_download_url": "https://repo1.maven.org/maven2/org/testng/testng/5.8/testng-5.8.jar",
   "api_data_url": "https://repo1.maven.org/maven2/org/testng/testng/5.8/testng-5.8.pom",
   "datasource_id": "maven_pom",
-  "holder": null,
   "purl": "pkg:maven/org.testng/testng@5.8"
 }

@@ -68,6 +68,7 @@
     "code_view_url": null,
     "vcs_url": null,
     "copyright": null,
+    "holder": null,
     "declared_license_expression": "gpl-1.0-plus",
     "declared_license_expression_spdx": "GPL-1.0-or-later",
     "license_detections": [
@@ -104,7 +105,6 @@
     "repository_download_url": "https://lib.haxe.org/p/haxelib/3.4.0/download/",
     "api_data_url": null,
     "datasource_id": "haxelib_json",
-    "holder": null,
     "purl": "pkg:haxe/haxelib@3.4.0"
   }
 ]

@@ -39,6 +39,7 @@
     "code_view_url": null,
     "vcs_url": "https://github.com/SK-415/HarukaBot/tree/master/src/plugins/haruka_bot",
     "copyright": null,
+    "holder": null,
     "declared_license_expression": "agpl-3.0-plus",
     "declared_license_expression_spdx": "AGPL-3.0-or-later",
     "license_detections": [
@@ -398,7 +399,6 @@
     "repository_download_url": "https://pypi.org/packages/source/h/haruka-bot/haruka-bot-1.2.3.tar.gz",
     "api_data_url": "https://pypi.org/pypi/haruka-bot/1.2.3/json",
     "datasource_id": "pypi_wheel_metadata",
-    "holder": null,
     "purl": "pkg:pypi/haruka-bot@1.2.3"
   }
 ]

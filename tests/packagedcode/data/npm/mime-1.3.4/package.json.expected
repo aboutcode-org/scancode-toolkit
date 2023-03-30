@@ -40,6 +40,7 @@
     "code_view_url": null,
     "vcs_url": "git+https://github.com/broofa/node-mime",
     "copyright": null,
+    "holder": null,
     "declared_license_expression": "mit",
     "declared_license_expression_spdx": "MIT",
     "license_detections": [
@@ -87,7 +88,6 @@
     "repository_download_url": "https://registry.npmjs.org/mime/-/mime-1.3.4.tgz",
     "api_data_url": "https://registry.npmjs.org/mime/1.3.4",
     "datasource_id": "npm_package_json",
-    "holder": null,
     "purl": "pkg:npm/mime@1.3.4"
   }
 ]

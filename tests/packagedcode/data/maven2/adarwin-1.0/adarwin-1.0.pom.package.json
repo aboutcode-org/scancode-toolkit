@@ -21,6 +21,7 @@
   "code_view_url": null,
   "vcs_url": null,
   "copyright": null,
+  "holder": null,
   "declared_license_expression": null,
   "declared_license_expression_spdx": null,
   "license_detections": [],
@@ -39,6 +40,5 @@
   "repository_download_url": "https://repo1.maven.org/maven2/adarwin/adarwin/1.0/adarwin-1.0.jar",
   "api_data_url": "https://repo1.maven.org/maven2/adarwin/adarwin/1.0/adarwin-1.0.pom",
   "datasource_id": "maven_pom",
-  "holder": null,
   "purl": "pkg:maven/adarwin/adarwin@1.0"
 }

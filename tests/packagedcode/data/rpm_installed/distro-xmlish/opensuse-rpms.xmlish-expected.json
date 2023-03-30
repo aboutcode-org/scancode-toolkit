@@ -24,6 +24,7 @@
     "code_view_url": null,
     "vcs_url": null,
     "copyright": null,
+    "holder": null,
     "declared_license_expression": "boost-1.0",
     "declared_license_expression_spdx": "BSL-1.0",
     "license_detections": [
@@ -79,7 +80,6 @@
     "repository_download_url": null,
     "api_data_url": null,
     "datasource_id": "rpm_installed_database_sqlite",
-    "holder": null,
     "purl": "pkg:rpm/boost-license1_71_0@1.71.0?arch=noarch"
   },
   {
@@ -107,6 +107,7 @@
     "code_view_url": null,
     "vcs_url": null,
     "copyright": null,
+    "holder": null,
     "declared_license_expression": "lgpl-2.1",
     "declared_license_expression_spdx": "LGPL-2.1-only",
     "license_detections": [
@@ -171,7 +172,6 @@
     "repository_download_url": null,
     "api_data_url": null,
     "datasource_id": "rpm_installed_database_sqlite",
-    "holder": null,
     "purl": "pkg:rpm/cracklib-dict-small@2.9.6?arch=x86_64"
   }
 ]

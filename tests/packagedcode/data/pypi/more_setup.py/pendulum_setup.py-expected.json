@@ -30,6 +30,7 @@
     "code_view_url": null,
     "vcs_url": null,
     "copyright": null,
+    "holder": null,
     "declared_license_expression": null,
     "declared_license_expression_spdx": null,
     "license_detections": [],
@@ -79,7 +80,6 @@
     "repository_download_url": "https://pypi.org/packages/source/p/pendulum/pendulum-2.0.4.tar.gz",
     "api_data_url": "https://pypi.org/pypi/pendulum/2.0.4/json",
     "datasource_id": "pypi_setup_py",
-    "holder": null,
     "purl": "pkg:pypi/pendulum@2.0.4"
   }
 ]

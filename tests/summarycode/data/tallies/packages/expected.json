@@ -23,6 +23,7 @@
       "code_view_url": null,
       "vcs_url": null,
       "copyright": null,
+      "holder": null,
       "declared_license_expression": "public-domain",
       "declared_license_expression_spdx": "LicenseRef-scancode-public-domain",
       "license_detections": [
@@ -58,7 +59,6 @@
       "repository_homepage_url": "https://repo1.maven.org/maven2/aopalliance/aopalliance/1.0/",
       "repository_download_url": "https://repo1.maven.org/maven2/aopalliance/aopalliance/1.0/aopalliance-1.0.jar",
       "api_data_url": "https://repo1.maven.org/maven2/aopalliance/aopalliance/1.0/aopalliance-1.0.pom",
-      "holder": null,
       "package_uid": "pkg:maven/aopalliance/aopalliance@1.0?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_paths": [
         "scan/aopalliance/aopalliance/1.0/aopalliance-1.0.pom"
@@ -104,6 +104,7 @@
       "code_view_url": "https://svnweb.freebsd.org/ports/head/sysutils/dmidecode",
       "vcs_url": null,
       "copyright": null,
+      "holder": null,
       "declared_license_expression": "gpl-2.0",
       "declared_license_expression_spdx": "GPL-2.0-only",
       "license_detections": [
@@ -137,7 +138,6 @@
       "repository_homepage_url": null,
       "repository_download_url": null,
       "api_data_url": null,
-      "holder": null,
       "package_uid": "pkg:freebsd/dmidecode@2.12?arch=freebsd:10:x86:64&origin=sysutils/dmidecode&uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_paths": [
         "scan/freebsd/basic/+COMPACT_MANIFEST"
@@ -178,6 +178,7 @@
       "code_view_url": null,
       "vcs_url": "git+https://github.com/ionic-team/ionic-app-scripts.git",
       "copyright": null,
+      "holder": null,
       "declared_license_expression": "mit",
       "declared_license_expression_spdx": "MIT",
       "license_detections": [
@@ -211,7 +212,6 @@
       "repository_homepage_url": "https://www.npmjs.com/package/@ionic/app-scripts",
       "repository_download_url": "https://registry.npmjs.org/@ionic/app-scripts/-/app-scripts-3.0.1-201710301651.tgz",
       "api_data_url": "https://registry.npmjs.org/@ionic%2fapp-scripts",
-      "holder": null,
       "package_uid": "pkg:npm/%40ionic/app-scripts@3.0.1-201710301651?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_paths": [
         "scan/scoped1/package.json"
@@ -1137,6 +1137,7 @@
           "code_view_url": null,
           "vcs_url": null,
           "copyright": null,
+          "holder": null,
           "declared_license_expression": "public-domain",
           "declared_license_expression_spdx": "LicenseRef-scancode-public-domain",
           "license_detections": [
@@ -1175,7 +1176,6 @@
           "repository_download_url": "https://repo1.maven.org/maven2/aopalliance/aopalliance/1.0/aopalliance-1.0.jar",
           "api_data_url": "https://repo1.maven.org/maven2/aopalliance/aopalliance/1.0/aopalliance-1.0.pom",
           "datasource_id": "maven_pom",
-          "holder": null,
           "purl": "pkg:maven/aopalliance/aopalliance@1.0"
         }
       ],
@@ -1238,6 +1238,7 @@
           "code_view_url": "https://svnweb.freebsd.org/ports/head/sysutils/dmidecode",
           "vcs_url": null,
           "copyright": null,
+          "holder": null,
           "declared_license_expression": "gpl-2.0",
           "declared_license_expression_spdx": "GPL-2.0-only",
           "license_detections": [
@@ -1274,7 +1275,6 @@
           "repository_download_url": null,
           "api_data_url": null,
           "datasource_id": "freebsd_compact_manifest",
-          "holder": null,
           "purl": "pkg:freebsd/dmidecode@2.12?arch=freebsd:10:x86:64&origin=sysutils/dmidecode"
         }
       ],
@@ -1325,6 +1325,7 @@
           "code_view_url": null,
           "vcs_url": "git+https://github.com/ionic-team/ionic-app-scripts.git",
           "copyright": null,
+          "holder": null,
           "declared_license_expression": "mit",
           "declared_license_expression_spdx": "MIT",
           "license_detections": [
@@ -1972,7 +1973,6 @@
           "repository_download_url": "https://registry.npmjs.org/@ionic/app-scripts/-/app-scripts-3.0.1-201710301651.tgz",
           "api_data_url": "https://registry.npmjs.org/@ionic%2fapp-scripts",
           "datasource_id": "npm_package_json",
-          "holder": null,
           "purl": "pkg:npm/%40ionic/app-scripts@3.0.1-201710301651"
         }
       ],

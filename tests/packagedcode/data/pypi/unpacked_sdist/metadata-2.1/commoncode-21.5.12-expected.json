@@ -39,6 +39,7 @@
     "code_view_url": null,
     "vcs_url": null,
     "copyright": null,
+    "holder": null,
     "declared_license_expression": "apache-2.0",
     "declared_license_expression_spdx": "Apache-2.0",
     "license_detections": [
@@ -75,7 +76,6 @@
     "repository_download_url": "https://pypi.org/packages/source/c/commoncode/commoncode-21.5.12.tar.gz",
     "api_data_url": "https://pypi.org/pypi/commoncode/21.5.12/json",
     "datasource_id": "pypi_sdist_pkginfo",
-    "holder": null,
     "purl": "pkg:pypi/commoncode@21.5.12"
   }
 ]

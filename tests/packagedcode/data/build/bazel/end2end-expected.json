@@ -23,6 +23,7 @@
       "code_view_url": null,
       "vcs_url": null,
       "copyright": null,
+      "holder": null,
       "declared_license_expression": null,
       "declared_license_expression_spdx": null,
       "license_detections": [],
@@ -36,7 +37,6 @@
       "repository_homepage_url": null,
       "repository_download_url": null,
       "api_data_url": null,
-      "holder": null,
       "package_uid": "pkg:bazel/end2end?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_paths": [
         "end2end/BUILD"
@@ -69,6 +69,7 @@
       "code_view_url": null,
       "vcs_url": null,
       "copyright": null,
+      "holder": null,
       "declared_license_expression": null,
       "declared_license_expression_spdx": null,
       "license_detections": [],
@@ -82,7 +83,6 @@
       "repository_homepage_url": null,
       "repository_download_url": null,
       "api_data_url": null,
-      "holder": null,
       "package_uid": "pkg:bazel/subdir2?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_paths": [
         "end2end/subdir2/BUILD"
@@ -129,6 +129,7 @@
           "code_view_url": null,
           "vcs_url": null,
           "copyright": null,
+          "holder": null,
           "declared_license_expression": null,
           "declared_license_expression_spdx": null,
           "license_detections": [],
@@ -145,7 +146,6 @@
           "repository_download_url": null,
           "api_data_url": null,
           "datasource_id": "bazel_build",
-          "holder": null,
           "purl": "pkg:bazel/end2end"
         }
       ],
@@ -226,6 +226,7 @@
           "code_view_url": null,
           "vcs_url": null,
           "copyright": null,
+          "holder": null,
           "declared_license_expression": null,
           "declared_license_expression_spdx": null,
           "license_detections": [],
@@ -242,7 +243,6 @@
           "repository_download_url": null,
           "api_data_url": null,
           "datasource_id": "bazel_build",
-          "holder": null,
           "purl": "pkg:bazel/subdir2"
         }
       ],

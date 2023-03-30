@@ -47,6 +47,7 @@
     "code_view_url": null,
     "vcs_url": null,
     "copyright": null,
+    "holder": null,
     "declared_license_expression": "(epl-1.0 AND bsd-new) AND free-unknown",
     "declared_license_expression_spdx": "(EPL-1.0 AND BSD-3-Clause) AND LicenseRef-scancode-free-unknown",
     "license_detections": [
@@ -126,7 +127,6 @@
     "repository_download_url": "https://pypi.org/packages/source/p/paho-mqtt/paho-mqtt-1.5.0.tar.gz",
     "api_data_url": "https://pypi.org/pypi/paho-mqtt/1.5.0/json",
     "datasource_id": "pypi_setup_py",
-    "holder": null,
     "purl": "pkg:pypi/paho-mqtt@1.5.0"
   }
 ]

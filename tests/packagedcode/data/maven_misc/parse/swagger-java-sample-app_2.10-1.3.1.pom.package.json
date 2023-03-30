@@ -23,6 +23,7 @@
   "code_view_url": null,
   "vcs_url": null,
   "copyright": null,
+  "holder": null,
   "declared_license_expression": null,
   "declared_license_expression_spdx": null,
   "license_detections": [],
@@ -102,6 +103,5 @@
   "repository_download_url": "https://repo1.maven.org/maven2/com/wordnik/swagger-java-sample-app_2.10/1.3.1/swagger-java-sample-app_2.10-1.3.1.war",
   "api_data_url": "https://repo1.maven.org/maven2/com/wordnik/swagger-java-sample-app_2.10/1.3.1/swagger-java-sample-app_2.10-1.3.1.pom",
   "datasource_id": "maven_pom",
-  "holder": null,
   "purl": "pkg:maven/com.wordnik/swagger-java-sample-app_2.10@1.3.1?type=war"
 }

@@ -67,6 +67,7 @@
     "code_view_url": null,
     "vcs_url": "git+https://github.com/sequelize/sequelize.git",
     "copyright": null,
+    "holder": null,
     "declared_license_expression": "mit",
     "declared_license_expression_spdx": "MIT",
     "license_detections": [
@@ -524,7 +525,6 @@
     "repository_download_url": "https://registry.npmjs.org/sequelize/-/sequelize-3.30.2.tgz",
     "api_data_url": "https://registry.npmjs.org/sequelize/3.30.2",
     "datasource_id": "npm_package_json",
-    "holder": null,
     "purl": "pkg:npm/sequelize@3.30.2"
   }
 ]

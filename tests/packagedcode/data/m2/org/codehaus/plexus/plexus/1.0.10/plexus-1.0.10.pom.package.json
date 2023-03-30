@@ -155,6 +155,7 @@
   "code_view_url": "http://fisheye.codehaus.org/browse/plexus/pom/tags/plexus-1.0.10",
   "vcs_url": "svn+http://svn.codehaus.org/plexus/pom/tags/plexus-1.0.10",
   "copyright": null,
+  "holder": null,
   "declared_license_expression": null,
   "declared_license_expression_spdx": null,
   "license_detections": [],
@@ -184,6 +185,5 @@
   "repository_download_url": "https://repo1.maven.org/maven2/org/codehaus/plexus/plexus/1.0.10/plexus-1.0.10.jar",
   "api_data_url": "https://repo1.maven.org/maven2/org/codehaus/plexus/plexus/1.0.10/plexus-1.0.10.pom",
   "datasource_id": "maven_pom",
-  "holder": null,
   "purl": "pkg:maven/org.codehaus.plexus/plexus@1.0.10"
 }

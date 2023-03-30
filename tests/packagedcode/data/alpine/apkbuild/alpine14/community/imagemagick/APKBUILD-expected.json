@@ -21,6 +21,7 @@
   "code_view_url": null,
   "vcs_url": null,
   "copyright": null,
+  "holder": null,
   "declared_license_expression": "imagemagick",
   "declared_license_expression_spdx": "ImageMagick",
   "license_detections": [
@@ -78,6 +79,5 @@
   "repository_download_url": null,
   "api_data_url": null,
   "datasource_id": "alpine_apkbuild",
-  "holder": null,
   "purl": "pkg:alpine/imagemagick@7.0.11.13-r0"
 }

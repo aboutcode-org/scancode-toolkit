@@ -38,6 +38,7 @@
       "code_view_url": null,
       "vcs_url": null,
       "copyright": null,
+      "holder": null,
       "declared_license_expression": null,
       "declared_license_expression_spdx": null,
       "license_detections": [],
@@ -51,7 +52,6 @@
       "repository_homepage_url": "https://pub.dev/packages/openapi/versions/1.0.0",
       "repository_download_url": "https://pub.dartlang.org/packages/openapi/versions/1.0.0.tar.gz",
       "api_data_url": "https://pub.dev/api/packages/openapi/versions/1.0.0",
-      "holder": null,
       "package_uid": "pkg:dart/openapi@1.0.0?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_paths": [
         "authors-pubspec.yaml"
@@ -149,6 +149,7 @@
           "code_view_url": null,
           "vcs_url": null,
           "copyright": null,
+          "holder": null,
           "declared_license_expression": null,
           "declared_license_expression_spdx": null,
           "license_detections": [],
@@ -196,7 +197,6 @@
           "repository_download_url": "https://pub.dartlang.org/packages/openapi/versions/1.0.0.tar.gz",
           "api_data_url": "https://pub.dev/api/packages/openapi/versions/1.0.0",
           "datasource_id": "pubspec_yaml",
-          "holder": null,
           "purl": "pkg:dart/openapi@1.0.0"
         }
       ],

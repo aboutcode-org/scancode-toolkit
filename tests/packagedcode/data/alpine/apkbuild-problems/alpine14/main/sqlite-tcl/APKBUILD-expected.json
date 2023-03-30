@@ -21,6 +21,7 @@
   "code_view_url": null,
   "vcs_url": null,
   "copyright": null,
+  "holder": null,
   "declared_license_expression": "public-domain",
   "declared_license_expression_spdx": "LicenseRef-scancode-public-domain",
   "license_detections": [
@@ -70,6 +71,5 @@
   "repository_download_url": null,
   "api_data_url": null,
   "datasource_id": "alpine_apkbuild",
-  "holder": null,
   "purl": "pkg:alpine/sqlite-tcl@3.35.5-r0"
 }

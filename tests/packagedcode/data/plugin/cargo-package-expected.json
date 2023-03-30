@@ -31,6 +31,7 @@
       "code_view_url": null,
       "vcs_url": "https://github.com/clap-rs/clap",
       "copyright": null,
+      "holder": null,
       "declared_license_expression": "mit",
       "declared_license_expression_spdx": "MIT",
       "license_detections": [
@@ -64,7 +65,6 @@
       "repository_homepage_url": "https://crates.io/crates/clap",
       "repository_download_url": "https://crates.io/api/v1/crates/clap/2.32.0/download",
       "api_data_url": "https://crates.io/api/v1/crates/clap",
-      "holder": null,
       "package_uid": "pkg:cargo/clap@2.32.0?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_paths": [
         "Cargo.toml"
@@ -112,6 +112,7 @@
           "code_view_url": null,
           "vcs_url": "https://github.com/clap-rs/clap",
           "copyright": null,
+          "holder": null,
           "declared_license_expression": "mit",
           "declared_license_expression_spdx": "MIT",
           "license_detections": [
@@ -148,7 +149,6 @@
           "repository_download_url": "https://crates.io/api/v1/crates/clap/2.32.0/download",
           "api_data_url": "https://crates.io/api/v1/crates/clap",
           "datasource_id": "cargo_toml",
-          "holder": null,
           "purl": "pkg:cargo/clap@2.32.0"
         }
       ],

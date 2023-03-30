@@ -106,6 +106,7 @@
   "code_view_url": "scm:svn:https://svn.codehaus.org/jetty/pom/tags/jetty-parent-7",
   "vcs_url": "svn+https://svn.codehaus.org/jetty/pom/tags/jetty-parent-7",
   "copyright": null,
+  "holder": null,
   "declared_license_expression": "apache-2.0",
   "declared_license_expression_spdx": "Apache-2.0",
   "license_detections": [
@@ -163,6 +164,5 @@
   "repository_download_url": "https://repo1.maven.org/maven2/org/mortbay/jetty/jetty-parent/7/jetty-parent-7.jar",
   "api_data_url": "https://repo1.maven.org/maven2/org/mortbay/jetty/jetty-parent/7/jetty-parent-7.pom",
   "datasource_id": "maven_pom",
-  "holder": null,
   "purl": "pkg:maven/org.mortbay.jetty/jetty-parent@7"
 }

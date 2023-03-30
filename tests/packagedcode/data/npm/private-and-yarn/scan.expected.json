@@ -45,6 +45,7 @@
         "code_view_url": null,
         "vcs_url": null,
         "copyright": null,
+        "holder": null,
         "declared_license_expression": null,
         "declared_license_expression_spdx": null,
         "license_detections": [],
@@ -72,7 +73,6 @@
         "repository_download_url": "https://registry.npmjs.org/@babel/runtime/-/runtime-7.2.0.tgz",
         "api_data_url": "https://registry.npmjs.org/@babel%2fruntime",
         "datasource_id": "yarn_lock_v1",
-        "holder": null,
         "purl": "pkg:npm/%40babel/runtime@7.2.0"
       },
       "extra_data": {},
@@ -111,6 +111,7 @@
         "code_view_url": null,
         "vcs_url": null,
         "copyright": null,
+        "holder": null,
         "declared_license_expression": null,
         "declared_license_expression_spdx": null,
         "license_detections": [],
@@ -198,7 +199,6 @@
         "repository_download_url": "https://registry.npmjs.org/@ballerina/api-designer/-/api-designer-0.99.0-RC3.tgz",
         "api_data_url": "https://registry.npmjs.org/@ballerina%2fapi-designer",
         "datasource_id": "yarn_lock_v1",
-        "holder": null,
         "purl": "pkg:npm/%40ballerina/api-designer@0.99.0-RC3"
       },
       "extra_data": {},
@@ -237,6 +237,7 @@
         "code_view_url": null,
         "vcs_url": null,
         "copyright": null,
+        "holder": null,
         "declared_license_expression": null,
         "declared_license_expression_spdx": null,
         "license_detections": [],
@@ -314,7 +315,6 @@
         "repository_download_url": "https://registry.npmjs.org/@ballerina/ast-model/-/ast-model-0.99.0-RC3.tgz",
         "api_data_url": "https://registry.npmjs.org/@ballerina%2fast-model",
         "datasource_id": "yarn_lock_v1",
-        "holder": null,
         "purl": "pkg:npm/%40ballerina/ast-model@0.99.0-RC3"
       },
       "extra_data": {},
@@ -353,6 +353,7 @@
         "code_view_url": null,
         "vcs_url": null,
         "copyright": null,
+        "holder": null,
         "declared_license_expression": null,
         "declared_license_expression_spdx": null,
         "license_detections": [],
@@ -380,7 +381,6 @@
         "repository_download_url": "https://registry.npmjs.org/@ballerina/ballerina-by-examples/-/ballerina-by-examples-0.99.0-RC3.tgz",
         "api_data_url": "https://registry.npmjs.org/@ballerina%2fballerina-by-examples",
         "datasource_id": "yarn_lock_v1",
-        "holder": null,
         "purl": "pkg:npm/%40ballerina/ballerina-by-examples@0.99.0-RC3"
       },
       "extra_data": {},
@@ -419,6 +419,7 @@
         "code_view_url": null,
         "vcs_url": null,
         "copyright": null,
+        "holder": null,
         "declared_license_expression": null,
         "declared_license_expression_spdx": null,
         "license_detections": [],
@@ -506,7 +507,6 @@
         "repository_download_url": "https://registry.npmjs.org/@ballerina/diagram/-/diagram-0.99.0-RC3.tgz",
         "api_data_url": "https://registry.npmjs.org/@ballerina%2fdiagram",
         "datasource_id": "yarn_lock_v1",
-        "holder": null,
         "purl": "pkg:npm/%40ballerina/diagram@0.99.0-RC3"
       },
       "extra_data": {},
@@ -545,6 +545,7 @@
         "code_view_url": null,
         "vcs_url": null,
         "copyright": null,
+        "holder": null,
         "declared_license_expression": null,
         "declared_license_expression_spdx": null,
         "license_detections": [],
@@ -622,7 +623,6 @@
         "repository_download_url": "https://registry.npmjs.org/@ballerina/distribution/-/distribution-0.99.0-RC3.tgz",
         "api_data_url": "https://registry.npmjs.org/@ballerina%2fdistribution",
         "datasource_id": "yarn_lock_v1",
-        "holder": null,
         "purl": "pkg:npm/%40ballerina/distribution@0.99.0-RC3"
       },
       "extra_data": {},
@@ -661,6 +661,7 @@
         "code_view_url": null,
         "vcs_url": null,
         "copyright": null,
+        "holder": null,
         "declared_license_expression": null,
         "declared_license_expression_spdx": null,
         "license_detections": [],
@@ -718,7 +719,6 @@
         "repository_download_url": "https://registry.npmjs.org/@ballerina/documentation/-/documentation-0.99.0-RC3.tgz",
         "api_data_url": "https://registry.npmjs.org/@ballerina%2fdocumentation",
         "datasource_id": "yarn_lock_v1",
-        "holder": null,
         "purl": "pkg:npm/%40ballerina/documentation@0.99.0-RC3"
       },
       "extra_data": {},
@@ -757,6 +757,7 @@
         "code_view_url": null,
         "vcs_url": null,
         "copyright": null,
+        "holder": null,
         "declared_license_expression": null,
         "declared_license_expression_spdx": null,
         "license_detections": [],
@@ -773,7 +774,6 @@
         "repository_download_url": "https://registry.npmjs.org/@ballerina/font/-/font-0.99.0-RC3.tgz",
         "api_data_url": "https://registry.npmjs.org/@ballerina%2ffont",
         "datasource_id": "yarn_lock_v1",
-        "holder": null,
         "purl": "pkg:npm/%40ballerina/font@0.99.0-RC3"
       },
       "extra_data": {},
@@ -812,6 +812,7 @@
         "code_view_url": null,
         "vcs_url": null,
         "copyright": null,
+        "holder": null,
         "declared_license_expression": null,
         "declared_license_expression_spdx": null,
         "license_detections": [],
@@ -849,7 +850,6 @@
         "repository_download_url": "https://registry.npmjs.org/zip-dir/-/zip-dir-1.0.2.tgz",
         "api_data_url": "https://registry.npmjs.org/zip-dir/1.0.2",
         "datasource_id": "yarn_lock_v1",
-        "holder": null,
         "purl": "pkg:npm/zip-dir@1.0.2"
       },
       "extra_data": {},
@@ -894,6 +894,7 @@
           "code_view_url": null,
           "vcs_url": null,
           "copyright": null,
+          "holder": null,
           "declared_license_expression": null,
           "declared_license_expression_spdx": null,
           "license_detections": [],
@@ -921,7 +922,6 @@
           "repository_download_url": null,
           "api_data_url": null,
           "datasource_id": "npm_package_json",
-          "holder": null,
           "purl": null
         }
       ],
@@ -955,6 +955,7 @@
           "code_view_url": null,
           "vcs_url": null,
           "copyright": null,
+          "holder": null,
           "declared_license_expression": null,
           "declared_license_expression_spdx": null,
           "license_detections": [],
@@ -997,6 +998,7 @@
                 "code_view_url": null,
                 "vcs_url": null,
                 "copyright": null,
+                "holder": null,
                 "declared_license_expression": null,
                 "declared_license_expression_spdx": null,
                 "license_detections": [],
@@ -1024,7 +1026,6 @@
                 "repository_download_url": "https://registry.npmjs.org/@babel/runtime/-/runtime-7.2.0.tgz",
                 "api_data_url": "https://registry.npmjs.org/@babel%2fruntime",
                 "datasource_id": "yarn_lock_v1",
-                "holder": null,
                 "purl": "pkg:npm/%40babel/runtime@7.2.0"
               },
               "extra_data": {}
@@ -1059,6 +1060,7 @@
                 "code_view_url": null,
                 "vcs_url": null,
                 "copyright": null,
+                "holder": null,
                 "declared_license_expression": null,
                 "declared_license_expression_spdx": null,
                 "license_detections": [],
@@ -1146,7 +1148,6 @@
                 "repository_download_url": "https://registry.npmjs.org/@ballerina/api-designer/-/api-designer-0.99.0-RC3.tgz",
                 "api_data_url": "https://registry.npmjs.org/@ballerina%2fapi-designer",
                 "datasource_id": "yarn_lock_v1",
-                "holder": null,
                 "purl": "pkg:npm/%40ballerina/api-designer@0.99.0-RC3"
               },
               "extra_data": {}
@@ -1181,6 +1182,7 @@
                 "code_view_url": null,
                 "vcs_url": null,
                 "copyright": null,
+                "holder": null,
                 "declared_license_expression": null,
                 "declared_license_expression_spdx": null,
                 "license_detections": [],
@@ -1258,7 +1260,6 @@
                 "repository_download_url": "https://registry.npmjs.org/@ballerina/ast-model/-/ast-model-0.99.0-RC3.tgz",
                 "api_data_url": "https://registry.npmjs.org/@ballerina%2fast-model",
                 "datasource_id": "yarn_lock_v1",
-                "holder": null,
                 "purl": "pkg:npm/%40ballerina/ast-model@0.99.0-RC3"
               },
               "extra_data": {}
@@ -1293,6 +1294,7 @@
                 "code_view_url": null,
                 "vcs_url": null,
                 "copyright": null,
+                "holder": null,
                 "declared_license_expression": null,
                 "declared_license_expression_spdx": null,
                 "license_detections": [],
@@ -1320,7 +1322,6 @@
                 "repository_download_url": "https://registry.npmjs.org/@ballerina/ballerina-by-examples/-/ballerina-by-examples-0.99.0-RC3.tgz",
                 "api_data_url": "https://registry.npmjs.org/@ballerina%2fballerina-by-examples",
                 "datasource_id": "yarn_lock_v1",
-                "holder": null,
                 "purl": "pkg:npm/%40ballerina/ballerina-by-examples@0.99.0-RC3"
               },
               "extra_data": {}
@@ -1355,6 +1356,7 @@
                 "code_view_url": null,
                 "vcs_url": null,
                 "copyright": null,
+                "holder": null,
                 "declared_license_expression": null,
                 "declared_license_expression_spdx": null,
                 "license_detections": [],
@@ -1442,7 +1444,6 @@
                 "repository_download_url": "https://registry.npmjs.org/@ballerina/diagram/-/diagram-0.99.0-RC3.tgz",
                 "api_data_url": "https://registry.npmjs.org/@ballerina%2fdiagram",
                 "datasource_id": "yarn_lock_v1",
-                "holder": null,
                 "purl": "pkg:npm/%40ballerina/diagram@0.99.0-RC3"
               },
               "extra_data": {}
@@ -1477,6 +1478,7 @@
                 "code_view_url": null,
                 "vcs_url": null,
                 "copyright": null,
+                "holder": null,
                 "declared_license_expression": null,
                 "declared_license_expression_spdx": null,
                 "license_detections": [],
@@ -1554,7 +1556,6 @@
                 "repository_download_url": "https://registry.npmjs.org/@ballerina/distribution/-/distribution-0.99.0-RC3.tgz",
                 "api_data_url": "https://registry.npmjs.org/@ballerina%2fdistribution",
                 "datasource_id": "yarn_lock_v1",
-                "holder": null,
                 "purl": "pkg:npm/%40ballerina/distribution@0.99.0-RC3"
               },
               "extra_data": {}
@@ -1589,6 +1590,7 @@
                 "code_view_url": null,
                 "vcs_url": null,
                 "copyright": null,
+                "holder": null,
                 "declared_license_expression": null,
                 "declared_license_expression_spdx": null,
                 "license_detections": [],
@@ -1646,7 +1648,6 @@
                 "repository_download_url": "https://registry.npmjs.org/@ballerina/documentation/-/documentation-0.99.0-RC3.tgz",
                 "api_data_url": "https://registry.npmjs.org/@ballerina%2fdocumentation",
                 "datasource_id": "yarn_lock_v1",
-                "holder": null,
                 "purl": "pkg:npm/%40ballerina/documentation@0.99.0-RC3"
               },
               "extra_data": {}
@@ -1681,6 +1682,7 @@
                 "code_view_url": null,
                 "vcs_url": null,
                 "copyright": null,
+                "holder": null,
                 "declared_license_expression": null,
                 "declared_license_expression_spdx": null,
                 "license_detections": [],
@@ -1697,7 +1699,6 @@
                 "repository_download_url": "https://registry.npmjs.org/@ballerina/font/-/font-0.99.0-RC3.tgz",
                 "api_data_url": "https://registry.npmjs.org/@ballerina%2ffont",
                 "datasource_id": "yarn_lock_v1",
-                "holder": null,
                 "purl": "pkg:npm/%40ballerina/font@0.99.0-RC3"
               },
               "extra_data": {}
@@ -1732,6 +1733,7 @@
                 "code_view_url": null,
                 "vcs_url": null,
                 "copyright": null,
+                "holder": null,
                 "declared_license_expression": null,
                 "declared_license_expression_spdx": null,
                 "license_detections": [],
@@ -1769,7 +1771,6 @@
                 "repository_download_url": "https://registry.npmjs.org/zip-dir/-/zip-dir-1.0.2.tgz",
                 "api_data_url": "https://registry.npmjs.org/zip-dir/1.0.2",
                 "datasource_id": "yarn_lock_v1",
-                "holder": null,
                 "purl": "pkg:npm/zip-dir@1.0.2"
               },
               "extra_data": {}
@@ -1779,7 +1780,6 @@
           "repository_download_url": null,
           "api_data_url": null,
           "datasource_id": "yarn_lock_v1",
-          "holder": null,
           "purl": null
         }
       ],

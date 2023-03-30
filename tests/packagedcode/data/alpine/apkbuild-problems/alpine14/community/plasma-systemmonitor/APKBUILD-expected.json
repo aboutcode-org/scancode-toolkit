@@ -21,6 +21,7 @@
   "code_view_url": null,
   "vcs_url": null,
   "copyright": null,
+  "holder": null,
   "declared_license_expression": "kde-accepted-gpl AND kde-accepted-lgpl AND cc0-1.0",
   "declared_license_expression_spdx": "LicenseRef-scancode-kde-accepted-gpl AND LicenseRef-scancode-kde-accepted-lgpl AND CC0-1.0",
   "license_detections": [
@@ -70,6 +71,5 @@
   "repository_download_url": null,
   "api_data_url": null,
   "datasource_id": "alpine_apkbuild",
-  "holder": null,
   "purl": "pkg:alpine/plasma-systemmonitor@5.22.0-r0"
 }

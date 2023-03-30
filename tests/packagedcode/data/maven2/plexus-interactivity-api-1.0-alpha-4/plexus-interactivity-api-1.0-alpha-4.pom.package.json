@@ -106,6 +106,7 @@
   "code_view_url": null,
   "vcs_url": "svn://svn.codehaus.org/plexus/scm/trunk/plexus-components/plexus-interactivity/plexus-interactivity-api",
   "copyright": null,
+  "holder": null,
   "declared_license_expression": null,
   "declared_license_expression_spdx": null,
   "license_detections": [],
@@ -165,6 +166,5 @@
   "repository_download_url": "https://repo1.maven.org/maven2/org/codehaus/plexus/plexus-interactivity-api/1.0-alpha-4/plexus-interactivity-api-1.0-alpha-4.jar",
   "api_data_url": "https://repo1.maven.org/maven2/org/codehaus/plexus/plexus-interactivity-api/1.0-alpha-4/plexus-interactivity-api-1.0-alpha-4.pom",
   "datasource_id": "maven_pom",
-  "holder": null,
   "purl": "pkg:maven/org.codehaus.plexus/plexus-interactivity-api@1.0-alpha-4"
 }

@@ -21,6 +21,7 @@
   "code_view_url": null,
   "vcs_url": null,
   "copyright": null,
+  "holder": null,
   "declared_license_expression": null,
   "declared_license_expression_spdx": null,
   "license_detections": [],
@@ -39,6 +40,5 @@
   "repository_download_url": "https://repo1.maven.org/maven2/com/google/collect/com.ss.c.g.common.collect/0.5.0.alpha/com.ss.c.g.common.collect-0.5.0.alpha.jar",
   "api_data_url": "https://repo1.maven.org/maven2/com/google/collect/com.ss.c.g.common.collect/0.5.0.alpha/com.ss.c.g.common.collect-0.5.0.alpha.pom",
   "datasource_id": "maven_pom",
-  "holder": null,
   "purl": "pkg:maven/com.google.collect/com.ss.c.g.common.collect@0.5.0.alpha"
 }

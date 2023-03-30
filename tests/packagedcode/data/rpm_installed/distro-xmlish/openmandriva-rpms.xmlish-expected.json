@@ -24,6 +24,7 @@
     "code_view_url": null,
     "vcs_url": null,
     "copyright": null,
+    "holder": null,
     "declared_license_expression": "gpl-1.0-plus",
     "declared_license_expression_spdx": "GPL-1.0-or-later",
     "license_detections": [
@@ -925,7 +926,6 @@
     "repository_download_url": null,
     "api_data_url": null,
     "datasource_id": "rpm_installed_database_sqlite",
-    "holder": null,
     "purl": "pkg:rpm/chkconfig@1.11?arch=x86_64"
   },
   {
@@ -953,6 +953,7 @@
     "code_view_url": null,
     "vcs_url": null,
     "copyright": null,
+    "holder": null,
     "declared_license_expression": "mit",
     "declared_license_expression_spdx": "MIT",
     "license_detections": [
@@ -1017,7 +1018,6 @@
     "repository_download_url": null,
     "api_data_url": null,
     "datasource_id": "rpm_installed_database_sqlite",
-    "holder": null,
     "purl": "pkg:rpm/lib64ncursesw6@6.2?arch=x86_64"
   }
 ]

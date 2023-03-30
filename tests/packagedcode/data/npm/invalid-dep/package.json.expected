@@ -39,6 +39,7 @@
     "code_view_url": null,
     "vcs_url": "git+https://github.com/stevepapa/angular2-autosize.git",
     "copyright": null,
+    "holder": null,
     "declared_license_expression": "mit",
     "declared_license_expression_spdx": "MIT",
     "license_detections": [
@@ -86,7 +87,6 @@
     "repository_download_url": "https://registry.npmjs.org/angular2-autosize/-/angular2-autosize-1.0.0.tgz",
     "api_data_url": "https://registry.npmjs.org/angular2-autosize/1.0.0",
     "datasource_id": "npm_package_json",
-    "holder": null,
     "purl": "pkg:npm/angular2-autosize@1.0.0"
   }
 ]

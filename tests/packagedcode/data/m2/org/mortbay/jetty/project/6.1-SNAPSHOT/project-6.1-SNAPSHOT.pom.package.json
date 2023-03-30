@@ -21,6 +21,7 @@
   "code_view_url": "http://fisheye.codehaus.org/viewrep/jetty/",
   "vcs_url": "svn+http://svn.codehaus.org/jetty/jetty/branches/jetty-6.1",
   "copyright": null,
+  "holder": null,
   "declared_license_expression": null,
   "declared_license_expression_spdx": null,
   "license_detections": [],
@@ -120,6 +121,5 @@
   "repository_download_url": "https://repo1.maven.org/maven2/org/mortbay/jetty/project/6.1-SNAPSHOT/project-6.1-SNAPSHOT.jar",
   "api_data_url": "https://repo1.maven.org/maven2/org/mortbay/jetty/project/6.1-SNAPSHOT/project-6.1-SNAPSHOT.pom",
   "datasource_id": "maven_pom",
-  "holder": null,
   "purl": "pkg:maven/org.mortbay.jetty/project@6.1-SNAPSHOT"
 }

@@ -23,6 +23,7 @@
       "code_view_url": null,
       "vcs_url": null,
       "copyright": null,
+      "holder": null,
       "declared_license_expression": null,
       "declared_license_expression_spdx": null,
       "license_detections": [],
@@ -36,7 +37,6 @@
       "repository_homepage_url": null,
       "repository_download_url": null,
       "api_data_url": null,
-      "holder": null,
       "package_uid": "pkg:buck/end2end?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_paths": [
         "end2end/BUCK"
@@ -69,6 +69,7 @@
       "code_view_url": null,
       "vcs_url": null,
       "copyright": null,
+      "holder": null,
       "declared_license_expression": "apache-2.0",
       "declared_license_expression_spdx": "Apache-2.0",
       "license_detections": [
@@ -102,7 +103,6 @@
       "repository_homepage_url": null,
       "repository_download_url": null,
       "api_data_url": null,
-      "holder": null,
       "package_uid": "pkg:buck/bin?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_paths": [
         "end2end/subdir2/BUCK"
@@ -149,6 +149,7 @@
           "code_view_url": null,
           "vcs_url": null,
           "copyright": null,
+          "holder": null,
           "declared_license_expression": null,
           "declared_license_expression_spdx": null,
           "license_detections": [],
@@ -165,7 +166,6 @@
           "repository_download_url": null,
           "api_data_url": null,
           "datasource_id": "buck_file",
-          "holder": null,
           "purl": "pkg:buck/end2end"
         }
       ],
@@ -246,6 +246,7 @@
           "code_view_url": null,
           "vcs_url": null,
           "copyright": null,
+          "holder": null,
           "declared_license_expression": "apache-2.0",
           "declared_license_expression_spdx": "Apache-2.0",
           "license_detections": [
@@ -284,7 +285,6 @@
           "repository_download_url": null,
           "api_data_url": null,
           "datasource_id": "buck_file",
-          "holder": null,
           "purl": "pkg:buck/bin"
         }
       ],

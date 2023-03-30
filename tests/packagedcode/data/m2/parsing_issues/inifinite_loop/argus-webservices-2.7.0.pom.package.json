@@ -23,6 +23,7 @@
   "code_view_url": null,
   "vcs_url": null,
   "copyright": null,
+  "holder": null,
   "declared_license_expression": null,
   "declared_license_expression_spdx": null,
   "license_detections": [],
@@ -152,6 +153,5 @@
   "repository_download_url": "https://repo1.maven.org/maven2/com/salesforce/argus/argus-webservices/${project.version}/argus-webservices-${project.version}.war",
   "api_data_url": "https://repo1.maven.org/maven2/com/salesforce/argus/argus-webservices/${project.version}/argus-webservices-${project.version}.pom",
   "datasource_id": "maven_pom",
-  "holder": null,
   "purl": "pkg:maven/com.salesforce.argus/argus-webservices@%24%7Bproject.version%7D?type=war"
 }

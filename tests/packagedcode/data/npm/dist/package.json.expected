@@ -30,6 +30,7 @@
     "code_view_url": null,
     "vcs_url": "git+https://github.com/GeorgDangl/angular-compare-validator.git",
     "copyright": null,
+    "holder": null,
     "declared_license_expression": "mit",
     "declared_license_expression_spdx": "MIT",
     "license_detections": [
@@ -117,7 +118,6 @@
     "repository_download_url": "https://registry.npmjs.org/angular-compare-validator/-/angular-compare-validator-0.1.1.tgz",
     "api_data_url": "https://registry.npmjs.org/angular-compare-validator/0.1.1",
     "datasource_id": "npm_package_json",
-    "holder": null,
     "purl": "pkg:npm/angular-compare-validator@0.1.1"
   }
 ]

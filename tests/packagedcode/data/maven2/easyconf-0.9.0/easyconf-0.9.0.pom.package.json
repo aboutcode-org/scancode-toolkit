@@ -57,6 +57,7 @@
   "code_view_url": "http://cvs.sourceforge.net/viewcvs.py/easyconf/",
   "vcs_url": "cvs+pserver:anonymous@cvs.sourceforge.net:/cvsroot/easyconf:easyconf",
   "copyright": null,
+  "holder": null,
   "declared_license_expression": null,
   "declared_license_expression_spdx": null,
   "license_detections": [],
@@ -256,6 +257,5 @@
   "repository_download_url": "https://repo1.maven.org/maven2/easyconf/easyconf/0.9.0/easyconf-0.9.0.jar",
   "api_data_url": "https://repo1.maven.org/maven2/easyconf/easyconf/0.9.0/easyconf-0.9.0.pom",
   "datasource_id": "maven_pom",
-  "holder": null,
   "purl": "pkg:maven/easyconf/easyconf@0.9.0"
 }

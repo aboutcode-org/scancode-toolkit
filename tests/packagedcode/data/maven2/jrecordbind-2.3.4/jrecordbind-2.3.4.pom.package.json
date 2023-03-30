@@ -29,6 +29,7 @@
   "code_view_url": "https://jrecordbind.dev.java.net/source/browse/jrecordbind/",
   "vcs_url": "svn+https://jrecordbind.dev.java.net/svn/jrecordbind/trunk/",
   "copyright": null,
+  "holder": null,
   "declared_license_expression": "lgpl-2.0-plus AND lgpl-2.1-plus",
   "declared_license_expression_spdx": "LGPL-2.0-or-later AND LGPL-2.1-or-later",
   "license_detections": [
@@ -127,6 +128,5 @@
   "repository_download_url": "https://repo1.maven.org/maven2/it/assist/jrecordbind/jrecordbind${artifactId.ext}/2.3.4/jrecordbind${artifactId.ext}-2.3.4.jar",
   "api_data_url": "https://repo1.maven.org/maven2/it/assist/jrecordbind/jrecordbind${artifactId.ext}/2.3.4/jrecordbind${artifactId.ext}-2.3.4.pom",
   "datasource_id": "maven_pom",
-  "holder": null,
   "purl": "pkg:maven/it.assist.jrecordbind/jrecordbind%24%7BartifactId.ext%7D@2.3.4"
 }

@@ -30,6 +30,7 @@
     "code_view_url": null,
     "vcs_url": "git+https://github.com/ionic-team/ionic-app-scripts.git",
     "copyright": null,
+    "holder": null,
     "declared_license_expression": "mit",
     "declared_license_expression_spdx": "MIT",
     "license_detections": [
@@ -677,7 +678,6 @@
     "repository_download_url": "https://registry.npmjs.org/@ionic/app-scripts/-/app-scripts-3.0.1-201710301651.tgz",
     "api_data_url": "https://registry.npmjs.org/@ionic%2fapp-scripts",
     "datasource_id": "npm_package_json",
-    "holder": null,
     "purl": "pkg:npm/%40ionic/app-scripts@3.0.1-201710301651"
   }
 ]

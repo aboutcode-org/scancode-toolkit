@@ -35,6 +35,7 @@
     "code_view_url": null,
     "vcs_url": "git+https://github.com/gionkunz/chartist-js.git",
     "copyright": null,
+    "holder": null,
     "declared_license_expression": "(mit OR wtfpl-2.0) AND wtfpl-2.0 AND mit",
     "declared_license_expression_spdx": "(MIT OR WTFPL) AND WTFPL AND MIT",
     "license_detections": [
@@ -448,7 +449,6 @@
     "repository_download_url": "https://registry.npmjs.org/chartist/-/chartist-0.11.0.tgz",
     "api_data_url": "https://registry.npmjs.org/chartist/0.11.0",
     "datasource_id": "npm_package_json",
-    "holder": null,
     "purl": "pkg:npm/chartist@0.11.0"
   }
 ]

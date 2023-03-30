@@ -44,6 +44,7 @@
     "code_view_url": null,
     "vcs_url": "git+http://github.com/gomfunkel/node-exif.git",
     "copyright": null,
+    "holder": null,
     "declared_license_expression": null,
     "declared_license_expression_spdx": null,
     "license_detections": [],
@@ -81,7 +82,6 @@
     "repository_download_url": "https://registry.npmjs.org/exif/-/exif-0.6.0.tgz",
     "api_data_url": "https://registry.npmjs.org/exif/0.6.0",
     "datasource_id": "npm_package_json",
-    "holder": null,
     "purl": "pkg:npm/exif@0.6.0"
   }
 ]

@@ -23,6 +23,7 @@
       "code_view_url": null,
       "vcs_url": null,
       "copyright": null,
+      "holder": null,
       "declared_license_expression": "apache-2.0",
       "declared_license_expression_spdx": "Apache-2.0",
       "license_detections": [
@@ -61,7 +62,6 @@
       "repository_homepage_url": "https://repo1.maven.org/maven2/org/apache/activemq/activemq-camel/5.4.2/",
       "repository_download_url": "https://repo1.maven.org/maven2/org/apache/activemq/activemq-camel/5.4.2/activemq-camel-5.4.2.jar",
       "api_data_url": "https://repo1.maven.org/maven2/org/apache/activemq/activemq-camel/5.4.2/activemq-camel-5.4.2.pom",
-      "holder": null,
       "package_uid": "pkg:maven/org.apache.activemq/activemq-camel@5.4.2?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_paths": [
         "activemq-camel-pom.xml"
@@ -264,6 +264,7 @@
           "code_view_url": null,
           "vcs_url": null,
           "copyright": null,
+          "holder": null,
           "declared_license_expression": "apache-2.0",
           "declared_license_expression_spdx": "Apache-2.0",
           "license_detections": [
@@ -416,7 +417,6 @@
           "repository_download_url": "https://repo1.maven.org/maven2/org/apache/activemq/activemq-camel/5.4.2/activemq-camel-5.4.2.jar",
           "api_data_url": "https://repo1.maven.org/maven2/org/apache/activemq/activemq-camel/5.4.2/activemq-camel-5.4.2.pom",
           "datasource_id": "maven_pom",
-          "holder": null,
           "purl": "pkg:maven/org.apache.activemq/activemq-camel@5.4.2"
         }
       ],

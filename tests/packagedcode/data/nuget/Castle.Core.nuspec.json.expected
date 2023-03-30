@@ -37,6 +37,7 @@
     "code_view_url": null,
     "vcs_url": "git+https://github.com/castleproject/Core",
     "copyright": "Copyright (c) 2004-2017 Castle Project - http://www.castleproject.org/",
+    "holder": "Castle Project",
     "declared_license_expression": "apache-2.0",
     "declared_license_expression_spdx": "Apache-2.0",
     "license_detections": [
@@ -204,7 +205,6 @@
     "repository_download_url": "https://www.nuget.org/api/v2/package/Castle.Core/4.2.1",
     "api_data_url": "https://api.nuget.org/v3/registration3/castle.core/4.2.1.json",
     "datasource_id": "nuget_nupsec",
-    "holder": "Castle Project",
     "purl": "pkg:nuget/Castle.Core@4.2.1"
   }
 ]

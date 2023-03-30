@@ -24,6 +24,7 @@
     "code_view_url": null,
     "vcs_url": null,
     "copyright": null,
+    "holder": null,
     "declared_license_expression": "public-domain",
     "declared_license_expression_spdx": "LicenseRef-scancode-public-domain",
     "license_detections": [
@@ -313,7 +314,6 @@
     "repository_download_url": null,
     "api_data_url": null,
     "datasource_id": "rpm_installed_database_sqlite",
-    "holder": null,
     "purl": "pkg:rpm/setup@2.5.58?arch=noarch"
   },
   {
@@ -341,6 +341,7 @@
     "code_view_url": null,
     "vcs_url": null,
     "copyright": null,
+    "holder": null,
     "declared_license_expression": "public-domain",
     "declared_license_expression_spdx": "LicenseRef-scancode-public-domain",
     "license_detections": [
@@ -377,7 +378,6 @@
     "repository_download_url": null,
     "api_data_url": null,
     "datasource_id": "rpm_installed_database_sqlite",
-    "holder": null,
     "purl": "pkg:rpm/basesystem@8.0?arch=noarch"
   }
 ]

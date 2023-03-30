@@ -37,6 +37,7 @@
     "code_view_url": null,
     "vcs_url": null,
     "copyright": null,
+    "holder": null,
     "declared_license_expression": "mit",
     "declared_license_expression_spdx": "MIT",
     "license_detections": [
@@ -104,7 +105,6 @@
     "repository_download_url": null,
     "api_data_url": "https://packagist.org/p/packages/jandreasn/a-timer.json",
     "datasource_id": "php_composer_json",
-    "holder": null,
     "purl": "pkg:composer/jandreasn/a-timer"
   }
 ]

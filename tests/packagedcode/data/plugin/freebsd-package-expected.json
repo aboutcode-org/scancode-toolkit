@@ -36,6 +36,7 @@
       "code_view_url": "https://svnweb.freebsd.org/ports/head/sysutils/dmidecode",
       "vcs_url": null,
       "copyright": null,
+      "holder": null,
       "declared_license_expression": "gpl-2.0",
       "declared_license_expression_spdx": "GPL-2.0-only",
       "license_detections": [
@@ -69,7 +70,6 @@
       "repository_homepage_url": null,
       "repository_download_url": null,
       "api_data_url": null,
-      "holder": null,
       "package_uid": "pkg:freebsd/dmidecode@2.12?arch=freebsd:10:x86:64&origin=sysutils/dmidecode&uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_paths": [
         "+COMPACT_MANIFEST"
@@ -122,6 +122,7 @@
           "code_view_url": "https://svnweb.freebsd.org/ports/head/sysutils/dmidecode",
           "vcs_url": null,
           "copyright": null,
+          "holder": null,
           "declared_license_expression": "gpl-2.0",
           "declared_license_expression_spdx": "GPL-2.0-only",
           "license_detections": [
@@ -158,7 +159,6 @@
           "repository_download_url": null,
           "api_data_url": null,
           "datasource_id": "freebsd_compact_manifest",
-          "holder": null,
           "purl": "pkg:freebsd/dmidecode@2.12?arch=freebsd:10:x86:64&origin=sysutils/dmidecode"
         }
       ],

@@ -23,6 +23,7 @@
       "code_view_url": null,
       "vcs_url": null,
       "copyright": null,
+      "holder": null,
       "declared_license_expression": "apache-2.0",
       "declared_license_expression_spdx": "Apache-2.0",
       "license_detections": [
@@ -58,7 +59,6 @@
       "repository_homepage_url": "https://repo1.maven.org/maven2/org/apache/activemq/activemq-camel/5.4.2/",
       "repository_download_url": "https://repo1.maven.org/maven2/org/apache/activemq/activemq-camel/5.4.2/activemq-camel-5.4.2.jar",
       "api_data_url": "https://repo1.maven.org/maven2/org/apache/activemq/activemq-camel/5.4.2/activemq-camel-5.4.2.pom",
-      "holder": null,
       "package_uid": "pkg:maven/org.apache.activemq/activemq-camel@5.4.2?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_paths": [
         "activemq-camel/activemq-camel-pom.xml"
@@ -91,6 +91,7 @@
       "code_view_url": null,
       "vcs_url": null,
       "copyright": null,
+      "holder": null,
       "declared_license_expression": null,
       "declared_license_expression_spdx": null,
       "license_detections": [],
@@ -106,7 +107,6 @@
       "repository_homepage_url": "https://repo1.maven.org/maven2/adarwin/adarwin/1.0/",
       "repository_download_url": "https://repo1.maven.org/maven2/adarwin/adarwin/1.0/adarwin-1.0.jar",
       "api_data_url": "https://repo1.maven.org/maven2/adarwin/adarwin/1.0/adarwin-1.0.pom",
-      "holder": null,
       "package_uid": "pkg:maven/adarwin/adarwin@1.0?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_paths": [
         "adarwin-1.0/adarwin-1.0.pom"
@@ -139,6 +139,7 @@
       "code_view_url": null,
       "vcs_url": null,
       "copyright": null,
+      "holder": null,
       "declared_license_expression": "apache-2.0",
       "declared_license_expression_spdx": "Apache-2.0",
       "license_detections": [
@@ -174,7 +175,6 @@
       "repository_homepage_url": "https://repo1.maven.org/maven2/org/apache/ant/ant-jai/1.7.0/",
       "repository_download_url": "https://repo1.maven.org/maven2/org/apache/ant/ant-jai/1.7.0/ant-jai-1.7.0.jar",
       "api_data_url": "https://repo1.maven.org/maven2/org/apache/ant/ant-jai/1.7.0/ant-jai-1.7.0.pom",
-      "holder": null,
       "package_uid": "pkg:maven/org.apache.ant/ant-jai@1.7.0?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_paths": [
         "ant-jai-1.7.0/ant-jai-1.7.0.pom"
@@ -207,6 +207,7 @@
       "code_view_url": null,
       "vcs_url": null,
       "copyright": null,
+      "holder": null,
       "declared_license_expression": "apache-2.0",
       "declared_license_expression_spdx": "Apache-2.0",
       "license_detections": [
@@ -242,7 +243,6 @@
       "repository_homepage_url": "https://repo1.maven.org/maven2/org/apache/ant/ant-jsch/1.7.0/",
       "repository_download_url": "https://repo1.maven.org/maven2/org/apache/ant/ant-jsch/1.7.0/ant-jsch-1.7.0.jar",
       "api_data_url": "https://repo1.maven.org/maven2/org/apache/ant/ant-jsch/1.7.0/ant-jsch-1.7.0.pom",
-      "holder": null,
       "package_uid": "pkg:maven/org.apache.ant/ant-jsch@1.7.0?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_paths": [
         "ant-jsch-1.7.0/ant-jsch-1.7.0.pom"
@@ -275,6 +275,7 @@
       "code_view_url": null,
       "vcs_url": null,
       "copyright": null,
+      "holder": null,
       "declared_license_expression": "public-domain AND gpl-1.0-plus",
       "declared_license_expression_spdx": "LicenseRef-scancode-public-domain AND GPL-1.0-or-later",
       "license_detections": [
@@ -329,7 +330,6 @@
       "repository_homepage_url": "https://repo1.maven.org/maven2/aopalliance/aopalliance/1.0/",
       "repository_download_url": "https://repo1.maven.org/maven2/aopalliance/aopalliance/1.0/aopalliance-1.0.jar",
       "api_data_url": "https://repo1.maven.org/maven2/aopalliance/aopalliance/1.0/aopalliance-1.0.pom",
-      "holder": null,
       "package_uid": "pkg:maven/aopalliance/aopalliance@1.0?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_paths": [
         "aopalliance-1.0/aopalliance-1.0.pom"
@@ -362,6 +362,7 @@
       "code_view_url": null,
       "vcs_url": null,
       "copyright": null,
+      "holder": null,
       "declared_license_expression": null,
       "declared_license_expression_spdx": null,
       "license_detections": [],
@@ -377,7 +378,6 @@
       "repository_homepage_url": "https://repo1.maven.org/maven2/bcel/bcel/5.1/",
       "repository_download_url": "https://repo1.maven.org/maven2/bcel/bcel/5.1/bcel-5.1.jar",
       "api_data_url": "https://repo1.maven.org/maven2/bcel/bcel/5.1/bcel-5.1.pom",
-      "holder": null,
       "package_uid": "pkg:maven/bcel/bcel@5.1?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_paths": [
         "bcel-5.1/bcel-5.1.pom"
@@ -439,6 +439,7 @@
       "code_view_url": "http://cvs.classworlds.codehaus.org/",
       "vcs_url": "cvs+pserver:anonymous@cvs.codehaus.org:/scm/cvspublic/:classworlds",
       "copyright": null,
+      "holder": null,
       "declared_license_expression": null,
       "declared_license_expression_spdx": null,
       "license_detections": [],
@@ -454,7 +455,6 @@
       "repository_homepage_url": "https://repo1.maven.org/maven2/classworlds/classworlds/1.1-alpha-2/",
       "repository_download_url": "https://repo1.maven.org/maven2/classworlds/classworlds/1.1-alpha-2/classworlds-1.1-alpha-2.jar",
       "api_data_url": "https://repo1.maven.org/maven2/classworlds/classworlds/1.1-alpha-2/classworlds-1.1-alpha-2.pom",
-      "holder": null,
       "package_uid": "pkg:maven/classworlds/classworlds@1.1-alpha-2?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_paths": [
         "classworlds-1.1-alpha2/classworlds-1.1-alpha-2.pom"
@@ -537,6 +537,7 @@
       "code_view_url": null,
       "vcs_url": null,
       "copyright": null,
+      "holder": null,
       "declared_license_expression": null,
       "declared_license_expression_spdx": null,
       "license_detections": [],
@@ -552,7 +553,6 @@
       "repository_homepage_url": "https://repo1.maven.org/maven2/commons-fileupload/commons-fileupload/1.0/",
       "repository_download_url": "https://repo1.maven.org/maven2/commons-fileupload/commons-fileupload/1.0/commons-fileupload-1.0.jar",
       "api_data_url": "https://repo1.maven.org/maven2/commons-fileupload/commons-fileupload/1.0/commons-fileupload-1.0.pom",
-      "holder": null,
       "package_uid": "pkg:maven/commons-fileupload/commons-fileupload@1.0?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_paths": [
         "commons-fileupload-1.0/commons-fileupload-1.0.pom"
@@ -810,6 +810,7 @@
       "code_view_url": "http://svn.apache.org/viewcvs.cgi",
       "vcs_url": "svn+http://svn.apache.org/repos/asf/jakarta/commons/proper/validator/trunk",
       "copyright": null,
+      "holder": null,
       "declared_license_expression": "apache-2.0",
       "declared_license_expression_spdx": "Apache-2.0",
       "license_detections": [
@@ -845,7 +846,6 @@
       "repository_homepage_url": "https://repo1.maven.org/maven2/commons-validator/commons-validator/1.2.0/",
       "repository_download_url": "https://repo1.maven.org/maven2/commons-validator/commons-validator/1.2.0/commons-validator-1.2.0.jar",
       "api_data_url": "https://repo1.maven.org/maven2/commons-validator/commons-validator/1.2.0/commons-validator-1.2.0.pom",
-      "holder": null,
       "package_uid": "pkg:maven/commons-validator/commons-validator@1.2.0?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_paths": [
         "commons-validator-1.2.0/commons-validator-1.2.0.pom"
@@ -878,6 +878,7 @@
       "code_view_url": null,
       "vcs_url": null,
       "copyright": null,
+      "holder": null,
       "declared_license_expression": null,
       "declared_license_expression_spdx": null,
       "license_detections": [],
@@ -893,7 +894,6 @@
       "repository_homepage_url": "https://repo1.maven.org/maven2/org/dbwebx/tools/0.0.1.SNAPSHOT/",
       "repository_download_url": "https://repo1.maven.org/maven2/org/dbwebx/tools/0.0.1.SNAPSHOT/tools-0.0.1.SNAPSHOT.jar",
       "api_data_url": "https://repo1.maven.org/maven2/org/dbwebx/tools/0.0.1.SNAPSHOT/tools-0.0.1.SNAPSHOT.pom",
-      "holder": null,
       "package_uid": "pkg:maven/org.dbwebx/tools@0.0.1.SNAPSHOT?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_paths": [
         "dbwebx_pom/dbwebx_pom.xml"
@@ -962,6 +962,7 @@
       "code_view_url": "http://cvs.sourceforge.net/viewcvs.py/easyconf/",
       "vcs_url": "cvs+pserver:anonymous@cvs.sourceforge.net:/cvsroot/easyconf:easyconf",
       "copyright": null,
+      "holder": null,
       "declared_license_expression": null,
       "declared_license_expression_spdx": null,
       "license_detections": [],
@@ -977,7 +978,6 @@
       "repository_homepage_url": "https://repo1.maven.org/maven2/easyconf/easyconf/0.9.0/",
       "repository_download_url": "https://repo1.maven.org/maven2/easyconf/easyconf/0.9.0/easyconf-0.9.0.jar",
       "api_data_url": "https://repo1.maven.org/maven2/easyconf/easyconf/0.9.0/easyconf-0.9.0.pom",
-      "holder": null,
       "package_uid": "pkg:maven/easyconf/easyconf@0.9.0?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_paths": [
         "easyconf-0.9.0/easyconf-0.9.0.pom"
@@ -1039,6 +1039,7 @@
       "code_view_url": "https://svn.codehaus.org/mojo/tags/findbugs-maven-plugin-1.1.1",
       "vcs_url": "svn+https://svn.codehaus.org/mojo/tags/findbugs-maven-plugin-1.1.1",
       "copyright": null,
+      "holder": null,
       "declared_license_expression": "mit",
       "declared_license_expression_spdx": "MIT",
       "license_detections": [
@@ -1074,7 +1075,6 @@
       "repository_homepage_url": "https://repo1.maven.org/maven2/org/codehaus/mojo/findbugs-maven-plugin/1.1.1/",
       "repository_download_url": "https://repo1.maven.org/maven2/org/codehaus/mojo/findbugs-maven-plugin/1.1.1/findbugs-maven-plugin-1.1.1.jar",
       "api_data_url": "https://repo1.maven.org/maven2/org/codehaus/mojo/findbugs-maven-plugin/1.1.1/findbugs-maven-plugin-1.1.1.pom",
-      "holder": null,
       "package_uid": "pkg:maven/org.codehaus.mojo/findbugs-maven-plugin@1.1.1?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_paths": [
         "findbugs-maven-plugin-1.1.1/findbugs-maven-plugin-1.1.1.pom"
@@ -1107,6 +1107,7 @@
       "code_view_url": null,
       "vcs_url": null,
       "copyright": null,
+      "holder": null,
       "declared_license_expression": null,
       "declared_license_expression_spdx": null,
       "license_detections": [],
@@ -1122,7 +1123,6 @@
       "repository_homepage_url": "https://repo1.maven.org/maven2/com/adobe/ac/samples/lcds/flex_app/1.0-SNAPSHOT/",
       "repository_download_url": "https://repo1.maven.org/maven2/com/adobe/ac/samples/lcds/flex_app/1.0-SNAPSHOT/flex_app-1.0-SNAPSHOT.jar",
       "api_data_url": "https://repo1.maven.org/maven2/com/adobe/ac/samples/lcds/flex_app/1.0-SNAPSHOT/flex_app-1.0-SNAPSHOT.pom",
-      "holder": null,
       "package_uid": "pkg:maven/com.adobe.ac.samples.lcds/flex_app@1.0-SNAPSHOT?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_paths": [
         "fna2_pom/fna2_pom.xml"
@@ -1155,6 +1155,7 @@
       "code_view_url": null,
       "vcs_url": null,
       "copyright": null,
+      "holder": null,
       "declared_license_expression": null,
       "declared_license_expression_spdx": null,
       "license_detections": [],
@@ -1170,7 +1171,6 @@
       "repository_homepage_url": "https://repo1.maven.org/maven2/com/adobe/ac/samples/bash/bash_flex_app/1.0/",
       "repository_download_url": "https://repo1.maven.org/maven2/com/adobe/ac/samples/bash/bash_flex_app/1.0/bash_flex_app-1.0.jar",
       "api_data_url": "https://repo1.maven.org/maven2/com/adobe/ac/samples/bash/bash_flex_app/1.0/bash_flex_app-1.0.pom",
-      "holder": null,
       "package_uid": "pkg:maven/com.adobe.ac.samples.bash/bash_flex_app@1.0?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_paths": [
         "fna_pom_project/fna_pom_project.xml"
@@ -1211,6 +1211,7 @@
       "code_view_url": "https://github.com/jode/baz-bar-parent/tree/master",
       "vcs_url": "git://github.com/jode/baz-bar-parent.git",
       "copyright": null,
+      "holder": null,
       "declared_license_expression": "epl-1.0",
       "declared_license_expression_spdx": "EPL-1.0",
       "license_detections": [
@@ -1265,7 +1266,6 @@
       "repository_homepage_url": "https://repo1.maven.org/maven2/com/myco/foo/bar/baz/baz-bar-parent/1.0/",
       "repository_download_url": "https://repo1.maven.org/maven2/com/myco/foo/bar/baz/baz-bar-parent/1.0/baz-bar-parent-1.0.jar",
       "api_data_url": "https://repo1.maven.org/maven2/com/myco/foo/bar/baz/baz-bar-parent/1.0/baz-bar-parent-1.0.pom",
-      "holder": null,
       "package_uid": "pkg:maven/com.myco.foo.bar.baz/baz-bar-parent@1.0?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_paths": [
         "foo-pom/foo-pom.xml"
@@ -1298,6 +1298,7 @@
       "code_view_url": null,
       "vcs_url": null,
       "copyright": null,
+      "holder": null,
       "declared_license_expression": "apache-2.0",
       "declared_license_expression_spdx": "Apache-2.0",
       "license_detections": [
@@ -1333,7 +1334,6 @@
       "repository_homepage_url": "https://repo1.maven.org/maven2/org/apache/geronimo/bundles/axis/1.4_1-SNAPSHOT/",
       "repository_download_url": "https://repo1.maven.org/maven2/org/apache/geronimo/bundles/axis/1.4_1-SNAPSHOT/axis-1.4_1-SNAPSHOT.jar",
       "api_data_url": "https://repo1.maven.org/maven2/org/apache/geronimo/bundles/axis/1.4_1-SNAPSHOT/axis-1.4_1-SNAPSHOT.pom",
-      "holder": null,
       "package_uid": "pkg:maven/org.apache.geronimo.bundles/axis@1.4_1-SNAPSHOT?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_paths": [
         "gero_pom/gero_pom.xml"
@@ -1395,6 +1395,7 @@
       "code_view_url": null,
       "vcs_url": "cvs+ext:idegaweb@code.idega.com:/idega/cvs:com.idega.block.addon/com.idega.block.contract/",
       "copyright": null,
+      "holder": null,
       "declared_license_expression": null,
       "declared_license_expression_spdx": null,
       "license_detections": [],
@@ -1410,7 +1411,6 @@
       "repository_homepage_url": "https://repo1.maven.org/maven2/com/idega/block/addon/com.idega.block.contract/4.1.3-SNAPSHOT/",
       "repository_download_url": "https://repo1.maven.org/maven2/com/idega/block/addon/com.idega.block.contract/4.1.3-SNAPSHOT/com.idega.block.contract-4.1.3-SNAPSHOT.jar",
       "api_data_url": "https://repo1.maven.org/maven2/com/idega/block/addon/com.idega.block.contract/4.1.3-SNAPSHOT/com.idega.block.contract-4.1.3-SNAPSHOT.pom",
-      "holder": null,
       "package_uid": "pkg:maven/com.idega.block.addon/com.idega.block.contract@4.1.3-SNAPSHOT?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_paths": [
         "idega_pom/idega_pom.xml"
@@ -1451,6 +1451,7 @@
       "code_view_url": "https://jrecordbind.dev.java.net/source/browse/jrecordbind/",
       "vcs_url": "svn+https://jrecordbind.dev.java.net/svn/jrecordbind/trunk/",
       "copyright": null,
+      "holder": null,
       "declared_license_expression": "lgpl-2.0-plus AND lgpl-2.1-plus",
       "declared_license_expression_spdx": "LGPL-2.0-or-later AND LGPL-2.1-or-later",
       "license_detections": [
@@ -1505,7 +1506,6 @@
       "repository_homepage_url": "https://repo1.maven.org/maven2/it/assist/jrecordbind/jrecordbind${artifactId.ext}/2.3.4/",
       "repository_download_url": "https://repo1.maven.org/maven2/it/assist/jrecordbind/jrecordbind${artifactId.ext}/2.3.4/jrecordbind${artifactId.ext}-2.3.4.jar",
       "api_data_url": "https://repo1.maven.org/maven2/it/assist/jrecordbind/jrecordbind${artifactId.ext}/2.3.4/jrecordbind${artifactId.ext}-2.3.4.pom",
-      "holder": null,
       "package_uid": "pkg:maven/it.assist.jrecordbind/jrecordbind%24%7BartifactId.ext%7D@2.3.4?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_paths": [
         "jrecordbind-2.3.4/jrecordbind-2.3.4.pom"
@@ -1546,6 +1546,7 @@
       "code_view_url": "http://svn.apache.org/viewcvs.cgi/logging/log4j/tags/v1_2_15_rc6",
       "vcs_url": "svn+http://svn.apache.org/repos/asf/logging/log4j/tags/v1_2_15_rc6",
       "copyright": null,
+      "holder": null,
       "declared_license_expression": "apache-2.0",
       "declared_license_expression_spdx": "Apache-2.0",
       "license_detections": [
@@ -1600,7 +1601,6 @@
       "repository_homepage_url": "https://repo1.maven.org/maven2/log4j/log4j/1.2.15/",
       "repository_download_url": "https://repo1.maven.org/maven2/log4j/log4j/1.2.15/log4j-1.2.15.jar",
       "api_data_url": "https://repo1.maven.org/maven2/log4j/log4j/1.2.15/log4j-1.2.15.pom",
-      "holder": null,
       "package_uid": "pkg:maven/log4j/log4j@1.2.15?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_paths": [
         "log4j/log4j-pom.xml"
@@ -1633,6 +1633,7 @@
       "code_view_url": "http://svn.qos.ch/viewcvs/logback/access/trunk/",
       "vcs_url": "http://svn.qos.ch/repos/logback/access/trunk/",
       "copyright": null,
+      "holder": null,
       "declared_license_expression": "lgpl-2.0-plus",
       "declared_license_expression_spdx": "LGPL-2.0-or-later",
       "license_detections": [
@@ -1687,7 +1688,6 @@
       "repository_homepage_url": "https://repo1.maven.org/maven2/ch/qos/logback/logback-access/0.2.5/",
       "repository_download_url": "https://repo1.maven.org/maven2/ch/qos/logback/logback-access/0.2.5/logback-access-0.2.5.jar",
       "api_data_url": "https://repo1.maven.org/maven2/ch/qos/logback/logback-access/0.2.5/logback-access-0.2.5.pom",
-      "holder": null,
       "package_uid": "pkg:maven/ch.qos.logback/logback-access@0.2.5?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_paths": [
         "logback-access/logback-access.pom"
@@ -1805,6 +1805,7 @@
       "code_view_url": null,
       "vcs_url": "svn://svn.codehaus.org/plexus/scm/trunk/plexus-components/plexus-interactivity/plexus-interactivity-api",
       "copyright": null,
+      "holder": null,
       "declared_license_expression": null,
       "declared_license_expression_spdx": null,
       "license_detections": [],
@@ -1820,7 +1821,6 @@
       "repository_homepage_url": "https://repo1.maven.org/maven2/org/codehaus/plexus/plexus-interactivity-api/1.0-alpha-4/",
       "repository_download_url": "https://repo1.maven.org/maven2/org/codehaus/plexus/plexus-interactivity-api/1.0-alpha-4/plexus-interactivity-api-1.0-alpha-4.jar",
       "api_data_url": "https://repo1.maven.org/maven2/org/codehaus/plexus/plexus-interactivity-api/1.0-alpha-4/plexus-interactivity-api-1.0-alpha-4.pom",
-      "holder": null,
       "package_uid": "pkg:maven/org.codehaus.plexus/plexus-interactivity-api@1.0-alpha-4?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_paths": [
         "plexus-interactivity-api-1.0-alpha-4/plexus-interactivity-api-1.0-alpha-4.pom"
@@ -1853,6 +1853,7 @@
       "code_view_url": null,
       "vcs_url": null,
       "copyright": null,
+      "holder": null,
       "declared_license_expression": null,
       "declared_license_expression_spdx": null,
       "license_detections": [],
@@ -1868,7 +1869,6 @@
       "repository_homepage_url": "https://repo1.maven.org/maven2/ur/urwerk/test/modules/main/1.0.0-SNAPSHOT/",
       "repository_download_url": "https://repo1.maven.org/maven2/ur/urwerk/test/modules/main/1.0.0-SNAPSHOT/main-1.0.0-SNAPSHOT.jar",
       "api_data_url": "https://repo1.maven.org/maven2/ur/urwerk/test/modules/main/1.0.0-SNAPSHOT/main-1.0.0-SNAPSHOT.pom",
-      "holder": null,
       "package_uid": "pkg:maven/ur.urwerk.test.modules/main@1.0.0-SNAPSHOT?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_paths": [
         "pom-generic/pom.xml"
@@ -1901,6 +1901,7 @@
       "code_view_url": null,
       "vcs_url": null,
       "copyright": null,
+      "holder": null,
       "declared_license_expression": "apache-2.0",
       "declared_license_expression_spdx": "Apache-2.0",
       "license_detections": [
@@ -1936,7 +1937,6 @@
       "repository_homepage_url": "https://repo1.maven.org/maven2/org/apache/geronimo/bundles/axis/1.4_1-SNAPSHOT/",
       "repository_download_url": "https://repo1.maven.org/maven2/org/apache/geronimo/bundles/axis/1.4_1-SNAPSHOT/axis-1.4_1-SNAPSHOT.jar",
       "api_data_url": "https://repo1.maven.org/maven2/org/apache/geronimo/bundles/axis/1.4_1-SNAPSHOT/axis-1.4_1-SNAPSHOT.pom",
-      "holder": null,
       "package_uid": "pkg:maven/org.apache.geronimo.bundles/axis@1.4_1-SNAPSHOT?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_paths": [
         "proper-pom/proper_pom.xml"
@@ -1969,6 +1969,7 @@
       "code_view_url": null,
       "vcs_url": null,
       "copyright": null,
+      "holder": null,
       "declared_license_expression": null,
       "declared_license_expression_spdx": null,
       "license_detections": [],
@@ -1984,7 +1985,6 @@
       "repository_homepage_url": "https://repo1.maven.org/maven2/org/modeler/modeler/0.1/",
       "repository_download_url": "https://repo1.maven.org/maven2/org/modeler/modeler/0.1/modeler-0.1.jar",
       "api_data_url": "https://repo1.maven.org/maven2/org/modeler/modeler/0.1/modeler-0.1.pom",
-      "holder": null,
       "package_uid": "pkg:maven/org.modeler/modeler@0.1?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_paths": [
         "rel_pom/rel_pom.xml"
@@ -2039,6 +2039,7 @@
       "code_view_url": "http://code.google.com/p/seam-maven-refimpl/source/browse/#svn/trunk",
       "vcs_url": "svn+http://seam-maven-refimpl.googlecode.com/svn/trunk",
       "copyright": null,
+      "holder": null,
       "declared_license_expression": null,
       "declared_license_expression_spdx": null,
       "license_detections": [],
@@ -2054,7 +2055,6 @@
       "repository_homepage_url": "https://repo1.maven.org/maven2/no/knowit/seam/root/2.2.0-SNAPSHOT/",
       "repository_download_url": "https://repo1.maven.org/maven2/no/knowit/seam/root/2.2.0-SNAPSHOT/root-2.2.0-SNAPSHOT.jar",
       "api_data_url": "https://repo1.maven.org/maven2/no/knowit/seam/root/2.2.0-SNAPSHOT/root-2.2.0-SNAPSHOT.pom",
-      "holder": null,
       "package_uid": "pkg:maven/no.knowit.seam/root@2.2.0-SNAPSHOT?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_paths": [
         "sea_pom/sea_pom.xml"
@@ -2087,6 +2087,7 @@
       "code_view_url": "http://svn.apache.org/viewvc/geronimo/specs/tags/1_3/",
       "vcs_url": "svn+http://svn.apache.org/repos/asf/geronimo/specs/tags/1_3",
       "copyright": null,
+      "holder": null,
       "declared_license_expression": "apache-2.0",
       "declared_license_expression_spdx": "Apache-2.0",
       "license_detections": [
@@ -2122,7 +2123,6 @@
       "repository_homepage_url": "https://repo1.maven.org/maven2/org/apache/geronimo/specs/specs/1.3/",
       "repository_download_url": "https://repo1.maven.org/maven2/org/apache/geronimo/specs/specs/1.3/specs-1.3.jar",
       "api_data_url": "https://repo1.maven.org/maven2/org/apache/geronimo/specs/specs/1.3/specs-1.3.pom",
-      "holder": null,
       "package_uid": "pkg:maven/org.apache.geronimo.specs/specs@1.3?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_paths": [
         "specs-1.3/specs-1.3.pom"
@@ -2163,6 +2163,7 @@
       "code_view_url": "http://springframework.cvs.sourceforge.net/springframework/",
       "vcs_url": "cvs+pserver:anonymous:@springframework.cvs.sourceforge.net:/cvsroot/springframework/spring",
       "copyright": null,
+      "holder": null,
       "declared_license_expression": "apache-2.0",
       "declared_license_expression_spdx": "Apache-2.0",
       "license_detections": [
@@ -2217,7 +2218,6 @@
       "repository_homepage_url": "https://repo1.maven.org/maven2/org/springframework/spring/2.5.4/",
       "repository_download_url": "https://repo1.maven.org/maven2/org/springframework/spring/2.5.4/spring-2.5.4.jar",
       "api_data_url": "https://repo1.maven.org/maven2/org/springframework/spring/2.5.4/spring-2.5.4.pom",
-      "holder": null,
       "package_uid": "pkg:maven/org.springframework/spring@2.5.4?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_paths": [
         "spring-2.5.4/spring-2.5.4.pom"
@@ -2258,6 +2258,7 @@
       "code_view_url": "http://springframework.cvs.sourceforge.net/springframework/",
       "vcs_url": "cvs+pserver:anonymous:@springframework.cvs.sourceforge.net:/cvsroot/springframework/spring",
       "copyright": null,
+      "holder": null,
       "declared_license_expression": "apache-2.0",
       "declared_license_expression_spdx": "Apache-2.0",
       "license_detections": [
@@ -2312,7 +2313,6 @@
       "repository_homepage_url": "https://repo1.maven.org/maven2/org/springframework/spring-orm/2.5.3/",
       "repository_download_url": "https://repo1.maven.org/maven2/org/springframework/spring-orm/2.5.3/spring-orm-2.5.3.jar",
       "api_data_url": "https://repo1.maven.org/maven2/org/springframework/spring-orm/2.5.3/spring-orm-2.5.3.pom",
-      "holder": null,
       "package_uid": "pkg:maven/org.springframework/spring-orm@2.5.3?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_paths": [
         "spring-orm-2.5.3/spring-orm-2.5.3.pom"
@@ -2353,6 +2353,7 @@
       "code_view_url": "http://springframework.cvs.sourceforge.net/springframework/",
       "vcs_url": "cvs+pserver:anonymous:@springframework.cvs.sourceforge.net:/cvsroot/springframework/spring",
       "copyright": null,
+      "holder": null,
       "declared_license_expression": "apache-2.0",
       "declared_license_expression_spdx": "Apache-2.0",
       "license_detections": [
@@ -2407,7 +2408,6 @@
       "repository_homepage_url": "https://repo1.maven.org/maven2/org/springframework/spring-webmvc/2.5.3/",
       "repository_download_url": "https://repo1.maven.org/maven2/org/springframework/spring-webmvc/2.5.3/spring-webmvc-2.5.3.jar",
       "api_data_url": "https://repo1.maven.org/maven2/org/springframework/spring-webmvc/2.5.3/spring-webmvc-2.5.3.pom",
-      "holder": null,
       "package_uid": "pkg:maven/org.springframework/spring-webmvc@2.5.3?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_paths": [
         "spring-webmvc-2.5.3/spring-webmvc-2.5.3.pom"
@@ -2448,6 +2448,7 @@
       "code_view_url": "https://hudson.dev.java.net/source/browse/hudson/tags/startup-trigger-plugin-0.1",
       "vcs_url": "svn+https://guest@svn.dev.java.net/svn/hudson/tags/startup-trigger-plugin-0.1",
       "copyright": null,
+      "holder": null,
       "declared_license_expression": null,
       "declared_license_expression_spdx": null,
       "license_detections": [],
@@ -2463,7 +2464,6 @@
       "repository_homepage_url": "https://repo1.maven.org/maven2/org/jvnet/hudson/plugins/startup-trigger-plugin/0.1/",
       "repository_download_url": "https://repo1.maven.org/maven2/org/jvnet/hudson/plugins/startup-trigger-plugin/0.1/startup-trigger-plugin-0.1.jar",
       "api_data_url": "https://repo1.maven.org/maven2/org/jvnet/hudson/plugins/startup-trigger-plugin/0.1/startup-trigger-plugin-0.1.pom",
-      "holder": null,
       "package_uid": "pkg:maven/org.jvnet.hudson.plugins/startup-trigger-plugin@0.1?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_paths": [
         "startup-trigger-plugin-0.1/startup-trigger-plugin-0.1.pom"
@@ -2496,6 +2496,7 @@
       "code_view_url": null,
       "vcs_url": null,
       "copyright": null,
+      "holder": null,
       "declared_license_expression": null,
       "declared_license_expression_spdx": null,
       "license_detections": [],
@@ -2511,7 +2512,6 @@
       "repository_homepage_url": "https://repo1.maven.org/maven2/de/fzj/unicore/rcp/eclipseSequencePlugin/0.0.1-SNAPSHOT/",
       "repository_download_url": "https://repo1.maven.org/maven2/de/fzj/unicore/rcp/eclipseSequencePlugin/0.0.1-SNAPSHOT/eclipseSequencePlugin-0.0.1-SNAPSHOT.jar",
       "api_data_url": "https://repo1.maven.org/maven2/de/fzj/unicore/rcp/eclipseSequencePlugin/0.0.1-SNAPSHOT/eclipseSequencePlugin-0.0.1-SNAPSHOT.pom",
-      "holder": null,
       "package_uid": "pkg:maven/de.fzj.unicore.rcp/eclipseSequencePlugin@0.0.1-SNAPSHOT?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_paths": [
         "uni_pom/uni_pom.xml"
@@ -2544,6 +2544,7 @@
       "code_view_url": null,
       "vcs_url": null,
       "copyright": null,
+      "holder": null,
       "declared_license_expression": null,
       "declared_license_expression_spdx": null,
       "license_detections": [],
@@ -2559,7 +2560,6 @@
       "repository_homepage_url": "https://repo1.maven.org/maven2/ur/urwerk/test/ur.urwerk.test.module-y/1.0.0/",
       "repository_download_url": "https://repo1.maven.org/maven2/ur/urwerk/test/ur.urwerk.test.module-y/1.0.0/ur.urwerk.test.module-y-1.0.0.jar",
       "api_data_url": "https://repo1.maven.org/maven2/ur/urwerk/test/ur.urwerk.test.module-y/1.0.0/ur.urwerk.test.module-y-1.0.0.pom",
-      "holder": null,
       "package_uid": "pkg:maven/ur.urwerk.test/ur.urwerk.test.module-y@1.0.0?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_paths": [
         "urwerky_pom/urwerky_pom.xml"
@@ -2592,6 +2592,7 @@
       "code_view_url": null,
       "vcs_url": null,
       "copyright": null,
+      "holder": null,
       "declared_license_expression": null,
       "declared_license_expression_spdx": null,
       "license_detections": [],
@@ -2607,7 +2608,6 @@
       "repository_homepage_url": "https://repo1.maven.org/maven2/org/webreformatter/wrappers/com.google.gwt.query/0.1.5.SNAPSHOT/",
       "repository_download_url": "https://repo1.maven.org/maven2/org/webreformatter/wrappers/com.google.gwt.query/0.1.5.SNAPSHOT/com.google.gwt.query-0.1.5.SNAPSHOT.jar",
       "api_data_url": "https://repo1.maven.org/maven2/org/webreformatter/wrappers/com.google.gwt.query/0.1.5.SNAPSHOT/com.google.gwt.query-0.1.5.SNAPSHOT.pom",
-      "holder": null,
       "package_uid": "pkg:maven/org.webreformatter.wrappers/com.google.gwt.query@0.1.5.SNAPSHOT?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_paths": [
         "webre_pom/webre_pom.xml"
@@ -2640,6 +2640,7 @@
       "code_view_url": "https://github.com/acegi/xml-format-maven-plugin.git",
       "vcs_url": "git+https://github.com/acegi/xml-format-maven-plugin.git",
       "copyright": null,
+      "holder": null,
       "declared_license_expression": "apache-2.0",
       "declared_license_expression_spdx": "Apache-2.0",
       "license_detections": [
@@ -2675,7 +2676,6 @@
       "repository_homepage_url": "https://repo1.maven.org/maven2/au/com/acegi/xml-format-maven-plugin/3.0.6/",
       "repository_download_url": "https://repo1.maven.org/maven2/au/com/acegi/xml-format-maven-plugin/3.0.6/xml-format-maven-plugin-3.0.6.jar",
       "api_data_url": "https://repo1.maven.org/maven2/au/com/acegi/xml-format-maven-plugin/3.0.6/xml-format-maven-plugin-3.0.6.pom",
-      "holder": null,
       "package_uid": "pkg:maven/au.com.acegi/xml-format-maven-plugin@3.0.6?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_paths": [
         "xml-format-maven-plugin-3.0.6/xml-format-maven-plugin-3.0.6.pom"
@@ -6365,6 +6365,7 @@
           "code_view_url": null,
           "vcs_url": null,
           "copyright": null,
+          "holder": null,
           "declared_license_expression": "apache-2.0",
           "declared_license_expression_spdx": "Apache-2.0",
           "license_detections": [
@@ -6514,7 +6515,6 @@
           "repository_download_url": "https://repo1.maven.org/maven2/org/apache/activemq/activemq-camel/5.4.2/activemq-camel-5.4.2.jar",
           "api_data_url": "https://repo1.maven.org/maven2/org/apache/activemq/activemq-camel/5.4.2/activemq-camel-5.4.2.pom",
           "datasource_id": "maven_pom",
-          "holder": null,
           "purl": "pkg:maven/org.apache.activemq/activemq-camel@5.4.2"
         }
       ],
@@ -6577,6 +6577,7 @@
           "code_view_url": null,
           "vcs_url": null,
           "copyright": null,
+          "holder": null,
           "declared_license_expression": null,
           "declared_license_expression_spdx": null,
           "license_detections": [],
@@ -6595,7 +6596,6 @@
           "repository_download_url": "https://repo1.maven.org/maven2/adarwin/adarwin/1.0/adarwin-1.0.jar",
           "api_data_url": "https://repo1.maven.org/maven2/adarwin/adarwin/1.0/adarwin-1.0.pom",
           "datasource_id": "maven_pom",
-          "holder": null,
           "purl": "pkg:maven/adarwin/adarwin@1.0"
         }
       ],
@@ -6658,6 +6658,7 @@
           "code_view_url": null,
           "vcs_url": null,
           "copyright": null,
+          "holder": null,
           "declared_license_expression": "apache-2.0",
           "declared_license_expression_spdx": "Apache-2.0",
           "license_detections": [
@@ -6727,7 +6728,6 @@
           "repository_download_url": "https://repo1.maven.org/maven2/org/apache/ant/ant-jai/1.7.0/ant-jai-1.7.0.jar",
           "api_data_url": "https://repo1.maven.org/maven2/org/apache/ant/ant-jai/1.7.0/ant-jai-1.7.0.pom",
           "datasource_id": "maven_pom",
-          "holder": null,
           "purl": "pkg:maven/org.apache.ant/ant-jai@1.7.0"
         }
       ],
@@ -6790,6 +6790,7 @@
           "code_view_url": null,
           "vcs_url": null,
           "copyright": null,
+          "holder": null,
           "declared_license_expression": "apache-2.0",
           "declared_license_expression_spdx": "Apache-2.0",
           "license_detections": [
@@ -6849,7 +6850,6 @@
           "repository_download_url": "https://repo1.maven.org/maven2/org/apache/ant/ant-jsch/1.7.0/ant-jsch-1.7.0.jar",
           "api_data_url": "https://repo1.maven.org/maven2/org/apache/ant/ant-jsch/1.7.0/ant-jsch-1.7.0.pom",
           "datasource_id": "maven_pom",
-          "holder": null,
           "purl": "pkg:maven/org.apache.ant/ant-jsch@1.7.0"
         }
       ],
@@ -6912,6 +6912,7 @@
           "code_view_url": null,
           "vcs_url": null,
           "copyright": null,
+          "holder": null,
           "declared_license_expression": "public-domain AND gpl-1.0-plus",
           "declared_license_expression_spdx": "LicenseRef-scancode-public-domain AND GPL-1.0-or-later",
           "license_detections": [
@@ -6969,7 +6970,6 @@
           "repository_download_url": "https://repo1.maven.org/maven2/aopalliance/aopalliance/1.0/aopalliance-1.0.jar",
           "api_data_url": "https://repo1.maven.org/maven2/aopalliance/aopalliance/1.0/aopalliance-1.0.pom",
           "datasource_id": "maven_pom",
-          "holder": null,
           "purl": "pkg:maven/aopalliance/aopalliance@1.0"
         }
       ],
@@ -7032,6 +7032,7 @@
           "code_view_url": null,
           "vcs_url": null,
           "copyright": null,
+          "holder": null,
           "declared_license_expression": null,
           "declared_license_expression_spdx": null,
           "license_detections": [],
@@ -7050,7 +7051,6 @@
           "repository_download_url": "https://repo1.maven.org/maven2/bcel/bcel/5.1/bcel-5.1.jar",
           "api_data_url": "https://repo1.maven.org/maven2/bcel/bcel/5.1/bcel-5.1.pom",
           "datasource_id": "maven_pom",
-          "holder": null,
           "purl": "pkg:maven/bcel/bcel@5.1"
         }
       ],
@@ -7142,6 +7142,7 @@
           "code_view_url": "http://cvs.classworlds.codehaus.org/",
           "vcs_url": "cvs+pserver:anonymous@cvs.codehaus.org:/scm/cvspublic/:classworlds",
           "copyright": null,
+          "holder": null,
           "declared_license_expression": null,
           "declared_license_expression_spdx": null,
           "license_detections": [],
@@ -7160,7 +7161,6 @@
           "repository_download_url": "https://repo1.maven.org/maven2/classworlds/classworlds/1.1-alpha-2/classworlds-1.1-alpha-2.jar",
           "api_data_url": "https://repo1.maven.org/maven2/classworlds/classworlds/1.1-alpha-2/classworlds-1.1-alpha-2.pom",
           "datasource_id": "maven_pom",
-          "holder": null,
           "purl": "pkg:maven/classworlds/classworlds@1.1-alpha-2"
         }
       ],
@@ -7273,6 +7273,7 @@
           "code_view_url": null,
           "vcs_url": null,
           "copyright": null,
+          "holder": null,
           "declared_license_expression": null,
           "declared_license_expression_spdx": null,
           "license_detections": [],
@@ -7312,7 +7313,6 @@
           "repository_download_url": "https://repo1.maven.org/maven2/commons-fileupload/commons-fileupload/1.0/commons-fileupload-1.0.jar",
           "api_data_url": "https://repo1.maven.org/maven2/commons-fileupload/commons-fileupload/1.0/commons-fileupload-1.0.pom",
           "datasource_id": "maven_pom",
-          "holder": null,
           "purl": "pkg:maven/commons-fileupload/commons-fileupload@1.0"
         }
       ],
@@ -7600,6 +7600,7 @@
           "code_view_url": "http://svn.apache.org/viewcvs.cgi",
           "vcs_url": "svn+http://svn.apache.org/repos/asf/jakarta/commons/proper/validator/trunk",
           "copyright": null,
+          "holder": null,
           "declared_license_expression": "apache-2.0",
           "declared_license_expression_spdx": "Apache-2.0",
           "license_detections": [
@@ -7699,7 +7700,6 @@
           "repository_download_url": "https://repo1.maven.org/maven2/commons-validator/commons-validator/1.2.0/commons-validator-1.2.0.jar",
           "api_data_url": "https://repo1.maven.org/maven2/commons-validator/commons-validator/1.2.0/commons-validator-1.2.0.pom",
           "datasource_id": "maven_pom",
-          "holder": null,
           "purl": "pkg:maven/commons-validator/commons-validator@1.2.0"
         }
       ],
@@ -7762,6 +7762,7 @@
           "code_view_url": null,
           "vcs_url": null,
           "copyright": null,
+          "holder": null,
           "declared_license_expression": null,
           "declared_license_expression_spdx": null,
           "license_detections": [],
@@ -7780,7 +7781,6 @@
           "repository_download_url": "https://repo1.maven.org/maven2/org/dbwebx/tools/0.0.1.SNAPSHOT/tools-0.0.1.SNAPSHOT.jar",
           "api_data_url": "https://repo1.maven.org/maven2/org/dbwebx/tools/0.0.1.SNAPSHOT/tools-0.0.1.SNAPSHOT.pom",
           "datasource_id": "maven_pom",
-          "holder": null,
           "purl": "pkg:maven/org.dbwebx/tools@0.0.1.SNAPSHOT"
         }
       ],
@@ -7879,6 +7879,7 @@
           "code_view_url": "http://cvs.sourceforge.net/viewcvs.py/easyconf/",
           "vcs_url": "cvs+pserver:anonymous@cvs.sourceforge.net:/cvsroot/easyconf:easyconf",
           "copyright": null,
+          "holder": null,
           "declared_license_expression": null,
           "declared_license_expression_spdx": null,
           "license_detections": [],
@@ -8078,7 +8079,6 @@
           "repository_download_url": "https://repo1.maven.org/maven2/easyconf/easyconf/0.9.0/easyconf-0.9.0.jar",
           "api_data_url": "https://repo1.maven.org/maven2/easyconf/easyconf/0.9.0/easyconf-0.9.0.pom",
           "datasource_id": "maven_pom",
-          "holder": null,
           "purl": "pkg:maven/easyconf/easyconf@0.9.0"
         }
       ],
@@ -8170,6 +8170,7 @@
           "code_view_url": "https://svn.codehaus.org/mojo/tags/findbugs-maven-plugin-1.1.1",
           "vcs_url": "svn+https://svn.codehaus.org/mojo/tags/findbugs-maven-plugin-1.1.1",
           "copyright": null,
+          "holder": null,
           "declared_license_expression": "mit",
           "declared_license_expression_spdx": "MIT",
           "license_detections": [
@@ -8259,7 +8260,6 @@
           "repository_download_url": "https://repo1.maven.org/maven2/org/codehaus/mojo/findbugs-maven-plugin/1.1.1/findbugs-maven-plugin-1.1.1.jar",
           "api_data_url": "https://repo1.maven.org/maven2/org/codehaus/mojo/findbugs-maven-plugin/1.1.1/findbugs-maven-plugin-1.1.1.pom",
           "datasource_id": "maven_pom",
-          "holder": null,
           "purl": "pkg:maven/org.codehaus.mojo/findbugs-maven-plugin@1.1.1"
         }
       ],
@@ -8322,6 +8322,7 @@
           "code_view_url": null,
           "vcs_url": null,
           "copyright": null,
+          "holder": null,
           "declared_license_expression": null,
           "declared_license_expression_spdx": null,
           "license_detections": [],
@@ -8441,7 +8442,6 @@
           "repository_download_url": "https://repo1.maven.org/maven2/com/adobe/ac/samples/lcds/flex_app/1.0-SNAPSHOT/flex_app-1.0-SNAPSHOT.jar",
           "api_data_url": "https://repo1.maven.org/maven2/com/adobe/ac/samples/lcds/flex_app/1.0-SNAPSHOT/flex_app-1.0-SNAPSHOT.pom",
           "datasource_id": "maven_pom",
-          "holder": null,
           "purl": "pkg:maven/com.adobe.ac.samples.lcds/flex_app@1.0-SNAPSHOT"
         }
       ],
@@ -8504,6 +8504,7 @@
           "code_view_url": null,
           "vcs_url": null,
           "copyright": null,
+          "holder": null,
           "declared_license_expression": null,
           "declared_license_expression_spdx": null,
           "license_detections": [],
@@ -8593,7 +8594,6 @@
           "repository_download_url": "https://repo1.maven.org/maven2/com/adobe/ac/samples/bash/bash_flex_app/1.0/bash_flex_app-1.0.jar",
           "api_data_url": "https://repo1.maven.org/maven2/com/adobe/ac/samples/bash/bash_flex_app/1.0/bash_flex_app-1.0.pom",
           "datasource_id": "maven_pom",
-          "holder": null,
           "purl": "pkg:maven/com.adobe.ac.samples.bash/bash_flex_app@1.0"
         }
       ],
@@ -8664,6 +8664,7 @@
           "code_view_url": "https://github.com/jode/baz-bar-parent/tree/master",
           "vcs_url": "git://github.com/jode/baz-bar-parent.git",
           "copyright": null,
+          "holder": null,
           "declared_license_expression": "epl-1.0",
           "declared_license_expression_spdx": "EPL-1.0",
           "license_detections": [
@@ -8802,7 +8803,6 @@
           "repository_download_url": "https://repo1.maven.org/maven2/com/myco/foo/bar/baz/baz-bar-parent/1.0/baz-bar-parent-1.0.jar",
           "api_data_url": "https://repo1.maven.org/maven2/com/myco/foo/bar/baz/baz-bar-parent/1.0/baz-bar-parent-1.0.pom",
           "datasource_id": "maven_pom",
-          "holder": null,
           "purl": "pkg:maven/com.myco.foo.bar.baz/baz-bar-parent@1.0"
         }
       ],
@@ -8865,6 +8865,7 @@
           "code_view_url": null,
           "vcs_url": null,
           "copyright": null,
+          "holder": null,
           "declared_license_expression": "apache-2.0",
           "declared_license_expression_spdx": "Apache-2.0",
           "license_detections": [
@@ -8914,7 +8915,6 @@
           "repository_download_url": "https://repo1.maven.org/maven2/org/apache/geronimo/bundles/axis/1.4_1-SNAPSHOT/axis-1.4_1-SNAPSHOT.jar",
           "api_data_url": "https://repo1.maven.org/maven2/org/apache/geronimo/bundles/axis/1.4_1-SNAPSHOT/axis-1.4_1-SNAPSHOT.pom",
           "datasource_id": "maven_pom",
-          "holder": null,
           "purl": "pkg:maven/org.apache.geronimo.bundles/axis@1.4_1-SNAPSHOT"
         }
       ],
@@ -9006,6 +9006,7 @@
           "code_view_url": null,
           "vcs_url": "cvs+ext:idegaweb@code.idega.com:/idega/cvs:com.idega.block.addon/com.idega.block.contract/",
           "copyright": null,
+          "holder": null,
           "declared_license_expression": null,
           "declared_license_expression_spdx": null,
           "license_detections": [],
@@ -9065,7 +9066,6 @@
           "repository_download_url": "https://repo1.maven.org/maven2/com/idega/block/addon/com.idega.block.contract/4.1.3-SNAPSHOT/com.idega.block.contract-4.1.3-SNAPSHOT.jar",
           "api_data_url": "https://repo1.maven.org/maven2/com/idega/block/addon/com.idega.block.contract/4.1.3-SNAPSHOT/com.idega.block.contract-4.1.3-SNAPSHOT.pom",
           "datasource_id": "maven_pom",
-          "holder": null,
           "purl": "pkg:maven/com.idega.block.addon/com.idega.block.contract@4.1.3-SNAPSHOT"
         }
       ],
@@ -9136,6 +9136,7 @@
           "code_view_url": "https://jrecordbind.dev.java.net/source/browse/jrecordbind/",
           "vcs_url": "svn+https://jrecordbind.dev.java.net/svn/jrecordbind/trunk/",
           "copyright": null,
+          "holder": null,
           "declared_license_expression": "lgpl-2.0-plus AND lgpl-2.1-plus",
           "declared_license_expression_spdx": "LGPL-2.0-or-later AND LGPL-2.1-or-later",
           "license_detections": [
@@ -9234,7 +9235,6 @@
           "repository_download_url": "https://repo1.maven.org/maven2/it/assist/jrecordbind/jrecordbind${artifactId.ext}/2.3.4/jrecordbind${artifactId.ext}-2.3.4.jar",
           "api_data_url": "https://repo1.maven.org/maven2/it/assist/jrecordbind/jrecordbind${artifactId.ext}/2.3.4/jrecordbind${artifactId.ext}-2.3.4.pom",
           "datasource_id": "maven_pom",
-          "holder": null,
           "purl": "pkg:maven/it.assist.jrecordbind/jrecordbind%24%7BartifactId.ext%7D@2.3.4"
         }
       ],
@@ -9305,6 +9305,7 @@
           "code_view_url": "http://svn.apache.org/viewcvs.cgi/logging/log4j/tags/v1_2_15_rc6",
           "vcs_url": "svn+http://svn.apache.org/repos/asf/logging/log4j/tags/v1_2_15_rc6",
           "copyright": null,
+          "holder": null,
           "declared_license_expression": "apache-2.0",
           "declared_license_expression_spdx": "Apache-2.0",
           "license_detections": [
@@ -9423,7 +9424,6 @@
           "repository_download_url": "https://repo1.maven.org/maven2/log4j/log4j/1.2.15/log4j-1.2.15.jar",
           "api_data_url": "https://repo1.maven.org/maven2/log4j/log4j/1.2.15/log4j-1.2.15.pom",
           "datasource_id": "maven_pom",
-          "holder": null,
           "purl": "pkg:maven/log4j/log4j@1.2.15"
         }
       ],
@@ -9486,6 +9486,7 @@
           "code_view_url": "http://svn.qos.ch/viewcvs/logback/access/trunk/",
           "vcs_url": "http://svn.qos.ch/repos/logback/access/trunk/",
           "copyright": null,
+          "holder": null,
           "declared_license_expression": "lgpl-2.0-plus",
           "declared_license_expression_spdx": "LGPL-2.0-or-later",
           "license_detections": [
@@ -9594,7 +9595,6 @@
           "repository_download_url": "https://repo1.maven.org/maven2/ch/qos/logback/logback-access/0.2.5/logback-access-0.2.5.jar",
           "api_data_url": "https://repo1.maven.org/maven2/ch/qos/logback/logback-access/0.2.5/logback-access-0.2.5.pom",
           "datasource_id": "maven_pom",
-          "holder": null,
           "purl": "pkg:maven/ch.qos.logback/logback-access@0.2.5"
         }
       ],
@@ -9742,6 +9742,7 @@
           "code_view_url": null,
           "vcs_url": "svn://svn.codehaus.org/plexus/scm/trunk/plexus-components/plexus-interactivity/plexus-interactivity-api",
           "copyright": null,
+          "holder": null,
           "declared_license_expression": null,
           "declared_license_expression_spdx": null,
           "license_detections": [],
@@ -9801,7 +9802,6 @@
           "repository_download_url": "https://repo1.maven.org/maven2/org/codehaus/plexus/plexus-interactivity-api/1.0-alpha-4/plexus-interactivity-api-1.0-alpha-4.jar",
           "api_data_url": "https://repo1.maven.org/maven2/org/codehaus/plexus/plexus-interactivity-api/1.0-alpha-4/plexus-interactivity-api-1.0-alpha-4.pom",
           "datasource_id": "maven_pom",
-          "holder": null,
           "purl": "pkg:maven/org.codehaus.plexus/plexus-interactivity-api@1.0-alpha-4"
         }
       ],
@@ -9864,6 +9864,7 @@
           "code_view_url": null,
           "vcs_url": null,
           "copyright": null,
+          "holder": null,
           "declared_license_expression": null,
           "declared_license_expression_spdx": null,
           "license_detections": [],
@@ -9882,7 +9883,6 @@
           "repository_download_url": "https://repo1.maven.org/maven2/ur/urwerk/test/modules/main/1.0.0-SNAPSHOT/main-1.0.0-SNAPSHOT.jar",
           "api_data_url": "https://repo1.maven.org/maven2/ur/urwerk/test/modules/main/1.0.0-SNAPSHOT/main-1.0.0-SNAPSHOT.pom",
           "datasource_id": "maven_pom",
-          "holder": null,
           "purl": "pkg:maven/ur.urwerk.test.modules/main@1.0.0-SNAPSHOT"
         }
       ],
@@ -9945,6 +9945,7 @@
           "code_view_url": null,
           "vcs_url": null,
           "copyright": null,
+          "holder": null,
           "declared_license_expression": "apache-2.0",
           "declared_license_expression_spdx": "Apache-2.0",
           "license_detections": [
@@ -9994,7 +9995,6 @@
           "repository_download_url": "https://repo1.maven.org/maven2/org/apache/geronimo/bundles/axis/1.4_1-SNAPSHOT/axis-1.4_1-SNAPSHOT.jar",
           "api_data_url": "https://repo1.maven.org/maven2/org/apache/geronimo/bundles/axis/1.4_1-SNAPSHOT/axis-1.4_1-SNAPSHOT.pom",
           "datasource_id": "maven_pom",
-          "holder": null,
           "purl": "pkg:maven/org.apache.geronimo.bundles/axis@1.4_1-SNAPSHOT"
         }
       ],
@@ -10057,6 +10057,7 @@
           "code_view_url": null,
           "vcs_url": null,
           "copyright": null,
+          "holder": null,
           "declared_license_expression": null,
           "declared_license_expression_spdx": null,
           "license_detections": [],
@@ -10166,7 +10167,6 @@
           "repository_download_url": "https://repo1.maven.org/maven2/org/modeler/modeler/0.1/modeler-0.1.jar",
           "api_data_url": "https://repo1.maven.org/maven2/org/modeler/modeler/0.1/modeler-0.1.pom",
           "datasource_id": "maven_pom",
-          "holder": null,
           "purl": "pkg:maven/org.modeler/modeler@0.1"
         }
       ],
@@ -10251,6 +10251,7 @@
           "code_view_url": "http://code.google.com/p/seam-maven-refimpl/source/browse/#svn/trunk",
           "vcs_url": "svn+http://seam-maven-refimpl.googlecode.com/svn/trunk",
           "copyright": null,
+          "holder": null,
           "declared_license_expression": null,
           "declared_license_expression_spdx": null,
           "license_detections": [],
@@ -10640,7 +10641,6 @@
           "repository_download_url": "https://repo1.maven.org/maven2/no/knowit/seam/root/2.2.0-SNAPSHOT/root-2.2.0-SNAPSHOT.jar",
           "api_data_url": "https://repo1.maven.org/maven2/no/knowit/seam/root/2.2.0-SNAPSHOT/root-2.2.0-SNAPSHOT.pom",
           "datasource_id": "maven_pom",
-          "holder": null,
           "purl": "pkg:maven/no.knowit.seam/root@2.2.0-SNAPSHOT"
         }
       ],
@@ -10703,6 +10703,7 @@
           "code_view_url": "http://svn.apache.org/viewvc/geronimo/specs/tags/1_3/",
           "vcs_url": "svn+http://svn.apache.org/repos/asf/geronimo/specs/tags/1_3",
           "copyright": null,
+          "holder": null,
           "declared_license_expression": "apache-2.0",
           "declared_license_expression_spdx": "Apache-2.0",
           "license_detections": [
@@ -10752,7 +10753,6 @@
           "repository_download_url": "https://repo1.maven.org/maven2/org/apache/geronimo/specs/specs/1.3/specs-1.3.jar",
           "api_data_url": "https://repo1.maven.org/maven2/org/apache/geronimo/specs/specs/1.3/specs-1.3.pom",
           "datasource_id": "maven_pom",
-          "holder": null,
           "purl": "pkg:maven/org.apache.geronimo.specs/specs@1.3"
         }
       ],
@@ -10823,6 +10823,7 @@
           "code_view_url": "http://springframework.cvs.sourceforge.net/springframework/",
           "vcs_url": "cvs+pserver:anonymous:@springframework.cvs.sourceforge.net:/cvsroot/springframework/spring",
           "copyright": null,
+          "holder": null,
           "declared_license_expression": "apache-2.0",
           "declared_license_expression_spdx": "Apache-2.0",
           "license_detections": [
@@ -11531,7 +11532,6 @@
           "repository_download_url": "https://repo1.maven.org/maven2/org/springframework/spring/2.5.4/spring-2.5.4.jar",
           "api_data_url": "https://repo1.maven.org/maven2/org/springframework/spring/2.5.4/spring-2.5.4.pom",
           "datasource_id": "maven_pom",
-          "holder": null,
           "purl": "pkg:maven/org.springframework/spring@2.5.4"
         }
       ],
@@ -11602,6 +11602,7 @@
           "code_view_url": "http://springframework.cvs.sourceforge.net/springframework/",
           "vcs_url": "cvs+pserver:anonymous:@springframework.cvs.sourceforge.net:/cvsroot/springframework/spring",
           "copyright": null,
+          "holder": null,
           "declared_license_expression": "apache-2.0",
           "declared_license_expression_spdx": "Apache-2.0",
           "license_detections": [
@@ -11820,7 +11821,6 @@
           "repository_download_url": "https://repo1.maven.org/maven2/org/springframework/spring-orm/2.5.3/spring-orm-2.5.3.jar",
           "api_data_url": "https://repo1.maven.org/maven2/org/springframework/spring-orm/2.5.3/spring-orm-2.5.3.pom",
           "datasource_id": "maven_pom",
-          "holder": null,
           "purl": "pkg:maven/org.springframework/spring-orm@2.5.3"
         }
       ],
@@ -11891,6 +11891,7 @@
           "code_view_url": "http://springframework.cvs.sourceforge.net/springframework/",
           "vcs_url": "cvs+pserver:anonymous:@springframework.cvs.sourceforge.net:/cvsroot/springframework/spring",
           "copyright": null,
+          "holder": null,
           "declared_license_expression": "apache-2.0",
           "declared_license_expression_spdx": "Apache-2.0",
           "license_detections": [
@@ -12169,7 +12170,6 @@
           "repository_download_url": "https://repo1.maven.org/maven2/org/springframework/spring-webmvc/2.5.3/spring-webmvc-2.5.3.jar",
           "api_data_url": "https://repo1.maven.org/maven2/org/springframework/spring-webmvc/2.5.3/spring-webmvc-2.5.3.pom",
           "datasource_id": "maven_pom",
-          "holder": null,
           "purl": "pkg:maven/org.springframework/spring-webmvc@2.5.3"
         }
       ],
@@ -12240,6 +12240,7 @@
           "code_view_url": "https://hudson.dev.java.net/source/browse/hudson/tags/startup-trigger-plugin-0.1",
           "vcs_url": "svn+https://guest@svn.dev.java.net/svn/hudson/tags/startup-trigger-plugin-0.1",
           "copyright": null,
+          "holder": null,
           "declared_license_expression": null,
           "declared_license_expression_spdx": null,
           "license_detections": [],
@@ -12269,7 +12270,6 @@
           "repository_download_url": "https://repo1.maven.org/maven2/org/jvnet/hudson/plugins/startup-trigger-plugin/0.1/startup-trigger-plugin-0.1.jar",
           "api_data_url": "https://repo1.maven.org/maven2/org/jvnet/hudson/plugins/startup-trigger-plugin/0.1/startup-trigger-plugin-0.1.pom",
           "datasource_id": "maven_pom",
-          "holder": null,
           "purl": "pkg:maven/org.jvnet.hudson.plugins/startup-trigger-plugin@0.1"
         }
       ],
@@ -12332,6 +12332,7 @@
           "code_view_url": null,
           "vcs_url": null,
           "copyright": null,
+          "holder": null,
           "declared_license_expression": null,
           "declared_license_expression_spdx": null,
           "license_detections": [],
@@ -12401,7 +12402,6 @@
           "repository_download_url": "https://repo1.maven.org/maven2/de/fzj/unicore/rcp/eclipseSequencePlugin/0.0.1-SNAPSHOT/eclipseSequencePlugin-0.0.1-SNAPSHOT.jar",
           "api_data_url": "https://repo1.maven.org/maven2/de/fzj/unicore/rcp/eclipseSequencePlugin/0.0.1-SNAPSHOT/eclipseSequencePlugin-0.0.1-SNAPSHOT.pom",
           "datasource_id": "maven_pom",
-          "holder": null,
           "purl": "pkg:maven/de.fzj.unicore.rcp/eclipseSequencePlugin@0.0.1-SNAPSHOT"
         }
       ],
@@ -12464,6 +12464,7 @@
           "code_view_url": null,
           "vcs_url": null,
           "copyright": null,
+          "holder": null,
           "declared_license_expression": null,
           "declared_license_expression_spdx": null,
           "license_detections": [],
@@ -12482,7 +12483,6 @@
           "repository_download_url": "https://repo1.maven.org/maven2/ur/urwerk/test/ur.urwerk.test.module-y/1.0.0/ur.urwerk.test.module-y-1.0.0.jar",
           "api_data_url": "https://repo1.maven.org/maven2/ur/urwerk/test/ur.urwerk.test.module-y/1.0.0/ur.urwerk.test.module-y-1.0.0.pom",
           "datasource_id": "maven_pom",
-          "holder": null,
           "purl": "pkg:maven/ur.urwerk.test/ur.urwerk.test.module-y@1.0.0"
         }
       ],
@@ -12545,6 +12545,7 @@
           "code_view_url": null,
           "vcs_url": null,
           "copyright": null,
+          "holder": null,
           "declared_license_expression": null,
           "declared_license_expression_spdx": null,
           "license_detections": [],
@@ -12563,7 +12564,6 @@
           "repository_download_url": "https://repo1.maven.org/maven2/org/webreformatter/wrappers/com.google.gwt.query/0.1.5.SNAPSHOT/com.google.gwt.query-0.1.5.SNAPSHOT.jar",
           "api_data_url": "https://repo1.maven.org/maven2/org/webreformatter/wrappers/com.google.gwt.query/0.1.5.SNAPSHOT/com.google.gwt.query-0.1.5.SNAPSHOT.pom",
           "datasource_id": "maven_pom",
-          "holder": null,
           "purl": "pkg:maven/org.webreformatter.wrappers/com.google.gwt.query@0.1.5.SNAPSHOT"
         }
       ],
@@ -12626,6 +12626,7 @@
           "code_view_url": "https://github.com/acegi/xml-format-maven-plugin.git",
           "vcs_url": "git+https://github.com/acegi/xml-format-maven-plugin.git",
           "copyright": null,
+          "holder": null,
           "declared_license_expression": "apache-2.0",
           "declared_license_expression_spdx": "Apache-2.0",
           "license_detections": [
@@ -12735,7 +12736,6 @@
           "repository_download_url": "https://repo1.maven.org/maven2/au/com/acegi/xml-format-maven-plugin/3.0.6/xml-format-maven-plugin-3.0.6.jar",
           "api_data_url": "https://repo1.maven.org/maven2/au/com/acegi/xml-format-maven-plugin/3.0.6/xml-format-maven-plugin-3.0.6.pom",
           "datasource_id": "maven_pom",
-          "holder": null,
           "purl": "pkg:maven/au.com.acegi/xml-format-maven-plugin@3.0.6"
         }
       ],

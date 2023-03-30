@@ -41,6 +41,7 @@
     "code_view_url": null,
     "vcs_url": null,
     "copyright": null,
+    "holder": null,
     "declared_license_expression": "bsd-new",
     "declared_license_expression_spdx": "BSD-3-Clause",
     "license_detections": [
@@ -107,7 +108,6 @@
     "repository_download_url": "https://pypi.org/packages/source/n/ntfsutils/ntfsutils-0.1.1.tar.gz",
     "api_data_url": "https://pypi.org/pypi/ntfsutils/0.1.1/json",
     "datasource_id": "pypi_setup_py",
-    "holder": null,
     "purl": "pkg:pypi/ntfsutils@0.1.1"
   }
 ]

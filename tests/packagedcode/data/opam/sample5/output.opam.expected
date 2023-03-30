@@ -37,6 +37,7 @@
     "code_view_url": null,
     "vcs_url": "git://github.com/BinaryAnalysisPlatform/bap/",
     "copyright": null,
+    "holder": null,
     "declared_license_expression": "mit",
     "declared_license_expression_spdx": "MIT",
     "license_detections": [
@@ -124,7 +125,6 @@
     "repository_download_url": null,
     "api_data_url": "https://github.com/ocaml/opam-repository/blob/master/packages/bap-elf/bap-elf.1.0.0/opam",
     "datasource_id": "opam_file",
-    "holder": null,
     "purl": "pkg:opam/bap-elf@1.0.0"
   }
 ]

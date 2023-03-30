@@ -30,6 +30,7 @@
     "code_view_url": "https://github.com/jogendra/BadgeHub/tree/0.1.1",
     "vcs_url": "https://github.com/jogendra/BadgeHub.git",
     "copyright": null,
+    "holder": null,
     "declared_license_expression": "mit",
     "declared_license_expression_spdx": "MIT",
     "license_detections": [
@@ -66,7 +67,6 @@
     "repository_download_url": "https://github.com/jogendra/BadgeHub/archive/refs/tags/0.1.1.zip",
     "api_data_url": "https://raw.githubusercontent.com/CocoaPods/Specs/blob/master/Specs/7/b/b/BadgeHub/0.1.1/BadgeHub.podspec.json",
     "datasource_id": "cocoapods_podspec",
-    "holder": null,
     "purl": "pkg:cocoapods/BadgeHub@0.1.1"
   }
 ]

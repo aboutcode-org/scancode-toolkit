@@ -22,6 +22,7 @@
     "code_view_url": null,
     "vcs_url": null,
     "copyright": null,
+    "holder": null,
     "declared_license_expression": null,
     "declared_license_expression_spdx": null,
     "license_detections": [],
@@ -64,6 +65,7 @@
           "code_view_url": null,
           "vcs_url": null,
           "copyright": null,
+          "holder": null,
           "declared_license_expression": null,
           "declared_license_expression_spdx": null,
           "license_detections": [],
@@ -91,7 +93,6 @@
           "repository_download_url": "https://registry.npmjs.org/@babel/code-frame/-/code-frame-7.0.0.tgz",
           "api_data_url": "https://registry.npmjs.org/@babel%2fcode-frame",
           "datasource_id": "yarn_lock_v1",
-          "holder": null,
           "purl": "pkg:npm/%40babel/code-frame@7.0.0"
         },
         "extra_data": {}
@@ -126,6 +127,7 @@
           "code_view_url": null,
           "vcs_url": null,
           "copyright": null,
+          "holder": null,
           "declared_license_expression": null,
           "declared_license_expression_spdx": null,
           "license_detections": [],
@@ -183,7 +185,6 @@
           "repository_download_url": "https://registry.npmjs.org/@babel/core/-/core-7.3.4.tgz",
           "api_data_url": "https://registry.npmjs.org/@babel%2fcore",
           "datasource_id": "yarn_lock_v1",
-          "holder": null,
           "purl": "pkg:npm/%40babel/core@7.3.4"
         },
         "extra_data": {}
@@ -218,6 +219,7 @@
           "code_view_url": null,
           "vcs_url": null,
           "copyright": null,
+          "holder": null,
           "declared_license_expression": null,
           "declared_license_expression_spdx": null,
           "license_detections": [],
@@ -245,7 +247,6 @@
           "repository_download_url": "https://registry.npmjs.org/@babel/helper-annotate-as-pure/-/helper-annotate-as-pure-7.0.0.tgz",
           "api_data_url": "https://registry.npmjs.org/@babel%2fhelper-annotate-as-pure",
           "datasource_id": "yarn_lock_v1",
-          "holder": null,
           "purl": "pkg:npm/%40babel/helper-annotate-as-pure@7.0.0"
         },
         "extra_data": {}
@@ -255,7 +256,6 @@
     "repository_download_url": null,
     "api_data_url": null,
     "datasource_id": "yarn_lock_v1",
-    "holder": null,
     "purl": null
   }
 ]

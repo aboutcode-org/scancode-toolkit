@@ -37,6 +37,7 @@
     "code_view_url": "https://github.com/daltoniam/Starscream/tree/4.0.3",
     "vcs_url": "https://github.com/daltoniam/Starscream.git",
     "copyright": null,
+    "holder": null,
     "declared_license_expression": "apache-2.0",
     "declared_license_expression_spdx": "Apache-2.0",
     "license_detections": [
@@ -73,7 +74,6 @@
     "repository_download_url": "https://github.com/daltoniam/Starscream/archive/refs/tags/4.0.3.zip",
     "api_data_url": "https://raw.githubusercontent.com/CocoaPods/Specs/blob/master/Specs/2/2/f/Starscream/4.0.3/Starscream.podspec.json",
     "datasource_id": "cocoapods_podspec",
-    "holder": null,
     "purl": "pkg:cocoapods/Starscream@4.0.3"
   }
 ]

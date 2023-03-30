@@ -29,6 +29,7 @@
   "code_view_url": "https://github.com/jode/baz-bar-parent/tree/master",
   "vcs_url": "git://github.com/jode/baz-bar-parent.git",
   "copyright": null,
+  "holder": null,
   "declared_license_expression": "epl-1.0",
   "declared_license_expression_spdx": "EPL-1.0",
   "license_detections": [
@@ -167,6 +168,5 @@
   "repository_download_url": "https://repo1.maven.org/maven2/com/myco/foo/bar/baz/baz-bar-parent/1.0/baz-bar-parent-1.0.jar",
   "api_data_url": "https://repo1.maven.org/maven2/com/myco/foo/bar/baz/baz-bar-parent/1.0/baz-bar-parent-1.0.pom",
   "datasource_id": "maven_pom",
-  "holder": null,
   "purl": "pkg:maven/com.myco.foo.bar.baz/baz-bar-parent@1.0"
 }

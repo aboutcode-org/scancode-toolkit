@@ -50,6 +50,7 @@
     "code_view_url": null,
     "vcs_url": "git+https://github.com/csscomb/grunt-csscomb.git",
     "copyright": null,
+    "holder": null,
     "declared_license_expression": "mit",
     "declared_license_expression_spdx": "MIT",
     "license_detections": [
@@ -166,7 +167,6 @@
     "repository_download_url": "https://registry.npmjs.org/grunt-csscomb/-/grunt-csscomb-3.1.1.tgz",
     "api_data_url": "https://registry.npmjs.org/grunt-csscomb/3.1.1",
     "datasource_id": "npm_package_json",
-    "holder": null,
     "purl": "pkg:npm/grunt-csscomb@3.1.1"
   }
 ]

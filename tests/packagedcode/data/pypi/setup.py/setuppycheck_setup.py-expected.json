@@ -34,6 +34,7 @@
     "code_view_url": null,
     "vcs_url": null,
     "copyright": null,
+    "holder": null,
     "declared_license_expression": "mit",
     "declared_license_expression_spdx": "MIT",
     "license_detections": [
@@ -81,7 +82,6 @@
     "repository_download_url": null,
     "api_data_url": "https://pypi.org/pypi/setuppycheck/json",
     "datasource_id": "pypi_setup_py",
-    "holder": null,
     "purl": "pkg:pypi/setuppycheck"
   }
 ]

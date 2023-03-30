@@ -21,6 +21,7 @@
   "code_view_url": null,
   "vcs_url": null,
   "copyright": null,
+  "holder": null,
   "declared_license_expression": "ruby AND bsd-simplified AND mit",
   "declared_license_expression_spdx": "Ruby AND BSD-2-Clause AND MIT",
   "license_detections": [
@@ -102,6 +103,5 @@
   "repository_download_url": null,
   "api_data_url": null,
   "datasource_id": "alpine_apkbuild",
-  "holder": null,
   "purl": "pkg:alpine/ruby@2.7.3-r1"
 }

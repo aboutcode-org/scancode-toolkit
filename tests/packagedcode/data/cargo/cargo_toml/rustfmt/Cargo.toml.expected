@@ -37,6 +37,7 @@
     "code_view_url": null,
     "vcs_url": "https://github.com/rust-lang/rustfmt",
     "copyright": null,
+    "holder": null,
     "declared_license_expression": "apache-2.0 OR mit",
     "declared_license_expression_spdx": "Apache-2.0 OR MIT",
     "license_detections": [
@@ -73,7 +74,6 @@
     "repository_download_url": "https://crates.io/api/v1/crates/rustfmt-nightly/1.0.3/download",
     "api_data_url": "https://crates.io/api/v1/crates/rustfmt-nightly",
     "datasource_id": "cargo_toml",
-    "holder": null,
     "purl": "pkg:cargo/rustfmt-nightly@1.0.3"
   }
 ]

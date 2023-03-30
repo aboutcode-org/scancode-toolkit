@@ -32,6 +32,7 @@
     "code_view_url": null,
     "vcs_url": "git+http://git.alpinelinux.org/aports/commit/?id=e5c984f68aabb28de623a7e3ada5a223c2b66d77",
     "copyright": null,
+    "holder": null,
     "declared_license_expression": "gpl-2.0",
     "declared_license_expression_spdx": "GPL-2.0-only",
     "license_detections": [
@@ -134,7 +135,6 @@
     "repository_download_url": null,
     "api_data_url": null,
     "datasource_id": "alpine_installed_db",
-    "holder": null,
     "purl": "pkg:alpine/busybox@1.31.1-r9?arch=x86_64"
   }
 ]

@@ -31,6 +31,7 @@
       "code_view_url": null,
       "vcs_url": null,
       "copyright": "Copyright (c) 2009 holger krekel",
+      "holder": "holger krekel",
       "declared_license_expression": "mit",
       "declared_license_expression_spdx": "MIT",
       "license_detections": [
@@ -64,7 +65,6 @@
       "repository_homepage_url": null,
       "repository_download_url": null,
       "api_data_url": null,
-      "holder": "holger krekel",
       "package_uid": "pkg:about/apipkg@1.4?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_paths": [
         "aboutfiles/apipkg.ABOUT"
@@ -105,6 +105,7 @@
       "code_view_url": null,
       "vcs_url": null,
       "copyright": "Copyright (c) 2010 ActiveState Software Inc.",
+      "holder": "ActiveState Software Inc.",
       "declared_license_expression": "mit",
       "declared_license_expression_spdx": "MIT",
       "license_detections": [
@@ -150,7 +151,6 @@
       "repository_homepage_url": null,
       "repository_download_url": null,
       "api_data_url": null,
-      "holder": "ActiveState Software Inc.",
       "package_uid": "pkg:about/appdirs@1.4.3?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_paths": [
         "aboutfiles/appdirs.ABOUT"
@@ -214,6 +214,7 @@
           "code_view_url": null,
           "vcs_url": null,
           "copyright": "Copyright (c) 2009 holger krekel",
+          "holder": "holger krekel",
           "declared_license_expression": "mit",
           "declared_license_expression_spdx": "MIT",
           "license_detections": [
@@ -260,7 +261,6 @@
           "repository_download_url": null,
           "api_data_url": null,
           "datasource_id": "about_file",
-          "holder": "holger krekel",
           "purl": "pkg:about/apipkg@1.4"
         }
       ],
@@ -304,6 +304,7 @@
           "code_view_url": null,
           "vcs_url": null,
           "copyright": "Copyright (c) 2010 ActiveState Software Inc.",
+          "holder": "ActiveState Software Inc.",
           "declared_license_expression": "mit",
           "declared_license_expression_spdx": "MIT",
           "license_detections": [
@@ -350,7 +351,6 @@
           "repository_download_url": null,
           "api_data_url": null,
           "datasource_id": "about_file",
-          "holder": "ActiveState Software Inc.",
           "purl": "pkg:about/appdirs@1.4.3"
         }
       ],

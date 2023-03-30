@@ -37,6 +37,7 @@
     "code_view_url": null,
     "vcs_url": null,
     "copyright": "Copyright \u00a9 Microsoft Corporation",
+    "holder": "Microsoft Corporation",
     "declared_license_expression": "ms-net-library",
     "declared_license_expression_spdx": "LicenseRef-scancode-ms-net-library",
     "license_detections": [
@@ -290,7 +291,6 @@
     "repository_download_url": "https://www.nuget.org/api/v2/package/Microsoft.AspNet.Mvc/6.0.0-beta7",
     "api_data_url": "https://api.nuget.org/v3/registration3/microsoft.aspnet.mvc/6.0.0-beta7.json",
     "datasource_id": "nuget_nupsec",
-    "holder": "Microsoft Corporation",
     "purl": "pkg:nuget/Microsoft.AspNet.Mvc@6.0.0-beta7"
   }
 ]

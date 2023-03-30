@@ -22,6 +22,7 @@
     "code_view_url": null,
     "vcs_url": null,
     "copyright": null,
+    "holder": null,
     "declared_license_expression": null,
     "declared_license_expression_spdx": null,
     "license_detections": [],
@@ -49,7 +50,6 @@
     "repository_download_url": null,
     "api_data_url": null,
     "datasource_id": "go_sum",
-    "holder": null,
     "purl": null
   }
 ]

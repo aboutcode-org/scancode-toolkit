@@ -24,6 +24,7 @@
     "code_view_url": null,
     "vcs_url": null,
     "copyright": null,
+    "holder": null,
     "declared_license_expression": "mit",
     "declared_license_expression_spdx": "MIT",
     "license_detections": [
@@ -97,7 +98,6 @@
     "repository_download_url": null,
     "api_data_url": null,
     "datasource_id": "rpm_installed_database_sqlite",
-    "holder": null,
     "purl": "pkg:rpm/python3-setuptools-wheel@39.2.0?arch=noarch"
   },
   {
@@ -125,6 +125,7 @@
     "code_view_url": null,
     "vcs_url": null,
     "copyright": null,
+    "holder": null,
     "declared_license_expression": "gpl-2.0",
     "declared_license_expression_spdx": "GPL-2.0-only",
     "license_detections": [
@@ -189,7 +190,6 @@
     "repository_download_url": null,
     "api_data_url": null,
     "datasource_id": "rpm_installed_database_sqlite",
-    "holder": null,
     "purl": "pkg:rpm/centos-gpg-keys@8.1?arch=noarch"
   },
   {
@@ -217,6 +217,7 @@
     "code_view_url": null,
     "vcs_url": null,
     "copyright": null,
+    "holder": null,
     "declared_license_expression": "gpl-2.0-plus",
     "declared_license_expression_spdx": "GPL-2.0-or-later",
     "license_detections": [
@@ -263,7 +264,6 @@
     "repository_download_url": null,
     "api_data_url": null,
     "datasource_id": "rpm_installed_database_sqlite",
-    "holder": null,
     "purl": "pkg:rpm/langpacks-en@1.0?arch=noarch"
   }
 ]

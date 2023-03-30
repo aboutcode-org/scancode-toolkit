@@ -29,6 +29,7 @@
   "code_view_url": "http://svn.sourceforge.net/viewcvs.cgi/jtidy/trunk/jtidy/",
   "vcs_url": "svn+https://svn.sourceforge.net/svnroot/jtidy/trunk/jtidy/",
   "copyright": null,
+  "holder": null,
   "declared_license_expression": "tidy",
   "declared_license_expression_spdx": "HTMLTIDY",
   "license_detections": [
@@ -67,6 +68,5 @@
   "repository_download_url": "https://repo1.maven.org/maven2/jtidy/jtidy/4aug2000r7-dev/jtidy-4aug2000r7-dev.jar",
   "api_data_url": "https://repo1.maven.org/maven2/jtidy/jtidy/4aug2000r7-dev/jtidy-4aug2000r7-dev.pom",
   "datasource_id": "maven_pom",
-  "holder": null,
   "purl": "pkg:maven/jtidy/jtidy@4aug2000r7-dev"
 }

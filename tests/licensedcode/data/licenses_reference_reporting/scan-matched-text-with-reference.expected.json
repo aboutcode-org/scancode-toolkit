@@ -36,6 +36,7 @@
       "code_view_url": null,
       "vcs_url": "git+https://github.com/npm/npm.git",
       "copyright": null,
+      "holder": null,
       "declared_license_expression": "artistic-2.0 OR mit",
       "declared_license_expression_spdx": "Artistic-2.0 OR MIT",
       "license_detections": [
@@ -69,7 +70,6 @@
       "repository_homepage_url": "https://www.npmjs.com/package/npm",
       "repository_download_url": "https://registry.npmjs.org/npm/-/npm-2.13.5.tgz",
       "api_data_url": "https://registry.npmjs.org/npm/2.13.5",
-      "holder": null,
       "package_uid": "pkg:npm/npm@2.13.5?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_paths": [
         "scan/package.json"
@@ -487,6 +487,7 @@
           "code_view_url": null,
           "vcs_url": "git+https://github.com/npm/npm.git",
           "copyright": null,
+          "holder": null,
           "declared_license_expression": "artistic-2.0 OR mit",
           "declared_license_expression_spdx": "Artistic-2.0 OR MIT",
           "license_detections": [
@@ -523,7 +524,6 @@
           "repository_download_url": "https://registry.npmjs.org/npm/-/npm-2.13.5.tgz",
           "api_data_url": "https://registry.npmjs.org/npm/2.13.5",
           "datasource_id": "npm_package_json",
-          "holder": null,
           "purl": "pkg:npm/npm@2.13.5"
         }
       ],

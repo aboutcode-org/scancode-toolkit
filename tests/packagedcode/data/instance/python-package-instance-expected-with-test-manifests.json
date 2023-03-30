@@ -41,6 +41,7 @@
       "code_view_url": null,
       "vcs_url": null,
       "copyright": null,
+      "holder": null,
       "declared_license_expression": "mit",
       "declared_license_expression_spdx": "MIT",
       "license_detections": [
@@ -76,7 +77,6 @@
       "repository_homepage_url": "https://pypi.org/project/setuptools",
       "repository_download_url": "https://pypi.org/packages/source/s/setuptools/setuptools-58.2.0.tar.gz",
       "api_data_url": "https://pypi.org/pypi/setuptools/58.2.0/json",
-      "holder": null,
       "package_uid": "pkg:pypi/setuptools@58.2.0?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_paths": [
         "PKG-INFO"
@@ -152,6 +152,7 @@
           "code_view_url": null,
           "vcs_url": null,
           "copyright": null,
+          "holder": null,
           "declared_license_expression": "mit",
           "declared_license_expression_spdx": "MIT",
           "license_detections": [
@@ -190,7 +191,6 @@
           "repository_download_url": "https://pypi.org/packages/source/s/setuptools/setuptools-58.2.0.tar.gz",
           "api_data_url": "https://pypi.org/pypi/setuptools/58.2.0/json",
           "datasource_id": "pypi_sdist_pkginfo",
-          "holder": null,
           "purl": "pkg:pypi/setuptools@58.2.0"
         }
       ],
@@ -272,6 +272,7 @@
           "code_view_url": null,
           "vcs_url": null,
           "copyright": null,
+          "holder": null,
           "declared_license_expression": "mit",
           "declared_license_expression_spdx": "MIT",
           "license_detections": [
@@ -308,7 +309,6 @@
           "repository_download_url": null,
           "api_data_url": null,
           "datasource_id": "pypi_pyproject_toml",
-          "holder": null,
           "purl": null
         }
       ],
@@ -352,6 +352,7 @@
           "code_view_url": null,
           "vcs_url": null,
           "copyright": null,
+          "holder": null,
           "declared_license_expression": "mit",
           "declared_license_expression_spdx": "MIT",
           "license_detections": [
@@ -659,7 +660,6 @@
           "repository_download_url": null,
           "api_data_url": null,
           "datasource_id": "pypi_setup_cfg",
-          "holder": null,
           "purl": "pkg:pypi/setuptools@58.2.0"
         }
       ],
@@ -695,6 +695,7 @@
           "code_view_url": null,
           "vcs_url": null,
           "copyright": null,
+          "holder": null,
           "declared_license_expression": "mit",
           "declared_license_expression_spdx": "MIT",
           "license_detections": [
@@ -731,7 +732,6 @@
           "repository_download_url": null,
           "api_data_url": null,
           "datasource_id": "pypi_setup_py",
-          "holder": null,
           "purl": null
         }
       ],

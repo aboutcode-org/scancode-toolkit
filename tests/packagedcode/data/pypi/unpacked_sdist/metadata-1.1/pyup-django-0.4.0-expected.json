@@ -42,6 +42,7 @@
     "code_view_url": null,
     "vcs_url": null,
     "copyright": null,
+    "holder": null,
     "declared_license_expression": "mit",
     "declared_license_expression_spdx": "MIT",
     "license_detections": [
@@ -97,7 +98,6 @@
     "repository_download_url": "https://pypi.org/packages/source/p/pyup-django/pyup-django-0.4.0.tar.gz",
     "api_data_url": "https://pypi.org/pypi/pyup-django/0.4.0/json",
     "datasource_id": "pypi_sdist_pkginfo",
-    "holder": null,
     "purl": "pkg:pypi/pyup-django@0.4.0"
   }
 ]

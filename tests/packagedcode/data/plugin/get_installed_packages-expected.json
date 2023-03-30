@@ -34,6 +34,7 @@
     "code_view_url": null,
     "vcs_url": null,
     "copyright": "Copyright (c) 1998-2016 Free Software Foundation, Inc.\nCopyright (c) 2001 by Pradeep Padala\nCopyright (c) 1994 X Consortium\nCopyright (c) 1980, 1991, 1992, 1993 The Regents of the University of California\nCopyright 1996-2007 by Thomas E. Dickey",
+    "holder": "Free Software Foundation, Inc.\nPradeep Padala\nX Consortium\nThe Regents of the University of California\nThomas E. Dickey",
     "declared_license_expression": "x11-fsf AND x11-xconsortium AND bsd-new",
     "declared_license_expression_spdx": "X11-distribute-modifications-variant AND X11 AND BSD-3-Clause",
     "license_detections": [
@@ -166,7 +167,6 @@
     "repository_homepage_url": null,
     "repository_download_url": null,
     "api_data_url": null,
-    "holder": "Free Software Foundation, Inc.\nPradeep Padala\nX Consortium\nThe Regents of the University of California\nThomas E. Dickey",
     "package_uid": "pkg:deb/libncurses5@6.1-1ubuntu1.18.04?architecture=amd64&uuid=fixed-uid-done-for-testing-5642512d1758",
     "datafile_paths": [
       "basic-rootfs.tar.gz/var/lib/dpkg/status",
@@ -206,6 +206,7 @@
             "code_view_url": null,
             "vcs_url": null,
             "copyright": "Copyright (c) 1998-2016 Free Software Foundation, Inc.\nCopyright (c) 2001 by Pradeep Padala\nCopyright (c) 1994 X Consortium\nCopyright (c) 1980, 1991, 1992, 1993 The Regents of the University of California\nCopyright 1996-2007 by Thomas E. Dickey",
+            "holder": "Free Software Foundation, Inc.\nPradeep Padala\nX Consortium\nThe Regents of the University of California\nThomas E. Dickey",
             "declared_license_expression": "x11-fsf AND x11-xconsortium AND bsd-new",
             "declared_license_expression_spdx": "X11-distribute-modifications-variant AND X11 AND BSD-3-Clause",
             "license_detections": [
@@ -299,7 +300,6 @@
             "repository_download_url": null,
             "api_data_url": null,
             "datasource_id": "debian_copyright_in_package",
-            "holder": "Free Software Foundation, Inc.\nPradeep Padala\nX Consortium\nThe Regents of the University of California\nThomas E. Dickey",
             "purl": "pkg:deb/libncurses5"
           }
         ],
@@ -337,6 +337,7 @@
             "code_view_url": null,
             "vcs_url": null,
             "copyright": null,
+            "holder": null,
             "declared_license_expression": null,
             "declared_license_expression_spdx": null,
             "license_detections": [],
@@ -390,7 +391,6 @@
             "repository_download_url": null,
             "api_data_url": null,
             "datasource_id": "debian_installed_md5sums",
-            "holder": null,
             "purl": "pkg:deb/libncurses5?arch=amd64"
           }
         ],
@@ -437,6 +437,7 @@
     "code_view_url": null,
     "vcs_url": null,
     "copyright": "Copyright 2013 Jiri Pirko <jiri@resnulli.us>\nCopyright 2014 Andrew Ayer <agwa@andrewayer.name>",
+    "holder": "Jiri Pirko\nAndrew Ayer",
     "declared_license_expression": "lgpl-2.1-plus AND lgpl-2.1",
     "declared_license_expression_spdx": "LGPL-2.1-or-later AND LGPL-2.1-only",
     "license_detections": [
@@ -592,7 +593,6 @@
     "repository_homepage_url": null,
     "repository_download_url": null,
     "api_data_url": null,
-    "holder": "Jiri Pirko\nAndrew Ayer",
     "package_uid": "pkg:deb/libndp0@1.4-2ubuntu0.16.04.1?architecture=amd64&uuid=fixed-uid-done-for-testing-5642512d1758",
     "datafile_paths": [
       "basic-rootfs.tar.gz/var/lib/dpkg/status",
@@ -632,6 +632,7 @@
             "code_view_url": null,
             "vcs_url": null,
             "copyright": "Copyright 2013 Jiri Pirko <jiri@resnulli.us>\nCopyright 2014 Andrew Ayer <agwa@andrewayer.name>",
+            "holder": "Jiri Pirko\nAndrew Ayer",
             "declared_license_expression": "lgpl-2.1-plus AND lgpl-2.1",
             "declared_license_expression_spdx": "LGPL-2.1-or-later AND LGPL-2.1-only",
             "license_detections": [
@@ -766,7 +767,6 @@
             "repository_download_url": null,
             "api_data_url": null,
             "datasource_id": "debian_copyright_in_package",
-            "holder": "Jiri Pirko\nAndrew Ayer",
             "purl": "pkg:deb/libndp0"
           }
         ],
@@ -804,6 +804,7 @@
             "code_view_url": null,
             "vcs_url": null,
             "copyright": null,
+            "holder": null,
             "declared_license_expression": null,
             "declared_license_expression_spdx": null,
             "license_detections": [],
@@ -848,7 +849,6 @@
             "repository_download_url": null,
             "api_data_url": null,
             "datasource_id": "debian_installed_md5sums",
-            "holder": null,
             "purl": "pkg:deb/libndp0?arch=amd64"
           }
         ],

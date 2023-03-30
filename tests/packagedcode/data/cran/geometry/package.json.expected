@@ -79,6 +79,7 @@
     "code_view_url": null,
     "vcs_url": null,
     "copyright": null,
+    "holder": null,
     "declared_license_expression": "gpl-3.0",
     "declared_license_expression_spdx": "GPL-3.0-only",
     "license_detections": [
@@ -126,7 +127,6 @@
     "repository_download_url": null,
     "api_data_url": null,
     "datasource_id": "cran_description",
-    "holder": null,
     "purl": "pkg:cran/geometry@0.4.2"
   }
 ]

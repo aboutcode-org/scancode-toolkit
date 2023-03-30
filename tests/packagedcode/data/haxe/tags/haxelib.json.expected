@@ -40,6 +40,7 @@
     "code_view_url": null,
     "vcs_url": null,
     "copyright": null,
+    "holder": null,
     "declared_license_expression": "mit",
     "declared_license_expression_spdx": "MIT",
     "license_detections": [
@@ -76,7 +77,6 @@
     "repository_download_url": "https://lib.haxe.org/p/tink_core/1.18.0/download/",
     "api_data_url": null,
     "datasource_id": "haxelib_json",
-    "holder": null,
     "purl": "pkg:haxe/tink_core@1.18.0"
   }
 ]

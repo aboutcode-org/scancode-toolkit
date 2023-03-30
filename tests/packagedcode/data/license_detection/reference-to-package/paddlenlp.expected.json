@@ -37,6 +37,7 @@
       "code_view_url": null,
       "vcs_url": null,
       "copyright": null,
+      "holder": null,
       "declared_license_expression": "apache-2.0",
       "declared_license_expression_spdx": "Apache-2.0",
       "license_detections": [
@@ -91,7 +92,6 @@
       "repository_homepage_url": "https://pypi.org/project/paddlenlp",
       "repository_download_url": null,
       "api_data_url": "https://pypi.org/pypi/paddlenlp/json",
-      "holder": null,
       "package_uid": "pkg:pypi/paddlenlp?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_paths": [
         "setup.py"
@@ -742,6 +742,7 @@
           "code_view_url": null,
           "vcs_url": null,
           "copyright": null,
+          "holder": null,
           "declared_license_expression": null,
           "declared_license_expression_spdx": null,
           "license_detections": [],
@@ -906,7 +907,6 @@
           "repository_download_url": null,
           "api_data_url": null,
           "datasource_id": "pip_requirements",
-          "holder": null,
           "purl": null
         }
       ],
@@ -982,6 +982,7 @@
           "code_view_url": null,
           "vcs_url": null,
           "copyright": null,
+          "holder": null,
           "declared_license_expression": "apache-2.0",
           "declared_license_expression_spdx": "Apache-2.0",
           "license_detections": [
@@ -1285,7 +1286,6 @@
           "repository_download_url": null,
           "api_data_url": null,
           "datasource_id": "pip_requirements",
-          "holder": null,
           "purl": null
         }
       ],
@@ -1340,6 +1340,7 @@
           "code_view_url": null,
           "vcs_url": null,
           "copyright": null,
+          "holder": null,
           "declared_license_expression": "apache-2.0",
           "declared_license_expression_spdx": "Apache-2.0",
           "license_detections": [
@@ -1418,7 +1419,6 @@
           "repository_download_url": null,
           "api_data_url": "https://pypi.org/pypi/paddlenlp/json",
           "datasource_id": "pypi_setup_py",
-          "holder": null,
           "purl": "pkg:pypi/paddlenlp"
         }
       ],

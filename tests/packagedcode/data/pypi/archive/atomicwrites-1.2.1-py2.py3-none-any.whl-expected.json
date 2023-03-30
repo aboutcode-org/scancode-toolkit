@@ -38,6 +38,7 @@
     "code_view_url": null,
     "vcs_url": null,
     "copyright": null,
+    "holder": null,
     "declared_license_expression": "mit",
     "declared_license_expression_spdx": "MIT",
     "license_detections": [
@@ -139,7 +140,6 @@
     "repository_download_url": "https://pypi.org/packages/source/a/atomicwrites/atomicwrites-1.2.1.tar.gz",
     "api_data_url": "https://pypi.org/pypi/atomicwrites/1.2.1/json",
     "datasource_id": "pypi_wheel",
-    "holder": null,
     "purl": "pkg:pypi/atomicwrites@1.2.1"
   }
 ]

@@ -37,6 +37,7 @@
           "code_view_url": null,
           "vcs_url": null,
           "copyright": "\u00a9 Microsoft Corporation. All rights reserved.",
+          "holder": "Microsoft Corporation",
           "declared_license_expression": "unknown",
           "declared_license_expression_spdx": "LicenseRef-scancode-unknown",
           "license_detections": [
@@ -73,7 +74,6 @@
           "repository_download_url": null,
           "api_data_url": null,
           "datasource_id": "windows_executable",
-          "holder": "Microsoft Corporation",
           "purl": "pkg:winexe/Microsoft%C2%AE%20Windows%C2%AE%20Operating%20System@10.0.18362.1256"
         }
       ],

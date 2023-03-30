@@ -21,6 +21,7 @@
   "code_view_url": "http://svn.apache.org/viewcvs.cgi/maven/plugins/tags/maven-plugins-10",
   "vcs_url": "svn+http://svn.apache.org/repos/asf/maven/plugins/tags/maven-plugins-10",
   "copyright": null,
+  "holder": null,
   "declared_license_expression": null,
   "declared_license_expression_spdx": null,
   "license_detections": [],
@@ -39,6 +40,5 @@
   "repository_download_url": "https://repo1.maven.org/maven2/org/apache/maven/plugins/maven-plugins/10/maven-plugins-10.jar",
   "api_data_url": "https://repo1.maven.org/maven2/org/apache/maven/plugins/maven-plugins/10/maven-plugins-10.pom",
   "datasource_id": "maven_pom",
-  "holder": null,
   "purl": "pkg:maven/org.apache.maven.plugins/maven-plugins@10"
 }

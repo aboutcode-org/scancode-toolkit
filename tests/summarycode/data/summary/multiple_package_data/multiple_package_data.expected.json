@@ -70,6 +70,7 @@
       "code_view_url": null,
       "vcs_url": null,
       "copyright": null,
+      "holder": null,
       "declared_license_expression": "mit",
       "declared_license_expression_spdx": "MIT",
       "license_detections": [
@@ -103,7 +104,6 @@
       "repository_homepage_url": "https://crates.io/crates/codebase",
       "repository_download_url": null,
       "api_data_url": "https://crates.io/api/v1/crates/codebase",
-      "holder": null,
       "package_uid": "pkg:cargo/codebase?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_paths": [
         "codebase/cargo.toml"
@@ -144,6 +144,7 @@
       "code_view_url": null,
       "vcs_url": null,
       "copyright": null,
+      "holder": null,
       "declared_license_expression": "apache-2.0",
       "declared_license_expression_spdx": "Apache-2.0",
       "license_detections": [
@@ -177,7 +178,6 @@
       "repository_homepage_url": "https://pypi.org/project/codebase",
       "repository_download_url": null,
       "api_data_url": "https://pypi.org/pypi/codebase/json",
-      "holder": null,
       "package_uid": "pkg:pypi/codebase?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_paths": [
         "codebase/setup.py"
@@ -456,6 +456,7 @@
           "code_view_url": null,
           "vcs_url": null,
           "copyright": null,
+          "holder": null,
           "declared_license_expression": "mit",
           "declared_license_expression_spdx": "MIT",
           "license_detections": [
@@ -492,7 +493,6 @@
           "repository_download_url": null,
           "api_data_url": "https://crates.io/api/v1/crates/codebase",
           "datasource_id": "cargo_toml",
-          "holder": null,
           "purl": "pkg:cargo/codebase"
         }
       ],
@@ -654,6 +654,7 @@
           "code_view_url": null,
           "vcs_url": null,
           "copyright": null,
+          "holder": null,
           "declared_license_expression": "apache-2.0",
           "declared_license_expression_spdx": "Apache-2.0",
           "license_detections": [
@@ -690,7 +691,6 @@
           "repository_download_url": null,
           "api_data_url": "https://pypi.org/pypi/codebase/json",
           "datasource_id": "pypi_setup_py",
-          "holder": null,
           "purl": "pkg:pypi/codebase"
         }
       ],

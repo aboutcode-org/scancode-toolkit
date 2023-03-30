@@ -57,6 +57,7 @@
   "code_view_url": "http://cvs.sourceforge.net/viewcvs.py/p6spy",
   "vcs_url": "cvs+pserver:anonymous@cvs.sourceforge.net:/cvsroot/p6spy:p6spy",
   "copyright": null,
+  "holder": null,
   "declared_license_expression": "apache-1.1",
   "declared_license_expression_spdx": "Apache-1.1",
   "license_detections": [
@@ -175,6 +176,5 @@
   "repository_download_url": "https://repo1.maven.org/maven2/p6spy/p6spy/1.3/p6spy-1.3.jar",
   "api_data_url": "https://repo1.maven.org/maven2/p6spy/p6spy/1.3/p6spy-1.3.pom",
   "datasource_id": "maven_pom",
-  "holder": null,
   "purl": "pkg:maven/p6spy/p6spy@1.3"
 }

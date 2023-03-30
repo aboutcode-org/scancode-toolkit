@@ -31,6 +31,7 @@
       "code_view_url": "https://github.com/aws-amplify/amplify-ios/tree/$AMPLIFY_VERSION",
       "vcs_url": "https://github.com/aws-amplify/amplify-ios.git",
       "copyright": null,
+      "holder": null,
       "declared_license_expression": "apache-2.0",
       "declared_license_expression_spdx": "Apache-2.0",
       "license_detections": [
@@ -64,7 +65,6 @@
       "repository_homepage_url": "https://cocoapods.org/pods/CoreMLPredictionsPlugin",
       "repository_download_url": "https://github.com/aws-amplify/amplify-ios/archive/refs/tags/$AMPLIFY_VERSION.zip",
       "api_data_url": "https://raw.githubusercontent.com/CocoaPods/Specs/blob/master/Specs/b/1/e/CoreMLPredictionsPlugin/$AMPLIFY_VERSION/CoreMLPredictionsPlugin.podspec.json",
-      "holder": null,
       "package_uid": "pkg:cocoapods/CoreMLPredictionsPlugin@%24AMPLIFY_VERSION?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_paths": [
         "many-podspecs/CoreMLPredictionsPlugin.podspec"
@@ -105,6 +105,7 @@
       "code_view_url": "https://github.com/aws-amplify/amplify-ios/tree/$AMPLIFY_VERSION",
       "vcs_url": "https://github.com/aws-amplify/amplify-ios.git",
       "copyright": null,
+      "holder": null,
       "declared_license_expression": "apache-2.0",
       "declared_license_expression_spdx": "Apache-2.0",
       "license_detections": [
@@ -138,7 +139,6 @@
       "repository_homepage_url": "https://cocoapods.org/pods/Amplify",
       "repository_download_url": "https://github.com/aws-amplify/amplify-ios/archive/refs/tags/$AMPLIFY_VERSION.zip",
       "api_data_url": "https://raw.githubusercontent.com/CocoaPods/Specs/blob/master/Specs/9/c/5/Amplify/$AMPLIFY_VERSION/Amplify.podspec.json",
-      "holder": null,
       "package_uid": "pkg:cocoapods/Amplify@%24AMPLIFY_VERSION?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_paths": [
         "many-podspecs/Amplify.podspec"
@@ -179,6 +179,7 @@
       "code_view_url": "https://github.com/aws-amplify/amplify-ios/tree/$AMPLIFY_VERSION",
       "vcs_url": "https://github.com/aws-amplify/amplify-ios.git",
       "copyright": null,
+      "holder": null,
       "declared_license_expression": "apache-2.0",
       "declared_license_expression_spdx": "Apache-2.0",
       "license_detections": [
@@ -212,7 +213,6 @@
       "repository_homepage_url": "https://cocoapods.org/pods/AmplifyPlugins",
       "repository_download_url": "https://github.com/aws-amplify/amplify-ios/archive/refs/tags/$AMPLIFY_VERSION.zip",
       "api_data_url": "https://raw.githubusercontent.com/CocoaPods/Specs/blob/master/Specs/5/1/8/AmplifyPlugins/$AMPLIFY_VERSION/AmplifyPlugins.podspec.json",
-      "holder": null,
       "package_uid": "pkg:cocoapods/AmplifyPlugins@%24AMPLIFY_VERSION?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_paths": [
         "many-podspecs/AmplifyPlugins.podspec"
@@ -253,6 +253,7 @@
       "code_view_url": "https://github.com/aws-amplify/amplify-ios/tree/$AMPLIFY_VERSION",
       "vcs_url": "https://github.com/aws-amplify/amplify-ios.git",
       "copyright": null,
+      "holder": null,
       "declared_license_expression": "apache-2.0",
       "declared_license_expression_spdx": "Apache-2.0",
       "license_detections": [
@@ -286,7 +287,6 @@
       "repository_homepage_url": "https://cocoapods.org/pods/AmplifyTestCommon",
       "repository_download_url": "https://github.com/aws-amplify/amplify-ios/archive/refs/tags/$AMPLIFY_VERSION.zip",
       "api_data_url": "https://raw.githubusercontent.com/CocoaPods/Specs/blob/master/Specs/1/4/f/AmplifyTestCommon/$AMPLIFY_VERSION/AmplifyTestCommon.podspec.json",
-      "holder": null,
       "package_uid": "pkg:cocoapods/AmplifyTestCommon@%24AMPLIFY_VERSION?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_paths": [
         "many-podspecs/AmplifyTestCommon.podspec"
@@ -327,6 +327,7 @@
       "code_view_url": "https://github.com/aws-amplify/amplify-ios/tree/$AMPLIFY_VERSION",
       "vcs_url": "https://github.com/aws-amplify/amplify-ios.git",
       "copyright": null,
+      "holder": null,
       "declared_license_expression": "apache-2.0",
       "declared_license_expression_spdx": "Apache-2.0",
       "license_detections": [
@@ -360,7 +361,6 @@
       "repository_homepage_url": "https://cocoapods.org/pods/AWSPluginsCore",
       "repository_download_url": "https://github.com/aws-amplify/amplify-ios/archive/refs/tags/$AMPLIFY_VERSION.zip",
       "api_data_url": "https://raw.githubusercontent.com/CocoaPods/Specs/blob/master/Specs/c/7/7/AWSPluginsCore/$AMPLIFY_VERSION/AWSPluginsCore.podspec.json",
-      "holder": null,
       "package_uid": "pkg:cocoapods/AWSPluginsCore@%24AMPLIFY_VERSION?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_paths": [
         "many-podspecs/AWSPluginsCore.podspec"
@@ -401,6 +401,7 @@
       "code_view_url": "https://github.com/aws-amplify/amplify-ios/tree/$AMPLIFY_VERSION",
       "vcs_url": "https://github.com/aws-amplify/amplify-ios.git",
       "copyright": null,
+      "holder": null,
       "declared_license_expression": "apache-2.0",
       "declared_license_expression_spdx": "Apache-2.0",
       "license_detections": [
@@ -434,7 +435,6 @@
       "repository_homepage_url": "https://cocoapods.org/pods/AWSPredictionsPlugin",
       "repository_download_url": "https://github.com/aws-amplify/amplify-ios/archive/refs/tags/$AMPLIFY_VERSION.zip",
       "api_data_url": "https://raw.githubusercontent.com/CocoaPods/Specs/blob/master/Specs/5/6/0/AWSPredictionsPlugin/$AMPLIFY_VERSION/AWSPredictionsPlugin.podspec.json",
-      "holder": null,
       "package_uid": "pkg:cocoapods/AWSPredictionsPlugin@%24AMPLIFY_VERSION?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_paths": [
         "many-podspecs/AWSPredictionsPlugin.podspec"
@@ -602,6 +602,7 @@
           "code_view_url": "https://github.com/aws-amplify/amplify-ios/tree/$AMPLIFY_VERSION",
           "vcs_url": "https://github.com/aws-amplify/amplify-ios.git",
           "copyright": null,
+          "holder": null,
           "declared_license_expression": "apache-2.0",
           "declared_license_expression_spdx": "Apache-2.0",
           "license_detections": [
@@ -638,7 +639,6 @@
           "repository_download_url": "https://github.com/aws-amplify/amplify-ios/archive/refs/tags/$AMPLIFY_VERSION.zip",
           "api_data_url": "https://raw.githubusercontent.com/CocoaPods/Specs/blob/master/Specs/c/7/7/AWSPluginsCore/$AMPLIFY_VERSION/AWSPluginsCore.podspec.json",
           "datasource_id": "cocoapods_podspec",
-          "holder": null,
           "purl": "pkg:cocoapods/AWSPluginsCore@%24AMPLIFY_VERSION"
         }
       ],
@@ -682,6 +682,7 @@
           "code_view_url": "https://github.com/aws-amplify/amplify-ios/tree/$AMPLIFY_VERSION",
           "vcs_url": "https://github.com/aws-amplify/amplify-ios.git",
           "copyright": null,
+          "holder": null,
           "declared_license_expression": "apache-2.0",
           "declared_license_expression_spdx": "Apache-2.0",
           "license_detections": [
@@ -718,7 +719,6 @@
           "repository_download_url": "https://github.com/aws-amplify/amplify-ios/archive/refs/tags/$AMPLIFY_VERSION.zip",
           "api_data_url": "https://raw.githubusercontent.com/CocoaPods/Specs/blob/master/Specs/5/6/0/AWSPredictionsPlugin/$AMPLIFY_VERSION/AWSPredictionsPlugin.podspec.json",
           "datasource_id": "cocoapods_podspec",
-          "holder": null,
           "purl": "pkg:cocoapods/AWSPredictionsPlugin@%24AMPLIFY_VERSION"
         }
       ],
@@ -762,6 +762,7 @@
           "code_view_url": "https://github.com/aws-amplify/amplify-ios/tree/$AMPLIFY_VERSION",
           "vcs_url": "https://github.com/aws-amplify/amplify-ios.git",
           "copyright": null,
+          "holder": null,
           "declared_license_expression": "apache-2.0",
           "declared_license_expression_spdx": "Apache-2.0",
           "license_detections": [
@@ -798,7 +799,6 @@
           "repository_download_url": "https://github.com/aws-amplify/amplify-ios/archive/refs/tags/$AMPLIFY_VERSION.zip",
           "api_data_url": "https://raw.githubusercontent.com/CocoaPods/Specs/blob/master/Specs/9/c/5/Amplify/$AMPLIFY_VERSION/Amplify.podspec.json",
           "datasource_id": "cocoapods_podspec",
-          "holder": null,
           "purl": "pkg:cocoapods/Amplify@%24AMPLIFY_VERSION"
         }
       ],
@@ -842,6 +842,7 @@
           "code_view_url": "https://github.com/aws-amplify/amplify-ios/tree/$AMPLIFY_VERSION",
           "vcs_url": "https://github.com/aws-amplify/amplify-ios.git",
           "copyright": null,
+          "holder": null,
           "declared_license_expression": "apache-2.0",
           "declared_license_expression_spdx": "Apache-2.0",
           "license_detections": [
@@ -878,7 +879,6 @@
           "repository_download_url": "https://github.com/aws-amplify/amplify-ios/archive/refs/tags/$AMPLIFY_VERSION.zip",
           "api_data_url": "https://raw.githubusercontent.com/CocoaPods/Specs/blob/master/Specs/5/1/8/AmplifyPlugins/$AMPLIFY_VERSION/AmplifyPlugins.podspec.json",
           "datasource_id": "cocoapods_podspec",
-          "holder": null,
           "purl": "pkg:cocoapods/AmplifyPlugins@%24AMPLIFY_VERSION"
         }
       ],
@@ -922,6 +922,7 @@
           "code_view_url": "https://github.com/aws-amplify/amplify-ios/tree/$AMPLIFY_VERSION",
           "vcs_url": "https://github.com/aws-amplify/amplify-ios.git",
           "copyright": null,
+          "holder": null,
           "declared_license_expression": "apache-2.0",
           "declared_license_expression_spdx": "Apache-2.0",
           "license_detections": [
@@ -958,7 +959,6 @@
           "repository_download_url": "https://github.com/aws-amplify/amplify-ios/archive/refs/tags/$AMPLIFY_VERSION.zip",
           "api_data_url": "https://raw.githubusercontent.com/CocoaPods/Specs/blob/master/Specs/1/4/f/AmplifyTestCommon/$AMPLIFY_VERSION/AmplifyTestCommon.podspec.json",
           "datasource_id": "cocoapods_podspec",
-          "holder": null,
           "purl": "pkg:cocoapods/AmplifyTestCommon@%24AMPLIFY_VERSION"
         }
       ],
@@ -1002,6 +1002,7 @@
           "code_view_url": "https://github.com/aws-amplify/amplify-ios/tree/$AMPLIFY_VERSION",
           "vcs_url": "https://github.com/aws-amplify/amplify-ios.git",
           "copyright": null,
+          "holder": null,
           "declared_license_expression": "apache-2.0",
           "declared_license_expression_spdx": "Apache-2.0",
           "license_detections": [
@@ -1038,7 +1039,6 @@
           "repository_download_url": "https://github.com/aws-amplify/amplify-ios/archive/refs/tags/$AMPLIFY_VERSION.zip",
           "api_data_url": "https://raw.githubusercontent.com/CocoaPods/Specs/blob/master/Specs/b/1/e/CoreMLPredictionsPlugin/$AMPLIFY_VERSION/CoreMLPredictionsPlugin.podspec.json",
           "datasource_id": "cocoapods_podspec",
-          "holder": null,
           "purl": "pkg:cocoapods/CoreMLPredictionsPlugin@%24AMPLIFY_VERSION"
         }
       ],
@@ -1074,6 +1074,7 @@
           "code_view_url": null,
           "vcs_url": "",
           "copyright": null,
+          "holder": null,
           "declared_license_expression": "apache-2.0",
           "declared_license_expression_spdx": "Apache-2.0",
           "license_detections": [
@@ -1110,7 +1111,6 @@
           "repository_download_url": null,
           "api_data_url": null,
           "datasource_id": "cocoapods_podfile",
-          "holder": null,
           "purl": null
         }
       ],
@@ -1146,6 +1146,7 @@
           "code_view_url": null,
           "vcs_url": null,
           "copyright": null,
+          "holder": null,
           "declared_license_expression": "apache-2.0",
           "declared_license_expression_spdx": "Apache-2.0",
           "license_detections": [
@@ -1263,7 +1264,6 @@
           "repository_download_url": null,
           "api_data_url": null,
           "datasource_id": "cocoapods_podfile_lock",
-          "holder": null,
           "purl": null
         }
       ],

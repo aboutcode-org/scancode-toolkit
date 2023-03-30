@@ -31,6 +31,7 @@
       "code_view_url": null,
       "vcs_url": null,
       "copyright": null,
+      "holder": null,
       "declared_license_expression": "mit",
       "declared_license_expression_spdx": "MIT",
       "license_detections": [
@@ -64,7 +65,6 @@
       "repository_homepage_url": "https://supermarket.chef.io/cookbooks/301/versions/0.1.0/",
       "repository_download_url": "https://supermarket.chef.io/cookbooks/301/versions/0.1.0/download",
       "api_data_url": "https://supermarket.chef.io/api/v1/cookbooks/301/versions/0.1.0",
-      "holder": null,
       "package_uid": "pkg:chef/301@0.1.0?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_paths": [
         "metadata.rb",
@@ -143,6 +143,7 @@
           "code_view_url": null,
           "vcs_url": null,
           "copyright": null,
+          "holder": null,
           "declared_license_expression": "mit",
           "declared_license_expression_spdx": "MIT",
           "license_detections": [
@@ -190,7 +191,6 @@
           "repository_download_url": "https://supermarket.chef.io/cookbooks/301/versions/0.1.0/download",
           "api_data_url": "https://supermarket.chef.io/api/v1/cookbooks/301/versions/0.1.0",
           "datasource_id": "chef_cookbook_metadata_json",
-          "holder": null,
           "purl": "pkg:chef/301@0.1.0"
         }
       ],
@@ -234,6 +234,7 @@
           "code_view_url": null,
           "vcs_url": null,
           "copyright": null,
+          "holder": null,
           "declared_license_expression": "mit",
           "declared_license_expression_spdx": "MIT",
           "license_detections": [
@@ -281,7 +282,6 @@
           "repository_download_url": "https://supermarket.chef.io/cookbooks/301/versions/0.1.0/download",
           "api_data_url": "https://supermarket.chef.io/api/v1/cookbooks/301/versions/0.1.0",
           "datasource_id": "chef_cookbook_metadata_rb",
-          "holder": null,
           "purl": "pkg:chef/301@0.1.0"
         }
       ],

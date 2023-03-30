@@ -30,6 +30,7 @@
     "code_view_url": "Not Published/tree/1.0.1",
     "vcs_url": "Not Published",
     "copyright": null,
+    "holder": null,
     "declared_license_expression": "mit",
     "declared_license_expression_spdx": "MIT",
     "license_detections": [
@@ -66,7 +67,6 @@
     "repository_download_url": "Not Published/archive/refs/tags/1.0.1.zip",
     "api_data_url": "https://raw.githubusercontent.com/CocoaPods/Specs/blob/master/Specs/2/3/c/kmmWebSocket/1.0.1/kmmWebSocket.podspec.json",
     "datasource_id": "cocoapods_podspec",
-    "holder": null,
     "purl": "pkg:cocoapods/kmmWebSocket@1.0.1"
   }
 ]

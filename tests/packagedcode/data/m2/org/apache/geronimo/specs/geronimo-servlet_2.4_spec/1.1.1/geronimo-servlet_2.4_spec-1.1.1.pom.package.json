@@ -21,6 +21,7 @@
   "code_view_url": "https://svn.apache.org/repos/asf/geronimo/specs/tags/geronimo-servlet_2.4_spec-1.1.1",
   "vcs_url": "svn+https://svn.apache.org/repos/asf/geronimo/specs/tags/geronimo-servlet_2.4_spec-1.1.1",
   "copyright": null,
+  "holder": null,
   "declared_license_expression": null,
   "declared_license_expression_spdx": null,
   "license_detections": [],
@@ -39,6 +40,5 @@
   "repository_download_url": "https://repo1.maven.org/maven2/org/apache/geronimo/specs/geronimo-servlet_2.4_spec/1.1.1/geronimo-servlet_2.4_spec-1.1.1.jar",
   "api_data_url": "https://repo1.maven.org/maven2/org/apache/geronimo/specs/geronimo-servlet_2.4_spec/1.1.1/geronimo-servlet_2.4_spec-1.1.1.pom",
   "datasource_id": "maven_pom",
-  "holder": null,
   "purl": "pkg:maven/org.apache.geronimo.specs/geronimo-servlet_2.4_spec@1.1.1"
 }

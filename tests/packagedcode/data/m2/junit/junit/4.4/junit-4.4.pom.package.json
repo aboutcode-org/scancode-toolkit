@@ -29,6 +29,7 @@
   "code_view_url": "http://junit.cvs.sourceforge.net/junit/",
   "vcs_url": "http://junit.cvs.sourceforge.net/junit/",
   "copyright": null,
+  "holder": null,
   "declared_license_expression": "cpl-1.0",
   "declared_license_expression_spdx": "CPL-1.0",
   "license_detections": [
@@ -86,6 +87,5 @@
   "repository_download_url": "https://repo1.maven.org/maven2/junit/junit/4.4/junit-4.4.jar",
   "api_data_url": "https://repo1.maven.org/maven2/junit/junit/4.4/junit-4.4.pom",
   "datasource_id": "maven_pom",
-  "holder": null,
   "purl": "pkg:maven/junit/junit@4.4"
 }

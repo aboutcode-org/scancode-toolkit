@@ -30,6 +30,7 @@
     "code_view_url": null,
     "vcs_url": null,
     "copyright": "\u00a9 2004 Free Software Foundation <www.fsf.org>",
+    "holder": "Free Software Foundation",
     "declared_license_expression": "lgpl-2.1-plus",
     "declared_license_expression_spdx": "LGPL-2.1-or-later",
     "license_detections": [
@@ -66,7 +67,6 @@
     "repository_download_url": null,
     "api_data_url": null,
     "datasource_id": "windows_executable",
-    "holder": "Free Software Foundation",
     "purl": "pkg:winexe/LibIconv@1.9.2.1519"
   }
 ]

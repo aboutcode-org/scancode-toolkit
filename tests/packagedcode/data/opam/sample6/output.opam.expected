@@ -37,6 +37,7 @@
     "code_view_url": null,
     "vcs_url": "git+https://github.com/savonet/ocaml-winsvc.git",
     "copyright": null,
+    "holder": null,
     "declared_license_expression": "gpl-2.0",
     "declared_license_expression_spdx": "GPL-2.0-only",
     "license_detections": [
@@ -84,7 +85,6 @@
     "repository_download_url": null,
     "api_data_url": null,
     "datasource_id": "opam_file",
-    "holder": null,
     "purl": null
   }
 ]

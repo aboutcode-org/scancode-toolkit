@@ -21,6 +21,7 @@
   "code_view_url": null,
   "vcs_url": null,
   "copyright": null,
+  "holder": null,
   "declared_license_expression": "gpl-3.0",
   "declared_license_expression_spdx": "GPL-3.0-only",
   "license_detections": [
@@ -70,6 +71,5 @@
   "repository_download_url": null,
   "api_data_url": null,
   "datasource_id": "alpine_apkbuild",
-  "holder": null,
   "purl": "pkg:alpine/rtpengine-lts@5.10.43-r%24%28%280"
 }

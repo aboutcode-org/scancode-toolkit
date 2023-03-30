@@ -22,6 +22,7 @@
     "code_view_url": null,
     "vcs_url": null,
     "copyright": null,
+    "holder": null,
     "declared_license_expression": null,
     "declared_license_expression_spdx": null,
     "license_detections": [],
@@ -89,7 +90,6 @@
     "repository_download_url": "https://pub.dartlang.org/packages/foobar/versions/1.0.0+1.tar.gz",
     "api_data_url": "https://pub.dev/api/packages/foobar/versions/1.0.0+1",
     "datasource_id": "pubspec_yaml",
-    "holder": null,
     "purl": "pkg:dart/foobar@1.0.0%2B1"
   }
 ]
