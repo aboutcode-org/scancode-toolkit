@@ -54,6 +54,7 @@ class TestModels(PackageTester):
             ('code_view_url', None),
             ('vcs_url', None),
             ('copyright', None),
+            ('holder', None),
             ('declared_license_expression', None),
             ('declared_license_expression_spdx', None),
             ('license_detections', []),
@@ -70,7 +71,6 @@ class TestModels(PackageTester):
             ('repository_download_url', None),
             ('api_data_url', None),
             ('datasource_id', 'android_apk'),
-            ('holder', None),
             ('purl', 'pkg:android/someAndroidPAcakge'),
         ]
         assert list(pd.to_dict().items()) == expected

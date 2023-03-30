@@ -30,6 +30,7 @@
     "code_view_url": null,
     "vcs_url": null,
     "copyright": "Microsoft Corporation",
+    "holder": "Microsoft Corporation",
     "declared_license_expression": null,
     "declared_license_expression_spdx": null,
     "license_detections": [],
@@ -46,7 +47,6 @@
     "repository_download_url": null,
     "api_data_url": null,
     "datasource_id": "microsoft_update_manifest_mum",
-    "holder": null,
     "purl": "pkg:windows-update/Package_1_for_KB4601060@10.0.3770.4"
   }
 ]
