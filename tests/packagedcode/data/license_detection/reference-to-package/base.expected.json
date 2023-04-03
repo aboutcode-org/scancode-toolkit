@@ -91,7 +91,7 @@
   "dependencies": [],
   "license_detections": [
     {
-      "identifier": "af493d9f-0c66-d9f8-4538-579134812514",
+      "identifier": "bsd-new-af493d9f-0c66-d9f8-4538-579134812514",
       "license_expression": "bsd-new",
       "detection_count": 1,
       "detection_log": []
@@ -266,7 +266,7 @@
           "detection_log": [
             "unknown-reference-in-file-to-package"
           ],
-          "identifier": "af493d9f-0c66-d9f8-4538-579134812514"
+          "identifier": "bsd-new-af493d9f-0c66-d9f8-4538-579134812514"
         }
       ],
       "license_clues": [],

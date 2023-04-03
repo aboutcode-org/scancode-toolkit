@@ -136,6 +136,7 @@ def add_referenced_license_matches_for_package(resource, codebase, no_licenses):
             license_detection_mapping["identifier"] = get_new_identifier_from_detections(
                 initial_detection=license_detection_mapping,
                 detections_added=referenced_license_detections,
+                license_expression=license_expression,
             )
 
         if modified:
@@ -252,6 +253,7 @@ def add_referenced_license_detection_from_package(resource, codebase, no_license
         license_detection_mapping["identifier"] = get_new_identifier_from_detections(
             initial_detection=license_detection_mapping,
             detections_added=detections_added,
+            license_expression=license_expression,
         )
 
     if modified:

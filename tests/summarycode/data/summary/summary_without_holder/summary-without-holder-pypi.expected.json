@@ -146,7 +146,7 @@
       "detection_count": 1
     },
     {
-      "identifier": "59433771-4926-870e-d21a-8162cfa060a3",
+      "identifier": "mit-59433771-4926-870e-d21a-8162cfa060a3",
       "license_expression": "mit",
       "detection_count": 1
     },
@@ -440,7 +440,7 @@
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE"
             }
           ],
-          "identifier": "59433771-4926-870e-d21a-8162cfa060a3",
+          "identifier": "mit-59433771-4926-870e-d21a-8162cfa060a3",
           "detection_log": [
             "unknown-reference-to-local-file"
           ]
@@ -871,7 +871,7 @@
                   "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE"
                 }
               ],
-              "identifier": "618615ea-2265-e31e-c5fa-c86ceb33cf79",
+              "identifier": "mit-707ccf7a-5c60-0e4c-5844-349c989a00f5",
               "detection_log": [
                 "unknown-reference-to-local-file"
               ]
@@ -939,7 +939,7 @@
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE"
             }
           ],
-          "identifier": "618615ea-2265-e31e-c5fa-c86ceb33cf79",
+          "identifier": "mit-707ccf7a-5c60-0e4c-5844-349c989a00f5",
           "detection_log": [
             "unknown-reference-to-local-file"
           ]

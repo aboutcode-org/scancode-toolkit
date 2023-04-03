@@ -354,6 +354,7 @@ def add_referenced_filenames_license_matches_for_detections(resource, codebase):
         license_detection_mapping["identifier"] = get_new_identifier_from_detections(
             initial_detection=license_detection_mapping,
             detections_added=detections_added,
+            license_expression=license_expression,
         )
 
     if modified:

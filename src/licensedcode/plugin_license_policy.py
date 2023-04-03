@@ -49,7 +49,7 @@ class LicensePolicy(PostScanPlugin):
     detected license key that is found in the license_policy.yml file
     """
 
-    resource_attributes = dict(license_policy=attr.ib(default=attr.Factory(dict)))
+    resource_attributes = dict(license_policy=attr.ib(default=attr.Factory(list)))
 
     sort_order = 9
 
@@ -90,16 +90,19 @@ class LicensePolicy(PostScanPlugin):
 
             except AttributeError:
                 # add license_policy regardless if there is license info or not
-                resource.license_policy = {}
+                resource.license_policy = []
                 codebase.save_resource(resource)
                 continue
 
+            license_policies = []
             for key in resource_license_keys:
                 for policy in policies:
                     if key == policy.get('license_key'):
                         # Apply the policy to the Resource
-                        resource.license_policy = policy
-                        codebase.save_resource(resource)
+                        license_policies.append(policy)
+            
+            resource.license_policy = sorted(license_policies, key=lambda d: d['license_key']) 
+            codebase.save_resource(resource)
 
 
 def has_policy_duplicates(license_policy_location):

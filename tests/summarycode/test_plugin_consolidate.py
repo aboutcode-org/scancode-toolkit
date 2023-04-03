@@ -104,6 +104,8 @@ class TestConsolidate(FileDrivenTesting):
         check_json_scan(expected_file, result_file, remove_uuid=True, regen=REGEN_TEST_FIXTURES, remove_file_date=True)
 
     def test_consolidate_zlib(self):
+        # Input for scan: https://github.com/madler/zlib/archive/refs/tags/v1.2.11.tar.gz
+        # Run a -clipeu scan to regenerate plugin_consolidate/zlib.json
         scan_loc = self.get_test_loc('plugin_consolidate/zlib.json')
         result_file = self.get_temp_file('json')
         expected_file = self.get_test_loc('plugin_consolidate/zlib-expected.json')
@@ -111,6 +113,8 @@ class TestConsolidate(FileDrivenTesting):
         check_json_scan(expected_file, result_file, regen=REGEN_TEST_FIXTURES, remove_file_date=True)
 
     def test_consolidate_e2fsprogs(self):
+        # Input for the scan: https://github.com/tytso/e2fsprogs/archive/refs/tags/v1.45.4.zip
+        # Run a -clipeu scan to regenerate plugin_consolidate/e2fsprogs.json
         scan_loc = self.get_test_loc('plugin_consolidate/e2fsprogs.json')
         result_file = self.get_temp_file('json')
         expected_file = self.get_test_loc('plugin_consolidate/e2fsprogs-expected.json')

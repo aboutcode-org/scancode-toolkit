@@ -1,2 +1,2 @@
-path,type,declared_license_expression,scan_errors
-apache-2.0.LICENSE,file,apache-2.0 AND mit,
+path,type,declared_license_expression,declared_license_expression_spdx,scan_errors
+apache-2.0.LICENSE,file,apache-2.0 AND mit,Apache-2.0 AND MIT,

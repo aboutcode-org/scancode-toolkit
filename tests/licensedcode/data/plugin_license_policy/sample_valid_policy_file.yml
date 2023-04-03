@@ -1,0 +1,9 @@
+license_policies:
+-   license_key: gpl-3.0
+    label: Restricted License
+    color_code: '#FFcc33'
+    icon: icon-warning-sign
+-   license_key: apache-2.0
+    label: Approved License
+    color_code: '#008000'
+    icon: icon-ok-circle
