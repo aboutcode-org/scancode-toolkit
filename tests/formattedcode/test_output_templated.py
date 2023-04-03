@@ -30,6 +30,26 @@ test_env.test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
 
 
 @pytest.mark.scanslow
+def test_has_licenses_in_html_format_output():
+    test_file = test_env.get_test_loc('templated/simple-license.txt')
+    result_file = test_env.get_temp_file('html')
+    run_scan_click(['--license', test_file, '--html', result_file])
+    results = open(result_file).read()
+    assert 'gpl-2.0' in results
+    assert __version__ in results
+
+
+@pytest.mark.scanslow
+def test_has_license_references_in_html_format_output():
+    test_file = test_env.get_test_loc('templated/simple-license.txt')
+    result_file = test_env.get_temp_file('html')
+    run_scan_click(['--license', '--license-references', test_file, '--html', result_file])
+    results = open(result_file).read()
+    assert 'http://www.gnu.org/licenses/gpl-2.0.html' in results
+    assert __version__ in results
+
+
+@pytest.mark.scanslow
 def test_paths_are_posix_paths_in_html_app_format_output():
     test_dir = test_env.get_test_loc('templated/simple')
     result_file = test_env.get_temp_file(extension='html', file_name='test_html')
