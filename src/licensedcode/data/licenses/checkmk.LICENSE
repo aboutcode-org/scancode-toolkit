@@ -8,6 +8,7 @@ spdx_license_key: checkmk
 other_urls:
     - https://github.com/libcheck/check/blob/master/checkmk/checkmk.in
 ---
+
 Redistribution of this program in any form, with or without
 modifications, is permitted, provided that the above copyright is
 retained in distributions of this program in source form.
