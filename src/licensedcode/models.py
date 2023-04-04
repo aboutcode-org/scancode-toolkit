@@ -24,6 +24,8 @@ from pathlib import Path
 from licensedcode._vendor import attr
 from license_expression import ExpressionError
 from license_expression import Licensing
+from saneyaml import load as yaml_load
+from saneyaml import dump as yaml_dump
 
 from commoncode.fileutils import file_base_name
 from commoncode.fileutils import file_name
@@ -479,6 +481,8 @@ class License:
         """
         metadata = self.to_dict(include_builtin=False)
         content = self.text
+        # We add a space to empty newlines to make this text YAML safe
+        content = get_yaml_safe_text(content)
         output = dumps_frontmatter(content=content, metadata=metadata)
         license_file = self.license_file(licenses_data_dir=licenses_data_dir)
         with open(license_file, 'w') as of:
@@ -658,6 +662,12 @@ class License:
             # local text consistency
             text = lic.text
 
+            data = {"text": text}
+            # We are testing whether we can dump as yaml and load from yaml
+            # without failing (i.e. whether the text is yaml safe) 
+            yaml_string = yaml_dump(data, indent=4)
+            loaded_yaml = yaml_load(yaml_string)
+
             license_itokens = tuple(index_tokenizer(text))
             if not license_itokens:
                 info('No license text')
@@ -735,6 +745,17 @@ class License:
                 print(f'INFOS for: {key}:', '\n'.join(msgs))
 
         return errors, warnings, infos
+
+
+def get_yaml_safe_text(text):
+
+    data = {"text": text}
+    yaml_string = yaml_dump(data, indent=4)
+    try:
+        loaded_yaml = yaml_load(yaml_string)
+    except Exception:
+        text = text.replace('\n\n', '\n \n')
+    return text
 
 
 def ignore_editor_tmp_files(location):
