@@ -199,14 +199,6 @@ jobs:
 
     - template: etc/ci/azure-posix.yml
       parameters:
-          job_name: ubuntu18_cpython_latest_from_pip
-          image_name: ubuntu-18.04
-          python_versions: ['3.8', '3.9', '3.10', '3.11']
-          test_suites:
-              all: venv/bin/pip install --upgrade-strategy eager --force-reinstall --upgrade -e .[testing] && venv/bin/pytest -n 2 -vvs tests/scancode/test_cli.py
-
-    - template: etc/ci/azure-posix.yml
-      parameters:
           job_name: ubuntu20_cpython_latest_from_pip
           image_name: ubuntu-20.04
           python_versions: ['3.8', '3.9', '3.10', '3.11']
