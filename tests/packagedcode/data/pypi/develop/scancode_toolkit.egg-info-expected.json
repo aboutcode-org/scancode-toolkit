@@ -50,6 +50,7 @@
     "code_view_url": null,
     "vcs_url": null,
     "copyright": null,
+    "holder": null,
     "declared_license_expression": "apache-2.0 AND cc-by-4.0 AND other-permissive AND other-copyleft",
     "declared_license_expression_spdx": "Apache-2.0 AND CC-BY-4.0 AND LicenseRef-scancode-other-permissive AND LicenseRef-scancode-other-copyleft",
     "license_detections": [

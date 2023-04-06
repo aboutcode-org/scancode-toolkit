@@ -44,6 +44,7 @@
       "repository_homepage_url": null,
       "repository_download_url": null,
       "api_data_url": null,
+      "holder": null,
       "package_uid": "pkg:windows-program/Test@0.0.1?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_paths": [
         "layer/Hives/Software_Delta"
@@ -97,6 +98,7 @@
       "repository_homepage_url": null,
       "repository_download_url": null,
       "api_data_url": null,
+      "holder": null,
       "package_uid": "pkg:windows-program/Test2@0.0.1?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_paths": [
         "layer/Hives/Software_Delta"
@@ -291,6 +293,7 @@
           "repository_download_url": null,
           "api_data_url": null,
           "datasource_id": "win_reg_installed_programs_docker_software_delta",
+          "holder": null,
           "purl": "pkg:windows-program/Test@0.0.1"
         },
         {
@@ -332,6 +335,7 @@
           "repository_download_url": null,
           "api_data_url": null,
           "datasource_id": "win_reg_installed_programs_docker_software_delta",
+          "holder": null,
           "purl": null
         },
         {
@@ -409,6 +413,7 @@
           "repository_download_url": null,
           "api_data_url": null,
           "datasource_id": "win_reg_installed_programs_docker_software_delta",
+          "holder": null,
           "purl": "pkg:windows-program/Test2@0.0.1"
         },
         {
@@ -450,6 +455,7 @@
           "repository_download_url": null,
           "api_data_url": null,
           "datasource_id": "win_reg_installed_programs_docker_software_delta",
+          "holder": null,
           "purl": null
         }
       ],

@@ -35,6 +35,7 @@
       "code_view_url": null,
       "vcs_url": "https://github.com/mharrisb1/daglib",
       "copyright": null,
+      "holder": null,
       "declared_license_expression": "mit",
       "declared_license_expression_spdx": "MIT",
       "license_detections": [
@@ -227,6 +228,7 @@
           "code_view_url": null,
           "vcs_url": "https://github.com/mharrisb1/daglib",
           "copyright": null,
+          "holder": null,
           "declared_license_expression": "mit",
           "declared_license_expression_spdx": "MIT",
           "license_detections": [

@@ -30,6 +30,7 @@
     "code_view_url": null,
     "vcs_url": null,
     "copyright": "Copyright (c) 2010 ActiveState Software Inc.",
+    "holder": "ActiveState Software Inc.",
     "declared_license_expression": "mit",
     "declared_license_expression_spdx": "MIT",
     "license_detections": [

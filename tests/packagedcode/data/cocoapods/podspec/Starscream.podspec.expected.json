@@ -37,6 +37,7 @@
     "code_view_url": "https://github.com/daltoniam/Starscream/tree/4.0.3",
     "vcs_url": "https://github.com/daltoniam/Starscream.git",
     "copyright": null,
+    "holder": null,
     "declared_license_expression": "apache-2.0",
     "declared_license_expression_spdx": "Apache-2.0",
     "license_detections": [

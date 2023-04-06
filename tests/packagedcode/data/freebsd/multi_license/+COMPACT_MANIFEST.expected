@@ -36,6 +36,7 @@
     "code_view_url": "https://svnweb.freebsd.org/ports/head/dns/py-idna",
     "vcs_url": null,
     "copyright": null,
+    "holder": null,
     "declared_license_expression": "python AND bsd-new",
     "declared_license_expression_spdx": "Python-2.0 AND BSD-3-Clause",
     "license_detections": [

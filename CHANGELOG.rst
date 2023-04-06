@@ -63,6 +63,12 @@ Package detection:
   manifest data parsing code outside of the scancode-toolkit context in other
   libraries.
 
+- The PackageData model now includes a ``holder`` field, which is populated with
+  holder data extracted from the copyright field if copyright data is present,
+  otherwise it remains empty.
+
+  https://github.com/nexB/scancode-toolkit/issues/3290
+
 
 License detection:
 ~~~~~~~~~~~~~~~~~~~

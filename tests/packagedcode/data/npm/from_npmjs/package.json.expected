@@ -2205,6 +2205,7 @@
     "code_view_url": null,
     "vcs_url": "git+https://github.com/npm/npm.git@fc7bbf03e39cc48a8924b90696d28345a6a90f3c",
     "copyright": null,
+    "holder": null,
     "declared_license_expression": "artistic-2.0",
     "declared_license_expression_spdx": "Artistic-2.0",
     "license_detections": [

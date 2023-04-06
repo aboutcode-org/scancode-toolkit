@@ -41,6 +41,7 @@
     "code_view_url": null,
     "vcs_url": "git://github.com/auth0/express-jwt.git",
     "copyright": null,
+    "holder": null,
     "declared_license_expression": "mit",
     "declared_license_expression_spdx": "MIT",
     "license_detections": [

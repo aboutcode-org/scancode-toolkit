@@ -24,6 +24,7 @@
     "code_view_url": null,
     "vcs_url": null,
     "copyright": null,
+    "holder": null,
     "declared_license_expression": "gpl-3.0-plus AND gpl-2.0-plus AND lgpl-2.0-plus",
     "declared_license_expression_spdx": "GPL-3.0-or-later AND GPL-2.0-or-later AND LGPL-2.0-or-later",
     "license_detections": [
@@ -226,6 +227,7 @@
     "code_view_url": null,
     "vcs_url": null,
     "copyright": null,
+    "holder": null,
     "declared_license_expression": "mit",
     "declared_license_expression_spdx": "MIT",
     "license_detections": [

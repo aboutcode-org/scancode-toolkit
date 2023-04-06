@@ -37,6 +37,7 @@
           "code_view_url": null,
           "vcs_url": null,
           "copyright": "\u00a9 2009 Ian F. Darwin",
+          "holder": "Ian F. Darwin",
           "declared_license_expression": "bsd-simplified-darwin",
           "declared_license_expression_spdx": "LicenseRef-scancode-bsd-simplified-darwin",
           "license_detections": [

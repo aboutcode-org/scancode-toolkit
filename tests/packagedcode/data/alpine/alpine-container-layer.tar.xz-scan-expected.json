@@ -33,6 +33,7 @@
       "code_view_url": null,
       "vcs_url": "git+http://git.alpinelinux.org/aports/commit/?id=cb70ca5c6d6db0399d2dd09189c5d57827bce5cd",
       "copyright": null,
+      "holder": null,
       "declared_license_expression": "gpl-2.0",
       "declared_license_expression_spdx": "GPL-2.0-only",
       "license_detections": [
@@ -122,6 +123,7 @@
       "code_view_url": null,
       "vcs_url": "git+http://git.alpinelinux.org/aports/commit/?id=ee13d43a53938d8a04ba787b9423f3270a3c14a7",
       "copyright": null,
+      "holder": null,
       "declared_license_expression": "mit",
       "declared_license_expression_spdx": "MIT",
       "license_detections": [
@@ -211,6 +213,7 @@
       "code_view_url": null,
       "vcs_url": "git+http://git.alpinelinux.org/aports/commit/?id=e58f0e341603e9facc1e675722367174b45e0d0c",
       "copyright": null,
+      "holder": null,
       "declared_license_expression": "gpl-2.0",
       "declared_license_expression_spdx": "GPL-2.0-only",
       "license_detections": [
@@ -300,6 +303,7 @@
       "code_view_url": null,
       "vcs_url": "git+http://git.alpinelinux.org/aports/commit/?id=cb70ca5c6d6db0399d2dd09189c5d57827bce5cd",
       "copyright": null,
+      "holder": null,
       "declared_license_expression": "gpl-2.0",
       "declared_license_expression_spdx": "GPL-2.0-only",
       "license_detections": [
@@ -407,6 +411,7 @@
       "code_view_url": null,
       "vcs_url": "git+http://git.alpinelinux.org/aports/commit/?id=aab68f8c9ab434a46710de8e12fb3206e2930a59",
       "copyright": null,
+      "holder": null,
       "declared_license_expression": "mit",
       "declared_license_expression_spdx": "MIT",
       "license_detections": [
@@ -658,6 +663,7 @@
       "code_view_url": null,
       "vcs_url": "git+http://git.alpinelinux.org/aports/commit/?id=16988f3c77f035072956655194770e15cbc61257",
       "copyright": null,
+      "holder": null,
       "declared_license_expression": "mpl-2.0 AND mit",
       "declared_license_expression_spdx": "MPL-2.0 AND MIT",
       "license_detections": [
@@ -747,6 +753,7 @@
       "code_view_url": null,
       "vcs_url": "git+http://git.alpinelinux.org/aports/commit/?id=26153b65138c876d57e81750f6de6baab6d5bd5b",
       "copyright": null,
+      "holder": null,
       "declared_license_expression": "openssl-ssleay",
       "declared_license_expression_spdx": "OpenSSL",
       "license_detections": [
@@ -845,6 +852,7 @@
       "code_view_url": null,
       "vcs_url": "git+http://git.alpinelinux.org/aports/commit/?id=26153b65138c876d57e81750f6de6baab6d5bd5b",
       "copyright": null,
+      "holder": null,
       "declared_license_expression": "openssl-ssleay",
       "declared_license_expression_spdx": "OpenSSL",
       "license_detections": [
@@ -934,6 +942,7 @@
       "code_view_url": null,
       "vcs_url": "git+http://git.alpinelinux.org/aports/commit/?id=e58f0e341603e9facc1e675722367174b45e0d0c",
       "copyright": null,
+      "holder": null,
       "declared_license_expression": "gpl-2.0",
       "declared_license_expression_spdx": "GPL-2.0-only",
       "license_detections": [
@@ -1011,6 +1020,7 @@
       "code_view_url": null,
       "vcs_url": "git+http://git.alpinelinux.org/aports/commit/?id=6754a9005594de4243aad9b2744546971078c6c7",
       "copyright": null,
+      "holder": null,
       "declared_license_expression": "zlib",
       "declared_license_expression_spdx": "Zlib",
       "license_detections": [
@@ -1100,6 +1110,7 @@
       "code_view_url": null,
       "vcs_url": "git+http://git.alpinelinux.org/aports/commit/?id=34d90ac8388e88126893f5d27ea35d304e65e5ab",
       "copyright": null,
+      "holder": null,
       "declared_license_expression": "gpl-2.0",
       "declared_license_expression_spdx": "GPL-2.0-only",
       "license_detections": [
@@ -1177,6 +1188,7 @@
       "code_view_url": null,
       "vcs_url": "git+http://git.alpinelinux.org/aports/commit/?id=d7ae612a3cc5f827289d915783b4cbf8c7207947",
       "copyright": null,
+      "holder": null,
       "declared_license_expression": "gpl-2.0",
       "declared_license_expression_spdx": "GPL-2.0-only",
       "license_detections": [
@@ -1254,6 +1266,7 @@
       "code_view_url": null,
       "vcs_url": "git+http://git.alpinelinux.org/aports/commit/?id=ee13d43a53938d8a04ba787b9423f3270a3c14a7",
       "copyright": null,
+      "holder": null,
       "declared_license_expression": "mit AND bsd-new AND gpl-2.0-plus",
       "declared_license_expression_spdx": "MIT AND BSD-3-Clause AND GPL-2.0-or-later",
       "license_detections": [
@@ -1331,6 +1344,7 @@
       "code_view_url": null,
       "vcs_url": "git+http://git.alpinelinux.org/aports/commit/?id=60424133be2e79bbfeff3d58147a22886f817ce2",
       "copyright": null,
+      "holder": null,
       "declared_license_expression": "bsd-simplified AND bsd-new",
       "declared_license_expression_spdx": "BSD-2-Clause AND BSD-3-Clause",
       "license_detections": [
@@ -2152,6 +2166,7 @@
           "code_view_url": null,
           "vcs_url": "git+http://git.alpinelinux.org/aports/commit/?id=cb70ca5c6d6db0399d2dd09189c5d57827bce5cd",
           "copyright": null,
+          "holder": null,
           "declared_license_expression": "gpl-2.0",
           "declared_license_expression_spdx": "GPL-2.0-only",
           "license_detections": [
@@ -2352,6 +2367,7 @@
           "code_view_url": null,
           "vcs_url": "git+http://git.alpinelinux.org/aports/commit/?id=ee13d43a53938d8a04ba787b9423f3270a3c14a7",
           "copyright": null,
+          "holder": null,
           "declared_license_expression": "mit",
           "declared_license_expression_spdx": "MIT",
           "license_detections": [
@@ -2444,6 +2460,7 @@
           "code_view_url": null,
           "vcs_url": "git+http://git.alpinelinux.org/aports/commit/?id=e58f0e341603e9facc1e675722367174b45e0d0c",
           "copyright": null,
+          "holder": null,
           "declared_license_expression": "gpl-2.0",
           "declared_license_expression_spdx": "GPL-2.0-only",
           "license_detections": [
@@ -2581,6 +2598,7 @@
           "code_view_url": null,
           "vcs_url": "git+http://git.alpinelinux.org/aports/commit/?id=cb70ca5c6d6db0399d2dd09189c5d57827bce5cd",
           "copyright": null,
+          "holder": null,
           "declared_license_expression": "gpl-2.0",
           "declared_license_expression_spdx": "GPL-2.0-only",
           "license_detections": [
@@ -2792,6 +2810,7 @@
           "code_view_url": null,
           "vcs_url": "git+http://git.alpinelinux.org/aports/commit/?id=aab68f8c9ab434a46710de8e12fb3206e2930a59",
           "copyright": null,
+          "holder": null,
           "declared_license_expression": "mit",
           "declared_license_expression_spdx": "MIT",
           "license_detections": [
@@ -3235,6 +3254,7 @@
           "code_view_url": null,
           "vcs_url": "git+http://git.alpinelinux.org/aports/commit/?id=16988f3c77f035072956655194770e15cbc61257",
           "copyright": null,
+          "holder": null,
           "declared_license_expression": "mpl-2.0 AND mit",
           "declared_license_expression_spdx": "MPL-2.0 AND MIT",
           "license_detections": [
@@ -3327,6 +3347,7 @@
           "code_view_url": null,
           "vcs_url": "git+http://git.alpinelinux.org/aports/commit/?id=26153b65138c876d57e81750f6de6baab6d5bd5b",
           "copyright": null,
+          "holder": null,
           "declared_license_expression": "openssl-ssleay",
           "declared_license_expression_spdx": "OpenSSL",
           "license_detections": [
@@ -3509,6 +3530,7 @@
           "code_view_url": null,
           "vcs_url": "git+http://git.alpinelinux.org/aports/commit/?id=26153b65138c876d57e81750f6de6baab6d5bd5b",
           "copyright": null,
+          "holder": null,
           "declared_license_expression": "openssl-ssleay",
           "declared_license_expression_spdx": "OpenSSL",
           "license_detections": [
@@ -3601,6 +3623,7 @@
           "code_view_url": null,
           "vcs_url": "git+http://git.alpinelinux.org/aports/commit/?id=e58f0e341603e9facc1e675722367174b45e0d0c",
           "copyright": null,
+          "holder": null,
           "declared_license_expression": "gpl-2.0",
           "declared_license_expression_spdx": "GPL-2.0-only",
           "license_detections": [
@@ -3684,6 +3707,7 @@
           "code_view_url": null,
           "vcs_url": "git+http://git.alpinelinux.org/aports/commit/?id=6754a9005594de4243aad9b2744546971078c6c7",
           "copyright": null,
+          "holder": null,
           "declared_license_expression": "zlib",
           "declared_license_expression_spdx": "Zlib",
           "license_detections": [
@@ -3776,6 +3800,7 @@
           "code_view_url": null,
           "vcs_url": "git+http://git.alpinelinux.org/aports/commit/?id=34d90ac8388e88126893f5d27ea35d304e65e5ab",
           "copyright": null,
+          "holder": null,
           "declared_license_expression": "gpl-2.0",
           "declared_license_expression_spdx": "GPL-2.0-only",
           "license_detections": [
@@ -3889,6 +3914,7 @@
           "code_view_url": null,
           "vcs_url": "git+http://git.alpinelinux.org/aports/commit/?id=d7ae612a3cc5f827289d915783b4cbf8c7207947",
           "copyright": null,
+          "holder": null,
           "declared_license_expression": "gpl-2.0",
           "declared_license_expression_spdx": "GPL-2.0-only",
           "license_detections": [
@@ -3972,6 +3998,7 @@
           "code_view_url": null,
           "vcs_url": "git+http://git.alpinelinux.org/aports/commit/?id=ee13d43a53938d8a04ba787b9423f3270a3c14a7",
           "copyright": null,
+          "holder": null,
           "declared_license_expression": "mit AND bsd-new AND gpl-2.0-plus",
           "declared_license_expression_spdx": "MIT AND BSD-3-Clause AND GPL-2.0-or-later",
           "license_detections": [
@@ -4102,6 +4129,7 @@
           "code_view_url": null,
           "vcs_url": "git+http://git.alpinelinux.org/aports/commit/?id=60424133be2e79bbfeff3d58147a22886f817ce2",
           "copyright": null,
+          "holder": null,
           "declared_license_expression": "bsd-simplified AND bsd-new",
           "declared_license_expression_spdx": "BSD-2-Clause AND BSD-3-Clause",
           "license_detections": [

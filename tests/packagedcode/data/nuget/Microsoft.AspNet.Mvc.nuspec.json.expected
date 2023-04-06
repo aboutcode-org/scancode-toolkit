@@ -37,6 +37,7 @@
     "code_view_url": null,
     "vcs_url": null,
     "copyright": "Copyright \u00a9 Microsoft Corporation",
+    "holder": "Microsoft Corporation",
     "declared_license_expression": "ms-net-library",
     "declared_license_expression_spdx": "LicenseRef-scancode-ms-net-library",
     "license_detections": [

@@ -92,6 +92,7 @@
   "code_view_url": "http://cvs.apache.org/viewcvs/jakarta-commons/logging/",
   "vcs_url": "cvs+pserver:anoncvs@cvs.apache.org:/home/cvspublic:jakarta-commons/logging",
   "copyright": null,
+  "holder": null,
   "declared_license_expression": "apache-2.0",
   "declared_license_expression_spdx": "Apache-2.0",
   "license_detections": [

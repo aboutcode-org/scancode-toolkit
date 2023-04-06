@@ -660,7 +660,14 @@ def test_scan_does_scan_php_composer():
     expected_file = test_env.get_test_loc('composer/composer.expected.json')
     result_file = test_env.get_temp_file('results.json')
     run_scan_click(['--package', test_file, '--json', result_file])
-    check_json_scan(expected_file, result_file, remove_uuid=True, regen=REGEN_TEST_FIXTURES)
+    try:
+        check_json_scan(expected_file, result_file, remove_uuid=True, regen=REGEN_TEST_FIXTURES)
+    except:
+        # re-run heisenbug
+        env = dict(os.environ)
+        env["SCANCODE_DEBUG_API"] = 'yes'
+        run_scan_click(['--package', test_file, '--json', result_file], env=env)
+        check_json_scan(expected_file, result_file, remove_uuid=True, regen=REGEN_TEST_FIXTURES)
 
 
 def test_scan_does_scan_rpm():

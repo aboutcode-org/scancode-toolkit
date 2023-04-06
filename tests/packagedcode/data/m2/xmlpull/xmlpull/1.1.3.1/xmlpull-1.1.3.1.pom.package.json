@@ -21,6 +21,7 @@
   "code_view_url": null,
   "vcs_url": null,
   "copyright": null,
+  "holder": null,
   "declared_license_expression": "public-domain AND sax-pd",
   "declared_license_expression_spdx": "LicenseRef-scancode-public-domain AND SAX-PD",
   "license_detections": [

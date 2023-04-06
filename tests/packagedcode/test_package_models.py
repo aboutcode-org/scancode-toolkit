@@ -54,6 +54,7 @@ class TestModels(PackageTester):
             ('code_view_url', None),
             ('vcs_url', None),
             ('copyright', None),
+            ('holder', None),
             ('declared_license_expression', None),
             ('declared_license_expression_spdx', None),
             ('license_detections', []),
