@@ -80,6 +80,7 @@
     "code_view_url": null,
     "vcs_url": null,
     "copyright": null,
+    "holder": null,
     "declared_license_expression": "(public-domain AND python AND bsd-simplified AND gpl-3.0) AND (public-domain AND python AND bsd-new AND gpl-1.0-plus)",
     "declared_license_expression_spdx": "(LicenseRef-scancode-public-domain AND Python-2.0 AND BSD-2-Clause AND GPL-3.0-only) AND (LicenseRef-scancode-public-domain AND Python-2.0 AND BSD-3-Clause AND GPL-1.0-or-later)",
     "license_detections": [

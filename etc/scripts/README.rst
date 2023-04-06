@@ -21,7 +21,7 @@ Pre-requisites
     virtualenv or in the the main configured development virtualenv.
     These requireements need to be installed::
 
-        pip install --requirement etc/release/requirements.txt
+        pip install --requirement etc/scripts/requirements.txt
 
 TODO: we need to pin the versions of these tools
 
@@ -34,7 +34,7 @@ Scripts
 ~~~~~~~
 
 **gen_requirements.py**: create/update requirements files from currently
-  installed requirements. 
+  installed requirements.
 
 **gen_requirements_dev.py** does the same but can subtract the main requirements
   to get extra requirements used in only development.
@@ -50,7 +50,7 @@ The sequence of commands to run are:
 
     ./configure --clean
     ./configure
-    python etc/release/gen_requirements.py --site-packages-dir <path to site-packages dir>
+    python etc/scripts/gen_requirements.py --site-packages-dir <path to site-packages dir>
 
 * You can optionally install or update extra main requirements after the
   ./configure step such that these are included in the generated main requirements.
@@ -59,7 +59,7 @@ The sequence of commands to run are:
 
     ./configure --clean
     ./configure --dev
-    python etc/release/gen_requirements_dev.py --site-packages-dir <path to site-packages dir>
+    python etc/scripts/gen_requirements_dev.py --site-packages-dir <path to site-packages dir>
 
 * You can optionally install or update extra dev requirements after the
   ./configure step such that these are included in the generated dev

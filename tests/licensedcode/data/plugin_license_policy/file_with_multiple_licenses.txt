@@ -1,0 +1,3 @@
+License: apache-2.0
+
+License: gpl-3.0

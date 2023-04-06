@@ -58,6 +58,7 @@
       "code_view_url": "https://github.com/pypa/pip",
       "vcs_url": null,
       "copyright": null,
+      "holder": null,
       "declared_license_expression": "mit",
       "declared_license_expression_spdx": "MIT",
       "license_detections": [
@@ -146,7 +147,7 @@
       "detection_count": 1
     },
     {
-      "identifier": "59433771-4926-870e-d21a-8162cfa060a3",
+      "identifier": "mit-59433771-4926-870e-d21a-8162cfa060a3",
       "license_expression": "mit",
       "detection_count": 1
     },
@@ -309,6 +310,7 @@
           "code_view_url": "https://github.com/pypa/pip",
           "vcs_url": null,
           "copyright": null,
+          "holder": null,
           "declared_license_expression": "mit",
           "declared_license_expression_spdx": "MIT",
           "license_detections": [
@@ -440,7 +442,7 @@
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE"
             }
           ],
-          "identifier": "59433771-4926-870e-d21a-8162cfa060a3",
+          "identifier": "mit-59433771-4926-870e-d21a-8162cfa060a3",
           "detection_log": [
             "unknown-reference-to-local-file"
           ]
@@ -518,6 +520,7 @@
           "code_view_url": null,
           "vcs_url": null,
           "copyright": null,
+          "holder": null,
           "declared_license_expression": null,
           "declared_license_expression_spdx": null,
           "license_detections": [],
@@ -748,6 +751,7 @@
           "code_view_url": null,
           "vcs_url": null,
           "copyright": null,
+          "holder": null,
           "declared_license_expression": "mit",
           "declared_license_expression_spdx": "MIT",
           "license_detections": [
@@ -828,6 +832,7 @@
           "code_view_url": null,
           "vcs_url": null,
           "copyright": null,
+          "holder": null,
           "declared_license_expression": "mit",
           "declared_license_expression_spdx": "MIT",
           "license_detections": [
@@ -871,7 +876,7 @@
                   "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE"
                 }
               ],
-              "identifier": "618615ea-2265-e31e-c5fa-c86ceb33cf79",
+              "identifier": "mit-707ccf7a-5c60-0e4c-5844-349c989a00f5",
               "detection_log": [
                 "unknown-reference-to-local-file"
               ]
@@ -939,7 +944,7 @@
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE"
             }
           ],
-          "identifier": "618615ea-2265-e31e-c5fa-c86ceb33cf79",
+          "identifier": "mit-707ccf7a-5c60-0e4c-5844-349c989a00f5",
           "detection_log": [
             "unknown-reference-to-local-file"
           ]
@@ -994,6 +999,7 @@
           "code_view_url": "https://github.com/pypa/pip",
           "vcs_url": null,
           "copyright": null,
+          "holder": null,
           "declared_license_expression": "mit",
           "declared_license_expression_spdx": "MIT",
           "license_detections": [

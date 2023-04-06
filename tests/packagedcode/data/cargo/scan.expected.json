@@ -31,6 +31,7 @@
       "code_view_url": null,
       "vcs_url": "https://github.com/indygreg/PyOxidizer.git",
       "copyright": null,
+      "holder": null,
       "declared_license_expression": "mpl-2.0",
       "declared_license_expression_spdx": "MPL-2.0",
       "license_detections": [
@@ -111,6 +112,7 @@
       "code_view_url": null,
       "vcs_url": "https://github.com/daac-tools/daachorse",
       "copyright": null,
+      "holder": null,
       "declared_license_expression": "mit OR apache-2.0",
       "declared_license_expression_spdx": "MIT OR Apache-2.0",
       "license_detections": [
@@ -485,6 +487,7 @@
           "code_view_url": null,
           "vcs_url": null,
           "copyright": null,
+          "holder": null,
           "declared_license_expression": null,
           "declared_license_expression_spdx": null,
           "license_detections": [],
@@ -755,6 +758,7 @@
           "code_view_url": null,
           "vcs_url": "https://github.com/indygreg/PyOxidizer.git",
           "copyright": null,
+          "holder": null,
           "declared_license_expression": "mpl-2.0",
           "declared_license_expression_spdx": "MPL-2.0",
           "license_detections": [
@@ -848,6 +852,7 @@
           "code_view_url": null,
           "vcs_url": "https://github.com/daac-tools/daachorse",
           "copyright": null,
+          "holder": null,
           "declared_license_expression": "mit OR apache-2.0",
           "declared_license_expression_spdx": "MIT OR Apache-2.0",
           "license_detections": [

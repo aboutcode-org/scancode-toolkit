@@ -246,6 +246,7 @@
   "code_view_url": "http://svn.cargo.codehaus.org/cargo/pom/tags/cargo-parent-4.1",
   "vcs_url": "svn+http://svn.codehaus.org/cargo/pom/tags/cargo-parent-4.1",
   "copyright": null,
+  "holder": null,
   "declared_license_expression": null,
   "declared_license_expression_spdx": null,
   "license_detections": [],

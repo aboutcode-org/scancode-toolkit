@@ -21,6 +21,7 @@
   "code_view_url": null,
   "vcs_url": null,
   "copyright": null,
+  "holder": null,
   "declared_license_expression": "kde-accepted-lgpl AND kfqf-accepted-gpl",
   "declared_license_expression_spdx": "LicenseRef-scancode-kde-accepted-lgpl AND LicenseRef-scancode-kfqf-accepted-gpl",
   "license_detections": [

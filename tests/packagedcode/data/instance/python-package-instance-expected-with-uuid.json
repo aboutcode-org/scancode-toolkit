@@ -31,6 +31,7 @@
       "code_view_url": null,
       "vcs_url": null,
       "copyright": null,
+      "holder": null,
       "declared_license_expression": "(bsd-new AND (bsd-new AND bsd-simplified)) AND bsd-new",
       "declared_license_expression_spdx": "(BSD-3-Clause AND (BSD-3-Clause AND BSD-2-Clause)) AND BSD-3-Clause",
       "license_detections": [
@@ -195,6 +196,7 @@
           "code_view_url": null,
           "vcs_url": null,
           "copyright": null,
+          "holder": null,
           "declared_license_expression": "(bsd-new AND (bsd-new AND bsd-simplified)) AND bsd-new",
           "declared_license_expression_spdx": "(BSD-3-Clause AND (BSD-3-Clause AND BSD-2-Clause)) AND BSD-3-Clause",
           "license_detections": [
@@ -309,6 +311,7 @@
           "code_view_url": null,
           "vcs_url": null,
           "copyright": null,
+          "holder": null,
           "declared_license_expression": null,
           "declared_license_expression_spdx": null,
           "license_detections": [],

@@ -21,6 +21,7 @@
   "code_view_url": null,
   "vcs_url": null,
   "copyright": null,
+  "holder": null,
   "declared_license_expression": "mit AND x11 AND unicode-tou",
   "declared_license_expression_spdx": "MIT AND ICU AND Unicode-TOU",
   "license_detections": [

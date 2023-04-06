@@ -21,6 +21,7 @@
   "code_view_url": "git://github.com/osglworks/java-http.git",
   "vcs_url": "git://github.com/osglworks/java-http.git",
   "copyright": null,
+  "holder": null,
   "declared_license_expression": "apache-2.0",
   "declared_license_expression_spdx": "Apache-2.0",
   "license_detections": [

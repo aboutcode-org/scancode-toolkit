@@ -29,6 +29,7 @@
   "code_view_url": "http://svn.slf4j.org/viewvc/slf4j/trunk/",
   "vcs_url": "svn+http://svn.slf4j.org/repos/slf4j/trunk",
   "copyright": null,
+  "holder": null,
   "declared_license_expression": null,
   "declared_license_expression_spdx": null,
   "license_detections": [],

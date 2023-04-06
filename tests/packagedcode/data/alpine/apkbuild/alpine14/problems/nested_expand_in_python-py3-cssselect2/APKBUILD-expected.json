@@ -21,6 +21,7 @@
   "code_view_url": null,
   "vcs_url": null,
   "copyright": null,
+  "holder": null,
   "declared_license_expression": "bsd-new",
   "declared_license_expression_spdx": "BSD-3-Clause",
   "license_detections": [

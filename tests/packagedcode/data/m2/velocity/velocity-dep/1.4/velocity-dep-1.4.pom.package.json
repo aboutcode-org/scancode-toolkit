@@ -29,6 +29,7 @@
   "code_view_url": "http://cvs.apache.org/viewcvs/jakarta-turbine-maven/",
   "vcs_url": "cvs+pserver:anoncvs@cvs.apache.org:/home/cvspublic:jakarta-velocity",
   "copyright": null,
+  "holder": null,
   "declared_license_expression": null,
   "declared_license_expression_spdx": null,
   "license_detections": [],

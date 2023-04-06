@@ -43,6 +43,7 @@
       "code_view_url": null,
       "vcs_url": null,
       "copyright": null,
+      "holder": null,
       "declared_license_expression": "bsd-new",
       "declared_license_expression_spdx": "BSD-3-Clause",
       "license_detections": [
@@ -91,7 +92,7 @@
   "dependencies": [],
   "license_detections": [
     {
-      "identifier": "af493d9f-0c66-d9f8-4538-579134812514",
+      "identifier": "bsd-new-af493d9f-0c66-d9f8-4538-579134812514",
       "license_expression": "bsd-new",
       "detection_count": 1,
       "detection_log": []
@@ -151,6 +152,7 @@
           "code_view_url": null,
           "vcs_url": null,
           "copyright": null,
+          "holder": null,
           "declared_license_expression": "bsd-new",
           "declared_license_expression_spdx": "BSD-3-Clause",
           "license_detections": [
@@ -266,7 +268,7 @@
           "detection_log": [
             "unknown-reference-in-file-to-package"
           ],
-          "identifier": "af493d9f-0c66-d9f8-4538-579134812514"
+          "identifier": "bsd-new-af493d9f-0c66-d9f8-4538-579134812514"
         }
       ],
       "license_clues": [],

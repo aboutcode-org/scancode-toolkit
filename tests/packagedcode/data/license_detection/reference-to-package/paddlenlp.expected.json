@@ -37,6 +37,7 @@
       "code_view_url": null,
       "vcs_url": null,
       "copyright": null,
+      "holder": null,
       "declared_license_expression": "apache-2.0",
       "declared_license_expression_spdx": "Apache-2.0",
       "license_detections": [
@@ -413,7 +414,7 @@
       "detection_log": []
     },
     {
-      "identifier": "35de6d3f-8962-0454-2270-33aac504c123",
+      "identifier": "apache-2.0-35de6d3f-8962-0454-2270-33aac504c123",
       "license_expression": "apache-2.0",
       "detection_count": 2,
       "detection_log": []
@@ -533,7 +534,7 @@
           "detection_log": [
             "unknown-reference-to-local-file"
           ],
-          "identifier": "abb5bcc3-dac9-a935-3392-31a86beb482a"
+          "identifier": "apache-2.0-abb5bcc3-dac9-a935-3392-31a86beb482a"
         }
       ],
       "license_clues": [],
@@ -644,7 +645,7 @@
           "detection_log": [
             "unknown-reference-in-file-to-package"
           ],
-          "identifier": "35de6d3f-8962-0454-2270-33aac504c123"
+          "identifier": "apache-2.0-35de6d3f-8962-0454-2270-33aac504c123"
         }
       ],
       "license_clues": [],
@@ -707,7 +708,7 @@
           "detection_log": [
             "unknown-reference-in-file-to-package"
           ],
-          "identifier": "35de6d3f-8962-0454-2270-33aac504c123"
+          "identifier": "apache-2.0-35de6d3f-8962-0454-2270-33aac504c123"
         }
       ],
       "license_clues": [],
@@ -741,6 +742,7 @@
           "code_view_url": null,
           "vcs_url": null,
           "copyright": null,
+          "holder": null,
           "declared_license_expression": null,
           "declared_license_expression_spdx": null,
           "license_detections": [],
@@ -980,6 +982,7 @@
           "code_view_url": null,
           "vcs_url": null,
           "copyright": null,
+          "holder": null,
           "declared_license_expression": "apache-2.0",
           "declared_license_expression_spdx": "Apache-2.0",
           "license_detections": [
@@ -1056,7 +1059,7 @@
               "detection_log": [
                 "unknown-reference-to-local-file"
               ],
-              "identifier": "abb5bcc3-dac9-a935-3392-31a86beb482a"
+              "identifier": "apache-2.0-abb5bcc3-dac9-a935-3392-31a86beb482a"
             }
           ],
           "other_license_expression": null,
@@ -1337,6 +1340,7 @@
           "code_view_url": null,
           "vcs_url": null,
           "copyright": null,
+          "holder": null,
           "declared_license_expression": "apache-2.0",
           "declared_license_expression_spdx": "Apache-2.0",
           "license_detections": [

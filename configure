@@ -159,7 +159,7 @@ PROD_REQUIREMENTS="scancode_toolkit*.whl"
 VIRTUALENV_DIR=venv
 
 # Cleanable files and directories to delete with the --clean option
-CLEANABLE="build venv"
+CLEANABLE="build dist venv .cache .eggs"
 
 # extra  arguments passed to pip
 PIP_EXTRA_ARGS=" "
@@ -173,6 +173,13 @@ VIRTUALENV_PYZ_URL=https://bootstrap.pypa.io/virtualenv.pyz
 # Current directory where this script lives
 CFG_ROOT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 CFG_BIN_DIR=$CFG_ROOT_DIR/$VIRTUALENV_DIR/bin
+
+
+################################
+# Install with or without and index. With "--no-index" this is using only local wheels
+# This is an offline mode with no index and no network operations
+# NO_INDEX="--no-index "
+NO_INDEX=""
 
 
 ################################
@@ -307,6 +314,7 @@ while getopts :-: optchar; do
             esac;;
     esac
 done
+
 
 PIP_EXTRA_ARGS="$PIP_EXTRA_ARGS"
 

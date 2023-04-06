@@ -21,6 +21,7 @@
   "code_view_url": "http://acegisecurity.svn.sourceforge.net/viewcvs.cgi/acegisecurity/trunk/acegisecurity/core/",
   "vcs_url": "svn+https://acegisecurity.svn.sourceforge.net/svnroot/acegisecurity/trunk/acegisecurity/core",
   "copyright": null,
+  "holder": null,
   "declared_license_expression": null,
   "declared_license_expression_spdx": null,
   "license_detections": [],

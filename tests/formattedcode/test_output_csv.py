@@ -124,6 +124,8 @@ def test_can_process_live_scan_for_packages_with_root():
 
 
 def test_output_can_handle_non_ascii_paths():
+    # very small file with selective attributes just to test unicode, no need
+    # run scan again, update manually if required
     test_file = test_env.get_test_loc('csv/unicode.json')
     result_file = test_env.get_temp_file(extension='csv', file_name='test_csv')
     run_scan_click(['--from-json', test_file, '--csv', result_file])
@@ -250,6 +252,8 @@ def test_can_process_live_scan_for_packages_strip_root():
 
 @pytest.mark.scanslow
 def test_output_contains_license_expression():
+    # very small file with selective attributes just to test license_expressions,
+    # no need to run scan again, update manually if required
     test_file = test_env.get_test_loc('csv/expressions/scan.json')
     result_file = test_env.get_temp_file('csv')
     args = ['--from-json', test_file, '--csv', result_file]
@@ -260,6 +264,7 @@ def test_output_contains_license_expression():
 
 @pytest.mark.scanslow
 def test_output_handles_non_standard_data():
+    # non standard data from other tool, update manually if required
     test_file = test_env.get_test_loc('csv/non-standard/identified.json')
     result_file = test_env.get_temp_file('csv')
     args = ['--from-json', test_file, '--csv', result_file]

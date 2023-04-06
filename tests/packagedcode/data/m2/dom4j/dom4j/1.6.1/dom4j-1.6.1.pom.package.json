@@ -134,6 +134,7 @@
   "code_view_url": "http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/dom4j/dom4j/",
   "vcs_url": "cvs+pserver:anonymous@cvs.sourceforge.net:/cvsroot/dom4j:dom4j",
   "copyright": null,
+  "holder": null,
   "declared_license_expression": null,
   "declared_license_expression_spdx": null,
   "license_detections": [],

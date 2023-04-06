@@ -21,6 +21,7 @@
   "code_view_url": "https://svn.codehaus.org/mojo/trunk/mojo",
   "vcs_url": "svn+https://svn.codehaus.org/mojo/trunk/mojo",
   "copyright": null,
+  "holder": null,
   "declared_license_expression": null,
   "declared_license_expression_spdx": null,
   "license_detections": [],

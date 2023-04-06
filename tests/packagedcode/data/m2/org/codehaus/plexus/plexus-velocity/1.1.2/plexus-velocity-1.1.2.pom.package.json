@@ -106,6 +106,7 @@
   "code_view_url": null,
   "vcs_url": "svn://svn.codehaus.org/plexus/scm/trunk/plexus-components/plexus-velocity",
   "copyright": null,
+  "holder": null,
   "declared_license_expression": null,
   "declared_license_expression_spdx": null,
   "license_detections": [],
