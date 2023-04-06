@@ -93,15 +93,6 @@ jobs:
 
     - template: etc/ci/azure-posix.yml
       parameters:
-          job_name: ubuntu18_cpython
-          image_name: ubuntu-18.04
-          python_versions: ['3.8', '3.9', '3.10', '3.11']
-          python_architecture: x64
-          test_suites:
-              all: venv/bin/pytest -n 2 -vvs tests/scancode/test_cli.py --reruns 2
-
-    - template: etc/ci/azure-posix.yml
-      parameters:
           job_name: ubuntu20_cpython
           image_name: ubuntu-20.04
           python_versions: ['3.8', '3.9', '3.10', '3.11']
@@ -147,9 +138,9 @@ jobs:
 
     - template: etc/ci/azure-win.yml
       parameters:
-          job_name: win2019_cpython_2
-          image_name: windows-2019
-          python_versions: ['3.9', '3.10', '3.11']
+          job_name: win2022_cpython
+          image_name: windows-2022
+          python_versions: ['3.8', '3.9', '3.10', '3.11']
           python_architecture: x64
           test_suites:
               all: venv\Scripts\pytest -n 2 -vvs tests\scancode\test_cli.py --reruns 2
@@ -202,14 +193,6 @@ jobs:
       parameters:
           job_name: ubuntu22_cpython_latest_from_pip
           image_name: ubuntu-22.04
-          python_versions: ['3.8', '3.9', '3.10', '3.11']
-          test_suites:
-              all: venv/bin/pip install --upgrade-strategy eager --force-reinstall --upgrade -e .[testing] && venv/bin/pytest -n 2 -vvs tests/scancode/test_cli.py
-
-    - template: etc/ci/azure-posix.yml
-      parameters:
-          job_name: ubuntu18_cpython_latest_from_pip
-          image_name: ubuntu-18.04
           python_versions: ['3.8', '3.9', '3.10', '3.11']
           test_suites:
               all: venv/bin/pip install --upgrade-strategy eager --force-reinstall --upgrade -e .[testing] && venv/bin/pytest -n 2 -vvs tests/scancode/test_cli.py
