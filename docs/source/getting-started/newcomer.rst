@@ -61,8 +61,6 @@ Installing ScanCode
 
 Scancode-Toolkit can be installed in 3 different methods.
 
-.. include::  /rst_snippets/note_snippets/synopsis_install_quickstart.rst
-
 #. The :ref:`newcomer_scan_codebase` section helps you with configuring and
    installing Scancode and performing a basic scan, then visualize the results.
 

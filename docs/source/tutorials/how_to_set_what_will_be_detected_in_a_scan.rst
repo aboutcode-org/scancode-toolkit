@@ -18,8 +18,6 @@ be saved in the JSON format, which can be loaded into Scancode Workbench for vis
 :ref:`how_to_visualize_scan_results` for more information. Another output format option is a
 static html file. See :ref:`cli_output_format` for more information.
 
-.. include::  /rst_snippets/note_snippets/synopsis_install_quickstart.rst
-
 Scan for all clues:
 ^^^^^^^^^^^^^^^^^^^
 

@@ -41,8 +41,6 @@ The basic usage, if Scancode is installed from ``pip``, or in Windows::
 
     scancode [OPTIONS] <OUTPUT FORMAT OPTION(s)> <SCAN INPUT>
 
-.. include::  /rst_snippets/note_snippets/synopsis_install_quickstart.rst
-
 Here Scancode scans the <SCAN INPUT> file or directory for license, origin and packages and saves
 results to FILE(s) using one or more output format option. Error and progress are printed to
 stdout.
@@ -83,7 +81,7 @@ ScanCode Toolkit Command Line options can be divided into these major sections:
 - :ref:`cli_basic`
 - :ref:`Extractcode Options <cli_extract>`
 - :ref:`cli_core`
-- :ref:`cli_output_control`
+- :ref:`cli_output_control_filters`
 - :ref:`cli_pre_scan`
 - :ref:`cli_post_scan`
 

@@ -12,10 +12,6 @@ following options.
 
 ----
 
-.. include::  /rst_snippets/note_snippets/synopsis_install_quickstart.rst
-
-----
-
 .. _output_to_stdout:
 
 .. include::  /rst_snippets/stdout.rst
@@ -37,7 +33,6 @@ following options.
     .. include::  /rst_snippets/note_snippets/output_json_ugly.rst
 
     .. figure:: data/json_ugly.png
-
 
     The entire JSON file is structured in the following manner:
 
@@ -78,8 +73,6 @@ following options.
               "path": "samples",
               "type": "directory",
               ...
-              ...
-              ...
               "scan_errors": []
             },
             {
@@ -101,12 +94,14 @@ following options.
               "is_media": false,
               "is_source": false,
               "is_script": false,
-              "licenses": [],
-              "license_expressions": [],
+              "license_detections": [],
+              "detected_license_expression": None,
+              "detected_license_expression_spdx": None,
               "copyrights": [],
               "holders": [],
               "authors": [],
-              "packages": [],
+              "package_data": [],
+              "for_packages": [],
               "emails": [],
               "urls": [],
               "files_count": 0,
@@ -114,22 +109,8 @@ following options.
               "size_count": 0,
               "scan_errors": []
             },
+            {...},
             ...
-            ...
-            ...
-            {
-              "path": "samples/zlib/iostream2/zstream_test.cpp",
-              "type": "file",
-              "name": "zstream_test.cpp",
-              "base_name": "zstream_test",
-              "extension": ".cpp",
-              "size": 711,
-              "date": "2019-02-12",
-              ...
-              ...
-              ...
-              "scan_errors": []
-            }
           ]
         }
 
@@ -169,44 +150,24 @@ following options.
           "is_media": false,
           "is_source": true,
           "is_script": false,
-          "licenses": [
-            {
-              "key": "mit-old-style",
-              "score": 100.0,
-              "name": "MIT Old Style",
-              "short_name": "MIT Old Style",
-              "category": "Permissive",
-              "is_exception": false,
-              "is_unknown": false,
-              "owner": "MIT",
-              "homepage_url": "http://fedoraproject.org/wiki/Licensing:MIT#Old_Style",
-              "text_url": "http://fedoraproject.org/wiki/Licensing:MIT#Old_Style",
-              "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:mit-old-style",
-              "spdx_license_key": null,
-              "spdx_url": null,
-              "start_line": 9,
-              "end_line": 15,
-              "matched_rule": {
-                "identifier": "mit-old-style_cmr-no_1.RULE",
+          "license_detections": [
+            "license-expression": "mit-old-style",
+            "matches": [
+              {
                 "license_expression": "mit-old-style",
-                "licenses": [
-                  "mit-old-style"
-                ],
-                "is_license_text": true,
-                "is_license_notice": false,
-                "is_license_reference": false,
-                "is_license_tag": false,
+                "score": 100.0,
+                "rule_identifier": "mit-old-style_cmr-no_1.RULE",
                 "matcher": "2-aho",
                 "rule_length": 71,
                 "matched_length": 71,
                 "match_coverage": 100.0,
                 "rule_relevance": 100
               }
-            }
+            ]
+            "identifier": "mit-old-style-ec759ae0-1234-f138-793e-356789e080c0"
           ],
-          "license_expressions": [
-            "mit-old-style"
-          ],
+          "detected_license_expressions": "mit-old-style",
+          "detected_license_expressions_spdx": "LicenseRef-scancode-mit-old-style",
           "copyrights": [
             {
               "value": "Copyright (c) 1997 Christian Michelsen Research AS Advanced Computing",
@@ -222,7 +183,7 @@ following options.
             }
           ],
           "authors": [],
-          "packages": [],
+          "package_data": [],
           "emails": [],
           "urls": [
             {
@@ -611,3 +572,12 @@ ____
 ____
 
 .. include::  /rst_snippets/custom_output_format.rst
+
+..
+  ToDo:
+  Document these output options:
+
+    --custom-output FILE    Write scan output to FILE formatted with the custom
+                            Jinja template file.
+    --debian FILE           Write scan output in machine-readable Debian
+                            copyright format to FILE.

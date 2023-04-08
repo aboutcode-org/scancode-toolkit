@@ -6,7 +6,7 @@ All "Post-Scan" Options
                          and descendants. Count the number of source files in a
                          directory as a new "source_file_counts" attribute
 
-                         Sub-Option of - ``--url``
+                         Sub-Option of: ``--url``
 
 --consolidate            Group resources by Packages or license and
                          copyright holder and return those groupings
@@ -16,54 +16,50 @@ All "Post-Scan" Options
                          a future version of scancode-toolkit as top level
                          packages now provide a improved consolidated data.
 
-                         Sub-Option of - ``--copyright``, ``--license`` and
+                         Sub-Option of: ``--copyright``, ``--license`` and
                          ``--packages``.
 
 --filter-clues           Filter redundant duplicated clues already
                          contained in detected licenses, copyright
                          texts and notices.
 
---is-license-text        [DEPRECATED] Set the "is_license_text" flag
-                         to true for files that contain mostly license
-                         texts and notices (e.g. over 90% of the content).
-                         This is now built-in in the --license-text option
-                         with a "percentage_of_license_text" attribute.
-
-                         Sub-Option of - ``--info`` and ``--license-text``.
-
-.. include::  /rst_snippets/warning_snippets/post_is_license_text.rst
-
 --license-clarity-score  Compute a summary license clarity score at
                          the codebase level.
 
-                         Sub-Option of - ``--classify``.
+                         Sub-Option of: ``--classify``.
 
 --license-policy FILE    Load a License Policy file and apply it to
                          the scan at the Resource level.
 
---summary                Summarize license, copyright and other scans
-                         at the codebase level.
+--summary                Summarize scans by providing declared origin
+                         information and other detected info at the
+                         codebase attribute level.
+
+--tallies                Summarize license, copyright and other scans
+                         at the codebase level with occurance counts.
 
                          Sub-Options:
 
-                         - ``--summary-by-facet``
-                         - ``--summary-key-files``
-                         - ``--summary-with-details``
+                         - ``--tallies-by-facet``
+                         - ``--tallies-key-files``
+                         - ``--tallies-with-details``
 
---summary-by-facet       Summarize license, copyright and other scans
+--tallies-by-facet       Summarize license, copyright and other scans
                          and group the results by facet.
 
-                         Sub-Option of - ``--summary`` and ``--facet``.
+                         Sub-Option of: ``--tallies`` and ``--facet``.
 
---summary-key-files      Summarize license, copyright and other scans
-                         for key, top-level files. Key files are top-
-                         level codebase files such as COPYING, README
-                         and package manifests as reported by the
-                         ``--classify`` option "is_legal", "is_readme",
-                         "is_manifest" and "is_top_level" flags.
+--tallies-key-files      Summarize license, copyright and other scans
+                         for key, top-level files, with occurance counts.
+                         Key files are top-level codebase files such as
+                         COPYING, README and package manifests as reported
+                         by the ``--classify`` option: "is_legal",
+                         "is_readme", "is_manifest" and "is_top_level"
+                         flags.
 
-                         Sub-Option of - ``--classify`` and ``--summary``.
+                         Sub-Option of: ``--classify`` and ``--summary``.
 
---summary-with-details   Summarize license, copyright and other scans
-                         at the codebase level, keeping intermediate
-                         details at the file and directory level.
+--tallies-with-details   Summarize license, copyright and other scans
+                         at the codebase level with occurance counts,
+                         while also keeping intermediate details at
+                         the file and directory level.

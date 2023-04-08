@@ -25,7 +25,7 @@ In more details: ScanCode is a Python app using a data-driven approach (as
 opposed to carefully crafted regex like licensecheck uses):
 
 - for license scan, the detection is based on a (large) number of license full
-  texts (~1800) and license notices, mentions and variants (~29,000 and is data-
+  texts (~2100) and license notices, mentions and variants (~32,000 and is data-
   driven as opposed to be regex-driven. It detects and reports exactly where
   license text is found in a file. Just throw in more license texts to improve
   the detection.
@@ -67,11 +67,12 @@ detection or copyright detection)
 Can I install ScanCode in a Unicode path?
 -----------------------------------------
 
-Yes but but it is best to void this for now. See
+Yes but and this is fully supported and tested. See
 https://github.com/nexB/scancode-toolkit/issues/867
+for a previous bug which was preventing this.
 
-There is a bug in virtualenv https://github.com/pypa/virtualenv/issues/457 that
-is now fixed but has not been extensively tested for ScanCode.
+There was a bug in virtualenv https://github.com/pypa/virtualenv/issues/457 that
+is now fixed but and has been extensively tested for ScanCode.
 
 
 The line numbers for a copyright found in a binary are weird. What do they mean?

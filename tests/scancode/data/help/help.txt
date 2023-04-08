@@ -132,7 +132,7 @@ Options:
                              at the file and directory level.
 
   core:
-    --timeout <secs>         Stop an unfinished file scan after a timeout in
+    --timeout <seconds>      Stop an unfinished file scan after a timeout in
                              seconds. [default: 120 seconds]
     -n, --processes INT      Set the number of parallel processes to use. Disable
                              parallel processing if 0. Also disable threading if

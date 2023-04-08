@@ -15,10 +15,8 @@ The sections are as follows:
 
 There's also another section for ``extractcode`` options.
 
-The order of the sections and all their options is the same as in the :ref:'cli_help_text',
+The order of the sections and all their options is the same as in the :ref:`cli_help_text`,
 available in the command line.
-
-.. include::  /rst_snippets/note_snippets/synopsis_install_quickstart.rst
 
 .. _cli_basic:
 

@@ -493,6 +493,7 @@ After::
     }
   ],
 
+.. _reference_license_related_data:
 
 Only reference License related Data
 -----------------------------------

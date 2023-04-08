@@ -14,18 +14,24 @@ documenting a program's options. For example:
 
                              Sub-Options:
 
-                             - ``--consolidate``
-                             - ``--license-score INT``
+                             - ``--license-references``
                              - ``--license-text``
-                             - ``--license-url-template TEXT``
                              - ``--license-text-diagnostics``
-                             - ``--is-license-text``
+                             - ``--license-diagnostics``
+                             - ``--license-url-template TEXT``
+                             - ``--license-score INT``
+                             - ``--license-clarity-score``
+                             - ``--consolidate``
+                             - ``--unknown-licenses``
 
 -p, --package                Scan ``<input>`` for packages.
 
                              Sub-Options:
 
                              - ``--consolidate``
+
+--system-package             Scan ``<input>`` for installed system package
+                             databases.
 
 -e, --email                  Scan ``<input>`` for emails.
 
@@ -39,7 +45,7 @@ documenting a program's options. For example:
 
                              - ``--max-url INT``
 
--i, --info                   Include information such as:
+-i, --info                   Scan for and include information such as:
 
                              - Size,
                              - Type,
@@ -60,12 +66,12 @@ documenting a program's options. For example:
 --max-email INT              Report only up to INT emails found in a
                              file. Use 0 for no limit.  [Default: 50]
 
-                             Sub-Option of - ``--email``
+                             Sub-Option of: ``--email``
 
 --max-url INT                Report only up to INT urls found in a
                              file. Use 0 for no limit.  [Default: 50]
 
-                             Sub-Option of - ``--url``
+                             Sub-Option of: ``--url``
 
 --license-score INTEGER
 
@@ -74,31 +80,43 @@ documenting a program's options. For example:
           Here, a bigger number means a better match, i.e. Setting a higher license score
           translates to a higher threshold (with equal or less number of matches).
 
-          Sub-Option of - ``--license``
+          Sub-Option of: ``--license``
 
 --license-text
 
           Include the matched text for the detected licenses in the output report.
 
-          Sub-Option of - ``--license``
+          Sub-Option of: ``--license``
 
           Sub-Options:
 
           - ``--license-text-diagnostics``
-          - ``--is-license-text``
 
 --license-url-template TEXT
 
           Set the template URL used for the license reference URLs.
 
           In a template URL, curly braces ({}) are replaced by the license key.
-          [Default: https://enterprise.dejacode.com/urn/urn:dje:license:{}]
+          [Default: default: https://scancode-licensedb.aboutcode.org/{}]
 
-          Sub-Option of - ``--license``
+          Sub-Option of: ``--license``
 
 --license-text-diagnostics
 
           In the matched license text, include diagnostic highlights surrounding with
           square brackets [] words that are not matched.
 
-          Sub-Option of - ``--license`` and ``--license-text``
+          Sub-Option of: ``--license`` and ``--license-text``
+
+--license-diagnostics
+
+          In license detections, include diagnostic details to figure out the
+          license detection post processing steps applied.
+
+          Sub-Option of: ``--license``
+
+--unknown-licenses
+
+          [EXPERIMENTAL] Detect unknown licenses.
+
+          Sub-Option of: ``--license``
