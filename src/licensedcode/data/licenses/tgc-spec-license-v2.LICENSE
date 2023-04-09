@@ -1,0 +1,41 @@
+---
+key: tgc-spec-license-v2
+short_name: TCG Spec License v2
+name: Trusted Computing Group Spec License v2
+category: Permissive
+owner: Trusted Computing Group
+homepage_url: https://trustedcomputinggroup.org/resources/
+spdx_license_key: LicenseRef-scancode-tcg-spec-license-v2
+ignorable_copyrights:
+    - copyrighted by Trusted Computing Group
+ignorable_holders:
+    - Trusted Computing Group
+ignorable_urls:
+    - http://www.trustedcomputinggroup.org/
+---
+
+Disclaimers, Notices, and License Terms
+
+THIS SPECIFICATION IS PROVIDED "AS IS" WITH NO WARRANTIES WHATSOEVER,
+INCLUDING ANY WARRANTY OF MERCHANTABILITY, NONINFRINGEMENT, FITNESS FOR
+ANY PARTICULAR PURPOSE, OR ANY WARRANTY OTHERWISE ARISING OUT OF ANY
+PROPOSAL, SPECIFICATION OR SAMPLE.
+
+Without limitation, TCG disclaims all liability, including liability for infringement of any
+proprietary rights, relating to use of information in this specification and to the
+implementation of this specification, and TCG disclaims all liability for cost of procurement
+of substitute goods or services, lost profits, loss of use, loss of data or any incidental,
+consequential, direct, indirect, or special damages, whether under contract, tort, warranty or
+otherwise, arising in any way out of use or reliance upon this specification or any information
+herein.
+
+This document is copyrighted by Trusted Computing Group (TCG), and no license, express
+or implied, is granted herein other than as follows: You may not copy or reproduce the
+document or distribute it to others without written permission from TCG, except that you
+may freely do so for the purposes of (a) examining or implementing TCG specifications or (b)
+developing, testing, or promoting information technology standards and best practices, so
+long as you distribute the document with these disclaimers, notices, and license terms.
+Contact the Trusted Computing Group at www.trustedcomputinggroup.org for information
+on specification licensing through membership agreements.
+
+Any marks and brands contained herein are the property of their respective owners.
