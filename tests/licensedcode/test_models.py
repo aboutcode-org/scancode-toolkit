@@ -88,6 +88,7 @@ class TestLicense(FileBasedTesting):
         errors, warnings, infos = models.License.validate(
             licenses=models.load_licenses(with_deprecated=False),
             verbose=False,
+            thorough=True,
         )
         assert errors == {}
         assert warnings == {}
@@ -184,6 +185,9 @@ class TestLicense(FileBasedTesting):
 
 class TestRule(FileBasedTesting):
     test_data_dir = TEST_DATA_DIR
+
+    def test_validate_license_rules_data(self):
+        rules = list(models.get_rules(validate=True))
 
     def test_create_rule_ignore_punctuation(self):
         test_rule = create_rule_from_text_and_expression(text='A one. A two. A three.')

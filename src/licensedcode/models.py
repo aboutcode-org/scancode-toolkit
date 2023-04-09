@@ -24,8 +24,11 @@ from pathlib import Path
 from licensedcode._vendor import attr
 from license_expression import ExpressionError
 from license_expression import Licensing
-from saneyaml import load as yaml_load
-from saneyaml import dump as yaml_dump
+from saneyaml import load as saneyaml_load
+from saneyaml import dump as saneyaml_dump
+from yaml import load as yaml_load
+from yaml import dump as yaml_dump
+from yaml import CSafeLoader
 
 from commoncode.fileutils import file_base_name
 from commoncode.fileutils import file_name
@@ -554,7 +557,7 @@ class License:
             yield key
 
     @staticmethod
-    def validate(licenses, verbose=False, no_dupe_urls=False):
+    def validate(licenses, verbose=False, no_dupe_urls=False, thorough=False):
         """
         Check that the ``licenses`` a mapping of {key: License} are valid.
         Return dictionaries of infos, errors and warnings mapping a license key
@@ -659,14 +662,22 @@ class License:
                 if not len(all_licenses) == len(set(all_licenses)):
                     warn('Some duplicated URLs')
 
-            # local text consistency
             text = lic.text
-
-            data = {"text": text}
-            # We are testing whether we can dump as yaml and load from yaml
-            # without failing (i.e. whether the text is yaml safe) 
-            yaml_string = yaml_dump(data, indent=4)
-            loaded_yaml = yaml_load(yaml_string)
+            if thorough:
+                # local text consistency
+                data = {"text": text}
+                # We are testing whether we can dump as yaml and load from yaml
+                # without failing (i.e. whether the text is yaml safe)
+                # Using saneyaml
+                try:
+                    yaml_string = saneyaml_dump(data, indent=4)
+                    loaded_yaml = saneyaml_load(yaml_string)
+                except Exception:
+                    errors['GLOBAL'].append(
+                        f'Error invalid YAML text at: {lic.key}, failed during saneyaml.load()'
+                    )
+                # This fails because of missing line break at text end, added by saneyaml_dump
+                # assert text == loaded_yaml["text"]
 
             license_itokens = tuple(index_tokenizer(text))
             if not license_itokens:
@@ -750,9 +761,9 @@ class License:
 def get_yaml_safe_text(text):
 
     data = {"text": text}
-    yaml_string = yaml_dump(data, indent=4)
+    yaml_string = saneyaml_dump(data, indent=4)
     try:
-        loaded_yaml = yaml_load(yaml_string)
+        loaded_yaml = saneyaml_load(yaml_string)
     except Exception:
         text = text.replace('\n\n', '\n \n')
     return text
@@ -1028,7 +1039,7 @@ def _validate_all_rules(rules, licenses_by_key):
     errors = defaultdict(list)
 
     for rule in rules:
-        for err_msg in rule.validate(licensing):
+        for err_msg in rule.validate(licensing, thorough=True):
             errors[err_msg].append(rule)
     return errors
 
@@ -1717,7 +1728,7 @@ class BasicRule:
         # license flag instead
         return self.license_expression and 'unknown' in self.license_expression
 
-    def validate(self, licensing=None):
+    def validate(self, licensing=None, thorough=False):
         """
         Validate this rule using the provided ``licensing`` Licensing and yield
         one error message for each type of error detected.
@@ -1810,6 +1821,17 @@ class BasicRule:
             if self.referenced_filenames:
                 if len(set(self.referenced_filenames)) != len(self.referenced_filenames):
                     yield 'referenced_filenames cannot contain duplicates.'
+
+        if thorough:
+            text = self.text
+            data = {"text": text}
+            # We are testing whether we can dump as yaml and load from yaml
+            # without failing (i.e. whether the text is yaml safe)
+            try:
+                yaml_string = saneyaml_dump(data, indent=4)
+                loaded_yaml = saneyaml_load(yaml_string)
+            except Exception:
+                yield (f'Error invalid YAML text at: {self.identifier}, failed during saneyaml.load()')
 
     def license_keys(self, unique=True):
         """

@@ -33,6 +33,10 @@ headers:
         platform_version: '#67-Ubuntu SMP Mon Mar 13 14:22:10 UTC 2023'
         python_version: "3.8.10 (default, Mar 13 2023, 10:26:41) \n[GCC 9.4.0]"
       spdx_license_list_version: '3.20'
+      additional_license_directory: /home/ayansinha/nexB/write_access/scancode-extra/tests/licensedcode/data/additional_licenses/additional_dir
+      additional_license_plugins:
+        - /home/ayansinha/nexB/write_access/scancode-extra/venv/lib/python3.8/site-packages/licenses_to_install1
+        - /home/ayansinha/nexB/write_access/scancode-extra/venv/lib/python3.8/site-packages/licenses_to_install2
       files_count: 4
 summary:
   declared_license_expression: apache-2.0 AND (apache-2.0 OR mit)
@@ -85,6 +89,7 @@ packages:
     code_view_url:
     vcs_url:
     copyright:
+    holder:
     declared_license_expression: apache-2.0
     declared_license_expression_spdx: Apache-2.0
     license_detections:
@@ -1137,6 +1142,7 @@ files:
         code_view_url:
         vcs_url:
         copyright:
+        holder:
         declared_license_expression: apache-2.0
         declared_license_expression_spdx: Apache-2.0
         license_detections:
