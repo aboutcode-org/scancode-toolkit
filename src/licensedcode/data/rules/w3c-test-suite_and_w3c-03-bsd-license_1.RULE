@@ -1,0 +1,7 @@
+---
+license_expression: w3c-test-suite AND w3c-03-bsd-license 
+is_license_notice: yes
+---
+
+Distributed under both the {{W3C Test Suite}} License [1] and the {{W3C
+3-clause BSD}} License [2].
