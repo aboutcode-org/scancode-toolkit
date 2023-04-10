@@ -446,7 +446,7 @@
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE"
             }
           ],
-          "identifier": "a9138d4e-bc0e-0a20-76fd-237047e6d41c",
+          "identifier": "mit-a9138d4e-bc0e-0a20-76fd-237047e6d41c",
           "detection_log": [
             "unknown-reference-to-local-file"
           ]

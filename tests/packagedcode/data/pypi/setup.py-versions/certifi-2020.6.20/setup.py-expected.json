@@ -42,6 +42,7 @@
     "code_view_url": "https://github.com/certifi/python-certifi",
     "vcs_url": null,
     "copyright": null,
+    "holder": null,
     "declared_license_expression": "mpl-2.0",
     "declared_license_expression_spdx": "MPL-2.0",
     "license_detections": [

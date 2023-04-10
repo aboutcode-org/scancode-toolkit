@@ -31,6 +31,7 @@
       "code_view_url": "https://github.com/aws-amplify/amplify-ios/tree/$AMPLIFY_VERSION",
       "vcs_url": "https://github.com/aws-amplify/amplify-ios.git",
       "copyright": null,
+      "holder": null,
       "declared_license_expression": "apache-2.0",
       "declared_license_expression_spdx": "Apache-2.0",
       "license_detections": [
@@ -104,6 +105,7 @@
       "code_view_url": "https://github.com/aws-amplify/amplify-ios/tree/$AMPLIFY_VERSION",
       "vcs_url": "https://github.com/aws-amplify/amplify-ios.git",
       "copyright": null,
+      "holder": null,
       "declared_license_expression": "apache-2.0",
       "declared_license_expression_spdx": "Apache-2.0",
       "license_detections": [
@@ -177,6 +179,7 @@
       "code_view_url": "https://github.com/aws-amplify/amplify-ios/tree/$AMPLIFY_VERSION",
       "vcs_url": "https://github.com/aws-amplify/amplify-ios.git",
       "copyright": null,
+      "holder": null,
       "declared_license_expression": "apache-2.0",
       "declared_license_expression_spdx": "Apache-2.0",
       "license_detections": [
@@ -250,6 +253,7 @@
       "code_view_url": "https://github.com/aws-amplify/amplify-ios/tree/$AMPLIFY_VERSION",
       "vcs_url": "https://github.com/aws-amplify/amplify-ios.git",
       "copyright": null,
+      "holder": null,
       "declared_license_expression": "apache-2.0",
       "declared_license_expression_spdx": "Apache-2.0",
       "license_detections": [
@@ -323,6 +327,7 @@
       "code_view_url": "https://github.com/aws-amplify/amplify-ios/tree/$AMPLIFY_VERSION",
       "vcs_url": "https://github.com/aws-amplify/amplify-ios.git",
       "copyright": null,
+      "holder": null,
       "declared_license_expression": "apache-2.0",
       "declared_license_expression_spdx": "Apache-2.0",
       "license_detections": [
@@ -396,6 +401,7 @@
       "code_view_url": "https://github.com/aws-amplify/amplify-ios/tree/$AMPLIFY_VERSION",
       "vcs_url": "https://github.com/aws-amplify/amplify-ios.git",
       "copyright": null,
+      "holder": null,
       "declared_license_expression": "apache-2.0",
       "declared_license_expression_spdx": "Apache-2.0",
       "license_detections": [
@@ -596,6 +602,7 @@
           "code_view_url": "https://github.com/aws-amplify/amplify-ios/tree/$AMPLIFY_VERSION",
           "vcs_url": "https://github.com/aws-amplify/amplify-ios.git",
           "copyright": null,
+          "holder": null,
           "declared_license_expression": "apache-2.0",
           "declared_license_expression_spdx": "Apache-2.0",
           "license_detections": [
@@ -675,6 +682,7 @@
           "code_view_url": "https://github.com/aws-amplify/amplify-ios/tree/$AMPLIFY_VERSION",
           "vcs_url": "https://github.com/aws-amplify/amplify-ios.git",
           "copyright": null,
+          "holder": null,
           "declared_license_expression": "apache-2.0",
           "declared_license_expression_spdx": "Apache-2.0",
           "license_detections": [
@@ -754,6 +762,7 @@
           "code_view_url": "https://github.com/aws-amplify/amplify-ios/tree/$AMPLIFY_VERSION",
           "vcs_url": "https://github.com/aws-amplify/amplify-ios.git",
           "copyright": null,
+          "holder": null,
           "declared_license_expression": "apache-2.0",
           "declared_license_expression_spdx": "Apache-2.0",
           "license_detections": [
@@ -833,6 +842,7 @@
           "code_view_url": "https://github.com/aws-amplify/amplify-ios/tree/$AMPLIFY_VERSION",
           "vcs_url": "https://github.com/aws-amplify/amplify-ios.git",
           "copyright": null,
+          "holder": null,
           "declared_license_expression": "apache-2.0",
           "declared_license_expression_spdx": "Apache-2.0",
           "license_detections": [
@@ -912,6 +922,7 @@
           "code_view_url": "https://github.com/aws-amplify/amplify-ios/tree/$AMPLIFY_VERSION",
           "vcs_url": "https://github.com/aws-amplify/amplify-ios.git",
           "copyright": null,
+          "holder": null,
           "declared_license_expression": "apache-2.0",
           "declared_license_expression_spdx": "Apache-2.0",
           "license_detections": [
@@ -991,6 +1002,7 @@
           "code_view_url": "https://github.com/aws-amplify/amplify-ios/tree/$AMPLIFY_VERSION",
           "vcs_url": "https://github.com/aws-amplify/amplify-ios.git",
           "copyright": null,
+          "holder": null,
           "declared_license_expression": "apache-2.0",
           "declared_license_expression_spdx": "Apache-2.0",
           "license_detections": [
@@ -1062,6 +1074,7 @@
           "code_view_url": null,
           "vcs_url": "",
           "copyright": null,
+          "holder": null,
           "declared_license_expression": "apache-2.0",
           "declared_license_expression_spdx": "Apache-2.0",
           "license_detections": [
@@ -1133,6 +1146,7 @@
           "code_view_url": null,
           "vcs_url": null,
           "copyright": null,
+          "holder": null,
           "declared_license_expression": "apache-2.0",
           "declared_license_expression_spdx": "Apache-2.0",
           "license_detections": [

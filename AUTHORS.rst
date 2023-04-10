@@ -44,6 +44,7 @@ The following organizations or individuals have contributed to ScanCode:
 - Lemo Shi @lemoshi
 - Li Ha @linexb
 - Mankaran Singh @MankaranSingh
+- Marc-Etienne Vargenau @vargenau
 - Martin Petkov @MartinPetkov
 - Maximilian Huber @maxhbr 
 - Michael Herzog @mjherzog
@@ -78,6 +79,7 @@ The following organizations or individuals have contributed to ScanCode:
 - Sebastian Schuberth @sschuberth
 - Shankhadeep Dey @Iamshankhadeep
 - Sharikzama @ZamaSharik
+- Shrijal Acharya @OctoPie23
 - Shivam Chauhan @chashiv
 - Shivam Sandbhor @sbs2001
 - Steven Esser @majurg

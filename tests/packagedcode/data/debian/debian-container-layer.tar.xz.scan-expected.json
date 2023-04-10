@@ -35,6 +35,7 @@
       "code_view_url": null,
       "vcs_url": null,
       "copyright": "Copyright (c) 1998-2016 Free Software Foundation, Inc.\nCopyright (c) 2001 by Pradeep Padala\nCopyright (c) 1994 X Consortium\nCopyright (c) 1980, 1991, 1992, 1993 The Regents of the University of California\nCopyright 1996-2007 by Thomas E. Dickey",
+      "holder": "Free Software Foundation, Inc.\nPradeep Padala\nX Consortium\nThe Regents of the University of California\nThomas E. Dickey",
       "declared_license_expression": "x11-fsf AND x11-xconsortium AND bsd-new",
       "declared_license_expression_spdx": "X11-distribute-modifications-variant AND X11 AND BSD-3-Clause",
       "license_detections": [
@@ -215,6 +216,7 @@
       "code_view_url": null,
       "vcs_url": null,
       "copyright": "Copyright 2013 Jiri Pirko <jiri@resnulli.us>\nCopyright 2014 Andrew Ayer <agwa@andrewayer.name>",
+      "holder": "Jiri Pirko\nAndrew Ayer",
       "declared_license_expression": "lgpl-2.1-plus AND lgpl-2.1",
       "declared_license_expression_spdx": "LGPL-2.1-or-later AND LGPL-2.1-only",
       "license_detections": [
@@ -462,6 +464,7 @@
           "code_view_url": null,
           "vcs_url": null,
           "copyright": "Copyright (c) 1998-2016 Free Software Foundation, Inc.\nCopyright (c) 2001 by Pradeep Padala\nCopyright (c) 1994 X Consortium\nCopyright (c) 1980, 1991, 1992, 1993 The Regents of the University of California\nCopyright 1996-2007 by Thomas E. Dickey",
+          "holder": "Free Software Foundation, Inc.\nPradeep Padala\nX Consortium\nThe Regents of the University of California\nThomas E. Dickey",
           "declared_license_expression": "x11-fsf AND x11-xconsortium AND bsd-new",
           "declared_license_expression_spdx": "X11-distribute-modifications-variant AND X11 AND BSD-3-Clause",
           "license_detections": [
@@ -597,6 +600,7 @@
           "code_view_url": null,
           "vcs_url": null,
           "copyright": "Copyright 2013 Jiri Pirko <jiri@resnulli.us>\nCopyright 2014 Andrew Ayer <agwa@andrewayer.name>",
+          "holder": "Jiri Pirko\nAndrew Ayer",
           "declared_license_expression": "lgpl-2.1-plus AND lgpl-2.1",
           "declared_license_expression_spdx": "LGPL-2.1-or-later AND LGPL-2.1-only",
           "license_detections": [
@@ -796,6 +800,7 @@
           "code_view_url": null,
           "vcs_url": null,
           "copyright": null,
+          "holder": null,
           "declared_license_expression": null,
           "declared_license_expression_spdx": null,
           "license_detections": [],
@@ -886,6 +891,7 @@
           "code_view_url": null,
           "vcs_url": null,
           "copyright": null,
+          "holder": null,
           "declared_license_expression": null,
           "declared_license_expression_spdx": null,
           "license_detections": [],
@@ -977,6 +983,7 @@
           "code_view_url": null,
           "vcs_url": null,
           "copyright": null,
+          "holder": null,
           "declared_license_expression": null,
           "declared_license_expression_spdx": null,
           "license_detections": [],
@@ -1034,6 +1041,7 @@
           "code_view_url": null,
           "vcs_url": null,
           "copyright": null,
+          "holder": null,
           "declared_license_expression": null,
           "declared_license_expression_spdx": null,
           "license_detections": [],

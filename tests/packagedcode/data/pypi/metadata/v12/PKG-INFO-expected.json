@@ -51,6 +51,7 @@
     "code_view_url": null,
     "vcs_url": null,
     "copyright": null,
+    "holder": null,
     "declared_license_expression": "python",
     "declared_license_expression_spdx": "Python-2.0",
     "license_detections": [

@@ -42,6 +42,7 @@
       "code_view_url": null,
       "vcs_url": null,
       "copyright": null,
+      "holder": null,
       "declared_license_expression": "mit AND apache-2.0 AND bsd-new",
       "declared_license_expression_spdx": "MIT AND Apache-2.0 AND BSD-3-Clause",
       "license_detections": [
@@ -221,6 +222,7 @@
           "code_view_url": null,
           "vcs_url": null,
           "copyright": null,
+          "holder": null,
           "declared_license_expression": "mit AND apache-2.0 AND bsd-new",
           "declared_license_expression_spdx": "MIT AND Apache-2.0 AND BSD-3-Clause",
           "license_detections": [

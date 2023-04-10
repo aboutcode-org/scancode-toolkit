@@ -346,7 +346,6 @@ def test_output_spdx_rdf_can_handle_non_ascii_paths():
         results = res.read()
     assert 'han/据.svg' in results
 
-
 def test_output_spdx_tv_can_handle_non_ascii_paths():
     test_file = test_env.get_test_loc('spdx/unicode.json')
     result_file = test_env.get_temp_file(extension='spdx', file_name='test_spdx')
@@ -354,3 +353,11 @@ def test_output_spdx_tv_can_handle_non_ascii_paths():
     with io.open(result_file, encoding='utf-8') as res:
         results = res.read()
     assert 'han/据.svg' in results
+
+def test_output_spdx_tv_sh1_of_empty_file():
+    test_dir = test_env.get_test_loc('spdx/empty/scan/somefile')
+    result_file = test_env.get_temp_file(extension='spdx', file_name='test_spdx')
+    run_scan_click([test_dir, '-clip', '--spdx-tv', result_file])
+    with io.open(result_file, encoding='utf-8') as res:
+        results = res.read()
+    assert 'FileChecksum: SHA1: da39a3ee5e6b4b0d3255bfef95601890afd80709' in results

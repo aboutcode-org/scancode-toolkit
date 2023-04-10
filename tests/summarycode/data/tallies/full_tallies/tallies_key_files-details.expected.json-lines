@@ -20,11 +20,11 @@
         "warnings": [],
         "extra_data": {
           "system_environment": {
-            "operating_system": "linux",
+            "operating_system": "mac",
             "cpu_architecture": "64",
-            "platform": "Linux-5.14.0-1058-oem-x86_64-with-glibc2.29",
-            "platform_version": "#66-Ubuntu SMP Fri Feb 10 09:46:18 UTC 2023",
-            "python_version": "3.8.10 (default, Nov 14 2022, 12:59:47) \n[GCC 9.4.0]"
+            "platform": "macOS-13.2.1-x86_64-i386-64bit",
+            "platform_version": "Darwin Kernel Version 22.3.0: Mon Jan 30 20:39:35 PST 2023; root:xnu-8792.81.3~2/RELEASE_ARM64_T8103",
+            "python_version": "3.10.6 (main, Aug 30 2022, 05:12:36) [Clang 13.1.6 (clang-1316.0.21.2.5)]"
           },
           "spdx_license_list_version": "3.20",
           "files_count": 26
@@ -592,7 +592,7 @@
                 "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/zlib_17.RULE"
               }
             ],
-            "identifier": "663c0d51-510f-fca6-b163-671ecb188ff9",
+            "identifier": "zlib-663c0d51-510f-fca6-b163-671ecb188ff9",
             "detection_log": [
               "unknown-reference-to-local-file"
             ]
@@ -751,7 +751,7 @@
                 "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/zlib_17.RULE"
               }
             ],
-            "identifier": "663c0d51-510f-fca6-b163-671ecb188ff9",
+            "identifier": "zlib-663c0d51-510f-fca6-b163-671ecb188ff9",
             "detection_log": [
               "unknown-reference-to-local-file"
             ]
@@ -1396,7 +1396,7 @@
                 "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/zlib_17.RULE"
               }
             ],
-            "identifier": "663c0d51-510f-fca6-b163-671ecb188ff9",
+            "identifier": "zlib-663c0d51-510f-fca6-b163-671ecb188ff9",
             "detection_log": [
               "unknown-reference-to-local-file"
             ]
@@ -1483,7 +1483,7 @@
                 "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/zlib_17.RULE"
               }
             ],
-            "identifier": "663c0d51-510f-fca6-b163-671ecb188ff9",
+            "identifier": "zlib-663c0d51-510f-fca6-b163-671ecb188ff9",
             "detection_log": [
               "unknown-reference-to-local-file"
             ]
@@ -1570,7 +1570,7 @@
                 "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/zlib_17.RULE"
               }
             ],
-            "identifier": "663c0d51-510f-fca6-b163-671ecb188ff9",
+            "identifier": "zlib-663c0d51-510f-fca6-b163-671ecb188ff9",
             "detection_log": [
               "unknown-reference-to-local-file"
             ]
@@ -1729,7 +1729,7 @@
                 "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/zlib_17.RULE"
               }
             ],
-            "identifier": "663c0d51-510f-fca6-b163-671ecb188ff9",
+            "identifier": "zlib-663c0d51-510f-fca6-b163-671ecb188ff9",
             "detection_log": [
               "unknown-reference-to-local-file"
             ]
@@ -1816,7 +1816,7 @@
                 "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/zlib_17.RULE"
               }
             ],
-            "identifier": "663c0d51-510f-fca6-b163-671ecb188ff9",
+            "identifier": "zlib-663c0d51-510f-fca6-b163-671ecb188ff9",
             "detection_log": [
               "unknown-reference-to-local-file"
             ]

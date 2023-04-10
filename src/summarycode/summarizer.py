@@ -8,6 +8,7 @@
 #
 
 from collections import defaultdict
+import warnings
 
 import attr
 import fingerprints
@@ -28,6 +29,7 @@ from summarycode.tallies import compute_codebase_tallies
 TRACE = False
 TRACE_LIGHT = False
 
+warnings.simplefilter('ignore', UnicodeWarning)
 
 def logger_debug(*args):
     pass

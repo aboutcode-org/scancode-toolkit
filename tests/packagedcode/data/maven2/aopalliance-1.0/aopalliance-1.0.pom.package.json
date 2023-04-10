@@ -21,6 +21,7 @@
   "code_view_url": null,
   "vcs_url": null,
   "copyright": null,
+  "holder": null,
   "declared_license_expression": "public-domain AND gpl-1.0-plus",
   "declared_license_expression_spdx": "LicenseRef-scancode-public-domain AND GPL-1.0-or-later",
   "license_detections": [

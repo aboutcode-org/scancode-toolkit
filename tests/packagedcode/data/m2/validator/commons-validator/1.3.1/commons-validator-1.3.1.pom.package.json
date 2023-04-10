@@ -253,6 +253,7 @@
   "code_view_url": "http://svn.apache.org/viewvc",
   "vcs_url": "svn+http://svn.apache.org/repos/asf/jakarta/commons/proper/validator/trunk",
   "copyright": null,
+  "holder": null,
   "declared_license_expression": "apache-2.0",
   "declared_license_expression_spdx": "Apache-2.0",
   "license_detections": [

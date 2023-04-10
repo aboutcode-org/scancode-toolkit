@@ -21,13 +21,13 @@
       "detection_log": []
     },
     {
-      "identifier": "e907b820-6f8c-81c4-38c5-75006ae093a4",
+      "identifier": "gpl-3.0-e907b820-6f8c-81c4-38c5-75006ae093a4",
       "license_expression": "gpl-3.0",
       "detection_count": 1,
       "detection_log": []
     },
     {
-      "identifier": "76e8f741-ece2-d587-493c-92b0b1e4bdfe",
+      "identifier": "gpl-3.0-76e8f741-ece2-d587-493c-92b0b1e4bdfe",
       "license_expression": "gpl-3.0",
       "detection_count": 1,
       "detection_log": []
@@ -314,7 +314,7 @@
           "detection_log": [
             "unknown-reference-in-file-to-nonexistent-package"
           ],
-          "identifier": "e907b820-6f8c-81c4-38c5-75006ae093a4"
+          "identifier": "gpl-3.0-e907b820-6f8c-81c4-38c5-75006ae093a4"
         }
       ],
       "license_clues": [],
@@ -427,7 +427,7 @@
           "detection_log": [
             "unknown-reference-in-file-to-nonexistent-package"
           ],
-          "identifier": "76e8f741-ece2-d587-493c-92b0b1e4bdfe"
+          "identifier": "gpl-3.0-76e8f741-ece2-d587-493c-92b0b1e4bdfe"
         }
       ],
       "license_clues": [],
@@ -461,6 +461,7 @@
           "code_view_url": null,
           "vcs_url": null,
           "copyright": null,
+          "holder": null,
           "declared_license_expression": "gpl-3.0",
           "declared_license_expression_spdx": "GPL-3.0-only",
           "license_detections": [

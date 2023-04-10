@@ -49,6 +49,7 @@
     "code_view_url": null,
     "vcs_url": null,
     "copyright": null,
+    "holder": null,
     "declared_license_expression": "other-permissive AND bsd-new",
     "declared_license_expression_spdx": "LicenseRef-scancode-other-permissive AND BSD-3-Clause",
     "license_detections": [

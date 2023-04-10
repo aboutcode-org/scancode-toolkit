@@ -41,6 +41,7 @@
     "code_view_url": null,
     "vcs_url": null,
     "copyright": null,
+    "holder": null,
     "declared_license_expression": "((apache-2.0 AND scancode-acknowledgment) AND cc0-1.0) AND apache-2.0 AND cc0-1.0",
     "declared_license_expression_spdx": "((Apache-2.0 AND LicenseRef-scancode-scancode-acknowledgment) AND CC0-1.0) AND Apache-2.0 AND CC0-1.0",
     "license_detections": [

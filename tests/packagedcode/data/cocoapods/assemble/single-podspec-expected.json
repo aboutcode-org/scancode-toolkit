@@ -31,6 +31,7 @@
       "code_view_url": "https://github.com/RxSwiftCommunity/RxDataSources/tree/4.0.1",
       "vcs_url": "https://github.com/RxSwiftCommunity/RxDataSources.git",
       "copyright": null,
+      "holder": null,
       "declared_license_expression": "mit",
       "declared_license_expression_spdx": "MIT",
       "license_detections": [
@@ -153,6 +154,7 @@
           "code_view_url": null,
           "vcs_url": "",
           "copyright": null,
+          "holder": null,
           "declared_license_expression": null,
           "declared_license_expression_spdx": null,
           "license_detections": [],
@@ -204,6 +206,7 @@
           "code_view_url": null,
           "vcs_url": null,
           "copyright": null,
+          "holder": null,
           "declared_license_expression": null,
           "declared_license_expression_spdx": null,
           "license_detections": [],
@@ -294,6 +297,7 @@
           "code_view_url": "https://github.com/RxSwiftCommunity/RxDataSources/tree/4.0.1",
           "vcs_url": "https://github.com/RxSwiftCommunity/RxDataSources.git",
           "copyright": null,
+          "holder": null,
           "declared_license_expression": "mit",
           "declared_license_expression_spdx": "MIT",
           "license_detections": [

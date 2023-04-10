@@ -32,6 +32,7 @@
     "code_view_url": null,
     "vcs_url": "git://github.com/jaredhanson/utils-merge.git",
     "copyright": null,
+    "holder": null,
     "declared_license_expression": "mit",
     "declared_license_expression_spdx": "MIT",
     "license_detections": [

@@ -609,6 +609,11 @@ class PackageData(IdentifiablePackageData):
         label='Copyright',
         help='Copyright statements for this package. Typically one per line.')
 
+    holder = String(
+        label='Holder',
+        help='Holders for this package. Typically one per line.'
+    )
+
     declared_license_expression = String(
         label='license expression',
         help='The license expression for this package typically derived '
@@ -711,8 +716,45 @@ class PackageData(IdentifiablePackageData):
         repr=True,
     )
 
+
     def __attrs_post_init__(self, *args, **kwargs):
         self.populate_license_fields()
+        self.populate_holder_field()
+
+    def populate_holder_field(self):
+        if not self.copyright:
+            return
+
+        from cluecode.copyrights import CopyrightDetector
+
+        numbered_lines = list(enumerate(self.copyright.split("\n"), start=1))
+        detector = CopyrightDetector()
+        holders = list(
+            detector.detect(
+                numbered_lines,
+                include_copyrights=False,
+                include_holders=True,
+                include_authors=False,
+            )
+        )
+        # If no holder detected, prefix each copyright statement with `Copyright`
+        if not holders:
+            numbered_lines = [
+                (count, f"Copyright {value}") for count, value in numbered_lines
+            ]
+            holders = list(
+                detector.detect(
+                    numbered_lines,
+                    include_copyrights=False,
+                    include_holders=True,
+                    include_authors=False,
+                )
+            )
+        # If still no holder, then populate holder with copyright field
+        self.holder = (
+            "\n".join([holder_detection.holder for holder_detection in holders])
+            or self.copyright
+        )
 
     def populate_license_fields(self):
         """

@@ -30,6 +30,7 @@
     "code_view_url": null,
     "vcs_url": null,
     "copyright": "\u00a9 Microsoft Corporation. All rights reserved.",
+    "holder": "Microsoft Corporation",
     "declared_license_expression": "unknown",
     "declared_license_expression_spdx": "LicenseRef-scancode-unknown",
     "license_detections": [

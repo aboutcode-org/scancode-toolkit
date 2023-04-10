@@ -61,8 +61,6 @@ Options:
     --cyclonedx-xml FILE    Write scan output in CycloneDX XML format to FILE.
     --spdx-rdf FILE         Write scan output as SPDX RDF to FILE.
     --spdx-tv FILE          Write scan output as SPDX Tag/Value to FILE.
-    --html-app FILE         (DEPRECATED: use the ScanCode Workbench app instead )
-                            Write scan output as a mini HTML application to FILE.
 
   output filters:
     --ignore-author <pattern>       Ignore a file (and all its findings) if an

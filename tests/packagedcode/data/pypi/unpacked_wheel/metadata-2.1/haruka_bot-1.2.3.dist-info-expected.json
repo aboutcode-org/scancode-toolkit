@@ -39,6 +39,7 @@
     "code_view_url": null,
     "vcs_url": "https://github.com/SK-415/HarukaBot/tree/master/src/plugins/haruka_bot",
     "copyright": null,
+    "holder": null,
     "declared_license_expression": "agpl-3.0-plus",
     "declared_license_expression_spdx": "AGPL-3.0-or-later",
     "license_detections": [

@@ -30,6 +30,7 @@
     "code_view_url": null,
     "vcs_url": "git+https://github.com/Filirom1/npm2aur.git",
     "copyright": null,
+    "holder": null,
     "declared_license_expression": "mit",
     "declared_license_expression_spdx": "MIT",
     "license_detections": [

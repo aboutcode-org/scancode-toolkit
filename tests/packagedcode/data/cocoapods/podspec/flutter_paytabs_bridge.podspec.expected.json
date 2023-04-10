@@ -30,6 +30,7 @@
     "code_view_url": "./tree/2.2.5",
     "vcs_url": ".",
     "copyright": null,
+    "holder": null,
     "declared_license_expression": "unknown-license-reference",
     "declared_license_expression_spdx": "LicenseRef-scancode-unknown-license-reference",
     "license_detections": [
