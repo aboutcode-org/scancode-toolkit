@@ -97,7 +97,7 @@ ScanCode needs a Python 3.7+ interpreter; We support all Python versions from
 - **On Mac**:
 
     The default Python 3 provided with macOS is 3.8.
-    Alternativelu you can download and install Python 3.8 from https://www.python.org/
+    Alternatively you can download and install Python 3.8 from https://www.python.org/
 
 
 - **On Windows**:
