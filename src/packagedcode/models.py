@@ -1304,6 +1304,13 @@ class DatafileHandler:
         if package_data.extracted_license_statement and not isinstance(package_data.extracted_license_statement, str):
             package_data.extracted_license_statement = repr(package_data.extracted_license_statement)
 
+    @classmethod
+    def get_key_files(cls, manifest_resource, codebase):
+        """
+        Yield Resources that are considered key files for a Package type.
+        """
+        pass
+
 
 class NonAssemblableDatafileHandler(DatafileHandler):
     """

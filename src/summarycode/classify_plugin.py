@@ -8,11 +8,13 @@
 #
 
 from commoncode.datautils import Boolean
-from plugincode.pre_scan import PreScanPlugin
-from plugincode.pre_scan import pre_scan_impl
+from plugincode.post_scan import PostScanPlugin
+from plugincode.post_scan import post_scan_impl
 from commoncode.cliutils import PluggableCommandLineOption
-from commoncode.cliutils import PRE_SCAN_GROUP
+from commoncode.cliutils import POST_SCAN_GROUP
 
+from packagedcode import get_package_handler
+from packagedcode.models import PackageData
 from summarycode.classify import set_classification_flags
 
 """
@@ -50,8 +52,8 @@ if TRACE:
         return logger.debug(' '.join(isinstance(a, str) and a or repr(a) for a in args))
 
 
-@pre_scan_impl
-class FileClassifier(PreScanPlugin):
+@post_scan_impl
+class FileClassifier(PostScanPlugin):
     """
     Classify a file such as a COPYING file or a package manifest with a flag.
     """
@@ -98,9 +100,9 @@ class FileClassifier(PreScanPlugin):
     options = [
         PluggableCommandLineOption(('--classify',),
             is_flag=True, default=False,
-            help='Classify files with flags indicating whether the file is a '
-                 'legal, readme, test or similar file.',
-            help_group=PRE_SCAN_GROUP,
+            help='Classify files with flags telling if the file is a legal, '
+                 'or readme or test file, etc.',
+            help_group=POST_SCAN_GROUP,
             sort_order=50,
         )
     ]
@@ -116,10 +118,25 @@ class FileClassifier(PreScanPlugin):
         real_root_dist = real_root.distance(codebase)
 
         for resource in codebase.walk(topdown=True):
-            real_dist = resource.distance(codebase) - real_root_dist
-            # this means this is either a child of the root dir or the root itself.
-            resource.is_top_level = (real_dist < 2)
-            if resource.is_file:
-                # TODO: should we do something about directories? for now we only consider files
-                set_classification_flags(resource)
-            resource.save(codebase)
+            has_package_data = bool(getattr(resource, 'package_data', False))
+            if not has_package_data:
+                real_dist = resource.distance(codebase) - real_root_dist
+                # this means this is either a child of the root dir or the root itself.
+                resource.is_top_level = (real_dist < 2)
+                if resource.is_file:
+                    # TODO: should we do something about directories? for now we only consider files
+                    set_classification_flags(resource)
+                resource.save(codebase)
+            else:
+                for package_data in resource.package_data:
+                    pd = PackageData.from_dict(package_data)
+                    package_handler = get_package_handler(pd)
+                    key_files = package_handler.get_key_files(resource, codebase)
+                    if not key_files:
+                        break
+                    for key_file in key_files:
+                        if key_file.is_file:
+                            key_file.is_key_file = True
+                        key_file.is_top_level = True
+                        set_classification_flags(key_file)
+                        key_file.save(codebase)

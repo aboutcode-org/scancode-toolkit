@@ -57,7 +57,7 @@ class ScanSummary(PostScanPlugin):
     Summarize a scan at the codebase level.
     """
 
-    sort_order = 2
+    sort_order = 4
 
     codebase_attributes = dict(summary=attr.ib(default=attr.Factory(dict)))
 
