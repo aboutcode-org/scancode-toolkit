@@ -320,22 +320,19 @@ def get_field_values_from_codebase_resources(
     """
     values = []
     for resource in codebase.walk(topdown=True):
-        if not (resource.is_dir and resource.is_top_level):
-            continue
-        for child in resource.walk(codebase):
-            if key_files_only:
-                if not child.is_key_file:
-                    continue
-            else:
-                if child.is_key_file:
-                    continue
-            if is_string:
-                value = getattr(child, field_name, None) or None
-                if value:
-                    values.append(value)
-            else:
-                for value in getattr(child, field_name, []) or []:
-                    values.append(value)
+        if key_files_only:
+            if not resource.is_key_file:
+                continue
+        else:
+            if resource.is_key_file:
+                continue
+        if is_string:
+            value = getattr(resource, field_name, None) or None
+            if value:
+                values.append(value)
+        else:
+            for value in getattr(resource, field_name, []) or []:
+                values.append(value)
     return values
 
 

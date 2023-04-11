@@ -95,7 +95,7 @@ class FileClassifier(PostScanPlugin):
 
     ])
 
-    sort_order = 30
+    sort_order = 4
 
     options = [
         PluggableCommandLineOption(('--classify',),

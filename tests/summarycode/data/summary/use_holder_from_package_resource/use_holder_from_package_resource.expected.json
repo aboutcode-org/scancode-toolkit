@@ -1,31 +1,4 @@
 {
-  "summary": {
-    "declared_license_expression": "apache-2.0",
-    "license_clarity_score": {
-      "score": 100,
-      "declared_license": true,
-      "identification_precision": true,
-      "has_license_text": true,
-      "declared_copyrights": true,
-      "conflicting_license_categories": false,
-      "ambiguous_compound_licensing": false
-    },
-    "declared_holder": "Google, Fraunhofer FKIE",
-    "primary_language": "Python",
-    "other_license_expressions": [
-      {
-        "value": null,
-        "count": 1
-      }
-    ],
-    "other_holders": [
-      {
-        "value": "Example Corporation",
-        "count": 1
-      }
-    ],
-    "other_languages": []
-  },
   "packages": [
     {
       "type": "pypi",
@@ -124,6 +97,33 @@
       "detection_count": 2
     }
   ],
+  "summary": {
+    "declared_license_expression": "apache-2.0",
+    "license_clarity_score": {
+      "score": 0,
+      "declared_license": false,
+      "identification_precision": false,
+      "has_license_text": false,
+      "declared_copyrights": true,
+      "conflicting_license_categories": false,
+      "ambiguous_compound_licensing": true
+    },
+    "declared_holder": "Google, Fraunhofer FKIE",
+    "primary_language": "Python",
+    "other_license_expressions": [
+      {
+        "value": null,
+        "count": 1
+      }
+    ],
+    "other_holders": [
+      {
+        "value": "Example Corporation",
+        "count": 1
+      }
+    ],
+    "other_languages": []
+  },
   "files": [
     {
       "path": "codebase",
@@ -146,6 +146,11 @@
       "is_script": false,
       "package_data": [],
       "for_packages": [],
+      "is_legal": false,
+      "is_manifest": false,
+      "is_readme": false,
+      "is_top_level": true,
+      "is_key_file": false,
       "detected_license_expression": null,
       "detected_license_expression_spdx": null,
       "license_detections": [],
@@ -154,11 +159,6 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "is_legal": false,
-      "is_manifest": false,
-      "is_readme": false,
-      "is_top_level": true,
-      "is_key_file": false,
       "files_count": 2,
       "dirs_count": 0,
       "size_count": 1215,
@@ -187,6 +187,11 @@
       "for_packages": [
         "pkg:pypi/atheris?uuid=fixed-uid-done-for-testing-5642512d1758"
       ],
+      "is_legal": false,
+      "is_manifest": false,
+      "is_readme": true,
+      "is_top_level": true,
+      "is_key_file": true,
       "detected_license_expression": null,
       "detected_license_expression_spdx": null,
       "license_detections": [],
@@ -207,11 +212,6 @@
         }
       ],
       "authors": [],
-      "is_legal": false,
-      "is_manifest": false,
-      "is_readme": true,
-      "is_top_level": true,
-      "is_key_file": true,
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -321,6 +321,11 @@
       "for_packages": [
         "pkg:pypi/atheris?uuid=fixed-uid-done-for-testing-5642512d1758"
       ],
+      "is_legal": false,
+      "is_manifest": false,
+      "is_readme": false,
+      "is_top_level": false,
+      "is_key_file": false,
       "detected_license_expression": "apache-2.0",
       "detected_license_expression_spdx": "Apache-2.0",
       "license_detections": [
@@ -370,11 +375,6 @@
         }
       ],
       "authors": [],
-      "is_legal": false,
-      "is_manifest": true,
-      "is_readme": false,
-      "is_top_level": true,
-      "is_key_file": true,
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,

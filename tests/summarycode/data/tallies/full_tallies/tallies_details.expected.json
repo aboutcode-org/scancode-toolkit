@@ -8544,7 +8544,7 @@
         "pkg:npm/npm@2.13.5?uuid=fixed-uid-done-for-testing-5642512d1758"
       ],
       "detected_license_expression": "gpl-2.0-plus WITH ada-linking-exception",
-      "detected_license_expression_spdx": "GPL-2.0-or-later WITH GNAT-exception",
+      "detected_license_expression_spdx": "GPL-2.0-or-later WITH LicenseRef-scancode-ada-linking-exception",
       "license_detections": [
         {
           "license_expression": "gpl-2.0-plus WITH ada-linking-exception",

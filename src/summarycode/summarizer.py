@@ -57,7 +57,7 @@ class ScanSummary(PostScanPlugin):
     Summarize a scan at the codebase level.
     """
 
-    sort_order = 4
+    sort_order = 6
 
     codebase_attributes = dict(summary=attr.ib(default=attr.Factory(dict)))
 
@@ -324,8 +324,8 @@ def is_key_package(package, codebase):
 
     datafile_paths = set(package.datafile_paths or [])
     for resource in codebase.walk(topdown=True):
-        if not resource.is_top_level:
-            break
+        if resource.is_dir:
+            continue
         if resource.path in datafile_paths:
             return True
 
