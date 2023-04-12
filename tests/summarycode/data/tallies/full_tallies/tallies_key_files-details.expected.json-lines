@@ -1919,7 +1919,7 @@
         "is_top_level": false,
         "is_key_file": false,
         "detected_license_expression": "gpl-2.0-plus WITH ada-linking-exception",
-        "detected_license_expression_spdx": "GPL-2.0-or-later WITH LicenseRef-scancode-ada-linking-exception",
+        "detected_license_expression_spdx": "GPL-2.0-or-later WITH GNAT-exception",
         "license_detections": [
           {
             "license_expression": "gpl-2.0-plus WITH ada-linking-exception",
