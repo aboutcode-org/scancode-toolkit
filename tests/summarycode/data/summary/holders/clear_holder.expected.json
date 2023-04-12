@@ -1,4 +1,23 @@
 {
+  "packages": [],
+  "dependencies": [],
+  "license_detections": [
+    {
+      "identifier": "apache_2_0-9804422e-94ac-ad40-b53a-ee6f8ddb7a3b",
+      "license_expression": "apache-2.0",
+      "detection_count": 1
+    },
+    {
+      "identifier": "mit-cacd5c0c-204a-85c2-affc-e4c125b2492a",
+      "license_expression": "mit",
+      "detection_count": 1
+    },
+    {
+      "identifier": "apache_2_0_and__apache_2_0_or_mit-9b638e72-e872-a67f-3447-eec297ef7b39",
+      "license_expression": "apache-2.0 AND (apache-2.0 OR mit)",
+      "detection_count": 3
+    }
+  ],
   "summary": {
     "declared_license_expression": "apache-2.0 AND (apache-2.0 OR mit)",
     "license_clarity_score": {
@@ -38,25 +57,6 @@
     ],
     "other_languages": []
   },
-  "packages": [],
-  "dependencies": [],
-  "license_detections": [
-    {
-      "identifier": "apache_2_0-9804422e-94ac-ad40-b53a-ee6f8ddb7a3b",
-      "license_expression": "apache-2.0",
-      "detection_count": 1
-    },
-    {
-      "identifier": "mit-cacd5c0c-204a-85c2-affc-e4c125b2492a",
-      "license_expression": "mit",
-      "detection_count": 1
-    },
-    {
-      "identifier": "apache_2_0_and__apache_2_0_or_mit-9b638e72-e872-a67f-3447-eec297ef7b39",
-      "license_expression": "apache-2.0 AND (apache-2.0 OR mit)",
-      "detection_count": 3
-    }
-  ],
   "files": [
     {
       "path": "clear_holder",
@@ -79,6 +79,11 @@
       "is_script": false,
       "package_data": [],
       "for_packages": [],
+      "is_legal": false,
+      "is_manifest": false,
+      "is_readme": false,
+      "is_top_level": true,
+      "is_key_file": false,
       "detected_license_expression": null,
       "detected_license_expression_spdx": null,
       "license_detections": [],
@@ -87,11 +92,6 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "is_legal": false,
-      "is_manifest": false,
-      "is_readme": false,
-      "is_top_level": true,
-      "is_key_file": false,
       "files_count": 5,
       "dirs_count": 2,
       "size_count": 11457,
@@ -118,6 +118,11 @@
       "is_script": false,
       "package_data": [],
       "for_packages": [],
+      "is_legal": false,
+      "is_manifest": false,
+      "is_readme": true,
+      "is_top_level": true,
+      "is_key_file": true,
       "detected_license_expression": "apache-2.0 AND (apache-2.0 OR mit)",
       "detected_license_expression_spdx": "Apache-2.0 AND (Apache-2.0 OR MIT)",
       "license_detections": [
@@ -179,11 +184,6 @@
         }
       ],
       "authors": [],
-      "is_legal": false,
-      "is_manifest": false,
-      "is_readme": true,
-      "is_top_level": true,
-      "is_key_file": true,
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -210,6 +210,11 @@
       "is_script": false,
       "package_data": [],
       "for_packages": [],
+      "is_legal": true,
+      "is_manifest": false,
+      "is_readme": false,
+      "is_top_level": true,
+      "is_key_file": true,
       "detected_license_expression": "apache-2.0",
       "detected_license_expression_spdx": "Apache-2.0",
       "license_detections": [
@@ -237,11 +242,6 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "is_legal": true,
-      "is_manifest": false,
-      "is_readme": false,
-      "is_top_level": true,
-      "is_key_file": true,
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -268,6 +268,11 @@
       "is_script": false,
       "package_data": [],
       "for_packages": [],
+      "is_legal": true,
+      "is_manifest": false,
+      "is_readme": false,
+      "is_top_level": true,
+      "is_key_file": true,
       "detected_license_expression": "mit",
       "detected_license_expression_spdx": "MIT",
       "license_detections": [
@@ -295,11 +300,6 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "is_legal": true,
-      "is_manifest": false,
-      "is_readme": false,
-      "is_top_level": true,
-      "is_key_file": true,
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -326,6 +326,11 @@
       "is_script": false,
       "package_data": [],
       "for_packages": [],
+      "is_legal": false,
+      "is_manifest": false,
+      "is_readme": false,
+      "is_top_level": true,
+      "is_key_file": false,
       "detected_license_expression": null,
       "detected_license_expression_spdx": null,
       "license_detections": [],
@@ -334,11 +339,6 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "is_legal": false,
-      "is_manifest": false,
-      "is_readme": false,
-      "is_top_level": true,
-      "is_key_file": false,
       "files_count": 1,
       "dirs_count": 0,
       "size_count": 95,
@@ -365,6 +365,11 @@
       "is_script": true,
       "package_data": [],
       "for_packages": [],
+      "is_legal": false,
+      "is_manifest": false,
+      "is_readme": false,
+      "is_top_level": false,
+      "is_key_file": false,
       "detected_license_expression": "apache-2.0 AND (apache-2.0 OR mit)",
       "detected_license_expression_spdx": "Apache-2.0 AND (Apache-2.0 OR MIT)",
       "license_detections": [
@@ -416,11 +421,6 @@
         }
       ],
       "authors": [],
-      "is_legal": false,
-      "is_manifest": false,
-      "is_readme": false,
-      "is_top_level": false,
-      "is_key_file": false,
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -447,6 +447,11 @@
       "is_script": false,
       "package_data": [],
       "for_packages": [],
+      "is_legal": false,
+      "is_manifest": false,
+      "is_readme": false,
+      "is_top_level": true,
+      "is_key_file": false,
       "detected_license_expression": null,
       "detected_license_expression_spdx": null,
       "license_detections": [],
@@ -455,11 +460,6 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "is_legal": false,
-      "is_manifest": false,
-      "is_readme": false,
-      "is_top_level": true,
-      "is_key_file": false,
       "files_count": 1,
       "dirs_count": 0,
       "size_count": 68,
@@ -486,6 +486,11 @@
       "is_script": false,
       "package_data": [],
       "for_packages": [],
+      "is_legal": false,
+      "is_manifest": false,
+      "is_readme": false,
+      "is_top_level": false,
+      "is_key_file": false,
       "detected_license_expression": "apache-2.0 AND (apache-2.0 OR mit)",
       "detected_license_expression_spdx": "Apache-2.0 AND (Apache-2.0 OR MIT)",
       "license_detections": [
@@ -537,11 +542,6 @@
         }
       ],
       "authors": [],
-      "is_legal": false,
-      "is_manifest": false,
-      "is_readme": false,
-      "is_top_level": false,
-      "is_key_file": false,
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,

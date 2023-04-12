@@ -122,6 +122,5 @@ def set_classification_flags(resource,
     # FIXME: this will never be picked up as this is NOT available in a pre-scan plugin
     has_package_data = bool(getattr(resource, 'package_data', False))
     resource.is_manifest = is_manifest = path.endswith(_MANIF) or has_package_data
-    if not resource.is_key_file:
-        resource.is_key_file = (resource.is_top_level and (is_readme or is_legal or is_manifest))
+    resource.is_key_file = (resource.is_top_level and (is_readme or is_legal or is_manifest))
     return resource

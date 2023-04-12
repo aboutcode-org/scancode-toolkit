@@ -1,4 +1,13 @@
 {
+  "packages": [],
+  "dependencies": [],
+  "license_detections": [
+    {
+      "identifier": "jetty-a0130d29-e7f1-bc37-111a-fccd6b1c6b58",
+      "license_expression": "jetty",
+      "detection_count": 1
+    }
+  ],
   "summary": {
     "declared_license_expression": "jetty",
     "license_clarity_score": {
@@ -21,15 +30,6 @@
     "other_holders": [],
     "other_languages": []
   },
-  "packages": [],
-  "dependencies": [],
-  "license_detections": [
-    {
-      "identifier": "jetty-a0130d29-e7f1-bc37-111a-fccd6b1c6b58",
-      "license_expression": "jetty",
-      "detection_count": 1
-    }
-  ],
   "files": [
     {
       "path": "codebase",
@@ -52,6 +52,11 @@
       "is_script": false,
       "package_data": [],
       "for_packages": [],
+      "is_legal": false,
+      "is_manifest": false,
+      "is_readme": false,
+      "is_top_level": true,
+      "is_key_file": false,
       "detected_license_expression": null,
       "detected_license_expression_spdx": null,
       "license_detections": [],
@@ -60,11 +65,6 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "is_legal": false,
-      "is_manifest": false,
-      "is_readme": false,
-      "is_top_level": true,
-      "is_key_file": false,
       "files_count": 1,
       "dirs_count": 0,
       "size_count": 6248,
@@ -91,6 +91,11 @@
       "is_script": false,
       "package_data": [],
       "for_packages": [],
+      "is_legal": true,
+      "is_manifest": false,
+      "is_readme": false,
+      "is_top_level": true,
+      "is_key_file": true,
       "detected_license_expression": "jetty",
       "detected_license_expression_spdx": "LicenseRef-scancode-jetty",
       "license_detections": [
@@ -140,11 +145,6 @@
         }
       ],
       "authors": [],
-      "is_legal": true,
-      "is_manifest": false,
-      "is_readme": false,
-      "is_top_level": true,
-      "is_key_file": true,
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,

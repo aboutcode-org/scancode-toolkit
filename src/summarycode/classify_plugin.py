@@ -135,8 +135,6 @@ class FileClassifier(PostScanPlugin):
                     if not key_files:
                         break
                     for key_file in key_files:
-                        if key_file.is_file:
-                            key_file.is_key_file = True
                         key_file.is_top_level = True
                         set_classification_flags(key_file)
                         key_file.save(codebase)
