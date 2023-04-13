@@ -153,9 +153,9 @@ class MavenPomXmlHandler(models.DatafileHandler):
         )
 
     @classmethod
-    def get_key_files(cls, manifest_resource, codebase):
+    def get_top_level_resources(cls, manifest_resource, codebase):
         """
-        Yield Resources that are key files based on a JAR's directory structure
+        Yield Resources that are top-level based on a JAR's directory structure
         """
         if 'META-INF' in manifest_resource.path:
             path_segments = manifest_resource.path.split('META-INF')
@@ -163,6 +163,7 @@ class MavenPomXmlHandler(models.DatafileHandler):
             meta_inf_dir_path = f'{leading_segment}/META-INF'
             meta_inf_resource = codebase.get_resource(meta_inf_dir_path)
             if meta_inf_resource:
+                yield meta_inf_resource
                 yield from meta_inf_resource.walk(codebase)
 
 

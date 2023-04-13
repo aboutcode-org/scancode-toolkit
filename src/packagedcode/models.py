@@ -1305,9 +1305,9 @@ class DatafileHandler:
             package_data.extracted_license_statement = repr(package_data.extracted_license_statement)
 
     @classmethod
-    def get_key_files(cls, manifest_resource, codebase):
+    def get_top_level_resources(cls, manifest_resource, codebase):
         """
-        Yield Resources that are considered key files for a Package type.
+        Yield Resources that are considered top-level for a Package type.
         """
         pass
 

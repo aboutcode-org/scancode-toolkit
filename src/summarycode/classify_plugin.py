@@ -117,7 +117,11 @@ class FileClassifier(PostScanPlugin):
             real_root = codebase.root
         real_root_dist = real_root.distance(codebase)
 
+        seen_resources = set()
         for resource in codebase.walk(topdown=True):
+            if resource.path in seen_resources:
+                continue
+
             has_package_data = bool(getattr(resource, 'package_data', False))
             if not has_package_data:
                 real_dist = resource.distance(codebase) - real_root_dist
@@ -127,14 +131,17 @@ class FileClassifier(PostScanPlugin):
                     # TODO: should we do something about directories? for now we only consider files
                     set_classification_flags(resource)
                 resource.save(codebase)
+                seen_resources.add(resource.path)
             else:
                 for package_data in resource.package_data:
                     pd = PackageData.from_dict(package_data)
                     package_handler = get_package_handler(pd)
-                    key_files = package_handler.get_key_files(resource, codebase)
-                    if not key_files:
+                    top_level_resources = package_handler.get_top_level_resources(resource, codebase)
+                    if not top_level_resources:
                         break
-                    for key_file in key_files:
-                        key_file.is_top_level = True
-                        set_classification_flags(key_file)
-                        key_file.save(codebase)
+                    for r in top_level_resources:
+                        r.is_top_level = True
+                        set_classification_flags(r)
+                        r.save(codebase)
+                        seen_resources.add(r.path)
+                seen_resources.add(resource.path)
