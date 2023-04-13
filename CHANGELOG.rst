@@ -69,6 +69,11 @@ Package detection:
 
   https://github.com/nexB/scancode-toolkit/issues/3290
 
+- DatafileHandlers now have a classmethod named ``get_top_level_resources()``,
+  which is supposed to yield the top-level Resources of a Package codebase,
+  relative to a Package manifest file. ``maven.MavenPomXmlHandler`` is the first
+  DatafileHandler that has this method implemented.
+
 
 License detection:
 ~~~~~~~~~~~~~~~~~~~
@@ -161,10 +166,10 @@ License detection:
 
   - We can now detect licenses using custom license texts and license rules
     stored in a directory or packaged as a plugin for consistent reuse and deployment.
-  
+
   - There is an ``--additional-directory`` option with the ``scancode-reindex-licenses``
     command to add the licenses from a directory.
-    
+
   - There is also a ``--only-builtin`` option to use ony builtin licenses
     ignoring any additional license plugins.
 
