@@ -88,8 +88,8 @@ Options:
   pre-scan:
     --ignore <pattern>         Ignore files matching <pattern>.
     --include <pattern>        Include files matching <pattern>.
-    --classify                 Classify files with flags telling if the file is a
-                               legal, or readme or test file, etc.
+    --classify                 Classify files with flags indicating whether the
+                               file is a legal, readme, test or similar file.
     --facet <facet>=<pattern>  Add the <facet> to files with a path matching
                                <pattern>.
 
@@ -107,7 +107,7 @@ Options:
     --license-policy FILE    Load a License Policy file and apply it to the scan
                              at the Resource level.
     --license-references     Return reference data for all licenses and license
-                             rulespresent in detections.
+                             rules present in detections.
     --mark-source            Set the "is_source" to true for directories that
                              contain over 90% of source files as children and
                              descendants. Count the number of source files in a

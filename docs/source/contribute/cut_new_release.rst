@@ -1,7 +1,7 @@
 .. _release_process:
 
-How to cut a new release:
-=========================
+How to cut a new release
+========================
 
 Update version
 --------------
@@ -19,7 +19,7 @@ See our :ref:``versioning`` for more details.
 Tag and publish
 ---------------
 
-- Changes for a release should also be pushed to a branch and a pull
+- Changes for a release should also be pushed to a branch and a Pull
   Request should be created for it, for review.
 
 - Update the CHANGELOG.rst with detailed documentation of updates
@@ -31,7 +31,7 @@ Tag and publish
     - ``git commit -s``
     - ``git push --set-upstream origin release-prep-v1.6.1``
 
-- Merge this ``release-prep-v1.6.1`` branch in master after review approval
+- Merge this ``release-prep-v1.6.1`` branch in develop after review approval
   and tag the release:
 
     - ``git tag -a v1.6.1 -m "Release v1.6.1"``
@@ -41,7 +41,7 @@ Tag and publish
 Automated Release Process
 -------------------------
 
-- We have a `automated release script <https://github.com/nexB/scancode-toolkit/actions/workflows/scancode-release.yml>`_
+- We have an `automated release script <https://github.com/nexB/scancode-toolkit/actions/workflows/scancode-release.yml>`_
   triggered by a pushed tag, where jobs run to:
 
   - Build pypi wheels and sdist archives
@@ -49,7 +49,7 @@ Automated Release Process
   - This happens for all supported python versions
   - Test these wheels and app archives in linux/mac/windows for all supported
     versions of python
-  - Create a GitHub release (draft by default) with all wheels, sdists and app arcives
+  - Create a GitHub release (draft by default) with all wheels, sdists and app archives
     (for all os/python combinations)
   - Upload sdists and wheels (all python versions) and publish a release
     (This won't be a stable release for beta/release-candidate tags)

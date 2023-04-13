@@ -22,15 +22,15 @@ To see all plugins available via command line help, use ``--plugins``.
 
         The option ``--mark-source`` is a sub-option of and **requires** the option ``--info``.
 
-    The ``mark-source`` option marks the "is_source" attribute of a directory to be "True", if more
-    than 90% of the files under that directory is source files, and "False" otherwise.
+    The ``mark-source`` option marks the ``is_source`` attribute of a directory to be ``True``, if more
+    than 90% of the files under that directory is source files, and ``False`` otherwise.
 
     When the following command is executed to scan the ``samples`` directory with this option enabled::
 
         scancode -clpieu --json-pp output.json samples --mark-source
 
-    Then, the following directories are marked as "Source", i.e. Their "is_source" attribute is set
-    to "True", as they contain source code majorly.
+    Then, the following directories are marked as "Source", i.e. their ``is_source`` attribute is set
+    to ``True``, as they contain mostly source code.
 
     - ``samples/JGroups/src``
     - ``samples/zlib/iostream2``
@@ -53,8 +53,8 @@ To see all plugins available via command line help, use ``--plugins``.
     .. note::
 
         The ``--consolidate`` option will be deprecated in a future version of
-        scancode-toolkit as top level packages, dependenices and licenses
-        now provide a improved consolidated data.
+        ScanCode Toolkit as top level packages, dependencies and licenses
+        now provide improved consolidated data.
 
     The JSON file containing scan results after using the ``--consolidate`` Plugin is structured as
     follows:
@@ -249,7 +249,7 @@ To see all plugins available via command line help, use ``--plugins``.
         - "conflicting_license_categories"
         - "ambiguous_compound_licensing"
 
-    It whole JSON file is structured as follows, when it has "license_clarity_score"::
+    When the "license_clarity_score" is included, the entire JSON file is structured as follows::
 
         {
           "headers": [...],
@@ -346,7 +346,7 @@ To see all plugins available via command line help, use ``--plugins``.
 
     Details about the matched license or license rule are not included with the license
     matches for license detections by default. These are instead reported optionally and
-    seperately as codebase-level reference data. There are two codebase-level attributes
+    separately as codebase-level reference data. There are two codebase-level attributes
     added with the ``--license-references`` option:
 
     - ``license_references`` with details from scancode licenses (which are each a
@@ -476,8 +476,8 @@ To see all plugins available via command line help, use ``--plugins``.
         ]
       }
 
-    See :ref:`reference_license_related_data` for more details on license references and a comparision
-    with previous scancode output formats.
+    See :ref:`reference_license_related_data` for more details on license references
+    and a comparison with previous scancode output formats.
 
 ----
 
@@ -597,7 +597,7 @@ To see all plugins available via command line help, use ``--plugins``.
 
     .. admonition:: Optional Dependency
 
-        The ``--tallies`` option does not have any required CLI option dependenices,
+        The ``--tallies`` option does not have any required CLI option dependencies,
         but as it contains license, copyright, holder, author, packages and
         programming language information, it is recommended to use this option with
         ``--license``, ``--package``, ``--copyright`` and ``--info`` options enabled,

@@ -19,7 +19,7 @@ All Scan Output Options
                         This option is deprecated and will be replaced by
                         new CSV and tabular output formats in the next
                         ScanCode release. Visit this issue for details,
-                        and to provide inputs and feedback:
+                        and to provide input and feedback:
                         https://github.com/nexB/scancode-toolkit/issues/3043
 
 --html FILE             Write scan output as HTML to FILE.

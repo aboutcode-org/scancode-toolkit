@@ -86,7 +86,7 @@
 
         License: Apache-2.0
 
-    If we run license detection (with --license-text) on the above text we get the following
+    If we run license detection (with ``--license-text``) on the above text we get the following
     result for the resource attributes added by the license detection::
 
         {
@@ -121,7 +121,7 @@
         }
 
     We also have top level unique license detections with the same identifier
-    referencing all occurances of this license detection and counts::
+    referencing all occurrences of this license detection and counts::
 
         {
             "license_detections": [
@@ -670,7 +670,7 @@
         [`MIT`](https://opensource.org/licenses/MIT).
 
     If we run a license scan with the ``--license-diagnostics`` option enabled,
-    we have to following license detection results::
+    we have the following license detection results::
 
         {
             "path": "README.md",
@@ -746,7 +746,7 @@
         }
 
     Here from the ``"detection_log": ["unknown-intro-followed-by-match"]`` added diagnostics
-    information we get to know that there was a unknown intro license match, followed by
-    proper detections, so we concluded the unknown intro to be a introduction to the
-    following license and hence concluded the license from the license matches after the
+    information we learn that there was an unknown intro license match, followed by
+    proper detections, so we conclude the unknown intro to be an introduction to the
+    following license and hence conclude the license from the license matches after the
     unknown detection.

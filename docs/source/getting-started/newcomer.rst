@@ -42,7 +42,7 @@ Table of Contents
 Try ScanCode Toolkit
 --------------------
 
-This section is about using the Scancode-Toolkit, i.e. Performing a scan on a codebase/files to
+This section is about using the ScanCode Toolkit, i.e. Performing a scan on a codebase/files to
 determine their license, copyrights and other information, according to your requirements.
 
 #. The :ref:`newcomer_scan_codebase` section helps you with configuring your virtual environment,
@@ -62,7 +62,8 @@ Installing ScanCode
 Scancode-Toolkit can be installed in 3 different methods.
 
 #. The :ref:`newcomer_scan_codebase` section helps you with configuring and
-   installing Scancode and performing a basic scan, then visualize the results.
+   installing ScanCode and performing a basic scan, and then visualizing the
+   results.
 
 #. The :ref:`newcomer_scancode_tips` section helps you customize the scan
    according to your requirements, and better understand advanced features.
@@ -73,7 +74,7 @@ Scancode-Toolkit can be installed in 3 different methods.
 
 .. _newcomer_before:
 
-Before you start using Scancode
+Before you start using ScanCode
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 #. You need to make sure :ref:`install_prerequisites` are installed, and a `virtualenv <https://docs.python-guide.org/dev/virtualenvs/>`_
@@ -313,7 +314,7 @@ Then:
 #. Keep an eye out for Application Timelines.
 #. Solve multiple of these :ref:`newcomer_good_first_issue` to demonstrate your skills,
    and improve your chances of selection.
-#. Refer the Projects Ideas list for details on tentative projects.
+#. Refer to the Projects Ideas List for details on tentative projects.
 
      - `GSoC2023 <https://github.com/nexB/aboutcode/wiki/GSOC-2023>`_
 

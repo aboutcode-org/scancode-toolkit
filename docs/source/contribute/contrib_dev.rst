@@ -12,7 +12,7 @@ TL;DR:
 - We use DCO signoff in commit messages, like Linux does.
 - Porting ScanCode to other OS (FreeBSD is supported, etc.) is possible. Enter an issue for help.
 
-See `CONTRIBUTING.rst <https://github.com/nexB/scancode-toolkit/blob/master/CONTRIBUTING.rst>`_
+See `CONTRIBUTING.rst <https://github.com/nexB/scancode-toolkit/blob/develop/CONTRIBUTING.rst>`_
 for details.
 
 
@@ -156,7 +156,7 @@ from ``setup.cfg``.
 
 And to ensure that we also all use well known version of the core virtualenv,
 pip, setuptools and wheel libraries, we use the ``virtualenv.pyz`` Python
-zipp app from https://github.com/pypa/get-virtualenv/tree/master/public and
+zipp app from https://github.com/pypa/get-virtualenv/tree/main/public and
 store it in the Git repo in the ``etc/thirdparty`` directory.
 
 We bundle pre-built bundled native binaries as plugins which are installed as
@@ -195,8 +195,8 @@ versions).
 Using ScanCode as a Python library
 ----------------------------------
 
-ScanCode can be used alright as a Python library and is available as as a
-Python wheel in Pypi and installed with ``pip install scancode-toolkit`` or
+ScanCode can be used also as a Python library and is available as a
+Python wheel in PyPi and installed with ``pip install scancode-toolkit`` or
 ``pip install scancode-toolkit-mini``.
 
 .. _note:

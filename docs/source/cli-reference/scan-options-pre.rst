@@ -180,7 +180,7 @@ Glob Pattern Matching
 What is a Facet?
 ----------------
 
-    A facet is essentially file purpose classification label.
+    A facet is essentially a file purpose classification label.
     It is defined as follows (by ClearlyDefined):
 
     A facet of a component is a subset of the files related to the component. It's really just a

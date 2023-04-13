@@ -147,7 +147,7 @@ What is Checked?
 ^^^^^^^^^^^^^^^^
 
 PyCQA is an Organization for code quality tools (and plugins) for the Python programming language.
-Doc8 is a sub-project of the same Organization. Refer this `README <https://github.com/PyCQA/doc8/blob/master/README.rst>`_ for more details.
+Doc8 is a sub-project of the same Organization. Refer this `README <https://github.com/PyCQA/doc8/blob/main/README.rst>`_ for more details.
 
 What is checked:
 

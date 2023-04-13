@@ -258,7 +258,7 @@ class HtmlAppOutput(OutputPlugin):
             type=FileOptionType(mode='w', encoding='utf-8', lazy=True),
             metavar='FILE',
             hidden=True,
-            help='(DEPRECATED: use the ScanCode Workbench app instead ) '
+            help='(DEPRECATED: use the ScanCode Workbench app instead) '
                   'Write scan output as a mini HTML application to FILE.',
             help_group=OUTPUT_GROUP,
             sort_order=1000),

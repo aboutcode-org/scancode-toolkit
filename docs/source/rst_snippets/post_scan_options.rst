@@ -14,7 +14,7 @@ All "Post-Scan" Options
                          of consolidated components.
                          The --consolidate option will be deprecated in
                          a future version of scancode-toolkit as top level
-                         packages now provide a improved consolidated data.
+                         packages now provide improved consolidated data.
 
                          Sub-Option of: ``--copyright``, ``--license`` and
                          ``--packages``.
@@ -36,7 +36,7 @@ All "Post-Scan" Options
                          codebase attribute level.
 
 --tallies                Summarize license, copyright and other scans
-                         at the codebase level with occurance counts.
+                         at the codebase level with occurrence counts.
 
                          Sub-Options:
 
@@ -50,7 +50,7 @@ All "Post-Scan" Options
                          Sub-Option of: ``--tallies`` and ``--facet``.
 
 --tallies-key-files      Summarize license, copyright and other scans
-                         for key, top-level files, with occurance counts.
+                         for key, top-level files, with occurrence counts.
                          Key files are top-level codebase files such as
                          COPYING, README and package manifests as reported
                          by the ``--classify`` option: "is_legal",
@@ -60,6 +60,6 @@ All "Post-Scan" Options
                          Sub-Option of: ``--classify`` and ``--summary``.
 
 --tallies-with-details   Summarize license, copyright and other scans
-                         at the codebase level with occurance counts,
+                         at the codebase level with occurrence counts,
                          while also keeping intermediate details at
                          the file and directory level.

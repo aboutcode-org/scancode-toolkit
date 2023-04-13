@@ -138,7 +138,7 @@ Then you can define a test class and call the ``build_tests`` method defined in
         TEST_DIR,
         clazz=TestLicenseDataDriven1, regen=scancode_config.REGEN_TEST_FIXTURES)
 
-The ``tests/data`` directory contains a file for each license:
+The ``tests/data`` directory contains one file for each license:
 a license text file with a YAML frontmatter specifying the expected license expression
 from the test.
 

@@ -29,10 +29,10 @@ suffix (usually numeric) to make it unique if there is already a rule with
 this base name. Do not use spaces or special characters in that name.
 
 Then create the rule file in the `src/licensedcode/data/rules/` directory using
-this name, for example a rule with `license_expression` as `mit AND apache-2.0`
+this name; for example a rule with `license_expression` as `mit AND apache-2.0`
 might have a filename: `mit_and_apache-2.0_10.RULE`.
 
-Save your rule text in this file, if there are specific words like company names,
+Save your rule text in this file; if there are specific words like company names,
 projects or other, it is better to have rules with and without these so we have
 better detection.
 
@@ -61,7 +61,7 @@ More (advanced) rules options:
 - if no license should be detected for your .RULE text, do not add a license expression,
   just add a ``notes`` field.
 
-- Each rules needs have one flag to describe the type of license rule, the options are:
+- Each rule needs to have one flag to describe the type of license rule. The options are:
 
   - `is_license_notice`
   - `is_license_text`

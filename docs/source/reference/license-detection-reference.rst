@@ -11,7 +11,7 @@ References:
 The Problem:
 ------------
 
-The goal was to reduce false-positives in scancode license detection results, specially
+The goal was to reduce false-positives in scancode license detection results, especially
 `unknown-license-reference` detections and approximate detections reporting best-guess
 license_expressions. To tackle this the following solution elements were discussed and
 implemented:
@@ -28,7 +28,7 @@ implemented:
 7. also apply LicenseDetection to package license detections `#2961 <https://github.com/nexB/scancode-toolkit/pull/2961>`_
 8. rename resource and package license fields `#2961 <https://github.com/nexB/scancode-toolkit/pull/2961>`_
 
-Some more elements are still WIP, see `issue #3300 <https://github.com/nexB/scancode-toolkit/issues/3300>`_ for more details on this.
+Some other elements are still WIP, see `issue #3300 <https://github.com/nexB/scancode-toolkit/issues/3300>`_ for more details on this.
 
 What is a LicenseDetection?
 ---------------------------
@@ -38,12 +38,14 @@ and creates a License Expression that we finally report.
 
 Properties:
 
-- A file can have multiple LicenseDetections (seperated by non-legalese lines)
+- A file can have multiple LicenseDetections (separated by non-legalese lines)
 - This can be from a file directly or a package.
-- We should be mostly certain of a proper detection to report a LicenseDetection.
+- We should be mostly certain of a proper license detection to report a
+  LicenseDetection, i.e. we should have ideally gotten rid of false
+  positives and wrong license matches, or improved them.
 - One LicenseDetection can have matches from different files, in case of local license
   references.
-- We don't remove any detection matches, but we only add more matches to rectify and
+- We don't remove any detection matches, but we add more matches only to rectify and
   correct the license_expression.
 
 Also there are two levels of reporting license detections:
@@ -76,7 +78,7 @@ The text::
 is detected as ``unknown-license-reference`` with ``is_license_intro`` as True,
 and has several ``epl-2.0`` detections after that.
 
-This can be considered as a single License Detection with it's detected license-expression as
+This can be considered as a single License Detection with its detected license-expression as
 ``epl-2.0``. The matches of this license detection would also have the matches with the
 ``unknown-license-reference``, but they will not be present in the final license_expression.
 
@@ -124,9 +126,9 @@ Chnagelog Summary
   ``other_license_detections``.
 
 - Instead of reporting one match for each license ``key`` of a matched
-  license expression, we now report instead one single match for each matched
+  license expression, we now report one single match for each matched
   license expression, avoiding data duplication. Inside each match, we also
-  list each match and matched rule attributred directly to avoiding nesting.
+  list each match and matched rule attributes directly to avoiding nesting.
 
 - License and Rule reference data is not reported at match level in license
   detections and instead is reported at codebase-level with a new CLI option
@@ -150,7 +152,7 @@ The data structure of the JSON output has changed for licenses at file level:
 
 - A new attribute ``license_clues`` contains license matches with the
   same data structure as the ``matches`` attribute in ``license_detections``.
-  This contains license matches that are mere clues and where not considered
+  This contains license matches that are mere clues and were not considered
   to be a proper conclusive license detection.
 
 - The ``license_expressions`` list of license expressions is deleted and
@@ -298,9 +300,8 @@ also has been renamed to ``extracted_license_statement``.
 New codebase level Unique License Detection
 -------------------------------------------
 
-
 We now have a new codebase level attribute ``license_detections`` which has Unique
-license detection across the codebase, in both packages and resources. They are
+License Detection across the codebase, in both packages and resources. They are
 linked by a common attribute ``identifier`` containing the ``license_expression``
 and a UUID generated from the match content. The match level data is only present
 at the resource level if needed, to look at details.
@@ -360,10 +361,10 @@ LicenseMatch Result Data
 ------------------------
 
 LicenseMatch data was based on a ``license key`` instead of being based
-on an ``license-expression``.
+on a ``license-expression``.
 
 So if there is a ``gpl-2.0 AND patent-disclaimer`` license expression detected
-from a single LicenseMatch, there was two entries in the ``licenses`` list
+from a single LicenseMatch, there were two entries in the ``licenses`` list
 for that resource, one for each license key, (here ``gpl-2.0`` and
 ``patent-disclaimer`` respectively). This repeats the match details as these
 two entries have the same details except the license key.
@@ -373,13 +374,13 @@ the primary attribute should be the ``license-expression``, rather than the
 ``license-key``.
 
 We also used to create a mapping inside a mapping in these license details
-to refer to the license rule (and there are other incosistencies in how we
+to refer to the license rule (and there are other inconsistencies in how we
 report here). We are now just reporting a flat mapping here, and all the
 rule details are also not present in the license match, and only available
-as a reference optionally.
+as an optional reference.
 
 See this before/after comparision to see how the license data in results has
-eveolved.
+evolved.
 
 Before::
 
@@ -495,7 +496,7 @@ After::
 
 .. _reference_license_related_data:
 
-Only reference License related Data
+Only reference License related data
 -----------------------------------
 
 Before 32.x all license related data was inlined in each match, and this repeats
@@ -682,7 +683,7 @@ After::
 LicenseDetection Data
 ^^^^^^^^^^^^^^^^^^^^^
 
-This is referencing by LicenseDetections objcts, and has one or multiple
+This is referencing by LicenseDetections objects, and has one or multiple
 license matches. This is linked to the resource level detections through
 an ``identifier`` attribute present in both resource and codebase level
 detections. See the `unique license detections section <license_detections_unique>`_

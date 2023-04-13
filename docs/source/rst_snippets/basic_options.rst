@@ -78,7 +78,7 @@ documenting a program's options. For example:
           Do not return license matches with scores lower than this score.
           A number between 0 and 100.  [Default: 0]
           Here, a bigger number means a better match, i.e. Setting a higher license score
-          translates to a higher threshold (with equal or less number of matches).
+          translates to a higher threshold (with equal or smaller number of matches).
 
           Sub-Option of: ``--license``
 

@@ -10,7 +10,7 @@ This is a high level list of what we are working on and what is completed.
 
 .. _note:
 
-  This is not updated regularly, see the `milstones <https://github.com/nexB/scancode-toolkit/milestones>`_
+  This is not updated regularly, see the `milestones <https://github.com/nexB/scancode-toolkit/milestones>`_
   instead for updated shorter and longer term roadmaps.
 
 Legend

@@ -344,7 +344,7 @@ the standard Python package management tool.
 .. NOTE::
 
     Note that `pip` installation method does work on ARM chips, i.e. Linux/MacOS on
-    Apple M1 chips, as some non-native dependencies does not have pre-built wheels
+    Apple M1 chips, as some non-native dependencies do not have pre-built wheels
     for ARM (like py-ahocorasick, intbitset). See :ref:`system_requirements` for
     more information. See related issues for more info:
 

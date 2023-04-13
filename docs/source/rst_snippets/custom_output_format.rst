@@ -41,7 +41,7 @@ Now I can run ScanCode using my newly created template:
      [####################################]  46
    Scanning done.
 
-Now are results are saved in ``output.txt`` and we can easily view them with ``head output.txt``:
+Now the results are saved in ``output.txt`` and we can easily view them with ``head output.txt``:
 
 ::
 

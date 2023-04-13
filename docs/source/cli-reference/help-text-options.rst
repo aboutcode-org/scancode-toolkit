@@ -24,7 +24,9 @@ To see the help text from the Terminal, execute the following command::
 
     $ scancode --help
 
-The Following Help Text is displayed, i.e. This is the help text for Scancode Version 32.0.0::
+The Following Help Text is displayed, i.e. This is the help text for Scancode Version 32.0.0:
+
+.. code-block:: none
 
   Usage: scancode [OPTIONS] <OUTPUT FORMAT OPTION(s)> <input>...
 
@@ -49,25 +51,25 @@ The Following Help Text is displayed, i.e. This is the help text for Scancode Ve
       -u, --url    Scan <input> for urls.
 
     scan options:
-      --license-diagnostics        In license detections, include diagnostic details
+      --license-diagnostics       In license detections, include diagnostic details
                                   to figure out the license detection post
                                   processing steps applied.
-      --license-score INTEGER      Do not return license matches with a score lower
+      --license-score INTEGER     Do not return license matches with a score lower
                                   than this score. A number between 0 and 100.
                                   [default: 0]
-      --license-text               Include the detected licenses matched text.
-      --license-text-diagnostics   In the matched license text, include diagnostic
+      --license-text              Include the detected licenses matched text.
+      --license-text-diagnostics  In the matched license text, include diagnostic
                                   highlights surrounding with square brackets []
                                   words that are not matched.
-      --license-url-template TEXT  Set the template URL used for the license
+      --license-url-template TEXT Set the template URL used for the license
                                   reference URLs. Curly braces ({}) are replaced by
                                   the license key.  [default: https://scancode-
                                   licensedb.aboutcode.org/{}]
-      --max-email INT              Report only up to INT emails found in a file. Use
+      --max-email INT             Report only up to INT emails found in a file. Use
                                   0 for no limit.  [default: 50]
-      --max-url INT                Report only up to INT urls found in a file. Use 0
+      --max-url INT               Report only up to INT urls found in a file. Use 0
                                   for no limit.  [default: 50]
-      --unknown-licenses           [EXPERIMENTAL] Detect unknown licenses.
+      --unknown-licenses          [EXPERIMENTAL] Detect unknown licenses.
 
     output formats:
       --json FILE             Write scan output as compact JSON to FILE.
@@ -89,25 +91,24 @@ The Following Help Text is displayed, i.e. This is the help text for Scancode Ve
       --cyclonedx-xml FILE    Write scan output in CycloneDX XML format to FILE.
       --spdx-rdf FILE         Write scan output as SPDX RDF to FILE.
       --spdx-tv FILE          Write scan output as SPDX Tag/Value to FILE.
-      --html-app FILE         (DEPRECATED: use the ScanCode Workbench app instead )
+      --html-app FILE         (DEPRECATED: use the ScanCode Workbench app instead)
                               Write scan output as a mini HTML application to FILE.
 
     output filters:
-      --ignore-author <pattern>       Ignore a file (and all its findings) if an
-                                      author contains a match to the <pattern>
-                                      regular expression. Note that this will ignore
-                                      a file even if it has other findings such as a
-                                      license or errors.
-      --ignore-copyright-holder <pattern>
-                                      Ignore a file (and all its findings) if a
-                                      copyright holder contains a match to the
-                                      <pattern> regular expression. Note that this
-                                      will ignore a file even if it has other
-                                      scanned data such as a license or errors.
-      --only-findings                 Only return files or directories with findings
-                                      for the requested scans. Files and directories
-                                      without findings are omitted (file information
-                                      is not treated as findings).
+      --ignore-author <pattern>           Ignore a file (and all its findings) if an
+                                          author contains a match to the <pattern>
+                                          regular expression. Note that this will ignore
+                                          a file even if it has other findings such as a
+                                          license or errors.
+      --ignore-copyright-holder <pattern> Ignore a file (and all its findings) if a
+                                          copyright holder contains a match to the
+                                          <pattern> regular expression. Note that this
+                                          will ignore a file even if it has other
+                                          scanned data such as a license or errors.
+      --only-findings                     Only return files or directories with findings
+                                          for the requested scans. Files and directories
+                                          without findings are omitted (file information
+                                          is not treated as findings).
 
     output control:
       --full-root   Report full, absolute paths.
@@ -118,65 +119,65 @@ The Following Help Text is displayed, i.e. This is the help text for Scancode Ve
     pre-scan:
       --ignore <pattern>         Ignore files matching <pattern>.
       --include <pattern>        Include files matching <pattern>.
-      --classify                 Classify files with flags telling if the file is a
-                                legal, or readme or test file, etc.
+      --classify                 Classify files with flags indicating whether the file is a
+                                 legal, readme, test or similar file.
       --facet <facet>=<pattern>  Add the <facet> to files with a path matching
-                                <pattern>.
+                                 <pattern>.
 
     post-scan:
       --consolidate            Group resources by Packages or license and copyright
-                              holder and return those groupings as a list of
-                              consolidated packages and a list of consolidated
-                              components. This requires the scan to have/be run
-                              with the copyright, license, and package options
-                              active
+                               holder and return those groupings as a list of
+                               consolidated packages and a list of consolidated
+                               components. This requires the scan to have/be run
+                               with the copyright, license, and package options
+                               active
       --filter-clues           Filter redundant duplicated clues already contained
-                              in detected license and copyright texts and notices.
+                               in detected license and copyright texts and notices.
       --license-clarity-score  Compute a summary license clarity score at the
-                              codebase level.
+                               codebase level.
       --license-policy FILE    Load a License Policy file and apply it to the scan
-                              at the Resource level.
+                               at the Resource level.
       --license-references     Return reference data for all licenses and license
-                              rulespresent in detections.
+                               rules present in detections.
       --mark-source            Set the "is_source" to true for directories that
-                              contain over 90% of source files as children and
-                              descendants. Count the number of source files in a
-                              directory as a new source_file_counts attribute
+                               contain over 90% of source files as children and
+                               descendants. Count the number of source files in a
+                               directory as a new source_file_counts attribute
       --summary                Summarize scans by providing declared origin
-                              information and other detected origin info at the
-                              codebase attribute level.
+                               information and other detected origin info at the
+                               codebase attribute level.
       --tallies                Compute tallies for license, copyright and other
-                              scans at the codebase level.
+                               scans at the codebase level.
       --tallies-by-facet       Compute tallies for license, copyright and other
-                              scans and group the results by facet.
+                               scans and group the results by facet.
       --tallies-key-files      Compute tallies for license, copyright and other
-                              scans for key, top-level files. Key files are top-
-                              level codebase files such as COPYING, README and
-                              package manifests as reported by the --classify
-                              option "is_legal", "is_readme", "is_manifest" and
-                              "is_top_level" flags.
+                               scans for key, top-level files. Key files are top-
+                               level codebase files such as COPYING, README and
+                               package manifests as reported by the --classify
+                               option "is_legal", "is_readme", "is_manifest" and
+                               "is_top_level" flags.
       --tallies-with-details   Compute tallies of license, copyright and other scans
-                              at the codebase level, keeping intermediate details
-                              at the file and directory level.
+                               at the codebase level, keeping intermediate details
+                               at the file and directory level.
 
     core:
-      --timeout <seconds>      Stop an unfinished file scan after a timeout in
+      --timeout <seconds>     Stop an unfinished file scan after a timeout in
                               seconds. [default: 120 seconds]
-      -n, --processes INT      Set the number of parallel processes to use. Disable
+      -n, --processes INT     Set the number of parallel processes to use. Disable
                               parallel processing if 0. Also disable threading if
                               -1. [default: 1]
-      -q, --quiet              Do not print summary or progress.
-      -v, --verbose            Print progress as file-by-file path instead of a
+      -q, --quiet             Do not print summary or progress.
+      -v, --verbose           Print progress as file-by-file path instead of a
                               progress bar. Print verbose scan counters.
-      --from-json              Load codebase from one or more <input> JSON scan
+      --from-json             Load codebase from one or more <input> JSON scan
                               file(s).
-      --max-in-memory INTEGER  Maximum number of files and directories scan details
+      --max-in-memory INTEGER Maximum number of files and directories scan details
                               kept in memory during a scan. Additional files and
                               directories scan details above this number are cached
                               on-disk rather than in memory. Use 0 to use unlimited
                               memory and disable on-disk caching. Use -1 to use
                               only on-disk caching.  [default: 10000]
-      --max-depth INTEGER      Maximum nesting depth of subdirectories to scan.
+      --max-depth INTEGER     Maximum nesting depth of subdirectories to scan.
                               Descend at most INTEGER levels of directories below
                               and including the starting directory. Use 0 for no
                               scan depth limit.
@@ -203,7 +204,7 @@ The Following Help Text is displayed, i.e. This is the help text for Scancode Ve
 
         scancode --json-pp - --license --package  samples
 
-    Note: when you run scancode, a progress bar is displayed with a counter of the
+    Note: when you run ScanCode, a progress bar is displayed with a counter of the
     number of files processed. Use --verbose to display file-by-file progress.
 
 .. _cli_examples_text:
@@ -383,7 +384,8 @@ The Following Text is displayed, i.e. This is the available plugins for Scancode
     required_plugins:
     options:
       help_group: output formats, name: html_app: --html-app
-        help: (DEPRECATED: use the ScanCode Workbench app instead ) Write scan output as a mini HTML application to FILE.
+        help: (DEPRECATED: use the ScanCode Workbench app instead)
+        Write scan output as a mini HTML application to FILE.
     doc:
       Write scan output as a mini HTML application.
 

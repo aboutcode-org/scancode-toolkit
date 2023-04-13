@@ -100,7 +100,7 @@ Reference Documents
 --------------------
 
 Reference documents provide reference pages for technical reference information
-about scancode-toolkit, how it works or supported features.
+about ScanCode Toolkit, including how it works and supported features.
 
 .. toctree::
    :maxdepth: 2
