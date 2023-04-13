@@ -837,6 +837,7 @@ def get_rules(
     licenses_data_dir=licenses_data_dir,
     rules_data_dir=rules_data_dir,
     validate=False,
+    validate_thorough=False,
     is_builtin=True,
 ):
     """
@@ -854,7 +855,7 @@ def get_rules(
     ))
 
     if validate:
-        validate_rules(rules=rules, licenses_by_key=licenses_db)
+        validate_rules(rules=rules, licenses_by_key=licenses_db, thorough=validate_thorough)
 
     licenses_as_rules = build_rules_from_licenses(licenses_db)
     return chain(licenses_as_rules, rules)
@@ -951,7 +952,7 @@ def get_rules_from_multiple_dirs(
             is_builtin=False,
         ))
 
-    validate_rules(rules=combined_rules, licenses_by_key=licenses_db)
+    validate_rules(rules=combined_rules, licenses_by_key=licenses_db, thorough=False)
 
     return combined_rules
 
@@ -1029,7 +1030,7 @@ class InvalidLicense(Exception):
     pass
 
 
-def _validate_all_rules(rules, licenses_by_key):
+def _validate_all_rules(rules, licenses_by_key, thorough=False):
     """
     Return a mapping of {error message: [list of Rule]} from validating a list
     of ``rules`` Rule integrity and correctness using known licenses from a
@@ -1039,18 +1040,18 @@ def _validate_all_rules(rules, licenses_by_key):
     errors = defaultdict(list)
 
     for rule in rules:
-        for err_msg in rule.validate(licensing, thorough=True):
+        for err_msg in rule.validate(licensing, thorough=thorough):
             errors[err_msg].append(rule)
     return errors
 
 
-def validate_rules(rules, licenses_by_key, with_text=False, rules_data_dir=rules_data_dir):
+def validate_rules(rules, licenses_by_key, with_text=False, rules_data_dir=rules_data_dir, thorough=False):
     """
     Return a mapping of {error message: [list of Rule]) from validating a list
     of ``rules`` Rule integrity and correctness using known licenses from a
     mapping of ``licenses_by_key`` {key: License}`.
     """
-    errors = _validate_all_rules(rules=rules, licenses_by_key=licenses_by_key)
+    errors = _validate_all_rules(rules=rules, licenses_by_key=licenses_by_key, thorough=thorough)
     if errors:
         message = ['Errors while validating rules:']
         for msg, rules in errors.items():

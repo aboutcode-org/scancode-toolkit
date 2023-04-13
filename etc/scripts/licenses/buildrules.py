@@ -213,7 +213,7 @@ def cli(licenses_file):
         rl = models.BasicRule(text=rdata.text, **rdata.data)
         skinny_rules.append(rl)
 
-    models.validate_rules(skinny_rules, licenses_by_key, with_text=True)
+    models.validate_rules(skinny_rules, licenses_by_key, with_text=True, thorough=True)
 
     print()
     for rule in skinny_rules:

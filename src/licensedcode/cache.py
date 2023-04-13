@@ -29,7 +29,7 @@ PICKLE_PROTOCOL = 4
 # global in-memory cache of the LicenseCache
 _LICENSE_CACHE = None
 
-LICENSE_INDEX_LOCK_TIMEOUT = 60 * 4
+LICENSE_INDEX_LOCK_TIMEOUT = 60 * 6
 LICENSE_INDEX_DIR = 'license_index'
 LICENSE_INDEX_FILENAME = 'index_cache'
 LICENSE_LOCKFILE_NAME = 'scancode_license_index_lockfile'
@@ -134,8 +134,6 @@ class LicenseCache:
         try:
             # acquire lock and wait until timeout to get a lock or die
             with lockfile.FileLock(lock_file).locked(timeout=timeout):
-                # Here, the cache is either stale or non-existing: we need to
-                # rebuild all cached data (e.g. mostly the index) and cache it
 
                 additional_directories = []
                 if only_builtin:
@@ -156,6 +154,8 @@ class LicenseCache:
                     additional_directories=additional_license_dirs,
                     scancode_license_dir=licenses_data_dir
                 )
+                # Here, the cache is either stale or non-existing: we need to
+                # rebuild all cached data (e.g. mostly the index) and cache it
                 licenses_db = load_licenses_from_multiple_dirs(
                     additional_license_data_dirs=additional_license_dirs,
                     builtin_license_data_dir=licenses_data_dir,

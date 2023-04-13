@@ -187,7 +187,7 @@ class TestRule(FileBasedTesting):
     test_data_dir = TEST_DATA_DIR
 
     def test_validate_license_rules_data(self):
-        rules = list(models.get_rules(validate=True))
+        rules = list(models.get_rules(validate=True, validate_thorough=True))
 
     def test_create_rule_ignore_punctuation(self):
         test_rule = create_rule_from_text_and_expression(text='A one. A two. A three.')
