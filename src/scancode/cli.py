@@ -206,7 +206,7 @@ def validate_depth(ctx, param, value):
 @click.option('--timeout',
     type=float,
     default=DEFAULT_TIMEOUT,
-    metavar='<secs>',
+    metavar='<seconds>',
     help='Stop an unfinished file scan after a timeout in seconds. '
          f'[default: {DEFAULT_TIMEOUT} seconds]',
     help_group=cliutils.CORE_GROUP, sort_order=10, cls=PluggableCommandLineOption)

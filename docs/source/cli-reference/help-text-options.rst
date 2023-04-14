@@ -24,9 +24,10 @@ To see the help text from the Terminal, execute the following command::
 
     $ scancode --help
 
-.. include::  /rst_snippets/note_snippets/synopsis_install_quickstart.rst
+The Following Help Text is displayed, i.e. This is the help text for Scancode Version 32.0.0:
 
-The Following Help Text is displayed, i.e. This is the help text for Scancode Version 31.2.1 ::
+.. code-block:: none
+
   Usage: scancode [OPTIONS] <OUTPUT FORMAT OPTION(s)> <input>...
 
     scan the <input> file or directory for license, origin and packages and save
@@ -37,224 +38,157 @@ The Following Help Text is displayed, i.e. This is the help text for Scancode Ve
   Options:
 
     primary scans:
-
       -l, --license     Scan <input> for licenses.
-
       -p, --package     Scan <input> for application package and dependency
                         manifests, lockfiles and related data.
-
       --system-package  Scan <input> for installed system package databases.
-
       -c, --copyright   Scan <input> for copyrights.
 
     other scans:
       -i, --info   Scan <input> for file information (size, checksums, etc).
-
       --generated  Classify automatically generated code files with a flag.
-
       -e, --email  Scan <input> for emails.
-
       -u, --url    Scan <input> for urls.
 
     scan options:
-      --license-score INTEGER     Do not return license matches with a score
-                                  lower than this score. A number between 0 and
-                                  100.  [default: 0]
-
+      --license-diagnostics       In license detections, include diagnostic details
+                                  to figure out the license detection post
+                                  processing steps applied.
+      --license-score INTEGER     Do not return license matches with a score lower
+                                  than this score. A number between 0 and 100.
+                                  [default: 0]
       --license-text              Include the detected licenses matched text.
-
       --license-text-diagnostics  In the matched license text, include diagnostic
                                   highlights surrounding with square brackets []
                                   words that are not matched.
-
       --license-url-template TEXT Set the template URL used for the license
-                                  reference URLs. Curly braces ({}) are replaced
-                                  by the license key.  [default:
-                                  https://scancode-licensedb.aboutcode.org/{}]
-
-      --max-email INT             Report only up to INT emails found in a file.
-                                  Use 0 for no limit.  [default: 50]
-
-      --max-url INT               Report only up to INT urls found in a file. Use
+                                  reference URLs. Curly braces ({}) are replaced by
+                                  the license key.  [default: https://scancode-
+                                  licensedb.aboutcode.org/{}]
+      --max-email INT             Report only up to INT emails found in a file. Use
                                   0 for no limit.  [default: 50]
-
-      --unknown-licenses          [EXPERIMENTAL] Detect unknown licenses and
-                                  follow license references such as "See license
-                                  in file COPYING".
+      --max-url INT               Report only up to INT urls found in a file. Use 0
+                                  for no limit.  [default: 50]
+      --unknown-licenses          [EXPERIMENTAL] Detect unknown licenses.
 
     output formats:
       --json FILE             Write scan output as compact JSON to FILE.
-
       --json-pp FILE          Write scan output as pretty-printed JSON to FILE.
-
       --json-lines FILE       Write scan output as JSON Lines to FILE.
-
       --yaml FILE             Write scan output as YAML to FILE.
-
       --csv FILE              [DEPRECATED] Write scan output as CSV to FILE. The
-                              --csv option is deprecated and will be replaced by
-                              new CSV and tabular output formats in the next
-                              ScanCode release. Visit
-                              https://github.com/nexB/scancode-toolkit/issues/3043
-                              to provide inputs and feedback.
-
+                              --csv option is deprecated and will be replaced by new
+                              CSV and tabular output formats in the next ScanCode
+                              release. Visit https://github.com/nexB/scancode-
+                              toolkit/issues/3043 to provide inputs and feedback.
       --html FILE             Write scan output as HTML to FILE.
-
       --custom-output FILE    Write scan output to FILE formatted with the custom
                               Jinja template file.
-
-      --debian FILE           Write scan output in machine-readable Debian
-                              copyright format to FILE.
-
+      --debian FILE           Write scan output in machine-readable Debian copyright
+                              format to FILE.
       --custom-template FILE  Use this Jinja template FILE as a custom template.
-
       --cyclonedx FILE        Write scan output in CycloneDX JSON format to FILE.
-
       --cyclonedx-xml FILE    Write scan output in CycloneDX XML format to FILE.
-
       --spdx-rdf FILE         Write scan output as SPDX RDF to FILE.
-
       --spdx-tv FILE          Write scan output as SPDX Tag/Value to FILE.
-
-      --html-app FILE         (DEPRECATED: use the ScanCode Workbench app instead
-                              ) Write scan output as a mini HTML application to
-                              FILE.
+      --html-app FILE         (DEPRECATED: use the ScanCode Workbench app instead)
+                              Write scan output as a mini HTML application to FILE.
 
     output filters:
-      --ignore-author <pattern>       Ignore a file (and all its findings) if an
-                                      author contains a match to the <pattern>
-                                      regular expression. Note that this will
-                                      ignore a file even if it has other findings
-                                      such as a license or errors.
-
-      --ignore-copyright-holder <pattern>
-                                      Ignore a file (and all its findings) if a
-                                      copyright holder contains a match to the
-                                      <pattern> regular expression. Note that this
-                                      will ignore a file even if it has other
-                                      scanned data such as a license or errors.
-
-      --only-findings                 Only return files or directories with
-                                      findings for the requested scans. Files and
-                                      directories without findings are omitted
-                                      (file information is not treated as
-                                      findings).
+      --ignore-author <pattern>           Ignore a file (and all its findings) if an
+                                          author contains a match to the <pattern>
+                                          regular expression. Note that this will ignore
+                                          a file even if it has other findings such as a
+                                          license or errors.
+      --ignore-copyright-holder <pattern> Ignore a file (and all its findings) if a
+                                          copyright holder contains a match to the
+                                          <pattern> regular expression. Note that this
+                                          will ignore a file even if it has other
+                                          scanned data such as a license or errors.
+      --only-findings                     Only return files or directories with findings
+                                          for the requested scans. Files and directories
+                                          without findings are omitted (file information
+                                          is not treated as findings).
 
     output control:
       --full-root   Report full, absolute paths.
-
-      --strip-root  Strip the root directory segment of all paths. The default is
-                    to always include the last directory segment of the scanned
-                    path such that all paths have a common root directory.
+      --strip-root  Strip the root directory segment of all paths. The default is to
+                    always include the last directory segment of the scanned path
+                    such that all paths have a common root directory.
 
     pre-scan:
       --ignore <pattern>         Ignore files matching <pattern>.
-
       --include <pattern>        Include files matching <pattern>.
-
-      --classify                 Classify files with flags telling if the file is
-                                 a legal, or readme or test file, etc.
-
+      --classify                 Classify files with flags indicating whether the file is a
+                                 legal, readme, test or similar file.
       --facet <facet>=<pattern>  Add the <facet> to files with a path matching
                                  <pattern>.
 
     post-scan:
-      --consolidate           Group resources by Packages or license and
-                              copyright holder and return those groupings as a
-                              list of consolidated packages and a list of
-                              consolidated components. This requires the scan to
-                              have/be run with the copyright, license, and
-                              package options active
-
-      --filter-clues          Filter redundant duplicated clues already contained
-                              in detected license and copyright texts and
-                              notices.
-
-      --is-license-text       Set the "is_license_text" flag to true for files
-                              that contain mostly license texts and notices (e.g
-                              over 90% of the content).[DEPRECATED] this is now
-                              built-in in the --license-text option with  a
-                              "percentage_of_license_text" attribute.
-
-      --license-clarity-score Compute a summary license clarity score at the
-                              codebase level.
-
-      --license-policy FILE   Load a License Policy file and apply it to the scan
-                              at the Resource level.
-
-      --licenses-reference    Include a reference of all the licenses referenced
-                              in this scan with the data details and full texts.
-
-      --mark-source           Set the "is_source" to true for directories that
-                              contain over 90% of source files as children and
-                              descendants. Count the number of source files in a
-                              directory as a new source_file_counts attribute
-
-      --summary               Summarize scans by providing declared origin
-                              information and other detected origin info at the
-                              codebase attribute level.
-
-      --tallies               Compute tallies for license, copyright and other
-                              scans at the codebase level.
-
-      --tallies-by-facet      Compute tallies for license, copyright and other
-                              scans and group the results by facet.
-
-      --tallies-key-files     Compute tallies for license, copyright and other
-                              scans for key, top-level files. Key files are top-
-                              level codebase files such as COPYING, README and
-                              package manifests as reported by the --classify
-                              option "is_legal", "is_readme", "is_manifest" and
-                              "is_top_level" flags.
-
-      --tallies-with-details  Compute tallies of license, copyright and other
-                              scans at the codebase level, keeping intermediate
-                              details at the file and directory level.
+      --consolidate            Group resources by Packages or license and copyright
+                               holder and return those groupings as a list of
+                               consolidated packages and a list of consolidated
+                               components. This requires the scan to have/be run
+                               with the copyright, license, and package options
+                               active
+      --filter-clues           Filter redundant duplicated clues already contained
+                               in detected license and copyright texts and notices.
+      --license-clarity-score  Compute a summary license clarity score at the
+                               codebase level.
+      --license-policy FILE    Load a License Policy file and apply it to the scan
+                               at the Resource level.
+      --license-references     Return reference data for all licenses and license
+                               rules present in detections.
+      --mark-source            Set the "is_source" to true for directories that
+                               contain over 90% of source files as children and
+                               descendants. Count the number of source files in a
+                               directory as a new source_file_counts attribute
+      --summary                Summarize scans by providing declared origin
+                               information and other detected origin info at the
+                               codebase attribute level.
+      --tallies                Compute tallies for license, copyright and other
+                               scans at the codebase level.
+      --tallies-by-facet       Compute tallies for license, copyright and other
+                               scans and group the results by facet.
+      --tallies-key-files      Compute tallies for license, copyright and other
+                               scans for key, top-level files. Key files are top-
+                               level codebase files such as COPYING, README and
+                               package manifests as reported by the --classify
+                               option "is_legal", "is_readme", "is_manifest" and
+                               "is_top_level" flags.
+      --tallies-with-details   Compute tallies of license, copyright and other scans
+                               at the codebase level, keeping intermediate details
+                               at the file and directory level.
 
     core:
-      --timeout <secs>        Stop an unfinished file scan after a timeout in
+      --timeout <seconds>     Stop an unfinished file scan after a timeout in
                               seconds. [default: 120 seconds]
-
-      -n, --processes INT     Set the number of parallel processes to use.
-                              Disable parallel processing if 0. Also disable
-                              threading if -1. [default: 1]
-
+      -n, --processes INT     Set the number of parallel processes to use. Disable
+                              parallel processing if 0. Also disable threading if
+                              -1. [default: 1]
       -q, --quiet             Do not print summary or progress.
-
       -v, --verbose           Print progress as file-by-file path instead of a
                               progress bar. Print verbose scan counters.
-
       --from-json             Load codebase from one or more <input> JSON scan
                               file(s).
-
-      --max-in-memory INTEGER Maximum number of files and directories scan
-                              details kept in memory during a scan. Additional
-                              files and directories scan details above this
-                              number are cached on-disk rather than in memory.
-                              Use 0 to use unlimited memory and disable on-disk
-                              caching. Use -1 to use only on-disk caching.
-                              [default: 10000]
-
+      --max-in-memory INTEGER Maximum number of files and directories scan details
+                              kept in memory during a scan. Additional files and
+                              directories scan details above this number are cached
+                              on-disk rather than in memory. Use 0 to use unlimited
+                              memory and disable on-disk caching. Use -1 to use
+                              only on-disk caching.  [default: 10000]
       --max-depth INTEGER     Maximum nesting depth of subdirectories to scan.
                               Descend at most INTEGER levels of directories below
                               and including the starting directory. Use 0 for no
                               scan depth limit.
 
-
     documentation:
       -h, --help       Show this message and exit.
-
       -A, --about      Show information about ScanCode and licensing and exit.
-
       -V, --version    Show the version and exit.
-
       --examples       Show command examples and exit.
-
-      --list-packages  Show the list of supported package manifest parsers and
-                       exit.
-
+      --list-packages  Show the list of supported package manifest parsers and exit.
       --plugins        Show the list of available ScanCode plugins and exit.
-
       --print-options  Show the list of selected options and exit.
 
     Examples (use --examples for more):
@@ -270,9 +204,8 @@ The Following Help Text is displayed, i.e. This is the help text for Scancode Ve
 
         scancode --json-pp - --license --package  samples
 
-    Note: when you run scancode, a progress bar is displayed with a counter of
-    the number of files processed. Use --verbose to display file-by-file
-    progress.
+    Note: when you run ScanCode, a progress bar is displayed with a counter of the
+    number of files processed. Use --verbose to display file-by-file progress.
 
 .. _cli_examples_text:
 
@@ -295,8 +228,6 @@ The command line option for displaying these basic examples is ``--examples``.
 To see the help text from the Terminal, execute the following command::
 
     $ scancode --examples
-
-.. include::  /rst_snippets/note_snippets/synopsis_install_quickstart.rst
 
 The Following Text is displayed, i.e. This is the examples for Scancode Version 3.1.1 ::
 
@@ -369,8 +300,6 @@ The command line option for displaying all the plugins is:
 To see the help text from the Terminal, execute the following command::
 
     $ scancode --plugins
-
-.. include::  /rst_snippets/note_snippets/synopsis_install_quickstart.rst
 
 .. note::
 
@@ -455,7 +384,8 @@ The Following Text is displayed, i.e. This is the available plugins for Scancode
     required_plugins:
     options:
       help_group: output formats, name: html_app: --html-app
-        help: (DEPRECATED: use the ScanCode Workbench app instead ) Write scan output as a mini HTML application to FILE.
+        help: (DEPRECATED: use the ScanCode Workbench app instead)
+        Write scan output as a mini HTML application to FILE.
     doc:
       Write scan output as a mini HTML application.
 
@@ -572,7 +502,7 @@ The Following Text is displayed, i.e. This is the available plugins for Scancode
   Plugin: scancode_post_scan:consolidate  class: summarycode.plugin_consolidate:Consolidator
     codebase_attributes: consolidated_components, consolidated_packages
     resource_attributes: consolidated_to
-    sort_order: 8
+    sort_order: 10
     required_plugins:
     options:
       help_group: post-scan, name: consolidate: --consolidate
@@ -608,22 +538,6 @@ The Following Text is displayed, i.e. This is the available plugins for Scancode
 
 
   --------------------------------------------
-  Plugin: scancode_post_scan:is-license-text  class: licensedcode.plugin_license_text:IsLicenseText
-    codebase_attributes:
-    resource_attributes: is_license_text
-    sort_order: 80
-    required_plugins:
-    options:
-      help_group: post-scan, name: is_license_text: --is-license-text
-        help: Set the "is_license_text" flag to true for files that contain mostly license texts and notices (e.g over 90% of the content).[DEPRECATED] this is now built-in in the --license-text option with  a "percentage_of_license_text" attribute.
-    doc:
-      Set the "is_license_text" flag to true for at the file level for text files
-      that contain mostly (as 90% of their size) license texts or notices.
-      Has no effect unless --license, --license-text and --info scan data
-      are available.
-
-
-  --------------------------------------------
   Plugin: scancode_post_scan:license-clarity-score  class: summarycode.score:LicenseClarityScore
     codebase_attributes: summary
     resource_attributes:
@@ -651,16 +565,16 @@ The Following Text is displayed, i.e. This is the available plugins for Scancode
 
 
   --------------------------------------------
-  Plugin: scancode_post_scan:licenses-reference  class: licensedcode.plugin_licenses_reference:LicensesReference
-    codebase_attributes: licenses_reference
+  Plugin: scancode_post_scan:license-references  class: licensedcode.licenses_reference:LicenseReference
+    codebase_attributes: license_references, license_rule_references
     resource_attributes:
-    sort_order: 500
+    sort_order: 1000
     required_plugins:
     options:
-      help_group: post-scan, name: licenses_reference: --licenses-reference
-        help: Include a reference of all the licenses referenced in this scan with the data details and full texts.
+      help_group: post-scan, name: license_references: --license-references
+        help: Return reference data for all licenses and license rulespresent in detections.
     doc:
-      Add a reference list of all licenses data and text.
+      Add license and rule reference data to a scan.
 
 
   --------------------------------------------
@@ -682,7 +596,7 @@ The Following Text is displayed, i.e. This is the available plugins for Scancode
   Plugin: scancode_post_scan:summary  class: summarycode.summarizer:ScanSummary
     codebase_attributes: summary
     resource_attributes:
-    sort_order: 10
+    sort_order: 2
     required_plugins:
     options:
       help_group: post-scan, name: summary: --summary
@@ -695,7 +609,7 @@ The Following Text is displayed, i.e. This is the available plugins for Scancode
   Plugin: scancode_post_scan:tallies  class: summarycode.tallies:Tallies
     codebase_attributes: tallies
     resource_attributes:
-    sort_order: 10
+    sort_order: 15
     required_plugins:
     options:
       help_group: post-scan, name: tallies: --tallies
@@ -744,7 +658,7 @@ The Following Text is displayed, i.e. This is the available plugins for Scancode
       keep file and directory details.
 
       The scan attributes that are tallied are:
-      - license_expressions
+      - detected_license_expression
       - copyrights
       - holders
       - authors
@@ -753,10 +667,10 @@ The Following Text is displayed, i.e. This is the available plugins for Scancode
 
 
   --------------------------------------------
-  Plugin: scancode_pre_scan:classify  class: summarycode.classify:FileClassifier
+  Plugin: scancode_pre_scan:classify  class: summarycode.classify_plugin:FileClassifier
     codebase_attributes:
     resource_attributes: is_legal, is_manifest, is_readme, is_top_level, is_key_file
-    sort_order: 50
+    sort_order: 30
     required_plugins:
     options:
       help_group: pre-scan, name: classify: --classify
@@ -799,7 +713,7 @@ The Following Text is displayed, i.e. This is the available plugins for Scancode
   Plugin: scancode_scan:copyrights  class: cluecode.plugin_copyright:CopyrightScanner
     codebase_attributes:
     resource_attributes: copyrights, holders, authors
-    sort_order: 4
+    sort_order: 6
     required_plugins:
     options:
       help_group: primary scans, name: copyright: -c, --copyright
@@ -812,7 +726,7 @@ The Following Text is displayed, i.e. This is the available plugins for Scancode
   Plugin: scancode_scan:emails  class: cluecode.plugin_email:EmailScanner
     codebase_attributes:
     resource_attributes: emails
-    sort_order: 8
+    sort_order: 7
     required_plugins:
     options:
       help_group: other scans, name: email: -e, --email
@@ -852,9 +766,9 @@ The Following Text is displayed, i.e. This is the available plugins for Scancode
 
   --------------------------------------------
   Plugin: scancode_scan:licenses  class: licensedcode.plugin_license:LicenseScanner
-    codebase_attributes:
-    resource_attributes: licenses, license_expressions, percentage_of_license_text
-    sort_order: 2
+    codebase_attributes: license_detections
+    resource_attributes: detected_license_expression, detected_license_expression_spdx, license_detections, license_clues, percentage_of_license_text
+    sort_order: 4
     required_plugins:
     options:
       help_group: primary scans, name: license: -l, --license
@@ -865,23 +779,21 @@ The Following Text is displayed, i.e. This is the available plugins for Scancode
         help: Include the detected licenses matched text.
       help_group: scan options, name: license_text_diagnostics: --license-text-diagnostics
         help: In the matched license text, include diagnostic highlights surrounding with square brackets [] words that are not matched.
+      help_group: scan options, name: license_diagnostics: --license-diagnostics
+        help: In license detections, include diagnostic details to figure out the license detection post processing steps applied.
       help_group: scan options, name: license_url_template: --license-url-template
         help: Set the template URL used for the license reference URLs. Curly braces ({}) are replaced by the license key.
       help_group: scan options, name: unknown_licenses: --unknown-licenses
-        help: [EXPERIMENTAL] Detect unknown licenses and follow license references such as "See license in file COPYING".
-      help_group: miscellaneous, name: reindex_licenses: --reindex-licenses
-        help: Rebuild the license index and exit.
-      help_group: miscellaneous, name: reindex_licenses_for_all_languages: --reindex-licenses-for-all-languages
-        help: [EXPERIMENTAL] Rebuild the license index including texts all languages (and not only English) and exit.
+        help: [EXPERIMENTAL] Detect unknown licenses.
     doc:
       Scan a Resource for licenses.
 
 
   --------------------------------------------
   Plugin: scancode_scan:packages  class: packagedcode.plugin_package:PackageScanner
-    codebase_attributes: dependencies, packages
+    codebase_attributes: packages, dependencies
     resource_attributes: package_data, for_packages
-    sort_order: 6
+    sort_order: 3
     required_plugins: scan:licenses
     options:
       help_group: primary scans, name: package: -p, --package
@@ -900,7 +812,7 @@ The Following Text is displayed, i.e. This is the available plugins for Scancode
   Plugin: scancode_scan:urls  class: cluecode.plugin_url:UrlScanner
     codebase_attributes:
     resource_attributes: urls
-    sort_order: 10
+    sort_order: 8
     required_plugins:
     options:
       help_group: other scans, name: url: -u, --url
@@ -916,9 +828,8 @@ The Following Text is displayed, i.e. This is the available plugins for Scancode
 This shows all the types of packages that can be scanned using Scancode.
 These are located in packagedcode i.e. Code used to parse various package formats.
 
-..
-    [ToDo]
-    Check and Write docs
+See the :ref:`supported_packages` page for more details and documentation
+automatically generated using this data.
 
 ``--print-options`` Option
 --------------------------
@@ -927,7 +838,7 @@ This option prints the options selected for one specific scan command.
 
 If we run this command::
 
-    scancode -clpieu --json-pp sample.json samples --classify --summary --summary-with-details --print-options
+    scancode -clpieu --json-pp sample.json samples --classify --tallies --tallies-with-details --print-options
 
 The output will be::
 
@@ -941,6 +852,6 @@ The output will be::
       output_json_pp: <unopened file 'sample.json' wb>
       package: True
       reindex_licenses: None
-      summary: True
-      summary_with_details: True
+      tallies: True
+      tallies_with_details: True
       url: True

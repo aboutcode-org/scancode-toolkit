@@ -6,18 +6,23 @@ Support
 Documentation
 -------------
 
-The ScanCode toolkit documentation lives at aboutcode.readthedocs.io/en/latest/scancode-toolkit/.
-
+The ScanCode toolkit documentation lives at https://scancode-toolkit.readthedocs.io/.
 
 Issue Tracker
 -------------
 
-Post questions and bugs as GitHub tickets at: https://github.com/nexB/scancode-toolkit/issues
+Post issues you are having and bugs as `GitHub tickets <https://github.com/nexB/scancode-toolkit/issues>`_
 
+Discussions
+-----------
+
+If you want to ask questions or anything else that you think are not bugs/new
+features, open a `discussion <https://github.com/nexB/scancode-toolkit/discussions>`_
 
 Join the conversation
 ----------------------
 
-Join our `Gitter Channel <https://gitter.im/aboutcode-org/discuss>`_ to chat
-with users and developers of ScanCode Toolkit.
+Join our `general chatroom <https://matrix.to/#/#aboutcode-org_discuss:gitter.im>`_ to chat
+with aboutcode community members, and if you want to talk to users and developers of
+ScanCode Toolkit, use `scancode room <https://matrix.to/#/#aboutcode-org_scancode:gitter.im>`_
 

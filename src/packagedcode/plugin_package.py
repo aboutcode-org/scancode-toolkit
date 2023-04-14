@@ -63,23 +63,52 @@ def print_packages(ctx, param, value):
     if not value or ctx.resilient_parsing:
         return
 
+    for package_data in get_available_package_parsers():
+        click.echo('--------------------------------------------')
+        click.echo(f'Package type:  {package_data["package_type"]}')
+        click.echo(f'  datasource_id:     {package_data["datasource_id"]}')
+        click.echo(f'  documentation URL: {package_data["documentation_url"]}')
+        click.echo(f'  primary language:  {package_data["default_primary_language"]}')
+        click.echo(f'  description:       {package_data["description"]}')
+        click.echo(f'  path_patterns:    {package_data["path_patterns"]}')
+    ctx.exit()
+
+
+def get_available_package_parsers(docs=False):
+
     from packagedcode import ALL_DATAFILE_HANDLERS
+
+    all_data_packages = []
 
     for cls in sorted(
         ALL_DATAFILE_HANDLERS,
         key=lambda pc: (pc.default_package_type or '', pc.datasource_id),
     ):
-        pp = ', '.join(repr(p) for p in cls.path_patterns)
-        click.echo('--------------------------------------------')
-        click.echo(f'Package type:  {cls.default_package_type}')
         if cls.datasource_id is None:
             raise Exception(cls)
-        click.echo(f'  datasource_id:     {cls.datasource_id}')
-        click.echo(f'  documentation URL: {cls.documentation_url}')
-        click.echo(f'  primary language:  {cls.default_primary_language}')
-        click.echo(f'  description:       {cls.description}')
-        click.echo(f'  path_patterns:    {pp}')
-    ctx.exit()
+
+        data_packages = {}
+        if docs:
+            path_patterns = '\n       '.join(f"``{p}``" for p in cls.path_patterns)
+            if cls.default_package_type:
+                data_packages['package_type'] = f"``{cls.default_package_type}``"
+            else:
+                data_packages['package_type'] = cls.default_package_type
+            data_packages['datasource_id'] = f"``{cls.datasource_id}``"
+        else:
+            path_patterns = ', '.join(repr(p) for p in cls.path_patterns)
+            data_packages['package_type'] = cls.default_package_type
+            data_packages['datasource_id'] = cls.datasource_id
+
+        data_packages['documentation_url'] = cls.documentation_url
+        data_packages['default_primary_language'] = cls.default_primary_language
+        data_packages['description'] = cls.description
+        data_packages['path_patterns'] = path_patterns
+
+        all_data_packages.append(data_packages)
+
+    return all_data_packages
+
 
 
 @scan_impl

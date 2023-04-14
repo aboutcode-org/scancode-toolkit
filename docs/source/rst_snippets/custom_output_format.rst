@@ -16,7 +16,7 @@ data for this particular scan.
 
 ::
 
-   ## template.html:
+   ## template.txt:
    [
        {% if files.license_copyright %}
            {% for location, data in files.license_copyright.items() %}
@@ -36,12 +36,12 @@ Now I can run ScanCode using my newly created template:
 
 ::
 
-   $ scancode -clpeui --custom-output output.json --custom-template template.html samples
+   $ scancode -clpeui --custom-output output.txt --custom-template template.txt samples
    Scanning files...
      [####################################]  46
    Scanning done.
 
-Now are results are saved in ``output.json`` and we can easily view them with ``head output.json``:
+Now the results are saved in ``output.txt`` and we can easily view them with ``head output.txt``:
 
 ::
 

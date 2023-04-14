@@ -1,4 +1,4 @@
-.. versioning:
+.. _versioning:
 
 
 Versioning approach

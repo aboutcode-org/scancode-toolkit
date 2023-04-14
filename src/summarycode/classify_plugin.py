@@ -98,8 +98,8 @@ class FileClassifier(PreScanPlugin):
     options = [
         PluggableCommandLineOption(('--classify',),
             is_flag=True, default=False,
-            help='Classify files with flags telling if the file is a legal, '
-                 'or readme or test file, etc.',
+            help='Classify files with flags indicating whether the file is a '
+                 'legal, readme, test or similar file.',
             help_group=PRE_SCAN_GROUP,
             sort_order=50,
         )

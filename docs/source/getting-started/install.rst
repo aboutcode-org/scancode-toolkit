@@ -2,7 +2,7 @@ Comprehensive Installation
 ==========================
 
 
-There in one way to install ScanCode.
+The recommended way to install ScanCode is using app archives:
 
 - :ref:`app_install`
 
@@ -40,6 +40,7 @@ Before Installing
 - ScanCode requires a Python version 3.7, 3.8, 3.9  or 3.10 and is
   tested on Linux, macOS, and Windows. It should work fine on FreeBSD.
 
+.. _system_requirements:
 
 System Requirements
 ^^^^^^^^^^^^^^^^^^^
@@ -53,6 +54,7 @@ System Requirements
     #. Linux: on recent 64-bit Linux distributions,
     #. Mac: on recent x86 64-bit macOS (10.15 and up, including 11 and 12),
        Use the X86 emulation mode on Apple ARM M1 CPUs.
+       (Note that `pip install` does not work on ARM CPUs)
     #. Windows: on Windows 10 and up,
     #. FreeBSD.
 
@@ -95,7 +97,7 @@ ScanCode needs a Python 3.7+ interpreter; We support all Python versions from
 - **On Mac**:
 
     The default Python 3 provided with macOS is 3.8.
-    Alternativelu you can download and install Python 3.8 from https://www.python.org/
+    Alternatively you can download and install Python 3.8 from https://www.python.org/
 
 
 - **On Windows**:
@@ -116,6 +118,13 @@ ScanCode needs a Python 3.7+ interpreter; We support all Python versions from
 Installation as an Application: Downloading Releases
 -----------------------------------------------------
 
+Get the Scancode Toolkit tarball archive of a specific version and your
+operating system by going to the `project releases page <https://github.com/nexB/scancode-toolkit/releases/>`_
+
+For example, Version 30.0.1 archive can be obtained from
+`Toolkit release 30.0.1 <https://github.com/nexB/scancode-toolkit/releases/tag/v30.0.1>`_
+under assets options.
+
 .. Note::
 
     ScanCode app archives come with packaged with all required dependencies except
@@ -134,12 +143,7 @@ Installation as an Application: Downloading Releases
 Installation on Linux and Mac
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Get the Scancode Toolkit tarball archive of a specific version and your
-operating system by going to the `project releases page <https://github.com/nexB/scancode-toolkit/releases/>`_
-
-For example, Version 30.0.1 archive can be obtained from
-`Toolkit release 30.0.1 <https://github.com/nexB/scancode-toolkit/releases/tag/v30.0.1>`_
-under assets options. Download the archive for your operating systen and extract
+Download the archive for your operating systen and extract
 the archive from command line::
 
     tar -xvf scancode-toolkit-30.0.1_py38-linux.tar.gz
@@ -336,6 +340,16 @@ Installation as a library: via ``pip``
 
 ScanCode can be installed from the public PyPI repository using ``pip`` which
 the standard Python package management tool.
+
+.. NOTE::
+
+    Note that `pip` installation method does work on ARM chips, i.e. Linux/MacOS on
+    Apple M1 chips, as some non-native dependencies do not have pre-built wheels
+    for ARM (like py-ahocorasick, intbitset). See :ref:`system_requirements` for
+    more information. See related issues for more info:
+
+    - `Fallback pure-python deps <https://github.com/nexB/scancode-toolkit/issues/3210>`_
+    - `pip install failing on M1 <https://github.com/nexB/scancode-toolkit/issues/3205>`_
 
 The steps are:
 

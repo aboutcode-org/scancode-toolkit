@@ -5,16 +5,14 @@
 
 ----
 
-.. include::  /rst_snippets/note_snippets/synopsis_install_quickstart.rst
-
-----
+.. _copyright_option:
 
 ``--copyright`` Option
 -----------------------
 
     The ``--copyright`` option detects copyright statements in files.
 
-    It adds the following file attributes:
+    It adds the following resource-level attributes:
 
     1. ``copyrights``: This is a data mapping with the following attributes: ``copyright``
        containing the whole copyright value, with ``start_line`` and ``end_line`` containing
@@ -30,6 +28,7 @@
 
     Example::
 
+        #
         # Copyright (c) 2010 Patrick McHardy All rights reserved.
         # Authors:     Patrick McHardy <kaber@trash.net>
 
@@ -38,28 +37,30 @@
         {
             "copyrights": [
                 {
-                "copyright": "Copyright (c) 2010 Patrick McHardy",
-                "start_line": 2,
-                "end_line": 2
+                    "copyright": "Copyright (c) 2010 Patrick McHardy",
+                    "start_line": 2,
+                    "end_line": 2
                 }
             ],
             "holders": [
                 {
-                "holder": "Patrick McHardy",
-                "start_line": 2,
-                "end_line": 2
+                    "holder": "Patrick McHardy",
+                    "start_line": 2,
+                    "end_line": 2
                 }
             ],
             "authors": [
                 {
-                "author": "Patrick McHardy <kaber@trash.net>",
-                "start_line": 11,
-                "end_line": 11
+                    "author": "Patrick McHardy <kaber@trash.net>",
+                    "start_line": 3,
+                    "end_line": 3
                 }
             ],
         }
 
 ----
+
+.. _license_option:
 
 ``--license`` Option
 --------------------
@@ -85,18 +86,17 @@
 
         License: Apache-2.0
 
-    If we run license detection (with --license-text) on the above text we get the following
-    result for the attributes added by the license detection::
+    If we run license detection (with ``--license-text``) on the above text we get the following
+    result for the resource attributes added by the license detection::
 
         {
+            "path": "apache-2.0.txt",
+            "type": "file",
             "detected_license_expression": "apache-2.0",
             "detected_license_expression_spdx": "Apache-2.0",
             "license_detections": [
                 {
                     "license_expression": "apache-2.0",
-                    "detection_log": [
-                        "not-combined"
-                    ],
                     "matches": [
                         {
                             "score": 100.0,
@@ -107,42 +107,36 @@
                             "matcher": "1-hash",
                             "license_expression": "apache-2.0",
                             "rule_identifier": "apache-2.0_65.RULE",
-                            "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_65.RULE",
-                            "referenced_filenames": [],
-                            "is_license_text": false,
-                            "is_license_notice": false,
-                            "is_license_reference": false,
-                            "is_license_tag": true,
-                            "is_license_intro": false,
-                            "rule_length": 4,
                             "rule_relevance": 100,
-                            "matched_text": "License: Apache-2.0",
-                            "licenses": [
-                                {
-                                    "key": "apache-2.0",
-                                    "name": "Apache License 2.0",
-                                    "short_name": "Apache 2.0",
-                                    "category": "Permissive",
-                                    "is_exception": false,
-                                    "is_unknown": false,
-                                    "owner": "Apache Software Foundation",
-                                    "homepage_url": "http://www.apache.org/licenses/",
-                                    "text_url": "http://www.apache.org/licenses/LICENSE-2.0",
-                                    "reference_url": "https://scancode-licensedb.aboutcode.org/apache-2.0",
-                                    "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.LICENSE",
-                                    "spdx_license_key": "Apache-2.0",
-                                    "spdx_url": "https://spdx.org/licenses/Apache-2.0"
-                                }
-                            ]
+                            "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_65.RULE",
+                            "matched_text": "License: Apache-2.0"
                         }
-                    ]
+                    ],
+                    "identifier": "apache_2_0-ec759ae0-ea5a-f138-793e-388520e080c0"
                 }
             ],
             "license_clues": [],
             "percentage_of_license_text": 100.0,
+            "scan_errors": []
         }
 
+    We also have top level unique license detections with the same identifier
+    referencing all occurrences of this license detection and counts::
+
+        {
+            "license_detections": [
+                {
+                    "identifier": "apache_2_0-ec759ae0-ea5a-f138-793e-388520e080c0",
+                    "license_expression": "apache-2.0",
+                    "detection_count": 1
+                }
+            ]
+        }
+
+
 ----
+
+.. _package_option:
 
 ``--package`` Option
 --------------------
@@ -185,34 +179,6 @@
                     "resolved_package": {},
                     "extra_data": {},
                     "dependency_uid": "pkg:bower/get-size?uuid=fixed-uid-done-for-testing-5642512d1758",
-                    "for_package_uid": "pkg:bower/blue-leaf?uuid=fixed-uid-done-for-testing-5642512d1758",
-                    "datafile_path": "bower.json",
-                    "datasource_id": "bower_json"
-                },
-                {
-                    "purl": "pkg:bower/eventEmitter",
-                    "extracted_requirement": "~4.2.11",
-                    "scope": "dependencies",
-                    "is_runtime": true,
-                    "is_optional": false,
-                    "is_resolved": false,
-                    "resolved_package": {},
-                    "extra_data": {},
-                    "dependency_uid": "pkg:bower/eventEmitter?uuid=fixed-uid-done-for-testing-5642512d1758",
-                    "for_package_uid": "pkg:bower/blue-leaf?uuid=fixed-uid-done-for-testing-5642512d1758",
-                    "datafile_path": "bower.json",
-                    "datasource_id": "bower_json"
-                },
-                {
-                    "purl": "pkg:bower/qunit",
-                    "extracted_requirement": "~1.16.0",
-                    "scope": "devDependencies",
-                    "is_runtime": false,
-                    "is_optional": true,
-                    "is_resolved": false,
-                    "resolved_package": {},
-                    "extra_data": {},
-                    "dependency_uid": "pkg:bower/qunit?uuid=fixed-uid-done-for-testing-5642512d1758",
                     "for_package_uid": "pkg:bower/blue-leaf?uuid=fixed-uid-done-for-testing-5642512d1758",
                     "datafile_path": "bower.json",
                     "datasource_id": "bower_json"
@@ -259,9 +225,6 @@
                     "license_detections": [
                         {
                             "license_expression": "mit",
-                            "detection_log": [
-                                "not-combined"
-                            ],
                             "matches": [
                                 {
                                     "score": 100.0,
@@ -273,34 +236,11 @@
                                     "license_expression": "mit",
                                     "rule_identifier": "spdx-license-identifier: mit",
                                     "rule_url": null,
-                                    "referenced_filenames": [],
-                                    "is_license_text": false,
-                                    "is_license_notice": false,
-                                    "is_license_reference": false,
-                                    "is_license_tag": true,
-                                    "is_license_intro": false,
-                                    "rule_length": 1,
                                     "rule_relevance": 100,
-                                    "matched_text": "MIT",
-                                    "licenses": [
-                                        {
-                                            "key": "mit",
-                                            "name": "MIT License",
-                                            "short_name": "MIT License",
-                                            "category": "Permissive",
-                                            "is_exception": false,
-                                            "is_unknown": false,
-                                            "owner": "MIT",
-                                            "homepage_url": "http://opensource.org/licenses/mit-license.php",
-                                            "text_url": "http://opensource.org/licenses/mit-license.php",
-                                            "reference_url": "https://scancode-licensedb.aboutcode.org/mit",
-                                            "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE",
-                                            "spdx_license_key": "MIT",
-                                            "spdx_url": "https://spdx.org/licenses/MIT"
-                                        }
-                                    ]
+                                    "matched_text": "MIT"
                                 }
-                            ]
+                            ],
+                            "identifier": "apache_2_0-ec759abc-ea5a-2a38-793e-312340e080c0"
                         }
                     ],
                     "other_license_expression": null,
@@ -368,9 +308,6 @@
                             "license_detections": [
                                 {
                                     "license_expression": "mit",
-                                    "detection_log": [
-                                        "not-combined"
-                                    ],
                                     "matches": [
                                         {
                                             "score": 100.0,
@@ -382,34 +319,11 @@
                                             "license_expression": "mit",
                                             "rule_identifier": "spdx-license-identifier: mit",
                                             "rule_url": null,
-                                            "referenced_filenames": [],
-                                            "is_license_text": false,
-                                            "is_license_notice": false,
-                                            "is_license_reference": false,
-                                            "is_license_tag": true,
-                                            "is_license_intro": false,
-                                            "rule_length": 1,
                                             "rule_relevance": 100,
-                                            "matched_text": "MIT",
-                                            "licenses": [
-                                                {
-                                                    "key": "mit",
-                                                    "name": "MIT License",
-                                                    "short_name": "MIT License",
-                                                    "category": "Permissive",
-                                                    "is_exception": false,
-                                                    "is_unknown": false,
-                                                    "owner": "MIT",
-                                                    "homepage_url": "http://opensource.org/licenses/mit-license.php",
-                                                    "text_url": "http://opensource.org/licenses/mit-license.php",
-                                                    "reference_url": "https://scancode-licensedb.aboutcode.org/mit",
-                                                    "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE",
-                                                    "spdx_license_key": "MIT",
-                                                    "spdx_url": "https://spdx.org/licenses/MIT"
-                                                }
-                                            ]
+                                            "matched_text": "MIT"
                                         }
-                                    ]
+                                    ],
+                                    "identifier": "apache_2_0-ec759abc-ea5a-2a38-793e-312340e080c0"
                                 }
                             ],
                             "other_license_expression": null,
@@ -427,26 +341,6 @@
                                     "scope": "dependencies",
                                     "is_runtime": true,
                                     "is_optional": false,
-                                    "is_resolved": false,
-                                    "resolved_package": {},
-                                    "extra_data": {}
-                                },
-                                {
-                                    "purl": "pkg:bower/eventEmitter",
-                                    "extracted_requirement": "~4.2.11",
-                                    "scope": "dependencies",
-                                    "is_runtime": true,
-                                    "is_optional": false,
-                                    "is_resolved": false,
-                                    "resolved_package": {},
-                                    "extra_data": {}
-                                },
-                                {
-                                    "purl": "pkg:bower/qunit",
-                                    "extracted_requirement": "~1.16.0",
-                                    "scope": "devDependencies",
-                                    "is_runtime": false,
-                                    "is_optional": true,
                                     "is_resolved": false,
                                     "resolved_package": {},
                                     "extra_data": {}
@@ -469,6 +363,8 @@
 
 ----
 
+.. _info_option:
+
 ``--info`` Option
 -----------------
 
@@ -488,6 +384,8 @@
 
 ----
 
+.. _email_option:
+
 ``--email`` Option
 ------------------
 
@@ -498,6 +396,8 @@
     ``end_line`` to be able to locate where the email was detected in the file.
 
 ----
+
+.. _url_option:
 
 ``--url`` Option
 ----------------
@@ -510,6 +410,8 @@
 
 
 ----
+
+.. _generated_option:
 
 ``--generated`` Option
 ----------------------
@@ -525,15 +427,12 @@
 
         "is_generated": true
 
-    In the samples folder, the following files have a true value for their is_generated attribute::
-
-        "samples/zlib/dotzlib/LICENSE_1_0.txt"
-        "samples/JGroups/licenses/apache-2.0.txt"
-
-    ..
-        [ToDo] Research and Write Better
+    Classification of a file being generated or not is done based on the first few lines
+    having usually encountered generated keywords.
 
 ----
+
+.. _max_email_option:
 
 ``--max-email`` Option
 ----------------------
@@ -559,6 +458,8 @@
 
 ----
 
+.. _max_url_option:
+
 ``--max-url`` Option
 --------------------
 
@@ -583,15 +484,14 @@
 
 ----
 
+.. _license_score_option:
+
 ``--license-score`` Option
 --------------------------
 
     .. admonition:: Dependency
 
         The option ``--license-score`` is a sub-option of and requires the option ``--license``.
-
-    ..
-        [ToDo] Research and Write License Matching Better
 
     License matching strictness, i.e. How closely matched licenses are detected in a scan, can be
     modified by using this ``--license-score`` option.
@@ -623,6 +523,8 @@
 
 ----
 
+.. _license_text_option:
+
 ``--license-text`` Option
 -------------------------
 
@@ -632,8 +534,7 @@
 
     .. admonition:: Sub-Option
 
-        The option ``--license-text-diagnostics`` and ``--is-license-text`` are sub-options of
-        ``--license-text``. ``--is-license-text`` is a Post-Scan Option.
+        The option ``--license-text-diagnostics`` is a sub-option of ``--license-text``.
 
     With the ``--license-text`` option, the scan results attribute "matched text" includes the matched text
     for the detected license.
@@ -666,6 +567,8 @@
     - License name: "ZLIB License"
 
 ----
+
+.. _license_url_template_option:
 
 ``--license-url-template`` Option
 ---------------------------------
@@ -701,6 +604,8 @@
     The reference URL changes for all detected licenses in the scan, across the scan result file.
 
 ----
+
+.. _license_text_diagnostics_option:
 
 ``--license-text-diagnostics`` Option
 -------------------------------------
@@ -739,3 +644,109 @@
         ([http]://[www].[bouncycastle].[org]) Permission is hereby granted, free of charge, to any person
         obtaining a copy of this software and associated documentation files (the \"Software\"),
         to deal in the Software without restriction,
+
+----
+
+.. _license_diagnostics_option:
+
+``--license-diagnostics`` Option
+-------------------------------------
+
+    .. admonition:: Dependency
+
+        The option ``--license-diagnostics`` is a sub-option of and requires the option
+        ``--license``
+
+    On using the ``--license-diagnostics`` option on a license scan there is the
+    ``detection_log`` attribute added to license detections with diagnostics information
+    about the license detection post-processing steps which are used to create license
+    detections from license matches.
+
+    Consider the following text::
+
+        ## License
+        All code, unless stated otherwise, is dual-licensed under
+        [`WTFPL`](http://www.wtfpl.net/txt/copying/) and
+        [`MIT`](https://opensource.org/licenses/MIT).
+
+    If we run a license scan with the ``--license-diagnostics`` option enabled,
+    we have the following license detection results::
+
+        {
+            "path": "README.md",
+            "type": "file",
+            "detected_license_expression": "wtfpl-2.0 AND mit",
+            "detected_license_expression_spdx": "WTFPL AND MIT",
+            "license_detections": [
+                {
+                    "license_expression": "wtfpl-2.0 AND mit",
+                    "matches": [
+                        {
+                            "score": 100.0,
+                            "start_line": 43,
+                            "end_line": 43,
+                            "matched_length": 3,
+                            "match_coverage": 100.0,
+                            "matcher": "2-aho",
+                            "license_expression": "unknown-license-reference",
+                            "rule_identifier": "lead-in_unknown_30.RULE",
+                            "rule_relevance": 100,
+                            "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lead-in_unknown_30.RULE",
+                            "matched_text": "dual-licensed under [`
+                        },
+                        {
+                            "score": 50.0,
+                            "start_line": 43,
+                            "end_line": 43,
+                            "matched_length": 1,
+                            "match_coverage": 100.0,
+                            "matcher": "2-aho",
+                            "license_expression": "wtfpl-2.0",
+                            "rule_identifier": "spdx_license_id_wtfpl_for_wtfpl-2.0.RULE",
+                            "rule_relevance": 50,
+                            "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/spdx_license_id_wtfpl_for_wtfpl-2.0.RULE",
+                            "matched_text": "WTFPL"
+                        },
+                        {
+                            "score": 100.0,
+                            "start_line": 43,
+                            "end_line": 43,
+                            "matched_length": 3,
+                            "match_coverage": 100.0,
+                            "matcher": "2-aho",
+                            "license_expression": "wtfpl-2.0",
+                            "rule_identifier": "wtfpl-2.0_27.RULE",
+                            "rule_relevance": 100,
+                            "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/wtfpl-2.0_27.RULE",
+                            "matched_text": "www.wtfpl.net/"
+                        },
+                        {
+                            "score": 100.0,
+                            "start_line": 43,
+                            "end_line": 43,
+                            "matched_length": 6,
+                            "match_coverage": 100.0,
+                            "matcher": "2-aho",
+                            "license_expression": "mit",
+                            "rule_identifier": "mit_64.RULE",
+                            "rule_relevance": 100,
+                            "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_64.RULE",
+                            "matched_text": "MIT`](https://opensource.org/licenses/MIT)."
+                        }
+                    ],
+                    "detection_log": [
+                        "unknown-intro-followed-by-match"
+                    ],
+                    "identifier": "wtfpl_2_0_and_mit-e5642b07-705c-9730-80ab-f5ed0565be28"
+                }
+            ],
+            "license_clues": [],
+            "percentage_of_license_text": 8.18,
+            "scan_errors": []
+        }
+
+    Here from the ``"detection_log": ["unknown-intro-followed-by-match"]`` added diagnostics
+    information we learn that there was an unknown intro license match, followed by
+    proper detections, so we conclude the unknown intro to be an introduction to the
+    following license and hence conclude the license from the license matches after the
+    unknown detection.

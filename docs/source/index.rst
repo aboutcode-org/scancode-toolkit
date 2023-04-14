@@ -96,16 +96,17 @@ Miscellaneous Documents
    misc/index
 
 
-Discussion Documents
+Reference Documents
 --------------------
 
-Discussion documents provide insights into how scancode works, and integration of the application
-into your own software development life cycle.
+Reference documents provide reference pages for technical reference information
+about ScanCode Toolkit, including how it works and supported features.
 
 .. toctree::
    :maxdepth: 2
 
-   explanations/index
+   reference/index
+
 
 ----
 

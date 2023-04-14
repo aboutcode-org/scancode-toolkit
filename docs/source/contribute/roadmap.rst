@@ -5,6 +5,14 @@ Roadmap
 
 This is a high level list of what we are working on and what is completed.
 
+.. ToDo: Move this to Discussions or wikis as this is not used or updated
+   regularly.
+
+.. _note:
+
+  This is not updated regularly, see the `milestones <https://github.com/nexB/scancode-toolkit/milestones>`_
+  instead for updated shorter and longer term roadmaps.
+
 Legend
 ------
 
@@ -26,7 +34,7 @@ Package manifest and dependency parsers
 - |white_large_square| RPM dependencies #649
 - |white_large_square| Windows Nuget dependencies #648
 - |white_check_mark| Bower packages #654
-- |clock1030| Python dependencies #653
+- |white_check_mark|  Python dependencies #653
 - |white_check_mark| CRAN
 - |white_check_mark| Plain packages
 - |white_large_square| other Java-related meta files (SBT, Ivy, Gradle, etc.)
@@ -39,7 +47,7 @@ License Detection
 
 - |white_check_mark| support and detect license expressions (code in https://github.com/nexB/license-expression)
 - |clock1030| support and detect composite licenses
-- |white_large_square| support custom licenses
+- |white_check_mark| support custom licenses
 - |white_large_square| move licenses data set to external separate repository
 - |white_check_mark| Improved unknown license detection
 - |white_check_mark| sync with external sources (DejaCode, SPDX, etc.)
@@ -61,8 +69,8 @@ Core features
 - |white_check_mark| scan plugins (e.g. plugins that run a scan to collect data)
 - |white_check_mark| support Python 3 #295
 - |clock1030| transparent archive extraction (as opposed to on-demand with extractcode)
-- |clock1030| scancode.yml configuration file for exclusions, defaults, scan failure conditions,
-  etc.
+- |white_large_square| scancode.yml configuration file for exclusions, defaults, scan
+  failure conditions, etc.
 - |white_large_square| support scan pipelines and rules to organize more complex scans
 - |white_check_mark| scan baselining, delta scan and failure conditions (such as license change,
   etc) ( spawned as its the `DeltaCode <https://github.com/nexB/deltacode/>`_ project)

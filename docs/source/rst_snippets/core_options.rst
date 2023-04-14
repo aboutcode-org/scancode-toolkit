@@ -11,7 +11,7 @@ All "Core" Scan Options
 --timeout FLOAT          Stop scanning a file if scanning takes longer
                          than a timeout in seconds.  [Default: 120]
 
---from-json              Load codebase from an existing JSON scan
+--from-json              Load codebase from one or more existing JSON scans.
 
 --max-in-memory INTEGER  Maximum number of files and directories scan
                          details kept in memory during a scan.

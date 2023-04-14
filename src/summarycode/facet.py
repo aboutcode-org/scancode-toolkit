@@ -42,7 +42,7 @@ Assign a facet to a file.
 
 A facet is defined by zero or more glob/fnmatch expressions. Multiple facets can
 be assigned to a file. The facets definition is a list of (facet, pattern) and a
-file is assigned all thye facets that have a pattern defintion that match their
+file is assigned all the facets that have a pattern defintion that match their
 path.
 
 Once all files have been assigned a facet, files without a facet are assigned to
