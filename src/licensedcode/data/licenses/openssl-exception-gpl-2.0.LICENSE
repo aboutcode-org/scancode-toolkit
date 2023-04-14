@@ -13,9 +13,9 @@ other_spdx_license_keys:
 text_urls:
     - http://www.openssl.org/source/license.html
     - http://www.gnu.org/licenses/gpl-2.0.txt
+faq_url: http://people.gnome.org/~markmc/openssl-and-the-gpl.html
 other_urls:
     - https://github.com/LibVNC/x11vnc/blob/master/src/8to24.c#L22
-faq_url: http://people.gnome.org/~markmc/openssl-and-the-gpl.html
 standard_notice: |
     The OpenSSL License is not compatible with the GPL, since it contains the
     following two clauses:

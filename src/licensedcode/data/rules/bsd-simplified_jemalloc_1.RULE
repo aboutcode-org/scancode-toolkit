@@ -3,6 +3,7 @@ license_expression: bsd-simplified
 is_license_text: yes
 notes: seen in jemalloc https://github.com/jemalloc/jemalloc/blob/8580c65f81c5252e493da656a448ec3a8571dab7/COPYING
 ---
+
 Redistribution and use in source and binary forms, with or without modification,
 are permitted provided that the following conditions are met:
 

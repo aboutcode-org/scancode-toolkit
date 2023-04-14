@@ -10,7 +10,7 @@
 import click
 
 from commoncode.cliutils import PluggableCommandLineOption
-
+from licensedcode.models import load_dump_licenses
 
 @click.command(name='scancode-reindex-licenses')
 @click.option(
@@ -31,6 +31,13 @@ from commoncode.cliutils import PluggableCommandLineOption
     cls=PluggableCommandLineOption,
 )
 @click.option(
+    '--load-dump',
+    is_flag=True,
+    help='Load all the license objects from file and then dump '
+         'them back to their respective license files.',
+    cls=PluggableCommandLineOption,
+)
+@click.option(
     '--additional-directory',
     type=click.Path(exists=True, readable=True, file_okay=False, resolve_path=True, path_type=str),
     metavar='DIR',
@@ -44,6 +51,7 @@ def reindex_licenses(
     only_builtin,
     all_languages,
     additional_directory,
+    load_dump,
     *args,
     **kwargs,
 ):
@@ -51,6 +59,8 @@ def reindex_licenses(
 
     from licensedcode.cache import get_index
     click.echo('Rebuilding the license index...')
+    if load_dump:
+        load_dump_licenses()
     get_index(
         only_builtin=only_builtin,
         force=True,

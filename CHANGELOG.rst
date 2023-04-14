@@ -190,6 +190,12 @@ License detection:
   This is now built-in with the --license-text option and --info
   and exposed with the "percentage_of_license_text" attribute.
 
+- The license dump() has been modified to add an extra space at empty
+  newlines for license files which also have multiple indentation levels
+  as this was generating invalid YAML output files when ``--license-text``
+  or ``--license-references`` was enabled.
+
+  See https://github.com/nexB/scancode-toolkit/issues/3219
 
 v31.2.4 - 2023-01-09
 ----------------------------------

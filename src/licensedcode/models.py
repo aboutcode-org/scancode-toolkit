@@ -24,6 +24,8 @@ from pathlib import Path
 from licensedcode._vendor import attr
 from license_expression import ExpressionError
 from license_expression import Licensing
+from saneyaml import load as saneyaml_load
+from saneyaml import dump as saneyaml_dump
 
 from commoncode.fileutils import file_base_name
 from commoncode.fileutils import file_name
@@ -479,6 +481,8 @@ class License:
         """
         metadata = self.to_dict(include_builtin=False)
         content = self.text
+        # We add a space to empty newlines to make this text YAML safe
+        content = get_yaml_safe_text(content)
         output = dumps_frontmatter(content=content, metadata=metadata)
         license_file = self.license_file(licenses_data_dir=licenses_data_dir)
         with open(license_file, 'w') as of:
@@ -550,7 +554,7 @@ class License:
             yield key
 
     @staticmethod
-    def validate(licenses, verbose=False, no_dupe_urls=False):
+    def validate(licenses, verbose=False, no_dupe_urls=False, thorough=False):
         """
         Check that the ``licenses`` a mapping of {key: License} are valid.
         Return dictionaries of infos, errors and warnings mapping a license key
@@ -655,8 +659,23 @@ class License:
                 if not len(all_licenses) == len(set(all_licenses)):
                     warn('Some duplicated URLs')
 
-            # local text consistency
             text = lic.text
+            if thorough:
+                # local text consistency
+                data = {"text": text}
+                # We are testing whether we can dump as yaml and load from yaml
+                # without failing (i.e. whether the text is yaml safe)
+                # Using saneyaml
+                try:
+                    yaml_string = saneyaml_dump(data)
+                    loaded_yaml = saneyaml_load(yaml_string)
+                except Exception:
+                    errors['GLOBAL'].append(
+                        f'Error invalid YAML text at: {lic.key}, failed during saneyaml.load()'
+                        'Run scancode-reindex-licenses --load-dump to fix this.'
+                    )
+                # This fails because of missing line break at text end, added by saneyaml_dump
+                # assert text == loaded_yaml["text"]
 
             license_itokens = tuple(index_tokenizer(text))
             if not license_itokens:
@@ -737,6 +756,25 @@ class License:
         return errors, warnings, infos
 
 
+def get_yaml_safe_text(text):
+    """
+    Given a `text` string return a YAML-safe version of the
+    string suitable for use in a YAML output, i.e. that would not
+    produce a invalid yaml if used in the output.
+
+    This is done by trying to dump and load the text inside a data
+    dictionary and if it fails, padding all the empty newlines with
+    a space.
+    """
+    data = {"text": text}
+    yaml_string = saneyaml_dump(data)
+    try:
+        loaded_yaml = saneyaml_load(yaml_string)
+    except Exception:
+        text = text.replace('\n\n', '\n \n')
+    return text
+
+
 def ignore_editor_tmp_files(location):
     return location.endswith('.swp')
 
@@ -805,12 +843,18 @@ def get_rules(
     licenses_data_dir=licenses_data_dir,
     rules_data_dir=rules_data_dir,
     validate=False,
+    validate_thorough=False,
     is_builtin=True,
 ):
     """
     Yield Rule objects loaded from a ``licenses_db`` and license files found in
     ``licenses_data_dir`` and rule files found in `rules_data_dir`. Raise an
     Exception if a rule is inconsistent or incorrect.
+
+    If ``validate`` flag is True, we validate all the license rules for consistency
+    and if ``validate_thorough`` is True we perform additional validation tests
+    (like whether it would produce valid YAML) which is skipped normally because these
+    are expensive operations.
     """
     licenses_db = licenses_db or load_licenses(
         licenses_data_dir=licenses_data_dir,
@@ -822,10 +866,25 @@ def get_rules(
     ))
 
     if validate:
-        validate_rules(rules=rules, licenses_by_key=licenses_db)
+        validate_rules(rules=rules, licenses_by_key=licenses_db, thorough=validate_thorough)
 
     licenses_as_rules = build_rules_from_licenses(licenses_db)
     return chain(licenses_as_rules, rules)
+
+
+def load_dump_licenses():
+    """
+    Loads all licenses and rules and dumps them in the same file.
+    This is used to do minor formatting changes consistently across
+    all licenses/rules.
+    """
+    licenses = load_licenses(licenses_data_dir=licenses_data_dir)
+    for lic in licenses.values():
+        lic.dump(licenses_data_dir)
+
+    rules = list(load_rules(rules_data_dir=rules_data_dir))
+    for rule in rules:
+        rule.dump(rules_data_dir=rules_data_dir)
 
 
 def get_license_dirs(additional_dirs):
@@ -919,7 +978,7 @@ def get_rules_from_multiple_dirs(
             is_builtin=False,
         ))
 
-    validate_rules(rules=combined_rules, licenses_by_key=licenses_db)
+    validate_rules(rules=combined_rules, licenses_by_key=licenses_db, thorough=False)
 
     return combined_rules
 
@@ -997,7 +1056,7 @@ class InvalidLicense(Exception):
     pass
 
 
-def _validate_all_rules(rules, licenses_by_key):
+def _validate_all_rules(rules, licenses_by_key, thorough=False):
     """
     Return a mapping of {error message: [list of Rule]} from validating a list
     of ``rules`` Rule integrity and correctness using known licenses from a
@@ -1007,18 +1066,18 @@ def _validate_all_rules(rules, licenses_by_key):
     errors = defaultdict(list)
 
     for rule in rules:
-        for err_msg in rule.validate(licensing):
+        for err_msg in rule.validate(licensing, thorough=thorough):
             errors[err_msg].append(rule)
     return errors
 
 
-def validate_rules(rules, licenses_by_key, with_text=False, rules_data_dir=rules_data_dir):
+def validate_rules(rules, licenses_by_key, with_text=False, rules_data_dir=rules_data_dir, thorough=False):
     """
     Return a mapping of {error message: [list of Rule]) from validating a list
     of ``rules`` Rule integrity and correctness using known licenses from a
     mapping of ``licenses_by_key`` {key: License}`.
     """
-    errors = _validate_all_rules(rules=rules, licenses_by_key=licenses_by_key)
+    errors = _validate_all_rules(rules=rules, licenses_by_key=licenses_by_key, thorough=thorough)
     if errors:
         message = ['Errors while validating rules:']
         for msg, rules in errors.items():
@@ -1696,7 +1755,7 @@ class BasicRule:
         # license flag instead
         return self.license_expression and 'unknown' in self.license_expression
 
-    def validate(self, licensing=None):
+    def validate(self, licensing=None, thorough=False):
         """
         Validate this rule using the provided ``licensing`` Licensing and yield
         one error message for each type of error detected.
@@ -1789,6 +1848,17 @@ class BasicRule:
             if self.referenced_filenames:
                 if len(set(self.referenced_filenames)) != len(self.referenced_filenames):
                     yield 'referenced_filenames cannot contain duplicates.'
+
+        if thorough:
+            text = self.text
+            data = {"text": text}
+            # We are testing whether we can dump as yaml and load from yaml
+            # without failing (i.e. whether the text is yaml safe)
+            try:
+                yaml_string = saneyaml_dump(data)
+                loaded_yaml = saneyaml_load(yaml_string)
+            except Exception:
+                yield (f'Error invalid YAML text at: {self.identifier}, failed during saneyaml.load()')
 
     def license_keys(self, unique=True):
         """
