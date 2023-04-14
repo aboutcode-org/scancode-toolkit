@@ -18,4 +18,6 @@ Options
   --additional-directory DIR  Include this directory with additional custom
                               licenses and license rules in the license
                               detection index.
+  --load-dump                 Load all license and rules from their respective
+                              files and then dump them back to those same files.
   -h, --help                  Shows the options and explanations.

@@ -26,9 +26,6 @@ from license_expression import ExpressionError
 from license_expression import Licensing
 from saneyaml import load as saneyaml_load
 from saneyaml import dump as saneyaml_dump
-from yaml import load as yaml_load
-from yaml import dump as yaml_dump
-from yaml import CSafeLoader
 
 from commoncode.fileutils import file_base_name
 from commoncode.fileutils import file_name
@@ -670,11 +667,12 @@ class License:
                 # without failing (i.e. whether the text is yaml safe)
                 # Using saneyaml
                 try:
-                    yaml_string = saneyaml_dump(data, indent=4)
+                    yaml_string = saneyaml_dump(data)
                     loaded_yaml = saneyaml_load(yaml_string)
                 except Exception:
                     errors['GLOBAL'].append(
                         f'Error invalid YAML text at: {lic.key}, failed during saneyaml.load()'
+                        'Run scancode-reindex-licenses --load-dump to fix this.'
                     )
                 # This fails because of missing line break at text end, added by saneyaml_dump
                 # assert text == loaded_yaml["text"]
@@ -759,9 +757,17 @@ class License:
 
 
 def get_yaml_safe_text(text):
+    """
+    Given a `text` string return a YAML-safe version of the
+    string suitable for use in a YAML output, i.e. that would not
+    produce a invalid yaml if used in the output.
 
+    This is done by trying to dump and load the text inside a data
+    dictionary and if it fails, padding all the empty newlines with
+    a space.
+    """
     data = {"text": text}
-    yaml_string = saneyaml_dump(data, indent=4)
+    yaml_string = saneyaml_dump(data)
     try:
         loaded_yaml = saneyaml_load(yaml_string)
     except Exception:
@@ -844,6 +850,11 @@ def get_rules(
     Yield Rule objects loaded from a ``licenses_db`` and license files found in
     ``licenses_data_dir`` and rule files found in `rules_data_dir`. Raise an
     Exception if a rule is inconsistent or incorrect.
+
+    If ``validate`` flag is True, we validate all the license rules for consistency
+    and if ``validate_thorough`` is True we perform additional validation tests
+    (like whether it would produce valid YAML) which is skipped normally because these
+    are expensive operations.
     """
     licenses_db = licenses_db or load_licenses(
         licenses_data_dir=licenses_data_dir,
@@ -859,6 +870,21 @@ def get_rules(
 
     licenses_as_rules = build_rules_from_licenses(licenses_db)
     return chain(licenses_as_rules, rules)
+
+
+def load_dump_licenses():
+    """
+    Loads all licenses and rules and dumps them in the same file.
+    This is used to do minor formatting changes consistently across
+    all licenses/rules.
+    """
+    licenses = load_licenses(licenses_data_dir=licenses_data_dir)
+    for lic in licenses.values():
+        lic.dump(licenses_data_dir)
+
+    rules = list(load_rules(rules_data_dir=rules_data_dir))
+    for rule in rules:
+        rule.dump(rules_data_dir=rules_data_dir)
 
 
 def get_license_dirs(additional_dirs):
@@ -1829,7 +1855,7 @@ class BasicRule:
             # We are testing whether we can dump as yaml and load from yaml
             # without failing (i.e. whether the text is yaml safe)
             try:
-                yaml_string = saneyaml_dump(data, indent=4)
+                yaml_string = saneyaml_dump(data)
                 loaded_yaml = saneyaml_load(yaml_string)
             except Exception:
                 yield (f'Error invalid YAML text at: {self.identifier}, failed during saneyaml.load()')
