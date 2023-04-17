@@ -2,7 +2,7 @@
 key: ms-cla
 short_name: MS Contribution License Agreement (CLA)
 name: Microsoft Contribution License Agreement (CLA)
-category: Patent License
+category: CLA
 owner: Microsoft
 homepage_url: https://cla.microsoft.com
 spdx_license_key: LicenseRef-scancode-ms-cla
