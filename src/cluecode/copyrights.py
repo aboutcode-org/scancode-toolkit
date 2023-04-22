@@ -383,7 +383,8 @@ def get_tokens(numbered_lines, splitter=re.compile('[\\t =;]+').split):
             tok = tok.strip("' ")
             # FIXME: strip trailing colons: why?
             tok = tok.rstrip(':').strip()
-            # FIXME: strip leading @: : why?
+            # strip leading @
+            # why? this is for javadoc-style tags like @link or @ autho
             tok = tok.lstrip('@').strip()
             # FIXME: why?
             if tok and tok != ':':
@@ -701,6 +702,9 @@ patterns = [
 
     # parens such as (1) or (a) is a sign of junk but of course NOT (c)
     (r'^\(([abdefghi\d]|ii|iii)\)$', 'JUNK'),
+
+    # @link in javadoc is not a NN
+    (r'^link$', 'JUNK'),
 
     # found in crypto certificates and LDAP
     (r'^O=$', 'JUNK'),
