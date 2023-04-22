@@ -55,8 +55,10 @@ statement_markers = (
     'u00a9',
     '00a9',
     '\251',
-    'copyr',
-    'copyl',
+    # have copyright but also (c)opyright and ©opyright
+    'opyr',
+    # have copyright but also (c)opyleft
+    'opyl',
     'copr',
     'right',
     'reserv',

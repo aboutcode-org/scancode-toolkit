@@ -619,6 +619,14 @@ patterns = [
     (r'^[\(\.@]*COPYRIGHTED?:?$', 'COPY'),
     (r'^[\(\.@]*CopyRights?:?$', 'COPY'),
 
+    # (c)opyright and (c)opyleft, we ignore case
+    (r'^(?i:\(c\)opy(rights?|righted|left))$', 'COPY'),
+
+    # opyright and opyleft, we ignore case
+    (r'^(?i:opy(rights?|righted|left|lefted)[\.\,]?)$', 'COPY'),
+    (r'^//opylefted$', 'COPY'),
+    (r"^c'opylefted$", 'COPY'),
+
     # with a trailing comma
     (r'^Copyright,$', 'COPY'),
 
@@ -1649,6 +1657,10 @@ patterns = [
     (r'^\$?date-of-software$', 'YR'),
     (r'^\$?date-of-document$', 'YR'),
 
+
+    # slash dates as in 08/95
+    (r'^(0?[1-9]|1[012])/[6-9][0-9][\.,]?$', 'YR'),
+
     # cardinal numbers
     (r'^-?[0-9]+(.[0-9]+)?.?$', 'CD'),
 
@@ -2568,6 +2580,9 @@ grammar = """
     # Copyright lowRISC contributors.
     COPYRIGHT: {<COPY> <NN> <CONTRIBUTORS>}
 
+    # weird //opylefted by <-Harvie 2oo7
+    COPYRIGHT: {<COPY> <BY> <NN> <NN>}
+
 #######################################
 # Authors
 #######################################
@@ -2708,11 +2723,11 @@ def refine_holder(h):
     h = refine_names(h, prefixes=prefixes)
     h = strip_suffixes(h, HOLDERS_SUFFIXES)
     h = h.strip()
-    h = h.strip('+')
     h = h.replace('( ', ' ').replace(' )', ' ')
     h = h.strip()
     h = strip_trailing_period(h)
     h = h.strip()
+    h = h.strip('+-')
     if h and h.lower() not in HOLDERS_JUNK:
         return h
 
@@ -2734,6 +2749,7 @@ def refine_author(a):
     a = a.strip()
     a = refine_names(a, prefixes=AUTHORS_PREFIXES)
     a = a.strip()
+    a = a.strip('+-')
     if a and a.lower() not in AUTHORS_JUNK:
         return a
 
@@ -3066,6 +3082,11 @@ def remove_dupe_copyright_words(c):
     c = c.replace('copyright"Copyright', 'Copyright')
     c = c.replace('copyright\' Copyright', 'Copyright')
     c = c.replace('copyright" Copyright', 'Copyright')
+    c = c.replace('(c) opyrighted', 'Copyright (c)')
+    c = c.replace('(c) opyrights', 'Copyright (c)')
+    c = c.replace('(c) opyright', 'Copyright (c)')
+    c = c.replace('(c) opyleft', 'Copyleft (c)')
+    c = c.replace('(c) opylefted', 'Copyleft (c)')
     return c
 
 
