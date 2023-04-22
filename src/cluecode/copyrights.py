@@ -1282,6 +1282,10 @@ patterns = [
     (r'^Review', 'NN'),
     (r'^Help', 'NN'),
     (r'^Web', 'NN'),
+    (r'^MultiPart', 'NN'),
+    (r'^Upload', 'NN'),
+    (r'^PUT', 'NN'),
+    (r'^POST', 'NN'),
 
     # alone this is not enough for an NNP
     (r'^Free$', 'NN'),
@@ -2724,6 +2728,13 @@ def refine_holder(h):
         prefixes = HOLDERS_PREFIXES_WITH_ALL
     else:
         prefixes = HOLDERS_PREFIXES
+
+    # strip leading dates if any
+    if " " in h:
+        prefix, _, suffix = h.partition(" ")
+    if all(c in '0123456789-/' for c in prefix):
+        h = suffix
+
     h = refine_names(h, prefixes=prefixes)
     h = strip_suffixes(h, HOLDERS_SUFFIXES)
     h = h.strip()
