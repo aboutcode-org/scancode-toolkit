@@ -1017,6 +1017,7 @@ patterns = [
 
     (r'^\$?Guid$', 'JUNK'),
     (r'^Small$', 'NN'),
+    (r'^ZoY', 'JUNK'),
 
     ############################################################################
     # Nouns and proper Nouns
@@ -1656,7 +1657,6 @@ patterns = [
     # Copyright templates in W3C documents
     (r'^\$?date-of-software$', 'YR'),
     (r'^\$?date-of-document$', 'YR'),
-
 
     # slash dates as in 08/95
     (r'^(0?[1-9]|1[012])/[6-9][0-9][\.,]?$', 'YR'),
