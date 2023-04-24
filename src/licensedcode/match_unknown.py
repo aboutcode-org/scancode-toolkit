@@ -23,6 +23,7 @@ Matching strategy for unknown license detection using ngrams.
 TRACE = False
 
 if TRACE:
+    use_print = True
     import logging
     import sys
 
@@ -30,6 +31,9 @@ if TRACE:
 
     def logger_debug(*args):
         return logger.debug(' '.join(isinstance(a, str) and a or repr(a) for a in args))
+
+    if use_print:
+        logger_debug = print
 
     logging.basicConfig(stream=sys.stdout)
     logger.setLevel(logging.DEBUG)
@@ -142,6 +146,10 @@ def match_unknowns(
         unknown_ngram_length=unknown_ngram_length,
     )
 
+    # build match from merged matched ngrams
+    qspans = (Span(qstart, qend) for qstart, qend in matched_ngrams)
+    qspan = Span().union(*qspans)
+
     if TRACE:
         tokens_by_tid = idx.tokens_by_tid
 
@@ -149,15 +157,14 @@ def match_unknowns(
             return (' '.join(tokens_by_tid[t] for t in _toks))
 
         print('match_unknowns: matched_ngrams')
-        for qstart, qend, matched_toks in matched_ngrams:
+
+        for qstart, qend in matched_ngrams:
+            _span = Span(qstart, qend)
+            _tokens = [query_tokens[qpos] for qpos in _span]
             print(
                 '   ', 'qstart', qstart,
                 'qend', qend,
-                'matched_toks', get_tokens(matched_toks))
-
-    # build match from merged matched ngrams
-    qspans = (Span(qstart, qend) for qstart, qend in matched_ngrams)
-    qspan = Span().union(*qspans)
+                'matched_toks', get_tokens(_tokens))
 
     if not qspan:
         return
@@ -169,7 +176,8 @@ def match_unknowns(
     match_len = len(qspan)
 
     if TRACE:
-        print('match_unknowns: matched_span:', get_tokens(matched_tokens))
+        #print('match_unknowns: matched_span:', get_tokens(matched_tokens))
+        print('match_unknowns: qspan, match_len, matched_span:', qspan, match_len, matched_tokens)
 
     # we use the query side to build the ispans
     ispan = Span(0, match_len)
@@ -180,9 +188,8 @@ def match_unknowns(
     try:
         match_start_line = line_by_pos[qspan.start]
         match_end_line = line_by_pos[qspan.end]
-    except:
-        print('empty span:', qspan)
-        raise
+    except Exception as e:
+        raise Exception('empty span:', qspan) from e
 
     text = ''.join(get_full_qspan_matched_text(
         match_qspan=qspan,
