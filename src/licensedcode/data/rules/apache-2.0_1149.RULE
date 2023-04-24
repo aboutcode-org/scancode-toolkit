@@ -1,0 +1,10 @@
+---
+license_expression: apache-2.0
+is_license_notice: yes
+ignorable_urls:
+    - http://oauth.googlecode.com/svn/code/java/
+    - http://oauth.googlecode.com/svn/code/java/LICENSE.txt
+---
+
+Source is from http://oauth.googlecode.com/svn/code/java/ which is licensed
+under the APL (http://oauth.googlecode.com/svn/code/java/LICENSE.txt)
