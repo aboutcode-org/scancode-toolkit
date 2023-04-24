@@ -1,0 +1,17 @@
+---
+license_expression: gpl-2.0 AND mit
+is_license_notice: yes
+referenced_filenames:
+    - LICENSE.gpl
+    - LICENSE.mit
+notes: Seen in revng
+ignorable_urls:
+    - https://opensource.org/licenses/MIT
+    - https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html
+---
+
+The project as a whole is released under the terms of the [GNU General Public License, version 2](https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html).
+A copy of this license can be found in [LICENSE.gpl](LICENSE.gpl).
+
+Each individual file, unless otherwise noted, is released under the terms of the [MIT License](https://opensource.org/licenses/MIT).
+A copy of this license can be found in [LICENSE.mit](LICENSE.mit).

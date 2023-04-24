@@ -1,0 +1,11 @@
+---
+license_expression: proprietary-license
+is_license_notice: yes
+notes: https://github.com/me-no-dev/ESP31B/blob/master/tools/sdk/include/xtensa/tie/xt_ioports.h
+---
+
+* These coded instructions, statements, and computer programs are the
+ * copyrighted works and confidential proprietary information of Tensilica Inc.
+ * They may not be modified, copied, reproduced, distributed, or disclosed to
+ * third parties in any manner, medium, or form, in whole or in part, without
+ * the prior written consent of Tensilica Inc.

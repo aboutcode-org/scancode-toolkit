@@ -1,0 +1,9 @@
+---
+license_expression: gpl-2.0-plus
+is_license_notice: yes
+ignorable_urls:
+    - http://www.gnu.org/licenses/
+---
+
+Licensed under the GNU General Public License version 2 or later.
+See http://www.gnu.org/licenses/ for a copy of the license text

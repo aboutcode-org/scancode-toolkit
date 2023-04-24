@@ -1,0 +1,9 @@
+---
+license_expression: efl-2.0
+is_license_reference: yes
+relevance: 100
+ignorable_urls:
+    - http://www.opensource.org/licenses/ver2_eiffel.php
+---
+
+http://www.opensource.org/licenses/ver2_eiffel.php Eiffel Forum License V2.0

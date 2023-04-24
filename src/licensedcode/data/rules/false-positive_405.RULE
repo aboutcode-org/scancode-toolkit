@@ -1,0 +1,6 @@
+---
+is_false_positive: yes
+notes: Some license suggestion at https://sourceforge.net/p/phpwiki/code/11015/tree/trunk/configurator.php#l1388
+---
+
+optional('COPYRIGHTPAGE_URL', "https://www.gnu.org/copyleft/gpl.html#SEC1

@@ -1,8 +1,7 @@
 what:
   - authors
   - authors_summary
-authors:
-  - Santiago Carot Nemesio
-authors_summary:
-  - value: Santiago Carot Nemesio
-    count: 1
+  - copyrights
+copyrights:
+  - Copyright (c) 2010 GSyC/LibreSoft, Universidad Rey Juan Carlos. Authors Santiago Carot Nemesio
+

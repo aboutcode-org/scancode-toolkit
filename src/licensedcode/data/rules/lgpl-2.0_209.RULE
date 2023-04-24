@@ -1,0 +1,11 @@
+---
+license_expression: lgpl-2.0
+is_license_notice: yes
+referenced_filenames:
+    - COPYING
+---
+
+This library is distributed under GNU LGPL version 2, which can be
+found in the file  "COPYING".  This license allows you to use 
+freely in commercial programs as long as you link with the dynamic
+library.

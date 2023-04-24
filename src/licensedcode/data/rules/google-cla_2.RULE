@@ -1,0 +1,9 @@
+---
+license_expression: google-cla
+is_license_notice: yes
+ignorable_urls:
+    - https://developers.google.com/open-source/cla/individual
+    - https://github.com/
+---
+
+Therefore   carries the same [LICENSE](https://github.com/ / /blob/master/LICENSE) as Go. Contributors retain their copyright, so you need to fill out a short form before we can accept your contribution: [Google Individual Contributor License Agreement](https://developers.google.com/open-source/cla/individual).

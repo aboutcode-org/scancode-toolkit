@@ -1,0 +1,9 @@
+---
+license_expression: proprietary-license
+is_license_notice: yes
+ignorable_urls:
+    - https://cloud.google.com/terms/service-terms#general-service-terms
+---
+
+The use of this software is governed by the Pre-GA Offering Terms section of 
+the Service Specific Terms set forth at https://cloud.google.com/terms/service-terms#general-service-terms

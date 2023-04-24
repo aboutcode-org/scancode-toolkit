@@ -1,0 +1,22 @@
+---
+license_expression: apache-2.0
+is_license_tag: yes
+ignorable_urls:
+    - http://www.opensource.org/licenses/apache2.0.php
+---
+
+<licenses>
+    <license>
+      <name>
+        All files contained in this JAR are licensed under the Apache
+         2.0 license, unless noted differently in their source (see
+         swing2swt).
+      </name>
+      <url>
+        http://www.opensource.org/licenses/apache2.0.php
+      </url>
+      <distribution>
+        repo
+      </distribution>
+    </license>
+  </licenses>

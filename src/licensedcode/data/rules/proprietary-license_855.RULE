@@ -1,0 +1,18 @@
+---
+license_expression: proprietary-license
+is_license_text: yes
+notes: http://agg.sourceforge.net/antigrain.com/license/index.html#toc0003
+---
+
+This software is free for non-commercial use. It may be copied,
+   modified, and redistributed provided that this copyright notice
+   is preserved on all copies. The intellectual property rights of
+   the algorithms used reside with the University of Manchester
+   Advanced Interfaces Group.
+
+   You may not use this software, in whole or in part, in support
+   of any commercial product without the express consent of the
+   author.
+
+   There is no warranty or other guarantee of fitness of this
+   software for any purpose. It is provided solely "as is".

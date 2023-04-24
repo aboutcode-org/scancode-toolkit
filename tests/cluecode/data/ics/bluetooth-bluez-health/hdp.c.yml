@@ -3,9 +3,10 @@ what:
   - holders
   - holders_summary
 copyrights:
-  - Copyright (c) 2010 GSyC/LibreSoft, Universidad Rey Juan Carlos
+  - Copyright (c) 2010 GSyC/LibreSoft, Universidad Rey Juan Carlos. Authors Santiago Carot Nemesio
 holders:
-  - GSyC/LibreSoft, Universidad Rey Juan Carlos
+  - GSyC/LibreSoft, Universidad Rey Juan Carlos. Authors Santiago Carot Nemesio
 holders_summary:
-  - value: GSyC/LibreSoft, Universidad Rey Juan Carlos
+  - value: GSyC/LibreSoft, Universidad Rey Juan Carlos. Authors Santiago Carot Nemesio
     count: 1
+notes: we should not mix authors in copyright

@@ -1,0 +1,9 @@
+---
+license_expression: warranty-disclaimer
+is_license_notice: yes
+---
+
+Please note:  USAGE WITHOUT ANY WARRANTY, THE SOFTWARE IS PROVIDED "AS IS".
+# USE IT AT your OWN RISK!
+# Seriously! The threat is you run this code on your computer and untrusted input e.g.
+# could be supplied from a server you are querying.

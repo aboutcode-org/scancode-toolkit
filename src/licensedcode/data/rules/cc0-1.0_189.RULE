@@ -1,0 +1,10 @@
+---
+license_expression: cc0-1.0
+is_license_notice: yes
+relevance: 100
+notes: Seen in https://raw.githubusercontent.com/ruby/ruby/master/LEGAL
+ignorable_urls:
+    - https://creativecommons.org/choose/zero/
+---
+
+These files are licensed under the {CC0}[https://creativecommons.org/choose/zero/].

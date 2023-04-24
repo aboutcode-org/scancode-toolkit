@@ -1,0 +1,46 @@
+---
+license_expression: proprietary-license
+is_license_text: yes
+notes: https://github.com/andrastantos/cray-sim/blob/ac26629e290288964c9721adff980a55415a70c4/LICENSE
+ignorable_copyrights:
+    - Copyright 2004-2020 Andras Tantos and Modular Circuits
+ignorable_holders:
+    - Andras Tantos and Modular Circuits
+ignorable_authors:
+    - Andras Tantos and Modular Circuits
+---
+
+H-Storm Non-Commercial License (HSNCL)
+
+Copyright 2004-2020 Andras Tantos and Modular Circuits. All rights reserved.
+
+Redistribution and use in source or binary forms, or incorporated into a 
+physical (hardware) product, with or without modification, are permitted for 
+non-commercial use only, provided that the following conditions are met:
+
+- The redistribution doesn't result in financial gain.
+- Redistributions of source code must retain the above copyright notice, this 
+  list of conditions and the following disclaimer.
+- Redistributions in any other form must contain in printed or electronical 
+  format the above copyright notice, this list of conditions and the following 
+  disclaimer in the documentation and/or other materials provided with the 
+  distribution.
+- All advertising materials mentioning features or use of this technology must 
+  display the following acknowledgment:
+     This product includes H-Storm technology developed by Andras Tantos 
+     and Modular Circuits.
+- Neither the name of Andras Tantos or Modular Circuits may be used to endorse 
+  or promote products derived from or using this technology without specific 
+  prior written permission.
+
+ALL THE INFORMATION, TECHNOLOGY, AND SOFTWARE IS PROVIDED BY THE AUTHORS 
+"AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, 
+THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE 
+ARE DISCLAIMED. IN NO EVENT SHALL ANDRAS TANTOS, MODULAR CIRCUITS OR 
+CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, 
+EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, 
+PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; 
+OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, 
+WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR 
+OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE OR TECHNOLOGY, 
+EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.

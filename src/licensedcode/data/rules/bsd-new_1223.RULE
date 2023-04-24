@@ -1,0 +1,10 @@
+---
+license_expression: bsd-new
+is_license_reference: yes
+relevance: 99
+referenced_filenames:
+    - license_bsd.md
+---
+
+[BSD License]
+license_bsd.md

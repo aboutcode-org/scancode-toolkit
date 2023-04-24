@@ -1,0 +1,17 @@
+---
+license_expression: other-permissive
+is_license_text: yes
+notes: Seen in https://metadata.ftp-master.debian.org/changelogs//main/s/symlinks/symlinks_1.4-3_copyright
+---
+
+freely distributable
+
+ Just to clarify, this is 100% freeware,
+written entirely by myself.  The intent is to use it to detect
+missing/obsolete symlink targets on an installed distro, before
+creating the "gold" (or "final") release discs.
+
+Use and distribute and modify as you (or anyone else) sees fit.
+There have no formal restrictions or requirements whatsoever
+regarding distribution of either binaries or source code,
+whether modified or original.

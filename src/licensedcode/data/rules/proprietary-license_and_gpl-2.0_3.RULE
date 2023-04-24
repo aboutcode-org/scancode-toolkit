@@ -1,0 +1,33 @@
+---
+license_expression: proprietary-license AND gpl-2.0
+is_license_text: yes
+ignorable_urls:
+    - https://support.brother.com/g/s/agreement/English_gpl/agree.html
+---
+
+This Agreement provides terms and conditions for license grant for use of the software that is distributed with this Agreement ("Software") from Brother Industries, Ltd. ("Brother") to recipients thereof ("You").
+
+Note:
+Please click on "I Accept" while holding down "Shift" or right click on "I Accept" and select "Save Target As,,," from the menu. 
+
+1.The Software is comprised of the following software modules:
+
+(1) Certain software modules that is the subject of GNU GENERAL PUBLIC LICENSE ("GPL Modules"), and 
+(2) Other software modules ("Non-GPL Modules") 
+
+You may distinguish each of GPL Modules by downloading source files of the Software as Brother separately makes available and reading such files.
+
+2.Your use of all GPL Modules shall be subject to the terms and conditions of GNU GENERAL PUBLIC LICENSE Version 2, June 1991 ("GPLv2"). Please see https://support.brother.com/g/s/agreement/English_gpl/agree.html. You shall use GPL Modules in accordance with the terms and conditions of GPLv2. Your use of GPL Modules shall be deemed as your agreement to the terms and conditions of GPLv2.
+
+3.You have the right to use all Non-GPL Modules only in accordance with the following terms and conditions. Your use of Non-GPL Modules shall be deemed as your agreement to the following terms and conditions:
+(1) Brother retains any and all copyrights to Non-GPL Modules. In no case this Agreement shall be construed to assign or otherwise transfer from Brother to you any copyrights or other intellectual property rights to whole or any part of Non-GPL Modules.
+
+(2) Brother grants you a non-exclusive license to reproduce and/or distribute (via Internet or in any other manner) Non-GPL Modules. Brother further grants you a non-exclusive license to modify, alter, translate or otherwise prepare derivative works of Non-GPL Modules and to reproduce and/or distribute (via Internet or in any other manner) such modification, alteration, translation or other derivative works of Non-GPL Modules.
+
+(3) When you distribute (via Internet or in any other manner) Non-GPL Modules or any modification, alteration, translation or other derivative works thereof under the license granted in accordance with subparagraph 3(2) above, you must expressly grant any and all recipient thereof the license equivalent to this Agreement which applies to Non-GPL Modules.
+
+(4) The license of Non-GPL Modules from Brother hereunder is granted "AS IS. BROTHER HEREBY DISCLAIMS ANY WARRANTIES WITH RESPECT TO NON-GPL MODULES, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO WARRANTY FOR THE QUALITY, MERCHANTABILITY, FITNESS FOR PARTICULAR PURPOSE OR NON-INFRINGEMENT. 
+
+(5) To the extent allowed by applicable laws, Brother shall have no liability in contract, tort (including negligence or breach of statutory duty) or otherwise for any interruption of use, loss of data, or for any indirect, incidental, punitive or consequential loss or damage, or for any loss of profit, revenue, data, goodwill or anticipated savings that arises under, out of, or in contemplation of this Agreement or otherwise arises due to any error, inaccuracy or defect in Non-GPL Modules even if Brother has been advised of the possibility of such loss or damage.
+
+(6) The form in which Non-GPL Modules is distributed is subject to Brothers sole discretion. Brother does not have any obligation to distribute or disclose Non-GPL Modules in source code form. In no case shall this Agreement be deemed as Brothers express or implied agreement to disclose source code of Non-GPL Modules.

@@ -1,0 +1,9 @@
+---
+license_expression: python
+is_license_notice: yes
+minimum_coverage: 100
+notes: Seen in https://github.com/python/cpython/blob/b511d3512ba334475201baf4d9db7c4d28f0a9ad/Lib/unittest/__init__.py
+---
+
+Python unit testing framework, based on Erich Gamma's JUnit and Kent Beck's
+Smalltalk testing framework (used with permission).

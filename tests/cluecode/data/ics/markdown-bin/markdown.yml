@@ -4,13 +4,17 @@ what:
   - holders_summary
 copyrights:
   - Copyright 2007, 2008 The Python Markdown Project
+  - Copyright 200? Django Software Foundation
   - Copyright 2004, 2005, 2006 Yuri Takhteyev
   - Copyright 2004 Manfred Stienstra
 holders:
   - The Python Markdown Project
+  - 200? Django Software Foundation
   - Yuri Takhteyev
   - Manfred Stienstra
 holders_summary:
+  - value: 200? Django Software Foundation
+    count: 1
   - value: Manfred Stienstra
     count: 1
   - value: The Python Markdown Project

@@ -4,8 +4,12 @@ what:
   - holders_summary
 copyrights:
   - Copyright (c) 2000 by ThisOldHouse
+  - (c) by author's name
 holders:
   - ThisOldHouse
+  - author's name
 holders_summary:
   - value: ThisOldHouse
+    count: 1
+  - value: author's name
     count: 1
