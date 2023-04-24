@@ -3,7 +3,7 @@
 pyproject.toml export-subst
 
 # data in the tests should be kept as is
-**/data/** binary
+test/**/data/** binary
 **/assets/** binary
 **/samples/** binary
 *.pyz binary
