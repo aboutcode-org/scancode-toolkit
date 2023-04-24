@@ -1,0 +1,10 @@
+---
+license_expression: proprietary-license
+is_license_reference: yes
+relevance: 100
+ignorable_urls:
+    - https://gradle.com/legal/terms-of-service
+---
+
+Gradle Terms of Service
+https://gradle.com/legal/terms-of-service

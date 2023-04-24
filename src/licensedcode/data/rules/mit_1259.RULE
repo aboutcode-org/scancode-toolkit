@@ -1,0 +1,10 @@
+---
+license_expression: mit
+is_license_notice: yes
+relevance: 100
+notes: Seen in https://raw.githubusercontent.com/twbs/bootstrap/e5643aaa89eb67327a5b4abe7db976f0ea276b70/README.md
+ignorable_urls:
+    - https://github.com/twbs/bootstrap/blob/main/LICENSE
+---
+
+Code released under the [MIT License](https://github.com/twbs/bootstrap/blob/main/LICENSE).

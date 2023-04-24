@@ -1,0 +1,15 @@
+---
+license_expression: proprietary-license
+is_license_text: yes
+notes: https://raw.githubusercontent.com/finalburnneo/FBNeo/master/src/license.txt
+---
+
+You may freely use, modify, and distribute both the  source code and binary, however the following
+restrictions apply to the  original material (see below for a list of libraries with differing licenses, 
+please consult their respective documentation for more information):
+
+ - You may not sell, lease, rent or otherwise seek to gain monetary profit from ;
+ - You must make public any changes you make to the source code;
+ - You must include, verbatim, the full text of this license;
+ - You may not distribute  with ROM images unless you have the legal right to distribute them;
+ - You may not ask for donations to support your work on any project that uses the  source code.

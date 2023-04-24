@@ -1,0 +1,10 @@
+---
+license_expression: proprietary-license
+is_license_text: yes
+notes: Copyright (c)2001 Dave (formally of www.finalburn.com), all rights reserved. This refers
+    to all code except where stated otherwise (e.g. unzip and zlib code).
+---
+
+"You can use, modify and redistribute this code freely as long as you don't do so commercially. 
+This copyright notice must remain with the code. If your program uses this code, you must either 
+distribute or link to the source code. If you modify or improve this code, you must distribute the source code improvements."
