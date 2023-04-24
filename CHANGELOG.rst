@@ -197,6 +197,12 @@ License detection:
 
   See https://github.com/nexB/scancode-toolkit/issues/3219
 
+- A bugfix has been added to the ``--unknown-licenses`` option where
+  we would crash when using this option without using ``--matched-text``
+  option. This is now working correctly and also better tested.
+
+  See https://github.com/nexB/scancode-toolkit/issues/3343
+
 v31.2.5 - 2023-04-21
 ----------------------------------
 
