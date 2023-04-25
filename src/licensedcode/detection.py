@@ -279,7 +279,10 @@ class LicenseDetection:
         """
         data = []
         for match in self.matches:
-            tokenized_matched_text = tuple(query_tokenizer(match.matched_text()))
+            if isinstance(match.matched_text, str):
+                tokenized_matched_text = tuple(query_tokenizer(match.matched_text))
+            else:
+                tokenized_matched_text = tuple(query_tokenizer(match.matched_text()))
             identifier = (
                 match.rule.identifier,
                 match.score(),
@@ -749,6 +752,16 @@ class UniqueDetection:
             if hasattr(detection, "detection_log"):
                 if detection.detection_log:
                     detection_log.extend(detection.detection_log)
+
+            if not detection.license_expression:
+                detection.license_expression = str(combine_expressions(
+                    expressions=[
+                        match.rule.license_expression
+                        for match in detection.matches
+                    ]
+                ))
+                detection.identifier = detection.identifier_with_expression 
+
 
             unique_license_detections.append(
                 cls(
@@ -1341,7 +1354,10 @@ def get_ambiguous_license_detections_by_type(unique_license_detections):
     ambi_license_detections = {}
 
     for detection in unique_license_detections:
-        if is_undetected_license_matches(license_matches=detection.matches):
+        if not detection.license_expression:
+            ambi_license_detections[DetectionCategory.MATCH_FRAGMENTS.value] = detection
+
+        elif is_undetected_license_matches(license_matches=detection.matches):
             ambi_license_detections[DetectionCategory.UNDETECTED_LICENSE.value] = detection
 
         elif "unknown" in detection.license_expression:

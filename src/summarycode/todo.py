@@ -368,6 +368,9 @@ def get_review_comments(detection_log):
     if LicenseDetectionCategory.UNKNOWN_MATCH.value in detection_log:
         review_comments[LicenseDetectionCategory.UNKNOWN_MATCH.value] = ReviewComments.UNKNOWN_MATCH.value
 
+    if LicenseDetectionCategory.MATCH_FRAGMENTS.value in detection_log:
+        review_comments[LicenseDetectionCategory.MATCH_FRAGMENTS.value] = ReviewComments.MATCH_FRAGMENTS.value
+
     if LicenseDetectionCategory.LICENSE_CLUES.value in detection_log:
         review_comments[LicenseDetectionCategory.LICENSE_CLUES.value] = ReviewComments.LICENSE_CLUES.value
 

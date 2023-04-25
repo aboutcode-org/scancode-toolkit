@@ -21,7 +21,7 @@ from scancode_config import REGEN_TEST_FIXTURES
 
 class TestScanReview(FileDrivenTesting):
 
-    test_data_dir = path.join(path.dirname(__file__), 'data/review/')
+    test_data_dir = path.join(path.dirname(__file__), 'data/todo/')
 
     def test_end2end_todo_works_on_codebase_without_ambiguous_detections(self):
         test_dir = self.get_test_loc('no_todo/base64-arraybuffer-0.1.4/')
@@ -92,3 +92,17 @@ class TestScanReview(FileDrivenTesting):
             '--json-pp', final_result_file
         ])
         check_json_scan(expected_file, final_result_file, remove_uuid=True, remove_file_date=True, regen=REGEN_TEST_FIXTURES)
+
+    def test_end2end_todo_works_on_license_clues_diagnostics(self):
+        test_dir = self.get_test_loc('todo_present/README.multi-orig-tarball-package')
+        result_file = self.get_temp_file('json')
+        expected_file = self.get_test_loc('todo_present/README.multi-orig-tarball-package-expected-diag.json')
+        run_scan_click([
+            '--license',
+            '--license-text',
+            '--license-diagnostics',
+            '--license-text-diagnostics',
+            '--todo',
+            '--json-pp', result_file, test_dir
+        ])
+        check_json_scan(expected_file, result_file, remove_uuid=True, remove_file_date=True, regen=REGEN_TEST_FIXTURES)
