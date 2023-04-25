@@ -215,6 +215,27 @@ the latest release v32.x, and is also being backported
 now to v31.2.x
 
 
+v31.2.6 - 2023-04-25
+----------------------------------
+
+This is a minor hotfix release.
+
+This fix a crash when parsing a .deb Dbeian package filename
+reported in https://github.com/nexB/scancode-toolkit/issues/3259
+
+
+v31.2.5 - 2023-01-09
+----------------------------------
+
+This is a minor fix backport release.
+
+This adds license rule changes and was requested here: 
+https://github.com/nexB/scancode-toolkit/issues/3310
+This was originally merged in #3218 and included in
+the latest release v32.x, and is also being backported
+now to v31.2.x
+
+
 v31.2.4 - 2023-01-09
 ----------------------------------
 
