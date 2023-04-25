@@ -335,13 +335,18 @@
       "identifier": "gpl_3_0_and_lgpl_3_0_and_gpl_2_0-ee9a67a8-9de9-86d0-077b-8e6f7f285b72",
       "license_expression": "gpl-3.0 AND lgpl-3.0 AND gpl-2.0",
       "detection_count": 1,
-      "detection_log": []
+      "detection_log": [
+        "possible-false-positive",
+        "not-license-clues-as-more-detections-present"
+      ]
     },
     {
       "identifier": "gpl_2_0_plus_and_free_unknown_and_gpl_1_0_plus-4f5c7c7f-d0ee-f1dc-ad8b-236131aab65b",
       "license_expression": "gpl-2.0-plus AND free-unknown AND gpl-1.0-plus",
       "detection_count": 1,
-      "detection_log": []
+      "detection_log": [
+        "unknown-match"
+      ]
     },
     {
       "identifier": "gpl_1_0_plus_and_lgpl_3_0_plus_and_gpl_3_0_and_lgpl_3_0-3bd18dcd-0a4c-d46f-f42e-3d2919be9be0",
@@ -371,7 +376,9 @@
       "identifier": "gpl-3.0 AND lgpl-3.0 AND gpl-2.0 AND gpl-2.0-plus AND free-unknown AND gpl-1.0-plus AND lgpl-3.0-plus AND cc-by-sa-3.0 AND cc-by-sa-4.0 AND dco-1.1-d4083501-8104-7348-1d78-cf10fabc2187",
       "license_expression": "gpl-3.0 AND lgpl-3.0 AND gpl-2.0 AND gpl-2.0-plus AND free-unknown AND gpl-1.0-plus AND lgpl-3.0-plus AND cc-by-sa-3.0 AND cc-by-sa-4.0 AND dco-1.1",
       "detection_count": 1,
-      "detection_log": []
+      "detection_log": [
+        "unknown-reference-in-file-to-package"
+      ]
     },
     {
       "identifier": "gpl_3_0_plus-494d0068-7138-a14f-4cbb-fd2137263a4f",
