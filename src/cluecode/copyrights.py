@@ -383,9 +383,6 @@ def get_tokens(numbered_lines, splitter=re.compile(r'[\t =;]+').split):
             tok = tok.strip("' ")
             # strip trailing colons?
             tok = tok.rstrip(':').strip()
-            # strip leading @
-            # why? this is for javadoc-style tags like @link or @ autho
-            tok = tok.lstrip('@').strip()
             # the tokenizer allows a sinble colon or dot to be atoken and we discard these
             if tok and tok != ':' and tok != '.':
                 yield Token(value=tok, start_line=start_line, pos=pos)
@@ -610,6 +607,9 @@ patterns = [
     # rare typo copyrighy
     (r'^Copyrighy$', 'COPY'),
 
+    # OSGI
+    (r'^Bundle-Copyright', 'COPY'),
+ 
     # (c)opyright and (c)opyleft, we ignore case
     (r'^(?i:\(c\)opy(rights?|righted|left))$', 'COPY'),
 
@@ -620,6 +620,9 @@ patterns = [
 
     # with a trailing comma
     (r'^Copyright,$', 'COPY'),
+
+    # as javadoc
+    (r'^@[Cc]opyrights?:?$', 'COPY'),
 
     (r'^\(C\)\,?$', 'COPY'),
     (r'^\(c\)\,?$', 'COPY'),
@@ -843,6 +846,8 @@ patterns = [
     (r'^Conditioned$', 'JUNK'),
     (r'^Disclaimer$', 'JUNK'),
     (r'^Warranty$', 'JUNK'),
+    (r'^Configure$', 'JUNK'),
+    (r'^Excluded$', 'JUNK'),
     (r'^Represents$', 'JUNK'),
     (r'^Sufficient$', 'JUNK'),
     (r'^Each$', 'JUNK'),
@@ -1003,7 +1008,7 @@ patterns = [
     (r'^CONTRIBUTORS?[,\.]?$', 'JUNK'),
     (r'^OTHERS?[,\.]?$', 'JUNK'),
     (r'^Contributors?\:[,\.]?$', 'JUNK'),
-    (r'^Version$', 'JUNK'),
+    (r'^\(?Version$', 'JUNK'),
 
     # JUNK from binary
     (r'^x1b|1H$', 'JUNK'),
@@ -1014,6 +1019,19 @@ patterns = [
     (r'^\$?Guid$', 'JUNK'),
     (r'^Small$', 'NN'),
     (r'^ZoY', 'JUNK'),
+    (r'^implementing', 'JUNK'),
+    (r'^Unlike', 'JUNK'),
+    (r'^using', 'JUNK'),
+    (r'^new', 'JUNK'),
+    (r'^param', 'JUNK'),
+    
+    # "Es6ToEs3ClassSideInheritance. and related names
+    (r"[A-Z]([a-zA-Z]*[0-9])+[a-zA-Z]+[\.,]?", 'JUNK'),
+
+    # short 
+    (r"^[A-Z][0-9]$", 'JUNK'),
+    #(r"^[A-Z][a-z]$", 'NN'),
+     
 
     ############################################################################
     # Nouns and proper Nouns
@@ -1046,8 +1064,9 @@ patterns = [
     (r'^Activation\.?$', 'NN'),
     (r'^Act[\.,]?$', 'NN'),
     (r'^Added$', 'NN'),
-    (r'^Are$', 'NN'),
     (r'^Additional$', 'NN'),
+    (r'^Are$', 'NN'),
+    (r'^AST$', 'NN'),
     (r'^AGPL.?$', 'NN'),
     (r'^Agreements?\.?$', 'NN'),
     (r'^AIRTM$', 'NN'),
@@ -1064,12 +1083,14 @@ patterns = [
     (r'^BSD$', 'NN'),
     (r'^BUT$', 'NN'),
     (r'^But$', 'NN'),
+    (r'^Builder.$', 'NN'),
     (r'^Cases$', 'NN'),
     (r'^Change\.?[lL]og$', 'NN'),
     (r'^CHANGElogger$', 'NN'),
     (r'^CHANGELOG$', 'NN'),
     (r'^CHANGES$', 'NN'),
     (r'^Code$', 'NN'),
+    (r'^Collators?$', 'NN'),
     (r'^Commercial', 'NN'),
     (r'^Commons$', 'NN'),
     # TODO: Compilation could be JUNK?
@@ -1195,6 +1216,7 @@ patterns = [
     (r'^POSIX$', 'NN'),
     (r'^Possible', 'NN'),
     (r'^Powered$', 'NN'),
+    (r'^defined$', 'NN'),
     (r'^Predefined$', 'NN'),
     (r'^Products?\.?$', 'NN'),
     (r'^PROFESSIONAL?\.?$', 'NN'),
@@ -1208,14 +1230,16 @@ patterns = [
     (r'^Read$', 'NN'),
     (r'^RECURSIVE$', 'NN'),
     (r'^Redistribution', 'NN'),
-    (r'^References', 'NN'),
+    (r'^Refactor$', 'NN'),
+    (r'^References?$', 'NN'),
     (r'^Related$', 'NN'),
-    (r'^Release', 'NN'),
-    (r'^Revision', 'NN'),
+    (r'^Release$', 'NN'),
+    (r'^Revisions?$', 'NN'),
+    (r'^Rule$', 'NN'),
     (r'^RIGHT', 'NN'),
     (r'^[Rr]espective', 'NN'),
     (r'^SAX$', 'NN'),
-    (r'^Section', 'NN'),
+    (r'^Sections?$', 'NN'),
     (r'^Send$', 'NN'),
     (r'^Separa', 'NN'),
     (r'^Service$', 'NN'),
@@ -1355,6 +1379,8 @@ patterns = [
 
     # Title case word with a trailing parens is an NNP
     (r'^[A-Z][a-z]{3,}\)$', 'NNP'),
+    # Title case word with a leading parens is an NNP
+    (r'^\([A-Z][a-z]{3,}$', 'NNP'),
 
     # names with a slash that are NNP
     # Research/Unidata, LCS/Telegraphics.
@@ -1553,7 +1579,11 @@ patterns = [
     (r'^[Aa]uthors|author\'$', 'AUTHS'),
     (r'^[Aa]uthor\(s\)$', 'AUTHS'),
     (r'^[Aa]uthor\(s\)\.?$', 'AUTHDOT'),
-    (r'^@author$', 'AUTH'),
+    # as javadoc
+    (r'^@[Aa]uthors?:?$', 'AUTH'),
+
+    # et al.
+    (r'^al\.$', 'AUTHDOT'),
 
     (r'^[Cc]ontribut(ors|ing)\.?$', 'CONTRIBUTORS'),
     (r'^contributors,$', 'CONTRIBUTORS'),
@@ -1766,7 +1796,7 @@ patterns = [
 
     # a .sh shell scripts is NOT an email.
     (r'^.*\.sh\.?$', 'JUNK'),
-    # email eventually in parens or brackets with some trailing punct.
+    # email eventually in parens or brackets with some trailing punct. Note the @ or "at "
     (r'^[\<\(]?[a-zA-Z0-9]+[a-zA-Z0-9\+_\-\.\%]*(@|at)[a-zA-Z0-9][a-zA-Z0-9\+_\-\.\%]+\.[a-zA-Z]{2,5}?[\>\)\.\,]*$', 'EMAIL'),
 
     # URLS such as <(http://fedorahosted.org/lohit)> or ()
@@ -2099,6 +2129,9 @@ grammar = """
     COMPANY: {<BY> <NN> <COMPANY> <OF> <NNP> <CC> <COMPANY>}
     COMPANY: {<COMPANY> <CC> <AUTH|CONTRIBUTORS|AUTHS>}        #810
 
+    # A community of developers
+    COMPANY: {<NN> <COMP|COMPANY> <OF> <MAINT>}        #815
+
     #  Copyright (c) 2002-2010 The ANGLE Project Authors
     COMPANY: {<NN> <COMP|COMPANY>+ <AUTHS>?}        #820
 
@@ -2236,7 +2269,7 @@ grammar = """
     NAME: {<NAME> <DASH> <NAME> <CAPS>}                 #19601
 
     # the LGPL VGABios developers Team
-    COMPANY: {<NN> <CAPS> <NN> <MAINT> <COMPANY>}     #511
+    COMPANY: {<NN> <CAPS> <NN> <MAINT> <COMPANY>}     #19602
 
 #######################################
 # VARIOUS FORMS OF COPYRIGHT
@@ -2378,7 +2411,8 @@ grammar = """
 
     # Copyright (c) 2017 odahcam or Copyright (C) 2006 XStream committers.
     # or Copyright (c) 2019-2021, Open source contributors.
-    COPYRIGHT: {<COPY>+  <YR-RANGE>  <NN>+ <CONTRIBUTORS|COMMIT>? <ALLRIGHTRESERVED>?} #22793
+    # Copyright 2007 ZXing authors
+    COPYRIGHT: {<COPY>+  <YR-RANGE>  <NN>+ <CONTRIBUTORS|COMMIT|AUTHS>? <ALLRIGHTRESERVED>?} #22793
 
     # Licensed material of Foobar Company, All Rights Reserved, (C) 2005
     COPYRIGHT: {<COMPANY>  <ALLRIGHTRESERVED>  <COPYRIGHT>} #22794
@@ -2659,11 +2693,12 @@ grammar = """
     # by  Yukihiro Matsumoto matz@netlab.co.jp.
     # AUTH: {<BY> <NAME>}        #2645-3
 
-    AUTHOR: {<AUTH|CONTRIBUTORS|AUTHS>+ <NN>? <COMPANY|NAME|YR-RANGE>* <BY>? <EMAIL>+}        #2650
+    # @author anatol@google.com (Anatol Pomazau)
+    AUTHOR: {<AUTH|CONTRIBUTORS|AUTHS>+ <NN>? <COMPANY|NAME|YR-RANGE>* <BY>? <EMAIL>+ <NAME>?}        #2650
 
     AUTHOR: {<AUTH|CONTRIBUTORS|AUTHS>+ <NN>? <COMPANY|NAME|NAME-EMAIL|NAME-YEAR>+ <YR-RANGE>*}       #2660
 
-    AUTHOR: {<AUTH|CONTRIBUTORS|AUTHS>+ <YR-RANGE>+ <BY>? <COMPANY|NAME|NAME-EMAIL>+}        #2670
+    AUTHOR: {<AUTH|CONTRIBUTORS|AUTHS>+ <YR-RANGE>+ <BY>? <COMPANY|NAME|NAME-EMAIL>+ }        #2670
     AUTHOR: {<AUTH|CONTRIBUTORS|AUTHS>+ <YR-RANGE|NNP> <NNP|YR-RANGE>+}        #2680
     AUTHOR: {<AUTH|CONTRIBUTORS|AUTHS>+ <NN|CAPS>? <YR-RANGE>+}        #2690
     AUTHOR: {<COMPANY|NAME|NAME-EMAIL>+ <AUTH|CONTRIBUTORS|AUTHS>+ <YR-RANGE>+}        #2700
@@ -2697,6 +2732,9 @@ grammar = """
 
     # Author: Tim (xtimor@gmail.com)
     AUTHOR: {<AUTH>  <NNP>+ <EMAIL>+} #Author Foo joe@email.com
+
+    # developed by Atkinson, et al.
+    AUTHOR: {<AUTH> <NNP>+ <CC> <AUTHDOT> } #Atkinson, et al.
 
 
 #######################################
@@ -2885,7 +2923,7 @@ COPYRIGHTS_SUFFIXES = frozenset([
     'author',
     'all',
     'some',
-    'and'
+    'and',
 ])
 
 # Set of statements that get detected and are junk/false positive
@@ -2996,6 +3034,8 @@ COPYRIGHTS_JUNK = frozenset([
     'copyright 2001 m. y. name',
     'copyright 2001 m. y.',
     'copyright help center',
+    '(c), (c)',
+    '(c) (c)',
 ])
 
 ################################################################################
@@ -3020,6 +3060,7 @@ AUTHORS_PREFIXES = frozenset(set.union(
         'authorship',
         'or',
         'spdx-filecontributor',
+        '</b>',
     ])
 ))
 
@@ -3043,6 +3084,7 @@ AUTHORS_JUNK = frozenset([
     'may',
     'attributions',
     'the',
+    #'org.hibernate.loader.plan.spi',
 ])
 
 ################################################################################
@@ -3079,6 +3121,8 @@ HOLDERS_PREFIXES = frozenset(set.union(
         'by',
         'is',
         '(x)',
+        'and', 
+        'later',
     ])
 ))
 
@@ -3135,6 +3179,7 @@ HOLDERS_JUNK = frozenset([
 
 def remove_dupe_copyright_words(c):
     c = c.replace('SPDX-FileCopyrightText', 'Copyright')
+    c = c.replace('Bundle-Copyright', 'Copyright')
     # from .net assemblies
     c = c.replace('AssemblyCopyright', 'Copyright')
     c = c.replace('AppCopyright', 'Copyright')
@@ -3150,11 +3195,15 @@ def remove_dupe_copyright_words(c):
     c = c.replace('copyright"Copyright', 'Copyright')
     c = c.replace('copyright\' Copyright', 'Copyright')
     c = c.replace('copyright" Copyright', 'Copyright')
+    c = c.replace('Copyright @copyright', 'Copyright')
+    c = c.replace('copyright @copyright', 'Copyright')
     c = c.replace('(c) opyrighted', 'Copyright (c)')
     c = c.replace('(c) opyrights', 'Copyright (c)')
     c = c.replace('(c) opyright', 'Copyright (c)')
     c = c.replace('(c) opyleft', 'Copyleft (c)')
     c = c.replace('(c) opylefted', 'Copyleft (c)')
+    c = c.replace('and later', ' ')
+
     return c
 
 

@@ -42,7 +42,7 @@ copyrights:
   - Copyright (c) 1999 Pai-Hsiang Hsiao
   - Copyright (c) 1999 Computer Systems and Communication Lab, Institute of Information Science,
     Academia Sinica
-  - Copyright 1996 Chih-Hao Tsai Beckman Institute, University of Illinois c-tsai4@uiuc.edu
+  - Copyright 1996 Chih-Hao Tsai @ Beckman Institute, University of Illinois c-tsai4@uiuc.edu
     http://casper.beckman.uiuc.edu/~c-tsai4
   - Copyright 2000, 2001, 2002, 2003 Nara Institute of Science and Technology
   - Copyright (c) 2002 the Initial Developer
@@ -148,7 +148,7 @@ holders:
   - TaBE Project
   - Pai-Hsiang Hsiao
   - Computer Systems and Communication Lab, Institute of Information Science, Academia Sinica
-  - Chih-Hao Tsai Beckman Institute, University of Illinois
+  - Chih-Hao Tsai @ Beckman Institute, University of Illinois
   - Nara Institute of Science and Technology
   - the Initial Developer
   - Jason Evans
@@ -255,7 +255,7 @@ holders_summary:
     count: 1
   - value: Bob Ippolito
     count: 1
-  - value: Chih-Hao Tsai Beckman Institute, University of Illinois
+  - value: Chih-Hao Tsai @ Beckman Institute, University of Illinois
     count: 1
   - value: Cisco Systems
     count: 1

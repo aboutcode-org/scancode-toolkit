@@ -3,9 +3,9 @@ what:
   - holders
   - holders_summary
 copyrights:
-  - Copyright 2002, 2005 OProfile
+  - Copyright 2002, 2005 OProfile authors
 holders:
-  - OProfile
+  - OProfile authors
 holders_summary:
-  - value: OProfile
+  - value: OProfile authors
     count: 1
