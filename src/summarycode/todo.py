@@ -127,10 +127,12 @@ class AmbiguousDetectionsToDoPlugin(PostScanPlugin):
             codebase=codebase,
             ambiguous_detections=ambiguous_detections,
         )
+        todo_items = [
+            detection.to_dict()
+            for detection in ambiguous_detections
+        ]
 
-        codebase.attributes.todo.extend(
-            [detection.to_dict() for detection in ambiguous_detections]
-        )
+        codebase.attributes.todo = todo_items
 
 
 def get_ambiguous_license_detections(ambi_license_detections_by_type):
