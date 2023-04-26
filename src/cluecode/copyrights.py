@@ -609,7 +609,7 @@ patterns = [
 
     # OSGI
     (r'^Bundle-Copyright', 'COPY'),
- 
+
     # (c)opyright and (c)opyleft, we ignore case
     (r'^(?i:\(c\)opy(rights?|righted|left))$', 'COPY'),
 
@@ -637,6 +637,9 @@ patterns = [
     # A copyright line in some manifest, meta or structured files such Windows PE
     (r'^AssemblyCopyright.?$', 'COPY'),
     (r'^AppCopyright?$', 'COPY'),
+
+    # seen in binaries
+     (r'^ECopyright?$', 'COPY'),
 
     # SPDX-FileCopyrightText as defined by the FSFE Reuse project
     (r'^[Ss][Pp][Dd][Xx]-[Ff]ile[Cc]opyright[Tt]ext', 'COPY'),
@@ -1018,20 +1021,31 @@ patterns = [
 
     (r'^\$?Guid$', 'JUNK'),
     (r'^Small$', 'NN'),
-    (r'^ZoY', 'JUNK'),
-    (r'^implementing', 'JUNK'),
-    (r'^Unlike', 'JUNK'),
-    (r'^using', 'JUNK'),
-    (r'^new', 'JUNK'),
-    (r'^param', 'JUNK'),
-    
+    (r'^implementing$', 'JUNK'),
+    (r'^Unlike$', 'JUNK'),
+    (r'^using$', 'JUNK'),
+    (r'^new$', 'JUNK'),
+    (r'^param$', 'JUNK'),
+
     # "Es6ToEs3ClassSideInheritance. and related names
     (r"[A-Z]([a-zA-Z]*[0-9])+[a-zA-Z]+[\.,]?", 'JUNK'),
 
-    # short 
+    # short mixed caps with trailing cap: ZoY
+    (r"[A-Z][a-z]+[A-Z]$", 'JUNK'),
+
+    # short
     (r"^[A-Z][0-9]$", 'JUNK'),
-    #(r"^[A-Z][a-z]$", 'NN'),
-     
+
+    (r'^Tokenizers?$', 'JUNK'),
+    (r'^Analyzers?$', 'JUNK'),
+    (r'^PostingsFormats?$', 'JUNK'),
+    (r'^Comment[A-Z]', 'JUNK'),
+    (r'^fall$', 'JUNK'),
+    (r'^[Aa]nother$', 'JUNK'),
+    (r'^[Aa]acute', 'JUNK'),
+    (r'^[Aa]circumflex', 'JUNK'),
+    # first, last family name
+    (r'^[A-Z][a-z]+Name', 'JUNK'),
 
     ############################################################################
     # Nouns and proper Nouns
@@ -1072,10 +1086,12 @@ patterns = [
     (r'^AIRTM$', 'NN'),
     (r'^Android$', 'NN'),
     (r'^Any$', 'NN'),
-    (r'^Appropriate', 'NN'),
+    (r'^Appropriate$', 'NN'),
+    (r'^Expander$', 'NN'),
+    (r'^Archiver$', 'NN'),
     (r'^APPROPRIATE', 'NN'),
     (r'^Asset$', 'NN'),
-    (r'^Assignment', 'NN'),
+    (r'^Assignment?s$', 'NN'),
     (r'^Atomic$', 'NN'),
     (r'^Attribution$', 'NN'),
     (r'^[Aa]uthored$', 'NN'),
@@ -1083,8 +1099,10 @@ patterns = [
     (r'^BSD$', 'NN'),
     (r'^BUT$', 'NN'),
     (r'^But$', 'NN'),
-    (r'^Builder.$', 'NN'),
+    (r'^Builders?\.$', 'NN'),
     (r'^Cases$', 'NN'),
+    (r'^Cacute$', 'NN'),
+    (r'^Cap$', 'NN'),
     (r'^Change\.?[lL]og$', 'NN'),
     (r'^CHANGElogger$', 'NN'),
     (r'^CHANGELOG$', 'NN'),
@@ -1104,7 +1122,7 @@ patterns = [
     (r'^Custom$', 'NN'),
     (r'^Data$', 'NN'),
     (r'^Date$', 'NN'),
-    (r'^DATED', 'NN'),
+    (r'^DATED$', 'NN'),
     (r'^Delay', 'NN'),
     (r'^Derivative', 'NN'),
     (r'^DISCLAIMED', 'NN'),
@@ -1115,19 +1133,26 @@ patterns = [
     (r'^DoubleClick$', 'NN'),
     (r'^Each$', 'NN'),
     (r'^Education$', 'NN'),
+    (r'^Extended', 'NN'),
+    (r'^Digitized', 'NN'),
     (r'^E-?[Mm]ail\:?$', 'NN'),
     (r'^END$', 'NN'),
     (r'^Entity$', 'NN'),
     (r'^Example', 'NN'),
     (r'^Except', 'NN'),
+    (r'^When$', 'NN'),
+    (r'^Owner', 'NN'),
+    (r'^Image', 'NN'),
+    (r'^Supplier', 'NN'),
     (r'^Experimental$', 'NN'),
     (r'^F2Wku$', 'NN'),
     (r'^False$', 'NN'),
     (r'^FALSE$', 'NN'),
-    (r'^FAQ', 'NN'),
-    (r'^Foreign', 'NN'),
+    (r'^FAQ$', 'NN'),
+    (r'^Foreign$', 'NN'),
     (r'^From$', 'NN'),
-    (r'^Further', 'NN'),
+    (r'^Full$', 'NN'),
+    (r'^Further$', 'NN'),
     (r'^Gaim$', 'NN'),
     (r'^Generated', 'NN'),
     (r'^Glib$', 'NN'),
@@ -1171,7 +1196,12 @@ patterns = [
     (r'^Legal$', 'NN'),
     (r'^LegalTrademarks$', 'NN'),
     (r'^Library$', 'NN'),
+    (r'^Liberation$', 'NN'),
+    (r'^Sans$', 'NN'),
+    (r'^Interview', 'NN'),
+    (r'^ProducerName', 'NN'),
     (r'^Libraries$', 'NN'),
+    (r'^Initials?$', 'NN'),
     (r'^Licen[cs]e', 'NN'),
     (r'^License-Alias\:?$', 'NN'),
     (r'^Linux$', 'NN'),
@@ -1180,6 +1210,7 @@ patterns = [
     (r'^Logos?$', 'NN'),
     (r'^Luxi$', 'NN'),
     (r'^Mac$', 'NN'),
+    (r'^Mondrian', 'NN'),
     (r'^Manager$', 'NN'),
     (r'^Material$', 'NN'),
     (r'^Mode$', 'NN'),
@@ -1369,6 +1400,17 @@ patterns = [
     (r'^Handler', 'NN'),
     (r'^Unlike$', 'NN'),
     (r'^Compression$', 'NN'),
+    (r'^Letter$', 'NN'),
+
+    # dual caps not NNP
+    (r'^MakeSignature$', 'NN'),
+    (r'^CreateDialog$', 'NN'),
+    (r'^$', 'NN'),
+    (r'^$', 'NN'),
+    (r'^$', 'NN'),
+    (r'^$', 'NN'),
+    (r'^$', 'NN'),
+    (r'^$', 'NN'),
 
     # "holders" is considered Special
     (r'^([Hh]olders?|HOLDERS?)\.?,?$', 'HOLDER'),
@@ -1415,7 +1457,11 @@ patterns = [
      r'|Europe'
      r'|Lafayette'
      r'|Indiana'
-     r')[\),\.]?$', 'NNP'),
+     r'|Belgium'
+     r'|France'
+     r'|Germany'
+     r'|Sweden'
+     r')[\),\.]*$', 'NNP'),
 
     # Misc corner case combos ?(mixed, NN or CAPS) that are NNP
     (r'^Software,\',$', 'NNP'),
@@ -1517,9 +1563,12 @@ patterns = [
     (r'^(S\.?A\.?S?|Sas|sas|A\/S|AG,?|AB|Labs?|[Cc][Oo]|Research|Center|INRIA|Societe)\.?$', 'COMP'),
     # French SARL
     (r'^(SARL|S\.A\.R\.L\.)[\.,\)]*$', 'COMP'),
+
     # company suffix : AS: this is frequent beyond Norway.
-    (r'^AS.$', 'COMP'),
     (r'^AS', 'CAPS'),
+    # that's the ASF, not some legal form
+    (r'^ASF', 'CAPS'),
+    (r'^AS.$', 'COMP'),
 
     # (german) company suffix
     (r'^[Gg][Mm][Bb][Hh].?$', 'COMP'),
@@ -1568,6 +1617,9 @@ patterns = [
     # OU as in Org unit, found in some certficates
     (r'^OU$', 'OU'),
 
+    # Various rare company names/suffix
+    (r'^FedICT$', 'COMPANY'),
+
     ############################################################################
     # AUTHORS
     ############################################################################
@@ -1585,10 +1637,11 @@ patterns = [
     # et al.
     (r'^al\.$', 'AUTHDOT'),
 
-    (r'^[Cc]ontribut(ors|ing)\.?$', 'CONTRIBUTORS'),
-    (r'^contributors,$', 'CONTRIBUTORS'),
-
+    # Contributor(s)
+    (r'^[Cc]ontributors[\.]?$', 'CONTRIBUTORS'),
     (r'^Contributor[,\.]?$', 'NN'),
+    (r'^Contributing$', 'NN'),
+
     (r'^Licensor[,\.]?$', 'NN'),
 
     # same for developed, etc...
@@ -2075,6 +2128,9 @@ grammar = """
     # strip Software from Copyright (c) Ian Darwin 1995. Software
     NAME-YEAR: {<NAME>+ <YR-RANGE>}        #5611
 
+    # Copyright 2018, OpenCensus Authors
+    COPYRIGHT: {<COPY>+ <YR-RANGE> <NNP> <AUTHS>}     #1579991
+
     NAME-YEAR: {<YR-RANGE> <NNP>+ <CAPS>?} #5612
 
     #Academy of Motion Picture Arts and Sciences
@@ -2293,6 +2349,9 @@ grammar = """
     # Copyright (c) 2013-2015 Streams Standard Reference Implementation Authors
     COPYRIGHT: {<COPY>+ <NAME-YEAR> <NN|NNP>+ <AUTHS>}    #1566
 
+    # copyright: Copyright (c) Joe Joyce and contributors, 2016-2019.
+    COPYRIGHT: {<COPY>+ <NAME>  <CC>  <NN>  <YR-RANGE>} #1579992
+
     # Copyright (c) Ian F. Darwin 1986, 1987, 1989, 1990, 1991, 1992, 1994, 1995.
     COPYRIGHT: {<COPY>+ <NAME|NAME-EMAIL|NAME-YEAR>+ <YR-RANGE>*}        #157999
 
@@ -2406,7 +2465,7 @@ grammar = """
     # Copyright 1996, 1997 Linux International.
     COPYRIGHT: {<COPY>+  <YR-RANGE>  <NN>  <NNP>} #22792
 
-    # Copyright (C) 2001-2008 the LGPL VGABios developers Team 
+    # Copyright (C) 2001-2008 the LGPL VGABios developers Team
     COPYRIGHT: {<COPY>  <COPY>  <YR-RANGE>  <COMPANY>}  #22793.1
 
     # Copyright (c) 2017 odahcam or Copyright (C) 2006 XStream committers.
@@ -2456,6 +2515,9 @@ grammar = """
 
     # iClick, Inc., software copyright (c) 1999
     COPYRIGHT: {<ANDCO> <NN>? <COPYRIGHT2>}        #2590
+
+    # Portions (C) International Organization for Standardization 1986
+    COPYRIGHT: {<PORTIONS>  <COPYRIGHT> <NN>  <NNP>  <YR-RANGE>?}        #2609
 
     # portions copyright
     COPYRIGHT: {<PORTIONS> <COPYRIGHT|COPYRIGHT2>}        #2610
@@ -2527,6 +2589,9 @@ grammar = """
 
     # Copyright (C) 2005 SUSE Linux Products GmbH.
     COPYRIGHT: {<COPYRIGHT2> <CAPS> <NN> <COMPANY>} #2008
+
+    # Copyright (c) 2016-2018 JSR 371 expert group and contributors
+    COPYRIGHT: {<COPYRIGHT2>  <CAPS>  <CD>  <COMPANY>  <NAME>} #2009.1
 
     # COPYRIGHT (c) 2006 - 2009 DIONYSOS
     COPYRIGHT: {<COPYRIGHT2> <CAPS>} #2009
@@ -2676,6 +2741,10 @@ grammar = """
     # Copyright OProfile authors
     COPYRIGHT: {<COPY> <NN|NNP> <AUTHS>}         #83004
 
+    # Copyright (c) 2009-2018
+    # FedICT (federal ICT department of Belgium), e-Contract.be BVBA (https://www.e-contract.be),
+    # Bart Hanssens from FedICT
+    COPYRIGHT: {<COPYRIGHT> <NN> <NAME-CAPS> <NN> <OF> <NNP> <COMPANY>? <NAME>?}  #83004
 
 #######################################
 # Authors
@@ -2883,6 +2952,7 @@ def refine_names(s, prefixes):
 
 PREFIXES = frozenset([
     '?',
+    '??',
     '????',
     '(insert',
     'then',
@@ -3084,7 +3154,9 @@ AUTHORS_JUNK = frozenset([
     'may',
     'attributions',
     'the',
-    #'org.hibernate.loader.plan.spi',
+    'app id',
+    'project',
+    'previous lucene',
 ])
 
 ################################################################################
@@ -3121,8 +3193,10 @@ HOLDERS_PREFIXES = frozenset(set.union(
         'by',
         'is',
         '(x)',
-        'and', 
+        'and',
         'later',
+        '$',
+        'current.year',
     ])
 ))
 
@@ -3183,6 +3257,7 @@ def remove_dupe_copyright_words(c):
     # from .net assemblies
     c = c.replace('AssemblyCopyright', 'Copyright')
     c = c.replace('AppCopyright', 'Copyright')
+    c = c.replace('ECopyright', 'Copyright')
     c = c.replace('JCOPYRIGHT', 'Copyright')
     # FIXME: this should be in the grammar, but is hard to get there right
     # these are often artifacts of markup
@@ -3259,7 +3334,7 @@ def strip_trailing_period(s):
     if not s.endswith('.'):
         return s
 
-    # keep periods for short words (e.g., acronyms) 
+    # keep periods for short words (e.g., acronyms)
     if len(s) < 3:
         return s
 
