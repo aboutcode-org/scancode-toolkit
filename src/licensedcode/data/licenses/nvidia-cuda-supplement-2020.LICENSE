@@ -12,7 +12,7 @@ ignorable_copyrights:
     - Copyright (c) 2003-2010 University of Illinois at Urbana-Champaign
     - Copyright (c) 2007-2009, Regents of the University of California
     - Copyright (c) 2007-2012, Google Inc.
-    - Copyright (c) 2008-2009 Davide Barbieri University of Rome Tor Vergata
+    - Copyright (c) 2008-2009 Davide Barbieri @ University of Rome Tor Vergata
     - Copyright (c) 2009, 2010 Mutsuo Saito, Makoto Matsumoto and Hiroshima University
     - Copyright (c) 2009-2012 Zoltan Herczeg
     - Copyright (c) 2010 The University of Tennessee
@@ -26,9 +26,10 @@ ignorable_copyrights:
     - Copyright (c) 2016 OpenAI (http://openai.com), 2016 Google Inc.
     - Copyright (c) Microsoft Corporation
     - Copyright 2010-2011, D. E. Shaw Research
+    - copyright by their respective
 ignorable_holders:
     - D. E. Shaw Research
-    - Davide Barbieri University of Rome Tor Vergata
+    - Davide Barbieri @ University of Rome Tor Vergata
     - Google Inc.
     - King Abdullah University of Science and Technology
     - Microsoft Corporation
@@ -44,6 +45,7 @@ ignorable_holders:
     - University of Illinois at Urbana-Champaign
     - Yann Collet
     - Zoltan Herczeg
+    - their respective
 ignorable_authors:
     - Ahmad Abdelfattah (ahmad.ahmad@kaust.edu.sa) David Keyes (david.keyes@kaust.edu.sa)
     - Ahmad M. Abdelfattah, David Keyes, and Hatem Ltaief

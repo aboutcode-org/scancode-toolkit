@@ -14,9 +14,9 @@ spdx_license_key: OML
 text_urls:
     - https://fedoraproject.org/wiki/Licensing/Open_Market_License
 ignorable_copyrights:
-    - copyrighted by Open Market, Inc 'Open Market
+    - copyrighted by Open Market, Inc
 ignorable_holders:
-    - Open Market, Inc 'Open Market
+    - Open Market, Inc
 ---
 
 This FastCGI application library source and object code (the

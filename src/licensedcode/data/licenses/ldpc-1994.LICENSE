@@ -6,6 +6,10 @@ category: Copyleft
 owner: Linux Documentation Project
 homepage_url: http://www.ibiblio.org/gferg/ldp_old/LDP-COPYRIGHT_94.html
 spdx_license_key: LicenseRef-scancode-ldpc-1994
+ignorable_copyrights:
+    - copyrighted by their respective
+ignorable_holders:
+    - their respective
 ignorable_emails:
     - mdw@sunsite.unc.edu
 ---

@@ -16,6 +16,10 @@ other_urls:
     - https://opencontent.org/openpub/
     - https://www.ctan.org/license/opl
     - https://www.debian.org/opl
+ignorable_copyrights:
+    - (c) by author's name
+ignorable_holders:
+    - author's name
 ignorable_urls:
     - http://www.opencontent.org/openpub
 ---
