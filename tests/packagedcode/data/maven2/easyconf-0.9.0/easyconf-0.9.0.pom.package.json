@@ -11,28 +11,28 @@
   "parties": [
     {
       "type": "person",
-      "role": "developper",
+      "role": "developer",
       "name": "Jorge Ferrer",
       "email": "jferrer germinus.com",
       "url": null
     },
     {
       "type": "person",
-      "role": "developper",
+      "role": "developer",
       "name": "Jes\u00fas Jaimez",
       "email": null,
       "url": null
     },
     {
       "type": "person",
-      "role": "developper",
+      "role": "developer",
       "name": "Ismael Ferrer",
       "email": "iferrer germinus.com",
       "url": null
     },
     {
       "type": "person",
-      "role": "developper",
+      "role": "developer",
       "name": "\u00c3?lvaro Gonz\u00c3\u00a1lez",
       "email": "agonzalez germinus.com",
       "url": null

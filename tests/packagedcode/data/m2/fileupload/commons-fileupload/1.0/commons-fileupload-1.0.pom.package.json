@@ -11,49 +11,49 @@
   "parties": [
     {
       "type": "person",
-      "role": "developper",
+      "role": "developer",
       "name": "Martin Cooper",
       "email": "martinc@apache.org",
       "url": null
     },
     {
       "type": "person",
-      "role": "developper",
+      "role": "developer",
       "name": "dIon Gillard",
       "email": "dion@apache.org",
       "url": null
     },
     {
       "type": "person",
-      "role": "developper",
+      "role": "developer",
       "name": "John McNally",
       "email": "jmcnally@collab.net",
       "url": null
     },
     {
       "type": "person",
-      "role": "developper",
+      "role": "developer",
       "name": "Daniel Rall",
       "email": "dlr@finemaltcoding.com",
       "url": null
     },
     {
       "type": "person",
-      "role": "developper",
+      "role": "developer",
       "name": "Jason van Zyl",
       "email": "jason@zenplex.com",
       "url": null
     },
     {
       "type": "person",
-      "role": "developper",
+      "role": "developer",
       "name": "Robert Burrell Donkin",
       "email": "rdonkin@apache.org",
       "url": null
     },
     {
       "type": "person",
-      "role": "developper",
+      "role": "developer",
       "name": "Sean C. Sullivan",
       "email": "sean |at| seansullivan |dot| com",
       "url": null

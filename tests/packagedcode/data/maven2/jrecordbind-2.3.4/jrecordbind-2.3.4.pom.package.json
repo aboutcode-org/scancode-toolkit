@@ -11,7 +11,7 @@
   "parties": [
     {
       "type": "person",
-      "role": "developper",
+      "role": "developer",
       "name": "Federico Fissore",
       "email": "fridrik@dev.java.net",
       "url": null

@@ -11,84 +11,84 @@
   "parties": [
     {
       "type": "person",
-      "role": "developper",
+      "role": "developer",
       "name": "Morgan Delagrange",
       "email": "morgand at apache dot org",
       "url": null
     },
     {
       "type": "person",
-      "role": "developper",
+      "role": "developer",
       "name": "Rodney Waldhoff",
       "email": "rwaldhoff at apache org",
       "url": null
     },
     {
       "type": "person",
-      "role": "developper",
+      "role": "developer",
       "name": "Craig McClanahan",
       "email": "craigmcc at apache org",
       "url": null
     },
     {
       "type": "person",
-      "role": "developper",
+      "role": "developer",
       "name": "Scott Sanders",
       "email": "sanders at apache dot org",
       "url": null
     },
     {
       "type": "person",
-      "role": "developper",
+      "role": "developer",
       "name": "Robert Burrell Donkin",
       "email": "rdonkin at apache dot org",
       "url": null
     },
     {
       "type": "person",
-      "role": "developper",
+      "role": "developer",
       "name": "Peter Donald",
       "email": "donaldp at apache dot org",
       "url": null
     },
     {
       "type": "person",
-      "role": "developper",
+      "role": "developer",
       "name": "Costin Manolache",
       "email": "costin at apache dot org",
       "url": null
     },
     {
       "type": "person",
-      "role": "developper",
+      "role": "developer",
       "name": "Richard Sitze",
       "email": "rsitze at apache dot org",
       "url": null
     },
     {
       "type": "person",
-      "role": "developper",
+      "role": "developer",
       "name": "Juozas Baliuka",
       "email": "baliuka@apache.org",
       "url": null
     },
     {
       "type": "person",
-      "role": "developper",
+      "role": "developer",
       "name": "Simon Kitching",
       "email": "skitching@apache.org",
       "url": null
     },
     {
       "type": "person",
-      "role": "developper",
+      "role": "developer",
       "name": "Dennis Lundberg",
       "email": "dennisl@apache.org",
       "url": null
     },
     {
       "type": "person",
-      "role": "developper",
+      "role": "developer",
       "name": "Brian Stansberry",
       "email": null,
       "url": null

@@ -11,28 +11,28 @@
   "parties": [
     {
       "type": "person",
-      "role": "developper",
+      "role": "developer",
       "name": "Tryggvi Larusson",
       "email": "tryggvi@idega.is",
       "url": null
     },
     {
       "type": "person",
-      "role": "developper",
+      "role": "developer",
       "name": "Pall Helgason",
       "email": "palli@idega.is",
       "url": null
     },
     {
       "type": "person",
-      "role": "developper",
+      "role": "developer",
       "name": "Eirikur Sveinn Hrafnsson",
       "email": "eiki@idega.is",
       "url": null
     },
     {
       "type": "person",
-      "role": "developper",
+      "role": "developer",
       "name": "Thorhallur Helgason",
       "email": "laddi@idega.is",
       "url": null

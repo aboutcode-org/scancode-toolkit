@@ -11,126 +11,126 @@
   "parties": [
     {
       "type": "person",
-      "role": "developper",
+      "role": "developer",
       "name": "Jason van Zyl",
       "email": "jason@maven.org",
       "url": null
     },
     {
       "type": "person",
-      "role": "developper",
+      "role": "developer",
       "name": "Pete Kazmier",
       "email": null,
       "url": null
     },
     {
       "type": "person",
-      "role": "developper",
+      "role": "developer",
       "name": "James Taylor",
       "email": "james@jamestaylor.org",
       "url": null
     },
     {
       "type": "person",
-      "role": "developper",
+      "role": "developer",
       "name": "Dan Diephouse",
       "email": "dan@envoisolutions.com",
       "url": null
     },
     {
       "type": "person",
-      "role": "developper",
+      "role": "developer",
       "name": "Kasper Nielsen",
       "email": "apache@kav.dk",
       "url": null
     },
     {
       "type": "person",
-      "role": "developper",
+      "role": "developer",
       "name": "Ben Walding",
       "email": "bwalding@codehaus.org",
       "url": null
     },
     {
       "type": "person",
-      "role": "developper",
+      "role": "developer",
       "name": "Mark Wilkinson",
       "email": "mhw@kremvax.net",
       "url": null
     },
     {
       "type": "person",
-      "role": "developper",
+      "role": "developer",
       "name": "Michal Maczka",
       "email": "mmaczka@interia.pl",
       "url": null
     },
     {
       "type": "person",
-      "role": "developper",
+      "role": "developer",
       "name": "Emmanuel Venisse",
       "email": "evenisse@codehaus.org",
       "url": null
     },
     {
       "type": "person",
-      "role": "developper",
+      "role": "developer",
       "name": "Trygve Laugstol",
       "email": "trygvis@codehaus.org",
       "url": null
     },
     {
       "type": "person",
-      "role": "developper",
+      "role": "developer",
       "name": "Kenney Westerhof",
       "email": "kenney@codehaus.org",
       "url": null
     },
     {
       "type": "person",
-      "role": "developper",
+      "role": "developer",
       "name": "Carlos Sanchez",
       "email": "carlos@codehaus.org",
       "url": null
     },
     {
       "type": "person",
-      "role": "developper",
+      "role": "developer",
       "name": "Brett Porter",
       "email": "brett@codehaus.org",
       "url": null
     },
     {
       "type": "person",
-      "role": "developper",
+      "role": "developer",
       "name": "John Casey",
       "email": "jdcasey@codehaus.org",
       "url": null
     },
     {
       "type": "person",
-      "role": "developper",
+      "role": "developer",
       "name": "Andrew Williams",
       "email": "andy@handyande.co.uk",
       "url": null
     },
     {
       "type": "person",
-      "role": "developper",
+      "role": "developer",
       "name": "Rahul Thakur",
       "email": "rahul.thakur.xdev@gmail.com",
       "url": null
     },
     {
       "type": "person",
-      "role": "developper",
+      "role": "developer",
       "name": "Joakim Erdfelt",
       "email": "joakim@erdfelt.com",
       "url": null
     },
     {
       "type": "person",
-      "role": "developper",
+      "role": "developer",
       "name": "Olivier Lamy",
       "email": "olamy@codehaus.org",
       "url": null

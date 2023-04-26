@@ -11,7 +11,7 @@
   "parties": [
     {
       "type": "person",
-      "role": "developper",
+      "role": "developer",
       "name": "Jan Bartel",
       "email": "janb@apache.org",
       "url": null

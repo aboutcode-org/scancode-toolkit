@@ -11,7 +11,7 @@
   "parties": [
     {
       "type": "person",
-      "role": "developper",
+      "role": "developer",
       "name": "Stefan Haustein",
       "email": "sh@kobjects.org",
       "url": null

@@ -11,14 +11,14 @@
   "parties": [
     {
       "type": "person",
-      "role": "developper",
+      "role": "developer",
       "name": "Jason van Zyl",
       "email": "jason@maven.org",
       "url": null
     },
     {
       "type": "person",
-      "role": "developper",
+      "role": "developer",
       "name": "Emmanuel Evenisse",
       "email": "emmanuel@venisse.net",
       "url": null

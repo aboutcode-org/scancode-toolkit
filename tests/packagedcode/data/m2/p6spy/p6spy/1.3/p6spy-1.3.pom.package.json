@@ -11,35 +11,35 @@
   "parties": [
     {
       "type": "person",
-      "role": "developper",
+      "role": "developer",
       "name": "Alan Arvesen",
       "email": "aarvesen@users.sourceforge.net",
       "url": null
     },
     {
       "type": "person",
-      "role": "developper",
+      "role": "developer",
       "name": "Bradley Johnson",
       "email": "bradleydot@users.sourceforge.net",
       "url": null
     },
     {
       "type": "person",
-      "role": "developper",
+      "role": "developer",
       "name": "Frank Quatro",
       "email": "cheechq@users.sourceforge.net",
       "url": null
     },
     {
       "type": "person",
-      "role": "developper",
+      "role": "developer",
       "name": "Jeff Goke",
       "email": "jeffgoke@users.sourceforge.net",
       "url": null
     },
     {
       "type": "person",
-      "role": "developper",
+      "role": "developer",
       "name": "thinknot",
       "email": "thinknot@users.sourceforge.net",
       "url": null

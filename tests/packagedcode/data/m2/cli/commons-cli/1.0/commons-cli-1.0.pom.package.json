@@ -11,21 +11,21 @@
   "parties": [
     {
       "type": "person",
-      "role": "developper",
+      "role": "developer",
       "name": "James Strachan",
       "email": "jstrachan@apache.org",
       "url": null
     },
     {
       "type": "person",
-      "role": "developper",
+      "role": "developer",
       "name": "bob mcwhirter",
       "email": "bob@werken.com",
       "url": null
     },
     {
       "type": "person",
-      "role": "developper",
+      "role": "developer",
       "name": "John Keyes",
       "email": "jbjk@mac.com",
       "url": null

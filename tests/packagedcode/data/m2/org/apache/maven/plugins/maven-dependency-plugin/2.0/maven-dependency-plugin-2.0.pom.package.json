@@ -11,21 +11,21 @@
   "parties": [
     {
       "type": "person",
-      "role": "developper",
+      "role": "developer",
       "name": "Brian Fox",
       "email": "brianf@apache.org",
       "url": null
     },
     {
       "type": "person",
-      "role": "developper",
+      "role": "developer",
       "name": "Dan T. Tran",
       "email": "dantran@gmail.com",
       "url": null
     },
     {
       "type": "person",
-      "role": "developper",
+      "role": "developer",
       "name": "John Casey",
       "email": "casey.john.d@gmail.com",
       "url": null
