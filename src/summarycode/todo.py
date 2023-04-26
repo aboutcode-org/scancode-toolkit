@@ -333,6 +333,11 @@ class ReviewComments(Enum):
         "review. scancode would likely benifit from a license rule addition "
         "from this case, so please report this to scancode-toolkit github issues."
     )
+    LOW_RELEVANCE = (
+        "The license detection needs more review as they have low score due to "
+        "the relevance of the matched rules as low, even though the match coverage "
+        "is perfect, i.e. there is an exact match."
+    )
     FALSE_POSITVE = (
         "The license detection is inconclusive, and is unlikely to be about a "
         "license as a piece of code/text is detected, and this needs to be reviewed. ",
@@ -370,6 +375,9 @@ def get_review_comments(detection_log):
 
     if LicenseDetectionCategory.MATCH_FRAGMENTS.value in detection_log:
         review_comments[LicenseDetectionCategory.MATCH_FRAGMENTS.value] = ReviewComments.MATCH_FRAGMENTS.value
+    
+    if LicenseDetectionCategory.LOW_RELEVANCE.value in detection_log:
+        review_comments[LicenseDetectionCategory.LOW_RELEVANCE.value] = ReviewComments.LOW_RELEVANCE.value
 
     if LicenseDetectionCategory.LICENSE_CLUES.value in detection_log:
         review_comments[LicenseDetectionCategory.LICENSE_CLUES.value] = ReviewComments.LICENSE_CLUES.value

@@ -76,6 +76,9 @@ IMPERFECT_MATCH_COVERAGE_THR = 100
 # Values of match_coverage less than this are reported as `license_clues` matches
 CLUES_MATCH_COVERAGE_THR = 60
 
+# Low Relevance threshold
+LOW_RELEVANCE_THRESHOLD = 70
+
 # False positives to spurious and gibberish texts are found usually later in the file
 # and matched to relatively short rules
 # Threshold Value of start line after which a match to likely be a false positive
@@ -104,7 +107,8 @@ class DetectionCategory(Enum):
     IMPERFECT_COVERAGE = 'imperfect-match-coverage'
     FALSE_POSITVE = 'possible-false-positive'
     UNDETECTED_LICENSE = 'undetected-license'
-    MATCH_FRAGMENTS = 'match_fragments'
+    MATCH_FRAGMENTS = 'match-fragments'
+    LOW_RELEVANCE = 'low-relevance'
 
 
 class DetectionRule(Enum):
@@ -924,6 +928,17 @@ def has_extra_words(license_matches):
     )
 
 
+def has_low_rule_relevance(license_matches):
+    """
+    Return True if any on the matches in ``license_matches`` List of LicenseMatch
+    objects has a match with low score because of low rule relevance. 
+    """
+    return any(
+        license_match.rule.relevance < LOW_RELEVANCE_THRESHOLD 
+        for license_match in license_matches
+    )
+
+
 def is_false_positive(license_matches, package_license=False):
     """
     Return True if all of the matches in ``license_matches`` List of LicenseMatch
@@ -1372,6 +1387,9 @@ def get_ambiguous_license_detections_by_type(unique_license_detections):
 
         elif has_extra_words(license_matches=detection.matches):
             ambi_license_detections[DetectionCategory.EXTRA_WORDS.value] = detection
+
+        elif has_low_rule_relevance(license_matches=detection.matches):
+            ambi_license_detections[DetectionCategory.LOW_RELEVANCE.value] = detection
 
     return ambi_license_detections
 
