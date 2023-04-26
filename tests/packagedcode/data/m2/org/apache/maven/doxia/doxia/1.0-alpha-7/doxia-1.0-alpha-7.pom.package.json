@@ -11,21 +11,21 @@
   "parties": [
     {
       "type": "person",
-      "role": "developper",
+      "role": "developer",
       "name": "Jason van Zyl",
       "email": "jason@maven.org",
       "url": null
     },
     {
       "type": "person",
-      "role": "developper",
+      "role": "developer",
       "name": "Brett Porter",
       "email": "brett@apache.org",
       "url": null
     },
     {
       "type": "person",
-      "role": "developper",
+      "role": "developer",
       "name": "Emmanuel Venisse",
       "email": "emmanuel@venisse.net",
       "url": null

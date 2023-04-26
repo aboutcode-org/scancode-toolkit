@@ -11,35 +11,35 @@
   "parties": [
     {
       "type": "person",
-      "role": "developper",
+      "role": "developer",
       "name": "Will Glass-Husain",
       "email": "wglass@forio.com",
       "url": null
     },
     {
       "type": "person",
-      "role": "developper",
+      "role": "developer",
       "name": "Geir Magnusson Jr.",
       "email": "geirm@optonline.net",
       "url": null
     },
     {
       "type": "person",
-      "role": "developper",
+      "role": "developer",
       "name": "Daniel Rall",
       "email": "dlr@finemaltcoding.com",
       "url": null
     },
     {
       "type": "person",
-      "role": "developper",
+      "role": "developer",
       "name": "Henning P. Schmiedehausen",
       "email": "hps@intermeta.de",
       "url": null
     },
     {
       "type": "person",
-      "role": "developper",
+      "role": "developer",
       "name": "Nathan Bubna",
       "email": "nathan@esha.com",
       "url": null

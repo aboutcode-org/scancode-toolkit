@@ -400,21 +400,21 @@
       "parties": [
         {
           "type": "person",
-          "role": "developper",
+          "role": "developer",
           "name": "bob mcwhirter",
           "email": "bob@werken.com",
           "url": null
         },
         {
           "type": "person",
-          "role": "developper",
+          "role": "developer",
           "name": "Jason van Zyl",
           "email": "jason@zenplex.com",
           "url": null
         },
         {
           "type": "person",
-          "role": "developper",
+          "role": "developer",
           "name": "Ben Walding",
           "email": "ben@walding.com",
           "url": null
@@ -477,49 +477,49 @@
       "parties": [
         {
           "type": "person",
-          "role": "developper",
+          "role": "developer",
           "name": "Martin Cooper",
           "email": "martinc@apache.org",
           "url": null
         },
         {
           "type": "person",
-          "role": "developper",
+          "role": "developer",
           "name": "dIon Gillard",
           "email": "dion@apache.org",
           "url": null
         },
         {
           "type": "person",
-          "role": "developper",
+          "role": "developer",
           "name": "John McNally",
           "email": "jmcnally@collab.net",
           "url": null
         },
         {
           "type": "person",
-          "role": "developper",
+          "role": "developer",
           "name": "Daniel Rall",
           "email": "dlr@finemaltcoding.com",
           "url": null
         },
         {
           "type": "person",
-          "role": "developper",
+          "role": "developer",
           "name": "Jason van Zyl",
           "email": "jason@zenplex.com",
           "url": null
         },
         {
           "type": "person",
-          "role": "developper",
+          "role": "developer",
           "name": "Robert Burrell Donkin",
           "email": "rdonkin@apache.org",
           "url": null
         },
         {
           "type": "person",
-          "role": "developper",
+          "role": "developer",
           "name": "Sean C. Sullivan",
           "email": "sean |at| seansullivan |dot| com",
           "url": null
@@ -575,70 +575,70 @@
       "parties": [
         {
           "type": "person",
-          "role": "developper",
+          "role": "developer",
           "name": "Don Brown",
           "email": "mrdon@apache.org",
           "url": null
         },
         {
           "type": "person",
-          "role": "developper",
+          "role": "developer",
           "name": "Martin Cooper",
           "email": "martinc@apache.org",
           "url": null
         },
         {
           "type": "person",
-          "role": "developper",
+          "role": "developer",
           "name": "David Graham",
           "email": "dgraham@apache.org",
           "url": null
         },
         {
           "type": "person",
-          "role": "developper",
+          "role": "developer",
           "name": "Ted Husted",
           "email": "husted@apache.org",
           "url": null
         },
         {
           "type": "person",
-          "role": "developper",
+          "role": "developer",
           "name": "Rob Leland",
           "email": "rleland at apache.org",
           "url": null
         },
         {
           "type": "person",
-          "role": "developper",
+          "role": "developer",
           "name": "Craig McClanahan",
           "email": "craigmcc@apache.org",
           "url": null
         },
         {
           "type": "person",
-          "role": "developper",
+          "role": "developer",
           "name": "James Mitchell",
           "email": "jmitchell NOSPAM apache.org",
           "url": null
         },
         {
           "type": "person",
-          "role": "developper",
+          "role": "developer",
           "name": "Niall Pemberton",
           "email": "niallp NOSPAM apache.org",
           "url": null
         },
         {
           "type": "person",
-          "role": "developper",
+          "role": "developer",
           "name": "James Turner",
           "email": "turner@apache.org",
           "url": null
         },
         {
           "type": "person",
-          "role": "developper",
+          "role": "developer",
           "name": "David Winterfeldt",
           "email": "dwinterfeldt@apache.org",
           "url": null
@@ -916,28 +916,28 @@
       "parties": [
         {
           "type": "person",
-          "role": "developper",
+          "role": "developer",
           "name": "Jorge Ferrer",
           "email": "jferrer germinus.com",
           "url": null
         },
         {
           "type": "person",
-          "role": "developper",
+          "role": "developer",
           "name": "Jes\u00fas Jaimez",
           "email": null,
           "url": null
         },
         {
           "type": "person",
-          "role": "developper",
+          "role": "developer",
           "name": "Ismael Ferrer",
           "email": "iferrer germinus.com",
           "url": null
         },
         {
           "type": "person",
-          "role": "developper",
+          "role": "developer",
           "name": "\u00c3?lvaro Gonz\u00c3\u00a1lez",
           "email": "agonzalez germinus.com",
           "url": null
@@ -1000,14 +1000,14 @@
       "parties": [
         {
           "type": "person",
-          "role": "developper",
+          "role": "developer",
           "name": "Cyrill Ruettimann",
           "email": "mypublicaddress@mac.com",
           "url": null
         },
         {
           "type": "person",
-          "role": "developper",
+          "role": "developer",
           "name": "Garvin LeClaire",
           "email": "gleclaire@codehaus.org",
           "url": "http://gdleclaire.blogspot.com"
@@ -1193,7 +1193,7 @@
       "parties": [
         {
           "type": "person",
-          "role": "developper",
+          "role": "developer",
           "name": "John Doe",
           "email": "jdoe@myco.com",
           "url": null
@@ -1356,28 +1356,28 @@
       "parties": [
         {
           "type": "person",
-          "role": "developper",
+          "role": "developer",
           "name": "Tryggvi Larusson",
           "email": "tryggvi@idega.is",
           "url": null
         },
         {
           "type": "person",
-          "role": "developper",
+          "role": "developer",
           "name": "Pall Helgason",
           "email": "palli@idega.is",
           "url": null
         },
         {
           "type": "person",
-          "role": "developper",
+          "role": "developer",
           "name": "Eirikur Sveinn Hrafnsson",
           "email": "eiki@idega.is",
           "url": null
         },
         {
           "type": "person",
-          "role": "developper",
+          "role": "developer",
           "name": "Thorhallur Helgason",
           "email": "laddi@idega.is",
           "url": null
@@ -1433,7 +1433,7 @@
       "parties": [
         {
           "type": "person",
-          "role": "developper",
+          "role": "developer",
           "name": "Federico Fissore",
           "email": "fridrik@dev.java.net",
           "url": null
@@ -1710,77 +1710,77 @@
       "parties": [
         {
           "type": "person",
-          "role": "developper",
+          "role": "developer",
           "name": "Jason van Zyl",
           "email": "jason@zenplex.com",
           "url": null
         },
         {
           "type": "person",
-          "role": "developper",
+          "role": "developer",
           "name": "Pete Kazmier",
           "email": null,
           "url": null
         },
         {
           "type": "person",
-          "role": "developper",
+          "role": "developer",
           "name": "James Taylor",
           "email": "james@jamestaylor.org",
           "url": null
         },
         {
           "type": "person",
-          "role": "developper",
+          "role": "developer",
           "name": "Dan Diephouse",
           "email": "dan@envoisolutions.com",
           "url": null
         },
         {
           "type": "person",
-          "role": "developper",
+          "role": "developer",
           "name": "Kasper Nielsen",
           "email": "apache@kav.dk",
           "url": null
         },
         {
           "type": "person",
-          "role": "developper",
+          "role": "developer",
           "name": "Ben Walding",
           "email": "bwalding@codehaus.org",
           "url": null
         },
         {
           "type": "person",
-          "role": "developper",
+          "role": "developer",
           "name": "Mark Wilkinson",
           "email": "mhw@kremvax.net",
           "url": null
         },
         {
           "type": "person",
-          "role": "developper",
+          "role": "developer",
           "name": "Michal Maczka",
           "email": "mmaczka@interia.pl",
           "url": null
         },
         {
           "type": "person",
-          "role": "developper",
+          "role": "developer",
           "name": "Emmanuel Venisse",
           "email": "evenisse@codehaus.org",
           "url": null
         },
         {
           "type": "person",
-          "role": "developper",
+          "role": "developer",
           "name": "Trygve Laugstol",
           "email": "trygvis@codehaus.org",
           "url": null
         },
         {
           "type": "person",
-          "role": "developper",
+          "role": "developer",
           "name": "Kenney Westerhof",
           "email": "kenney@codehaus.org",
           "url": null
@@ -2007,14 +2007,14 @@
       "parties": [
         {
           "type": "person",
-          "role": "developper",
+          "role": "developer",
           "name": "Leif Olsen",
           "email": "loo@knowit.no",
           "url": null
         },
         {
           "type": "person",
-          "role": "developper",
+          "role": "developer",
           "name": "Ken Gullaksen",
           "email": "krg@knowit.no",
           "url": null
@@ -2430,7 +2430,7 @@
       "parties": [
         {
           "type": "person",
-          "role": "developper",
+          "role": "developer",
           "name": "Ash Lux",
           "email": "ashlux@gmail.com",
           "url": "http://www.ashlux.com/"
@@ -7103,21 +7103,21 @@
           "parties": [
             {
               "type": "person",
-              "role": "developper",
+              "role": "developer",
               "name": "bob mcwhirter",
               "email": "bob@werken.com",
               "url": null
             },
             {
               "type": "person",
-              "role": "developper",
+              "role": "developer",
               "name": "Jason van Zyl",
               "email": "jason@zenplex.com",
               "url": null
             },
             {
               "type": "person",
-              "role": "developper",
+              "role": "developer",
               "name": "Ben Walding",
               "email": "ben@walding.com",
               "url": null
@@ -7213,49 +7213,49 @@
           "parties": [
             {
               "type": "person",
-              "role": "developper",
+              "role": "developer",
               "name": "Martin Cooper",
               "email": "martinc@apache.org",
               "url": null
             },
             {
               "type": "person",
-              "role": "developper",
+              "role": "developer",
               "name": "dIon Gillard",
               "email": "dion@apache.org",
               "url": null
             },
             {
               "type": "person",
-              "role": "developper",
+              "role": "developer",
               "name": "John McNally",
               "email": "jmcnally@collab.net",
               "url": null
             },
             {
               "type": "person",
-              "role": "developper",
+              "role": "developer",
               "name": "Daniel Rall",
               "email": "dlr@finemaltcoding.com",
               "url": null
             },
             {
               "type": "person",
-              "role": "developper",
+              "role": "developer",
               "name": "Jason van Zyl",
               "email": "jason@zenplex.com",
               "url": null
             },
             {
               "type": "person",
-              "role": "developper",
+              "role": "developer",
               "name": "Robert Burrell Donkin",
               "email": "rdonkin@apache.org",
               "url": null
             },
             {
               "type": "person",
-              "role": "developper",
+              "role": "developer",
               "name": "Sean C. Sullivan",
               "email": "sean |at| seansullivan |dot| com",
               "url": null
@@ -7365,70 +7365,70 @@
           "parties": [
             {
               "type": "person",
-              "role": "developper",
+              "role": "developer",
               "name": "Don Brown",
               "email": "mrdon@apache.org",
               "url": null
             },
             {
               "type": "person",
-              "role": "developper",
+              "role": "developer",
               "name": "Martin Cooper",
               "email": "martinc@apache.org",
               "url": null
             },
             {
               "type": "person",
-              "role": "developper",
+              "role": "developer",
               "name": "David Graham",
               "email": "dgraham@apache.org",
               "url": null
             },
             {
               "type": "person",
-              "role": "developper",
+              "role": "developer",
               "name": "Ted Husted",
               "email": "husted@apache.org",
               "url": null
             },
             {
               "type": "person",
-              "role": "developper",
+              "role": "developer",
               "name": "Rob Leland",
               "email": "rleland at apache.org",
               "url": null
             },
             {
               "type": "person",
-              "role": "developper",
+              "role": "developer",
               "name": "Craig McClanahan",
               "email": "craigmcc@apache.org",
               "url": null
             },
             {
               "type": "person",
-              "role": "developper",
+              "role": "developer",
               "name": "James Mitchell",
               "email": "jmitchell NOSPAM apache.org",
               "url": null
             },
             {
               "type": "person",
-              "role": "developper",
+              "role": "developer",
               "name": "Niall Pemberton",
               "email": "niallp NOSPAM apache.org",
               "url": null
             },
             {
               "type": "person",
-              "role": "developper",
+              "role": "developer",
               "name": "James Turner",
               "email": "turner@apache.org",
               "url": null
             },
             {
               "type": "person",
-              "role": "developper",
+              "role": "developer",
               "name": "David Winterfeldt",
               "email": "dwinterfeldt@apache.org",
               "url": null
@@ -7833,28 +7833,28 @@
           "parties": [
             {
               "type": "person",
-              "role": "developper",
+              "role": "developer",
               "name": "Jorge Ferrer",
               "email": "jferrer germinus.com",
               "url": null
             },
             {
               "type": "person",
-              "role": "developper",
+              "role": "developer",
               "name": "Jes\u00fas Jaimez",
               "email": null,
               "url": null
             },
             {
               "type": "person",
-              "role": "developper",
+              "role": "developer",
               "name": "Ismael Ferrer",
               "email": "iferrer germinus.com",
               "url": null
             },
             {
               "type": "person",
-              "role": "developper",
+              "role": "developer",
               "name": "\u00c3?lvaro Gonz\u00c3\u00a1lez",
               "email": "agonzalez germinus.com",
               "url": null
@@ -8131,14 +8131,14 @@
           "parties": [
             {
               "type": "person",
-              "role": "developper",
+              "role": "developer",
               "name": "Cyrill Ruettimann",
               "email": "mypublicaddress@mac.com",
               "url": null
             },
             {
               "type": "person",
-              "role": "developper",
+              "role": "developer",
               "name": "Garvin LeClaire",
               "email": "gleclaire@codehaus.org",
               "url": "http://gdleclaire.blogspot.com"
@@ -8646,7 +8646,7 @@
           "parties": [
             {
               "type": "person",
-              "role": "developper",
+              "role": "developer",
               "name": "John Doe",
               "email": "jdoe@myco.com",
               "url": null
@@ -8967,28 +8967,28 @@
           "parties": [
             {
               "type": "person",
-              "role": "developper",
+              "role": "developer",
               "name": "Tryggvi Larusson",
               "email": "tryggvi@idega.is",
               "url": null
             },
             {
               "type": "person",
-              "role": "developper",
+              "role": "developer",
               "name": "Pall Helgason",
               "email": "palli@idega.is",
               "url": null
             },
             {
               "type": "person",
-              "role": "developper",
+              "role": "developer",
               "name": "Eirikur Sveinn Hrafnsson",
               "email": "eiki@idega.is",
               "url": null
             },
             {
               "type": "person",
-              "role": "developper",
+              "role": "developer",
               "name": "Thorhallur Helgason",
               "email": "laddi@idega.is",
               "url": null
@@ -9118,7 +9118,7 @@
           "parties": [
             {
               "type": "person",
-              "role": "developper",
+              "role": "developer",
               "name": "Federico Fissore",
               "email": "fridrik@dev.java.net",
               "url": null
@@ -9647,77 +9647,77 @@
           "parties": [
             {
               "type": "person",
-              "role": "developper",
+              "role": "developer",
               "name": "Jason van Zyl",
               "email": "jason@zenplex.com",
               "url": null
             },
             {
               "type": "person",
-              "role": "developper",
+              "role": "developer",
               "name": "Pete Kazmier",
               "email": null,
               "url": null
             },
             {
               "type": "person",
-              "role": "developper",
+              "role": "developer",
               "name": "James Taylor",
               "email": "james@jamestaylor.org",
               "url": null
             },
             {
               "type": "person",
-              "role": "developper",
+              "role": "developer",
               "name": "Dan Diephouse",
               "email": "dan@envoisolutions.com",
               "url": null
             },
             {
               "type": "person",
-              "role": "developper",
+              "role": "developer",
               "name": "Kasper Nielsen",
               "email": "apache@kav.dk",
               "url": null
             },
             {
               "type": "person",
-              "role": "developper",
+              "role": "developer",
               "name": "Ben Walding",
               "email": "bwalding@codehaus.org",
               "url": null
             },
             {
               "type": "person",
-              "role": "developper",
+              "role": "developer",
               "name": "Mark Wilkinson",
               "email": "mhw@kremvax.net",
               "url": null
             },
             {
               "type": "person",
-              "role": "developper",
+              "role": "developer",
               "name": "Michal Maczka",
               "email": "mmaczka@interia.pl",
               "url": null
             },
             {
               "type": "person",
-              "role": "developper",
+              "role": "developer",
               "name": "Emmanuel Venisse",
               "email": "evenisse@codehaus.org",
               "url": null
             },
             {
               "type": "person",
-              "role": "developper",
+              "role": "developer",
               "name": "Trygve Laugstol",
               "email": "trygvis@codehaus.org",
               "url": null
             },
             {
               "type": "person",
-              "role": "developper",
+              "role": "developer",
               "name": "Kenney Westerhof",
               "email": "kenney@codehaus.org",
               "url": null
@@ -10219,14 +10219,14 @@
           "parties": [
             {
               "type": "person",
-              "role": "developper",
+              "role": "developer",
               "name": "Leif Olsen",
               "email": "loo@knowit.no",
               "url": null
             },
             {
               "type": "person",
-              "role": "developper",
+              "role": "developer",
               "name": "Ken Gullaksen",
               "email": "krg@knowit.no",
               "url": null
@@ -12222,7 +12222,7 @@
           "parties": [
             {
               "type": "person",
-              "role": "developper",
+              "role": "developer",
               "name": "Ash Lux",
               "email": "ashlux@gmail.com",
               "url": "http://www.ashlux.com/"

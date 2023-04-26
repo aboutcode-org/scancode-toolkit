@@ -11,56 +11,56 @@
   "parties": [
     {
       "type": "person",
-      "role": "developper",
+      "role": "developer",
       "name": "Henri Yandell",
       "email": "bayard@generationjava.com",
       "url": null
     },
     {
       "type": "person",
-      "role": "developper",
+      "role": "developer",
       "name": "Tim OBrien",
       "email": "tobrien@apache.org",
       "url": null
     },
     {
       "type": "person",
-      "role": "developper",
+      "role": "developer",
       "name": "Scott Sanders",
       "email": "sanders@totalsync.com",
       "url": null
     },
     {
       "type": "person",
-      "role": "developper",
+      "role": "developer",
       "name": "Rodney Waldhoff",
       "email": "rwaldhoff@apache.org",
       "url": null
     },
     {
       "type": "person",
-      "role": "developper",
+      "role": "developer",
       "name": "Daniel Rall",
       "email": "dlr@finemaltcoding.com",
       "url": null
     },
     {
       "type": "person",
-      "role": "developper",
+      "role": "developer",
       "name": "Jon S. Stevens",
       "email": "jon@collab.net",
       "url": null
     },
     {
       "type": "person",
-      "role": "developper",
+      "role": "developer",
       "name": "Gary D. Gregory",
       "email": "ggregory@seagullsw.com",
       "url": null
     },
     {
       "type": "person",
-      "role": "developper",
+      "role": "developer",
       "name": "David Graham",
       "email": "dgraham@apache.org",
       "url": null

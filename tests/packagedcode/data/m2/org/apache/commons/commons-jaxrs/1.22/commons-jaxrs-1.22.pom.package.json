@@ -11,42 +11,42 @@
   "parties": [
     {
       "type": "person",
-      "role": "developper",
+      "role": "developer",
       "name": "Shawn Smith",
       "email": "ses44@psu.edu",
       "url": "https://github.com/ussmith"
     },
     {
       "type": "person",
-      "role": "developper",
+      "role": "developer",
       "name": "Christopher Harm",
       "email": "crh5255@psu.edu",
       "url": "https://github.com/chrisharm"
     },
     {
       "type": "person",
-      "role": "developper",
+      "role": "developer",
       "name": "Steve Moyer",
       "email": "smoyer@psu.edu",
       "url": "https://github.com/smoyer64"
     },
     {
       "type": "person",
-      "role": "developper",
+      "role": "developer",
       "name": "Matt Teeter",
       "email": "mat21@psu.edu",
       "url": "https://github.com/mat328"
     },
     {
       "type": "person",
-      "role": "developper",
+      "role": "developer",
       "name": "Ben Homan",
       "email": "bhoman@psu.edu",
       "url": "https://github.com/bhoman127"
     },
     {
       "type": "person",
-      "role": "developper",
+      "role": "developer",
       "name": "Niraja Ramesh",
       "email": "nur1@psu.edu",
       "url": "https://github.com/nur1"

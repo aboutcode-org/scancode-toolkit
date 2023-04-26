@@ -11,70 +11,70 @@
   "parties": [
     {
       "type": "person",
-      "role": "developper",
+      "role": "developer",
       "name": "Don Brown",
       "email": "mrdon@apache.org",
       "url": null
     },
     {
       "type": "person",
-      "role": "developper",
+      "role": "developer",
       "name": "Martin Cooper",
       "email": "martinc@apache.org",
       "url": null
     },
     {
       "type": "person",
-      "role": "developper",
+      "role": "developer",
       "name": "David Graham",
       "email": "dgraham@apache.org",
       "url": null
     },
     {
       "type": "person",
-      "role": "developper",
+      "role": "developer",
       "name": "Ted Husted",
       "email": "husted@apache.org",
       "url": null
     },
     {
       "type": "person",
-      "role": "developper",
+      "role": "developer",
       "name": "Rob Leland",
       "email": "rleland at apache.org",
       "url": null
     },
     {
       "type": "person",
-      "role": "developper",
+      "role": "developer",
       "name": "Craig McClanahan",
       "email": "craigmcc@apache.org",
       "url": null
     },
     {
       "type": "person",
-      "role": "developper",
+      "role": "developer",
       "name": "James Mitchell",
       "email": "jmitchell NOSPAM apache.org",
       "url": null
     },
     {
       "type": "person",
-      "role": "developper",
+      "role": "developer",
       "name": "Niall Pemberton",
       "email": "niallp NOSPAM apache.org",
       "url": null
     },
     {
       "type": "person",
-      "role": "developper",
+      "role": "developer",
       "name": "James Turner",
       "email": "turner@apache.org",
       "url": null
     },
     {
       "type": "person",
-      "role": "developper",
+      "role": "developer",
       "name": "David Winterfeldt",
       "email": "dwinterfeldt@apache.org",
       "url": null

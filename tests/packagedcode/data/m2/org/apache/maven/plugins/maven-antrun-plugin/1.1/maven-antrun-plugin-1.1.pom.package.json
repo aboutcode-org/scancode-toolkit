@@ -11,7 +11,7 @@
   "parties": [
     {
       "type": "person",
-      "role": "developper",
+      "role": "developer",
       "name": "Kenney Westerhof",
       "email": "kenney@apache.org",
       "url": null

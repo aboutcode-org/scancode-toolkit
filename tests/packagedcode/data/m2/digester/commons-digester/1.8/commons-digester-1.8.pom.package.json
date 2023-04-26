@@ -11,63 +11,63 @@
   "parties": [
     {
       "type": "person",
-      "role": "developper",
+      "role": "developer",
       "name": "Craig McClanahan",
       "email": "craigmcc@apache.org",
       "url": null
     },
     {
       "type": "person",
-      "role": "developper",
+      "role": "developer",
       "name": "Robert Burrell Donkin",
       "email": "rdonkin@apache.org",
       "url": null
     },
     {
       "type": "person",
-      "role": "developper",
+      "role": "developer",
       "name": "Scott Sanders",
       "email": "sanders@totalsync.com",
       "url": null
     },
     {
       "type": "person",
-      "role": "developper",
+      "role": "developer",
       "name": "James Strachan",
       "email": "jstrachan@apache.org",
       "url": null
     },
     {
       "type": "person",
-      "role": "developper",
+      "role": "developer",
       "name": "Jason van Zyl",
       "email": "jvanzyl@apache.org",
       "url": null
     },
     {
       "type": "person",
-      "role": "developper",
+      "role": "developer",
       "name": "Tim OBrien",
       "email": "tobrien@apache.org",
       "url": null
     },
     {
       "type": "person",
-      "role": "developper",
+      "role": "developer",
       "name": "Jean-Francois Arcand",
       "email": "jfarcand@apache.org",
       "url": null
     },
     {
       "type": "person",
-      "role": "developper",
+      "role": "developer",
       "name": "Simon Kitching",
       "email": "skitching@apache.org",
       "url": null
     },
     {
       "type": "person",
-      "role": "developper",
+      "role": "developer",
       "name": "Rahul Akolkar",
       "email": "rahul AT apache DOT org",
       "url": null

@@ -11,14 +11,14 @@
   "parties": [
     {
       "type": "person",
-      "role": "developper",
+      "role": "developer",
       "name": "Kohsuke Kawaguchi",
       "email": "kk@kohsuke.org",
       "url": null
     },
     {
       "type": "person",
-      "role": "developper",
+      "role": "developer",
       "name": "Ross Bamford",
       "email": "ross@roscopeco.co.uk",
       "url": null

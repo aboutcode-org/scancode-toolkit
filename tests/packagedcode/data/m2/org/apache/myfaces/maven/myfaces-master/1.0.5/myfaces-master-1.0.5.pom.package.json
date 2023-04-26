@@ -11,217 +11,217 @@
   "parties": [
     {
       "type": "person",
-      "role": "developper",
+      "role": "developer",
       "name": "Anton Koinov",
       "email": "koinov@apache.org",
       "url": null
     },
     {
       "type": "person",
-      "role": "developper",
+      "role": "developer",
       "name": "Bill Dudney",
       "email": "bdudney@apache.org",
       "url": null
     },
     {
       "type": "person",
-      "role": "developper",
+      "role": "developer",
       "name": "Grant Smith",
       "email": "grantsmith@apache.org",
       "url": null
     },
     {
       "type": "person",
-      "role": "developper",
+      "role": "developer",
       "name": "Manfred Geiler",
       "email": "manolito@apache.org",
       "url": null
     },
     {
       "type": "person",
-      "role": "developper",
+      "role": "developer",
       "name": "Martin Marinschek",
       "email": "mmarinschek@apache.org",
       "url": null
     },
     {
       "type": "person",
-      "role": "developper",
+      "role": "developer",
       "name": "Matthias Wessendorf",
       "email": "matzew@apache.org",
       "url": null
     },
     {
       "type": "person",
-      "role": "developper",
+      "role": "developer",
       "name": "Oliver Rossmueller",
       "email": "oros@apache.org",
       "url": null
     },
     {
       "type": "person",
-      "role": "developper",
+      "role": "developer",
       "name": "Sean Schofield",
       "email": "schof@apache.org",
       "url": null
     },
     {
       "type": "person",
-      "role": "developper",
+      "role": "developer",
       "name": "Sylvain Vieujot",
       "email": "svieujot@apache.org",
       "url": null
     },
     {
       "type": "person",
-      "role": "developper",
+      "role": "developer",
       "name": "Ted Husted",
       "email": "husted@apache.org",
       "url": null
     },
     {
       "type": "person",
-      "role": "developper",
+      "role": "developer",
       "name": "Thomas Spiegl",
       "email": "tomsp@apache.org",
       "url": null
     },
     {
       "type": "person",
-      "role": "developper",
+      "role": "developer",
       "name": "Travis Reeder",
       "email": "prophecy@apache.org",
       "url": null
     },
     {
       "type": "person",
-      "role": "developper",
+      "role": "developer",
       "name": "Bruno Aranda",
       "email": "baranda@apache.org",
       "url": null
     },
     {
       "type": "person",
-      "role": "developper",
+      "role": "developer",
       "name": "James Mitchell",
       "email": "jmitchell@apache.org",
       "url": null
     },
     {
       "type": "person",
-      "role": "developper",
+      "role": "developer",
       "name": "Mathias Broekelmann",
       "email": "mbr@apache.org",
       "url": null
     },
     {
       "type": "person",
-      "role": "developper",
+      "role": "developer",
       "name": "Werner Punz",
       "email": "werpu@apache.org",
       "url": null
     },
     {
       "type": "person",
-      "role": "developper",
+      "role": "developer",
       "name": "Stan Silvert",
       "email": "ssilvert@apache.org",
       "url": null
     },
     {
       "type": "person",
-      "role": "developper",
+      "role": "developer",
       "name": "Mike Kienenberger",
       "email": "mkienenb@apache.org",
       "url": null
     },
     {
       "type": "person",
-      "role": "developper",
+      "role": "developer",
       "name": "Simon Kitching",
       "email": "skitching@apache.org",
       "url": null
     },
     {
       "type": "person",
-      "role": "developper",
+      "role": "developer",
       "name": "Volker Weber",
       "email": "weber@apache.org",
       "url": null
     },
     {
       "type": "person",
-      "role": "developper",
+      "role": "developer",
       "name": "Dennis Byrne",
       "email": "dennisbyrne@apache.org",
       "url": null
     },
     {
       "type": "person",
-      "role": "developper",
+      "role": "developer",
       "name": "Bernd Bohmann",
       "email": "bommel@apache.org",
       "url": null
     },
     {
       "type": "person",
-      "role": "developper",
+      "role": "developer",
       "name": "Mario Ivankovits",
       "email": "imario@apache.org",
       "url": null
     },
     {
       "type": "person",
-      "role": "developper",
+      "role": "developer",
       "name": "Cagatay Civici",
       "email": "cagatay@apache.org",
       "url": null
     },
     {
       "type": "person",
-      "role": "developper",
+      "role": "developer",
       "name": "Sharath Reddy",
       "email": "sharathreddy@yahoo.com",
       "url": null
     },
     {
       "type": "person",
-      "role": "developper",
+      "role": "developer",
       "name": "Jurgen Lust",
       "email": "jlust@apache.org",
       "url": null
     },
     {
       "type": "person",
-      "role": "developper",
+      "role": "developer",
       "name": "Gerald Muellan",
       "email": "gmuellan@apache.org",
       "url": null
     },
     {
       "type": "person",
-      "role": "developper",
+      "role": "developer",
       "name": "Catalin Kormos",
       "email": "ckormos@apache.org",
       "url": null
     },
     {
       "type": "person",
-      "role": "developper",
+      "role": "developer",
       "name": "Wendy Smoak",
       "email": "wsmoak@apache.org",
       "url": null
     },
     {
       "type": "person",
-      "role": "developper",
+      "role": "developer",
       "name": "Lance Frohman",
       "email": "lfrohman@apache.org",
       "url": null
     },
     {
       "type": "person",
-      "role": "developper",
+      "role": "developer",
       "name": "Paul Spencer",
       "email": "paulsp@apache.org",
       "url": null

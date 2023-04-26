@@ -11,21 +11,21 @@
   "parties": [
     {
       "type": "person",
-      "role": "developper",
+      "role": "developer",
       "name": "bob mcwhirter",
       "email": "bob@werken.com",
       "url": null
     },
     {
       "type": "person",
-      "role": "developper",
+      "role": "developer",
       "name": "Jason van Zyl",
       "email": "jason@zenplex.com",
       "url": null
     },
     {
       "type": "person",
-      "role": "developper",
+      "role": "developer",
       "name": "Ben Walding",
       "email": "ben@walding.com",
       "url": null

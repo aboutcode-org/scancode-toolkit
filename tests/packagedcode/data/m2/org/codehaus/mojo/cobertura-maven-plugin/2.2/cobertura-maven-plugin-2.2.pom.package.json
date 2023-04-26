@@ -11,21 +11,21 @@
   "parties": [
     {
       "type": "person",
-      "role": "developper",
+      "role": "developer",
       "name": "Joakim Erdfelt",
       "email": "joakim@erdfelt.net",
       "url": null
     },
     {
       "type": "person",
-      "role": "developper",
+      "role": "developer",
       "name": "Will Gwaltney",
       "email": "will.gwaltney@sas.com",
       "url": null
     },
     {
       "type": "person",
-      "role": "developper",
+      "role": "developer",
       "name": "Fabrizio Giustina",
       "email": "fgiust@apache.org",
       "url": null

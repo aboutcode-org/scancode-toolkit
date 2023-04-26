@@ -11,14 +11,14 @@
   "parties": [
     {
       "type": "person",
-      "role": "developper",
+      "role": "developer",
       "name": "Leif Olsen",
       "email": "loo@knowit.no",
       "url": null
     },
     {
       "type": "person",
-      "role": "developper",
+      "role": "developer",
       "name": "Ken Gullaksen",
       "email": "krg@knowit.no",
       "url": null

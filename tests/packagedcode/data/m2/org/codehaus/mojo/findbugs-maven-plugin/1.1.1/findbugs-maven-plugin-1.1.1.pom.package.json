@@ -11,14 +11,14 @@
   "parties": [
     {
       "type": "person",
-      "role": "developper",
+      "role": "developer",
       "name": "Cyrill Ruettimann",
       "email": "mypublicaddress@mac.com",
       "url": null
     },
     {
       "type": "person",
-      "role": "developper",
+      "role": "developer",
       "name": "Garvin LeClaire",
       "email": "gleclaire@codehaus.org",
       "url": "http://gdleclaire.blogspot.com"

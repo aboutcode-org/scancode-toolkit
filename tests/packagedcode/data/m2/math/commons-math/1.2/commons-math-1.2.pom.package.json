@@ -11,56 +11,56 @@
   "parties": [
     {
       "type": "person",
-      "role": "developper",
+      "role": "developer",
       "name": "Albert Davidson Chou",
       "email": "achou at apache dot org",
       "url": null
     },
     {
       "type": "person",
-      "role": "developper",
+      "role": "developer",
       "name": "Mark Diggory",
       "email": "mdiggory at apache dot org",
       "url": null
     },
     {
       "type": "person",
-      "role": "developper",
+      "role": "developer",
       "name": "Robert Burrell Donkin",
       "email": "rdonkin at apache dot org",
       "url": null
     },
     {
       "type": "person",
-      "role": "developper",
+      "role": "developer",
       "name": "Tim O'Brien",
       "email": "tobrien at apache dot org",
       "url": null
     },
     {
       "type": "person",
-      "role": "developper",
+      "role": "developer",
       "name": "Luc Maisonobe",
       "email": "luc at apache dot org",
       "url": null
     },
     {
       "type": "person",
-      "role": "developper",
+      "role": "developer",
       "name": "J. Pietschmann",
       "email": "j3322ptm at yahoo dot de",
       "url": null
     },
     {
       "type": "person",
-      "role": "developper",
+      "role": "developer",
       "name": "Phil Steitz",
       "email": "psteitz at apache dot org",
       "url": null
     },
     {
       "type": "person",
-      "role": "developper",
+      "role": "developer",
       "name": "Brent Worden",
       "email": "brentworden at apache dot org",
       "url": null
