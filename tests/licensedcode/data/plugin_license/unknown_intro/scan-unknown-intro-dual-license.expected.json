@@ -4,7 +4,9 @@
       "identifier": "wtfpl_2_0_and_mit-e5642b07-705c-9730-80ab-f5ed0565be28",
       "license_expression": "wtfpl-2.0 AND mit",
       "detection_count": 1,
-      "detection_log": []
+      "detection_log": [
+        "unknown-intro-followed-by-match"
+      ]
     }
   ],
   "files": [

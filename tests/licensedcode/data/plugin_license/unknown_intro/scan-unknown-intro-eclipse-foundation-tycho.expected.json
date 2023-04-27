@@ -16,19 +16,25 @@
       "identifier": "apache_2_0-d5aca480-f390-3518-0726-d232731b5e97",
       "license_expression": "apache-2.0",
       "detection_count": 1,
-      "detection_log": []
+      "detection_log": [
+        "unknown-intro-followed-by-match"
+      ]
     },
     {
       "identifier": "apache_2_0-f985a212-ddd7-cf4c-223f-990765c05d7f",
       "license_expression": "apache-2.0",
       "detection_count": 1,
-      "detection_log": []
+      "detection_log": [
+        "unknown-intro-followed-by-match"
+      ]
     },
     {
       "identifier": "apache_2_0-572026ce-a21a-cf1f-b168-d2e76a41e85f",
       "license_expression": "apache-2.0",
       "detection_count": 1,
-      "detection_log": []
+      "detection_log": [
+        "unknown-intro-followed-by-match"
+      ]
     },
     {
       "identifier": "apache_2_0-3ff6ea1e-7687-edb8-8b35-a2751a601cae",
@@ -40,7 +46,9 @@
       "identifier": "epl_2_0_or_apache_2_0__and_apache_2_0_and_epl_2_0-52f23e3b-2f64-af31-1586-6bd03db2475f",
       "license_expression": "(epl-2.0 OR apache-2.0) AND apache-2.0 AND epl-2.0",
       "detection_count": 1,
-      "detection_log": []
+      "detection_log": [
+        "unknown-intro-followed-by-match"
+      ]
     },
     {
       "identifier": "epl_1_0-c49f6fb4-006b-7944-b44b-c283f88bf18d",
@@ -52,13 +60,17 @@
       "identifier": "cpl_1_0-5160c0f0-326a-077a-efd6-b7e1bb5eb641",
       "license_expression": "cpl-1.0",
       "detection_count": 1,
-      "detection_log": []
+      "detection_log": [
+        "unknown-intro-followed-by-match"
+      ]
     },
     {
       "identifier": "bsd_new-f573625f-281e-bfa4-fb84-18bb6bf546de",
       "license_expression": "bsd-new",
       "detection_count": 1,
-      "detection_log": []
+      "detection_log": [
+        "unknown-intro-followed-by-match"
+      ]
     },
     {
       "identifier": "bsd_new-90d0d4b4-f98b-d4da-dbb0-7e601f6d404a",
@@ -70,7 +82,9 @@
       "identifier": "cpl_1_0-5038e997-b857-2a64-110b-75cb2d935f40",
       "license_expression": "cpl-1.0",
       "detection_count": 1,
-      "detection_log": []
+      "detection_log": [
+        "unknown-intro-followed-by-match"
+      ]
     }
   ],
   "files": [

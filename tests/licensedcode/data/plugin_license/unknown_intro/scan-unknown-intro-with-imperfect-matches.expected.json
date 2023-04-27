@@ -4,7 +4,9 @@
       "identifier": "mit-3c947379-4257-acb2-bf21-5f93f7de0076",
       "license_expression": "mit",
       "detection_count": 1,
-      "detection_log": []
+      "detection_log": [
+        "unknown-intro-followed-by-match"
+      ]
     }
   ],
   "files": [

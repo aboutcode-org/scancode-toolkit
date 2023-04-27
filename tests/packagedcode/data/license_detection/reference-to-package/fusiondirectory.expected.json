@@ -4789,19 +4789,28 @@
       "identifier": "public_domain-1a6a4f2c-bd92-9942-920f-be3d0c2bbda6",
       "license_expression": "public-domain",
       "detection_count": 1,
-      "detection_log": []
+      "detection_log": [
+        "possible-false-positive",
+        "not-license-clues-as-more-detections-present"
+      ]
     },
     {
       "identifier": "gpl_2_0_plus-fed2dc38-09ac-103e-1b86-4a4f5c00614a",
       "license_expression": "gpl-2.0-plus",
       "detection_count": 1,
-      "detection_log": []
+      "detection_log": [
+        "possible-false-positive",
+        "not-license-clues-as-more-detections-present"
+      ]
     },
     {
       "identifier": "mit-1f9f2ae8-7020-0a13-7934-461c752929a4",
       "license_expression": "mit",
       "detection_count": 3,
-      "detection_log": []
+      "detection_log": [
+        "possible-false-positive",
+        "not-license-clues-as-more-detections-present"
+      ]
     },
     {
       "identifier": "bsd_original-9198bafe-47c0-f9dc-5ef1-bd276a69786e",
@@ -4831,19 +4840,28 @@
       "identifier": "lgpl_3_0-6b4a45da-85cc-8eb0-5613-be81d4efd6a5",
       "license_expression": "lgpl-3.0",
       "detection_count": 1,
-      "detection_log": []
+      "detection_log": [
+        "possible-false-positive",
+        "not-license-clues-as-more-detections-present"
+      ]
     },
     {
       "identifier": "mit_and_other_permissive-907b56d6-95b9-e85c-83c0-efd967c7e30a",
       "license_expression": "mit AND other-permissive",
       "detection_count": 1,
-      "detection_log": []
+      "detection_log": [
+        "possible-false-positive",
+        "not-license-clues-as-more-detections-present"
+      ]
     },
     {
       "identifier": "public_domain_and_bsd_original_and_gpl_1_0_plus-ccb73883-974d-42eb-d572-39fa7bf22f4c",
       "license_expression": "public-domain AND bsd-original AND gpl-1.0-plus",
       "detection_count": 1,
-      "detection_log": []
+      "detection_log": [
+        "possible-false-positive",
+        "not-license-clues-as-more-detections-present"
+      ]
     },
     {
       "identifier": "free_unknown-fddf748a-9953-bc6c-cb9d-91001840e335",

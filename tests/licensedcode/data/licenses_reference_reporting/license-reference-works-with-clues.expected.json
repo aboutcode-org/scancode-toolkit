@@ -22,19 +22,26 @@
       "identifier": "bzip2_libbzip_2010-7158bcb2-a4d7-9815-17d2-1b1d0a6d5de2",
       "license_expression": "bzip2-libbzip-2010",
       "detection_count": 1,
-      "detection_log": []
+      "detection_log": [
+        "unknown-intro-followed-by-match"
+      ]
     },
     {
       "identifier": "sleepycat-a7cd8833-ecc2-8ade-54d7-392befcce801",
       "license_expression": "sleepycat",
       "detection_count": 1,
-      "detection_log": []
+      "detection_log": [
+        "unknown-intro-followed-by-match"
+      ]
     },
     {
       "identifier": "bsd_simplified-7517fbd6-3fa4-e9f9-2167-c65251d77656",
       "license_expression": "bsd-simplified",
       "detection_count": 1,
-      "detection_log": []
+      "detection_log": [
+        "license-clues",
+        "not-license-clues-as-more-detections-present"
+      ]
     },
     {
       "identifier": "bsd_new-ccc98c3a-92d4-e7a3-e0ba-798328cb6b98",
@@ -52,7 +59,9 @@
       "identifier": "openssl_ssleay-238ad05e-bfde-df4c-6b5b-61ef3ec16843",
       "license_expression": "openssl-ssleay",
       "detection_count": 1,
-      "detection_log": []
+      "detection_log": [
+        "unknown-intro-followed-by-match"
+      ]
     },
     {
       "identifier": "openssl-e1da0b01-fab9-e27d-4ff3-c4944b09b621",
@@ -70,13 +79,17 @@
       "identifier": "tcl-d865b2e8-435b-c54f-f19d-66d165a889ac",
       "license_expression": "tcl",
       "detection_count": 1,
-      "detection_log": []
+      "detection_log": [
+        "unknown-intro-followed-by-match"
+      ]
     },
     {
       "identifier": "tcl-75d8de8c-9cf0-d604-4b99-e03436ebfcd3",
       "license_expression": "tcl",
       "detection_count": 1,
-      "detection_log": []
+      "detection_log": [
+        "unknown-intro-followed-by-match"
+      ]
     }
   ],
   "license_references": [

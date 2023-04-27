@@ -10,7 +10,10 @@
       "identifier": "gpl_1_0_plus-473308ff-72ce-7e72-b3a9-5b1cc6680abb",
       "license_expression": "gpl-1.0-plus",
       "detection_count": 1,
-      "detection_log": []
+      "detection_log": [
+        "possible-false-positive",
+        "not-license-clues-as-more-detections-present"
+      ]
     },
     {
       "identifier": "lgpl_3_0_and_lgpl_3_0_plus_and__lgpl_3_0_and_gpl_3_0-eb2232a5-2c4f-3fc9-a2ee-cdf40b20ae23",
@@ -22,7 +25,9 @@
       "identifier": "ijg_and_mit-e50613dc-8a09-65cc-c498-5d9527795382",
       "license_expression": "ijg AND mit",
       "detection_count": 1,
-      "detection_log": []
+      "detection_log": [
+        "unknown-intro-followed-by-match"
+      ]
     },
     {
       "identifier": "gpl_1_0_plus-0211bbc4-784e-97fe-2ac1-f150ccba866e",

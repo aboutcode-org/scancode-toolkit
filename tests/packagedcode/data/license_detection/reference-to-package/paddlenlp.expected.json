@@ -417,7 +417,9 @@
       "identifier": "apache-2.0-35de6d3f-8962-0454-2270-33aac504c123",
       "license_expression": "apache-2.0",
       "detection_count": 2,
-      "detection_log": []
+      "detection_log": [
+        "unknown-reference-in-file-to-package"
+      ]
     }
   ],
   "files": [

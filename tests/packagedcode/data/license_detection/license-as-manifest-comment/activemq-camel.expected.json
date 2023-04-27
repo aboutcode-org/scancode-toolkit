@@ -233,7 +233,9 @@
       "identifier": "apache_2_0-4bde3f57-78aa-4201-96bf-531cba09e7de",
       "license_expression": "apache-2.0",
       "detection_count": 2,
-      "detection_log": []
+      "detection_log": [
+        "from-package-file"
+      ]
     }
   ],
   "files": [

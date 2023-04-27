@@ -109,7 +109,9 @@
       "identifier": "zlib-9531c668-be8d-7a25-49eb-c18c9dcd616b",
       "license_expression": "zlib",
       "detection_count": 1,
-      "detection_log": []
+      "detection_log": [
+        "package-unknown-reference-to-local-file"
+      ]
     }
   ],
   "files": [

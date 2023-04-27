@@ -76,6 +76,9 @@ IMPERFECT_MATCH_COVERAGE_THR = 100
 # Values of match_coverage less than this are reported as `license_clues` matches
 CLUES_MATCH_COVERAGE_THR = 60
 
+# Low Relevance threshold
+LOW_RELEVANCE_THRESHOLD = 70
+
 # False positives to spurious and gibberish texts are found usually later in the file
 # and matched to relatively short rules
 # Threshold Value of start line after which a match to likely be a false positive
@@ -104,6 +107,8 @@ class DetectionCategory(Enum):
     IMPERFECT_COVERAGE = 'imperfect-match-coverage'
     FALSE_POSITVE = 'possible-false-positive'
     UNDETECTED_LICENSE = 'undetected-license'
+    MATCH_FRAGMENTS = 'match-fragments'
+    LOW_RELEVANCE = 'low-relevance'
 
 
 class DetectionRule(Enum):
@@ -140,6 +145,9 @@ class FileRegion:
     path = attr.ib(type=str)
     start_line = attr.ib(type=int)
     end_line = attr.ib(type=int)
+
+    def to_dict(self):
+        return attr.asdict(self, dict_factory=dict)
 
 
 @attr.s(slots=True, eq=False, order=False)
@@ -275,7 +283,10 @@ class LicenseDetection:
         """
         data = []
         for match in self.matches:
-            tokenized_matched_text = tuple(query_tokenizer(match.matched_text()))
+            if isinstance(match.matched_text, str):
+                tokenized_matched_text = tuple(query_tokenizer(match.matched_text))
+            else:
+                tokenized_matched_text = tuple(query_tokenizer(match.matched_text()))
             identifier = (
                 match.rule.identifier,
                 match.score(),
@@ -613,6 +624,106 @@ class LicenseMatchFromResult(LicenseMatch):
         """
         return [LicenseMatchFromResult.from_dict(lmm) for lmm in license_match_mappings]
 
+    def to_dict(
+        self,
+        include_text=False,
+        license_text_diagnostics=False,
+        whole_lines=True,
+    ):
+        """
+        Return a "result" scan data built from a LicenseMatch object.
+        """
+        matched_text = None
+        if include_text:
+            matched_text = self.matched_text
+
+        result = {}
+
+        # Detection Level Information
+        result['score'] = self.score()
+        result['start_line'] = self.start_line
+        result['end_line'] = self.end_line
+        result['matched_length'] = self.len()
+        result['match_coverage'] = self.coverage()
+        result['matcher'] = self.matcher
+
+        # LicenseDB Level Information (Rule that was matched)
+        result['license_expression'] = self.rule.license_expression
+        result['rule_identifier'] = self.rule.identifier
+        result['rule_relevance'] = self.rule.relevance
+        result['rule_url'] = self.rule.rule_url
+
+        if include_text:
+            result['matched_text'] = matched_text
+        return result
+
+
+def collect_license_detections(codebase, include_license_clues=True):
+    """
+    Return a list of LicenseDetectionFromResult from a ``codebase``
+    """
+    has_packages = hasattr(codebase.root, 'package_data')
+    has_licenses = hasattr(codebase.root, 'license_detections')
+
+    all_license_detections = []
+
+    for resource in codebase.walk():
+
+        resource_license_detections = []
+        if has_licenses:
+            license_detections = getattr(resource, 'license_detections', []) or []
+            license_clues = getattr(resource, 'license_clues', []) or []
+
+            if license_detections:
+                license_detection_objects = detections_from_license_detection_mappings(
+                    license_detection_mappings=license_detections,
+                    file_path=resource.path,
+                )
+                resource_license_detections.extend(license_detection_objects)
+
+            if include_license_clues and license_clues:
+                license_matches = LicenseMatchFromResult.from_dicts(
+                    license_match_mappings=license_clues,
+                )
+
+                for group_of_matches in group_matches(license_matches=license_matches):
+                    detection = LicenseDetection.from_matches(matches=group_of_matches)
+                    detection.file_region = detection.get_file_region(path=resource.path)
+                    resource_license_detections.append(detection)
+
+        all_license_detections.extend(
+            list(process_detections(detections=resource_license_detections))
+        )
+
+    if TRACE:
+        logger_debug(
+            f'before process_detections licenses:',
+            f'resource_license_detections: {resource_license_detections}\n',
+            f'all_license_detections: {all_license_detections}',
+        )
+
+    if has_packages:
+        package_data = getattr(resource, 'package_data', []) or []
+
+        package_license_detection_mappings = []
+        for package in package_data:
+
+            if package["license_detections"]:
+                package_license_detection_mappings.extend(package["license_detections"])
+
+            if package["other_license_detections"]:
+                package_license_detection_mappings.extend(package["other_license_detections"])
+
+            if package_license_detection_mappings:
+                package_license_detection_objects = detections_from_license_detection_mappings(
+                    license_detection_mappings=package_license_detection_mappings,
+                    file_path=resource.path,
+                )
+
+                all_license_detections.extend(package_license_detection_objects)
+
+    return all_license_detections
+
 
 @attr.s
 class UniqueDetection:
@@ -624,7 +735,7 @@ class UniqueDetection:
     detection_count = attr.ib(default=None)
     matches = attr.ib(default=attr.Factory(list))
     detection_log = attr.ib(default=attr.Factory(list))
-    files = attr.ib(factory=list)
+    file_regions = attr.ib(factory=list)
 
     @classmethod
     def get_unique_detections(cls, license_detections):
@@ -640,17 +751,30 @@ class UniqueDetection:
                 detection.file_region
                 for detection in all_detections
             ]
-
             detection = next(iter(all_detections))
-            detection_mapping = detection.to_dict()
+            detection_log = []
+            if hasattr(detection, "detection_log"):
+                if detection.detection_log:
+                    detection_log.extend(detection.detection_log)
+
+            if not detection.license_expression:
+                detection.license_expression = str(combine_expressions(
+                    expressions=[
+                        match.rule.license_expression
+                        for match in detection.matches
+                    ]
+                ))
+                detection.identifier = detection.identifier_with_expression 
+
+
             unique_license_detections.append(
                 cls(
-                    identifier=detection_mapping["identifier"],
-                    license_expression=detection_mapping["license_expression"],
-                    detection_log=detection_mapping.get("detection_log", []) or [],
-                    matches=detection_mapping["matches"],
+                    identifier=detection.identifier,
+                    license_expression=detection.license_expression,
+                    detection_log=detection_log or [],
+                    matches=detection.matches,
                     detection_count=len(file_regions),
-                    files=file_regions,
+                    file_regions=file_regions,
                 )
             )
 
@@ -660,7 +784,7 @@ class UniqueDetection:
 
         def dict_fields(attr, value):
 
-            if attr.name == 'files':
+            if attr.name == 'file_regions':
                 return False
 
             if attr.name == 'matches':
@@ -672,6 +796,15 @@ class UniqueDetection:
             return True
 
         return attr.asdict(self, filter=dict_fields)
+
+    def get_license_detection_object(self):
+        return LicenseDetection(
+            license_expression=self.license_expression,
+            detection_log=self.detection_log,
+            matches= self.matches,
+            identifier=self.identifier,
+            file_region=None,
+        )
 
 
 def get_detections_by_id(license_detections):
@@ -792,6 +925,17 @@ def has_extra_words(license_matches):
     return any(
         match_query_coverage_diff_value > 0
         for match_query_coverage_diff_value in match_query_coverage_diff_values
+    )
+
+
+def has_low_rule_relevance(license_matches):
+    """
+    Return True if any on the matches in ``license_matches`` List of LicenseMatch
+    objects has a match with low score because of low rule relevance. 
+    """
+    return any(
+        license_match.rule.relevance < LOW_RELEVANCE_THRESHOLD 
+        for license_match in license_matches
     )
 
 
@@ -1213,6 +1357,41 @@ def get_license_keys_from_detections(license_detections, licensing=Licensing()):
             )
         )
     return list(license_keys)
+
+
+def get_ambiguous_license_detections_by_type(unique_license_detections):
+    """
+    Return a list of ambiguous unique license detections which needs review
+    and would be todo items for the reviewer from a list of
+    `unique_license_detections`.
+    """
+
+    ambi_license_detections = {}
+
+    for detection in unique_license_detections:
+        if not detection.license_expression:
+            ambi_license_detections[DetectionCategory.MATCH_FRAGMENTS.value] = detection
+
+        elif is_undetected_license_matches(license_matches=detection.matches):
+            ambi_license_detections[DetectionCategory.UNDETECTED_LICENSE.value] = detection
+
+        elif "unknown" in detection.license_expression:
+            if has_unknown_matches(license_matches=detection.matches):
+                ambi_license_detections[DetectionCategory.UNKNOWN_MATCH.value] = detection
+
+        elif is_match_coverage_less_than_threshold(
+            license_matches=detection.matches,
+            threshold=IMPERFECT_MATCH_COVERAGE_THR,
+        ):
+            ambi_license_detections[DetectionCategory.IMPERFECT_COVERAGE.value] = detection
+
+        elif has_extra_words(license_matches=detection.matches):
+            ambi_license_detections[DetectionCategory.EXTRA_WORDS.value] = detection
+
+        elif has_low_rule_relevance(license_matches=detection.matches):
+            ambi_license_detections[DetectionCategory.LOW_RELEVANCE.value] = detection
+
+    return ambi_license_detections
 
 
 def analyze_detection(license_matches, package_license=False):
