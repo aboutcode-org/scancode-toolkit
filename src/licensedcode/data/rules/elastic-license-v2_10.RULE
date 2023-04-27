@@ -1,0 +1,14 @@
+---
+license_expression: elastic-license-v2
+is_license_tag: yes
+ignorable_urls:
+    - https://raw.githubusercontent.com/elastic/elasticsearch/
+---
+
+<licenses>
+    <license>
+      <name>Elastic License 2.0</name>
+      <url>https://raw.githubusercontent.com/elastic/elasticsearch/ /licenses/ELASTIC-LICENSE-2.0.txt</url>
+      <distribution>repo</distribution>
+    </license>
+  </licenses>

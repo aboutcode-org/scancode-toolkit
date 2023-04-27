@@ -1,0 +1,12 @@
+---
+license_expression: public-domain
+is_license_reference: yes
+relevance: 100
+referenced_filenames:
+    - licenses/antlr2-license.txt
+---
+
+ANTLR 2 License
+
+Antlr2 is released in the public domain.
+See licenses/antlr2-license.txt for details.
