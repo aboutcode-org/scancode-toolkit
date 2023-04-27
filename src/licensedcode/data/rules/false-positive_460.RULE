@@ -1,0 +1,6 @@
+---
+is_false_positive: yes
+notes: Seen in lucene-spatial3d-8.11.1.jar-extract/org/apache/lucene/spatial3d/geom/Plane.class
+---
+
+apache/lucene/spatial3d/geom/LatLonBounds (DDD)V computeDesiredEllipsoidMagnitude 2(
