@@ -2748,6 +2748,9 @@ grammar = """
     # Copyright lowRISC contributors.
     COPYRIGHT: {<COPY> <NN> <CONTRIBUTORS>}        #83002
 
+    # copyrighted by the Open Source Vulnerability Database (http://osvdb.org)
+    COPYRIGHT: {<COPY> <BY> <NN|NNP>{3} <NAME>}        #83002.1
+
     # weird //opylefted by <-Harvie 2oo7
     COPYRIGHT: {<COPY> <BY> <NN> <NN> <MAINT>?}        #83003
 
