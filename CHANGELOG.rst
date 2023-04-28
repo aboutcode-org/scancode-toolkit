@@ -203,10 +203,20 @@ License detection:
 
   See https://github.com/nexB/scancode-toolkit/issues/3343
 
-v31.2.5 - 2023-04-21
+
+v31.2.6 - 2023-04-25
 ----------------------------------
 
-This is a minor backport release.
+This is a minor hotfix release.
+
+This fix a crash when parsing a .deb Dbeian package filename
+reported in https://github.com/nexB/scancode-toolkit/issues/3259
+
+
+v31.2.5 - 2023-01-09
+----------------------------------
+
+This is a minor fix backport release.
 
 This adds license rule changes and was requested here: 
 https://github.com/nexB/scancode-toolkit/issues/3310
