@@ -148,11 +148,7 @@ def check_ignorable_clues(licensish, regen=REGEN_TEST_FIXTURES, verbose=False):
         # On failure, we compare again to get additional failure details such as
         # a clickable text_file path.
 
-        rule_file = licensish.rule_file
-        result['files'] = [
-            f'file://{rule_file}',
-            f'file://{licensish.rule_file()}',
-        ]
+        result['file'] = f'file://{licensish.rule_file()}'
 
         # This assert will always fail and provide a more detailed failure trace
         assert saneyaml.dump(result) == saneyaml.dump(expected)
