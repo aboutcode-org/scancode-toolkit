@@ -3,10 +3,10 @@ what:
   - holders
   - holders_summary
 copyrights:
-  - Copyright 2011 JSON-SMART authors
+  - Copyright (c) 2002 the Initial Developer
 holders:
-  - JSON-SMART authors
+  - the Initial Developer
 holders_summary:
-  - value: JSON-SMART authors
+  - value: the Initial Developer
     count: 1
 

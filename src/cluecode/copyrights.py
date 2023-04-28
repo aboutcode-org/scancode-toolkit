@@ -1030,8 +1030,11 @@ patterns = [
     # "Es6ToEs3ClassSideInheritance. and related names
     (r"[A-Z]([a-zA-Z]*[0-9])+[a-zA-Z]+[\.,]?", 'JUNK'),
 
+    # Exceptions to short mixed caps with trailing cap
+    (r"ApS$", 'COMP'),
+
     # short mixed caps with trailing cap: ZoY
-    (r"[A-Z][a-z]+[A-Z]$", 'JUNK'),
+    (r"[A-Z][a-z][A-Z]$", 'JUNK'),
 
     # short
     (r"^[A-Z][0-9]$", 'JUNK'),
@@ -1288,7 +1291,7 @@ patterns = [
     (r'^Std$', 'NN'),
     (r'^Supplicant', 'NN'),
     (r'^Support', 'NN'),
-    (r'^TagSoup$', 'NN'),
+    (r'^Tag[A-Z]', 'NN'),
     (r'^Target$', 'NN'),
     (r'^Technical$', 'NN'),
     (r'^Termination$', 'NN'),
@@ -1323,7 +1326,7 @@ patterns = [
     (r'^Xalan$', 'NN'),
     (r'^YOUR', 'NN'),
     (r'^Your', 'NN'),
-    (r'^DateTime', 'NN'),
+    (r'^Date[A-Z]', 'NN'),
     (r'^Create$', 'NN'),
     (r'^Engine\.$', 'NN'),
     (r'^While$', 'NN'),
@@ -1378,7 +1381,7 @@ patterns = [
     (r'^Flux$', 'NN'),
     (r'^Keywords$', 'NN'),
     (r'^Modify$', 'NN'),
-    (r'^CreationDate$', 'NN'),
+    (r'^Creation[A-Z]', 'NN'),
     (r'^Creator$', 'NN'),
     (r'^Document$', 'NN'),
     (r'^Data$', 'NN'),
@@ -1402,15 +1405,20 @@ patterns = [
     (r'^Compression$', 'NN'),
     (r'^Letter$', 'NN'),
 
-    # dual caps not NNP
-    (r'^MakeSignature$', 'NN'),
-    (r'^CreateDialog$', 'NN'),
-    (r'^$', 'NN'),
-    (r'^$', 'NN'),
-    (r'^$', 'NN'),
-    (r'^$', 'NN'),
-    (r'^$', 'NN'),
-    (r'^$', 'NN'),
+    # dual caps that are not NNP
+    (r'^Make[A-Z]', 'JUNK'),
+    (r'^Create[A-Z]', 'JUNK'),
+    (r'^Full[A-Z]', 'NN'),
+    (r'^Last[A-Z]', 'NN'),
+    (r'^Author[A-Z]', 'NN'),
+    (r'^Schema[A-Z]', 'JUNK'),
+    # message one is a company name
+    (r'^MessageOne', 'NAME'),
+    (r'^Message[A-Z]', 'JUNK'),
+    (r'^Short[a-z]*[A-Z]+[a-z]*', 'JUNK'),
+
+    # files
+    (r'^.*\.java$', 'NN'),
 
     # "holders" is considered Special
     (r'^([Hh]olders?|HOLDERS?)\.?,?$', 'HOLDER'),
@@ -1851,6 +1859,8 @@ patterns = [
     (r'^.*\.sh\.?$', 'JUNK'),
     # email eventually in parens or brackets with some trailing punct. Note the @ or "at "
     (r'^[\<\(]?[a-zA-Z0-9]+[a-zA-Z0-9\+_\-\.\%]*(@|at)[a-zA-Z0-9][a-zA-Z0-9\+_\-\.\%]+\.[a-zA-Z]{2,5}?[\>\)\.\,]*$', 'EMAIL'),
+    # mailto URLs
+    (r'^mailto:.{2,}@.{2,}\.[a-z]{2,3}', 'EMAIL'),
 
     # URLS such as <(http://fedorahosted.org/lohit)> or ()
     (r'[<\(]https?:.*[>\)]', 'URL'),
@@ -2067,6 +2077,9 @@ grammar = """
     # Academy of Motion Picture Arts
     NAME: {<NNP|PN>+ <NNP>+}        #351
 
+    # @author <a href="mailto:stephane@hillion.org">Stephane Hillion</a>
+    NAME: { <NN>? <NN>? <EMAIL> <NAME> } #351.1
+
     # Joe DASILVA
     NAME: {<NNP> <CAPS>} #352
 
@@ -2090,7 +2103,6 @@ grammar = """
     NAME: {<NAME> <CC> <NAME>}        #500
 
     COMPANY: {<NNP> <IN> <NN>? <COMPANY>}        #510
-
 
     # and Josh MacDonald.
     NAME: {<CC> <NNP> <MIXEDCAP>}        #480
@@ -2470,8 +2482,9 @@ grammar = """
 
     # Copyright (c) 2017 odahcam or Copyright (C) 2006 XStream committers.
     # or Copyright (c) 2019-2021, Open source contributors.
-    # Copyright 2007 ZXing authors
-    COPYRIGHT: {<COPY>+  <YR-RANGE>  <NN>+ <CONTRIBUTORS|COMMIT|AUTHS>? <ALLRIGHTRESERVED>?} #22793
+    # or Copyright 2007 ZXing authors
+    # or Copyright (c) 2002 the Initial Developer
+    COPYRIGHT: {<COPY>+  <YR-RANGE>  <NN>+ <CONTRIBUTORS|COMMIT|AUTHS|MAINT>? <ALLRIGHTRESERVED>?} #22793
 
     # Licensed material of Foobar Company, All Rights Reserved, (C) 2005
     COPYRIGHT: {<COMPANY>  <ALLRIGHTRESERVED>  <COPYRIGHT>} #22794
@@ -3157,6 +3170,7 @@ AUTHORS_JUNK = frozenset([
     'app id',
     'project',
     'previous lucene',
+    'apache tomcat',
 ])
 
 ################################################################################
@@ -3257,8 +3271,18 @@ def remove_dupe_copyright_words(c):
     # from .net assemblies
     c = c.replace('AssemblyCopyright', 'Copyright')
     c = c.replace('AppCopyright', 'Copyright')
+    
+    # various prefix to the word copyright seen in binaries
+    # TODO use a regex instead
+    c = c.replace('BCopyright', 'Copyright')
     c = c.replace('ECopyright', 'Copyright')
+    c = c.replace('FCopyright', 'Copyright')
     c = c.replace('JCOPYRIGHT', 'Copyright')
+    c = c.replace('MCopyright', 'Copyright')
+    c = c.replace('mCopyright', 'Copyright')
+    c = c.replace('rCopyright', 'Copyright')
+    c = c.replace('VCopyright', 'Copyright')
+
     # FIXME: this should be in the grammar, but is hard to get there right
     # these are often artifacts of markup
     c = c.replace('COPYRIGHT Copyright', 'Copyright')
