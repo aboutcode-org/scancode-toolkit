@@ -328,7 +328,7 @@ class ReviewComments(Enum):
         "which needs review."
     )
     IMPERFECT_COVERAGE = (
-        "The license detection likely is not conslusive as there was "
+        "The license detection likely is not conclusive as there was "
         "license matches with low score or coverage, and so this needs "
         "review. scancode would likely benifit from a license rule addition "
         "from this case, so please report this to scancode-toolkit github issues."
