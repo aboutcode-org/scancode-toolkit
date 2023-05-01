@@ -1,4 +1,16 @@
 {
+  "summary": {
+    "declared_license_expression": "apache-2.0",
+    "license_clarity_score": {
+      "score": 90,
+      "declared_license": true,
+      "identification_precision": true,
+      "has_license_text": true,
+      "declared_copyrights": false,
+      "conflicting_license_categories": false,
+      "ambiguous_compound_licensing": false
+    }
+  },
   "packages": [
     {
       "type": "maven",
@@ -233,18 +245,6 @@
       "detection_count": 2
     }
   ],
-  "summary": {
-    "declared_license_expression": "apache-2.0",
-    "license_clarity_score": {
-      "score": 90,
-      "declared_license": true,
-      "identification_precision": true,
-      "has_license_text": true,
-      "declared_copyrights": false,
-      "conflicting_license_categories": false,
-      "ambiguous_compound_licensing": false
-    }
-  },
   "files": [
     {
       "path": "jar",

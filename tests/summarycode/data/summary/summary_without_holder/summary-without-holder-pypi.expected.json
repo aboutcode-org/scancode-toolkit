@@ -1,4 +1,26 @@
 {
+  "summary": {
+    "declared_license_expression": "mit",
+    "license_clarity_score": {
+      "score": 90,
+      "declared_license": true,
+      "identification_precision": true,
+      "has_license_text": true,
+      "declared_copyrights": false,
+      "conflicting_license_categories": false,
+      "ambiguous_compound_licensing": false
+    },
+    "declared_holder": "",
+    "primary_language": "Python",
+    "other_license_expressions": [
+      {
+        "value": null,
+        "count": 1
+      }
+    ],
+    "other_holders": [],
+    "other_languages": []
+  },
   "packages": [
     {
       "type": "pypi",
@@ -135,44 +157,22 @@
       "detection_count": 1
     }
   ],
-  "summary": {
-    "declared_license_expression": "mit",
-    "license_clarity_score": {
-      "score": 90,
-      "declared_license": true,
-      "identification_precision": true,
-      "has_license_text": true,
-      "declared_copyrights": false,
-      "conflicting_license_categories": false,
-      "ambiguous_compound_licensing": false
-    },
-    "declared_holder": "",
-    "primary_language": "Python",
-    "other_license_expressions": [
-      {
-        "value": null,
-        "count": 1
-      }
-    ],
-    "other_holders": [],
-    "other_languages": []
-  },
   "files": [
     {
       "path": "pip-22.0.4",
       "type": "directory",
       "package_data": [],
       "for_packages": [],
-      "is_legal": false,
-      "is_manifest": false,
-      "is_readme": false,
-      "is_top_level": true,
-      "is_key_file": false,
       "detected_license_expression": null,
       "detected_license_expression_spdx": null,
       "license_detections": [],
       "license_clues": [],
       "percentage_of_license_text": 0,
+      "is_legal": false,
+      "is_manifest": false,
+      "is_readme": false,
+      "is_top_level": true,
+      "is_key_file": false,
       "scan_errors": []
     },
     {
@@ -182,16 +182,16 @@
       "for_packages": [
         "pkg:pypi/pip@22.0.4?uuid=fixed-uid-done-for-testing-5642512d1758"
       ],
-      "is_legal": false,
-      "is_manifest": false,
-      "is_readme": false,
-      "is_top_level": true,
-      "is_key_file": false,
       "detected_license_expression": null,
       "detected_license_expression_spdx": null,
       "license_detections": [],
       "license_clues": [],
       "percentage_of_license_text": 0,
+      "is_legal": false,
+      "is_manifest": false,
+      "is_readme": false,
+      "is_top_level": true,
+      "is_key_file": false,
       "scan_errors": []
     },
     {
@@ -201,11 +201,6 @@
       "for_packages": [
         "pkg:pypi/pip@22.0.4?uuid=fixed-uid-done-for-testing-5642512d1758"
       ],
-      "is_legal": true,
-      "is_manifest": false,
-      "is_readme": false,
-      "is_top_level": true,
-      "is_key_file": true,
       "detected_license_expression": "mit",
       "detected_license_expression_spdx": "MIT",
       "license_detections": [
@@ -230,6 +225,11 @@
       ],
       "license_clues": [],
       "percentage_of_license_text": 93.6,
+      "is_legal": true,
+      "is_manifest": false,
+      "is_readme": false,
+      "is_top_level": true,
+      "is_key_file": true,
       "scan_errors": []
     },
     {
@@ -239,16 +239,16 @@
       "for_packages": [
         "pkg:pypi/pip@22.0.4?uuid=fixed-uid-done-for-testing-5642512d1758"
       ],
-      "is_legal": false,
-      "is_manifest": false,
-      "is_readme": false,
-      "is_top_level": true,
-      "is_key_file": false,
       "detected_license_expression": null,
       "detected_license_expression_spdx": null,
       "license_detections": [],
       "license_clues": [],
       "percentage_of_license_text": 0,
+      "is_legal": false,
+      "is_manifest": false,
+      "is_readme": false,
+      "is_top_level": true,
+      "is_key_file": false,
       "scan_errors": []
     },
     {
@@ -258,16 +258,16 @@
       "for_packages": [
         "pkg:pypi/pip@22.0.4?uuid=fixed-uid-done-for-testing-5642512d1758"
       ],
-      "is_legal": false,
-      "is_manifest": false,
-      "is_readme": false,
-      "is_top_level": true,
-      "is_key_file": false,
       "detected_license_expression": null,
       "detected_license_expression_spdx": null,
       "license_detections": [],
       "license_clues": [],
       "percentage_of_license_text": 0,
+      "is_legal": false,
+      "is_manifest": false,
+      "is_readme": false,
+      "is_top_level": true,
+      "is_key_file": false,
       "scan_errors": []
     },
     {
@@ -375,11 +375,6 @@
       "for_packages": [
         "pkg:pypi/pip@22.0.4?uuid=fixed-uid-done-for-testing-5642512d1758"
       ],
-      "is_legal": false,
-      "is_manifest": false,
-      "is_readme": false,
-      "is_top_level": false,
-      "is_key_file": false,
       "detected_license_expression": "mit",
       "detected_license_expression_spdx": "MIT",
       "license_detections": [
@@ -455,6 +450,11 @@
       ],
       "license_clues": [],
       "percentage_of_license_text": 1.86,
+      "is_legal": false,
+      "is_manifest": false,
+      "is_readme": false,
+      "is_top_level": true,
+      "is_key_file": false,
       "scan_errors": []
     },
     {
@@ -464,16 +464,16 @@
       "for_packages": [
         "pkg:pypi/pip@22.0.4?uuid=fixed-uid-done-for-testing-5642512d1758"
       ],
-      "is_legal": false,
-      "is_manifest": false,
-      "is_readme": true,
-      "is_top_level": true,
-      "is_key_file": true,
       "detected_license_expression": null,
       "detected_license_expression_spdx": null,
       "license_detections": [],
       "license_clues": [],
       "percentage_of_license_text": 0,
+      "is_legal": false,
+      "is_manifest": false,
+      "is_readme": true,
+      "is_top_level": true,
+      "is_key_file": true,
       "scan_errors": []
     },
     {
@@ -481,16 +481,16 @@
       "type": "directory",
       "package_data": [],
       "for_packages": [],
-      "is_legal": false,
-      "is_manifest": false,
-      "is_readme": false,
-      "is_top_level": true,
-      "is_key_file": false,
       "detected_license_expression": null,
       "detected_license_expression_spdx": null,
       "license_detections": [],
       "license_clues": [],
       "percentage_of_license_text": 0,
+      "is_legal": false,
+      "is_manifest": false,
+      "is_readme": false,
+      "is_top_level": true,
+      "is_key_file": false,
       "scan_errors": []
     },
     {
@@ -712,16 +712,16 @@
       "for_packages": [
         "pkg:pypi/pip@22.0.4?uuid=fixed-uid-done-for-testing-5642512d1758"
       ],
-      "is_legal": false,
-      "is_manifest": false,
-      "is_readme": false,
-      "is_top_level": false,
-      "is_key_file": false,
       "detected_license_expression": null,
       "detected_license_expression_spdx": null,
       "license_detections": [],
       "license_clues": [],
       "percentage_of_license_text": 0,
+      "is_legal": false,
+      "is_manifest": false,
+      "is_readme": false,
+      "is_top_level": false,
+      "is_key_file": false,
       "scan_errors": []
     },
     {
@@ -793,16 +793,16 @@
       "for_packages": [
         "pkg:pypi/pip@22.0.4?uuid=fixed-uid-done-for-testing-5642512d1758"
       ],
-      "is_legal": false,
-      "is_manifest": false,
-      "is_readme": false,
-      "is_top_level": false,
-      "is_key_file": false,
       "detected_license_expression": null,
       "detected_license_expression_spdx": null,
       "license_detections": [],
       "license_clues": [],
       "percentage_of_license_text": 0,
+      "is_legal": false,
+      "is_manifest": true,
+      "is_readme": false,
+      "is_top_level": true,
+      "is_key_file": true,
       "scan_errors": []
     },
     {
@@ -901,11 +901,6 @@
       "for_packages": [
         "pkg:pypi/pip@22.0.4?uuid=fixed-uid-done-for-testing-5642512d1758"
       ],
-      "is_legal": false,
-      "is_manifest": false,
-      "is_readme": false,
-      "is_top_level": false,
-      "is_key_file": false,
       "detected_license_expression": "mit",
       "detected_license_expression_spdx": "MIT",
       "license_detections": [
@@ -957,6 +952,11 @@
       ],
       "license_clues": [],
       "percentage_of_license_text": 1.96,
+      "is_legal": false,
+      "is_manifest": true,
+      "is_readme": false,
+      "is_top_level": true,
+      "is_key_file": true,
       "scan_errors": []
     },
     {
@@ -1065,11 +1065,6 @@
       "for_packages": [
         "pkg:pypi/pip@22.0.4?uuid=fixed-uid-done-for-testing-5642512d1758"
       ],
-      "is_legal": false,
-      "is_manifest": false,
-      "is_readme": false,
-      "is_top_level": false,
-      "is_key_file": false,
       "detected_license_expression": "mit",
       "detected_license_expression_spdx": "MIT",
       "license_detections": [
@@ -1106,6 +1101,11 @@
       ],
       "license_clues": [],
       "percentage_of_license_text": 2.37,
+      "is_legal": false,
+      "is_manifest": true,
+      "is_readme": false,
+      "is_top_level": true,
+      "is_key_file": true,
       "scan_errors": []
     },
     {
@@ -1113,16 +1113,16 @@
       "type": "directory",
       "package_data": [],
       "for_packages": [],
-      "is_legal": false,
-      "is_manifest": false,
-      "is_readme": false,
-      "is_top_level": true,
-      "is_key_file": false,
       "detected_license_expression": null,
       "detected_license_expression_spdx": null,
       "license_detections": [],
       "license_clues": [],
       "percentage_of_license_text": 0,
+      "is_legal": false,
+      "is_manifest": false,
+      "is_readme": false,
+      "is_top_level": true,
+      "is_key_file": false,
       "scan_errors": []
     },
     {
@@ -1130,16 +1130,16 @@
       "type": "directory",
       "package_data": [],
       "for_packages": [],
-      "is_legal": false,
-      "is_manifest": false,
-      "is_readme": false,
-      "is_top_level": false,
-      "is_key_file": false,
       "detected_license_expression": null,
       "detected_license_expression_spdx": null,
       "license_detections": [],
       "license_clues": [],
       "percentage_of_license_text": 0,
+      "is_legal": false,
+      "is_manifest": false,
+      "is_readme": false,
+      "is_top_level": false,
+      "is_key_file": false,
       "scan_errors": []
     },
     {
@@ -1149,16 +1149,16 @@
       "for_packages": [
         "pkg:pypi/pip@22.0.4?uuid=fixed-uid-done-for-testing-5642512d1758"
       ],
-      "is_legal": false,
-      "is_manifest": false,
-      "is_readme": false,
-      "is_top_level": false,
-      "is_key_file": false,
       "detected_license_expression": null,
       "detected_license_expression_spdx": null,
       "license_detections": [],
       "license_clues": [],
       "percentage_of_license_text": 0,
+      "is_legal": false,
+      "is_manifest": false,
+      "is_readme": false,
+      "is_top_level": false,
+      "is_key_file": false,
       "scan_errors": []
     },
     {
@@ -1168,16 +1168,16 @@
       "for_packages": [
         "pkg:pypi/pip@22.0.4?uuid=fixed-uid-done-for-testing-5642512d1758"
       ],
-      "is_legal": false,
-      "is_manifest": false,
-      "is_readme": false,
-      "is_top_level": false,
-      "is_key_file": false,
       "detected_license_expression": null,
       "detected_license_expression_spdx": null,
       "license_detections": [],
       "license_clues": [],
       "percentage_of_license_text": 0,
+      "is_legal": false,
+      "is_manifest": false,
+      "is_readme": false,
+      "is_top_level": false,
+      "is_key_file": false,
       "scan_errors": []
     },
     {
@@ -1187,16 +1187,16 @@
       "for_packages": [
         "pkg:pypi/pip@22.0.4?uuid=fixed-uid-done-for-testing-5642512d1758"
       ],
-      "is_legal": false,
-      "is_manifest": false,
-      "is_readme": false,
-      "is_top_level": false,
-      "is_key_file": false,
       "detected_license_expression": null,
       "detected_license_expression_spdx": null,
       "license_detections": [],
       "license_clues": [],
       "percentage_of_license_text": 0,
+      "is_legal": false,
+      "is_manifest": false,
+      "is_readme": false,
+      "is_top_level": false,
+      "is_key_file": false,
       "scan_errors": []
     }
   ]
