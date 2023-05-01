@@ -1037,6 +1037,7 @@ patterns = [
     # trailing parens: notice(s) and exceptions
     (r"^Member\(s\)[\.,]?$", 'NNP'),
     (r"^Author\(s\)[\.,:]?$", 'AUTHS'),
+    (r"^[A-a]ffiliate\(s\)[\.,:]?$", 'COMP'),
 
     (r"^[a-z].+\(s\)[\.,]?$", 'JUNK'),
 
