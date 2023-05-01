@@ -3,3 +3,10 @@ what:
   - holders
   - holders_summary
   - authors
+copyrights:
+  - copyrighted by the Free
+holders:
+  - the Free
+holders_summary:
+  - value: the Free
+    count: 1

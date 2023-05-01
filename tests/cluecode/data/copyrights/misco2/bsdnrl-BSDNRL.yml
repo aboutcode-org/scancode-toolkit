@@ -3,13 +3,9 @@ what:
   - holders
   - holders_summary
 copyrights:
-  - copyrighted by their respective developers
   - copyright by The Regents of the University of California
 holders:
-  - their respective developers
   - The Regents of the University of California
 holders_summary:
   - value: The Regents of the University of California
-    count: 1
-  - value: their respective developers
     count: 1

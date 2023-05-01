@@ -3,3 +3,5 @@ what:
   - holders
   - holders_summary
   - authors
+authors:
+  - Andy Polyakov <appro@openssl.org>
