@@ -51,6 +51,7 @@ class LicensePolicy(PostScanPlugin):
 
     resource_attributes = dict(license_policy=attr.ib(default=attr.Factory(list)))
 
+    run_order = 9
     sort_order = 9
 
     options = [
@@ -100,8 +101,8 @@ class LicensePolicy(PostScanPlugin):
                     if key == policy.get('license_key'):
                         # Apply the policy to the Resource
                         license_policies.append(policy)
-            
-            resource.license_policy = sorted(license_policies, key=lambda d: d['license_key']) 
+
+            resource.license_policy = sorted(license_policies, key=lambda d: d['license_key'])
             codebase.save_resource(resource)
 
 

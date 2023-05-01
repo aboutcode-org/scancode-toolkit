@@ -134,6 +134,7 @@ class PackageScanner(ScanPlugin):
 
     required_plugins = ['scan:licenses']
 
+    run_order = 3
     sort_order = 3
 
     options = [

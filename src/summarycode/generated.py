@@ -49,6 +49,7 @@ class GeneratedCodeDetector(ScanPlugin):
     resource_attributes = dict(is_generated=Boolean(
         help='True if this file is likely an automatically generated file.'))
 
+    run_order = 50
     sort_order = 50
 
     options = [

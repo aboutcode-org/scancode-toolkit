@@ -95,6 +95,7 @@ class FileClassifier(PostScanPlugin):
 
     ])
 
+    run_order = 4
     sort_order = 4
 
     options = [

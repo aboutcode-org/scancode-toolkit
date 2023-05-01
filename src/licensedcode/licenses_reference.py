@@ -48,6 +48,7 @@ class LicenseReference(PostScanPlugin):
     )
 
     # TODO: send to the tail of the scan, after files
+    run_order = 1000
     sort_order = 1000
 
     options = [

@@ -53,6 +53,7 @@ class LicenseClarityScore(PostScanPlugin):
 
     codebase_attributes = dict(summary=attr.ib(default=attr.Factory(dict)))
 
+    run_order = 5
     sort_order = 5
 
     options = [
