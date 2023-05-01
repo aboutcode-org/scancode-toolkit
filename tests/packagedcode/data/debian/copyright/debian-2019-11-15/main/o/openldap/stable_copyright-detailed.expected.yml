@@ -513,7 +513,6 @@ license_detections:
 other_license_detections: []
 copyright: |
   Copyright 1998-2016 The OpenLDAP Foundation
-  copyright by other parties
   Copyright 1999 Computing Research Labs, New Mexico State University
   Copyright (c) 1994, 1995-8, 1999, 2001 Free Software Foundation, Inc.
   Portions Copyright (c) 1995 by International Business Machines, Inc.

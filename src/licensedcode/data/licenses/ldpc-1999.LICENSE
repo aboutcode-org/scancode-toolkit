@@ -7,10 +7,6 @@ owner: Linux Documentation Project
 spdx_license_key: LicenseRef-scancode-ldpc-1999
 text_urls:
     - http://linuxmafia.com/faq/Licensing_and_Law/ldpc-license-1999-09-16.html
-ignorable_copyrights:
-    - copyrighted by their respective
-ignorable_holders:
-    - their respective
 ---
 
 Linux Documentation Project Copying License
