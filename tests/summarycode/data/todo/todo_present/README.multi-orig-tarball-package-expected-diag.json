@@ -4,7 +4,7 @@
     {
       "detection_id": "borceux-3c39742c-edef-82b7-0cdd-fc4d9ff8b044",
       "review_comments": {
-        "imperfect-match-coverage": "The license detection likely is not conslusive as there was license matches with low score or coverage, and so this needs review. scancode would likely benifit from a license rule addition from this case, so please report this to scancode-toolkit github issues."
+        "imperfect-match-coverage": "The license detection likely is not conclusive as there was license matches with low score or coverage, and so this needs review. scancode would likely benifit from a license rule addition from this case, so please report this to scancode-toolkit github issues."
       },
       "detection": {
         "license_expression": "borceux",

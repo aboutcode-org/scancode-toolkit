@@ -1,0 +1,9 @@
+---
+license_expression: apache-2.0
+is_license_notice: yes
+referenced_filenames:
+    - about_files/NOTICE
+---
+
+The Apache attribution <a href="about_files/NOTICE">NOTICE</a> file is included 
+with the Content in accordance with 4d of the Apache License, Version 2.0.

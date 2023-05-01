@@ -2140,7 +2140,7 @@ class Rule(BasicRule):
         try:
             return list(get_key_phrase_spans(self.text))
         except Exception as e:
-            raise Exception(f'Invalid rule: {self}') from e
+            raise InvalidRule(f'Invalid rule: {self}') from e
 
     def compute_thresholds(self, small_rule=SMALL_RULE):
         """

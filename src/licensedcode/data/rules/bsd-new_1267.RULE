@@ -1,0 +1,11 @@
+---
+license_expression: bsd-new
+is_license_tag: yes
+relevance: 99
+ignorable_urls:
+    - http://www.opensource.org/licenses/bsd-license.php
+---
+
+<license>
+<name> The BSD License </name>
+<url> (http://www.opensource.org/licenses/bsd-license.php)</url>

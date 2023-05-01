@@ -1,0 +1,11 @@
+---
+license_expression: bsd-new
+is_license_tag: yes
+relevance: 100
+ignorable_urls:
+    - https://asm.ow2.io/license.html
+---
+
+<license>
+<name> BSD-3-Clause </name>
+<url> (https://asm.ow2.io/license.html)</url>

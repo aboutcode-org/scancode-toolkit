@@ -1,0 +1,13 @@
+---
+license_expression: ogc
+is_license_tag: yes
+relevance: 100
+ignorable_copyrights:
+    - copyright (https://raw.githubusercontent.com/opengeospatial/geoapi/master/LICENSE.txt)
+ignorable_holders:
+    - https://raw.githubusercontent.com/opengeospatial/geoapi/master/LICENSE.txt
+ignorable_urls:
+    - https://raw.githubusercontent.com/opengeospatial/geoapi/master/LICENSE.txt
+---
+
+License   OGC copyright   (https://raw.githubusercontent.com/opengeospatial/geoapi/master/LICENSE.txt)

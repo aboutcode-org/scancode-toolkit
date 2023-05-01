@@ -4,8 +4,10 @@ is_license_text: yes
 relevance: 100
 ignorable_copyrights:
     - copyright by The Regents of the University of California
+    - copyrighted by their respective developers
 ignorable_holders:
     - The Regents of the University of California
+    - their respective developers
 ignorable_authors:
     - the University of California, Berkeley and its contributors
 ---

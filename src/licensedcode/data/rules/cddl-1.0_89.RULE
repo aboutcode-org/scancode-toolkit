@@ -1,0 +1,9 @@
+---
+license_expression: cddl-1.0
+is_license_reference: yes
+relevance: 100
+ignorable_urls:
+    - http://glassfish.dev.java.net/public/CDDLv1.0.html
+---
+
+http://glassfish.dev.java.net/public/CDDLv1.0.html

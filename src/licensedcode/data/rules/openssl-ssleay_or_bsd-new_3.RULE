@@ -3,7 +3,7 @@ license_expression: openssl-ssleay OR bsd-new
 is_license_notice: yes
 minimum_coverage: 90
 ignorable_authors:
-    - Andy Polyakov <appro@fy.chalmers.se> for the OpenSSL project
+    - Andy Polyakov <appro@fy.chalmers.se>
 ignorable_urls:
     - http://www.openssl.org/~appro/cryptogams
 ignorable_emails:

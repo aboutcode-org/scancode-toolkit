@@ -5,7 +5,7 @@ relevance: 100
 minimum_coverage: 60
 ignorable_authors:
     - Andy Polyakov
-    - Andy Polyakov <appro@fy.chalmers.se> for the OpenSSL project
+    - Andy Polyakov <appro@fy.chalmers.se>
 ignorable_urls:
     - http://www.openssl.org/~appro/cryptogams
 ignorable_emails:

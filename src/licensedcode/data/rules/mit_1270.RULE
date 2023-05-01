@@ -1,0 +1,11 @@
+---
+license_expression: mit
+is_license_tag: yes
+relevance: 100
+ignorable_urls:
+    - https://www.bouncycastle.org/licence.html
+---
+
+<license>
+<name> Bouncy Castle Licence </name>
+<url> (https://www.bouncycastle.org/licence.html)</url>

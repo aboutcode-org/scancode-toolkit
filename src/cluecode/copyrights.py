@@ -590,12 +590,12 @@ patterns = [
     (r'^copyright\.\)?$', 'NN'),
 
     # NOT a copyright symbol (ie. "copyrighted."): treat as NN
-    (r'^Copyrighted[\.,]$', 'NN'),
-    (r'^Copyrights[\.,]$', 'NN'),
-    (r'^copyrighted[\.,]$', 'NN'),
-    (r'^copyrights[\.,]$', 'NN'),
-    (r'^COPYRIGHTS[\.,]$', 'NN'),
-    (r'^COPYRIGHTED[\.,]$', 'NN'),
+    (r'^[Cc]opyrighted[\.,\)]$', 'NN'),
+    (r'^[Cc]opyrights[\.,\)]$', 'NN'),
+    (r'^[Cc]opyrighted[\.,\)]$', 'NN'),
+    (r'^[Cc]opyrights[\.,\)]$', 'NN'),
+    (r'^COPYRIGHTS[\.,\)]$', 'NN'),
+    (r'^COPYRIGHTED[\.,\)]$', 'NN'),
 
     # copyright word or symbol
     (r'^[\(\.@_\-\#\):]*[Cc]opyrights?:?$', 'COPY'),
@@ -639,7 +639,7 @@ patterns = [
     (r'^AppCopyright?$', 'COPY'),
 
     # seen in binaries
-     (r'^ECopyright?$', 'COPY'),
+     (r'^[A-Z]Copyright?$', 'COPY'),
 
     # SPDX-FileCopyrightText as defined by the FSFE Reuse project
     (r'^[Ss][Pp][Dd][Xx]-[Ff]ile[Cc]opyright[Tt]ext', 'COPY'),
@@ -803,6 +803,7 @@ patterns = [
     (r'^Generates?$', 'JUNK'),
     (r'^Thanks?$', 'JUNK'),
     (r'^therein$', 'JUNK'),
+    (r'^their$', 'JUNK'),
 
     # various programming constructs
     (r'^var$', 'JUNK'),
@@ -830,7 +831,7 @@ patterns = [
     (r'^Disclaimer$', 'JUNK'),
     (r'^LAWS\,?$', 'JUNK'),
     (r'^[Ll]aws?,?$', 'JUNK'),
-    (r'^Some$', 'JUNK'),
+    (r'^me$', 'JUNK'),
     (r'^Derived$', 'JUNK'),
     (r'^Limitations?$', 'JUNK'),
     (r'^Nothing$', 'JUNK'),
@@ -1028,7 +1029,16 @@ patterns = [
     (r'^param$', 'JUNK'),
 
     # "Es6ToEs3ClassSideInheritance. and related names
-    (r"[A-Z]([a-zA-Z]*[0-9])+[a-zA-Z]+[\.,]?", 'JUNK'),
+    (r"^[A-Z]([a-zA-Z]*[0-9]){2,}[a-zA-Z]+[\.,]?", 'JUNK'),
+
+    # owlocationNameEntitieship.
+    (r"^([a-z]{2,}[A-Z]){2,}[a-z]+[\.,]?", 'JUNK'),
+
+    # trailing parens: notice(s),
+    (r"^.+\(.+\)[\.,]?", 'JUNK'),
+
+    # single period
+    (r"^\.$", 'JUNK'),
 
     # Exceptions to short mixed caps with trailing cap
     (r"ApS$", 'COMP'),
@@ -1047,8 +1057,9 @@ patterns = [
     (r'^[Aa]nother$', 'JUNK'),
     (r'^[Aa]acute', 'JUNK'),
     (r'^[Aa]circumflex', 'JUNK'),
-    # first, last family name
+    # First|Last|FamilyName
     (r'^[A-Z][a-z]+Name', 'JUNK'),
+    (r'^[Yy]ourself', 'JUNK'),
 
     ############################################################################
     # Nouns and proper Nouns
@@ -1089,7 +1100,7 @@ patterns = [
     (r'^AIRTM$', 'NN'),
     (r'^Android$', 'NN'),
     (r'^Any$', 'NN'),
-    (r'^Appropriate$', 'NN'),
+    (r'^Appropriate$', 'JUNK'),
     (r'^Expander$', 'NN'),
     (r'^Archiver$', 'NN'),
     (r'^APPROPRIATE', 'NN'),
@@ -1204,7 +1215,7 @@ patterns = [
     (r'^Interview', 'NN'),
     (r'^ProducerName', 'NN'),
     (r'^Libraries$', 'NN'),
-    (r'^Initials?$', 'NN'),
+    (r'^Initials$', 'NN'),
     (r'^Licen[cs]e', 'NN'),
     (r'^License-Alias\:?$', 'NN'),
     (r'^Linux$', 'NN'),
@@ -1324,6 +1335,7 @@ patterns = [
     (r'^Work', 'NN'),
     (r'^WPA$', 'NN'),
     (r'^Xalan$', 'NN'),
+    (r'^IP', 'NN'),
     (r'^YOUR', 'NN'),
     (r'^Your', 'NN'),
     (r'^Date[A-Z]', 'NN'),
@@ -1392,7 +1404,6 @@ patterns = [
     (r'^Device$', 'NN'),
     (r'^Mfg$', 'NN'),
     (r'^Comment$', 'NN'),
-    (r'^Creation$', 'NN'),
     (r'^Frame$', 'NN'),
     (r'^Size$', 'NN'),
     (r'^Flag$', 'NN'),
@@ -1507,6 +1518,9 @@ patterns = [
     # rarer caps
     # EPFL-LRC/ICA
     (r'^[A-Z]{3,6}-[A-Z]{3,6}/[A-Z]{3,6}', 'NNP'),
+
+    # Copyright (c)  G-Truc Creation
+    (r'^[A-Z]-[A-Z][a-z]{2,8}', 'NNP'),
 
     ############################################################################
     # Named entities: companies, groups, universities, etc
@@ -1891,6 +1905,11 @@ patterns = [
 
     # Mixed cap nouns (rare) LeGrande
     (r'^[A-Z][a-z]+[A-Z][a-z]+[\.\,]?$', 'MIXEDCAP'),
+
+    # Code variable names including snake case exceptions
+    (r'\(?Massachusetts_Institute_of_Technology,?$', 'NAME'),
+    (r'National_de_Recherche_en_Informatique_et_en_Automatique,?$', 'NAME'),
+    (r'Keio_University\)?,?$', 'NAME'),
 
     # Code variable names including snake case
     (r'^.*(_.*)+$', 'JUNK'),
@@ -2488,6 +2507,9 @@ grammar = """
 
     # Licensed material of Foobar Company, All Rights Reserved, (C) 2005
     COPYRIGHT: {<COMPANY>  <ALLRIGHTRESERVED>  <COPYRIGHT>} #22794
+
+    # Copyright 2013-2020 by OCamlPro.
+    COPYRIGHT2: {<COPY>+ <YR-RANGE>+ <BY> <NN|NNP> }        #22795
 
     COPYRIGHT2: {<COPY>+ <NN|CAPS>? <YR-RANGE>+ <PN>*}        #2280
 
@@ -3274,7 +3296,7 @@ def remove_dupe_copyright_words(c):
     # from .net assemblies
     c = c.replace('AssemblyCopyright', 'Copyright')
     c = c.replace('AppCopyright', 'Copyright')
-    
+
     # various prefix to the word copyright seen in binaries
     # TODO use a regex instead
     c = c.replace('BCopyright', 'Copyright')
@@ -3813,6 +3835,8 @@ def prepare_text_line(line, dedeb=True, to_ascii=True):
         .replace('u00a9', ' (c) ')
         .replace('\xa9', ' (c) ')
         .replace('\\XA9', ' (c) ')
+        .replace('\A9', ' (c) ')
+        .replace('\a9', ' (c) ')
         # \xc2 is a Â
         .replace('\xc2', '')
         .replace('\\xc2', '')
@@ -3858,7 +3882,7 @@ def prepare_text_line(line, dedeb=True, to_ascii=True):
         .replace('\\r', ' ')
         .replace('\\0', ' ')
 
-        # TODO: why backslashes?
+        # Remove backslashes
         .replace('\\', ' ')
 
         # replace ('

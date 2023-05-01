@@ -1,0 +1,14 @@
+---
+license_expression: apache-2.0
+is_license_notice: yes
+referenced_filenames:
+    - about_files/LICENSE
+    - about_files/NOTICE
+ignorable_urls:
+    - http://www.apache.org/licenses/LICENSE-2.0.html
+---
+
+code is subject to the terms and conditions of the Apache Software License 2.0.  A copy of the license is contained
+in the file <a href="about_files/LICENSE">LICENSE</a> and is also available at <a href="http://www.apache.org/licenses/LICENSE-2.0.html">http://www.apache.org/licenses/LICENSE-2.0.html</a>.
+
+<p>The Apache attribution <a href="about_files/NOTICE">NOTICE</a> file is included with the Content in accordance with 4d of the Apache License, Version 2.0.</p>

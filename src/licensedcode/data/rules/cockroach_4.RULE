@@ -2,10 +2,6 @@
 license_expression: cockroach
 is_license_text: yes
 relevance: 100
-ignorable_copyrights:
-    - (c) CockroachDB Enterprise Edition
-ignorable_holders:
-    - CockroachDB Enterprise Edition
 ignorable_urls:
     - https://cla-assistant.io/cockroachdb/cockroach
     - https://cockroachlabs.com/pricing

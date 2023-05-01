@@ -1,0 +1,47 @@
+---
+license_expression: public-domain OR mit OR artistic-perl-1.0 OR artistic-2.0 OR gpl-1.0-plus
+is_license_notice: yes
+relevance: 99
+---
+
+this is really just a legal technicality that allows the author to
+offer this package under the public domain and also a variety of licensing
+options. For all intents and purposes, this is public domain software,
+which means you can do whatever you want with it.
+ 
+The software is provided "AS IS", without warranty of any kind, express or
+implied, including but not limited to the warranties of merchantability,
+fitness for a particular purpose and noninfringement. In no event shall the
+authors or copyright holders be liable for any claim, damages or other
+liability, whether in an action of contract, tort or otherwise, arising from,
+out of or in connection with the software or the use or other dealings in
+the software.
+ 
+__LICENSE__
+Legally speaking, this package and its contents are:
+ 
+ 
+But this is really just a legal technicality that allows the author to
+offer this package under the public domain and also a variety of licensing
+options. For all intents and purposes, this is public domain software,
+which means you can do whatever you want with it.
+ 
+SUMMARY
+ 
+I, the copyright holder of this package, hereby release the entire contents
+therein into the public domain. This applies worldwide, to the extent that
+it is permissible by law.
+ 
+In case this is not legally possible, I grant any entity the right to use
+this work for any purpose, without any conditions, unless such conditions
+are required by law.
+ 
+If you so choose, or if you are legally compelled to do so, you may use
+this software under the terms of your choice of the following licenses:
+ 
+1. The MIT/X11 License; or,
+2. The Perl Artistic License, version 1 or later; or,
+3. The GNU General Public License, version 1 or later
+ 
+For the sake of convenience, the full text of the latest versions of these
+licenses (as of writing) follows.
