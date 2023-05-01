@@ -878,7 +878,7 @@ patterns = [
     # various trailing words that are junk
     (r'^Copyleft$', 'JUNK'),
     (r'^LegalCopyright$', 'JUNK'),
-    (r'^Distributed$', 'JUNK'),
+    #(r'^Distributed$', 'JUNK'),
     (r'^Report$', 'JUNK'),
     (r'^Available$', 'JUNK'),
     (r'^true$', 'JUNK'),
@@ -1034,8 +1034,9 @@ patterns = [
     # owlocationNameEntitieship.
     (r"^([a-z]{2,}[A-Z]){2,}[a-z]+[\.,]?", 'JUNK'),
 
-    # trailing parens: notice(s),
-    (r"^.+\(.+\)[\.,]?", 'JUNK'),
+    # trailing parens: notice(s)
+    (r"^Member\(s\)[\.,]?$", 'NNP'),
+    (r"^.+\(.+\)[\.,]?$", 'JUNK'),
 
     # single period
     (r"^\.$", 'JUNK'),
@@ -1060,6 +1061,8 @@ patterns = [
     # First|Last|FamilyName
     (r'^[A-Z][a-z]+Name', 'JUNK'),
     (r'^[Yy]ourself', 'JUNK'),
+    (r'^parties$', 'JUNK'),
+
 
     ############################################################################
     # Nouns and proper Nouns
@@ -1166,7 +1169,8 @@ patterns = [
     (r'^Foreign$', 'NN'),
     (r'^From$', 'NN'),
     (r'^Full$', 'NN'),
-    (r'^Further$', 'NN'),
+    # also Furthermore
+    (r'^Further', 'NN'),
     (r'^Gaim$', 'NN'),
     (r'^Generated', 'NN'),
     (r'^Glib$', 'NN'),
@@ -1175,6 +1179,7 @@ patterns = [
     (r'^Gnome$', 'NN'),
     (r'^GnuPG$', 'NN'),
     (r'^Government.', 'NNP'),
+    (r'^OProfile$', 'NNP'),
     (r'^Government', 'NN'),
     (r'^Grants?\.?,?$', 'NN'),
     (r'^Header', 'NN'),
@@ -2777,7 +2782,7 @@ grammar = """
     COPYRIGHT: {<COPY> <BY> <NN> <NN> <MAINT>?}        #83003
 
     # Copyright OProfile authors
-    COPYRIGHT: {<COPY> <NN|NNP> <AUTHS>}         #83004
+    COPYRIGHT: {<COPY> <NN>?<NNP>+ <AUTHS>}         #83004
 
     # Copyright (c) 2009-2018
     # FedICT (federal ICT department of Belgium), e-Contract.be BVBA (https://www.e-contract.be),
@@ -2829,7 +2834,8 @@ grammar = """
     AUTHOR: {<AUTH2> <CC> <AUTHOR> <NN> <NAME> <NN> <NN> <NNP>} #2645-4
 
     # developed by the XML DB Initiative http//www.xmldb.org
-    AUTHOR: {<AUTH2> <COMPANY>} #2645-7
+    # developed by the NetBSD Foundation, Inc. and its contributors.
+    AUTHOR: {<AUTH2> <COMPANY> <NAME>?} #2645-7
 
     # Author not attributable
     AUTHOR: {<AUTH>  <NN>  <NNP>} #not attributable

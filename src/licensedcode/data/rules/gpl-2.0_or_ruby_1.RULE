@@ -6,8 +6,6 @@ referenced_filenames:
     - GPL
 notes: Seen in https://github.com/eventmachine/eventmachine/blob/b50c135dfdd4e7b20c8e0b7ce1d8fe7176d4d14d/LICENSE
     The text is modified, but mostly reworded and essnetially similar
-ignorable_authors:
-    - the Owner
 ---
 
 The Owner of this software permits you to
@@ -52,7 +50,7 @@ version 2 (see the file GPL), or the conditions below ("Ruby License"):
   4. You may modify and include parts of the software into any other
      software (possibly commercial), provided you comply with the terms in
      Sections 1, 2, and 3 above. But some files in the distribution
-     are not written by the Owner, so they may be made available to you
+     are q be made available to you
      under different terms.
 
      For the list of those files and their copying conditions, see the

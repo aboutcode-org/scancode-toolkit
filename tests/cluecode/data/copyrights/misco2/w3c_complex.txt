@@ -1,0 +1,3 @@
+Copyright (C) 1994-2002 W3C (R) (Massachusetts_Institute_of_Technology, Institut
+National_de_Recherche_en_Informatique_et_en_Automatique, Keio_University), All
+Rights Reserved.

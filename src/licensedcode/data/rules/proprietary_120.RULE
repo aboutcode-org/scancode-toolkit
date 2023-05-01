@@ -2,9 +2,9 @@
 license_expression: proprietary-license
 is_license_text: yes
 ignorable_copyrights:
-    - copyrighted by the Regents of the University
+    - copyrighted by the Regents of the University of It
 ignorable_holders:
-    - the Regents of the University
+    - the Regents of the University of It
 ---
 
 Copyright & License Notice

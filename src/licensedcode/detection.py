@@ -11,6 +11,7 @@ import posixpath
 import sys
 import os
 import logging
+import typing
 import uuid
 from enum import Enum
 from hashlib import sha1
@@ -189,7 +190,6 @@ class LicenseDetection:
             'expression and a UUID crafted from the match contents.')
     )
 
-
     # Only used in unique detection calculation and referencing
     file_region = attr.ib(
         default=attr.Factory(dict),
@@ -283,10 +283,17 @@ class LicenseDetection:
         """
         data = []
         for match in self.matches:
-            if isinstance(match.matched_text, str):
-                tokenized_matched_text = tuple(query_tokenizer(match.matched_text))
-            else:
-                tokenized_matched_text = tuple(query_tokenizer(match.matched_text()))
+
+            matched_text = match.matched_text
+            if isinstance(matched_text, typing.Callable):
+                matched_text = matched_text()
+                if matched_text is None:
+                    matched_text = ''
+            if not isinstance(matched_text, str):
+                matched_text = repr(matched_text)
+
+            tokenized_matched_text = tuple(query_tokenizer(matched_text))
+
             identifier = (
                 match.rule.identifier,
                 match.score(),
@@ -764,8 +771,7 @@ class UniqueDetection:
                         for match in detection.matches
                     ]
                 ))
-                detection.identifier = detection.identifier_with_expression 
-
+                detection.identifier = detection.identifier_with_expression
 
             unique_license_detections.append(
                 cls(
@@ -801,7 +807,7 @@ class UniqueDetection:
         return LicenseDetection(
             license_expression=self.license_expression,
             detection_log=self.detection_log,
-            matches= self.matches,
+            matches=self.matches,
             identifier=self.identifier,
             file_region=None,
         )
@@ -818,6 +824,7 @@ def get_detections_by_id(license_detections):
         detections_by_id[detection.identifier].append(detection)
 
     return detections_by_id
+
 
 def get_identifiers(license_detections):
     """
@@ -931,10 +938,10 @@ def has_extra_words(license_matches):
 def has_low_rule_relevance(license_matches):
     """
     Return True if any on the matches in ``license_matches`` List of LicenseMatch
-    objects has a match with low score because of low rule relevance. 
+    objects has a match with low score because of low rule relevance.
     """
     return any(
-        license_match.rule.relevance < LOW_RELEVANCE_THRESHOLD 
+        license_match.rule.relevance < LOW_RELEVANCE_THRESHOLD
         for license_match in license_matches
     )
 
@@ -1139,9 +1146,9 @@ def has_references_to_local_files(license_matches):
 
 
 def get_detected_license_expression(
-    analysis, 
-    license_matches=None, 
-    license_match_mappings=None, 
+    analysis,
+    license_matches=None,
+    license_match_mappings=None,
     post_scan=False,
 ):
     """
@@ -1159,8 +1166,8 @@ def get_detected_license_expression(
 
     if TRACE or TRACE_ANALYSIS:
         logger_debug(
-            f'license_matches {license_matches}', 
-            f'package_license {analysis}', 
+            f'license_matches {license_matches}',
+            f'package_license {analysis}',
             f'post_scan: {post_scan}',
         )
 
