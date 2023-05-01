@@ -1034,9 +1034,11 @@ patterns = [
     # owlocationNameEntitieship.
     (r"^([a-z]{2,}[A-Z]){2,}[a-z]+[\.,]?", 'JUNK'),
 
-    # trailing parens: notice(s)
+    # trailing parens: notice(s) and exceptions
     (r"^Member\(s\)[\.,]?$", 'NNP'),
-    (r"^.+\(.+\)[\.,]?$", 'JUNK'),
+    (r"^Author\(s\)[\.,:]?$", 'AUTHS'),
+
+    (r"^[a-z].+\(s\)[\.,]?$", 'JUNK'),
 
     # single period
     (r"^\.$", 'JUNK'),
