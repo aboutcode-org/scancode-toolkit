@@ -7,7 +7,7 @@ ignorable_urls:
 
 <licenses>
     <license>
-      <name>The BSD License</name>
+      <name>{{The BSD License}}</name>
       <url>http://www.opensource.org/licenses/bsd-license.php</url>
       <distribution>repo</distribution>
     </license>
