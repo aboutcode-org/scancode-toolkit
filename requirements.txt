@@ -48,7 +48,7 @@ pefile==2022.5.30
 pip-requirements-parser==32.0.1
 pkginfo2==30.0.0
 pluggy==1.0.0
-plugincode==31.0.0
+plugincode==32.0.0
 ply==3.11
 publicsuffix2==2.20191221
 pyahocorasick==2.0.0
