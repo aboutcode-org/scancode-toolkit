@@ -4,7 +4,9 @@
       "identifier": "unknown-b0897d47-1c91-9898-2364-2e4d1a34b6fd",
       "license_expression": "unknown",
       "detection_count": 1,
-      "detection_log": []
+      "detection_log": [
+        "unknown-match"
+      ]
     }
   ],
   "files": [
