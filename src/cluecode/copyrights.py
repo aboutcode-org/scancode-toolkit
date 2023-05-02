@@ -1070,7 +1070,7 @@ patterns = [
     (r'^[Yy]ourself', 'JUNK'),
     (r'^parties$', 'JUNK'),
     (r'^\(?names?\)?$', 'JUNK'),
-    (r'^[Bb]oolean$', 'JUNK'),
+    (r'^[Bb]oolean$', 'NN'),
     (r'^private$', 'JUNK'),
     (r'^[MmNn]odules?[,\.]?$', 'JUNK'),
     (r'^[Rr]eturned$', 'JUNK'),
