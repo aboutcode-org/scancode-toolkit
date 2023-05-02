@@ -11,21 +11,21 @@
   "parties": [
     {
       "type": "person",
-      "role": "developper",
+      "role": "developer",
       "name": "Alexander Smirnov",
       "email": "alexsmirnov@exadel.com",
       "url": null
     },
     {
       "type": "person",
-      "role": "developper",
+      "role": "developer",
       "name": "Igor Shabalov",
       "email": "ishabalov@exadel.com",
       "url": null
     },
     {
       "type": "person",
-      "role": "developper",
+      "role": "developer",
       "name": "Sergey Smirnov",
       "email": "sergeysmirnov@exadel.com",
       "url": null

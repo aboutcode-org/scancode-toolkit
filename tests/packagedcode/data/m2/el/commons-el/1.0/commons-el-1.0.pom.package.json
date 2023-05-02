@@ -11,35 +11,35 @@
   "parties": [
     {
       "type": "person",
-      "role": "developper",
+      "role": "developer",
       "name": "Nathan Abramson",
       "email": "arista@alum.mit.edu",
       "url": null
     },
     {
       "type": "person",
-      "role": "developper",
+      "role": "developer",
       "name": "Shawn Bayern",
       "email": "shawn@apache.org",
       "url": null
     },
     {
       "type": "person",
-      "role": "developper",
+      "role": "developer",
       "name": "Pierre Delisle",
       "email": "pierre.delisle@sun.com",
       "url": null
     },
     {
       "type": "person",
-      "role": "developper",
+      "role": "developer",
       "name": "Craig McClanahan",
       "email": "craigmcc@apache.org",
       "url": null
     },
     {
       "type": "person",
-      "role": "developper",
+      "role": "developer",
       "name": "Jan Luehe",
       "email": "jan.luehe@sun.com",
       "url": null

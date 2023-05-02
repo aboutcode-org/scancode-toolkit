@@ -11,14 +11,14 @@
   "parties": [
     {
       "type": "person",
-      "role": "developper",
+      "role": "developer",
       "name": "Eric Bruneton",
       "email": "Eric.Bruneton@rd.francetelecom.com",
       "url": null
     },
     {
       "type": "person",
-      "role": "developper",
+      "role": "developer",
       "name": "Eugene Kuleshov",
       "email": "eu@javatx.org",
       "url": null

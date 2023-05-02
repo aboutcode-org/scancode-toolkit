@@ -2546,14 +2546,12 @@ class UnknownRule(SynthethicRule):
         self.identifier = f'license-detection-unknown-{self._unique_id}'
 
         self.license_expression = UNKNOWN_LICENSE_KEY
-        # note that this could be shared across rules as an optimization
+        #TODO: that this could be shared across rules as an optimization
         self.license_expression_object = self.licensing.parse(UNKNOWN_LICENSE_KEY)
         self.is_license_notice = True
         self.notes = 'Unknown license based on a composite of license words.'
         self.is_synthetic = True
         self.setup()
-        # called only for it's side effects
-        self.tokens()
 
 
 @attr.s(slots=True, repr=False)

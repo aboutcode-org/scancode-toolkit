@@ -11,21 +11,21 @@
   "parties": [
     {
       "type": "person",
-      "role": "developper",
+      "role": "developer",
       "name": "Greg Luck",
       "email": "gregluck at users.sourceforge.net",
       "url": "http://gregluck.com"
     },
     {
       "type": "person",
-      "role": "developper",
+      "role": "developer",
       "name": "Surya Suravarapu",
       "email": "ssuravarapu at users.sourceforge.net",
       "url": null
     },
     {
       "type": "person",
-      "role": "developper",
+      "role": "developer",
       "name": "Gavin King",
       "email": "oneovthafew at users.sourceforge.net",
       "url": "http://hibernate.org"

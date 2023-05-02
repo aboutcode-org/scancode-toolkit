@@ -11,105 +11,105 @@
   "parties": [
     {
       "type": "person",
-      "role": "developper",
+      "role": "developer",
       "name": "Curt Arnold",
       "email": "carnold@users.sourceforge.net",
       "url": null
     },
     {
       "type": "person",
-      "role": "developper",
+      "role": "developer",
       "name": "David Lucas",
       "email": "ddlucas@users.sourceforge.net",
       "url": null
     },
     {
       "type": "person",
-      "role": "developper",
+      "role": "developer",
       "name": "David White",
       "email": "drwhite@users.sourceforge.net",
       "url": null
     },
     {
       "type": "person",
-      "role": "developper",
+      "role": "developer",
       "name": "Jakob Jenkov",
       "email": "jjenkov@users.sourceforge.net",
       "url": null
     },
     {
       "type": "person",
-      "role": "developper",
+      "role": "developer",
       "name": "James Strachan",
       "email": "jstrachan@apache.org",
       "url": null
     },
     {
       "type": "person",
-      "role": "developper",
+      "role": "developer",
       "name": "Laramie Crocker",
       "email": "laramiec@users.sourceforge.net",
       "url": null
     },
     {
       "type": "person",
-      "role": "developper",
+      "role": "developer",
       "name": "Maarten Coene",
       "email": "maartenc@users.sourceforge.net",
       "url": null
     },
     {
       "type": "person",
-      "role": "developper",
+      "role": "developer",
       "name": "Michael Skells",
       "email": "mskells@users.sourceforge.net",
       "url": null
     },
     {
       "type": "person",
-      "role": "developper",
+      "role": "developer",
       "name": "Nick Sanderson",
       "email": "nicksanderson@users.sourceforge.net",
       "url": null
     },
     {
       "type": "person",
-      "role": "developper",
+      "role": "developer",
       "name": "Steen Lehmann",
       "email": "slehmann@users.sourceforge.net",
       "url": null
     },
     {
       "type": "person",
-      "role": "developper",
+      "role": "developer",
       "name": "Tobias Rademacher",
       "email": "tradem@users.sourceforge.net",
       "url": null
     },
     {
       "type": "person",
-      "role": "developper",
+      "role": "developer",
       "name": "Bob McWhirter",
       "email": "werken@users.sourceforge.net",
       "url": null
     },
     {
       "type": "person",
-      "role": "developper",
+      "role": "developer",
       "name": "Todd Wolff",
       "email": "wolfftw@users.sourceforge.net",
       "url": null
     },
     {
       "type": "person",
-      "role": "developper",
+      "role": "developer",
       "name": "OuYang Chen",
       "email": "yeekee@users.sourceforge.net",
       "url": null
     },
     {
       "type": "person",
-      "role": "developper",
+      "role": "developer",
       "name": "Yuxin Ruan",
       "email": "yruan2@users.sourceforge.net",
       "url": null

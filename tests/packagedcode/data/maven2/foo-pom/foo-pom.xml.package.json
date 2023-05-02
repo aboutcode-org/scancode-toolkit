@@ -11,7 +11,7 @@
   "parties": [
     {
       "type": "person",
-      "role": "developper",
+      "role": "developer",
       "name": "John Doe",
       "email": "jdoe@myco.com",
       "url": null

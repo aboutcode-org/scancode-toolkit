@@ -11,7 +11,7 @@
   "parties": [
     {
       "type": "person",
-      "role": "developper",
+      "role": "developer",
       "name": "Michal Maczka",
       "email": "michal@codehaus.org",
       "url": null

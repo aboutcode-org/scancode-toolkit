@@ -950,7 +950,7 @@ def get_parties(pom):
             models.Party(
                 type=models.party_person,
                 name=dev['name'],
-                role='developper',
+                role='developer',
                 email=dev['email'],
                 url=dev['url']))
 
