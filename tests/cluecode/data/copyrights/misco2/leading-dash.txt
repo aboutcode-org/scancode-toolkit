@@ -1,0 +1,2 @@
+Copyright 1998-2010 AOL Inc.
+ - Apache

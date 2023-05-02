@@ -1,0 +1,4 @@
+private Boolean author;
+private Boolean processScripts;
+
+

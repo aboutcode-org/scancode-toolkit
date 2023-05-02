@@ -1,0 +1,6 @@
+1. GOST R 34.11-2012 was developed by the Center for Information
+Protection and Special Communications of the Federal Security
+Service of the Russian Federation with participation of the Open
+joint-stock company "Information Technologies and Communication
+Systems" (InfoTeCS JSC).
+

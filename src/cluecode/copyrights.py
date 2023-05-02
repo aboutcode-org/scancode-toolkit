@@ -731,7 +731,7 @@ patterns = [
     (r'^rant$', 'JUNK'),
     (r'^Subject$', 'JUNK'),
     (r'^Acknowledgements?$', 'JUNK'),
-    (r'^Special$', 'JUNK'),
+    (r'^Special$', 'NN'),
     (r'^Derivative$', 'JUNK'),
     (r'^[Ll]icensable$', 'JUNK'),
     (r'^[Ss]ince$', 'JUNK'),
@@ -878,7 +878,6 @@ patterns = [
     # various trailing words that are junk
     (r'^Copyleft$', 'JUNK'),
     (r'^LegalCopyright$', 'JUNK'),
-    #(r'^Distributed$', 'JUNK'),
     (r'^Report$', 'JUNK'),
     (r'^Available$', 'JUNK'),
     (r'^true$', 'JUNK'),
@@ -989,6 +988,11 @@ patterns = [
     (r'^begin$', 'JUNK'),
     (r'^end$', 'JUNK'),
 
+
+    # mixed pgramming words
+    (r'^Batch$', 'JUNK'),
+    (r'^Axes', 'JUNK'),
+
     # Some mixed case junk
     (r'^LastModified$', 'JUNK'),
 
@@ -1065,8 +1069,15 @@ patterns = [
     (r'^[A-Z][a-z]+Name', 'JUNK'),
     (r'^[Yy]ourself', 'JUNK'),
     (r'^parties$', 'JUNK'),
+    (r'^\(?names?\)?$', 'JUNK'),
+    (r'^[Bb]oolean$', 'JUNK'),
+    (r'^private$', 'JUNK'),
+    (r'^[MmNn]odules?[,\.]?$', 'JUNK'),
+    (r'^[Rr]eturned$', 'JUNK'),
 
-
+    # method names
+    (r'^[a-zA-Z]+\(\)$', 'JUNK'),
+    
     ############################################################################
     # Nouns and proper Nouns
     ############################################################################
@@ -1161,12 +1172,14 @@ patterns = [
     (r'^Example', 'NN'),
     (r'^Except', 'NN'),
     (r'^When$', 'NN'),
-    (r'^Owner', 'NN'),
+    #(r'^Owner$', 'NN'),
+    (r'^Holds$', 'NN'),
     (r'^Image', 'NN'),
     (r'^Supplier', 'NN'),
     (r'^Experimental$', 'NN'),
     (r'^F2Wku$', 'NN'),
     (r'^False$', 'NN'),
+    (r'^Fibonacci$', 'JUNK'),
     (r'^FALSE$', 'NN'),
     (r'^FAQ$', 'NN'),
     (r'^Foreign$', 'NN'),
@@ -1231,6 +1244,7 @@ patterns = [
     (r'^Log$', 'NN'),
     (r'^Logos?$', 'NN'),
     (r'^Luxi$', 'NN'),
+    (r'^Lucene', 'NN'),
     (r'^Mac$', 'NN'),
     (r'^Mondrian', 'NN'),
     (r'^Manager$', 'NN'),
@@ -1353,6 +1367,8 @@ patterns = [
     (r'^Review', 'NN'),
     (r'^Help', 'NN'),
     (r'^Web', 'NN'),
+    (r'^Weld$', 'NN'),
+    (r'^Common[A-Z]', 'NN'),
     (r'^MultiPart', 'NN'),
     (r'^Upload', 'NN'),
     (r'^PUT', 'NN'),
@@ -1530,6 +1546,10 @@ patterns = [
     # Copyright (c)  G-Truc Creation
     (r'^[A-Z]-[A-Z][a-z]{2,8}', 'NNP'),
 
+    # rare form of trailing punct in name: Ian Robertson).
+    (r'^Robert.*', 'NNP'),
+    
+
     ############################################################################
     # Named entities: companies, groups, universities, etc
     ############################################################################
@@ -1649,6 +1669,9 @@ patterns = [
 
     # Various rare company names/suffix
     (r'^FedICT$', 'COMPANY'),
+
+    # Division, District
+    (r'^(District|Division)\)?[,\.]?$', 'COMP'),
 
     ############################################################################
     # AUTHORS
@@ -1880,7 +1903,7 @@ patterns = [
     # a .sh shell scripts is NOT an email.
     (r'^.*\.sh\.?$', 'JUNK'),
     # email eventually in parens or brackets with some trailing punct. Note the @ or "at "
-    (r'^[\<\(]?[a-zA-Z0-9]+[a-zA-Z0-9\+_\-\.\%]*(@|at)[a-zA-Z0-9][a-zA-Z0-9\+_\-\.\%]+\.[a-zA-Z]{2,5}?[\>\)\.\,]*$', 'EMAIL'),
+    (r'^[\<\(]?[a-zA-Z0-9]+[a-zA-Z0-9\+_\-\.\%]*(@|at)[a-zA-Z0-9][a-zA-Z0-9\+_\-\.\%]+\.[a-zA-Z]{2,3}[\>\)\.\,]*$', 'EMAIL'),
     # mailto URLs
     (r'^mailto:.{2,}@.{2,}\.[a-z]{2,3}', 'EMAIL'),
 
@@ -2400,7 +2423,7 @@ grammar = """
 
     # Copyright 2015 The Happy Campers
     # Copyright 2015 The Error Prone Authors.
-    COPYRIGHT: {<NNP>? <COPY>+ (<YR-RANGE>+ <BY>? <NN>? <COMPANY|NAME|NAME-EMAIL>+ <EMAIL>?)+ <AUTHDOT>?}        #1630
+    COPYRIGHT: {<NNP>? <COPY>+ (<YR-RANGE>+ <BY>? <NN>? <COMPANY|NAME|NAME-EMAIL>+ <EMAIL>?)+ <AUTHDOT|MAINT>?}        #1630
 
     COPYRIGHT: {<COPY>+ <NN> <NAME> <YR-RANGE>}        #1650
 
@@ -2813,6 +2836,11 @@ grammar = """
 
     AUTHOR: {<AUTH|CONTRIBUTORS|AUTHS>+ <NN>? <COMPANY|NAME|NAME-EMAIL|NAME-YEAR>+ <YR-RANGE>*}       #2660
 
+    # developed by the Center for Information
+    # Protection and Special Communications of the Federal Security
+    # Service of the Russian Federation
+    AUTHOR: {<AUTHOR>  <NN>  <NN>  <NAME>  <NN>  <OF>  <NN>  <NAME>}       #2661
+
     AUTHOR: {<AUTH|CONTRIBUTORS|AUTHS>+ <YR-RANGE>+ <BY>? <COMPANY|NAME|NAME-EMAIL>+ }        #2670
     AUTHOR: {<AUTH|CONTRIBUTORS|AUTHS>+ <YR-RANGE|NNP> <NNP|YR-RANGE>+}        #2680
     AUTHOR: {<AUTH|CONTRIBUTORS|AUTHS>+ <NN|CAPS>? <YR-RANGE>+}        #2690
@@ -2906,7 +2934,7 @@ def refine_copyright(c):
     c = ' '.join(c.split())
     c = strip_some_punct(c)
     # this catches trailing slashes in URL for consistency
-    c = c.strip('/ ')
+    c = c.strip('/ ~')
     c = strip_all_unbalanced_parens(c)
     c = remove_same_extra_words(c)
     c = ' '.join(c.split())
@@ -2935,6 +2963,8 @@ def refine_holder(h):
     else:
         prefixes = HOLDERS_PREFIXES
 
+    h = h.replace('build.year', ' ')
+
     # strip leading dates if any
     if " " in h:
         prefix, _, suffix = h.partition(" ")
@@ -2943,7 +2973,7 @@ def refine_holder(h):
 
     h = refine_names(h, prefixes=prefixes)
     h = strip_suffixes(h, HOLDERS_SUFFIXES)
-    h = h.strip()
+    h = h.strip('/ ~')
     h = h.replace('( ', ' ').replace(' )', ' ')
     h = h.strip()
     h = h.strip('+-')
@@ -3153,6 +3183,7 @@ COPYRIGHTS_JUNK = frozenset([
     'copyright help center',
     '(c), (c)',
     '(c) (c)',
+    'copyright the project',
 ])
 
 ################################################################################
@@ -3205,6 +3236,9 @@ AUTHORS_JUNK = frozenset([
     'project',
     'previous lucene',
     'apache tomcat',
+    'group',
+    'the coordinator',
+    'the owner',
 ])
 
 ################################################################################
@@ -3336,7 +3370,7 @@ def remove_dupe_copyright_words(c):
     c = c.replace('(c) opyleft', 'Copyleft (c)')
     c = c.replace('(c) opylefted', 'Copyleft (c)')
     c = c.replace('and later', ' ')
-
+    c = c.replace('build.year', ' ')
     return c
 
 
