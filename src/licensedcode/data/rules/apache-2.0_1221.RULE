@@ -1,0 +1,10 @@
+---
+license_expression: apache-2.0
+is_license_notice: yes
+ignorable_urls:
+    - http://redhat.com/
+    - http://www.apache.org/licenses/LICENSE-2.0
+---
+
+<![CDATA[Copyright &copy; ${project.inceptionYear}-{currentYear} <a href="http://redhat.com">Red Hat Inc.</a>  All Rights Reserved.
+ Released under the <a href="http://www.apache.org/licenses/LICENSE-2.0">Apache Software License 2.0</a>.]]>

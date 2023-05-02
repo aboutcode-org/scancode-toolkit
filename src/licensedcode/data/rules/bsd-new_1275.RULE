@@ -1,0 +1,10 @@
+---
+license_expression: bsd-new
+is_license_notice: yes
+relevance: 80
+referenced_filenames:
+    - licenses/jsr223-license.txt
+---
+
+The reference implementation
+has a BSD-style license. Details can be found in: licenses/jsr223-license.txt

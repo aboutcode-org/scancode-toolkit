@@ -1,0 +1,20 @@
+---
+license_expression: w3c
+is_license_notice: yes
+ignorable_copyrights:
+    - Copyright (c) 2006 World Wide Web Consortium
+ignorable_holders:
+    - World Wide Web Consortium
+ignorable_urls:
+    - http://www.w3.org/Consortium/Legal/2002/copyright-software-20021231
+---
+
+Copyright © 2006 World Wide Web Consortium,
+
+   (Massachusetts Institute of Technology, European Research Consortium for
+   Informatics and Mathematics, Keio University). All Rights Reserved. This
+   work is distributed under the W3C® Software License [1] in the hope that
+   it will be useful, but WITHOUT ANY WARRANTY; without even the implied
+   warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+   [1] http://www.w3.org/Consortium/Legal/2002/copyright-software-20021231

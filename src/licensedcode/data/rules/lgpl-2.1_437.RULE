@@ -1,0 +1,12 @@
+---
+license_expression: lgpl-2.1
+is_license_tag: yes
+ignorable_urls:
+    - http://jgrapht.sourceforge.net/LGPL.html
+---
+
+<license>
+    <name>GNU Lesser General Public License Version 2.1, February 1999</name>
+    <url>http://jgrapht.sourceforge.net/LGPL.html</url>
+    <distribution>repo</distribution>
+</license>

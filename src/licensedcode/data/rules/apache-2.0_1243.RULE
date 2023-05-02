@@ -1,0 +1,11 @@
+---
+license_expression: apache-2.0
+is_license_notice: yes
+referenced_filenames:
+    - LICENSE
+---
+
+## Licensing
+
+Jackson 2.x core and extension components are licensed under Apache License 2.0
+To find the details that apply to this artifact see the accompanying LICENSE file.

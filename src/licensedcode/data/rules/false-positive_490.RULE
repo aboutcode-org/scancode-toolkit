@@ -1,0 +1,7 @@
+---
+is_false_positive: yes
+notes: seen in jna-platform-5.6.0-sources.jar
+---
+
+// Illegal modify operation. Some aspect of the modification is not
+    // permitted.

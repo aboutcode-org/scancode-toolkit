@@ -1,0 +1,17 @@
+---
+license_expression: cc0-1.0
+is_license_tag: yes
+ignorable_urls:
+    - http://creativecommons.org/publicdomain/zero/1.0/
+---
+
+<licenses>
+        <license>
+            <comments>
+                *  and released to the
+                * public domain, as explained at http://creativecommons.org/publicdomain/zero/1.0/
+            </comments>
+            <name>Public Domain, per Creative Commons CC0</name>
+            <url>http://creativecommons.org/publicdomain/zero/1.0/</url>
+        </license>
+    </licenses>

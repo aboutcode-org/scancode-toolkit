@@ -1,0 +1,10 @@
+---
+license_expression: w3c-docs-20021231
+is_license_notice: yes
+ignorable_urls:
+    - http://www.w3.org/Consortium/Legal/2002/copyright-documents-20021231
+---
+
+This product is tested with testcases developed at W3C under the license:
+{{http://www.w3.org/Consortium/Legal/2002/copyright-documents-20021231}}                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     
+The source distribution of this product includes those testcases.

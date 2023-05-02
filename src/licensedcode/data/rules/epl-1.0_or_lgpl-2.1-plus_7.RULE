@@ -1,0 +1,13 @@
+---
+license_expression: epl-1.0 OR lgpl-2.1-plus
+is_license_notice: yes
+ignorable_urls:
+    - http://www.eclipse.org/legal/epl-v10.html
+    - http://www.gnu.org/copyleft/lesser.html
+---
+
+* The Jericho HTML Parser is an open source library released under both the
+ * <a href="http://www.eclipse.org/legal/epl-v10.html">{{Eclipse Public License (EPL)}}</a> and
+ * <a href="http://www.gnu.org/copyleft/lesser.html">{{GNU Lesser General Public License (LGPL)}}</a>.
+ * You are therefore free to use it in commercial applications subject to the terms detailed in either one of these licence documents.
+ */

@@ -1,0 +1,14 @@
+---
+license_expression: bsd-3-clause-no-nuclear-warranty
+is_license_notice: yes
+referenced_filenames:
+    - LICENSE.txt
+---
+
+<licenses>
+    <license>
+      <name>BSD 3-clause License w/nuclear disclaimer</name>
+      <url>LICENSE.txt</url>
+      <distribution>repo</distribution>
+    </license>
+  </licenses>
