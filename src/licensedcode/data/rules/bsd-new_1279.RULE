@@ -1,0 +1,14 @@
+---
+license_expression: bsd-new
+is_license_tag: yes
+ignorable_urls:
+    - http://treelayout.googlecode.com/files/LICENSE.TXT
+---
+
+<licenses>
+        <license>
+            <name>{{BSD 3-Clause "New" or "Revised" License (BSD-3-Clause)}}</name>
+            <url>{{http://treelayout.googlecode.com/files/LICENSE.TXT}}</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>

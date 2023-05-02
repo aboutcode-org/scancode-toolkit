@@ -1,0 +1,14 @@
+---
+license_expression: bsd-new
+is_license_tag: yes
+minimum_coverage: 90
+ignorable_urls:
+    - http://www.jcraft.com/jzlib/LICENSE.txt
+---
+
+<licenses>
+    <license>
+      <name>{{BSD}}</name>
+      <url>{{http://www.jcraft.com/jzlib/LICENSE.txt}}</url>
+    </license>
+  </licenses>
