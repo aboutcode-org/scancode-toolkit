@@ -396,7 +396,7 @@
       "detection_log": []
     },
     {
-      "identifier": "apache_2_0-64a45109-e9a1-7203-0c91-c7846ff5da8c",
+      "identifier": "apache_2_0-999670be-3d5e-ebf8-ae18-b555c26c5e80",
       "license_expression": "apache-2.0",
       "detection_count": 1,
       "detection_log": []
@@ -472,25 +472,25 @@
           "license_expression": "apache-2.0",
           "matches": [
             {
-              "score": 75.0,
-              "start_line": 307,
+              "score": 66.67,
+              "start_line": 305,
               "end_line": 307,
-              "matched_length": 3,
+              "matched_length": 4,
               "match_coverage": 100.0,
               "matcher": "2-aho",
               "license_expression": "apache-2.0",
-              "rule_identifier": "apache-2.0_305.RULE",
+              "rule_identifier": "apache-2.0_1215.RULE",
               "rule_relevance": 100,
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_305.RULE",
-              "matched_text": "Apache-2.[0\u5f00\u6e90\u534f\u8bae]](./LICENSE)\u3002"
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_1215.RULE",
+              "matched_text": "License\n\n[PaddleNLP\u9075\u5faa][Apache-2.[0\u5f00\u6e90\u534f\u8bae]](./LICENSE)\u3002"
             }
           ],
           "detection_log": [],
-          "identifier": "apache_2_0-64a45109-e9a1-7203-0c91-c7846ff5da8c"
+          "identifier": "apache_2_0-999670be-3d5e-ebf8-ae18-b555c26c5e80"
         }
       ],
       "license_clues": [],
-      "percentage_of_license_text": 0.2,
+      "percentage_of_license_text": 0.27,
       "scan_errors": []
     },
     {
@@ -1012,21 +1012,21 @@
               "license_expression": "apache-2.0",
               "matches": [
                 {
-                  "score": 75.0,
-                  "start_line": 307,
+                  "score": 66.67,
+                  "start_line": 305,
                   "end_line": 307,
-                  "matched_length": 3,
+                  "matched_length": 4,
                   "match_coverage": 100.0,
                   "matcher": "2-aho",
                   "license_expression": "apache-2.0",
-                  "rule_identifier": "apache-2.0_305.RULE",
+                  "rule_identifier": "apache-2.0_1215.RULE",
                   "rule_relevance": 100,
-                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_305.RULE",
-                  "matched_text": "Apache-2.[0\u5f00\u6e90\u534f\u8bae]](./LICENSE)\u3002"
+                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_1215.RULE",
+                  "matched_text": "License\n\n[PaddleNLP\u9075\u5faa][Apache-2.[0\u5f00\u6e90\u534f\u8bae]](./LICENSE)\u3002"
                 }
               ],
               "detection_log": [],
-              "identifier": "apache_2_0-64a45109-e9a1-7203-0c91-c7846ff5da8c"
+              "identifier": "apache_2_0-999670be-3d5e-ebf8-ae18-b555c26c5e80"
             },
             {
               "license_expression": "apache-2.0",
