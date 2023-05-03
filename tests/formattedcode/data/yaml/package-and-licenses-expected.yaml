@@ -34,6 +34,29 @@ headers:
         python_version: "3.8.10 (default, Mar 13 2023, 10:26:41) \n[GCC 9.4.0]"
       spdx_license_list_version: '3.20'
       files_count: 4
+summary:
+  declared_license_expression: apache-2.0
+  license_clarity_score:
+    score: 100
+    declared_license: yes
+    identification_precision: yes
+    has_license_text: yes
+    declared_copyrights: yes
+    conflicting_license_categories: no
+    ambiguous_compound_licensing: no
+  declared_holder: Example Corp.
+  primary_language: Python
+  other_license_expressions:
+    - value:
+      count: 1
+    - value: apache-2.0 AND (apache-2.0 OR mit)
+      count: 1
+    - value: mit
+      count: 1
+  other_holders:
+    - value:
+      count: 3
+  other_languages: []
 packages:
   - type: pypi
     namespace:
@@ -110,29 +133,6 @@ license_detections:
   - identifier: apache_2_0-ec759ae0-ea5a-f138-793e-388520e080c0
     license_expression: apache-2.0
     detection_count: 2
-summary:
-  declared_license_expression: apache-2.0
-  license_clarity_score:
-    score: 100
-    declared_license: yes
-    identification_precision: yes
-    has_license_text: yes
-    declared_copyrights: yes
-    conflicting_license_categories: no
-    ambiguous_compound_licensing: no
-  declared_holder: Example Corp.
-  primary_language: Python
-  other_license_expressions:
-    - value:
-      count: 1
-    - value: apache-2.0 AND (apache-2.0 OR mit)
-      count: 1
-    - value: mit
-      count: 1
-  other_holders:
-    - value:
-      count: 3
-  other_languages: []
 license_references:
   - key: apache-2.0
     language: en
