@@ -1,0 +1,20 @@
+Manifest-Version: 1.0
+Implementation-Title: JBoss Logging 3
+Implementation-Version: 3.4.2.Final
+Java-Version: 1.8.0_292
+Scm-Connection: scm:git:git://github.com/jboss-logging/jboss-logging.g
+ it
+Specification-Vendor: JBoss by Red Hat
+Os-Arch: amd64
+Specification-Title: JBoss Logging 3
+Java-Vendor: Red Hat, Inc.
+Os-Name: Linux
+Scm-Url: https://github.com/jboss-logging/jboss-logging
+Implementation-Vendor: JBoss by Red Hat
+Os-Version: 5.12.5-300.fc34.x86_64
+Scm-Revision: 8d42b4ed170fd961f32663fc4b4816ba4a44d93c
+Build-Jdk-Spec: 1.8
+Created-By: Maven Archiver 3.4.0
+Specification-Version: 3.4
+Implementation-URL: http://www.jboss.org
+

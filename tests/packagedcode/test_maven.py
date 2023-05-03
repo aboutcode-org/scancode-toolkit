@@ -20,6 +20,7 @@ from commoncode import testcase
 from packagedcode import maven
 from packagedcode import models
 from packagedcode.licensing import get_license_detections_and_expression
+from scancode.cli import run_scan
 from scancode.cli_test_utils import check_json_scan
 from scancode.cli_test_utils import run_scan_click
 from scancode_config import REGEN_TEST_FIXTURES
@@ -221,6 +222,37 @@ class TestMavenMisc(BaseMavenCase):
     def test_package_dependency_populate_is_resolved_field(self):
         test_file = self.get_test_loc('maven_misc/parse/swagger-java-sample-app_2.10-1.3.1.pom')
         self.check_parse_to_package(test_file, regen=REGEN_TEST_FIXTURES)
+
+    def test_get_top_level_resources(self):
+        processes = 2
+        test_dir = self.get_test_loc('maven_misc/extracted-jar/activiti-image-generator-7-201802-EA-sources.jar-extract')
+        _, codebase = run_scan(
+            input=test_dir,
+            processes=processes,
+            quiet=True,
+            verbose=False,
+            max_in_memory=0,
+            return_results=False,
+            return_codebase=True,
+            system_package=True,
+        )
+        pom_resource = codebase.get_resource(
+            'activiti-image-generator-7-201802-EA-sources.jar-extract/META-INF/maven/org.activiti/activiti-image-generator/pom.xml'
+        )
+        self.assertTrue(pom_resource)
+        top_level_resources_paths = [
+            r.path for r in maven.MavenPomXmlHandler.get_top_level_resources(pom_resource, codebase)
+        ]
+        expected_resource_paths = [
+            'activiti-image-generator-7-201802-EA-sources.jar-extract/META-INF',
+            'activiti-image-generator-7-201802-EA-sources.jar-extract/META-INF/MANIFEST.MF',
+            'activiti-image-generator-7-201802-EA-sources.jar-extract/META-INF/maven',
+            'activiti-image-generator-7-201802-EA-sources.jar-extract/META-INF/maven/org.activiti',
+            'activiti-image-generator-7-201802-EA-sources.jar-extract/META-INF/maven/org.activiti/activiti-image-generator',
+            'activiti-image-generator-7-201802-EA-sources.jar-extract/META-INF/maven/org.activiti/activiti-image-generator/pom.properties',
+            'activiti-image-generator-7-201802-EA-sources.jar-extract/META-INF/maven/org.activiti/activiti-image-generator/pom.xml',
+        ]
+        self.assertEquals(expected_resource_paths, top_level_resources_paths)
 
 
 class TestPomProperties(testcase.FileBasedTesting):

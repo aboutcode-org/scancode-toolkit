@@ -70,3 +70,10 @@ class TestClassify(FileDrivenTesting):
         expected_file = self.get_test_loc('classify/cli.expected.json')
         run_scan_click(['--info', '--classify', '--json-pp', result_file, test_dir])
         check_json_scan(expected_file, result_file, remove_file_date=True, regen=REGEN_TEST_FIXTURES)
+
+    def test_classify_with_package_data(self):
+        test_dir = self.get_test_loc('score/jar')
+        result_file = self.get_temp_file('json')
+        expected_file = self.get_test_loc('classify/with_package_data.expected.json')
+        run_scan_click(['--info', '--classify', '--package', '--json-pp', result_file, test_dir])
+        check_json_scan(expected_file, result_file, remove_file_date=True, regen=REGEN_TEST_FIXTURES)

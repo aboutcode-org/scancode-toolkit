@@ -107,6 +107,7 @@ class AddFacet(PreScanPlugin):
 
     resource_attributes = dict(facets=attr.ib(default=attr.Factory(list), repr=False))
 
+    run_order = 20
     sort_order = 20
 
     options = [

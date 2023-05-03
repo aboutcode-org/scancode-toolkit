@@ -139,6 +139,7 @@ class Consolidator(PostScanPlugin):
         consolidated_to=attr.ib(default=attr.Factory(list))
     )
 
+    run_order = 10
     sort_order = 10
 
     options = [

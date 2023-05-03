@@ -28,6 +28,7 @@ class CopyrightScanner(ScanPlugin):
         ('authors', attr.ib(default=attr.Factory(list))),
     ])
 
+    run_order = 6
     sort_order = 6
 
     options = [
