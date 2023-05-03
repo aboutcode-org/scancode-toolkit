@@ -213,7 +213,7 @@ v31.2.5 - 2023-04-21
 
 This is a minor backport release.
 
-This adds license rule changes and was requested here: 
+This adds license rule changes and was requested here:
 https://github.com/nexB/scancode-toolkit/issues/3310
 This was originally merged in #3218 and included in
 the latest release v32.x, and is also being backported
@@ -606,6 +606,10 @@ Changes:
     - `other_license_expressions`
     - `other_holders`
     - `other_languages`
+
+- A new field ``run_order`` has been added to ``BasePlugin`` and set on all
+  ScanCode plugins. Plugin run order and output order are now set independently
+  of one another.
 
 
 Documentation Update
