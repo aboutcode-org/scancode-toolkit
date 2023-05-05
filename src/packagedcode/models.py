@@ -1304,6 +1304,13 @@ class DatafileHandler:
         if package_data.extracted_license_statement and not isinstance(package_data.extracted_license_statement, str):
             package_data.extracted_license_statement = repr(package_data.extracted_license_statement)
 
+    @classmethod
+    def get_top_level_resources(cls, manifest_resource, codebase):
+        """
+        Yield Resources that are considered top-level for a Package type.
+        """
+        pass
+
 
 class NonAssemblableDatafileHandler(DatafileHandler):
     """

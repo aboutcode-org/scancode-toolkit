@@ -41,6 +41,7 @@ class RedundantCluesFilter(PostScanPlugin):
     Filter redundant clues (copyrights, authors, emails, and urls) that are
     already contained in a matched license text.
     """
+    run_order = 1
     sort_order = 1
 
     options = [

@@ -47,6 +47,7 @@ class Tallies(PostScanPlugin):
     """
     Compute tallies for license, copyright and other scans at the codebase level
     """
+    run_order = 15
     sort_order = 15
 
     codebase_attributes = dict(tallies=attr.ib(default=attr.Factory(dict)))
@@ -86,6 +87,7 @@ class TalliesWithDetails(PostScanPlugin):
     # store tallies at the file and directory level in this attribute when
     # keep details is True
     resource_attributes = dict(tallies=attr.ib(default=attr.Factory(dict)))
+    run_order = 100
     sort_order = 100
 
     options = [
@@ -269,6 +271,7 @@ class KeyFilesTallies(PostScanPlugin):
     """
     Compute tallies of a scan at the codebase level for only key files.
     """
+    run_order = 150
     sort_order = 150
 
     # mapping of tally data at the codebase level for key files
@@ -343,6 +346,7 @@ class FacetTallies(PostScanPlugin):
     """
     Compute tallies for a scan at the codebase level, grouping by facets.
     """
+    run_order = 200
     sort_order = 200
     codebase_attributes = dict(tallies_by_facet=attr.ib(default=attr.Factory(list)))
 

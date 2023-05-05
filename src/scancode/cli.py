@@ -1059,9 +1059,12 @@ def run_codebase_plugins(
     if verbose and plugins:
         echo_func(stage_msg % locals(), fg='green')
 
+    # Sort plugins by run_order, from low to high
+    sorted_plugins = sorted(plugins, key=lambda x: x.run_order)
+
     success = True
     # TODO: add progress indicator
-    for plugin in plugins:
+    for plugin in sorted_plugins:
         name = plugin.name
         plugin_start = time()
 

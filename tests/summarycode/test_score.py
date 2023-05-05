@@ -45,6 +45,7 @@ def make_test_function(test_name, test_dir, expected_file, regen=REGEN_TEST_FIXT
                 '--copyright',
                 '--info',
                 '--classify',
+                '--package',
                 '--license-clarity-score',
                 test_dir, '--json', result_file]
         run_scan_click(args)

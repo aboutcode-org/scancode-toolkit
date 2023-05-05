@@ -33,13 +33,9 @@ headers:
         platform_version: '#67-Ubuntu SMP Mon Mar 13 14:22:10 UTC 2023'
         python_version: "3.8.10 (default, Mar 13 2023, 10:26:41) \n[GCC 9.4.0]"
       spdx_license_list_version: '3.20'
-      additional_license_directory: /home/ayansinha/nexB/write_access/scancode-extra/tests/licensedcode/data/additional_licenses/additional_dir
-      additional_license_plugins:
-        - /home/ayansinha/nexB/write_access/scancode-extra/venv/lib/python3.8/site-packages/licenses_to_install1
-        - /home/ayansinha/nexB/write_access/scancode-extra/venv/lib/python3.8/site-packages/licenses_to_install2
       files_count: 4
 summary:
-  declared_license_expression: apache-2.0 AND (apache-2.0 OR mit)
+  declared_license_expression: apache-2.0
   license_clarity_score:
     score: 100
     declared_license: yes
@@ -728,6 +724,11 @@ files:
     is_script: no
     package_data: []
     for_packages: []
+    is_legal: no
+    is_manifest: no
+    is_readme: no
+    is_top_level: yes
+    is_key_file: no
     detected_license_expression:
     detected_license_expression_spdx:
     license_detections: []
@@ -738,11 +739,6 @@ files:
     authors: []
     emails: []
     urls: []
-    is_legal: no
-    is_manifest: no
-    is_readme: no
-    is_top_level: yes
-    is_key_file: no
     files_count: 4
     dirs_count: '0'
     size_count: 12561
@@ -768,6 +764,11 @@ files:
     package_data: []
     for_packages:
       - pkg:pypi/codebase?uuid=fixed-uid-done-for-testing-5642512d1758
+    is_legal: no
+    is_manifest: no
+    is_readme: yes
+    is_top_level: yes
+    is_key_file: yes
     detected_license_expression: apache-2.0 AND (apache-2.0 OR mit)
     detected_license_expression_spdx: Apache-2.0 AND (Apache-2.0 OR MIT)
     license_detections:
@@ -809,11 +810,6 @@ files:
     authors: []
     emails: []
     urls: []
-    is_legal: no
-    is_manifest: no
-    is_readme: yes
-    is_top_level: yes
-    is_key_file: yes
     files_count: '0'
     dirs_count: '0'
     size_count: '0'
@@ -839,6 +835,11 @@ files:
     package_data: []
     for_packages:
       - pkg:pypi/codebase?uuid=fixed-uid-done-for-testing-5642512d1758
+    is_legal: yes
+    is_manifest: no
+    is_readme: no
+    is_top_level: yes
+    is_key_file: yes
     detected_license_expression: apache-2.0
     detected_license_expression_spdx: Apache-2.0
     license_detections:
@@ -1015,11 +1016,6 @@ files:
       - url: http://www.apache.org/licenses/LICENSE-2.0
         start_line: '196'
         end_line: '196'
-    is_legal: yes
-    is_manifest: no
-    is_readme: no
-    is_top_level: yes
-    is_key_file: yes
     files_count: '0'
     dirs_count: '0'
     size_count: '0'
@@ -1045,6 +1041,11 @@ files:
     package_data: []
     for_packages:
       - pkg:pypi/codebase?uuid=fixed-uid-done-for-testing-5642512d1758
+    is_legal: yes
+    is_manifest: no
+    is_readme: no
+    is_top_level: yes
+    is_key_file: yes
     detected_license_expression: mit
     detected_license_expression_spdx: MIT
     license_detections:
@@ -1087,11 +1088,6 @@ files:
     authors: []
     emails: []
     urls: []
-    is_legal: yes
-    is_manifest: no
-    is_readme: no
-    is_top_level: yes
-    is_key_file: yes
     files_count: '0'
     dirs_count: '0'
     size_count: '0'
@@ -1176,6 +1172,11 @@ files:
         purl: pkg:pypi/codebase
     for_packages:
       - pkg:pypi/codebase?uuid=fixed-uid-done-for-testing-5642512d1758
+    is_legal: no
+    is_manifest: no
+    is_readme: no
+    is_top_level: no
+    is_key_file: no
     detected_license_expression: apache-2.0
     detected_license_expression_spdx: Apache-2.0
     license_detections:
@@ -1203,11 +1204,6 @@ files:
         end_line: 3
     emails: []
     urls: []
-    is_legal: no
-    is_manifest: yes
-    is_readme: no
-    is_top_level: yes
-    is_key_file: yes
     files_count: '0'
     dirs_count: '0'
     size_count: '0'

@@ -67,6 +67,7 @@ class LicenseScanner(ScanPlugin):
         license_detections=attr.ib(default=attr.Factory(list)),
     )
 
+    run_order = 4
     sort_order = 4
 
     options = [

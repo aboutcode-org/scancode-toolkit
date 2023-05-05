@@ -88,12 +88,12 @@ Options:
   pre-scan:
     --ignore <pattern>         Ignore files matching <pattern>.
     --include <pattern>        Include files matching <pattern>.
-    --classify                 Classify files with flags indicating whether the
-                               file is a legal, readme, test or similar file.
     --facet <facet>=<pattern>  Add the <facet> to files with a path matching
                                <pattern>.
 
   post-scan:
+    --classify               Classify files with flags telling if the file is a
+                             legal, or readme or test file, etc.
     --consolidate            Group resources by Packages or license and copyright
                              holder and return those groupings as a list of
                              consolidated packages and a list of consolidated
