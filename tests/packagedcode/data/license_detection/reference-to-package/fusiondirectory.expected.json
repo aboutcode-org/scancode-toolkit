@@ -4774,8 +4774,8 @@
       "detection_log": []
     },
     {
-      "identifier": "apache_2_0_and_gpl_2_0_plus_and_free_unknown-946c0f58-eac9-675a-5434-c266108a0fe5",
-      "license_expression": "apache-2.0 AND gpl-2.0-plus AND free-unknown",
+      "identifier": "gpl_2_0_plus_and_free_unknown-f9cd0597-d35d-ec72-0e6b-77970ad90317",
+      "license_expression": "gpl-2.0-plus AND free-unknown",
       "detection_count": 1,
       "detection_log": []
     },
@@ -5377,8 +5377,8 @@
           "vcs_url": null,
           "copyright": null,
           "holder": null,
-          "declared_license_expression": "gpl-2.0-plus AND (gpl-2.0-plus AND free-unknown) AND bsd-new AND (apache-2.0 AND gpl-2.0-plus AND free-unknown) AND lgpl-3.0-plus AND public-domain AND mit AND bsd-original AND (gpl-2.0-plus AND gpl-3.0-plus AND lgpl-2.1-plus AND lgpl-3.0-plus AND bsd-new AND bsd-original AND mit AND public-domain AND other-permissive) AND bsd-simplified AND lgpl-3.0 AND (mit AND other-permissive) AND (public-domain AND bsd-original AND gpl-1.0-plus)",
-          "declared_license_expression_spdx": "GPL-2.0-or-later AND (GPL-2.0-or-later AND LicenseRef-scancode-free-unknown) AND BSD-3-Clause AND (Apache-2.0 AND GPL-2.0-or-later AND LicenseRef-scancode-free-unknown) AND LGPL-3.0-or-later AND LicenseRef-scancode-public-domain AND MIT AND BSD-4-Clause AND (GPL-2.0-or-later AND GPL-3.0-or-later AND LGPL-2.1-or-later AND LGPL-3.0-or-later AND BSD-3-Clause AND BSD-4-Clause AND MIT AND LicenseRef-scancode-public-domain AND LicenseRef-scancode-other-permissive) AND BSD-2-Clause AND LGPL-3.0-only AND (MIT AND LicenseRef-scancode-other-permissive) AND (LicenseRef-scancode-public-domain AND BSD-4-Clause AND GPL-1.0-or-later)",
+          "declared_license_expression": "gpl-2.0-plus AND (gpl-2.0-plus AND free-unknown) AND bsd-new AND lgpl-3.0-plus AND public-domain AND mit AND bsd-original AND (gpl-2.0-plus AND gpl-3.0-plus AND lgpl-2.1-plus AND lgpl-3.0-plus AND bsd-new AND bsd-original AND mit AND public-domain AND other-permissive) AND bsd-simplified AND lgpl-3.0 AND (mit AND other-permissive) AND (public-domain AND bsd-original AND gpl-1.0-plus)",
+          "declared_license_expression_spdx": "GPL-2.0-or-later AND (GPL-2.0-or-later AND LicenseRef-scancode-free-unknown) AND BSD-3-Clause AND LGPL-3.0-or-later AND LicenseRef-scancode-public-domain AND MIT AND BSD-4-Clause AND (GPL-2.0-or-later AND GPL-3.0-or-later AND LGPL-2.1-or-later AND LGPL-3.0-or-later AND BSD-3-Clause AND BSD-4-Clause AND MIT AND LicenseRef-scancode-public-domain AND LicenseRef-scancode-other-permissive) AND BSD-2-Clause AND LGPL-3.0-only AND (MIT AND LicenseRef-scancode-other-permissive) AND (LicenseRef-scancode-public-domain AND BSD-4-Clause AND GPL-1.0-or-later)",
           "license_detections": [
             {
               "license_expression": "gpl-2.0-plus",
@@ -5614,21 +5614,8 @@
               "identifier": "gpl_2_0_plus-53a26be2-1f88-01ec-d294-921768a513c9"
             },
             {
-              "license_expression": "apache-2.0 AND gpl-2.0-plus AND free-unknown",
+              "license_expression": "gpl-2.0-plus AND free-unknown",
               "matches": [
-                {
-                  "score": 20.0,
-                  "start_line": 560,
-                  "end_line": 562,
-                  "matched_length": 6,
-                  "match_coverage": 20.0,
-                  "matcher": "3-seq",
-                  "license_expression": "apache-2.0",
-                  "rule_identifier": "apache-2.0_1066.RULE",
-                  "rule_relevance": 100,
-                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_1066.RULE",
-                  "matched_text": "License: [GPL]-[2+]\n[Comment]:\n [This] [file] is distributed under the [same] license"
-                },
                 {
                   "score": 100.0,
                   "start_line": 560,
@@ -5657,7 +5644,7 @@
                 }
               ],
               "detection_log": [],
-              "identifier": "apache_2_0_and_gpl_2_0_plus_and_free_unknown-946c0f58-eac9-675a-5434-c266108a0fe5"
+              "identifier": "gpl_2_0_plus_and_free_unknown-f9cd0597-d35d-ec72-0e6b-77970ad90317"
             },
             {
               "license_expression": "lgpl-3.0-plus",
@@ -11539,8 +11526,8 @@
         "pkg:deb/fusiondirectory-theme-oxygen?architecture=all&uuid=fixed-uid-done-for-testing-5642512d1758",
         "pkg:deb/fusiondirectory-webservice-shell?architecture=all&uuid=fixed-uid-done-for-testing-5642512d1758"
       ],
-      "detected_license_expression": "gpl-2.0-plus AND (gpl-2.0-plus AND free-unknown) AND bsd-new AND (apache-2.0 AND gpl-2.0-plus AND free-unknown) AND lgpl-3.0-plus AND public-domain AND mit AND bsd-original AND (gpl-2.0-plus AND gpl-3.0-plus AND lgpl-2.1-plus AND lgpl-3.0-plus AND bsd-new AND bsd-original AND mit AND public-domain AND other-permissive)",
-      "detected_license_expression_spdx": "GPL-2.0-or-later AND (GPL-2.0-or-later AND LicenseRef-scancode-free-unknown) AND BSD-3-Clause AND (Apache-2.0 AND GPL-2.0-or-later AND LicenseRef-scancode-free-unknown) AND LGPL-3.0-or-later AND LicenseRef-scancode-public-domain AND MIT AND BSD-4-Clause AND (GPL-2.0-or-later AND GPL-3.0-or-later AND LGPL-2.1-or-later AND LGPL-3.0-or-later AND BSD-3-Clause AND BSD-4-Clause AND MIT AND LicenseRef-scancode-public-domain AND LicenseRef-scancode-other-permissive)",
+      "detected_license_expression": "gpl-2.0-plus AND (gpl-2.0-plus AND free-unknown) AND bsd-new AND lgpl-3.0-plus AND public-domain AND mit AND bsd-original AND (gpl-2.0-plus AND gpl-3.0-plus AND lgpl-2.1-plus AND lgpl-3.0-plus AND bsd-new AND bsd-original AND mit AND public-domain AND other-permissive)",
+      "detected_license_expression_spdx": "GPL-2.0-or-later AND (GPL-2.0-or-later AND LicenseRef-scancode-free-unknown) AND BSD-3-Clause AND LGPL-3.0-or-later AND LicenseRef-scancode-public-domain AND MIT AND BSD-4-Clause AND (GPL-2.0-or-later AND GPL-3.0-or-later AND LGPL-2.1-or-later AND LGPL-3.0-or-later AND BSD-3-Clause AND BSD-4-Clause AND MIT AND LicenseRef-scancode-public-domain AND LicenseRef-scancode-other-permissive)",
       "license_detections": [
         {
           "license_expression": "gpl-2.0-plus",
@@ -11776,21 +11763,8 @@
           "identifier": "gpl_2_0_plus-53a26be2-1f88-01ec-d294-921768a513c9"
         },
         {
-          "license_expression": "apache-2.0 AND gpl-2.0-plus AND free-unknown",
+          "license_expression": "gpl-2.0-plus AND free-unknown",
           "matches": [
-            {
-              "score": 20.0,
-              "start_line": 560,
-              "end_line": 562,
-              "matched_length": 6,
-              "match_coverage": 20.0,
-              "matcher": "3-seq",
-              "license_expression": "apache-2.0",
-              "rule_identifier": "apache-2.0_1066.RULE",
-              "rule_relevance": 100,
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_1066.RULE",
-              "matched_text": "License: [GPL]-[2+]\n[Comment]:\n [This] [file] is distributed under the [same] license"
-            },
             {
               "score": 100.0,
               "start_line": 560,
@@ -11819,7 +11793,7 @@
             }
           ],
           "detection_log": [],
-          "identifier": "apache_2_0_and_gpl_2_0_plus_and_free_unknown-946c0f58-eac9-675a-5434-c266108a0fe5"
+          "identifier": "gpl_2_0_plus_and_free_unknown-f9cd0597-d35d-ec72-0e6b-77970ad90317"
         },
         {
           "license_expression": "lgpl-3.0-plus",

@@ -2040,9 +2040,29 @@
       "vcs_url": "svn+http://seam-maven-refimpl.googlecode.com/svn/trunk",
       "copyright": null,
       "holder": null,
-      "declared_license_expression": null,
-      "declared_license_expression_spdx": null,
-      "license_detections": [],
+      "declared_license_expression": "unknown-license-reference",
+      "declared_license_expression_spdx": "LicenseRef-scancode-unknown-license-reference",
+      "license_detections": [
+        {
+          "license_expression": "unknown-license-reference",
+          "matches": [
+            {
+              "score": 16.0,
+              "start_line": 1367,
+              "end_line": 1369,
+              "matched_length": 3,
+              "match_coverage": 100.0,
+              "matcher": "2-aho",
+              "license_expression": "unknown-license-reference",
+              "rule_identifier": "license-intro_72.RULE",
+              "rule_relevance": 16,
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/license-intro_72.RULE",
+              "matched_text": "  <licenses>\r\n    <license>\r\n      <name></name>"
+            }
+          ],
+          "identifier": "unknown_license_reference-4b2709b8-15aa-b2be-e8fc-8043272b18ce"
+        }
+      ],
       "other_license_expression": null,
       "other_license_expression_spdx": null,
       "other_license_detections": [],
@@ -10252,9 +10272,29 @@
           "vcs_url": "svn+http://seam-maven-refimpl.googlecode.com/svn/trunk",
           "copyright": null,
           "holder": null,
-          "declared_license_expression": null,
-          "declared_license_expression_spdx": null,
-          "license_detections": [],
+          "declared_license_expression": "unknown-license-reference",
+          "declared_license_expression_spdx": "LicenseRef-scancode-unknown-license-reference",
+          "license_detections": [
+            {
+              "license_expression": "unknown-license-reference",
+              "matches": [
+                {
+                  "score": 16.0,
+                  "start_line": 1367,
+                  "end_line": 1369,
+                  "matched_length": 3,
+                  "match_coverage": 100.0,
+                  "matcher": "2-aho",
+                  "license_expression": "unknown-license-reference",
+                  "rule_identifier": "license-intro_72.RULE",
+                  "rule_relevance": 16,
+                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/license-intro_72.RULE",
+                  "matched_text": "  <licenses>\r\n    <license>\r\n      <name></name>"
+                }
+              ],
+              "identifier": "unknown_license_reference-4b2709b8-15aa-b2be-e8fc-8043272b18ce"
+            }
+          ],
           "other_license_expression": null,
           "other_license_expression_spdx": null,
           "other_license_detections": [],
