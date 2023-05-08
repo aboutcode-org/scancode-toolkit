@@ -7,5 +7,5 @@ ignorable_urls:
 ---
 
 <license>
-<name> UnRar License </name>
+<name> {{UnRar License}} </name>
 <url> (https://github.com/junrar/junrar/blob/master/LICENSE)</url>

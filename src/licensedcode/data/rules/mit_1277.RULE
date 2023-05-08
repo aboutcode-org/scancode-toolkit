@@ -7,7 +7,7 @@ ignorable_urls:
 
 <licenses>
     <license>
-      <name>The MIT License</name>
+      <name>The {{MIT License}}</name>
       <url>https://jsoup.org/license</url>
       <distribution>repo</distribution>
     </license>

@@ -1,0 +1,19 @@
+---
+license_expression: gpl-2.0 WITH classpath-exception-2.0 OR cddl-1.1
+is_license_tag: yes
+ignorable_urls:
+    - https://oss.oracle.com/licenses/CDDL+GPL-1.1
+---
+
+<licenses>
+    <license>
+        <name>{{CDDL 1.1}}</name>
+        <url>https://oss.oracle.com/licenses/CDDL+GPL-1.1</url>
+        <distribution>repo</distribution>
+    </license>
+    <license>
+        <name>{{GPL2 w/ CPE}}</name>
+        <url>https://oss.oracle.com/licenses/CDDL+GPL-1.1</url>
+        <distribution>repo</distribution>
+    </license>
+</licenses>

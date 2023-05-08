@@ -1,0 +1,30 @@
+---
+license_expression: lgpl-2.1-plus OR apache-2.0
+is_license_tag: yes
+ignorable_urls:
+    - https://www.apache.org/licenses/LICENSE-2.0.txt
+    - https://www.gnu.org/licenses/old-licenses/lgpl-2.1
+---
+
+<licenses>
+    <license>
+      <name>LGPL-2.1-or-later</name>
+      <url>https://www.gnu.org/licenses/old-licenses/lgpl-2.1</url>
+      <distribution>repo</distribution>
+      <comments>
+        Java Native Access (JNA) is licensed under the LGPL, version 2.1 or
+        later, or the Apache License, version 2.0. You can freely decide which
+        license you want to apply to the project.
+      </comments>
+    </license>
+    <license>
+      <name>Apache-2.0</name>
+      <url>https://www.apache.org/licenses/LICENSE-2.0.txt</url>
+      <distribution>repo</distribution>
+      <comments>
+        Java Native Access (JNA) is licensed under the LGPL, version 2.1 or
+        later, or the Apache License, version 2.0. You can freely decide which
+        license you want to apply to the project.
+      </comments>
+    </license>
+  </licenses>

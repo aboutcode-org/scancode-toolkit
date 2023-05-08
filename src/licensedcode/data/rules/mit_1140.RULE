@@ -7,5 +7,5 @@ ignorable_urls:
 ---
 
 <license>
-    <name>MIT License</name>
+    <name>{{MIT License}}</name>
     <url>https://opensource.org/licenses/MIT

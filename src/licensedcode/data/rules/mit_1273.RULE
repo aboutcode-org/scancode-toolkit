@@ -7,5 +7,5 @@ ignorable_urls:
 ---
 
 <license>
-<name> MIT License (MIT) </name>
+<name> {{MIT License (MIT)}} </name>
 <url> (http://opensource.org/licenses/mit-license.php)</url>

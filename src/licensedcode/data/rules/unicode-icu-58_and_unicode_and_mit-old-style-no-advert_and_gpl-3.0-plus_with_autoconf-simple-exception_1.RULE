@@ -1,0 +1,15 @@
+---
+license_expression: unicode-icu-58 AND unicode AND mit-old-style-no-advert AND gpl-3.0-plus
+    WITH autoconf-simple-exception
+is_license_text: yes
+ignorable_urls:
+    - http://source.icu-project.org/repos/icu/icu/trunk/LICENSE
+---
+
+<licenses>
+    <license>
+      <name>{{ICU License}}</name>
+      <url>{{http://source.icu-project.org/repos/icu/icu/trunk/LICENSE}}</url>
+      <distribution>repo</distribution>
+    </license>
+  </licenses>

@@ -6,5 +6,5 @@ ignorable_urls:
 ---
 
 <license>
-<name> (MIT-style) netCDF C library license </name>
+<name> {{(MIT-style)}} netCDF C library license </name>
 <url> (http://www.unidata.ucar.edu/software/netcdf/copyright.html)</url>

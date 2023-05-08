@@ -1,0 +1,11 @@
+---
+license_expression: bsd-new
+is_license_reference: yes
+is_continuous: yes
+referenced_filenames:
+    - https://github.com/jaxen-xpath/jaxen/blob/master/LICENSE.txt
+ignorable_urls:
+    - https://github.com/jaxen-xpath/jaxen/blob/master/LICENSE.txt
+---
+
+{{https://github.com/jaxen-xpath/jaxen/blob/master/LICENSE.txt}}
