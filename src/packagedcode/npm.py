@@ -801,7 +801,7 @@ def npm_api_url(namespace, name, version=None, registry='https://registry.npmjs.
 
     For example:
     >>> result = npm_api_url('@invisionag', 'eslint-config-ivx', '0.1.4', 'https://registry.yarnpkg.com')
-    >>> assert result == 'https://registry.yarnpkg.com/@invisionag%2feslint-config-ivx'
+    >>> assert result == 'https://registry.yarnpkg.com/@invisionag%2feslint-config-ivx/0.1.4'
 
     >>> assert npm_api_url(None, 'angular', '1.6.6') == 'https://registry.npmjs.org/angular/1.6.6'
 
@@ -812,8 +812,6 @@ def npm_api_url(namespace, name, version=None, registry='https://registry.npmjs.
             # this is a legacy wart: older registries used to always encode this /
             # FIXME: do NOT encode and use plain / instead
             ns_name = '%2f'.join([namespace, name])
-            # there is no version-specific URL for scoped packages
-            version = ''
         else:
             ns_name = name
 
