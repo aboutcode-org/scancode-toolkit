@@ -9,6 +9,8 @@ notes: |
     number of ancillary yet similar licenses may be reported as one.
 is_generic: yes
 spdx_license_key: LicenseRef-scancode-other-permissive
+other_spdx_license_keys:
+    - LicenseRef-Fedora-UltraPermissive
 ---
 
 This component contains multiple third-party subcomponents licensed

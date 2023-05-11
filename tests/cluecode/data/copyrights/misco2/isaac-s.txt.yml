@@ -2,10 +2,11 @@ what:
   - copyrights
   - holders
   - holders_summary
+  - authors
 copyrights:
-  - Copyright (c) 2000 by ThisOldHouse
+  - Copyright Isaac Z.
 holders:
-  - ThisOldHouse
+  - Isaac Z.
 holders_summary:
-  - value: ThisOldHouse
+  - value: Isaac Z.
     count: 1

@@ -1,0 +1,14 @@
+what:
+  - copyrights
+  - holders
+  - holders_summary
+  - authors
+copyrights:
+  - Copyright (c) 2005 by Ivo van Poorten
+  - Copyright (c) 2005,2006 by Ivo van Poorten
+holders:
+  - Ivo van Poorten
+  - Ivo van Poorten
+holders_summary:
+  - value: Ivo van Poorten
+    count: 2

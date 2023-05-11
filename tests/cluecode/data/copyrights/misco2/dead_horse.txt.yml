@@ -2,10 +2,11 @@ what:
   - copyrights
   - holders
   - holders_summary
+  - authors
 copyrights:
-  - Copyright (c) 2000 by ThisOldHouse
+  - Copyright (c) 2014 dead_horse <dead_horse@qq.com>
 holders:
-  - ThisOldHouse
+  - dead_horse
 holders_summary:
-  - value: ThisOldHouse
+  - value: dead_horse
     count: 1

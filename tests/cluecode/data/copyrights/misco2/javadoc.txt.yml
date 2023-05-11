@@ -2,10 +2,11 @@ what:
   - copyrights
   - holders
   - holders_summary
+  - authors
 copyrights:
-  - Copyright (c) 2000 by ThisOldHouse
+  - (c) 2020 Jim Mason <jmason@ibinx.com>
 holders:
-  - ThisOldHouse
+  - Jim Mason
 holders_summary:
-  - value: ThisOldHouse
+  - value: Jim Mason
     count: 1
