@@ -1,0 +1,26 @@
+---
+license_expression: lgpl-2.1-plus
+is_license_notice: yes
+ignorable_urls:
+    - http://www.gnu.org/copyleft/lesser.html
+---
+
+XMLPULL V1 API TESTS are free software; you can redistribute it and/or
+modify it under the terms of the GNU Lesser General Public
+License as published by the Free Software Foundation; either
+version 2.1 of the License, or (at your option) any later version.
+
+XMLPULL V1 API TESTS are distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+GNU Lesser General Public License for more details.
+
+You should have received a copy of the GNU Lesser General Public
+License along with this library; if not, write to the Free Software
+Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
+(see below and at http://www.gnu.org/copyleft/lesser.html).
+
+
+NOTE: XMLPULL V1 API TESTS are released under the Lesser GPL (LGPL) license, 
+granting you permission to use them in commercial and non-commercial applications for
+free. Unlike regular GPL, LGPL does not force you to license your own software under GPL.

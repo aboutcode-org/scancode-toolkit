@@ -1,0 +1,10 @@
+---
+license_expression: mit OR lgpl-2.1
+is_license_text: yes
+notes: https://github.com/sbooth/AudioXCFrameworks/blob/0472e8ad23861fde673788084865cc6f2e6281d1/mpg123/mpg123-src/src/libsyn123/geiger.c#L4
+---
+
+licensed MIT-style.
+    Essentially: This is just a bit of code that you can use as you please.
+    See full license text at the bottom. As part of the mpg123 distribution,
+    the GNU LPGL version 2.1 can be used instead.

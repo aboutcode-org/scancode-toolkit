@@ -1,0 +1,8 @@
+---
+license_expression: public-domain
+is_license_tag: yes
+relevance: 100
+notes: seen in postfix https://github.com/ystk/debian-postfix/blob/7bf819ec7933bfe22ecd947b8a610510600b7a20/src/util/sdbm.h#L19
+---
+
+status: public domain.
