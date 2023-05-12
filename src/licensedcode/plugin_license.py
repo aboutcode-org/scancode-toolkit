@@ -56,10 +56,21 @@ class LicenseScanner(ScanPlugin):
     """
 
     resource_attributes = dict([
+        # The license expression summarizing the license info for this
+        # resource, combined from all the license detections
         ('detected_license_expression', attr.ib(default=None)),
+        # The detected license expression for this file, with
+        # SPDX license keys
         ('detected_license_expression_spdx', attr.ib(default=None)),
+        # A list of all proper license detections in the resource
+        # with the license expression and license detection details
         ('license_detections', attr.ib(default=attr.Factory(list))),
+        # license matches that are not proper detections and potentially
+        # just clues to licenses or likely false positives, and are not
+        # inlcuded in computing the detected license expression for the resource
         ('license_clues', attr.ib(default=attr.Factory(list))),
+        # The percentage of words in the whole resource which are legalese words,
+        # i.e. words that typically contain license related information
         ('percentage_of_license_text', attr.ib(default=0)),
     ])
 
