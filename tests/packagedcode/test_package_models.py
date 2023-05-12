@@ -225,3 +225,20 @@ class TestModels(PackageTester):
             for package_uid in for_packages:
                 normalized_package_uid = purl_with_fake_uuid(package_uid)
                 assert normalized_package_uid == test_package_uid
+
+    def test_create_package_not_handled_by_packagedcode(self):
+        extracted_license_statement = [
+            'gpl',
+            'GNU General Public License version 2.0 (GPLv2)',
+        ]
+        package = PackageData(
+            type='sourceforge',
+            name='openstunts',
+            copyright='Copyright (c) openstunts project',
+            extracted_license_statement=extracted_license_statement,
+        )
+        # Test generated fields
+        assert package.purl == 'pkg:sourceforge/openstunts'
+        assert package.holder == 'openstunts project'
+        assert package.declared_license_expression == 'gpl-1.0-plus AND gpl-2.0'
+        assert package.declared_license_expression_spdx == 'GPL-1.0-or-later AND GPL-2.0-only'
