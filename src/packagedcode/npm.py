@@ -794,16 +794,17 @@ def npm_api_url(namespace, name, version=None, registry='https://registry.npmjs.
     Return a package API data URL given a namespace, name, version and a base
     registry URL.
 
-    Note that for scoped packages (with a namespace), the URL is not version
-    specific but contains the data for all versions as the default behvior of
-    the registries is to return nothing in this case. Special quoting rules are
-    applied for scoped npms.
+    Special quoting rules are applied for scoped npms.
 
     For example:
     >>> result = npm_api_url('@invisionag', 'eslint-config-ivx', '0.1.4', 'https://registry.yarnpkg.com')
     >>> assert result == 'https://registry.yarnpkg.com/@invisionag%2feslint-config-ivx/0.1.4'
 
+    >>> result = npm_api_url('@invisionag', 'eslint-config-ivx', 'https://registry.yarnpkg.com')
+    >>> assert result == 'https://registry.yarnpkg.com/@invisionag%2feslint-config-ivx'
+
     >>> assert npm_api_url(None, 'angular', '1.6.6') == 'https://registry.npmjs.org/angular/1.6.6'
+    >>> assert npm_api_url(None, 'angular') == 'https://registry.npmjs.org/angular'
 
     >>> assert not npm_api_url(None, None, None)
     """
