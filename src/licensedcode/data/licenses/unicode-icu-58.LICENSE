@@ -22,7 +22,7 @@ ignorable_copyrights:
     - Copyright 1996 Chih-Hao Tsai @ Beckman Institute, University of Illinois c-tsai4@uiuc.edu
         http://casper.beckman.uiuc.edu/~c-tsai4
     - Copyright 2000, 2001, 2002, 2003 Nara Institute of Science and Technology
-    - Copyright 2006-2011, the
+    - Copyright 2006-2011, the V8 project authors
     - Copyrighy (c) 1999 TaBE Project
 ignorable_holders:
     - Brian Eugene Wilson, Robert Martin Campbell
@@ -35,6 +35,7 @@ ignorable_holders:
     - Pai-Hsiang Hsiao
     - TaBE Project
     - Unicode, Inc.
+    - the V8 project authors
 ignorable_urls:
     - http://casper.beckman.uiuc.edu/~c-tsai4
     - http://chasen.aist-nara.ac.jp/chasen/distribution.html

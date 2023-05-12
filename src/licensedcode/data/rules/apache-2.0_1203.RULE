@@ -3,7 +3,7 @@ license_expression: apache-2.0
 is_license_notice: yes
 relevance: 95
 ignorable_authors:
-    - the Apache Software Foundation http://www.apache.org/' http://www.apache.org
+    - the Apache Software Foundation http://www.apache.org/ http://www.apache.org
     - the Apache Software Foundation. Therefore
 ignorable_urls:
     - http://www.apache.org/

@@ -1139,7 +1139,7 @@ patterns = [
     (r'^Asset$', 'NN'),
     (r'^Assignment?s$', 'NN'),
     (r'^Atomic$', 'NN'),
-    (r'^Attribution$', 'NN'),
+    (r'^Attribution\.?$', 'NN'),
     (r'^[Aa]uthored$', 'NN'),
     (r'^Baslerstr\.?$', 'NN'),
     (r'^BSD$', 'NN'),
