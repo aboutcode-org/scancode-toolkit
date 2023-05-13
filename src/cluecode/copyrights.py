@@ -379,12 +379,19 @@ def get_tokens(numbered_lines, splitter=re.compile(r'[\t =;]+').split):
 
         pos = 0
         for tok in splitter(line):
-            # strip trailing single quotes and spaces
-            tok = tok.strip("' ")
-            # strip trailing colons?
-            tok = tok.rstrip(':').strip()
+            # strip trailing quotes+comma
+            if tok.endswith("',"):
+                tok = tok.rstrip("',")
+
+            tok = (
+                tok
+                .strip("' ")  # strip leading and trailing single quotes, and spaces
+                .rstrip(':')  # strip trailing colons
+                .strip()
+            )
+
             # the tokenizer allows a sinble colon or dot to be atoken and we discard these
-            if tok and tok != ':' and tok != '.':
+            if tok and tok not in ':.':
                 yield Token(value=tok, start_line=start_line, pos=pos)
                 pos += 1
 
@@ -680,9 +687,9 @@ patterns = [
 
     ############################################################################
     # JUNK are things to ignore
+    # Exceptions to JUNK
     ############################################################################
 
-    # Exceptions to JUNK
     # trailing parens: notice(s) and exceptions
     (r'^Special$', 'NN'),
     (r"^Member\(s\)[\.,]?$", 'NNP'),
@@ -698,8 +705,12 @@ patterns = [
 
     # misc exceptions
     (r'^dead_horse$', 'NN'),
+    (r'^A11yance', 'NNP'),
 
-    # ## proper junk
+    ############################################################################
+    # JUNK proper
+    ############################################################################
+
     # path with trailing year-like are NOT a year as in
     # Landroid/icu/impl/IDNA2003 : treat as JUNK
     (r'^[^\\/]+[\\/][^\\/]+[\\/].*$', 'JUNK'),
@@ -1971,6 +1982,9 @@ patterns = [
     # but keeping _ ? and () as parts of words
     (r'^[^\w\?()]{2,10}$', 'JUNK'),
 
+    # short hex for commits
+    (r'^[abcdef0-9]{7}$', 'JUNK'),
+
     ############################################################################
     # catch all other as Nouns
     ############################################################################
@@ -3142,7 +3156,7 @@ COPYRIGHTS_JUNK = [
     r'^copyright \(c\) year$',
     r'^copyright \(c\) year your',
     r'^copyright, designs and patents',
-    r'copyright \d+ m\. y\.(?: name)?', # from the rare LATEX licenses
+    r'copyright \d+ m\. y\.(?: name)?',  # from the rare LATEX licenses
     r'^copyrighte?d? (?:by)?$',
     r'^copyrighted by its$',
     r'^copyrighted by their authors',
@@ -3901,8 +3915,8 @@ def prepare_text_line(line, dedeb=True, to_ascii=True):
         .replace('u00a9', ' (c) ')
         .replace('\xa9', ' (c) ')
         .replace('\\XA9', ' (c) ')
-        .replace('\A9', ' (c) ')
-        .replace('\a9', ' (c) ')
+        .replace('\\A9', ' (c) ')
+        .replace('\\a9', ' (c) ')
         # \xc2 is a Â
         .replace('\xc2', '')
         .replace('\\xc2', '')
