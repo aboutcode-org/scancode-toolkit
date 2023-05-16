@@ -800,7 +800,7 @@ def npm_api_url(namespace, name, version=None, registry='https://registry.npmjs.
     >>> result = npm_api_url('@invisionag', 'eslint-config-ivx', '0.1.4', 'https://registry.yarnpkg.com')
     >>> assert result == 'https://registry.yarnpkg.com/@invisionag%2feslint-config-ivx/0.1.4'
 
-    >>> result = npm_api_url('@invisionag', 'eslint-config-ivx', 'https://registry.yarnpkg.com')
+    >>> result = npm_api_url('@invisionag', 'eslint-config-ivx', registry='https://registry.yarnpkg.com')
     >>> assert result == 'https://registry.yarnpkg.com/@invisionag%2feslint-config-ivx'
 
     >>> assert npm_api_url(None, 'angular', '1.6.6') == 'https://registry.npmjs.org/angular/1.6.6'
