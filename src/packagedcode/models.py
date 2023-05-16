@@ -869,11 +869,16 @@ class PackageData(IdentifiablePackageData):
         if not self.extracted_license_statement:
             return [], None
 
-        return get_license_detections_and_expression(
-            extracted_license_statement=self.extracted_license_statement,
+        if self.datasource_id:
             default_relation_license=get_default_relation_license(
                 datasource_id=self.datasource_id,
-            ),
+            )
+        else:
+            default_relation_license = 'AND'
+
+        return get_license_detections_and_expression(
+            extracted_license_statement=self.extracted_license_statement,
+            default_relation_license=default_relation_license
         )
 
 
