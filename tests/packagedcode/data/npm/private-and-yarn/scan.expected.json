@@ -71,7 +71,7 @@
         ],
         "repository_homepage_url": "https://www.npmjs.com/package/@babel/runtime",
         "repository_download_url": "https://registry.npmjs.org/@babel/runtime/-/runtime-7.2.0.tgz",
-        "api_data_url": "https://registry.npmjs.org/@babel%2fruntime",
+        "api_data_url": "https://registry.npmjs.org/@babel%2fruntime/7.2.0",
         "datasource_id": "yarn_lock_v1",
         "purl": "pkg:npm/%40babel/runtime@7.2.0"
       },
@@ -197,7 +197,7 @@
         ],
         "repository_homepage_url": "https://www.npmjs.com/package/@ballerina/api-designer",
         "repository_download_url": "https://registry.npmjs.org/@ballerina/api-designer/-/api-designer-0.99.0-RC3.tgz",
-        "api_data_url": "https://registry.npmjs.org/@ballerina%2fapi-designer",
+        "api_data_url": "https://registry.npmjs.org/@ballerina%2fapi-designer/0.99.0-RC3",
         "datasource_id": "yarn_lock_v1",
         "purl": "pkg:npm/%40ballerina/api-designer@0.99.0-RC3"
       },
@@ -313,7 +313,7 @@
         ],
         "repository_homepage_url": "https://www.npmjs.com/package/@ballerina/ast-model",
         "repository_download_url": "https://registry.npmjs.org/@ballerina/ast-model/-/ast-model-0.99.0-RC3.tgz",
-        "api_data_url": "https://registry.npmjs.org/@ballerina%2fast-model",
+        "api_data_url": "https://registry.npmjs.org/@ballerina%2fast-model/0.99.0-RC3",
         "datasource_id": "yarn_lock_v1",
         "purl": "pkg:npm/%40ballerina/ast-model@0.99.0-RC3"
       },
@@ -379,7 +379,7 @@
         ],
         "repository_homepage_url": "https://www.npmjs.com/package/@ballerina/ballerina-by-examples",
         "repository_download_url": "https://registry.npmjs.org/@ballerina/ballerina-by-examples/-/ballerina-by-examples-0.99.0-RC3.tgz",
-        "api_data_url": "https://registry.npmjs.org/@ballerina%2fballerina-by-examples",
+        "api_data_url": "https://registry.npmjs.org/@ballerina%2fballerina-by-examples/0.99.0-RC3",
         "datasource_id": "yarn_lock_v1",
         "purl": "pkg:npm/%40ballerina/ballerina-by-examples@0.99.0-RC3"
       },
@@ -505,7 +505,7 @@
         ],
         "repository_homepage_url": "https://www.npmjs.com/package/@ballerina/diagram",
         "repository_download_url": "https://registry.npmjs.org/@ballerina/diagram/-/diagram-0.99.0-RC3.tgz",
-        "api_data_url": "https://registry.npmjs.org/@ballerina%2fdiagram",
+        "api_data_url": "https://registry.npmjs.org/@ballerina%2fdiagram/0.99.0-RC3",
         "datasource_id": "yarn_lock_v1",
         "purl": "pkg:npm/%40ballerina/diagram@0.99.0-RC3"
       },
@@ -621,7 +621,7 @@
         ],
         "repository_homepage_url": "https://www.npmjs.com/package/@ballerina/distribution",
         "repository_download_url": "https://registry.npmjs.org/@ballerina/distribution/-/distribution-0.99.0-RC3.tgz",
-        "api_data_url": "https://registry.npmjs.org/@ballerina%2fdistribution",
+        "api_data_url": "https://registry.npmjs.org/@ballerina%2fdistribution/0.99.0-RC3",
         "datasource_id": "yarn_lock_v1",
         "purl": "pkg:npm/%40ballerina/distribution@0.99.0-RC3"
       },
@@ -717,7 +717,7 @@
         ],
         "repository_homepage_url": "https://www.npmjs.com/package/@ballerina/documentation",
         "repository_download_url": "https://registry.npmjs.org/@ballerina/documentation/-/documentation-0.99.0-RC3.tgz",
-        "api_data_url": "https://registry.npmjs.org/@ballerina%2fdocumentation",
+        "api_data_url": "https://registry.npmjs.org/@ballerina%2fdocumentation/0.99.0-RC3",
         "datasource_id": "yarn_lock_v1",
         "purl": "pkg:npm/%40ballerina/documentation@0.99.0-RC3"
       },
@@ -772,7 +772,7 @@
         "dependencies": [],
         "repository_homepage_url": "https://www.npmjs.com/package/@ballerina/font",
         "repository_download_url": "https://registry.npmjs.org/@ballerina/font/-/font-0.99.0-RC3.tgz",
-        "api_data_url": "https://registry.npmjs.org/@ballerina%2ffont",
+        "api_data_url": "https://registry.npmjs.org/@ballerina%2ffont/0.99.0-RC3",
         "datasource_id": "yarn_lock_v1",
         "purl": "pkg:npm/%40ballerina/font@0.99.0-RC3"
       },
@@ -1024,7 +1024,7 @@
                 ],
                 "repository_homepage_url": "https://www.npmjs.com/package/@babel/runtime",
                 "repository_download_url": "https://registry.npmjs.org/@babel/runtime/-/runtime-7.2.0.tgz",
-                "api_data_url": "https://registry.npmjs.org/@babel%2fruntime",
+                "api_data_url": "https://registry.npmjs.org/@babel%2fruntime/7.2.0",
                 "datasource_id": "yarn_lock_v1",
                 "purl": "pkg:npm/%40babel/runtime@7.2.0"
               },
@@ -1146,7 +1146,7 @@
                 ],
                 "repository_homepage_url": "https://www.npmjs.com/package/@ballerina/api-designer",
                 "repository_download_url": "https://registry.npmjs.org/@ballerina/api-designer/-/api-designer-0.99.0-RC3.tgz",
-                "api_data_url": "https://registry.npmjs.org/@ballerina%2fapi-designer",
+                "api_data_url": "https://registry.npmjs.org/@ballerina%2fapi-designer/0.99.0-RC3",
                 "datasource_id": "yarn_lock_v1",
                 "purl": "pkg:npm/%40ballerina/api-designer@0.99.0-RC3"
               },
@@ -1258,7 +1258,7 @@
                 ],
                 "repository_homepage_url": "https://www.npmjs.com/package/@ballerina/ast-model",
                 "repository_download_url": "https://registry.npmjs.org/@ballerina/ast-model/-/ast-model-0.99.0-RC3.tgz",
-                "api_data_url": "https://registry.npmjs.org/@ballerina%2fast-model",
+                "api_data_url": "https://registry.npmjs.org/@ballerina%2fast-model/0.99.0-RC3",
                 "datasource_id": "yarn_lock_v1",
                 "purl": "pkg:npm/%40ballerina/ast-model@0.99.0-RC3"
               },
@@ -1320,7 +1320,7 @@
                 ],
                 "repository_homepage_url": "https://www.npmjs.com/package/@ballerina/ballerina-by-examples",
                 "repository_download_url": "https://registry.npmjs.org/@ballerina/ballerina-by-examples/-/ballerina-by-examples-0.99.0-RC3.tgz",
-                "api_data_url": "https://registry.npmjs.org/@ballerina%2fballerina-by-examples",
+                "api_data_url": "https://registry.npmjs.org/@ballerina%2fballerina-by-examples/0.99.0-RC3",
                 "datasource_id": "yarn_lock_v1",
                 "purl": "pkg:npm/%40ballerina/ballerina-by-examples@0.99.0-RC3"
               },
@@ -1442,7 +1442,7 @@
                 ],
                 "repository_homepage_url": "https://www.npmjs.com/package/@ballerina/diagram",
                 "repository_download_url": "https://registry.npmjs.org/@ballerina/diagram/-/diagram-0.99.0-RC3.tgz",
-                "api_data_url": "https://registry.npmjs.org/@ballerina%2fdiagram",
+                "api_data_url": "https://registry.npmjs.org/@ballerina%2fdiagram/0.99.0-RC3",
                 "datasource_id": "yarn_lock_v1",
                 "purl": "pkg:npm/%40ballerina/diagram@0.99.0-RC3"
               },
@@ -1554,7 +1554,7 @@
                 ],
                 "repository_homepage_url": "https://www.npmjs.com/package/@ballerina/distribution",
                 "repository_download_url": "https://registry.npmjs.org/@ballerina/distribution/-/distribution-0.99.0-RC3.tgz",
-                "api_data_url": "https://registry.npmjs.org/@ballerina%2fdistribution",
+                "api_data_url": "https://registry.npmjs.org/@ballerina%2fdistribution/0.99.0-RC3",
                 "datasource_id": "yarn_lock_v1",
                 "purl": "pkg:npm/%40ballerina/distribution@0.99.0-RC3"
               },
@@ -1646,7 +1646,7 @@
                 ],
                 "repository_homepage_url": "https://www.npmjs.com/package/@ballerina/documentation",
                 "repository_download_url": "https://registry.npmjs.org/@ballerina/documentation/-/documentation-0.99.0-RC3.tgz",
-                "api_data_url": "https://registry.npmjs.org/@ballerina%2fdocumentation",
+                "api_data_url": "https://registry.npmjs.org/@ballerina%2fdocumentation/0.99.0-RC3",
                 "datasource_id": "yarn_lock_v1",
                 "purl": "pkg:npm/%40ballerina/documentation@0.99.0-RC3"
               },
@@ -1697,7 +1697,7 @@
                 "dependencies": [],
                 "repository_homepage_url": "https://www.npmjs.com/package/@ballerina/font",
                 "repository_download_url": "https://registry.npmjs.org/@ballerina/font/-/font-0.99.0-RC3.tgz",
-                "api_data_url": "https://registry.npmjs.org/@ballerina%2ffont",
+                "api_data_url": "https://registry.npmjs.org/@ballerina%2ffont/0.99.0-RC3",
                 "datasource_id": "yarn_lock_v1",
                 "purl": "pkg:npm/%40ballerina/font@0.99.0-RC3"
               },

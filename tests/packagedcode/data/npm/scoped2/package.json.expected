@@ -186,7 +186,7 @@
     ],
     "repository_homepage_url": "https://www.npmjs.com/package/@invisionag/eslint-config-ivx",
     "repository_download_url": "https://registry.npmjs.org/@invisionag/eslint-config-ivx/-/eslint-config-ivx-0.0.2.tgz",
-    "api_data_url": "https://registry.npmjs.org/@invisionag%2feslint-config-ivx",
+    "api_data_url": "https://registry.npmjs.org/@invisionag%2feslint-config-ivx/0.0.2",
     "datasource_id": "npm_package_json",
     "purl": "pkg:npm/%40invisionag/eslint-config-ivx@0.0.2"
   }

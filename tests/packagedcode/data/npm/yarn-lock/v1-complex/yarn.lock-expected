@@ -91,7 +91,7 @@
           ],
           "repository_homepage_url": "https://www.npmjs.com/package/@babel/code-frame",
           "repository_download_url": "https://registry.npmjs.org/@babel/code-frame/-/code-frame-7.0.0.tgz",
-          "api_data_url": "https://registry.npmjs.org/@babel%2fcode-frame",
+          "api_data_url": "https://registry.npmjs.org/@babel%2fcode-frame/7.0.0",
           "datasource_id": "yarn_lock_v1",
           "purl": "pkg:npm/%40babel/code-frame@7.0.0"
         },
@@ -183,7 +183,7 @@
           ],
           "repository_homepage_url": "https://www.npmjs.com/package/@babel/core",
           "repository_download_url": "https://registry.npmjs.org/@babel/core/-/core-7.3.4.tgz",
-          "api_data_url": "https://registry.npmjs.org/@babel%2fcore",
+          "api_data_url": "https://registry.npmjs.org/@babel%2fcore/7.3.4",
           "datasource_id": "yarn_lock_v1",
           "purl": "pkg:npm/%40babel/core@7.3.4"
         },
@@ -245,7 +245,7 @@
           ],
           "repository_homepage_url": "https://www.npmjs.com/package/@babel/helper-annotate-as-pure",
           "repository_download_url": "https://registry.npmjs.org/@babel/helper-annotate-as-pure/-/helper-annotate-as-pure-7.0.0.tgz",
-          "api_data_url": "https://registry.npmjs.org/@babel%2fhelper-annotate-as-pure",
+          "api_data_url": "https://registry.npmjs.org/@babel%2fhelper-annotate-as-pure/7.0.0",
           "datasource_id": "yarn_lock_v1",
           "purl": "pkg:npm/%40babel/helper-annotate-as-pure@7.0.0"
         },
