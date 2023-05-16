@@ -58,7 +58,7 @@ class TestMarkup(FileBasedTesting):
             u'\t name="copyright" content="copyright 2005-2006 Cedrik LIME "/> \r\n',
             u'\t name="robots" content="noindex,nofollow,noarchive "/> \r\n',
             u'\t Server System Informations \r\n',
-            u'\t rel="stylesheet" type="text/css"  =" MessAdmin.css "/> \r\n',
+            u'\t rel="stylesheet" type="text/css"  MessAdmin.css "/> \r\n',
             u'\t type="text/css">\r\n',
             u'\t \r\n',
             u'\t type="text/javascript" src=" js/getElementsBySelector.js"> \r\n',
@@ -103,7 +103,7 @@ class TestMarkup(FileBasedTesting):
             u'  [\r\n',
             u'  Server Informations\r\n',
             u'  |\r\n',
-            u'    =" ?action=webAppsList">Web Applications list \r\n',
+            u'    ?action=webAppsList">Web Applications list \r\n',
             u'  ]\r\n',
             u'   \r\n',
             u'   \r\n',
@@ -176,7 +176,7 @@ class TestMarkup(FileBasedTesting):
             u'\t \r\n',
             u'\t\t Java RE \r\n',
             u'\t\t \r\n',
-            u'\t\t\t  =" serverInfos.getSystemProperties().get("java.vendor.url") %>"> value=\' serverInfos.getSystemProperties().get("java.vendor") %> \'/>  \r\n',
+            u'\t\t\t  serverInfos.getSystemProperties().get("java.vendor.url") %>"> value=\' serverInfos.getSystemProperties().get("java.vendor") %> \'/>  \r\n',
             u'\t\t\t value=\' serverInfos.getSystemProperties().get("java.version") %> \'/>  @  value=\' serverInfos.getSystemProperties().get("java.home") %> \'/> \r\n',
             u'\t\t \r\n',
             u'\t \r\n',
@@ -212,3 +212,16 @@ class TestMarkup(FileBasedTesting):
         ]
         assert result == expected
 
+    def test_spdx_identifier_markup_demarkup(self):
+        text = "<p>SPDX-License-Identifier: Apache-2.0 WITH SHL-2.1</p>"
+        assert markup.is_markup_text(text)
+        demarkup_text = markup.demarkup_text(text)
+        expected = " SPDX-License-Identifier: Apache-2.0 WITH SHL-2.1 "
+        assert demarkup_text == expected
+    
+    def test_nuget_licenses_markup_demarkup(self):
+        text = """<a href="https://licenses.nuget.org/Apache-2.0">Apache-2.0</a>"""
+        assert markup.is_markup_text(text)
+        demarkup_texts = markup.demarkup_text(text)
+        expected = '  ="https://licenses.nuget.org/Apache-2.0">Apache-2.0 '
+        assert demarkup_texts == expected
