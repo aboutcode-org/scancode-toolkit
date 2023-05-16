@@ -1,0 +1,12 @@
+what:
+  - copyrights
+  - holders
+  - holders_summary
+  - authors
+copyrights:
+  - Copyright year (2020) for A11yance
+holders:
+  - A11yance
+holders_summary:
+  - value: A11yance
+    count: 1
