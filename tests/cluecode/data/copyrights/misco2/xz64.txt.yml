@@ -1,0 +1,12 @@
+what:
+  - copyrights
+  - holders
+  - holders_summary
+  - authors
+copyrights:
+  - Copyright (c) 2016, S K
+holders:
+  - S K
+holders_summary:
+  - value: S K
+    count: 1

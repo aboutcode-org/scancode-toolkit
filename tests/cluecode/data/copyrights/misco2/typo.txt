@@ -1,0 +1,7 @@
+// Simple typographic replacements
+//
+// (c) (C) → ©
+// (tm) (TM) → ™
+// (r) (R) → ®
+// +- → ±
+

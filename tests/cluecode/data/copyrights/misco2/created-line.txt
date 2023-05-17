@@ -1,0 +1,1 @@
+on elements created by the Line Highlight and Line Numbers plugins. Fixes 

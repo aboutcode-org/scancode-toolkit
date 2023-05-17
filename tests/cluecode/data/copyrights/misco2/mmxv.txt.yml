@@ -1,0 +1,12 @@
+what:
+  - copyrights
+  - holders
+  - holders_summary
+  - authors
+copyrights:
+  - Copyright (c) MMXV
+holders:
+  - MMXV
+holders_summary:
+  - value: MMXV
+    count: 1

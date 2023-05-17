@@ -1,0 +1,12 @@
+what:
+  - copyrights
+  - holders
+  - holders_summary
+  - authors
+copyrights:
+  - (c) Ministry of Science and Research, State of North-Rhine Westphalia 2004
+holders:
+  - Ministry of Science and Research, State of North-Rhine Westphalia
+holders_summary:
+  - value: Ministry of Science and Research, State of North-Rhine Westphalia
+    count: 1

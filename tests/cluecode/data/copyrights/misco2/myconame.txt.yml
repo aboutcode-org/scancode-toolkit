@@ -1,0 +1,12 @@
+what:
+  - copyrights
+  - holders
+  - holders_summary
+  - authors
+copyrights:
+  - Copyright 2005 MyCompanyName
+holders:
+  - MyCompanyName
+holders_summary:
+  - value: MyCompanyName
+    count: 1

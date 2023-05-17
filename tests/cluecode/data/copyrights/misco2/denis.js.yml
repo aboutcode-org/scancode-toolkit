@@ -1,0 +1,12 @@
+what:
+  - copyrights
+  - holders
+  - holders_summary
+  - authors
+copyrights:
+  - (c) 2014-2022 Denis Pushkarev
+holders:
+  - Denis Pushkarev
+holders_summary:
+  - value: Denis Pushkarev
+    count: 1

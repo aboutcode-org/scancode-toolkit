@@ -1,0 +1,3 @@
+that fixed it. We released a new fixed version, created a
+[Node Security Project disclosure](https://nodesecurity.io/advisories/68), and deprecated all
+

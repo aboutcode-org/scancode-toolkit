@@ -1,0 +1,1 @@
+Copyright (C) 2012 Kris Kowal <kris.kowal@cixar.com>

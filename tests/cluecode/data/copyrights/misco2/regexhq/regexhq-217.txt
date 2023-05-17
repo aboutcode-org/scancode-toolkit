@@ -1,0 +1,1 @@
+expectedHtml = "<p>Copyright &copy; 2003-2014</p>",

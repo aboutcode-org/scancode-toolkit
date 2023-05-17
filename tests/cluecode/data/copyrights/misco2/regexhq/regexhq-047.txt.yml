@@ -1,0 +1,8 @@
+what:
+  - copyrights
+  - holders
+  - authors
+copyrights:
+  - Copyright (c) 2004 Sam Hocevar <sam@hocevar.net>
+holders:
+  - Sam Hocevar

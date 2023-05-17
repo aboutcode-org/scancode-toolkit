@@ -1,0 +1,1 @@
+Copyright (C) 2013 Ariya Hidayat <ariya.hidayat@gmail.com>

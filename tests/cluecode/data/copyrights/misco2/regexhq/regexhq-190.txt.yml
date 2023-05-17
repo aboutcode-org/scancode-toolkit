@@ -1,0 +1,8 @@
+what:
+  - copyrights
+  - holders
+  - authors
+copyrights:
+  - Copyright 2011 The Closure Compiler Authors
+holders:
+  - The Closure Compiler Authors

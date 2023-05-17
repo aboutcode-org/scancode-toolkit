@@ -1,0 +1,20 @@
+what:
+  - copyrights
+  - holders
+  - holders_summary
+  - authors
+copyrights:
+  - Copyright (c) 2000-2002 Japan Network Information Center
+  - Copyright (c) 2000-2002 Japan Network Information Center
+  - Copyright (c) 2000-2002 Japan Network Information Center
+  - Copyright (c) 2010-2012 Japan Registry Services Co., Ltd.
+holders:
+  - Japan Network Information Center
+  - Japan Network Information Center
+  - Japan Network Information Center
+  - Japan Registry Services Co., Ltd.
+holders_summary:
+  - value: Japan Network Information Center
+    count: 3
+  - value: Japan Registry Services Co., Ltd.
+    count: 1

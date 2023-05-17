@@ -1,0 +1,12 @@
+what:
+  - copyrights
+  - holders
+  - holders_summary
+  - authors
+copyrights:
+  - Copyright (c) YEAR W3C(r) (MIT, ERCIM, Keio, Beihang)
+holders:
+  - W3C(r) (MIT, ERCIM, Keio, Beihang)
+holders_summary:
+  - value: W3C(r) (MIT, ERCIM, Keio, Beihang)
+    count: 1

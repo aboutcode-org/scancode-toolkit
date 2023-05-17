@@ -1,0 +1,12 @@
+what:
+  - copyrights
+  - holders
+  - holders_summary
+  - authors
+copyrights:
+  - Copyright (c) 2012-2014 Jake Luer <jake@alogicalparadox.com> https://github.com/logicalparadox/filtr
+holders:
+  - Jake Luer
+holders_summary:
+  - value: Jake Luer
+    count: 1
