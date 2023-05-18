@@ -99,7 +99,7 @@
     "other_license_expression": null,
     "other_license_expression_spdx": null,
     "other_license_detections": [],
-    "extracted_license_statement": "['MIT', 'Apache 2.0', 'BSD-3-Clause']",
+    "extracted_license_statement": "- MIT\n- Apache 2.0\n- BSD-3-Clause\n",
     "notice_text": null,
     "source_packages": [],
     "file_references": [],

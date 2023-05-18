@@ -341,7 +341,7 @@
           "identifier": "lgpl_2_1_plus_and_lgpl_2_1-1018860f-b475-01e3-bdd4-39bf3444650e"
         }
       ],
-      "extracted_license_statement": "['LGPL-2.1+', 'LGPL-2.1+', 'LGPL-2.1+']",
+      "extracted_license_statement": "- LGPL-2.1+\n- LGPL-2.1+\n- LGPL-2.1+\n",
       "notice_text": null,
       "source_packages": [
         "pkg:deb/libndp"
@@ -711,7 +711,7 @@
               "identifier": "lgpl_2_1_plus_and_lgpl_2_1-1018860f-b475-01e3-bdd4-39bf3444650e"
             }
           ],
-          "extracted_license_statement": "['LGPL-2.1+', 'LGPL-2.1+', 'LGPL-2.1+']",
+          "extracted_license_statement": "- LGPL-2.1+\n- LGPL-2.1+\n- LGPL-2.1+\n",
           "notice_text": null,
           "source_packages": [],
           "file_references": [],

@@ -67,7 +67,7 @@
   "other_license_expression": null,
   "other_license_expression_spdx": null,
   "other_license_detections": [],
-  "extracted_license_statement": "[{'name': 'CDDL 1.0', 'url': 'https://glassfish.dev.java.net/public/CDDLv1.0.html', 'comments': None, 'distribution': None}]",
+  "extracted_license_statement": "- name: CDDL 1.0\n  url: https://glassfish.dev.java.net/public/CDDLv1.0.html\n  comments:\n  distribution:\n",
   "notice_text": null,
   "source_packages": [
     "pkg:maven/org.mortbay.jetty/servlet-api-2.5@6.1.5?classifier=sources"

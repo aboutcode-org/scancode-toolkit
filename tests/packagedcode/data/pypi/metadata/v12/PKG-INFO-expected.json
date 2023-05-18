@@ -97,7 +97,7 @@
     "other_license_expression": null,
     "other_license_expression_spdx": null,
     "other_license_detections": [],
-    "extracted_license_statement": "{'license': 'Python style', 'classifiers': ['License :: OSI Approved :: Python Software Foundation License']}",
+    "extracted_license_statement": "license: Python style\nclassifiers:\n  - 'License :: OSI Approved :: Python Software Foundation License'\n",
     "notice_text": null,
     "source_packages": [],
     "file_references": [],

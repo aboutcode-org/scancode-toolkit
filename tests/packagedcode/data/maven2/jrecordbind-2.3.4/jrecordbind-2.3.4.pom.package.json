@@ -75,7 +75,7 @@
   "other_license_expression": null,
   "other_license_expression_spdx": null,
   "other_license_detections": [],
-  "extracted_license_statement": "[{'name': 'LGPL', 'url': 'http://www.gnu.org/copyleft/lesser.html', 'comments': None, 'distribution': 'repo'}]",
+  "extracted_license_statement": "- name: LGPL\n  url: http://www.gnu.org/copyleft/lesser.html\n  comments:\n  distribution: repo\n",
   "notice_text": null,
   "source_packages": [
     "pkg:maven/it.assist.jrecordbind/jrecordbind%24%7BartifactId.ext%7D@2.3.4?classifier=sources"

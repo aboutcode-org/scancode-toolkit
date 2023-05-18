@@ -67,7 +67,7 @@
   "other_license_expression": null,
   "other_license_expression_spdx": null,
   "other_license_detections": [],
-  "extracted_license_statement": "[{'name': 'HSQLDB License', 'url': 'http://hsqldb.org/web/hsqlLicense.html', 'comments': None, 'distribution': 'repo'}]",
+  "extracted_license_statement": "- name: HSQLDB License\n  url: http://hsqldb.org/web/hsqlLicense.html\n  comments:\n  distribution: repo\n",
   "notice_text": null,
   "source_packages": [
     "pkg:maven/hsqldb/hsqldb@1.8.0.7?classifier=sources"

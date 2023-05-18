@@ -75,7 +75,7 @@
   "other_license_expression": null,
   "other_license_expression_spdx": null,
   "other_license_detections": [],
-  "extracted_license_statement": "[{'name': 'Common Public License Version 1.0', 'url': 'http://www.opensource.org/licenses/cpl1.0.txt', 'comments': None, 'distribution': None}]",
+  "extracted_license_statement": "- name: Common Public License Version 1.0\n  url: http://www.opensource.org/licenses/cpl1.0.txt\n  comments:\n  distribution:\n",
   "notice_text": null,
   "source_packages": [
     "pkg:maven/junit/junit@4.4?classifier=sources"

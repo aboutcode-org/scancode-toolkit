@@ -77,7 +77,7 @@
   "other_license_expression": null,
   "other_license_expression_spdx": null,
   "other_license_detections": [],
-  "extracted_license_statement": "[{'name': 'MIT', 'url': 'LICENSE.txt', 'comments': None, 'distribution': 'repo'}]",
+  "extracted_license_statement": "- name: MIT\n  url: LICENSE.txt\n  comments:\n  distribution: repo\n",
   "notice_text": null,
   "source_packages": [
     "pkg:maven/org.codehaus.mojo/findbugs-maven-plugin@1.1.1?classifier=sources"

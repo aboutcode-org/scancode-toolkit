@@ -66,7 +66,7 @@
     "other_license_expression": null,
     "other_license_expression_spdx": null,
     "other_license_detections": [],
-    "extracted_license_statement": "{'classifiers': ['License :: OSI Approved :: MIT License']}",
+    "extracted_license_statement": "classifiers:\n  - 'License :: OSI Approved :: MIT License'\n",
     "notice_text": null,
     "source_packages": [],
     "file_references": [],

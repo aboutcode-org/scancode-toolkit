@@ -94,7 +94,7 @@
   "other_license_expression": null,
   "other_license_expression_spdx": null,
   "other_license_detections": [],
-  "extracted_license_statement": "[{'name': 'BSD', 'url': 'http://www.jcraft.com/jsch/LICENSE.txt', 'comments': 'License information from http://www.jcraft.com/jsch', 'distribution': None}]",
+  "extracted_license_statement": "- name: BSD\n  url: http://www.jcraft.com/jsch/LICENSE.txt\n  comments: License information from http://www.jcraft.com/jsch\n  distribution:\n",
   "notice_text": null,
   "source_packages": [
     "pkg:maven/com.jcraft/jsch@0.1.23?classifier=sources"
