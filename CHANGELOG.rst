@@ -135,7 +135,9 @@ License detection:
     These expressions are parallel to detections.
 
   - The ``declared_license`` attribute is renamed ``extracted_license_statement``
-    and is now a YAML-encoded string.
+    and is now a YAML-encoded string, which can be parsed to recreate the
+    original extracted license statement. Previously this used to be nested
+    python objects lists/dicts/string, but now this is always a YAML string.
 
     See `license updates documentation <https://scancode-toolkit.readthedocs.io/en/latest/explanations/license-detection-reference.html#change-in-license-data-format-package>`_
     for examples and details.
