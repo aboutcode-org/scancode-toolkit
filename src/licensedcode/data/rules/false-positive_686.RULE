@@ -1,0 +1,18 @@
+---
+is_false_positive: yes
+notes: Seen at repo1.maven.org/maven2/com/helger/ph-commons/6.2.4/ph-commons-6.2.4-sources.jar/com/helger/commons/thirdparty/ELicense.java
+---
+
+/**
+   * Create a custom license.
+   *
+   * @param sID
+   *        The ID of the license.
+   * @param sName
+   *        The name of the license.
+   * @param aVersion
+   *        The version of the license.
+   * @param sURL
+   *        The URL of the license.
+   */
+  private ELicense

@@ -1,5 +1,5 @@
 ---
-license_expression: bsd-new AND other-permissive
+license_expression: bsd-new
 is_license_tag: yes
 ignorable_urls:
     - http://www.linfo.org/bsdlicense.html

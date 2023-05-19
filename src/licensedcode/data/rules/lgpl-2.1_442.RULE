@@ -1,0 +1,10 @@
+---
+license_expression: lgpl-2.1
+is_license_tag: yes
+---
+
+<licenses>
+    <license>
+      <name>{{LGPL-2.1}}</name>
+    </license>
+  </licenses>

@@ -1,0 +1,8 @@
+---
+license_expression: bsd-new
+is_license_notice: yes
+minimum_coverage: 90
+---
+
+<!-- direction numbers for Sobol generation from Frances Y. Kuo and Stephen Joe,
+    available under a {{BSD-style license}} (see LICENSE.txt) -->
