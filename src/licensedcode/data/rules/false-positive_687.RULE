@@ -1,0 +1,7 @@
+---
+is_false_positive: yes
+notes: seen in repo1.maven.org/maven2/com/google/javascript/closure-compiler/v20180204
+---
+
+PRESERVE, // same as license
+  PRIVATE,
