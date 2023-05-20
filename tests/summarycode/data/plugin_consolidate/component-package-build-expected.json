@@ -155,22 +155,6 @@
     },
     {
       "type": "holders",
-      "identifier": "apache_software_1",
-      "consolidated_license_expression": "apache-2.0",
-      "consolidated_holders": [
-        "The Apache Software"
-      ],
-      "consolidated_copyright": "Copyright (c) The Apache Software",
-      "core_license_expression": "apache-2.0",
-      "core_holders": [
-        "The Apache Software"
-      ],
-      "other_license_expression": null,
-      "other_holders": [],
-      "files_count": 1
-    },
-    {
-      "type": "holders",
       "identifier": "corp_ibm_1",
       "consolidated_license_expression": "gpl-2.0",
       "consolidated_holders": [
@@ -694,7 +678,6 @@
       "holders": [],
       "authors": [],
       "consolidated_to": [
-        "apache_software_1",
         "corp_ibm_1"
       ],
       "files_count": 3,
@@ -814,22 +797,20 @@
       "percentage_of_license_text": 22.22,
       "copyrights": [
         {
-          "copyright": "Copyright (c) The Apache Software",
+          "copyright": "Copyright (c) The Apache Software Foundation",
           "start_line": 4,
           "end_line": 4
         }
       ],
       "holders": [
         {
-          "holder": "The Apache Software",
+          "holder": "The Apache Software Foundation",
           "start_line": 4,
           "end_line": 4
         }
       ],
       "authors": [],
-      "consolidated_to": [
-        "apache_software_1"
-      ],
+      "consolidated_to": [],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,

@@ -4,9 +4,9 @@ what:
   - holders_summary
   - authors
 copyrights:
-  - Copyright (c) MMXV
+  - Copyright (c) MMXV jden <jason@denizac.org>
 holders:
-  - MMXV
+  - MMXV jden
 holders_summary:
-  - value: MMXV
+  - value: MMXV jden
     count: 1

@@ -50,7 +50,7 @@ copyrights:
   - Copyright (c) International Business Machines Corp., 2002,2007
   - Copyright 2000-2007 Niels Provos provos@citi.umich.edu
   - Copyright 2007-2009 Niels Provos and Nick Mathewson
-  - Copyright (c) 2004 2005, Google Inc.
+  - Copyright (c) 2004-2005, Google Inc.
   - copyright (c) 1991-1998, Thomas G. Lane
   - copyright holder, Aladdin Enterprises of Menlo Park
   - copyright by the Free Software Foundation
@@ -70,7 +70,7 @@ copyrights:
   - Copyright (c) 2001-2002 Thomas Broyer, Charlie Bozeman and Daniel Veillard
   - Copyright (c) 1991 Free Software Foundation, Inc.
   - copyrighted by the Free Software Foundation
-  - Copyright (c) 2005, 2006 Nick Galbreath nickg at modp dot com
+  - Copyright (c) 2005, 2006 Nick Galbreath
   - Copyright 2008 MolokoCacao
   - Copyright (c) 2004-2009 Sergey Lyubka
   - Portions Copyright (c) 2009 Gilbert Wellisch
@@ -175,7 +175,7 @@ holders:
   - Thomas Broyer, Charlie Bozeman and Daniel Veillard
   - Free Software Foundation, Inc.
   - the Free Software Foundation
-  - Nick Galbreath nickg at modp dot com
+  - Nick Galbreath
   - MolokoCacao
   - Sergey Lyubka
   - Gilbert Wellisch
@@ -318,7 +318,7 @@ holders_summary:
     count: 1
   - value: Nara Institute of Science and Technology
     count: 1
-  - value: Nick Galbreath nickg at modp dot com
+  - value: Nick Galbreath
     count: 1
   - value: Niels Provos
     count: 1

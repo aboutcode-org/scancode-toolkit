@@ -3539,7 +3539,7 @@
         "count": 1
       },
       {
-        "value": "name' Isaac Z.",
+        "value": "name' Isaac Z. Schlueter",
         "count": 1
       }
     ],
@@ -3622,7 +3622,7 @@
         ],
         "authors": [
           {
-            "value": "name' Isaac Z.",
+            "value": "name' Isaac Z. Schlueter",
             "count": 1
           }
         ],
@@ -7877,7 +7877,7 @@
       "holders": [],
       "authors": [
         {
-          "author": "name' Isaac Z.",
+          "author": "name' Isaac Z. Schlueter",
           "start_line": 16,
           "end_line": 17
         }

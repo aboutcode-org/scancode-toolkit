@@ -700,7 +700,13 @@
       "percentage_of_license_text": 4.59,
       "copyrights": [],
       "holders": [],
-      "authors": [],
+      "authors": [
+        {
+          "author": "Niklas von Hertzen",
+          "start_line": 6,
+          "end_line": 7
+        }
+      ],
       "for_todo": [],
       "files_count": 0,
       "dirs_count": 0,

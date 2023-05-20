@@ -22,9 +22,9 @@
           "system_environment": {
             "operating_system": "linux",
             "cpu_architecture": "64",
-            "platform": "Linux-5.4.0-146-generic-x86_64-with-glibc2.27",
-            "platform_version": "#163~18.04.1-Ubuntu SMP Mon Mar 20 15:02:59 UTC 2023",
-            "python_version": "3.10.4 (main, May 22 2022, 00:46:26) [GCC 7.5.0]"
+            "platform": "Linux-4.15.0-208-generic-x86_64-with-glibc2.23",
+            "platform_version": "#219~16.04.1-Ubuntu SMP Mon Mar 20 20:41:53 UTC 2023",
+            "python_version": "3.9.10 (main, Jan 29 2022, 10:01:49) \n[GCC 5.4.0 20160609]"
           },
           "spdx_license_list_version": "3.20",
           "files_count": 26
@@ -244,7 +244,7 @@
           "count": 1
         },
         {
-          "value": "name' Isaac Z.",
+          "value": "name' Isaac Z. Schlueter",
           "count": 1
         }
       ],
@@ -284,7 +284,7 @@
       "holders": [],
       "authors": [
         {
-          "value": "name' Isaac Z.",
+          "value": "name' Isaac Z. Schlueter",
           "count": 1
         }
       ],
@@ -446,7 +446,7 @@
         "holders": [],
         "authors": [
           {
-            "author": "name' Isaac Z.",
+            "author": "name' Isaac Z. Schlueter",
             "start_line": 16,
             "end_line": 17
           }

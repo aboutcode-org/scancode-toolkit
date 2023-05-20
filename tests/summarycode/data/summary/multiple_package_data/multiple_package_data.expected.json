@@ -728,7 +728,13 @@
       "percentage_of_license_text": 40.0,
       "copyrights": [],
       "holders": [],
-      "authors": [],
+      "authors": [
+        {
+          "author": "Example Corp.",
+          "start_line": 4,
+          "end_line": 4
+        }
+      ],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,

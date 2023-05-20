@@ -341,7 +341,7 @@ class TestCopyrightLinesDetection(FileBasedTesting):
         test_file = self.get_test_loc('copyrights_basic/abiword_common.copyright')
         expected = [
             copyrights.CopyrightDetection('Copyright (c) 1998- AbiSource, Inc. & Co.', 15, 17),
-            copyrights.CopyrightDetection('Copyright (c) 2009 Masayuki Hatta', 41, 41),
+            copyrights.CopyrightDetection('2009 Masayuki Hatta (mhatta) <mhatta@debian.org>', 41, 41),
             copyrights.CopyrightDetection('Copyright (c) 2009 Patrik Fimml <patrik@fimml.at>', 42, 42),
         ]
         check_full_detections(expected, test_file)
