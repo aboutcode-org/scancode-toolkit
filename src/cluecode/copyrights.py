@@ -2102,10 +2102,10 @@ grammar = """
 #######################################
 
     EMAIL: {<EMAIL_START> <CC> <NN>* <EMAIL_END>} # composite_email
-    
+
     EMAIL: { <NN>  <CC>  <NN>  <DOT>  <NN> } # foo at bat dot com
 
-    # foo@bar.com or baz@bar.com 
+    # foo@bar.com or baz@bar.com
     EMAIL: {<EMAIL>  <NN>  <EMAIL>} # email or email
 
 #######################################
@@ -2557,7 +2557,8 @@ grammar = """
 
     # Copyright 2015 The Happy Campers
     # Copyright 2015 The Error Prone Authors.
-    COPYRIGHT: {<NNP>? <COPY>+ (<YR-RANGE>+ <BY>? <NN>? <COMPANY|NAME|NAME-EMAIL>+ <EMAIL>?)+ <AUTHDOT|MAINT>?}        #1630
+    # Copyright 2001-2011 Xiph.Org, Skype Limited, Octasic,
+    COPYRIGHT: {<NNP>? <COPY>+ (<YR-RANGE>+ <BY>? <NN>? <COMPANY|NAME|NAME-EMAIL|NNP>+ <EMAIL>?)+ <AUTHDOT|MAINT>?}        #1630
 
     COPYRIGHT: {<COPY>+ <NN> <NAME> <YR-RANGE>}        #1650
 
@@ -2902,7 +2903,8 @@ grammar = """
 
     # Copyright (c) All Rights Reserved by the District Export Council of Georgia
     # Copyright (c) by Minds, Japan Council for Quality Health Care
-    COPYRIGHT: {<COPY>+ <ALLRIGHTRESERVED> <BY>? <NAME>? <NN>? <NAME|COMPANY>+ } #15674
+    # Copyright (C) All Rights Are Reserved. Chungjungwon​. Iotacoffee.Com 2011
+    COPYRIGHT: {<COPY>+ <ALLRIGHTRESERVED> <BY>? <NAME>? <NN>? <NAME|COMPANY>+ <YR-RANGE>? } #15674
 
     # Copyright (c) All right reserved SSC. Ltd.
     # Copyright (C) All Rights Reserved by Leh. www.leh.jp
@@ -3062,8 +3064,12 @@ grammar = """
 
     COPYRIGHT: {<COPYRIGHT|COPYRIGHT2|COPY|NAME-COPY> <COPY|NNP|AUTHDOT|CAPS|CD|YR-RANGE|NAME|NAME-EMAIL|NAME-YEAR|NAME-COPY|NAME-CAPS|AUTHORANDCO|COMPANY|YEAR|PN|COMP|UNI|CC|OF|IN|BY|OTH|VAN|URL|EMAIL|URL2|MIXEDCAP|NN>+ <ALLRIGHTRESERVED>}        #99999
 
+    # * Copyright (C) 2004  Red Hat, Inc.
+    # * Copyright (C) 200  Matthias Clasen <mclasen@redhat.com>
+    COPYRIGHT: {<COPY>  <COPY> <CD>  <NAME-EMAIL>}        #9999970
+
     # <p class="copyright"><a href="http://www.w3.org/Consortium/Legal/ipr-notice-20000612#Copyright">Copyright</a>
-    COPYRIGHT: {<COPYRIGHT> <COPY><COPY>}        #9999980
+    COPYRIGHT: {<COPYRIGHT> <COPY>}        #9999980
     COPYRIGHT: {<COPY|NAME-COPY><COPY|NAME-COPY>}        #999990
     COPYRIGHT: {<COPYRIGHT|COPYRIGHT2> <ALLRIGHTRESERVED>}        #99900111
 
@@ -4099,7 +4105,6 @@ def prepare_text_line(line, dedeb=True, to_ascii=True):
     )
     # keep only one quote
     line = fold_consecutive_quotes(u"'", line)
-
 
     # treat some escaped literal CR, LF, tabs, \00 as new lines
     # such as in code literals: a="\\n some text"

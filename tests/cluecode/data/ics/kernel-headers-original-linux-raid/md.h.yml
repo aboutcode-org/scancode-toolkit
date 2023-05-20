@@ -4,7 +4,7 @@ what:
   - holders_summary
 copyrights:
   - Copyright (c) 1996-98 Ingo Molnar, Gadi Oxman
-  - Copyright (c) 1994-96 Marc ZYNGIER <zyngier@ufr-info-p7.ibp.fr>
+  - Copyright (c) 1994-96 Marc ZYNGIER <zyngier@ufr-info-p7.ibp.fr> or <maz@gloups.fdn.fr>
 holders:
   - Ingo Molnar, Gadi Oxman
   - Marc ZYNGIER

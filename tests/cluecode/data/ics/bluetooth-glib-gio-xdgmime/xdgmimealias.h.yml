@@ -4,8 +4,13 @@ what:
   - holders_summary
 copyrights:
   - Copyright (c) 2004 Red Hat, Inc.
+  - Copyright (c) 200 Matthias Clasen <mclasen@redhat.com>
 holders:
   - Red Hat, Inc.
+  - Matthias Clasen
 holders_summary:
   - value: Red Hat
     count: 1
+  - value: Matthias Clasen
+    count: 1
+    
