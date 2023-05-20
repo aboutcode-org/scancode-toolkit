@@ -1,0 +1,6 @@
+---
+license_expression: gpl-1.0-plus AND unknown-license-reference
+is_license_notice: yes
+---
+
+This package collects Thai scalable fonts available in free licenses, and maintains and distributes them under GNU General Public License with original authors' permissions. Some fonts cannot be GPL, because they are based on fonts with different licenses. See the list of such fonts at the end of this file.

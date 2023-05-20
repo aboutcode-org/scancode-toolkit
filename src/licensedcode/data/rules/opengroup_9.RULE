@@ -1,0 +1,53 @@
+---
+license_expression: opengroup
+is_license_notice: yes
+ignorable_urls:
+    - http://www.opengroup.org/openmotif/license
+---
+
+ALL RIGHTS RESERVED
+
+This software is furnished under a license and may be used
+and copied only in accordance with the terms of such license and
+with the inclusion of this copyright notice. No title to and ownership
+of the software is hereby transferred.
+
+This software is subject to an open license. It may only be
+used on, with or for operating systems which are themselves open
+source systems. You must contact The Open Group for a license allowing
+distribution and sublicensing of this software on, with, or for
+operating systems which are not Open Source programs.
+
+See http://www.opengroup.org/openmotif/license for full
+details of the license agreement. Any use, reproduction, or
+distribution of the program constitutes recipient's acceptance of
+this agreement.
+
+THE OPEN GROUP AND ITS THIRD PARTY SUPPLIERS, ASSUME NO RESPONSIBILITY
+FOR THE USE OR INABILITY TO USE ANY OF ITS SOFTWARE.
+
+EXCEPT AS EXPRESSLY SET FORTH IN THIS AGREEMENT, THE PROGRAM IS
+PROVIDED ON AN "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+KIND, EITHER EXPRESS OR IMPLIED INCLUDING, WITHOUT LIMITATION, ANY
+WARRANTIES OR CONDITIONS OF TITLE, NON-INFRINGEMENT, MERCHANTABILITY
+OR FITNESS FOR A PARTICULAR PURPOSE.
+
+EXCEPT AS EXPRESSLY SET FORTH IN THIS AGREEMENT, NEITHER RECIPIENT
+NOR ANY CONTRIBUTORS SHALL HAVE ANY LIABILITY FOR ANY DIRECT,
+INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+DAMAGES (INCLUDING WITHOUT LIMITATION LOST PROFITS), HOWEVER CAUSED
+AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN
+ANY WAY OUT OF THE USE OR DISTRIBUTION OF THE PROGRAM OR THE
+EXERCISE OF ANY RIGHTS GRANTED HEREUNDER, EVEN IF ADVISED OF THE
+POSSIBILITY OF SUCH DAMAGES.
+
+The information in this software is subject to change without
+notice and should not be construed as a commitment by The Open Group
+or its third party suppliers.
+
+Notice: Notwithstanding any other lease or license that may pertain to,
+or accompany the delivery of, this computer software, the rights of the
+Government regarding its use, reproduction and disclosure are as set
+forth in Section 52.227-19 of the FARS Computer Software-Restricted
+Rights clause.

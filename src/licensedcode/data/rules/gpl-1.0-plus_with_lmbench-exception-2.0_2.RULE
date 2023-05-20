@@ -1,0 +1,18 @@
+---
+license_expression: gpl-1.0-plus WITH lmbench-exception-2.0
+is_license_notice: yes
+---
+
+The set of programs and documentation known as "lmbench" are distributed
+under the Free Software Foundation's General Public License with the
+following additional restrictions (which override any conflicting
+restrictions in the GPL):
+
+1. You may not distribute results in any public forum, in any publication,
+   or in any other way if you have modified the benchmarks.  
+
+2. You may not distribute the results for a fee of any kind.  This includes
+   web sites which generate revenue from advertising.
+
+If you have modifications or enhancements that you wish included in
+future versions, please mail those to me,
