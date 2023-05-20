@@ -10,8 +10,10 @@ text_urls:
     - http://gridscheduler.sourceforge.net/Gridengine_SISSL_license.html
 minimum_coverage: 50
 ignorable_copyrights:
+    - Copyright (c) 2001 Sun Microsystems, Inc
     - Copyright (c) 2001 Sun Microsystems, Inc.
 ignorable_holders:
+    - Sun Microsystems, Inc
     - Sun Microsystems, Inc.
 ---
 

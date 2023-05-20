@@ -1,0 +1,12 @@
+what:
+  - copyrights
+  - holders
+  - holders_summary
+  - authors
+copyrights:
+  - Copyright (c) 1998 Yossi Rubner Computer Science Department, Stanford University
+holders:
+  - Yossi Rubner Computer Science Department, Stanford University
+holders_summary:
+  - value: Yossi Rubner Computer Science Department, Stanford University
+    count: 1

@@ -8,8 +8,6 @@ homepage_url: https://thufie.lain.haus/NPL.html
 spdx_license_key: LicenseRef-scancode-cooperative-non-violent-7.0
 text_urls:
     - https://git.pixie.town/thufie/thufie-site/raw/branch/main/files/CNPLv7.md
-ignorable_authors:
-    - Screenplay
 ---
 
 THE WORK (AS DEFINED BELOW) IS PROVIDED UNDER THE TERMS OF THIS

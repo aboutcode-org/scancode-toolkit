@@ -10,9 +10,9 @@ text_urls:
     - https://www.cs.bham.ac.uk/research/projects/poplog/emacs/COPYING
 ignorable_copyrights:
     - Copyright (c) 1985, 1987, 1988 Richard M. Stallman
-    - Copyright (c) 1988 Free Software Foundation, Inc.
+    - Copyright (c) 1988 Free Software Foundation, Inc
 ignorable_holders:
-    - Free Software Foundation, Inc.
+    - Free Software Foundation, Inc
     - Richard M. Stallman
 ---
 

@@ -10,7 +10,7 @@ text_urls:
     - https://cloud.google.com/maps-platform/terms/index-20200427
 minimum_coverage: 90
 ignorable_authors:
-    - the U.S. Department
+    - the U.S. Department of State
     - the United States Department of State
 ignorable_urls:
     - https://cloud.google.com/maps-platform/pricing/sheet

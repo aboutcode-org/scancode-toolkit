@@ -1,0 +1,12 @@
+what:
+  - copyrights
+  - holders
+  - holders_summary
+  - authors
+copyrights:
+  - Copyright (c) 1994-96 Marc ZYNGIER <zyngier@ufr-info-p7.ibp.fr> or <maz@gloups.fdn.fr>
+holders:
+  - Marc ZYNGIER
+holders_summary:
+  - value: Marc ZYNGIER
+    count: 1

@@ -583,7 +583,7 @@ _YEAR_YEAR_PUNCT = _YEAR_YEAR + _PUNCT
 _YEAR_SHORT_PUNCT = _YEAR_SHORT + _PUNCT
 _YEAR_OR_YEAR_YEAR_WITH_PUNCT = fr'({_YEAR_PUNCT}|{_YEAR_YEAR_PUNCT})'
 _YEAR_THEN_YEAR_SHORT = fr'({_YEAR_OR_YEAR_YEAR_WITH_PUNCT}({_YEAR_SHORT_PUNCT})*)'
-_YEAR_DASH_PRESENT = _YEAR + r'-present\.?,?'
+_YEAR_DASH_PRESENT = _YEAR + r'[\-~]? ?[Pp]resent\.?,?'
 
 patterns = [
     ############################################################################
@@ -613,6 +613,17 @@ patterns = [
     (r'^[\(\.@]*COPYRIGHTED?:?$', 'COPY'),
     (r'^[\(\.@]*CopyRights?:?$', 'COPY'),
 
+    # TODO: add other languages
+    #   Chinese: 版权 and 版權
+    #   Czech: autorská práva
+    #   Greek: πνευματική ιδιοκτησία
+    #   Hebrew: זכויות יוצרים
+    #   Japanese: 著作権
+    #   Korean: 저작권
+    #   Russian: Авторские права
+    #   Slovenian: avtorske pravice
+    #   Ukrainian: авторське право
+
     # rare typo copyrighy
     (r'^Copyrighy$', 'COPY'),
 
@@ -629,6 +640,9 @@ patterns = [
 
     # with a trailing comma
     (r'^Copyright,$', 'COPY'),
+
+    # with a trailing quote and HTML bracket
+    (r"^[Cc]opyright'>$", 'COPY'),
 
     # as javadoc
     (r'^@[Cc]opyrights?:?$', 'COPY'),
@@ -651,7 +665,8 @@ patterns = [
      (r'^[A-Z]Copyright?$', 'COPY'),
 
     # SPDX-FileCopyrightText as defined by the FSFE Reuse project
-    (r'^[Ss][Pp][Dd][Xx]-[Ff]ile[Cc]opyright[Tt]ext', 'COPY'),
+    # SPDX-SnippetCopyrightText seen in the wild
+    (r'^[Ss][Pp][Dd][Xx]-(?:[Ff]ile|[Sn]nippet)[Cc]opyright[Tt]ext', 'COPY'),
 
     # SPDX-FileContributor as defined in SPDX and seen used in KDE
     (r'^[Ss][Pp][Dd][Xx]-[Ff]ile[Cc]ontributor', 'SPDX-CONTRIB'),
@@ -671,6 +686,7 @@ patterns = [
     (r'^RIGHTS?$', 'RIGHT'),
     (r'^[Rr]eserved[\.,]*$', 'RESERVED'),
     (r'^RESERVED[\.,]*$', 'RESERVED'),
+    # this is really reversed, seen in some pranky statements in copyleft notices
     (r'^[Rr]eversed[\.,]*$', 'RESERVED'),
     (r'^REVERSED[\.,]*$', 'RESERVED'),
 
@@ -685,6 +701,9 @@ patterns = [
     (r'^[Rr]éservés[\.,]*$', 'RESERVED'),
     (r'^[Rr]eserves[\.,]*$', 'RESERVED'),
 
+    # TODO: in Dutch Alle rechten voorbehouden.
+    # TODO: in Spanish Reservados todos los derechos
+
     ############################################################################
     # JUNK are things to ignore
     # Exceptions to JUNK
@@ -693,6 +712,8 @@ patterns = [
     # trailing parens: notice(s) and exceptions
     (r'^Special$', 'NN'),
     (r"^Member\(s\)[\.,]?$", 'NNP'),
+    (r"^__authors?__$", 'AUTHS'),
+    (r"^__contributors?__$", 'AUTHS'),
     (r"^Author\(s\)[\.,:]?$", 'AUTHS'),
     (r"^[A-a]ffiliate\(s\)[\.,:]?$", 'COMP'),
     # Exceptions to short mixed caps with trailing cap
@@ -706,6 +727,8 @@ patterns = [
     # misc exceptions
     (r'^dead_horse$', 'NN'),
     (r'^A11yance', 'NNP'),
+    (r'^Fu$', 'NNP'),
+    (r'^W3C\(r\)$', 'COMP'),
 
     ############################################################################
     # JUNK proper
@@ -815,9 +838,9 @@ patterns = [
 
     (r'^hispagestyle$', 'JUNK'),
     (r'^Generic$', 'JUNK'),
+    (r'^generate-', 'JUNK'),
     (r'^Change$', 'JUNK'),
     (r'^Add$', 'JUNK'),
-    (r'^Generic$', 'JUNK'),
     (r'^Average$', 'JUNK'),
     (r'^Taken$', 'JUNK'),
     (r'^LAWS\.?$', 'JUNK'),
@@ -840,13 +863,21 @@ patterns = [
     # various programming constructs
     (r'^var$', 'JUNK'),
     (r'^[Tt]his$', 'JUNK'),
-    (r'^return$', 'JUNK'),
-    (r'^function$', 'JUNK'),
     (r'^thats?$', 'JUNK'),
     (r'^xmlns$', 'JUNK'),
     (r'^file$', 'JUNK'),
     (r'^[Aa]sync$', 'JUNK'),
     (r'^Keyspan$', 'JUNK'),
+    (r'^grunt.template', 'JUNK'),
+    (r'^else', 'JUNK'),
+    (r'^constructor.$', 'JUNK'),
+    (r'^(if|elsif|elif|self|catch|this|else|switch|type|typeof|case|pos|break|[Nn]one|null|var|return|def|function|method|var).?$', 'JUNK'),
+    (r'^.?(null|function|try|catch|except|throw|typeof|catch|switch).?$', 'JUNK'),
+    (r'^.*[\.:](?:value|ref|key|case|type|typeof|props|state|error|null)$', 'JUNK'),
+    (r'^[a-z]{,5}\[!?]+', 'JUNK'),
+
+    # func call with short var in minified code
+    (r'^\w{2,6}\([a-z, ]{1,6}\)', 'JUNK'),
 
     # neither and nor conjunctions and some common licensing words are NOT part
     # of a copyright statement
@@ -891,6 +922,7 @@ patterns = [
     (r'^Limitation$', 'JUNK'),
     (r'^Liability$', 'JUNK'),
     (r'^Named$', 'JUNK'),
+    (r'^defaults?$', 'JUNK'),
     (r'^Use.$', 'JUNK'),
     (r'^EXCEPT$', 'JUNK'),
     (r'^OWNER\.?$', 'JUNK'),
@@ -953,6 +985,7 @@ patterns = [
     (r'^However,?$', 'JUNK'),
     (r'^[Cc]ollectively$', 'JUNK'),
     (r'^following$', 'JUNK'),
+    (r'^[Cc]onfig$', 'JUNK'),
     (r'^file\.$', 'JUNK'),
 
     # version variables listed after Copyright variable in FFmpeg
@@ -989,7 +1022,6 @@ patterns = [
 
     # various junk bits
     (r'^example\.com$', 'JUNK'),
-    (r'^null$', 'JUNK'),
     (r'^:Licen[cs]e$', 'JUNK'),
     (r'^Agent\.?$', 'JUNK'),
     (r'^behalf$', 'JUNK'),
@@ -1062,6 +1094,7 @@ patterns = [
     (r'^using$', 'JUNK'),
     (r'^new$', 'JUNK'),
     (r'^param$', 'JUNK'),
+    (r'^which$', 'JUNK'),
 
     # "Es6ToEs3ClassSideInheritance. and related names
     (r"^[A-Z]([a-zA-Z]*[0-9]){2,}[a-zA-Z]+[\.,]?", 'JUNK'),
@@ -1088,6 +1121,10 @@ patterns = [
     (r'^[Aa]nother$', 'JUNK'),
     (r'^[Aa]acute', 'JUNK'),
     (r'^[Aa]circumflex', 'JUNK'),
+    (r'^[Kk]eywords?', 'JUNK'),
+    (r'^comparing$', 'JUNK'),
+    (r'^[Ee]mail', 'JUNK'),
+
     # First|Last|FamilyName
     (r'^[A-Z][a-z]+Name', 'JUNK'),
     (r'^[Yy]ourself', 'JUNK'),
@@ -1097,6 +1134,11 @@ patterns = [
     (r'^private$', 'JUNK'),
     (r'^[MmNn]odules?[,\.]?$', 'JUNK'),
     (r'^[Rr]eturned$', 'JUNK'),
+
+    # tags
+    (r'^E-?[Mm]ail:?$', 'JUNK'),
+    (r'^URL:?$', 'JUNK'),
+    (r'^url:?$', 'JUNK'),
 
     # method names
     (r'^[a-zA-Z]+\(\)$', 'JUNK'),
@@ -1135,12 +1177,17 @@ patterns = [
     (r'^Activation\.?$', 'NN'),
     (r'^Act[\.,]?$', 'NN'),
     (r'^Added$', 'NN'),
+    (r'^As$', 'NN'),
+    (r'^I$', 'NN'),
     (r'^Additional$', 'NN'),
     (r'^Are$', 'NN'),
     (r'^AST$', 'NN'),
     (r'^AGPL.?$', 'NN'),
     (r'^Agreements?\.?$', 'NN'),
     (r'^AIRTM$', 'NN'),
+    (r'^Angular$', 'NN'),
+    (r'^Component[A-Z]', 'NN'),
+    (r'^Function[A-Z]', 'NN'),
     (r'^Android$', 'NN'),
     (r'^Any$', 'NN'),
     (r'^Appropriate$', 'JUNK'),
@@ -1153,17 +1200,22 @@ patterns = [
     (r'^Attribution\.?$', 'NN'),
     (r'^[Aa]uthored$', 'NN'),
     (r'^Baslerstr\.?$', 'NN'),
+    (r'^Before$', 'NN'),
+    (r'^Message$', 'NN'),
+    (r'^BitLen$', 'JUNK'),
     (r'^BSD$', 'NN'),
     (r'^BUT$', 'NN'),
     (r'^But$', 'NN'),
-    (r'^Builders?\.$', 'NN'),
-    (r'^Cases$', 'NN'),
+    (r'^Builders?\.?$', 'NN'),
     (r'^Cacute$', 'NN'),
-    (r'^Cap$', 'NN'),
+    (r'^Cell.$', 'NN'),
     (r'^Change\.?[lL]og$', 'NN'),
     (r'^CHANGElogger$', 'NN'),
     (r'^CHANGELOG$', 'NN'),
     (r'^CHANGES$', 'NN'),
+    (r'^Cap$', 'NN'),
+    (r'^Cases$', 'NN'),
+    (r'^Category$', 'NN'),
     (r'^Code$', 'NN'),
     (r'^Collators?$', 'NN'),
     (r'^Commercial', 'NN'),
@@ -1185,6 +1237,7 @@ patterns = [
     (r'^DISCLAIMED', 'NN'),
     (r'^Docs?$', 'NN'),
     (r'^DOCUMENTATION', 'NN'),
+    (r'^Download', 'NN'),
     (r'^DOM$', 'NN'),
     (r'^Do$', 'NN'),
     (r'^DoubleClick$', 'NN'),
@@ -1192,7 +1245,6 @@ patterns = [
     (r'^Education$', 'NN'),
     (r'^Extended', 'NN'),
     (r'^Digitized', 'NN'),
-    (r'^E-?[Mm]ail\:?$', 'NN'),
     (r'^END$', 'NN'),
     (r'^Entity$', 'NN'),
     (r'^Example', 'NN'),
@@ -1205,6 +1257,11 @@ patterns = [
     (r'^Experimental$', 'NN'),
     (r'^F2Wku$', 'NN'),
     (r'^False$', 'NN'),
+    (r'^Highlight', 'NN'),
+    (r'^Line', 'NN'),
+    (r'^NPM[\.,]?', 'NN'),
+    (r'^Grunt[\.,]?', 'NN'),
+    (r'^Numbers?', 'NN'),
     (r'^Fibonacci$', 'JUNK'),
     (r'^FALSE$', 'NN'),
     (r'^FAQ$', 'NN'),
@@ -1288,7 +1345,7 @@ patterns = [
     (r'^NOTICE', 'NN'),
     (r'^NOT$', 'NN'),
     (r'^NULL$', 'NN'),
-    (r'^Objects$', 'NN'),
+    (r'^Objects?$', 'NN'),
     (r'^Open$', 'NN'),
     (r'^Operating$', 'NN'),
     (r'^OriginalFilename$', 'NN'),
@@ -1311,6 +1368,7 @@ patterns = [
     (r'^Powered$', 'NN'),
     (r'^defined$', 'NN'),
     (r'^Predefined$', 'NN'),
+    (r'^Promise$', 'NN'),
     (r'^Products?\.?$', 'NN'),
     (r'^PROFESSIONAL?\.?$', 'NN'),
     (r'^Programming$', 'NN'),
@@ -1324,6 +1382,7 @@ patterns = [
     (r'^RECURSIVE$', 'NN'),
     (r'^Redistribution', 'NN'),
     (r'^Refactor$', 'NN'),
+    (r'^Records?$', 'NN'),
     (r'^References?$', 'NN'),
     (r'^Related$', 'NN'),
     (r'^Release$', 'NN'),
@@ -1338,6 +1397,7 @@ patterns = [
     (r'^Service$', 'NN'),
     (r'^Several$', 'NN'),
     (r'^SIGN$', 'NN'),
+    (r'^Sink\.?$', 'NN'),
     (r'^Site\.?$', 'NN'),
     (r'^Statement', 'NN'),
     (r'^software$', 'NN'),
@@ -1370,7 +1430,6 @@ patterns = [
     (r'^[Tt]ext$', 'NN'),
     (r'^Unicode$', 'NN'),
     (r'^Updated', 'NN'),
-    (r'^URL$', 'NN'),
     (r'^Users?$', 'NN'),
     (r'^VALUE$', 'NN'),
     (r'^Various', 'NN'),
@@ -1397,8 +1456,13 @@ patterns = [
     (r'^Common[A-Z]', 'NN'),
     (r'^MultiPart', 'NN'),
     (r'^Upload', 'NN'),
-    (r'^PUT', 'NN'),
-    (r'^POST', 'NN'),
+    (r'^PUT$', 'NN'),
+    (r'^POST$', 'NN'),
+    (r'^YUI$', 'NN'),
+    (r'^PicoModal$', 'NN'),
+    (r'^CodeMirror$', 'NN'),
+    (r'^They$', 'JUNK'),
+    (r'^Branched$', 'NN'),
 
     # alone this is not enough for an NNP
     (r'^Free$', 'NN'),
@@ -1441,7 +1505,6 @@ patterns = [
 
     # other misc capitalized words
     (r'^Flux$', 'NN'),
-    (r'^Keywords$', 'NN'),
     (r'^Modify$', 'NN'),
     (r'^Creation[A-Z]', 'NN'),
     (r'^Creator$', 'NN'),
@@ -1491,8 +1554,8 @@ patterns = [
     # Proper Nouns
     ############################################################################
 
-    # Title case word with a trailing parens is an NNP
-    (r'^[A-Z][a-z]{3,}\)$', 'NNP'),
+    # Title case word with a trailing parens is an NNP, including with an optional trailing period
+    (r'^[A-Z][a-z]{3,}\)\.?$', 'NNP'),
     # Title case word with a leading parens is an NNP
     (r'^\([A-Z][a-z]{3,}$', 'NNP'),
 
@@ -1544,6 +1607,7 @@ patterns = [
     (r'UserTesting$', 'NNP'),
     (r'D\.T\.Shield\.?$', 'NNP'),
     (r'Antill\',$', 'NNP'),
+    (r'^ONeal[\',\.]?$', 'NNP'),
 
     # Corner cases of lowercased NNPs
     (r'^suzuki$', 'NNP'),
@@ -1719,7 +1783,7 @@ patterns = [
     (r'^al\.$', 'AUTHDOT'),
 
     # Contributor(s)
-    (r'^[Cc]ontributors[\.]?$', 'CONTRIBUTORS'),
+    (r'^[Cc]ontributors[,\.]?$', 'CONTRIBUTORS'),
     (r'^Contributor[,\.]?$', 'NN'),
     (r'^Contributing$', 'NN'),
 
@@ -1793,6 +1857,7 @@ patterns = [
 
     # in year ranges: dash, or 'to': "1990-1995", "1990/1995" or "1990 to 1995"
     (r'^-$', 'DASH'),
+    (r'^--$', 'DASH'),
     (r'^/$', 'DASH'),
 
     (r'^to$', 'TO'),
@@ -1940,11 +2005,11 @@ patterns = [
     # URLS such as <(http://fedorahosted.org/lohit)> or ()
     (r'[<\(]https?:.*[>\)]', 'URL'),
     # URLS such as ibm.com without a scheme
-    (r'\s?[a-z0-9A-Z\-\.\_]+\.([Cc][Oo][Mm]|[Nn][Ee][Tt]|[Oo][Rr][Gg]|us|mil|io|edu|co\.[a-z][a-z]|eu|ch|fr|de|be|se|nl|au|biz)\s?\.?$', 'URL2'),
-    # TODO: add more extensions: there are so main TLD these days!
+    (r'\s?[a-z0-9A-Z\-\.\_]+\.([Cc][Oo][Mm]|[Nn][Ee][Tt]|[Oo][Rr][Gg]|us|mil|io|edu|co\.[a-z][a-z]|eu|ch|fr|de|be|se|nl|au|biz|sy|dev)\s?[\.,]?$', 'URL2'),
+    # TODO: add more extensions: there are so many TLDs these days!
     # URL wrapped in () or <>
-    (r'[\(<]+\s?[a-z0-9A-Z\-\.\_]+\.(com|net|org|us|mil|io|edu|co\.[a-z][a-z]|eu|ch|fr|jp|de|be|se|nl|au|biz)\s?[\.\)>]+$', 'URL'),
-    (r'<?a?.(href)?.\(?[a-z0-9A-Z\-\.\_]+\.(com|net|org|us|mil|io|edu|co\.[a-z][a-z]|eu|ch|fr|jp|de|be|se|nl|au|biz)[\.\)>]?$', 'URL'),
+    (r'[\(<]+\s?[a-z0-9A-Z\-\.\_]+\.(com|net|org|us|mil|io|edu|co\.[a-z][a-z]|eu|ch|fr|jp|de|be|se|nl|au|biz|sy|dev)\s?[\.\)>]+$', 'URL'),
+    (r'<?a?.(href)?.\(?[a-z0-9A-Z\-\.\_]+\.(com|net|org|us|mil|io|edu|co\.[a-z][a-z]|eu|ch|fr|jp|de|be|se|nl|au|biz|sy|dev)[\.\)>]?$', 'URL'),
     # derived from regex in cluecode.finder
     (r'<?a?.(href)?.('
      r'(?:http|ftp|sftp)s?://[^\s<>\[\]"]+'
@@ -1971,6 +2036,7 @@ patterns = [
     (r'\(?Massachusetts_Institute_of_Technology,?$', 'NAME'),
     (r'National_de_Recherche_en_Informatique_et_en_Automatique,?$', 'NAME'),
     (r'Keio_University\)?,?$', 'NAME'),
+    (r'__MyCompanyName__[\.,]?$', 'NAME'),
 
     # Code variable names including snake case
     (r'^.*(_.*)+$', 'JUNK'),
@@ -1979,11 +2045,22 @@ patterns = [
     (r'^\!\$\?$', 'JUNK'),
 
     # things composed only of non-word letters (e.g. junk punctuations)
-    # but keeping _ ? and () as parts of words
-    (r'^[^\w\?()]{2,10}$', 'JUNK'),
+    # but keeping _ ? and () and - as parts of words
+    (r'^[^\w\?\-\(\)]{3,10}$', 'JUNK'),
 
     # short hex for commits
     (r'^[abcdef0-9]{7}$', 'JUNK'),
+
+    # alternance of letters and puncts :co,e):f!
+    (r'^\W?'
+      r'('
+        r'[a-z0-9]{1,3}'
+        r'[\.,:;"\(\)!\\=%&@\#]+'
+      r'){3,}'
+     r'\W?$', 'JUNK'),
+
+    # dot in: fooo at bar dot com
+    (r'^dot$', 'DOT'),
 
     ############################################################################
     # catch all other as Nouns
@@ -2025,6 +2102,11 @@ grammar = """
 #######################################
 
     EMAIL: {<EMAIL_START> <CC> <NN>* <EMAIL_END>} # composite_email
+    
+    EMAIL: { <NN>  <CC>  <NN>  <DOT>  <NN> } # foo at bat dot com
+
+    # foo@bar.com or baz@bar.com 
+    EMAIL: {<EMAIL>  <NN>  <EMAIL>} # email or email
 
 #######################################
 # NAMES and COMPANIES
@@ -2289,8 +2371,8 @@ grammar = """
     #  Copyright (c) 2002-2010 The ANGLE Project Authors
     COMPANY: {<NN> <COMP|COMPANY>+ <AUTHS>?}        #820
 
-    # this is catching a wide net by teating any bare URL as a company
-    COMPANY: {<URL|URL2>}        #830
+    # this is catching a wide net by treating any bare URL as a company
+    COMPANY: {<NNP>? <URL|URL2>}        #830
 
     COMPANY: {<COMPANY> <COMP|COMPANY>}        #840
 
@@ -2425,6 +2507,10 @@ grammar = """
     # the LGPL VGABios developers Team
     COMPANY: {<NN> <CAPS> <NN> <MAINT> <COMPANY>}     #19602
 
+    # The Rand Project Developers
+    COMPANY: {<COMPANY> <MAINT>} #19603
+
+
 #######################################
 # VARIOUS FORMS OF COPYRIGHT
 #######################################
@@ -2450,6 +2536,14 @@ grammar = """
     # copyright: Copyright (c) Joe Joyce and contributors, 2016-2019.
     COPYRIGHT: {<COPY>+ <NAME>  <CC>  <NN>  <YR-RANGE>} #1579992
 
+    # Copyright (C) 2006 <s>Michael Pfeiffer -- p3fff@web.de</s>
+    COPYRIGHT: {<COPY>+  <NAME-YEAR>  <NN|DASH>  <EMAIL> } #1579998
+
+    # Copyright (c) 2009-2018
+    # FedICT (federal ICT department of Belgium), e-Contract.be BVBA (https://www.e-contract.be),
+    # Bart Hanssens from FedICT
+    COPYRIGHT: {<COPY>+ <NAME-YEAR> <NN> <CAPS> <NN> <OF> <COMPANY> <NAME>}  #83005
+
     # Copyright (c) Ian F. Darwin 1986, 1987, 1989, 1990, 1991, 1992, 1994, 1995.
     COPYRIGHT: {<COPY>+ <NAME|NAME-EMAIL|NAME-YEAR>+ <YR-RANGE>*}        #157999
 
@@ -2472,6 +2566,9 @@ grammar = """
     COPYRIGHT: {<COPY> <COPY> <COMP>+}        #1690
 
     COPYRIGHT: {<COPY> <COPY> <NN>+ <COMPANY|NAME|NAME-EMAIL>+}        #1710
+
+    COPYRIGHT: {<COPY>  <COPY>  <NN>  <NNP>  <NN>  <COMPANY>}        #1711
+
 
     COPYRIGHT: {<COPY>+ <NN> <NN>? <COMP> <YR-RANGE>?}        #1730
 
@@ -2560,6 +2657,9 @@ grammar = """
 
     # Copyright (c) 2004, The Codehaus
     COPYRIGHT: {<COPY>  <COPY>  <YR-RANGE>  <NN>  <NNP>} #22790
+
+    #  SPDX-FileCopyrightText: © 2020 Contributors to the project Clay <https://github.com/liferay/clay/graphs/contributors>
+    COPYRIGHT: {<COPY>+  <YR-RANGE>  <CONTRIBUTORS>  <TO>  <COMPANY>} #22790.1
 
     # Copyright (c) 2015, Contributors
     COPYRIGHT: {<COPY>+  <YR-RANGE>  <CONTRIBUTORS> <ALLRIGHTRESERVED>?} #22791
@@ -2686,6 +2786,9 @@ grammar = """
 
     # Copyright (c) 2005 DMTF.
     COPYRIGHT: {<COPY> <YR-RANGE> <PN>}        #2004
+
+    # Copyright (c) MMXV jden <jason@denizac.org>
+    COPYRIGHT: {<COPY> <COPY> <CAPS> <NN> <EMAIL>}        #2004.1
 
     # Copyright (c) YEAR This_file_is_part_of_KDE
     COPYRIGHT: {<COPY> <COPY> <CAPS>}        #2005
@@ -2854,10 +2957,6 @@ grammar = """
     # Copyright OProfile authors
     COPYRIGHT: {<COPY> <NN>?<NNP>+ <AUTHS>}         #83004
 
-    # Copyright (c) 2009-2018
-    # FedICT (federal ICT department of Belgium), e-Contract.be BVBA (https://www.e-contract.be),
-    # Bart Hanssens from FedICT
-    COPYRIGHT: {<COPYRIGHT> <NN> <NAME-CAPS> <NN> <OF> <NNP> <COMPANY>? <NAME>?}  #83005
 
 
 #######################################
@@ -2950,6 +3049,10 @@ grammar = """
     # Created by Samvel Khalatyan, May 28, 2013 Copyright 2013, All rights reserved
     COPYRIGHT: {<AUTHOR> <NN>  <YR-RANGE>  <COPYRIGHT2>  <ALLRIGHTRESERVED>} #4200
 
+    # Copyright (c) 2015 Jon Schlinkert, contributors.
+    COPYRIGHT: { <COPYRIGHT>  <CONTRIBUTORS>} #420121
+
+
 
 #######################################
 # Last resort catch all ending with ALLRIGHTRESERVED
@@ -2959,6 +3062,8 @@ grammar = """
 
     COPYRIGHT: {<COPYRIGHT|COPYRIGHT2|COPY|NAME-COPY> <COPY|NNP|AUTHDOT|CAPS|CD|YR-RANGE|NAME|NAME-EMAIL|NAME-YEAR|NAME-COPY|NAME-CAPS|AUTHORANDCO|COMPANY|YEAR|PN|COMP|UNI|CC|OF|IN|BY|OTH|VAN|URL|EMAIL|URL2|MIXEDCAP|NN>+ <ALLRIGHTRESERVED>}        #99999
 
+    # <p class="copyright"><a href="http://www.w3.org/Consortium/Legal/ipr-notice-20000612#Copyright">Copyright</a>
+    COPYRIGHT: {<COPYRIGHT> <COPY><COPY>}        #9999980
     COPYRIGHT: {<COPY|NAME-COPY><COPY|NAME-COPY>}        #999990
     COPYRIGHT: {<COPYRIGHT|COPYRIGHT2> <ALLRIGHTRESERVED>}        #99900111
 
@@ -2982,7 +3087,7 @@ def refine_copyright(c):
     # this catches trailing slashes in URL for consistency
     c = c.strip('/ ~')
     c = strip_all_unbalanced_parens(c)
-    c = remove_same_extra_words(c)
+    c = remove_some_extra_words_and_punct(c)
     c = ' '.join(c.split())
     c = remove_dupe_copyright_words(c)
     c = strip_prefixes(c, prefixes=set(['by', 'c']))
@@ -3017,6 +3122,8 @@ def refine_holder(h):
         if all(c in '0123456789-/' for c in prefix):
             h = suffix
 
+    h = remove_some_extra_words_and_punct(h)
+    h = h.strip('/ ~')
     h = refine_names(h, prefixes=prefixes)
     h = strip_suffixes(h, HOLDERS_SUFFIXES)
     h = h.strip('/ ~')
@@ -3040,6 +3147,7 @@ def refine_author(a):
         return
     # FIXME: we could consider to split comma separated lists such as
     # gthomas, sorin@netappi.com, andrew.lunn@ascom.che.g.
+    a = remove_some_extra_words_and_punct(a)
     a = refine_names(a, prefixes=AUTHORS_PREFIXES)
     a = a.strip()
     a = strip_trailing_period(a)
@@ -3056,7 +3164,7 @@ def refine_author(a):
 
 def refine_names(s, prefixes):
     """
-    Refine a detected name (author, hodler).
+    Refine a detected ``s`` name string from a author or holder.
     FIXME: the grammar should not allow this to happen.
     """
     s = strip_some_punct(s)
@@ -3067,6 +3175,7 @@ def refine_names(s, prefixes):
     s = strip_balanced_edge_parens(s)
     s = s.strip()
     s = strip_prefixes(s, prefixes)
+    s = strip_some_punct(s)
     s = s.strip()
     return s
 
@@ -3119,6 +3228,7 @@ COPYRIGHTS_SUFFIXES = frozenset([
     'all',
     'some',
     'and',
+    '</p>',
 ])
 
 # Set of patterns detected and that are junk/false positive
@@ -3219,6 +3329,7 @@ AUTHORS_PREFIXES = frozenset(set.union(
         'contributor(s)',
         'authors',
         'author',
+        "authors'",
         'author:',
         'author(s)',
         'authored',
@@ -3230,6 +3341,8 @@ AUTHORS_PREFIXES = frozenset(set.union(
         'or',
         'spdx-filecontributor',
         '</b>',
+        'mailto:',
+        "name'",
     ])
 ))
 
@@ -3256,10 +3369,16 @@ AUTHORS_JUNK = frozenset([
     'app id',
     'project',
     'previous lucene',
-    'apache tomcat',
     'group',
     'the coordinator',
     'the owner',
+    'a group',
+    # Tools are NOT authors
+    'sonatype nexus',
+    'apache tomcat',
+    'visual studio',
+    'apache maven',
+    'visual studio and visual studio',
 ])
 
 # these final authors prefix trigger ignoring the holder.
@@ -3333,6 +3452,8 @@ HOLDERS_SUFFIXES = frozenset([
     'href',
     'c',
     'a',
+    '</p>',
+    'or',
 ])
 
 # these final holders are ignored.
@@ -3361,6 +3482,7 @@ HOLDERS_JUNK = frozenset([
 
 def remove_dupe_copyright_words(c):
     c = c.replace('SPDX-FileCopyrightText', 'Copyright')
+    c = c.replace('SPDX-SnippetCopyrightText', 'Copyright')
     c = c.replace('Bundle-Copyright', 'Copyright')
     # from .net assemblies
     c = c.replace('AssemblyCopyright', 'Copyright')
@@ -3395,12 +3517,16 @@ def remove_dupe_copyright_words(c):
     c = c.replace('(c) opyright', 'Copyright (c)')
     c = c.replace('(c) opyleft', 'Copyleft (c)')
     c = c.replace('(c) opylefted', 'Copyleft (c)')
+    c = c.replace("copyright\'", 'Copyright')
     c = c.replace('and later', ' ')
     c = c.replace('build.year', ' ')
     return c
 
 
-def remove_same_extra_words(c):
+def remove_some_extra_words_and_punct(c):
+    """
+    Remove misc junk includein some punctuations
+    """
     c = c.replace('<p>', ' ')
     c = c.replace('<a href', ' ')
     c = c.replace('date-of-software', ' ')
@@ -3410,6 +3536,13 @@ def remove_same_extra_words(c):
     c = c.replace('</a>', ' ')
     c = c.replace('( )', ' ')
     c = c.replace('()', ' ')
+    c = c.replace('__', ' ')
+    c = c.replace('--', '-')
+    c = c.replace(".com'", ".com")
+    c = c.replace(".org'", ".org")
+    c = c.replace(".net'", ".net")
+    c = c.replace("mailto:", "")
+    c = c.replace("@see", "")
     return c
 
 
@@ -3601,7 +3734,13 @@ def strip_solo_quotes(s):
     >>> strip_solo_quotes("https://example.com/\'")
     'https://example.com/'
     """
-    return s.replace("/'", "/")
+    return (s
+        .replace("/'", "/")
+        .replace(")'", ")")
+        .replace(":'", ":")
+        .replace("':", ":")
+        .replace("',", ",")
+    )
 
 
 def strip_balanced_edge_parens(s):
@@ -3858,16 +3997,16 @@ remove_printf_format_codes = re.compile(r' [\#\%][a-zA-Z] ').sub
 
 remove_punctuation = re.compile(r'[\*#"%\[\]\{\}`]+').sub
 
-remove_ascii_decorations = re.compile(r'[-_=!\\*]{2,}|/{3,}').sub
+remove_ascii_decorations = re.compile(r'[\-_\*!]{2,}|/{3,}|[=!]{4,}').sub
 
-fold_consecutive_quotes = re.compile(r"\'{2,}").sub
+fold_consecutive_quotes = re.compile(r"'\"{2,}").sub
 
 # less common rem comment line prefix in dos
 # less common dnl comment line prefix in autotools am/in
 remove_comment_markers = re.compile(r'^(rem|\@rem|dnl)\s+').sub
 
 # common comment line prefix in man pages
-remove_man_comment_markers = re.compile(r'.\\"').sub
+remove_man_comment_markers = re.compile(r'\."').sub
 
 
 def prepare_text_line(line, dedeb=True, to_ascii=True):
@@ -3889,7 +4028,11 @@ def prepare_text_line(line, dedeb=True, to_ascii=True):
 
     # less common comment line prefixes
     line = remove_comment_markers(' ', line)
+
     line = remove_man_comment_markers(' ', line)
+
+    if TRACE_TOK:
+        logger_debug('  get_tokens: WIP line1: ' + repr(line))
 
     line = (line
         # C and C++ style comment markers
@@ -3910,10 +4053,13 @@ def prepare_text_line(line, dedeb=True, to_ascii=True):
         .replace('&copy', ' (c) ')
         .replace('&#169;', ' (c) ')
         .replace('&#xa9;', ' (c) ')
+        .replace('&#xA9;', ' (c) ')
+        .replace('&#Xa9;', ' (c) ')
         .replace('&#XA9;', ' (c) ')
         .replace('u00A9', ' (c) ')
         .replace('u00a9', ' (c) ')
         .replace('\xa9', ' (c) ')
+        .replace('\\XA9', ' (c) ')
         .replace('\\XA9', ' (c) ')
         .replace('\\A9', ' (c) ')
         .replace('\\a9', ' (c) ')
@@ -3954,6 +4100,7 @@ def prepare_text_line(line, dedeb=True, to_ascii=True):
     # keep only one quote
     line = fold_consecutive_quotes(u"'", line)
 
+
     # treat some escaped literal CR, LF, tabs, \00 as new lines
     # such as in code literals: a="\\n some text"
     line = (line
@@ -3981,7 +4128,7 @@ def prepare_text_line(line, dedeb=True, to_ascii=True):
 
     # remove ASCII "line decorations"
     # such as in --- or === or !!! or *****
-    line = remove_ascii_decorations(' ', line)
+    # line = remove_ascii_decorations(' ', line)
 
     # in apache'>Copyright replace ">" by "> "
     line = line.replace('>', '> ').replace('<', ' <')

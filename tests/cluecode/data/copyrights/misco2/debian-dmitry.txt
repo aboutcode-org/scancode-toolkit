@@ -1,0 +1,6 @@
+Copyright: 2011 Katholieke Universiteit Leuven
+ 2011, 2013, 2018 Niels Möller
+ 2018 Red Hat, Inc.
+ 2019 Dmitry Eremin-Solenikov
+License: LGPLv3+_or_GPLv2+
+

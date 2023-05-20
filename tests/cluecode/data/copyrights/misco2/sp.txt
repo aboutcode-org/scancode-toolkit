@@ -1,0 +1,2 @@
+ SPDX-FileCopyrightText: © 2020 Contributors to the project Clay <https://github.com/liferay/clay/graphs/contributors>
+
