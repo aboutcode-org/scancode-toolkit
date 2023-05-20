@@ -46,12 +46,17 @@ def is_markup(location):
 
     with open(location, 'rb') as f:
         start = as_unicode(f.read(1024))
+    
+    return is_markup_text(start)
 
-    if start.startswith('<'):
+
+def is_markup_text(text):
+
+    if text.startswith('<'):
         return True
 
     # count whitespaces
-    no_spaces = ''.join(start.split())
+    no_spaces = ''.join(text.split())
 
     # count opening and closing tags_count
     counts = Counter(c for c in no_spaces if c in '<>')
@@ -105,7 +110,7 @@ def demarkup_text(text):
 
     cleaned = []
     for token in tags_ents(text):
-        if token.lower().startswith(('<', '&', 'href')) and not any(k in token.lower() for k in kept_tags):
+        if token.lower().startswith(('<', '&', 'href', '=')) and not any(k in token.lower() for k in kept_tags):
             continue
         else:
             cleaned.append(token)

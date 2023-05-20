@@ -1,0 +1,97 @@
+---
+key: mut-license
+short_name: muT-License
+name: muT-License
+category: Proprietary Free
+owner: Tron Project
+homepage_url: https://www.tron.org/download/index.php?route=information/information&information_id=14
+spdx_license_key: LicenseRef-scancode-mut-license
+other_urls:
+    - https://www.tron.org/download/index.php?route=information/information&information_id=62&language=en
+---
+
+µT-License [License Agreement for Source Code of µT-Kernel]
+
+established by T-Engine Forum
+on November 28, 2006
+Article 1. Scope of License Agreement
+
+    This License Agreement sets forth copyrights and the terms and conditions of use applicable to the source code of µT-Kernel distributed by T-Engine Forum and any derivative work created therefrom.
+
+Article 2. Definition
+
+    "µT-Kernel" means a real-time operating system controlled and distributed by T-Engine Forum on behalf of the copyright holder thereof.
+    "Source Code" means a source program, including related comments and documentations, for the µT-Kernel.
+    "Modified Source Code" means a source program modified from the Source Code for the purpose of improving its performance, increasing or decreasing its function, and the like.
+    "Binary Code" means an executable code form which is created by compiling programs, which include all or part of the Source Code or the Modified Source Code.
+    "Derivative Work of the Source Code" means any of the followings:
+        The generic name for the Modified Source Code and the Binary Code thereof.
+        The generic name for the Source Code newly modified by the Developer set forth in Article 2.8 using the Derivative Work of the Source Code and the Binary Code thereof.
+        The generic name for the Source Code newly modified by the Developer set forth in Article 2.8 using the Derivative Work obtained pursuant to the preceding paragraph (2) and the Binary Code thereof.
+    "Embedded Product" means execute-only product which uses the Source Code, the Binary Code, or the Derivative Work of the Source Code, and operates with executable code form loaded on its hardware, and which is not available for the development of software.
+    "End User" means a consumer who uses the Embedded Product.
+    "Developer" means any of the following persons:
+        who develops the Embedded Product for itself or has a third party develop the same, and provides, whether with or without payment, the End User with the Embedded Product.
+        who develops the Modified Source Code and provides, whether with or without payment, the End User with the Modified Source Code.
+        who uses the Source Code or the Derivative Work of the Source Code.
+    "Distribution" means any of the following acts:
+        to transmit a work to a large number of specific persons through the Internet communication, broadcasting, and the like;
+        to transmit a work to the general public through the Internet communication, broadcasting, and the like automatically in response to a request from the public; and
+        to distribute a reproduction of a work to the general public or a large number of specific persons.
+
+Article 3. Copyright
+
+    The copyrights of the Source Code shall be owned by Ken Sakamura.
+
+Article 4. License of Source Code
+
+    As provided for in this Article, T-Engine Forum shall provide, and grant a license to use, the Source Code free of charge to the Developer who has taken the necessary procedure for registration as prescribed by T-Engine Forum and agreed to the µT-License.
+    The Source Code shall be distributed exclusively by T-Engine Forum. No Developer who obtains the Source Code under Article 4.1 above may re-Distribute the Source Code. Provided, however, that the Developer who has obtained the Source Code may directly re-Distribute the Source Code to any other Developer only if the said Developer complies with all the following conditions:
+        The Developer shall not make any modification to the Source Code when re-Distributing the Source Code;
+        The Developer shall provide this License Agreement to an other Developer and require the said other Developer to comply with the terms and conditions set forth herein when re-Distributing the Source Code; and
+        The Developer shall encourage the other Developer, to whom the Developer has re-Distributed the Source Code, to take the procedure for agreement to the µT-License set forth in Article 4.1 before the said other Developer performs any of the acts set forth in Article 4.3.
+    In accordance with the license granted under Article 4.1 or Article 4.2 above, the Developer may perform the following acts with respect to the Source Code:
+        to copy and/or modify the Source Code provided by T-Engine Forum hereunder for its own research, development and the like.
+        to run the Source Code provided by T-Engine Forum hereunder for its own research, development and the like.
+        to run the Source Code modified in accordance with the provision of (1) above for its own research, development and the like.
+        to develop and manufacture the Embedded Product containing the Binary Code, and, whether with or without payment, provide the End User with the same and make the Binary Code available to the End User on the Embedded Product.
+    The Developer may perform the following acts with respect to the Derivative Work of the Source Code:
+        to copy and/or modify the Derivative Work of the Source Code for its own research, development and the like.
+        to run the Derivative Work of the Source Code for its own research, development and the like.
+        to distribute, whether with or without payment, the Derivative Work of the Source Code to any third party. Provided, however, that if the Developer has the other Developer re-Distribute the Derivative Work of the Source Code which the said other Developer has obtained from the said Developer, the Developer shall provide the said other Developer with this License Agreement and require the said other Developer to comply with the terms and conditions set forth herein.
+        to run the Derivative Work of the Source Code modified pursuant to paragraph (1) above for its own research, development and the like.
+        to distribute the Derivative Work of the Source Code modified pursuant to paragraph (1) above to a third party on a stand-alone basis, or license a third party to distribute the same in the Binary Code form, whether with or without payment. Provided, however, that if the Developer has the other Developer re-Distribute the Derivative Work of the Source Code which the said other Developer has obtained from the said Developer, the Developer shall provide the said other Developer with this License Agreement and require the said other Developer to comply with the terms and conditions set forth herein.
+        to make the Embedded Product available to the End User with the use of the Derivative Work of the Source Code distributed by the other Developer under the same conditions as set forth in Articles 4.6 and 4.7.
+    The Developer who has created the Derivative Work of the Source Code set forth in paragraph (2) or (3) of Article 2.5 (the "Derivative Work") may decide at its own discretion whether or not to permit the other Developer to perform the acts set forth in paragraphs (3) and (5) of Article 4.4 when the said other Developer uses the Derivative Work.
+    The Developer shall be obligated to give a notice that the Source Code is used, in such a way as separately established by T-Engine Forum, when they use the Source Code or the Derivative Work of the Source Code, or make the Binary Code available to the End User on the Embedded Product.
+    The Developer who is a member of T-Engine Forum shall be released from the obligation to give a notice set forth in the preceding Article if the said Developer applies for said release to T-Engine Forum in a manner separately determined by T-Engine Forum.
+
+Article 5. Use for Other Purpose
+
+    Any use of the Source Code or the Derivative Work of the Source Code other than those stipulated in Articles 4 shall be subject to the prior approval of T-Engine Forum.
+
+Article 6. Confirmation of Adequateness
+
+    The Derivative Work of the Source Code shall be required to pass a test to be conducted to confirm adequateness in a manner separately determined by T-Engine Forum before the Distribution thereof.
+    If the Derivative Work of the Source Code is used for the Embedded Product, there is no need to implement all the functions thereof or to confirm the adequateness thereof.
+
+Article 7. Limited Warranty
+
+    T-Engine Forum and the copyright holder of the Source Code warrant that the Source Code does not infringe upon third party's copyrights.
+    Neither T-Engine Forum nor the copyright holder of the Source Code warrants that the Source Code will fit for any particular purpose of the Source Code User.
+    Neither T-Engine Forum nor the copyright holder of the Source Code warrants that the Source Code does not infringe upon any third party's industrial property rights. In no event shall T-Engine Forum and the copyright holder of the Source Code be liable for any dispute which may arise between the Source Code User and a third party in connection with the third party's industrial property rights.
+
+Article 8. Indemnity
+
+    Neither T-Engine Forum nor the copyright holder of the Source Code shall be liable for any damages (including, but not limited to, damages resulting from loss of profit, business interruption, loss of business information or any other pecuniary damage) arising out of use or impossibility of use of the Source Code, even if T-Engine Forum and the copyright holder have been informed of the possibility of such damages.
+
+Article 9. Breach of Agreement
+
+    In case of breach of this License Agreement, T-Engine Forum shall have the breaching person remedy such a breach and take measures on the ground of copyright infringement against the person regardless of whether or not the said person is a member of T-Engine Forum.
+    In case of breach of this License Agreement by a member of T-Engine Forum, T-Engine Forum may take appropriate measures against the member; for example, the member is disqualified from membership, depending on what kind of breach has been committed by it.
+    Any legal dispute which may arise in relation to any breach of this License Agreement shall be subject to the exclusive jurisdiction of the Tokyo District Court.
+
+Article 10. Governing Law and Language
+
+    This License Agreement shall be governed by and interpreted under the laws of Japan.
+    This License Agreement is executed in both Japanese text and English text provided that the Japanese text shall govern the interpretation and performance of this License Agreement.

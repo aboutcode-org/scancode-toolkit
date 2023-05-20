@@ -1,0 +1,16 @@
+---
+key: silicon-image-2007
+short_name: Silicon Image Proprietary License 2007
+name: Silicon Image Proprietary License 2007
+category: Proprietary Free
+owner: Lattice Semiconductor
+homepage_url: https://github.com/BPI-SINOVOIP/BPI-Rockchip-Android11/blob/master/external/camera_engine_rkaiq/common/media_buffer/media_buffer.c
+spdx_license_key: LicenseRef-scancode-silicon-image-2007
+other_urls:
+    - https://en.wikipedia.org/wiki/Silicon_Image
+---
+
+No part of this work may be reproduced, modified, distributed, transmitted,
+transcribed, or translated into any language or computer format, in any form
+or by any means without written permission of: Silicon Image, Inc., 1060
+East Arques Avenue, Sunnyvale, California 94085
