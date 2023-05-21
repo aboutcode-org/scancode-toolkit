@@ -442,7 +442,7 @@ class TestCopyrightLinesDetection(FileBasedTesting):
         test_file = self.get_test_loc('copyrights_basic/babkin_txt.txt')
         expected = [
             copyrights.CopyrightDetection('Copyright (c) North', 1, 1),
-            copyrights.CopyrightDetection('Copyright (c) South Copyright (c)', 2, 3),
+            copyrights.CopyrightDetection('Copyright (c) South', 2, 3),
             copyrights.CopyrightDetection('Copyright (c) 2001 by the TTF2PT1 project', 4, 4),
             copyrights.CopyrightDetection('Copyright (c) 2001 by Sergey Babkin', 5, 5),
         ]

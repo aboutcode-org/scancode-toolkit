@@ -107,7 +107,7 @@ def detect_copyrights(
     numbered_lines = numbered_text_lines(location, demarkup=demarkup)
     numbered_lines = list(numbered_lines)
 
-    if TRACE:
+    if TRACE or TRACE_TOK:
         logger_debug('detect_copyrights: numbered_lines')
         for nl in numbered_lines:
             logger_debug('  numbered_line:', repr(nl))
@@ -167,7 +167,7 @@ def detect_copyrights_from_lines(
 
     candidate_lines_groups = candidate_lines(numbered_lines)
 
-    if TRACE:
+    if TRACE or TRACE_TOK:
         candidate_lines_groups = list(candidate_lines_groups)
         logger_debug(
             f'detect_copyrights_from_lines: ALL groups of candidate '
@@ -245,7 +245,7 @@ class CopyrightDetector(object):
         if not numbered_lines:
             return
 
-        if TRACE:
+        if TRACE or TRACE_TOK:
             logger_debug(f'CopyrightDetector: numbered_lines: {numbered_lines}')
 
         tokens = list(get_tokens(numbered_lines))
@@ -633,10 +633,12 @@ patterns = [
     # (c)opyright and (c)opyleft, we ignore case
     (r'^(?i:\(c\)opy(rights?|righted|left))$', 'COPY'),
 
-    # opyright and opyleft, we ignore case
+    # truncated opyright and opyleft, we ignore case
     (r'^(?i:opy(rights?|righted|left|lefted)[\.\,]?)$', 'COPY'),
     (r'^//opylefted$', 'COPY'),
     (r"^c'opylefted$", 'COPY'),
+    # typo in cppyright
+    (r'^[Cc]ppyright[\.\,]?$', 'COPY'),
 
     # with a trailing comma
     (r'^Copyright,$', 'COPY'),
@@ -782,6 +784,7 @@ patterns = [
     (r'^[Pp]rocedures?$', 'JUNK'),
     (r'^You$', 'JUNK'),
     (r'^Everyone$', 'JUNK'),
+    (r'^[Ff]unded$', 'JUNK'),
     (r'^Unless$', 'JUNK'),
     (r'^rant$', 'JUNK'),
     (r'^Subject$', 'JUNK'),
@@ -1244,6 +1247,7 @@ patterns = [
     (r'^Each$', 'NN'),
     (r'^Education$', 'NN'),
     (r'^Extended', 'NN'),
+    (r'^Every$', 'NN'),
     (r'^Digitized', 'NN'),
     (r'^END$', 'NN'),
     (r'^Entity$', 'NN'),
@@ -3490,10 +3494,14 @@ def remove_dupe_copyright_words(c):
     c = c.replace('SPDX-FileCopyrightText', 'Copyright')
     c = c.replace('SPDX-SnippetCopyrightText', 'Copyright')
     c = c.replace('Bundle-Copyright', 'Copyright')
-    # from .net assemblies
-    c = c.replace('AssemblyCopyright', 'Copyright')
-    c = c.replace('AppCopyright', 'Copyright')
-
+    c = (
+        # from .net assemblies
+        c.replace('AssemblyCopyright', 'Copyright')
+        .replace('AppCopyright', 'Copyright')
+        # typos
+        .replace('Cppyright', 'Copyright')
+        .replace('cppyright', 'Copyright')
+    )
     # various prefix to the word copyright seen in binaries
     # TODO use a regex instead
     c = c.replace('BCopyright', 'Copyright')
@@ -3858,6 +3866,11 @@ def candidate_lines(numbered_lines):
     # used as a state and line counter
     in_copyright = 0
 
+    if TRACE_TOK:
+        numbered_lines = list(numbered_lines)
+        logger_debug(
+            f'candidate_lines: numbered_lines: {numbered_lines!r}')
+
     # the previous line (chars only)
     previous_chars = None
     for numbered_line in numbered_lines:
@@ -4024,6 +4037,9 @@ def prepare_text_line(line, dedeb=True, to_ascii=True):
 
     If ``to_ascii`` convert the text to ASCII characters.
     """
+    if TRACE_TOK:
+        logger_debug('  prepare_text_line: initial: ' + repr(line))
+
     # remove some junk in man pages: \(co
     line = (line
         .replace('\\\\ co', ' ')
@@ -4031,14 +4047,19 @@ def prepare_text_line(line, dedeb=True, to_ascii=True):
         .replace('(co ', ' ')
     )
     line = remove_printf_format_codes(' ', line)
+    if TRACE_TOK:
+        logger_debug('  prepare_text_line: after remove_printf_format_codes: ' + repr(line))
+
 
     # less common comment line prefixes
     line = remove_comment_markers(' ', line)
+    if TRACE_TOK:
+        logger_debug('  prepare_text_line: after remove_comment_markers: ' + repr(line))
 
     line = remove_man_comment_markers(' ', line)
 
     if TRACE_TOK:
-        logger_debug('  get_tokens: WIP line1: ' + repr(line))
+        logger_debug('  prepare_text_line: after remove_man_comment_markers: ' + repr(line))
 
     line = (line
         # C and C++ style comment markers
@@ -4103,6 +4124,10 @@ def prepare_text_line(line, dedeb=True, to_ascii=True):
         .replace('`', u"'")
         .replace('"', u"'")
     )
+
+    if TRACE_TOK:
+        logger_debug('  prepare_text_line: after replacements: ' + repr(line))
+
     # keep only one quote
     line = fold_consecutive_quotes(u"'", line)
 

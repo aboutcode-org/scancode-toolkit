@@ -6,7 +6,7 @@ copyrights:
   - Copyright (c) 2002-2004 James W. Newkirk, Michael C. Two, Alexei A. Vorontsov
   - Copyright (c) 2000-2002 Philip A. Craig
   - Copyright (c) 2003-2008, Terence Parr
-  - Copyright (c) 1994-2011 Lua.org
+  - Copyright (c) 1994-2011 Lua.org, PUC-Rio
   - Copyright (c) 2000,2001,2002,2003,2004,2006,2007 Keith Packard
   - Copyright (c) 2005 Patrick Lam
   - Copyright (c) 2009 Roozbeh Pournader
@@ -29,7 +29,7 @@ holders:
   - James W. Newkirk, Michael C. Two, Alexei A. Vorontsov
   - Philip A. Craig
   - Terence Parr
-  - Lua.org
+  - Lua.org, PUC-Rio
   - Keith Packard
   - Patrick Lam
   - Roozbeh Pournader
