@@ -12,8 +12,8 @@ v33.0.0 (next next, roadmap)
   - Yocto/BitBake .bb recipes.
 
 
-v32.0.0 (next, roadmap)
------------------------
+v32.0.0 - 2023-05-23
+---------------------
 
 Important API changes:
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -21,8 +21,8 @@ Important API changes:
 This is a major release with major API and output format changes and signicant
 feature updates.
 
-In particular changed to the output format for the licenses and packages, and
-we changed some of the command line options.
+In particular the output format has changed for the licenses and packages, and
+also for some of the command line options.
 
 The output format version is now 3.0.0.
 
