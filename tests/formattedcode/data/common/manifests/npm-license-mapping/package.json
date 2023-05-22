@@ -1,0 +1,51 @@
+{
+    "name": "grunt-esvm",
+    "description": "Create elasticsearch clusters from grunt.",
+    "version": "3.2.8",
+    "homepage": "https://github.com/spenceralger/grunt-esvm",
+    "license": "Apache-2.0",
+    "author": {
+      "name": "Spencer Alger",
+      "email": "spencer.alger@elasticsearch.com"
+    },
+    "repository": {
+      "type": "git",
+      "url": "git://github.com/spenceralger/grunt-esvm.git"
+    },
+    "bugs": {
+      "url": "https://github.com/spenceralger/grunt-esvm/issues"
+    },
+    "licenses": [
+      {
+        "type": "Apache 2.0",
+        "url": "https://github.com/spenceralger/grunt-esvm/blob/master/LICENSE.md"
+      }
+    ],
+    "engines": {
+      "node": ">= 0.8.0"
+    },
+    "scripts": {
+      "test": "grunt test"
+    },
+    "devDependencies": {
+      "grunt": ">=0.4.0",
+      "load-grunt-config": "~0.19.0"
+    },
+    "peerDependencies": {
+      "grunt": ">=0.4.0"
+    },
+    "keywords": [
+      "gruntplugin"
+    ],
+    "dependencies": {
+      "bluebird": "^2.9.30",
+      "cli-color": "~0.3.2",
+      "cli-table": "~0.3.0",
+      "libesvm": "^3.8.2",
+      "lodash": "^3.9.3",
+      "moment": "^2.10.3",
+      "wreck": "^5.6.0"
+    }
+  }
+  
+  
