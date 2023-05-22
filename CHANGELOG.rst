@@ -2,18 +2,43 @@ Changelog
 =========
 
 v33.0.0 (next next, roadmap)
-
 ----------------------------
-
 
 - We now support new package manifest formats:
 
   - OpenWRT packages.
   - Yocto/BitBake .bb recipes.
 
+- Fallback packages for non-native dependencies of SCTK.
+- Dependencies for 
+- Support for copyright detection objects.
 
-v32.0.0 (next, roadmap)
------------------------
+v32.1.0 (next, roadmap)
+----------------------------
+
+- A new field in packages with the license category for the
+  detected license expression and also an API function to
+  compute license categories from license expressions.
+  See https://github.com/nexB/scancode-toolkit/issues/2897
+
+- More support for tabular output formats: New command-line
+  options for XSLX output, and the old `--csv` command line
+  option is removed.
+  See https://github.com/nexB/scancode-toolkit/issues/830
+
+- `--unknown-licenses` is removed and this is always enabled
+  and only used in case of improper detections automatically.
+  Also tag all license rules with required phrases to improve
+  license detection and reduce false positives.
+  See https://github.com/nexB/scancode-toolkit/issues/3300
+
+- File categorization support added, a post scan plugin tagging
+  files with priority levels for review, and also take advantage
+  of these in other summary plugins.
+  See https://github.com/nexB/scancode-toolkit/issues/1745
+
+v32.0.0 - 2023-05-23
+---------------------
 
 Important API changes:
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -21,8 +46,8 @@ Important API changes:
 This is a major release with major API and output format changes and signicant
 feature updates.
 
-In particular changed to the output format for the licenses and packages, and
-we changed some of the command line options.
+In particular the output format has changed for the licenses and packages, and
+also for some of the command line options.
 
 The output format version is now 3.0.0.
 
