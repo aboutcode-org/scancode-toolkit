@@ -75,7 +75,7 @@
   "other_license_expression": null,
   "other_license_expression_spdx": null,
   "other_license_detections": [],
-  "extracted_license_statement": "[{'name': 'The 3-Clause BSD License', 'url': 'https://opensource.org/licenses/BSD-3-Clause', 'comments': None, 'distribution': None}]",
+  "extracted_license_statement": "- name: The 3-Clause BSD License\n  url: https://opensource.org/licenses/BSD-3-Clause\n  comments:\n  distribution:\n",
   "notice_text": null,
   "source_packages": [
     "pkg:maven/io.github.subiyacryolite/jds@2.17.0718b?classifier=sources"

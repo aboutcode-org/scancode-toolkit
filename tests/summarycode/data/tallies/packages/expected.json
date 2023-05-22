@@ -50,7 +50,7 @@
       "other_license_expression": null,
       "other_license_expression_spdx": null,
       "other_license_detections": [],
-      "extracted_license_statement": "[{'name': 'Public Domain', 'url': None, 'comments': None, 'distribution': None}]",
+      "extracted_license_statement": "- name: Public Domain\n  url:\n  comments:\n  distribution:\n",
       "notice_text": null,
       "source_packages": [
         "pkg:maven/aopalliance/aopalliance@1.0?classifier=sources"
@@ -205,7 +205,7 @@
       "other_license_expression": null,
       "other_license_expression_spdx": null,
       "other_license_detections": [],
-      "extracted_license_statement": "['MIT']",
+      "extracted_license_statement": "- MIT\n",
       "notice_text": null,
       "source_packages": [],
       "extra_data": {},
@@ -1164,7 +1164,7 @@
           "other_license_expression": null,
           "other_license_expression_spdx": null,
           "other_license_detections": [],
-          "extracted_license_statement": "[{'name': 'Public Domain', 'url': None, 'comments': None, 'distribution': None}]",
+          "extracted_license_statement": "- name: Public Domain\n  url:\n  comments:\n  distribution:\n",
           "notice_text": null,
           "source_packages": [
             "pkg:maven/aopalliance/aopalliance@1.0?classifier=sources"
@@ -1352,7 +1352,7 @@
           "other_license_expression": null,
           "other_license_expression_spdx": null,
           "other_license_detections": [],
-          "extracted_license_statement": "['MIT']",
+          "extracted_license_statement": "- MIT\n",
           "notice_text": null,
           "source_packages": [],
           "file_references": [],

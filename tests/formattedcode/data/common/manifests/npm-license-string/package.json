@@ -1,0 +1,45 @@
+{
+    "name": "angular-compare-validator",
+    "version": "0.1.1",
+    "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/GeorgDangl/angular-compare-validator.git"
+    },
+    "description": "Angular form validation directive to compare two inputs",
+    "main": "./dist/index.js",
+    "typings": "./dist/index",
+    "dependencies": {
+        "@angular/core": ">=2.0.0",
+        "@angular/forms": ">=2.0.0",
+        "@angular/common": ">=2.0.0",
+        "rxjs": ">=5.0.0-beta.12",
+        "zone.js": ">=0.6.21"
+    },
+    "bugs": {
+        "url": "https://github.com/GeorgDangl/angular-compare-validator/issues"
+    },
+    "homepage": "https://github.com/GeorgDangl/angular-compare-validator#readme",
+    "_id": "angular-compare-validator@0.1.1",
+    "_npmVersion": "5.2.0",
+    "_nodeVersion": "7.7.1",
+    "_npmUser": {
+        "name": "georgdangl",
+        "email": "npm@dan.gl"
+    },
+    "dist": {
+        "integrity": "sha512-j3DtXjUTGFrVj7KjEUdprJPd1og2zokUblhvwD4DrJPc+x8RNUrCb0CLdcDr9RZj1eTo4nw4dSo8Br3edJp8Aw==",
+        "shasum": "d35a0754c8587b0502874e3636cf0f19565d09b7",
+        "tarball": "https://registry.npmjs.org/angular-compare-validator/-/angular-compare-validator-0.1.1.tgz"
+    },
+    "maintainers": [
+        {
+            "name": "georgdangl",
+            "email": "npm@dan.gl"
+        }
+    ],
+    "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/angular-compare-validator-0.1.1.tgz_1506372149543_0.2524787310976535"
+    }
+}

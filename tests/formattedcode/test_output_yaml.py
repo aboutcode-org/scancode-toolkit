@@ -64,6 +64,19 @@ def test_scan_produces_valid_yaml():
     data = saneyaml.load(open(result_file).read())
 
 
+def test_scan_produces_valid_yaml_with_extracted_license_statements():
+    test_dir = test_env.get_test_loc('common/manifests')
+    result_file = test_env.get_temp_file('json')
+    args = [
+        '-clipeu', '--license-text', '--classify', '--summary', '--license-references',
+        '--license-clarity-score', test_dir, '--yaml', result_file]
+    run_scan_click(args)
+    expected = test_env.get_test_loc('common/manifests-expected.yaml')
+    check_yaml_scan(expected, result_file, regen=REGEN_TEST_FIXTURES)
+    data = saneyaml.load(open(result_file).read())
+
+
+
 def check_yaml_scan(
     expected_file,
     result_file,

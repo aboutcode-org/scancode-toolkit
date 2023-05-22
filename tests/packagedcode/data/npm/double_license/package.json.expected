@@ -78,7 +78,7 @@
     "other_license_expression": null,
     "other_license_expression_spdx": null,
     "other_license_detections": [],
-    "extracted_license_statement": "['Apache-2.0', {'type': 'Apache 2.0', 'url': 'https://github.com/spenceralger/grunt-esvm/blob/master/LICENSE.md'}]",
+    "extracted_license_statement": "- Apache-2.0\n- type: Apache 2.0\n  url: https://github.com/spenceralger/grunt-esvm/blob/master/LICENSE.md\n",
     "notice_text": null,
     "source_packages": [],
     "file_references": [],

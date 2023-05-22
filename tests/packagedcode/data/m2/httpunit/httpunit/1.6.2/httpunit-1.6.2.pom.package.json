@@ -67,7 +67,7 @@
   "other_license_expression": null,
   "other_license_expression_spdx": null,
   "other_license_detections": [],
-  "extracted_license_statement": "[{'name': 'MIT License', 'url': 'http://httpunit.sourceforge.net/doc/license.html', 'comments': None, 'distribution': None}]",
+  "extracted_license_statement": "- name: MIT License\n  url: http://httpunit.sourceforge.net/doc/license.html\n  comments:\n  distribution:\n",
   "notice_text": null,
   "source_packages": [
     "pkg:maven/httpunit/httpunit@1.6.2?classifier=sources"

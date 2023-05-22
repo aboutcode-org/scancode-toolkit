@@ -59,7 +59,7 @@
     "other_license_expression": null,
     "other_license_expression_spdx": null,
     "other_license_detections": [],
-    "extracted_license_statement": "['MIT']",
+    "extracted_license_statement": "- MIT\n",
     "notice_text": null,
     "source_packages": [],
     "file_references": [],

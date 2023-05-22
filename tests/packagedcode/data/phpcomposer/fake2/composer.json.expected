@@ -83,7 +83,7 @@
     "other_license_expression": null,
     "other_license_expression_spdx": null,
     "other_license_detections": [],
-    "extracted_license_statement": "['LGPL-2.1-only', 'GPL-3.0-or-later']",
+    "extracted_license_statement": "- LGPL-2.1-only\n- GPL-3.0-or-later\n",
     "notice_text": null,
     "source_packages": [],
     "file_references": [],

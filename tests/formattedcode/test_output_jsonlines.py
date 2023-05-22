@@ -33,6 +33,16 @@ def test_jsonlines():
         remove_file_date=True, regen=REGEN_TEST_FIXTURES)
 
 
+def test_jsonlines_with_package_and_license():
+    test_dir = test_env.get_test_loc('common/manifests')
+    result_file = test_env.get_temp_file('jsonline')
+    run_scan_click(['-clip', test_dir, '--json-lines', result_file])
+    expected = test_env.get_test_loc('common/manifests-expected.jsonlines')
+    check_jsonlines_scan(
+        test_env.get_test_loc(expected), result_file,
+        remove_file_date=True, regen=REGEN_TEST_FIXTURES)
+
+
 def test_jsonlines_with_timing():
     test_dir = test_env.get_test_loc('json/simple')
     result_file = test_env.get_temp_file('jsonline')

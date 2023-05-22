@@ -340,6 +340,7 @@ def check_jsonlines_scan(
     regen=False,
     remove_file_date=False,
     check_headers=False,
+    remove_uuid=True,
 ):
     """
     Check the scan result_file JSON Lines results against the expected_file
@@ -352,6 +353,9 @@ def check_jsonlines_scan(
     with io.open(result_file, encoding='utf-8') as res:
         results = [json.loads(line) for line in res]
 
+    if remove_uuid:
+        for result in results:
+            result = remove_uuid_from_scan(result)
     streamline_jsonlines_scan(results, remove_file_date)
 
     if regen:
@@ -360,6 +364,9 @@ def check_jsonlines_scan(
 
     with io.open(expected_file, encoding='utf-8') as res:
         expected = json.load(res)
+        if remove_uuid:
+            for result in results:
+                result = remove_uuid_from_scan(result)
 
     streamline_jsonlines_scan(expected, remove_file_date)
 

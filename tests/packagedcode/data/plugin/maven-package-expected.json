@@ -321,7 +321,7 @@
       "other_license_expression": null,
       "other_license_expression_spdx": null,
       "other_license_detections": [],
-      "extracted_license_statement": "[{'name': 'Public Domain', 'url': None, 'comments': None, 'distribution': None}, {'name': 'GPL', 'url': 'http://nexb.com', 'comments': None, 'distribution': None}]",
+      "extracted_license_statement": "- name: Public Domain\n  url:\n  comments:\n  distribution:\n- name: GPL\n  url: http://nexb.com\n  comments:\n  distribution:\n",
       "notice_text": null,
       "source_packages": [
         "pkg:maven/aopalliance/aopalliance@1.0?classifier=sources"
@@ -837,7 +837,7 @@
       "other_license_expression": null,
       "other_license_expression_spdx": null,
       "other_license_detections": [],
-      "extracted_license_statement": "[{'name': 'The Apache Software License, Version 2.0', 'url': '/LICENSE.txt', 'comments': None, 'distribution': None}]",
+      "extracted_license_statement": "- name: The Apache Software License, Version 2.0\n  url: /LICENSE.txt\n  comments:\n  distribution:\n",
       "notice_text": null,
       "source_packages": [
         "pkg:maven/commons-validator/commons-validator@1.2.0?classifier=sources"
@@ -1066,7 +1066,7 @@
       "other_license_expression": null,
       "other_license_expression_spdx": null,
       "other_license_detections": [],
-      "extracted_license_statement": "[{'name': 'MIT', 'url': 'LICENSE.txt', 'comments': None, 'distribution': 'repo'}]",
+      "extracted_license_statement": "- name: MIT\n  url: LICENSE.txt\n  comments:\n  distribution: repo\n",
       "notice_text": null,
       "source_packages": [
         "pkg:maven/org.codehaus.mojo/findbugs-maven-plugin@1.1.1?classifier=sources"
@@ -1257,7 +1257,7 @@
       "other_license_expression": null,
       "other_license_expression_spdx": null,
       "other_license_detections": [],
-      "extracted_license_statement": "[{'name': 'Eclipse Public License - v 1.0', 'url': 'http://www.eclipse.org/legal/epl-v10.html', 'comments': None, 'distribution': None}]",
+      "extracted_license_statement": "- name: Eclipse Public License - v 1.0\n  url: http://www.eclipse.org/legal/epl-v10.html\n  comments:\n  distribution:\n",
       "notice_text": null,
       "source_packages": [
         "pkg:maven/com.myco.foo.bar.baz/baz-bar-parent@1.0?classifier=sources"
@@ -1497,7 +1497,7 @@
       "other_license_expression": null,
       "other_license_expression_spdx": null,
       "other_license_detections": [],
-      "extracted_license_statement": "[{'name': 'LGPL', 'url': 'http://www.gnu.org/copyleft/lesser.html', 'comments': None, 'distribution': 'repo'}]",
+      "extracted_license_statement": "- name: LGPL\n  url: http://www.gnu.org/copyleft/lesser.html\n  comments:\n  distribution: repo\n",
       "notice_text": null,
       "source_packages": [
         "pkg:maven/it.assist.jrecordbind/jrecordbind%24%7BartifactId.ext%7D@2.3.4?classifier=sources"
@@ -1592,7 +1592,7 @@
       "other_license_expression": null,
       "other_license_expression_spdx": null,
       "other_license_detections": [],
-      "extracted_license_statement": "[{'name': 'The Apache Software License, Version 2.0', 'url': 'http://www.apache.org/licenses/LICENSE-2.0.txt', 'comments': None, 'distribution': 'repo'}]",
+      "extracted_license_statement": "- name: The Apache Software License, Version 2.0\n  url: http://www.apache.org/licenses/LICENSE-2.0.txt\n  comments:\n  distribution: repo\n",
       "notice_text": null,
       "source_packages": [
         "pkg:maven/log4j/log4j@1.2.15?classifier=sources"
@@ -1679,7 +1679,7 @@
       "other_license_expression": null,
       "other_license_expression_spdx": null,
       "other_license_detections": [],
-      "extracted_license_statement": "[{'name': 'GNU Lesser General Public License', 'url': 'http://www.gnu.org/licenses/lgpl.html', 'comments': None, 'distribution': None}]",
+      "extracted_license_statement": "- name: GNU Lesser General Public License\n  url: http://www.gnu.org/licenses/lgpl.html\n  comments:\n  distribution:\n",
       "notice_text": null,
       "source_packages": [
         "pkg:maven/ch.qos.logback/logback-access@0.2.5?classifier=sources"
@@ -2209,7 +2209,7 @@
       "other_license_expression": null,
       "other_license_expression_spdx": null,
       "other_license_detections": [],
-      "extracted_license_statement": "[{'name': 'The Apache Software License, Version 2.0', 'url': 'http://www.apache.org/licenses/LICENSE-2.0.txt', 'comments': None, 'distribution': 'repo'}]",
+      "extracted_license_statement": "- name: The Apache Software License, Version 2.0\n  url: http://www.apache.org/licenses/LICENSE-2.0.txt\n  comments:\n  distribution: repo\n",
       "notice_text": null,
       "source_packages": [
         "pkg:maven/org.springframework/spring@2.5.4?classifier=sources"
@@ -2304,7 +2304,7 @@
       "other_license_expression": null,
       "other_license_expression_spdx": null,
       "other_license_detections": [],
-      "extracted_license_statement": "[{'name': 'The Apache Software License, Version 2.0', 'url': 'http://www.apache.org/licenses/LICENSE-2.0.txt', 'comments': None, 'distribution': 'repo'}]",
+      "extracted_license_statement": "- name: The Apache Software License, Version 2.0\n  url: http://www.apache.org/licenses/LICENSE-2.0.txt\n  comments:\n  distribution: repo\n",
       "notice_text": null,
       "source_packages": [
         "pkg:maven/org.springframework/spring-orm@2.5.3?classifier=sources"
@@ -2399,7 +2399,7 @@
       "other_license_expression": null,
       "other_license_expression_spdx": null,
       "other_license_detections": [],
-      "extracted_license_statement": "[{'name': 'The Apache Software License, Version 2.0', 'url': 'http://www.apache.org/licenses/LICENSE-2.0.txt', 'comments': None, 'distribution': 'repo'}]",
+      "extracted_license_statement": "- name: The Apache Software License, Version 2.0\n  url: http://www.apache.org/licenses/LICENSE-2.0.txt\n  comments:\n  distribution: repo\n",
       "notice_text": null,
       "source_packages": [
         "pkg:maven/org.springframework/spring-webmvc@2.5.3?classifier=sources"
@@ -6958,7 +6958,7 @@
           "other_license_expression": null,
           "other_license_expression_spdx": null,
           "other_license_detections": [],
-          "extracted_license_statement": "[{'name': 'Public Domain', 'url': None, 'comments': None, 'distribution': None}, {'name': 'GPL', 'url': 'http://nexb.com', 'comments': None, 'distribution': None}]",
+          "extracted_license_statement": "- name: Public Domain\n  url:\n  comments:\n  distribution:\n- name: GPL\n  url: http://nexb.com\n  comments:\n  distribution:\n",
           "notice_text": null,
           "source_packages": [
             "pkg:maven/aopalliance/aopalliance@1.0?classifier=sources"
@@ -7627,7 +7627,7 @@
           "other_license_expression": null,
           "other_license_expression_spdx": null,
           "other_license_detections": [],
-          "extracted_license_statement": "[{'name': 'The Apache Software License, Version 2.0', 'url': '/LICENSE.txt', 'comments': None, 'distribution': None}]",
+          "extracted_license_statement": "- name: The Apache Software License, Version 2.0\n  url: /LICENSE.txt\n  comments:\n  distribution:\n",
           "notice_text": null,
           "source_packages": [
             "pkg:maven/commons-validator/commons-validator@1.2.0?classifier=sources"
@@ -8197,7 +8197,7 @@
           "other_license_expression": null,
           "other_license_expression_spdx": null,
           "other_license_detections": [],
-          "extracted_license_statement": "[{'name': 'MIT', 'url': 'LICENSE.txt', 'comments': None, 'distribution': 'repo'}]",
+          "extracted_license_statement": "- name: MIT\n  url: LICENSE.txt\n  comments:\n  distribution: repo\n",
           "notice_text": null,
           "source_packages": [
             "pkg:maven/org.codehaus.mojo/findbugs-maven-plugin@1.1.1?classifier=sources"
@@ -8710,7 +8710,7 @@
           "other_license_expression": null,
           "other_license_expression_spdx": null,
           "other_license_detections": [],
-          "extracted_license_statement": "[{'name': 'Eclipse Public License - v 1.0', 'url': 'http://www.eclipse.org/legal/epl-v10.html', 'comments': None, 'distribution': None}]",
+          "extracted_license_statement": "- name: Eclipse Public License - v 1.0\n  url: http://www.eclipse.org/legal/epl-v10.html\n  comments:\n  distribution:\n",
           "notice_text": null,
           "source_packages": [
             "pkg:maven/com.myco.foo.bar.baz/baz-bar-parent@1.0?classifier=sources"
@@ -9182,7 +9182,7 @@
           "other_license_expression": null,
           "other_license_expression_spdx": null,
           "other_license_detections": [],
-          "extracted_license_statement": "[{'name': 'LGPL', 'url': 'http://www.gnu.org/copyleft/lesser.html', 'comments': None, 'distribution': 'repo'}]",
+          "extracted_license_statement": "- name: LGPL\n  url: http://www.gnu.org/copyleft/lesser.html\n  comments:\n  distribution: repo\n",
           "notice_text": null,
           "source_packages": [
             "pkg:maven/it.assist.jrecordbind/jrecordbind%24%7BartifactId.ext%7D@2.3.4?classifier=sources"
@@ -9351,7 +9351,7 @@
           "other_license_expression": null,
           "other_license_expression_spdx": null,
           "other_license_detections": [],
-          "extracted_license_statement": "[{'name': 'The Apache Software License, Version 2.0', 'url': 'http://www.apache.org/licenses/LICENSE-2.0.txt', 'comments': None, 'distribution': 'repo'}]",
+          "extracted_license_statement": "- name: The Apache Software License, Version 2.0\n  url: http://www.apache.org/licenses/LICENSE-2.0.txt\n  comments:\n  distribution: repo\n",
           "notice_text": null,
           "source_packages": [
             "pkg:maven/log4j/log4j@1.2.15?classifier=sources"
@@ -9532,7 +9532,7 @@
           "other_license_expression": null,
           "other_license_expression_spdx": null,
           "other_license_detections": [],
-          "extracted_license_statement": "[{'name': 'GNU Lesser General Public License', 'url': 'http://www.gnu.org/licenses/lgpl.html', 'comments': None, 'distribution': None}]",
+          "extracted_license_statement": "- name: GNU Lesser General Public License\n  url: http://www.gnu.org/licenses/lgpl.html\n  comments:\n  distribution:\n",
           "notice_text": null,
           "source_packages": [
             "pkg:maven/ch.qos.logback/logback-access@0.2.5?classifier=sources"
@@ -10869,7 +10869,7 @@
           "other_license_expression": null,
           "other_license_expression_spdx": null,
           "other_license_detections": [],
-          "extracted_license_statement": "[{'name': 'The Apache Software License, Version 2.0', 'url': 'http://www.apache.org/licenses/LICENSE-2.0.txt', 'comments': None, 'distribution': 'repo'}]",
+          "extracted_license_statement": "- name: The Apache Software License, Version 2.0\n  url: http://www.apache.org/licenses/LICENSE-2.0.txt\n  comments:\n  distribution: repo\n",
           "notice_text": null,
           "source_packages": [
             "pkg:maven/org.springframework/spring@2.5.4?classifier=sources"
@@ -11648,7 +11648,7 @@
           "other_license_expression": null,
           "other_license_expression_spdx": null,
           "other_license_detections": [],
-          "extracted_license_statement": "[{'name': 'The Apache Software License, Version 2.0', 'url': 'http://www.apache.org/licenses/LICENSE-2.0.txt', 'comments': None, 'distribution': 'repo'}]",
+          "extracted_license_statement": "- name: The Apache Software License, Version 2.0\n  url: http://www.apache.org/licenses/LICENSE-2.0.txt\n  comments:\n  distribution: repo\n",
           "notice_text": null,
           "source_packages": [
             "pkg:maven/org.springframework/spring-orm@2.5.3?classifier=sources"
@@ -11937,7 +11937,7 @@
           "other_license_expression": null,
           "other_license_expression_spdx": null,
           "other_license_detections": [],
-          "extracted_license_statement": "[{'name': 'The Apache Software License, Version 2.0', 'url': 'http://www.apache.org/licenses/LICENSE-2.0.txt', 'comments': None, 'distribution': 'repo'}]",
+          "extracted_license_statement": "- name: The Apache Software License, Version 2.0\n  url: http://www.apache.org/licenses/LICENSE-2.0.txt\n  comments:\n  distribution: repo\n",
           "notice_text": null,
           "source_packages": [
             "pkg:maven/org.springframework/spring-webmvc@2.5.3?classifier=sources"

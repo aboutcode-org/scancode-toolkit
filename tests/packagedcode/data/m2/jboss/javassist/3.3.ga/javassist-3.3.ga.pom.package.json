@@ -94,7 +94,7 @@
   "other_license_expression": null,
   "other_license_expression_spdx": null,
   "other_license_detections": [],
-  "extracted_license_statement": "[{'name': 'MPL 1.1', 'url': 'http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/*checkout*/jboss/javassist/License.html?rev=HEAD&content-type=text/html', 'comments': 'Dual-license; LGPL if downloaded as part of JBoss, MPL if downloaded separately.', 'distribution': None}]",
+  "extracted_license_statement": "- name: MPL 1.1\n  url: http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/*checkout*/jboss/javassist/License.html?rev=HEAD&content-type=text/html\n  comments: Dual-license; LGPL if downloaded as part of JBoss, MPL if downloaded separately.\n  distribution:\n",
   "notice_text": null,
   "source_packages": [
     "pkg:maven/jboss/javassist@3.3.ga?classifier=sources"

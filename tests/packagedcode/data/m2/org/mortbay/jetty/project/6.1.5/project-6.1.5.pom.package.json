@@ -131,7 +131,7 @@
   "other_license_expression": null,
   "other_license_expression_spdx": null,
   "other_license_detections": [],
-  "extracted_license_statement": "[{'name': 'Apache License Version 2.0', 'url': 'http://www.apache.org/licenses/LICENSE-2.0', 'comments': None, 'distribution': None}]",
+  "extracted_license_statement": "- name: Apache License Version 2.0\n  url: http://www.apache.org/licenses/LICENSE-2.0\n  comments:\n  distribution:\n",
   "notice_text": null,
   "source_packages": [
     "pkg:maven/org.mortbay.jetty/project@6.1.5?classifier=sources"

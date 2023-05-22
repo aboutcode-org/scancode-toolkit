@@ -101,7 +101,7 @@
     "other_license_expression": null,
     "other_license_expression_spdx": null,
     "other_license_detections": [],
-    "extracted_license_statement": "{'license': 'GPLv3', 'classifiers': ['License :: OSI Approved :: GPLv3 License']}",
+    "extracted_license_statement": "license: GPLv3\nclassifiers:\n  - 'License :: OSI Approved :: GPLv3 License'\n",
     "notice_text": null,
     "source_packages": [],
     "file_references": [],
