@@ -32,10 +32,28 @@ v32.1.0 (next, roadmap)
   license detection and reduce false positives.
   See https://github.com/nexB/scancode-toolkit/issues/3300
 
+- A new `--todo` option is added to show the todo items that
+  should be reviewed, which are ambiguous license/package
+  detections.
+
 - File categorization support added, a post scan plugin tagging
   files with priority levels for review, and also take advantage
   of these in other summary plugins.
   See https://github.com/nexB/scancode-toolkit/issues/1745
+
+v32.0.1 - 2023-05-23
+---------------------
+
+This is a minor bugfix release.
+
+There are fixes for two issues in this release:
+- https://github.com/nexB/scancode-toolkit/issues/3407:
+  here in typecode we had an improper import of ctypes.utils
+  and this is fixed in a new release v30.0.1 of typecode
+- https://github.com/nexB/scancode-toolkit/issues/3408 
+  the setup.cfg and setup-mini.cfg was not aligned for plugin
+  entrypoints.
+
 
 v32.0.0 - 2023-05-23
 ---------------------
