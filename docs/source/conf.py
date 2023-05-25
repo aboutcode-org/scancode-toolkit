@@ -29,7 +29,13 @@ author = "AboutCode.org authors and contributors"
 # ones.
 extensions = [
     "sphinx.ext.intersphinx",
+    "sphinx_reredirects",
 ]
+
+
+# Redirects for olds pages
+# See https://documatt.gitlab.io/sphinx-reredirects/usage.html
+redirects = {}
 
 # This points to aboutcode.readthedocs.io
 # In case of "undefined label" ERRORS check docs on intersphinx to troubleshoot
