@@ -1,0 +1,19 @@
+---
+key: mediatek-firmware
+short_name: MediaTek Firmware License
+name: MediaTek Firmware License
+category: Proprietary Free
+owner: MediaTek
+homepage_url: https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/tree/LICENCE.mediatek
+spdx_license_key: LicenseRef-scancode-mediatek-firmware
+---
+
+MediaTek Inc. grants permission to use and redistribute aforementioned firmware
+files for the use with devices containing MediaTek chipsets, but not as part of
+the Linux kernel or in any other form which would require these files themselves
+to be covered by the terms of the GNU General Public License or the GNU Lesser
+General Public License.
+
+These firmware files are distributed in the hope that they will be useful, but
+are provided WITHOUT ANY WARRANTY, INCLUDING BUT NOT LIMITED TO IMPLIED WARRANTY
+OF MERCHANTABILITY OR FITNESS FOR A PARTICULAR PURPOSE.

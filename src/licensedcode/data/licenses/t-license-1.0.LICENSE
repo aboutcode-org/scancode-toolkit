@@ -1,0 +1,115 @@
+---
+key: t-license-1.0
+short_name: T-License 1.0
+name: T-License 1.0
+category: Proprietary Free
+owner: Tron Project
+homepage_url: https://www.tron.org/download/index.php?route=information/information&information_id=8
+spdx_license_key: LicenseRef-scancode-t-license-1.0
+other_urls:
+    - https://www.tron.org/download/index.php?route=information/information&information_id=62&language=en
+---
+
+T-License [License Agreement for Source Code of T-Kernel]
+
+established by T-Engine Forum
+on January 23, 2004
+revised on June 17, 2004
+revised on December 21, 2006
+revised on March 24, 2009
+Article 1. Scope of License Agreement
+
+    This License Agreement sets forth copyrights and the terms and conditions of use applicable to the source code of T-Kernel distributed by T-Engine Forum and any derivative work created therefrom.
+
+Article 2. Definition
+
+    "T-Kernel" means a real-time operating system controlled and distributed by T-Engine Forum on behalf of the copyright holder thereof.
+    "Source Code" means a source program, including related comments and documentations, for the T-Kernel and the Ported Source Code defined in Article 2.8 which is registered with T-Engine Forum.
+    "Hardware-dependent Part" means the part of the Source Code which depends on hardware and needs to be changed when the Source Code is ported and operated on the target hardware, and is designated and separated as such part.
+    "Compiler-dependent Part" means the part of the Source Code which depends on compiler and needs to be changed when the Source Code is ported and operated on the target hardware, and is designated and separated as such part.
+    "Header File" means the part of the Source Code which contains definitions necessary to develop application programs.
+    "T-Engine Hardware" means the hardware which is manufactured in accordance with the T-Engine Hardware specifications or the µT-Engine Hardware specifications issued by T-Engine Forum, and registered with T-Engine Forum.
+    "Similar Hardware to T-Engine Hardware" means any hardware (including software which emulates hardware) other than that defined in Article 2.6 above, on which the T-Kernel can be operated.
+    "Ported Source Code" means a source program produced from the Source Code by modifying only its Hardware-dependent Part and/or Compiler-dependent Part to enable it to be operated on the T-Engine Hardware or the Similar Hardware to T-Engine Hardware. The Ported Source Code which is registered with T-Engine Forum shall be included in the Source Code.
+    "Modified Source Code" means a source program modified from the Source Code for the purpose of improving its performance, increasing or decreasing its function, and the like. The Ported Source Code shall not be included in the Modified Source Code.
+    "Binary Code" means an executable code form which is created by compiling programs, which include all or part of the Source Code or the Modified Source Code.
+    "Derivative Work" means the Modified Source Code or the Binary Code.
+    "Embedded Product" means any product which operates with executable code form of the Source Code, the Modified Source Code or the Binary Code loaded on its hardware.
+    "End User" means a consumer who uses the Embedded Product.
+    "System Developer" means any person who develops the Embedded Product by itself or has a third party develop the same, and provides, whether with or without payment, the End User with the Embedded Product.
+    "Distributor of Modification" means any person who produces the Modified Source Code and, whether with or without payment, distributes the same to any third party.
+    "Patch for Modification" means a difference, program, system, or the like in order to create the Modified Source Code from the Source Code or the Binary Code thereof.
+    "Vicarious Execution of Patch Processing" means vicarious execution service to create the Modified Source Code applying the Patch for Modification to the Source Code or the Binary Code thereof.
+    "Source Code User" means a person who uses the Source Code.
+    "Distribution" means any of the following acts:
+        to transmit a work to a large number of specific persons through the Internet communication, broadcasting, and the like;
+        to transmit a work to the general public through the Internet communication, broadcasting, and the like automatically in response to a request from the public; and
+        to distribute a copy of a work to the general public or a large number of specific persons.
+
+Article 3. Copyright
+
+    The copyrights of the Source Code shall be owned by Ken Sakamura.
+
+Article 4. License of Source Code
+
+    As provided for in this Article, T-Engine Forum shall provide, and grant a license to use, the Source Code free of charge to any person who has taken the necessary procedure for registration as prescribed by T-Engine Forum and agreed to the T-License.
+    The Source Code shall be distributed exclusively by T-Engine Forum. Any person who obtains the Source Code under Article 4.1 above shall not make any re-Distribution of the Source Code.
+    In accordance with the license granted under Article 4.1 above, the Source Code User may perform the following acts:
+        to copy and/or modify the Source Code provided by T-Engine Forum hereunder for its own research, development and the like.
+        to run the Source Code provided by T-Engine Forum hereunder for its own research, development and the like.
+        to run the Source Code modified in accordance with the provision of Article 4.3 (1) above for its own research, development and the like.
+        to distribute the Binary Code created from the Source Code provided by T-Engine Forum hereunder or from the Source Code modified in accordance with the provision of Article 4.3 (1) above.
+    In accordance with the license granted under Article 4.1 above, the System Developer may perform the following acts:
+        to perform any and all acts set forth in the Article 4.3 above.
+        to develop and manufacture the Embedded Product containing the Binary Code, and, whether with or without payment, provide the End User with the same and make the Binary Code available to the End User on the Embedded Product.
+    The Source Code User and the System Developer shall be obligated to give a notice that the Source Code is used, in such a way as separately specified by T-Engine Forum, when they use the Source Code or the Binary Code, or make the Binary Code available for the End User on the Embedded Product.
+
+Article 5. Distribution of Modified Source Code
+
+    Any of A- members of T-Engine Forum may become the Distributor of Modification by obtaining the approval of T-Engine Forum through the registration procedure as prescribed by the Forum provided that only the department of the A- member which has taken the registration procedure may distribute the Modified Source Code in such a way as provided for in this Article as long as it holds the A- membership.
+    The Distributor of Modification may create the Modified Source Code based on the Source Code provided by T-Engine Forum and the Patch for Modification to be applied to create such Modified Source Code from the Source Code.
+    The Distributor of Modification shall, prior to the distribution, inform T-Engine Forum of and register a name and description of the Modified Source Code in such a way as specified by T-Engine Forum.
+    The Distributor of Modification shall determine the name of the Modified Source Code subject to the rules separately established by T-Engine Forum and publish an appropriate notice as required by the rules on the Patch for Modification and the Modified Source Code.
+    The Distributor of Modification may distribute the Modified Source Code to a third party, whether with or without payment, provided that the Distributor of Modification shall take the necessary measures to prohibit the third party from making the re-Distribution of the Modified Source Code.
+    The Distributor of Modification may provide the System Developer with the Patch for Modification. Provided, however, that the Distributor of Modification shall be obligated to confirm that the System Developer is the Source Code User duly licensed under Article 4.1.
+    The Distributor of Modification may perform the Vicarious Execution of Patch Processing for the System Developer.
+    The System Developer shall not distribute the Modified Source Code in further modified form to any third party as a stand-alone software product.
+    The System Developer may, under the same obligation as imposed in Article 4.5, make the Embedded Product available for the End User through use of the Patch for Modification distributed by the Distributor of Modification or the Derivative Works obtained through the Vicarious Execution of Patch Processing.
+
+Article 6. Distribution and Registration of the Ported Source Code
+
+    The Source Code User and the System Developer may, whether with or without charge, distribute to any third party only the following parts of the Ported Source Code on the T-Engine Hardware or the Similar Hardware to T-Engine Hardware:
+        The Hardware-dependent Part and/or Compiler-dependent Part; provided that the Source Code User and the System Developer shall inform T-Engine Forum of, and T-Engine Forum may publish, a method for distributing said Part(s) to third parties.
+        The Header File; provided that the Header File shall be distributed together with the Binary Code of the Ported Source Code.
+    Any member of T-Engine Forum may request T-Engine Forum to register and distribute, as an original source code for T-Kernel, the Ported Source Code on the T-Engine Hardware or the Similar Hardware to T-Engine Hardware.
+    Any member of T-Engine Forum who requests the distribution mentioned in the preceding paragraph shall accede to the following conditions:
+        The member shall confirm that the object hardware is the T-Engine Hardware or the Similar Hardware to T-Engine Hardware.
+        The member shall provide T-Engine Forum with a complete set of operational environment for the object hardware and T-Kernel free of charge when requesting the distribution.
+        The member shall submit test results of the Ported Source Code to T-Engine Forum when requesting the distribution.
+    In the event that T-Engine Forum accepts the request mentioned in Article 6.2, T-Engine Forum shall register and distribute the Ported Source Code as the Source Code for T-Kernel. Provided, however, that the Ported Source Code may be treated in the same way as the Modified Source Code until the time of registration hereunder.
+    The provision set forth in Article 3 shall apply to the Ported Source Code registered in accordance with this Article.
+
+Article 7. Use for Other Purpose
+
+    Any use of the Source Code, the Modified Source Code or the Ported Source Code other than those stipulated in Articles 4, 5 and 6 shall be subject to the prior approval of T-Engine Forum.
+
+Article 8. Limited Warranty
+
+    T-Engine Forum and the copyright holder of the Source Code warrant that the Source Code does not infringe third party's copyrights. Provided, however, that T-Engine Forum and the copyright holder of the Source Code make no warranty as to the Hardware-dependent Part and/or Compiler- dependent Part set forth in Article 6.2 in the Ported Source Code by any third party.
+    Neither T-Engine Forum nor the copyright holder of the Source Code warrants that the Source Code will fit for any particular purpose of the Source Code User.
+    Neither T-Engine Forum nor the copyright holder of the Source Code warrants that the Source Code does not infringe any third party's industrial property rights. In no event shall T-Engine Forum and the copyright holder of the Source Code be liable for any dispute which may arise between the Source Code User and a third party in connection with the third party's industrial property rights.
+
+Article 9. Indemnity
+
+    Neither T-Engine Forum nor the copyright holder of the Source Code shall be liable for any damages (including, but not limited to, damages resulting from loss of profit, business interruption, loss of business information or any other pecuniary damage) arising out of use or impossibility of use of the Source Code, even if T-Engine Forum and the copyright holder have been informed of the possibility of such damages.
+
+Article 10. Breach of Agreement
+
+    In case that T-Engine Forum considers that this License Agreement is breached or that the popularization of T-Kernel is obstructed, T-Engine Forum shall take measures to correct such breach or such obstruction, take measures on the ground of copyright infringement, or take any other necessary measures against the breaching person or the obstructing person, regardless of whether or not the said person is a member of T-Engine Forum.
+    In case of breach of this License Agreement by a member of T-Engine Forum, T-Engine Forum may take appropriate measures against the member; for example, the member is disqualified from membership, depending on what kind of breach has been committed by it.
+    Any legal dispute which may arise in relation to any breach of this License Agreement shall be subject to the exclusive jurisdiction of the Tokyo District Court.
+
+Article 11. Governing Law and Language
+
+    This License Agreement shall be governed by and interpreted under the laws of Japan.
+    This License Agreement is executed in both Japanese text and English text provided that the Japanese text shall govern the interpretation and performance of this License Agreement.

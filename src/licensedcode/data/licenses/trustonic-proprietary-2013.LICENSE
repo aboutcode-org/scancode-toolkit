@@ -1,0 +1,15 @@
+---
+key: trustonic-proprietary-2013
+short_name: Trustonic Proprietary License 2013
+name: Trustonic Proprietary License 2013
+category: Proprietary Free
+owner: Trustonic
+homepage_url: https://android.googlesource.com/kernel/mediatek/+/0164f13d76f1966b140ea06261ea6f63c073e080/drivers/misc/mediatek/masp/asfv2/tlc_inc/tci.h
+spdx_license_key: LicenseRef-scancode-trustonic-proprietary-2013
+---
+
+The present software is the confidential and proprietary information of
+TRUSTONIC LIMITED. You shall not disclose the present software and shall
+use it only in accordance with the terms of the license agreement you
+entered into with TRUSTONIC LIMITED. This software may be subject to
+export or import laws in certain countries.
