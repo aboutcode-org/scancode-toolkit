@@ -1,0 +1,90 @@
+---
+key: embedthis-tou-2022
+short_name: EmbedThis TOU 2022
+name: EmbedThis Terms of Use 2022
+category: Commercial
+owner: Embedthis
+homepage_url: https://www.embedthis.com/about/terms.html
+spdx_license_key: LicenseRef-scancode-embedthis-tou-2022
+faq_url: https://www.embedthis.com/licensing/
+---
+
+Terms of Use
+
+Welcome to EmbedThis
+
+Embedthis Software, LLC. provides this web site, the services available via this web site, and associated embedded device Software (the “Service”) to you (“You”) subject to the following Terms of Use (“Terms”). By using the Service you accept the Terms and agree to be bound by the current Terms displayed on the Embedthis web site.
+
+PLEASE READ THESE TERMS CAREFULLY BEFORE USING THE SERVICE. YOUR USE OF THE SERVICE INDICATES YOUR FULL ACCEPTANCE OF THE TERMS AND YOU AGREE TO BE BOUND BY ALL THE CONDITIONS OF THESE TERMS. FAILURE TO COMPLY WITH ALL THE TERMS DISALLOWS USE OF THE SERVICE AND MAY GIVE RISE TO UNSPECIFIED DAMAGES.
+Definitions
+
+    Software means the Embedthis embedded device software including source code, headers, documentation and data files. It includes updates and upgrades to the software that have been supplied by Embedthis to You, provided You have a current paid-up subscription to the Service.
+    Integrated Product means a single end-user product that incorporates the Software in binary form only, together with other hardware or software of significant value-add.
+
+1. License to Use
+
+1.1. Subject to the conditions of these Terms and receipt by Embedthis of all payments due under these Terms, You are hereby granted a worldwide, non-exclusive, non-transferable (except as permitted herein) right to:
+
+a. Use, compile and modify the Software for the purposes of creating Integrated Products.
+
+b. Use, demonstrate, distribute, market, promote, rent, reproduce and sell Integrated Products containing the Software in binary form only, including the ability to provide remote access to Integrated Products via cloud services.
+
+c. Distribute the Software in source code form to Your contract manufacturers for the sole purpose of creating Integrated Products for You. This does not include the right to sublicense the Software, nor does it permit contract manufacturers to distribute or sell the Software except in binary form when part of Your Integrated Product and sold directly to You.
+
+d. Use and interact with the Service using the documented published APIs of the Service for the sole purpose of managing Your Integrated Products.
+
+1.2 You will maintain a valid billing card with the Service and immediately pay all Service fees immediately they become due, unless You have a prior contractual billing agreement with Embedthis that specifies alternate payment terms.
+
+1.3 You agree that You will not take any action that interferes, or attempts to interfere with the proper working of the Service or imposes an unreasonable or disproportionately large load on the infrastructure of the Service as determined solely by Embedthis. You agree that you will not use the Service in any manner other than as expressly authorized by these Terms.
+
+1.4 You agree to keep accurate records relating to the number of devices you create using the Software and Embedthis shall have the right to verify Your compliance with these terms and your subscription volume, at our expense, during the term of this agreement and for a period of one year thereafter. In such case, we will engage an independent accountant from a nationally recognized public accounting firm, which will be subject to a confidentiality obligation. Verification will take place upon not fewer than 30 days notice, during normal business hours and in a manner that does not interfere unreasonably with your operations.
+2. Termination
+
+2.1. Provided that You have paid all due Service fees and are not in breach of these Terms, You may terminate this agreement at any time by closing Your account, immediately ceasing to use the Service and ceasing the manufacturer of Integrated Products containing the Software. In the event of such termination, You are not entitled to a refund of the whole or part of any fees paid. Your right to distribute Integrated Products that were manufactured prior to termination, (without the right to connect to the Service) is not affected.
+
+2.2. You understand and agree that the cancellation of your account is your sole right and remedy with respect to any dispute with Embedthis. This includes, but is not limited to, any dispute related to, or arising out of: (a) any item of the Terms or Embedthis’s enforcement or application of the Terms; (b) any policy or practice of Embedthis, including the operation of the Service, your ability to access and use the Service, or Embedthis’s governance of the Service.
+
+2.3. Embedthis may, at its sole discretion, terminate this Agreement if the Licensee breaches any provision of this Agreement and such breach is not cured within sixty (60) days. Embedthis will not be liable to You for the termination of your account.
+
+2.4 If Embedthis and its successors cease to operate in the ordinary course of business, Your rights granted in this Section 2, including the ability to create and sell Integrated Products, shall continue unaffected. In this event, if you are subscribed at that time to the Service, You are granted an option for a period of sixty (60) days from such event, at your election, to acquire at no charge, a royalty-free, non-exclusive, non-transferable license for the Builder software code required to host the Service including the right to compile, host, execute, market and promote this Builder software only as required to run the Service for your Integrated Products.
+3. Assignment
+
+3.1. Neither party may assign or otherwise transfer any of the rights or obligations arising out of these Terms except to transfer this agreement to any successor in connection with any transfer of all or substantially all of its business or assets or to any entity that acquires voting control of the party in a merger, acquisition or reorganization.
+4. Copyright and Ownership
+
+4.1. The Service is owned by Embedthis and is protected by international copyright, trademark and any other applicable laws. You must comply with the terms of the copyright notice in the Service and must never remove any notice or product identification from the Service or the accompanying documentation. You acknowledges that the copyright, patent, trade secret and all other intellectual property rights in the Service shall remain the exclusive property of Embedthis. You also acknowledges that Embedthis owns the Embedthis, Appweb, Ioto and Embedthis GoAhead trademarks and logos.
+
+4.2. All right and title to modifications made solely by You to the Software and the right and title to other software that is included by You in an Integrated Product, shall remain Your property or that of other third parties.
+5. Property Rights
+
+5.1. The Software provided as part of the Service is commercial computer software developed exclusively at private expense, and in all respects is proprietary data belonging solely to Embedthis. Embedthis warrants that to the best of its knowledge, the Software does not infringe the proprietary rights of any third party.
+
+5.2. The Software contains no code licensed under the GNU Public License (GPL) or similar copy-left license that would adversely impact Your full exercise of the rights granted to You by these Terms. Where some code in the Software has been licensed to Embedthis from other parties, Embedthis has rights to such code in the Software, sufficient to provide You with the rights granted by these Terms. Third-party licenses are specified in the Software’s LICENSE.md file included with the Software.
+
+5.3. If a lawsuit brought against You finds that the Software infringes a United States patent, trade secret or copyright in a final determination, Embedthis shall correct the Software and provide You with a non-infringing update of the Software, provided that Embedthis is given prompt written notice of such infringement claim, all information in Your possession related to such claim, and the option to participate fully in the defense against such claim.
+6. Warranties and Limitations
+
+6.1. No Other Warranties: Embedthis DISCLAIMS ALL OTHER WARRANTIES, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE, RELATED TO THE Service, ITS USE OR ANY INABILITY TO USE IT, THE RESULTS OF ITS USE AND THESE Terms. The Service and Software are supplied “AS IS”, without warranty of any kind. Embedthis does not warrant, guarantee or make any representations regarding the use of or the results of the use of the Service or as to its correctness, accuracy, reliability, currentness or otherwise. You assumes the entire risk as to the results and performance of the Service. Where legislation does not permit such exclusion of liability, Embedthis’s liability is limited to correction of defects in the Service.
+
+6.2. Limitation of Liability: Except in case of intentional misconduct, gross negligence or breach of these Terms, in no event shall either party be liable to the other party for any damages, whether in contract or tort, including but not limited to damages for loss of business profits, business interruption, direct, consequential, special, exemplary, incidental and indirect damages arising out of or in connection with these Terms or the use, results of use or the inability to use the Service, even if either party has been advised by the other party of the possibility of such damages. In any event, either party’s entire liability under any provision of these Terms shall be limited 100% of the fees paid by You.
+7. Confidentiality
+
+7.1. Embedthis and You shall keep in strict confidence, and use only in furtherance of the objectives of these Terms, all technical or commercial know-how, specifications, inventions, processes, and initiatives or other disclosures written or otherwise which are of a confidential nature and have been identified as such, or which a reasonable person would conclude to be confidential under the circumstances, and have been disclosed to the Recipient by the Discloser, and any other confidential information concerning the Discloser’s business or its products which the Recipient may obtain. The Recipient shall restrict disclosure of such confidential material to such of its employees as need to know, the same for the purpose of discharging the Recipient’s obligations to the Discloser, and shall ensure that such employees are subject to obligations of confidentiality corresponding to those which bind the Recipient.
+
+7.2. Information shall not be deemed confidential and Recipient shall have no obligation with respect to any information to the extent that it can be proven by Recipient’s written records that said information: (a) is already known to Recipient prior to receipt from or disclosure by Discloser, without obligation of confidentiality; (b) after receipt from Discloser becomes publicly known through no wrongful act of Recipient; (c) is rightfully received from a third party without similar restriction and without breach of these Terms; (d) is independently developed by Recipient without reference to, or use of, Discloser’s confidential information; (e) is furnished to a third party by Discloser without a similar restriction on the third party’s rights; (f) is approved for release by written authorization of Discloser; or (g) is disclosed to the extent required to comply with a judicial order or applicable governmental regulation or statutory requirement, provided that Recipient provides Discloser with advance notice of the requirement and an opportunity to object to any disclosure.
+
+7.3 Certain registration and identifying information and other information about You may be collected by or through the Service. Embedthis’s use of this information is governed by the Embedthis Privacy Statement.
+8. Notices
+
+8.1. Any notice required or permitted by these Terms shall be in writing and shall be deemed sufficient upon receipt, when delivered personally or by courier, overnight delivery service, or via email with evidence of delivery.
+9. Severability
+
+9.1. If one or more provisions of these Terms are held to be unenforceable under applicable law, the parties agree to renegotiate such provision in good faith, in order to maintain the economic position enjoyed by each party as close as possible to that under the provision rendered unenforceable. In the event that the parties cannot reach a mutually agreeable and enforceable replacement for such a provision, then (a) such provision shall be excluded from these Terms, (b) the balance of the Terms shall be interpreted as if such provision were so excluded and (c) the balance of the Terms shall be enforceable in accordance with its terms.
+10. Entire Agreement
+
+10.1. These Terms contains the entire agreement between You and Embedthis and supersede all prior negotiations, commitments or other communications between the parties relating to the Service. No additional purchase order terms or conditions shall be binding on either party.
+11. Applicable Law
+
+11.1. These Terms will be governed by the laws of the State of Washington, USA and the parties submit to the non-exclusive jurisdiction of the courts of that state.
+
+Revised: 9/25/22
