@@ -173,7 +173,7 @@ License detection:
     Similarly ``spdx_license_expressions`` was removed and replaced by
     ``detected_license_expression_spdx``.
 
-  - See `license updates documentation <https://scancode-toolkit.readthedocs.io/en/latest/explanations/license-detection-reference.html#change-in-license-data-format-resource>`_
+  - See `license updates documentation <https://scancode-toolkit.readthedocs.io/en/latest/reference/license-detection-reference.html#change-in-license-data-format-resource>`_
     for examples and details.
 
 - The data structure of license attributes in ``package_data`` and the codebase
@@ -193,7 +193,7 @@ License detection:
     original extracted license statement. Previously this used to be nested
     python objects lists/dicts/string, but now this is always a YAML string.
 
-    See `license updates documentation <https://scancode-toolkit.readthedocs.io/en/latest/explanations/license-detection-reference.html#change-in-license-data-format-package>`_
+    See `license updates documentation <https://scancode-toolkit.readthedocs.io/en/latest/reference/license-detection-reference.html#change-in-license-data-format-package>`_
     for examples and details.
 
 - The license matches structure has changed: we used to report one match for each
@@ -201,7 +201,7 @@ License detection:
   single match for each matched license expression, and list the license keys
   as a ``licenses`` attribute. This avoids data duplication.
   Inside each match, we list each match and matched rule attributred directly
-  avoiding nesting. See `license updates doc <https://scancode-toolkit.readthedocs.io/en/latest/explanations/license-detection-reference.html#licensematch-result-data>`_
+  avoiding nesting. See `license updates doc <https://scancode-toolkit.readthedocs.io/en/latest/reference/license-detection-reference.html#licensematch-result-data>`_
   for examples and details.
 
 - There are new and codebase level attributes with ``--license-references`` to report
@@ -212,7 +212,7 @@ License detection:
   in all levels i.e. from codebase, package and resource level license detections and
   resource level license clues, irrespective of this CLI option being used, i.e. default
   with ``--licenses``.
-  See `license updates documentation <https://scancode-toolkit.readthedocs.io/en/latest/explanations/license-detection-reference.html#comparision-before-after-license-references>`_
+  See `license updates documentation <https://scancode-toolkit.readthedocs.io/en/latest/reference/license-detection-reference.html#comparision-before-after-license-references>`_
 
 - We replaced the ``scancode --reindex-licenses`` command line option with a
   new separate command named ``scancode-reindex-licenses``.
