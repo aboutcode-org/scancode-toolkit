@@ -41,6 +41,17 @@ v32.1.0 (next, roadmap)
   of these in other summary plugins.
   See https://github.com/nexB/scancode-toolkit/issues/1745
 
+
+v32.0.2 - 2023-05-26
+---------------------
+
+This is a minor bugfix release with the following update:
+
+- New release v30.1.1 of license-expression with support for new license keys
+  added. Also fail verbosely in `build_spdx_license_expression` for invalid and
+  deprecated license keys.
+
+
 v32.0.1 - 2023-05-23
 ---------------------
 

@@ -155,3 +155,32 @@ class LicenseIndexCacheTest(FileBasedTesting):
         from licensedcode.models import load_licenses
         test_licenses = load_licenses(with_deprecated=True)
         cache.get_spdx_symbols(licenses_db=test_licenses)
+
+    def test_build_spdx_license_expression(self):
+        from licensedcode.cache import build_spdx_license_expression
+        assert build_spdx_license_expression("mit")
+    
+    def test_build_spdx_license_expression_fails_on_invalid_key_none(self):
+        from licensedcode.cache import build_spdx_license_expression
+        from licensedcode.cache import InvalidLicenseKeyError
+        try:
+            build_spdx_license_expression("mit AND None")
+        except InvalidLicenseKeyError:
+            pass
+
+    def test_build_spdx_license_expression_fails_on_deprecated_license(self):
+        # TODO: this should not fail, see https://github.com/nexB/scancode-toolkit/issues/3400
+        from licensedcode.cache import build_spdx_license_expression
+        from licensedcode.cache import InvalidLicenseKeyError
+        try:
+            assert build_spdx_license_expression("broadcom-linking-unmodified")
+        except InvalidLicenseKeyError:
+            pass
+
+    def test_build_spdx_license_expression_fails_on_invalid_key(self):
+        from licensedcode.cache import build_spdx_license_expression
+        from licensedcode.cache import InvalidLicenseKeyError
+        try:
+            assert build_spdx_license_expression("mitt")
+        except InvalidLicenseKeyError:
+            pass
