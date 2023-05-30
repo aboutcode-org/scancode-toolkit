@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
+  <metadata>
+    <id>Fizzler</id>
+    <version>1.3.0</version>
+    <authors>Atif Aziz,Colin Ramsay</authors>
+    <owners></owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <license type="file">COPYING.txt</license>
+    <licenseUrl>https://aka.ms/deprecateLicenseUrl</licenseUrl>
+    <projectUrl>https://github.com/atifaziz/Fizzler</projectUrl>
+    <description>Fizzler is a W3C Selectors parser and generic selector framework for document hierarchies.</description>
+    <releaseNotes>See https://github.com/atifaziz/Fizzler/releases/tag/v1.3.0</releaseNotes>
+    <copyright>Copyright © 2009 Atif Aziz, Colin Ramsay. All rights reserved. Portions Copyright © 2008 Novell, Inc.</copyright>
+    <tags>selectors w3c</tags>
+    <repository type="Git" url="https://github.com/atifaziz/Fizzler" commit="8323ec7a49ce5dff579b1aa146492ee7aa0ab10d" />
+    <dependencies>
+      <group targetFramework=".NETStandard1.0">
+        <dependency id="NETStandard.Library" version="1.6.1" exclude="Build,Analyzers" />
+        <dependency id="System.Diagnostics.Contracts" version="4.3.0" exclude="Build,Analyzers" />
+      </group>
+      <group targetFramework=".NETStandard2.0" />
+    </dependencies>
+  </metadata>
+</package>

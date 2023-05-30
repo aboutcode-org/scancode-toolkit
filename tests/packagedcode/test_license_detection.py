@@ -57,6 +57,25 @@ def test_license_reference_detection_in_manifest_known():
     check_json_scan(test_loc, result_file, regen=REGEN_TEST_FIXTURES)
 
 
+def test_license_reference_detection_in_manifest_unknown_reference_nuget():
+    test_dir = test_env.get_test_loc('license_detection/reference-at-manifest/fizzler/', copy=True)
+    result_file = test_env.get_temp_file('json')
+    args = [
+        '--license',
+        '--license-text',
+        '--license-text-diagnostics',
+        '--license-diagnostics',
+        '--package',
+        '--strip-root',
+        '--verbose',
+        '--json', result_file,
+        test_dir,
+    ]
+    run_scan_click(args)
+    test_loc = test_env.get_test_loc('license_detection/reference-at-manifest/fizzler.expected.json')
+    check_json_scan(test_loc, result_file, regen=REGEN_TEST_FIXTURES)
+
+
 def test_license_reference_detection_in_manifest_licence_comment():
     test_dir = test_env.get_test_loc('license_detection/license-as-manifest-comment/activemq-camel/', copy=True)
     result_file = test_env.get_temp_file('json')
