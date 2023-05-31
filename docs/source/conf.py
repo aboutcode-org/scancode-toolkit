@@ -95,3 +95,9 @@ rst_prolog = """
 .. role:: img-title-para
 
 """
+
+# -- Options for LaTeX output -------------------------------------------------
+
+latex_elements = {
+    'classoptions': ',openany,oneside'
+}
