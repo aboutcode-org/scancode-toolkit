@@ -1317,22 +1317,6 @@ def get_undetected_matches(query_string):
     set_matched_lines(matches, query.line_by_pos)
     return matches
 
-
-def get_matches_from_detections(license_detections):
-    """
-    Return a ``license_matches`` list of LicenseMatch objects from a
-    `license_detections` list of LicenseDetection objects.
-    """
-    license_matches = []
-    if not license_detections:
-        return license_matches
-
-    for detection in license_detections:
-        license_matches.extend(detection.matches)
-
-    return license_matches
-
-
 def get_matches_from_detection_mappings(license_detections):
     """
     Return a ``license_matches`` list of LicenseMatch mappings from a
