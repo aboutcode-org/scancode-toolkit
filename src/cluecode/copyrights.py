@@ -2663,6 +2663,7 @@ grammar = """
     # Copyright (c) 2004, The Codehaus
     COPYRIGHT: {<COPY>  <COPY>  <YR-RANGE>  <NN>  <NNP>} #22790
 
+    # Copyright (c) 2017-2023 Contributors to the OpenSTEF project
     #  SPDX-FileCopyrightText: © 2020 Contributors to the project Clay <https://github.com/liferay/clay/graphs/contributors>
     COPYRIGHT: {<COPY>+  <YR-RANGE>  <CONTRIBUTORS>  <TO>  <COMPANY>} #22790.1
 
@@ -2678,10 +2679,11 @@ grammar = """
     # Copyright base-x contributors (c) 2016
     COPYRIGHT: {<COPY>+  <NN> <CONTRIBUTORS|COMMIT|AUTHS|MAINT> <COPY>  <YR-RANGE>}  #22793.2
 
-    # Copyright (c) 2017 odahcam or Copyright (C) 2006 XStream committers.
-    # or Copyright (c) 2019-2021, Open source contributors.
-    # or Copyright 2007 ZXing authors
-    # or Copyright (c) 2002 the Initial Developer
+    # Copyright (c) 2017 odahcam
+    # Copyright (C) 2006 XStream committers.
+    # Copyright (c) 2019-2021, Open source contributors.
+    # Copyright 2007 ZXing authors
+    # Copyright (c) 2002 the Initial Developer
     COPYRIGHT: {<COPY>+  <YR-RANGE>  <NN>+ <CONTRIBUTORS|COMMIT|AUTHS|MAINT>? <ALLRIGHTRESERVED>?} #22793
 
     # Licensed material of Foobar Company, All Rights Reserved, (C) 2005
