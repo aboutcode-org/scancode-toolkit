@@ -471,7 +471,7 @@
   ],
   "license_detections": [
     {
-      "identifier": "cddl_1_0-ce8b3a58-f284-e7dd-22b3-c4d82f97dfe3",
+      "identifier": "cddl_1_0-c6dbef4d-659c-289f-5ee9-1ca0278edad6",
       "license_expression": "cddl-1.0",
       "detection_count": 1
     },
@@ -696,6 +696,18 @@
           "license_expression": "cddl-1.0",
           "matches": [
             {
+              "score": 16.0,
+              "start_line": 17,
+              "end_line": 19,
+              "matched_length": 3,
+              "match_coverage": 100.0,
+              "matcher": "2-aho",
+              "license_expression": "unknown-license-reference",
+              "rule_identifier": "license-intro_72.RULE",
+              "rule_relevance": 16,
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/license-intro_72.RULE"
+            },
+            {
               "score": 82.35,
               "start_line": 18,
               "end_line": 20,
@@ -708,11 +720,11 @@
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/cddl-1.0_32.RULE"
             }
           ],
-          "identifier": "cddl_1_0-ce8b3a58-f284-e7dd-22b3-c4d82f97dfe3"
+          "identifier": "cddl_1_0-c6dbef4d-659c-289f-5ee9-1ca0278edad6"
         }
       ],
       "license_clues": [],
-      "percentage_of_license_text": 8.09,
+      "percentage_of_license_text": 9.25,
       "copyrights": [],
       "holders": [],
       "authors": [],
@@ -1015,7 +1027,13 @@
       "percentage_of_license_text": 5.51,
       "copyrights": [],
       "holders": [],
-      "authors": [],
+      "authors": [
+        {
+          "author": "Spencer Alger",
+          "start_line": 7,
+          "end_line": 8
+        }
+      ],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
