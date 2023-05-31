@@ -75,7 +75,7 @@
   "other_license_expression": null,
   "other_license_expression_spdx": null,
   "other_license_detections": [],
-  "extracted_license_statement": "[{'name': 'The Apache Software License, Version 2.0', 'url': 'http://www.apache.org/licenses/LICENSE-2.0.txt', 'comments': None, 'distribution': 'repo'}]",
+  "extracted_license_statement": "- name: The Apache Software License, Version 2.0\n  url: http://www.apache.org/licenses/LICENSE-2.0.txt\n  comments:\n  distribution: repo\n",
   "notice_text": null,
   "source_packages": [
     "pkg:maven/org.springframework/spring@2.5.4?classifier=sources"

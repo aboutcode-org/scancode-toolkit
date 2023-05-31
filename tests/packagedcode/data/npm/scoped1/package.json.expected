@@ -57,7 +57,7 @@
     "other_license_expression": null,
     "other_license_expression_spdx": null,
     "other_license_detections": [],
-    "extracted_license_statement": "['MIT']",
+    "extracted_license_statement": "- MIT\n",
     "notice_text": null,
     "source_packages": [],
     "file_references": [],
@@ -676,7 +676,7 @@
     ],
     "repository_homepage_url": "https://www.npmjs.com/package/@ionic/app-scripts",
     "repository_download_url": "https://registry.npmjs.org/@ionic/app-scripts/-/app-scripts-3.0.1-201710301651.tgz",
-    "api_data_url": "https://registry.npmjs.org/@ionic%2fapp-scripts",
+    "api_data_url": "https://registry.npmjs.org/@ionic%2fapp-scripts/3.0.1-201710301651",
     "datasource_id": "npm_package_json",
     "purl": "pkg:npm/%40ionic/app-scripts@3.0.1-201710301651"
   }

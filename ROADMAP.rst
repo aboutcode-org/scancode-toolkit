@@ -29,7 +29,8 @@ This is for SCTK first.
 
 Status: This has been completed in SCTK and also included in SCIO. We use
 an updated --summary option and a new license clarity score for this.
-Some work is still in progress as part of 3.) "detections"
+We also have LicenseDetections for resources/packages and a top level
+unique license detections as a summary.
 
 
 2. Package files.
@@ -50,10 +51,14 @@ This has been completed in SCTK and also included in SCIO.
 - package: object of its own, and related set of files, not always in the same
   directory
 
+This is completed in SCTK.
+
 *License*:
 
 - many detections in a file at different locations, could be merged into a single reported license
 - same for primary licenses
+
+This is completed in SCTK.
 
 *Copyright*:
 
@@ -76,6 +81,7 @@ Roadmap
 
 - SCTK: add primary license field in package output and populate this based on
   package-type/ecosystem conventions.
+- SCTK: also populate secondary license fields 
 - SCIO: add primary license field in DiscoveredPackage models and feed it with
   the data from packages
 - SCIO: Do we track secondary? or is this just data aggregated on the fly.
@@ -87,7 +93,7 @@ Roadmap
 
 - This is closely tied to the primary license detection and should focus
   on package manifests and key files. 
-
+- Support copyright parsing from all package ecosystems.
 
 3. Package files
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -122,3 +128,4 @@ Roadmap
 - Revamp how common list of suprrious licenses are detected (this is a bug)
 - Use important key phrases for license detection https://github.com/nexB/scancode-toolkit/issues/2637
 
+This is mostly completed, for follow up see https://github.com/nexB/scancode-toolkit/issues/2878.

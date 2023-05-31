@@ -21,7 +21,6 @@ project = "ScanCode-Toolkit"
 copyright = "nexB Inc. and others."
 author = "AboutCode.org authors and contributors"
 
-
 # -- General configuration ---------------------------------------------------
 
 # Add any Sphinx extension module names here, as strings. They can be
@@ -29,7 +28,17 @@ author = "AboutCode.org authors and contributors"
 # ones.
 extensions = [
     "sphinx.ext.intersphinx",
+    "sphinx_reredirects",
 ]
+
+
+# Redirects for olds pages
+# See https://documatt.gitlab.io/sphinx-reredirects/usage.html
+redirects = {
+    "explanations/index.html": "../reference/index.html",
+    "explanations/overview.html": "../reference/overview.html",
+    "explanations/license-detection-reference.html": "../reference/license-detection-reference.html"
+}
 
 # This points to aboutcode.readthedocs.io
 # In case of "undefined label" ERRORS check docs on intersphinx to troubleshoot

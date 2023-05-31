@@ -510,5 +510,47 @@ def build_spdx_license_expression(license_expression, licensing=None):
     """
     if not licensing:
         licensing = get_licensing()
+    validate_spdx_license_keys(license_expression=license_expression, licensing=licensing)
     parsed = licensing.parse(license_expression)
     return parsed.render(template='{symbol.wrapped.spdx_license_key}')
+
+
+def validate_spdx_license_keys(license_expression, licensing):
+    """
+    Raise InvalidLicenseKeyError for the cases where the there is no corresponding :
+
+    """
+    from licensedcode.models import load_licenses
+
+    license_keys = licensing.license_keys(license_expression)
+    license_db = get_licenses_db()
+
+    messages = []
+
+    for key in license_keys:
+        if not type(key) == str:
+            msg = f"Invalid license key: {key} of type {type(key)}, license key should be a string"
+            messages.append(msg)
+    
+        lic = license_db.get(key, None)
+        if not lic:
+            licenses = load_licenses(with_deprecated=True)
+            if licenses.get(key, None):
+                msg = f"License key: {key} is deprecated license key in LicenseDB"
+            else:
+                msg = f"License key: {key} is not a valid license key from LicenseDB"
+            messages.append(msg)
+
+        parsed = licensing.parse(key)
+        try:
+            parsed.render(template='{symbol.wrapped.spdx_license_key}')
+        except AttributeError:
+            messages.append(msg)
+            pass
+
+    if messages:
+        raise InvalidLicenseKeyError(messages)
+
+
+class InvalidLicenseKeyError(Exception):
+    pass

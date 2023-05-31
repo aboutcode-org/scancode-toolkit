@@ -67,7 +67,7 @@
   "other_license_expression": null,
   "other_license_expression_spdx": null,
   "other_license_detections": [],
-  "extracted_license_statement": "[{'name': 'GNU LESSER GENERAL PUBLIC LICENSE', 'url': 'http://www.gnu.org/licenses/lgpl.txt', 'comments': None, 'distribution': None}]",
+  "extracted_license_statement": "- name: GNU LESSER GENERAL PUBLIC LICENSE\n  url: http://www.gnu.org/licenses/lgpl.txt\n  comments:\n  distribution:\n",
   "notice_text": null,
   "source_packages": [
     "pkg:maven/org.hibernate/hibernate-entitymanager@3.3.2.GA?classifier=sources"

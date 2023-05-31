@@ -16,6 +16,7 @@ import sys
 import attr
 from packageurl import normalize_qualifiers
 from packageurl import PackageURL
+import saneyaml
 
 from commoncode import filetype
 from commoncode.datautils import choices
@@ -780,7 +781,7 @@ class PackageData(IdentifiablePackageData):
                 )
 
         if self.extracted_license_statement and not isinstance(self.extracted_license_statement, str):
-            self.extracted_license_statement = repr(self.extracted_license_statement)
+            self.extracted_license_statement = saneyaml.dump(self.extracted_license_statement)
 
     def to_dict(self, with_details=True, **kwargs):
         mapping = super().to_dict(with_details=with_details, **kwargs)
@@ -869,11 +870,16 @@ class PackageData(IdentifiablePackageData):
         if not self.extracted_license_statement:
             return [], None
 
-        return get_license_detections_and_expression(
-            extracted_license_statement=self.extracted_license_statement,
+        if self.datasource_id:
             default_relation_license=get_default_relation_license(
                 datasource_id=self.datasource_id,
-            ),
+            )
+        else:
+            default_relation_license = 'AND'
+
+        return get_license_detections_and_expression(
+            extracted_license_statement=self.extracted_license_statement,
+            default_relation_license=default_relation_license
         )
 
 

@@ -106,7 +106,7 @@
     "other_license_expression": null,
     "other_license_expression_spdx": null,
     "other_license_detections": [],
-    "extracted_license_statement": "{'license': 'Eclipse Public License v1.0 / Eclipse Distribution License v1.0', 'classifiers': ['License :: OSI Approved']}",
+    "extracted_license_statement": "license: Eclipse Public License v1.0 / Eclipse Distribution License v1.0\nclassifiers:\n  - 'License :: OSI Approved'\n",
     "notice_text": null,
     "source_packages": [],
     "file_references": [],

@@ -108,7 +108,7 @@
   "other_license_expression": null,
   "other_license_expression_spdx": null,
   "other_license_detections": [],
-  "extracted_license_statement": "[{'name': 'LGPL 2.1', 'url': 'http://www.gnu.org/licenses/lgpl.html', 'comments': 'GNU LESSER GENERAL PUBLIC LICENSE Version 2.1', 'distribution': 'repo'}]",
+  "extracted_license_statement": "- name: LGPL 2.1\n  url: http://www.gnu.org/licenses/lgpl.html\n  comments: GNU LESSER GENERAL PUBLIC LICENSE Version 2.1\n  distribution: repo\n",
   "notice_text": null,
   "source_packages": [
     "pkg:maven/org.ajax4jsf/master@1.1.1?classifier=sources"

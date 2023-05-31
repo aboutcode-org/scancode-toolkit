@@ -303,6 +303,12 @@ Style Conventions for the Documentaion
     ``rst_snippets/warning_snippets/`` and then included to eliminate redundancy, as these are
     frequently used in multiple files.
 
+8. Redirects
+
+    If layouts of doc pages are being changed and these could be referenced elsewhere, these should
+    be added in the `redirects` mapping in `conf.py`. For examples on using these see
+    https://documatt.gitlab.io/sphinx-reredirects/usage.html
+
 Converting from Markdown
 ------------------------
 

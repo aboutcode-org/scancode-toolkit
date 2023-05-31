@@ -64,7 +64,7 @@
           "other_license_expression": null,
           "other_license_expression_spdx": null,
           "other_license_detections": [],
-          "extracted_license_statement": "{'LegalCopyright': '\u00a9 Microsoft Corporation. All rights reserved.', 'LegalTrademarks': '', 'License': None}",
+          "extracted_license_statement": "LegalCopyright: \u00a9 Microsoft Corporation. All rights reserved.\nLegalTrademarks:\nLicense:\n",
           "notice_text": null,
           "source_packages": [],
           "file_references": [],

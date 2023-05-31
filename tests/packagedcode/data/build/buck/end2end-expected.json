@@ -96,7 +96,7 @@
       "other_license_expression": null,
       "other_license_expression_spdx": null,
       "other_license_detections": [],
-      "extracted_license_statement": "['LICENSE']",
+      "extracted_license_statement": "- LICENSE\n",
       "notice_text": null,
       "source_packages": [],
       "extra_data": {},

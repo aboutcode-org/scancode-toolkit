@@ -43,6 +43,14 @@ def test_json_compact():
     check_json_scan(expected, result_file, remove_file_date=True, regen=REGEN_TEST_FIXTURES)
 
 
+def test_json_with_extracted_license_statements():
+    test_dir = test_env.get_test_loc('common/manifests')
+    result_file = test_env.get_temp_file('json')
+    run_scan_click(['-clip', test_dir, '--json', result_file])
+    expected = test_env.get_test_loc('common/manifests-expected.json')
+    check_json_scan(expected, result_file, remove_file_date=True, regen=REGEN_TEST_FIXTURES)
+
+
 @pytest.mark.scanslow
 def test_scan_output_does_not_truncate_copyright_json():
     test_dir = test_env.get_test_loc('json/tree/scan/')

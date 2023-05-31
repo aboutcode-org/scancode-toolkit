@@ -101,7 +101,7 @@
     "other_license_expression": null,
     "other_license_expression_spdx": null,
     "other_license_detections": [],
-    "extracted_license_statement": "{'license': 'LGPL', 'classifiers': ['License :: OSI Approved :: GNU Library or Lesser General Public License (LGPL)']}",
+    "extracted_license_statement": "license: LGPL\nclassifiers:\n  - 'License :: OSI Approved :: GNU Library or Lesser General Public License (LGPL)'\n",
     "notice_text": null,
     "source_packages": [],
     "file_references": [],

@@ -75,7 +75,7 @@
   "other_license_expression": null,
   "other_license_expression_spdx": null,
   "other_license_detections": [],
-  "extracted_license_statement": "[{'name': 'Apache 2.0 License', 'url': 'http://www.apache.org/licenses/LICENSE-2.0', 'comments': None, 'distribution': 'repo'}]",
+  "extracted_license_statement": "- name: Apache 2.0 License\n  url: http://www.apache.org/licenses/LICENSE-2.0\n  comments:\n  distribution: repo\n",
   "notice_text": null,
   "source_packages": [
     "pkg:maven/org.apache.mina/build@1.1.1?classifier=sources"

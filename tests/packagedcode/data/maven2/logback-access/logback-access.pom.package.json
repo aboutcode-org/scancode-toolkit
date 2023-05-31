@@ -67,7 +67,7 @@
   "other_license_expression": null,
   "other_license_expression_spdx": null,
   "other_license_detections": [],
-  "extracted_license_statement": "[{'name': 'GNU Lesser General Public License', 'url': 'http://www.gnu.org/licenses/lgpl.html', 'comments': None, 'distribution': None}]",
+  "extracted_license_statement": "- name: GNU Lesser General Public License\n  url: http://www.gnu.org/licenses/lgpl.html\n  comments:\n  distribution:\n",
   "notice_text": null,
   "source_packages": [
     "pkg:maven/ch.qos.logback/logback-access@0.2.5?classifier=sources"

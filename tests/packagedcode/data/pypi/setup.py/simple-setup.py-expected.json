@@ -119,7 +119,7 @@
     "other_license_expression": null,
     "other_license_expression_spdx": null,
     "other_license_detections": [],
-    "extracted_license_statement": "{'license': 'Apache-2.0 with ScanCode acknowledgment and CC0-1.0 and others', 'classifiers': ['License :: OSI Approved :: Apache Software License', 'License :: OSI Approved :: CC0']}",
+    "extracted_license_statement": "license: Apache-2.0 with ScanCode acknowledgment and CC0-1.0 and others\nclassifiers:\n  - 'License :: OSI Approved :: Apache Software License'\n  - 'License :: OSI Approved :: CC0'\n",
     "notice_text": null,
     "source_packages": [],
     "file_references": [],
