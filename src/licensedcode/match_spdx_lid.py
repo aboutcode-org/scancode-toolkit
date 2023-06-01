@@ -360,8 +360,8 @@ def clean_text(text):
     """
     if is_markup_text(text):
         text = demarkup_text(text)
-    
-    dangling_markup = ['</a>','</p>','</div>']
+
+    dangling_markup = ['</a>','</p>','</div>', '</licenseUrl>']
     for markup in dangling_markup:
         if markup in text:
             text = text.replace(markup, '')
