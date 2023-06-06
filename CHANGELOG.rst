@@ -42,6 +42,18 @@ v32.1.0 (next, roadmap)
   See https://github.com/nexB/scancode-toolkit/issues/1745
 
 
+v32.0.3 - 2023-05-26
+---------------------
+
+This is a minor bugfix release with the following updates:
+
+- We were missing scancode-toolkit-mini releases from v32.0.0rc2 and
+  also the scancode-toolkit release wheels including and after v32.0.0rc2 were
+  actually scancode-toolkit-mini releases.
+  Reference: https://github.com/nexB/scancode-toolkit/issues/3421
+
+- Updated github actions, for more details see https://github.com/nexB/skeleton/issues/75
+
 v32.0.2 - 2023-05-26
 ---------------------
 

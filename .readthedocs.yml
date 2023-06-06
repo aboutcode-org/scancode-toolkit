@@ -5,6 +5,11 @@
 # Required
 version: 2
 
+# Build PDF & ePub
+formats:
+  - epub
+  - pdf
+
 # Where the Sphinx conf.py file is located
 sphinx:
    configuration: docs/source/conf.py
