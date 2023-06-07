@@ -56,7 +56,7 @@ if TRACE:
         return logger.debug(' '.join(isinstance(a, str) and a or repr(a) for a in args))
 
 
-def add_referenced_license_matches_for_package(resource, codebase, no_licenses):
+def add_referenced_license_matches_for_package(resource, codebase):
     """
     Return an updated ``resource`` saving it in place, after adding new license
     detections to the package manifests detected in this resource, following their
@@ -106,13 +106,7 @@ def add_referenced_license_matches_for_package(resource, codebase, no_licenses):
                 if not referenced_resource:
                     continue
 
-                if no_licenses:
-                    referenced_license_detections = get_license_detection_mappings(
-                        location=referenced_resource.location
-                    )
-
-                else:
-                    referenced_license_detections = referenced_resource.license_detections
+                referenced_license_detections = referenced_resource.license_detections
 
                 if referenced_license_detections:
                     modified = True
@@ -160,7 +154,7 @@ def add_referenced_license_matches_for_package(resource, codebase, no_licenses):
             yield resource
 
 
-def add_referenced_license_detection_from_package(resource, codebase, no_licenses):
+def add_referenced_license_detection_from_package(resource, codebase):
     """
     Return an updated ``resource`` saving it in place, after adding new license
     matches (licenses and license_expressions) following their Rule
@@ -209,7 +203,6 @@ def add_referenced_license_detection_from_package(resource, codebase, no_license
             sibling_license_detections, _le = get_license_detections_from_sibling_file(
                 resource=root_resource,
                 codebase=codebase,
-                no_licenses=no_licenses,
             )
             if TRACE:
                 logger_debug(
@@ -278,12 +271,10 @@ def add_referenced_license_detection_from_package(resource, codebase, no_license
         yield resource
 
 
-def add_license_from_sibling_file(resource, codebase, no_licenses):
+def add_license_from_sibling_file(resource, codebase):
     """
     Given a resource and it's codebase object, assign licenses to the package
     detections in that resource, from the sibling files of it.
-
-    If `no_license` is True, then license scan (for resources) is disabled.
     """
     if TRACE:
         logger_debug(f'packagedcode.licensing: add_license_from_sibling_file: resource: {resource.path}')
@@ -303,7 +294,6 @@ def add_license_from_sibling_file(resource, codebase, no_licenses):
     license_detections, license_expression = get_license_detections_from_sibling_file(
         resource=resource,
         codebase=codebase,
-        no_licenses=no_licenses,
     )
     if not license_detections:
         return
@@ -333,13 +323,11 @@ def is_legal_or_readme(resource):
     return False
 
 
-def get_license_detections_from_sibling_file(resource, codebase, no_licenses):
+def get_license_detections_from_sibling_file(resource, codebase):
     """
     Return `license_detections`, a list of LicenseDetection objects and a
     `license_expression`, given a resource and it's codebase object, from
     the sibling files of the resource.
-
-    If `no_license` is True, then license scan (for resources) is disabled.
     """
     siblings = []
 
@@ -357,15 +345,7 @@ def get_license_detections_from_sibling_file(resource, codebase, no_licenses):
 
     license_detections = []
     for sibling in siblings:
-        if no_licenses:
-            detections = get_license_detection_mappings(
-                location=sibling.location,
-                analysis=DetectionCategory.PACKAGE_ADD_FROM_SIBLING_FILE.value,
-                post_scan=True,
-            )
-            license_detections.extend(detections)
-        else:
-            license_detections.extend(sibling.license_detections)
+        license_detections.extend(sibling.license_detections)
 
     if not license_detections:
         return [], None
