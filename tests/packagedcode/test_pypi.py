@@ -32,6 +32,13 @@ class TestPyPiEndtoEnd(PackageTester):
         run_scan_click(['--package', '--strip-root', '--processes', '-1', test_dir, '--json', result_file])
         check_json_scan(expected_file, result_file, remove_uuid=True, regen=REGEN_TEST_FIXTURES)
 
+    def test_package_scan_pypi_end_to_end_full_with_license(self):
+        test_dir = self.get_test_loc('pypi/source-package/pip-22.0.4/')
+        result_file = self.get_temp_file('json')
+        expected_file = self.get_test_loc('pypi/source-package/pip-22.0.4-pypi-package-with-license-expected.json')
+        run_scan_click(['--package', '--license', '--strip-root', '--processes', '-1', test_dir, '--json', result_file])
+        check_json_scan(expected_file, result_file, remove_uuid=True, regen=REGEN_TEST_FIXTURES)
+
     def test_package_scan_pypi_setup_py_end_to_end(self):
         test_dir = self.get_test_loc('pypi/source-package/pip-22.0.4/setup.py')
         result_file = self.get_temp_file('json')

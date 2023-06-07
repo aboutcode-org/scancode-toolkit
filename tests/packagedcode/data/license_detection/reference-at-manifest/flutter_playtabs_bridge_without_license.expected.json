@@ -32,11 +32,11 @@
       "vcs_url": ".",
       "copyright": null,
       "holder": null,
-      "declared_license_expression": "mit",
-      "declared_license_expression_spdx": "MIT",
+      "declared_license_expression": "unknown-license-reference",
+      "declared_license_expression_spdx": "LicenseRef-scancode-unknown-license-reference",
       "license_detections": [
         {
-          "license_expression": "mit",
+          "license_expression": "unknown-license-reference",
           "matches": [
             {
               "score": 100.0,
@@ -50,38 +50,9 @@
               "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/unknown-license-reference_see_license_at_manifest_1.RULE",
               "matched_text": "license :file = ../LICENSE"
-            },
-            {
-              "score": 100.0,
-              "start_line": 1,
-              "end_line": 1,
-              "matched_length": 2,
-              "match_coverage": 100.0,
-              "matcher": "2-aho",
-              "license_expression": "mit",
-              "rule_identifier": "mit_14.RULE",
-              "rule_relevance": 100,
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_14.RULE",
-              "matched_text": "MIT License"
-            },
-            {
-              "score": 100.0,
-              "start_line": 5,
-              "end_line": 21,
-              "matched_length": 161,
-              "match_coverage": 100.0,
-              "matcher": "2-aho",
-              "license_expression": "mit",
-              "rule_identifier": "mit.LICENSE",
-              "rule_relevance": 100,
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE",
-              "matched_text": "Permission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE."
             }
           ],
-          "identifier": "mit-a979a2a3-dfdb-02aa-2450-71641a61a264",
-          "detection_log": [
-            "package-unknown-reference-to-local-file"
-          ]
+          "identifier": "unknown_license_reference-6b24f327-22b1-723e-10f9-37a8bc8b3c70"
         }
       ],
       "other_license_expression": null,
@@ -149,11 +120,11 @@
           "vcs_url": ".",
           "copyright": null,
           "holder": null,
-          "declared_license_expression": "mit",
-          "declared_license_expression_spdx": "MIT",
+          "declared_license_expression": "unknown-license-reference",
+          "declared_license_expression_spdx": "LicenseRef-scancode-unknown-license-reference",
           "license_detections": [
             {
-              "license_expression": "mit",
+              "license_expression": "unknown-license-reference",
               "matches": [
                 {
                   "score": 100.0,
@@ -167,38 +138,9 @@
                   "rule_relevance": 100,
                   "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/unknown-license-reference_see_license_at_manifest_1.RULE",
                   "matched_text": "license :file = ../LICENSE"
-                },
-                {
-                  "score": 100.0,
-                  "start_line": 1,
-                  "end_line": 1,
-                  "matched_length": 2,
-                  "match_coverage": 100.0,
-                  "matcher": "2-aho",
-                  "license_expression": "mit",
-                  "rule_identifier": "mit_14.RULE",
-                  "rule_relevance": 100,
-                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_14.RULE",
-                  "matched_text": "MIT License"
-                },
-                {
-                  "score": 100.0,
-                  "start_line": 5,
-                  "end_line": 21,
-                  "matched_length": 161,
-                  "match_coverage": 100.0,
-                  "matcher": "2-aho",
-                  "license_expression": "mit",
-                  "rule_identifier": "mit.LICENSE",
-                  "rule_relevance": 100,
-                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE",
-                  "matched_text": "Permission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE."
                 }
               ],
-              "identifier": "mit-a979a2a3-dfdb-02aa-2450-71641a61a264",
-              "detection_log": [
-                "package-unknown-reference-to-local-file"
-              ]
+              "identifier": "unknown_license_reference-6b24f327-22b1-723e-10f9-37a8bc8b3c70"
             }
           ],
           "other_license_expression": null,

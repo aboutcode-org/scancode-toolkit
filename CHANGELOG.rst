@@ -42,7 +42,17 @@ v32.1.0 (next, roadmap)
   See https://github.com/nexB/scancode-toolkit/issues/1745
 
 
-v32.0.3 - 2023-05-26
+v32.0.4 - 2023-06-07
+---------------------
+
+This is a minor bugfix release with the following updates:
+
+- Fixes a performance issue issue arising out of license detection
+  on files happening in a single-threaded process_codebase step when the
+  license CLI option is disabled for a package scan.
+  Reference: https://github.com/nexB/scancode-toolkit/pull/3423
+
+v32.0.3 - 2023-06-06
 ---------------------
 
 This is a minor bugfix release with the following updates:

@@ -25,6 +25,13 @@ class TestPackageAndDependency(PackageTester):
         run_scan_click(['--package', '--strip-root', '--processes', '-1', test_dir, '--json', result_file])
         check_json_scan(expected_file, result_file, regen=REGEN_TEST_FIXTURES, remove_uuid=True)
 
+    def test_package_instance_scan_python_with_license(self):
+        test_dir = self.get_test_loc('instance/pypi')
+        result_file = self.get_temp_file('json')
+        expected_file = self.get_test_loc('instance/python-package-instance-with-license-expected.json')
+        run_scan_click(['--package', '--license', '--strip-root', '--processes', '-1', test_dir, '--json', result_file])
+        check_json_scan(expected_file, result_file, regen=REGEN_TEST_FIXTURES, remove_uuid=True)
+
     # Note that this will fail even at regen True.
     # Will pass on the next regen False run.
     # ToDo: Use mocking instead
@@ -41,3 +48,11 @@ class TestPackageAndDependency(PackageTester):
         expected_file = self.get_test_loc('instance/python-package-instance-expected-with-test-manifests.json')
         run_scan_click(['--package', '--strip-root', '--processes', '-1', test_dir, '--json', result_file])
         check_json_scan(expected_file, result_file, regen=REGEN_TEST_FIXTURES, remove_uuid=True)
+    
+    def test_package_instance_scan_python_with_test_manifests_with_license(self):
+        test_dir = self.get_test_loc('instance/pypi-with-test-manifests')
+        result_file = self.get_temp_file('json')
+        expected_file = self.get_test_loc('instance/python-package-instance-expected-with-test-manifests-with-license.json')
+        run_scan_click(['--package', '--license', '--strip-root', '--processes', '-1', test_dir, '--json', result_file])
+        check_json_scan(expected_file, result_file, regen=REGEN_TEST_FIXTURES, remove_uuid=True)
+
