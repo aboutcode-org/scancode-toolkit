@@ -559,12 +559,29 @@
       "datasource_id": "cocoapods_podfile_lock"
     }
   ],
+  "license_detections": [
+    {
+      "identifier": "apache_2_0-08479bef-4de5-8be8-0987-1bec0c232b20",
+      "license_expression": "apache-2.0",
+      "detection_count": 2
+    },
+    {
+      "identifier": "apache_2_0-d310abb3-4d20-b3be-830d-ee37b30a997f",
+      "license_expression": "apache-2.0",
+      "detection_count": 6
+    }
+  ],
   "files": [
     {
       "path": "many-podspecs",
       "type": "directory",
       "package_data": [],
       "for_packages": [],
+      "detected_license_expression": null,
+      "detected_license_expression_spdx": null,
+      "license_detections": [],
+      "license_clues": [],
+      "percentage_of_license_text": 0,
       "scan_errors": []
     },
     {
@@ -645,6 +662,30 @@
       "for_packages": [
         "pkg:cocoapods/AWSPluginsCore@%24AMPLIFY_VERSION?uuid=fixed-uid-done-for-testing-5642512d1758"
       ],
+      "detected_license_expression": "apache-2.0",
+      "detected_license_expression_spdx": "Apache-2.0",
+      "license_detections": [
+        {
+          "license_expression": "apache-2.0",
+          "matches": [
+            {
+              "score": 100.0,
+              "start_line": 25,
+              "end_line": 25,
+              "matched_length": 6,
+              "match_coverage": 100.0,
+              "matcher": "2-aho",
+              "license_expression": "apache-2.0",
+              "rule_identifier": "apache-2.0_68.RULE",
+              "rule_relevance": 100,
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_68.RULE"
+            }
+          ],
+          "identifier": "apache_2_0-d310abb3-4d20-b3be-830d-ee37b30a997f"
+        }
+      ],
+      "license_clues": [],
+      "percentage_of_license_text": 3.3,
       "scan_errors": []
     },
     {
@@ -725,6 +766,30 @@
       "for_packages": [
         "pkg:cocoapods/AWSPredictionsPlugin@%24AMPLIFY_VERSION?uuid=fixed-uid-done-for-testing-5642512d1758"
       ],
+      "detected_license_expression": "apache-2.0",
+      "detected_license_expression_spdx": "Apache-2.0",
+      "license_detections": [
+        {
+          "license_expression": "apache-2.0",
+          "matches": [
+            {
+              "score": 100.0,
+              "start_line": 17,
+              "end_line": 17,
+              "matched_length": 6,
+              "match_coverage": 100.0,
+              "matcher": "2-aho",
+              "license_expression": "apache-2.0",
+              "rule_identifier": "apache-2.0_68.RULE",
+              "rule_relevance": 100,
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_68.RULE"
+            }
+          ],
+          "identifier": "apache_2_0-d310abb3-4d20-b3be-830d-ee37b30a997f"
+        }
+      ],
+      "license_clues": [],
+      "percentage_of_license_text": 3.03,
       "scan_errors": []
     },
     {
@@ -805,6 +870,30 @@
       "for_packages": [
         "pkg:cocoapods/Amplify@%24AMPLIFY_VERSION?uuid=fixed-uid-done-for-testing-5642512d1758"
       ],
+      "detected_license_expression": "apache-2.0",
+      "detected_license_expression_spdx": "Apache-2.0",
+      "license_detections": [
+        {
+          "license_expression": "apache-2.0",
+          "matches": [
+            {
+              "score": 100.0,
+              "start_line": 21,
+              "end_line": 21,
+              "matched_length": 6,
+              "match_coverage": 100.0,
+              "matcher": "2-aho",
+              "license_expression": "apache-2.0",
+              "rule_identifier": "apache-2.0_68.RULE",
+              "rule_relevance": 100,
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_68.RULE"
+            }
+          ],
+          "identifier": "apache_2_0-d310abb3-4d20-b3be-830d-ee37b30a997f"
+        }
+      ],
+      "license_clues": [],
+      "percentage_of_license_text": 2.25,
       "scan_errors": []
     },
     {
@@ -885,6 +974,30 @@
       "for_packages": [
         "pkg:cocoapods/AmplifyPlugins@%24AMPLIFY_VERSION?uuid=fixed-uid-done-for-testing-5642512d1758"
       ],
+      "detected_license_expression": "apache-2.0",
+      "detected_license_expression_spdx": "Apache-2.0",
+      "license_detections": [
+        {
+          "license_expression": "apache-2.0",
+          "matches": [
+            {
+              "score": 100.0,
+              "start_line": 24,
+              "end_line": 24,
+              "matched_length": 6,
+              "match_coverage": 100.0,
+              "matcher": "2-aho",
+              "license_expression": "apache-2.0",
+              "rule_identifier": "apache-2.0_68.RULE",
+              "rule_relevance": 100,
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_68.RULE"
+            }
+          ],
+          "identifier": "apache_2_0-d310abb3-4d20-b3be-830d-ee37b30a997f"
+        }
+      ],
+      "license_clues": [],
+      "percentage_of_license_text": 1.67,
       "scan_errors": []
     },
     {
@@ -965,6 +1078,30 @@
       "for_packages": [
         "pkg:cocoapods/AmplifyTestCommon@%24AMPLIFY_VERSION?uuid=fixed-uid-done-for-testing-5642512d1758"
       ],
+      "detected_license_expression": "apache-2.0",
+      "detected_license_expression_spdx": "Apache-2.0",
+      "license_detections": [
+        {
+          "license_expression": "apache-2.0",
+          "matches": [
+            {
+              "score": 100.0,
+              "start_line": 24,
+              "end_line": 24,
+              "matched_length": 6,
+              "match_coverage": 100.0,
+              "matcher": "2-aho",
+              "license_expression": "apache-2.0",
+              "rule_identifier": "apache-2.0_68.RULE",
+              "rule_relevance": 100,
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_68.RULE"
+            }
+          ],
+          "identifier": "apache_2_0-d310abb3-4d20-b3be-830d-ee37b30a997f"
+        }
+      ],
+      "license_clues": [],
+      "percentage_of_license_text": 2.1,
       "scan_errors": []
     },
     {
@@ -1045,6 +1182,30 @@
       "for_packages": [
         "pkg:cocoapods/CoreMLPredictionsPlugin@%24AMPLIFY_VERSION?uuid=fixed-uid-done-for-testing-5642512d1758"
       ],
+      "detected_license_expression": "apache-2.0",
+      "detected_license_expression_spdx": "Apache-2.0",
+      "license_detections": [
+        {
+          "license_expression": "apache-2.0",
+          "matches": [
+            {
+              "score": 100.0,
+              "start_line": 14,
+              "end_line": 14,
+              "matched_length": 6,
+              "match_coverage": 100.0,
+              "matcher": "2-aho",
+              "license_expression": "apache-2.0",
+              "rule_identifier": "apache-2.0_68.RULE",
+              "rule_relevance": 100,
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_68.RULE"
+            }
+          ],
+          "identifier": "apache_2_0-d310abb3-4d20-b3be-830d-ee37b30a997f"
+        }
+      ],
+      "license_clues": [],
+      "percentage_of_license_text": 5.56,
       "scan_errors": []
     },
     {
@@ -1075,9 +1236,28 @@
           "vcs_url": "",
           "copyright": null,
           "holder": null,
-          "declared_license_expression": null,
-          "declared_license_expression_spdx": null,
-          "license_detections": [],
+          "declared_license_expression": "apache-2.0",
+          "declared_license_expression_spdx": "Apache-2.0",
+          "license_detections": [
+            {
+              "license_expression": "apache-2.0",
+              "matches": [
+                {
+                  "score": 100.0,
+                  "start_line": 2,
+                  "end_line": 175,
+                  "matched_length": 1405,
+                  "match_coverage": 100.0,
+                  "matcher": "1-hash",
+                  "license_expression": "apache-2.0",
+                  "rule_identifier": "apache-2.0_70.RULE",
+                  "rule_relevance": 100,
+                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_70.RULE"
+                }
+              ],
+              "identifier": "apache_2_0-08479bef-4de5-8be8-0987-1bec0c232b20"
+            }
+          ],
           "other_license_expression": null,
           "other_license_expression_spdx": null,
           "other_license_detections": [],
@@ -1097,6 +1277,11 @@
       "for_packages": [
         "pkg:cocoapods/CoreMLPredictionsPlugin@%24AMPLIFY_VERSION?uuid=fixed-uid-done-for-testing-5642512d1758"
       ],
+      "detected_license_expression": null,
+      "detected_license_expression_spdx": null,
+      "license_detections": [],
+      "license_clues": [],
+      "percentage_of_license_text": 0,
       "scan_errors": []
     },
     {
@@ -1127,9 +1312,28 @@
           "vcs_url": null,
           "copyright": null,
           "holder": null,
-          "declared_license_expression": null,
-          "declared_license_expression_spdx": null,
-          "license_detections": [],
+          "declared_license_expression": "apache-2.0",
+          "declared_license_expression_spdx": "Apache-2.0",
+          "license_detections": [
+            {
+              "license_expression": "apache-2.0",
+              "matches": [
+                {
+                  "score": 100.0,
+                  "start_line": 2,
+                  "end_line": 175,
+                  "matched_length": 1405,
+                  "match_coverage": 100.0,
+                  "matcher": "1-hash",
+                  "license_expression": "apache-2.0",
+                  "rule_identifier": "apache-2.0_70.RULE",
+                  "rule_relevance": 100,
+                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_70.RULE"
+                }
+              ],
+              "identifier": "apache_2_0-08479bef-4de5-8be8-0987-1bec0c232b20"
+            }
+          ],
           "other_license_expression": null,
           "other_license_expression_spdx": null,
           "other_license_detections": [],
@@ -1230,6 +1434,11 @@
       "for_packages": [
         "pkg:cocoapods/CoreMLPredictionsPlugin@%24AMPLIFY_VERSION?uuid=fixed-uid-done-for-testing-5642512d1758"
       ],
+      "detected_license_expression": null,
+      "detected_license_expression_spdx": null,
+      "license_detections": [],
+      "license_clues": [],
+      "percentage_of_license_text": 0,
       "scan_errors": []
     },
     {
@@ -1237,6 +1446,30 @@
       "type": "file",
       "package_data": [],
       "for_packages": [],
+      "detected_license_expression": "apache-2.0",
+      "detected_license_expression_spdx": "Apache-2.0",
+      "license_detections": [
+        {
+          "license_expression": "apache-2.0",
+          "matches": [
+            {
+              "score": 100.0,
+              "start_line": 2,
+              "end_line": 175,
+              "matched_length": 1405,
+              "match_coverage": 100.0,
+              "matcher": "1-hash",
+              "license_expression": "apache-2.0",
+              "rule_identifier": "apache-2.0_70.RULE",
+              "rule_relevance": 100,
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_70.RULE"
+            }
+          ],
+          "identifier": "apache_2_0-08479bef-4de5-8be8-0987-1bec0c232b20"
+        }
+      ],
+      "license_clues": [],
+      "percentage_of_license_text": 100.0,
       "scan_errors": []
     }
   ]

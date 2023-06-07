@@ -14,6 +14,8 @@ from collections import defaultdict
 
 from commoncode import fileutils
 
+from licensedcode.cache import build_spdx_license_expression
+from licensedcode.cache import get_cache
 from licensedcode.tokenize import query_tokenizer
 from licensedcode.detection import detect_licenses
 from licensedcode.detection import get_unknown_license_detection
@@ -122,6 +124,11 @@ class BaseStarlarkManifestHandler(models.DatafileHandler):
                     resource=resource,
                     codebase=codebase,
                 )
+            if package.declared_license_expression:
+                package.declared_license_expression_spdx = str(build_spdx_license_expression(
+                    license_expression=package.declared_license_expression,
+                    licensing=get_cache().licensing,
+                ))
 
             cls.assign_package_to_resources(
                 package=package,
@@ -131,6 +138,7 @@ class BaseStarlarkManifestHandler(models.DatafileHandler):
             )
 
             yield package
+
 
         # we yield this as we do not want this further processed
         yield resource
