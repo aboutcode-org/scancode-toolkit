@@ -196,21 +196,6 @@ class LicenseScanner(ScanPlugin):
         if codebase.has_single_resource and not codebase.root.is_file:
             return
 
-        license_detections = collect_license_detections(
-            codebase=codebase,
-            include_license_clues=False
-        )
-        unique_license_detections = UniqueDetection.get_unique_detections(
-            license_detections=license_detections,
-        )
-
-        if TRACE:
-            logger_debug(
-                f'process_codebase: codebase license_detections',
-                f'license_detections: {license_detections}\n',
-                f'unique_license_detections: {unique_license_detections}',
-            )
-
         modified = False
         for resource in codebase.walk(topdown=False):
             # follow license references to other files
@@ -227,6 +212,21 @@ class LicenseScanner(ScanPlugin):
                     f'before: {license_expressions_before}\n'
                     f'after : {license_expressions_after}'
                 )
+
+        license_detections = collect_license_detections(
+            codebase=codebase,
+            include_license_clues=False
+        )
+        unique_license_detections = UniqueDetection.get_unique_detections(
+            license_detections=license_detections,
+        )
+
+        if TRACE:
+            logger_debug(
+                f'process_codebase: codebase license_detections',
+                f'license_detections: {license_detections}\n',
+                f'unique_license_detections: {unique_license_detections}',
+            )
 
         codebase.attributes.license_detections.extend([
             unique_detection.to_dict(license_diagnostics=license_diagnostics)

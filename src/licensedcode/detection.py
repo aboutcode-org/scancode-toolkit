@@ -698,35 +698,32 @@ def collect_license_detections(codebase, include_license_clues=True):
                     detection.file_region = detection.get_file_region(path=resource.path)
                     resource_license_detections.append(detection)
 
-        all_license_detections.extend(
-            list(process_detections(detections=resource_license_detections))
-        )
+            all_license_detections.extend(resource_license_detections)
 
-    if TRACE:
-        logger_debug(
-            f'before process_detections licenses:',
-            f'resource_license_detections: {resource_license_detections}\n',
-            f'all_license_detections: {all_license_detections}',
-        )
+        if TRACE:
+            logger_debug(
+                f'license detections collected at path {resource.path}:',
+                f'resource_license_detections: {resource_license_detections}\n',
+                f'all_license_detections: {all_license_detections}',
+            )
 
-    if has_packages:
-        package_data = getattr(resource, 'package_data', []) or []
+        if has_packages:
+            package_data = getattr(resource, 'package_data', []) or []
 
-        package_license_detection_mappings = []
-        for package in package_data:
+            package_license_detection_mappings = []
+            for package in package_data:
 
-            if package["license_detections"]:
-                package_license_detection_mappings.extend(package["license_detections"])
+                if package["license_detections"]:
+                    package_license_detection_mappings.extend(package["license_detections"])
 
-            if package["other_license_detections"]:
-                package_license_detection_mappings.extend(package["other_license_detections"])
+                if package["other_license_detections"]:
+                    package_license_detection_mappings.extend(package["other_license_detections"])
 
             if package_license_detection_mappings:
                 package_license_detection_objects = detections_from_license_detection_mappings(
                     license_detection_mappings=package_license_detection_mappings,
                     file_path=resource.path,
                 )
-
                 all_license_detections.extend(package_license_detection_objects)
 
     return all_license_detections

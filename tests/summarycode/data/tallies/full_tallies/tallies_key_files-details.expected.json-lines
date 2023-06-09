@@ -22,9 +22,9 @@
           "system_environment": {
             "operating_system": "linux",
             "cpu_architecture": "64",
-            "platform": "Linux-4.15.0-208-generic-x86_64-with-glibc2.23",
-            "platform_version": "#219~16.04.1-Ubuntu SMP Mon Mar 20 20:41:53 UTC 2023",
-            "python_version": "3.9.10 (main, Jan 29 2022, 10:01:49) \n[GCC 5.4.0 20160609]"
+            "platform": "Linux-5.15.0-73-generic-x86_64-with-glibc2.29",
+            "platform_version": "#80~20.04.1-Ubuntu SMP Wed May 17 14:58:14 UTC 2023",
+            "python_version": "3.8.10 (default, May 26 2023, 14:05:08) \n[GCC 9.4.0]"
           },
           "spdx_license_list_version": "3.20",
           "files_count": 26
@@ -45,9 +45,9 @@
         "detection_count": 1
       },
       {
-        "identifier": "zlib-27de81f4-f6ce-2bf5-ab37-9a4c71f4b296",
+        "identifier": "zlib-663c0d51-510f-fca6-b163-671ecb188ff9",
         "license_expression": "zlib",
-        "detection_count": 9
+        "detection_count": 7
       },
       {
         "identifier": "zlib-b04102d0-a663-78b5-de18-9677ee48ce9c",
@@ -78,6 +78,11 @@
         "identifier": "zlib-f32ae987-c66a-44ce-bd13-c90e0c59aab8",
         "license_expression": "zlib",
         "detection_count": 1
+      },
+      {
+        "identifier": "zlib-27de81f4-f6ce-2bf5-ab37-9a4c71f4b296",
+        "license_expression": "zlib",
+        "detection_count": 2
       },
       {
         "identifier": "mit_old_style-578ee504-a9b5-6c26-1bb4-fd7b80a664f0",

@@ -283,6 +283,11 @@
       "detection_count": 1
     },
     {
+      "identifier": "mit-a822f434-d61f-f2b1-c792-8b8cb9e7b9bf",
+      "license_expression": "mit",
+      "detection_count": 1
+    },
+    {
       "identifier": "gpl_2_0_plus-1db96703-cb36-48f4-1493-265d3d85eb9e",
       "license_expression": "gpl-2.0-plus",
       "detection_count": 1

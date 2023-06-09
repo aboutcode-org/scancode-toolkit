@@ -7,10 +7,12 @@
       "detection_log": []
     },
     {
-      "identifier": "unknown_license_reference-8dac7670-e286-f6de-27a1-f2b5c87524ff",
-      "license_expression": "unknown-license-reference",
+      "identifier": "mit-20c01557-97bd-0022-052e-56c5ed8465ea",
+      "license_expression": "mit",
       "detection_count": 1,
-      "detection_log": []
+      "detection_log": [
+        "unknown-reference-to-local-file"
+      ]
     }
   ],
   "files": [

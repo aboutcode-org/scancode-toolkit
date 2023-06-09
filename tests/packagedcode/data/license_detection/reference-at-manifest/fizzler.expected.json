@@ -148,10 +148,12 @@
       "detection_log": []
     },
     {
-      "identifier": "unknown_license_reference-45e84991-3b5b-bfa7-1b2f-7413856c448d",
-      "license_expression": "unknown-license-reference",
+      "identifier": "lgpl-2.0-plus AND gpl-1.0-plus-17115808-8fc8-9c98-b64d-c5013bcbde1b",
+      "license_expression": "lgpl-2.0-plus AND gpl-1.0-plus",
       "detection_count": 1,
-      "detection_log": []
+      "detection_log": [
+        "unknown-reference-to-local-file"
+      ]
     },
     {
       "identifier": "lgpl-2.0-plus AND gpl-1.0-plus-de66a0ae-df4d-ab6b-975e-8deb27c0f945",

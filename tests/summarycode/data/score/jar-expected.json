@@ -240,6 +240,16 @@
       "detection_count": 1
     },
     {
+      "identifier": "apache_2_0-428c1364-ecb5-f806-7a2e-77d10737a7ce",
+      "license_expression": "apache-2.0",
+      "detection_count": 1
+    },
+    {
+      "identifier": "apache_2_0-2e855fd2-d4e6-f202-a2a4-6953b9354518",
+      "license_expression": "apache-2.0",
+      "detection_count": 1
+    },
+    {
       "identifier": "apache_2_0-c4e30bcd-ccfd-bbc3-d2f1-196ab911e47d",
       "license_expression": "apache-2.0",
       "detection_count": 2
