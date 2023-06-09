@@ -200,3 +200,9 @@ class TestCocoapodsEndToEndAssemble(PackageTester):
         run_scan_click(['--package', test_file, '--json', result_file])
         check_json_scan(expected_file, result_file, remove_uuid=True, regen=REGEN_TEST_FIXTURES)
 
+    def test_cocoapods_can_assemble_with_many_podspecs_podfile_and_podfile_lock_with_license(self):
+        test_file = self.get_test_loc('cocoapods/assemble/many-podspecs')
+        expected_file = self.get_test_loc('cocoapods/assemble/many-podspecs-with-license-expected.json', must_exist=False)
+        result_file = self.get_temp_file('results.json')
+        run_scan_click(['--package', '--license', test_file, '--json', result_file])
+        check_json_scan(expected_file, result_file, remove_uuid=True, regen=REGEN_TEST_FIXTURES)

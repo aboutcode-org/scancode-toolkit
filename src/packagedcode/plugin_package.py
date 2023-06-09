@@ -194,17 +194,19 @@ class PackageScanner(ScanPlugin):
         Also perform additional package license detection that depends on either
         file license detection or the package detections.
         """
-        no_licenses = False
+        has_licenses = hasattr(codebase.root, 'license_detections')
 
         # These steps add proper license detections to package_data and hence
         # this is performed before top level packages creation
         for resource in codebase.walk(topdown=False):
-            if not hasattr(resource, 'license_detections'):
-                no_licenses = True
+            if not has_licenses:
+                #TODO: Add the steps where we detect licenses from files for only a package scan
+                # in the multiprocessing get_package_data API function
+                continue
 
             # If we don't detect license in package_data but there is license detected in file
             # we add the license expression from the file to a package
-            modified = add_license_from_file(resource, codebase, no_licenses)
+            modified = add_license_from_file(resource, codebase)
             if TRACE and modified:
                 logger_debug(f'packagedcode: process_codebase: add_license_from_file: modified: {modified}')
 
@@ -213,30 +215,30 @@ class PackageScanner(ScanPlugin):
 
             # If there is referenced files in a extracted license statement, we follow
             # the references, look for license detections and add them back
-            modified = list(add_referenced_license_matches_for_package(resource, codebase, no_licenses))
+            modified = list(add_referenced_license_matches_for_package(resource, codebase))
             if TRACE and modified:
                 logger_debug(f'packagedcode: process_codebase: add_referenced_license_matches_for_package: modified: {modified}')
 
             # If there is a LICENSE file on the same level as the manifest, and no license
             # is detected in the package_data, we add the license from the file
-            modified = add_license_from_sibling_file(resource, codebase, no_licenses)
+            modified = add_license_from_sibling_file(resource, codebase)
             if TRACE and modified:
                 logger_debug(f'packagedcode: process_codebase: add_license_from_sibling_file: modified: {modified}')
 
         # Create codebase-level packages and dependencies
         create_package_and_deps(codebase, strip_root=strip_root, **kwargs)
 
-        if not no_licenses:
+        if has_licenses:
             # This step is dependent on top level packages
             for resource in codebase.walk(topdown=False):
                 # If there is a unknown reference to a package we add the license
                 # from the package license detection
-                modified = list(add_referenced_license_detection_from_package(resource, codebase, no_licenses))
+                modified = list(add_referenced_license_detection_from_package(resource, codebase))
                 if TRACE and modified:
                     logger_debug(f'packagedcode: process_codebase: add_referenced_license_matches_from_package: modified: {modified}')
 
 
-def add_license_from_file(resource, codebase, no_licenses):
+def add_license_from_file(resource, codebase):
     """
     Given a Resource, check if the detected package_data doesn't have license detections
     and the file has license detections, and if so, populate the package_data license
@@ -248,10 +250,7 @@ def add_license_from_file(resource, codebase, no_licenses):
     if not resource.is_file:
         return
 
-    if no_licenses:
-        license_detections_file = get_license_detection_mappings(location=resource.location)
-    else:
-        license_detections_file = resource.license_detections
+    license_detections_file = resource.license_detections
 
     if TRACE:
         logger_debug(f'add_license_from_file: license_detections_file: {license_detections_file}')
