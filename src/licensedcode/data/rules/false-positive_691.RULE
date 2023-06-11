@@ -1,0 +1,7 @@
+---
+is_false_positive: yes
+notes: not a license statement, seen in Log4J org/apache/logging/log4j/core/appender/mom/jeromq/JeroMqAppender.java
+    Just a note about external deps.
+---
+
+Requires the JeroMQ jar (LGPL as of 0.3.5)

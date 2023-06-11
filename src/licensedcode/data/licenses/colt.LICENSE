@@ -15,7 +15,7 @@ ignorable_holders:
     - CERN - European Organization for Nuclear Research
 ignorable_authors:
     - Pavel Binko, Dino Ferrero Merlino, Wolfgang Hoschek, Tony Johnson, Andreas Pfeiffer, and
-        others. Check the FreeHEP
+        others. Check
 ignorable_urls:
     - http://acs.lbl.gov/software/colt/license.html
 ---

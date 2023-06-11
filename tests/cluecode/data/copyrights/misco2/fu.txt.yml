@@ -1,0 +1,16 @@
+what:
+  - copyrights
+  - holders
+  - holders_summary
+  - authors
+copyrights:
+  - Copyright (c) 2021-Present Anthony Fu <https://github.com/antfu>
+  - Copyright (c) 2021-Present Matias Capeletto <https://github.com/patak-dev>
+holders:
+  - Anthony Fu
+  - Matias Capeletto
+holders_summary:
+  - value: Anthony Fu
+    count: 1
+  - value: Matias Capeletto
+    count: 1

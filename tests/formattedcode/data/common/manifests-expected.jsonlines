@@ -20,9 +20,9 @@
           "system_environment": {
             "operating_system": "linux",
             "cpu_architecture": "64",
-            "platform": "Linux-5.15.0-72-generic-x86_64-with-glibc2.29",
-            "platform_version": "#79~20.04.1-Ubuntu SMP Thu Apr 20 22:12:07 UTC 2023",
-            "python_version": "3.8.10 (default, Mar 13 2023, 10:26:41) \n[GCC 9.4.0]"
+            "platform": "Linux-5.15.0-73-generic-x86_64-with-glibc2.29",
+            "platform_version": "#80~20.04.1-Ubuntu SMP Wed May 17 14:58:14 UTC 2023",
+            "python_version": "3.8.10 (default, May 26 2023, 14:05:08) \n[GCC 9.4.0]"
           },
           "spdx_license_list_version": "3.20",
           "files_count": 4
@@ -507,7 +507,17 @@
   {
     "license_detections": [
       {
-        "identifier": "cddl_1_0-ce8b3a58-f284-e7dd-22b3-c4d82f97dfe3",
+        "identifier": "cddl_1_0-c6dbef4d-659c-289f-5ee9-1ca0278edad6",
+        "license_expression": "cddl-1.0",
+        "detection_count": 1
+      },
+      {
+        "identifier": "cddl_1_0-9893b55c-3b2b-4ee8-a932-6c6c93a63fc5",
+        "license_expression": "cddl-1.0",
+        "detection_count": 1
+      },
+      {
+        "identifier": "cddl_1_0-ef82fc8c-50cb-6f35-1814-d2eb0bc13e83",
         "license_expression": "cddl-1.0",
         "detection_count": 1
       },
@@ -519,10 +529,15 @@
       {
         "identifier": "apache_2_0-d66ab77d-a5cc-7104-e702-dc7df61fe9e8",
         "license_expression": "apache-2.0",
-        "detection_count": 1
+        "detection_count": 3
       },
       {
         "identifier": "mit-3fce6ea2-8abd-6c6b-3ede-a37af7c6efee",
+        "license_expression": "mit",
+        "detection_count": 1
+      },
+      {
+        "identifier": "mit-a822f434-d61f-f2b1-c792-8b8cb9e7b9bf",
         "license_expression": "mit",
         "detection_count": 1
       },
@@ -742,6 +757,18 @@
             "license_expression": "cddl-1.0",
             "matches": [
               {
+                "score": 16.0,
+                "start_line": 17,
+                "end_line": 19,
+                "matched_length": 3,
+                "match_coverage": 100.0,
+                "matcher": "2-aho",
+                "license_expression": "unknown-license-reference",
+                "rule_identifier": "license-intro_72.RULE",
+                "rule_relevance": 16,
+                "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/license-intro_72.RULE"
+              },
+              {
                 "score": 82.35,
                 "start_line": 18,
                 "end_line": 20,
@@ -754,11 +781,11 @@
                 "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/cddl-1.0_32.RULE"
               }
             ],
-            "identifier": "cddl_1_0-ce8b3a58-f284-e7dd-22b3-c4d82f97dfe3"
+            "identifier": "cddl_1_0-c6dbef4d-659c-289f-5ee9-1ca0278edad6"
           }
         ],
         "license_clues": [],
-        "percentage_of_license_text": 8.09,
+        "percentage_of_license_text": 9.25,
         "copyrights": [],
         "holders": [],
         "authors": [],
@@ -1069,7 +1096,13 @@
         "percentage_of_license_text": 5.51,
         "copyrights": [],
         "holders": [],
-        "authors": [],
+        "authors": [
+          {
+            "author": "Spencer Alger",
+            "start_line": 7,
+            "end_line": 8
+          }
+        ],
         "files_count": 0,
         "dirs_count": 0,
         "size_count": 0,

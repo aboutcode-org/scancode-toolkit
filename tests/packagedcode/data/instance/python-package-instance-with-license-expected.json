@@ -152,12 +152,12 @@
     {
       "identifier": "bsd_new_and__bsd_new_and_bsd_simplified-6feee5ac-439e-c60c-2478-86ff52373283",
       "license_expression": "bsd-new AND (bsd-new AND bsd-simplified)",
-      "detection_count": 1
+      "detection_count": 2
     },
     {
       "identifier": "bsd_new-f4e99f86-00ab-18d9-a65d-a3a12767dcf5",
       "license_expression": "bsd-new",
-      "detection_count": 1
+      "detection_count": 2
     }
   ],
   "files": [

@@ -1,0 +1,9 @@
+---
+license_expression: osl-3.0
+is_license_tag: yes
+relevance: 100
+ignorable_urls:
+    - http://opensource.org/licenses/osl-3.0.php
+---
+
+@license    http://opensource.org/licenses/osl-3.0.php

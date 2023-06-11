@@ -1,0 +1,9 @@
+---
+license_expression: vsl-1.0
+is_license_reference: yes
+relevance: 100
+ignorable_urls:
+    - http://www.opensource.org/licenses/vovidapl.php
+---
+
+http://www.opensource.org/licenses/vovidapl.php Vovida Software License v. 1.0

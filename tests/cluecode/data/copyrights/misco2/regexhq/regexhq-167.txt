@@ -1,0 +1,1 @@
+Copyright (c) 2014 Sellside, Jon Schlinkert and Brian Woodward

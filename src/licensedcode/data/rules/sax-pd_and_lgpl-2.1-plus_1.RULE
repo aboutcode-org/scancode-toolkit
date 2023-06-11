@@ -1,0 +1,12 @@
+---
+license_expression: sax-pd AND lgpl-2.1-plus
+is_license_notice: yes
+minimum_coverage: 99
+referenced_filenames:
+    - LICENSE_TESTS.txt
+---
+
+All of the XMLPULL API source code, compiled code, and documentation
+contained in this distribution *except* for tests (see separate LICENSE_TESTS.txt)
+are in the Public Domain.
+XMLPULL API comes with NO WARRANTY or guarantee of fitness for any purpose.

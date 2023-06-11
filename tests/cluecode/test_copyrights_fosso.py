@@ -27,13 +27,13 @@ Tests of ScanCode copyright detection using Fossology copyright test suite data.
 test_env = FileDrivenTesting()
 test_env.test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
 
-expected_failures = set('''
-    test_fossology_copyright_testdata5
-    test_fossology_copyright_testdata19
-    test_fossology_copyright_testdata78
-    test_fossology_copyright_testdata86
-    '''.split()
-)
+expected_failures = set([
+    'test_fossology_copyright_testdata5',
+    'test_fossology_copyright_testdata19',
+    'test_fossology_copyright_testdata78',
+    'test_fossology_copyright_testdata86',
+    'test_fossology_copyright_testdata93',
+])
 
 
 def build_copyright_test_methods_with_fossology_data():

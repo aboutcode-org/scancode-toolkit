@@ -1,0 +1,54 @@
+   <span><i class="fa fa-copyright"></i> Tui2Tone Labs, 2015</span>
+
+
+
+        Copyright <span><i class="fas fa-copyright"></i></span> 2020 by the authors |
+
+
+
+
+    <div class="mx-2 d-flex align-items-center"><i class="fas fa-copyright mx-2"></i> Porksmash 2022</div>
+
+
+
+
+        <div> <span class="fa-regular fa-copyright"></span>2023<a href="http://www.jboss.org">JBoss by Red Hat</a>-
+
+
+    <i class="fa fa-copyright"></i> Copyright 2022, LLC «V Kontakte»
+
+
+
+   <p ><i class="fa-regular fa-copyright"></i> 2022 Bath & Body Works Direct, Inc. All Rights Reserved.</p>
+
+
+
+
+	<div class="container">
+		<i class="glyphicon glyphicon-copyright-mark"></i> 2013 电子科技大学 · 轻 · 开发模式 · <?php 
+
+
+
+  <p class="navbar-text pull-left"><span class="glyphicon glyphicon-copyright-mark"></span> Harha 2016</p>
+
+
+
+
+    <p><span class="glyphicon glyphicon-copyright-mark" aria-hidden="true"></span> Todos los derechos reservados 2016 - Ninoska Corredor y Liz Garcia.</p>
+
+
+
+		Copyright <span class="glyphicon glyphicon-copyright-mark"></span> <a href="http://www.dalegroup.net/">Dalegroup
+
+
+                        <span class="glyphicon glyphicon-copyright-mark"></span> Diptesh, 2016 <br>
+						Original Template Credits to: Prashanth, 2016 <br>
+                        All Rights Reserved.
+
+
+<footer class="footer">
+  <p><span class="glyphicon glyphicon-copyright-mark" aria-hidden="true"></span> 2015 Shipfairy LLC</p>
+</footer>
+
+
+      <div class="copyright">Copyright <span class="glyphicon glyphicon-copyright-mark"></span> 1998 - 2014 Rubix. Alle rechten voorbehouden.</div>

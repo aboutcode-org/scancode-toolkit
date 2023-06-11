@@ -3342,9 +3342,14 @@
       "detection_count": 1
     },
     {
-      "identifier": "zlib-27de81f4-f6ce-2bf5-ab37-9a4c71f4b296",
+      "identifier": "artistic_2_0-2ca48deb-7b37-fc93-edd9-b349ad073774",
+      "license_expression": "artistic-2.0",
+      "detection_count": 1
+    },
+    {
+      "identifier": "zlib-663c0d51-510f-fca6-b163-671ecb188ff9",
       "license_expression": "zlib",
-      "detection_count": 9
+      "detection_count": 7
     },
     {
       "identifier": "zlib-b04102d0-a663-78b5-de18-9677ee48ce9c",
@@ -3375,6 +3380,11 @@
       "identifier": "zlib-f32ae987-c66a-44ce-bd13-c90e0c59aab8",
       "license_expression": "zlib",
       "detection_count": 1
+    },
+    {
+      "identifier": "zlib-27de81f4-f6ce-2bf5-ab37-9a4c71f4b296",
+      "license_expression": "zlib",
+      "detection_count": 2
     },
     {
       "identifier": "mit_old_style-578ee504-a9b5-6c26-1bb4-fd7b80a664f0",
@@ -3539,7 +3549,7 @@
         "count": 1
       },
       {
-        "value": "name' Isaac Z.",
+        "value": "Isaac Z. Schlueter",
         "count": 1
       }
     ],
@@ -3749,7 +3759,7 @@
             "count": 1
           },
           {
-            "value": "name' Isaac Z.",
+            "value": "Isaac Z. Schlueter",
             "count": 1
           }
         ],
@@ -8263,7 +8273,7 @@
       "holders": [],
       "authors": [
         {
-          "author": "name' Isaac Z.",
+          "author": "Isaac Z. Schlueter",
           "start_line": 16,
           "end_line": 17
         }
@@ -8289,7 +8299,7 @@
         ],
         "authors": [
           {
-            "value": "name' Isaac Z.",
+            "value": "Isaac Z. Schlueter",
             "count": 1
           }
         ],

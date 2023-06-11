@@ -77,7 +77,7 @@
     {
       "identifier": "apache_2_0-d66ab77d-a5cc-7104-e702-dc7df61fe9e8",
       "license_expression": "apache-2.0",
-      "detection_count": 3
+      "detection_count": 4
     }
   ],
   "consolidated_components": [

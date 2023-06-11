@@ -1,0 +1,6 @@
+---
+is_false_positive: yes
+notes: seen in repo1.maven.org/maven2/net/bytebuddy/byte-buddy-parent/1.11.20/byte-buddy-parent-1.11.20.pom
+---
+
+<version.plugin.license>3.0</version.plugin.license>

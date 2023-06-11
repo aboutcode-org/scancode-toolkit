@@ -1,0 +1,6 @@
+---
+is_false_positive: yes
+notes: Seen in https://github.com/boostorg/bcp/blob/772ec6a9bd7395193ce300aeb28cd188ad8e6cbc/licence_info.cpp
+---
+
+3)(?4Public Domain

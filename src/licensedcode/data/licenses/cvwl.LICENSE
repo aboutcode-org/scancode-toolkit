@@ -8,7 +8,7 @@ homepage_url: https://opensource.org/licenses/mitrepl
 spdx_license_key: LicenseRef-scancode-cvwl
 minimum_coverage: 30
 ignorable_copyrights:
-    - Copyright (c) . The MITRE Corporation (http://www.mitre.org/)
+    - Copyright (c) The MITRE Corporation (http://www.mitre.org/)
 ignorable_holders:
     - The MITRE Corporation
 ignorable_urls:

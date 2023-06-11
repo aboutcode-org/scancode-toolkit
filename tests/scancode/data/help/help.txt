@@ -128,6 +128,8 @@ Options:
     --tallies-with-details   Compute tallies of license, copyright and other scans
                              at the codebase level, keeping intermediate details
                              at the file and directory level.
+    --todo                   Summarize scans by providing all ambiguous detections
+                             which are todo items and needs manual review.
 
   core:
     --timeout <seconds>      Stop an unfinished file scan after a timeout in

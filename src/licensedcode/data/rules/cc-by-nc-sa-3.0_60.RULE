@@ -1,0 +1,10 @@
+---
+license_expression: cc-by-nc-sa-3.0
+is_license_notice: yes
+relevance: 100
+notes: https://github.com/vooon/OpenPilot/blob/e762bbaef8052b98f36be98a5bded6d3a6c84921/LICENSE.txt#L12
+ignorable_urls:
+    - http://creativecommons.org/licenses/by-nc-sa/3.0/
+---
+
+For details the non-commercial license please see: http://creativecommons.org/licenses/by-nc-sa/3.0/

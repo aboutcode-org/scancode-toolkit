@@ -1,0 +1,11 @@
+---
+license_expression: gpl-2.0 WITH classpath-exception-2.0 OR cddl-1.1
+is_license_reference: yes
+is_continuous: yes
+referenced_filenames:
+    - https://github.com/javaee/javax.annotation/blob/master/LICENSE
+ignorable_urls:
+    - https://github.com/javaee/javax.annotation/blob/master/LICENSE
+---
+
+{{https://github.com/javaee/javax.annotation/blob/master/LICENSE}}

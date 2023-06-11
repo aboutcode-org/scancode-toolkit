@@ -1,0 +1,12 @@
+---
+license_expression: python
+is_license_notice: yes
+relevance: 100
+minimum_coverage: 100
+notes: from Python 3 datetime.py https://github.com/python/cpython/blob/8d0f09b1beafd95763a5da53acc58dac0bd63a53/Lib/datetime.py#L1190
+ignorable_urls:
+    - http://www.phys.uu.nl/~vgent/calendar/isocalendar.htm
+---
+
+ISO calendar algorithm taken from http://www.phys.uu.nl/~vgent/calendar/isocalendar.htm
+(used with permission)

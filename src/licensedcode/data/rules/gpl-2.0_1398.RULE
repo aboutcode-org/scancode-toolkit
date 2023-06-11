@@ -1,0 +1,12 @@
+---
+license_expression: gpl-2.0
+is_license_notice: yes
+referenced_filenames:
+    - LICENSE.txt
+ignorable_urls:
+    - https://opensource.org/licenses/gpl-2.0.php
+---
+
+# License: GPLv2, see https://opensource.org/licenses/gpl-2.0.php and
+# accompanying license "LICENSE.txt". Redistribution + modification under this
+# license permitted.

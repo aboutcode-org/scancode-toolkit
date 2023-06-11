@@ -1,0 +1,1 @@
+// Copyright 2011 Joyent, Inc.  All rights reserved.

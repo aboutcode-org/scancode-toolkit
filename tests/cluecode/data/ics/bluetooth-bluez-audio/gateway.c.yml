@@ -6,12 +6,12 @@ copyrights:
   - Copyright (c) 2006-2010 Nokia Corporation
   - Copyright (c) 2004-2010 Marcel Holtmann <marcel@holtmann.org>
   - Copyright (c) 2008-2009 Leonid Movshovich <event.riga@gmail.org>
-  - Copyright (c) 2010 ProFUSION
+  - Copyright (c) 2010 ProFUSION embedded systems
 holders:
   - Nokia Corporation
   - Marcel Holtmann
   - Leonid Movshovich
-  - ProFUSION
+  - ProFUSION embedded systems
 holders_summary:
   - value: Leonid Movshovich
     count: 1
@@ -19,6 +19,5 @@ holders_summary:
     count: 1
   - value: Nokia Corporation
     count: 1
-  - value: ProFUSION
+  - value: ProFUSION embedded systems
     count: 1
-notes: ProFUSION embedded systems should be detected

@@ -1,0 +1,10 @@
+---
+license_expression: gpl-3.0
+is_license_notice: yes
+ignorable_urls:
+    - http://www.gnu.org/licenses/gpl-3.0.html
+---
+
+Licensed under version 3 of the GPL.
+   For full details of license, see:
+   http://www.gnu.org/licenses/gpl-3.0.html

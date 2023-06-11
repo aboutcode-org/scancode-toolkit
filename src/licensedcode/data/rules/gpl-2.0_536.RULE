@@ -4,7 +4,7 @@ is_license_notice: yes
 minimum_coverage: 95
 notes: this was a choice but the notice measn the GPL was selected
 ignorable_authors:
-    - Andy Polyakov <appro@openssl.org> for the OpenSSL project
+    - Andy Polyakov <appro@openssl.org>
 ignorable_urls:
     - http://www.openssl.org/~appro/cryptogams
     - https://www.openssl.org/~appro/cryptogams/

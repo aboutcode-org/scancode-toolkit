@@ -1,0 +1,14 @@
+---
+license_expression: authorizenet-sdk
+is_license_tag: yes
+ignorable_urls:
+    - https://github.com/AuthorizeNet/sdk-java/blob/master/LICENSE.txt
+---
+
+<licenses>
+        <license>
+            <name>SDK License Agreement</name>
+            <url>{{https://github.com/AuthorizeNet/sdk-java/blob/master/LICENSE.txt}}</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>

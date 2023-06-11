@@ -4,7 +4,7 @@ is_license_notice: yes
 relevance: 100
 minimum_coverage: 80
 ignorable_authors:
-    - Andy Polyakov <appro@fy.chalmers.se> for the OpenSSL project
+    - Andy Polyakov <appro@fy.chalmers.se>
 ignorable_emails:
     - appro@fy.chalmers.se
 ---

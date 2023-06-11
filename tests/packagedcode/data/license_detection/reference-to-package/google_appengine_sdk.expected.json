@@ -192,25 +192,29 @@
     {
       "identifier": "bsd_new-f4e99f86-00ab-18d9-a65d-a3a12767dcf5",
       "license_expression": "bsd-new",
-      "detection_count": 3,
+      "detection_count": 6,
       "detection_log": []
     },
     {
       "identifier": "bsd-new-cdb8fe96-c13c-043d-8031-aebb4cd77653",
       "license_expression": "bsd-new",
       "detection_count": 5,
-      "detection_log": []
+      "detection_log": [
+        "unknown-reference-in-file-to-package"
+      ]
     },
     {
       "identifier": "bsd-new-734cc7c8-5d13-b9e1-3f7c-d04a0d9396c7",
       "license_expression": "bsd-new",
       "detection_count": 2,
-      "detection_log": []
+      "detection_log": [
+        "unknown-reference-in-file-to-package"
+      ]
     },
     {
       "identifier": "bsd_new-72cae3bc-4423-3a9e-be84-ee8bb5120a4d",
       "license_expression": "bsd-new",
-      "detection_count": 1,
+      "detection_count": 2,
       "detection_log": []
     }
   ],

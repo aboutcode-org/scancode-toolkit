@@ -29,9 +29,9 @@ headers:
       system_environment:
         operating_system: linux
         cpu_architecture: 64
-        platform: Linux-5.15.0-72-generic-x86_64-with-glibc2.29
-        platform_version: '#79~20.04.1-Ubuntu SMP Thu Apr 20 22:12:07 UTC 2023'
-        python_version: "3.8.10 (default, Mar 13 2023, 10:26:41) \n[GCC 9.4.0]"
+        platform: Linux-5.15.0-73-generic-x86_64-with-glibc2.29
+        platform_version: '#80~20.04.1-Ubuntu SMP Wed May 17 14:58:14 UTC 2023'
+        python_version: "3.8.10 (default, May 26 2023, 14:05:08) \n[GCC 9.4.0]"
       spdx_license_list_version: '3.20'
       files_count: 4
 summary:
@@ -465,7 +465,13 @@ dependencies:
     datafile_path: manifests/npm-license-string/package.json
     datasource_id: npm_package_json
 license_detections:
-  - identifier: cddl_1_0-ce8b3a58-f284-e7dd-22b3-c4d82f97dfe3
+  - identifier: cddl_1_0-c6dbef4d-659c-289f-5ee9-1ca0278edad6
+    license_expression: cddl-1.0
+    detection_count: 1
+  - identifier: cddl_1_0-9893b55c-3b2b-4ee8-a932-6c6c93a63fc5
+    license_expression: cddl-1.0
+    detection_count: 1
+  - identifier: cddl_1_0-ef82fc8c-50cb-6f35-1814-d2eb0bc13e83
     license_expression: cddl-1.0
     detection_count: 1
   - identifier: apache_2_0-ec759ae0-ea5a-f138-793e-388520e080c0
@@ -473,8 +479,11 @@ license_detections:
     detection_count: 1
   - identifier: apache_2_0-d66ab77d-a5cc-7104-e702-dc7df61fe9e8
     license_expression: apache-2.0
-    detection_count: 1
+    detection_count: 3
   - identifier: mit-3fce6ea2-8abd-6c6b-3ede-a37af7c6efee
+    license_expression: mit
+    detection_count: 1
+  - identifier: mit-a822f434-d61f-f2b1-c792-8b8cb9e7b9bf
     license_expression: mit
     detection_count: 1
   - identifier: lgpl_3_0-121be3c2-9c80-df84-d3da-8f674e4125c0
@@ -1084,6 +1093,39 @@ license_references:
     scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE
     licensedb_url: https://scancode-licensedb.aboutcode.org/mit
     spdx_url: https://spdx.org/licenses/MIT
+  - key: unknown-license-reference
+    language: en
+    short_name: Unknown License reference
+    name: Unknown License file reference
+    category: Unstated License
+    owner: Unspecified
+    homepage_url:
+    notes: This applies to the case of a file with no clear license, which may be referenced
+      via URL or text such as "See license in..." or "This file is licensed under...", but where
+      the reference cannot be resolved to a specific named, public license.
+    is_builtin: yes
+    is_exception: no
+    is_unknown: yes
+    is_generic: no
+    spdx_license_key: LicenseRef-scancode-unknown-license-reference
+    other_spdx_license_keys: []
+    osi_license_key:
+    text_urls: []
+    osi_url:
+    faq_url:
+    other_urls: []
+    key_aliases: []
+    minimum_coverage: '0'
+    standard_notice:
+    ignorable_copyrights: []
+    ignorable_holders: []
+    ignorable_authors: []
+    ignorable_urls: []
+    ignorable_emails: []
+    text:
+    scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/unknown-license-reference.LICENSE
+    licensedb_url: https://scancode-licensedb.aboutcode.org/unknown-license-reference
+    spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/unknown-license-reference.LICENSE
 license_rule_references:
   - license_expression: apache-2.0
     identifier: apache-2.0_65.RULE
@@ -1243,6 +1285,33 @@ license_rule_references:
       You should have received a copy of the GNU Lesser General Public License
       along with this library; if not, write to the Free Software Foundation, Inc.,
       51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+  - license_expression: unknown-license-reference
+    identifier: license-intro_72.RULE
+    language: en
+    rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/license-intro_72.RULE
+    is_license_text: no
+    is_license_notice: no
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: yes
+    is_continuous: no
+    is_builtin: yes
+    is_from_license: no
+    is_synthetic: no
+    length: 3
+    relevance: 16
+    minimum_coverage: 80
+    referenced_filenames: []
+    notes:
+    ignorable_copyrights: []
+    ignorable_holders: []
+    ignorable_authors: []
+    ignorable_urls: []
+    ignorable_emails: []
+    text: |
+      <licenses>
+          <license>
+            <name>
   - license_expression: mit
     identifier: mit_30.RULE
     language: en
@@ -1526,6 +1595,20 @@ files:
     license_detections:
       - license_expression: cddl-1.0
         matches:
+          - score: '16.0'
+            start_line: 17
+            end_line: '19'
+            matched_length: 3
+            match_coverage: '100.0'
+            matcher: 2-aho
+            license_expression: unknown-license-reference
+            rule_identifier: license-intro_72.RULE
+            rule_relevance: 16
+            rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/license-intro_72.RULE
+            matched_text: |
+              <licenses>
+                <license>
+                  <name>Common Development and Distribution License (CDDL) v1.0</name>
           - score: '82.35'
             start_line: 18
             end_line: 20
@@ -1540,9 +1623,9 @@ files:
               <license>
                 <name>Common Development and Distribution License (CDDL) v1.0</name>
                 <url>http://www.sun.com/cddl/cddl.html</url>
-        identifier: cddl_1_0-ce8b3a58-f284-e7dd-22b3-c4d82f97dfe3
+        identifier: cddl_1_0-c6dbef4d-659c-289f-5ee9-1ca0278edad6
     license_clues: []
-    percentage_of_license_text: '8.09'
+    percentage_of_license_text: '9.25'
     copyrights: []
     holders: []
     authors: []
@@ -1815,7 +1898,10 @@ files:
     percentage_of_license_text: '5.51'
     copyrights: []
     holders: []
-    authors: []
+    authors:
+      - author: Spencer Alger
+        start_line: 7
+        end_line: 8
     emails:
       - email: spencer.alger@elasticsearch.com
         start_line: 9

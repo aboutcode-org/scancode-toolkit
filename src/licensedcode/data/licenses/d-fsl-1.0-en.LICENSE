@@ -18,8 +18,7 @@ ignorable_copyrights:
 ignorable_holders:
     - Ministry of Science and Research, State of North-Rhine Westphalia
 ignorable_authors:
-    - Axel Metzger and Till Jaeger, Institut fur Rechtsfragen der Freien und Open Source Software
-        Institute for Legal Issues
+    - Axel Metzger and Till Jaeger, Institut
 ignorable_urls:
     - http://www.d-fsl.org/
     - http://www.fsf.org/licenses/gpl

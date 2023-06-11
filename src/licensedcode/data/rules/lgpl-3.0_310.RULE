@@ -1,0 +1,15 @@
+---
+license_expression: lgpl-3.0
+is_license_tag: yes
+minimum_coverage: 99
+ignorable_urls:
+    - http://jasperreports.sourceforge.net/license.html
+---
+
+<licenses>
+    <license>
+        <name>GNU Lesser General Public License</name>
+        <url>http://jasperreports.sourceforge.net/license.html</url>
+        <distribution>repo</distribution>
+    </license>
+</licenses>

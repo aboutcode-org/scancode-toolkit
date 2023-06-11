@@ -1,0 +1,18 @@
+---
+license_expression: latex2e
+is_license_notice: yes
+relevance: 95
+notes: the third clause is not present. See https://github.com/spdx/license-list-XML/issues/1947
+    and https://github.com/mkerrisk/man-pages/blob/master/man2/move_pages.2
+---
+
+.\" %%%LICENSE_START(VERBATIM_TWO_PARA)
+.\" Permission is granted to make and distribute verbatim copies of this
+.\" manual provided the copyright notice and this permission notice are
+.\" preserved on all copies.
+.\"
+.\" Permission is granted to copy and distribute modified versions of this
+.\" manual under the conditions for verbatim copying, provided that the
+.\" entire resulting derived work is distributed under the terms of a
+.\" permission notice identical to this one.
+.\" %%%LICENSE_END

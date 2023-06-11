@@ -1,0 +1,6 @@
+---
+is_false_positive: yes
+notes: seen in jna-platform-5.6.0-sources.jar
+---
+
+public DOMAIN_CONTROLLER_INFO.ByReference dci;

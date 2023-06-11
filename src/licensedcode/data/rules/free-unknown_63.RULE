@@ -1,9 +1,7 @@
 ---
 license_expression: free-unknown
-is_license_notice: yes
+is_license_reference: yes
+relevance: 100
 ---
 
-Permission to use, copy, modify, and distribute this software
- and its documentation for NON-COMMERCIAL or COMMERCIAL purposes and
- without fee is hereby granted, provided that this copyright notice is kept 
- intact.
+freely distributable

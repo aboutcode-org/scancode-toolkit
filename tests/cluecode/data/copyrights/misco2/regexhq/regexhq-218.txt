@@ -1,0 +1,1 @@
+expectedXml = "<p>Copyright &#xA9; 2003-2014</p>",

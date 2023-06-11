@@ -1,0 +1,9 @@
+---
+license_expression: apache-2.0 OR gpl-2.0-plus
+is_license_notice: yes
+---
+
+The tools-golang source code is provided and may be used, at your option,
+under either:
+* Apache License, version 2.0 (Apache-2.0), OR
+* GNU General Public License, version 2.0 or later (GPL-2.0-or-later).

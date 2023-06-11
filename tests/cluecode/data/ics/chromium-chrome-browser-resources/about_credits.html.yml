@@ -38,11 +38,11 @@ copyrights:
   - Copyright (c) 2000, 2006 Sun Microsystems, Inc.
   - copyright (c) 1991-1998, Thomas G. Lane
   - Copyright (c) 1995-2009 International Business Machines Corporation and others
-  - (c) 1999 TaBE Project
+  - Copyrighy (c) 1999 TaBE Project
   - Copyright (c) 1999 Pai-Hsiang Hsiao
   - Copyright (c) 1999 Computer Systems and Communication Lab, Institute of Information Science,
     Academia Sinica
-  - Copyright 1996 Chih-Hao Tsai Beckman Institute, University of Illinois c-tsai4@uiuc.edu
+  - Copyright 1996 Chih-Hao Tsai @ Beckman Institute, University of Illinois c-tsai4@uiuc.edu
     http://casper.beckman.uiuc.edu/~c-tsai4
   - Copyright 2000, 2001, 2002, 2003 Nara Institute of Science and Technology
   - Copyright (c) 2002 the Initial Developer
@@ -50,7 +50,7 @@ copyrights:
   - Copyright (c) International Business Machines Corp., 2002,2007
   - Copyright 2000-2007 Niels Provos provos@citi.umich.edu
   - Copyright 2007-2009 Niels Provos and Nick Mathewson
-  - Copyright (c) 2004 2005, Google Inc.
+  - Copyright (c) 2004-2005, Google Inc.
   - copyright (c) 1991-1998, Thomas G. Lane
   - copyright holder, Aladdin Enterprises of Menlo Park
   - copyright by the Free Software Foundation
@@ -60,7 +60,7 @@ copyrights:
   - Copyright (c) 2004, 2006-2009 Glenn Randers-Pehrson
   - Copyright (c) 2000-2002 Glenn Randers-Pehrson
   - Copyright (c) 1998, 1999 Glenn Randers-Pehrson
-  - Copyright (c) 1996, 1997 Andreas Dilger
+  - Copyright (c) 1996, 1997 Andreas Dilger Distributed
   - Copyright (c) 1995, 1996 Guy Eric Schalnat, Group 42, Inc.
   - Copyright (c) 2001-2006 Cisco Systems, Inc.
   - Copyright (c) 2010, Google Inc.
@@ -70,7 +70,7 @@ copyrights:
   - Copyright (c) 2001-2002 Thomas Broyer, Charlie Bozeman and Daniel Veillard
   - Copyright (c) 1991 Free Software Foundation, Inc.
   - copyrighted by the Free Software Foundation
-  - Copyright (c) 2005, 2006 Nick Galbreath nickg at modp dot com
+  - Copyright (c) 2005, 2006 Nick Galbreath - nickg at modp dot com
   - Copyright 2008 MolokoCacao
   - Copyright (c) 2004-2009 Sergey Lyubka
   - Portions Copyright (c) 2009 Gilbert Wellisch
@@ -148,7 +148,7 @@ holders:
   - TaBE Project
   - Pai-Hsiang Hsiao
   - Computer Systems and Communication Lab, Institute of Information Science, Academia Sinica
-  - Chih-Hao Tsai Beckman Institute, University of Illinois
+  - Chih-Hao Tsai @ Beckman Institute, University of Illinois
   - Nara Institute of Science and Technology
   - the Initial Developer
   - Jason Evans
@@ -165,7 +165,7 @@ holders:
   - Glenn Randers-Pehrson
   - Glenn Randers-Pehrson
   - Glenn Randers-Pehrson
-  - Andreas Dilger
+  - Andreas Dilger Distributed
   - Guy Eric Schalnat, Group 42, Inc.
   - Cisco Systems, Inc.
   - Google Inc.
@@ -175,7 +175,7 @@ holders:
   - Thomas Broyer, Charlie Bozeman and Daniel Veillard
   - Free Software Foundation, Inc.
   - the Free Software Foundation
-  - Nick Galbreath nickg at modp dot com
+  - Nick Galbreath - nickg at modp dot com
   - MolokoCacao
   - Sergey Lyubka
   - Gilbert Wellisch
@@ -247,7 +247,7 @@ holders_summary:
     count: 1
   - value: Analog Devices Inc.
     count: 1
-  - value: Andreas Dilger
+  - value: Andreas Dilger Distributed
     count: 1
   - value: Andrew Tridgell
     count: 1
@@ -255,7 +255,7 @@ holders_summary:
     count: 1
   - value: Bob Ippolito
     count: 1
-  - value: Chih-Hao Tsai Beckman Institute, University of Illinois
+  - value: Chih-Hao Tsai @ Beckman Institute, University of Illinois
     count: 1
   - value: Cisco Systems
     count: 1
@@ -318,7 +318,7 @@ holders_summary:
     count: 1
   - value: Nara Institute of Science and Technology
     count: 1
-  - value: Nick Galbreath nickg at modp dot com
+  - value: Nick Galbreath - nickg at modp dot com
     count: 1
   - value: Niels Provos
     count: 1

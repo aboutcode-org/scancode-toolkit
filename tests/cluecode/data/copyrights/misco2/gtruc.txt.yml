@@ -1,0 +1,12 @@
+what:
+  - copyrights
+  - holders
+  - holders_summary
+  - authors
+copyrights:
+  - Copyright (c) G-Truc Creation
+holders:
+  - G-Truc Creation
+holders_summary:
+  - value: G-Truc Creation
+    count: 1

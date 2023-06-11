@@ -1,0 +1,8 @@
+---
+license_expression: proprietary-license
+is_license_notice: yes
+ignorable_urls:
+    - https://dn-works.com/wp-content/uploads/2020/UFAS-Docs/License.pdf
+---
+
+LICENSE=    In lieu of a licence: Free use of UFAS is strictly limited to personal use. https://dn-works.com/wp-content/uploads/2020/UFAS-Docs/License.pdf

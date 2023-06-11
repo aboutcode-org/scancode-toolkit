@@ -1,4 +1,5 @@
 license_expressions:
+  - mit
   - zlib
   - unknown-license-reference
   - public-domain
@@ -55,7 +56,6 @@ license_expressions:
   - mit
   - bsd-new
   - zlib
-  - bsd-new
   - apache-2.0
   - bsd-simplified
   - bsd-new

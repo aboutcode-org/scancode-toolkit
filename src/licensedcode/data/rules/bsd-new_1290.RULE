@@ -1,0 +1,14 @@
+---
+license_expression: bsd-new
+is_license_tag: yes
+ignorable_urls:
+    - https://opensource.org/licenses/BSD-3-Clause
+---
+
+<licenses>
+    <license>
+      <name>{{3-Clause BSD License}}</name>
+      <url>https://opensource.org/licenses/BSD-3-Clause</url>
+      <distribution>repo</distribution>
+    </license>
+  </licenses>

@@ -29,10 +29,33 @@ from licensedcode.match_spdx_lid import split_spdx_lid
 from licensedcode.match_spdx_lid import _split_spdx_lid
 from licensedcode.query import Query
 from scancode_config import REGEN_TEST_FIXTURES
-
+from scancode.cli_test_utils import check_json_scan
+from scancode.cli_test_utils import run_scan_click
 
 
 TEST_DATA_DIR = os.path.join(os.path.dirname(__file__), 'data')
+
+
+class TestSPDXLicenses(FileBasedTesting):
+    test_data_dir = TEST_DATA_DIR
+
+    def test_spdx_license_detection_with_markup(self):
+        test_dir = self.get_test_loc('match_spdx/scan/license')
+        result_file = self.get_temp_file('json')
+        args = [
+            '--license',
+            '--license-text',
+            '--license-text-diagnostics',
+            '--license-diagnostics',
+            '--strip-root',
+            '--verbose',
+            '--json', result_file,
+            test_dir,
+        ]
+        run_scan_click(args)
+        test_loc = self.get_test_loc('match_spdx/scan-expected.json')
+        check_json_scan(test_loc, result_file, regen=REGEN_TEST_FIXTURES)
+
 
 
 class TestSpdxQueryLines(FileBasedTesting):
@@ -198,6 +221,23 @@ class TestMatchSpdx(FileBasedTesting):
         results = [clean_text(test) for test in tests]
         assert results == expected
 
+    def test_clean_line_markup(self):
+        tests = [
+            '<p>SPDX-License-Identifier: Apache-2.0 WITH SHL-2.1</p>', 
+            '<a href="https://licenses.nuget.org/MIT">MIT</a>',
+            '<a href="https://licenses.nuget.org/Apache-2.0">Apache-2.0</a>',
+            'licenses.nuget.org /MIT\">MIT</a>                </div>'
+        ]
+
+        expected = [
+            'SPDX-License-Identifier: Apache-2.0 WITH SHL-2.1', 
+            'https://licenses.nuget.org/MIT',
+            'https://licenses.nuget.org/Apache-2.0',
+            'licenses.nuget.org /MIT'
+        ]
+        results = [clean_text(test) for test in tests]
+        assert results == expected
+
     def test_prepare_text(self):
         tests = [
             '* SPDX-License-Identifier: (BSD-3-Clause OR EPL-1.0 OR Apache-2.0 OR MIT)',
@@ -254,6 +294,20 @@ class TestMatchSpdx(FileBasedTesting):
             ('licenses.nuget.org', '(LGPL-2.0-only WITH FLTK-exception OR Apache-2.0)'),
             ('licenses.nuget.org', 'MIT'),
             ('licenses.nuget.org', '(MIT)'),
+        ]
+        results = [prepare_text(test) for test in tests]
+        assert results == expected
+
+    def test_prepare_text_with_markup(self):
+        tests = [
+            '<p>SPDX-License-Identifier: Apache-2.0 WITH SHL-2.1</p>', 
+            '<a href="https://licenses.nuget.org/MIT">MIT</a>',
+            '<a href="https://licenses.nuget.org/Apache-2.0">Apache-2.0</a>'
+        ]
+        expected = [
+            ('SPDX-License-Identifier:', 'Apache-2.0 WITH SHL-2.1'),
+            ('licenses.nuget.org', 'MIT'),
+            ('licenses.nuget.org', 'Apache-2.0'),
         ]
         results = [prepare_text(test) for test in tests]
         assert results == expected
@@ -433,6 +487,22 @@ class TestMatchSpdx(FileBasedTesting):
         line_text = '/* SPDX-License-Identifier: LicenseRef-ABC  */'
         expression = get_expression(line_text, licensing, spdx_symbols, unknown_symbol)
         assert expression.render() == 'unknown-spdx'
+
+    def test_get_expression_from_html(self):
+        licensing = Licensing()
+        spdx_symbols = get_spdx_symbols()
+        unknown_symbol = get_unknown_spdx_symbol()
+        line_text = "<p>SPDX-License-Identifier: Apache-2.0 WITH SHL-2.1</p>"
+        expression = get_expression(line_text, licensing, spdx_symbols, unknown_symbol)
+        assert expression.render() == 'apache-2.0 WITH shl-2.1'
+
+    def test_get_expression_from_nuget_license_html(self):
+        licensing = Licensing()
+        spdx_symbols = get_spdx_symbols()
+        unknown_symbol = get_unknown_spdx_symbol()
+        line_text = '<a href="https://licenses.nuget.org/MIT">MIT</a>'
+        expression = get_expression(line_text, licensing, spdx_symbols, unknown_symbol)
+        assert expression.render() == 'mit'
 
     def test_get_expression_complex(self):
         licensing = Licensing()

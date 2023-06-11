@@ -1,0 +1,24 @@
+---
+license_expression: other-permissive
+is_license_text: yes
+notes: rare, sometimes called mit-data or mit-database See https://github.com/hitaf/Pardus-2011-Svn-/blob/16df30ab9c6ce6c4896826814e34cfeadad1be09/trunk/doc/en/licenses/.svn/text-base/myspell-hyph_sk_SK-TiborBako.svn-base#L4
+    and https://github.com/okfn/opendefinition/blob/39f88100f29a87982c08a8e7adc3f31450c16ff6/licenses/mit-db/index.markdown
+---
+
+Permission is hereby granted, free of charge, to any person obtaining
+a copy of this data (the "Data"), to deal in the Data without
+restriction, including without limitation the rights to use, copy,
+modify, merge, publish, distribute, sublicense, and/or sell copies of
+the Data, and to permit persons to whom the Data is furnished to do
+so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be
+included in all copies or substantial portions of the Data.
+
+THE DATA ARE PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
+OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE
+LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
+OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
+WITH THE DATA OR THE USE OR OTHER DEALINGS IN THE DATA.

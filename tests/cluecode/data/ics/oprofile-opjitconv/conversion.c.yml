@@ -3,13 +3,13 @@ what:
   - holders
   - holders_summary
 copyrights:
-  - Copyright 2008 OProfile
+  - Copyright 2008 OProfile authors
   - Copyright IBM Corporation 2008
 holders:
-  - OProfile
+  - OProfile authors
   - IBM Corporation
 holders_summary:
   - value: IBM Corporation
     count: 1
-  - value: OProfile
+  - value: OProfile authors
     count: 1

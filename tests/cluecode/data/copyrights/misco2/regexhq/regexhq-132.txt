@@ -1,0 +1,1 @@
+Copyright (c) 2013 Segment.io &lt;friends@segment.io&gt;

@@ -1,0 +1,14 @@
+---
+license_expression: bsd-new
+is_license_tag: yes
+ignorable_urls:
+    - https://golang.org/LICENSE
+---
+
+<licenses>
+<license>
+    <name>{{Go License}}</name>
+    <url>https://golang.org/LICENSE</url>
+    <distribution>repo</distribution>
+</license>
+</licenses>

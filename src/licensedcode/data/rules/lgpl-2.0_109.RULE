@@ -4,10 +4,6 @@ is_license_notice: yes
 relevance: 100
 referenced_filenames:
     - /usr/share/common-licenses/LGPL-2
-ignorable_copyrights:
-    - copyright by their authors
-ignorable_holders:
-    - their authors
 ---
 
 All other software is copyright by their authors and redistributable under 

@@ -107,10 +107,12 @@
   "dependencies": [],
   "license_detections": [
     {
-      "identifier": "unknown_license_reference-6b24f327-22b1-723e-10f9-37a8bc8b3c70",
-      "license_expression": "unknown-license-reference",
-      "detection_count": 1,
-      "detection_log": []
+      "identifier": "mit-a979a2a3-dfdb-02aa-2450-71641a61a264",
+      "license_expression": "mit",
+      "detection_count": 2,
+      "detection_log": [
+        "unknown-reference-to-local-file"
+      ]
     },
     {
       "identifier": "mit-ac40beba-5702-f54d-755f-333441314bb0",

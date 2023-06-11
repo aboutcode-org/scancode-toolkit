@@ -102,6 +102,11 @@
       "detection_count": 1
     },
     {
+      "identifier": "mit_or_apache_2_0-480eec53-1a80-0150-7c7e-39cf79c9f3a8",
+      "license_expression": "mit OR apache-2.0",
+      "detection_count": 1
+    },
+    {
       "identifier": "apache_2_0_and__apache_2_0_or_mit-7ff6dd9d-b5e8-3fa4-dd61-c5a634c9b300",
       "license_expression": "apache-2.0 AND (apache-2.0 OR mit)",
       "detection_count": 1
@@ -117,8 +122,8 @@
       "detection_count": 1
     },
     {
-      "identifier": "mit_or_apache_2_0__and_mit-d0113bc3-c761-9fd4-a296-2a73e8f26c88",
-      "license_expression": "(mit OR apache-2.0) AND mit",
+      "identifier": "mit-a9138d4e-bc0e-0a20-76fd-237047e6d41c",
+      "license_expression": "mit",
       "detection_count": 1
     }
   ],
@@ -417,7 +422,7 @@
       ],
       "authors": [
         {
-          "author": "The Rand Project Developers', The Rust Project",
+          "author": "The Rand Project Developers The Rust Project Developers",
           "start_line": 4,
           "end_line": 4
         }

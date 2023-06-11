@@ -115,7 +115,7 @@
     {
       "identifier": "mit-cacd5c0c-204a-85c2-affc-e4c125b2492a",
       "license_expression": "mit",
-      "detection_count": 1
+      "detection_count": 2
     },
     {
       "identifier": "mit-3fce6ea2-8abd-6c6b-3ede-a37af7c6efee",
@@ -125,17 +125,22 @@
     {
       "identifier": "mit-24a5293c-14d7-5403-efac-1a8b7532c0e8",
       "license_expression": "mit",
-      "detection_count": 2
-    },
-    {
-      "identifier": "unknown_license_reference-322b1ccf-35f4-97bf-1539-fd1bfeaca4bd",
-      "license_expression": "unknown-license-reference",
-      "detection_count": 2
+      "detection_count": 5
     },
     {
       "identifier": "mit-59433771-4926-870e-d21a-8162cfa060a3",
       "license_expression": "mit",
-      "detection_count": 1
+      "detection_count": 2
+    },
+    {
+      "identifier": "mit-a822f434-d61f-f2b1-c792-8b8cb9e7b9bf",
+      "license_expression": "mit",
+      "detection_count": 3
+    },
+    {
+      "identifier": "mit-707ccf7a-5c60-0e4c-5844-349c989a00f5",
+      "license_expression": "mit",
+      "detection_count": 2
     },
     {
       "identifier": "mit-6e6256c5-00ca-dcb6-8033-2fc4b6ff86be",

@@ -1,0 +1,18 @@
+---
+license_expression: lgpl-2.1-plus AND epl-1.0
+is_license_tag: yes
+ignorable_urls:
+    - http://www.eclipse.org/legal/epl-v10.html
+    - http://www.gnu.org/licenses/lgpl.txt
+---
+
+<licenses>
+    <license>
+        <name>{{GNU Lesser General Public License (LGPL)}}</name>
+        <url>http://www.gnu.org/licenses/lgpl.txt</url> 
+    </license>
+    <license>
+        <name>{{Eclipse Public License (EPL)}}</name>
+        <url>http://www.eclipse.org/legal/epl-v10.html</url> 
+    </license>
+</licenses>

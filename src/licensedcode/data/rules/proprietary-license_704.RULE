@@ -2,9 +2,9 @@
 license_expression: proprietary-license
 is_license_text: yes
 ignorable_copyrights:
-    - Copyrighted IP YOUR COMPANY NAME
+    - Copyrighted IP YOUR COMPANY
 ignorable_holders:
-    - IP YOUR COMPANY NAME
+    - IP YOUR COMPANY
 ignorable_emails:
     - ip@x12.org
 ---

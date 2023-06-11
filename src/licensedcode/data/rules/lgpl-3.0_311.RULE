@@ -1,0 +1,10 @@
+---
+license_expression: lgpl-3.0
+is_license_tag: yes
+is_continuous: yes
+relevance: 100
+ignorable_urls:
+    - http://jasperreports.sourceforge.net/license.html
+---
+
+{{http://jasperreports.sourceforge.net/license.html}}

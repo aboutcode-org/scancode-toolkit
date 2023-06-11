@@ -1,0 +1,127 @@
+---
+license_expression: proprietary-license
+is_license_text: yes
+notes: See https://raw.githubusercontent.com/elypia/Open-Agreements/b42f36d0bfa526e27ad3144f7a42a291af894cbe/src/open-exclusive-copyright-license-agreement-1.0/open-exclusive-copyright-license-agreement-1.0.txt
+    This project is under Creative Commons which means anyone is allowed to use, modify, and
+    redistribute any of the documents in this project, (the src directory) even commercially.
+    You do not have to attribute or declare the license internally or to parties signing your
+    document; only if you modify and republish the documents for public use. Created by Elypia,
+    under CC-BY-4.0 see https://github.com/elypia/Open-Agreements
+---
+
+Open Exclusive Copyright License Agreement 1.0 (OECLA 1.0)
+
+This document contains the terms and conditions for the granting of
+rights from the Licensor(s), exclusively to the Licensee.
+
+THIS IS AN EXCLUSIVE LICENSE; THIS SHOULD ONLY BE USED IN TRANSACTIONS
+WHERE THE RIGHTS SPECIFIED ARE NOT TO BE GRANTED TO OTHER LICENSEES.
+
+1 - Definitions.
+    "Intellectual Property" shall mean any kind of intellectual property;
+    this could be in any form including but not limited to both physical
+    and digital inventions, illustrations, designs, documents, or other
+    binary files.
+
+    "Licensed Material" shall mean any Intellectual Property intended by
+    the Licensor(s) to grant rights from under this exclusive copyright
+    license agreement to the Licensee.
+
+    "Licensor(s)" shall mean all rightful copyright holders of the
+    Intellectual Property and Licensed Material.
+
+    "Licensee" shall mean the legal entity that will be granted the rights
+    to the Intellectual Property and Licensed Material from the
+    Licensor(s).
+
+2 - Copyright.
+
+    a) The Licensor(s) shall retain and reserve to its entirety all copyright
+       to the Intellectual Property described in this agreement.
+
+    b) The Licensor(s) shall retain and reserve all rights granted to the
+       Licensee, except the right to license or sub-license the
+       Licensed Material to other entities.
+
+3 - Grant of License.
+    The Licensor(s) entitled below ("Licensor(s)") are authorized to and
+    hereby grant the Licensee entitled below ("Licensee") an exclusive
+    license to use, modify, and redistribute the Licensed Material entitled
+    below ("Licensed Material") perpetually and indefinitely.
+
+    a) The grant includes all rights to use the Licensed Material both
+       digitally and physically, without limitation, including the rights to
+       publish, modify, redistribute, republish in another format or medium,
+       and use commercially for any purpose.
+
+    b) The Licensee will have the right to sublicense the Licensed Material
+       to other entities only on a non-commercial basis.
+
+    c) When the Licensed Material is shared or redistributed, including any
+       modified form, the Licensee is under no obligation to attribute the
+       Licensor(s) unless:
+
+        i) the Licensed Material is the subject, and there is a dedicated or
+        open field directly associated with where it was shared that provides
+        the reasonable means attribute.
+
+4 - Payment and Royalties.
+
+    a) Unless otherwise separately undertaken between the Licensee and
+       Licensor(s), the Licensed Material is offered to the Licensee with no
+       form of payment implied or to be taken as a result of this agreement.
+
+    b) The Licensed Material will not have any royalties or other costs of
+       usage associated with it, and to the extent possible, the Licensor(s)
+       waive all rights to collect royalties from the Licensee regarding the
+       Licensed Material under this agreement.
+
+5 - Termination.
+    This agreement stands perpetually and indefinitely unless the Licensee
+    and all Licensor(s) mutually agree to reverse the effects of this
+    agreement.
+
+=======
+
+Signing
+
+=======
+
+Licensed Material
+----------
+* [List of Licensed Material]
+
+Please indicate which party (only one) populated the
+Licensed Material ("Licensed Material") area:
+
+[ ] Licensee
+[ ] Licensor(s)
+
+Licensee
+----------
+If the beneficiary is an organization, the organization name (O) should
+be specified, and the beneficiary name and signature shall refer to who
+has the right to, and is acting on behalf of the organization.
+The beneficiary should add their name (N), position (P) if they are
+acting on behalf of an organization. and signature (S).
+
+O: [Organization Name]
+N: [Name]
+P: [Position]
+S: [Signature]
+
+Licensor(s)
+----------
+If any author(s) are organizations, the organization name (O) should
+be specified, and the author name, email, and signature shall refer to
+who has the right to, and is acting on behalf of the organization.
+Each author should add their name (N), email address (E), and
+signature (S).
+Append entries as required by the number of Authors.
+
+O: [Organization Name]
+N: [Name]
+E: [Email]
+S: [Signature]
+
+Date: [yyyy-MM-DD]

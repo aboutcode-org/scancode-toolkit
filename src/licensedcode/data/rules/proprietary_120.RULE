@@ -2,16 +2,16 @@
 license_expression: proprietary-license
 is_license_text: yes
 ignorable_copyrights:
-    - copyrighted by the Regents of the University of
+    - copyrighted by the Regents of the University of It
 ignorable_holders:
-    - the Regents of the University of
+    - the Regents of the University of It
 ---
 
 Copyright & License Notice
 ---------------------------
 
-The  package is copyrighted by the Regents of the University of
-. It can be freely used for educational and research purposes 
+The  package is copyrighted by the Regents of the University of . 
+It can be freely used for educational and research purposes 
 by non-profit institutions and US government agencies only. Other 
 organizations are allowed to use  only for evaluation purposes,
 and any further uses will require prior approval. The software 

@@ -1,0 +1,11 @@
+what:
+  - copyrights
+  - holders
+  - holders_summary
+copyrights:
+  - Copyright (c) 2015-2016 the fiat-crypto authors (see https://github.com/mit-plv/fiat-crypto/blob/master/AUTHORS)
+holders:
+  - the fiat-crypto authors see
+holders_summary:
+  - value: the fiat-crypto authors see
+    count: 1

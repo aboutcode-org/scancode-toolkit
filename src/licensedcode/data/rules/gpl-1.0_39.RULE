@@ -4,8 +4,10 @@ is_license_text: yes
 relevance: 100
 ignorable_copyrights:
     - Copyright (c) 1989 Free Software Foundation, Inc.
+    - copyrighted by the Free
 ignorable_holders:
     - Free Software Foundation, Inc.
+    - the Free
 ---
 
 GNU GENERAL PUBLIC LICENSE

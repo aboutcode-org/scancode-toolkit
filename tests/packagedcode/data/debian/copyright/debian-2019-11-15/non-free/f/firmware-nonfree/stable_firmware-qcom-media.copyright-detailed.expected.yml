@@ -3,13 +3,13 @@ declared_license_expression: qti-linux-firmware AND proprietary-license AND open
   openssl-ssleay AND openssl AND ssleay-windows AND zlib AND zlib AND public-domain AND bsd-new
   AND gary-s-brown AND other-permissive AND public-domain-disclaimer AND public-domain-disclaimer
   AND (gpl-2.0 OR bsd-new) AND (gpl-2.0 OR bsd-new) AND bsd-new AND bsd-new AND bsd-new AND
-  bsd-new AND isc
+  isc
 declared_license_expression_spdx: LicenseRef-scancode-qti-linux-firmware AND LicenseRef-scancode-proprietary-license
   AND OpenSSL AND OpenSSL AND LicenseRef-scancode-openssl AND LicenseRef-scancode-ssleay-windows
   AND Zlib AND Zlib AND LicenseRef-scancode-public-domain AND BSD-3-Clause AND LicenseRef-scancode-gary-s-brown
   AND LicenseRef-scancode-other-permissive AND LicenseRef-scancode-public-domain-disclaimer
   AND LicenseRef-scancode-public-domain-disclaimer AND (GPL-2.0-only OR BSD-3-Clause) AND (GPL-2.0-only
-  OR BSD-3-Clause) AND BSD-3-Clause AND BSD-3-Clause AND BSD-3-Clause AND BSD-3-Clause AND ISC
+  OR BSD-3-Clause) AND BSD-3-Clause AND BSD-3-Clause AND BSD-3-Clause AND ISC
 other_license_expression:
 other_license_expression_spdx:
 license_detections:
@@ -682,14 +682,14 @@ license_detections:
     matches:
       - score: '100.0'
         start_line: 646
-        end_line: 664
-        matched_length: 176
+        end_line: 668
+        matched_length: 215
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: bsd-new
-        rule_identifier: bsd-new_80.RULE
+        rule_identifier: bsd-new_1209.RULE
         rule_relevance: 100
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_80.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_1209.RULE
         matched_text: |
           Redistribution and use in source and binary forms, with or without
           * modification, are permitted provided that the following conditions
@@ -710,24 +710,11 @@ license_detections:
           * FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
           * DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
           * OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
-      - score: '28.5'
-        start_line: 663
-        end_line: 668
-        matched_length: 59
-        match_coverage: '28.5'
-        matcher: 3-seq
-        license_expression: bsd-new
-        rule_identifier: bsd-new_176.RULE
-        rule_relevance: 100
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_176.RULE
-        matched_text: |
-          INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
-          * OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
           * HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
           * LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
           * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
           * SUCH DAMAGE.
-    identifier: bsd_new-a294cc8d-9a8a-050f-9674-ea4f708d0e10
+    identifier: bsd_new-79cb4d03-8935-6bd7-7fdf-7c3d7bb6581f
   - license_expression: bsd-new
     matches:
       - score: '100.0'

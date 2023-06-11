@@ -1,0 +1,9 @@
+---
+license_expression: osl-3.0
+is_license_tag: yes
+relevance: 100
+ignorable_urls:
+    - https://opensource.org/licenses/OSL-3.0
+---
+
+@license Licensed under the Open Software License version 3.0 (https://opensource.org/licenses/OSL-3.0)

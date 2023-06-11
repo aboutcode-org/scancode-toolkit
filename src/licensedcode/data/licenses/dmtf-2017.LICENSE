@@ -10,9 +10,9 @@ faq_url: http://www.dmtf.org/about/policies/disclosures
 other_urls:
     - http://dmtf.org/sites/default/files/patent-10-18-01.pdf
 ignorable_copyrights:
-    - Copyright (c) 2017, Contributing
+    - Copyright (c) 2017, Contributing Member(s) of Distributed Management Task Force, Inc
 ignorable_holders:
-    - Contributing
+    - Contributing Member(s) of Distributed Management Task Force, Inc
 ignorable_urls:
     - http://dmtf.org/sites/default/files/patent-10-18-01.pdf
     - http://www.dmtf.org/about/policies/disclosures

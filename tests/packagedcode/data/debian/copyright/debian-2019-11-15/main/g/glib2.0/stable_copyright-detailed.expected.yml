@@ -68,15 +68,18 @@ license_detections:
     matches:
       - score: '100.0'
         start_line: 80
-        end_line: 80
-        matched_length: 4
+        end_line: 82
+        matched_length: 5
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: apache-2.0
-        rule_identifier: apache-2.0_65.RULE
+        rule_identifier: apache-2.0_1214.RULE
         rule_relevance: 100
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_65.RULE
-        matched_text: 'License: Apache-2.0'
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_1214.RULE
+        matched_text: |
+          License: Apache-2.0
+
+          License:
       - score: '100.0'
         start_line: 82
         end_line: 96
@@ -176,7 +179,7 @@ license_detections:
            .
            You should have received a copy of the GNU General Public License
            along with this program; if not, see <http://www.gnu.org/licenses/>.
-    identifier: apache_2_0_and_mit_and_gpl_2_0_plus-01551af4-f727-e664-7cae-269edf02cee6
+    identifier: apache_2_0_and_mit_and_gpl_2_0_plus-1f9e4aef-a702-77bd-753c-76db91445a69
 other_license_detections: []
 copyright: |
   Copyright (c) 1995-2018 Red Hat, Inc.

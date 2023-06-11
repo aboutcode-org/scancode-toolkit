@@ -1,6 +1,16 @@
-
-
-from multiprocessing import pool
+#
+# Copyright (c) Alexander Ljungberg. All rights reserved.
+# Modifications Copyright (c) nexB Inc. and others. All rights reserved.
+# http://nexb.com and https://github.com/nexB/scancode-toolkit/
+# The ScanCode software is licensed under the Apache License version 2.0.
+#
+# You may not use this software except in compliance with the License.
+# You may obtain a copy of the License at: http://apache.org/licenses/LICENSE-2.0
+# Unless required by applicable law or agreed to in writing, software distributed
+# under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+# CONDITIONS OF ANY KIND, either express or implied. See the License for the
+# specific language governing permissions and limitations under the License.
+#
 
 
 """
@@ -11,6 +21,7 @@ Apply proper monkeypatch to work around some bugs or limitations.
 """
 Monkeypatch Pool iterators so that Ctrl-C interrupts everything properly
 derived from https://gist.github.com/aljungberg/626518
+
 
 Copyright (c) Alexander Ljungberg. All rights reserved.
 Modifications Copyright (c) nexB Inc. and others. All rights reserved.
@@ -36,6 +47,16 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 """
 
 
+
+from multiprocessing import pool
+from multiprocessing import TimeoutError
+
+
+
+class ScanCodeTimeoutError(Exception):
+    pass
+
+
 def wrapped(func):
     """
     Ensure that we have a default timeout in all cases.
@@ -49,7 +70,11 @@ def wrapped(func):
     if func.__name__ != 'wrap':
 
         def wrap(self, timeout=None):
-            return func(self, timeout=timeout or 3600)
+            try:
+                result = func(self, timeout=timeout or 3600)
+            except TimeoutError as te:
+                raise ScanCodeTimeoutError() from te
+            return result
 
         return wrap
     else:

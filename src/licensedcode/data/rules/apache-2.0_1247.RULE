@@ -1,0 +1,11 @@
+---
+license_expression: apache-2.0
+is_license_notice: yes
+ignorable_urls:
+    - http://www.apache.org/licenses/LICENSE-2.0.txt
+    - https://www.apache.org/
+---
+
+From: 'The {{Apache Software Foundation}}' (https://www.apache.org/)
+    License: The {{Apache Software License, Version 2.0}}  (http://www.apache.org/licenses/LICENSE-2.0.txt)
+    License: The {{Apache Software License, Version 2.0}}  (http://www.apache.org/licenses/LICENSE-2.0.txt)

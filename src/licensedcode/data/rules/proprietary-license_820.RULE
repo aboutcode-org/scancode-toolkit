@@ -1,0 +1,165 @@
+---
+license_expression: proprietary-license
+is_license_text: yes
+notes: https://www-sop.inria.fr/acacia/soft/corese/manual/license/inria-license.txt
+ignorable_emails:
+    - corese@sophia.inria.fr
+---
+
+FREE OF CHARGE SOFTWARE LICENSE AGREEMENT
+
+GRANTED TO THE USER
+
+BY :
+
+L'INSTITUT NATIONAL DE RECHERCHE EN INFORMATIQUE ET EN AUTOMATIQUE (INRIA)
+    NATIONAL INSTITUTE FOR RESEARCH IN COMPUTER SCIENCE AND CONTROL 
+
+    Etablissement Public à caractère Scientifique et Technologique, régi par le décret No 85-831 du 2 août 1985
+    A French national scientific and technological institute, governed by decree Nr 85-831 of the 2d August 1985
+    
+    Having its registered office at :
+    Domaine de Voluceau - Rocquencourt
+    BP 105
+    78 153 LE CHESNAY
+    FRANCE
+
+    Represented by its Chairman and Managing Director, Mr Gilles KAHN and by Mr Michel COSNARD, Director of the Sophia Antipolis Research Unit, who is acting on due authority for the purposes of this Agreement.
+
+    Hereinafter referred to as "INRIA"
+
+
+IT WAS PREVIOUSLY STATED :
+
+* Whereas at INRIA, the ACACIA team lead by Mrs Rose DIENG-KUNTZ has designed and developed the CORESE software (hereinafter the "Software"), a COnceptual REsource Search Engine.
+
+* Whereas, INRIA holds the intellectual property over the Software, whose version 1 has been registered with a French escrow agency named "Agence pour la Protection des Programmes" (APP) with the number IDD.FR.001.330009.00.R.P.2000.000.10000 dated the 10th of August, 2000.
+
+* Whereas, the User wishes to use the Software for academic and research purposes.
+
+THE FOLLOWING AGREEMENT HAS BEEN ENTERED INTO :
+
+ARTICLE 1 - TERMINOLOGY
+
+1.1 Software : refers to the CORESE software version 1.
+The Software is an RDF/RDFS processor based on Conceptual Graphs (CG). It enables the processing of RDF Schema and RDF Statements within the CG formalism. The Software implements also a CG/RDF Rule language that enables to augment a base of RDF statements with inferences.
+The Software consists of a set of procedure and data.
+The Software comprises the executable code and its Technical Documentation, excluding other programs which may be necessary to use the Software, and which THE USER will have to obtain by itself.
+
+1.2 Technical Documentation : denotes the electronic documentation to be provided with the code. 
+
+1.3 Derivative Software : refers to any derivative or composite software to be created for research purposes by the User, by any and all act of reproduction, translation, adaptation, integration and modification from the Software.
+
+1.4 User : refers to any employee of the User, or person reporting to the User, who will access and use the Software and who requires such access for the performance of this Agreement.
+
+1.5 Error : any incident or anomaly happening while using the Software. 
+
+ARTICLE 2 - SOFTWARE LICENSE
+
+2.1 INRIA grants to the User a non-exclusive and non-transferable license to, free of charge :
+
+- use the Software
+
+- create Derivative Softwares by any and all act of reproduction, translation, adaptation, integration and modification of the Software.
+
+This Agreement is entered into for academic and research purposes, excluding any direct or indirect commercial use.
+
+2.2 This license is a worldwide, non-exclusive and non-transferable authorization, and shall not in any case be assigned totally nor partially to a third party, neither in return for remuneration nor free-of-charge unless agreed to in writing by INRIA. 
+
+2.3 The User is authorized to download under FTP one (1) copy of the Software. 
+
+2.4 The User will acknowledge receipt of the Software by electronic mail within two (2) days from its downloading.
+
+ARTICLE 3 - TECHNICAL CONTACT - LOCATION
+
+For the performance of this Agreement, technical contact in INRIA can be meet at :
+
+* ACACIA - Corese Licensing
+    INRIA
+    2004, route des Lucioles
+    BP 93
+    06902 SOPHIA ANTIPOLIS Cedex
+    FRANCE
+
+Or by e-mail : corese@sophia.inria.fr
+
+INRIA reserves the right to define subsequently a new technical contact. 
+
+ARTICLE 4 - CONDITIONS OF USE
+
+4.1 The Software must be used according to the stipulations of this Agreement, exclusive of any other ones.
+
+4.2 According to the terms and conditions of article L.122-6-1 II of the French Intellectual Property Code, the User is authorized to make a back-up copy to protect the use of the Software. 
+
+4.3 According to the terms and conditions of article L.335-3 of the French Intellectual Property Code, the User recognizes that any use not in compliance with this Agreement may represent copyright infringement. 
+
+4.4 The User is notably prohibited from making the Software directly or indirectly available to third parties (such as but not limited to sale, rental or lending) or from carrying out any commercial use without the prior authorization of INRIA.
+
+ARTICLE 5 - INTELLECTUAL PROPERTY 
+
+5.1 The User recognizes that the copyright on the Software is held by INRIA and this agreement does not imply any assignment of intellectual property for its benefit. 
+
+The User will take any and all appropriate measures to protect the rights of INRIA on the Software and copyrighted materials. 
+
+The User will retain the copyright notice as well as the name of the authors in the code of the Software, and will place them in any back-up copy.
+
+The User undertakes to mention the name of the Software and to mention that the Software originates from INRIA at any time it is publicly mentioned or used and notably in any and all publication referring to some use of the Software.
+
+5.2 The User shall hold any and all intellectual property rights on the Derivative Software possibly developed as part of this Agreement.
+
+5.3 In case of an attempt to seize the Software, the User undertakes to inform INRIA immediately by registered mail or facsimile transmission, to raise all formal protests required against the seizure and to take all reasonable steps to make known the copyright on the Software. 
+
+5.4 In the event that the User wishes to proceed to industrialize and market the Software or  a Derivative Software, it recognizes that these actions require the express and prior authorization of INRIA. 
+Such actions shall be stated in a separate written agreement between the parties. 
+ARTICLE 6 - DURATION
+
+This agreement will have a duration of two (2) years from the Software delivery date (date of the downloading). 
+
+At the end of this period of two years, the User undertakes to stop any use of the Software and undertakes to destroy the Software according to article 10 below, unless renewal of the agreement by the way of a new downloading.
+ARTICLE 7 - LIABILITY
+
+7.1 The User undertakes to use the Software on its own and entire liability.
+
+7.2 The parties expressly agree that in no case shall INRIA be declared liable for any direct, indirect, incidental, consequential or special damages suffered by the User as a result of the use of the Software, as well as for any difficulty experienced during its use or for it being impossible to use. 
+
+7.3 The User is responsible for ensuring that the technical characteristics and functions of the Software correspond to the User's needs.
+
+7.4 The User is completely responsible for the results it may obtain while using the Software. 
+ARTICLE 8 - GUARANTEE - MAINTENANCE
+
+8.1 The User acknowledges that the Software is a research prototype, and may therefore contain possible imperfections or Errors for which INRIA disclaims any liability. 
+
+8.2 INRIA does not offer any guarantee nor maintenance services to ensure that the Software operates in good working order. 
+
+8.3 The User will make its best efforts to notify INRIA of any Error or any other defect of the Software which comes to its notice during the use.
+    If necessary, the User is authorized to correct Errors. 
+    In that case, the User will make its best efforts to notify INRIA's Technical Supervisor of the Error and of the relevant correction.
+
+ARTICLE 9 - DEFAULT - CANCELLATION
+
+9.1 In case either party defaults in carrying out its obligations, and notably to use appropriate copyright notices, and if the breach is not remedied within thirty (30) days of written notice from the non-breaching party requiring that the breach be remedied, the non-breaching party may formally cancel this Agreement without legal formalities and without prejudice to all damages that it could claim. 
+
+9.2 The fact that one party does not exercise its right to cancel even when the other party committed a breach of any one of its obligations herein cannot be interpreted as a waiver of the considered obligation.
+
+ARTICLE 10 - DESTRUCTION OF THE SOFTWARE
+
+At the end of the license term, the User shall destroy the Software within a maximum of two (2) months from the  termination.
+ARTICLE 11 - NULLITY
+
+If one or several stipulations of this Agreement are held to be invalid or declared as such under a law, a regulation or as a result of a final decision by a competent court of justice, the other stipulations of this Agreement will retain their whole effect and scope.
+
+ARTICLE 12 - TITLES
+
+Should any difficulty occur with the interpretation of any one of the titles at the head of clauses and the clause itself, the title will be declared to be unwritten.
+
+ARTICLE 13 - ENTIRE AGREEMENT
+
+This Agreement constitutes the entire agreement between the parties in respect of its purpose, and supersedes all previous negotiations and writings concerning the terms of this Agreement, unless the parties enter into a specific agreement duly signed by authorised representatives.
+
+ARTICLE 14 - APPLICABLE LAW - SETTLEMENT OF DISPUTES
+
+This Agreement shall be construed according to and governed by the French law.
+
+The parties shall endeavour to settle amicably any dispute relating to the interpretation or the performance of the license herein, within thirty (30) days from a written notice describing the matter of the dispute made by one party to the other party.
+
+Should such a settlement fail, jurisdiction is expressly granted to the Tribunal de Grande Instance des Yvelines (district court) in France.

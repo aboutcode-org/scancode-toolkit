@@ -1,0 +1,10 @@
+---
+license_expression: proprietary-license
+is_license_text: yes
+notes: https://github.com/ProSolo/benchmarking_prosolo/blob/a61ce33899491f8bf4fe0db5d6ccddea20cee51a/analysis_pipelines/scripts/scVILP/scripts/PerfectPhy/experiments/multextract.pl#L4
+---
+
+Permission to use this program comes with no guarantees. You may use it if you don't laugh at it and
+don't expect the author to understand or explain the code in the future.
+Permission is not granted for redistribution or distribution of modified versions. Please contact
+the author concerning distributing any modifications.

@@ -234,7 +234,7 @@ def cli(licenses_file):
         skinny_text = " ".join(text[:80].split()).replace("{", " ").replace("}", " ")
 
         existing_msg = (
-            f"Skipping rule for: {base_name!r}, "
+            f"Skipping dupe rule for: {base_name!r}, "
             "dupe of: {existing_rule} "
             f"with text: {skinny_text!r}..."
         )
@@ -259,7 +259,7 @@ def cli(licenses_file):
             print(existing_msg.format(**locals()))
             continue
         else:
-            print(f"Adding new rule: file://{identifier}")
+            print(f"Adding new rule at: file://{identifier}")
             rl = models.update_ignorables(rulerec, verbose=False)
             rl.dump(rules_data_dir=models.rules_data_dir)
 

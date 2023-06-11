@@ -1,0 +1,12 @@
+what:
+  - copyrights
+  - holders
+  - holders_summary
+  - authors
+copyrights:
+  - Copyright Isaac Z. Schlueter
+holders:
+  - Isaac Z. Schlueter
+holders_summary:
+  - value: Isaac Z. Schlueter
+    count: 1

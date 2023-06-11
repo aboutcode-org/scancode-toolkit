@@ -103,6 +103,17 @@ also for some of the command line options.
 The output format version is now 3.0.0.
 
 
+Other updates
+~~~~~~~~~~~~~
+
+- We have a new ``--todo`` CLI option to have todo items for reviewers
+  with ambiguous license detections and package detections.
+  This adds a new codebase-level attribute ``todo`` which is a list
+  of ambiguous detections. Here the ambiguous detection attributes are:
+  - detection_id: same license unique license detection identifier or top-level
+    package identifier.
+  - detection: this is either a license_detection or a package_data mapping.
+  - review_comments: to explain the type of ambiguous detections.
 
 Package detection:
 ~~~~~~~~~~~~~~~~~~

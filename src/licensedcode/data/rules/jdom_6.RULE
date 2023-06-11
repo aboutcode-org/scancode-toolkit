@@ -1,0 +1,9 @@
+---
+license_expression: jdom
+is_license_reference: yes
+minimum_coverage: 100
+ignorable_urls:
+    - https://raw.github.com/hunterhacker/jdom/master/LICENSE.txt
+---
+
+Similar to Apache License but with the acknowledgment clause removed   (https://raw.github.com/hunterhacker/jdom/master/LICENSE.txt)

@@ -1,0 +1,9 @@
+---
+license_expression: gpl-1.0-plus AND proprietary-license
+is_license_notice: yes
+relevance: 100
+notes: Seen in https://github.com/kalyanallada/TMDs/blob/16f4cb2d670d5aa69cba30dd5aebe03d803a6526/hoppet-1.1.5/src/special_functions.f90#L2
+    This is likely a conflicting field of use restriction per https://www.gnu.org/licenses/gpl-faq.en.html#NoMilitary
+---
+
+GPL with restriction that military use is forbidden

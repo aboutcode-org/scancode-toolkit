@@ -14,9 +14,7 @@ other_urls:
     - https://github.com/spdx/spdx-3-model/blob/main/License.md
 ignorable_copyrights:
     - Copyright 2020 Joint Development Foundation
-    - Copyright Attribution. As
 ignorable_holders:
-    - Attribution. As
     - Joint Development Foundation
 ignorable_authors:
     - the Working Group

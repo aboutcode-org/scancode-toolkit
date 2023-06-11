@@ -1,0 +1,23 @@
+---
+license_expression: public-domain OR mit OR artistic-perl-1.0 OR artistic-2.0 OR gpl-1.0-plus
+is_license_notice: yes
+relevance: 99
+---
+
+I, the copyright holder of this package, hereby release the entire contents
+therein into the public domain. This applies worldwide, to the extent that
+it is permissible by law.
+ 
+In case this is not legally possible, I grant any entity the right to use
+this work for any purpose, without any conditions, unless such conditions
+are required by law.
+ 
+If you so choose, or if you are legally compelled to do so, you may use
+this software under the terms of your choice of the following licenses:
+ 
+1. The MIT/X11 License; or,
+2. The Perl Artistic License, version 1 or later; or,
+3. The GNU General Public License, version 1 or later
+ 
+For the sake of convenience, the full text of the latest versions of these
+licenses (as of writing) follows.

@@ -1,0 +1,12 @@
+what:
+  - copyrights
+  - holders
+  - holders_summary
+  - authors
+copyrights:
+  - opyright by Sven Olaf Oostenbrink
+holders:
+  - Sven Olaf Oostenbrink
+holders_summary:
+  - value: Sven Olaf Oostenbrink
+    count: 1

@@ -1,0 +1,10 @@
+---
+license_expression: python
+is_license_reference: yes
+relevance: 100
+ignorable_urls:
+    - http://www.python.org/download/releases/
+---
+
+Full license is here:
+  http://www.python.org/download/releases/ /license/

@@ -1,0 +1,12 @@
+what:
+  - copyrights
+  - holders
+  - holders_summary
+  - authors
+copyrights:
+  - Copyright (c) MMIV-MMV Anselm R. Garbe
+holders:
+  - MMIV-MMV Anselm R. Garbe
+holders_summary:
+  - value: MMIV-MMV Anselm R. Garbe
+    count: 1

@@ -102,16 +102,18 @@ other_license_detections:
     matches:
       - score: '100.0'
         start_line: 242
-        end_line: 242
-        matched_length: 11
+        end_line: 243
+        matched_length: 18
         match_coverage: '100.0'
-        matcher: 2-aho
+        matcher: 1-hash
         license_expression: public-domain
-        rule_identifier: public-domain_41.RULE
+        rule_identifier: public-domain_492.RULE
         rule_relevance: 100
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/public-domain_41.RULE
-        matched_text: This file is in the public domain, so clarified as of
-    identifier: public_domain-29abfe68-66b5-3203-c81e-afa2bdd1d778
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/public-domain_492.RULE
+        matched_text: |
+          This file is in the public domain, so clarified as of 1996-06-05 by
+          Arthur David Olson.
+    identifier: public_domain-1f8bbf4c-14a2-f656-073e-b7f150683f85
   - license_expression: public-domain-disclaimer
     matches:
       - score: '100.0'

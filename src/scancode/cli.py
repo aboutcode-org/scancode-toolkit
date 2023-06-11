@@ -21,6 +21,7 @@ import traceback
 
 from collections import defaultdict
 from functools import partial
+from multiprocessing import TimeoutError
 from time import sleep
 from time import time
 
@@ -65,6 +66,8 @@ from scancode.help import examples_text
 from scancode.interrupt import DEFAULT_TIMEOUT
 from scancode.interrupt import fake_interruptible
 from scancode.interrupt import interruptible
+from scancode.pool import ScanCodeTimeoutError
+
 
 # Tracing flags
 TRACE = False
@@ -1296,7 +1299,10 @@ def scan_codebase(
                     else:
                         setattr(resource, key, value)
                 codebase.save_resource(resource)
-
+            except (TimeoutError, ScanCodeTimeoutError):
+                codebase.errors.append("Timeout waiting for resource. Path unknown.")
+                success = False
+                continue
             except StopIteration:
                 break
             except KeyboardInterrupt:

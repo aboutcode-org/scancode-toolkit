@@ -1,0 +1,1 @@
+Object created by a `group` function.

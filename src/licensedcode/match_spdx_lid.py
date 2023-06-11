@@ -20,6 +20,8 @@ from license_expression import Licensing
 from licensedcode.match import LicenseMatch
 from licensedcode.models import SpdxRule
 from licensedcode.spans import Span
+from textcode.markup import is_markup_text
+from textcode.markup import demarkup_text
 
 """
 Matching strategy for license expressions and "SPDX-License-Identifier:"
@@ -134,10 +136,10 @@ def get_spdx_expression(text, expression_symbols=None):
         expression_symbols = get_spdx_symbols()
 
     unknown_symbol = get_unknown_spdx_symbol()
-    _prefix, exp_text = prepare_text(text)
+    #_prefix, exp_text = prepare_text(text)
 
     expression = get_expression(
-        text=exp_text,
+        text=text,
         licensing=licensing,
         expression_symbols=expression_symbols,
         unknown_symbol=unknown_symbol,
@@ -343,6 +345,9 @@ def prepare_text(text):
     detection stripped from leading and trailing punctuations, normalized for
     spaces and separateed from an SPDX-License-Identifier `prefix`.
     """
+    if is_markup_text(text):
+        text = demarkup_text(text)
+
     prefix, expression = split_spdx_lid(text)
     prefix = prefix.strip() if prefix is not None else prefix
     return prefix, clean_text(expression)
@@ -353,6 +358,14 @@ def clean_text(text):
     Return a text suitable for SPDX license identifier detection cleaned from
     certain leading and trailing punctuations and normalized for spaces.
     """
+    if is_markup_text(text):
+        text = demarkup_text(text)
+
+    dangling_markup = ['</a>','</p>','</div>', '</licenseUrl>']
+    for markup in dangling_markup:
+        if markup in text:
+            text = text.replace(markup, '')
+
     text = ' '.join(text.split())
     punctuation_spaces = "!\"#$%&'*,-./:;<=>?@[\\]^_`{|}~\t\r\n "
     # remove significant expression punctuations in wrong spot: closing parens
@@ -367,6 +380,12 @@ def clean_text(text):
         text = text.replace('(', ' ')
     elif close_parens_count == 1 and not open_parens_count:
         text = text.replace(')', ' ')
+
+    if '">' in text:
+        text_fragments = text.split('">')
+        if text_fragments[1] in text_fragments[0]:
+            text =  text_fragments[0]
+
     return ' '.join(text.split())
 
 

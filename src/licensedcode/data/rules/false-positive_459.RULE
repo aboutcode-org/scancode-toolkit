@@ -1,0 +1,6 @@
+---
+is_false_positive: yes
+notes: Seen in lucene-spatial3d-8.11.1.jar-extract/org/apache/lucene/spatial3d/geom/GeoDegenerateHorizontalLine.class
+---
+
+apache/lucene/spatial3d/geom/PlanetModel;DDDDDD)V 2(

@@ -1,0 +1,10 @@
+---
+license_expression: mit
+is_license_tag: yes
+ignorable_urls:
+    - http://www.unidata.ucar.edu/software/netcdf/copyright.html
+---
+
+<license>
+<name> {{(MIT-style)}} netCDF C library license </name>
+<url> (http://www.unidata.ucar.edu/software/netcdf/copyright.html)</url>

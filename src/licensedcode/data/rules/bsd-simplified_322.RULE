@@ -1,0 +1,14 @@
+---
+license_expression: bsd-simplified
+is_license_tag: yes
+ignorable_urls:
+    - http://www.opensource.org/licenses/bsd-license.php
+---
+
+<licenses>
+    <license>
+      <name>{{The BSD License}}</name>
+      <url>http://www.opensource.org/licenses/bsd-license.php</url>
+      <distribution>repo</distribution>
+    </license>
+  </licenses>

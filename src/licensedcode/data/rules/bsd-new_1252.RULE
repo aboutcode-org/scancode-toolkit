@@ -1,0 +1,9 @@
+---
+license_expression: bsd-new
+is_license_tag: yes
+relevance: 100
+ignorable_urls:
+    - http://www.eclipse.org/org/documents/edl-v10.php
+---
+
+License   Eclipse Distribution License - v 1.0   (http://www.eclipse.org/org/documents/edl-v10.php)

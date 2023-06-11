@@ -51,17 +51,17 @@
           "score": 100.0,
           "start_line": 1,
           "end_line": 1,
-          "matched_length": 7,
+          "matched_length": 6,
           "match_coverage": 100.0,
-          "matcher": "1-hash",
+          "matcher": "2-aho",
           "license_expression": "lgpl-2.0-plus",
-          "rule_identifier": "lgpl-2.0-plus_100.RULE",
+          "rule_identifier": "lgpl-2.0-plus_204.RULE",
           "rule_relevance": 100,
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0-plus_100.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0-plus_204.RULE",
           "matched_text": "http://www.gnu.org/licenses/lgpl.txt"
         }
       ],
-      "identifier": "lgpl_2_0_plus-841051ab-4cff-20d1-3845-2b91167dec78"
+      "identifier": "lgpl_2_0_plus-9e98274a-f2c6-c975-364a-16cff6b8a8f3"
     }
   ],
   "other_license_expression": null,

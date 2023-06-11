@@ -1,0 +1,12 @@
+what:
+  - copyrights
+  - holders
+  - holders_summary
+  - authors
+copyrights:
+  - Copyright 1998-2010 AOL Inc. - Apache
+holders:
+  - AOL Inc. - Apache
+holders_summary:
+  - value: AOL Inc. - Apache
+    count: 1

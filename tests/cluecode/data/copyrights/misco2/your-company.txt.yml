@@ -1,0 +1,12 @@
+what:
+  - copyrights
+  - holders
+  - holders_summary
+  - authors
+copyrights:
+  - Copyrighted IP YOUR COMPANY
+holders:
+  - IP YOUR COMPANY
+holders_summary:
+  - value: IP YOUR COMPANY
+    count: 1

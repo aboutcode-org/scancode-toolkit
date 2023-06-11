@@ -3,13 +3,13 @@ what:
   - holders
   - holders_summary
 copyrights:
-  - (c) 1998 Christian Nentwich
+  - (c) 1998 Christian Nentwich (brn) (c.nentwich@cs.ucl.ac.uk)
   - (c) Glenn Fielder (gaffer@gaffer.org)
 holders:
-  - Christian Nentwich
+  - Christian Nentwich (brn)
   - Glenn Fielder
 holders_summary:
-  - value: Christian Nentwich
+  - value: Christian Nentwich (brn)
     count: 1
   - value: Glenn Fielder
     count: 1

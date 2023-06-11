@@ -1,0 +1,20 @@
+---
+license_expression: elastic-license-v2 OR mongodb-sspl-1.0
+is_license_tag: yes
+ignorable_urls:
+    - https://raw.githubusercontent.com/elastic/elasticsearch/v7.16.3/licenses/ELASTIC-LICENSE-2.0.txt
+    - https://www.mongodb.com/licensing/server-side-public-license
+---
+
+<licenses>
+    <license>
+      <name>Elastic License 2.0</name>
+      <url>https://raw.githubusercontent.com/elastic/elasticsearch/v7.16.3/licenses/ELASTIC-LICENSE-2.0.txt</url>
+      <distribution>repo</distribution>
+    </license>
+    <license>
+      <name>Server Side Public License, v 1</name>
+      <url>https://www.mongodb.com/licensing/server-side-public-license</url>
+      <distribution>repo</distribution>
+    </license>
+  </licenses>

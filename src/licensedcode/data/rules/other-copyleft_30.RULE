@@ -1,0 +1,13 @@
+---
+license_expression: other-copyleft
+is_license_notice: yes
+notes: https://github.com/dazitzel/LessonsInElectricCircuits/blob/cc6e4266fa835c89b4908f10c2e720818e78c83f/README.md#L24
+ignorable_urls:
+    - http://www.dsl.org/
+---
+
+These books and all related files are published under the terms and conditions of the Design Science License. These terms and conditions allow for free copying, distribution, and/or modification of this document by the general public.
+
+A copy of the Design Science License is included at the end of each book volume. For more information about the License, visit http://www.dsl.org/.
+
+As an open and collaboratively developed text, this book is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the Design Science License for more details.

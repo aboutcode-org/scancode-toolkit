@@ -1,0 +1,3 @@
+ibrary, which is (C)opyright 
+2000-2013, by Object Refinery Limited and Contributors. See 
+"./notices/jfreechart-1.0.15-licence-LGPL.txt".

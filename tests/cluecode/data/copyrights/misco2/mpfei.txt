@@ -1,0 +1,2 @@
+    Copyright (C) 2006 <s>Michael Pfeiffer -- p3fff@web.de</s>
+

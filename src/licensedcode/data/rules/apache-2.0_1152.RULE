@@ -1,0 +1,9 @@
+---
+license_expression: apache-2.0
+is_license_notice: yes
+referenced_filenames:
+    - LICENSE
+notes: https://github.com/soajs/soajs.oauth
+---
+
+Use of this source code is governed by an Apache license that can be found in the LICENSE file at the root of this repository.

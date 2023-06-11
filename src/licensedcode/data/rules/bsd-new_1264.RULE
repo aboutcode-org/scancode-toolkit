@@ -1,0 +1,11 @@
+---
+license_expression: bsd-new
+is_license_reference: yes
+relevance: 99
+referenced_filenames:
+    - LICENSE.txt
+---
+
+<license>
+<name> BSD </name>
+<url> (LICENSE.txt)</url>

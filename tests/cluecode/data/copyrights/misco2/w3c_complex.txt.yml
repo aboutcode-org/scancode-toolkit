@@ -1,0 +1,15 @@
+what:
+  - copyrights
+  - holders
+  - holders_summary
+  - authors
+copyrights:
+  - Copyright (c) 1994-2002 W3C (R) (Massachusetts_Institute_of_Technology, Institut National_de_Recherche_en_Informatique_et_en_Automatique,
+    Keio_University)
+holders:
+  - W3C (R) (Massachusetts_Institute_of_Technology, Institut National_de_Recherche_en_Informatique_et_en_Automatique,
+    Keio_University)
+holders_summary:
+  - value: W3C (R) (Massachusetts_Institute_of_Technology, Institut National_de_Recherche_en_Informatique_et_en_Automatique,
+      Keio_University)
+    count: 1

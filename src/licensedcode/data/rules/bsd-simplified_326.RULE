@@ -1,0 +1,15 @@
+---
+license_expression: bsd-simplified
+is_license_reference: yes
+referenced_filenames:
+    - http://www.opensource.org/licenses/bsd-license.php
+ignorable_urls:
+    - http://www.opensource.org/licenses/bsd-license.php
+---
+
+<licenses>
+    <license>
+        <name>BSD</name>
+        <url>http://www.opensource.org/licenses/bsd-license.php</url>
+    </license>
+</licenses>

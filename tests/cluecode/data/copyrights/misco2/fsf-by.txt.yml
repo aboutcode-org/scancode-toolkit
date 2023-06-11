@@ -1,0 +1,12 @@
+what:
+  - copyrights
+  - holders
+  - holders_summary
+  - authors
+copyrights:
+  - copyrighted by the Free Software Foundation
+holders:
+  - the Free Software Foundation
+holders_summary:
+  - value: Free Software Foundation
+    count: 1

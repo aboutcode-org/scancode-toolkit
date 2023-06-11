@@ -1,0 +1,20 @@
+what:
+  - copyrights
+  - holders
+  - holders_summary
+  - authors
+copyrights:
+  - Copyright (c) 2013-2017 Jussi Kivilinna
+  - Copyright (c) 2013-2014 Dmitry Eremin-Solenikov
+  - Copyright (c) 2014 Stephan Mueller
+holders:
+  - Jussi Kivilinna
+  - Dmitry Eremin-Solenikov
+  - Stephan Mueller
+holders_summary:
+  - value: Dmitry Eremin-Solenikov
+    count: 1
+  - value: Jussi Kivilinna
+    count: 1
+  - value: Stephan Mueller
+    count: 1

@@ -1,0 +1,22 @@
+---
+license_expression: apache-2.0
+is_license_notice: yes
+ignorable_copyrights:
+    - copyright (c) 2000-2003, BEA Systems, <http://www.bea.com/>
+ignorable_holders:
+    - BEA Systems
+ignorable_urls:
+    - http://www.apache.org/
+    - http://www.bea.com/
+---
+
+=========================================================================
+   ==  NOTICE file corresponding to section 4(d) of the Apache License,   ==
+   ==  Version 2.0, in this case for the Apache XmlBeans distribution.    ==
+   =========================================================================
+
+   This product includes software developed at
+   The Apache Software Foundation (http://www.apache.org/).
+
+   Portions of this software were originally based on the following:
+     - software copyright (c) 2000-2003, BEA Systems, <http://www.bea.com/>.

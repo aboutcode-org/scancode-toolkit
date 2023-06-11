@@ -1,0 +1,3 @@
+The original project is (C)opyright by Ayman Al-Sairafi and released under the Apache License, Version 2.0.
+
+All changes, reworkings and extensions in SyntaxPane (C)opyright 2011–2015 by Hanns Holger Rutz.

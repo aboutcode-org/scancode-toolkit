@@ -1,0 +1,12 @@
+---
+license_expression: unicode-icu-58 AND unicode AND mit-old-style-no-advert AND gpl-3.0-plus
+    WITH autoconf-simple-exception
+is_license_text: yes
+is_continuous: yes
+referenced_filenames:
+    - https://github.com/unicode-org/icu/blob/main/LICENSE
+ignorable_urls:
+    - https://github.com/unicode-org/icu/blob/
+---
+
+{{https://github.com/unicode-org/icu/blob/ /LICENSE}}

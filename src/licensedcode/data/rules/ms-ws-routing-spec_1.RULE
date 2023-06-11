@@ -1,0 +1,36 @@
+---
+license_expression: ms-ws-routing-spec
+is_license_text: yes
+---
+
+Legal Disclaimer
+
+The presentation, distribution or other dissemination of the information 
+contained in this document is not a license, either expressly or impliedly, 
+to any intellectual property owned or controlled by BEA or IBM or Microsoft
+and\or any other third party.  BEA and IBM and Microsoft and\or any other
+third party may have patents, patent applications, trademarks, copyrights, 
+or other intellectual property rights covering subject matter in this 
+document.  The furnishing of this document does not give you any license 
+to BEA's and IBM's and Microsoft's or any other third party's patents, 
+trademarks, copyrights, or other intellectual property.
+
+This document and the information contained herein is provided on an "AS IS"
+basis and to the maximum extent permitted by applicable law, BEA and IBM 
+and Microsoft provide the document AS IS AND WITH ALL FAULTS, and hereby 
+disclaims all other warranties and conditions, either express, implied or 
+statutory, including, but not limited to, any (if any) implied warranties, 
+duties or conditions of merchantability, of fitness for a particular 
+purpose, of accuracy or completeness of responses, of results, of 
+workmanlike effort, of lack of viruses, and of lack of negligence, all with
+regard to the document. ALSO, THERE IS NO WARRANTY OR CONDITION OF 
+TITLE, QUIET ENJOYMENT, QUIET POSSESSION, CORRESPONDENCE TO DESCRIPTION OR 
+NON-INFRINGEMENT OF ANY INTELLECTUAL PROPERTY RIGHTS WITH REGARD TO THE 
+DOCUMENT.
+
+IN NO EVENT WILL BEA or IBM or MICROSOFT BE LIABLE TO ANY OTHER PARTY FOR THE
+COST OF PROCURING SUBSTITUTE GOODS OR SERVICES, LOST PROFITS, LOSS OF USE, 
+LOSS OF DATA, OR ANY INCIDENTAL, CONSEQUENTIAL, DIRECT, INDIRECT, OR SPECIAL 
+DAMAGES WHETHER UNDER CONTRACT, TORT, WARRANTY, OR OTHERWISE, ARISING IN ANY 
+WAY OUT OF THIS OR ANY OTHER AGREEMENT RELATING TO THIS DOCUMENT, WHETHER OR 
+NOT SUCH PARTY HAD ADVANCE NOTICE OF THE POSSIBILITY OF SUCH DAMAGES.

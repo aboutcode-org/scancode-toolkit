@@ -1,0 +1,8 @@
+what:
+  - copyrights
+  - holders
+  - authors
+copyrights:
+  - Copyright (c) 2015 Jon Schlinkert
+holders:
+  - Jon Schlinkert

@@ -1,0 +1,4 @@
+  Copyright (C) 2013-2017 Jussi Kivilinna
+  Copyright (C) 2013-2014 Dmitry Eremin-Solenikov
+  Copyright (C) 2014 Stephan Mueller
+

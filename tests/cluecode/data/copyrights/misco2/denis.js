@@ -1,0 +1,1 @@
+h({version:"3.22.4",mode:"global",copyright:"© 2014-2022 Denis Pushkarev (zloirock.ru)",license:"https://github.com/zloirock/core-js/blob/v3.22.4/LICENSE",source:"https://github.com/zloirock/core-js"});var At=_,xt=o.Object,Nt=function(t){return xt(At(t

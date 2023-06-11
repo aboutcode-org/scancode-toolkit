@@ -100,16 +100,12 @@
       "detection_log": []
     },
     {
-      "identifier": "zlib-3777cd8f-b515-8132-88be-cec12676bbaf",
-      "license_expression": "zlib",
-      "detection_count": 1,
-      "detection_log": []
-    },
-    {
       "identifier": "zlib-9531c668-be8d-7a25-49eb-c18c9dcd616b",
       "license_expression": "zlib",
-      "detection_count": 1,
-      "detection_log": []
+      "detection_count": 2,
+      "detection_log": [
+        "unknown-reference-to-local-file"
+      ]
     }
   ],
   "files": [

@@ -1,0 +1,1 @@
+Adapted from node-bzip, copyright 2012 Eli Skeggs.

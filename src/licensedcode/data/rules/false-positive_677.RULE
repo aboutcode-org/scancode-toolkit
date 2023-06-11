@@ -1,0 +1,6 @@
+---
+is_false_positive: yes
+notes: seen in microsoft-graph-1.5.0-sources.jar
+---
+
+Note: Details for this property require an Azure AD Premium P2 license. Other licenses return the value hidden.

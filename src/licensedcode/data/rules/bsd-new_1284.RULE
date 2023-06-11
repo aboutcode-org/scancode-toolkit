@@ -1,0 +1,9 @@
+---
+license_expression: bsd-new
+is_license_reference: yes
+is_continuous: yes
+ignorable_urls:
+    - https://go.dev/LICENSE
+---
+
+{{https://go.dev/LICENSE}}

@@ -1,0 +1,11 @@
+---
+license_expression: m-plus OR ofl-1.0
+language: ja
+is_license_text: yes
+relevance: 100
+notes: See in https://ja.osdn.net/frs/redir.php?m=rwthaachen&f=hanazono-font%2F68253%2Fhanazono-20170904.zip
+    and reported in https://gitlab.com/fedora/legal/fedora-license-data/-/issues/179
+---
+
+は、独自ライセンスとSIL OFLライセンスのデュアルライセンス
+です。SIL OFLライセンスは上記英文を参照してください。

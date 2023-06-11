@@ -1,0 +1,1 @@
+Copyright (c) 2011 Joyent, Inc. and the persons identified as document authors.

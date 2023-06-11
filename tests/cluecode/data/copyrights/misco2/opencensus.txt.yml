@@ -1,0 +1,11 @@
+what:
+  - copyrights
+  - holders
+  - holders_summary
+copyrights:
+  - Copyright 2018, OpenCensus Authors
+holders:
+  - OpenCensus Authors
+holders_summary:
+  - value: OpenCensus Authors
+    count: 1

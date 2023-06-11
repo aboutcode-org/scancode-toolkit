@@ -1,0 +1,11 @@
+---
+license_expression: lgpl-2.1
+is_license_reference: yes
+is_continuous: yes
+referenced_filenames:
+    - http://jgrapht.sourceforge.net/LGPL.html
+ignorable_urls:
+    - http://jgrapht.sourceforge.net/LGPL.html
+---
+
+{{http://jgrapht.sourceforge.net/LGPL.html}}

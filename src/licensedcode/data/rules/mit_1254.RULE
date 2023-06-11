@@ -1,0 +1,12 @@
+---
+license_expression: mit
+is_license_notice: yes
+referenced_filenames:
+    - LICENSE.mit
+notes: Seen in revng
+ignorable_urls:
+    - https://opensource.org/licenses/MIT
+---
+
+Each individual file, unless otherwise noted, is released under the terms of the [MIT License](https://opensource.org/licenses/MIT).
+A copy of this license can be found in [LICENSE.mit](LICENSE.mit).

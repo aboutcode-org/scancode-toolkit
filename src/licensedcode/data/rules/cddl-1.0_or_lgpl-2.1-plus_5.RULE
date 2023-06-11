@@ -1,0 +1,9 @@
+---
+license_expression: cddl-1.0 OR lgpl-2.1-plus
+is_license_notice: yes
+relevance: 100
+minimum_coverage: 100
+notes: found in tika-parsers-1.28.5-sources.jar and references JHightlight library (https://github.com/codelibs/jhighlight)
+---
+
+under {{CDDL/LGPL dual license}}

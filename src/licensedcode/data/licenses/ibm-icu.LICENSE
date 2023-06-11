@@ -11,7 +11,6 @@ text_urls:
     - http://icu-project.org/repos/icu/icu/trunk/license.html
 minimum_coverage: 85
 ignorable_copyrights:
-    - (c) 1999 TaBE Project
     - Copyright (c) 1991-2014 Unicode, Inc.
     - Copyright (c) 1995-2014 International Business Machines Corporation and others
     - Copyright (c) 1999 Computer Systems and Communication Lab, Institute of Information Science,
@@ -22,12 +21,13 @@ ignorable_copyrights:
     - Copyright (c) 2013 International Business Machines Corporation and others
     - Copyright (c) 2013, LeRoy Benjamin Sharon
     - Copyright (c) 2014 International Business Machines Corporation and others
-    - Copyright 1996 Chih-Hao Tsai Beckman Institute, University of Illinois c-tsai4@uiuc.edu
+    - Copyright 1996 Chih-Hao Tsai @ Beckman Institute, University of Illinois c-tsai4@uiuc.edu
         http://casper.beckman.uiuc.edu/~c-tsai4
     - Copyright 2000, 2001, 2002, 2003 Nara Institute of Science and Technology
+    - Copyrighy (c) 1999 TaBE Project
 ignorable_holders:
     - Brian Eugene Wilson, Robert Martin Campbell
-    - Chih-Hao Tsai Beckman Institute, University of Illinois
+    - Chih-Hao Tsai @ Beckman Institute, University of Illinois
     - Computer Systems and Communication Lab, Institute of Information Science, Academia Sinica
     - Google Inc.
     - International Business Machines Corporation and others

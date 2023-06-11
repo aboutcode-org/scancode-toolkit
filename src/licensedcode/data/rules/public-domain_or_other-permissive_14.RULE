@@ -1,0 +1,13 @@
+---
+license_expression: public-domain OR other-permissive
+is_license_text: yes
+notes: https://github.com/aktowns/libvncserver/blob/598ac02c54feb199f2715c211288ef90a9fa512e/x11vnc/misc/turbovnc/README#L2
+ignorable_emails:
+    - runge@karlrunge.com
+---
+
+This work has been (or is hereby) released into the public domain by
+its author, Karl J. Runge <runge@karlrunge.com>. This applies worldwide.
+In case this is not legally possible: Karl J. Runge grants anyone the
+right to use this work for any purpose, without any conditions, unless
+such conditions are required by law.

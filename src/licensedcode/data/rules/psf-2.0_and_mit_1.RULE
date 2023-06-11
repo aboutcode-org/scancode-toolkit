@@ -1,0 +1,14 @@
+---
+license_expression: psf-2.0 AND mit
+is_license_notice: yes
+minimum_coverage: 95
+ignorable_urls:
+    - http://www.opensource.org/licenses/Python-2.0
+---
+
+License: {{PYTHON SOFTWARE FOUNDATION LICENSE VERSION 2}}
+         See http://www.opensource.org/licenses/Python-2.0 for full terms
+Note: backport changes by Raymond were originally distributed under MIT
+      license, but since the original license for Python is more 
+      restrictive than MIT, code cannot be released under its terms and
+      still adheres to the limitations of Python license.

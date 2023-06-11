@@ -121,16 +121,16 @@ other_license_detections:
     identifier: gpl_2_0-f0da9233-5233-7bfb-cd4d-15c9cbd6a410
   - license_expression: bsd-new
     matches:
-      - score: '99.52'
+      - score: '100.0'
         start_line: 97
         end_line: 117
-        matched_length: 206
-        match_coverage: '99.52'
-        matcher: 3-seq
+        matched_length: 211
+        match_coverage: '100.0'
+        matcher: 1-hash
         license_expression: bsd-new
-        rule_identifier: bsd-new_222.RULE
+        rule_identifier: bsd-new_1273.RULE
         rule_relevance: 100
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_222.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_1273.RULE
         matched_text: |
           Redistribution and use in source and binary forms, with or without
           modification, are permitted provided that the following conditions are met:
@@ -153,7 +153,7 @@ other_license_detections:
           ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
           (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
           SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-    identifier: bsd_new-e84c2b3c-fdef-54d9-0d80-846b468be913
+    identifier: bsd_new-110ee496-752d-98ce-8c3f-6a68f0deedcc
 copyright: |
   2013-2018, Yann Collet
   2016, Przemyslaw Skibinski

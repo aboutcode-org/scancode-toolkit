@@ -1,10 +1,12 @@
 {
   "license_detections": [
     {
-      "identifier": "unknown_license_reference-f177df3d-5d60-ab6b-92ac-9a3fb4cb783f",
-      "license_expression": "unknown-license-reference",
+      "identifier": "mit-e46a912c-b32a-30d5-dc27-c13824253230",
+      "license_expression": "mit",
       "detection_count": 4,
-      "detection_log": []
+      "detection_log": [
+        "unknown-reference-to-local-file"
+      ]
     },
     {
       "identifier": "mit-d0a34f23-8c35-8874-a99f-6ed1e3b31f40",
@@ -31,10 +33,12 @@
       "detection_log": []
     },
     {
-      "identifier": "mit-eea7f51e-637f-984c-1e86-a78bca648bf8",
+      "identifier": "mit-ad99a349-2a14-9fe5-c6a6-366fd3b9067b",
       "license_expression": "mit",
       "detection_count": 1,
-      "detection_log": []
+      "detection_log": [
+        "unknown-reference-to-local-file"
+      ]
     }
   ],
   "files": [

@@ -1,0 +1,12 @@
+what:
+  - copyrights
+  - holders
+  - holders_summary
+  - authors
+copyrights:
+  - (c) 2020 Jim Mason <jmason@ibinx.com>
+holders:
+  - Jim Mason
+holders_summary:
+  - value: Jim Mason
+    count: 1

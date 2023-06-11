@@ -365,8 +365,9 @@ def get_license_detection_mappings(
     package_license=True,
 ):
     """
-    Return a list of LicenseDetection objects by running license detection
-    on `location`. This performs similarly to `scancode.api.get_licenses`.
+    Return a list of LicenseDetection mappings by running license detection on
+    the file at ``location``. This performs license detection the same way as
+    with `scancode.api.get_licenses`.
     """
     license_detections = []
     detections = detect_licenses(
@@ -379,9 +380,11 @@ def get_license_detection_mappings(
 
     for detection in detections:
         # TODO: also return these?
+        # FIXME: How can we ever get a license detection WITHOUT an expression??
         if detection.license_expression is None:
             continue
 
+        # FIXME: why not honoring the arguments for include_text and license_text_diagnostics?
         license_detections.append(
             detection.to_dict(
                 include_text=True,

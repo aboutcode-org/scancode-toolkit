@@ -1,0 +1,12 @@
+---
+license_expression: gpl-3.0 AND cc0-1.0 AND proprietary-license
+is_license_notice: yes
+referenced_filenames:
+    - LICENSE
+notes: https://github.com/liberaledemokraten/php-email-migration/blob/eadc5c94593442df4e5f9858c6e54afbd30dd082/README.md#L4
+---
+
+Free use of this project's contents is granted under the terms of the GNU GPLv3 
+license. For the full text of the license, see the LICENSE file. The HTML file providing a sample form however is licensed under the CC0 Public Domain license such that you can use, modify and distribute it without any limitations of any sorts.
+
+The use of the resources provided by this project shall be done in a way that your modifications to the code, distribution thereof or use of the provided files does not imply any endorsement by the authors or copyright holders of this project. You shall not use this project or contents thereof in the name of the authors or copyright holders unless explicitly permitted.

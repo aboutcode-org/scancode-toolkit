@@ -1,0 +1,13 @@
+---
+license_expression: m-plus
+language: ja
+is_license_text: yes
+relevance: 100
+notes: See in https://ja.osdn.net/frs/redir.php?m=rwthaachen&f=hanazono-font%2F68253%2Fhanazono-20170904.zip
+    and reported in https://gitlab.com/fedora/legal/fedora-license-data/-/issues/179
+---
+
+このフォントはフリー（自由な）ソフトウエアです。
+あらゆる改変の有無に関わらず、また商業的な利用であっても、自由に利用、
+複製、再配布することができますが、全て無保証とさせていただきます。
+このライセンス文書についても、フォントと同様の扱いとします。

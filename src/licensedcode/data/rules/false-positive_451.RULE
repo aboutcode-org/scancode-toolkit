@@ -1,0 +1,8 @@
+---
+is_false_positive: yes
+notes: seen in Debian copyright
+---
+
+are copyrighted, and thus the
+ old test files were not in the public domain as a whole. They
+ are freely distributable though

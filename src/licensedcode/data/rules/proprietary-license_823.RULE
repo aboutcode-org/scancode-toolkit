@@ -1,0 +1,94 @@
+---
+license_expression: proprietary-license
+is_license_text: yes
+notes: https://github.com/AbsInt/CompCert/blob/5be9ae2235b16239f023a36679b7d515dd774c68/LICENSE
+---
+
+INRIA Non-Commercial License Agreement for the CompCert verified compiler
+
+1. Background: Institut National de Recherche en Informatique et en
+   Automatique (the "Provider") developed the CompCert verified
+   compiler (the "Software") and seeks to distribute the Software for
+   public use and benefit.
+
+2. Grant: The Provider hereby grants to you a revocable, nonexclusive,
+   nontransferable, royalty-free and worldwide license (the "License")
+   to use the Software solely for educational, research, or evaluation
+   purposes, in accordance with Paragraph 3 below and subject to the
+   terms and conditions of this License Agreement (the
+   "Agreement"). The License entitles you to use the Software to
+   conduct research or education and to create Derivative Works solely
+   for academic, non-commercial research endeavors of the Licensee (A
+   "Derivative Work" is a work that is a modification of, enhancement
+   to, derived from, or based upon the Software).
+
+3. Limitations on Use: The License is limited to noncommercial
+   use. Noncommercial use relates only to educational, research,
+   personal or evaluation purposes. Any other use is commercial use.
+   You may not use the Software in connection with any activities
+   which purpose is to procure a commercial gain to you or others.
+
+4. Limitations on Distribution: If you distribute the Software or any
+   derivative works of the Software, you will distribute them under
+   the same terms and conditions as in this License, and you will not
+   grant other rights to the Software or derivative works that are
+   different from those provided by this License.
+
+5. Ownership: The Software and the accompanying documentation are
+   licensed, not sold, to you. The Software is a proprietary product
+   of the Provider and is protected under French copyright law and
+   international treaty revisions. The Provider retains all rights not
+   specifically granted to you hereunder, including ownership of the
+   Software and all copyrights, trade secrets, or other intellectual
+   property rights in the Software and any accompanying information.
+
+6. Publication Credit: You agree to acknowledge the INRIA CompCert
+   research project with appropriate citations in any publication or
+   presentation containing research results obtained in whole or in
+   part through the use of the Software.
+
+7. Term of License: The License is effective upon receipt by you of
+   the Software and shall continue until terminated. The License will
+   terminate immediately without notice by the Provider if you fail to
+   comply with the terms and conditions of this Agreement. Upon
+   termination of this License, you shall immediately discontinue all
+   use of the Software provided hereunder, and return to the Provider
+   or destroy the original and all copies of all such Software. All of
+   your obligations under this Agreement shall survive the termination
+   of the License.
+
+8. Warranty: THE PROVIDER MAKES NO REPRESENTATIONS ABOUT THE
+   SUITABILITY, USE, OR PERFORMANCE OF THIS SOFTWARE OR ABOUT ANY
+   CONTENT OR INFORMATION MADE ACCESSIBLE BY THE SOFTWARE, FOR ANY
+   PURPOSE. THE SOFTWARE IS PROVIDED "AS IS," WITHOUT EXPRESS OR
+   IMPLIED WARRANTIES INCLUDING, BUT NOT LIMITED TO, ANY IMPLIED
+   WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, OR
+   NONINFRINGEMENT WITH RESPECT TO THE SOFTWARE. THE PROVIDER IS NOT
+   OBLIGATED TO SUPPORT OR ISSUE UPDATES TO THE SOFTWARE.
+
+9. Limitation on Liability: This Software is provided free of charge
+   and, accordingly, the Provider shall not be liable under any theory
+   for any damages suffered by you or any user of the Software. UNDER
+   NO CIRCUMSTANCES SHALL PROVIDER BE LIABLE TO YOU OR ANY OTHER
+   PERSON FOR ANY DIRECT, INDIRECT, SPECIAL, INCIDENTAL, OR
+   CONSEQUENTIAL DAMAGES OF ANY CHARACTER INCLUDING, WITHOUT
+   LIMITATION, DAMAGES FOR LOSS OF GOODWILL, WORK STOPPAGE, COMPUTER
+   FAILURE OR MALFUNCTION, OR ANY AND ALL OTHER ECONOMIC LOSS OR
+   COMMERCIAL DAMAGES ARISING OUT OF THE USE OR INABILITY TO USE THIS
+   SOFTWARE, EVEN IF PROVIDER SHALL HAVE BEEN INFORMED OF THE
+   POSSIBILITY OF SUCH DAMAGES, OR FOR ANY THIRD-PARTY CLAIMS.
+
+10. Disputes: The Parties agree to attempt to settle amicably any
+   controversy or claim arising under this Agreement or a breach of
+   this Agreement. Thereafter, both parties agree that all disputes
+   between them arising out of or relating to this Agreement, shall
+   be submitted to non-binding mediation unless the parties mutually
+   agree otherwise. All parties agree to exercise their best effort
+   in good faith to resolve all disputes in mediation. This Agreement
+   shall be governed and construed in accordance with the laws of
+   France.
+
+11. Entire Agreement: This Agreement contains the entire agreement
+   between the parties with respect to the subject matter hereof, and
+   it shall not be modified or amended except by an instrument in
+   writing signed by both parties hereto.

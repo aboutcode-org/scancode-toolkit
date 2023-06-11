@@ -1086,9 +1086,10 @@ def validate_rules(rules, licenses_by_key, with_text=False, rules_data_dir=rules
             for rule in rules:
                 message.append(f'  {rule!r}')
 
-                rule_file = rule.rule_file(rules_data_dir=rules_data_dir)
-                if rule_file and exists(rule_file):
-                    message.append(f'    file://{rule_file}')
+                if rule.identifier:
+                    rule_file = rule.rule_file(rules_data_dir=rules_data_dir)
+                    if rule_file and exists(rule_file):
+                        message.append(f'    file://{rule_file}')
 
                 if with_text:
                     txt = rule.text[:100].strip()
@@ -1704,11 +1705,11 @@ class BasicRule:
         licenses_data_dir=licenses_data_dir,
     ):
         """
-        Return the path to the rule file for this rule object,
-        given the `rules_data_dir` directory or `licenses_data_dir`
-        if a license rule.
+        Return the path to the rule file for this rule object, given the
+        `rules_data_dir` directory or `licenses_data_dir` if a license rule.
+        Return None if the Rule does not have yet an identifier or is synthetic.
         """
-        if self.is_synthetic:
+        if self.is_synthetic or not self.identifier:
             return None
 
         if self.is_from_license:
@@ -2136,7 +2137,10 @@ class Rule(BasicRule):
         """
         if self.is_from_license:
             return []
-        return list(get_key_phrase_spans(self.text))
+        try:
+            return list(get_key_phrase_spans(self.text))
+        except Exception as e:
+            raise InvalidRule(f'Invalid rule: {self}') from e
 
     def compute_thresholds(self, small_rule=SMALL_RULE):
         """
@@ -2598,7 +2602,6 @@ class DebianUnknownRule(Rule):
 
     def dump(self):
         raise NotImplementedError
-
 
 
 def _print_rule_stats():

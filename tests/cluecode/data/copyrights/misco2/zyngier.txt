@@ -1,0 +1,1 @@
+Copyright (c) 1994-96 Marc ZYNGIER <zyngier@ufr-info-p7.ibp.fr> or <maz@gloups.fdn.fr>

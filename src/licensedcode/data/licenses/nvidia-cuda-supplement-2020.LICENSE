@@ -12,7 +12,7 @@ ignorable_copyrights:
     - Copyright (c) 2003-2010 University of Illinois at Urbana-Champaign
     - Copyright (c) 2007-2009, Regents of the University of California
     - Copyright (c) 2007-2012, Google Inc.
-    - Copyright (c) 2008-2009 Davide Barbieri University of Rome Tor Vergata
+    - Copyright (c) 2008-2009 Davide Barbieri @ University of Rome Tor Vergata
     - Copyright (c) 2009, 2010 Mutsuo Saito, Makoto Matsumoto and Hiroshima University
     - Copyright (c) 2009-2012 Zoltan Herczeg
     - Copyright (c) 2010 The University of Tennessee
@@ -28,7 +28,7 @@ ignorable_copyrights:
     - Copyright 2010-2011, D. E. Shaw Research
 ignorable_holders:
     - D. E. Shaw Research
-    - Davide Barbieri University of Rome Tor Vergata
+    - Davide Barbieri @ University of Rome Tor Vergata
     - Google Inc.
     - King Abdullah University of Science and Technology
     - Microsoft Corporation

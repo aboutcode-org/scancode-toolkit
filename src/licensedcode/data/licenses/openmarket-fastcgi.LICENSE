@@ -9,9 +9,9 @@ spdx_license_key: LicenseRef-scancode-openmarket-fastcgi
 text_urls:
     - http://www.fastcgi.com/drupal/node/8
 ignorable_copyrights:
-    - copyrighted by Open Market, Inc 'Open Market
+    - copyrighted by Open Market, Inc
 ignorable_holders:
-    - Open Market, Inc 'Open Market
+    - Open Market, Inc
 ---
 
 OpenMarket FastCGI

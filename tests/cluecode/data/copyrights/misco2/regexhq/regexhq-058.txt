@@ -1,0 +1,1 @@
+Copyright (C) 2012 Joost-Wim Boekesteijn <joost-wim@boekesteijn.nl>

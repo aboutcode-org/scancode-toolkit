@@ -40,9 +40,9 @@ other_license_expression: (public-domain AND public-domain AND lgpl-2.1-plus AND
   AND public-domain AND public-domain AND public-domain AND (gpl-2.0-plus AND gpl-2.0-plus)
   AND public-domain AND public-domain AND (lgpl-2.1-plus AND lgpl-2.1-plus) AND fsf-unlimited
   AND gpl-3.0-plus WITH autoconf-macro-exception AND fsf-ap AND (gpl-2.0 AND gpl-2.0) AND public-domain
-  AND public-domain AND public-domain AND public-domain AND public-domain AND public-domain
-  AND fsf-ap AND (public-domain AND fsf-unlimited AND autoconf-exception-2.0 AND gpl-2.0) AND
-  (lgpl-2.1-plus AND lgpl-2.1-plus) AND other-copyleft AND public-domain
+  AND public-domain AND public-domain AND public-domain AND public-domain AND fsf-ap AND (public-domain
+  AND fsf-unlimited AND autoconf-exception-2.0 AND gpl-2.0) AND (lgpl-2.1-plus AND lgpl-2.1-plus)
+  AND other-copyleft AND public-domain
 other_license_expression_spdx: (LicenseRef-scancode-public-domain AND LicenseRef-scancode-public-domain
   AND LGPL-2.1-or-later AND GPL-2.0-or-later AND LicenseRef-scancode-public-domain AND LicenseRef-scancode-public-domain
   AND (LicenseRef-scancode-public-domain AND GPL-2.0-or-later AND GPL-3.0-or-later) AND LicenseRef-scancode-public-domain
@@ -54,9 +54,9 @@ other_license_expression_spdx: (LicenseRef-scancode-public-domain AND LicenseRef
   AND (LGPL-2.1-or-later AND LGPL-2.1-or-later) AND FSFULLR AND GPL-3.0-or-later WITH LicenseRef-scancode-autoconf-macro-exception
   AND FSFAP AND (GPL-2.0-only AND GPL-2.0-only) AND LicenseRef-scancode-public-domain AND LicenseRef-scancode-public-domain
   AND LicenseRef-scancode-public-domain AND LicenseRef-scancode-public-domain AND LicenseRef-scancode-public-domain
-  AND LicenseRef-scancode-public-domain AND FSFAP AND (LicenseRef-scancode-public-domain AND
-  FSFULLR AND Autoconf-exception-2.0 AND GPL-2.0-only) AND (LGPL-2.1-or-later AND LGPL-2.1-or-later)
-  AND LicenseRef-scancode-other-copyleft AND LicenseRef-scancode-public-domain
+  AND FSFAP AND (LicenseRef-scancode-public-domain AND FSFULLR AND Autoconf-exception-2.0 AND
+  GPL-2.0-only) AND (LGPL-2.1-or-later AND LGPL-2.1-or-later) AND LicenseRef-scancode-other-copyleft
+  AND LicenseRef-scancode-public-domain
 license_detections: []
 other_license_detections:
   - license_expression: public-domain AND lgpl-2.1-plus AND gpl-2.0-plus AND (public-domain
@@ -722,42 +722,28 @@ other_license_detections:
       - score: '100.0'
         start_line: 104
         end_line: 104
-        matched_length: 5
+        matched_length: 6
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: public-domain
-        rule_identifier: public-domain_305.RULE
+        rule_identifier: public-domain_473.RULE
         rule_relevance: 100
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/public-domain_305.RULE
-        matched_text: are in the public domain.
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/public-domain_473.RULE
+        matched_text: docs are in the public domain.
       - score: '100.0'
         start_line: 108
         end_line: 109
-        matched_length: 5
+        matched_length: 6
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: public-domain
-        rule_identifier: public-domain_305.RULE
+        rule_identifier: public-domain_473.RULE
         rule_relevance: 100
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/public-domain_305.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/public-domain_473.RULE
         matched_text: |
-          are in the public
+          docs are in the public
            domain
-    identifier: public_domain-cfab5127-e9d6-dadf-ca6c-3f0098a6c537
-  - license_expression: public-domain
-    matches:
-      - score: '100.0'
-        start_line: '198'
-        end_line: '198'
-        matched_length: 4
-        match_coverage: '100.0'
-        matcher: 2-aho
-        license_expression: public-domain
-        rule_identifier: public-domain_298.RULE
-        rule_relevance: 100
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/public-domain_298.RULE
-        matched_text: in the public domain
-    identifier: public_domain-04555aca-bf7c-c595-ee5a-9129139895fd
+    identifier: public_domain-081e3818-d890-e6bb-2ab7-854f7b861a32
 copyright: |
   2006-2018, Lasse Collin
   1999-2008, Igor Pavlov

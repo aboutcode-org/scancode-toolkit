@@ -1,0 +1,12 @@
+---
+license_expression: epl-1.0 OR bsd-new
+is_license_tag: yes
+minimum_coverage: 95
+ignorable_urls:
+    - https://github.com/locationtech/jts/blob/master/LICENSE
+    - https://github.com/locationtech/jts/blob/master/LICENSE_EDLv
+---
+
+https://github.com/locationtech/jts/blob/master/LICENSE_
+ EPLv1.txt, https://github.com/locationtech/jts/blob/master/LICENSE_EDLv
+ 1.txt

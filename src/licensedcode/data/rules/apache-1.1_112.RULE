@@ -1,0 +1,11 @@
+---
+license_expression: apache-1.1
+is_license_notice: yes
+notes: Found in lucene-analyzers-stempel-8.11.1-sources.jar
+---
+
+<p>This work is available under Apache-style Open Source license - the
+stemmer code is covered by Egothor License, the tables and other
+additions are covered by Apache License 2.0. Both licenses allow to use
+the code in Open Source as well as commercial (closed source) projects.</p>
+<h3>Terminology</h3>

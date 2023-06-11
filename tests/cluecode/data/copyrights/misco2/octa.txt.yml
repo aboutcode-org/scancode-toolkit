@@ -1,0 +1,12 @@
+what:
+  - copyrights
+  - holders
+  - holders_summary
+  - authors
+copyrights:
+  - Copyright 2001-2011 Xiph.Org, Skype Limited, Octasic
+holders:
+  - Xiph.Org, Skype Limited, Octasic
+holders_summary:
+  - value: Xiph.Org, Skype Limited, Octasic
+    count: 1

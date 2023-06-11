@@ -1,0 +1,9 @@
+---
+license_expression: gpl-2.0-plus WITH openssl-exception-gpl-2.0
+is_license_notice: yes
+---
+
+Due to the incompatibility between the GPL and the OpenSSL licence, you must
+apply the GPL/LGPL licence with the following exception:
+This program is released under the GPL with the additional exemption that
+compiling, linking, and/or using OpenSSL is allowed.

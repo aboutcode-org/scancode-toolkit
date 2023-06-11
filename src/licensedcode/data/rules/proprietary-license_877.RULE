@@ -1,0 +1,19 @@
+---
+license_expression: proprietary-license
+is_license_text: yes
+notes: Seen in https://github.com/zerocracy/farm/blob/ca987e25fca09c4594d291a8cef24cd977e9e80f/src/main/resources/META-INF/services/javax.xml.xpath.XPathFactory
+    and https://github.com/zerocracy/farm/blob/953fcb0d2185386822dcad6140b84fd46c1bdcf2/LICENSE.txt
+---
+
+# Permission is hereby granted, free of charge, to any person obtaining a copy
+# of this software and associated documentation files (the "Software"), to read
+# the Software only. Permissions is hereby NOT GRANTED to use, copy, modify,
+# merge, publish, distribute, sublicense, and/or sell copies of the Software.
+#
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+# FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+# OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+# SOFTWARE.

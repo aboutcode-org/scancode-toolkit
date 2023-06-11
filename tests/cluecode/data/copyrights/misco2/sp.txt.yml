@@ -1,0 +1,12 @@
+what:
+  - copyrights
+  - holders
+  - holders_summary
+  - authors
+copyrights:
+  - Copyright (c) 2020 Contributors to the project Clay <https://github.com/liferay/clay/graphs/contributors>
+holders:
+  - Contributors to the project Clay
+holders_summary:
+  - value: Contributors to the project Clay
+    count: 1

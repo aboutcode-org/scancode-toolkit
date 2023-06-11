@@ -1,0 +1,11 @@
+---
+license_expression: indiana-extreme-1.2
+is_license_tag: yes
+is_continuous: yes
+referenced_filenames:
+    - https://raw.githubusercontent.com/x-stream/mxparser/master/LICENSE.txt
+ignorable_urls:
+    - https://raw.githubusercontent.com/x-stream/mxparser/master/LICENSE.txt
+---
+
+{{https://raw.githubusercontent.com/x-stream/mxparser/master/LICENSE.txt}}

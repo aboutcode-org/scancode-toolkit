@@ -1,0 +1,9 @@
+---
+license_expression: mit
+is_license_text: yes
+relevance: 100
+notes: Seen in https://github.com/SpiritSeeker/mpg123/blob/95fdddcea95339c1f922293e73edf50c6c841c76/src/libsyn123/geiger.c
+---
+
+licensed MIT-style.
+    Essentially: This is just a bit of code that you can use as you please.

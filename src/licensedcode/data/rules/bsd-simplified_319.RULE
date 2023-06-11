@@ -1,0 +1,8 @@
+---
+license_expression: bsd-simplified
+is_license_notice: yes
+relevance: 100
+notes: https://git.musl-libc.org/cgit/musl/tree/COPYRIGHT
+---
+
+licensed under a 2-clause BSD license (license text in the source files)

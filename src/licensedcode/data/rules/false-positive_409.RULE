@@ -1,0 +1,6 @@
+---
+is_false_positive: yes
+notes: Seen in https://repo1.maven.org/maven2/org/apache/logging/log4j/log4j/2.4/log4j-2.4.pom
+---
+
+jQuery is MIT-licensed, but RAT can't figure it out

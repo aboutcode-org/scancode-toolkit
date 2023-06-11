@@ -1,0 +1,12 @@
+what:
+  - copyrights
+  - holders
+  - holders_summary
+  - authors
+copyrights:
+  - Copyright (c) 2004, 2006 Nate Nielsen
+holders:
+  - Nate Nielsen
+holders_summary:
+  - value: Nate Nielsen
+    count: 1

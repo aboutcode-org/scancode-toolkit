@@ -1,0 +1,1 @@
+Copyright (c) 2011 TJ Holowaychuk &lt;tj@vision-media.ca&gt;

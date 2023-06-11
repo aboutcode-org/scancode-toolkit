@@ -1,0 +1,12 @@
+what:
+  - copyrights
+  - holders
+  - holders_summary
+  - authors
+copyrights:
+  - Copyright base-x contributors (c) 2016
+holders:
+  - base-x contributors
+holders_summary:
+  - value: base-x contributors
+    count: 1

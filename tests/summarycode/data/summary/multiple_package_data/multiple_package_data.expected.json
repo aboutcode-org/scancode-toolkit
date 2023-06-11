@@ -201,6 +201,11 @@
       "detection_count": 1
     },
     {
+      "identifier": "mit-a822f434-d61f-f2b1-c792-8b8cb9e7b9bf",
+      "license_expression": "mit",
+      "detection_count": 1
+    },
+    {
       "identifier": "mit-cacd5c0c-204a-85c2-affc-e4c125b2492a",
       "license_expression": "mit",
       "detection_count": 1
@@ -728,7 +733,13 @@
       "percentage_of_license_text": 40.0,
       "copyrights": [],
       "holders": [],
-      "authors": [],
+      "authors": [
+        {
+          "author": "Example Corp",
+          "start_line": 4,
+          "end_line": 4
+        }
+      ],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,

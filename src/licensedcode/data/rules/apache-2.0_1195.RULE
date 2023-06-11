@@ -1,0 +1,10 @@
+---
+license_expression: apache-2.0
+is_license_tag: yes
+ignorable_urls:
+    - https://www.apache.org/licenses/LICENSE-2.0.txt
+---
+
+<license>
+<name> Apache License, Version 2.0 </name>
+<url> (https://www.apache.org/licenses/LICENSE-2.0.txt)</url>

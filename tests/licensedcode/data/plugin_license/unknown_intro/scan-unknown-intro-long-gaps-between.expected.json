@@ -4,13 +4,17 @@
       "identifier": "x11_lucent-3c40145a-efd5-16ba-0a7a-9c28d9993bc2",
       "license_expression": "x11-lucent",
       "detection_count": 1,
-      "detection_log": []
+      "detection_log": [
+        "unknown-intro-followed-by-match"
+      ]
     },
     {
       "identifier": "bzip2_libbzip_2010-2234b9aa-1198-8ed2-f0d2-3310ced04b8a",
       "license_expression": "bzip2-libbzip-2010",
       "detection_count": 1,
-      "detection_log": []
+      "detection_log": [
+        "unknown-intro-followed-by-match"
+      ]
     }
   ],
   "files": [

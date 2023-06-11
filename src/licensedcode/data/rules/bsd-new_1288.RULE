@@ -1,0 +1,13 @@
+---
+license_expression: bsd-new
+is_license_tag: yes
+ignorable_urls:
+    - https://github.com/dom4j/dom4j/blob/master/LICENSE
+---
+
+<licenses>
+    <license>
+      <name>{{BSD 3-clause New License}}</name>
+      <url>https://github.com/dom4j/dom4j/blob/master/LICENSE</url>
+    </license>
+  </licenses>

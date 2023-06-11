@@ -1,0 +1,11 @@
+---
+license_expression: sax-pd
+is_license_tag: yes
+relevance: 100
+ignorable_urls:
+    - http://www.saxproject.org/copying.html
+---
+
+<license>
+<name> The SAX License </name>
+<url> (http://www.saxproject.org/copying.html)</url>

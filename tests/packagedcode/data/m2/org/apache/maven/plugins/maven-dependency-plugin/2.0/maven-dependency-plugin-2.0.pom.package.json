@@ -51,7 +51,7 @@
       "license_expression": "apache-2.0",
       "matches": [
         {
-          "score": 50.0,
+          "score": 75.0,
           "start_line": 1,
           "end_line": 1,
           "matched_length": 4,
@@ -59,18 +59,18 @@
           "matcher": "1-hash",
           "license_expression": "apache-2.0",
           "rule_identifier": "apache-2.0_3.RULE",
-          "rule_relevance": 50,
+          "rule_relevance": 75,
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_3.RULE",
           "matched_text": "Apache License 2.0"
         }
       ],
-      "identifier": "apache_2_0-f5c95478-417b-051d-2a73-0f3b1cc66568"
+      "identifier": "apache_2_0-62ae3761-33a2-9012-c9ab-0dd8e74dae85"
     },
     {
       "license_expression": "apache-2.0",
       "matches": [
         {
-          "score": 80.0,
+          "score": 100.0,
           "start_line": 1,
           "end_line": 1,
           "matched_length": 9,
@@ -78,12 +78,12 @@
           "matcher": "1-hash",
           "license_expression": "apache-2.0",
           "rule_identifier": "apache-2.0_42.RULE",
-          "rule_relevance": 80,
+          "rule_relevance": 100,
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_42.RULE",
           "matched_text": "http://www.apache.org/licenses/LICENSE-2.0.txt"
         }
       ],
-      "identifier": "apache_2_0-e6b67d43-b657-21c0-8d8b-17f617aef8ce"
+      "identifier": "apache_2_0-2e855fd2-d4e6-f202-a2a4-6953b9354518"
     }
   ],
   "other_license_expression": null,

@@ -1,0 +1,12 @@
+what:
+  - copyrights
+  - holders
+  - holders_summary
+  - authors
+copyrights:
+  - copyright 2007 by Ian Robertson
+holders:
+  - Ian Robertson
+holders_summary:
+  - value: Ian Robertson
+    count: 1

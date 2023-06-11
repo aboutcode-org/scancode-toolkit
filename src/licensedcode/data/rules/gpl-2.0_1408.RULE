@@ -1,0 +1,12 @@
+---
+license_expression: gpl-2.0
+is_license_notice: yes
+referenced_filenames:
+    - LICENSE.gpl
+notes: Seen in revng
+ignorable_urls:
+    - https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html
+---
+
+The project as a whole is released under the terms of the [GNU General Public License, version 2](https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html).
+A copy of this license can be found in [LICENSE.gpl](LICENSE.gpl).

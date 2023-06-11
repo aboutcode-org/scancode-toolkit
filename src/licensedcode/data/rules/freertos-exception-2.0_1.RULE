@@ -3,6 +3,10 @@ license_expression: gpl-2.0-plus WITH freertos-exception-2.0
 is_license_notice: yes
 referenced_filenames:
     - COPYING
+ignorable_copyrights:
+  - copyright to Tern Inc.
+ignorable_holders:
+  - Tern Inc.
 ---
 
 The FreeRTOS source code is licensed by a modified GNU General Public

@@ -1,0 +1,12 @@
+what:
+  - copyrights
+  - holders
+  - holders_summary
+  - authors
+copyrights:
+  - Copyright (c) 2010, 2020, Christian Thaeter <ct@pipapo.org>
+holders:
+  - Christian Thaeter
+holders_summary:
+  - value: Christian Thaeter
+    count: 1

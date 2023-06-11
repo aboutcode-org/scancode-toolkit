@@ -7,10 +7,12 @@
       "detection_log": []
     },
     {
-      "identifier": "unknown_license_reference-561f1903-04c8-0d5a-2432-034a966157a3",
-      "license_expression": "unknown-license-reference",
+      "identifier": "apache-2.0-1c807a43-2040-70af-75aa-c343d5f2b90c",
+      "license_expression": "apache-2.0",
       "detection_count": 1,
-      "detection_log": []
+      "detection_log": [
+        "unknown-reference-to-local-file"
+      ]
     }
   ],
   "files": [

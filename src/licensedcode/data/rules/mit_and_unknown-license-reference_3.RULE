@@ -1,0 +1,30 @@
+---
+license_expression: mit AND unknown-license-reference
+is_license_text: yes
+notes: See in https://github.com/CERTCC/VINCE/blob/2bed565cc8a73dd920a6c8ed0b58ac221e4b3119/LICENSE.txt
+    and https://github.com/CERTCC/VINCE/issues/84
+---
+
+MIT (SEI)
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+VINCE includes and/or can make use of certain third party software ("Third
+Party Software"). The Third Party Software that is used by VINCE is dependent
+upon your system configuration, but typically includes the software identified
+in the documentation and/or ReadMe files. By using VINCE, You agree to comply
+with any and all relevant Third Party Software terms and conditions contained
+in any such Third Party Software or separate license file distributed with
+such Third Party Software. The parties who own the Third Party Software
+("Third Party Licensors") are intended third party beneficiaries to this
+License with respect to the terms applicable to their Third Party Software.
+Third Party Software licenses only apply to the Third Party Software and not
+any other portion of VINCE or VINCE as a whole.

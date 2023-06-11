@@ -1,0 +1,16 @@
+what:
+  - copyrights
+  - holders
+  - holders_summary
+  - authors
+copyrights:
+  - Copyright (c) 2019. Jose Luis Luri Bolinski (jose.luis.luri@gmail.com)
+  - Copyright (c) 2020. Francisco J. Gallego-Duran (@FranGallegoBR, ronaldo@cheesetea.com)
+holders:
+  - Jose Luis Luri Bolinski
+  - Francisco J. Gallego-Duran @FranGallegoBR
+holders_summary:
+  - value: Francisco J. Gallego-Duran @FranGallegoBR
+    count: 1
+  - value: Jose Luis Luri Bolinski
+    count: 1

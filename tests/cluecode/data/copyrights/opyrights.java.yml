@@ -1,0 +1,39 @@
+what:
+  - copyrights
+  - holders
+  - holders_summary
+copyrights:
+  - (c) Copyright 2000-2005, by Object Refinery Limited and Contributors
+  - Copyright (c) 2000-2004, by Thomas Morgner and Contributors
+  - opylefted by -Harvie 2oo7
+  - Copyright (c) by Max Ziebell
+  - Copyright (c) 1990 by Jon Orten Thunderball Cave BBS
+  - Copyright (c) by Zeta Microcomputer Software
+  - Copyright (c). 08/95, Abigwar
+  - Copyright (c) by Parik Rao
+holders:
+  - Object Refinery Limited and Contributors
+  - Thomas Morgner and Contributors
+  - Harvie 2oo7
+  - Max Ziebell
+  - Jon Orten Thunderball Cave BBS
+  - Zeta Microcomputer Software
+  - Abigwar
+  - Parik Rao
+holders_summary:
+  - value: Abigwar
+    count: 1
+  - value: Harvie 2oo7
+    count: 1
+  - value: Jon Orten Thunderball Cave BBS
+    count: 1
+  - value: Max Ziebell
+    count: 1
+  - value: Object Refinery Limited and Contributors
+    count: 1
+  - value: Parik Rao
+    count: 1
+  - value: Thomas Morgner and Contributors
+    count: 1
+  - value: Zeta Microcomputer Software
+    count: 1

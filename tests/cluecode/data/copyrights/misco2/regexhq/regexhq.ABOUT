@@ -1,0 +1,6 @@
+download_url: https://github.com/regexhq/copyright-regex/blob/ea653bc28bf8d1b569d7069762180a42ae5917a9/test.js
+homepage_url: https://github.com/regexps/copyright-regex
+copyright: Copyright (c) 2015 Jon Schlinkert.
+license_expression: mit
+notice_file: regexhq.LICENSE
+notes: we reused the tests from this library

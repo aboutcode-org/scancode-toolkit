@@ -1,0 +1,13 @@
+---
+license_expression: mit-old-style
+is_license_text: yes
+notes: Seen in https://github.com/boostorg/bcp/blob/772ec6a9bd7395193ce300aeb28cd188ad8e6cbc/licence_info.cpp
+---
+
+Permission to use copy modify distribute and sell this software
+for any purpose is hereby granted without fee
+provided that the above copyright notice appear in all copies and
+that both this copyright notice and this permission notice appear
+in supporting documentation no representations
+are made about the suitability of this software for any purpose
+It is provided as is without express or implied warranty

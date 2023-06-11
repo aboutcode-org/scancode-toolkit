@@ -1,0 +1,14 @@
+---
+license_expression: apache-2.0
+is_license_notice: yes
+referenced_filenames:
+    - doc-files/NOTICE.txt
+    - doc-files/LICENSE.txt
+ignorable_urls:
+    - http://www.apache.org/licenses/LICENSE-2.0
+---
+
+See the <a href="doc-files/NOTICE.txt">Copyright</a> and 
+<a href="doc-files/LICENSE.txt">License</a> provided with this distribution.
+Use is subject to
+<a href="http://www.apache.org/licenses/LICENSE-2.0">license terms</a>.]]>

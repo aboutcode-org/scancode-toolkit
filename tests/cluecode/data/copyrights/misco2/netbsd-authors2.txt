@@ -1,0 +1,2 @@
+software developed by the NetBSD
+         Foundation and its contributors.

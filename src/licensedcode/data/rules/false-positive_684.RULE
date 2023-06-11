@@ -1,0 +1,6 @@
+---
+is_false_positive: yes
+notes: Seen at repo1.maven.org/maven2/org/jruby/joni/joni/2.1.29/joni-2.1.29-sources.jar/org/joni/ast/CClassNode.java
+---
+
+// add_ctype_to_cc_by_range

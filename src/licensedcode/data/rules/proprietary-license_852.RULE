@@ -1,0 +1,24 @@
+---
+license_expression: proprietary-license
+is_license_text: yes
+notes: https://github.com/z88dk/z88dk/wiki/grep
+ignorable_copyrights:
+    - Copyright (c) 1980, DECUS
+ignorable_holders:
+    - DECUS
+---
+
+* The  information  in  this  document  is  subject  to  change
+ * without  notice  and  should not be construed as a commitment
+ * by Digital Equipment Corporation or by DECUS.
+ *
+ * Neither Digital Equipment Corporation, DECUS, nor the authors
+ * assume any responsibility for the use or reliability of  this
+ * document or the described software.
+ *
+ *      Copyright (C) 1980, DECUS
+ *
+ * General permission to copy or modify, but not for profit,  is
+ * hereby  granted,  provided that the above copyright notice is
+ * included and reference made to  the  fact  that  reproduction
+ * privileges were granted by DECUS.

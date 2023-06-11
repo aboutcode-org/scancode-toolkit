@@ -1,0 +1,18 @@
+---
+license_expression: bsd-3-clause-no-nuclear-warranty AND jj2000
+is_license_tag: yes
+minimum_coverage: 95
+---
+
+<licenses>
+	<license>
+			<name>JJ2000</name>
+			<url>LICENSE-JJ2000.txt</url>
+			<distribution>repo</distribution>
+		</license>
+    <license>
+      <name>BSD 3-clause License w/nuclear disclaimer</name>
+      <url>LICENSE-Sun.txt</url>
+      <distribution>repo</distribution>
+    </license>
+</licenses>
