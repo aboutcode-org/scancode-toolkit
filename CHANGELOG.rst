@@ -42,6 +42,18 @@ v32.1.0 (next, roadmap)
   See https://github.com/nexB/scancode-toolkit/issues/1745
 
 
+v32.0.5rc1 - 2023-06-12
+------------------------
+
+This is a minor bugfix release with the following updates:
+
+- A new `--todo` option is added to show the todo items that
+  should be reviewed, which are ambiguous license/package
+  detections.
+
+- New licenses and license detection rules. And other license
+  detection fixes.
+
 v32.0.4 - 2023-06-07
 ---------------------
 
