@@ -154,92 +154,7 @@
       "primary_language": "Java",
       "description": "Commons Logging\nCommons Logging is a thin adapter allowing configurable bridging to other,\n    well known logging systems.",
       "release_date": null,
-      "parties": [
-        {
-          "type": "person",
-          "role": "developer",
-          "name": "Morgan Delagrange",
-          "email": "morgand at apache dot org",
-          "url": null
-        },
-        {
-          "type": "person",
-          "role": "developer",
-          "name": "Rodney Waldhoff",
-          "email": "rwaldhoff at apache org",
-          "url": null
-        },
-        {
-          "type": "person",
-          "role": "developer",
-          "name": "Craig McClanahan",
-          "email": "craigmcc at apache org",
-          "url": null
-        },
-        {
-          "type": "person",
-          "role": "developer",
-          "name": "Scott Sanders",
-          "email": "sanders at apache dot org",
-          "url": null
-        },
-        {
-          "type": "person",
-          "role": "developer",
-          "name": "Robert Burrell Donkin",
-          "email": "rdonkin at apache dot org",
-          "url": null
-        },
-        {
-          "type": "person",
-          "role": "developer",
-          "name": "Peter Donald",
-          "email": "donaldp at apache dot org",
-          "url": null
-        },
-        {
-          "type": "person",
-          "role": "developer",
-          "name": "Costin Manolache",
-          "email": "costin at apache dot org",
-          "url": null
-        },
-        {
-          "type": "person",
-          "role": "developer",
-          "name": "Richard Sitze",
-          "email": "rsitze at apache dot org",
-          "url": null
-        },
-        {
-          "type": "person",
-          "role": "developer",
-          "name": "Juozas Baliuka",
-          "email": "baliuka@apache.org",
-          "url": null
-        },
-        {
-          "type": "person",
-          "role": "developer",
-          "name": "Simon Kitching",
-          "email": "skitching@apache.org",
-          "url": null
-        },
-        {
-          "type": "person",
-          "role": "developer",
-          "name": "Dennis Lundberg",
-          "email": "dennisl@apache.org",
-          "url": null
-        },
-        {
-          "type": "person",
-          "role": "developer",
-          "name": "Brian Stansberry",
-          "email": null,
-          "url": null
-        }
-      ],
+      "parties": [],
       "keywords": [],
       "homepage_url": "http://commons.apache.org/logging",
       "download_url": null,
@@ -589,13 +504,7 @@
       "path": "htrace-core-4.0.0-incubating",
       "type": "directory",
       "package_data": [],
-      "for_packages": [
-        "pkg:maven/com.fasterxml.jackson.core/jackson-annotations@2.4.0?uuid=fixed-uid-done-for-testing-5642512d1758",
-        "pkg:maven/com.fasterxml.jackson.core/jackson-core@2.4.0?uuid=fixed-uid-done-for-testing-5642512d1758",
-        "pkg:maven/com.fasterxml.jackson.core/jackson-databind@2.4.0?uuid=fixed-uid-done-for-testing-5642512d1758",
-        "pkg:maven/commons-logging/commons-logging@1.1.1?uuid=fixed-uid-done-for-testing-5642512d1758",
-        "pkg:maven/org.apache.htrace/htrace-core@4.0.0-incubating?uuid=fixed-uid-done-for-testing-5642512d1758"
-      ],
+      "for_packages": [],
       "detected_license_expression": null,
       "detected_license_expression_spdx": null,
       "license_detections": [],
@@ -607,13 +516,7 @@
       "path": "htrace-core-4.0.0-incubating/META-INF",
       "type": "directory",
       "package_data": [],
-      "for_packages": [
-        "pkg:maven/com.fasterxml.jackson.core/jackson-annotations@2.4.0?uuid=fixed-uid-done-for-testing-5642512d1758",
-        "pkg:maven/com.fasterxml.jackson.core/jackson-core@2.4.0?uuid=fixed-uid-done-for-testing-5642512d1758",
-        "pkg:maven/com.fasterxml.jackson.core/jackson-databind@2.4.0?uuid=fixed-uid-done-for-testing-5642512d1758",
-        "pkg:maven/commons-logging/commons-logging@1.1.1?uuid=fixed-uid-done-for-testing-5642512d1758",
-        "pkg:maven/org.apache.htrace/htrace-core@4.0.0-incubating?uuid=fixed-uid-done-for-testing-5642512d1758"
-      ],
+      "for_packages": [],
       "detected_license_expression": null,
       "detected_license_expression_spdx": null,
       "license_detections": [],
@@ -625,13 +528,7 @@
       "path": "htrace-core-4.0.0-incubating/META-INF/DEPENDENCIES",
       "type": "file",
       "package_data": [],
-      "for_packages": [
-        "pkg:maven/com.fasterxml.jackson.core/jackson-annotations@2.4.0?uuid=fixed-uid-done-for-testing-5642512d1758",
-        "pkg:maven/com.fasterxml.jackson.core/jackson-core@2.4.0?uuid=fixed-uid-done-for-testing-5642512d1758",
-        "pkg:maven/com.fasterxml.jackson.core/jackson-databind@2.4.0?uuid=fixed-uid-done-for-testing-5642512d1758",
-        "pkg:maven/commons-logging/commons-logging@1.1.1?uuid=fixed-uid-done-for-testing-5642512d1758",
-        "pkg:maven/org.apache.htrace/htrace-core@4.0.0-incubating?uuid=fixed-uid-done-for-testing-5642512d1758"
-      ],
+      "for_packages": [],
       "detected_license_expression": "apache-2.0",
       "detected_license_expression_spdx": "Apache-2.0",
       "license_detections": [
@@ -698,13 +595,7 @@
       "path": "htrace-core-4.0.0-incubating/META-INF/LICENSE",
       "type": "file",
       "package_data": [],
-      "for_packages": [
-        "pkg:maven/com.fasterxml.jackson.core/jackson-annotations@2.4.0?uuid=fixed-uid-done-for-testing-5642512d1758",
-        "pkg:maven/com.fasterxml.jackson.core/jackson-core@2.4.0?uuid=fixed-uid-done-for-testing-5642512d1758",
-        "pkg:maven/com.fasterxml.jackson.core/jackson-databind@2.4.0?uuid=fixed-uid-done-for-testing-5642512d1758",
-        "pkg:maven/commons-logging/commons-logging@1.1.1?uuid=fixed-uid-done-for-testing-5642512d1758",
-        "pkg:maven/org.apache.htrace/htrace-core@4.0.0-incubating?uuid=fixed-uid-done-for-testing-5642512d1758"
-      ],
+      "for_packages": [],
       "detected_license_expression": "apache-2.0",
       "detected_license_expression_spdx": "Apache-2.0",
       "license_detections": [
@@ -735,13 +626,7 @@
       "path": "htrace-core-4.0.0-incubating/META-INF/MANIFEST.MF",
       "type": "file",
       "package_data": [],
-      "for_packages": [
-        "pkg:maven/com.fasterxml.jackson.core/jackson-annotations@2.4.0?uuid=fixed-uid-done-for-testing-5642512d1758",
-        "pkg:maven/com.fasterxml.jackson.core/jackson-core@2.4.0?uuid=fixed-uid-done-for-testing-5642512d1758",
-        "pkg:maven/com.fasterxml.jackson.core/jackson-databind@2.4.0?uuid=fixed-uid-done-for-testing-5642512d1758",
-        "pkg:maven/commons-logging/commons-logging@1.1.1?uuid=fixed-uid-done-for-testing-5642512d1758",
-        "pkg:maven/org.apache.htrace/htrace-core@4.0.0-incubating?uuid=fixed-uid-done-for-testing-5642512d1758"
-      ],
+      "for_packages": [],
       "detected_license_expression": null,
       "detected_license_expression_spdx": null,
       "license_detections": [],
@@ -753,13 +638,7 @@
       "path": "htrace-core-4.0.0-incubating/META-INF/NOTICE",
       "type": "file",
       "package_data": [],
-      "for_packages": [
-        "pkg:maven/com.fasterxml.jackson.core/jackson-annotations@2.4.0?uuid=fixed-uid-done-for-testing-5642512d1758",
-        "pkg:maven/com.fasterxml.jackson.core/jackson-core@2.4.0?uuid=fixed-uid-done-for-testing-5642512d1758",
-        "pkg:maven/com.fasterxml.jackson.core/jackson-databind@2.4.0?uuid=fixed-uid-done-for-testing-5642512d1758",
-        "pkg:maven/commons-logging/commons-logging@1.1.1?uuid=fixed-uid-done-for-testing-5642512d1758",
-        "pkg:maven/org.apache.htrace/htrace-core@4.0.0-incubating?uuid=fixed-uid-done-for-testing-5642512d1758"
-      ],
+      "for_packages": [],
       "detected_license_expression": "apache-2.0",
       "detected_license_expression_spdx": "Apache-2.0",
       "license_detections": [
@@ -790,13 +669,7 @@
       "path": "htrace-core-4.0.0-incubating/META-INF/maven",
       "type": "directory",
       "package_data": [],
-      "for_packages": [
-        "pkg:maven/com.fasterxml.jackson.core/jackson-annotations@2.4.0?uuid=fixed-uid-done-for-testing-5642512d1758",
-        "pkg:maven/com.fasterxml.jackson.core/jackson-core@2.4.0?uuid=fixed-uid-done-for-testing-5642512d1758",
-        "pkg:maven/com.fasterxml.jackson.core/jackson-databind@2.4.0?uuid=fixed-uid-done-for-testing-5642512d1758",
-        "pkg:maven/commons-logging/commons-logging@1.1.1?uuid=fixed-uid-done-for-testing-5642512d1758",
-        "pkg:maven/org.apache.htrace/htrace-core@4.0.0-incubating?uuid=fixed-uid-done-for-testing-5642512d1758"
-      ],
+      "for_packages": [],
       "detected_license_expression": null,
       "detected_license_expression_spdx": null,
       "license_detections": [],
@@ -808,13 +681,7 @@
       "path": "htrace-core-4.0.0-incubating/META-INF/maven/com.fasterxml.jackson.core",
       "type": "directory",
       "package_data": [],
-      "for_packages": [
-        "pkg:maven/com.fasterxml.jackson.core/jackson-annotations@2.4.0?uuid=fixed-uid-done-for-testing-5642512d1758",
-        "pkg:maven/com.fasterxml.jackson.core/jackson-core@2.4.0?uuid=fixed-uid-done-for-testing-5642512d1758",
-        "pkg:maven/com.fasterxml.jackson.core/jackson-databind@2.4.0?uuid=fixed-uid-done-for-testing-5642512d1758",
-        "pkg:maven/commons-logging/commons-logging@1.1.1?uuid=fixed-uid-done-for-testing-5642512d1758",
-        "pkg:maven/org.apache.htrace/htrace-core@4.0.0-incubating?uuid=fixed-uid-done-for-testing-5642512d1758"
-      ],
+      "for_packages": [],
       "detected_license_expression": null,
       "detected_license_expression_spdx": null,
       "license_detections": [],
@@ -826,13 +693,7 @@
       "path": "htrace-core-4.0.0-incubating/META-INF/maven/com.fasterxml.jackson.core/jackson-annotations",
       "type": "directory",
       "package_data": [],
-      "for_packages": [
-        "pkg:maven/com.fasterxml.jackson.core/jackson-annotations@2.4.0?uuid=fixed-uid-done-for-testing-5642512d1758",
-        "pkg:maven/com.fasterxml.jackson.core/jackson-core@2.4.0?uuid=fixed-uid-done-for-testing-5642512d1758",
-        "pkg:maven/com.fasterxml.jackson.core/jackson-databind@2.4.0?uuid=fixed-uid-done-for-testing-5642512d1758",
-        "pkg:maven/commons-logging/commons-logging@1.1.1?uuid=fixed-uid-done-for-testing-5642512d1758",
-        "pkg:maven/org.apache.htrace/htrace-core@4.0.0-incubating?uuid=fixed-uid-done-for-testing-5642512d1758"
-      ],
+      "for_packages": [],
       "detected_license_expression": null,
       "detected_license_expression_spdx": null,
       "license_detections": [],
@@ -890,11 +751,7 @@
         }
       ],
       "for_packages": [
-        "pkg:maven/com.fasterxml.jackson.core/jackson-annotations@2.4.0?uuid=fixed-uid-done-for-testing-5642512d1758",
-        "pkg:maven/com.fasterxml.jackson.core/jackson-core@2.4.0?uuid=fixed-uid-done-for-testing-5642512d1758",
-        "pkg:maven/com.fasterxml.jackson.core/jackson-databind@2.4.0?uuid=fixed-uid-done-for-testing-5642512d1758",
-        "pkg:maven/commons-logging/commons-logging@1.1.1?uuid=fixed-uid-done-for-testing-5642512d1758",
-        "pkg:maven/org.apache.htrace/htrace-core@4.0.0-incubating?uuid=fixed-uid-done-for-testing-5642512d1758"
+        "pkg:maven/com.fasterxml.jackson.core/jackson-annotations@2.4.0?uuid=fixed-uid-done-for-testing-5642512d1758"
       ],
       "detected_license_expression": null,
       "detected_license_expression_spdx": null,
@@ -907,13 +764,7 @@
       "path": "htrace-core-4.0.0-incubating/META-INF/maven/com.fasterxml.jackson.core/jackson-core",
       "type": "directory",
       "package_data": [],
-      "for_packages": [
-        "pkg:maven/com.fasterxml.jackson.core/jackson-annotations@2.4.0?uuid=fixed-uid-done-for-testing-5642512d1758",
-        "pkg:maven/com.fasterxml.jackson.core/jackson-core@2.4.0?uuid=fixed-uid-done-for-testing-5642512d1758",
-        "pkg:maven/com.fasterxml.jackson.core/jackson-databind@2.4.0?uuid=fixed-uid-done-for-testing-5642512d1758",
-        "pkg:maven/commons-logging/commons-logging@1.1.1?uuid=fixed-uid-done-for-testing-5642512d1758",
-        "pkg:maven/org.apache.htrace/htrace-core@4.0.0-incubating?uuid=fixed-uid-done-for-testing-5642512d1758"
-      ],
+      "for_packages": [],
       "detected_license_expression": null,
       "detected_license_expression_spdx": null,
       "license_detections": [],
@@ -971,11 +822,7 @@
         }
       ],
       "for_packages": [
-        "pkg:maven/com.fasterxml.jackson.core/jackson-annotations@2.4.0?uuid=fixed-uid-done-for-testing-5642512d1758",
-        "pkg:maven/com.fasterxml.jackson.core/jackson-core@2.4.0?uuid=fixed-uid-done-for-testing-5642512d1758",
-        "pkg:maven/com.fasterxml.jackson.core/jackson-databind@2.4.0?uuid=fixed-uid-done-for-testing-5642512d1758",
-        "pkg:maven/commons-logging/commons-logging@1.1.1?uuid=fixed-uid-done-for-testing-5642512d1758",
-        "pkg:maven/org.apache.htrace/htrace-core@4.0.0-incubating?uuid=fixed-uid-done-for-testing-5642512d1758"
+        "pkg:maven/com.fasterxml.jackson.core/jackson-core@2.4.0?uuid=fixed-uid-done-for-testing-5642512d1758"
       ],
       "detected_license_expression": null,
       "detected_license_expression_spdx": null,
@@ -988,13 +835,7 @@
       "path": "htrace-core-4.0.0-incubating/META-INF/maven/com.fasterxml.jackson.core/jackson-databind",
       "type": "directory",
       "package_data": [],
-      "for_packages": [
-        "pkg:maven/com.fasterxml.jackson.core/jackson-annotations@2.4.0?uuid=fixed-uid-done-for-testing-5642512d1758",
-        "pkg:maven/com.fasterxml.jackson.core/jackson-core@2.4.0?uuid=fixed-uid-done-for-testing-5642512d1758",
-        "pkg:maven/com.fasterxml.jackson.core/jackson-databind@2.4.0?uuid=fixed-uid-done-for-testing-5642512d1758",
-        "pkg:maven/commons-logging/commons-logging@1.1.1?uuid=fixed-uid-done-for-testing-5642512d1758",
-        "pkg:maven/org.apache.htrace/htrace-core@4.0.0-incubating?uuid=fixed-uid-done-for-testing-5642512d1758"
-      ],
+      "for_packages": [],
       "detected_license_expression": null,
       "detected_license_expression_spdx": null,
       "license_detections": [],
@@ -1103,11 +944,7 @@
         }
       ],
       "for_packages": [
-        "pkg:maven/com.fasterxml.jackson.core/jackson-annotations@2.4.0?uuid=fixed-uid-done-for-testing-5642512d1758",
-        "pkg:maven/com.fasterxml.jackson.core/jackson-core@2.4.0?uuid=fixed-uid-done-for-testing-5642512d1758",
-        "pkg:maven/com.fasterxml.jackson.core/jackson-databind@2.4.0?uuid=fixed-uid-done-for-testing-5642512d1758",
-        "pkg:maven/commons-logging/commons-logging@1.1.1?uuid=fixed-uid-done-for-testing-5642512d1758",
-        "pkg:maven/org.apache.htrace/htrace-core@4.0.0-incubating?uuid=fixed-uid-done-for-testing-5642512d1758"
+        "pkg:maven/com.fasterxml.jackson.core/jackson-databind@2.4.0?uuid=fixed-uid-done-for-testing-5642512d1758"
       ],
       "detected_license_expression": null,
       "detected_license_expression_spdx": null,
@@ -1120,13 +957,7 @@
       "path": "htrace-core-4.0.0-incubating/META-INF/maven/commons-logging",
       "type": "directory",
       "package_data": [],
-      "for_packages": [
-        "pkg:maven/com.fasterxml.jackson.core/jackson-annotations@2.4.0?uuid=fixed-uid-done-for-testing-5642512d1758",
-        "pkg:maven/com.fasterxml.jackson.core/jackson-core@2.4.0?uuid=fixed-uid-done-for-testing-5642512d1758",
-        "pkg:maven/com.fasterxml.jackson.core/jackson-databind@2.4.0?uuid=fixed-uid-done-for-testing-5642512d1758",
-        "pkg:maven/commons-logging/commons-logging@1.1.1?uuid=fixed-uid-done-for-testing-5642512d1758",
-        "pkg:maven/org.apache.htrace/htrace-core@4.0.0-incubating?uuid=fixed-uid-done-for-testing-5642512d1758"
-      ],
+      "for_packages": [],
       "detected_license_expression": null,
       "detected_license_expression_spdx": null,
       "license_detections": [],
@@ -1138,13 +969,7 @@
       "path": "htrace-core-4.0.0-incubating/META-INF/maven/commons-logging/commons-logging",
       "type": "directory",
       "package_data": [],
-      "for_packages": [
-        "pkg:maven/com.fasterxml.jackson.core/jackson-annotations@2.4.0?uuid=fixed-uid-done-for-testing-5642512d1758",
-        "pkg:maven/com.fasterxml.jackson.core/jackson-core@2.4.0?uuid=fixed-uid-done-for-testing-5642512d1758",
-        "pkg:maven/com.fasterxml.jackson.core/jackson-databind@2.4.0?uuid=fixed-uid-done-for-testing-5642512d1758",
-        "pkg:maven/commons-logging/commons-logging@1.1.1?uuid=fixed-uid-done-for-testing-5642512d1758",
-        "pkg:maven/org.apache.htrace/htrace-core@4.0.0-incubating?uuid=fixed-uid-done-for-testing-5642512d1758"
-      ],
+      "for_packages": [],
       "detected_license_expression": null,
       "detected_license_expression_spdx": null,
       "license_detections": [],
@@ -1166,92 +991,7 @@
           "primary_language": "Java",
           "description": "Commons Logging\nCommons Logging is a thin adapter allowing configurable bridging to other,\n    well known logging systems.",
           "release_date": null,
-          "parties": [
-            {
-              "type": "person",
-              "role": "developer",
-              "name": "Morgan Delagrange",
-              "email": "morgand at apache dot org",
-              "url": null
-            },
-            {
-              "type": "person",
-              "role": "developer",
-              "name": "Rodney Waldhoff",
-              "email": "rwaldhoff at apache org",
-              "url": null
-            },
-            {
-              "type": "person",
-              "role": "developer",
-              "name": "Craig McClanahan",
-              "email": "craigmcc at apache org",
-              "url": null
-            },
-            {
-              "type": "person",
-              "role": "developer",
-              "name": "Scott Sanders",
-              "email": "sanders at apache dot org",
-              "url": null
-            },
-            {
-              "type": "person",
-              "role": "developer",
-              "name": "Robert Burrell Donkin",
-              "email": "rdonkin at apache dot org",
-              "url": null
-            },
-            {
-              "type": "person",
-              "role": "developer",
-              "name": "Peter Donald",
-              "email": "donaldp at apache dot org",
-              "url": null
-            },
-            {
-              "type": "person",
-              "role": "developer",
-              "name": "Costin Manolache",
-              "email": "costin at apache dot org",
-              "url": null
-            },
-            {
-              "type": "person",
-              "role": "developer",
-              "name": "Richard Sitze",
-              "email": "rsitze at apache dot org",
-              "url": null
-            },
-            {
-              "type": "person",
-              "role": "developer",
-              "name": "Juozas Baliuka",
-              "email": "baliuka@apache.org",
-              "url": null
-            },
-            {
-              "type": "person",
-              "role": "developer",
-              "name": "Simon Kitching",
-              "email": "skitching@apache.org",
-              "url": null
-            },
-            {
-              "type": "person",
-              "role": "developer",
-              "name": "Dennis Lundberg",
-              "email": "dennisl@apache.org",
-              "url": null
-            },
-            {
-              "type": "person",
-              "role": "developer",
-              "name": "Brian Stansberry",
-              "email": null,
-              "url": null
-            }
-          ],
+          "parties": [],
           "keywords": [],
           "homepage_url": "http://commons.apache.org/logging",
           "download_url": null,
@@ -1357,11 +1097,7 @@
         }
       ],
       "for_packages": [
-        "pkg:maven/com.fasterxml.jackson.core/jackson-annotations@2.4.0?uuid=fixed-uid-done-for-testing-5642512d1758",
-        "pkg:maven/com.fasterxml.jackson.core/jackson-core@2.4.0?uuid=fixed-uid-done-for-testing-5642512d1758",
-        "pkg:maven/com.fasterxml.jackson.core/jackson-databind@2.4.0?uuid=fixed-uid-done-for-testing-5642512d1758",
-        "pkg:maven/commons-logging/commons-logging@1.1.1?uuid=fixed-uid-done-for-testing-5642512d1758",
-        "pkg:maven/org.apache.htrace/htrace-core@4.0.0-incubating?uuid=fixed-uid-done-for-testing-5642512d1758"
+        "pkg:maven/commons-logging/commons-logging@1.1.1?uuid=fixed-uid-done-for-testing-5642512d1758"
       ],
       "detected_license_expression": "apache-2.0",
       "detected_license_expression_spdx": "Apache-2.0",
@@ -1386,20 +1122,14 @@
         }
       ],
       "license_clues": [],
-      "percentage_of_license_text": 6.96,
+      "percentage_of_license_text": 19.01,
       "scan_errors": []
     },
     {
       "path": "htrace-core-4.0.0-incubating/META-INF/maven/org.apache.htrace",
       "type": "directory",
       "package_data": [],
-      "for_packages": [
-        "pkg:maven/com.fasterxml.jackson.core/jackson-annotations@2.4.0?uuid=fixed-uid-done-for-testing-5642512d1758",
-        "pkg:maven/com.fasterxml.jackson.core/jackson-core@2.4.0?uuid=fixed-uid-done-for-testing-5642512d1758",
-        "pkg:maven/com.fasterxml.jackson.core/jackson-databind@2.4.0?uuid=fixed-uid-done-for-testing-5642512d1758",
-        "pkg:maven/commons-logging/commons-logging@1.1.1?uuid=fixed-uid-done-for-testing-5642512d1758",
-        "pkg:maven/org.apache.htrace/htrace-core@4.0.0-incubating?uuid=fixed-uid-done-for-testing-5642512d1758"
-      ],
+      "for_packages": [],
       "detected_license_expression": null,
       "detected_license_expression_spdx": null,
       "license_detections": [],
@@ -1411,13 +1141,7 @@
       "path": "htrace-core-4.0.0-incubating/META-INF/maven/org.apache.htrace/htrace-core",
       "type": "directory",
       "package_data": [],
-      "for_packages": [
-        "pkg:maven/com.fasterxml.jackson.core/jackson-annotations@2.4.0?uuid=fixed-uid-done-for-testing-5642512d1758",
-        "pkg:maven/com.fasterxml.jackson.core/jackson-core@2.4.0?uuid=fixed-uid-done-for-testing-5642512d1758",
-        "pkg:maven/com.fasterxml.jackson.core/jackson-databind@2.4.0?uuid=fixed-uid-done-for-testing-5642512d1758",
-        "pkg:maven/commons-logging/commons-logging@1.1.1?uuid=fixed-uid-done-for-testing-5642512d1758",
-        "pkg:maven/org.apache.htrace/htrace-core@4.0.0-incubating?uuid=fixed-uid-done-for-testing-5642512d1758"
-      ],
+      "for_packages": [],
       "detected_license_expression": null,
       "detected_license_expression_spdx": null,
       "license_detections": [],
@@ -1535,10 +1259,6 @@
         }
       ],
       "for_packages": [
-        "pkg:maven/com.fasterxml.jackson.core/jackson-annotations@2.4.0?uuid=fixed-uid-done-for-testing-5642512d1758",
-        "pkg:maven/com.fasterxml.jackson.core/jackson-core@2.4.0?uuid=fixed-uid-done-for-testing-5642512d1758",
-        "pkg:maven/com.fasterxml.jackson.core/jackson-databind@2.4.0?uuid=fixed-uid-done-for-testing-5642512d1758",
-        "pkg:maven/commons-logging/commons-logging@1.1.1?uuid=fixed-uid-done-for-testing-5642512d1758",
         "pkg:maven/org.apache.htrace/htrace-core@4.0.0-incubating?uuid=fixed-uid-done-for-testing-5642512d1758"
       ],
       "detected_license_expression": "apache-2.0",
@@ -1564,20 +1284,14 @@
         }
       ],
       "license_clues": [],
-      "percentage_of_license_text": 26.56,
+      "percentage_of_license_text": 39.27,
       "scan_errors": []
     },
     {
       "path": "htrace-core-4.0.0-incubating/org",
       "type": "directory",
       "package_data": [],
-      "for_packages": [
-        "pkg:maven/com.fasterxml.jackson.core/jackson-annotations@2.4.0?uuid=fixed-uid-done-for-testing-5642512d1758",
-        "pkg:maven/com.fasterxml.jackson.core/jackson-core@2.4.0?uuid=fixed-uid-done-for-testing-5642512d1758",
-        "pkg:maven/com.fasterxml.jackson.core/jackson-databind@2.4.0?uuid=fixed-uid-done-for-testing-5642512d1758",
-        "pkg:maven/commons-logging/commons-logging@1.1.1?uuid=fixed-uid-done-for-testing-5642512d1758",
-        "pkg:maven/org.apache.htrace/htrace-core@4.0.0-incubating?uuid=fixed-uid-done-for-testing-5642512d1758"
-      ],
+      "for_packages": [],
       "detected_license_expression": null,
       "detected_license_expression_spdx": null,
       "license_detections": [],
@@ -1589,13 +1303,7 @@
       "path": "htrace-core-4.0.0-incubating/org/apache",
       "type": "directory",
       "package_data": [],
-      "for_packages": [
-        "pkg:maven/com.fasterxml.jackson.core/jackson-annotations@2.4.0?uuid=fixed-uid-done-for-testing-5642512d1758",
-        "pkg:maven/com.fasterxml.jackson.core/jackson-core@2.4.0?uuid=fixed-uid-done-for-testing-5642512d1758",
-        "pkg:maven/com.fasterxml.jackson.core/jackson-databind@2.4.0?uuid=fixed-uid-done-for-testing-5642512d1758",
-        "pkg:maven/commons-logging/commons-logging@1.1.1?uuid=fixed-uid-done-for-testing-5642512d1758",
-        "pkg:maven/org.apache.htrace/htrace-core@4.0.0-incubating?uuid=fixed-uid-done-for-testing-5642512d1758"
-      ],
+      "for_packages": [],
       "detected_license_expression": null,
       "detected_license_expression_spdx": null,
       "license_detections": [],
@@ -1607,13 +1315,7 @@
       "path": "htrace-core-4.0.0-incubating/org/apache/htrace",
       "type": "directory",
       "package_data": [],
-      "for_packages": [
-        "pkg:maven/com.fasterxml.jackson.core/jackson-annotations@2.4.0?uuid=fixed-uid-done-for-testing-5642512d1758",
-        "pkg:maven/com.fasterxml.jackson.core/jackson-core@2.4.0?uuid=fixed-uid-done-for-testing-5642512d1758",
-        "pkg:maven/com.fasterxml.jackson.core/jackson-databind@2.4.0?uuid=fixed-uid-done-for-testing-5642512d1758",
-        "pkg:maven/commons-logging/commons-logging@1.1.1?uuid=fixed-uid-done-for-testing-5642512d1758",
-        "pkg:maven/org.apache.htrace/htrace-core@4.0.0-incubating?uuid=fixed-uid-done-for-testing-5642512d1758"
-      ],
+      "for_packages": [],
       "detected_license_expression": null,
       "detected_license_expression_spdx": null,
       "license_detections": [],
@@ -1625,13 +1327,7 @@
       "path": "htrace-core-4.0.0-incubating/org/apache/htrace/commons",
       "type": "directory",
       "package_data": [],
-      "for_packages": [
-        "pkg:maven/com.fasterxml.jackson.core/jackson-annotations@2.4.0?uuid=fixed-uid-done-for-testing-5642512d1758",
-        "pkg:maven/com.fasterxml.jackson.core/jackson-core@2.4.0?uuid=fixed-uid-done-for-testing-5642512d1758",
-        "pkg:maven/com.fasterxml.jackson.core/jackson-databind@2.4.0?uuid=fixed-uid-done-for-testing-5642512d1758",
-        "pkg:maven/commons-logging/commons-logging@1.1.1?uuid=fixed-uid-done-for-testing-5642512d1758",
-        "pkg:maven/org.apache.htrace/htrace-core@4.0.0-incubating?uuid=fixed-uid-done-for-testing-5642512d1758"
-      ],
+      "for_packages": [],
       "detected_license_expression": null,
       "detected_license_expression_spdx": null,
       "license_detections": [],
@@ -1643,13 +1339,7 @@
       "path": "htrace-core-4.0.0-incubating/org/apache/htrace/commons/logging",
       "type": "directory",
       "package_data": [],
-      "for_packages": [
-        "pkg:maven/com.fasterxml.jackson.core/jackson-annotations@2.4.0?uuid=fixed-uid-done-for-testing-5642512d1758",
-        "pkg:maven/com.fasterxml.jackson.core/jackson-core@2.4.0?uuid=fixed-uid-done-for-testing-5642512d1758",
-        "pkg:maven/com.fasterxml.jackson.core/jackson-databind@2.4.0?uuid=fixed-uid-done-for-testing-5642512d1758",
-        "pkg:maven/commons-logging/commons-logging@1.1.1?uuid=fixed-uid-done-for-testing-5642512d1758",
-        "pkg:maven/org.apache.htrace/htrace-core@4.0.0-incubating?uuid=fixed-uid-done-for-testing-5642512d1758"
-      ],
+      "for_packages": [],
       "detected_license_expression": null,
       "detected_license_expression_spdx": null,
       "license_detections": [],
@@ -1661,13 +1351,7 @@
       "path": "htrace-core-4.0.0-incubating/org/apache/htrace/commons/logging/LogSource.class",
       "type": "file",
       "package_data": [],
-      "for_packages": [
-        "pkg:maven/com.fasterxml.jackson.core/jackson-annotations@2.4.0?uuid=fixed-uid-done-for-testing-5642512d1758",
-        "pkg:maven/com.fasterxml.jackson.core/jackson-core@2.4.0?uuid=fixed-uid-done-for-testing-5642512d1758",
-        "pkg:maven/com.fasterxml.jackson.core/jackson-databind@2.4.0?uuid=fixed-uid-done-for-testing-5642512d1758",
-        "pkg:maven/commons-logging/commons-logging@1.1.1?uuid=fixed-uid-done-for-testing-5642512d1758",
-        "pkg:maven/org.apache.htrace/htrace-core@4.0.0-incubating?uuid=fixed-uid-done-for-testing-5642512d1758"
-      ],
+      "for_packages": [],
       "detected_license_expression": null,
       "detected_license_expression_spdx": null,
       "license_detections": [],
@@ -1679,13 +1363,7 @@
       "path": "htrace-core-4.0.0-incubating/org/apache/htrace/core",
       "type": "directory",
       "package_data": [],
-      "for_packages": [
-        "pkg:maven/com.fasterxml.jackson.core/jackson-annotations@2.4.0?uuid=fixed-uid-done-for-testing-5642512d1758",
-        "pkg:maven/com.fasterxml.jackson.core/jackson-core@2.4.0?uuid=fixed-uid-done-for-testing-5642512d1758",
-        "pkg:maven/com.fasterxml.jackson.core/jackson-databind@2.4.0?uuid=fixed-uid-done-for-testing-5642512d1758",
-        "pkg:maven/commons-logging/commons-logging@1.1.1?uuid=fixed-uid-done-for-testing-5642512d1758",
-        "pkg:maven/org.apache.htrace/htrace-core@4.0.0-incubating?uuid=fixed-uid-done-for-testing-5642512d1758"
-      ],
+      "for_packages": [],
       "detected_license_expression": null,
       "detected_license_expression_spdx": null,
       "license_detections": [],
@@ -1697,13 +1375,7 @@
       "path": "htrace-core-4.0.0-incubating/org/apache/htrace/core/TraceScope.class",
       "type": "file",
       "package_data": [],
-      "for_packages": [
-        "pkg:maven/com.fasterxml.jackson.core/jackson-annotations@2.4.0?uuid=fixed-uid-done-for-testing-5642512d1758",
-        "pkg:maven/com.fasterxml.jackson.core/jackson-core@2.4.0?uuid=fixed-uid-done-for-testing-5642512d1758",
-        "pkg:maven/com.fasterxml.jackson.core/jackson-databind@2.4.0?uuid=fixed-uid-done-for-testing-5642512d1758",
-        "pkg:maven/commons-logging/commons-logging@1.1.1?uuid=fixed-uid-done-for-testing-5642512d1758",
-        "pkg:maven/org.apache.htrace/htrace-core@4.0.0-incubating?uuid=fixed-uid-done-for-testing-5642512d1758"
-      ],
+      "for_packages": [],
       "detected_license_expression": null,
       "detected_license_expression_spdx": null,
       "license_detections": [],
@@ -1715,13 +1387,7 @@
       "path": "htrace-core-4.0.0-incubating/org/apache/htrace/fasterxml",
       "type": "directory",
       "package_data": [],
-      "for_packages": [
-        "pkg:maven/com.fasterxml.jackson.core/jackson-annotations@2.4.0?uuid=fixed-uid-done-for-testing-5642512d1758",
-        "pkg:maven/com.fasterxml.jackson.core/jackson-core@2.4.0?uuid=fixed-uid-done-for-testing-5642512d1758",
-        "pkg:maven/com.fasterxml.jackson.core/jackson-databind@2.4.0?uuid=fixed-uid-done-for-testing-5642512d1758",
-        "pkg:maven/commons-logging/commons-logging@1.1.1?uuid=fixed-uid-done-for-testing-5642512d1758",
-        "pkg:maven/org.apache.htrace/htrace-core@4.0.0-incubating?uuid=fixed-uid-done-for-testing-5642512d1758"
-      ],
+      "for_packages": [],
       "detected_license_expression": null,
       "detected_license_expression_spdx": null,
       "license_detections": [],
@@ -1733,13 +1399,7 @@
       "path": "htrace-core-4.0.0-incubating/org/apache/htrace/fasterxml/jackson",
       "type": "directory",
       "package_data": [],
-      "for_packages": [
-        "pkg:maven/com.fasterxml.jackson.core/jackson-annotations@2.4.0?uuid=fixed-uid-done-for-testing-5642512d1758",
-        "pkg:maven/com.fasterxml.jackson.core/jackson-core@2.4.0?uuid=fixed-uid-done-for-testing-5642512d1758",
-        "pkg:maven/com.fasterxml.jackson.core/jackson-databind@2.4.0?uuid=fixed-uid-done-for-testing-5642512d1758",
-        "pkg:maven/commons-logging/commons-logging@1.1.1?uuid=fixed-uid-done-for-testing-5642512d1758",
-        "pkg:maven/org.apache.htrace/htrace-core@4.0.0-incubating?uuid=fixed-uid-done-for-testing-5642512d1758"
-      ],
+      "for_packages": [],
       "detected_license_expression": null,
       "detected_license_expression_spdx": null,
       "license_detections": [],
@@ -1751,13 +1411,7 @@
       "path": "htrace-core-4.0.0-incubating/org/apache/htrace/fasterxml/jackson/annotation",
       "type": "directory",
       "package_data": [],
-      "for_packages": [
-        "pkg:maven/com.fasterxml.jackson.core/jackson-annotations@2.4.0?uuid=fixed-uid-done-for-testing-5642512d1758",
-        "pkg:maven/com.fasterxml.jackson.core/jackson-core@2.4.0?uuid=fixed-uid-done-for-testing-5642512d1758",
-        "pkg:maven/com.fasterxml.jackson.core/jackson-databind@2.4.0?uuid=fixed-uid-done-for-testing-5642512d1758",
-        "pkg:maven/commons-logging/commons-logging@1.1.1?uuid=fixed-uid-done-for-testing-5642512d1758",
-        "pkg:maven/org.apache.htrace/htrace-core@4.0.0-incubating?uuid=fixed-uid-done-for-testing-5642512d1758"
-      ],
+      "for_packages": [],
       "detected_license_expression": null,
       "detected_license_expression_spdx": null,
       "license_detections": [],
@@ -1769,13 +1423,7 @@
       "path": "htrace-core-4.0.0-incubating/org/apache/htrace/fasterxml/jackson/annotation/SimpleObjectIdResolver.class",
       "type": "file",
       "package_data": [],
-      "for_packages": [
-        "pkg:maven/com.fasterxml.jackson.core/jackson-annotations@2.4.0?uuid=fixed-uid-done-for-testing-5642512d1758",
-        "pkg:maven/com.fasterxml.jackson.core/jackson-core@2.4.0?uuid=fixed-uid-done-for-testing-5642512d1758",
-        "pkg:maven/com.fasterxml.jackson.core/jackson-databind@2.4.0?uuid=fixed-uid-done-for-testing-5642512d1758",
-        "pkg:maven/commons-logging/commons-logging@1.1.1?uuid=fixed-uid-done-for-testing-5642512d1758",
-        "pkg:maven/org.apache.htrace/htrace-core@4.0.0-incubating?uuid=fixed-uid-done-for-testing-5642512d1758"
-      ],
+      "for_packages": [],
       "detected_license_expression": null,
       "detected_license_expression_spdx": null,
       "license_detections": [],
@@ -1787,13 +1435,7 @@
       "path": "htrace-core-4.0.0-incubating/org/apache/htrace/fasterxml/jackson/core",
       "type": "directory",
       "package_data": [],
-      "for_packages": [
-        "pkg:maven/com.fasterxml.jackson.core/jackson-annotations@2.4.0?uuid=fixed-uid-done-for-testing-5642512d1758",
-        "pkg:maven/com.fasterxml.jackson.core/jackson-core@2.4.0?uuid=fixed-uid-done-for-testing-5642512d1758",
-        "pkg:maven/com.fasterxml.jackson.core/jackson-databind@2.4.0?uuid=fixed-uid-done-for-testing-5642512d1758",
-        "pkg:maven/commons-logging/commons-logging@1.1.1?uuid=fixed-uid-done-for-testing-5642512d1758",
-        "pkg:maven/org.apache.htrace/htrace-core@4.0.0-incubating?uuid=fixed-uid-done-for-testing-5642512d1758"
-      ],
+      "for_packages": [],
       "detected_license_expression": null,
       "detected_license_expression_spdx": null,
       "license_detections": [],
@@ -1805,13 +1447,7 @@
       "path": "htrace-core-4.0.0-incubating/org/apache/htrace/fasterxml/jackson/core/JsonParser.class",
       "type": "file",
       "package_data": [],
-      "for_packages": [
-        "pkg:maven/com.fasterxml.jackson.core/jackson-annotations@2.4.0?uuid=fixed-uid-done-for-testing-5642512d1758",
-        "pkg:maven/com.fasterxml.jackson.core/jackson-core@2.4.0?uuid=fixed-uid-done-for-testing-5642512d1758",
-        "pkg:maven/com.fasterxml.jackson.core/jackson-databind@2.4.0?uuid=fixed-uid-done-for-testing-5642512d1758",
-        "pkg:maven/commons-logging/commons-logging@1.1.1?uuid=fixed-uid-done-for-testing-5642512d1758",
-        "pkg:maven/org.apache.htrace/htrace-core@4.0.0-incubating?uuid=fixed-uid-done-for-testing-5642512d1758"
-      ],
+      "for_packages": [],
       "detected_license_expression": null,
       "detected_license_expression_spdx": null,
       "license_detections": [],
@@ -1823,13 +1459,7 @@
       "path": "htrace-core-4.0.0-incubating/org/apache/htrace/fasterxml/jackson/databind",
       "type": "directory",
       "package_data": [],
-      "for_packages": [
-        "pkg:maven/com.fasterxml.jackson.core/jackson-annotations@2.4.0?uuid=fixed-uid-done-for-testing-5642512d1758",
-        "pkg:maven/com.fasterxml.jackson.core/jackson-core@2.4.0?uuid=fixed-uid-done-for-testing-5642512d1758",
-        "pkg:maven/com.fasterxml.jackson.core/jackson-databind@2.4.0?uuid=fixed-uid-done-for-testing-5642512d1758",
-        "pkg:maven/commons-logging/commons-logging@1.1.1?uuid=fixed-uid-done-for-testing-5642512d1758",
-        "pkg:maven/org.apache.htrace/htrace-core@4.0.0-incubating?uuid=fixed-uid-done-for-testing-5642512d1758"
-      ],
+      "for_packages": [],
       "detected_license_expression": null,
       "detected_license_expression_spdx": null,
       "license_detections": [],
@@ -1841,13 +1471,7 @@
       "path": "htrace-core-4.0.0-incubating/org/apache/htrace/fasterxml/jackson/databind/SerializationFeature.class",
       "type": "file",
       "package_data": [],
-      "for_packages": [
-        "pkg:maven/com.fasterxml.jackson.core/jackson-annotations@2.4.0?uuid=fixed-uid-done-for-testing-5642512d1758",
-        "pkg:maven/com.fasterxml.jackson.core/jackson-core@2.4.0?uuid=fixed-uid-done-for-testing-5642512d1758",
-        "pkg:maven/com.fasterxml.jackson.core/jackson-databind@2.4.0?uuid=fixed-uid-done-for-testing-5642512d1758",
-        "pkg:maven/commons-logging/commons-logging@1.1.1?uuid=fixed-uid-done-for-testing-5642512d1758",
-        "pkg:maven/org.apache.htrace/htrace-core@4.0.0-incubating?uuid=fixed-uid-done-for-testing-5642512d1758"
-      ],
+      "for_packages": [],
       "detected_license_expression": null,
       "detected_license_expression_spdx": null,
       "license_detections": [],

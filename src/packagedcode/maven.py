@@ -132,10 +132,21 @@ class MavenPomXmlHandler(models.DatafileHandler):
         if resource.path.endswith(f'META-INF/maven/{package.namespace}/{package.name}/pom.xml'):
             # First case: a pom.xml inside a META-INF directory such as in
             # /META-INF/maven/log4j/log4j/pom.xml: This requires going up 5 times
-            upward_segments = 5
+            upward_segments = 4
             root = resource
             for _ in range(upward_segments):
                 root = root.parent(codebase)
+
+            number_poms = 0
+            for child in root.walk(codebase):
+                if 'pom.xml' in child.path:
+                    number_poms += 1
+            
+            if number_poms > 1:
+                root = resource
+            else:
+                root = root.parent(codebase)
+
         else:
             # Second case: a pom.xml at the root of codebase tree
             # FIXME: handle the cases opf parent POMs and nested POMs
