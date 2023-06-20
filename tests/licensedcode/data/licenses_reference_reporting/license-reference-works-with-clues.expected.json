@@ -1,38 +1,16 @@
 {
   "license_detections": [
     {
-      "identifier": "python-c496ccae-69a0-c5f8-a742-83bcd66bfe68",
-      "license_expression": "python",
+      "identifier": "bsd_new-35c287f1-5d41-52f8-399e-2391cd1b4b40",
+      "license_expression": "bsd-new",
       "detection_count": 1,
       "detection_log": []
     },
     {
-      "identifier": "other_copyleft_and_gpl_1_0_plus-2a634b9a-02ad-d5b9-47fc-e91c5eb24808",
-      "license_expression": "other-copyleft AND gpl-1.0-plus",
+      "identifier": "bsd_new-ccc98c3a-92d4-e7a3-e0ba-798328cb6b98",
+      "license_expression": "bsd-new",
       "detection_count": 1,
       "detection_log": []
-    },
-    {
-      "identifier": "python_and_python_cwi-dda7296c-6bc9-a87c-6fcd-8aa47c3484dc",
-      "license_expression": "python AND python-cwi",
-      "detection_count": 1,
-      "detection_log": []
-    },
-    {
-      "identifier": "bzip2_libbzip_2010-7158bcb2-a4d7-9815-17d2-1b1d0a6d5de2",
-      "license_expression": "bzip2-libbzip-2010",
-      "detection_count": 1,
-      "detection_log": [
-        "unknown-intro-followed-by-match"
-      ]
-    },
-    {
-      "identifier": "sleepycat-a7cd8833-ecc2-8ade-54d7-392befcce801",
-      "license_expression": "sleepycat",
-      "detection_count": 1,
-      "detection_log": [
-        "unknown-intro-followed-by-match"
-      ]
     },
     {
       "identifier": "bsd_simplified-7517fbd6-3fa4-e9f9-2167-c65251d77656",
@@ -44,20 +22,8 @@
       ]
     },
     {
-      "identifier": "bsd_new-ccc98c3a-92d4-e7a3-e0ba-798328cb6b98",
-      "license_expression": "bsd-new",
-      "detection_count": 1,
-      "detection_log": []
-    },
-    {
-      "identifier": "bsd_new-35c287f1-5d41-52f8-399e-2391cd1b4b40",
-      "license_expression": "bsd-new",
-      "detection_count": 1,
-      "detection_log": []
-    },
-    {
-      "identifier": "openssl_ssleay-238ad05e-bfde-df4c-6b5b-61ef3ec16843",
-      "license_expression": "openssl-ssleay",
+      "identifier": "bzip2_libbzip_2010-7158bcb2-a4d7-9815-17d2-1b1d0a6d5de2",
+      "license_expression": "bzip2-libbzip-2010",
       "detection_count": 1,
       "detection_log": [
         "unknown-intro-followed-by-match"
@@ -70,13 +36,47 @@
       "detection_log": []
     },
     {
+      "identifier": "openssl_ssleay-238ad05e-bfde-df4c-6b5b-61ef3ec16843",
+      "license_expression": "openssl-ssleay",
+      "detection_count": 1,
+      "detection_log": [
+        "unknown-intro-followed-by-match"
+      ]
+    },
+    {
+      "identifier": "other_copyleft_and_gpl_1_0_plus-2a634b9a-02ad-d5b9-47fc-e91c5eb24808",
+      "license_expression": "other-copyleft AND gpl-1.0-plus",
+      "detection_count": 1,
+      "detection_log": []
+    },
+    {
+      "identifier": "python-c496ccae-69a0-c5f8-a742-83bcd66bfe68",
+      "license_expression": "python",
+      "detection_count": 1,
+      "detection_log": []
+    },
+    {
+      "identifier": "python_and_python_cwi-dda7296c-6bc9-a87c-6fcd-8aa47c3484dc",
+      "license_expression": "python AND python-cwi",
+      "detection_count": 1,
+      "detection_log": []
+    },
+    {
+      "identifier": "sleepycat-a7cd8833-ecc2-8ade-54d7-392befcce801",
+      "license_expression": "sleepycat",
+      "detection_count": 1,
+      "detection_log": [
+        "unknown-intro-followed-by-match"
+      ]
+    },
+    {
       "identifier": "ssleay_windows-d3dabc12-d861-87db-b339-f73beba8703a",
       "license_expression": "ssleay-windows",
       "detection_count": 1,
       "detection_log": []
     },
     {
-      "identifier": "tcl-d865b2e8-435b-c54f-f19d-66d165a889ac",
+      "identifier": "tcl-75d8de8c-9cf0-d604-4b99-e03436ebfcd3",
       "license_expression": "tcl",
       "detection_count": 1,
       "detection_log": [
@@ -84,7 +84,7 @@
       ]
     },
     {
-      "identifier": "tcl-75d8de8c-9cf0-d604-4b99-e03436ebfcd3",
+      "identifier": "tcl-d865b2e8-435b-c54f-f19d-66d165a889ac",
       "license_expression": "tcl",
       "detection_count": 1,
       "detection_log": [

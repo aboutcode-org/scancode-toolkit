@@ -7,12 +7,6 @@
       "detection_log": []
     },
     {
-      "identifier": "ja_sig-025b96bc-0a83-9578-3e3f-0e0375a87457",
-      "license_expression": "ja-sig",
-      "detection_count": 2,
-      "detection_log": []
-    },
-    {
       "identifier": "apache_2_0-4bde3f57-78aa-4201-96bf-531cba09e7de",
       "license_expression": "apache-2.0",
       "detection_count": 2,
@@ -22,6 +16,12 @@
       "identifier": "gpl_2_0_with_linux_syscall_exception_gpl_or_linux_openib-c196bf1c-1c1f-18b4-554f-690be18bbad0",
       "license_expression": "gpl-2.0 WITH linux-syscall-exception-gpl OR linux-openib",
       "detection_count": 1,
+      "detection_log": []
+    },
+    {
+      "identifier": "ja_sig-025b96bc-0a83-9578-3e3f-0e0375a87457",
+      "license_expression": "ja-sig",
+      "detection_count": 2,
       "detection_log": []
     }
   ],

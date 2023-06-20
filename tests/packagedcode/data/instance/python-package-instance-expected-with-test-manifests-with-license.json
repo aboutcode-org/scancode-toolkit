@@ -90,14 +90,14 @@
   "dependencies": [],
   "license_detections": [
     {
-      "identifier": "mit-cacd5c0c-204a-85c2-affc-e4c125b2492a",
-      "license_expression": "mit",
-      "detection_count": 3
-    },
-    {
       "identifier": "mit-24a5293c-14d7-5403-efac-1a8b7532c0e8",
       "license_expression": "mit",
       "detection_count": 4
+    },
+    {
+      "identifier": "mit-cacd5c0c-204a-85c2-affc-e4c125b2492a",
+      "license_expression": "mit",
+      "detection_count": 3
     },
     {
       "identifier": "mit-56f9dd7c-a466-cdf0-4fe0-6e57d31bc32a",

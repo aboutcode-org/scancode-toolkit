@@ -561,9 +561,9 @@
   ],
   "license_detections": [
     {
-      "identifier": "apache_2_0-08479bef-4de5-8be8-0987-1bec0c232b20",
+      "identifier": "apache_2_0-428c1364-ecb5-f806-7a2e-77d10737a7ce",
       "license_expression": "apache-2.0",
-      "detection_count": 3
+      "detection_count": 6
     },
     {
       "identifier": "apache_2_0-d310abb3-4d20-b3be-830d-ee37b30a997f",
@@ -571,9 +571,9 @@
       "detection_count": 6
     },
     {
-      "identifier": "apache_2_0-428c1364-ecb5-f806-7a2e-77d10737a7ce",
+      "identifier": "apache_2_0-08479bef-4de5-8be8-0987-1bec0c232b20",
       "license_expression": "apache-2.0",
-      "detection_count": 6
+      "detection_count": 3
     }
   ],
   "files": [

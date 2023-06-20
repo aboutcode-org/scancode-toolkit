@@ -29,9 +29,9 @@ headers:
       system_environment:
         operating_system: linux
         cpu_architecture: 64
-        platform: Linux-5.14.0-1059-oem-x86_64-with-glibc2.29
-        platform_version: '#67-Ubuntu SMP Mon Mar 13 14:22:10 UTC 2023'
-        python_version: "3.8.10 (default, Mar 13 2023, 10:26:41) \n[GCC 9.4.0]"
+        platform: Linux-5.15.0-73-generic-x86_64-with-glibc2.29
+        platform_version: '#80~20.04.1-Ubuntu SMP Wed May 17 14:58:14 UTC 2023'
+        python_version: "3.8.10 (default, May 26 2023, 14:05:08) \n[GCC 9.4.0]"
       spdx_license_list_version: '3.20'
       files_count: 4
 summary:
@@ -121,18 +121,18 @@ packages:
     purl: pkg:pypi/codebase
 dependencies: []
 license_detections:
+  - identifier: apache_2_0-ec759ae0-ea5a-f138-793e-388520e080c0
+    license_expression: apache-2.0
+    detection_count: 2
   - identifier: apache_2_0-ab23f79b-ec38-9a8a-9b23-85059407f34d
     license_expression: apache-2.0
-    detection_count: 1
-  - identifier: mit-cacd5c0c-204a-85c2-affc-e4c125b2492a
-    license_expression: mit
     detection_count: 1
   - identifier: apache_2_0_and__apache_2_0_or_mit-9b638e72-e872-a67f-3447-eec297ef7b39
     license_expression: apache-2.0 AND (apache-2.0 OR mit)
     detection_count: 1
-  - identifier: apache_2_0-ec759ae0-ea5a-f138-793e-388520e080c0
-    license_expression: apache-2.0
-    detection_count: 2
+  - identifier: mit-cacd5c0c-204a-85c2-affc-e4c125b2492a
+    license_expression: mit
+    detection_count: 1
 license_references:
   - key: apache-2.0
     language: en

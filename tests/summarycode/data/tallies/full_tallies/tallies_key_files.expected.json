@@ -1,38 +1,8 @@
 {
   "license_detections": [
     {
-      "identifier": "cc0_1_0-4be2dd81-b884-28ac-690a-75aff1b0e963",
-      "license_expression": "cc0-1.0",
-      "detection_count": 1
-    },
-    {
       "identifier": "artistic_2_0-c1ede1c6-eb3d-61cc-53ad-abba5e17c732",
       "license_expression": "artistic-2.0",
-      "detection_count": 1
-    },
-    {
-      "identifier": "zlib-663c0d51-510f-fca6-b163-671ecb188ff9",
-      "license_expression": "zlib",
-      "detection_count": 7
-    },
-    {
-      "identifier": "zlib-b04102d0-a663-78b5-de18-9677ee48ce9c",
-      "license_expression": "zlib",
-      "detection_count": 2
-    },
-    {
-      "identifier": "lgpl_2_1_plus-3fe3e5e6-cb18-c0a1-f831-f08fab3612c1",
-      "license_expression": "lgpl-2.1-plus",
-      "detection_count": 3
-    },
-    {
-      "identifier": "cc_by_2_5-2664cdba-0ee6-a527-2588-8a3a1be3ecae",
-      "license_expression": "cc-by-2.5",
-      "detection_count": 1
-    },
-    {
-      "identifier": "gpl_2_0_plus_with_ada_linking_exception-ca27fab9-344b-58b2-3c05-f3ca150dad7e",
-      "license_expression": "gpl-2.0-plus WITH ada-linking-exception",
       "detection_count": 1
     },
     {
@@ -41,9 +11,34 @@
       "detection_count": 1
     },
     {
-      "identifier": "zlib-f32ae987-c66a-44ce-bd13-c90e0c59aab8",
-      "license_expression": "zlib",
+      "identifier": "cc_by_2_5-2664cdba-0ee6-a527-2588-8a3a1be3ecae",
+      "license_expression": "cc-by-2.5",
       "detection_count": 1
+    },
+    {
+      "identifier": "cc0_1_0-4be2dd81-b884-28ac-690a-75aff1b0e963",
+      "license_expression": "cc0-1.0",
+      "detection_count": 1
+    },
+    {
+      "identifier": "gpl_2_0_plus_with_ada_linking_exception-ca27fab9-344b-58b2-3c05-f3ca150dad7e",
+      "license_expression": "gpl-2.0-plus WITH ada-linking-exception",
+      "detection_count": 1
+    },
+    {
+      "identifier": "lgpl_2_1_plus-3fe3e5e6-cb18-c0a1-f831-f08fab3612c1",
+      "license_expression": "lgpl-2.1-plus",
+      "detection_count": 3
+    },
+    {
+      "identifier": "mit_old_style-578ee504-a9b5-6c26-1bb4-fd7b80a664f0",
+      "license_expression": "mit-old-style",
+      "detection_count": 1
+    },
+    {
+      "identifier": "zlib-663c0d51-510f-fca6-b163-671ecb188ff9",
+      "license_expression": "zlib",
+      "detection_count": 7
     },
     {
       "identifier": "zlib-27de81f4-f6ce-2bf5-ab37-9a4c71f4b296",
@@ -51,8 +46,13 @@
       "detection_count": 2
     },
     {
-      "identifier": "mit_old_style-578ee504-a9b5-6c26-1bb4-fd7b80a664f0",
-      "license_expression": "mit-old-style",
+      "identifier": "zlib-b04102d0-a663-78b5-de18-9677ee48ce9c",
+      "license_expression": "zlib",
+      "detection_count": 2
+    },
+    {
+      "identifier": "zlib-f32ae987-c66a-44ce-bd13-c90e0c59aab8",
+      "license_expression": "zlib",
       "detection_count": 1
     }
   ],

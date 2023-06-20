@@ -9,18 +9,18 @@
       ]
     },
     {
-      "identifier": "x11_xconsortium_veillard-b2601908-f03c-335c-5bbd-e72dc065c901",
-      "license_expression": "x11-xconsortium-veillard",
-      "detection_count": 1,
-      "detection_log": []
-    },
-    {
       "identifier": "x11-xconsortium-veillard-50c015bd-e4e1-c6fe-eb82-9551473dd8e1",
       "license_expression": "x11-xconsortium-veillard",
       "detection_count": 1,
       "detection_log": [
         "unknown-reference-to-local-file"
       ]
+    },
+    {
+      "identifier": "x11_xconsortium_veillard-b2601908-f03c-335c-5bbd-e72dc065c901",
+      "license_expression": "x11-xconsortium-veillard",
+      "detection_count": 1,
+      "detection_log": []
     }
   ],
   "files": [

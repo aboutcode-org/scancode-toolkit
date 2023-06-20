@@ -55,11 +55,6 @@
       "detection_count": 1
     },
     {
-      "identifier": "mit-cacd5c0c-204a-85c2-affc-e4c125b2492a",
-      "license_expression": "mit",
-      "detection_count": 1
-    },
-    {
       "identifier": "apache_2_0_and__apache_2_0_or_mit-9b638e72-e872-a67f-3447-eec297ef7b39",
       "license_expression": "apache-2.0 AND (apache-2.0 OR mit)",
       "detection_count": 1
@@ -67,6 +62,11 @@
     {
       "identifier": "gpl_1_0_plus_and_gpl_2_0_and_gpl_2_0_plus-d3814696-f4d1-6a85-1134-6baea31b797a",
       "license_expression": "gpl-1.0-plus AND gpl-2.0 AND gpl-2.0-plus",
+      "detection_count": 1
+    },
+    {
+      "identifier": "mit-cacd5c0c-204a-85c2-affc-e4c125b2492a",
+      "license_expression": "mit",
       "detection_count": 1
     }
   ],

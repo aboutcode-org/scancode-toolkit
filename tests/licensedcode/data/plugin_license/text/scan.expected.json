@@ -1,14 +1,14 @@
 {
   "license_detections": [
     {
-      "identifier": "gpl_2_0_with_linux_syscall_exception_gpl_or_linux_openib-c196bf1c-1c1f-18b4-554f-690be18bbad0",
-      "license_expression": "gpl-2.0 WITH linux-syscall-exception-gpl OR linux-openib",
+      "identifier": "fsf_ap-49ad9aab-c91b-eeb7-e90f-dc3f959b1c36",
+      "license_expression": "fsf-ap",
       "detection_count": 1,
       "detection_log": []
     },
     {
-      "identifier": "fsf_ap-49ad9aab-c91b-eeb7-e90f-dc3f959b1c36",
-      "license_expression": "fsf-ap",
+      "identifier": "gpl_2_0_with_linux_syscall_exception_gpl_or_linux_openib-c196bf1c-1c1f-18b4-554f-690be18bbad0",
+      "license_expression": "gpl-2.0 WITH linux-syscall-exception-gpl OR linux-openib",
       "detection_count": 1,
       "detection_log": []
     }

@@ -810,6 +810,20 @@ class UniqueDetection:
         )
 
 
+def sort_unique_detections(license_detections):
+    """
+    Return a sorted list of UniqueDetection mappings from a unsorted list of the same.
+    These are sorted in alphabetical order of the license_expression (and same license
+    expressions are sorted by their detection_count in descending order, and then by their
+    UUID).
+    """
+
+    def by_expression_count(detection):
+        return detection["license_expression"], -detection["detection_count"], detection["identifier"]
+
+    return sorted(license_detections, key=by_expression_count)
+
+
 def get_detections_by_id(license_detections):
     """
     Get a dict(hashmap) where each item is: {detection.identifier: all_detections} where

@@ -121,11 +121,6 @@
       "detection_count": 5
     },
     {
-      "identifier": "lgpl_2_0-3903e697-0f73-0feb-d95d-198a91825d0f",
-      "license_expression": "lgpl-2.0",
-      "detection_count": 1
-    },
-    {
       "identifier": "apache_2_0-ec759ae0-ea5a-f138-793e-388520e080c0",
       "license_expression": "apache-2.0",
       "detection_count": 1
@@ -133,6 +128,11 @@
     {
       "identifier": "gpl_2_0-864c0c2e-be17-d035-c591-df0235f46a09",
       "license_expression": "gpl-2.0",
+      "detection_count": 1
+    },
+    {
+      "identifier": "lgpl_2_0-3903e697-0f73-0feb-d95d-198a91825d0f",
+      "license_expression": "lgpl-2.0",
       "detection_count": 1
     }
   ],

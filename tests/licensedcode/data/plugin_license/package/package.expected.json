@@ -112,12 +112,12 @@
   ],
   "license_detections": [
     {
-      "identifier": "mit-bdbee2a2-57b2-e502-e367-d613d7f6dda8",
+      "identifier": "mit-a822f434-d61f-f2b1-c792-8b8cb9e7b9bf",
       "license_expression": "mit",
       "detection_count": 1
     },
     {
-      "identifier": "mit-a822f434-d61f-f2b1-c792-8b8cb9e7b9bf",
+      "identifier": "mit-bdbee2a2-57b2-e502-e367-d613d7f6dda8",
       "license_expression": "mit",
       "detection_count": 1
     }

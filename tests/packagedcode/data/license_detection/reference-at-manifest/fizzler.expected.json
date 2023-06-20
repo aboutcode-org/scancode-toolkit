@@ -142,12 +142,6 @@
   ],
   "license_detections": [
     {
-      "identifier": "lgpl_2_0_plus_and_gpl_1_0_plus-2a11c930-7038-736e-5e48-b35f872691cc",
-      "license_expression": "lgpl-2.0-plus AND gpl-1.0-plus",
-      "detection_count": 1,
-      "detection_log": []
-    },
-    {
       "identifier": "lgpl-2.0-plus AND gpl-1.0-plus-17115808-8fc8-9c98-b64d-c5013bcbde1b",
       "license_expression": "lgpl-2.0-plus AND gpl-1.0-plus",
       "detection_count": 1,
@@ -162,6 +156,12 @@
       "detection_log": [
         "package-unknown-reference-to-local-file"
       ]
+    },
+    {
+      "identifier": "lgpl_2_0_plus_and_gpl_1_0_plus-2a11c930-7038-736e-5e48-b35f872691cc",
+      "license_expression": "lgpl-2.0-plus AND gpl-1.0-plus",
+      "detection_count": 1,
+      "detection_log": []
     }
   ],
   "files": [
