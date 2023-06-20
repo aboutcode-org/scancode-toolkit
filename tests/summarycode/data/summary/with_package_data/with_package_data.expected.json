@@ -14,10 +14,6 @@
     "primary_language": "Python",
     "other_license_expressions": [
       {
-        "value": null,
-        "count": 1
-      },
-      {
         "value": "apache-2.0 AND (apache-2.0 OR mit)",
         "count": 1
       },

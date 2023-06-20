@@ -99,12 +99,12 @@
           "count": 12
         },
         {
-          "value": "lgpl-2.1-plus",
-          "count": 3
+          "value": null,
+          "count": 5
         },
         {
-          "value": null,
-          "count": 1
+          "value": "lgpl-2.1-plus",
+          "count": 3
         },
         {
           "value": "artistic-2.0",

@@ -47,13 +47,11 @@ summary:
   declared_holder:
   primary_language: Python
   other_license_expressions:
-    - value:
-      count: 1
-    - value: apache-2.0
-      count: 1
-    - value: cddl-1.0
-      count: 1
     - value: lgpl-3.0
+      count: 3
+    - value: apache-2.0
+      count: 2
+    - value: cddl-1.0
       count: 1
     - value: mit
       count: 1

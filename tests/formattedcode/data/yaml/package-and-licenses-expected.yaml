@@ -47,8 +47,6 @@ summary:
   declared_holder: Example Corp.
   primary_language: Python
   other_license_expressions:
-    - value:
-      count: 1
     - value: apache-2.0 AND (apache-2.0 OR mit)
       count: 1
     - value: mit

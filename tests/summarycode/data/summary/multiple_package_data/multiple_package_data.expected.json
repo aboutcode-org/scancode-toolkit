@@ -22,10 +22,6 @@
         "count": 2
       },
       {
-        "value": null,
-        "count": 1
-      },
-      {
         "value": "apache-2.0 AND (apache-2.0 OR mit)",
         "count": 1
       }

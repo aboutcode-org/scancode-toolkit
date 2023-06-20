@@ -3399,12 +3399,12 @@
         "count": 12
       },
       {
-        "value": "lgpl-2.1-plus",
-        "count": 3
+        "value": null,
+        "count": 5
       },
       {
-        "value": null,
-        "count": 1
+        "value": "lgpl-2.1-plus",
+        "count": 3
       },
       {
         "value": "artistic-2.0",
@@ -3609,12 +3609,12 @@
             "count": 12
           },
           {
-            "value": "lgpl-2.1-plus",
-            "count": 3
+            "value": null,
+            "count": 5
           },
           {
-            "value": null,
-            "count": 1
+            "value": "lgpl-2.1-plus",
+            "count": 3
           },
           {
             "value": "artistic-2.0",
@@ -3821,12 +3821,12 @@
       "tallies": {
         "detected_license_expression": [
           {
-            "value": "lgpl-2.1-plus",
+            "value": null,
             "count": 3
           },
           {
-            "value": null,
-            "count": 1
+            "value": "lgpl-2.1-plus",
+            "count": 3
           },
           {
             "value": "cc-by-2.5",
@@ -3933,12 +3933,12 @@
       "tallies": {
         "detected_license_expression": [
           {
-            "value": "lgpl-2.1-plus",
+            "value": null,
             "count": 3
           },
           {
-            "value": null,
-            "count": 1
+            "value": "lgpl-2.1-plus",
+            "count": 3
           },
           {
             "value": "cc-by-2.5",
@@ -4739,10 +4739,6 @@
           {
             "value": "zlib",
             "count": 3
-          },
-          {
-            "value": null,
-            "count": 1
           }
         ],
         "copyrights": [
@@ -8497,10 +8493,6 @@
       "tallies": {
         "detected_license_expression": [
           {
-            "value": null,
-            "count": 1
-          },
-          {
             "value": "gpl-2.0-plus WITH ada-linking-exception",
             "count": 1
           }
@@ -9260,10 +9252,6 @@
       "tallies": {
         "detected_license_expression": [
           {
-            "value": null,
-            "count": 1
-          },
-          {
             "value": "zlib",
             "count": 1
           }
@@ -9439,10 +9427,6 @@
           {
             "value": "zlib",
             "count": 2
-          },
-          {
-            "value": null,
-            "count": 1
           }
         ],
         "copyrights": [
@@ -9706,10 +9690,6 @@
       "authors": [],
       "tallies": {
         "detected_license_expression": [
-          {
-            "value": null,
-            "count": 1
-          },
           {
             "value": "mit-old-style",
             "count": 1
