@@ -1,0 +1,47 @@
+---
+key: broadcom-opus-patent
+short_name: Broadcom Opus Patent License
+name: Broadcom Opus Patent License
+category: Patent License
+owner: Broadcom
+homepage_url: https://datatracker.ietf.org/ipr/1526/
+spdx_license_key: LicenseRef-scancode-broadcom-opus-patent
+---
+
+License Grant. Broadcom Corporation (“Broadcom”) hereby grants to you a
+perpetual, worldwide, non-exclusive, no-charge, royalty-free,
+irrevocable (except as stated in this license) license under Licensed
+Patents to make, have made, use, offer to sell, sell, import, transfer,
+and otherwise run, modify (in a way that still complies with the
+Specification), and reproduce any Implementation.
+
+Definitions. Specification means, and includes the following, both
+individually and collectively, (a) any standard specification of the
+Opus codec adopted by the IETF Codec Working Group (“Standard”) and (b)
+any reference implementation (each, a “Reference Implementation”)
+published by the IETF Codec Working Group in the request for comments
+(“RFC”) issued by the IETF for the Specification draft for which this
+License is issued, or any RFC that is issued as an update or new version
+thereof. An Implementation means any Reference Implementation, or
+another implementation that complies with the Specification. Licensed
+Patents means all patents currently owned by Broadcom or acquired hereafter
+that Broadcom has the right to license as set forth above and that are
+necessarily infringed by the Specification, where “necessarily
+infringed” means: in the case of (a) above, there is no commercially
+viable means of implementing the Specification without infringing such
+patent; in the case of (b) above, use of the reference implementation to
+the extent it infringes such patent.
+
+Termination. If you, directly or indirectly via controlled affiliate or
+subsidiary, agent, or exclusive licensee, file a Claim for patent
+infringement against any entity alleging that an Implementation in whole
+or in part constitutes direct or contributory patent infringement, or
+inducement of patent infringement (a “Claim”), provided that a Reference
+Implementation also infringes the patents asserted in the Claim, then
+any patent rights granted to you under this License shall automatically
+terminate retroactively as of the date you first received the grant.
+Claims made against an Implementation in part will only trigger
+termination if the Implementation in part was done for the purpose of
+combining it with other technology that complies with the Specification
+so that the technology’s ultimate use will be consistent with the
+Standard as a whole.
