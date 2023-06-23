@@ -42,7 +42,15 @@ v32.1.0 (next, roadmap)
   See https://github.com/nexB/scancode-toolkit/issues/1745
 
 
-v32.0.5rc1 - 2023-06-22
+v32.0.5rc3 - 2023-06-23
+------------------------
+
+The previous release v32.0.5rc3 was failing on mac app release
+tests, see https://github.com/nexB/scancode-toolkit/issues/3435
+for more details. This release attempts to fix this and release
+correctly.
+
+v32.0.5rc2 - 2023-06-22
 ------------------------
 
 The previous release v32.0.5rc1 failed to upload pypi wheels
