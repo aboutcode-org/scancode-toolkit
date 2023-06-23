@@ -4,7 +4,11 @@ short_name: X11-Style (Lucent)
 name: X11-Style (Lucent)
 category: Permissive
 owner: Alcatel-Lucent
-spdx_license_key: LicenseRef-scancode-x11-lucent
+spdx_license_key: dtoa
+other_spdx_license_keys:
+    - LicenseRef-scancode-x11-lucent
+other_urls:
+    - https://github.com/SWI-Prolog/swipl-devel/blob/master/src/os/dtoa.c
 minimum_coverage: 80
 ---
 

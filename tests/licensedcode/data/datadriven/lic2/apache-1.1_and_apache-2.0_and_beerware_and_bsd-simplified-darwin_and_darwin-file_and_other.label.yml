@@ -6,7 +6,7 @@ license_expressions:
   - hs-regexp
   - bsd-simplified-darwin
   - x11-keith-packard
-  - historical
+  - metamail
   - rsa-md5 AND apache-2.0
   - rsa-md5
   - rsa-md5 AND apache-2.0

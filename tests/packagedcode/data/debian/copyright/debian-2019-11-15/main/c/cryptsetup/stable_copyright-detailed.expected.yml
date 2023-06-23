@@ -21,7 +21,7 @@ declared_license:
   - CC0
   - Apache-2.0
 declared_license_expression: gpl-2.0-plus WITH openssl-exception-gpl-3.0-plus
-declared_license_expression_spdx: GPL-2.0-or-later WITH LicenseRef-scancode-openssl-exception-gpl-3.0-plus
+declared_license_expression_spdx: GPL-2.0-or-later WITH cryptsetup-OpenSSL-exception
 other_license_expression: gpl-2.0-plus WITH openssl-exception-gpl-3.0-plus AND (gpl-2.0-plus
   AND gpl-2.0-plus) AND (gpl-2.0-plus AND gpl-2.0-plus) AND (gpl-2.0-plus AND gpl-2.0-plus)
   AND (gpl-2.0-plus AND gpl-2.0-plus) AND (gpl-2.0-plus AND gpl-2.0-plus) AND (gpl-2.0-plus
@@ -29,14 +29,14 @@ other_license_expression: gpl-2.0-plus WITH openssl-exception-gpl-3.0-plus AND (
   AND (gpl-2.0-plus AND gpl-2.0-plus) AND (lgpl-2.1-plus AND lgpl-2.1-plus) AND lgpl-2.1-plus
   WITH openssl-exception-gpl-3.0-plus AND (cc0-1.0 OR (apache-2.0 AND apache-2.0)) AND (cc0-1.0
   OR (apache-2.0 AND apache-2.0)) AND gary-s-brown
-other_license_expression_spdx: GPL-2.0-or-later WITH LicenseRef-scancode-openssl-exception-gpl-3.0-plus
-  AND (GPL-2.0-or-later AND GPL-2.0-or-later) AND (GPL-2.0-or-later AND GPL-2.0-or-later) AND
-  (GPL-2.0-or-later AND GPL-2.0-or-later) AND (GPL-2.0-or-later AND GPL-2.0-or-later) AND (GPL-2.0-or-later
+other_license_expression_spdx: GPL-2.0-or-later WITH cryptsetup-OpenSSL-exception AND (GPL-2.0-or-later
   AND GPL-2.0-or-later) AND (GPL-2.0-or-later AND GPL-2.0-or-later) AND (GPL-2.0-or-later AND
-  GPL-2.0-or-later) AND (LGPL-2.1-or-later AND LGPL-2.1-or-later) AND (GPL-2.0-or-later AND
-  GPL-2.0-or-later) AND (LGPL-2.1-or-later AND LGPL-2.1-or-later) AND LGPL-2.1-or-later WITH
-  LicenseRef-scancode-openssl-exception-gpl-3.0-plus AND (CC0-1.0 OR (Apache-2.0 AND Apache-2.0))
-  AND (CC0-1.0 OR (Apache-2.0 AND Apache-2.0)) AND LicenseRef-scancode-gary-s-brown
+  GPL-2.0-or-later) AND (GPL-2.0-or-later AND GPL-2.0-or-later) AND (GPL-2.0-or-later AND GPL-2.0-or-later)
+  AND (GPL-2.0-or-later AND GPL-2.0-or-later) AND (GPL-2.0-or-later AND GPL-2.0-or-later) AND
+  (LGPL-2.1-or-later AND LGPL-2.1-or-later) AND (GPL-2.0-or-later AND GPL-2.0-or-later) AND
+  (LGPL-2.1-or-later AND LGPL-2.1-or-later) AND LGPL-2.1-or-later WITH cryptsetup-OpenSSL-exception
+  AND (CC0-1.0 OR (Apache-2.0 AND Apache-2.0)) AND (CC0-1.0 OR (Apache-2.0 AND Apache-2.0))
+  AND LicenseRef-scancode-gary-s-brown
 license_detections: []
 other_license_detections:
   - license_expression: gary-s-brown

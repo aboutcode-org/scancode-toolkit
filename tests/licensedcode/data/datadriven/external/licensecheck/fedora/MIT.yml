@@ -4,7 +4,7 @@ license_expressions:
   - mit-old-style-no-advert AND warranty-disclaimer
   - isc
   - mit-old-style AND warranty-disclaimer
-  - historical
+  - metamail
   - postgresql
   - postgresql
   - postgresql
@@ -31,12 +31,12 @@ license_expressions:
   - x11-tiff
   - other-permissive
   - x11 AND other-permissive
+  - widget-workshop
   - other-permissive
   - other-permissive
   - other-permissive
   - other-permissive
-  - other-permissive
-  - other-permissive
+  - unixcrypt
   - isc
   - osf-1990
   - other-permissive

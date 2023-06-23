@@ -1,0 +1,12 @@
+---
+key: sgp4
+short_name: SGP4 Permission Notice
+name: SGP4 Permission Notice
+category: Public Domain
+owner: celestrak
+spdx_license_key: SGP4
+other_urls:
+    - https://celestrak.org/publications/AIAA/2006-6753/faq.php
+---
+
+There is no license associated with the code and you may use it for any purpose—personal or commercial—as you wish. We ask only that you include citations in your documentation and source code to show the source of the code and provide links to the main page, to facilitate communications regarding any questions on the theory or source code.

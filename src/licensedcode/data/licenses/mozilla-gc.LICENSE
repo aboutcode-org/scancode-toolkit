@@ -5,11 +5,16 @@ name: Mozilla GC License
 category: Permissive
 owner: Mozilla
 notes: stlport-4.5 and mozilla-gc are mostly the same
-spdx_license_key: LicenseRef-scancode-mozilla-gc
+spdx_license_key: Boehm-GC
+other_spdx_license_keys:
+    - LicenseRef-scancode-mozilla-gc
 text_urls:
     - http://www.hboehm.info/gc/license.txt
 other_urls:
     - http://www.hboehm.info/gc/
+    - https://fedoraproject.org/wiki/Licensing:MIT#Another_Minimal_variant_(found_in_libatomic_ops)
+    - https://github.com/uim/libgcroots/blob/master/COPYING
+    - https://github.com/ivmai/libatomic_ops/blob/master/LICENSE
 ---
 
 THIS MATERIAL IS PROVIDED AS IS, WITH ABSOLUTELY NO WARRANTY EXPRESSED

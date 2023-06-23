@@ -24,12 +24,13 @@ declared_license_expression_spdx: Apache-2.0
 other_license_expression: apache-2.0 AND (apache-2.0 AND bsd-new) AND bsd-new AND (gpl-3.0-plus
   OR bison-exception-2.2) AND bsd-unchanged AND (apache-2.0 AND (apache-2.0 AND hs-regexp))
   AND bsd-simplified-darwin AND (apache-2.0 AND public-domain) AND (apache-2.0 AND (x11-keith-packard
-  AND historical)) AND (apache-2.0 AND zeusbench) AND (apache-2.0 OR gpl-2.0-plus) AND mit
+  AND metamail)) AND (apache-2.0 AND zeusbench) AND (apache-2.0 OR gpl-2.0-plus) AND mit
 other_license_expression_spdx: Apache-2.0 AND (Apache-2.0 AND BSD-3-Clause) AND BSD-3-Clause
   AND (GPL-3.0-or-later OR Bison-exception-2.2) AND LicenseRef-scancode-bsd-unchanged AND (Apache-2.0
   AND (Apache-2.0 AND Spencer-94)) AND LicenseRef-scancode-bsd-simplified-darwin AND (Apache-2.0
-  AND LicenseRef-scancode-public-domain) AND (Apache-2.0 AND (HPND-sell-variant AND HPND)) AND
-  (Apache-2.0 AND LicenseRef-scancode-zeusbench) AND (Apache-2.0 OR GPL-2.0-or-later) AND MIT
+  AND LicenseRef-scancode-public-domain) AND (Apache-2.0 AND (HPND-sell-variant AND metamail))
+  AND (Apache-2.0 AND LicenseRef-scancode-zeusbench) AND (Apache-2.0 OR GPL-2.0-or-later) AND
+  MIT
 license_detections: []
 other_license_detections:
   - license_expression: apache-2.0
@@ -137,7 +138,7 @@ other_license_detections:
           ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
           POSSIBILITY OF SUCH DAMAGE.
     identifier: bsd_new-bd6a26eb-db9d-de45-5d56-8c5674ddfb3f
-  - license_expression: x11-keith-packard AND historical
+  - license_expression: x11-keith-packard AND metamail
     matches:
       - score: '100.0'
         start_line: 172
@@ -176,10 +177,10 @@ other_license_detections:
         matched_length: 87
         match_coverage: '100.0'
         matcher: 2-aho
-        license_expression: historical
-        rule_identifier: historical_9.RULE
+        license_expression: metamail
+        rule_identifier: metamail.LICENSE
         rule_relevance: 100
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/historical_9.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/metamail.LICENSE
         matched_text: |
           Permission to use, copy, modify, and distribute this material
           for any purpose and without fee is hereby granted, provided
@@ -191,7 +192,7 @@ other_license_detections:
           MAKES NO REPRESENTATIONS ABOUT THE ACCURACY OR SUITABILITY
           OF THIS MATERIAL FOR ANY PURPOSE.  IT IS PROVIDED "AS IS",
           WITHOUT ANY EXPRESS OR IMPLIED WARRANTIES.
-    identifier: x11_keith_packard_and_historical-372bb973-e538-48bf-05ac-7c596aacb62c
+    identifier: x11_keith_packard_and_metamail-34a511f5-3e81-16a2-de12-7fbbb7e0f5c7
   - license_expression: gpl-3.0-plus
     matches:
       - score: '100.0'

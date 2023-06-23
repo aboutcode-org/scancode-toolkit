@@ -315,7 +315,7 @@ other_license_expression: ((gpl-1.0-plus AND gpl-1.0) OR (artistic-perl-1.0 AND 
   AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-perl-1.0 AND artistic-perl-1.0)) AND (gpl-1.0-plus
   OR artistic-perl-1.0) AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-perl-1.0 AND artistic-perl-1.0))
   AND (artistic-perl-1.0 OR gpl-1.0-plus) AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-perl-1.0
-  AND artistic-perl-1.0)) AND ((artistic-perl-1.0 OR gpl-1.0-plus) AND historical) AND ((gpl-1.0-plus
+  AND artistic-perl-1.0)) AND ((artistic-perl-1.0 OR gpl-1.0-plus) AND metamail) AND ((gpl-1.0-plus
   AND gpl-1.0) OR (artistic-perl-1.0 AND artistic-perl-1.0)) AND (artistic-perl-1.0 OR gpl-1.0-plus)
   AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-perl-1.0 AND artistic-perl-1.0)) AND (gpl-1.0-plus
   OR artistic-perl-1.0) AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-perl-1.0 AND artistic-perl-1.0))
@@ -549,7 +549,7 @@ other_license_expression_spdx: ((GPL-1.0-or-later AND GPL-1.0-only) OR (Artistic
   AND (GPL-1.0-or-later OR Artistic-1.0-Perl) AND ((GPL-1.0-or-later AND GPL-1.0-only) OR (Artistic-1.0-Perl
   AND Artistic-1.0-Perl)) AND (Artistic-1.0-Perl OR GPL-1.0-or-later) AND ((GPL-1.0-or-later
   AND GPL-1.0-only) OR (Artistic-1.0-Perl AND Artistic-1.0-Perl)) AND ((Artistic-1.0-Perl OR
-  GPL-1.0-or-later) AND HPND) AND ((GPL-1.0-or-later AND GPL-1.0-only) OR (Artistic-1.0-Perl
+  GPL-1.0-or-later) AND metamail) AND ((GPL-1.0-or-later AND GPL-1.0-only) OR (Artistic-1.0-Perl
   AND Artistic-1.0-Perl)) AND (Artistic-1.0-Perl OR GPL-1.0-or-later) AND ((GPL-1.0-or-later
   AND GPL-1.0-only) OR (Artistic-1.0-Perl AND Artistic-1.0-Perl)) AND (GPL-1.0-or-later OR Artistic-1.0-Perl)
   AND ((GPL-1.0-or-later AND GPL-1.0-only) OR (Artistic-1.0-Perl AND Artistic-1.0-Perl)) AND
@@ -3008,7 +3008,7 @@ other_license_detections:
           This library is free software; you can redistribute it and/or
           modify it under the same terms as Perl itself.
     identifier: artistic_perl_1_0_or_gpl_1_0_plus-781b2f48-5747-4d66-d428-c271c1b34947
-  - license_expression: (artistic-perl-1.0 OR gpl-1.0-plus) AND historical
+  - license_expression: (artistic-perl-1.0 OR gpl-1.0-plus) AND metamail
     matches:
       - score: '100.0'
         start_line: 784
@@ -3029,10 +3029,10 @@ other_license_detections:
         matched_length: 87
         match_coverage: '100.0'
         matcher: 2-aho
-        license_expression: historical
-        rule_identifier: historical_9.RULE
+        license_expression: metamail
+        rule_identifier: metamail.LICENSE
         rule_relevance: 100
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/historical_9.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/metamail.LICENSE
         matched_text: |
           Permission to use, copy, modify, and distribute this material
            for any purpose and without fee is hereby granted, provided
@@ -3044,7 +3044,7 @@ other_license_detections:
            MAKES NO REPRESENTATIONS ABOUT THE ACCURACY OR SUITABILITY
            OF THIS MATERIAL FOR ANY PURPOSE.  IT IS PROVIDED "AS IS",
            WITHOUT ANY EXPRESS OR IMPLIED WARRANTIES.
-    identifier: artistic_perl_1_0_or_gpl_1_0_plus__and_historical-61899612-c591-bdaa-59f7-dadaf5afa2e3
+    identifier: artistic_perl_1_0_or_gpl_1_0_plus__and_metamail-708741c8-a456-165a-5e15-4d96c736bb61
   - license_expression: artistic-perl-1.0 OR gpl-1.0-plus
     matches:
       - score: '100.0'
