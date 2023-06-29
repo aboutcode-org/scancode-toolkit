@@ -47,13 +47,11 @@ summary:
   declared_holder:
   primary_language: Python
   other_license_expressions:
-    - value:
-      count: 1
-    - value: apache-2.0
-      count: 1
-    - value: cddl-1.0
-      count: 1
     - value: lgpl-3.0
+      count: 3
+    - value: apache-2.0
+      count: 2
+    - value: cddl-1.0
       count: 1
     - value: mit
       count: 1
@@ -465,38 +463,38 @@ dependencies:
     datafile_path: manifests/npm-license-string/package.json
     datasource_id: npm_package_json
 license_detections:
-  - identifier: cddl_1_0-c6dbef4d-659c-289f-5ee9-1ca0278edad6
-    license_expression: cddl-1.0
+  - identifier: apache_2_0-d66ab77d-a5cc-7104-e702-dc7df61fe9e8
+    license_expression: apache-2.0
+    detection_count: 3
+  - identifier: apache_2_0-ec759ae0-ea5a-f138-793e-388520e080c0
+    license_expression: apache-2.0
     detection_count: 1
   - identifier: cddl_1_0-9893b55c-3b2b-4ee8-a932-6c6c93a63fc5
+    license_expression: cddl-1.0
+    detection_count: 1
+  - identifier: cddl_1_0-c6dbef4d-659c-289f-5ee9-1ca0278edad6
     license_expression: cddl-1.0
     detection_count: 1
   - identifier: cddl_1_0-ef82fc8c-50cb-6f35-1814-d2eb0bc13e83
     license_expression: cddl-1.0
     detection_count: 1
-  - identifier: apache_2_0-ec759ae0-ea5a-f138-793e-388520e080c0
-    license_expression: apache-2.0
-    detection_count: 1
-  - identifier: apache_2_0-d66ab77d-a5cc-7104-e702-dc7df61fe9e8
-    license_expression: apache-2.0
-    detection_count: 3
-  - identifier: mit-3fce6ea2-8abd-6c6b-3ede-a37af7c6efee
-    license_expression: mit
-    detection_count: 1
-  - identifier: mit-a822f434-d61f-f2b1-c792-8b8cb9e7b9bf
-    license_expression: mit
-    detection_count: 1
+  - identifier: lgpl_3_0-272571eb-5e68-95b6-ddb0-71de2d8df321
+    license_expression: lgpl-3.0
+    detection_count: 2
   - identifier: lgpl_3_0-121be3c2-9c80-df84-d3da-8f674e4125c0
     license_expression: lgpl-3.0
     detection_count: 1
   - identifier: lgpl_3_0-2db87bcf-56b4-9d7d-7075-2effae31c631
     license_expression: lgpl-3.0
     detection_count: 1
-  - identifier: lgpl_3_0-272571eb-5e68-95b6-ddb0-71de2d8df321
-    license_expression: lgpl-3.0
-    detection_count: 2
   - identifier: lgpl_3_0-38174920-e8ed-7bda-41ec-94df7380b7d5
     license_expression: lgpl-3.0
+    detection_count: 1
+  - identifier: mit-3fce6ea2-8abd-6c6b-3ede-a37af7c6efee
+    license_expression: mit
+    detection_count: 1
+  - identifier: mit-a822f434-d61f-f2b1-c792-8b8cb9e7b9bf
+    license_expression: mit
     detection_count: 1
 license_references:
   - key: apache-2.0

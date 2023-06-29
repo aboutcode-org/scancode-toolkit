@@ -1,9 +1,9 @@
 {
   "license_detections": [
     {
-      "identifier": "epl_1_0-4850ab41-51b3-282e-61da-d1dd32d1eef2",
-      "license_expression": "epl-1.0",
-      "detection_count": 2,
+      "identifier": "apache_2_0-ec71f0b5-0d51-269d-4401-8cfe56a05bfe",
+      "license_expression": "apache-2.0",
+      "detection_count": 3,
       "detection_log": []
     },
     {
@@ -16,30 +16,6 @@
       "identifier": "apache_2_0-c6b06d3c-dbcf-4722-6e26-e6d782bf756a",
       "license_expression": "apache-2.0",
       "detection_count": 2,
-      "detection_log": []
-    },
-    {
-      "identifier": "apache_2_0-ec71f0b5-0d51-269d-4401-8cfe56a05bfe",
-      "license_expression": "apache-2.0",
-      "detection_count": 3,
-      "detection_log": []
-    },
-    {
-      "identifier": "epl_2_0-2d958c5c-8c7d-0aab-f347-248562781281",
-      "license_expression": "epl-2.0",
-      "detection_count": 1,
-      "detection_log": []
-    },
-    {
-      "identifier": "epl_1_0-24481246-c972-682f-28a6-1e4bb59b73c5",
-      "license_expression": "epl-1.0",
-      "detection_count": 2,
-      "detection_log": []
-    },
-    {
-      "identifier": "cpl_1_0-3d9a9925-4663-aa7d-fe9c-d421afd87296",
-      "license_expression": "cpl-1.0",
-      "detection_count": 1,
       "detection_log": []
     },
     {
@@ -57,6 +33,30 @@
     {
       "identifier": "cpl_1_0-08dc5398-457d-49be-a798-b57fe4d8de3e",
       "license_expression": "cpl-1.0",
+      "detection_count": 1,
+      "detection_log": []
+    },
+    {
+      "identifier": "cpl_1_0-3d9a9925-4663-aa7d-fe9c-d421afd87296",
+      "license_expression": "cpl-1.0",
+      "detection_count": 1,
+      "detection_log": []
+    },
+    {
+      "identifier": "epl_1_0-24481246-c972-682f-28a6-1e4bb59b73c5",
+      "license_expression": "epl-1.0",
+      "detection_count": 2,
+      "detection_log": []
+    },
+    {
+      "identifier": "epl_1_0-4850ab41-51b3-282e-61da-d1dd32d1eef2",
+      "license_expression": "epl-1.0",
+      "detection_count": 2,
+      "detection_log": []
+    },
+    {
+      "identifier": "epl_2_0-2d958c5c-8c7d-0aab-f347-248562781281",
+      "license_expression": "epl-2.0",
       "detection_count": 1,
       "detection_log": []
     }

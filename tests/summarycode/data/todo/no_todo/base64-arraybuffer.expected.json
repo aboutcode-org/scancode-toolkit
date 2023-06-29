@@ -168,12 +168,12 @@
   ],
   "license_detections": [
     {
-      "identifier": "mit-cacd5c0c-204a-85c2-affc-e4c125b2492a",
+      "identifier": "mit-e634e936-0701-7555-bfaa-1fce0c174838",
       "license_expression": "mit",
-      "detection_count": 1
+      "detection_count": 2
     },
     {
-      "identifier": "mit-f9ae5fa5-0848-4d18-62fc-d668971434b3",
+      "identifier": "mit-3fce6ea2-8abd-6c6b-3ede-a37af7c6efee",
       "license_expression": "mit",
       "detection_count": 1
     },
@@ -183,14 +183,14 @@
       "detection_count": 1
     },
     {
-      "identifier": "mit-3fce6ea2-8abd-6c6b-3ede-a37af7c6efee",
+      "identifier": "mit-cacd5c0c-204a-85c2-affc-e4c125b2492a",
       "license_expression": "mit",
       "detection_count": 1
     },
     {
-      "identifier": "mit-e634e936-0701-7555-bfaa-1fce0c174838",
+      "identifier": "mit-f9ae5fa5-0848-4d18-62fc-d668971434b3",
       "license_expression": "mit",
-      "detection_count": 2
+      "detection_count": 1
     }
   ],
   "todo": [],

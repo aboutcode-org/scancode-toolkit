@@ -14,10 +14,6 @@
     "primary_language": "Python",
     "other_license_expressions": [
       {
-        "value": null,
-        "count": 1
-      },
-      {
         "value": "apache-2.0",
         "count": 1
       },
@@ -43,14 +39,14 @@
       "detection_count": 1
     },
     {
-      "identifier": "mit-cacd5c0c-204a-85c2-affc-e4c125b2492a",
-      "license_expression": "mit",
-      "detection_count": 1
-    },
-    {
       "identifier": "apache_2_0_and__apache_2_0_or_mit-9b638e72-e872-a67f-3447-eec297ef7b39",
       "license_expression": "apache-2.0 AND (apache-2.0 OR mit)",
       "detection_count": 3
+    },
+    {
+      "identifier": "mit-cacd5c0c-204a-85c2-affc-e4c125b2492a",
+      "license_expression": "mit",
+      "detection_count": 1
     }
   ],
   "files": [

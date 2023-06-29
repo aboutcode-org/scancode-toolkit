@@ -27,6 +27,7 @@ from licensedcode.detection import get_new_identifier_from_detections
 from licensedcode.detection import get_referenced_filenames
 from licensedcode.detection import DetectionCategory
 from licensedcode.detection import LicenseDetectionFromResult
+from licensedcode.detection import sort_unique_detections
 from licensedcode.detection import UniqueDetection
 from packagedcode.utils import combine_expressions
 from scancode.api import SCANCODE_LICENSEDB_URL
@@ -228,11 +229,13 @@ class LicenseScanner(ScanPlugin):
                 f'unique_license_detections: {unique_license_detections}',
             )
 
-        codebase.attributes.license_detections.extend([
+        unsorted_license_detections = [
             unique_detection.to_dict(license_diagnostics=license_diagnostics)
             for unique_detection in unique_license_detections
-        ])
-
+        ]
+        codebase.attributes.license_detections.extend(
+            sort_unique_detections(unsorted_license_detections)
+        )
 
 
 def add_referenced_filenames_license_matches_for_detections(resource, codebase):

@@ -4756,43 +4756,46 @@
   "dependencies": [],
   "license_detections": [
     {
-      "identifier": "gpl_2_0_plus-53a26be2-1f88-01ec-d294-921768a513c9",
-      "license_expression": "gpl-2.0-plus",
-      "detection_count": 42,
-      "detection_log": []
-    },
-    {
-      "identifier": "gpl_2_0_plus_and_free_unknown-7df72521-0609-4896-2583-44c45dd3f8e6",
-      "license_expression": "gpl-2.0-plus AND free-unknown",
-      "detection_count": 2,
-      "detection_log": []
-    },
-    {
       "identifier": "bsd_new-008266ae-6939-ad31-3617-228b0809863c",
       "license_expression": "bsd-new",
       "detection_count": 2,
       "detection_log": []
     },
     {
-      "identifier": "gpl_2_0_plus_and_free_unknown-f9cd0597-d35d-ec72-0e6b-77970ad90317",
-      "license_expression": "gpl-2.0-plus AND free-unknown",
+      "identifier": "bsd_original-9198bafe-47c0-f9dc-5ef1-bd276a69786e",
+      "license_expression": "bsd-original",
       "detection_count": 2,
       "detection_log": []
     },
     {
-      "identifier": "lgpl_3_0_plus-4c8d95b2-1acf-7a81-473c-d8e70962288c",
-      "license_expression": "lgpl-3.0-plus",
+      "identifier": "bsd_simplified-2383ae10-5494-e069-46c2-e2d6cb56951f",
+      "license_expression": "bsd-simplified",
       "detection_count": 2,
       "detection_log": []
     },
     {
-      "identifier": "public_domain-1a6a4f2c-bd92-9942-920f-be3d0c2bbda6",
-      "license_expression": "public-domain",
-      "detection_count": 2,
-      "detection_log": [
-        "possible-false-positive",
-        "not-license-clues-as-more-detections-present"
-      ]
+      "identifier": "free_unknown-34d6195a-6206-be2e-4bd2-ce3b9493a1ad",
+      "license_expression": "free-unknown",
+      "detection_count": 1,
+      "detection_log": []
+    },
+    {
+      "identifier": "free_unknown-fddf748a-9953-bc6c-cb9d-91001840e335",
+      "license_expression": "free-unknown",
+      "detection_count": 1,
+      "detection_log": []
+    },
+    {
+      "identifier": "gpl_2_0_plus-227f50b1-f05e-5b3b-b107-ae1e2f56448b",
+      "license_expression": "gpl-2.0-plus",
+      "detection_count": 44,
+      "detection_log": []
+    },
+    {
+      "identifier": "gpl_2_0_plus-53a26be2-1f88-01ec-d294-921768a513c9",
+      "license_expression": "gpl-2.0-plus",
+      "detection_count": 42,
+      "detection_log": []
     },
     {
       "identifier": "gpl_2_0_plus-fed2dc38-09ac-103e-1b86-4a4f5c00614a",
@@ -4804,17 +4807,14 @@
       ]
     },
     {
-      "identifier": "mit-1f9f2ae8-7020-0a13-7934-461c752929a4",
-      "license_expression": "mit",
-      "detection_count": 6,
-      "detection_log": [
-        "possible-false-positive",
-        "not-license-clues-as-more-detections-present"
-      ]
+      "identifier": "gpl_2_0_plus_and_free_unknown-7df72521-0609-4896-2583-44c45dd3f8e6",
+      "license_expression": "gpl-2.0-plus AND free-unknown",
+      "detection_count": 2,
+      "detection_log": []
     },
     {
-      "identifier": "bsd_original-9198bafe-47c0-f9dc-5ef1-bd276a69786e",
-      "license_expression": "bsd-original",
+      "identifier": "gpl_2_0_plus_and_free_unknown-f9cd0597-d35d-ec72-0e6b-77970ad90317",
+      "license_expression": "gpl-2.0-plus AND free-unknown",
       "detection_count": 2,
       "detection_log": []
     },
@@ -4825,21 +4825,24 @@
       "detection_log": []
     },
     {
-      "identifier": "gpl_2_0_plus-227f50b1-f05e-5b3b-b107-ae1e2f56448b",
-      "license_expression": "gpl-2.0-plus",
-      "detection_count": 44,
-      "detection_log": []
-    },
-    {
-      "identifier": "bsd_simplified-2383ae10-5494-e069-46c2-e2d6cb56951f",
-      "license_expression": "bsd-simplified",
-      "detection_count": 2,
-      "detection_log": []
-    },
-    {
       "identifier": "lgpl_3_0-6b4a45da-85cc-8eb0-5613-be81d4efd6a5",
       "license_expression": "lgpl-3.0",
       "detection_count": 2,
+      "detection_log": [
+        "possible-false-positive",
+        "not-license-clues-as-more-detections-present"
+      ]
+    },
+    {
+      "identifier": "lgpl_3_0_plus-4c8d95b2-1acf-7a81-473c-d8e70962288c",
+      "license_expression": "lgpl-3.0-plus",
+      "detection_count": 2,
+      "detection_log": []
+    },
+    {
+      "identifier": "mit-1f9f2ae8-7020-0a13-7934-461c752929a4",
+      "license_expression": "mit",
+      "detection_count": 6,
       "detection_log": [
         "possible-false-positive",
         "not-license-clues-as-more-detections-present"
@@ -4855,8 +4858,8 @@
       ]
     },
     {
-      "identifier": "public_domain_and_bsd_original_and_gpl_1_0_plus-ccb73883-974d-42eb-d572-39fa7bf22f4c",
-      "license_expression": "public-domain AND bsd-original AND gpl-1.0-plus",
+      "identifier": "public_domain-1a6a4f2c-bd92-9942-920f-be3d0c2bbda6",
+      "license_expression": "public-domain",
       "detection_count": 2,
       "detection_log": [
         "possible-false-positive",
@@ -4864,16 +4867,13 @@
       ]
     },
     {
-      "identifier": "free_unknown-fddf748a-9953-bc6c-cb9d-91001840e335",
-      "license_expression": "free-unknown",
-      "detection_count": 1,
-      "detection_log": []
-    },
-    {
-      "identifier": "free_unknown-34d6195a-6206-be2e-4bd2-ce3b9493a1ad",
-      "license_expression": "free-unknown",
-      "detection_count": 1,
-      "detection_log": []
+      "identifier": "public_domain_and_bsd_original_and_gpl_1_0_plus-ccb73883-974d-42eb-d572-39fa7bf22f4c",
+      "license_expression": "public-domain AND bsd-original AND gpl-1.0-plus",
+      "detection_count": 2,
+      "detection_log": [
+        "possible-false-positive",
+        "not-license-clues-as-more-detections-present"
+      ]
     }
   ],
   "files": [

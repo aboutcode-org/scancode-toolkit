@@ -3,13 +3,13 @@
   "dependencies": [],
   "license_detections": [
     {
-      "identifier": "gpl_2_0_or_bsd_new-1aafbf52-fc7a-3ded-e4ce-3a96e276a0f9",
-      "license_expression": "gpl-2.0 OR bsd-new",
+      "identifier": "bsd_original_uc-f28cb4d4-6336-ee60-f186-4c1929d3a4b0",
+      "license_expression": "bsd-original-uc",
       "detection_count": 1
     },
     {
-      "identifier": "bsd_original_uc-f28cb4d4-6336-ee60-f186-4c1929d3a4b0",
-      "license_expression": "bsd-original-uc",
+      "identifier": "gpl_2_0_or_bsd_new-1aafbf52-fc7a-3ded-e4ce-3a96e276a0f9",
+      "license_expression": "gpl-2.0 OR bsd-new",
       "detection_count": 1
     }
   ],

@@ -94,18 +94,18 @@
   "dependencies": [],
   "license_detections": [
     {
-      "identifier": "zlib-f32ae987-c66a-44ce-bd13-c90e0c59aab8",
-      "license_expression": "zlib",
-      "detection_count": 1,
-      "detection_log": []
-    },
-    {
       "identifier": "zlib-9531c668-be8d-7a25-49eb-c18c9dcd616b",
       "license_expression": "zlib",
       "detection_count": 2,
       "detection_log": [
         "unknown-reference-to-local-file"
       ]
+    },
+    {
+      "identifier": "zlib-f32ae987-c66a-44ce-bd13-c90e0c59aab8",
+      "license_expression": "zlib",
+      "detection_count": 1,
+      "detection_log": []
     }
   ],
   "files": [

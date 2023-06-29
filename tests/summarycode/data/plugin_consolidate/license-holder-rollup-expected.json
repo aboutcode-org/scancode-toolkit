@@ -3,14 +3,14 @@
   "dependencies": [],
   "license_detections": [
     {
-      "identifier": "gpl_1_0_plus_and_gpl_2_0-1e023d4a-9b9a-a032-f999-6d506ad4bcde",
-      "license_expression": "gpl-1.0-plus AND gpl-2.0",
-      "detection_count": 2
-    },
-    {
       "identifier": "apache_2_0-b955b3e8-dd31-4357-9227-7a93de3b06a1",
       "license_expression": "apache-2.0",
       "detection_count": 1
+    },
+    {
+      "identifier": "gpl_1_0_plus_and_gpl_2_0-1e023d4a-9b9a-a032-f999-6d506ad4bcde",
+      "license_expression": "gpl-1.0-plus AND gpl-2.0",
+      "detection_count": 2
     }
   ],
   "consolidated_components": [

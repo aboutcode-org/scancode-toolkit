@@ -1,8 +1,8 @@
 {
   "license_detections": [
     {
-      "identifier": "lgpl_2_1_plus_and_other_permissive_and_gpl_2_0_plus-666058ef-8c38-3b17-d8e7-448b304de833",
-      "license_expression": "lgpl-2.1-plus AND other-permissive AND gpl-2.0-plus",
+      "identifier": "gpl_1_0_plus-0211bbc4-784e-97fe-2ac1-f150ccba866e",
+      "license_expression": "gpl-1.0-plus",
       "detection_count": 1,
       "detection_log": []
     },
@@ -16,8 +16,14 @@
       ]
     },
     {
-      "identifier": "lgpl_3_0_and_lgpl_3_0_plus_and__lgpl_3_0_and_gpl_3_0-eb2232a5-2c4f-3fc9-a2ee-cdf40b20ae23",
-      "license_expression": "lgpl-3.0 AND lgpl-3.0-plus AND (lgpl-3.0 AND gpl-3.0)",
+      "identifier": "gpl_2_0_and_apache_2_0_and_lgpl_3_0_plus-c2393e5a-e531-304f-58a9-a6431d46d214",
+      "license_expression": "gpl-2.0 AND apache-2.0 AND lgpl-3.0-plus",
+      "detection_count": 1,
+      "detection_log": []
+    },
+    {
+      "identifier": "gpl_2_0_and_lgpl_2_0_plus_and_proprietary_license-45a8a75a-5b7e-5dbe-21f8-412756fac148",
+      "license_expression": "gpl-2.0 AND lgpl-2.0-plus AND proprietary-license",
       "detection_count": 1,
       "detection_log": []
     },
@@ -30,20 +36,14 @@
       ]
     },
     {
-      "identifier": "gpl_1_0_plus-0211bbc4-784e-97fe-2ac1-f150ccba866e",
-      "license_expression": "gpl-1.0-plus",
+      "identifier": "lgpl_2_1_plus_and_other_permissive_and_gpl_2_0_plus-666058ef-8c38-3b17-d8e7-448b304de833",
+      "license_expression": "lgpl-2.1-plus AND other-permissive AND gpl-2.0-plus",
       "detection_count": 1,
       "detection_log": []
     },
     {
-      "identifier": "gpl_2_0_and_apache_2_0_and_lgpl_3_0_plus-c2393e5a-e531-304f-58a9-a6431d46d214",
-      "license_expression": "gpl-2.0 AND apache-2.0 AND lgpl-3.0-plus",
-      "detection_count": 1,
-      "detection_log": []
-    },
-    {
-      "identifier": "gpl_2_0_and_lgpl_2_0_plus_and_proprietary_license-45a8a75a-5b7e-5dbe-21f8-412756fac148",
-      "license_expression": "gpl-2.0 AND lgpl-2.0-plus AND proprietary-license",
+      "identifier": "lgpl_3_0_and_lgpl_3_0_plus_and__lgpl_3_0_and_gpl_3_0-eb2232a5-2c4f-3fc9-a2ee-cdf40b20ae23",
+      "license_expression": "lgpl-3.0 AND lgpl-3.0-plus AND (lgpl-3.0 AND gpl-3.0)",
       "detection_count": 1,
       "detection_log": []
     }

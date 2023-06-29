@@ -92,18 +92,18 @@
   "dependencies": [],
   "license_detections": [
     {
+      "identifier": "bsd_new-f4e99f86-00ab-18d9-a65d-a3a12767dcf5",
+      "license_expression": "bsd-new",
+      "detection_count": 2,
+      "detection_log": []
+    },
+    {
       "identifier": "bsd-new-af493d9f-0c66-d9f8-4538-579134812514",
       "license_expression": "bsd-new",
       "detection_count": 1,
       "detection_log": [
         "unknown-reference-in-file-to-package"
       ]
-    },
-    {
-      "identifier": "bsd_new-f4e99f86-00ab-18d9-a65d-a3a12767dcf5",
-      "license_expression": "bsd-new",
-      "detection_count": 2,
-      "detection_log": []
     }
   ],
   "files": [

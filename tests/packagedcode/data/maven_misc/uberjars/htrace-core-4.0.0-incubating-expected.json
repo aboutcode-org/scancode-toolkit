@@ -479,7 +479,12 @@
   ],
   "license_detections": [
     {
-      "identifier": "apache_2_0-e7633baf-a264-a1ab-40f6-a28ec157067a",
+      "identifier": "apache_2_0-4bde3f57-78aa-4201-96bf-531cba09e7de",
+      "license_expression": "apache-2.0",
+      "detection_count": 4
+    },
+    {
+      "identifier": "apache_2_0-482220ca-c07b-bf59-66ed-6e7eaf9f3b1e",
       "license_expression": "apache-2.0",
       "detection_count": 1
     },
@@ -489,14 +494,9 @@
       "detection_count": 1
     },
     {
-      "identifier": "apache_2_0-482220ca-c07b-bf59-66ed-6e7eaf9f3b1e",
+      "identifier": "apache_2_0-e7633baf-a264-a1ab-40f6-a28ec157067a",
       "license_expression": "apache-2.0",
       "detection_count": 1
-    },
-    {
-      "identifier": "apache_2_0-4bde3f57-78aa-4201-96bf-531cba09e7de",
-      "license_expression": "apache-2.0",
-      "detection_count": 4
     }
   ],
   "files": [

@@ -9,16 +9,12 @@
       "detection_log": []
     },
     {
-      "identifier": "gpl_3_0_plus-494d0068-7138-a14f-4cbb-fd2137263a4f",
-      "license_expression": "gpl-3.0-plus",
+      "identifier": "gpl-3.0-76e8f741-ece2-d587-493c-92b0b1e4bdfe",
+      "license_expression": "gpl-3.0",
       "detection_count": 1,
-      "detection_log": []
-    },
-    {
-      "identifier": "gpl_3_0_and_unknown_license_reference_and_gpl_3_0_plus-ebd5f076-5cba-e641-e071-0028c4ee0ddb",
-      "license_expression": "gpl-3.0 AND unknown-license-reference AND gpl-3.0-plus",
-      "detection_count": 1,
-      "detection_log": []
+      "detection_log": [
+        "unknown-reference-in-file-to-nonexistent-package"
+      ]
     },
     {
       "identifier": "gpl-3.0-e907b820-6f8c-81c4-38c5-75006ae093a4",
@@ -29,12 +25,16 @@
       ]
     },
     {
-      "identifier": "gpl-3.0-76e8f741-ece2-d587-493c-92b0b1e4bdfe",
-      "license_expression": "gpl-3.0",
+      "identifier": "gpl_3_0_and_unknown_license_reference_and_gpl_3_0_plus-ebd5f076-5cba-e641-e071-0028c4ee0ddb",
+      "license_expression": "gpl-3.0 AND unknown-license-reference AND gpl-3.0-plus",
       "detection_count": 1,
-      "detection_log": [
-        "unknown-reference-in-file-to-nonexistent-package"
-      ]
+      "detection_log": []
+    },
+    {
+      "identifier": "gpl_3_0_plus-494d0068-7138-a14f-4cbb-fd2137263a4f",
+      "license_expression": "gpl-3.0-plus",
+      "detection_count": 1,
+      "detection_log": []
     }
   ],
   "files": [

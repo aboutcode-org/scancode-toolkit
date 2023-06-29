@@ -97,13 +97,8 @@
   "dependencies": [],
   "license_detections": [
     {
-      "identifier": "mit_or_apache_2_0-719f8427-422e-8023-c20e-9f8dd0af13b9",
-      "license_expression": "mit OR apache-2.0",
-      "detection_count": 1
-    },
-    {
-      "identifier": "mit_or_apache_2_0-480eec53-1a80-0150-7c7e-39cf79c9f3a8",
-      "license_expression": "mit OR apache-2.0",
+      "identifier": "apache_2_0-e3938c59-cc73-037c-3372-e20c26c25f48",
+      "license_expression": "apache-2.0",
       "detection_count": 1
     },
     {
@@ -112,8 +107,8 @@
       "detection_count": 1
     },
     {
-      "identifier": "apache_2_0-e3938c59-cc73-037c-3372-e20c26c25f48",
-      "license_expression": "apache-2.0",
+      "identifier": "mit-a9138d4e-bc0e-0a20-76fd-237047e6d41c",
+      "license_expression": "mit",
       "detection_count": 1
     },
     {
@@ -122,8 +117,13 @@
       "detection_count": 1
     },
     {
-      "identifier": "mit-a9138d4e-bc0e-0a20-76fd-237047e6d41c",
-      "license_expression": "mit",
+      "identifier": "mit_or_apache_2_0-480eec53-1a80-0150-7c7e-39cf79c9f3a8",
+      "license_expression": "mit OR apache-2.0",
+      "detection_count": 1
+    },
+    {
+      "identifier": "mit_or_apache_2_0-719f8427-422e-8023-c20e-9f8dd0af13b9",
+      "license_expression": "mit OR apache-2.0",
       "detection_count": 1
     }
   ],

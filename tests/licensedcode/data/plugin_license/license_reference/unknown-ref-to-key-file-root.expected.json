@@ -9,7 +9,7 @@
       ]
     },
     {
-      "identifier": "mit-d0a34f23-8c35-8874-a99f-6ed1e3b31f40",
+      "identifier": "mit-3fce6ea2-8abd-6c6b-3ede-a37af7c6efee",
       "license_expression": "mit",
       "detection_count": 1,
       "detection_log": []
@@ -21,10 +21,12 @@
       "detection_log": []
     },
     {
-      "identifier": "mit-3fce6ea2-8abd-6c6b-3ede-a37af7c6efee",
+      "identifier": "mit-ad99a349-2a14-9fe5-c6a6-366fd3b9067b",
       "license_expression": "mit",
       "detection_count": 1,
-      "detection_log": []
+      "detection_log": [
+        "unknown-reference-to-local-file"
+      ]
     },
     {
       "identifier": "mit-bdcba66f-6e80-f7bd-7994-748183fe5693",
@@ -33,12 +35,10 @@
       "detection_log": []
     },
     {
-      "identifier": "mit-ad99a349-2a14-9fe5-c6a6-366fd3b9067b",
+      "identifier": "mit-d0a34f23-8c35-8874-a99f-6ed1e3b31f40",
       "license_expression": "mit",
       "detection_count": 1,
-      "detection_log": [
-        "unknown-reference-to-local-file"
-      ]
+      "detection_log": []
     }
   ],
   "files": [

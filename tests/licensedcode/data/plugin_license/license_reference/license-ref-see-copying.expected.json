@@ -1,18 +1,18 @@
 {
   "license_detections": [
     {
-      "identifier": "apache_2_0-ec759ae0-ea5a-f138-793e-388520e080c0",
-      "license_expression": "apache-2.0",
-      "detection_count": 1,
-      "detection_log": []
-    },
-    {
       "identifier": "apache-2.0-1c807a43-2040-70af-75aa-c343d5f2b90c",
       "license_expression": "apache-2.0",
       "detection_count": 1,
       "detection_log": [
         "unknown-reference-to-local-file"
       ]
+    },
+    {
+      "identifier": "apache_2_0-ec759ae0-ea5a-f138-793e-388520e080c0",
+      "license_expression": "apache-2.0",
+      "detection_count": 1,
+      "detection_log": []
     }
   ],
   "files": [
