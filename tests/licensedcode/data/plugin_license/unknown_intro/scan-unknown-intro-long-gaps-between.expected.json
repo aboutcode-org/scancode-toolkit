@@ -22,7 +22,7 @@
       "path": "LICENSE-dist.txt",
       "type": "file",
       "detected_license_expression": "x11-lucent AND bzip2-libbzip-2010",
-      "detected_license_expression_spdx": "LicenseRef-scancode-x11-lucent AND bzip2-1.0.6",
+      "detected_license_expression_spdx": "dtoa AND bzip2-1.0.6",
       "license_detections": [
         {
           "license_expression": "x11-lucent",

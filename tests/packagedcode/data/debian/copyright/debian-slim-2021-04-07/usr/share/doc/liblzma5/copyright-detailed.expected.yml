@@ -51,7 +51,7 @@ other_license_expression_spdx: (LicenseRef-scancode-public-domain AND LicenseRef
   AND LicenseRef-scancode-public-domain AND LicenseRef-scancode-public-domain) AND LicenseRef-scancode-public-domain
   AND LicenseRef-scancode-public-domain AND LicenseRef-scancode-public-domain AND LicenseRef-scancode-public-domain
   AND (GPL-2.0-or-later AND GPL-2.0-or-later) AND LicenseRef-scancode-public-domain AND LicenseRef-scancode-public-domain
-  AND (LGPL-2.1-or-later AND LGPL-2.1-or-later) AND FSFULLR AND GPL-3.0-or-later WITH LicenseRef-scancode-autoconf-macro-exception
+  AND (LGPL-2.1-or-later AND LGPL-2.1-or-later) AND FSFULLR AND GPL-3.0-or-later WITH Autoconf-exception-macro
   AND FSFAP AND (GPL-2.0-only AND GPL-2.0-only) AND LicenseRef-scancode-public-domain AND LicenseRef-scancode-public-domain
   AND LicenseRef-scancode-public-domain AND LicenseRef-scancode-public-domain AND LicenseRef-scancode-public-domain
   AND FSFAP AND (LicenseRef-scancode-public-domain AND FSFULLR AND Autoconf-exception-2.0 AND

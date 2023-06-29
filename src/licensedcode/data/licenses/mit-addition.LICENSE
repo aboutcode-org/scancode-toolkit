@@ -10,6 +10,7 @@ other_spdx_license_keys:
     - LicenseRef-scancode-mit-addition
 other_urls:
     - http://www-cs-students.stanford.edu/~tjw/jsbn/
+    - https://github.com/chromium/octane/blob/master/crypto.js
 minimum_coverage: 90
 ---
 

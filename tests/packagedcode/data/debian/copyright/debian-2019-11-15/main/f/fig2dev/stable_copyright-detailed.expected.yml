@@ -6,12 +6,12 @@ declared_license:
   - MIT
   - GPL-3
 declared_license_expression: mit-xfig
-declared_license_expression_spdx: LicenseRef-scancode-mit-xfig
+declared_license_expression_spdx: Xfig
 other_license_expression: mit-xfig AND (gpl-2.0-plus AND (gpl-2.0 OR gpl-3.0)) AND (gpl-2.0-plus
   AND (gpl-2.0 OR gpl-3.0)) AND mit-old-style-no-advert AND (gpl-3.0 AND gpl-3.0-plus AND gpl-3.0)
-other_license_expression_spdx: LicenseRef-scancode-mit-xfig AND (GPL-2.0-or-later AND (GPL-2.0-only
-  OR GPL-3.0-only)) AND (GPL-2.0-or-later AND (GPL-2.0-only OR GPL-3.0-only)) AND NTP AND (GPL-3.0-only
-  AND GPL-3.0-or-later AND GPL-3.0-only)
+other_license_expression_spdx: Xfig AND (GPL-2.0-or-later AND (GPL-2.0-only OR GPL-3.0-only))
+  AND (GPL-2.0-or-later AND (GPL-2.0-only OR GPL-3.0-only)) AND NTP AND (GPL-3.0-only AND GPL-3.0-or-later
+  AND GPL-3.0-only)
 license_detections: []
 other_license_detections:
   - license_expression: mit-xfig

@@ -1,0 +1,18 @@
+---
+key: asterisk-exception
+short_name: Asterisk exception
+name: Asterisk exception
+category: Copyleft
+owner: Asterisk
+is_exception: yes
+spdx_license_key: Asterisk-exception
+other_urls:
+    - https://github.com/asterisk/libpri/blob/7f91151e6bd10957c746c031c1f4a030e8146e9a/pri.c#L22
+    - https://github.com/asterisk/libss7/blob/03e81bcd0d28ff25d4c77c78351ddadc82ff5c3f/ss7.c#L24
+---
+
+In addition, when this program is distributed with Asterisk in any 
+form that would qualify as a 'combined work' or as a 'derivative work' 
+(but not mere aggregation), you can redistribute and/or modify the 
+combination under the terms of the license provided with that copy 
+of Asterisk, instead of the license terms granted here.

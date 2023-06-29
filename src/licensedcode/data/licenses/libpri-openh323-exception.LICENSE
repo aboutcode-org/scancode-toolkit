@@ -1,0 +1,16 @@
+---
+key: libpri-openh323-exception
+short_name: libpri OpenH323 exception
+name: libpri OpenH323 exception
+category: Copyleft
+owner: asterisk
+is_exception: yes
+spdx_license_key: libpri-OpenH323-exception
+other_urls:
+    - https://github.com/asterisk/libpri/blob/1.6.0/README#L19-L22
+---
+
+As a special exception, libpri may also be linked to the
+OpenH323 library, so long as the entirity of the derivative
+work (as defined within the GPL) is licensed either under
+the MPL of the OpenH323 license or the GPL of libpri.

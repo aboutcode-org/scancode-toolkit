@@ -9,7 +9,13 @@ notes: |
     this is a variant of the Autonconf exception to the
     GPL 3.0 used in GNU Config config.guess and config.sub
 is_exception: yes
-spdx_license_key: LicenseRef-scancode-autoconf-macro-exception
+spdx_license_key: Autoconf-exception-macro
+other_spdx_license_keys:
+    - LicenseRef-scancode-autoconf-macro-exception
+other_urls:
+    - https://github.com/freedesktop/xorg-macros/blob/39f07f7db58ebbf3dcb64a2bf9098ed5cf3d1223/xorg-macros.m4.in
+    - https://www.gnu.org/software/autoconf-archive/ax_pthread.html
+    - https://launchpad.net/ubuntu/precise/+source/xmltooling/+copyright
 ---
 
 As a special exception, the respective Autoconf Macro's copyright
