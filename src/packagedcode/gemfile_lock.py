@@ -109,6 +109,7 @@ GIT = 'GIT'
 SVN = 'SVN'
 GEM = 'GEM'
 PLATFORMS = 'PLATFORMS'
+BUNDLED = 'BUNDLED WITH'
 DEPENDENCIES = 'DEPENDENCIES'
 SPECS = '  specs:'
 
@@ -340,6 +341,7 @@ SPEC_SUB_DEPS = re.compile(
     '$' % locals()).match
 
 PLATS = re.compile('^  (?P<platform>.*)$').match
+BUNDLED_WITH = re.compile('^\s+(?P<version>(?:\d+.)+\d+)\s*$').match
 
 
 class GemfileLockParser:
@@ -358,6 +360,7 @@ class GemfileLockParser:
         self.STATES = {
             DEPENDENCIES: self.parse_dependency,
             PLATFORMS: self.parse_platform,
+            BUNDLED: self.parse_bundler_version,
             GIT: self.parse_options,
             PATH: self.parse_options,
             SVN: self.parse_options,
@@ -375,6 +378,8 @@ class GemfileLockParser:
         self.all_gems = {}
 
         self.platforms = []
+
+        self.bundled_with = None
 
         # init parsing state
         self.reset_state()
@@ -535,6 +540,16 @@ class GemfileLockParser:
             return
         plat = plat.group('platform')
         self.platforms.append(plat.strip())
+
+    def parse_bundler_version(self, line):
+        version = BUNDLED_WITH(line)
+        if not version:
+            if TRACE:
+                logger_debug('ERROR: parse_bundler_version: '
+                      'line not matched: %(line)r' % locals())
+            return
+        version = version.group('version')
+        self.bundled_with = version
 
     def flatten(self):
         """
