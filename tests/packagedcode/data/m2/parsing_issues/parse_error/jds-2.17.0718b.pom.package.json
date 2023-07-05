@@ -39,43 +39,24 @@
         {
           "score": 100.0,
           "start_line": 1,
-          "end_line": 1,
-          "matched_length": 5,
+          "end_line": 2,
+          "matched_length": 14,
           "match_coverage": 100.0,
           "matcher": "1-hash",
           "license_expression": "bsd-new",
-          "rule_identifier": "bsd-new_357.RULE",
+          "rule_identifier": "bsd-new_358.RULE",
           "rule_relevance": 100,
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_357.RULE",
-          "matched_text": "The 3-Clause BSD License"
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_358.RULE",
+          "matched_text": "- name: The 3-Clause BSD License\n  url: https://opensource.org/licenses/BSD-3-Clause"
         }
       ],
-      "identifier": "bsd_new-4a9d3cf0-ff09-5016-1803-17b6319e005b"
-    },
-    {
-      "license_expression": "bsd-new",
-      "matches": [
-        {
-          "score": 100.0,
-          "start_line": 1,
-          "end_line": 1,
-          "matched_length": 7,
-          "match_coverage": 100.0,
-          "matcher": "1-hash",
-          "license_expression": "bsd-new",
-          "rule_identifier": "bsd-new_356.RULE",
-          "rule_relevance": 100,
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_356.RULE",
-          "matched_text": "https://opensource.org/licenses/BSD-3-Clause"
-        }
-      ],
-      "identifier": "bsd_new-258b6fd3-b429-125a-31cb-35d6ddac32c5"
+      "identifier": "bsd_new-16562f16-7bf2-63a5-7b03-5327f109350b"
     }
   ],
   "other_license_expression": null,
   "other_license_expression_spdx": null,
   "other_license_detections": [],
-  "extracted_license_statement": "- name: The 3-Clause BSD License\n  url: https://opensource.org/licenses/BSD-3-Clause\n  comments:\n  distribution:\n",
+  "extracted_license_statement": "- name: The 3-Clause BSD License\n  url: https://opensource.org/licenses/BSD-3-Clause\n",
   "notice_text": null,
   "source_packages": [
     "pkg:maven/io.github.subiyacryolite/jds@2.17.0718b?classifier=sources"

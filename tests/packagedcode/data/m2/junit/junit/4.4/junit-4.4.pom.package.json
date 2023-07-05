@@ -42,40 +42,34 @@
           "end_line": 1,
           "matched_length": 6,
           "match_coverage": 100.0,
-          "matcher": "1-hash",
+          "matcher": "2-aho",
           "license_expression": "cpl-1.0",
           "rule_identifier": "cpl-1.0_5.RULE",
           "rule_relevance": 100,
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/cpl-1.0_5.RULE",
-          "matched_text": "Common Public License Version 1.0"
-        }
-      ],
-      "identifier": "cpl_1_0-d5e9e43c-192b-94cf-daf1-c18978294bbb"
-    },
-    {
-      "license_expression": "cpl-1.0",
-      "matches": [
+          "matched_text": "- name: Common Public License Version 1.0"
+        },
         {
           "score": 100.0,
-          "start_line": 1,
-          "end_line": 1,
+          "start_line": 2,
+          "end_line": 2,
           "matched_length": 8,
           "match_coverage": 100.0,
-          "matcher": "1-hash",
+          "matcher": "2-aho",
           "license_expression": "cpl-1.0",
           "rule_identifier": "cpl-1.0_10.RULE",
           "rule_relevance": 100,
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/cpl-1.0_10.RULE",
-          "matched_text": "http://www.opensource.org/licenses/cpl1.0.txt"
+          "matched_text": "  url: http://www.opensource.org/licenses/cpl1.0.txt"
         }
       ],
-      "identifier": "cpl_1_0-60308403-57c0-99b0-7c5b-610723027cd5"
+      "identifier": "cpl_1_0-f49145e8-d9e9-2a1a-5e83-1d459e6693dd"
     }
   ],
   "other_license_expression": null,
   "other_license_expression_spdx": null,
   "other_license_detections": [],
-  "extracted_license_statement": "- name: Common Public License Version 1.0\n  url: http://www.opensource.org/licenses/cpl1.0.txt\n  comments:\n  distribution:\n",
+  "extracted_license_statement": "- name: Common Public License Version 1.0\n  url: http://www.opensource.org/licenses/cpl1.0.txt\n",
   "notice_text": null,
   "source_packages": [
     "pkg:maven/junit/junit@4.4?classifier=sources"

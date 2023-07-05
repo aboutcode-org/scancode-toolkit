@@ -84,7 +84,7 @@
             "rule_identifier": "pypi_mit_license.RULE",
             "rule_relevance": 100,
             "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/pypi_mit_license.RULE",
-            "matched_text": "['License :: OSI Approved :: MIT License']"
+            "matched_text": "- 'License :: OSI Approved :: MIT License'"
           }
         ],
         "identifier": "mit-24a5293c-14d7-5403-efac-1a8b7532c0e8"
