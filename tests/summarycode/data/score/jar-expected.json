@@ -13,6 +13,79 @@
   },
   "packages": [
     {
+      "type": "jar",
+      "namespace": null,
+      "name": "JBoss Logging 3",
+      "version": "3.4.2.Final",
+      "qualifiers": {},
+      "subpath": null,
+      "primary_language": null,
+      "description": null,
+      "release_date": null,
+      "parties": [
+        {
+          "type": null,
+          "role": "vendor",
+          "name": "JBoss by Red Hat",
+          "email": null,
+          "url": null
+        }
+      ],
+      "keywords": [],
+      "homepage_url": "http://www.jboss.org",
+      "download_url": null,
+      "size": null,
+      "sha1": null,
+      "md5": null,
+      "sha256": null,
+      "sha512": null,
+      "bug_tracking_url": null,
+      "code_view_url": "https://github.com/jboss-logging/jboss-logging",
+      "vcs_url": "https://github.com/jboss-logging/jboss-logging@8d42b4ed170fd961f32663fc4b4816ba4a44d93c",
+      "copyright": null,
+      "holder": null,
+      "declared_license_expression": "apache-2.0",
+      "declared_license_expression_spdx": "Apache-2.0",
+      "license_detections": [
+        {
+          "license_expression": "apache-2.0",
+          "matches": [
+            {
+              "score": 100.0,
+              "start_line": 2,
+              "end_line": 202,
+              "matched_length": 1584,
+              "match_coverage": 100.0,
+              "matcher": "1-hash",
+              "license_expression": "apache-2.0",
+              "rule_identifier": "apache-2.0.LICENSE",
+              "rule_relevance": 100,
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.LICENSE"
+            }
+          ],
+          "identifier": "apache_2_0-ab23f79b-ec38-9a8a-9b23-85059407f34d"
+        }
+      ],
+      "other_license_expression": null,
+      "other_license_expression_spdx": null,
+      "other_license_detections": [],
+      "extracted_license_statement": null,
+      "notice_text": null,
+      "source_packages": [],
+      "extra_data": {},
+      "repository_homepage_url": null,
+      "repository_download_url": null,
+      "api_data_url": null,
+      "package_uid": "pkg:jar/JBoss%20Logging%203@3.4.2.Final?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_paths": [
+        "jar/META-INF/MANIFEST.MF"
+      ],
+      "datasource_ids": [
+        "java_jar_manifest"
+      ],
+      "purl": "pkg:jar/JBoss%20Logging%203@3.4.2.Final"
+    },
+    {
       "type": "maven",
       "namespace": "org.jboss.logging",
       "name": "jboss-logging",
@@ -230,6 +303,11 @@
   ],
   "license_detections": [
     {
+      "identifier": "apache_2_0-ab23f79b-ec38-9a8a-9b23-85059407f34d",
+      "license_expression": "apache-2.0",
+      "detection_count": 2
+    },
+    {
       "identifier": "apache_2_0-c4e30bcd-ccfd-bbc3-d2f1-196ab911e47d",
       "license_expression": "apache-2.0",
       "detection_count": 2
@@ -246,11 +324,6 @@
     },
     {
       "identifier": "apache_2_0-4800df2e-4a56-bac0-cac1-9fd31da23344",
-      "license_expression": "apache-2.0",
-      "detection_count": 1
-    },
-    {
-      "identifier": "apache_2_0-ab23f79b-ec38-9a8a-9b23-85059407f34d",
       "license_expression": "apache-2.0",
       "detection_count": 1
     }
@@ -318,6 +391,7 @@
       "is_script": false,
       "package_data": [],
       "for_packages": [
+        "pkg:jar/JBoss%20Logging%203@3.4.2.Final?uuid=fixed-uid-done-for-testing-5642512d1758",
         "pkg:maven/org.jboss.logging/jboss-logging@3.4.2.Final?uuid=fixed-uid-done-for-testing-5642512d1758"
       ],
       "is_legal": false,
@@ -359,6 +433,7 @@
       "is_script": false,
       "package_data": [],
       "for_packages": [
+        "pkg:jar/JBoss%20Logging%203@3.4.2.Final?uuid=fixed-uid-done-for-testing-5642512d1758",
         "pkg:maven/org.jboss.logging/jboss-logging@3.4.2.Final?uuid=fixed-uid-done-for-testing-5642512d1758"
       ],
       "is_legal": false,
@@ -400,6 +475,7 @@
       "is_script": false,
       "package_data": [],
       "for_packages": [
+        "pkg:jar/JBoss%20Logging%203@3.4.2.Final?uuid=fixed-uid-done-for-testing-5642512d1758",
         "pkg:maven/org.jboss.logging/jboss-logging@3.4.2.Final?uuid=fixed-uid-done-for-testing-5642512d1758"
       ],
       "is_legal": true,
@@ -458,8 +534,76 @@
       "is_media": false,
       "is_source": false,
       "is_script": false,
-      "package_data": [],
+      "package_data": [
+        {
+          "type": "jar",
+          "namespace": null,
+          "name": "JBoss Logging 3",
+          "version": "3.4.2.Final",
+          "qualifiers": {},
+          "subpath": null,
+          "primary_language": null,
+          "description": "",
+          "release_date": null,
+          "parties": [
+            {
+              "role": "vendor",
+              "name": "JBoss by Red Hat"
+            }
+          ],
+          "keywords": [],
+          "homepage_url": "http://www.jboss.org",
+          "download_url": null,
+          "size": null,
+          "sha1": null,
+          "md5": null,
+          "sha256": null,
+          "sha512": null,
+          "bug_tracking_url": null,
+          "code_view_url": "https://github.com/jboss-logging/jboss-logging",
+          "vcs_url": "https://github.com/jboss-logging/jboss-logging@8d42b4ed170fd961f32663fc4b4816ba4a44d93c",
+          "copyright": null,
+          "holder": null,
+          "declared_license_expression": "apache-2.0",
+          "declared_license_expression_spdx": "Apache-2.0",
+          "license_detections": [
+            {
+              "license_expression": "apache-2.0",
+              "matches": [
+                {
+                  "score": 100.0,
+                  "start_line": 2,
+                  "end_line": 202,
+                  "matched_length": 1584,
+                  "match_coverage": 100.0,
+                  "matcher": "1-hash",
+                  "license_expression": "apache-2.0",
+                  "rule_identifier": "apache-2.0.LICENSE",
+                  "rule_relevance": 100,
+                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.LICENSE"
+                }
+              ],
+              "identifier": "apache_2_0-ab23f79b-ec38-9a8a-9b23-85059407f34d"
+            }
+          ],
+          "other_license_expression": null,
+          "other_license_expression_spdx": null,
+          "other_license_detections": [],
+          "extracted_license_statement": null,
+          "notice_text": null,
+          "source_packages": [],
+          "file_references": [],
+          "extra_data": {},
+          "dependencies": [],
+          "repository_homepage_url": null,
+          "repository_download_url": null,
+          "api_data_url": null,
+          "datasource_id": "java_jar_manifest",
+          "purl": "pkg:jar/JBoss%20Logging%203@3.4.2.Final"
+        }
+      ],
       "for_packages": [
+        "pkg:jar/JBoss%20Logging%203@3.4.2.Final?uuid=fixed-uid-done-for-testing-5642512d1758",
         "pkg:maven/org.jboss.logging/jboss-logging@3.4.2.Final?uuid=fixed-uid-done-for-testing-5642512d1758"
       ],
       "is_legal": false,
@@ -501,6 +645,7 @@
       "is_script": false,
       "package_data": [],
       "for_packages": [
+        "pkg:jar/JBoss%20Logging%203@3.4.2.Final?uuid=fixed-uid-done-for-testing-5642512d1758",
         "pkg:maven/org.jboss.logging/jboss-logging@3.4.2.Final?uuid=fixed-uid-done-for-testing-5642512d1758"
       ],
       "is_legal": false,
@@ -542,6 +687,7 @@
       "is_script": false,
       "package_data": [],
       "for_packages": [
+        "pkg:jar/JBoss%20Logging%203@3.4.2.Final?uuid=fixed-uid-done-for-testing-5642512d1758",
         "pkg:maven/org.jboss.logging/jboss-logging@3.4.2.Final?uuid=fixed-uid-done-for-testing-5642512d1758"
       ],
       "is_legal": false,
@@ -583,6 +729,7 @@
       "is_script": false,
       "package_data": [],
       "for_packages": [
+        "pkg:jar/JBoss%20Logging%203@3.4.2.Final?uuid=fixed-uid-done-for-testing-5642512d1758",
         "pkg:maven/org.jboss.logging/jboss-logging@3.4.2.Final?uuid=fixed-uid-done-for-testing-5642512d1758"
       ],
       "is_legal": false,
@@ -624,6 +771,7 @@
       "is_script": false,
       "package_data": [],
       "for_packages": [
+        "pkg:jar/JBoss%20Logging%203@3.4.2.Final?uuid=fixed-uid-done-for-testing-5642512d1758",
         "pkg:maven/org.jboss.logging/jboss-logging@3.4.2.Final?uuid=fixed-uid-done-for-testing-5642512d1758"
       ],
       "is_legal": false,
@@ -840,6 +988,7 @@
         }
       ],
       "for_packages": [
+        "pkg:jar/JBoss%20Logging%203@3.4.2.Final?uuid=fixed-uid-done-for-testing-5642512d1758",
         "pkg:maven/org.jboss.logging/jboss-logging@3.4.2.Final?uuid=fixed-uid-done-for-testing-5642512d1758"
       ],
       "is_legal": false,

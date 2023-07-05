@@ -1,5 +1,6 @@
 {
   "type": "maven",
+  "datasource_id": "java_jar_manifest",
   "namespace": "com.fasterxml.jackson.core",
   "name": "jackson-databind",
   "version": "2.9.7",
@@ -7,7 +8,6 @@
   "extracted_license_statement": null,
   "copyright": null,
   "homepage_url": null,
-  "documentation_url": null,
   "parties": [
     {
       "role": "vendor",
@@ -15,6 +15,5 @@
     }
   ],
   "vcs_url": null,
-  "code_view_url": null,
-  "notes": null
+  "code_view_url": null
 }

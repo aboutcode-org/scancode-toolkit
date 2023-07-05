@@ -1,5 +1,6 @@
 {
   "type": "osgi",
+  "datasource_id": "java_osgi_manifest",
   "namespace": null,
   "name": "org.eclipse.ui.intro.universal",
   "version": "3.2.200.v20080508-patch01",
@@ -7,9 +8,7 @@
   "extracted_license_statement": null,
   "copyright": null,
   "homepage_url": null,
-  "documentation_url": null,
   "parties": [],
   "vcs_url": null,
-  "code_view_url": null,
-  "notes": null
+  "code_view_url": null
 }
