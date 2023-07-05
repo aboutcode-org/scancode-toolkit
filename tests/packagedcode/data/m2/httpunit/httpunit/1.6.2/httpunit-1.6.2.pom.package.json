@@ -32,42 +32,36 @@
           "score": 100.0,
           "start_line": 1,
           "end_line": 1,
-          "matched_length": 2,
+          "matched_length": 3,
           "match_coverage": 100.0,
-          "matcher": "1-hash",
+          "matcher": "2-aho",
           "license_expression": "mit",
-          "rule_identifier": "mit_14.RULE",
+          "rule_identifier": "mit_1106.RULE",
           "rule_relevance": 100,
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_14.RULE",
-          "matched_text": "MIT License"
-        }
-      ],
-      "identifier": "mit-9967e727-165e-9bb5-f090-7de5e47a3929"
-    },
-    {
-      "license_expression": "mit",
-      "matches": [
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_1106.RULE",
+          "matched_text": "- name: MIT License"
+        },
         {
           "score": 100.0,
-          "start_line": 1,
-          "end_line": 1,
+          "start_line": 2,
+          "end_line": 2,
           "matched_length": 7,
           "match_coverage": 100.0,
-          "matcher": "1-hash",
+          "matcher": "2-aho",
           "license_expression": "mit",
           "rule_identifier": "mit_1144.RULE",
           "rule_relevance": 100,
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_1144.RULE",
-          "matched_text": "http://httpunit.sourceforge.net/doc/license.html"
+          "matched_text": "  url: http://httpunit.sourceforge.net/doc/license.html"
         }
       ],
-      "identifier": "mit-5bb81cd8-49b4-35fd-9aa8-fa83198f2fc0"
+      "identifier": "mit-958a78c0-106f-dfae-5b61-5926248408f4"
     }
   ],
   "other_license_expression": null,
   "other_license_expression_spdx": null,
   "other_license_detections": [],
-  "extracted_license_statement": "- name: MIT License\n  url: http://httpunit.sourceforge.net/doc/license.html\n  comments:\n  distribution:\n",
+  "extracted_license_statement": "- name: MIT License\n  url: http://httpunit.sourceforge.net/doc/license.html\n",
   "notice_text": null,
   "source_packages": [
     "pkg:maven/httpunit/httpunit@1.6.2?classifier=sources"

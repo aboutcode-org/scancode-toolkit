@@ -34,23 +34,17 @@
           "end_line": 1,
           "matched_length": 1,
           "match_coverage": 100.0,
-          "matcher": "1-hash",
+          "matcher": "2-aho",
           "license_expression": "lgpl-2.0-plus",
           "rule_identifier": "lgpl_bare_single_word.RULE",
           "rule_relevance": 75,
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl_bare_single_word.RULE",
-          "matched_text": "lgpl"
-        }
-      ],
-      "identifier": "lgpl_2_0_plus-64f6d457-252f-6fe3-26b9-ae66d29ef973"
-    },
-    {
-      "license_expression": "lgpl-2.0-plus",
-      "matches": [
+          "matched_text": "- name: lgpl"
+        },
         {
           "score": 75.0,
-          "start_line": 1,
-          "end_line": 1,
+          "start_line": 2,
+          "end_line": 2,
           "matched_length": 1,
           "match_coverage": 100.0,
           "matcher": "2-aho",
@@ -58,16 +52,16 @@
           "rule_identifier": "lgpl_bare_single_word.RULE",
           "rule_relevance": 75,
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl_bare_single_word.RULE",
-          "matched_text": "http://repository.jboss.com/licenses/lgpl.txt"
+          "matched_text": "  url: http://repository.jboss.com/licenses/lgpl.txt"
         }
       ],
-      "identifier": "lgpl_2_0_plus-64f6d457-252f-6fe3-26b9-ae66d29ef973"
+      "identifier": "lgpl_2_0_plus-10aa305b-de20-e6cc-d2a0-3f4e76b8a2f9"
     }
   ],
   "other_license_expression": null,
   "other_license_expression_spdx": null,
   "other_license_detections": [],
-  "extracted_license_statement": "- name: lgpl\n  url: http://repository.jboss.com/licenses/lgpl.txt\n  comments:\n  distribution:\n",
+  "extracted_license_statement": "- name: lgpl\n  url: http://repository.jboss.com/licenses/lgpl.txt\n",
   "notice_text": null,
   "source_packages": [
     "pkg:maven/javassist/javassist@3.4.GA?classifier=sources"

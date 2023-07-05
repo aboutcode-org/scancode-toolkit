@@ -879,7 +879,8 @@ class PackageData(IdentifiablePackageData):
 
         return get_license_detections_and_expression(
             extracted_license_statement=self.extracted_license_statement,
-            default_relation_license=default_relation_license
+            default_relation_license=default_relation_license,
+            datasource_id=self.datasource_id,
         )
 
 

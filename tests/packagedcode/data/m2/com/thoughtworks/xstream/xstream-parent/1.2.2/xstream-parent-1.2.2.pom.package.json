@@ -42,40 +42,34 @@
           "end_line": 1,
           "matched_length": 2,
           "match_coverage": 100.0,
-          "matcher": "1-hash",
+          "matcher": "2-aho",
           "license_expression": "bsd-new",
           "rule_identifier": "bsd-new_878.RULE",
           "rule_relevance": 90,
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_878.RULE",
-          "matched_text": "BSD style"
-        }
-      ],
-      "identifier": "bsd_new-a77f8bf6-d564-f8d2-8f4e-2ff70cf207f4"
-    },
-    {
-      "license_expression": "bsd-new",
-      "matches": [
+          "matched_text": "- name: BSD style"
+        },
         {
           "score": 100.0,
-          "start_line": 1,
-          "end_line": 1,
+          "start_line": 2,
+          "end_line": 2,
           "matched_length": 6,
           "match_coverage": 100.0,
-          "matcher": "1-hash",
+          "matcher": "2-aho",
           "license_expression": "bsd-new",
           "rule_identifier": "bsd-new_xstream_maven_4.RULE",
           "rule_relevance": 100,
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_xstream_maven_4.RULE",
-          "matched_text": "http://xstream.codehaus.com/license.html"
+          "matched_text": "  url: http://xstream.codehaus.com/license.html"
         }
       ],
-      "identifier": "bsd_new-3c28c341-2557-a170-5574-2b740318c7e1"
+      "identifier": "bsd_new-1fd78035-e7fa-7c3f-ed03-c132e990ddc8"
     }
   ],
   "other_license_expression": null,
   "other_license_expression_spdx": null,
   "other_license_detections": [],
-  "extracted_license_statement": "- name: BSD style\n  url: http://xstream.codehaus.com/license.html\n  comments:\n  distribution: repo\n",
+  "extracted_license_statement": "- name: BSD style\n  url: http://xstream.codehaus.com/license.html\n",
   "notice_text": null,
   "source_packages": [
     "pkg:maven/com.thoughtworks.xstream/xstream-parent@1.2.2?classifier=sources"

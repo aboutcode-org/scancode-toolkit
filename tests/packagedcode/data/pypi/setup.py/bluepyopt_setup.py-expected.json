@@ -77,7 +77,7 @@
             "rule_identifier": "pypi_gnu_lesser_general_public_license_v3.RULE",
             "rule_relevance": 100,
             "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/pypi_gnu_lesser_general_public_license_v3.RULE",
-            "matched_text": "['License :: OSI Approved :: GNU Lesser General Public License v3 (LGPLv3)']"
+            "matched_text": "- 'License :: OSI Approved :: GNU Lesser General Public License v3 (LGPLv3)'"
           }
         ],
         "identifier": "lgpl_3_0-272571eb-5e68-95b6-ddb0-71de2d8df321"

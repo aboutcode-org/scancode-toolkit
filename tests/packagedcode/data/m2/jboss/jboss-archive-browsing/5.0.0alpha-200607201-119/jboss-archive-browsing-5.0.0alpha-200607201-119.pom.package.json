@@ -34,23 +34,17 @@
           "end_line": 1,
           "matched_length": 5,
           "match_coverage": 100.0,
-          "matcher": "1-hash",
+          "matcher": "2-aho",
           "license_expression": "lgpl-2.0-plus",
           "rule_identifier": "lgpl-2.0-plus_87.RULE",
           "rule_relevance": 100,
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0-plus_87.RULE",
-          "matched_text": "GNU LESSER GENERAL PUBLIC LICENSE"
-        }
-      ],
-      "identifier": "lgpl_2_0_plus-4a537314-959d-dbbd-2add-1b2422c6521e"
-    },
-    {
-      "license_expression": "lgpl-2.0-plus",
-      "matches": [
+          "matched_text": "- name: GNU LESSER GENERAL PUBLIC LICENSE"
+        },
         {
           "score": 100.0,
-          "start_line": 1,
-          "end_line": 1,
+          "start_line": 2,
+          "end_line": 2,
           "matched_length": 6,
           "match_coverage": 100.0,
           "matcher": "2-aho",
@@ -58,16 +52,16 @@
           "rule_identifier": "lgpl-2.0-plus_204.RULE",
           "rule_relevance": 100,
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0-plus_204.RULE",
-          "matched_text": "http://www.gnu.org/licenses/lgpl.txt"
+          "matched_text": "  url: http://www.gnu.org/licenses/lgpl.txt"
         }
       ],
-      "identifier": "lgpl_2_0_plus-9e98274a-f2c6-c975-364a-16cff6b8a8f3"
+      "identifier": "lgpl_2_0_plus-39338b95-daca-d7de-257c-fafb876cbd6d"
     }
   ],
   "other_license_expression": null,
   "other_license_expression_spdx": null,
   "other_license_detections": [],
-  "extracted_license_statement": "- name: GNU LESSER GENERAL PUBLIC LICENSE\n  url: http://www.gnu.org/licenses/lgpl.txt\n  comments:\n  distribution: repo\n",
+  "extracted_license_statement": "- name: GNU LESSER GENERAL PUBLIC LICENSE\n  url: http://www.gnu.org/licenses/lgpl.txt\n",
   "notice_text": null,
   "source_packages": [
     "pkg:maven/jboss/jboss-archive-browsing@5.0.0alpha-200607201-119?classifier=sources"

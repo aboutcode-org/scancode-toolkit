@@ -11,7 +11,6 @@ import logging
 import os.path
 from pprint import pformat
 
-import attr
 import javaproperties
 import lxml
 from packageurl import PackageURL
@@ -25,6 +24,8 @@ from packagedcode.utils import normalize_vcs_url
 from packagedcode.utils import VCS_URLS
 from textcode import analysis
 from typecode import contenttype
+
+import saneyaml
 
 TRACE = False
 
@@ -1153,7 +1154,7 @@ def _parse(
     ))
 
     # FIXME: there are still other data to map in a PackageData
-    return models.PackageData(
+    return MavenPackageData(
         datasource_id=datasource_id,
         type=package_type,
         primary_language=primary_language,
@@ -1170,6 +1171,63 @@ def _parse(
         bug_tracking_url=bug_tracking_url,
         **urls,
     )
+
+class MavenPackageData(models.PackageData):
+
+    datasource_id = 'maven_pom'
+
+    def get_license_detections_for_extracted_license_statement(
+        extracted_license,
+        try_as_expression=True,
+        approximate=True,
+        expression_symbols=None,
+    ):
+        from packagedcode.licensing import get_normalized_license_detections
+        from packagedcode.licensing import get_license_detections_for_extracted_license_statement
+
+        if not MavenPackageData.check_extracted_license_statement_structure(extracted_license):
+            return get_normalized_license_detections(
+                extracted_license=extracted_license,
+                try_as_expression=try_as_expression,
+                approximate=approximate,
+                expression_symbols=expression_symbols,
+            )
+        
+        new_extracted_license = extracted_license.copy()
+        
+        for license_entry in new_extracted_license:
+            license_entry.pop("distribution")
+            if not license_entry.get("name", None):
+                license_entry.pop("name")
+            if not license_entry.get("url", None):
+                license_entry.pop("url")
+            if not license_entry.get("comments", None):
+                license_entry.pop("comments")
+
+        extracted_license_statement = saneyaml.dump(new_extracted_license)
+
+        return get_license_detections_for_extracted_license_statement(
+            extracted_license_statement=extracted_license_statement,
+            try_as_expression=try_as_expression,
+            approximate=approximate,
+            expression_symbols=expression_symbols,
+        )
+
+
+    def check_extracted_license_statement_structure(extracted_license):
+
+        is_list_of_mappings = False
+        if not isinstance(extracted_license, list):
+            return is_list_of_mappings
+        else:
+            is_list_of_mappings = True
+
+        for extracted_license_item in extracted_license:
+            if not isinstance(extracted_license_item, dict):
+                is_list_of_mappings = False
+                break
+        
+        return is_list_of_mappings
 
 
 def build_vcs_and_code_view_urls(scm):

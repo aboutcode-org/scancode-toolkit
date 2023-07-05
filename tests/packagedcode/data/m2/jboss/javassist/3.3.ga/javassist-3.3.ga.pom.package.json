@@ -34,7 +34,7 @@
   "declared_license_expression_spdx": "MPL-1.1 AND (MPL-1.1 OR LGPL-2.1-or-later)",
   "license_detections": [
     {
-      "license_expression": "mpl-1.1",
+      "license_expression": "mpl-1.1 AND (mpl-1.1 OR lgpl-2.1-plus)",
       "matches": [
         {
           "score": 50.0,
@@ -42,59 +42,47 @@
           "end_line": 1,
           "matched_length": 3,
           "match_coverage": 100.0,
-          "matcher": "1-hash",
+          "matcher": "2-aho",
           "license_expression": "mpl-1.1",
           "rule_identifier": "spdx_license_id_mpl-1.1_for_mpl-1.1.RULE",
           "rule_relevance": 50,
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/spdx_license_id_mpl-1.1_for_mpl-1.1.RULE",
-          "matched_text": "MPL 1.1"
-        }
-      ],
-      "identifier": "mpl_1_1-46a4067c-2548-7a1a-228e-5d500f8402d1"
-    },
-    {
-      "license_expression": "mpl-1.1 OR lgpl-2.1-plus",
-      "matches": [
+          "matched_text": "- name: MPL 1.1"
+        },
         {
           "score": 100.0,
-          "start_line": 1,
-          "end_line": 1,
+          "start_line": 2,
+          "end_line": 2,
           "matched_length": 19,
           "match_coverage": 100.0,
-          "matcher": "1-hash",
+          "matcher": "2-aho",
           "license_expression": "mpl-1.1 OR lgpl-2.1-plus",
           "rule_identifier": "mpl-1.1_or_lgpl-2.1-plus_6.RULE",
           "rule_relevance": 100,
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mpl-1.1_or_lgpl-2.1-plus_6.RULE",
-          "matched_text": "http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/*checkout*/jboss/javassist/License.html?rev=HEAD&content-type=text/html"
-        }
-      ],
-      "identifier": "mpl_1_1_or_lgpl_2_1_plus-31321b2f-f1fa-c104-4573-e8116789ff06"
-    },
-    {
-      "license_expression": "mpl-1.1 OR lgpl-2.1-plus",
-      "matches": [
+          "matched_text": "  url: http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/*checkout*/jboss/javassist/License.html?rev=HEAD&content-type=text/html"
+        },
         {
           "score": 100.0,
-          "start_line": 1,
-          "end_line": 1,
+          "start_line": 3,
+          "end_line": 3,
           "matched_length": 13,
           "match_coverage": 100.0,
-          "matcher": "1-hash",
+          "matcher": "2-aho",
           "license_expression": "mpl-1.1 OR lgpl-2.1-plus",
           "rule_identifier": "mpl-1.1_or_lgpl-2.1-plus_5.RULE",
           "rule_relevance": 100,
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mpl-1.1_or_lgpl-2.1-plus_5.RULE",
-          "matched_text": "Dual-license; LGPL if downloaded as part of JBoss, MPL if downloaded separately."
+          "matched_text": "  comments: Dual-license; LGPL if downloaded as part of JBoss, MPL if downloaded separately."
         }
       ],
-      "identifier": "mpl_1_1_or_lgpl_2_1_plus-d37397aa-7327-b2d1-cafa-39968541289f"
+      "identifier": "mpl_1_1_and__mpl_1_1_or_lgpl_2_1_plus-78e94784-b15c-76e4-0a76-6ca49b732494"
     }
   ],
   "other_license_expression": null,
   "other_license_expression_spdx": null,
   "other_license_detections": [],
-  "extracted_license_statement": "- name: MPL 1.1\n  url: http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/*checkout*/jboss/javassist/License.html?rev=HEAD&content-type=text/html\n  comments: Dual-license; LGPL if downloaded as part of JBoss, MPL if downloaded separately.\n  distribution:\n",
+  "extracted_license_statement": "- name: MPL 1.1\n  url: http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/*checkout*/jboss/javassist/License.html?rev=HEAD&content-type=text/html\n  comments: Dual-license; LGPL if downloaded as part of JBoss, MPL if downloaded separately.\n",
   "notice_text": null,
   "source_packages": [
     "pkg:maven/jboss/javassist@3.3.ga?classifier=sources"

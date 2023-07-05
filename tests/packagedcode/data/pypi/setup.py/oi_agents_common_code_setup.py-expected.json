@@ -79,7 +79,7 @@
             "rule_identifier": "pypi_osi_approved.RULE",
             "rule_relevance": 100,
             "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/pypi_osi_approved.RULE",
-            "matched_text": "['License :: OSI Approved :: GPLv3 License']"
+            "matched_text": "- 'License :: OSI Approved :: GPLv3 License'"
           },
           {
             "score": 100.0,
@@ -92,7 +92,7 @@
             "rule_identifier": "gpl-3.0_90.RULE",
             "rule_relevance": 100,
             "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0_90.RULE",
-            "matched_text": "['License :: OSI Approved :: GPLv3 License']"
+            "matched_text": "- 'License :: OSI Approved :: GPLv3 License'"
           }
         ],
         "identifier": "gpl_3_0-2214bc40-3c44-df82-f1cf-5f3180cebb36"

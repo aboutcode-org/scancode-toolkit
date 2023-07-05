@@ -32,23 +32,23 @@
           "score": 100.0,
           "start_line": 1,
           "end_line": 1,
-          "matched_length": 2,
+          "matched_length": 3,
           "match_coverage": 100.0,
-          "matcher": "1-hash",
+          "matcher": "2-aho",
           "license_expression": "mit",
-          "rule_identifier": "mit_14.RULE",
+          "rule_identifier": "mit_1106.RULE",
           "rule_relevance": 100,
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_14.RULE",
-          "matched_text": "MIT License"
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_1106.RULE",
+          "matched_text": "- name: MIT License"
         }
       ],
-      "identifier": "mit-9967e727-165e-9bb5-f090-7de5e47a3929"
+      "identifier": "mit-8b394b05-a8d3-7669-2b85-8e2313a00b22"
     }
   ],
   "other_license_expression": null,
   "other_license_expression_spdx": null,
   "other_license_detections": [],
-  "extracted_license_statement": "- name: MIT License\n  url: http://www.easymock.org/License.html\n  comments:\n  distribution: repo\n",
+  "extracted_license_statement": "- name: MIT License\n  url: http://www.easymock.org/License.html\n",
   "notice_text": null,
   "source_packages": [
     "pkg:maven/org.easymock/easymock@2.3?classifier=sources"

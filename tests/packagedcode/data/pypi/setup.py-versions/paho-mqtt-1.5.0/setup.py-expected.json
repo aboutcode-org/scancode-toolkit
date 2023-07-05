@@ -97,7 +97,7 @@
             "rule_identifier": "pypi_osi_approved.RULE",
             "rule_relevance": 100,
             "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/pypi_osi_approved.RULE",
-            "matched_text": "['License :: OSI Approved']"
+            "matched_text": "- 'License :: OSI Approved'"
           }
         ],
         "identifier": "free_unknown-e8fad921-e243-7cbb-bf61-2ac054636272"
