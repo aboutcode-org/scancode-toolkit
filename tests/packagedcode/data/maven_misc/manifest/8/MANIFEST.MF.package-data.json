@@ -1,5 +1,6 @@
 {
   "type": "osgi",
+  "datasource_id": "java_osgi_manifest",
   "namespace": null,
   "name": "org.jodd.core",
   "version": "3.5.2",
@@ -7,7 +8,6 @@
   "extracted_license_statement": "http://jodd.org/license.html",
   "copyright": null,
   "homepage_url": null,
-  "documentation_url": "http://jodd.org",
   "parties": [
     {
       "role": "vendor",
@@ -19,6 +19,5 @@
     }
   ],
   "vcs_url": null,
-  "code_view_url": null,
-  "notes": null
+  "code_view_url": null
 }

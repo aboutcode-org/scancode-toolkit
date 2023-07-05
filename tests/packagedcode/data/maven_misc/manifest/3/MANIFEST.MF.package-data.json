@@ -1,5 +1,6 @@
 {
   "type": "osgi",
+  "datasource_id": "java_osgi_manifest",
   "namespace": null,
   "name": "org.apache.batik.bridge",
   "version": "1.6.0.v200706111724",
@@ -7,9 +8,7 @@
   "extracted_license_statement": null,
   "copyright": null,
   "homepage_url": null,
-  "documentation_url": null,
   "parties": [],
   "vcs_url": null,
-  "code_view_url": null,
-  "notes": null
+  "code_view_url": null
 }

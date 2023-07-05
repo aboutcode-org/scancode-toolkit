@@ -209,9 +209,16 @@ class TestMavenMisc(BaseMavenCase):
         assert package2.to_dict().items() == package.to_dict().items()
 
     def test_package_with_extracted_jars_and_metainf_poms_is_detected_correctly(self):
-        test_dir = self.get_test_loc('maven_misc/extracted-jar')
+        test_dir = self.get_test_loc('maven_misc/extracted-jar/activiti-image-generator-7-201802-EA-sources.jar-extract/')
         result_file = self.get_temp_file('json')
-        expected_file = self.get_test_loc('maven_misc/extracted-jar-expected.json')
+        expected_file = self.get_test_loc('maven_misc/extracted-jar/activiti-image-generator-expected.json')
+        run_scan_click(['--package', '--processes', '-1', test_dir, '--json', result_file])
+        check_json_scan(expected_file, result_file, remove_uuid=True, regen=REGEN_TEST_FIXTURES)
+
+    def test_package_with_extracted_jars_and_metainf_manifest_is_detected_correctly(self):
+        test_dir = self.get_test_loc('maven_misc/extracted-jar/hsqldb-2.4.0.jar-extract/')
+        result_file = self.get_temp_file('json')
+        expected_file = self.get_test_loc('maven_misc/extracted-jar/hsqldb-2.4.0-expected.json')
         run_scan_click(['--package', '--processes', '-1', test_dir, '--json', result_file])
         check_json_scan(expected_file, result_file, remove_uuid=True, regen=REGEN_TEST_FIXTURES)
 

@@ -56,6 +56,16 @@ class JavaJarManifestHandler(models.DatafileHandler):
             )
 
 
+class JavaOSGiManifestHandler(JavaJarManifestHandler):
+    datasource_id = 'java_osgi_manifest'
+    # This is an empty tuple to avoid getting back two packages
+    # essentially this is the same as JavaJarManifestHandler
+    path_patterns = ()
+    default_primary_language = 'Java'
+    description = 'Java OSGi MANIFEST.MF'
+    default_package_type = 'osgi'
+
+
 def parse_manifest(location):
     """
     Return a Manifest parsed from the file at `location` or None if this
@@ -248,6 +258,13 @@ def get_normalized_java_manifest_data(manifest_mapping):
         else:
             name = i_title or am_nm or ext_nm or nm
             descriptions = [s_title, i_title, nm]
+    
+    if package_type == 'maven':
+        datasource_id = JavaJarManifestHandler.datasource_id
+    elif package_type == 'jar':
+        datasource_id = JavaJarManifestHandler.datasource_id
+    elif package_type == 'osgi':
+        datasource_id = JavaOSGiManifestHandler.datasource_id
 
     descriptions = unique(descriptions)
     descriptions = [d for d in descriptions if d and d.strip() and d != name]
@@ -258,6 +275,7 @@ def get_normalized_java_manifest_data(manifest_mapping):
     # create the mapping we will return
     package = {}
     package['type'] = package_type
+    package['datasource_id'] = datasource_id
     package['namespace'] = namespace
     package['name'] = name
     package['version'] = version
@@ -278,7 +296,7 @@ def get_normalized_java_manifest_data(manifest_mapping):
     package['homepage_url'] = dget('Implementation-URL') or dget('Implementation-Url')
 
     # Bundle-DocURL: http://logging.apache.org/log4j/1.2
-    package['documentation_url'] = dget('Bundle-DocURL')
+    #package['documentation_url'] = dget('Bundle-DocURL')
 
     # vendor/owner/contact
     #########################
@@ -369,7 +387,7 @@ def get_normalized_java_manifest_data(manifest_mapping):
     # Deps:
     # Require-Bundle
 
-    package['notes'] = dget('Comment')
+    #package['notes'] = dget('Comment')
     return package
 
 
