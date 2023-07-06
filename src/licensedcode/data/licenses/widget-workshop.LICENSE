@@ -4,6 +4,7 @@ short_name: Widget Workshop License
 name: Widget Workshop License
 category: Permissive
 owner: Widget Workshop
+homepage_url: https://github.com/novnc/noVNC/blob/master/core/crypto/des.js#L24
 spdx_license_key: Widget-Workshop
 other_urls:
     - https://github.com/novnc/noVNC/blob/master/core/crypto/des.js#L24

@@ -2,8 +2,9 @@
 key: sgp4
 short_name: SGP4 Permission Notice
 name: SGP4 Permission Notice
-category: Public Domain
+category: Permissive
 owner: celestrak
+homepage_url: https://celestrak.org/publications/AIAA/2006-6753/faq.php
 spdx_license_key: SGP4
 other_urls:
     - https://celestrak.org/publications/AIAA/2006-6753/faq.php

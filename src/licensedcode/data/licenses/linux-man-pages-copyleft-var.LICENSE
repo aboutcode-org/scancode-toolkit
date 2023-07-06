@@ -2,7 +2,7 @@
 key: linux-man-pages-copyleft-var
 short_name: Linux man-pages Variant
 name: Linux man-pages Copyleft Variant
-category: Copyleft
+category: Copyleft Limited
 owner: Free Software Foundation (FSF)
 spdx_license_key: Linux-man-pages-copyleft-var
 other_urls:
