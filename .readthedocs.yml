@@ -5,6 +5,12 @@
 # Required
 version: 2
 
+# Build in latest ubuntu/python
+build:
+  os: ubuntu-22.04
+  tools:
+    python: "3.11"
+
 # Build PDF & ePub
 formats:
   - epub
