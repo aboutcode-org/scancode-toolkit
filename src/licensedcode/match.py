@@ -768,9 +768,11 @@ class LicenseMatch(object):
         Return a "result" scan data built from a LicenseMatch object.
         """
         matched_text = None
+        matched_text_diagnostics = None
+
         if include_text:
             if license_text_diagnostics:
-                matched_text = self.matched_text(whole_lines=False, highlight=True)
+                matched_text_diagnostics = self.matched_text(whole_lines=False, highlight=True)
             else:
                 if whole_lines:
                     matched_text = self.matched_text(whole_lines=True, highlight=False)
@@ -794,7 +796,10 @@ class LicenseMatch(object):
         result['rule_url'] = self.rule.rule_url
 
         if include_text:
-            result['matched_text'] = matched_text
+           if license_text_diagnostics:
+              result['matched_text_diagnostics'] = matched_text_diagnostics
+           else:
+              result['matched_text'] = matched_text
         return result
 
     def get_highlighted_text(self, trace=TRACE_HIGHLIGHTED_TEXT):
