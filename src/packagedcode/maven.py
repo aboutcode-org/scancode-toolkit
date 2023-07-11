@@ -60,6 +60,9 @@ class MavenBasePackageHandler(models.DatafileHandler):
     @classmethod
     def assemble(cls, package_data, resource, codebase, package_adder=models.add_to_package):
         """
+        Assembles from codebases where both a pom.xml and a MANIFEST.MF is present,
+        otherwise uses the default assemble function and `assign_package_to_resources`
+        function from respective DatafileHandlers.
         """
         if codebase.has_single_resource:
             yield from models.DatafileHandler.assemble(package_data, resource, codebase)
@@ -1308,11 +1311,11 @@ class MavenPackageData(models.PackageData):
         
         for license_entry in new_extracted_license:
             license_entry.pop("distribution")
-            if not license_entry.get("name", None):
+            if not license_entry.get("name"):
                 license_entry.pop("name")
-            if not license_entry.get("url", None):
+            if not license_entry.get("url"):
                 license_entry.pop("url")
-            if not license_entry.get("comments", None):
+            if not license_entry.get("comments"):
                 license_entry.pop("comments")
 
         extracted_license_statement = saneyaml.dump(new_extracted_license)

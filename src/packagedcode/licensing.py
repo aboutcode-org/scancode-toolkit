@@ -775,8 +775,8 @@ def get_license_detections_and_expression(
     if not extracted_license_statement:
         return detection_data, license_expression
 
-    if datasource_id in PACKAGE_DATA_CLASS_BY_DATASOURCE_ID:
-        package_data_class = PACKAGE_DATA_CLASS_BY_DATASOURCE_ID.get(datasource_id, None)
+    package_data_class = PACKAGE_DATA_CLASS_BY_DATASOURCE_ID.get(datasource_id)
+    if package_data_class:
         license_detections = package_data_class.get_license_detections_for_extracted_license_statement(
             extracted_license=extracted_license_statement,
             try_as_expression=try_as_expression,

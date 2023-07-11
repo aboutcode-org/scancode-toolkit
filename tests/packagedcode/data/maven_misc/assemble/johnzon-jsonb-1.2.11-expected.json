@@ -427,7 +427,9 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
-          "extra_data": {},
+          "extra_data": {
+            "documentation_url": "http://johnzon.apache.org/"
+          },
           "dependencies": [],
           "repository_homepage_url": null,
           "repository_download_url": null,

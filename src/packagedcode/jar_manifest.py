@@ -248,7 +248,7 @@ def get_normalized_java_manifest_data(manifest_mapping):
     package['homepage_url'] = dget('Implementation-URL') or dget('Implementation-Url')
 
     # Bundle-DocURL: http://logging.apache.org/log4j/1.2
-    #package['documentation_url'] = dget('Bundle-DocURL')
+    doc_url = dget('Bundle-DocURL')
 
     # vendor/owner/contact
     #########################
@@ -339,7 +339,15 @@ def get_normalized_java_manifest_data(manifest_mapping):
     # Deps:
     # Require-Bundle
 
-    #package['notes'] = dget('Comment')
+    comment = dget('Comment')
+
+    if comment or doc_url:
+        package["extra_data"] = {}
+        if comment:
+            package["extra_data"]['notes'] = comment
+        if doc_url:
+            package["extra_data"]['documentation_url'] = doc_url
+
     return package
 
 
@@ -378,15 +386,19 @@ def parse_scm_connection(scm_connection):
 
 
 def get_datasource_id(package_type):
+    """
+    Get the corresponding `datasource_id` for the given
+    `package_type`. This is a seperate function to avoid
+    cyclic imports.
+    """
     from packagedcode.maven import JavaJarManifestHandler
     from packagedcode.maven import JavaOSGiManifestHandler
 
-    if package_type == 'maven':
-        return JavaJarManifestHandler.datasource_id
-    elif package_type == 'jar':
+    if package_type in ['maven', 'jar']:
         return JavaJarManifestHandler.datasource_id
     elif package_type == 'osgi':
         return JavaOSGiManifestHandler.datasource_id
+
 
 def is_id(s):
     """
