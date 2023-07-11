@@ -9,8 +9,7 @@
 
 import re
 
-from packagedcode import models
-from packagedcode.maven import parse_scm_connection
+from packagedcode.utils import VCS_URLS
 from packagedcode.utils import normalize_vcs_url
 
 """
@@ -22,48 +21,6 @@ See https://github.com/gradle/gradle/blob/master/subprojects/docs/src/docs/desig
 See https://github.com/shevek/jdiagnostics/blob/master/src/main/java/org/anarres/jdiagnostics/ProductMetadata.java
 """
 
-
-class JavaJarManifestHandler(models.DatafileHandler):
-    datasource_id = 'java_jar_manifest'
-    path_patterns = ('*/META-INF/MANIFEST.MF',)
-    default_package_type = 'jar'
-    default_primary_language = 'Java'
-    description = 'Java JAR MANIFEST.MF'
-    documentation_url = 'https://docs.oracle.com/javase/tutorial/deployment/jar/manifestindex.html'
-
-    @classmethod
-    def parse(cls, location):
-        sections = parse_manifest(location)
-        if sections:
-            main_section = sections[0]
-            manifest = get_normalized_java_manifest_data(main_section)
-            if manifest:
-                yield models.PackageData(**manifest,)
-
-    @classmethod
-    def assign_package_to_resources(cls, package, resource, codebase, package_adder):
-        # we want to root of the jar, two levels up
-        parent = resource.parent(codebase)
-        if parent:
-            parent = resource.parent(codebase)
-
-        if parent:
-            models.DatafileHandler.assign_package_to_resources(
-                package,
-                resource=parent,
-                codebase=codebase,
-                package_adder=package_adder,
-            )
-
-
-class JavaOSGiManifestHandler(JavaJarManifestHandler):
-    datasource_id = 'java_osgi_manifest'
-    # This is an empty tuple to avoid getting back two packages
-    # essentially this is the same as JavaJarManifestHandler
-    path_patterns = ()
-    default_primary_language = 'Java'
-    description = 'Java OSGi MANIFEST.MF'
-    default_package_type = 'osgi'
 
 
 def parse_manifest(location):
@@ -258,13 +215,8 @@ def get_normalized_java_manifest_data(manifest_mapping):
         else:
             name = i_title or am_nm or ext_nm or nm
             descriptions = [s_title, i_title, nm]
-    
-    if package_type == 'maven':
-        datasource_id = JavaJarManifestHandler.datasource_id
-    elif package_type == 'jar':
-        datasource_id = JavaJarManifestHandler.datasource_id
-    elif package_type == 'osgi':
-        datasource_id = JavaOSGiManifestHandler.datasource_id
+
+    datasource_id =get_datasource_id(package_type=package_type)
 
     descriptions = unique(descriptions)
     descriptions = [d for d in descriptions if d and d.strip() and d != name]
@@ -390,6 +342,51 @@ def get_normalized_java_manifest_data(manifest_mapping):
     #package['notes'] = dget('Comment')
     return package
 
+
+def parse_scm_connection(scm_connection):
+    """
+    Return an SPDX vcs_url given a Maven `scm_connection` string or the string
+    as-is if it cannot be parsed.
+
+    See https://maven.apache.org/scm/scm-url-format.html
+        scm:<scm_provider><delimiter><provider_specific_part>
+
+    scm:git:git://server_name[:port]/path_to_repository
+    scm:git:http://server_name[:port]/path_to_repository
+    scm:git:https://server_name[:port]/path_to_repository
+    scm:git:ssh://server_name[:port]/path_to_repository
+    scm:git:file://[hostname]/path_to_repository
+    """
+
+    delimiter = '|' if '|' in scm_connection else ':'
+    segments = scm_connection.split(delimiter, 2)
+    if not len(segments) == 3:
+        # we cannot parse this so we return it as is
+        return scm_connection
+
+    _scm, scm_tool, vcs_url = segments
+    # TODO: vcs_tool is not yet supported
+    normalized = normalize_vcs_url(vcs_url, vcs_tool=scm_tool)
+    if normalized:
+        vcs_url = normalized
+
+    if not vcs_url.startswith(VCS_URLS):
+        if not vcs_url.startswith(scm_tool):
+            vcs_url = '{scm_tool}+{vcs_url}'.format(**locals())
+
+    return vcs_url
+
+
+def get_datasource_id(package_type):
+    from packagedcode.maven import JavaJarManifestHandler
+    from packagedcode.maven import JavaOSGiManifestHandler
+
+    if package_type == 'maven':
+        return JavaJarManifestHandler.datasource_id
+    elif package_type == 'jar':
+        return JavaJarManifestHandler.datasource_id
+    elif package_type == 'osgi':
+        return JavaOSGiManifestHandler.datasource_id
 
 def is_id(s):
     """
