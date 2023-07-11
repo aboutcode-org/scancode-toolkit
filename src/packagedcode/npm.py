@@ -70,7 +70,7 @@ class BaseNpmHandler(models.DatafileHandler):
         to create and yield the package, the package dependencies, and the
         package resources.
 
-        When reporting the resources of a package, we alk the codebase, skipping
+        When reporting the resources of a package, we walk the codebase, skipping
         the node_modules directory, assign resources to the package and yield
         resources.
 

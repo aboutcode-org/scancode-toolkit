@@ -101,11 +101,10 @@ APPLICATION_PACKAGE_DATAFILE_HANDLERS = [
 
     haxe.HaxelibJsonHandler,
 
-    jar_manifest.JavaJarManifestHandler,
-    jar_manifest.JavaOSGiManifestHandler,
-
     maven.MavenPomXmlHandler,
     maven.MavenPomPropertiesHandler,
+    maven.JavaJarManifestHandler,
+    maven.JavaOSGiManifestHandler,
 
     misc.AndroidAppArchiveHandler,
     misc.AndroidLibraryHandler,
