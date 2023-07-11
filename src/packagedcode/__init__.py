@@ -254,11 +254,6 @@ def get_package_handler(package_data):
     return ppc
 
 
-PACKAGE_DATA_CLASS_WITH_CUSTOM_LICENSE_DETECTION = [
-    maven.MavenPackageData
-]
-
 PACKAGE_DATA_CLASS_BY_DATASOURCE_ID = {
-    package_data_class.datasource_id: package_data_class
-    for package_data_class in PACKAGE_DATA_CLASS_WITH_CUSTOM_LICENSE_DETECTION
+    maven.MavenPackageData.datasource_id: maven.MavenPackageData
 }
