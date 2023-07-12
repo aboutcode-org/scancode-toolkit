@@ -1,69 +1,70 @@
 {
   "rdf:RDF": {
-    "ns1:SpdxDocument": {
-      "ns1:name": {
-        "@rdf:resource": "SPDX Document created by ScanCode Toolkit"
+    "spdx:Package": {
+      "spdx:filesAnalyzed": {
+        "#text": "true",
+        "@rdf:datatype": "http://www.w3.org/2001/XMLSchema#boolean"
       },
-      "ns1:dataLicense": {
-        "@rdf:resource": "http://spdx.org/licenses/CC0-1.0"
+      "spdx:licenseInfoFromFiles": {
+        "@rdf:resource": "http://spdx.org/licenses/LGPL-2.1-or-later"
       },
-      "ns1:referencesFile": {
-        "ns1:File": {
-          "ns1:licenseInfoInFile": {
-            "@rdf:resource": "http://spdx.org/licenses/LGPL-2.1-or-later"
-          },
-          "ns1:licenseConcluded": {
-            "@rdf:resource": "http://spdx.org/rdf/terms#noassertion"
-          },
-          "ns1:checksum": {
-            "ns1:Checksum": {
-              "ns1:checksumValue": "0c5bf934430394112921e7a1a8128176606d32ca",
-              "ns1:algorithm": "http://spdx.org/rdf/terms#checksumAlgorithm_sha1"
-            }
-          },
-          "ns1:fileName": "./test.java",
-          "@rdf:about": "http://www.spdx.org/files#SPDXRef-1",
-          "ns1:copyrightText": "Copyright 2010, Red Hat, Inc. and individual contributors"
+      "spdx:downloadLocation": {
+        "@rdf:resource": "http://spdx.org/rdf/terms#noassertion"
+      },
+      "spdx:licenseConcluded": {
+        "@rdf:resource": "http://spdx.org/rdf/terms#noassertion"
+      },
+      "spdx:licenseDeclared": {
+        "@rdf:resource": "http://spdx.org/rdf/terms#noassertion"
+      },
+      "@rdf:about": "#SPDXRef-001",
+      "spdx:packageVerificationCode": {
+        "spdx:PackageVerificationCode": {
+          "spdx:packageVerificationCodeValue": "3d10812af2cfe561f6de355e5176505123a0bf57"
         }
       },
-      "ns1:describesPackage": {
-        "ns1:Package": {
-          "ns1:Package": {
-            "@rdf:resource": "SPDXRef-001"
-          },
-          "ns1:licenseInfoFromFiles": {
-            "@rdf:resource": "http://spdx.org/licenses/LGPL-2.1-or-later"
-          },
-          "ns1:downloadLocation": {
-            "@rdf:resource": "http://spdx.org/rdf/terms#noassertion"
-          },
-          "ns1:licenseConcluded": {
-            "@rdf:resource": "http://spdx.org/rdf/terms#noassertion"
-          },
-          "ns1:licenseDeclared": {
-            "@rdf:resource": "http://spdx.org/rdf/terms#noassertion"
-          },
-          "ns1:hasFile": {
-            "@rdf:resource": "http://www.spdx.org/files#SPDXRef-1"
-          },
-          "@rdf:about": "http://www.spdx.org/tools#SPDXRef-Package",
-          "ns1:copyrightText": "Copyright 2010, Red Hat, Inc. and individual contributors",
-          "ns1:name": "or_later"
-        }
-      },
-      "ns1:relationship": {
-        "ns1:Relationship": {
-          "ns1:relationshipType": {
+      "spdx:relationship": {
+        "spdx:Relationship": {
+          "spdx:relationshipType": {
             "@rdf:resource": "http://spdx.org/rdf/terms#relationshipType_contains"
           },
-          "ns1:spdxElementId": "SPDXRef-001",
-          "ns1:relatedSpdxElement": "SPDXRef-1"
+          "spdx:relatedSpdxElement": {
+            "spdx:File": {
+              "spdx:licenseInfoInFile": {
+                "@rdf:resource": "http://spdx.org/licenses/LGPL-2.1-or-later"
+              },
+              "spdx:licenseConcluded": {
+                "@rdf:resource": "http://spdx.org/rdf/terms#noassertion"
+              },
+              "@rdf:about": "#SPDXRef-1",
+              "spdx:checksum": {
+                "spdx:Checksum": {
+                  "spdx:algorithm": {
+                    "@rdf:resource": "http://spdx.org/rdf/terms#checksumAlgorithm_sha1"
+                  },
+                  "spdx:checksumValue": "0c5bf934430394112921e7a1a8128176606d32ca"
+                }
+              },
+              "spdx:fileName": "./test.java",
+              "spdx:copyrightText": "Copyright 2010, Red Hat, Inc. and individual contributors"
+            }
+          }
         }
       },
-      "@rdf:about": "http://www.spdx.org/tools#SPDXRef-DOCUMENT",
-      "ns1:specVersion": "SPDX-2.2"
+      "spdx:copyrightText": "Copyright 2010, Red Hat, Inc. and individual contributors",
+      "spdx:name": "or_later"
     },
-    "@xmlns:ns1": "http://spdx.org/rdf/terms#",
-    "@xmlns:rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    "spdx:SpdxDocument": {
+      "spdx:dataLicense": {
+        "@rdf:resource": "http://spdx.org/licenses/CC0-1.0"
+      },
+      "@rdf:about": "#SPDXRef-DOCUMENT",
+      "rdfs:comment": "Generated with ScanCode and provided on an \"AS IS\" BASIS, WITHOUT WARRANTIES\nOR CONDITIONS OF ANY KIND, either express or implied. No content created from\nScanCode should be considered or used as legal advice. Consult an Attorney\nfor any legal advice.\nScanCode is a free software code scanning tool from nexB Inc. and others.\nVisit https://github.com/nexB/scancode-toolkit/ for support and download.\nSPDX License List: 3.21",
+      "spdx:name": "SPDX Document created by ScanCode Toolkit",
+      "spdx:specVersion": "SPDX-2.2"
+    },
+    "@xmlns:rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "@xmlns:rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "@xmlns:spdx": "http://spdx.org/rdf/terms#"
   }
 }
