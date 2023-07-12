@@ -323,9 +323,9 @@
       "package_data": [
         {
           "type": "maven",
-          "namespace": null,
-          "name": null,
-          "version": null,
+          "namespace": "org.activiti",
+          "name": "activiti-image-generator",
+          "version": "7-201802-EA",
           "qualifiers": {},
           "subpath": null,
           "primary_language": "Java",
@@ -355,19 +355,13 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
-          "extra_data": {
-            "pom_properties": {
-              "version": "7-201802-EA",
-              "groupId": "org.activiti",
-              "artifactId": "activiti-image-generator"
-            }
-          },
+          "extra_data": {},
           "dependencies": [],
           "repository_homepage_url": null,
           "repository_download_url": null,
           "api_data_url": null,
           "datasource_id": "maven_pom_properties",
-          "purl": null
+          "purl": "pkg:maven/org.activiti/activiti-image-generator@7-201802-EA"
         }
       ],
       "for_packages": [

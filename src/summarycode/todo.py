@@ -21,6 +21,7 @@ from licensedcode.detection import get_ambiguous_license_detections_by_type
 from licensedcode.detection import get_uuid_on_content
 from licensedcode.detection import UniqueDetection
 from plugincode.post_scan import PostScanPlugin, post_scan_impl
+from packageurl import PackageURL
 
 TRACE = os.environ.get('SCANCODE_DEBUG_REVIEW', False)
 
@@ -171,7 +172,7 @@ def get_ambiguous_package_detections(codebase):
         for package in package_data:
             detection_type = None
             if not package["purl"]:
-                if resource.path not in deps_datafile_paths:
+                if resource.path not in deps_datafile_paths and not resource.for_packages:
                     detection_type=PackageDetectionCategory.CANNOT_CREATE_PURL.value
             else:
                 if package["purl"] not in codebase_packages_purls:
@@ -209,6 +210,11 @@ def get_package_identifier(package_data, file_path):
         file_path,
     )
     return get_uuid_on_content(content=[identifier_elements])
+
+
+def get_unknown_purl(package_type):
+    purl = PackageURL(type=package_type, name="unknown")
+    return purl.to_string()
 
 
 @attr.s
@@ -252,6 +258,8 @@ class AmbiguousDetection:
     @classmethod
     def from_package(cls, package_data, detection_log, file_path):
         purl = package_data["purl"]
+        if not purl:
+            purl = get_unknown_purl(package_data["type"])
         identifier = get_package_identifier(package_data, file_path)
         detection_id = f"{purl}-{identifier}"
         file_region = FileRegion(

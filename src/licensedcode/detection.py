@@ -667,7 +667,14 @@ class LicenseMatchFromResult(LicenseMatch):
 
 def collect_license_detections(codebase, include_license_clues=True):
     """
-    Return a list of LicenseDetectionFromResult from a ``codebase``
+    Return a list of LicenseDetectionFromResult object rehydrated from
+    LicenseDetection mappings, from resources and packages in a ``codebase``.
+
+    As a side effect, this also corrects `declared_license_expression` in packages
+    according to their license detections. This is required because package fields
+    are populated in package plugin, which runs before the license plugin, and thus
+    the license plugin step where unknown references to other files are dereferenced
+    does not show up automatically in package attributes. 
     """
     has_packages = hasattr(codebase.root, 'package_data')
     has_licenses = hasattr(codebase.root, 'license_detections')
@@ -711,13 +718,33 @@ def collect_license_detections(codebase, include_license_clues=True):
             package_data = getattr(resource, 'package_data', []) or []
 
             package_license_detection_mappings = []
+            modified = False
             for package in package_data:
 
-                if package["license_detections"]:
-                    package_license_detection_mappings.extend(package["license_detections"])
+                package_license_detections = package["license_detections"]
+                if package_license_detections:
+                    package_license_detection_mappings.extend(package_license_detections)
+                    detection_is_same, license_expression = verify_package_license_expression(
+                        license_detection_mappings=package_license_detections,
+                        license_expression=package["declared_license_expression"]
+                    )
+                    if not detection_is_same:
+                        package["declared_license_expression"] = license_expression
+                        modified = True
 
-                if package["other_license_detections"]:
-                    package_license_detection_mappings.extend(package["other_license_detections"])
+                other_license_detections = package["other_license_detections"]
+                if other_license_detections:
+                    package_license_detection_mappings.extend(other_license_detections)
+                    detection_is_same, license_expression = verify_package_license_expression(
+                        license_detection_mappings=other_license_detections,
+                        license_expression=package["other_license_expression"]
+                    )
+                    if not detection_is_same:
+                        package["other_license_expression"] = license_expression
+                        modified = True
+
+            if modified:
+                codebase.save_resource(resource)
 
             if package_license_detection_mappings:
                 package_license_detection_objects = detections_from_license_detection_mappings(
@@ -727,6 +754,33 @@ def collect_license_detections(codebase, include_license_clues=True):
                 all_license_detections.extend(package_license_detection_objects)
 
     return all_license_detections
+
+
+
+def verify_package_license_expression(license_detection_mappings, license_expression):
+    """
+    Returns a tuple of two files: `detection_is_same` and `license_expression` depending
+    on whether the `license_expression` is same as the license_expression computed from
+    `license_detection_mappings`:
+    1. If they are the same, we return True and None for the `license_expression`
+    2. If they are not the same, we return False, and the computed `license_expression`
+    """
+    license_expressions_from_detections = [
+            detection["license_expression"]
+            for detection in license_detection_mappings
+        ]
+
+    license_expression_from_detections = str(combine_expressions(
+        expressions=license_expressions_from_detections,
+        relation='AND',
+        unique=True,
+    ))
+
+    if not license_expression_from_detections == license_expression:
+        return False, license_expression_from_detections
+    else:
+        return True, None
+
 
 
 @attr.s
@@ -978,9 +1032,12 @@ def is_false_positive(license_matches, package_license=False):
         match_rule_length == 1
         for match_rule_length in match_rule_length_values
     )
-
-    is_gpl_bare = all(
-        'gpl_bare' in license_match.rule.identifier
+    bare_rules = ['gpl_bare', 'freeware_bare', 'public-domain_bare']
+    is_bare_rule = all(
+        any([
+            bare_rule in license_match.rule.identifier
+            for bare_rule in bare_rules
+        ])
         for license_match in license_matches
     )
 
@@ -995,7 +1052,7 @@ def is_false_positive(license_matches, package_license=False):
 
     is_single_match = len(license_matches) == 1
 
-    if is_single_match and is_gpl_bare:
+    if is_single_match and is_bare_rule:
         return True
 
     if is_gpl and all_match_rule_length_one:

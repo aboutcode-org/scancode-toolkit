@@ -550,9 +550,9 @@
       "package_data": [
         {
           "type": "maven",
-          "namespace": null,
-          "name": null,
-          "version": null,
+          "namespace": "org.apache.johnzon",
+          "name": "johnzon-jsonb",
+          "version": "1.2.11",
           "qualifiers": {},
           "subpath": null,
           "primary_language": "Java",
@@ -582,19 +582,13 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
-          "extra_data": {
-            "pom_properties": {
-              "groupId": "org.apache.johnzon",
-              "artifactId": "johnzon-jsonb",
-              "version": "1.2.11"
-            }
-          },
+          "extra_data": {},
           "dependencies": [],
           "repository_homepage_url": null,
           "repository_download_url": null,
           "api_data_url": null,
           "datasource_id": "maven_pom_properties",
-          "purl": null
+          "purl": "pkg:maven/org.apache.johnzon/johnzon-jsonb@1.2.11"
         }
       ],
       "for_packages": [

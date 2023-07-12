@@ -681,9 +681,9 @@
       "package_data": [
         {
           "type": "maven",
-          "namespace": null,
-          "name": null,
-          "version": null,
+          "namespace": "org.jboss.logging",
+          "name": "jboss-logging",
+          "version": "3.4.2.Final",
           "qualifiers": {},
           "subpath": null,
           "primary_language": "Java",
@@ -713,19 +713,13 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
-          "extra_data": {
-            "pom_properties": {
-              "version": "3.4.2.Final",
-              "groupId": "org.jboss.logging",
-              "artifactId": "jboss-logging"
-            }
-          },
+          "extra_data": {},
           "dependencies": [],
           "repository_homepage_url": null,
           "repository_download_url": null,
           "api_data_url": null,
           "datasource_id": "maven_pom_properties",
-          "purl": null
+          "purl": "pkg:maven/org.jboss.logging/jboss-logging@3.4.2.Final"
         }
       ],
       "for_packages": [

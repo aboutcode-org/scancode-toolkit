@@ -313,12 +313,27 @@ class MavenPomPropertiesHandler(models.NonAssemblableDatafileHandler):
             if TRACE:
                 logger.debug(f'MavenPomPropertiesHandler.parse: properties: {properties!r}')
             if properties:
-                yield models.PackageData(
-                    datasource_id=cls.datasource_id,
-                    type=cls.default_package_type,
-                    primary_language=cls.default_primary_language,
-                    extra_data=dict(pom_properties=properties)
-                )
+                yield from cls.parse_pom_properties(properties=properties) 
+
+    @classmethod
+    def parse_pom_properties(cls, properties):
+        namespace = properties.pop("groupId", None)
+        name = properties.pop("artifactId", None)
+        version = properties.pop("version", None)
+        if properties:
+            extra_data = dict(pom_properties=properties)
+        else:
+            extra_data = {}
+
+        yield models.PackageData(
+            datasource_id=cls.datasource_id,
+            type=cls.default_package_type,
+            primary_language=cls.default_primary_language,
+            name=name,
+            namespace=namespace,
+            version=version,
+            extra_data=extra_data,
+        )
 
 
 def build_url(
