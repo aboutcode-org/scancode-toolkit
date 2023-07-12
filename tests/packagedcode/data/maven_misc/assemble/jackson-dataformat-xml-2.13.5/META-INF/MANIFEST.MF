@@ -1,0 +1,12 @@
+Manifest-Version: 1.0
+Implementation-Title: Jackson-dataformat-XML
+Implementation-Version: 2.13.5
+X-Compile-Target-JDK: 1.8
+Specification-Vendor: FasterXML
+Specification-Title: Jackson-dataformat-XML
+X-Compile-Source-JDK: 1.8
+Created-By: Maven Source Plugin 3.2.1
+Specification-Version: 2.13
+Implementation-Vendor: FasterXML
+Implementation-Build-Date: 2023-01-23 01:39:52+0000
+
