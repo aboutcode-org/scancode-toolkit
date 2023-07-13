@@ -368,9 +368,7 @@ jobs:
       fail-fast: true
       matrix:
         os: [macos-11, macos-12]
-        # python 3.7 is temporarily removed from release scripts
-        # see https://github.com/nexB/scancode-toolkit/issues/3435 
-        pyver: ["3.8", "3.9", "3.10", "3.11"]
+        pyver: ["3.7", "3.8", "3.9", "3.10", "3.11"]
 
     steps:
       - uses: actions/checkout@v3
