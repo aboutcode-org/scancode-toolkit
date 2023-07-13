@@ -29,10 +29,10 @@ headers:
       system_environment:
         operating_system: linux
         cpu_architecture: 64
-        platform: Linux-5.15.0-73-generic-x86_64-with-glibc2.29
-        platform_version: '#80~20.04.1-Ubuntu SMP Wed May 17 14:58:14 UTC 2023'
+        platform: Linux-5.15.0-75-generic-x86_64-with-glibc2.29
+        platform_version: '#82~20.04.1-Ubuntu SMP Wed Jun 7 19:37:37 UTC 2023'
         python_version: "3.8.10 (default, May 26 2023, 14:05:08) \n[GCC 9.4.0]"
-      spdx_license_list_version: '3.20'
+      spdx_license_list_version: '3.21'
       files_count: 4
 summary:
   declared_license_expression: apache-2.0 AND cddl-1.0 AND mit
@@ -98,35 +98,30 @@ packages:
             end_line: 1
             matched_length: 8
             match_coverage: '100.0'
-            matcher: 1-hash
+            matcher: 2-aho
             license_expression: cddl-1.0
             rule_identifier: cddl-1.0.RULE
             rule_relevance: 100
             rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/cddl-1.0.RULE
-            matched_text: Common Development and Distribution License (CDDL) v1.0
-        identifier: cddl_1_0-9893b55c-3b2b-4ee8-a932-6c6c93a63fc5
-      - license_expression: cddl-1.0
-        matches:
+            matched_text: '- name: Common Development and Distribution License (CDDL) v1.0'
           - score: '100.0'
-            start_line: 1
-            end_line: 1
+            start_line: 2
+            end_line: 2
             matched_length: 7
             match_coverage: '100.0'
-            matcher: 1-hash
+            matcher: 2-aho
             license_expression: cddl-1.0
             rule_identifier: cddl-1.0_4.RULE
             rule_relevance: 100
             rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/cddl-1.0_4.RULE
-            matched_text: http://www.sun.com/cddl/cddl.html
-        identifier: cddl_1_0-ef82fc8c-50cb-6f35-1814-d2eb0bc13e83
+            matched_text: '  url: http://www.sun.com/cddl/cddl.html'
+        identifier: cddl_1_0-dd3dd7df-afca-6a5e-492c-f7b279fdd880
     other_license_expression:
     other_license_expression_spdx:
     other_license_detections: []
     extracted_license_statement: |
       - name: Common Development and Distribution License (CDDL) v1.0
         url: http://www.sun.com/cddl/cddl.html
-        comments:
-        distribution: repo
     notice_text:
     source_packages:
       - pkg:maven/javax.persistence/persistence-api@1.0?classifier=sources
@@ -469,13 +464,10 @@ license_detections:
   - identifier: apache_2_0-ec759ae0-ea5a-f138-793e-388520e080c0
     license_expression: apache-2.0
     detection_count: 1
-  - identifier: cddl_1_0-9893b55c-3b2b-4ee8-a932-6c6c93a63fc5
-    license_expression: cddl-1.0
-    detection_count: 1
   - identifier: cddl_1_0-c6dbef4d-659c-289f-5ee9-1ca0278edad6
     license_expression: cddl-1.0
     detection_count: 1
-  - identifier: cddl_1_0-ef82fc8c-50cb-6f35-1814-d2eb0bc13e83
+  - identifier: cddl_1_0-dd3dd7df-afca-6a5e-492c-f7b279fdd880
     license_expression: cddl-1.0
     detection_count: 1
   - identifier: lgpl_3_0-272571eb-5e68-95b6-ddb0-71de2d8df321
@@ -1541,35 +1533,30 @@ files:
                 end_line: 1
                 matched_length: 8
                 match_coverage: '100.0'
-                matcher: 1-hash
+                matcher: 2-aho
                 license_expression: cddl-1.0
                 rule_identifier: cddl-1.0.RULE
                 rule_relevance: 100
                 rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/cddl-1.0.RULE
-                matched_text: Common Development and Distribution License (CDDL) v1.0
-            identifier: cddl_1_0-9893b55c-3b2b-4ee8-a932-6c6c93a63fc5
-          - license_expression: cddl-1.0
-            matches:
+                matched_text: '- name: Common Development and Distribution License (CDDL) v1.0'
               - score: '100.0'
-                start_line: 1
-                end_line: 1
+                start_line: 2
+                end_line: 2
                 matched_length: 7
                 match_coverage: '100.0'
-                matcher: 1-hash
+                matcher: 2-aho
                 license_expression: cddl-1.0
                 rule_identifier: cddl-1.0_4.RULE
                 rule_relevance: 100
                 rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/cddl-1.0_4.RULE
-                matched_text: http://www.sun.com/cddl/cddl.html
-            identifier: cddl_1_0-ef82fc8c-50cb-6f35-1814-d2eb0bc13e83
+                matched_text: '  url: http://www.sun.com/cddl/cddl.html'
+            identifier: cddl_1_0-dd3dd7df-afca-6a5e-492c-f7b279fdd880
         other_license_expression:
         other_license_expression_spdx:
         other_license_detections: []
         extracted_license_statement: |
           - name: Common Development and Distribution License (CDDL) v1.0
             url: http://www.sun.com/cddl/cddl.html
-            comments:
-            distribution: repo
         notice_text:
         source_packages:
           - pkg:maven/javax.persistence/persistence-api@1.0?classifier=sources
@@ -2253,8 +2240,8 @@ files:
                 rule_identifier: pypi_gnu_lesser_general_public_license_v3.RULE
                 rule_relevance: 100
                 rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/pypi_gnu_lesser_general_public_license_v3.RULE
-                matched_text: '[''License :: OSI Approved :: GNU Lesser General Public License
-                  v3 (LGPLv3)'']'
+                matched_text: '- ''License :: OSI Approved :: GNU Lesser General Public License
+                  v3 (LGPLv3)'''
             identifier: lgpl_3_0-272571eb-5e68-95b6-ddb0-71de2d8df321
         other_license_expression:
         other_license_expression_spdx:

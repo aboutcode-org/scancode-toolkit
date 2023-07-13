@@ -87,7 +87,7 @@
             "rule_identifier": "pypi_isc_license.RULE",
             "rule_relevance": 100,
             "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/pypi_isc_license.RULE",
-            "matched_text": "['License :: OSI Approved :: ISC License (ISCL)']"
+            "matched_text": "- 'License :: OSI Approved :: ISC License (ISCL)'"
           }
         ],
         "identifier": "isc-bfc709ed-b0f3-9d73-8265-40c95f813b22"

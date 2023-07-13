@@ -1,0 +1,173 @@
+{
+  "packages": [
+    {
+      "type": "osgi",
+      "namespace": null,
+      "name": "org.hsqldb.hsqldb",
+      "version": "2.4.0",
+      "qualifiers": {},
+      "subpath": null,
+      "primary_language": null,
+      "description": "HSQLDB\nHyperSQL Lightweight 100% Java SQL Database Engine",
+      "release_date": null,
+      "parties": [
+        {
+          "type": null,
+          "role": "vendor",
+          "name": "The HSQL Development Group",
+          "email": null,
+          "url": null
+        }
+      ],
+      "keywords": [],
+      "homepage_url": null,
+      "download_url": null,
+      "size": null,
+      "sha1": null,
+      "md5": null,
+      "sha256": null,
+      "sha512": null,
+      "bug_tracking_url": null,
+      "code_view_url": null,
+      "vcs_url": null,
+      "copyright": null,
+      "holder": null,
+      "declared_license_expression": null,
+      "declared_license_expression_spdx": null,
+      "license_detections": [],
+      "other_license_expression": null,
+      "other_license_expression_spdx": null,
+      "other_license_detections": [],
+      "extracted_license_statement": null,
+      "notice_text": null,
+      "source_packages": [],
+      "extra_data": {},
+      "repository_homepage_url": null,
+      "repository_download_url": null,
+      "api_data_url": null,
+      "package_uid": "pkg:osgi/org.hsqldb.hsqldb@2.4.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_paths": [
+        "hsqldb-2.4.0.jar-extract/META-INF/MANIFEST.MF"
+      ],
+      "datasource_ids": [
+        "java_osgi_manifest"
+      ],
+      "purl": "pkg:osgi/org.hsqldb.hsqldb@2.4.0"
+    }
+  ],
+  "dependencies": [],
+  "files": [
+    {
+      "path": "hsqldb-2.4.0.jar-extract",
+      "type": "directory",
+      "package_data": [],
+      "for_packages": [],
+      "scan_errors": []
+    },
+    {
+      "path": "hsqldb-2.4.0.jar-extract/META-INF",
+      "type": "directory",
+      "package_data": [],
+      "for_packages": [
+        "pkg:osgi/org.hsqldb.hsqldb@2.4.0?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
+      "scan_errors": []
+    },
+    {
+      "path": "hsqldb-2.4.0.jar-extract/META-INF/MANIFEST.MF",
+      "type": "file",
+      "package_data": [
+        {
+          "type": "osgi",
+          "namespace": null,
+          "name": "org.hsqldb.hsqldb",
+          "version": "2.4.0",
+          "qualifiers": {},
+          "subpath": null,
+          "primary_language": null,
+          "description": "HSQLDB\nHyperSQL Lightweight 100% Java SQL Database Engine",
+          "release_date": null,
+          "parties": [
+            {
+              "role": "vendor",
+              "name": "The HSQL Development Group"
+            }
+          ],
+          "keywords": [],
+          "homepage_url": null,
+          "download_url": null,
+          "size": null,
+          "sha1": null,
+          "md5": null,
+          "sha256": null,
+          "sha512": null,
+          "bug_tracking_url": null,
+          "code_view_url": null,
+          "vcs_url": null,
+          "copyright": null,
+          "holder": null,
+          "declared_license_expression": null,
+          "declared_license_expression_spdx": null,
+          "license_detections": [],
+          "other_license_expression": null,
+          "other_license_expression_spdx": null,
+          "other_license_detections": [],
+          "extracted_license_statement": null,
+          "notice_text": null,
+          "source_packages": [],
+          "file_references": [],
+          "extra_data": {},
+          "dependencies": [],
+          "repository_homepage_url": null,
+          "repository_download_url": null,
+          "api_data_url": null,
+          "datasource_id": "java_osgi_manifest",
+          "purl": "pkg:osgi/org.hsqldb.hsqldb@2.4.0"
+        }
+      ],
+      "for_packages": [
+        "pkg:osgi/org.hsqldb.hsqldb@2.4.0?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
+      "scan_errors": []
+    },
+    {
+      "path": "hsqldb-2.4.0.jar-extract/META-INF/hsqldb_lic.txt",
+      "type": "file",
+      "package_data": [],
+      "for_packages": [
+        "pkg:osgi/org.hsqldb.hsqldb@2.4.0?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
+      "scan_errors": []
+    },
+    {
+      "path": "hsqldb-2.4.0.jar-extract/META-INF/hypersonic_lic.txt",
+      "type": "file",
+      "package_data": [],
+      "for_packages": [
+        "pkg:osgi/org.hsqldb.hsqldb@2.4.0?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
+      "scan_errors": []
+    },
+    {
+      "path": "hsqldb-2.4.0.jar-extract/org",
+      "type": "directory",
+      "package_data": [],
+      "for_packages": [],
+      "scan_errors": []
+    },
+    {
+      "path": "hsqldb-2.4.0.jar-extract/org/hsqldb",
+      "type": "directory",
+      "package_data": [],
+      "for_packages": [],
+      "scan_errors": []
+    },
+    {
+      "path": "hsqldb-2.4.0.jar-extract/org/hsqldb/Database.class",
+      "type": "file",
+      "package_data": [],
+      "for_packages": [],
+      "scan_errors": []
+    }
+  ]
+}

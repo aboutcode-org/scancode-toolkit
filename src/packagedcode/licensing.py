@@ -33,6 +33,8 @@ from summarycode.classify import check_resource_name_start_and_end
 from summarycode.classify import LEGAL_STARTS_ENDS
 from summarycode.classify import README_STARTS_ENDS
 
+import saneyaml
+
 
 """
 Detect and normalize licenses as found in package manifests data.
@@ -683,7 +685,7 @@ def get_normalized_license_detections(
                     license_detections.extend(detections)
 
         else:
-            extracted_license_statement = repr(extracted_license)
+            extracted_license_statement = saneyaml.dump(extracted_license)
             license_detections = get_license_detections_for_extracted_license_statement(
                 extracted_license_statement=extracted_license_statement,
                 try_as_expression=try_as_expression,
@@ -725,7 +727,7 @@ def get_normalized_license_detections(
                         license_detections.extend(detections)
 
             else:
-                extracted_license_statement = repr(extracted_license_item)
+                extracted_license_statement = saneyaml.dump(extracted_license_item)
 
                 detections = get_license_detections_for_extracted_license_statement(
                     extracted_license_statement=extracted_license_statement,
@@ -749,6 +751,7 @@ def get_license_detections_and_expression(
     try_as_expression=True,
     approximate=True,
     expression_symbols=None,
+    datasource_id = None,
 ):
     """
     Given a text `extracted_license_statement` return a list of LicenseDetection objects.
@@ -764,22 +767,33 @@ def get_license_detections_and_expression(
     Return None if the `query_string` is empty. Return "unknown" as a license
     expression if there is a `query_string` but nothing was detected.
     """
+    from packagedcode import PACKAGE_DATA_CLASS_BY_DATASOURCE_ID
+
     detection_data = []
     license_expression = None
 
     if not extracted_license_statement:
         return detection_data, license_expression
 
-    license_detections = get_normalized_license_detections(
-        extracted_license=extracted_license_statement,
-        try_as_expression=try_as_expression,
-        approximate=approximate,
-        expression_symbols=expression_symbols,
-    )
+    package_data_class = PACKAGE_DATA_CLASS_BY_DATASOURCE_ID.get(datasource_id)
+    if package_data_class:
+        license_detections = package_data_class.get_license_detections_for_extracted_license_statement(
+            extracted_license=extracted_license_statement,
+            try_as_expression=try_as_expression,
+            approximate=approximate,
+            expression_symbols=expression_symbols,
+        )
+    else:
+        license_detections = get_normalized_license_detections(
+            extracted_license=extracted_license_statement,
+            try_as_expression=try_as_expression,
+            approximate=approximate,
+            expression_symbols=expression_symbols,
+        )
 
     if not license_detections:
         if not isinstance(extracted_license_statement, str):
-            extracted_license_statement = repr(extracted_license_statement)
+            extracted_license_statement = saneyaml.dump(extracted_license_statement)
         license_detection = get_unknown_license_detection(query_string=extracted_license_statement)
         license_detections = [license_detection]
 
@@ -808,7 +822,7 @@ def get_license_detections_for_extracted_license_statement(
         return []
 
     if not isinstance(extracted_license_statement, str):
-        extracted_license_statement = repr(extracted_license_statement)
+        extracted_license_statement = saneyaml.dump(extracted_license_statement)
 
     matches, matched_as_expression = get_license_matches_for_extracted_license_statement(
         query_string=extracted_license_statement,

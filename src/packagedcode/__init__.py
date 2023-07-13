@@ -101,10 +101,10 @@ APPLICATION_PACKAGE_DATAFILE_HANDLERS = [
 
     haxe.HaxelibJsonHandler,
 
-    jar_manifest.JavaJarManifestHandler,
-
     maven.MavenPomXmlHandler,
     maven.MavenPomPropertiesHandler,
+    maven.JavaJarManifestHandler,
+    maven.JavaOSGiManifestHandler,
 
     misc.AndroidAppArchiveHandler,
     misc.AndroidLibraryHandler,
@@ -253,3 +253,7 @@ def get_package_handler(package_data):
         raise UnknownPackageDatasource(package_data)
     return ppc
 
+
+PACKAGE_DATA_CLASS_BY_DATASOURCE_ID = {
+    maven.MavenPackageData.datasource_id: maven.MavenPackageData
+}

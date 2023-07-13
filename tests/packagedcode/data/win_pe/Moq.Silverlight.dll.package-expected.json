@@ -38,20 +38,20 @@
         "license_expression": "unknown",
         "matches": [
           {
-            "score": 83.33,
+            "score": 75.0,
             "start_line": 1,
-            "end_line": 1,
-            "matched_length": 5,
+            "end_line": 3,
+            "matched_length": 3,
             "match_coverage": 100.0,
             "matcher": "5-undetected",
             "license_expression": "unknown",
-            "rule_identifier": "package-manifest-unknown-679f097d28658555700ef170738adb0fd7151fce",
+            "rule_identifier": "package-manifest-unknown-ad65678ddd5bed50985f1d896d812061269049b0",
             "rule_relevance": 100,
-            "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/package-manifest-unknown-679f097d28658555700ef170738adb0fd7151fce",
-            "matched_text": "license {'LegalCopyright': None, 'LegalTrademarks': '', 'License': None}"
+            "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/package-manifest-unknown-ad65678ddd5bed50985f1d896d812061269049b0",
+            "matched_text": "license LegalCopyright:\nLegalTrademarks:\nLicense:"
           }
         ],
-        "identifier": "unknown-3a74427e-26a2-7b3f-eb84-9b610c013417"
+        "identifier": "unknown-d5e156bc-5560-c52a-28b9-d79ccb4407b2"
       }
     ],
     "other_license_expression": null,

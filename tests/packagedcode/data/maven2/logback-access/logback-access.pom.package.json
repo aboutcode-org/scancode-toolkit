@@ -34,40 +34,34 @@
           "end_line": 1,
           "matched_length": 5,
           "match_coverage": 100.0,
-          "matcher": "1-hash",
+          "matcher": "2-aho",
           "license_expression": "lgpl-2.0-plus",
           "rule_identifier": "lgpl-2.0-plus_87.RULE",
           "rule_relevance": 100,
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0-plus_87.RULE",
-          "matched_text": "GNU Lesser General Public License"
-        }
-      ],
-      "identifier": "lgpl_2_0_plus-4a537314-959d-dbbd-2add-1b2422c6521e"
-    },
-    {
-      "license_expression": "lgpl-2.0-plus",
-      "matches": [
+          "matched_text": "- name: GNU Lesser General Public License"
+        },
         {
           "score": 100.0,
-          "start_line": 1,
-          "end_line": 1,
+          "start_line": 2,
+          "end_line": 2,
           "matched_length": 7,
           "match_coverage": 100.0,
-          "matcher": "1-hash",
+          "matcher": "2-aho",
           "license_expression": "lgpl-2.0-plus",
           "rule_identifier": "lgpl_3.RULE",
           "rule_relevance": 100,
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl_3.RULE",
-          "matched_text": "http://www.gnu.org/licenses/lgpl.html"
+          "matched_text": "  url: http://www.gnu.org/licenses/lgpl.html"
         }
       ],
-      "identifier": "lgpl_2_0_plus-bd2014ad-7f5c-e384-8316-a0068fe42d91"
+      "identifier": "lgpl_2_0_plus-f1d029dc-2445-1282-73fe-2a12a25be427"
     }
   ],
   "other_license_expression": null,
   "other_license_expression_spdx": null,
   "other_license_detections": [],
-  "extracted_license_statement": "- name: GNU Lesser General Public License\n  url: http://www.gnu.org/licenses/lgpl.html\n  comments:\n  distribution:\n",
+  "extracted_license_statement": "- name: GNU Lesser General Public License\n  url: http://www.gnu.org/licenses/lgpl.html\n",
   "notice_text": null,
   "source_packages": [
     "pkg:maven/ch.qos.logback/logback-access@0.2.5?classifier=sources"

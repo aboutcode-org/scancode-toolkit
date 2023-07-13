@@ -91,7 +91,7 @@
             "rule_identifier": "pypi_apache_no-version.RULE",
             "rule_relevance": 95,
             "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/pypi_apache_no-version.RULE",
-            "matched_text": "['License :: OSI Approved :: Apache Software License', 'License :: OSI Approved :: CC0']"
+            "matched_text": "- 'License :: OSI Approved :: Apache Software License'"
           }
         ],
         "identifier": "apache_2_0-e267f9d9-ae62-e9c9-9cc2-8cd0a1e4928f"
@@ -101,8 +101,8 @@
         "matches": [
           {
             "score": 100.0,
-            "start_line": 1,
-            "end_line": 1,
+            "start_line": 2,
+            "end_line": 2,
             "matched_length": 3,
             "match_coverage": 100.0,
             "matcher": "2-aho",
@@ -110,7 +110,7 @@
             "rule_identifier": "pypi_osi_approved.RULE",
             "rule_relevance": 100,
             "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/pypi_osi_approved.RULE",
-            "matched_text": "['License :: OSI Approved :: Apache Software License', 'License :: OSI Approved :: CC0']"
+            "matched_text": "- 'License :: OSI Approved :: CC0'"
           }
         ],
         "identifier": "free_unknown-e8fad921-e243-7cbb-bf61-2ac054636272"

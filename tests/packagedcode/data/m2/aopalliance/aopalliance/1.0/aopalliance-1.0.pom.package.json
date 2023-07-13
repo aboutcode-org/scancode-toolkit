@@ -34,12 +34,12 @@
           "end_line": 1,
           "matched_length": 2,
           "match_coverage": 100.0,
-          "matcher": "1-hash",
+          "matcher": "2-aho",
           "license_expression": "public-domain",
           "rule_identifier": "public-domain_bare_words.RULE",
           "rule_relevance": 70,
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/public-domain_bare_words.RULE",
-          "matched_text": "Public Domain"
+          "matched_text": "- name: Public Domain"
         }
       ],
       "identifier": "public_domain-3dd945ae-65df-7d90-6467-60f8ecf2eb77"
@@ -48,7 +48,7 @@
   "other_license_expression": null,
   "other_license_expression_spdx": null,
   "other_license_detections": [],
-  "extracted_license_statement": "- name: Public Domain\n  url:\n  comments:\n  distribution:\n",
+  "extracted_license_statement": "- name: Public Domain\n",
   "notice_text": null,
   "source_packages": [
     "pkg:maven/aopalliance/aopalliance@1.0?classifier=sources"

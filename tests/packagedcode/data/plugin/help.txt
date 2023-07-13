@@ -601,6 +601,13 @@ Package type:  opam
   description:       Ocaml Opam file
   path_patterns:    '*opam'
 --------------------------------------------
+Package type:  osgi
+  datasource_id:     java_osgi_manifest
+  documentation URL: https://docs.oracle.com/javase/tutorial/deployment/jar/manifestindex.html
+  primary language:  Java
+  description:       Java OSGi MANIFEST.MF
+  path_patterns:    
+--------------------------------------------
 Package type:  pubspec
   datasource_id:     pubspec_lock
   documentation URL: https://web.archive.org/web/20220330081004/https://gpalma.pt/blog/what-is-the-pubspec-lock/

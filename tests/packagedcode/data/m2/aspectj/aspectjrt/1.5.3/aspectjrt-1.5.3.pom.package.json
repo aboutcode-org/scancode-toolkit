@@ -34,40 +34,34 @@
           "end_line": 1,
           "matched_length": 6,
           "match_coverage": 100.0,
-          "matcher": "1-hash",
+          "matcher": "2-aho",
           "license_expression": "epl-1.0",
           "rule_identifier": "epl-1.0_4.RULE",
           "rule_relevance": 100,
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/epl-1.0_4.RULE",
-          "matched_text": "Eclipse Public License - v 1.0"
-        }
-      ],
-      "identifier": "epl_1_0-08260e9e-18a1-8e8e-6b84-e5bd8fb66c01"
-    },
-    {
-      "license_expression": "epl-1.0",
-      "matches": [
+          "matched_text": "- name: Eclipse Public License - v 1.0"
+        },
         {
           "score": 100.0,
-          "start_line": 1,
-          "end_line": 1,
+          "start_line": 2,
+          "end_line": 2,
           "matched_length": 8,
           "match_coverage": 100.0,
-          "matcher": "1-hash",
+          "matcher": "2-aho",
           "license_expression": "epl-1.0",
           "rule_identifier": "epl-1.0.RULE",
           "rule_relevance": 100,
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/epl-1.0.RULE",
-          "matched_text": "http://www.eclipse.org/legal/epl-v10.html"
+          "matched_text": "  url: http://www.eclipse.org/legal/epl-v10.html"
         }
       ],
-      "identifier": "epl_1_0-55aef6c5-220a-7892-61d4-4edfb5d67d75"
+      "identifier": "epl_1_0-48d15cd3-0ccf-4f62-3d30-24dc9b7308e5"
     }
   ],
   "other_license_expression": null,
   "other_license_expression_spdx": null,
   "other_license_detections": [],
-  "extracted_license_statement": "- name: Eclipse Public License - v 1.0\n  url: http://www.eclipse.org/legal/epl-v10.html\n  comments:\n  distribution: repo\n",
+  "extracted_license_statement": "- name: Eclipse Public License - v 1.0\n  url: http://www.eclipse.org/legal/epl-v10.html\n",
   "notice_text": null,
   "source_packages": [
     "pkg:maven/aspectj/aspectjrt@1.5.3?classifier=sources"

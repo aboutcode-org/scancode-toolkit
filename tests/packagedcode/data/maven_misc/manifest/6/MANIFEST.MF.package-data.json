@@ -1,5 +1,6 @@
 {
   "type": "osgi",
+  "datasource_id": "java_osgi_manifest",
   "namespace": null,
   "name": "javassist",
   "version": "3.18.1.GA",
@@ -7,7 +8,6 @@
   "extracted_license_statement": "http://www.mozilla.org/MPL/MPL-1.1.html, http://www.gnu.org/licenses/lgpl-2.1.html, http://www.apache.org/licenses/",
   "copyright": null,
   "homepage_url": null,
-  "documentation_url": null,
   "parties": [
     {
       "role": "spec-vendor",
@@ -15,6 +15,5 @@
     }
   ],
   "vcs_url": null,
-  "code_view_url": null,
-  "notes": null
+  "code_view_url": null
 }

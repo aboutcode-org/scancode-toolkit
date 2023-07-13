@@ -1,0 +1,19 @@
+{
+  "type": "osgi",
+  "datasource_id": "java_osgi_manifest",
+  "namespace": null,
+  "name": "org.hsqldb.hsqldb",
+  "version": "2.4.0",
+  "description": "HSQLDB\nHyperSQL Lightweight 100% Java SQL Database Engine",
+  "extracted_license_statement": null,
+  "copyright": null,
+  "homepage_url": null,
+  "parties": [
+    {
+      "role": "vendor",
+      "name": "The HSQL Development Group"
+    }
+  ],
+  "vcs_url": null,
+  "code_view_url": null
+}

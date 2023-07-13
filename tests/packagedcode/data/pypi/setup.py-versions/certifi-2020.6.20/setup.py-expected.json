@@ -79,7 +79,7 @@
             "rule_identifier": "pypi_mozilla_public_license_2_0.RULE",
             "rule_relevance": 100,
             "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/pypi_mozilla_public_license_2_0.RULE",
-            "matched_text": "['License :: OSI Approved :: Mozilla Public License 2.0 (MPL 2.0)']"
+            "matched_text": "- 'License :: OSI Approved :: Mozilla Public License 2.0 (MPL 2.0)'"
           }
         ],
         "identifier": "mpl_2_0-6c71f7a0-534a-b6f3-2bd5-7d6422217e0a"

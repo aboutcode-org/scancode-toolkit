@@ -76,7 +76,7 @@
             "rule_identifier": "pypi_gnu_affero_general_public_license_v3_or_later.RULE",
             "rule_relevance": 100,
             "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/pypi_gnu_affero_general_public_license_v3_or_later.RULE",
-            "matched_text": "['License :: OSI Approved :: GNU Affero General Public License v3 or later (AGPLv3+)']"
+            "matched_text": "- 'License :: OSI Approved :: GNU Affero General Public License v3 or later (AGPLv3+)'"
           }
         ],
         "identifier": "agpl_3_0_plus-ecc0a5a6-21cf-0bd7-fa6f-a0b5ee8b3012"
