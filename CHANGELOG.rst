@@ -42,6 +42,42 @@ v32.1.0 (next, roadmap)
   See https://github.com/nexB/scancode-toolkit/issues/1745
 
 
+v32.0.6 - 2023-07-13
+------------------------
+
+This is a minor release with a lot of license and package detection
+improvements, specially for maven packages. We also support the SPDX
+license list 3.21 now. The main updates over the previous stable
+release are:
+
+- New and updated licenses, including support for newly released
+  SPDX license list version 3.21. For more details see
+  https://github.com/nexB/scancode-toolkit/pull/3437
+
+- Fixes in summary plugin for licenses, and top-level license
+  detections. https://github.com/nexB/scancode-toolkit/pull/3430
+
+- Updated maven license and package detections, with fixes for
+  various maven package manifest parsing, improved top-level
+  package assembly, ecosystem specific package license detection,
+  fixes in ``--todo`` plugin, updated license detection rules/heuristics
+  and other misc changes. For more details see:
+  https://github.com/nexB/scancode-toolkit/pull/3447
+
+- Improved Gemfile.lock parsing. For more details see
+  https://github.com/nexB/scancode-toolkit/pull/3444
+
+- Auto-review plugin to get todo items for scan review, with
+  the new ``--todo`` CLI option. For more details see:
+  https://github.com/nexB/scancode-toolkit/pull/3353
+
+- Misc. license and copyright detection improvements at
+  https://github.com/nexB/scancode-toolkit/pull/3346
+
+- Other misc. minor bugfixes detailed in all the previous
+  release-candidates.
+
+
 v32.0.5rc3 - 2023-06-23
 ------------------------
 
