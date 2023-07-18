@@ -1,7 +1,7 @@
 A Simple Python Project Skeleton
 ================================
 This repo attempts to standardize the structure of the Python-based project's
-repositories using modern Python packaging and configuration techniques. 
+repositories using modern Python packaging and configuration techniques.
 Using this `blog post`_ as inspiration, this repository serves as the base for
 all new Python projects and is mergeable in existing repositories as well.
 
@@ -40,6 +40,9 @@ More usage instructions can be found in ``docs/skeleton-usage.rst``.
 
 Release Notes
 =============
+
+- 2023-07-18:
+    - Add macOS-13 job in azure-pipelines.yml
 
 - 2022-03-04:
     - Synchronize configure and configure.bat scripts for sanity
