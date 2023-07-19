@@ -213,6 +213,8 @@ def get_package_identifier(package_data, file_path):
 
 
 def get_unknown_purl(package_type):
+    if not package_type:
+        package_type = "unknown"
     purl = PackageURL(type=package_type, name="unknown")
     return purl.to_string()
 
