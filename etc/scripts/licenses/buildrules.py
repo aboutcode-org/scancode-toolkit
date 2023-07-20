@@ -222,6 +222,8 @@ def cli(licenses_file):
             base_name = "false-positive"
         elif rule.is_license_intro:
             base_name = "license-intro"
+        elif rule.is_license_clue:
+            base_name = "license-clue"
         else:
             base_name = rule.license_expression
 

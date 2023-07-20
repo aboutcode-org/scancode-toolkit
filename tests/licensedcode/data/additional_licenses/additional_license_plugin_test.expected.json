@@ -52,6 +52,7 @@
       "is_license_reference": false,
       "is_license_tag": false,
       "is_license_intro": false,
+      "is_license_clue": false,
       "is_continuous": false,
       "is_builtin": false,
       "is_from_license": true,

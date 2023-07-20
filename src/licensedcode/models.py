@@ -1189,7 +1189,12 @@ def get_license_tokens():
     yield 'licensed'
 
 
-def load_rules(rules_data_dir=rules_data_dir, with_checks=True, is_builtin=True):
+def load_rules(
+    rules_data_dir=rules_data_dir,
+    with_checks=True,
+    is_builtin=True,
+    ignore_deprecated=True,
+):
     """
     Return an iterable of rules loaded from rule files in ``rules_data_dir``.
     Optionally check for consistency if ``with_checks`` is True.
@@ -1211,7 +1216,12 @@ def load_rules(rules_data_dir=rules_data_dir, with_checks=True, is_builtin=True)
                 space_problems.append(rule_file)
 
             try:
-                yield Rule.from_file(rule_file=rule_file)
+                rule = Rule.from_file(rule_file=rule_file)
+                if rule.is_deprecated and ignore_deprecated:
+                    continue 
+                else:
+                    yield rule
+
             except Exception as re:
                 if with_checks:
                     model_errors.append(str(re))
@@ -1387,6 +1397,22 @@ class BasicRule:
             'after. Mutually exclusive from any other is_license_* flag')
     )
 
+    is_license_clue = attr.ib(
+        default=False,
+        repr=False,
+        metadata=dict(
+            help='True if this is rule text is a clue to a license '
+            'but cannot be considered in a proper license detection '
+            'as a license text/notice/reference/tag/intro as it is'
+            'merely a clue and does not actually point to or refer to '
+            'the actual license directly. This is still valuable information '
+            'useful in determining the license/origin of a file, but this '
+            'should not be summarized/present in the license expression for '
+            'a package or a file, nor its list of license detections. '
+            'considered in the context of the detection that it precedes. '
+            'Mutually exclusive from any other is_license_* flag')
+    )
+
     is_false_positive = attr.ib(
         default=False,
         repr=False,
@@ -1503,6 +1529,19 @@ class BasicRule:
         metadata=dict(
             help='Flag set to True if this rule is a synthetic rule dynamically '
             'built at runtime, such as an SPDX license rule.')
+    )
+
+    is_deprecated = attr.ib(
+        default=False,
+        repr=False,
+        metadata=dict(
+            help='Flag set to True if this rule is deleted, '
+            'and not to be used anymore in license detection. '
+            'This happens usually when a rule is renamed/assigned '
+            'to a seperate license-expression, promoted to being a '
+            'license text or just plain retired. This is used to '
+            'preserve the link to the rule, and therefore make links '
+            'to rules as permanent.')
     )
 
     ###########################################################################
@@ -1769,6 +1808,7 @@ class BasicRule:
             self.is_license_reference,
             self.is_license_tag,
             self.is_license_intro,
+            self.is_license_clue,
         )
 
         has_license_flags = any(license_flags)
@@ -1924,6 +1964,7 @@ class BasicRule:
         data['is_license_reference'] = self.is_license_reference
         data['is_license_tag'] = self.is_license_tag
         data['is_license_intro'] = self.is_license_intro
+        data['is_license_clue'] = self.is_license_clue
         data['is_continuous'] = self.is_continuous
         data['is_builtin'] = self.is_builtin
         data['is_from_license'] = self.is_from_license
@@ -1961,6 +2002,7 @@ class BasicRule:
             'is_license_reference',
             'is_license_tag',
             'is_license_intro',
+            'is_license_clue',
             'is_continuous',
         )
 
@@ -2253,7 +2295,9 @@ class Rule(BasicRule):
         self.is_license_tag = data.get('is_license_tag', False)
         self.is_license_reference = data.get('is_license_reference', False)
         self.is_license_intro = data.get('is_license_intro', False)
+        self.is_license_clue = data.get('is_license_clue', False)
         self.is_continuous = data.get('is_continuous', False)
+        self.is_deprecated = data.get('is_deprecated', False)
 
         self.referenced_filenames = data.get('referenced_filenames', []) or []
 
