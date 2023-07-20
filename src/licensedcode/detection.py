@@ -927,10 +927,21 @@ def is_undetected_license_matches(license_matches):
         return True
 
 
+def is_correct_detection_non_unknown(license_matches):
+    """
+    Return True if all the matches in ``license_matches`` List of LicenseMatch
+    are correct/perfect license detections and also there aren't any unknowns.
+    """
+    return (
+        is_correct_detection(license_matches)
+        and not has_unknown_matches(license_matches)
+    )
+
+
 def is_correct_detection(license_matches):
     """
     Return True if all the matches in ``license_matches`` List of LicenseMatch
-    are correct license detections.
+    are perfect license detections.
     """
     matchers = (license_match.matcher for license_match in license_matches)
     is_match_coverage_perfect = [
@@ -940,7 +951,7 @@ def is_correct_detection(license_matches):
 
     return (
         all(matcher in ("1-hash", "1-spdx-id", "2-aho") for matcher in matchers)
-        and all(is_match_coverage_perfect) and not has_unknown_matches(license_matches)
+        and all(is_match_coverage_perfect)
     )
 
 
@@ -1086,6 +1097,14 @@ def is_unknown_intro(license_match):
         license_match.rule.has_unknown and
         license_match.rule.is_license_intro
     )
+
+
+def has_correct_license_clue_matches(license_matches):
+    """
+    Return True if all the matches in ``license_matches`` List of LicenseMatch
+    has True for the `is_license_clue` rule attribute.
+    """
+    return is_correct_detection(license_matches) and all(match.rule.is_license_clue for match in license_matches)
 
 
 def is_license_clues(license_matches):
@@ -1480,8 +1499,11 @@ def analyze_detection(license_matches, package_license=False):
         return DetectionCategory.FALSE_POSITVE.value
 
     # Case where all matches have `matcher` as `1-hash` or `4-spdx-id`
-    elif is_correct_detection(license_matches=license_matches):
+    elif is_correct_detection_non_unknown(license_matches=license_matches):
         return DetectionCategory.PERFECT_DETECTION.value
+
+    elif has_correct_license_clue_matches(license_matches=license_matches):
+        return DetectionCategory.LICENSE_CLUES.value
 
     # Case where even though the matches have perfect coverage, they have
     # matches with `unknown` rule identifiers
