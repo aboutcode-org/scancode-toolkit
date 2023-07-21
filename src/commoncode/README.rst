@@ -18,7 +18,8 @@ To install this package use::
 
 Alternatively, to set up a development environment::
 
-    source configure --dev
+    ./configure --dev
+    source venv/bin/activate
 
 To run unit tests::
 
