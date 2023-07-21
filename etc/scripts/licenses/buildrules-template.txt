@@ -1,22 +1,18 @@
 ----------------------------------------
-license_expression: apache-2.0
+license_expression: 
+relevance: 100
+minimum_coverage: 90
 is_license_notice: yes
+is_license_text: yes
+is_license_reference: yes
+is_license_tag: yes
+is_false_positive: yes
+is_license_intro: yes
+is_license_clue: yes
 referenced_filenames:
-    - ASL2.0
-notes: seen in woodstox
+notes: 
 ---
-This copy of is licensed under the
-{{Apache (Software) License, version 2.0 ("the License")}}.
-See the License for details about distribution rights, and the
-specific rights regarding derivate works.
 
-You may obtain a copy of the License at:
-
-http://www.apache.org/licenses/
-
-A copy is also included in the downloadable source code package
-containing , in file {{"ASL2.0"}}, under the same directory
-as this file.
 ----------------------------------------
 license_expression: 
 relevance: 100
