@@ -554,7 +554,8 @@ def get_new_identifier_from_detections(initial_detection, detections_added, lice
     ]
     identifiers.append(initial_detection["identifier"])
     uuid = get_uuid_on_content(content=sorted(identifiers))
-    return f"{license_expression}-{uuid}"
+    expression = python_safe_name(s=str(license_expression))
+    return f"{expression}-{uuid}"
 
 
 @attr.s

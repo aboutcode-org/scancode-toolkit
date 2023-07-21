@@ -85,7 +85,7 @@
           "detection_log": [
             "unknown-reference-to-local-file"
           ],
-          "identifier": "apache-2.0-31344ceb-eee7-3f95-45bb-cc86209f76f8"
+          "identifier": "apache_2_0-31344ceb-eee7-3f95-45bb-cc86209f76f8"
         }
       ],
       "other_license_expression": null,
@@ -111,7 +111,7 @@
   "dependencies": [],
   "license_detections": [
     {
-      "identifier": "apache-2.0-31344ceb-eee7-3f95-45bb-cc86209f76f8",
+      "identifier": "apache_2_0-31344ceb-eee7-3f95-45bb-cc86209f76f8",
       "license_expression": "apache-2.0",
       "detection_count": 2,
       "detection_log": [
@@ -272,7 +272,7 @@
               "detection_log": [
                 "unknown-reference-to-local-file"
               ],
-              "identifier": "apache-2.0-31344ceb-eee7-3f95-45bb-cc86209f76f8"
+              "identifier": "apache_2_0-31344ceb-eee7-3f95-45bb-cc86209f76f8"
             }
           ],
           "other_license_expression": null,
@@ -342,7 +342,7 @@
           "detection_log": [
             "unknown-reference-to-local-file"
           ],
-          "identifier": "apache-2.0-31344ceb-eee7-3f95-45bb-cc86209f76f8"
+          "identifier": "apache_2_0-31344ceb-eee7-3f95-45bb-cc86209f76f8"
         }
       ],
       "license_clues": [],

@@ -64,7 +64,7 @@
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_89.RULE"
             }
           ],
-          "identifier": "bsd-new-56110dee-5dcd-3acb-7774-ab2491cc76bf",
+          "identifier": "bsd_new-56110dee-5dcd-3acb-7774-ab2491cc76bf",
           "detection_log": [
             "package-unknown-reference-to-local-file"
           ]
@@ -142,7 +142,7 @@
       "detection_log": []
     },
     {
-      "identifier": "bsd-new-56110dee-5dcd-3acb-7774-ab2491cc76bf",
+      "identifier": "bsd_new-56110dee-5dcd-3acb-7774-ab2491cc76bf",
       "license_expression": "bsd-new",
       "detection_count": 1,
       "detection_log": [
@@ -150,7 +150,7 @@
       ]
     },
     {
-      "identifier": "bsd-new-68720980-08c9-ffb1-f28e-24c2e067385b",
+      "identifier": "bsd_new-68720980-08c9-ffb1-f28e-24c2e067385b",
       "license_expression": "bsd-new",
       "detection_count": 1,
       "detection_log": [
@@ -281,7 +281,7 @@
                   "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_89.RULE"
                 }
               ],
-              "identifier": "bsd-new-56110dee-5dcd-3acb-7774-ab2491cc76bf",
+              "identifier": "bsd_new-56110dee-5dcd-3acb-7774-ab2491cc76bf",
               "detection_log": [
                 "package-unknown-reference-to-local-file"
               ]
@@ -351,7 +351,7 @@
           "detection_log": [
             "unknown-reference-to-local-file"
           ],
-          "identifier": "bsd-new-68720980-08c9-ffb1-f28e-24c2e067385b"
+          "identifier": "bsd_new-68720980-08c9-ffb1-f28e-24c2e067385b"
         },
         {
           "license_expression": "bsd-new",

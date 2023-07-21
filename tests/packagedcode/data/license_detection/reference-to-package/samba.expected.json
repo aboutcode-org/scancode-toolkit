@@ -303,7 +303,13 @@
       ]
     },
     {
-      "identifier": "gpl-3.0-db305a6e-7013-4ffa-0ad4-09f113582e67",
+      "identifier": "gpl_3_0-ab79e5a8-e510-cbf4-5302-ef968484bcdf",
+      "license_expression": "gpl-3.0",
+      "detection_count": 3,
+      "detection_log": []
+    },
+    {
+      "identifier": "gpl_3_0-db305a6e-7013-4ffa-0ad4-09f113582e67",
       "license_expression": "gpl-3.0",
       "detection_count": 3,
       "detection_log": [
@@ -311,13 +317,7 @@
       ]
     },
     {
-      "identifier": "gpl_3_0-ab79e5a8-e510-cbf4-5302-ef968484bcdf",
-      "license_expression": "gpl-3.0",
-      "detection_count": 3,
-      "detection_log": []
-    },
-    {
-      "identifier": "gpl-3.0 AND gpl-2.0-plus AND free-unknown AND gpl-1.0-plus AND lgpl-3.0-plus AND lgpl-3.0 AND cc-by-sa-3.0 AND cc-by-sa-4.0 AND dco-1.1 AND gpl-2.0-da1317f5-da7a-5367-fc96-9a084eb2ac00",
+      "identifier": "gpl_3_0_and_gpl_2_0_plus_and_free_unknown_and_gpl_1_0_plus_and_lgpl_3_0_plus_and_lgpl_3_0_and_cc_by_sa_3_0_and_cc_by_sa_4_0_and_dco_1_1_and_gpl_2_0-7f4f0ff2-4f58-b290-f00d-9b2ef6eafd63",
       "license_expression": "gpl-3.0 AND gpl-2.0-plus AND free-unknown AND gpl-1.0-plus AND lgpl-3.0-plus AND lgpl-3.0 AND cc-by-sa-3.0 AND cc-by-sa-4.0 AND dco-1.1 AND gpl-2.0",
       "detection_count": 1,
       "detection_log": [
@@ -693,7 +693,7 @@
           "detection_log": [
             "unknown-reference-to-local-file"
           ],
-          "identifier": "gpl-3.0-db305a6e-7013-4ffa-0ad4-09f113582e67"
+          "identifier": "gpl_3_0-db305a6e-7013-4ffa-0ad4-09f113582e67"
         }
       ],
       "license_clues": [],
@@ -970,7 +970,7 @@
               "detection_log": [
                 "unknown-reference-to-local-file"
               ],
-              "identifier": "gpl-3.0-db305a6e-7013-4ffa-0ad4-09f113582e67"
+              "identifier": "gpl_3_0-db305a6e-7013-4ffa-0ad4-09f113582e67"
             }
           ],
           "other_license_expression": null,
@@ -1283,7 +1283,7 @@
               "detection_log": [
                 "unknown-reference-to-local-file"
               ],
-              "identifier": "gpl-3.0-db305a6e-7013-4ffa-0ad4-09f113582e67"
+              "identifier": "gpl_3_0-db305a6e-7013-4ffa-0ad4-09f113582e67"
             }
           ],
           "other_license_expression": null,
@@ -1579,7 +1579,7 @@
           "detection_log": [
             "unknown-reference-to-local-file"
           ],
-          "identifier": "gpl-3.0 AND gpl-2.0-plus AND free-unknown AND gpl-1.0-plus AND lgpl-3.0-plus AND lgpl-3.0 AND cc-by-sa-3.0 AND cc-by-sa-4.0 AND dco-1.1 AND gpl-2.0-da1317f5-da7a-5367-fc96-9a084eb2ac00"
+          "identifier": "gpl_3_0_and_gpl_2_0_plus_and_free_unknown_and_gpl_1_0_plus_and_lgpl_3_0_plus_and_lgpl_3_0_and_cc_by_sa_3_0_and_cc_by_sa_4_0_and_dco_1_1_and_gpl_2_0-7f4f0ff2-4f58-b290-f00d-9b2ef6eafd63"
         }
       ],
       "license_clues": [],
