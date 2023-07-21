@@ -13,15 +13,6 @@
       "detection_log": []
     },
     {
-      "identifier": "bsd_simplified-7517fbd6-3fa4-e9f9-2167-c65251d77656",
-      "license_expression": "bsd-simplified",
-      "detection_count": 1,
-      "detection_log": [
-        "license-clues",
-        "not-license-clues-as-more-detections-present"
-      ]
-    },
-    {
       "identifier": "bzip2_libbzip_2010-7158bcb2-a4d7-9815-17d2-1b1d0a6d5de2",
       "license_expression": "bzip2-libbzip-2010",
       "detection_count": 1,
@@ -1194,8 +1185,8 @@
     {
       "path": "python.LICENSE",
       "type": "file",
-      "detected_license_expression": "python AND (other-copyleft AND gpl-1.0-plus) AND (python AND python-cwi) AND bzip2-libbzip-2010 AND sleepycat AND bsd-simplified AND bsd-new AND openssl-ssleay AND openssl AND ssleay-windows AND tcl",
-      "detected_license_expression_spdx": "Python-2.0 AND (LicenseRef-scancode-other-copyleft AND GPL-1.0-or-later) AND (Python-2.0 AND LicenseRef-scancode-python-cwi) AND bzip2-1.0.6 AND Sleepycat AND BSD-2-Clause AND BSD-3-Clause AND OpenSSL AND LicenseRef-scancode-openssl AND LicenseRef-scancode-ssleay-windows AND TCL",
+      "detected_license_expression": "python AND (other-copyleft AND gpl-1.0-plus) AND (python AND python-cwi) AND bzip2-libbzip-2010 AND sleepycat AND bsd-new AND openssl-ssleay AND openssl AND ssleay-windows AND tcl",
+      "detected_license_expression_spdx": "Python-2.0 AND (LicenseRef-scancode-other-copyleft AND GPL-1.0-or-later) AND (Python-2.0 AND LicenseRef-scancode-python-cwi) AND bzip2-1.0.6 AND Sleepycat AND BSD-3-Clause AND OpenSSL AND LicenseRef-scancode-openssl AND LicenseRef-scancode-ssleay-windows AND TCL",
       "license_detections": [
         {
           "license_expression": "python",
@@ -1432,29 +1423,6 @@
           "identifier": "sleepycat-a7cd8833-ecc2-8ade-54d7-392befcce801"
         },
         {
-          "license_expression": "bsd-simplified",
-          "matches": [
-            {
-              "score": 33.71,
-              "start_line": 358,
-              "end_line": 363,
-              "matched_length": 59,
-              "match_coverage": 33.71,
-              "matcher": "3-seq",
-              "license_expression": "bsd-simplified",
-              "rule_identifier": "bsd-simplified_242.RULE",
-              "rule_relevance": 100,
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-simplified_242.RULE",
-              "matched_text": "INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF\n * SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS\n * INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN\n * CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)\n * ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF\n * THE POSSIBILITY OF SUCH DAMAGE."
-            }
-          ],
-          "detection_log": [
-            "license-clues",
-            "not-license-clues-as-more-detections-present"
-          ],
-          "identifier": "bsd_simplified-7517fbd6-3fa4-e9f9-2167-c65251d77656"
-        },
-        {
           "license_expression": "bsd-new",
           "matches": [
             {
@@ -1653,7 +1621,21 @@
           "identifier": "tcl-75d8de8c-9cf0-d604-4b99-e03436ebfcd3"
         }
       ],
-      "license_clues": [],
+      "license_clues": [
+        {
+          "score": 33.71,
+          "start_line": 358,
+          "end_line": 363,
+          "matched_length": 59,
+          "match_coverage": 33.71,
+          "matcher": "3-seq",
+          "license_expression": "bsd-simplified",
+          "rule_identifier": "bsd-simplified_242.RULE",
+          "rule_relevance": 100,
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-simplified_242.RULE",
+          "matched_text": "INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF\n * SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS\n * INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN\n * CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)\n * ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF\n * THE POSSIBILITY OF SUCH DAMAGE."
+        }
+      ],
       "percentage_of_license_text": 83.64,
       "scan_errors": []
     }

@@ -4825,15 +4825,6 @@
       "detection_log": []
     },
     {
-      "identifier": "lgpl_3_0-6b4a45da-85cc-8eb0-5613-be81d4efd6a5",
-      "license_expression": "lgpl-3.0",
-      "detection_count": 2,
-      "detection_log": [
-        "possible-false-positive",
-        "not-license-clues-as-more-detections-present"
-      ]
-    },
-    {
       "identifier": "lgpl_3_0_plus-4c8d95b2-1acf-7a81-473c-d8e70962288c",
       "license_expression": "lgpl-3.0-plus",
       "detection_count": 2,
@@ -4849,26 +4840,8 @@
       ]
     },
     {
-      "identifier": "mit_and_other_permissive-907b56d6-95b9-e85c-83c0-efd967c7e30a",
-      "license_expression": "mit AND other-permissive",
-      "detection_count": 2,
-      "detection_log": [
-        "possible-false-positive",
-        "not-license-clues-as-more-detections-present"
-      ]
-    },
-    {
       "identifier": "public_domain-1a6a4f2c-bd92-9942-920f-be3d0c2bbda6",
       "license_expression": "public-domain",
-      "detection_count": 2,
-      "detection_log": [
-        "possible-false-positive",
-        "not-license-clues-as-more-detections-present"
-      ]
-    },
-    {
-      "identifier": "public_domain_and_bsd_original_and_gpl_1_0_plus-ccb73883-974d-42eb-d572-39fa7bf22f4c",
-      "license_expression": "public-domain AND bsd-original AND gpl-1.0-plus",
       "detection_count": 2,
       "detection_log": [
         "possible-false-positive",
@@ -5377,8 +5350,8 @@
           "vcs_url": null,
           "copyright": null,
           "holder": null,
-          "declared_license_expression": "gpl-2.0-plus AND (gpl-2.0-plus AND free-unknown) AND bsd-new AND lgpl-3.0-plus AND public-domain AND mit AND bsd-original AND (gpl-2.0-plus AND gpl-3.0-plus AND lgpl-2.1-plus AND lgpl-3.0-plus AND bsd-new AND bsd-original AND mit AND public-domain AND other-permissive) AND bsd-simplified AND lgpl-3.0 AND (mit AND other-permissive) AND (public-domain AND bsd-original AND gpl-1.0-plus)",
-          "declared_license_expression_spdx": "GPL-2.0-or-later AND (GPL-2.0-or-later AND LicenseRef-scancode-free-unknown) AND BSD-3-Clause AND LGPL-3.0-or-later AND LicenseRef-scancode-public-domain AND MIT AND BSD-4-Clause AND (GPL-2.0-or-later AND GPL-3.0-or-later AND LGPL-2.1-or-later AND LGPL-3.0-or-later AND BSD-3-Clause AND BSD-4-Clause AND MIT AND LicenseRef-scancode-public-domain AND LicenseRef-scancode-other-permissive) AND BSD-2-Clause AND LGPL-3.0-only AND (MIT AND LicenseRef-scancode-other-permissive) AND (LicenseRef-scancode-public-domain AND BSD-4-Clause AND GPL-1.0-or-later)",
+          "declared_license_expression": "gpl-2.0-plus AND (gpl-2.0-plus AND free-unknown) AND bsd-new AND lgpl-3.0-plus AND public-domain AND mit AND bsd-original AND (gpl-2.0-plus AND gpl-3.0-plus AND lgpl-2.1-plus AND lgpl-3.0-plus AND bsd-new AND bsd-original AND mit AND public-domain AND other-permissive) AND bsd-simplified",
+          "declared_license_expression_spdx": "GPL-2.0-or-later AND (GPL-2.0-or-later AND LicenseRef-scancode-free-unknown) AND BSD-3-Clause AND LGPL-3.0-or-later AND LicenseRef-scancode-public-domain AND MIT AND BSD-4-Clause AND (GPL-2.0-or-later AND GPL-3.0-or-later AND LGPL-2.1-or-later AND LGPL-3.0-or-later AND BSD-3-Clause AND BSD-4-Clause AND MIT AND LicenseRef-scancode-public-domain AND LicenseRef-scancode-other-permissive) AND BSD-2-Clause",
           "license_detections": [
             {
               "license_expression": "gpl-2.0-plus",
@@ -6591,29 +6564,6 @@
               "identifier": "gpl_2_0_plus-227f50b1-f05e-5b3b-b107-ae1e2f56448b"
             },
             {
-              "license_expression": "lgpl-3.0",
-              "matches": [
-                {
-                  "score": 100.0,
-                  "start_line": 2925,
-                  "end_line": 2925,
-                  "matched_length": 3,
-                  "match_coverage": 100.0,
-                  "matcher": "2-aho",
-                  "license_expression": "lgpl-3.0",
-                  "rule_identifier": "lgpl-3.0_37.RULE",
-                  "rule_relevance": 100,
-                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-3.0_37.RULE",
-                  "matched_text": "License: LGPL (v3"
-                }
-              ],
-              "detection_log": [
-                "possible-false-positive",
-                "not-license-clues-as-more-detections-present"
-              ],
-              "identifier": "lgpl_3_0-6b4a45da-85cc-8eb0-5613-be81d4efd6a5"
-            },
-            {
               "license_expression": "gpl-2.0-plus",
               "matches": [
                 {
@@ -6852,91 +6802,6 @@
               ],
               "detection_log": [],
               "identifier": "gpl_2_0_plus-227f50b1-f05e-5b3b-b107-ae1e2f56448b"
-            },
-            {
-              "license_expression": "mit AND other-permissive",
-              "matches": [
-                {
-                  "score": 90.0,
-                  "start_line": 3010,
-                  "end_line": 3010,
-                  "matched_length": 3,
-                  "match_coverage": 100.0,
-                  "matcher": "2-aho",
-                  "license_expression": "mit",
-                  "rule_identifier": "mit_221.RULE",
-                  "rule_relevance": 90,
-                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_221.RULE",
-                  "matched_text": "License: MIT/X11 ("
-                },
-                {
-                  "score": 100.0,
-                  "start_line": 3010,
-                  "end_line": 3010,
-                  "matched_length": 2,
-                  "match_coverage": 100.0,
-                  "matcher": "2-aho",
-                  "license_expression": "other-permissive",
-                  "rule_identifier": "other-permissive_16.RULE",
-                  "rule_relevance": 100,
-                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/other-permissive_16.RULE",
-                  "matched_text": "BSD like)"
-                }
-              ],
-              "detection_log": [
-                "possible-false-positive",
-                "not-license-clues-as-more-detections-present"
-              ],
-              "identifier": "mit_and_other_permissive-907b56d6-95b9-e85c-83c0-efd967c7e30a"
-            },
-            {
-              "license_expression": "public-domain AND bsd-original AND gpl-1.0-plus",
-              "matches": [
-                {
-                  "score": 99.0,
-                  "start_line": 3016,
-                  "end_line": 3016,
-                  "matched_length": 3,
-                  "match_coverage": 100.0,
-                  "matcher": "2-aho",
-                  "license_expression": "public-domain",
-                  "rule_identifier": "pypi_public_domain.RULE",
-                  "rule_relevance": 99,
-                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/pypi_public_domain.RULE",
-                  "matched_text": "License: Public domain"
-                },
-                {
-                  "score": 100.0,
-                  "start_line": 3016,
-                  "end_line": 3016,
-                  "matched_length": 3,
-                  "match_coverage": 100.0,
-                  "matcher": "2-aho",
-                  "license_expression": "bsd-original",
-                  "rule_identifier": "spdx_license_id_bsd-4-clause_for_bsd-original.RULE",
-                  "rule_relevance": 100,
-                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/spdx_license_id_bsd-4-clause_for_bsd-original.RULE",
-                  "matched_text": "BSD (4 clause)"
-                },
-                {
-                  "score": 50.0,
-                  "start_line": 3016,
-                  "end_line": 3016,
-                  "matched_length": 1,
-                  "match_coverage": 100.0,
-                  "matcher": "2-aho",
-                  "license_expression": "gpl-1.0-plus",
-                  "rule_identifier": "gpl_bare_word_only.RULE",
-                  "rule_relevance": 50,
-                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl_bare_word_only.RULE",
-                  "matched_text": "GPL"
-                }
-              ],
-              "detection_log": [
-                "possible-false-positive",
-                "not-license-clues-as-more-detections-present"
-              ],
-              "identifier": "public_domain_and_bsd_original_and_gpl_1_0_plus-ccb73883-974d-42eb-d572-39fa7bf22f4c"
             }
           ],
           "other_license_expression": null,
@@ -12629,8 +12494,8 @@
         "pkg:deb/fusiondirectory-theme-oxygen?architecture=all&uuid=fixed-uid-done-for-testing-5642512d1758",
         "pkg:deb/fusiondirectory-webservice-shell?architecture=all&uuid=fixed-uid-done-for-testing-5642512d1758"
       ],
-      "detected_license_expression": "gpl-2.0-plus AND bsd-simplified AND lgpl-3.0 AND (mit AND other-permissive) AND (public-domain AND bsd-original AND gpl-1.0-plus)",
-      "detected_license_expression_spdx": "GPL-2.0-or-later AND BSD-2-Clause AND LGPL-3.0-only AND (MIT AND LicenseRef-scancode-other-permissive) AND (LicenseRef-scancode-public-domain AND BSD-4-Clause AND GPL-1.0-or-later)",
+      "detected_license_expression": "gpl-2.0-plus AND bsd-simplified",
+      "detected_license_expression_spdx": "GPL-2.0-or-later AND BSD-2-Clause",
       "license_detections": [
         {
           "license_expression": "gpl-2.0-plus",
@@ -12851,29 +12716,6 @@
           ],
           "detection_log": [],
           "identifier": "gpl_2_0_plus-227f50b1-f05e-5b3b-b107-ae1e2f56448b"
-        },
-        {
-          "license_expression": "lgpl-3.0",
-          "matches": [
-            {
-              "score": 100.0,
-              "start_line": 2925,
-              "end_line": 2925,
-              "matched_length": 3,
-              "match_coverage": 100.0,
-              "matcher": "2-aho",
-              "license_expression": "lgpl-3.0",
-              "rule_identifier": "lgpl-3.0_37.RULE",
-              "rule_relevance": 100,
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-3.0_37.RULE",
-              "matched_text": "License: LGPL (v3"
-            }
-          ],
-          "detection_log": [
-            "possible-false-positive",
-            "not-license-clues-as-more-detections-present"
-          ],
-          "identifier": "lgpl_3_0-6b4a45da-85cc-8eb0-5613-be81d4efd6a5"
         },
         {
           "license_expression": "gpl-2.0-plus",
@@ -13114,94 +12956,88 @@
           ],
           "detection_log": [],
           "identifier": "gpl_2_0_plus-227f50b1-f05e-5b3b-b107-ae1e2f56448b"
-        },
-        {
-          "license_expression": "mit AND other-permissive",
-          "matches": [
-            {
-              "score": 90.0,
-              "start_line": 3010,
-              "end_line": 3010,
-              "matched_length": 3,
-              "match_coverage": 100.0,
-              "matcher": "2-aho",
-              "license_expression": "mit",
-              "rule_identifier": "mit_221.RULE",
-              "rule_relevance": 90,
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_221.RULE",
-              "matched_text": "License: MIT/X11 ("
-            },
-            {
-              "score": 100.0,
-              "start_line": 3010,
-              "end_line": 3010,
-              "matched_length": 2,
-              "match_coverage": 100.0,
-              "matcher": "2-aho",
-              "license_expression": "other-permissive",
-              "rule_identifier": "other-permissive_16.RULE",
-              "rule_relevance": 100,
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/other-permissive_16.RULE",
-              "matched_text": "BSD like)"
-            }
-          ],
-          "detection_log": [
-            "possible-false-positive",
-            "not-license-clues-as-more-detections-present"
-          ],
-          "identifier": "mit_and_other_permissive-907b56d6-95b9-e85c-83c0-efd967c7e30a"
-        },
-        {
-          "license_expression": "public-domain AND bsd-original AND gpl-1.0-plus",
-          "matches": [
-            {
-              "score": 99.0,
-              "start_line": 3016,
-              "end_line": 3016,
-              "matched_length": 3,
-              "match_coverage": 100.0,
-              "matcher": "2-aho",
-              "license_expression": "public-domain",
-              "rule_identifier": "pypi_public_domain.RULE",
-              "rule_relevance": 99,
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/pypi_public_domain.RULE",
-              "matched_text": "License: Public domain"
-            },
-            {
-              "score": 100.0,
-              "start_line": 3016,
-              "end_line": 3016,
-              "matched_length": 3,
-              "match_coverage": 100.0,
-              "matcher": "2-aho",
-              "license_expression": "bsd-original",
-              "rule_identifier": "spdx_license_id_bsd-4-clause_for_bsd-original.RULE",
-              "rule_relevance": 100,
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/spdx_license_id_bsd-4-clause_for_bsd-original.RULE",
-              "matched_text": "BSD (4 clause)"
-            },
-            {
-              "score": 50.0,
-              "start_line": 3016,
-              "end_line": 3016,
-              "matched_length": 1,
-              "match_coverage": 100.0,
-              "matcher": "2-aho",
-              "license_expression": "gpl-1.0-plus",
-              "rule_identifier": "gpl_bare_word_only.RULE",
-              "rule_relevance": 50,
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl_bare_word_only.RULE",
-              "matched_text": "GPL"
-            }
-          ],
-          "detection_log": [
-            "possible-false-positive",
-            "not-license-clues-as-more-detections-present"
-          ],
-          "identifier": "public_domain_and_bsd_original_and_gpl_1_0_plus-ccb73883-974d-42eb-d572-39fa7bf22f4c"
         }
       ],
-      "license_clues": [],
+      "license_clues": [
+        {
+          "score": 100.0,
+          "start_line": 2925,
+          "end_line": 2925,
+          "matched_length": 3,
+          "match_coverage": 100.0,
+          "matcher": "2-aho",
+          "license_expression": "lgpl-3.0",
+          "rule_identifier": "lgpl-3.0_37.RULE",
+          "rule_relevance": 100,
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-3.0_37.RULE",
+          "matched_text": "License: LGPL (v3"
+        },
+        {
+          "score": 90.0,
+          "start_line": 3010,
+          "end_line": 3010,
+          "matched_length": 3,
+          "match_coverage": 100.0,
+          "matcher": "2-aho",
+          "license_expression": "mit",
+          "rule_identifier": "mit_221.RULE",
+          "rule_relevance": 90,
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_221.RULE",
+          "matched_text": "License: MIT/X11 ("
+        },
+        {
+          "score": 100.0,
+          "start_line": 3010,
+          "end_line": 3010,
+          "matched_length": 2,
+          "match_coverage": 100.0,
+          "matcher": "2-aho",
+          "license_expression": "other-permissive",
+          "rule_identifier": "other-permissive_16.RULE",
+          "rule_relevance": 100,
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/other-permissive_16.RULE",
+          "matched_text": "BSD like)"
+        },
+        {
+          "score": 99.0,
+          "start_line": 3016,
+          "end_line": 3016,
+          "matched_length": 3,
+          "match_coverage": 100.0,
+          "matcher": "2-aho",
+          "license_expression": "public-domain",
+          "rule_identifier": "pypi_public_domain.RULE",
+          "rule_relevance": 99,
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/pypi_public_domain.RULE",
+          "matched_text": "License: Public domain"
+        },
+        {
+          "score": 100.0,
+          "start_line": 3016,
+          "end_line": 3016,
+          "matched_length": 3,
+          "match_coverage": 100.0,
+          "matcher": "2-aho",
+          "license_expression": "bsd-original",
+          "rule_identifier": "spdx_license_id_bsd-4-clause_for_bsd-original.RULE",
+          "rule_relevance": 100,
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/spdx_license_id_bsd-4-clause_for_bsd-original.RULE",
+          "matched_text": "BSD (4 clause)"
+        },
+        {
+          "score": 50.0,
+          "start_line": 3016,
+          "end_line": 3016,
+          "matched_length": 1,
+          "match_coverage": 100.0,
+          "matcher": "2-aho",
+          "license_expression": "gpl-1.0-plus",
+          "rule_identifier": "gpl_bare_word_only.RULE",
+          "rule_relevance": 50,
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl_bare_word_only.RULE",
+          "matched_text": "GPL"
+        }
+      ],
       "percentage_of_license_text": 0.66,
       "scan_errors": []
     },
