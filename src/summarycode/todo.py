@@ -327,6 +327,11 @@ class ReviewComments(Enum):
         "rule text is matched, but some unknown extra words have been inserted in "
         "the text, which needs to be reviewed. "
     )
+    LICENSE_CLUES = (
+        "Text which might contain useful clues about license detections, but cannot "
+        "be considered as a proper license detection. Additional review is needed "
+        "to determine if this license clue is useful."
+    )
     UNKNOWN_MATCH = (
         "The license detection is inconclusive, as the license matches have "
         "been matched to rules having unknown as their license key, and these "
@@ -379,6 +384,9 @@ def get_review_comments(detection_log):
 
     if LicenseDetectionCategory.EXTRA_WORDS.value in detection_log:
         review_comments[LicenseDetectionCategory.EXTRA_WORDS.value] = ReviewComments.EXTRA_WORDS.value
+
+    if LicenseDetectionCategory.LICENSE_CLUES.value in detection_log:
+        review_comments[LicenseDetectionCategory.LICENSE_CLUES.value] = ReviewComments.LICENSE_CLUES.value
 
     if LicenseDetectionCategory.UNKNOWN_MATCH.value in detection_log:
         review_comments[LicenseDetectionCategory.UNKNOWN_MATCH.value] = ReviewComments.UNKNOWN_MATCH.value

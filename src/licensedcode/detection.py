@@ -1256,6 +1256,16 @@ def filter_license_references(license_match_objects):
         return filtered_matches
 
 
+def filter_license_intros_and_references(license_match_objects):
+    """
+    Return a filtered ``license_matches`` list of LicenseMatch objects removing
+    matches which had references to local files with licenses and spurious matches
+    to license introduction statements.
+    """
+    filtered_license_match_objects = filter_license_intros(license_match_objects)
+    return filter_license_references(filtered_license_match_objects)
+
+
 def has_references_to_local_files(license_matches):
     """
     Return True if any of the matched Rule for the ``license_matches`` has a
@@ -1319,37 +1329,37 @@ def get_detected_license_expression(
         if analysis == DetectionCategory.UNKNOWN_REFERENCE_IN_FILE_TO_PACKAGE.value:
             if TRACE_ANALYSIS:
                 logger_debug(f'analysis {DetectionCategory.UNKNOWN_REFERENCE_IN_FILE_TO_PACKAGE.value}')
-            matches_for_expression = filter_license_references(license_matches)
+            matches_for_expression = filter_license_intros_and_references(license_matches)
             detection_log.append(DetectionRule.UNKNOWN_REFERENCE_IN_FILE_TO_PACKAGE.value)
 
         elif analysis == DetectionCategory.UNKNOWN_REFERENCE_IN_FILE_TO_NONEXISTENT_PACKAGE.value:
             if TRACE_ANALYSIS:
                 logger_debug(f'analysis {DetectionCategory.UNKNOWN_REFERENCE_IN_FILE_TO_NONEXISTENT_PACKAGE.value}')
-            matches_for_expression = filter_license_references(license_matches)
+            matches_for_expression = filter_license_intros_and_references(license_matches)
             detection_log.append(DetectionRule.UNKNOWN_REFERENCE_IN_FILE_TO_NONEXISTENT_PACKAGE.value)
 
         elif analysis == DetectionCategory.UNKNOWN_FILE_REFERENCE_LOCAL.value:
             if TRACE_ANALYSIS:
                 logger_debug(f'analysis {DetectionCategory.UNKNOWN_FILE_REFERENCE_LOCAL.value}')
-            matches_for_expression = filter_license_references(license_matches)
+            matches_for_expression = filter_license_intros_and_references(license_matches)
             detection_log.append(DetectionRule.UNKNOWN_REFERENCE_TO_LOCAL_FILE.value)
 
         elif analysis == DetectionCategory.PACKAGE_UNKNOWN_FILE_REFERENCE_LOCAL.value:
             if TRACE_ANALYSIS:
                 logger_debug(f'analysis {DetectionCategory.PACKAGE_UNKNOWN_FILE_REFERENCE_LOCAL.value}')
-            matches_for_expression = filter_license_references(license_matches)
+            matches_for_expression = filter_license_intros_and_references(license_matches)
             detection_log.append(DetectionRule.PACKAGE_UNKNOWN_REFERENCE_TO_LOCAL_FILE.value)
 
         elif analysis == DetectionCategory.PACKAGE_ADD_FROM_SIBLING_FILE.value:
             if TRACE_ANALYSIS:
                 logger_debug(f'analysis {DetectionCategory.PACKAGE_ADD_FROM_SIBLING_FILE.value}')
-            matches_for_expression = filter_license_references(license_matches)
+            matches_for_expression = filter_license_intros_and_references(license_matches)
             detection_log.append(DetectionRule.PACKAGE_ADD_FROM_SIBLING_FILE.value)
 
         elif analysis == DetectionCategory.PACKAGE_ADD_FROM_FILE.value:
             if TRACE_ANALYSIS:
                 logger_debug(f'analysis {DetectionCategory.PACKAGE_ADD_FROM_FILE.value}')
-            matches_for_expression = filter_license_references(license_matches)
+            matches_for_expression = filter_license_intros_and_references(license_matches)
             detection_log.append(DetectionRule.PACKAGE_ADD_FROM_FILE.value)
 
     elif analysis == DetectionCategory.UNKNOWN_MATCH.value:
@@ -1495,6 +1505,9 @@ def get_ambiguous_license_detections_by_type(unique_license_detections):
 
         elif is_undetected_license_matches(license_matches=detection.matches):
             ambi_license_detections[DetectionCategory.UNDETECTED_LICENSE.value] = detection
+        
+        elif has_correct_license_clue_matches(license_matches=detection.matches):
+            ambi_license_detections[DetectionCategory.LICENSE_CLUES.value] = detection
 
         elif "unknown" in detection.license_expression:
             if has_unknown_matches(license_matches=detection.matches):
