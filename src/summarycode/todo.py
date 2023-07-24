@@ -213,8 +213,6 @@ def get_package_identifier(package_data, file_path):
 
 
 def get_unknown_purl(package_type):
-    if not package_type:
-        package_type = "unknown"
     purl = PackageURL(type=package_type, name="unknown")
     return purl.to_string()
 
@@ -337,7 +335,7 @@ class ReviewComments(Enum):
         "been matched to rules having unknown as their license key, and these "
         "needs to be reviewed."
     )
-    MATCH_FRAGMENTS = (
+    LOW_QUALITY_MATCH_FRAGMENTS = (
         "Fragments of license text were detected which are not proper license detections "
         "and likely has misleading license expression, but this has some clues about licenses, "
         "which needs review."
@@ -391,8 +389,8 @@ def get_review_comments(detection_log):
     if LicenseDetectionCategory.UNKNOWN_MATCH.value in detection_log:
         review_comments[LicenseDetectionCategory.UNKNOWN_MATCH.value] = ReviewComments.UNKNOWN_MATCH.value
 
-    if LicenseDetectionCategory.MATCH_FRAGMENTS.value in detection_log:
-        review_comments[LicenseDetectionCategory.MATCH_FRAGMENTS.value] = ReviewComments.MATCH_FRAGMENTS.value
+    if LicenseDetectionCategory.LOW_QUALITY_MATCH_FRAGMENTS.value in detection_log:
+        review_comments[LicenseDetectionCategory.LOW_QUALITY_MATCH_FRAGMENTS.value] = ReviewComments.LOW_QUALITY_MATCH_FRAGMENTS.value
     
     if LicenseDetectionCategory.LOW_RELEVANCE.value in detection_log:
         review_comments[LicenseDetectionCategory.LOW_RELEVANCE.value] = ReviewComments.LOW_RELEVANCE.value

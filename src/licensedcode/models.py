@@ -1193,7 +1193,7 @@ def load_rules(
     rules_data_dir=rules_data_dir,
     with_checks=True,
     is_builtin=True,
-    ignore_deprecated=True,
+    with_depreacted=False,
 ):
     """
     Return an iterable of rules loaded from rule files in ``rules_data_dir``.
@@ -1217,7 +1217,7 @@ def load_rules(
 
             try:
                 rule = Rule.from_file(rule_file=rule_file)
-                if rule.is_deprecated and ignore_deprecated:
+                if not with_depreacted and rule.is_deprecated:
                     continue 
                 else:
                     yield rule

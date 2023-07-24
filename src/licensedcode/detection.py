@@ -106,11 +106,10 @@ class DetectionCategory(Enum):
     EXTRA_WORDS = 'extra-words'
     UNKNOWN_MATCH = 'unknown-match'
     LICENSE_CLUES = 'license-clues'
-    LOW_QUALITY_MATCHES = 'license-clues'
+    LOW_QUALITY_MATCH_FRAGMENTS = 'low-quality-matches'
     IMPERFECT_COVERAGE = 'imperfect-match-coverage'
     FALSE_POSITVE = 'possible-false-positive'
     UNDETECTED_LICENSE = 'undetected-license'
-    MATCH_FRAGMENTS = 'match-fragments'
     LOW_RELEVANCE = 'low-relevance'
 
 
@@ -124,6 +123,7 @@ class DetectionRule(Enum):
     """
     UNKNOWN_MATCH = 'unknown-match'
     LICENSE_CLUES = 'license-clues'
+    LOW_QUALITY_MATCH_FRAGMENTS = 'low-quality-matches'
     FALSE_POSITIVE = 'possible-false-positive'
     NOT_LICENSE_CLUES = 'not-license-clues-as-more-detections-present'
     UNKNOWN_REFERENCE_TO_LOCAL_FILE = 'unknown-reference-to-local-file'
@@ -1374,12 +1374,12 @@ def get_detected_license_expression(
         detection_log.append(DetectionRule.LICENSE_CLUES.value)
         return detection_log, combined_expression
 
-    elif analysis == DetectionCategory.LOW_QUALITY_MATCHES.value:
+    elif analysis == DetectionCategory.LOW_QUALITY_MATCH_FRAGMENTS.value:
         if TRACE_ANALYSIS:
             logger_debug(f'analysis {DetectionCategory.LICENSE_CLUES.value}')
         # TODO: we are temporarily returning these as license clues, and not
         # in detections but ideally we should return synthetic unknowns for these
-        detection_log.append(DetectionRule.LOW_QUALITY_MATCHES.value)
+        detection_log.append(DetectionRule.LOW_QUALITY_MATCH_FRAGMENTS.value)
         return detection_log, combined_expression
 
     else:
@@ -1501,7 +1501,7 @@ def get_ambiguous_license_detections_by_type(unique_license_detections):
 
     for detection in unique_license_detections:
         if not detection.license_expression:
-            ambi_license_detections[DetectionCategory.MATCH_FRAGMENTS.value] = detection
+            ambi_license_detections[DetectionCategory.LOW_QUALITY_MATCH_FRAGMENTS.value] = detection
 
         elif is_undetected_license_matches(license_matches=detection.matches):
             ambi_license_detections[DetectionCategory.UNDETECTED_LICENSE.value] = detection
@@ -1567,7 +1567,7 @@ def analyze_detection(license_matches, package_license=False):
         return DetectionCategory.UNKNOWN_MATCH.value
 
     elif not package_license and is_low_quality_matches(license_matches=license_matches):
-        return DetectionCategory.LOW_QUALITY_MATCHES.value
+        return DetectionCategory.LOW_QUALITY_MATCH_FRAGMENTS.value
 
     # Case where at least one of the matches have `match_coverage`
     # below IMPERFECT_MATCH_COVERAGE_THR

@@ -23,12 +23,6 @@ parsers in scancode-toolkit during documentation builds.
      - Datasource ID
      - Primary Language
      - Documentation URL
-   * - JAR Java Archive
-     - ``*.jar``
-     - None
-     - ``java_jar``
-     - None
-     - https://en.wikipedia.org/wiki/JAR_(file_format)
    * - AboutCode ABOUT file
      - ``*.ABOUT``
      - ``about``
@@ -306,13 +300,13 @@ parsers in scancode-toolkit during documentation builds.
      - ``debian_source_metadata_tarball``
      - None
      - https://manpages.debian.org/unstable/dpkg-dev/deb.5.en.html
-   * - None
+   * - macOS disk image file
      - ``*.dmg``
        ``*.sparseimage``
      - ``dmg``
      - ``apple_dmg``
      - None
-     - None
+     - https://en.wikipedia.org/wiki/Apple_Disk_Image
    * - Java EAR application.xml
      - ``*/META-INF/application.xml``
      - ``ear``
@@ -437,6 +431,12 @@ parsers in scancode-toolkit during documentation builds.
      - ``ant_ivy_xml``
      - Java
      - https://ant.apache.org/ivy/history/latest-milestone/ivyfile.html
+   * - JAR Java Archive
+     - ``*.jar``
+     - ``jar``
+     - ``java_jar``
+     - None
+     - https://en.wikipedia.org/wiki/JAR_(file_format)
    * - Java JAR MANIFEST.MF
      - ``*/META-INF/MANIFEST.MF``
      - ``jar``
@@ -555,6 +555,12 @@ parsers in scancode-toolkit during documentation builds.
      - ``opam_file``
      - Ocaml
      - https://opam.ocaml.org/doc/Manual.html#Common-file-format
+   * - Java OSGi MANIFEST.MF
+     - None
+     - ``osgi``
+     - ``java_osgi_manifest``
+     - Java
+     - https://docs.oracle.com/javase/tutorial/deployment/jar/manifestindex.html
    * - Dart pubspec lockfile
      - ``*pubspec.lock``
      - ``pubspec``

@@ -153,6 +153,16 @@ class TestModels(PackageTester):
             ), f'Duplicated datasource_id: {pdh!r} with {seen[pdhid]!r}'
             seen[pdh.datasource_id] = pdh
 
+    def test_package_data_handlers_have_package_type(self):
+        """
+        Check that we do not have two DataFileHandlers with the same
+        datasource_id and that all have one.
+        """
+        for pdh in ALL_DATAFILE_HANDLERS:
+            pdh_type = pdh.default_package_type
+            assert pdh_type
+
+
     def test_package_data_file_patterns_are_tuples(self):
         """
         Check that all file patterns are tuples, as if they are
