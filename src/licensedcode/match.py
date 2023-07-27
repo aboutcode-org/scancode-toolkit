@@ -796,10 +796,9 @@ class LicenseMatch(object):
         result['rule_url'] = self.rule.rule_url
 
         if include_text:
+           result['matched_text'] = matched_text
            if license_text_diagnostics:
               result['matched_text_diagnostics'] = matched_text_diagnostics
-           else:
-              result['matched_text'] = matched_text
         return result
 
     def get_highlighted_text(self, trace=TRACE_HIGHLIGHTED_TEXT):
