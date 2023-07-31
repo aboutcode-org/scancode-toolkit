@@ -15,7 +15,10 @@ from collections import deque
 from functools import partial
 from itertools import chain
 
-from intbitset import intbitset
+try:
+    from intbitset import intbitset
+except ImportError:
+    from bitcode.bitcode import intbitset
 
 import typecode
 

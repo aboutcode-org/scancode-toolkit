@@ -17,7 +17,10 @@ import os
 import sys
 from time import time
 
-from intbitset import intbitset
+try:
+    from intbitset import intbitset
+except ImportError:
+    from bitcode.bitcode import intbitset
 
 from licensedcode import SMALL_RULE
 from licensedcode import TINY_RULE
