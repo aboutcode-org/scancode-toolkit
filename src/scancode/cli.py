@@ -546,6 +546,7 @@ def run_scan(
         msg = 'At least one input path is required.'
         raise ScancodeError(msg)
 
+    included_paths = None
     if not isinstance(input, (list, tuple)):
         if not isinstance(input, str):
             msg = 'Unknown <input> format: "{}".'.format(repr(input))
@@ -594,9 +595,9 @@ def run_scan(
         # the input list of paths
         included_paths = [as_posixpath(path).rstrip('/') for path in input]
         # FIXME: this is a hack as this "include" is from an external plugin!!!
-        include = list(requested_options.get('include', []) or [])
-        include.extend(included_paths)
-        requested_options['include'] = include
+        #include = list(requested_options.get('include', []) or [])
+        #include.extend(included_paths)
+        #requested_options['include'] = include
 
         # ... and use the common prefix as our new input
         input = common_prefix  # NOQA
@@ -616,6 +617,7 @@ def run_scan(
         test_mode=test_mode,
         test_slow_mode=test_slow_mode,
         test_error_mode=test_error_mode,
+        paths=included_paths,
     )
 
     requested_options.update(standard_options)
