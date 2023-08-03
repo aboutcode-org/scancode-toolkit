@@ -746,7 +746,7 @@ Package type:  rpm
   documentation URL: https://fedoraproject.org/wiki/Changes/Sqlite_Rpmdb
   primary language:  None
   description:       RPM installed package SQLite database
-  path_patterns:    '*var/lib/rpm/rpmdb.sqlite'
+  path_patterns:    '*rpm/rpmdb.sqlite'
 --------------------------------------------
 Package type:  rpm
   datasource_id:     rpm_spefile
