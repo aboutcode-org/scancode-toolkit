@@ -18,13 +18,12 @@ Various package data file formats to implment.
 # yet the purpose and semantics are rather different here
 
 # TODO: parse me!!!
-# TODO: add missing URLs and descriptions
-
 
 class JavaJarHandler(models.NonAssemblableDatafileHandler):
     datasource_id = 'java_jar'
     # NOTE: there are a few rare cases where a .zip can be a JAR.
     path_patterns = ('*.jar',)
+    default_package_type = 'jar'
     filetypes = ('zip archive', 'java archive',)
     description = 'JAR Java Archive'
     documentation_url = 'https://en.wikipedia.org/wiki/JAR_(file_format)'
@@ -270,8 +269,9 @@ class AppleDmgHandler(models.NonAssemblableDatafileHandler):
     datasource_id = 'apple_dmg'
     default_package_type = 'dmg'
     path_patterns = ('*.dmg', '*.sparseimage',)
-    description = ''
-    documentation_url = ''
+    description = 'macOS disk image file'
+    # See also https://en.wikipedia.org/wiki/Sparse_image
+    documentation_url = 'https://en.wikipedia.org/wiki/Apple_Disk_Image'
 
 
 class IsoImageHandler(models.NonAssemblableDatafileHandler):

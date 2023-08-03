@@ -1,0 +1,1028 @@
+{
+  "summary": {
+    "declared_license_expression": "mit OR gpl-2.0",
+    "license_clarity_score": {
+      "score": 90,
+      "declared_license": true,
+      "identification_precision": true,
+      "has_license_text": true,
+      "declared_copyrights": false,
+      "conflicting_license_categories": false,
+      "ambiguous_compound_licensing": false
+    },
+    "declared_holder": "",
+    "primary_language": null,
+    "other_license_expressions": [
+      {
+        "value": null,
+        "count": 1
+      },
+      {
+        "value": "(mit OR gpl-2.0-plus) AND gpl-2.0",
+        "count": 1
+      }
+    ],
+    "other_holders": [],
+    "other_languages": []
+  },
+  "packages": [
+    {
+      "type": "bower",
+      "namespace": null,
+      "name": "jquery-form",
+      "version": "3.51.0",
+      "qualifiers": {},
+      "subpath": null,
+      "primary_language": null,
+      "description": null,
+      "release_date": null,
+      "parties": [],
+      "keywords": [],
+      "homepage_url": null,
+      "download_url": null,
+      "size": null,
+      "sha1": null,
+      "md5": null,
+      "sha256": null,
+      "sha512": null,
+      "bug_tracking_url": null,
+      "code_view_url": null,
+      "vcs_url": null,
+      "copyright": null,
+      "holder": null,
+      "declared_license_expression": "mit OR gpl-2.0",
+      "declared_license_expression_spdx": "MIT OR GPL-2.0-only",
+      "license_detections": [
+        {
+          "license_expression": "mit OR gpl-2.0",
+          "matches": [
+            {
+              "score": 94.81,
+              "start_line": 12,
+              "end_line": 21,
+              "matched_length": 128,
+              "match_coverage": 94.81,
+              "matcher": "3-seq",
+              "license_expression": "mit OR gpl-2.0",
+              "rule_identifier": "mit_or_gpl-2.0_68.RULE",
+              "rule_relevance": 100,
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_or_gpl-2.0_68.RULE",
+              "matched_text": "are dual licensed under the MIT and GPL licenses:\n\n* [MIT](http://malsup.github.com/mit-license.txt)\n* [GPL](http://malsup.github.com/gpl-license-v2.txt)\n\nYou may use either license.  The MIT License is recommended for most projects because it is simple and easy to understand and it places almost no restrictions on what you can do with the plugin.\n\nIf the GPL suits your project better you are also free to use the plugin under that license.\n\nYou don't have to do anything special to choose one license or the other and you don't have to notify anyone which license you are using. You are free to use the jQuery Form Plugin in commercial projects as long as the copyright header is left intact."
+            }
+          ],
+          "detection_log": [],
+          "identifier": "mit_or_gpl_2_0-562fb174-abc9-da75-d29f-5bc4f1d9c56f"
+        }
+      ],
+      "other_license_expression": null,
+      "other_license_expression_spdx": null,
+      "other_license_detections": [],
+      "extracted_license_statement": null,
+      "notice_text": null,
+      "source_packages": [],
+      "extra_data": {},
+      "repository_homepage_url": null,
+      "repository_download_url": null,
+      "api_data_url": null,
+      "package_uid": "pkg:bower/jquery-form@3.51.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_paths": [
+        "bower.json"
+      ],
+      "datasource_ids": [
+        "bower_json"
+      ],
+      "purl": "pkg:bower/jquery-form@3.51.0"
+    },
+    {
+      "type": "composer",
+      "namespace": "malsup",
+      "name": "form",
+      "version": null,
+      "qualifiers": {},
+      "subpath": null,
+      "primary_language": "PHP",
+      "description": null,
+      "release_date": null,
+      "parties": [
+        {
+          "type": "person",
+          "role": "author",
+          "name": "M. Alsup",
+          "email": null,
+          "url": "http://jquery.malsup.com"
+        },
+        {
+          "type": "person",
+          "role": "vendor",
+          "name": "malsup",
+          "email": null,
+          "url": null
+        }
+      ],
+      "keywords": [],
+      "homepage_url": "http://jquery.malsup.com/form/",
+      "download_url": null,
+      "size": null,
+      "sha1": null,
+      "md5": null,
+      "sha256": null,
+      "sha512": null,
+      "bug_tracking_url": "https://github.com/malsup/form/issues",
+      "code_view_url": null,
+      "vcs_url": null,
+      "copyright": null,
+      "holder": null,
+      "declared_license_expression": "mit OR gpl-2.0",
+      "declared_license_expression_spdx": "MIT OR GPL-2.0-only",
+      "license_detections": [
+        {
+          "license_expression": "mit",
+          "matches": [
+            {
+              "score": 100.0,
+              "start_line": 1,
+              "end_line": 1,
+              "matched_length": 1,
+              "match_coverage": 100.0,
+              "matcher": "1-spdx-id",
+              "license_expression": "mit",
+              "rule_identifier": "spdx-license-identifier-mit-5da48780aba670b0860c46d899ed42a0f243ff06",
+              "rule_relevance": 100,
+              "rule_url": null,
+              "matched_text": "MIT"
+            }
+          ],
+          "identifier": "mit-a822f434-d61f-f2b1-c792-8b8cb9e7b9bf"
+        },
+        {
+          "license_expression": "gpl-2.0",
+          "matches": [
+            {
+              "score": 100.0,
+              "start_line": 1,
+              "end_line": 1,
+              "matched_length": 3,
+              "match_coverage": 100.0,
+              "matcher": "1-hash",
+              "license_expression": "gpl-2.0",
+              "rule_identifier": "gpl-2.0_52.RULE",
+              "rule_relevance": 100,
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0_52.RULE",
+              "matched_text": "GPL-2.0"
+            }
+          ],
+          "identifier": "gpl_2_0-d7f02717-086e-f71b-962e-b18cc23b1827"
+        }
+      ],
+      "other_license_expression": null,
+      "other_license_expression_spdx": null,
+      "other_license_detections": [],
+      "extracted_license_statement": "- MIT\n- GPL-2.0\n",
+      "notice_text": null,
+      "source_packages": [],
+      "extra_data": {},
+      "repository_homepage_url": "https://packagist.org/packages/malsup/form",
+      "repository_download_url": null,
+      "api_data_url": "https://packagist.org/p/packages/malsup/form.json",
+      "package_uid": "pkg:composer/malsup/form?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_paths": [
+        "composer.json"
+      ],
+      "datasource_ids": [
+        "php_composer_json"
+      ],
+      "purl": "pkg:composer/malsup/form"
+    },
+    {
+      "type": "npm",
+      "namespace": "@liferay",
+      "name": "jquery-form",
+      "version": "3.51.0-liferay.1",
+      "qualifiers": {},
+      "subpath": null,
+      "primary_language": "JavaScript",
+      "description": "A simple way to AJAX-ify any form on your page; with file upload and progress support.",
+      "release_date": null,
+      "parties": [
+        {
+          "type": "person",
+          "role": "author",
+          "name": "M. Alsup",
+          "email": null,
+          "url": "http://jquery.malsup.com"
+        }
+      ],
+      "keywords": [
+        "form",
+        "upload",
+        "ajax"
+      ],
+      "homepage_url": "http://jquery.malsup.com/form/",
+      "download_url": "https://registry.npmjs.org/@liferay/jquery-form/-/jquery-form-3.51.0-liferay.1.tgz",
+      "size": null,
+      "sha1": null,
+      "md5": null,
+      "sha256": null,
+      "sha512": null,
+      "bug_tracking_url": "https://github.com/malsup/form/issues",
+      "code_view_url": null,
+      "vcs_url": "git+https://github.com/liferay/liferay-frontend-projects.git",
+      "copyright": null,
+      "holder": null,
+      "declared_license_expression": "mit AND gpl-1.0-plus",
+      "declared_license_expression_spdx": "MIT AND GPL-1.0-or-later",
+      "license_detections": [
+        {
+          "license_expression": "mit",
+          "matches": [
+            {
+              "score": 100.0,
+              "start_line": 1,
+              "end_line": 1,
+              "matched_length": 1,
+              "match_coverage": 100.0,
+              "matcher": "1-spdx-id",
+              "license_expression": "mit",
+              "rule_identifier": "spdx-license-identifier-mit-5da48780aba670b0860c46d899ed42a0f243ff06",
+              "rule_relevance": 100,
+              "rule_url": null,
+              "matched_text": "MIT"
+            }
+          ],
+          "identifier": "mit-a822f434-d61f-f2b1-c792-8b8cb9e7b9bf"
+        },
+        {
+          "license_expression": "mit",
+          "matches": [
+            {
+              "score": 100.0,
+              "start_line": 1,
+              "end_line": 1,
+              "matched_length": 2,
+              "match_coverage": 100.0,
+              "matcher": "2-aho",
+              "license_expression": "mit",
+              "rule_identifier": "mit_14.RULE",
+              "rule_relevance": 100,
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_14.RULE",
+              "matched_text": "http://malsup.github.com/mit-license.txt"
+            }
+          ],
+          "identifier": "mit-9967e727-165e-9bb5-f090-7de5e47a3929"
+        },
+        {
+          "license_expression": "gpl-1.0-plus",
+          "matches": [
+            {
+              "score": 50.0,
+              "start_line": 1,
+              "end_line": 1,
+              "matched_length": 1,
+              "match_coverage": 100.0,
+              "matcher": "1-hash",
+              "license_expression": "gpl-1.0-plus",
+              "rule_identifier": "gpl_bare_word_only.RULE",
+              "rule_relevance": 50,
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl_bare_word_only.RULE",
+              "matched_text": "GPL"
+            }
+          ],
+          "identifier": "gpl_1_0_plus-473308ff-72ce-7e72-b3a9-5b1cc6680abb"
+        },
+        {
+          "license_expression": "gpl-1.0-plus",
+          "matches": [
+            {
+              "score": 100.0,
+              "start_line": 1,
+              "end_line": 1,
+              "matched_length": 2,
+              "match_coverage": 100.0,
+              "matcher": "2-aho",
+              "license_expression": "gpl-1.0-plus",
+              "rule_identifier": "gpl_200.RULE",
+              "rule_relevance": 100,
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl_200.RULE",
+              "matched_text": "http://malsup.github.com/gpl-license-v2.txt"
+            }
+          ],
+          "identifier": "gpl_1_0_plus-b6a20479-06f3-d753-878b-d3193c879108"
+        }
+      ],
+      "other_license_expression": null,
+      "other_license_expression_spdx": null,
+      "other_license_detections": [],
+      "extracted_license_statement": "- type: MIT\n  url: http://malsup.github.com/mit-license.txt\n- type: GPL\n  url: http://malsup.github.com/gpl-license-v2.txt\n",
+      "notice_text": null,
+      "source_packages": [],
+      "extra_data": {},
+      "repository_homepage_url": "https://www.npmjs.com/package/@liferay/jquery-form",
+      "repository_download_url": "https://registry.npmjs.org/@liferay/jquery-form/-/jquery-form-3.51.0-liferay.1.tgz",
+      "api_data_url": "https://registry.npmjs.org/@liferay%2fjquery-form/3.51.0-liferay.1",
+      "package_uid": "pkg:npm/%40liferay/jquery-form@3.51.0-liferay.1?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_paths": [
+        "package.json"
+      ],
+      "datasource_ids": [
+        "npm_package_json"
+      ],
+      "purl": "pkg:npm/%40liferay/jquery-form@3.51.0-liferay.1"
+    }
+  ],
+  "dependencies": [
+    {
+      "purl": "pkg:bower/jquery",
+      "extracted_requirement": ">=1.5",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false,
+      "resolved_package": {},
+      "extra_data": {},
+      "dependency_uid": "pkg:bower/jquery?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:bower/jquery-form@3.51.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "bower.json",
+      "datasource_id": "bower_json"
+    },
+    {
+      "purl": "pkg:composer/components/jquery",
+      "extracted_requirement": ">=1.5",
+      "scope": "require",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false,
+      "resolved_package": {},
+      "extra_data": {},
+      "dependency_uid": "pkg:composer/components/jquery?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:composer/malsup/form?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "composer.json",
+      "datasource_id": "php_composer_json"
+    },
+    {
+      "purl": "pkg:npm/jquery",
+      "extracted_requirement": ">=1.5",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false,
+      "resolved_package": {},
+      "extra_data": {},
+      "dependency_uid": "pkg:npm/jquery?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:npm/%40liferay/jquery-form@3.51.0-liferay.1?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "package.json",
+      "datasource_id": "npm_package_json"
+    },
+    {
+      "purl": "pkg:npm/gulp",
+      "extracted_requirement": "~3.5.2",
+      "scope": "devDependencies",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": false,
+      "resolved_package": {},
+      "extra_data": {},
+      "dependency_uid": "pkg:npm/gulp?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:npm/%40liferay/jquery-form@3.51.0-liferay.1?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "package.json",
+      "datasource_id": "npm_package_json"
+    },
+    {
+      "purl": "pkg:npm/gulp-concat",
+      "extracted_requirement": "~2.1.7",
+      "scope": "devDependencies",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": false,
+      "resolved_package": {},
+      "extra_data": {},
+      "dependency_uid": "pkg:npm/gulp-concat?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:npm/%40liferay/jquery-form@3.51.0-liferay.1?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "package.json",
+      "datasource_id": "npm_package_json"
+    },
+    {
+      "purl": "pkg:npm/gulp-jshint",
+      "extracted_requirement": "~1.4.2",
+      "scope": "devDependencies",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": false,
+      "resolved_package": {},
+      "extra_data": {},
+      "dependency_uid": "pkg:npm/gulp-jshint?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:npm/%40liferay/jquery-form@3.51.0-liferay.1?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "package.json",
+      "datasource_id": "npm_package_json"
+    },
+    {
+      "purl": "pkg:npm/gulp-uglify",
+      "extracted_requirement": "~0.2.1",
+      "scope": "devDependencies",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": false,
+      "resolved_package": {},
+      "extra_data": {},
+      "dependency_uid": "pkg:npm/gulp-uglify?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:npm/%40liferay/jquery-form@3.51.0-liferay.1?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "package.json",
+      "datasource_id": "npm_package_json"
+    },
+    {
+      "purl": "pkg:npm/gulp-util",
+      "extracted_requirement": "~2.2.14",
+      "scope": "devDependencies",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": false,
+      "resolved_package": {},
+      "extra_data": {},
+      "dependency_uid": "pkg:npm/gulp-util?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:npm/%40liferay/jquery-form@3.51.0-liferay.1?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "package.json",
+      "datasource_id": "npm_package_json"
+    }
+  ],
+  "license_detections": [
+    {
+      "identifier": "mit_or_gpl_2_0_plus__and_gpl_2_0-876682c2-38c1-1236-75ea-c46243d9c414",
+      "license_expression": "(mit OR gpl-2.0-plus) AND gpl-2.0",
+      "detection_count": 1,
+      "detection_log": []
+    },
+    {
+      "identifier": "gpl_1_0_plus-473308ff-72ce-7e72-b3a9-5b1cc6680abb",
+      "license_expression": "gpl-1.0-plus",
+      "detection_count": 1,
+      "detection_log": []
+    },
+    {
+      "identifier": "gpl_1_0_plus-b6a20479-06f3-d753-878b-d3193c879108",
+      "license_expression": "gpl-1.0-plus",
+      "detection_count": 1,
+      "detection_log": []
+    },
+    {
+      "identifier": "gpl_2_0-d7f02717-086e-f71b-962e-b18cc23b1827",
+      "license_expression": "gpl-2.0",
+      "detection_count": 1,
+      "detection_log": []
+    },
+    {
+      "identifier": "mit-a822f434-d61f-f2b1-c792-8b8cb9e7b9bf",
+      "license_expression": "mit",
+      "detection_count": 2,
+      "detection_log": []
+    },
+    {
+      "identifier": "mit-9967e727-165e-9bb5-f090-7de5e47a3929",
+      "license_expression": "mit",
+      "detection_count": 1,
+      "detection_log": []
+    },
+    {
+      "identifier": "mit_or_gpl_2_0-562fb174-abc9-da75-d29f-5bc4f1d9c56f",
+      "license_expression": "mit OR gpl-2.0",
+      "detection_count": 2,
+      "detection_log": []
+    },
+    {
+      "identifier": "mit_or_gpl_2_0-7f34a90b-f7b4-e345-2cc0-2de55fdcc1bd",
+      "license_expression": "mit OR gpl-2.0",
+      "detection_count": 1,
+      "detection_log": []
+    }
+  ],
+  "files": [
+    {
+      "path": "README.md",
+      "type": "file",
+      "package_data": [],
+      "for_packages": [
+        "pkg:npm/%40liferay/jquery-form@3.51.0-liferay.1?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
+      "is_legal": false,
+      "is_manifest": false,
+      "is_readme": true,
+      "is_top_level": true,
+      "is_key_file": true,
+      "detected_license_expression": "mit OR gpl-2.0",
+      "detected_license_expression_spdx": "MIT OR GPL-2.0-only",
+      "license_detections": [
+        {
+          "license_expression": "mit OR gpl-2.0",
+          "matches": [
+            {
+              "score": 94.81,
+              "start_line": 12,
+              "end_line": 21,
+              "matched_length": 128,
+              "match_coverage": 94.81,
+              "matcher": "3-seq",
+              "license_expression": "mit OR gpl-2.0",
+              "rule_identifier": "mit_or_gpl-2.0_68.RULE",
+              "rule_relevance": 100,
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_or_gpl-2.0_68.RULE",
+              "matched_text": "are dual licensed under the MIT and GPL licenses:\n\n* [MIT](http://malsup.github.com/mit-license.txt)\n* [GPL](http://malsup.github.com/gpl-license-v2.txt)\n\nYou may use either license.  The MIT License is recommended for most projects because it is simple and easy to understand and it places almost no restrictions on what you can do with the plugin.\n\nIf the GPL suits your project better you are also free to use the plugin under that license.\n\nYou don't have to do anything special to choose one license or the other and you don't have to notify anyone which license you are using. You are free to use the jQuery Form Plugin in commercial projects as long as the copyright header is left intact."
+            }
+          ],
+          "detection_log": [],
+          "identifier": "mit_or_gpl_2_0-562fb174-abc9-da75-d29f-5bc4f1d9c56f"
+        }
+      ],
+      "license_clues": [],
+      "percentage_of_license_text": 53.11,
+      "scan_errors": []
+    },
+    {
+      "path": "bower.json",
+      "type": "file",
+      "package_data": [
+        {
+          "type": "bower",
+          "namespace": null,
+          "name": "jquery-form",
+          "version": "3.51.0",
+          "qualifiers": {},
+          "subpath": null,
+          "primary_language": null,
+          "description": null,
+          "release_date": null,
+          "parties": [],
+          "keywords": [],
+          "homepage_url": null,
+          "download_url": null,
+          "size": null,
+          "sha1": null,
+          "md5": null,
+          "sha256": null,
+          "sha512": null,
+          "bug_tracking_url": null,
+          "code_view_url": null,
+          "vcs_url": null,
+          "copyright": null,
+          "holder": null,
+          "declared_license_expression": "mit OR gpl-2.0",
+          "declared_license_expression_spdx": "MIT OR GPL-2.0-only",
+          "license_detections": [
+            {
+              "license_expression": "mit OR gpl-2.0",
+              "matches": [
+                {
+                  "score": 94.81,
+                  "start_line": 12,
+                  "end_line": 21,
+                  "matched_length": 128,
+                  "match_coverage": 94.81,
+                  "matcher": "3-seq",
+                  "license_expression": "mit OR gpl-2.0",
+                  "rule_identifier": "mit_or_gpl-2.0_68.RULE",
+                  "rule_relevance": 100,
+                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_or_gpl-2.0_68.RULE",
+                  "matched_text": "are dual licensed under the MIT and GPL licenses:\n\n* [MIT](http://malsup.github.com/mit-license.txt)\n* [GPL](http://malsup.github.com/gpl-license-v2.txt)\n\nYou may use either license.  The MIT License is recommended for most projects because it is simple and easy to understand and it places almost no restrictions on what you can do with the plugin.\n\nIf the GPL suits your project better you are also free to use the plugin under that license.\n\nYou don't have to do anything special to choose one license or the other and you don't have to notify anyone which license you are using. You are free to use the jQuery Form Plugin in commercial projects as long as the copyright header is left intact."
+                }
+              ],
+              "detection_log": [],
+              "identifier": "mit_or_gpl_2_0-562fb174-abc9-da75-d29f-5bc4f1d9c56f"
+            }
+          ],
+          "other_license_expression": null,
+          "other_license_expression_spdx": null,
+          "other_license_detections": [],
+          "extracted_license_statement": null,
+          "notice_text": null,
+          "source_packages": [],
+          "file_references": [],
+          "extra_data": {},
+          "dependencies": [
+            {
+              "purl": "pkg:bower/jquery",
+              "extracted_requirement": ">=1.5",
+              "scope": "dependencies",
+              "is_runtime": true,
+              "is_optional": false,
+              "is_resolved": false,
+              "resolved_package": {},
+              "extra_data": {}
+            }
+          ],
+          "repository_homepage_url": null,
+          "repository_download_url": null,
+          "api_data_url": null,
+          "datasource_id": "bower_json",
+          "purl": "pkg:bower/jquery-form@3.51.0"
+        }
+      ],
+      "for_packages": [
+        "pkg:bower/jquery-form@3.51.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+        "pkg:npm/%40liferay/jquery-form@3.51.0-liferay.1?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
+      "is_legal": false,
+      "is_manifest": false,
+      "is_readme": false,
+      "is_top_level": false,
+      "is_key_file": false,
+      "detected_license_expression": null,
+      "detected_license_expression_spdx": null,
+      "license_detections": [],
+      "license_clues": [],
+      "percentage_of_license_text": 0,
+      "scan_errors": []
+    },
+    {
+      "path": "composer.json",
+      "type": "file",
+      "package_data": [
+        {
+          "type": "composer",
+          "namespace": "malsup",
+          "name": "form",
+          "version": null,
+          "qualifiers": {},
+          "subpath": null,
+          "primary_language": "PHP",
+          "description": null,
+          "release_date": null,
+          "parties": [
+            {
+              "type": "person",
+              "role": "author",
+              "name": "M. Alsup",
+              "email": null,
+              "url": "http://jquery.malsup.com"
+            },
+            {
+              "type": "person",
+              "role": "vendor",
+              "name": "malsup",
+              "email": null,
+              "url": null
+            }
+          ],
+          "keywords": [],
+          "homepage_url": "http://jquery.malsup.com/form/",
+          "download_url": null,
+          "size": null,
+          "sha1": null,
+          "md5": null,
+          "sha256": null,
+          "sha512": null,
+          "bug_tracking_url": "https://github.com/malsup/form/issues",
+          "code_view_url": null,
+          "vcs_url": null,
+          "copyright": null,
+          "holder": null,
+          "declared_license_expression": "mit AND gpl-2.0",
+          "declared_license_expression_spdx": "MIT AND GPL-2.0-only",
+          "license_detections": [
+            {
+              "license_expression": "mit",
+              "matches": [
+                {
+                  "score": 100.0,
+                  "start_line": 1,
+                  "end_line": 1,
+                  "matched_length": 1,
+                  "match_coverage": 100.0,
+                  "matcher": "1-spdx-id",
+                  "license_expression": "mit",
+                  "rule_identifier": "spdx-license-identifier-mit-5da48780aba670b0860c46d899ed42a0f243ff06",
+                  "rule_relevance": 100,
+                  "rule_url": null,
+                  "matched_text": "MIT"
+                }
+              ],
+              "identifier": "mit-a822f434-d61f-f2b1-c792-8b8cb9e7b9bf"
+            },
+            {
+              "license_expression": "gpl-2.0",
+              "matches": [
+                {
+                  "score": 100.0,
+                  "start_line": 1,
+                  "end_line": 1,
+                  "matched_length": 3,
+                  "match_coverage": 100.0,
+                  "matcher": "1-hash",
+                  "license_expression": "gpl-2.0",
+                  "rule_identifier": "gpl-2.0_52.RULE",
+                  "rule_relevance": 100,
+                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0_52.RULE",
+                  "matched_text": "GPL-2.0"
+                }
+              ],
+              "identifier": "gpl_2_0-d7f02717-086e-f71b-962e-b18cc23b1827"
+            }
+          ],
+          "other_license_expression": null,
+          "other_license_expression_spdx": null,
+          "other_license_detections": [],
+          "extracted_license_statement": "- MIT\n- GPL-2.0\n",
+          "notice_text": null,
+          "source_packages": [],
+          "file_references": [],
+          "extra_data": {},
+          "dependencies": [
+            {
+              "purl": "pkg:composer/components/jquery",
+              "extracted_requirement": ">=1.5",
+              "scope": "require",
+              "is_runtime": true,
+              "is_optional": false,
+              "is_resolved": false,
+              "resolved_package": {},
+              "extra_data": {}
+            }
+          ],
+          "repository_homepage_url": "https://packagist.org/packages/malsup/form",
+          "repository_download_url": null,
+          "api_data_url": "https://packagist.org/p/packages/malsup/form.json",
+          "datasource_id": "php_composer_json",
+          "purl": "pkg:composer/malsup/form"
+        }
+      ],
+      "for_packages": [
+        "pkg:composer/malsup/form?uuid=fixed-uid-done-for-testing-5642512d1758",
+        "pkg:npm/%40liferay/jquery-form@3.51.0-liferay.1?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
+      "is_legal": false,
+      "is_manifest": false,
+      "is_readme": false,
+      "is_top_level": false,
+      "is_key_file": false,
+      "detected_license_expression": "(mit OR gpl-2.0-plus) AND gpl-2.0",
+      "detected_license_expression_spdx": "(MIT OR GPL-2.0-or-later) AND GPL-2.0-only",
+      "license_detections": [
+        {
+          "license_expression": "(mit OR gpl-2.0-plus) AND gpl-2.0",
+          "matches": [
+            {
+              "score": 100.0,
+              "start_line": 21,
+              "end_line": 23,
+              "matched_length": 3,
+              "match_coverage": 100.0,
+              "matcher": "2-aho",
+              "license_expression": "mit OR gpl-2.0-plus",
+              "rule_identifier": "mit_or_gpl-2.0-plus_1.RULE",
+              "rule_relevance": 100,
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_or_gpl-2.0-plus_1.RULE",
+              "matched_text": "license\": [\n    \"MIT\",\n    \"GPL-"
+            },
+            {
+              "score": 100.0,
+              "start_line": 23,
+              "end_line": 23,
+              "matched_length": 3,
+              "match_coverage": 100.0,
+              "matcher": "2-aho",
+              "license_expression": "gpl-2.0",
+              "rule_identifier": "gpl-2.0_52.RULE",
+              "rule_relevance": 100,
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0_52.RULE",
+              "matched_text": "GPL-2.0\""
+            }
+          ],
+          "detection_log": [],
+          "identifier": "mit_or_gpl_2_0_plus__and_gpl_2_0-876682c2-38c1-1236-75ea-c46243d9c414"
+        }
+      ],
+      "license_clues": [],
+      "percentage_of_license_text": 6.76,
+      "scan_errors": []
+    },
+    {
+      "path": "package.json",
+      "type": "file",
+      "package_data": [
+        {
+          "type": "npm",
+          "namespace": "@liferay",
+          "name": "jquery-form",
+          "version": "3.51.0-liferay.1",
+          "qualifiers": {},
+          "subpath": null,
+          "primary_language": "JavaScript",
+          "description": "A simple way to AJAX-ify any form on your page; with file upload and progress support.",
+          "release_date": null,
+          "parties": [
+            {
+              "type": "person",
+              "role": "author",
+              "name": "M. Alsup",
+              "email": null,
+              "url": "http://jquery.malsup.com"
+            }
+          ],
+          "keywords": [
+            "form",
+            "upload",
+            "ajax"
+          ],
+          "homepage_url": "http://jquery.malsup.com/form/",
+          "download_url": "https://registry.npmjs.org/@liferay/jquery-form/-/jquery-form-3.51.0-liferay.1.tgz",
+          "size": null,
+          "sha1": null,
+          "md5": null,
+          "sha256": null,
+          "sha512": null,
+          "bug_tracking_url": "https://github.com/malsup/form/issues",
+          "code_view_url": null,
+          "vcs_url": "git+https://github.com/liferay/liferay-frontend-projects.git",
+          "copyright": null,
+          "holder": null,
+          "declared_license_expression": "mit AND gpl-1.0-plus",
+          "declared_license_expression_spdx": "MIT AND GPL-1.0-or-later",
+          "license_detections": [
+            {
+              "license_expression": "mit",
+              "matches": [
+                {
+                  "score": 100.0,
+                  "start_line": 1,
+                  "end_line": 1,
+                  "matched_length": 1,
+                  "match_coverage": 100.0,
+                  "matcher": "1-spdx-id",
+                  "license_expression": "mit",
+                  "rule_identifier": "spdx-license-identifier-mit-5da48780aba670b0860c46d899ed42a0f243ff06",
+                  "rule_relevance": 100,
+                  "rule_url": null,
+                  "matched_text": "MIT"
+                }
+              ],
+              "identifier": "mit-a822f434-d61f-f2b1-c792-8b8cb9e7b9bf"
+            },
+            {
+              "license_expression": "mit",
+              "matches": [
+                {
+                  "score": 100.0,
+                  "start_line": 1,
+                  "end_line": 1,
+                  "matched_length": 2,
+                  "match_coverage": 100.0,
+                  "matcher": "2-aho",
+                  "license_expression": "mit",
+                  "rule_identifier": "mit_14.RULE",
+                  "rule_relevance": 100,
+                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_14.RULE",
+                  "matched_text": "http://malsup.github.com/mit-license.txt"
+                }
+              ],
+              "identifier": "mit-9967e727-165e-9bb5-f090-7de5e47a3929"
+            },
+            {
+              "license_expression": "gpl-1.0-plus",
+              "matches": [
+                {
+                  "score": 50.0,
+                  "start_line": 1,
+                  "end_line": 1,
+                  "matched_length": 1,
+                  "match_coverage": 100.0,
+                  "matcher": "1-hash",
+                  "license_expression": "gpl-1.0-plus",
+                  "rule_identifier": "gpl_bare_word_only.RULE",
+                  "rule_relevance": 50,
+                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl_bare_word_only.RULE",
+                  "matched_text": "GPL"
+                }
+              ],
+              "identifier": "gpl_1_0_plus-473308ff-72ce-7e72-b3a9-5b1cc6680abb"
+            },
+            {
+              "license_expression": "gpl-1.0-plus",
+              "matches": [
+                {
+                  "score": 100.0,
+                  "start_line": 1,
+                  "end_line": 1,
+                  "matched_length": 2,
+                  "match_coverage": 100.0,
+                  "matcher": "2-aho",
+                  "license_expression": "gpl-1.0-plus",
+                  "rule_identifier": "gpl_200.RULE",
+                  "rule_relevance": 100,
+                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl_200.RULE",
+                  "matched_text": "http://malsup.github.com/gpl-license-v2.txt"
+                }
+              ],
+              "identifier": "gpl_1_0_plus-b6a20479-06f3-d753-878b-d3193c879108"
+            }
+          ],
+          "other_license_expression": null,
+          "other_license_expression_spdx": null,
+          "other_license_detections": [],
+          "extracted_license_statement": "- type: MIT\n  url: http://malsup.github.com/mit-license.txt\n- type: GPL\n  url: http://malsup.github.com/gpl-license-v2.txt\n",
+          "notice_text": null,
+          "source_packages": [],
+          "file_references": [],
+          "extra_data": {},
+          "dependencies": [
+            {
+              "purl": "pkg:npm/jquery",
+              "extracted_requirement": ">=1.5",
+              "scope": "dependencies",
+              "is_runtime": true,
+              "is_optional": false,
+              "is_resolved": false,
+              "resolved_package": {},
+              "extra_data": {}
+            },
+            {
+              "purl": "pkg:npm/gulp",
+              "extracted_requirement": "~3.5.2",
+              "scope": "devDependencies",
+              "is_runtime": false,
+              "is_optional": true,
+              "is_resolved": false,
+              "resolved_package": {},
+              "extra_data": {}
+            },
+            {
+              "purl": "pkg:npm/gulp-concat",
+              "extracted_requirement": "~2.1.7",
+              "scope": "devDependencies",
+              "is_runtime": false,
+              "is_optional": true,
+              "is_resolved": false,
+              "resolved_package": {},
+              "extra_data": {}
+            },
+            {
+              "purl": "pkg:npm/gulp-jshint",
+              "extracted_requirement": "~1.4.2",
+              "scope": "devDependencies",
+              "is_runtime": false,
+              "is_optional": true,
+              "is_resolved": false,
+              "resolved_package": {},
+              "extra_data": {}
+            },
+            {
+              "purl": "pkg:npm/gulp-uglify",
+              "extracted_requirement": "~0.2.1",
+              "scope": "devDependencies",
+              "is_runtime": false,
+              "is_optional": true,
+              "is_resolved": false,
+              "resolved_package": {},
+              "extra_data": {}
+            },
+            {
+              "purl": "pkg:npm/gulp-util",
+              "extracted_requirement": "~2.2.14",
+              "scope": "devDependencies",
+              "is_runtime": false,
+              "is_optional": true,
+              "is_resolved": false,
+              "resolved_package": {},
+              "extra_data": {}
+            }
+          ],
+          "repository_homepage_url": "https://www.npmjs.com/package/@liferay/jquery-form",
+          "repository_download_url": "https://registry.npmjs.org/@liferay/jquery-form/-/jquery-form-3.51.0-liferay.1.tgz",
+          "api_data_url": "https://registry.npmjs.org/@liferay%2fjquery-form/3.51.0-liferay.1",
+          "datasource_id": "npm_package_json",
+          "purl": "pkg:npm/%40liferay/jquery-form@3.51.0-liferay.1"
+        }
+      ],
+      "for_packages": [
+        "pkg:npm/%40liferay/jquery-form@3.51.0-liferay.1?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
+      "is_legal": false,
+      "is_manifest": false,
+      "is_readme": false,
+      "is_top_level": false,
+      "is_key_file": false,
+      "detected_license_expression": "mit OR gpl-2.0",
+      "detected_license_expression_spdx": "MIT OR GPL-2.0-only",
+      "license_detections": [
+        {
+          "license_expression": "mit OR gpl-2.0",
+          "matches": [
+            {
+              "score": 100.0,
+              "start_line": 17,
+              "end_line": 22,
+              "matched_length": 21,
+              "match_coverage": 100.0,
+              "matcher": "2-aho",
+              "license_expression": "mit OR gpl-2.0",
+              "rule_identifier": "mit_or_gpl-2.0_69.RULE",
+              "rule_relevance": 100,
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_or_gpl-2.0_69.RULE",
+              "matched_text": "type\": \"MIT\",\n      \"url\": \"http://malsup.github.com/mit-license.txt\"\n    },\n    {\n      \"type\": \"GPL\",\n      \"url\": \"http://malsup.github.com/gpl-license-v2.txt\""
+            }
+          ],
+          "detection_log": [],
+          "identifier": "mit_or_gpl_2_0-7f34a90b-f7b4-e345-2cc0-2de55fdcc1bd"
+        }
+      ],
+      "license_clues": [],
+      "percentage_of_license_text": 14.0,
+      "scan_errors": []
+    }
+  ]
+}

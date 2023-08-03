@@ -1,11 +1,4 @@
 --------------------------------------------
-Package type:  None
-  datasource_id:     java_jar
-  documentation URL: https://en.wikipedia.org/wiki/JAR_(file_format)
-  primary language:  None
-  description:       JAR Java Archive
-  path_patterns:    '*.jar'
---------------------------------------------
 Package type:  about
   datasource_id:     about_file
   documentation URL: https://aboutcode-toolkit.readthedocs.io/en/latest/specification.html
@@ -323,9 +316,9 @@ Package type:  deb
 --------------------------------------------
 Package type:  dmg
   datasource_id:     apple_dmg
-  documentation URL: 
+  documentation URL: https://en.wikipedia.org/wiki/Apple_Disk_Image
   primary language:  None
-  description:       
+  description:       macOS disk image file
   path_patterns:    '*.dmg', '*.sparseimage'
 --------------------------------------------
 Package type:  ear
@@ -467,6 +460,13 @@ Package type:  ivy
   primary language:  Java
   description:       Ant IVY dependency file
   path_patterns:    '*/ivy.xml'
+--------------------------------------------
+Package type:  jar
+  datasource_id:     java_jar
+  documentation URL: https://en.wikipedia.org/wiki/JAR_(file_format)
+  primary language:  None
+  description:       JAR Java Archive
+  path_patterns:    '*.jar'
 --------------------------------------------
 Package type:  jar
   datasource_id:     java_jar_manifest
@@ -715,9 +715,9 @@ Package type:  pypi
 --------------------------------------------
 Package type:  readme
   datasource_id:     readme
-  documentation URL: None
+  documentation URL: 
   primary language:  None
-  description:       None
+  description:       
   path_patterns:    '*/README.android', '*/README.chromium', '*/README.facebook', '*/README.google', '*/README.thirdparty'
 --------------------------------------------
 Package type:  rpm

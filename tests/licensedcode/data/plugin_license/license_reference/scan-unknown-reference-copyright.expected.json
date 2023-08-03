@@ -1,7 +1,7 @@
 {
   "license_detections": [
     {
-      "identifier": "x11-xconsortium-veillard-61f804f6-d484-92ca-09b5-26be51ac974e",
+      "identifier": "x11_xconsortium_veillard-61f804f6-d484-92ca-09b5-26be51ac974e",
       "license_expression": "x11-xconsortium-veillard",
       "detection_count": 2,
       "detection_log": [
@@ -9,7 +9,7 @@
       ]
     },
     {
-      "identifier": "x11-xconsortium-veillard-50c015bd-e4e1-c6fe-eb82-9551473dd8e1",
+      "identifier": "x11_xconsortium_veillard-50c015bd-e4e1-c6fe-eb82-9551473dd8e1",
       "license_expression": "x11-xconsortium-veillard",
       "detection_count": 1,
       "detection_log": [
@@ -94,7 +94,7 @@
           "detection_log": [
             "unknown-reference-to-local-file"
           ],
-          "identifier": "x11-xconsortium-veillard-61f804f6-d484-92ca-09b5-26be51ac974e"
+          "identifier": "x11_xconsortium_veillard-61f804f6-d484-92ca-09b5-26be51ac974e"
         }
       ],
       "license_clues": [],
@@ -140,7 +140,7 @@
           "detection_log": [
             "unknown-reference-to-local-file"
           ],
-          "identifier": "x11-xconsortium-veillard-61f804f6-d484-92ca-09b5-26be51ac974e"
+          "identifier": "x11_xconsortium_veillard-61f804f6-d484-92ca-09b5-26be51ac974e"
         }
       ],
       "license_clues": [],
@@ -206,7 +206,7 @@
           "detection_log": [
             "unknown-reference-to-local-file"
           ],
-          "identifier": "x11-xconsortium-veillard-50c015bd-e4e1-c6fe-eb82-9551473dd8e1"
+          "identifier": "x11_xconsortium_veillard-50c015bd-e4e1-c6fe-eb82-9551473dd8e1"
         }
       ],
       "license_clues": [],

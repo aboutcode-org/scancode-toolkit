@@ -37,6 +37,7 @@ PACKAGE_FIELD_BY_README_FIELD = {
 
     'licence': 'extracted_license_statement',
     'license': 'extracted_license_statement',
+    # This also has License File sometimes
 }
 
 
@@ -50,6 +51,8 @@ class ReadmeHandler(models.NonAssemblableDatafileHandler):
         '*/README.google',
         '*/README.thirdparty',
     )
+    description = ''
+    documentation_url = ''
 
     @classmethod
     def parse(cls, location):

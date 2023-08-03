@@ -196,17 +196,9 @@
       "detection_log": []
     },
     {
-      "identifier": "bsd-new-cdb8fe96-c13c-043d-8031-aebb4cd77653",
+      "identifier": "bsd_new-cdb8fe96-c13c-043d-8031-aebb4cd77653",
       "license_expression": "bsd-new",
       "detection_count": 5,
-      "detection_log": [
-        "unknown-reference-in-file-to-package"
-      ]
-    },
-    {
-      "identifier": "bsd-new-734cc7c8-5d13-b9e1-3f7c-d04a0d9396c7",
-      "license_expression": "bsd-new",
-      "detection_count": 2,
       "detection_log": [
         "unknown-reference-in-file-to-package"
       ]
@@ -216,6 +208,14 @@
       "license_expression": "bsd-new",
       "detection_count": 2,
       "detection_log": []
+    },
+    {
+      "identifier": "bsd_new-734cc7c8-5d13-b9e1-3f7c-d04a0d9396c7",
+      "license_expression": "bsd-new",
+      "detection_count": 2,
+      "detection_log": [
+        "unknown-reference-in-file-to-package"
+      ]
     }
   ],
   "files": [
@@ -425,7 +425,7 @@
           "detection_log": [
             "unknown-reference-in-file-to-package"
           ],
-          "identifier": "bsd-new-cdb8fe96-c13c-043d-8031-aebb4cd77653"
+          "identifier": "bsd_new-cdb8fe96-c13c-043d-8031-aebb4cd77653"
         }
       ],
       "license_clues": [],
@@ -475,7 +475,7 @@
           "detection_log": [
             "unknown-reference-in-file-to-package"
           ],
-          "identifier": "bsd-new-cdb8fe96-c13c-043d-8031-aebb4cd77653"
+          "identifier": "bsd_new-cdb8fe96-c13c-043d-8031-aebb4cd77653"
         }
       ],
       "license_clues": [],
@@ -549,7 +549,7 @@
           "detection_log": [
             "unknown-reference-in-file-to-package"
           ],
-          "identifier": "bsd-new-734cc7c8-5d13-b9e1-3f7c-d04a0d9396c7"
+          "identifier": "bsd_new-734cc7c8-5d13-b9e1-3f7c-d04a0d9396c7"
         }
       ],
       "license_clues": [],
@@ -599,7 +599,7 @@
           "detection_log": [
             "unknown-reference-in-file-to-package"
           ],
-          "identifier": "bsd-new-734cc7c8-5d13-b9e1-3f7c-d04a0d9396c7"
+          "identifier": "bsd_new-734cc7c8-5d13-b9e1-3f7c-d04a0d9396c7"
         }
       ],
       "license_clues": [],
@@ -649,7 +649,7 @@
           "detection_log": [
             "unknown-reference-in-file-to-package"
           ],
-          "identifier": "bsd-new-cdb8fe96-c13c-043d-8031-aebb4cd77653"
+          "identifier": "bsd_new-cdb8fe96-c13c-043d-8031-aebb4cd77653"
         }
       ],
       "license_clues": [],
@@ -1210,7 +1210,7 @@
           "detection_log": [
             "unknown-reference-in-file-to-package"
           ],
-          "identifier": "bsd-new-cdb8fe96-c13c-043d-8031-aebb4cd77653"
+          "identifier": "bsd_new-cdb8fe96-c13c-043d-8031-aebb4cd77653"
         }
       ],
       "license_clues": [],
@@ -1284,7 +1284,7 @@
           "detection_log": [
             "unknown-reference-in-file-to-package"
           ],
-          "identifier": "bsd-new-cdb8fe96-c13c-043d-8031-aebb4cd77653"
+          "identifier": "bsd_new-cdb8fe96-c13c-043d-8031-aebb4cd77653"
         }
       ],
       "license_clues": [],

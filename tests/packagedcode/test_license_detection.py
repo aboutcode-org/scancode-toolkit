@@ -283,3 +283,24 @@ def test_license_reference_to_unknown_package_special_case_debian():
     run_scan_click(args)
     test_loc = test_env.get_test_loc('license_detection/reference-to-package/fusiondirectory.expected.json')
     check_json_scan(test_loc, result_file, regen=REGEN_TEST_FIXTURES)
+
+
+def test_license_package_multi_flavored():
+    test_dir = test_env.get_test_loc('license_detection/multi-flavor/jquery-form-3.51.0/')
+    result_file = test_env.get_temp_file('json')
+    args = [
+        '--license',
+        '--license-text',
+        '--license-text-diagnostics',
+        '--license-diagnostics',
+        '--package',
+        '--strip-root',
+        '--verbose',
+        '--summary',
+        '--classify',
+        '--json', result_file,
+        test_dir,
+    ]
+    run_scan_click(args)
+    test_loc = test_env.get_test_loc('license_detection/multi-flavor/jquery-form-3.51.0.expected.json')
+    check_json_scan(test_loc, result_file, regen=REGEN_TEST_FIXTURES)

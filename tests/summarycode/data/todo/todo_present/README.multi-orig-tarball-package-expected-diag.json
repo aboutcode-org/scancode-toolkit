@@ -24,7 +24,7 @@
           }
         ],
         "detection_log": [
-          "license-clues"
+          "low-quality-matches"
         ],
         "identifier": "borceux-3c39742c-edef-82b7-0cdd-fc4d9ff8b044"
       }

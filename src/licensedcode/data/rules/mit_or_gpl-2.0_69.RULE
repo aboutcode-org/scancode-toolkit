@@ -1,0 +1,12 @@
+---
+license_expression: mit OR gpl-2.0
+is_license_notice: yes
+ignorable_urls:
+    - http://malsup.github.com/gpl-license-v2.txt
+    - http://malsup.github.com/mit-license.txt
+---
+
+type: MIT
+url: http://malsup.github.com/mit-license.txt
+type: GPL
+url: http://malsup.github.com/gpl-license-v2.txt
