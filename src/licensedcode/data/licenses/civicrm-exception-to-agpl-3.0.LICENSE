@@ -1,0 +1,14 @@
+---
+key: civicrm-exception-to-agpl-3.0
+short_name: CiviCRM Exception to AGPL-3.0
+name: CiviCRM Exception to AGPL-3.0
+category: Copyleft
+owner: CiviCRM
+homepage_url: https://civicrm.org/about/license
+is_exception: yes
+spdx_license_key: LicenseRef-scancode-civicrm-exception-to-agpl-3.0
+---
+
+CiviCRM licensing exception
+
+This CiviCRM Licensing Exception is an additional permission under section 7 of the GNU Affero General Public License, version 3. It applies to a given file that bears a notice stating that the file is governed by that license along with this exception. Permission is hereby granted to combine the Program with works licensed under the PHP License versions 2.01, 2.02, 3.0 and 3.01. Permission is hereby granted to license modified versions of the Program to CiviCRM LLC under the Academic Free License version 3.
