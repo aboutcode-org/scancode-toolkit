@@ -1,0 +1,147 @@
+---
+key: liferay-dxp-eula-2.0.0-2023-06
+short_name: Liferay-DXP-EULA-2.0.0-2023-06
+name: Liferay-DXP-EULA-2.0.0-2023-06
+category: Proprietary Free
+owner: Liferay
+homepage_url: https://github.com/liferay/liferay-portal/blob/master/LICENSES/LicenseRef-Liferay-DXP-EULA-2.0.0-2023-06.txt
+spdx_license_key: LicenseRef-Liferay-DXP-EULA-2.0.0-2023-06
+other_urls:
+    - https://github.com/liferay/liferay-portal/tree/master#license
+ignorable_urls:
+    - http://www.liferay.com/marketplace
+    - http://www.liferay.com/third-party-software
+---
+
+EULA: Liferay Digital Experience Platform And Certain Applications
+
+This End User License Agreement (“EULA”) governs the use of Liferay Software (as defined below).
+
+PLEASE READ THIS EULA CAREFULLY BEFORE ACCESSING, DOWNLOADING, INSTALLING OR IN ANY WAY USING THE SOFTWARE. BY CLICKING YOUR ASSENT OR ACCESSING, DOWNLOADING, INSTALLING OR IN ANY WAY USING THE SOFTWARE, YOU SIGNIFY YOUR ASSENT TO AND ACCEPTANCE OF THIS EULA AND ACKNOWLEDGE THAT YOU HAVE READ AND YOU UNDERSTAND THE TERMS. IF YOU ARE AN INDIVIDUAL ACTING ON BEHALF OF AN ENTITY, YOU REPRESENT THAT YOU HAVE THE AUTHORITY TO ENTER INTO THIS AGREEMENT ON BEHALF OF THAT ENTITY. IF YOU DO NOT ACCEPT THE TERMS OF THIS AGREEMENT, THEN YOU MUST NOT ACCESS, DOWNLOAD, INSTALL OR IN ANY WAY USE THE SOFTWARE.
+
+
+1.      Certain Definitions
+
+“Affiliates” means in the case of a company, an entity that owns or controls, is owned or controlled by, or is under common control or ownership with a party, where ‘control’ is the possession, direct or indirect, of the power to direct or cause the direction of the management and policies of an entity, whether through ownership of voting shares, by contract or otherwise.
+
+“Business Partner” means an organization authorized by Liferay, directly or indirectly, to promote, market, sell, resell, distribute, and support the Software.
+
+“Designated Purpose” means the specific use case and purpose for which Liferay provides to You and  You utilize the Software and, where applicable, the associated Subscription Services, i.e. either “Non-Production”, “Production”, “Backup”, “Evaluation” or “Development” Purposes. “Non-Production Purposes” means using the Software solely in a non-production environment, generally for the purposes of dev-integration, testing, quality assurance, staging, and user acceptance testing but excluding Development Purposes. “Production Purposes” means using the Software in a production environment, generally to service live requests and to use live data and Software. “Backup Purposes” means using the Software solely in a backup or secondary environment that is (i) periodically or regularly receiving backups of data from Instances used for Production Purposes; (ii) not servicing requests; and (iii) used for the purpose of disaster recovery and/or serving as a backup in case a live Instance used for Production Purposes fails. “Evaluation Purposes” means using specially designated copies of the Software for the limited purpose of non-revenue generating evaluation of the Software. “Development Purposes” means using the Software for the specific purpose of building software that runs with or on the Software.
+
+“Derivative Works” means any copy and/or modification of the Software and each component of the Software, that is not separate from the code base of the Software, including but not limited to all derivative works, improvements or upgrades of the Software.
+
+“Documentation” means the documentation generally made available by Liferay in conjunction with Software as part of Subscription Services.
+
+“Forked Software” means modifications to the Software source code to develop a separately maintained source code program (a) with features not present in the Software source code added or existing features removed from the Software source code; or (b) where modifications to the original source code of the Software are not automatically integrated with the original source code of the Software.
+
+“Free Liferay Subscription Apps” are those Liferay Subscription Apps that Liferay makes available in the Subscription App category of its Liferay Marketplace free of charge (displayed as “Free” Apps).
+
+“Instance” means one (1) copy of the Software.
+
+“Liferay” means the Liferay company described in the “Liferay Contracting Entity, Notices, Governing Law, and Venue” section below.
+
+“Limiting Devices” means time-out devices, counter devices, and/or other devices intended to ensure the limits of the license granted to You under this EULA will not be exceeded.
+
+“Permissible Extension Methods” means the permitted methods of extending the Software defined in the Documentation, such as using the Liferay Plugins SDK and developing Liferay EXT Plugins.
+
+“Software” or “Liferay Software” means Liferay Digital Enterprise, Free Liferay Subscription Apps (as defined herein), Liferay Labs Apps software and any other Liferay software applications that include or refer to this license including any related updates, upgrades, versions, appearance, source code, structure, organization, Documentation (as defined herein) and application programming interfaces. Software shall not include third-party software applications that are made available through the Liferay Marketplace located at www.liferay.com/marketplace, Third-Party Software or generally available open source projects such as such as any Liferay branded community edition of the Software and/or other community projects.
+
+“Subscription Services” means fee-bearing Liferay subscriptions for certain value-added services provided for a defined period of time and related to the Software.
+
+“Subscription Term” means the initial and any renewal term of Subscription Services.
+
+“Third Party Software” means software program, computer code, programming libraries, application programming interfaces, or other materials, (i) the intellectual property rights of which are not owned by Liferay or its Affiliates and (ii) which is licensed under terms and conditions outside the scope of this EULA as further specified in Section 2 below.
+
+“Unit” means an Instance.
+
+“You” means, as applicable, the individual or the entity on whose behalf the individual is acting and “Your” shall be construed accordingly.
+
+
+2.      License Grant
+
+Subject to the restrictions set forth in this Section 2 and Sections 3 and 4 below and subject to Your compliance with the other terms and conditions of this EULA, Liferay grants to You a perpetual (provided that, in case of Evaluation Purposes, non-perpetual), non-transferable, non-exclusive, worldwide, non-sublicensable license, to use the Software. You may use the Software solely for Your internal business operations (which includes use by or on behalf of Your Affiliates and Affiliates shall not be considered a third party for the purposes of this Section, provided that You remain responsible for the Affiliates’ compliance with terms of this EULA). The foregoing sentence is not intended to limit Your internal use of the Software to operate a web site and/or to offer Your own software as a service, provided such web site or service does not include a distribution of the Software, in whole or in part. You may extend the Software through Permissible Extension Methods. You acquire only the right to use the Software and do not acquire any rights of ownership in the Software. Liferay reserves all rights to the Software not expressly granted to You. The Software is provided with certain Third Party Software. Each Third Party Software item is licensed to You under the applicable license terms and conditions set forth at www.liferay.com/third-party-software and in a file accompanying the Software and Your use of any Third Party Software shall be subject to such terms and conditions. The license granted to You under this EULA pertains solely to Your use of the Software and nothing in this EULA is intended to limit Your rights under, or grant You rights that supersede, the license terms of any Third Party Software. The Software may be used by or for You on Your premises, or within a third party data center, provided that (i) You remain responsible for all of Your obligations under this EULA and for the activities and omissions of the third party data center, and (ii) You control the access to the Software (which control of access does not require physical control and instead may be accomplished through the use of appropriate contractual provisions with the data center operator). For clarification, this license does not grant any rights in the trademarks, service marks or logos owned by Liferay or its Affiliates. You may use third party contractors to assist with the installation and use of the Software on Your or Your Affiliates’ behalf and only for Your own internal business use (in case of Evaluation Purposes, evaluation use instead), provided that You will remain responsible for all of Your obligations under this EULA and for the activities and omissions of the third parties.
+
+
+3.      Purpose and Unit Restrictions
+
+Except in the case of Development Purposes and Evaluation Purposes, Your use of the Software is restricted to the total number of Units and to the Designated Purpose for which You have acquired Subscription Services from Liferay or a Business Partner. Use of the Software for Development Purposes requires a developer license (licenses can be self-provisioned free of charge during a Subscription Term), that limits Your use to one (1) developer workstation and up to ten (10) unique IP address connections. You may only use a developer license for Development Purposes. Use of the Software for Evaluation Purposes requires an evaluation license provisioned by Liferay and is limited to just one (1) Unit and to thirty (30) days from the date of activation of the Software, unless otherwise extended by Liferay.
+
+
+4.      Restrictions
+
+4.1     The license granted to You under this EULA does not authorize You (nor may You allow any third party, specifically non-employees of Yours) to: (i) copy, reproduce, use, sublicense, rent, lease or otherwise distribute or allow third party access to the Software except as expressly authorized hereunder; (ii) decompile, disassemble, reverse engineer, translate, modify (except through Permissible Extension Methods, if applicable), loan, convert or apply any procedure or process to the Software in order to ascertain, derive, and/or appropriate for any reason or purpose, including the Software source code or source listings or any trade secret information or process contained in the Software (except as permitted under applicable law); (iii) execute or incorporate other software (except for approved software as more particularly identified in the Documentation or specifically approved by Liferay in writing) into Software, or create a derivative work of any part of the Software (except through Permissible Extension Methods, if applicable); (iv) remove any product identification, trademarks, trade names or titles, copyrights, legends or any other proprietary marking on the Software; (v) disclose the results of any benchmarking of the Software (whether or not obtained with Liferay’s assistance) to any third party; (vi) attempt to circumvent any user limits or other license, timing or use restrictions that are built into, defined or agreed upon, regarding the Software; (vii) use any of Liferay’s intellectual property rights protected by applicable laws and contained in or accessible through the Software for the purpose of building a competitive product or service or copying its features or user interface, (viii) use the Software to develop or enhance any (a) open source version of Software (including but not limited to any Liferay labeled community edition of the Software) or (b) Derivative Works of any open source version of the Software; or (ix) develop Forked Software.
+
+4.2     You are hereby notified that the Software may contain Limiting Devices. If the Software contains Limiting Devices, Liferay will provide You with materials necessary to use the Software to the extent permitted. You may not tamper with or otherwise take any action to defeat, disable or circumvent a Limiting Device or other control measure, including but not limited to, resetting the Unit amount. Except as permitted herein, any attempt to assign, transfer or sublicense the Software to any third party will be void. Except for Software copies provided and used for Evaluation Purposes,You may make any reasonable number of copies of the Software for data archival purposes. To the extent a license key is attached to a specific machine, which for example may be identified by a MAC address or host name, You can transfer the license from one machine to another, provided that this does neither increase the total number of covered Units nor change the Designated Purpose.
+
+4.3     You acknowledge and agree that title to the Software and “Derivative Works” whether made by Liferay, You or on Liferay’s or on Your behalf, including those made at Your suggestion and all associated intellectual property rights, are and shall remain the sole and exclusive property of Liferay, its Affiliates and/or its licensors. As between You and Liferay, You shall own all independently developed code and documentation and any associated intellectual property rights developed by or on behalf of You, including but not limited to code extensions to the Software developed by using the Permissible Extension Methods that are separate from the code base of the Software (i.e. non-Derivative Works). You agree to assign, and hereby irrevocably and unconditionally assign to Liferay, in perpetuity and without further consideration, all right, title and interest in and to all Derivative Works created by You or on Your behalf, and all intellectual property rights therein or relative thereto. To the extent such intellectual property rights cannot (as a matter of law) be assigned by You to Liferay, You unconditionally and irrevocably grant to Liferay a perpetual, non-terminable, exclusive (without reservation), royalty-free, fully-paid, right and license, with the right to sublicense through multiple tiers of sublicensees, under any and all such rights: (i) to reproduce, create derivative works of, distribute, publicly perform, publicly display, digitally transmit and otherwise use the Derivative Works in any medium or format, whether now known or hereafter discovered; (ii) to use, make, have made, sell, offer to sell, import, and otherwise exploit any product or service based on, embodying, incorporating or derived from the Derivative Work(s); and (iii) to exercise any and all other present or future rights in the same. You also confirm that any relevant moral rights in the Derivative Works have been waived, or if such rights are unwaivable, You agree to not enforce such rights, and for the avoidance of doubt this waiver and agreement shall extend to Liferay’s licensees and successor in title. At Liferay’s request and expense, You shall execute and deliver such instruments and take such other action as may be reasonably requested by Liferay to perfect or protect Liferay’s rights in the Software and Derivative Works.
+
+4.4     For the avoidance of doubt, if You receive the Software from Liferay or one of its Affiliates or Business Partners  (also) under an open source version and choose to use it under that open source license, You must comply with the applicable open source license instead of this EULA.
+
+
+5.      Disclaimer of Warranty
+
+TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, THE SOFTWARE IS PROVIDED AND LICENSED "AS IS" WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTY OF QUALITY, MERCHANTABILITY, TITLE, NON-INFRINGEMENT AND FITNESS FOR A PARTICULAR PURPOSE, AND SUCH IMPLIED WARRANTIES, ANY OTHER WARRANTIES, REPRESENTATIONS, CONDITIONS AND TERMS, EXPRESS OR IMPLIED (AND WHETHER IMPLIED BY STATUTE, COMMON LAW, COURSE OF DEALING, TRADE USAGE OR OTHERWISE) ARE HEREBY EXCLUDED TO THE FULLEST EXTENT PERMITTED BY LAW. LIFERAY DOES NOT WARRANT THAT (I) THE SOFTWARE WILL MEET YOUR REQUIREMENTS, (II) THE USE OF THE SOFTWARE WILL BE UNINTERRUPTED OR ERROR FREE, (III) THE SOFTWARE WILL COMPLY WITH REGULATORY REQUIREMENTS APPLICABLE TO YOU OR APPEAR PRECISELY AS DESCRIBED IN THE ACCOMPANYING DOCUMENTATION. YOU AGREE THAT YOU ARE SOLELY RESPONSIBLE FOR THE RESULTS OBTAINED FROM THE USE OF THE SOFTWARE.
+
+WITHOUT LIMITING THE GENERALITY OF THE FOREGOING DISCLAIMER, THE SOFTWARE IS NOT SPECIFICALLY DESIGNED, MANUFACTURED OR INTENDED FOR USE IN (1) FACILITIES OR ENVIRONMENTS REQUIRING FAILSAFE PERFORMANCE, INCLUDING BUT NOT LIMITED TO (A) THE PLANNING, CONSTRUCTION, MAINTENANCE, CONTROL, OR DIRECT OPERATION OF NUCLEAR FACILITIES, (B) AIRCRAFT NAVIGATION, CONTROL OR COMMUNICATION SYSTEMS, WEAPONS SYSTEMS, (C) DIRECT LIFE SUPPORT SYSTEMS OR (2) SIMILAR ULTRA-HAZARDOUS OR STRICT LIABILITY ACTIVITIES AND YOU ARE SOLELY RESPONSIBLE AND EXPRESSLY ASSUME ALL RISK FOR ANY SUCH USE.
+
+LIFERAY MAY PROVIDE CERTAIN WARRANTIES OR ASSURANCES TO YOU AS PART OF A SEPARATE AGREEMENT (SUCH AS THE LIFERAY ENTERPRISE SERVICES AGREEMENT).
+
+
+6.      Exclusion and Limitation of Liability, Risk Allocation
+
+6.1     Exclusion of Liability
+TO THE MAXIMUM EXTENT PERMITTED UNDER APPLICABLE LAW, IN NO EVENT WILL LIFERAY OR ANY OF ITS AFFILIATES HAVE ANY LIABILITY TO YOU OR YOUR AFFILIATES, UNDER ANY LEGAL OR EQUITABLE THEORY, WHETHER IN CONTRACT, TORT (INCLUDING, WITHOUT LIMITATION, NEGLIGENCE), PRODUCT LIABILITY, STATUTE OR OTHERWISE, FOR OR IN CONNECTION WITH:
+
+(I)     ANY ECONOMIC LOSSES, LOSS OF REVENUE, LOSS OF CUSTOMERS OR BUSINESS, LOSS OF OR DAMAGE TO REPUTATION OR GOODWILL, LOSS OF ANTICIPATED PROFITS, LOSS UNDER OR IN RELATION TO ANY OTHER CONTRACT, LOSS OF DATA OR INTERRUPTION OF SERVICES, LOSS OF ANTICIPATED SAVINGS OR BENEFITS, OR COVER COSTS OR ANALOGOUS COST RELATED TO THE PROCUREMENT OF REPLACEMENT SERVICES OR SOFTWARE;
+
+(II)    ANY LOSSES, COSTS, EXPENSES OR DAMAGES ARISING OUT OF OR IN CONNECTION WITH ANY MALFUNCTIONS, REGULATORY NON-COMPLIANCE, DELAYS, PRODUCT LIABILITY, RELIANCE, BREACH OF ANY IMPLIED DUTY; OR
+
+(III)   ANY LOSSES, COSTS, EXPENSES OR DAMAGES OTHER THAN DIRECT DAMAGES, INCLUDING WITHOUT LIMITATION, ANY INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, CONSEQUENTIAL OR PUNITIVE DAMAGES, LOSSES, COSTS OR EXPENSES.
+
+IN EACH CASE (I) THROUGH (III), WHETHER OR NOT FORESEEABLE; EVEN IF LIFERAY, ITS AFFILIATES OR A BUSINESS PARTNER HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES, LOSSES, COSTS OR EXPENSES.
+
+6.2     Limitation of Liability
+FOR ALL EVENTS AND CIRCUMSTANCES AND TO THE MAXIMUM EXTENT PERMITTED UNDER APPLICABLE LAW, LIFERAY’S AND ITS AFFILIATES' AGGREGATE AND CUMULATIVE LIABILITY ARISING OUT OF OR RELATING TO THIS EULA, INCLUDING WITHOUT LIMITATION ON ACCOUNT OF PERFORMANCE OR NON-PERFORMANCE OF OBLIGATIONS, REGARDLESS OF THE FORM OF THE CAUSE OF ACTION, WHETHER IN CONTRACT, TORT (INCLUDING, WITHOUT LIMITATION, NEGLIGENCE), STATUTE OR OTHERWISE WILL NOT EXCEED FIFTY EURO (€50.00) OR THE EQUIVALENT AMOUNT IN LOCAL CURRENCY.
+
+6.3     Allocation of Risk
+THE PROVISIONS OF SECTION 5 AND THIS SECTION 6 ALLOCATE THE RISKS UNDER THIS EULA BETWEEN LIFERAY AND YOU. THIS ALLOCATION IS AN INTRINSIC PART OF, AND THE BASIS OF, THE BARGAIN BETWEEN YOU AND LIFERAY AND WITHOUT SUCH ALLOCATION LIFERAY WOULD NOT HAVE ENTERED INTO THIS EULA. THE LIMITATIONS, EXCLUSIONS AND DISCLAIMERS CONTAINED IN SECTIONS 5 AND 6 APPLY TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, EVEN IF ANY REMEDY (INCLUDING ANY LIMITED OR EXCLUSIVE REMEDY) PROVIDED FOR IN THIS AGREEMENT FAILS IN ITS ESSENTIAL PURPOSE.
+
+
+7.      Export Control
+
+You: (i) acknowledge and agree that the Software and its components are subject to export controls under the U.S. Commerce Department’s Export Administration Regulations (“EAR”); (ii) represent and warrant that You are not located in any country listed in Country Group E:1 in Supplement No. 1 to part 740 of the EAR; (iii) shall not export, re-export, divert, or transfer the Software to any prohibited destination or to any party who has been prohibited from participating in US export transactions by any federal agency of the US government; (iv) shall not use or transfer the Software for use in connection with the design, development or production of nuclear, chemical or biological weapons, or rocket systems, space launch vehicles, or sounding rockets or unmanned air vehicle systems; and (v) acknowledge and agree that if You export, re-export, or transfer the Software to eligible recipients, then You shall: (a) strictly comply will all applicable export control laws, (b) obtain all necessary licenses and permits, including those required by the EAR; and (c) submit all reports required by the Commerce Department’s Bureau of Industry and Security, which include the name and address (including country) of each transferee. Liferay will not have any liability for the failure to obtain a U.S. export license to export the Software. You further acknowledge and agree that countries including the United States may restrict the import, use, or export of encryption products (which may include the Software) and agree that You shall be solely responsible for compliance with any such import, use, or export restrictions. You shall indemnify Liferay, including its officers, directors and agents from all losses and liabilities (including reasonable attorneys fees and court costs) arising from any breach of Your representations, warranties or obligations under this Section.
+
+
+8.      General
+
+If any provision of this EULA is held to be unenforceable, such ruling shall not affect the enforceability of the remaining provisions. The affected provision(s) will be deemed amended to the minimum extent necessary to render it valid and enforceable in conformity with applicable law and parties’ intent as expressed in this EULA. The rights and obligations of the parties to this EULA shall not be governed by the United Nations Convention on the International Sale of Goods.
+
+
+9.      Liferay Contracting Entity, Notices, Governing Law, and Venue
+
+The Liferay entity entering into this Agreement, the address to which Customer should direct notices under this Agreement, the law that will apply in any dispute or lawsuit arising out of or in connection with this Agreement, and the courts that have jurisdiction over any such dispute or lawsuit, depend on where Customer is domiciled.
+
+
++=====================+==============================+==================================+============================+=======================+
+| If You are          | The Liferay entity           | Notices should be                | Governing law is:          | Courts with exclusive |
+| domiciled in:       | entering into this           | addressed to:                    |                            | jurisdiction are:     |
+|                     | agreement is:                |                                  |                            |                       |
++=====================+==============================+==================================+============================+=======================+
+| The United States   | Liferay, Inc.,               | 1400 Montefino Ave.,             | California and controlling | Los Angeles County,   |
+| and Canada          | a California corporation     | Diamond Bar, CA 91765, USA       | United States federal law  | California, USA       |
+|                     |                              | att.: Legal Department           |                            |                       |
++---------------------+------------------------------+----------------------------------+----------------------------+-----------------------+
+| South and           | Liferay Latin America Ltda., | Rua da Alfândega, 35, loja 0401, | Brazilian law              | Recife, Pernambuco,   |
+| Central America,    | a Brazilian corporation      | Shopping Paço Alfândega,         |                            | Brazil                |
+| the Caribbean,      |                              | Bairro do Recife, Recife/PE,     |                            |                       |
+| and Mexico          |                              | CEP 50030-030, Brazil,           |                            |                       |
+|                     |                              | att.: Legal Department           |                            |                       |
++---------------------+------------------------------+----------------------------------+----------------------------+-----------------------+
+| Europe, Africa,     | Liferay International Ltd.,  | 100 Mount Street Lower,          | Irish law                  | Irish courts          |
+| the Middle East,    | an Irish corporation         | D02TY46, Dublin 2,               |                            |                       |
+| Asia-Pacific and    |                              | Ireland,                         |                            |                       |
+| other countries not |                              | att.: Legal Department           |                            |                       |
+| mentioned before    |                              |                                  |                            |                       |
++---------------------+------------------------------+----------------------------------+----------------------------+-----------------------+
+
+2002306_GL

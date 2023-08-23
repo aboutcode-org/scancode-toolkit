@@ -1,0 +1,29 @@
+---
+key: ko-man-page
+short_name: Korean Manpage Project License
+name: Korean Manpage Project License
+category: Permissive
+owner: Korean Manpage Project
+homepage_url: https://git.centos.org/rpms/man-pages-ko/blob/c7/f/SOURCES/Man_Page_Copyright
+spdx_license_key: LicenseRef-scancode-ko-man-page
+ignorable_copyrights:
+    - Copyright Man Page
+ignorable_holders:
+    - Man Page
+---
+
+Translated Copyright Man Page 
+	
+The copyrights of all translated manpages in the Korean Manpage Project are inherited from copyright of the original English. There are no additional restrictions on the Korean Manpage Project. However, the secondary right which could be incurred on the translation is as follows: 
+	
+1.Copyright of translated man  page specified by translator is owned by the translator.
+	
+2.Copyright of translated man  page unspecified by translator is owned by the Korean Manpage Project. 
+	
+3.For archives distributed as packages in the Korean Manpage Project, copyright of the archive is owned by the Korean Manpage Project.  
+	
+4.Even if the cases listed above, there are no restrictions on the modification or redistribution of document. If the document is modified or redistributed it must specify the source of appropriate manpage is from Koren Manpage Project so that the feedback has to be sent to the Korean Manpage Project. 
+	 
+Exception 
+	
+It is possible the documents on this site may contain false information due to  a technical error or mistranslation. However, Korean Manpage Project does not guarantee anything even in this case. If there is false information, please let administrator know or report the error to the appropriate place on the homepage. The documents of this site are subject to change, delete, or move without notice due to error correction of the documents.

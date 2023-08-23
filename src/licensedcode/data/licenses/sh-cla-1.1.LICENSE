@@ -1,0 +1,48 @@
+---
+key: sh-cla-1.1
+short_name: Software Heritage CLA 1.1
+name: Software Heritage Contributor License Agreement 1.1
+category: CLA
+owner: Software Heritage
+homepage_url: https://forge.softwareheritage.org/L3
+spdx_license_key: LicenseRef-scancode-sh-cla-1.1
+ignorable_urls:
+    - https://opensource.org/licenses
+    - https://www.gnu.org/licenses/license-list.en.html
+ignorable_emails:
+    - legal@softwareheritage.org
+---
+
+Software Heritage Contributor License Agreement
+
+version 1.1, 2020-05-05
+
+Origin and beneficiary of the present contributor license agreement:
+
+INSTITUT NATIONAL DE RECHERCHE EN INFORMATIQUE ET EN AUTOMATIQUE ''[National Institute for Research in Computing and Automation]'', Public Institution of a scientific and technological nature under decree 85-831 of August 2, 1982, Headquartered at Domaine de Voluceau – Rocquencourt – BP 105 – 78153 Le Chesnay cedex represented by its Chairman and CEO, Mr. Bruno Sportisse, founder of the Software Heritage project.
+
+ARTICLE 1 — DEFINITIONS
+
+    “Software”: means any software component collaboratively developed on the Software Heritage forge.
+    “Contribution:” means any original contribution protected by copyright, in particular modifications of existing functionalities or the development of new ones, of which You are the author, and that You intentionally submit for integration into the Software. A Contribution includes its source code, its object code, as well as any specifications and documentation related thereto.
+    “You”: means you, the Contributor, as a physical and individual person, owning copyrights on the Contribution and free from any obligation (in particular regarding to your employer) which may prevent you from developing and submitting the Contribution for integration into the Software.
+
+ARTICLE 2 — COPYRIGHTS LICENSED
+
+    You grant to Inria a worldwide, non-exclusive, transferable, royalty-free, irrevocable license, including the right to sublicense, on the Contribution, for the duration of the corresponding copyright. In particular, you grant for any mean and purpose, the right to use, to reproduce, to modify, to display, to perform with any media or technical mean, and to distribute through any form of communication the Contribution.
+    As a condition to the grant of rights mentioned in article 2.1 above, Inria shall license the Contribution ''only'' under the terms of a license complying with both the free software criteria defined by the Free Software Foundation (FSF) and the Open Source Definition by the Open Source Initiative (OSI). (See https://www.gnu.org/licenses/license-list.en.html for a list of free software license and https://opensource.org/licenses for a list of open source licenses.)
+    You will promptly notify Inria via email at legal@softwareheritage.org if You become aware of any facts or circumstances that would make these commitments inaccurate in any way.
+
+ARTICLE 3 — GUARANTEES
+
+    You guarantee that You own copyrights over the Contribution and that You hold, to the best of your knowledge, all of the rights necessary to grant a license on said Contribution to Inria and that You do not infringe third party’s rights.
+    You acknowledge that You hold no patent which could be enforced against any use by Inria of the copyright over the Contribution. In the opposite case, You promise not to enforce the rights granted by these patents against Inria, or any of its licensees, sub-licensees or assignees, for using, exploiting, modifying, distributing your Contribution accordingly with article 2 here above.
+    You declare that You are licensing your Contribution “as is”, without guarantee as to its commercial value, and without guaranteeing that the Contribution is free of errors.
+
+ARTICLE 4 — MISCELLANEOUS
+
+    This contract is subject to French law.
+    Any dispute concerning the interpretation, validity or execution of this contract will be submitted, failing an out-of-court resolution, to the competent French court.
+    The present agreement may be assigned by Inria to any non-profit entity which would become entitled to carry out Software Heritage’s mission.
+    If one or several stipulations of this contract are held to be invalid or declared such in application of a law or regulation, or by reason of a final ruling by a competent court, the others will retain all of their force and scope.
+    You shall be asked to confirm the present agreement periodically, every three (3) years after signing it. Should our contribution policy change before, you will be notified and asked to sign the new contributor license agreement as a condition to submit further Contributions.

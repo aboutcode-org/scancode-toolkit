@@ -1,7 +1,7 @@
 ---
 key: cmu-uc
-short_name: CMU UC Regents License
-name: Carnegie Mellon UC Regents License
+short_name: CMU Style
+name: CMU Style
 category: Permissive
 owner: Carnegie Mellon University
 homepage_url: https://fedoraproject.org/wiki/Licensing:MIT?rd=Licensing/MIT#CMU_Style
