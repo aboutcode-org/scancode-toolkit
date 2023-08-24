@@ -2034,12 +2034,13 @@ class VirtualCodebase(Codebase):
 
         current = self.root
         for segment in path_segments:
-            existing = resources_by_path.get(segment)
+            path = posixpath_join(current.path, segment)
+            existing = resources_by_path.get(path)
             if not existing:
                 existing = self._get_or_create_resource(
                     name=segment,
                     # build the path based on parent
-                    path=posixpath_join(current.path, segment),
+                    path=path,
                     parent=current,
                     is_file=False,
                 )
