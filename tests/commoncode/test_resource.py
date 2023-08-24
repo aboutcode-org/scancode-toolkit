@@ -1451,6 +1451,28 @@ class TestVirtualCodebaseCreation(FileBasedTesting):
         test_file = self.get_test_loc('resource/virtual_codebase/zephyr-binary.json')
         VirtualCodebase(test_file)
 
+    def test_VirtualCodebase_can_be_created_with_repeated_root_directory(self):
+        paths = [
+            'to',
+            'to/to',
+            'to/to/com.liferay.portal.tika-1.0.22.jar',
+            'to/to/com.liferay.portal.tika-1.0.22.jar-extract',
+            'to/to/com.liferay.portal.tika-1.0.22.jar-extract/com.liferay.portal.tika-1.0.22',
+            'to/to/com.liferay.portal.tika-1.0.22.jar-extract/com.liferay.portal.tika-1.0.22/com',
+            'to/to/com.liferay.portal.tika-1.0.22.jar-extract/com.liferay.portal.tika-1.0.22/com/liferay',
+            'to/to/com.liferay.portal.tika-1.0.22.jar-extract/com.liferay.portal.tika-1.0.22/com/liferay/portal',
+            'to/to/com.liferay.portal.tika-1.0.22.jar-extract/com.liferay.portal.tika-1.0.22/com/liferay/portal/tika',
+            'to/to/com.liferay.portal.tika-1.0.22.jar-extract/com.liferay.portal.tika-1.0.22/com/liferay/portal/tika/internal',
+            'to/to/com.liferay.portal.tika-1.0.22.jar-extract/com.liferay.portal.tika-1.0.22/com/liferay/portal/tika/internal/activator',
+            'to/to/com.liferay.portal.tika-1.0.22.jar-extract/com.liferay.portal.tika-1.0.22/com/liferay/portal/tika/internal/activator/TikaBundleActivator.class',
+            'to/to/com.liferay.portal.tika-1.0.22.jar-extract/com.liferay.portal.tika-1.0.22/META-INF',
+            'to/to/com.liferay.portal.tika-1.0.22.jar-extract/com.liferay.portal.tika-1.0.22/META-INF/MANIFEST.MF',
+        ]
+        resources = [{'path': path} for path in paths]
+        vc = VirtualCodebase(location={'files': resources})
+        walked_paths = [r.path for r in vc.walk()]
+        assert paths == walked_paths
+
 
 class TestResource(FileBasedTesting):
     test_data_dir = join(dirname(__file__), 'data')
