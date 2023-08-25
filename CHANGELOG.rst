@@ -1,6 +1,13 @@
 Release notes
 =============
 
+Version 31.0.3 - (2023-08-25)
+------------------------------
+
+- Mark our use of MD5 as NOT for security #54
+- Fix VirtualCodebase walk issue when the root directory name is repeated #57
+
+
 Version 31.0.2 - (2023-02-23)
 ------------------------------
 
