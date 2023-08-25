@@ -1455,18 +1455,8 @@ class TestVirtualCodebaseCreation(FileBasedTesting):
         paths = [
             'to',
             'to/to',
-            'to/to/com.liferay.portal.tika-1.0.22.jar',
-            'to/to/com.liferay.portal.tika-1.0.22.jar-extract',
-            'to/to/com.liferay.portal.tika-1.0.22.jar-extract/com.liferay.portal.tika-1.0.22',
-            'to/to/com.liferay.portal.tika-1.0.22.jar-extract/com.liferay.portal.tika-1.0.22/com',
-            'to/to/com.liferay.portal.tika-1.0.22.jar-extract/com.liferay.portal.tika-1.0.22/com/liferay',
-            'to/to/com.liferay.portal.tika-1.0.22.jar-extract/com.liferay.portal.tika-1.0.22/com/liferay/portal',
-            'to/to/com.liferay.portal.tika-1.0.22.jar-extract/com.liferay.portal.tika-1.0.22/com/liferay/portal/tika',
-            'to/to/com.liferay.portal.tika-1.0.22.jar-extract/com.liferay.portal.tika-1.0.22/com/liferay/portal/tika/internal',
-            'to/to/com.liferay.portal.tika-1.0.22.jar-extract/com.liferay.portal.tika-1.0.22/com/liferay/portal/tika/internal/activator',
-            'to/to/com.liferay.portal.tika-1.0.22.jar-extract/com.liferay.portal.tika-1.0.22/com/liferay/portal/tika/internal/activator/TikaBundleActivator.class',
-            'to/to/com.liferay.portal.tika-1.0.22.jar-extract/com.liferay.portal.tika-1.0.22/META-INF',
-            'to/to/com.liferay.portal.tika-1.0.22.jar-extract/com.liferay.portal.tika-1.0.22/META-INF/MANIFEST.MF',
+            'to/to/to',
+            'to/to/to/to',
         ]
         resources = [{'path': path} for path in paths]
         vc = VirtualCodebase(location={'files': resources})
