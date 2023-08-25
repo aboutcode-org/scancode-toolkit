@@ -1451,6 +1451,18 @@ class TestVirtualCodebaseCreation(FileBasedTesting):
         test_file = self.get_test_loc('resource/virtual_codebase/zephyr-binary.json')
         VirtualCodebase(test_file)
 
+    def test_VirtualCodebase_can_be_created_with_repeated_root_directory(self):
+        paths = [
+            'to',
+            'to/to',
+            'to/to/to',
+            'to/to/to/to',
+        ]
+        resources = [{'path': path} for path in paths]
+        vc = VirtualCodebase(location={'files': resources})
+        walked_paths = [r.path for r in vc.walk()]
+        assert paths == walked_paths
+
 
 class TestResource(FileBasedTesting):
     test_data_dir = join(dirname(__file__), 'data')
