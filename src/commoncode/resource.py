@@ -2036,7 +2036,7 @@ class VirtualCodebase(Codebase):
         for segment in path_segments:
             path = posixpath_join(current.path, segment)
             existing = resources_by_path.get(path)
-            if not existing:
+            if not existing or existing == Codebase.CACHED_RESOURCE:
                 existing = self._get_or_create_resource(
                     name=segment,
                     # build the path based on parent
