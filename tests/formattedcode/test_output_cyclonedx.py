@@ -13,7 +13,10 @@ import json
 import os
 
 import saneyaml
-from lxml import etree
+try:
+    from lxml import etree
+except ImportError:
+    from sanexml import etree
 from commoncode.testcase import FileDrivenTesting
 
 from formattedcode.output_cyclonedx import CycloneDxComponent
