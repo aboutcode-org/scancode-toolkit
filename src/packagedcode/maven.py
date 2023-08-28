@@ -12,10 +12,7 @@ import os.path
 from pprint import pformat
 
 import javaproperties
-try:
-    from lxml import etree
-except ImportError:
-    from sanexml import etree
+import lxml
 from fnmatch import fnmatchcase
 from packageurl import PackageURL
 from pymaven import artifact
@@ -428,17 +425,16 @@ class MavenPom(pom.Pom):
                 xml_text = analysis.unicode_text(location)
         else:
             xml_text = text
-        xml_text = xml_text.strip().strip("'").strip("\n'")
         xml_text = strip_namespace(xml_text)
         xml_text = xml_text.encode('utf-8')
         if TRACE:
             logger.debug('MavenPom.__init__: xml_text: {}'.format(xml_text))
 
-        self._pom_data = etree.fromstring(xml_text, parser=pom.POM_PARSER())  # NOQA
+        self._pom_data = lxml.etree.fromstring(xml_text, parser=pom.POM_PARSER)  # NOQA
 
         # collect and then remove XML comments from the XML elements tree
         self.comments = self._get_comments()
-        etree.strip_tags(self._pom_data, etree.Comment)  # NOQA
+        lxml.etree.strip_tags(self._pom_data, lxml.etree.Comment)  # NOQA
 
         # FIXME: we do not use a client for now.
         # There are pending issues at pymaven to address this
@@ -757,9 +753,7 @@ class MavenPom(pom.Pom):
         """Return a list of comment texts or an empty list."""
         if xml is None:
             xml = self.pom_data
-        expression = etree.XPath('//comment()')
-        children = expression(xml)
-        comments = [c.text for c in children]
+        comments = [c.text for c in xml.xpath('//comment()')]
         return [c.strip() for c in comments if c and c.strip()]
 
     def _find_licenses(self):

@@ -22,10 +22,7 @@ from typing import List
 import attr
 from commoncode.cliutils import OUTPUT_GROUP
 from commoncode.cliutils import PluggableCommandLineOption
-try:
-    from lxml import etree
-except ImportError:
-    from sanexml import etree
+from lxml import etree
 from plugincode.output import OutputPlugin
 from plugincode.output import output_impl
 
