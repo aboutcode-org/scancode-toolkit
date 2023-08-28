@@ -12,7 +12,7 @@ from itertools import groupby
 try:
     import ahocorasick
 except ImportError:
-    import ahocode as ahocorasick
+    import ahocode.ahocode as ahocorasick
 
 from licensedcode import SMALL_RULE
 from licensedcode.match import LicenseMatch

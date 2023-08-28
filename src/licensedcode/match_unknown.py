@@ -10,7 +10,7 @@
 try:
     import ahocorasick
 except ImportError:
-    import ahocode as ahocorasick
+    import ahocode.ahocode as ahocorasick
 
 from licensedcode import tokenize
 from licensedcode.models import UnknownRule
