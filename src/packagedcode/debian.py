@@ -629,15 +629,22 @@ def build_package_data(debian_data, datasource_id, package_type='deb', distro=No
         keywords.append(keyword)
 
     source_packages = []
-    source = debian_data.get('source')
-    if source:
+source = debian_data.get('source')
+if source:
+    if distro is None:
+        source_pkg_purl = PackageURL(
+            type=package_type,
+            name=source
+        ).to_string()
+    else:
         source_pkg_purl = PackageURL(
             type=package_type,
             name=source,
             namespace=distro
         ).to_string()
 
-        source_packages.append(source_pkg_purl)
+    source_packages.append(source_pkg_purl)
+
 
     return models.PackageData(
         datasource_id=datasource_id,
