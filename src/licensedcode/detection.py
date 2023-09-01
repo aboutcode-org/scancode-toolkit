@@ -1139,7 +1139,9 @@ def has_correct_license_clue_matches(license_matches):
     Return True if all the matches in ``license_matches`` List of LicenseMatch
     has True for the `is_license_clue` rule attribute.
     """
-    return is_correct_detection(license_matches) and all(match.rule.is_license_clue for match in license_matches)
+    return is_correct_detection(license_matches) and all(
+        match.rule.is_license_clue for match in license_matches
+    )
 
 
 def is_low_quality_matches(license_matches):
@@ -1554,12 +1556,12 @@ def analyze_detection(license_matches, package_license=False):
     ):
         return DetectionCategory.FALSE_POSITVE.value
 
+    elif has_correct_license_clue_matches(license_matches=license_matches):
+        return DetectionCategory.LICENSE_CLUES.value
+
     # Case where all matches have `matcher` as `1-hash` or `4-spdx-id`
     elif is_correct_detection_non_unknown(license_matches=license_matches):
         return DetectionCategory.PERFECT_DETECTION.value
-
-    elif has_correct_license_clue_matches(license_matches=license_matches):
-        return DetectionCategory.LICENSE_CLUES.value
 
     # Case where even though the matches have perfect coverage, they have
     # matches with `unknown` rule identifiers
