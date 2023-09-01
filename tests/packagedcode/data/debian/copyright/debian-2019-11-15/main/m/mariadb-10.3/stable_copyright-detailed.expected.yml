@@ -545,7 +545,7 @@ other_license_detections:
            2. Redistributions in binary form must the following disclaimer in
              the documentation and/or other materials provided with the
              distribution.
-    identifier:
+    identifier: bsd_new-7c8321ea-5f82-974c-692b-936bcaabf520
   - license_expression: bsd-new
     matches:
       - score: '100.0'

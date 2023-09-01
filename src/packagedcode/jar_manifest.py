@@ -216,7 +216,7 @@ def get_normalized_java_manifest_data(manifest_mapping):
             name = i_title or am_nm or ext_nm or nm
             descriptions = [s_title, i_title, nm]
 
-    datasource_id =get_datasource_id(package_type=package_type)
+    datasource_id = get_datasource_id(package_type=package_type)
 
     descriptions = unique(descriptions)
     descriptions = [d for d in descriptions if d and d.strip() and d != name]

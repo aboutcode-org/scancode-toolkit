@@ -384,7 +384,7 @@
   ],
   "license_detections": [
     {
-      "identifier": "apache-2.0-35de6d3f-8962-0454-2270-33aac504c123",
+      "identifier": "apache_2_0-35de6d3f-8962-0454-2270-33aac504c123",
       "license_expression": "apache-2.0",
       "detection_count": 2,
       "detection_log": [
@@ -392,18 +392,18 @@
       ]
     },
     {
-      "identifier": "apache-2.0-abb5bcc3-dac9-a935-3392-31a86beb482a",
+      "identifier": "apache_2_0-999670be-3d5e-ebf8-ae18-b555c26c5e80",
+      "license_expression": "apache-2.0",
+      "detection_count": 2,
+      "detection_log": []
+    },
+    {
+      "identifier": "apache_2_0-abb5bcc3-dac9-a935-3392-31a86beb482a",
       "license_expression": "apache-2.0",
       "detection_count": 2,
       "detection_log": [
         "unknown-reference-to-local-file"
       ]
-    },
-    {
-      "identifier": "apache_2_0-999670be-3d5e-ebf8-ae18-b555c26c5e80",
-      "license_expression": "apache-2.0",
-      "detection_count": 2,
-      "detection_log": []
     },
     {
       "identifier": "apache_2_0-c4e30bcd-ccfd-bbc3-d2f1-196ab911e47d",
@@ -550,7 +550,7 @@
           "detection_log": [
             "unknown-reference-to-local-file"
           ],
-          "identifier": "apache-2.0-abb5bcc3-dac9-a935-3392-31a86beb482a"
+          "identifier": "apache_2_0-abb5bcc3-dac9-a935-3392-31a86beb482a"
         }
       ],
       "license_clues": [],
@@ -661,7 +661,7 @@
           "detection_log": [
             "unknown-reference-in-file-to-package"
           ],
-          "identifier": "apache-2.0-35de6d3f-8962-0454-2270-33aac504c123"
+          "identifier": "apache_2_0-35de6d3f-8962-0454-2270-33aac504c123"
         }
       ],
       "license_clues": [],
@@ -724,7 +724,7 @@
           "detection_log": [
             "unknown-reference-in-file-to-package"
           ],
-          "identifier": "apache-2.0-35de6d3f-8962-0454-2270-33aac504c123"
+          "identifier": "apache_2_0-35de6d3f-8962-0454-2270-33aac504c123"
         }
       ],
       "license_clues": [],
@@ -1075,7 +1075,7 @@
               "detection_log": [
                 "unknown-reference-to-local-file"
               ],
-              "identifier": "apache-2.0-abb5bcc3-dac9-a935-3392-31a86beb482a"
+              "identifier": "apache_2_0-abb5bcc3-dac9-a935-3392-31a86beb482a"
             }
           ],
           "other_license_expression": null,

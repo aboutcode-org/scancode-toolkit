@@ -547,6 +547,16 @@ class TestPyPiSetupPyNotWin(PackageTester):
         self.check_packages_data(package, expected_loc, regen=REGEN_TEST_FIXTURES)
 
 
+class TestPyPiSetupCfg(PackageTester):
+    test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
+
+    def test_parse_setup_cfg(self):
+        test_file = self.get_test_loc('pypi/setup.cfg/wheel-0.34.2/setup.cfg')
+        package = pypi.SetupCfgHandler.parse(test_file)
+        expected_loc = self.get_test_loc('pypi/setup.cfg/wheel-0.34.2/setup.cfg-expected.json')
+        self.check_packages_data(package, expected_loc, regen=REGEN_TEST_FIXTURES)
+
+
 class TestPyPiSetupPyNames(PackageTester):
     test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
 

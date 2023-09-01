@@ -771,6 +771,7 @@ class SetupCfgHandler(BaseExtractedPythonLayout):
                     'name',
                     'version',
                     'license',
+                    'license_files',
                     'url',
                     'author',
                     'author_email',
@@ -793,6 +794,11 @@ class SetupCfgHandler(BaseExtractedPythonLayout):
                 )
             ]
 
+        extracted_license_statement = metadata.get('license')
+        license_file_references = metadata.get('license_files')
+        if license_file_references:
+            extracted_license_statement = f"{extracted_license_statement} {license_file_references}"
+
         yield models.PackageData(
             datasource_id=cls.datasource_id,
             type=cls.default_package_type,
@@ -802,6 +808,7 @@ class SetupCfgHandler(BaseExtractedPythonLayout):
             homepage_url=metadata.get('url'),
             primary_language=cls.default_primary_language,
             dependencies=dependent_packages,
+            extracted_license_statement=extracted_license_statement,
         )
 
     @classmethod

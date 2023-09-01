@@ -3337,7 +3337,7 @@ other_license_detections:
         matched_text: |
           license notice, but it is assumed that it
           is licensed under the same terms as
-    identifier:
+    identifier: artistic_perl_1_0_or_gpl_1_0_plus-f8a67153-d3ca-59da-be8b-68b1535b0862
   - license_expression: artistic-perl-1.0 OR gpl-1.0-plus
     matches:
       - score: '100.0'

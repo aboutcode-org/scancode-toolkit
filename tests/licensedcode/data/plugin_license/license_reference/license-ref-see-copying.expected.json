@@ -1,7 +1,7 @@
 {
   "license_detections": [
     {
-      "identifier": "apache-2.0-1c807a43-2040-70af-75aa-c343d5f2b90c",
+      "identifier": "apache_2_0-1c807a43-2040-70af-75aa-c343d5f2b90c",
       "license_expression": "apache-2.0",
       "detection_count": 1,
       "detection_log": [
@@ -86,7 +86,7 @@
           "detection_log": [
             "unknown-reference-to-local-file"
           ],
-          "identifier": "apache-2.0-1c807a43-2040-70af-75aa-c343d5f2b90c"
+          "identifier": "apache_2_0-1c807a43-2040-70af-75aa-c343d5f2b90c"
         }
       ],
       "license_clues": [],
