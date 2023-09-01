@@ -1,6 +1,6 @@
 ---
 license_expression: proprietary-license
-is_license_tag: yes
+is_license_clue: yes
 relevance: 100
 notes: configure option injected by FFmpeg in the built binaries
 ---
