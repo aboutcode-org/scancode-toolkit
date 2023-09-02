@@ -629,8 +629,8 @@ def build_package_data(debian_data, datasource_id, package_type='deb', distro=No
         keywords.append(keyword)
 
     source_packages = []
-source = debian_data.get('source')
-if source:
+    source = debian_data.get('source')
+    if source:
     if distro is None:
         source_pkg_purl = PackageURL(
             type=package_type,
