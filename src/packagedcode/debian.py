@@ -643,7 +643,7 @@ def build_package_data(debian_data, datasource_id, package_type='deb', distro=No
             namespace=distro
         ).to_string()
 
-    source_packages.append(source_pkg_purl)
+        source_packages.append(source_pkg_purl)
 
 
     return models.PackageData(
