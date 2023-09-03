@@ -17,7 +17,8 @@ import os
 import sys
 from time import time
 
-from intbitset import intbitset
+# from intbitset import intbitset
+from bitcode.bitcode import intbitset
 
 from licensedcode import SMALL_RULE
 from licensedcode import TINY_RULE

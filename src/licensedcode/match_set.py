@@ -12,7 +12,8 @@ from collections import namedtuple
 from functools import partial
 from itertools import groupby
 
-from intbitset import intbitset
+# from intbitset import intbitset
+from bitcode.bitcode import intbitset
 
 from licensedcode.tokenize import ngrams
 
