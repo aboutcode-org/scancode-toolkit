@@ -12,10 +12,9 @@ declared_license_expression: gpl-3.0-plus WITH gcc-exception-3.1 AND gpl-3.0-plu
   AND (gpl-3.0 AND gpl-2.0 AND lgpl-3.0-plus WITH cygwin-exception-lgpl-3.0-plus AND other-copyleft
   AND other-permissive) AND x11-lucent AND amd-historical AND sunpro AND osf-1990 AND nilsson-historical
   AND newlib-historical AND bsd-new AND amd-historical AND bsd-new AND bsd-simplified AND bsd-simplified
-  AND bsd-simplified AND x11-hanson AND bsd-simplified AND bsd-new AND (cmu-simple OR gpl-2.0-plus)
-  AND lgpl-2.0-plus AND lgpl-2.1-plus AND lgpl-2.0-plus AND lgpl-2.0-plus AND intel-osl-1993
-  AND osf-1990 AND hs-regexp AND bsd-simplified AND bsd-simplified AND bsd-simplified AND bsd-new
-  AND unicode AND unicode AND lgpl-2.1-plus
+  AND bsd-simplified AND x11-hanson AND bsd-simplified AND bsd-new AND lgpl-2.0-plus AND lgpl-2.1-plus
+  AND lgpl-2.0-plus AND lgpl-2.0-plus AND intel-osl-1993 AND osf-1990 AND hs-regexp AND bsd-simplified
+  AND bsd-simplified AND bsd-simplified AND bsd-new AND unicode AND unicode AND lgpl-2.1-plus
 declared_license_expression_spdx: GPL-3.0-or-later WITH GCC-exception-3.1 AND GPL-3.0-or-later
   WITH GCC-exception-3.1 AND BSD-3-Clause AND NCSA AND MIT AND MIT AND GFDL-1.2-only AND GCC-exception-3.1
   AND LGPL-2.0-or-later AND LGPL-2.1-or-later AND LGPL-2.1-or-later AND LGPL-2.1-or-later AND
@@ -33,11 +32,10 @@ declared_license_expression_spdx: GPL-3.0-or-later WITH GCC-exception-3.1 AND GP
   AND LicenseRef-scancode-amd-historical AND SunPro AND HP-1986 AND LicenseRef-scancode-nilsson-historical
   AND LicenseRef-scancode-newlib-historical AND BSD-3-Clause AND LicenseRef-scancode-amd-historical
   AND BSD-3-Clause AND BSD-2-Clause AND BSD-2-Clause AND BSD-2-Clause AND LicenseRef-scancode-x11-hanson
-  AND BSD-2-Clause AND BSD-3-Clause AND (LicenseRef-scancode-cmu-simple OR GPL-2.0-or-later)
-  AND LGPL-2.0-or-later AND LGPL-2.1-or-later AND LGPL-2.0-or-later AND LGPL-2.0-or-later AND
-  LicenseRef-scancode-intel-osl-1993 AND HP-1986 AND Spencer-94 AND BSD-2-Clause AND BSD-2-Clause
-  AND BSD-2-Clause AND BSD-3-Clause AND LicenseRef-scancode-unicode AND LicenseRef-scancode-unicode
-  AND LGPL-2.1-or-later
+  AND BSD-2-Clause AND BSD-3-Clause AND LGPL-2.0-or-later AND LGPL-2.1-or-later AND LGPL-2.0-or-later
+  AND LGPL-2.0-or-later AND LicenseRef-scancode-intel-osl-1993 AND HP-1986 AND Spencer-94 AND
+  BSD-2-Clause AND BSD-2-Clause AND BSD-2-Clause AND BSD-3-Clause AND LicenseRef-scancode-unicode
+  AND LicenseRef-scancode-unicode AND LGPL-2.1-or-later
 other_license_expression:
 other_license_expression_spdx:
 license_detections:
@@ -1558,22 +1556,8 @@ license_detections:
           OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
           ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     identifier: bsd_new-8253b828-e3cb-c484-e1ba-cfca208b3bf2
-  - license_expression: (cmu-simple OR gpl-2.0-plus) AND lgpl-2.0-plus
+  - license_expression: lgpl-2.0-plus
     matches:
-      - score: '10.8'
-        start_line: 1271
-        end_line: 1278
-        matched_length: '19'
-        match_coverage: '10.8'
-        matcher: 3-seq
-        license_expression: cmu-simple OR gpl-2.0-plus
-        rule_identifier: cmu-simple_or_gpl-2.0-plus_1.RULE
-        rule_relevance: 100
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/cmu-simple_or_gpl-2.0-plus_1.RULE
-        matched_text: "is distributed WITHOUT ANY WARRANTY; without even the implied\nwarranty\
-          \ of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.\n\n(21) Free Software Foundation\
-          \ LGPL License (*-linux* targets only)\n\n   Copyright (C) 1990-1999, 2000, 2001 \n\
-          \   Free Software Foundation, Inc.\n   This file is part of the GNU"
       - score: '100.0'
         start_line: 1274
         end_line: 1274
@@ -1585,7 +1569,7 @@ license_detections:
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl_39.RULE
         matched_text: Free Software Foundation LGPL License (*-
-    identifier: cmu_simple_or_gpl_2_0_plus__and_lgpl_2_0_plus-b341a688-df55-2c66-e2bb-80f487eeea18
+    identifier: lgpl_2_0_plus-3510e639-5cec-653e-6f61-1a4daf9a674b
   - license_expression: lgpl-2.1-plus AND lgpl-2.0-plus
     matches:
       - score: '100.0'

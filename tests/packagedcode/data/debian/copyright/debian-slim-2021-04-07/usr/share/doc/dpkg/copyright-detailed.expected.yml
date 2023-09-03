@@ -11,12 +11,11 @@ declared_license:
 declared_license_expression: gpl-2.0-plus AND gpl-2.0
 declared_license_expression_spdx: GPL-2.0-or-later AND GPL-2.0-only
 other_license_expression: (gpl-2.0-plus AND gpl-2.0-plus AND gpl-2.0) AND (gpl-2.0-plus AND
-  gpl-2.0-plus AND gpl-2.0) AND (gpl-2.0 AND gpl-2.0) AND (bsd-simplified AND bsd-simplified)
-  AND (public-domain AND other-permissive AND public-domain AND public-domain AND public-domain)
-  AND public-domain
+  gpl-2.0-plus AND gpl-2.0) AND (gpl-2.0 AND gpl-2.0) AND bsd-simplified AND (public-domain
+  AND other-permissive AND public-domain AND public-domain AND public-domain) AND public-domain
 other_license_expression_spdx: (GPL-2.0-or-later AND GPL-2.0-or-later AND GPL-2.0-only) AND
   (GPL-2.0-or-later AND GPL-2.0-or-later AND GPL-2.0-only) AND (GPL-2.0-only AND GPL-2.0-only)
-  AND (BSD-2-Clause AND BSD-2-Clause) AND (LicenseRef-scancode-public-domain AND LicenseRef-scancode-other-permissive
+  AND BSD-2-Clause AND (LicenseRef-scancode-public-domain AND LicenseRef-scancode-other-permissive
   AND LicenseRef-scancode-public-domain AND LicenseRef-scancode-public-domain AND LicenseRef-scancode-public-domain)
   AND LicenseRef-scancode-public-domain
 license_detections: []
@@ -189,16 +188,16 @@ other_license_detections:
     identifier: gpl_2_0-a054018a-dccf-8b92-9ab1-ab255ec3aba9
   - license_expression: bsd-simplified
     matches:
-      - score: '100.0'
+      - score: '99.45'
         start_line: 159
-        end_line: 166
-        matched_length: 70
-        match_coverage: '100.0'
-        matcher: 2-aho
+        end_line: 178
+        matched_length: 182
+        match_coverage: '99.45'
+        matcher: 3-seq
         license_expression: bsd-simplified
-        rule_identifier: bsd-simplified_264.RULE
+        rule_identifier: bsd-simplified_52.RULE
         rule_relevance: 100
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-simplified_264.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-simplified_52.RULE
         matched_text: |
           Redistribution and use in source and binary forms, with or without
           modification, are permitted provided that the following conditions
@@ -208,18 +207,8 @@ other_license_detections:
           2. Redistributions in binary form must reproduce the above copyright
              notice, this list of conditions and the following disclaimer in the
              documentation and/or other materials provided with the distribution.
-      - score: '58.47'
-        start_line: 168
-        end_line: 178
-        matched_length: 107
-        match_coverage: '58.47'
-        matcher: 3-seq
-        license_expression: bsd-simplified
-        rule_identifier: bsd-simplified_52.RULE
-        rule_relevance: 100
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-simplified_52.RULE
-        matched_text: |
-          AUTHORS AND CONTRIBUTORS ``AS IS'' AND
+
+          THIS SOFTWARE IS PROVIDED BY AUTHORS AND CONTRIBUTORS ``AS IS'' AND
           ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
           IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
           ARE DISCLAIMED.  IN NO EVENT SHALL THE AUTHORS OR CONTRIBUTORS BE LIABLE
@@ -230,7 +219,7 @@ other_license_detections:
           LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
           OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
           SUCH DAMAGE.
-    identifier: bsd_simplified-3862e344-2692-6101-9ce6-3c5936599dc2
+    identifier: bsd_simplified-922806f4-2399-a0d3-1bb4-02038e614b35
 copyright: |
   Copyright © 1994 Ian Murdock <imurdock@debian.org>
   Copyright © 1994 Matt Welsh <mdw@sunsite.unc.edu>

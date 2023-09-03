@@ -91,28 +91,28 @@ other_license_expression: (gpl-2.0-plus AND gpl-2.0-plus AND gpl-2.0) AND (gpl-3
   AND gpl-2.0-plus AND gpl-2.0) AND (gpl-2.0-plus AND gpl-2.0-plus AND gpl-2.0) AND (gpl-2.0-plus
   AND gpl-2.0-plus AND gpl-2.0) AND (gpl-2.0-plus AND gpl-2.0-plus AND gpl-2.0) AND (gpl-2.0
   AND gpl-2.0 AND gpl-2.0) AND (gpl-3.0-plus AND gpl-3.0-plus AND gpl-3.0 AND gpl-3.0) AND (gpl-2.0-plus
-  AND gpl-2.0-plus AND gpl-2.0) AND (artistic-2.0 AND other-copyleft AND artistic-2.0 AND artistic-2.0
-  AND artistic-2.0) AND (gpl-2.0-plus AND gpl-2.0-plus AND gpl-2.0) AND (gpl-2.0-plus AND gpl-2.0-plus
-  AND gpl-2.0) AND (gpl-3.0-plus AND gpl-3.0-plus AND gpl-3.0 AND gpl-3.0) AND (gpl-2.0-plus
+  AND gpl-2.0-plus AND gpl-2.0) AND artistic-2.0 AND (gpl-2.0-plus AND gpl-2.0-plus AND gpl-2.0)
+  AND (gpl-2.0-plus AND gpl-2.0-plus AND gpl-2.0) AND (gpl-3.0-plus AND gpl-3.0-plus AND gpl-3.0
+  AND gpl-3.0) AND (gpl-2.0-plus AND gpl-2.0-plus AND gpl-2.0) AND (gpl-2.0-plus AND gpl-2.0-plus
+  AND gpl-2.0) AND (gpl-2.0-plus AND gpl-2.0-plus AND gpl-2.0) AND (gpl-3.0-plus AND gpl-3.0-plus
+  AND gpl-3.0 AND gpl-3.0) AND (gpl-2.0-plus AND gpl-2.0-plus AND gpl-2.0) AND (gpl-2.0-plus
   AND gpl-2.0-plus AND gpl-2.0) AND (gpl-2.0-plus AND gpl-2.0-plus AND gpl-2.0) AND (gpl-2.0-plus
   AND gpl-2.0-plus AND gpl-2.0) AND (gpl-3.0-plus AND gpl-3.0-plus AND gpl-3.0 AND gpl-3.0)
   AND (gpl-2.0-plus AND gpl-2.0-plus AND gpl-2.0) AND (gpl-2.0-plus AND gpl-2.0-plus AND gpl-2.0)
   AND (gpl-2.0-plus AND gpl-2.0-plus AND gpl-2.0) AND (gpl-2.0-plus AND gpl-2.0-plus AND gpl-2.0)
-  AND (gpl-3.0-plus AND gpl-3.0-plus AND gpl-3.0 AND gpl-3.0) AND (gpl-2.0-plus AND gpl-2.0-plus
+  AND (gpl-2.0-plus AND gpl-2.0-plus AND gpl-2.0) AND (gpl-2.0-plus AND gpl-2.0-plus AND gpl-2.0)
+  AND (gpl-2.0-plus AND gpl-2.0-plus AND gpl-2.0) AND (gpl-2.0-plus AND gpl-2.0-plus AND gpl-2.0)
+  AND (gpl-2.0-plus AND gpl-2.0-plus AND gpl-2.0) AND ((artistic-perl-1.0 AND artistic-perl-1.0)
+  OR (gpl-1.0-plus AND gpl-1.0-plus AND gpl-1.0-plus AND gpl-1.0-plus AND gpl-1.0)) AND (gpl-2.0
+  AND gpl-2.0 AND gpl-2.0) AND (gpl-2.0-plus AND gpl-2.0-plus AND gpl-2.0) AND (gpl-2.0-plus
+  AND gpl-2.0-plus AND gpl-2.0) AND (gpl-2.0-plus AND gpl-2.0-plus AND gpl-2.0) AND (gpl-2.0-plus
+  AND gpl-2.0-plus AND gpl-2.0) AND (gpl-2.0-plus AND gpl-2.0-plus AND gpl-2.0) AND (gpl-2.0-plus
+  AND gpl-2.0-plus AND gpl-2.0) AND (gpl-2.0-plus AND gpl-2.0-plus AND gpl-2.0) AND (gpl-2.0-plus
+  AND gpl-2.0-plus AND gpl-2.0) AND (gpl-2.0-plus AND gpl-2.0-plus AND gpl-2.0) AND (gpl-2.0-plus
+  AND gpl-2.0-plus AND gpl-2.0) AND (gpl-2.0-plus AND gpl-2.0-plus AND gpl-2.0) AND (gpl-2.0-plus
+  AND gpl-2.0-plus AND gpl-2.0) AND public-domain-disclaimer AND (gpl-2.0-plus AND gpl-2.0-plus
   AND gpl-2.0) AND (gpl-2.0-plus AND gpl-2.0-plus AND gpl-2.0) AND (gpl-2.0-plus AND gpl-2.0-plus
-  AND gpl-2.0) AND (gpl-2.0-plus AND gpl-2.0-plus AND gpl-2.0) AND (gpl-2.0-plus AND gpl-2.0-plus
-  AND gpl-2.0) AND (gpl-2.0-plus AND gpl-2.0-plus AND gpl-2.0) AND (gpl-2.0-plus AND gpl-2.0-plus
-  AND gpl-2.0) AND (gpl-2.0-plus AND gpl-2.0-plus AND gpl-2.0) AND (gpl-2.0-plus AND gpl-2.0-plus
-  AND gpl-2.0) AND ((artistic-perl-1.0 AND artistic-perl-1.0) OR (gpl-1.0-plus AND gpl-1.0-plus
-  AND gpl-1.0-plus AND gpl-1.0-plus AND gpl-1.0)) AND (gpl-2.0 AND gpl-2.0 AND gpl-2.0) AND
-  (gpl-2.0-plus AND gpl-2.0-plus AND gpl-2.0) AND (gpl-2.0-plus AND gpl-2.0-plus AND gpl-2.0)
-  AND (gpl-2.0-plus AND gpl-2.0-plus AND gpl-2.0) AND (gpl-2.0-plus AND gpl-2.0-plus AND gpl-2.0)
-  AND (gpl-2.0-plus AND gpl-2.0-plus AND gpl-2.0) AND (gpl-2.0-plus AND gpl-2.0-plus AND gpl-2.0)
-  AND (gpl-2.0-plus AND gpl-2.0-plus AND gpl-2.0) AND (gpl-2.0-plus AND gpl-2.0-plus AND gpl-2.0)
-  AND (gpl-2.0-plus AND gpl-2.0-plus AND gpl-2.0) AND (gpl-2.0-plus AND gpl-2.0-plus AND gpl-2.0)
-  AND (gpl-2.0-plus AND gpl-2.0-plus AND gpl-2.0) AND (gpl-2.0-plus AND gpl-2.0-plus AND gpl-2.0)
-  AND public-domain-disclaimer AND (gpl-2.0-plus AND gpl-2.0-plus AND gpl-2.0) AND (gpl-2.0-plus
-  AND gpl-2.0-plus AND gpl-2.0) AND (gpl-2.0-plus AND gpl-2.0-plus AND gpl-2.0)
+  AND gpl-2.0)
 other_license_expression_spdx: (GPL-2.0-or-later AND GPL-2.0-or-later AND GPL-2.0-only) AND
   (GPL-3.0-only AND GPL-1.0-or-later AND GPL-3.0-only AND GPL-3.0-only) AND (GPL-3.0-or-later
   AND GPL-3.0-or-later AND GPL-3.0-only AND GPL-3.0-only) AND ISC AND (GPL-2.0-or-later AND
@@ -130,33 +130,32 @@ other_license_expression_spdx: (GPL-2.0-or-later AND GPL-2.0-or-later AND GPL-2.
   AND GPL-2.0-or-later AND GPL-2.0-only) AND (GPL-2.0-or-later AND GPL-2.0-or-later AND GPL-2.0-only)
   AND (GPL-2.0-or-later AND GPL-2.0-or-later AND GPL-2.0-only) AND (GPL-2.0-only AND GPL-2.0-only
   AND GPL-2.0-only) AND (GPL-3.0-or-later AND GPL-3.0-or-later AND GPL-3.0-only AND GPL-3.0-only)
-  AND (GPL-2.0-or-later AND GPL-2.0-or-later AND GPL-2.0-only) AND (Artistic-2.0 AND LicenseRef-scancode-other-copyleft
-  AND Artistic-2.0 AND Artistic-2.0 AND Artistic-2.0) AND (GPL-2.0-or-later AND GPL-2.0-or-later
-  AND GPL-2.0-only) AND (GPL-2.0-or-later AND GPL-2.0-or-later AND GPL-2.0-only) AND (GPL-3.0-or-later
-  AND GPL-3.0-or-later AND GPL-3.0-only AND GPL-3.0-only) AND (GPL-2.0-or-later AND GPL-2.0-or-later
-  AND GPL-2.0-only) AND (GPL-2.0-or-later AND GPL-2.0-or-later AND GPL-2.0-only) AND (GPL-2.0-or-later
-  AND GPL-2.0-or-later AND GPL-2.0-only) AND (GPL-3.0-or-later AND GPL-3.0-or-later AND GPL-3.0-only
-  AND GPL-3.0-only) AND (GPL-2.0-or-later AND GPL-2.0-or-later AND GPL-2.0-only) AND (GPL-2.0-or-later
+  AND (GPL-2.0-or-later AND GPL-2.0-or-later AND GPL-2.0-only) AND Artistic-2.0 AND (GPL-2.0-or-later
+  AND GPL-2.0-or-later AND GPL-2.0-only) AND (GPL-2.0-or-later AND GPL-2.0-or-later AND GPL-2.0-only)
+  AND (GPL-3.0-or-later AND GPL-3.0-or-later AND GPL-3.0-only AND GPL-3.0-only) AND (GPL-2.0-or-later
   AND GPL-2.0-or-later AND GPL-2.0-only) AND (GPL-2.0-or-later AND GPL-2.0-or-later AND GPL-2.0-only)
   AND (GPL-2.0-or-later AND GPL-2.0-or-later AND GPL-2.0-only) AND (GPL-3.0-or-later AND GPL-3.0-or-later
   AND GPL-3.0-only AND GPL-3.0-only) AND (GPL-2.0-or-later AND GPL-2.0-or-later AND GPL-2.0-only)
   AND (GPL-2.0-or-later AND GPL-2.0-or-later AND GPL-2.0-only) AND (GPL-2.0-or-later AND GPL-2.0-or-later
+  AND GPL-2.0-only) AND (GPL-2.0-or-later AND GPL-2.0-or-later AND GPL-2.0-only) AND (GPL-3.0-or-later
+  AND GPL-3.0-or-later AND GPL-3.0-only AND GPL-3.0-only) AND (GPL-2.0-or-later AND GPL-2.0-or-later
   AND GPL-2.0-only) AND (GPL-2.0-or-later AND GPL-2.0-or-later AND GPL-2.0-only) AND (GPL-2.0-or-later
   AND GPL-2.0-or-later AND GPL-2.0-only) AND (GPL-2.0-or-later AND GPL-2.0-or-later AND GPL-2.0-only)
   AND (GPL-2.0-or-later AND GPL-2.0-or-later AND GPL-2.0-only) AND (GPL-2.0-or-later AND GPL-2.0-or-later
-  AND GPL-2.0-only) AND (GPL-2.0-or-later AND GPL-2.0-or-later AND GPL-2.0-only) AND ((Artistic-1.0-Perl
-  AND Artistic-1.0-Perl) OR (GPL-1.0-or-later AND GPL-1.0-or-later AND GPL-1.0-or-later AND
-  GPL-1.0-or-later AND GPL-1.0-only)) AND (GPL-2.0-only AND GPL-2.0-only AND GPL-2.0-only) AND
+  AND GPL-2.0-only) AND (GPL-2.0-or-later AND GPL-2.0-or-later AND GPL-2.0-only) AND (GPL-2.0-or-later
+  AND GPL-2.0-or-later AND GPL-2.0-only) AND (GPL-2.0-or-later AND GPL-2.0-or-later AND GPL-2.0-only)
+  AND ((Artistic-1.0-Perl AND Artistic-1.0-Perl) OR (GPL-1.0-or-later AND GPL-1.0-or-later AND
+  GPL-1.0-or-later AND GPL-1.0-or-later AND GPL-1.0-only)) AND (GPL-2.0-only AND GPL-2.0-only
+  AND GPL-2.0-only) AND (GPL-2.0-or-later AND GPL-2.0-or-later AND GPL-2.0-only) AND (GPL-2.0-or-later
+  AND GPL-2.0-or-later AND GPL-2.0-only) AND (GPL-2.0-or-later AND GPL-2.0-or-later AND GPL-2.0-only)
+  AND (GPL-2.0-or-later AND GPL-2.0-or-later AND GPL-2.0-only) AND (GPL-2.0-or-later AND GPL-2.0-or-later
+  AND GPL-2.0-only) AND (GPL-2.0-or-later AND GPL-2.0-or-later AND GPL-2.0-only) AND (GPL-2.0-or-later
+  AND GPL-2.0-or-later AND GPL-2.0-only) AND (GPL-2.0-or-later AND GPL-2.0-or-later AND GPL-2.0-only)
+  AND (GPL-2.0-or-later AND GPL-2.0-or-later AND GPL-2.0-only) AND (GPL-2.0-or-later AND GPL-2.0-or-later
+  AND GPL-2.0-only) AND (GPL-2.0-or-later AND GPL-2.0-or-later AND GPL-2.0-only) AND (GPL-2.0-or-later
+  AND GPL-2.0-or-later AND GPL-2.0-only) AND LicenseRef-scancode-public-domain-disclaimer AND
   (GPL-2.0-or-later AND GPL-2.0-or-later AND GPL-2.0-only) AND (GPL-2.0-or-later AND GPL-2.0-or-later
-  AND GPL-2.0-only) AND (GPL-2.0-or-later AND GPL-2.0-or-later AND GPL-2.0-only) AND (GPL-2.0-or-later
-  AND GPL-2.0-or-later AND GPL-2.0-only) AND (GPL-2.0-or-later AND GPL-2.0-or-later AND GPL-2.0-only)
-  AND (GPL-2.0-or-later AND GPL-2.0-or-later AND GPL-2.0-only) AND (GPL-2.0-or-later AND GPL-2.0-or-later
-  AND GPL-2.0-only) AND (GPL-2.0-or-later AND GPL-2.0-or-later AND GPL-2.0-only) AND (GPL-2.0-or-later
-  AND GPL-2.0-or-later AND GPL-2.0-only) AND (GPL-2.0-or-later AND GPL-2.0-or-later AND GPL-2.0-only)
-  AND (GPL-2.0-or-later AND GPL-2.0-or-later AND GPL-2.0-only) AND (GPL-2.0-or-later AND GPL-2.0-or-later
-  AND GPL-2.0-only) AND LicenseRef-scancode-public-domain-disclaimer AND (GPL-2.0-or-later AND
-  GPL-2.0-or-later AND GPL-2.0-only) AND (GPL-2.0-or-later AND GPL-2.0-or-later AND GPL-2.0-only)
-  AND (GPL-2.0-or-later AND GPL-2.0-or-later AND GPL-2.0-only)
+  AND GPL-2.0-only) AND (GPL-2.0-or-later AND GPL-2.0-or-later AND GPL-2.0-only)
 license_detections: []
 other_license_detections:
   - license_expression: artistic-perl-1.0
@@ -189,13 +188,13 @@ other_license_detections:
           On Debian systems, the complete text of the Artistic License can be
           found in `/usr/share/common-licenses/Artistic'.
     identifier: artistic_perl_1_0-e9ef718c-d03b-c86e-d9fc-fda61d7cdf41
-  - license_expression: artistic-2.0 AND other-copyleft
+  - license_expression: artistic-2.0
     matches:
-      - score: '98.38'
+      - score: '99.93'
         start_line: 363
         end_line: 551
-        matched_length: 1332
-        match_coverage: '98.38'
+        matched_length: 1353
+        match_coverage: '99.93'
         matcher: 3-seq
         license_expression: artistic-2.0
         rule_identifier: artistic-2.0_36.RULE
@@ -391,53 +390,7 @@ other_license_detections:
                LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, OR CONSEQUENTIAL
                DAMAGES ARISING IN ANY WAY OUT OF THE USE OF THE PACKAGE, EVEN
                IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-      - score: '90.0'
-        start_line: 365
-        end_line: 366
-        matched_length: '19'
-        match_coverage: '100.0'
-        matcher: 2-aho
-        license_expression: other-copyleft
-        rule_identifier: other-copyleft_4.RULE
-        rule_relevance: 90
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/other-copyleft_4.RULE
-        matched_text: |
-          Everyone is permitted to copy and distribute verbatim copies of this
-          license document, but changing it is not allowed.
-      - score: '100.0'
-        start_line: 414
-        end_line: 414
-        matched_length: 2
-        match_coverage: '100.0'
-        matcher: 2-aho
-        license_expression: artistic-2.0
-        rule_identifier: artistic-2.0_18.RULE
-        rule_relevance: 100
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/artistic-2.0_18.RULE
-        matched_text: Artistic License
-      - score: '100.0'
-        start_line: 520
-        end_line: 520
-        matched_length: 2
-        match_coverage: '100.0'
-        matcher: 2-aho
-        license_expression: artistic-2.0
-        rule_identifier: artistic-2.0_18.RULE
-        rule_relevance: 100
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/artistic-2.0_18.RULE
-        matched_text: Artistic License.
-      - score: '100.0'
-        start_line: 540
-        end_line: 540
-        matched_length: 2
-        match_coverage: '100.0'
-        matcher: 2-aho
-        license_expression: artistic-2.0
-        rule_identifier: artistic-2.0_18.RULE
-        rule_relevance: 100
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/artistic-2.0_18.RULE
-        matched_text: Artistic License
-    identifier: artistic_2_0_and_other_copyleft-fcca4887-69e1-04d5-08ea-f93f7a5348b8
+    identifier: artistic_2_0-da505167-7963-b6e8-5f04-2ffe855ea5e9
   - license_expression: gpl-1.0-plus AND gpl-1.0
     matches:
       - score: '100.0'

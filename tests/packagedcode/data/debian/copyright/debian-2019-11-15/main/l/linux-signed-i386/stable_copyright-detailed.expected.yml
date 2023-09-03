@@ -13,26 +13,26 @@ declared_license:
 declared_license_expression: gpl-2.0
 declared_license_expression_spdx: GPL-2.0-only
 other_license_expression: (gpl-2.0 AND gpl-2.0) AND (gpl-2.0 AND gpl-2.0) AND (lgpl-2.1 AND
-  lgpl-2.1-plus AND lgpl-2.1) AND (gpl-2.0-plus OR mit) AND (bsd-new AND gpl-1.0-plus) AND unicode
+  lgpl-2.1-plus AND lgpl-2.1) AND (gpl-2.0-plus OR mit) AND (bsd-new OR gpl-1.0-plus) AND unicode
   AND mit AND (lgpl-2.1 AND lgpl-2.1-plus AND lgpl-2.1)
 other_license_expression_spdx: (GPL-2.0-only AND GPL-2.0-only) AND (GPL-2.0-only AND GPL-2.0-only)
   AND (LGPL-2.1-only AND LGPL-2.1-or-later AND LGPL-2.1-only) AND (GPL-2.0-or-later OR MIT)
-  AND (BSD-3-Clause AND GPL-1.0-or-later) AND LicenseRef-scancode-unicode AND MIT AND (LGPL-2.1-only
+  AND (BSD-3-Clause OR GPL-1.0-or-later) AND LicenseRef-scancode-unicode AND MIT AND (LGPL-2.1-only
   AND LGPL-2.1-or-later AND LGPL-2.1-only)
 license_detections: []
 other_license_detections:
-  - license_expression: bsd-new AND gpl-1.0-plus
+  - license_expression: bsd-new OR gpl-1.0-plus
     matches:
-      - score: '99.07'
+      - score: '99.6'
         start_line: 91
         end_line: 121
-        matched_length: 212
-        match_coverage: '99.07'
+        matched_length: 250
+        match_coverage: '100.0'
         matcher: 3-seq
-        license_expression: bsd-new
-        rule_identifier: bsd-new_902.RULE
+        license_expression: bsd-new OR gpl-1.0-plus
+        rule_identifier: bsd-new_or_gpl.RULE
         rule_relevance: 100
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_902.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_or_gpl.RULE
         matched_text: |
           Redistribution and use in source and binary forms, with or without
           modification, are permitted provided that the following conditions
@@ -65,22 +65,7 @@ other_license_detections:
           THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
           (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
           OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-      - score: '100.0'
-        start_line: 106
-        end_line: 109
-        matched_length: 38
-        match_coverage: '100.0'
-        matcher: 2-aho
-        license_expression: gpl-1.0-plus
-        rule_identifier: gpl_21.RULE
-        rule_relevance: 100
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl_21.RULE
-        matched_text: |
-          ALTERNATIVELY, provided that this notice is retained in full, this
-          product may be distributed under the terms of the GNU General Public
-          License (GPL), in which case the provisions of the GPL apply INSTEAD
-          OF those given above.
-    identifier: bsd_new_and_gpl_1_0_plus-b2833fdb-3868-8d2c-2635-3047b54c6b88
+    identifier: bsd_new_or_gpl_1_0_plus-63451f2d-b05b-ca50-0448-e34962f08f34
   - license_expression: unicode
     matches:
       - score: '100.0'

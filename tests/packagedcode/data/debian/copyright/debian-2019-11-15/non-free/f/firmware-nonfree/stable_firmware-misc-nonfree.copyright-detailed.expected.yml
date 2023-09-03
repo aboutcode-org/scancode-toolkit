@@ -717,16 +717,16 @@ license_detections:
     identifier: bsd_original-4f35e404-7c29-ac7d-6f02-247d42139dd7
   - license_expression: mit
     matches:
-      - score: '80.0'
+      - score: '98.77'
         start_line: 494
-        end_line: 502
-        matched_length: 86
+        end_line: 510
+        matched_length: 161
         match_coverage: '100.0'
-        matcher: 2-aho
+        matcher: 3-seq
         license_expression: mit
-        rule_identifier: mit_17.RULE
-        rule_relevance: 80
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_17.RULE
+        rule_identifier: mit_712.RULE
+        rule_relevance: 100
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_712.RULE
         matched_text: |
           Permission is hereby granted, free of charge, to any person obtaining a
           copy of this software and associated documentation files (the "Software"),
@@ -737,18 +737,6 @@ license_detections:
 
           The above copyright notice and this permission notice shall be included
           in all copies or substantial portions of the Software.
-      - score: '46.58'
-        start_line: 502
-        end_line: 510
-        matched_length: 75
-        match_coverage: '46.58'
-        matcher: 3-seq
-        license_expression: mit
-        rule_identifier: mit_712.RULE
-        rule_relevance: 100
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_712.RULE
-        matched_text: |
-          portions of the Software.
 
           THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
           OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
@@ -757,7 +745,7 @@ license_detections:
           DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR
           OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE
           OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-    identifier: mit-2d13c4b1-c65e-2618-3104-c03824581b84
+    identifier: mit-705ac3a8-db0e-b472-c9a5-81aa76c1cd17
   - license_expression: moxa-linux-firmware
     matches:
       - score: '100.0'

@@ -28,16 +28,15 @@ other_license_expression: (bsd-new AND google-patent-license-golang) AND mit AND
   google-patent-license-golang) AND (bsd-new AND google-patent-license-golang) AND (bsd-new
   AND google-patent-license-golang) AND bsd-simplified AND (bsd-new AND google-patent-license-golang)
   AND (bsd-new AND google-patent-license-golang) AND sunpro AND mpeg-ssg AND other-permissive
-  AND (apache-2.0 AND apache-2.0) AND bsd-2-clause-views AND (cc-by-3.0 AND unknown-license-reference)
-  AND cc-by-3.0 AND bsd-new AND (bsd-new AND google-patent-license-golang)
+  AND (apache-2.0 AND apache-2.0) AND bsd-2-clause-views AND cc-by-3.0 AND cc-by-3.0 AND bsd-new
+  AND (bsd-new AND google-patent-license-golang)
 other_license_expression_spdx: (BSD-3-Clause AND LicenseRef-scancode-google-patent-license-golang)
   AND MIT AND (BSD-3-Clause AND LicenseRef-scancode-google-patent-license-golang) AND (BSD-3-Clause
   AND LicenseRef-scancode-google-patent-license-golang) AND (BSD-3-Clause AND LicenseRef-scancode-google-patent-license-golang)
   AND BSD-2-Clause AND (BSD-3-Clause AND LicenseRef-scancode-google-patent-license-golang) AND
   (BSD-3-Clause AND LicenseRef-scancode-google-patent-license-golang) AND SunPro AND LicenseRef-scancode-mpeg-ssg
   AND LicenseRef-scancode-other-permissive AND (Apache-2.0 AND Apache-2.0) AND BSD-2-Clause-Views
-  AND (CC-BY-3.0 AND LicenseRef-scancode-unknown-license-reference) AND CC-BY-3.0 AND BSD-3-Clause
-  AND (BSD-3-Clause AND LicenseRef-scancode-google-patent-license-golang)
+  AND CC-BY-3.0 AND CC-BY-3.0 AND BSD-3-Clause AND (BSD-3-Clause AND LicenseRef-scancode-google-patent-license-golang)
 license_detections: []
 other_license_detections:
   - license_expression: other-permissive
@@ -298,16 +297,16 @@ other_license_detections:
     identifier: mpeg_ssg-edece10f-06f5-dd49-8002-b4f2d5854d89
   - license_expression: cc-by-3.0
     matches:
-      - score: '93.42'
+      - score: '97.85'
         start_line: 379
         end_line: 705
-        matched_length: 2685
-        match_coverage: '93.42'
+        matched_length: 2686
+        match_coverage: '97.85'
         matcher: 3-seq
         license_expression: cc-by-3.0
-        rule_identifier: cc-by-3.0_105.RULE
+        rule_identifier: cc-by-3.0_102.RULE
         rule_relevance: 100
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/cc-by-3.0_105.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/cc-by-3.0_102.RULE
         matched_text: |
           THE WORK (AS DEFINED BELOW) IS PROVIDED UNDER THE TERMS OF THIS
           CREATIVE COMMONS PUBLIC LICENSE ("CCPL" OR "LICENSE"). THE WORK IS
@@ -636,18 +635,7 @@ other_license_detections:
                rights not granted under this License, such additional rights
                are deemed to be included in the License; this License is not
                intended to restrict the license of any rights under applicable law.
-      - score: '100.0'
-        start_line: 381
-        end_line: 381
-        matched_length: 3
-        match_coverage: '100.0'
-        matcher: 2-aho
-        license_expression: unknown-license-reference
-        rule_identifier: unknown-license-reference_341.RULE
-        rule_relevance: 100
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/unknown-license-reference_341.RULE
-        matched_text: PROTECTED BY COPYRIGHT
-    identifier: cc_by_3_0-f08d8fb5-ac4f-f147-cac4-c4381c954339
+    identifier: cc_by_3_0-4a3ad702-c278-8efa-96a7-7950ab5504e8
   - license_expression: bsd-2-clause-views
     matches:
       - score: '98.1'

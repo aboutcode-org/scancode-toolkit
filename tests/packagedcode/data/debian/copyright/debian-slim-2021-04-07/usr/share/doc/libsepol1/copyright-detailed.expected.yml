@@ -4,20 +4,20 @@ declared_license_expression_spdx: LGPL-2.1-or-later AND GPL-2.0-only
 other_license_expression:
 other_license_expression_spdx:
 license_detections:
-  - license_expression: lgpl-2.1-plus
+  - license_expression: lgpl-2.1-plus AND gpl-2.0
     matches:
-      - score: '100.0'
+      - score: '89.63'
         start_line: 16
-        end_line: 31
-        matched_length: 141
-        match_coverage: '100.0'
-        matcher: 2-aho
+        end_line: 41
+        matched_length: 147
+        match_coverage: '89.63'
+        matcher: 3-seq
         license_expression: lgpl-2.1-plus
-        rule_identifier: lgpl-2.1-plus_298.RULE
+        rule_identifier: lgpl-2.1-plus_312.RULE
         rule_relevance: 100
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_298.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_312.RULE
         matched_text: |
-          This library is free software; you can redistribute it and/or
+          library is free software; you can redistribute it and/or
               modify it under the terms of the GNU Lesser General Public
               License as published by the Free Software Foundation; either
               version 2.1 of the License, or (at your option) any later version.
@@ -33,9 +33,16 @@ license_detections:
 
           On Debian GNU/Linux systems, the complete text of the Lesser GNU General
           Public License can be found in `/usr/share/common-licenses/LGPL'.
-    identifier: lgpl_2_1_plus-8a5e2990-4794-788b-8d4c-f58a9743e092
-  - license_expression: gpl-2.0
-    matches:
+
+           This package is maintained by Manoj Srivastava <srivasta@debian.org>.
+
+           The Debian specific changes are © 2005-2008, Manoj Srivastava
+           <srivasta@debian.org>, and distributed under the terms of the GNU
+           General Public License, version 2.
+
+
+          On Debian GNU/Linux systems, the complete text of the GNU General
+          Public License can be found in `/usr/share/common-licenses/
       - score: '100.0'
         start_line: 36
         end_line: 46
@@ -58,7 +65,7 @@ license_detections:
               <URL:http://www.gnu.org/copyleft/gpl.html>.  You may also obtain
               it by writing to the Free Software Foundation, Inc., 51 Franklin
               St, Fifth Floor, Boston, MA 02110-1301 USA
-    identifier: gpl_2_0-e6238f93-b011-923d-bb0a-6fe716f20b50
+    identifier: lgpl_2_1_plus_and_gpl_2_0-b692f769-146f-b44e-952a-1c81d2c7cf5e
 other_license_detections: []
 copyright: |
   Copyright (c) 2003, 2004 Stephen Smalley <sds@epoch.ncsc.mil>

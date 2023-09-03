@@ -442,7 +442,7 @@ other_license_detections:
           On Debian systems, the complete text of the GNU General Public
           License version 2 can be found in ‘/usr/share/common-licenses/GPL-2’.
     identifier: public_domain_and_fsf_unlimited_and_autoconf_exception_2_0_and_gpl_2_0-dc221484-4ce9-5ad0-a511-a12eea6f2df6
-  - license_expression: lgpl-2.1-plus AND (lgpl-2.0 AND lgpl-2.1) AND lgpl-2.0-plus
+  - license_expression: lgpl-2.1-plus AND (lgpl-2.0 AND lgpl-2.1)
     matches:
       - score: '100.0'
         start_line: 274
@@ -455,11 +455,11 @@ other_license_detections:
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_108.RULE
         matched_text: 'License: lgpl-2.1+'
-      - score: '78.79'
+      - score: '97.06'
         start_line: 275
         end_line: 281
-        matched_length: 52
-        match_coverage: '78.79'
+        matched_length: 66
+        match_coverage: '100.0'
         matcher: 3-seq
         license_expression: lgpl-2.0 AND lgpl-2.1
         rule_identifier: lgpl-2.0_and_lgpl-2.1_1.RULE
@@ -472,19 +472,8 @@ other_license_detections:
           On Debian systems, the complete text of intl/COPYING.LIB-2.0 from
           gettext-runtime 0.12 can be found in ‘/usr/share/common-licenses/LGPL-2’
           and the text of intl/COPYING.LIB-2.1 can be found in
-          ‘/usr/share/common-
-      - score: '100.0'
-        start_line: 275
-        end_line: 275
-        matched_length: 3
-        match_coverage: '100.0'
-        matcher: 2-aho
-        license_expression: lgpl-2.0-plus
-        rule_identifier: lgpl-2.0-plus_221.RULE
-        rule_relevance: 100
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0-plus_221.RULE
-        matched_text: under the LGPL,
-    identifier: lgpl_2_1_plus_and__lgpl_2_0_and_lgpl_2_1__and_lgpl_2_0_plus-f7ca4b89-5623-5873-e5eb-0e2046518905
+          ‘/usr/share/common-licenses/LGPL-2.1’.
+    identifier: lgpl_2_1_plus_and__lgpl_2_0_and_lgpl_2_1-2e73c0f0-b775-345b-2105-b006c3409499
   - license_expression: other-copyleft
     matches:
       - score: '90.0'

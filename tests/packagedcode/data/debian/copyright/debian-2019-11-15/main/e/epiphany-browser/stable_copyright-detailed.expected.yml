@@ -21,24 +21,16 @@ declared_license:
 declared_license_expression: gpl-3.0-plus
 declared_license_expression_spdx: GPL-3.0-or-later
 other_license_expression: (gpl-3.0-plus AND gpl-3.0-plus) AND (cc0-1.0 AND cc0-1.0) AND (gpl-2.0-plus
-  AND gpl-2.0-plus) AND (gpl-3.0-plus AND gpl-3.0-plus) AND (cc-by-sa-3.0 AND unknown-license-reference
-  AND other-copyleft) AND (lgpl-2.0-plus AND lgpl-2.0-plus) AND (lgpl-2.0-plus AND lgpl-2.0-plus)
-  AND (lgpl-2.0-plus AND lgpl-2.0-plus) AND (lgpl-2.0-plus AND lgpl-2.0-plus) AND (apache-2.0
-  AND apache-2.0) AND (gpl-3.0-plus AND gpl-3.0-plus) AND (cc-by-sa-4.0 AND unknown-license-reference
-  AND cc-by-sa-4.0 AND other-copyleft AND unknown-license-reference AND unknown-license-reference
-  AND unknown-license-reference AND other-copyleft AND unknown-license-reference AND unknown-license-reference
-  AND unknown-license-reference AND public-domain)
+  AND gpl-2.0-plus) AND (gpl-3.0-plus AND gpl-3.0-plus) AND cc-by-sa-3.0 AND (lgpl-2.0-plus
+  AND lgpl-2.0-plus) AND (lgpl-2.0-plus AND lgpl-2.0-plus) AND (lgpl-2.0-plus AND lgpl-2.0-plus)
+  AND (lgpl-2.0-plus AND lgpl-2.0-plus) AND (apache-2.0 AND apache-2.0) AND (gpl-3.0-plus AND
+  gpl-3.0-plus) AND (cc-by-sa-4.0 AND cc-by-sa-4.0)
 other_license_expression_spdx: (GPL-3.0-or-later AND GPL-3.0-or-later) AND (CC0-1.0 AND CC0-1.0)
   AND (GPL-2.0-or-later AND GPL-2.0-or-later) AND (GPL-3.0-or-later AND GPL-3.0-or-later) AND
-  (CC-BY-SA-3.0 AND LicenseRef-scancode-unknown-license-reference AND LicenseRef-scancode-other-copyleft)
-  AND (LGPL-2.0-or-later AND LGPL-2.0-or-later) AND (LGPL-2.0-or-later AND LGPL-2.0-or-later)
+  CC-BY-SA-3.0 AND (LGPL-2.0-or-later AND LGPL-2.0-or-later) AND (LGPL-2.0-or-later AND LGPL-2.0-or-later)
   AND (LGPL-2.0-or-later AND LGPL-2.0-or-later) AND (LGPL-2.0-or-later AND LGPL-2.0-or-later)
   AND (Apache-2.0 AND Apache-2.0) AND (GPL-3.0-or-later AND GPL-3.0-or-later) AND (CC-BY-SA-4.0
-  AND LicenseRef-scancode-unknown-license-reference AND CC-BY-SA-4.0 AND LicenseRef-scancode-other-copyleft
-  AND LicenseRef-scancode-unknown-license-reference AND LicenseRef-scancode-unknown-license-reference
-  AND LicenseRef-scancode-unknown-license-reference AND LicenseRef-scancode-other-copyleft AND
-  LicenseRef-scancode-unknown-license-reference AND LicenseRef-scancode-unknown-license-reference
-  AND LicenseRef-scancode-unknown-license-reference AND LicenseRef-scancode-public-domain)
+  AND CC-BY-SA-4.0)
 license_detections: []
 other_license_detections:
   - license_expression: apache-2.0
@@ -244,20 +236,21 @@ other_license_detections:
           The complete text of the Creative Commons 0 1.0 Universal
           can be found in `/usr/share/common-licenses/CC0-1.0'.
     identifier: cc0_1_0-3aab8d22-5239-2e29-95d3-367a0090d037
-  - license_expression: cc-by-sa-3.0 AND other-copyleft
+  - license_expression: cc-by-sa-3.0
     matches:
-      - score: '97.1'
-        start_line: 183
+      - score: '97.8'
+        start_line: 182
         end_line: 488
-        matched_length: 3052
-        match_coverage: '97.1'
+        matched_length: 3074
+        match_coverage: '97.8'
         matcher: 3-seq
         license_expression: cc-by-sa-3.0
         rule_identifier: cc-by-sa-3.0_35.RULE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/cc-by-sa-3.0_35.RULE
         matched_text: |
-          LICENSE ("CCPL" OR "LICENSE"). THE WORK IS
+          THE WORK (AS DEFINED BELOW) IS PROVIDED UNDER THE TERMS OF THIS
+          CREATIVE COMMONS PUBLIC LICENSE ("CCPL" OR "LICENSE"). THE WORK IS
           PROTECTED BY COPYRIGHT AND/OR OTHER APPLICABLE LAW. ANY USE OF THE WORK
           OTHER THAN AS AUTHORIZED UNDER THIS LICENSE OR COPYRIGHT LAW IS
           PROHIBITED.
@@ -563,30 +556,8 @@ other_license_detections:
           this License, such additional rights are deemed to be included in the
           License; this License is not intended to restrict the license of any
           rights under applicable law.
-      - score: '100.0'
-        start_line: 184
-        end_line: 184
-        matched_length: 3
-        match_coverage: '100.0'
-        matcher: 2-aho
-        license_expression: unknown-license-reference
-        rule_identifier: unknown-license-reference_341.RULE
-        rule_relevance: 100
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/unknown-license-reference_341.RULE
-        matched_text: PROTECTED BY COPYRIGHT
-      - score: '80.0'
-        start_line: 231
-        end_line: 231
-        matched_length: 1
-        match_coverage: '100.0'
-        matcher: 2-aho
-        license_expression: other-copyleft
-        rule_identifier: other-copyleft_16.RULE
-        rule_relevance: 80
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/other-copyleft_16.RULE
-        matched_text: ShareAlike.  "
-    identifier: cc_by_sa_3_0_and_other_copyleft-388e386f-50c4-da3f-a81f-7549c9c09898
-  - license_expression: cc-by-sa-4.0 AND other-copyleft AND unknown-license-reference AND public-domain
+    identifier: cc_by_sa_3_0-e7ec5d5a-0fab-6861-22fd-9f2bbf2329d1
+  - license_expression: cc-by-sa-4.0
     matches:
       - score: '100.0'
         start_line: 491
@@ -599,29 +570,46 @@ other_license_detections:
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/cc-by-sa-4.0_36.RULE
         matched_text: http://creativecommons.org/licenses/by-sa/4.0/
-      - score: '50.0'
-        start_line: 498
-        end_line: 498
-        matched_length: 2
-        match_coverage: '100.0'
-        matcher: 2-aho
-        license_expression: unknown-license-reference
-        rule_identifier: license-intro_2.RULE
-        rule_relevance: 50
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/license-intro_2.RULE
-        matched_text: licensed under
-      - score: '90.08'
-        start_line: 521
+      - score: '99.82'
+        start_line: 493
         end_line: 914
-        matched_length: 2496
-        match_coverage: '90.08'
+        matched_length: 2766
+        match_coverage: '99.82'
         matcher: 3-seq
         license_expression: cc-by-sa-4.0
         rule_identifier: cc-by-sa-4.0.LICENSE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/cc-by-sa-4.0.LICENSE
         matched_text: |
-          This includes other CC-
+          Creative Commons Corporation ("Creative Commons") is not a law firm and
+          does not provide legal services or legal advice. Distribution of
+          Creative Commons public licenses does not create a lawyer-client or
+          other relationship. Creative Commons makes its licenses and related
+          information available on an "as-is" basis. Creative Commons gives no
+          warranties regarding its licenses, any material licensed under their
+          terms and conditions, or any related information. Creative Commons
+          disclaims all liability for damages resulting from their use to the
+          fullest extent possible.
+
+          Using Creative Commons Public Licenses
+
+          Creative Commons public licenses provide a standard set of terms and
+          conditions that creators and other rights holders may use to share
+          original works of authorship and other material subject to copyright
+          and certain other rights specified in the public license below. The
+          following considerations are for informational purposes only, are not
+          exhaustive, and do not form part of our licenses.
+
+              Considerations for licensors: Our public licenses are
+              intended for use by those authorized to give the public
+              permission to use material in ways otherwise restricted by
+              copyright and certain other rights. Our licenses are
+              irrevocable. Licensors should read and understand the terms
+              and conditions of the license they choose before applying it.
+              Licensors should also secure all rights necessary before
+              applying our licenses so that the public can reuse the
+              material as expected. Licensors should clearly mark any
+              material not subject to the license. This includes other CC-
               licensed material, or material used under an exception or
               limitation to copyright. More considerations for licensors:
                  wiki.creativecommons.org/Considerations_for_licensors
@@ -1015,108 +1003,7 @@ other_license_detections:
           public licenses.
 
           Creative Commons may be contacted at creativecommons.org.
-      - score: '80.0'
-        start_line: 599
-        end_line: 599
-        matched_length: 1
-        match_coverage: '100.0'
-        matcher: 2-aho
-        license_expression: other-copyleft
-        rule_identifier: other-copyleft_16.RULE
-        rule_relevance: 80
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/other-copyleft_16.RULE
-        matched_text: ShareAlike.
-      - score: '50.0'
-        start_line: 696
-        end_line: 696
-        matched_length: 2
-        match_coverage: '100.0'
-        matcher: 2-aho
-        license_expression: unknown-license-reference
-        rule_identifier: license-intro_2.RULE
-        rule_relevance: 50
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/license-intro_2.RULE
-        matched_text: licensed under
-      - score: '50.0'
-        start_line: 703
-        end_line: 703
-        matched_length: 2
-        match_coverage: '100.0'
-        matcher: 2-aho
-        license_expression: unknown-license-reference
-        rule_identifier: license-intro_2.RULE
-        rule_relevance: 50
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/license-intro_2.RULE
-        matched_text: licensed under
-      - score: '50.0'
-        start_line: 746
-        end_line: 746
-        matched_length: 2
-        match_coverage: '100.0'
-        matcher: 2-aho
-        license_expression: unknown-license-reference
-        rule_identifier: license-intro_2.RULE
-        rule_relevance: 50
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/license-intro_2.RULE
-        matched_text: licensed under
-      - score: '80.0'
-        start_line: 761
-        end_line: 761
-        matched_length: 1
-        match_coverage: '100.0'
-        matcher: 2-aho
-        license_expression: other-copyleft
-        rule_identifier: other-copyleft_16.RULE
-        rule_relevance: 80
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/other-copyleft_16.RULE
-        matched_text: ShareAlike.
-      - score: '100.0'
-        start_line: 804
-        end_line: 804
-        matched_length: 3
-        match_coverage: '100.0'
-        matcher: 2-aho
-        license_expression: unknown-license-reference
-        rule_identifier: unknown-license-reference_351.RULE
-        rule_relevance: 100
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/unknown-license-reference_351.RULE
-        matched_text: Limitation of Liability.
-      - score: '100.0'
-        start_line: 824
-        end_line: 824
-        matched_length: 3
-        match_coverage: '100.0'
-        matcher: 2-aho
-        license_expression: unknown-license-reference
-        rule_identifier: unknown-license-reference_351.RULE
-        rule_relevance: 100
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/unknown-license-reference_351.RULE
-        matched_text: LIMITATION OF LIABILITY
-      - score: '100.0'
-        start_line: 827
-        end_line: 827
-        matched_length: 3
-        match_coverage: '100.0'
-        matcher: 2-aho
-        license_expression: unknown-license-reference
-        rule_identifier: unknown-license-reference_351.RULE
-        rule_relevance: 100
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/unknown-license-reference_351.RULE
-        matched_text: limitation of liability
-      - score: '100.0'
-        start_line: 901
-        end_line: 902
-        matched_length: 3
-        match_coverage: '100.0'
-        matcher: 2-aho
-        license_expression: public-domain
-        rule_identifier: public-domain_256.RULE
-        rule_relevance: 100
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/public-domain_256.RULE
-        matched_text: |
-          Public
-          Domain Dedication.
-    identifier: cc_by_sa_4_0_and_other_copyleft_and_unknown_license_reference_and_public_domain-10f58ead-6b55-78f1-8366-60f4669b08f1
+    identifier: cc_by_sa_4_0-1a71c7bb-650b-3eb6-94d5-3555db5f863e
 copyright: |
   2009-2018 Igalia S.L
   2002 Jorn Baayen

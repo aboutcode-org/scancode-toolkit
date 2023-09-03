@@ -1,120 +1,35 @@
 declared_license:
-declared_license_expression: gpl-1.0-plus AND gpl-1.0-plus AND gpl-2.0-plus AND gpl-2.0-plus
-  AND gpl-1.0-plus AND gpl-1.0-plus AND gpl-1.0-plus AND other-copyleft
-declared_license_expression_spdx: GPL-1.0-or-later AND GPL-1.0-or-later AND GPL-2.0-or-later
-  AND GPL-2.0-or-later AND GPL-1.0-or-later AND GPL-1.0-or-later AND GPL-1.0-or-later AND LicenseRef-scancode-other-copyleft
+declared_license_expression: gpl-2.0-plus
+declared_license_expression_spdx: GPL-2.0-or-later
 other_license_expression:
 other_license_expression_spdx:
 license_detections:
-  - license_expression: gpl-1.0-plus
+  - license_expression: gpl-2.0-plus
     matches:
-      - score: '100.0'
-        start_line: 7
-        end_line: 7
-        matched_length: 2
+      - score: '90.0'
+        start_line: 6
+        end_line: 26
+        matched_length: 162
         match_coverage: '100.0'
-        matcher: 2-aho
-        license_expression: gpl-1.0-plus
-        rule_identifier: gpl_bare_gnu_gpl.RULE
-        rule_relevance: 100
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl_bare_gnu_gpl.RULE
-        matched_text: GNU GPL.
-    identifier: gpl_1_0_plus-e3001dc6-3b37-f189-ca95-0baf3f52a4d0
-  - license_expression: gpl-1.0-plus AND gpl-2.0-plus AND other-copyleft
-    matches:
-      - score: '100.0'
-        start_line: 13
-        end_line: 14
-        matched_length: 9
-        match_coverage: '100.0'
-        matcher: 2-aho
-        license_expression: gpl-1.0-plus
-        rule_identifier: gpl_125.RULE
-        rule_relevance: 100
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl_125.RULE
-        matched_text: |
-          under the terms of the GNU
-          General Public License
-      - score: '100.0'
-        start_line: 13
-        end_line: 15
-        matched_length: 22
-        match_coverage: '100.0'
-        matcher: 2-aho
-        license_expression: gpl-2.0-plus
-        rule_identifier: gpl-2.0-plus_91.RULE
-        rule_relevance: 100
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_91.RULE
-        matched_text: |
-          the GNU
-          General Public License as published by the Free Software Foundation;
-          either version 2, or (at your option) any later version.
-      - score: '34.26'
-        start_line: 17
-        end_line: 25
-        matched_length: 37
-        match_coverage: '34.26'
         matcher: 3-seq
         license_expression: gpl-2.0-plus
-        rule_identifier: gpl-2.0-plus_406.RULE
+        rule_identifier: gpl-2.0-plus_306.RULE
         rule_relevance: 100
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_406.RULE
-        matched_text: |
-          distributed in the
-          hope that they will be useful, but WITHOUT ANY WARRANTY; without even
-          the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR
-          PURPOSE.  See the GNU General Public License for more details.
-
-          You should have received a copy of the GNU General Public License with
-          your Debian system, in /usr/share/common-licenses/GPL, or with the
-          Debian GNU debian-archive-keyring source package as the file COPYING.
-          If not, write to the Free Software
-      - score: '99.0'
-        start_line: 20
-        end_line: 20
-        matched_length: 7
-        match_coverage: '100.0'
-        matcher: 2-aho
-        license_expression: gpl-1.0-plus
-        rule_identifier: gpl_84.RULE
-        rule_relevance: 99
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl_84.RULE
-        matched_text: GNU General Public License for more details.
-      - score: '100.0'
-        start_line: 22
-        end_line: 22
-        matched_length: 5
-        match_coverage: '100.0'
-        matcher: 2-aho
-        license_expression: gpl-1.0-plus
-        rule_identifier: gpl-1.0-plus_33.RULE
-        rule_relevance: 100
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-1.0-plus_33.RULE
-        matched_text: the GNU General Public License
-      - score: '100.0'
-        start_line: 23
-        end_line: 23
-        matched_length: 5
-        match_coverage: '100.0'
-        matcher: 2-aho
-        license_expression: gpl-1.0-plus
-        rule_identifier: gpl-1.0-plus_424.RULE
-        rule_relevance: 100
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-1.0-plus_424.RULE
-        matched_text: usr/share/common-licenses/GPL,
-      - score: '90.0'
-        start_line: 25
-        end_line: 26
-        matched_length: 14
-        match_coverage: '100.0'
-        matcher: 2-aho
-        license_expression: other-copyleft
-        rule_identifier: other-copyleft_fsf_address_1.RULE
-        rule_relevance: 90
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/other-copyleft_fsf_address_1.RULE
-        matched_text: |
-          Free Software Foundation, Inc., 51 Franklin Street,
-          Fifth Floor, Boston, MA 02110-1301 USA.
-    identifier: gpl_1_0_plus_and_gpl_2_0_plus_and_other_copyleft-4126fbe0-901d-d3c3-ab70-ef6ec5249305
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_306.RULE
+        matched_text: "The keys in the keyrings don't fall under any copyright.  Everything\n\
+          else in the package is covered by the GNU GPL.\n\nDebian support files Copyright (C)\
+          \ 2006 Michael Vogt <mvo@debian.org> \nbased on the debian-keyring package maintained\
+          \ by James Troup \n\nDebian support files for debian-archive-keyring are free software;\
+          \ you\ncan redistribute them and/or modify them under the terms of the GNU\nGeneral\
+          \ Public License as published by the Free Software Foundation;\neither version 2,\
+          \ or (at your option) any later version.\n\nDebian support files for debian-archive-keyring\
+          \ are distributed in the\nhope that they will be useful, but WITHOUT ANY WARRANTY;\
+          \ without even\nthe implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR\n\
+          PURPOSE.  See the GNU General Public License for more details.\n\nYou should have\
+          \ received a copy of the GNU General Public License with\nyour Debian system, in /usr/share/common-licenses/GPL,\
+          \ or with the\nDebian GNU debian-archive-keyring source package as the file COPYING.\n\
+          If not, write to the Free Software Foundation, Inc., 51 Franklin Street,\nFifth Floor,\
+          \ Boston, MA 02110-1301 USA."
+    identifier: gpl_2_0_plus-aae99675-865a-f0d5-318d-d2008452d3ae
 other_license_detections: []
 copyright: Copyright (c) 2006 Michael Vogt <mvo@debian.org>

@@ -1,20 +1,18 @@
 declared_license:
   - Binary redistribution (Marvell 1)
   - Binary redistribution (Marvell 2)
-declared_license_expression: (proprietary-license AND unknown-license-reference AND free-unknown)
-  AND marvell-firmware
-declared_license_expression_spdx: (LicenseRef-scancode-proprietary-license AND LicenseRef-scancode-unknown-license-reference
-  AND LicenseRef-scancode-free-unknown) AND LicenseRef-scancode-marvell-firmware
+declared_license_expression: proprietary-license AND marvell-firmware
+declared_license_expression_spdx: LicenseRef-scancode-proprietary-license AND LicenseRef-scancode-marvell-firmware
 other_license_expression:
 other_license_expression_spdx:
 license_detections:
-  - license_expression: proprietary-license AND free-unknown
+  - license_expression: proprietary-license
     matches:
-      - score: '91.75'
+      - score: '96.37'
         start_line: 11
         end_line: 48
-        matched_length: 278
-        match_coverage: '91.75'
+        matched_length: 292
+        match_coverage: '96.37'
         matcher: 3-seq
         license_expression: proprietary-license
         rule_identifier: proprietary-license_319.RULE
@@ -59,42 +57,7 @@ license_detections:
           TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE
           USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH
           DAMAGE.
-      - score: '50.0'
-        start_line: 31
-        end_line: 31
-        matched_length: 2
-        match_coverage: '100.0'
-        matcher: 2-aho
-        license_expression: unknown-license-reference
-        rule_identifier: license-intro_2.RULE
-        rule_relevance: 50
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/license-intro_2.RULE
-        matched_text: licensed under
-      - score: '50.0'
-        start_line: 31
-        end_line: 32
-        matched_length: 3
-        match_coverage: '100.0'
-        matcher: 2-aho
-        license_expression: free-unknown
-        rule_identifier: free-unknown_88.RULE
-        rule_relevance: 50
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/free-unknown_88.RULE
-        matched_text: |
-          Open
-          Source license
-      - score: '100.0'
-        start_line: 33
-        end_line: 33
-        matched_length: 4
-        match_coverage: '100.0'
-        matcher: 2-aho
-        license_expression: free-unknown
-        rule_identifier: free-unknown_96.RULE
-        rule_relevance: 100
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/free-unknown_96.RULE
-        matched_text: http://opensource.org/licenses.
-    identifier: proprietary_license_and_free_unknown-ecfeabe2-31a4-8ca3-b9df-b6476d10dbda
+    identifier: proprietary_license-f9aa1a05-7e88-4427-f33a-e480c0221ea3
   - license_expression: marvell-firmware
     matches:
       - score: '100.0'

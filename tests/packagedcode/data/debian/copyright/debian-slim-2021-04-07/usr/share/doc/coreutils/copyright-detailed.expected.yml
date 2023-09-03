@@ -10,18 +10,26 @@ other_license_expression_spdx:
 license_detections:
   - license_expression: gpl-3.0-plus
     matches:
-      - score: '100.0'
-        start_line: 30
+      - score: '81.1'
+        start_line: 22
         end_line: 41
-        matched_length: 102
-        match_coverage: '100.0'
-        matcher: 2-aho
+        matched_length: 103
+        match_coverage: '81.1'
+        matcher: 3-seq
         license_expression: gpl-3.0-plus
-        rule_identifier: gpl-3.0-plus_290.RULE
+        rule_identifier: gpl-3.0-plus_487.RULE
         rule_relevance: 100
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0-plus_290.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0-plus_487.RULE
         matched_text: |
-          This program is free software: you can redistribute it and/or modify
+          License
+          =============================
+
+          lib/fts.c
+          ---------
+
+             Copyright (C) 2004, 2005, 2006, 2007, 2008 Free Software Foundation, Inc.
+
+             This program is free software: you can redistribute it and/or modify
              it under the terms of the GNU General Public License as published by
              the Free Software Foundation; either version 3 of the License, or
              (at your option) any later version.
@@ -33,7 +41,7 @@ license_detections:
 
              You should have received a copy of the GNU General Public License
              along with this program.  If not, see <http://www.gnu.org/licenses/>.  */
-    identifier: gpl_3_0_plus-494d0068-7138-a14f-4cbb-fd2137263a4f
+    identifier: gpl_3_0_plus-58ef5a2f-7e40-62ff-7783-d9d46c47ccfd
   - license_expression: bsd-new
     matches:
       - score: '100.0'
@@ -232,16 +240,16 @@ license_detections:
     identifier: fsf_unlimited-8da7bfd8-1c00-9b33-a4c5-6170a19ffb0f
   - license_expression: gpl-3.0-plus
     matches:
-      - score: '100.0'
+      - score: '75.18'
         start_line: '193'
-        end_line: 204
-        matched_length: 102
-        match_coverage: '100.0'
-        matcher: 2-aho
+        end_line: 214
+        matched_length: 106
+        match_coverage: '75.18'
+        matcher: 3-seq
         license_expression: gpl-3.0-plus
-        rule_identifier: gpl-3.0-plus_290.RULE
+        rule_identifier: gpl-3.0-plus_286.RULE
         rule_relevance: 100
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0-plus_290.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0-plus_286.RULE
         matched_text: |
           This program is free software: you can redistribute it and/or modify
              it under the terms of the GNU General Public License as published by
@@ -255,9 +263,16 @@ license_detections:
 
              You should have received a copy of the GNU General Public License
              along with this program.  If not, see <http://www.gnu.org/licenses/>.  */
-    identifier: gpl_3_0_plus-494d0068-7138-a14f-4cbb-fd2137263a4f
-  - license_expression: gpl-3.0-plus
-    matches:
+
+
+          src/dircolors.c
+          ---------------
+
+             Copyright (C) 1996-2007 Free Software Foundation, Inc.
+             Copyright (C) 1994, 1995, 1997, 1998, 1999, 2000 H. Peter Anvin
+
+             This program is free software: you can redistribute it and/or modify
+             it under the terms of the GNU General Public License
       - score: '100.0'
         start_line: 213
         end_line: 224
@@ -281,7 +296,7 @@ license_detections:
 
              You should have received a copy of the GNU General Public License
              along with this program.  If not, see <http://www.gnu.org/licenses/>.  */
-    identifier: gpl_3_0_plus-494d0068-7138-a14f-4cbb-fd2137263a4f
+    identifier: gpl_3_0_plus-0da3ef65-99de-5ae9-77c7-870876e764cf
   - license_expression: gpl-3.0-plus
     matches:
       - score: '100.0'

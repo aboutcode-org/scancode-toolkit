@@ -2,43 +2,27 @@ declared_license:
   - other-Sendmail
   - other-Sendmail
   - other-Sendmail
-declared_license_expression: sendmail AND unknown-license-reference
-declared_license_expression_spdx: Sendmail AND LicenseRef-scancode-unknown-license-reference
-other_license_expression: (sendmail AND sendmail AND unknown-license-reference AND unknown-license-reference
-  AND unknown-license-reference AND unknown-license-reference) AND (sendmail AND sendmail AND
-  unknown-license-reference AND unknown-license-reference AND unknown-license-reference AND
-  unknown-license-reference)
-other_license_expression_spdx: (Sendmail AND Sendmail AND LicenseRef-scancode-unknown-license-reference
-  AND LicenseRef-scancode-unknown-license-reference AND LicenseRef-scancode-unknown-license-reference
-  AND LicenseRef-scancode-unknown-license-reference) AND (Sendmail AND Sendmail AND LicenseRef-scancode-unknown-license-reference
-  AND LicenseRef-scancode-unknown-license-reference AND LicenseRef-scancode-unknown-license-reference
-  AND LicenseRef-scancode-unknown-license-reference)
+declared_license_expression: sendmail
+declared_license_expression_spdx: Sendmail
+other_license_expression: sendmail AND sendmail
+other_license_expression_spdx: Sendmail AND Sendmail
 license_detections: []
 other_license_detections:
-  - license_expression: sendmail AND unknown-license-reference
+  - license_expression: sendmail
     matches:
-      - score: '100.0'
+      - score: '97.65'
         start_line: '19'
-        end_line: '19'
-        matched_length: 2
-        match_coverage: '100.0'
-        matcher: 2-aho
-        license_expression: sendmail
-        rule_identifier: sendmail_7.RULE
-        rule_relevance: 100
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/sendmail_7.RULE
-        matched_text: SENDMAIL LICENSE
-      - score: '95.47'
-        start_line: 21
         end_line: 99
-        matched_length: 569
-        match_coverage: '95.47'
+        matched_length: 582
+        match_coverage: '97.65'
         matcher: 3-seq
         license_expression: sendmail
         rule_identifier: sendmail-2014.RULE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/sendmail-2014.RULE
         matched_text: |
+          SENDMAIL LICENSE
+
           The following license terms and conditions apply, unless a redistribution
           agreement or other license is obtained from Proofpoint, Inc., 892
           Ross Street, Sunnyvale, CA, 94089, USA, or by electronic mail at
@@ -118,51 +102,7 @@ other_license_detections:
              THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.
 
           $Revision: 8.
-      - score: '100.0'
-        start_line: 32
-        end_line: 32
-        matched_length: 1
-        match_coverage: '100.0'
-        matcher: 2-aho
-        license_expression: unknown-license-reference
-        rule_identifier: freeware_bare_word_only.RULE
-        rule_relevance: 100
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/freeware_bare_word_only.RULE
-        matched_text: freeware"
-      - score: '100.0'
-        start_line: 49
-        end_line: 49
-        matched_length: 3
-        match_coverage: '100.0'
-        matcher: 2-aho
-        license_expression: unknown-license-reference
-        rule_identifier: unknown-license-reference_351.RULE
-        rule_relevance: 100
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/unknown-license-reference_351.RULE
-        matched_text: limitation of liability
-      - score: '100.0'
-        start_line: 52
-        end_line: 52
-        matched_length: 3
-        match_coverage: '100.0'
-        matcher: 2-aho
-        license_expression: unknown-license-reference
-        rule_identifier: unknown-license-reference_351.RULE
-        rule_relevance: 100
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/unknown-license-reference_351.RULE
-        matched_text: limitation of liability
-      - score: '100.0'
-        start_line: 86
-        end_line: 86
-        matched_length: 3
-        match_coverage: '100.0'
-        matcher: 2-aho
-        license_expression: unknown-license-reference
-        rule_identifier: unknown-license-reference_351.RULE
-        rule_relevance: 100
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/unknown-license-reference_351.RULE
-        matched_text: 'Limitation of Liability:'
-    identifier: sendmail_and_unknown_license_reference-712541e4-52c0-2c57-f00e-70f5644b39a2
+    identifier: sendmail-5c006ed2-b77c-e9c5-652a-eeb856f2729d
 copyright: |
   Copyright (c) 1998-2015 Proofpoint, Inc. and its suppliers. All rights reserved.
   Copyright (c) 1983, 1995-1997 Eric P. Allman. All rights reserved.

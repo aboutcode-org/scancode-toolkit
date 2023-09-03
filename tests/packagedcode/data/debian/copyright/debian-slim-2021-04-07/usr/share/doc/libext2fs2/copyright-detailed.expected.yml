@@ -1,80 +1,33 @@
 declared_license:
-declared_license_expression: gpl-2.0 AND lgpl-2.0 AND bsd-new AND mit AND (gpl-2.0 AND lgpl-2.0)
+declared_license_expression: (gpl-2.0 AND lgpl-2.0 AND bsd-new AND mit-old-style-no-advert)
   AND ntp-0 AND bsd-new
-declared_license_expression_spdx: GPL-2.0-only AND LGPL-2.0-only AND BSD-3-Clause AND MIT AND
-  (GPL-2.0-only AND LGPL-2.0-only) AND NTP-0 AND BSD-3-Clause
+declared_license_expression_spdx: (GPL-2.0-only AND LGPL-2.0-only AND BSD-3-Clause AND NTP)
+  AND NTP-0 AND BSD-3-Clause
 other_license_expression:
 other_license_expression_spdx:
 license_detections:
-  - license_expression: gpl-2.0 AND lgpl-2.0 AND bsd-new AND mit
+  - license_expression: gpl-2.0 AND lgpl-2.0 AND bsd-new AND mit-old-style-no-advert
     matches:
-      - score: '100.0'
+      - score: '99.02'
         start_line: 17
-        end_line: 18
-        matched_length: 11
-        match_coverage: '100.0'
-        matcher: 2-aho
-        license_expression: gpl-2.0
-        rule_identifier: gpl-2.0_562.RULE
-        rule_relevance: 100
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0_562.RULE
-        matched_text: |
-          are made available under
-          the GNU General Public License version 2,
-      - score: '100.0'
-        start_line: '19'
-        end_line: 20
-        matched_length: 13
-        match_coverage: '100.0'
-        matcher: 2-aho
-        license_expression: lgpl-2.0
-        rule_identifier: lgpl-2.0_10.RULE
-        rule_relevance: 100
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0_10.RULE
-        matched_text: |
-          which are made available under the
-          GNU Library General Public License Version 2,
-      - score: '100.0'
-        start_line: 21
-        end_line: 21
-        matched_length: 6
-        match_coverage: '100.0'
-        matcher: 2-aho
-        license_expression: bsd-new
-        rule_identifier: bsd-new_118.RULE
-        rule_relevance: 100
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_118.RULE
-        matched_text: made available under a BSD-style license
-      - score: '99.0'
-        start_line: 22
-        end_line: 22
-        matched_length: 10
-        match_coverage: '100.0'
-        matcher: 2-aho
-        license_expression: mit
-        rule_identifier: mit_5.RULE
-        rule_relevance: 99
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_5.RULE
-        matched_text: libraries which are made available under an MIT-style license.
-    identifier: gpl_2_0_and_lgpl_2_0_and_bsd_new_and_mit-0c9973c2-6ed6-1bda-0c39-c89b53bbbabc
-  - license_expression: gpl-2.0 AND lgpl-2.0
-    matches:
-      - score: '100.0'
-        start_line: 27
         end_line: 30
-        matched_length: 43
-        match_coverage: '100.0'
-        matcher: 2-aho
-        license_expression: gpl-2.0 AND lgpl-2.0
-        rule_identifier: gpl-2.0_and_lgpl-2.0_4.RULE
+        matched_length: 101
+        match_coverage: '99.02'
+        matcher: 3-seq
+        license_expression: gpl-2.0 AND lgpl-2.0 AND bsd-new AND mit-old-style-no-advert
+        rule_identifier: gpl-2.0_and_lgpl-2.0_and_bsd-new_and_mit_1.RULE
         rule_relevance: 100
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0_and_lgpl-2.0_4.RULE
-        matched_text: |
-          On Debian GNU systems, the complete text of the GNU General Public
-          License can be found in `/usr/share/common-licenses/GPL-2'.  The
-          complete text of the GNU Library General Public License can be found
-          in '/usr/share/common-licenses/LGPL-2'.
-    identifier: gpl_2_0_and_lgpl_2_0-b5182439-e89c-8719-19a0-a974565c517a
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0_and_lgpl-2.0_and_bsd-new_and_mit_1.RULE
+        matched_text: "This package, the EXT2 filesystem utilities, are made available under\n\
+          the GNU General Public License version 2, with the exception of the\nlib/ext2fs and\
+          \ lib/e2p libraries, which are made available under the\nGNU Library General Public\
+          \ License Version 2, the lib/uuid library\nwhich is made available under a BSD-style\
+          \ license and the lib/et and\nlib/ss libraries which are made available under an MIT-style\
+          \ license.\n\n\tCopyright (c) 1993, 1994, 1995, 1996, 1997, 1998, 1999, 2000, \n\t\
+          2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008 by Theodore Ts'o\n\nOn Debian GNU systems,\
+          \ the complete text of the GNU General Public\nLicense can be found in `/usr/share/common-licenses/GPL-2'.\
+          \  The\ncomplete text of the GNU Library General Public License can be found\nin '/usr/share/common-licenses/LGPL-2'."
+    identifier: gpl_2_0_and_lgpl_2_0_and_bsd_new_and_mit_old_style_no_advert-aed55561-0504-0265-5986-832cc7f7bbf2
   - license_expression: ntp-0 AND bsd-new
     matches:
       - score: '100.0'

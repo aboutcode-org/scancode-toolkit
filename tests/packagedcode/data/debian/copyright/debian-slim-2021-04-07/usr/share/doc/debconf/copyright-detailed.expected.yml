@@ -13,30 +13,26 @@ declared_license:
   - BSD-2-clause
 declared_license_expression: bsd-simplified
 declared_license_expression_spdx: BSD-2-Clause
-other_license_expression: (bsd-simplified AND bsd-simplified) AND (bsd-simplified AND bsd-simplified)
-  AND (bsd-simplified AND bsd-simplified) AND (bsd-simplified AND bsd-simplified) AND (bsd-simplified
-  AND bsd-simplified) AND (bsd-simplified AND bsd-simplified) AND (bsd-simplified AND bsd-simplified)
-  AND (bsd-simplified AND bsd-simplified) AND (bsd-simplified AND bsd-simplified) AND (bsd-simplified
-  AND bsd-simplified) AND (bsd-simplified AND bsd-simplified)
-other_license_expression_spdx: (BSD-2-Clause AND BSD-2-Clause) AND (BSD-2-Clause AND BSD-2-Clause)
-  AND (BSD-2-Clause AND BSD-2-Clause) AND (BSD-2-Clause AND BSD-2-Clause) AND (BSD-2-Clause
-  AND BSD-2-Clause) AND (BSD-2-Clause AND BSD-2-Clause) AND (BSD-2-Clause AND BSD-2-Clause)
-  AND (BSD-2-Clause AND BSD-2-Clause) AND (BSD-2-Clause AND BSD-2-Clause) AND (BSD-2-Clause
-  AND BSD-2-Clause) AND (BSD-2-Clause AND BSD-2-Clause)
+other_license_expression: bsd-simplified AND bsd-simplified AND bsd-simplified AND bsd-simplified
+  AND bsd-simplified AND bsd-simplified AND bsd-simplified AND bsd-simplified AND bsd-simplified
+  AND bsd-simplified AND bsd-simplified
+other_license_expression_spdx: BSD-2-Clause AND BSD-2-Clause AND BSD-2-Clause AND BSD-2-Clause
+  AND BSD-2-Clause AND BSD-2-Clause AND BSD-2-Clause AND BSD-2-Clause AND BSD-2-Clause AND BSD-2-Clause
+  AND BSD-2-Clause
 license_detections: []
 other_license_detections:
   - license_expression: bsd-simplified
     matches:
-      - score: '100.0'
+      - score: '99.45'
         start_line: 59
-        end_line: 66
-        matched_length: 70
-        match_coverage: '100.0'
-        matcher: 2-aho
+        end_line: 78
+        matched_length: 182
+        match_coverage: '99.45'
+        matcher: 3-seq
         license_expression: bsd-simplified
-        rule_identifier: bsd-simplified_264.RULE
+        rule_identifier: bsd-simplified_52.RULE
         rule_relevance: 100
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-simplified_264.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-simplified_52.RULE
         matched_text: |
           Redistribution and use in source and binary forms, with or without
           modification, are permitted provided that the following conditions
@@ -46,18 +42,8 @@ other_license_detections:
           2. Redistributions in binary form must reproduce the above copyright
              notice, this list of conditions and the following disclaimer in the
              documentation and/or other materials provided with the distribution.
-      - score: '58.47'
-        start_line: 68
-        end_line: 78
-        matched_length: 107
-        match_coverage: '58.47'
-        matcher: 3-seq
-        license_expression: bsd-simplified
-        rule_identifier: bsd-simplified_52.RULE
-        rule_relevance: 100
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-simplified_52.RULE
-        matched_text: |
-          AUTHORS AND CONTRIBUTORS ``AS IS'' AND
+
+          THIS SOFTWARE IS PROVIDED BY AUTHORS AND CONTRIBUTORS ``AS IS'' AND
           ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
           IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
           ARE DISCLAIMED.  IN NO EVENT SHALL THE AUTHORS OR CONTRIBUTORS BE LIABLE
@@ -68,7 +54,7 @@ other_license_detections:
           LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
           OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
           SUCH DAMAGE.
-    identifier: bsd_simplified-3862e344-2692-6101-9ce6-3c5936599dc2
+    identifier: bsd_simplified-922806f4-2399-a0d3-1bb4-02038e614b35
 copyright: |
   1999-2010 Joey Hess <joeyh@debian.org>
   2003 Tomohiro KUBOTA <kubota@debian.org>

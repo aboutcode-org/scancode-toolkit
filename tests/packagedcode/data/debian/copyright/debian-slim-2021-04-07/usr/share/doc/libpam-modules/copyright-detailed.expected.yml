@@ -1,22 +1,27 @@
 declared_license:
-declared_license_expression: (bsd-new OR gpl-1.0-plus) AND gpl-1.0-plus
-declared_license_expression_spdx: (BSD-3-Clause OR GPL-1.0-or-later) AND GPL-1.0-or-later
+declared_license_expression: (bsd-new OR lgpl-2.0-plus) AND gpl-1.0-plus
+declared_license_expression_spdx: (BSD-3-Clause OR LGPL-2.0-or-later) AND GPL-1.0-or-later
 other_license_expression:
 other_license_expression_spdx:
 license_detections:
-  - license_expression: (bsd-new OR gpl-1.0-plus) AND gpl-1.0-plus
+  - license_expression: (bsd-new OR lgpl-2.0-plus) AND gpl-1.0-plus
     matches:
-      - score: '100.0'
-        start_line: 30
+      - score: '98.6'
+        start_line: 25
         end_line: 63
-        matched_length: 263
+        matched_length: 282
         match_coverage: '100.0'
-        matcher: 2-aho
-        license_expression: bsd-new OR gpl-1.0-plus
-        rule_identifier: bsd-new_or_gpl-1.0-plus_4.RULE
+        matcher: 3-seq
+        license_expression: bsd-new OR lgpl-2.0-plus
+        rule_identifier: bsd-new_or_lgpl-2.0-plus_4.RULE
         rule_relevance: 100
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_or_gpl-1.0-plus_4.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_or_lgpl-2.0-plus_4.RULE
         matched_text: |
+          Unless otherwise *explicitly* stated the following text describes the
+          licensed conditions under which the contents of this Linux-PAM release
+          may be distributed:
+
+          -------------------------------------------------------------------------
           Redistribution and use in source and binary forms of Linux-PAM, with
           or without modification, are permitted provided that the following
           conditions are met:
@@ -64,7 +69,7 @@ license_detections:
         matched_text: |
           On Debian GNU/Linux systems, the complete text of the GNU General
           Public License can be found in `/usr/share/common-licenses/GPL'.
-    identifier: bsd_new_or_gpl_1_0_plus__and_gpl_1_0_plus-ce581a54-7b53-7513-f7f6-f0cd5461530f
+    identifier: bsd_new_or_lgpl_2_0_plus__and_gpl_1_0_plus-046e9688-481f-59da-f12d-f144b4e5ed78
 other_license_detections: []
 copyright: |
   Copyright (c) 1994, 1995, 1996 Olaf Kirch, <okir@monad.swb.de>

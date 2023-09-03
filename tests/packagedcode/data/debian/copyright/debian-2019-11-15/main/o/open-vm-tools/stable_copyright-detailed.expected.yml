@@ -11,15 +11,13 @@ declared_license:
   - LGPL-2.1
   - MIT(*)
   - MIT(**)
-declared_license_expression: lgpl-2.1 AND lgpl-2.1-plus AND gpl-2.0 AND philippe-de-muyter
-declared_license_expression_spdx: LGPL-2.1-only AND LGPL-2.1-or-later AND GPL-2.0-only AND LicenseRef-scancode-philippe-de-muyter
-other_license_expression: (lgpl-2.1 AND lgpl-2.1-plus AND gpl-2.0 AND philippe-de-muyter AND
-  lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.1-plus AND gpl-2.0) AND (gpl-2.0 AND gpl-2.0 AND
-  gpl-2.0) AND bsd-new AND (isc AND ibm-dhcp) AND xfree86-1.0 AND (gpl-2.0-plus AND gpl-2.0-plus)
-other_license_expression_spdx: (LGPL-2.1-only AND LGPL-2.1-or-later AND GPL-2.0-only AND LicenseRef-scancode-philippe-de-muyter
-  AND LGPL-2.1-or-later AND LGPL-2.1-or-later AND LGPL-2.1-or-later AND GPL-2.0-only) AND (GPL-2.0-only
-  AND GPL-2.0-only AND GPL-2.0-only) AND BSD-3-Clause AND (ISC AND LicenseRef-scancode-ibm-dhcp)
-  AND LicenseRef-scancode-xfree86-1.0 AND (GPL-2.0-or-later AND GPL-2.0-or-later)
+declared_license_expression: lgpl-2.1 AND lgpl-2.0-plus
+declared_license_expression_spdx: LGPL-2.1-only AND LGPL-2.0-or-later
+other_license_expression: (lgpl-2.1 AND lgpl-2.0-plus) AND (gpl-2.0 AND gpl-2.0 AND gpl-2.0)
+  AND bsd-new AND (isc AND ibm-dhcp) AND xfree86-1.0 AND (gpl-2.0-plus AND gpl-2.0-plus)
+other_license_expression_spdx: (LGPL-2.1-only AND LGPL-2.0-or-later) AND (GPL-2.0-only AND GPL-2.0-only
+  AND GPL-2.0-only) AND BSD-3-Clause AND (ISC AND LicenseRef-scancode-ibm-dhcp) AND LicenseRef-scancode-xfree86-1.0
+  AND (GPL-2.0-or-later AND GPL-2.0-or-later)
 license_detections: []
 other_license_detections:
   - license_expression: bsd-new
@@ -142,7 +140,7 @@ other_license_detections:
           The complete text of the GNU General Public License
           can be found in /usr/share/common-licenses/GPL-2 file.
     identifier: gpl_2_0_plus-fe100017-b30d-a3e1-08b9-40cc9f056db5
-  - license_expression: lgpl-2.1 AND lgpl-2.1-plus AND gpl-2.0 AND philippe-de-muyter
+  - license_expression: lgpl-2.1 AND lgpl-2.0-plus
     matches:
       - score: '100.0'
         start_line: 96
@@ -155,95 +153,32 @@ other_license_detections:
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1_38.RULE
         matched_text: 'License: lgpl-2.1'
-      - score: '100.0'
+      - score: '89.68'
         start_line: 97
-        end_line: 98
-        matched_length: 23
-        match_coverage: '100.0'
-        matcher: 2-aho
-        license_expression: lgpl-2.1-plus
-        rule_identifier: lgpl-2.1-plus_456.RULE
+        end_line: 110
+        matched_length: 113
+        match_coverage: '89.68'
+        matcher: 3-seq
+        license_expression: lgpl-2.0-plus
+        rule_identifier: lgpl-2.0-plus_477.RULE
         rule_relevance: 100
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_456.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0-plus_477.RULE
         matched_text: |
           This program is free software: you can redistribute it and/or modify
-          it under the terms of the GNU Lesser General Public License
-      - score: '12.4'
-        start_line: 98
-        end_line: 101
-        matched_length: 15
-        match_coverage: '12.4'
-        matcher: 3-seq
-        license_expression: gpl-2.0
-        rule_identifier: gpl-2.0_1329.RULE
-        rule_relevance: 100
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0_1329.RULE
-        matched_text: |
-          as published by
+          it under the terms of the GNU Lesser General Public License as published by
           the Free Software Foundation, version 2.1 of the License.
 
-          This program is
-      - score: '100.0'
-        start_line: 101
-        end_line: 103
-        matched_length: 28
-        match_coverage: '100.0'
-        matcher: 2-aho
-        license_expression: philippe-de-muyter
-        rule_identifier: philippe-de-muyter.LICENSE
-        rule_relevance: 100
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/philippe-de-muyter.LICENSE
-        matched_text: |
           This program is distributed in the hope that it will be useful,
           but WITHOUT ANY WARRANTY; without even the implied warranty of
-          MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
-      - score: '100.0'
-        start_line: 103
-        end_line: 104
-        matched_length: 6
-        match_coverage: '100.0'
-        matcher: 2-aho
-        license_expression: lgpl-2.1-plus
-        rule_identifier: lgpl-2.1-plus_83_1.RULE
-        rule_relevance: 100
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_83_1.RULE
-        matched_text: |
-          the
-          GNU Lesser General Public License
-      - score: '100.0'
-        start_line: 106
-        end_line: 106
-        matched_length: 6
-        match_coverage: '100.0'
-        matcher: 2-aho
-        license_expression: lgpl-2.1-plus
-        rule_identifier: lgpl-2.1-plus_83_1.RULE
-        rule_relevance: 100
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_83_1.RULE
-        matched_text: the GNU Lesser General Public License
-      - score: '100.0'
-        start_line: 109
-        end_line: 109
-        matched_length: 6
-        match_coverage: '100.0'
-        matcher: 2-aho
-        license_expression: lgpl-2.1-plus
-        rule_identifier: lgpl-2.1-plus_83_1.RULE
-        rule_relevance: 100
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_83_1.RULE
-        matched_text: the GNU Lesser General Public License
-      - score: '100.0'
-        start_line: 110
-        end_line: 110
-        matched_length: 6
-        match_coverage: '100.0'
-        matcher: 2-aho
-        license_expression: gpl-2.0
-        rule_identifier: gpl-2.0_621.RULE
-        rule_relevance: 100
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0_621.RULE
-        matched_text: usr/share/common-licenses/GPL-2.
-    identifier: lgpl_2_1_and_lgpl_2_1_plus_and_gpl_2_0_and_philippe_de_muyter-e9be68c7-f696-6e96-17a9-20e6b3ba479c
+          MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+          GNU Lesser General Public License for more details.
+
+          You should have received a copy of the GNU Lesser General Public License
+          along with this program. If not, see <http://www.gnu.org/licenses/>.
+
+          The complete text of the GNU Lesser General Public License
+          can be found in /usr/share/common-licenses/
+    identifier: lgpl_2_1_and_lgpl_2_0_plus-75866488-678a-19bf-7970-6610a46062a1
   - license_expression: isc AND ibm-dhcp
     matches:
       - score: '100.0'

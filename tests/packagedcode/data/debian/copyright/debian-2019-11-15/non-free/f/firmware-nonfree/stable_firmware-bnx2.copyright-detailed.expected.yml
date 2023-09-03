@@ -1,38 +1,28 @@
 declared_license:
-declared_license_expression: proprietary-license AND other-permissive
-declared_license_expression_spdx: LicenseRef-scancode-proprietary-license AND LicenseRef-scancode-other-permissive
+declared_license_expression: proprietary-license
+declared_license_expression_spdx: LicenseRef-scancode-proprietary-license
 other_license_expression:
 other_license_expression_spdx:
 license_detections:
-  - license_expression: proprietary-license AND other-permissive
+  - license_expression: proprietary-license
     matches:
-      - score: '100.0'
+      - score: '87.5'
         start_line: 4
-        end_line: 5
-        matched_length: 6
-        match_coverage: '100.0'
-        matcher: 2-aho
-        license_expression: proprietary-license
-        rule_identifier: proprietary_30.RULE
-        rule_relevance: 100
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/proprietary_30.RULE
-        matched_text: |
-          derived from proprietary unpublished
-          source code,
-      - score: '100.0'
-        start_line: 7
         end_line: 9
-        matched_length: 23
+        matched_length: 35
         match_coverage: '100.0'
-        matcher: 2-aho
-        license_expression: other-permissive
-        rule_identifier: other-permissive_66.RULE
+        matcher: 3-seq
+        license_expression: proprietary-license
+        rule_identifier: proprietary-license_599.RULE
         rule_relevance: 100
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/other-permissive_66.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/proprietary-license_599.RULE
         matched_text: |
+          This file contains firmware data derived from proprietary unpublished
+          source code, Copyright (c) 2004 - 2010 Broadcom Corporation.
+
           Permission is hereby granted for the distribution of this firmware data
           in hexadecimal or equivalent format, provided this copyright notice is
           accompanying it.
-    identifier: proprietary_license_and_other_permissive-f0712ddf-0aa0-1775-a929-c24fecdd04c0
+    identifier: proprietary_license-af4a2eef-9a5a-ce96-a5dd-771b1a14029c
 other_license_detections: []
 copyright: Copyright (c) 2004 - 2010 Broadcom Corporation

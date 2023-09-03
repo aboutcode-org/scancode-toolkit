@@ -5,10 +5,10 @@ declared_license:
   - Binary redistribution (QLogic BR-series)
   - Binary redistribution (QLogic 3)
 declared_license_expression: bsd-new AND linux-openib AND qlogic-microcode AND (other-permissive
-  AND proprietary-license AND gpl-1.0-plus) AND other-permissive
+  AND proprietary-license) AND other-permissive
 declared_license_expression_spdx: BSD-3-Clause AND Linux-OpenIB AND LicenseRef-scancode-qlogic-microcode
-  AND (LicenseRef-scancode-other-permissive AND LicenseRef-scancode-proprietary-license AND
-  GPL-1.0-or-later) AND LicenseRef-scancode-other-permissive
+  AND (LicenseRef-scancode-other-permissive AND LicenseRef-scancode-proprietary-license) AND
+  LicenseRef-scancode-other-permissive
 other_license_expression:
 other_license_expression_spdx:
 license_detections:
@@ -131,7 +131,7 @@ license_detections:
           ANY OTHER QLOGIC HARDWARE OR SOFTWARE EITHER SOLELY OR IN
           COMBINATION WITH THIS PROGRAM.
     identifier: qlogic_microcode-dc001f04-531b-99f7-2248-d734ca5030f2
-  - license_expression: other-permissive AND proprietary-license AND gpl-1.0-plus
+  - license_expression: other-permissive AND proprietary-license
     matches:
       - score: '100.0'
         start_line: 102
@@ -147,11 +147,11 @@ license_detections:
           Permission is hereby granted for the distribution of this firmware data
           in hexadecimal or equivalent format, provided this copyright notice is
           accompanying it.
-      - score: '56.16'
+      - score: '97.33'
         start_line: 106
         end_line: 112
-        matched_length: 41
-        match_coverage: '56.16'
+        matched_length: 73
+        match_coverage: '100.0'
         matcher: 3-seq
         license_expression: proprietary-license
         rule_identifier: proprietary-license_310.RULE
@@ -165,18 +165,7 @@ license_detections:
           These firmware files are distributed in the hope that they will be
           useful, but WITHOUT ANY WARRANTY; without even the implied warranty
           of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
-      - score: '100.0'
-        start_line: 109
-        end_line: 109
-        matched_length: 5
-        match_coverage: '100.0'
-        matcher: 2-aho
-        license_expression: gpl-1.0-plus
-        rule_identifier: gpl-1.0-plus_33.RULE
-        rule_relevance: 100
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-1.0-plus_33.RULE
-        matched_text: the GNU General Public License.
-    identifier: other_permissive_and_proprietary_license_and_gpl_1_0_plus-e2f0e626-33ba-2701-d5d5-f8f29bd9c576
+    identifier: other_permissive_and_proprietary_license-697a2b44-6955-8abd-ac33-75afd7dab11e
   - license_expression: other-permissive
     matches:
       - score: '100.0'

@@ -1,21 +1,21 @@
 declared_license:
-declared_license_expression: bsd-simplified AND bsd-new AND tcp-wrappers AND gpl-2.0-plus
-declared_license_expression_spdx: BSD-2-Clause AND BSD-3-Clause AND TCP-wrappers AND GPL-2.0-or-later
+declared_license_expression: bsd-new AND tcp-wrappers AND gpl-2.0-plus
+declared_license_expression_spdx: BSD-3-Clause AND TCP-wrappers AND GPL-2.0-or-later
 other_license_expression:
 other_license_expression_spdx:
 license_detections:
-  - license_expression: bsd-simplified AND bsd-new
+  - license_expression: bsd-new
     matches:
-      - score: '100.0'
+      - score: '97.18'
         start_line: 20
-        end_line: 27
-        matched_length: 70
+        end_line: 42
+        matched_length: 207
         match_coverage: '100.0'
-        matcher: 2-aho
-        license_expression: bsd-simplified
-        rule_identifier: bsd-simplified_264.RULE
+        matcher: 3-seq
+        license_expression: bsd-new
+        rule_identifier: bsd-new_67.RULE
         rule_relevance: 100
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-simplified_264.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_67.RULE
         matched_text: |
           Redistribution and use in source and binary forms, with or without
           modification, are permitted provided that the following conditions
@@ -25,17 +25,6 @@ license_detections:
           2. Redistributions in binary form must reproduce the above copyright
              notice, this list of conditions and the following disclaimer in the
              documentation and/or other materials provided with the distribution.
-      - score: '65.24'
-        start_line: 28
-        end_line: 42
-        matched_length: 137
-        match_coverage: '65.24'
-        matcher: 3-seq
-        license_expression: bsd-new
-        rule_identifier: bsd-new_29.RULE
-        rule_relevance: 100
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_29.RULE
-        matched_text: |
           3. Neither the name of Julianne F. Haugh nor the names of its contributors
              may be used to endorse or promote products derived from this software
              without specific prior written permission.
@@ -51,7 +40,7 @@ license_detections:
           LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
           OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
           SUCH DAMAGE.
-    identifier: bsd_simplified_and_bsd_new-c8b3d7c5-854b-98b3-e20f-44f7d3ff3570
+    identifier: bsd_new-44167a67-f95e-380d-3fbb-e5be5e832c48
   - license_expression: tcp-wrappers
     matches:
       - score: '100.0'

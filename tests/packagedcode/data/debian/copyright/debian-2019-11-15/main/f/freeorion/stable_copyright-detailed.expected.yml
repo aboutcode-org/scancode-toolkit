@@ -17,17 +17,16 @@ declared_license:
   - DejaVu-License
 declared_license_expression: gpl-2.0
 declared_license_expression_spdx: GPL-2.0-only
-other_license_expression: (gpl-2.0 AND gpl-2.0) AND (cc-by-sa-3.0 AND free-unknown AND warranty-disclaimer
-  AND unknown-license-reference) AND (cc-by-sa-3.0 AND gpl-2.0) AND (lgpl-2.1-plus AND lgpl-2.1-plus
-  AND lgpl-2.0-plus AND lgpl-2.1) AND boost-1.0 AND (lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.0-plus
-  AND lgpl-2.1) AND bsd-new AND (bitstream AND bitstream) AND (apache-2.0 AND apache-2.0) AND
-  (lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.0-plus AND lgpl-2.1)
-other_license_expression_spdx: (GPL-2.0-only AND GPL-2.0-only) AND (CC-BY-SA-3.0 AND LicenseRef-scancode-free-unknown
-  AND LicenseRef-scancode-warranty-disclaimer AND LicenseRef-scancode-unknown-license-reference)
-  AND (CC-BY-SA-3.0 AND GPL-2.0-only) AND (LGPL-2.1-or-later AND LGPL-2.1-or-later AND LGPL-2.0-or-later
-  AND LGPL-2.1-only) AND BSL-1.0 AND (LGPL-2.1-or-later AND LGPL-2.1-or-later AND LGPL-2.0-or-later
-  AND LGPL-2.1-only) AND BSD-3-Clause AND (Bitstream-Vera AND Bitstream-Vera) AND (Apache-2.0
-  AND Apache-2.0) AND (LGPL-2.1-or-later AND LGPL-2.1-or-later AND LGPL-2.0-or-later AND LGPL-2.1-only)
+other_license_expression: (gpl-2.0 AND gpl-2.0) AND cc-by-sa-3.0 AND (cc-by-sa-3.0 AND gpl-2.0)
+  AND (lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.0-plus AND lgpl-2.1) AND boost-1.0 AND (lgpl-2.1-plus
+  AND lgpl-2.1-plus AND lgpl-2.0-plus AND lgpl-2.1) AND bsd-new AND (bitstream AND bitstream)
+  AND (apache-2.0 AND apache-2.0) AND (lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.0-plus AND
+  lgpl-2.1)
+other_license_expression_spdx: (GPL-2.0-only AND GPL-2.0-only) AND CC-BY-SA-3.0 AND (CC-BY-SA-3.0
+  AND GPL-2.0-only) AND (LGPL-2.1-or-later AND LGPL-2.1-or-later AND LGPL-2.0-or-later AND LGPL-2.1-only)
+  AND BSL-1.0 AND (LGPL-2.1-or-later AND LGPL-2.1-or-later AND LGPL-2.0-or-later AND LGPL-2.1-only)
+  AND BSD-3-Clause AND (Bitstream-Vera AND Bitstream-Vera) AND (Apache-2.0 AND Apache-2.0) AND
+  (LGPL-2.1-or-later AND LGPL-2.1-or-later AND LGPL-2.0-or-later AND LGPL-2.1-only)
 license_detections: []
 other_license_detections:
   - license_expression: gpl-2.0
@@ -218,18 +217,18 @@ other_license_detections:
           On Debian systems the complete license text of the Apache license version 2.0
           can be found at /usr/share/common-licenses/Apache-2.0.
     identifier: apache_2_0-f9ae1f00-9945-c0a9-e6bb-cebf07aec6f2
-  - license_expression: cc-by-sa-3.0 AND free-unknown AND warranty-disclaimer
+  - license_expression: cc-by-sa-3.0
     matches:
-      - score: '100.0'
+      - score: '99.82'
         start_line: 146
-        end_line: 497
-        matched_length: 3160
-        match_coverage: '100.0'
-        matcher: 2-aho
+        end_line: 521
+        matched_length: 3348
+        match_coverage: '99.82'
+        matcher: 3-seq
         license_expression: cc-by-sa-3.0
-        rule_identifier: cc-by-sa-3.0_80.RULE
+        rule_identifier: cc-by-sa-3.0_41.RULE
         rule_relevance: 100
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/cc-by-sa-3.0_80.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/cc-by-sa-3.0_41.RULE
         matched_text: |
           Creative Commons Attribution-ShareAlike 3.0 Unported
           ․
@@ -583,17 +582,10 @@ other_license_detections:
           not granted under this License, such additional rights are deemed to be
           included in the License; this License is not intended to restrict the
           license of any rights under applicable law.
-      - score: '96.28'
-        start_line: 502
-        end_line: 521
-        matched_length: 181
-        match_coverage: '96.28'
-        matcher: 3-seq
-        license_expression: free-unknown
-        rule_identifier: free-unknown_113.RULE
-        rule_relevance: 100
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/free-unknown_113.RULE
-        matched_text: |
+          ․
+          ․
+          Creative Commons Notice
+          ․
           Creative Commons is not a party to this License, and makes no warranty
           whatsoever in connection with the Work. Creative Commons will not be
           liable to You or any party on any legal theory for any damages
@@ -614,29 +606,7 @@ other_license_detections:
           does not form part of the License.
           ․
           Creative Commons may be contacted at http://creativecommons.org/.
-      - score: '90.0'
-        start_line: 502
-        end_line: 502
-        matched_length: 2
-        match_coverage: '100.0'
-        matcher: 2-aho
-        license_expression: warranty-disclaimer
-        rule_identifier: warranty-disclaimer_24.RULE
-        rule_relevance: 90
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/warranty-disclaimer_24.RULE
-        matched_text: no warranty
-      - score: '100.0'
-        start_line: 512
-        end_line: 512
-        matched_length: 3
-        match_coverage: '100.0'
-        matcher: 2-aho
-        license_expression: unknown-license-reference
-        rule_identifier: license-intro_26.RULE
-        rule_relevance: 100
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/license-intro_26.RULE
-        matched_text: licensed under the
-    identifier: cc_by_sa_3_0_and_free_unknown_and_warranty_disclaimer-c10c152f-1c1f-a797-c50b-8fe0c48c042a
+    identifier: cc_by_sa_3_0-33d6e24f-4dca-f73d-ade0-52b78a9bc1e8
   - license_expression: bitstream
     matches:
       - score: '100.0'
