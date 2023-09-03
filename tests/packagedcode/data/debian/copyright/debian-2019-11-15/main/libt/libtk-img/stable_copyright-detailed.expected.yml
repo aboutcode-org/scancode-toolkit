@@ -11,24 +11,17 @@ license_detections: []
 other_license_detections:
   - license_expression: tcl
     matches:
-      - score: '98.8'
-        start_line: 13
+      - score: '100.0'
+        start_line: 20
         end_line: 53
-        matched_length: 328
-        match_coverage: '98.8'
-        matcher: 3-seq
+        matched_length: 306
+        match_coverage: '100.0'
+        matcher: 2-aho
         license_expression: tcl
-        rule_identifier: tcl_3.RULE
+        rule_identifier: tcl_4.RULE
         rule_relevance: 100
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/tcl_3.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/tcl_4.RULE
         matched_text: |
-          This software is copyrighted by Jan Nijtmans (the maintainer)
-          and a lot of other people who contributed code (most notably
-          Andreas Kupries, Thomas G. Lane, Ioi K. Lam, Mario Weilguni
-          and Roger E Critchlow Jr).
-          The following terms apply to all files associated with the
-          software unless explicitly disclaimed in individual files.
-
           The authors hereby grant permission to use, copy, modify, distribute,
           and license this software and its documentation for any purpose, provided
           that existing copyright notices are retained in all copies and that this
@@ -63,7 +56,7 @@ other_license_detections:
           authors grant the U.S. Government and others acting in its behalf
           permission to use and distribute the software in accordance with the
           terms specified in this license.
-    identifier: tcl-dd56f002-7495-c249-a5da-5ef965c62822
+    identifier: tcl-188e325b-a11b-fee2-ccb3-f6c95806aefd
   - license_expression: pngsuite
     matches:
       - score: '100.0'

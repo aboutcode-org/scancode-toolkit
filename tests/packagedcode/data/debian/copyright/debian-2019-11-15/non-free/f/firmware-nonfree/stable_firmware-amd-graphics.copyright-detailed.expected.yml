@@ -1,25 +1,37 @@
 declared_license:
   - Binary redistribution (AMD permissive)
   - Binary redistribution (AMD restrictive)
-declared_license_expression: mit AND amd-linux-firmware
-declared_license_expression_spdx: MIT AND LicenseRef-scancode-amd-linux-firmware
+declared_license_expression: (unknown-license-reference AND mit) AND amd-linux-firmware
+declared_license_expression_spdx: (LicenseRef-scancode-unknown-license-reference AND MIT) AND
+  LicenseRef-scancode-amd-linux-firmware
 other_license_expression:
 other_license_expression_spdx:
 license_detections:
   - license_expression: mit
     matches:
-      - score: '97.67'
+      - score: '100.0'
+        start_line: 14
+        end_line: 14
+        matched_length: 4
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: unknown-license-reference
+        rule_identifier: license-intro_27.RULE
+        rule_relevance: 100
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/license-intro_27.RULE
+        matched_text: Permission is hereby granted,
+      - score: '95.24'
         start_line: 14
         end_line: 31
-        matched_length: 168
-        match_coverage: '100.0'
+        matched_length: 160
+        match_coverage: '95.24'
         matcher: 3-seq
         license_expression: mit
         rule_identifier: mit_x11-r75_58.RULE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_x11-r75_58.RULE
         matched_text: |
-          Permission is hereby granted, free of charge, to any person obtaining a
+          free of charge, to any person obtaining a
           copy of this software and associated documentation files (the "Software"),
           to deal in the Software without restriction, including without limitation
           the rights to use, copy, modify, merge, publish, distribute, sublicense,
@@ -37,7 +49,7 @@ license_detections:
           LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
           OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
           WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-    identifier: mit-eaad20d1-a23d-1efa-4faf-fd2acf65e2fa
+    identifier: mit-94539c7d-995b-0b6a-93b2-5e471d89c796
   - license_expression: amd-linux-firmware
     matches:
       - score: '100.0'
