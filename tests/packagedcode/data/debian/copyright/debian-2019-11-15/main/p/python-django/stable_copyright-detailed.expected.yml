@@ -22,13 +22,19 @@ declared_license:
 declared_license_expression: bsd-new
 declared_license_expression_spdx: BSD-3-Clause
 other_license_expression: bsd-new AND bsd-new AND (apache-2.0 AND apache-2.0 AND apache-2.0)
-  AND mit AND bsd-simplified AND bsd-new AND bsd-new AND psf-2.0 AND (apache-2.0 AND apache-2.0
-  AND apache-2.0) AND mit AND mit AND (bsd-new AND mit) AND bsd-new AND bsd-new AND bsd-new
-  AND mit
+  AND mit AND bsd-simplified AND bsd-new AND bsd-new AND (python AND unknown-license-reference
+  AND psf-2.0 AND unknown-license-reference AND unknown-license-reference AND unknown-license-reference
+  AND unknown-license-reference AND unknown-license-reference AND unknown-license-reference)
+  AND (apache-2.0 AND apache-2.0 AND apache-2.0) AND mit AND mit AND (bsd-new AND mit) AND bsd-new
+  AND bsd-new AND bsd-new AND mit
 other_license_expression_spdx: BSD-3-Clause AND BSD-3-Clause AND (Apache-2.0 AND Apache-2.0
-  AND Apache-2.0) AND MIT AND BSD-2-Clause AND BSD-3-Clause AND BSD-3-Clause AND PSF-2.0 AND
-  (Apache-2.0 AND Apache-2.0 AND Apache-2.0) AND MIT AND MIT AND (BSD-3-Clause AND MIT) AND
-  BSD-3-Clause AND BSD-3-Clause AND BSD-3-Clause AND MIT
+  AND Apache-2.0) AND MIT AND BSD-2-Clause AND BSD-3-Clause AND BSD-3-Clause AND (Python-2.0
+  AND LicenseRef-scancode-unknown-license-reference AND PSF-2.0 AND LicenseRef-scancode-unknown-license-reference
+  AND LicenseRef-scancode-unknown-license-reference AND LicenseRef-scancode-unknown-license-reference
+  AND LicenseRef-scancode-unknown-license-reference AND LicenseRef-scancode-unknown-license-reference
+  AND LicenseRef-scancode-unknown-license-reference) AND (Apache-2.0 AND Apache-2.0 AND Apache-2.0)
+  AND MIT AND MIT AND (BSD-3-Clause AND MIT) AND BSD-3-Clause AND BSD-3-Clause AND BSD-3-Clause
+  AND MIT
 license_detections: []
 other_license_detections:
   - license_expression: apache-2.0
@@ -112,24 +118,42 @@ other_license_detections:
           OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
           WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
     identifier: mit-cacd5c0c-204a-85c2-affc-e4c125b2492a
-  - license_expression: psf-2.0
+  - license_expression: python AND psf-2.0
     matches:
-      - score: '89.1'
+      - score: '100.0'
         start_line: 121
+        end_line: 121
+        matched_length: 4
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: python
+        rule_identifier: python_35.RULE
+        rule_relevance: 100
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/python_35.RULE
+        matched_text: PYTHON SOFTWARE FOUNDATION LICENSE
+      - score: '90.0'
+        start_line: 124
+        end_line: 124
+        matched_length: 2
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: unknown-license-reference
+        rule_identifier: license-intro_22.RULE
+        rule_relevance: 90
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/license-intro_22.RULE
+        matched_text: LICENSE AGREEMENT
+      - score: '81.74'
+        start_line: 125
         end_line: 169
-        matched_length: 327
-        match_coverage: '89.1'
+        matched_length: 300
+        match_coverage: '81.74'
         matcher: 3-seq
         license_expression: psf-2.0
         rule_identifier: psf-2.0.LICENSE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/psf-2.0.LICENSE
         matched_text: |
-          PYTHON SOFTWARE FOUNDATION LICENSE VERSION 2
-          --------------------------------------------
-
-          1. This LICENSE AGREEMENT is between the Guilherme Gondim, Simon
-          Willison and Drew Perttula ("Baseconv Authors"), and the Individual or
+          and the Individual or
           Organization ("Licensee") accessing and otherwise using this software
           ("Baseconv") in source or binary form and its associated documentation.
 
@@ -173,8 +197,74 @@ other_license_detections:
           endorse or promote products or services of Licensee, or any third party.
 
           8. By copying, installing or otherwise using Baseconv, Licensee agrees
-          to be bound by the terms and conditions of this License Agreement.
-    identifier: psf_2_0-7783998d-f3df-e1e7-edd4-22ee0d990095
+          to be bound by the terms and conditions of this
+      - score: '90.0'
+        start_line: 129
+        end_line: 129
+        matched_length: 2
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: unknown-license-reference
+        rule_identifier: license-intro_22.RULE
+        rule_relevance: 90
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/license-intro_22.RULE
+        matched_text: License Agreement,
+      - score: '90.0'
+        start_line: 134
+        end_line: 134
+        matched_length: 2
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: unknown-license-reference
+        rule_identifier: license-intro_22.RULE
+        rule_relevance: 90
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/license-intro_22.RULE
+        matched_text: License Agreement
+      - score: '90.0'
+        start_line: 159
+        end_line: 159
+        matched_length: 2
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: unknown-license-reference
+        rule_identifier: license-intro_22.RULE
+        rule_relevance: 90
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/license-intro_22.RULE
+        matched_text: License Agreement
+      - score: '90.0'
+        start_line: 162
+        end_line: 162
+        matched_length: 2
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: unknown-license-reference
+        rule_identifier: license-intro_22.RULE
+        rule_relevance: 90
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/license-intro_22.RULE
+        matched_text: License Agreement
+      - score: '90.0'
+        start_line: 164
+        end_line: 164
+        matched_length: 2
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: unknown-license-reference
+        rule_identifier: license-intro_22.RULE
+        rule_relevance: 90
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/license-intro_22.RULE
+        matched_text: License Agreement
+      - score: '90.0'
+        start_line: 169
+        end_line: 169
+        matched_length: 2
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: unknown-license-reference
+        rule_identifier: license-intro_22.RULE
+        rule_relevance: 90
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/license-intro_22.RULE
+        matched_text: License Agreement.
+    identifier: python_and_psf_2_0-8f67b7c1-e87e-ceda-e88d-70db239c1f55
   - license_expression: bsd-simplified
     matches:
       - score: '100.0'

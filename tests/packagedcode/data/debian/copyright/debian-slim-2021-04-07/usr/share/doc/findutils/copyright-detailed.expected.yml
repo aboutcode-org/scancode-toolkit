@@ -4,18 +4,18 @@ declared_license_expression_spdx: GPL-3.0-or-later AND GFDL-1.3-or-later
 other_license_expression:
 other_license_expression_spdx:
 license_detections:
-  - license_expression: gpl-3.0-plus AND gfdl-1.3-plus
+  - license_expression: gpl-3.0-plus
     matches:
-      - score: '87.25'
+      - score: '100.0'
         start_line: 49
-        end_line: 73
-        matched_length: 130
-        match_coverage: '87.25'
-        matcher: 3-seq
+        end_line: 64
+        matched_length: 128
+        match_coverage: '100.0'
+        matcher: 2-aho
         license_expression: gpl-3.0-plus
-        rule_identifier: gpl-3.0-plus_410.RULE
+        rule_identifier: gpl-3.0-plus_288.RULE
         rule_relevance: 100
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0-plus_410.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0-plus_288.RULE
         matched_text: |
           This program is free software: you can redistribute it and/or modify
              it under the terms of the GNU General Public License as published by
@@ -33,15 +33,9 @@ license_detections:
 
           On Debian GNU/Linux systems, the complete text of the GNU General
           Public License version 3 can be found in `/usr/share/common-licenses/GPL-3'.
-
-          =============================================
-          DOCUMENTATION
-          ----------------------------
-          Copyright (C) 1994-2021 Free Software Foundation, Inc.
-
-          Permission is granted to copy, distribute and/or modify this
-          document under the terms of the GNU Free Documentation License,
-          Version
+    identifier: gpl_3_0_plus-5d3fc7ee-d4a6-e758-e035-959d5625a475
+  - license_expression: gfdl-1.3-plus
+    matches:
       - score: '100.0'
         start_line: 71
         end_line: 81
@@ -64,7 +58,7 @@ license_detections:
 
           On Debian GNU/Linux systems, the complete text of the GNU Free Documentation
           License, Version 1.3 can be found in `/usr/share/common-licenses/GFDL-1.3'.
-    identifier: gpl_3_0_plus_and_gfdl_1_3_plus-4e26323e-8ec7-12c7-944f-000d6284f4bd
+    identifier: gfdl_1_3_plus-3948eb51-a2cd-b4ad-a354-c56c2289470f
 other_license_detections: []
 copyright: |
   Copyright (c) 1990-2021 Free Software Foundation, Inc.
