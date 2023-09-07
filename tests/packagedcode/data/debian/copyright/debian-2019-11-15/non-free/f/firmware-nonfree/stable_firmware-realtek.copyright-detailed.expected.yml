@@ -1,8 +1,9 @@
 declared_license:
   - Binary redistribution (Realtek permissive)
   - Binary redistribution (Realtek restrictive)
-declared_license_expression: other-permissive AND intel
-declared_license_expression_spdx: LicenseRef-scancode-other-permissive AND LicenseRef-scancode-intel
+declared_license_expression: other-permissive AND (intel AND unknown-license-reference AND free-unknown)
+declared_license_expression_spdx: LicenseRef-scancode-other-permissive AND (LicenseRef-scancode-intel
+  AND LicenseRef-scancode-unknown-license-reference AND LicenseRef-scancode-free-unknown)
 other_license_expression:
 other_license_expression_spdx:
 license_detections:
@@ -23,13 +24,13 @@ license_detections:
           data in hexadecimal or equivalent format, provided this copyright
           notice is accompanying it.
     identifier: other_permissive-16dc1659-320f-55c9-0ddb-4d46c5526cbb
-  - license_expression: intel
+  - license_expression: intel AND free-unknown
     matches:
-      - score: '93.72'
+      - score: '90.46'
         start_line: 18
         end_line: 53
-        matched_length: 293
-        match_coverage: '100.0'
+        matched_length: 279
+        match_coverage: '95.22'
         matcher: 3-seq
         license_expression: intel
         rule_identifier: intel_1.RULE
@@ -72,7 +73,42 @@ license_detections:
           TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE
           USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH
           DAMAGE.
-    identifier: intel-066e3a31-92c6-4f54-d106-62df186d8643
+      - score: '50.0'
+        start_line: 36
+        end_line: 36
+        matched_length: 2
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: unknown-license-reference
+        rule_identifier: license-intro_2.RULE
+        rule_relevance: 50
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/license-intro_2.RULE
+        matched_text: licensed under
+      - score: '50.0'
+        start_line: 36
+        end_line: 37
+        matched_length: 3
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: free-unknown
+        rule_identifier: free-unknown_88.RULE
+        rule_relevance: 50
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/free-unknown_88.RULE
+        matched_text: |
+          Open
+          Source license
+      - score: '100.0'
+        start_line: 38
+        end_line: 38
+        matched_length: 4
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: free-unknown
+        rule_identifier: free-unknown_96.RULE
+        rule_relevance: 100
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/free-unknown_96.RULE
+        matched_text: http://opensource.org/licenses.
+    identifier: intel_and_free_unknown-81b57031-0527-9f19-723e-17223d6dbfd2
 other_license_detections: []
 copyright: |
   2010-2013, Realtek Semiconductor Corporation
