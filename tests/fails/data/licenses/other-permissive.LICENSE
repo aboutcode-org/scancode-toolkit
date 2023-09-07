@@ -1,0 +1,17 @@
+---
+key: other-permissive
+short_name: Other Permissive Licenses
+name: Other Permissive Licenses
+category: Permissive
+owner: nexB
+notes: |
+    this is a catch all and ellipsis to deal with some cases when a large
+    number of ancillary yet similar licenses may be reported as one.
+is_generic: yes
+spdx_license_key: LicenseRef-scancode-other-permissive
+other_spdx_license_keys:
+    - LicenseRef-Fedora-UltraPermissive
+---
+
+This component contains multiple third-party subcomponents licensed
+under permissive licenses in the style of MIT, BSD, X11, and/or Apache.
