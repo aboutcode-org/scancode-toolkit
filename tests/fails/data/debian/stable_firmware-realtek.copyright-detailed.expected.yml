@@ -1,0 +1,79 @@
+declared_license:
+  - Binary redistribution (Realtek permissive)
+  - Binary redistribution (Realtek restrictive)
+declared_license_expression: other-permissive AND intel
+declared_license_expression_spdx: LicenseRef-scancode-other-permissive AND LicenseRef-scancode-intel
+other_license_expression:
+other_license_expression_spdx:
+license_detections:
+  - license_expression: other-permissive
+    matches:
+      - score: '100.0'
+        start_line: 9
+        end_line: 11
+        matched_length: 23
+        match_coverage: '100.0'
+        matcher: 1-hash
+        license_expression: other-permissive
+        rule_identifier: other-permissive_66.RULE
+        rule_relevance: 100
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/other-permissive_66.RULE
+        matched_text: |
+          Permission is hereby granted for the distribution of this firmware
+          data in hexadecimal or equivalent format, provided this copyright
+          notice is accompanying it.
+    identifier: other_permissive-16dc1659-320f-55c9-0ddb-4d46c5526cbb
+  - license_expression: intel
+    matches:
+      - score: '93.72'
+        start_line: 18
+        end_line: 53
+        matched_length: 293
+        match_coverage: '100.0'
+        matcher: 3-seq
+        license_expression: intel
+        rule_identifier: intel_1.RULE
+        rule_relevance: 95
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/intel_1.RULE
+        matched_text: |
+          Redistribution.  Redistribution and use in binary form, without
+          modification, are permitted provided that the following conditions are
+          met:
+
+          * Redistributions must reproduce the above copyright notice and the
+            following disclaimer in the documentation and/or other materials
+            provided with the distribution.
+          * Neither the name of Realtek Semiconductor Corporation nor the names of its
+            suppliers may be used to endorse or promote products derived from this
+            software without specific prior written permission.
+          * No reverse engineering, decompilation, or disassembly of this software
+            is permitted.
+
+          Limited patent license. Realtek Semiconductor Corporation grants a world-wide,
+          royalty-free, non-exclusive license under patents it now or hereafter
+          owns or controls to make, have made, use, import, offer to sell and
+          sell ("Utilize") this software, but solely to the extent that any
+          such patent is necessary to Utilize the software alone, or in
+          combination with an operating system licensed under an approved Open
+          Source license as listed by the Open Source Initiative at
+          http://opensource.org/licenses.  The patent license shall not apply to
+          any other combinations which include this software.  No hardware per
+          se is licensed hereunder.
+
+          DISCLAIMER.  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND
+          CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING,
+          BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND
+          FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE
+          COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,
+          INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
+          BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS
+          OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
+          ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR
+          TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE
+          USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH
+          DAMAGE.
+    identifier: intel-066e3a31-92c6-4f54-d106-62df186d8643
+other_license_detections: []
+copyright: |
+  2010-2013, Realtek Semiconductor Corporation
+  2009-2010, Realtek Semiconductor Corporation
