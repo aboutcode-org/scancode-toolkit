@@ -34,11 +34,6 @@ class TestFailed(FileBasedTesting):
         )
 
         query_loc = self.get_test_loc('debian/stable_firmware-realtek.copyright')
-        qry = build_query(location=query_loc, idx=idx)
-
-        match = match_unknowns(
-            idx=idx,
-            query_run=qry.whole_query_run(),
-            automaton=idx.unknown_automaton,
-        )
-        match.set_lines(qry.line_by_pos)
+        qry_string = open(query_loc, 'r').read()
+        m = idx.match(query_string=qry_string)
+        print(m)
