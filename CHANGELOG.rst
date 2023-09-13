@@ -10,8 +10,9 @@ v33.0.0 (next next, roadmap)
   - Yocto/BitBake .bb recipes.
 
 - Fallback packages for non-native dependencies of SCTK.
-- Dependencies for 
+- Dependencies for
 - Support for copyright detection objects.
+- Bump commoncode to v31.0.3
 
 v32.1.0 (next, roadmap)
 ----------------------------
@@ -148,7 +149,7 @@ There are fixes for two issues in this release:
 - https://github.com/nexB/scancode-toolkit/issues/3407:
   here in typecode we had an improper import of ctypes.utils
   and this is fixed in a new release v30.0.1 of typecode
-- https://github.com/nexB/scancode-toolkit/issues/3408 
+- https://github.com/nexB/scancode-toolkit/issues/3408
   the setup.cfg and setup-mini.cfg was not aligned for plugin
   entrypoints.
 
