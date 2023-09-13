@@ -1556,7 +1556,9 @@ def analyze_detection(license_matches, package_license=False):
     ):
         return DetectionCategory.FALSE_POSITVE.value
 
-    elif has_correct_license_clue_matches(license_matches=license_matches):
+    elif not package_license and has_correct_license_clue_matches(
+        license_matches=license_matches
+    ):
         return DetectionCategory.LICENSE_CLUES.value
 
     # Case where all matches have `matcher` as `1-hash` or `4-spdx-id`

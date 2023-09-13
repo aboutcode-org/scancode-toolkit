@@ -1,7 +1,7 @@
 declared_license:
-declared_license_expression: x11-fsf AND x11-xconsortium AND bsd-new AND x11-fsf
+declared_license_expression: x11-fsf AND x11-xconsortium AND bsd-new AND x11-xconsortium
 declared_license_expression_spdx: X11-distribute-modifications-variant AND X11 AND BSD-3-Clause
-  AND X11-distribute-modifications-variant
+  AND X11
 other_license_expression:
 other_license_expression_spdx:
 license_detections:
@@ -114,7 +114,7 @@ license_detections:
           OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
           SUCH DAMAGE.
     identifier: bsd_new-ccc98c3a-92d4-e7a3-e0ba-798328cb6b98
-  - license_expression: x11-fsf
+  - license_expression: x11-xconsortium
     matches:
       - score: '100.0'
         start_line: 105
@@ -122,10 +122,10 @@ license_detections:
         matched_length: '199'
         match_coverage: '100.0'
         matcher: 2-aho
-        license_expression: x11-fsf
-        rule_identifier: x11-fsf_7.RULE
+        license_expression: x11-xconsortium
+        rule_identifier: x11-xconsortium_41.RULE
         rule_relevance: 100
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/x11-fsf_7.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/x11-xconsortium_41.RULE
         matched_text: |
           Permission is hereby granted, free of charge, to any person obtaining a
           copy of this software and associated documentation files (the
@@ -150,7 +150,7 @@ license_detections:
           holders shall not be used in advertising or otherwise to promote the
           sale, use or other dealings in this Software without prior written
           authorization.
-    identifier: x11_fsf-c2b8535e-1b81-42d8-945b-b026f349228d
+    identifier: x11_xconsortium-4a366de0-e107-017e-0783-8145953fe45e
 other_license_detections: []
 copyright: |
   Copyright (c) 1998-2018 Free Software Foundation, Inc.
