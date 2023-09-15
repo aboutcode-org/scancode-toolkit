@@ -3,7 +3,7 @@ key: libpri-openh323-exception
 short_name: libpri OpenH323 exception
 name: libpri OpenH323 exception
 category: Copyleft
-owner: asterisk
+owner: Asterisk
 is_exception: yes
 spdx_license_key: libpri-OpenH323-exception
 other_urls:

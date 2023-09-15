@@ -4,6 +4,7 @@ short_name: GPL-3.0 Interface Exception
 name: GPL-3.0 Interface Exception
 category: Copyleft Limited
 owner: Free Software Foundation (FSF)
+homepage_url: https://www.gnu.org/licenses/gpl-faq.en.html#LinkingOverControlledInterface
 is_exception: yes
 spdx_license_key: GPL-3.0-interface-exception
 other_urls:

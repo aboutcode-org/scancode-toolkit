@@ -1,0 +1,145 @@
+---
+key: aardvark-py-2014
+short_name: Aardvark I2C/SPI 2014
+name: Aardvark I2C/SPI Software and Firmware License 2014
+category: Proprietary Free
+owner: Total Phase
+homepage_url: https://github.com/totalphase/aardvark_py/blob/master/LICENSE.txt
+spdx_license_key: LicenseRef-scancode-aardvark-py-2014
+ignorable_emails:
+    - sales@totalphase.com
+---
+
+LICENSE AGREEMENT
+
+Aardvark I2C/SPI Software and Firmware
+
+PREAMBLE:
+  The accompanying software, firmware, documentation, and related
+  materials ("Product") are the sole property of Total Phase, Inc.
+  ("Total Phase").  Its use and distribution is subject to the
+  terms in this License Agreement ("Agreement").
+
+  By the use or distribution of the Product, you are consenting to
+  be bound by the terms of this Agreement.  If you do not agree, do
+  not use or distribute the Product in whole or in part.
+
+
+TERMS OF USE:
+  Permission to use, copy, modify, and distribute the Product
+  is hereby granted, subject to the conditions stated below:
+
+  a. The Product is licensed only for use with other Total Phase
+     products.  Any other use is permitted only with the express
+     written permission of Total Phase.
+
+  b. The Product may only be copied unmodified in its entirety,
+     with all of the files intact including a verbatim copy of this
+     Agreement.  Distribution of modified copies is permitted only
+     with the express written permission of Total Phase.
+
+  c. The Product must not be placed on any publicly-accessible
+     Internet server including, but not limited to, web servers, ftp
+     servers, and file sharing systems.  Instead, a link should be
+     placed to the Total Phase website where the latest versions
+     may be obtained.
+
+  d. As a special exemption, a copy of the shared object file,
+     aardvark.dll or aardvark.so ("Shared Object File"), may be
+     distributed separately from the Product, provided that it is part
+     of a separate work ("Separate Work").  Such Shared Object Files
+     carry with them all of the rights and limitations outlined in
+     this Agreement, except that it may not be further distributed
+     unless part of the Separate Work.
+
+     Before publicly distributing the Shared Object Files, whether
+     gratis or for a fee, you must notify Total Phase by electronic
+     mail to: sales@totalphase.com to the attention of General
+     Manager. Provide a description of the Separate Work, specifically
+     mentioning how any Total Phase hardware and the Shared Object
+     Files will be integrated into the Separate Work and your proposed
+     method of distribution. Total Phase will acknowledge the
+     notification within one week.
+
+     You are required to include a copy of this Agreement with your
+     Separate Work.
+
+  e. Any separate works which include the Product must be plainly
+     marked as such, and must not be misrepresented as the original
+     software.
+
+  f. You may not modify, translate, reverse-engineer, decompile,
+     disassemble (except and solely to the extent that an applicable
+     statute expressly and specifically prohibits such restrictions),
+     or create derivative works of the Product.  A separate work
+     that only makes use of the unmodified shared object file is not
+     considered a derivative work.
+
+
+PROPRIETARY RIGHTS:
+  The Product is owned by Total Phase and is protected by United
+  States copyright laws and international treaty provisions.  All
+  copyright, patent, trade secret, trademarks, and other intellectual
+  and proprietary rights in the Product are and shall remain the
+  valuable property of Total Phase.  You agree to take all necessary
+  steps to ensure that this property is protected and that the
+  provisions of this Agreement are not violated by you or by any
+  person under your control or in your service.
+
+
+TERMINATION:
+  Your rights under this license will terminate automatically if you
+  fail to comply with the terms and conditions set forth herein.
+
+  If any provision of this license agreement is held to be
+  unenforceable, that provision shall be reformed only to the extent
+  necessary to make it enforceable; and the balance of this license
+  agreement shall remain in full force and effect.
+
+
+SAFETY-CRITICAL SYSTEMS POLICY:
+  The Product is not authorized for use in life support devices or
+  systems.  Life support devices or systems include, but are not
+  limited to, surgical implants, medical systems, and other
+  safety-critical systems in which failure of a Total Phase product
+  could cause personal injury or loss of life.
+
+  The Product is not fault-tolerant and is not designed, manufactured
+  or intended for use or resale in hazardous environments requiring
+  fail-safe performance, such as in the operation of nuclear facilities,
+  aircraft navigation or communication systems, air traffic control,
+  or weapons systems, in which the failure of the Product could lead
+  directly to death, personal injury, or severe physical or environ-
+  mental damage.  Such use is unauthorized by Total Phase.
+
+  Should the Product be used in any such unauthorized manner, Buyer
+  agrees to indemnify and hold harmless Total Phase, its officers,
+  employees, affiliates, and distributors from any and all claims
+  arising from such use, even if such claim alleges that Total Phase
+  was negligent in the design or manufacture of the Product.
+
+
+OPEN SOURCE:
+  The software API portion of the Product makes use of open source
+  libraries that are not owned by Total Phase and are licensed under
+  different terms.  For specific details, please see the documentation
+  that is included with the software API package.
+
+
+DISCLAIMER:
+  THE PRODUCT IS PROVIDED "AS IS," WITHOUT WARRANTY OF ANY KIND.
+  THE COPYRIGHT HOLDER(S) AND TOTAL PHASE DISCLAIM ANY AND ALL
+  WARRANTIES, WHETHER EXPRESSED OR IMPLIED, INCLUDING BUT NOT
+  LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A
+  PARTICULAR PURPOSE AND NON-INFRINGEMENT.
+
+  IN NO EVENT SHALL THE COPYRIGHT HOLDER(S), TOTAL PHASE, ITS
+  OFFICERS, EMPLOYEES, AFFILIATES, AND DISTRIBUTORS BE LIABLE FOR
+  ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+  CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT
+  OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR
+  BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+  LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE
+  USE OF THE PRODUCT, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH
+  DAMAGE.

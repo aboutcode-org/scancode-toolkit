@@ -1,6 +1,7 @@
 ---
 license_expression: x11-fsf
 is_license_text: yes
+is_deprecated: yes
 ---
 
 Permission is hereby granted, free of charge, to any person obtaining a

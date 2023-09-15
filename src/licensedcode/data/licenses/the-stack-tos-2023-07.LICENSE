@@ -1,0 +1,19 @@
+---
+key: the-stack-tos-2023-07
+short_name: The Stack TOS 2023-07
+name: HuggingFace The Stack TOS 2023-07
+category: Copyleft Limited
+owner: BigScience
+homepage_url: https://huggingface.co/datasets/bigcode/the-stack#terms-of-use-for-the-stack
+spdx_license_key: LicenseRef-scancode-the-stack-tos-2023-07
+---
+
+Terms of Use for The Stack
+
+The Stack dataset is a collection of source code in over 300 programming languages. We ask that you read and acknowledge the following points before using the dataset:
+
+1.    The Stack is a collection of source code from repositories with various licenses. Any use of all or part of the code gathered in The Stack must abide by the terms of the original licenses, including attribution clauses when relevant. We facilitate this by providing provenance information for each data point.
+
+2.    The Stack is regularly updated to enact validated data removal requests. By clicking on "Access repository", you agree to update your own version of The Stack to the most recent usable version specified by the maintainers in the following thread. If you have questions about dataset versions and allowed uses, please also ask them in the dataset’s community discussions. We will also notify users via email when the latest usable version changes.
+
+3.    To host, share, or otherwise provide access to The Stack dataset, you must include these Terms of Use and require users to agree to it.

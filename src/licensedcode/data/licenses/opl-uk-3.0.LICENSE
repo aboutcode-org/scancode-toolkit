@@ -4,6 +4,7 @@ short_name: United Kingdom Open Parliament Licence v3.0
 name: United Kingdom Open Parliament Licence v3.0
 category: Permissive
 owner: Parliament of United Kingdom
+homepage_url: https://www.parliament.uk/site-information/copyright-parliament/open-parliament-licence/
 spdx_license_key: OPL-UK-3.0
 other_urls:
     - https://www.parliament.uk/site-information/copyright-parliament/open-parliament-licence/

@@ -4,6 +4,7 @@ short_name: Xdebug License v 1.03
 name: Xdebug License v 1.03
 category: Permissive
 owner: Derick Rethans
+homepage_url: https://raw.githubusercontent.com/xdebug/xdebug/master/LICENSE
 spdx_license_key: Xdebug-1.03
 other_urls:
     - https://raw.githubusercontent.com/xdebug/xdebug/master/LICENSE

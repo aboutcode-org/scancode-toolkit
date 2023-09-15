@@ -1,0 +1,384 @@
+---
+key: jsel-2.0
+short_name: JSEL 2.0
+name: JAHIA Sustainable Enterprise License (JSEL) 2.0
+category: Commercial
+owner: Jahia
+homepage_url: https://github.com/Jahia/jahia/blob/master/license/jsel.txt
+spdx_license_key: LicenseRef-scancode-jsel-2.0
+---
+
+JAHIA SUSTAINABLE ENTERPRISE LICENSE (JSEL)
+Version 2.0
+
+INTRODUCTION
+
+The JAHIA Sustainable Enterprise License ("License") may include: 1) Test,
+Research and Development Right of Usage and 2) Commercial Right of Usage. You
+have agreed to the terms of this License by selecting the "Accept" button at the
+end of the JSEL or executing a hardcopy JSEL or a document that expressly
+referred to the License with Jahia Solutions Group SA ("JSG").
+
+The Commercial Use must be approved by You and JSG with the signature of a
+related document, delivered by JSG, in order to become effective. Capitalized
+terms used in this License are defined in the Definitions section.
+
+1. DEFINITIONS.
+
+1.1. "Approved Counterpart" means the Modification(s), which are identified by
+You as potential Generic Elements, which you suggest as a counterpart to JSG and
+which were accepted, validated and developed by JSG.
+
+1.2. "Commercial Use" means any use of Original Software by You, alone or
+bundled with any other software or hardware, at the exclusion of any Test,
+Research and Development Use.
+
+1.3. "Contributor" means each individual or entity that creates or contributes
+to the creation of Modifications.
+
+1.4. "Covered Software" means (a) the Original Software, or (b) Generic
+Developments, or (c) the combination of files containing Original Software with
+files containing Generic Developments, in each case including portions thereof.
+
+1.5. "Executable" means the Covered Software in any form other than Source Code.
+
+1.6. "Generic Developments" are defined as Modifications done at Your request by
+JSG as a contribution to the Original Software and identified as such on the JSG
+Order Forms signed by You. Once incorporated into the Original Software, Generic
+Developments are by nature subject to the terms of the licenses used by JSG.
+
+1.7. "Generic Elements" means, without limitation: software, modules, patches,
+bug fixes, API, ideas, methods, concepts, know-how, structures, techniques,
+inventions, developments, processes, discoveries, improvements and other
+information and materials developed by JSG before or during the execution of JSG
+Offering.
+
+1.8. "JSG Offering": software and services proposed by JSG under JSG terms and
+conditions.
+
+1.9. "JSG Terms and Conditions": terms and conditions under which JSG is
+providing JSG Offering to You.
+
+1.10. "Larger Work" means a work which combines Covered Software or portions
+thereof with code not governed by the terms of this License.
+
+1.11. "License" means this document.
+
+1.12. "Licensable" means having the right to grant, to the maximum extent
+possible, whether at the time of the initial grant or subsequently acquired, any
+and all of the rights conveyed herein.
+
+1.13. "Modifications" means the Source Code and Executable form of any of the
+following:
+
+A. Any file that results from an addition to, deletion from or modification of
+the contents of a file containing Original Software or previous Modifications;
+
+B. Any new file that contains any part of the Original Software or previous
+Modification; or
+
+C. Any new file that is contributed or otherwise made available under the terms
+of this License.
+
+1.14. "Original Software" means the Source Code and Executable form of the Jahia
+Enterprise Edition software code that is released under this License.
+
+1.15. "Patent Claims" means any patent claim(s), now owned or hereafter
+acquired, including without limitation, method, process, and apparatus claims,
+in any patent Licensable by grantor.
+
+1.16. "Source Code" means (a) the common form of computer software code in which
+modifications are made and (b) associated documentation included in or with such
+code.
+
+1.17. "Specific Developments" are defined as the work performed at Your request
+and identified as such in the context of JSG Order Forms that are associated
+with said Specific Developments and are signed by You before any work is done.
+
+1.18. "Specific Elements" are defined as all of the elements supplied to JSG by
+You in the context of performance of the Services, for which You owns the
+intellectual property rights.
+
+1.19. "Test, Research and Development Use" means use of the Original Software
+only for testing, researching and developing the Original Software and expressly
+excludes any distribution rights and use for direct or indirect commercial or
+strategic gain or advantage which is subject to execution of a purchase or
+reselling agreement by You and JSG.
+
+1.20. "You" (or "Your") means an individual or a legal entity exercising rights
+under, and complying with all of the terms of, this License. For legal entities,
+"You" includes any entity which controls, is controlled by, or is under common
+control with You. For purposes of this definition, "control" means (a) the
+power, direct or indirect, to cause the direction or management of such entity,
+whether by contract or otherwise, or (b) ownership of more than fifty percent
+(50%) of the outstanding shares or beneficial ownership of such entity.
+
+2. LICENSE GRANTS FOR RESEARCH AND DEVELOPMENT USE.
+
+JSG hereby grants You a world-wide, royalty-free, non-exclusive Test, Research
+and Development Use license:
+
+(a) under intellectual property rights (other than patent or trademark),
+licensable by JSG, to use, modify, display, and perform the Original Software
+(or portions thereof), with or without Modifications, and/or as part of a Larger
+Work, for Test, Research and Development Use by You; and
+
+(b) under Patent Claims infringed by the making or using of Original Software,
+to make, have made, use, practice and/or otherwise dispose of the Original
+Software (or portions thereof) for Test, Research and Development Use by You.
+
+(c) The licenses granted in Sections 2(a) and 2(b) are effective on the date JSG
+first distributes or otherwise makes the Original Software available to a third
+party under the terms of this License for Test, Research and Development Use by
+You.
+
+(d) Notwithstanding Section 2(b) above, no patent license is granted: (1) for
+code that You delete from the Original Software, or (2) for infringements caused
+by: (i) the modification of the Original Software, or (ii) the combination of
+the Original Software with other software or devices.
+
+(e) Execution of the Covered Software for all other purposes than mentioned in
+this Section is subject to a fee, payable to JSG and to be mutually agreed upon
+by You and JSG. The grant explicitly does not apply to Commercial Use of the
+Original Software. Commercial Use of Original Software requires a signed
+approval explicitly issued for that purpose by JSG.
+
+(f) Other than the rights expressly granted in this License, JSG retains all
+rights, titles, and interests in the Original Software.
+
+3. LICENSE GRANTS FOR COMMERCIAL USE.
+
+3.1. Commercial Use of the Original Software requires the payment of a fee as
+describe by JSG in JSG Offering. The details of Your fees, payment schedule and
+scope of use (subscription, number of JVM, users, servers, modules, support
+scope,...) applicable have to be agreed on a document provided by JSG and signed
+by You according to JSG Offering.
+
+3.2. Conditioned upon the payment of the appropriate fee to JSG, the respect of
+this License terms and limited to the scope of Commercial Use as defined by JSG,
+JSG hereby grants You a world-wide, non-exclusive and fee-bearing license:
+
+(a) under intellectual property rights (other than patent or trademark)
+Licensable by JSG, to use, display, perform the Original Software (or portions
+thereof), with or without Modifications, and/or as part of a Larger Work for
+Commercial Use; and
+
+(b) under Patent Claims infringed by the making or using of Original Software,
+to make, have made, use, practice, sell, and offer for sale, and/or otherwise
+dispose of the Original Software (or portions thereof) for Commercial Use.
+
+(c) The licenses granted are effective on the date JSG first distributes or
+otherwise makes the Original Software available to a third party under the terms
+of this License.
+
+(d) Notwithstanding Section 3(b) above, no patent license is granted: (1) for
+code that You delete from the Original Software, or (2) for infringements caused
+by: (i) the modification of the Original Software, or (ii) the combination of
+the Original Software with other software or devices.
+
+(e) Other than the rights expressly granted in this License, JSG retains all
+rights, titles, and interests in Original Software
+
+3.3. Commercial Distribution Requirement / OEM Agreement
+You may distribute copies for Commercial Use or integrate Original Software in a
+Larger Work under a license agreement of Your choice which is consistent with
+Your rights and obligations under the License including with the fact that you
+need to pay fees to JSG for each copy of the Original Software you distribute
+for Commercial Use according to a specific Agreement, You and JSG have to sign
+before the Distribution of the Larger work.  You may provide warranties,
+indemnities and/or other additional terms and conditions in Your license
+agreements, provided that it is clear that such additional terms and conditions
+are offered by You only. You hereby agree to indemnify JSG for any liability
+incurred by the Initial Developer as a result of any such terms You offer.
+
+4. AVAILABILITY AND POTENTIAL MODIFICATIONS OF SOURCE CODE.
+
+4.1. Conditioned upon Your compliance with this License, JSG hereby grants You
+an access to the Original Software Source Code. The Modifications of the Source
+Code that You may create or to which You may contribute, are, by nature,
+governed by the terms of this License. JSG Offering (for example, support
+services) may not cover Modifications on the Original Software otherwise than
+those explicitly accepted by JSG in a dedicated agreement as, for example, when
+those Modifications are integrated in the Original Software and therefore
+considered as a Generic Development according to the term of paragraph 12 of
+this License.
+
+4.2. JSG may optionally offer coverage on a Larger Work. Details of the related
+fees, payment schedule and scope of coverage have to be defined in a dedicated
+agreement signed between You and JSG.
+
+5. VERSION OF THE LICENSE
+
+5.1. New Versions
+JSG is the initial license steward and may publish revised and/or new versions
+of this License from time to time. Each version will be given a distinguishing
+version number. No one other than the license steward has the right to modify
+this License.
+
+5.2. Effect of New Versions
+You may always continue to a)use the version of the Original Software under the
+terms of the version of the License under which You originally received the
+version of Original Software or b)use the new version.
+
+6. CONFIDENTIALITY
+
+You and JSG agree to maintain the confidentiality of any proprietary information
+received by the other party during, or prior to entering into, this Agreement
+including non-public technical and business information for a period of two (2)
+years after the termination of this Agreement. This section shall not apply to
+any publicly available or independently developed information. The receiving
+party of any confidential information of the other party agrees not to use said
+confidential information for any purpose except as necessary to fulfil its
+obligations and exercise its rights under this Agreement. The receiving party
+shall protect the secrecy of and avoid disclosure and unauthorized use of the
+disclosing party's confidential information to the same degree that it takes to
+protect its own confidential information and in no event less than reasonable
+care.
+
+7. DISCLAIMER OF WARRANTY.
+
+COVERED SOFTWARE IS PROVIDED UNDER THIS LICENSE ON AN "AS IS" BASIS, WITHOUT
+WARRANTY OF ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING, WITHOUT
+LIMITATION, WARRANTIES THAT THE COVERED SOFTWARE IS FREE OF DEFECTS,
+MERCHANTABLE, FIT FOR A PARTICULAR PURPOSE OR NON-INFRINGING. THE ENTIRE RISK AS
+TO THE QUALITY AND PERFORMANCE OF THE COVERED SOFTWARE IS WITH YOU. SHOULD ANY
+COVERED SOFTWARE PROVE DEFECTIVE IN ANY RESPECT, YOU (NOT THE INITIAL DEVELOPER
+OR ANY OTHER CONTRIBUTOR) ASSUME THE COST OF ANY NECESSARY SERVICING, REPAIR OR
+CORRECTION. THIS DISCLAIMER OF WARRANTY CONSTITUTES AN ESSENTIAL PART OF THIS
+LICENSE. NO USE OF ANY COVERED SOFTWARE IS AUTHORIZED HEREUNDER EXCEPT UNDER
+THIS DISCLAIMER.
+
+8. LIMITATION OF LIABILITY.
+
+UNDER NO CIRCUMSTANCES AND UNDER NO LEGAL THEORY, WHETHER TORT (INCLUDING
+NEGLIGENCE), CONTRACT, OR OTHERWISE, SHALL YOU, THE INITIAL DEVELOPER, ANY OTHER
+CONTRIBUTOR, OR ANY DISTRIBUTOR OF COVERED SOFTWARE, OR ANY SUPPLIER OF ANY OF
+SUCH PARTIES, BE LIABLE TO ANY PERSON FOR ANY INDIRECT, SPECIAL, INCIDENTAL, OR
+CONSEQUENTIAL DAMAGES OF ANY CHARACTER INCLUDING, WITHOUT LIMITATION, DAMAGES
+FOR LOST PROFITS, LOSS OF GOODWILL, WORK STOPPAGE, COMPUTER FAILURE OR
+MALFUNCTION, OR ANY AND ALL OTHER COMMERCIAL DAMAGES OR LOSSES, EVEN IF SUCH
+PARTY SHALL HAVE BEEN INFORMED OF THE POSSIBILITY OF SUCH DAMAGES. THIS
+LIMITATION OF LIABILITY SHALL NOT APPLY TO LIABILITY FOR DEATH OR PERSONAL
+INJURY RESULTING FROM SUCH PARTY"S NEGLIGENCE TO THE EXTENT APPLICABLE LAW
+PROHIBITS SUCH LIMITATION. SOME JURISDICTIONS DO NOT ALLOW THE EXCLUSION OR
+LIMITATION OF INCIDENTAL OR CONSEQUENTIAL DAMAGES, SO THIS EXCLUSION AND
+LIMITATION MAY NOT APPLY TO YOU.
+
+9. U.S. GOVERNMENT END USERS.
+
+The Original Software is a "commercial item," as that term is defined in 48
+C.F.R. 2.101 (Oct. 1995), consisting of "commercial computer software" (as that
+term is defined at 48 C.F.R. 252.227-7014(a)(1)) and "commercial computer
+software documentation" as such terms are used in 48 C.F.R. 12.212 (Sept. 1995).
+Consistent with 48 C.F.R. 12.212 and 48 C.F.R. 227.7202-1 through 227.7202-4
+(June 1995), all U.S. Government End Users acquire Covered Software with only
+those rights set forth herein. This U.S. Government Rights clause is in lieu of,
+and supersedes, any other FAR, DFAR, or other clause or provision that addresses
+Government rights in computer software under this License.
+
+10. TERMINATION.
+
+This License and the rights granted hereunder will terminate automatically if
+You fail to comply with terms herein and fail to cure such breach within 30 days
+of becoming aware of the breach. Provisions which, by their nature, must remain
+in effect beyond the termination of this License shall survive.
+
+The Term of this License is subject to your compliance with the term of this
+License and the payment of the appropriate fee according to JSG Offering
+considering the Commercial Use of the Software.
+
+11. MISCELLANEOUS.
+
+This License represents the complete agreement concerning subject matter hereof.
+If any provision of this License is held to be unenforceable, such provision
+shall be reformed only to the extent necessary to make it enforceable. This
+License shall be governed by the law of the jurisdiction specified in the JSG
+Terms and Conditions (except to the extent applicable law, if any, provides
+otherwise), excluding such jurisdiction"s conflict-of-law provisions. Any
+litigation relating to this License shall be subject to the jurisdiction of the
+courts located in the jurisdiction and venue specified in a notice contained
+within in the JSG Terms and Conditions, with the losing party responsible for
+costs, including, without limitation, court costs and reasonable attorney"s fees
+and expenses. The application of the United Nations Convention on Contracts for
+the International Sale of Goods is expressly excluded. Any law or regulation
+which provides that the language of a contract shall be construed against the
+drafter shall not apply to this License. You agree that You alone are
+responsible for compliance with the United States export administration
+regulations (and the export control laws and regulation of any other countries)
+when You use, distribute or otherwise make available any Covered Software.
+
+12. GENERIC DEVELOPMENT, APPROVED COUNTERPART, AND JOIN CONTRIBUTION
+
+12.1. JSG offers a counterpart, usually under the form of a free Commercial
+Right of usage of the Software attached to the payment of a subscription, in
+exchange of a Generic Developments and Your copyright assignment to JSG, when
+the related Generic Developments are financed by You, except for the co-
+development cases of join contribution (12.7)).
+
+12.2. The decision to accept a Generic Development as an Approved Counterpart,
+its value, the form of compensation and the criteria applied are let to the sole
+discretion of JSG.
+
+12.3. Description of the Approved Counterpart, its value and the type of
+compensation which shall be approved by both parties in a separated document
+provided by JSG.
+
+12.4. Modifications considered as Approved Counterpart are, by nature, Generic
+Developments.
+
+12.5. All Specific Elements, not owned by JSG and provided by You to JSG for
+Services execution, shall remain Your exclusive property when You owns the
+property of specific materials.
+
+12.6. All specific development, requested by You from JSG and listed on
+dedicated JSG document shall remain Your exclusive property except for the
+Generic Elements, even if these Generic Elements are developed at the same time
+as the Specific development and/or are needed by the Specific development to
+work, particularly when Generic Elements are integrated in the Original Software
+and therefore are by nature subject to the terms of the licenses used by JSG.
+
+12.7. Join contribution:
+As an exclusive exception to the Generic Developments definition, JSG may agree
+to accept some Modifications done by You in order to complete all - or part of -
+Generic Developments. This particular type of Generic Developments is considered
+as "Join Contributions" between You and JSG and You are considered as a
+Contributor for the related Generic Development You agreed to take in charge
+under the following rules:
+
+a) Contributor owns, and has sufficient rights to contribute, all source code
+and related material intended to be compiled or integrated with the source code
+for the Modifications Contributor has ever delivered, and JSG has accepted, for
+incorporation into the Covered Software.
+
+b) Contributor hereby assigns to JSG joint ownership in all worldwide common law
+and statutory rights associated with the copyrights, copyright application,
+copyright registration and moral rights in the Approved Counterpart to the
+extent allowable under applicable local laws and copyright conventions.
+Contributor agrees that this assignment may be submitted by JSG to register a
+copyright in the Approved Counterpart. Contributor retains the right to use the
+Approved Counterpart for Contributor's own purposes. This joint copyright
+Assignment supersedes and replaces all prior copyright assignments made by
+Contributor to JSG for the related Modifications provided by Contributor in this
+case of join contribution.
+
+c) Contributor grants JSG the ability to use the related Modifications he
+provided in any way with a sublicenseable, non-exclusive, irrevocable,
+worldwide, royalty-free, transferable license to relicense, use, copy, modify,
+distribute and publicly perform and display the related Modifications on any
+licensing terms (commercial or not).
+
+d) Contributor is legally entitled to grant the above assignment and agrees not
+to provide any Contribution that violates any law or breaches any contract.
+
+e) JSG may require You to submit your Modifications within a specific period of
+time. The default period is 6 months.
+
+f) The right to validate your Modifications as an Approved Counterpart is only
+applicable by JSG. JSG may ask for additional corrections on Your Modifications
+before definitively accepting it as an Approved Counterpart.
+
+g) Each party is responsible for claims and damages arising, directly or
+indirectly, out of its utilization of rights under this License and You agree to
+work with JSG to distribute such responsibility according to the Modifications
+Contributor provided. Nothing herein is intended or shall be deemed to
+constitute any admission of liability.

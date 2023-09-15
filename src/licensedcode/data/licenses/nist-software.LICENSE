@@ -2,7 +2,7 @@
 key: nist-software
 short_name: NIST Software License
 name: NIST Software License
-category: Public Domain
+category: Permissive
 owner: NIST
 spdx_license_key: NIST-Software
 other_urls:

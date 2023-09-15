@@ -5,7 +5,9 @@ name: ASWF Digital Assets License v1.0
 category: Free Restricted
 owner: Academy Software Foundation
 homepage_url: https://github.com/AcademySoftwareFoundation/foundation/blob/main/digital_assets/aswf_digital_assets_license_v1.0.txt
-spdx_license_key: LicenseRef-scancode-aswf-digital-assets-1.0
+spdx_license_key: ASWF-Digital-Assets-1.0
+other_spdx_license_keys:
+    - LicenseRef-scancode-aswf-digital-assets-1.0
 faq_url: https://github.com/AcademySoftwareFoundation/foundation/blob/main/digital_assets/README.md
 ---
 

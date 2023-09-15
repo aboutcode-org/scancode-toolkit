@@ -5,7 +5,7 @@ name: proconX Modbus Driver License rev4
 category: Proprietary Free
 owner: proconX
 homepage_url: https://www.modbusdriver.com/info/LICENSE-FREE
-spdx_license_key: LicenseRef-scancode-proconX-modbus-rev4
+spdx_license_key: LicenseRef-scancode-proconx-modbus-rev4
 ---
 
 Free Software License for Binary Distributions

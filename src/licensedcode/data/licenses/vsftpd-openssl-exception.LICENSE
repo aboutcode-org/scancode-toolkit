@@ -4,6 +4,7 @@ short_name: vsftpd OpenSSL exception
 name: vsftpd OpenSSL exception
 category: Copyleft Limited
 owner: Richard Cochran
+homepage_url: https://github.com/richardcochran/vsftpd/blob/master/COPYING
 is_exception: yes
 spdx_license_key: vsftpd-openssl-exception
 other_urls:

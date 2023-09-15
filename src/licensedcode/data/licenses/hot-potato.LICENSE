@@ -1,11 +1,14 @@
 ---
 key: hot-potato
+is_deprecated: yes
 short_name: Hot Potato License
 name: Hot Potato
 category: Permissive
 owner: Unspecified
 notes: From https://github.com/ErikMcClure/bad-licenses
 spdx_license_key: LicenseRef-scancode-hot-potato
+other_urls:
+    - https://github.com/nexB/scancode-toolkit/issues/3446#issuecomment-1653518138
 ---
 
 All rights reserved by the last person to commit a change to this
