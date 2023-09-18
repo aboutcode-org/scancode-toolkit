@@ -1,0 +1,48 @@
+---
+key: morbig-ieee-std-usage
+short_name: IEEE Std 1003.1 Text Usage
+name: IEEE Std 1003.1 Text Usage
+category: Permissive
+owner: ANR
+homepage_url: https://github.com/colis-anr/morbig/blob/main/COPYING
+spdx_license_key: LicenseRef-scancode-morbig-ieee-std-usage
+other_urls:
+    - http://www.opengroup.org/unix/online.html
+    - https://www.man7.org/linux/man-pages/man3/dprintf.3p.html
+    - https://fedoraproject.org/wiki/Licensing:IEEEDocLicense
+standard_notice: |
+    Morbig is free software: you can redistribute it and/or modify it
+    under the terms of the GNU General Public License, version 3. The
+    complete license terms can be found in the file GPL3.
+    In accordance with Section 7 of the GNU General Public License version 3,
+    the following additional terms apply:
+ignorable_copyrights:
+    - Copyright (c) 2016 by The Institute of Electrical and Electronics Engineers, Inc
+ignorable_holders:
+    - The Institute of Electrical and Electronics Engineers, Inc
+ignorable_urls:
+    - http://www.opengroup.org/unix/online.html
+---
+
+The Institute of Electrical and Electronics Engineers and The Open Group,
+have given us permission to reprint portions of their documentation.
+
+In the following statement, the phrase ``this text'' refers to portions
+of the system documentation.
+
+Portions of this text are reprinted and reproduced in electronic form
+in the source code of Morbig, from IEEE Std 1003.1, 2016 Edition,
+Standard for Information Technology -- Portable Operating System
+Interface (POSIX), The Open Group Base Specifications Issue 7,
+Copyright (C) 2016 by The Institute of Electrical and Electronics
+Engineers, Inc and The Open Group.  In the event of any discrepancy
+between these versions and the original IEEE and The Open Group
+Standard, the original IEEE and The Open Group Standard is the referee
+document.  The original Standard can be obtained online at
+http://www.opengroup.org/unix/online.html .
+
+This notice shall appear on any product containing this material.
+
+If descriptions are added to the material that are in conflict with
+the Standard then such conflicting descriptions must be clearly marked
+in the text as a conflict with the Standard.

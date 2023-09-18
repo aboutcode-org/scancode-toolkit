@@ -4,6 +4,7 @@ short_name: FreeBSD Doc License
 name: FreeBSD Doc License
 category: Permissive
 owner: FreeBSD
+homepage_url: https://www.freebsd.org/copyright/freebsd-doc-license.html
 spdx_license_key: FreeBSD-DOC
 other_spdx_license_keys:
     - LicenseRef-scancode-freebsd-doc
@@ -14,6 +15,7 @@ text_urls:
     - https://github.com/pabloriera/ofxKCoreN/blob/f2c6e01b6eeca384f38008520195f2e2481181e3/src/ofxKCoreN.h
     - https://github.com/open-mpi/docs/blob/master/README.md
 other_urls:
+    - https://en.wikipedia.org/wiki/FreeBSD_Documentation_License
     - https://www.freebsd.org/copyright/freebsd-doc-license/
 ---
 
