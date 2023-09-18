@@ -42,23 +42,23 @@
               "score": 100.0,
               "start_line": 1,
               "end_line": 1,
-              "matched_length": 5,
+              "matched_length": 7,
               "match_coverage": 100.0,
               "matcher": "1-hash",
               "license_expression": "bsd-new",
-              "rule_identifier": "bsd-new_1303.RULE",
+              "rule_identifier": "bsd-new_1305.RULE",
               "rule_relevance": 100,
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_1303.RULE",
-              "matched_text": "BSD-3-Clause LICENSE.rst"
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_1305.RULE",
+              "matched_text": "BSD-3-Clause license_files: LICENSE.rst"
             }
           ],
-          "identifier": "bsd_new-93f27a43-68fa-0573-8609-f6d624f3ac9a"
+          "identifier": "bsd_new-e58e9b3b-9926-376f-1c85-181d7df93c33"
         }
       ],
       "other_license_expression": null,
       "other_license_expression_spdx": null,
       "other_license_detections": [],
-      "extracted_license_statement": "BSD-3-Clause LICENSE.rst",
+      "extracted_license_statement": "BSD-3-Clause license_files: LICENSE.rst",
       "notice_text": null,
       "source_packages": [],
       "extra_data": {},
@@ -184,23 +184,23 @@
                   "score": 100.0,
                   "start_line": 1,
                   "end_line": 1,
-                  "matched_length": 5,
+                  "matched_length": 7,
                   "match_coverage": 100.0,
                   "matcher": "1-hash",
                   "license_expression": "bsd-new",
-                  "rule_identifier": "bsd-new_1303.RULE",
+                  "rule_identifier": "bsd-new_1305.RULE",
                   "rule_relevance": 100,
-                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_1303.RULE",
-                  "matched_text": "BSD-3-Clause LICENSE.rst"
+                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_1305.RULE",
+                  "matched_text": "BSD-3-Clause license_files: LICENSE.rst"
                 }
               ],
-              "identifier": "bsd_new-93f27a43-68fa-0573-8609-f6d624f3ac9a"
+              "identifier": "bsd_new-e58e9b3b-9926-376f-1c85-181d7df93c33"
             }
           ],
           "other_license_expression": null,
           "other_license_expression_spdx": null,
           "other_license_detections": [],
-          "extracted_license_statement": "BSD-3-Clause LICENSE.rst",
+          "extracted_license_statement": "BSD-3-Clause license_files: LICENSE.rst",
           "notice_text": null,
           "source_packages": [],
           "file_references": [],

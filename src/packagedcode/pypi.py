@@ -794,10 +794,12 @@ class SetupCfgHandler(BaseExtractedPythonLayout):
                 )
             ]
 
-        extracted_license_statement = metadata.get('license', '')
+        extracted_license_statement = metadata.get('license')
         license_file_references = metadata.get('license_files')
         if license_file_references:
-            extracted_license_statement += f"license_files: {license_file_references}"
+            if not extracted_license_statement:
+                extracted_license_statement = ''
+            extracted_license_statement += f" license_files: {license_file_references}"
 
         yield models.PackageData(
             datasource_id=cls.datasource_id,
