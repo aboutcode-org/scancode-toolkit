@@ -218,6 +218,9 @@ class LicenseDetection:
         If `post_scan` is True, this function is called outside
         the main license detection step.
         """
+        if TRACE:
+            logger_debug(f"LicenseDetection: from_matches: matches: {matches}")
+
         if not matches:
             return
 
@@ -1620,6 +1623,14 @@ def group_matches(license_matches, lines_threshold=LINES_THRESHOLD):
             yield group_of_license_matches
             group_of_license_matches = [license_match]
 
+        # If the current match is a license clue, we send this as a 
+        # seperate group
+        elif license_match.rule.is_license_clue:
+            yield group_of_license_matches
+            yield [license_match]
+            group_of_license_matches = []
+            continue
+
         # If none of previous or current match has license intro then we look at line numbers
         # If line number difference is within threshold, we keep the current match in the group
         elif is_in_group_by_threshold:
@@ -1631,7 +1642,9 @@ def group_matches(license_matches, lines_threshold=LINES_THRESHOLD):
             yield group_of_license_matches
             group_of_license_matches = [license_match]
 
-    yield group_of_license_matches
+    # If not an empty group, this is the last group
+    if group_of_license_matches:
+        yield group_of_license_matches
 
 
 def get_referenced_filenames(license_matches):
@@ -1705,16 +1718,17 @@ def process_detections(detections, licensing=Licensing()):
         for detection in detections:
             if detection.license_expression == None:
                 if has_correct_license_clue_matches(detection.matches):
+                    yield detection
                     continue
 
                 license_expression = str(combine_expressions(
-                        expressions=[
-                            match.rule.license_expression
-                            for match in detection.matches
-                        ],
-                        unique=True,
-                        licensing=licensing,
-                    ))
+                    expressions=[
+                        match.rule.license_expression
+                        for match in detection.matches
+                    ],
+                    unique=True,
+                    licensing=licensing,
+                ))
                 license_keys = licensing.license_keys(expression=license_expression)
 
                 if all(
