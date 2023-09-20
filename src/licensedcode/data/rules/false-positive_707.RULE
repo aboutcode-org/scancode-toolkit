@@ -1,0 +1,8 @@
+---
+is_false_positive: yes
+notes: seen in liferay-portal
+---
+
+Language.get(
+    'you-are-about-to-report-a-violation-of-our-x.-all-reports-are-strictly-confidential'
+),
