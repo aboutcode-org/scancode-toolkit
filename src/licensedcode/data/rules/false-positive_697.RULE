@@ -1,0 +1,6 @@
+---
+is_false_positive: yes
+notes: seen in liferay-portal
+---
+
+* http://&lt;domain-name&gt;/licenses/&lt;license-name&gt;-&lt;version&gt;.&lt;extension&gt;
