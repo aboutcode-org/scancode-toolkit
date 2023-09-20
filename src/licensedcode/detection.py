@@ -1615,7 +1615,6 @@ def group_matches(license_matches, lines_threshold=LINES_THRESHOLD):
         # This is regardless of line number difference being more than threshold
         if previous_match.rule.is_license_intro:
             group_of_license_matches.append(license_match)
-            continue
 
         # If the current match is an intro, we should create a new group
         # This is regardless of line number difference being less than threshold
@@ -1629,13 +1628,11 @@ def group_matches(license_matches, lines_threshold=LINES_THRESHOLD):
             yield group_of_license_matches
             yield [license_match]
             group_of_license_matches = []
-            continue
 
         # If none of previous or current match has license intro then we look at line numbers
         # If line number difference is within threshold, we keep the current match in the group
         elif is_in_group_by_threshold:
             group_of_license_matches.append(license_match)
-            continue
 
         # If line number difference is outside threshold, we make a new group
         else:
