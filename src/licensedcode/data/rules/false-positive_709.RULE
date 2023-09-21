@@ -1,0 +1,7 @@
+---
+is_false_positive: yes
+notes: seen in liferay-portal
+---
+
+private static final String _PATH_PORTAL_LICENSE = "/portal/license";
+private static final String _PATH_PORTAL_LOGIN = "/portal/login";

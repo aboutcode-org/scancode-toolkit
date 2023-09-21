@@ -1,0 +1,17 @@
+---
+key: libtool-exception-lgpl
+short_name: GNU Libtool exception to LGPL
+name: GNU Libtool exception to LGPL
+category: Copyleft Limited
+owner: Free Software Foundation (FSF)
+homepage_url: https://git.savannah.gnu.org/cgit/libtool.git/tree/libltdl/slist.c?h=v2.4.7
+is_exception: yes
+spdx_license_key: LicenseRef-scancode-libtool-exception-lgpl
+other_urls:
+    - https://github.com/nexB/scancode-licensedb/issues/43
+---
+
+As a special exception to the GNU Lesser General Public License,
+if you distribute this file as part of a program or library that
+is built using GNU Libtool, you may include this file under the
+same distribution terms that you use for the rest of that program.

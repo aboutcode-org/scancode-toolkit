@@ -6,6 +6,8 @@ category: Free Restricted
 owner: Fair-code
 homepage_url: https://github.com/n8n-io/n8n/blob/master/LICENSE.md
 spdx_license_key: LicenseRef-scancode-sustainable-use-1.0
+text_urls:
+    - https://github.com/n8n-io/n8n/blob/master/LICENSE.md#sustainable-use-license
 faq_url: https://faircode.io/#faq
 other_urls:
     - https://blog.n8n.io/announcing-new-sustainable-use-license/
