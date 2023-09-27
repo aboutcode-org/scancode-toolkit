@@ -124,10 +124,23 @@ def create_package_data_from_msiinfo_results(
     msiinfo_results,
     datasource_id='msi_installer',
     package_type='msi',
+    purl_only=False,
 ):
     """
     Return PackageData from a mapping of `msiinfo_results`
     """
+    subject = msiinfo_results.pop('Subject', '')
+    name = subject
+    version = get_version_from_subject_line(subject)
+    pkg = models.PackageData(
+        datasource_id=datasource_id,
+        type=package_type,
+        name=name,
+        version=version,
+    )
+    if purl_only:
+        return pkg
+
     author_name = msiinfo_results.pop('Author', '')
     parties = []
     if author_name:
@@ -144,27 +157,18 @@ def create_package_data_from_msiinfo_results(
     # the time. Getting the version out of the `Subject` string is not
     # straightforward because the format of the string is usually different
     # between different MSIs
-    subject = msiinfo_results.pop('Subject', '')
-    name = subject
-    version = get_version_from_subject_line(subject)
-    description = msiinfo_results.pop('Comments', '')
-    keywords = msiinfo_results.pop('Keywords', [])
 
-    return models.PackageData(
-        datasource_id=datasource_id,
-        type=package_type,
-        name=name,
-        version=version,
-        description=description,
-        parties=parties,
-        keywords=keywords,
-        extra_data=msiinfo_results
-    )
+    pkg.description = msiinfo_results.pop('Comments', '')
+    pkg.parties = parties
+    pkg.keywords = msiinfo_results.pop('Keywords', [])
+    pkg.extra_data = msiinfo_results
+    return pkg
 
 
 def msi_parse(location,
     datasource_id='msi_installer',
     package_type='msi',
+    purl_only=False,
 ):
     """
     Return PackageData from ``location``
@@ -175,6 +179,7 @@ def msi_parse(location,
             msiinfo_results=info,
             datasource_id=datasource_id,
             package_type=package_type,
+            purl_only=purl_only,
         )
     else:
         return models.PackageData(
@@ -192,5 +197,5 @@ class MsiInstallerHandler(models.DatafileHandler):
     documentation_url = 'https://docs.microsoft.com/en-us/windows/win32/msi/windows-installer-portal'
 
     @classmethod
-    def parse(cls, location):
-        yield msi_parse(location)
+    def parse(cls, location, purl_only=False):
+        yield msi_parse(location=location, purl_only=purl_only)

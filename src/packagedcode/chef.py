@@ -183,14 +183,18 @@ class ChefMetadataJsonHandler(BaseChefMetadataHandler):
             return not parent.endswith('dist-info')
 
     @classmethod
-    def parse(cls, location):
+    def parse(cls, location, purl_only=False):
         """
         Yield one or more Package manifest objects given a file ``location``
         pointing to a package archive, manifest or similar.
         """
         with io.open(location, encoding='utf-8') as loc:
             package_data = json.load(loc)
-        yield build_package(package_data, datasource_id=cls.datasource_id)
+        yield build_package(
+            package_data,
+            datasource_id=cls.datasource_id,
+            purl_only=purl_only,
+        )
 
 
 class ChefMetadataRbHandler(BaseChefMetadataHandler):
@@ -202,7 +206,7 @@ class ChefMetadataRbHandler(BaseChefMetadataHandler):
     documentation_url = 'https://docs.chef.io/config_rb_metadata/'
 
     @classmethod
-    def parse(cls, location):
+    def parse(cls, location, purl_only=False):
         with io.open(location, encoding='utf-8') as loc:
             file_contents = loc.read()
 
@@ -213,16 +217,45 @@ class ChefMetadataRbHandler(BaseChefMetadataHandler):
             ChefMetadataFormatter()
         )
         package_data = json.loads(formatted_file_contents)
-        yield build_package(package_data, datasource_id=cls.datasource_id)
+        yield build_package(
+            package_data,
+            datasource_id=cls.datasource_id,
+            purl_only=purl_only,
+        )
 
 
-def build_package(package_data, datasource_id):
+def build_package(package_data, datasource_id, purl_only=False):
     """
     Return a PackageData object from a package_data mapping from a metadata.json
     or similar or None.
     """
     name = package_data.get('name')
     version = package_data.get('version')
+
+    deps = dict(package_data.get('dependencies', {}) or {})
+    deps.update(package_data.get('depends', {}) or {})
+
+    dependencies = []
+    for dependency_name, requirement in deps.items():
+        dependencies.append(
+            models.DependentPackage(
+                purl=PackageURL(type='chef', name=dependency_name).to_string(),
+                scope='dependencies',
+                extracted_requirement=requirement,
+                is_runtime=True,
+                is_optional=False,
+            )
+        )
+    
+    pkg = models.PackageData(
+        datasource_id=datasource_id,
+        type=ChefMetadataJsonHandler.default_package_type,
+        name=name,
+        version=version,
+        dependencies=dependencies,
+    )
+    if purl_only:
+        return pkg
 
     maintainer_name = package_data.get('maintainer', '')
     maintainer_email = package_data.get('maintainer_email', '')
@@ -246,32 +279,16 @@ def build_package(package_data, datasource_id):
     code_view_url = package_data.get('source_url', '')
     bug_tracking_url = package_data.get('issues_url', '')
 
-    deps = dict(package_data.get('dependencies', {}) or {})
-    deps.update(package_data.get('depends', {}) or {})
-
-    dependencies = []
-    for dependency_name, requirement in deps.items():
-        dependencies.append(
-            models.DependentPackage(
-                purl=PackageURL(type='chef', name=dependency_name).to_string(),
-                scope='dependencies',
-                extracted_requirement=requirement,
-                is_runtime=True,
-                is_optional=False,
-            )
-        )
-
-    return models.PackageData(
-        datasource_id=datasource_id,
-        type=ChefMetadataJsonHandler.default_package_type,
-        name=name,
-        version=version,
-        parties=parties,
-        description=description.strip() or None,
-        extracted_license_statement=extracted_license_statement,
-        code_view_url=code_view_url.strip() or None,
-        bug_tracking_url=bug_tracking_url.strip() or None,
-        dependencies=dependencies,
-        primary_language='Ruby',
-        **get_urls(name, version),
-    )
+    pkg.parties = parties
+    pkg.description = description.strip() or None
+    pkg.extracted_license_statement = extracted_license_statement
+    pkg.code_view_url = code_view_url.strip() or None
+    pkg.bug_tracking_url = bug_tracking_url.strip() or None
+    pkg.primary_language = 'Ruby'
+    urls = get_urls(name, version)
+    pkg.repository_homepage_url = urls["repository_homepage_url"]
+    pkg.repository_download_url = urls["repository_download_url"]
+    pkg.api_data_url = urls["api_data_url"]
+    pkg.download_url = urls["download_url"]
+    pkg.populate_license_fields()
+    return pkg

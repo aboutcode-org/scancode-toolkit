@@ -1000,7 +1000,7 @@ class DatafileHandler:
                     return any(ft in actual_type for ft in filetypes)
 
     @classmethod
-    def parse(cls, location):
+    def parse(cls, location, purl_only=False):
         """
         Yield one or more PackageData objects given a package data file at
         ``location``.
@@ -1385,7 +1385,7 @@ class DatafileHandler:
                 )
 
         if package_data.extracted_license_statement and not isinstance(package_data.extracted_license_statement, str):
-            package_data.extracted_license_statement = repr(package_data.extracted_license_statement)
+            package_data.extracted_license_statement = saneyaml.dump(package_data.extracted_license_statement)
 
     @classmethod
     def get_top_level_resources(cls, manifest_resource, codebase):

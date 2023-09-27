@@ -9,6 +9,7 @@
 import fnmatch
 import os
 import sys
+import saneyaml
 import logging
 from collections import defaultdict
 from itertools import chain
@@ -93,12 +94,8 @@ class BaseDebianCopyrightFileHandler(models.DatafileHandler):
                 return True
 
     @classmethod
-    def parse(cls, location):
-        debian_copyright = parse_copyright_file(location)
-        license_fields = DebianLicenseFields.get_license_fields(
-            debian_copyright=debian_copyright
-        )
-
+    def parse(cls, location, purl_only=False):
+        
         # TODO: collect the upstream source package details
 
         # find a name... TODO: this should be pushed down to each handler
@@ -109,19 +106,32 @@ class BaseDebianCopyrightFileHandler(models.DatafileHandler):
             # no name otherwise for now
             name = None
 
-        yield models.PackageData(
+        pkg = models.PackageData(
             datasource_id=cls.datasource_id,
             type=cls.default_package_type,
             name=name,
-            extracted_license_statement=license_fields.extracted_license_statement,
-            declared_license_expression=license_fields.declared_license_expression,
-            declared_license_expression_spdx=license_fields.declared_license_expression_spdx,
-            license_detections=license_fields.license_detections,
-            other_license_expression=license_fields.other_license_expression,
-            other_license_expression_spdx=license_fields.other_license_expression_spdx,
-            other_license_detections=license_fields.other_license_detections,
-            copyright=debian_copyright.get_copyright(),
         )
+        if purl_only:
+            yield pkg
+            return
+
+        debian_copyright = parse_copyright_file(location)
+        license_fields = DebianLicenseFields.get_license_fields(
+            debian_copyright=debian_copyright
+        )
+
+        pkg.extracted_license_statement = None
+        if license_fields.extracted_license_statement:
+            pkg.extracted_license_statement = saneyaml.dump(license_fields.extracted_license_statement)
+        pkg.declared_license_expression = license_fields.declared_license_expression
+        pkg.declared_license_expression_spdx = license_fields.declared_license_expression_spdx
+        pkg.license_detections = license_fields.license_detections
+        pkg.other_license_expression = license_fields.other_license_expression
+        pkg.other_license_expression_spdx = license_fields.other_license_expression_spdx
+        pkg.other_license_detections = license_fields.other_license_detections
+        pkg.copyright = debian_copyright.get_copyright()
+        pkg.populate_holder_field()
+        yield pkg
 
 
 @attr.s

@@ -25,7 +25,7 @@ class EtcOsReleaseHandler(models.NonAssemblableDatafileHandler):
     documentation_url = 'https://www.freedesktop.org/software/systemd/man/os-release.html'
 
     @classmethod
-    def parse(cls, location):
+    def parse(cls, location, purl_only=False, **kwargs):
         distro = Distro.from_os_release_file(location)
         distro_identifier = distro.identifier
         pretty_name = distro.pretty_name and distro.pretty_name.lower() or ''

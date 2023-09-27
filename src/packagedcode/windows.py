@@ -20,7 +20,7 @@ class MicrosoftUpdateManifestHandler(models.NonAssemblableDatafileHandler):
     description = 'Microsoft Update Manifest .mum file'
 
     @classmethod
-    def parse(cls, location):
+    def parse(cls, location, purl_only=False):
         with open(location , 'rb') as loc:
             parsed = xmltodict.parse(loc)
 
@@ -28,14 +28,21 @@ class MicrosoftUpdateManifestHandler(models.NonAssemblableDatafileHandler):
             return
 
         assembly = parsed.get('assembly', {})
-        description = assembly.get('@description', '')
-        company = assembly.get('@company', '')
-        copyrght = assembly.get('@copyright', '')
-        support_url = assembly.get('@supportInformation', '')
-
         assembly_identity = assembly.get('assemblyIdentity', {})
-        name = assembly_identity.get('@name', '')
-        version = assembly_identity.get('@version', '')
+        package = models.PackageData(
+            datasource_id=cls.datasource_id,
+            type=cls.default_package_type,
+            name=assembly_identity.get('@name', ''),
+            version=assembly_identity.get('@version', ''),
+        )
+        if purl_only:
+            yield package
+            return
+
+        package.description = assembly.get('@description', '')
+        company = assembly.get('@company', '')
+        package.copyright = assembly.get('@copyright', '')
+        package.homepage_url = assembly.get('@supportInformation', '')
 
         parties = []
         if company:
@@ -46,14 +53,6 @@ class MicrosoftUpdateManifestHandler(models.NonAssemblableDatafileHandler):
                     role='owner',
                 )
             )
-
-        yield models.PackageData(
-            datasource_id=cls.datasource_id,
-            type=cls.default_package_type,
-            name=name,
-            version=version,
-            description=description,
-            homepage_url=support_url,
-            parties=parties,
-            copyright=copyrght,
-        )
+        package.parties = parties
+        package.populate_holder_field()
+        yield package

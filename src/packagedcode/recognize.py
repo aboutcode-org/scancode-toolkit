@@ -44,6 +44,7 @@ def recognize_package_data(
     location,
     application=True,
     system=False,
+    purl_only=False,
 ):
     """
     Return a list of Package objects if any package_data were recognized for
@@ -63,12 +64,19 @@ def recognize_package_data(
     elif system:
         datafile_handlers = SYSTEM_PACKAGE_DATAFILE_HANDLERS
 
-    return list(_parse(location, datafile_handlers=datafile_handlers))
+    return list(
+        _parse(
+            location,
+            datafile_handlers=datafile_handlers,
+            purl_only=purl_only,
+        )
+    )
 
 
 def _parse(
     location,
     datafile_handlers=APPLICATION_PACKAGE_DATAFILE_HANDLERS,
+    purl_only=False,
 ):
     """
     Yield parsed PackageData objects from ``location``. Raises Exceptions on errors.
@@ -85,7 +93,7 @@ def _parse(
             logger_debug(f'_parse:.is_datafile: {location}')
 
         try:
-            for parsed in handler.parse(location):
+            for parsed in handler.parse(location, purl_only=purl_only):
                 if TRACE:
                     logger_debug(f' _parse: parsed: {parsed!r}')
                 yield parsed

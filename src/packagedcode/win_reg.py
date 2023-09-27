@@ -77,6 +77,7 @@ def get_installed_dotnet_versions_from_hive(
     datasource_id,
     package_type,
     registry_path='\\Microsoft\\NET Framework Setup\\NDP',
+    purl_only=False,
 ):
     """
     Yield PackageData for the installed versions of .NET framework from the
@@ -90,6 +91,7 @@ def get_installed_dotnet_versions_from_hive(
         registry_tree=registry_tree,
         datasource_id=datasource_id,
         package_type=package_type,
+        purl_only=purl_only,
     )
 
 
@@ -97,6 +99,7 @@ def get_installed_dotnet_versions_from_regtree(
     registry_tree,
     datasource_id,
     package_type,
+    purl_only=False,
 ):
     """
     Yield PackageData for the installed versions of .NET framework from a
@@ -111,8 +114,8 @@ def get_installed_dotnet_versions_from_regtree(
         if not entry.get('path', '').endswith('\\Full'):
             continue
 
-        file_references = []
         version = None
+        file_references = []
         for values in entry.get('values', []):
             key = values.get('name')
             value = values.get('value')
@@ -122,13 +125,18 @@ def get_installed_dotnet_versions_from_regtree(
             if key == 'InstallPath':
                 file_references.append(models.FileReference(path=value))
 
-        yield models.PackageData(
+        package = models.PackageData(
             datasource_id=datasource_id,
             type=package_type,
             name='microsoft-dot-net-framework',
             version=version,
-            file_references=file_references,
         )
+        if purl_only:
+            yield package
+            return
+
+        package.file_references = file_references
+        yield package
 
 
 def get_installed_windows_programs_from_hive(
@@ -136,6 +144,7 @@ def get_installed_windows_programs_from_hive(
     datasource_id,
     package_type,
     registry_path='\\Microsoft\\Windows\\CurrentVersion\\Uninstall',
+    purl_only=False,
 ):
     """
     Yield installed Windows PackageData from a Windows registry file at
@@ -151,6 +160,7 @@ def get_installed_windows_programs_from_hive(
         registry_tree=registry_tree,
         datasource_id=datasource_id,
         package_type=package_type,
+        purl_only=purl_only,
     )
 
 
@@ -158,6 +168,7 @@ def get_installed_windows_programs_from_regtree(
     registry_tree,
     datasource_id,
     package_type,
+    purl_only=False,
 ):
     """
     Yield installed Windows PackageData from a Windows ``registry_tree``.
@@ -187,6 +198,16 @@ def get_installed_windows_programs_from_regtree(
         name = package_info.get('name')
         version = package_info.get('version')
 
+        package = models.PackageData(
+            datasource_id=datasource_id,
+            type=package_type,
+            name=name,
+            version=version,
+        )
+        if purl_only:
+            yield package
+            return
+
         homepage_url = package_info.get('homepage_url')
         publisher = package_info.get('publisher')
 
@@ -213,21 +234,17 @@ def get_installed_windows_programs_from_regtree(
         if uninstall_string:
             file_references.append(models.FileReference(path=uninstall_string))
 
-        yield models.PackageData(
-            datasource_id=datasource_id,
-            type=package_type,
-            name=name,
-            version=version,
-            parties=parties,
-            homepage_url=homepage_url,
-            file_references=file_references,
-        )
+        package.parties = parties
+        package.homepage_url = homepage_url
+        package.file_references = file_references
+        yield package
 
 
 def get_packages_from_registry_from_hive(
     location,
     datasource_id,
     package_type,
+    purl_only=False,
 ):
     """
     Yield PackageData for Installed Windows Programs from the Windows registry
@@ -238,6 +255,7 @@ def get_packages_from_registry_from_hive(
         datasource_id=datasource_id,
         package_type=package_type,
         registry_path='\\Microsoft\\Windows\\CurrentVersion\\Uninstall',
+        purl_only=purl_only,
     )
 
     yield from get_installed_windows_programs_from_hive(
@@ -245,6 +263,7 @@ def get_packages_from_registry_from_hive(
         datasource_id=datasource_id,
         package_type=package_type,
         registry_path='\\Wow6432Node\\Microsoft\\Windows\\CurrentVersion\\Uninstall',
+        purl_only=purl_only,
     )
 
     yield from get_installed_dotnet_versions_from_hive(
@@ -252,6 +271,7 @@ def get_packages_from_registry_from_hive(
         datasource_id=datasource_id,
         package_type=package_type,
         registry_path='\\Microsoft\\NET Framework Setup\\NDP',
+        purl_only=purl_only,
     )
 
 
@@ -342,11 +362,12 @@ class BaseRegInstalledProgramHandler(models.DatafileHandler):
     root_path_relative_to_datafile_path = None
 
     @classmethod
-    def parse(cls, location):
+    def parse(cls, location, purl_only=False):
         yield from get_packages_from_registry_from_hive(
             location=location,
             datasource_id=cls.datasource_id,
             package_type=cls.default_package_type,
+            purl_only=purl_only,
         )
 
     @classmethod

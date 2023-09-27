@@ -55,12 +55,13 @@ class AutotoolsConfigureHandler(models.DatafileHandler):
     documentation_url = 'https://www.gnu.org/software/automake/'
 
     @classmethod
-    def parse(cls, location):
+    def parse(cls, location, purl_only=False, **kwargs):
         # we use the parent directory as a package name
         name = fileutils.file_name(fileutils.parent_directory(location))
         # we could use checksums as version in the future
         version = None
 
+        # TODO:
         # there is an optional array of license file names in targets that we could use
         # declared_license = None
 
@@ -143,7 +144,7 @@ class BaseStarlarkManifestHandler(models.DatafileHandler):
         yield resource
 
     @classmethod
-    def parse(cls, location):
+    def parse(cls, location, purl_only=False):
 
         # Thanks to Starlark being a Python dialect, we can use `ast` to parse it
         with open(location, 'rb') as f:
@@ -191,18 +192,20 @@ class BaseStarlarkManifestHandler(models.DatafileHandler):
                     if not name:
                         continue
 
-                    license_files = args.get('licenses')
-
-                    if TRACE:
-                        logger_debug(f"build: parse: license_files: {license_files}")
-
                     package_data = models.PackageData(
                         datasource_id=cls.datasource_id,
                         type=cls.default_package_type,
                         name=name,
                     )
 
-                    package_data.extracted_license_statement = license_files
+                    if not purl_only:
+                        license_files = args.get('licenses')
+                        package_data.extracted_license_statement = license_files
+                        if TRACE:
+                            logger_debug(
+                                f"build: parse: license_files: {license_files}"
+                            )
+
                     yield package_data
 
         else:
@@ -334,7 +337,7 @@ class BuckMetadataBzlHandler(BaseStarlarkManifestHandler):
     documentation_url = 'https://buck.build/'
 
     @classmethod
-    def parse(cls, location):
+    def parse(cls, location, purl_only=False):
 
         with open(location, 'rb') as f:
             tree = ast.parse(f.read())
@@ -366,15 +369,16 @@ class BuckMetadataBzlHandler(BaseStarlarkManifestHandler):
                     metadata_fields[key_name] = value
 
         parties = []
-        maintainers = metadata_fields.get('maintainers', []) or []
-        for maintainer in maintainers:
-            parties.append(
-                models.Party(
-                    type=models.party_org,
-                    name=maintainer,
-                    role='maintainer',
+        if not purl_only:
+            maintainers = metadata_fields.get('maintainers', []) or []
+            for maintainer in maintainers:
+                parties.append(
+                    models.Party(
+                        type=models.party_org,
+                        name=maintainer,
+                        role='maintainer',
+                    )
                 )
-            )
 
         if (
             'upstream_type'
@@ -386,16 +390,20 @@ class BuckMetadataBzlHandler(BaseStarlarkManifestHandler):
         ):
             # TODO: Create function that determines package type from download URL,
             # then create a package of that package type from the metadata info
-            yield models.PackageData(
+            
+            pkg = models.PackageData(
                 datasource_id=cls.datasource_id,
                 type=metadata_fields.get('upstream_type', cls.default_package_type),
                 name=metadata_fields.get('name'),
                 version=metadata_fields.get('version'),
-                extracted_license_statement=metadata_fields.get('licenses', []),
-                parties=parties,
-                homepage_url=metadata_fields.get('upstream_address', ''),
                 # TODO: Store 'upstream_hash` somewhere
             )
+            if not purl_only:
+                pkg.extracted_license_statement = metadata_fields.get('licenses', [])
+                pkg.populate_license_fields()
+                pkg.parties = parties
+                pkg.homepage_url = metadata_fields.get('upstream_address', '')
+            yield pkg
 
         if (
             'package_type'
@@ -409,19 +417,22 @@ class BuckMetadataBzlHandler(BaseStarlarkManifestHandler):
             and 'vcs_commit_hash'
             in metadata_fields
         ):
-            yield models.PackageData(
+            pkg = models.PackageData(
                 datasource_id=cls.datasource_id,
                 type=metadata_fields.get('package_type', cls.default_package_type),
                 name=metadata_fields.get('name'),
                 version=metadata_fields.get('version'),
-                extracted_license_statement=metadata_fields.get('license_expression', ''),
-                parties=parties,
-                homepage_url=metadata_fields.get('homepage_url', ''),
-                download_url=metadata_fields.get('download_url', ''),
-                vcs_url=metadata_fields.get('vcs_url', ''),
-                sha1=metadata_fields.get('download_archive_sha1', ''),
-                extra_data=dict(vcs_commit_hash=metadata_fields.get('vcs_commit_hash', ''))
             )
+            if not purl_only:
+                pkg.extracted_license_statement = metadata_fields.get('license_expression', '')
+                pkg.populate_license_fields()
+                pkg.parties = parties
+                pkg.homepage_url = metadata_fields.get('homepage_url', '')
+                pkg.download_url = metadata_fields.get('download_url', '')
+                pkg.vcs_url = metadata_fields.get('vcs_url', '')
+                pkg.sha1 = metadata_fields.get('download_archive_sha1', '')
+                pkg.extra_data = dict(vcs_commit_hash=metadata_fields.get('vcs_commit_hash', ''))
+            yield pkg
 
     @classmethod
     def assign_package_to_resources(cls, package, resource, codebase, package_adder):

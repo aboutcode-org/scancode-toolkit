@@ -45,7 +45,7 @@ class HaxelibJsonHandler(models.DatafileHandler):
     documentation_url = 'https://lib.haxe.org/documentation/creating-a-haxelib-package/'
 
     @classmethod
-    def _parse(cls, json_data):
+    def _parse(cls, json_data, purl_only=False):
         name = json_data.get('name')
         version = json_data.get('version')
 
@@ -54,12 +54,27 @@ class HaxelibJsonHandler(models.DatafileHandler):
             type=cls.default_package_type,
             name=name,
             version=version,
-            homepage_url=json_data.get('url'),
-            extracted_license_statement=json_data.get('license'),
-            keywords=json_data.get('tags'),
-            description=json_data.get('description'),
-            primary_language=cls.default_primary_language,
         )
+
+        for dep_name, dep_version in json_data.get('dependencies', {}).items():
+            dep_version = dep_version and dep_version.strip()
+            is_resolved = bool(dep_version)
+            dep_purl = PackageURL(
+                type=cls.default_package_type,
+                name=dep_name,
+                version=dep_version
+            ).to_string()
+            dep = models.DependentPackage(purl=dep_purl, is_resolved=is_resolved,)
+            package_data.dependencies.append(dep)
+
+        if purl_only:
+            return package_data
+
+        package_data.homepage_url = json_data.get('url')
+        package_data.extracted_license_statement = json_data.get('license')
+        package_data.keywords = json_data.get('tags')
+        package_data.description = json_data.get('description')
+        package_data.primary_language = cls.default_primary_language
 
         if name and version:
             download_url = f'https://lib.haxe.org/p/{name}/{version}/download/'
@@ -77,21 +92,11 @@ class HaxelibJsonHandler(models.DatafileHandler):
                 url='https://lib.haxe.org/u/{}'.format(contrib))
             package_data.parties.append(party)
 
-        for dep_name, dep_version in json_data.get('dependencies', {}).items():
-            dep_version = dep_version and dep_version.strip()
-            is_resolved = bool(dep_version)
-            dep_purl = PackageURL(
-                type=cls.default_package_type,
-                name=dep_name,
-                version=dep_version
-            ).to_string()
-            dep = models.DependentPackage(purl=dep_purl, is_resolved=is_resolved,)
-            package_data.dependencies.append(dep)
-
+        package_data.populate_license_fields()
         return package_data
 
     @classmethod
-    def parse(cls, location):
+    def parse(cls, location, purl_only=False):
         """
         Yield one or more Package manifest objects given a file ``location`` pointing to a
         package_data archive, manifest or similar.
@@ -111,4 +116,4 @@ class HaxelibJsonHandler(models.DatafileHandler):
         with io.open(location, encoding='utf-8') as loc:
             json_data = json.load(loc)
 
-        yield cls._parse(json_data)
+        yield cls._parse(json_data=json_data, purl_only=purl_only)

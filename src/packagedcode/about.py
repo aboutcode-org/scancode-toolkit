@@ -47,7 +47,7 @@ class AboutFileHandler(models.DatafileHandler):
     documentation_url = 'https://aboutcode-toolkit.readthedocs.io/en/latest/specification.html'
 
     @classmethod
-    def parse(cls, location):
+    def parse(cls, location, purl_only=False):
         """
         Yield one or more Package manifest objects given a file ``location`` pointing to a
         package archive, manifest or similar.
@@ -71,6 +71,15 @@ class AboutFileHandler(models.DatafileHandler):
 
         name = package_data.get('name')
         version = package_data.get('version')
+        if purl_only:
+            yield models.PackageData(
+                datasource_id=cls.datasource_id,
+                type=package_type,
+                namespace=package_ns,
+                name=name,
+                version=version,
+            )
+            return
 
         homepage_url = package_data.get('home_url') or package_data.get('homepage_url')
         download_url = package_data.get('download_url')

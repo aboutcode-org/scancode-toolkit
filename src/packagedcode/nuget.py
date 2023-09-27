@@ -106,7 +106,7 @@ class NugetNuspecHandler(models.DatafileHandler):
     documentation_url = 'https://docs.microsoft.com/en-us/nuget/reference/nuspec'
 
     @classmethod
-    def parse(cls, location):
+    def parse(cls, location, purl_only=False):
         with open(location, 'rb') as loc:
             parsed = xmltodict.parse(loc)
 
@@ -120,6 +120,16 @@ class NugetNuspecHandler(models.DatafileHandler):
 
         name = nuspec.get('id')
         version = nuspec.get('version')
+
+        pkg = models.PackageData(
+            datasource_id=cls.datasource_id,
+            type=cls.default_package_type,
+            name=name,
+            version=version,
+        )
+        if purl_only:
+            yield pkg
+            return
 
         # Summary: A short description of the package for UI display. If omitted, a
         # truncated version of description is used.
@@ -153,6 +163,9 @@ class NugetNuspecHandler(models.DatafileHandler):
                 vcs_url = vcs_repository
 
         urls = get_urls(name, version)
+        pkg.repository_homepage_url = urls["repository_homepage_url"]
+        pkg.repository_download_url = urls["repository_download_url"]
+        pkg.api_data_url = urls["api_data_url"]
 
         extracted_license_statement = None
         # See https://docs.microsoft.com/en-us/nuget/reference/nuspec#license
@@ -163,18 +176,13 @@ class NugetNuspecHandler(models.DatafileHandler):
         elif 'licenseUrl' in nuspec:
             extracted_license_statement = nuspec.get('licenseUrl')
 
-        yield models.PackageData(
-            datasource_id=cls.datasource_id,
-            type=cls.default_package_type,
-            name=name,
-            version=version,
-            description=description or None,
-            homepage_url=nuspec.get('projectUrl') or None,
-            parties=parties,
-            dependencies=list(get_dependencies(nuspec)),
-            extracted_license_statement=extracted_license_statement,
-            copyright=nuspec.get('copyright') or None,
-            vcs_url=vcs_url,
-            **urls,
-        )
-
+        pkg.description = description or None
+        pkg.homepage_url = nuspec.get('projectUrl') or None
+        pkg.parties = parties
+        pkg.dependencies = list(get_dependencies(nuspec))
+        pkg.extracted_license_statement = extracted_license_statement
+        pkg.copyright = nuspec.get('copyright') or None
+        pkg.vcs_url = vcs_url
+        pkg.populate_license_fields()
+        pkg.populate_holder_field()
+        yield pkg

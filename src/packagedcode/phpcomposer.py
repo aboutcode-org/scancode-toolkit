@@ -58,7 +58,7 @@ class PhpComposerJsonHandler(BasePhpComposerHandler):
     documentation_url = 'https://getcomposer.org/doc/04-schema.md'
 
     @classmethod
-    def parse(cls, location):
+    def parse(cls, location, purl_only=False):
         """
         Yield one or more Package manifest objects given a file ``location``
         pointing to a package archive, manifest or similar.
@@ -69,7 +69,10 @@ class PhpComposerJsonHandler(BasePhpComposerHandler):
         with io.open(location, encoding='utf-8') as loc:
             package_json = json.load(loc)
 
-        yield build_package_data(package_json)
+        yield build_package_data(
+            package_data=package_json,
+            purl_only=purl_only
+        )
 
 
 def get_repository_homepage_url(namespace, name):
@@ -86,7 +89,7 @@ def get_api_data_url(namespace, name):
         return f'https://packagist.org/p/packages/{name}.json'
 
 
-def build_package_data(package_data):
+def build_package_data(package_data, purl_only=False):
 
     # Note: A composer.json without name and description is not a usable PHP
     # composer package. Name and description fields are required but only for
@@ -108,10 +111,13 @@ def build_package_data(package_data):
         type=PhpComposerJsonHandler.default_package_type,
         namespace=ns,
         name=name,
-        repository_homepage_url=get_repository_homepage_url(ns, name),
-        api_data_url=get_api_data_url(ns, name),
-        primary_language=PhpComposerJsonHandler.default_primary_language,
     )
+    if purl_only:
+        return package
+
+    package.repository_homepage_url = get_repository_homepage_url(ns, name)
+    package.api_data_url = get_api_data_url(ns, name)
+    package.primary_language = PhpComposerJsonHandler.default_primary_language
 
     # mapping of top level composer.json items to the Package object field name
     plain_fields = [
@@ -170,16 +176,16 @@ class PhpComposerLockHandler(BasePhpComposerHandler):
     documentation_url = 'https://getcomposer.org/doc/01-basic-usage.md#commit-your-composer-lock-file-to-version-control'
 
     @classmethod
-    def parse(cls, location):
+    def parse(cls, location, purl_only=False):
         with io.open(location, encoding='utf-8') as loc:
             package_data = json.load(loc)
 
         packages = [
-            build_package_data(p)
+            build_package_data(package_data=p, purl_only=purl_only)
             for p in package_data.get('packages', [])
         ]
         packages_dev = [
-            build_package_data(p)
+            build_package_data(package_data=p, purl_only=purl_only)
             for p in package_data.get('packages-dev', [])
         ]
 
@@ -192,12 +198,16 @@ class PhpComposerLockHandler(BasePhpComposerHandler):
             for p in packages_dev
         ]
 
-        yield models.PackageData(
+        pkg = models.PackageData(
             datasource_id=cls.datasource_id,
             type=cls.default_package_type,
-            primary_language=cls.default_primary_language,
             dependencies=required_deps + required_dev_deps
         )
+        if purl_only:
+            yield pkg
+        else:
+            pkg.primary_language = cls.default_primary_language
+            yield pkg
 
         for package in packages + packages_dev:
             yield package

@@ -2,11 +2,11 @@
   {
     "type": "bower",
     "namespace": null,
-    "name": "John Doe",
+    "name": "blue-leaf",
     "version": null,
     "qualifiers": {},
     "subpath": null,
-    "primary_language": null,
+    "primary_language": "JavaScript",
     "description": "Physics-like animations for pretty particles",
     "release_date": null,
     "parties": [
@@ -147,6 +147,6 @@
     "repository_download_url": null,
     "api_data_url": null,
     "datasource_id": "bower_json",
-    "purl": "pkg:bower/John%20Doe"
+    "purl": "pkg:bower/blue-leaf"
   }
 ]

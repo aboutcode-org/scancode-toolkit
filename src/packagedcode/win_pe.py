@@ -276,7 +276,7 @@ class WindowsExecutableHandler(models.NonAssemblableDatafileHandler):
             return True
 
     @classmethod
-    def parse(cls, location):
+    def parse(cls, location, purl_only=False):
         infos = pe_info(location)
 
         version = get_first(
@@ -298,6 +298,16 @@ class WindowsExecutableHandler(models.NonAssemblableDatafileHandler):
             'OriginalFilename',
             'InternalName',
         )
+        package = models.PackageData(
+            datasource_id=cls.datasource_id,
+            type=cls.default_package_type,
+            name=name,
+            version=version,
+        )
+        if purl_only:
+            yield package
+            return
+
         copyr = get_first(infos, 'LegalCopyright')
 
         LegalCopyright = copyr,
@@ -328,15 +338,12 @@ class WindowsExecutableHandler(models.NonAssemblableDatafileHandler):
             parties = [Party(type=party_org, role='author', name=cname)]
         homepage_url = get_first(infos, 'URL', 'WWW')
 
-        yield models.PackageData(
-            datasource_id=cls.datasource_id,
-            type=cls.default_package_type,
-            name=name,
-            version=version,
-            release_date=release_date,
-            copyright=copyr,
-            extracted_license_statement=extracted_license_statement,
-            description=description,
-            parties=parties,
-            homepage_url=homepage_url,
-        )
+        package.release_date = release_date
+        package.copyright = copyr
+        package.extracted_license_statement = extracted_license_statement
+        package.description = description
+        package.parties = parties
+        package.homepage_url = homepage_url
+        package.populate_license_fields()
+        package.populate_holder_field()
+        yield package

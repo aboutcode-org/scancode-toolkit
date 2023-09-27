@@ -55,11 +55,14 @@ class ReadmeHandler(models.NonAssemblableDatafileHandler):
     documentation_url = ''
 
     @classmethod
-    def parse(cls, location):
+    def parse(cls, location, purl_only=False):
         with open(location, encoding='utf-8') as loc:
             readme_manifest = loc.read()
 
-        package_data = build_package(readme_manifest)
+        package_data = build_package(
+            readme_manifest=readme_manifest,
+            purl_only=purl_only
+        )
 
         if not package_data.name:
             # If no name was detected for the Package, then we use the basename
@@ -71,7 +74,7 @@ class ReadmeHandler(models.NonAssemblableDatafileHandler):
         yield package_data
 
 
-def build_package(readme_manifest):
+def build_package(readme_manifest, purl_only=False):
     """
     Return a Package object from a readme_manifest mapping (from a
     README.chromium file or similar) or None.
@@ -102,7 +105,11 @@ def build_package(readme_manifest):
         package_key = PACKAGE_FIELD_BY_README_FIELD.get(key)
         if not package_key:
             continue
+        if purl_only and package_key not in ["name", "version"]:
+            continue
+
         setattr(package, package_key, value)
 
-    package.populate_license_fields()
+    if not purl_only:
+        package.populate_license_fields()
     return package

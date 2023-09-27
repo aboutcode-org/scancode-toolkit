@@ -49,7 +49,7 @@ class GoModHandler(BaseGoModuleHandler):
     documentation_url = 'https://go.dev/ref/mod'
 
     @classmethod
-    def parse(cls, location):
+    def parse(cls, location, purl_only=False):
         gomods = go_mod.parse_gomod(location)
 
         dependencies = []
@@ -82,6 +82,18 @@ class GoModHandler(BaseGoModuleHandler):
         name = gomods.name
         namespace = gomods.namespace
 
+        pkg = models.PackageData(
+            datasource_id=cls.datasource_id,
+            type=cls.default_package_type,
+            name=name,
+            namespace=namespace,
+            dependencies=dependencies,
+        )
+
+        if purl_only:
+            yield pkg
+            return
+
         homepage_url = f'https://pkg.go.dev/{gomods.namespace}/{gomods.name}'
         vcs_url = f'https://{gomods.namespace}/{gomods.name}.git'
 
@@ -89,17 +101,11 @@ class GoModHandler(BaseGoModuleHandler):
         if namespace and name:
             repository_homepage_url = f'https://pkg.go.dev/{namespace}/{name}'
 
-        yield models.PackageData(
-            datasource_id=cls.datasource_id,
-            type=cls.default_package_type,
-            name=name,
-            namespace=namespace,
-            vcs_url=vcs_url,
-            homepage_url=homepage_url,
-            repository_homepage_url=repository_homepage_url,
-            dependencies=dependencies,
-            primary_language=cls.default_primary_language,
-        )
+        pkg.vcs_url = vcs_url
+        pkg.homepage_url = homepage_url
+        pkg.repository_homepage_url = repository_homepage_url
+        pkg.primary_language = cls.default_primary_language
+        yield pkg
 
 
 class GoSumHandler(BaseGoModuleHandler):
@@ -111,7 +117,7 @@ class GoSumHandler(BaseGoModuleHandler):
     documentation_url = 'https://go.dev/ref/mod#go-sum-files'
 
     @classmethod
-    def parse(cls, location):
+    def parse(cls, location, purl_only=False):
         gosums = go_mod.parse_gosum(location)
         package_dependencies = []
         for gosum in gosums:
@@ -126,9 +132,14 @@ class GoSumHandler(BaseGoModuleHandler):
                 )
             )
 
-        yield models.PackageData(
+        pkg = models.PackageData(
             datasource_id=cls.datasource_id,
             type=cls.default_package_type,
             dependencies=package_dependencies,
-            primary_language=cls.default_primary_language,
         )
+
+        if purl_only:
+            yield pkg
+        else:
+            pkg.primary_language = cls.default_primary_language
+            yield pkg

@@ -159,7 +159,16 @@ class PackageScanner(ScanPlugin):
             help_group=SCAN_GROUP,
             sort_order=21,
         ),
-
+        PluggableCommandLineOption(
+            (
+                '--purl',
+            ),
+            is_flag=True,
+            default=False,
+            help='Only detect PURL fields in application package and dependency manifests, lockfiles and related data.',
+            help_group=SCAN_GROUP,
+            sort_order=22,
+        ),
         PluggableCommandLineOption(
             ('--list-packages',),
             is_flag=True,
@@ -170,10 +179,10 @@ class PackageScanner(ScanPlugin):
         ),
     ]
 
-    def is_enabled(self, package, system_package, **kwargs):
-        return package or system_package
+    def is_enabled(self, package, system_package, purl, **kwargs):
+        return package or system_package or purl
 
-    def get_scanner(self, package=True, system_package=False, **kwargs):
+    def get_scanner(self, package=True, system_package=False, purl=False, **kwargs):
         """
         Return a scanner callable to scan a file for package data.
         """
@@ -183,9 +192,10 @@ class PackageScanner(ScanPlugin):
             get_package_data,
             application=package,
             system=system_package,
+            purl_only=purl,
         )
 
-    def process_codebase(self, codebase, strip_root=False, **kwargs):
+    def process_codebase(self, codebase, strip_root=False, purl=False, **kwargs):
         """
         Populate the ``codebase`` top level ``packages`` and ``dependencies``
         with package and dependency instances, assembling parsed package data
@@ -194,6 +204,11 @@ class PackageScanner(ScanPlugin):
         Also perform additional package license detection that depends on either
         file license detection or the package detections.
         """
+        # If we only want purls, we want to skip both the package
+        # assembly and the extra package license detection steps
+        if purl:
+            return
+
         has_licenses = hasattr(codebase.root, 'license_detections')
 
         # These steps add proper license detections to package_data and hence

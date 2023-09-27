@@ -36,7 +36,7 @@ if TRACE:
         return logger.debug(' '.join(isinstance(a, str) and a or repr(a) for a in args))
 
 
-def parse_rpm_xmlish(location, datasource_id, package_type):
+def parse_rpm_xmlish(location, datasource_id, package_type, purl_only=False):
     """
     Yield PackageData built from an RPM XML'ish file at ``location``. This is a file
     created with the rpm CLI with the xml query option.
@@ -58,6 +58,7 @@ def parse_rpm_xmlish(location, datasource_id, package_type):
             rpm_tags=tags,
             datasource_id=datasource_id,
             package_type=package_type,
+            purl_only=purl_only,
         )
 
 
@@ -133,7 +134,13 @@ def collect_tags(raw_tags):
         yield name, value_type, value
 
 
-def build_package(rpm_tags, datasource_id, package_type, package_namespace=None):
+def build_package(
+    rpm_tags,
+    datasource_id,
+    package_type,
+    package_namespace=None,
+    purl_only=False,
+):
     """
     Return a PackageData object from an ``rpm_tags`` iterable of (name,
     value_type, value) tuples.
@@ -147,7 +154,10 @@ def build_package(rpm_tags, datasource_id, package_type, package_namespace=None)
     }
 
     for name, _value_type, value in rpm_tags:
-        handler = RPM_TAG_HANDLER_BY_NAME.get(name)
+        handler = RPM_TAG_HANDLER_BY_NAME_PURLS.get(name)
+        if not handler and not purl_only:
+            handler = RPM_TAG_HANDLER_BY_NAME_OTHERS.get(name)
+
         # FIXME: we need to handle EVRA correctly
         # TODO: add more fields
         # TODO: merge with tag handling in rpm.py
@@ -283,7 +293,7 @@ def dirname_handler(value, **kwargs):
 #   PackageData field name
 
 
-RPM_TAG_HANDLER_BY_NAME = {
+RPM_TAG_HANDLER_BY_NAME_PURLS = {
 
     ############################################################################
     # per-package fields
@@ -294,11 +304,15 @@ RPM_TAG_HANDLER_BY_NAME = {
     #  'Epoch'
     #  'Release' 11.3.2
     'Version': name_value_str_handler('version'),
+    'Arch': arch_handler,
+}
+
+
+RPM_TAG_HANDLER_BY_NAME_OTHERS = {
     'Description': name_value_str_handler('description'),
     'Sha1header': name_value_str_handler('sha1'),
     'Url': name_value_str_handler('homepage_url'),
     'License': name_value_str_handler('extracted_license_statement'),
-    'Arch': arch_handler,
     'Size': size_handler,
 
     # TODO:

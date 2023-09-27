@@ -59,9 +59,9 @@ class BuildGradleHandler(models.DatafileHandler):
     description = 'Gradle build script'
 
     @classmethod
-    def parse(cls, location):
+    def parse(cls, location, purl_only=False):
         dependencies = get_dependencies(location)
-        return build_package(cls, dependencies)
+        return build_package(cls, dependencies, purl_only=purl_only)
 
     # TODO: handle complex cases of nested builds with many packages
     @classmethod
@@ -328,7 +328,7 @@ def get_dependencies(build_gradle_location):
     return list(get_dependencies_from_parse_tree(parse_tree))
 
 
-def build_package(cls, dependencies):
+def build_package(cls, dependencies, purl_only=False):
     """
     Yield PackageData from a ``dependencies`` list of mappings.
     """
@@ -364,10 +364,12 @@ def build_package(cls, dependencies):
             )
         )
 
-    yield models.PackageData(
+
+    pkg = models.PackageData(
         datasource_id=cls.datasource_id,
         type=cls.default_package_type,
-        primary_language=BuildGradleHandler.default_primary_language,
         dependencies=package_dependencies,
     )
-
+    if purl_only:
+        pkg.primary_language = BuildGradleHandler.default_primary_language
+    yield pkg

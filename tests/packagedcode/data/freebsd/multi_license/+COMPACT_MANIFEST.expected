@@ -82,7 +82,7 @@
     "other_license_expression": null,
     "other_license_expression_spdx": null,
     "other_license_detections": [],
-    "extracted_license_statement": "{'licenses': ['PSFL', 'BSD3CLAUSE'], 'licenselogic': 'and'}",
+    "extracted_license_statement": "licenses:\n  - PSFL\n  - BSD3CLAUSE\nlicenselogic: and\n",
     "notice_text": null,
     "source_packages": [],
     "file_references": [],

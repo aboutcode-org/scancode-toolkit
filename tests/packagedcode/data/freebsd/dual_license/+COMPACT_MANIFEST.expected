@@ -82,7 +82,7 @@
     "other_license_expression": null,
     "other_license_expression_spdx": null,
     "other_license_detections": [],
-    "extracted_license_statement": "{'licenses': ['RUBY', 'GPLv2'], 'licenselogic': 'or'}",
+    "extracted_license_statement": "licenses:\n  - RUBY\n  - GPLv2\nlicenselogic: or\n",
     "notice_text": null,
     "source_packages": [],
     "file_references": [],

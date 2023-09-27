@@ -30,37 +30,11 @@ class CranDescriptionFileHandler(models.DatafileHandler):
     documentation_url = 'https://r-pkgs.org/description.html'
 
     @classmethod
-    def parse(cls, location):
+    def parse(cls, location, purl_only=False):
         cran_desc = get_cran_description(location)
-
         name = cran_desc.get('Package')
         if not name:
             return
-
-        parties = []
-        maintainers = cran_desc.get('Maintainer') or ''
-        for maintainer in maintainers.split(',\n'):
-            maintainer_name, maintainer_email = get_party_info(maintainer)
-            if maintainer_name or maintainer_email:
-                parties.append(
-                    models.Party(
-                        name=maintainer_name,
-                        role='maintainer',
-                        email=maintainer_email,
-                    )
-                )
-
-        authors = cran_desc.get('Author') or ''
-        for author in authors.split(',\n'):
-            author_name, author_email = get_party_info(author)
-            if author_name or author_email:
-                parties.append(
-                    models.Party(
-                        name=author_name,
-                        role='author',
-                        email=author_email,
-                    )
-                )
 
         package_dependencies = []
         dependencies = cran_desc.get('Depends') or ''
@@ -88,23 +62,54 @@ class CranDescriptionFileHandler(models.DatafileHandler):
                 )
             )
 
+        pkg = models.PackageData(
+            datasource_id=cls.datasource_id,
+            type=cls.default_package_type,
+            name=name,
+            version=cran_desc.get('Version'),
+            dependencies=package_dependencies,
+        )
+        if purl_only:
+            yield pkg
+            return
+
+        parties = []
+        maintainers = cran_desc.get('Maintainer') or ''
+        for maintainer in maintainers.split(',\n'):
+            maintainer_name, maintainer_email = get_party_info(maintainer)
+            if maintainer_name or maintainer_email:
+                parties.append(
+                    models.Party(
+                        name=maintainer_name,
+                        role='maintainer',
+                        email=maintainer_email,
+                    )
+                )
+
+        authors = cran_desc.get('Author') or ''
+        for author in authors.split(',\n'):
+            author_name, author_email = get_party_info(author)
+            if author_name or author_email:
+                parties.append(
+                    models.Party(
+                        name=author_name,
+                        role='author',
+                        email=author_email,
+                    )
+                )
+
         extracted_license_statement = cran_desc.get('License')
 
         # TODO: Let's handle the release date as a Date type
         # release_date = cran_desc.get('Date/Publication'),
 
-        yield models.PackageData(
-            datasource_id=cls.datasource_id,
-            type=cls.default_package_type,
-            name=name,
-            version=cran_desc.get('Version'),
-            # TODO: combine both together
-            description=cran_desc.get('Description', '') or cran_desc.get('Title', ''),
-            extracted_license_statement=extracted_license_statement,
-            parties=parties,
-            dependencies=package_dependencies,
-            repository_homepage_url=f'https://cran.r-project.org/package={name}',
-        )
+        # TODO: combine both together
+        pkg.description = cran_desc.get('Description', '') or cran_desc.get('Title', '')
+        pkg.extracted_license_statement = extracted_license_statement
+        pkg.parties = parties
+        pkg.repository_homepage_url = f'https://cran.r-project.org/package={name}'
+        pkg.populate_license_fields()
+        yield pkg
 
 # FIXME: THIS IS NOT YAML but RFC 822
 

@@ -132,11 +132,14 @@ class JavaJarManifestHandler(MavenBasePackageHandler):
     documentation_url = 'https://docs.oracle.com/javase/tutorial/deployment/jar/manifestindex.html'
 
     @classmethod
-    def parse(cls, location):
+    def parse(cls, location, purl_only=False):
         sections = parse_manifest(location)
         if sections:
             main_section = sections[0]
-            manifest = get_normalized_java_manifest_data(main_section)
+            manifest = get_normalized_java_manifest_data(
+                manifest_mapping=main_section,
+                purl_only=purl_only
+            )
             if manifest:
                 yield models.PackageData(**manifest,)
 
@@ -206,13 +209,19 @@ class MavenPomXmlHandler(MavenBasePackageHandler):
                     return True
 
     @classmethod
-    def parse(cls, location, base_url='https://repo1.maven.org/maven2'):
+    def parse(
+        cls,
+        location,
+        base_url='https://repo1.maven.org/maven2',
+        purl_only=False,
+    ):
         package_data = parse(
             location=location,
             datasource_id=cls.datasource_id,
             package_type=cls.default_package_type,
             primary_language=cls.default_primary_language,
             base_url=base_url,
+            purl_only=purl_only,
         )
         if package_data:
             yield package_data
@@ -303,7 +312,7 @@ class MavenPomPropertiesHandler(models.NonAssemblableDatafileHandler):
     documentation_url = 'https://maven.apache.org/pom.html'
 
     @classmethod
-    def parse(cls, location):
+    def parse(cls, location, purl_only=False):
         """
         Yield PackageData from a pom.properties file (which is typically side-
         by-side with its pom file.)
@@ -313,27 +322,36 @@ class MavenPomPropertiesHandler(models.NonAssemblableDatafileHandler):
             if TRACE:
                 logger.debug(f'MavenPomPropertiesHandler.parse: properties: {properties!r}')
             if properties:
-                yield from cls.parse_pom_properties(properties=properties) 
+                yield from cls.parse_pom_properties(
+                    properties=properties,
+                    purl_only=purl_only,
+                )
 
     @classmethod
-    def parse_pom_properties(cls, properties):
+    def parse_pom_properties(cls, properties, purl_only=False):
         namespace = properties.pop("groupId", None)
         name = properties.pop("artifactId", None)
         version = properties.pop("version", None)
+
+        pkg = models.PackageData(
+            datasource_id=cls.datasource_id,
+            type=cls.default_package_type,
+            name=name,
+            namespace=namespace,
+            version=version,
+        )
+        if purl_only:
+            yield purl_only
+            return
+
         if properties:
             extra_data = dict(pom_properties=properties)
         else:
             extra_data = {}
 
-        yield models.PackageData(
-            datasource_id=cls.datasource_id,
-            type=cls.default_package_type,
-            primary_language=cls.default_primary_language,
-            name=name,
-            namespace=namespace,
-            version=version,
-            extra_data=extra_data,
-        )
+        pkg.primary_language = cls.default_primary_language
+        pkg.extra_data = extra_data
+        yield pkg
 
 
 def build_url(
@@ -1189,6 +1207,7 @@ def parse(
     package_type,
     primary_language,
     base_url='https://repo1.maven.org/maven2',
+    purl_only=False,
 ):
     """
     Return Packagedata objects from parsing a Maven pom file at `location` or
@@ -1199,7 +1218,8 @@ def parse(
         package_type=package_type,
         primary_language=primary_language,
         location=location,
-        base_url=base_url
+        base_url=base_url,
+        purl_only=purl_only,
     )
     if package:
         return package
@@ -1212,6 +1232,7 @@ def _parse(
     location=None,
     text=None,
     base_url='https://repo1.maven.org/maven2',
+    purl_only=False,
 ):
     """
     Yield Packagedata objects from parsing a Maven pom file at `location` or
@@ -1249,6 +1270,18 @@ def _parse(
     group_id = pom.group_id
     artifact_id = pom.artifact_id
 
+    pkg = MavenPackageData(
+        datasource_id=datasource_id,
+        type=package_type,
+        namespace=group_id,
+        name=artifact_id,
+        version=version,
+        qualifiers=qualifiers or None,
+    )
+    pkg.dependencies = get_dependencies(pom)
+    if purl_only:
+        return pkg
+
     # craft a source package purl for the main binary
     source_packages = []
     is_main_binary_jar = not classifier and all([group_id, artifact_id, version])
@@ -1283,23 +1316,22 @@ def _parse(
     ))
 
     # FIXME: there are still other data to map in a PackageData
-    return MavenPackageData(
-        datasource_id=datasource_id,
-        type=package_type,
-        primary_language=primary_language,
-        namespace=group_id,
-        name=artifact_id,
-        version=version,
-        qualifiers=qualifiers or None,
-        description=description or None,
-        homepage_url=pom.url or None,
-        extracted_license_statement=extracted_license_statement or None,
-        parties=get_parties(pom),
-        dependencies=get_dependencies(pom),
-        source_packages=source_packages,
-        bug_tracking_url=bug_tracking_url,
-        **urls,
-    )
+    pkg.primary_language = primary_language
+    pkg.description = description or None
+    pkg.homepage_url = pom.url or None
+    pkg.extracted_license_statement = extracted_license_statement or None
+    pkg.parties = get_parties(pom)
+    pkg.source_packages = source_packages
+    pkg.bug_tracking_url = bug_tracking_url
+    pkg.repository_homepage_url = urls["repository_homepage_url"]
+    pkg.repository_download_url = urls["repository_download_url"]
+    pkg.api_data_url = urls["api_data_url"]
+    pkg.vcs_url = urls["vcs_url"]
+    pkg.code_view_url = urls["code_view_url"]
+    pkg.populate_license_fields()
+    pkg.populate_holder_field()
+    return pkg
+
 
 class MavenPackageData(models.PackageData):
 

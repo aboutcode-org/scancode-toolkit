@@ -63,11 +63,12 @@ class AlpineInstalledDatabaseHandler(models.DatafileHandler):
     description = 'Alpine Linux installed package database'
 
     @classmethod
-    def parse(cls, location):
+    def parse(cls, location, purl_only=False):
         yield from parse_alpine_installed_db(
             location=location,
             datasource_id=cls.datasource_id,
             package_type=cls.default_package_type,
+            purl_only=purl_only,
         )
 
     @classmethod
@@ -134,9 +135,10 @@ class AlpineApkbuildHandler(models.DatafileHandler):
     documentation_url = 'https://wiki.alpinelinux.org/wiki/APKBUILD_Reference'
 
     @classmethod
-    def parse(cls, location):
-        package_data = parse_apkbuild(location, strict=True)
-        cls.populate_license_fields(package_data)
+    def parse(cls, location, purl_only=False):
+        package_data = parse_apkbuild(location, strict=True, purl_only=purl_only)
+        if not purl_only:
+            cls.populate_license_fields(package_data)
         if package_data:
             yield package_data
 
@@ -165,7 +167,12 @@ class AlpineApkbuildHandler(models.DatafileHandler):
         )
 
 
-def parse_alpine_installed_db(location, datasource_id, package_type):
+def parse_alpine_installed_db(
+        location,
+        datasource_id,
+        package_type,
+        purl_only=False,
+    ):
     """
     Yield PackageData objects from an installed database file at `location`
     or None. Typically found at '/lib/apk/db/installed' in an Alpine
@@ -179,6 +186,7 @@ def parse_alpine_installed_db(location, datasource_id, package_type):
             package_fields=package_fields,
             datasource_id=datasource_id,
             package_type=package_type,
+            purl_only=purl_only,
         )
 
 
@@ -241,7 +249,7 @@ ESSENTIAL_APKBUILD_VARIABLES = set([
 ])
 
 
-def parse_apkbuild(location, strict=False):
+def parse_apkbuild(location, strict=False, purl_only=False):
     """
     Return a PackageData object from an APKBUILD file at ``location`` or None.
 
@@ -256,6 +264,7 @@ def parse_apkbuild(location, strict=False):
         datasource_id=AlpineApkbuildHandler.datasource_id,
         package_type=AlpineApkbuildHandler.default_package_type,
         strict=strict,
+        purl_only=purl_only,
     )
 
 
@@ -732,7 +741,13 @@ def fix_apkbuild(text):
     return text
 
 
-def parse_apkbuild_text(text, datasource_id, package_type, strict=False):
+def parse_apkbuild_text(
+        text,
+        datasource_id,
+        package_type,
+        strict=False,
+        purl_only=False
+    ):
     """
     Return a PackageData object from an APKBUILD text context or None. Only
     consider variables with a name listed in the ``names`` set.
@@ -761,7 +776,8 @@ def parse_apkbuild_text(text, datasource_id, package_type, strict=False):
     package = build_package_data(
         variables,
         datasource_id=datasource_id,
-        package_type=package_type
+        package_type=package_type,
+        purl_only=purl_only,
     )
 
     if package and unresolved:
@@ -800,7 +816,12 @@ def parse_pkginfo(location):
     raise NotImplementedError
 
 
-def build_package_data(package_fields, datasource_id, package_type):
+def build_package_data(
+        package_fields,
+        datasource_id,
+        package_type,
+        purl_only=False
+    ):
     """
     Return a PackageData object from a ``package_fields`` iterable of (name,
     value) tuples.
@@ -832,10 +853,17 @@ def build_package_data(package_fields, datasource_id, package_type):
         'type': package_type,
     }
     for name, value in package_fields:
-        handler = package_handlers_by_field_name.get(name)
+        handler = package_handlers_by_field_name_purl_only.get(name)
+        if not purl_only and not handler:
+            handler = package_handlers_by_field_name_others.get(name)
+
         if handler:
             try:
-                converted = handler(value, all_fields=all_fields, **converted_fields)
+                converted = handler(
+                    value,
+                    all_fields=all_fields,
+                    **converted_fields
+                )
             except:
                 raise Exception(*list(package_fields))
 
@@ -1199,11 +1227,11 @@ def source_handler(value, **kwargs):
 # mapping of:
 # - the package field one letter name in the installed db,
 # - an handler for that field
-package_handlers_by_field_name = {
+package_handlers_by_field_name_purl_only = {
 
-    ############################################################################
-    # per-package fields
-    ############################################################################
+    ###########################################################################
+    # per-package fields (only purl fields)
+    ###########################################################################
 
     # name of the package
     # For example: P:busybox
@@ -1217,6 +1245,22 @@ package_handlers_by_field_name = {
     # 'pkver' in .PKGINFO and APKBUILD
     'V': build_name_value_str_handler('version'),
     'pkgver': apkbuild_version_handler,
+
+    # For example: D:scanelf so:libc.musl-x86_64.so.1
+    # For example: D:so:libc.musl-x86_64.so.1 so:libcrypto.so.1.1 so:libssl.so.1.1 so:libz.so.1
+    # Can occur more than once
+    # 'depend' in .PKGINFO and APKBUILD
+    # TODO: add other dependencies (e.g. makedepends)
+    'D': D_dependencies_handler,
+    'depend': D_dependencies_handler,
+}
+
+
+package_handlers_by_field_name_others = {
+
+    ###########################################################################
+    # per-package fields (other than purls)
+    ###########################################################################
 
     # For example: T:Size optimized toolbox of many common UNIX utilities
     # 'pkgdesc' in .PKGINFO and APKBUILD
@@ -1271,14 +1315,6 @@ package_handlers_by_field_name = {
     # 'commit' in .PKGINFO and APKBUILD
     'c': c_git_commit_handler,
     'commit': c_git_commit_handler,
-
-    # For example: D:scanelf so:libc.musl-x86_64.so.1
-    # For example: D:so:libc.musl-x86_64.so.1 so:libcrypto.so.1.1 so:libssl.so.1.1 so:libz.so.1
-    # Can occur more than once
-    # 'depend' in .PKGINFO and APKBUILD
-    # TODO: add other dependencies (e.g. makedepends)
-    'D': D_dependencies_handler,
-    'depend': D_dependencies_handler,
 
     # For example: source="http://liba52.sourceforge.net/files/$pkgname-$pkgver.tar.gz
     #         automake.patch

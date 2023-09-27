@@ -79,24 +79,13 @@ class CondaMetaYamlHandler(models.DatafileHandler):
         )
 
     @classmethod
-    def parse(cls, location):
+    def parse(cls, location, purl_only=False):
         metayaml = get_meta_yaml_data(location)
         package_element = metayaml.get('package') or {}
         package_name = package_element.get('name')
         if not package_name:
             return
         version = package_element.get('version')
-
-        # FIXME: source is source, not download
-        source = metayaml.get('source') or {}
-        download_url = source.get('url')
-        sha256 = source.get('sha256')
-
-        about = metayaml.get('about') or {}
-        homepage_url = about.get('home')
-        extracted_license_statement = about.get('license')
-        description = about.get('summary')
-        vcs_url = about.get('dev_url')
 
         dependencies = []
         requirements = metayaml.get('requirements') or {}
@@ -118,20 +107,37 @@ class CondaMetaYamlHandler(models.DatafileHandler):
                     )
                 )
 
-        yield models.PackageData(
+        pkg = models.PackageData(
             datasource_id=cls.datasource_id,
             type=cls.default_package_type,
             name=package_name,
             version=version,
-            download_url=download_url,
-            homepage_url=homepage_url,
-            vcs_url=vcs_url,
-            description=description,
-            sha256=sha256,
-            extracted_license_statement=extracted_license_statement,
             dependencies=dependencies,
         )
 
+        if purl_only:
+            yield pkg
+            return
+
+        # FIXME: source is source, not download
+        source = metayaml.get('source') or {}
+        download_url = source.get('url')
+        sha256 = source.get('sha256')
+
+        about = metayaml.get('about') or {}
+        homepage_url = about.get('home')
+        extracted_license_statement = about.get('license')
+        description = about.get('summary')
+        vcs_url = about.get('dev_url')
+
+        pkg.download_url = download_url
+        pkg.homepage_url = homepage_url
+        pkg.vcs_url = vcs_url
+        pkg.description = description
+        pkg.sha256 = sha256
+        pkg.extracted_license_statement = extracted_license_statement
+        pkg.populate_license_fields()
+        yield pkg
 
 def get_meta_yaml_data(location):
     """

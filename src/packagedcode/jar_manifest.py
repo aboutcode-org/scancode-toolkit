@@ -62,7 +62,7 @@ def parse_section(section):
     return data
 
 
-def get_normalized_java_manifest_data(manifest_mapping):
+def get_normalized_java_manifest_data(manifest_mapping, purl_only=False):
     """
     Return a mapping of package-like data normalized from a mapping of the
     `manifest_mapping` data mapping or None.
@@ -231,6 +231,10 @@ def get_normalized_java_manifest_data(manifest_mapping):
     package['namespace'] = namespace
     package['name'] = name
     package['version'] = version
+
+    if purl_only:
+        return package
+
     package['description'] = description
 
     # licensing

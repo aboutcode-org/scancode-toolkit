@@ -185,11 +185,37 @@ class NpmPackageJsonHandler(BaseNpmHandler):
     documentation_url = 'https://docs.npmjs.com/cli/v8/configuring-npm/package-json'
 
     @classmethod
-    def _parse(cls, json_data):
+    def _parse(cls, json_data, purl_only=False):
         name = json_data.get('name')
         version = json_data.get('version')
-        homepage_url = json_data.get('homepage', '')
+        namespace, name = split_scoped_package_name(name)
 
+        package = models.PackageData(
+            datasource_id=cls.datasource_id,
+            type=cls.default_package_type,
+            namespace=namespace or None,
+            name=name,
+            version=version or None,
+        )
+        deps_mappers = [
+            ('dependencies', partial(deps_mapper, field_name='dependencies')),
+            ('devDependencies', partial(deps_mapper, field_name='devDependencies')),
+            ('peerDependencies', partial(deps_mapper, field_name='peerDependencies')),
+            ('optionalDependencies', partial(deps_mapper, field_name='optionalDependencies')),
+            ('bundledDependencies', bundle_deps_mapper),
+        ]
+        for source, func in deps_mappers:
+            value = json_data.get(source) or None
+            if value:
+                if isinstance(value, str):
+                    value = value.strip()
+                if value:
+                    func(value, package)
+
+        if purl_only:
+            return package
+
+        homepage_url = json_data.get('homepage', '')
         # a package.json without name and version can be a private package
 
         if homepage_url and isinstance(homepage_url, list):
@@ -197,21 +223,16 @@ class NpmPackageJsonHandler(BaseNpmHandler):
             homepage_url = homepage_url[0]
         homepage_url = homepage_url.strip() or None
 
-        namespace, name = split_scoped_package_name(name)
-
         urls = get_urls(namespace, name, version)
-        package = models.PackageData(
-            datasource_id=cls.datasource_id,
-            type=cls.default_package_type,
-            primary_language=cls.default_primary_language,
-            namespace=namespace or None,
-            name=name,
-            version=version or None,
-            description=json_data.get('description', '').strip() or None,
-            homepage_url=homepage_url,
-            **urls,
-        )
+        package.repository_homepage_url = urls["repository_homepage_url"]
+        package.repository_download_url = urls["repository_download_url"]
+        package.api_data_url = urls["api_data_url"]
+        
+        package.primary_language = cls.default_primary_language
+        package.description = json_data.get('description', '').strip() or None
+        package.homepage_url = homepage_url
         vcs_revision = json_data.get('gitHead') or None
+
 
         # mapping of top level package.json items to a function accepting as
         # arguments the package.json element value and returning an iterable of (key,
@@ -220,12 +241,6 @@ class NpmPackageJsonHandler(BaseNpmHandler):
             ('author', partial(party_mapper, party_type='author')),
             ('contributors', partial(party_mapper, party_type='contributor')),
             ('maintainers', partial(party_mapper, party_type='maintainer')),
-
-            ('dependencies', partial(deps_mapper, field_name='dependencies')),
-            ('devDependencies', partial(deps_mapper, field_name='devDependencies')),
-            ('peerDependencies', partial(deps_mapper, field_name='peerDependencies')),
-            ('optionalDependencies', partial(deps_mapper, field_name='optionalDependencies')),
-            ('bundledDependencies', bundle_deps_mapper),
             ('repository', partial(vcs_repository_mapper, vcs_revision=vcs_revision)),
             ('keywords', keywords_mapper,),
             ('bugs', bugs_mapper),
@@ -257,17 +272,17 @@ class NpmPackageJsonHandler(BaseNpmHandler):
         return package
 
     @classmethod
-    def parse(cls, location):
+    def parse(cls, location, purl_only=False):
         with io.open(location, encoding='utf-8') as loc:
             json_data = json.load(loc)
 
-        yield cls._parse(json_data)
+        yield cls._parse(json_data=json_data, purl_only=purl_only)
 
 
 class BaseNpmLockHandler(BaseNpmHandler):
 
     @classmethod
-    def parse(cls, location):
+    def parse(cls, location, purl_only=False):
 
         with io.open(location, encoding='utf-8') as loc:
             package_data = json.load(loc)
@@ -278,17 +293,13 @@ class BaseNpmLockHandler(BaseNpmHandler):
         root_version = package_data.get('version')
         root_ns, _ , root_name = root_name.rpartition('/')
 
-        extra_data = dict(lockfile_version=lockfile_version)
         # this is the top level element that we return
         root_package_data = models.PackageData(
             datasource_id=cls.datasource_id,
             type=cls.default_package_type,
-            primary_language=cls.default_primary_language,
             namespace=root_ns,
             name=root_name,
             version=root_version,
-            extra_data=extra_data,
-            **get_urls(root_ns, root_name, root_version)
         )
 
         # https://docs.npmjs.com/cli/v8/configuring-npm/package-lock-json#lockfileversion
@@ -299,7 +310,6 @@ class BaseNpmLockHandler(BaseNpmHandler):
             deps_key = 'packages'
 
         deps_mapping = package_data.get(deps_key) or {}
-
         dependencies = []
 
         for dep, dep_data in deps_mapping.items():
@@ -359,19 +369,29 @@ class BaseNpmLockHandler(BaseNpmHandler):
             integrity = dep_data.get('integrity')
             misc.update(get_algo_hexsum(integrity).items())
 
-            resolved_package = models.PackageData(
-                datasource_id=cls.datasource_id,
-                type=cls.default_package_type,
-                primary_language=cls.default_primary_language,
-                namespace=ns,
-                name=name,
-                version=version,
-                extracted_license_statement=extracted_license_statement,
-                **misc,
-            )
-            # these are paths t the root of the installed package in v2
-            if dep:
-                resolved_package.file_references = [models.FileReference(path=dep)],
+            if purl_only:
+                    resolved_package = models.PackageData(
+                    datasource_id=cls.datasource_id,
+                    type=cls.default_package_type,
+                    namespace=ns,
+                    name=name,
+                    version=version,
+                )
+            else:
+                resolved_package = models.PackageData(
+                    datasource_id=cls.datasource_id,
+                    type=cls.default_package_type,
+                    primary_language=cls.default_primary_language,
+                    namespace=ns,
+                    name=name,
+                    version=version,
+                    extracted_license_statement=extracted_license_statement,
+                    **misc,
+                )
+
+                # these are paths t the root of the installed package in v2
+                if dep:
+                    resolved_package.file_references = [models.FileReference(path=dep)],
 
             # v1 as name/constraint pairs
             subrequires = dep_data.get('requires') or {}
@@ -416,6 +436,16 @@ class BaseNpmLockHandler(BaseNpmHandler):
 
         root_package_data.dependencies = dependencies
 
+        if purl_only:
+            yield root_package_data
+            return
+
+        root_package_data.primary_language = cls.default_primary_language
+        root_package_data.extra_data = dict(lockfile_version=lockfile_version)
+        urls = get_urls(root_ns, root_name, root_version)
+        root_package_data.repository_homepage_url = urls["repository_homepage_url"]
+        root_package_data.repository_download_url = urls["repository_download_url"]
+        root_package_data.api_data_url = urls["api_data_url"]
         yield root_package_data
 
 
@@ -490,7 +520,7 @@ class YarnLockV2Handler(BaseNpmHandler):
         return super().is_datafile(location, filetypes=filetypes) and is_yarn_v2(location)
 
     @classmethod
-    def parse(cls, location):
+    def parse(cls, location, purl_only=False):
         """
         Parse a bew yarn.lock v2 YAML format which looks like this:
 
@@ -545,12 +575,16 @@ class YarnLockV2Handler(BaseNpmHandler):
                 )
             top_dependencies.append(dependency)
 
-        yield models.PackageData(
+        pkg = models.PackageData(
             datasource_id=cls.datasource_id,
             type=cls.default_package_type,
-            primary_language=cls.default_primary_language,
             dependencies=top_dependencies,
         )
+        if purl_only:
+            yield pkg
+        else:
+            pkg.primary_language = cls.default_primary_language
+            yield pkg
 
 
 class YarnLockV1Handler(BaseNpmHandler):
@@ -569,7 +603,7 @@ class YarnLockV1Handler(BaseNpmHandler):
         return super().is_datafile(location, filetypes=filetypes) and not is_yarn_v2(location)
 
     @classmethod
-    def parse(cls, location):
+    def parse(cls, location, purl_only=False):
         """
         Parse a classic yarn.lock format which looks like this:
             "@babel/core@^7.1.0", "@babel/core@^7.3.4":
@@ -657,15 +691,24 @@ class YarnLockV1Handler(BaseNpmHandler):
             misc.update(get_algo_hexsum(integrity).items())
 
             # we create a resolve package with the details
-            resolved_package_data = models.PackageData(
-                datasource_id=cls.datasource_id,
-                type=cls.default_package_type,
-                namespace=ns,
-                name=name,
-                version=version,
-                primary_language=cls.default_primary_language,
-                **misc,
-            )
+            if purl_only:
+                resolved_package_data = models.PackageData(
+                    datasource_id=cls.datasource_id,
+                    type=cls.default_package_type,
+                    namespace=ns,
+                    name=name,
+                    version=version,
+                )
+            else:
+                resolved_package_data = models.PackageData(
+                    datasource_id=cls.datasource_id,
+                    type=cls.default_package_type,
+                    namespace=ns,
+                    name=name,
+                    version=version,
+                    primary_language=cls.default_primary_language,
+                    **misc,
+                )
 
             # we add the sub-deps to the resolved package
             for subns, subname, subconstraint in sub_dependencies:
@@ -701,12 +744,17 @@ class YarnLockV1Handler(BaseNpmHandler):
             )
             dependencies.append(dep)
 
-        yield models.PackageData(
+        pkg = models.PackageData(
             datasource_id=cls.datasource_id,
             type=cls.default_package_type,
-            primary_language=cls.default_primary_language,
             dependencies=dependencies,
         )
+        if purl_only:
+            yield pkg
+        else:
+            pkg.primary_language = cls.default_primary_language
+            yield pkg
+
 
 
 def get_checksum_and_url(url):

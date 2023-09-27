@@ -152,6 +152,14 @@ def parse_spec(location, package_type):
             if parsed:
                 spec_data[attribute_name] = parsed
 
+    # We avoid reloading twice the file but we are still parsing twice: need to
+    # merge all in gemfileparser or write a better parser.
+    spec_data['dependencies'] = list(get_dependent_packages(
+        lines=lines,
+        location=location,
+        package_type=package_type,
+    ))
+
     # description can be in single or multi-lines
     # There are many different ways to write description.
     # we reparse for multline
@@ -166,14 +174,6 @@ def parse_spec(location, package_type):
         else:
             # a single quoted description
             spec_data['description'] = get_cleaned_string(description)
-
-    # We avoid reloading twice the file but we are still parsing twice: need to
-    # merge all in gemfileparser or write a better parser.
-    spec_data['dependencies'] = list(get_dependent_packages(
-        lines=lines,
-        location=location,
-        package_type=package_type,
-    ))
 
     return spec_data
 

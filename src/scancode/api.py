@@ -248,7 +248,13 @@ def get_licenses(
 SCANCODE_DEBUG_PACKAGE_API = os.environ.get('SCANCODE_DEBUG_PACKAGE_API', False)
 
 
-def _get_package_data(location, application=True, system=False, **kwargs):
+def _get_package_data(
+        location,
+        application=True,
+        system=False,
+        purl_only=False,
+        **kwargs
+    ):
     """
     Return a mapping of package manifest information detected in the file at ``location``.
     Include ``application`` packages (such as pypi) and/or ``system`` packages.
@@ -261,7 +267,8 @@ def _get_package_data(location, application=True, system=False, **kwargs):
         return recognize_package_data(
             location=location,
             application=application,
-            system=system
+            system=system,
+            purl_only=purl_only,
         ) or []
 
     except Exception as e:
@@ -291,7 +298,13 @@ def get_package_info(location, **kwargs):
     return dict(packages=[p.to_dict() for p in packages])
 
 
-def get_package_data(location, application=True, system=False, **kwargs):
+def get_package_data(
+        location,
+        application=True,
+        system=False,
+        purl_only=False,
+        **kwargs
+    ):
     """
     Return a mapping of package manifest information detected in the file at
     `location`.
@@ -304,6 +317,7 @@ def get_package_data(location, application=True, system=False, **kwargs):
         location=location,
         application=application,
         system=system,
+        purl_only=purl_only,
         **kwargs,
     ) or []
 

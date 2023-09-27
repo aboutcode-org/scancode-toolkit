@@ -52,7 +52,7 @@ class CompactManifestHandler(models.DatafileHandler):
     documentation_url = 'https://www.freebsd.org/cgi/man.cgi?pkg-create(8)#MANIFEST_FILE_DETAILS'
 
     @classmethod
-    def _parse(cls, yaml_data):
+    def _parse(cls, yaml_data, purl_only=False):
         package_data = models.PackageData(
             datasource_id=cls.datasource_id,
             type=cls.default_package_type,
@@ -63,9 +63,23 @@ class CompactManifestHandler(models.DatafileHandler):
         )
 
         # mapping of top level manifest items to the PackageData object field name
-        plain_fields = [
+        purl_fields = [
             ('name', 'name'),
             ('version', 'version'),
+        ]
+
+        for source, target in purl_fields:
+            value = yaml_data.get(source)
+            if value:
+                if isinstance(value, str):
+                    value = value.strip()
+                if value:
+                    setattr(package_data, target, value)
+
+        if purl_only:
+            return package_data
+
+        plain_fields = [
             ('www', 'homepage_url'),
             ('desc', 'description'),
             ('categories', 'keywords'),
@@ -96,7 +110,6 @@ class CompactManifestHandler(models.DatafileHandler):
 
         # license_mapper needs multiple fields
         license_mapper(yaml_data, package_data)
-
         cls.populate_license_fields(package_data)
 
         if TRACE:
@@ -107,15 +120,15 @@ class CompactManifestHandler(models.DatafileHandler):
         return package_data
 
     @classmethod
-    def parse(cls, location):
+    def parse(cls, location, purl_only=False):
         """
-        Yield one or more Package manifest objects given a file ``location`` pointing to a
-        package archive, manifest or similar.
+        Yield one or more Package manifest objects given a file ``location``
+        pointing to a package archive, manifest or similar.
         """
         with io.open(location, encoding='utf-8') as loc:
             yaml_data = saneyaml.load(loc)
 
-        yield cls._parse(yaml_data)
+        yield cls._parse(yaml_data=yaml_data, purl_only=purl_only)
 
     @staticmethod
     def get_license_detections_and_expression(package_data):

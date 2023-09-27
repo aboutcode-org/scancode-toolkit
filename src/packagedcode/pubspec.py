@@ -60,11 +60,14 @@ class DartPubspecYamlHandler(BaseDartPubspecHandler):
     documentation_url = 'https://dart.dev/tools/pub/pubspec'
 
     @classmethod
-    def parse(cls, location):
+    def parse(cls, location, purl_only=False):
         with open(location) as inp:
             pubspec_data = saneyaml.load(inp.read())
 
-        package_data = build_package(pubspec_data)
+        package_data = build_package(
+            pubspec_data=pubspec_data,
+            purl_only=purl_only
+        )
         if package_data:
             yield package_data
 
@@ -78,18 +81,22 @@ class DartPubspecLockHandler(BaseDartPubspecHandler):
     documentation_url = 'https://web.archive.org/web/20220330081004/https://gpalma.pt/blog/what-is-the-pubspec-lock/'
 
     @classmethod
-    def parse(cls, location):
+    def parse(cls, location, purl_only=False):
         with open(location) as inp:
             locks_data = saneyaml.load(inp.read())
 
         dependencies = list(collect_locks(locks_data))
 
-        yield models.PackageData(
+        pkg = models.PackageData(
             datasource_id=cls.datasource_id,
             type=cls.default_package_type,
-            primary_language=cls.default_primary_language,
             dependencies=dependencies
         )
+        if purl_only:
+            yield pkg
+        else:
+            pkg.primary_language = cls.default_primary_language
+            yield pkg
 
 
 def collect_locks(locks_data):
@@ -238,44 +245,12 @@ def build_dep(name, version, scope, is_runtime=True, is_optional=False):
     return dep
 
 
-def build_package(pubspec_data):
+def build_package(pubspec_data, purl_only=False):
     """
     Return a package object from a package data mapping or None
     """
     name = pubspec_data.get('name')
     version = pubspec_data.get('version')
-    description = pubspec_data.get('description')
-    homepage_url = pubspec_data.get('homepage')
-    extracted_license_statement = pubspec_data.get('license')
-    vcs_url = pubspec_data.get('repository')
-    download_url = pubspec_data.get('archive_url')
-
-    api_data_url = name and version and f'https://pub.dev/api/packages/{name}/versions/{version}'
-    repository_homepage_url = name and version and f'https://pub.dev/packages/{name}/versions/{version}'
-
-    # A URL should be in the form of:
-    # https://pub.dartlang.org/packages/url_launcher/versions/6.0.9.tar.gz
-    # And it may resolve to:
-    # https://storage.googleapis.com/pub-packages/packages/http-0.13.2.tar.gz
-    # as seen in the pub.dev web pages
-    repository_download_url = name and version and f'https://pub.dartlang.org/packages/{name}/versions/{version}.tar.gz'
-
-    download_url = download_url or repository_download_url
-
-    # Author and authors are deprecated
-    authors = []
-    author = pubspec_data.get('author')
-    if author:
-        authors.append(author)
-    authors.extend(pubspec_data.get('authors') or [])
-
-    parties = []
-    for auth  in authors:
-        parties.append(models.Party(
-            type=models.party_person,
-            role='author',
-            name=auth
-        ))
 
     package_dependencies = []
     dependencies = collect_deps(
@@ -302,6 +277,51 @@ def build_package(pubspec_data):
     )
     package_dependencies.extend(env_dependencies)
 
+    package = models.PackageData(
+        datasource_id=DartPubspecYamlHandler.datasource_id,
+        type=DartPubspecYamlHandler.default_primary_language,
+        name=name,
+        version=version,
+        dependencies=package_dependencies,
+    )
+    if purl_only:
+        return package
+
+    package.primary_language = DartPubspecYamlHandler.default_primary_language
+    package.description = pubspec_data.get('description')
+    package.homepage_url = pubspec_data.get('homepage')
+    package.extracted_license_statement = pubspec_data.get('license')
+    package.vcs_url = pubspec_data.get('repository')
+    package.download_url = pubspec_data.get('archive_url')
+
+    package.api_data_url = name and version and f'https://pub.dev/api/packages/{name}/versions/{version}'
+    package.repository_homepage_url = name and version and f'https://pub.dev/packages/{name}/versions/{version}'
+
+    # A URL should be in the form of:
+    # https://pub.dartlang.org/packages/url_launcher/versions/6.0.9.tar.gz
+    # And it may resolve to:
+    # https://storage.googleapis.com/pub-packages/packages/http-0.13.2.tar.gz
+    # as seen in the pub.dev web pages
+    package.repository_download_url = name and version and f'https://pub.dartlang.org/packages/{name}/versions/{version}.tar.gz'
+    package.download_url = package.download_url or package.repository_download_url
+
+    # Author and authors are deprecated
+    authors = []
+    author = pubspec_data.get('author')
+    if author:
+        authors.append(author)
+    authors.extend(pubspec_data.get('authors') or [])
+
+    parties = []
+    for auth  in authors:
+        parties.append(models.Party(
+            type=models.party_person,
+            role='author',
+            name=auth
+        ))
+
+    package.parties = parties
+
     extra_data = {}
 
     def add_to_extra_if_present(_key):
@@ -314,22 +334,6 @@ def build_package(pubspec_data):
     add_to_extra_if_present('dependencies_overrides')
     add_to_extra_if_present('executables')
     add_to_extra_if_present('publish_to')
+    package.extra_data = extra_data
 
-    return models.PackageData(
-        datasource_id=DartPubspecYamlHandler.datasource_id,
-        type=DartPubspecYamlHandler.default_primary_language,
-        primary_language=DartPubspecYamlHandler.default_primary_language,
-        name=name,
-        version=version,
-        download_url=download_url,
-        vcs_url=vcs_url,
-        description=description,
-        extracted_license_statement=extracted_license_statement,
-        parties=parties,
-        homepage_url=homepage_url,
-        dependencies=package_dependencies,
-        extra_data=extra_data,
-        repository_homepage_url=repository_homepage_url,
-        api_data_url=api_data_url,
-        repository_download_url=repository_download_url,
-    )
+    return package

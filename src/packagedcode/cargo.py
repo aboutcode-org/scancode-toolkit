@@ -29,13 +29,31 @@ class CargoTomlHandler(models.DatafileHandler):
     documentation_url = 'https://doc.rust-lang.org/cargo/reference/manifest.html'
 
     @classmethod
-    def parse(cls, location):
+    def parse(cls, location, purl_only=False):
         package_data = toml.load(location, _dict=dict)
 
         core_package_data = package_data.get('package', {})
 
         name = core_package_data.get('name')
         version = core_package_data.get('version')
+
+        # cargo dependencies are complex and can be overriden at multiple levels
+        dependencies = []
+        for key, value in core_package_data.items():
+            if key.endswith('dependencies'):
+                dependencies.extend(dependency_mapper(dependencies=value, scope=key))
+
+        pkg = models.PackageData(
+            datasource_id=cls.datasource_id,
+            type=cls.default_package_type,
+            name=name,
+            version=version,
+            dependencies=dependencies,
+        )
+        if purl_only:
+            yield pkg
+            return
+
         description = core_package_data.get('description') or ''
         description = description.strip()
 
@@ -50,12 +68,6 @@ class CargoTomlHandler(models.DatafileHandler):
         categories = core_package_data.get('categories') or []
         keywords.extend(categories)
 
-        # cargo dependencies are complex and can be overriden at multiple levels
-        dependencies = []
-        for key, value in core_package_data.items():
-            if key.endswith('dependencies'):
-                dependencies.extend(dependency_mapper(dependencies=value, scope=key))
-
         # TODO: add file refs:
         # - readme, include and exclude
         # TODO: other URLs
@@ -67,22 +79,18 @@ class CargoTomlHandler(models.DatafileHandler):
         repository_download_url = name and version and f'https://crates.io/api/v1/crates/{name}/{version}/download'
         api_data_url = name and f'https://crates.io/api/v1/crates/{name}'
 
-        yield models.PackageData(
-            datasource_id=cls.datasource_id,
-            type=cls.default_package_type,
-            name=name,
-            version=version,
-            primary_language=cls.default_primary_language,
-            description=description,
-            parties=parties,
-            extracted_license_statement=extracted_license_statement,
-            vcs_url=vcs_url,
-            homepage_url=homepage_url,
-            repository_homepage_url=repository_homepage_url,
-            repository_download_url=repository_download_url,
-            api_data_url=api_data_url,
-            dependencies=dependencies,
-        )
+        pkg.primary_language = cls.default_primary_language
+        pkg.description = description
+        pkg.parties = parties
+        pkg.extracted_license_statement = extracted_license_statement
+        pkg.vcs_url = vcs_url
+        pkg.homepage_url = homepage_url
+        pkg.repository_homepage_url = repository_homepage_url
+        pkg.repository_download_url = repository_download_url
+        pkg.api_data_url = api_data_url
+        pkg.dependencies = dependencies
+        pkg.populate_license_fields()
+        yield pkg
 
     @classmethod
     def assemble(cls, package_data, resource, codebase, package_adder):
@@ -116,7 +124,7 @@ class CargoLockHandler(models.DatafileHandler):
     # ]
 
     @classmethod
-    def parse(cls, location):
+    def parse(cls, location, purl_only=False):
         cargo_lock = toml.load(location, _dict=dict)
         dependencies = []
         package = cargo_lock.get('package', [])
@@ -137,12 +145,14 @@ class CargoLockHandler(models.DatafileHandler):
                 )
             )
 
-        yield models.PackageData(
+        pkg = models.PackageData(
             datasource_id=cls.datasource_id,
             type=cls.default_package_type,
-            primary_language=cls.default_primary_language,
             dependencies=dependencies,
         )
+        if not purl_only:
+            pkg.primary_language = cls.default_primary_language
+        yield pkg
 
     @classmethod
     def assemble(cls, package_data, resource, codebase, package_adder):

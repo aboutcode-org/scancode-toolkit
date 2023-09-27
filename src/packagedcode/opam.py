@@ -31,7 +31,7 @@ class OpamFileHandler(models.DatafileHandler):
         return resource.parent(codebase)
 
     @classmethod
-    def parse(cls, location):
+    def parse(cls, location, purl_only=False):
         opams = parse_opam(location)
 
         package_dependencies = []
@@ -51,24 +51,35 @@ class OpamFileHandler(models.DatafileHandler):
         name = opams.get('name')
         version = opams.get('version')
 
-        homepage_url = opams.get('homepage')
-        download_url = opams.get('src')
-        vcs_url = opams.get('dev-repo')
-        bug_tracking_url = opams.get('bug-reports')
-        extracted_license_statement = opams.get('license')
-        sha1 = opams.get('sha1')
-        md5 = opams.get('md5')
-        sha256 = opams.get('sha256')
-        sha512 = opams.get('sha512')
-        repository_homepage_url = get_repository_homepage_url(name)
-        api_data_url = get_api_data_url(name, version)
+        pkg = models.PackageData(
+            datasource_id=cls.datasource_id,
+            type=cls.default_package_type,
+            name=name,
+            version=version,
+            dependencies=package_dependencies,
+        )
+        if purl_only:
+            yield pkg
+            return
+
+        pkg.homepage_url = opams.get('homepage')
+        pkg.download_url = opams.get('src')
+        pkg.vcs_url = opams.get('dev-repo')
+        pkg.bug_tracking_url = opams.get('bug-reports')
+        pkg.extracted_license_statement = opams.get('license')
+        pkg.sha1 = opams.get('sha1')
+        pkg.md5 = opams.get('md5')
+        pkg.sha256 = opams.get('sha256')
+        pkg.sha512 = opams.get('sha512')
+        pkg.repository_homepage_url = get_repository_homepage_url(name)
+        pkg.api_data_url = get_api_data_url(name, version)
 
         short_desc = opams.get('synopsis') or ''
         long_desc = opams.get('description') or ''
         if long_desc == short_desc:
             long_desc = None
         descriptions = [d for d in (short_desc, long_desc) if d and d.strip()]
-        description = '\n'.join(descriptions)
+        pkg.description = '\n'.join(descriptions)
 
         parties = []
         authors = opams.get('authors') or []
@@ -90,27 +101,11 @@ class OpamFileHandler(models.DatafileHandler):
                 )
             )
 
-        yield models.PackageData(
-            datasource_id=cls.datasource_id,
-            type=cls.default_package_type,
-            name=name,
-            version=version,
-            vcs_url=vcs_url,
-            homepage_url=homepage_url,
-            download_url=download_url,
-            sha1=sha1,
-            md5=md5,
-            sha256=sha256,
-            sha512=sha512,
-            bug_tracking_url=bug_tracking_url,
-            extracted_license_statement=extracted_license_statement,
-            description=description,
-            parties=parties,
-            dependencies=package_dependencies,
-            api_data_url=api_data_url,
-            repository_homepage_url=repository_homepage_url,
-            primary_language=cls.default_primary_language
-        )
+        pkg.parties = parties
+        pkg.primary_language = cls.default_primary_language
+        pkg.populate_license_fields()
+        pkg.populate_holder_field()
+        yield pkg
 
     @classmethod
     def assign_package_to_resources(cls, package, resource, codebase, package_adder):
