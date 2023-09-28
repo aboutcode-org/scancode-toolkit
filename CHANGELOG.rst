@@ -42,6 +42,36 @@ v32.1.0 (next, roadmap)
   of these in other summary plugins.
   See https://github.com/nexB/scancode-toolkit/issues/1745
 
+v32.0.6 - 2023-07-13
+------------------------
+
+This is a minor release with a lot of license detection
+improvements, with new and updated license detection rules
+and new licenses.
+
+- 33 new licenses, 30 licenses updated
+- 70 new and updated license rules
+
+The main updates over the previous stable release are:
+
+- To the license Rule class adds is_license_clue attribute
+  and is_deprecated attribute to support license clues
+  detection, and always maintain consistency on unique rule
+  names. Adds fixes for other license detection bug related
+  to license clues, bug in setup.cfg license detection and
+  makes license detection identifiers python-safe. See
+  https://github.com/nexB/scancode-toolkit/pull/3462
+
+- Update/Add new licenses and license rules. See
+  https://github.com/nexB/scancode-toolkit/pull/3470
+  https://github.com/nexB/scancode-toolkit/pull/3513
+
+- Bump commoncode to v31.0.3 fixing a VirtualCodebase
+  creation issue when there is a directory under the
+  root with the same name as the root directory itself.
+  https://github.com/nexB/commoncode/issues/57
+  https://github.com/nexB/scancode-toolkit/pull/3495
+
 
 v32.0.6 - 2023-07-13
 ------------------------
