@@ -9,4 +9,3 @@ ignorable_urls:
     <license>
         <name>{{The JSON License}}</name>
         <url>http://json.org/license.html</url>
-        <distribution>repo</distribution>
