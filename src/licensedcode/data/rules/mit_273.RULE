@@ -2,6 +2,8 @@
 license_expression: mit
 is_license_tag: yes
 relevance: 90
+is_deprecated: yes
+notes: deprecated because it is too generic and triggers noisy false positives
 ---
 
 { "type": "MIT",
