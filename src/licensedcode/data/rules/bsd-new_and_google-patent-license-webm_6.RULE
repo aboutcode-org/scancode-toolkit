@@ -1,0 +1,8 @@
+---
+license_expression: bsd-new AND google-patent-license-webm
+is_license_reference: yes
+---
+
+Welcome to the WebM Codec SDK. This SDK allows you to integrate your
+  applications with the VP8 and VP9 video codecs, high quality, royalty free,
+  open source codecs deployed on billions of computers and devices worldwide.

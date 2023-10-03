@@ -1,0 +1,8 @@
+---
+license_expression: proprietary-license
+is_license_reference: yes
+notes: https://www.codesynthesis.com/products/odb/license.xhtml This is a ridder on to of the
+    GPL that may or may not conflict.
+---
+
+By linking with the ODB runtime libraries (directly or indirectly, statically or dynamically, at compile time or runtime), your application is subject to the terms of the GPL and/or NCUEL which both require that you release the source code of your application if and when you distribute it. Distributing an application includes giving it to customers, contractors, parent companies, subsidiaries, or any legal entity other than your own. On the other hand, if you only use your application within your organization, such as running it on your company's servers, then you do not need to make your source code public.

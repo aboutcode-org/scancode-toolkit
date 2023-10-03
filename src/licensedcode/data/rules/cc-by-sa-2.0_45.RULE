@@ -1,0 +1,9 @@
+---
+license_expression: cc-by-sa-2.0
+is_license_tag: yes
+relevance: 100
+ignorable_urls:
+    - http://creativecommons.org/licenses/by-sa/2.0/
+---
+
+<cc:license rdf:resource={{"http://creativecommons.org/licenses/by-sa/2.0/"}} />

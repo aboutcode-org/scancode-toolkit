@@ -1,0 +1,17 @@
+---
+license_expression: gfdl-1.1-plus
+is_license_notice: yes
+ignorable_urls:
+    - http://www.fsf.org/
+---
+
+Permission is granted to copy, distribute and/or modify this
+      document under the terms of the <citetitle>GNU Free Documentation
+      License</citetitle>, Version 1.1 or any later version published
+      by the Free Software Foundation with no Invariant Sections, no
+      Front-Cover Texts, and no Back-Cover Texts. You may obtain a copy
+      of the <citetitle>GNU Free Documentation License</citetitle> from
+      the Free Software Foundation by visiting <ulink type="http"
+      url="http://www.fsf.org">their Web site</ulink> or by writing to:
+      Free Software Foundation, Inc., 59 Temple Place - Suite 330,
+      Boston, MA 02111-1307, USA.

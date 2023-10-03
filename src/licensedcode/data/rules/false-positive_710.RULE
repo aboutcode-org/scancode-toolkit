@@ -1,0 +1,10 @@
+---
+is_false_positive: yes
+notes: this is not a license. Seen in https://github.com/liferay/liferay-portal/blob/00334ca6f9fb4d92f5e98c225b104f095ee8b21e/definitions/liferay-plugin-package_7_3_0.properties#L75C1-L83
+---
+
+licenses=
+    #licenses=AGPL
+    #licenses=CCA
+    #licenses=GPL
+    #licenses=LGPL

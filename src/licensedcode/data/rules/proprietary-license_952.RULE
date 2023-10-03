@@ -1,0 +1,240 @@
+---
+license_expression: proprietary-license
+is_license_text: yes
+notes: https://vmssoftware.com/community/community-license/agreement/
+ignorable_urls:
+    - http://www.vmssoftware.com/
+---
+
+****** COMMUNITY LICENSE AGREEMENT ******
+PLEASE READ CAREFULLY: THE USE OF THE SOFTWARE PROVIDED TO YOU BY VMS SOFTWARE,
+INC. ("VSI") IS SUBJECT TO THE TERMS AND CONDITIONS THAT FOLLOW
+("AGREEMENT"). BY DOWNLOADING, INSTALLING, COPYING, ACCESSING, OR USING THE
+SOFTWARE, OR BY CHOOSING THE "I ACCEPT" OPTION LOCATED ON OR ADJACENT TO
+THE SCREEN WHERE THIS AGREEMENT MAY BE DISPLAYED, YOU AGREE TO THE TERMS OF
+THIS AGREEMENT, ANY APPLICABLE WARRANTY STATEMENT AND THE TERMS AND CONDITIONS
+CONTAINED IN THE ANCILLARY SOFTWARE. IF YOU ARE ACCEPTING THESE TERMS ON BEHALF
+OF ANOTHER PERSON OR A COMPANY OR OTHER LEGAL ENTITY, YOU REPRESENT AND WARRANT
+THAT YOU HAVE FULL AUTHORITY TO BIND THAT PERSON, COMPANY, OR LEGAL ENTITY TO
+THESE TERMS. IF YOU DO NOT AGREE TO THESE TERMS, DO NOT DOWNLOAD, INSTALL,
+COPY, ACCESS, OR USE THE SOFTWARE, AND PROMPTLY RETURN THE SOFTWARE WITH PROOF
+OF PURCHASE TO THE PARTY FROM WHOM YOU ACQUIRED IT AND OBTAIN A REFUND OF THE
+AMOUNT YOU PAID, IF ANY. IF YOU DOWNLOADED THE SOFTWARE, CONTACT THE PARTY FROM
+WHOM YOU ACQUIRED IT.
+1. DEFINITIONS
+   1. Non-commercial means not used for commercial advantage, direct monetary
+      compensation, or indirect monetary compensation.
+   2. Software means machine-readable instructions and data (and copies
+      thereof), including middleware and related updates and upgrades that You
+      may be separately authorized to receive, as well as licensed materials,
+      user documentation, user manuals, and operating procedures. "Ancillary
+      Software" means all or any portion of Software provided under public,
+      open source, or third-party license terms.
+   3. Specification means technical information about Software products
+      published in VSI product manuals, user documentation, and technical data
+      sheets in effect on the date VSI delivers Software products to You (as
+      defined below).
+   4. VSI means VMS Software, Inc. or one of its subsidiaries.
+   5. VSI Branded means Software products bearing a trademark or service mark
+      of VMS Software, Inc. or any VSI Affiliate, and embedded VSI selected
+      third-party Software that is not offered under a third-party license
+      agreement.
+   6. You and Your refer either to an individual person or to a single legal
+      entity, as licensee of the Software under the terms of this Agreement.
+2. LICENSE TERMS AND RESTRICTIONS
+   1. Subject to the terms and conditions of this Agreement and the payment of
+      any applicable license fee, VSI grants You a non-exclusive, non-
+      transferable revocable license to Use (as defined below) the Software in
+      object code form as provided to you by VSI, solely for Non-commercial
+      purposes. You may Use Software only as provided for, and in connection
+      with either Alpha, Integrity, or x86-64 processor-based servers, and/or
+      emulators and/or hypervisors, as agreed by You and VSI. "Use" means
+      to install, store, load, execute and/or display results or output of the
+      Software in accordance with the Specifications. Some Software may require
+      license keys or contain other technical protection measures. You
+      acknowledge that VSI may monitor your compliance with Use restrictions
+      remotely or otherwise, and you agree to provide reasonable cooperation in
+      connection therewith.
+   2. This Agreement confers no title or ownership and is not a sale of any
+      rights in the Software. Third-party suppliers are intended beneficiaries
+      under this Agreement and independently may protect their rights in the
+      Software in the event of any infringement. All rights not expressly
+      granted to You are reserved solely to VSI or its suppliers. Nothing
+      herein should be construed as granting You, by implication, estoppel or
+      otherwise, a license relating to Software other than as expressly stated
+      above in this Section 2.
+   3. Unless otherwise permitted by VSI, You (a) may only make copies or
+      adaptations of the Software for archival purposes or when copying or
+      adaptation is an essential step in the authorized use of the Software on
+      a backup device, provided that copies and adaptations are used in no
+      other manner and provided further that Use of Software on the backup
+      device is discontinued when the original or replacement device becomes
+      operable, and (b) may not copy the Software onto or otherwise use or make
+      it available on, to, or through any public or external distributed
+      network.
+   4. No Software support or updates, upgrades or enhancements are provided
+      hereunder. Updates, upgrades, enhancements, or other support are only
+      available under separate VSI support agreements. You may contact VSI to
+      learn more about any support offerings VSI may make available. VSI
+      reserves the right to require additional licenses and fees for Software
+      upgrades or other enhancements, or for Use of the Software on upgraded
+      devices.
+   5. You will not modify, reverse engineer, disassemble, decrypt, decompile,
+      or make derivative works of the Software. Where You have other rights
+      mandated under statute, You will provide VSI with reasonably detailed
+      information regarding any intended modifications, reverse engineering,
+      disassembly, decryption, or decompilation and the purposes therefore.
+   6. Extending the use of Software to any person or entity other than You as a
+      function of providing services, (i.e making the Software available
+      through a commercial timesharing or service bureau) must be authorized in
+      writing by VSI prior to such use and may require additional licenses and
+      fees. You may not publish distribute, resell, or sublicense the Software.
+   7. Notwithstanding anything in this Agreement to the contrary, all or any
+      portion of the Software which constitutes Ancillary Software is licensed
+      to You subject to the terms and conditions of the software license
+      agreement accompanying such Ancillary Software, whether in the form of a
+      separate agreement, shrink wrap license or electronic license terms
+      accepted at time of download. Use of the Ancillary Software by You shall
+      be governed entirely by the terms and conditions of such license and,
+      with respect to VSI, by the limitations and disclaimers of Sections 3 and
+      5 hereof. VSI has identified any Ancillary Software by either noting the
+      Ancillary Software provider's ownership within each Ancillary Software
+      program file and/or by providing information in the "ancillary.txt" or
+      "readme" file that is provided as part of the installation of the
+      Software. The Ancillary Software licenses are also set forth in the
+      "ancillary.txt" or "readme" file. If the Software includes Ancillary
+      Software licensed under the GNU General Public License and/or under the
+      GNU Lesser General Pubic License ("GPL Software"), a complete machine-
+      readable copy of the GPL Software Source Code ("GPL Source Code") is
+      either: (i) included with the Software that is delivered to You; or (ii)
+      upon your written request, VSI will provide to You, a complete machine-
+      readable copy of the GPL Source Code, or (iii) if You obtained the
+      Software by downloading it from a VSI website and neither of the
+      preceding options are available, you may download the GPL Source Code
+      from the same website. Information about how to make a written request
+      for GPL Source Code may be found in the ancillary.txt file or, if an
+      address is not listed in that file, at the following website:
+      www.vmssoftware.com.
+3. WARRANTY DISCLAIMER
+TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, VSI AND ITS SUPPLIERS
+PROVIDE THE SOFTWARE "AS IS" AND WITH ALL FAULTS, AND HEREBY DISCLAIM ALL
+INDEMNITIES, WARRANTIES AND CONDITIONS, EITHER EXPRESS, IMPLIED, WHETHER BY
+STATUTE, COMMON LAW, CUSTOM OR OTHERWISE, INCLUDING, BUT NOT LIMITED TO,
+WARRANTIES OF TITLE AND NON-INFRINGEMENT, ANY IMPLIED WARRANTIES, DUTIES OR
+CONDITIONS OF MERCHANTABILITY, OF FITNESS FOR A PARTICULAR PURPOSE, AND OF LACK
+OF VIRUSES. VSI DOES NOT WARRANT THAT THE OPERATION OF SOFTWARE WILL BE
+UNINTERRUPTED OR ERROR FREE OR THAT THE SOFTWARE WILL MEET YOUR REQUIREMENTS.
+SOME STATES/JURISDICTIONS DO NOT ALLOW EXCLUSION OF IMPLIED WARRANTIES OR
+LIMITATIONS ON THE DURATION OF IMPLIED WARRANTIES, SO THE ABOVE DISCLAIMER MAY
+NOT APPLY TO YOU IN ITS ENTIRETY.
+4. PARTICIPATION
+In partial consideration of the license granted hereunder, you agree to provide
+reasonable participation in the online Software community forums, including
+without limitation such activities as answering questions and contributing
+articles and how-to videos to the OpenVMS online Software community at https://
+forum.vmssoftware.com.
+5. FONT PROGRAMS
+   1. The Software contains font software programs that generate human-readable
+      typeface designs ("Font Programs"). You may not install or use the
+      Font Programs on any device except one on which you have installed a
+      properly licensed copy of the Software.
+   2. The Font Programs are supplied solely to You for Non-commercial use only.
+   3. You may not convert the Font Programs into a different format. You may
+      not alter or modify the Font Programs in any manner that results in the
+      Font Programs having different or enhanced functionality than when it was
+      delivered to you as part of the Software.
+   4. You may use an application program to embed the output of the Font
+      Programs into an electronic document. You may send such an electronic
+      document to a third party only for the purpose of permitting the third
+      party to view and print the electronic document. Font Programs may not be
+      embedded in any format that permits the recipient of an electronic
+      document to install the Font Programs or to use the Font Programs for any
+      purpose beyond merely viewing and printing the document. You may not
+      embed Font Programs into a Commercial Product. A "Commercial Product"
+      is an electronic document that is distributed in exchange for a fee or
+      other consideration. For example, you cannot embed Font Programs into an
+      electronic book or magazine that is offered to the public for a fee.
+   5. Except for the print and view embedding permission granted in Section 5
+      (d) above, you may not copy the Font Programs, provided, however, you may
+      make one copy of the Font Programs for archival purposes only. The
+      archival copy cannot be distributed and can be used only when you have
+      permanently deleted the original or any copy of the Font Programs on your
+      device. You may not reverse engineer, decompile, or take any action which
+      results in or designed to result in gaining access to the source code of
+      the Font Programs, except as permitted by law and then only for the
+      purpose of achieving an interoperable program
+   6. The Font Programs supplied with the Software are proprietary and are
+      protected by U.S. and international copyright and trademark law. All
+      rights not expressly set forth herein are reserved. A breach of this End
+      User License Agreement may subject you to damages and injunctive relief
+      under this Agreement as well as under applicable copyright and trademark
+      law.
+   7. If you are acquiring Font Programs on behalf of any unit or agency of the
+      United States Government, the following provisions shall apply. Use,
+      duplication, or disclosure by the United States Government is subject to
+      restrictions as set forth in the Rights in Technical Data and computer
+      Software clause at FAR 252.227-7013, subdivision (b)(3)(ii) or
+      subparagraph (c)(1(ii), as appropriate. Further use, duplication, or
+      disclosure is subject to restrictions to restricted rights software as
+      set forth in FAR 52.227-19(c)(2).
+6. LIMITATION OF LIABILITY AND REMEDIES
+NOTWITHSTANDING ANY DAMAGES THAT YOU MIGHT INCUR, AND EXCEPT FOR DAMAGES FOR
+BODILY INJURY (INCLUDING DEATH), THE ENTIRE AGGREGATE LIABILITY OF VSI AND ANY
+OF ITS SUPPLIERS RELATING TO THE SOFTWARE OR THIS AGREEMENT, AND YOUR EXCLUSIVE
+REMEDY FOR ALL OF THE FOREGOING, SHALL BE LIMITED TO THE GREATER OF THE AMOUNT
+ACTUALLY PAID BY YOU SEPARATELY FOR THE SOFTWARE OR U.S. $5.00. TO THE MAXIMUM
+EXTENT PERMITTED BY APPLICABLE LAW, IN NO EVENT SHALL VSI OR ITS SUPPLIERS BE
+LIABLE FOR ANY SPECIAL, INCIDENTAL, INDIRECT, OR CONSEQUENTIAL DAMAGES
+WHATSOEVER INCLUDING, BUT NOT LIMITED TO, DAMAGES FOR LOSS OF PROFITS OR
+REVENUES, BUSINESS INTERRUPTION, DOWNTIME COSTS, FAILURE TO REALIZE EXPECTED
+SAVINGS, LOSS, DISCLOSURE, UNAVAILABILITY OF OR DAMAGE TO DATA, SOFTWARE
+RESTORATION, OR LOSS OF PRIVACY ARISING OUT OF OR IN ANY WAY RELATED TO THE USE
+OF OR INABILITY TO USE THE SOFTWARE, OR OTHERWISE IN CONNECTION WITH ANY
+PROVISION OF THIS AGREEMENT, EVEN IF VSI OR ANY SUPPLIER HAS BEEN ADVISED OF
+THE POSSIBILITY OF SUCH DAMAGES AND EVEN IF THE REMEDY FAILS OF ITS ESSENTIAL
+PURPOSE. SOME STATES/JURISDICTIONS DO NOT ALLOW THE EXCLUSION OR LIMITATION OF
+INCIDENTAL OR CONSEQUENTIAL DAMAGES, SO THE ABOVE LIMITATION OR EXCLUSION MAY
+NOT APPLY TO YOU.
+7. TERMINATION
+This Agreement is effective for twelve (12) months from installation of the
+Software. Notwithstanding the foregoing, this Agreement will also terminate
+upon conditions set forth elsewhere in this Agreement or if You fail to comply
+with any term or condition hereof. Upon termination You will destroy the
+Software and all copies of the Software or return them to VSI. You may retain
+one copy of the Software subsequent to termination solely for archival purposes
+only. Sections 3, 5, 6, and 7 will survive termination of this Agreement.
+8. GENERAL
+   1. You may not assign, sublicense, delegate, or otherwise transfer
+      ("Assign") all or any part of this Agreement without prior written
+      consent from VSI, payment to VSI of any applicable fees, and compliance
+      with VSI's Software license transfer policies and any applicable third-
+      party license terms. Any such attempted Assignment will be null and void.
+      Where an authorized Assignment occurs in accordance with this Section,
+      Your rights under this Agreement will terminate, and You will immediately
+      deliver the Software and all copies to the Assignee. The Assignee must
+      agree in writing to the terms of this Agreement, and the transferee
+      thereafter will be considered "You" for purposes of this Agreement.
+      You may transfer firmware only upon transfer of the associated hardware.
+   2. If the Software is licensed for use in the performance of a U.S.
+      Government prime contract or subcontract, You agree that, consistent with
+      FAR 12.211 and 12.212, commercial computer Software, computer Software
+      documentation, and technical data for commercial items are licensed under
+      VSI's standard commercial license.
+   3. To the extent You export, re-export, or import Software, technology, or
+      technical data licensed or provided hereunder, You assume sole
+      responsibility for complying with applicable laws and regulations and for
+      obtaining required export and import authorizations. VSI may suspend
+      performance if You are in violation of any applicable laws or
+      regulations.
+   4. This Agreement is governed by the laws of the State of Delaware, U.S.A.,
+      excluding rules as to choice and conflict of law. You and VSI agree that
+      the United Nations Convention on Contracts for the International Sale of
+      Goods will not apply to this Agreement.
+   5. Subject to the other terms and conditions of this Agreement, this
+      Agreement is the entire agreement between VSI and You regarding Your Use
+      of the Software, and supersedes and replaces any previous communications,
+      representations, or agreements, or Your additional or inconsistent terms,
+      whether oral or written. In the event any provision of this Agreement is
+      held invalid or unenforceable VSI's failure to exercise or delay in
+      exercising any of its rights under this Agreement will not constitute or
+      be deemed a waiver or forfeiture of those rights.

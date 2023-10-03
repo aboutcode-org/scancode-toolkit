@@ -1,0 +1,20 @@
+---
+license_expression: cddl-1.0
+is_license_notice: yes
+notes: The cddl was 1.0 in late 2006 when this Apache-like notice was used in some Sun code
+    See https://web.archive.org/web/20061201110926/http://www.sun.com:80/cddl/
+ignorable_urls:
+    - http://www.sun.com/cddl/
+---
+
+Licensed under the Common Development and Distribution License,
+ you may not use this file except in compliance with the License.
+ You may obtain a copy of the License at
+ 
+   http://www.sun.com/cddl/
+   
+ Unless required by applicable law or agreed to in writing, software
+ distributed under the License is distributed on an "AS IS" BASIS,
+ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or 
+ implied. See the License for the specific language governing
+ permissions and limitations under the License.

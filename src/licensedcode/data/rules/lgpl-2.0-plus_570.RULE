@@ -1,0 +1,11 @@
+---
+license_expression: lgpl-2.0-plus
+is_license_notice: yes
+relevance: 100
+referenced_filenames:
+    - COPYING.LIB
+---
+
+Copyright
+The libiconv and libcharset _libraries_ and their header files are under LGPL,
+see file COPYING.LIB.

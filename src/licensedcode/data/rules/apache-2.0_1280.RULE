@@ -1,0 +1,9 @@
+---
+license_expression: apache-2.0
+is_license_notice: yes
+relevance: 100
+ignorable_urls:
+    - http://www.apache.org/licenses/LICENSE-2.0.html
+---
+
+They are distributed under the Apache License http://www.apache.org/licenses/LICENSE-2.0.html
