@@ -1,0 +1,49 @@
+---
+license_expression: gpl-2.0 WITH mysql-linking-exception-2018 AND gpl-2.0 WITH universal-foss-exception-1.0
+is_license_notice: yes
+ignorable_urls:
+    - http://oss.oracle.com/licenses/universal-foss-exception
+    - http://www.gnu.org/licenses/gpl-2.0.txt
+---
+
+This software is released under version 2 of the GNU
+   General Public License (GPLv2), as set forth below, with the following
+   additional permissions:
+
+   This distribution of MySQL Connector/J 8.0 is distributed with certain
+   software that is licensed under separate terms, as designated in a
+   particular file or component or in the license documentation. Without
+   limiting your rights under the GPLv2, the authors of MySQL hereby grant
+   you an additional permission to link the program and your derivative
+   works with the separately licensed software that they have included
+   with the program.
+
+   Without limiting the foregoing grant of rights under the GPLv2 and
+   additional permission as to separately licensed software, this
+   Connector is also subject to the Universal FOSS Exception, version 1.0,
+   a copy of which is reproduced below and can also be found along with
+   its FAQ at http://oss.oracle.com/licenses/universal-foss-exception.
+
+
+Election of GPLv2
+
+   For the avoidance of doubt, except that if any license choice other
+   than GPL or LGPL is available it will apply instead, Oracle elects to
+   use only the General Public License version 2 (GPLv2) at this time for
+   any software where a choice of GPL license versions is made available
+   with the language indicating that GPLv2 or any later version may be
+   used, or where a choice of which version of the GPL is applied is
+   otherwise unspecified.
+
+GNU General Public License Version 2.0, June 1991
+
+The following applies to all products licensed under the GNU General
+Public License, Version 2.0: You may not use the identified files
+except in compliance with the GNU General Public License, Version
+2.0 (the "License.") You may obtain a copy of the License at
+http://www.gnu.org/licenses/gpl-2.0.txt. A copy of the license is
+also reproduced below. Unless required by applicable law or agreed
+to in writing, software distributed under the License is distributed
+on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND,
+either express or implied. See the License for the specific language
+governing permissions and limitations under the License.

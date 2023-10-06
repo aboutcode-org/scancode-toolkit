@@ -1,0 +1,14 @@
+---
+license_expression: gpl-2.0 WITH mysql-linking-exception-2018 AND gpl-2.0 WITH universal-foss-exception-1.0
+is_license_reference: yes
+minimum_coverage: 100
+referenced_filenames:
+    - LICENSE
+---
+
+License information can be found in the LICENSE file.
+
+This distribution may include materials developed by third parties.
+For license and attribution notices for these materials, please refer to the LICENSE file.
+
+For more information on MySQL Connector

@@ -1,0 +1,11 @@
+---
+license_expression: gpl-3.0
+is_license_notice: yes
+ignorable_urls:
+    - http://www.gnu.org/licenses/
+---
+
+It under the terms of the GNU General Public License as published by   
+ the Free Software Foundation, either version 3 of the License.     
+ You should have received a copy of the GNU General Public License  
+ along with . If not, see <http://www.gnu.org/licenses/>.

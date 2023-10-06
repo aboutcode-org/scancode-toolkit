@@ -1,0 +1,14 @@
+---
+license_expression: gpl-3.0 AND other-copyleft
+is_license_notice: yes
+notes: Seen in https://raw.githubusercontent.com/levkovigor/STM32-OTA-ESP8266-for-windows/7e6da79e0524afaec866907cb224bec607426ab6/README.md
+    Has extra attribution requirements, that are likely OK with the GPL
+ignorable_urls:
+    - https://github.com/csnol/STM32-OTA
+---
+
+This program is free software: you can redistribute it and/or modify it under
+the terms of the GNU General Public License as published by the Free Software
+Foundation, either version 3 of the License, but you have to keep below webserver
+code in your sketch for sharing.
+>  Version 1.0 by <a style="color:white" href="https://github.com/csnol/STM32-OTA">CSNOL

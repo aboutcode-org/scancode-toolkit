@@ -1,0 +1,12 @@
+---
+license_expression: upl-1.0 OR apache-2.0
+is_license_notice: yes
+ignorable_urls:
+    - http://www.apache.org/licenses/LICENSE-2.0
+    - https://oss.oracle.com/licenses/upl
+---
+
+This software is dual-licensed to you under the Universal Permissive License
+(UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl
+or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0.
+You may choose either license.
