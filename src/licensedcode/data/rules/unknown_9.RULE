@@ -4,4 +4,4 @@ is_license_tag: yes
 relevance: 100
 ---
 
-license   = "none
+{{license   = none}}
