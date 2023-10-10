@@ -216,31 +216,37 @@ class TestRule(FileBasedTesting):
         expected = self.get_test_loc('models/rules.expected.json')
         check_json(expected, results)
 
-    def test_rules_types_has_only_boolean_values(self):
+    def test_rules_have_only_one_flag_of_bool_type(self):
         rules = list(models.load_rules(rules_data_dir))
-        rule_consitency_errors = []
+        rule_errors = []
 
         for r in rules:
-            list_rule_types = [r.is_license_text, r.is_license_notice,
-                               r.is_license_tag, r.is_license_reference]
+            rule_flags = [
+                r.is_license_text,
+                r.is_license_notice,
+                r.is_license_reference,
+                r.is_license_tag,
+                r.is_license_intro,
+                r.is_license_clue,
+                r.is_false_positive,
+            ]
+            number_of_flags_set = 0
+            for rule_flag in rule_flags:
+                if not type(rule_flag) == bool:
+                    # invalid type
+                    rule_errors.append(r.rule_file)
+                    break
 
-            if any(type(rule_type) != bool for rule_type in list_rule_types):
-                rule_consitency_errors.append((r.data_file, r.text_file))
+                if rule_flag is True:
+                    number_of_flags_set += 1
+                elif rule_flag is False:
+                    continue
 
-        assert rule_consitency_errors == []
+                if number_of_flags_set not in (0, 1):
+                    rule_errors.append(r.rule_file)
+                    break
 
-    def test_rules_have_only_one_rule_type(self):
-        rules = list(models.load_rules(rules_data_dir))
-        rule_consitency_errors = []
-
-        for r in rules:
-            list_rule_types = [r.is_license_text, r.is_license_notice,
-                               r.is_license_tag, r.is_license_reference]
-
-            if sum(list_rule_types) > 1:
-                rule_consitency_errors.append(r.data_file)
-
-        assert rule_consitency_errors == []
+        assert rule_errors == []
 
     def test_dump_rules(self):
         test_dir = self.get_test_loc('models/rules', copy=True)
