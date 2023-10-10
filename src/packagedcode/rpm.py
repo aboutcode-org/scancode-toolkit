@@ -96,6 +96,9 @@ class EVR(namedtuple('EVR', 'epoch version release')):
         note: the sort order of the named tuple is the sort order.
         But for creation we put the rarely used epoch last with a default to None.
         """
+        
+        epoch = str(epoch) if epoch else ""
+
         if epoch and epoch.strip() and not epoch.isdigit():
             raise ValueError('Invalid epoch: must be a number or empty.')
         if not version:

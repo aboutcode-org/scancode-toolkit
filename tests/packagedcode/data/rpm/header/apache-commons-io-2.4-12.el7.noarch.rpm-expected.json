@@ -1,0 +1,19 @@
+{
+    "name": "apache-commons-io",
+    "epoch": "1",
+    "version": "2.4",
+    "release": "12.el7",
+    "arch": "noarch",
+    "os": "linux",
+    "summary": "Utilities to assist with developing IO functionality",
+    "description": null,
+    "distribution": null,
+    "vendor": "CentOS",
+    "license": "ASL 2.0",
+    "packager": "CentOS BuildSystem <http://bugs.centos.org>",
+    "group": "Unspecified",
+    "url": "http://commons.apache.org/io",
+    "source_rpm": "apache-commons-io-2.4-12.el7.src.rpm",
+    "dist_url": null,
+    "is_binary": true
+}
