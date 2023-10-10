@@ -29,8 +29,8 @@ headers:
       system_environment:
         operating_system: linux
         cpu_architecture: 64
-        platform: Linux-5.15.0-76-generic-x86_64-with-glibc2.29
-        platform_version: '#83~20.04.1-Ubuntu SMP Wed Jun 21 20:23:31 UTC 2023'
+        platform: Linux-5.15.0-84-generic-x86_64-with-glibc2.29
+        platform_version: '#93~20.04.1-Ubuntu SMP Wed Sep 6 16:15:40 UTC 2023'
         python_version: "3.8.10 (default, May 26 2023, 14:05:08) \n[GCC 9.4.0]"
       spdx_license_list_version: '3.21'
       files_count: 4
@@ -322,7 +322,11 @@ license_references:
     is_unknown: no
     is_generic: no
     spdx_license_key: MIT
-    other_spdx_license_keys: []
+    other_spdx_license_keys:
+      - LicenseRef-MIT-Bootstrap
+      - LicenseRef-MIT-Discord
+      - LicenseRef-MIT-TC
+      - LicenseRef-MIT-Diehl
     osi_license_key:
     text_urls:
       - http://opensource.org/licenses/mit-license.php

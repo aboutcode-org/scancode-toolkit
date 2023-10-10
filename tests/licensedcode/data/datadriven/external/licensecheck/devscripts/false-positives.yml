@@ -1,5 +1,6 @@
 license_expressions:
-  - x11-tiff
+  - mit-old-style-no-advert
+  - other-permissive
   - generic-cla
   - unknown-license-reference
   - unknown-license-reference

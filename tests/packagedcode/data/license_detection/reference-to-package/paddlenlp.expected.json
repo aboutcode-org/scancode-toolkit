@@ -406,15 +406,21 @@
       ]
     },
     {
-      "identifier": "apache_2_0-c4e30bcd-ccfd-bbc3-d2f1-196ab911e47d",
+      "identifier": "apache_2_0-ec8d7936-cda2-7097-40cf-dbe8a06e916e",
       "license_expression": "apache-2.0",
       "detection_count": 2,
       "detection_log": []
     },
     {
-      "identifier": "apache_2_0-ec8d7936-cda2-7097-40cf-dbe8a06e916e",
+      "identifier": "apache_2_0-3972bfb2-eb21-3d0c-d862-1642babb9f95",
       "license_expression": "apache-2.0",
-      "detection_count": 2,
+      "detection_count": 1,
+      "detection_log": []
+    },
+    {
+      "identifier": "apache_2_0-c4e30bcd-ccfd-bbc3-d2f1-196ab911e47d",
+      "license_expression": "apache-2.0",
+      "detection_count": 1,
       "detection_log": []
     },
     {
@@ -1448,21 +1454,21 @@
           "license_expression": "apache-2.0",
           "matches": [
             {
-              "score": 100.0,
-              "start_line": 3,
+              "score": 74.36,
+              "start_line": 1,
               "end_line": 13,
-              "matched_length": 85,
-              "match_coverage": 100.0,
-              "matcher": "2-aho",
+              "matched_length": 87,
+              "match_coverage": 74.36,
+              "matcher": "3-seq",
               "license_expression": "apache-2.0",
-              "rule_identifier": "apache-2.0_7.RULE",
+              "rule_identifier": "apache-2.0_1297.RULE",
               "rule_relevance": 100,
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_7.RULE",
-              "matched_text": "Licensed under the Apache License, Version 2.0 (the \"License\");\n# you may not use this file except in compliance with the License.\n# You may obtain a copy of the License at\n#\n#     http://www.apache.org/licenses/LICENSE-2.0\n#\n# Unless required by applicable law or agreed to in writing, software\n# distributed under the License is distributed on an \"AS IS\" BASIS,\n# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n# See the License for the specific language governing permissions and\n# limitations under the License."
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_1297.RULE",
+              "matched_text": "All Rights Reserved.\n#\n# Licensed under the Apache License, Version 2.0 (the \"License\");\n# you may not use this [file] except in compliance with the License.\n# You may obtain a copy of the License at\n#\n#     http://www.apache.org/licenses/LICENSE-2.0\n#\n# Unless required by applicable law or agreed to in writing, software\n# distributed under the License is distributed on an \"AS IS\" BASIS,\n# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n# See the License for the specific language governing permissions and\n# limitations under the License."
             }
           ],
           "detection_log": [],
-          "identifier": "apache_2_0-c4e30bcd-ccfd-bbc3-d2f1-196ab911e47d"
+          "identifier": "apache_2_0-3972bfb2-eb21-3d0c-d862-1642babb9f95"
         },
         {
           "license_expression": "apache-2.0",
@@ -1499,7 +1505,7 @@
         }
       ],
       "license_clues": [],
-      "percentage_of_license_text": 26.1,
+      "percentage_of_license_text": 26.65,
       "scan_errors": []
     }
   ]

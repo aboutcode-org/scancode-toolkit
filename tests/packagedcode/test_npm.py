@@ -409,7 +409,7 @@ test_data = [
 
     # FIXME: we should follow the LICENSE file
     (['SEE LICENSE IN LICENSE'], 'unknown-license-reference'),
-    (['For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-oss-license.'], 'unknown-license-reference'),
+    (['For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-oss-license.'], '(gpl-2.0-plus AND (gpl-2.0-plus OR lgpl-2.1-plus OR mpl-1.1)) OR commercial-license'),
     (['See License in ./LICENSE file'], 'unknown-license-reference'),
 ]
 

@@ -11,11 +11,11 @@ declared_license:
   - LGPL-2.1
   - MIT(*)
   - MIT(**)
-declared_license_expression: lgpl-2.1 AND lgpl-2.0-plus
-declared_license_expression_spdx: LGPL-2.1-only AND LGPL-2.0-or-later
-other_license_expression: (lgpl-2.1 AND lgpl-2.0-plus) AND (gpl-2.0 AND gpl-2.0 AND gpl-2.0)
-  AND bsd-new AND (isc AND ibm-dhcp) AND xfree86-1.0 AND (gpl-2.0-plus AND gpl-2.0-plus)
-other_license_expression_spdx: (LGPL-2.1-only AND LGPL-2.0-or-later) AND (GPL-2.0-only AND GPL-2.0-only
+declared_license_expression: lgpl-2.1
+declared_license_expression_spdx: LGPL-2.1-only
+other_license_expression: (lgpl-2.1 AND lgpl-2.1) AND (gpl-2.0 AND gpl-2.0 AND gpl-2.0) AND
+  bsd-new AND (isc AND ibm-dhcp) AND xfree86-1.0 AND (gpl-2.0-plus AND gpl-2.0-plus)
+other_license_expression_spdx: (LGPL-2.1-only AND LGPL-2.1-only) AND (GPL-2.0-only AND GPL-2.0-only
   AND GPL-2.0-only) AND BSD-3-Clause AND (ISC AND LicenseRef-scancode-ibm-dhcp) AND LicenseRef-scancode-xfree86-1.0
   AND (GPL-2.0-or-later AND GPL-2.0-or-later)
 license_detections: []
@@ -140,7 +140,7 @@ other_license_detections:
           The complete text of the GNU General Public License
           can be found in /usr/share/common-licenses/GPL-2 file.
     identifier: gpl_2_0_plus-fe100017-b30d-a3e1-08b9-40cc9f056db5
-  - license_expression: lgpl-2.1 AND lgpl-2.0-plus
+  - license_expression: lgpl-2.1
     matches:
       - score: '100.0'
         start_line: 96
@@ -153,16 +153,16 @@ other_license_detections:
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1_38.RULE
         matched_text: 'License: lgpl-2.1'
-      - score: '89.68'
+      - score: '100.0'
         start_line: 97
         end_line: 110
-        matched_length: 113
-        match_coverage: '89.68'
-        matcher: 3-seq
-        license_expression: lgpl-2.0-plus
-        rule_identifier: lgpl-2.0-plus_477.RULE
+        matched_length: 120
+        match_coverage: '100.0'
+        matcher: 1-hash
+        license_expression: lgpl-2.1
+        rule_identifier: lgpl-2.1_453.RULE
         rule_relevance: 100
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0-plus_477.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1_453.RULE
         matched_text: |
           This program is free software: you can redistribute it and/or modify
           it under the terms of the GNU Lesser General Public License as published by
@@ -177,8 +177,8 @@ other_license_detections:
           along with this program. If not, see <http://www.gnu.org/licenses/>.
 
           The complete text of the GNU Lesser General Public License
-          can be found in /usr/share/common-licenses/
-    identifier: lgpl_2_1_and_lgpl_2_0_plus-75866488-678a-19bf-7970-6610a46062a1
+          can be found in /usr/share/common-licenses/GPL-2.1 file.
+    identifier: lgpl_2_1-eef28a01-301f-7c68-9a3d-06ca8557b06f
   - license_expression: isc AND ibm-dhcp
     matches:
       - score: '100.0'
