@@ -1,10 +1,10 @@
 declared_license:
-declared_license_expression: qti-linux-firmware AND proprietary-license AND openssl-ssleay AND
-  openssl-ssleay AND openssl AND ssleay-windows AND zlib AND zlib AND public-domain AND bsd-new
-  AND gary-s-brown AND other-permissive AND public-domain-disclaimer AND public-domain-disclaimer
+declared_license_expression: qti-linux-firmware AND unknown-license-reference AND openssl-ssleay
+  AND openssl-ssleay AND openssl AND ssleay-windows AND zlib AND zlib AND public-domain AND
+  bsd-new AND gary-s-brown AND other-permissive AND public-domain-disclaimer AND public-domain-disclaimer
   AND (gpl-2.0 OR bsd-new) AND (gpl-2.0 OR bsd-new) AND bsd-new AND bsd-new AND bsd-new AND
   isc
-declared_license_expression_spdx: LicenseRef-scancode-qti-linux-firmware AND LicenseRef-scancode-proprietary-license
+declared_license_expression_spdx: LicenseRef-scancode-qti-linux-firmware AND LicenseRef-scancode-unknown-license-reference
   AND OpenSSL AND OpenSSL AND LicenseRef-scancode-openssl AND LicenseRef-scancode-ssleay-windows
   AND Zlib AND Zlib AND LicenseRef-scancode-public-domain AND BSD-3-Clause AND LicenseRef-scancode-gary-s-brown
   AND LicenseRef-scancode-other-permissive AND LicenseRef-scancode-public-domain-disclaimer
@@ -233,24 +233,22 @@ license_detections:
           they have requested this Agreement and all related documents be prepared
           in English.
     identifier: qti_linux_firmware-8701f5f2-a72d-3e30-4c18-4411e2990f20
-  - license_expression: proprietary-license
+  - license_expression: unknown-license-reference
     matches:
-      - score: '44.44'
-        start_line: 231
-        end_line: 234
-        matched_length: 32
+      - score: '100.0'
+        start_line: 232
+        end_line: 233
+        matched_length: 3
         match_coverage: '100.0'
-        matcher: 3-seq
-        license_expression: proprietary-license
-        rule_identifier: proprietary-license_557.RULE
-        rule_relevance: 50
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/proprietary-license_557.RULE
+        matcher: 2-aho
+        license_expression: unknown-license-reference
+        rule_identifier: unknown-license-reference_240.RULE
+        rule_relevance: 100
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/unknown-license-reference_240.RULE
         matched_text: |
-          is a trademark of Qualcomm Incorporated, registered in the
-          United States and other countries. All Qualcomm Incorporated trademarks are used
-          with permission. Other products and brand names may be trademarks or registered
-          trademarks of their respective owners.
-    identifier: proprietary_license-39b63884-7ff2-74b4-3a45-5a2b9738007e
+          used
+          with permission.
+    identifier: unknown_license_reference-bf37b7f1-3af7-a3ff-a4b0-f2abd0d41206
   - license_expression: openssl-ssleay
     matches:
       - score: '100.0'

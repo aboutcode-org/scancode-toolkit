@@ -31,7 +31,8 @@ from collections.abc import Set
 from itertools import count
 from itertools import groupby
 
-from intbitset import intbitset
+# from intbitset import intbitset
+from bitcode.bitcode import intbitset
 
 """
 Ranges and intervals of integers using bitmaps.

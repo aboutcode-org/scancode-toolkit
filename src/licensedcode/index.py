@@ -17,7 +17,8 @@ import os
 import sys
 from time import time
 
-from intbitset import intbitset
+# from intbitset import intbitset
+from bitcode.bitcode import intbitset
 
 from licensedcode import SMALL_RULE
 from licensedcode import TINY_RULE
@@ -45,14 +46,14 @@ matching is delegated to other modules that implement a matching strategy.
 """
 
 # Tracing flags
-TRACE = False or os.environ.get('SCANCODE_DEBUG_LICENSE', False)
-TRACE_APPROX = False
-TRACE_APPROX_CANDIDATES = False
-TRACE_APPROX_MATCHES = False
-TRACE_INDEXING = False or os.environ.get('SCANCODE_DEBUG_LICENSE_INDEX', False)
-TRACE_INDEXING_PERF = False
-TRACE_TOKEN_DOC_FREQ = False
-TRACE_SPDX_LID = False
+TRACE = True or os.environ.get('SCANCODE_DEBUG_LICENSE', False)
+TRACE_APPROX = True
+TRACE_APPROX_CANDIDATES = True
+TRACE_APPROX_MATCHES = True
+TRACE_INDEXING = True or os.environ.get('SCANCODE_DEBUG_LICENSE_INDEX', False)
+TRACE_INDEXING_PERF = True
+TRACE_TOKEN_DOC_FREQ = True
+TRACE_SPDX_LID = True
 
 
 def logger_debug(*args):

@@ -1,0 +1,12 @@
+---
+key: unknown-license-reference
+short_name: Unknown License reference
+name: Unknown License file reference
+category: Unstated License
+owner: Unspecified
+notes: This applies to the case of a file with no clear license, which may be referenced via
+    URL or text such as "See license in..." or "This file is licensed under...", but where the
+    reference cannot be resolved to a specific named, public license.
+is_unknown: yes
+spdx_license_key: LicenseRef-scancode-unknown-license-reference
+---
