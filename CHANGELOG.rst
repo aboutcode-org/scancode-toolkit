@@ -42,7 +42,27 @@ v32.1.0 (next, roadmap)
   of these in other summary plugins.
   See https://github.com/nexB/scancode-toolkit/issues/1745
 
-v32.0.6 - 2023-07-13
+
+v32.0.8 - 2023-10-11
+------------------------
+
+This is a minor release with license detection
+improvements, with new and updated license detection rules
+and new licenses.
+
+The main updates over the previous stable release are:
+
+- New and updated license rules fixing several license
+  detection bugs. See for more details:
+  https://github.com/nexB/scancode-toolkit/pull/3545
+  https://github.com/nexB/scancode-toolkit/pull/3519
+
+- Bugfix for an epoch parser bug with numeric values
+  in rpm. See for more details:
+  https://github.com/nexB/scancode-toolkit/pull/3520
+
+
+v32.0.7 - 2023-09-28
 ------------------------
 
 This is a minor release with a lot of license detection
