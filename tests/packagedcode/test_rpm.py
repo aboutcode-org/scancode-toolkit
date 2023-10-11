@@ -391,3 +391,7 @@ class TestRpmTags(FileBasedTesting):
     def test_rpm_tags_zziplib_0_11_15_3sf_i586_rpm(self):
         test_file = self.get_test_loc('rpm/header/zziplib-0.11.15-3sf.i586.rpm')
         self.check_rpm_tags(test_file)
+
+    def test_rpm_tags_apache_commons_io_2_4_12_el7_noarch_rpm(self):
+        test_file = self.get_test_loc('rpm/header/apache-commons-io-2.4-12.el7.noarch.rpm')
+        self.check_rpm_tags(test_file)
