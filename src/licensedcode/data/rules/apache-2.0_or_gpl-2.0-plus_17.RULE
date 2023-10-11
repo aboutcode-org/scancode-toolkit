@@ -1,0 +1,8 @@
+---
+license_expression: apache-2.0 OR gpl-2.0-plus
+is_license_notice: yes
+minimum_coverage: 80
+---
+
+*  This file is provided under the Apache License 2.0, or the
+ *  GNU General Public License v2.0 or later.

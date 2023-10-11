@@ -1,0 +1,21 @@
+---
+license_expression: cc-by-sa-3.0
+is_license_tag: yes
+ignorable_urls:
+    - http://creativecommons.org/licenses/by-sa/3.0/
+    - http://web.resource.org/cc/Attribution
+    - http://web.resource.org/cc/DerivativeWorks
+    - http://web.resource.org/cc/Distribution
+    - http://web.resource.org/cc/Notice
+    - http://web.resource.org/cc/Reproduction
+    - http://web.resource.org/cc/ShareAlike
+---
+
+<cc:License rdf:about={{"http://creativecommons.org/licenses/by-sa/3.0/"}}>
+          <cc:permits rdf:resource="http://web.resource.org/cc/Reproduction" />
+          <cc:permits rdf:resource="http://web.resource.org/cc/Distribution" />
+          <cc:requires rdf:resource="http://web.resource.org/cc/Notice" />
+          <cc:requires rdf:resource="http://web.resource.org/cc/Attribution" />
+          <cc:permits rdf:resource="http://web.resource.org/cc/DerivativeWorks" />
+          <cc:requires rdf:resource="http://web.resource.org/cc/ShareAlike" />
+        </cc:License>

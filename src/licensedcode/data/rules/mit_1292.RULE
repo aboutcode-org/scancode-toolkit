@@ -1,0 +1,13 @@
+---
+license_expression: mit
+is_license_notice: yes
+referenced_filenames:
+    - license.txt
+ignorable_urls:
+    - http://opensource.org/
+    - http://opensource.org/licenses/mit-license.php
+---
+
+// Source: http://opensource.org/
+// This code is distributed under MIT license. 
+// See license.txt or http://opensource.org/licenses/mit-license.php

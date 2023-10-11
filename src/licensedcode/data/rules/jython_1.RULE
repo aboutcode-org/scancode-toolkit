@@ -1,0 +1,9 @@
+---
+license_expression: jython
+is_license_tag: yes
+ignorable_urls:
+    - http://www.jython.org/Project/license.html
+---
+
+name: {{Jython Software License}}
+url: http://www.jython.org/Project/license.html

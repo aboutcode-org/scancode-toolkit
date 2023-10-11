@@ -1,0 +1,7 @@
+---
+license_expression: bsd-simplified
+is_license_notice: yes
+notes: https://raw.githubusercontent.com/uclouvain/openjpeg/fe2fa707161b2025ef82c325b9110c08bd0e812e/README.md
+---
+
+released under the [BSD 2-clause "Simplified" License][link-license], anyone can use or modify the code, even for commercial applications. The only restriction is to retain the copyright in the sources or in the binaries documentation.

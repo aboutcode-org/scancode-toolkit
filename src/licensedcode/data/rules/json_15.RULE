@@ -6,4 +6,4 @@ ignorable_urls:
     - https://spdx.org/licenses/JSON
 ---
 
-LICENSE {{JSON}} https://spdx.org/licenses/JSON
+LICENSE {{JSON}} {{ https://spdx.org/licenses/JSON }}

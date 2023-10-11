@@ -1,0 +1,9 @@
+---
+license_expression: paypal-sdk-2013-2016
+is_license_tag: yes
+ignorable_urls:
+    - https://github.com/paypal/PayPal-Java-SDK/blob/master/LICENSE.txt
+---
+
+name: {{PayPal SDK License}}
+url: https://github.com/paypal/PayPal-Java-SDK/blob/master/LICENSE.txt

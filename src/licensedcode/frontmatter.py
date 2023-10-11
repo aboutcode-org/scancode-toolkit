@@ -53,7 +53,7 @@ class SaneYAMLHandler:
         _, fm, content = self.FM_BOUNDARY.split(text, 2)
         return fm, content
 
-    def format(self, content, metadata, **kwargs):
+    def format(self, content, metadata, template=DEFAULT_POST_TEMPLATE, **kwargs):
         """
         Return string with `content` and `metadata` as YAML frontmatter,
         used in ``frontmatter.dumps``.
@@ -63,7 +63,7 @@ class SaneYAMLHandler:
 
         metadata = self.export(metadata, **kwargs)
 
-        return DEFAULT_POST_TEMPLATE.format(
+        return template.format(
             metadata=metadata,
             content=content,
             start_delimiter=start_delimiter,

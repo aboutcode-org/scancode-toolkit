@@ -7,15 +7,6 @@
       "detection_log": []
     },
     {
-      "identifier": "gpl_1_0_plus-473308ff-72ce-7e72-b3a9-5b1cc6680abb",
-      "license_expression": "gpl-1.0-plus",
-      "detection_count": 1,
-      "detection_log": [
-        "possible-false-positive",
-        "not-license-clues-as-more-detections-present"
-      ]
-    },
-    {
       "identifier": "gpl_2_0_and_apache_2_0_and_lgpl_3_0_plus-c2393e5a-e531-304f-58a9-a6431d46d214",
       "license_expression": "gpl-2.0 AND apache-2.0 AND lgpl-3.0-plus",
       "detection_count": 1,
@@ -46,8 +37,8 @@
     {
       "path": "ffmpeg-LICENSE.md",
       "type": "file",
-      "detected_license_expression": "(lgpl-2.1-plus AND other-permissive AND gpl-2.0-plus) AND gpl-1.0-plus AND (lgpl-3.0 AND lgpl-3.0-plus AND (lgpl-3.0 AND gpl-3.0)) AND (ijg AND mit) AND (gpl-2.0 AND apache-2.0 AND lgpl-3.0-plus)",
-      "detected_license_expression_spdx": "(LGPL-2.1-or-later AND LicenseRef-scancode-other-permissive AND GPL-2.0-or-later) AND GPL-1.0-or-later AND (LGPL-3.0-only AND LGPL-3.0-or-later AND (LGPL-3.0-only AND GPL-3.0-only)) AND (IJG AND MIT) AND (GPL-2.0-only AND Apache-2.0 AND LGPL-3.0-or-later)",
+      "detected_license_expression": "(lgpl-2.1-plus AND other-permissive AND gpl-2.0-plus) AND (lgpl-3.0 AND lgpl-3.0-plus AND (lgpl-3.0 AND gpl-3.0)) AND (ijg AND mit) AND gpl-1.0-plus AND (gpl-2.0 AND apache-2.0 AND lgpl-3.0-plus)",
+      "detected_license_expression_spdx": "(LGPL-2.1-or-later AND LicenseRef-scancode-other-permissive AND GPL-2.0-or-later) AND (LGPL-3.0-only AND LGPL-3.0-or-later AND (LGPL-3.0-only AND GPL-3.0-only)) AND (IJG AND MIT) AND GPL-1.0-or-later AND (GPL-2.0-only AND Apache-2.0 AND LGPL-3.0-or-later)",
       "license_detections": [
         {
           "license_expression": "lgpl-2.1-plus AND other-permissive AND gpl-2.0-plus",
@@ -68,29 +59,6 @@
           ],
           "detection_log": [],
           "identifier": "lgpl_2_1_plus_and_other_permissive_and_gpl_2_0_plus-666058ef-8c38-3b17-d8e7-448b304de833"
-        },
-        {
-          "license_expression": "gpl-1.0-plus",
-          "matches": [
-            {
-              "score": 50.0,
-              "start_line": 18,
-              "end_line": 18,
-              "matched_length": 1,
-              "match_coverage": 100.0,
-              "matcher": "2-aho",
-              "license_expression": "gpl-1.0-plus",
-              "rule_identifier": "gpl_bare_word_only.RULE",
-              "rule_relevance": 50,
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl_bare_word_only.RULE",
-              "matched_text": "gpl."
-            }
-          ],
-          "detection_log": [
-            "possible-false-positive",
-            "not-license-clues-as-more-detections-present"
-          ],
-          "identifier": "gpl_1_0_plus-473308ff-72ce-7e72-b3a9-5b1cc6680abb"
         },
         {
           "license_expression": "lgpl-3.0 AND lgpl-3.0-plus AND (lgpl-3.0 AND gpl-3.0)",
@@ -307,7 +275,7 @@
           "matched_text": "LGPL"
         }
       ],
-      "percentage_of_license_text": 34.96,
+      "percentage_of_license_text": 34.78,
       "scan_errors": []
     }
   ]

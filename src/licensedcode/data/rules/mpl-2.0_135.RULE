@@ -1,0 +1,12 @@
+---
+license_expression: mpl-2.0
+is_license_notice: yes
+minimum_coverage: 80
+ignorable_urls:
+    - https://www.mozilla.org/en-US/MPL/2.0
+    - https://www.mozilla.org/en-US/MPL/2.0/FAQ
+---
+
+licensed under {{Mozilla Public License Version 2.0}} (MPL 2.0). A MPL 2.0
+and FAQ's for MPL 2.0 can be found at: {{https://www.mozilla.org/en-US/MPL/2.0/}}
+and https://www.mozilla.org/en-US/MPL/2.0/FAQ/.

@@ -1,0 +1,9 @@
+---
+license_expression: bsd-new
+is_license_notice: yes
+relevance: 100
+ignorable_urls:
+    - http://hsqldb.org/
+---
+
+Released under the HSQL license, available at http://hsqldb.org

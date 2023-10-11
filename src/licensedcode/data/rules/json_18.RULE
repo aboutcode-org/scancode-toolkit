@@ -1,0 +1,9 @@
+---
+license_expression: json
+is_license_text: yes
+relevance: 100
+ignorable_urls:
+    - http://www.json.org/license.html
+---
+
+You can see the license term at {{ http://www.JSON.org/license.html }}

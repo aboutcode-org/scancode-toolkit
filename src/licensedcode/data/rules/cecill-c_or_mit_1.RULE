@@ -1,0 +1,9 @@
+---
+license_expression: cecill-c OR mit
+is_license_notice: yes
+ignorable_urls:
+    - https://cecill.info/licences.en.html
+---
+
+Free and Open Source, double-licensed under the ([CeCILL-C license](https://cecill.info/licences.en.html) - 
+French equivalent to LGPL) and the MIT license.

@@ -247,7 +247,12 @@
       "is_unknown": false,
       "is_generic": false,
       "spdx_license_key": "MIT",
-      "other_spdx_license_keys": [],
+      "other_spdx_license_keys": [
+        "LicenseRef-MIT-Bootstrap",
+        "LicenseRef-MIT-Discord",
+        "LicenseRef-MIT-TC",
+        "LicenseRef-MIT-Diehl"
+      ],
       "osi_license_key": null,
       "text_urls": [
         "http://opensource.org/licenses/mit-license.php"

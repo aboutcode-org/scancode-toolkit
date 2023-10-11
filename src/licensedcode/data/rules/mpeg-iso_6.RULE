@@ -1,0 +1,22 @@
+---
+license_expression: mpeg-iso
+is_license_notice: yes
+relevance: 95
+minimum_coverage: 95
+notes: Seen in  https://sourceforge.net/p/opencore-amr/code/ci/master/tree/opencore/NOTICE The
+    site for this code at https://portal.3gpp.org/desktopmodules/Specifications/SpecificationDetails.aspx?specificationId=1387
+ignorable_copyrights:
+    - (c) 2004, 3GPP Organizational Partners
+ignorable_holders:
+    - 3GPP Organizational Partners
+ignorable_urls:
+    - http://www.3gpp.org/
+---
+
+3GPP TS 26.073
+    ANSI-C code for the Adaptive Multi-Rate (AMR) speech codec
+    Available from http://www.3gpp.org
+ 
+(C) 2004, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TTA, TTC)
+Permission to distribute, modify and use this file under the standard license
+terms listed above has been obtained from the copyright holder.

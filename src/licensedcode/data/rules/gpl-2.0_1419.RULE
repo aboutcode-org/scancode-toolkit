@@ -1,0 +1,10 @@
+---
+license_expression: gpl-2.0
+is_license_tag: yes
+ignorable_urls:
+    - http://www.gnu.org/licenses/old-licenses/gpl-2.0.txt
+---
+
+<license>
+         <name>GNU General Public License
+         <url>http://www.gnu.org/licenses/old-licenses/gpl-2.0.txt
