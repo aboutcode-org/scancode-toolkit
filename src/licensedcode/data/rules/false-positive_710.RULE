@@ -1,0 +1,6 @@
+---
+is_false_positive: yes
+notes: seen in opentofu
+---
+
+The options passed to this function may not be modified
