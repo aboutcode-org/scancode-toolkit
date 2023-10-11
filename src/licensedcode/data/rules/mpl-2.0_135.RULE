@@ -1,9 +1,9 @@
 ---
 license_expression: mpl-2.0
-minimum_coverage: 80
 is_license_notice: yes
+minimum_coverage: 80
 ignorable_urls:
-    - https://www.mozilla.org/en-US/MPL/2.0/
+    - https://www.mozilla.org/en-US/MPL/2.0
     - https://www.mozilla.org/en-US/MPL/2.0/FAQ
 ---
 
