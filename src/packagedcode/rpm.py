@@ -232,10 +232,9 @@ class RpmInstalledNdbDatabaseHandler(BaseRpmInstalledDatabaseHandler):
 
 # TODO: add dependencies!!!
 class RpmInstalledSqliteDatabaseHandler(BaseRpmInstalledDatabaseHandler):
-    # used by newer RHEL/CentOS/Fedora
+    # used by newer RHEL/CentOS/Fedora/CoreOS
     datasource_id = 'rpm_installed_database_sqlite'
-    path_patterns = ('*var/lib/rpm/rpmdb.sqlite',)
-    filetypes = ('berkeley',)
+    path_patterns = ('*rpm/rpmdb.sqlite',)
     default_package_type = 'rpm'
     default_package_namespace = 'TBD'
     description = 'RPM installed package SQLite database'
