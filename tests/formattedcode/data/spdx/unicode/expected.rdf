@@ -1,88 +1,79 @@
 {
   "rdf:RDF": {
-    "ns1:SpdxDocument": {
-      "ns1:name": {
-        "@rdf:resource": "SPDX Document created by ScanCode Toolkit"
+    "spdx:Package": {
+      "spdx:filesAnalyzed": {
+        "#text": "true",
+        "@rdf:datatype": "http://www.w3.org/2001/XMLSchema#boolean"
       },
-      "ns1:dataLicense": {
-        "@rdf:resource": "http://spdx.org/licenses/CC0-1.0"
+      "spdx:licenseInfoFromFiles": {
+        "@rdf:resource": "http://spdx.org/licenses/LicenseRef-scancode-agere-bsd"
       },
-      "ns1:hasExtractedLicensingInfo": {
-        "ns1:ExtractedLicensingInfo": {
-          "ns1:extractedText": "* SOFTWARE LICENSE\n *\n * This software is provided subject to the following terms and conditions,\n * which you should read carefully before using the software.  Using this\n * software indicates your acceptance of these terms and conditions.  If you do\n * not agree with these terms and conditions, do not use the software.\n *\n * Copyright \u00a9 2005 Agere Systems Inc.\n * All rights reserved.\n *\n * Redistribution and use in source or binary forms, with or without\n * modifications, are permitted provided that the following conditions are met:\n *\n * . Redistributions of source code must retain the above copyright notice, this\n *    list of conditions and the following Disclaimer as comments in the code as\n *    well as in the documentation and/or other materials provided with the\n *    distribution.\n *\n * . Redistributions in binary form must reproduce the above copyright notice,\n *    this list of conditions and the following Disclaimer in the documentation\n *    and/or other materials provided with the distribution.\n *\n * . Neither the name of Agere Systems Inc. nor the names of the contributors\n *    may be used to endorse or promote products derived from this software\n *    without specific prior written permission.\n *\n * Disclaimer\n *\n * THIS SOFTWARE IS PROVIDED \"AS IS\" AND ANY EXPRESS OR IMPLIED WARRANTIES,\n * INCLUDING, BUT NOT LIMITED TO, INFRINGEMENT AND THE IMPLIED WARRANTIES OF\n * MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.  ANY\n * USE, MODIFICATION OR DISTRIBUTION OF THIS SOFTWARE IS SOLELY AT THE USERS OWN\n * RISK. IN NO EVENT SHALL AGERE SYSTEMS INC. OR CONTRIBUTORS BE LIABLE FOR ANY\n * DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES\n * (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;\n * LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND\n * ON ANY THEORY OF LIABILITY, INCLUDING, BUT NOT LIMITED TO, CONTRACT, STRICT\n * LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT\n * OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH\n * DAMAGE.",
-          "ns1:licenseName": "Agere Systems BSD Software license",
-          "ns1:licenseId": "LicenseRef-scancode-agere-bsd",
-          "rdfs:comment": "See details at https://github.com/nexB/scancode-toolkit/blob/develop/src/licensedcode/data/licenses/agere-bsd.yml"
+      "spdx:downloadLocation": {
+        "@rdf:resource": "http://spdx.org/rdf/terms#noassertion"
+      },
+      "spdx:licenseConcluded": {
+        "@rdf:resource": "http://spdx.org/rdf/terms#noassertion"
+      },
+      "spdx:licenseDeclared": {
+        "@rdf:resource": "http://spdx.org/rdf/terms#noassertion"
+      },
+      "@rdf:about": "#SPDXRef-001",
+      "spdx:packageVerificationCode": {
+        "spdx:PackageVerificationCode": {
+          "spdx:packageVerificationCodeValue": "ce09fd939153fe02b82fefb764381ba40234e6ca"
         }
       },
-      "ns1:referencesFile": {
-        "ns1:File": {
-          "ns1:licenseConcluded": {
-            "@rdf:resource": "http://spdx.org/rdf/terms#noassertion"
-          },
-          "ns1:checksum": {
-            "ns1:Checksum": {
-              "ns1:checksumValue": "3903b654c47ea95203567230d72093ad1c5c4b90",
-              "ns1:algorithm": "http://spdx.org/rdf/terms#checksumAlgorithm_sha1"
-            }
-          },
-          "ns1:licenseInfoInFile": {
-            "ns1:ExtractedLicensingInfo": {
-              "ns1:extractedText": "* SOFTWARE LICENSE\n *\n * This software is provided subject to the following terms and conditions,\n * which you should read carefully before using the software.  Using this\n * software indicates your acceptance of these terms and conditions.  If you do\n * not agree with these terms and conditions, do not use the software.\n *\n * Copyright \u00a9 2005 Agere Systems Inc.\n * All rights reserved.\n *\n * Redistribution and use in source or binary forms, with or without\n * modifications, are permitted provided that the following conditions are met:\n *\n * . Redistributions of source code must retain the above copyright notice, this\n *    list of conditions and the following Disclaimer as comments in the code as\n *    well as in the documentation and/or other materials provided with the\n *    distribution.\n *\n * . Redistributions in binary form must reproduce the above copyright notice,\n *    this list of conditions and the following Disclaimer in the documentation\n *    and/or other materials provided with the distribution.\n *\n * . Neither the name of Agere Systems Inc. nor the names of the contributors\n *    may be used to endorse or promote products derived from this software\n *    without specific prior written permission.\n *\n * Disclaimer\n *\n * THIS SOFTWARE IS PROVIDED \"AS IS\" AND ANY EXPRESS OR IMPLIED WARRANTIES,\n * INCLUDING, BUT NOT LIMITED TO, INFRINGEMENT AND THE IMPLIED WARRANTIES OF\n * MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.  ANY\n * USE, MODIFICATION OR DISTRIBUTION OF THIS SOFTWARE IS SOLELY AT THE USERS OWN\n * RISK. IN NO EVENT SHALL AGERE SYSTEMS INC. OR CONTRIBUTORS BE LIABLE FOR ANY\n * DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES\n * (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;\n * LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND\n * ON ANY THEORY OF LIABILITY, INCLUDING, BUT NOT LIMITED TO, CONTRACT, STRICT\n * LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT\n * OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH\n * DAMAGE.",
-              "ns1:licenseName": "Agere Systems BSD Software license",
-              "ns1:licenseId": "LicenseRef-scancode-agere-bsd",
-              "rdfs:comment": "See details at https://github.com/nexB/scancode-toolkit/blob/develop/src/licensedcode/data/licenses/agere-bsd.yml"
-            }
-          },
-          "ns1:fileName": "./et131x.h",
-          "@rdf:about": "http://www.spdx.org/files#SPDXRef-1",
-          "ns1:copyrightText": "Copyright (c) 2005 Agere Systems Inc.\nCopyright (c) 2005 Agere Systems Inc."
-        }
-      },
-      "ns1:describesPackage": {
-        "ns1:Package": {
-          "ns1:Package": {
-            "@rdf:resource": "SPDXRef-001"
-          },
-          "ns1:downloadLocation": {
-            "@rdf:resource": "http://spdx.org/rdf/terms#noassertion"
-          },
-          "ns1:licenseConcluded": {
-            "@rdf:resource": "http://spdx.org/rdf/terms#noassertion"
-          },
-          "ns1:licenseDeclared": {
-            "@rdf:resource": "http://spdx.org/rdf/terms#noassertion"
-          },
-          "ns1:hasFile": {
-            "@rdf:resource": "http://www.spdx.org/files#SPDXRef-1"
-          },
-          "ns1:licenseInfoFromFiles": {
-            "ns1:ExtractedLicensingInfo": {
-              "ns1:extractedText": "* SOFTWARE LICENSE\n *\n * This software is provided subject to the following terms and conditions,\n * which you should read carefully before using the software.  Using this\n * software indicates your acceptance of these terms and conditions.  If you do\n * not agree with these terms and conditions, do not use the software.\n *\n * Copyright \u00a9 2005 Agere Systems Inc.\n * All rights reserved.\n *\n * Redistribution and use in source or binary forms, with or without\n * modifications, are permitted provided that the following conditions are met:\n *\n * . Redistributions of source code must retain the above copyright notice, this\n *    list of conditions and the following Disclaimer as comments in the code as\n *    well as in the documentation and/or other materials provided with the\n *    distribution.\n *\n * . Redistributions in binary form must reproduce the above copyright notice,\n *    this list of conditions and the following Disclaimer in the documentation\n *    and/or other materials provided with the distribution.\n *\n * . Neither the name of Agere Systems Inc. nor the names of the contributors\n *    may be used to endorse or promote products derived from this software\n *    without specific prior written permission.\n *\n * Disclaimer\n *\n * THIS SOFTWARE IS PROVIDED \"AS IS\" AND ANY EXPRESS OR IMPLIED WARRANTIES,\n * INCLUDING, BUT NOT LIMITED TO, INFRINGEMENT AND THE IMPLIED WARRANTIES OF\n * MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.  ANY\n * USE, MODIFICATION OR DISTRIBUTION OF THIS SOFTWARE IS SOLELY AT THE USERS OWN\n * RISK. IN NO EVENT SHALL AGERE SYSTEMS INC. OR CONTRIBUTORS BE LIABLE FOR ANY\n * DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES\n * (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;\n * LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND\n * ON ANY THEORY OF LIABILITY, INCLUDING, BUT NOT LIMITED TO, CONTRACT, STRICT\n * LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT\n * OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH\n * DAMAGE.",
-              "ns1:licenseName": "Agere Systems BSD Software license",
-              "ns1:licenseId": "LicenseRef-scancode-agere-bsd",
-              "rdfs:comment": "See details at https://github.com/nexB/scancode-toolkit/blob/develop/src/licensedcode/data/licenses/agere-bsd.yml"
-            }
-          },
-          "@rdf:about": "http://www.spdx.org/tools#SPDXRef-Package",
-          "ns1:copyrightText": "Copyright (c) 2005 Agere Systems Inc.",
-          "ns1:name": "unicode"
-        }
-      },
-      "ns1:relationship": {
-        "ns1:Relationship": {
-          "ns1:relationshipType": {
+      "spdx:relationship": {
+        "spdx:Relationship": {
+          "spdx:relationshipType": {
             "@rdf:resource": "http://spdx.org/rdf/terms#relationshipType_contains"
           },
-          "ns1:spdxElementId": "SPDXRef-001",
-          "ns1:relatedSpdxElement": "SPDXRef-1"
+          "spdx:relatedSpdxElement": {
+            "spdx:File": {
+              "spdx:licenseInfoInFile": {
+                "@rdf:resource": "http://spdx.org/licenses/LicenseRef-scancode-agere-bsd"
+              },
+              "spdx:licenseConcluded": {
+                "@rdf:resource": "http://spdx.org/rdf/terms#noassertion"
+              },
+              "@rdf:about": "#SPDXRef-1",
+              "spdx:checksum": {
+                "spdx:Checksum": {
+                  "spdx:algorithm": {
+                    "@rdf:resource": "http://spdx.org/rdf/terms#checksumAlgorithm_sha1"
+                  },
+                  "spdx:checksumValue": "3903b654c47ea95203567230d72093ad1c5c4b90"
+                }
+              },
+              "spdx:fileName": "./et131x.h",
+              "spdx:copyrightText": "Copyright (c) 2005 Agere Systems Inc.\nCopyright (c) 2005 Agere Systems Inc."
+            }
+          }
         }
       },
-      "@rdf:about": "http://www.spdx.org/tools#SPDXRef-DOCUMENT",
-      "ns1:specVersion": "SPDX-2.2"
+      "spdx:copyrightText": "Copyright (c) 2005 Agere Systems Inc.",
+      "spdx:name": "unicode"
     },
-    "@xmlns:ns1": "http://spdx.org/rdf/terms#",
+    "spdx:SpdxDocument": {
+      "spdx:dataLicense": {
+        "@rdf:resource": "http://spdx.org/licenses/CC0-1.0"
+      },
+      "@rdf:about": "#SPDXRef-DOCUMENT",
+      "spdx:hasExtractedLicensingInfo": {
+        "spdx:ExtractedLicensingInfo": {
+          "@rdf:about": "#LicenseRef-scancode-agere-bsd",
+          "spdx:extractedText": "* SOFTWARE LICENSE\n *\n * This software is provided subject to the following terms and conditions,\n * which you should read carefully before using the software.  Using this\n * software indicates your acceptance of these terms and conditions.  If you do\n * not agree with these terms and conditions, do not use the software.\n *\n * Copyright \u00a9 2005 Agere Systems Inc.\n * All rights reserved.\n *\n * Redistribution and use in source or binary forms, with or without\n * modifications, are permitted provided that the following conditions are met:\n *\n * . Redistributions of source code must retain the above copyright notice, this\n *    list of conditions and the following Disclaimer as comments in the code as\n *    well as in the documentation and/or other materials provided with the\n *    distribution.\n *\n * . Redistributions in binary form must reproduce the above copyright notice,\n *    this list of conditions and the following Disclaimer in the documentation\n *    and/or other materials provided with the distribution.\n *\n * . Neither the name of Agere Systems Inc. nor the names of the contributors\n *    may be used to endorse or promote products derived from this software\n *    without specific prior written permission.\n *\n * Disclaimer\n *\n * THIS SOFTWARE IS PROVIDED \"AS IS\" AND ANY EXPRESS OR IMPLIED WARRANTIES,\n * INCLUDING, BUT NOT LIMITED TO, INFRINGEMENT AND THE IMPLIED WARRANTIES OF\n * MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.  ANY\n * USE, MODIFICATION OR DISTRIBUTION OF THIS SOFTWARE IS SOLELY AT THE USERS OWN\n * RISK. IN NO EVENT SHALL AGERE SYSTEMS INC. OR CONTRIBUTORS BE LIABLE FOR ANY\n * DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES\n * (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;\n * LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND\n * ON ANY THEORY OF LIABILITY, INCLUDING, BUT NOT LIMITED TO, CONTRACT, STRICT\n * LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT\n * OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH\n * DAMAGE.",
+          "spdx:name": "Agere BSD",
+          "spdx:licenseId": "LicenseRef-scancode-agere-bsd",
+          "rdfs:comment": "See details at https://github.com/nexB/scancode-toolkit/blob/develop/src/licensedcode/data/licenses/agere-bsd.LICENSE"
+        }
+      },
+      "rdfs:comment": "Generated with ScanCode and provided on an \"AS IS\" BASIS, WITHOUT WARRANTIES\nOR CONDITIONS OF ANY KIND, either express or implied. No content created from\nScanCode should be considered or used as legal advice. Consult an Attorney\nfor any legal advice.\nScanCode is a free software code scanning tool from nexB Inc. and others.\nVisit https://github.com/nexB/scancode-toolkit/ for support and download.\nSPDX License List: 3.21",
+      "spdx:name": "SPDX Document created by ScanCode Toolkit",
+      "spdx:specVersion": "SPDX-2.2"
+    },
     "@xmlns:rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
-    "@xmlns:rdfs": "http://www.w3.org/2000/01/rdf-schema#"
+    "@xmlns:rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "@xmlns:spdx": "http://spdx.org/rdf/terms#"
   }
 }

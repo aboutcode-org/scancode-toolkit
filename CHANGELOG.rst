@@ -42,6 +42,9 @@ v32.1.0 (next, roadmap)
   of these in other summary plugins.
   See https://github.com/nexB/scancode-toolkit/issues/1745
 
+- Upgraded spdx-tools dependency to v0.8.
+  See https://github.com/nexB/scancode-toolkit/issues/3455
+
 
 v32.0.8 - 2023-10-11
 ------------------------
