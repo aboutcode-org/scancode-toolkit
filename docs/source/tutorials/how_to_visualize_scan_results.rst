@@ -1,7 +1,5 @@
 .. _how_to_visualize_scan_results:
 
-.. include:: https://scancode-workbench.readthedocs.io/en/update-docs/getting-started/index.html#download-and-install
-
 How to Visualize Scan results
 =============================
 
