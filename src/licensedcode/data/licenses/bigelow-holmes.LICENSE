@@ -5,9 +5,13 @@ name: Bigelow & Holmes Lucida Fonts License
 category: Permissive
 owner: Oracle Corporation
 homepage_url: http://www.opensolaris.org/os/project/indiana/resources/getit/OpenSolaris_Dev_Preview_Third_Party_License.txt
-spdx_license_key: LicenseRef-scancode-bigelow-holmes
+spdx_license_key: Lucida-Bitmap-Fonts
+other_spdx_license_keys:
+    - LicenseRef-scancode-bigelow-holmes
 text_urls:
     - http://www.opensolaris.org/os/project/indiana/resources/getit/OpenSolaris_Dev_Preview_Third_Party_License.txt
+other_urls:
+    - https://gitlab.freedesktop.org/xorg/font/bh-100dpi/-/blob/master/COPYING?ref_type=heads
 ignorable_copyrights:
     - (c) Copyright 1989 Sun Microsystems, Inc.
     - (c) Copyright Bigelow & Holmes 1986, 1985

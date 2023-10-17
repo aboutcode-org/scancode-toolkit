@@ -6,11 +6,16 @@ category: Copyleft Limited
 owner: SANE Project
 homepage_url: https://alioth.debian.org/
 is_exception: yes
-spdx_license_key: LicenseRef-scancode-sane-exception-2.0-plus
+spdx_license_key: SANE-exception
+other_spdx_license_keys:
+    - LicenseRef-scancode-sane-exception-2.0-plus
 text_urls:
     - https://alioth.debian.org/frs/download.php/file/4224/sane-backends-1.0.27.tar.gz
 other_urls:
     - http://www.gnu.org/licenses/gpl-2.0.txt
+    - https://gitlab.com/sane-project/frontends/-/blob/master/sanei/sanei_codec_ascii.c?ref_type=heads
+    - https://github.com/alexpevzner/sane-airscan/blob/master/LICENSE
+    - https://gitlab.com/sane-project/backends/-/blob/master/sanei/sanei_pp.c?ref_type=heads
 standard_notice: |
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License as

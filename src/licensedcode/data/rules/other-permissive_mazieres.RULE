@@ -1,6 +1,7 @@
 ---
 license_expression: other-permissive
 is_license_notice: yes
+notes: 'Replaced by license: ssh-keyscan'
 ---
 
 Modification and redistribution in source and binary forms is

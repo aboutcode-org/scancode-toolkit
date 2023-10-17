@@ -1,0 +1,47 @@
+---
+key: stunnel-exception
+short_name: stunnel Exception
+name: stunnel Exception
+notes: |
+    license_expression: strongswan-exception AND openssl-ssleay
+    matches:
+      - score: '77.2'
+        start_line: 1
+        end_line: 5
+        matched_length: 149
+        match_coverage: '77.2'
+        matcher: 3-seq
+        license_expression: strongswan-exception
+        rule_identifier: strongswan-exception.LICENSE
+        rule_relevance: 100
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/strongswan-exception.LICENSE
+        matched_text: |
+          statically or dynamically with other modules is making a combined work based on [stunnel]. Thus, the terms and conditions of the GNU General Public License cover the whole combination.
+
+          In addition, as a special exception, the copyright [holder] [of] [stunnel] [gives] you permission to combine [stunnel] with free software programs or libraries that are released under the GNU LGPL and with code included in the standard release of [OpenSSL] [under] [the] [OpenSSL] [License] (or modified versions of such code, with unchanged license). You may copy and distribute such a system following the terms of the GNU GPL for [stunnel] and the licenses of the other code concerned.
+
+          Note that people who make modified versions of [stunnel] are not obligated to grant this special exception for their modified versions; it is their choice whether to do so. The GNU General Public License gives permission to release a modified version without this exception; this exception also makes it possible to release a modified version which carries forward this exception.
+      - score: '100.0'
+        start_line: 3
+        end_line: 3
+        matched_length: 2
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: openssl-ssleay
+        rule_identifier: openssl-ssleay_2.RULE
+        rule_relevance: 100
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/openssl-ssleay_2.RULE
+        matched_text: OpenSSL License (
+    detection_log: []
+    identifier: strongswan_exception_and_openssl_ssleay-814ba60e-bdaa-43b7-0ad8-f07e8753445e
+is_exception: yes
+spdx_license_key: stunnel-exception
+other_urls:
+    - https://github.com/mtrojnar/stunnel/blob/master/COPYING.md
+---
+
+Linking stunnel statically or dynamically with other modules is making a combined work based on stunnel. Thus, the terms and conditions of the GNU General Public License cover the whole combination.
+
+In addition, as a special exception, the copyright holder of stunnel gives you permission to combine stunnel with free software programs or libraries that are released under the GNU LGPL and with code included in the standard release of OpenSSL under the OpenSSL License (or modified versions of such code, with unchanged license). You may copy and distribute such a system following the terms of the GNU GPL for stunnel and the licenses of the other code concerned.
+
+Note that people who make modified versions of stunnel are not obligated to grant this special exception for their modified versions; it is their choice whether to do so. The GNU General Public License gives permission to release a modified version without this exception; this exception also makes it possible to release a modified version which carries forward this exception.

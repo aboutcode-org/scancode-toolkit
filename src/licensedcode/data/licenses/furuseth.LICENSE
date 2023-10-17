@@ -1,0 +1,44 @@
+---
+key: furuseth
+short_name: Furuseth License
+name: Furuseth License
+notes: |
+    license_expression: bsd-original-uc-1986
+    matches:
+      - score: '69.61'
+        start_line: 8
+        end_line: 13
+        matched_length: 45
+        match_coverage: '70.31'
+        matcher: 3-seq
+        license_expression: bsd-original-uc-1986
+        rule_identifier: bsd-original-uc-1986_3.RULE
+        rule_relevance: 99
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-original-uc-1986_3.RULE
+        matched_text: |
+          Redistribution and use in source and binary forms, [with] [or] [without]
+          [modification], are permitted provided that this notice is preserved.
+          [The] [names] [of] [the] [copyright] [holders] may not be used to endorse or
+          promote products derived from this software without [their] specific
+          prior written permission.  This software is provided ``as is''
+          without express or implied warranty.
+    detection_log: []
+    identifier: bsd_original_uc_1986-b1d5089a-52b4-4bc0-d2aa-3be48d03ed85
+spdx_license_key: Furuseth
+other_urls:
+    - https://git.openldap.org/openldap/openldap/-/blob/master/COPYRIGHT?ref_type=heads#L39-51
+---
+
+Portions Copyright 1999-2008 Howard Y.H. Chu.
+Portions Copyright 1999-2008 Symas Corporation.
+Portions Copyright 1998-2003 Hallvard B. Furuseth.
+Portions Copyright 2007-2011 Gavin Henry.
+Portions Copyright 2007-2011 Suretec Systems Ltd.
+All rights reserved.
+
+Redistribution and use in source and binary forms, with or without
+modification, are permitted provided that this notice is preserved.
+The names of the copyright holders may not be used to endorse or
+promote products derived from this software without their specific
+prior written permission.  This software is provided ``as is''
+without express or implied warranty.

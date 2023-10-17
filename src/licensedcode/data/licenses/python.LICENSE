@@ -5,13 +5,17 @@ name: Python Software Foundation License v2
 category: Permissive
 owner: Python Software Foundation (PSF)
 homepage_url: http://docs.python.org/license.html
-spdx_license_key: Python-2.0
+spdx_license_key: python-ldap
+other_spdx_license_keys:
+    - Python-2.0
 text_urls:
     - http://spdx.org/licenses/Python-2.0
 osi_url: http://www.opensource.org/licenses/Python-2.0
 other_urls:
-    - http://opensource.org/licenses/PythonSoftFoundation.php
     - http://www.gnu.org/licenses/license-list.html#PythonOld
+    - http://opensource.org/licenses/PythonSoftFoundation.php
+    - https://github.com/zdohnal/hplip/blob/master/base/ldif.py
+    - https://sourceforge.net/projects/hplip/files/hplip/3.23.5/hplip-3.23.5.tar.gz/download
     - https://opensource.org/licenses/Python-2.0
 ignorable_copyrights:
     - Copyright (c) 1991 - 1995, Stichting Mathematisch Centrum Amsterdam, The Netherlands

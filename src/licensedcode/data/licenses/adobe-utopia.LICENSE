@@ -1,0 +1,49 @@
+---
+key: adobe-utopia
+short_name: Adobe Utopia Font License
+name: Adobe Utopia Font License
+notes: |
+    license_expression: other-permissive
+    matches:
+      - score: '69.7'
+        start_line: 1
+        end_line: 12
+        matched_length: 69
+        match_coverage: '69.7'
+        matcher: 3-seq
+        license_expression: other-permissive
+        rule_identifier: other-permissive_361.RULE
+        rule_relevance: 100
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/other-permissive_361.RULE
+        matched_text: |
+          Permission to use, reproduce, display and distribute the listed typefaces
+          is hereby granted, provided that the Adobe Copyright notice appears in all
+          whole and partial copies of the software and that the following trademark
+          symbol and attribution appear in all unmodified copies of the software:
+
+          The Adobe typefaces (Type 1 font program, bitmaps and Adobe Font Metric
+          files) donated are:
+
+                  Utopia Regular
+                  Utopia Italic
+                  Utopia Bold
+                  Utopia Bold Italic
+    detection_log: []
+    identifier: other_permissive-7c7513ba-9d23-167b-da28-2150909749a8
+spdx_license_key: Adobe-Utopia
+other_urls:
+    - https://gitlab.freedesktop.org/xorg/font/adobe-utopia-100dpi/-/blob/master/COPYING?ref_type=heads
+---
+
+Permission to use, reproduce, display and distribute the listed typefaces
+is hereby granted, provided that the Adobe Copyright notice appears in all
+whole and partial copies of the software and that the following trademark
+symbol and attribution appear in all unmodified copies of the software:
+
+The Adobe typefaces (Type 1 font program, bitmaps and Adobe Font Metric
+files) donated are:
+
+        Utopia Regular
+        Utopia Italic
+        Utopia Bold
+        Utopia Bold Italic

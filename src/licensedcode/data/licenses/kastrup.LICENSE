@@ -1,0 +1,13 @@
+---
+key: kastrup
+short_name: Kastrup License
+name: Kastrup License
+notes: No licenses detected by scancode on this text
+spdx_license_key: Kastrup
+other_urls:
+    - https://ctan.math.utah.edu/ctan/tex-archive/macros/generic/kastrup/binhex.dtx
+---
+
+Copyright(c) 2001 by David Kastrup
+Any use of the code is permitted as long as this copyright 
+notice is preserved in the code.

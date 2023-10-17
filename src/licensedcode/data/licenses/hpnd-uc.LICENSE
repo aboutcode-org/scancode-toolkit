@@ -1,0 +1,54 @@
+---
+key: hpnd-uc
+short_name: Historical Permission Notice and Disclaimer - University of California variant
+name: Historical Permission Notice and Disclaimer - University of California variant
+notes: |
+    license_expression: mit-old-style AND other-permissive
+    matches:
+      - score: '45.93'
+        start_line: 3
+        end_line: 8
+        matched_length: 31
+        match_coverage: '57.41'
+        matcher: 3-seq
+        license_expression: mit-old-style
+        rule_identifier: mit-old-style_15.RULE
+        rule_relevance: 80
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit-old-style_15.RULE
+        matched_text: |
+          Permission to use,
+          copy, modify, [and] distribute [this] [software] [and] [its] [documentation] [for] [any]
+          [purpose] [and] [without] [fee] is hereby granted, [provided] [that] [the] [above]
+          [copyright] [notice] [appear] [in] [all] [copies]. [The] [University] [of] [California] makes
+          no representations about the suitability of this software for any purpose.
+          It is provided "as is" without express or implied warranty.
+      - score: '100.0'
+        start_line: 3
+        end_line: 6
+        matched_length: 31
+        match_coverage: '100.0'
+        matcher: 2-aho
+        license_expression: other-permissive
+        rule_identifier: other-permissive_219.RULE
+        rule_relevance: 100
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/other-permissive_219.RULE
+        matched_text: |
+          Permission to use,
+          copy, modify, and distribute this software and its documentation for any
+          purpose and without fee is hereby granted, provided that the above
+          copyright notice appear in all copies.
+    detection_log: []
+    identifier: mit_old_style_and_other_permissive-8116a19f-a224-9b36-92c1-e51e89d5fb57
+spdx_license_key: HPND-UC
+other_urls:
+    - https://core.tcl-lang.org/tk/file?name=compat/unistd.h
+---
+
+Copyright 1989 Regents of the University of California 
+
+Permission to use,
+copy, modify, and distribute this software and its documentation for any
+purpose and without fee is hereby granted, provided that the above
+copyright notice appear in all copies. The University of California makes
+no representations about the suitability of this software for any purpose.
+It is provided "as is" without express or implied warranty.

@@ -5,9 +5,13 @@ name: X11-Style (DEC 2)
 category: Permissive
 owner: DEC - Digital Equipment Corporation
 homepage_url: http://www.xfree86.org/current/LICENSE5.html
-spdx_license_key: LicenseRef-scancode-x11-dec2
+spdx_license_key: HPND-DEC
+other_spdx_license_keys:
+    - LicenseRef-scancode-x11-dec2
 text_urls:
     - http://www.xfree86.org/current/LICENSE5.html
+other_urls:
+    - https://gitlab.freedesktop.org/xorg/app/xkbcomp/-/blob/master/COPYING?ref_type=heads#L69
 minimum_coverage: 80
 ---
 
