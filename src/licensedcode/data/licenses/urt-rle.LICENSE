@@ -2,41 +2,8 @@
 key: urt-rle
 short_name: Utah Raster Toolkit Run Length Encoded License
 name: Utah Raster Toolkit Run Length Encoded License
-notes: |
-    Multiple licenses detected by scancode on this textlicense_expression: warranty-disclaimer
-    matches:
-      - score: '100.0'
-        start_line: 5
-        end_line: 5
-        matched_length: 4
-        match_coverage: '100.0'
-        matcher: 2-aho
-        license_expression: warranty-disclaimer
-        rule_identifier: warranty-disclaimer_32.RULE
-        rule_relevance: 100
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/warranty-disclaimer_32.RULE
-        matched_text: There is no warranty
-    detection_log: []
-    identifier: warranty_disclaimer-0c70b4fc-0603-3756-66b1-4ebc6d14f669
-    license_expression:
-    matches:
-      - score: '11.21'
-        start_line: 13
-        end_line: 15
-        matched_length: 24
-        match_coverage: '11.21'
-        matcher: 3-seq
-        license_expression: qhull
-        rule_identifier: qhull.LICENSE
-        rule_relevance: 100
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/qhull.LICENSE
-        matched_text: |
-          If you modify [this] [software], [you] [should] include a notice giving the
-           * name of the person performing the modification, the date of modification,
-           * and the reason for such modification.
-    detection_log:
-      - low-quality-matches
-    identifier:
+category: Permissive
+owner: Unspecified
 spdx_license_key: URT-RLE
 other_urls:
     - https://sourceforge.net/p/netpbm/code/HEAD/tree/super_stable/converter/other/pnmtorle.c

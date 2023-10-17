@@ -2,6 +2,8 @@
 key: ssh-keyscan
 short_name: ssh-keyscan License
 name: ssh-keyscan License
+category: Permissive
+owner: Unspecified
 spdx_license_key: ssh-keyscan
 other_urls:
     - https://github.com/openssh/openssh-portable/blob/master/LICENCE#L82

@@ -1,29 +1,10 @@
 ---
 key: hpnd-doc
-short_name: Historical Permission Notice and Disclaimer - documentation variant
+short_name: Historical documentation variant
 name: Historical Permission Notice and Disclaimer - documentation variant
-notes: |
-    license_expression: x11-doc
-    matches:
-      - score: '90.75'
-        start_line: 3
-        end_line: 8
-        matched_length: 55
-        match_coverage: '91.67'
-        matcher: 3-seq
-        license_expression: x11-doc
-        rule_identifier: x11-doc_1.RULE
-        rule_relevance: 99
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/x11-doc_1.RULE
-        matched_text: |
-          Permission to use, copy, modify, [and] distribute this documentation for
-          any purpose and without fee is hereby granted, provided that the above
-          copyright notice and this permission notice appear in all copies.
-          <[copyright] [holder]> makes no representations about the suitability for
-          any purpose of the information in this document.  [This] [documentation] is
-          provided ``as is'' without express or implied warranty.
-    detection_log: []
-    identifier: x11_doc-cbb94c23-a861-7c2f-518f-7871abb2ff9c
+category: Permissive
+owner: Unspecified
+notes: This is essentially hpnd-doc-sell License without the 'without fee'
 spdx_license_key: HPND-doc
 other_urls:
     - https://gitlab.freedesktop.org/xorg/lib/libxext/-/blob/master/COPYING?ref_type=heads#L185-197

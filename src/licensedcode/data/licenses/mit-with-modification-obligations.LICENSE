@@ -6,6 +6,7 @@ category: Permissive
 owner: MIT
 spdx_license_key: HPND-export-US-modify
 other_spdx_license_keys:
+    - LicenseRef-scancode-mit-with-modification-obligations
     - LicenseRef-scancode-mit-modification-obligations
 other_urls:
     - https://github.com/krb5/krb5/blob/krb5-1.21.2-final/NOTICE#L1157-L1182

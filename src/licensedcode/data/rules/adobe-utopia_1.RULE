@@ -1,12 +1,10 @@
 ---
-license_expression: other-permissive
+license_expression: adobe-utopia
 is_license_notice: yes
-is_deprecated: yes
 ignorable_copyrights:
     - Copyright (c) 1989 Adobe Systems Incorporated Utopia (R) Utopia
 ignorable_holders:
     - Adobe Systems Incorporated Utopia (R) Utopia
-notes: This was moved to adobe-utopia_1.RULE
 ---
 
 And here is the licence of utopia

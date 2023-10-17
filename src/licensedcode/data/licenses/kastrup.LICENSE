@@ -2,7 +2,8 @@
 key: kastrup
 short_name: Kastrup License
 name: Kastrup License
-notes: No licenses detected by scancode on this text
+category: Permissive
+owner: David Kastrup
 spdx_license_key: Kastrup
 other_urls:
     - https://ctan.math.utah.edu/ctan/tex-archive/macros/generic/kastrup/binhex.dtx

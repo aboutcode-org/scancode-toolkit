@@ -2,34 +2,12 @@
 key: ferguson-twofish
 short_name: Ferguson Twofish License
 name: Ferguson Twofish License
-notes: |
-    license_expression: niels-ferguson
-    matches:
-      - score: '65.09'
-        start_line: 1
-        end_line: 15
-        matched_length: 138
-        match_coverage: '65.09'
-        matcher: 3-seq
-        license_expression: niels-ferguson
-        rule_identifier: niels-ferguson.LICENSE
-        rule_relevance: 100
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/niels-ferguson.LICENSE
-        matched_text: "The author hereby grants a perpetual license to everybody to \n use this\
-          \ code for any purpose as long as the copyright message is included \n in the source code\
-          \ of this or any derived work. \n  \n Yes, this means that you, your company, your club,\
-          \ and anyone else \n can use this code anywhere you want. You can change it and distribute\
-          \ it \n under the GPL, include it in your commercial product without releasing \n the\
-          \ source code, put it on the web, etc.  \n The only thing you cannot do is remove my copyright\
-          \ message,  \n or distribute any source code based on this implementation that does not\
-          \  \n include my copyright message.  \n  \n I appreciate a mention in the documentation\
-          \ or credits,  \n but I understand if that is difficult to do. \n I also appreciate it\
-          \ if you tell me where and why you used my code."
-    detection_log: []
-    identifier: niels_ferguson-52efd400-88cf-871d-7795-5834e1a85e6c
+category: Permissive
+owner: Niels Ferguson
 spdx_license_key: Ferguson-Twofish
 other_urls:
     - https://github.com/wernerd/ZRTPCPP/blob/6b3cd8e6783642292bad0c21e3e5e5ce45ff3e03/cryptcommon/twofish.c#L113C3-L127
+notes: This is essentially niels-ferguson.LICENSE without the disclaimer at the end.
 ---
 
 The author hereby grants a perpetual license to everybody to 

@@ -2,6 +2,8 @@
 key: padl
 short_name: PADL License
 name: PADL License
+category: Permissive
+owner: PADL Software Pty Ltd.
 spdx_license_key: PADL
 other_urls:
     - https://git.openldap.org/openldap/openldap/-/blob/master/libraries/libldap/os-local.c?ref_type=heads#L19-23

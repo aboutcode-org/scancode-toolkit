@@ -6,18 +6,17 @@ category: Permissive
 owner: Regents of the University of California
 homepage_url: http://www.opensource.org/licenses/BSD-3-Clause
 notes: Per SPDX.org, this license is OSI certified.
-spdx_license_key: BSD-3-Clause-Sun
+spdx_license_key: BSD-3-Clause
 other_spdx_license_keys:
-    - BSD-3-Clause
+    - LicenseRef-scancode-libzip
 osi_license_key: BSD-3-Clause
 text_urls:
     - http://www.opensource.org/licenses/BSD-3-Clause
 osi_url: http://www.opensource.org/licenses/BSD-3-Clause
 other_urls:
-    - https://www.eclipse.org/org/documents/edl-v10.php
-    - https://github.com/xmlark/msv/blob/b9316e2f2270bc1606952ea4939ec87fbba157f3/xsdlib/src/main/java/com/sun/msv/datatype/regexp/InternalImpl.java
     - http://framework.zend.com/license/new-bsd
     - https://opensource.org/licenses/BSD-3-Clause
+    - https://www.eclipse.org/org/documents/edl-v10.php
 ---
 
 Redistribution and use in source and binary forms, with or without modification,

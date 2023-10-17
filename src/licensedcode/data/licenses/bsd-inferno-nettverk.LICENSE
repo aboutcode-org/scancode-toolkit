@@ -2,57 +2,8 @@
 key: bsd-inferno-nettverk
 short_name: BSD-Inferno-Nettverk
 name: BSD-Inferno-Nettverk
-notes: |
-    Multiple licenses detected by scancode on this textlicense_expression: bsd-original
-    matches:
-      - score: '82.74'
-        start_line: 6
-        end_line: 29
-        matched_length: 187
-        match_coverage: '82.74'
-        matcher: 3-seq
-        license_expression: bsd-original
-        rule_identifier: bsd-original_58.RULE
-        rule_relevance: 100
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-original_58.RULE
-        matched_text: "Redistribution and use in source and binary forms, with or without\n  modification,\
-          \ are permitted provided that the following conditions\n  are met:\n  1. The above copyright\
-          \ notice, this list of conditions and the following\n     disclaimer [must] [appear] [in]\
-          \ [all] [copies] [of] [the] [software], [derivative] [works]\n     [or] [modified] [versions],\
-          \ [and] [any] [portions] [thereof], [aswell] [as] [in] [all]\n     [supporting] [documentation].\n\
-          \  [2]. All advertising materials mentioning features or use of this software\n     must\
-          \ display the following acknowledgement:\n       This product includes software developed\
-          \ by\n       [Inferno] [Nettverk] A/[S], [Norway].\n  [3]. The name of the author may\
-          \ not be used to endorse or promote products\n     derived from this software without\
-          \ specific prior written permission.\n \n  THIS SOFTWARE IS PROVIDED BY THE AUTHOR ``AS\
-          \ IS'' AND ANY EXPRESS OR\n  IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED\
-          \ WARRANTIES\n  OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.\n\
-          \  IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY DIRECT, INDIRECT,\n  INCIDENTAL, SPECIAL,\
-          \ EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT\n  NOT LIMITED TO, PROCUREMENT OF\
-          \ SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,\n  DATA, OR PROFITS; OR BUSINESS INTERRUPTION)\
-          \ HOWEVER CAUSED AND ON ANY\n  THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,\
-          \ OR TORT\n  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF\n\
-          \  THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE."
-    detection_log: []
-    identifier: bsd_original-f082a9ce-fd6f-5f6d-6d67-722092ebb836
-    license_expression:
-    matches:
-      - score: '11.81'
-        start_line: 40
-        end_line: 41
-        matched_length: 15
-        match_coverage: '11.81'
-        matcher: 3-seq
-        license_expression: carnegie-mellon-contributors
-        rule_identifier: carnegie-mellon-contributors.LICENSE
-        rule_relevance: 100
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/carnegie-mellon-contributors.LICENSE
-        matched_text: |
-          any improvements or extensions that they make and grant [Inferno] [Nettverk] A/[S]
-            the rights to redistribute these changes.
-    detection_log:
-      - low-quality-matches
-    identifier:
+category: Permissive
+owner: Inferno Nettverk
 spdx_license_key: BSD-Inferno-Nettverk
 other_urls:
     - https://www.inet.no/dante/LICENSE
@@ -61,41 +12,41 @@ other_urls:
 Copyright (c) 1997, 1998, 1999, 2000, 2001, 2002, 2003, 2004, 2005, 2006,
                 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016
                 2017, 2018, 2019, 2020
-       Inferno Nettverk A/S, Norway.  All rights reserved.
+Inferno Nettverk A/S, Norway.  All rights reserved.
  
-  Redistribution and use in source and binary forms, with or without
-  modification, are permitted provided that the following conditions
-  are met:
-  1. The above copyright notice, this list of conditions and the following
-     disclaimer must appear in all copies of the software, derivative works
-     or modified versions, and any portions thereof, aswell as in all
-     supporting documentation.
-  2. All advertising materials mentioning features or use of this software
-     must display the following acknowledgement:
-       This product includes software developed by
-       Inferno Nettverk A/S, Norway.
-  3. The name of the author may not be used to endorse or promote products
-     derived from this software without specific prior written permission.
- 
-  THIS SOFTWARE IS PROVIDED BY THE AUTHOR ``AS IS'' AND ANY EXPRESS OR
-  IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES
-  OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.
-  IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY DIRECT, INDIRECT,
-  INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT
-  NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
-  DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
-  THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
-  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
-  THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
- 
-  Inferno Nettverk A/S requests users of this software to return to
- 
-   Software Distribution Coordinator  or  sdc@inet.no
-   Inferno Nettverk A/S
-   Oslo Research Park
-   Gaustadalléen 21
-   NO-0349 Oslo
-   Norway
- 
-  any improvements or extensions that they make and grant Inferno Nettverk A/S
-  the rights to redistribute these changes.
+Redistribution and use in source and binary forms, with or without
+modification, are permitted provided that the following conditions
+are met:
+1. The above copyright notice, this list of conditions and the following
+    disclaimer must appear in all copies of the software, derivative works
+    or modified versions, and any portions thereof, aswell as in all
+    supporting documentation.
+2. All advertising materials mentioning features or use of this software
+    must display the following acknowledgement:
+      This product includes software developed by
+      Inferno Nettverk A/S, Norway.
+3. The name of the author may not be used to endorse or promote products
+    derived from this software without specific prior written permission.
+
+THIS SOFTWARE IS PROVIDED BY THE AUTHOR ``AS IS'' AND ANY EXPRESS OR
+IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES
+OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.
+IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY DIRECT, INDIRECT,
+INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT
+NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
+THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+Inferno Nettverk A/S requests users of this software to return to
+
+  Software Distribution Coordinator  or  sdc@inet.no
+  Inferno Nettverk A/S
+  Oslo Research Park
+  Gaustadalléen 21
+  NO-0349 Oslo
+  Norway
+
+any improvements or extensions that they make and grant Inferno Nettverk A/S
+the rights to redistribute these changes.

@@ -1,6 +1,7 @@
 ---
 license_expression: other-permissive
 is_license_text: yes
+is_deprecated: yes
 notes: 'Replaced by license: fbm'
 ---
 

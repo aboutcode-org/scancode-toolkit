@@ -2,37 +2,8 @@
 key: mmixware
 short_name: MMIXware License
 name: MMIXware License
-notes: |
-    Multiple licenses detected by scancode on this textlicense_expression: other-permissive
-    matches:
-      - score: '100.0'
-        start_line: 3
-        end_line: 3
-        matched_length: 6
-        match_coverage: '100.0'
-        matcher: 2-aho
-        license_expression: other-permissive
-        rule_identifier: other-permissive_free-unknown_46.RULE
-        rule_relevance: 100
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/other-permissive_free-unknown_46.RULE
-        matched_text: may be freely copied and distributed,
-    detection_log: []
-    identifier: other_permissive-851d8539-5279-6614-9eae-755070d7076c
-    license_expression: warranty-disclaimer
-    matches:
-      - score: '90.0'
-        start_line: 17
-        end_line: 17
-        matched_length: 2
-        match_coverage: '100.0'
-        matcher: 2-aho
-        license_expression: warranty-disclaimer
-        rule_identifier: warranty-disclaimer_24.RULE
-        rule_relevance: 90
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/warranty-disclaimer_24.RULE
-        matched_text: no warranty
-    detection_log: []
-    identifier: warranty_disclaimer-48391dcb-9e03-9def-3286-75d32c5d446b
+category: Permissive
+owner: Donald E. Knuth
 spdx_license_key: MMIXware
 other_urls:
     - https://gitlab.lrz.de/mmix/mmixware/-/blob/master/boilerplate.w

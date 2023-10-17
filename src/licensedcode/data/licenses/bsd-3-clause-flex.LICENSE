@@ -1,9 +1,12 @@
 ---
 key: bsd-3-clause-flex
 short_name: BSD 3-Clause Flex variant
+category: Permissive
+owner: Regents of the University of California
 name: BSD 3-Clause Flex variant
 notes: |
-    Multiple licenses detected by scancode on this textlicense_expression: flex-2.5 AND llnl
+    Multiple licenses detected by scancode on this text
+    license_expression: flex-2.5 AND llnl
     matches:
       - score: '100.0'
         start_line: 1

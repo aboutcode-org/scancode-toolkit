@@ -2,6 +2,8 @@
 key: cronyx
 short_name: Cronyx License
 name: Cronyx License
+category: Permissive
+owner: Cronyx Ltd.
 spdx_license_key: Cronyx
 other_urls:
     - https://gitlab.freedesktop.org/xorg/font/alias/-/blob/master/COPYING

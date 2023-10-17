@@ -2,6 +2,8 @@
 key: bsd-3-clause-hp
 short_name: Hewlett-Packard BSD variant license
 name: Hewlett-Packard BSD variant license
+category: Permissive
+owner: HP - Hewlett Packard
 notes: |
     license_expression: bsd-new
     matches:

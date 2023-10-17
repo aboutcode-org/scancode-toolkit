@@ -2,56 +2,8 @@
 key: bsd-systemics
 short_name: Systemics BSD variant license
 name: Systemics BSD variant license
-notes: |
-    license_expression: proprietary-license AND ssleay
-    matches:
-      - score: '100.0'
-        start_line: 4
-        end_line: 4
-        matched_length: 7
-        match_coverage: '100.0'
-        matcher: 2-aho
-        license_expression: proprietary-license
-        rule_identifier: proprietary-license_204.RULE
-        rule_relevance: 100
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/proprietary-license_204.RULE
-        matched_text: FREE FOR COMMERCIAL AND NON-COMMERCIAL USE
-      - score: '70.35'
-        start_line: 7
-        end_line: 39
-        matched_length: 280
-        match_coverage: '70.35'
-        matcher: 3-seq
-        license_expression: ssleay
-        rule_identifier: ssleay_4.RULE
-        rule_relevance: 100
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/ssleay_4.RULE
-        matched_text: "Copyright remains [with] [Systemics] [Ltd], and as such any Copyright notices\n\
-          in the code are not to be removed.  If this [code] [is] [used] [in] a [product],\n[Systemics]\
-          \ should be given attribution as the author of the parts used.\nThis can be in the form\
-          \ of a textual message at program startup or\nin documentation (online or textual) provided\
-          \ with the package.\n \nRedistribution and use in source and binary forms, with or without\n\
-          modification, are permitted provided that the following conditions\nare met:\n1. Redistributions\
-          \ of source code must retain the copyright\n   notice, this list of conditions and the\
-          \ following disclaimer.\n2. Redistributions in binary form must reproduce the above copyright\n\
-          \   notice, this list of conditions and the following disclaimer in the\n   documentation\
-          \ and/or other materials provided with the distribution.\n3. All advertising materials\
-          \ mentioning features or use of this software\n   must display the following acknowledgement:\n\
-          \   This product includes [software] [developed] [by] [Systemics] [Ltd] ([http]://[www].[systemics].[com]/)\
-          \   \n \n[THIS] [SOFTWARE] [IS] [PROVIDED] [BY] [SYSTEMICS] [LTD] ``AS IS'' AND\nANY EXPRESS\
-          \ OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE\nIMPLIED WARRANTIES OF MERCHANTABILITY\
-          \ AND FITNESS FOR A PARTICULAR PURPOSE\nARE DISCLAIMED.  IN NO EVENT SHALL THE AUTHOR\
-          \ OR CONTRIBUTORS BE LIABLE\nFOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY,\
-          \ OR CONSEQUENTIAL\nDAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE\
-          \ GOODS\nOR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)\nHOWEVER\
-          \ CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT\nLIABILITY, OR TORT\
-          \ (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY\nOUT OF THE USE OF THIS SOFTWARE,\
-          \ EVEN IF ADVISED OF THE POSSIBILITY OF\nSUCH DAMAGE.\n \nThe licence and distribution\
-          \ terms for any publically available version or\nderivative of this code cannot be changed.\
-          \  i.e. this code cannot simply be\ncopied and put under another distribution licence\
-          \ [including the GNU Public Licence.]"
-    detection_log: []
-    identifier: proprietary_license_and_ssleay-204afd41-bb58-b593-a297-a1c0d7ce77c2
+category: Permissive
+owner: Systemics Ltd
 spdx_license_key: BSD-Systemics
 other_urls:
     - https://metacpan.org/release/DPARIS/Crypt-DES-2.07/source/COPYRIGHT

@@ -2,6 +2,8 @@
 key: check-cvs
 short_name: check-cvs License
 name: check-cvs License
+category: Permissive
+owner: GNU Savannah Project
 spdx_license_key: check-cvs
 other_urls:
     - http://cvs.savannah.gnu.org/viewvc/cvs/ccvs/contrib/check_cvs.in?revision=1.1.4.3&view=markup&pathrev=cvs1-11-23#l2

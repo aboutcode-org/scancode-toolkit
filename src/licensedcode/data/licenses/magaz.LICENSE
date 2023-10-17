@@ -2,6 +2,8 @@
 key: magaz
 short_name: magaz License
 name: magaz License
+category: Permissive
+owner: Unspecified
 spdx_license_key: magaz
 other_urls:
     - https://mirrors.nic.cz/tex-archive/macros/latex/contrib/magaz/magaz.tex

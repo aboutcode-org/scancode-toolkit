@@ -1,28 +1,9 @@
 ---
 key: hpnd-sell-regexpr
-short_name: Historical Permission Notice and Disclaimer - sell regexpr variant
-name: Historical Permission Notice and Disclaimer - sell regexpr variant
-notes: |
-    license_expression: mit-old-style
-    matches:
-      - score: '59.26'
-        start_line: 5
-        end_line: 9
-        matched_length: 40
-        match_coverage: '74.07'
-        matcher: 3-seq
-        license_expression: mit-old-style
-        rule_identifier: mit-old-style_15.RULE
-        rule_relevance: 80
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit-old-style_15.RULE
-        matched_text: |
-          Permission to use, copy, modify, distribute, and sell this software
-          and its documentation for any purpose is hereby granted without
-          fee, provided that the above copyright notice appear in all copies.
-          [This] [software] is provided "as is" without express or implied
-          warranty.
-    detection_log: []
-    identifier: mit_old_style-9ea75967-2a1e-7870-faf5-2751a1754cb9
+short_name: Historical sell regexpr variant
+name: Historical Permission Notice and Disclaimer sell regexpr variant
+category: Permissive
+owner: Unspecified
 spdx_license_key: HPND-sell-regexpr
 other_urls:
     - https://gitlab.com/bacula-org/bacula/-/blob/Branch-11.0/bacula/LICENSE-FOSS?ref_type=heads#L245
