@@ -7,6 +7,8 @@ owner: Germany GovDataProject
 spdx_license_key: DL-DE-ZERO-2.0
 other_urls:
     - https://www.govdata.de/dl-de/zero-2-0
+ignorable_urls:
+    - https://www.govdata.de/dl-de/zero-2-0
 ---
 
 DL-DE->Zero-2.0

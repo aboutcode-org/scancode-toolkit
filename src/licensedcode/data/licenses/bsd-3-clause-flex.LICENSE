@@ -1,9 +1,9 @@
 ---
 key: bsd-3-clause-flex
 short_name: BSD 3-Clause Flex variant
+name: BSD 3-Clause Flex variant
 category: Permissive
 owner: Regents of the University of California
-name: BSD 3-Clause Flex variant
 notes: |
     Multiple licenses detected by scancode on this text
     license_expression: flex-2.5 AND llnl
@@ -88,6 +88,12 @@ notes: |
 spdx_license_key: BSD-3-Clause-flex
 other_urls:
     - https://github.com/westes/flex/blob/master/COPYING
+ignorable_copyrights:
+    - Copyright (c) 1990, 1997 The Regents of the University of California
+    - Copyright (c) 2001, 2002, 2003, 2004, 2005, 2006, 2007 The Flex Project
+ignorable_holders:
+    - The Flex Project
+    - The Regents of the University of California
 ---
 
 Flex carries the copyright used for BSD software, slightly modified

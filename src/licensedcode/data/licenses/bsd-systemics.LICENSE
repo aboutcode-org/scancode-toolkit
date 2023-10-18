@@ -7,11 +7,12 @@ owner: Systemics Ltd
 spdx_license_key: BSD-Systemics
 other_urls:
     - https://metacpan.org/release/DPARIS/Crypt-DES-2.07/source/COPYRIGHT
+ignorable_authors:
+    - Systemics Ltd (http://www.systemics.com/)
+ignorable_urls:
+    - http://www.systemics.com/
 ---
 
-Copyright (C) 1995, 1996 Systemics Ltd (http://www.systemics.com/)
-All rights reserved.
- 
 This library and applications are FREE FOR COMMERCIAL AND NON-COMMERCIAL USE
 as long as the following conditions are adhered to.
  

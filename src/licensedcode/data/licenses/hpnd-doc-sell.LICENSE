@@ -11,8 +11,6 @@ other_urls:
     - https://gitlab.freedesktop.org/xorg/lib/libxext/-/blob/master/COPYING?ref_type=heads#L153-162
 ---
 
-Copyright <year> <copyright holder>
-
 Permission to use, copy, modify, distribute, and sell this
 documentation for any purpose is hereby granted without fee,
 provided that the above copyright notice and this permission

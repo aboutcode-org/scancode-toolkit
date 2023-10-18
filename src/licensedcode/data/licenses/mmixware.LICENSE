@@ -9,8 +9,6 @@ other_urls:
     - https://gitlab.lrz.de/mmix/mmixware/-/blob/master/boilerplate.w
 ---
 
-copyright 1999 Donald E. Knuth
-
 This file may be freely copied and distributed, provided that
 no changes whatsoever are made. All users are asked to help keep
 the MMIXware files consistent and ``uncorrupted,''
