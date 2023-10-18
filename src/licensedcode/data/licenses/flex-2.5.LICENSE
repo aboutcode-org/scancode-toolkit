@@ -11,8 +11,6 @@ other_spdx_license_keys:
 text_urls:
     - http://www.cs.cmu.edu/afs/cs/project/ai-repository-9/ai/areas/nlp/parsing/flex/copying.txt
 minimum_coverage: 80
-ignorable_authors:
-    - the University of California, Berkeley and its contributors
 ---
 
 The United States Government has rights in this work pursuant

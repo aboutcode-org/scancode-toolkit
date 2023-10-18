@@ -1,34 +1,35 @@
 declared_license:
 declared_license_expression: lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.1-plus AND sun-source
-  AND libpbm AND lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.1-plus AND gpl-2.0-plus
-  AND lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.1-plus AND adrian AND lgpl-2.1-plus
+  AND hpnd-pbmplus AND lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.1-plus AND
+  gpl-2.0-plus AND lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.1-plus AND adrian
   AND lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.1-plus
   AND lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.1-plus
   AND lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.1-plus
-  AND lgpl-2.1-plus AND mit AND lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.1-plus
-  AND lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.0-plus AND lgpl-2.1-plus AND lgpl-2.1-plus
+  AND lgpl-2.1-plus AND lgpl-2.1-plus AND mit AND lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.1-plus
+  AND lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.0-plus AND lgpl-2.1-plus
   AND lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.1-plus
   AND lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.1-plus
   AND lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.1-plus
   AND lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.1-plus
-  AND lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.1-plus AND gpl-2.0-plus AND lgpl-2.1-plus AND
-  lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.1-plus
+  AND lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.1-plus AND gpl-2.0-plus AND
+  lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.1-plus
 declared_license_expression_spdx: LGPL-2.1-or-later AND LGPL-2.1-or-later AND LGPL-2.1-or-later
-  AND LicenseRef-scancode-sun-source AND xlock AND LGPL-2.1-or-later AND LGPL-2.1-or-later AND
-  LGPL-2.1-or-later AND LGPL-2.1-or-later AND GPL-2.0-or-later AND LGPL-2.1-or-later AND LGPL-2.1-or-later
-  AND LGPL-2.1-or-later AND LGPL-2.1-or-later AND LicenseRef-scancode-adrian AND LGPL-2.1-or-later
+  AND LicenseRef-scancode-sun-source AND HPND-Pbmplus AND LGPL-2.1-or-later AND LGPL-2.1-or-later
+  AND LGPL-2.1-or-later AND LGPL-2.1-or-later AND GPL-2.0-or-later AND LGPL-2.1-or-later AND
+  LGPL-2.1-or-later AND LGPL-2.1-or-later AND LGPL-2.1-or-later AND LicenseRef-scancode-adrian
   AND LGPL-2.1-or-later AND LGPL-2.1-or-later AND LGPL-2.1-or-later AND LGPL-2.1-or-later AND
   LGPL-2.1-or-later AND LGPL-2.1-or-later AND LGPL-2.1-or-later AND LGPL-2.1-or-later AND LGPL-2.1-or-later
   AND LGPL-2.1-or-later AND LGPL-2.1-or-later AND LGPL-2.1-or-later AND LGPL-2.1-or-later AND
-  LGPL-2.1-or-later AND LGPL-2.1-or-later AND LGPL-2.1-or-later AND MIT AND LGPL-2.1-or-later
+  LGPL-2.1-or-later AND LGPL-2.1-or-later AND LGPL-2.1-or-later AND LGPL-2.1-or-later AND MIT
   AND LGPL-2.1-or-later AND LGPL-2.1-or-later AND LGPL-2.1-or-later AND LGPL-2.1-or-later AND
-  LGPL-2.1-or-later AND LGPL-2.0-or-later AND LGPL-2.1-or-later AND LGPL-2.1-or-later AND LGPL-2.1-or-later
-  AND LGPL-2.1-or-later AND LGPL-2.1-or-later AND LGPL-2.1-or-later AND LGPL-2.1-or-later AND
-  LGPL-2.1-or-later AND LGPL-2.1-or-later AND LGPL-2.1-or-later AND LGPL-2.1-or-later AND LGPL-2.1-or-later
+  LGPL-2.1-or-later AND LGPL-2.1-or-later AND LGPL-2.0-or-later AND LGPL-2.1-or-later AND LGPL-2.1-or-later
   AND LGPL-2.1-or-later AND LGPL-2.1-or-later AND LGPL-2.1-or-later AND LGPL-2.1-or-later AND
   LGPL-2.1-or-later AND LGPL-2.1-or-later AND LGPL-2.1-or-later AND LGPL-2.1-or-later AND LGPL-2.1-or-later
   AND LGPL-2.1-or-later AND LGPL-2.1-or-later AND LGPL-2.1-or-later AND LGPL-2.1-or-later AND
-  GPL-2.0-or-later AND LGPL-2.1-or-later AND LGPL-2.1-or-later AND LGPL-2.1-or-later AND LGPL-2.1-or-later
+  LGPL-2.1-or-later AND LGPL-2.1-or-later AND LGPL-2.1-or-later AND LGPL-2.1-or-later AND LGPL-2.1-or-later
+  AND LGPL-2.1-or-later AND LGPL-2.1-or-later AND LGPL-2.1-or-later AND LGPL-2.1-or-later AND
+  LGPL-2.1-or-later AND GPL-2.0-or-later AND LGPL-2.1-or-later AND LGPL-2.1-or-later AND LGPL-2.1-or-later
+  AND LGPL-2.1-or-later
 other_license_expression:
 other_license_expression_spdx:
 license_detections:
@@ -119,7 +120,7 @@ license_detections:
            or profits or other special, indirect and consequential damages, even if
            Sun has been advised of the possibility of such damages.
     identifier: sun_source-02813787-7782-d45a-b30b-598566f2f032
-  - license_expression: libpbm
+  - license_expression: hpnd-pbmplus
     matches:
       - score: '100.0'
         start_line: 68
@@ -127,10 +128,10 @@ license_detections:
         matched_length: 56
         match_coverage: '100.0'
         matcher: 2-aho
-        license_expression: libpbm
-        rule_identifier: libpbm.LICENSE
+        license_expression: hpnd-pbmplus
+        rule_identifier: hpnd-pbmplus.LICENSE
         rule_relevance: 100
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/libpbm.LICENSE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/hpnd-pbmplus.LICENSE
         matched_text: |
           Permission to use, copy, modify, and distribute this software and its
            documentation for any purpose and without fee is hereby granted, provided
@@ -138,7 +139,7 @@ license_detections:
            copyright notice and this permission notice appear in supporting
            documentation.  This software is provided "as is" without express or
            implied warranty.
-    identifier: libpbm-285aa0f9-c4e9-26cb-7e01-29594fbc0842
+    identifier: hpnd_pbmplus-791a84f8-2595-c6f9-929c-722baf14af4e
   - license_expression: lgpl-2.1-plus
     matches:
       - score: '100.0'
