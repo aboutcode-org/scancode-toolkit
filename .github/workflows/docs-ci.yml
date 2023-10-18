@@ -20,9 +20,6 @@ jobs:
         with:
           python-version: ${{ matrix.python-version }}
 
-      - name: Give permission to run scripts
-        run: chmod +x ./docs/scripts/doc8_style_check.sh
-
       - name: Install Dependencies
         run:  pip install -e .[docs]
 

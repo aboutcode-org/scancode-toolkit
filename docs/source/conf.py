@@ -30,6 +30,10 @@ author = "AboutCode.org authors and contributors"
 extensions = [
     "sphinx.ext.intersphinx",
     "sphinx_reredirects",
+    'sphinx_rtd_theme',
+    "sphinx_rtd_dark_mode",
+    "sphinx.ext.extlinks",
+    "sphinx_copybutton",
 ]
 
 
