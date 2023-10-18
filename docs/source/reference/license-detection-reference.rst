@@ -30,6 +30,8 @@ implemented:
 
 Some other elements are still WIP, see `issue #3300 <https://github.com/nexB/scancode-toolkit/issues/3300>`_ for more details on this.
 
+.. _what-is-a-licensedetection:
+
 What is a LicenseDetection?
 ---------------------------
 

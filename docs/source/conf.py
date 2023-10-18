@@ -29,8 +29,13 @@ author = "AboutCode.org authors and contributors"
 extensions = [
     "sphinx.ext.intersphinx",
     "sphinx_reredirects",
+    'sphinx_rtd_theme',
+    "sphinx_rtd_dark_mode",
+    "sphinx.ext.extlinks",
+    "sphinx_copybutton",
 ]
 
+default_dark_mode = False
 
 # Redirects for olds pages
 # See https://documatt.gitlab.io/sphinx-reredirects/usage.html
@@ -46,7 +51,7 @@ redirects = {
 
 intersphinx_mapping = {
     "aboutcode": ("https://aboutcode.readthedocs.io/en/latest/", None),
-    "scancode-workbench": ("https://scancode-workbench.readthedocs.io/en/develop/", None),
+    "scancode-workbench": ("https://scancode-workbench.readthedocs.io/en/latest/", None),
 }
 
 
