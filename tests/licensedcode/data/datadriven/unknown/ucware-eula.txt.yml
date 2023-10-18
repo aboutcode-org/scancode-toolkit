@@ -3,6 +3,7 @@ license_expressions:
   - unknown-license-reference
   - unknown
   - warranty-disclaimer
-  - warranty-disclaimer
+  - unknown
+  - swrule
 notes: this is a license from fossology license reference UCWare-EULA (UCWare Software License
   Agreement) http://www.ucware.com/jexec/documentation/license.html

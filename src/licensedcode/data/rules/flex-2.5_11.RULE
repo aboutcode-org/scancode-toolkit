@@ -2,6 +2,8 @@
 license_expression: flex-2.5
 is_license_text: yes
 minimum_coverage: 95
+is_deprecated: yes
+notes: This text is now the flex-2.5 LICENSE
 ---
 
 The United States Government has rights in this work pursuant

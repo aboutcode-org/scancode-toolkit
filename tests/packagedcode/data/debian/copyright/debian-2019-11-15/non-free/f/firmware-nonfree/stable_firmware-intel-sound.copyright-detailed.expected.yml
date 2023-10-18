@@ -9,7 +9,7 @@ declared_license_expression: intel AND intel AND (intel AND (bsd-new AND other-p
 declared_license_expression_spdx: LicenseRef-scancode-intel AND LicenseRef-scancode-intel AND
   (LicenseRef-scancode-intel AND (BSD-3-Clause AND LicenseRef-scancode-other-permissive AND
   LicenseRef-scancode-other-copyleft) AND BSD-3-Clause AND dtoa AND SMLNJ AND LicenseRef-scancode-amd-historical
-  AND SunPro AND HP-1986 AND LicenseRef-scancode-nilsson-historical AND LicenseRef-scancode-newlib-historical
+  AND SunPro AND HP-1989 AND LicenseRef-scancode-nilsson-historical AND LicenseRef-scancode-newlib-historical
   AND BSD-2-Clause AND LicenseRef-scancode-x11-hanson AND LicenseRef-scancode-delorie-historical
   AND LicenseRef-scancode-intel-osl-1993)
 other_license_expression:

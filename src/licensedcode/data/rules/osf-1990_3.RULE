@@ -1,6 +1,8 @@
 ---
 license_expression: osf-1990
 is_license_text: yes
+is_deprecated: yes
+notes: This is now the HP-1986 LICENSE
 ---
 
 To anyone who acknowledges that this file is provided "AS IS"

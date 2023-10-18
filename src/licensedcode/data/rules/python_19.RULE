@@ -3,6 +3,7 @@ license_expression: python
 is_license_notice: yes
 relevance: 100
 is_deprecated: yes
+notes: replaced by the python-ldap LICENSE
 ---
 
 The python-ldap package is distributed under Python-style license.
