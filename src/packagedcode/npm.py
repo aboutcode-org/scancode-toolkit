@@ -632,6 +632,10 @@ class YarnLockV1Handler(BaseNpmHandler):
                         ns_name, _, constraint = req.rpartition('@')
                         ns, _ , name = ns_name.rpartition('/')
                         constraint = constraint.strip("\"'")
+                        # If we have an alias, just keep the package part:
+                        # <alias-package>@npm:<package>
+                        if "@npm:" in ns:
+                            ns = ns.split(':')[1]
                         top_requirements.append((ns, name, constraint,))
 
                 else:
