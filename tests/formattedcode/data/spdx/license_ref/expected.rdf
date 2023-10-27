@@ -1,154 +1,127 @@
 {
   "rdf:RDF": {
-    "ns1:SpdxDocument": {
-      "ns1:name": {
-        "@rdf:resource": "SPDX Document created by ScanCode Toolkit"
+    "spdx:Package": {
+      "spdx:filesAnalyzed": {
+        "#text": "true",
+        "@rdf:datatype": "http://www.w3.org/2001/XMLSchema#boolean"
       },
-      "ns1:dataLicense": {
-        "@rdf:resource": "http://spdx.org/licenses/CC0-1.0"
+      "spdx:downloadLocation": {
+        "@rdf:resource": "http://spdx.org/rdf/terms#noassertion"
       },
-      "ns1:referencesFile": {
-        "ns1:File": {
-          "ns1:licenseConcluded": {
-            "@rdf:resource": "http://spdx.org/rdf/terms#noassertion"
-          },
-          "ns1:licenseInfoInFile": [
-            {
-              "@rdf:resource": "http://spdx.org/licenses/Apache-2.0"
-            },
-            {
-              "@rdf:resource": "http://spdx.org/licenses/CC0-1.0"
-            },
-            {
-              "ns1:ExtractedLicensingInfo": {
-                "ns1:licenseId": "LicenseRef-scancode-other-copyleft",
-                "ns1:licenseName": "Other Copyleft Licenses",
-                "ns1:extractedText": "See details at https://github.com/nexB/scancode-toolkit/blob/develop/src/licensedcode/data/licenses/other-copyleft.yml",
-                "rdfs:comment": "See details at https://github.com/nexB/scancode-toolkit/blob/develop/src/licensedcode/data/licenses/other-copyleft.yml"
-              }
-            },
-            {
-              "ns1:ExtractedLicensingInfo": {
-                "ns1:licenseId": "LicenseRef-scancode-other-permissive",
-                "ns1:licenseName": "Other Permissive Licenses",
-                "ns1:extractedText": "See details at https://github.com/nexB/scancode-toolkit/blob/develop/src/licensedcode/data/licenses/other-permissive.yml",
-                "rdfs:comment": "See details at https://github.com/nexB/scancode-toolkit/blob/develop/src/licensedcode/data/licenses/other-permissive.yml"
-              }
-            },
-            {
-              "ns1:ExtractedLicensingInfo": {
-                "ns1:licenseId": "LicenseRef-scancode-scancode-acknowledgment",
-                "ns1:licenseName": "ScanCode generated data acknowledgment",
-                "ns1:extractedText": "See details at https://github.com/nexB/scancode-toolkit/blob/develop/src/licensedcode/data/licenses/scancode-acknowledgment.yml",
-                "rdfs:comment": "See details at https://github.com/nexB/scancode-toolkit/blob/develop/src/licensedcode/data/licenses/scancode-acknowledgment.yml"
-              }
-            }
-          ],
-          "ns1:checksum": {
-            "ns1:Checksum": {
-              "ns1:checksumValue": "f9c28fa2714ad0c2e36d3e5561afb0031fa76831",
-              "ns1:algorithm": "http://spdx.org/rdf/terms#checksumAlgorithm_sha1"
-            }
-          },
-          "ns1:fileName": "./scan/NOTICE",
-          "@rdf:about": "http://www.spdx.org/files#SPDXRef-2",
-          "ns1:copyrightText": "Copyright (c) 2017 nexB Inc. and others"
+      "spdx:licenseConcluded": {
+        "@rdf:resource": "http://spdx.org/rdf/terms#noassertion"
+      },
+      "spdx:licenseDeclared": {
+        "@rdf:resource": "http://spdx.org/rdf/terms#noassertion"
+      },
+      "@rdf:about": "#SPDXRef-001",
+      "spdx:licenseInfoFromFiles": [
+        {
+          "@rdf:resource": "http://spdx.org/licenses/Apache-2.0"
+        },
+        {
+          "@rdf:resource": "http://spdx.org/licenses/CC0-1.0"
+        },
+        {
+          "@rdf:resource": "http://spdx.org/licenses/LicenseRef-scancode-other-copyleft"
+        },
+        {
+          "@rdf:resource": "http://spdx.org/licenses/LicenseRef-scancode-other-permissive"
+        },
+        {
+          "@rdf:resource": "http://spdx.org/licenses/LicenseRef-scancode-scancode-acknowledgment"
+        }
+      ],
+      "spdx:packageVerificationCode": {
+        "spdx:PackageVerificationCode": {
+          "spdx:packageVerificationCodeValue": "b49eeefd776fb76555378d07fd05d986a249a2b3"
         }
       },
-      "ns1:describesPackage": {
-        "ns1:Package": {
-          "ns1:Package": {
-            "@rdf:resource": "SPDXRef-001"
-          },
-          "ns1:downloadLocation": {
-            "@rdf:resource": "http://spdx.org/rdf/terms#noassertion"
-          },
-          "ns1:licenseConcluded": {
-            "@rdf:resource": "http://spdx.org/rdf/terms#noassertion"
-          },
-          "ns1:licenseDeclared": {
-            "@rdf:resource": "http://spdx.org/rdf/terms#noassertion"
-          },
-          "ns1:hasFile": {
-            "@rdf:resource": "http://www.spdx.org/files#SPDXRef-2"
-          },
-          "ns1:licenseInfoFromFiles": [
-            {
-              "@rdf:resource": "http://spdx.org/licenses/Apache-2.0"
-            },
-            {
-              "@rdf:resource": "http://spdx.org/licenses/CC0-1.0"
-            },
-            {
-              "ns1:ExtractedLicensingInfo": {
-                "ns1:licenseId": "LicenseRef-scancode-other-copyleft",
-                "ns1:licenseName": "Other Copyleft Licenses",
-                "ns1:extractedText": "See details at https://github.com/nexB/scancode-toolkit/blob/develop/src/licensedcode/data/licenses/other-copyleft.yml",
-                "rdfs:comment": "See details at https://github.com/nexB/scancode-toolkit/blob/develop/src/licensedcode/data/licenses/other-copyleft.yml"
-              }
-            },
-            {
-              "ns1:ExtractedLicensingInfo": {
-                "ns1:licenseId": "LicenseRef-scancode-other-permissive",
-                "ns1:licenseName": "Other Permissive Licenses",
-                "ns1:extractedText": "See details at https://github.com/nexB/scancode-toolkit/blob/develop/src/licensedcode/data/licenses/other-permissive.yml",
-                "rdfs:comment": "See details at https://github.com/nexB/scancode-toolkit/blob/develop/src/licensedcode/data/licenses/other-permissive.yml"
-              }
-            },
-            {
-              "ns1:ExtractedLicensingInfo": {
-                "ns1:licenseId": "LicenseRef-scancode-scancode-acknowledgment",
-                "ns1:licenseName": "ScanCode generated data acknowledgment",
-                "ns1:extractedText": "See details at https://github.com/nexB/scancode-toolkit/blob/develop/src/licensedcode/data/licenses/scancode-acknowledgment.yml",
-                "rdfs:comment": "See details at https://github.com/nexB/scancode-toolkit/blob/develop/src/licensedcode/data/licenses/scancode-acknowledgment.yml"
-              }
-            }
-          ],
-          "@rdf:about": "http://www.spdx.org/tools#SPDXRef-Package",
-          "ns1:copyrightText": "Copyright (c) 2017 nexB Inc. and others",
-          "ns1:name": "scan"
-        }
-      },
-      "ns1:relationship": {
-        "ns1:Relationship": {
-          "ns1:relationshipType": {
+      "spdx:relationship": {
+        "spdx:Relationship": {
+          "spdx:relationshipType": {
             "@rdf:resource": "http://spdx.org/rdf/terms#relationshipType_contains"
           },
-          "ns1:spdxElementId": "SPDXRef-001",
-          "ns1:relatedSpdxElement": "SPDXRef-2"
+          "spdx:relatedSpdxElement": {
+            "spdx:File": {
+              "spdx:licenseConcluded": {
+                "@rdf:resource": "http://spdx.org/rdf/terms#noassertion"
+              },
+              "@rdf:about": "#SPDXRef-2",
+              "spdx:licenseInfoInFile": [
+                {
+                  "@rdf:resource": "http://spdx.org/licenses/Apache-2.0"
+                },
+                {
+                  "@rdf:resource": "http://spdx.org/licenses/CC0-1.0"
+                },
+                {
+                  "@rdf:resource": "http://spdx.org/licenses/LicenseRef-scancode-other-copyleft"
+                },
+                {
+                  "@rdf:resource": "http://spdx.org/licenses/LicenseRef-scancode-other-permissive"
+                },
+                {
+                  "@rdf:resource": "http://spdx.org/licenses/LicenseRef-scancode-scancode-acknowledgment"
+                }
+              ],
+              "spdx:checksum": {
+                "spdx:Checksum": {
+                  "spdx:algorithm": {
+                    "@rdf:resource": "http://spdx.org/rdf/terms#checksumAlgorithm_sha1"
+                  },
+                  "spdx:checksumValue": "f9c28fa2714ad0c2e36d3e5561afb0031fa76831"
+                }
+              },
+              "spdx:fileName": "./scan/NOTICE",
+              "spdx:copyrightText": "Copyright (c) 2017 nexB Inc. and others"
+            }
+          }
         }
       },
-      "ns1:hasExtractedLicensingInfo": [
+      "spdx:copyrightText": "Copyright (c) 2017 nexB Inc. and others",
+      "spdx:name": "scan"
+    },
+    "spdx:SpdxDocument": {
+      "spdx:dataLicense": {
+        "@rdf:resource": "http://spdx.org/licenses/CC0-1.0"
+      },
+      "@rdf:about": "#SPDXRef-DOCUMENT",
+      "spdx:hasExtractedLicensingInfo": [
         {
-          "ns1:ExtractedLicensingInfo": {
-            "ns1:licenseId": "LicenseRef-scancode-other-copyleft",
-            "ns1:licenseName": "Other Copyleft Licenses",
-            "ns1:extractedText": "See details at https://github.com/nexB/scancode-toolkit/blob/develop/src/licensedcode/data/licenses/other-copyleft.yml",
-            "rdfs:comment": "See details at https://github.com/nexB/scancode-toolkit/blob/develop/src/licensedcode/data/licenses/other-copyleft.yml"
+          "spdx:ExtractedLicensingInfo": {
+            "@rdf:about": "#LicenseRef-scancode-other-copyleft",
+            "spdx:licenseId": "LicenseRef-scancode-other-copyleft",
+            "spdx:name": "Other Copyleft Licenses",
+            "rdfs:comment": "See details at https://github.com/nexB/scancode-toolkit/blob/develop/src/licensedcode/data/licenses/other-copyleft.LICENSE",
+            "spdx:extractedText": "See details at https://github.com/nexB/scancode-toolkit/blob/develop/src/licensedcode/data/licenses/other-copyleft.LICENSE"
           }
         },
         {
-          "ns1:ExtractedLicensingInfo": {
-            "ns1:licenseId": "LicenseRef-scancode-other-permissive",
-            "ns1:licenseName": "Other Permissive Licenses",
-            "ns1:extractedText": "See details at https://github.com/nexB/scancode-toolkit/blob/develop/src/licensedcode/data/licenses/other-permissive.yml",
-            "rdfs:comment": "See details at https://github.com/nexB/scancode-toolkit/blob/develop/src/licensedcode/data/licenses/other-permissive.yml"
+          "spdx:ExtractedLicensingInfo": {
+            "@rdf:about": "#LicenseRef-scancode-other-permissive",
+            "spdx:licenseId": "LicenseRef-scancode-other-permissive",
+            "spdx:name": "Other Permissive Licenses",
+            "rdfs:comment": "See details at https://github.com/nexB/scancode-toolkit/blob/develop/src/licensedcode/data/licenses/other-permissive.LICENSE",
+            "spdx:extractedText": "See details at https://github.com/nexB/scancode-toolkit/blob/develop/src/licensedcode/data/licenses/other-permissive.LICENSE"
           }
         },
         {
-          "ns1:ExtractedLicensingInfo": {
-            "ns1:licenseId": "LicenseRef-scancode-scancode-acknowledgment",
-            "ns1:licenseName": "ScanCode generated data acknowledgment",
-            "ns1:extractedText": "See details at https://github.com/nexB/scancode-toolkit/blob/develop/src/licensedcode/data/licenses/scancode-acknowledgment.yml",
-            "rdfs:comment": "See details at https://github.com/nexB/scancode-toolkit/blob/develop/src/licensedcode/data/licenses/scancode-acknowledgment.yml"
+          "spdx:ExtractedLicensingInfo": {
+            "@rdf:about": "#LicenseRef-scancode-scancode-acknowledgment",
+            "spdx:licenseId": "LicenseRef-scancode-scancode-acknowledgment",
+            "spdx:name": "ScanCode acknowledgment",
+            "rdfs:comment": "See details at https://github.com/nexB/scancode-toolkit/blob/develop/src/licensedcode/data/licenses/scancode-acknowledgment.LICENSE",
+            "spdx:extractedText": "See details at https://github.com/nexB/scancode-toolkit/blob/develop/src/licensedcode/data/licenses/scancode-acknowledgment.LICENSE"
           }
         }
       ],
-      "@rdf:about": "http://www.spdx.org/tools#SPDXRef-DOCUMENT",
-      "ns1:specVersion": "SPDX-2.2"
+      "rdfs:comment": "Generated with ScanCode and provided on an \"AS IS\" BASIS, WITHOUT WARRANTIES\nOR CONDITIONS OF ANY KIND, either express or implied. No content created from\nScanCode should be considered or used as legal advice. Consult an Attorney\nfor any legal advice.\nScanCode is a free software code scanning tool from nexB Inc. and others.\nVisit https://github.com/nexB/scancode-toolkit/ for support and download.\nSPDX License List: 3.21",
+      "spdx:name": "SPDX Document created by ScanCode Toolkit",
+      "spdx:specVersion": "SPDX-2.2"
     },
-    "@xmlns:ns1": "http://spdx.org/rdf/terms#",
     "@xmlns:rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
-    "@xmlns:rdfs": "http://www.w3.org/2000/01/rdf-schema#"
+    "@xmlns:rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "@xmlns:spdx": "http://spdx.org/rdf/terms#"
   }
 }

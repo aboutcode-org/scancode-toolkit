@@ -31,14 +31,16 @@ def strip_variable_text(rdf_text):
     Return rdf_text stripped from variable parts such as rdf nodeids
     """
 
+    namespace_regex = re.compile('SpdxDocument rdf:about="(.+)#SPDXRef-DOCUMENT"')
+    namespace = namespace_regex.search(rdf_text).group(1)
+    rdf_text = re.compile(namespace).sub('', rdf_text)
+
     replace_nid = re.compile('rdf:nodeID="[^\\"]*"').sub
     rdf_text = replace_nid('', rdf_text)
 
-    replace_creation = re.compile('<ns1:creationInfo>.*</ns1:creationInfo>', re.DOTALL).sub  # NOQA
+    replace_creation = re.compile('<spdx:creationInfo>.*</spdx:creationInfo>', re.DOTALL).sub  # NOQA
     rdf_text = replace_creation('', rdf_text)
 
-    replace_pcc = re.compile('<ns1:packageVerificationCode>.*</ns1:packageVerificationCode>', re.DOTALL).sub  # NOQA
-    rdf_text = replace_pcc('', rdf_text)
     return rdf_text
 
 

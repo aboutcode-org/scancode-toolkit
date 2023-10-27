@@ -623,15 +623,21 @@ class YarnLockV1Handler(BaseNpmHandler):
                 elif not line.startswith(' ') and stripped.endswith(':'):
                     # the first line of a dependency has the name and requirements
                     # "@babel/core@^7.1.0", "@babel/core@^7.3.4":
+                    # For aliases: "@alias@npm:@package@^12":
                     requirements = stripped.strip(':').split(', ')
                     requirements = [r.strip().strip("\"'") for r in requirements]
                     for req in requirements:
                         if req.startswith('@'):
-                            assert req.count('@') == 2
+                            # 2 = package, 4 = alias
+                            assert req.count('@') in [2, 4]
 
                         ns_name, _, constraint = req.rpartition('@')
                         ns, _ , name = ns_name.rpartition('/')
                         constraint = constraint.strip("\"'")
+                        # If we have an alias, just keep the package part:
+                        # <alias-package>@npm:<package>
+                        if "@npm:" in ns:
+                            ns = ns.split(':')[1]
                         top_requirements.append((ns, name, constraint,))
 
                 else:

@@ -112,3 +112,6 @@ var
 .metaflow
 selenium
 /dist/
+
+# Ignore extra rpmdb sqlite stuff
+rpmdb.sqlite-*
