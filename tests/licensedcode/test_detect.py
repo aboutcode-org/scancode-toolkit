@@ -18,6 +18,7 @@ from licensedcode import match_aho
 from licensedcode import match_seq
 from licensedcode.legalese import build_dictionary_from_iterable
 from licensedcode.match import LicenseMatch
+from licensedcode.match import MATCH_AHO_EXACT
 from licensedcode.models import load_rules
 from licensedcode.spans import Span
 from licensedcode.tracing import get_texts
@@ -930,9 +931,9 @@ class TestMatchAccuracyWithFullIndex(FileBasedTesting):
         matches = idx.match(query_string=querys)
 
         rule = [r for r in idx.rules_by_rid if r.identifier == 'gpl_69.RULE'][0]
-        m1 = LicenseMatch(rule=rule, matcher='2-aho', qspan=Span(0, 7), ispan=Span(0, 7), start_line=1, end_line=1)
-        m2 = LicenseMatch(rule=rule, matcher='2-aho', qspan=Span(8, 15), ispan=Span(0, 7), start_line=2, end_line=2)
-        m3 = LicenseMatch(rule=rule, matcher='2-aho', qspan=Span(16, 23), ispan=Span(0, 7), start_line=3, end_line=3)
+        m1 = LicenseMatch(rule=rule, matcher=MATCH_AHO_EXACT, qspan=Span(0, 7), ispan=Span(0, 7), start_line=1, end_line=1)
+        m2 = LicenseMatch(rule=rule, matcher=MATCH_AHO_EXACT, qspan=Span(8, 15), ispan=Span(0, 7), start_line=2, end_line=2)
+        m3 = LicenseMatch(rule=rule, matcher=MATCH_AHO_EXACT, qspan=Span(16, 23), ispan=Span(0, 7), start_line=3, end_line=3)
         assert matches == [m1, m2, m3]
 
     def test_match_has_correct_line_positions_for_query_with_repeats(self):

@@ -12,6 +12,7 @@ import sys
 
 
 from licensedcode.match import LicenseMatch
+from licensedcode.match import MATCH_SEQ
 from licensedcode.spans import Span
 
 
@@ -43,8 +44,6 @@ if TRACE or TRACE2 or TRACE3:
 Matching strategy using pair-wise multiple local sequences alignment and diff-
 like approaches.
 """
-
-MATCH_SEQ = '3-seq'
 
 
 def match_sequence(idx, rule, query_run, high_postings, start_offset=0,

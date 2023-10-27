@@ -13,6 +13,7 @@ from licensedcode import tokenize
 from licensedcode.models import UnknownRule
 from licensedcode.match import get_full_qspan_matched_text
 from licensedcode.match import LicenseMatch
+from licensedcode.match import MATCH_UNKNOWN
 from licensedcode.spans import Span
 
 """
@@ -43,7 +44,6 @@ else:
     def logger_debug(*args):
         pass
 
-MATCH_UNKNOWN = '6-unknown'
 
 UNKNOWN_NGRAM_LENGTH = 6
 

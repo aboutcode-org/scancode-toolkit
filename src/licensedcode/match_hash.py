@@ -12,6 +12,7 @@ from hashlib import sha1
 
 
 from licensedcode.match import LicenseMatch
+from licensedcode.match import MATCH_HASH
 from licensedcode.spans import Span
 
 """
@@ -37,8 +38,6 @@ else:
 
     def logger_debug(*args):
         pass
-
-MATCH_HASH = '1-hash'
 
 
 def tokens_hash(tokens):

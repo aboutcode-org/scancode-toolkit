@@ -28,6 +28,7 @@ from commoncode import fileutils
 import licensedcode
 from licensedcode.cache import get_licenses_by_spdx_key
 from licensedcode import models
+from licensedcode.match import MATCH_HASH
 from licensedcode.models import load_licenses
 from licensedcode.models import License
 
@@ -253,7 +254,7 @@ def get_match(text):
         len(matches) == 1
         and rule.is_from_license
         and len(rule_licenses) == 1
-        and match.matcher == "1-hash"
+        and match.matcher == MATCH_HASH
         and match.score() == 100
         and match.len() == query_len
     )
