@@ -15,22 +15,32 @@ to distinguish the forest from the trees. Therefore reporting the primary
 license detection is important: when we get scan results, we can often
 get 30 licenses for a single a package and this volume is a problem
 even if it is correct and it is technically correct.
+
 The goal of this improvement is to:
 
-- combine multiple related license matches in a single license detection
+- Combine multiple related license matches in a single license detection.
 
-- in a license detection, expose a primary license expression in addition
+- In a license detection, expose a primary license expression in addition
   to the complete, full license expression.
-
-- make the logic of selection of the primary license visible, at the minimum
-  with a log of combination and primary license selection operations
+  
+- Make the logic of selection of the primary license visible, at the minimum
+  with a log of combination and primary license selection operations.
 
 This is for SCTK first.
 
-Status: This has been completed in SCTK and also included in SCIO. We use
+Status: 
+
+This has been completed in SCTK and also included in SCIO. We use
 an updated --summary option and a new license clarity score for this.
 We also have LicenseDetections for resources/packages and a top level
 unique license detections as a summary.
+
+Next steps:
+
+- We can report the declared license and other licenses in the license summary
+  of a full scan. The primary license is based; next is to do the
+  same across each package found nested in a scanned codebase. And also compute
+  an individual license clarity score for each these.
 
 
 2. Package files.
@@ -71,6 +81,8 @@ This is completed in SCTK.
 
 This is the same issue as for primary license, but for holders
 
+This has not been completed. This is less critical to complete as the tracing
+is much simpler and can be done manually in the rare cases where this is needed.
 
 
 Roadmap
@@ -128,4 +140,4 @@ Roadmap
 - Revamp how common list of suprrious licenses are detected (this is a bug)
 - Use important key phrases for license detection https://github.com/nexB/scancode-toolkit/issues/2637
 
-This is mostly completed, for follow up see https://github.com/nexB/scancode-toolkit/issues/2878.
+This is mostly completed, for follow up see https://github.com/nexB/scancode-toolkit/issues/2878
