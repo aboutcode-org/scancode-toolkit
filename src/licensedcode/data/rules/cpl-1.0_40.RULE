@@ -1,0 +1,9 @@
+---
+license_expression: cpl-1.0
+is_license_notice: yes
+ignorable_urls:
+    - http://junit.sourceforge.net/cpl-v10.html
+---
+
+is licensed under the Common Public License v. 1.0
+See http://junit.sourceforge.net/cpl-v10.html

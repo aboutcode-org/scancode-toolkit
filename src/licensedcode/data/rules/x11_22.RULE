@@ -1,0 +1,12 @@
+---
+license_expression: x11
+is_license_notice: yes
+minimum_coverage: 90
+ignorable_urls:
+    - http://source.icu-project.org/repos/icu/icu/trunk/license.html
+    - http://www.icu-project.org/
+---
+
+derived from ICU (http://www.icu-project.org)
+The full license is available here: 
+  http://source.icu-project.org/repos/icu/icu/trunk/license.html

@@ -1,0 +1,13 @@
+---
+license_expression: unknown-license-reference
+is_license_intro: yes
+notes: https://github.com/nexB/scancode-toolkit/issues/3535
+---
+
+THIRD-PARTY SOFTWARE NOTICES AND INFORMATION
+Do Not Translate or Localize
+
+This software incorporates components from the projects listed below. The original copyright notices
+and the licenses under which Microsoft received such components are set forth below and are provided for 
+informational purposes only. Microsoft reserves all rights not expressly granted herein, whether by 
+implication, estoppel or otherwise.

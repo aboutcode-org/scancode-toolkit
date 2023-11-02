@@ -1,0 +1,8 @@
+---
+is_false_positive: yes
+notes: see https://github.com/dotnet/dotnet/blob/6d552276bb3a619740e2402e829da49ff25deba6/src/arcade/src/Microsoft.DotNet.Build.Tasks.Installers/src/BuildFPMToolPreReqs.cs#L4
+    and https://github.com/dotnet/installer/blob/ad71a5a747a56e400e70e7291623362e99dfbc21/src/SourceBuild/content/test/Microsoft.DotNet.SourceBuild.SmokeTests/assets/LicenseExclusions.txt#L17
+---
+
+removal     --JSON
+--license : the
