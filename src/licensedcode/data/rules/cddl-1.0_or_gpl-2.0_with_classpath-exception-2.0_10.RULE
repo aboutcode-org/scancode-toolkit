@@ -1,0 +1,10 @@
+---
+license_expression: cddl-1.0 OR gpl-2.0 WITH classpath-exception-2.0
+is_license_tag: yes
+ignorable_urls:
+    - https://glassfish.dev.java.net/nonav/public/CDDL+GPL.html
+---
+
+name: CDDL + GPLv2 with classpath exception
+url: https://glassfish.dev.java.net/nonav/public/CDDL+GPL.html
+comments: A business-friendly OSS license
