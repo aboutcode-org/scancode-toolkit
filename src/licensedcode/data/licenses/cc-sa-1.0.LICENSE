@@ -5,19 +5,17 @@ name: Creative Commons Share Alike License 1.0
 category: Copyleft
 owner: Creative Commons
 homepage_url: http://creativecommons.org/licenses/sa/1.0/
+notes: A deprecated license from Creative Commons that predates the use of the "BY" convention
+    in the license identifier. CREATIVE COMMONS CORPORATION IS NOT A LAW FIRM AND DOES NOT PROVIDE
+    LEGAL SERVICES. DISTRIBUTION OF THIS DRAFT LICENSE DOES NOT CREATE AN ATTORNEY-CLIENT RELATIONSHIP.
+    CREATIVE COMMONS PROVIDES THIS INFORMATION ON AN "AS-IS" BASIS. CREATIVE COMMONS MAKES NO
+    WARRANTIES REGARDING THE INFORMATION PROVIDED, AND DISCLAIMS LIABILITY FOR DAMAGES RESULTING
+    FROM ITS USE.
 spdx_license_key: LicenseRef-scancode-cc-sa-1.0
-notes: A deprecated license from Creative Commons that predates the use of the "BY" convention in the license identifier. 
- CREATIVE COMMONS CORPORATION IS NOT A LAW FIRM AND DOES NOT PROVIDE LEGAL SERVICES.
- DISTRIBUTION OF THIS DRAFT LICENSE DOES NOT CREATE AN ATTORNEY-CLIENT RELATIONSHIP.
- CREATIVE COMMONS PROVIDES THIS INFORMATION ON AN "AS-IS" BASIS.
- CREATIVE COMMONS MAKES NO WARRANTIES REGARDING THE INFORMATION PROVIDED, AND
- DISCLAIMS LIABILITY FOR DAMAGES RESULTING FROM ITS USE.
 text_urls:
     - http://creativecommons.org/licenses/sa/1.0/legalcode
 other_urls:
     - https://creativecommons.org/licenses/sa/1.0/legalcode
-ignorable_urls:
-    - http://creativecommons.org/
 ---
 
 ShareAlike 1.0
