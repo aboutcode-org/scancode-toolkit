@@ -16,8 +16,6 @@ text_urls:
     - http://creativecommons.org/licenses/sa/1.0/legalcode
 other_urls:
     - https://creativecommons.org/licenses/sa/1.0/legalcode
-ignorable_urls:
-    - http://creativecommons.org/
 ---
 
 ShareAlike 1.0
