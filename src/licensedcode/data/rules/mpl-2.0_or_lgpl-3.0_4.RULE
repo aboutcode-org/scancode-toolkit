@@ -1,0 +1,17 @@
+---
+license_expression: mpl-2.0 OR lgpl-3.0
+is_license_tag: yes
+relevance: 95
+notes: typical of openpdf as a choice of licenses. Newer versions reverted to v2.1 of LGPL
+ignorable_urls:
+    - http://www.gnu.org/licenses/lgpl.html
+    - http://www.mozilla.org/MPL/2.0/
+---
+
+<license>
+<name>GNU General Lesser Public License (LGPL) version 3.0
+<url>http://www.gnu.org/licenses/lgpl.html
+
+<license>
+<name>Mozilla Public License Version 2.0
+<url>http://www.mozilla.org/MPL/2.0/

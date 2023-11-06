@@ -22,40 +22,27 @@
   "vcs_url": "http://anonhibernate.labs.jboss.com/trunk/HibernateExt",
   "copyright": null,
   "holder": null,
-  "declared_license_expression": "lgpl-2.0-plus",
-  "declared_license_expression_spdx": "LGPL-2.0-or-later",
+  "declared_license_expression": "lgpl-2.1-plus",
+  "declared_license_expression_spdx": "LGPL-2.1-or-later",
   "license_detections": [
     {
-      "license_expression": "lgpl-2.0-plus",
+      "license_expression": "lgpl-2.1-plus",
       "matches": [
         {
           "score": 100.0,
           "start_line": 1,
-          "end_line": 1,
-          "matched_length": 5,
-          "match_coverage": 100.0,
-          "matcher": "2-aho",
-          "license_expression": "lgpl-2.0-plus",
-          "rule_identifier": "lgpl-2.0-plus_87.RULE",
-          "rule_relevance": 100,
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0-plus_87.RULE",
-          "matched_text": "- name: GNU LESSER GENERAL PUBLIC LICENSE"
-        },
-        {
-          "score": 100.0,
-          "start_line": 2,
           "end_line": 2,
-          "matched_length": 6,
+          "matched_length": 14,
           "match_coverage": 100.0,
-          "matcher": "2-aho",
-          "license_expression": "lgpl-2.0-plus",
-          "rule_identifier": "lgpl-2.0-plus_204.RULE",
+          "matcher": "1-hash",
+          "license_expression": "lgpl-2.1-plus",
+          "rule_identifier": "lgpl-2.1-plus_482.RULE",
           "rule_relevance": 100,
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0-plus_204.RULE",
-          "matched_text": "  url: http://www.gnu.org/licenses/lgpl.txt"
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_482.RULE",
+          "matched_text": "- name: GNU LESSER GENERAL PUBLIC LICENSE\n  url: http://www.gnu.org/licenses/lgpl.txt"
         }
       ],
-      "identifier": "lgpl_2_0_plus-39338b95-daca-d7de-257c-fafb876cbd6d"
+      "identifier": "lgpl_2_1_plus-ed8ae0aa-72f2-2724-7f62-9efe4de451aa"
     }
   ],
   "other_license_expression": null,
