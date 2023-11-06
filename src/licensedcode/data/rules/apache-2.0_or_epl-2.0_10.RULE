@@ -1,0 +1,14 @@
+---
+license_expression: apache-2.0 OR epl-2.0
+is_license_tag: yes
+ignorable_urls:
+    - https://opensource.org/licenses/Apache-2.0
+    - https://opensource.org/licenses/EPL-2.0
+---
+
+Apache-2.0
+description {{Apache License, Version 2.0}}
+link https://opensource.org/licenses/Apache-2.0
+EPL-2.0
+description {{Eclipse Public License, Version 2.0}}
+link https://opensource.org/licenses/EPL-2.0
