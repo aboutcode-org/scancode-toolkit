@@ -416,18 +416,18 @@ license_detections:
               If you did not receive a copy of the license with this program, please
               see <http://www.gnu.org/licenses/> to obtain a copy.
     identifier: lgpl_2_1_plus-cbb754d2-a8a7-b58c-4ef8-315e1df5356e
-  - license_expression: lgpl-2.1-plus
+  - license_expression: lgpl-2.1-plus AND lgpl-2.0-plus
     matches:
-      - score: '97.17'
+      - score: '100.0'
         start_line: 298
         end_line: 309
-        matched_length: 103
+        matched_length: 106
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: lgpl-2.1-plus
-        rule_identifier: lgpl-2.1-plus_180.RULE
+        rule_identifier: lgpl-2.1-plus_491.RULE
         rule_relevance: 100
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_180.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_491.RULE
         matched_text: |
           GNU Libidn is free software; you can redistribute it and/or
               modify it under the terms of the GNU Lesser General Public
@@ -441,21 +441,20 @@ license_detections:
 
               You should have received a copy of the GNU Lesser General Public
               License along with GNU Libidn; if not, see <http://www.gnu.org/licenses/>.
-    identifier: lgpl_2_1_plus-fdc7a0fc-5a6f-07a8-7310-07077c7820dd
-  - license_expression: lgpl-2.0-plus
-    matches:
       - score: '100.0'
-        start_line: 314
+        start_line: 313
         end_line: 314
-        matched_length: 4
+        matched_length: 20
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: lgpl-2.0-plus
-        rule_identifier: lgpl-2.0-plus_218.RULE
+        rule_identifier: lgpl-2.0-plus_573.RULE
         rule_relevance: 100
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0-plus_218.RULE
-        matched_text: all licensed under LGPL
-    identifier: lgpl_2_0_plus-f75a1f10-bdd9-8132-e348-bb505cbb82e6
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0-plus_573.RULE
+        matched_text: |
+          This file contains functions from GLIB, including gutf8.c and
+              gunidecomp.c, all licensed under LGPL and copyright hold by:
+    identifier: lgpl_2_1_plus_and_lgpl_2_0_plus-04228d42-945a-cc8b-eba4-536171dd96ee
   - license_expression: other-permissive AND ietf
     matches:
       - score: '100.0'
