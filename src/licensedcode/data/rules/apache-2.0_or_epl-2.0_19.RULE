@@ -4,4 +4,4 @@ is_license_notice: yes
 relevance: 100
 ---
 
-<license>(Apache-2.0 OR EPL-2.0)
+<license>{{(Apache-2.0 OR EPL-2.0)}}

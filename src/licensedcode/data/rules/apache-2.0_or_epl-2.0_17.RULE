@@ -5,4 +5,4 @@ relevance: 100
 ---
 
 <license>
-<name>(Apache-2.0 OR EPL-2.0)
+<name>{{(Apache-2.0 OR EPL-2.0)}}
