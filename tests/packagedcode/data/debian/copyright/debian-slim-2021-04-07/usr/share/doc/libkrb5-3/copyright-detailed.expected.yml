@@ -18,8 +18,8 @@ declared_license_expression_spdx: BSD-2-Clause AND LicenseRef-scancode-generic-e
   AND (LicenseRef-scancode-mit-no-advert-export-control AND LicenseRef-scancode-proprietary-license)
   AND BSD-4-Clause-UC AND LicenseRef-scancode-mit-no-advert-export-control AND BSD-4-Clause
   AND MIT AND ISC AND ISC AND LicenseRef-scancode-other-permissive AND BSD-3-Clause AND LicenseRef-scancode-rsa-md4
-  AND RSA-MD AND LicenseRef-scancode-rsa-1990 AND LicenseRef-scancode-mit-modification-obligations
-  AND BSD-3-Clause AND (BSD-2-Clause OR GPL-2.0-or-later) AND BSD-3-Clause AND BSD-2-Clause
+  AND RSA-MD AND LicenseRef-scancode-rsa-1990 AND HPND-export-US-modify AND BSD-3-Clause AND
+  (BSD-2-Clause OR GPL-2.0-or-later) AND BSD-3-Clause AND BSD-2-Clause
 other_license_expression:
 other_license_expression_spdx:
 license_detections:

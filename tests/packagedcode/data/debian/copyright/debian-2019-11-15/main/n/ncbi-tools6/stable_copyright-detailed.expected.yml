@@ -29,13 +29,12 @@ other_license_expression: (public-domain AND us-govt-public-domain) AND boost-1.
   AND (public-domain AND us-govt-public-domain) AND (public-domain AND us-govt-public-domain)
   AND (public-domain AND us-govt-public-domain)
 other_license_expression_spdx: (LicenseRef-scancode-public-domain AND LicenseRef-scancode-us-govt-public-domain)
-  AND BSL-1.0 AND (LicenseRef-scancode-mit-modification-obligations AND LicenseRef-scancode-proprietary-license)
-  AND LicenseRef-scancode-public-domain AND LicenseRef-scancode-flex-2.5 AND LicenseRef-scancode-flex-2.5
-  AND LicenseRef-scancode-flex-2.5 AND LicenseRef-scancode-flex-2.5 AND LicenseRef-scancode-flex-2.5
-  AND MIT AND (GPL-2.0-or-later AND GPL-2.0-or-later) AND (GPL-2.0-or-later AND GPL-2.0-or-later)
+  AND BSL-1.0 AND (HPND-export-US-modify AND LicenseRef-scancode-proprietary-license) AND LicenseRef-scancode-public-domain
+  AND BSD-3-Clause-flex AND BSD-3-Clause-flex AND BSD-3-Clause-flex AND BSD-3-Clause-flex AND
+  BSD-3-Clause-flex AND MIT AND (GPL-2.0-or-later AND GPL-2.0-or-later) AND (GPL-2.0-or-later
+  AND GPL-2.0-or-later) AND (LicenseRef-scancode-public-domain AND LicenseRef-scancode-us-govt-public-domain)
   AND (LicenseRef-scancode-public-domain AND LicenseRef-scancode-us-govt-public-domain) AND
-  (LicenseRef-scancode-public-domain AND LicenseRef-scancode-us-govt-public-domain) AND (LicenseRef-scancode-public-domain
-  AND LicenseRef-scancode-us-govt-public-domain)
+  (LicenseRef-scancode-public-domain AND LicenseRef-scancode-us-govt-public-domain)
 license_detections: []
 other_license_detections:
   - license_expression: public-domain AND us-govt-public-domain

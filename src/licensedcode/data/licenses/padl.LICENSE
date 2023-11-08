@@ -1,0 +1,15 @@
+---
+key: padl
+short_name: PADL License
+name: PADL License
+category: Permissive
+owner: PADL Software Pty Ltd.
+spdx_license_key: PADL
+other_urls:
+    - https://git.openldap.org/openldap/openldap/-/blob/master/libraries/libldap/os-local.c?ref_type=heads#L19-23
+---
+
+Redistribution and use in source and binary forms, with or without
+modification, are permitted provided that this notice is preserved
+and that due credit is given to PADL Software Pty Ltd. This software
+is provided ``as is'' without express or implied warranty.

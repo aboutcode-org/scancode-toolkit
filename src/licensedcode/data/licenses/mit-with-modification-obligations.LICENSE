@@ -4,9 +4,13 @@ short_name: MIT With Modification Obligations
 name: MIT With Modification Obligations
 category: Permissive
 owner: MIT
-spdx_license_key: LicenseRef-scancode-mit-modification-obligations
+spdx_license_key: HPND-export-US-modify
 other_spdx_license_keys:
     - LicenseRef-scancode-mit-with-modification-obligations
+    - LicenseRef-scancode-mit-modification-obligations
+other_urls:
+    - https://github.com/krb5/krb5/blob/krb5-1.21.2-final/NOTICE#L1157-L1182
+    - https://github.com/pythongssapi/k5test/blob/v0.10.3/K5TEST-LICENSE.txt
 minimum_coverage: 80
 ---
 

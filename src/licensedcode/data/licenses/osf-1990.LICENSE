@@ -3,15 +3,15 @@ key: osf-1990
 short_name: OSF 1990 License
 name: OSF 1990 License
 category: Permissive
-owner: Open Group
+owner: Open Software Foundation
 homepage_url: https://fedoraproject.org/wiki/Licensing:MIT?rd=Licensing/MIT#HP_Variant
-spdx_license_key: HP-1986
+spdx_license_key: HP-1989
 other_spdx_license_keys:
     - LicenseRef-scancode-osf-1990
 text_urls:
     - https://fedoraproject.org/wiki/Licensing:MIT?rd=Licensing/MIT#HP_Variant
 other_urls:
-    - https://sourceware.org/git/?p=newlib-cygwin.git;a=blob;f=newlib/libc/machine/hppa/memchr.S;h=1cca3e5e8867aa4bffef1f75a5c1bba25c0c441e;hb=HEAD#l2
+    - https://github.com/bleargh45/Data-UUID/blob/master/LICENSE
 ---
 
 To anyone who acknowledges that this file is provided "AS IS"

@@ -7,9 +7,13 @@ owner: Unspecified
 homepage_url: http://ipxe.org
 notes: this is a rare license that extends extra persmission on top of the GPL
 is_exception: yes
-spdx_license_key: LicenseRef-scancode-ubdl
+spdx_license_key: UBDL-exception
+other_spdx_license_keys:
+    - LicenseRef-scancode-ubdl
 text_urls:
     - https://git.ipxe.org/ipxe.git/blob_plain/HEAD:/COPYING.UBDL
+other_urls:
+    - https://github.com/ipxe/ipxe/blob/master/COPYING.UBDL
 ---
 
 UNMODIFIED BINARY DISTRIBUTION LICENCE

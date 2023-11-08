@@ -5,7 +5,11 @@ name: Purdue BSD-Style License
 category: Permissive
 owner: Purdue Research Foundation
 notes: this is very similar to the hs-regexp license
-spdx_license_key: LicenseRef-scancode-purdue-bsd
+spdx_license_key: lsof
+other_spdx_license_keys:
+    - LicenseRef-scancode-purdue-bsd
+other_urls:
+    - https://github.com/lsof-org/lsof/blob/master/COPYING
 minimum_coverage: 70
 ---
 

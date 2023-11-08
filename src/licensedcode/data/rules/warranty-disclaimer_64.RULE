@@ -1,7 +1,9 @@
 ---
 license_expression: warranty-disclaimer
 is_license_text: yes
+is_deprecated: yes
 relevance: 100
+notes: 'Replaced by license: swrule'
 ---
 
 Use at your own risk

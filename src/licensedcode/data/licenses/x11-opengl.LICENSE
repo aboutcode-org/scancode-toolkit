@@ -4,7 +4,11 @@ short_name: X11-Style (OpenGL)
 name: X11-Style (OpenGL)
 category: Permissive
 owner: SGI - Silicon Graphics
-spdx_license_key: LicenseRef-scancode-x11-opengl
+spdx_license_key: SGI-OpenGL
+other_spdx_license_keys:
+    - LicenseRef-scancode-x11-opengl
+other_urls:
+    - https://gitlab.freedesktop.org/mesa/glw/-/blob/master/README?ref_type=heads
 minimum_coverage: 80
 ---
 

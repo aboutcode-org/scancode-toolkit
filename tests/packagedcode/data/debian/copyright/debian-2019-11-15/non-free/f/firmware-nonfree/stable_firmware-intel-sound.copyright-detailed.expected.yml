@@ -4,7 +4,7 @@ declared_license:
   - Binary redistribution (Intel 3)
 declared_license_expression: intel AND intel AND (intel AND (bsd-new AND other-permissive AND
   other-copyleft) AND bsd-new AND x11-lucent AND standard-ml-nj AND amd-historical AND sunpro
-  AND osf-1990 AND nilsson-historical AND newlib-historical AND bsd-simplified AND x11-hanson
+  AND hp-1986 AND nilsson-historical AND newlib-historical AND bsd-simplified AND x11-hanson
   AND delorie-historical AND intel-osl-1993)
 declared_license_expression_spdx: LicenseRef-scancode-intel AND LicenseRef-scancode-intel AND
   (LicenseRef-scancode-intel AND (BSD-3-Clause AND LicenseRef-scancode-other-permissive AND
@@ -115,7 +115,7 @@ license_detections:
           POSSIBILITY OF SUCH DAMAGE.
     identifier: intel-aad21753-33a8-9b6b-b0be-dbc0838c75ab
   - license_expression: intel AND (bsd-new AND other-permissive AND other-copyleft) AND bsd-new
-      AND x11-lucent AND standard-ml-nj AND amd-historical AND sunpro AND osf-1990 AND nilsson-historical
+      AND x11-lucent AND standard-ml-nj AND amd-historical AND sunpro AND hp-1986 AND nilsson-historical
       AND newlib-historical AND bsd-simplified AND x11-hanson AND delorie-historical AND intel-osl-1993
     matches:
       - score: '95.0'
@@ -327,10 +327,10 @@ license_detections:
         matched_length: 88
         match_coverage: '100.0'
         matcher: 2-aho
-        license_expression: osf-1990
-        rule_identifier: osf-1990_3.RULE
+        license_expression: hp-1986
+        rule_identifier: hp-1986.LICENSE
         rule_relevance: 100
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/osf-1990_3.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/hp-1986.LICENSE
         matched_text: |
           To anyone who acknowledges that this file is provided "AS IS"
           without any express or implied warranty:
@@ -707,10 +707,10 @@ license_detections:
         matched_length: 88
         match_coverage: '100.0'
         matcher: 2-aho
-        license_expression: osf-1990
-        rule_identifier: osf-1990_3.RULE
+        license_expression: hp-1986
+        rule_identifier: hp-1986.LICENSE
         rule_relevance: 100
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/osf-1990_3.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/hp-1986.LICENSE
         matched_text: |
           To anyone who acknowledges that this file is provided "AS IS"
           without any express or implied warranty:
@@ -1231,7 +1231,7 @@ license_detections:
           LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
           OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
           SUCH DAMAGE.
-    identifier: intel_and__bsd_new_and_other_permissive_and_other_copyleft__and_bsd_new_and_x11_lucent_and_standard_ml_nj_and_amd_historical_and_sunpro_and_osf_1990_and_nilsson_historical_and_newlib_historical_and_bsd_simplified_and_x11_hanson_and_delorie_historical_and_intel_osl_1993-690642fb-013b-0f88-86be-98f59b0d6212
+    identifier: intel_and__bsd_new_and_other_permissive_and_other_copyleft__and_bsd_new_and_x11_lucent_and_standard_ml_nj_and_amd_historical_and_sunpro_and_hp_1986_and_nilsson_historical_and_newlib_historical_and_bsd_simplified_and_x11_hanson_and_delorie_historical_and_intel_osl_1993-477aff46-5788-d7c6-01dd-0bed8adb8776
 other_license_detections: []
 copyright: |
   2014, Intel Corporation.

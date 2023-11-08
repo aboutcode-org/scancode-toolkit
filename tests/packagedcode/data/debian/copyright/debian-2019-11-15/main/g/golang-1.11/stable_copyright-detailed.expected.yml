@@ -34,7 +34,7 @@ other_license_expression_spdx: (BSD-3-Clause AND LicenseRef-scancode-google-pate
   AND MIT AND (BSD-3-Clause AND LicenseRef-scancode-google-patent-license-golang) AND (BSD-3-Clause
   AND LicenseRef-scancode-google-patent-license-golang) AND (BSD-3-Clause AND LicenseRef-scancode-google-patent-license-golang)
   AND BSD-2-Clause AND (BSD-3-Clause AND LicenseRef-scancode-google-patent-license-golang) AND
-  (BSD-3-Clause AND LicenseRef-scancode-google-patent-license-golang) AND SunPro AND LicenseRef-scancode-mpeg-ssg
+  (BSD-3-Clause AND LicenseRef-scancode-google-patent-license-golang) AND SunPro AND MPEG-SSG
   AND LicenseRef-scancode-other-permissive AND (Apache-2.0 AND Apache-2.0) AND BSD-2-Clause-Views
   AND CC-BY-3.0 AND CC-BY-3.0 AND BSD-3-Clause AND (BSD-3-Clause AND LicenseRef-scancode-google-patent-license-golang)
 license_detections: []

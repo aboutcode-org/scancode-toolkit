@@ -1,0 +1,13 @@
+---
+key: kastrup
+short_name: Kastrup License
+name: Kastrup License
+category: Permissive
+owner: David Kastrup
+spdx_license_key: Kastrup
+other_urls:
+    - https://ctan.math.utah.edu/ctan/tex-archive/macros/generic/kastrup/binhex.dtx
+---
+
+Any use of the code is permitted as long as this copyright 
+notice is preserved in the code.

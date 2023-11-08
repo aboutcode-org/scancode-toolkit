@@ -32,9 +32,9 @@ declared_license_expression: (lgpl-2.1-plus AND lgpl-2.1-plus) AND (lgpl-2.1 AND
   libtool-exception-2.0 AND fsf-unlimited AND fsf-ap
 declared_license_expression_spdx: (LGPL-2.1-or-later AND LGPL-2.1-or-later) AND (LGPL-2.1-only
   AND LGPL-2.1-only) AND (LGPL-2.1-or-later AND LGPL-2.1-or-later) AND BSD-3-Clause AND FSFAP
-  AND FSFULLRWD AND FSFULLRWD AND GPL-3.0-or-later WITH LicenseRef-scancode-autoconf-simple-exception
-  AND FSFUL AND GPL-2.0-or-later WITH Autoconf-exception-generic AND X11 AND GPL-2.0-or-later
-  WITH Libtool-exception AND FSFULLR AND FSFAP
+  AND FSFULLRWD AND FSFULLRWD AND GPL-3.0-or-later WITH Autoconf-exception-generic-3.0 AND FSFUL
+  AND GPL-2.0-or-later WITH Autoconf-exception-generic AND X11 AND GPL-2.0-or-later WITH Libtool-exception
+  AND FSFULLR AND FSFAP
 other_license_expression:
 other_license_expression_spdx:
 license_detections:

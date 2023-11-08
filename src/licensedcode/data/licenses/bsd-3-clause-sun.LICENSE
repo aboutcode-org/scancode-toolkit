@@ -6,7 +6,9 @@ category: Permissive
 owner: Oracle (Sun)
 notes: This is the same as the bsd-3-clause-no-nuclear-warranty but without the nuclear related
     terms. Rare and not exactly the same as a plain bsd.
-spdx_license_key: LicenseRef-scancode-bsd-3-clause-sun
+spdx_license_key: BSD-3-Clause-Sun
+other_spdx_license_keys:
+    - LicenseRef-scancode-bsd-3-clause-sun
 minimum_coverage: 90
 ---
 

@@ -5,7 +5,11 @@ name: TeX exception to GPL 3.0
 category: Copyleft Limited
 owner: Unspecified
 is_exception: yes
-spdx_license_key: LicenseRef-scancode-tex-exception
+spdx_license_key: Texinfo-exception
+other_spdx_license_keys:
+    - LicenseRef-scancode-tex-exception
+other_urls:
+    - https://git.savannah.gnu.org/cgit/automake.git/tree/lib/texinfo.tex?h=v1.16.5#n23
 ---
 
 As a special exception, when this file is read by TeX when processing

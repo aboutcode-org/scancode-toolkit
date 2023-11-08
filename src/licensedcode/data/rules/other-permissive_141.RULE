@@ -1,7 +1,8 @@
 ---
 license_expression: other-permissive
 is_license_text: yes
-relevance: 100
+is_deprecated: yes
+notes: 'Replaced by license: mit-testregex'
 ---
 
 Permission is hereby granted, free of charge, to any person obtaining a

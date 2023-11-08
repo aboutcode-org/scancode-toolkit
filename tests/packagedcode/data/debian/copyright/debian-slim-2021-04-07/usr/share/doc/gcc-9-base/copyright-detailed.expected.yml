@@ -13,10 +13,10 @@ declared_license_expression: gpl-3.0-plus WITH gcc-exception-3.1 AND gpl-3.0-plu
   gpl-3.0-plus AND gpl-3.0-plus AND gpl-3.0-plus AND (lgpl-2.0-plus AND gpl-1.0-plus) AND bsla-no-advert
   AND bsla AND bsd-original-uc AND bsd-new AND bsd-original-uc AND flex-2.5 AND bsd-original-uc
   AND (gpl-3.0 AND gpl-2.0 AND lgpl-3.0-plus WITH cygwin-exception-lgpl-3.0-plus AND other-copyleft
-  AND other-permissive) AND x11-lucent AND amd-historical AND sunpro AND osf-1990 AND nilsson-historical
+  AND other-permissive) AND x11-lucent AND amd-historical AND sunpro AND hp-1986 AND nilsson-historical
   AND newlib-historical AND bsd-new AND amd-historical AND bsd-new AND bsd-simplified AND bsd-simplified
   AND bsd-simplified AND x11-hanson AND bsd-simplified AND bsd-new AND lgpl-2.0-plus AND lgpl-2.1-plus
-  AND lgpl-2.0-plus AND lgpl-2.0-plus AND intel-osl-1993 AND osf-1990 AND hs-regexp AND bsd-simplified
+  AND lgpl-2.0-plus AND lgpl-2.0-plus AND intel-osl-1993 AND hp-1986 AND hs-regexp AND bsd-simplified
   AND bsd-simplified AND bsd-simplified AND bsd-new
 declared_license_expression_spdx: GPL-3.0-or-later WITH GCC-exception-3.1 AND GPL-3.0-or-later
   WITH GCC-exception-3.1 AND BSD-3-Clause AND NCSA AND MIT AND MIT AND GFDL-1.2-only AND GCC-exception-3.1
@@ -33,8 +33,8 @@ declared_license_expression_spdx: GPL-3.0-or-later WITH GCC-exception-3.1 AND GP
   AND (LGPL-2.1-only AND LGPL-3.0-only AND GPL-3.0-only) AND (LGPL-2.1-only AND LGPL-3.0-only)
   AND LGPL-2.1-or-later AND GPL-3.0-or-later AND GPL-3.0-or-later AND GPL-3.0-or-later AND GPL-3.0-or-later
   AND (LGPL-2.0-or-later AND GPL-1.0-or-later) AND LicenseRef-scancode-bsla-no-advert AND BSD-4.3TAHOE
-  AND BSD-4-Clause-UC AND BSD-3-Clause AND BSD-4-Clause-UC AND LicenseRef-scancode-flex-2.5
-  AND BSD-4-Clause-UC AND (GPL-3.0-only AND GPL-2.0-only AND LGPL-3.0-or-later WITH LicenseRef-scancode-cygwin-exception-lgpl-3.0-plus
+  AND BSD-4-Clause-UC AND BSD-3-Clause AND BSD-4-Clause-UC AND BSD-3-Clause-flex AND BSD-4-Clause-UC
+  AND (GPL-3.0-only AND GPL-2.0-only AND LGPL-3.0-or-later WITH LicenseRef-scancode-cygwin-exception-lgpl-3.0-plus
   AND LicenseRef-scancode-other-copyleft AND LicenseRef-scancode-other-permissive) AND dtoa
   AND LicenseRef-scancode-amd-historical AND SunPro AND HP-1986 AND LicenseRef-scancode-nilsson-historical
   AND LicenseRef-scancode-newlib-historical AND BSD-3-Clause AND LicenseRef-scancode-amd-historical
@@ -1518,7 +1518,7 @@ license_detections:
           \ use, copy, modify, and distribute this\nsoftware is freely granted, provided that\
           \ this notice \nis preserved."
     identifier: sunpro-8cbf8f94-4a9d-af5a-dc57-033780c667f7
-  - license_expression: osf-1990
+  - license_expression: hp-1986
     matches:
       - score: '100.0'
         start_line: 1200
@@ -1526,10 +1526,10 @@ license_detections:
         matched_length: 88
         match_coverage: '100.0'
         matcher: 2-aho
-        license_expression: osf-1990
-        rule_identifier: osf-1990_3.RULE
+        license_expression: hp-1986
+        rule_identifier: hp-1986.LICENSE
         rule_relevance: 100
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/osf-1990_3.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/hp-1986.LICENSE
         matched_text: |
           To anyone who acknowledges that this file is provided "AS IS"
           without any express or implied warranty:
@@ -1541,7 +1541,7 @@ license_detections:
           of the software without specific, written prior permission.
           Hewlett-Packard Company makes no representations about the
           suitability of this software for any purpose.
-    identifier: osf_1990-85b7bedc-f12a-acee-5301-5e355aaf1e96
+    identifier: hp_1986-28bf595d-945f-f17e-30dc-d425078ee11d
   - license_expression: nilsson-historical
     matches:
       - score: '100.0'
@@ -1985,7 +1985,7 @@ license_detections:
           OF ANY KIND.  IN NO EVENT SHALL INTEL'S TOTAL LIABILITY EXCEED THE SUM
           PAID TO INTEL FOR THE PRODUCT LICENSED HEREUNDER.
     identifier: intel_osl_1993-19445c9b-464b-0dc8-0e77-c358d42a8657
-  - license_expression: osf-1990
+  - license_expression: hp-1986
     matches:
       - score: '100.0'
         start_line: 1550
@@ -1993,10 +1993,10 @@ license_detections:
         matched_length: 88
         match_coverage: '100.0'
         matcher: 2-aho
-        license_expression: osf-1990
-        rule_identifier: osf-1990_3.RULE
+        license_expression: hp-1986
+        rule_identifier: hp-1986.LICENSE
         rule_relevance: 100
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/osf-1990_3.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/hp-1986.LICENSE
         matched_text: |
           To anyone who acknowledges that this file is provided "AS IS"
           without any express or implied warranty:
@@ -2008,7 +2008,7 @@ license_detections:
           of the software without specific, written prior permission.
           Hewlett-Packard Company makes no representations about the
           suitability of this software for any purpose.
-    identifier: osf_1990-85b7bedc-f12a-acee-5301-5e355aaf1e96
+    identifier: hp_1986-28bf595d-945f-f17e-30dc-d425078ee11d
   - license_expression: hs-regexp
     matches:
       - score: '100.0'
