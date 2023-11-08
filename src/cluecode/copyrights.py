@@ -886,6 +886,8 @@ patterns = [
     # of a copyright statement
     (r'^neither$', 'JUNK'),
     (r'^nor$', 'JUNK'),
+    
+    (r'^data-.*$', 'JUNK'),
 
     (r'^providing$', 'JUNK'),
     (r'^Execute$', 'JUNK'),

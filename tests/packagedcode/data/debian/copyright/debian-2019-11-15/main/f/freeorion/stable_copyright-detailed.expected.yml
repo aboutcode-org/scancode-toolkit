@@ -610,16 +610,19 @@ other_license_detections:
   - license_expression: bitstream
     matches:
       - score: '100.0'
-        start_line: 527
+        start_line: 524
         end_line: 566
-        matched_length: 357
+        matched_length: 364
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: bitstream
-        rule_identifier: bitstream.LICENSE
+        rule_identifier: bitstream_11.RULE
         rule_relevance: 100
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bitstream.LICENSE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bitstream_11.RULE
         matched_text: |
+          Bitstream Vera is
+          a trademark of Bitstream, Inc.
+
           Permission is hereby granted, free of charge, to any person obtaining a copy
           of the fonts accompanying this license ("Fonts") and associated
           documentation files (the "Font Software"), to reproduce and distribute the
@@ -713,7 +716,7 @@ other_license_detections:
           dealings in this Font Software without prior written authorization
           from Tavmjong Bah. For further information, contact: tavmjong @ free
            fr.
-    identifier: bitstream-2033b7a1-28d9-6af7-b4b6-9fe2eda580fd
+    identifier: bitstream-6eb1644f-4007-7683-5ade-46612c3b481f
   - license_expression: cc-by-sa-3.0 AND gpl-2.0
     matches:
       - score: '100.0'

@@ -1,0 +1,15 @@
+---
+license_expression: epl-2.0 OR gpl-2.0 WITH classpath-exception-2.0 OR bsd-new
+is_license_tag: yes
+ignorable_urls:
+    - http://www.eclipse.org/legal/epl-2.0
+    - http://www.eclipse.org/org/documents/edl-v10.php
+    - https://www.gnu.org/software/classpath/license.html
+---
+
+name: {{EPL 2.0}}
+url: http://www.eclipse.org/legal/epl-2.0
+name: {{GPL2 w/ CPE}}
+url: https://www.gnu.org/software/classpath/license.html
+name: {{EDL 1.0}}
+url: http://www.eclipse.org/org/documents/edl-v10.php

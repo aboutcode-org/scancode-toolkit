@@ -1,0 +1,12 @@
+---
+license_expression: epl-2.0 OR gpl-2.0 WITH classpath-exception-2.0
+is_license_tag: yes
+ignorable_urls:
+    - https://www.eclipse.org/org/documents/epl-2.0/EPL-2.0.txt
+    - https://www.gnu.org/software/classpath/license.html
+---
+
+name: {{Eclipse Public License v. 2.0}}
+url: https://www.eclipse.org/org/documents/epl-2.0/EPL-2.0.txt
+name: {{GNU General Public License, version 2 with the GNU Classpath Exception}}
+url: https://www.gnu.org/software/classpath/license.html

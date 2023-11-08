@@ -1,0 +1,11 @@
+---
+license_expression: lgpl-2.1-plus
+is_license_tag: yes
+relevance: 100
+ignorable_urls:
+    - http://www.gnu.org/licenses/lgpl.txt
+---
+
+<license>
+            <name>GNU Lesser General Public Licence</name>
+            <url>http://www.gnu.org/licenses/lgpl.txt</url>

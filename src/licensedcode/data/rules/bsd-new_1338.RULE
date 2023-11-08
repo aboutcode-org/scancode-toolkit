@@ -1,0 +1,14 @@
+---
+license_expression: bsd-new
+is_license_tag: yes
+ignorable_urls:
+    - http://www.eclipse.org/org/documents/edl-v10.php
+---
+
+<licenses>
+<license>
+<name>Eclipse Distribution License - v 1.0</name>
+<url>http://www.eclipse.org/org/documents/edl-v10.php</url>
+<distribution>repo</distribution>
+</license>
+</licenses>

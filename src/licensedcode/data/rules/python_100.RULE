@@ -1,0 +1,13 @@
+---
+license_expression: python
+is_license_notice: yes
+minimum_coverage: 90
+ignorable_urls:
+    - http://www.python.org/
+    - http://www.python.org/download/releases/3.1.2/license/
+---
+
+derived from Python 3.1.2 sources available at
+http://www.python.org. Full license is here:
+
+  http://www.python.org/download/releases/3.1.2/license/

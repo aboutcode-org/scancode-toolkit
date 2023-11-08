@@ -23,16 +23,16 @@ license_detections: []
 other_license_detections:
   - license_expression: bsd-new OR gpl-1.0-plus
     matches:
-      - score: '99.6'
+      - score: '100.0'
         start_line: 91
         end_line: 121
-        matched_length: 250
+        matched_length: 251
         match_coverage: '100.0'
-        matcher: 3-seq
+        matcher: 2-aho
         license_expression: bsd-new OR gpl-1.0-plus
-        rule_identifier: bsd-new_or_gpl.RULE
+        rule_identifier: bsd-new_or_gpl-1.0-plus_9.RULE
         rule_relevance: 100
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_or_gpl.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_or_gpl-1.0-plus_9.RULE
         matched_text: |
           Redistribution and use in source and binary forms, with or without
           modification, are permitted provided that the following conditions
@@ -65,7 +65,7 @@ other_license_detections:
           THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
           (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
           OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-    identifier: bsd_new_or_gpl_1_0_plus-63451f2d-b05b-ca50-0448-e34962f08f34
+    identifier: bsd_new_or_gpl_1_0_plus-c0323e55-14e5-80bd-7ec7-8dd3477bd032
   - license_expression: unicode
     matches:
       - score: '100.0'

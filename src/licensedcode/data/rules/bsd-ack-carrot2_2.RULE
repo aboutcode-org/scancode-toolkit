@@ -1,0 +1,9 @@
+---
+license_expression: bsd-ack-carrot2
+is_license_reference: yes
+relevance: 100
+ignorable_urls:
+    - http://project.carrot2.org/license.html
+---
+
+http://project.carrot2.org/license.html

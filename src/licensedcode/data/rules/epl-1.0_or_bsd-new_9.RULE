@@ -1,0 +1,12 @@
+---
+license_expression: epl-1.0 OR bsd-new
+is_license_tag: yes
+ignorable_urls:
+    - https://github.com/locationtech/jts/blob/master/LICENSE_EDLv1.txt
+    - https://github.com/locationtech/jts/blob/master/LICENSE_EPLv1.txt
+---
+
+name: {{Eclipse Publish License, Version 1.0}}
+url: https://github.com/locationtech/jts/blob/master/LICENSE_EPLv1.txt
+name: {{Eclipse Distribution License - v 1.0}}
+url: https://github.com/locationtech/jts/blob/master/LICENSE_EDLv1.txt

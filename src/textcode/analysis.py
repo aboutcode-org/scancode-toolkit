@@ -118,6 +118,12 @@ def numbered_text_lines(
             numbered_lines = list(enumerate(markup.demarkup(location), start_line))
             if TRACE:
                 logger_debug('numbered_text_lines:', 'demarkup')
+
+            numbered_lines = break_numbered_unicode_text_lines(numbered_lines)
+
+            if TRACE:
+                logger_debug('numbered_text_lines demarkup:', 'break_numbered_unicode_text_lines')
+
             return numbered_lines
         except:
             # try again later with as plain text

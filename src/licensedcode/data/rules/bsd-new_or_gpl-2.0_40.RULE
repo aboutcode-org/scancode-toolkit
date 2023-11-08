@@ -1,0 +1,13 @@
+---
+license_expression: bsd-new OR gpl-2.0
+is_license_notice: yes
+---
+
+Unless otherwise *explicitly* stated, the following text describes the
+licensed conditions under which the contents of this libcap/cap release
+may be used and distributed.
+
+The licensed conditions are one or the other of these two Licenses:
+
+  - BSD 3-clause
+  - GPL v2.0

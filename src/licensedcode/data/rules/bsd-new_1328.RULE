@@ -1,0 +1,13 @@
+---
+license_expression: bsd-new
+is_license_tag: yes
+ignorable_urls:
+    - https://github.com/googleapis/api-common-java/blob/master/LICENSE
+---
+
+<licenses>
+    <license>
+      <name>BSD</name>
+{{      <url>https://github.com/googleapis/api-common-java/blob/master/LICENSE</url> }}
+    </license>
+  </licenses>
