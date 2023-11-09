@@ -1,0 +1,12 @@
+---
+license_expression: lgpl-3.0
+is_license_tag: yes
+ignorable_urls:
+    - http://www.gnu.org/licenses/lgpl.html
+---
+
+<license>
+            <name>GNU General Lesser Public License (LGPL) version 3.0</name>
+            <url>http://www.gnu.org/licenses/lgpl.html</url>
+            <distribution>repo</distribution>
+        </license>
