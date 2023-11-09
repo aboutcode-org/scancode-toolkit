@@ -82,13 +82,13 @@
           "score": 100.0,
           "start_line": 1,
           "end_line": 1,
-          "matched_length": 7,
+          "matched_length": 8,
           "match_coverage": 100.0,
           "matcher": "2-aho",
           "license_expression": "apache-2.0",
-          "rule_identifier": "apache-2.0_5.RULE",
+          "rule_identifier": "apache-2.0_1316.RULE",
           "rule_relevance": 100,
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_5.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_1316.RULE",
           "matched_text": "- name: The Apache Software License, Version 2.0"
         },
         {
@@ -118,7 +118,7 @@
           "matched_text": "    The license is the standard wording from the Apache license, but with\n                    Greg Luck as copyright\n                    owner."
         }
       ],
-      "identifier": "apache_2_0-b1634344-32cc-2997-3699-6c606f9bd980"
+      "identifier": "apache_2_0-c973d9ca-4048-3ccd-f7c7-c7e267fa7f3a"
     }
   ],
   "other_license_expression": null,
