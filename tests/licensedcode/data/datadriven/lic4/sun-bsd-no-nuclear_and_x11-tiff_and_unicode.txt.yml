@@ -1,4 +1,5 @@
 license_expressions:
+  - other-permissive
   - bsd-3-clause-no-nuclear-warranty
   - bsd-3-clause-no-nuclear-warranty
   - x11-tiff

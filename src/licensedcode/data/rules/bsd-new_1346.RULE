@@ -1,0 +1,10 @@
+---
+license_expression: bsd-new
+is_license_tag: yes
+ignorable_urls:
+    - http://www.linfo.org/bsdlicense.html
+---
+
+name: BSD
+url: http://www.linfo.org/bsdlicense.html
+comments: Free for open or commercial use, with credit line

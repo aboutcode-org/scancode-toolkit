@@ -61,7 +61,7 @@ class RuleData(object):
 
     def __attrs_post_init__(self, *args, **kwargs):
         self.raw_data = rdat = "\n".join(self.data_lines).strip()
-        self.text = "\n".join(self.text_lines).strip()
+        self.text = "\n".join(self.text_lines).strip() + "\n"
 
         # validate YAML syntax
         try:

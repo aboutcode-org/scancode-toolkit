@@ -1,0 +1,18 @@
+---
+license_expression: lgpl-3.0 OR mpl-2.0
+is_license_tag: yes
+ignorable_urls:
+    - http://www.gnu.org/licenses/lgpl.html
+    - http://www.mozilla.org/MPL/2.0/
+---
+
+<license>
+            <name>GNU General Lesser Public License (LGPL) version 3.0</name>
+            <url>http://www.gnu.org/licenses/lgpl.html</url>
+            <distribution>repo</distribution>
+        </license>
+        <license>
+            <name>Mozilla Public License Version 2.0</name>
+            <url>http://www.mozilla.org/MPL/2.0/</url>
+            <distribution>repo</distribution>
+        </license>
