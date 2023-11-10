@@ -1,10 +1,10 @@
 ---
 key: ubdl
 short_name: Unmodified Binary Distribution Licence
-name: Unmodified Binary Distribution Licence
+name: Unmodified Binary Distribution Licence Exception
 category: Copyleft Limited
-owner: Unspecified
-homepage_url: http://ipxe.org
+owner: iPXE
+homepage_url: https://github.com/ipxe/ipxe/blob/master/COPYING.UBDL
 notes: this is a rare license that extends extra persmission on top of the GPL
 is_exception: yes
 spdx_license_key: UBDL-exception

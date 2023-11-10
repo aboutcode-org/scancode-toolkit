@@ -3,7 +3,7 @@ key: furuseth
 short_name: Furuseth License
 name: Furuseth License
 category: Permissive
-owner: Unspecified
+owner: OpenLDAP Foundation
 spdx_license_key: Furuseth
 other_urls:
     - https://git.openldap.org/openldap/openldap/-/blob/master/COPYRIGHT?ref_type=heads#L39-51

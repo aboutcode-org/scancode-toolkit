@@ -5,12 +5,12 @@ name: Historical Permission Notice and Disclaimer Pbmplus variant
 category: Permissive
 owner: ACME Labs
 homepage_url: http://web.mit.edu/tex/fontutil/fontutils-0.6/pbm/libpbm1.c
+notes: |
+    This was previously the text of libpbm LICENSE and wrongly assigned
+    spdx_license_key as xlock
 spdx_license_key: HPND-Pbmplus
 other_urls:
     - https://sourceforge.net/p/netpbm/code/HEAD/tree/super_stable/netpbm.c#l8
-notes: |
-   This was previously the text of libpbm LICENSE and wrongly assigned
-   spdx_license_key as xlock
 ---
 
 Permission to use, copy, modify, and distribute this software and its

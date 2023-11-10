@@ -3,7 +3,8 @@ key: dl-de-zero-2.0
 short_name: Data licence Germany – zero – version 2.0
 name: Data licence Germany – zero – version 2.0
 category: Permissive
-owner: Germany GovDataProject
+owner: govdata.de
+homepage_url: https://www.govdata.de/dl-de/zero-2-0
 spdx_license_key: DL-DE-ZERO-2.0
 other_urls:
     - https://www.govdata.de/dl-de/zero-2-0

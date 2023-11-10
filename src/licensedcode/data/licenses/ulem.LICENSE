@@ -3,7 +3,7 @@ key: ulem
 short_name: ulem License
 name: ulem License
 category: Permissive
-owner: Unspecified
+owner: Donald Arseneau
 spdx_license_key: ulem
 other_urls:
     - https://mirrors.ctan.org/macros/latex/contrib/ulem/README

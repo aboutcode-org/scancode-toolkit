@@ -10,6 +10,8 @@ other_spdx_license_keys:
     - LicenseRef-scancode-flex-2.5
 text_urls:
     - http://www.cs.cmu.edu/afs/cs/project/ai-repository-9/ai/areas/nlp/parsing/flex/copying.txt
+other_urls:
+    - https://github.com/westes/flex/blob/master/COPYING
 minimum_coverage: 80
 ---
 

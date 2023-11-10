@@ -1,15 +1,15 @@
 declared_license:
 declared_license_expression: lgpl-2.1-plus AND gpl-2.0-plus AND bsd-new AND bsd-new AND historical
   AND isc AND bsd-new AND carnegie-mellon-contributors AND bsd-new AND bsd-new AND bsd-new AND
-  inner-net-2.0 AND lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.0-plus AND other-permissive AND
-  ietf AND bsd-new AND other-permissive AND hs-regexp AND pcre AND sunpro AND other-permissive
-  AND lgpl-2.1-plus
+  inner-net-2.0 AND lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.0-plus AND punycode AND ietf
+  AND bsd-new AND other-permissive AND hs-regexp AND pcre AND sunpro AND other-permissive AND
+  lgpl-2.1-plus
 declared_license_expression_spdx: LGPL-2.1-or-later AND GPL-2.0-or-later AND BSD-3-Clause AND
   BSD-3-Clause AND HPND AND ISC AND BSD-3-Clause AND CMU-Mach AND BSD-3-Clause AND BSD-3-Clause
   AND BSD-3-Clause AND Inner-Net-2.0 AND LGPL-2.1-or-later AND LGPL-2.1-or-later AND LGPL-2.0-or-later
-  AND LicenseRef-scancode-other-permissive AND LicenseRef-scancode-ietf AND BSD-3-Clause AND
-  LicenseRef-scancode-other-permissive AND Spencer-94 AND LicenseRef-scancode-pcre AND SunPro
-  AND LicenseRef-scancode-other-permissive AND LGPL-2.1-or-later
+  AND LicenseRef-scancode-punycode AND LicenseRef-scancode-ietf AND BSD-3-Clause AND LicenseRef-scancode-other-permissive
+  AND Spencer-94 AND LicenseRef-scancode-pcre AND SunPro AND LicenseRef-scancode-other-permissive
+  AND LGPL-2.1-or-later
 other_license_expression:
 other_license_expression_spdx:
 license_detections:
@@ -455,7 +455,7 @@ license_detections:
           This file contains functions from GLIB, including gutf8.c and
               gunidecomp.c, all licensed under LGPL and copyright hold by:
     identifier: lgpl_2_1_plus_and_lgpl_2_0_plus-04228d42-945a-cc8b-eba4-536171dd96ee
-  - license_expression: other-permissive AND ietf
+  - license_expression: punycode AND ietf
     matches:
       - score: '100.0'
         start_line: 324
@@ -463,10 +463,10 @@ license_detections:
         matched_length: 87
         match_coverage: '100.0'
         matcher: 2-aho
-        license_expression: other-permissive
-        rule_identifier: other-permissive_320.RULE
+        license_expression: punycode
+        rule_identifier: punycode.LICENSE
         rule_relevance: 100
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/other-permissive_320.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/punycode.LICENSE
         matched_text: |
           Disclaimer and license: Regarding this entire document or any
               portion of it (including the pseudocode and C code), the author
@@ -511,7 +511,7 @@ license_detections:
               BUT NOT LIMITED TO ANY WARRANTY THAT THE USE OF THE INFORMATION
               HEREIN WILL NOT INFRINGE ANY RIGHTS OR ANY IMPLIED WARRANTIES OF
               MERCHANTABILITY OR FITNESS FOR A PARTICULAR PURPOSE.
-    identifier: other_permissive_and_ietf-ecea5b86-86d5-b280-af5c-d2d3da66579a
+    identifier: punycode_and_ietf-b9a37f0a-236b-5181-9ab2-2312abe8f010
   - license_expression: bsd-new
     matches:
       - score: '100.0'

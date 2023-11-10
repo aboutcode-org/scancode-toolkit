@@ -1,9 +1,10 @@
 ---
 license_expression: proprietary-license
 is_license_text: yes
-notes: https://www.codesynthesis.com/licenses/ncuel.txt
 ignorable_emails:
     - info@codesynthesis.com
+is_deprecated: yes
+notes: This is now `odb-ncuel` LICENSE. https://www.codesynthesis.com/licenses/ncuel.txt
 ---
 
 ODB NON-COMMERCIAL USE AND EVALUATION LICENSE (NCUEL)

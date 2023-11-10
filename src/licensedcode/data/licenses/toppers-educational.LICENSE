@@ -1,0 +1,34 @@
+---
+key: toppers-educational
+short_name: TOPPERS Educational
+name: TOPPERS Educational contents license agreement
+category: Permissive
+owner: TOPPERS
+homepage_url: https://www.toppers.jp/en/license.html
+spdx_license_key: LicenseRef-scancode-toppers-educational
+ignorable_copyrights:
+    - copyright holder and the TOPPERS Project
+ignorable_holders:
+    - the TOPPERS Project
+---
+
+The above copyright holder, limited to cases in which one satisfies
+conditions (1) ~ (3) below consents to the use, reproduction,
+alteration, and redistribution (hereafter called utilization) of this
+software (this software includes alterations, likewise below) without
+compensation.
+
+(1) When this software is utilized in the form of source code, the
+above copyright declaration, these conditions of utilization, and the
+following stipulation of no guarantee shall be included in unchanged
+form inside the source code.
+
+(2) When this software is redistributed in a form in which it can be
+used in the development of other software, library form, etc., the
+above copyright display, these terms of utilization, and the following
+stipulation of no guarantee shall be inserted in documentation
+accompanying redistribution (user's manual, etc.).
+
+(3) The above copyright holder and the TOPPERS Project shall be exempt
+from responsibility for whatever damages occur either directly or
+indirectly through the utilization of this software.
