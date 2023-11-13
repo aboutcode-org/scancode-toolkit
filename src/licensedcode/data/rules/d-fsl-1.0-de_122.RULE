@@ -1,6 +1,5 @@
 ---
 license_expression: free-unknown
-is_deprecated: yes
 is_license_reference: yes
 is_continuous: yes
 relevance: 100
@@ -9,4 +8,4 @@ notes: Rule based on an SPDX license name and/or ID. Since we do not track yet l
     languages, so this is a rule to deal with this in the short term
 ---
 
-name : Deutsche Freie Software Lizenz
+Deutsche Freie Software Lizenz
