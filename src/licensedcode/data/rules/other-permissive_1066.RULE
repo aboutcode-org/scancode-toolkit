@@ -1,7 +1,6 @@
 ---
-license_expression: free-unknown
-is_deprecated: yes
-is_license_notice: yes
+license_expression: other-permissive
+is_license_notice: text
 ---
 
 // Permission is granted to use at your own risk and distribute this software
