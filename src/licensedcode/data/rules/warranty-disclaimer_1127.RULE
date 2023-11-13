@@ -1,6 +1,5 @@
 ---
-license_expression: free-unknown
-is_deprecated: yes
+license_expression: warranty-disclaimer
 is_license_notice: yes
 referenced_filenames:
     - COPYING
