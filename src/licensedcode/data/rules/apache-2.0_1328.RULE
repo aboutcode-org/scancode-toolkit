@@ -1,0 +1,9 @@
+---
+license_expression: apache-2.0
+is_license_tag: yes
+ignorable_urls:
+    - http://ehcache.sourceforge.net/LICENSE.txt
+---
+
+<url>http://ehcache.sourceforge.net/LICENSE.txt
+<comments>The license is the standard wording from the Apache license
