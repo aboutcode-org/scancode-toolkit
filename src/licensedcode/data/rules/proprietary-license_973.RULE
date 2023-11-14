@@ -1,0 +1,91 @@
+---
+license_expression: proprietary-license
+is_license_text: yes
+notes: See https://web.archive.org/web/20070205114602/http://www.wu-ftpd.org/license.html
+ignorable_copyrights:
+    - Copyright (c) 1999,2000,2001 WU-FTPD Development Group
+ignorable_holders:
+    - WU-FTPD Development Group
+ignorable_authors:
+    - the WU-FTPD Development Group, the Washington University at Saint Louis, Berkeley Software
+        Design, Inc.
+ignorable_urls:
+    - http://www.wu-ftpd.org/license.html
+---
+
+WU-FTPD SOFTWARE LICENSE
+
+    Use, modification, or redistribution (including distribution of any modified
+    or derived work) in any form, or on any medium, is permitted only if all the
+    following conditions are met:
+
+        Redistributions qualify as "freeware" or "Open Source Software" under
+        the following terms:
+
+            Redistributions are made at no charge beyond the reasonable cost of
+            materials and delivery. Where redistribution of this software is as
+            part of a larger package or combined work, this restriction applies
+            only to the costs of materials and delivery of this software, not to
+            any other costs associated with the larger package or combined work.
+
+            Redistributions are accompanied by a copy of the Source Code or by
+            an irrevocable offer to provide a copy of the Source Code for up to
+            three years at the cost of materials and delivery. Such
+            redistributions must allow further use, modification, and
+            redistribution of the Source Code under substantially the same terms
+            as this license. For the purposes of redistribution "Source Code"
+            means all files included in the original distribution, including all
+            modifications or additions, on a medium and in a form allowing fully
+            working executable programs to be produced.
+
+        Redistributions of Source Code must retain the copyright notices as they
+        appear in each Source Code file and the COPYRIGHT file, these license
+        terms, and the disclaimer/limitation of liability set forth as paragraph
+        6 below.
+
+        Redistributions in binary form must reproduce the Copyright Notice,
+        these license terms, and the disclaimer/limitation of liability set
+        forth as paragraph 6 below, in the documentation and/or other materials
+        provided with the distribution. For the purposes of binary distribution
+        the "Copyright Notice" refers to the following language:
+
+            Copyright (c) 1999,2000,2001 WU-FTPD Development Group.
+            All rights reserved.
+
+            Use and distribution of this software and its source code are
+            governed by the terms and conditions of the WU-FTPD Software License
+            ("LICENSE").
+
+            If you did not receive a copy of the license, it may be obtained
+            online at http://www.wu-ftpd.org/license.html
+
+        All advertising materials mentioning features or use of this software
+        must display the following acknowledgement: "This product includes
+        software developed by the WU-FTPD Development Group, the Washington
+        University at Saint Louis, Berkeley Software Design, Inc., and their
+        contributors."
+
+        Neither the name of the WU-FTPD Development Group, nor the names of any
+        copyright holders, nor the names of any contributors may be used to
+        endorse or promote products derived from this software without specific
+        prior written permission. The names "wuftpd" and "wu-ftpd" are
+        trademarks of the WU-FTPD Development Group and the Washington
+        University at Saint Louis.
+
+        Disclaimer/Limitation of Liability:
+
+        THIS SOFTWARE IS PROVIDED BY THE WU-FTPD DEVELOPMENT GROUP, THE
+        COPYRIGHT HOLDERS, AND CONTRIBUTORS, "AS IS" AND ANY EXPRESS OR IMPLIED
+        WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+        MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN
+        NO EVENT SHALL THE WU-FTPD DEVELOPMENT GROUP, THE COPYRIGHT HOLDERS, OR
+        CONTRIBUTORS, BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+        EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+        PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
+        PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+        LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+        NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+        SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.
+
+        USE, MODIFICATION, OR REDISTRIBUTION, OF THIS SOFTWARE IMPLIES
+        ACCEPTANCE OF ALL TERMS AND CONDITIONS OF THIS LICENSE.
