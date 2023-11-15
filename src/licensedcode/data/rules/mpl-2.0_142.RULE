@@ -1,0 +1,7 @@
+---
+license_expression: mpl-2.0
+is_license_reference: yes
+is_continuous: yes
+---
+
+{{zeromq/libzmq LICENSE}}
