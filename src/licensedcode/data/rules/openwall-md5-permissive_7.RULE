@@ -1,12 +1,10 @@
 ---
-license_expression: public-domain OR other-permissive
+license_expression: openwall-md5-permissive
 is_license_notice: yes
 ignorable_authors:
     - Alexander Peslyak
 ignorable_urls:
     - http://openwall.info/wiki/people/solar/software/public-domain-source-code/md5
-is_deprecated: yes
-notes: this is now requalified as a `openwall-md5-permissive` license
 ---
 
 Homepage:

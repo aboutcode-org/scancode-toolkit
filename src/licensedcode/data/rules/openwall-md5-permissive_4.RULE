@@ -1,13 +1,10 @@
 ---
-license_expression: public-domain OR other-permissive
+license_expression: openwall-md5-permissive
 is_license_text: yes
-relevance: 100
 ignorable_copyrights:
     - Copyright (c) 2000-2011 Solar Designer
 ignorable_holders:
     - Solar Designer
-is_deprecated: yes
-notes: this is now requalified as a `openwall-md5-permissive` license
 ---
 
 No copyright is claimed, and the software is hereby placed in the public

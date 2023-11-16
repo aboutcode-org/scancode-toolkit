@@ -1,14 +1,11 @@
 ---
-license_expression: public-domain OR other-permissive
+license_expression: openwall-md5-permissive
 is_license_text: yes
-relevance: 100
 minimum_coverage: 95
 ignorable_copyrights:
     - Copyright (c) 2001 Alexander Peslyak
 ignorable_holders:
     - Alexander Peslyak
-is_deprecated: yes
-notes: this is now requalified as a `openwall-md5-permissive` license
 ---
 
 No copyright is
@@ -22,5 +19,3 @@ No copyright is
  * modification, are permitted.
  *
  * There's ABSOLUTELY NO WARRANTY, express or implied.
- *
- * (This is a heavily cut-down "BSD license".)

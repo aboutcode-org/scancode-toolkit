@@ -1,15 +1,12 @@
 ---
-license_expression: other-permissive
+license_expression: openwall-md5-permissive
 is_license_text: yes
-is_deprecated: yes
-relevance: 100
 ignorable_copyrights:
     - Copyright (c) 2001 Alexander Peslyak
 ignorable_holders:
     - Alexander Peslyak
 ignorable_authors:
     - Alexander Peslyak
-notes: this is now requalified as a `openwall-md5-permissive` license
 ---
 
 This software was written by Alexander Peslyak in 2001.  No copyright is claimed, and the software is hereby placed in the public domain. In case this attempt to disclaim copyright and place the software in the public domain is deemed null and void, then the software is Copyright (c) 2001 Alexander Peslyak and it is hereby released to the general public under the following terms:

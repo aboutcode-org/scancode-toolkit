@@ -1,8 +1,6 @@
 ---
-license_expression: public-domain-disclaimer
+license_expression: openwall-md5-permissive
 is_license_text: yes
-is_deprecated: yes
-notes: this is now requalified as a `openwall-md5-permissive` license
 ---
 
 it is hereby released to the
