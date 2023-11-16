@@ -1,6 +1,8 @@
 ---
 license_expression: gpl-3.0 AND other-permissive
 is_license_notice: yes
+is_deprecated: yes
+notes: This is now `clojure-exception-to-gpl-3.0` LICENSE
 ---
 
 Additional permission under GNU GPL version 3 section 7

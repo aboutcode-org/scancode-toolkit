@@ -3,7 +3,7 @@ key: swrule
 short_name: swrule License
 name: swrule License
 category: Permissive
-owner: Unspecified
+owner: Tobias Dussa
 spdx_license_key: swrule
 other_urls:
     - https://ctan.math.utah.edu/ctan/tex-archive/macros/generic/misc/swrule.sty

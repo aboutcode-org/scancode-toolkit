@@ -1,0 +1,21 @@
+---
+key: ugui
+short_name: UGUI License
+name: UGUI License
+category: Permissive
+owner: Achim Doebler
+homepage_url: https://github.com/achimdoebler/UGUI
+spdx_license_key: LicenseRef-scancode-ugui
+text_urls:
+    - https://raw.githubusercontent.com/achimdoebler/UGUI/master/LICENSE.md
+other_urls:
+    - http://embeddedlightning.com/
+---
+
+This is a free software and is opened for education,
+research and commercial developments under license policy of following terms.
+
+* The  module is a free software and there is NO WARRANTY.
+* No restriction on use. You can use, modify and redistribute it for
+  personal, non-profit or commercial product UNDER YOUR RESPONSIBILITY.
+* Redistributions of source code must retain the above copyright notice.

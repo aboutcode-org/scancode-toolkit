@@ -3,7 +3,7 @@ key: hp-1986
 short_name: HP 1986 License
 name: Hewlett-Packard 1986 License
 category: Permissive
-owner: Open Software Foundation
+owner: HP - Hewlett Packard
 spdx_license_key: HP-1986
 other_urls:
     - https://sourceware.org/git/?p=newlib-cygwin.git;a=blob;f=newlib/libc/machine/hppa/memchr.S;h=1cca3e5e8867aa4bffef1f75a5c1bba25c0c441e;hb=HEAD#l2

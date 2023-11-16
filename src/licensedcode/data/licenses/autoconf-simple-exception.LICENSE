@@ -4,7 +4,7 @@ short_name: Autoconf simple exception
 name: Autoconf simple exception
 category: Copyleft Limited
 owner: Free Software Foundation (FSF)
-homepage_url: https://git.savannah.gnu.org/gitweb/?p=config.git;a=blob;f=config.guess;h=a7448442748cc6f98a066d2d1051fad3b043761a;hb=HEAD
+homepage_url: https://src.fedoraproject.org/rpms/redhat-rpm-config/blob/rawhide/f/config.guess
 notes: |
     this is a simpler version of the Autonconf exception to the GPL 3.0 used in
     GNU Config config.guess and config.sub

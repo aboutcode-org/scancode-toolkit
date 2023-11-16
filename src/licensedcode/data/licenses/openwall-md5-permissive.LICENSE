@@ -1,0 +1,14 @@
+---
+key: openwall-md5-permissive
+short_name: Openwall MD5 Permissive
+name: Openwall MD5 Permissive
+category: Permissive
+owner: Openwall
+homepage_url: https://openwall.info/wiki/people/solar/software/public-domain-source-code/md5
+spdx_license_key: LicenseRef-scancode-openwall-md5-permissive
+---
+
+Redistribution and use in source and binary forms, with or without
+modification, are permitted.
+
+There's ABSOLUTELY NO WARRANTY, express or implied.

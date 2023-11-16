@@ -2,8 +2,8 @@
 key: stunnel-exception
 short_name: stunnel Exception
 name: stunnel Exception
-category: Permissive
-owner: Unspecified
+category: Copyleft Limited
+owner: Stunnel
 notes: similar to the strongswan-exception LICENSE
 is_exception: yes
 spdx_license_key: stunnel-exception

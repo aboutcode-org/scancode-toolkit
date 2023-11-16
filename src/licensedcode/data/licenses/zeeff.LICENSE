@@ -3,7 +3,7 @@ key: zeeff
 short_name: Zeeff License
 name: Zeeff License
 category: Permissive
-owner: Unspecified
+owner: Jon Zeeff
 spdx_license_key: Zeeff
 other_urls:
     - ftp://ftp.tin.org/pub/news/utils/newsx/newsx-1.6.tar.gz

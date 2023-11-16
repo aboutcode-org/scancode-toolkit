@@ -2,7 +2,10 @@
 license_expression: free-unknown
 is_deprecated: yes
 is_license_notice: yes
-notes: typically for GPL but this can vary and be various versions
+is_deprecated: yes
+notes: |
+  typically for GPL but this can vary and be various versions.
+  This is now the lance-norskog-license
 ---
 
 This source code is freely redistributable and may be used for

@@ -263,9 +263,11 @@ class TestRule(FileBasedTesting):
         test_dir = self.get_test_loc('models/rules', copy=True)
         test_dir_dump = self.get_test_loc('models/rule_file_dump')
         rules = list(models.load_rules(test_dir))
+        rules.sort(key=lambda x: x.identifier)
         rule_example = rules.pop()
         rule_example.dump(rules_data_dir=test_dir_dump)
         rule_from_dump = list(models.load_rules(test_dir_dump))
+        rule_from_dump.sort(key=lambda x: x.identifier)
         rule_example_from_dump = rule_from_dump.pop()
         # Note: one license is obsolete and not loaded. Other are various exception/version cases
         before_dump = as_sorted_mapping_seq(licenses=[rule_example], include_text=True)

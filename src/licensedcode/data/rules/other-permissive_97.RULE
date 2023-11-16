@@ -2,10 +2,11 @@
 license_expression: other-permissive
 is_license_text: yes
 relevance: 100
+is_deprecated: yes
 ---
 
 This is a free software and is opened for education,
-research and commercial developments under license policy of following trems.
+research and commercial developments under license policy of following terms.
 
 
 * The  module is a free software and there is NO WARRANTY.
