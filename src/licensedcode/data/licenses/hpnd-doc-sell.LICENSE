@@ -3,7 +3,7 @@ key: hpnd-doc-sell
 short_name: Historical documentation sell variant
 name: Historical Permission Notice and Disclaimer - documentation sell variant
 category: Permissive
-owner: Unspecified
+owner: DEC - Digital Equipment Corporation
 notes: This is essentially x11-doc License with very minor changes.
 spdx_license_key: HPND-doc-sell
 other_urls:

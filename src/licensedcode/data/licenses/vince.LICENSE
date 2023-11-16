@@ -1,7 +1,7 @@
 ---
 key: vince
-short_name: VINCE License
-name: VINCE License
+short_name: MIT (SEI)
+name: MIT (SEI)
 category: Permissive
 owner: CERTCC
 homepage_url: https://github.com/CERTCC/VINCE/blob/main/LICENSE.txt

@@ -4,11 +4,11 @@ short_name: Python ldap License
 name: Python ldap License
 category: Permissive
 owner: Python Software Foundation (PSF)
+notes: This was python_19.RULE before
 spdx_license_key: python-ldap
 other_urls:
     - https://github.com/zdohnal/hplip/blob/master/base/ldif.py
     - https://sourceforge.net/projects/hplip/files/hplip/3.23.5/hplip-3.23.5.tar.gz/download
-notes: This was python_19.RULE before
 ---
 
 The python-ldap package is distributed under Python-style license.

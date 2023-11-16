@@ -4,7 +4,7 @@ short_name: SANE exception to GPL 2.0 or later
 name: SANE exception to GPL 2.0 or later
 category: Copyleft Limited
 owner: SANE Project
-homepage_url: https://alioth.debian.org/
+homepage_url: https://github.com/alexpevzner/sane-airscan/blob/master/LICENSE
 is_exception: yes
 spdx_license_key: SANE-exception
 other_spdx_license_keys:

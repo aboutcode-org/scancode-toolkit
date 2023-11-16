@@ -2,10 +2,12 @@
 key: caldera
 short_name: Caldera License
 name: Caldera License
-category: Permissive
+category: Free Restricted
 owner: Caldera
-homepage_url: http://www.lemis.com/grog/UNIX/ancient-source-all.pdf
+homepage_url: https://git.simple-cc.org/scc/file/doc/caldera.txt.html
 spdx_license_key: Caldera
+other_urls:
+    - https://git.simple-cc.org/scc/file/LICENSE.html
 ignorable_copyrights:
     - Copyright (c) Caldera International Inc.
 ignorable_holders:

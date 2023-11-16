@@ -3,7 +3,7 @@ key: pnmstitch
 short_name: pnmstitch License
 name: pnmstitch License
 category: Permissive
-owner: Unspecified
+owner: pnmstitch Project
 notes: This is the same as bsd-dpt.RULE with ` Mark Salyzyn` added.
 spdx_license_key: pnmstitc
 other_urls:

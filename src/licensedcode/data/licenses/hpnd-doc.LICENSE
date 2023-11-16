@@ -3,7 +3,7 @@ key: hpnd-doc
 short_name: Historical documentation variant
 name: Historical Permission Notice and Disclaimer - documentation variant
 category: Permissive
-owner: Unspecified
+owner: X Consortium
 notes: This is essentially hpnd-doc-sell License without the 'without fee'
 spdx_license_key: HPND-doc
 other_urls:

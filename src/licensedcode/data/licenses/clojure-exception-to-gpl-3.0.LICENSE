@@ -1,0 +1,19 @@
+---
+key: clojure-exception-to-gpl-3.0
+short_name: Clojure Exception to GPL-3.0
+name: Clojure Exception to GPL-3.0
+category: Copyleft
+owner: Metabase
+homepage_url: https://github.com/metabase/metabase/blob/666b1b453a71a1fca19e7b81739a58ce7fa45a14/LICENSE.txt#L663-L665
+is_exception: yes
+spdx_license_key: LicenseRef-scancode-clojure-exception-to-gpl-3.0
+text_urls:
+    - https://github.com/metabase/metabase/blob/666b1b453a71a1fca19e7b81739a58ce7fa45a14/LICENSE.txt#L663-L665
+    - https://github.com/elifesciences/elifesciences-publications-repository-archiver/blob/312e7a8dc7a952d878cc7af3c735e256184f366b/LICENCE.txt#L678-L684
+    - https://github.com/howonlee/mertonon/blob/7530a68b8a7276e2427cf05b5cac648a2bbbdcb9/license.md?plain=1#L11-L13
+    - https://github.com/metabase/metabase/blob/24b35534722fbdc3c4201bb81e0f6f130f6acfd6/LICENSE-AGPL.txt#L664-L667
+---
+
+Additional permission under GNU GPL version 3 section 7
+
+If you modify this Program, or any covered work, by linking or combining it with any of the below libraries (or a modified version of that library), containing parts covered by the terms of any of the below libraries, the licensors of this Program grant you additional permission to convey the resulting work.

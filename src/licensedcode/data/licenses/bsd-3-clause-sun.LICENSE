@@ -4,6 +4,7 @@ short_name: BSD 3-Clause Sun
 name: BSD 3-Clause Sun
 category: Permissive
 owner: Oracle (Sun)
+homepage_url: https://github.com/xmlark/msv/blob/b9316e2f2270bc1606952ea4939ec87fbba157f3/xsdlib/src/main/java/com/sun/msv/datatype/regexp/InternalImpl.java
 notes: This is the same as the bsd-3-clause-no-nuclear-warranty but without the nuclear related
     terms. Rare and not exactly the same as a plain bsd.
 spdx_license_key: BSD-3-Clause-Sun

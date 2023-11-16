@@ -2,8 +2,8 @@
 key: urt-rle
 short_name: Utah Raster Toolkit Run Length Encoded License
 name: Utah Raster Toolkit Run Length Encoded License
-category: Permissive
-owner: Unspecified
+category: Copyleft Limited
+owner: Minnesota Supercomputing Institute
 spdx_license_key: URT-RLE
 other_urls:
     - https://sourceforge.net/p/netpbm/code/HEAD/tree/super_stable/converter/other/pnmtorle.c
